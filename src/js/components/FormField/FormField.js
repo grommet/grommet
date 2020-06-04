@@ -225,12 +225,8 @@ const FormField = forwardRef(
       }
     }
 
-    const contentProps = { ...formFieldTheme.content };
-
-    if (!pad && !wantContentPad) {
-      contentProps.pad = undefined;
-    }
-
+    const contentProps =
+      pad || wantContentPad ? { ...formFieldTheme.content } : {};
     if (themeBorder.position === 'inner') {
       if (normalizedError && formFieldTheme.error) {
         contentProps.background = formFieldTheme.error.background;
@@ -238,6 +234,10 @@ const FormField = forwardRef(
         contentProps.background = formFieldTheme.disabled.background;
       }
     }
+    // Removing margin from contentProps because margin should be applied
+    // on containing <FormFieldContentBox>
+    contentProps.margin = undefined;
+    contents = <Box {...contentProps}>{contents}</Box>;
 
     let borderColor;
 
@@ -286,11 +286,10 @@ const FormField = forwardRef(
               focus,
             }
           : {};
-
       contents = (
         <FormFieldContentBox
           overflow="hidden"
-          {...contentProps}
+          margin={formFieldTheme.content.margin}
           {...innerProps}
         >
           {contents}
