@@ -30,11 +30,11 @@ const padStyle = ({ sizeProp: size, theme }) => {
     size &&
     theme.button.size &&
     theme.button.size[size] &&
-    theme.button.size[size].padding
+    theme.button.size[size].pad
   ) {
     return css`
-      padding: ${theme.button.size[size].padding.vertical}
-        ${theme.button.size[size].padding.horizontal};
+      padding: ${theme.button.size[size].pad.vertical}
+        ${theme.button.size[size].pad.horizontal};
     `;
   }
 
