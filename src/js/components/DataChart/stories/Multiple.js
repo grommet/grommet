@@ -31,10 +31,11 @@ const MultipleDataChart = () => (
         ]}
         xAxis={{
           labels: 2,
-          render: i => (
+          key: 'date',
+          render: date => (
             <Box pad="xsmall" align="start">
               <Text>
-                {new Date(data[i].date).toLocaleDateString('en-US', {
+                {new Date(date).toLocaleDateString('en-US', {
                   month: 'short',
                   day: 'numeric',
                 })}
