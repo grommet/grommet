@@ -204,8 +204,6 @@ const Select = forwardRef(
       theme,
     );
 
-    console.log(theme.select.icons);
-
     return (
       <Keyboard onDown={onRequestOpen} onUp={onRequestOpen}>
         <StyledSelectDropButton
