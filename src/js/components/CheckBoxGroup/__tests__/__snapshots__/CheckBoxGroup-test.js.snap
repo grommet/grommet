@@ -20,7 +20,7 @@ exports[`CheckBoxGroup disabled renders 1`] = `
       >
         <input
           checked={false}
-          className="StyledCheckBox__StyledCheckBoxInput-sc-14qttcc-2 SDCaO"
+          className="StyledCheckBox__StyledCheckBoxInput-sc-14qttcc-2 lohIbT"
           disabled={true}
           onBlur={[Function]}
           onChange={[Function]}
@@ -53,7 +53,7 @@ exports[`CheckBoxGroup disabled renders 1`] = `
       >
         <input
           checked={false}
-          className="StyledCheckBox__StyledCheckBoxInput-sc-14qttcc-2 SDCaO"
+          className="StyledCheckBox__StyledCheckBoxInput-sc-14qttcc-2 lohIbT"
           disabled={true}
           onBlur={[Function]}
           onChange={[Function]}
@@ -87,7 +87,7 @@ exports[`CheckBoxGroup disabled renders 1`] = `
       >
         <input
           checked={false}
-          className="StyledCheckBox__StyledCheckBoxInput-sc-14qttcc-2 SDCaO"
+          className="StyledCheckBox__StyledCheckBoxInput-sc-14qttcc-2 lohIbT"
           disabled={true}
           onBlur={[Function]}
           onChange={[Function]}
@@ -121,7 +121,7 @@ exports[`CheckBoxGroup disabled renders 1`] = `
       >
         <input
           checked={false}
-          className="StyledCheckBox__StyledCheckBoxInput-sc-14qttcc-2 SDCaO"
+          className="StyledCheckBox__StyledCheckBoxInput-sc-14qttcc-2 lohIbT"
           disabled={true}
           onBlur={[Function]}
           onChange={[Function]}
@@ -160,7 +160,7 @@ exports[`CheckBoxGroup initial value renders 1`] = `
       >
         <input
           checked={false}
-          className="StyledCheckBox__StyledCheckBoxInput-sc-14qttcc-2 icPGui"
+          className="StyledCheckBox__StyledCheckBoxInput-sc-14qttcc-2 bbPDVv"
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
@@ -189,7 +189,7 @@ exports[`CheckBoxGroup initial value renders 1`] = `
       >
         <input
           checked={true}
-          className="StyledCheckBox__StyledCheckBoxInput-sc-14qttcc-2 icPGui"
+          className="StyledCheckBox__StyledCheckBoxInput-sc-14qttcc-2 bbPDVv"
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
@@ -230,7 +230,7 @@ exports[`CheckBoxGroup initial value renders 1`] = `
       >
         <input
           checked={true}
-          className="StyledCheckBox__StyledCheckBoxInput-sc-14qttcc-2 icPGui"
+          className="StyledCheckBox__StyledCheckBoxInput-sc-14qttcc-2 bbPDVv"
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
@@ -279,7 +279,7 @@ exports[`CheckBoxGroup options renders 1`] = `
       >
         <input
           checked={false}
-          className="StyledCheckBox__StyledCheckBoxInput-sc-14qttcc-2 icPGui"
+          className="StyledCheckBox__StyledCheckBoxInput-sc-14qttcc-2 bbPDVv"
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
@@ -308,7 +308,7 @@ exports[`CheckBoxGroup options renders 1`] = `
       >
         <input
           checked={false}
-          className="StyledCheckBox__StyledCheckBoxInput-sc-14qttcc-2 icPGui"
+          className="StyledCheckBox__StyledCheckBoxInput-sc-14qttcc-2 bbPDVv"
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
@@ -345,7 +345,7 @@ exports[`CheckBoxGroup value renders 1`] = `
       >
         <input
           checked={true}
-          className="StyledCheckBox__StyledCheckBoxInput-sc-14qttcc-2 icPGui"
+          className="StyledCheckBox__StyledCheckBoxInput-sc-14qttcc-2 bbPDVv"
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
@@ -386,7 +386,7 @@ exports[`CheckBoxGroup value renders 1`] = `
       >
         <input
           checked={false}
-          className="StyledCheckBox__StyledCheckBoxInput-sc-14qttcc-2 icPGui"
+          className="StyledCheckBox__StyledCheckBoxInput-sc-14qttcc-2 bbPDVv"
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}

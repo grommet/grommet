@@ -105,7 +105,7 @@ exports[`checked renders 1`] = `
 
 .c4:checked + span > span {
   left: calc( 32px - 16px );
-  background: #E15151;
+  background: #d9d9d9;
 }
 
 .c3 {
@@ -267,7 +267,7 @@ exports[`controlled 1`] = `
 
 .c4:checked + span > span {
   left: calc( 32px - 16px );
-  background: #E15151;
+  background: #d9d9d9;
 }
 
 .c3 {
@@ -336,7 +336,7 @@ exports[`controlled 2`] = `
     >
       <input
         checked=""
-        class="StyledCheckBox__StyledCheckBoxInput-sc-14qttcc-2 icPGui"
+        class="StyledCheckBox__StyledCheckBoxInput-sc-14qttcc-2 bbPDVv"
         type="checkbox"
       />
       <div
@@ -492,7 +492,7 @@ exports[`disabled renders 1`] = `
 
 .c4:checked + span > span {
   left: calc( 32px - 16px );
-  background: #E15151;
+  background: #d9d9d9;
 }
 
 .c3 {
@@ -718,7 +718,7 @@ exports[`indeterminate renders 1`] = `
 
 .c4:checked + span > span {
   left: calc( 32px - 16px );
-  background: #E15151;
+  background: #d9d9d9;
 }
 
 .c3 {
@@ -916,7 +916,7 @@ exports[`label renders 1`] = `
 
 .c4:checked + span > span {
   left: calc( 32px - 16px );
-  background: #E15151;
+  background: #d9d9d9;
 }
 
 .c3 {
@@ -1093,7 +1093,7 @@ exports[`reverse renders 1`] = `
 
 .c4:checked + span > span {
   left: calc( 32px - 16px );
-  background: #E15151;
+  background: #d9d9d9;
 }
 
 .c3 {
@@ -1240,7 +1240,7 @@ exports[`toggle renders 1`] = `
 
 .c4:checked + span > span {
   left: calc( 32px - 16px );
-  background: #E15151;
+  background: #d9d9d9;
 }
 
 .c5 {
