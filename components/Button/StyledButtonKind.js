@@ -33,8 +33,8 @@ var padStyle = function padStyle(_ref) {
   var size = _ref.sizeProp,
       theme = _ref.theme;
 
-  if (size && theme.button.size && theme.button.size[size] && theme.button.size[size].padding) {
-    return (0, _styledComponents.css)(["padding:", " ", ";"], theme.button.size[size].padding.vertical, theme.button.size[size].padding.horizontal);
+  if (size && theme.button.size && theme.button.size[size] && theme.button.size[size].pad) {
+    return (0, _styledComponents.css)(["padding:", " ", ";"], theme.button.size[size].pad.vertical, theme.button.size[size].pad.horizontal);
   }
 
   if (theme.button.padding) {
