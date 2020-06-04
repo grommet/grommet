@@ -22,12 +22,12 @@ export const doc = Tabs => {
 This means that future tab changes will not work unless you subscribe to
 onActive function and update activeIndex accordingly.`,
     ),
-    alignTabs: PropTypes.oneOf([
+    alignControls: PropTypes.oneOf([
       'start',
       'center',
       'end',
       'stretch',
-    ]).description('How to align the tabs within the tabs header.'),
+    ]).description('How to align the tab controls within the tabs header.'),
     children: PropTypes.node.description('Array of Tab.').isRequired,
     flex: PropTypes.oneOfType([
       PropTypes.oneOf(['grow', 'shrink']),

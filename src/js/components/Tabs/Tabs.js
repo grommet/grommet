@@ -17,7 +17,7 @@ import { normalizeColor } from '../../utils';
 const Tabs = forwardRef(
   (
     {
-      alignTabs,
+      alignControls,
       children,
       flex,
       justify = 'center',
@@ -107,7 +107,7 @@ const Tabs = forwardRef(
           as={Box}
           direction="row"
           justify={justify}
-          alignSelf={alignTabs}
+          alignSelf={alignControls}
           flex={false}
           wrap
           background={theme.tabs.header.background}

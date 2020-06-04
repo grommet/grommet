@@ -1,11 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Attraction, Car, TreeOption } from 'grommet-icons';
-import { Box, Grommet, Tab, Tabs } from 'grommet';
-import { hpe } from 'grommet-theme-hpe-next';
+import { Box, Grommet, grommet, Tab, Tabs } from 'grommet';
 import { deepMerge } from 'grommet/utils';
 
-const myTheme = deepMerge(hpe, {
+const myTheme = deepMerge(grommet, {
   tabs: {
     header: {
       border: {
@@ -16,6 +15,11 @@ const myTheme = deepMerge(hpe, {
     },
   },
   tab: {
+    border: {
+      side: 'bottom',
+      color: 'dark-4',
+    },
+    pad: 'small',
     margin: {
       // bring the overall tabs border behind invidual tab borders
       vertical: '-2px',
@@ -24,39 +28,39 @@ const myTheme = deepMerge(hpe, {
   },
 });
 
-const AlignTabs = () => (
+const AlignControls = () => (
   <Grommet theme={myTheme} full>
     <Tabs justify="start">
       <Tab title="Tab 1">
-        <Box fill pad="large" align="center" background="accent-1">
+        <Box fill pad="large" align="center">
           <Attraction size="xlarge" />
         </Box>
       </Tab>
       <Tab title="Tab 2">
-        <Box fill pad="large" align="center" background="accent-2">
+        <Box fill pad="large" align="center">
           <TreeOption size="xlarge" />
         </Box>
       </Tab>
       <Tab title="Tab 3">
-        <Box fill pad="large" align="center" background="accent-3">
+        <Box fill pad="large" align="center">
           <Car size="xlarge" />
         </Box>
       </Tab>
     </Tabs>
 
-    <Tabs justify="start" alignTabs="start">
+    <Tabs justify="start" alignControls="start">
       <Tab title="Tab 1">
-        <Box fill pad="large" align="center" background="accent-1">
+        <Box fill pad="large" align="center">
           <Attraction size="xlarge" />
         </Box>
       </Tab>
       <Tab title="Tab 2">
-        <Box fill pad="large" align="center" background="accent-2">
+        <Box fill pad="large" align="center">
           <TreeOption size="xlarge" />
         </Box>
       </Tab>
       <Tab title="Tab 3">
-        <Box fill pad="large" align="center" background="accent-3">
+        <Box fill pad="large" align="center">
           <Car size="xlarge" />
         </Box>
       </Tab>
@@ -64,4 +68,4 @@ const AlignTabs = () => (
   </Grommet>
 );
 
-storiesOf('Tabs', module).add('alignTabs', () => <AlignTabs />);
+storiesOf('Tabs', module).add('alignControls', () => <AlignControls />);

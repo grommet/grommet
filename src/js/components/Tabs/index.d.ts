@@ -5,7 +5,7 @@ export interface TabsProps {
   a11yTitle?: A11yTitleType;
   activeIndex?: number;
   alignSelf?: AlignSelfType;
-  alignTabs?: AlignSelfType;
+  alignControls?: AlignSelfType;
   children: React.ReactNode;
   flex?: "grow" | "shrink" | boolean;
   gridArea?: GridAreaType;

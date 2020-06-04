@@ -137,9 +137,9 @@ onActive function and update activeIndex accordingly.
 number
 ```
 
-**alignTabs**
+**alignControls**
 
-How to align the tabs within the tabs header.
+How to align the tab controls within the tabs header.
 
 ```
 start

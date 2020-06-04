@@ -252,7 +252,7 @@ exports[`Tabs Tab 1`] = `
 </div>
 `;
 
-exports[`Tabs alignTabs 1`] = `
+exports[`Tabs alignControls 1`] = `
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
