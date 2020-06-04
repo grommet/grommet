@@ -754,7 +754,7 @@ exports[`DataChart thickness 1`] = `
         className="c3"
         height={192}
         preserveAspectRatio="none"
-        viewBox="0 0 384 192"
+        viewBox="-3 0 390 192"
         width={384}
       >
         <g
@@ -1070,13 +1070,6 @@ exports[`DataChart xAxis 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -1435,6 +1428,1040 @@ exports[`DataChart xAxis 1`] = `
 </div>
 `;
 
+exports[`DataChart xAxis dates 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: xAxis;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-basis: 96px;
+  -ms-flex-preferred-size: 96px;
+  flex-basis: 96px;
+}
+
+.c4 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.c2 {
+  position: relative;
+  grid-area: charts;
+}
+
+.c3 {
+  position: relative;
+  display: block;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <svg
+          className="c4"
+          height={192}
+          preserveAspectRatio="none"
+          viewBox="-48 0 480 192"
+          width={384}
+        >
+          <g
+            fill="none"
+            stroke="#6FFFB0"
+            strokeLinecap="butt"
+            strokeLinejoin="miter"
+            strokeWidth={96}
+          >
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 0,192 L 0,192"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 128,192 L 128,131.04768"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 256,192 L 256,70.09536000000001"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 384,192 L 384,9.143040000000013"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div
+      className="c5"
+    >
+      <div
+        className="c1"
+      >
+        08:04:01 AM
+      </div>
+      <div
+        className="c1"
+      >
+        08:04:04 AM
+      </div>
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <svg
+          className="c4"
+          height={192}
+          preserveAspectRatio="none"
+          viewBox="-48 0 480 192"
+          width={384}
+        >
+          <g
+            fill="none"
+            stroke="#6FFFB0"
+            strokeLinecap="butt"
+            strokeLinejoin="miter"
+            strokeWidth={96}
+          >
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 0,192 L 0,192"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 128,192 L 128,138.66666666666669"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 256,192 L 256,85.33333333333334"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 384,192 L 384,32"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div
+      className="c5"
+    >
+      <div
+        className="c6"
+      >
+        1
+      </div>
+      <div
+        className="c6"
+      >
+        2
+      </div>
+      <div
+        className="c6"
+      >
+        3
+      </div>
+      <div
+        className="c6"
+      >
+        4
+      </div>
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <svg
+          className="c4"
+          height={192}
+          preserveAspectRatio="none"
+          viewBox="-48 0 480 192"
+          width={384}
+        >
+          <g
+            fill="none"
+            stroke="#6FFFB0"
+            strokeLinecap="butt"
+            strokeLinejoin="miter"
+            strokeWidth={96}
+          >
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 0,192 L 0,192"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 128,192 L 128,131.04768"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 256,192 L 256,70.09536000000001"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 384,192 L 384,9.143040000000013"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div
+      className="c5"
+    >
+      <div
+        className="c1"
+      >
+        8:01 AM
+      </div>
+      <div
+        className="c1"
+      >
+        8:04 AM
+      </div>
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <svg
+          className="c4"
+          height={192}
+          preserveAspectRatio="none"
+          viewBox="-48 0 480 192"
+          width={384}
+        >
+          <g
+            fill="none"
+            stroke="#6FFFB0"
+            strokeLinecap="butt"
+            strokeLinejoin="miter"
+            strokeWidth={96}
+          >
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 0,192 L 0,192"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 128,192 L 128,138.66666666666669"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 256,192 L 256,85.33333333333334"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 384,192 L 384,32"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div
+      className="c5"
+    >
+      <div
+        className="c6"
+      >
+        1
+      </div>
+      <div
+        className="c6"
+      >
+        2
+      </div>
+      <div
+        className="c6"
+      >
+        3
+      </div>
+      <div
+        className="c6"
+      >
+        4
+      </div>
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <svg
+          className="c4"
+          height={192}
+          preserveAspectRatio="none"
+          viewBox="-48 0 480 192"
+          width={384}
+        >
+          <g
+            fill="none"
+            stroke="#6FFFB0"
+            strokeLinecap="butt"
+            strokeLinejoin="miter"
+            strokeWidth={96}
+          >
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 0,192 L 0,192"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 128,192 L 128,131.04768"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 256,192 L 256,70.09536000000001"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 384,192 L 384,9.143040000000013"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div
+      className="c5"
+    >
+      <div
+        className="c1"
+      >
+        1 AM
+      </div>
+      <div
+        className="c1"
+      >
+        4 AM
+      </div>
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <svg
+          className="c4"
+          height={192}
+          preserveAspectRatio="none"
+          viewBox="-48 0 480 192"
+          width={384}
+        >
+          <g
+            fill="none"
+            stroke="#6FFFB0"
+            strokeLinecap="butt"
+            strokeLinejoin="miter"
+            strokeWidth={96}
+          >
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 0,192 L 0,192"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 128,192 L 128,138.66666666666669"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 256,192 L 256,85.33333333333334"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 384,192 L 384,32"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div
+      className="c5"
+    >
+      <div
+        className="c6"
+      >
+        1 AM
+      </div>
+      <div
+        className="c6"
+      >
+        2 AM
+      </div>
+      <div
+        className="c6"
+      >
+        3 AM
+      </div>
+      <div
+        className="c6"
+      >
+        4 AM
+      </div>
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <svg
+          className="c4"
+          height={192}
+          preserveAspectRatio="none"
+          viewBox="-48 0 480 192"
+          width={384}
+        >
+          <g
+            fill="none"
+            stroke="#6FFFB0"
+            strokeLinecap="butt"
+            strokeLinejoin="miter"
+            strokeWidth={96}
+          >
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 0,192 L 0,192"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 128,192 L 128,131.04768"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 256,192 L 256,70.09536000000001"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 384,192 L 384,9.143040000000013"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div
+      className="c5"
+    >
+      <div
+        className="c1"
+      >
+        May 1
+      </div>
+      <div
+        className="c1"
+      >
+        May 4
+      </div>
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <svg
+          className="c4"
+          height={192}
+          preserveAspectRatio="none"
+          viewBox="-48 0 480 192"
+          width={384}
+        >
+          <g
+            fill="none"
+            stroke="#6FFFB0"
+            strokeLinecap="butt"
+            strokeLinejoin="miter"
+            strokeWidth={96}
+          >
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 0,192 L 0,192"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 128,192 L 128,138.66666666666669"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 256,192 L 256,85.33333333333334"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 384,192 L 384,32"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div
+      className="c5"
+    >
+      <div
+        className="c6"
+      >
+        5/1
+      </div>
+      <div
+        className="c6"
+      >
+        5/2
+      </div>
+      <div
+        className="c6"
+      >
+        5/3
+      </div>
+      <div
+        className="c6"
+      >
+        5/4
+      </div>
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <svg
+          className="c4"
+          height={192}
+          preserveAspectRatio="none"
+          viewBox="-48 0 480 192"
+          width={384}
+        >
+          <g
+            fill="none"
+            stroke="#6FFFB0"
+            strokeLinecap="butt"
+            strokeLinejoin="miter"
+            strokeWidth={96}
+          >
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 0,192 L 0,192"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 128,192 L 128,131.04768"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 256,192 L 256,70.09536000000001"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 384,192 L 384,9.143040000000013"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div
+      className="c5"
+    >
+      <div
+        className="c1"
+      >
+        January
+      </div>
+      <div
+        className="c1"
+      >
+        April
+      </div>
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <svg
+          className="c4"
+          height={192}
+          preserveAspectRatio="none"
+          viewBox="-48 0 480 192"
+          width={384}
+        >
+          <g
+            fill="none"
+            stroke="#6FFFB0"
+            strokeLinecap="butt"
+            strokeLinejoin="miter"
+            strokeWidth={96}
+          >
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 0,192 L 0,192"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 128,192 L 128,138.66666666666669"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 256,192 L 256,85.33333333333334"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 384,192 L 384,32"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div
+      className="c5"
+    >
+      <div
+        className="c6"
+      >
+        Jan
+      </div>
+      <div
+        className="c6"
+      >
+        Feb
+      </div>
+      <div
+        className="c6"
+      >
+        Mar
+      </div>
+      <div
+        className="c6"
+      >
+        Apr
+      </div>
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <svg
+          className="c4"
+          height={192}
+          preserveAspectRatio="none"
+          viewBox="-48 0 480 192"
+          width={384}
+        >
+          <g
+            fill="none"
+            stroke="#6FFFB0"
+            strokeLinecap="butt"
+            strokeLinejoin="miter"
+            strokeWidth={96}
+          >
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 0,192 L 0,192"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 128,192 L 128,131.04768"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 256,192 L 256,70.09536000000001"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 384,192 L 384,9.143040000000013"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div
+      className="c5"
+    >
+      <div
+        className="c1"
+      >
+        2001
+      </div>
+      <div
+        className="c1"
+      >
+        2004
+      </div>
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <svg
+          className="c4"
+          height={192}
+          preserveAspectRatio="none"
+          viewBox="-48 0 480 192"
+          width={384}
+        >
+          <g
+            fill="none"
+            stroke="#6FFFB0"
+            strokeLinecap="butt"
+            strokeLinejoin="miter"
+            strokeWidth={96}
+          >
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 0,192 L 0,192"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 128,192 L 128,138.66666666666669"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 256,192 L 256,85.33333333333334"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 384,192 L 384,32"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div
+      className="c5"
+    >
+      <div
+        className="c6"
+      >
+        2001
+      </div>
+      <div
+        className="c6"
+      >
+        2002
+      </div>
+      <div
+        className="c6"
+      >
+        2003
+      </div>
+      <div
+        className="c6"
+      >
+        2004
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`DataChart yAxis 1`] = `
 .c0 {
   font-size: 18px;
@@ -1502,7 +2529,6 @@ exports[`DataChart yAxis 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  max-width: 100%;
   -webkit-align-items: flex-end;
   -webkit-box-align: flex-end;
   -ms-flex-align: flex-end;
@@ -1512,6 +2538,13 @@ exports[`DataChart yAxis 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex-basis: 24px;
+  -ms-flex-preferred-size: 24px;
+  flex-basis: 24px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c5 {
@@ -1551,6 +2584,8 @@ exports[`DataChart yAxis 1`] = `
   justify-content: space-between;
   padding-left: 48px;
   padding-right: 48px;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 .c11 {
@@ -1590,13 +2625,6 @@ exports[`DataChart yAxis 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -1642,7 +2670,7 @@ exports[`DataChart yAxis 1`] = `
           className="c8"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 0 480 192"
+          viewBox="-48 -12 480 216"
           width={384}
         >
           <g
@@ -1761,7 +2789,7 @@ exports[`DataChart yAxis 1`] = `
           className="c8"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 0 480 192"
+          viewBox="-48 -12 480 216"
           width={384}
         >
           <g
@@ -1826,7 +2854,87 @@ exports[`DataChart yAxis 1`] = `
           className="c8"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 0 480 192"
+          viewBox="-48 -12 480 216"
+          width={384}
+        >
+          <g
+            fill="none"
+            stroke="#6FFFB0"
+            strokeLinecap="butt"
+            strokeLinejoin="miter"
+            strokeWidth={96}
+          >
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 0,192 L 0,160"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 384,192 L 384,0"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          2
+        </div>
+        <div
+          className="c4"
+        >
+          1.7
+        </div>
+        <div
+          className="c4"
+        >
+          1.4
+        </div>
+        <div
+          className="c4"
+        >
+          1.1
+        </div>
+        <div
+          className="c4"
+        >
+          0.8
+        </div>
+      </div>
+      <div
+        className="c5"
+      />
+    </div>
+    <div
+      className="c6"
+    >
+      <div
+        className="c7"
+      >
+        <svg
+          className="c8"
+          height={192}
+          preserveAspectRatio="none"
+          viewBox="-48 -12 480 216"
           width={384}
         >
           <g
@@ -1891,7 +2999,7 @@ exports[`DataChart yAxis 1`] = `
           className="c8"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 0 480 192"
+          viewBox="-48 -12 480 216"
           width={384}
         >
           <g
@@ -1915,6 +3023,400 @@ exports[`DataChart yAxis 1`] = `
               <title />
               <path
                 d="M 384,192 L 384,0"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          $2
+        </div>
+        <div
+          className="c4"
+        >
+          $0.8
+        </div>
+      </div>
+      <div
+        className="c5"
+      />
+    </div>
+    <div
+      className="c6"
+    >
+      <div
+        className="c7"
+      >
+        <svg
+          className="c8"
+          height={192}
+          preserveAspectRatio="none"
+          viewBox="-48 -12 480 216"
+          width={384}
+        >
+          <g
+            fill="none"
+            stroke="#6FFFB0"
+            strokeLinecap="butt"
+            strokeLinejoin="miter"
+            strokeWidth={96}
+          >
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 0,192 L 0,160"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 384,192 L 384,0"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          2%
+        </div>
+        <div
+          className="c4"
+        >
+          0.8%
+        </div>
+      </div>
+      <div
+        className="c5"
+      />
+    </div>
+    <div
+      className="c6"
+    >
+      <div
+        className="c7"
+      >
+        <svg
+          className="c8"
+          height={192}
+          preserveAspectRatio="none"
+          viewBox="-48 -12 480 216"
+          width={384}
+        >
+          <g
+            fill="none"
+            stroke="#6FFFB0"
+            strokeLinecap="butt"
+            strokeLinejoin="miter"
+            strokeWidth={96}
+          >
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 0,192 L 0,160"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 384,192 L 384,0"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DataChart yAxis rounding 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: yAxis;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-basis: 24px;
+  -ms-flex-preferred-size: 24px;
+  flex-basis: 24px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c8 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.c6 {
+  position: relative;
+  grid-area: charts;
+}
+
+.c7 {
+  position: relative;
+  display: block;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          240K
+        </div>
+        <div
+          className="c4"
+        >
+          100K
+        </div>
+      </div>
+      <div
+        className="c5"
+      />
+    </div>
+    <div
+      className="c6"
+    >
+      <div
+        className="c7"
+      >
+        <svg
+          className="c8"
+          height={192}
+          preserveAspectRatio="none"
+          viewBox="-48 -12 480 216"
+          width={384}
+        >
+          <g
+            fill="none"
+            stroke="#6FFFB0"
+            strokeLinecap="butt"
+            strokeLinejoin="miter"
+            strokeWidth={96}
+          >
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 0,192 L 0,176.76205714285715"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 384,192 L 384,24.38125714285715"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          240K
+        </div>
+        <div
+          className="c4"
+        >
+          193K
+        </div>
+        <div
+          className="c4"
+        >
+          147K
+        </div>
+        <div
+          className="c4"
+        >
+          100K
+        </div>
+      </div>
+      <div
+        className="c5"
+      />
+    </div>
+    <div
+      className="c6"
+    >
+      <div
+        className="c7"
+      >
+        <svg
+          className="c8"
+          height={192}
+          preserveAspectRatio="none"
+          viewBox="-48 -12 480 216"
+          width={384}
+        >
+          <g
+            fill="none"
+            stroke="#6FFFB0"
+            strokeLinecap="butt"
+            strokeLinejoin="miter"
+            strokeWidth={96}
+          >
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 0,192 L 0,176.76205714285715"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 384,192 L 384,24.38125714285715"
               />
             </g>
           </g>

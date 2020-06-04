@@ -8,6 +8,9 @@ const thicknessPad = {
   xsmall: 'xxsmall',
 };
 
+export const round = (value, decimals) =>
+  Number(`${Math.round(`${value}e${decimals}`)}e-${decimals}`);
+
 export const calcs = (values, options = {}) => {
   // coarseness influences the rounding of the bounds, the smaller the
   // number, the more the bounds will be rounded. e.g. 111 -> 110 -> 100
@@ -73,14 +76,19 @@ export const calcs = (values, options = {}) => {
         [min, max],
       ]
     : [[], []];
-  const dimensions = [bounds[0][1] - bounds[0][0], bounds[1][1] - bounds[1][0]];
+  const dimensions = [
+    round(bounds[0][1] - bounds[0][0], 2),
+    round(bounds[1][1] - bounds[1][0], 2),
+  ];
 
   // Calculate x and y axis values across the specfied number of steps.
   const yAxis = [];
   let y = bounds[1][1];
-  const yStepInterval = dimensions[1] / steps[1];
-  while (y >= bounds[1][0]) {
-    yAxis.push(y);
+  // To deal with javascript math limitations, round the step with 4 decimal
+  // places and then push the values with 2 decimal places
+  const yStepInterval = round(dimensions[1] / steps[1], 4);
+  while (round(y, 2) >= bounds[1][0]) {
+    yAxis.push(round(y, 2));
     y -= yStepInterval;
   }
 
