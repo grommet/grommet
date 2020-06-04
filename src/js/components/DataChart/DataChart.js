@@ -242,11 +242,14 @@ const DataChart = forwardRef(
               : dataIndex;
             if (xAxis.render)
               content = xAxis.render(content, data, Math.floor(dataIndex), i);
-            else if (dateFormat) {
-              content = dateFormat(new Date(content));
-            }
+            else if (dateFormat) content = dateFormat(new Date(content));
             return (
-              <Box key={i} basis={basis} align={basis ? 'center' : undefined}>
+              <Box
+                key={i}
+                basis={basis}
+                flex="shrink"
+                align={basis ? 'center' : undefined}
+              >
                 {content}
               </Box>
             );
@@ -298,6 +301,7 @@ const DataChart = forwardRef(
                 key={i}
                 align="end"
                 basis={basis}
+                flex="shrink"
                 justify={basis ? 'center' : undefined}
               >
                 {content}
