@@ -28,7 +28,7 @@ const AxesDataChart = () => (
     <Box align="center" justify="start" pad="large">
       <DataChart
         data={data}
-        chart={{ key: 'percent' }}
+        chart={{ key: 'percent', type: 'bar' }}
         xAxis={{ key: 'day', guide: true }}
         yAxis={{ guide: true, labels: 3, suffix: '%' }}
       />

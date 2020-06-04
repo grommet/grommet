@@ -908,7 +908,7 @@ string",
       Object {
         "defaultValue": "none",
         "description": "Spacing around the outer edge of
-    the drawing coordinate area for bars and points to overflow into.",
+    the drawing coordinate area for the graphic elements to overflow into.",
         "format": "none
 xxsmall
 xsmall
@@ -1816,7 +1816,7 @@ string",
       Object {
         "defaultValue": "none",
         "description": "Spacing around the outer edge of
-    the drawing coordinate area for bars and points to overflow into.",
+    the drawing coordinate area for the graphic elements to overflow into.",
         "format": "none
 xxsmall
 xsmall
@@ -2601,7 +2601,7 @@ string",
       Object {
         "defaultValue": "none",
         "description": "Spacing around the outer edge of
-    the drawing coordinate area for bars and points to overflow into.",
+    the drawing coordinate area for the graphic elements to overflow into.",
         "format": "none
 xxsmall
 xsmall

@@ -754,7 +754,7 @@ exports[`DataChart thickness 1`] = `
         className="c3"
         height={192}
         preserveAspectRatio="none"
-        viewBox="0 0 384 192"
+        viewBox="-3 0 390 192"
         width={384}
       >
         <g
@@ -2536,7 +2536,6 @@ exports[`DataChart yAxis 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  max-width: 100%;
   -webkit-align-items: flex-end;
   -webkit-box-align: flex-end;
   -ms-flex-align: flex-end;
@@ -2546,6 +2545,13 @@ exports[`DataChart yAxis 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex-basis: 24px;
+  -ms-flex-preferred-size: 24px;
+  flex-basis: 24px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c5 {
@@ -2585,6 +2591,8 @@ exports[`DataChart yAxis 1`] = `
   justify-content: space-between;
   padding-left: 48px;
   padding-right: 48px;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 .c11 {
@@ -2634,6 +2642,13 @@ exports[`DataChart yAxis 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c10 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c11 {
     border-top: solid 1px rgba(0,0,0,0.33);
   }
@@ -2676,7 +2691,7 @@ exports[`DataChart yAxis 1`] = `
           className="c8"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 0 480 192"
+          viewBox="-48 -12 480 216"
           width={384}
         >
           <g
@@ -2795,7 +2810,7 @@ exports[`DataChart yAxis 1`] = `
           className="c8"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 0 480 192"
+          viewBox="-48 -12 480 216"
           width={384}
         >
           <g
@@ -2860,7 +2875,7 @@ exports[`DataChart yAxis 1`] = `
           className="c8"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 0 480 192"
+          viewBox="-48 -12 480 216"
           width={384}
         >
           <g
@@ -2940,7 +2955,7 @@ exports[`DataChart yAxis 1`] = `
           className="c8"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 0 480 192"
+          viewBox="-48 -12 480 216"
           width={384}
         >
           <g
@@ -3005,7 +3020,7 @@ exports[`DataChart yAxis 1`] = `
           className="c8"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 0 480 192"
+          viewBox="-48 -12 480 216"
           width={384}
         >
           <g
@@ -3070,7 +3085,7 @@ exports[`DataChart yAxis 1`] = `
           className="c8"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 0 480 192"
+          viewBox="-48 -12 480 216"
           width={384}
         >
           <g
@@ -3135,7 +3150,7 @@ exports[`DataChart yAxis 1`] = `
           className="c8"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 0 480 192"
+          viewBox="-48 -12 480 216"
           width={384}
         >
           <g
@@ -3236,7 +3251,6 @@ exports[`DataChart yAxis rounding 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  max-width: 100%;
   -webkit-align-items: flex-end;
   -webkit-box-align: flex-end;
   -ms-flex-align: flex-end;
@@ -3246,6 +3260,13 @@ exports[`DataChart yAxis rounding 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex-basis: 24px;
+  -ms-flex-preferred-size: 24px;
+  flex-basis: 24px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c5 {
@@ -3318,7 +3339,7 @@ exports[`DataChart yAxis rounding 1`] = `
           className="c8"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 0 480 192"
+          viewBox="-48 -12 480 216"
           width={384}
         >
           <g
@@ -3393,7 +3414,7 @@ exports[`DataChart yAxis rounding 1`] = `
           className="c8"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 0 480 192"
+          viewBox="-48 -12 480 216"
           width={384}
         >
           <g

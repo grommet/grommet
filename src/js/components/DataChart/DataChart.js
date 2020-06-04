@@ -16,6 +16,15 @@ const halfPad = {
   large: 'medium',
   medium: 'small',
   small: 'xsmall',
+  xsmall: 'xxsmall',
+};
+
+const doublePad = {
+  large: 'xlarge',
+  medium: 'large',
+  small: 'medium',
+  xsmall: 'small',
+  xxsmall: 'xsmall',
 };
 
 const checkDateFormat = (firstValue, lastValue, full) => {
@@ -167,8 +176,9 @@ const DataChart = forwardRef(
       const allSides =
         charts.filter(({ type }) => type && type !== 'bar').length > 0;
       if (allSides) return padSize;
+      if (yAxis) return { horizontal: padSize, vertical: halfPad.medium };
       return { horizontal: padSize };
-    }, [charts, padProp, thickness]);
+    }, [charts, padProp, thickness, yAxis]);
 
     const xGuide = useMemo(
       () =>
@@ -233,7 +243,6 @@ const DataChart = forwardRef(
             if (xAxis.render)
               content = xAxis.render(content, data, Math.floor(dataIndex), i);
             else if (dateFormat) {
-              if (xAxis.key === 'b') console.log('!!!!', xAxis.key, content);
               content = dateFormat(new Date(content));
             }
             return (
@@ -261,6 +270,15 @@ const DataChart = forwardRef(
           unit = 'K';
         }
       }
+
+      // Set basis to match double the vertical pad, so we can align the
+      // text with the guides
+      let basis;
+      if (axis[0].length === numValues) {
+        const edgeSize = doublePad[pad.vertical || pad];
+        basis = theme.global.edgeSize[edgeSize] || edgeSize;
+      }
+
       yAxisElement = (
         <Box gridArea="yAxis" justify="between" flex>
           {axis[1].map((axisValue, i) => {
@@ -276,7 +294,12 @@ const DataChart = forwardRef(
                 content = `${content}${yAxis.suffix || unit}`;
             }
             return (
-              <Box key={i} align="end">
+              <Box
+                key={i}
+                align="end"
+                basis={basis}
+                justify={basis ? 'center' : undefined}
+              >
                 {content}
               </Box>
             );
