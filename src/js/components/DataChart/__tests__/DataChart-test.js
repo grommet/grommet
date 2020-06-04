@@ -105,14 +105,15 @@ describe('DataChart', () => {
 
   test('xAxis dates', () => {
     const dateData = [];
-    for (let i = 2; i < 6; i += 1) {
+    for (let i = 0; i < 4; i += 1) {
+      const digits = ((i % 12) + 1).toString().padStart(2, 0);
       dateData.push({
-        second: `2020-05-15T08:04:${((i % 12) + 1).toString().padStart(2, 0)}`,
-        minute: `2020-05-15T08:${((i % 12) + 1).toString().padStart(2, 0)}:00`,
-        hour: `2020-05-15T${((i % 12) + 1).toString().padStart(2, 0)}:00:00`,
-        day: `2020-05-${((i % 12) + 1).toString().padStart(2, 0)}`,
-        month: `2020-${((i % 12) + 1).toString().padStart(2, 0)}-15`,
-        year: `20${((i % 12) + 1).toString().padStart(2, 0)}-01-15`,
+        second: `2020-05-15T08:04:${digits}`,
+        minute: `2020-05-15T08:${digits}:00`,
+        hour: `2020-05-15T${digits}:00:00`,
+        day: `2020-05-${digits}T08:00:00`,
+        month: `2020-${digits}-15`,
+        year: `20${digits}-01-15`,
         percent: Math.abs(i * 10),
         amount: i * 111111,
       });

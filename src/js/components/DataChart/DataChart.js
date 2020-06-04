@@ -322,14 +322,20 @@ const DataChart = forwardRef(
     const stackElement = (
       <Stack gridArea="charts" guidingChild="last" fill={stackFill}>
         {xAxis && xAxis.guide && (
-          <Box fill direction="row" justify="between" pad={pad}>
+          <Box
+            fill
+            direction="row"
+            justify="between"
+            pad={pad}
+            responsive={false}
+          >
             {xGuide.map((_, i) => (
               <Box key={i} border="left" />
             ))}
           </Box>
         )}
         {yAxis && yAxis.guide && (
-          <Box fill justify="between" pad={pad}>
+          <Box fill justify="between" pad={pad} responsive={false}>
             {yGuide.map((_, i) => (
               <Box key={i} border="top" />
             ))}

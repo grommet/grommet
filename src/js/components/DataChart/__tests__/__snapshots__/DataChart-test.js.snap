@@ -1073,13 +1073,6 @@ exports[`DataChart xAxis 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c9 {
     border-left: solid 1px rgba(0,0,0,0.33);
   }
@@ -1546,7 +1539,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 0,192 L 0,185.29536"
+                d="M 0,192 L 0,192"
               />
             </g>
             <g
@@ -1554,7 +1547,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 128,192 L 128,124.34304"
+                d="M 128,192 L 128,131.04768"
               />
             </g>
             <g
@@ -1562,7 +1555,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 256,192 L 256,63.390720000000016"
+                d="M 256,192 L 256,70.09536000000001"
               />
             </g>
             <g
@@ -1570,7 +1563,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 384,192 L 384,2.4384000000000015"
+                d="M 384,192 L 384,9.143040000000013"
               />
             </g>
           </g>
@@ -1583,12 +1576,12 @@ exports[`DataChart xAxis dates 1`] = `
       <div
         className="c1"
       >
-        08:04:03 AM
+        08:04:01 AM
       </div>
       <div
         className="c1"
       >
-        08:04:06 AM
+        08:04:04 AM
       </div>
     </div>
   </div>
@@ -1620,7 +1613,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 0,192 L 0,181.33333333333334"
+                d="M 0,192 L 0,192"
               />
             </g>
             <g
@@ -1628,7 +1621,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 128,192 L 128,128"
+                d="M 128,192 L 128,138.66666666666669"
               />
             </g>
             <g
@@ -1636,7 +1629,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 256,192 L 256,74.66666666666667"
+                d="M 256,192 L 256,85.33333333333334"
               />
             </g>
             <g
@@ -1644,7 +1637,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 384,192 L 384,21.333333333333343"
+                d="M 384,192 L 384,32"
               />
             </g>
           </g>
@@ -1654,6 +1647,16 @@ exports[`DataChart xAxis dates 1`] = `
     <div
       className="c5"
     >
+      <div
+        className="c6"
+      >
+        1
+      </div>
+      <div
+        className="c6"
+      >
+        2
+      </div>
       <div
         className="c6"
       >
@@ -1664,15 +1667,79 @@ exports[`DataChart xAxis dates 1`] = `
       >
         4
       </div>
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
       <div
-        className="c6"
+        className="c3"
       >
-        5
+        <svg
+          className="c4"
+          height={192}
+          preserveAspectRatio="none"
+          viewBox="-48 0 480 192"
+          width={384}
+        >
+          <g
+            fill="none"
+            stroke="#6FFFB0"
+            strokeLinecap="butt"
+            strokeLinejoin="miter"
+            strokeWidth={96}
+          >
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 0,192 L 0,192"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 128,192 L 128,131.04768"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 256,192 L 256,70.09536000000001"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 384,192 L 384,9.143040000000013"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div
+      className="c5"
+    >
+      <div
+        className="c1"
+      >
+        8:01 AM
       </div>
       <div
-        className="c6"
+        className="c1"
       >
-        6
+        8:04 AM
       </div>
     </div>
   </div>
@@ -1704,7 +1771,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 0,192 L 0,185.29536"
+                d="M 0,192 L 0,192"
               />
             </g>
             <g
@@ -1712,7 +1779,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 128,192 L 128,124.34304"
+                d="M 128,192 L 128,138.66666666666669"
               />
             </g>
             <g
@@ -1720,7 +1787,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 256,192 L 256,63.390720000000016"
+                d="M 256,192 L 256,85.33333333333334"
               />
             </g>
             <g
@@ -1728,7 +1795,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 384,192 L 384,2.4384000000000015"
+                d="M 384,192 L 384,32"
               />
             </g>
           </g>
@@ -1739,79 +1806,15 @@ exports[`DataChart xAxis dates 1`] = `
       className="c5"
     >
       <div
-        className="c1"
+        className="c6"
       >
-        8:03 AM
+        1
       </div>
       <div
-        className="c1"
+        className="c6"
       >
-        8:06 AM
+        2
       </div>
-    </div>
-  </div>
-  <div
-    className="c1"
-  >
-    <div
-      className="c2"
-    >
-      <div
-        className="c3"
-      >
-        <svg
-          className="c4"
-          height={192}
-          preserveAspectRatio="none"
-          viewBox="-48 0 480 192"
-          width={384}
-        >
-          <g
-            fill="none"
-            stroke="#6FFFB0"
-            strokeLinecap="butt"
-            strokeLinejoin="miter"
-            strokeWidth={96}
-          >
-            <g
-              fill="none"
-            >
-              <title />
-              <path
-                d="M 0,192 L 0,181.33333333333334"
-              />
-            </g>
-            <g
-              fill="none"
-            >
-              <title />
-              <path
-                d="M 128,192 L 128,128"
-              />
-            </g>
-            <g
-              fill="none"
-            >
-              <title />
-              <path
-                d="M 256,192 L 256,74.66666666666667"
-              />
-            </g>
-            <g
-              fill="none"
-            >
-              <title />
-              <path
-                d="M 384,192 L 384,21.333333333333343"
-              />
-            </g>
-          </g>
-        </svg>
-      </div>
-    </div>
-    <div
-      className="c5"
-    >
       <div
         className="c6"
       >
@@ -1822,15 +1825,79 @@ exports[`DataChart xAxis dates 1`] = `
       >
         4
       </div>
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
       <div
-        className="c6"
+        className="c3"
       >
-        5
+        <svg
+          className="c4"
+          height={192}
+          preserveAspectRatio="none"
+          viewBox="-48 0 480 192"
+          width={384}
+        >
+          <g
+            fill="none"
+            stroke="#6FFFB0"
+            strokeLinecap="butt"
+            strokeLinejoin="miter"
+            strokeWidth={96}
+          >
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 0,192 L 0,192"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 128,192 L 128,131.04768"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 256,192 L 256,70.09536000000001"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 384,192 L 384,9.143040000000013"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div
+      className="c5"
+    >
+      <div
+        className="c1"
+      >
+        1 AM
       </div>
       <div
-        className="c6"
+        className="c1"
       >
-        6
+        4 AM
       </div>
     </div>
   </div>
@@ -1862,7 +1929,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 0,192 L 0,185.29536"
+                d="M 0,192 L 0,192"
               />
             </g>
             <g
@@ -1870,7 +1937,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 128,192 L 128,124.34304"
+                d="M 128,192 L 128,138.66666666666669"
               />
             </g>
             <g
@@ -1878,7 +1945,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 256,192 L 256,63.390720000000016"
+                d="M 256,192 L 256,85.33333333333334"
               />
             </g>
             <g
@@ -1886,7 +1953,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 384,192 L 384,2.4384000000000015"
+                d="M 384,192 L 384,32"
               />
             </g>
           </g>
@@ -1897,79 +1964,15 @@ exports[`DataChart xAxis dates 1`] = `
       className="c5"
     >
       <div
-        className="c1"
+        className="c6"
       >
-        3 AM
+        1 AM
       </div>
       <div
-        className="c1"
+        className="c6"
       >
-        6 AM
+        2 AM
       </div>
-    </div>
-  </div>
-  <div
-    className="c1"
-  >
-    <div
-      className="c2"
-    >
-      <div
-        className="c3"
-      >
-        <svg
-          className="c4"
-          height={192}
-          preserveAspectRatio="none"
-          viewBox="-48 0 480 192"
-          width={384}
-        >
-          <g
-            fill="none"
-            stroke="#6FFFB0"
-            strokeLinecap="butt"
-            strokeLinejoin="miter"
-            strokeWidth={96}
-          >
-            <g
-              fill="none"
-            >
-              <title />
-              <path
-                d="M 0,192 L 0,181.33333333333334"
-              />
-            </g>
-            <g
-              fill="none"
-            >
-              <title />
-              <path
-                d="M 128,192 L 128,128"
-              />
-            </g>
-            <g
-              fill="none"
-            >
-              <title />
-              <path
-                d="M 256,192 L 256,74.66666666666667"
-              />
-            </g>
-            <g
-              fill="none"
-            >
-              <title />
-              <path
-                d="M 384,192 L 384,21.333333333333343"
-              />
-            </g>
-          </g>
-        </svg>
-      </div>
-    </div>
-    <div
-      className="c5"
-    >
       <div
         className="c6"
       >
@@ -1980,15 +1983,79 @@ exports[`DataChart xAxis dates 1`] = `
       >
         4 AM
       </div>
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
       <div
-        className="c6"
+        className="c3"
       >
-        5 AM
+        <svg
+          className="c4"
+          height={192}
+          preserveAspectRatio="none"
+          viewBox="-48 0 480 192"
+          width={384}
+        >
+          <g
+            fill="none"
+            stroke="#6FFFB0"
+            strokeLinecap="butt"
+            strokeLinejoin="miter"
+            strokeWidth={96}
+          >
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 0,192 L 0,192"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 128,192 L 128,131.04768"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 256,192 L 256,70.09536000000001"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 384,192 L 384,9.143040000000013"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div
+      className="c5"
+    >
+      <div
+        className="c1"
+      >
+        May 1
       </div>
       <div
-        className="c6"
+        className="c1"
       >
-        6 AM
+        May 4
       </div>
     </div>
   </div>
@@ -2020,7 +2087,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 0,192 L 0,185.29536"
+                d="M 0,192 L 0,192"
               />
             </g>
             <g
@@ -2028,7 +2095,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 128,192 L 128,124.34304"
+                d="M 128,192 L 128,138.66666666666669"
               />
             </g>
             <g
@@ -2036,7 +2103,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 256,192 L 256,63.390720000000016"
+                d="M 256,192 L 256,85.33333333333334"
               />
             </g>
             <g
@@ -2044,7 +2111,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 384,192 L 384,2.4384000000000015"
+                d="M 384,192 L 384,32"
               />
             </g>
           </g>
@@ -2055,79 +2122,10 @@ exports[`DataChart xAxis dates 1`] = `
       className="c5"
     >
       <div
-        className="c1"
+        className="c6"
       >
-        May 2
+        5/1
       </div>
-      <div
-        className="c1"
-      >
-        May 5
-      </div>
-    </div>
-  </div>
-  <div
-    className="c1"
-  >
-    <div
-      className="c2"
-    >
-      <div
-        className="c3"
-      >
-        <svg
-          className="c4"
-          height={192}
-          preserveAspectRatio="none"
-          viewBox="-48 0 480 192"
-          width={384}
-        >
-          <g
-            fill="none"
-            stroke="#6FFFB0"
-            strokeLinecap="butt"
-            strokeLinejoin="miter"
-            strokeWidth={96}
-          >
-            <g
-              fill="none"
-            >
-              <title />
-              <path
-                d="M 0,192 L 0,181.33333333333334"
-              />
-            </g>
-            <g
-              fill="none"
-            >
-              <title />
-              <path
-                d="M 128,192 L 128,128"
-              />
-            </g>
-            <g
-              fill="none"
-            >
-              <title />
-              <path
-                d="M 256,192 L 256,74.66666666666667"
-              />
-            </g>
-            <g
-              fill="none"
-            >
-              <title />
-              <path
-                d="M 384,192 L 384,21.333333333333343"
-              />
-            </g>
-          </g>
-        </svg>
-      </div>
-    </div>
-    <div
-      className="c5"
-    >
       <div
         className="c6"
       >
@@ -2143,149 +2141,154 @@ exports[`DataChart xAxis dates 1`] = `
       >
         5/4
       </div>
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <svg
+          className="c4"
+          height={192}
+          preserveAspectRatio="none"
+          viewBox="-48 0 480 192"
+          width={384}
+        >
+          <g
+            fill="none"
+            stroke="#6FFFB0"
+            strokeLinecap="butt"
+            strokeLinejoin="miter"
+            strokeWidth={96}
+          >
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 0,192 L 0,192"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 128,192 L 128,131.04768"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 256,192 L 256,70.09536000000001"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 384,192 L 384,9.143040000000013"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div
+      className="c5"
+    >
+      <div
+        className="c1"
+      >
+        January
+      </div>
+      <div
+        className="c1"
+      >
+        April
+      </div>
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <svg
+          className="c4"
+          height={192}
+          preserveAspectRatio="none"
+          viewBox="-48 0 480 192"
+          width={384}
+        >
+          <g
+            fill="none"
+            stroke="#6FFFB0"
+            strokeLinecap="butt"
+            strokeLinejoin="miter"
+            strokeWidth={96}
+          >
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 0,192 L 0,192"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 128,192 L 128,138.66666666666669"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 256,192 L 256,85.33333333333334"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 384,192 L 384,32"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div
+      className="c5"
+    >
       <div
         className="c6"
       >
-        5/5
-      </div>
-    </div>
-  </div>
-  <div
-    className="c1"
-  >
-    <div
-      className="c2"
-    >
-      <div
-        className="c3"
-      >
-        <svg
-          className="c4"
-          height={192}
-          preserveAspectRatio="none"
-          viewBox="-48 0 480 192"
-          width={384}
-        >
-          <g
-            fill="none"
-            stroke="#6FFFB0"
-            strokeLinecap="butt"
-            strokeLinejoin="miter"
-            strokeWidth={96}
-          >
-            <g
-              fill="none"
-            >
-              <title />
-              <path
-                d="M 0,192 L 0,185.29536"
-              />
-            </g>
-            <g
-              fill="none"
-            >
-              <title />
-              <path
-                d="M 128,192 L 128,124.34304"
-              />
-            </g>
-            <g
-              fill="none"
-            >
-              <title />
-              <path
-                d="M 256,192 L 256,63.390720000000016"
-              />
-            </g>
-            <g
-              fill="none"
-            >
-              <title />
-              <path
-                d="M 384,192 L 384,2.4384000000000015"
-              />
-            </g>
-          </g>
-        </svg>
-      </div>
-    </div>
-    <div
-      className="c5"
-    >
-      <div
-        className="c1"
-      >
-        March
+        Jan
       </div>
       <div
-        className="c1"
+        className="c6"
       >
-        June
+        Feb
       </div>
-    </div>
-  </div>
-  <div
-    className="c1"
-  >
-    <div
-      className="c2"
-    >
-      <div
-        className="c3"
-      >
-        <svg
-          className="c4"
-          height={192}
-          preserveAspectRatio="none"
-          viewBox="-48 0 480 192"
-          width={384}
-        >
-          <g
-            fill="none"
-            stroke="#6FFFB0"
-            strokeLinecap="butt"
-            strokeLinejoin="miter"
-            strokeWidth={96}
-          >
-            <g
-              fill="none"
-            >
-              <title />
-              <path
-                d="M 0,192 L 0,181.33333333333334"
-              />
-            </g>
-            <g
-              fill="none"
-            >
-              <title />
-              <path
-                d="M 128,192 L 128,128"
-              />
-            </g>
-            <g
-              fill="none"
-            >
-              <title />
-              <path
-                d="M 256,192 L 256,74.66666666666667"
-              />
-            </g>
-            <g
-              fill="none"
-            >
-              <title />
-              <path
-                d="M 384,192 L 384,21.333333333333343"
-              />
-            </g>
-          </g>
-        </svg>
-      </div>
-    </div>
-    <div
-      className="c5"
-    >
       <div
         className="c6"
       >
@@ -2296,15 +2299,79 @@ exports[`DataChart xAxis dates 1`] = `
       >
         Apr
       </div>
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
       <div
-        className="c6"
+        className="c3"
       >
-        May
+        <svg
+          className="c4"
+          height={192}
+          preserveAspectRatio="none"
+          viewBox="-48 0 480 192"
+          width={384}
+        >
+          <g
+            fill="none"
+            stroke="#6FFFB0"
+            strokeLinecap="butt"
+            strokeLinejoin="miter"
+            strokeWidth={96}
+          >
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 0,192 L 0,192"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 128,192 L 128,131.04768"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 256,192 L 256,70.09536000000001"
+              />
+            </g>
+            <g
+              fill="none"
+            >
+              <title />
+              <path
+                d="M 384,192 L 384,9.143040000000013"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div
+      className="c5"
+    >
+      <div
+        className="c1"
+      >
+        2001
       </div>
       <div
-        className="c6"
+        className="c1"
       >
-        Jun
+        2004
       </div>
     </div>
   </div>
@@ -2336,7 +2403,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 0,192 L 0,185.29536"
+                d="M 0,192 L 0,192"
               />
             </g>
             <g
@@ -2344,7 +2411,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 128,192 L 128,124.34304"
+                d="M 128,192 L 128,138.66666666666669"
               />
             </g>
             <g
@@ -2352,7 +2419,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 256,192 L 256,63.390720000000016"
+                d="M 256,192 L 256,85.33333333333334"
               />
             </g>
             <g
@@ -2360,7 +2427,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 384,192 L 384,2.4384000000000015"
+                d="M 384,192 L 384,32"
               />
             </g>
           </g>
@@ -2371,79 +2438,15 @@ exports[`DataChart xAxis dates 1`] = `
       className="c5"
     >
       <div
-        className="c1"
+        className="c6"
       >
-        2003
+        2001
       </div>
       <div
-        className="c1"
+        className="c6"
       >
-        2006
+        2002
       </div>
-    </div>
-  </div>
-  <div
-    className="c1"
-  >
-    <div
-      className="c2"
-    >
-      <div
-        className="c3"
-      >
-        <svg
-          className="c4"
-          height={192}
-          preserveAspectRatio="none"
-          viewBox="-48 0 480 192"
-          width={384}
-        >
-          <g
-            fill="none"
-            stroke="#6FFFB0"
-            strokeLinecap="butt"
-            strokeLinejoin="miter"
-            strokeWidth={96}
-          >
-            <g
-              fill="none"
-            >
-              <title />
-              <path
-                d="M 0,192 L 0,181.33333333333334"
-              />
-            </g>
-            <g
-              fill="none"
-            >
-              <title />
-              <path
-                d="M 128,192 L 128,128"
-              />
-            </g>
-            <g
-              fill="none"
-            >
-              <title />
-              <path
-                d="M 256,192 L 256,74.66666666666667"
-              />
-            </g>
-            <g
-              fill="none"
-            >
-              <title />
-              <path
-                d="M 384,192 L 384,21.333333333333343"
-              />
-            </g>
-          </g>
-        </svg>
-      </div>
-    </div>
-    <div
-      className="c5"
-    >
       <div
         className="c6"
       >
@@ -2453,16 +2456,6 @@ exports[`DataChart xAxis dates 1`] = `
         className="c6"
       >
         2004
-      </div>
-      <div
-        className="c6"
-      >
-        2005
-      </div>
-      <div
-        className="c6"
-      >
-        2006
       </div>
     </div>
   </div>
@@ -2632,20 +2625,6 @@ exports[`DataChart yAxis 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding-top: 6px;
-    padding-bottom: 6px;
-  }
 }
 
 @media only screen and (max-width:768px) {
