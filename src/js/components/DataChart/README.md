@@ -275,7 +275,7 @@ string
 **pad**
 
 Spacing around the outer edge of
-    the drawing coordinate area for bars and points to overflow into. Defaults to `none`.
+    the drawing coordinate area for the graphic elements to overflow into. Defaults to `none`.
 
 ```
 none
@@ -437,7 +437,9 @@ boolean
 {
   guide: boolean,
   labels: number,
-  render: function
+  prefix: string,
+  render: function,
+  suffix: string
 }
 ```
   
