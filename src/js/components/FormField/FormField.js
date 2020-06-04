@@ -234,7 +234,6 @@ const FormField = forwardRef(
         contentProps.background = formFieldTheme.disabled.background;
       }
     }
-    contents = <Box {...contentProps}>{contents}</Box>;
 
     let borderColor;
 
@@ -284,7 +283,11 @@ const FormField = forwardRef(
             }
           : {};
       contents = (
-        <FormFieldContentBox overflow="hidden" {...innerProps}>
+        <FormFieldContentBox
+          overflow="hidden"
+          {...contentProps}
+          {...innerProps}
+        >
           {contents}
         </FormFieldContentBox>
       );
