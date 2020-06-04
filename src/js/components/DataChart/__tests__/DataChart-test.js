@@ -105,7 +105,7 @@ describe('DataChart', () => {
 
   test('xAxis dates', () => {
     const dateData = [];
-    for (let i = 0; i < 4; i += 1) {
+    for (let i = 2; i < 6; i += 1) {
       dateData.push({
         second: `2020-05-15T08:04:${((i % 12) + 1).toString().padStart(2, 0)}`,
         minute: `2020-05-15T08:${((i % 12) + 1).toString().padStart(2, 0)}:00`,
