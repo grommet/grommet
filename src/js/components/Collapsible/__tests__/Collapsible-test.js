@@ -30,7 +30,6 @@ describe('Collapsible', () => {
         <Collapsible open={false}>
           <Box background="dark-1">Box Body</Box>
         </Collapsible>
-
         <Collapsible open>
           <Box background="dark-1">Box Body</Box>
         </Collapsible>
