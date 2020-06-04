@@ -10,6 +10,7 @@ for (let i = 0; i < 8; i += 1) {
   data.push({
     date: `2020-${((i % 12) + 1).toString().padStart(2, 0)}-01`,
     percent: Math.abs(v * 100),
+    amount: i * 111111,
   });
 }
 

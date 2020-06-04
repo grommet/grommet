@@ -6,8 +6,8 @@ import { Grommet } from '../../Grommet';
 import { DataChart } from '..';
 
 const data = [
-  { a: 1, b: 'one' },
-  { a: 2, b: 'two' },
+  { a: 1, b: 'one', c: 111111 },
+  { a: 2, b: 'two', c: 222222 },
 ];
 
 describe('DataChart', () => {
@@ -25,7 +25,12 @@ describe('DataChart', () => {
     const component = renderer.create(
       <Grommet>
         {['xsmall', 'small', 'medium', 'large', 'xlarge'].map(thickness => (
-          <DataChart data={data} chart={{ key: 'a' }} thickness={thickness} />
+          <DataChart
+            key={thickness}
+            data={data}
+            chart={{ key: 'a' }}
+            thickness={thickness}
+          />
         ))}
       </Grommet>,
     );
@@ -37,7 +42,7 @@ describe('DataChart', () => {
     const component = renderer.create(
       <Grommet>
         {['small', 'medium', 'large'].map(gap => (
-          <DataChart data={data} chart={{ key: 'a' }} gap={gap} />
+          <DataChart key={gap} data={data} chart={{ key: 'a' }} gap={gap} />
         ))}
       </Grommet>,
     );
@@ -49,7 +54,7 @@ describe('DataChart', () => {
     const component = renderer.create(
       <Grommet>
         {['small', 'medium', 'large'].map(pad => (
-          <DataChart data={data} chart={{ key: 'a' }} pad={pad} />
+          <DataChart key={pad} data={data} chart={{ key: 'a' }} pad={pad} />
         ))}
       </Grommet>,
     );
@@ -68,8 +73,9 @@ describe('DataChart', () => {
           'xlarge',
           { width: 'fill' },
           { width: 'auto' },
-        ].map(size => (
-          <DataChart data={data} chart={{ key: 'a' }} size={size} />
+        ].map((size, i) => (
+          // eslint-disable-next-line react/no-array-index-key
+          <DataChart key={i} data={data} chart={{ key: 'a' }} size={size} />
         ))}
       </Grommet>,
     );
@@ -87,8 +93,9 @@ describe('DataChart', () => {
           { key: 'b' },
           { labels: 2 },
           { key: 'b', render: b => b },
-        ].map(xAxis => (
-          <DataChart data={data} chart={{ key: 'a' }} xAxis={xAxis} />
+        ].map((xAxis, i) => (
+          // eslint-disable-next-line react/no-array-index-key
+          <DataChart key={i} data={data} chart={{ key: 'a' }} xAxis={xAxis} />
         ))}
       </Grommet>,
     );
@@ -104,11 +111,26 @@ describe('DataChart', () => {
           false,
           { guide: true },
           { labels: 2 },
+          { labels: 5 },
           { render: v => v },
           { prefix: '$' },
           { suffix: '%' },
-        ].map(yAxis => (
-          <DataChart data={data} chart={{ key: 'a' }} yAxis={yAxis} />
+        ].map((yAxis, i) => (
+          // eslint-disable-next-line react/no-array-index-key
+          <DataChart key={i} data={data} chart={{ key: 'a' }} yAxis={yAxis} />
+        ))}
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('yAxis rounding', () => {
+    const component = renderer.create(
+      <Grommet>
+        {[true, { labels: 4 }].map((yAxis, i) => (
+          // eslint-disable-next-line react/no-array-index-key
+          <DataChart key={i} data={data} chart={{ key: 'c' }} yAxis={yAxis} />
         ))}
       </Grommet>,
     );

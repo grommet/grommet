@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
-import { Chart, calcs } from '../Chart';
+import { Chart, calcs, round } from '../Chart';
 import { Grid } from '../Grid';
 import { Stack } from '../Stack';
 
@@ -185,6 +185,19 @@ const DataChart = forwardRef(
 
     let yAxisElement;
     if (yAxis) {
+      let divideBy;
+      let unit;
+      if (!yAxis.render && !yAxis.suffix) {
+        // figure out how many digits to show
+        const maxValue = Math.max(...axis[1].map(v => Math.abs(v)));
+        if (maxValue > 10000000) {
+          divideBy = 1000000;
+          unit = 'M';
+        } else if (maxValue > 10000) {
+          divideBy = 1000;
+          unit = 'K';
+        }
+      }
       yAxisElement = (
         <Box gridArea="yAxis" justify="between" flex>
           {axis[1].map((axisValue, i) => {
@@ -192,8 +205,12 @@ const DataChart = forwardRef(
             if (yAxis.render) content = yAxis.render(axisValue, i);
             else {
               content = axisValue;
+              if (divideBy) {
+                content = round(content / divideBy, 0);
+              }
               if (yAxis.prefix) content = `${yAxis.prefix}${content}`;
-              if (yAxis.suffix) content = `${content}${yAxis.suffix}`;
+              if (yAxis.suffix || unit)
+                content = `${content}${yAxis.suffix || unit}`;
             }
             return (
               <Box key={i} align="end">
