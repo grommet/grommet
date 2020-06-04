@@ -21,6 +21,10 @@ const FullGlobalStyle = createGlobalStyle`
   body { margin: 0; }
 `;
 
+const GlobalStyle = createGlobalStyle`
+  ${props => props.theme.mnet.global}
+`;
+
 class MnetUIBase extends Component {
   static displayName = 'MnetUIBase';
 
@@ -146,6 +150,7 @@ class MnetUIBase extends Component {
               {children}
             </StyledMnetUIBase>
             {full && <FullGlobalStyle />}
+            <GlobalStyle />
           </ContainerTargetContext.Provider>
         </ResponsiveContext.Provider>
       </ThemeContext.Provider>
