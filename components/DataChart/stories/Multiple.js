@@ -54,11 +54,12 @@ var MultipleDataChart = function MultipleDataChart() {
     }],
     xAxis: {
       labels: 2,
-      render: function render(i) {
+      key: 'date',
+      render: function render(date) {
         return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
           pad: "xsmall",
           align: "start"
-        }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, new Date(data[i].date).toLocaleDateString('en-US', {
+        }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, new Date(date).toLocaleDateString('en-US', {
           month: 'short',
           day: 'numeric'
         })));

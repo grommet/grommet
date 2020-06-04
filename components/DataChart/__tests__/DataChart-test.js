@@ -1,6 +1,6 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 
 var _reactTestRenderer = _interopRequireDefault(require("react-test-renderer"));
 
@@ -12,12 +12,18 @@ var _ = require("..");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
 var data = [{
   a: 1,
-  b: 'one'
+  b: 'one',
+  c: 111111
 }, {
   a: 2,
-  b: 'two'
+  b: 'two',
+  c: 222222
 }];
 describe('DataChart', function () {
   test('default', function () {
@@ -34,6 +40,7 @@ describe('DataChart', function () {
   test('thickness', function () {
     var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, ['xsmall', 'small', 'medium', 'large', 'xlarge'].map(function (thickness) {
       return /*#__PURE__*/_react["default"].createElement(_.DataChart, {
+        key: thickness,
         data: data,
         chart: {
           key: 'a'
@@ -48,6 +55,7 @@ describe('DataChart', function () {
   test('gap', function () {
     var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, ['small', 'medium', 'large'].map(function (gap) {
       return /*#__PURE__*/_react["default"].createElement(_.DataChart, {
+        key: gap,
         data: data,
         chart: {
           key: 'a'
@@ -62,6 +70,7 @@ describe('DataChart', function () {
   test('pad', function () {
     var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, ['small', 'medium', 'large'].map(function (pad) {
       return /*#__PURE__*/_react["default"].createElement(_.DataChart, {
+        key: pad,
         data: data,
         chart: {
           key: 'a'
@@ -78,14 +87,19 @@ describe('DataChart', function () {
       width: 'fill'
     }, {
       width: 'auto'
-    }].map(function (size) {
-      return /*#__PURE__*/_react["default"].createElement(_.DataChart, {
-        data: data,
-        chart: {
-          key: 'a'
-        },
-        size: size
-      });
+    }].map(function (size, i) {
+      return (
+        /*#__PURE__*/
+        // eslint-disable-next-line react/no-array-index-key
+        _react["default"].createElement(_.DataChart, {
+          key: i,
+          data: data,
+          chart: {
+            key: 'a'
+          },
+          size: size
+        })
+      );
     })));
 
     var tree = component.toJSON();
@@ -99,17 +113,66 @@ describe('DataChart', function () {
     }, {
       labels: 2
     }, {
-      render: function render(i) {
-        return data[i].b;
+      key: 'b',
+      render: function render(b) {
+        return b;
       }
-    }].map(function (xAxis) {
-      return /*#__PURE__*/_react["default"].createElement(_.DataChart, {
-        data: data,
-        chart: {
-          key: 'a'
-        },
-        xAxis: xAxis
+    }].map(function (xAxis, i) {
+      return (
+        /*#__PURE__*/
+        // eslint-disable-next-line react/no-array-index-key
+        _react["default"].createElement(_.DataChart, {
+          key: i,
+          data: data,
+          chart: {
+            key: 'a'
+          },
+          xAxis: xAxis
+        })
+      );
+    })));
+
+    var tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  test('xAxis dates', function () {
+    var dateData = [];
+
+    for (var i = 0; i < 4; i += 1) {
+      var digits = (i % 12 + 1).toString().padStart(2, 0);
+      dateData.push({
+        second: "2020-05-15T08:04:" + digits,
+        minute: "2020-05-15T08:" + digits + ":00",
+        hour: "2020-05-15T" + digits + ":00:00",
+        day: "2020-05-" + digits + "T08:00:00",
+        month: "2020-" + digits + "-15",
+        year: "20" + digits + "-01-15",
+        percent: Math.abs(i * 10),
+        amount: i * 111111
       });
+    }
+
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, ['second', 'minute', 'hour', 'day', 'month', 'year'].map(function (key) {
+      return /*#__PURE__*/_react["default"].createElement(_react.Fragment, {
+        key: key
+      }, /*#__PURE__*/_react["default"].createElement(_.DataChart, {
+        data: dateData,
+        chart: {
+          key: 'amount'
+        },
+        xAxis: {
+          key: key,
+          labels: 2
+        }
+      }), /*#__PURE__*/_react["default"].createElement(_.DataChart, {
+        data: dateData,
+        chart: {
+          key: 'percent'
+        },
+        xAxis: {
+          key: key
+        }
+      }));
     })));
 
     var tree = component.toJSON();
@@ -121,17 +184,49 @@ describe('DataChart', function () {
     }, {
       labels: 2
     }, {
+      labels: 5
+    }, {
       render: function render(v) {
         return v;
       }
-    }].map(function (yAxis) {
-      return /*#__PURE__*/_react["default"].createElement(_.DataChart, {
-        data: data,
-        chart: {
-          key: 'a'
-        },
-        yAxis: yAxis
-      });
+    }, {
+      prefix: '$'
+    }, {
+      suffix: '%'
+    }].map(function (yAxis, i) {
+      return (
+        /*#__PURE__*/
+        // eslint-disable-next-line react/no-array-index-key
+        _react["default"].createElement(_.DataChart, {
+          key: i,
+          data: data,
+          chart: {
+            key: 'a'
+          },
+          yAxis: yAxis
+        })
+      );
+    })));
+
+    var tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  test('yAxis rounding', function () {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, [true, {
+      labels: 4
+    }].map(function (yAxis, i) {
+      return (
+        /*#__PURE__*/
+        // eslint-disable-next-line react/no-array-index-key
+        _react["default"].createElement(_.DataChart, {
+          key: i,
+          data: data,
+          chart: {
+            key: 'c'
+          },
+          yAxis: yAxis
+        })
+      );
     })));
 
     var tree = component.toJSON();

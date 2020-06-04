@@ -46,11 +46,12 @@ var MultipleDataChart = function MultipleDataChart() {
     }],
     xAxis: {
       labels: 2,
-      render: function render(i) {
+      key: 'date',
+      render: function render(date) {
         return /*#__PURE__*/React.createElement(Box, {
           pad: "xsmall",
           align: "start"
-        }, /*#__PURE__*/React.createElement(Text, null, new Date(data[i].date).toLocaleDateString('en-US', {
+        }, /*#__PURE__*/React.createElement(Text, null, new Date(date).toLocaleDateString('en-US', {
           month: 'short',
           day: 'numeric'
         })));

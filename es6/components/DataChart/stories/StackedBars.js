@@ -32,12 +32,13 @@ var Example = function Example() {
       type: 'bar'
     }],
     xAxis: {
-      render: function render(i) {
+      key: 'date',
+      render: function render(date) {
         return /*#__PURE__*/React.createElement(Text, {
           margin: {
             horizontal: 'xsmall'
           }
-        }, new Date(data[Math.floor(i)].date).toLocaleDateString('en-US', {
+        }, new Date(date).toLocaleDateString('en-US', {
           month: 'numeric',
           day: 'numeric'
         }));

@@ -27,8 +27,63 @@ var halfPad = {
   xlarge: 'large',
   large: 'medium',
   medium: 'small',
-  small: 'xsmall'
+  small: 'xsmall',
+  xsmall: 'xxsmall'
 };
+var doublePad = {
+  large: 'xlarge',
+  medium: 'large',
+  small: 'medium',
+  xsmall: 'small',
+  xxsmall: 'xsmall'
+};
+
+var checkDateFormat = function checkDateFormat(firstValue, lastValue, full) {
+  var dateFormat;
+  var startDate = new Date(firstValue);
+  var endDate = new Date(lastValue);
+
+  if ( // check for valid dates, this is the fastest way
+  !Number.isNaN(startDate.getTime()) && !Number.isNaN(endDate.getTime())) {
+    var delta = Math.abs(endDate - startDate);
+    var options;
+    if (delta < 60000) // less than 1 minute
+      options = full ? {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        day: undefined
+      } : {
+        second: '2-digit',
+        day: undefined
+      };else if (delta < 3600000) // less than 1 hour
+      options = full ? {
+        hour: 'numeric',
+        minute: '2-digit',
+        day: undefined
+      } : {
+        minute: '2-digit',
+        day: undefined
+      };else if (delta < 86400000) // less than 1 day
+      options = {
+        hour: 'numeric'
+      };else if (delta < 2592000000) // less than 30 days
+      options = {
+        month: full ? 'short' : 'numeric',
+        day: 'numeric'
+      };else if (delta < 31557600000) // less than 1 year
+      options = {
+        month: full ? 'long' : 'short'
+      }; // 1 year or more
+    else options = {
+        year: 'numeric'
+      };
+    if (options) dateFormat = new Intl.DateTimeFormat(undefined, options).format;
+  }
+
+  return dateFormat;
+};
+
 var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       chart = _ref.chart,
@@ -148,10 +203,14 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       return type && type !== 'bar';
     }).length > 0;
     if (allSides) return padSize;
+    if (yAxis) return {
+      horizontal: padSize,
+      vertical: halfPad.medium
+    };
     return {
       horizontal: padSize
     };
-  }, [charts, padProp, thickness]);
+  }, [charts, padProp, thickness, yAxis]);
   var xGuide = (0, _react.useMemo)(function () {
     return axis[0].map(function (_, i) {
       if (xAxis && xAxis.guide) {
@@ -190,6 +249,15 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
     if (thickness && axis[0].length === numValues) {
       basis = theme.global.edgeSize[thickness] || thickness;
+    } // If there is no custom renderer, there is a key, and the key value
+    // looks like a Date, render it as a date, scaled based on the range
+    // of values
+
+
+    var dateFormat;
+
+    if (!xAxis.render && xAxis.key && axis[0].length > 1) {
+      dateFormat = checkDateFormat(data[Math.floor(axis[0][0])][xAxis.key], data[Math.floor(axis[0][axis[0].length - 1])][xAxis.key], axis[0].length <= 2);
     }
 
     xAxisElement = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
@@ -197,9 +265,11 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       gridArea: "xAxis",
       direction: "row",
       justify: "between"
-    }, axis[0].map(function (a, i) {
-      var content;
-      if (xAxis.render) content = xAxis.render(a, i);else if (xAxis.key) content = data[i][xAxis.key];else content = a;
+    }, axis[0].map(function (dataIndex, i) {
+      var content = xAxis.key ? data[Math.floor(dataIndex)][xAxis.key] : dataIndex;
+      if (xAxis.render) content = xAxis.render(content, data, Math.floor(dataIndex), i);else if (dateFormat) {
+        content = dateFormat(new Date(content));
+      }
       return /*#__PURE__*/_react["default"].createElement(_Box.Box, {
         key: i,
         basis: basis,
@@ -211,16 +281,54 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var yAxisElement;
 
   if (yAxis) {
+    var divideBy;
+    var unit;
+
+    if (!yAxis.render && !yAxis.suffix) {
+      // figure out how many digits to show
+      var maxValue = Math.max.apply(Math, axis[1].map(function (v) {
+        return Math.abs(v);
+      }));
+
+      if (maxValue > 10000000) {
+        divideBy = 1000000;
+        unit = 'M';
+      } else if (maxValue > 10000) {
+        divideBy = 1000;
+        unit = 'K';
+      }
+    } // Set basis to match double the vertical pad, so we can align the
+    // text with the guides
+
+
+    var _basis;
+
+    if (axis[0].length === numValues) {
+      var edgeSize = doublePad[pad.vertical || pad];
+      _basis = theme.global.edgeSize[edgeSize] || edgeSize;
+    }
+
     yAxisElement = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       gridArea: "yAxis",
       justify: "between",
       flex: true
-    }, axis[1].map(function (a, i) {
+    }, axis[1].map(function (axisValue, i) {
       var content;
-      if (yAxis.render) content = yAxis.render(a, i);else content = a;
+      if (yAxis.render) content = yAxis.render(axisValue, i);else {
+        content = axisValue;
+
+        if (divideBy) {
+          content = (0, _Chart.round)(content / divideBy, 0);
+        }
+
+        if (yAxis.prefix) content = "" + yAxis.prefix + content;
+        if (yAxis.suffix || unit) content = "" + content + (yAxis.suffix || unit);
+      }
       return /*#__PURE__*/_react["default"].createElement(_Box.Box, {
         key: i,
-        align: "end"
+        align: "end",
+        basis: _basis,
+        justify: _basis ? 'center' : undefined
       }, content);
     }));
   }
@@ -240,7 +348,8 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     fill: true,
     direction: "row",
     justify: "between",
-    pad: pad
+    pad: pad,
+    responsive: false
   }, xGuide.map(function (_, i) {
     return /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       key: i,
@@ -249,7 +358,8 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   })), yAxis && yAxis.guide && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     fill: true,
     justify: "between",
-    pad: pad
+    pad: pad,
+    responsive: false
   }, yGuide.map(function (_, i) {
     return /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       key: i,

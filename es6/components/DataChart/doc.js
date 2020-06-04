@@ -33,7 +33,7 @@ export var doc = function doc(DataChart) {
     chart: PropTypes.oneOfType([chartType, PropTypes.arrayOf(chartType)]).description("Chart properties indicating how to visualize the data.\n    'key' indicates which property of the data objects to use. 'keys' indicates\n    that multiple properties should be used for a stacked bar chart. DataChart\n    uses the key/keys to build the right 'values' for the underlying Chart.\n    All of the other properties in 'chart' are passed through to the Chart."),
     data: PropTypes.arrayOf(PropTypes.shape({})).description('the data set'),
     gap: PropTypes.oneOfType([PropTypes.oneOf(['none', 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string]).description("The spacing between the axes and the Charts."),
-    pad: padPropType.description("Spacing around the outer edge of\n    the drawing coordinate area for bars and points to overflow into."),
+    pad: padPropType.description("Spacing around the outer edge of\n    the drawing coordinate area for the graphic elements to overflow into."),
     size: PropTypes.oneOfType([PropTypes.oneOf(['fill']), PropTypes.shape({
       height: PropTypes.oneOfType([PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'fill']), PropTypes.string]),
       width: PropTypes.oneOfType([PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'fill', 'auto']), PropTypes.string])
@@ -47,15 +47,18 @@ export var doc = function doc(DataChart) {
       key: PropTypes.string,
       labels: PropTypes.number,
       // default undefined, all data points
-      render: PropTypes.func // (dataIndex, axisIndex) => element
-
+      // (value, data, dataIndex, axisIndex) => element
+      // value is only defined when a 'key' is provided.
+      render: PropTypes.func
     })]).description("x-axis configuration. 'guide' specifies that vertical\n    guide lines should be drawn under the Chart, one per label.\n    'key' specifies what property in the 'data' should be used as\n    any label content. 'labels' specifies how many labels to show.\n    'render' allows for custom rendering of the labels. It will be\n    called with the current data index and axis index and should return\n    the element to render: (dataIndex, axisIndex) => element."),
     yAxis: PropTypes.oneOfType([PropTypes.bool, PropTypes.shape({
       guide: PropTypes.bool,
       labels: PropTypes.number,
       // default 2, top and bottom
-      render: PropTypes.func // (value, axisIndex) => element
-
+      prefix: PropTypes.string,
+      render: PropTypes.func,
+      // (value, axisIndex) => element
+      suffix: PropTypes.string
     })]).description("y-axis configuration. 'guide' specifies that horizontal\n    guide lines should be drawn under the Chart, one per label.\n    'labels' specifies how many labels to show.\n    'render' allows for custom rendering of the labels. It will be\n    called with the value and axis index and should return\n    the element to render: (value, axisIndex) => element")
   });
   return DocumentedDataChart;

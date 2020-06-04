@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.calcs = void 0;
+exports.calcs = exports.round = void 0;
 
 var _utils = require("./utils");
 
@@ -12,6 +12,12 @@ var thicknessPad = {
   small: 'xsmall',
   xsmall: 'xxsmall'
 };
+
+var round = function round(value, decimals) {
+  return Number(Math.round(value + "e" + decimals) + "e-" + decimals);
+};
+
+exports.round = round;
 
 var calcs = function calcs(values, options) {
   if (options === void 0) {
@@ -87,14 +93,16 @@ var calcs = function calcs(values, options) {
   }
 
   var bounds = calcValues.length ? [[calcValues[0].value[0], calcValues[calcValues.length - 1].value[0]], [min, max]] : [[], []];
-  var dimensions = [bounds[0][1] - bounds[0][0], bounds[1][1] - bounds[1][0]]; // Calculate x and y axis values across the specfied number of steps.
+  var dimensions = [round(bounds[0][1] - bounds[0][0], 2), round(bounds[1][1] - bounds[1][0], 2)]; // Calculate x and y axis values across the specfied number of steps.
 
   var yAxis = [];
-  var y = bounds[1][1];
-  var yStepInterval = dimensions[1] / steps[1];
+  var y = bounds[1][1]; // To deal with javascript math limitations, round the step with 4 decimal
+  // places and then push the values with 2 decimal places
 
-  while (y >= bounds[1][0]) {
-    yAxis.push(y);
+  var yStepInterval = round(dimensions[1] / steps[1], 4);
+
+  while (round(y, 2) >= bounds[1][0]) {
+    yAxis.push(round(y, 2));
     y -= yStepInterval;
   }
 

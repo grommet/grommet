@@ -1,14 +1,27 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Box, DataChart, Grommet, Text } from 'grommet';
+import { Box, DataChart, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 var data = [];
 
 for (var i = 0; i < 8; i += 1) {
   var v = Math.sin(i / 2.0);
+  var digits = (i % 12 + 1).toString().padStart(2, 0);
   data.push({
-    date: "2020-" + (i % 12 + 1).toString().padStart(2, 0) + "-01",
-    percent: Math.abs(v * 100)
+    // explore variations in date format by changing the xAxis key to
+    // the timer period you are interested in
+    second: "2020-05-15T08:04:" + digits,
+    minute: "2020-05-15T08:" + digits + ":00",
+    hour: "2020-05-15T" + digits + ":00:00",
+    day: "2020-05-" + digits,
+    month: "2020-" + digits + "-15",
+    year: "20" + digits + "-01-15",
+    // explore variations in yAxis value handling by changing the chart key
+    // to one of these
+    percent: Math.abs(v * 100),
+    // make yAxis suffix '%'
+    amount: i * 111111 // make yAxis prefix '$'
+
   });
 }
 
@@ -22,24 +35,17 @@ var AxesDataChart = function AxesDataChart() {
   }, /*#__PURE__*/React.createElement(DataChart, {
     data: data,
     chart: {
-      key: 'percent'
+      key: 'percent',
+      type: 'bar'
     },
     xAxis: {
-      key: 'date',
-      guide: true,
-      render: function render(i) {
-        return /*#__PURE__*/React.createElement(Text, {
-          margin: {
-            horizontal: 'small'
-          }
-        }, new Date(data[i].date).toLocaleDateString('en-US', {
-          month: 'narrow'
-        }));
-      }
+      key: 'day',
+      guide: true
     },
     yAxis: {
       guide: true,
-      labels: 3
+      labels: 3,
+      suffix: '%'
     }
   })));
 };
