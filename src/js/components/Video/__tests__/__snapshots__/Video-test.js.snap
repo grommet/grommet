@@ -279,6 +279,12 @@ exports[`Video autoPlay renders 1`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .c17 {
+    padding: 6px;
+  }
+}
+
 <div
   className="c0"
 >
@@ -788,6 +794,12 @@ exports[`Video controls renders 1`] = `
   .c14 {
     padding-left: 6px;
     padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c17 {
+    padding: 6px;
   }
 }
 
@@ -1365,6 +1377,12 @@ exports[`Video fit renders 1`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .c17 {
+    padding: 6px;
+  }
+}
+
 <div
   className="c0"
 >
@@ -1922,6 +1940,12 @@ exports[`Video loop renders 1`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .c17 {
+    padding: 6px;
+  }
+}
+
 <div
   className="c0"
 >
@@ -2343,6 +2367,12 @@ exports[`Video mute renders 1`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .c17 {
+    padding: 6px;
+  }
+}
+
 <div
   className="c0"
 >
@@ -2761,6 +2791,12 @@ exports[`Video renders 1`] = `
   .c14 {
     padding-left: 6px;
     padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c17 {
+    padding: 6px;
   }
 }
 
