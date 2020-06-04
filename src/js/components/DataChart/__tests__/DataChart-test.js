@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
@@ -96,6 +96,42 @@ describe('DataChart', () => {
         ].map((xAxis, i) => (
           // eslint-disable-next-line react/no-array-index-key
           <DataChart key={i} data={data} chart={{ key: 'a' }} xAxis={xAxis} />
+        ))}
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('xAxis dates', () => {
+    const dateData = [];
+    for (let i = 0; i < 4; i += 1) {
+      dateData.push({
+        second: `2020-05-15T08:04:${((i % 12) + 1).toString().padStart(2, 0)}`,
+        minute: `2020-05-15T08:${((i % 12) + 1).toString().padStart(2, 0)}:00`,
+        hour: `2020-05-15T${((i % 12) + 1).toString().padStart(2, 0)}:00:00`,
+        day: `2020-05-${((i % 12) + 1).toString().padStart(2, 0)}`,
+        month: `2020-${((i % 12) + 1).toString().padStart(2, 0)}-15`,
+        year: `20${((i % 12) + 1).toString().padStart(2, 0)}-01-15`,
+        percent: Math.abs(i * 10),
+        amount: i * 111111,
+      });
+    }
+    const component = renderer.create(
+      <Grommet>
+        {['second', 'minute', 'hour', 'day', 'month', 'year'].map(key => (
+          <Fragment key={key}>
+            <DataChart
+              data={dateData}
+              chart={{ key: 'amount' }}
+              xAxis={{ key, labels: 2 }}
+            />
+            <DataChart
+              data={dateData}
+              chart={{ key: 'percent' }}
+              xAxis={{ key }}
+            />
+          </Fragment>
         ))}
       </Grommet>,
     );

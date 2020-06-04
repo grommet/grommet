@@ -165,6 +165,59 @@ const DataChart = forwardRef(
       if (thickness && axis[0].length === numValues) {
         basis = theme.global.edgeSize[thickness] || thickness;
       }
+
+      // If there is no custom renderer, there is a key, and the key value
+      // looks like a Date, render it as a date, scaled based on the range
+      // of values
+      let dateFormat;
+      if (!xAxis.render && xAxis.key && axis[0].length > 1) {
+        const startDate = new Date(data[Math.floor(axis[0][0])][xAxis.key]);
+        const endDate = new Date(
+          data[Math.floor(axis[0][axis[0].length - 1])][xAxis.key],
+        );
+        if (
+          // check for valid dates, this is the fastest way
+          !Number.isNaN(startDate.getTime()) &&
+          !Number.isNaN(endDate.getTime())
+        ) {
+          const delta = Math.abs(endDate - startDate);
+          let options;
+          if (delta < 60000)
+            // less than 1 minute
+            options =
+              axis[0].length <= 2
+                ? {
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit',
+                    day: undefined,
+                  }
+                : { second: '2-digit', day: undefined };
+          else if (delta < 3600000)
+            // less than 1 hour
+            options =
+              axis[0].length <= 2
+                ? { hour: 'numeric', minute: '2-digit', day: undefined }
+                : { minute: '2-digit', day: undefined };
+          else if (delta < 86400000)
+            // less than 1 day
+            options = { hour: 'numeric' };
+          else if (delta < 2592000000)
+            // less than 30 days
+            options = {
+              month: axis[0].length <= 2 ? 'short' : 'numeric',
+              day: 'numeric',
+            };
+          else if (delta < 31557600000)
+            // less than 1 year
+            options = { month: axis[0].length <= 2 ? 'long' : 'short' };
+          // 1 year or more
+          else options = { year: 'numeric' };
+          if (options)
+            dateFormat = new Intl.DateTimeFormat(undefined, options).format;
+        }
+      }
+
       xAxisElement = (
         <Box ref={xRef} gridArea="xAxis" direction="row" justify="between">
           {axis[0].map((dataIndex, i) => {
@@ -173,6 +226,10 @@ const DataChart = forwardRef(
               : dataIndex;
             if (xAxis.render)
               content = xAxis.render(content, data, Math.floor(dataIndex), i);
+            else if (dateFormat) {
+              if (xAxis.key === 'b') console.log('!!!!', xAxis.key, content);
+              content = dateFormat(new Date(content));
+            }
             return (
               <Box key={i} basis={basis} align={basis ? 'center' : undefined}>
                 {content}
