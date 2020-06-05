@@ -22,132 +22,93 @@ var defaultMessages = {
 var defaultValue = {};
 var defaultErrors = {};
 var defaultInfos = {};
+var defaultTouched = {}; // validations is an array from Object.entries()
 
-var updateErrors = function updateErrors(nextErrors, name, error) {
-  // we disable no-param-reassing so we can use this as a utility function
-  // to update nextErrors, to avoid code duplication
+var validate = function validate(validations, value, omitValid) {
+  var nextErrors = {};
+  var nextInfos = {};
+  validations.forEach(function (_ref) {
+    var name = _ref[0],
+        validation = _ref[1];
 
-  /* eslint-disable no-param-reassign */
-  var hasStatusError = typeof error === 'object' && error.status === 'error'; // typeof error === 'object' is implied for both cases of error with
-  // a status message and for an error object that is a react node
+    if (!omitValid) {
+      nextErrors[name] = undefined;
+      nextInfos[name] = undefined;
+    }
 
-  if (typeof error === 'object' && !error.status || hasStatusError || typeof error === 'string') {
-    nextErrors[name] = hasStatusError ? error.message : error;
-  } else {
-    delete nextErrors[name];
-  }
-  /* eslint-enable no-param-reassign */
+    var result = validation(value[name], value); // typeof error === 'object' is implied for both cases of error with
+    // a status message and for an error object that is a react node
 
+    if (typeof result === 'object') {
+      if (result.status === 'info') {
+        nextInfos[name] = result.message;
+      } else {
+        nextErrors[name] = result.message || result; // could be a node
+      }
+    } else if (typeof result === 'string') {
+      nextErrors[name] = result;
+    }
+  });
+  return [nextErrors, nextInfos];
 };
 
-var updateInfos = function updateInfos(nextInfos, name, error) {
-  /* eslint-disable no-param-reassign */
-  if (typeof error === 'object' && error.status === 'info') {
-    nextInfos[name] = error.message;
-  } else {
-    delete nextInfos[name];
-  }
-  /* eslint-enable no-param-reassign */
-
-};
-
-var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
-  var children = _ref.children,
-      _ref$errors = _ref.errors,
-      errorsProp = _ref$errors === void 0 ? defaultErrors : _ref$errors,
-      _ref$infos = _ref.infos,
-      infosProp = _ref$infos === void 0 ? defaultInfos : _ref$infos,
-      _ref$messages = _ref.messages,
-      messagesProp = _ref$messages === void 0 ? defaultMessages : _ref$messages,
-      onChange = _ref.onChange,
-      _onReset = _ref.onReset,
-      _onSubmit = _ref.onSubmit,
-      _ref$validate = _ref.validate,
-      validate = _ref$validate === void 0 ? 'submit' : _ref$validate,
-      valueProp = _ref.value,
-      rest = _objectWithoutPropertiesLoose(_ref, ["children", "errors", "infos", "messages", "onChange", "onReset", "onSubmit", "validate", "value"]);
+var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
+  var children = _ref2.children,
+      _ref2$errors = _ref2.errors,
+      errorsProp = _ref2$errors === void 0 ? defaultErrors : _ref2$errors,
+      _ref2$infos = _ref2.infos,
+      infosProp = _ref2$infos === void 0 ? defaultInfos : _ref2$infos,
+      _ref2$messages = _ref2.messages,
+      messages = _ref2$messages === void 0 ? defaultMessages : _ref2$messages,
+      onChange = _ref2.onChange,
+      _onReset = _ref2.onReset,
+      _onSubmit = _ref2.onSubmit,
+      _ref2$validate = _ref2.validate,
+      validateOn = _ref2$validate === void 0 ? 'submit' : _ref2$validate,
+      valueProp = _ref2.value,
+      rest = _objectWithoutPropertiesLoose(_ref2, ["children", "errors", "infos", "messages", "onChange", "onReset", "onSubmit", "validate", "value"]);
 
   var _useState = (0, _react.useState)(valueProp || defaultValue),
-      value = _useState[0],
-      setValue = _useState[1];
+      valueState = _useState[0],
+      setValueState = _useState[1];
+
+  var value = (0, _react.useMemo)(function () {
+    return valueProp || valueState;
+  }, [valueProp, valueState]);
+
+  var _useState2 = (0, _react.useState)(errorsProp),
+      errors = _useState2[0],
+      setErrors = _useState2[1];
 
   (0, _react.useEffect)(function () {
-    if (valueProp !== undefined && valueProp !== value) {
-      setValue(valueProp);
-    }
-  }, [value, valueProp]);
-
-  var _useState2 = (0, _react.useState)(messagesProp),
-      messages = _useState2[0],
-      setMessages = _useState2[1];
-
-  (0, _react.useEffect)(function () {
-    return setMessages(messagesProp);
-  }, [messagesProp]);
-
-  var _useState3 = (0, _react.useState)(errorsProp || {}),
-      errors = _useState3[0],
-      setErrors = _useState3[1];
-
-  (0, _react.useEffect)(function () {
-    return setErrors(errorsProp || {});
+    return setErrors(errorsProp);
   }, [errorsProp]);
 
-  var _useState4 = (0, _react.useState)(infosProp || {}),
-      infos = _useState4[0],
-      setInfos = _useState4[1];
+  var _useState3 = (0, _react.useState)(infosProp),
+      infos = _useState3[0],
+      setInfos = _useState3[1];
 
   (0, _react.useEffect)(function () {
-    return setInfos(infosProp || {});
+    return setInfos(infosProp);
   }, [infosProp]);
 
-  var _useState5 = (0, _react.useState)({}),
-      touched = _useState5[0],
-      setTouched = _useState5[1];
+  var _useState4 = (0, _react.useState)(defaultTouched),
+      touched = _useState4[0],
+      setTouched = _useState4[1];
 
-  var validations = (0, _react.useRef)({});
-  (0, _react.useEffect)(function () {}, [value, errors, infos]);
-  var update = (0, _react.useCallback)(function (name, data, initial) {
-    setValue(function (prevValue) {
-      var nextValue = _extends({}, prevValue);
+  var validations = (0, _react.useRef)({}); // clear any errors when value changes
 
-      nextValue[name] = data; // re-run any validations, in case the validation
-      // is checking across fields
+  (0, _react.useEffect)(function () {
+    setErrors(function (prevErrors) {
+      var _validate = validate(Object.entries(validations.current).filter(function (_ref3) {
+        var n = _ref3[0];
+        return prevErrors[n];
+      }), value),
+          nextErrors = _validate[0];
 
-      setErrors(function (prevErrors) {
-        if (prevErrors[name] && validations.current[name]) {
-          var nextErrors = _extends({}, prevErrors);
-
-          var nextError = validations.current[name](data, nextValue);
-          updateErrors(nextErrors, name, nextError);
-          return nextErrors;
-        }
-
-        return prevErrors;
-      });
-      setInfos(function (prevInfos) {
-        var nextInfos = _extends({}, prevInfos); // re-run any validations that have infos, in case the validation
-        // is checking across fields
-
-
-        Object.keys(nextInfos).forEach(function (infoName) {
-          if (validations.current[infoName]) {
-            var nextInfo = validations.current[infoName](data, nextValue);
-            updateInfos(nextInfos, infoName, nextInfo);
-          }
-        });
-        return nextInfos;
-      });
-      if (!initial && onChange) onChange(nextValue);
-      return nextValue;
+      return _extends({}, prevErrors, nextErrors);
     });
-    if (!initial) setTouched(function (prevTouched) {
-      var nextTouched = _extends({}, prevTouched);
-
-      nextTouched[name] = true;
-      return nextTouched;
-    });
-  }, [onChange]); // There are three basic models of handling form input value state:
+  }, [touched, value]); // There are three basic patterns of handling form input value state:
   //
   // 1 - form controlled
   //
@@ -180,27 +141,137 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   // they can have access to it.
   //
 
-  var useFormContext = function useFormContext(name, componentValue, initialValue) {
-    var _useState6 = (0, _react.useState)(initialValue),
-        contextValue = _useState6[0],
-        setContextValue = _useState6[1];
+  var useFormInput = function useFormInput(name, componentValue, initialValue) {
+    var _useState5 = (0, _react.useState)(initialValue),
+        inputValue = _useState5[0],
+        setInputValue = _useState5[1];
 
-    var formValue = name ? value[name] : undefined;
+    var formValue = name ? value[name] : undefined; // This effect is for pattern #2, where the controlled input
+    // component is driving the value via componentValue.
+
     (0, _react.useEffect)(function () {
-      if (name && componentValue !== undefined && componentValue !== formValue) // input drives
-        update(name, componentValue, formValue === undefined);
-    }, [componentValue, contextValue, formValue, initialValue, name]);
+      if (name && // we have somewhere to put this
+      componentValue !== undefined && // input driving
+      componentValue !== formValue // don't already have it
+      ) {
+          setValueState(function (prevValue) {
+            var nextValue = _extends({}, prevValue);
+
+            nextValue[name] = componentValue;
+            return nextValue;
+          }); // don't onChange on programmatic changes
+        }
+    }, [componentValue, formValue, name]);
     var useValue;
-    if (componentValue !== undefined) // input drives
-      useValue = componentValue;else if (valueProp && name && formValue !== undefined) // form drives
-      useValue = formValue;else useValue = contextValue;
-    return [useValue, function (nextValue) {
-      // only set if the input isn't driving
-      if (componentValue === undefined) {
-        if (name) update(name, nextValue);
-        if (initialValue !== undefined) setContextValue(nextValue);
+    if (componentValue !== undefined) // input component drives, pattern #2
+      useValue = componentValue;else if (valueProp && name && formValue !== undefined) // form drives, pattern #1
+      useValue = formValue;else useValue = inputValue;
+    return [useValue, function (nextComponentValue) {
+      if (name) {
+        // we have somewhere to put this
+        if (!touched[name]) {
+          // don't update if not needed
+          setTouched(function (prevTouched) {
+            var nextTouched = _extends({}, prevTouched);
+
+            nextTouched[name] = true;
+            return nextTouched;
+          });
+        }
+
+        var nextValue = _extends({}, value);
+
+        nextValue[name] = nextComponentValue;
+        setValueState(nextValue);
+        if (onChange) onChange(nextValue);
       }
+
+      if (initialValue !== undefined) setInputValue(nextComponentValue);
     }];
+  };
+
+  var useFormField = function useFormField(_ref4) {
+    var errorArg = _ref4.error,
+        infoArg = _ref4.info,
+        name = _ref4.name,
+        required = _ref4.required,
+        validateArg = _ref4.validate;
+    var error = errorArg || errors[name];
+    var info = infoArg || infos[name];
+    (0, _react.useEffect)(function () {
+      var validateSingle = function validateSingle(aValidate, value2, data) {
+        var result;
+
+        if (typeof aValidate === 'function') {
+          result = aValidate(value2, data);
+        } else if (aValidate.regexp) {
+          if (!aValidate.regexp.test(value2)) {
+            result = aValidate.message || messages.invalid;
+
+            if (aValidate.status) {
+              result = {
+                message: error,
+                status: aValidate.status
+              };
+            }
+          }
+        }
+
+        return result;
+      };
+
+      var validateField = function validateField(value2, data) {
+        var result;
+
+        if (required && ( // false is for CheckBox
+        value2 === undefined || value2 === '' || value2 === false)) {
+          result = messages.required;
+        } else if (validateArg) {
+          if (Array.isArray(validateArg)) {
+            validateArg.some(function (aValidate) {
+              result = validateSingle(aValidate, value2, data);
+              return !!result;
+            });
+          } else {
+            result = validateSingle(validateArg, value2, data);
+          }
+        }
+
+        return result;
+      };
+
+      if (validateArg || required) {
+        validations.current[name] = validateField;
+        return function () {
+          return delete validations.current[name];
+        };
+      }
+
+      return undefined;
+    }, [error, name, required, validateArg]);
+    return {
+      error: error,
+      info: info,
+      inForm: true,
+      onBlur: validateOn === 'blur' ? function () {
+        // run validations on touched keys
+        var _validate2 = validate(Object.entries(validations.current).filter(function (_ref5) {
+          var n = _ref5[0];
+          return touched[n] || n === name;
+        }), value),
+            nextErrors = _validate2[0],
+            nextInfos = _validate2[1]; // keep any previous errors and infos for untouched keys,
+        // which probably came from a submit
+
+
+        setErrors(function (prevErrors) {
+          return _extends({}, prevErrors, nextErrors);
+        });
+        setInfos(function (prevInfos) {
+          return _extends({}, prevInfos, nextInfos);
+        });
+      } : undefined
+    };
   };
 
   return /*#__PURE__*/_react["default"].createElement("form", _extends({
@@ -208,12 +279,13 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   }, rest, {
     onReset: function onReset(event) {
       if (!valueProp) {
-        setValue(defaultValue);
+        setValueState(defaultValue);
         if (onChange) onChange(defaultValue);
       }
 
-      setErrors({});
-      setTouched({});
+      setErrors(defaultErrors);
+      setInfos(defaultInfos);
+      setTouched(defaultTouched);
 
       if (_onReset) {
         event.persist(); // extract from React's synthetic event pool
@@ -230,15 +302,10 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       // otherwise.
       event.preventDefault();
 
-      var nextErrors = _extends({}, errors);
+      var _validate3 = validate(Object.entries(validations.current), value, true),
+          nextErrors = _validate3[0],
+          nextInfos = _validate3[1];
 
-      var nextInfos = _extends({}, infos);
-
-      Object.keys(validations.current).forEach(function (name) {
-        var nextError = validations.current[name](value[name], value);
-        updateErrors(nextErrors, name, nextError);
-        updateInfos(nextInfos, name, nextError);
-      });
       setErrors(nextErrors);
       setInfos(nextInfos);
 
@@ -254,42 +321,8 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     }
   }), /*#__PURE__*/_react["default"].createElement(_FormContext.FormContext.Provider, {
     value: {
-      addValidation: function addValidation(name, validation) {
-        validations.current[name] = validation;
-      },
-      removeValidation: function removeValidation(name) {
-        delete validations.current[name];
-      },
-      onBlur: validate === 'blur' ? function (name) {
-        if (validations.current[name]) {
-          var error = validations.current[name](value[name], value);
-          setErrors(function (prevErrors) {
-            var nextErrors = _extends({}, prevErrors);
-
-            updateErrors(nextErrors, name, error);
-            return nextErrors;
-          });
-          setInfos(function (prevInfos) {
-            var nextInfos = _extends({}, prevInfos);
-
-            updateInfos(nextInfos, name, error);
-            return nextInfos;
-          });
-        }
-      } : undefined,
-      errors: errors,
-      get: function get(name) {
-        return value[name];
-      },
-      infos: infos,
-      messages: messages,
-      set: function set(name, nextValue) {
-        return update(name, nextValue);
-      },
-      touched: touched,
-      update: update,
-      useFormContext: useFormContext,
-      value: value
+      useFormField: useFormField,
+      useFormInput: useFormInput
     }
   }, children));
 });

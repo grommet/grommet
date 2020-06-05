@@ -10,6 +10,7 @@ import { Button } from '../Button';
 import { Drop } from '../Drop';
 import { FormContext } from '../Form/FormContext';
 import { Keyboard } from '../Keyboard';
+import { useForwardedRef } from '../../utils';
 import { StyledMaskedInput, StyledMaskedInputContainer, StyledIcon } from './StyledMaskedInput';
 
 var parseValue = function parseValue(mask, value) {
@@ -130,9 +131,9 @@ var MaskedInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var formContext = useContext(FormContext);
 
-  var _formContext$useFormC = formContext.useFormContext(name, valueProp),
-      value = _formContext$useFormC[0],
-      setValue = _formContext$useFormC[1];
+  var _formContext$useFormI = formContext.useFormInput(name, valueProp),
+      value = _formContext$useFormI[0],
+      setValue = _formContext$useFormI[1];
 
   var _useState = useState(parseValue(mask, value)),
       valueParts = _useState[0],
@@ -141,7 +142,7 @@ var MaskedInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   useEffect(function () {
     setValueParts(parseValue(mask, value));
   }, [mask, value]);
-  var inputRef = useRef();
+  var inputRef = useForwardedRef(ref);
   var dropRef = useRef();
 
   var _useState2 = useState(focusProp),
@@ -164,7 +165,7 @@ var MaskedInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     if (focus) {
       var timer = setTimeout(function () {
         // determine which mask element the caret is at
-        var caretIndex = (ref || inputRef).current.selectionStart;
+        var caretIndex = inputRef.current.selectionStart;
         var maskIndex;
         valueParts.some(function (part, index) {
           if (part.beginIndex <= caretIndex && part.endIndex >= caretIndex) {
@@ -196,7 +197,7 @@ var MaskedInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }
 
     return undefined;
-  }, [activeMaskIndex, focus, mask, ref, valueParts]);
+  }, [activeMaskIndex, focus, inputRef, mask, valueParts]);
   var setInputValue = useCallback(function (nextValue) {
     // Calling set value function directly on input because React library
     // overrides setter `event.target.value =` and loses original event
@@ -204,12 +205,12 @@ var MaskedInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     // https://stackoverflow.com/a/46012210 &&
     // https://github.com/grommet/grommet/pull/3171#discussion_r296415239
     var nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
-    nativeInputValueSetter.call((ref || inputRef).current, nextValue);
+    nativeInputValueSetter.call(inputRef.current, nextValue);
     var event = new Event('input', {
       bubbles: true
     });
-    (ref || inputRef).current.dispatchEvent(event);
-  }, [ref]); // This could be due to a paste or as the user is typing.
+    inputRef.current.dispatchEvent(event);
+  }, [inputRef]); // This could be due to a paste or as the user is typing.
 
   var onChangeInput = useCallback(function (event) {
     // Align with the mask.
@@ -245,9 +246,9 @@ var MaskedInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       }).join('');
       setInputValue(nextValue); // restore focus to input
 
-      (ref || inputRef).current.focus();
+      inputRef.current.focus();
     };
-  }, [activeMaskIndex, mask, ref, setInputValue, valueParts]);
+  }, [activeMaskIndex, inputRef, mask, setInputValue, valueParts]);
   var onNextOption = useCallback(function (event) {
     var item = mask[activeMaskIndex];
 
@@ -309,7 +310,7 @@ var MaskedInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     onEnter: onSelectOption,
     onKeyDown: onKeyDown
   }, /*#__PURE__*/React.createElement(StyledMaskedInput, _extends({
-    ref: ref || inputRef,
+    ref: inputRef,
     id: id,
     name: name,
     autoComplete: "off",
@@ -340,7 +341,7 @@ var MaskedInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     id: id ? "masked-input-drop__" + id : undefined,
     align: dropAlign,
     responsive: false,
-    target: (ref || inputRef).current,
+    target: inputRef.current,
     onClickOutside: onHideDrop,
     onEsc: onHideDrop
   }, /*#__PURE__*/React.createElement(Box, {

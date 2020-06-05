@@ -12,7 +12,7 @@ import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { FormContext } from '../Form/FormContext';
 import { AnnounceContext } from '../../contexts';
-import { isNodeAfterScroll, isNodeBeforeScroll, sizeStyle } from '../../utils';
+import { isNodeAfterScroll, isNodeBeforeScroll, sizeStyle, useForwardedRef } from '../../utils';
 import { StyledTextInput, StyledTextInputContainer, StyledPlaceholder, StyledIcon, StyledSuggestions } from './StyledTextInput';
 
 var renderLabel = function renderLabel(suggestion) {
@@ -82,15 +82,15 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var announce = useContext(AnnounceContext);
   var formContext = useContext(FormContext);
-  var inputRef = useRef();
+  var inputRef = useForwardedRef(ref);
   var dropRef = useRef();
   var suggestionsRef = useRef();
   var suggestionRefs = {}; // if this is a readOnly property, don't set a name with the form context
   // this allows Select to control the form context for the name.
 
-  var _formContext$useFormC = formContext.useFormContext(readOnly ? undefined : name, valueProp),
-      value = _formContext$useFormC[0],
-      setValue = _formContext$useFormC[1];
+  var _formContext$useFormI = formContext.useFormInput(readOnly ? undefined : name, valueProp),
+      value = _formContext$useFormI[0],
+      setValue = _formContext$useFormI[1];
 
   var _useState = useState(),
       focus = _useState[0],
@@ -206,7 +206,7 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       },
       onEnter: function onEnter(event) {
         // we stole the focus, give it back
-        (ref || inputRef).current.focus();
+        inputRef.current.focus();
         closeDrop();
 
         if (onSelect) {
@@ -222,7 +222,7 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       id: id ? "text-input-drop__" + id : undefined,
       align: dropAlign,
       responsive: false,
-      target: dropTarget || (ref || inputRef).current,
+      target: dropTarget || inputRef.current,
       onClickOutside: closeDrop,
       onEsc: closeDrop
     }, dropProps), /*#__PURE__*/React.createElement(ContainerBox, {
@@ -247,14 +247,14 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
         plain: theme.button["default"] ? true : undefined,
         onClick: function onClick(event) {
           // we stole the focus, give it back
-          (ref || inputRef).current.focus();
+          inputRef.current.focus();
           closeDrop();
 
           if (onSelect) {
             event.persist();
             var adjustedEvent = event;
             adjustedEvent.suggestion = suggestion;
-            adjustedEvent.target = (ref || inputRef).current;
+            adjustedEvent.target = inputRef.current;
             onSelect(adjustedEvent);
           }
 
@@ -288,7 +288,7 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
         event.persist();
         var adjustedEvent = event;
         adjustedEvent.suggestion = suggestions[activeSuggestionIndex];
-        adjustedEvent.target = (ref || inputRef).current;
+        adjustedEvent.target = inputRef.current;
         onSelect(adjustedEvent);
       }
     },
@@ -314,7 +314,7 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     onKeyDown: onKeyDown
   }, /*#__PURE__*/React.createElement(StyledTextInput, _extends({
     "aria-label": a11yTitle,
-    ref: ref || inputRef,
+    ref: inputRef,
     id: id,
     name: name,
     autoComplete: "off",

@@ -10,11 +10,11 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 // When not a descendant of a Form, FormContext still provides a basic
-// useFormContext. It doesn't do anything for components like TextInput.
+// useFormInput. It doesn't do anything for components like TextInput.
 // But, it does store the value for components like CheckBox or Select
 // where the grommet component needs to know the value in order to
 // render custom visuals.
-var useFormContext = function useFormContext(_, valueProp, initialValue) {
+var useFormInput = function useFormInput(_, valueProp, initialValue) {
   var _useState = (0, _react.useState)(valueProp !== undefined ? valueProp : initialValue),
       value = _useState[0],
       setValue = _useState[1];
@@ -24,8 +24,18 @@ var useFormContext = function useFormContext(_, valueProp, initialValue) {
   }];
 };
 
+var useFormField = function useFormField(_ref) {
+  var error = _ref.error,
+      info = _ref.info;
+  return {
+    error: error,
+    info: info
+  };
+};
+
 var FormContext = _react["default"].createContext({
-  useFormContext: useFormContext
+  useFormField: useFormField,
+  useFormInput: useFormInput
 });
 
 exports.FormContext = FormContext;

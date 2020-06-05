@@ -55,7 +55,7 @@ var FormFieldTextInput = function FormFieldTextInput(props) {
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, _extends({
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Form, null, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, _extends({
     label: "Label",
     htmlFor: "text-input"
   }, props), /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
@@ -65,7 +65,7 @@ var FormFieldTextInput = function FormFieldTextInput(props) {
     onChange: onChange,
     onSelect: onSelect,
     suggestions: state.suggestions
-  }))));
+  })))));
 };
 
 (0, _react2.storiesOf)('Form', module).add('TextInput', function () {

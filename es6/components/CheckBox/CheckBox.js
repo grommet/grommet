@@ -39,9 +39,9 @@ var CheckBox = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var formContext = useContext(FormContext);
 
-  var _formContext$useFormC = formContext.useFormContext(name, checkedProp, false),
-      checked = _formContext$useFormC[0],
-      setChecked = _formContext$useFormC[1];
+  var _formContext$useFormI = formContext.useFormInput(name, checkedProp, false),
+      checked = _formContext$useFormI[0],
+      setChecked = _formContext$useFormI[1];
 
   var _useState = useState(focusProp),
       focus = _useState[0],

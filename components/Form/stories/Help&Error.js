@@ -16,7 +16,7 @@ var FormFieldHelpError = function FormFieldHelpError(props) {
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, _extends({
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Form, null, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, _extends({
     label: "Label",
     htmlFor: "text-input"
   }, props, {
@@ -27,7 +27,7 @@ var FormFieldHelpError = function FormFieldHelpError(props) {
     placeholder: "placeholder",
     value: "Value",
     onChange: function onChange() {}
-  }))));
+  })))));
 };
 
 (0, _react2.storiesOf)('Form', module).add('Help and Error', function () {

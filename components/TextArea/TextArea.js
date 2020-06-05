@@ -30,9 +30,9 @@ var TextArea = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
 
-  var _formContext$useFormC = formContext.useFormContext(name, valueProp),
-      value = _formContext$useFormC[0],
-      setValue = _formContext$useFormC[1];
+  var _formContext$useFormI = formContext.useFormInput(name, valueProp),
+      value = _formContext$useFormI[0],
+      setValue = _formContext$useFormI[1];
 
   var _useState = (0, _react.useState)(),
       focus = _useState[0],

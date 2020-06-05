@@ -2,7 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { grommet, Box, FormField, TextInput, Grommet } from 'grommet';
+import { grommet, Box, Form, FormField, TextInput, Grommet } from 'grommet';
 
 var FormFieldHelpError = function FormFieldHelpError(props) {
   return /*#__PURE__*/React.createElement(Grommet, {
@@ -10,7 +10,7 @@ var FormFieldHelpError = function FormFieldHelpError(props) {
   }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, /*#__PURE__*/React.createElement(FormField, _extends({
+  }, /*#__PURE__*/React.createElement(Form, null, /*#__PURE__*/React.createElement(FormField, _extends({
     label: "Label",
     htmlFor: "text-input"
   }, props, {
@@ -21,7 +21,7 @@ var FormFieldHelpError = function FormFieldHelpError(props) {
     placeholder: "placeholder",
     value: "Value",
     onChange: function onChange() {}
-  }))));
+  })))));
 };
 
 storiesOf('Form', module).add('Help and Error', function () {

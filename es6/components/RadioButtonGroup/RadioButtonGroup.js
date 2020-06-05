@@ -33,9 +33,9 @@ var RadioButtonGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
     });
   }, [disabled, optionsProp, rest.id]);
 
-  var _formContext$useFormC = formContext.useFormContext(name, valueProp, ''),
-      value = _formContext$useFormC[0],
-      setValue = _formContext$useFormC[1];
+  var _formContext$useFormI = formContext.useFormInput(name, valueProp, ''),
+      value = _formContext$useFormI[0],
+      setValue = _formContext$useFormI[1];
 
   var _useState = useState(),
       focus = _useState[0],

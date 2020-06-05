@@ -19,6 +19,8 @@ var _FormContext = require("../Form/FormContext");
 
 var _Keyboard = require("../Keyboard");
 
+var _utils = require("../../utils");
+
 var _StyledMaskedInput = require("./StyledMaskedInput");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -148,9 +150,9 @@ var MaskedInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
 
-  var _formContext$useFormC = formContext.useFormContext(name, valueProp),
-      value = _formContext$useFormC[0],
-      setValue = _formContext$useFormC[1];
+  var _formContext$useFormI = formContext.useFormInput(name, valueProp),
+      value = _formContext$useFormI[0],
+      setValue = _formContext$useFormI[1];
 
   var _useState = (0, _react.useState)(parseValue(mask, value)),
       valueParts = _useState[0],
@@ -159,7 +161,7 @@ var MaskedInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   (0, _react.useEffect)(function () {
     setValueParts(parseValue(mask, value));
   }, [mask, value]);
-  var inputRef = (0, _react.useRef)();
+  var inputRef = (0, _utils.useForwardedRef)(ref);
   var dropRef = (0, _react.useRef)();
 
   var _useState2 = (0, _react.useState)(focusProp),
@@ -182,7 +184,7 @@ var MaskedInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     if (focus) {
       var timer = setTimeout(function () {
         // determine which mask element the caret is at
-        var caretIndex = (ref || inputRef).current.selectionStart;
+        var caretIndex = inputRef.current.selectionStart;
         var maskIndex;
         valueParts.some(function (part, index) {
           if (part.beginIndex <= caretIndex && part.endIndex >= caretIndex) {
@@ -214,7 +216,7 @@ var MaskedInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     }
 
     return undefined;
-  }, [activeMaskIndex, focus, mask, ref, valueParts]);
+  }, [activeMaskIndex, focus, inputRef, mask, valueParts]);
   var setInputValue = (0, _react.useCallback)(function (nextValue) {
     // Calling set value function directly on input because React library
     // overrides setter `event.target.value =` and loses original event
@@ -222,12 +224,12 @@ var MaskedInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     // https://stackoverflow.com/a/46012210 &&
     // https://github.com/grommet/grommet/pull/3171#discussion_r296415239
     var nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
-    nativeInputValueSetter.call((ref || inputRef).current, nextValue);
+    nativeInputValueSetter.call(inputRef.current, nextValue);
     var event = new Event('input', {
       bubbles: true
     });
-    (ref || inputRef).current.dispatchEvent(event);
-  }, [ref]); // This could be due to a paste or as the user is typing.
+    inputRef.current.dispatchEvent(event);
+  }, [inputRef]); // This could be due to a paste or as the user is typing.
 
   var onChangeInput = (0, _react.useCallback)(function (event) {
     // Align with the mask.
@@ -263,9 +265,9 @@ var MaskedInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       }).join('');
       setInputValue(nextValue); // restore focus to input
 
-      (ref || inputRef).current.focus();
+      inputRef.current.focus();
     };
-  }, [activeMaskIndex, mask, ref, setInputValue, valueParts]);
+  }, [activeMaskIndex, inputRef, mask, setInputValue, valueParts]);
   var onNextOption = (0, _react.useCallback)(function (event) {
     var item = mask[activeMaskIndex];
 
@@ -327,7 +329,7 @@ var MaskedInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     onEnter: onSelectOption,
     onKeyDown: onKeyDown
   }, /*#__PURE__*/_react["default"].createElement(_StyledMaskedInput.StyledMaskedInput, _extends({
-    ref: ref || inputRef,
+    ref: inputRef,
     id: id,
     name: name,
     autoComplete: "off",
@@ -358,7 +360,7 @@ var MaskedInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     id: id ? "masked-input-drop__" + id : undefined,
     align: dropAlign,
     responsive: false,
-    target: (ref || inputRef).current,
+    target: inputRef.current,
     onClickOutside: onHideDrop,
     onEsc: onHideDrop
   }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {

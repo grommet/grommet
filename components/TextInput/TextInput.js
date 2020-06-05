@@ -103,15 +103,15 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
   var announce = (0, _react.useContext)(_contexts.AnnounceContext);
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
-  var inputRef = (0, _react.useRef)();
+  var inputRef = (0, _utils.useForwardedRef)(ref);
   var dropRef = (0, _react.useRef)();
   var suggestionsRef = (0, _react.useRef)();
   var suggestionRefs = {}; // if this is a readOnly property, don't set a name with the form context
   // this allows Select to control the form context for the name.
 
-  var _formContext$useFormC = formContext.useFormContext(readOnly ? undefined : name, valueProp),
-      value = _formContext$useFormC[0],
-      setValue = _formContext$useFormC[1];
+  var _formContext$useFormI = formContext.useFormInput(readOnly ? undefined : name, valueProp),
+      value = _formContext$useFormI[0],
+      setValue = _formContext$useFormI[1];
 
   var _useState = (0, _react.useState)(),
       focus = _useState[0],
@@ -227,7 +227,7 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       },
       onEnter: function onEnter(event) {
         // we stole the focus, give it back
-        (ref || inputRef).current.focus();
+        inputRef.current.focus();
         closeDrop();
 
         if (onSelect) {
@@ -243,7 +243,7 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       id: id ? "text-input-drop__" + id : undefined,
       align: dropAlign,
       responsive: false,
-      target: dropTarget || (ref || inputRef).current,
+      target: dropTarget || inputRef.current,
       onClickOutside: closeDrop,
       onEsc: closeDrop
     }, dropProps), /*#__PURE__*/_react["default"].createElement(ContainerBox, {
@@ -268,14 +268,14 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
         plain: theme.button["default"] ? true : undefined,
         onClick: function onClick(event) {
           // we stole the focus, give it back
-          (ref || inputRef).current.focus();
+          inputRef.current.focus();
           closeDrop();
 
           if (onSelect) {
             event.persist();
             var adjustedEvent = event;
             adjustedEvent.suggestion = suggestion;
-            adjustedEvent.target = (ref || inputRef).current;
+            adjustedEvent.target = inputRef.current;
             onSelect(adjustedEvent);
           }
 
@@ -309,7 +309,7 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
         event.persist();
         var adjustedEvent = event;
         adjustedEvent.suggestion = suggestions[activeSuggestionIndex];
-        adjustedEvent.target = (ref || inputRef).current;
+        adjustedEvent.target = inputRef.current;
         onSelect(adjustedEvent);
       }
     },
@@ -335,7 +335,7 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     onKeyDown: onKeyDown
   }, /*#__PURE__*/_react["default"].createElement(_StyledTextInput.StyledTextInput, _extends({
     "aria-label": a11yTitle,
-    ref: ref || inputRef,
+    ref: inputRef,
     id: id,
     name: name,
     autoComplete: "off",

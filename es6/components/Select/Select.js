@@ -85,9 +85,9 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var formContext = useContext(FormContext); // value is used for what we receive in valueProp and the basis for
   // what we send with onChange
 
-  var _formContext$useFormC = formContext.useFormContext(name, valueProp, ''),
-      value = _formContext$useFormC[0],
-      setValue = _formContext$useFormC[1]; // valuedValue is the value mapped with any valueKey applied
+  var _formContext$useFormI = formContext.useFormInput(name, valueProp, ''),
+      value = _formContext$useFormI[0],
+      setValue = _formContext$useFormI[1]; // valuedValue is the value mapped with any valueKey applied
 
 
   var valuedValue = useMemo(function () {

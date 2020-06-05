@@ -30,9 +30,9 @@ export var CheckBoxGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
     });
   }, [optionsProp, disabledProp]); // 'value' is an array of checked valueKeys
 
-  var _formContext$useFormC = formContext.useFormContext(name, valueProp, []),
-      value = _formContext$useFormC[0],
-      setValue = _formContext$useFormC[1]; // Logic is necessary to maintain a proper data structure for Form logic
+  var _formContext$useFormI = formContext.useFormInput(name, valueProp, []),
+      value = _formContext$useFormI[0],
+      setValue = _formContext$useFormI[1]; // Logic is necessary to maintain a proper data structure for Form logic
 
 
   var onCheckBoxChange = function onCheckBoxChange(event, optionValue, option) {
