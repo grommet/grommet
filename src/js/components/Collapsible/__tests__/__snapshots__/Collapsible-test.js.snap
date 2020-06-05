@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Collapsible direction 1`] = `
-.c1 {
+exports[`Collapsible default 1`] = `
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -16,35 +16,43 @@ exports[`Collapsible direction 1`] = `
 }
 
 .c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  background-color: #333333;
-  color: #f8f8f8;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c2 {
-  -webkit-transition: max-width 200ms,opacity 200ms;
-  transition: max-width 200ms,opacity 200ms;
-  opacity: 0;
-  overflow: hidden;
-  max-width: 0;
-}
-
-.c4 {
   -webkit-transition: max-height 200ms,opacity 200ms;
   transition: max-height 200ms,opacity 200ms;
   opacity: 0;
   overflow: hidden;
   max-height: 0;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c1:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
 .c0 {
@@ -57,27 +65,236 @@ exports[`Collapsible direction 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c4 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 <div
-  className="c0"
+  class="c0"
 >
+  <button
+    class="c1"
+    type="button"
+  >
+    Toggle
+  </button>
   <div
-    aria-hidden={true}
-    className="c1 c2"
+    aria-hidden="true"
+    class="c2 c3"
   >
     <div
-      className="c3"
+      class="c2"
     >
-      Box Body
+      <span
+        class="c4"
+      >
+        Example
+      </span>
     </div>
   </div>
+</div>
+`;
+
+exports[`Collapsible default 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+>
+  <button
+    class="StyledButton-sc-323bzc-0 kIXxtf"
+    type="button"
+  >
+    Toggle
+  </button>
   <div
-    aria-hidden={true}
-    className="c1 c4"
+    aria-hidden="true"
+    class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 bEdCNR"
   >
     <div
-      className="c3"
+      class="StyledBox-sc-13pk1d4-0 bFwQzJ"
     >
-      Box Body
+      <span
+        class="StyledText-sc-1sadyjn-0 hUokoe"
+      >
+        Example
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Collapsible default 3`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+>
+  <button
+    class="StyledButton-sc-323bzc-0 kIXxtf"
+    type="button"
+  >
+    Toggle
+  </button>
+  <div
+    aria-hidden="true"
+    class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 bEdCNR"
+  >
+    <div
+      class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+    >
+      <span
+        class="StyledText-sc-1sadyjn-0 hUokoe"
+      >
+        Example
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Collapsible horizontal 1`] = `
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  -webkit-transition: max-width 200ms,opacity 200ms;
+  transition: max-width 200ms,opacity 200ms;
+  opacity: 0;
+  overflow: hidden;
+  max-width: 0;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c1:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+<div
+  class="c0"
+>
+  <button
+    class="c1"
+    type="button"
+  >
+    Toggle
+  </button>
+  <div
+    aria-hidden="true"
+    class="c2 c3"
+  >
+    <div
+      class="c2"
+    >
+      <span
+        class="c4"
+      >
+        Example
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Collapsible horizontal 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+>
+  <button
+    class="StyledButton-sc-323bzc-0 kIXxtf"
+    type="button"
+  >
+    Toggle
+  </button>
+  <div
+    aria-hidden="true"
+    class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 hbvmZB"
+  >
+    <div
+      class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+    >
+      <span
+        class="StyledText-sc-1sadyjn-0 hUokoe"
+      >
+        Example
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Collapsible horizontal 3`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+>
+  <button
+    class="StyledButton-sc-323bzc-0 kIXxtf"
+    type="button"
+  >
+    Toggle
+  </button>
+  <div
+    aria-hidden="true"
+    class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 hbvmZB"
+  >
+    <div
+      class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+    >
+      <span
+        class="StyledText-sc-1sadyjn-0 hUokoe"
+      >
+        Example
+      </span>
     </div>
   </div>
 </div>
@@ -117,14 +334,6 @@ exports[`Collapsible open 1`] = `
 .c2 {
   -webkit-transition: max-height 200ms,opacity 200ms;
   transition: max-height 200ms,opacity 200ms;
-  opacity: 0;
-  overflow: hidden;
-  max-height: 0;
-}
-
-.c4 {
-  -webkit-transition: max-height 200ms,opacity 200ms;
-  transition: max-height 200ms,opacity 200ms;
   opacity: 1;
   overflow: visible;
   max-height: unset;
@@ -141,28 +350,167 @@ exports[`Collapsible open 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    aria-hidden={true}
-    className="c1 c2"
-    open={false}
+    aria-hidden="false"
+    class="c1 c2"
+    open=""
   >
     <div
-      className="c3"
+      class="c3"
     >
       Box Body
     </div>
   </div>
+</div>
+`;
+
+exports[`Collapsible vertical 1`] = `
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  -webkit-transition: max-height 200ms,opacity 200ms;
+  transition: max-height 200ms,opacity 200ms;
+  opacity: 0;
+  overflow: hidden;
+  max-height: 0;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c1:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+<div
+  class="c0"
+>
+  <button
+    class="c1"
+    type="button"
+  >
+    Toggle
+  </button>
   <div
-    aria-hidden={false}
-    className="c1 c4"
-    open={true}
+    aria-hidden="true"
+    class="c2 c3"
   >
     <div
-      className="c3"
+      class="c2"
     >
-      Box Body
+      <span
+        class="c4"
+      >
+        Example
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Collapsible vertical 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+>
+  <button
+    class="StyledButton-sc-323bzc-0 kIXxtf"
+    type="button"
+  >
+    Toggle
+  </button>
+  <div
+    aria-hidden="true"
+    class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 bEdCNR"
+  >
+    <div
+      class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+    >
+      <span
+        class="StyledText-sc-1sadyjn-0 hUokoe"
+      >
+        Example
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Collapsible vertical 3`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+>
+  <button
+    class="StyledButton-sc-323bzc-0 kIXxtf"
+    type="button"
+  >
+    Toggle
+  </button>
+  <div
+    aria-hidden="true"
+    class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 bEdCNR"
+  >
+    <div
+      class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+    >
+      <span
+        class="StyledText-sc-1sadyjn-0 hUokoe"
+      >
+        Example
+      </span>
     </div>
   </div>
 </div>
