@@ -908,7 +908,7 @@ string",
       Object {
         "defaultValue": "none",
         "description": "Spacing around the outer edge of
-    the drawing coordinate area for bars and points to overflow into.",
+    the drawing coordinate area for the graphic elements to overflow into.",
         "format": "none
 xxsmall
 xsmall
@@ -1816,7 +1816,7 @@ string",
       Object {
         "defaultValue": "none",
         "description": "Spacing around the outer edge of
-    the drawing coordinate area for bars and points to overflow into.",
+    the drawing coordinate area for the graphic elements to overflow into.",
         "format": "none
 xxsmall
 xsmall
@@ -2601,7 +2601,7 @@ string",
       Object {
         "defaultValue": "none",
         "description": "Spacing around the outer edge of
-    the drawing coordinate area for bars and points to overflow into.",
+    the drawing coordinate area for the graphic elements to overflow into.",
         "format": "none
 xxsmall
 xsmall
@@ -2750,7 +2750,9 @@ string",
 {
   guide: boolean,
   labels: number,
-  render: function
+  prefix: string,
+  render: function,
+  suffix: string
 }",
         "name": "yAxis",
       },
@@ -3161,7 +3163,7 @@ string",
     "properties": Array [
       Object {
         "defaultValue": Object {},
-        "description": "An object representing any errors in the data. They keys should
+        "description": "An object representing any errors in the data. Their keys should
         match the keys in the value object.",
         "format": "{
 
@@ -3171,7 +3173,7 @@ string",
       Object {
         "defaultValue": Object {},
         "description": "An object representing any information details in the data.
-        They keys should match the keys in the value object.",
+        Their keys should match the keys in the value object.",
         "format": "{
 
 }",
@@ -6366,5 +6368,6 @@ boolean",
   },
   "__esModule": true,
   "calcs": [Function],
+  "round": [Function],
 }
 `;

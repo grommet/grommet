@@ -9,6 +9,7 @@ Object {
     ],
     Array [
       3.2,
+      0.8,
     ],
   ],
   "bounds": Array [
@@ -23,7 +24,7 @@ Object {
   ],
   "dimensions": Array [
     2,
-    2.4000000000000004,
+    2.4,
   ],
   "pad": "large",
   "thickness": "xlarge",
@@ -106,6 +107,7 @@ exports[`Chart cap 1`] = `
         <path
           d="M 384,0 L 0,192"
         />
+        
       </g>
     </g>
   </svg>
@@ -125,7 +127,7 @@ exports[`Chart cap 1`] = `
     >
       <g>
         <path
-          d="M 384,0 L 0,192 L 0,192 L 384,192 Z"
+          d="M 0,192 L 384,0 L 384,192 L 0,192 Z"
         />
       </g>
     </g>
@@ -628,7 +630,7 @@ exports[`Chart pad 1`] = `
     className="c1"
     height={192}
     preserveAspectRatio="none"
-    viewBox="-18 -18 420 228"
+    viewBox="-12 -12 408 216"
     width={384}
   >
     <g
@@ -645,7 +647,7 @@ exports[`Chart pad 1`] = `
           sixty
         </title>
         <path
-          d="M 384,192 L 384,0"
+          d="M 378,186 L 378,6"
         />
       </g>
       <g
@@ -655,7 +657,7 @@ exports[`Chart pad 1`] = `
           zero
         </title>
         <path
-          d="M 0,192 L 0,192"
+          d="M 6,186 L 6,186"
         />
       </g>
     </g>
@@ -664,7 +666,7 @@ exports[`Chart pad 1`] = `
     className="c1"
     height={192}
     preserveAspectRatio="none"
-    viewBox="-36 -24 456 240"
+    viewBox="-12 -12 408 216"
     width={384}
   >
     <g
@@ -681,7 +683,7 @@ exports[`Chart pad 1`] = `
           sixty
         </title>
         <path
-          d="M 384,192 L 384,0"
+          d="M 360,180 L 360,12"
         />
       </g>
       <g
@@ -691,7 +693,7 @@ exports[`Chart pad 1`] = `
           zero
         </title>
         <path
-          d="M 0,192 L 0,192"
+          d="M 24,180 L 24,180"
         />
       </g>
     </g>
@@ -1308,6 +1310,7 @@ exports[`Chart type 1`] = `
         <path
           d="M 384,0 L 0,192"
         />
+        
       </g>
     </g>
   </svg>
@@ -1327,7 +1330,152 @@ exports[`Chart type 1`] = `
     >
       <g>
         <path
-          d="M 384,0 L 0,192 L 0,192 L 384,192 Z"
+          d="M 0,192 L 384,0 L 384,192 L 0,192 Z"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      fill="#6FFFB0"
+      stroke="none"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+    >
+      <g
+        stroke="none"
+      >
+        <title>
+          sixty
+        </title>
+        <rect
+          height={24}
+          width={24}
+          x={372}
+          y={-12}
+        />
+      </g>
+      <g
+        stroke="none"
+      >
+        <title>
+          zero
+        </title>
+        <rect
+          height={24}
+          width={24}
+          x={-12}
+          y={180}
+        />
+      </g>
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Chart undefined values 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+}
+
+<div
+  className="c0"
+>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      fill="none"
+      stroke="#6FFFB0"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+      strokeWidth={24}
+    >
+      <g
+        fill="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 384,192 L 384,0"
+        />
+      </g>
+      <g
+        fill="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0,192 L 0,192"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      fill="none"
+      stroke="#6FFFB0"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+      strokeWidth={24}
+    >
+      <g
+        fill="none"
+      >
+        <path
+          d="M 384,0 L 0,192"
+        />
+        
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      fill="#6FFFB0"
+      stroke="#6FFFB0"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+      strokeWidth={24}
+    >
+      <g>
+        <path
+          d="M 0,192 L 384,0 L 384,192 L 0,192 Z"
         />
       </g>
     </g>

@@ -11,6 +11,12 @@ const VALUES = [
   { value: [0, 0], label: 'zero' },
 ];
 
+const UNDEFINED_VALUES = [
+  { value: [2, 60], label: 'sixty' },
+  { value: [1, undefined] },
+  { value: [0, 0], label: 'zero' },
+];
+
 describe('Chart', () => {
   test('default', () => {
     const component = renderer.create(
@@ -131,6 +137,19 @@ describe('Chart', () => {
           pad={{ horizontal: 'medium', vertical: 'small' }}
           values={VALUES}
         />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('undefined values', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Chart type="bar" values={UNDEFINED_VALUES} />
+        <Chart type="line" values={UNDEFINED_VALUES} />
+        <Chart type="area" values={UNDEFINED_VALUES} />
+        <Chart type="point" values={UNDEFINED_VALUES} />
       </Grommet>,
     );
     const tree = component.toJSON();
