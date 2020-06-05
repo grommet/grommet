@@ -4918,13 +4918,16 @@ with the same name so form submissions work.",
         "description": "Options can be either a string or an object. 
     Each option is rendered as a single RadioButton.",
         "format": "[string]
+[number]
 [{
   disabled: boolean,
   id: string,
   label: 
     string
     element,
-  value: string
+  value: 
+    string
+    number
 }]",
         "name": "options",
         "required": true,
@@ -4932,6 +4935,7 @@ with the same name so form submissions work.",
       Object {
         "description": "Currently selected option value.",
         "format": "string
+number
 object",
         "name": "value",
       },

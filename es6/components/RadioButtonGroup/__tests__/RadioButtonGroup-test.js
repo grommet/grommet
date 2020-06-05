@@ -22,6 +22,15 @@ describe('RadioButtonGroup', function () {
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  test('number options', function () {
+    var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(RadioButtonGroup, {
+      name: "test",
+      options: [1, 2],
+      value: "one"
+    })));
+    var tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
   test('object options just value', function () {
     var component = renderer.create( /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(RadioButtonGroup, {
       name: "test",

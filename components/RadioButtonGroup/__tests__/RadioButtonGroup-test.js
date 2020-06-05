@@ -34,6 +34,16 @@ describe('RadioButtonGroup', function () {
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  test('number options', function () {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.RadioButtonGroup, {
+      name: "test",
+      options: [1, 2],
+      value: "one"
+    })));
+
+    var tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
   test('object options just value', function () {
     var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_Grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_.RadioButtonGroup, {
       name: "test",

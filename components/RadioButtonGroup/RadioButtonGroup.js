@@ -36,9 +36,10 @@ var RadioButtonGroup = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) 
 
   var options = (0, _react.useMemo)(function () {
     return optionsProp.map(function (o) {
-      return typeof o === 'string' ? {
+      return typeof o !== 'object' ? {
         disabled: disabled,
-        id: rest.id ? rest.id + "-" + o : o,
+        id: rest.id ? rest.id + "-" + o : "" + o,
+        // force string
         label: o,
         value: o
       } : _extends({
@@ -144,7 +145,7 @@ var RadioButtonGroup = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) 
       onFocus: onFocus,
       onBlur: onBlur,
       onChange: function onChange(event) {
-        setValue(event.target.value);
+        setValue(optionValue);
         if (_onChange) _onChange(event);
       }
     }, optionRest), children ? function (state) {
