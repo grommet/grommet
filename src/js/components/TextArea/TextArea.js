@@ -11,10 +11,9 @@ const TextArea = forwardRef(
     ref,
   ) => {
     const formContext = useContext(FormContext);
-
-    const [value, setValue] = formContext.useFormContext(name, valueProp);
-
+    const [value, setValue] = formContext.useFormInput(name, valueProp);
     const [focus, setFocus] = useState();
+
     return (
       <Keyboard
         onEsc={event => {

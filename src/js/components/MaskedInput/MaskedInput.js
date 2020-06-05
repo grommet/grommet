@@ -14,6 +14,7 @@ import { Button } from '../Button';
 import { Drop } from '../Drop';
 import { FormContext } from '../Form/FormContext';
 import { Keyboard } from '../Keyboard';
+import { useForwardedRef } from '../../utils';
 
 import {
   StyledMaskedInput,
@@ -138,14 +139,14 @@ const MaskedInput = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const formContext = useContext(FormContext);
 
-    const [value, setValue] = formContext.useFormContext(name, valueProp);
+    const [value, setValue] = formContext.useFormInput(name, valueProp);
 
     const [valueParts, setValueParts] = useState(parseValue(mask, value));
     useEffect(() => {
       setValueParts(parseValue(mask, value));
     }, [mask, value]);
 
-    const inputRef = useRef();
+    const inputRef = useForwardedRef(ref);
     const dropRef = useRef();
 
     const [focus, setFocus] = useState(focusProp);
@@ -157,7 +158,7 @@ const MaskedInput = forwardRef(
       if (focus) {
         const timer = setTimeout(() => {
           // determine which mask element the caret is at
-          const caretIndex = (ref || inputRef).current.selectionStart;
+          const caretIndex = inputRef.current.selectionStart;
           let maskIndex;
           valueParts.some((part, index) => {
             if (part.beginIndex <= caretIndex && part.endIndex >= caretIndex) {
@@ -181,7 +182,7 @@ const MaskedInput = forwardRef(
         return () => clearTimeout(timer);
       }
       return undefined;
-    }, [activeMaskIndex, focus, mask, ref, valueParts]);
+    }, [activeMaskIndex, focus, inputRef, mask, valueParts]);
 
     const setInputValue = useCallback(
       nextValue => {
@@ -194,11 +195,11 @@ const MaskedInput = forwardRef(
           window.HTMLInputElement.prototype,
           'value',
         ).set;
-        nativeInputValueSetter.call((ref || inputRef).current, nextValue);
+        nativeInputValueSetter.call(inputRef.current, nextValue);
         const event = new Event('input', { bubbles: true });
-        (ref || inputRef).current.dispatchEvent(event);
+        inputRef.current.dispatchEvent(event);
       },
-      [ref],
+      [inputRef],
     );
 
     // This could be due to a paste or as the user is typing.
@@ -234,9 +235,9 @@ const MaskedInput = forwardRef(
         const nextValue = nextValueParts.map(part => part.part).join('');
         setInputValue(nextValue);
         // restore focus to input
-        (ref || inputRef).current.focus();
+        inputRef.current.focus();
       },
-      [activeMaskIndex, mask, ref, setInputValue, valueParts],
+      [activeMaskIndex, inputRef, mask, setInputValue, valueParts],
     );
 
     const onNextOption = useCallback(
@@ -313,7 +314,7 @@ const MaskedInput = forwardRef(
           onKeyDown={onKeyDown}
         >
           <StyledMaskedInput
-            ref={ref || inputRef}
+            ref={inputRef}
             id={id}
             name={name}
             autoComplete="off"
@@ -347,7 +348,7 @@ const MaskedInput = forwardRef(
             id={id ? `masked-input-drop__${id}` : undefined}
             align={dropAlign}
             responsive={false}
-            target={(ref || inputRef).current}
+            target={inputRef.current}
             onClickOutside={onHideDrop}
             onEsc={onHideDrop}
           >
