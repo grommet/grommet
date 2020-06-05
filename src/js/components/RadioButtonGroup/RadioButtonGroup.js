@@ -44,7 +44,7 @@ const RadioButtonGroup = forwardRef(
       [disabled, optionsProp, rest.id],
     );
 
-    const [value, setValue] = formContext.useFormContext(name, valueProp, '');
+    const [value, setValue] = formContext.useFormInput(name, valueProp, '');
 
     const [focus, setFocus] = useState();
 

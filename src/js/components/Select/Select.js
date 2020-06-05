@@ -92,7 +92,7 @@ const Select = forwardRef(
 
     // value is used for what we receive in valueProp and the basis for
     // what we send with onChange
-    const [value, setValue] = formContext.useFormContext(name, valueProp, '');
+    const [value, setValue] = formContext.useFormInput(name, valueProp, '');
     // valuedValue is the value mapped with any valueKey applied
     const valuedValue = useMemo(() => {
       if (Array.isArray(value))
