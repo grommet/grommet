@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
-import { Chart, calcs } from '../Chart';
+import { Chart, calcs, round } from '../Chart';
 import { Grid } from '../Grid';
 import { Stack } from '../Stack';
 
@@ -16,6 +16,61 @@ const halfPad = {
   large: 'medium',
   medium: 'small',
   small: 'xsmall',
+  xsmall: 'xxsmall',
+};
+
+const doublePad = {
+  large: 'xlarge',
+  medium: 'large',
+  small: 'medium',
+  xsmall: 'small',
+  xxsmall: 'xsmall',
+};
+
+const checkDateFormat = (firstValue, lastValue, full) => {
+  let dateFormat;
+  const startDate = new Date(firstValue);
+  const endDate = new Date(lastValue);
+  if (
+    // check for valid dates, this is the fastest way
+    !Number.isNaN(startDate.getTime()) &&
+    !Number.isNaN(endDate.getTime())
+  ) {
+    const delta = Math.abs(endDate - startDate);
+    let options;
+    if (delta < 60000)
+      // less than 1 minute
+      options = full
+        ? {
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            day: undefined,
+          }
+        : { second: '2-digit', day: undefined };
+    else if (delta < 3600000)
+      // less than 1 hour
+      options = full
+        ? { hour: 'numeric', minute: '2-digit', day: undefined }
+        : { minute: '2-digit', day: undefined };
+    else if (delta < 86400000)
+      // less than 1 day
+      options = { hour: 'numeric' };
+    else if (delta < 2592000000)
+      // less than 30 days
+      options = {
+        month: full ? 'short' : 'numeric',
+        day: 'numeric',
+      };
+    else if (delta < 31557600000)
+      // less than 1 year
+      options = { month: full ? 'long' : 'short' };
+    // 1 year or more
+    else options = { year: 'numeric' };
+    if (options)
+      dateFormat = new Intl.DateTimeFormat(undefined, options).format;
+  }
+  return dateFormat;
 };
 
 const DataChart = forwardRef(
@@ -121,8 +176,9 @@ const DataChart = forwardRef(
       const allSides =
         charts.filter(({ type }) => type && type !== 'bar').length > 0;
       if (allSides) return padSize;
+      if (yAxis) return { horizontal: padSize, vertical: halfPad.medium };
       return { horizontal: padSize };
-    }, [charts, padProp, thickness]);
+    }, [charts, padProp, thickness, yAxis]);
 
     const xGuide = useMemo(
       () =>
@@ -165,15 +221,35 @@ const DataChart = forwardRef(
       if (thickness && axis[0].length === numValues) {
         basis = theme.global.edgeSize[thickness] || thickness;
       }
+
+      // If there is no custom renderer, there is a key, and the key value
+      // looks like a Date, render it as a date, scaled based on the range
+      // of values
+      let dateFormat;
+      if (!xAxis.render && xAxis.key && axis[0].length > 1) {
+        dateFormat = checkDateFormat(
+          data[Math.floor(axis[0][0])][xAxis.key],
+          data[Math.floor(axis[0][axis[0].length - 1])][xAxis.key],
+          axis[0].length <= 2,
+        );
+      }
+
       xAxisElement = (
         <Box ref={xRef} gridArea="xAxis" direction="row" justify="between">
-          {axis[0].map((a, i) => {
-            let content;
-            if (xAxis.render) content = xAxis.render(a, i);
-            else if (xAxis.key) content = data[i][xAxis.key];
-            else content = a;
+          {axis[0].map((dataIndex, i) => {
+            let content = xAxis.key
+              ? data[Math.floor(dataIndex)][xAxis.key]
+              : dataIndex;
+            if (xAxis.render)
+              content = xAxis.render(content, data, Math.floor(dataIndex), i);
+            else if (dateFormat) content = dateFormat(new Date(content));
             return (
-              <Box key={i} basis={basis} align={basis ? 'center' : undefined}>
+              <Box
+                key={i}
+                basis={basis}
+                flex="shrink"
+                align={basis ? 'center' : undefined}
+              >
                 {content}
               </Box>
             );
@@ -184,14 +260,50 @@ const DataChart = forwardRef(
 
     let yAxisElement;
     if (yAxis) {
+      let divideBy;
+      let unit;
+      if (!yAxis.render && !yAxis.suffix) {
+        // figure out how many digits to show
+        const maxValue = Math.max(...axis[1].map(v => Math.abs(v)));
+        if (maxValue > 10000000) {
+          divideBy = 1000000;
+          unit = 'M';
+        } else if (maxValue > 10000) {
+          divideBy = 1000;
+          unit = 'K';
+        }
+      }
+
+      // Set basis to match double the vertical pad, so we can align the
+      // text with the guides
+      let basis;
+      if (axis[0].length === numValues) {
+        const edgeSize = doublePad[pad.vertical || pad];
+        basis = theme.global.edgeSize[edgeSize] || edgeSize;
+      }
+
       yAxisElement = (
         <Box gridArea="yAxis" justify="between" flex>
-          {axis[1].map((a, i) => {
+          {axis[1].map((axisValue, i) => {
             let content;
-            if (yAxis.render) content = yAxis.render(a, i);
-            else content = a;
+            if (yAxis.render) content = yAxis.render(axisValue, i);
+            else {
+              content = axisValue;
+              if (divideBy) {
+                content = round(content / divideBy, 0);
+              }
+              if (yAxis.prefix) content = `${yAxis.prefix}${content}`;
+              if (yAxis.suffix || unit)
+                content = `${content}${yAxis.suffix || unit}`;
+            }
             return (
-              <Box key={i} align="end">
+              <Box
+                key={i}
+                align="end"
+                basis={basis}
+                flex="shrink"
+                justify={basis ? 'center' : undefined}
+              >
                 {content}
               </Box>
             );
@@ -214,14 +326,20 @@ const DataChart = forwardRef(
     const stackElement = (
       <Stack gridArea="charts" guidingChild="last" fill={stackFill}>
         {xAxis && xAxis.guide && (
-          <Box fill direction="row" justify="between" pad={pad}>
+          <Box
+            fill
+            direction="row"
+            justify="between"
+            pad={pad}
+            responsive={false}
+          >
             {xGuide.map((_, i) => (
               <Box key={i} border="left" />
             ))}
           </Box>
         )}
         {yAxis && yAxis.guide && (
-          <Box fill justify="between" pad={pad}>
+          <Box fill justify="between" pad={pad} responsive={false}>
             {yGuide.map((_, i) => (
               <Box key={i} border="top" />
             ))}

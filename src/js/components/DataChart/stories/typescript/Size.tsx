@@ -28,11 +28,10 @@ const Example = () => (
         ]}
         xAxis={{
           guide: true,
-          render: i => (
+          key: 'date',
+          render: date => (
             <Text margin={{ horizontal: 'xsmall' }}>
-              {new Date(data[Math.floor(i)].date).toLocaleDateString('en-US', {
-                month: 'short',
-              })}
+              {new Date(date).toLocaleDateString('en-US', { month: 'short' })}
             </Text>
           ),
         }}
