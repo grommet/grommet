@@ -34,12 +34,14 @@ export const doc = RadioButtonGroup => {
     ),
     options: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.string),
+      PropTypes.arrayOf(PropTypes.number),
       PropTypes.arrayOf(
         PropTypes.shape({
           disabled: PropTypes.bool,
           id: PropTypes.string,
           label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-          value: PropTypes.string.isRequired,
+          value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+            .isRequired,
         }),
       ),
     ]).description(`Options can be either a string or an object. 
