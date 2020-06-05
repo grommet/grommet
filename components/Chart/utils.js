@@ -35,6 +35,11 @@ var normalizeBounds = function normalizeBounds(bounds, values) {
         result[1][0] = Math.min(result[1][0], value.value[1]);
         result[1][1] = Math.max(result[1][1], value.value[1]);
       }
+
+      if (value.value[2] !== undefined) {
+        result[1][0] = Math.min(result[1][0], value.value[2]);
+        result[1][1] = Math.max(result[1][1], value.value[2]);
+      }
     });
   }
 

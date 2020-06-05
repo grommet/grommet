@@ -40,7 +40,7 @@ exports[`DataChart default 1`] = `
         className="c3"
         height={192}
         preserveAspectRatio="none"
-        viewBox="-48 0 480 192"
+        viewBox="0 0 384 192"
         width={384}
       >
         <g
@@ -55,7 +55,7 @@ exports[`DataChart default 1`] = `
           >
             <title />
             <path
-              d="M 0,192 L 0,160"
+              d="M 48,192 L 48,160"
             />
           </g>
           <g
@@ -63,7 +63,7 @@ exports[`DataChart default 1`] = `
           >
             <title />
             <path
-              d="M 384,192 L 384,0"
+              d="M 336,192 L 336,0"
             />
           </g>
         </g>
@@ -113,7 +113,7 @@ exports[`DataChart gap 1`] = `
         className="c3"
         height={192}
         preserveAspectRatio="none"
-        viewBox="-48 0 480 192"
+        viewBox="0 0 384 192"
         width={384}
       >
         <g
@@ -128,7 +128,7 @@ exports[`DataChart gap 1`] = `
           >
             <title />
             <path
-              d="M 0,192 L 0,160"
+              d="M 48,192 L 48,160"
             />
           </g>
           <g
@@ -136,7 +136,7 @@ exports[`DataChart gap 1`] = `
           >
             <title />
             <path
-              d="M 384,192 L 384,0"
+              d="M 336,192 L 336,0"
             />
           </g>
         </g>
@@ -153,7 +153,7 @@ exports[`DataChart gap 1`] = `
         className="c3"
         height={192}
         preserveAspectRatio="none"
-        viewBox="-48 0 480 192"
+        viewBox="0 0 384 192"
         width={384}
       >
         <g
@@ -168,7 +168,7 @@ exports[`DataChart gap 1`] = `
           >
             <title />
             <path
-              d="M 0,192 L 0,160"
+              d="M 48,192 L 48,160"
             />
           </g>
           <g
@@ -176,7 +176,7 @@ exports[`DataChart gap 1`] = `
           >
             <title />
             <path
-              d="M 384,192 L 384,0"
+              d="M 336,192 L 336,0"
             />
           </g>
         </g>
@@ -193,7 +193,7 @@ exports[`DataChart gap 1`] = `
         className="c3"
         height={192}
         preserveAspectRatio="none"
-        viewBox="-48 0 480 192"
+        viewBox="0 0 384 192"
         width={384}
       >
         <g
@@ -208,7 +208,7 @@ exports[`DataChart gap 1`] = `
           >
             <title />
             <path
-              d="M 0,192 L 0,160"
+              d="M 48,192 L 48,160"
             />
           </g>
           <g
@@ -216,7 +216,7 @@ exports[`DataChart gap 1`] = `
           >
             <title />
             <path
-              d="M 384,192 L 384,0"
+              d="M 336,192 L 336,0"
             />
           </g>
         </g>
@@ -266,7 +266,7 @@ exports[`DataChart pad 1`] = `
         className="c3"
         height={192}
         preserveAspectRatio="none"
-        viewBox="-12 -12 408 216"
+        viewBox="0 0 384 192"
         width={384}
       >
         <g
@@ -281,7 +281,7 @@ exports[`DataChart pad 1`] = `
           >
             <title />
             <path
-              d="M 0,192 L 0,160"
+              d="M 12,180 L 12,152"
             />
           </g>
           <g
@@ -289,7 +289,7 @@ exports[`DataChart pad 1`] = `
           >
             <title />
             <path
-              d="M 384,192 L 384,0"
+              d="M 372,180 L 372,12"
             />
           </g>
         </g>
@@ -306,7 +306,7 @@ exports[`DataChart pad 1`] = `
         className="c3"
         height={192}
         preserveAspectRatio="none"
-        viewBox="-24 -24 432 240"
+        viewBox="0 0 384 192"
         width={384}
       >
         <g
@@ -321,7 +321,7 @@ exports[`DataChart pad 1`] = `
           >
             <title />
             <path
-              d="M 0,192 L 0,160"
+              d="M 24,168 L 24,144"
             />
           </g>
           <g
@@ -329,7 +329,7 @@ exports[`DataChart pad 1`] = `
           >
             <title />
             <path
-              d="M 384,192 L 384,0"
+              d="M 360,168 L 360,24"
             />
           </g>
         </g>
@@ -346,7 +346,7 @@ exports[`DataChart pad 1`] = `
         className="c3"
         height={192}
         preserveAspectRatio="none"
-        viewBox="-48 -48 480 288"
+        viewBox="0 0 384 192"
         width={384}
       >
         <g
@@ -361,7 +361,7 @@ exports[`DataChart pad 1`] = `
           >
             <title />
             <path
-              d="M 0,192 L 0,160"
+              d="M 48,144 L 48,128"
             />
           </g>
           <g
@@ -369,7 +369,7 @@ exports[`DataChart pad 1`] = `
           >
             <title />
             <path
-              d="M 384,192 L 384,0"
+              d="M 336,144 L 336,48"
             />
           </g>
         </g>
@@ -441,7 +441,7 @@ exports[`DataChart size 1`] = `
         className="c3"
         height={96}
         preserveAspectRatio="none"
-        viewBox="-48 0 192 96"
+        viewBox="0 0 96 96"
         width={96}
       >
         <g
@@ -456,7 +456,7 @@ exports[`DataChart size 1`] = `
           >
             <title />
             <path
-              d="M 0,96 L 0,80"
+              d="M 48,96 L 48,80"
             />
           </g>
           <g
@@ -464,7 +464,7 @@ exports[`DataChart size 1`] = `
           >
             <title />
             <path
-              d="M 96,96 L 96,0"
+              d="M 48,96 L 48,0"
             />
           </g>
         </g>
@@ -481,7 +481,7 @@ exports[`DataChart size 1`] = `
         className="c3"
         height={192}
         preserveAspectRatio="none"
-        viewBox="-48 0 288 192"
+        viewBox="0 0 192 192"
         width={192}
       >
         <g
@@ -496,7 +496,7 @@ exports[`DataChart size 1`] = `
           >
             <title />
             <path
-              d="M 0,192 L 0,160"
+              d="M 48,192 L 48,160"
             />
           </g>
           <g
@@ -504,7 +504,7 @@ exports[`DataChart size 1`] = `
           >
             <title />
             <path
-              d="M 192,192 L 192,0"
+              d="M 144,192 L 144,0"
             />
           </g>
         </g>
@@ -521,7 +521,7 @@ exports[`DataChart size 1`] = `
         className="c3"
         height={384}
         preserveAspectRatio="none"
-        viewBox="-48 0 480 384"
+        viewBox="0 0 384 384"
         width={384}
       >
         <g
@@ -536,7 +536,7 @@ exports[`DataChart size 1`] = `
           >
             <title />
             <path
-              d="M 0,384 L 0,320"
+              d="M 48,384 L 48,320"
             />
           </g>
           <g
@@ -544,7 +544,7 @@ exports[`DataChart size 1`] = `
           >
             <title />
             <path
-              d="M 384,384 L 384,0"
+              d="M 336,384 L 336,0"
             />
           </g>
         </g>
@@ -561,7 +561,7 @@ exports[`DataChart size 1`] = `
         className="c3"
         height={768}
         preserveAspectRatio="none"
-        viewBox="-48 0 864 768"
+        viewBox="0 0 768 768"
         width={768}
       >
         <g
@@ -576,7 +576,7 @@ exports[`DataChart size 1`] = `
           >
             <title />
             <path
-              d="M 0,768 L 0,640"
+              d="M 48,768 L 48,640"
             />
           </g>
           <g
@@ -584,7 +584,7 @@ exports[`DataChart size 1`] = `
           >
             <title />
             <path
-              d="M 768,768 L 768,0"
+              d="M 720,768 L 720,0"
             />
           </g>
         </g>
@@ -601,7 +601,7 @@ exports[`DataChart size 1`] = `
         className="c3"
         height={1152}
         preserveAspectRatio="none"
-        viewBox="-48 0 1248 1152"
+        viewBox="0 0 1152 1152"
         width={1152}
       >
         <g
@@ -616,7 +616,7 @@ exports[`DataChart size 1`] = `
           >
             <title />
             <path
-              d="M 0,1152 L 0,960"
+              d="M 48,1152 L 48,960"
             />
           </g>
           <g
@@ -624,7 +624,7 @@ exports[`DataChart size 1`] = `
           >
             <title />
             <path
-              d="M 1152,1152 L 1152,0"
+              d="M 1104,1152 L 1104,0"
             />
           </g>
         </g>
@@ -641,7 +641,7 @@ exports[`DataChart size 1`] = `
         className="c3"
         height={192}
         preserveAspectRatio="none"
-        viewBox="-48 0 96 192"
+        viewBox="0 0 0 192"
         width={0}
       >
         <g
@@ -656,7 +656,7 @@ exports[`DataChart size 1`] = `
           >
             <title />
             <path
-              d="M 0,192 L 0,160"
+              d="M 48,192 L 48,160"
             />
           </g>
           <g
@@ -664,7 +664,7 @@ exports[`DataChart size 1`] = `
           >
             <title />
             <path
-              d="M 0,192 L 0,0"
+              d="M -48,192 L -48,0"
             />
           </g>
         </g>
@@ -681,7 +681,7 @@ exports[`DataChart size 1`] = `
         className="c3"
         height={192}
         preserveAspectRatio="none"
-        viewBox="-48 0 384 192"
+        viewBox="0 0 288 192"
         width={288}
       >
         <g
@@ -696,7 +696,7 @@ exports[`DataChart size 1`] = `
           >
             <title />
             <path
-              d="M 0,192 L 0,160"
+              d="M 48,192 L 48,160"
             />
           </g>
           <g
@@ -704,7 +704,7 @@ exports[`DataChart size 1`] = `
           >
             <title />
             <path
-              d="M 288,192 L 288,0"
+              d="M 240,192 L 240,0"
             />
           </g>
         </g>
@@ -754,7 +754,7 @@ exports[`DataChart thickness 1`] = `
         className="c3"
         height={192}
         preserveAspectRatio="none"
-        viewBox="-3 0 390 192"
+        viewBox="0 0 384 192"
         width={384}
       >
         <g
@@ -769,7 +769,7 @@ exports[`DataChart thickness 1`] = `
           >
             <title />
             <path
-              d="M 0,192 L 0,160"
+              d="M 3,192 L 3,160"
             />
           </g>
           <g
@@ -777,7 +777,7 @@ exports[`DataChart thickness 1`] = `
           >
             <title />
             <path
-              d="M 384,192 L 384,0"
+              d="M 381,192 L 381,0"
             />
           </g>
         </g>
@@ -794,7 +794,7 @@ exports[`DataChart thickness 1`] = `
         className="c3"
         height={192}
         preserveAspectRatio="none"
-        viewBox="-6 0 396 192"
+        viewBox="0 0 384 192"
         width={384}
       >
         <g
@@ -809,7 +809,7 @@ exports[`DataChart thickness 1`] = `
           >
             <title />
             <path
-              d="M 0,192 L 0,160"
+              d="M 6,192 L 6,160"
             />
           </g>
           <g
@@ -817,7 +817,7 @@ exports[`DataChart thickness 1`] = `
           >
             <title />
             <path
-              d="M 384,192 L 384,0"
+              d="M 378,192 L 378,0"
             />
           </g>
         </g>
@@ -834,7 +834,7 @@ exports[`DataChart thickness 1`] = `
         className="c3"
         height={192}
         preserveAspectRatio="none"
-        viewBox="-12 0 408 192"
+        viewBox="0 0 384 192"
         width={384}
       >
         <g
@@ -849,7 +849,7 @@ exports[`DataChart thickness 1`] = `
           >
             <title />
             <path
-              d="M 0,192 L 0,160"
+              d="M 12,192 L 12,160"
             />
           </g>
           <g
@@ -857,7 +857,7 @@ exports[`DataChart thickness 1`] = `
           >
             <title />
             <path
-              d="M 384,192 L 384,0"
+              d="M 372,192 L 372,0"
             />
           </g>
         </g>
@@ -874,7 +874,7 @@ exports[`DataChart thickness 1`] = `
         className="c3"
         height={192}
         preserveAspectRatio="none"
-        viewBox="-24 0 432 192"
+        viewBox="0 0 384 192"
         width={384}
       >
         <g
@@ -889,7 +889,7 @@ exports[`DataChart thickness 1`] = `
           >
             <title />
             <path
-              d="M 0,192 L 0,160"
+              d="M 24,192 L 24,160"
             />
           </g>
           <g
@@ -897,7 +897,7 @@ exports[`DataChart thickness 1`] = `
           >
             <title />
             <path
-              d="M 384,192 L 384,0"
+              d="M 360,192 L 360,0"
             />
           </g>
         </g>
@@ -914,7 +914,7 @@ exports[`DataChart thickness 1`] = `
         className="c3"
         height={192}
         preserveAspectRatio="none"
-        viewBox="-48 0 480 192"
+        viewBox="0 0 384 192"
         width={384}
       >
         <g
@@ -929,7 +929,7 @@ exports[`DataChart thickness 1`] = `
           >
             <title />
             <path
-              d="M 0,192 L 0,160"
+              d="M 48,192 L 48,160"
             />
           </g>
           <g
@@ -937,7 +937,7 @@ exports[`DataChart thickness 1`] = `
           >
             <title />
             <path
-              d="M 384,192 L 384,0"
+              d="M 336,192 L 336,0"
             />
           </g>
         </g>
@@ -1006,6 +1006,9 @@ exports[`DataChart xAxis 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 1;
+  -ms-flex: 0 1;
+  flex: 0 1;
   -webkit-flex-basis: 96px;
   -ms-flex-preferred-size: 96px;
   flex-basis: 96px;
@@ -1094,7 +1097,7 @@ exports[`DataChart xAxis 1`] = `
           className="c4"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 0 480 192"
+          viewBox="0 0 384 192"
           width={384}
         >
           <g
@@ -1109,7 +1112,7 @@ exports[`DataChart xAxis 1`] = `
             >
               <title />
               <path
-                d="M 0,192 L 0,160"
+                d="M 48,192 L 48,160"
               />
             </g>
             <g
@@ -1117,7 +1120,7 @@ exports[`DataChart xAxis 1`] = `
             >
               <title />
               <path
-                d="M 384,192 L 384,0"
+                d="M 336,192 L 336,0"
               />
             </g>
           </g>
@@ -1149,7 +1152,7 @@ exports[`DataChart xAxis 1`] = `
         className="c4"
         height={192}
         preserveAspectRatio="none"
-        viewBox="-48 0 480 192"
+        viewBox="0 0 384 192"
         width={384}
       >
         <g
@@ -1164,7 +1167,7 @@ exports[`DataChart xAxis 1`] = `
           >
             <title />
             <path
-              d="M 0,192 L 0,160"
+              d="M 48,192 L 48,160"
             />
           </g>
           <g
@@ -1172,7 +1175,7 @@ exports[`DataChart xAxis 1`] = `
           >
             <title />
             <path
-              d="M 384,192 L 384,0"
+              d="M 336,192 L 336,0"
             />
           </g>
         </g>
@@ -1206,7 +1209,7 @@ exports[`DataChart xAxis 1`] = `
           className="c4"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 0 480 192"
+          viewBox="0 0 384 192"
           width={384}
         >
           <g
@@ -1221,7 +1224,7 @@ exports[`DataChart xAxis 1`] = `
             >
               <title />
               <path
-                d="M 0,192 L 0,160"
+                d="M 48,192 L 48,160"
               />
             </g>
             <g
@@ -1229,7 +1232,7 @@ exports[`DataChart xAxis 1`] = `
             >
               <title />
               <path
-                d="M 384,192 L 384,0"
+                d="M 336,192 L 336,0"
               />
             </g>
           </g>
@@ -1264,7 +1267,7 @@ exports[`DataChart xAxis 1`] = `
           className="c4"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 0 480 192"
+          viewBox="0 0 384 192"
           width={384}
         >
           <g
@@ -1279,7 +1282,7 @@ exports[`DataChart xAxis 1`] = `
             >
               <title />
               <path
-                d="M 0,192 L 0,160"
+                d="M 48,192 L 48,160"
               />
             </g>
             <g
@@ -1287,7 +1290,7 @@ exports[`DataChart xAxis 1`] = `
             >
               <title />
               <path
-                d="M 384,192 L 384,0"
+                d="M 336,192 L 336,0"
               />
             </g>
           </g>
@@ -1322,7 +1325,7 @@ exports[`DataChart xAxis 1`] = `
           className="c4"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 0 480 192"
+          viewBox="0 0 384 192"
           width={384}
         >
           <g
@@ -1337,7 +1340,7 @@ exports[`DataChart xAxis 1`] = `
             >
               <title />
               <path
-                d="M 0,192 L 0,160"
+                d="M 48,192 L 48,160"
               />
             </g>
             <g
@@ -1345,7 +1348,7 @@ exports[`DataChart xAxis 1`] = `
             >
               <title />
               <path
-                d="M 384,192 L 384,0"
+                d="M 336,192 L 336,0"
               />
             </g>
           </g>
@@ -1380,7 +1383,7 @@ exports[`DataChart xAxis 1`] = `
           className="c4"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 0 480 192"
+          viewBox="0 0 384 192"
           width={384}
         >
           <g
@@ -1395,7 +1398,7 @@ exports[`DataChart xAxis 1`] = `
             >
               <title />
               <path
-                d="M 0,192 L 0,160"
+                d="M 48,192 L 48,160"
               />
             </g>
             <g
@@ -1403,7 +1406,7 @@ exports[`DataChart xAxis 1`] = `
             >
               <title />
               <path
-                d="M 384,192 L 384,0"
+                d="M 336,192 L 336,0"
               />
             </g>
           </g>
@@ -1478,6 +1481,23 @@ exports[`DataChart xAxis dates 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1487,6 +1507,9 @@ exports[`DataChart xAxis dates 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 1;
+  -ms-flex: 0 1;
+  flex: 0 1;
   -webkit-flex-basis: 96px;
   -ms-flex-preferred-size: 96px;
   flex-basis: 96px;
@@ -1524,7 +1547,7 @@ exports[`DataChart xAxis dates 1`] = `
           className="c4"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 0 480 192"
+          viewBox="0 0 384 192"
           width={384}
         >
           <g
@@ -1539,7 +1562,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 0,192 L 0,192"
+                d="M 48,192 L 48,192"
               />
             </g>
             <g
@@ -1547,7 +1570,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 128,192 L 128,131.04768"
+                d="M 144,192 L 144,131.04768"
               />
             </g>
             <g
@@ -1555,7 +1578,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 256,192 L 256,70.09536000000001"
+                d="M 240,192 L 240,70.09536000000001"
               />
             </g>
             <g
@@ -1563,7 +1586,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 384,192 L 384,9.143040000000013"
+                d="M 336,192 L 336,9.143040000000013"
               />
             </g>
           </g>
@@ -1574,12 +1597,12 @@ exports[`DataChart xAxis dates 1`] = `
       className="c5"
     >
       <div
-        className="c1"
+        className="c6"
       >
         08:04:01 AM
       </div>
       <div
-        className="c1"
+        className="c6"
       >
         08:04:04 AM
       </div>
@@ -1598,7 +1621,7 @@ exports[`DataChart xAxis dates 1`] = `
           className="c4"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 0 480 192"
+          viewBox="0 0 384 192"
           width={384}
         >
           <g
@@ -1613,7 +1636,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 0,192 L 0,192"
+                d="M 48,192 L 48,192"
               />
             </g>
             <g
@@ -1621,7 +1644,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 128,192 L 128,138.66666666666669"
+                d="M 144,192 L 144,138.66666666666669"
               />
             </g>
             <g
@@ -1629,7 +1652,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 256,192 L 256,85.33333333333334"
+                d="M 240,192 L 240,85.33333333333334"
               />
             </g>
             <g
@@ -1637,7 +1660,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 384,192 L 384,32"
+                d="M 336,192 L 336,32"
               />
             </g>
           </g>
@@ -1648,22 +1671,22 @@ exports[`DataChart xAxis dates 1`] = `
       className="c5"
     >
       <div
-        className="c6"
+        className="c7"
       >
         1
       </div>
       <div
-        className="c6"
+        className="c7"
       >
         2
       </div>
       <div
-        className="c6"
+        className="c7"
       >
         3
       </div>
       <div
-        className="c6"
+        className="c7"
       >
         4
       </div>
@@ -1682,7 +1705,7 @@ exports[`DataChart xAxis dates 1`] = `
           className="c4"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 0 480 192"
+          viewBox="0 0 384 192"
           width={384}
         >
           <g
@@ -1697,7 +1720,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 0,192 L 0,192"
+                d="M 48,192 L 48,192"
               />
             </g>
             <g
@@ -1705,7 +1728,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 128,192 L 128,131.04768"
+                d="M 144,192 L 144,131.04768"
               />
             </g>
             <g
@@ -1713,7 +1736,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 256,192 L 256,70.09536000000001"
+                d="M 240,192 L 240,70.09536000000001"
               />
             </g>
             <g
@@ -1721,7 +1744,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 384,192 L 384,9.143040000000013"
+                d="M 336,192 L 336,9.143040000000013"
               />
             </g>
           </g>
@@ -1732,12 +1755,12 @@ exports[`DataChart xAxis dates 1`] = `
       className="c5"
     >
       <div
-        className="c1"
+        className="c6"
       >
         8:01 AM
       </div>
       <div
-        className="c1"
+        className="c6"
       >
         8:04 AM
       </div>
@@ -1756,7 +1779,7 @@ exports[`DataChart xAxis dates 1`] = `
           className="c4"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 0 480 192"
+          viewBox="0 0 384 192"
           width={384}
         >
           <g
@@ -1771,7 +1794,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 0,192 L 0,192"
+                d="M 48,192 L 48,192"
               />
             </g>
             <g
@@ -1779,7 +1802,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 128,192 L 128,138.66666666666669"
+                d="M 144,192 L 144,138.66666666666669"
               />
             </g>
             <g
@@ -1787,7 +1810,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 256,192 L 256,85.33333333333334"
+                d="M 240,192 L 240,85.33333333333334"
               />
             </g>
             <g
@@ -1795,7 +1818,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 384,192 L 384,32"
+                d="M 336,192 L 336,32"
               />
             </g>
           </g>
@@ -1806,22 +1829,22 @@ exports[`DataChart xAxis dates 1`] = `
       className="c5"
     >
       <div
-        className="c6"
+        className="c7"
       >
         1
       </div>
       <div
-        className="c6"
+        className="c7"
       >
         2
       </div>
       <div
-        className="c6"
+        className="c7"
       >
         3
       </div>
       <div
-        className="c6"
+        className="c7"
       >
         4
       </div>
@@ -1840,7 +1863,7 @@ exports[`DataChart xAxis dates 1`] = `
           className="c4"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 0 480 192"
+          viewBox="0 0 384 192"
           width={384}
         >
           <g
@@ -1855,7 +1878,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 0,192 L 0,192"
+                d="M 48,192 L 48,192"
               />
             </g>
             <g
@@ -1863,7 +1886,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 128,192 L 128,131.04768"
+                d="M 144,192 L 144,131.04768"
               />
             </g>
             <g
@@ -1871,7 +1894,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 256,192 L 256,70.09536000000001"
+                d="M 240,192 L 240,70.09536000000001"
               />
             </g>
             <g
@@ -1879,7 +1902,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 384,192 L 384,9.143040000000013"
+                d="M 336,192 L 336,9.143040000000013"
               />
             </g>
           </g>
@@ -1890,12 +1913,12 @@ exports[`DataChart xAxis dates 1`] = `
       className="c5"
     >
       <div
-        className="c1"
+        className="c6"
       >
         1 AM
       </div>
       <div
-        className="c1"
+        className="c6"
       >
         4 AM
       </div>
@@ -1914,7 +1937,7 @@ exports[`DataChart xAxis dates 1`] = `
           className="c4"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 0 480 192"
+          viewBox="0 0 384 192"
           width={384}
         >
           <g
@@ -1929,7 +1952,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 0,192 L 0,192"
+                d="M 48,192 L 48,192"
               />
             </g>
             <g
@@ -1937,7 +1960,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 128,192 L 128,138.66666666666669"
+                d="M 144,192 L 144,138.66666666666669"
               />
             </g>
             <g
@@ -1945,7 +1968,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 256,192 L 256,85.33333333333334"
+                d="M 240,192 L 240,85.33333333333334"
               />
             </g>
             <g
@@ -1953,7 +1976,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 384,192 L 384,32"
+                d="M 336,192 L 336,32"
               />
             </g>
           </g>
@@ -1964,22 +1987,22 @@ exports[`DataChart xAxis dates 1`] = `
       className="c5"
     >
       <div
-        className="c6"
+        className="c7"
       >
         1 AM
       </div>
       <div
-        className="c6"
+        className="c7"
       >
         2 AM
       </div>
       <div
-        className="c6"
+        className="c7"
       >
         3 AM
       </div>
       <div
-        className="c6"
+        className="c7"
       >
         4 AM
       </div>
@@ -1998,7 +2021,7 @@ exports[`DataChart xAxis dates 1`] = `
           className="c4"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 0 480 192"
+          viewBox="0 0 384 192"
           width={384}
         >
           <g
@@ -2013,7 +2036,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 0,192 L 0,192"
+                d="M 48,192 L 48,192"
               />
             </g>
             <g
@@ -2021,7 +2044,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 128,192 L 128,131.04768"
+                d="M 144,192 L 144,131.04768"
               />
             </g>
             <g
@@ -2029,7 +2052,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 256,192 L 256,70.09536000000001"
+                d="M 240,192 L 240,70.09536000000001"
               />
             </g>
             <g
@@ -2037,7 +2060,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 384,192 L 384,9.143040000000013"
+                d="M 336,192 L 336,9.143040000000013"
               />
             </g>
           </g>
@@ -2048,12 +2071,12 @@ exports[`DataChart xAxis dates 1`] = `
       className="c5"
     >
       <div
-        className="c1"
+        className="c6"
       >
         May 1
       </div>
       <div
-        className="c1"
+        className="c6"
       >
         May 4
       </div>
@@ -2072,7 +2095,7 @@ exports[`DataChart xAxis dates 1`] = `
           className="c4"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 0 480 192"
+          viewBox="0 0 384 192"
           width={384}
         >
           <g
@@ -2087,7 +2110,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 0,192 L 0,192"
+                d="M 48,192 L 48,192"
               />
             </g>
             <g
@@ -2095,7 +2118,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 128,192 L 128,138.66666666666669"
+                d="M 144,192 L 144,138.66666666666669"
               />
             </g>
             <g
@@ -2103,7 +2126,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 256,192 L 256,85.33333333333334"
+                d="M 240,192 L 240,85.33333333333334"
               />
             </g>
             <g
@@ -2111,7 +2134,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 384,192 L 384,32"
+                d="M 336,192 L 336,32"
               />
             </g>
           </g>
@@ -2122,22 +2145,22 @@ exports[`DataChart xAxis dates 1`] = `
       className="c5"
     >
       <div
-        className="c6"
+        className="c7"
       >
         5/1
       </div>
       <div
-        className="c6"
+        className="c7"
       >
         5/2
       </div>
       <div
-        className="c6"
+        className="c7"
       >
         5/3
       </div>
       <div
-        className="c6"
+        className="c7"
       >
         5/4
       </div>
@@ -2156,7 +2179,7 @@ exports[`DataChart xAxis dates 1`] = `
           className="c4"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 0 480 192"
+          viewBox="0 0 384 192"
           width={384}
         >
           <g
@@ -2171,7 +2194,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 0,192 L 0,192"
+                d="M 48,192 L 48,192"
               />
             </g>
             <g
@@ -2179,7 +2202,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 128,192 L 128,131.04768"
+                d="M 144,192 L 144,131.04768"
               />
             </g>
             <g
@@ -2187,7 +2210,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 256,192 L 256,70.09536000000001"
+                d="M 240,192 L 240,70.09536000000001"
               />
             </g>
             <g
@@ -2195,7 +2218,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 384,192 L 384,9.143040000000013"
+                d="M 336,192 L 336,9.143040000000013"
               />
             </g>
           </g>
@@ -2206,12 +2229,12 @@ exports[`DataChart xAxis dates 1`] = `
       className="c5"
     >
       <div
-        className="c1"
+        className="c6"
       >
         January
       </div>
       <div
-        className="c1"
+        className="c6"
       >
         April
       </div>
@@ -2230,7 +2253,7 @@ exports[`DataChart xAxis dates 1`] = `
           className="c4"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 0 480 192"
+          viewBox="0 0 384 192"
           width={384}
         >
           <g
@@ -2245,7 +2268,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 0,192 L 0,192"
+                d="M 48,192 L 48,192"
               />
             </g>
             <g
@@ -2253,7 +2276,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 128,192 L 128,138.66666666666669"
+                d="M 144,192 L 144,138.66666666666669"
               />
             </g>
             <g
@@ -2261,7 +2284,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 256,192 L 256,85.33333333333334"
+                d="M 240,192 L 240,85.33333333333334"
               />
             </g>
             <g
@@ -2269,7 +2292,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 384,192 L 384,32"
+                d="M 336,192 L 336,32"
               />
             </g>
           </g>
@@ -2280,22 +2303,22 @@ exports[`DataChart xAxis dates 1`] = `
       className="c5"
     >
       <div
-        className="c6"
+        className="c7"
       >
         Jan
       </div>
       <div
-        className="c6"
+        className="c7"
       >
         Feb
       </div>
       <div
-        className="c6"
+        className="c7"
       >
         Mar
       </div>
       <div
-        className="c6"
+        className="c7"
       >
         Apr
       </div>
@@ -2314,7 +2337,7 @@ exports[`DataChart xAxis dates 1`] = `
           className="c4"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 0 480 192"
+          viewBox="0 0 384 192"
           width={384}
         >
           <g
@@ -2329,7 +2352,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 0,192 L 0,192"
+                d="M 48,192 L 48,192"
               />
             </g>
             <g
@@ -2337,7 +2360,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 128,192 L 128,131.04768"
+                d="M 144,192 L 144,131.04768"
               />
             </g>
             <g
@@ -2345,7 +2368,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 256,192 L 256,70.09536000000001"
+                d="M 240,192 L 240,70.09536000000001"
               />
             </g>
             <g
@@ -2353,7 +2376,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 384,192 L 384,9.143040000000013"
+                d="M 336,192 L 336,9.143040000000013"
               />
             </g>
           </g>
@@ -2364,12 +2387,12 @@ exports[`DataChart xAxis dates 1`] = `
       className="c5"
     >
       <div
-        className="c1"
+        className="c6"
       >
         2001
       </div>
       <div
-        className="c1"
+        className="c6"
       >
         2004
       </div>
@@ -2388,7 +2411,7 @@ exports[`DataChart xAxis dates 1`] = `
           className="c4"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 0 480 192"
+          viewBox="0 0 384 192"
           width={384}
         >
           <g
@@ -2403,7 +2426,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 0,192 L 0,192"
+                d="M 48,192 L 48,192"
               />
             </g>
             <g
@@ -2411,7 +2434,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 128,192 L 128,138.66666666666669"
+                d="M 144,192 L 144,138.66666666666669"
               />
             </g>
             <g
@@ -2419,7 +2442,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 256,192 L 256,85.33333333333334"
+                d="M 240,192 L 240,85.33333333333334"
               />
             </g>
             <g
@@ -2427,7 +2450,7 @@ exports[`DataChart xAxis dates 1`] = `
             >
               <title />
               <path
-                d="M 384,192 L 384,32"
+                d="M 336,192 L 336,32"
               />
             </g>
           </g>
@@ -2438,22 +2461,22 @@ exports[`DataChart xAxis dates 1`] = `
       className="c5"
     >
       <div
-        className="c6"
+        className="c7"
       >
         2001
       </div>
       <div
-        className="c6"
+        className="c7"
       >
         2002
       </div>
       <div
-        className="c6"
+        className="c7"
       >
         2003
       </div>
       <div
-        className="c6"
+        className="c7"
       >
         2004
       </div>
@@ -2538,6 +2561,9 @@ exports[`DataChart yAxis 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 1;
+  -ms-flex: 0 1;
+  flex: 0 1;
   -webkit-flex-basis: 24px;
   -ms-flex-preferred-size: 24px;
   flex-basis: 24px;
@@ -2670,7 +2696,7 @@ exports[`DataChart yAxis 1`] = `
           className="c8"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 -12 480 216"
+          viewBox="0 0 384 192"
           width={384}
         >
           <g
@@ -2685,7 +2711,7 @@ exports[`DataChart yAxis 1`] = `
             >
               <title />
               <path
-                d="M 0,192 L 0,160"
+                d="M 48,180 L 48,152"
               />
             </g>
             <g
@@ -2693,7 +2719,7 @@ exports[`DataChart yAxis 1`] = `
             >
               <title />
               <path
-                d="M 384,192 L 384,0"
+                d="M 336,180 L 336,12"
               />
             </g>
           </g>
@@ -2711,7 +2737,7 @@ exports[`DataChart yAxis 1`] = `
         className="c8"
         height={192}
         preserveAspectRatio="none"
-        viewBox="-48 0 480 192"
+        viewBox="0 0 384 192"
         width={384}
       >
         <g
@@ -2726,7 +2752,7 @@ exports[`DataChart yAxis 1`] = `
           >
             <title />
             <path
-              d="M 0,192 L 0,160"
+              d="M 48,192 L 48,160"
             />
           </g>
           <g
@@ -2734,7 +2760,7 @@ exports[`DataChart yAxis 1`] = `
           >
             <title />
             <path
-              d="M 384,192 L 384,0"
+              d="M 336,192 L 336,0"
             />
           </g>
         </g>
@@ -2789,7 +2815,7 @@ exports[`DataChart yAxis 1`] = `
           className="c8"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 -12 480 216"
+          viewBox="0 0 384 192"
           width={384}
         >
           <g
@@ -2804,7 +2830,7 @@ exports[`DataChart yAxis 1`] = `
             >
               <title />
               <path
-                d="M 0,192 L 0,160"
+                d="M 48,180 L 48,152"
               />
             </g>
             <g
@@ -2812,7 +2838,7 @@ exports[`DataChart yAxis 1`] = `
             >
               <title />
               <path
-                d="M 384,192 L 384,0"
+                d="M 336,180 L 336,12"
               />
             </g>
           </g>
@@ -2854,7 +2880,7 @@ exports[`DataChart yAxis 1`] = `
           className="c8"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 -12 480 216"
+          viewBox="0 0 384 192"
           width={384}
         >
           <g
@@ -2869,7 +2895,7 @@ exports[`DataChart yAxis 1`] = `
             >
               <title />
               <path
-                d="M 0,192 L 0,160"
+                d="M 48,180 L 48,152"
               />
             </g>
             <g
@@ -2877,7 +2903,7 @@ exports[`DataChart yAxis 1`] = `
             >
               <title />
               <path
-                d="M 384,192 L 384,0"
+                d="M 336,180 L 336,12"
               />
             </g>
           </g>
@@ -2934,7 +2960,7 @@ exports[`DataChart yAxis 1`] = `
           className="c8"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 -12 480 216"
+          viewBox="0 0 384 192"
           width={384}
         >
           <g
@@ -2949,7 +2975,7 @@ exports[`DataChart yAxis 1`] = `
             >
               <title />
               <path
-                d="M 0,192 L 0,160"
+                d="M 48,180 L 48,152"
               />
             </g>
             <g
@@ -2957,7 +2983,7 @@ exports[`DataChart yAxis 1`] = `
             >
               <title />
               <path
-                d="M 384,192 L 384,0"
+                d="M 336,180 L 336,12"
               />
             </g>
           </g>
@@ -2999,7 +3025,7 @@ exports[`DataChart yAxis 1`] = `
           className="c8"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 -12 480 216"
+          viewBox="0 0 384 192"
           width={384}
         >
           <g
@@ -3014,7 +3040,7 @@ exports[`DataChart yAxis 1`] = `
             >
               <title />
               <path
-                d="M 0,192 L 0,160"
+                d="M 48,180 L 48,152"
               />
             </g>
             <g
@@ -3022,7 +3048,7 @@ exports[`DataChart yAxis 1`] = `
             >
               <title />
               <path
-                d="M 384,192 L 384,0"
+                d="M 336,180 L 336,12"
               />
             </g>
           </g>
@@ -3064,7 +3090,7 @@ exports[`DataChart yAxis 1`] = `
           className="c8"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 -12 480 216"
+          viewBox="0 0 384 192"
           width={384}
         >
           <g
@@ -3079,7 +3105,7 @@ exports[`DataChart yAxis 1`] = `
             >
               <title />
               <path
-                d="M 0,192 L 0,160"
+                d="M 48,180 L 48,152"
               />
             </g>
             <g
@@ -3087,7 +3113,7 @@ exports[`DataChart yAxis 1`] = `
             >
               <title />
               <path
-                d="M 384,192 L 384,0"
+                d="M 336,180 L 336,12"
               />
             </g>
           </g>
@@ -3129,7 +3155,7 @@ exports[`DataChart yAxis 1`] = `
           className="c8"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 -12 480 216"
+          viewBox="0 0 384 192"
           width={384}
         >
           <g
@@ -3144,7 +3170,7 @@ exports[`DataChart yAxis 1`] = `
             >
               <title />
               <path
-                d="M 0,192 L 0,160"
+                d="M 48,180 L 48,152"
               />
             </g>
             <g
@@ -3152,7 +3178,7 @@ exports[`DataChart yAxis 1`] = `
             >
               <title />
               <path
-                d="M 384,192 L 384,0"
+                d="M 336,180 L 336,12"
               />
             </g>
           </g>
@@ -3239,6 +3265,9 @@ exports[`DataChart yAxis rounding 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 1;
+  -ms-flex: 0 1;
+  flex: 0 1;
   -webkit-flex-basis: 24px;
   -ms-flex-preferred-size: 24px;
   flex-basis: 24px;
@@ -3318,7 +3347,7 @@ exports[`DataChart yAxis rounding 1`] = `
           className="c8"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 -12 480 216"
+          viewBox="0 0 384 192"
           width={384}
         >
           <g
@@ -3333,7 +3362,7 @@ exports[`DataChart yAxis rounding 1`] = `
             >
               <title />
               <path
-                d="M 0,192 L 0,176.76205714285715"
+                d="M 48,180 L 48,166.6668"
               />
             </g>
             <g
@@ -3341,7 +3370,7 @@ exports[`DataChart yAxis rounding 1`] = `
             >
               <title />
               <path
-                d="M 384,192 L 384,24.38125714285715"
+                d="M 336,180 L 336,33.33360000000002"
               />
             </g>
           </g>
@@ -3393,7 +3422,7 @@ exports[`DataChart yAxis rounding 1`] = `
           className="c8"
           height={192}
           preserveAspectRatio="none"
-          viewBox="-48 -12 480 216"
+          viewBox="0 0 384 192"
           width={384}
         >
           <g
@@ -3408,7 +3437,7 @@ exports[`DataChart yAxis rounding 1`] = `
             >
               <title />
               <path
-                d="M 0,192 L 0,176.76205714285715"
+                d="M 48,180 L 48,166.6668"
               />
             </g>
             <g
@@ -3416,7 +3445,7 @@ exports[`DataChart yAxis rounding 1`] = `
             >
               <title />
               <path
-                d="M 384,192 L 384,24.38125714285715"
+                d="M 336,180 L 336,33.33360000000002"
               />
             </g>
           </g>

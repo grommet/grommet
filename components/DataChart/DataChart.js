@@ -267,12 +267,11 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       justify: "between"
     }, axis[0].map(function (dataIndex, i) {
       var content = xAxis.key ? data[Math.floor(dataIndex)][xAxis.key] : dataIndex;
-      if (xAxis.render) content = xAxis.render(content, data, Math.floor(dataIndex), i);else if (dateFormat) {
-        content = dateFormat(new Date(content));
-      }
+      if (xAxis.render) content = xAxis.render(content, data, Math.floor(dataIndex), i);else if (dateFormat) content = dateFormat(new Date(content));
       return /*#__PURE__*/_react["default"].createElement(_Box.Box, {
         key: i,
         basis: basis,
+        flex: "shrink",
         align: basis ? 'center' : undefined
       }, content);
     }));
@@ -328,6 +327,7 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
         key: i,
         align: "end",
         basis: _basis,
+        flex: "shrink",
         justify: _basis ? 'center' : undefined
       }, content);
     }));

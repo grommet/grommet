@@ -39,46 +39,63 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "bounds", "color", "dash", "gap", "id", "onClick", "onHover", "overflow", "pad", "round", "size", "thickness", "type", "values"]);
 
   var containerRef = useForwardedRef(ref);
-  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var theme = useContext(ThemeContext) || defaultProps.theme; // normalize variables
 
-  var _useState = useState([]),
-      values = _useState[0],
-      setValues = _useState[1];
+  var values = useMemo(function () {
+    return normalizeValues(propsValues);
+  }, [propsValues]);
+  var bounds = useMemo(function () {
+    return normalizeBounds(propsBounds, values);
+  }, [propsBounds, values]);
+  var strokeWidth = useMemo(function () {
+    return parseMetricToNum(theme.global.edgeSize[thickness] || thickness);
+  }, [theme.global.edgeSize, thickness]);
+  var inset = useMemo(function () {
+    var result = [0, 0, 0, 0];
 
-  var _useState2 = useState([[0, 0], [0, 0]]),
-      bounds = _useState2[0],
-      setBounds = _useState2[1];
+    if (pad) {
+      if (pad.horizontal) {
+        var padSize = parseMetricToNum(theme.global.edgeSize[pad.horizontal]);
+        result[0] += padSize;
+        result[2] += padSize;
+      }
 
-  var _useState3 = useState([0, 0]),
-      containerSize = _useState3[0],
-      setContainerSize = _useState3[1];
+      if (pad.vertical) {
+        var _padSize = parseMetricToNum(theme.global.edgeSize[pad.vertical]);
 
-  var _useState4 = useState([0, 0]),
-      size = _useState4[0],
-      setSize = _useState4[1];
+        result[1] += _padSize;
+        result[3] += _padSize;
+      }
 
-  var _useState5 = useState([1, 1]),
-      scale = _useState5[0],
-      setScale = _useState5[1];
+      if (typeof pad === 'string') {
+        var _padSize2 = parseMetricToNum(theme.global.edgeSize[pad]);
 
-  var _useState6 = useState(0),
-      strokeWidth = _useState6[0],
-      setStrokeWidth = _useState6[1];
+        result = [_padSize2, _padSize2, _padSize2, _padSize2];
+      }
+    }
+
+    return result;
+  }, [pad, theme.global.edgeSize]);
+  var strokeDasharray = useMemo(function () {
+    if (dash) {
+      if (round) return strokeWidth + " " + strokeWidth * 1.5;
+      return strokeWidth * 2 + " " + strokeWidth / 2;
+    }
+
+    return undefined;
+  }, [dash, round, strokeWidth]); // potentially dynamic sizing
+
+  var _useState = useState([0, 0]),
+      containerSize = _useState[0],
+      setContainerSize = _useState[1];
 
   var needContainerSize = useMemo(function () {
     return propsSize && (propsSize === 'full' || propsSize === 'fill' || propsSize.height === 'full' || propsSize.height === 'fill' || propsSize.width === 'full' || propsSize.width === 'fill');
-  }, [propsSize]); // calculations
+  }, [propsSize]);
+  var size = useMemo(function () {
+    var gapWidth = gap ? parseMetricToNum(theme.global.edgeSize[gap] || gap) : strokeWidth; // autoWidth is how wide we'd pefer
 
-  useEffect(function () {
-    var nextValues = normalizeValues(propsValues);
-    setValues(nextValues);
-    var nextBounds = normalizeBounds(propsBounds, nextValues);
-    setBounds(nextBounds);
-    var nextStrokeWidth = parseMetricToNum(theme.global.edgeSize[thickness] || thickness);
-    setStrokeWidth(nextStrokeWidth);
-    var gapWidth = gap ? parseMetricToNum(theme.global.edgeSize[gap] || gap) : nextStrokeWidth; // autoWidth is how wide we'd pefer
-
-    var autoWidth = nextStrokeWidth * nextValues.length + (nextValues.length - 1) * gapWidth;
+    var autoWidth = strokeWidth * values.length + (values.length - 1) * gapWidth;
     var sizeWidth = typeof propsSize === 'string' ? propsSize : propsSize.width || defaultSize.width;
     var width;
 
@@ -99,10 +116,15 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       height = parseMetricToNum(theme.global.size[sizeHeight] || sizeHeight);
     }
 
-    setSize([width, height]);
-    var nextScale = [(sizeWidth === 'auto' ? autoWidth : width) / (nextBounds[0][1] - nextBounds[0][0]), height / (nextBounds[1][1] - nextBounds[1][0])];
-    setScale(nextScale);
-  }, [containerSize, gap, propsBounds, propsSize, propsValues, theme.global.edgeSize, theme.global.size, thickness]); // set container size when we get ref or when size changes
+    return [width, height];
+  }, [containerSize, gap, propsSize, strokeWidth, theme.global.edgeSize, theme.global.size, values]);
+  var scale = useMemo(function () {
+    return [(size[0] - (inset[0] + inset[2])) / (bounds[0][1] - bounds[0][0]), (size[1] - (inset[1] + inset[3])) / (bounds[1][1] - bounds[1][0])];
+  }, [bounds, inset, size]);
+  var viewBounds = useMemo(function () {
+    return overflow ? [0, 0, size[0], size[1]] : [-(strokeWidth / 2), -(strokeWidth / 2), size[0] + strokeWidth, size[1] + strokeWidth];
+  }, [overflow, size, strokeWidth]);
+  var useGradient = color && Array.isArray(color); // set container size when we get ref or when size changes
 
   useLayoutEffect(function () {
     if (containerRef.current && needContainerSize) {
@@ -137,17 +159,12 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     }
 
     return undefined;
-  }, [containerRef, needContainerSize]);
-  var useGradient = color && Array.isArray(color);
-  var strokeDasharray;
+  }, [containerRef, needContainerSize]); // Converts values to drawing coordinates.
+  // Takes into account the bounds, any inset, and the scale.
 
-  if (dash) {
-    if (round) {
-      strokeDasharray = strokeWidth + " " + strokeWidth * 1.5;
-    } else {
-      strokeDasharray = strokeWidth * 2 + " " + strokeWidth / 2;
-    }
-  }
+  var valueToCoordinate = function valueToCoordinate(xValue, yValue) {
+    return [(xValue - bounds[0][0]) * scale[0] + inset[0], size[1] - ((yValue - bounds[1][0]) * scale[1] + inset[1])];
+  };
 
   var renderBars = function renderBars() {
     return (values || []).filter(function (_ref2) {
@@ -159,10 +176,11 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
           value = valueArg.value,
           valueRest = _objectWithoutPropertiesLoose(valueArg, ["label", "onHover", "value"]);
 
-      var key = "p-" + index;
+      var key = "p-" + index; // Math.min/max are to handle negative values
+
       var bottom = value.length === 2 ? Math.min(Math.max(0, bounds[1][0]), value[1]) : Math.min(value[1], value[2]);
       var top = value.length === 2 ? Math.max(Math.min(0, bounds[1][1]), value[1]) : Math.max(value[1], value[2]);
-      var d = "M " + (value[0] - bounds[0][0]) * scale[0] + "," + ("" + (size[1] - (bottom - bounds[1][0]) * scale[1])) + (" L " + (value[0] - bounds[0][0]) * scale[0] + ",") + ("" + (size[1] - (top - bounds[1][0]) * scale[1]));
+      var d = "M " + valueToCoordinate(value[0], bottom).join(',') + (" L " + valueToCoordinate(value[0], top).join(','));
       var hoverProps;
 
       if (valueOnHover) {
@@ -197,12 +215,17 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
 
   var renderLine = function renderLine() {
     var d = '';
+    var d2 = '';
     (values || []).filter(function (_ref3) {
       var value = _ref3.value;
       return value[1] !== undefined;
-    }).forEach(function (_ref4, index) {
+    }).forEach(function (_ref4) {
       var value = _ref4.value;
-      d += (index ? ' L' : 'M') + " " + (value[0] - bounds[0][0]) * scale[0] + "," + ("" + (size[1] - (value[1] - bounds[1][0]) * scale[1]));
+      d += (d ? ' L' : 'M') + " " + valueToCoordinate(value[0], value[1]).join(',');
+
+      if (value[2] !== undefined) {
+        d2 += (d2 ? ' L' : 'M') + " " + valueToCoordinate(value[0], value[2]).join(',');
+      }
     });
     var hoverProps;
 
@@ -231,6 +254,10 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       d: d
     }, hoverProps, clickProps, {
       strokeDasharray: strokeDasharray
+    })), d2 && /*#__PURE__*/React.createElement("path", _extends({
+      d: d2
+    }, hoverProps, clickProps, {
+      strokeDasharray: strokeDasharray
     })));
   };
 
@@ -241,16 +268,15 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       return value[1] !== undefined;
     }).forEach(function (_ref6, index) {
       var value = _ref6.value;
-      var top = value.length === 2 ? value[1] : value[2];
-      d += (!index ? 'M' : ' L') + " " + (value[0] - bounds[0][0]) * scale[0] + "," + ("" + (size[1] - (top - bounds[1][0]) * scale[1]));
+      d += (!index ? 'M' : ' L') + " " + valueToCoordinate(value[0], value[value.length === 2 ? 1 : 2]).join(',');
     });
     (values || []).reverse().filter(function (_ref7) {
       var value = _ref7.value;
       return value[1] !== undefined;
     }).forEach(function (_ref8) {
       var value = _ref8.value;
-      var bottom = value.length === 2 ? Math.max(0, bounds[1][0]) : value[1];
-      d += " L " + (value[0] - bounds[0][0]) * scale[0] + "," + ("" + (size[1] - (bottom - bounds[1][0]) * scale[1]));
+      d += " L " + valueToCoordinate(value[0], // Math.max() is to account for value[1] being negative
+      value.length === 2 ? Math.max(0, bounds[1][0]) : value[1]).join(',');
     });
 
     if (d.length > 0) {
@@ -315,32 +341,43 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
         };
       }
 
-      var center = value.length === 2 ? value[1] : value[2];
-      var shape;
+      var renderPoint = function renderPoint(valueX, valueY) {
+        var center = valueY;
 
-      if (round) {
-        var cx = (value[0] - bounds[0][0]) * scale[0];
-        var cy = size[1] - (center - bounds[1][0]) * scale[1];
-        shape = /*#__PURE__*/React.createElement("circle", _extends({
-          cx: cx,
-          cy: cy,
-          r: strokeWidth / 2
-        }, hoverProps, clickProps, valueRest));
-      } else {
-        var x = (value[0] - bounds[0][0]) * scale[0] - strokeWidth / 2;
-        var y = size[1] - (center - bounds[1][0]) * scale[1] - strokeWidth / 2;
-        shape = /*#__PURE__*/React.createElement("rect", _extends({
+        var props = _extends({}, hoverProps, clickProps, valueRest);
+
+        if (round) {
+          var _valueToCoordinate = valueToCoordinate(valueX, center),
+              cx = _valueToCoordinate[0],
+              cy = _valueToCoordinate[1];
+
+          return /*#__PURE__*/React.createElement("circle", _extends({
+            cx: cx,
+            cy: cy,
+            r: strokeWidth / 2
+          }, props));
+        }
+
+        var _valueToCoordinate$ma = valueToCoordinate(value[0], center).map( // for rect, offset half strokeWidth to top left corner coord
+        function (c) {
+          return c - strokeWidth / 2;
+        }),
+            x = _valueToCoordinate$ma[0],
+            y = _valueToCoordinate$ma[1];
+
+        var dim = strokeWidth;
+        return /*#__PURE__*/React.createElement("rect", _extends({
           x: x,
           y: y,
-          width: strokeWidth,
-          height: strokeWidth
-        }, hoverProps, clickProps, valueRest));
-      }
+          width: dim,
+          height: dim
+        }, props));
+      };
 
       return /*#__PURE__*/React.createElement("g", {
         key: key,
         stroke: "none"
-      }, /*#__PURE__*/React.createElement("title", null, label), shape);
+      }, /*#__PURE__*/React.createElement("title", null, label), renderPoint(value[0], value[1]), value[2] !== undefined && renderPoint(value[0], value[2]));
     });
   };
 
@@ -354,32 +391,6 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     contents = renderArea();
   } else if (type === 'point') {
     contents = renderPoints();
-  }
-
-  var viewBounds = overflow ? [0, 0, size[0], size[1]] : [-(strokeWidth / 2), -(strokeWidth / 2), size[0] + strokeWidth, size[1] + strokeWidth];
-
-  if (pad) {
-    if (pad.horizontal) {
-      var padSize = parseMetricToNum(theme.global.edgeSize[pad.horizontal]);
-      viewBounds[0] -= padSize;
-      viewBounds[2] += padSize * 2;
-    }
-
-    if (pad.vertical) {
-      var _padSize = parseMetricToNum(theme.global.edgeSize[pad.vertical]);
-
-      viewBounds[1] -= _padSize;
-      viewBounds[3] += _padSize * 2;
-    }
-
-    if (typeof pad === 'string') {
-      var _padSize2 = parseMetricToNum(theme.global.edgeSize[pad]);
-
-      viewBounds[0] -= _padSize2;
-      viewBounds[1] -= _padSize2;
-      viewBounds[2] += _padSize2 * 2;
-      viewBounds[3] += _padSize2 * 2;
-    }
   }
 
   var viewBox = viewBounds.join(' ');
@@ -429,7 +440,8 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
           gradientColor = _ref10.color;
       return /*#__PURE__*/React.createElement("stop", {
         key: value,
-        offset: (size[1] - (value - bounds[1][0]) * scale[1]) / size[1],
+        offset: // TODO:
+        (size[1] - (value - bounds[1][0]) * scale[1]) / size[1],
         stopColor: normalizeColor(gradientColor, theme)
       });
     })), /*#__PURE__*/React.createElement("mask", {

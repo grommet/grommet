@@ -4,7 +4,7 @@ import { Box, DataChart, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 var data = [];
 
-for (var i = 0; i < 8; i += 1) {
+for (var i = 0; i < 7; i += 1) {
   var v = Math.sin(i / 2.0);
   data.push({
     date: "2020-" + (i % 12 + 1).toString().padStart(2, 0) + "-01",
