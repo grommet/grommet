@@ -37,7 +37,7 @@ export const CheckBoxGroup = forwardRef(
     );
 
     // 'value' is an array of checked valueKeys
-    const [value, setValue] = formContext.useFormContext(name, valueProp, []);
+    const [value, setValue] = formContext.useFormInput(name, valueProp, []);
 
     // Logic is necessary to maintain a proper data structure for Form logic
     const onCheckBoxChange = (event, optionValue, option) => {
