@@ -5,7 +5,7 @@ export interface RadioButtonGroupProps {
   disabled?: boolean;
   name: string;
   onChange?: ((event: React.ChangeEvent<HTMLInputElement>) => void);
-  options: (string | { disabled?: boolean, id?: string, label?: (string | React.ReactNode), value: string | number })[];
+  options: (string | number | { disabled?: boolean, id?: string, label?: (string | React.ReactNode), value: string | number })[];
   value?: string | number | object;
 }
 
