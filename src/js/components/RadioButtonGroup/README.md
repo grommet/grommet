@@ -76,6 +76,7 @@ Currently selected option value.
 
 ```
 string
+number
 object
 ```
   

@@ -48,6 +48,7 @@ export const doc = RadioButtonGroup => {
     Each option is rendered as a single RadioButton.`).isRequired,
     value: PropTypes.oneOfType([
       PropTypes.string,
+      PropTypes.number,
       PropTypes.object,
     ]).description(`Currently selected option value.`),
   };
