@@ -163,7 +163,7 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
     if (yAxis && yAxis.labels >= 0) steps[1] = yAxis.labels - 1;else steps[1] = 1; // ends
 
-    var tmpAxis;
+    var tmpAxis = [[], []];
     var tmpBounds;
     var tmpThickness = thicknessProp;
     charts.forEach(function (_ref6, index) {
