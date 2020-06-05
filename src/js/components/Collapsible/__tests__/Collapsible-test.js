@@ -22,10 +22,10 @@ describe('Collapsible', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('default', () => {
+  test('rerender-default', () => {
     const useEffect = jest.fn();
     let open = false;
-    const { container, getByText } = render(
+    const { container, rerender, getByText } = render(
       <Grommet>
         <Button
           primary
@@ -35,7 +35,7 @@ describe('Collapsible', () => {
           }}
           label="Toggle"
         />
-        <Collapsible open={open}>
+        <Collapsible id="hidden-test" open={open}>
           <Box>
             <Text>Example</Text>
           </Box>
@@ -45,18 +45,31 @@ describe('Collapsible', () => {
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('Toggle'));
     expect(open).toBe(true);
+    rerender(
+      <Grommet>
+        <Button
+          primary
+          onClick={() => {
+            open = !open;
+            useEffect();
+          }}
+          label="Toggle"
+        />
+        <Collapsible id="hidden-test" open={open}>
+          <Box>
+            <Text>Example</Text>
+          </Box>
+        </Collapsible>
+      </Grommet>,
+    );
     expect(container.firstChild).toMatchSnapshot();
     expect(useEffect).toBeCalledTimes(1);
-    fireEvent.click(getByText('Toggle'));
-    expect(open).toBe(false);
-    expect(container.firstChild).toMatchSnapshot();
-    expect(useEffect).toBeCalledTimes(2);
   });
 
-  test('vertical', () => {
+  test('rerender-vertical', () => {
     const useEffect = jest.fn();
     let open = false;
-    const { container, getByText } = render(
+    const { container, rerender, getByText } = render(
       <Grommet>
         <Button
           primary
@@ -66,7 +79,7 @@ describe('Collapsible', () => {
           }}
           label="Toggle"
         />
-        <Collapsible open={open} direction="vertical">
+        <Collapsible id="hidden-test" open={open} direction="verical">
           <Box>
             <Text>Example</Text>
           </Box>
@@ -76,18 +89,31 @@ describe('Collapsible', () => {
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('Toggle'));
     expect(open).toBe(true);
+    rerender(
+      <Grommet>
+        <Button
+          primary
+          onClick={() => {
+            open = !open;
+            useEffect();
+          }}
+          label="Toggle"
+        />
+        <Collapsible id="hidden-test" open={open} direction="vertical">
+          <Box>
+            <Text>Example</Text>
+          </Box>
+        </Collapsible>
+      </Grommet>,
+    );
     expect(container.firstChild).toMatchSnapshot();
     expect(useEffect).toBeCalledTimes(1);
-    fireEvent.click(getByText('Toggle'));
-    expect(open).toBe(false);
-    expect(container.firstChild).toMatchSnapshot();
-    expect(useEffect).toBeCalledTimes(2);
   });
 
-  test('horizontal', () => {
+  test('rerender-horizontal', () => {
     const useEffect = jest.fn();
     let open = false;
-    const { container, getByText } = render(
+    const { container, rerender, getByText } = render(
       <Grommet>
         <Button
           primary
@@ -97,7 +123,7 @@ describe('Collapsible', () => {
           }}
           label="Toggle"
         />
-        <Collapsible open={open} direction="horizontal">
+        <Collapsible id="hidden-test" open={open} direction="horizontal">
           <Box>
             <Text>Example</Text>
           </Box>
@@ -107,11 +133,24 @@ describe('Collapsible', () => {
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('Toggle'));
     expect(open).toBe(true);
+    rerender(
+      <Grommet>
+        <Button
+          primary
+          onClick={() => {
+            open = !open;
+            useEffect();
+          }}
+          label="Toggle"
+        />
+        <Collapsible id="hidden-test" open={open} direction="horizontal">
+          <Box>
+            <Text>Example</Text>
+          </Box>
+        </Collapsible>
+      </Grommet>,
+    );
     expect(container.firstChild).toMatchSnapshot();
     expect(useEffect).toBeCalledTimes(1);
-    fireEvent.click(getByText('Toggle'));
-    expect(open).toBe(false);
-    expect(container.firstChild).toMatchSnapshot();
-    expect(useEffect).toBeCalledTimes(2);
   });
 });

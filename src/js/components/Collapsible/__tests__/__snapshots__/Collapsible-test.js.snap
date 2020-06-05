@@ -1,6 +1,72 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Collapsible default 1`] = `
+exports[`Collapsible open 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #333333;
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  -webkit-transition: max-height 200ms,opacity 200ms;
+  transition: max-height 200ms,opacity 200ms;
+  opacity: 1;
+  overflow: visible;
+  max-height: unset;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  class="c0"
+>
+  <div
+    aria-hidden="false"
+    class="c1 c2"
+    open=""
+  >
+    <div
+      class="c3"
+    >
+      Box Body
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Collapsible rerender-default 1`] = `
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -96,7 +162,7 @@ exports[`Collapsible default 1`] = `
 </div>
 `;
 
-exports[`Collapsible default 2`] = `
+exports[`Collapsible rerender-default 2`] = `
 <div
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
@@ -107,8 +173,10 @@ exports[`Collapsible default 2`] = `
     Toggle
   </button>
   <div
-    aria-hidden="true"
-    class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 bEdCNR"
+    aria-hidden="false"
+    class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 xtDSF"
+    open=""
+    style="max-height: 0;"
   >
     <div
       class="StyledBox-sc-13pk1d4-0 bFwQzJ"
@@ -123,34 +191,7 @@ exports[`Collapsible default 2`] = `
 </div>
 `;
 
-exports[`Collapsible default 3`] = `
-<div
-  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
->
-  <button
-    class="StyledButton-sc-323bzc-0 kIXxtf"
-    type="button"
-  >
-    Toggle
-  </button>
-  <div
-    aria-hidden="true"
-    class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 bEdCNR"
-  >
-    <div
-      class="StyledBox-sc-13pk1d4-0 bFwQzJ"
-    >
-      <span
-        class="StyledText-sc-1sadyjn-0 hUokoe"
-      >
-        Example
-      </span>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Collapsible horizontal 1`] = `
+exports[`Collapsible rerender-horizontal 1`] = `
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -246,7 +287,7 @@ exports[`Collapsible horizontal 1`] = `
 </div>
 `;
 
-exports[`Collapsible horizontal 2`] = `
+exports[`Collapsible rerender-horizontal 2`] = `
 <div
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
@@ -256,117 +297,26 @@ exports[`Collapsible horizontal 2`] = `
   >
     Toggle
   </button>
-  <div
-    aria-hidden="true"
-    class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 hbvmZB"
-  >
-    <div
-      class="StyledBox-sc-13pk1d4-0 bFwQzJ"
-    >
-      <span
-        class="StyledText-sc-1sadyjn-0 hUokoe"
-      >
-        Example
-      </span>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Collapsible horizontal 3`] = `
-<div
-  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
->
-  <button
-    class="StyledButton-sc-323bzc-0 kIXxtf"
-    type="button"
-  >
-    Toggle
-  </button>
-  <div
-    aria-hidden="true"
-    class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 hbvmZB"
-  >
-    <div
-      class="StyledBox-sc-13pk1d4-0 bFwQzJ"
-    >
-      <span
-        class="StyledText-sc-1sadyjn-0 hUokoe"
-      >
-        Example
-      </span>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Collapsible open 1`] = `
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  background-color: #333333;
-  color: #f8f8f8;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c2 {
-  -webkit-transition: max-height 200ms,opacity 200ms;
-  transition: max-height 200ms,opacity 200ms;
-  opacity: 1;
-  overflow: visible;
-  max-height: unset;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-<div
-  class="c0"
->
   <div
     aria-hidden="false"
-    class="c1 c2"
+    class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 etjfwx"
     open=""
+    style="max-width: 0;"
   >
     <div
-      class="c3"
+      class="StyledBox-sc-13pk1d4-0 bFwQzJ"
     >
-      Box Body
+      <span
+        class="StyledText-sc-1sadyjn-0 hUokoe"
+      >
+        Example
+      </span>
     </div>
   </div>
 </div>
 `;
 
-exports[`Collapsible vertical 1`] = `
+exports[`Collapsible rerender-vertical 1`] = `
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -462,7 +412,7 @@ exports[`Collapsible vertical 1`] = `
 </div>
 `;
 
-exports[`Collapsible vertical 2`] = `
+exports[`Collapsible rerender-vertical 2`] = `
 <div
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
@@ -473,35 +423,10 @@ exports[`Collapsible vertical 2`] = `
     Toggle
   </button>
   <div
-    aria-hidden="true"
-    class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 bEdCNR"
-  >
-    <div
-      class="StyledBox-sc-13pk1d4-0 bFwQzJ"
-    >
-      <span
-        class="StyledText-sc-1sadyjn-0 hUokoe"
-      >
-        Example
-      </span>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Collapsible vertical 3`] = `
-<div
-  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
->
-  <button
-    class="StyledButton-sc-323bzc-0 kIXxtf"
-    type="button"
-  >
-    Toggle
-  </button>
-  <div
-    aria-hidden="true"
-    class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 bEdCNR"
+    aria-hidden="false"
+    class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 xtDSF"
+    open=""
+    style="max-height: 0;"
   >
     <div
       class="StyledBox-sc-13pk1d4-0 bFwQzJ"
