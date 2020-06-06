@@ -930,6 +930,7 @@ export var generate = function generate(baseSpacing, scale) {
         // extend: undefined,
 
       },
+      // color: undefined,
       hover: {
         border: {
           color: {
