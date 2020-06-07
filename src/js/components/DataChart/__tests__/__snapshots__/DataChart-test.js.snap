@@ -1599,12 +1599,12 @@ exports[`DataChart xAxis dates 1`] = `
       <div
         className="c6"
       >
-        08:04:01 AM
+        8:04:01 AM
       </div>
       <div
         className="c6"
       >
-        08:04:04 AM
+        8:04:04 AM
       </div>
     </div>
   </div>
