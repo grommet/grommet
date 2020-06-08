@@ -30,24 +30,6 @@ const myTheme = deepMerge(grommet, {
 
 const AlignControls = () => (
   <Grommet theme={myTheme} full>
-    <Tabs justify="start">
-      <Tab title="Tab 1">
-        <Box fill pad="large" align="center">
-          <Attraction size="xlarge" />
-        </Box>
-      </Tab>
-      <Tab title="Tab 2">
-        <Box fill pad="large" align="center">
-          <TreeOption size="xlarge" />
-        </Box>
-      </Tab>
-      <Tab title="Tab 3">
-        <Box fill pad="large" align="center">
-          <Car size="xlarge" />
-        </Box>
-      </Tab>
-    </Tabs>
-
     <Tabs justify="start" alignControls="start">
       <Tab title="Tab 1">
         <Box fill pad="large" align="center">
