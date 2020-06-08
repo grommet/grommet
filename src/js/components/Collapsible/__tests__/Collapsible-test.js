@@ -28,7 +28,6 @@ describe('Collapsible', () => {
     const { container, rerender, getByText } = render(
       <Grommet>
         <Button
-          primary
           onClick={() => {
             open = !open;
             useEffect();
@@ -48,7 +47,6 @@ describe('Collapsible', () => {
     rerender(
       <Grommet>
         <Button
-          primary
           onClick={() => {
             open = !open;
             useEffect();
@@ -66,20 +64,19 @@ describe('Collapsible', () => {
     expect(useEffect).toBeCalledTimes(1);
   });
 
-  test('rerender-vertical', () => {
+  test('rerender-direction-vertical', () => {
     const useEffect = jest.fn();
     let open = false;
     const { container, rerender, getByText } = render(
       <Grommet>
         <Button
-          primary
           onClick={() => {
             open = !open;
             useEffect();
           }}
           label="Toggle"
         />
-        <Collapsible id="hidden-test" open={open} direction="verical">
+        <Collapsible id="hidden-test" open={open} direction="vertical">
           <Box>
             <Text>Example</Text>
           </Box>
@@ -92,7 +89,6 @@ describe('Collapsible', () => {
     rerender(
       <Grommet>
         <Button
-          primary
           onClick={() => {
             open = !open;
             useEffect();
@@ -110,13 +106,12 @@ describe('Collapsible', () => {
     expect(useEffect).toBeCalledTimes(1);
   });
 
-  test('rerender-horizontal', () => {
+  test('rerender-direction-horizontal', () => {
     const useEffect = jest.fn();
     let open = false;
     const { container, rerender, getByText } = render(
       <Grommet>
         <Button
-          primary
           onClick={() => {
             open = !open;
             useEffect();
@@ -136,7 +131,6 @@ describe('Collapsible', () => {
     rerender(
       <Grommet>
         <Button
-          primary
           onClick={() => {
             open = !open;
             useEffect();

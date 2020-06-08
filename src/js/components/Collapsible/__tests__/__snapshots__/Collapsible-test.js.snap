@@ -106,9 +106,6 @@ exports[`Collapsible rerender-default 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  border-radius: 18px;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -167,7 +164,7 @@ exports[`Collapsible rerender-default 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <button
-    class="StyledButton-sc-323bzc-0 kIXxtf"
+    class="StyledButton-sc-323bzc-0 ecNujJ"
     type="button"
   >
     Toggle
@@ -191,7 +188,7 @@ exports[`Collapsible rerender-default 2`] = `
 </div>
 `;
 
-exports[`Collapsible rerender-horizontal 1`] = `
+exports[`Collapsible rerender-direction-horizontal 1`] = `
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -231,9 +228,6 @@ exports[`Collapsible rerender-horizontal 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  border-radius: 18px;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -287,12 +281,12 @@ exports[`Collapsible rerender-horizontal 1`] = `
 </div>
 `;
 
-exports[`Collapsible rerender-horizontal 2`] = `
+exports[`Collapsible rerender-direction-horizontal 2`] = `
 <div
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <button
-    class="StyledButton-sc-323bzc-0 kIXxtf"
+    class="StyledButton-sc-323bzc-0 ecNujJ"
     type="button"
   >
     Toggle
@@ -316,7 +310,7 @@ exports[`Collapsible rerender-horizontal 2`] = `
 </div>
 `;
 
-exports[`Collapsible rerender-vertical 1`] = `
+exports[`Collapsible rerender-direction-vertical 1`] = `
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -356,9 +350,6 @@ exports[`Collapsible rerender-vertical 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  border-radius: 18px;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -412,12 +403,12 @@ exports[`Collapsible rerender-vertical 1`] = `
 </div>
 `;
 
-exports[`Collapsible rerender-vertical 2`] = `
+exports[`Collapsible rerender-direction-vertical 2`] = `
 <div
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <button
-    class="StyledButton-sc-323bzc-0 kIXxtf"
+    class="StyledButton-sc-323bzc-0 ecNujJ"
     type="button"
   >
     Toggle
