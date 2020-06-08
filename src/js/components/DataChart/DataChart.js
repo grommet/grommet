@@ -150,7 +150,7 @@ const DataChart = forwardRef(
       else steps[0] = numValues - 1; // all
       if (yAxis && yAxis.labels >= 0) steps[1] = yAxis.labels - 1;
       else steps[1] = 1; // ends
-      let tmpAxis;
+      let tmpAxis = [[], []];
       let tmpBounds;
       let tmpThickness = thicknessProp;
       charts.forEach(({ keys }, index) => {
@@ -242,11 +242,14 @@ const DataChart = forwardRef(
               : dataIndex;
             if (xAxis.render)
               content = xAxis.render(content, data, Math.floor(dataIndex), i);
-            else if (dateFormat) {
-              content = dateFormat(new Date(content));
-            }
+            else if (dateFormat) content = dateFormat(new Date(content));
             return (
-              <Box key={i} basis={basis} align={basis ? 'center' : undefined}>
+              <Box
+                key={i}
+                basis={basis}
+                flex="shrink"
+                align={basis ? 'center' : undefined}
+              >
                 {content}
               </Box>
             );
@@ -298,6 +301,7 @@ const DataChart = forwardRef(
                 key={i}
                 align="end"
                 basis={basis}
+                flex="shrink"
                 justify={basis ? 'center' : undefined}
               >
                 {content}

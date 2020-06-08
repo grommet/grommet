@@ -836,6 +836,7 @@ export interface ThemeType {
     check?: {
       radius?: string;
     };
+    color?: ColorType;
     hover?: {
       border?: {
         color?: ColorType;
@@ -990,6 +991,7 @@ export interface ThemeType {
     };
   };
   text?: {
+    extend?: ExtendType;
     xsmall?: {
       size?: string;
       height?: string;
