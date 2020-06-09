@@ -311,7 +311,7 @@ describe('List events', () => {
     expect(onClickItem).toBeCalledTimes(0);
   });
 
-  test('should have no violations', async () => {
+  test('should have no accessibilty violations', async () => {
     const { container, getByText } = render(<App />);
 
     fireEvent.click(getByText('alpha'));
