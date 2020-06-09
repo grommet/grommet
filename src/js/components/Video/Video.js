@@ -277,6 +277,7 @@ const Video = forwardRef(
               }
               hoverIndicator="background"
               onClick={playing ? pause : play}
+              data-testid="play-button"
             />
             <Box direction="row" align="center" flex>
               <Box flex>
@@ -316,6 +317,7 @@ const Video = forwardRef(
             </Box>
             <Menu
               icon={<Icons.Configure color={iconColor} />}
+              data-testid="Menu-button"
               dropAlign={{ bottom: 'top', right: 'right' }}
               dropBackground={background}
               items={[
@@ -373,6 +375,7 @@ const Video = forwardRef(
         <StyledVideo
           {...rest}
           ref={videoRef}
+          data-testid="Video-container"
           onDurationChange={event => {
             const video = videoRef.current;
             setDuration(video.duration);
