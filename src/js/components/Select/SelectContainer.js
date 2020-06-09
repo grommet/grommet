@@ -339,6 +339,7 @@ const SelectContainer = forwardRef(
                       role="menuitem"
                       hoverIndicator="background"
                       plain={theme.button.default ? true : undefined}
+                      kind={theme.button.default ? 'option' : undefined}
                       disabled={optionDisabled || undefined}
                       active={optionActive}
                       selected={optionSelected}

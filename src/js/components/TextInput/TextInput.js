@@ -288,7 +288,7 @@ const TextInput = forwardRef(
                           }}
                           fill
                           hoverIndicator="background"
-                          plain={theme.button.default ? true : undefined}
+                          kind={theme.button.default ? 'option' : undefined}
                           onClick={event => {
                             // we stole the focus, give it back
                             inputRef.current.focus();
@@ -308,7 +308,10 @@ const TextInput = forwardRef(
                           {plainLabel ? (
                             renderLabel(suggestion)
                           ) : (
-                            <Box align="start" pad="small">
+                            <Box
+                              align="start"
+                              pad={theme.button.default ? undefined : 'small'}
+                            >
                               {renderLabel(suggestion)}
                             </Box>
                           )}

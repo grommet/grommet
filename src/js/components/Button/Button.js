@@ -94,6 +94,7 @@ const Button = forwardRef(
     {
       a11yTitle,
       active,
+      align = 'center',
       color, // munged to avoid styled-components putting it in the DOM
       children,
       disabled,
@@ -225,7 +226,12 @@ const Button = forwardRef(
     let contents;
     if (first && second) {
       contents = (
-        <Box direction="row" align="center" justify="center" gap={gap}>
+        <Box
+          direction="row"
+          align="center"
+          justify={align === 'center' ? 'center' : 'between'}
+          gap={gap}
+        >
           {first}
           {second}
         </Box>
@@ -242,6 +248,7 @@ const Button = forwardRef(
           {...rest}
           as={domTag}
           ref={ref}
+          align={align}
           aria-label={a11yTitle}
           colorValue={color}
           disabled={disabled}

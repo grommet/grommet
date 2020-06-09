@@ -188,7 +188,7 @@ const Menu = forwardRef((props, ref) => {
       direction="row"
       justify={justifyContent}
       align="center"
-      pad="small"
+      pad={theme.button.default ? undefined : 'small'}
       gap={label && icon !== false ? 'small' : undefined}
     >
       <Text size={size}>{label}</Text>
@@ -267,8 +267,11 @@ const Menu = forwardRef((props, ref) => {
                       active={activeItemIndex === index}
                       hoverIndicator="background"
                       focusIndicator={false}
-                      plain={theme.button.default ? true : undefined}
-                      {...{ ...item, icon: undefined, label: undefined }}
+                      align="start"
+                      kind={theme.button.default ? 'option' : undefined}
+                      {...(theme.button.default
+                        ? item
+                        : { ...item, icon: undefined, label: undefined })}
                       onClick={(...args) => {
                         if (item.onClick) {
                           item.onClick(...args);
@@ -278,16 +281,18 @@ const Menu = forwardRef((props, ref) => {
                         }
                       }}
                     >
-                      <Box
-                        align="start"
-                        pad="small"
-                        direction="row"
-                        gap={item.gap}
-                      >
-                        {item.reverse && item.label}
-                        {item.icon}
-                        {!item.reverse && item.label}
-                      </Box>
+                      {!theme.button.default && (
+                        <Box
+                          align="start"
+                          pad={theme.button.default ? undefined : 'small'}
+                          direction="row"
+                          gap={item.gap}
+                        >
+                          {item.reverse && item.label}
+                          {item.icon}
+                          {!item.reverse && item.label}
+                        </Box>
+                      )}
                     </Button>
                   </Box>
                 ))}

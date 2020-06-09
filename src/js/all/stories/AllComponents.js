@@ -33,14 +33,16 @@ import {
   TextInput,
   Video,
 } from 'grommet';
+import { FormNext } from 'grommet-icons';
 import { grommet } from 'grommet/themes';
 import { generate } from 'grommet/themes/base';
 import { deepMerge } from 'grommet/utils';
-import { hpe } from 'grommet-theme-hpe';
+// import { hpe } from 'grommet-theme-hpe';
 import { aruba } from 'grommet-theme-aruba';
 import { hp } from 'grommet-theme-hp';
 import { dxc } from 'grommet-theme-dxc';
 import { v1 } from 'grommet-theme-v1';
+import { hpe } from './theme';
 
 const Node = ({ id, ...rest }) => (
   <Box
@@ -104,7 +106,16 @@ const Components = () => {
       <Anchor href="">Anchor</Anchor>
       <Menu
         label="Menu"
-        items={[{ label: 'One', onClick: () => {} }, { label: 'Two' }]}
+        items={[
+          {
+            label: 'One',
+            onClick: () => {},
+            icon: <FormNext />,
+            reverse: true,
+          },
+          { label: 'Two' },
+          { label: 'Thirty Three and 1/3' },
+        ]}
       />
       <Button label="Button" onClick={() => {}} />
       <Button plain onClick={() => {}}>
@@ -136,7 +147,7 @@ const Components = () => {
         value={radioButton}
         onChange={event => setRadioButton(event.target.value)}
       />
-      <TextInput placeholder="TextInput" />
+      <TextInput placeholder="TextInput" suggestions={['a', 'b', 'c']} />
       <TextArea placeholder="TextArea" />
       <RangeInput value={24} onChange={() => {}} />
       <Stack>
