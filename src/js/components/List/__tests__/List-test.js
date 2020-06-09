@@ -198,21 +198,6 @@ describe('List', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('background index', () => {
-    const { container, rerender, getByText } = render(
-      <Grommet>
-        <List data={['one', 'two']} />
-      </Grommet>,
-    );
-    fireEvent.click(getByText('two'));
-    rerender(
-      <Grommet>
-        <List data={['one', 'two']} />
-      </Grommet>,
-    );
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
   test('background string', () => {
     const { container } = render(
       <Grommet>
