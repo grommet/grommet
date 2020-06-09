@@ -11275,6 +11275,17 @@ Defaults to
 100%
 \`\`\`
 
+**radioButton.color**
+
+The color of the border surrounding the checked 
+    icon in RadioButton checked state. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **radioButton.extend**
 
 Any additional style for the RadioButton. Expects \`string | (props) => {}\`.
@@ -11394,13 +11405,16 @@ Required. Options can be either a string or an object.
 
 \`\`\`
 [string]
+[number]
 [{
   disabled: boolean,
   id: string,
   label: 
     string
     element,
-  value: string
+  value: 
+    string
+    number
 }]
 \`\`\`
 
@@ -11410,6 +11424,7 @@ Currently selected option value.
 
 \`\`\`
 string
+number
 object
 \`\`\`
   

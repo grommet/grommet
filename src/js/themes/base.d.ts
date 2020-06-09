@@ -588,6 +588,10 @@ export interface ThemeType {
       color?: ColorType;
       margin?: MarginType;
     };
+    info?: {
+      color?: ColorType;
+      margin?: MarginType;
+    };
     label?: TextProps;
     margin?: MarginType;
     round?: RoundType;
@@ -836,6 +840,7 @@ export interface ThemeType {
     check?: {
       radius?: string;
     };
+    color?: ColorType;
     hover?: {
       border?: {
         color?: ColorType;
