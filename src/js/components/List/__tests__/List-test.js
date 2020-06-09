@@ -11,147 +11,6 @@ import { List } from '..';
 describe('List', () => {
   afterEach(cleanup);
 
-  test('list should have no violations', async () => {
-    const { container } = render(
-      <Grommet>
-        <List data={[{ a: 'alpha' }, { a: 'beta' }]} />
-      </Grommet>,
-    );
-
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
-
-  test('mouse events', () => {
-    const onClickItem = jest.fn();
-    const { container, getByText } = render(
-      <Grommet>
-        <List
-          data={[{ a: 'alpha' }, { a: 'beta' }]}
-          onClickItem={onClickItem}
-        />
-      </Grommet>,
-    );
-
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.mouseOver(getByText('beta'));
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.mouseOut(getByText('beta'));
-    expect(container.firstChild).toMatchSnapshot();
-    expect(onClickItem).toBeCalledTimes(0);
-  });
-
-  test('focus and blur', () => {
-    const onClickItem = jest.fn();
-    const { container, getByText } = render(
-      <Grommet>
-        <List
-          data={[{ a: 'alpha' }, { a: 'beta' }]}
-          onClickItem={onClickItem}
-        />
-      </Grommet>,
-    );
-
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.focus(getByText('beta'));
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.blur(getByText('beta'));
-    expect(container.firstChild).toMatchSnapshot();
-    expect(onClickItem).toBeCalledTimes(0);
-  });
-
-  test('ArrowDown key', () => {
-    const onClickItem = jest.fn();
-    const { container, getByText } = render(
-      <Grommet>
-        <List
-          data={[{ a: 'alpha' }, { a: 'beta' }]}
-          onClickItem={onClickItem}
-        />
-      </Grommet>,
-    );
-
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.click(getByText('alpha'));
-    fireEvent.mouseOver(getByText('alpha'));
-    fireEvent.keyDown(getByText('alpha'), {
-      key: 'ArrowDown',
-      keyCode: 40,
-      which: 40,
-    });
-    expect(onClickItem).toHaveBeenCalled();
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
-  test('ArrowDown key on last element', () => {
-    const onClickItem = jest.fn();
-    const { container, getByText } = render(
-      <Grommet>
-        <List
-          data={[{ a: 'alpha' }, { a: 'beta' }]}
-          onClickItem={onClickItem}
-        />
-      </Grommet>,
-    );
-
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.click(getByText('beta'));
-    fireEvent.mouseOver(getByText('beta'));
-    fireEvent.keyDown(getByText('beta'), {
-      key: 'ArrowDown',
-      keyCode: 40,
-      which: 40,
-    });
-    expect(onClickItem).toHaveBeenCalled();
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
-  test('ArrowUp key', () => {
-    const onClickItem = jest.fn();
-    const { container, getByText } = render(
-      <Grommet>
-        <List
-          data={[{ a: 'alpha' }, { a: 'beta' }]}
-          onClickItem={onClickItem}
-        />
-      </Grommet>,
-    );
-
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.click(getByText('beta'));
-    fireEvent.mouseOver(getByText('beta'));
-    fireEvent.keyDown(getByText('beta'), {
-      key: 'ArrowUp',
-      keyCode: 38,
-      which: 38,
-    });
-    expect(onClickItem).toHaveBeenCalled();
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
-  test('Enter key', () => {
-    const onClickItem = jest.fn();
-    const { container, getByText } = render(
-      <Grommet>
-        <List
-          data={[{ a: 'alpha' }, { a: 'beta' }]}
-          onClickItem={onClickItem}
-        />
-      </Grommet>,
-    );
-
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.click(getByText('beta'));
-    fireEvent.mouseOver(getByText('beta'));
-    fireEvent.keyDown(getByText('beta'), {
-      key: 'Enter',
-      keyCode: 13,
-      which: 13,
-    });
-    expect(onClickItem).toHaveBeenCalled();
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
   test('empty', () => {
     const { container } = render(
       <Grommet>
@@ -347,5 +206,116 @@ describe('List', () => {
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
+  });
+});
+
+describe('List events', () => {
+  let onClickItem;
+  let App;
+
+  beforeEach(() => {
+    onClickItem = jest.fn();
+    App = () => {
+      return (
+        <Grommet>
+          <List
+            data={[{ a: 'alpha' }, { a: 'beta' }]}
+            onClickItem={onClickItem}
+          />
+        </Grommet>
+      );
+    };
+  });
+
+  afterEach(cleanup);
+
+  test('Enter key', async () => {
+    const { container, getByText } = render(<App />);
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('beta'));
+    fireEvent.mouseOver(getByText('beta'));
+    fireEvent.keyDown(getByText('beta'), {
+      key: 'Enter',
+      keyCode: 13,
+      which: 13,
+    });
+    expect(onClickItem).toHaveBeenCalledTimes(3);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('ArrowUp key', () => {
+    const { container, getByText } = render(<App />);
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('beta'));
+    fireEvent.mouseOver(getByText('beta'));
+    fireEvent.keyDown(getByText('beta'), {
+      key: 'ArrowUp',
+      keyCode: 38,
+      which: 38,
+    });
+    expect(onClickItem).toHaveBeenCalledTimes(1);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('ArrowDown key', () => {
+    const { container, getByText } = render(<App />);
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('alpha'));
+    fireEvent.mouseOver(getByText('alpha'));
+    fireEvent.keyDown(getByText('alpha'), {
+      key: 'ArrowDown',
+      keyCode: 40,
+      which: 40,
+    });
+    expect(onClickItem).toHaveBeenCalledTimes(1);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('ArrowDown key on last element', () => {
+    const { container, getByText } = render(<App />);
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('beta'));
+    fireEvent.mouseOver(getByText('beta'));
+    fireEvent.keyDown(getByText('beta'), {
+      key: 'ArrowDown',
+      keyCode: 40,
+      which: 40,
+    });
+    expect(onClickItem).toHaveBeenCalledTimes(1);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('focus and blur', () => {
+    const { container, getByText } = render(<App />);
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.focus(getByText('beta'));
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.blur(getByText('beta'));
+    expect(container.firstChild).toMatchSnapshot();
+    expect(onClickItem).toBeCalledTimes(0);
+  });
+
+  test('mouse events', () => {
+    const { container, getByText } = render(<App />);
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.mouseOver(getByText('beta'));
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.mouseOut(getByText('beta'));
+    expect(container.firstChild).toMatchSnapshot();
+    expect(onClickItem).toBeCalledTimes(0);
+  });
+
+  test('should have no violations', async () => {
+    const { container, getByText } = render(<App />);
+
+    fireEvent.click(getByText('alpha'));
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });
