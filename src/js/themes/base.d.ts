@@ -588,6 +588,10 @@ export interface ThemeType {
       color?: ColorType;
       margin?: MarginType;
     };
+    info?: {
+      color?: ColorType;
+      margin?: MarginType;
+    };
     label?: TextProps;
     margin?: MarginType;
     round?: RoundType;
