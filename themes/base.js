@@ -1078,6 +1078,12 @@ var generate = function generate(baseSpacing, scale) {
       // extend: undefined,
       // gap: undefined,
       header: {// background: undefined,
+        // border: {
+        //   side: undefined,
+        //   size: undefined,
+        //   style: undefined,
+        //   color: undefined,
+        // },
         // extend: undefined,
       },
       panel: {// extend: undefined,

@@ -48,6 +48,19 @@ describe('Tabs', function () {
 
     expect(component.toJSON()).toMatchSnapshot();
   });
+  test('alignControls', function () {
+    var component = _reactTestRenderer["default"].create( /*#__PURE__*/_react["default"].createElement(_.Grommet, {
+      full: true
+    }, /*#__PURE__*/_react["default"].createElement(_.Tabs, {
+      alignControls: "center"
+    }, /*#__PURE__*/_react["default"].createElement(_.Tab, {
+      title: "Tab 1"
+    }, "Tab body 1"), /*#__PURE__*/_react["default"].createElement(_.Tab, {
+      title: "Tab 2"
+    }, "Tab body 2"))));
+
+    expect(component.toJSON()).toMatchSnapshot();
+  });
   test('change to second tab', function () {
     var onActive = jest.fn();
 

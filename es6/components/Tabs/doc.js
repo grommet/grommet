@@ -6,6 +6,7 @@ export var doc = function doc(Tabs) {
   var DocumentedTabs = describe(Tabs).availableAt(getAvailableAtBadge('Tabs')).description('A container with controls to show one Tab at a time.').usage("import { Tabs, Tab } from 'grommet';\n<Tabs>\n  <Tab title='Tab 1'>...</Tab>\n  <Tab title='Tab 2'>...</Tab>\n</Tabs>").intrinsicElement('div');
   DocumentedTabs.propTypes = _extends({}, genericProps, {
     activeIndex: PropTypes.number.description("Active tab index. If specified, Tabs will be a controlled component.\nThis means that future tab changes will not work unless you subscribe to\nonActive function and update activeIndex accordingly."),
+    alignControls: PropTypes.oneOf(['start', 'center', 'end', 'stretch']).description('How to align the tab controls within the tabs header.'),
     children: PropTypes.node.description('Array of Tab.').isRequired,
     flex: PropTypes.oneOfType([PropTypes.oneOf(['grow', 'shrink']), PropTypes.bool]).description('Whether flex-grow and/or flex-shrink is true.'),
     justify: PropTypes.oneOf(['start', 'center', 'end']).description('How to align the tabs along the main axis.').defaultValue('center'),
@@ -53,6 +54,26 @@ export var themeDoc = {
     description: 'The background styles of Tabs header.',
     type: 'string | { dark: string, light: string }',
     defaultValue: undefined
+  },
+  'tabs.header.border.color': {
+    description: 'border color of the tabs controls',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined
+  },
+  'tabs.header.border.side': {
+    description: 'side of the border of the tabs controls',
+    type: 'string',
+    defaultValue: undefined
+  },
+  'tabs.header.border.size': {
+    description: 'border size of the tabs controls',
+    type: 'string',
+    defaultValue: undefined
+  },
+  'tabs.header.border.style': {
+    description: 'border style of the tabs controls',
+    type: 'string',
+    defaultValue: 'undefined'
   },
   'tabs.header.extend': {
     description: 'Any additional style for Tabs header.',

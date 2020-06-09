@@ -9,8 +9,10 @@ import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { StyledTabPanel, StyledTabs, StyledTabsHeader } from './StyledTabs';
+import { normalizeColor } from '../../utils';
 var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
-  var children = _ref.children,
+  var alignControls = _ref.alignControls,
+      children = _ref.children,
       flex = _ref.flex,
       _ref$justify = _ref.justify,
       justify = _ref$justify === void 0 ? 'center' : _ref$justify,
@@ -20,7 +22,7 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
   } : _ref$messages,
       _ref$responsive = _ref.responsive,
       responsive = _ref$responsive === void 0 ? true : _ref$responsive,
-      rest = _objectWithoutPropertiesLoose(_ref, ["children", "flex", "justify", "messages", "responsive"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["alignControls", "children", "flex", "justify", "messages", "responsive"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var propsActiveIndex = rest.activeIndex,
@@ -74,6 +76,19 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
       }
     });
   }, _this);
+  var tabsHeaderStyles = {};
+
+  if (theme.tabs.header && theme.tabs.header.border) {
+    var borderColor = theme.tabs.header.border.color || theme.global.control.border.color;
+    borderColor = normalizeColor(borderColor, theme);
+    tabsHeaderStyles.border = {
+      side: theme.tabs.header.border.side,
+      size: theme.tabs.header.border.size,
+      style: theme.tabs.header.border.style,
+      color: borderColor
+    };
+  }
+
   var tabContentTitle = (activeTitle || '') + " " + messages.tabContents;
   return /*#__PURE__*/React.createElement(StyledTabs, _extends({
     ref: ref,
@@ -83,15 +98,16 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
     responsive: responsive
   }, rest, {
     background: theme.tabs.background
-  }), /*#__PURE__*/React.createElement(StyledTabsHeader, {
+  }), /*#__PURE__*/React.createElement(StyledTabsHeader, _extends({
     as: Box,
     direction: "row",
     justify: justify,
+    alignSelf: alignControls,
     flex: false,
     wrap: true,
     background: theme.tabs.header.background,
     gap: theme.tabs.gap
-  }, tabs), /*#__PURE__*/React.createElement(StyledTabPanel, {
+  }, tabsHeaderStyles), tabs), /*#__PURE__*/React.createElement(StyledTabPanel, {
     flex: flex,
     "aria-label": tabContentTitle,
     role: "tabpanel"

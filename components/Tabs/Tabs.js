@@ -13,6 +13,8 @@ var _Box = require("../Box");
 
 var _StyledTabs = require("./StyledTabs");
 
+var _utils = require("../../utils");
+
 var _this = void 0;
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -24,7 +26,8 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 var Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
-  var children = _ref.children,
+  var alignControls = _ref.alignControls,
+      children = _ref.children,
       flex = _ref.flex,
       _ref$justify = _ref.justify,
       justify = _ref$justify === void 0 ? 'center' : _ref$justify,
@@ -34,7 +37,7 @@ var Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   } : _ref$messages,
       _ref$responsive = _ref.responsive,
       responsive = _ref$responsive === void 0 ? true : _ref$responsive,
-      rest = _objectWithoutPropertiesLoose(_ref, ["children", "flex", "justify", "messages", "responsive"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["alignControls", "children", "flex", "justify", "messages", "responsive"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
@@ -91,6 +94,19 @@ var Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     });
   }, _this);
 
+  var tabsHeaderStyles = {};
+
+  if (theme.tabs.header && theme.tabs.header.border) {
+    var borderColor = theme.tabs.header.border.color || theme.global.control.border.color;
+    borderColor = (0, _utils.normalizeColor)(borderColor, theme);
+    tabsHeaderStyles.border = {
+      side: theme.tabs.header.border.side,
+      size: theme.tabs.header.border.size,
+      style: theme.tabs.header.border.style,
+      color: borderColor
+    };
+  }
+
   var tabContentTitle = (activeTitle || '') + " " + messages.tabContents;
   return /*#__PURE__*/_react["default"].createElement(_StyledTabs.StyledTabs, _extends({
     ref: ref,
@@ -100,15 +116,16 @@ var Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     responsive: responsive
   }, rest, {
     background: theme.tabs.background
-  }), /*#__PURE__*/_react["default"].createElement(_StyledTabs.StyledTabsHeader, {
+  }), /*#__PURE__*/_react["default"].createElement(_StyledTabs.StyledTabsHeader, _extends({
     as: _Box.Box,
     direction: "row",
     justify: justify,
+    alignSelf: alignControls,
     flex: false,
     wrap: true,
     background: theme.tabs.header.background,
     gap: theme.tabs.gap
-  }, tabs), /*#__PURE__*/_react["default"].createElement(_StyledTabs.StyledTabPanel, {
+  }, tabsHeaderStyles), tabs), /*#__PURE__*/_react["default"].createElement(_StyledTabs.StyledTabPanel, {
     flex: flex,
     "aria-label": tabContentTitle,
     role: "tabpanel"

@@ -949,6 +949,12 @@ export interface ThemeType {
     gap?: GapType;
     header?: {
       background?: BackgroundType;
+      border?: {
+        side?: string;
+        size?: string;
+        style?: string;
+        color?: ColorType;
+      };
       extend?: ExtendType;
     };
     panel?: {

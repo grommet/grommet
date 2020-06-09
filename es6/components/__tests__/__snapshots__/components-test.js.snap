@@ -5736,6 +5736,14 @@ onActive function and update activeIndex accordingly.",
         "name": "activeIndex",
       },
       Object {
+        "description": "How to align the tab controls within the tabs header.",
+        "format": "start
+center
+end
+stretch",
+        "name": "alignControls",
+      },
+      Object {
         "description": "Array of Tab.",
         "format": "node",
         "name": "children",
