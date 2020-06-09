@@ -14,7 +14,7 @@ describe('List', () => {
   test('list should have no violations', async () => {
     const { container } = render(
       <Grommet>
-        <List />
+        <List data={[{ a: 'alpha' }, { a: 'beta' }]} />
       </Grommet>,
     );
 
@@ -79,6 +79,7 @@ describe('List', () => {
       keyCode: 40,
       which: 40,
     });
+    expect(onClickItem).toHaveBeenCalled();
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -101,6 +102,7 @@ describe('List', () => {
       keyCode: 40,
       which: 40,
     });
+    expect(onClickItem).toHaveBeenCalled();
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -123,6 +125,7 @@ describe('List', () => {
       keyCode: 38,
       which: 38,
     });
+    expect(onClickItem).toHaveBeenCalled();
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -145,6 +148,7 @@ describe('List', () => {
       keyCode: 13,
       which: 13,
     });
+    expect(onClickItem).toHaveBeenCalled();
     expect(container.firstChild).toMatchSnapshot();
   });
 
