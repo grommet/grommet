@@ -1,194 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Collapsible open 1`] = `
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  background-color: #333333;
-  color: #f8f8f8;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c2 {
-  -webkit-transition: max-height 200ms,opacity 200ms;
-  transition: max-height 200ms,opacity 200ms;
-  opacity: 1;
-  overflow: visible;
-  max-height: unset;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-<div
-  class="c0"
->
-  <div
-    aria-hidden="false"
-    class="c1 c2"
-    open=""
-  >
-    <div
-      class="c3"
-    >
-      Box Body
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Collapsible rerender-default 1`] = `
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c3 {
-  -webkit-transition: max-height 200ms,opacity 200ms;
-  transition: max-height 200ms,opacity 200ms;
-  opacity: 0;
-  overflow: hidden;
-  max-height: 0;
-}
-
-.c1 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c1:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c4 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-<div
-  class="c0"
->
-  <button
-    class="c1"
-    type="button"
-  >
-    Toggle
-  </button>
-  <div
-    aria-hidden="true"
-    class="c2 c3"
-  >
-    <div
-      class="c2"
-    >
-      <span
-        class="c4"
-      >
-        Example
-      </span>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Collapsible rerender-default 2`] = `
-<div
-  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
->
-  <button
-    class="StyledButton-sc-323bzc-0 ecNujJ"
-    type="button"
-  >
-    Toggle
-  </button>
-  <div
-    aria-hidden="false"
-    class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 xtDSF"
-    open=""
-    style="max-height: 0;"
-  >
-    <div
-      class="StyledBox-sc-13pk1d4-0 bFwQzJ"
-    >
-      <span
-        class="StyledText-sc-1sadyjn-0 hUokoe"
-      >
-        Example
-      </span>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Collapsible rerender-direction-horizontal 1`] = `
+exports[`Collapsible direction horizontal 1`] = `
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -262,26 +74,22 @@ exports[`Collapsible rerender-direction-horizontal 1`] = `
     class="c1"
     type="button"
   >
-    Toggle
+    Expand
   </button>
   <div
     aria-hidden="true"
     class="c2 c3"
   >
-    <div
-      class="c2"
+    <span
+      class="c4"
     >
-      <span
-        class="c4"
-      >
-        Example
-      </span>
-    </div>
+      Example
+    </span>
   </div>
 </div>
 `;
 
-exports[`Collapsible rerender-direction-horizontal 2`] = `
+exports[`Collapsible direction horizontal 2`] = `
 <div
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
@@ -289,7 +97,7 @@ exports[`Collapsible rerender-direction-horizontal 2`] = `
     class="StyledButton-sc-323bzc-0 ecNujJ"
     type="button"
   >
-    Toggle
+    Expand
   </button>
   <div
     aria-hidden="false"
@@ -297,20 +105,16 @@ exports[`Collapsible rerender-direction-horizontal 2`] = `
     open=""
     style="max-width: 0;"
   >
-    <div
-      class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+    <span
+      class="StyledText-sc-1sadyjn-0 hUokoe"
     >
-      <span
-        class="StyledText-sc-1sadyjn-0 hUokoe"
-      >
-        Example
-      </span>
-    </div>
+      Example
+    </span>
   </div>
 </div>
 `;
 
-exports[`Collapsible rerender-direction-vertical 1`] = `
+exports[`Collapsible direction vertical 1`] = `
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -384,7 +188,7 @@ exports[`Collapsible rerender-direction-vertical 1`] = `
     class="c1"
     type="button"
   >
-    Toggle
+    Expand
   </button>
   <div
     aria-hidden="true"
@@ -403,7 +207,7 @@ exports[`Collapsible rerender-direction-vertical 1`] = `
 </div>
 `;
 
-exports[`Collapsible rerender-direction-vertical 2`] = `
+exports[`Collapsible direction vertical 2`] = `
 <div
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
@@ -411,7 +215,7 @@ exports[`Collapsible rerender-direction-vertical 2`] = `
     class="StyledButton-sc-323bzc-0 ecNujJ"
     type="button"
   >
-    Toggle
+    Expand
   </button>
   <div
     aria-hidden="false"
@@ -419,14 +223,195 @@ exports[`Collapsible rerender-direction-vertical 2`] = `
     open=""
     style="max-height: 0;"
   >
-    <div
-      class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+    .c0 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+<span
+      class="c0"
     >
-      <span
-        class="StyledText-sc-1sadyjn-0 hUokoe"
-      >
-        Example
-      </span>
+      Example
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Collapsible onClick open default 1`] = `
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  -webkit-transition: max-height 200ms,opacity 200ms;
+  transition: max-height 200ms,opacity 200ms;
+  opacity: 0;
+  overflow: hidden;
+  max-height: 0;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c1:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+<div
+  class="c0"
+>
+  <button
+    class="c1"
+    type="button"
+  >
+    Expand
+  </button>
+  <div
+    aria-hidden="true"
+    class="c2 c3"
+  >
+    <span
+      class="c4"
+    >
+      Example
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Collapsible onClick open default 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+>
+  <button
+    class="StyledButton-sc-323bzc-0 ecNujJ"
+    type="button"
+  >
+    Expand
+  </button>
+  <div
+    aria-hidden="false"
+    class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 xtDSF"
+    open=""
+    style="max-height: 0;"
+  >
+    <span
+      class="StyledText-sc-1sadyjn-0 hUokoe"
+    >
+      Example
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Collapsible open 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #333333;
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  -webkit-transition: max-height 200ms,opacity 200ms;
+  transition: max-height 200ms,opacity 200ms;
+  opacity: 1;
+  overflow: visible;
+  max-height: unset;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  class="c0"
+>
+  <div
+    aria-hidden="false"
+    class="c1 c2"
+    open=""
+  >
+    <div
+      class="c3"
+    >
+      Box Body
     </div>
   </div>
 </div>

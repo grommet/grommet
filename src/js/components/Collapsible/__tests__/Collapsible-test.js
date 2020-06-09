@@ -22,61 +22,57 @@ describe('Collapsible', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('rerender-default', () => {
-    const useEffect = jest.fn();
+  test('onClick open default', () => {
+    const collapseOnClick = jest.fn();
     let open = false;
     const { container, rerender, getByText } = render(
       <Grommet>
         <Button
           onClick={() => {
             open = !open;
-            useEffect();
+            collapseOnClick();
           }}
-          label="Toggle"
+          label="Expand"
         />
-        <Collapsible id="hidden-test" open={open}>
-          <Box>
-            <Text>Example</Text>
-          </Box>
+        <Collapsible open={open}>
+          <Text>Example</Text>
         </Collapsible>
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
-    fireEvent.click(getByText('Toggle'));
+    fireEvent.click(getByText('Expand'));
     expect(open).toBe(true);
     rerender(
       <Grommet>
         <Button
           onClick={() => {
             open = !open;
-            useEffect();
+            collapseOnClick();
           }}
-          label="Toggle"
+          label="Expand"
         />
-        <Collapsible id="hidden-test" open={open}>
-          <Box>
-            <Text>Example</Text>
-          </Box>
+        <Collapsible open={open}>
+          <Text>Example</Text>
         </Collapsible>
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
-    expect(useEffect).toBeCalledTimes(1);
+    expect(collapseOnClick).toBeCalledTimes(1);
   });
 
-  test('rerender-direction-vertical', () => {
-    const useEffect = jest.fn();
+  test('direction vertical', () => {
+    const collapseOnClick = jest.fn();
     let open = false;
     const { container, rerender, getByText } = render(
       <Grommet>
         <Button
           onClick={() => {
             open = !open;
-            useEffect();
+            collapseOnClick();
           }}
-          label="Toggle"
+          label="Expand"
         />
-        <Collapsible id="hidden-test" open={open} direction="vertical">
+        <Collapsible open={open} direction="vertical">
           <Box>
             <Text>Example</Text>
           </Box>
@@ -84,67 +80,63 @@ describe('Collapsible', () => {
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
-    fireEvent.click(getByText('Toggle'));
+    fireEvent.click(getByText('Expand'));
     expect(open).toBe(true);
+    // Rerendering because props were updated. Want to render with new props
     rerender(
       <Grommet>
         <Button
           onClick={() => {
             open = !open;
-            useEffect();
+            collapseOnClick();
           }}
-          label="Toggle"
+          label="Expand"
         />
-        <Collapsible id="hidden-test" open={open} direction="vertical">
-          <Box>
-            <Text>Example</Text>
-          </Box>
+        <Collapsible open={open} direction="vertical">
+          <Text>Example</Text>
         </Collapsible>
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
-    expect(useEffect).toBeCalledTimes(1);
+    expect(collapseOnClick).toBeCalledTimes(1);
   });
 
-  test('rerender-direction-horizontal', () => {
-    const useEffect = jest.fn();
+  test('direction horizontal', () => {
+    const collapseOnClick = jest.fn();
     let open = false;
     const { container, rerender, getByText } = render(
       <Grommet>
         <Button
           onClick={() => {
             open = !open;
-            useEffect();
+            collapseOnClick();
           }}
-          label="Toggle"
+          label="Expand"
         />
-        <Collapsible id="hidden-test" open={open} direction="horizontal">
-          <Box>
-            <Text>Example</Text>
-          </Box>
+        <Collapsible open={open} direction="horizontal">
+          <Text>Example</Text>
         </Collapsible>
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
-    fireEvent.click(getByText('Toggle'));
+    fireEvent.click(getByText('Expand'));
     expect(open).toBe(true);
+    // Rerendering because props were updated. Want to render with new props
     rerender(
       <Grommet>
         <Button
           onClick={() => {
             open = !open;
-            useEffect();
+            collapseOnClick();
           }}
-          label="Toggle"
+          label="Expand"
         />
-        <Collapsible id="hidden-test" open={open} direction="horizontal">
-          <Box>
-            <Text>Example</Text>
-          </Box>
+        <Collapsible open={open} direction="horizontal">
+          <Text>Example</Text>
         </Collapsible>
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
-    expect(useEffect).toBeCalledTimes(1);
+    expect(collapseOnClick).toBeCalledTimes(1);
   });
 });
