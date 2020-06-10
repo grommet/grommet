@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Collapsible direction horizontal 1`] = `
-.c2 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -15,41 +15,12 @@ exports[`Collapsible direction horizontal 1`] = `
   flex-direction: column;
 }
 
-.c3 {
+.c2 {
   -webkit-transition: max-width 200ms,opacity 200ms;
   transition: max-width 200ms,opacity 200ms;
   opacity: 0;
   overflow: hidden;
   max-width: 0;
-}
-
-.c1 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c1:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
 .c0 {
@@ -62,7 +33,7 @@ exports[`Collapsible direction horizontal 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c4 {
+.c3 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -70,18 +41,12 @@ exports[`Collapsible direction horizontal 1`] = `
 <div
   class="c0"
 >
-  <button
-    class="c1"
-    type="button"
-  >
-    Expand
-  </button>
   <div
     aria-hidden="true"
-    class="c2 c3"
+    class="c1 c2"
   >
     <span
-      class="c4"
+      class="c3"
     >
       Example
     </span>
@@ -93,12 +58,6 @@ exports[`Collapsible direction horizontal 2`] = `
 <div
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
-  <button
-    class="StyledButton-sc-323bzc-0 ecNujJ"
-    type="button"
-  >
-    Expand
-  </button>
   <div
     aria-hidden="false"
     class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 etjfwx"
@@ -115,7 +74,7 @@ exports[`Collapsible direction horizontal 2`] = `
 `;
 
 exports[`Collapsible direction vertical 1`] = `
-.c2 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -129,41 +88,12 @@ exports[`Collapsible direction vertical 1`] = `
   flex-direction: column;
 }
 
-.c3 {
+.c2 {
   -webkit-transition: max-height 200ms,opacity 200ms;
   transition: max-height 200ms,opacity 200ms;
   opacity: 0;
   overflow: hidden;
   max-height: 0;
-}
-
-.c1 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c1:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
 .c0 {
@@ -176,7 +106,7 @@ exports[`Collapsible direction vertical 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c4 {
+.c3 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -184,21 +114,15 @@ exports[`Collapsible direction vertical 1`] = `
 <div
   class="c0"
 >
-  <button
-    class="c1"
-    type="button"
-  >
-    Expand
-  </button>
   <div
     aria-hidden="true"
-    class="c2 c3"
+    class="c1 c2"
   >
     <div
-      class="c2"
+      class="c1"
     >
       <span
-        class="c4"
+        class="c3"
       >
         Example
       </span>
@@ -211,12 +135,6 @@ exports[`Collapsible direction vertical 2`] = `
 <div
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
-  <button
-    class="StyledButton-sc-323bzc-0 ecNujJ"
-    type="button"
-  >
-    Expand
-  </button>
   <div
     aria-hidden="false"
     class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 xtDSF"
@@ -238,7 +156,7 @@ exports[`Collapsible direction vertical 2`] = `
 `;
 
 exports[`Collapsible onClick open default 1`] = `
-.c2 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -252,41 +170,12 @@ exports[`Collapsible onClick open default 1`] = `
   flex-direction: column;
 }
 
-.c3 {
+.c2 {
   -webkit-transition: max-height 200ms,opacity 200ms;
   transition: max-height 200ms,opacity 200ms;
   opacity: 0;
   overflow: hidden;
   max-height: 0;
-}
-
-.c1 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c1:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
 .c0 {
@@ -299,7 +188,7 @@ exports[`Collapsible onClick open default 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c4 {
+.c3 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -307,18 +196,12 @@ exports[`Collapsible onClick open default 1`] = `
 <div
   class="c0"
 >
-  <button
-    class="c1"
-    type="button"
-  >
-    Expand
-  </button>
   <div
     aria-hidden="true"
-    class="c2 c3"
+    class="c1 c2"
   >
     <span
-      class="c4"
+      class="c3"
     >
       Example
     </span>
@@ -330,12 +213,6 @@ exports[`Collapsible onClick open default 2`] = `
 <div
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
-  <button
-    class="StyledButton-sc-323bzc-0 ecNujJ"
-    type="button"
-  >
-    Expand
-  </button>
   <div
     aria-hidden="false"
     class="StyledBox-sc-13pk1d4-0 bFwQzJ Collapsible__AnimatedBox-sc-15kniua-0 xtDSF"
@@ -359,22 +236,6 @@ exports[`Collapsible open 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  background-color: #333333;
-  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -409,7 +270,7 @@ exports[`Collapsible open 1`] = `
     open=""
   >
     <div
-      class="c3"
+      class="c1"
     >
       Box Body
     </div>
