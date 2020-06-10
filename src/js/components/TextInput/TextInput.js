@@ -1,6 +1,5 @@
 import React, {
   forwardRef,
-  isValidElement,
   useCallback,
   useContext,
   useEffect,
@@ -270,9 +269,22 @@ const TextInput = forwardRef(
               <StyledSuggestions>
                 <InfiniteScroll items={suggestions} step={theme.select.step}>
                   {(suggestion, index, itemRef) => {
-                    const plainLabel =
-                      typeof suggestion === 'object' &&
-                      typeof isValidElement(suggestion.label);
+                    // Determine whether the label is done as a child or
+                    // as an option Button kind property.
+                    const renderedLabel = renderLabel(suggestion);
+                    let child;
+                    if (typeof renderedLabel !== 'string')
+                      // must be an element rendered by suggestions.label
+                      child = renderedLabel;
+                    else if (!theme.button.option)
+                      // don't have theme support, need to layout here
+                      child = (
+                        <Box align="start" pad="small">
+                          {renderedLabel}
+                        </Box>
+                      );
+                    // if we have a child, turn on plain, and hoverIndicator
+
                     return (
                       <li
                         key={`${stringLabel(suggestion)}-${index}`}
@@ -287,8 +299,11 @@ const TextInput = forwardRef(
                             suggestionRefs[index] = r;
                           }}
                           fill
-                          hoverIndicator="background"
-                          plain={theme.button.default ? true : undefined}
+                          plain={!child ? undefined : true}
+                          align="start"
+                          kind={!child ? 'option' : undefined}
+                          hoverIndicator={!child ? undefined : 'background'}
+                          label={!child ? renderedLabel : undefined}
                           onClick={event => {
                             // we stole the focus, give it back
                             inputRef.current.focus();
@@ -305,13 +320,7 @@ const TextInput = forwardRef(
                           onMouseOver={() => setActiveSuggestionIndex(index)}
                           onFocus={() => setActiveSuggestionIndex(index)}
                         >
-                          {plainLabel ? (
-                            renderLabel(suggestion)
-                          ) : (
-                            <Box align="start" pad="small">
-                              {renderLabel(suggestion)}
-                            </Box>
-                          )}
+                          {child}
                         </Button>
                       </li>
                     );

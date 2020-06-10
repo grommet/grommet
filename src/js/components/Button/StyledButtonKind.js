@@ -173,7 +173,7 @@ const kindStyle = ({ colorValue, themePaths, theme }) => {
 const hoverIndicatorStyle = ({ hoverIndicator, theme }) => {
   const themishObj = {};
   if (hoverIndicator === true || hoverIndicator === 'background')
-    themishObj.background = theme.global.hover;
+    themishObj.background = theme.global.hover.background;
   else themishObj.background = hoverIndicator;
   const styles = kindPartStyles(themishObj, theme);
   if (styles.length > 0)
@@ -226,6 +226,12 @@ const StyledButtonKind = styled.button`
   ${props => props.plain && plainStyle(props)}
   ${props => !props.plain && basicStyle(props)}
   ${props => !props.plain && kindStyle(props)}
+  ${props =>
+    !props.plain &&
+    props.align &&
+    `
+  text-align: ${props.align};
+  `}
   ${props => props.hoverIndicator && hoverIndicatorStyle(props)}
   ${props =>
     props.focus && (!props.plain || props.focusIndicator) && focusStyle()}
