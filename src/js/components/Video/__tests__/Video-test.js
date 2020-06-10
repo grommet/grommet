@@ -160,29 +160,4 @@ describe('Video', () => {
     expect(playStub).toHaveBeenCalled();
     playStub.mockRestore();
   });
-
-  // test('Video plays', () => {
-  //   const component = mount(
-  //     <Grommet>
-  //       <Video controls='below'>{CONTENTS}</Video>
-  //     </Grommet>
-  //   );
-  //   const button = component.find('button').at(0);
-  //   console.log('!!!', button.debug());
-  //   button.simulate('click');
-  //   expect(component).toMatchSnapshot();
-  // });
-
-  // test('Video controls appear on hover', () => {
-  //   const component = mount(
-  //     <Grommet>
-  //       <Video controls='over'>{CONTENTS}</Video>
-  //     </Grommet>
-  //   );
-  //   console.log('!!!', component.debug());
-  //   const container = component.find('StyledVideo__StyledVideoContainer');
-  //   console.log('!!!', container.debug());
-  //   container.simulate('mouseenter');
-  //   expect(component).toMatchSnapshot();
-  // });
 });
