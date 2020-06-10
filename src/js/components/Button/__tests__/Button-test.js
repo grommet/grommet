@@ -11,15 +11,15 @@ import { Grommet, Button, Text } from '../..';
 describe('Button', () => {
   afterEach(cleanup);
 
-  test('theme', () => {
-    const component = renderer.create(
-      <Grommet theme={grommet}>
-        <Button label="Test" onClick={() => {}} />
-      </Grommet>,
-    );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-  });
+  // test('theme', () => {
+  //   const component = renderer.create(
+  //     <Grommet theme={grommet}>
+  //       <Button label="Test" onClick={() => {}} />
+  //     </Grommet>,
+  //   );
+  //   const tree = component.toJSON();
+  //   expect(tree).toMatchSnapshot();
+  // });
 
   test('basic', () => {
     const component = renderer.create(
@@ -294,5 +294,61 @@ describe('Button', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+  });
+});
+
+describe('Kind', () => {
+  // const darks = [false, true];
+  const kinds = [
+    { name: 'default', props: {} },
+    { name: 'primary', props: { primary: true } },
+    { name: 'secondary', props: { secondary: true } },
+  ];
+  const states = [
+    {},
+    { active: true },
+    { disabled: true },
+    { color: 'teal' },
+    { color: '#9999ff' },
+    { color: '#333399' },
+    { hoverIndicator: 'teal' },
+  ];
+  const contents = [
+    { label: 'label' },
+    {
+      plain: true,
+      children: <Text color="orange">label</Text>,
+    },
+  ];
+
+  // let onClickItem;
+  let App;
+
+  beforeEach(() => {
+    // onClickItem = jest.fn();
+    App = () => {
+      return (
+        <Grommet theme={grommet}>
+          {contents.map(content => (
+            <Button
+              // key={index2}
+              {...kinds.props}
+              {...content}
+              {...states}
+            />
+          ))}
+        </Grommet>
+      );
+    };
+  });
+
+  afterEach(cleanup);
+
+  // test('Enter key', async () => {
+  //   const { container, getByText } = render(<App />);
+
+  test('theme', () => {
+    const { container } = render(<App />);
+    expect(container.firstChild).toMatchSnapshot();
   });
 });
