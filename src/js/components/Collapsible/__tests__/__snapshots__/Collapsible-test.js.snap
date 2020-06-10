@@ -118,15 +118,11 @@ exports[`Collapsible direction vertical 1`] = `
     aria-hidden="true"
     class="c1 c2"
   >
-    <div
-      class="c1"
+    <span
+      class="c3"
     >
-      <span
-        class="c3"
-      >
-        Example
-      </span>
-    </div>
+      Example
+    </span>
   </div>
 </div>
 `;
@@ -141,13 +137,8 @@ exports[`Collapsible direction vertical 2`] = `
     open=""
     style="max-height: 0;"
   >
-    .c0 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-<span
-      class="c0"
+    <span
+      class="StyledText-sc-1sadyjn-0 hUokoe"
     >
       Example
     </span>
@@ -261,6 +252,11 @@ exports[`Collapsible open 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 <div
   class="c0"
 >
@@ -269,11 +265,11 @@ exports[`Collapsible open 1`] = `
     class="c1 c2"
     open=""
   >
-    <div
-      class="c1"
+    <span
+      class="c3"
     >
-      Box Body
-    </div>
+      Example
+    </span>
   </div>
 </div>
 `;
