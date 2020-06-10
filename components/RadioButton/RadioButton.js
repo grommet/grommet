@@ -67,6 +67,7 @@ var RadioButton = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     }
   }), /*#__PURE__*/_react["default"].createElement(_StyledRadioButton.StyledRadioButton, {
     as: _Box.Box,
+    flex: false,
     margin: label ? {
       right: theme.radioButton.gap || 'small'
     } : undefined
