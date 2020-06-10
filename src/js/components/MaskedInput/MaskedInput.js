@@ -354,6 +354,8 @@ const MaskedInput = forwardRef(
           >
             <Box ref={dropRef}>
               {mask[activeMaskIndex].options.map((option, index) => {
+                // Determine whether the label is done as a child or
+                // as an option Button kind property.
                 const child = !theme.button.option ? (
                   <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
                     {option}
@@ -361,6 +363,8 @@ const MaskedInput = forwardRef(
                 ) : (
                   undefined
                 );
+                // if we have a child, turn on plain, and hoverIndicator
+
                 return (
                   <Box key={option} flex={false}>
                     <Button
@@ -369,10 +373,10 @@ const MaskedInput = forwardRef(
                       onMouseOver={() => setActiveOptionIndex(index)}
                       onFocus={() => {}}
                       active={index === activeOptionIndex}
-                      plain={!!child}
+                      plain={!child ? undefined : true}
                       align="start"
                       kind={!child ? 'option' : undefined}
-                      hoverIndicator={child ? 'background' : undefined}
+                      hoverIndicator={!child ? undefined : 'background'}
                       label={!child ? option : undefined}
                     >
                       {child}

@@ -304,6 +304,12 @@ export const hpe = deepFreeze({
         },
       },
     },
+    selected: {
+      option: {
+        background: 'selected-background',
+        color: 'selected-text',
+      },
+    },
     disabled: {
       background: {
         color: 'transparent',
@@ -341,6 +347,10 @@ export const hpe = deepFreeze({
           horizontal: '9px',
           vertical: '3px',
         },
+      },
+      option: {
+        background: 'active-background',
+        color: 'active-text',
       },
     },
     size: {
@@ -730,14 +740,7 @@ export const hpe = deepFreeze({
       down: FormDown,
       up: FormUp,
     },
-    options: {
-      container: {
-        pad: { horizontal: 'small', vertical: 'xsmall' },
-      },
-      text: {
-        size: 'small',
-      },
-    },
+    options: undefined,
   },
   tab: {
     color: 'text-strong',

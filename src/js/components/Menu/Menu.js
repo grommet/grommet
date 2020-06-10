@@ -256,48 +256,62 @@ const Menu = forwardRef((props, ref) => {
             <ContainerBox background={dropBackground || theme.menu.background}>
               {align.top === 'top' ? controlMirror : undefined}
               <Box overflow="auto">
-                {items.map((item, index) => (
-                  // eslint-disable-next-line react/no-array-index-key
-                  <Box key={index} flex={false}>
-                    <Button
-                      ref={r => {
-                        buttonRefs[index] = r;
-                      }}
-                      onFocus={() => setActiveItemIndex(index)}
-                      active={activeItemIndex === index}
-                      hoverIndicator="background"
-                      focusIndicator={false}
+                {items.map((item, index) => {
+                  // Determine whether the label is done as a child or
+                  // as an option Button kind property.
+                  const child = !theme.button.option ? (
+                    <Box
                       align="start"
-                      // With default Button, let it handle icon and label
-                      // via 'option' kind. No need to render children here.
-                      kind={theme.button.default ? 'option' : undefined}
-                      {...(theme.button.default
-                        ? item
-                        : { ...item, icon: undefined, label: undefined })}
-                      onClick={(...args) => {
-                        if (item.onClick) {
-                          item.onClick(...args);
-                        }
-                        if (item.close !== false) {
-                          onDropClose();
-                        }
-                      }}
+                      pad="small"
+                      direction="row"
+                      gap={item.gap}
                     >
-                      {!theme.button.default && (
-                        <Box
-                          align="start"
-                          pad="small"
-                          direction="row"
-                          gap={item.gap}
-                        >
-                          {item.reverse && item.label}
-                          {item.icon}
-                          {!item.reverse && item.label}
-                        </Box>
-                      )}
-                    </Button>
-                  </Box>
-                ))}
+                      {item.reverse && item.label}
+                      {item.icon}
+                      {!item.reverse && item.label}
+                    </Box>
+                  ) : (
+                    undefined
+                  );
+                  // if we have a child, turn on plain, and hoverIndicator
+
+                  return (
+                    // eslint-disable-next-line react/no-array-index-key
+                    <Box key={index} flex={false}>
+                      <Button
+                        ref={r => {
+                          buttonRefs[index] = r;
+                        }}
+                        onFocus={() => setActiveItemIndex(index)}
+                        active={activeItemIndex === index}
+                        focusIndicator={false}
+                        plain={!child ? undefined : true}
+                        align="start"
+                        kind={!child ? 'option' : undefined}
+                        hoverIndicator={!child ? undefined : 'background'}
+                        {...(!child
+                          ? item
+                          : {
+                              ...item,
+                              gap: undefined,
+                              icon: undefined,
+                              label: undefined,
+                              reverse: undefined,
+                            })}
+                        onClick={(...args) => {
+                          if (item.onClick) {
+                            item.onClick(...args);
+                          }
+                          if (item.close !== false) {
+                            onDropClose();
+                          }
+                        }}
+                      >
+                        {child}
+                      </Button>
+                    </Box>
+                  );
+                })}
               </Box>
               {align.bottom === 'bottom' ? controlMirror : undefined}
             </ContainerBox>

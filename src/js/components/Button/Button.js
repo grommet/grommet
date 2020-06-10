@@ -114,6 +114,7 @@ const Button = forwardRef(
       primary,
       reverse,
       secondary,
+      selected,
       size,
       type = 'button',
       as,
@@ -150,6 +151,10 @@ const Button = forwardRef(
       if (!kind || plain) return undefined;
       const result = { base: [], hover: [] };
       result.base.push(kind);
+      if (selected) {
+        result.base.push('selected');
+        if (kind) result.base.push(`selected.${kind}`);
+      }
       if (disabled) {
         result.base.push('disabled');
         if (kind) result.base.push(`disabled.${kind}`);
@@ -288,6 +293,7 @@ const Button = forwardRef(
         aria-label={a11yTitle}
         colorValue={color}
         active={active}
+        selected={selected}
         disabled={disabled}
         hasIcon={!!icon}
         gap={gap}

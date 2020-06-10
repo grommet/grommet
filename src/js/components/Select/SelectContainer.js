@@ -286,10 +286,12 @@ const SelectContainer = forwardRef(
 
     const customSearchInput = theme.select.searchInput;
     const SelectTextInput = customSearchInput || TextInput;
-    const selectOptionsStyle = {
-      ...theme.select.options.box,
-      ...theme.select.options.container,
-    };
+    const selectOptionsStyle = theme.select.options
+      ? {
+          ...theme.select.options.box,
+          ...theme.select.options.container,
+        }
+      : {};
 
     return (
       <Keyboard
@@ -330,6 +332,8 @@ const SelectContainer = forwardRef(
                   const optionDisabled = isDisabled(index);
                   const optionSelected = isSelected(index);
                   const optionActive = activeIndex === index;
+                  // Determine whether the label is done as a child or
+                  // as an option Button kind property.
                   let child;
                   if (children)
                     child = children(option, index, options, {
@@ -348,6 +352,7 @@ const SelectContainer = forwardRef(
                         </Text>
                       </OptionBox>
                     );
+                  // if we have a child, turn on plain, and hoverIndicator
 
                   return (
                     <SelectOption
@@ -356,10 +361,10 @@ const SelectContainer = forwardRef(
                       ref={optionRef}
                       tabIndex="-1"
                       role="menuitem"
-                      plain={!!child}
+                      plain={!child ? undefined : true}
                       align="start"
                       kind={!child ? 'option' : undefined}
-                      hoverIndicator={child ? 'background' : undefined}
+                      hoverIndicator={!child ? undefined : 'background'}
                       label={!child ? optionLabel(index) : undefined}
                       disabled={optionDisabled || undefined}
                       active={optionActive}

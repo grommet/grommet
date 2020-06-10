@@ -84,7 +84,7 @@ const Components = () => {
   const [radioButton, setRadioButton] = useState('RadioButton 1');
   const [rangeSelector, setRangeSelector] = useState([1, 2]);
   const [themeMode, setThemeMode] = useState();
-  const [themeName, setThemeName] = useState('hpe');
+  const [themeName, setThemeName] = useState('grommet');
   const [background, setBackground] = useState(undefined);
   const [tabIndex, setTabIndex] = useState(0);
 
