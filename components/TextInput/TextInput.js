@@ -254,7 +254,17 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       items: suggestions,
       step: theme.select.step
     }, function (suggestion, index, itemRef) {
-      var plainLabel = typeof suggestion === 'object' && typeof /*#__PURE__*/(0, _react.isValidElement)(suggestion.label);
+      // Determine whether the label is done as a child or
+      // as an option Button kind property.
+      var renderedLabel = renderLabel(suggestion);
+      var child;
+      if (typeof renderedLabel !== 'string') // must be an element rendered by suggestions.label
+        child = renderedLabel;else if (!theme.button.option) // don't have theme support, need to layout here
+        child = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+          align: "start",
+          pad: "small"
+        }, renderedLabel); // if we have a child, turn on plain, and hoverIndicator
+
       return /*#__PURE__*/_react["default"].createElement("li", {
         key: stringLabel(suggestion) + "-" + index,
         ref: itemRef
@@ -264,8 +274,11 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
           suggestionRefs[index] = r;
         },
         fill: true,
-        hoverIndicator: "background",
-        plain: theme.button["default"] ? true : undefined,
+        plain: !child ? undefined : true,
+        align: "start",
+        kind: !child ? 'option' : undefined,
+        hoverIndicator: !child ? undefined : 'background',
+        label: !child ? renderedLabel : undefined,
         onClick: function onClick(event) {
           // we stole the focus, give it back
           inputRef.current.focus();
@@ -287,10 +300,7 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
         onFocus: function onFocus() {
           return setActiveSuggestionIndex(index);
         }
-      }, plainLabel ? renderLabel(suggestion) : /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-        align: "start",
-        pad: "small"
-      }, renderLabel(suggestion))));
+      }, child));
     })))));
   }
 

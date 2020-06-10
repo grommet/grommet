@@ -123,7 +123,7 @@ var hoverIndicatorStyle = function hoverIndicatorStyle(_ref3) {
   var hoverIndicator = _ref3.hoverIndicator,
       theme = _ref3.theme;
   var themishObj = {};
-  if (hoverIndicator === true || hoverIndicator === 'background') themishObj.background = theme.global.hover;else themishObj.background = hoverIndicator;
+  if (hoverIndicator === true || hoverIndicator === 'background') themishObj.background = theme.global.hover.background;else themishObj.background = hoverIndicator;
   var styles = kindPartStyles(themishObj, theme);
   if (styles.length > 0) return css(["&:hover{", "}"], styles);
   return '';
@@ -152,12 +152,14 @@ var plainStyle = function plainStyle() {
 var StyledButtonKind = styled.button.withConfig({
   displayName: "StyledButtonKind",
   componentId: "sc-1vhfpnt-0"
-})(["display:inline-block;box-sizing:border-box;cursor:pointer;font:inherit;text-decoration:none;margin:0;background:transparent;overflow:visible;text-transform:none;", " ", " ", " ", " ", " ", " ", " ", " ", ""], genericStyles, function (props) {
+})(["display:inline-block;box-sizing:border-box;cursor:pointer;font:inherit;text-decoration:none;margin:0;background:transparent;overflow:visible;text-transform:none;", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], genericStyles, function (props) {
   return props.plain && plainStyle(props);
 }, function (props) {
   return !props.plain && basicStyle(props);
 }, function (props) {
   return !props.plain && kindStyle(props);
+}, function (props) {
+  return !props.plain && props.align && "\n  text-align: " + props.align + ";\n  ";
 }, function (props) {
   return props.hoverIndicator && hoverIndicatorStyle(props);
 }, function (props) {

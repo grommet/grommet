@@ -171,7 +171,7 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
     direction: "row",
     justify: justifyContent,
     align: "center",
-    pad: "small",
+    pad: theme.button["default"] ? undefined : 'small',
     gap: label && icon !== false ? 'small' : undefined
   }, /*#__PURE__*/React.createElement(Text, {
     size: size
@@ -234,6 +234,15 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
     }, align.top === 'top' ? controlMirror : undefined, /*#__PURE__*/React.createElement(Box, {
       overflow: "auto"
     }, items.map(function (item, index) {
+      // Determine whether the label is done as a child or
+      // as an option Button kind property.
+      var child = !theme.button.option ? /*#__PURE__*/React.createElement(Box, {
+        align: "start",
+        pad: "small",
+        direction: "row",
+        gap: item.gap
+      }, item.reverse && item.label, item.icon, !item.reverse && item.label) : undefined; // if we have a child, turn on plain, and hoverIndicator
+
       return (
         /*#__PURE__*/
         // eslint-disable-next-line react/no-array-index-key
@@ -248,12 +257,16 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
             return setActiveItemIndex(index);
           },
           active: activeItemIndex === index,
-          hoverIndicator: "background",
           focusIndicator: false,
-          plain: theme.button["default"] ? true : undefined
-        }, _extends({}, item, {
+          plain: !child ? undefined : true,
+          align: "start",
+          kind: !child ? 'option' : undefined,
+          hoverIndicator: !child ? undefined : 'background'
+        }, !child ? item : _extends({}, item, {
+          gap: undefined,
           icon: undefined,
-          label: undefined
+          label: undefined,
+          reverse: undefined
         }), {
           onClick: function onClick() {
             if (item.onClick) {
@@ -264,12 +277,7 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
               onDropClose();
             }
           }
-        }), /*#__PURE__*/React.createElement(Box, {
-          align: "start",
-          pad: "small",
-          direction: "row",
-          gap: item.gap
-        }, item.reverse && item.label, item.icon, !item.reverse && item.label)))
+        }), child))
       );
     })), align.bottom === 'bottom' ? controlMirror : undefined))
   }), content));

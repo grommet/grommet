@@ -256,9 +256,7 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, [activeIndex, selectOption]);
   var customSearchInput = theme.select.searchInput;
   var SelectTextInput = customSearchInput || TextInput;
-
-  var selectOptionsStyle = _extends({}, theme.select.options.box, theme.select.options.container);
-
+  var selectOptionsStyle = theme.select.options ? _extends({}, theme.select.options.box, theme.select.options.container) : {};
   return /*#__PURE__*/React.createElement(Keyboard, {
     onEnter: onSelectOption,
     onUp: onPreviousOption,
@@ -293,28 +291,36 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, function (option, index, optionRef) {
     var optionDisabled = isDisabled(index);
     var optionSelected = isSelected(index);
-    var optionActive = activeIndex === index;
+    var optionActive = activeIndex === index; // Determine whether the label is done as a child or
+    // as an option Button kind property.
+
+    var child;
+    if (children) child = children(option, index, options, {
+      active: optionActive,
+      disabled: optionDisabled,
+      selected: optionSelected
+    });else if (theme.select.options) child = /*#__PURE__*/React.createElement(OptionBox, _extends({}, selectOptionsStyle, {
+      selected: optionSelected
+    }), /*#__PURE__*/React.createElement(Text, theme.select.options.text, optionLabel(index))); // if we have a child, turn on plain, and hoverIndicator
+
     return /*#__PURE__*/React.createElement(SelectOption // eslint-disable-next-line react/no-array-index-key
     , {
       key: index,
       ref: optionRef,
       tabIndex: "-1",
       role: "menuitem",
-      hoverIndicator: "background",
-      plain: theme.button["default"] ? true : undefined,
+      plain: !child ? undefined : true,
+      align: "start",
+      kind: !child ? 'option' : undefined,
+      hoverIndicator: !child ? undefined : 'background',
+      label: !child ? optionLabel(index) : undefined,
       disabled: optionDisabled || undefined,
       active: optionActive,
       selected: optionSelected,
       option: option,
       onMouseOver: !optionDisabled ? onActiveOption(index) : undefined,
       onClick: !optionDisabled ? selectOption(index) : undefined
-    }, children ? children(option, index, options, {
-      active: optionActive,
-      disabled: optionDisabled,
-      selected: optionSelected
-    }) : /*#__PURE__*/React.createElement(OptionBox, _extends({}, selectOptionsStyle, {
-      selected: optionSelected
-    }), /*#__PURE__*/React.createElement(Text, theme.select.options.text, optionLabel(index))));
+    }, child);
   }) : /*#__PURE__*/React.createElement(SelectOption, {
     key: "search_empty",
     tabIndex: "-1",

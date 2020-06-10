@@ -366,6 +366,15 @@ var MaskedInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     ref: dropRef
   }, mask[activeMaskIndex].options.map(function (option, index) {
+    // Determine whether the label is done as a child or
+    // as an option Button kind property.
+    var child = !theme.button.option ? /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+      pad: {
+        horizontal: 'small',
+        vertical: 'xsmall'
+      }
+    }, option) : undefined; // if we have a child, turn on plain, and hoverIndicator
+
     return /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       key: option,
       flex: false
@@ -377,14 +386,12 @@ var MaskedInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       },
       onFocus: function onFocus() {},
       active: index === activeOptionIndex,
-      hoverIndicator: "background",
-      plain: theme.button["default"] ? true : undefined
-    }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-      pad: {
-        horizontal: 'small',
-        vertical: 'xsmall'
-      }
-    }, option)));
+      plain: !child ? undefined : true,
+      align: "start",
+      kind: !child ? 'option' : undefined,
+      hoverIndicator: !child ? undefined : 'background',
+      label: !child ? option : undefined
+    }, child));
   }))));
 });
 MaskedInput.displayName = 'MaskedInput';

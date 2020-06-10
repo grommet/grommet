@@ -88,6 +88,8 @@ var getIconColor = function getIconColor(paths, theme, colorProp) {
 var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       active = _ref.active,
+      _ref$align = _ref.align,
+      align = _ref$align === void 0 ? 'center' : _ref$align,
       color = _ref.color,
       children = _ref.children,
       disabled = _ref.disabled,
@@ -109,11 +111,12 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       primary = _ref.primary,
       reverse = _ref.reverse,
       secondary = _ref.secondary,
+      selected = _ref.selected,
       size = _ref.size,
       _ref$type = _ref.type,
       type = _ref$type === void 0 ? 'button' : _ref$type,
       as = _ref.as,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "active", "color", "children", "disabled", "icon", "focusIndicator", "gap", "fill", "href", "kind", "label", "onBlur", "onClick", "onFocus", "onMouseOut", "onMouseOver", "plain", "primary", "reverse", "secondary", "size", "type", "as"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "active", "align", "color", "children", "disabled", "icon", "focusIndicator", "gap", "fill", "href", "kind", "label", "onBlur", "onClick", "onFocus", "onMouseOut", "onMouseOver", "plain", "primary", "reverse", "secondary", "selected", "size", "type", "as"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
@@ -151,6 +154,11 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       hover: []
     };
     result.base.push(kind);
+
+    if (selected) {
+      result.base.push('selected');
+      if (kind) result.base.push("selected." + kind);
+    }
 
     if (disabled) {
       result.base.push('disabled');
@@ -224,7 +232,7 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     contents = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       direction: "row",
       align: "center",
-      justify: "center",
+      justify: align === 'center' ? 'center' : 'between',
       gap: gap
     }, first, second);
   } else if (typeof children === 'function') {
@@ -240,6 +248,7 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     return /*#__PURE__*/_react["default"].createElement(_StyledButtonKind.StyledButtonKind, _extends({}, rest, {
       as: domTag,
       ref: ref,
+      align: align,
       "aria-label": a11yTitle,
       colorValue: color,
       disabled: disabled,
@@ -274,6 +283,7 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     "aria-label": a11yTitle,
     colorValue: color,
     active: active,
+    selected: selected,
     disabled: disabled,
     hasIcon: !!icon,
     gap: gap,

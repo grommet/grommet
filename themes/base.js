@@ -504,6 +504,16 @@ var generate = function generate(baseSpacing, scale) {
       //   },
       //   extend: undefined,
       // },
+      // option: {
+      //   background: undefined,
+      //   border: undefined,
+      //   color: undefined,
+      //   padding: {
+      //     vertical: undefined,
+      //     horizontal: undefined,
+      //   },
+      //   extend: undefined,
+      // },
       active: {
         background: 'active-background',
         //   border: undefined,

@@ -2,7 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { forwardRef, isValidElement, useCallback, useContext, useEffect, useRef, useState } from 'react';
+import React, { forwardRef, useCallback, useContext, useEffect, useRef, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
@@ -233,7 +233,17 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       items: suggestions,
       step: theme.select.step
     }, function (suggestion, index, itemRef) {
-      var plainLabel = typeof suggestion === 'object' && typeof /*#__PURE__*/isValidElement(suggestion.label);
+      // Determine whether the label is done as a child or
+      // as an option Button kind property.
+      var renderedLabel = renderLabel(suggestion);
+      var child;
+      if (typeof renderedLabel !== 'string') // must be an element rendered by suggestions.label
+        child = renderedLabel;else if (!theme.button.option) // don't have theme support, need to layout here
+        child = /*#__PURE__*/React.createElement(Box, {
+          align: "start",
+          pad: "small"
+        }, renderedLabel); // if we have a child, turn on plain, and hoverIndicator
+
       return /*#__PURE__*/React.createElement("li", {
         key: stringLabel(suggestion) + "-" + index,
         ref: itemRef
@@ -243,8 +253,11 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
           suggestionRefs[index] = r;
         },
         fill: true,
-        hoverIndicator: "background",
-        plain: theme.button["default"] ? true : undefined,
+        plain: !child ? undefined : true,
+        align: "start",
+        kind: !child ? 'option' : undefined,
+        hoverIndicator: !child ? undefined : 'background',
+        label: !child ? renderedLabel : undefined,
         onClick: function onClick(event) {
           // we stole the focus, give it back
           inputRef.current.focus();
@@ -266,10 +279,7 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
         onFocus: function onFocus() {
           return setActiveSuggestionIndex(index);
         }
-      }, plainLabel ? renderLabel(suggestion) : /*#__PURE__*/React.createElement(Box, {
-        align: "start",
-        pad: "small"
-      }, renderLabel(suggestion))));
+      }, child));
     })))));
   }
 

@@ -6,13 +6,13 @@ var _react2 = require("@storybook/react");
 
 var _grommet = require("grommet");
 
+var _grommetIcons = require("grommet-icons");
+
 var _themes = require("grommet/themes");
 
 var _base = require("grommet/themes/base");
 
 var _utils = require("grommet/utils");
-
-var _grommetThemeHpe = require("grommet-theme-hpe");
 
 var _grommetThemeAruba = require("grommet-theme-aruba");
 
@@ -21,6 +21,8 @@ var _grommetThemeHp = require("grommet-theme-hp");
 var _grommetThemeDxc = require("grommet-theme-dxc");
 
 var _grommetThemeV = require("grommet-theme-v1");
+
+var _theme = require("./theme");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -61,7 +63,7 @@ var connection = function connection(fromTarget, toTarget, _temp) {
 
 var themes = {
   grommet: _themes.grommet,
-  hpe: _grommetThemeHpe.hpe,
+  hpe: _theme.hpe,
   aruba: _grommetThemeAruba.aruba,
   hp: _grommetThemeHp.hp,
   dxc: _grommetThemeDxc.dxc,
@@ -77,29 +79,37 @@ var Components = function Components() {
       checkBox = _useState2[0],
       setCheckBox = _useState2[1];
 
-  var _useState3 = (0, _react.useState)('RadioButton 1'),
-      radioButton = _useState3[0],
-      setRadioButton = _useState3[1];
+  var _useState3 = (0, _react.useState)(''),
+      textInput = _useState3[0],
+      setTextInput = _useState3[1];
 
-  var _useState4 = (0, _react.useState)([1, 2]),
-      rangeSelector = _useState4[0],
-      setRangeSelector = _useState4[1];
+  var _useState4 = (0, _react.useState)(''),
+      maskedInput = _useState4[0],
+      setMaskedInput = _useState4[1];
 
-  var _useState5 = (0, _react.useState)(),
-      themeMode = _useState5[0],
-      setThemeMode = _useState5[1];
+  var _useState5 = (0, _react.useState)('RadioButton 1'),
+      radioButton = _useState5[0],
+      setRadioButton = _useState5[1];
 
-  var _useState6 = (0, _react.useState)('grommet'),
-      themeName = _useState6[0],
-      setThemeName = _useState6[1];
+  var _useState6 = (0, _react.useState)([1, 2]),
+      rangeSelector = _useState6[0],
+      setRangeSelector = _useState6[1];
 
-  var _useState7 = (0, _react.useState)(undefined),
-      background = _useState7[0],
-      setBackground = _useState7[1];
+  var _useState7 = (0, _react.useState)(),
+      themeMode = _useState7[0],
+      setThemeMode = _useState7[1];
 
-  var _useState8 = (0, _react.useState)(0),
-      tabIndex = _useState8[0],
-      setTabIndex = _useState8[1];
+  var _useState8 = (0, _react.useState)('grommet'),
+      themeName = _useState8[0],
+      setThemeName = _useState8[1];
+
+  var _useState9 = (0, _react.useState)(undefined),
+      background = _useState9[0],
+      setBackground = _useState9[1];
+
+  var _useState10 = (0, _react.useState)(0),
+      tabIndex = _useState10[0],
+      setTabIndex = _useState10[1];
 
   var theme = (0, _react.useMemo)(function () {
     return (0, _utils.deepMerge)((0, _base.generate)(baseSize), themes[themeName]);
@@ -121,9 +131,13 @@ var Components = function Components() {
     label: "Menu",
     items: [{
       label: 'One',
-      onClick: function onClick() {}
+      onClick: function onClick() {},
+      icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.FormNext, null),
+      reverse: true
     }, {
       label: 'Two'
+    }, {
+      label: 'Thirty Three and 1/3'
     }]
   }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     label: "Button",
@@ -161,7 +175,34 @@ var Components = function Components() {
       return setRadioButton(event.target.value);
     }
   }), /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
-    placeholder: "TextInput"
+    placeholder: "TextInput",
+    suggestions: ['a', 'b', 'c'],
+    value: textInput,
+    onChange: function onChange(event) {
+      return setTextInput(event.target.value);
+    },
+    onSelect: function onSelect(_ref3) {
+      var suggestion = _ref3.suggestion;
+      return setTextInput(suggestion);
+    }
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.MaskedInput, {
+    mask: [{
+      length: [1, 4],
+      options: [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],
+      regexp: /^\d{1,4}$/,
+      placeholder: 'nnn'
+    }, {
+      fixed: ' '
+    }, {
+      length: 2,
+      options: ['MB', 'GB', 'TB'],
+      regexp: /^[mgt]b$|^[MGT]B$|^[mMgGtT]$/,
+      placeholder: 'gb'
+    }],
+    value: maskedInput,
+    onChange: function onChange(event) {
+      return setMaskedInput(event.target.value);
+    }
   }), /*#__PURE__*/_react["default"].createElement(_grommet.TextArea, {
     placeholder: "TextArea"
   }), /*#__PURE__*/_react["default"].createElement(_grommet.RangeInput, {
