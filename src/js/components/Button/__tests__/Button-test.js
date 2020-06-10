@@ -5,10 +5,21 @@ import 'jest-styled-components';
 import { Add, Next } from 'grommet-icons';
 
 import { findAllByType } from '../../../utils';
+import { grommet } from '../../../themes/grommet';
 import { Grommet, Button, Text } from '../..';
 
 describe('Button', () => {
   afterEach(cleanup);
+
+  test('theme', () => {
+    const component = renderer.create(
+      <Grommet theme={grommet}>
+        <Button label="Test" onClick={() => {}} />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 
   test('basic', () => {
     const component = renderer.create(
