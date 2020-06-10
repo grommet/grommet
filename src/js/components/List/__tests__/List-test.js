@@ -11,6 +11,22 @@ import { List } from '..';
 describe('List', () => {
   afterEach(cleanup);
 
+  test('should have no accessibilty violations', async () => {
+    const onClickItem = jest.fn();
+    const { container, getByText } = render(
+      <Grommet>
+        <List
+          data={[{ a: 'alpha' }, { a: 'beta' }]}
+          onClickItem={onClickItem}
+        />
+      </Grommet>,
+    );
+
+    fireEvent.click(getByText('alpha'));
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
   test('empty', () => {
     const { container } = render(
       <Grommet>
@@ -229,7 +245,7 @@ describe('List events', () => {
 
   afterEach(cleanup);
 
-  test('Enter key', async () => {
+  test('Enter key', () => {
     const { container, getByText } = render(<App />);
 
     expect(container.firstChild).toMatchSnapshot();
@@ -309,13 +325,5 @@ describe('List events', () => {
     fireEvent.mouseOut(getByText('beta'));
     expect(container.firstChild).toMatchSnapshot();
     expect(onClickItem).toBeCalledTimes(0);
-  });
-
-  test('should have no accessibilty violations', async () => {
-    const { container, getByText } = render(<App />);
-
-    fireEvent.click(getByText('alpha'));
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
   });
 });
