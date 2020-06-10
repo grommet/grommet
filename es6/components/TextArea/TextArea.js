@@ -12,8 +12,9 @@ var TextArea = /*#__PURE__*/forwardRef(function (_ref, ref) {
       _onBlur = _ref.onBlur,
       _onChange = _ref.onChange,
       _onFocus = _ref.onFocus,
+      onKeyDown = _ref.onKeyDown,
       valueProp = _ref.value,
-      rest = _objectWithoutPropertiesLoose(_ref, ["fill", "name", "onBlur", "onChange", "onFocus", "value"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["fill", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "value"]);
 
   var formContext = useContext(FormContext);
 
@@ -31,7 +32,8 @@ var TextArea = /*#__PURE__*/forwardRef(function (_ref, ref) {
       // drop and layer should not close by pressing esc on this input
       event.stopPropagation();
       event.nativeEvent.stopImmediatePropagation();
-    }
+    },
+    onKeyDown: onKeyDown
   }, /*#__PURE__*/React.createElement(StyledTextArea, _extends({
     ref: ref,
     name: name,
