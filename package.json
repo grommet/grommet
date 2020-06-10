@@ -29,7 +29,7 @@
   },
   "scripts": {
     "generate-readme": "cross-env NODE_ENV=production babel-node ./tools/generate-readme",
-    "build": "webpack --mode production && babel ./src/js/ --ignore '__tests__' --out-dir ./dist --copy-files && cross-env BABEL_ENV=es6 babel ./src/js/ --ignore '__tests__' --out-dir ./dist/es6 --copy-files", 
+    "build": "webpack --mode production && babel ./src/js/ --ignore '__tests__' --out-dir ./dist --copy-files && cross-env BABEL_ENV=es6 babel ./src/js/ --ignore '__tests__' --out-dir ./dist/es6 --copy-files",
     "release-stable": "babel-node ./tools/release-stable",
     "lint": "eslint src",
     "lint-fix": "eslint src --fix",
@@ -91,7 +91,6 @@
     "bundlesize": "^0.18.0",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.0.4",
-    "copyfiles": "^2.3.0",
     "core-js": "^3.6.4",
     "cross-env": "^5.1.6",
     "del": "^5.1.0",
