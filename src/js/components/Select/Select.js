@@ -27,7 +27,7 @@ const SelectTextInput = styled(TextInput)`
 `;
 
 const StyledSelectDropButton = styled(DropButton)`
-  ${props => !props.plain && controlBorderStyle};
+  ${props => !props.callerPlain && controlBorderStyle};
   ${props =>
     props.theme.select &&
     props.theme.select.control &&
@@ -231,7 +231,9 @@ const Select = forwardRef(
               {children}
             </SelectContainer>
           }
-          plain={plain}
+          // StyledDropButton needs to know if the border should be shown
+          callerPlain={plain}
+          plain // Button should be plain
           dropProps={dropProps}
           theme={theme}
         >
