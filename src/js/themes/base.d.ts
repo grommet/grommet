@@ -588,6 +588,10 @@ export interface ThemeType {
       color?: ColorType;
       margin?: MarginType;
     };
+    info?: {
+      color?: ColorType;
+      margin?: MarginType;
+    };
     label?: TextProps;
     margin?: MarginType;
     round?: RoundType;
@@ -945,6 +949,12 @@ export interface ThemeType {
     gap?: GapType;
     header?: {
       background?: BackgroundType;
+      border?: {
+        side?: string;
+        size?: string;
+        style?: string;
+        color?: ColorType;
+      };
       extend?: ExtendType;
     };
     panel?: {
