@@ -59,6 +59,18 @@ describe('Tabs', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
 
+  test('alignControls', () => {
+    const component = renderer.create(
+      <Grommet full>
+        <Tabs alignControls="center">
+          <Tab title="Tab 1">Tab body 1</Tab>
+          <Tab title="Tab 2">Tab body 2</Tab>
+        </Tabs>
+      </Grommet>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+
   test('change to second tab', () => {
     const onActive = jest.fn();
     const { getByText, container } = render(
