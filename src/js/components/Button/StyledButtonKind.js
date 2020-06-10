@@ -179,7 +179,6 @@ const hoverIndicatorStyle = ({ hoverIndicator, theme }) => {
   if (styles.length > 0)
     return css`
       &:hover {
-        overflow: visible;
         ${styles}
       }
     `;
