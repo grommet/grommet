@@ -1,6 +1,5 @@
 import React, {
   forwardRef,
-  isValidElement,
   useCallback,
   useContext,
   useEffect,
@@ -270,9 +269,17 @@ const TextInput = forwardRef(
               <StyledSuggestions>
                 <InfiniteScroll items={suggestions} step={theme.select.step}>
                   {(suggestion, index, itemRef) => {
-                    const plainLabel =
-                      typeof suggestion === 'object' &&
-                      typeof isValidElement(suggestion.label);
+                    const renderedLabel = renderLabel(suggestion);
+                    let child;
+                    if (typeof renderedLabel !== 'string')
+                      child = renderedLabel;
+                    else if (!theme.button.option)
+                      child = (
+                        <Box align="start" pad="small">
+                          {renderedLabel}
+                        </Box>
+                      );
+
                     return (
                       <li
                         key={`${stringLabel(suggestion)}-${index}`}
@@ -287,8 +294,11 @@ const TextInput = forwardRef(
                             suggestionRefs[index] = r;
                           }}
                           fill
-                          hoverIndicator="background"
-                          kind={theme.button.default ? 'option' : undefined}
+                          plain={!!child}
+                          align="start"
+                          kind={!child ? 'option' : undefined}
+                          hoverIndicator={child ? 'background' : undefined}
+                          label={!child ? renderedLabel : undefined}
                           onClick={event => {
                             // we stole the focus, give it back
                             inputRef.current.focus();
@@ -305,16 +315,7 @@ const TextInput = forwardRef(
                           onMouseOver={() => setActiveSuggestionIndex(index)}
                           onFocus={() => setActiveSuggestionIndex(index)}
                         >
-                          {plainLabel ? (
-                            renderLabel(suggestion)
-                          ) : (
-                            <Box
-                              align="start"
-                              pad={theme.button.default ? undefined : 'small'}
-                            >
-                              {renderLabel(suggestion)}
-                            </Box>
-                          )}
+                          {child}
                         </Button>
                       </li>
                     );

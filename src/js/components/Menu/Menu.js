@@ -268,6 +268,8 @@ const Menu = forwardRef((props, ref) => {
                       hoverIndicator="background"
                       focusIndicator={false}
                       align="start"
+                      // With default Button, let it handle icon and label
+                      // via 'option' kind. No need to render children here.
                       kind={theme.button.default ? 'option' : undefined}
                       {...(theme.button.default
                         ? item

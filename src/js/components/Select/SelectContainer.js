@@ -330,6 +330,25 @@ const SelectContainer = forwardRef(
                   const optionDisabled = isDisabled(index);
                   const optionSelected = isSelected(index);
                   const optionActive = activeIndex === index;
+                  let child;
+                  if (children)
+                    child = children(option, index, options, {
+                      active: optionActive,
+                      disabled: optionDisabled,
+                      selected: optionSelected,
+                    });
+                  else if (theme.select.options)
+                    child = (
+                      <OptionBox
+                        {...selectOptionsStyle}
+                        selected={optionSelected}
+                      >
+                        <Text {...theme.select.options.text}>
+                          {optionLabel(index)}
+                        </Text>
+                      </OptionBox>
+                    );
+
                   return (
                     <SelectOption
                       // eslint-disable-next-line react/no-array-index-key
@@ -337,9 +356,11 @@ const SelectContainer = forwardRef(
                       ref={optionRef}
                       tabIndex="-1"
                       role="menuitem"
-                      hoverIndicator="background"
-                      plain={theme.button.default ? true : undefined}
-                      kind={theme.button.default ? 'option' : undefined}
+                      plain={!!child}
+                      align="start"
+                      kind={!child ? 'option' : undefined}
+                      hoverIndicator={child ? 'background' : undefined}
+                      label={!child ? optionLabel(index) : undefined}
                       disabled={optionDisabled || undefined}
                       active={optionActive}
                       selected={optionSelected}
@@ -351,22 +372,7 @@ const SelectContainer = forwardRef(
                         !optionDisabled ? selectOption(index) : undefined
                       }
                     >
-                      {children ? (
-                        children(option, index, options, {
-                          active: optionActive,
-                          disabled: optionDisabled,
-                          selected: optionSelected,
-                        })
-                      ) : (
-                        <OptionBox
-                          {...selectOptionsStyle}
-                          selected={optionSelected}
-                        >
-                          <Text {...theme.select.options.text}>
-                            {optionLabel(index)}
-                          </Text>
-                        </OptionBox>
-                      )}
+                      {child}
                     </SelectOption>
                   );
                 }}

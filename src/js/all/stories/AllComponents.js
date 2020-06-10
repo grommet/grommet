@@ -18,6 +18,7 @@ import {
   FormField,
   Grid,
   Heading,
+  MaskedInput,
   Menu,
   Meter,
   Paragraph,
@@ -78,10 +79,12 @@ const themes = {
 const Components = () => {
   const [baseSize, setBaseSize] = useState(24);
   const [checkBox, setCheckBox] = useState(true);
+  const [textInput, setTextInput] = useState('');
+  const [maskedInput, setMaskedInput] = useState('');
   const [radioButton, setRadioButton] = useState('RadioButton 1');
   const [rangeSelector, setRangeSelector] = useState([1, 2]);
   const [themeMode, setThemeMode] = useState();
-  const [themeName, setThemeName] = useState('grommet');
+  const [themeName, setThemeName] = useState('hpe');
   const [background, setBackground] = useState(undefined);
   const [tabIndex, setTabIndex] = useState(0);
 
@@ -147,7 +150,32 @@ const Components = () => {
         value={radioButton}
         onChange={event => setRadioButton(event.target.value)}
       />
-      <TextInput placeholder="TextInput" suggestions={['a', 'b', 'c']} />
+      <TextInput
+        placeholder="TextInput"
+        suggestions={['a', 'b', 'c']}
+        value={textInput}
+        onChange={event => setTextInput(event.target.value)}
+        onSelect={({ suggestion }) => setTextInput(suggestion)}
+      />
+      <MaskedInput
+        mask={[
+          {
+            length: [1, 4],
+            options: [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],
+            regexp: /^\d{1,4}$/,
+            placeholder: 'nnn',
+          },
+          { fixed: ' ' },
+          {
+            length: 2,
+            options: ['MB', 'GB', 'TB'],
+            regexp: /^[mgt]b$|^[MGT]B$|^[mMgGtT]$/,
+            placeholder: 'gb',
+          },
+        ]}
+        value={maskedInput}
+        onChange={event => setMaskedInput(event.target.value)}
+      />
       <TextArea placeholder="TextArea" />
       <RangeInput value={24} onChange={() => {}} />
       <Stack>

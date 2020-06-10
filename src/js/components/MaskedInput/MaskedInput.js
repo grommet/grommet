@@ -353,23 +353,33 @@ const MaskedInput = forwardRef(
             onEsc={onHideDrop}
           >
             <Box ref={dropRef}>
-              {mask[activeMaskIndex].options.map((option, index) => (
-                <Box key={option} flex={false}>
-                  <Button
-                    tabIndex="-1"
-                    onClick={onOption(option)}
-                    onMouseOver={() => setActiveOptionIndex(index)}
-                    onFocus={() => {}}
-                    active={index === activeOptionIndex}
-                    hoverIndicator="background"
-                    plain={theme.button.default ? true : undefined}
-                  >
-                    <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
-                      {option}
-                    </Box>
-                  </Button>
-                </Box>
-              ))}
+              {mask[activeMaskIndex].options.map((option, index) => {
+                const child = !theme.button.option ? (
+                  <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
+                    {option}
+                  </Box>
+                ) : (
+                  undefined
+                );
+                return (
+                  <Box key={option} flex={false}>
+                    <Button
+                      tabIndex="-1"
+                      onClick={onOption(option)}
+                      onMouseOver={() => setActiveOptionIndex(index)}
+                      onFocus={() => {}}
+                      active={index === activeOptionIndex}
+                      plain={!!child}
+                      align="start"
+                      kind={!child ? 'option' : undefined}
+                      hoverIndicator={child ? 'background' : undefined}
+                      label={!child ? option : undefined}
+                    >
+                      {child}
+                    </Button>
+                  </Box>
+                );
+              })}
             </Box>
           </Drop>
         )}

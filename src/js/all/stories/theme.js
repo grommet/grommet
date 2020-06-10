@@ -298,6 +298,11 @@ export const hpe = deepFreeze({
           color: 'transparent',
         },
       },
+      option: {
+        background: {
+          color: 'active-background',
+        },
+      },
     },
     disabled: {
       background: {
