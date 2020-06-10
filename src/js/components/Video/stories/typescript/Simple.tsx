@@ -10,19 +10,19 @@ const SimpleVideo = props => (
     <Box align="center" pad="large">
       <Video {...props}>
         <source
-          src="http://techslides.com/demos/sample-videos/small.webm"
+          src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-webm-file.webm"
           type="video/webm"
         />
         <source
-          src="http://techslides.com/demos/sample-videos/small.ogv"
+          src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-ogv-file.ogv"
           type="video/ogg"
         />
         <source
-          src="http://techslides.com/demos/sample-videos/small.mp4"
+          src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4"
           type="video/mp4"
         />
         <source
-          src="http://techslides.com/demos/sample-videos/small.3gp"
+          src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-3gp-file.3gp"
           type="video/3gp"
         />
       </Video>
