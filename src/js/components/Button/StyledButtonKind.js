@@ -15,7 +15,9 @@ const radiusStyle = props => {
       border-radius: ${props.theme.button.size[size].border.radius};
     `;
   if (props.theme.button.border && props.theme.button.border.radius)
-    return css`border-radius: props.theme.button.border.radius};`;
+    return css`
+      border-radius: ${props.theme.button.border.radius};
+    `;
   return '';
 };
 
