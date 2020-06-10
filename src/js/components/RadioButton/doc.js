@@ -76,6 +76,12 @@ export const themeDoc = {
     type: 'string',
     defaultValue: '100%',
   },
+  'radioButton.color': {
+    description: `The color of the border surrounding the checked 
+    icon in RadioButton checked state.`,
+    type: 'string | { dark: string, light: string }',
+    defaultValue: 'undefined',
+  },
   'radioButton.extend': {
     description: 'Any additional style for the RadioButton.',
     type: 'string | (props) => {}',

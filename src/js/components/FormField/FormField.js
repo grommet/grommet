@@ -3,7 +3,6 @@ import React, {
   cloneElement,
   forwardRef,
   useContext,
-  useEffect,
   useState,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
@@ -48,6 +47,37 @@ const Message = ({ message, ...rest }) => {
   return null;
 };
 
+const Input = ({ component, disabled, invalid, name, onChange, ...rest }) => {
+  const formContext = useContext(FormContext);
+  const [value, setValue] = formContext.useFormInput(name, rest.value);
+  const InputComponent = component || TextInput;
+  // Grommet input components already check for FormContext
+  // and, using their `name`, end up calling the useFormInput.setValue()
+  // already. For custom components, we expect they will call
+  // this onChange() and we'll call setValue() here, primarily
+  // for backwards compatibility.
+  const extraProps = isGrommetInput(InputComponent)
+    ? { focusIndicator: false, onChange, plain: true }
+    : {
+        value,
+        onChange: event => {
+          setValue(
+            event.value !== undefined ? event.value : event.target.value,
+          );
+          if (onChange) onChange(event);
+        },
+      };
+  return (
+    <InputComponent
+      name={name}
+      disabled={disabled}
+      aria-invalid={invalid || undefined}
+      {...rest}
+      {...extraProps}
+    />
+  );
+};
+
 const FormField = forwardRef(
   (
     {
@@ -55,17 +85,17 @@ const FormField = forwardRef(
       className,
       component,
       disabled, // pass through in renderInput()
-      error,
+      error: errorProp,
       help,
       htmlFor,
-      info,
+      info: infoProp,
       label,
       margin,
       name, // pass through in renderInput()
       onBlur,
       onFocus,
       pad,
-      required, // pass through in renderInput()
+      required,
       style,
       validate,
       ...rest
@@ -73,97 +103,20 @@ const FormField = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
-    const context = useContext(FormContext);
-
-    useEffect(() => {
-      if (context && context.addValidation) {
-        const { addValidation, messages, removeValidation } = context;
-
-        const validateSingle = (aValidate, value2, data) => {
-          let result;
-          if (typeof aValidate === 'function') {
-            result = aValidate(value2, data);
-          } else if (validate.regexp) {
-            if (!validate.regexp.test(value2)) {
-              result = validate.message || messages.invalid;
-              if (validate.status) {
-                result = { message: error, status: validate.status };
-              }
-            }
-          }
-          return result;
-        };
-
-        const validateField = (value2, data) => {
-          let result;
-          if (
-            required &&
-            // false is for CheckBox
-            (value2 === undefined || value2 === '' || value2 === false)
-          ) {
-            result = messages.required;
-          } else if (validate) {
-            if (Array.isArray(validate)) {
-              validate.some(aValidate => {
-                result = validateSingle(aValidate, value2, data);
-                return !!result;
-              });
-            } else {
-              result = validateSingle(validate, value2, data);
-            }
-          }
-          return result;
-        };
-
-        if (validate || required) {
-          addValidation(name, validateField);
-          return () => removeValidation(name, validateField);
-        }
-        removeValidation(name, validateField);
-      }
-      return undefined;
-    }, [context, error, name, required, validate]);
-
+    const formContext = useContext(FormContext);
+    const {
+      error,
+      info,
+      inForm,
+      onBlur: contextOnBlur,
+    } = formContext.useFormField({
+      error: errorProp,
+      info: infoProp,
+      name,
+      required,
+      validate,
+    });
     const [focus, setFocus] = useState();
-
-    const renderInput = (formValue, invalid) => {
-      const Input = component || TextInput;
-      if (Input === CheckBox) {
-        return (
-          <Input
-            name={name}
-            label={label}
-            disabled={disabled}
-            aria-invalid={invalid || undefined}
-            {...rest}
-          />
-        );
-      }
-      return (
-        <Input
-          name={name}
-          value={!isGrommetInput(component) ? formValue[name] : undefined}
-          disabled={disabled}
-          plain
-          focusIndicator={false}
-          aria-invalid={invalid || undefined}
-          {...rest}
-          onChange={
-            // Grommet input components already check for FormContext
-            // and, using their `name`, end up calling the context.update()
-            // already. For custom components, we expect they will call
-            // this onChange() and we'll call context.update() here, primarily
-            // for backwards compatibility.
-            isGrommetInput(component)
-              ? rest.onChange
-              : event => {
-                  context.update(name, event.target.value);
-                  if (rest.onChange) rest.onChange(event);
-                }
-          }
-        />
-      );
-    };
 
     const { formField: formFieldTheme } = theme;
     const { border: themeBorder } = formFieldTheme;
@@ -204,31 +157,26 @@ const FormField = forwardRef(
         })) ||
       children;
 
-    let normalizedError = error;
-    let normalizedInfo = info;
-    let onFieldBlur;
-    // put rest on container, unless we use renderInput()
+    // put rest on container, unless we use internal Input
     let containerRest = rest;
-    if (context && context.addValidation) {
-      const {
-        errors,
-        infos,
-        onBlur: onContextBlur,
-        value: formValue,
-      } = context;
-      normalizedError = error || errors[name];
-      normalizedInfo = info || infos[name];
+    if (inForm) {
       if (!contents) containerRest = {};
-      contents = contents || renderInput(formValue, !!normalizedError);
-      if (onContextBlur) {
-        onFieldBlur = () => onContextBlur(name);
-      }
+      contents = contents || (
+        <Input
+          component={component}
+          disabled={disabled}
+          invalid={!!error}
+          name={name}
+          label={component === CheckBox ? label : undefined}
+          {...rest}
+        />
+      );
     }
 
     const contentProps =
       pad || wantContentPad ? { ...formFieldTheme.content } : {};
     if (themeBorder.position === 'inner') {
-      if (normalizedError && formFieldTheme.error) {
+      if (error && formFieldTheme.error) {
         contentProps.background = formFieldTheme.error.background;
       } else if (disabled && formFieldTheme.disabled) {
         contentProps.background = formFieldTheme.disabled.background;
@@ -244,7 +192,7 @@ const FormField = forwardRef(
       formFieldTheme.disabled.border.color
     ) {
       borderColor = formFieldTheme.disabled.border.color;
-    } else if (normalizedError && themeBorder && themeBorder.error.color) {
+    } else if (error && themeBorder && themeBorder.error.color) {
       borderColor = themeBorder.error.color || 'status-critical';
     } else if (
       focus &&
@@ -326,11 +274,7 @@ const FormField = forwardRef(
 
     let outerBackground;
     if (themeBorder.position === 'outer') {
-      if (
-        normalizedError &&
-        formFieldTheme.error &&
-        formFieldTheme.error.background
-      ) {
+      if (error && formFieldTheme.error && formFieldTheme.error.background) {
         outerBackground = formFieldTheme.error.background;
       } else if (
         focus &&
@@ -371,7 +315,7 @@ const FormField = forwardRef(
         }}
         onBlur={event => {
           setFocus(false);
-          if (onFieldBlur) onFieldBlur(event);
+          if (contextOnBlur) contextOnBlur(event);
           if (onBlur) onBlur(event);
         }}
         {...containerRest}
@@ -389,8 +333,8 @@ const FormField = forwardRef(
           undefined
         )}
         {contents}
-        <Message message={normalizedError} {...formFieldTheme.error} />
-        <Message message={normalizedInfo} {...formFieldTheme.info} />
+        <Message message={error} {...formFieldTheme.error} />
+        <Message message={info} {...formFieldTheme.info} />
       </FormFieldBox>
     );
   },
