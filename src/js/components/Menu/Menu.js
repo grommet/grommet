@@ -284,7 +284,7 @@ const Menu = forwardRef((props, ref) => {
                       {!theme.button.default && (
                         <Box
                           align="start"
-                          pad={theme.button.default ? undefined : 'small'}
+                          pad="small"
                           direction="row"
                           gap={item.gap}
                         >
