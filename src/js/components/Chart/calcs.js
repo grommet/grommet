@@ -40,6 +40,12 @@ export const calcs = (values, options = {}) => {
         }
       });
 
+    // when max === min, offset them so we can show something
+    if (max === min) {
+      if (max > 0) min = max - 1;
+      else max = min + 1;
+    }
+
     // Calculate some reasonable y bounds based on the max and min y values.
     // This is so values like 87342.12 don't end up being displayed as the
     // graph axis edge label.
@@ -70,12 +76,19 @@ export const calcs = (values, options = {}) => {
   if (options.min !== undefined) ({ min } = options);
   if (options.max !== undefined) ({ max } = options);
 
-  const bounds = calcValues.length
-    ? [
-        [calcValues[0].value[0], calcValues[calcValues.length - 1].value[0]],
-        [min, max],
-      ]
-    : [[], []];
+  let bounds;
+  if (calcValues.length > 1)
+    bounds = [
+      [calcValues[0].value[0], calcValues[calcValues.length - 1].value[0]],
+      [min, max],
+    ];
+  else if (calcValues.length === 1)
+    // when we only have one value, at least git some x bounds
+    bounds = [
+      [calcValues[0].value[0], calcValues[0].value[0] + 1],
+      [min, max],
+    ];
+  else bounds = [[], []];
   const dimensions = [
     round(bounds[0][1] - bounds[0][0], 2),
     round(bounds[1][1] - bounds[1][0], 2),

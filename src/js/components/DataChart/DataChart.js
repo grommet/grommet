@@ -150,7 +150,7 @@ const DataChart = forwardRef(
       else steps[0] = numValues - 1; // all
       if (yAxis && yAxis.labels >= 0) steps[1] = yAxis.labels - 1;
       else steps[1] = 1; // ends
-      let tmpAxis;
+      let tmpAxis = [[], []];
       let tmpBounds;
       let tmpThickness = thicknessProp;
       charts.forEach(({ keys }, index) => {
