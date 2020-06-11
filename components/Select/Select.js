@@ -41,7 +41,7 @@ var StyledSelectDropButton = (0, _styledComponents["default"])(_DropButton.DropB
   displayName: "Select__StyledSelectDropButton",
   componentId: "sc-17idtfo-1"
 })(["", ";", ";", ";"], function (props) {
-  return !props.plain && _utils.controlBorderStyle;
+  return !props.callerPlain && _utils.controlBorderStyle;
 }, function (props) {
   return props.theme.select && props.theme.select.control && props.theme.select.control.extend;
 }, function (props) {
@@ -242,8 +242,11 @@ var Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       selected: selected,
       value: value,
       valueKey: valueKey
-    }, children),
-    plain: plain,
+    }, children) // StyledDropButton needs to know if the border should be shown
+    ,
+    callerPlain: plain,
+    plain: true // Button should be plain
+    ,
     dropProps: dropProps,
     theme: theme
   }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {

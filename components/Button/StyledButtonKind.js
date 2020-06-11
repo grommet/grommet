@@ -15,12 +15,9 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 var radiusStyle = function radiusStyle(props) {
   var size = props.sizeProp;
-
-  if (size && props.theme.button.size && props.theme.button.size[size]) {
-    return props.theme.button.size[size].border.radius;
-  }
-
-  return props.theme.button.border.radius;
+  if (size && props.theme.button.size && props.theme.button.size[size]) return (0, _styledComponents.css)(["border-radius:", ";"], props.theme.button.size[size].border.radius);
+  if (props.theme.button.border && props.theme.button.border.radius) return (0, _styledComponents.css)(["border-radius:", ";"], props.theme.button.border.radius);
+  return '';
 };
 
 var fontStyle = function fontStyle(props) {
@@ -47,7 +44,7 @@ var padStyle = function padStyle(_ref) {
 
 
 var basicStyle = function basicStyle(props) {
-  return (0, _styledComponents.css)(["border:none;border-radius:", ";", " ", " > svg{vertical-align:bottom;}"], radiusStyle(props), padStyle(props), fontStyle(props));
+  return (0, _styledComponents.css)(["border:none;", ";", " ", " > svg{vertical-align:bottom;}"], radiusStyle(props), padStyle(props), fontStyle(props));
 }; // CSS for this sub-object in the theme
 
 
@@ -63,6 +60,7 @@ var kindPartStyles = function kindPartStyles(obj, theme, colorValue) {
   if (obj.border) {
     if (obj.border.width) styles.push((0, _styledComponents.css)(["border-style:solid;border-width:", ";"], obj.border.width));
     if (obj.border.color) styles.push((0, _styledComponents.css)(["border-color:", ";"], (0, _utils.normalizeColor)(!obj.background && colorValue || obj.border.color || 'border', theme)));
+    if (obj.border.radius) styles.push((0, _styledComponents.css)(["border-radius:", ";"], obj.border.radius));
   } else if (obj.border === false) styles.push('border: none;');
 
   if (colorValue && !obj.border && !obj.background) styles.push("color: " + (0, _utils.normalizeColor)(colorValue, theme) + ";");
