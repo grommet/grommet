@@ -15,7 +15,7 @@ const CONTENTS = [
 describe('Video', () => {
   afterEach(cleanup);
 
-  test('Video Accessibility', async () => {
+  test('has no accessibility violations', async () => {
     const { container } = render(
       <Grommet>
         <Video>{CONTENTS}</Video>
@@ -25,7 +25,7 @@ describe('Video', () => {
     expect(results).toHaveNoViolations();
   });
 
-  test('Video renders', () => {
+  test('renders', () => {
     const component = renderer.create(
       <Grommet>
         <Video>{CONTENTS}</Video>
@@ -35,7 +35,7 @@ describe('Video', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test('Video autoPlay renders', () => {
+  test('autoPlay renders', () => {
     const component = renderer.create(
       <Grommet>
         <Video autoPlay>{CONTENTS}</Video>
@@ -45,7 +45,7 @@ describe('Video', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test('Video loop renders', () => {
+  test('loop renders', () => {
     const component = renderer.create(
       <Grommet>
         <Video loop>{CONTENTS}</Video>
@@ -55,7 +55,7 @@ describe('Video', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test('Video mute renders', () => {
+  test('mute renders', () => {
     const component = renderer.create(
       <Grommet>
         <Video mute>{CONTENTS}</Video>
@@ -65,7 +65,7 @@ describe('Video', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test('Video controls renders', () => {
+  test('controls renders', () => {
     const component = renderer.create(
       <Grommet>
         <Video controls="over">{CONTENTS}</Video>
@@ -76,7 +76,7 @@ describe('Video', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test('Video fit renders', () => {
+  test('fit renders', () => {
     const component = renderer.create(
       <Grommet>
         <Video fit="cover">{CONTENTS}</Video>
@@ -88,75 +88,80 @@ describe('Video', () => {
   });
 
   test('Play and Pause event handlers', () => {
-    const { container, getByTestId } = render(
+    const { container } = render(
       <Grommet>
         <Video controls="below" playing={false}>
           {CONTENTS}
         </Video>
       </Grommet>,
     );
-    fireEvent.play(getByTestId('Video-container'));
+    const videoContainer = document.querySelector('video');
+    fireEvent.play(videoContainer);
     expect(container.firstChild).toMatchSnapshot();
-    fireEvent.pause(getByTestId('Video-container'));
+    fireEvent.pause(videoContainer);
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('End event handler', () => {
-    const { container, getByTestId } = render(
+    const { container } = render(
       <Grommet>
         <Video controls="below">{CONTENTS}</Video>
       </Grommet>,
     );
     // Need to fire play event to get video playing before we fire ended event.
-    fireEvent.play(getByTestId('Video-container'));
-    fireEvent.ended(getByTestId('Video-container'));
+    const videoContainer = document.querySelector('video');
+    fireEvent.play(videoContainer);
+    fireEvent.ended(videoContainer);
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('Menu Button', () => {
     window.scrollTo = jest.fn();
-    const { container, getByTestId } = render(
+    const { container, getByLabelText } = render(
       <Grommet>
         <Video controls="below" playing={false}>
           {CONTENTS}
         </Video>
       </Grommet>,
     );
-    fireEvent.click(getByTestId('Menu-button'));
+    fireEvent.click(getByLabelText('Open Menu'));
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('fullscreen button', () => {
     window.scrollTo = jest.fn();
     const warnSpy = jest.spyOn(console, 'warn');
-    const { getByTestId, getByLabelText } = render(
+    const { getByLabelText } = render(
       <Grommet>
         <Video controls="below" playing={false}>
           {CONTENTS}
         </Video>
       </Grommet>,
     );
-    fireEvent.click(getByTestId('Menu-button'));
+    fireEvent.click(getByLabelText('Open Menu'));
     fireEvent.click(getByLabelText('Expand'));
     /* expect warn to have been called because jest doesn't test in any browser,
-    will always have warning here */
+    will always have warning here due to the jest browser not supporting
+     fullscreen */
     expect(warnSpy).toHaveBeenCalledWith(
       "This browser doesn't support fullscreen.",
     );
+    warnSpy.mockReset();
+    warnSpy.mockRestore();
   });
 
   test('play button', () => {
     const playStub = jest
       .spyOn(window.HTMLMediaElement.prototype, 'play')
       .mockImplementation(() => {});
-    const { getByTestId } = render(
+    const { getByLabelText } = render(
       <Grommet>
         <Video controls="below" playing={false}>
           {CONTENTS}
         </Video>
       </Grommet>,
     );
-    fireEvent.click(getByTestId('play-button'));
+    fireEvent.click(getByLabelText('Play'));
     expect(playStub).toHaveBeenCalled();
     playStub.mockRestore();
   });

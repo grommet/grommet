@@ -286,7 +286,6 @@ exports[`Video End event handler 1`] = `
   >
     <video
       class="c2"
-      data-testid="Video-container"
     >
       <source
         src="small.mp4"
@@ -302,7 +301,6 @@ exports[`Video End event handler 1`] = `
       >
         <button
           class="c5"
-          data-testid="play-button"
           type="button"
         >
           <svg
@@ -373,7 +371,6 @@ exports[`Video End event handler 1`] = `
         <button
           aria-label="Open Menu"
           class="c16"
-          data-testid="Menu-button"
           type="button"
         >
           <div
@@ -700,7 +697,6 @@ exports[`Video Menu Button 1`] = `
   >
     <video
       class="c2"
-      data-testid="Video-container"
     >
       <source
         src="small.mp4"
@@ -716,7 +712,6 @@ exports[`Video Menu Button 1`] = `
       >
         <button
           class="c5"
-          data-testid="play-button"
           type="button"
         >
           <svg
@@ -787,7 +782,6 @@ exports[`Video Menu Button 1`] = `
         <button
           aria-label="Open Menu"
           class="c16"
-          data-testid="Menu-button"
           type="button"
         >
           <div
@@ -1102,7 +1096,6 @@ exports[`Video Play and Pause event handlers 1`] = `
   >
     <video
       class="c2"
-      data-testid="Video-container"
     >
       <source
         src="small.mp4"
@@ -1118,7 +1111,6 @@ exports[`Video Play and Pause event handlers 1`] = `
       >
         <button
           class="c5"
-          data-testid="play-button"
           type="button"
         >
           <svg
@@ -1189,7 +1181,6 @@ exports[`Video Play and Pause event handlers 1`] = `
         <button
           aria-label="Open Menu"
           class="c16"
-          data-testid="Menu-button"
           type="button"
         >
           <div
@@ -1227,7 +1218,6 @@ exports[`Video Play and Pause event handlers 2`] = `
   >
     <video
       class="StyledVideo-w4v8h9-0 dgNywu"
-      data-testid="Video-container"
     >
       <source
         src="small.mp4"
@@ -1243,7 +1233,6 @@ exports[`Video Play and Pause event handlers 2`] = `
       >
         <button
           class="StyledButton-sc-323bzc-0 kAkOEN"
-          data-testid="play-button"
           type="button"
         >
           .c0 {
@@ -1356,7 +1345,6 @@ exports[`Video Play and Pause event handlers 2`] = `
         <button
           aria-label="Open Menu"
           class="StyledButton-sc-323bzc-0 bwJeiP"
-          data-testid="Menu-button"
           type="button"
         >
           <div
@@ -1385,7 +1373,7 @@ exports[`Video Play and Pause event handlers 2`] = `
 </div>
 `;
 
-exports[`Video Video autoPlay renders 1`] = `
+exports[`Video autoPlay renders 1`] = `
 .c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -1682,7 +1670,6 @@ exports[`Video Video autoPlay renders 1`] = `
     <video
       autoPlay={true}
       className="c2"
-      data-testid="Video-container"
       loop={false}
       onDurationChange={[Function]}
       onEnded={[Function]}
@@ -1706,7 +1693,6 @@ exports[`Video Video autoPlay renders 1`] = `
       >
         <button
           className="c5"
-          data-testid="play-button"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -1784,7 +1770,6 @@ exports[`Video Video autoPlay renders 1`] = `
         <button
           aria-label="Open Menu"
           className="c16"
-          data-testid="Menu-button"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -1819,7 +1804,7 @@ exports[`Video Video autoPlay renders 1`] = `
 </div>
 `;
 
-exports[`Video Video controls renders 1`] = `
+exports[`Video controls renders 1`] = `
 .c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -2207,7 +2192,6 @@ exports[`Video Video controls renders 1`] = `
     <video
       autoPlay={false}
       className="c2"
-      data-testid="Video-container"
       loop={false}
       onDurationChange={[Function]}
       onEnded={[Function]}
@@ -2231,7 +2215,6 @@ exports[`Video Video controls renders 1`] = `
       >
         <button
           className="c5"
-          data-testid="play-button"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -2309,7 +2292,6 @@ exports[`Video Video controls renders 1`] = `
         <button
           aria-label="Open Menu"
           className="c16"
-          data-testid="Menu-button"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -2347,7 +2329,6 @@ exports[`Video Video controls renders 1`] = `
     <video
       autoPlay={false}
       className="c2"
-      data-testid="Video-container"
       loop={false}
       onDurationChange={[Function]}
       onEnded={[Function]}
@@ -2371,7 +2352,6 @@ exports[`Video Video controls renders 1`] = `
       >
         <button
           className="c21"
-          data-testid="play-button"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -2450,7 +2430,6 @@ exports[`Video Video controls renders 1`] = `
         <button
           aria-label="Open Menu"
           className="c16"
-          data-testid="Menu-button"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -2485,7 +2464,7 @@ exports[`Video Video controls renders 1`] = `
 </div>
 `;
 
-exports[`Video Video fit renders 1`] = `
+exports[`Video fit renders 1`] = `
 .c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -2801,7 +2780,6 @@ exports[`Video Video fit renders 1`] = `
     <video
       autoPlay={false}
       className="c2"
-      data-testid="Video-container"
       loop={false}
       onDurationChange={[Function]}
       onEnded={[Function]}
@@ -2825,7 +2803,6 @@ exports[`Video Video fit renders 1`] = `
       >
         <button
           className="c5"
-          data-testid="play-button"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -2903,7 +2880,6 @@ exports[`Video Video fit renders 1`] = `
         <button
           aria-label="Open Menu"
           className="c16"
-          data-testid="Menu-button"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -2944,7 +2920,6 @@ exports[`Video Video fit renders 1`] = `
     <video
       autoPlay={false}
       className="c19"
-      data-testid="Video-container"
       loop={false}
       onDurationChange={[Function]}
       onEnded={[Function]}
@@ -2968,7 +2943,6 @@ exports[`Video Video fit renders 1`] = `
       >
         <button
           className="c5"
-          data-testid="play-button"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -3046,7 +3020,6 @@ exports[`Video Video fit renders 1`] = `
         <button
           aria-label="Open Menu"
           className="c16"
-          data-testid="Menu-button"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -3081,7 +3054,7 @@ exports[`Video Video fit renders 1`] = `
 </div>
 `;
 
-exports[`Video Video loop renders 1`] = `
+exports[`Video loop renders 1`] = `
 .c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -3378,7 +3351,6 @@ exports[`Video Video loop renders 1`] = `
     <video
       autoPlay={false}
       className="c2"
-      data-testid="Video-container"
       loop={true}
       onDurationChange={[Function]}
       onEnded={[Function]}
@@ -3402,7 +3374,6 @@ exports[`Video Video loop renders 1`] = `
       >
         <button
           className="c5"
-          data-testid="play-button"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -3480,7 +3451,6 @@ exports[`Video Video loop renders 1`] = `
         <button
           aria-label="Open Menu"
           className="c16"
-          data-testid="Menu-button"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -3515,7 +3485,7 @@ exports[`Video Video loop renders 1`] = `
 </div>
 `;
 
-exports[`Video Video mute renders 1`] = `
+exports[`Video mute renders 1`] = `
 .c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -3812,7 +3782,6 @@ exports[`Video Video mute renders 1`] = `
     <video
       autoPlay={false}
       className="c2"
-      data-testid="Video-container"
       loop={false}
       onDurationChange={[Function]}
       onEnded={[Function]}
@@ -3836,7 +3805,6 @@ exports[`Video Video mute renders 1`] = `
       >
         <button
           className="c5"
-          data-testid="play-button"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -3914,7 +3882,6 @@ exports[`Video Video mute renders 1`] = `
         <button
           aria-label="Open Menu"
           className="c16"
-          data-testid="Menu-button"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -3949,7 +3916,7 @@ exports[`Video Video mute renders 1`] = `
 </div>
 `;
 
-exports[`Video Video renders 1`] = `
+exports[`Video renders 1`] = `
 .c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -4246,7 +4213,6 @@ exports[`Video Video renders 1`] = `
     <video
       autoPlay={false}
       className="c2"
-      data-testid="Video-container"
       loop={false}
       onDurationChange={[Function]}
       onEnded={[Function]}
@@ -4270,7 +4236,6 @@ exports[`Video Video renders 1`] = `
       >
         <button
           className="c5"
-          data-testid="play-button"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -4348,7 +4313,6 @@ exports[`Video Video renders 1`] = `
         <button
           aria-label="Open Menu"
           className="c16"
-          data-testid="Menu-button"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
