@@ -286,10 +286,12 @@ const SelectContainer = forwardRef(
 
     const customSearchInput = theme.select.searchInput;
     const SelectTextInput = customSearchInput || TextInput;
-    const selectOptionsStyle = {
-      ...theme.select.options.box,
-      ...theme.select.options.container,
-    };
+    const selectOptionsStyle = theme.select.options
+      ? {
+          ...theme.select.options.box,
+          ...theme.select.options.container,
+        }
+      : {};
 
     return (
       <Keyboard
@@ -330,6 +332,28 @@ const SelectContainer = forwardRef(
                   const optionDisabled = isDisabled(index);
                   const optionSelected = isSelected(index);
                   const optionActive = activeIndex === index;
+                  // Determine whether the label is done as a child or
+                  // as an option Button kind property.
+                  let child;
+                  if (children)
+                    child = children(option, index, options, {
+                      active: optionActive,
+                      disabled: optionDisabled,
+                      selected: optionSelected,
+                    });
+                  else if (theme.select.options)
+                    child = (
+                      <OptionBox
+                        {...selectOptionsStyle}
+                        selected={optionSelected}
+                      >
+                        <Text {...theme.select.options.text}>
+                          {optionLabel(index)}
+                        </Text>
+                      </OptionBox>
+                    );
+                  // if we have a child, turn on plain, and hoverIndicator
+
                   return (
                     <SelectOption
                       // eslint-disable-next-line react/no-array-index-key
@@ -337,8 +361,11 @@ const SelectContainer = forwardRef(
                       ref={optionRef}
                       tabIndex="-1"
                       role="menuitem"
-                      hoverIndicator="background"
-                      plain={theme.button.default ? true : undefined}
+                      plain={!child ? undefined : true}
+                      align="start"
+                      kind={!child ? 'option' : undefined}
+                      hoverIndicator={!child ? undefined : 'background'}
+                      label={!child ? optionLabel(index) : undefined}
                       disabled={optionDisabled || undefined}
                       active={optionActive}
                       selected={optionSelected}
@@ -350,22 +377,7 @@ const SelectContainer = forwardRef(
                         !optionDisabled ? selectOption(index) : undefined
                       }
                     >
-                      {children ? (
-                        children(option, index, options, {
-                          active: optionActive,
-                          disabled: optionDisabled,
-                          selected: optionSelected,
-                        })
-                      ) : (
-                        <OptionBox
-                          {...selectOptionsStyle}
-                          selected={optionSelected}
-                        >
-                          <Text {...theme.select.options.text}>
-                            {optionLabel(index)}
-                          </Text>
-                        </OptionBox>
-                      )}
+                      {child}
                     </SelectOption>
                   );
                 }}
