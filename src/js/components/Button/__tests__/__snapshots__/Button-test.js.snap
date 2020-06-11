@@ -2205,6 +2205,331 @@ exports[`Button size 1`] = `
 </div>
 `;
 
+exports[`Button theme 1`] = `
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  padding: 6px 12px;
+  background-color: green;
+  color: #444444;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c1 > svg {
+  vertical-align: bottom;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  class="c0"
+>
+  <button
+    class="c1"
+    kind="default"
+    type="button"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button theme border 1`] = `
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: green;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c1 > svg {
+  vertical-align: bottom;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  class="c0"
+>
+  <button
+    class="c1"
+    kind="default"
+    type="button"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button theme border false 1`] = `
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  border: none;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c1 > svg {
+  vertical-align: bottom;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  class="c0"
+>
+  <button
+    class="c1"
+    kind="default"
+    type="button"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button theme font 1`] = `
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  line-height: 20px;
+  font-weight: 700;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c1 > svg {
+  vertical-align: bottom;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  class="c0"
+>
+  <button
+    class="c1"
+    kind="default"
+    type="button"
+  >
+    Text
+  </button>
+</div>
+`;
+
+exports[`Button theme padding 1`] = `
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  padding: 0px;
+  color: #444444;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c1 > svg {
+  vertical-align: bottom;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  class="c0"
+>
+  <button
+    class="c1"
+    kind="default"
+    type="button"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button theme size 1`] = `
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 18px;
+  padding: 4px 20px;
+  font-size: 14px;
+  line-height: 20px;
+  background-color: green;
+  color: #444444;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c1 > svg {
+  vertical-align: bottom;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  class="c0"
+>
+  <button
+    class="c1"
+    kind="default"
+    type="button"
+  >
+    Test
+  </button>
+</div>
+`;
+
 exports[`Button warns about invalid icon 1`] = `
 .c1 {
   display: inline-block;
@@ -2295,96 +2620,6 @@ exports[`Button warns about invalid label 1`] = `
     type="button"
   >
     Test
-  </button>
-</div>
-`;
-
-exports[`Kind theme 1`] = `
-.c1 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-  font-weight: bold;
-}
-
-.c1:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c2 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
-  color: orange;
-}
-
-.c0 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial,sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 18px;
-  line-height: 24px;
-  background-color: #ffffff;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-<div
-  class="c0"
->
-  <button
-    class="c1"
-    type="button"
-  >
-    label
-  </button>
-  <button
-    class="c2"
-    type="button"
-  >
-    <span
-      class="c3"
-    >
-      label
-    </span>
   </button>
 </div>
 `;

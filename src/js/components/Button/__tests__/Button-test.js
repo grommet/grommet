@@ -1,25 +1,176 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { cleanup, fireEvent, render } from '@testing-library/react';
-import 'jest-styled-components';
-import { Add, Next } from 'grommet-icons';
 
+import 'jest-styled-components';
+import 'jest-axe/extend-expect';
+import 'regenerator-runtime/runtime';
+
+import { axe } from 'jest-axe';
+import { Add, Next } from 'grommet-icons';
+import { cleanup, fireEvent, render } from '@testing-library/react';
 import { findAllByType } from '../../../utils';
-import { grommet } from '../../../themes/grommet';
+// import { grommet } from '../../../themes/grommet';
 import { Grommet, Button, Text } from '../..';
 
 describe('Button', () => {
   afterEach(cleanup);
 
-  // test('theme', () => {
-  //   const component = renderer.create(
-  //     <Grommet theme={grommet}>
-  //       <Button label="Test" onClick={() => {}} />
-  //     </Grommet>,
-  //   );
-  //   const tree = component.toJSON();
-  //   expect(tree).toMatchSnapshot();
-  // });
+  test('should have no accessibility violations', async () => {
+    const { container, getByText } = render(
+      <Grommet>
+        <Button label="Test" onClick={() => {}} />
+      </Grommet>,
+    );
+
+    fireEvent.click(getByText('Test'));
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
+  test('theme size', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          button: {
+            default: {
+              size: {
+                small: {
+                  border: {
+                    radius: '4px',
+                  },
+                  pad: {
+                    vertical: '4px',
+                    horizontal: '8px',
+                  },
+                },
+              },
+              background: {
+                color: 'green',
+              },
+              color: 'text',
+            },
+          },
+        }}
+      >
+        <Button size="small" label="Test" onClick={() => {}} />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('theme', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          button: {
+            default: {
+              padding: {
+                horizontal: '12px',
+                vertical: '6px',
+              },
+              background: {
+                color: 'green',
+              },
+              color: 'text',
+            },
+          },
+        }}
+      >
+        <Button label="Test" onClick={() => {}} />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('theme padding', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          button: {
+            default: {
+              padding: '0px',
+              color: 'text',
+              border: {
+                color: false,
+              },
+            },
+          },
+        }}
+      >
+        <Button label="Test" onClick={() => {}} />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('theme border false', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          button: {
+            default: {
+              border: false,
+            },
+          },
+        }}
+      >
+        <Button label="Test" onClick={() => {}} />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('theme font', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          button: {
+            default: {
+              font: {
+                weight: 700,
+                // size: '18px',
+                height: '20px',
+              },
+            },
+          },
+        }}
+      >
+        <Button onClick={() => {}}>Text</Button>
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('theme border', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          button: {
+            default: {
+              size: {
+                small: {
+                  border: {
+                    radius: '4px',
+                  },
+                  pad: {
+                    vertical: '4px',
+                    horizontal: '8px',
+                  },
+                },
+              },
+              border: {
+                color: 'green',
+                width: '2px',
+              },
+            },
+          },
+        }}
+      >
+        <Button label="Test" onClick={() => {}} />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
 
   test('basic', () => {
     const component = renderer.create(
@@ -294,61 +445,5 @@ describe('Button', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
-  });
-});
-
-describe('Kind', () => {
-  // const darks = [false, true];
-  const kinds = [
-    { name: 'default', props: {} },
-    { name: 'primary', props: { primary: true } },
-    { name: 'secondary', props: { secondary: true } },
-  ];
-  const states = [
-    {},
-    { active: true },
-    { disabled: true },
-    { color: 'teal' },
-    { color: '#9999ff' },
-    { color: '#333399' },
-    { hoverIndicator: 'teal' },
-  ];
-  const contents = [
-    { label: 'label' },
-    {
-      plain: true,
-      children: <Text color="orange">label</Text>,
-    },
-  ];
-
-  // let onClickItem;
-  let App;
-
-  beforeEach(() => {
-    // onClickItem = jest.fn();
-    App = () => {
-      return (
-        <Grommet theme={grommet}>
-          {contents.map(content => (
-            <Button
-              // key={index2}
-              {...kinds.props}
-              {...content}
-              {...states}
-            />
-          ))}
-        </Grommet>
-      );
-    };
-  });
-
-  afterEach(cleanup);
-
-  // test('Enter key', async () => {
-  //   const { container, getByText } = render(<App />);
-
-  test('theme', () => {
-    const { container } = render(<App />);
-    expect(container.firstChild).toMatchSnapshot();
   });
 });
