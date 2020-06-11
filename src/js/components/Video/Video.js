@@ -299,7 +299,6 @@ const Video = forwardRef(
                     ref={scrubberRef}
                     tabIndex={0}
                     role="button"
-                    aria-label="Scrubber"
                     value={
                       scrubTime
                         ? Math.round((scrubTime / duration) * 100)

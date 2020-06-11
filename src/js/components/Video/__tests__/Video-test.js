@@ -14,7 +14,9 @@ const CONTENTS = [
 ];
 describe('Video', () => {
   afterEach(cleanup);
-
+  /* accessibility test fails, need to add a11y title to Video.
+   Related to issue #4716 https://github.com/grommet/grommet/issues/4176
+  */
   test('has no accessibility violations', async () => {
     const { container } = render(
       <Grommet>
@@ -130,6 +132,7 @@ describe('Video', () => {
 
   test('fullscreen button', () => {
     window.scrollTo = jest.fn();
+    console.warn = jest.fn();
     const warnSpy = jest.spyOn(console, 'warn');
     const { getByLabelText } = render(
       <Grommet>
@@ -148,6 +151,7 @@ describe('Video', () => {
     );
     warnSpy.mockReset();
     warnSpy.mockRestore();
+    console.warn.mockReset();
   });
 
   test('play button', () => {
