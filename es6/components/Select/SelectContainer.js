@@ -16,7 +16,7 @@ import { applyKey } from './utils'; // position relative is so scroll can be man
 var OptionsBox = styled.div.withConfig({
   displayName: "SelectContainer__OptionsBox",
   componentId: "sc-1wi0ul8-0"
-})(["position:relative;scroll-behavior:smooth;overflow:auto;"]);
+})(["position:relative;scroll-behavior:smooth;overflow:auto;outline:none;"]);
 var OptionBox = styled(Box).withConfig({
   displayName: "SelectContainer__OptionBox",
   componentId: "sc-1wi0ul8-1"

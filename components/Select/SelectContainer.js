@@ -37,7 +37,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 var OptionsBox = _styledComponents["default"].div.withConfig({
   displayName: "SelectContainer__OptionsBox",
   componentId: "sc-1wi0ul8-0"
-})(["position:relative;scroll-behavior:smooth;overflow:auto;"]);
+})(["position:relative;scroll-behavior:smooth;overflow:auto;outline:none;"]);
 
 var OptionBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "SelectContainer__OptionBox",
