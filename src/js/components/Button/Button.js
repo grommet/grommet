@@ -173,7 +173,7 @@ const Button = forwardRef(
         }
       }
       return result;
-    }, [active, disabled, kind, plain]);
+    }, [active, disabled, kind, plain, selected]);
 
     // only used when theme does not have button.default
     const isDarkBackground = () => {
