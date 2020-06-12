@@ -30,7 +30,17 @@ describe('RadioButtonGroup', () => {
   test('number options', () => {
     const component = renderer.create(
       <Grommet>
-        <RadioButtonGroup name="test" options={[1, 2]} value="one" />
+        <RadioButtonGroup name="test" options={[1, 2]} value={1} />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('boolean options', () => {
+    const component = renderer.create(
+      <Grommet>
+        <RadioButtonGroup name="test" options={[true, false]} value />
       </Grommet>,
     );
     const tree = component.toJSON();
