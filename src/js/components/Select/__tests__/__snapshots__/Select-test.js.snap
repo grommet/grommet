@@ -1409,6 +1409,7 @@ exports[`Select complex options and children 3`] = `
   -ms-scroll-behavior: smooth;
   scroll-behavior: smooth;
   overflow: auto;
+  outline: none;
 }
 
 .c6 {
@@ -2159,6 +2160,7 @@ exports[`Select empty results search 1`] = `
   -ms-scroll-behavior: smooth;
   scroll-behavior: smooth;
   overflow: auto;
+  outline: none;
 }
 
 .c9 {
@@ -2385,6 +2387,7 @@ exports[`Select large drop container height 1`] = `
   -ms-scroll-behavior: smooth;
   scroll-behavior: smooth;
   overflow: auto;
+  outline: none;
 }
 
 .c6 {
@@ -2609,6 +2612,7 @@ exports[`Select medium drop container height 1`] = `
   -ms-scroll-behavior: smooth;
   scroll-behavior: smooth;
   overflow: auto;
+  outline: none;
 }
 
 .c6 {
@@ -3539,6 +3543,7 @@ exports[`Select multiple onChange toggle with valueKey reduce 2`] = `
   -ms-scroll-behavior: smooth;
   scroll-behavior: smooth;
   overflow: auto;
+  outline: none;
 }
 
 .c8 {
@@ -4012,6 +4017,7 @@ exports[`Select multiple onChange with valueKey reduce 2`] = `
   -ms-scroll-behavior: smooth;
   scroll-behavior: smooth;
   overflow: auto;
+  outline: none;
 }
 
 .c6 {
@@ -4480,6 +4486,7 @@ exports[`Select multiple onChange with valueKey string 2`] = `
   -ms-scroll-behavior: smooth;
   scroll-behavior: smooth;
   overflow: auto;
+  outline: none;
 }
 
 .c6 {
@@ -4948,6 +4955,7 @@ exports[`Select multiple onChange without valueKey 2`] = `
   -ms-scroll-behavior: smooth;
   scroll-behavior: smooth;
   overflow: auto;
+  outline: none;
 }
 
 .c6 {
@@ -5062,7 +5070,7 @@ exports[`Select multiple onChange without valueKey 4`] = `
     id="test-select__select-drop"
   >
     <div
-      class="SelectContainer__OptionsBox-sc-1wi0ul8-0 guPZAf"
+      class="SelectContainer__OptionsBox-sc-1wi0ul8-0 Knkxk"
       role="menubar"
       tabindex="-1"
     >
@@ -5517,6 +5525,7 @@ exports[`Select multiple values 3`] = `
   -ms-scroll-behavior: smooth;
   scroll-behavior: smooth;
   overflow: auto;
+  outline: none;
 }
 
 .c8 {
@@ -5990,6 +5999,7 @@ exports[`Select onChange with valueKey string 2`] = `
   -ms-scroll-behavior: smooth;
   scroll-behavior: smooth;
   overflow: auto;
+  outline: none;
 }
 
 .c6 {
@@ -6458,6 +6468,7 @@ exports[`Select onChange without valueKey 2`] = `
   -ms-scroll-behavior: smooth;
   scroll-behavior: smooth;
   overflow: auto;
+  outline: none;
 }
 
 .c6 {
@@ -6961,6 +6972,7 @@ exports[`Select opens 3`] = `
   -ms-scroll-behavior: smooth;
   scroll-behavior: smooth;
   overflow: auto;
+  outline: none;
 }
 
 .c6 {
@@ -7064,7 +7076,7 @@ exports[`Select opens 4`] = `
 
 exports[`Select opens 5`] = `
 <div
-  class="SelectContainer__OptionsBox-sc-1wi0ul8-0 guPZAf"
+  class="SelectContainer__OptionsBox-sc-1wi0ul8-0 Knkxk"
   role="menubar"
   tabindex="-1"
 >
@@ -9188,6 +9200,7 @@ exports[`Select search 2`] = `
   -ms-scroll-behavior: smooth;
   scroll-behavior: smooth;
   overflow: auto;
+  outline: none;
 }
 
 .c9 {
@@ -10498,6 +10511,7 @@ exports[`Select small drop container height 1`] = `
   -ms-scroll-behavior: smooth;
   scroll-behavior: smooth;
   overflow: auto;
+  outline: none;
 }
 
 .c6 {
