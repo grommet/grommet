@@ -166,7 +166,7 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }
 
     return result;
-  }, [active, disabled, kind, plain]); // only used when theme does not have button.default
+  }, [active, disabled, kind, plain, selected]); // only used when theme does not have button.default
 
   var isDarkBackground = function isDarkBackground() {
     var backgroundColor = normalizeBackground(normalizeColor(color || theme.button.primary && theme.button.primary.color || theme.global.colors.control || 'brand', theme), theme);

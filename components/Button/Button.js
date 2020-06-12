@@ -182,7 +182,7 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     }
 
     return result;
-  }, [active, disabled, kind, plain]); // only used when theme does not have button.default
+  }, [active, disabled, kind, plain, selected]); // only used when theme does not have button.default
 
   var isDarkBackground = function isDarkBackground() {
     var backgroundColor = (0, _utils.normalizeBackground)((0, _utils.normalizeColor)(color || theme.button.primary && theme.button.primary.color || theme.global.colors.control || 'brand', theme), theme);

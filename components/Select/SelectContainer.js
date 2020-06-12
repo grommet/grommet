@@ -92,15 +92,10 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var optionsRef = (0, _react.useRef)(); // adjust activeIndex when options change
 
   (0, _react.useEffect)(function () {
-    if (onSearch) {
-      if (activeIndex === -1 && !search && options && optionIndexesInValue) {
-        var nextActiveIndex = optionIndexesInValue.length ? optionIndexesInValue[0] : -1;
-        setActiveIndex(nextActiveIndex);
-      } else if (activeIndex === -1 && search) {
-        setActiveIndex(0);
-      }
+    if (activeIndex === -1 && search && optionIndexesInValue.length) {
+      setActiveIndex(optionIndexesInValue[0]);
     }
-  }, [activeIndex, optionIndexesInValue, options, onSearch, search]); // set initial focus
+  }, [activeIndex, optionIndexesInValue, search]); // set initial focus
 
   (0, _react.useEffect)(function () {
     // need to wait for Drop to be ready
@@ -188,24 +183,6 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
     return result;
   }, [optionValue, selected, value, valueKey]);
-  var onSearchChange = (0, _react.useCallback)(function (event) {
-    var nextSearch = event.target.value;
-    setSearch(nextSearch);
-    setActiveIndex(-1);
-    onSearch(nextSearch);
-  }, [onSearch]);
-  (0, _react.useEffect)(function () {
-    if (search !== undefined && onSearch) {
-      var timer = setTimeout(function () {
-        return onSearch(search);
-      }, theme.global.debounceDelay);
-      return function () {
-        return clearTimeout(timer);
-      };
-    }
-
-    return undefined;
-  }, [onSearch, search, theme.global]);
   var selectOption = (0, _react.useCallback)(function (index) {
     return function (event) {
       if (onChange) {
@@ -300,7 +277,12 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     type: "search",
     value: search || '',
     placeholder: searchPlaceholder,
-    onChange: onSearchChange
+    onChange: function onChange(event) {
+      var nextSearch = event.target.value;
+      setSearch(nextSearch);
+      setActiveIndex(-1);
+      onSearch(nextSearch);
+    }
   })), /*#__PURE__*/_react["default"].createElement(OptionsBox, {
     role: "menubar",
     tabIndex: "-1",
