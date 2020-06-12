@@ -4919,6 +4919,7 @@ with the same name so form submissions work.",
     Each option is rendered as a single RadioButton.",
         "format": "[string]
 [number]
+[boolean]
 [{
   disabled: boolean,
   id: string,
@@ -4928,6 +4929,7 @@ with the same name so form submissions work.",
   value: 
     string
     number
+    boolean
 }]",
         "name": "options",
         "required": true,
@@ -4936,6 +4938,7 @@ with the same name so form submissions work.",
         "description": "Currently selected option value.",
         "format": "string
 number
+boolean
 object",
         "name": "value",
       },
