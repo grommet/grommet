@@ -17,7 +17,7 @@ describe('Button', () => {
   test('should have no accessibility violations', async () => {
     const { container, getByText } = render(
       <Grommet>
-        <Button label="Test" onClick={() => {}} />
+        <Button a11yTitle="Test button" label="Test" onClick={() => {}} />
       </Grommet>,
     );
 
