@@ -7,8 +7,9 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { ThemeContext } from 'styled-components';
 
+import PropTypes from 'react-desc/lib/PropTypes';
+import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
@@ -52,6 +53,7 @@ const Video = forwardRef(
       loop,
       margin,
       mute,
+      messages,
       onDurationChange,
       onEnded,
       onPause,
@@ -270,9 +272,15 @@ const Video = forwardRef(
             <Button
               icon={
                 playing ? (
-                  <Icons.Pause color={iconColor} />
+                  <Icons.Pause
+                    color={iconColor}
+                    a11yTitle={messages.pauseButton}
+                  />
                 ) : (
-                  <Icons.Play color={iconColor} />
+                  <Icons.Play
+                    color={iconColor}
+                    a11yTitle={messages.playButton}
+                  />
                 )
               }
               hoverIndicator="background"
@@ -282,7 +290,7 @@ const Video = forwardRef(
               <Box flex>
                 <Stack>
                   <Meter
-                    aria-label="Video progress"
+                    aria-label={messages.meter || 'Video progress'}
                     background={
                       over
                         ? (theme.video.scrubber &&
@@ -296,6 +304,7 @@ const Video = forwardRef(
                     values={[{ value: percentagePlayed || 0 }]}
                   />
                   <StyledVideoScrubber
+                    aria-label={messages.scrubber || 'Scrubber'}
                     ref={scrubberRef}
                     tabIndex={0}
                     role="button"
@@ -318,20 +327,39 @@ const Video = forwardRef(
               icon={<Icons.Configure color={iconColor} />}
               dropAlign={{ bottom: 'top', right: 'right' }}
               dropBackground={background}
+              messages={{
+                openMenu: messages.openMenu,
+                closeMenu: messages.closeMenu,
+              }}
               items={[
                 {
-                  icon: <Icons.Volume color={iconColor} />,
+                  icon: (
+                    <Icons.Volume
+                      color={iconColor}
+                      a11yTitle={messages.volumeUp}
+                    />
+                  ),
                   onClick: volume <= 1 - VOLUME_STEP ? louder : undefined,
                   close: false,
                 },
                 {
-                  icon: <Icons.ReduceVolume color={iconColor} />,
+                  icon: (
+                    <Icons.ReduceVolume
+                      color={iconColor}
+                      a11yTitle={messages.volumeDown}
+                    />
+                  ),
                   onClick: volume >= VOLUME_STEP ? quieter : undefined,
                   close: false,
                 },
                 ...captionControls,
                 {
-                  icon: <Icons.FullScreen color={iconColor} />,
+                  icon: (
+                    <Icons.FullScreen
+                      color={iconColor}
+                      a11yTitle={messages.fullScreen}
+                    />
+                  ),
                   onClick: fullscreen,
                 },
               ]}
@@ -412,6 +440,33 @@ const Video = forwardRef(
     );
   },
 );
+
+Video.propTypes = {
+  messages: PropTypes.shape({
+    scrubber: PropTypes.string,
+    meter: PropTypes.string,
+    openMenu: PropTypes.string,
+    closeMenu: PropTypes.string,
+    playButton: PropTypes.string,
+    pauseButton: PropTypes.string,
+    volumeUp: PropTypes.string,
+    volumeDown: PropTypes.string,
+    fullScreen: PropTypes.string,
+  }),
+};
+Video.defaultProps = {
+  messages: {
+    scrubber: 'Scrubber',
+    meter: 'Video Progress',
+    openMenu: 'Open Menu',
+    closeMenu: 'Close Menu',
+    playButton: 'Play',
+    pauseButton: 'Pause',
+    volumeUp: 'Volume Up',
+    volumeDown: 'Volume Down',
+    fullScreen: 'Full Screen',
+  },
+};
 
 Video.displayName = 'Video';
 

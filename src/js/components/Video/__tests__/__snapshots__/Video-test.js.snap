@@ -329,7 +329,7 @@ exports[`Video End event handler 1`] = `
                 class="c10"
               >
                 <svg
-                  aria-label="Video progress"
+                  aria-label="Video Progress"
                   class="c11"
                   height="12"
                   preserveAspectRatio="none"
@@ -350,6 +350,7 @@ exports[`Video End event handler 1`] = `
                 class="c12"
               >
                 <div
+                  aria-label="Scrubber"
                   class="c13"
                   role="button"
                   tabindex="0"
@@ -739,7 +740,7 @@ exports[`Video Menu Button 1`] = `
                 class="c10"
               >
                 <svg
-                  aria-label="Video progress"
+                  aria-label="Video Progress"
                   class="c11"
                   height="12"
                   preserveAspectRatio="none"
@@ -760,6 +761,7 @@ exports[`Video Menu Button 1`] = `
                 class="c12"
               >
                 <div
+                  aria-label="Scrubber"
                   class="c13"
                   role="button"
                   tabindex="0"
@@ -1137,7 +1139,7 @@ exports[`Video Play and Pause event handlers 1`] = `
                 class="c10"
               >
                 <svg
-                  aria-label="Video progress"
+                  aria-label="Video Progress"
                   class="c11"
                   height="12"
                   preserveAspectRatio="none"
@@ -1158,6 +1160,7 @@ exports[`Video Play and Pause event handlers 1`] = `
                 class="c12"
               >
                 <div
+                  aria-label="Scrubber"
                   class="c13"
                   role="button"
                   tabindex="0"
@@ -1300,7 +1303,7 @@ exports[`Video Play and Pause event handlers 2`] = `
                 class="StyledStack__StyledStackLayer-ajspsk-1 eFfYoG"
               >
                 <svg
-                  aria-label="Video progress"
+                  aria-label="Video Progress"
                   class="StyledMeter-nsxarx-0 bPssvJ"
                   height="12"
                   preserveAspectRatio="none"
@@ -1321,6 +1324,7 @@ exports[`Video Play and Pause event handlers 2`] = `
                 class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
               >
                 <div
+                  aria-label="Scrubber"
                   class="StyledVideo__StyledVideoScrubber-w4v8h9-3 eXKIlp"
                   role="button"
                   tabindex="0"
@@ -1722,7 +1726,7 @@ exports[`Video autoPlay renders 1`] = `
                 className="c10"
               >
                 <svg
-                  aria-label="Video progress"
+                  aria-label="Video Progress"
                   className="c11"
                   height={12}
                   preserveAspectRatio="none"
@@ -1742,6 +1746,7 @@ exports[`Video autoPlay renders 1`] = `
                 className="c12"
               >
                 <div
+                  aria-label="Scrubber"
                   className="c13"
                   onClick={[Function]}
                   onMouseLeave={[Function]}
@@ -2243,7 +2248,7 @@ exports[`Video controls renders 1`] = `
                 className="c10"
               >
                 <svg
-                  aria-label="Video progress"
+                  aria-label="Video Progress"
                   className="c11"
                   height={12}
                   preserveAspectRatio="none"
@@ -2263,6 +2268,7 @@ exports[`Video controls renders 1`] = `
                 className="c12"
               >
                 <div
+                  aria-label="Scrubber"
                   className="c13"
                   onClick={[Function]}
                   onMouseLeave={[Function]}
@@ -2379,7 +2385,7 @@ exports[`Video controls renders 1`] = `
                 className="c10"
               >
                 <svg
-                  aria-label="Video progress"
+                  aria-label="Video Progress"
                   className="c11"
                   height={12}
                   preserveAspectRatio="none"
@@ -2400,6 +2406,7 @@ exports[`Video controls renders 1`] = `
                 className="c12"
               >
                 <div
+                  aria-label="Scrubber"
                   className="c13"
                   onClick={[Function]}
                   onMouseLeave={[Function]}
@@ -2829,7 +2836,7 @@ exports[`Video fit renders 1`] = `
                 className="c10"
               >
                 <svg
-                  aria-label="Video progress"
+                  aria-label="Video Progress"
                   className="c11"
                   height={12}
                   preserveAspectRatio="none"
@@ -2849,6 +2856,7 @@ exports[`Video fit renders 1`] = `
                 className="c12"
               >
                 <div
+                  aria-label="Scrubber"
                   className="c13"
                   onClick={[Function]}
                   onMouseLeave={[Function]}
@@ -2968,7 +2976,7 @@ exports[`Video fit renders 1`] = `
                 className="c10"
               >
                 <svg
-                  aria-label="Video progress"
+                  aria-label="Video Progress"
                   className="c11"
                   height={12}
                   preserveAspectRatio="none"
@@ -2988,6 +2996,7 @@ exports[`Video fit renders 1`] = `
                 className="c12"
               >
                 <div
+                  aria-label="Scrubber"
                   className="c13"
                   onClick={[Function]}
                   onMouseLeave={[Function]}
@@ -3398,7 +3407,7 @@ exports[`Video loop renders 1`] = `
                 className="c10"
               >
                 <svg
-                  aria-label="Video progress"
+                  aria-label="Video Progress"
                   className="c11"
                   height={12}
                   preserveAspectRatio="none"
@@ -3418,6 +3427,7 @@ exports[`Video loop renders 1`] = `
                 className="c12"
               >
                 <div
+                  aria-label="Scrubber"
                   className="c13"
                   onClick={[Function]}
                   onMouseLeave={[Function]}
@@ -3828,7 +3838,7 @@ exports[`Video mute renders 1`] = `
                 className="c10"
               >
                 <svg
-                  aria-label="Video progress"
+                  aria-label="Video Progress"
                   className="c11"
                   height={12}
                   preserveAspectRatio="none"
@@ -3848,6 +3858,7 @@ exports[`Video mute renders 1`] = `
                 className="c12"
               >
                 <div
+                  aria-label="Scrubber"
                   className="c13"
                   onClick={[Function]}
                   onMouseLeave={[Function]}
@@ -4258,7 +4269,7 @@ exports[`Video renders 1`] = `
                 className="c10"
               >
                 <svg
-                  aria-label="Video progress"
+                  aria-label="Video Progress"
                   className="c11"
                   height={12}
                   preserveAspectRatio="none"
@@ -4278,6 +4289,7 @@ exports[`Video renders 1`] = `
                 className="c12"
               >
                 <div
+                  aria-label="Scrubber"
                   className="c13"
                   onClick={[Function]}
                   onMouseLeave={[Function]}

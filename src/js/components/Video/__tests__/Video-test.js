@@ -2,9 +2,9 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 import { cleanup, render, fireEvent } from '@testing-library/react';
-// import { axe } from 'jest-axe';
-// import 'jest-axe/extend-expect';
-// import 'regenerator-runtime/runtime';
+import { axe } from 'jest-axe';
+import 'jest-axe/extend-expect';
+import 'regenerator-runtime/runtime';
 
 import { Grommet, Video } from '../..';
 
@@ -17,15 +17,15 @@ describe('Video', () => {
   /* accessibility test fails, need to add a11y title to Video.
    Related to issue #4716 https://github.com/grommet/grommet/issues/4176
   */
-  // test('has no accessibility violations', async () => {
-  //   const { container } = render(
-  //     <Grommet>
-  //       <Video>{CONTENTS}</Video>
-  //     </Grommet>,
-  //   );
-  //   const results = await axe(container);
-  //   expect(results).toHaveNoViolations();
-  // });
+  test('has no accessibility violations', async () => {
+    const { container } = render(
+      <Grommet>
+        <Video>{CONTENTS}</Video>
+      </Grommet>,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 
   test('renders', () => {
     const component = renderer.create(
@@ -142,7 +142,7 @@ describe('Video', () => {
       </Grommet>,
     );
     fireEvent.click(getByLabelText('Open Menu'));
-    fireEvent.click(getByLabelText('Expand'));
+    fireEvent.click(getByLabelText('Full Screen'));
     /* expect warn to have been called because jest doesn't test in any browser,
     will always have warning here due to the jest browser not supporting
      fullscreen */
