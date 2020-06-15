@@ -235,7 +235,7 @@ var overflowStyle = function overflowStyle(overflowProp) {
 
 exports.overflowStyle = overflowStyle;
 var placeholderColor = (0, _styledComponents.css)(["color:", ";"], function (props) {
-  return props.theme.global.colors.placeholder;
+  return (0, _colors.normalizeColor)(props.theme.global.colors.placeholder, props.theme);
 });
 var placeholderStyle = (0, _styledComponents.css)(["&::-webkit-input-placeholder{", ";}&::-moz-placeholder{", ";}&:-ms-input-placeholder{", ";}"], placeholderColor, placeholderColor, placeholderColor);
 exports.placeholderStyle = placeholderStyle;

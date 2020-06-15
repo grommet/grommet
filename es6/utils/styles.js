@@ -209,7 +209,7 @@ export var overflowStyle = function overflowStyle(overflowProp) {
   return css(["", " ", ";"], overflowProp.horizontal && "overflow-x: " + overflowProp.horizontal + ";", overflowProp.vertical && "overflow-y: " + overflowProp.vertical + ";");
 };
 var placeholderColor = css(["color:", ";"], function (props) {
-  return props.theme.global.colors.placeholder;
+  return normalizeColor(props.theme.global.colors.placeholder, props.theme);
 });
 export var placeholderStyle = css(["&::-webkit-input-placeholder{", ";}&::-moz-placeholder{", ";}&:-ms-input-placeholder{", ";}"], placeholderColor, placeholderColor, placeholderColor);
 var ALIGN_SELF_MAP = {
