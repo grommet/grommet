@@ -2,10 +2,6 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 import { cleanup, render, fireEvent } from '@testing-library/react';
-// import { axe } from 'jest-axe';
-// import 'jest-axe/extend-expect';
-// import 'regenerator-runtime/runtime';
-
 import { Grommet, Video } from '../..';
 
 const CONTENTS = [
@@ -14,18 +10,6 @@ const CONTENTS = [
 ];
 describe('Video', () => {
   afterEach(cleanup);
-  /* accessibility test fails, need to add a11y title to Video.
-   Related to issue #4716 https://github.com/grommet/grommet/issues/4176
-  */
-  // test('has no accessibility violations', async () => {
-  //   const { container } = render(
-  //     <Grommet>
-  //       <Video>{CONTENTS}</Video>
-  //     </Grommet>,
-  //   );
-  //   const results = await axe(container);
-  //   expect(results).toHaveNoViolations();
-  // });
 
   test('renders', () => {
     const component = renderer.create(
@@ -117,7 +101,7 @@ describe('Video', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('Menu Button', () => {
+  test(' Configure Menu Button', () => {
     window.scrollTo = jest.fn();
     const { container, getByLabelText } = render(
       <Grommet>

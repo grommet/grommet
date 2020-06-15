@@ -1,5 +1,415 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Video  Configure Menu Button 1`] = `
+.c6 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c5:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c16 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c15 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c18 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c9 {
+  position: relative;
+}
+
+.c10 {
+  position: relative;
+  display: block;
+}
+
+.c12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c11 {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.c11 path {
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
+  transition: stroke 0.3s,stroke-width 0.3s;
+}
+
+.c2 {
+  max-width: 100%;
+  z-index: 1;
+}
+
+.c2::cue {
+  background: rgba(0,0,0,0.7);
+}
+
+.c1 {
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.c3 {
+  -webkit-flex: 0 0;
+  -ms-flex: 0 0;
+  flex: 0 0;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  opacity: 1;
+}
+
+.c13 {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c17 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <video
+      class="c2"
+    >
+      <source
+        src="small.mp4"
+        type="video/mp4"
+      />
+      <track />
+    </video>
+    <div
+      class="c3"
+    >
+      <div
+        class="c4"
+      >
+        <button
+          class="c5"
+          type="button"
+        >
+          <svg
+            aria-label="Play"
+            class="c6"
+            viewBox="0 0 24 24"
+          >
+            <polygon
+              fill="none"
+              points="3 22 21 12 3 2"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+        <div
+          class="c7"
+        >
+          <div
+            class="c8"
+          >
+            <div
+              class="c9"
+            >
+              <div
+                class="c10"
+              >
+                <svg
+                  aria-label="Video progress"
+                  class="c11"
+                  height="12"
+                  preserveAspectRatio="none"
+                  viewBox="0 0 288 12"
+                  width="100%"
+                >
+                  <path
+                    d="M 0,6 L 288,6"
+                    fill="none"
+                    stroke="#F2F2F2"
+                    stroke-linecap="square"
+                    stroke-opacity="0.4"
+                    stroke-width="12"
+                  />
+                </svg>
+              </div>
+              <div
+                class="c12"
+              >
+                <div
+                  class="c13"
+                  role="button"
+                  tabindex="0"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="c14"
+          >
+            <span
+              class="c15"
+            >
+              NaN:NaN
+            </span>
+          </div>
+        </div>
+        <button
+          aria-label="Open Menu"
+          class="c16"
+          type="button"
+        >
+          <div
+            class="c17"
+          >
+            <span
+              class="c18"
+            />
+            <svg
+              aria-label="Actions"
+              class="c6"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Video End event handler 1`] = `
 .c6 {
   display: inline-block;
@@ -276,416 +686,6 @@ exports[`Video End event handler 1`] = `
   .c17 {
     padding: 6px;
   }
-}
-
-<div
-  class="c0"
->
-  <div
-    class="c1"
-  >
-    <video
-      class="c2"
-    >
-      <source
-        src="small.mp4"
-        type="video/mp4"
-      />
-      <track />
-    </video>
-    <div
-      class="c3"
-    >
-      <div
-        class="c4"
-      >
-        <button
-          class="c5"
-          type="button"
-        >
-          <svg
-            aria-label="Play"
-            class="c6"
-            viewBox="0 0 24 24"
-          >
-            <polygon
-              fill="none"
-              points="3 22 21 12 3 2"
-              stroke="#000"
-              stroke-width="2"
-            />
-          </svg>
-        </button>
-        <div
-          class="c7"
-        >
-          <div
-            class="c8"
-          >
-            <div
-              class="c9"
-            >
-              <div
-                class="c10"
-              >
-                <svg
-                  aria-label="Video progress"
-                  class="c11"
-                  height="12"
-                  preserveAspectRatio="none"
-                  viewBox="0 0 288 12"
-                  width="100%"
-                >
-                  <path
-                    d="M 0,6 L 288,6"
-                    fill="none"
-                    stroke="#F2F2F2"
-                    stroke-linecap="square"
-                    stroke-opacity="0.4"
-                    stroke-width="12"
-                  />
-                </svg>
-              </div>
-              <div
-                class="c12"
-              >
-                <div
-                  class="c13"
-                  role="button"
-                  tabindex="0"
-                />
-              </div>
-            </div>
-          </div>
-          <div
-            class="c14"
-          >
-            <span
-              class="c15"
-            >
-              NaN:NaN
-            </span>
-          </div>
-        </div>
-        <button
-          aria-label="Open Menu"
-          class="c16"
-          type="button"
-        >
-          <div
-            class="c17"
-          >
-            <span
-              class="c18"
-            />
-            <svg
-              aria-label="Actions"
-              class="c6"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </div>
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Video Menu Button 1`] = `
-.c6 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-}
-
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-}
-
-.c14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
-}
-
-.c17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  padding: 12px;
-}
-
-.c5 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-  line-height: 0;
-  padding: 12px;
-}
-
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
-.c16 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c15 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c18 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c9 {
-  position: relative;
-}
-
-.c10 {
-  position: relative;
-  display: block;
-}
-
-.c12 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c11 {
-  max-width: 100%;
-  overflow: hidden;
-}
-
-.c11 path {
-  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
-  transition: stroke 0.3s,stroke-width 0.3s;
-}
-
-.c2 {
-  max-width: 100%;
-  z-index: 1;
-}
-
-.c2::cue {
-  background: rgba(0,0,0,0.7);
-}
-
-.c1 {
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  overflow: hidden;
-  position: relative;
-}
-
-.c3 {
-  -webkit-flex: 0 0;
-  -ms-flex: 0 0;
-  flex: 0 0;
-  opacity: 0;
-  -webkit-transition: opacity 0.3s;
-  transition: opacity 0.3s;
-  opacity: 1;
-}
-
-.c13 {
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
-}
-
-@media only screen and (max-width:768px) {
-  .c14 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c17 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
 }
 
 <div
