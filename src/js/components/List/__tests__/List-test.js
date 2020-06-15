@@ -256,7 +256,7 @@ describe('List events', () => {
       keyCode: 13,
       which: 13,
     });
-    // onEnter calls onClickItem twice. Issue #4173.
+    // Reported bug: onEnter calls onClickItem twice instead of once. Issue #4173.
     // Once fixed it should be `expect(onClickItem).toHaveBeenCalledTimes(2);`
     expect(onClickItem).toHaveBeenCalledTimes(3);
     expect(container.firstChild).toMatchSnapshot();
