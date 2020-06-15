@@ -135,7 +135,8 @@ describe('Video', () => {
     );
     warnSpy.mockReset();
     warnSpy.mockRestore();
-    console.warn.mockReset();
+    console.warn.mockRestore();
+    window.scrollTo.mockRestore();
   });
 
   test('play button', () => {
@@ -152,5 +153,22 @@ describe('Video', () => {
     fireEvent.click(getByLabelText('Play'));
     expect(playStub).toHaveBeenCalled();
     playStub.mockRestore();
+  });
+
+  test('volume controls', () => {
+    const volMock = jest.fn();
+    window.scrollTo = jest.fn();
+    const { getByLabelText } = render(
+      <Grommet>
+        <Video controls="below" playing={false} onVolumeChange={volMock}>
+          {CONTENTS}
+        </Video>
+      </Grommet>,
+    );
+    fireEvent.click(getByLabelText('Open Menu'));
+    fireEvent.click(getByLabelText('VolumeLow'));
+    expect(volMock).toHaveBeenCalled();
+
+    window.scrollTo.mockRestore();
   });
 });
