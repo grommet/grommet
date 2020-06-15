@@ -1,5 +1,3 @@
-// import { deepFreeze } from '../../../utils/object';
-
 export const customTheme = {
   button: {
     default: {
