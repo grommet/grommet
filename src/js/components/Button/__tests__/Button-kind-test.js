@@ -1,13 +1,32 @@
 import React from 'react';
 
 import 'jest-styled-components';
+import 'jest-axe/extend-expect';
+import 'regenerator-runtime/runtime';
 
-import { cleanup, render } from '@testing-library/react';
+import { axe } from 'jest-axe';
+import { cleanup, fireEvent, render } from '@testing-library/react';
 import { Grommet, Button } from '../..';
 import { customTheme } from '../Button-kind-theme';
 
 describe('Button kind', () => {
   afterEach(cleanup);
+
+  test('should have no accessibility violations', async () => {
+    const { container, getByText } = render(
+      <Grommet
+        theme={{
+          button: { default: {} },
+        }}
+      >
+        <Button a11yTitle="Test button" label="Test" onClick={() => {}} />
+      </Grommet>,
+    );
+
+    fireEvent.click(getByText('Test'));
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 
   test('custom theme', () => {
     const { container } = render(
