@@ -11,13 +11,12 @@ import { Text } from '../../Text';
 
 describe('Collapsible', () => {
   let App;
-  let open;
-  let direction;
+
   beforeEach(() => {
-    App = () => {
+    App = ({ ...props }) => {
       return (
         <Grommet>
-          <Collapsible open={open} direction={direction}>
+          <Collapsible {...props}>
             <Text>Example</Text>
           </Collapsible>
         </Grommet>
@@ -33,42 +32,14 @@ describe('Collapsible', () => {
   });
 
   test('open', () => {
-    open = true;
-    const { container } = render(<App />);
+    const { container } = render(<App open />);
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('onClick open default', () => {
-    open = false;
-    const { container, rerender } = render(<App />);
+    const { container, rerender } = render(<App open />);
     expect(container.firstChild).toMatchSnapshot();
-    open = !open;
-    expect(open).toBe(true);
-    rerender(<App />);
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
-  test('direction vertical', () => {
-    open = false;
-    direction = 'vertical';
-    const { container, rerender } = render(<App />);
-    expect(container.firstChild).toMatchSnapshot();
-    open = !open;
-    expect(open).toBe(true);
-    // Rerendering because props were updated. Want to render with new props
-    rerender(<App />);
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
-  test('direction horizontal', () => {
-    open = false;
-    direction = 'horizontal';
-    const { container, rerender } = render(<App />);
-    expect(container.firstChild).toMatchSnapshot();
-    open = !open;
-    expect(open).toBe(true);
-    // Rerendering because props were updated. Want to render with new props
-    rerender(<App />);
+    rerender(<App open={false} />);
     expect(container.firstChild).toMatchSnapshot();
   });
 });
