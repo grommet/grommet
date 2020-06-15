@@ -3,15 +3,15 @@ import React from 'react';
 import 'jest-styled-components';
 
 import { cleanup, render } from '@testing-library/react';
-import { grommet } from '../../../themes/grommet';
 import { Grommet, Button } from '../..';
+import { customTheme } from '../Button-kind-theme';
 
 describe('Button kind', () => {
   afterEach(cleanup);
 
-  test('grommet theme', () => {
+  test('custom theme', () => {
     const { container } = render(
-      <Grommet theme={grommet}>
+      <Grommet theme={customTheme}>
         <Button default />
       </Grommet>,
     );
