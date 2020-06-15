@@ -256,16 +256,17 @@ describe('List events', () => {
       keyCode: 13,
       which: 13,
     });
-    // Reported bug: onEnter calls onClickItem twice instead of once. Issue #4173.
-    // Once fixed it should be `expect(onClickItem).toHaveBeenCalledTimes(2);`
+    // Reported bug: onEnter calls onClickItem twice instead of once.
+    // Issue #4173. Once fixed it should be
+    // `expect(onClickItem).toHaveBeenCalledTimes(2);`
     expect(onClickItem).toHaveBeenCalledTimes(3);
+    // Both focus and active should be placed on 'beta'
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('ArrowUp key', () => {
     const { container, getByText } = render(<App />);
 
-    expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('beta'));
     fireEvent.mouseOver(getByText('beta'));
     fireEvent.keyDown(getByText('beta'), {
@@ -274,13 +275,13 @@ describe('List events', () => {
       which: 38,
     });
     expect(onClickItem).toHaveBeenCalledTimes(1);
+    // Focus on beta while `active` is on alpha
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('ArrowDown key', () => {
     const { container, getByText } = render(<App />);
 
-    expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('alpha'));
     fireEvent.mouseOver(getByText('alpha'));
     fireEvent.keyDown(getByText('alpha'), {
@@ -289,13 +290,13 @@ describe('List events', () => {
       which: 40,
     });
     expect(onClickItem).toHaveBeenCalledTimes(1);
+    // Focus on alpha while `active` is on beta
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('ArrowDown key on last element', () => {
     const { container, getByText } = render(<App />);
 
-    expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('beta'));
     fireEvent.mouseOver(getByText('beta'));
     fireEvent.keyDown(getByText('beta'), {
@@ -304,16 +305,18 @@ describe('List events', () => {
       which: 40,
     });
     expect(onClickItem).toHaveBeenCalledTimes(1);
+    // Both focus and active should be placed on 'beta'
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('focus and blur', () => {
     const { container, getByText } = render(<App />);
 
-    expect(container.firstChild).toMatchSnapshot();
     fireEvent.focus(getByText('beta'));
+    // Both focus and active should be placed on 'beta'
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.blur(getByText('beta'));
+    // Focus on beta while `active` is not on beta
     expect(container.firstChild).toMatchSnapshot();
     expect(onClickItem).toBeCalledTimes(0);
   });
@@ -321,10 +324,11 @@ describe('List events', () => {
   test('mouse events', () => {
     const { container, getByText } = render(<App />);
 
-    expect(container.firstChild).toMatchSnapshot();
     fireEvent.mouseOver(getByText('beta'));
+    // Both focus and active should be placed on 'beta'
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.mouseOut(getByText('beta'));
+    // Focus on beta while `active` is not on beta
     expect(container.firstChild).toMatchSnapshot();
     expect(onClickItem).toBeCalledTimes(0);
   });
