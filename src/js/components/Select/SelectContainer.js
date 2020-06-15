@@ -27,6 +27,7 @@ const OptionsBox = styled.div`
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
+  outline: none;
 `;
 
 const OptionBox = styled(Box)`
