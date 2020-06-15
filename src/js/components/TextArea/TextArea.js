@@ -7,7 +7,16 @@ import { StyledTextArea } from './StyledTextArea';
 
 const TextArea = forwardRef(
   (
-    { fill, name, onBlur, onChange, onFocus, value: valueProp, ...rest },
+    {
+      fill,
+      name,
+      onBlur,
+      onChange,
+      onFocus,
+      onKeyDown,
+      value: valueProp,
+      ...rest
+    },
     ref,
   ) => {
     const formContext = useContext(FormContext);
@@ -22,6 +31,7 @@ const TextArea = forwardRef(
           event.stopPropagation();
           event.nativeEvent.stopImmediatePropagation();
         }}
+        onKeyDown={onKeyDown}
       >
         <StyledTextArea
           ref={ref}

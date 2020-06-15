@@ -20,6 +20,7 @@ exports[`Button kind border 1`] = `
   border-style: solid;
   border-width: 2px;
   border-color: green;
+  text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -75,6 +76,7 @@ exports[`Button kind custom theme 1`] = `
   padding: 6px 12px;
   color: #444444;
   font-weight: 700;
+  text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -131,6 +133,7 @@ exports[`Button kind extend 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: green;
+  text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -183,6 +186,7 @@ exports[`Button kind fill 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
+  text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -217,6 +221,7 @@ exports[`Button kind fill 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
+  text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -246,6 +251,7 @@ exports[`Button kind fill 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
+  text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -315,6 +321,7 @@ exports[`Button kind font 1`] = `
   line-height: 24px;
   line-height: 20px;
   font-weight: 700;
+  text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -367,6 +374,7 @@ exports[`Button kind font undefined 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
+  text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -422,8 +430,8 @@ exports[`Button kind hover 1`] = `
 }
 
 .c1:hover {
-  background-color: rgba(0,0,0,1);
-  color: #f8f8f8;
+  background-color: rgba(221,221,221,0.4);
+  color: #444444;
 }
 
 .c0 {
@@ -467,6 +475,7 @@ exports[`Button kind no border 1`] = `
   font-size: 18px;
   line-height: 24px;
   border: none;
+  text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -521,6 +530,7 @@ exports[`Button kind no padding 1`] = `
   line-height: 24px;
   padding: 0px;
   color: #444444;
+  text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -574,6 +584,7 @@ exports[`Button kind opacity 1`] = `
   font-size: 18px;
   line-height: 24px;
   opacity: 0.4;
+  text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -629,6 +640,7 @@ exports[`Button kind padding 1`] = `
   padding: 6px 12px;
   background-color: green;
   color: #444444;
+  text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -681,6 +693,7 @@ exports[`Button kind size 1`] = `
   padding: 4px 20px;
   font-size: 14px;
   line-height: 20px;
+  text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;

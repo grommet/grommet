@@ -441,6 +441,16 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   },
       //   extend: undefined,
       // },
+      // option: {
+      //   background: undefined,
+      //   border: undefined,
+      //   color: undefined,
+      //   padding: {
+      //     vertical: undefined,
+      //     horizontal: undefined,
+      //   },
+      //   extend: undefined,
+      // },
       active: {
         background: 'active-background',
         //   border: undefined,
@@ -986,6 +996,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // gap: undefined,
       header: {
         // background: undefined,
+        // border: {
+        //   side: undefined,
+        //   size: undefined,
+        //   style: undefined,
+        //   color: undefined,
+        // },
         // extend: undefined,
       },
       panel: {
