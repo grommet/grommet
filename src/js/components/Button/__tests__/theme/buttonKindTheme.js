@@ -1,4 +1,4 @@
-export const customTheme = {
+export const buttonKindTheme = {
   button: {
     default: {
       color: 'text',

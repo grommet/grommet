@@ -7,7 +7,7 @@ import 'regenerator-runtime/runtime';
 import { axe } from 'jest-axe';
 import { cleanup, fireEvent, render } from '@testing-library/react';
 import { Grommet, Button } from '../..';
-import { customTheme } from '../Button-kind-theme';
+import { buttonKindTheme } from './theme/buttonKindTheme';
 
 describe('Button kind', () => {
   afterEach(cleanup);
@@ -30,8 +30,26 @@ describe('Button kind', () => {
 
   test('custom theme', () => {
     const { container } = render(
-      <Grommet theme={customTheme}>
+      <Grommet theme={buttonKindTheme}>
         <Button default />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('custom theme primary', () => {
+    const { container } = render(
+      <Grommet theme={buttonKindTheme}>
+        <Button primary />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('custom theme secondary', () => {
+    const { container } = render(
+      <Grommet theme={buttonKindTheme}>
+        <Button secondary />
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
