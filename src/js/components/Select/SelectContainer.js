@@ -27,6 +27,7 @@ const OptionsBox = styled.div`
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
+  outline: none;
 `;
 
 const OptionBox = styled(Box)`
@@ -72,17 +73,10 @@ const SelectContainer = forwardRef(
 
     // adjust activeIndex when options change
     useEffect(() => {
-      if (onSearch) {
-        if (activeIndex === -1 && !search && options && optionIndexesInValue) {
-          const nextActiveIndex = optionIndexesInValue.length
-            ? optionIndexesInValue[0]
-            : -1;
-          setActiveIndex(nextActiveIndex);
-        } else if (activeIndex === -1 && search) {
-          setActiveIndex(0);
-        }
+      if (activeIndex === -1 && search && optionIndexesInValue.length) {
+        setActiveIndex(optionIndexesInValue[0]);
       }
-    }, [activeIndex, optionIndexesInValue, options, onSearch, search]);
+    }, [activeIndex, optionIndexesInValue, search]);
 
     // set initial focus
     useEffect(() => {
@@ -176,27 +170,6 @@ const SelectContainer = forwardRef(
       },
       [optionValue, selected, value, valueKey],
     );
-
-    const onSearchChange = useCallback(
-      event => {
-        const nextSearch = event.target.value;
-        setSearch(nextSearch);
-        setActiveIndex(-1);
-        onSearch(nextSearch);
-      },
-      [onSearch],
-    );
-
-    useEffect(() => {
-      if (search !== undefined && onSearch) {
-        const timer = setTimeout(
-          () => onSearch(search),
-          theme.global.debounceDelay,
-        );
-        return () => clearTimeout(timer);
-      }
-      return undefined;
-    }, [onSearch, search, theme.global]);
 
     const selectOption = useCallback(
       index => event => {
@@ -315,7 +288,12 @@ const SelectContainer = forwardRef(
                 type="search"
                 value={search || ''}
                 placeholder={searchPlaceholder}
-                onChange={onSearchChange}
+                onChange={event => {
+                  const nextSearch = event.target.value;
+                  setSearch(nextSearch);
+                  setActiveIndex(-1);
+                  onSearch(nextSearch);
+                }}
               />
             </Box>
           )}
