@@ -61,10 +61,27 @@ const DateInput = forwardRef(
       const match = format.match(formatRegexp);
       const result = match.slice(1).map(part => {
         if (part[0] === 'm' || part[0] === 'd' || part[0] === 'y')
-          return { placeholder: part, length: part.length, regexp: /^[0-9]+$/ };
+          return {
+            placeholder: part,
+            length: [1, part.length],
+            regexp: new RegExp(`^[0-9]{1,${part.length}}$`),
+          };
         return { fixed: part };
       });
       return result;
+    }, [format]);
+
+    const textRegexp = useMemo(() => {
+      if (!format) return undefined;
+      const match = format.match(formatRegexp);
+      let expression = '';
+      match.slice(1).forEach(part => {
+        if (part[0] === 'm' || part[0] === 'd')
+          expression += `([0-9]{1,${part.length}})`;
+        else if (part[0] === 'y') expression += `([0-9]{${part.length}})`;
+        else expression += part;
+      });
+      return new RegExp(`^${expression}$`);
     }, [format]);
 
     // when format and not inline, wether to show the Calendar in a Drop
@@ -121,7 +138,22 @@ const DateInput = forwardRef(
         value={textValue}
         onChange={event => {
           setTextValue(event.target.value);
-          // TODO: parse into ISO date and call onChange
+          const match = event.target.value.match(textRegexp);
+          if (match) {
+            const parts = match.splice(1);
+            let [year, month, date] = [0, 0, 0];
+            mask
+              .filter(p => !p.fixed)
+              .forEach((p, i) => {
+                if (p.placeholder[0] === 'd') date = parseInt(parts[i], 10);
+                if (p.placeholder[0] === 'm') month = parseInt(parts[i], 10);
+                if (p.placeholder[0] === 'y') year = parseInt(parts[i], 10);
+              });
+            const nextValue = new Date(year, month - 1, date).toISOString();
+            setValue(nextValue);
+            if (onChange) onChange({ target: { value: nextValue } });
+            setValue();
+          }
         }}
         onFocus={() => setOpen(true)}
       />
