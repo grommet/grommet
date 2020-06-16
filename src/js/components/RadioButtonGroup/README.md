@@ -57,13 +57,18 @@ Required. Options can be either a string or an object.
 
 ```
 [string]
+[number]
+[boolean]
 [{
   disabled: boolean,
   id: string,
   label: 
     string
     element,
-  value: string
+  value: 
+    string
+    number
+    boolean
 }]
 ```
 
@@ -73,6 +78,8 @@ Currently selected option value.
 
 ```
 string
+number
+boolean
 object
 ```
   

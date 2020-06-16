@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import { Grommet, Box, FormField, TextInput } from 'grommet';
+import { Grommet, Box, Form, FormField, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { allSuggestions } from './data';
 
@@ -31,16 +31,18 @@ const FormFieldTextInput = props => {
   return (
     <Grommet theme={grommet}>
       <Box align="center" pad="large">
-        <FormField label="Label" htmlFor="text-input" {...props}>
-          <TextInput
-            id="text-input"
-            placeholder="placeholder"
-            value={state.value}
-            onChange={onChange}
-            onSelect={onSelect}
-            suggestions={state.suggestions}
-          />
-        </FormField>
+        <Form>
+          <FormField label="Label" htmlFor="text-input" {...props}>
+            <TextInput
+              id="text-input"
+              placeholder="placeholder"
+              value={state.value}
+              onChange={onChange}
+              onSelect={onSelect}
+              suggestions={state.suggestions}
+            />
+          </FormField>
+        </Form>
       </Box>
     </Grommet>
   );
