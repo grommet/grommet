@@ -14,7 +14,9 @@ const Example = () => {
   return (
     <Grommet theme={grommet}>
       <Box align="center" pad="large">
-        <DateInput format="mm/dd/yyyy" value={value} onChange={onChange} />
+        <Box width="medium">
+          <DateInput format="mm/dd/yyyy" value={value} onChange={onChange} />
+        </Box>
       </Box>
     </Grommet>
   );

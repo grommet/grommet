@@ -33,6 +33,7 @@ const DateInput = forwardRef(
       buttonProps, // when no format and not inline
       calendarProps,
       defaultValue,
+      disabled,
       dropProps, // when inline isn't true
       format,
       id,
@@ -96,7 +97,7 @@ const DateInput = forwardRef(
         range={range}
         date={range ? undefined : value}
         dates={range ? [value] : undefined}
-        onSelect={nextValue => {
+        onSelect={disabled ? undefined : nextValue => {
           let normalizedValue;
           if (range && Array.isArray(nextValue)) [normalizedValue] = nextValue;
           // clicking an edge date removes it
@@ -135,6 +136,7 @@ const DateInput = forwardRef(
           name={name}
           icon={<CalendarIcon />}
           reverse
+          disabled={disabled}
           mask={mask}
           {...inputProps}
           {...rest}

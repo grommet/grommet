@@ -45,4 +45,14 @@ describe('DateInput', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  test('format disabled', () => {
+    const component = renderer.create(
+      <Grommet>
+        <DateInput id="item" name="item" format="mm/dd/yyyy" disabled />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
