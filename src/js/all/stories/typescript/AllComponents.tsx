@@ -285,22 +285,7 @@ const Components = () => {
     </Box>,
     <Box key="video" alignSelf="start">
       <Video>
-        <source
-          src="http://techslides.com/demos/sample-videos/small.webm"
-          type="video/webm"
-        />
-        <source
-          src="http://techslides.com/demos/sample-videos/small.ogv"
-          type="video/ogg"
-        />
-        <source
-          src="http://techslides.com/demos/sample-videos/small.mp4"
-          type="video/mp4"
-        />
-        <source
-          src="http://techslides.com/demos/sample-videos/small.3gp"
-          type="video/3gp"
-        />
+        <source src="small.mp4" type="video/mp4" />
       </Video>
     </Box>,
   ];
