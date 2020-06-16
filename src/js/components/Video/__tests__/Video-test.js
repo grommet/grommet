@@ -168,6 +168,8 @@ describe('Video', () => {
     fireEvent.click(getByLabelText('Open Menu'));
     fireEvent.click(getByLabelText('VolumeLow'));
     expect(volMock).toHaveBeenCalled();
+    fireEvent.click(getByLabelText('Volume'));
+    expect(volMock).toHaveBeenCalledTimes(2);
 
     window.scrollTo.mockRestore();
   });
