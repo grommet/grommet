@@ -10,10 +10,15 @@ import { defaultProps } from '../../default-props';
 
 const radiusStyle = props => {
   const size = props.sizeProp;
-  if (size && props.theme.button.size && props.theme.button.size[size]) {
-    return props.theme.button.size[size].border.radius;
-  }
-  return props.theme.button.border.radius;
+  if (size && props.theme.button.size && props.theme.button.size[size])
+    return css`
+      border-radius: ${props.theme.button.size[size].border.radius};
+    `;
+  if (props.theme.button.border && props.theme.button.border.radius)
+    return css`
+      border-radius: ${props.theme.button.border.radius};
+    `;
+  return '';
 };
 
 const fontStyle = props => {
@@ -53,7 +58,7 @@ const padStyle = ({ sizeProp: size, theme }) => {
 // vertical height internally.
 const basicStyle = props => css`
   border: none;
-  border-radius: ${radiusStyle(props)};
+  ${radiusStyle(props)};
   ${padStyle(props)}
   ${fontStyle(props)}
 
@@ -105,6 +110,10 @@ const kindPartStyles = (obj, theme, colorValue) => {
           (!obj.background && colorValue) || obj.border.color || 'border',
           theme,
         )};
+      `);
+    if (obj.border.radius)
+      styles.push(css`
+        border-radius: ${obj.border.radius};
       `);
   } else if (obj.border === false) styles.push('border: none;');
   if (colorValue && !obj.border && !obj.background)
@@ -173,7 +182,7 @@ const kindStyle = ({ colorValue, themePaths, theme }) => {
 const hoverIndicatorStyle = ({ hoverIndicator, theme }) => {
   const themishObj = {};
   if (hoverIndicator === true || hoverIndicator === 'background')
-    themishObj.background = theme.global.hover;
+    themishObj.background = theme.global.hover.background;
   else themishObj.background = hoverIndicator;
   const styles = kindPartStyles(themishObj, theme);
   if (styles.length > 0)
@@ -226,6 +235,12 @@ const StyledButtonKind = styled.button`
   ${props => props.plain && plainStyle(props)}
   ${props => !props.plain && basicStyle(props)}
   ${props => !props.plain && kindStyle(props)}
+  ${props =>
+    !props.plain &&
+    props.align &&
+    `
+  text-align: ${props.align};
+  `}
   ${props => props.hoverIndicator && hoverIndicatorStyle(props)}
   ${props =>
     props.focus && (!props.plain || props.focusIndicator) && focusStyle()}

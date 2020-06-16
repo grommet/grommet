@@ -319,6 +319,7 @@ export interface ThemeType {
     default?: ButtonKindType;
     primary?: ButtonKindType;
     secondary?: ButtonKindType;
+    option?: ButtonKindType;
     active?: ButtonKindType & {
       default?: ButtonKindType;
       primary?: ButtonKindType;
@@ -585,6 +586,10 @@ export interface ThemeType {
       margin?: MarginType;
     };
     help?: {
+      color?: ColorType;
+      margin?: MarginType;
+    };
+    info?: {
       color?: ColorType;
       margin?: MarginType;
     };
@@ -945,6 +950,12 @@ export interface ThemeType {
     gap?: GapType;
     header?: {
       background?: BackgroundType;
+      border?: {
+        side?: string;
+        size?: string;
+        style?: string;
+        color?: ColorType;
+      };
       extend?: ExtendType;
     };
     panel?: {
