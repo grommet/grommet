@@ -47,7 +47,7 @@ describe('Video', () => {
   });
 
   test('controls over renders', () => {
-    const { container } = render(<App controls="onDragOver" />);
+    const { container } = render(<App controls="over" />);
     expect(container.firstChild).toMatchSnapshot();
   });
 
