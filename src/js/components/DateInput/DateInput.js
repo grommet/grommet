@@ -126,37 +126,40 @@ const DateInput = forwardRef(
     }
 
     const input = (
-      // TODO: handle date range via MaskedInput
-      <MaskedInput
-        ref={ref}
-        name={name}
-        icon={<CalendarIcon />}
-        reverse
-        mask={mask}
-        {...inputProps}
-        {...rest}
-        value={textValue}
-        onChange={event => {
-          setTextValue(event.target.value);
-          const match = event.target.value.match(textRegexp);
-          if (match) {
-            const parts = match.splice(1);
-            let [year, month, date] = [0, 0, 0];
-            mask
-              .filter(p => !p.fixed)
-              .forEach((p, i) => {
-                if (p.placeholder[0] === 'd') date = parseInt(parts[i], 10);
-                if (p.placeholder[0] === 'm') month = parseInt(parts[i], 10);
-                if (p.placeholder[0] === 'y') year = parseInt(parts[i], 10);
-              });
-            const nextValue = new Date(year, month - 1, date).toISOString();
-            setValue(nextValue);
-            if (onChange) onChange({ target: { value: nextValue } });
-            setValue();
-          }
-        }}
-        onFocus={() => setOpen(true)}
-      />
+      <FormContext.Provider
+        // don't let MaskedInput drive the Form, if any
+        value={{ useFormInput: (_, val) => [val, () => {}] }}
+      >
+        <MaskedInput
+          ref={ref}
+          name={name}
+          icon={<CalendarIcon />}
+          reverse
+          mask={mask}
+          {...inputProps}
+          {...rest}
+          value={textValue}
+          onChange={event => {
+            setTextValue(event.target.value);
+            const match = event.target.value.match(textRegexp);
+            if (match) {
+              const parts = match.splice(1);
+              let [year, month, date] = [0, 0, 0];
+              mask
+                .filter(p => !p.fixed)
+                .forEach((p, i) => {
+                  if (p.placeholder[0] === 'd') date = parseInt(parts[i], 10);
+                  if (p.placeholder[0] === 'm') month = parseInt(parts[i], 10);
+                  if (p.placeholder[0] === 'y') year = parseInt(parts[i], 10);
+                });
+              const nextValue = new Date(year, month - 1, date).toISOString();
+              setValue(nextValue);
+              if (onChange) onChange({ target: { value: nextValue } });
+            }
+          }}
+          onFocus={() => setOpen(true)}
+        />
+      </FormContext.Provider>
     );
 
     if (inline) {
