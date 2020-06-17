@@ -31,41 +31,41 @@ describe('Button', () => {
   });
 
   test('warns about invalid label', () => {
+    console.warn = jest.fn();
     const warnSpy = jest.spyOn(console, 'warn');
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Button label="Test" onClick={() => {}}>
           invalid
         </Button>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
     expect(warnSpy).toHaveBeenCalledWith(
       'Button should not have children if icon or label is provided',
     );
-
     warnSpy.mockReset();
     warnSpy.mockRestore();
+    console.warn.mockReset();
   });
 
   test('warns about invalid icon', () => {
+    console.warn = jest.fn();
     const warnSpy = jest.spyOn(console, 'warn');
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Button icon={<svg />} onClick={() => {}}>
           invalid
         </Button>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
     expect(warnSpy).toHaveBeenCalledWith(
       'Button should not have children if icon or label is provided',
     );
-
     warnSpy.mockReset();
     warnSpy.mockRestore();
+    console.warn.mockReset();
   });
 
   test('primary', () => {
