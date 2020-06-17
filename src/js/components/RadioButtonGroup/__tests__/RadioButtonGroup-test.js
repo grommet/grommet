@@ -40,7 +40,13 @@ describe('RadioButtonGroup', () => {
   test('boolean options', () => {
     const component = renderer.create(
       <Grommet>
-        <RadioButtonGroup name="test" options={[true, false]} value />
+        <RadioButtonGroup
+          name="test"
+          options={[
+            { disabled: true, value: '1' },
+            { disabled: false, value: '2' },
+          ]}
+        />
       </Grommet>,
     );
     const tree = component.toJSON();
