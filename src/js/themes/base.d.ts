@@ -319,6 +319,7 @@ export interface ThemeType {
     default?: ButtonKindType;
     primary?: ButtonKindType;
     secondary?: ButtonKindType;
+    option?: ButtonKindType;
     active?: ButtonKindType & {
       default?: ButtonKindType;
       primary?: ButtonKindType;
