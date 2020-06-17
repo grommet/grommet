@@ -88,8 +88,7 @@ describe('Video', () => {
 
   test('fullscreen button', () => {
     window.scrollTo = jest.fn();
-    console.warn = jest.fn();
-    const warnSpy = jest.spyOn(console, 'warn');
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const { getByLabelText } = render(<App />);
     fireEvent.click(getByLabelText('Open Menu'));
     fireEvent.click(getByLabelText('Expand'));
@@ -101,7 +100,6 @@ describe('Video', () => {
     );
     warnSpy.mockReset();
     warnSpy.mockRestore();
-    console.warn.mockRestore();
     window.scrollTo.mockRestore();
   });
 

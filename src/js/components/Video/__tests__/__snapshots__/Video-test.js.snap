@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Video  Configure Menu Button 1`] = `
+exports[`Video Configure Menu Button 1`] = `
 .c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
