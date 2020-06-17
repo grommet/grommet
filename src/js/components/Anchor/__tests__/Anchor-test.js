@@ -32,41 +32,43 @@ describe('Anchor', () => {
   });
 
   test('warns about invalid label render', () => {
+    console.warn = jest.fn();
     const warnSpy = jest.spyOn(console, 'warn');
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Anchor href="#" label="Test">
           invalid
         </Anchor>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
     expect(warnSpy).toHaveBeenCalledWith(
       'Anchor should not have children if icon or label is provided',
     );
 
     warnSpy.mockReset();
     warnSpy.mockRestore();
+    console.warn.mockReset();
   });
 
   test('warns about invalid icon render', () => {
+    console.warn = jest.fn();
     const warnSpy = jest.spyOn(console, 'warn');
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Anchor href="#" icon={<svg />}>
           invalid
         </Anchor>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
     expect(warnSpy).toHaveBeenCalledWith(
       'Anchor should not have children if icon or label is provided',
     );
 
     warnSpy.mockReset();
     warnSpy.mockRestore();
+    console.warn.mockReset();
   });
 
   test('primary renders', () => {
