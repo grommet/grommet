@@ -88,7 +88,7 @@ export const doc = DataChart => {
       PropTypes.string,
     ]).description(`The spacing between the axes and the Charts.`),
     pad: padPropType.description(`Spacing around the outer edge of
-    the drawing coordinate area for bars and points to overflow into.`),
+    the drawing coordinate area for the graphic elements to overflow into.`),
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['fill']),
       PropTypes.shape({
@@ -132,7 +132,9 @@ export const doc = DataChart => {
         guide: PropTypes.bool,
         key: PropTypes.string,
         labels: PropTypes.number, // default undefined, all data points
-        render: PropTypes.func, // (dataIndex, axisIndex) => element
+        // (value, data, dataIndex, axisIndex) => element
+        // value is only defined when a 'key' is provided.
+        render: PropTypes.func,
       }),
     ]).description(`x-axis configuration. 'guide' specifies that vertical
     guide lines should be drawn under the Chart, one per label.
@@ -146,7 +148,9 @@ export const doc = DataChart => {
       PropTypes.shape({
         guide: PropTypes.bool,
         labels: PropTypes.number, // default 2, top and bottom
+        prefix: PropTypes.string,
         render: PropTypes.func, // (value, axisIndex) => element
+        suffix: PropTypes.string,
       }),
     ]).description(`y-axis configuration. 'guide' specifies that horizontal
     guide lines should be drawn under the Chart, one per label.

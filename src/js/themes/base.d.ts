@@ -319,6 +319,7 @@ export interface ThemeType {
     default?: ButtonKindType;
     primary?: ButtonKindType;
     secondary?: ButtonKindType;
+    option?: ButtonKindType;
     active?: ButtonKindType & {
       default?: ButtonKindType;
       primary?: ButtonKindType;
@@ -588,6 +589,10 @@ export interface ThemeType {
       color?: ColorType;
       margin?: MarginType;
     };
+    info?: {
+      color?: ColorType;
+      margin?: MarginType;
+    };
     label?: TextProps;
     margin?: MarginType;
     round?: RoundType;
@@ -836,6 +841,7 @@ export interface ThemeType {
     check?: {
       radius?: string;
     };
+    color?: ColorType;
     hover?: {
       border?: {
         color?: ColorType;
@@ -944,6 +950,12 @@ export interface ThemeType {
     gap?: GapType;
     header?: {
       background?: BackgroundType;
+      border?: {
+        side?: string;
+        size?: string;
+        style?: string;
+        color?: ColorType;
+      };
       extend?: ExtendType;
     };
     panel?: {
@@ -984,6 +996,7 @@ export interface ThemeType {
     };
   };
   text?: {
+    extend?: ExtendType;
     xsmall?: {
       size?: string;
       height?: string;
