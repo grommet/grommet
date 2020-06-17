@@ -78,13 +78,5 @@ describe('Carousel', () => {
       jest.advanceTimersByTime(1300);
     });
     expect(container.firstChild).toMatchSnapshot();
-
-    //  await expect(container.firstChild).toMatchSnapshot();
-    // act(()=>{
-    //   setTimeout(() => {
-    //
-    //     done();
-    //   }, 1300);
-    // });
   });
 });
