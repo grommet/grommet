@@ -2,7 +2,6 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 import { cleanup, render, fireEvent, act } from '@testing-library/react';
-import 'regenerator-runtime/runtime';
 
 import { Grommet } from '../../Grommet';
 import { Carousel } from '..';
