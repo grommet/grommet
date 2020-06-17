@@ -79,7 +79,7 @@ describe('Video', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test(' Configure Menu Button', () => {
+  test('Configure Menu Button', () => {
     window.scrollTo = jest.fn();
     const { container, getByLabelText } = render(<App />);
     fireEvent.click(getByLabelText('Open Menu'));
