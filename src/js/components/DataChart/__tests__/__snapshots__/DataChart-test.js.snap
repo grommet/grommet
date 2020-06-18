@@ -399,6 +399,17 @@ exports[`DataChart size 1`] = `
 .c1 {
   position: relative;
   grid-area: charts;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .c4 {
@@ -416,16 +427,21 @@ exports[`DataChart size 1`] = `
   display: flex;
 }
 
-.c2 {
+.c5 {
   position: relative;
-  display: block;
+  grid-area: charts;
 }
 
-.c5 {
+.c2 {
   position: relative;
   display: block;
   width: 100%;
   height: 100%;
+}
+
+.c6 {
+  position: relative;
+  display: block;
 }
 
 <div
@@ -439,10 +455,10 @@ exports[`DataChart size 1`] = `
     >
       <svg
         className="c3"
-        height={96}
+        height={0}
         preserveAspectRatio="none"
-        viewBox="0 0 96 96"
-        width={96}
+        viewBox="0 0 0 0"
+        width={0}
       >
         <g
           fill="none"
@@ -456,7 +472,7 @@ exports[`DataChart size 1`] = `
           >
             <title />
             <path
-              d="M 48,96 L 48,80"
+              d="M 48,0 L 48,0"
             />
           </g>
           <g
@@ -464,167 +480,7 @@ exports[`DataChart size 1`] = `
           >
             <title />
             <path
-              d="M 48,96 L 48,0"
-            />
-          </g>
-        </g>
-      </svg>
-    </div>
-  </div>
-  <div
-    className="c1"
-  >
-    <div
-      className="c2"
-    >
-      <svg
-        className="c3"
-        height={192}
-        preserveAspectRatio="none"
-        viewBox="0 0 192 192"
-        width={192}
-      >
-        <g
-          fill="none"
-          stroke="#6FFFB0"
-          strokeLinecap="butt"
-          strokeLinejoin="miter"
-          strokeWidth={96}
-        >
-          <g
-            fill="none"
-          >
-            <title />
-            <path
-              d="M 48,192 L 48,160"
-            />
-          </g>
-          <g
-            fill="none"
-          >
-            <title />
-            <path
-              d="M 144,192 L 144,0"
-            />
-          </g>
-        </g>
-      </svg>
-    </div>
-  </div>
-  <div
-    className="c1"
-  >
-    <div
-      className="c2"
-    >
-      <svg
-        className="c3"
-        height={384}
-        preserveAspectRatio="none"
-        viewBox="0 0 384 384"
-        width={384}
-      >
-        <g
-          fill="none"
-          stroke="#6FFFB0"
-          strokeLinecap="butt"
-          strokeLinejoin="miter"
-          strokeWidth={96}
-        >
-          <g
-            fill="none"
-          >
-            <title />
-            <path
-              d="M 48,384 L 48,320"
-            />
-          </g>
-          <g
-            fill="none"
-          >
-            <title />
-            <path
-              d="M 336,384 L 336,0"
-            />
-          </g>
-        </g>
-      </svg>
-    </div>
-  </div>
-  <div
-    className="c1"
-  >
-    <div
-      className="c2"
-    >
-      <svg
-        className="c3"
-        height={768}
-        preserveAspectRatio="none"
-        viewBox="0 0 768 768"
-        width={768}
-      >
-        <g
-          fill="none"
-          stroke="#6FFFB0"
-          strokeLinecap="butt"
-          strokeLinejoin="miter"
-          strokeWidth={96}
-        >
-          <g
-            fill="none"
-          >
-            <title />
-            <path
-              d="M 48,768 L 48,640"
-            />
-          </g>
-          <g
-            fill="none"
-          >
-            <title />
-            <path
-              d="M 720,768 L 720,0"
-            />
-          </g>
-        </g>
-      </svg>
-    </div>
-  </div>
-  <div
-    className="c1"
-  >
-    <div
-      className="c2"
-    >
-      <svg
-        className="c3"
-        height={1152}
-        preserveAspectRatio="none"
-        viewBox="0 0 1152 1152"
-        width={1152}
-      >
-        <g
-          fill="none"
-          stroke="#6FFFB0"
-          strokeLinecap="butt"
-          strokeLinejoin="miter"
-          strokeWidth={96}
-        >
-          <g
-            fill="none"
-          >
-            <title />
-            <path
-              d="M 48,1152 L 48,960"
-            />
-          </g>
-          <g
-            fill="none"
-          >
-            <title />
-            <path
-              d="M 1104,1152 L 1104,0"
+              d="M -48,0 L -48,0"
             />
           </g>
         </g>
@@ -635,7 +491,7 @@ exports[`DataChart size 1`] = `
     className="c4"
   >
     <div
-      className="c5"
+      className="c2"
     >
       <svg
         className="c3"
@@ -672,10 +528,10 @@ exports[`DataChart size 1`] = `
     </div>
   </div>
   <div
-    className="c1"
+    className="c5"
   >
     <div
-      className="c2"
+      className="c6"
     >
       <svg
         className="c3"
