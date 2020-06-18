@@ -1,7 +1,7 @@
 import React from 'react';
 import 'jest-styled-components';
 import renderer from 'react-test-renderer';
-import { cleanup, render } from '@testing-library/react';
+import { cleanup, render, act } from '@testing-library/react';
 
 import { Grommet } from '../../Grommet';
 import { Clock } from '..';
@@ -36,7 +36,8 @@ describe('Clock', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
 
-  test('run', done => {
+  test('run', () => {
+    jest.useFakeTimers();
     const { container } = render(
       <Grommet>
         <Clock type="analog" run="forward" time={DURATION} />
@@ -46,12 +47,12 @@ describe('Clock', () => {
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
+    act(() => {
+      jest.advanceTimersByTime(1300);
+    });
+    expect(container.firstChild).toMatchSnapshot();
 
     // give some time for the clock to move and use the callback
-    setTimeout(() => {
-      expect(container.firstChild).toMatchSnapshot();
-      done();
-    }, 1300);
   });
 
   ['analog', 'digital'].forEach(type =>

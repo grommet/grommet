@@ -1,7 +1,7 @@
 import React from 'react';
 import 'jest-styled-components';
 import renderer from 'react-test-renderer';
-import { cleanup, render, fireEvent } from '@testing-library/react';
+import { cleanup, render, fireEvent, act } from '@testing-library/react';
 
 import { Accordion, AccordionPanel, Box, Grommet } from '../..';
 
@@ -74,7 +74,8 @@ describe('Accordion', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
 
-  test('change to second Panel', done => {
+  test('change to second Panel', () => {
+    jest.useFakeTimers();
     const onActive = jest.fn();
     const { getByText, container } = render(
       <Grommet>
@@ -89,13 +90,12 @@ describe('Accordion', () => {
     fireEvent.click(getByText('Panel 2'));
 
     // wait for panel animation to finish
-    setTimeout(() => {
-      expect(onActive).toBeCalled();
+    act(() => {
+      jest.advanceTimersByTime(500);
+    });
 
-      expect(container.firstChild).toMatchSnapshot();
-
-      done();
-    }, 500);
+    expect(onActive).toBeCalled();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('change to second Panel without onActive', () => {
@@ -198,6 +198,7 @@ describe('Accordion', () => {
   });
 
   test('focus and hover styles', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const { getByText, container } = render(
       <Grommet theme={{ accordion: { hover: { color: 'red' } } }}>
         <Accordion>
@@ -216,9 +217,12 @@ describe('Accordion', () => {
 
     fireEvent.focus(getByText('Panel 1'));
     expect(container.firstChild).toMatchSnapshot();
+    expect(warnSpy).toHaveBeenCalled();
+    warnSpy.mockRestore();
   });
 
   test('backward compatibility of hover.color = undefined', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const { getByText, container } = render(
       <Grommet
         theme={{
@@ -244,6 +248,8 @@ describe('Accordion', () => {
     fireEvent.focus(getByText('Panel 1'));
     // hover color should be undefined
     expect(container.firstChild).toMatchSnapshot();
+    expect(warnSpy).toHaveBeenCalled();
+    warnSpy.mockRestore();
   });
 
   test('theme hover of hover.heading.color', () => {
