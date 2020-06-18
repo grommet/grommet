@@ -39,6 +39,9 @@ class FakeRouter extends Component {
 describe('RoutedButton', () => {
   const push = jest.fn();
   const replace = jest.fn();
+  const warning = `This component will be deprecated in the upcoming releases.
+         Please refer to https://github.com/grommet/grommet/issues/2855 
+         for more information.`;
   test('renders', () => {
     console.warn = jest.fn();
     const warnSpy = jest.spyOn(console, 'warn');
@@ -52,11 +55,7 @@ describe('RoutedButton', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 
-    expect(warnSpy).toBeCalledWith(
-      `This component will be deprecated in the upcoming releases.
-         Please refer to https://github.com/grommet/grommet/issues/2855 
-         for more information.`,
-    );
+    expect(warnSpy).toBeCalledWith(warning);
 
     warnSpy.mockReset();
     warnSpy.mockRestore();
@@ -82,11 +81,7 @@ describe('RoutedButton', () => {
     expect(push).toBeCalled();
     expect(preventDefault).toBeCalled();
 
-    expect(warnSpy).toBeCalledWith(
-      `This component will be deprecated in the upcoming releases.
-         Please refer to https://github.com/grommet/grommet/issues/2855 
-         for more information.`,
-    );
+    expect(warnSpy).toBeCalledWith(warning);
 
     warnSpy.mockReset();
     warnSpy.mockRestore();
@@ -115,11 +110,7 @@ describe('RoutedButton', () => {
     });
     expect(onClick).not.toBeCalled();
 
-    expect(warnSpy).toBeCalledWith(
-      `This component will be deprecated in the upcoming releases.
-         Please refer to https://github.com/grommet/grommet/issues/2855 
-         for more information.`,
-    );
+    expect(warnSpy).toBeCalledWith(warning);
 
     warnSpy.mockReset();
     warnSpy.mockRestore();
@@ -146,11 +137,7 @@ describe('RoutedButton', () => {
     expect(preventDefault).toBeCalled();
     expect(push).toBeCalledWith('/');
 
-    expect(warnSpy).toBeCalledWith(
-      `This component will be deprecated in the upcoming releases.
-         Please refer to https://github.com/grommet/grommet/issues/2855 
-         for more information.`,
-    );
+    expect(warnSpy).toBeCalledWith(warning);
 
     warnSpy.mockReset();
     warnSpy.mockRestore();
@@ -177,11 +164,7 @@ describe('RoutedButton', () => {
     expect(preventDefault).toBeCalled();
     expect(replace).toBeCalledWith('/');
 
-    expect(warnSpy).toBeCalledWith(
-      `This component will be deprecated in the upcoming releases.
-         Please refer to https://github.com/grommet/grommet/issues/2855 
-         for more information.`,
-    );
+    expect(warnSpy).toBeCalledWith(warning);
 
     warnSpy.mockReset();
     warnSpy.mockRestore();
