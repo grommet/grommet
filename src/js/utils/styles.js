@@ -382,7 +382,8 @@ export const overflowStyle = overflowProp => {
 };
 
 const placeholderColor = css`
-  color: ${props => props.theme.global.colors.placeholder};
+  color: ${props =>
+    normalizeColor(props.theme.global.colors.placeholder, props.theme)};
 `;
 
 export const placeholderStyle = css`

@@ -35,13 +35,17 @@ export const doc = RadioButtonGroup => {
     options: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.string),
       PropTypes.arrayOf(PropTypes.number),
+      PropTypes.arrayOf(PropTypes.bool),
       PropTypes.arrayOf(
         PropTypes.shape({
           disabled: PropTypes.bool,
           id: PropTypes.string,
           label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-          value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-            .isRequired,
+          value: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number,
+            PropTypes.bool,
+          ]).isRequired,
         }),
       ),
     ]).description(`Options can be either a string or an object. 
@@ -49,6 +53,7 @@ export const doc = RadioButtonGroup => {
     value: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.number,
+      PropTypes.bool,
       PropTypes.object,
     ]).description(`Currently selected option value.`),
   };
