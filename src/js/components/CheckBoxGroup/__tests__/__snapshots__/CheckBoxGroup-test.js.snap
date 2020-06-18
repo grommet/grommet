@@ -377,7 +377,8 @@ exports[`CheckBoxGroup onClick 1`] = `
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+    class="StyledBox-sc-13pk1d4-0 iDvhFF"
+    tabindex="0"
   >
     <label
       class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 PHOTu"
@@ -438,7 +439,8 @@ exports[`CheckBoxGroup onClick 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+    class="StyledBox-sc-13pk1d4-0 iDvhFF"
+    tabindex="0"
   >
     <label
       class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 PHOTu"

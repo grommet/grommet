@@ -86,10 +86,12 @@ describe('CheckBoxGroup', () => {
       </Grommet>,
     );
     fireEvent.click(getByText('first-label'));
+    expect(onChange).toBeCalledTimes(1);
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('onClick', () => {
+    const onClick = jest.fn();
     const { container, getByText } = render(
       <Grommet>
         <CheckBoxGroup
@@ -97,12 +99,15 @@ describe('CheckBoxGroup', () => {
             { label: 'first-label', value: 'First' },
             { label: 'second-label', value: 'Second' },
           ]}
+          onClick={onClick}
         />
       </Grommet>,
     );
     fireEvent.click(getByText('first-label'));
+    expect(onClick).toBeCalledTimes(1);
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('first-label'));
+    expect(onClick).toBeCalledTimes(2);
     expect(container.firstChild).toMatchSnapshot();
   });
 
