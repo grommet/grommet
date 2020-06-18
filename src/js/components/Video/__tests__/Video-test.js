@@ -24,7 +24,7 @@ describe('Video', () => {
 
   afterEach(cleanup);
 
-  test('Video has not accessibility violations', async () => {
+  test('should have no accessibility violations', async () => {
     const { container } = render(<App />);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
