@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
-import { cleanup, render, fireEvent } from '@testing-library/react';
+import { cleanup, render, fireEvent, act } from '@testing-library/react';
 
 import { Grommet } from '../../Grommet';
 import { Carousel } from '..';
@@ -62,7 +62,8 @@ describe('Carousel', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('play', done => {
+  test('play', () => {
+    jest.useFakeTimers();
     const { container } = render(
       <Grommet>
         <Carousel play={1000}>
@@ -72,11 +73,10 @@ describe('Carousel', () => {
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
-
-    // give some time for the carousel to advance
-    setTimeout(() => {
-      expect(container.firstChild).toMatchSnapshot();
-      done();
-    }, 1300);
+    // Advance timers so the carousel advances
+    act(() => {
+      jest.advanceTimersByTime(1300);
+    });
+    expect(container.firstChild).toMatchSnapshot();
   });
 });
