@@ -8,6 +8,11 @@ const now = new Date();
 const lastWeek = new Date(now);
 lastWeek.setDate(lastWeek.getDate() - 7);
 
+const dateFormat = new Intl.DateTimeFormat(undefined, {
+  month: 'short',
+  day: 'numeric',
+});
+
 const Example = () => {
   const [value, setValue] = React.useState([
     now.toISOString(),
@@ -21,7 +26,15 @@ const Example = () => {
   return (
     <Grommet theme={grommet}>
       <Box align="center" pad="large">
-        <DateInput value={value} onChange={onChange} />
+        <DateInput
+          value={value}
+          buttonProps={{
+            label: `${dateFormat.format(
+            new Date(value[0]),
+          )} - ${dateFormat.format(new Date(value[1]))}`,
+          }}
+          onChange={onChange}
+        />
       </Box>
     </Grommet>
   );
