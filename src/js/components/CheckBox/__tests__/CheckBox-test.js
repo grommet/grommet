@@ -86,27 +86,37 @@ describe('CheckBox', () => {
   });
 
   test('indeterminate checked warns', () => {
-    const spy = jest.spyOn(global.console, 'warn');
-    renderer.create(
+    console.warn = jest.fn();
+    const warnSpy = jest.spyOn(console, 'warn');
+    render(
       <Grommet>
         <CheckBox indeterminate checked />
       </Grommet>,
     );
-    expect(spy).toBeCalledWith(
+    expect(warnSpy).toBeCalledWith(
       'Checkbox cannot be "checked" and "indeterminate" at the same time.',
     );
+
+    warnSpy.mockReset();
+    warnSpy.mockRestore();
+    console.warn.mockReset();
   });
 
   test('indeterminate toggle warns', () => {
-    const spy = jest.spyOn(global.console, 'warn');
-    renderer.create(
+    console.warn = jest.fn();
+    const warnSpy = jest.spyOn(console, 'warn');
+    render(
       <Grommet>
         <CheckBox indeterminate toggle />
       </Grommet>,
     );
-    expect(spy).toBeCalledWith(
+    expect(warnSpy).toBeCalledWith(
       'Checkbox of type toggle does not have "indeterminate" state.',
     );
+
+    warnSpy.mockReset();
+    warnSpy.mockRestore();
+    console.warn.mockReset();
   });
 
   test('controlled', () => {

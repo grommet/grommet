@@ -5375,7 +5375,7 @@ string
 **pad**
 
 Spacing around the outer edge of
-    the drawing coordinate area for bars and points to overflow into. Defaults to \`none\`.
+    the drawing coordinate area for the graphic elements to overflow into. Defaults to \`none\`.
 
 \`\`\`
 none
@@ -5537,7 +5537,9 @@ boolean
 {
   guide: boolean,
   labels: number,
-  render: function
+  prefix: string,
+  render: function,
+  suffix: string
 }
 \`\`\`
   
@@ -7093,7 +7095,7 @@ import { Form } from 'grommet';
 
 **errors**
 
-An object representing any errors in the data. They keys should
+An object representing any errors in the data. Their keys should
         match the keys in the value object. Defaults to \`{}\`.
 
 \`\`\`
@@ -7105,7 +7107,7 @@ An object representing any errors in the data. They keys should
 **infos**
 
 An object representing any information details in the data.
-        They keys should match the keys in the value object. Defaults to \`{}\`.
+        Their keys should match the keys in the value object. Defaults to \`{}\`.
 
 \`\`\`
 {
@@ -7991,7 +7993,7 @@ stretch
 **pad**
 
 Spacing around the outer edge of
-    the drawing coordinate area for bars and points to overflow into. Defaults to \`none\`.
+    the drawing coordinate area for the graphic elements to overflow into. Defaults to \`none\`.
 
 \`\`\`
 none
@@ -11273,6 +11275,17 @@ Defaults to
 100%
 \`\`\`
 
+**radioButton.color**
+
+The color of the border surrounding the checked 
+    icon in RadioButton checked state. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **radioButton.extend**
 
 Any additional style for the RadioButton. Expects \`string | (props) => {}\`.
@@ -11392,13 +11405,18 @@ Required. Options can be either a string or an object.
 
 \`\`\`
 [string]
+[number]
+[boolean]
 [{
   disabled: boolean,
   id: string,
   label: 
     string
     element,
-  value: string
+  value: 
+    string
+    number
+    boolean
 }]
 \`\`\`
 
@@ -11408,6 +11426,8 @@ Currently selected option value.
 
 \`\`\`
 string
+number
+boolean
 object
 \`\`\`
   
@@ -13663,6 +13683,17 @@ onActive function and update activeIndex accordingly.
 number
 \`\`\`
 
+**alignControls**
+
+How to align the tab controls within the tabs header.
+
+\`\`\`
+start
+center
+end
+stretch
+\`\`\`
+
 **children**
 
 Required. Array of Tab.
@@ -13788,6 +13819,46 @@ undefined
 **tabs.header.background**
 
 The background styles of Tabs header. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**tabs.header.border.color**
+
+border color of the tabs controls Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**tabs.header.border.side**
+
+side of the border of the tabs controls Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**tabs.header.border.size**
+
+border size of the tabs controls Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**tabs.header.border.style**
+
+border style of the tabs controls Expects \`string\`.
 
 Defaults to
 

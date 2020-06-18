@@ -452,13 +452,11 @@ exports[`Anchor warns about invalid icon render 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <a
-    className="c1"
+    class="c1"
     href="#"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <svg
       color="#7D4CDB"
@@ -495,13 +493,11 @@ exports[`Anchor warns about invalid label render 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <a
-    className="c1"
+    class="c1"
     href="#"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     Test
   </a>
