@@ -28,6 +28,19 @@ export const doc = Video => {
     mute: PropTypes.bool.description(
       'Enables video muting. This option is best used with the autoPlay flag.',
     ),
+    messages: PropTypes.shape({
+      closeMenu: PropTypes.string,
+      fullScreen: PropTypes.string,
+      meter: PropTypes.string,
+      openMenu: PropTypes.string,
+      pauseButton: PropTypes.string,
+      playButton: PropTypes.string,
+      scrubber: PropTypes.string,
+      volumeDown: PropTypes.string,
+      volumeUp: PropTypes.string,
+    }).description(
+      `Custom messages. Used for accessibility by screen readers.`,
+    ),
   };
 
   return DocumentedVideo;

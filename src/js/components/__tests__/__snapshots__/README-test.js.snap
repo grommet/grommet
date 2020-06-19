@@ -15126,6 +15126,34 @@ Enables video muting. This option is best used with the autoPlay flag.
 \`\`\`
 boolean
 \`\`\`
+
+**messages**
+
+Custom messages. Used for accessibility by screen readers. Defaults to \`{
+  \\"scrubber\\": \\"scrubber\\",
+  \\"meter\\": \\"video progress\\",
+  \\"openMenu\\": \\"open menu\\",
+  \\"closeMenu\\": \\"close menu\\",
+  \\"playButton\\": \\"play\\",
+  \\"pauseButton\\": \\"pause\\",
+  \\"volumeUp\\": \\"volume up\\",
+  \\"fullScreen\\": \\"full screen\\",
+  \\"volumeDown\\": \\"volume down\\"
+}\`.
+
+\`\`\`
+{
+  closeMenu: string,
+  fullScreen: string,
+  meter: string,
+  openMenu: string,
+  pauseButton: string,
+  playButton: string,
+  scrubber: string,
+  volumeDown: string,
+  volumeUp: string
+}
+\`\`\`
   
 ## Intrinsic element
 

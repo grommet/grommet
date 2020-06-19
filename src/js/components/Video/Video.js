@@ -8,7 +8,6 @@ import React, {
   useState,
 } from 'react';
 
-import PropTypes from 'react-desc/lib/PropTypes';
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 
@@ -52,8 +51,8 @@ const Video = forwardRef(
       gridArea,
       loop,
       margin,
-      mute,
       messages,
+      mute,
       onDurationChange,
       onEnded,
       onPause,
@@ -441,30 +440,17 @@ const Video = forwardRef(
   },
 );
 
-Video.propTypes = {
-  messages: PropTypes.shape({
-    scrubber: PropTypes.string,
-    meter: PropTypes.string,
-    openMenu: PropTypes.string,
-    closeMenu: PropTypes.string,
-    playButton: PropTypes.string,
-    pauseButton: PropTypes.string,
-    volumeUp: PropTypes.string,
-    volumeDown: PropTypes.string,
-    fullScreen: PropTypes.string,
-  }),
-};
 Video.defaultProps = {
   messages: {
-    scrubber: 'Scrubber',
-    meter: 'Video Progress',
-    openMenu: 'Open Menu',
-    closeMenu: 'Close Menu',
-    playButton: 'Play',
-    pauseButton: 'Pause',
-    volumeUp: 'Volume Up',
-    volumeDown: 'Volume Down',
-    fullScreen: 'Full Screen',
+    scrubber: 'scrubber',
+    meter: 'video progress',
+    openMenu: 'open menu',
+    closeMenu: 'close menu',
+    playButton: 'play',
+    pauseButton: 'pause',
+    volumeUp: 'volume up',
+    fullScreen: 'full screen',
+    volumeDown: 'volume down',
   },
 };
 
