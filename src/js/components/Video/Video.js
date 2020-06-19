@@ -442,15 +442,15 @@ const Video = forwardRef(
 
 Video.defaultProps = {
   messages: {
-    scrubber: 'scrubber',
-    meter: 'video progress',
-    openMenu: 'open menu',
     closeMenu: 'close menu',
-    playButton: 'play',
-    pauseButton: 'pause',
-    volumeUp: 'volume up',
     fullScreen: 'full screen',
+    meter: 'video progress',
+    scrubber: 'scrubber',
+    openMenu: 'open menu',
+    pauseButton: 'pause',
+    playButton: 'play',
     volumeDown: 'volume down',
+    volumeUp: 'volume up',
   },
 };
 

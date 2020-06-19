@@ -15130,15 +15130,15 @@ boolean
 **messages**
 
 Custom messages. Used for accessibility by screen readers. Defaults to \`{
-  \\"scrubber\\": \\"scrubber\\",
-  \\"meter\\": \\"video progress\\",
-  \\"openMenu\\": \\"open menu\\",
   \\"closeMenu\\": \\"close menu\\",
-  \\"playButton\\": \\"play\\",
-  \\"pauseButton\\": \\"pause\\",
-  \\"volumeUp\\": \\"volume up\\",
   \\"fullScreen\\": \\"full screen\\",
-  \\"volumeDown\\": \\"volume down\\"
+  \\"meter\\": \\"video progress\\",
+  \\"scrubber\\": \\"scrubber\\",
+  \\"openMenu\\": \\"open menu\\",
+  \\"pauseButton\\": \\"pause\\",
+  \\"playButton\\": \\"play\\",
+  \\"volumeDown\\": \\"volume down\\",
+  \\"volumeUp\\": \\"volume up\\"
 }\`.
 
 \`\`\`
