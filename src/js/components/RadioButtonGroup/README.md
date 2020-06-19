@@ -52,8 +52,8 @@ function
 
 **options**
 
-Required. Options can be either a string or an object. 
-    Each option is rendered as a single RadioButton.
+Required. Options can be either a string, boolean, number 
+      or an object. Each option is rendered as a single RadioButton.
 
 ```
 [string]
