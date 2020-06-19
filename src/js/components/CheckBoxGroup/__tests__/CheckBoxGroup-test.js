@@ -90,7 +90,7 @@ describe('CheckBoxGroup', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('onClick', () => {
+  test('onClick for check and uncheck a CheckBox', () => {
     const onClick = jest.fn();
     const { container, getByText } = render(
       <Grommet>
