@@ -49,6 +49,7 @@ const customTheme = {
     },
     colors: {
       custom: '#cc6633',
+      placeholder: 'custom',
     },
   },
 };
@@ -108,7 +109,7 @@ describe('Grommet', () => {
           <Anchor icon={<Add />} label="Add" color="custom" />
         </Box>
         <Box>
-          <TextInput value="Value" />
+          <TextInput value="Value" placeholder="Placeholder" />
         </Box>
       </Grommet>,
     );
