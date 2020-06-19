@@ -372,7 +372,7 @@ exports[`CheckBoxGroup onChange 1`] = `
 </div>
 `;
 
-exports[`CheckBoxGroup onClick 1`] = `
+exports[`CheckBoxGroup onClick for check and uncheck a CheckBox 1`] = `
 <div
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
@@ -434,7 +434,7 @@ exports[`CheckBoxGroup onClick 1`] = `
 </div>
 `;
 
-exports[`CheckBoxGroup onClick 2`] = `
+exports[`CheckBoxGroup onClick for check and uncheck a CheckBox 2`] = `
 <div
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
