@@ -10,14 +10,14 @@ var SimpleVideo = function SimpleVideo(props) {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/React.createElement(Video, props, /*#__PURE__*/React.createElement("source", {
+    src: "small.mp4",
+    type: "video/mp4"
+  }), /*#__PURE__*/React.createElement("source", {
     src: "http://techslides.com/demos/sample-videos/small.webm",
     type: "video/webm"
   }), /*#__PURE__*/React.createElement("source", {
     src: "http://techslides.com/demos/sample-videos/small.ogv",
     type: "video/ogg"
-  }), /*#__PURE__*/React.createElement("source", {
-    src: "http://techslides.com/demos/sample-videos/small.mp4",
-    type: "video/mp4"
   }), /*#__PURE__*/React.createElement("source", {
     src: "http://techslides.com/demos/sample-videos/small.3gp",
     type: "video/3gp"
