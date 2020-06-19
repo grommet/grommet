@@ -8,7 +8,7 @@ import React, {
   useState,
 } from 'react';
 
-import PropTypes from 'react-desc/lib/PropTypes';
+import { PropTypes } from 'react-desc';
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 
