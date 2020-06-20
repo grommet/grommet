@@ -26,7 +26,7 @@ var RadioButtonGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
         disabled: disabled,
         id: rest.id ? rest.id + "-" + o : "" + o,
         // force string
-        label: o,
+        label: typeof o !== 'string' ? JSON.stringify(o) : o,
         value: o
       } : _extends({
         disabled: disabled

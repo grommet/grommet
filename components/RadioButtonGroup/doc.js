@@ -19,7 +19,7 @@ var doc = function doc(RadioButtonGroup) {
       id: _reactDesc.PropTypes.string,
       label: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.element]),
       value: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.number, _reactDesc.PropTypes.bool]).isRequired
-    }))]).description("Options can be either a string or an object. \n    Each option is rendered as a single RadioButton.").isRequired,
+    }))]).description("Options can be either a string, boolean, number \n      or an object. Each option is rendered as a single RadioButton.").isRequired,
     value: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.number, _reactDesc.PropTypes.bool, _reactDesc.PropTypes.object]).description("Currently selected option value.")
   };
   return DocumentedRadioButtonGroup;

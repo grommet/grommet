@@ -12,7 +12,7 @@ export var doc = function doc(RadioButtonGroup) {
       id: PropTypes.string,
       label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
       value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]).isRequired
-    }))]).description("Options can be either a string or an object. \n    Each option is rendered as a single RadioButton.").isRequired,
+    }))]).description("Options can be either a string, boolean, number \n      or an object. Each option is rendered as a single RadioButton.").isRequired,
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool, PropTypes.object]).description("Currently selected option value.")
   };
   return DocumentedRadioButtonGroup;
