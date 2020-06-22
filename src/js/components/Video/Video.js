@@ -289,7 +289,7 @@ const Video = forwardRef(
               <Box flex>
                 <Stack>
                   <Meter
-                    aria-label={messages.progressMeter || 'Video progress'}
+                    aria-label={messages.progressMeter}
                     background={
                       over
                         ? (theme.video.scrubber &&
@@ -303,7 +303,7 @@ const Video = forwardRef(
                     values={[{ value: percentagePlayed || 0 }]}
                   />
                   <StyledVideoScrubber
-                    aria-label={messages.scrubber || 'Scrubber'}
+                    aria-label={messages.scrubber}
                     ref={scrubberRef}
                     tabIndex={0}
                     role="button"
