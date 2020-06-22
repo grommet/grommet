@@ -4,6 +4,7 @@ import { cleanup, render, fireEvent } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
+
 import { Grommet, Video } from '../..';
 
 describe('Video', () => {
