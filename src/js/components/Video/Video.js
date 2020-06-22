@@ -7,7 +7,6 @@ import React, {
   useRef,
   useState,
 } from 'react';
-
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 

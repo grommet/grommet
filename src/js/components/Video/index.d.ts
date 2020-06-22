@@ -11,15 +11,15 @@ export interface VideoProps {
   loop?: boolean;
   margin?: MarginType;
   messages?: {
-    closeMenu?: string,
-    fullScreen?: string,
-    progressMeter?: string,
+    closeMenu?: string;
+    fullScreen?: string;
+    progressMeter?: string;
     openMenu?: string;
-    scrubber?: string,
-    pauseButton?: string,
-    playButton?: string,
-    volumeUp?: string,
-    volueDown?: string,
+    scrubber?: string;
+    pauseButton?: string;
+    playButton?: string;
+    volumeUp?: string;
+    volueDown?: string;
   }
 
 
