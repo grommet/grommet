@@ -36,7 +36,7 @@ const RadioButtonGroup = forwardRef(
             ? {
                 disabled,
                 id: rest.id ? `${rest.id}-${o}` : `${o}`, // force string
-                label: o,
+                label: typeof o !== 'string' ? JSON.stringify(o) : o,
                 value: o,
               }
             : { disabled, ...o },

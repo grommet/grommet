@@ -48,8 +48,9 @@ export const doc = RadioButtonGroup => {
           ]).isRequired,
         }),
       ),
-    ]).description(`Options can be either a string or an object. 
-    Each option is rendered as a single RadioButton.`).isRequired,
+    ]).description(`Options can be either a string, boolean, number 
+      or an object. Each option is rendered as a single RadioButton.`)
+      .isRequired,
     value: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.number,
