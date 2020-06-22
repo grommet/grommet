@@ -5358,8 +5358,8 @@ with the same name so form submissions work.",
         "name": "onChange",
       },
       Object {
-        "description": "Options can be either a string or an object. 
-    Each option is rendered as a single RadioButton.",
+        "description": "Options can be either a string, boolean, number 
+      or an object. Each option is rendered as a single RadioButton.",
         "format": "[string]
 [number]
 [boolean]
