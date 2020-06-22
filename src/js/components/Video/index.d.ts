@@ -13,13 +13,14 @@ export interface VideoProps {
   messages?: {
     closeMenu?: string,
     fullScreen?: string,
-    meter?: string,
-    openMenu?: string};
+    progressMeter?: string,
+    openMenu?: string;
     scrubber?: string,
     pauseButton?: string,
     playButton?: string,
     volumeUp?: string,
     volueDown?: string,
+  }
 
 
   mute?: boolean;

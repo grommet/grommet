@@ -289,7 +289,7 @@ const Video = forwardRef(
               <Box flex>
                 <Stack>
                   <Meter
-                    aria-label={messages.meter || 'Video progress'}
+                    aria-label={messages.progressMeter || 'Video progress'}
                     background={
                       over
                         ? (theme.video.scrubber &&
@@ -444,7 +444,7 @@ Video.defaultProps = {
   messages: {
     closeMenu: 'close menu',
     fullScreen: 'full screen',
-    meter: 'video progress',
+    progressMeter: 'video progress',
     scrubber: 'scrubber',
     openMenu: 'open menu',
     pauseButton: 'pause',

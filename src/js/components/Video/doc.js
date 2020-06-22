@@ -31,7 +31,7 @@ export const doc = Video => {
     messages: PropTypes.shape({
       closeMenu: PropTypes.string,
       fullScreen: PropTypes.string,
-      meter: PropTypes.string,
+      progressMeter: PropTypes.string,
       openMenu: PropTypes.string,
       pauseButton: PropTypes.string,
       playButton: PropTypes.string,

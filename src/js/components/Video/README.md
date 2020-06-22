@@ -172,7 +172,7 @@ boolean
 Custom messages. Used for accessibility by screen readers. Defaults to `{
   "closeMenu": "close menu",
   "fullScreen": "full screen",
-  "meter": "video progress",
+  "progressMeter": "video progress",
   "scrubber": "scrubber",
   "openMenu": "open menu",
   "pauseButton": "pause",
@@ -185,7 +185,7 @@ Custom messages. Used for accessibility by screen readers. Defaults to `{
 {
   closeMenu: string,
   fullScreen: string,
-  meter: string,
+  progressMeter: string,
   openMenu: string,
   pauseButton: string,
   playButton: string,
