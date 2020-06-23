@@ -18,7 +18,18 @@ var doc = function doc(Video) {
     controls: _reactDesc.PropTypes.oneOf([false, 'over', 'below']).description('Whether to show playback controls and where to place them.').defaultValue('over'),
     fit: _reactDesc.PropTypes.oneOf(['cover', 'contain']).description('How the image fills its container.'),
     loop: _reactDesc.PropTypes.bool.description('Enables continuous video looping.'),
-    mute: _reactDesc.PropTypes.bool.description('Enables video muting. This option is best used with the autoPlay flag.')
+    mute: _reactDesc.PropTypes.bool.description('Enables video muting. This option is best used with the autoPlay flag.'),
+    messages: _reactDesc.PropTypes.shape({
+      closeMenu: _reactDesc.PropTypes.string,
+      fullScreen: _reactDesc.PropTypes.string,
+      progressMeter: _reactDesc.PropTypes.string,
+      openMenu: _reactDesc.PropTypes.string,
+      pauseButton: _reactDesc.PropTypes.string,
+      playButton: _reactDesc.PropTypes.string,
+      scrubber: _reactDesc.PropTypes.string,
+      volumeDown: _reactDesc.PropTypes.string,
+      volumeUp: _reactDesc.PropTypes.string
+    }).description("Custom messages. Used for accessibility by screen readers.")
   });
   return DocumentedVideo;
 };

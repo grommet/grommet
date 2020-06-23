@@ -10,7 +10,18 @@ export var doc = function doc(Video) {
     controls: PropTypes.oneOf([false, 'over', 'below']).description('Whether to show playback controls and where to place them.').defaultValue('over'),
     fit: PropTypes.oneOf(['cover', 'contain']).description('How the image fills its container.'),
     loop: PropTypes.bool.description('Enables continuous video looping.'),
-    mute: PropTypes.bool.description('Enables video muting. This option is best used with the autoPlay flag.')
+    mute: PropTypes.bool.description('Enables video muting. This option is best used with the autoPlay flag.'),
+    messages: PropTypes.shape({
+      closeMenu: PropTypes.string,
+      fullScreen: PropTypes.string,
+      progressMeter: PropTypes.string,
+      openMenu: PropTypes.string,
+      pauseButton: PropTypes.string,
+      playButton: PropTypes.string,
+      scrubber: PropTypes.string,
+      volumeDown: PropTypes.string,
+      volumeUp: PropTypes.string
+    }).description("Custom messages. Used for accessibility by screen readers.")
   });
   return DocumentedVideo;
 };
