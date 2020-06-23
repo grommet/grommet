@@ -11,23 +11,20 @@ export const getBreakpoint = (windowWidth, theme) => {
       return first.value - second.value;
     },
   );
+  // the last breakpoint on the sorted array should have
+  // no windowWidth boundaries
   const lastBreakpoint = sortedBreakpoints[sortedBreakpoints.length - 1];
-
   sortedBreakpoints.some(name => {
     const breakpoint = theme.global.breakpoints[name];
     if (breakpoint) {
-      if (
-        !breakpoint.value ||
-        lastBreakpoint === name ||
-        breakpoint.value >= windowWidth
-      ) {
+      if (!breakpoint.value || breakpoint.value >= windowWidth) {
         result = name;
         return true;
       }
     }
     return false;
   });
-  return result;
+  return result || lastBreakpoint;
 };
 
 export const getDeviceBreakpoint = (type, theme) =>
