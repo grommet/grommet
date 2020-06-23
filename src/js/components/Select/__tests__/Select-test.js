@@ -489,8 +489,8 @@ describe('Select', () => {
     expect(style.background).toBe('lightgreen');
   });
 
-  test(`renders styled select options combining select.options.box && 
-  select.options.container; 
+  test(`renders styled select options combining select.options.box &&
+  select.options.container;
   select.options.container prioritized if conflict`, () => {
     const customTheme = {
       select: {
@@ -885,4 +885,27 @@ describe('Select', () => {
     fireEvent.click(getByText('Value1'));
     expect(onChange).toBeCalledWith(expect.objectContaining({ value: [] }));
   });
+
+  // test('Search focus', () => {
+  //   jest.useFakeTimers();
+  //   const onChange = jest.fn();
+  //   const onSearch = jest.fn();
+  //   const { getByPlaceholderText, container } = render(
+  //     <Select
+  //       id="test-select"
+  //       placeholder="test select"
+  //       options={['one', 'two']}
+  //       onSearch={onSearch}
+  //       onChange={onChange}
+  //     />,
+  //   );
+  //   expect(container.firstChild).toMatchSnapshot();
+  //
+  //   fireEvent.change(getByPlaceholderText('test select'), {
+  //     target: { value: 'Change' },
+  //   });
+  //   jest.advanceTimersByTime(1000);
+  //
+  //   expect(onSearch).toHaveBeenCalled();
+  // });
 });
