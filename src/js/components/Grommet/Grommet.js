@@ -88,15 +88,13 @@ class Grommet extends Component {
     const { theme, responsive } = this.state;
 
     let breakpoint;
-
-    // In the case of SSR, responsive will be undefined so we'll need to use
-    // the user agent breakpoint
+    // responsive would be undefined in the case of SSR or initial page load
     if (!responsive) {
-      breakpoint =
-        this.deviceResponsive() || theme.global.deviceBreakpoints.tablet;
-    } else {
-      breakpoint = getBreakpoint(window.innerWidth, theme);
+      // In the case of SSR we'll need to use the user agent breakpoint
+      breakpoint = this.deviceResponsive();
     }
+    // Initial page load where both responsive and breakpoint are undefined
+    if (!breakpoint) breakpoint = getBreakpoint(window.innerWidth, theme);
 
     if (breakpoint !== responsive) {
       this.setState({ responsive: breakpoint });
