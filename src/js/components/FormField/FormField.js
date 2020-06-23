@@ -68,6 +68,7 @@ const FormField = forwardRef(
       required, // pass through in renderInput()
       style,
       validate,
+      direction = 'column',
       ...rest
     },
     ref,
@@ -234,7 +235,11 @@ const FormField = forwardRef(
         contentProps.background = formFieldTheme.disabled.background;
       }
     }
-    contents = <Box {...contentProps}>{contents}</Box>;
+    contents = (
+      <Box {...contentProps} width={formFieldTheme.content.width || 'auto'}>
+        {contents}
+      </Box>
+    );
 
     let borderColor;
 
@@ -358,6 +363,48 @@ const FormField = forwardRef(
           }
         : {};
 
+    const defaulLayout = (
+      <>
+        {(label && component !== CheckBox) || help ? (
+          <>
+            {label && component !== CheckBox && (
+              <Text as="label" htmlFor={htmlFor} {...labelStyle}>
+                {label}
+              </Text>
+            )}
+            <Message message={help} {...formFieldTheme.help} />
+          </>
+        ) : (
+          undefined
+        )}
+        {contents}
+        <Message message={normalizedError} {...formFieldTheme.error} />
+        <Message message={normalizedInfo} {...formFieldTheme.info} />
+      </>
+    );
+
+    const layoutType =
+      direction === 'row' ? (
+        <Box direction={direction} align="baseline">
+          <Box {...labelStyle}>
+            {label && component !== CheckBox && (
+              <Text as="label" htmlFor={htmlFor}>
+                {label}
+              </Text>
+            )}
+          </Box>
+          <Box>
+            {contents}
+            <Message message={normalizedError} {...formFieldTheme.error} />
+          </Box>
+          <Box>
+            <Message message={normalizedInfo} {...formFieldTheme.info} />
+          </Box>
+        </Box>
+      ) : (
+        defaulLayout
+      );
+
     return (
       <FormFieldBox
         ref={ref}
@@ -377,21 +424,7 @@ const FormField = forwardRef(
         }}
         {...containerRest}
       >
-        {(label && component !== CheckBox) || help ? (
-          <>
-            {label && component !== CheckBox && (
-              <Text as="label" htmlFor={htmlFor} {...labelStyle}>
-                {label}
-              </Text>
-            )}
-            <Message message={help} {...formFieldTheme.help} />
-          </>
-        ) : (
-          undefined
-        )}
-        {contents}
-        <Message message={normalizedError} {...formFieldTheme.error} />
-        <Message message={normalizedInfo} {...formFieldTheme.info} />
+        {layoutType}
       </FormFieldBox>
     );
   },

@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { CircleInformation } from 'grommet-icons';
 
 import { Box, FormField, TextInput } from 'mnet-ui-base';
 
@@ -10,7 +11,7 @@ const FormFieldHelpError = props => (
         label="Label"
         htmlFor="text-input"
         {...props}
-        help="Text to help the user know what is possible"
+        info={<CircleInformation size="small" />}
         error="Text to call attention to an issue with this field"
       >
         <TextInput
