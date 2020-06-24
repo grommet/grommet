@@ -42,11 +42,13 @@ describe('Select', () => {
 
   test('opens', done => {
     window.scrollTo = jest.fn();
+    const onOpen = jest.fn();
     const { getByPlaceholderText, container } = render(
       <Select
         placeholder="test select"
         id="test-select"
         options={['one', 'two']}
+        onOpen={onOpen}
       />,
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -61,6 +63,7 @@ describe('Select', () => {
       expect(document.activeElement).toMatchSnapshot();
       done();
     }, 100);
+    expect(onOpen).toHaveBeenCalled();
   });
 
   test('complex options and children', () => {
@@ -886,26 +889,86 @@ describe('Select', () => {
     expect(onChange).toBeCalledWith(expect.objectContaining({ value: [] }));
   });
 
-  // test('Search focus', () => {
-  //   jest.useFakeTimers();
-  //   const onChange = jest.fn();
-  //   const onSearch = jest.fn();
-  //   const { getByPlaceholderText, container } = render(
-  //     <Select
-  //       id="test-select"
-  //       placeholder="test select"
-  //       options={['one', 'two']}
-  //       onSearch={onSearch}
-  //       onChange={onChange}
-  //     />,
-  //   );
-  //   expect(container.firstChild).toMatchSnapshot();
-  //
-  //   fireEvent.change(getByPlaceholderText('test select'), {
-  //     target: { value: 'Change' },
-  //   });
-  //   jest.advanceTimersByTime(1000);
-  //
-  //   expect(onSearch).toHaveBeenCalled();
-  // });
+  test('select an option then select a different option', () => {
+    window.scrollTo = jest.fn();
+    const onChange = jest.fn();
+    const { getByPlaceholderText } = render(
+      <Select
+        id="test-select"
+        placeholder="test select"
+        options={['one', 'two']}
+        onChange={onChange}
+      />,
+    );
+    const select = getByPlaceholderText('test select');
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    // pressing enter here nothing will happen
+    fireEvent.click(
+      document.getElementById('test-select__drop').querySelector('button'),
+    );
+
+    // checks if select has a value assigned to it after option is selected
+    expect(select.value).toEqual('one');
+
+    fireEvent.click(getByPlaceholderText('test select'));
+    fireEvent.click(
+      document
+        .getElementById('test-select__drop')
+        .querySelectorAll('button')[1],
+    );
+
+    // checks if select has a value assigned to it after option is selected
+    expect(select.value).toEqual('two');
+    expect(onChange).toHaveBeenCalledTimes(2);
+  });
+
+  test('keyboard navigation with disabled option', () => {
+    const { getByPlaceholderText } = render(
+      <Select
+        id="test-select"
+        placeholder="test select"
+        options={['one', 'two', 'three']}
+        disabled={[0]}
+        open
+      />,
+    );
+    const select = getByPlaceholderText('test select');
+    fireEvent.keyDown(document.getElementById('test-select__select-drop'), {
+      key: 'Down',
+      keyCode: 40,
+      which: 40,
+    });
+    fireEvent.keyDown(document.getElementById('test-select__select-drop'), {
+      key: 'Up',
+      keyCode: 38,
+      which: 38,
+    });
+
+    fireEvent.keyDown(document.getElementById('test-select__select-drop'), {
+      key: 'Enter',
+      keyCode: 13,
+      which: 13,
+    });
+
+    expect(select.value).toEqual('two');
+  });
+
+  test('undefined option', () => {
+    const { getByPlaceholderText } = render(
+      <Grommet>
+        <Select
+          id="test-select"
+          placeholder="test select"
+          options={[undefined, 1, 2]}
+        />
+      </Grommet>,
+    );
+    const select = getByPlaceholderText('test select');
+    fireEvent.click(getByPlaceholderText('test select'));
+    fireEvent.click(
+      document.getElementById('test-select__drop').querySelector('button'),
+    );
+    expect(select.value).toEqual('');
+  });
 });
