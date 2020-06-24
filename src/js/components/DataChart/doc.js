@@ -125,6 +125,7 @@ export const doc = DataChart => {
         }),
       }),
     ]).description('TBD'),
+    legend: PropTypes.bool.description('Whether to include a legend'),
     pad: padPropType.description(`Spacing around the outer edge of
     the drawing coordinate area for the graphic elements to overflow into.`),
     property: PropTypes.oneOfType([

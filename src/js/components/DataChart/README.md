@@ -295,6 +295,14 @@ boolean
 }
 ```
 
+**legend**
+
+Whether to include a legend
+
+```
+boolean
+```
+
 **pad**
 
 Spacing around the outer edge of

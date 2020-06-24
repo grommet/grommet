@@ -35,15 +35,13 @@ const Example = () => (
         ]}
         chart={[
           {
-            property: [
-              { property: 'usage', color: 'graph-1' },
-              { property: 'bonus', color: 'graph-2' },
-            ],
+            property: ['usage', 'bonus'],
             type: 'bar',
           },
         ]}
         axis={{ x: 'date' }}
         guide={{ y: true }}
+        legend
         gap="medium"
       />
     </Box>

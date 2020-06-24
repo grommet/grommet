@@ -153,4 +153,20 @@ describe('DataChart', () => {
     expect(warnSpy).toHaveBeenCalledWith(warnMsg);
     warnSpy.mockRestore();
   });
+
+  test('legend', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
+    const component = renderer.create(
+      <Grommet>
+        {[true, false].map((legend, i) => (
+          // eslint-disable-next-line react/no-array-index-key
+          <DataChart key={i} data={data} property="a" legend={legend} />
+        ))}
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+    expect(warnSpy).toHaveBeenCalledWith(warnMsg);
+    warnSpy.mockRestore();
+  });
 });

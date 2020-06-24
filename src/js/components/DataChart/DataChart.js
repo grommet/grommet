@@ -119,6 +119,10 @@ const DataChart = forwardRef(
         });
       else if (typeof property === 'string') result[property] = { property };
       else result[property.property] = property;
+      // Object.keys(result).forEach((key, i) => {
+      //   const prop = result[key];
+      //   if (!prop.color) prop.color = `graph-${i}`;
+      // })
       return result;
     }, [property]);
 
@@ -128,6 +132,8 @@ const DataChart = forwardRef(
         const props = Object.values(properties);
         if (props.length === 1)
           return props.map(p => ({ property: p.property }));
+        // if we have more than one property, we'll use the first for
+        // the x-axis and we'll plot the rest
         return props.slice(1).map(p => ({ property: p.property }));
       }
       if (Array.isArray(chart))
@@ -151,8 +157,8 @@ const DataChart = forwardRef(
           if (Array.isArray(prop)) {
             // stacked bar chart
             const totals = [];
-            return prop.map(({ property: aProp }) => {
-              return propertyValues[aProp].map((v, i) => {
+            return prop.map(cp => {
+              return propertyValues[cp].map((v, i) => {
                 const base = totals[i] || 0;
                 totals[i] = base + v;
                 return [i, base, base + v];
@@ -220,6 +226,26 @@ const DataChart = forwardRef(
 
       return result;
     }, [axisProp, granularities, properties]);
+
+    // determine the colors to use for each property we are charting
+    const propertyColors = useMemo(() => {
+      const result = {};
+      let suffix = 0;
+      charts.forEach(c => {
+        if (Array.isArray(c.property)) {
+          c.property.forEach(cp => {
+            if (!result[cp]) {
+              result[cp] = `graph-${suffix}`;
+              suffix += 1;
+            }
+          });
+        } else if (!result[c.property]) {
+          result[c.property] = `graph-${suffix}`;
+          suffix += 1;
+        }
+      });
+      return result;
+    }, [charts]);
 
     // calculate axis, bounds, and thickness for each chart
     const chartProps = useMemo(() => {
@@ -462,11 +488,11 @@ const DataChart = forwardRef(
           if (Array.isArray(prop)) {
             // reverse to ensure area Charts are stacked in the right order
             return prop
-              .map((_, j) => (
+              .map((cProp, j) => (
                 <Chart
                   key={j}
                   values={chartValues[i][j]}
-                  color={prop[j].color}
+                  color={propertyColors[cProp]}
                   overflow
                   pad={pad}
                   size={size}
@@ -481,6 +507,7 @@ const DataChart = forwardRef(
               key={i}
               values={chartValues[i]}
               overflow
+              color={propertyColors[prop]}
               pad={pad}
               size={size}
               {...chartProps[i]}
@@ -543,10 +570,16 @@ const DataChart = forwardRef(
                   pad="small"
                   background={{ color: 'background', opacity: 'strong' }}
                 >
-                  <Grid columns={['auto', 'auto']} gap="xsmall">
+                  <Grid
+                    columns={['auto', 'auto', 'auto']}
+                    gap="xsmall"
+                    align="center"
+                  >
                     {Object.values(properties).map(prop => {
+                      const color = propertyColors[prop.property];
                       return (
                         <>
+                          <Box pad="small" background={color} />
                           <Text size="small">
                             {prop.label || prop.property}
                           </Text>
@@ -564,6 +597,28 @@ const DataChart = forwardRef(
         )}
       </Stack>
     );
+
+    let legendElement;
+    if (legend) {
+      legendElement = (
+        <Box
+          gridArea="legend"
+          margin={{ top: 'small' }}
+          direction="row"
+          gap="medium"
+        >
+          {Object.keys(propertyColors).map(key => {
+            const prop = properties[key];
+            return (
+              <Box direction="row" gap="xsmall" align="center">
+                <Box pad="small" background={propertyColors[key]} />
+                <Text>{prop.label || prop.property}</Text>
+              </Box>
+            );
+          })}
+        </Box>
+      );
+    }
 
     // IE11
     if (!Grid.available) {
@@ -587,6 +642,14 @@ const DataChart = forwardRef(
           </Box>
         );
       }
+      if (legendElement) {
+        content = (
+          <Box>
+            {content}
+            {legendElement}
+          </Box>
+        );
+      }
       return content;
     }
 
@@ -602,17 +665,20 @@ const DataChart = forwardRef(
         rows={[
           stackFill === true || stackFill === 'vertical' ? 'flex' : 'auto',
           'auto',
+          'auto',
         ]}
         areas={[
           { name: 'yAxis', start: [0, 0], end: [0, 0] },
           { name: 'xAxis', start: [1, 1], end: [1, 1] },
           { name: 'charts', start: [1, 0], end: [1, 0] },
+          { name: 'legend', start: [1, 2], end: [1, 2] },
         ]}
         {...rest}
       >
         {xAxisElement}
         {yAxisElement}
         {stackElement}
+        {legendElement}
       </Grid>
     );
   },

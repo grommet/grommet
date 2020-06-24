@@ -2613,6 +2613,11 @@ string",
         "name": "guide",
       },
       Object {
+        "description": "Whether to include a legend",
+        "format": "boolean",
+        "name": "legend",
+      },
+      Object {
         "defaultValue": "none",
         "description": "Spacing around the outer edge of
     the drawing coordinate area for the graphic elements to overflow into.",
