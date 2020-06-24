@@ -16,9 +16,22 @@ for (let i = 0; i < 7; i += 1) {
 const Example = () => (
   <Grommet theme={grommet}>
     <Box align="center" justify="start" pad="large">
-      <DataChart data={data} property="percent" />
+      <DataChart
+        data={data}
+        property={[
+          { property: 'date', label: 'Date' },
+          {
+            property: 'percent',
+            label: 'Percent',
+            render: value => `${Math.round(value)}%`,
+          },
+        ]}
+        chart="percent"
+        detail
+        axis={{ x: { property: 'date', granularity: 'medium' } }}
+      />
     </Box>
   </Grommet>
 );
 
-storiesOf('DataChart', module).add('Simple', () => <Example />);
+storiesOf('DataChart', module).add('Detail', () => <Example />);

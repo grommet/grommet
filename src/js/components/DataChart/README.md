@@ -8,7 +8,7 @@ Takes a data set and visualizes it. While Chart renders a
 
 ```javascript
 import { DataChart } from 'grommet';
-<DataChart data={data} chart={} />
+<DataChart data={data} property={} />
 ```
 
 ## Properties
@@ -126,18 +126,46 @@ xlarge
 string
 ```
 
+**axis**
+
+TBD
+
+```
+boolean
+{
+  x: 
+    string
+    {
+      property: string,
+      granularity: 
+        coarse
+        medium
+        fine
+    },
+  y: 
+    string
+    {
+      property: string,
+      granularity: 
+        coarse
+        medium
+        fine
+    }
+}
+```
+
 **chart**
 
-Chart properties indicating how to visualize the data.
-    'key' indicates which property of the data objects to use. 'keys' indicates
-    that multiple properties should be used for a stacked bar chart. DataChart
-    uses the key/keys to build the right 'values' for the underlying Chart.
-    All of the other properties in 'chart' are passed through to the Chart.
+How to visualize the data.
+    'property' indicates which property of the data objects to use.
+    When 'property' is an array, multiple properties are used for a
+    stacked bar chart.
 
 ```
 {
-  key: string,
-  keys: [{
+  property: 
+    string
+    [{
   key: string,
   color: 
     string
@@ -154,26 +182,7 @@ Chart properties indicating how to visualize the data.
   value: number
 }]
 }],
-  a11yTitle: string,
-  bounds: [[number]],
-  color: 
-    string
-    {
-      color: string,
-      opacity: 
-        weak
-        medium
-        strong
-        boolean
-    }
-    [{
-  color: string,
-  value: number
-}],
   dash: boolean,
-  onClick: function,
-  onHover: function,
-  overflow: boolean,
   round: boolean,
   thickness: 
     hair
@@ -191,8 +200,9 @@ Chart properties indicating how to visualize the data.
     point
 }
 [{
-  key: string,
-  keys: [{
+  property: 
+    string
+    [{
   key: string,
   color: 
     string
@@ -209,26 +219,7 @@ Chart properties indicating how to visualize the data.
   value: number
 }]
 }],
-  a11yTitle: string,
-  bounds: [[number]],
-  color: 
-    string
-    {
-      color: string,
-      opacity: 
-        weak
-        medium
-        strong
-        boolean
-    }
-    [{
-  color: string,
-  value: number
-}],
   dash: boolean,
-  onClick: function,
-  onHover: function,
-  overflow: boolean,
   round: boolean,
   thickness: 
     hair
@@ -257,6 +248,14 @@ the data set
 }]
 ```
 
+**detail**
+
+TBD
+
+```
+boolean
+```
+
 **gap**
 
 The spacing between the axes and the Charts.
@@ -270,6 +269,30 @@ medium
 large
 xlarge
 string
+```
+
+**guide**
+
+TBD
+
+```
+boolean
+{
+  x: 
+    {
+      granularity: 
+        coarse
+        medium
+        fine
+    },
+  y: 
+    {
+      granularity: 
+        coarse
+        medium
+        fine
+    }
+}
 ```
 
 **pad**
@@ -354,13 +377,63 @@ xlarge
 string
 ```
 
+**property**
+
+TBD
+
+```
+{
+  bounds: [number],
+  color: 
+    string
+    {
+      color: string,
+      opacity: 
+        weak
+        medium
+        strong
+        boolean
+    }
+    [{
+  color: string,
+  value: number
+}],
+  label: 
+    string,
+  prefix: string,
+  property: string,
+  render: function,
+  suffix: string
+}
+[{
+  bounds: [number],
+  color: 
+    string
+    {
+      color: string,
+      opacity: 
+        weak
+        medium
+        strong
+        boolean
+    }
+    [{
+  color: string,
+  value: number
+}],
+  label: 
+    string,
+  prefix: string,
+  property: string,
+  render: function,
+  suffix: string
+}]
+```
+
 **size**
 
 The size of the Charts. This does not include the axes
-      and any gap. It is passed through to the underlying Chart. Defaults to `{
-  "width": "medium",
-  "height": "small"
-}`.
+      and any gap. It is passed through to the underlying Chart.
 
 ```
 fill
@@ -384,62 +457,6 @@ fill
     fill
     auto
     string
-}
-```
-
-**thickness**
-
-Chart thickness given to all
-    Charts if not specified per Chart in 'chart'.
-
-```
-hair
-xsmall
-small
-medium
-large
-xlarge
-none
-string
-```
-
-**xAxis**
-
-x-axis configuration. 'guide' specifies that vertical
-    guide lines should be drawn under the Chart, one per label.
-    'key' specifies what property in the 'data' should be used as
-    any label content. 'labels' specifies how many labels to show.
-    'render' allows for custom rendering of the labels. It will be
-    called with the current data index and axis index and should return
-    the element to render: (dataIndex, axisIndex) => element.
-
-```
-boolean
-{
-  guide: boolean,
-  key: string,
-  labels: number,
-  render: function
-}
-```
-
-**yAxis**
-
-y-axis configuration. 'guide' specifies that horizontal
-    guide lines should be drawn under the Chart, one per label.
-    'labels' specifies how many labels to show.
-    'render' allows for custom rendering of the labels. It will be
-    called with the value and axis index and should return
-    the element to render: (value, axisIndex) => element
-
-```
-boolean
-{
-  guide: boolean,
-  labels: number,
-  prefix: string,
-  render: function,
-  suffix: string
 }
 ```
   

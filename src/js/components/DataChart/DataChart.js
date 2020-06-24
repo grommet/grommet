@@ -4,12 +4,15 @@ import React, {
   useLayoutEffect,
   useMemo,
   useRef,
+  useState,
 } from 'react';
 import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Chart, calcs, round } from '../Chart';
+import { Drop } from '../Drop';
 import { Grid } from '../Grid';
 import { Stack } from '../Stack';
+import { Text } from '../Text';
 
 const halfPad = {
   xlarge: 'large',
@@ -27,7 +30,7 @@ const doublePad = {
   xxsmall: 'xsmall',
 };
 
-const checkDateFormat = (firstValue, lastValue, full) => {
+const createDateFormat = (firstValue, lastValue, full) => {
   let dateFormat;
   const startDate = new Date(firstValue);
   const endDate = new Date(lastValue);
@@ -77,13 +80,16 @@ const DataChart = forwardRef(
   (
     {
       a11yTitle,
+      axis: axisProp,
       chart,
-      data,
+      data = [],
+      detail,
+      gap,
+      guide: guideProp,
+      legend,
       pad: padProp,
+      property,
       size,
-      thickness: thicknessProp,
-      xAxis,
-      yAxis,
       ...rest
     },
     ref,
@@ -93,116 +99,209 @@ const DataChart = forwardRef(
       released. Keep an eye on the release notes and #announcements channel
       in Slack.`);
     const theme = useContext(ThemeContext);
+
+    // detail interaction, if any
+    const [detailIndex, setDetailIndex] = useState();
+    const detailContainer = useRef();
+    const detailRefs = useMemo(() => [], []);
+
     // refs used for ie11 not having Grid
     const xRef = useRef();
     const spacerRef = useRef();
 
-    // normalize chart to an array
-    const charts = useMemo(() => (Array.isArray(chart) ? chart : [chart]), [
-      chart,
-    ]);
-
-    // map the key values into their own arrays
-    const keyValues = useMemo(() => {
+    // normalize property to an object
+    const properties = useMemo(() => {
       const result = {};
-      charts.forEach(({ key, keys }) => {
-        if (key && !result[key]) {
-          result[key] = data.map(d => d[key]);
-        }
-        if (keys) {
-          keys.forEach(({ key: innerKey }) => {
-            if (innerKey && !result[innerKey]) {
-              result[innerKey] = data.map(d => d[innerKey]);
-            }
-          });
-        }
+      if (Array.isArray(property))
+        property.forEach(p => {
+          if (typeof p === 'string') result[p] = { property: p };
+          else result[p.property] = p;
+        });
+      else if (typeof property === 'string') result[property] = { property };
+      else result[property.property] = property;
+      return result;
+    }, [property]);
+
+    // normalize chart to an array of objects
+    const charts = useMemo(() => {
+      if (!chart) {
+        const props = Object.values(properties);
+        if (props.length === 1)
+          return props.map(p => ({ property: p.property }));
+        return props.slice(1).map(p => ({ property: p.property }));
+      }
+      if (Array.isArray(chart))
+        return chart.map(c => (typeof c === 'string' ? { property: c } : c));
+      return typeof chart === 'string' ? [{ property: chart }] : [chart];
+    }, [chart, properties]);
+
+    // map the property values into their own arrays
+    const propertyValues = useMemo(() => {
+      const result = {};
+      Object.values(properties).forEach(({ property: prop }) => {
+        result[prop] = data.map(d => d[prop]);
       });
       return result;
-    }, [charts, data]);
+    }, [properties, data]);
 
-    const numValues = useMemo(
-      () => keyValues[Object.keys(keyValues)[0]].length,
-      [keyValues],
+    // setup the values property for each chart
+    const chartValues = useMemo(
+      () =>
+        charts.map(({ property: prop }) => {
+          if (Array.isArray(prop)) {
+            // stacked bar chart
+            const totals = [];
+            return prop.map(({ property: aProp }) => {
+              return propertyValues[aProp].map((v, i) => {
+                const base = totals[i] || 0;
+                totals[i] = base + v;
+                return [i, base, base + v];
+              });
+            });
+          }
+          return propertyValues[prop];
+        }),
+      [charts, propertyValues],
     );
 
-    // setup the values for each chart
-    const chartValues = useMemo(() => {
-      return charts.map(({ key, keys }) => {
-        if (key) return keyValues[key];
-        if (keys) {
-          const totals = [];
-          return keys.map(({ key: innerKey }) =>
-            keyValues[innerKey].map((v, i) => {
-              const base = totals[i] || 0;
-              totals[i] = base + v;
-              return [i, base, base + v];
-            }),
-          );
+    // map granularities to counts
+    const granularities = useMemo(() => {
+      let medium;
+      [10, 9, 8, 7, 6, 5, 4, 3, 2].some(i => {
+        if (data.length % i === 0) medium = i;
+        return medium;
+      });
+      return {
+        x: { coarse: 2, fine: data.length, medium },
+        // TODO: adjust fine and medium based on vertical size
+        y: { coarse: 2, fine: 5, medium: 3 },
+      };
+    }, [data.length]);
+
+    // normalize axis to objects, convert granularity to a number
+    const axis = useMemo(() => {
+      if (!axisProp) return undefined;
+      let result;
+      if (axisProp === true) {
+        const props = Object.values(properties);
+        result = {
+          x: { granularity: 'coarse' },
+          y: { granularity: 'coarse' },
+        };
+        if (props.length === 1) {
+          result.y.property = props[0].property;
+        } else {
+          result.x.property = props[0].property;
+          result.y.property = props[1].property;
         }
-        return [];
-      });
-    }, [charts, keyValues]);
+      } else {
+        result = {};
+        if (axisProp.x) {
+          if (typeof axisProp.x === 'string')
+            result.x = { property: axisProp.x };
+          else result.x = { ...axisProp.x };
+        }
+        if (axisProp.y) {
+          if (typeof axisProp.y === 'string')
+            result.y = { property: axisProp.y };
+          else result.y = { ...axisProp.y };
+        }
+      }
 
-    // calculate axis, bounds and thickness
-    const { axis, bounds, thickness } = useMemo(() => {
+      // calculate number of entries based on granularity
+      if (result.x) {
+        const { granularity = 'coarse' } = result.x;
+        result.x.count = granularities.x[granularity];
+      }
+      if (result.y) {
+        const { granularity = 'coarse' } = result.y;
+        result.y.count = granularities.y[granularity];
+      }
+
+      return result;
+    }, [axisProp, granularities, properties]);
+
+    // calculate axis, bounds, and thickness for each chart
+    const chartProps = useMemo(() => {
       const steps = [];
-      if (xAxis && xAxis.labels >= 0) steps[0] = xAxis.labels - 1;
-      else steps[0] = numValues - 1; // all
-      if (yAxis && yAxis.labels >= 0) steps[1] = yAxis.labels - 1;
-      else steps[1] = 1; // ends
-      let tmpAxis = [[], []];
-      let tmpBounds;
-      let tmpThickness = thicknessProp;
-      charts.forEach(({ keys }, index) => {
-        (keys ? chartValues[index] : [chartValues[index]])
-          .filter(vals => vals && vals.length > 0)
-          .forEach(vals => {
-            const { axis: a, bounds: b, thickness: t } = calcs(vals, {
-              steps,
-              thickness: tmpThickness,
-            });
-            tmpAxis = a;
-            tmpBounds = b;
-            tmpThickness = t;
-          });
-      });
-      return { axis: tmpAxis, bounds: tmpBounds, thickness: tmpThickness };
-    }, [charts, chartValues, numValues, thicknessProp, xAxis, yAxis]);
+      // TODO: not sure this is the right way to setup steps
+      if (axis && axis.x) {
+        const { granularity = 'coarse' } = axis.x;
+        steps[0] = granularities.x[granularity] - 1;
+      } else steps[0] = data.length - 1;
 
-    // set the pad to have the thickness, if not defined
+      if (axis && axis.y) {
+        const { granularity = 'coarse' } = axis.y;
+        steps[1] = granularities.y[granularity] - 1;
+      } else steps[1] = 1;
+
+      return chartValues.map((_, index) =>
+        Array.isArray(chartValues[index][0])
+          ? chartValues[index].map(values => calcs(values, { steps }))
+          : calcs(chartValues[index], { steps }),
+      );
+    }, [axis, chartValues, data, granularities]);
+
+    // set the pad to half the thickness, if not defined
     const pad = useMemo(() => {
       if (padProp !== undefined) return padProp;
+      const { thickness } = chartProps[0]; // TODO: look across charts
       const padSize = halfPad[thickness];
       const allSides =
         charts.filter(({ type }) => type && type !== 'bar').length > 0;
       if (allSides) return padSize;
-      if (yAxis) return { horizontal: padSize, vertical: halfPad.medium };
+      if (axis && axis.y)
+        return { horizontal: padSize, vertical: halfPad.medium };
       return { horizontal: padSize };
-    }, [charts, padProp, thickness, yAxis]);
+    }, [axis, charts, chartProps, padProp]);
 
-    const xGuide = useMemo(
-      () =>
-        axis[0].map((_, i) => {
-          if (xAxis && xAxis.guide) {
-            if (i === 0) return 'left';
-            if (i === axis[0].length - 1) return 'right';
-          }
-          return undefined;
-        }),
-      [axis, xAxis],
-    );
+    // normalize guide
+    const guide = useMemo(() => {
+      if (!guideProp) return undefined;
+      let result;
+      if (guideProp === true) {
+        result = { x: {}, y: {} };
+      } else {
+        result = {};
+        if (guideProp.x) result.x = { ...guideProp.x };
+        if (guideProp.y) result.y = { ...guideProp.y };
+      }
+      // set counts
+      if (result.x) {
+        // if no granularity and axis, align count with axis
+        if (!result.x.granularity && axis && axis.x)
+          result.x.count = axis.x.count;
+        if (!result.x.count)
+          result.x.count = granularities.x[result.x.granularity || 'coarse'];
+      }
+      if (result.y) {
+        // if no granularity and axis, align count with axis
+        if (!result.y.granularity && axis && axis.y)
+          result.y.count = axis.y.count;
+        if (!result.y.count)
+          result.y.count = granularities.y[result.y.granularity || 'coarse'];
+      }
+      return result;
+    }, [axis, granularities, guideProp]);
 
-    const yGuide = useMemo(
-      () =>
-        axis[1].map((_, i) => {
-          if (yAxis && yAxis.guide) {
-            if (i === 0) return 'top';
-            if (i === axis[1].length - 1) return 'bottom';
-          }
-          return undefined;
-        }),
-      [axis, yAxis],
-    );
+    const dateFormats = useMemo(() => {
+      const result = {};
+      const full = !(axis && axis.x && axis.x.granularity === 'coarse');
+      Object.values(properties).forEach(prop => {
+        if (
+          !prop.render &&
+          data.length > 1 &&
+          typeof data[0][prop.property] === 'string'
+        ) {
+          result[prop.property] = createDateFormat(
+            data[0][prop.property],
+            data[data.length - 1][prop.property],
+            full,
+          );
+        }
+      });
+      return result;
+    }, [axis, data, properties]);
 
     // for ie11, align the spacer Box height to the x-axis height
     useLayoutEffect(() => {
@@ -212,59 +311,72 @@ const DataChart = forwardRef(
       }
     }, []);
 
+    const renderProperty = (prop, index, valueArg) => {
+      let value;
+      if (valueArg !== undefined) {
+        if (prop.value) return prop.render(valueArg);
+        value = valueArg;
+      } else {
+        const datum = data[index];
+        value = datum[prop.property];
+        if (prop.render) return prop.render(value, datum, prop.property);
+      }
+      const dateFormat = dateFormats[prop.property];
+      if (dateFormat) return dateFormat(new Date(value));
+      if (prop.prefix) value = `${prop.prefix}${value}`;
+      if (prop.suffix) value = `${value}${prop.suffix}`;
+      return value;
+    };
+
     /* eslint-disable react/no-array-index-key */
     let xAxisElement;
-    if (xAxis) {
+    if (axis && axis.x) {
       // Set basis to match thickness. This works well for bar charts,
       // to align each bar's label.
       let basis;
-      if (thickness && axis[0].length === numValues) {
-        basis = theme.global.edgeSize[thickness] || thickness;
-      }
+      // if (thickness && axisXX[0].length === numValues) {
+      //   basis = theme.global.edgeSize[thickness] || thickness;
+      // }
 
-      // If there is no custom renderer, there is a key, and the key value
-      // looks like a Date, render it as a date, scaled based on the range
-      // of values
-      let dateFormat;
-      if (!xAxis.render && xAxis.key && axis[0].length > 1) {
-        dateFormat = checkDateFormat(
-          data[Math.floor(axis[0][0])][xAxis.key],
-          data[Math.floor(axis[0][axis[0].length - 1])][xAxis.key],
-          axis[0].length <= 2,
-        );
-      }
+      const prop = axis.x.property && properties[axis.x.property];
+      // pull the x-axis values from the first chart, all should have the same
+      const [axisValues] = (Array.isArray(chartProps[0])
+        ? chartProps[0][0]
+        : chartProps[0]
+      ).axis;
 
       xAxisElement = (
         <Box ref={xRef} gridArea="xAxis" direction="row" justify="between">
-          {axis[0].map((dataIndex, i) => {
-            let content = xAxis.key
-              ? data[Math.floor(dataIndex)][xAxis.key]
-              : dataIndex;
-            if (xAxis.render)
-              content = xAxis.render(content, data, Math.floor(dataIndex), i);
-            else if (dateFormat) content = dateFormat(new Date(content));
-            return (
-              <Box
-                key={i}
-                basis={basis}
-                flex="shrink"
-                align={basis ? 'center' : undefined}
-              >
-                {content}
-              </Box>
-            );
-          })}
+          {axisValues.map((dataIndex, i) => (
+            <Box
+              key={i}
+              basis={basis}
+              flex="shrink"
+              align={basis ? 'center' : undefined}
+            >
+              {prop ? renderProperty(prop, dataIndex) : dataIndex}
+            </Box>
+          ))}
         </Box>
       );
     }
 
     let yAxisElement;
-    if (yAxis) {
+    if (axis && axis.y) {
+      const prop = axis.y.property && properties[axis.y.property];
+      let axisValues;
+      charts.forEach(({ property: p }, i) => {
+        if (p === prop.property)
+          [, axisValues] = (Array.isArray(chartProps[i])
+            ? chartProps[i][0]
+            : chartProps[i]
+          ).axis;
+      });
       let divideBy;
       let unit;
-      if (!yAxis.render && !yAxis.suffix) {
+      if (!prop.render && !prop.suffix) {
         // figure out how many digits to show
-        const maxValue = Math.max(...axis[1].map(v => Math.abs(v)));
+        const maxValue = Math.max(...axisValues.map(v => Math.abs(v)));
         if (maxValue > 10000000) {
           divideBy = 1000000;
           unit = 'M';
@@ -277,24 +389,18 @@ const DataChart = forwardRef(
       // Set basis to match double the vertical pad, so we can align the
       // text with the guides
       let basis;
-      if (axis[0].length === numValues) {
+      if (axis.y.count === data.length) {
         const edgeSize = doublePad[pad.vertical || pad];
         basis = theme.global.edgeSize[edgeSize] || edgeSize;
       }
 
       yAxisElement = (
         <Box gridArea="yAxis" justify="between" flex>
-          {axis[1].map((axisValue, i) => {
-            let content;
-            if (yAxis.render) content = yAxis.render(axisValue, i);
-            else {
-              content = axisValue;
-              if (divideBy) {
-                content = round(content / divideBy, 0);
-              }
-              if (yAxis.prefix) content = `${yAxis.prefix}${content}`;
-              if (yAxis.suffix || unit)
-                content = `${content}${yAxis.suffix || unit}`;
+          {axisValues.map((axisValue, i) => {
+            let content = renderProperty(prop, undefined, axisValue);
+            if (content === axisValue) {
+              if (divideBy) content = round(content / divideBy, 0);
+              if (unit) content = `${content}${unit}`;
             }
             return (
               <Box
@@ -323,9 +429,16 @@ const DataChart = forwardRef(
       return undefined;
     }, [size]);
 
+    const guidingChild = useMemo(() => {
+      let result = 0;
+      if (guide && guide.x) result += 1;
+      if (guide && guide.y) result += 1;
+      return result;
+    }, [guide]);
+
     const stackElement = (
-      <Stack gridArea="charts" guidingChild="last" fill={stackFill}>
-        {xAxis && xAxis.guide && (
+      <Stack gridArea="charts" guidingChild={guidingChild} fill={stackFill}>
+        {guide && guide.x && (
           <Box
             fill
             direction="row"
@@ -333,32 +446,31 @@ const DataChart = forwardRef(
             pad={pad}
             responsive={false}
           >
-            {xGuide.map((_, i) => (
+            {Array.from({ length: guide.x.count }).map((_, i) => (
               <Box key={i} border="left" />
             ))}
           </Box>
         )}
-        {yAxis && yAxis.guide && (
+        {guide && guide.y && (
           <Box fill justify="between" pad={pad} responsive={false}>
-            {yGuide.map((_, i) => (
+            {Array.from({ length: guide.y.count }).map((_, i) => (
               <Box key={i} border="top" />
             ))}
           </Box>
         )}
-        {charts.map(({ key, keys, ...chartRest }, i) => {
-          if (keys) {
+        {charts.map(({ property: prop, ...chartRest }, i) => {
+          if (Array.isArray(prop)) {
             // reverse to ensure area Charts are stacked in the right order
-            return keys
+            return prop
               .map((_, j) => (
                 <Chart
                   key={j}
                   values={chartValues[i][j]}
-                  color={keys[j].color}
-                  bounds={bounds}
+                  color={prop[j].color}
                   overflow
                   pad={pad}
                   size={size}
-                  thickness={thickness}
+                  {...chartProps[i]}
                   {...chartRest}
                 />
               ))
@@ -368,15 +480,88 @@ const DataChart = forwardRef(
             <Chart
               key={i}
               values={chartValues[i]}
-              bounds={bounds}
               overflow
               pad={pad}
               size={size}
-              thickness={thickness}
+              {...chartProps[i]}
               {...chartRest}
             />
           );
         })}
+        {detail && (
+          <>
+            <Box
+              ref={detailContainer}
+              direction="row"
+              fill
+              justify="between"
+              gap={`${data.length / 2 + 1}px`}
+              responsive={false}
+              onMouseOut={event => {
+                const rect = detailContainer.current.getBoundingClientRect();
+                if (
+                  event.pageX < rect.left ||
+                  event.pageX > rect.right ||
+                  event.pageY < rect.top ||
+                  event.pageY > rect.bottom
+                )
+                  setDetailIndex(undefined);
+              }}
+              onFocus={() => {}}
+              onBlur={() => {}}
+            >
+              {data.map((_, i) => (
+                <Box
+                  key={i}
+                  flex
+                  align="center"
+                  onMouseOver={() => setDetailIndex(i)}
+                  onFocus={() => {}}
+                  onBlur={() => {}}
+                >
+                  <Box
+                    ref={c => {
+                      detailRefs[i] = c;
+                    }}
+                    fill="vertical"
+                    border={detailIndex === i ? true : undefined}
+                  />
+                </Box>
+              ))}
+            </Box>
+            {detailIndex !== undefined && detailRefs[detailIndex] && (
+              <Drop
+                target={detailRefs[detailIndex]}
+                align={
+                  detailIndex > data.length / 2
+                    ? { right: 'left' }
+                    : { left: 'right' }
+                }
+                plain
+              >
+                <Box
+                  pad="small"
+                  background={{ color: 'background', opacity: 'strong' }}
+                >
+                  <Grid columns={['auto', 'auto']} gap="xsmall">
+                    {Object.values(properties).map(prop => {
+                      return (
+                        <>
+                          <Text size="small">
+                            {prop.label || prop.property}
+                          </Text>
+                          <Text size="small" weight="bold">
+                            {renderProperty(prop, detailIndex)}
+                          </Text>
+                        </>
+                      );
+                    })}
+                  </Grid>
+                </Box>
+              </Drop>
+            )}
+          </>
+        )}
       </Stack>
     );
 

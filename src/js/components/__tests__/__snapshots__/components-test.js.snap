@@ -2462,14 +2462,39 @@ string",
         "name": "margin",
       },
       Object {
-        "description": "Chart properties indicating how to visualize the data.
-    'key' indicates which property of the data objects to use. 'keys' indicates
-    that multiple properties should be used for a stacked bar chart. DataChart
-    uses the key/keys to build the right 'values' for the underlying Chart.
-    All of the other properties in 'chart' are passed through to the Chart.",
+        "description": "TBD",
+        "format": "boolean
+{
+  x: 
+    string
+    {
+      property: string,
+      granularity: 
+        coarse
+        medium
+        fine
+    },
+  y: 
+    string
+    {
+      property: string,
+      granularity: 
+        coarse
+        medium
+        fine
+    }
+}",
+        "name": "axis",
+      },
+      Object {
+        "description": "How to visualize the data.
+    'property' indicates which property of the data objects to use.
+    When 'property' is an array, multiple properties are used for a
+    stacked bar chart.",
         "format": "{
-  key: string,
-  keys: [{
+  property: 
+    string
+    [{
   key: string,
   color: 
     string
@@ -2486,26 +2511,7 @@ string",
   value: number
 }]
 }],
-  a11yTitle: string,
-  bounds: [[number]],
-  color: 
-    string
-    {
-      color: string,
-      opacity: 
-        weak
-        medium
-        strong
-        boolean
-    }
-    [{
-  color: string,
-  value: number
-}],
   dash: boolean,
-  onClick: function,
-  onHover: function,
-  overflow: boolean,
   round: boolean,
   thickness: 
     hair
@@ -2523,8 +2529,9 @@ string",
     point
 }
 [{
-  key: string,
-  keys: [{
+  property: 
+    string
+    [{
   key: string,
   color: 
     string
@@ -2541,26 +2548,7 @@ string",
   value: number
 }]
 }],
-  a11yTitle: string,
-  bounds: [[number]],
-  color: 
-    string
-    {
-      color: string,
-      opacity: 
-        weak
-        medium
-        strong
-        boolean
-    }
-    [{
-  color: string,
-  value: number
-}],
   dash: boolean,
-  onClick: function,
-  onHover: function,
-  overflow: boolean,
   round: boolean,
   thickness: 
     hair
@@ -2587,6 +2575,11 @@ string",
         "name": "data",
       },
       Object {
+        "description": "TBD",
+        "format": "boolean",
+        "name": "detail",
+      },
+      Object {
         "description": "The spacing between the axes and the Charts.",
         "format": "none
 xxsmall
@@ -2597,6 +2590,27 @@ large
 xlarge
 string",
         "name": "gap",
+      },
+      Object {
+        "description": "TBD",
+        "format": "boolean
+{
+  x: 
+    {
+      granularity: 
+        coarse
+        medium
+        fine
+    },
+  y: 
+    {
+      granularity: 
+        coarse
+        medium
+        fine
+    }
+}",
+        "name": "guide",
       },
       Object {
         "defaultValue": "none",
@@ -2679,10 +2693,56 @@ string",
         "name": "pad",
       },
       Object {
-        "defaultValue": Object {
-          "height": "small",
-          "width": "medium",
-        },
+        "description": "TBD",
+        "format": "{
+  bounds: [number],
+  color: 
+    string
+    {
+      color: string,
+      opacity: 
+        weak
+        medium
+        strong
+        boolean
+    }
+    [{
+  color: string,
+  value: number
+}],
+  label: 
+    string,
+  prefix: string,
+  property: string,
+  render: function,
+  suffix: string
+}
+[{
+  bounds: [number],
+  color: 
+    string
+    {
+      color: string,
+      opacity: 
+        weak
+        medium
+        strong
+        boolean
+    }
+    [{
+  color: string,
+  value: number
+}],
+  label: 
+    string,
+  prefix: string,
+  property: string,
+  render: function,
+  suffix: string
+}]",
+        "name": "property",
+      },
+      Object {
         "description": "The size of the Charts. This does not include the axes
       and any gap. It is passed through to the underlying Chart.",
         "format": "fill
@@ -2709,56 +2769,9 @@ string",
 }",
         "name": "size",
       },
-      Object {
-        "description": "Chart thickness given to all
-    Charts if not specified per Chart in 'chart'.",
-        "format": "hair
-xsmall
-small
-medium
-large
-xlarge
-none
-string",
-        "name": "thickness",
-      },
-      Object {
-        "description": "x-axis configuration. 'guide' specifies that vertical
-    guide lines should be drawn under the Chart, one per label.
-    'key' specifies what property in the 'data' should be used as
-    any label content. 'labels' specifies how many labels to show.
-    'render' allows for custom rendering of the labels. It will be
-    called with the current data index and axis index and should return
-    the element to render: (dataIndex, axisIndex) => element.",
-        "format": "boolean
-{
-  guide: boolean,
-  key: string,
-  labels: number,
-  render: function
-}",
-        "name": "xAxis",
-      },
-      Object {
-        "description": "y-axis configuration. 'guide' specifies that horizontal
-    guide lines should be drawn under the Chart, one per label.
-    'labels' specifies how many labels to show.
-    'render' allows for custom rendering of the labels. It will be
-    called with the value and axis index and should return
-    the element to render: (value, axisIndex) => element",
-        "format": "boolean
-{
-  guide: boolean,
-  labels: number,
-  prefix: string,
-  render: function,
-  suffix: string
-}",
-        "name": "yAxis",
-      },
     ],
     "usage": "import { DataChart } from 'grommet';
-<DataChart data={data} chart={} />",
+<DataChart data={data} property={} />",
   },
   "DataTable": [Function],
   "Diagram": Object {

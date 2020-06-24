@@ -6,8 +6,8 @@ import { Grommet } from '../../Grommet';
 import { DataChart } from '..';
 
 const data = [
-  { a: 1, b: 'one', c: 111111 },
-  { a: 2, b: 'two', c: 222222 },
+  { a: 1, b: 'one', c: 111111, d: '2020-06-24' },
+  { a: 2, b: 'two', c: 222222, d: '2020-06-23' },
 ];
 const warnMsg = `The DataChart component is still experimental.
       It is not guaranteed to be backwards compatible until it is explicitly
@@ -19,7 +19,7 @@ describe('DataChart', () => {
     const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const component = renderer.create(
       <Grommet>
-        <DataChart data={data} chart={{ key: 'a' }} />
+        <DataChart data={data} property="a" />
       </Grommet>,
     );
     const tree = component.toJSON();
@@ -28,32 +28,12 @@ describe('DataChart', () => {
     warnSpy.mockRestore();
   });
 
-  test('thickness', () => {
-    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
-    const component = renderer.create(
-      <Grommet>
-        {['xsmall', 'small', 'medium', 'large', 'xlarge'].map(thickness => (
-          <DataChart
-            key={thickness}
-            data={data}
-            chart={{ key: 'a' }}
-            thickness={thickness}
-          />
-        ))}
-      </Grommet>,
-    );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    expect(warnSpy).toHaveBeenCalledWith(warnMsg);
-    warnSpy.mockRestore();
-  });
-
   test('gap', () => {
     const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const component = renderer.create(
       <Grommet>
         {['small', 'medium', 'large'].map(gap => (
-          <DataChart key={gap} data={data} chart={{ key: 'a' }} gap={gap} />
+          <DataChart key={gap} data={data} property="a" gap={gap} />
         ))}
       </Grommet>,
     );
@@ -68,7 +48,7 @@ describe('DataChart', () => {
     const component = renderer.create(
       <Grommet>
         {['small', 'medium', 'large'].map(pad => (
-          <DataChart key={pad} data={data} chart={{ key: 'a' }} pad={pad} />
+          <DataChart key={pad} data={data} property="a" pad={pad} />
         ))}
       </Grommet>,
     );
@@ -84,7 +64,7 @@ describe('DataChart', () => {
       <Grommet>
         {['fill', { width: 'fill' }, { width: 'auto' }].map((size, i) => (
           // eslint-disable-next-line react/no-array-index-key
-          <DataChart key={i} data={data} chart={{ key: 'a' }} size={size} />
+          <DataChart key={i} data={data} property="a" size={size} />
         ))}
       </Grommet>,
     );
@@ -94,20 +74,20 @@ describe('DataChart', () => {
     warnSpy.mockRestore();
   });
 
-  test('xAxis', () => {
+  test('axis', () => {
     const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const component = renderer.create(
       <Grommet>
         {[
           true,
           false,
-          { guide: true },
-          { key: 'b' },
-          { labels: 2 },
-          { key: 'b', render: b => b },
-        ].map((xAxis, i) => (
+          { x: { property: 'd' } },
+          { y: { property: 'a' } },
+          { x: { property: 'd', granularity: 'fine' } },
+          { y: { property: 'a', granularity: 'fine' } },
+        ].map((axis, i) => (
           // eslint-disable-next-line react/no-array-index-key
-          <DataChart key={i} data={data} chart={{ key: 'a' }} xAxis={xAxis} />
+          <DataChart key={i} data={data} property="a" axis={axis} />
         ))}
       </Grommet>,
     );
@@ -117,7 +97,7 @@ describe('DataChart', () => {
     warnSpy.mockRestore();
   });
 
-  test('xAxis dates', () => {
+  test('dates', () => {
     const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const dateData = [];
     for (let i = 0; i < 4; i += 1) {
@@ -139,13 +119,9 @@ describe('DataChart', () => {
           <Fragment key={key}>
             <DataChart
               data={dateData}
-              chart={{ key: 'amount' }}
-              xAxis={{ key, labels: 2 }}
-            />
-            <DataChart
-              data={dateData}
-              chart={{ key: 'percent' }}
-              xAxis={{ key }}
+              property={[{ property: key }, 'amount']}
+              axis
+              guide
             />
           </Fragment>
         ))}
@@ -157,38 +133,18 @@ describe('DataChart', () => {
     warnSpy.mockRestore();
   });
 
-  test('yAxis', () => {
+  test('guide', () => {
     const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const component = renderer.create(
       <Grommet>
         {[
           true,
           false,
-          { guide: true },
-          { labels: 2 },
-          { labels: 5 },
-          { render: v => v },
-          { prefix: '$' },
-          { suffix: '%' },
-        ].map((yAxis, i) => (
+          { x: { granularity: 'fine' } },
+          { y: { granularity: 'fine' } },
+        ].map((guide, i) => (
           // eslint-disable-next-line react/no-array-index-key
-          <DataChart key={i} data={data} chart={{ key: 'a' }} yAxis={yAxis} />
-        ))}
-      </Grommet>,
-    );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-    expect(warnSpy).toHaveBeenCalledWith(warnMsg);
-    warnSpy.mockRestore();
-  });
-
-  test('yAxis rounding', () => {
-    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
-    const component = renderer.create(
-      <Grommet>
-        {[true, { labels: 4 }].map((yAxis, i) => (
-          // eslint-disable-next-line react/no-array-index-key
-          <DataChart key={i} data={data} chart={{ key: 'c' }} yAxis={yAxis} />
+          <DataChart key={i} data={data} property="a" guide={guide} />
         ))}
       </Grommet>,
     );

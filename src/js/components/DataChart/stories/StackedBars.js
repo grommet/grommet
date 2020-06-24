@@ -18,27 +18,32 @@ const Example = () => (
     <Box align="center" justify="start" pad="large">
       <DataChart
         data={data}
+        property={[
+          {
+            property: 'date',
+            render: date => (
+              <Text margin={{ horizontal: 'xsmall' }}>
+                {new Date(date).toLocaleDateString('en-US', {
+                  month: 'numeric',
+                  day: 'numeric',
+                })}
+              </Text>
+            ),
+          },
+          'usage',
+          'bonus',
+        ]}
         chart={[
           {
-            keys: [
-              { key: 'usage', color: 'graph-1' },
-              { key: 'bonus', color: 'graph-2' },
+            property: [
+              { property: 'usage', color: 'graph-1' },
+              { property: 'bonus', color: 'graph-2' },
             ],
             type: 'bar',
           },
         ]}
-        xAxis={{
-          key: 'date',
-          render: date => (
-            <Text margin={{ horizontal: 'xsmall' }}>
-              {new Date(date).toLocaleDateString('en-US', {
-                month: 'numeric',
-                day: 'numeric',
-              })}
-            </Text>
-          ),
-        }}
-        yAxis={{ guide: true }}
+        axis={{ x: 'date' }}
+        guide={{ y: true }}
         gap="medium"
       />
     </Box>

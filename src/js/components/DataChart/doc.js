@@ -33,24 +33,32 @@ const thicknessType = PropTypes.oneOfType([
 ]);
 
 const chartType = PropTypes.shape({
-  key: PropTypes.string,
-  keys: PropTypes.arrayOf(
-    PropTypes.shape({
-      key: PropTypes.string,
-      color: colorType,
-    }),
-  ),
-  a11yTitle: PropTypes.string,
-  bounds: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)),
-  color: colorType,
+  property: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(
+      PropTypes.shape({
+        key: PropTypes.string,
+        color: colorType,
+      }),
+    ),
+  ]),
   dash: PropTypes.bool,
-  onClick: PropTypes.func,
-  onHover: PropTypes.func,
-  overflow: PropTypes.bool,
   round: PropTypes.bool,
   thickness: thicknessType,
   type: PropTypes.oneOf(['bar', 'line', 'area', 'point']),
 });
+
+const propertyType = PropTypes.shape({
+  bounds: PropTypes.arrayOf(PropTypes.number),
+  color: colorType,
+  label: PropTypes.oneOfType([PropTypes.string]),
+  prefix: PropTypes.string,
+  property: PropTypes.string,
+  render: PropTypes.func,
+  suffix: PropTypes.string,
+});
+
+const granularityType = PropTypes.oneOf(['coarse', 'medium', 'fine']);
 
 export const doc = DataChart => {
   const DocumentedDataChart = describe(DataChart)
@@ -62,19 +70,38 @@ export const doc = DataChart => {
     )
     .usage(
       `import { DataChart } from 'grommet';
-<DataChart data={data} chart={} />`,
+<DataChart data={data} property={} />`,
     )
     .intrinsicElement('div');
 
   DocumentedDataChart.propTypes = {
     ...genericProps,
+    axis: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.shape({
+        x: PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.shape({
+            property: PropTypes.string,
+            granularity: granularityType,
+          }),
+        ]),
+        y: PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.shape({
+            property: PropTypes.string,
+            granularity: granularityType,
+          }),
+        ]),
+      }),
+    ]).description('TBD'),
     chart: PropTypes.oneOfType([chartType, PropTypes.arrayOf(chartType)])
-      .description(`Chart properties indicating how to visualize the data.
-    'key' indicates which property of the data objects to use. 'keys' indicates
-    that multiple properties should be used for a stacked bar chart. DataChart
-    uses the key/keys to build the right 'values' for the underlying Chart.
-    All of the other properties in 'chart' are passed through to the Chart.`),
+      .description(`How to visualize the data.
+    'property' indicates which property of the data objects to use.
+    When 'property' is an array, multiple properties are used for a
+    stacked bar chart.`),
     data: PropTypes.arrayOf(PropTypes.shape({})).description('the data set'),
+    detail: PropTypes.bool.description('TBD'),
     gap: PropTypes.oneOfType([
       PropTypes.oneOf([
         'none',
@@ -87,8 +114,23 @@ export const doc = DataChart => {
       ]),
       PropTypes.string,
     ]).description(`The spacing between the axes and the Charts.`),
+    guide: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.shape({
+        x: PropTypes.shape({
+          granularity: granularityType,
+        }),
+        y: PropTypes.shape({
+          granularity: granularityType,
+        }),
+      }),
+    ]).description('TBD'),
     pad: padPropType.description(`Spacing around the outer edge of
     the drawing coordinate area for the graphic elements to overflow into.`),
+    property: PropTypes.oneOfType([
+      propertyType,
+      PropTypes.arrayOf(propertyType),
+    ]).description('TBD'),
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['fill']),
       PropTypes.shape({
@@ -118,46 +160,10 @@ export const doc = DataChart => {
           PropTypes.string,
         ]),
       }),
-    ])
-      .description(
-        `The size of the Charts. This does not include the axes
+    ]).description(
+      `The size of the Charts. This does not include the axes
       and any gap. It is passed through to the underlying Chart.`,
-      )
-      .defaultValue({ width: 'medium', height: 'small' }),
-    thickness: thicknessType.description(`Chart thickness given to all
-    Charts if not specified per Chart in 'chart'.`),
-    xAxis: PropTypes.oneOfType([
-      PropTypes.bool,
-      PropTypes.shape({
-        guide: PropTypes.bool,
-        key: PropTypes.string,
-        labels: PropTypes.number, // default undefined, all data points
-        // (value, data, dataIndex, axisIndex) => element
-        // value is only defined when a 'key' is provided.
-        render: PropTypes.func,
-      }),
-    ]).description(`x-axis configuration. 'guide' specifies that vertical
-    guide lines should be drawn under the Chart, one per label.
-    'key' specifies what property in the 'data' should be used as
-    any label content. 'labels' specifies how many labels to show.
-    'render' allows for custom rendering of the labels. It will be
-    called with the current data index and axis index and should return
-    the element to render: (dataIndex, axisIndex) => element.`),
-    yAxis: PropTypes.oneOfType([
-      PropTypes.bool,
-      PropTypes.shape({
-        guide: PropTypes.bool,
-        labels: PropTypes.number, // default 2, top and bottom
-        prefix: PropTypes.string,
-        render: PropTypes.func, // (value, axisIndex) => element
-        suffix: PropTypes.string,
-      }),
-    ]).description(`y-axis configuration. 'guide' specifies that horizontal
-    guide lines should be drawn under the Chart, one per label.
-    'labels' specifies how many labels to show.
-    'render' allows for custom rendering of the labels. It will be
-    called with the value and axis index and should return
-    the element to render: (value, axisIndex) => element`),
+    ),
   };
 
   return DocumentedDataChart;

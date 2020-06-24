@@ -10,7 +10,7 @@ for (let i = 0; i < 7; i += 1) {
   const digits = ((i % 12) + 1).toString().padStart(2, 0);
   data.push({
     // explore variations in date format by changing the xAxis key to
-    // the timer period you are interested in
+    // the time period you are interested in
     second: `2020-05-15T08:04:${digits}`,
     minute: `2020-05-15T08:${digits}:00`,
     hour: `2020-05-15T${digits}:00:00`,
@@ -24,17 +24,20 @@ for (let i = 0; i < 7; i += 1) {
   });
 }
 
-const AxesDataChart = () => (
+const Example = () => (
   <Grommet theme={grommet}>
     <Box align="center" justify="start" pad="large">
       <DataChart
         data={data}
-        chart={{ key: 'percent', type: 'bar' }}
-        xAxis={{ key: 'day', guide: true }}
-        yAxis={{ guide: true, labels: 3, suffix: '%' }}
+        property={['day', { property: 'percent', suffix: '%' }]}
+        chart="percent"
+        axis={{
+          x: { property: 'day', granularity: 'fine' },
+          y: { property: 'percent', granularity: 'medium' },
+        }}
       />
     </Box>
   </Grommet>
 );
 
-storiesOf('DataChart', module).add('Axes', () => <AxesDataChart />);
+storiesOf('DataChart', module).add('Axis', () => <Example />);

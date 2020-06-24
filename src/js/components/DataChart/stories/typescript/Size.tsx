@@ -17,28 +17,21 @@ const Example = () => (
   <Grommet full theme={grommet}>
     <Box fill="horizontal" align="center" justify="center" pad="large">
       <DataChart
+        axis
         data={data}
-        chart={[
+        chart="percent"
+        guide
+        property={[
           {
-            key: 'percent',
-            type: 'bar',
-            thickness: 'large',
-            color: { color: 'graph-2' },
+            property: 'date',
+            render: date => (
+              <Text margin={{ horizontal: 'xsmall' }}>
+                {new Date(date).toLocaleDateString('en-US', { month: 'short' })}
+              </Text>
+            ),
           },
+          { property: 'percent', suffix: '%' },
         ]}
-        xAxis={{
-          guide: true,
-          key: 'date',
-          render: date => (
-            <Text margin={{ horizontal: 'xsmall' }}>
-              {new Date(date).toLocaleDateString('en-US', { month: 'short' })}
-            </Text>
-          ),
-        }}
-        yAxis={{
-          guide: true,
-          render: value => <Text>${value}</Text>,
-        }}
         size={{ width: 'fill' }}
         gap="small"
         pad={{ horizontal: 'medium', vertical: 'small' }}

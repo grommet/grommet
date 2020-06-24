@@ -16,9 +16,16 @@ for (let i = 0; i < 7; i += 1) {
 const Example = () => (
   <Grommet theme={grommet}>
     <Box align="center" justify="start" pad="large">
-      <DataChart data={data} chart={{ key: 'percent' }} xAxis yAxis />
+      <DataChart
+        data={data}
+        property={['date', 'percent']}
+        guide={{
+          x: { property: 'date', granularity: 'fine' },
+          y: { property: 'percent', granularity: 'medium' },
+        }}
+      />
     </Box>
   </Grommet>
 );
 
-storiesOf('DataChart', module).add('Axes default', () => <Example />);
+storiesOf('DataChart', module).add('Guide', () => <Example />);

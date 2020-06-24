@@ -13,37 +13,50 @@ for (let i = 0; i < 13; i += 1) {
   });
 }
 
-const MultipleDataChart = () => (
+const Example = () => (
   <Grommet theme={grommet}>
     <Box align="center" justify="start" pad="large">
       <DataChart
         data={data}
+        property={[
+          {
+            property: 'date',
+            render: date => (
+              <Box pad="xsmall" align="start">
+                <Text>
+                  {new Date(date).toLocaleDateString('en-US', {
+                    month: 'short',
+                    day: 'numeric',
+                  })}
+                </Text>
+              </Box>
+            ),
+          },
+          'amount',
+        ]}
         chart={[
           {
-            key: 'amount',
+            property: 'amount',
             type: 'area',
             thickness: 'xsmall',
             color: { color: 'graph-0', opacity: 'medium' },
           },
-          { key: 'amount', type: 'line', thickness: 'xsmall', round: true },
-          { key: 'amount', type: 'bar', thickness: 'hair' },
-          { key: 'amount', type: 'point', round: true, thickness: 'medium' },
+          {
+            property: 'amount',
+            type: 'line',
+            thickness: 'xsmall',
+            round: true,
+          },
+          { property: 'amount', type: 'bar', thickness: 'hair' },
+          {
+            property: 'amount',
+            type: 'point',
+            round: true,
+            thickness: 'medium',
+          },
         ]}
-        xAxis={{
-          labels: 2,
-          key: 'date',
-          render: date => (
-            <Box pad="xsmall" align="start">
-              <Text>
-                {new Date(date).toLocaleDateString('en-US', {
-                  month: 'short',
-                  day: 'numeric',
-                })}
-              </Text>
-            </Box>
-          ),
-        }}
-        yAxis={{ guide: true, labels: 3 }}
+        axis={{ x: 'date', y: { property: 'amount', granularity: 'medium' } }}
+        guide={{ y: true }}
         gap="medium"
         pad="small"
       />
@@ -51,4 +64,4 @@ const MultipleDataChart = () => (
   </Grommet>
 );
 
-storiesOf('DataChart', module).add('Multiple', () => <MultipleDataChart />);
+storiesOf('DataChart', module).add('Multiple', () => <Example />);
