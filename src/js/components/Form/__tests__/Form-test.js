@@ -608,23 +608,6 @@ describe('Form', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('uncontrolled reset clears form', () => {
-    const onReset = jest.fn();
-    const { getByPlaceholderText, getByText, queryByText } = render(
-      <Grommet>
-        <Form onReset={onReset}>
-          <FormField name="test" required placeholder="test input" />
-          <Button type="reset" primary label="Reset" />
-        </Form>
-      </Grommet>,
-    );
-    fireEvent.change(getByPlaceholderText('test input'), {
-      target: { value: 'Input has changed' },
-    });
-    fireEvent.click(getByText('Reset'));
-    expect(queryByText('Input has changed')).toBeNull();
-  });
-
   test('controlled reset', () => {
     const onSubmit = jest.fn();
     const onReset = jest.fn();
