@@ -982,4 +982,34 @@ describe('Select', () => {
     );
     expect(select.value).toEqual('');
   });
+
+  test('valueLabel', () => {
+    const { container } = render(
+      <Grommet>
+        <Select
+          id="test-select"
+          placeholder="test select"
+          options={[undefined, 1, 2]}
+          valueLabel="test"
+        />
+      </Grommet>,
+    );
+    expect(container.firsChild).toMatchSnapshot();
+  });
+
+  test('selected', () => {
+    const { container, getByPlaceholderText } = render(
+      <Grommet>
+        <Select
+          options={['one', 'two']}
+          placeholder="test select"
+          id="test-select"
+          selected={0}
+        />
+      </Grommet>,
+    );
+    const select = getByPlaceholderText('test select');
+    expect(container.firstChild).toMatchSnapshot();
+    expect(select.value).toEqual('one');
+  });
 });
