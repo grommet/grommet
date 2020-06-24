@@ -41,7 +41,7 @@ describe('RadioButtonGroup', () => {
     const component = renderer.create(
       <Grommet>
         <RadioButtonGroup name="test" options={[true, false]} value />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
