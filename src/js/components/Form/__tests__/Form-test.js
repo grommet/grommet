@@ -309,7 +309,6 @@ describe('Form', () => {
             name="test"
             required
             validate={{ regexp: /^[a-z]/i }}
-            status="test"
             placeholder="test input"
           />
           <Button type="submit" primary label="Submit" />
