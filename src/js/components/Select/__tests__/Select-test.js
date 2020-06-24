@@ -40,15 +40,17 @@ describe('Select', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
 
-  test('opens', done => {
+  test('opens and closes', done => {
     window.scrollTo = jest.fn();
     const onOpen = jest.fn();
+    const onClose = jest.fn();
     const { getByPlaceholderText, container } = render(
       <Select
         placeholder="test select"
         id="test-select"
         options={['one', 'two']}
         onOpen={onOpen}
+        onClose={onClose}
       />,
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -64,8 +66,17 @@ describe('Select', () => {
       done();
     }, 100);
     expect(onOpen).toHaveBeenCalled();
-  });
+    fireEvent.click(getByPlaceholderText('test select'));
 
+    expect(container.firstChild).toMatchSnapshot();
+    expect(document.getElementById('test-select__drop')).toBeNull();
+
+    setTimeout(() => {
+      expect(document.activeElement).toMatchSnapshot();
+      done();
+    }, 100);
+    expect(onClose).toHaveBeenCalled();
+  });
   test('complex options and children', () => {
     const { getByPlaceholderText, container } = render(
       <Select
