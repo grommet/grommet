@@ -96,7 +96,7 @@ describe('Form', () => {
   test('controlled lazy', () => {
     const onSubmit = jest.fn();
     const Test = () => {
-      const [value, setValue] = React.useState({});
+      const [value, setValue] = React.useState({ test: '' });
       React.useEffect(() => setValue({ test: 'test' }), []);
       const onChange = React.useCallback(nextValue => setValue(nextValue), []);
       return (
@@ -309,6 +309,7 @@ describe('Form', () => {
             name="test"
             required
             validate={{ regexp: /^[a-z]/i }}
+            status="test"
             placeholder="test input"
           />
           <Button type="submit" primary label="Submit" />
@@ -458,7 +459,7 @@ describe('Form', () => {
   test('lazy value', () => {
     const onSubmit = jest.fn();
     const Test = () => {
-      const [test, setTest] = React.useState();
+      const [test, setTest] = React.useState('');
       return (
         <Form onSubmit={({ value, touched }) => onSubmit({ value, touched })}>
           <TextInput name="test" value={test} />
@@ -481,6 +482,7 @@ describe('Form', () => {
       }),
     );
   });
+
   test('validate on blur', () => {
     const Test = () => (
       <Form validate="blur">
@@ -528,21 +530,26 @@ describe('Form', () => {
     expect(queryAllByText('required')).toHaveLength(2);
 
     // one fields has required error message
+    getByPlaceholderText('name').focus();
     fireEvent.change(getByPlaceholderText('name'), {
       target: { value: 'Input has changed' },
     });
+    getByText('submit').focus();
     fireEvent.click(getByText('submit'));
     expect(queryAllByText('required')).toHaveLength(1);
 
     // name field has new error and email field still has required error message
+    getByPlaceholderText('name').focus();
     fireEvent.change(getByPlaceholderText('name'), {
       target: { value: 'a' },
     });
+    getByText('submit').focus();
     fireEvent.click(getByText('submit'));
     expect(queryByText('required')).toBeTruthy();
     expect(queryByText('must be >1 character')).toBeTruthy();
 
     //  new value in name does not remove the error message in email
+    getByPlaceholderText('name').focus();
     fireEvent.change(getByPlaceholderText('name'), {
       target: { value: 'abc' },
     });
@@ -580,5 +587,98 @@ describe('Form', () => {
       }),
     );
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('uncontrolled without name', () => {
+    const onSubmit = jest.fn();
+    const { getByPlaceholderText, getByText, container } = render(
+      <Form onSubmit={onSubmit}>
+        <FormField>
+          <TextInput placeholder="test input" />
+        </FormField>
+        <Button type="submit" primary label="Submit" />
+      </Form>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.change(getByPlaceholderText('test input'), {
+      target: { value: 'v' },
+    });
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('Submit'));
+    expect(onSubmit).toBeCalled();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('uncontrolled reset clears form', () => {
+    const onReset = jest.fn();
+    const { getByPlaceholderText, getByText, queryByText } = render(
+      <Grommet>
+        <Form onReset={onReset}>
+          <FormField name="test" required placeholder="test input" />
+          <Button type="reset" primary label="Reset" />
+        </Form>
+      </Grommet>,
+    );
+    fireEvent.change(getByPlaceholderText('test input'), {
+      target: { value: 'Input has changed' },
+    });
+    fireEvent.click(getByText('Reset'));
+    expect(queryByText('Input has changed')).toBeNull();
+  });
+
+  test('controlled reset', () => {
+    const onSubmit = jest.fn();
+    const onReset = jest.fn();
+    const Test = () => {
+      const [value, setValue] = React.useState({ test: '' });
+      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
+      return (
+        <Grommet>
+          <Form
+            onReset={onReset}
+            onChange={onChange}
+            value={value}
+            onSubmit={onSubmit}
+          >
+            <FormField name="test" required placeholder="test input" />
+            <Button type="reset" primary label="Reset" />
+          </Form>
+        </Grommet>
+      );
+    };
+    const { getByPlaceholderText, getByText, queryByText } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    fireEvent.change(getByPlaceholderText('test input'), {
+      target: { value: 'Input has changed' },
+    });
+    fireEvent.click(getByText('Reset'));
+    expect(queryByText('Input has changed')).toBeNull();
+  });
+
+  test('controlled reset without value', () => {
+    const onChange = jest.fn();
+    const Test = () => {
+      return (
+        <Grommet>
+          <Form onChange={onChange}>
+            <FormField name="test" required placeholder="test input" />
+            <Button type="reset" primary label="Reset" />
+          </Form>
+        </Grommet>
+      );
+    };
+    const { getByPlaceholderText, getByText, queryByText } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    fireEvent.change(getByPlaceholderText('test input'), {
+      target: { value: 'Input has changed' },
+    });
+    fireEvent.click(getByText('Reset'));
+    expect(queryByText('Input has changed')).toBeNull();
   });
 });
