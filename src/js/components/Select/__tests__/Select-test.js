@@ -1,7 +1,7 @@
 import React from 'react';
 import 'jest-styled-components';
 import renderer from 'react-test-renderer';
-import { cleanup, render, fireEvent } from '@testing-library/react';
+import { cleanup, render, fireEvent, act } from '@testing-library/react';
 
 import { CaretDown, CaretUp, FormDown } from 'grommet-icons';
 import { createPortal, expectPortal } from '../../../utils/portal';
@@ -1011,5 +1011,28 @@ describe('Select', () => {
     const select = getByPlaceholderText('test select');
     expect(container.firstChild).toMatchSnapshot();
     expect(select.value).toEqual('one');
+  });
+
+  test('keyboard navigation timeout', () => {
+    jest.useFakeTimers();
+    const { container, getByPlaceholderText } = render(
+      <Select
+        id="test-select"
+        placeholder="test select"
+        options={['one', 'two', 'three']}
+        disabled={[0]}
+      />,
+    );
+    fireEvent.click(getByPlaceholderText('test select'));
+    fireEvent.keyDown(document.getElementById('test-select__select-drop'), {
+      key: 'Down',
+      keyCode: 40,
+      which: 40,
+    });
+
+    act(() => {
+      jest.advanceTimersByTime(100);
+    });
+    expect(container.firstChild).toMatchSnapshot();
   });
 });
