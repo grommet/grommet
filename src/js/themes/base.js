@@ -720,13 +720,31 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       info: {
         color: 'text-xweak',
-        margin: { vertical: 'xsmall', horizontal: 'xlarge' },
+        margin: { vertical: 'xsmall', left: 'medium' },
       },
       label: {
         margin: { vertical: 'xsmall', horizontal: 'small' },
-        width: 'small',
+        width: 'xxsmall',
       },
       margin: { bottom: 'small' },
+      postfix: {
+        color: 'white',
+        background: 'dark-3',
+        justify: 'center',
+        pad: { horizontal: 'medium', vertical: 'medium' },
+      },
+      prefix: {
+        color: 'white',
+        background: 'dark-3',
+        justify: 'center',
+        pad: { horizontal: 'medium', vertical: 'medium' },
+      },
+      extend: {
+        button: {
+          flex: 1,
+          border: 'none',
+        },
+      },
 
       // round: undefined,
     },

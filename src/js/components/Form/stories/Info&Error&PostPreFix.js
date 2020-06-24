@@ -1,16 +1,23 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { CircleInformation } from 'grommet-icons';
 
 import { Box, FormField, TextInput } from 'mnet-ui-base';
 
-const FormFieldHelpError = props => (
+const FormFieldInfoPostFix = props => (
   <>
     <Box align="center" pad="large">
       <FormField
+        direction="row"
         label="Label"
+        postfix="ms"
+        prefix="ms"
         htmlFor="text-input"
         {...props}
-        help="Text to help the user know what is possible"
+        info={{
+          icon: <CircleInformation size="small" />,
+          message: 'Text to call attention to an issue with this field ',
+        }}
         error="Text to call attention to an issue with this field"
       >
         <TextInput
@@ -24,4 +31,6 @@ const FormFieldHelpError = props => (
   </>
 );
 
-storiesOf('Form', module).add('Help and Error', () => <FormFieldHelpError />);
+storiesOf('Form', module).add('Info, Error, Post and Pre fix label', () => (
+  <FormFieldInfoPostFix />
+));

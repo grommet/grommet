@@ -5,6 +5,7 @@ import React, {
   useContext,
   useEffect,
   useState,
+  useRef,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
@@ -17,6 +18,8 @@ import { RadioButtonGroup } from '../RadioButtonGroup';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
+import { Drop } from '../Drop';
+import { Button } from '../Button';
 
 const mnetInputNames = ['TextInput', 'Select', 'MaskedInput', 'TextArea'];
 const mnetInputPadNames = [
@@ -69,12 +72,16 @@ const FormField = forwardRef(
       style,
       validate,
       direction = 'column',
+      postfix,
+      prefix,
       ...rest
     },
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const context = useContext(FormContext);
+    const [over, setOver] = useState();
+    const overRef = useRef();
 
     useEffect(() => {
       if (context && context.addValidation) {
@@ -206,7 +213,8 @@ const FormField = forwardRef(
       children;
 
     let normalizedError = error;
-    let normalizedInfo = info;
+    let normalizedInfo = info && info.icon;
+    const normalizedInfoMsg = info && info.message;
     let onFieldBlur;
     // put rest on container, unless we use renderInput()
     let containerRest = rest;
@@ -237,7 +245,19 @@ const FormField = forwardRef(
     }
     contents = (
       <Box {...contentProps} width={formFieldTheme.content.width || 'auto'}>
-        {contents}
+        <Box direction="row">
+          {prefix && (
+            <Box {...formFieldTheme.prefix} style={{ wordBreak: 'normal' }}>
+              {prefix}
+            </Box>
+          )}
+          {contents}
+          {postfix && (
+            <Box {...formFieldTheme.postfix} style={{ wordBreak: 'normal' }}>
+              {postfix}
+            </Box>
+          )}
+        </Box>
       </Box>
     );
 
@@ -354,6 +374,14 @@ const FormField = forwardRef(
       }
     }
 
+    const layoutType =
+      direction && direction === 'row'
+        ? {
+            flexDirection: direction,
+            alignItems: 'baseline',
+          }
+        : { flexDirection: direction };
+
     const outerProps =
       themeBorder && themeBorder.position === 'outer'
         ? {
@@ -362,48 +390,6 @@ const FormField = forwardRef(
             focus,
           }
         : {};
-
-    const defaulLayout = (
-      <>
-        {(label && component !== CheckBox) || help ? (
-          <>
-            {label && component !== CheckBox && (
-              <Text as="label" htmlFor={htmlFor} {...labelStyle}>
-                {label}
-              </Text>
-            )}
-            <Message message={help} {...formFieldTheme.help} />
-          </>
-        ) : (
-          undefined
-        )}
-        {contents}
-        <Message message={normalizedError} {...formFieldTheme.error} />
-        <Message message={normalizedInfo} {...formFieldTheme.info} />
-      </>
-    );
-
-    const layoutType =
-      direction === 'row' ? (
-        <Box direction={direction} align="baseline">
-          <Box {...labelStyle}>
-            {label && component !== CheckBox && (
-              <Text as="label" htmlFor={htmlFor}>
-                {label}
-              </Text>
-            )}
-          </Box>
-          <Box>
-            {contents}
-            <Message message={normalizedError} {...formFieldTheme.error} />
-          </Box>
-          <Box>
-            <Message message={normalizedInfo} {...formFieldTheme.info} />
-          </Box>
-        </Box>
-      ) : (
-        defaulLayout
-      );
 
     return (
       <FormFieldBox
@@ -424,7 +410,54 @@ const FormField = forwardRef(
         }}
         {...containerRest}
       >
-        {layoutType}
+        <Box style={{ ...layoutType }}>
+          <Box {...labelStyle}>
+            {label && component !== CheckBox && (
+              <Text as="label" htmlFor={htmlFor}>
+                {label}
+              </Text>
+            )}
+          </Box>
+          <Box>
+            {contents}
+            <Message message={normalizedError} {...formFieldTheme.error} />
+          </Box>
+          <Box>
+            <Button
+              ref={overRef}
+              onMouseOver={() => setOver(true)}
+              onMouseOut={() => setOver(false)}
+            >
+              <Box style={{ position: 'relative', top: '3px' }}>
+                <Message message={normalizedInfo} {...formFieldTheme.info} />
+              </Box>
+            </Button>
+            {overRef.current && over && (
+              <Drop
+                direction="row"
+                align={{ left: 'right' }}
+                target={overRef.current}
+                elevation="none"
+                plain
+                style={{ boxShadow: 'none' }}
+              >
+                <Box
+                  alignSelf="center"
+                  style={{
+                    width: 0,
+                    height: 0,
+                    borderTop: '5px solid transparent',
+                    borderBottom: '5px solid transparent',
+                    borderRight: '5px solid #313340',
+                  }}
+                />
+                <Box pad="medium" background="dark-1" round={{ size: 'small' }}>
+                  {normalizedInfoMsg}
+                </Box>
+              </Drop>
+            )}
+          </Box>
+        </Box>
       </FormFieldBox>
     );
   },
