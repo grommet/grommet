@@ -9,9 +9,14 @@ const data = [
   { a: 1, b: 'one', c: 111111 },
   { a: 2, b: 'two', c: 222222 },
 ];
+const warnMsg = `The DataChart component is still experimental.
+      It is not guaranteed to be backwards compatible until it is explicitly
+      released. Keep an eye on the release notes and #announcements channel
+      in Slack.`;
 
 describe('DataChart', () => {
   test('default', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const component = renderer.create(
       <Grommet>
         <DataChart data={data} chart={{ key: 'a' }} />
@@ -19,9 +24,12 @@ describe('DataChart', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    expect(warnSpy).toHaveBeenLastCalledWith(warnMsg);
+    warnSpy.mockRestore();
   });
 
   test('thickness', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const component = renderer.create(
       <Grommet>
         {['xsmall', 'small', 'medium', 'large', 'xlarge'].map(thickness => (
@@ -36,9 +44,12 @@ describe('DataChart', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    expect(warnSpy).toHaveBeenCalledWith(warnMsg);
+    warnSpy.mockRestore();
   });
 
   test('gap', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const component = renderer.create(
       <Grommet>
         {['small', 'medium', 'large'].map(gap => (
@@ -48,9 +59,12 @@ describe('DataChart', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    expect(warnSpy).toHaveBeenCalledWith(warnMsg);
+    warnSpy.mockRestore();
   });
 
   test('pad', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const component = renderer.create(
       <Grommet>
         {['small', 'medium', 'large'].map(pad => (
@@ -60,20 +74,15 @@ describe('DataChart', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    expect(warnSpy).toHaveBeenCalledWith(warnMsg);
+    warnSpy.mockRestore();
   });
 
   test('size', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const component = renderer.create(
       <Grommet>
-        {[
-          'xsmall',
-          'small',
-          'medium',
-          'large',
-          'xlarge',
-          { width: 'fill' },
-          { width: 'auto' },
-        ].map((size, i) => (
+        {['fill', { width: 'fill' }, { width: 'auto' }].map((size, i) => (
           // eslint-disable-next-line react/no-array-index-key
           <DataChart key={i} data={data} chart={{ key: 'a' }} size={size} />
         ))}
@@ -81,9 +90,12 @@ describe('DataChart', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    expect(warnSpy).toHaveBeenCalledWith(warnMsg);
+    warnSpy.mockRestore();
   });
 
   test('xAxis', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const component = renderer.create(
       <Grommet>
         {[
@@ -101,9 +113,12 @@ describe('DataChart', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    expect(warnSpy).toHaveBeenCalledWith(warnMsg);
+    warnSpy.mockRestore();
   });
 
   test('xAxis dates', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const dateData = [];
     for (let i = 0; i < 4; i += 1) {
       const digits = ((i % 12) + 1).toString().padStart(2, 0);
@@ -138,9 +153,12 @@ describe('DataChart', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    expect(warnSpy).toHaveBeenCalledWith(warnMsg);
+    warnSpy.mockRestore();
   });
 
   test('yAxis', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const component = renderer.create(
       <Grommet>
         {[
@@ -160,9 +178,12 @@ describe('DataChart', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    expect(warnSpy).toHaveBeenCalledWith(warnMsg);
+    warnSpy.mockRestore();
   });
 
   test('yAxis rounding', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const component = renderer.create(
       <Grommet>
         {[true, { labels: 4 }].map((yAxis, i) => (
@@ -173,5 +194,7 @@ describe('DataChart', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    expect(warnSpy).toHaveBeenCalledWith(warnMsg);
+    warnSpy.mockRestore();
   });
 });

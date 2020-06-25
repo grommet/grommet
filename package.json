@@ -149,13 +149,15 @@
       "!src/js/**/**/stories/*.js",
       "!src/js/**/**/stories/**/**/*.js",
       "!src/js/utils/portal.js",
-      "!src/js/**/**/doc.js"
+      "!src/js/**/**/doc.js",
+      "!src/js/components/**/__tests__/**/*.js"
     ],
     "modulePathIgnorePatterns": [
       "<rootDir>/dist/"
     ],
     "testPathIgnorePatterns": [
-      "<rootDir>[/\\\\](dist|node_modules)[/\\\\]"
+      "<rootDir>[/\\\\](dist|node_modules)[/\\\\]",
+      "components/(.*)/__tests__/(.*)/(.*).js"
     ]
   },
   "pre-commit": [

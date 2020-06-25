@@ -10,6 +10,19 @@ export interface VideoProps {
   gridArea?: GridAreaType;
   loop?: boolean;
   margin?: MarginType;
+  messages?: {
+    closeMenu?: string;
+    fullScreen?: string;
+    progressMeter?: string;
+    openMenu?: string;
+    scrubber?: string;
+    pauseButton?: string;
+    playButton?: string;
+    volumeUp?: string;
+    volueDown?: string;
+  }
+
+
   mute?: boolean;
 }
 
