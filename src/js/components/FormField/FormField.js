@@ -175,14 +175,18 @@ const FormField = forwardRef(
 
     const contentProps =
       pad || wantContentPad ? { ...formFieldTheme.content } : {};
-    if (themeBorder.position === 'inner') {
+
+    if (themeBorder && themeBorder.position === 'inner') {
       if (error && formFieldTheme.error) {
         contentProps.background = formFieldTheme.error.background;
       } else if (disabled && formFieldTheme.disabled) {
         contentProps.background = formFieldTheme.disabled.background;
       }
     }
-    contents = <Box {...contentProps}>{contents}</Box>;
+
+    if (!themeBorder) {
+      contents = <Box {...contentProps}>{contents}</Box>;
+    }
 
     let borderColor;
 
@@ -232,7 +236,11 @@ const FormField = forwardRef(
             }
           : {};
       contents = (
-        <FormFieldContentBox overflow="hidden" {...innerProps}>
+        <FormFieldContentBox
+          overflow="hidden"
+          {...contentProps}
+          {...innerProps}
+        >
           {contents}
         </FormFieldContentBox>
       );
@@ -273,7 +281,8 @@ const FormField = forwardRef(
     }
 
     let outerBackground;
-    if (themeBorder.position === 'outer') {
+
+    if (themeBorder && themeBorder.position === 'outer') {
       if (error && formFieldTheme.error && formFieldTheme.error.background) {
         outerBackground = formFieldTheme.error.background;
       } else if (
