@@ -13,7 +13,8 @@ import { Image } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 ```
 string
@@ -63,6 +64,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -80,6 +89,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -107,6 +124,16 @@ xlarge
 string
 ```
 
+**fill**
+
+Whether the width and/or height should fill the container.
+
+```
+horizontal
+vertical
+boolean
+```
+
 **fit**
 
 How the image fills its container.
@@ -118,7 +145,8 @@ contain
 
 **fallback**
 
-Specifies the URL of the fallback image used when src is failing to load
+Specifies the URL of the fallback image used when 
+      src is failing to load
 
 ```
 string

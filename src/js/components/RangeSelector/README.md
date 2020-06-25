@@ -50,10 +50,7 @@ number
 
 **messages**
 
-Custom messages. Used for accessibility by screen readers. Defaults to `{
-  "lower": "Lower Bounds",
-  "upper": "Upper Bounds"
-}`.
+Custom messages used by screen readers for accessibility.
 
 ```
 {
@@ -130,7 +127,7 @@ number
 
 **values**
 
-Required. The current values. Defaults to `[]`.
+Required. The current values.
 
 ```
 [number]

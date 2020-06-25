@@ -1,6 +1,6 @@
 {
   "name": "grommet",
-  "version": "2.7.7",
+  "version": "2.14.0",
   "main": "index.js",
   "module": "es6/index.js",
   "jsnext:main": "es6/index.js",
@@ -25,11 +25,11 @@
   },
   "engine-strict": true,
   "engines": {
-    "node": ">= 8"
+    "node": ">= 10"
   },
   "scripts": {
     "generate-readme": "cross-env NODE_ENV=production babel-node ./tools/generate-readme",
-    "build": "webpack --mode production && babel ./src/js/ --ignore '__tests__' --out-dir ./dist --copy-files && cross-env BABEL_ENV=es6 babel ./src/js/ --ignore '__tests__' --out-dir ./dist/es6 --copy-files",
+    "build": "webpack --mode production && babel ./src/js/ --out-dir ./dist --ignore '**/**/__tests__' --ignore 'src/**/portal.js' && copyfiles -u 2 \"src/js/**/**/*.*\" -e \"src/js/**/**/*.js\" -e \"src/js/**/**/*.js.snap\" \"./dist\" && cross-env BABEL_ENV=es6 babel ./src/js/ --out-dir ./dist/es6 --ignore '**/**/__tests__' --ignore 'src/**/portal.js' && copyfiles -u 2 \"src/js/**/**/*.*\" -e \"src/js/**/**/*.js\" -e \"src/js/**/**/*.js.snap\" \"./dist/es6\"",
     "release-stable": "babel-node ./tools/release-stable",
     "lint": "eslint src",
     "lint-fix": "eslint src --fix",
@@ -40,30 +40,26 @@
     "pack": "babel-node ./tools/pack",
     "storybook": "cross-env NODE_ENV=development start-storybook -p 9001 -c storybook -s ./storybook/public",
     "build-storybook": "build-storybook -c storybook -o storybook-static -s ./storybook/public",
-    "prettier": "pretty-quick --staged"
+    "prettier": "pretty-quick --staged",
+    "chromatic": "CHROMATIC_APP_CODE=9q99in2ygnh chromatic test"
   },
   "peerDependencies": {
     "react": ">= 16.6.1",
     "react-dom": ">= 16.6.1",
-    "styled-components": ">= 4.X"
+    "styled-components": ">= 5.X"
   },
   "dependencies": {
-    "@testing-library/dom": "^6.1.0",
-    "@testing-library/react": "^9.1.3",
-    "css": "^2.2.3",
     "grommet-icons": "^4.2.0",
-    "grommet-styles": "^0.2.0",
     "hoist-non-react-statics": "^3.2.0",
-    "markdown-to-jsx": "^6.9.1",
+    "markdown-to-jsx": "^6.11.4",
     "polished": "^3.4.1",
     "prop-types": "^15.7.2",
-    "react-desc": "^4.1.2",
-    "recompose": "^0.30.0"
+    "react-desc": "^4.1.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
     "@babel/core": "^7.3.4",
-    "@babel/node": "^7.0.0",
+    "@babel/node": "^7.8.3",
     "@babel/plugin-proposal-class-properties": "^7.3.4",
     "@babel/plugin-proposal-do-expressions": "^7.0.0",
     "@babel/plugin-proposal-export-default-from": "^7.0.0",
@@ -74,10 +70,18 @@
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-react": "^7.0.0",
     "@emotion/core": "^10.0.7",
-    "@storybook/addon-options": "^5.0.1",
-    "@storybook/addon-storysource": "^5.0.1",
-    "@storybook/addons": "^5.0.1",
-    "@storybook/react": "^5.0.1",
+    "@storybook/addon-options": "~5.1.11",
+    "@storybook/addon-storysource": "~5.1.11",
+    "@storybook/addons": "~5.1.11",
+    "@storybook/react": "~5.1.11",
+    "@testing-library/dom": "^6.1.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.1.3",
+    "@types/node": "^13.5.0",
+    "@types/react": "^16.9.11",
+    "@types/react-dom": "^16.9.3",
+    "@types/storybook__react": "^4.0.2",
+    "awesome-typescript-loader": "^5.2.1",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.8.0",
@@ -87,6 +91,8 @@
     "bundlesize": "^0.18.0",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.0.4",
+    "copyfiles": "^2.3.0",
+    "core-js": "^3.6.4",
     "cross-env": "^5.1.6",
     "del": "^5.1.0",
     "eslint": "^6.2.2",
@@ -97,28 +103,34 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.9.1",
+    "eslint-plugin-react-hooks": "^2.2.0",
     "fs-extra": "^8.1.0",
     "grommet-theme-aruba": "^0.1.1",
     "grommet-theme-dxc": "^0.1.1",
     "grommet-theme-hp": "^0.1.1",
-    "grommet-theme-hpe": "^0.4.0",
+    "grommet-theme-hpe": "^1.0.0",
     "grommet-theme-v1": "^0.1.1",
-    "jest": "^24.8.0",
-    "jest-cli": "^24.8.0",
-    "jest-styled-components": "^6.2.0",
+    "jest": "^25.1.0",
+    "jest-axe": "^3.4.0",
+    "jest-cli": "^25.1.0",
+    "jest-styled-components": "^7.0.0",
     "jsdom": "^15.1.1",
+    "postcss": "^7.0.31",
     "pre-commit": "^1.2.2",
     "prettier": "^1.16.4",
     "pretty-quick": "^1.8.0",
-    "react": "^16.8.3",
+    "react": "^16.12.0",
     "react-dev-utils": "^9.0.3",
-    "react-dom": "^16.8.3",
-    "react-test-renderer": "^16.8.3",
+    "react-dom": "^16.12.0",
+    "react-is": "16.12.0",
+    "react-test-renderer": "^16.12.0",
     "regenerator-runtime": "^0.13.1",
     "require-reload": "^0.2.2",
     "simple-git": "^1.95.0",
-    "styled-components": "^4.1.1",
+    "storybook-chromatic": "^2.2.2",
+    "styled-components": "^5.0.0",
     "tarball-extract": "^0.0.6",
+    "typescript": "^3.6.4",
     "webpack": "^4.39.3",
     "webpack-cli": "^3.2.3"
   },
@@ -129,18 +141,23 @@
       "lcov"
     ],
     "collectCoverageFrom": [
-      "src/js/components/**/*.{js}",
-      "src/js/contexts/**/*.{js}",
-      "src/js/themes/**/*.{js}",
-      "src/js/utils/**/*.{js}",
-      "!src/js/components/**/*.{stories.js}",
-      "!src/js/components/**/stories/*.js"
+      "src/js/components/**/*.js",
+      "src/js/contexts/**/*.js",
+      "src/js/themes/**/*.js",
+      "src/js/utils/**/*.js",
+      "!src/js/**/**/*.stories.js",
+      "!src/js/**/**/stories/*.js",
+      "!src/js/**/**/stories/**/**/*.js",
+      "!src/js/utils/portal.js",
+      "!src/js/**/**/doc.js",
+      "!src/js/components/**/__tests__/**/*.js"
     ],
     "modulePathIgnorePatterns": [
       "<rootDir>/dist/"
     ],
     "testPathIgnorePatterns": [
-      "<rootDir>[/\\\\](dist|node_modules)[/\\\\]"
+      "<rootDir>[/\\\\](dist|node_modules)[/\\\\]",
+      "components/(.*)/__tests__/(.*)/(.*).js"
     ]
   },
   "pre-commit": [
@@ -151,17 +168,19 @@
   "bundlesize": [
     {
       "path": "./dist/grommet.min.js",
-      "maxSize": "110 kB"
+      "maxSize": "120 kB"
     }
   ],
   "keywords": [
     "grommet",
     "grommet.io",
+    "grommetux",
     "component",
     "library",
     "design system",
     "framework",
     "react",
+    "theme",
     "theming",
     "templates",
     "sticker sheets",
@@ -180,6 +199,7 @@
     "ui",
     "user interface",
     "gui",
-    "graphical user interface"
+    "graphical user interface",
+    "styled-components"
   ]
 }

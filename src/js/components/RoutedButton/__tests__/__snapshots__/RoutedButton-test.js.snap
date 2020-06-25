@@ -5,7 +5,6 @@ exports[`RoutedButton renders 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -19,8 +18,8 @@ exports[`RoutedButton renders 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition-property: color, background-color, border-color, box-shadow;
-  transition-property: color, background-color, border-color, box-shadow;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;

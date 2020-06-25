@@ -13,7 +13,8 @@ import { Video } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 ```
 string
@@ -63,6 +64,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -80,6 +89,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -148,6 +165,34 @@ Enables video muting. This option is best used with the autoPlay flag.
 
 ```
 boolean
+```
+
+**messages**
+
+Custom messages. Used for accessibility by screen readers. Defaults to `{
+  "closeMenu": "close menu",
+  "fullScreen": "full screen",
+  "progressMeter": "video progress",
+  "scrubber": "scrubber",
+  "openMenu": "open menu",
+  "pauseButton": "pause",
+  "playButton": "play",
+  "volumeDown": "volume down",
+  "volumeUp": "volume up"
+}`.
+
+```
+{
+  closeMenu: string,
+  fullScreen: string,
+  progressMeter: string,
+  openMenu: string,
+  pauseButton: string,
+  playButton: string,
+  scrubber: string,
+  volumeDown: string,
+  volumeUp: string
+}
 ```
   
 ## Intrinsic element

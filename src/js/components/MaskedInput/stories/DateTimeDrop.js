@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 import {
   Box,
@@ -13,11 +13,12 @@ import {
 import { grommet } from 'grommet/themes';
 import { Schedule } from 'grommet-icons';
 
-const DropContent = props => {
-  const { date: initialDate, time: initialTime, onClose } = props;
-  const [date, setDate] = useState();
-  const [time, setTime] = useState();
+const DropContent = ({ date: initialDate, time: initialTime, onClose }) => {
+  const [date, setDate] = React.useState();
+  const [time, setTime] = React.useState();
+
   const close = () => onClose(date || initialDate, time || initialTime);
+
   return (
     <Box align="center">
       <Calendar
@@ -82,41 +83,42 @@ const DropContent = props => {
   );
 };
 
-class DateTimeDropButton extends Component {
-  state = { date: undefined, time: '' };
+const DateTimeDropButton = () => {
+  const [date, setDate] = React.useState();
+  const [time, setTime] = React.useState('');
+  const [open, setOpen] = React.useState();
 
-  onClose = (date, time) => {
-    this.setState({ date, time, open: false });
-    setTimeout(() => this.setState({ open: undefined }), 1);
+  const onClose = (nextDate, nextTime) => {
+    setDate(nextDate);
+    setTime(nextTime);
+    setOpen(false);
+    setTimeout(() => setOpen(undefined), 1);
   };
 
-  render() {
-    const { date, open, time } = this.state;
-    return (
-      <Grommet theme={grommet}>
-        <Box align="center" pad="large">
-          <DropButton
-            open={open}
-            onClose={() => this.setState({ open: false })}
-            onOpen={() => this.setState({ open: true })}
-            dropContent={
-              <DropContent date={date} time={time} onClose={this.onClose} />
-            }
-          >
-            <Box direction="row" gap="medium" align="center" pad="small">
-              <Text color={date ? undefined : 'dark-5'}>
-                {date
-                  ? `${new Date(date).toLocaleDateString()} ${time}`
-                  : 'Select date & time'}
-              </Text>
-              <Schedule />
-            </Box>
-          </DropButton>
-        </Box>
-      </Grommet>
-    );
-  }
-}
+  return (
+    <Grommet theme={grommet}>
+      <Box align="center" pad="large">
+        <DropButton
+          open={open}
+          onClose={() => setOpen(false)}
+          onOpen={() => setOpen(true)}
+          dropContent={
+            <DropContent date={date} time={time} onClose={onClose} />
+          }
+        >
+          <Box direction="row" gap="medium" align="center" pad="small">
+            <Text color={date ? undefined : 'dark-5'}>
+              {date
+                ? `${new Date(date).toLocaleDateString()} ${time}`
+                : 'Select date & time'}
+            </Text>
+            <Schedule />
+          </Box>
+        </DropButton>
+      </Box>
+    </Grommet>
+  );
+};
 
 storiesOf('MaskedInput', module).add('Date Time Drop', () => (
   <DateTimeDropButton />

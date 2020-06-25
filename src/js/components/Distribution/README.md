@@ -17,7 +17,8 @@ import { Distribution } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 ```
 string
@@ -67,6 +68,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -84,6 +93,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -111,13 +128,36 @@ xlarge
 string
 ```
 
+**basis**
+
+A fixed or relative size along its container's main axis.
+
+```
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+xxlarge
+full
+1/2
+1/3
+2/3
+1/4
+2/4
+3/4
+auto
+string
+```
+
 **children**
 
 Function that will be called when each value is rendered. Defaults to `function children(value) {
-    return _react["default"].createElement(_Box.Box, {
+    return /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       fill: true,
       border: true
-    }, _react["default"].createElement(_Text.Text, null, value.value));
+    }, /*#__PURE__*/_react["default"].createElement(_Text.Text, null, value.value));
   }`.
 
 ```
@@ -126,7 +166,8 @@ function
 
 **fill**
 
-Whether the distribution expands to fill all of the available width and height.
+Whether the distribution expands to fill all of the available width 
+        and height.
 
 ```
 boolean

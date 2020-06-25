@@ -1,9 +1,19 @@
 import React, { Component } from 'react';
 import { createGlobalStyle } from 'styled-components';
 
-import { colorIsDark } from 'grommet-styles';
-import { ResponsiveContext, ThemeContext } from '../../contexts';
-import { deepMerge, getBreakpoint, getDeviceBreakpoint } from '../../utils';
+import {
+  ResponsiveContext,
+  ThemeContext,
+  ContainerTargetContext,
+} from '../../contexts';
+
+import {
+  backgroundIsDark,
+  deepMerge,
+  getBreakpoint,
+  getDeviceBreakpoint,
+  normalizeColor,
+} from '../../utils';
 import { base as baseTheme } from '../../themes';
 import { StyledGrommet } from './StyledGrommet';
 
@@ -15,21 +25,48 @@ class Grommet extends Component {
   static displayName = 'Grommet';
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    const { theme = {} } = nextProps;
-    const { theme: stateTheme, themeProp } = prevState;
+    const {
+      background: backgroundProp,
+      dir,
+      theme = {},
+      themeMode,
+    } = nextProps;
+    const { theme: stateTheme, themeProp, themeModeProp } = prevState;
 
     const nextTheme = deepMerge(baseTheme, theme);
-    if (!stateTheme || theme !== themeProp) {
-      if (typeof theme.dark === 'undefined') {
-        // calculate if background is dark or not
-        // otherwise respect the property passed in the theme
-        const { colors } = nextTheme.global;
-        const color = colors.background;
-        nextTheme.dark = color ? colorIsDark(color) : false;
+    if (!stateTheme || theme !== themeProp || themeMode !== themeModeProp) {
+      const {
+        colors: { background: themeBackground },
+      } = nextTheme.global;
+
+      // get initial value for dark so we can normalize background color
+      nextTheme.dark = (themeMode || theme.defaultMode) === 'dark';
+      const color = normalizeColor(
+        backgroundProp || themeBackground,
+        nextTheme,
+      );
+
+      // After normalizing, we set nextTheme.dark once more.
+      // It is necessary that we set it twice. We have to handle two cases:
+      // 1. Caller passes in a color object or a color name that resolves an
+      //    object. In this case, we want to set dark as line 38 shows. The
+      //    second set, in line 46, is a no-op.
+      // 2. Caller passes a specific color value or a color name that resolves
+      //    to a specific color value. In this case, we want dark to be set
+      //    based on that color, which line 46 will do.
+      // The double set of nextTheme.dark allows us to handle both cases here
+      // without having to duplicate color object + name + dark mode detection
+      // code here that is already in normalizeColor and backgroundIsDark.
+      nextTheme.dark = backgroundIsDark(color, nextTheme);
+      nextTheme.baseBackground = backgroundProp || themeBackground;
+
+      if (dir) {
+        nextTheme.dir = dir;
       }
       return {
         theme: nextTheme,
         themeProp: theme,
+        themeModeProp: themeMode,
       };
     }
 
@@ -83,7 +120,14 @@ class Grommet extends Component {
   }
 
   render() {
-    const { children, full, ...rest } = this.props;
+    const {
+      children,
+      full,
+      containerTarget = typeof document === 'object'
+        ? document.body
+        : undefined,
+      ...rest
+    } = this.props;
     delete rest.theme;
     const { theme, responsive: stateResponsive } = this.state;
 
@@ -97,10 +141,12 @@ class Grommet extends Component {
     return (
       <ThemeContext.Provider value={theme}>
         <ResponsiveContext.Provider value={responsive}>
-          <StyledGrommet full={full} {...rest}>
-            {children}
-          </StyledGrommet>
-          {full && <FullGlobalStyle />}
+          <ContainerTargetContext.Provider value={containerTarget}>
+            <StyledGrommet full={full} {...rest}>
+              {children}
+            </StyledGrommet>
+            {full && <FullGlobalStyle />}
+          </ContainerTargetContext.Provider>
         </ResponsiveContext.Provider>
       </ThemeContext.Provider>
     );
@@ -109,7 +155,8 @@ class Grommet extends Component {
 
 let GrommetDoc;
 if (process.env.NODE_ENV !== 'production') {
-  GrommetDoc = require('./doc').doc(Grommet); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  GrommetDoc = require('./doc').doc(Grommet);
 }
 const GrommetWrapper = GrommetDoc || Grommet;
 

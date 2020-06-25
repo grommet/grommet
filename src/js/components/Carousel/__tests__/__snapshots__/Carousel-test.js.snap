@@ -85,15 +85,12 @@ exports[`Carousel basic 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: hidden;
 }
 
@@ -103,15 +100,12 @@ exports[`Carousel basic 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c6 {
@@ -120,18 +114,15 @@ exports[`Carousel basic 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   opacity: 1;
-  -webkit-animation: iyuEas 1s 0s forwards;
-  animation: iyuEas 1s 0s forwards;
+  -webkit-animation: hftlBD 1s 0s forwards;
+  animation: hftlBD 1s 0s forwards;
 }
 
 .c7 {
@@ -140,9 +131,7 @@ exports[`Carousel basic 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -154,7 +143,6 @@ exports[`Carousel basic 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c10 {
@@ -163,9 +151,7 @@ exports[`Carousel basic 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -175,7 +161,6 @@ exports[`Carousel basic 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  padding: 0px;
 }
 
 .c11 {
@@ -184,9 +169,7 @@ exports[`Carousel basic 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -196,14 +179,12 @@ exports[`Carousel basic 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 0px;
 }
 
 .c8 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -212,6 +193,7 @@ exports[`Carousel basic 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -225,7 +207,6 @@ exports[`Carousel basic 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -234,6 +215,7 @@ exports[`Carousel basic 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -245,7 +227,6 @@ exports[`Carousel basic 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -254,6 +235,7 @@ exports[`Carousel basic 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -263,7 +245,6 @@ exports[`Carousel basic 1`] = `
 
 .c14:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
   color: #000000;
 }
 
@@ -284,85 +265,11 @@ exports[`Carousel basic 1`] = `
   right: 0;
 }
 
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c11 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c11 {
-    padding: 0px;
-  }
-}
-
 <div
   className="c0"
 >
   <div
     className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
     onKeyDown={[Function]}
   >
     <div
@@ -402,12 +309,15 @@ exports[`Carousel basic 1`] = `
     >
       <div
         className="c7"
+        onBlur={[Function]}
+        onFocus={[Function]}
         tabIndex="0"
       >
         <button
           className="c8"
           disabled={true}
           onBlur={[Function]}
+          onClick={[Function]}
           onFocus={[Function]}
           onMouseOut={[Function]}
           onMouseOver={[Function]}
@@ -593,33 +503,13 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: hidden;
-}
-
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 0px;
 }
 
 .c4 {
@@ -628,18 +518,29 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   opacity: 1;
-  -webkit-animation: iyuEas 1s 0s forwards;
-  animation: iyuEas 1s 0s forwards;
+  -webkit-animation: hftlBD 1s 0s forwards;
+  animation: hftlBD 1s 0s forwards;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c7 {
@@ -648,9 +549,7 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -662,7 +561,6 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c10 {
@@ -671,9 +569,7 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -683,7 +579,6 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  padding: 0px;
 }
 
 .c11 {
@@ -692,9 +587,7 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -704,56 +597,12 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 0px;
-}
-
-.c14 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-  opacity: 0.3;
-  cursor: default;
-  height: 100%;
-  line-height: 0;
-}
-
-.c12 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-  line-height: 0;
-  padding: 12px;
 }
 
 .c8 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -762,6 +611,7 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -771,17 +621,53 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
 
 .c8:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
   color: #000000;
+}
+
+.c12 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c14 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
+  height: 100%;
+  line-height: 0;
 }
 
 .c1 {
   position: relative;
-}
-
-.c5 {
-  position: relative;
-  display: block;
 }
 
 .c2 {
@@ -792,76 +678,9 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   right: 0;
 }
 
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c11 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c11 {
-    padding: 0px;
-  }
+.c5 {
+  position: relative;
+  display: block;
 }
 
 <div
@@ -869,8 +688,6 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
 >
   <div
     className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
     onKeyDown={[Function]}
   >
     <div
@@ -910,6 +727,8 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
     >
       <div
         className="c7"
+        onBlur={[Function]}
+        onFocus={[Function]}
         tabIndex="0"
       >
         <button
@@ -992,6 +811,7 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
           className="c14"
           disabled={true}
           onBlur={[Function]}
+          onClick={[Function]}
           onFocus={[Function]}
           onMouseOut={[Function]}
           onMouseOver={[Function]}
@@ -1101,15 +921,12 @@ exports[`Carousel navigate 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: hidden;
 }
 
@@ -1119,15 +936,12 @@ exports[`Carousel navigate 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c6 {
@@ -1136,18 +950,15 @@ exports[`Carousel navigate 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   opacity: 1;
-  -webkit-animation: iyuEas 1s 0s forwards;
-  animation: iyuEas 1s 0s forwards;
+  -webkit-animation: hftlBD 1s 0s forwards;
+  animation: hftlBD 1s 0s forwards;
 }
 
 .c7 {
@@ -1156,9 +967,7 @@ exports[`Carousel navigate 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -1170,7 +979,6 @@ exports[`Carousel navigate 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c10 {
@@ -1179,9 +987,7 @@ exports[`Carousel navigate 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1191,7 +997,6 @@ exports[`Carousel navigate 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  padding: 0px;
 }
 
 .c11 {
@@ -1200,9 +1005,7 @@ exports[`Carousel navigate 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -1212,14 +1015,12 @@ exports[`Carousel navigate 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 0px;
 }
 
 .c8 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1228,6 +1029,7 @@ exports[`Carousel navigate 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1241,7 +1043,6 @@ exports[`Carousel navigate 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1250,6 +1051,7 @@ exports[`Carousel navigate 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1261,7 +1063,6 @@ exports[`Carousel navigate 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1270,6 +1071,7 @@ exports[`Carousel navigate 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1279,7 +1081,6 @@ exports[`Carousel navigate 1`] = `
 
 .c14:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
   color: #000000;
 }
 
@@ -1298,78 +1099,6 @@ exports[`Carousel navigate 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c11 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c11 {
-    padding: 0px;
-  }
 }
 
 <div
@@ -1504,58 +1233,58 @@ exports[`Carousel navigate 1`] = `
 
 exports[`Carousel navigate 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
+  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <div
-    class="StyledStack-ajspsk-0 cBSAEZ"
+    class="StyledStack-ajspsk-0 liEjfH"
     data-testid="test-carousel"
   >
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 ekmpaB"
+      class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 dqBieN"
+        class="StyledBox-sc-13pk1d4-0 kpwHpK"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bokefz"
+          class="StyledBox-sc-13pk1d4-0 fijLVp"
         >
           <img
-            class="StyledImage-ey4zx9-0 fmkmCl"
+            class="StyledImage-ey4zx9-0 gtXVuX"
             src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 zZZtW"
+      class="StyledStack__StyledStackLayer-ajspsk-1 eFfYoG"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 dqBieN"
+        class="StyledBox-sc-13pk1d4-0 kpwHpK"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 lcSSFj"
+          class="StyledBox-sc-13pk1d4-0 fyNJTz"
         >
           <img
-            class="StyledImage-ey4zx9-0 fmkmCl"
+            class="StyledImage-ey4zx9-0 gtXVuX"
             src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 ekmpaB"
+      class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jrOMEy"
+        class="StyledBox-sc-13pk1d4-0 iLSfXS"
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 hgsmht"
+          class="StyledButton-sc-323bzc-0 ccwczA"
           type="button"
         >
           <svg
             aria-label="Previous"
-            class="StyledIcon-ofa7kd-0 iOkQrb"
+            class="StyledIcon-ofa7kd-0 jXwebn"
             viewBox="0 0 24 24"
           >
             <polyline
@@ -1568,18 +1297,18 @@ exports[`Carousel navigate 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 kqKhFd"
+          class="StyledBox-sc-13pk1d4-0 idXMGj"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 NzzAu"
+            class="StyledBox-sc-13pk1d4-0 jmTzhV"
           >
             <button
-              class="StyledButton-sc-323bzc-0 lgwBfH"
+              class="StyledButton-sc-323bzc-0 tdSht"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 iOkQrb"
+                class="StyledIcon-ofa7kd-0 jXwebn"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1591,12 +1320,12 @@ exports[`Carousel navigate 2`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 lgwBfH"
+              class="StyledButton-sc-323bzc-0 tdSht"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 dSllCE"
+                class="StyledIcon-ofa7kd-0 kbXEEj"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1610,13 +1339,13 @@ exports[`Carousel navigate 2`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 kbrpgv"
+          class="StyledButton-sc-323bzc-0 khdMiC"
           disabled=""
           type="button"
         >
           <svg
             aria-label="Next"
-            class="StyledIcon-ofa7kd-0 iOkQrb"
+            class="StyledIcon-ofa7kd-0 jXwebn"
             viewBox="0 0 24 24"
           >
             <polyline
@@ -1635,59 +1364,59 @@ exports[`Carousel navigate 2`] = `
 
 exports[`Carousel navigate 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
+  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <div
-    class="StyledStack-ajspsk-0 cBSAEZ"
+    class="StyledStack-ajspsk-0 liEjfH"
     data-testid="test-carousel"
   >
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 zZZtW"
+      class="StyledStack__StyledStackLayer-ajspsk-1 eFfYoG"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 dqBieN"
+        class="StyledBox-sc-13pk1d4-0 kpwHpK"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 blUujK"
+          class="StyledBox-sc-13pk1d4-0 dGhOz"
         >
           <img
-            class="StyledImage-ey4zx9-0 fmkmCl"
+            class="StyledImage-ey4zx9-0 gtXVuX"
             src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 ekmpaB"
+      class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 dqBieN"
+        class="StyledBox-sc-13pk1d4-0 kpwHpK"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bokefz"
+          class="StyledBox-sc-13pk1d4-0 fijLVp"
         >
           <img
-            class="StyledImage-ey4zx9-0 fmkmCl"
+            class="StyledImage-ey4zx9-0 gtXVuX"
             src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 ekmpaB"
+      class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jrOMEy"
+        class="StyledBox-sc-13pk1d4-0 iLSfXS"
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 kbrpgv"
+          class="StyledButton-sc-323bzc-0 khdMiC"
           disabled=""
           type="button"
         >
           <svg
             aria-label="Previous"
-            class="StyledIcon-ofa7kd-0 iOkQrb"
+            class="StyledIcon-ofa7kd-0 jXwebn"
             viewBox="0 0 24 24"
           >
             <polyline
@@ -1700,18 +1429,18 @@ exports[`Carousel navigate 3`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 kqKhFd"
+          class="StyledBox-sc-13pk1d4-0 idXMGj"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 NzzAu"
+            class="StyledBox-sc-13pk1d4-0 jmTzhV"
           >
             <button
-              class="StyledButton-sc-323bzc-0 lgwBfH"
+              class="StyledButton-sc-323bzc-0 tdSht"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 dSllCE"
+                class="StyledIcon-ofa7kd-0 kbXEEj"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1723,12 +1452,12 @@ exports[`Carousel navigate 3`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 lgwBfH"
+              class="StyledButton-sc-323bzc-0 tdSht"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 iOkQrb"
+                class="StyledIcon-ofa7kd-0 jXwebn"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1742,12 +1471,12 @@ exports[`Carousel navigate 3`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 hgsmht"
+          class="StyledButton-sc-323bzc-0 ccwczA"
           type="button"
         >
           <svg
             aria-label="Next"
-            class="StyledIcon-ofa7kd-0 iOkQrb"
+            class="StyledIcon-ofa7kd-0 jXwebn"
             viewBox="0 0 24 24"
           >
             <polyline
@@ -1849,15 +1578,12 @@ exports[`Carousel play 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: hidden;
 }
 
@@ -1867,15 +1593,12 @@ exports[`Carousel play 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c6 {
@@ -1884,18 +1607,15 @@ exports[`Carousel play 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   opacity: 1;
-  -webkit-animation: iyuEas 1s 0s forwards;
-  animation: iyuEas 1s 0s forwards;
+  -webkit-animation: hftlBD 1s 0s forwards;
+  animation: hftlBD 1s 0s forwards;
 }
 
 .c7 {
@@ -1904,9 +1624,7 @@ exports[`Carousel play 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -1918,7 +1636,6 @@ exports[`Carousel play 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0px;
 }
 
 .c10 {
@@ -1927,9 +1644,7 @@ exports[`Carousel play 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1939,7 +1654,6 @@ exports[`Carousel play 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  padding: 0px;
 }
 
 .c11 {
@@ -1948,9 +1662,7 @@ exports[`Carousel play 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -1960,14 +1672,12 @@ exports[`Carousel play 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 0px;
 }
 
 .c8 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1976,6 +1686,7 @@ exports[`Carousel play 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1989,7 +1700,6 @@ exports[`Carousel play 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1998,6 +1708,7 @@ exports[`Carousel play 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -2009,7 +1720,6 @@ exports[`Carousel play 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -2018,6 +1728,7 @@ exports[`Carousel play 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -2027,7 +1738,6 @@ exports[`Carousel play 1`] = `
 
 .c14:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
   color: #000000;
 }
 
@@ -2046,78 +1756,6 @@ exports[`Carousel play 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c11 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c11 {
-    padding: 0px;
-  }
 }
 
 <div
@@ -2251,57 +1889,57 @@ exports[`Carousel play 1`] = `
 
 exports[`Carousel play 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
+  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <div
-    class="StyledStack-ajspsk-0 cBSAEZ"
+    class="StyledStack-ajspsk-0 liEjfH"
   >
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 ekmpaB"
+      class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 dqBieN"
+        class="StyledBox-sc-13pk1d4-0 kpwHpK"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bokefz"
+          class="StyledBox-sc-13pk1d4-0 fijLVp"
         >
           <img
-            class="StyledImage-ey4zx9-0 fmkmCl"
+            class="StyledImage-ey4zx9-0 gtXVuX"
             src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 zZZtW"
+      class="StyledStack__StyledStackLayer-ajspsk-1 eFfYoG"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 dqBieN"
+        class="StyledBox-sc-13pk1d4-0 kpwHpK"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 lcSSFj"
+          class="StyledBox-sc-13pk1d4-0 fyNJTz"
         >
           <img
-            class="StyledImage-ey4zx9-0 fmkmCl"
+            class="StyledImage-ey4zx9-0 gtXVuX"
             src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 ekmpaB"
+      class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jrOMEy"
+        class="StyledBox-sc-13pk1d4-0 iLSfXS"
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 hgsmht"
+          class="StyledButton-sc-323bzc-0 ccwczA"
           type="button"
         >
           <svg
             aria-label="Previous"
-            class="StyledIcon-ofa7kd-0 iOkQrb"
+            class="StyledIcon-ofa7kd-0 jXwebn"
             viewBox="0 0 24 24"
           >
             <polyline
@@ -2314,18 +1952,18 @@ exports[`Carousel play 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 kqKhFd"
+          class="StyledBox-sc-13pk1d4-0 idXMGj"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 NzzAu"
+            class="StyledBox-sc-13pk1d4-0 jmTzhV"
           >
             <button
-              class="StyledButton-sc-323bzc-0 lgwBfH"
+              class="StyledButton-sc-323bzc-0 tdSht"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 iOkQrb"
+                class="StyledIcon-ofa7kd-0 jXwebn"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -2337,12 +1975,12 @@ exports[`Carousel play 2`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 lgwBfH"
+              class="StyledButton-sc-323bzc-0 tdSht"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 dSllCE"
+                class="StyledIcon-ofa7kd-0 kbXEEj"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -2356,13 +1994,13 @@ exports[`Carousel play 2`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 kbrpgv"
+          class="StyledButton-sc-323bzc-0 khdMiC"
           disabled=""
           type="button"
         >
           <svg
             aria-label="Next"
-            class="StyledIcon-ofa7kd-0 iOkQrb"
+            class="StyledIcon-ofa7kd-0 jXwebn"
             viewBox="0 0 24 24"
           >
             <polyline

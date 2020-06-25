@@ -36,6 +36,7 @@ const StyledCheckBoxContainer = styled.label`
   flex-direction: row;
   align-items: center;
   user-select: none;
+  width: fit-content;
   ${props => props.disabled && disabledStyle}
   ${props => !props.disabled && 'cursor: pointer;'}
   ${props => props.theme.checkBox.hover.border.color && hoverStyle}
@@ -66,7 +67,7 @@ StyledCheckBoxInput.defaultProps = {};
 Object.setPrototypeOf(StyledCheckBoxInput.defaultProps, defaultProps);
 
 const StyledCheckBoxBox = styled.div`
-  ${props => props.focus && focusStyle};
+  ${props => props.focus && focusStyle()};
   ${props => props.theme.checkBox.check.extend};
 `;
 
@@ -88,7 +89,7 @@ const StyledCheckBoxToggle = styled.span`
       ? normalizeColor(props.theme.checkBox.toggle.background, props.theme)
       : 'transparent'};
 
-  ${props => props.focus && focusStyle};
+  ${props => props.focus && focusStyle()};
   ${props => props.theme.checkBox.toggle.extend};
 `;
 

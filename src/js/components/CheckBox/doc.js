@@ -29,7 +29,8 @@ export const doc = CheckBox => {
       'Label text to place next to the control.',
     ),
     name: PropTypes.string.description(
-      'The DOM name attribute value to use for the underlying <input/> element.',
+      `The DOM name attribute value to use for the underlying <input/> 
+      element.`,
     ),
     onChange: PropTypes.func.description(
       `Function that will be called when the user clicks the check box. It
@@ -154,6 +155,6 @@ export const themeDoc = {
   'checkBox.toggle.size': {
     description: 'The width size of the toggle.',
     type: 'string',
-    defaultValue: '42px',
+    defaultValue: '48px',
   },
 };

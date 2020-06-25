@@ -40,6 +40,12 @@ export const doc = RangeInput => {
 
 export const themeDoc = {
   ...themeDocUtils.focusStyle,
+  'global.colors.border': {
+    description: 'The color used for rangeInput.track.color.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue:
+      '{ dark: rgba(255, 255, 255, 0.33), light: rgba(0, 0, 0, 0.33) }',
+  },
   'global.spacing': {
     description: 'The height, width and border-radius of the range thumb.',
     type: 'string',
@@ -47,7 +53,9 @@ export const themeDoc = {
   },
   'rangeInput.extend': {
     description: 'Any additional style for the RangeInput.',
-    type: 'string | (props) => {}',
+    type: `string | (props) => \`
+      any CSS styling;
+    \``,
     defaultValue: undefined,
   },
   'rangeInput.thumb.color': {
@@ -62,13 +70,39 @@ export const themeDoc = {
   },
   'rangeInput.track.color': {
     description: 'The color of the track.',
-    type: 'string',
-    defaultValue:
-      '{ dark: rgba(255, 255, 255, 0.33), light: rgba(0, 0, 0, 0.33) }',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: 'border',
+  },
+  'rangeInput.track.opacity': {
+    description: 'The opacity of the track color.',
+    type: 'string | number',
+    defaultValue: undefined,
+  },
+  'rangeInput.track.lower.color': {
+    description: 'The color of the lower bound track.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'rangeInput.track.lower.opacity': {
+    description: 'The opacity on the lower bound track color.',
+    type: 'string | number',
+    defaultValue: undefined,
+  },
+  'rangeInput.track.upper.color': {
+    description: 'The color of the upper track.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'rangeInput.track.upper.opacity': {
+    description: 'The opacity on the upper track color.',
+    type: 'string | number',
+    defaultValue: undefined,
   },
   'rangeInput.track.extend': {
     description: 'Any additional style for the track.',
-    type: 'string | (props) => {}',
+    type: `string | (props) => \`
+      any CSS styling;
+    \``,
     defaultValue: undefined,
   },
   'rangeInput.track.height': {

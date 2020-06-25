@@ -2,6 +2,56 @@ import { describe, PropTypes } from 'react-desc';
 
 import { genericProps, getAvailableAtBadge } from '../../utils';
 
+const sizes = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
+const sides = ['horizontal', 'vertical', 'top', 'bottom', 'left', 'right'];
+const parts = ['header', 'body', 'footer'];
+
+const padShapeSides = {};
+sides.forEach(side => {
+  padShapeSides[side] = PropTypes.oneOf(sizes);
+});
+
+const padShapeParts = {};
+parts.forEach(part => {
+  padShapeParts[part] = {};
+  sides.forEach(side => {
+    padShapeParts[part][side] = PropTypes.oneOf(sizes);
+  });
+});
+
+const backgroundShape = {};
+parts.forEach(part => {
+  backgroundShape[part] = PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.shape({
+      dark: PropTypes.string,
+      light: PropTypes.string,
+    }),
+    PropTypes.arrayOf(PropTypes.string),
+  ]);
+});
+
+const borderTypes = [
+  PropTypes.bool,
+  PropTypes.oneOf(sides),
+  PropTypes.shape({
+    color: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.shape({
+        dark: PropTypes.string,
+        light: PropTypes.string,
+      }),
+    ]),
+    side: PropTypes.oneOf(sides),
+    size: PropTypes.oneOfType([PropTypes.oneOf(sizes), PropTypes.string]),
+  }),
+];
+
+const borderShape = {};
+parts.forEach(part => {
+  borderShape[part] = PropTypes.oneOfType(borderTypes);
+});
+
 export const doc = DataTable => {
   const DocumentedDataTable = describe(DataTable)
     .availableAt(getAvailableAtBadge('DataTable'))
@@ -14,6 +64,22 @@ export const doc = DataTable => {
 
   DocumentedDataTable.propTypes = {
     ...genericProps,
+    background: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.arrayOf(PropTypes.string),
+      PropTypes.shape(backgroundShape),
+    ]).description(
+      `Cell background. You can set the background per context by passing an
+      object with keys for 'heading', 'body', and/or 'footer'. If you pass
+      an array, rows will cycle between the array values.`,
+    ),
+    border: PropTypes.oneOfType([
+      ...borderTypes,
+      PropTypes.shape(borderShape),
+    ]).description(
+      `Cell border. You can set the border per context by passing an
+      object with keys for 'heading', 'body', and/or 'footer'.`,
+    ),
     columns: PropTypes.arrayOf(
       PropTypes.shape({
         align: PropTypes.oneOf(['center', 'start', 'end']),
@@ -36,6 +102,22 @@ export const doc = DataTable => {
         render: PropTypes.func,
         search: PropTypes.bool,
         sortable: PropTypes.bool,
+        size: PropTypes.oneOfType([
+          PropTypes.oneOf([
+            'small',
+            'medium',
+            'large',
+            'xlarge',
+            '1/2',
+            '1/4',
+            '2/4',
+            '3/4',
+            '1/3',
+            '2/3',
+          ]),
+          PropTypes.string,
+        ]),
+        verticalAlign: PropTypes.oneOf(['middle', 'top', 'bottom']),
       }),
     ).description(
       `A description of the data. The order controls the column order.
@@ -56,7 +138,18 @@ export const doc = DataTable => {
     data: PropTypes.arrayOf(PropTypes.shape({})).description(
       'Array of data objects.',
     ),
-    groupBy: PropTypes.string.description('Property to group data by.'),
+    groupBy: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.shape({
+        property: PropTypes.string,
+        expand: PropTypes.arrayOf(PropTypes.string),
+        onExpand: PropTypes.func,
+      }),
+    ]).description(`Property to group data by. If object is specified
+      'property' is used to group data by, 'expand' accepts array of 
+       group keys that sets expanded groups and 'onExpand' is a function
+       that will be called after expand button is clicked with
+       an array of keys of expanded groups.`),
     onMore: PropTypes.func.description(
       `Use this to indicate that 'data' doesn't contain all that it could.
       It will be called when all of the data rows have been rendered.
@@ -64,7 +157,14 @@ export const doc = DataTable => {
       is more than you'd want to load into the browser. 'onMore' allows you
       to lazily fetch more from the server only when needed. This cannot
       be combined with properties that expect all data to be present in the
-      browser, such as columns.search, sortable, groupBy, or columns.aggregate.`,
+      browser, such as columns.search, sortable, groupBy, or 
+      columns.aggregate.`,
+    ),
+    replace: PropTypes.bool.description(
+      `Whether to replace previously rendered items with a generic spacing
+      element when they have scrolled out of view. This is more performant but
+      means that in-page searching will not find elements that have been
+      replaced.`,
     ),
     onClickRow: PropTypes.func.description(
       `When supplied, this function will be called with an event object that
@@ -79,14 +179,40 @@ export const doc = DataTable => {
       names and values which are the search text strings. This is typically
       employed so a back-end can be used to search through the data.`,
     ),
-    primaryKey: PropTypes.string.description(
+    onSort: PropTypes.func.description(
+      `When supplied, this function will be called with an object
+      with a 'property' property that indicates which property
+      is being sorted on and a 'direction' property that will either be
+      'asc' or 'desc'. onSort={({ property, direction }) => {}}`,
+    ),
+    pad: PropTypes.oneOfType([
+      PropTypes.oneOf(sizes),
+      PropTypes.string,
+      PropTypes.shape(padShapeSides),
+      PropTypes.shape(padShapeParts),
+    ]).description(
+      `Cell padding. You can set the padding per context by passing an
+      object with keys for 'heading', 'body', and/or 'footer'.`,
+    ),
+    primaryKey: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.bool,
+    ]).description(
       `When supplied, indicates the property for a data object to use to
       get a unique identifier. See also the 'columns.primary' description.
       Use this property when the columns approach will not work for your
-      data set.`,
+      data set. Setting primaryKey to false indicates there should be no
+      unique identifier, avoid this as it's less accessible.`,
     ),
     resizeable: PropTypes.bool.description(
       'Whether to allow the user to resize column widths.',
+    ),
+    rowProps: PropTypes.shape({}).description(
+      `Row specific background, border, and pad, keyed by primary key value.
+      For example:
+      { "primary-key-value": { background: ..., border: ..., pad: ... }},
+      where the background, border, and pad accept the same values as
+      the same named properties on DataTable.`,
     ),
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
@@ -97,6 +223,10 @@ export const doc = DataTable => {
       header and footer cell alignment, all cells will have the same
       width. This cannot be used in combination with 'resizeable'.`,
     ),
+    sort: PropTypes.shape({
+      direction: PropTypes.oneOf(['asc', 'desc']),
+      property: PropTypes.string.isRequired,
+    }).description('Which property to sort on and which direction to sort.'),
     sortable: PropTypes.bool.description(
       'Whether to allow the user to sort columns.',
     ),

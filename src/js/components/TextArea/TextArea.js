@@ -1,36 +1,70 @@
-import React, { Component } from 'react';
-import { compose } from 'recompose';
+import React, { forwardRef, useContext, useState } from 'react';
 
+import { FormContext } from '../Form/FormContext';
 import { Keyboard } from '../Keyboard';
-import { withFocus, withForwardRef } from '../hocs';
 
 import { StyledTextArea } from './StyledTextArea';
 
-class TextArea extends Component {
-  onEsc = event => {
-    // we have to stop both synthetic events and native events
-    // drop and layer should not close by pressing esc on this input
-    event.stopPropagation();
-    event.nativeEvent.stopImmediatePropagation();
-  };
+const TextArea = forwardRef(
+  (
+    {
+      fill,
+      name,
+      onBlur,
+      onChange,
+      onFocus,
+      onKeyDown,
+      value: valueProp,
+      ...rest
+    },
+    ref,
+  ) => {
+    const formContext = useContext(FormContext);
+    const [value, setValue] = formContext.useFormInput(name, valueProp);
+    const [focus, setFocus] = useState();
 
-  render() {
-    const { fill, forwardRef, ...rest } = this.props;
     return (
-      <Keyboard onEsc={this.onEsc}>
-        <StyledTextArea ref={forwardRef} fillArg={fill} {...rest} />
+      <Keyboard
+        onEsc={event => {
+          // we have to stop both synthetic events and native events
+          // drop and layer should not close by pressing esc on this input
+          event.stopPropagation();
+          event.nativeEvent.stopImmediatePropagation();
+        }}
+        onKeyDown={onKeyDown}
+      >
+        <StyledTextArea
+          ref={ref}
+          name={name}
+          fillArg={fill}
+          focus={focus}
+          value={value}
+          {...rest}
+          onFocus={event => {
+            setFocus(true);
+            if (onFocus) onFocus(event);
+          }}
+          onBlur={event => {
+            setFocus(false);
+            if (onBlur) onBlur(event);
+          }}
+          onChange={event => {
+            setValue(event.target.value);
+            if (onChange) onChange(event);
+          }}
+        />
       </Keyboard>
     );
-  }
-}
+  },
+);
+
+TextArea.displayName = 'TextArea';
 
 let TextAreaDoc;
 if (process.env.NODE_ENV !== 'production') {
-  TextAreaDoc = require('./doc').doc(TextArea); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  TextAreaDoc = require('./doc').doc(TextArea);
 }
-const TextAreaWrapper = compose(
-  withFocus({ focusWithMouse: true }),
-  withForwardRef,
-)(TextAreaDoc || TextArea);
+const TextAreaWrapper = TextAreaDoc || TextArea;
 
 export { TextAreaWrapper as TextArea };

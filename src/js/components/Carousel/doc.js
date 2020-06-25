@@ -55,8 +55,8 @@ export const themeDoc = {
     defaultValue: '<Previous />',
   },
   'carousel.icons.current': {
-    description:
-      'The icon to use on the middle navigation control. One icon per carousel image.',
+    description: `The icon to use on the middle navigation control. 
+      One icon per carousel image.`,
     type: 'element',
     defaultValue: '<Next />',
   },
@@ -70,13 +70,6 @@ export const themeDoc = {
     type: "string | { 'dark': string, 'light': string }",
     defaultValue: undefined,
   },
-  'global.colors.icon': {
-    description: 'The color used for Carousel icons.',
-    type: "string | { 'dark': string, 'light': string }",
-    defaultValue: {
-      dark: '#f8f8f8',
-      light: '#666666',
-    },
-  },
+  ...themeDocUtils.iconColor,
   ...themeDocUtils.edgeStyle('The possible sizes for margin.'),
 };

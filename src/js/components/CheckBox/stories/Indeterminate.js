@@ -1,62 +1,53 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, CheckBox } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-class IndeterminateCheckBox extends Component {
-  state = {
-    checked: [],
-    checkboxes: ['fruits', 'vegetables', 'olive oil'],
-  };
+const IndeterminateCheckBox = () => {
+  const [checked, setChecked] = useState([]);
+  const checkboxes = ['fruits', 'vegetables', 'olive oil'];
 
-  onCheckAll = event => {
-    const { checkboxes } = this.state;
+  const onCheckAll = event => {
     if (event.target.checked) {
-      this.setState({ checked: checkboxes });
+      setChecked(checkboxes);
     } else {
-      this.setState({ checked: [] });
+      setChecked([]);
     }
   };
 
-  onCheck = (event, value) => {
-    const { checked } = this.state;
+  const onCheck = (event, value) => {
     if (event.target.checked) {
-      checked.push(value);
-      this.setState({ checked });
+      setChecked([...checked, value]);
     } else {
-      this.setState({ checked: checked.filter(item => item !== value) });
+      setChecked(checked.filter(item => item !== value));
     }
   };
 
-  render() {
-    const { checked, checkboxes } = this.state;
-
-    return (
-      <Grommet theme={grommet}>
-        <Box align="center" pad="large">
-          <Box direction="row" gap="medium">
+  return (
+    <Grommet theme={grommet}>
+      <Box align="center" pad="large">
+        <Box direction="row" gap="medium">
+          <CheckBox
+            checked={checked.length === 3}
+            indeterminate={checked.length > 0 && checked.length < 3}
+            label="All"
+            onChange={onCheckAll}
+          />
+          {checkboxes.map(item => (
             <CheckBox
-              checked={checked.length === 3}
-              indeterminate={checked.length > 0 && checked.length < 3}
-              label="All"
-              onChange={this.onCheckAll}
+              key={item}
+              checked={checked.includes(item)}
+              label={item}
+              onChange={e => onCheck(e, item)}
             />
-            {checkboxes.map(item => (
-              <CheckBox
-                key={item}
-                checked={checked.indexOf(item) !== -1}
-                label={item}
-                onChange={e => this.onCheck(e, item)}
-              />
-            ))}
-          </Box>
+          ))}
         </Box>
-      </Grommet>
-    );
-  }
-}
+      </Box>
+    </Grommet>
+  );
+};
 
-storiesOf('CheckBox', module).add('Interminate', () => (
+storiesOf('CheckBox', module).add('Indeterminate', () => (
   <IndeterminateCheckBox />
 ));

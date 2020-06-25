@@ -1,26 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Drop align left left 1`] = `
-.c1 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c0 {
+.c1 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -32,32 +29,20 @@ exports[`Drop align left left 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: bottom left;
   -ms-transform-origin: bottom left;
   transform-origin: bottom left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c0 {
+  .c1 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -71,6 +56,7 @@ exports[`Drop align left left 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="drop-node"
   style="max-height: 0px; left: 0px; width: 0.1px; bottom: 768px;"
   tabindex="-1"
@@ -80,89 +66,23 @@ exports[`Drop align left left 1`] = `
 `;
 
 exports[`Drop align left left 2`] = `
-".fLlzie {
+".glPSfV {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    padding: 0px;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hEnyXU {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .eHyrwK {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-.jXYiUV {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: bottom left;
-  -ms-transform-origin: bottom left;
-  transform-origin: bottom left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .jXYiUV {
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -176,26 +96,23 @@ exports[`Drop align left left 2`] = `
 `;
 
 exports[`Drop align left right top bottom 1`] = `
-.c1 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c0 {
+.c1 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -207,32 +124,20 @@ exports[`Drop align left right top bottom 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c0 {
+  .c1 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -246,6 +151,7 @@ exports[`Drop align left right top bottom 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -255,38 +161,22 @@ exports[`Drop align left right top bottom 1`] = `
 `;
 
 exports[`Drop align left right top bottom 2`] = `
-".fLlzie {
+".glPSfV {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    padding: 0px;
-  }
-}
-
-.hEnyXU {
+.kQAKuZ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -298,20 +188,19 @@ exports[`Drop align left right top bottom 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hEnyXU {
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -325,26 +214,23 @@ exports[`Drop align left right top bottom 2`] = `
 `;
 
 exports[`Drop align right left top top 1`] = `
-.c1 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c0 {
+.c1 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -356,32 +242,20 @@ exports[`Drop align right left top top 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top right;
   -ms-transform-origin: top right;
   transform-origin: top right;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c0 {
+  .c1 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -395,6 +269,7 @@ exports[`Drop align right left top top 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -404,102 +279,23 @@ exports[`Drop align right left top top 1`] = `
 `;
 
 exports[`Drop align right left top top 2`] = `
-".fLlzie {
+".glPSfV {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    padding: 0px;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hEnyXU {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .eHyrwK {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .jXYiUV {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-.hMjlCH {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top right;
-  -ms-transform-origin: top right;
-  transform-origin: top right;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hMjlCH {
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -513,26 +309,23 @@ exports[`Drop align right left top top 2`] = `
 `;
 
 exports[`Drop align right right 1`] = `
-.c1 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c0 {
+.c1 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -544,32 +337,20 @@ exports[`Drop align right right 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top right;
   -ms-transform-origin: top right;
   transform-origin: top right;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c0 {
+  .c1 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -583,6 +364,7 @@ exports[`Drop align right right 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -592,102 +374,23 @@ exports[`Drop align right right 1`] = `
 `;
 
 exports[`Drop align right right 2`] = `
-".fLlzie {
+".glPSfV {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    padding: 0px;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hEnyXU {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .eHyrwK {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .jXYiUV {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-.hMjlCH {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top right;
-  -ms-transform-origin: top right;
-  transform-origin: top right;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hMjlCH {
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -701,26 +404,23 @@ exports[`Drop align right right 2`] = `
 `;
 
 exports[`Drop align right right bottom top 1`] = `
-.c1 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c0 {
+.c1 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -732,32 +432,20 @@ exports[`Drop align right right bottom top 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: bottom right;
   -ms-transform-origin: bottom right;
   transform-origin: bottom right;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c0 {
+  .c1 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -771,6 +459,7 @@ exports[`Drop align right right bottom top 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="drop-node"
   style="max-height: 0px; left: 0px; width: 0.1px; bottom: 768px;"
   tabindex="-1"
@@ -780,76 +469,23 @@ exports[`Drop align right right bottom top 1`] = `
 `;
 
 exports[`Drop align right right bottom top 2`] = `
-".fLlzie {
+".glPSfV {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    padding: 0px;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hEnyXU {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-.eHyrwK {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: bottom right;
-  -ms-transform-origin: bottom right;
-  transform-origin: bottom right;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .eHyrwK {
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -863,26 +499,23 @@ exports[`Drop align right right bottom top 2`] = `
 `;
 
 exports[`Drop align right right bottom top 3`] = `
-.c1 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c0 {
+.c1 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -894,32 +527,20 @@ exports[`Drop align right right bottom top 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: bottom right;
   -ms-transform-origin: bottom right;
   transform-origin: bottom right;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c0 {
+  .c1 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -933,6 +554,7 @@ exports[`Drop align right right bottom top 3`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="drop-node"
   style="max-height: 0px; left: 0px; width: 0.1px; bottom: 768px;"
   tabindex="-1"
@@ -942,102 +564,23 @@ exports[`Drop align right right bottom top 3`] = `
 `;
 
 exports[`Drop align right right bottom top 4`] = `
-".fLlzie {
+".glPSfV {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    padding: 0px;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hEnyXU {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-.eHyrwK {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: bottom right;
-  -ms-transform-origin: bottom right;
-  transform-origin: bottom right;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .eHyrwK {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .jXYiUV {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hMjlCH {
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1051,26 +594,23 @@ exports[`Drop align right right bottom top 4`] = `
 `;
 
 exports[`Drop basic 1`] = `
-.c1 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c0 {
+.c1 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1082,32 +622,20 @@ exports[`Drop basic 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c0 {
+  .c1 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1121,6 +649,7 @@ exports[`Drop basic 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -1130,38 +659,22 @@ exports[`Drop basic 1`] = `
 `;
 
 exports[`Drop basic 2`] = `
-".fLlzie {
+".glPSfV {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    padding: 0px;
-  }
-}
-
-.hEnyXU {
+.kQAKuZ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1173,20 +686,19 @@ exports[`Drop basic 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hEnyXU {
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1200,26 +712,23 @@ exports[`Drop basic 2`] = `
 `;
 
 exports[`Drop close 1`] = `
-.c1 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c0 {
+.c1 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1231,32 +740,20 @@ exports[`Drop close 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c0 {
+  .c1 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1270,6 +767,7 @@ exports[`Drop close 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -1279,38 +777,22 @@ exports[`Drop close 1`] = `
 `;
 
 exports[`Drop close 2`] = `
-".fLlzie {
+".glPSfV {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    padding: 0px;
-  }
-}
-
-.hEnyXU {
+.kQAKuZ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1322,59 +804,19 @@ exports[`Drop close 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hEnyXU {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .eHyrwK {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .jXYiUV {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hMjlCH {
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1388,26 +830,23 @@ exports[`Drop close 2`] = `
 `;
 
 exports[`Drop default elevation renders 1`] = `
-.c1 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c0 {
+.c1 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1419,32 +858,20 @@ exports[`Drop default elevation renders 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c0 {
+  .c1 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1458,6 +885,7 @@ exports[`Drop default elevation renders 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
   tabindex="-1"
@@ -1467,38 +895,22 @@ exports[`Drop default elevation renders 1`] = `
 `;
 
 exports[`Drop default elevation renders 2`] = `
-".fLlzie {
+".glPSfV {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    padding: 0px;
-  }
-}
-
-.hEnyXU {
+.kQAKuZ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1510,59 +922,19 @@ exports[`Drop default elevation renders 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hEnyXU {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .eHyrwK {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .jXYiUV {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hMjlCH {
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1576,26 +948,23 @@ exports[`Drop default elevation renders 2`] = `
 `;
 
 exports[`Drop invalid align 1`] = `
-.c1 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c0 {
+.c1 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1607,32 +976,20 @@ exports[`Drop invalid align 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c0 {
+  .c1 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1646,6 +1003,7 @@ exports[`Drop invalid align 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -1655,38 +1013,22 @@ exports[`Drop invalid align 1`] = `
 `;
 
 exports[`Drop invalid align 2`] = `
-".fLlzie {
+".glPSfV {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    padding: 0px;
-  }
-}
-
-.hEnyXU {
+.kQAKuZ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1698,59 +1040,19 @@ exports[`Drop invalid align 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hEnyXU {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .eHyrwK {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .jXYiUV {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hMjlCH {
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1764,26 +1066,23 @@ exports[`Drop invalid align 2`] = `
 `;
 
 exports[`Drop invoke onClickOutside 1`] = `
-.c1 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c0 {
+.c1 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1795,32 +1094,20 @@ exports[`Drop invoke onClickOutside 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c0 {
+  .c1 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1834,6 +1121,7 @@ exports[`Drop invoke onClickOutside 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -1843,38 +1131,22 @@ exports[`Drop invoke onClickOutside 1`] = `
 `;
 
 exports[`Drop invoke onClickOutside 2`] = `
-".fLlzie {
+".glPSfV {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    padding: 0px;
-  }
-}
-
-.hEnyXU {
+.kQAKuZ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1886,59 +1158,19 @@ exports[`Drop invoke onClickOutside 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hEnyXU {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .eHyrwK {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .jXYiUV {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hMjlCH {
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1952,26 +1184,23 @@ exports[`Drop invoke onClickOutside 2`] = `
 `;
 
 exports[`Drop no stretch 1`] = `
-.c1 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c0 {
+.c1 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1983,32 +1212,20 @@ exports[`Drop no stretch 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c0 {
+  .c1 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2022,6 +1239,7 @@ exports[`Drop no stretch 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="drop-node"
   style="left: 0px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -2031,38 +1249,22 @@ exports[`Drop no stretch 1`] = `
 `;
 
 exports[`Drop no stretch 2`] = `
-".fLlzie {
+".glPSfV {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    padding: 0px;
-  }
-}
-
-.hEnyXU {
+.kQAKuZ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2074,59 +1276,19 @@ exports[`Drop no stretch 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hEnyXU {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .eHyrwK {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .jXYiUV {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hMjlCH {
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2140,25 +1302,22 @@ exports[`Drop no stretch 2`] = `
 `;
 
 exports[`Drop plain renders 1`] = `
-.c1 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
 }
 
-.c0 {
+.c1 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2174,26 +1333,14 @@ exports[`Drop plain renders 1`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c0 {
+  .c1 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2207,6 +1354,7 @@ exports[`Drop plain renders 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
   tabindex="-1"
@@ -2216,148 +1364,8 @@ exports[`Drop plain renders 1`] = `
 `;
 
 exports[`Drop plain renders 2`] = `
-"@media only screen and (max-width:768px) {
-  .fLlzie {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .kgdIeJ {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .kgdIeJ {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hhpKNB {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hhpKNB {
-    padding: 0px;
-  }
-}
-
-.cwrzZU {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 0px;
-  overflow: auto;
-}
-
-@media only screen and (max-width:768px) {
-  .cwrzZU {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .cwrzZU {
-    padding: 0px;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hEnyXU {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .eHyrwK {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .jXYiUV {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hMjlCH {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-.fpgzpv {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .fpgzpv {
+"@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2371,26 +1379,23 @@ exports[`Drop plain renders 2`] = `
 `;
 
 exports[`Drop props elevation renders 1`] = `
-.c1 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 4px 8px rgba(0,0,0,0.20);
 }
 
-.c0 {
+.c1 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2402,32 +1407,20 @@ exports[`Drop props elevation renders 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c0 {
+  .c1 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2441,6 +1434,7 @@ exports[`Drop props elevation renders 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
   tabindex="-1"
@@ -2450,62 +1444,7 @@ exports[`Drop props elevation renders 1`] = `
 `;
 
 exports[`Drop props elevation renders 2`] = `
-"@media only screen and (max-width:768px) {
-  .fLlzie {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .kgdIeJ {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .kgdIeJ {
-    padding: 0px;
-  }
-}
-
-.hhpKNB {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 0px;
-  overflow: auto;
-  box-shadow: 0px 4px 8px rgba(0,0,0,0.20);
-}
-
-@media only screen and (max-width:768px) {
-  .hhpKNB {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hhpKNB {
-    padding: 0px;
-  }
-}
-
-.hEnyXU {
+".kQAKuZ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2517,59 +1456,19 @@ exports[`Drop props elevation renders 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hEnyXU {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .eHyrwK {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .jXYiUV {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hMjlCH {
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2583,26 +1482,23 @@ exports[`Drop props elevation renders 2`] = `
 `;
 
 exports[`Drop resize 1`] = `
-.c1 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c0 {
+.c1 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2614,32 +1510,20 @@ exports[`Drop resize 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c0 {
+  .c1 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2653,6 +1537,7 @@ exports[`Drop resize 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
   tabindex="-1"
@@ -2662,38 +1547,22 @@ exports[`Drop resize 1`] = `
 `;
 
 exports[`Drop resize 2`] = `
-".fLlzie {
+".glPSfV {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    padding: 0px;
-  }
-}
-
-.hEnyXU {
+.kQAKuZ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2705,59 +1574,19 @@ exports[`Drop resize 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hEnyXU {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .eHyrwK {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .jXYiUV {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hMjlCH {
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2771,26 +1600,23 @@ exports[`Drop resize 2`] = `
 `;
 
 exports[`Drop restrict focus 1`] = `
-.c1 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c0 {
+.c1 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2802,32 +1628,20 @@ exports[`Drop restrict focus 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c0 {
+  .c1 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2841,6 +1655,7 @@ exports[`Drop restrict focus 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
   tabindex="-1"
@@ -2851,7 +1666,8 @@ exports[`Drop restrict focus 1`] = `
 
 exports[`Drop restrict focus 2`] = `
 <div
-  class="StyledDrop-sc-16s5rx8-0 hEnyXU StyledBox-sc-13pk1d4-0 fLlzie"
+  class="StyledBox-sc-13pk1d4-0 glPSfV StyledDrop-sc-16s5rx8-0 kQAKuZ"
+  data-g-portal-id="0"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
   tabindex="-1"
@@ -2861,38 +1677,22 @@ exports[`Drop restrict focus 2`] = `
 `;
 
 exports[`Drop restrict focus 3`] = `
-".fLlzie {
+".glPSfV {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    padding: 0px;
-  }
-}
-
-.hEnyXU {
+.kQAKuZ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2904,59 +1704,19 @@ exports[`Drop restrict focus 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hEnyXU {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .eHyrwK {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .jXYiUV {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hMjlCH {
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2969,29 +1729,32 @@ exports[`Drop restrict focus 3`] = `
 }"
 `;
 
-exports[`Drop restrict focus 4`] = `<body />`;
+exports[`Drop restrict focus 4`] = `
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+<body />
+`;
 
 exports[`Drop theme elevation renders 1`] = `
-.c1 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 8px 16px rgba(0,0,0,0.20);
 }
 
-.c0 {
+.c1 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -3003,32 +1766,20 @@ exports[`Drop theme elevation renders 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c0 {
+  .c1 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3042,6 +1793,7 @@ exports[`Drop theme elevation renders 1`] = `
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
   tabindex="-1"
@@ -3051,50 +1803,7 @@ exports[`Drop theme elevation renders 1`] = `
 `;
 
 exports[`Drop theme elevation renders 2`] = `
-"@media only screen and (max-width:768px) {
-  .fLlzie {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    padding: 0px;
-  }
-}
-
-.kgdIeJ {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 0px;
-  overflow: auto;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.20);
-}
-
-@media only screen and (max-width:768px) {
-  .kgdIeJ {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .kgdIeJ {
-    padding: 0px;
-  }
-}
-
-.hEnyXU {
+".kQAKuZ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -3106,59 +1815,19 @@ exports[`Drop theme elevation renders 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hEnyXU {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .eHyrwK {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .jXYiUV {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hMjlCH {
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;

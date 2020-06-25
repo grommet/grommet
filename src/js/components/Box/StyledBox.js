@@ -4,11 +4,15 @@ import { defaultProps } from '../../default-props';
 
 import {
   backgroundStyle,
+  borderStyle,
   breakpointStyle,
   edgeStyle,
+  fillStyle,
+  focusStyle,
   genericStyles,
-  normalizeColor,
+  getHoverIndicatorStyle,
   overflowStyle,
+  parseMetricToNum,
 } from '../../utils';
 
 const ALIGN_MAP = {
@@ -87,12 +91,9 @@ const directionStyle = (direction, theme) => {
 
 const elevationStyle = css`
   box-shadow: ${props =>
-    props.theme.global.elevation[
-      (props.theme.dark && !props.theme.darkChanged) ||
-      (!props.theme.dark && props.theme.darkChanged)
-        ? 'dark'
-        : 'light'
-    ][props.elevationProp]};
+    props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][
+      props.elevationProp
+    ]};
 `;
 
 const FLEX_MAP = {
@@ -117,22 +118,6 @@ const flexStyle = css`
     }`};
 `;
 
-const fillStyle = fillProp => {
-  if (fillProp === 'horizontal') {
-    return 'width: 100%;';
-  }
-  if (fillProp === 'vertical') {
-    return 'height: 100%;';
-  }
-  if (fillProp) {
-    return `
-      width: 100%;
-      height: 100%;
-    `;
-  }
-  return undefined;
-};
-
 const JUSTIFY_MAP = {
   around: 'space-around',
   between: 'space-between',
@@ -154,84 +139,6 @@ const WRAP_MAP = {
 const wrapStyle = css`
   flex-wrap: ${props => WRAP_MAP[props.wrapProp]};
 `;
-
-const borderStyle = (data, responsive, theme) => {
-  const styles = [];
-  const color = normalizeColor(data.color || 'border', theme);
-  const borderSize = data.size || 'xsmall';
-  const style = data.style || 'solid';
-  const side = typeof data === 'string' ? data : data.side || 'all';
-  const value = `${style} ${theme.global.borderSize[borderSize] ||
-    borderSize} ${color}`;
-  const breakpoint =
-    theme.box.responsiveBreakpoint &&
-    theme.global.breakpoints[theme.box.responsiveBreakpoint];
-  const responsiveValue =
-    responsive &&
-    breakpoint &&
-    (breakpoint.borderSize[borderSize] || borderSize) &&
-    `${style} ${breakpoint.borderSize[borderSize] || borderSize} ${color}`;
-  if (
-    side === 'top' ||
-    side === 'bottom' ||
-    side === 'left' ||
-    side === 'right'
-  ) {
-    styles.push(css`border-${side}: ${value};`);
-    if (responsiveValue) {
-      styles.push(
-        breakpointStyle(
-          breakpoint,
-          `
-        border-${side}: ${responsiveValue};
-      `,
-        ),
-      );
-    }
-  } else if (side === 'vertical') {
-    styles.push(css`
-      border-left: ${value};
-      border-right: ${value};
-    `);
-    if (responsiveValue) {
-      styles.push(
-        breakpointStyle(
-          breakpoint,
-          `
-        border-left: ${responsiveValue};
-        border-right: ${responsiveValue};
-      `,
-        ),
-      );
-    }
-  } else if (side === 'horizontal') {
-    styles.push(css`
-      border-top: ${value};
-      border-bottom: ${value};
-    `);
-    if (responsiveValue) {
-      styles.push(
-        breakpointStyle(
-          breakpoint,
-          `
-        border-top: ${responsiveValue};
-        border-bottom: ${responsiveValue};
-      `,
-        ),
-      );
-    }
-  } else {
-    styles.push(
-      css`
-        border: ${value};
-      `,
-    );
-    if (responsiveValue) {
-      styles.push(breakpointStyle(breakpoint, `border: ${responsiveValue};`));
-    }
-  }
-  return styles;
-};
 
 const ROUND_MAP = {
   full: '100%',
@@ -411,6 +318,12 @@ const animationBounds = (type, size = 'medium') => {
   if (type === 'pulse') {
     return ['transform: scale(1);', `transform: scale(${PULSE_SIZES[size]})`];
   }
+  if (type === 'rotateRight') {
+    return [`transform: rotate(0deg);`, `transform: rotate(359deg);`];
+  }
+  if (type === 'rotateLeft') {
+    return [`transform: rotate(0deg);`, `transform: rotate(-359deg);`];
+  }
   if (type === 'flipIn') {
     return ['transform: rotateY(90deg);', 'transform: rotateY(0);'];
   }
@@ -459,6 +372,9 @@ const animationEnding = type => {
   }
   if (type === 'pulse') {
     return 'alternate infinite';
+  }
+  if (type === 'rotateRight' || type === 'rotateLeft') {
+    return 'infinite linear';
   }
   return 'forwards';
 };
@@ -545,6 +461,16 @@ const animationStyle = css`
   `};
 `;
 
+const interactiveStyle = css`
+  cursor: pointer;
+
+  &:hover {
+    ${props =>
+      props.hoverIndicator &&
+      getHoverIndicatorStyle(props.hoverIndicator, props.theme)}
+  }
+`;
+
 const getSize = (props, size) => props.theme.global.size[size] || size;
 
 const heightObjectStyle = css`
@@ -585,7 +511,6 @@ const widthStyle = css`
 const StyledBox = styled.div`
   display: flex;
   box-sizing: border-box;
-  outline: none;
   ${props => !props.basis && 'max-width: 100%;'};
 
   ${genericStyles}
@@ -593,7 +518,12 @@ const StyledBox = styled.div`
   ${props => props.alignContent && alignContentStyle}
   ${props => props.background && backgroundStyle(props.background, props.theme)}
   ${props =>
-    props.border && borderStyle(props.border, props.responsive, props.theme)}
+    props.border &&
+    (Array.isArray(props.border)
+      ? props.border.map(border =>
+          borderStyle(border, props.responsive, props.theme),
+        )
+      : borderStyle(props.border, props.responsive, props.theme))}
   ${props =>
     props.directionProp && directionStyle(props.directionProp, props.theme)}
   ${props =>
@@ -621,27 +551,54 @@ const StyledBox = styled.div`
   ${props => props.overflowProp && overflowStyle(props.overflowProp)}
   ${props => props.elevationProp && elevationStyle}
   ${props => props.animation && animationStyle}
+  ${props => props.onClick && interactiveStyle}
+  ${props =>
+    props.onClick &&
+    props.focus &&
+    props.focusIndicator !== false &&
+    focusStyle()}
   ${props => props.theme.box && props.theme.box.extend}
 `;
 
-const gapStyle = (directionProp, gap, responsive, theme) => {
+const gapStyle = (directionProp, gap, responsive, border, theme) => {
   const breakpoint =
     theme.box.responsiveBreakpoint &&
     theme.global.breakpoints[theme.box.responsiveBreakpoint];
   const responsiveSize =
     breakpoint && breakpoint.edgeSize[gap] && breakpoint.edgeSize[gap];
+  const hasBetweenBorder =
+    border === 'between' || (border && border.side === 'between');
   const styles = [];
-  if (directionProp === 'column') {
+  if (directionProp === 'column' || directionProp === 'column-reverse') {
+    const height = theme.global.edgeSize[gap] || gap;
     styles.push(
       css`
-        height: ${theme.global.edgeSize[gap] || gap};
+        height: ${height};
       `,
     );
     if (responsiveSize) {
       styles.push(breakpointStyle(breakpoint, `height: ${responsiveSize};`));
     }
+    if (hasBetweenBorder) {
+      const adjustedBorder =
+        typeof border === 'string' ? 'top' : { ...border, side: 'top' };
+      const borderSize = border.size || 'xsmall';
+      const borderHeight = theme.global.borderSize[borderSize] || borderSize;
+      styles.push(css`
+        position: relative;
+        &:after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          top: ${parseMetricToNum(height) / 2 -
+            parseMetricToNum(borderHeight) / 2}px;
+          ${borderStyle(adjustedBorder, responsive, theme)}
+        }
+      `);
+    }
   } else {
-    styles.push(`width: ${theme.global.edgeSize[gap] || gap};`);
+    const width = theme.global.edgeSize[gap] || gap;
+    styles.push(`width: ${width};`);
     if (responsive && directionProp === 'row-responsive') {
       styles.push(
         breakpointStyle(
@@ -653,6 +610,23 @@ const gapStyle = (directionProp, gap, responsive, theme) => {
         ),
       );
     }
+    if (hasBetweenBorder) {
+      const adjustedBorder =
+        typeof border === 'string' ? 'left' : { ...border, side: 'left' };
+      const borderSize = border.size || 'xsmall';
+      const borderWidth = theme.global.borderSize[borderSize] || borderSize;
+      styles.push(css`
+        position: relative;
+        &:after {
+          content: '';
+          position: absolute;
+          height: 100%;
+          left: ${parseMetricToNum(width) / 2 -
+            parseMetricToNum(borderWidth) / 2}px;
+          ${borderStyle(adjustedBorder, responsive, theme)}
+        }
+      `);
+    }
   }
   return styles;
 };
@@ -662,9 +636,16 @@ Object.setPrototypeOf(StyledBox.defaultProps, defaultProps);
 
 const StyledBoxGap = styled.div`
   flex: 0 0 auto;
+  align-self: stretch;
   ${props =>
     props.gap &&
-    gapStyle(props.directionProp, props.gap, props.responsive, props.theme)};
+    gapStyle(
+      props.directionProp,
+      props.gap,
+      props.responsive,
+      props.border,
+      props.theme,
+    )};
 `;
 
 StyledBoxGap.defaultProps = {};

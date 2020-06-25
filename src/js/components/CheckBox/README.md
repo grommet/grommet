@@ -46,7 +46,8 @@ node
 
 **name**
 
-The DOM name attribute value to use for the underlying <input/> element.
+The DOM name attribute value to use for the underlying <input/> 
+      element.
 
 ```
 string
@@ -291,5 +292,5 @@ The width size of the toggle. Expects `string`.
 Defaults to
 
 ```
-42px
+48px
 ```

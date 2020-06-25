@@ -22,11 +22,11 @@ export interface SelectProps {
   messages?: { multiple?: string };
   multiple?: boolean;
   name?: string;
-  onChange?: ((...args: any[]) => any);
+  onChange?: ((...args: any[]) => void);
   onClose?: ((...args: any[]) => any);
   onMore?: ((...args: any[]) => any);
   onOpen?: ((...args: any[]) => any);
-  onSearch?: ((...args: any[]) => any);
+  onSearch?: ((search: string) => void);
   options: (string | boolean | number | JSX.Element | object)[];
   open?: boolean;
   placeholder?: PlaceHolderType;
@@ -37,7 +37,7 @@ export interface SelectProps {
   size?: "small" | "medium" | "large" | "xlarge" | string;
   value?: string | JSX.Element | object | (string | object)[];
   valueLabel?: React.ReactNode;
-  valueKey?: string | ((...args: any[]) => any);
+  valueKey?: string | { key: string, reduce?: boolean } | ((...args: any[]) => any);
   emptySearchMessage?: string;
 }
 

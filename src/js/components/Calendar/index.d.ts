@@ -1,12 +1,12 @@
 import * as React from "react";
-import { A11yTitleType, AlignSelfType, GridAreaType, MarginType } from "../../utils";
+import { A11yTitleType, AlignSelfType, AnimateType, GridAreaType, MarginType } from "../../utils";
 
 export interface CalendarProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
   margin?: MarginType;
-  animate?: boolean;
+  animate?: AnimateType
   bounds?: string[];
   date?: string;
   dates?: (string | string[])[];
@@ -15,8 +15,8 @@ export interface CalendarProps {
   firstDayOfWeek?: 0 | 1;
   header?: ((...args: any[]) => any);
   locale?: string;
-  onReference?: ((...args: any[]) => any);
-  onSelect?: ((...args: any[]) => any);
+  onReference?: ((reference: string) => void);
+  onSelect?: ((select: string[]) => any);
   range?: boolean;
   reference?: string;
   showAdjacentDays?: boolean;

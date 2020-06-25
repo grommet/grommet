@@ -29,7 +29,7 @@ const richAccordionTheme = {
   },
 };
 
-const RichPanel = ({ children, icon, label }) => {
+const RichPanel = ({ children, icon, label, ...rest }) => {
   const [hovering, setHovering] = React.useState(false);
 
   const renderPanelTitle = () => (
@@ -53,6 +53,7 @@ const RichPanel = ({ children, icon, label }) => {
       onMouseOut={() => setHovering(false)}
       onFocus={() => setHovering(true)}
       onBlur={() => setHovering(false)}
+      {...rest}
     >
       {children}
     </AccordionPanel>
@@ -69,7 +70,8 @@ const spinning = (
   >
     <path
       opacity=".25"
-      d="M16 0 A16 16 0 0 0 16 32 A16 16 0 0 0 16 0 M16 4 A12 12 0 0 1 16 28 A12 12 0 0 1 16 4"
+      d="M16 0 A16 16 0 0 0 16 32 A16 16 0 0 0 16 0 M16 4 A12 12 0 0 1 16 28 
+      A12 12 0 0 1 16 4"
     />
     <path d="M16 0 A16 16 0 0 1 32 16 L28 16 A12 12 0 0 0 16 4z">
       <animateTransform
@@ -227,7 +229,7 @@ const RichAccordion = () => {
                   }}
                   gap="medium"
                 >
-                  Yeah believe me, this channel has 2,000 members.
+                  Yeah believe me, this channel has 3,000 members.
                 </Box>
               </RichPanel>
             </Accordion>

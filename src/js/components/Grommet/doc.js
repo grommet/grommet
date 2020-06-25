@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { backgroundDoc, getAvailableAtBadge } from '../../utils';
 
 export const doc = Grommet => {
   const DocumentedGrommet = describe(Grommet)
@@ -13,12 +13,17 @@ export const doc = Grommet => {
     .intrinsicElement('div');
 
   DocumentedGrommet.propTypes = {
+    background: backgroundDoc,
+    dir: PropTypes.oneOf(['rtl']).description(
+      'Layout direction for right to left contexts',
+    ),
     full: PropTypes.bool
       .description('Whether to take the whole viewport.')
       .defaultValue(false),
     plain: PropTypes.bool
       .description(
-        'Whether or not Grommet should apply a global font-family, font-size, and line-height.',
+        `Whether or not Grommet should apply a global font-family, font-size,
+        and line-height.`,
       )
       .defaultValue(false),
     cssVars: PropTypes.bool
@@ -27,8 +32,19 @@ export const doc = Grommet => {
     theme: PropTypes.object.description(
       'Custom styles for Grommet app component.',
     ),
+    themeMode: PropTypes.oneOf(['dark', 'light']).description(
+      `Dark vs. light theme variation. Default is unspecified and left to
+      theme.`,
+    ),
     userAgent: PropTypes.string.description(
-      'User agent used to detect the device width for setting the initial breakpoint.',
+      `User agent used to detect the device width for setting the initial
+      breakpoint.`,
+    ),
+    containerTarget: PropTypes.object.description(
+      `The node where Drop and Layer containers are inserted. Defaults to
+      document.body which is almost always the right choice. This is used
+      for less common cases like rendering within an internal node (e.g.
+      shadow root).`,
     ),
   };
 

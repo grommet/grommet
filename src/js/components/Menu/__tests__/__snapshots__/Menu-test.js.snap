@@ -7,9 +7,7 @@ exports[`Menu basic 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -30,6 +28,9 @@ exports[`Menu basic 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 12px;
 }
 
@@ -37,7 +38,6 @@ exports[`Menu basic 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -46,6 +46,7 @@ exports[`Menu basic 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -64,12 +65,6 @@ exports[`Menu basic 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -151,9 +146,7 @@ exports[`Menu close by clicking outside 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -174,6 +167,9 @@ exports[`Menu close by clicking outside 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 12px;
 }
 
@@ -181,7 +177,6 @@ exports[`Menu close by clicking outside 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -190,6 +185,7 @@ exports[`Menu close by clicking outside 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -208,12 +204,6 @@ exports[`Menu close by clicking outside 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -300,9 +290,7 @@ exports[`Menu close by clicking outside 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -319,40 +307,34 @@ exports[`Menu close by clicking outside 2`] = `
   padding: 12px;
 }
 
-.c1 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c3 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c4 {
@@ -361,9 +343,7 @@ exports[`Menu close by clicking outside 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -372,7 +352,6 @@ exports[`Menu close by clicking outside 2`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c10 {
@@ -381,27 +360,22 @@ exports[`Menu close by clicking outside 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
 }
 
-.c12 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
@@ -418,6 +392,9 @@ exports[`Menu close by clicking outside 2`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 12px;
 }
 
@@ -425,7 +402,6 @@ exports[`Menu close by clicking outside 2`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -434,32 +410,14 @@ exports[`Menu close by clicking outside 2`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c11 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
   outline: none;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
   border: none;
   padding: 0;
   text-align: inherit;
 }
 
-.c11:hover {
+.c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
   color: #000000;
 }
 
@@ -468,7 +426,7 @@ exports[`Menu close by clicking outside 2`] = `
   line-height: 24px;
 }
 
-.c0 {
+.c1 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -480,96 +438,36 @@ exports[`Menu close by clicking outside 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
-.c2 {
+.c3 {
   max-height: inherit;
 }
 
 @media only screen and (max-width:768px) {
   .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
+  .c11 {
     padding: 6px;
   }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c0 {
+  .c1 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -582,13 +480,14 @@ exports[`Menu close by clicking outside 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c2 {
+  .c3 {
     width: 100%;
   }
 }
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="test-menu__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -602,6 +501,7 @@ exports[`Menu close by clicking outside 2`] = `
       <button
         aria-label="Close Menu"
         class="c5"
+        tabindex="-1"
         type="button"
       >
         <div
@@ -637,11 +537,11 @@ exports[`Menu close by clicking outside 2`] = `
         class="c4"
       >
         <button
-          class="c11"
+          class="c5"
           type="button"
         >
           <div
-            class="c12"
+            class="c11"
           >
             Item 1
           </div>
@@ -651,11 +551,11 @@ exports[`Menu close by clicking outside 2`] = `
         class="c4"
       >
         <button
-          class="c11"
+          class="c5"
           type="button"
         >
           <div
-            class="c12"
+            class="c11"
           >
             Item 2
           </div>
@@ -667,191 +567,9 @@ exports[`Menu close by clicking outside 2`] = `
 `;
 
 exports[`Menu close by clicking outside 3`] = `
-"@media only screen and (max-width:768px) {
-  .dOxYCM {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .dOxYCM {
+"@media only screen and (max-width: 768px) {
+  .hkbjbd {
     padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .dsOguw {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .dsOguw {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jnrdmJ {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jnrdmJ {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .liroKi {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .liroKi {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .lfXrbw {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .lfXrbw {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .iLBPCY {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .iLBPCY {
-    padding: 6px;
-  }
-}
-
-.fLlzie {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 0px;
-  overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
-}
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fWrrBh {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fWrrBh {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hqGUhX {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hqGUhX {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .cwrzZU {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .cwrzZU {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .gQmRES {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .gQmRES {
-    padding: 6px;
-  }
-}
-
-.hEnyXU {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hEnyXU {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
   }
 }"
 `;
@@ -897,9 +615,7 @@ exports[`Menu close on esc 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -920,6 +636,9 @@ exports[`Menu close on esc 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 12px;
 }
 
@@ -927,7 +646,6 @@ exports[`Menu close on esc 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -936,6 +654,7 @@ exports[`Menu close on esc 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -954,12 +673,6 @@ exports[`Menu close on esc 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -1046,9 +759,7 @@ exports[`Menu close on tab 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1069,6 +780,9 @@ exports[`Menu close on tab 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 12px;
 }
 
@@ -1076,7 +790,6 @@ exports[`Menu close on tab 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1085,6 +798,7 @@ exports[`Menu close on tab 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1103,12 +817,6 @@ exports[`Menu close on tab 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -1154,6 +862,151 @@ exports[`Menu close on tab 1`] = `
 </div>
 `;
 
+exports[`Menu custom a11yTitle 1`] = `
+.c5 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c5 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c5 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c5 *[stroke*="#"],
+.c5 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c5 *[fill-rule],
+.c5 *[FILL-RULE],
+.c5 *[fill*="#"],
+.c5 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 6px;
+  }
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <button
+      aria-label="My Menu"
+      class="c1"
+      type="button"
+    >
+      <div
+        class="c2"
+      >
+        <span
+          class="c3"
+        >
+          Test Menu
+        </span>
+        <div
+          class="c4"
+        />
+        <svg
+          aria-label="FormDown"
+          class="c5"
+          viewBox="0 0 24 24"
+        >
+          <polyline
+            fill="none"
+            points="18 9 12 15 6 9"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
 exports[`Menu custom message 1`] = `
 .c5 {
   display: inline-block;
@@ -1195,9 +1048,7 @@ exports[`Menu custom message 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1218,6 +1069,9 @@ exports[`Menu custom message 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 12px;
 }
 
@@ -1225,7 +1079,6 @@ exports[`Menu custom message 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1234,6 +1087,7 @@ exports[`Menu custom message 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1256,8 +1110,151 @@ exports[`Menu custom message 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    margin: 0px;
+    padding: 6px;
   }
+}
+
+<div
+  className="c0"
+>
+  <button
+    aria-label="Abrir Menu"
+    className="c1"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    <div
+      className="c2"
+    >
+      <span
+        className="c3"
+      >
+        Test Menu
+      </span>
+      <div
+        className="c4"
+      />
+      <svg
+        aria-label="FormDown"
+        className="c5"
+        viewBox="0 0 24 24"
+      >
+        <polyline
+          fill="none"
+          points="18 9 12 15 6 9"
+          stroke="#000"
+          strokeWidth="2"
+        />
+      </svg>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Menu custom theme icon color 1`] = `
+.c5 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #F08080;
+  stroke: #F08080;
+}
+
+.c5 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c5 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c5 *[stroke*="#"],
+.c5 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c5 *[fill-rule],
+.c5 *[FILL-RULE],
+.c5 *[fill*="#"],
+.c5 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width:768px) {
@@ -1270,7 +1267,7 @@ exports[`Menu custom message 1`] = `
   className="c0"
 >
   <button
-    aria-label="Abrir Menu"
+    aria-label="Open Menu"
     className="c1"
     onBlur={[Function]}
     onClick={[Function]}
@@ -1349,9 +1346,7 @@ exports[`Menu disabled 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1372,6 +1367,9 @@ exports[`Menu disabled 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 12px;
 }
 
@@ -1379,7 +1377,6 @@ exports[`Menu disabled 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1388,6 +1385,7 @@ exports[`Menu disabled 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1408,12 +1406,6 @@ exports[`Menu disabled 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -1460,6 +1452,163 @@ exports[`Menu disabled 1`] = `
 </div>
 `;
 
+exports[`Menu gap between icon and label 1`] = `
+.c5 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c5 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c5 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c5 *[stroke*="#"],
+.c5 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c5 *[fill-rule],
+.c5 *[FILL-RULE],
+.c5 *[fill*="#"],
+.c5 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <button
+      aria-label="Open Menu"
+      class="c1"
+      type="button"
+    >
+      <div
+        class="c2"
+      >
+        <span
+          class="c3"
+        >
+          actions
+        </span>
+        <div
+          class="c4"
+        />
+        <svg
+          aria-label="FormDown"
+          class="c5"
+          viewBox="0 0 24 24"
+        >
+          <polyline
+            fill="none"
+            points="18 9 12 15 6 9"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
 exports[`Menu justify content 1`] = `
 .c5 {
   display: inline-block;
@@ -1501,9 +1650,7 @@ exports[`Menu justify content 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1526,9 +1673,7 @@ exports[`Menu justify content 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1551,9 +1696,7 @@ exports[`Menu justify content 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1576,9 +1719,7 @@ exports[`Menu justify content 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1601,9 +1742,7 @@ exports[`Menu justify content 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1626,9 +1765,7 @@ exports[`Menu justify content 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1645,6 +1782,9 @@ exports[`Menu justify content 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 12px;
 }
 
@@ -1652,7 +1792,6 @@ exports[`Menu justify content 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1661,6 +1800,7 @@ exports[`Menu justify content 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1683,19 +1823,7 @@ exports[`Menu justify content 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
     padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
   }
 }
 
@@ -1707,19 +1835,7 @@ exports[`Menu justify content 1`] = `
 
 @media only screen and (max-width:768px) {
   .c7 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
     padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    margin: 0px;
   }
 }
 
@@ -1731,19 +1847,7 @@ exports[`Menu justify content 1`] = `
 
 @media only screen and (max-width:768px) {
   .c9 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
     padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    margin: 0px;
   }
 }
 
@@ -2016,9 +2120,7 @@ exports[`Menu navigate through suggestions and select 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2039,6 +2141,9 @@ exports[`Menu navigate through suggestions and select 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 12px;
 }
 
@@ -2046,7 +2151,6 @@ exports[`Menu navigate through suggestions and select 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -2055,6 +2159,7 @@ exports[`Menu navigate through suggestions and select 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -2073,12 +2178,6 @@ exports[`Menu navigate through suggestions and select 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -2165,9 +2264,7 @@ exports[`Menu open and close on click 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2188,6 +2285,9 @@ exports[`Menu open and close on click 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 12px;
 }
 
@@ -2195,7 +2295,6 @@ exports[`Menu open and close on click 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -2204,6 +2303,7 @@ exports[`Menu open and close on click 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -2222,12 +2322,6 @@ exports[`Menu open and close on click 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -2275,28 +2369,28 @@ exports[`Menu open and close on click 1`] = `
 
 exports[`Menu open and close on click 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
+  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <button
     aria-label="Open Menu"
-    class="StyledButton-sc-323bzc-0 jfbKsv"
+    class="StyledButton-sc-323bzc-0 bwJeiP"
     id="test-menu"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 dOxYCM"
+      class="StyledBox-sc-13pk1d4-0 hkbjbd"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 fWSbXS"
+        class="StyledText-sc-1sadyjn-0 hUokoe"
       >
         Test
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 iChEkS"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffjnxm"
       />
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 dSllCE"
+        class="StyledIcon-ofa7kd-0 kbXEEj"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -2352,9 +2446,7 @@ exports[`Menu open and close on click 3`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2371,40 +2463,34 @@ exports[`Menu open and close on click 3`] = `
   padding: 12px;
 }
 
-.c1 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c3 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c4 {
@@ -2413,9 +2499,7 @@ exports[`Menu open and close on click 3`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2424,7 +2508,6 @@ exports[`Menu open and close on click 3`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c10 {
@@ -2433,27 +2516,22 @@ exports[`Menu open and close on click 3`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
 }
 
-.c12 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
@@ -2470,6 +2548,9 @@ exports[`Menu open and close on click 3`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 12px;
 }
 
@@ -2477,7 +2558,6 @@ exports[`Menu open and close on click 3`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -2486,32 +2566,14 @@ exports[`Menu open and close on click 3`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c11 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
   outline: none;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
   border: none;
   padding: 0;
   text-align: inherit;
 }
 
-.c11:hover {
+.c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
   color: #000000;
 }
 
@@ -2520,7 +2582,7 @@ exports[`Menu open and close on click 3`] = `
   line-height: 24px;
 }
 
-.c0 {
+.c1 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2532,96 +2594,36 @@ exports[`Menu open and close on click 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
-.c2 {
+.c3 {
   max-height: inherit;
 }
 
 @media only screen and (max-width:768px) {
   .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
+  .c11 {
     padding: 6px;
   }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c0 {
+  .c1 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2634,13 +2636,14 @@ exports[`Menu open and close on click 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c2 {
+  .c3 {
     width: 100%;
   }
 }
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="test-menu__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -2654,6 +2657,7 @@ exports[`Menu open and close on click 3`] = `
       <button
         aria-label="Close Menu"
         class="c5"
+        tabindex="-1"
         type="button"
       >
         <div
@@ -2689,11 +2693,11 @@ exports[`Menu open and close on click 3`] = `
         class="c4"
       >
         <button
-          class="c11"
+          class="c5"
           type="button"
         >
           <div
-            class="c12"
+            class="c11"
           >
             Item 1
           </div>
@@ -2703,11 +2707,11 @@ exports[`Menu open and close on click 3`] = `
         class="c4"
       >
         <button
-          class="c11"
+          class="c5"
           type="button"
         >
           <div
-            class="c12"
+            class="c11"
           >
             Item 2
           </div>
@@ -2717,11 +2721,11 @@ exports[`Menu open and close on click 3`] = `
         class="c4"
       >
         <a
-          class="c11"
+          class="c5"
           href="/test"
         >
           <div
-            class="c12"
+            class="c11"
           >
             Item 3
           </div>
@@ -2733,158 +2737,105 @@ exports[`Menu open and close on click 3`] = `
 `;
 
 exports[`Menu open and close on click 4`] = `
-"@media only screen and (max-width:768px) {
-  .dOxYCM {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .dOxYCM {
+"@media only screen and (max-width: 768px) {
+  .hkbjbd {
     padding: 6px;
   }
+}"
+`;
+
+exports[`Menu reverse icon and label 1`] = `
+.c5 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
 }
 
-@media only screen and (max-width:768px) {
-  .dsOguw {
-    margin: 0px;
-  }
+.c5 g {
+  fill: inherit;
+  stroke: inherit;
 }
 
-@media only screen and (max-width:768px) {
-  .dsOguw {
-    padding: 6px;
-  }
+.c5 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
 }
 
-@media only screen and (max-width:768px) {
-  .jnrdmJ {
-    margin: 0px;
-  }
+.c5 *[stroke*="#"],
+.c5 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
 }
 
-@media only screen and (max-width:768px) {
-  .jnrdmJ {
-    padding: 6px;
-  }
+.c5 *[fill-rule],
+.c5 *[FILL-RULE],
+.c5 *[fill*="#"],
+.c5 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
 }
 
-@media only screen and (max-width:768px) {
-  .liroKi {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .liroKi {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .lfXrbw {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .lfXrbw {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .iLBPCY {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .iLBPCY {
-    padding: 6px;
-  }
-}
-
-.fLlzie {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 0px;
-  overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding: 12px;
 }
 
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    margin: 0px;
-  }
+.c4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
 }
 
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    padding: 0px;
-  }
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
 }
 
-@media only screen and (max-width:768px) {
-  .fWrrBh {
-    margin: 0px;
-  }
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
-@media only screen and (max-width:768px) {
-  .fWrrBh {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hqGUhX {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hqGUhX {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .cwrzZU {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .cwrzZU {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .gQmRES {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .gQmRES {
-    padding: 6px;
-  }
-}
-
-.hEnyXU {
+.c0 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2892,34 +2843,62 @@ exports[`Menu open and close on click 4`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hEnyXU {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}"
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <button
+      aria-label="Open Menu"
+      class="c1"
+      type="button"
+    >
+      <div
+        class="c2"
+      >
+        <span
+          class="c3"
+        >
+          Test Menu
+        </span>
+        <div
+          class="c4"
+        />
+        <svg
+          aria-label="FormDown"
+          class="c5"
+          viewBox="0 0 24 24"
+        >
+          <polyline
+            fill="none"
+            points="18 9 12 15 6 9"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+    </button>
+  </div>
+</div>
 `;
 
 exports[`Menu select an item 1`] = `
@@ -2963,9 +2942,7 @@ exports[`Menu select an item 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2986,6 +2963,9 @@ exports[`Menu select an item 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 12px;
 }
 
@@ -2993,7 +2973,6 @@ exports[`Menu select an item 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -3002,6 +2981,7 @@ exports[`Menu select an item 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -3024,8 +3004,146 @@ exports[`Menu select an item 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    margin: 0px;
+    padding: 6px;
   }
+}
+
+<div
+  class="c0"
+>
+  <button
+    aria-label="Open Menu"
+    class="c1"
+    id="test-menu"
+    type="button"
+  >
+    <div
+      class="c2"
+    >
+      <span
+        class="c3"
+      >
+        Test
+      </span>
+      <div
+        class="c4"
+      />
+      <svg
+        aria-label="FormDown"
+        class="c5"
+        viewBox="0 0 24 24"
+      >
+        <polyline
+          fill="none"
+          points="18 9 12 15 6 9"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Menu tab through menu until it closes 1`] = `
+.c5 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c5 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c5 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c5 *[stroke*="#"],
+.c5 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c5 *[fill-rule],
+.c5 *[FILL-RULE],
+.c5 *[fill*="#"],
+.c5 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width:768px) {
@@ -3112,9 +3230,7 @@ exports[`Menu with dropAlign renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3135,6 +3251,9 @@ exports[`Menu with dropAlign renders 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 12px;
 }
 
@@ -3142,7 +3261,6 @@ exports[`Menu with dropAlign renders 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -3151,6 +3269,7 @@ exports[`Menu with dropAlign renders 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -3169,12 +3288,6 @@ exports[`Menu with dropAlign renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -3261,9 +3374,7 @@ exports[`Menu with dropAlign renders 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3280,40 +3391,34 @@ exports[`Menu with dropAlign renders 2`] = `
   padding: 12px;
 }
 
-.c1 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c3 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
 }
 
 .c4 {
@@ -3322,9 +3427,7 @@ exports[`Menu with dropAlign renders 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3333,7 +3436,6 @@ exports[`Menu with dropAlign renders 2`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 0px;
 }
 
 .c10 {
@@ -3342,27 +3444,22 @@ exports[`Menu with dropAlign renders 2`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0px;
   overflow: auto;
 }
 
-.c12 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
-  margin: 0px;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
@@ -3379,6 +3476,9 @@ exports[`Menu with dropAlign renders 2`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
   width: 12px;
 }
 
@@ -3386,7 +3486,6 @@ exports[`Menu with dropAlign renders 2`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -3395,32 +3494,14 @@ exports[`Menu with dropAlign renders 2`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c11 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
   outline: none;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
   border: none;
   padding: 0;
   text-align: inherit;
 }
 
-.c11:hover {
+.c5:hover {
   background-color: rgba(221,221,221,0.4);
-  color: #444444;
   color: #000000;
 }
 
@@ -3429,7 +3510,7 @@ exports[`Menu with dropAlign renders 2`] = `
   line-height: 24px;
 }
 
-.c0 {
+.c1 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -3441,96 +3522,36 @@ exports[`Menu with dropAlign renders 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #ffffff;
+  background-color: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top right;
   -ms-transform-origin: top right;
   transform-origin: top right;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
-.c2 {
+.c3 {
   max-height: inherit;
 }
 
 @media only screen and (max-width:768px) {
   .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
+  .c11 {
     padding: 6px;
   }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c0 {
+  .c1 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3543,13 +3564,14 @@ exports[`Menu with dropAlign renders 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c2 {
+  .c3 {
     width: 100%;
   }
 }
 
 <div
   class="c0 c1"
+  data-g-portal-id="0"
   id="test-menu__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -3563,6 +3585,7 @@ exports[`Menu with dropAlign renders 2`] = `
       <button
         aria-label="Close Menu"
         class="c5"
+        tabindex="-1"
         type="button"
       >
         <div
@@ -3598,11 +3621,11 @@ exports[`Menu with dropAlign renders 2`] = `
         class="c4"
       >
         <button
-          class="c11"
+          class="c5"
           type="button"
         >
           <div
-            class="c12"
+            class="c11"
           >
             Item 1
           </div>
@@ -3612,11 +3635,11 @@ exports[`Menu with dropAlign renders 2`] = `
         class="c4"
       >
         <button
-          class="c11"
+          class="c5"
           type="button"
         >
           <div
-            class="c12"
+            class="c11"
           >
             Item 2
           </div>
@@ -3628,204 +3651,9 @@ exports[`Menu with dropAlign renders 2`] = `
 `;
 
 exports[`Menu with dropAlign renders 3`] = `
-"@media only screen and (max-width:768px) {
-  .dOxYCM {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .dOxYCM {
+"@media only screen and (max-width: 768px) {
+  .hkbjbd {
     padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .dsOguw {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .dsOguw {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jnrdmJ {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jnrdmJ {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .liroKi {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .liroKi {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .lfXrbw {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .lfXrbw {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .iLBPCY {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .iLBPCY {
-    padding: 6px;
-  }
-}
-
-.fLlzie {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 0px;
-  overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
-}
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fLlzie {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fWrrBh {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fWrrBh {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hqGUhX {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .hqGUhX {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .cwrzZU {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .cwrzZU {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .gQmRES {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .gQmRES {
-    padding: 6px;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hEnyXU {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}
-
-.hMjlCH {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top right;
-  -ms-transform-origin: top right;
-  transform-origin: top right;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hMjlCH {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
   }
 }"
 `;

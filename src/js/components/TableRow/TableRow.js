@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 import { StyledTableRow } from '../Table/StyledTable';
 
-const TableRow = props => <StyledTableRow {...props} />;
+const TableRow = forwardRef((props, ref) => (
+  <StyledTableRow ref={ref} {...props} />
+));
+
+TableRow.displayName = 'TableRow';
 
 let TableRowDoc;
 if (process.env.NODE_ENV !== 'production') {
-  TableRowDoc = require('./doc').doc(TableRow); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  TableRowDoc = require('./doc').doc(TableRow);
 }
 const TableRowWrapper = TableRowDoc || TableRow;
 

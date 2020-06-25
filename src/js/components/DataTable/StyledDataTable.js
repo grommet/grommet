@@ -16,12 +16,8 @@ import { TableFooter } from '../TableFooter';
 const StyledDataTable = styled(Table)`
   border-spacing: 0;
   border-collapse: collapse;
-  height: 100%;
+  height: auto; /* helps Firefox to get table contents to not overflow */
 
-  /* Firefox hack to get table contents to not overflow */
-  @-moz-document url-prefix() {
-    height: auto;
-  }
   ${genericStyles};
 `;
 
@@ -66,7 +62,7 @@ const StyledDataTableRow = styled(TableRow)`
     cursor: pointer;
   `}
   &:hover {
-    ${props => !props.active && hoverStyle}
+    ${props => props.onClickRow && !props.active && hoverStyle}
   }
   ${props => props.active && hoverStyle}
 `;
@@ -74,6 +70,7 @@ const StyledDataTableRow = styled(TableRow)`
 StyledDataTableRow.defaultProps = {};
 Object.setPrototypeOf(StyledDataTableRow.defaultProps, defaultProps);
 
+// focus styling other than outline doesn't work on <tbody />
 const StyledDataTableBody = styled(TableBody)`
   ${props =>
     props.size &&
@@ -83,7 +80,10 @@ const StyledDataTableBody = styled(TableBody)`
     max-height: ${props.theme.global.size[props.size]};
     overflow: auto;
   `}
-  ${props => props.focus && focusStyle}
+
+  &:focus {
+    ${focusStyle({ skipSvgChildren: true, forceOutline: true })}
+  }
 `;
 
 StyledDataTableBody.defaultProps = {};

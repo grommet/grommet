@@ -1,6 +1,11 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { genericProps, getAvailableAtBadge, themeDocUtils } from '../../utils';
+import {
+  genericProps,
+  getAvailableAtBadge,
+  padPropType,
+  themeDocUtils,
+} from '../../utils';
 
 const fixedSizes = ['xsmall', 'small', 'medium', 'large', 'xlarge'];
 const sizes = [
@@ -142,6 +147,13 @@ space in the row axis.`,
       'around',
       'stretch',
     ]).description('How to align the contents along the row axis.'),
+    pad: padPropType,
+    responsive: PropTypes.bool
+      .description(
+        `Whether margin and pad sizes should be scaled for mobile
+        environments.`,
+      )
+      .defaultValue(true),
     rows: PropTypes.oneOfType([
       PropTypes.arrayOf(
         PropTypes.oneOfType([

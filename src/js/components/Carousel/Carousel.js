@@ -1,224 +1,230 @@
-import React, { Children, Component } from 'react';
-import { compose } from 'recompose';
-
-import { withTheme } from 'styled-components';
+import React, {
+  Children,
+  useContext,
+  useEffect,
+  useState,
+  useRef,
+} from 'react';
 
 import { normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
+import { ThemeContext } from '../../contexts';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { Stack } from '../Stack';
-import { withFocus } from '../hocs';
 
-class Carousel extends Component {
-  constructor(p) {
-    super(p);
-    this.state = { activeIndex: p.initialChild };
-  }
+const Carousel = ({
+  initialChild,
+  play,
+  children,
+  controls,
+  fill,
+  onFocus,
+  onBlur,
+  ...rest
+}) => {
+  const theme = useContext(ThemeContext) || defaultProps.theme;
+  const [focus, setFocus] = useState();
 
-  componentDidMount() {
-    const { play } = this.props;
+  const timerRef = useRef();
+
+  const [indexes, setIndexes] = useState({
+    activeIndex: initialChild,
+  });
+
+  const { activeIndex, priorActiveIndex } = indexes;
+  const lastIndex = Children.count(children) - 1;
+
+  useEffect(() => {
     if (play) {
-      this.play();
+      const timer = setInterval(() => {
+        if (activeIndex < lastIndex) {
+          setIndexes({
+            activeIndex: activeIndex + 1,
+            priorActiveIndex: activeIndex,
+          });
+        } else {
+          setIndexes({
+            activeIndex: 0,
+            priorActiveIndex: activeIndex,
+          });
+        }
+      }, play);
+
+      timerRef.current = timer;
+
+      return () => {
+        clearTimeout(timer);
+      };
     }
-  }
+    return () => {};
+  }, [activeIndex, play, children, lastIndex]);
 
-  componentDidUpdate(prevProps) {
-    const { play } = this.props;
-    if (play && (!prevProps.play || play !== prevProps.play)) {
-      this.play();
-    } else if (!play && prevProps.play) {
-      clearInterval(this.timer);
+  const onRight = () => {
+    if (activeIndex >= lastIndex) {
+      return;
     }
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.timer);
-  }
-
-  play = () => {
-    const { play } = this.props;
-    clearInterval(this.timer);
-    this.timer = setInterval(() => {
-      const { children } = this.props;
-      const { activeIndex } = this.state;
-      const lastIndex = Children.count(children) - 1;
-      if (activeIndex < lastIndex) {
-        this.setState({
-          activeIndex: activeIndex + 1,
-          priorActiveIndex: activeIndex,
-        });
-      } else {
-        this.setState({ activeIndex: 0, priorActiveIndex: activeIndex });
-      }
-    }, play);
-  };
-
-  onRight = () => {
-    const { activeIndex } = this.state;
-    clearInterval(this.timer);
-    this.setState({
+    clearInterval(timerRef.current);
+    setIndexes({
       activeIndex: activeIndex + 1,
       priorActiveIndex: activeIndex,
     });
   };
 
-  onLeft = () => {
-    const { activeIndex } = this.state;
-    clearInterval(this.timer);
-    this.setState({
+  const onLeft = () => {
+    if (activeIndex <= 0) {
+      return;
+    }
+    clearInterval(timerRef.current);
+    setIndexes({
       activeIndex: activeIndex - 1,
       priorActiveIndex: activeIndex,
     });
   };
 
-  onSelect = index => () => {
-    const { activeIndex } = this.state;
-    clearInterval(this.timer);
-    this.setState({ activeIndex: index, priorActiveIndex: activeIndex });
+  const onSelect = index => () => {
+    clearInterval(timerRef.current);
+    setIndexes({ activeIndex: index, priorActiveIndex: activeIndex });
   };
 
-  render() {
-    const { children, controls, fill, focus, theme, ...rest } = this.props;
-    const { activeIndex, priorActiveIndex } = this.state;
+  const showArrows = controls && controls !== 'selectors';
+  const showSelectors = controls && controls !== 'arrows';
 
-    const showArrows = controls && controls !== 'selectors';
-    const showSelectors = controls && controls !== 'arrows';
-    const lastIndex = Children.count(children) - 1;
-    const onLeft = activeIndex > 0 ? this.onLeft : undefined;
-    const onRight = activeIndex < lastIndex ? this.onRight : undefined;
+  const CurrentIcon = theme.carousel.icons.current;
+  const iconColor = normalizeColor(
+    theme.carousel.icons.color || 'control',
+    theme,
+  );
 
-    const CurrentIcon = theme.carousel.icons.current;
-    const iconColor = normalizeColor(
-      theme.carousel.icons.color || 'control',
-      theme,
+  const selectors = [];
+  const wrappedChildren = Children.map(children, (child, index) => {
+    selectors.push(
+      <Button
+        // eslint-disable-next-line react/no-array-index-key
+        key={index}
+        icon={
+          <CurrentIcon color={activeIndex === index ? iconColor : undefined} />
+        }
+        onClick={onSelect(index)}
+      />,
     );
 
-    const selectors = [];
-    const wrappedChildren = Children.map(children, (child, index) => {
-      selectors.push(
-        <Button
-          // eslint-disable-next-line react/no-array-index-key
-          key={index}
-          icon={
-            <CurrentIcon
-              color={activeIndex === index ? iconColor : undefined}
-            />
-          }
-          onClick={this.onSelect(index)}
-        />,
-      );
-
-      let animation;
-      if (index === activeIndex) {
-        if (priorActiveIndex !== undefined) {
-          animation = {
-            type: priorActiveIndex < activeIndex ? 'slideLeft' : 'slideRight',
-            size: 'xlarge',
-            duration: theme.carousel.animation.duration,
-          };
-        }
-      } else if (index === priorActiveIndex) {
+    let animation;
+    if (index === activeIndex) {
+      if (priorActiveIndex !== undefined) {
         animation = {
-          type: 'fadeOut',
+          type: priorActiveIndex < activeIndex ? 'slideLeft' : 'slideRight',
+          size: 'xlarge',
           duration: theme.carousel.animation.duration,
         };
-      } else {
-        animation = { type: 'fadeOut', duration: 0 };
       }
-
-      return (
-        <Box fill={fill} overflow="hidden">
-          <Box fill={fill} animation={animation}>
-            {child}
-          </Box>
-        </Box>
-      );
-    });
-
-    const NextIcon = theme.carousel.icons.next;
-    const PreviousIcon = theme.carousel.icons.previous;
-    const nextIconDisabled = activeIndex >= lastIndex;
-    const previousIconDisabled = activeIndex <= 0;
+    } else if (index === priorActiveIndex) {
+      animation = {
+        type: 'fadeOut',
+        duration: theme.carousel.animation.duration,
+      };
+    } else {
+      animation = { type: 'fadeOut', duration: 0 };
+    }
 
     return (
-      <Keyboard onLeft={onLeft} onRight={onRight}>
-        <Stack guidingChild={activeIndex} fill={fill} {...rest}>
-          {wrappedChildren}
-          <Box
-            tabIndex="0"
-            focus={focus}
-            fill
-            direction="row"
-            justify="between"
-          >
-            {showArrows && (
-              <Button
-                fill="vertical"
-                icon={
-                  <PreviousIcon
-                    color={normalizeColor(
-                      previousIconDisabled
-                        ? theme.carousel.disabled.icons.color
-                        : theme.carousel.icons.color,
-                      theme,
-                    )}
-                  />
-                }
-                plain
-                disabled={previousIconDisabled}
-                onClick={onLeft}
-                hoverIndicator
-              />
-            )}
-            {showSelectors && (
-              <Box justify="end" fill={!showArrows && 'horizontal'}>
-                <Box direction="row" justify="center">
-                  {selectors}
-                </Box>
-              </Box>
-            )}
-            {showArrows && (
-              <Button
-                fill="vertical"
-                icon={
-                  <NextIcon
-                    color={normalizeColor(
-                      nextIconDisabled
-                        ? theme.carousel.disabled.icons.color
-                        : theme.carousel.icons.color,
-                      theme,
-                    )}
-                  />
-                }
-                plain
-                disabled={nextIconDisabled}
-                onClick={onRight}
-                hoverIndicator
-              />
-            )}
-          </Box>
-        </Stack>
-      </Keyboard>
+      <Box fill={fill} overflow="hidden">
+        <Box fill={fill} animation={animation}>
+          {child}
+        </Box>
+      </Box>
     );
-  }
-}
+  });
+
+  const NextIcon = theme.carousel.icons.next;
+  const PreviousIcon = theme.carousel.icons.previous;
+  const nextIconDisabled = activeIndex >= lastIndex;
+  const previousIconDisabled = activeIndex <= 0;
+
+  return (
+    <Keyboard onLeft={onLeft} onRight={onRight}>
+      <Stack guidingChild={activeIndex} fill={fill} {...rest}>
+        {wrappedChildren}
+        <Box
+          tabIndex="0"
+          focus={focus}
+          onFocus={event => {
+            setFocus(true);
+            if (onFocus) onFocus(event);
+          }}
+          onBlur={event => {
+            setFocus(false);
+            if (onBlur) onBlur(event);
+          }}
+          fill
+          direction="row"
+          justify="between"
+        >
+          {showArrows && (
+            <Button
+              fill="vertical"
+              icon={
+                <PreviousIcon
+                  color={normalizeColor(
+                    previousIconDisabled
+                      ? theme.carousel.disabled.icons.color
+                      : theme.carousel.icons.color,
+                    theme,
+                  )}
+                />
+              }
+              plain
+              disabled={previousIconDisabled}
+              onClick={onLeft}
+              hoverIndicator
+            />
+          )}
+          {showSelectors && (
+            <Box justify="end" fill={!showArrows && 'horizontal'}>
+              <Box direction="row" justify="center">
+                {selectors}
+              </Box>
+            </Box>
+          )}
+          {showArrows && (
+            <Button
+              fill="vertical"
+              icon={
+                <NextIcon
+                  color={normalizeColor(
+                    nextIconDisabled
+                      ? theme.carousel.disabled.icons.color
+                      : theme.carousel.icons.color,
+                    theme,
+                  )}
+                />
+              }
+              plain
+              disabled={nextIconDisabled}
+              onClick={onRight}
+              hoverIndicator
+            />
+          )}
+        </Box>
+      </Stack>
+    </Keyboard>
+  );
+};
 
 Carousel.defaultProps = {
   initialChild: 0,
   controls: true,
 };
 Object.setPrototypeOf(Carousel.defaultProps, defaultProps);
+Carousel.displayName = 'Carousel';
 
 let CarouselDoc;
 if (process.env.NODE_ENV !== 'production') {
-  CarouselDoc = require('./doc').doc(Carousel); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  CarouselDoc = require('./doc').doc(Carousel);
 }
-const CarouselWrapper = compose(
-  withFocus(),
-  withTheme,
-)(CarouselDoc || Carousel);
+const CarouselWrapper = CarouselDoc || Carousel;
 
 export { CarouselWrapper as Carousel };

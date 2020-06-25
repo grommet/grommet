@@ -2,7 +2,173 @@
 
 exports[`Components loads 1`] = `
 Object {
-  "Accordion": [Function],
+  "Accordion": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=Accordion&full=0&addons=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=accordion&module=%2Fsrc%2FAccordion.js",
+      },
+    ],
+    "description": "An accordion containing collapsible panels.",
+    "intrinsicElement": "div",
+    "name": "Accordion",
+    "properties": Array [
+      Object {
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
+        "format": "string",
+        "name": "a11yTitle",
+      },
+      Object {
+        "description": "How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.",
+        "format": "start
+center
+end
+stretch",
+        "name": "alignSelf",
+      },
+      Object {
+        "description": "The name of the area to place
+    this inside a parent Grid.",
+        "format": "string",
+        "name": "gridArea",
+      },
+      Object {
+        "description": "The amount of margin around the component. An object can
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string",
+        "name": "margin",
+      },
+      Object {
+        "defaultValue": 0,
+        "description": "Active panel index. If specified, Accordion will be a controlled 
+component. This means that future panel changes will not work unless you
+subscribe to onActive function and update activeIndex accordingly.",
+        "format": "number
+[number]",
+        "name": "activeIndex",
+      },
+      Object {
+        "defaultValue": true,
+        "description": "Transition content in & out with a slide down animation.",
+        "format": "boolean",
+        "name": "animate",
+      },
+      Object {
+        "description": "Array of AccordionPanels.",
+        "format": "node",
+        "name": "children",
+      },
+      Object {
+        "description": "Function that will be called when the active index changes.
+It will always send an array with currently active panel indexes.",
+        "format": "function",
+        "name": "onActive",
+      },
+      Object {
+        "defaultValue": false,
+        "description": "Allow multiple panels to be opened at once.",
+        "format": "boolean",
+        "name": "multiple",
+      },
+      Object {
+        "defaultValue": Object {
+          "tabContents": "Tab Contents",
+        },
+        "description": "Custom messages for Tabs. Used for accessibility by screen readers.",
+        "format": "{
+  tabContents: string
+}",
+        "name": "messages",
+      },
+    ],
+    "usage": "import { Accordion, AccordionPanel } from 'grommet';
+<Accordion>
+  <AccordionPanel label='Panel 1'>...</AccordionPanel>
+  <AccordionPanel label='Panel 2'>...</AccordionPanel>
+</Accordion>",
+  },
   "AccordionPanel": Object {
     "description": "An Accordion panel.",
     "intrinsicElement": "div",
@@ -81,6 +247,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -98,6 +272,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -170,8 +352,8 @@ string",
       },
       Object {
         "description": "The font size is typically driven by the components containing
-this component. But, it can be adjusted directly via this size property, typically
-when it is not contained in a 'Heading', 'Paragraph', or 'Text'.",
+this component. But, it can be adjusted directly via this size property,
+typically when it is not contained in a 'Heading', 'Paragraph', or 'Text'.",
         "format": "xsmall
 small
 medium
@@ -191,6 +373,7 @@ function",
     "usage": "import { Anchor } from 'grommet';
 <Anchor href={location} label='Label' />",
   },
+  "Avatar": [Function],
   "Box": Object {
     "availableAt": Array [
       Object {
@@ -211,7 +394,8 @@ function",
     "name": "Box",
     "properties": Array [
       Object {
-        "description": "Custom title to be used by screen readers.",
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
         "format": "string",
         "name": "a11yTitle",
       },
@@ -231,7 +415,6 @@ stretch",
         "name": "gridArea",
       },
       Object {
-        "defaultValue": "none",
         "description": "The amount of margin around the component. An object can
     be specified to distinguish horizontal margin, vertical margin, and
     margin on a particular side.",
@@ -244,6 +427,14 @@ large
 xlarge
 {
   bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
     xxsmall
     xsmall
     small
@@ -268,6 +459,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -324,6 +523,8 @@ stretch",
 fadeOut
 jiggle
 pulse
+rotateLeft
+rotateRight
 slideUp
 slideDown
 slideLeft
@@ -336,6 +537,8 @@ zoomOut
     fadeOut
     jiggle
     pulse
+    rotateLeft
+    rotateRight
     slideUp
     slideDown
     slideLeft
@@ -356,6 +559,8 @@ zoomOut
   fadeOut
   jiggle
   pulse
+  rotateLeft
+  rotateRight
   slideUp
   slideDown
   slideLeft
@@ -368,6 +573,8 @@ zoomOut
       fadeOut
       jiggle
       pulse
+      rotateLeft
+      rotateRight
       slideUp
       slideDown
       slideLeft
@@ -387,12 +594,17 @@ zoomOut
         "name": "animation",
       },
       Object {
-        "description": "Either a color identifier to use for the background
-        color. For example: 'neutral-1'. Or, a 'url()' for an image. Dark
-        is not needed if color is provided.",
+        "description": "Either a color 
+identifier to use for the background color. For example: 'neutral-1'. Or, a 
+'url()' for an image. Dark is not needed if color is provided.",
         "format": "string
 {
-  color: string,
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   dark: 
     boolean
     string,
@@ -438,15 +650,19 @@ string",
         "name": "basis",
       },
       Object {
-        "description": "Include a border.",
+        "description": "Include a border. 'between' will place a border in the gap between
+      child elements. You must have a 'gap' to use 'between'.",
         "format": "boolean
 top
 left
 bottom
 right
+start
+end
 horizontal
 vertical
 all
+between
 {
   color: 
     string
@@ -459,9 +675,12 @@ all
     left
     bottom
     right
+    start
+    end
     horizontal
     vertical
-    all,
+    all
+    between,
   size: 
     xsmall
     small
@@ -479,7 +698,43 @@ all
     inset
     outset
     hidden
-}",
+}
+[{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  side: 
+    top
+    left
+    bottom
+    right
+    start
+    end
+    horizontal
+    vertical
+    all
+    between,
+  size: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  style: 
+    solid
+    dashed
+    dotted
+    double
+    groove
+    ridge
+    inset
+    outset
+    hidden
+}]",
         "name": "border",
       },
       Object {
@@ -522,6 +777,13 @@ boolean
 vertical
 boolean",
         "name": "fill",
+      },
+      Object {
+        "defaultValue": true,
+        "description": "When interactive via 'onClick', whether it should receive a focus
+        outline.",
+        "format": "boolean",
+        "name": "focusIndicator",
       },
       Object {
         "description": "The amount of spacing between child elements. This
@@ -570,6 +832,41 @@ string
         "name": "height",
       },
       Object {
+        "defaultValue": false,
+        "description": "The hover indicator to apply when the user is mousing over the
+button. An object can be also be specified for color index support:
+{background: 'neutral-2'}. This prop is meant to be used only
+with plain Buttons.",
+        "format": "boolean
+string
+background
+{
+  color: string,
+  dark: 
+    boolean
+    string,
+  image: string,
+  light: string,
+  position: string,
+  opacity: 
+    string
+    boolean
+    number
+    weak
+    medium
+    strong,
+  repeat: 
+    no-repeat
+    repeat
+    string,
+  size: 
+    cover
+    contain
+    string
+}",
+        "name": "hoverIndicator",
+      },
+      Object {
         "defaultValue": "stretch",
         "description": "How to align the contents along the main axis.",
         "format": "around
@@ -580,6 +877,12 @@ evenly
 start
 stretch",
         "name": "justify",
+      },
+      Object {
+        "description": "Click handler. Setting this property adds additional attributes to
+      the DOM for accessibility.",
+        "format": "function",
+        "name": "onClick",
       },
       Object {
         "description": "box overflow.",
@@ -604,9 +907,8 @@ string",
       },
       Object {
         "defaultValue": "none",
-        "description": "The amount of padding around the box contents. An
-        object can be specified to distinguish horizontal padding, vertical
-        padding, and padding on a particular side of the box",
+        "description": "Spacing around the outer edge of
+    the drawing coordinate area for the graphic elements to overflow into.",
         "format": "none
 xxsmall
 xsmall
@@ -616,6 +918,14 @@ large
 xlarge
 {
   bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
     xxsmall
     xsmall
     small
@@ -640,6 +950,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -783,7 +1101,8 @@ reverse",
     "name": "Button",
     "properties": Array [
       Object {
-        "description": "Custom title to be used by screen readers.",
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
         "format": "string",
         "name": "a11yTitle",
       },
@@ -822,6 +1141,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -839,6 +1166,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -873,6 +1208,12 @@ string",
         "name": "active",
       },
       Object {
+        "description": "The DOM tag or react component to use for the element.",
+        "format": "string
+function",
+        "name": "as",
+      },
+      Object {
         "description": "Color when hovering over places while selecting.",
         "format": "string
 {
@@ -889,7 +1230,8 @@ string",
       },
       Object {
         "defaultValue": false,
-        "description": "Whether the button expands to fill all of the available width and/or height.",
+        "description": "Whether the button expands to fill all of the available width and/or 
+        height.",
         "format": "horizontal
 vertical
 boolean",
@@ -900,6 +1242,19 @@ boolean",
         "description": "Whether when 'plain' it should receive a focus outline.",
         "format": "boolean",
         "name": "focusIndicator",
+      },
+      Object {
+        "defaultValue": "small",
+        "description": "The amount of spacing between icon and label in the button.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string",
+        "name": "gap",
       },
       Object {
         "defaultValue": false,
@@ -942,30 +1297,9 @@ background
         "name": "href",
       },
       Object {
-        "description": "Specifies where to display the URL defined in the href property.",
-        "format": "_self
-_blank
-_parent
-_top",
-        "name": "target",
-      },
-      Object {
         "description": "Icon element to place in the button.",
         "format": "element",
         "name": "icon",
-      },
-      Object {
-        "defaultValue": "small",
-        "description": "The amount of spacing between icon and label in the button.",
-        "format": "none
-xxsmall
-xsmall
-small
-medium
-large
-xlarge
-string",
-        "name": "gap",
       },
       Object {
         "description": "Label text to place in the button.",
@@ -974,44 +1308,63 @@ string",
       },
       Object {
         "description": "Click handler. Not setting this property and not specifying a href
-causes the Button to be disabled.",
+        causes the Button to be disabled.",
         "format": "function",
         "name": "onClick",
       },
       Object {
         "defaultValue": false,
         "description": "Whether this is a plain button with no border or pad.
-Non plain button will show both pad and border.
-The plain button has no border and unless the icon prop exist it has no pad as well.",
+          Non plain button will show both pad and border.
+          The plain button has no border and unless the icon prop exist it has 
+          no pad as well.",
         "format": "boolean",
         "name": "plain",
       },
       Object {
         "defaultValue": false,
-        "description": "Whether this is a primary button. There should be at most one per page or screen.",
+        "description": "Whether this is a primary button. There should be at most one per page
+            or screen.",
         "format": "boolean",
         "name": "primary",
       },
       Object {
         "defaultValue": false,
         "description": "Whether an icon and label should be reversed so that the icon is at the
-end of the anchor.",
+              end of the anchor.",
         "format": "boolean",
         "name": "reverse",
       },
       Object {
+        "description": "Whether this is a secondary button.",
+        "format": "boolean",
+        "name": "secondary",
+      },
+      Object {
+        "description": "The possible sizes of Button, that impacts the overall Button 
+      padding, border radius, text size and line height. 
+      'size' will not impact any icon related sizing.",
+        "format": "small
+medium
+large",
+        "name": "size",
+      },
+      Object {
+        "description": "Specifies where to display the URL defined in the href property.",
+        "format": "_self
+_blank
+_parent
+_top",
+        "name": "target",
+      },
+      Object {
         "defaultValue": "button",
-        "description": "The type of button. Set the type to submit for the default button on forms.",
+        "description": "The type of button. Set the type to submit for the default button on 
+                forms.",
         "format": "button
 reset
 submit",
         "name": "type",
-      },
-      Object {
-        "description": "The DOM tag or react component to use for the element.",
-        "format": "string
-function",
-        "name": "as",
       },
     ],
     "usage": "import { Button } from 'grommet';
@@ -1037,7 +1390,8 @@ function",
     "name": "Calendar",
     "properties": Array [
       Object {
-        "description": "Custom title to be used by screen readers.",
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
         "format": "string",
         "name": "a11yTitle",
       },
@@ -1076,6 +1430,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -1093,6 +1455,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -1183,9 +1553,11 @@ The function passes the following options:
   }
 \`\`\`
 
-\`onPreviousMonth\` and \`onNextMonth\` are callbacks that will tell the calendar to move between months.
-\`previousInBound\` and \`nextInBound\` are booleans that tell, when using \`bounds\`, if the current date is within that range.
-You can then use that to disable the previous and next buttons.
+\`onPreviousMonth\` and \`onNextMonth\` are callbacks that will tell the 
+calendar to move between months.
+\`previousInBound\` and \`nextInBound\` are booleans that tell, when using 
+\`bounds\`, if the current date is within that range. You can then use that 
+to disable the previous and next buttons.
 ",
         "format": "function",
         "name": "header",
@@ -1197,7 +1569,8 @@ You can then use that to disable the previous and next buttons.
         "name": "locale",
       },
       Object {
-        "description": "Called with an ISO8601 date when the user navigates to a different month.",
+        "description": "Called with an ISO8601 date when the user navigates to a different
+       month.",
         "format": "function",
         "name": "onReference",
       },
@@ -1243,140 +1616,7 @@ string",
     "usage": "import { Calendar } from 'grommet';
 <Calendar />",
   },
-  "Carousel": Object {
-    "availableAt": Array [
-      Object {
-        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
-        "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Carousel&full=0&addons=0&stories=1&panelRight=0",
-      },
-      Object {
-        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
-        "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=carousel&module=%2Fsrc%2FCarousel.js",
-      },
-    ],
-    "description": "A carousel that cycles through children. Child components
-      would typically be Images. It is the caller's responsibility to ensure
-      that all children are the same size.",
-    "intrinsicElement": "div",
-    "name": "Carousel",
-    "properties": Array [
-      Object {
-        "description": "Custom title to be used by screen readers.",
-        "format": "string",
-        "name": "a11yTitle",
-      },
-      Object {
-        "description": "How to align along the cross axis when contained in
-      a Box or along the column axis when contained in a Grid.",
-        "format": "start
-center
-end
-stretch",
-        "name": "alignSelf",
-      },
-      Object {
-        "description": "The name of the area to place
-    this inside a parent Grid.",
-        "format": "string",
-        "name": "gridArea",
-      },
-      Object {
-        "description": "The amount of margin around the component. An object can
-    be specified to distinguish horizontal margin, vertical margin, and
-    margin on a particular side.",
-        "format": "none
-xxsmall
-xsmall
-small
-medium
-large
-xlarge
-{
-  bottom: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  horizontal: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  left: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  right: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  top: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  vertical: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string
-}
-string",
-        "name": "margin",
-      },
-      Object {
-        "description": "Whether to expand to fill
-      all of the available width and height in the parent container.",
-        "format": "boolean",
-        "name": "fill",
-      },
-      Object {
-        "description": "If specified, the number of
-      milliseconds between automatically transitioning to the next child. It
-      will loop through all children indefinitely.",
-        "format": "number",
-        "name": "play",
-      },
-      Object {
-        "description": "If specified, the index of
-      the first element to be shown. Defaults to 0.",
-        "format": "number",
-        "name": "initialChild",
-      },
-      Object {
-        "defaultValue": true,
-        "description": "Whether to show carousel controls and which type of controls.",
-        "format": "boolean
-arrows
-selectors",
-        "name": "controls",
-      },
-    ],
-    "usage": "import { Carousel } from 'grommet';
-<Carousel />",
-  },
+  "Carousel": [Function],
   "Chart": Object {
     "availableAt": Array [
       Object {
@@ -1394,7 +1634,8 @@ selectors",
     "name": "Chart",
     "properties": Array [
       Object {
-        "description": "Custom title to be used by screen readers.",
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
         "format": "string",
         "name": "a11yTitle",
       },
@@ -1433,6 +1674,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -1450,6 +1699,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -1486,7 +1743,12 @@ string",
       },
       Object {
         "defaultValue": "accent-1",
-        "description": "A color identifier to use for the graphic color.",
+        "description": "A color identifier to use for the graphic color. If an
+      array is specified, it is used to create a gradient mask. Array objects
+      indicate what color to show at what value. In the simplest case, the
+      values should map to the Y bounds values, resulting in a vertical
+      gradient. Specifying more objects allows more fine grained control over
+      where the gradient colors change.",
         "format": "string
 {
   color: string,
@@ -1495,12 +1757,43 @@ string",
     medium
     strong
     boolean
-}",
+}
+[{
+  color: string,
+  value: number
+}]",
         "name": "color",
       },
       Object {
-        "description": "Called when the user clicks on it.
-      This is only available when the type is line or area.",
+        "description": "A unique identifier for the Chart. This
+      is required if more than one Chart is shown and they use color
+      gradients.",
+        "format": "string",
+        "name": "id",
+      },
+      Object {
+        "defaultValue": false,
+        "description": "Whether to use dashed lines for line or bar charts.",
+        "format": "boolean",
+        "name": "dash",
+      },
+      Object {
+        "description": "The amount of spacing between data points. This
+      is only used when the size specifies width as 'auto'.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string",
+        "name": "gap",
+      },
+      Object {
+        "description": "Called when the user clicks on the
+     visualization. Clicking on individual bars or points are handled via
+     values[].onClick for those types of charts.",
         "format": "function",
         "name": "onClick",
       },
@@ -1521,6 +1814,86 @@ string",
         "name": "overflow",
       },
       Object {
+        "defaultValue": "none",
+        "description": "Spacing around the outer edge of
+    the drawing coordinate area for the graphic elements to overflow into.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string",
+        "name": "pad",
+      },
+      Object {
         "defaultValue": false,
         "description": "Whether to round the line ends.",
         "format": "boolean",
@@ -1531,13 +1904,16 @@ string",
           "height": "small",
           "width": "medium",
         },
-        "description": "The size of the Chart.",
+        "description": "The size of the Chart.
+      'full' is deprecated as 'fill' is more consistent with how that term is
+      used elsewhere.",
         "format": "xxsmall
 xsmall
 small
 medium
 large
 xlarge
+fill
 full
 {
   height: 
@@ -1547,6 +1923,7 @@ full
     medium
     large
     xlarge
+    fill
     full
     string,
   width: 
@@ -1556,7 +1933,9 @@ full
     medium
     large
     xlarge
+    fill
     full
+    auto
     string
 }
 string",
@@ -1577,10 +1956,11 @@ string",
       },
       Object {
         "defaultValue": "bar",
-        "description": "The visual type of meter.",
+        "description": "The visual type of chart.",
         "format": "bar
 line
-area",
+area
+point",
         "name": "type",
       },
       Object {
@@ -1649,7 +2029,8 @@ area",
         "name": "label",
       },
       Object {
-        "description": "The DOM name attribute value to use for the underlying <input/> element.",
+        "description": "The DOM name attribute value to use for the underlying <input/> 
+      element.",
         "format": "string",
         "name": "name",
       },
@@ -1683,7 +2064,262 @@ NOTE: This can only be used with non-toggle components",
     "usage": "import { CheckBox } from 'grommet';
 <CheckBox />",
   },
-  "Clock": [Function],
+  "CheckBoxGroup": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=CheckBoxGroup&full=0&addons=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=checkboxgroup&module=%2Fsrc%2FCheckBoxGroup.js",
+      },
+    ],
+    "description": "A group of CheckBoxes.",
+    "intrinsicElement": "div",
+    "name": "CheckBoxGroup",
+    "properties": Array [
+      Object {
+        "description": "An array of the values for the checked options. 
+      If options is provided as an object, the value array will be the values 
+     that the valueKey maps to.",
+        "format": "[
+  number
+  string
+]",
+        "name": "value",
+      },
+      Object {
+        "defaultValue": undefined,
+        "description": "Disables all options.",
+        "format": "boolean",
+        "name": "disabled",
+      },
+      Object {
+        "description": "When the options array contains objects, this property indicates how
+        to determine the label of each option. If a string is
+        provided, it is used as the key to retrieve each option's label.",
+        "format": "string",
+        "name": "labelKey",
+      },
+      Object {
+        "description": "Required when used in the Context of Form and FormField.",
+        "format": "string",
+        "name": "name",
+      },
+      Object {
+        "description": "Function that will be called when the user clicks on a CheckBox option. 
+      It will pass a React event object with the additional CheckBoxGroup 
+      properties of 'option' and 'value'.",
+        "format": "function",
+        "name": "onChange",
+      },
+      Object {
+        "description": "Options can be either a string or an object of CheckBox props 
+      excluding the 'checked' property, use CheckBoxGroup 'value' prop instead 
+      of 'checked'.",
+        "format": "[string]
+[{
+
+}]",
+        "name": "options",
+        "required": true,
+      },
+      Object {
+        "description": "When the options array contains objects, this property indicates how
+        to determine the value of each option. If a string is provided, 
+        it is used as the key to retrieve each option's value.",
+        "format": "string",
+        "name": "valueKey",
+      },
+    ],
+    "usage": "import { CheckBoxGroup } from 'grommet';
+        <CheckBoxGroup />",
+  },
+  "Clock": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=Clock&full=0&addons=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=clock&module=%2Fsrc%2FClock.js",
+      },
+    ],
+    "description": "A clock with timezone awareness.",
+    "intrinsicElement": Array [
+      "div",
+      "svg",
+    ],
+    "name": "Clock",
+    "properties": Array [
+      Object {
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
+        "format": "string",
+        "name": "a11yTitle",
+      },
+      Object {
+        "description": "How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.",
+        "format": "start
+center
+end
+stretch",
+        "name": "alignSelf",
+      },
+      Object {
+        "description": "The name of the area to place
+    this inside a parent Grid.",
+        "format": "string",
+        "name": "gridArea",
+      },
+      Object {
+        "description": "The amount of margin around the component. An object can
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string",
+        "name": "margin",
+      },
+      Object {
+        "defaultValue": 24,
+        "description": "Whether to roll over the hours after 12 or after 24.",
+        "format": "12
+24
+12
+24",
+        "name": "hourLimit",
+      },
+      Object {
+        "description": "If the clock is running, this function will be called with the
+      current time value each time it changes.",
+        "format": "function",
+        "name": "onChange",
+      },
+      Object {
+        "defaultValue": "seconds",
+        "description": "How precise a time to represent.",
+        "format": "hours
+minutes
+seconds",
+        "name": "precision",
+      },
+      Object {
+        "defaultValue": "forward",
+        "description": "Whether the clock should actively adjust time or be fixed to the
+      time specified. 'backward' could be used as a countdown timer.",
+        "format": "boolean
+backward
+forward",
+        "name": "run",
+      },
+      Object {
+        "defaultValue": "medium",
+        "description": "Clock size",
+        "format": "small
+medium
+large
+xlarge
+string",
+        "name": "size",
+      },
+      Object {
+        "description": "ISO8601 time or duration. For example: 'PT8H12M23S',
+      'T08:12:23', or '2015-02-22T08:12:23'. Any included date
+      portion will be ignored for an analog clock. If not provided, the
+      current browser time will be used.",
+        "format": "string",
+        "name": "time",
+      },
+      Object {
+        "defaultValue": "analog",
+        "description": "What type of visualization to show.",
+        "format": "analog
+digital",
+        "name": "type",
+      },
+    ],
+    "usage": "import { Clock } from 'grommet';
+<Clock />",
+  },
   "Collapsible": Object {
     "description": "Expand or collapse animation.",
     "intrinsicElement": "div",
@@ -1704,6 +2340,425 @@ vertical",
     ],
     "usage": "import { Collapsible } from 'grommet';
 <Collapsible open>test</Collapsible>",
+  },
+  "DataChart": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=DataChart&full=0&addons=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=datachart&module=%2Fsrc%2FDataChart.js",
+      },
+    ],
+    "description": "Takes a data set and visualizes it. While Chart renders a
+    single value across a data set. DataChart allows multiple overlayed
+    Charts and adds guides and axes for decoration.",
+    "intrinsicElement": "div",
+    "name": "DataChart",
+    "properties": Array [
+      Object {
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
+        "format": "string",
+        "name": "a11yTitle",
+      },
+      Object {
+        "description": "How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.",
+        "format": "start
+center
+end
+stretch",
+        "name": "alignSelf",
+      },
+      Object {
+        "description": "The name of the area to place
+    this inside a parent Grid.",
+        "format": "string",
+        "name": "gridArea",
+      },
+      Object {
+        "description": "The amount of margin around the component. An object can
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string",
+        "name": "margin",
+      },
+      Object {
+        "description": "Chart properties indicating how to visualize the data.
+    'key' indicates which property of the data objects to use. 'keys' indicates
+    that multiple properties should be used for a stacked bar chart. DataChart
+    uses the key/keys to build the right 'values' for the underlying Chart.
+    All of the other properties in 'chart' are passed through to the Chart.",
+        "format": "{
+  key: string,
+  keys: [{
+  key: string,
+  color: 
+    string
+    {
+      color: string,
+      opacity: 
+        weak
+        medium
+        strong
+        boolean
+    }
+    [{
+  color: string,
+  value: number
+}]
+}],
+  a11yTitle: string,
+  bounds: [[number]],
+  color: 
+    string
+    {
+      color: string,
+      opacity: 
+        weak
+        medium
+        strong
+        boolean
+    }
+    [{
+  color: string,
+  value: number
+}],
+  dash: boolean,
+  onClick: function,
+  onHover: function,
+  overflow: boolean,
+  round: boolean,
+  thickness: 
+    hair
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    none
+    string,
+  type: 
+    bar
+    line
+    area
+    point
+}
+[{
+  key: string,
+  keys: [{
+  key: string,
+  color: 
+    string
+    {
+      color: string,
+      opacity: 
+        weak
+        medium
+        strong
+        boolean
+    }
+    [{
+  color: string,
+  value: number
+}]
+}],
+  a11yTitle: string,
+  bounds: [[number]],
+  color: 
+    string
+    {
+      color: string,
+      opacity: 
+        weak
+        medium
+        strong
+        boolean
+    }
+    [{
+  color: string,
+  value: number
+}],
+  dash: boolean,
+  onClick: function,
+  onHover: function,
+  overflow: boolean,
+  round: boolean,
+  thickness: 
+    hair
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    none
+    string,
+  type: 
+    bar
+    line
+    area
+    point
+}]",
+        "name": "chart",
+      },
+      Object {
+        "description": "the data set",
+        "format": "[{
+
+}]",
+        "name": "data",
+      },
+      Object {
+        "description": "The spacing between the axes and the Charts.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string",
+        "name": "gap",
+      },
+      Object {
+        "defaultValue": "none",
+        "description": "Spacing around the outer edge of
+    the drawing coordinate area for the graphic elements to overflow into.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string",
+        "name": "pad",
+      },
+      Object {
+        "defaultValue": Object {
+          "height": "small",
+          "width": "medium",
+        },
+        "description": "The size of the Charts. This does not include the axes
+      and any gap. It is passed through to the underlying Chart.",
+        "format": "fill
+{
+  height: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    fill
+    string,
+  width: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    fill
+    auto
+    string
+}",
+        "name": "size",
+      },
+      Object {
+        "description": "Chart thickness given to all
+    Charts if not specified per Chart in 'chart'.",
+        "format": "hair
+xsmall
+small
+medium
+large
+xlarge
+none
+string",
+        "name": "thickness",
+      },
+      Object {
+        "description": "x-axis configuration. 'guide' specifies that vertical
+    guide lines should be drawn under the Chart, one per label.
+    'key' specifies what property in the 'data' should be used as
+    any label content. 'labels' specifies how many labels to show.
+    'render' allows for custom rendering of the labels. It will be
+    called with the current data index and axis index and should return
+    the element to render: (dataIndex, axisIndex) => element.",
+        "format": "boolean
+{
+  guide: boolean,
+  key: string,
+  labels: number,
+  render: function
+}",
+        "name": "xAxis",
+      },
+      Object {
+        "description": "y-axis configuration. 'guide' specifies that horizontal
+    guide lines should be drawn under the Chart, one per label.
+    'labels' specifies how many labels to show.
+    'render' allows for custom rendering of the labels. It will be
+    called with the value and axis index and should return
+    the element to render: (value, axisIndex) => element",
+        "format": "boolean
+{
+  guide: boolean,
+  labels: number,
+  prefix: string,
+  render: function,
+  suffix: string
+}",
+        "name": "yAxis",
+      },
+    ],
+    "usage": "import { DataChart } from 'grommet';
+<DataChart data={data} chart={} />",
   },
   "DataTable": [Function],
   "Diagram": Object {
@@ -1777,7 +2832,128 @@ vertical",
 <Diagram />",
   },
   "Distribution": [Function],
-  "Drop": [Function],
+  "Drop": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=Drop&full=0&addons=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=drop&module=%2Fsrc%2FDrop.js",
+      },
+    ],
+    "description": "A container that is overlaid next to a target.",
+    "intrinsicElement": "div",
+    "name": "Drop",
+    "properties": Array [
+      Object {
+        "defaultValue": Object {
+          "left": "left",
+          "top": "top",
+        },
+        "description": "How to align the drop with respect to the target element. Not 
+        specifying a vertical or horizontal alignment will cause it to be 
+        aligned in the center.",
+        "format": "{
+  top: 
+    top
+    bottom,
+  bottom: 
+    top
+    bottom,
+  right: 
+    left
+    right,
+  left: 
+    left
+    right
+}",
+        "name": "align",
+      },
+      Object {
+        "description": "Function that will be invoked when the user clicks outside the drop.",
+        "format": "function",
+        "name": "onClickOutside",
+      },
+      Object {
+        "description": "Function that will be called when the user presses the escape key inside
+       the drop.",
+        "format": "function",
+        "name": "onEsc",
+      },
+      Object {
+        "defaultValue": "auto",
+        "description": "How to control the overflow inside the drop.",
+        "format": "auto
+hidden
+scroll
+visible
+{
+  horizontal: 
+    auto
+    hidden
+    scroll
+    visible,
+  vertical: 
+    auto
+    hidden
+    scroll
+    visible
+}
+string",
+        "name": "overflow",
+      },
+      Object {
+        "defaultValue": true,
+        "description": "Whether to dynamically re-place when resized.",
+        "format": "boolean",
+        "name": "responsive",
+      },
+      Object {
+        "defaultValue": false,
+        "description": "Whether the drop should control focus.",
+        "format": "boolean",
+        "name": "restrictFocus",
+      },
+      Object {
+        "defaultValue": true,
+        "description": "Whether the drop element should be stretched to at least match the
+      width of the target element. The default is true because
+      that is what most uses of Drop want, like Select and Menu.",
+        "format": "boolean",
+        "name": "stretch",
+      },
+      Object {
+        "description": "Target where the drop will be aligned to. This should be a React 
+      reference.",
+        "format": "object",
+        "name": "target",
+        "required": true,
+      },
+      Object {
+        "description": "Elevated height of the target, indicated via a drop shadow.",
+        "format": "none
+xsmall
+small
+medium
+large
+xlarge
+string",
+        "name": "elevation",
+      },
+      Object {
+        "defaultValue": false,
+        "description": "Whether the drop element should have no background nor shadow",
+        "format": "boolean",
+        "name": "plain",
+      },
+    ],
+    "usage": "import { Drop } from 'grommet';
+<Drop target={reference}>...</Drop>",
+  },
   "DropButton": Object {
     "availableAt": Array [
       Object {
@@ -1793,15 +2969,15 @@ vertical",
     ],
     "description": "A Button that controls a Drop. When opened, the Drop will contain
       whatever is specified via \`dropContent\`. The Drop will control the focus
-      so that the contents behind it are not focusable. All properties and theme properties of
-      Button or Drop can be passed through.
+      so that the contents behind it are not focusable. All properties and 
+      theme properties of Button or Drop can be passed through.
       ",
     "intrinsicElement": "button",
     "name": "DropButton",
     "properties": Array [
       Object {
-        "defaultValue": "Open Drop",
-        "description": "Custom title to be used by screen readers.",
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
         "format": "string",
         "name": "a11yTitle",
       },
@@ -1840,6 +3016,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -1857,6 +3041,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -1951,7 +3143,93 @@ string",
     "usage": "import { DropButton } from 'grommet';
 <DropButton dropContent={...} />",
   },
-  "Form": [Function],
+  "Footer": [Function],
+  "Form": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=Form&full=0&addons=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=form&module=%2Fsrc%2FForm.js",
+      },
+    ],
+    "description": "A form that manages state for its fields.",
+    "intrinsicElement": "form",
+    "name": "Form",
+    "properties": Array [
+      Object {
+        "defaultValue": Object {},
+        "description": "An object representing any errors in the data. Their keys should
+        match the keys in the value object.",
+        "format": "{
+
+}",
+        "name": "errors",
+      },
+      Object {
+        "defaultValue": Object {},
+        "description": "An object representing any information details in the data.
+        Their keys should match the keys in the value object.",
+        "format": "{
+
+}",
+        "name": "infos",
+      },
+      Object {
+        "defaultValue": Object {
+          "invalid": "invalid",
+          "required": "required",
+        },
+        "description": "Custom validation messages.",
+        "format": "{
+  invalid: string,
+  required: string
+}",
+        "name": "messages",
+      },
+      Object {
+        "description": "Function that will be called when any fields are updated.
+      The fields must have a non-null \`name\` property assigned.",
+        "format": "function",
+        "name": "onChange",
+      },
+      Object {
+        "description": "Function that will be called when the form is submitted. The
+      single argument is an event containing the latest value object
+      via \`event.value\` and an object indicating which fields were
+      touched via \`event.touched\`.",
+        "format": "function",
+        "name": "onSubmit",
+      },
+      Object {
+        "description": "Function that will be called when the form is reset. The
+      single argument is the event provided by react.",
+        "format": "function",
+        "name": "onReset",
+      },
+      Object {
+        "defaultValue": "submit",
+        "description": "When to perform validation",
+        "format": "blur
+submit",
+        "name": "validate",
+      },
+      Object {
+        "defaultValue": Object {},
+        "description": "An object representing all of the data in the form.",
+        "format": "{
+
+}",
+        "name": "value",
+      },
+    ],
+    "usage": "import { Form } from 'grommet';
+<Form />",
+  },
   "FormContext": Object {
     "$$typeof": Symbol(react.context),
     "Consumer": Object {
@@ -1966,8 +3244,14 @@ string",
     "_calculateChangedBits": null,
     "_currentRenderer": null,
     "_currentRenderer2": null,
-    "_currentValue": undefined,
-    "_currentValue2": undefined,
+    "_currentValue": Object {
+      "useFormField": [Function],
+      "useFormInput": [Function],
+    },
+    "_currentValue2": Object {
+      "useFormField": [Function],
+      "useFormInput": [Function],
+    },
     "_threadCount": 0,
   },
   "FormField": Object {
@@ -1990,13 +3274,23 @@ string",
     "name": "FormField",
     "properties": Array [
       Object {
-        "description": "The component to insert in the FormField. Grommet will add update the form values when this field changes. Any additional properties (such as initial value) you pass to FormField will be forwarded to this component. The component may be custom as long it supports the proporties of name, value, onChange (event => {}), while event has either event.value or event.target.value.  ",
+        "description": "The component to insert in the FormField. Grommet will add update the 
+      form values when this field changes. Any additional properties 
+      (such as initial value) you pass to FormField will be forwarded to this
+      component. The component may be custom as long it supports the properties
+      of name, value, onChange (event => {}), while event has either event.value
+      or event.target.value.",
         "format": "function
 object",
         "name": "component",
       },
       Object {
-        "description": "Any error text describing issues with the field",
+        "description": "Whether the field should look disabled.",
+        "format": "boolean",
+        "name": "disabled",
+      },
+      Object {
+        "description": "Any error text describing issues with the field's value",
         "format": "string
 node",
         "name": "error",
@@ -2011,6 +3305,12 @@ node",
         "description": "The id of the input element contained in this field",
         "format": "string",
         "name": "htmlFor",
+      },
+      Object {
+        "description": "Any informational text regarding the field's value",
+        "format": "string
+node",
+        "name": "info",
       },
       Object {
         "description": "A short label describing the field",
@@ -2044,6 +3344,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -2061,6 +3369,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -2099,30 +3415,1132 @@ string",
         "name": "required",
       },
       Object {
-        "description": "Validation rule when used within a grommet Form. Provide a regular
-      expression or a function. If a
+        "description": "Validation rule when used within a grommet Form. Provide an object
+      with a regular expression, a function, or an array of these. If a
       function is provided, it will be called with two arguments, the value
       for this field and the entire value object. This permits validation to
       encompass multiple fields. The function should return a string message
-      describing the validation issue, if any.",
+      describing the validation issue, if any, or an object with 'message'
+      and 'status' properties.",
         "format": "{
   regexp: object,
-  message: string
+  message: 
+    string
+    node,
+  status: 
+    error
+    info
 }
-function",
+function
+[
+  {
+    regexp: object,
+    message: 
+      string
+      node,
+    status: 
+      error
+      info
+  }
+  function
+]",
         "name": "validate",
       },
     ],
     "usage": "import { FormField } from 'grommet';
 <FormField />",
   },
-  "Grid": [Function],
+  "Grid": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=Grid&full=0&addons=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=grid&module=%2Fsrc%2FGrid.js",
+      },
+    ],
+    "description": "A grid system for laying out content. To use, define the
+rows and columns, create area names for adjacent cells, and then
+place Box components inside those areas using the gridArea property.
+See https://css-tricks.com/snippets/css/complete-guide-grid/.
+The availability of Grid can be tested via \`Grid.available\`. Use this
+to create fallback rendering for older browsers, like ie11.",
+    "intrinsicElement": "div",
+    "name": "Grid",
+    "properties": Array [
+      Object {
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
+        "format": "string",
+        "name": "a11yTitle",
+      },
+      Object {
+        "description": "How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.",
+        "format": "start
+center
+end
+stretch",
+        "name": "alignSelf",
+      },
+      Object {
+        "description": "The name of the area to place
+    this inside a parent Grid.",
+        "format": "string",
+        "name": "gridArea",
+      },
+      Object {
+        "description": "The amount of margin around the component. An object can
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string",
+        "name": "margin",
+      },
+      Object {
+        "defaultValue": "stretch",
+        "description": "How to align the individual items inside the grid when there is extra
+space in the column axis.",
+        "format": "start
+center
+end
+stretch",
+        "name": "align",
+      },
+      Object {
+        "description": "How to align the contents along the column axis.",
+        "format": "start
+center
+end
+between
+around
+stretch",
+        "name": "alignContent",
+      },
+      Object {
+        "description": "Grid areas.
+      Either area names and column,row coordinates.
+      Or, an array of string arrays that specify named grid areas.",
+        "format": "[{
+  name: string,
+  start: [number],
+  end: [number]
+}]
+[[string]]",
+        "name": "areas",
+      },
+      Object {
+        "description": "Column sizes.
+      If an array value is an array, the inner array indicates the
+      minimum and maximum sizes for the column.
+      Specifying a single string will repeat multiple columns
+      of that size, as long as there is room for more.
+      Specifying an object allows indicating how the columns
+      stretch to fit the available space.",
+        "format": "[
+  [
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    full
+    1/2
+    1/3
+    2/3
+    1/4
+    2/4
+    3/4
+    flex
+    auto
+    string
+  ]
+  xsmall
+  small
+  medium
+  large
+  xlarge
+  full
+  1/2
+  1/3
+  2/3
+  1/4
+  2/4
+  3/4
+  flex
+  auto
+  string
+]
+xsmall
+small
+medium
+large
+xlarge
+{
+  count: 
+    fit
+    fill
+    number,
+  size: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    [xsmall
+small
+medium
+large
+xlarge
+full
+1/2
+1/3
+2/3
+1/4
+2/4
+3/4
+flex
+auto]
+    string
+}
+string",
+        "name": "columns",
+      },
+      Object {
+        "description": "Whether the width and/or height should fill the container.",
+        "format": "horizontal
+vertical
+boolean",
+        "name": "fill",
+      },
+      Object {
+        "description": "Gap sizes between rows and/or columns.",
+        "format": "xxsmall
+xsmall
+small
+medium
+large
+xlarge
+none
+{
+  row: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    none
+    string,
+  column: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    none
+    string
+}
+string",
+        "name": "gap",
+      },
+      Object {
+        "defaultValue": "stretch",
+        "description": "How to align the individual items inside the grid when there is extra
+space in the row axis.",
+        "format": "start
+center
+end
+stretch",
+        "name": "justify",
+      },
+      Object {
+        "description": "How to align the contents along the row axis.",
+        "format": "start
+center
+end
+between
+around
+stretch",
+        "name": "justifyContent",
+      },
+      Object {
+        "defaultValue": "none",
+        "description": "Spacing around the outer edge of
+    the drawing coordinate area for the graphic elements to overflow into.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string",
+        "name": "pad",
+      },
+      Object {
+        "defaultValue": true,
+        "description": "Whether margin and pad sizes should be scaled for mobile
+        environments.",
+        "format": "boolean",
+        "name": "responsive",
+      },
+      Object {
+        "description": "Row sizes.
+      If an array value is an array, the inner array indicates the
+      minimum and maximum sizes for the row.
+      Specifying a single string will cause automatically added rows to be
+      the specified size.",
+        "format": "[
+  [
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    full
+    1/2
+    1/3
+    2/3
+    1/4
+    2/4
+    3/4
+    flex
+    auto
+    string
+  ]
+  xsmall
+  small
+  medium
+  large
+  xlarge
+  full
+  1/2
+  1/3
+  2/3
+  1/4
+  2/4
+  3/4
+  flex
+  auto
+  string
+]
+xsmall
+small
+medium
+large
+xlarge
+string",
+        "name": "rows",
+      },
+      Object {
+        "description": "The DOM tag to use for the element. NOTE: This is deprecated
+      in favor of indicating the DOM tag via the 'as' property.",
+        "format": "string
+function",
+        "name": "tag",
+      },
+      Object {
+        "defaultValue": "div",
+        "description": "The DOM tag or react component to use for the element.",
+        "format": "string
+function",
+        "name": "as",
+      },
+    ],
+    "usage": "import { Grid } from 'grommet';
+<Grid />",
+  },
   "Grommet": [Function],
+  "Header": [Function],
   "Heading": [Function],
-  "Image": [Function],
+  "Image": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=Image&full=0&addons=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=image&module=%2Fsrc%2FImage.js",
+      },
+    ],
+    "description": "An image.",
+    "intrinsicElement": "img",
+    "name": "Image",
+    "properties": Array [
+      Object {
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
+        "format": "string",
+        "name": "a11yTitle",
+      },
+      Object {
+        "description": "How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.",
+        "format": "start
+center
+end
+stretch",
+        "name": "alignSelf",
+      },
+      Object {
+        "description": "The name of the area to place
+    this inside a parent Grid.",
+        "format": "string",
+        "name": "gridArea",
+      },
+      Object {
+        "description": "The amount of margin around the component. An object can
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string",
+        "name": "margin",
+      },
+      Object {
+        "description": "Whether the width and/or height should fill the container.",
+        "format": "horizontal
+vertical
+boolean",
+        "name": "fill",
+      },
+      Object {
+        "description": "How the image fills its container.",
+        "format": "cover
+contain",
+        "name": "fit",
+      },
+      Object {
+        "description": "Specifies the URL of the fallback image used when 
+      src is failing to load",
+        "format": "string",
+        "name": "fallback",
+      },
+      Object {
+        "description": "Transparency of the image.",
+        "format": "weak
+medium
+strong
+string
+boolean",
+        "name": "opacity",
+      },
+    ],
+    "usage": "import { Image } from 'grommet';
+<Image/>",
+  },
   "InfiniteScroll": [Function],
   "Keyboard": [Function],
-  "Layer": [Function],
+  "Layer": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=Layer&full=0&addons=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=layer&module=%2Fsrc%2FLayer.js",
+      },
+    ],
+    "description": "An overlay. Layer is typically modal and anchored to an edge, corner, or
+      center of the window. It is the caller's responsibility to provide a
+      control for the user to close the layer.",
+    "intrinsicElement": "div",
+    "name": "Layer",
+    "properties": Array [
+      Object {
+        "defaultValue": true,
+        "description": "Whether to animate the Layer content when it opens. This
+        property is deprecated and will be removed in the next major version
+        of grommet. Instead, use 'animation'.",
+        "format": "boolean",
+        "name": "animate",
+      },
+      Object {
+        "defaultValue": "slide",
+        "description": "Animation transition of the Layer content when it opens and closes.",
+        "format": "slide
+fadeIn
+none
+boolean",
+        "name": "animation",
+      },
+      Object {
+        "defaultValue": false,
+        "description": "Whether the width and/or height should fill the current viewport 
+        size.",
+        "format": "boolean
+vertical
+horizontal",
+        "name": "full",
+      },
+      Object {
+        "description": "The amount of margin around the Layer. An object can be specified to
+distinguish horizontal margin, vertical margin, and margin on a
+particular side of the layer",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    string
+}
+string",
+        "name": "margin",
+      },
+      Object {
+        "defaultValue": true,
+        "description": "Whether there should be an overlay preventing interaction underneath 
+        the layer.",
+        "format": "boolean",
+        "name": "modal",
+      },
+      Object {
+        "description": "Function that will be invoked on modal layers when the user clicks 
+      outside the layer.",
+        "format": "function",
+        "name": "onClickOutside",
+      },
+      Object {
+        "description": "Function that will be called when the user presses the escape key inside
+       the layer.",
+        "format": "function",
+        "name": "onEsc",
+      },
+      Object {
+        "defaultValue": false,
+        "description": "Whether this is a plain Layer with no background color or border.",
+        "format": "boolean",
+        "name": "plain",
+      },
+      Object {
+        "defaultValue": "center",
+        "description": "Position of the layer content.",
+        "format": "bottom
+bottom-left
+bottom-right
+center
+end
+hidden
+left
+right
+start
+top
+top-left
+top-right",
+        "name": "position",
+      },
+      Object {
+        "defaultValue": true,
+        "description": "Whether the layer should take full width and height on mobile",
+        "format": "boolean",
+        "name": "responsive",
+      },
+      Object {
+        "description": "Target where the layer will be aligned to. This should be a React 
+      reference.",
+        "format": "object",
+        "name": "target",
+      },
+    ],
+    "usage": "import { Layer } from 'grommet';
+<Layer />",
+  },
+  "List": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=List&full=0&addons=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=list&module=%2Fsrc%2FList.js",
+      },
+    ],
+    "description": "An ordered list of items.",
+    "intrinsicElement": "ol",
+    "name": "List",
+    "properties": Array [
+      Object {
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
+        "format": "string",
+        "name": "a11yTitle",
+      },
+      Object {
+        "description": "How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.",
+        "format": "start
+center
+end
+stretch",
+        "name": "alignSelf",
+      },
+      Object {
+        "description": "The name of the area to place
+    this inside a parent Grid.",
+        "format": "string",
+        "name": "gridArea",
+      },
+      Object {
+        "description": "The amount of margin around the component. An object can
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string",
+        "name": "margin",
+      },
+      Object {
+        "defaultValue": "ul",
+        "description": "The DOM tag or react component to use for the element.",
+        "format": "string",
+        "name": "as",
+      },
+      Object {
+        "description": "Item background. An array value indicates that items should have
+      different backgrounds, modulo the array index.",
+        "format": "string
+[string]",
+        "name": "background",
+      },
+      Object {
+        "description": "Item border.",
+        "format": "boolean
+horizontal
+vertical
+top
+bottom
+left
+right
+start
+end
+{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  side: 
+    horizontal
+    vertical
+    top
+    bottom
+    left
+    right
+    start
+    end,
+  size: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}",
+        "name": "border",
+      },
+      Object {
+        "description": "Array of data objects.",
+        "format": "[
+  string
+  {
+
+  }
+]",
+        "name": "data",
+      },
+      Object {
+        "description": "Function that will be called when each data item is rendered.
+      It will be passed three arguments, the individual data item, its index,
+      and an object indicating the state of the item, if any. It
+      should return a react element.
+      For example:
+      \`children={(item, index, { active }) => <Box ...>{...}</Box>}\`
+      ",
+        "format": "function",
+        "name": "children",
+      },
+      Object {
+        "description": "Item specific background, border, and pad, keyed by data index.
+      For example:
+      { 27: { background: ..., border: ..., pad: ... }},
+      where the background, border, and pad accept the same values as
+      the same named properties on List.",
+        "format": "{
+
+}",
+        "name": "itemProps",
+      },
+      Object {
+        "description": "Use this to indicate that 'data' doesn't contain all that it could.
+      It will be called when all of the data items have been rendered.
+      This might be used when the total number of items that could be retrieved
+      is more than you'd want to load into the browser. 'onMore' allows you
+      to lazily fetch more from the server only when needed.",
+        "format": "function",
+        "name": "onMore",
+      },
+      Object {
+        "description": "When supplied, this function will be called with an event object that
+      include a 'item' property containing the data value associated with
+      the clicked item and an 'index' property containing the index in 'data'
+      of the clicked item. You should not include interactive elements, like
+      Anchor or Button inside 'primaryKey' or 'secondaryKey' as that can
+      cause confusion with overlapping interactive elements.",
+        "format": "function",
+        "name": "onClickItem",
+      },
+      Object {
+        "description": "Item padding.",
+        "format": "xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string
+{
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge,
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+}",
+        "name": "pad",
+      },
+      Object {
+        "description": "When a string is supplied, it indicates the property in a data item
+      object to use to get the primary content. If a function is supplied, it
+      will be called with the current data item object and should return
+      a React element that will be rendered as the primary content.",
+        "format": "string
+function",
+        "name": "primaryKey",
+      },
+      Object {
+        "description": "When a string is supplied, it indicates the property in a data item
+      object to use to get the secondary content. If a function is supplied, it
+      will be called with the current data item object and should return
+      a React element that will be rendered as the secondary content.",
+        "format": "string
+function",
+        "name": "secondaryKey",
+      },
+      Object {
+        "defaultValue": 50,
+        "description": "How many items to render at a time.",
+        "format": "number",
+        "name": "step",
+      },
+    ],
+    "usage": "import { List } from 'grommet';
+<List data={[...]} />",
+  },
+  "Main": [Function],
   "Markdown": [Function],
   "MaskedInput": Object {
     "availableAt": Array [
@@ -2141,6 +4559,13 @@ function",
     "intrinsicElement": "input",
     "name": "MaskedInput",
     "properties": Array [
+      Object {
+        "description": "An optional icon to show. This could be used to provide an
+      indication of what kind of input is expected, like an email icon,
+      or what the input will be used for, like a search icon.",
+        "format": "element",
+        "name": "icon",
+      },
       Object {
         "description": "The id attribute of the input.",
         "format": "string",
@@ -2162,7 +4587,6 @@ function",
         "name": "onBlur",
       },
       Object {
-        "defaultValue": Array [],
         "description": "Describes the structure of the mask. If a regexp is provided, it should
       allow both the final full string element as well as partial strings
       as the user types characters one by one.",
@@ -2181,6 +4605,12 @@ function",
     }
 }]",
         "name": "mask",
+      },
+      Object {
+        "description": "Whether an icon should be reversed so that the icon is at the
+      end of the input.",
+        "format": "boolean",
+        "name": "reverse",
       },
       Object {
         "description": "The size of the text.",
@@ -2225,7 +4655,8 @@ number",
     "name": "Menu",
     "properties": Array [
       Object {
-        "description": "Custom title to be used by screen readers.",
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
         "format": "string",
         "name": "a11yTitle",
       },
@@ -2264,6 +4695,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -2281,6 +4720,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -2319,7 +4766,8 @@ string",
           "left": "left",
           "top": "top",
         },
-        "description": "Where to place the drop down. The keys correspond to a side of the drop down.
+        "description": "Where to place the drop down.
+The keys correspond to a side of the drop down.
 The values correspond to a side of the control. For instance,
 {left: 'left', top: 'bottom'} would align the left edges and the top of
 the drop down to the bottom of the control. At most one of left or right and
@@ -2403,7 +4851,8 @@ node",
           "closeMenu": "Close Menu",
           "openMenu": "Open Menu",
         },
-        "description": "Custom messages. Used for accessibility by screen readers.",
+        "description": "Custom messages. Used for accessibility by screen readers. 
+      These values will be overridden if an a11yTitle is provided.",
         "format": "{
   closeMenu: string,
   openMenu: string
@@ -2430,8 +4879,370 @@ string",
     "usage": "import { Menu } from 'grommet';
 <Menu />",
   },
-  "Meter": [Function],
-  "Paragraph": [Function],
+  "Meter": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=Meter&full=0&addons=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=meter&module=%2Fsrc%2FMeter.js",
+      },
+    ],
+    "description": "A graphical meter.",
+    "name": "Meter",
+    "properties": Array [
+      Object {
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
+        "format": "string",
+        "name": "a11yTitle",
+      },
+      Object {
+        "description": "How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.",
+        "format": "start
+center
+end
+stretch",
+        "name": "alignSelf",
+      },
+      Object {
+        "description": "The name of the area to place
+    this inside a parent Grid.",
+        "format": "string",
+        "name": "gridArea",
+      },
+      Object {
+        "description": "The amount of margin around the component. An object can
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string",
+        "name": "margin",
+      },
+      Object {
+        "defaultValue": Object {
+          "color": "light-2",
+          "opacity": "medium",
+        },
+        "description": "Background color",
+        "format": "string
+{
+  color: string,
+  opacity: 
+    weak
+    medium
+    strong
+    number
+    boolean
+}",
+        "name": "background",
+      },
+      Object {
+        "description": "The maximum value for the Meter.",
+        "format": "number
+string",
+        "name": "max",
+      },
+      Object {
+        "defaultValue": false,
+        "description": "Whether to round the line ends",
+        "format": "boolean",
+        "name": "round",
+      },
+      Object {
+        "defaultValue": "medium",
+        "description": "The size of the Meter.",
+        "format": "xsmall
+small
+medium
+large
+xlarge
+full
+string",
+        "name": "size",
+      },
+      Object {
+        "defaultValue": "medium",
+        "description": "The size of the Meter.",
+        "format": "xsmall
+small
+medium
+large
+xlarge
+string",
+        "name": "thickness",
+      },
+      Object {
+        "defaultValue": "bar",
+        "description": "The visual type of meter.",
+        "format": "bar
+circle",
+        "name": "type",
+      },
+      Object {
+        "description": "Array of value objects describing the data.
+      'value' is the actual numeric value.
+      'label' is a text string describing it.
+      'color' indicates the color name to use. If not specified a default one
+      will be chosen.
+      'onClick' will be called when the user clicks on it.
+      Set 'highlight' to call attention to it.
+      'onHover' will be called with a boolean argument indicating when the
+      user hovers onto or away from it.",
+        "format": "[{
+  color: string,
+  highlight: boolean,
+  label: string,
+  onClick: function,
+  onHover: function,
+  value: number
+}]",
+        "name": "values",
+      },
+    ],
+    "usage": "import { Meter } from 'grommet';
+<Meter />",
+  },
+  "Nav": [Function],
+  "Paragraph": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=Paragraph&full=0&addons=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=paragraph&module=%2Fsrc%2FParagraph.js",
+      },
+    ],
+    "description": "A paragraph of text.",
+    "intrinsicElement": "p",
+    "name": "Paragraph",
+    "properties": Array [
+      Object {
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
+        "format": "string",
+        "name": "a11yTitle",
+      },
+      Object {
+        "description": "How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.",
+        "format": "start
+center
+end
+stretch",
+        "name": "alignSelf",
+      },
+      Object {
+        "description": "The name of the area to place
+    this inside a parent Grid.",
+        "format": "string",
+        "name": "gridArea",
+      },
+      Object {
+        "description": "The amount of margin around the component. An object can
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string",
+        "name": "margin",
+      },
+      Object {
+        "description": "Color when hovering over places while selecting.",
+        "format": "string
+{
+  dark: string,
+  light: string
+}",
+        "name": "color",
+      },
+      Object {
+        "defaultValue": false,
+        "description": "Whether the width should fill the container.",
+        "format": "boolean",
+        "name": "fill",
+      },
+      Object {
+        "defaultValue": true,
+        "description": "Whether margin should be scaled for mobile environments.",
+        "format": "boolean",
+        "name": "responsive",
+      },
+      Object {
+        "defaultValue": "medium",
+        "description": "The size of the Paragraph text.",
+        "format": "small
+medium
+large
+xlarge
+xxlarge
+string",
+        "name": "size",
+      },
+      Object {
+        "defaultValue": "start",
+        "description": "How to align the text inside the paragraph.",
+        "format": "start
+center
+end",
+        "name": "textAlign",
+      },
+    ],
+    "usage": "import { Paragraph } from 'grommet';
+<Paragraph />",
+  },
   "RadioButton": Object {
     "availableAt": Array [
       Object {
@@ -2457,6 +5268,16 @@ string",
         "name": "checked",
       },
       Object {
+        "description": "Function that will be called to render the visual representation.
+      It will be passed an object indicating whether the button is checked. It
+      should return a react element.
+      For example:
+      \`children={({ checked }) => <Box ...>{...}</Box>}\`
+      ",
+        "format": "function",
+        "name": "children",
+      },
+      Object {
         "description": "Same as React <input disabled={} />. Also adds a hidden input element
 with the same name so form submissions work.",
         "format": "boolean",
@@ -2473,7 +5294,8 @@ with the same name so form submissions work.",
         "name": "label",
       },
       Object {
-        "description": "The DOM name attribute value to use for the underlying <input/> element.",
+        "description": "The DOM name attribute value to use for the underlying <input/>
+       element.",
         "format": "string",
         "name": "name",
         "required": true,
@@ -2507,34 +5329,60 @@ with the same name so form submissions work.",
     "name": "RadioButtonGroup",
     "properties": Array [
       Object {
-        "description": "The DOM name attribute value to use for the underlying <input/> elements.",
+        "description": "Function that will be called to render the visual representation.
+      It will be passed an object indicating whether the button is checked. It
+      should return a react element.
+      For example:
+      \`children={(option, { checked }) => <Box ...>{...}</Box>}\`
+      ",
+        "format": "function",
+        "name": "children",
+      },
+      Object {
+        "defaultValue": false,
+        "description": "Disables all options.",
+        "format": "boolean",
+        "name": "disabled",
+      },
+      Object {
+        "description": "The DOM name attribute value to use for the underlying <input/> 
+      elements.",
         "format": "string",
         "name": "name",
         "required": true,
       },
       Object {
-        "description": "Function that will be called when the user clicks on of the radio
+        "description": "Function that will be called when the user clicks on one of the radio
       buttons. It will be passed a React event object.",
         "format": "function",
         "name": "onChange",
       },
       Object {
-        "description": "Options can be either a string or an object.",
+        "description": "Options can be either a string, boolean, number 
+      or an object. Each option is rendered as a single RadioButton.",
         "format": "[string]
+[number]
+[boolean]
 [{
   disabled: boolean,
   id: string,
   label: 
     string
     element,
-  value: string
+  value: 
+    string
+    number
+    boolean
 }]",
         "name": "options",
         "required": true,
       },
       Object {
         "description": "Currently selected option value.",
-        "format": "string",
+        "format": "string
+number
+boolean
+object",
         "name": "value",
       },
     ],
@@ -2647,11 +5495,7 @@ vertical",
         "name": "max",
       },
       Object {
-        "defaultValue": Object {
-          "lower": "Lower Bounds",
-          "upper": "Upper Bounds",
-        },
-        "description": "Custom messages. Used for accessibility by screen readers.",
+        "description": "Custom messages used by screen readers for accessibility.",
         "format": "{
   lower: string,
   upper: string
@@ -2711,7 +5555,6 @@ string",
         "name": "step",
       },
       Object {
-        "defaultValue": Array [],
         "description": "The current values.",
         "format": "[number]",
         "name": "values",
@@ -2740,7 +5583,8 @@ string",
     "name": "Select",
     "properties": Array [
       Object {
-        "description": "Custom title to be used by screen readers.",
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
         "format": "string",
         "name": "a11yTitle",
       },
@@ -2779,6 +5623,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -2796,6 +5648,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -2914,7 +5774,8 @@ string",
         "name": "focusIndicator",
       },
       Object {
-        "description": "A custom icon to be used when rendering the select. You can use false to not render an icon at all.",
+        "description": "A custom icon to be used when rendering the select. You can use false to
+       not render an icon at all.",
         "format": "boolean
 function
 node",
@@ -2931,9 +5792,6 @@ function",
         "name": "labelKey",
       },
       Object {
-        "defaultValue": Object {
-          "multiple": "multiple",
-        },
         "description": "Custom messages.",
         "format": "{
   multiple: string
@@ -2944,6 +5802,11 @@ function",
         "description": "Whether to allow multiple options to be selected.",
         "format": "boolean",
         "name": "multiple",
+      },
+      Object {
+        "description": "The name of the attribute when in a Form or FormField.",
+        "format": "string",
+        "name": "name",
       },
       Object {
         "description": "Function that will be called when the user selects an option.",
@@ -3015,7 +5878,8 @@ node",
         "name": "replace",
       },
       Object {
-        "description": "Placeholder text to use in the search box when the search input is empty.",
+        "description": "Placeholder text to use in the search box when the search input is 
+      empty.",
         "format": "string",
         "name": "searchPlaceholder",
       },
@@ -3028,7 +5892,7 @@ node",
         "name": "selected",
       },
       Object {
-        "description": "The size of the select.",
+        "description": "The size of the text and icon.",
         "format": "small
 medium
 large
@@ -3044,9 +5908,11 @@ string",
         "format": "string
 element
 object
+number
 [
   string
   object
+  number
 ]",
         "name": "value",
       },
@@ -3061,9 +5927,15 @@ object
       to determine the value of each option. If a string is
       provided, it is used as the key to retrieve each option's value.
       If a function is provided, it is called with the option and the
-      return value indicates the value.",
+      return value indicates the value. If reduce is true, the value
+      coming via the key will be used for the onChange value and the value
+      property is expected to be reduced to align.",
         "format": "string
-function",
+function
+{
+  key: string,
+  reduce: boolean
+}",
         "name": "valueKey",
       },
       Object {
@@ -3076,6 +5948,7 @@ function",
     "usage": "import { Select } from 'grommet';
 <Select />",
   },
+  "Sidebar": [Function],
   "SkipLink": [Function],
   "SkipLinkTarget": [Function],
   "SkipLinks": [Function],
@@ -3087,9 +5960,27 @@ function",
     "properties": Array [
       Object {
         "defaultValue": false,
+        "description": "Whether the tab is disabled.",
+        "format": "boolean",
+        "name": "disabled",
+      },
+      Object {
+        "description": "Icon element to place in the tab.",
+        "format": "element",
+        "name": "icon",
+      },
+      Object {
+        "defaultValue": false,
         "description": "Whether this is a plain tab with no style.",
         "format": "boolean",
         "name": "plain",
+      },
+      Object {
+        "defaultValue": false,
+        "description": "Whether an icon and label should be reversed so that the icon is at the
+              end of the tab.",
+        "format": "boolean",
+        "name": "reverse",
       },
       Object {
         "description": "The title of the tab.",
@@ -3158,7 +6049,13 @@ bottom",
   },
   "TableFooter": [Function],
   "TableHeader": [Function],
-  "TableRow": [Function],
+  "TableRow": Object {
+    "description": "A row of cells in a table.",
+    "intrinsicElement": "tr",
+    "name": "TableRow",
+    "usage": "import { TableRow } from 'grommet';
+<TableRow />",
+  },
   "Tabs": Object {
     "availableAt": Array [
       Object {
@@ -3177,7 +6074,8 @@ bottom",
     "name": "Tabs",
     "properties": Array [
       Object {
-        "description": "Custom title to be used by screen readers.",
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
         "format": "string",
         "name": "a11yTitle",
       },
@@ -3216,6 +6114,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -3233,6 +6139,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -3266,6 +6180,14 @@ This means that future tab changes will not work unless you subscribe to
 onActive function and update activeIndex accordingly.",
         "format": "number",
         "name": "activeIndex",
+      },
+      Object {
+        "description": "How to align the tab controls within the tabs header.",
+        "format": "start
+center
+end
+stretch",
+        "name": "alignControls",
       },
       Object {
         "description": "Array of Tab.",
@@ -3454,6 +6376,13 @@ string",
         "name": "dropProps",
       },
       Object {
+        "description": "An optional icon to show. This could be used to provide an
+      indication of what kind of input is expected, like an email icon,
+      or what the input will be used for, like a search icon.",
+        "format": "element",
+        "name": "icon",
+      },
+      Object {
         "description": "The id attribute of the input.",
         "format": "string",
         "name": "id",
@@ -3470,7 +6399,8 @@ string",
           "suggestionsCount": "suggestions available",
           "suggestionsExist": "This input has suggestions use arrow keys to navigate",
         },
-        "description": "Custom messages for TextInput. Used for accessibility by screen readers.",
+        "description": "Custom messages for TextInput. Used for accessibility by screen 
+        readers.",
         "format": "{
   enterSelect: string,
   suggestionsCount: string,
@@ -3480,7 +6410,7 @@ string",
         "name": "messages",
       },
       Object {
-        "description": "The name attribute of the input.",
+        "description": "The name of the attribute when in a Form or FormField.",
         "format": "string",
         "name": "name",
       },
@@ -3515,6 +6445,12 @@ The suggestion contains the object chosen from the supplied suggestions.",
 Only use this when the containing context provides sufficient affordance",
         "format": "boolean",
         "name": "plain",
+      },
+      Object {
+        "description": "Whether an icon should be reversed so that the icon is at the
+      end of the input.",
+        "format": "boolean",
+        "name": "reverse",
       },
       Object {
         "description": "The size of the TextInput.",
@@ -3565,7 +6501,8 @@ number",
     "name": "Video",
     "properties": Array [
       Object {
-        "description": "Custom title to be used by screen readers.",
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
         "format": "string",
         "name": "a11yTitle",
       },
@@ -3604,6 +6541,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -3621,6 +6566,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -3677,6 +6630,32 @@ contain",
         "format": "boolean",
         "name": "mute",
       },
+      Object {
+        "defaultValue": Object {
+          "closeMenu": "close menu",
+          "fullScreen": "full screen",
+          "openMenu": "open menu",
+          "pauseButton": "pause",
+          "playButton": "play",
+          "progressMeter": "video progress",
+          "scrubber": "scrubber",
+          "volumeDown": "volume down",
+          "volumeUp": "volume up",
+        },
+        "description": "Custom messages. Used for accessibility by screen readers.",
+        "format": "{
+  closeMenu: string,
+  fullScreen: string,
+  progressMeter: string,
+  openMenu: string,
+  pauseButton: string,
+  playButton: string,
+  scrubber: string,
+  volumeDown: string,
+  volumeUp: string
+}",
+        "name": "messages",
+      },
     ],
     "usage": "import { Video } from 'grommet';
 <Video />",
@@ -3699,7 +6678,8 @@ contain",
     "name": "WorldMap",
     "properties": Array [
       Object {
-        "description": "Custom title to be used by screen readers.",
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
         "format": "string",
         "name": "a11yTitle",
       },
@@ -3738,6 +6718,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -3755,6 +6743,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -3813,6 +6809,13 @@ string",
         "name": "continents",
       },
       Object {
+        "description": "Whether the width and/or height should fill the container.",
+        "format": "horizontal
+vertical
+boolean",
+        "name": "fill",
+      },
+      Object {
         "description": "Called when the user clicks on a place.
         It is passed the location.",
         "format": "function",
@@ -3849,5 +6852,6 @@ string",
   },
   "__esModule": true,
   "calcs": [Function],
+  "round": [Function],
 }
 `;

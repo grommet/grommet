@@ -1,23 +1,47 @@
-import React, { Component } from 'react';
-import { compose } from 'recompose';
+import React, { forwardRef, useContext, useState } from 'react';
 
-import { withFocus, withForwardRef } from '../hocs';
-
+import { FormContext } from '../Form/FormContext';
 import { StyledRangeInput } from './StyledRangeInput';
 
-class RangeInput extends Component {
-  render() {
-    const { forwardRef, ...rest } = this.props;
-    return <StyledRangeInput {...rest} ref={forwardRef} type="range" />;
-  }
-}
+const RangeInput = forwardRef(
+  ({ name, onChange, onFocus, onBlur, value: valueProp, ...rest }, ref) => {
+    const formContext = useContext(FormContext);
+
+    const [value, setValue] = formContext.useFormInput(name, valueProp);
+
+    const [focus, setFocus] = useState();
+    return (
+      <StyledRangeInput
+        ref={ref}
+        name={name}
+        focus={focus}
+        value={value}
+        {...rest}
+        onFocus={event => {
+          setFocus(true);
+          if (onFocus) onFocus(event);
+        }}
+        onBlur={event => {
+          setFocus(false);
+          if (onBlur) onBlur(event);
+        }}
+        onChange={event => {
+          setValue(event.target.value);
+          if (onChange) onChange(event);
+        }}
+        type="range"
+      />
+    );
+  },
+);
+
+RangeInput.displayName = 'RangeInput';
+
 let RangeInputDoc;
 if (process.env.NODE_ENV !== 'production') {
-  RangeInputDoc = require('./doc').doc(RangeInput); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  RangeInputDoc = require('./doc').doc(RangeInput);
 }
-const RangeInputWrapper = compose(
-  withFocus(),
-  withForwardRef,
-)(RangeInputDoc || RangeInput);
+const RangeInputWrapper = RangeInputDoc || RangeInput;
 
 export { RangeInputWrapper as RangeInput };

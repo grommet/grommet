@@ -1,4 +1,4 @@
-import React, { Component, Children } from 'react';
+import React, { Children, forwardRef, useState } from 'react';
 
 import { Box } from '../Box';
 
@@ -7,88 +7,72 @@ import { AccordionContext } from './AccordionContext';
 const activeAsArray = active =>
   typeof active === 'number' ? [active] : active;
 
-class Accordion extends Component {
-  static defaultProps = {
-    animate: true,
-    messages: {
-      tabContents: 'Tab Contents',
-    },
-  };
+const Accordion = forwardRef(
+  (
+    { activeIndex, animate = true, children, multiple, onActive, ...rest },
+    ref,
+  ) => {
+    const [activeIndexes, setActiveIndexes] = useState([]);
+    const [stateActiveIndex, setStateActiveIndex] = useState();
 
-  static getDerivedStateFromProps(nextProps, prevState) {
-    const { activeIndex } = nextProps;
-    const {
-      activeIndexes: stateActiveIndexes,
-      activeIndex: stateActiveIndex,
-    } = prevState;
-
-    const activeIndexes = activeAsArray(activeIndex) || [];
-
+    // Derived state from props
+    // https://reactjs.org/docs/hooks-faq.html#how-do-i-implement-getderivedstatefromprops
+    const derivedActiveIndexes = activeAsArray(activeIndex) || [];
     if (
       (typeof activeIndex !== 'undefined' ||
         activeIndex !== stateActiveIndex) &&
-      activeIndexes.join() !== stateActiveIndexes.join()
+      derivedActiveIndexes.join() !== activeIndexes.join()
     ) {
-      return { activeIndexes, activeIndex };
+      setActiveIndexes(derivedActiveIndexes);
+      setStateActiveIndex(activeIndex);
     }
 
-    return null;
-  }
+    const onPanelChange = index => {
+      let nextActiveIndexes = [...(activeIndexes || [])];
 
-  state = {
-    activeIndexes: [],
-  };
+      const nextActiveIndex = nextActiveIndexes.indexOf(index);
+      if (nextActiveIndex > -1) {
+        nextActiveIndexes.splice(nextActiveIndex, 1);
+      } else if (multiple) {
+        nextActiveIndexes.push(index);
+      } else {
+        nextActiveIndexes = [index];
+      }
 
-  onPanelChange = index => {
-    const { activeIndexes } = this.state;
-    let nextActiveIndexes = [...(activeIndexes || [])];
-    const { onActive, multiple } = this.props;
-
-    const activeIndex = nextActiveIndexes.indexOf(index);
-    if (activeIndex > -1) {
-      nextActiveIndexes.splice(activeIndex, 1);
-    } else if (multiple) {
-      nextActiveIndexes.push(index);
-    } else {
-      nextActiveIndexes = [index];
-    }
-
-    this.setState({ activeIndexes: nextActiveIndexes }, () => {
+      setActiveIndexes(nextActiveIndexes);
       if (onActive) {
         onActive(nextActiveIndexes);
       }
-    });
-  };
-
-  render() {
-    const { animate, children, messages, ...rest } = this.props;
-    const { activeIndexes } = this.state;
-
-    delete rest.onActive;
+    };
 
     return (
-      <Box role="tablist" {...rest}>
-        {Children.toArray(children).map((panel, index) => (
-          <AccordionContext.Provider
-            key={`accordion-panel_${index + 0}`}
-            value={{
-              active: activeIndexes.indexOf(index) > -1,
-              animate,
-              messages,
-              onPanelChange: () => this.onPanelChange(index),
-            }}
-          >
-            {panel}
-          </AccordionContext.Provider>
-        ))}
+      <Box ref={ref} role="tablist" {...rest}>
+        {Children.toArray(children)
+          .filter(child => child)
+          .map((child, index) => (
+            <AccordionContext.Provider
+              // eslint-disable-next-line react/no-array-index-key
+              key={index}
+              value={{
+                active: activeIndexes.indexOf(index) > -1,
+                animate,
+                onPanelChange: () => onPanelChange(index),
+              }}
+            >
+              {child}
+            </AccordionContext.Provider>
+          ))}
       </Box>
     );
-  }
-}
+  },
+);
+
+Accordion.displayName = 'Accordion';
 
 let AccordionDoc;
 if (process.env.NODE_ENV !== 'production') {
-  AccordionDoc = require('./doc').doc(Accordion); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  AccordionDoc = require('./doc').doc(Accordion);
 }
 const AccordionWrapper = AccordionDoc || Accordion;
 

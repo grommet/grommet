@@ -32,7 +32,10 @@ export const doc = Stack => {
       'bottom-right',
     ]).description(`Where to anchor children from. If not specified, children
       fill the guiding child's area.`),
-    fill: PropTypes.bool
+    fill: PropTypes.oneOfType([
+      PropTypes.oneOf(['horizontal', 'vertical']),
+      PropTypes.bool,
+    ])
       .description(
         `Whether to expand to fill
       all of the available width and height in the parent container.`,

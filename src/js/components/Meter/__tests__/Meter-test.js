@@ -127,6 +127,10 @@ describe('Meter', () => {
           background={{ color: 'light-3', opacity: 'medium' }}
           values={VALUES}
         />
+        <Meter
+          background={{ color: 'light-3', opacity: 0.2 }}
+          values={VALUES}
+        />
       </Grommet>,
     );
     const tree = component.toJSON();

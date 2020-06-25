@@ -22,6 +22,19 @@ Same as React <input checked={} />
 boolean
 ```
 
+**children**
+
+Function that will be called to render the visual representation.
+      It will be passed an object indicating whether the button is checked. It
+      should return a react element.
+      For example:
+      `children={({ checked }) => <Box ...>{...}</Box>}`
+      
+
+```
+function
+```
+
 **disabled**
 
 Same as React <input disabled={} />. Also adds a hidden input element
@@ -49,7 +62,8 @@ node
 
 **name**
 
-Required. The DOM name attribute value to use for the underlying <input/> element.
+Required. The DOM name attribute value to use for the underlying <input/>
+       element.
 
 ```
 string
@@ -120,6 +134,17 @@ Defaults to
 
 ```
 100%
+```
+
+**radioButton.color**
+
+The color of the border surrounding the checked 
+    icon in RadioButton checked state. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
 ```
 
 **radioButton.extend**

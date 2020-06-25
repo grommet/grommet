@@ -18,6 +18,14 @@ export const doc = RadioButton => {
 
   DocumentedRadioButton.propTypes = {
     checked: PropTypes.bool.description('Same as React <input checked={} />'),
+    children: PropTypes.func.description(
+      `Function that will be called to render the visual representation.
+      It will be passed an object indicating whether the button is checked. It
+      should return a react element.
+      For example:
+      \`children={({ checked }) => <Box ...>{...}</Box>}\`
+      `,
+    ),
     disabled: PropTypes.bool.description(
       `Same as React <input disabled={} />. Also adds a hidden input element
 with the same name so form submissions work.`,
@@ -29,7 +37,8 @@ with the same name so form submissions work.`,
       'Label text to place next to the control.',
     ),
     name: PropTypes.string.description(
-      'The DOM name attribute value to use for the underlying <input/> element.',
+      `The DOM name attribute value to use for the underlying <input/>
+       element.`,
     ).isRequired,
     onChange: PropTypes.func.description(
       `Function that will be called when the user clicks the radio button. It
@@ -66,6 +75,12 @@ export const themeDoc = {
     description: 'The border-radius of the RadioButton.',
     type: 'string',
     defaultValue: '100%',
+  },
+  'radioButton.color': {
+    description: `The color of the border surrounding the checked 
+    icon in RadioButton checked state.`,
+    type: 'string | { dark: string, light: string }',
+    defaultValue: 'undefined',
   },
   'radioButton.extend': {
     description: 'Any additional style for the RadioButton.',

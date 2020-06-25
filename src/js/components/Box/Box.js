@@ -1,48 +1,89 @@
-import React, { Children, Component } from 'react';
-import { compose } from 'recompose';
+import React, {
+  Children,
+  forwardRef,
+  useContext,
+  useMemo,
+  useState,
+} from 'react';
 
-import { withForwardRef, withTheme } from '../hocs';
-import { ThemeContext } from '../../contexts';
+import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { backgroundIsDark } from '../../utils';
+import { Keyboard } from '../Keyboard';
 
 import { StyledBox, StyledBoxGap } from './StyledBox';
 
-class Box extends Component {
-  static contextType = ThemeContext;
-
-  static displayName = 'Box';
-
-  static defaultProps = {
-    direction: 'column',
-    margin: 'none',
-    pad: 'none',
-    responsive: true,
-  };
-
-  render() {
-    const {
+const Box = forwardRef(
+  (
+    {
       a11yTitle,
       background,
+      border,
       children,
-      direction,
+      direction = 'column',
       elevation, // munged to avoid styled-components putting it in the DOM
       fill, // munged to avoid styled-components putting it in the DOM
-      forwardRef,
       gap,
+      onBlur,
+      onClick,
+      onFocus,
       overflow, // munged to avoid styled-components putting it in the DOM
-      responsive,
+      responsive = true,
       tag,
       as,
       wrap, // munged to avoid styled-components putting it in the DOM,
       width, // munged to avoid styled-components putting it in the DOM
       height, // munged to avoid styled-components putting it in the DOM
-      theme: propsTheme,
+      tabIndex,
       ...rest
-    } = this.props;
-    const theme = this.context || propsTheme;
+    },
+    ref,
+  ) => {
+    const theme = useContext(ThemeContext) || defaultProps.theme;
+
+    const focusable = useMemo(() => onClick && !(tabIndex < 0), [
+      onClick,
+      tabIndex,
+    ]);
+
+    const [focus, setFocus] = useState();
+
+    const clickProps = useMemo(() => {
+      if (focusable) {
+        return {
+          onClick,
+          onFocus: event => {
+            setFocus(true);
+            if (onFocus) onFocus(event);
+          },
+          onBlur: event => {
+            setFocus(false);
+            if (onBlur) onBlur(event);
+          },
+        };
+      }
+      const result = {};
+      if (onBlur) result.onBlur = onBlur;
+      if (onClick) result.onClick = onClick;
+      if (onFocus) result.onFocus = onFocus;
+      return result;
+    }, [focusable, onClick, onFocus, onBlur]);
+
+    const adjustedTabIndex = useMemo(() => {
+      if (tabIndex !== undefined) return tabIndex;
+      if (focusable) return 0;
+      return undefined;
+    }, [focusable, tabIndex]);
+
+    if (
+      (border === 'between' || (border && border.side === 'between')) &&
+      !gap
+    ) {
+      console.warn('Box must have a gap to use border between');
+    }
+
     let contents = children;
-    if (gap) {
+    if (gap && gap !== 'none') {
       contents = [];
       let firstIndex;
       Children.forEach(children, (child, index) => {
@@ -57,6 +98,7 @@ class Box extends Component {
                 gap={gap}
                 directionProp={direction}
                 responsive={responsive}
+                border={border}
               />,
             );
           }
@@ -65,55 +107,57 @@ class Box extends Component {
       });
     }
 
+    if (background || theme.darkChanged) {
+      let dark = backgroundIsDark(background, theme);
+      const darkChanged = dark !== undefined && dark !== theme.dark;
+      if (darkChanged || theme.darkChanged) {
+        dark = dark === undefined ? theme.dark : dark;
+        contents = (
+          <ThemeContext.Provider value={{ ...theme, dark }}>
+            {contents}
+          </ThemeContext.Provider>
+        );
+      }
+    }
+
     let content = (
       <StyledBox
         as={!as && tag ? tag : as}
         aria-label={a11yTitle}
         background={background}
-        ref={forwardRef}
+        border={border}
+        ref={ref}
         directionProp={direction}
         elevationProp={elevation}
         fillProp={fill}
+        focus={focus}
         overflowProp={overflow}
         wrapProp={wrap}
         widthProp={width}
         heightProp={height}
         responsive={responsive}
+        tabIndex={adjustedTabIndex}
+        {...clickProps}
         {...rest}
       >
         {contents}
       </StyledBox>
     );
 
-    // When a Box changes the darkness, it sets darkChanged so that StyledBox
-    // can know what the underlying darkness is when deciding which elevation
-    // to show.
-    if (background || theme.darkChanged) {
-      let dark = backgroundIsDark(background, theme);
-      const darkChanged = dark !== undefined && dark !== theme.dark;
-      if (darkChanged || theme.darkChanged) {
-        dark = dark === undefined ? theme.dark : dark;
-        content = (
-          <ThemeContext.Provider value={{ ...theme, dark, darkChanged }}>
-            {content}
-          </ThemeContext.Provider>
-        );
-      }
+    if (onClick) {
+      content = <Keyboard onEnter={onClick}>{content}</Keyboard>;
     }
 
     return content;
-  }
-}
+  },
+);
 
-Object.setPrototypeOf(Box.defaultProps, defaultProps);
+Box.displayName = 'Box';
 
 let BoxDoc;
 if (process.env.NODE_ENV !== 'production') {
   BoxDoc = require('./doc').doc(Box); // eslint-disable-line global-require
 }
-const BoxWrapper = compose(
-  withTheme,
-  withForwardRef,
-)(BoxDoc || Box);
+const BoxWrapper = BoxDoc || Box;
 
 export { BoxWrapper as Box };

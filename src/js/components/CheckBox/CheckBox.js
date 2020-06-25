@@ -1,13 +1,10 @@
-import React, { Component } from 'react';
-import { compose } from 'recompose';
-
-import { withTheme } from 'styled-components';
+import React, { forwardRef, useContext, useEffect, useState } from 'react';
+import { ThemeContext } from 'styled-components';
 
 import { removeUndefined } from '../../utils/object';
 import { defaultProps } from '../../default-props';
-
 import { Box } from '../Box';
-import { withFocus, withForwardRef } from '../hocs';
+import { FormContext } from '../Form/FormContext';
 
 import {
   StyledCheckBox,
@@ -29,40 +26,50 @@ const stopLabelClick = event => {
   }
 };
 
-class CheckBox extends Component {
-  constructor(props) {
-    super(props);
-    const { checked, indeterminate, toggle } = props;
-
-    if (checked && indeterminate) {
-      console.warn(
-        'Checkbox cannot be "checked" and "indeterminate" at the same time.',
-      );
-    }
-
-    if (toggle && indeterminate) {
-      console.warn(
-        'Checkbox of type toggle does not have "indeterminate" state.',
-      );
-    }
-  }
-
-  render() {
-    const {
-      checked,
+const CheckBox = forwardRef(
+  (
+    {
+      checked: checkedProp,
       disabled,
-      focus,
-      forwardRef,
+      focus: focusProp,
       id,
       label,
       name,
+      onBlur,
       onChange,
+      onFocus,
       reverse,
-      theme,
       toggle,
       indeterminate,
       ...rest
-    } = this.props;
+    },
+    ref,
+  ) => {
+    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const formContext = useContext(FormContext);
+
+    const [checked, setChecked] = formContext.useFormInput(
+      name,
+      checkedProp,
+      false,
+    );
+
+    const [focus, setFocus] = useState(focusProp);
+    useEffect(() => setFocus(focusProp), [focusProp]);
+
+    useEffect(() => {
+      if (checkedProp && indeterminate) {
+        console.warn(
+          'Checkbox cannot be "checked" and "indeterminate" at the same time.',
+        );
+      }
+
+      if (toggle && indeterminate) {
+        console.warn(
+          'Checkbox of type toggle does not have "indeterminate" state.',
+        );
+      }
+    }, [checkedProp, toggle, indeterminate]);
 
     const themeableProps = {
       checked,
@@ -148,16 +155,27 @@ class CheckBox extends Component {
       >
         <StyledCheckBoxInput
           {...rest}
-          ref={forwardRef}
+          ref={ref}
           type="checkbox"
           {...removeUndefined({
             id,
             name,
             checked,
             disabled,
-            onChange,
           })}
           {...themeableProps}
+          onFocus={event => {
+            setFocus(true);
+            if (onFocus) onFocus(event);
+          }}
+          onBlur={event => {
+            setFocus(false);
+            if (onBlur) onBlur(event);
+          }}
+          onChange={event => {
+            setChecked(event.target.checked);
+            if (onChange) onChange(event);
+          }}
         />
         {visual}
         {hidden}
@@ -182,20 +200,16 @@ class CheckBox extends Component {
         {second}
       </StyledCheckBoxContainer>
     );
-  }
-}
+  },
+);
 
-CheckBox.defaultProps = {};
-Object.setPrototypeOf(CheckBox.defaultProps, defaultProps);
+CheckBox.displayName = 'CheckBox';
 
 let CheckBoxDoc;
 if (process.env.NODE_ENV !== 'production') {
-  CheckBoxDoc = require('./doc').doc(CheckBox); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  CheckBoxDoc = require('./doc').doc(CheckBox);
 }
-const CheckBoxWrapper = compose(
-  withFocus(),
-  withTheme,
-  withForwardRef,
-)(CheckBoxDoc || CheckBox);
+const CheckBoxWrapper = CheckBoxDoc || CheckBox;
 
 export { CheckBoxWrapper as CheckBox };

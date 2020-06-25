@@ -1,11 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { cleanup, fireEvent, render } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
 import { TextArea } from '..';
-
-jest.mock('react-dom');
 
 describe('TextArea', () => {
   test('basic', () => {
@@ -89,6 +88,65 @@ describe('TextArea', () => {
       );
       const tree = component.toJSON();
       expect(tree).toMatchSnapshot();
+    });
+  });
+
+  describe('Event tests', () => {
+    afterEach(cleanup);
+    const keyEvent = {
+      key: 'Backspace',
+      keyCode: 8,
+      which: 8,
+    };
+
+    test(`onKeyDown`, () => {
+      let capturedEvent = null;
+      const callback = event => {
+        const { key, keyCode, which } = event;
+        capturedEvent = { key, keyCode, which };
+      };
+
+      const component = render(
+        <Grommet>
+          <TextArea
+            id="item"
+            name="item"
+            placeholder="item"
+            onKeyDown={callback}
+          />
+        </Grommet>,
+      );
+
+      const textArea = component.getByPlaceholderText('item');
+
+      fireEvent.keyDown(textArea, keyEvent);
+
+      expect(capturedEvent).toEqual(expect.objectContaining(keyEvent));
+    });
+
+    test(`onKeyUp`, () => {
+      let capturedEvent = null;
+      const callback = event => {
+        const { key, keyCode, which } = event;
+        capturedEvent = { key, keyCode, which };
+      };
+
+      const component = render(
+        <Grommet>
+          <TextArea
+            id="item"
+            name="item"
+            placeholder="item"
+            onKeyUp={callback}
+          />
+        </Grommet>,
+      );
+
+      const textArea = component.getByPlaceholderText('item');
+
+      fireEvent.keyUp(textArea, keyEvent);
+
+      expect(capturedEvent).toEqual(expect.objectContaining(keyEvent));
     });
   });
 });

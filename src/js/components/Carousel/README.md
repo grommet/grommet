@@ -15,7 +15,8 @@ import { Carousel } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 ```
 string
@@ -65,6 +66,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -82,6 +91,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -186,7 +203,8 @@ Defaults to
 
 **carousel.icons.current**
 
-The icon to use on the middle navigation control. One icon per carousel image. Expects `element`.
+The icon to use on the middle navigation control. 
+      One icon per carousel image. Expects `element`.
 
 Defaults to
 
@@ -216,12 +234,12 @@ undefined
 
 **global.colors.icon**
 
-The color used for Carousel icons. Expects `string | { 'dark': string, 'light': string }`.
+The color of a given icon. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
 ```
-[object Object]
+{ dark: #f8f8f8, light: #666666 }
 ```
 
 **global.edgeSize**

@@ -20,7 +20,9 @@ const customBreakpoints = deepMerge(grommet, {
       medium: {
         value: 900,
       },
-      large: 3000,
+      large: {
+        value: 3000,
+      },
     },
   },
 });
@@ -125,7 +127,8 @@ const Responsive = ({
         }
       }
 
-      // Also if areas is a simple array not an object of arrays for different sizes
+      // Also if areas is a simple array not an object of arrays for
+      // different sizes
       let areasVal = areas;
       if (areas && !Array.isArray(areas)) areasVal = areas[size];
 

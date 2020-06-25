@@ -9,7 +9,11 @@ const disabledStyle = `
 `;
 
 const StyledRadioButtonContainer = styled.label`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   user-select: none;
+  width: fit-content;
   ${props => props.disabled && disabledStyle} ${props =>
     !props.disabled &&
     'cursor: pointer;'}
@@ -56,7 +60,7 @@ StyledRadioButtonIcon.defaultProps = {};
 Object.setPrototypeOf(StyledRadioButtonIcon.defaultProps, defaultProps);
 
 const StyledRadioButtonBox = styled.div`
-  ${props => props.focus && focusStyle};
+  ${props => props.focus && focusStyle()};
   ${props => props.theme.radioButton.check.extend};
 `;
 

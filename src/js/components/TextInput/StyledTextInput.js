@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 import {
   disabledStyle,
+  getInputPadBySide,
   focusStyle,
   inputStyle,
   parseMetricToNum,
@@ -18,6 +19,7 @@ const sizeStyle = props => {
 };
 
 const plainStyle = css`
+  outline: none;
   border: none;
 `;
 
@@ -28,13 +30,18 @@ const StyledTextInput = styled.input`
   ${props => props.plain && plainStyle}
 
   ${placeholderStyle}
+  ${props =>
+    props.icon &&
+    (props.reverse
+      ? `padding-right: ${props.theme.global.edgeSize.large};`
+      : `padding-left: ${props.theme.global.edgeSize.large};`)}
 
   &::-moz-focus-inner {
     border: none;
     outline: none;
   }
 
-  ${props => props.focus && !props.plain && focusStyle};
+  ${props => props.focus && !props.plain && focusStyle()};
   ${props =>
     props.disabled &&
     disabledStyle(
@@ -62,7 +69,7 @@ Object.setPrototypeOf(StyledTextInputContainer.defaultProps, defaultProps);
 const StyledPlaceholder = styled.div`
   position: absolute;
   left: ${props =>
-    parseMetricToNum(props.theme.global.input.padding) -
+    parseMetricToNum(getInputPadBySide(props, 'left')) -
     parseMetricToNum(props.theme.global.control.border.width)}px;
   top: 50%;
   transform: translateY(-50%);
@@ -78,6 +85,19 @@ const StyledPlaceholder = styled.div`
 
 StyledPlaceholder.defaultProps = {};
 Object.setPrototypeOf(StyledPlaceholder.defaultProps, defaultProps);
+
+const StyledIcon = styled.div`
+  position: absolute;
+  display: flex;
+  justify: center;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  ${props =>
+    props.reverse
+      ? `right: ${getInputPadBySide(props, 'right')};`
+      : `left: ${getInputPadBySide(props, 'left')};`}
+`;
 
 const StyledSuggestions = styled.ol`
   border-top-left-radius: 0;
@@ -99,5 +119,6 @@ export {
   StyledTextInput,
   StyledTextInputContainer,
   StyledPlaceholder,
+  StyledIcon,
   StyledSuggestions,
 };

@@ -1,8 +1,14 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge, genericProps, themeDocUtils } from '../../utils';
+import {
+  backgroundDoc,
+  getAvailableAtBadge,
+  genericProps,
+  hoverIndicatorPropType,
+  padPropType,
+  themeDocUtils,
+} from '../../utils';
 
-const PAD_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
 export const OVERFLOW_VALUES = ['auto', 'hidden', 'scroll', 'visible'];
 
 const ANIMATION_TYPE = PropTypes.oneOf([
@@ -10,6 +16,8 @@ const ANIMATION_TYPE = PropTypes.oneOf([
   'fadeOut',
   'jiggle',
   'pulse',
+  'rotateLeft',
+  'rotateRight',
   'slideUp',
   'slideDown',
   'slideLeft',
@@ -22,6 +30,43 @@ const ANIMATION_SHAPE = PropTypes.shape({
   delay: PropTypes.number,
   duration: PropTypes.number,
   size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+});
+
+const BORDER_SHAPE = PropTypes.shape({
+  color: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.shape({
+      dark: PropTypes.string,
+      light: PropTypes.string,
+    }),
+  ]),
+  side: PropTypes.oneOf([
+    'top',
+    'left',
+    'bottom',
+    'right',
+    'start',
+    'end',
+    'horizontal',
+    'vertical',
+    'all',
+    'between',
+  ]),
+  size: PropTypes.oneOfType([
+    PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+    PropTypes.string,
+  ]),
+  style: PropTypes.oneOf([
+    'solid',
+    'dashed',
+    'dotted',
+    'double',
+    'groove',
+    'ridge',
+    'inset',
+    'outset',
+    'hidden',
+  ]).defaultValue('solid'),
 });
 
 // if you update values here, make sure to update in Drop/doc too.
@@ -73,32 +118,7 @@ export const doc = Box => {
     ]).description(`Animation effect(s) to use. 'duration' and 'delay' should
         be in milliseconds. 'jiggle' and 'pulse' types are intended for
         small elements, like icons.`),
-    background: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.shape({
-        color: PropTypes.string,
-        dark: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
-        image: PropTypes.string,
-        position: PropTypes.string,
-        opacity: PropTypes.oneOfType([
-          PropTypes.string,
-          PropTypes.bool,
-          PropTypes.number,
-          PropTypes.oneOf(['weak', 'medium', 'strong']),
-        ]),
-        repeat: PropTypes.oneOfType([
-          PropTypes.oneOf(['no-repeat', 'repeat']),
-          PropTypes.string,
-        ]),
-        size: PropTypes.oneOfType([
-          PropTypes.oneOf(['cover', 'contain']),
-          PropTypes.string,
-        ]),
-        light: PropTypes.string,
-      }),
-    ]).description(`Either a color identifier to use for the background
-        color. For example: 'neutral-1'. Or, a 'url()' for an image. Dark
-        is not needed if color is provided.`),
+    background: backgroundDoc,
     basis: PropTypes.oneOfType([
       PropTypes.oneOf([
         'xxsmall',
@@ -126,44 +146,19 @@ export const doc = Box => {
         'left',
         'bottom',
         'right',
+        'start',
+        'end',
         'horizontal',
         'vertical',
         'all',
+        'between',
       ]),
-      PropTypes.shape({
-        color: PropTypes.oneOfType([
-          PropTypes.string,
-          PropTypes.shape({
-            dark: PropTypes.string,
-            light: PropTypes.string,
-          }),
-        ]),
-        side: PropTypes.oneOf([
-          'top',
-          'left',
-          'bottom',
-          'right',
-          'horizontal',
-          'vertical',
-          'all',
-        ]),
-        size: PropTypes.oneOfType([
-          PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
-          PropTypes.string,
-        ]),
-        style: PropTypes.oneOf([
-          'solid',
-          'dashed',
-          'dotted',
-          'double',
-          'groove',
-          'ridge',
-          'inset',
-          'outset',
-          'hidden',
-        ]).defaultValue('solid'),
-      }),
-    ]).description('Include a border.'),
+      BORDER_SHAPE,
+      PropTypes.arrayOf(BORDER_SHAPE),
+    ]).description(
+      `Include a border. 'between' will place a border in the gap between
+      child elements. You must have a 'gap' to use 'between'.`,
+    ),
     direction: PropTypes.oneOf([
       'row',
       'column',
@@ -198,6 +193,12 @@ export const doc = Box => {
     ]).description(
       'Whether the width and/or height should fill the container.',
     ),
+    focusIndicator: PropTypes.bool
+      .description(
+        `When interactive via 'onClick', whether it should receive a focus
+        outline.`,
+      )
+      .defaultValue(true),
     gap: PropTypes.oneOfType([
       PropTypes.oneOf([
         'none',
@@ -250,6 +251,12 @@ export const doc = Box => {
         ]),
       }),
     ]).description('A fixed height.'),
+    hoverIndicator: hoverIndicatorPropType
+      .description(
+        `When 'onClick' has been specified, the hover indicator to apply
+        when the user is mousing over the box.`,
+      )
+      .defaultValue(false),
     justify: PropTypes.oneOf([
       'around',
       'between',
@@ -261,43 +268,12 @@ export const doc = Box => {
     ])
       .description('How to align the contents along the main axis.')
       .defaultValue('stretch'),
+    onClick: PropTypes.func.description(
+      `Click handler. Setting this property adds additional attributes to
+      the DOM for accessibility.`,
+    ),
     overflow: overflowPropType.description('box overflow.'),
-    pad: PropTypes.oneOfType([
-      PropTypes.oneOf(['none', ...PAD_SIZES]),
-      PropTypes.shape({
-        bottom: PropTypes.oneOfType([
-          PropTypes.oneOf(PAD_SIZES),
-          PropTypes.string,
-        ]),
-        horizontal: PropTypes.oneOfType([
-          PropTypes.oneOf(PAD_SIZES),
-          PropTypes.string,
-        ]),
-        left: PropTypes.oneOfType([
-          PropTypes.oneOf(PAD_SIZES),
-          PropTypes.string,
-        ]),
-        right: PropTypes.oneOfType([
-          PropTypes.oneOf(PAD_SIZES),
-          PropTypes.string,
-        ]),
-        top: PropTypes.oneOfType([
-          PropTypes.oneOf(PAD_SIZES),
-          PropTypes.string,
-        ]),
-        vertical: PropTypes.oneOfType([
-          PropTypes.oneOf(PAD_SIZES),
-          PropTypes.string,
-        ]),
-      }),
-      PropTypes.string,
-    ])
-      .description(
-        `The amount of padding around the box contents. An
-        object can be specified to distinguish horizontal padding, vertical
-        padding, and padding on a particular side of the box`,
-      )
-      .defaultValue('none'),
+    pad: padPropType,
     responsive: PropTypes.bool
       .description(
         `Whether margin, pad, and border
@@ -429,6 +405,21 @@ export const themeDoc = {
     defaultValue:
       '{ dark: rgba(255, 255, 255, 0.33), light: rgba(0, 0, 0, 0.33), }',
   },
+  'global.hover.background.color': {
+    description: 'The color of the default background when hovering',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: 'active',
+  },
+  'global.hover.background.opacity': {
+    description: 'The opacity of the default background when hovering',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: 'medium',
+  },
+  'global.hover.color': {
+    description: 'The color of the default background when hovering',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: '{ dark: "white", light: "black" }',
+  },
   'global.opacity.medium': {
     description: 'The value used when background opacity is set to true.',
     type: 'number',
@@ -454,8 +445,8 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'box.responsiveBreakpoint': {
-    description:
-      'The actual breakpoint to trigger changes in the border, direction, gap, margin, pad, and round.',
+    description: `The actual breakpoint to trigger changes in the border, 
+    direction, gap, margin, pad, and round.`,
     type: 'string',
     defaultValue: 'small',
   },
@@ -463,6 +454,7 @@ export const themeDoc = {
     'The possible sizes for any of gap, margin, and pad.',
   ),
   ...themeDocUtils.breakpointStyle(
-    'The possible breakpoints that could affect border, direction, gap, margin, pad, and round.',
+    `The possible breakpoints that could affect border, direction, gap, margin, 
+    pad, and round.`,
   ),
 };
