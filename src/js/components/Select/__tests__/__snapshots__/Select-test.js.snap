@@ -236,60 +236,85 @@ exports[`Select 0 value 1`] = `
 `;
 
 exports[`Select Search timeout 1`] = `
-.c0 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   box-sizing: border-box;
-  font-size: inherit;
-  font-family: inherit;
-  border: none;
-  -webkit-appearance: none;
-  background: transparent;
-  color: inherit;
-  padding: 11px;
-  font-weight: 600;
+  max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
-  width: 100%;
-  font-size: 14px;
-  line-height: 20px;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
   outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c0::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-.c0::-webkit-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c0::-moz-placeholder {
-  color: #AAAAAA;
-}
-
-.c0:-ms-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c0::-moz-focus-inner {
   border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c1:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c4 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c0 {
+  position: relative;
+  -webkit-scroll-behavior: smooth;
+  -moz-scroll-behavior: smooth;
+  -ms-scroll-behavior: smooth;
+  scroll-behavior: smooth;
+  overflow: auto;
   outline: none;
 }
 
-.c0 > circle,
-.c0 > ellipse,
-.c0 > line,
-.c0 > path,
-.c0 > polygon,
-.c0 > polyline,
-.c0 > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c0::-moz-focus-inner {
-  border: 0;
+.c2 {
+  display: block;
+  width: 100%;
 }
 
 @media only screen and (max-width:768px) {
@@ -297,11 +322,9 @@ exports[`Select Search timeout 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
+  .c3 {
+    padding: 6px;
+  }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
@@ -312,12 +335,47 @@ exports[`Select Search timeout 1`] = `
 
 }
 
-<input
-  autocomplete="off"
+<div
   class="c0"
-  type="search"
-  value=""
-/>
+  role="menubar"
+  tabindex="-1"
+>
+  <button
+    class="c1 c2"
+    role="menuitem"
+    tabindex="-1"
+    type="button"
+  >
+    <div
+      class="c3 "
+    >
+      <span
+        class="c4"
+      >
+        one
+      </span>
+    </div>
+  </button>
+  <button
+    class="c1 c2"
+    role="menuitem"
+    tabindex="-1"
+    type="button"
+  >
+    <div
+      class="c3 "
+    >
+      <span
+        class="c4"
+      >
+        two
+      </span>
+    </div>
+  </button>
+  <div
+    class="c5"
+  />
+</div>
 `;
 
 exports[`Select a11yTitle 1`] = `
@@ -2073,35 +2131,61 @@ exports[`Select disabled 2`] = `
 </button>
 `;
 
-exports[`Select empty results search 1`] = `
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+exports[`Select disabled option value 1`] = `
+.c9 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
 }
 
-.c2 {
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .c4 {
@@ -2110,7 +2194,28 @@ exports[`Select empty results search 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
   max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2119,29 +2224,9 @@ exports[`Select empty results search 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 6px;
 }
 
-.c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 12px;
-}
-
-.c8 {
+.c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2157,37 +2242,6 @@ exports[`Select empty results search 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  opacity: 0.3;
-  cursor: default;
-}
-
-.c11 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
 }
 
 .c6 {
@@ -2204,8 +2258,8 @@ exports[`Select empty results search 1`] = `
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
-  font-size: 14px;
-  line-height: 20px;
+  outline: none;
+  border: none;
 }
 
 .c6::-webkit-search-decoration {
@@ -2234,110 +2288,179 @@ exports[`Select empty results search 1`] = `
   width: 100%;
 }
 
-.c3 {
-  max-height: inherit;
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 .c7 {
-  position: relative;
-  -webkit-scroll-behavior: smooth;
-  -moz-scroll-behavior: smooth;
-  -ms-scroll-behavior: smooth;
-  scroll-behavior: smooth;
-  overflow: auto;
-  outline: none;
+  cursor: pointer;
 }
 
-.c9 {
-  display: block;
-  width: 100%;
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding: 3px;
+  .c8 {
+    margin-left: 6px;
+    margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c10 {
-    padding: 6px;
-  }
+
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
+
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c3 {
-    width: 100%;
-  }
+
 }
 
 <div
-  class="c0 c1"
-  data-g-portal-id="0"
-  id="test-select__drop"
-  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
-  tabindex="-1"
+  class="c0"
 >
-  <div
-    class="c2 c3"
-    id="test-select__select-drop"
+  <button
+    aria-label="Open Drop"
+    class="c1 c2"
+    id="test-select"
+    type="button"
   >
     <div
-      class="c4"
+      class="c3"
     >
       <div
-        class="c5"
-      >
-        <input
-          autocomplete="off"
-          class="c6"
-          type="search"
-          value=""
-        />
-      </div>
-    </div>
-    <div
-      class="c7"
-      role="menubar"
-      tabindex="-1"
-    >
-      <button
-        class="c8 c9"
-        disabled=""
-        role="menuitem"
-        tabindex="-1"
-        type="button"
+        class="c4"
       >
         <div
-          class="c10 "
+          class="c5"
         >
-          <span
-            class="c11"
-          >
-            no results
-          </span>
+          <input
+            autocomplete="off"
+            class="c6 c7"
+            id="test-select__input"
+            placeholder="test select"
+            readonly=""
+            tabindex="-1"
+            type="text"
+            value=""
+          />
         </div>
-      </button>
+      </div>
+      <div
+        class="c8"
+        style="min-width: auto;"
+      >
+        <svg
+          aria-label="FormDown"
+          class="c9"
+          viewBox="0 0 24 24"
+        >
+          <polyline
+            fill="none"
+            points="18 9 12 15 6 9"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
     </div>
-  </div>
+  </button>
 </div>
+`;
+
+exports[`Select empty results search 1`] = `
+.c0 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  width: 100%;
+  font-size: 14px;
+  line-height: 20px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c0::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c0::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c0:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c0::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c0 > circle,
+.c0 > ellipse,
+.c0 > line,
+.c0 > path,
+.c0 > polygon,
+.c0 > polyline,
+.c0 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0::-moz-focus-inner {
+  border: 0;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+<input
+  autocomplete="off"
+  class="c0"
+  type="search"
+  value="o"
+/>
 `;
 
 exports[`Select keyboard navigation timeout 1`] = `
@@ -9571,7 +9694,7 @@ exports[`Select search 1`] = `
           readonly=""
           tabindex="-1"
           type="text"
-          value=""
+          value="two"
         />
       </div>
     </div>
@@ -9664,7 +9787,7 @@ exports[`Select search 2`] = `
   padding: 12px;
 }
 
-.c12 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9793,6 +9916,11 @@ exports[`Select search 2`] = `
   outline: none;
 }
 
+.c12 {
+  background-color: #7D4CDB;
+  color: #FFFFFF;
+}
+
 .c9 {
   display: block;
   width: 100%;
@@ -9886,7 +10014,7 @@ exports[`Select search 2`] = `
         type="button"
       >
         <div
-          class="c10 "
+          class="c10 c12"
         >
           <span
             class="c11"
@@ -9896,7 +10024,7 @@ exports[`Select search 2`] = `
         </div>
       </button>
       <div
-        class="c12"
+        class="c13"
       />
     </div>
   </div>

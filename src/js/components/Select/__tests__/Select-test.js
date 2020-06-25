@@ -100,12 +100,13 @@ describe('Select', () => {
   test('search', () => {
     jest.useFakeTimers();
     const onSearch = jest.fn();
-    const { getByPlaceholderText, container, debug } = render(
+    const { getByPlaceholderText, container } = render(
       <Select
         id="test-select"
         placeholder="test select"
         options={['one', 'two']}
         onSearch={onSearch}
+        value="two"
       />,
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -120,7 +121,6 @@ describe('Select', () => {
     expect(document.activeElement).toMatchSnapshot();
 
     fireEvent.change(document.activeElement, { target: { value: 'o' } });
-    console.log(debug());
 
     expect(onSearch).toBeCalledWith('o');
   });
@@ -355,8 +355,10 @@ describe('Select', () => {
       />,
     );
     fireEvent.click(getByPlaceholderText('test select'));
-    document.activeElement.value = 'a';
-    fireEvent.input(document.activeElement);
+    act(() => {
+      jest.advanceTimersByTime(200);
+    });
+    fireEvent.change(document.activeElement, { target: { value: 'o' } });
 
     expect(document.activeElement).toMatchSnapshot();
   });
@@ -939,8 +941,8 @@ describe('Select', () => {
       <Select
         id="test-select"
         placeholder="test select"
-        options={['one', 'two', 'three']}
-        disabled={[0]}
+        options={['one', 'two', 'three', 'four']}
+        disabled={[1]}
         open
       />,
     );
@@ -949,6 +951,16 @@ describe('Select', () => {
       key: 'Down',
       keyCode: 40,
       which: 40,
+    });
+    fireEvent.keyDown(document.getElementById('test-select__select-drop'), {
+      key: 'Down',
+      keyCode: 40,
+      which: 40,
+    });
+    fireEvent.keyDown(document.getElementById('test-select__select-drop'), {
+      key: 'Up',
+      keyCode: 38,
+      which: 38,
     });
     fireEvent.keyDown(document.getElementById('test-select__select-drop'), {
       key: 'Up',
@@ -962,7 +974,7 @@ describe('Select', () => {
       which: 13,
     });
 
-    expect(select.value).toEqual('two');
+    expect(select.value).toEqual('one');
   });
 
   test('undefined option', () => {
@@ -1040,16 +1052,13 @@ describe('Select', () => {
 
   test('Search timeout', () => {
     jest.useFakeTimers();
-    const onSearch = jest.fn();
     const { getByPlaceholderText } = render(
       <Grommet>
         <Select
           id="test-select"
           placeholder="test select"
           options={['one', 'two']}
-          onSearch={onSearch}
         />
-        ,
       </Grommet>,
     );
     fireEvent.click(getByPlaceholderText('test select'));
@@ -1059,5 +1068,20 @@ describe('Select', () => {
       jest.advanceTimersByTime(100);
     });
     expect(document.activeElement).toMatchSnapshot();
+  });
+
+  test('disabled option value', () => {
+    const { getByPlaceholderText, container } = render(
+      <Grommet>
+        <Select
+          id="test-select"
+          placeholder="test select"
+          options={['one', 'two']}
+          disabled={['one']}
+        />
+      </Grommet>,
+    );
+    fireEvent.click(getByPlaceholderText('test select'));
+    expect(container.firstChild).toMatchSnapshot();
   });
 });
