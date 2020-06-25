@@ -776,7 +776,7 @@ describe('Select', () => {
   test('multiple onChange with valueKey string', () => {
     const onChange = jest.fn();
     const Test = () => {
-      const [value] = React.useState([]);
+      const [value] = React.useState();
       return (
         <Select
           id="test-select"
@@ -1083,5 +1083,58 @@ describe('Select', () => {
     );
     fireEvent.click(getByPlaceholderText('test select'));
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('multiple with empty results', () => {
+    const { getByPlaceholderText, container } = render(
+      <Grommet>
+        <Select
+          id="test-select"
+          placeholder="test select"
+          options={['one', 'two']}
+          multiple
+          value={[]}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByPlaceholderText('test select'));
+    expectPortal('test-select__drop').toMatchSnapshot();
+  });
+
+  test('disabled key', () => {
+    const Test = () => {
+      const [value] = React.useState();
+      return (
+        <Select
+          id="test-select"
+          placeholder="test select"
+          labelKey="name"
+          valueKey="id"
+          value={value}
+          disabledKey="disabled"
+          options={[
+            {
+              id: 1,
+              name: 'Value1',
+              disabled: true,
+            },
+            {
+              id: 2,
+              name: 'Value2',
+              disabled: false,
+            },
+          ]}
+        />
+      );
+    };
+    const { getByPlaceholderText, container } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByPlaceholderText('test select'));
+    expectPortal('test-select__drop').toMatchSnapshot();
   });
 });
