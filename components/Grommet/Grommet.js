@@ -61,7 +61,15 @@ var Grommet = /*#__PURE__*/function (_Component) {
       var _this$state = _this.state,
           theme = _this$state.theme,
           responsive = _this$state.responsive;
-      var breakpoint = (0, _utils.getBreakpoint)(window.innerWidth, theme);
+      var breakpoint; // responsive would be undefined in the case of SSR or initial page load
+
+      if (!responsive) {
+        // In the case of SSR we'll need to use the user agent breakpoint
+        breakpoint = _this.deviceResponsive();
+      } // Initial page load where both responsive and breakpoint are undefined
+
+
+      if (!breakpoint) breakpoint = (0, _utils.getBreakpoint)(window.innerWidth, theme);
 
       if (breakpoint !== responsive) {
         _this.setState({

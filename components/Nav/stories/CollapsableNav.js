@@ -48,6 +48,6 @@ var CollapsableNav = function CollapsableNav() {
   })));
 };
 
-(0, _react2.storiesOf)('ResponsiveContext', module).add('Collapsable Nav', function () {
+(0, _react2.storiesOf)('Nav', module).add('Collapsable Nav', function () {
   return /*#__PURE__*/_react["default"].createElement(CollapsableNav, null);
 });

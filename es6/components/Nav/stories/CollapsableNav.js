@@ -41,6 +41,6 @@ var CollapsableNav = function CollapsableNav() {
   })));
 };
 
-storiesOf('ResponsiveContext', module).add('Collapsable Nav', function () {
+storiesOf('Nav', module).add('Collapsable Nav', function () {
   return /*#__PURE__*/React.createElement(CollapsableNav, null);
 });
