@@ -2,7 +2,6 @@ import React from 'react';
 import 'jest-styled-components';
 import renderer from 'react-test-renderer';
 import { cleanup, render, fireEvent, act } from '@testing-library/react';
-import 'regenerator-runtime/runtime';
 
 import { CaretDown, CaretUp, FormDown } from 'grommet-icons';
 import { createPortal, expectPortal } from '../../../utils/portal';
