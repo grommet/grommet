@@ -390,6 +390,7 @@ string
 TBD
 
 ```
+string
 {
   bounds: [number],
   color: 
@@ -413,29 +414,32 @@ TBD
   render: function,
   suffix: string
 }
-[{
-  bounds: [number],
-  color: 
-    string
-    {
-      color: string,
-      opacity: 
-        weak
-        medium
-        strong
-        boolean
-    }
-    [{
+[
+  string
+  {
+    bounds: [number],
+    color: 
+      string
+      {
+        color: string,
+        opacity: 
+          weak
+          medium
+          strong
+          boolean
+      }
+      [{
   color: string,
   value: number
 }],
-  label: 
-    string,
-  prefix: string,
-  property: string,
-  render: function,
-  suffix: string
-}]
+    label: 
+      string,
+    prefix: string,
+    property: string,
+    render: function,
+    suffix: string
+  }
+]
 ```
 
 **size**

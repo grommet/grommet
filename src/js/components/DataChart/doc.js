@@ -48,15 +48,18 @@ const chartType = PropTypes.shape({
   type: PropTypes.oneOf(['bar', 'line', 'area', 'point']),
 });
 
-const propertyType = PropTypes.shape({
-  bounds: PropTypes.arrayOf(PropTypes.number),
-  color: colorType,
-  label: PropTypes.oneOfType([PropTypes.string]),
-  prefix: PropTypes.string,
-  property: PropTypes.string,
-  render: PropTypes.func,
-  suffix: PropTypes.string,
-});
+const propertyType = PropTypes.oneOfType([
+  PropTypes.string,
+  PropTypes.shape({
+    bounds: PropTypes.arrayOf(PropTypes.number),
+    color: colorType,
+    label: PropTypes.oneOfType([PropTypes.string]),
+    prefix: PropTypes.string,
+    property: PropTypes.string,
+    render: PropTypes.func,
+    suffix: PropTypes.string,
+  }),
+]);
 
 const granularityType = PropTypes.oneOf(['coarse', 'medium', 'fine']);
 

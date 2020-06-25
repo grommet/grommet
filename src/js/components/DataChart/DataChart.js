@@ -8,6 +8,7 @@ import React, {
 } from 'react';
 import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
+import { Button } from '../Button';
 import { Chart, calcs, round } from '../Chart';
 import { Drop } from '../Drop';
 import { Grid } from '../Grid';
@@ -99,6 +100,8 @@ const DataChart = forwardRef(
       released. Keep an eye on the release notes and #announcements channel
       in Slack.`);
     const theme = useContext(ThemeContext);
+
+    const [activeProperty, setActiveProperty] = useState();
 
     // detail interaction, if any
     const [detailIndex, setDetailIndex] = useState();
@@ -462,6 +465,14 @@ const DataChart = forwardRef(
       return result;
     }, [guide]);
 
+    const propertyColor = prop => ({
+      color: propertyColors[prop],
+      opacity:
+        activeProperty !== undefined && activeProperty !== prop
+          ? 'medium'
+          : undefined,
+    });
+
     const stackElement = (
       <Stack gridArea="charts" guidingChild={guidingChild} fill={stackFill}>
         {guide && guide.x && (
@@ -492,7 +503,7 @@ const DataChart = forwardRef(
                 <Chart
                   key={j}
                   values={chartValues[i][j]}
-                  color={propertyColors[cProp]}
+                  color={propertyColor(cProp)}
                   overflow
                   pad={pad}
                   size={size}
@@ -507,7 +518,7 @@ const DataChart = forwardRef(
               key={i}
               values={chartValues[i]}
               overflow
-              color={propertyColors[prop]}
+              color={propertyColor(prop)}
               pad={pad}
               size={size}
               {...chartProps[i]}
@@ -609,11 +620,23 @@ const DataChart = forwardRef(
         >
           {Object.keys(propertyColors).map(key => {
             const prop = properties[key];
+            const isActive = key === activeProperty;
             return (
-              <Box direction="row" gap="xsmall" align="center">
-                <Box pad="small" background={propertyColors[key]} />
-                <Text>{prop.label || prop.property}</Text>
-              </Box>
+              <Button
+                key={key}
+                active={isActive}
+                icon={<Box pad="small" background={propertyColors[key]} />}
+                label={prop.label || prop.property}
+                onClick={
+                  Object.keys(propertyColors).length > 1
+                    ? () => {
+                        setActiveProperty(isActive ? undefined : key);
+                      }
+                    : undefined
+                }
+                hoverIndicator
+                plain
+              />
             );
           })}
         </Box>

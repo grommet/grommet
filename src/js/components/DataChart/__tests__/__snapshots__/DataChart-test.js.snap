@@ -2204,7 +2204,7 @@ exports[`DataChart legend 1`] = `
   flex-direction: row;
 }
 
-.c6 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2220,9 +2220,13 @@ exports[`DataChart legend 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2239,14 +2243,37 @@ exports[`DataChart legend 1`] = `
   padding: 12px;
 }
 
-.c8 {
+.c9 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
   align-self: stretch;
-  width: 6px;
+  width: 12px;
+}
+
+.c6 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c6:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
 }
 
 .c4 {
@@ -2265,11 +2292,6 @@ exports[`DataChart legend 1`] = `
   display: block;
 }
 
-.c9 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 @media only screen and (max-width:768px) {
   .c5 {
     margin-top: 6px;
@@ -2277,7 +2299,7 @@ exports[`DataChart legend 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c8 {
     padding: 6px;
   }
 }
@@ -2331,21 +2353,26 @@ exports[`DataChart legend 1`] = `
     <div
       className="c5"
     >
-      <div
+      <button
         className="c6"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        type="button"
       >
         <div
           className="c7"
-        />
-        <div
-          className="c8"
-        />
-        <span
-          className="c9"
         >
+          <div
+            className="c8"
+          />
+          <div
+            className="c9"
+          />
           a
-        </span>
-      </div>
+        </div>
+      </button>
     </div>
   </div>
   <div
