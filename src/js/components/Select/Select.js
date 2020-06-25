@@ -241,6 +241,7 @@ const Select = forwardRef(
               selected={selected}
               value={value}
               valueKey={valueKey}
+              onClose={onRequestClose}
             >
               {children}
             </SelectContainer>

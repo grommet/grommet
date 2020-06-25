@@ -927,6 +927,38 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       // searchInput: undefined,
       step: 20,
+      multiselect: {
+        displayContainer: {
+          wrapper: {
+            pad: 'medium',
+            direction: 'row',
+            // extend: undefined,
+          },
+          option: {
+            background: 'brand',
+            round: 'small',
+            pad: {
+              vertical: 'small',
+              horizontal: 'medium',
+            },
+            margin: 'small',
+            direction: 'row',
+            align: 'center',
+          },
+          icon: {
+            size: 'small',
+            color: 'white',
+          },
+        },
+        controls: {
+          wrapper: {
+            // extend: undefined,
+          },
+          button: {
+            margin: 'small',
+          },
+        },
+      },
     },
     tab: {
       active: {

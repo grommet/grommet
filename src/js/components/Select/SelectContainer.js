@@ -7,6 +7,7 @@ import React, {
   useState,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
+import { Close } from 'grommet-icons/icons/Close';
 
 import { selectedStyle, setFocusWithoutScroll } from '../../utils';
 
@@ -60,6 +61,9 @@ const SelectContainer = forwardRef(
       value = '',
       valueKey,
       replace = true,
+      displaySelected = true,
+      displayControlButtons = true,
+      onClose,
     },
     ref,
   ) => {
@@ -291,6 +295,63 @@ const SelectContainer = forwardRef(
       ...theme.select.options.container,
     };
 
+    const OptionWrapper = styled(Box)`
+      ${props =>
+        props.theme.select.multiselect.displayContainer.wrapper.extend};
+    `;
+
+    const ControlButtonWrapper = styled(Box)`
+      ${props => props.theme.select.multiselect.controls.wrapper.extend};
+    `;
+
+    const getSelectedOption = () =>
+      options.reduce((acc, item, index) => {
+        if (isSelected(index)) acc.push(index);
+        return acc;
+      }, []);
+
+    const renderOptionsSelected = () => (
+      <>
+        {Array.isArray(value) && value.length > 0 && (
+          <OptionWrapper {...theme.select.multiselect.displayContainer.wrapper}>
+            {getSelectedOption().map(item => (
+              <Box
+                key={item}
+                {...theme.select.multiselect.displayContainer.option}
+              >
+                <Text>{optionLabel(item)}</Text>
+                <Close
+                  onClick={selectOption(item)}
+                  {...theme.select.multiselect.displayContainer.icon}
+                />
+              </Box>
+            ))}
+          </OptionWrapper>
+        )}
+      </>
+    );
+
+    const renderControlButtons = () => (
+      <ControlButtonWrapper
+        {...theme.select.multiselect.displayContainer.wrapper}
+      >
+        <Button
+          {...theme.select.multiselect.controls.button}
+          onClick={onClose}
+          primary
+        >
+          OK
+        </Button>
+        <Button
+          {...theme.select.multiselect.controls.button}
+          onClick={onClose}
+          secondary
+        >
+          Cancel
+        </Button>
+      </ControlButtonWrapper>
+    );
+
     return (
       <Keyboard
         onEnter={onSelectOption}
@@ -387,6 +448,8 @@ const SelectContainer = forwardRef(
               </SelectOption>
             )}
           </OptionsBox>
+          {displaySelected && renderOptionsSelected()}
+          {displayControlButtons && renderControlButtons()}
         </StyledContainer>
       </Keyboard>
     );
