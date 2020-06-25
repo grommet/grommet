@@ -628,11 +628,7 @@ describe('Form', () => {
         </Grommet>
       );
     };
-    const { getByPlaceholderText, getByText, queryByText } = render(
-      <Grommet>
-        <Test />
-      </Grommet>,
-    );
+    const { getByPlaceholderText, getByText, queryByText } = render(<Test />);
     fireEvent.change(getByPlaceholderText('test input'), {
       target: { value: 'Input has changed' },
     });
@@ -642,19 +638,12 @@ describe('Form', () => {
 
   test('controlled reset without value', () => {
     const onChange = jest.fn();
-    const Test = () => {
-      return (
-        <Grommet>
-          <Form onChange={onChange}>
-            <FormField name="test" required placeholder="test input" />
-            <Button type="reset" primary label="Reset" />
-          </Form>
-        </Grommet>
-      );
-    };
     const { getByPlaceholderText, getByText, queryByText } = render(
       <Grommet>
-        <Test />
+        <Form onChange={onChange}>
+          <FormField name="test" required placeholder="test input" />
+          <Button type="reset" primary label="Reset" />
+        </Form>
       </Grommet>,
     );
     fireEvent.change(getByPlaceholderText('test input'), {
