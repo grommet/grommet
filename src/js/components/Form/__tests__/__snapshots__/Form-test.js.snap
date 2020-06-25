@@ -42,21 +42,7 @@ exports[`Form controlled 1`] = `
   overflow: hidden;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c6 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -84,11 +70,11 @@ exports[`Form controlled 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c6:hover {
+.c5:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c5 {
+.c4 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -106,28 +92,28 @@ exports[`Form controlled 1`] = `
   border: none;
 }
 
-.c5::-webkit-search-decoration {
+.c4::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c5::-webkit-input-placeholder {
+.c4::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-placeholder {
+.c4::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c5:-ms-input-placeholder {
+.c4:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-focus-inner {
+.c4::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c4 {
+.c3 {
   position: relative;
   width: 100%;
 }
@@ -157,22 +143,18 @@ exports[`Form controlled 1`] = `
         <div
           class="c3"
         >
-          <div
+          <input
+            autocomplete="off"
             class="c4"
-          >
-            <input
-              autocomplete="off"
-              class="c5"
-              name="test"
-              placeholder="test input"
-              value=""
-            />
-          </div>
+            name="test"
+            placeholder="test input"
+            value=""
+          />
         </div>
       </div>
     </div>
     <button
-      class="c6"
+      class="c5"
       type="submit"
     >
       Submit
@@ -193,19 +175,15 @@ exports[`Form controlled 2`] = `
         class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
         >
-          <div
-            class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
-          >
-            <input
-              autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
-              name="test"
-              placeholder="test input"
-              value="v"
-            />
-          </div>
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+            name="test"
+            placeholder="test input"
+            value="v"
+          />
         </div>
       </div>
     </div>
@@ -231,19 +209,15 @@ exports[`Form controlled 3`] = `
         class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
         >
-          <div
-            class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
-          >
-            <input
-              autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
-              name="test"
-              placeholder="test input"
-              value="v"
-            />
-          </div>
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+            name="test"
+            placeholder="test input"
+            value="v"
+          />
         </div>
       </div>
     </div>
@@ -299,20 +273,6 @@ exports[`Form controlled FormField deprecated 1`] = `
   overflow: hidden;
 }
 
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c2 {
   margin-left: 12px;
   margin-right: 12px;
@@ -322,7 +282,7 @@ exports[`Form controlled FormField deprecated 1`] = `
   line-height: 24px;
 }
 
-.c7 {
+.c6 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -350,11 +310,11 @@ exports[`Form controlled FormField deprecated 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c7:hover {
+.c6:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c6 {
+.c5 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -372,28 +332,28 @@ exports[`Form controlled FormField deprecated 1`] = `
   border: none;
 }
 
-.c6::-webkit-search-decoration {
+.c5::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-webkit-input-placeholder {
+.c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c5::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c5:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c5 {
+.c4 {
   position: relative;
   width: 100%;
 }
@@ -429,22 +389,18 @@ exports[`Form controlled FormField deprecated 1`] = `
         <div
           class="c4"
         >
-          <div
+          <input
+            autocomplete="off"
             class="c5"
-          >
-            <input
-              autocomplete="off"
-              class="c6"
-              id="test"
-              name="test"
-              value=""
-            />
-          </div>
+            id="test"
+            name="test"
+            value=""
+          />
         </div>
       </div>
     </div>
     <button
-      class="c7"
+      class="c6"
       type="submit"
     >
       Submit
@@ -471,19 +427,15 @@ exports[`Form controlled FormField deprecated 2`] = `
         class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
         >
-          <div
-            class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
-          >
-            <input
-              autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
-              id="test"
-              name="test"
-              value="v"
-            />
-          </div>
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+            id="test"
+            name="test"
+            value="v"
+          />
         </div>
       </div>
     </div>
@@ -515,19 +467,15 @@ exports[`Form controlled FormField deprecated 3`] = `
         class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
         >
-          <div
-            class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
-          >
-            <input
-              autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
-              id="test"
-              name="test"
-              value="v"
-            />
-          </div>
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+            id="test"
+            name="test"
+            value="v"
+          />
         </div>
       </div>
     </div>
@@ -583,21 +531,7 @@ exports[`Form controlled input 1`] = `
   overflow: hidden;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c6 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -625,11 +559,11 @@ exports[`Form controlled input 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c6:hover {
+.c5:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c5 {
+.c4 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -647,28 +581,28 @@ exports[`Form controlled input 1`] = `
   border: none;
 }
 
-.c5::-webkit-search-decoration {
+.c4::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c5::-webkit-input-placeholder {
+.c4::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-placeholder {
+.c4::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c5:-ms-input-placeholder {
+.c4:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-focus-inner {
+.c4::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c4 {
+.c3 {
   position: relative;
   width: 100%;
 }
@@ -698,22 +632,18 @@ exports[`Form controlled input 1`] = `
         <div
           class="c3"
         >
-          <div
+          <input
+            autocomplete="off"
             class="c4"
-          >
-            <input
-              autocomplete="off"
-              class="c5"
-              name="test"
-              placeholder="test input"
-              value=""
-            />
-          </div>
+            name="test"
+            placeholder="test input"
+            value=""
+          />
         </div>
       </div>
     </div>
     <button
-      class="c6"
+      class="c5"
       type="submit"
     >
       Submit
@@ -734,19 +664,15 @@ exports[`Form controlled input 2`] = `
         class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
         >
-          <div
-            class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
-          >
-            <input
-              autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
-              name="test"
-              placeholder="test input"
-              value="v"
-            />
-          </div>
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+            name="test"
+            placeholder="test input"
+            value="v"
+          />
         </div>
       </div>
     </div>
@@ -772,19 +698,15 @@ exports[`Form controlled input 3`] = `
         class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
         >
-          <div
-            class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
-          >
-            <input
-              autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
-              name="test"
-              placeholder="test input"
-              value="v"
-            />
-          </div>
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+            name="test"
+            placeholder="test input"
+            value="v"
+          />
         </div>
       </div>
     </div>
@@ -840,21 +762,7 @@ exports[`Form controlled input lazy 1`] = `
   overflow: hidden;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c6 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -882,11 +790,11 @@ exports[`Form controlled input lazy 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c6:hover {
+.c5:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c5 {
+.c4 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -904,28 +812,28 @@ exports[`Form controlled input lazy 1`] = `
   border: none;
 }
 
-.c5::-webkit-search-decoration {
+.c4::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c5::-webkit-input-placeholder {
+.c4::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-placeholder {
+.c4::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c5:-ms-input-placeholder {
+.c4:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-focus-inner {
+.c4::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c4 {
+.c3 {
   position: relative;
   width: 100%;
 }
@@ -955,22 +863,18 @@ exports[`Form controlled input lazy 1`] = `
         <div
           class="c3"
         >
-          <div
+          <input
+            autocomplete="off"
             class="c4"
-          >
-            <input
-              autocomplete="off"
-              class="c5"
-              name="test"
-              placeholder="test input"
-              value="test"
-            />
-          </div>
+            name="test"
+            placeholder="test input"
+            value="test"
+          />
         </div>
       </div>
     </div>
     <button
-      class="c6"
+      class="c5"
       type="submit"
     >
       Submit
@@ -991,19 +895,15 @@ exports[`Form controlled input lazy 2`] = `
         class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
         >
-          <div
-            class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
-          >
-            <input
-              autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
-              name="test"
-              placeholder="test input"
-              value="v"
-            />
-          </div>
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+            name="test"
+            placeholder="test input"
+            value="v"
+          />
         </div>
       </div>
     </div>
@@ -1029,19 +929,15 @@ exports[`Form controlled input lazy 3`] = `
         class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
         >
-          <div
-            class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
-          >
-            <input
-              autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
-              name="test"
-              placeholder="test input"
-              value="v"
-            />
-          </div>
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+            name="test"
+            placeholder="test input"
+            value="v"
+          />
         </div>
       </div>
     </div>
@@ -1097,21 +993,7 @@ exports[`Form controlled lazy 1`] = `
   overflow: hidden;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c6 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1139,11 +1021,11 @@ exports[`Form controlled lazy 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c6:hover {
+.c5:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c5 {
+.c4 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -1161,28 +1043,28 @@ exports[`Form controlled lazy 1`] = `
   border: none;
 }
 
-.c5::-webkit-search-decoration {
+.c4::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c5::-webkit-input-placeholder {
+.c4::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-placeholder {
+.c4::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c5:-ms-input-placeholder {
+.c4:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-focus-inner {
+.c4::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c4 {
+.c3 {
   position: relative;
   width: 100%;
 }
@@ -1212,22 +1094,18 @@ exports[`Form controlled lazy 1`] = `
         <div
           class="c3"
         >
-          <div
+          <input
+            autocomplete="off"
             class="c4"
-          >
-            <input
-              autocomplete="off"
-              class="c5"
-              name="test"
-              placeholder="test input"
-              value="test"
-            />
-          </div>
+            name="test"
+            placeholder="test input"
+            value="test"
+          />
         </div>
       </div>
     </div>
     <button
-      class="c6"
+      class="c5"
       type="submit"
     >
       Submit
@@ -1248,19 +1126,15 @@ exports[`Form controlled lazy 2`] = `
         class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
         >
-          <div
-            class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
-          >
-            <input
-              autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
-              name="test"
-              placeholder="test input"
-              value="v"
-            />
-          </div>
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+            name="test"
+            placeholder="test input"
+            value="v"
+          />
         </div>
       </div>
     </div>
@@ -1286,19 +1160,15 @@ exports[`Form controlled lazy 3`] = `
         class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
         >
-          <div
-            class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
-          >
-            <input
-              autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
-              name="test"
-              placeholder="test input"
-              value="v"
-            />
-          </div>
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+            name="test"
+            placeholder="test input"
+            value="v"
+          />
         </div>
       </div>
     </div>
@@ -1375,21 +1245,7 @@ exports[`Form errors 1`] = `
   overflow: hidden;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c6 {
+.c5 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -1399,7 +1255,7 @@ exports[`Form errors 1`] = `
   color: #FF4040;
 }
 
-.c5 {
+.c4 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -1417,28 +1273,28 @@ exports[`Form errors 1`] = `
   border: none;
 }
 
-.c5::-webkit-search-decoration {
+.c4::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c5::-webkit-input-placeholder {
+.c4::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-placeholder {
+.c4::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c5:-ms-input-placeholder {
+.c4:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-focus-inner {
+.c4::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c4 {
+.c3 {
   position: relative;
   width: 100%;
 }
@@ -1473,24 +1329,20 @@ exports[`Form errors 1`] = `
         <div
           className="c3"
         >
-          <div
+          <input
+            aria-invalid={true}
+            autoComplete="off"
             className="c4"
-          >
-            <input
-              aria-invalid={true}
-              autoComplete="off"
-              className="c5"
-              name="test"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-            />
-          </div>
+            name="test"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+          />
         </div>
       </div>
       <span
-        className="c6"
+        className="c5"
       >
         missing
       </span>
@@ -1541,21 +1393,7 @@ exports[`Form infos 1`] = `
   overflow: hidden;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c6 {
+.c5 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -1565,7 +1403,7 @@ exports[`Form infos 1`] = `
   color: #666666;
 }
 
-.c5 {
+.c4 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -1583,28 +1421,28 @@ exports[`Form infos 1`] = `
   border: none;
 }
 
-.c5::-webkit-search-decoration {
+.c4::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c5::-webkit-input-placeholder {
+.c4::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-placeholder {
+.c4::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c5:-ms-input-placeholder {
+.c4:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-focus-inner {
+.c4::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c4 {
+.c3 {
   position: relative;
   width: 100%;
 }
@@ -1639,23 +1477,19 @@ exports[`Form infos 1`] = `
         <div
           className="c3"
         >
-          <div
+          <input
+            autoComplete="off"
             className="c4"
-          >
-            <input
-              autoComplete="off"
-              className="c5"
-              name="test"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-            />
-          </div>
+            name="test"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+          />
         </div>
       </div>
       <span
-        className="c6"
+        className="c5"
       >
         missing
       </span>
@@ -1878,21 +1712,7 @@ exports[`Form uncontrolled 1`] = `
   overflow: hidden;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c6 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1920,11 +1740,11 @@ exports[`Form uncontrolled 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c6:hover {
+.c5:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c5 {
+.c4 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -1942,28 +1762,28 @@ exports[`Form uncontrolled 1`] = `
   border: none;
 }
 
-.c5::-webkit-search-decoration {
+.c4::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c5::-webkit-input-placeholder {
+.c4::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-placeholder {
+.c4::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c5:-ms-input-placeholder {
+.c4:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-focus-inner {
+.c4::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c4 {
+.c3 {
   position: relative;
   width: 100%;
 }
@@ -1993,22 +1813,18 @@ exports[`Form uncontrolled 1`] = `
         <div
           class="c3"
         >
-          <div
+          <input
+            autocomplete="off"
             class="c4"
-          >
-            <input
-              autocomplete="off"
-              class="c5"
-              name="test"
-              placeholder="test input"
-              value=""
-            />
-          </div>
+            name="test"
+            placeholder="test input"
+            value=""
+          />
         </div>
       </div>
     </div>
     <button
-      class="c6"
+      class="c5"
       type="submit"
     >
       Submit
@@ -2029,19 +1845,15 @@ exports[`Form uncontrolled 2`] = `
         class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
         >
-          <div
-            class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
-          >
-            <input
-              autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
-              name="test"
-              placeholder="test input"
-              value=""
-            />
-          </div>
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+            name="test"
+            placeholder="test input"
+            value=""
+          />
         </div>
       </div>
     </div>
@@ -2067,19 +1879,15 @@ exports[`Form uncontrolled 3`] = `
         class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
         >
-          <div
-            class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
-          >
-            <input
-              autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
-              name="test"
-              placeholder="test input"
-              value=""
-            />
-          </div>
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+            name="test"
+            placeholder="test input"
+            value=""
+          />
         </div>
       </div>
     </div>
@@ -2135,21 +1943,7 @@ exports[`Form update 1`] = `
   overflow: hidden;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c6 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2177,11 +1971,11 @@ exports[`Form update 1`] = `
   transition-timing-function: ease-in-out;
 }
 
-.c6:hover {
+.c5:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c5 {
+.c4 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -2199,28 +1993,28 @@ exports[`Form update 1`] = `
   border: none;
 }
 
-.c5::-webkit-search-decoration {
+.c4::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c5::-webkit-input-placeholder {
+.c4::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-placeholder {
+.c4::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c5:-ms-input-placeholder {
+.c4:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-focus-inner {
+.c4::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c4 {
+.c3 {
   position: relative;
   width: 100%;
 }
@@ -2250,17 +2044,13 @@ exports[`Form update 1`] = `
         <div
           class="c3"
         >
-          <div
+          <input
+            autocomplete="off"
             class="c4"
-          >
-            <input
-              autocomplete="off"
-              class="c5"
-              name="test"
-              placeholder="test input"
-              value=""
-            />
-          </div>
+            name="test"
+            placeholder="test input"
+            value=""
+          />
         </div>
       </div>
     </div>
@@ -2273,22 +2063,18 @@ exports[`Form update 1`] = `
         <div
           class="c3"
         >
-          <div
+          <input
+            autocomplete="off"
             class="c4"
-          >
-            <input
-              autocomplete="off"
-              class="c5"
-              name="test2"
-              placeholder="test-2 input"
-              value=""
-            />
-          </div>
+            name="test2"
+            placeholder="test-2 input"
+            value=""
+          />
         </div>
       </div>
     </div>
     <button
-      class="c6"
+      class="c5"
       type="submit"
     >
       Submit
@@ -2478,21 +2264,7 @@ exports[`Form with field 1`] = `
   overflow: hidden;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c5 {
+.c4 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -2510,28 +2282,28 @@ exports[`Form with field 1`] = `
   border: none;
 }
 
-.c5::-webkit-search-decoration {
+.c4::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c5::-webkit-input-placeholder {
+.c4::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-placeholder {
+.c4::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c5:-ms-input-placeholder {
+.c4:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-focus-inner {
+.c4::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c4 {
+.c3 {
   position: relative;
   width: 100%;
 }
@@ -2566,19 +2338,15 @@ exports[`Form with field 1`] = `
         <div
           className="c3"
         >
-          <div
+          <input
+            autoComplete="off"
             className="c4"
-          >
-            <input
-              autoComplete="off"
-              className="c5"
-              name="test"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-            />
-          </div>
+            name="test"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+          />
         </div>
       </div>
     </div>
