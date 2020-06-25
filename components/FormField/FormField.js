@@ -185,7 +185,7 @@ var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
 
   var contentProps = pad || wantContentPad ? _extends({}, formFieldTheme.content) : {};
 
-  if (themeBorder.position === 'inner') {
+  if (themeBorder && themeBorder.position === 'inner') {
     if (error && formFieldTheme.error) {
       contentProps.background = formFieldTheme.error.background;
     } else if (disabled && formFieldTheme.disabled) {
@@ -193,7 +193,10 @@ var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
     }
   }
 
-  contents = /*#__PURE__*/_react["default"].createElement(_Box.Box, contentProps, contents);
+  if (!themeBorder) {
+    contents = /*#__PURE__*/_react["default"].createElement(_Box.Box, contentProps, contents);
+  }
+
   var borderColor;
 
   if (disabled && formFieldTheme.disabled.border && formFieldTheme.disabled.border.color) {
@@ -227,7 +230,7 @@ var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
     } : {};
     contents = /*#__PURE__*/_react["default"].createElement(FormFieldContentBox, _extends({
       overflow: "hidden"
-    }, innerProps), contents);
+    }, contentProps, innerProps), contents);
     var mergedMargin = margin || formFieldTheme.margin;
     abut = themeBorder.position === 'outer' && (themeBorder.side === 'all' || themeBorder.side === 'horizontal' || !themeBorder.side) && !(mergedMargin && (typeof mergedMargin === 'string' && mergedMargin !== 'none' || mergedMargin.bottom && mergedMargin.bottom !== 'none' || mergedMargin.horizontal && mergedMargin.horizontal !== 'none'));
 
@@ -256,7 +259,7 @@ var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
 
   var outerBackground;
 
-  if (themeBorder.position === 'outer') {
+  if (themeBorder && themeBorder.position === 'outer') {
     if (error && formFieldTheme.error && formFieldTheme.error.background) {
       outerBackground = formFieldTheme.error.background;
     } else if (focus && formFieldTheme.focus && formFieldTheme.focus.background && formFieldTheme.focus.background.color) {
