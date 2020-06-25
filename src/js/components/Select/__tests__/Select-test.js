@@ -2,6 +2,7 @@ import React from 'react';
 import 'jest-styled-components';
 import renderer from 'react-test-renderer';
 import { cleanup, render, fireEvent, act } from '@testing-library/react';
+import 'regenerator-runtime/runtime';
 
 import { CaretDown, CaretUp, FormDown } from 'grommet-icons';
 import { createPortal, expectPortal } from '../../../utils/portal';
@@ -99,7 +100,7 @@ describe('Select', () => {
   test('search', () => {
     jest.useFakeTimers();
     const onSearch = jest.fn();
-    const { getByPlaceholderText, container } = render(
+    const { getByPlaceholderText, container, debug } = render(
       <Select
         id="test-select"
         placeholder="test select"
@@ -112,17 +113,16 @@ describe('Select', () => {
     fireEvent.click(getByPlaceholderText('test select'));
 
     expectPortal('test-select__drop').toMatchSnapshot();
+    act(() => {
+      jest.advanceTimersByTime(200);
+    });
 
-    setTimeout(() => {
-      jest.runAllTimers();
+    expect(document.activeElement).toMatchSnapshot();
 
-      expect(document.activeElement).toMatchSnapshot();
+    fireEvent.change(document.activeElement, { target: { value: 'o' } });
+    console.log(debug());
 
-      document.activeElement.value = 'a';
-      fireEvent.input(document.activeElement);
-
-      expect(onSearch).toBeCalledWith('a');
-    }, 200);
+    expect(onSearch).toBeCalledWith('o');
   });
 
   test('select an option', () => {
@@ -1016,12 +1016,14 @@ describe('Select', () => {
   test('keyboard navigation timeout', () => {
     jest.useFakeTimers();
     const { container, getByPlaceholderText } = render(
-      <Select
-        id="test-select"
-        placeholder="test select"
-        options={['one', 'two', 'three']}
-        disabled={[0]}
-      />,
+      <Grommet>
+        <Select
+          id="test-select"
+          placeholder="test select"
+          options={['one', 'two', 'three']}
+          disabled={[0]}
+        />
+      </Grommet>,
     );
     fireEvent.click(getByPlaceholderText('test select'));
     fireEvent.keyDown(document.getElementById('test-select__select-drop'), {
@@ -1034,5 +1036,28 @@ describe('Select', () => {
       jest.advanceTimersByTime(100);
     });
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('Search timeout', () => {
+    jest.useFakeTimers();
+    const onSearch = jest.fn();
+    const { getByPlaceholderText } = render(
+      <Grommet>
+        <Select
+          id="test-select"
+          placeholder="test select"
+          options={['one', 'two']}
+          onSearch={onSearch}
+        />
+        ,
+      </Grommet>,
+    );
+    fireEvent.click(getByPlaceholderText('test select'));
+    document.activeElement.value = 'o';
+    fireEvent.input(document.activeElement);
+    act(() => {
+      jest.advanceTimersByTime(100);
+    });
+    expect(document.activeElement).toMatchSnapshot();
   });
 });
