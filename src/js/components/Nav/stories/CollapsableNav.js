@@ -42,6 +42,4 @@ const CollapsableNav = () => (
   </Grommet>
 );
 
-storiesOf('ResponsiveContext', module).add('Collapsable Nav', () => (
-  <CollapsableNav />
-));
+storiesOf('Nav', module).add('Collapsable Nav', () => <CollapsableNav />);

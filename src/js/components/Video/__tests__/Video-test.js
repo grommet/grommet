@@ -1,6 +1,10 @@
 import React from 'react';
 import 'jest-styled-components';
 import { cleanup, render, fireEvent } from '@testing-library/react';
+import { axe } from 'jest-axe';
+import 'jest-axe/extend-expect';
+import 'regenerator-runtime/runtime';
+
 import { Grommet, Video } from '../..';
 
 describe('Video', () => {
@@ -20,6 +24,12 @@ describe('Video', () => {
   });
 
   afterEach(cleanup);
+
+  test('should have no accessibility violations', async () => {
+    const { container } = render(<App />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 
   test('renders', () => {
     const { container } = render(<App />);
@@ -82,7 +92,7 @@ describe('Video', () => {
   test('Configure Menu Button', () => {
     window.scrollTo = jest.fn();
     const { container, getByLabelText } = render(<App />);
-    fireEvent.click(getByLabelText('Open Menu'));
+    fireEvent.click(getByLabelText('open menu'));
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -90,8 +100,8 @@ describe('Video', () => {
     window.scrollTo = jest.fn();
     const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const { getByLabelText } = render(<App />);
-    fireEvent.click(getByLabelText('Open Menu'));
-    fireEvent.click(getByLabelText('Expand'));
+    fireEvent.click(getByLabelText('open menu'));
+    fireEvent.click(getByLabelText('full screen'));
     /* expect warn to have been called because jest doesn't test in any browser,
     will always have warning here due to the jest browser not supporting
      fullscreen */
@@ -108,7 +118,7 @@ describe('Video', () => {
       .spyOn(window.HTMLMediaElement.prototype, 'play')
       .mockImplementation(() => {});
     const { getByLabelText } = render(<App />);
-    fireEvent.click(getByLabelText('Play'));
+    fireEvent.click(getByLabelText('play'));
     expect(playStub).toHaveBeenCalled();
     playStub.mockRestore();
   });
@@ -117,10 +127,10 @@ describe('Video', () => {
     const volMock = jest.fn();
     window.scrollTo = jest.fn();
     const { getByLabelText } = render(<App onVolumeChange={volMock} />);
-    fireEvent.click(getByLabelText('Open Menu'));
-    fireEvent.click(getByLabelText('VolumeLow'));
+    fireEvent.click(getByLabelText('open menu'));
+    fireEvent.click(getByLabelText('volume down'));
     expect(volMock).toHaveBeenCalled();
-    fireEvent.click(getByLabelText('Volume'));
+    fireEvent.click(getByLabelText('volume up'));
     expect(volMock).toHaveBeenCalledTimes(2);
 
     window.scrollTo.mockRestore();
