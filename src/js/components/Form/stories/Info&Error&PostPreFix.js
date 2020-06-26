@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { CircleInformation } from 'grommet-icons';
 
 import { Box, FormField, TextInput } from 'mnet-ui-base';
 
@@ -13,12 +12,8 @@ const FormFieldInfoPostFix = props => (
         postfix="ms"
         prefix="ms"
         htmlFor="text-input"
-        {...props}
-        info={{
-          icon: <CircleInformation size="small" />,
-          message: 'Text to call attention to an issue with this field ',
-        }}
         error="Text to call attention to an issue with this field"
+        {...props}
       >
         <TextInput
           id="text-input"

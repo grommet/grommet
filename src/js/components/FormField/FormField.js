@@ -5,7 +5,6 @@ import React, {
   useContext,
   useEffect,
   useState,
-  useRef,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
@@ -20,6 +19,7 @@ import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
 import { Drop } from '../Drop';
 import { Button } from '../Button';
+import { Tooltip } from '../Tooltip';
 
 const mnetInputNames = ['TextInput', 'Select', 'MaskedInput', 'TextArea'];
 const mnetInputPadNames = [
@@ -81,8 +81,6 @@ const FormField = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const context = useContext(FormContext);
-    const [over, setOver] = useState();
-    const overRef = useRef();
 
     useEffect(() => {
       if (context && context.addValidation) {
@@ -214,8 +212,7 @@ const FormField = forwardRef(
       children;
 
     let normalizedError = error;
-    let normalizedInfo = info && info.icon;
-    const normalizedInfoMsg = info && info.message;
+    let normalizedInfo = info;
     let onFieldBlur;
     // put rest on container, unless we use renderInput()
     let containerRest = rest;
@@ -379,7 +376,7 @@ const FormField = forwardRef(
       direction && direction === 'row'
         ? {
             flexDirection: direction,
-            alignItems: 'baseline',
+            alignItems: 'center',
           }
         : { flexDirection: direction };
 
@@ -419,51 +416,13 @@ const FormField = forwardRef(
               </Text>
             )}
           </Box>
-          <Box>
+          <Box style={{ position: 'relative' }}>
             {contents}
-            <Message message={normalizedError} {...formFieldTheme.error} />
-          </Box>
-          {normalizedInfo || normalizedInfoMsg ? (
-            <Box>
-              <Button
-                ref={overRef}
-                onMouseOver={() => setOver(true)}
-                onMouseOut={() => setOver(false)}
-              >
-                <Box style={{ position: 'relative', top: '3px' }}>
-                  <Message message={normalizedInfo} {...formFieldTheme.info} />
-                </Box>
-              </Button>
-              {overRef.current && over && (
-                <Drop
-                  direction="row"
-                  align={{ left: 'right' }}
-                  target={overRef.current}
-                  elevation="none"
-                  plain
-                  style={{ boxShadow: 'none' }}
-                >
-                  <Box
-                    alignSelf="center"
-                    style={{
-                      width: 0,
-                      height: 0,
-                      borderTop: '5px solid transparent',
-                      borderBottom: '5px solid transparent',
-                      borderRight: '5px solid #313340',
-                    }}
-                  />
-                  <Box
-                    pad="medium"
-                    background="dark-1"
-                    round={{ size: 'small' }}
-                  >
-                    {normalizedInfoMsg}
-                  </Box>
-                </Drop>
-              )}
+            <Box style={{ position: 'absolute', bottom: '-30px' }}>
+              <Message message={normalizedError} {...formFieldTheme.error} />
             </Box>
-          ) : null}
+            <Message message={normalizedInfo} {...formFieldTheme.info} />
+          </Box>
         </Box>
       </FormFieldBox>
     );
