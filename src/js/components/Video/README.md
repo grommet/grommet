@@ -232,6 +232,76 @@ Defaults to
 rgba(0, 0, 0, 0.7)
 ```
 
+**video.icons.closedCaption**
+
+The icon to use for the caption. Expects `React.Element`.
+
+Defaults to
+
+```
+<ClosedCaption />
+```
+
+**video.icons.configure**
+
+The icon to use for the configuration action. Expects `React.Element`.
+
+Defaults to
+
+```
+<Actions />
+```
+
+**video.icons.fullScreen**
+
+The icon to use for viewing the video in full screen. Expects `React.Element`.
+
+Defaults to
+
+```
+<Expand />
+```
+
+**video.icons.pause**
+
+The icon to use for pausing the video. Expects `React.Element`.
+
+Defaults to
+
+```
+<Pause />
+```
+
+**video.icons.play**
+
+The icon to use for playing the video. Expects `React.Element`.
+
+Defaults to
+
+```
+<Play />
+```
+
+**video.icons.reduceVolume**
+
+The icon to use for the action of lowering the volume. Expects `React.Element`.
+
+Defaults to
+
+```
+<VolumeLow />
+```
+
+**video.icons.volume**
+
+The icon to use for the action of raising the volume. Expects `React.Element`.
+
+Defaults to
+
+```
+<Volume />
+```
+
 **video.scrubber.color**
 
 The background color of the video scrubber. Expects `string`.
