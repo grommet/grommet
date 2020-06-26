@@ -231,7 +231,7 @@ exports[`DateInput format 1`] = `
       onFocus={[Function]}
       onKeyDown={[Function]}
       placeholder="mm/dd/yyyy"
-      value=""
+      value="7/2/2020"
     />
   </div>
 </div>
@@ -389,7 +389,7 @@ exports[`DateInput format disabled 1`] = `
       onFocus={[Function]}
       onKeyDown={[Function]}
       placeholder="mm/dd/yyyy"
-      value=""
+      value="7/2/2020"
     />
   </div>
 </div>
@@ -631,6 +631,26 @@ exports[`DateInput format inline 1`] = `
   height: 54.857142857142854px;
 }
 
+.c19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 54.857142857142854px;
+  height: 54.857142857142854px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  font-weight: bold;
+}
+
 .c5 {
   box-sizing: border-box;
   font-size: inherit;
@@ -747,7 +767,7 @@ exports[`DateInput format inline 1`] = `
         onFocus={[Function]}
         onKeyDown={[Function]}
         placeholder="mm/dd/yyyy"
-        value=""
+        value="7/2/2020"
       />
     </div>
     <div
@@ -766,14 +786,14 @@ exports[`DateInput format inline 1`] = `
               className="c9"
               size="medium"
             >
-              June 2020
+              July 2020
             </h3>
           </div>
           <div
             className="c10"
           >
             <button
-              aria-label="May 2020"
+              aria-label="June 2020"
               className="c11"
               disabled={false}
               onBlur={[Function]}
@@ -798,7 +818,7 @@ exports[`DateInput format inline 1`] = `
               </svg>
             </button>
             <button
-              aria-label="July 2020"
+              aria-label="August 2020"
               className="c11"
               disabled={false}
               onBlur={[Function]}
@@ -840,610 +860,6 @@ exports[`DateInput format inline 1`] = `
                 className="c15"
               >
                 <button
-                  aria-label="Sun May 31 2020"
-                  className="c16"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  tabIndex={-1}
-                  type="button"
-                >
-                  <div
-                    className="c17"
-                  >
-                    31
-                  </div>
-                </button>
-              </div>
-              <div
-                className="c15"
-              >
-                <button
-                  aria-label="Mon Jun 01 2020"
-                  className="c16"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  tabIndex={-1}
-                  type="button"
-                >
-                  <div
-                    className="c18"
-                  >
-                    1
-                  </div>
-                </button>
-              </div>
-              <div
-                className="c15"
-              >
-                <button
-                  aria-label="Tue Jun 02 2020"
-                  className="c16"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  tabIndex={-1}
-                  type="button"
-                >
-                  <div
-                    className="c18"
-                  >
-                    2
-                  </div>
-                </button>
-              </div>
-              <div
-                className="c15"
-              >
-                <button
-                  aria-label="Wed Jun 03 2020"
-                  className="c16"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  tabIndex={-1}
-                  type="button"
-                >
-                  <div
-                    className="c18"
-                  >
-                    3
-                  </div>
-                </button>
-              </div>
-              <div
-                className="c15"
-              >
-                <button
-                  aria-label="Thu Jun 04 2020"
-                  className="c16"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  tabIndex={-1}
-                  type="button"
-                >
-                  <div
-                    className="c18"
-                  >
-                    4
-                  </div>
-                </button>
-              </div>
-              <div
-                className="c15"
-              >
-                <button
-                  aria-label="Fri Jun 05 2020"
-                  className="c16"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  tabIndex={-1}
-                  type="button"
-                >
-                  <div
-                    className="c18"
-                  >
-                    5
-                  </div>
-                </button>
-              </div>
-              <div
-                className="c15"
-              >
-                <button
-                  aria-label="Sat Jun 06 2020"
-                  className="c16"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  tabIndex={-1}
-                  type="button"
-                >
-                  <div
-                    className="c18"
-                  >
-                    6
-                  </div>
-                </button>
-              </div>
-            </div>
-            <div
-              className="c14"
-            >
-              <div
-                className="c15"
-              >
-                <button
-                  aria-label="Sun Jun 07 2020"
-                  className="c16"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  tabIndex={-1}
-                  type="button"
-                >
-                  <div
-                    className="c18"
-                  >
-                    7
-                  </div>
-                </button>
-              </div>
-              <div
-                className="c15"
-              >
-                <button
-                  aria-label="Mon Jun 08 2020"
-                  className="c16"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  tabIndex={-1}
-                  type="button"
-                >
-                  <div
-                    className="c18"
-                  >
-                    8
-                  </div>
-                </button>
-              </div>
-              <div
-                className="c15"
-              >
-                <button
-                  aria-label="Tue Jun 09 2020"
-                  className="c16"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  tabIndex={-1}
-                  type="button"
-                >
-                  <div
-                    className="c18"
-                  >
-                    9
-                  </div>
-                </button>
-              </div>
-              <div
-                className="c15"
-              >
-                <button
-                  aria-label="Wed Jun 10 2020"
-                  className="c16"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  tabIndex={-1}
-                  type="button"
-                >
-                  <div
-                    className="c18"
-                  >
-                    10
-                  </div>
-                </button>
-              </div>
-              <div
-                className="c15"
-              >
-                <button
-                  aria-label="Thu Jun 11 2020"
-                  className="c16"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  tabIndex={-1}
-                  type="button"
-                >
-                  <div
-                    className="c18"
-                  >
-                    11
-                  </div>
-                </button>
-              </div>
-              <div
-                className="c15"
-              >
-                <button
-                  aria-label="Fri Jun 12 2020"
-                  className="c16"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  tabIndex={-1}
-                  type="button"
-                >
-                  <div
-                    className="c18"
-                  >
-                    12
-                  </div>
-                </button>
-              </div>
-              <div
-                className="c15"
-              >
-                <button
-                  aria-label="Sat Jun 13 2020"
-                  className="c16"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  tabIndex={-1}
-                  type="button"
-                >
-                  <div
-                    className="c18"
-                  >
-                    13
-                  </div>
-                </button>
-              </div>
-            </div>
-            <div
-              className="c14"
-            >
-              <div
-                className="c15"
-              >
-                <button
-                  aria-label="Sun Jun 14 2020"
-                  className="c16"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  tabIndex={-1}
-                  type="button"
-                >
-                  <div
-                    className="c18"
-                  >
-                    14
-                  </div>
-                </button>
-              </div>
-              <div
-                className="c15"
-              >
-                <button
-                  aria-label="Mon Jun 15 2020"
-                  className="c16"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  tabIndex={-1}
-                  type="button"
-                >
-                  <div
-                    className="c18"
-                  >
-                    15
-                  </div>
-                </button>
-              </div>
-              <div
-                className="c15"
-              >
-                <button
-                  aria-label="Tue Jun 16 2020"
-                  className="c16"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  tabIndex={-1}
-                  type="button"
-                >
-                  <div
-                    className="c18"
-                  >
-                    16
-                  </div>
-                </button>
-              </div>
-              <div
-                className="c15"
-              >
-                <button
-                  aria-label="Wed Jun 17 2020"
-                  className="c16"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  tabIndex={-1}
-                  type="button"
-                >
-                  <div
-                    className="c18"
-                  >
-                    17
-                  </div>
-                </button>
-              </div>
-              <div
-                className="c15"
-              >
-                <button
-                  aria-label="Thu Jun 18 2020"
-                  className="c16"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  tabIndex={-1}
-                  type="button"
-                >
-                  <div
-                    className="c18"
-                  >
-                    18
-                  </div>
-                </button>
-              </div>
-              <div
-                className="c15"
-              >
-                <button
-                  aria-label="Fri Jun 19 2020"
-                  className="c16"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  tabIndex={-1}
-                  type="button"
-                >
-                  <div
-                    className="c18"
-                  >
-                    19
-                  </div>
-                </button>
-              </div>
-              <div
-                className="c15"
-              >
-                <button
-                  aria-label="Sat Jun 20 2020"
-                  className="c16"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  tabIndex={-1}
-                  type="button"
-                >
-                  <div
-                    className="c18"
-                  >
-                    20
-                  </div>
-                </button>
-              </div>
-            </div>
-            <div
-              className="c14"
-            >
-              <div
-                className="c15"
-              >
-                <button
-                  aria-label="Sun Jun 21 2020"
-                  className="c16"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  tabIndex={-1}
-                  type="button"
-                >
-                  <div
-                    className="c18"
-                  >
-                    21
-                  </div>
-                </button>
-              </div>
-              <div
-                className="c15"
-              >
-                <button
-                  aria-label="Mon Jun 22 2020"
-                  className="c16"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  tabIndex={-1}
-                  type="button"
-                >
-                  <div
-                    className="c18"
-                  >
-                    22
-                  </div>
-                </button>
-              </div>
-              <div
-                className="c15"
-              >
-                <button
-                  aria-label="Tue Jun 23 2020"
-                  className="c16"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  tabIndex={-1}
-                  type="button"
-                >
-                  <div
-                    className="c18"
-                  >
-                    23
-                  </div>
-                </button>
-              </div>
-              <div
-                className="c15"
-              >
-                <button
-                  aria-label="Wed Jun 24 2020"
-                  className="c16"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  tabIndex={-1}
-                  type="button"
-                >
-                  <div
-                    className="c18"
-                  >
-                    24
-                  </div>
-                </button>
-              </div>
-              <div
-                className="c15"
-              >
-                <button
-                  aria-label="Thu Jun 25 2020"
-                  className="c16"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  tabIndex={-1}
-                  type="button"
-                >
-                  <div
-                    className="c18"
-                  >
-                    25
-                  </div>
-                </button>
-              </div>
-              <div
-                className="c15"
-              >
-                <button
-                  aria-label="Fri Jun 26 2020"
-                  className="c16"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  tabIndex={-1}
-                  type="button"
-                >
-                  <div
-                    className="c18"
-                  >
-                    26
-                  </div>
-                </button>
-              </div>
-              <div
-                className="c15"
-              >
-                <button
-                  aria-label="Sat Jun 27 2020"
-                  className="c16"
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseOut={[Function]}
-                  onMouseOver={[Function]}
-                  tabIndex={-1}
-                  type="button"
-                >
-                  <div
-                    className="c18"
-                  >
-                    27
-                  </div>
-                </button>
-              </div>
-            </div>
-            <div
-              className="c14"
-            >
-              <div
-                className="c15"
-              >
-                <button
                   aria-label="Sun Jun 28 2020"
                   className="c16"
                   onBlur={[Function]}
@@ -1455,7 +871,7 @@ exports[`DateInput format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c18"
+                    className="c17"
                   >
                     28
                   </div>
@@ -1476,7 +892,7 @@ exports[`DateInput format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c18"
+                    className="c17"
                   >
                     29
                   </div>
@@ -1497,7 +913,7 @@ exports[`DateInput format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c18"
+                    className="c17"
                   >
                     30
                   </div>
@@ -1518,7 +934,7 @@ exports[`DateInput format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c17"
+                    className="c18"
                   >
                     1
                   </div>
@@ -1539,7 +955,7 @@ exports[`DateInput format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c17"
+                    className="c19"
                   >
                     2
                   </div>
@@ -1560,7 +976,7 @@ exports[`DateInput format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c17"
+                    className="c18"
                   >
                     3
                   </div>
@@ -1581,7 +997,7 @@ exports[`DateInput format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c17"
+                    className="c18"
                   >
                     4
                   </div>
@@ -1606,7 +1022,7 @@ exports[`DateInput format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c17"
+                    className="c18"
                   >
                     5
                   </div>
@@ -1627,7 +1043,7 @@ exports[`DateInput format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c17"
+                    className="c18"
                   >
                     6
                   </div>
@@ -1648,7 +1064,7 @@ exports[`DateInput format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c17"
+                    className="c18"
                   >
                     7
                   </div>
@@ -1669,7 +1085,7 @@ exports[`DateInput format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c17"
+                    className="c18"
                   >
                     8
                   </div>
@@ -1690,7 +1106,7 @@ exports[`DateInput format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c17"
+                    className="c18"
                   >
                     9
                   </div>
@@ -1711,7 +1127,7 @@ exports[`DateInput format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c17"
+                    className="c18"
                   >
                     10
                   </div>
@@ -1732,9 +1148,613 @@ exports[`DateInput format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c17"
+                    className="c18"
                   >
                     11
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              className="c14"
+            >
+              <div
+                className="c15"
+              >
+                <button
+                  aria-label="Sun Jul 12 2020"
+                  className="c16"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <div
+                    className="c18"
+                  >
+                    12
+                  </div>
+                </button>
+              </div>
+              <div
+                className="c15"
+              >
+                <button
+                  aria-label="Mon Jul 13 2020"
+                  className="c16"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <div
+                    className="c18"
+                  >
+                    13
+                  </div>
+                </button>
+              </div>
+              <div
+                className="c15"
+              >
+                <button
+                  aria-label="Tue Jul 14 2020"
+                  className="c16"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <div
+                    className="c18"
+                  >
+                    14
+                  </div>
+                </button>
+              </div>
+              <div
+                className="c15"
+              >
+                <button
+                  aria-label="Wed Jul 15 2020"
+                  className="c16"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <div
+                    className="c18"
+                  >
+                    15
+                  </div>
+                </button>
+              </div>
+              <div
+                className="c15"
+              >
+                <button
+                  aria-label="Thu Jul 16 2020"
+                  className="c16"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <div
+                    className="c18"
+                  >
+                    16
+                  </div>
+                </button>
+              </div>
+              <div
+                className="c15"
+              >
+                <button
+                  aria-label="Fri Jul 17 2020"
+                  className="c16"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <div
+                    className="c18"
+                  >
+                    17
+                  </div>
+                </button>
+              </div>
+              <div
+                className="c15"
+              >
+                <button
+                  aria-label="Sat Jul 18 2020"
+                  className="c16"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <div
+                    className="c18"
+                  >
+                    18
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              className="c14"
+            >
+              <div
+                className="c15"
+              >
+                <button
+                  aria-label="Sun Jul 19 2020"
+                  className="c16"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <div
+                    className="c18"
+                  >
+                    19
+                  </div>
+                </button>
+              </div>
+              <div
+                className="c15"
+              >
+                <button
+                  aria-label="Mon Jul 20 2020"
+                  className="c16"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <div
+                    className="c18"
+                  >
+                    20
+                  </div>
+                </button>
+              </div>
+              <div
+                className="c15"
+              >
+                <button
+                  aria-label="Tue Jul 21 2020"
+                  className="c16"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <div
+                    className="c18"
+                  >
+                    21
+                  </div>
+                </button>
+              </div>
+              <div
+                className="c15"
+              >
+                <button
+                  aria-label="Wed Jul 22 2020"
+                  className="c16"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <div
+                    className="c18"
+                  >
+                    22
+                  </div>
+                </button>
+              </div>
+              <div
+                className="c15"
+              >
+                <button
+                  aria-label="Thu Jul 23 2020"
+                  className="c16"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <div
+                    className="c18"
+                  >
+                    23
+                  </div>
+                </button>
+              </div>
+              <div
+                className="c15"
+              >
+                <button
+                  aria-label="Fri Jul 24 2020"
+                  className="c16"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <div
+                    className="c18"
+                  >
+                    24
+                  </div>
+                </button>
+              </div>
+              <div
+                className="c15"
+              >
+                <button
+                  aria-label="Sat Jul 25 2020"
+                  className="c16"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <div
+                    className="c18"
+                  >
+                    25
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              className="c14"
+            >
+              <div
+                className="c15"
+              >
+                <button
+                  aria-label="Sun Jul 26 2020"
+                  className="c16"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <div
+                    className="c18"
+                  >
+                    26
+                  </div>
+                </button>
+              </div>
+              <div
+                className="c15"
+              >
+                <button
+                  aria-label="Mon Jul 27 2020"
+                  className="c16"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <div
+                    className="c18"
+                  >
+                    27
+                  </div>
+                </button>
+              </div>
+              <div
+                className="c15"
+              >
+                <button
+                  aria-label="Tue Jul 28 2020"
+                  className="c16"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <div
+                    className="c18"
+                  >
+                    28
+                  </div>
+                </button>
+              </div>
+              <div
+                className="c15"
+              >
+                <button
+                  aria-label="Wed Jul 29 2020"
+                  className="c16"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <div
+                    className="c18"
+                  >
+                    29
+                  </div>
+                </button>
+              </div>
+              <div
+                className="c15"
+              >
+                <button
+                  aria-label="Thu Jul 30 2020"
+                  className="c16"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <div
+                    className="c18"
+                  >
+                    30
+                  </div>
+                </button>
+              </div>
+              <div
+                className="c15"
+              >
+                <button
+                  aria-label="Fri Jul 31 2020"
+                  className="c16"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <div
+                    className="c18"
+                  >
+                    31
+                  </div>
+                </button>
+              </div>
+              <div
+                className="c15"
+              >
+                <button
+                  aria-label="Sat Aug 01 2020"
+                  className="c16"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <div
+                    className="c17"
+                  >
+                    1
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              className="c14"
+            >
+              <div
+                className="c15"
+              >
+                <button
+                  aria-label="Sun Aug 02 2020"
+                  className="c16"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <div
+                    className="c17"
+                  >
+                    2
+                  </div>
+                </button>
+              </div>
+              <div
+                className="c15"
+              >
+                <button
+                  aria-label="Mon Aug 03 2020"
+                  className="c16"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <div
+                    className="c17"
+                  >
+                    3
+                  </div>
+                </button>
+              </div>
+              <div
+                className="c15"
+              >
+                <button
+                  aria-label="Tue Aug 04 2020"
+                  className="c16"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <div
+                    className="c17"
+                  >
+                    4
+                  </div>
+                </button>
+              </div>
+              <div
+                className="c15"
+              >
+                <button
+                  aria-label="Wed Aug 05 2020"
+                  className="c16"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <div
+                    className="c17"
+                  >
+                    5
+                  </div>
+                </button>
+              </div>
+              <div
+                className="c15"
+              >
+                <button
+                  aria-label="Thu Aug 06 2020"
+                  className="c16"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <div
+                    className="c17"
+                  >
+                    6
+                  </div>
+                </button>
+              </div>
+              <div
+                className="c15"
+              >
+                <button
+                  aria-label="Fri Aug 07 2020"
+                  className="c16"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <div
+                    className="c17"
+                  >
+                    7
+                  </div>
+                </button>
+              </div>
+              <div
+                className="c15"
+              >
+                <button
+                  aria-label="Sat Aug 08 2020"
+                  className="c16"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <div
+                    className="c17"
+                  >
+                    8
                   </div>
                 </button>
               </div>
@@ -1983,6 +2003,26 @@ exports[`DateInput inline 1`] = `
   height: 54.857142857142854px;
 }
 
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 54.857142857142854px;
+  height: 54.857142857142854px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  font-weight: bold;
+}
+
 @media only screen and (max-width:768px) {
   .c4 {
     padding-left: 6px;
@@ -2024,14 +2064,14 @@ exports[`DateInput inline 1`] = `
             className="c5"
             size="medium"
           >
-            June 2020
+            July 2020
           </h3>
         </div>
         <div
           className="c6"
         >
           <button
-            aria-label="May 2020"
+            aria-label="June 2020"
             className="c7"
             disabled={false}
             onBlur={[Function]}
@@ -2056,7 +2096,7 @@ exports[`DateInput inline 1`] = `
             </svg>
           </button>
           <button
-            aria-label="July 2020"
+            aria-label="August 2020"
             className="c7"
             disabled={false}
             onBlur={[Function]}
@@ -2098,610 +2138,6 @@ exports[`DateInput inline 1`] = `
               className="c12"
             >
               <button
-                aria-label="Sun May 31 2020"
-                className="c13"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                tabIndex={-1}
-                type="button"
-              >
-                <div
-                  className="c14"
-                >
-                  31
-                </div>
-              </button>
-            </div>
-            <div
-              className="c12"
-            >
-              <button
-                aria-label="Mon Jun 01 2020"
-                className="c13"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                tabIndex={-1}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  1
-                </div>
-              </button>
-            </div>
-            <div
-              className="c12"
-            >
-              <button
-                aria-label="Tue Jun 02 2020"
-                className="c13"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                tabIndex={-1}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  2
-                </div>
-              </button>
-            </div>
-            <div
-              className="c12"
-            >
-              <button
-                aria-label="Wed Jun 03 2020"
-                className="c13"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                tabIndex={-1}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  3
-                </div>
-              </button>
-            </div>
-            <div
-              className="c12"
-            >
-              <button
-                aria-label="Thu Jun 04 2020"
-                className="c13"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                tabIndex={-1}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  4
-                </div>
-              </button>
-            </div>
-            <div
-              className="c12"
-            >
-              <button
-                aria-label="Fri Jun 05 2020"
-                className="c13"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                tabIndex={-1}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  5
-                </div>
-              </button>
-            </div>
-            <div
-              className="c12"
-            >
-              <button
-                aria-label="Sat Jun 06 2020"
-                className="c13"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                tabIndex={-1}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  6
-                </div>
-              </button>
-            </div>
-          </div>
-          <div
-            className="c11"
-          >
-            <div
-              className="c12"
-            >
-              <button
-                aria-label="Sun Jun 07 2020"
-                className="c13"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                tabIndex={-1}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  7
-                </div>
-              </button>
-            </div>
-            <div
-              className="c12"
-            >
-              <button
-                aria-label="Mon Jun 08 2020"
-                className="c13"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                tabIndex={-1}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  8
-                </div>
-              </button>
-            </div>
-            <div
-              className="c12"
-            >
-              <button
-                aria-label="Tue Jun 09 2020"
-                className="c13"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                tabIndex={-1}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  9
-                </div>
-              </button>
-            </div>
-            <div
-              className="c12"
-            >
-              <button
-                aria-label="Wed Jun 10 2020"
-                className="c13"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                tabIndex={-1}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  10
-                </div>
-              </button>
-            </div>
-            <div
-              className="c12"
-            >
-              <button
-                aria-label="Thu Jun 11 2020"
-                className="c13"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                tabIndex={-1}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  11
-                </div>
-              </button>
-            </div>
-            <div
-              className="c12"
-            >
-              <button
-                aria-label="Fri Jun 12 2020"
-                className="c13"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                tabIndex={-1}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  12
-                </div>
-              </button>
-            </div>
-            <div
-              className="c12"
-            >
-              <button
-                aria-label="Sat Jun 13 2020"
-                className="c13"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                tabIndex={-1}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  13
-                </div>
-              </button>
-            </div>
-          </div>
-          <div
-            className="c11"
-          >
-            <div
-              className="c12"
-            >
-              <button
-                aria-label="Sun Jun 14 2020"
-                className="c13"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                tabIndex={-1}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  14
-                </div>
-              </button>
-            </div>
-            <div
-              className="c12"
-            >
-              <button
-                aria-label="Mon Jun 15 2020"
-                className="c13"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                tabIndex={-1}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  15
-                </div>
-              </button>
-            </div>
-            <div
-              className="c12"
-            >
-              <button
-                aria-label="Tue Jun 16 2020"
-                className="c13"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                tabIndex={-1}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  16
-                </div>
-              </button>
-            </div>
-            <div
-              className="c12"
-            >
-              <button
-                aria-label="Wed Jun 17 2020"
-                className="c13"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                tabIndex={-1}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  17
-                </div>
-              </button>
-            </div>
-            <div
-              className="c12"
-            >
-              <button
-                aria-label="Thu Jun 18 2020"
-                className="c13"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                tabIndex={-1}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  18
-                </div>
-              </button>
-            </div>
-            <div
-              className="c12"
-            >
-              <button
-                aria-label="Fri Jun 19 2020"
-                className="c13"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                tabIndex={-1}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  19
-                </div>
-              </button>
-            </div>
-            <div
-              className="c12"
-            >
-              <button
-                aria-label="Sat Jun 20 2020"
-                className="c13"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                tabIndex={-1}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  20
-                </div>
-              </button>
-            </div>
-          </div>
-          <div
-            className="c11"
-          >
-            <div
-              className="c12"
-            >
-              <button
-                aria-label="Sun Jun 21 2020"
-                className="c13"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                tabIndex={-1}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  21
-                </div>
-              </button>
-            </div>
-            <div
-              className="c12"
-            >
-              <button
-                aria-label="Mon Jun 22 2020"
-                className="c13"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                tabIndex={-1}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  22
-                </div>
-              </button>
-            </div>
-            <div
-              className="c12"
-            >
-              <button
-                aria-label="Tue Jun 23 2020"
-                className="c13"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                tabIndex={-1}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  23
-                </div>
-              </button>
-            </div>
-            <div
-              className="c12"
-            >
-              <button
-                aria-label="Wed Jun 24 2020"
-                className="c13"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                tabIndex={-1}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  24
-                </div>
-              </button>
-            </div>
-            <div
-              className="c12"
-            >
-              <button
-                aria-label="Thu Jun 25 2020"
-                className="c13"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                tabIndex={-1}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  25
-                </div>
-              </button>
-            </div>
-            <div
-              className="c12"
-            >
-              <button
-                aria-label="Fri Jun 26 2020"
-                className="c13"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                tabIndex={-1}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  26
-                </div>
-              </button>
-            </div>
-            <div
-              className="c12"
-            >
-              <button
-                aria-label="Sat Jun 27 2020"
-                className="c13"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseOut={[Function]}
-                onMouseOver={[Function]}
-                tabIndex={-1}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  27
-                </div>
-              </button>
-            </div>
-          </div>
-          <div
-            className="c11"
-          >
-            <div
-              className="c12"
-            >
-              <button
                 aria-label="Sun Jun 28 2020"
                 className="c13"
                 onBlur={[Function]}
@@ -2713,7 +2149,7 @@ exports[`DateInput inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c15"
+                  className="c14"
                 >
                   28
                 </div>
@@ -2734,7 +2170,7 @@ exports[`DateInput inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c15"
+                  className="c14"
                 >
                   29
                 </div>
@@ -2755,7 +2191,7 @@ exports[`DateInput inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c15"
+                  className="c14"
                 >
                   30
                 </div>
@@ -2776,7 +2212,7 @@ exports[`DateInput inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c14"
+                  className="c15"
                 >
                   1
                 </div>
@@ -2797,7 +2233,7 @@ exports[`DateInput inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c14"
+                  className="c16"
                 >
                   2
                 </div>
@@ -2818,7 +2254,7 @@ exports[`DateInput inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c14"
+                  className="c15"
                 >
                   3
                 </div>
@@ -2839,7 +2275,7 @@ exports[`DateInput inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c14"
+                  className="c15"
                 >
                   4
                 </div>
@@ -2864,7 +2300,7 @@ exports[`DateInput inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c14"
+                  className="c15"
                 >
                   5
                 </div>
@@ -2885,7 +2321,7 @@ exports[`DateInput inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c14"
+                  className="c15"
                 >
                   6
                 </div>
@@ -2906,7 +2342,7 @@ exports[`DateInput inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c14"
+                  className="c15"
                 >
                   7
                 </div>
@@ -2927,7 +2363,7 @@ exports[`DateInput inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c14"
+                  className="c15"
                 >
                   8
                 </div>
@@ -2948,7 +2384,7 @@ exports[`DateInput inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c14"
+                  className="c15"
                 >
                   9
                 </div>
@@ -2969,7 +2405,7 @@ exports[`DateInput inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c14"
+                  className="c15"
                 >
                   10
                 </div>
@@ -2990,9 +2426,613 @@ exports[`DateInput inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c14"
+                  className="c15"
                 >
                   11
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            className="c11"
+          >
+            <div
+              className="c12"
+            >
+              <button
+                aria-label="Sun Jul 12 2020"
+                className="c13"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                tabIndex={-1}
+                type="button"
+              >
+                <div
+                  className="c15"
+                >
+                  12
+                </div>
+              </button>
+            </div>
+            <div
+              className="c12"
+            >
+              <button
+                aria-label="Mon Jul 13 2020"
+                className="c13"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                tabIndex={-1}
+                type="button"
+              >
+                <div
+                  className="c15"
+                >
+                  13
+                </div>
+              </button>
+            </div>
+            <div
+              className="c12"
+            >
+              <button
+                aria-label="Tue Jul 14 2020"
+                className="c13"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                tabIndex={-1}
+                type="button"
+              >
+                <div
+                  className="c15"
+                >
+                  14
+                </div>
+              </button>
+            </div>
+            <div
+              className="c12"
+            >
+              <button
+                aria-label="Wed Jul 15 2020"
+                className="c13"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                tabIndex={-1}
+                type="button"
+              >
+                <div
+                  className="c15"
+                >
+                  15
+                </div>
+              </button>
+            </div>
+            <div
+              className="c12"
+            >
+              <button
+                aria-label="Thu Jul 16 2020"
+                className="c13"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                tabIndex={-1}
+                type="button"
+              >
+                <div
+                  className="c15"
+                >
+                  16
+                </div>
+              </button>
+            </div>
+            <div
+              className="c12"
+            >
+              <button
+                aria-label="Fri Jul 17 2020"
+                className="c13"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                tabIndex={-1}
+                type="button"
+              >
+                <div
+                  className="c15"
+                >
+                  17
+                </div>
+              </button>
+            </div>
+            <div
+              className="c12"
+            >
+              <button
+                aria-label="Sat Jul 18 2020"
+                className="c13"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                tabIndex={-1}
+                type="button"
+              >
+                <div
+                  className="c15"
+                >
+                  18
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            className="c11"
+          >
+            <div
+              className="c12"
+            >
+              <button
+                aria-label="Sun Jul 19 2020"
+                className="c13"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                tabIndex={-1}
+                type="button"
+              >
+                <div
+                  className="c15"
+                >
+                  19
+                </div>
+              </button>
+            </div>
+            <div
+              className="c12"
+            >
+              <button
+                aria-label="Mon Jul 20 2020"
+                className="c13"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                tabIndex={-1}
+                type="button"
+              >
+                <div
+                  className="c15"
+                >
+                  20
+                </div>
+              </button>
+            </div>
+            <div
+              className="c12"
+            >
+              <button
+                aria-label="Tue Jul 21 2020"
+                className="c13"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                tabIndex={-1}
+                type="button"
+              >
+                <div
+                  className="c15"
+                >
+                  21
+                </div>
+              </button>
+            </div>
+            <div
+              className="c12"
+            >
+              <button
+                aria-label="Wed Jul 22 2020"
+                className="c13"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                tabIndex={-1}
+                type="button"
+              >
+                <div
+                  className="c15"
+                >
+                  22
+                </div>
+              </button>
+            </div>
+            <div
+              className="c12"
+            >
+              <button
+                aria-label="Thu Jul 23 2020"
+                className="c13"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                tabIndex={-1}
+                type="button"
+              >
+                <div
+                  className="c15"
+                >
+                  23
+                </div>
+              </button>
+            </div>
+            <div
+              className="c12"
+            >
+              <button
+                aria-label="Fri Jul 24 2020"
+                className="c13"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                tabIndex={-1}
+                type="button"
+              >
+                <div
+                  className="c15"
+                >
+                  24
+                </div>
+              </button>
+            </div>
+            <div
+              className="c12"
+            >
+              <button
+                aria-label="Sat Jul 25 2020"
+                className="c13"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                tabIndex={-1}
+                type="button"
+              >
+                <div
+                  className="c15"
+                >
+                  25
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            className="c11"
+          >
+            <div
+              className="c12"
+            >
+              <button
+                aria-label="Sun Jul 26 2020"
+                className="c13"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                tabIndex={-1}
+                type="button"
+              >
+                <div
+                  className="c15"
+                >
+                  26
+                </div>
+              </button>
+            </div>
+            <div
+              className="c12"
+            >
+              <button
+                aria-label="Mon Jul 27 2020"
+                className="c13"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                tabIndex={-1}
+                type="button"
+              >
+                <div
+                  className="c15"
+                >
+                  27
+                </div>
+              </button>
+            </div>
+            <div
+              className="c12"
+            >
+              <button
+                aria-label="Tue Jul 28 2020"
+                className="c13"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                tabIndex={-1}
+                type="button"
+              >
+                <div
+                  className="c15"
+                >
+                  28
+                </div>
+              </button>
+            </div>
+            <div
+              className="c12"
+            >
+              <button
+                aria-label="Wed Jul 29 2020"
+                className="c13"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                tabIndex={-1}
+                type="button"
+              >
+                <div
+                  className="c15"
+                >
+                  29
+                </div>
+              </button>
+            </div>
+            <div
+              className="c12"
+            >
+              <button
+                aria-label="Thu Jul 30 2020"
+                className="c13"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                tabIndex={-1}
+                type="button"
+              >
+                <div
+                  className="c15"
+                >
+                  30
+                </div>
+              </button>
+            </div>
+            <div
+              className="c12"
+            >
+              <button
+                aria-label="Fri Jul 31 2020"
+                className="c13"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                tabIndex={-1}
+                type="button"
+              >
+                <div
+                  className="c15"
+                >
+                  31
+                </div>
+              </button>
+            </div>
+            <div
+              className="c12"
+            >
+              <button
+                aria-label="Sat Aug 01 2020"
+                className="c13"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                tabIndex={-1}
+                type="button"
+              >
+                <div
+                  className="c14"
+                >
+                  1
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            className="c11"
+          >
+            <div
+              className="c12"
+            >
+              <button
+                aria-label="Sun Aug 02 2020"
+                className="c13"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                tabIndex={-1}
+                type="button"
+              >
+                <div
+                  className="c14"
+                >
+                  2
+                </div>
+              </button>
+            </div>
+            <div
+              className="c12"
+            >
+              <button
+                aria-label="Mon Aug 03 2020"
+                className="c13"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                tabIndex={-1}
+                type="button"
+              >
+                <div
+                  className="c14"
+                >
+                  3
+                </div>
+              </button>
+            </div>
+            <div
+              className="c12"
+            >
+              <button
+                aria-label="Tue Aug 04 2020"
+                className="c13"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                tabIndex={-1}
+                type="button"
+              >
+                <div
+                  className="c14"
+                >
+                  4
+                </div>
+              </button>
+            </div>
+            <div
+              className="c12"
+            >
+              <button
+                aria-label="Wed Aug 05 2020"
+                className="c13"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                tabIndex={-1}
+                type="button"
+              >
+                <div
+                  className="c14"
+                >
+                  5
+                </div>
+              </button>
+            </div>
+            <div
+              className="c12"
+            >
+              <button
+                aria-label="Thu Aug 06 2020"
+                className="c13"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                tabIndex={-1}
+                type="button"
+              >
+                <div
+                  className="c14"
+                >
+                  6
+                </div>
+              </button>
+            </div>
+            <div
+              className="c12"
+            >
+              <button
+                aria-label="Fri Aug 07 2020"
+                className="c13"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                tabIndex={-1}
+                type="button"
+              >
+                <div
+                  className="c14"
+                >
+                  7
+                </div>
+              </button>
+            </div>
+            <div
+              className="c12"
+            >
+              <button
+                aria-label="Sat Aug 08 2020"
+                className="c13"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                tabIndex={-1}
+                type="button"
+              >
+                <div
+                  className="c14"
+                >
+                  8
                 </div>
               </button>
             </div>
@@ -3247,7 +3287,7 @@ exports[`DateInput range format 1`] = `
       onFocus={[Function]}
       onKeyDown={[Function]}
       placeholder="mm/dd/yyyy-mm/dd/yyyy"
-      value="7/1/2020-7/4/2020"
+      value="7/2/2020-7/7/2020"
     />
   </div>
 </div>
@@ -3487,9 +3527,6 @@ exports[`DateInput range format inline 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  font-weight: bold;
 }
 
 .c19 {
@@ -3507,7 +3544,9 @@ exports[`DateInput range format inline 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background-color: rgba(125,76,219,0.1);
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  font-weight: bold;
 }
 
 .c20 {
@@ -3525,6 +3564,7 @@ exports[`DateInput range format inline 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
+  background-color: rgba(125,76,219,0.1);
 }
 
 .c5 {
@@ -3643,7 +3683,7 @@ exports[`DateInput range format inline 1`] = `
         onFocus={[Function]}
         onKeyDown={[Function]}
         placeholder="mm/dd/yyyy-mm/dd/yyyy"
-        value="7/1/2020-7/4/2020"
+        value="7/2/2020-7/7/2020"
       />
     </div>
     <div
@@ -3852,7 +3892,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c19"
+                    className="c20"
                   >
                     3
                   </div>
@@ -3873,7 +3913,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c18"
+                    className="c20"
                   >
                     4
                   </div>
@@ -3940,7 +3980,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c20"
+                    className="c19"
                   >
                     7
                   </div>
@@ -3961,7 +4001,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c20"
+                    className="c18"
                   >
                     8
                   </div>
@@ -3982,7 +4022,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c20"
+                    className="c18"
                   >
                     9
                   </div>
@@ -4003,7 +4043,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c20"
+                    className="c18"
                   >
                     10
                   </div>
@@ -4024,7 +4064,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c20"
+                    className="c18"
                   >
                     11
                   </div>
@@ -4049,7 +4089,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c20"
+                    className="c18"
                   >
                     12
                   </div>
@@ -4070,7 +4110,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c20"
+                    className="c18"
                   >
                     13
                   </div>
@@ -4091,7 +4131,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c20"
+                    className="c18"
                   >
                     14
                   </div>
@@ -4112,7 +4152,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c20"
+                    className="c18"
                   >
                     15
                   </div>
@@ -4133,7 +4173,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c20"
+                    className="c18"
                   >
                     16
                   </div>
@@ -4154,7 +4194,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c20"
+                    className="c18"
                   >
                     17
                   </div>
@@ -4175,7 +4215,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c20"
+                    className="c18"
                   >
                     18
                   </div>
@@ -4200,7 +4240,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c20"
+                    className="c18"
                   >
                     19
                   </div>
@@ -4221,7 +4261,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c20"
+                    className="c18"
                   >
                     20
                   </div>
@@ -4242,7 +4282,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c20"
+                    className="c18"
                   >
                     21
                   </div>
@@ -4263,7 +4303,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c20"
+                    className="c18"
                   >
                     22
                   </div>
@@ -4284,7 +4324,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c20"
+                    className="c18"
                   >
                     23
                   </div>
@@ -4305,7 +4345,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c20"
+                    className="c18"
                   >
                     24
                   </div>
@@ -4326,7 +4366,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c20"
+                    className="c18"
                   >
                     25
                   </div>
@@ -4351,7 +4391,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c20"
+                    className="c18"
                   >
                     26
                   </div>
@@ -4372,7 +4412,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c20"
+                    className="c18"
                   >
                     27
                   </div>
@@ -4393,7 +4433,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c20"
+                    className="c18"
                   >
                     28
                   </div>
@@ -4414,7 +4454,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c20"
+                    className="c18"
                   >
                     29
                   </div>
@@ -4435,7 +4475,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c20"
+                    className="c18"
                   >
                     30
                   </div>
@@ -4456,7 +4496,7 @@ exports[`DateInput range format inline 1`] = `
                   type="button"
                 >
                   <div
-                    className="c20"
+                    className="c18"
                   >
                     31
                   </div>
@@ -4877,9 +4917,6 @@ exports[`DateInput range inline 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background-color: #7D4CDB;
-  color: #f8f8f8;
-  font-weight: bold;
 }
 
 .c16 {
@@ -4897,7 +4934,9 @@ exports[`DateInput range inline 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background-color: rgba(125,76,219,0.1);
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  font-weight: bold;
 }
 
 .c17 {
@@ -4915,6 +4954,7 @@ exports[`DateInput range inline 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
+  background-color: rgba(125,76,219,0.1);
 }
 
 @media only screen and (max-width:768px) {
@@ -5148,7 +5188,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c16"
+                  className="c17"
                 >
                   3
                 </div>
@@ -5169,7 +5209,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c15"
+                  className="c17"
                 >
                   4
                 </div>
@@ -5236,7 +5276,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c17"
+                  className="c16"
                 >
                   7
                 </div>
@@ -5257,7 +5297,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c17"
+                  className="c15"
                 >
                   8
                 </div>
@@ -5278,7 +5318,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c17"
+                  className="c15"
                 >
                   9
                 </div>
@@ -5299,7 +5339,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c17"
+                  className="c15"
                 >
                   10
                 </div>
@@ -5320,7 +5360,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c17"
+                  className="c15"
                 >
                   11
                 </div>
@@ -5345,7 +5385,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c17"
+                  className="c15"
                 >
                   12
                 </div>
@@ -5366,7 +5406,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c17"
+                  className="c15"
                 >
                   13
                 </div>
@@ -5387,7 +5427,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c17"
+                  className="c15"
                 >
                   14
                 </div>
@@ -5408,7 +5448,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c17"
+                  className="c15"
                 >
                   15
                 </div>
@@ -5429,7 +5469,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c17"
+                  className="c15"
                 >
                   16
                 </div>
@@ -5450,7 +5490,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c17"
+                  className="c15"
                 >
                   17
                 </div>
@@ -5471,7 +5511,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c17"
+                  className="c15"
                 >
                   18
                 </div>
@@ -5496,7 +5536,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c17"
+                  className="c15"
                 >
                   19
                 </div>
@@ -5517,7 +5557,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c17"
+                  className="c15"
                 >
                   20
                 </div>
@@ -5538,7 +5578,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c17"
+                  className="c15"
                 >
                   21
                 </div>
@@ -5559,7 +5599,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c17"
+                  className="c15"
                 >
                   22
                 </div>
@@ -5580,7 +5620,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c17"
+                  className="c15"
                 >
                   23
                 </div>
@@ -5601,7 +5641,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c17"
+                  className="c15"
                 >
                   24
                 </div>
@@ -5622,7 +5662,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c17"
+                  className="c15"
                 >
                   25
                 </div>
@@ -5647,7 +5687,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c17"
+                  className="c15"
                 >
                   26
                 </div>
@@ -5668,7 +5708,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c17"
+                  className="c15"
                 >
                   27
                 </div>
@@ -5689,7 +5729,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c17"
+                  className="c15"
                 >
                   28
                 </div>
@@ -5710,7 +5750,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c17"
+                  className="c15"
                 >
                   29
                 </div>
@@ -5731,7 +5771,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c17"
+                  className="c15"
                 >
                   30
                 </div>
@@ -5752,7 +5792,7 @@ exports[`DateInput range inline 1`] = `
                 type="button"
               >
                 <div
-                  className="c17"
+                  className="c15"
                 >
                   31
                 </div>

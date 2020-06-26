@@ -5,11 +5,14 @@ import 'jest-styled-components';
 import { Grommet } from '../../Grommet';
 import { DateInput } from '..';
 
+const DATE = '2020-07-02T00:00:00-08:00';
+const DATES = ['2020-07-02T00:00:00-08:00', '2020-07-07T00:00:00-08:00'];
+
 describe('DateInput', () => {
   test('basic', () => {
     const component = renderer.create(
       <Grommet>
-        <DateInput id="item" name="item" />
+        <DateInput id="item" name="item" value={DATE} />
       </Grommet>,
     );
     const tree = component.toJSON();
@@ -19,7 +22,7 @@ describe('DateInput', () => {
   test('format', () => {
     const component = renderer.create(
       <Grommet>
-        <DateInput id="item" name="item" format="mm/dd/yyyy" />
+        <DateInput id="item" name="item" format="mm/dd/yyyy" value={DATE} />
       </Grommet>,
     );
     const tree = component.toJSON();
@@ -29,7 +32,7 @@ describe('DateInput', () => {
   test('inline', () => {
     const component = renderer.create(
       <Grommet>
-        <DateInput id="item" name="item" inline />
+        <DateInput id="item" name="item" inline value={DATE} />
       </Grommet>,
     );
     const tree = component.toJSON();
@@ -39,7 +42,13 @@ describe('DateInput', () => {
   test('format inline', () => {
     const component = renderer.create(
       <Grommet>
-        <DateInput id="item" name="item" format="mm/dd/yyyy" inline />
+        <DateInput
+          id="item"
+          name="item"
+          format="mm/dd/yyyy"
+          inline
+          value={DATE}
+        />
       </Grommet>,
     );
     const tree = component.toJSON();
@@ -49,7 +58,13 @@ describe('DateInput', () => {
   test('format disabled', () => {
     const component = renderer.create(
       <Grommet>
-        <DateInput id="item" name="item" format="mm/dd/yyyy" disabled />
+        <DateInput
+          id="item"
+          name="item"
+          format="mm/dd/yyyy"
+          disabled
+          value={DATE}
+        />
       </Grommet>,
     );
     const tree = component.toJSON();
@@ -59,7 +74,7 @@ describe('DateInput', () => {
   test('range', () => {
     const component = renderer.create(
       <Grommet>
-        <DateInput id="item" name="item" value={['2020-07-02', '2020-07-05']} />
+        <DateInput id="item" name="item" value={DATES} />
       </Grommet>,
     );
     const tree = component.toJSON();
@@ -69,12 +84,7 @@ describe('DateInput', () => {
   test('range inline', () => {
     const component = renderer.create(
       <Grommet>
-        <DateInput
-          id="item"
-          name="item"
-          value={['2020-07-02', '2020-07-05']}
-          inline
-        />
+        <DateInput id="item" name="item" value={DATES} inline />
       </Grommet>,
     );
     const tree = component.toJSON();
@@ -88,7 +98,7 @@ describe('DateInput', () => {
           id="item"
           name="item"
           format="mm/dd/yyyy-mm/dd/yyyy"
-          value={['2020-07-02', '2020-07-05']}
+          value={DATES}
         />
       </Grommet>,
     );
@@ -103,7 +113,7 @@ describe('DateInput', () => {
           id="item"
           name="item"
           format="mm/dd/yyyy-mm/dd/yyyy"
-          value={['2020-07-02', '2020-07-05']}
+          value={DATES}
           inline
         />
       </Grommet>,
