@@ -98,6 +98,9 @@ Defaults to
           light: 'black',
         },
       },
+      disabled: {
+        // color: undefined,
+      },
       hover: {
         color: {
           dark: 'white',
@@ -116,6 +119,16 @@ Defaults to
 
 ```
 control
+```
+
+**tab.disabled.color**
+
+text color of the Tab when disabled. Expects `string | object`.
+
+Defaults to
+
+```
+undefined
 ```
 
 **tab.hover.background**

@@ -56,6 +56,9 @@ export const themeDoc = {
           light: 'black',
         },
       },
+      disabled: {
+        // color: undefined,
+      },
       hover: {
         color: {
           dark: 'white',
@@ -69,6 +72,11 @@ export const themeDoc = {
     description: 'text color for the Tab.',
     type: 'string',
     defaultValue: 'control',
+  },
+  'tab.disabled.color': {
+    description: 'text color of the Tab when disabled.',
+    type: 'string | object',
+    defaultValue: undefined,
   },
   'tab.hover.background': {
     description: 'background style of the Tab on hover.',
