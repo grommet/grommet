@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import { Box, Grommet, Tab, Tabs, ThemeContext } from 'grommet';
+import { Box, Grommet, Tab, Tabs, Text, ThemeContext } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const colors = {
@@ -75,58 +75,43 @@ const customThemeWithButtonDefault = {
   },
 };
 
-const TabStates = () => {
-  const [index, setIndex] = React.useState(0);
+const TabsExample = ({ label }) => {
+  const [index, setIndex] = useState(0);
   const onActive = nextIndex => setIndex(nextIndex);
+  return (
+    <Box border gap="medium" pad="medium">
+      <Text weight="bold">{label}</Text>
+      <Tabs activeIndex={index} onActive={onActive}>
+        <Tab title={index === 0 ? 'Active' : 'Enabled'}>
+          <Box margin="small">The first tab is active.</Box>
+        </Tab>
+        <Tab title={index === 1 ? 'Active' : 'Enabled'}>
+          <Box margin="small">The second tab is active.</Box>
+        </Tab>
+        <Tab title={index === 2 ? 'Active' : 'Enabled'}>
+          <Box margin="small">The third tab is active.</Box>
+        </Tab>
+        <Tab title="Disabled" disabled>
+          <Box margin="small">This tab is disabled.</Box>
+        </Tab>
+      </Tabs>
+    </Box>
+  );
+};
 
+const TabStates = () => {
   return (
     <Grommet theme={grommet}>
       <Box gap="large" pad="large" width={{ max: 'large' }}>
-        <Tabs activeIndex={index} onActive={onActive}>
-          <Tab title={index === 0 ? 'Active' : 'Enabled'}>
-            <Box margin="small">The first tab is active.</Box>
-          </Tab>
-          <Tab title={index === 1 ? 'Active' : 'Enabled'}>
-            <Box margin="small">The second tab is active.</Box>
-          </Tab>
-          <Tab title={index === 2 ? 'Active' : 'Enabled'}>
-            <Box margin="small">The third tab is active.</Box>
-          </Tab>
-          <Tab title="Disabled" disabled>
-            <Box margin="small">This tab is disabled.</Box>
-          </Tab>
-        </Tabs>
+        <TabsExample label="Grommet Default" />
         <ThemeContext.Extend value={customTheme}>
-          <Tabs activeIndex={index} onActive={onActive}>
-            <Tab title={index === 0 ? 'Active' : 'Enabled'}>
-              <Box margin="small">The first tab is active.</Box>
-            </Tab>
-            <Tab title={index === 1 ? 'Active' : 'Enabled'}>
-              <Box margin="small">The second tab is active.</Box>
-            </Tab>
-            <Tab title={index === 2 ? 'Active' : 'Enabled'}>
-              <Box margin="small">The third tab is active.</Box>
-            </Tab>
-            <Tab title="Disabled" disabled>
-              <Box margin="small">This tab is disabled.</Box>
-            </Tab>
-          </Tabs>
+          <TabsExample label="Customized Disabled State" />
         </ThemeContext.Extend>
         <ThemeContext.Extend value={customThemeWithButtonDefault}>
-          <Tabs activeIndex={index} onActive={onActive}>
-            <Tab title={index === 0 ? 'Active' : 'Enabled'}>
-              <Box margin="small">The first tab is active.</Box>
-            </Tab>
-            <Tab title={index === 1 ? 'Active' : 'Enabled'}>
-              <Box margin="small">The second tab is active.</Box>
-            </Tab>
-            <Tab title={index === 2 ? 'Active' : 'Enabled'}>
-              <Box margin="small">The third tab is active.</Box>
-            </Tab>
-            <Tab title="Disabled" disabled>
-              <Box margin="small">This tab is disabled.</Box>
-            </Tab>
-          </Tabs>
+          <TabsExample
+            label="Customized Disabled State with 
+            'theme.button.default' Defined"
+          />
         </ThemeContext.Extend>
       </Box>
     </Grommet>
