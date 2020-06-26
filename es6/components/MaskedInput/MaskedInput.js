@@ -106,7 +106,9 @@ var parseValue = function parseValue(mask, value) {
   return valueParts;
 };
 
-var defaultMask = [];
+var defaultMask = [{
+  regexp: /[^]*/
+}];
 var dropAlign = {
   top: 'bottom',
   left: 'left'
