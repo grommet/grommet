@@ -55,4 +55,60 @@ describe('DateInput', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  test('range', () => {
+    const component = renderer.create(
+      <Grommet>
+        <DateInput id="item" name="item" value={['2020-07-02', '2020-07-05']} />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('range inline', () => {
+    const component = renderer.create(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          value={['2020-07-02', '2020-07-05']}
+          inline
+        />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('range format', () => {
+    const component = renderer.create(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="mm/dd/yyyy-mm/dd/yyyy"
+          value={['2020-07-02', '2020-07-05']}
+        />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('range format inline', () => {
+    const component = renderer.create(
+      <Grommet>
+        <DateInput
+          id="item"
+          name="item"
+          format="mm/dd/yyyy-mm/dd/yyyy"
+          value={['2020-07-02', '2020-07-05']}
+          inline
+        />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

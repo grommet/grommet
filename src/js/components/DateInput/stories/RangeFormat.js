@@ -26,18 +26,21 @@ const Example = () => {
   return (
     <Grommet theme={grommet}>
       <Box align="center" pad="large">
-        <DateInput
-          value={value}
-          buttonProps={{
-            label: `${dateFormat.format(
-              new Date(value[0]),
-            )} - ${dateFormat.format(new Date(value[1]))}`,
-          }}
-          onChange={onChange}
-        />
+        <Box width="medium">
+          <DateInput
+            value={value}
+            format="mm/dd/yyyy-mm/dd/yyyy"
+            buttonProps={{
+              label: `${dateFormat.format(
+                new Date(value[0]),
+              )} - ${dateFormat.format(new Date(value[1]))}`,
+            }}
+            onChange={onChange}
+          />
+        </Box>
       </Box>
     </Grommet>
   );
 };
 
-storiesOf('DateInput', module).add('Range', () => <Example />);
+storiesOf('DateInput', module).add('Range format', () => <Example />);

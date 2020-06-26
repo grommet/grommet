@@ -2809,7 +2809,8 @@ string",
       Object {
         "description": "The date format to use. If not specified, the date value will not
       be displayed as a text string and the user will not be able to enter
-      a date by typing. For example: 'mm/dd/yyyy'",
+      a date by typing. For example: 'mm/dd/yyyy', or for a range:
+      'mm/dd/yyyy-mm/dd/yyyy",
         "format": "string",
         "name": "format",
       },

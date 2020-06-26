@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, DateInput } from 'grommet';
+import { Grommet, Box, DateInput, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const Example = () => {
@@ -13,7 +13,10 @@ const Example = () => {
   };
   return (
     <Grommet theme={grommet}>
-      <Box align="center" pad="large">
+      <Box direction="row" align="center" justify="center" pad="large">
+        <Text weight="bold">
+          {value && new Date(value).toLocaleDateString()}
+        </Text>
         <DateInput value={value} onChange={onChange} />
       </Box>
     </Grommet>

@@ -210,12 +210,11 @@ const MaskedInput = forwardRef(
         const nextValue = nextValueParts.map(part => part.part).join('');
 
         if (value !== nextValue) {
-          setInputValue(nextValue);
           setValue(nextValue);
           if (onChange) onChange(event);
         }
       },
-      [mask, onChange, setInputValue, setValue, value],
+      [mask, onChange, setValue, value],
     );
 
     const onOption = useCallback(

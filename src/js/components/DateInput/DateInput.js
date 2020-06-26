@@ -1,7 +1,7 @@
 import React, {
   forwardRef,
   useContext,
-  useEffect,
+  // useEffect,
   useMemo,
   useState,
 } from 'react';
@@ -13,19 +13,7 @@ import { DropButton } from '../DropButton';
 import { FormContext } from '../Form';
 import { MaskedInput } from '../MaskedInput';
 import { useForwardedRef } from '../../utils';
-
-const formatRegexp = /([mdy]+)([^\w]*)([mdy]+)([^\w]*)([mdy]+)/i;
-
-const valueToText = value => {
-  if (!value) return '';
-  const date = new Date(value);
-  if (Number.isNaN(date)) return '';
-  return date.toLocaleDateString(undefined, {
-    year: 'numeric',
-    month: 'numeric',
-    day: 'numeric',
-  });
-};
+import { formatToSchema, valueToText, textToValue } from './utils';
 
 const DateInput = forwardRef(
   (
@@ -50,40 +38,29 @@ const DateInput = forwardRef(
     const ref = useForwardedRef(refArg);
     const [value, setValue] = useFormInput(name, valueArg, defaultValue);
 
-    // textValue is only used when a format is provided
-    const [textValue, setTextValue] = useState(valueToText(value));
-    useEffect(() => {
-      if (format && value) setTextValue(valueToText(value));
-    }, [format, value]);
+    // parse format and build a formal schema we can use elsewhere
+    const schema = useMemo(() => formatToSchema(format), [format]);
 
     // mask is only used when a format is provided
     const mask = useMemo(() => {
-      if (!format) return [];
-      const match = format.match(formatRegexp);
-      const result = match.slice(1).map(part => {
-        if (part[0] === 'm' || part[0] === 'd' || part[0] === 'y')
+      if (!schema) return undefined;
+      return schema.map(part => {
+        const char = part[0].toLowerCase();
+        if (char === 'm' || char === 'd' || char === 'y') {
           return {
             placeholder: part,
             length: [1, part.length],
             regexp: new RegExp(`^[0-9]{1,${part.length}}$`),
           };
+        }
         return { fixed: part };
       });
-      return result;
-    }, [format]);
+    }, [schema]);
 
-    const textRegexp = useMemo(() => {
-      if (!format) return undefined;
-      const match = format.match(formatRegexp);
-      let expression = '';
-      match.slice(1).forEach(part => {
-        if (part[0] === 'm' || part[0] === 'd')
-          expression += `([0-9]{1,${part.length}})`;
-        else if (part[0] === 'y') expression += `([0-9]{${part.length}})`;
-        else expression += part;
-      });
-      return new RegExp(`^${expression}$`);
-    }, [format]);
+    // textValue is only used when a format is provided
+    const [textValue, setTextValue] = useState(
+      schema ? valueToText(value, schema) : undefined,
+    );
 
     // when format and not inline, wether to show the Calendar in a Drop
     const [open, setOpen] = useState();
@@ -97,16 +74,22 @@ const DateInput = forwardRef(
         range={range}
         date={range ? undefined : value}
         dates={range ? [value] : undefined}
-        onSelect={disabled ? undefined : nextValue => {
-          let normalizedValue;
-          if (range && Array.isArray(nextValue)) [normalizedValue] = nextValue;
-          // clicking an edge date removes it
-          else if (range) normalizedValue = [nextValue, nextValue];
-          else normalizedValue = nextValue;
-          setValue(normalizedValue);
-          if (onChange) onChange({ target: { value: normalizedValue } });
-          if (open) setOpen(false);
-        }}
+        onSelect={
+          disabled
+            ? undefined
+            : nextValue => {
+                let normalizedValue;
+                if (range && Array.isArray(nextValue))
+                  [normalizedValue] = nextValue;
+                // clicking an edge date removes it
+                else if (range) normalizedValue = [nextValue, nextValue];
+                else normalizedValue = nextValue;
+                if (schema) setTextValue(valueToText(normalizedValue, schema));
+                setValue(normalizedValue);
+                if (onChange) onChange({ value: normalizedValue });
+                if (open && !range) setOpen(false);
+              }
+        }
         {...calendarProps}
       />
     );
@@ -128,7 +111,7 @@ const DateInput = forwardRef(
 
     const input = (
       <FormContext.Provider
-        // don't let MaskedInput drive the Form, if any
+        // don't let MaskedInput drive the Form
         value={{ useFormInput: (_, val) => [val, () => {}] }}
       >
         <MaskedInput
@@ -142,21 +125,18 @@ const DateInput = forwardRef(
           {...rest}
           value={textValue}
           onChange={event => {
-            setTextValue(event.target.value);
-            const match = event.target.value.match(textRegexp);
-            if (match) {
-              const parts = match.splice(1);
-              let [year, month, date] = [0, 0, 0];
-              mask
-                .filter(p => !p.fixed)
-                .forEach((p, i) => {
-                  if (p.placeholder[0] === 'd') date = parseInt(parts[i], 10);
-                  if (p.placeholder[0] === 'm') month = parseInt(parts[i], 10);
-                  if (p.placeholder[0] === 'y') year = parseInt(parts[i], 10);
-                });
-              const nextValue = new Date(year, month - 1, date).toISOString();
+            const nextTextValue = event.target.value;
+            setTextValue(nextTextValue);
+            const nextValue = textToValue(nextTextValue, schema);
+            if (nextValue) {
+              // valid value
               setValue(nextValue);
-              if (onChange) onChange({ target: { value: nextValue } });
+              if (onChange) {
+                event.persist(); // extract from React synthetic event pool
+                const adjustedEvent = event;
+                adjustedEvent.value = nextValue;
+                onChange(adjustedEvent);
+              }
             }
           }}
           onFocus={() => setOpen(true)}
