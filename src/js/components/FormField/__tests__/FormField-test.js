@@ -248,4 +248,25 @@ describe('FormField', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  test('pad with border undefined', () => {
+    const component = renderer.create(
+      <Grommet
+        theme={{
+          formField: {
+            border: undefined,
+            content: {
+              pad: 'large',
+            },
+          },
+        }}
+      >
+        <Form>
+          <FormField label="label" pad />
+        </Form>
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
