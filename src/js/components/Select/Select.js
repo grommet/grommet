@@ -96,6 +96,9 @@ const Select = forwardRef(
       value: valueProp,
       valueKey,
       valueLabel,
+      customSearch,
+      renderBottomPanel,
+      renderCustomContent,
       ...rest
     },
     ref,
@@ -242,6 +245,9 @@ const Select = forwardRef(
               value={value}
               valueKey={valueKey}
               onClose={onRequestClose}
+              customSearch={customSearch}
+              renderBottomPanel={renderBottomPanel}
+              renderCustomContent={renderCustomContent}
             >
               {children}
             </SelectContainer>

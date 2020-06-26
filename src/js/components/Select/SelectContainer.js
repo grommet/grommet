@@ -7,7 +7,6 @@ import React, {
   useState,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
-import { Close } from 'grommet-icons/icons/Close';
 
 import { selectedStyle, setFocusWithoutScroll } from '../../utils';
 
@@ -61,9 +60,9 @@ const SelectContainer = forwardRef(
       value = '',
       valueKey,
       replace = true,
-      displaySelected = true,
-      displayControlButtons = true,
-      onClose,
+      customSearch,
+      renderBottomPanel,
+      renderCustomContent,
     },
     ref,
   ) => {
@@ -295,63 +294,6 @@ const SelectContainer = forwardRef(
       ...theme.select.options.container,
     };
 
-    const OptionWrapper = styled(Box)`
-      ${props =>
-        props.theme.select.multiselect.displayContainer.wrapper.extend};
-    `;
-
-    const ControlButtonWrapper = styled(Box)`
-      ${props => props.theme.select.multiselect.controls.wrapper.extend};
-    `;
-
-    const getSelectedOption = () =>
-      options.reduce((acc, item, index) => {
-        if (isSelected(index)) acc.push(index);
-        return acc;
-      }, []);
-
-    const renderOptionsSelected = () => (
-      <>
-        {Array.isArray(value) && value.length > 0 && (
-          <OptionWrapper {...theme.select.multiselect.displayContainer.wrapper}>
-            {getSelectedOption().map(item => (
-              <Box
-                key={item}
-                {...theme.select.multiselect.displayContainer.option}
-              >
-                <Text>{optionLabel(item)}</Text>
-                <Close
-                  onClick={selectOption(item)}
-                  {...theme.select.multiselect.displayContainer.icon}
-                />
-              </Box>
-            ))}
-          </OptionWrapper>
-        )}
-      </>
-    );
-
-    const renderControlButtons = () => (
-      <ControlButtonWrapper
-        {...theme.select.multiselect.displayContainer.wrapper}
-      >
-        <Button
-          {...theme.select.multiselect.controls.button}
-          onClick={onClose}
-          primary
-        >
-          OK
-        </Button>
-        <Button
-          {...theme.select.multiselect.controls.button}
-          onClick={onClose}
-          secondary
-        >
-          Cancel
-        </Button>
-      </ControlButtonWrapper>
-    );
-
     return (
       <Keyboard
         onEnter={onSelectOption}
@@ -365,8 +307,12 @@ const SelectContainer = forwardRef(
           id={id ? `${id}__select-drop` : undefined}
           dropHeight={dropHeight}
         >
-          {onSearch && (
-            <Box pad={!customSearchInput ? 'xsmall' : undefined} flex={false}>
+          {onSearch && !customSearch && (
+            <Box
+              pad={!customSearchInput ?
+                'xsmall' : undefined}
+              flex={false}
+            >
               <SelectTextInput
                 focusIndicator={!customSearchInput}
                 size="small"
@@ -378,78 +324,101 @@ const SelectContainer = forwardRef(
               />
             </Box>
           )}
-          <OptionsBox role="menubar" tabIndex="-1" ref={optionsRef}>
-            {options.length > 0 ? (
-              <InfiniteScroll
-                items={options}
-                step={theme.select.step}
-                onMore={onMore}
-                replace={replace}
-                show={activeIndex !== -1 ? activeIndex : undefined}
-              >
-                {(option, index, optionRef) => {
-                  const optionDisabled = isDisabled(index);
-                  const optionSelected = isSelected(index);
-                  const optionActive = activeIndex === index;
-                  return (
+          {onSearch && customSearch &&
+            customSearch({ search, onSearchChange })}
+          {!renderCustomContent && (
+            <>
+              <OptionsBox role="menubar" tabIndex="-1" ref={optionsRef}>
+                {options.length > 0 ? (
+                  <InfiniteScroll
+                    items={options}
+                    step={theme.select.step}
+                    onMore={onMore}
+                    replace={replace}
+                    show={activeIndex !== -1 ? activeIndex : undefined}
+                  >
+                    {(option, index, optionRef) => {
+                      const optionDisabled = isDisabled(index);
+                      const optionSelected = isSelected(index);
+                      const optionActive = activeIndex === index;
+                      return (
+                        <SelectOption
+                          // eslint-disable-next-line react/no-array-index-key
+                          key={index}
+                          ref={optionRef}
+                          tabIndex="-1"
+                          role="menuitem"
+                          hoverIndicator="light-5"
+                          disabled={optionDisabled || undefined}
+                          active={optionActive}
+                          selected={optionSelected}
+                          option={option}
+                          plain
+                          onMouseOver={
+                            !optionDisabled ? onActiveOption(index) : undefined
+                          }
+                          onClick={
+                            !optionDisabled ? selectOption(index) : undefined
+                          }
+                        >
+                          {children ? (
+                            children(option, index, options, {
+                              active: optionActive,
+                              disabled: optionDisabled,
+                              selected: optionSelected,
+                            })
+                          ) : (
+                              <OptionBox
+                                {...selectOptionsStyle}
+                                selected={optionSelected}
+                              >
+                                <Text {...theme.select.options.text}>
+                                  {optionLabel(index)}
+                                </Text>
+                              </OptionBox>
+                            )}
+                        </SelectOption>
+                      );
+                    }}
+                  </InfiniteScroll>
+                ) : (
                     <SelectOption
-                      // eslint-disable-next-line react/no-array-index-key
-                      key={index}
-                      ref={optionRef}
+                      key="search_empty"
                       tabIndex="-1"
                       role="menuitem"
-                      hoverIndicator="light-5"
-                      disabled={optionDisabled || undefined}
-                      active={optionActive}
-                      selected={optionSelected}
-                      option={option}
-                      plain
-                      onMouseOver={
-                        !optionDisabled ? onActiveOption(index) : undefined
-                      }
-                      onClick={
-                        !optionDisabled ? selectOption(index) : undefined
-                      }
+                      hoverIndicator="background"
+                      disabled
+                      option={emptySearchMessage}
                     >
-                      {children ? (
-                        children(option, index, options, {
-                          active: optionActive,
-                          disabled: optionDisabled,
-                          selected: optionSelected,
-                        })
-                      ) : (
-                        <OptionBox
-                          {...selectOptionsStyle}
-                          selected={optionSelected}
-                        >
-                          <Text {...theme.select.options.text}>
-                            {optionLabel(index)}
-                          </Text>
-                        </OptionBox>
-                      )}
+                      <OptionBox {...selectOptionsStyle}>
+                        <Text {...theme.select.container.text}>
+                          {emptySearchMessage}
+                        </Text>
+                      </OptionBox>
                     </SelectOption>
-                  );
-                }}
-              </InfiniteScroll>
-            ) : (
-              <SelectOption
-                key="search_empty"
-                tabIndex="-1"
-                role="menuitem"
-                hoverIndicator="background"
-                disabled
-                option={emptySearchMessage}
-              >
-                <OptionBox {...selectOptionsStyle}>
-                  <Text {...theme.select.container.text}>
-                    {emptySearchMessage}
-                  </Text>
-                </OptionBox>
-              </SelectOption>
-            )}
-          </OptionsBox>
-          {displaySelected && renderOptionsSelected()}
-          {displayControlButtons && renderControlButtons()}
+                  )}
+              </OptionsBox>
+              {renderBottomPanel && renderBottomPanel({
+                options,
+                value,
+                isSelected,
+                optionLabel,
+                selectOption,
+              })}
+            </>
+          )}
+          {renderCustomContent && renderCustomContent({
+            options,
+            value,
+            isSelected,
+            isDisabled,
+            selectOption,
+            onMore,
+            replace,
+            activeIndex,
+            onActiveOption,
+            optionLabel,
+          })}
         </StyledContainer>
       </Keyboard>
     );
