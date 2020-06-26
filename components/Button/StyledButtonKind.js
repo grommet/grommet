@@ -161,7 +161,7 @@ var plainStyle = function plainStyle() {
 var StyledButtonKind = _styledComponents["default"].button.withConfig({
   displayName: "StyledButtonKind",
   componentId: "sc-1vhfpnt-0"
-})(["display:inline-block;box-sizing:border-box;cursor:pointer;font:inherit;text-decoration:none;margin:0;background:transparent;overflow:visible;text-transform:none;", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], _utils.genericStyles, function (props) {
+})(["display:inline-block;box-sizing:border-box;cursor:pointer;font:inherit;text-decoration:none;margin:0;background:transparent;overflow:visible;text-transform:none;", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], _utils.genericStyles, function (props) {
   return props.plain && plainStyle(props);
 }, function (props) {
   return !props.plain && basicStyle(props);
@@ -171,6 +171,8 @@ var StyledButtonKind = _styledComponents["default"].button.withConfig({
   return !props.plain && props.align && "\n  text-align: " + props.align + ";\n  ";
 }, function (props) {
   return props.hoverIndicator && hoverIndicatorStyle(props);
+}, function (props) {
+  return props.disabled && (0, _utils.disabledStyle)(props.theme.button.disabled.opacity);
 }, function (props) {
   return props.focus && (!props.plain || props.focusIndicator) && (0, _utils.focusStyle)();
 }, function (props) {

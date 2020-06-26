@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { backgroundStyle, focusStyle, genericStyles, normalizeColor } from '../../utils';
+import { backgroundStyle, disabledStyle, focusStyle, genericStyles, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 var radiusStyle = function radiusStyle(props) {
@@ -150,7 +150,7 @@ var plainStyle = function plainStyle() {
 var StyledButtonKind = styled.button.withConfig({
   displayName: "StyledButtonKind",
   componentId: "sc-1vhfpnt-0"
-})(["display:inline-block;box-sizing:border-box;cursor:pointer;font:inherit;text-decoration:none;margin:0;background:transparent;overflow:visible;text-transform:none;", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], genericStyles, function (props) {
+})(["display:inline-block;box-sizing:border-box;cursor:pointer;font:inherit;text-decoration:none;margin:0;background:transparent;overflow:visible;text-transform:none;", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], genericStyles, function (props) {
   return props.plain && plainStyle(props);
 }, function (props) {
   return !props.plain && basicStyle(props);
@@ -160,6 +160,8 @@ var StyledButtonKind = styled.button.withConfig({
   return !props.plain && props.align && "\n  text-align: " + props.align + ";\n  ";
 }, function (props) {
   return props.hoverIndicator && hoverIndicatorStyle(props);
+}, function (props) {
+  return props.disabled && disabledStyle(props.theme.button.disabled.opacity);
 }, function (props) {
   return props.focus && (!props.plain || props.focusIndicator) && focusStyle();
 }, function (props) {
