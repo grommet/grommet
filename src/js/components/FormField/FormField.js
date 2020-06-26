@@ -74,6 +74,7 @@ const FormField = forwardRef(
       direction = 'column',
       postfix,
       prefix,
+      labelWidth = 0,
       ...rest
     },
     ref,
@@ -411,7 +412,7 @@ const FormField = forwardRef(
         {...containerRest}
       >
         <Box style={{ ...layoutType }}>
-          <Box {...labelStyle}>
+          <Box {...labelStyle} width={labelWidth}>
             {label && component !== CheckBox && (
               <Text as="label" htmlFor={htmlFor}>
                 {label}
@@ -422,41 +423,47 @@ const FormField = forwardRef(
             {contents}
             <Message message={normalizedError} {...formFieldTheme.error} />
           </Box>
-          <Box>
-            <Button
-              ref={overRef}
-              onMouseOver={() => setOver(true)}
-              onMouseOut={() => setOver(false)}
-            >
-              <Box style={{ position: 'relative', top: '3px' }}>
-                <Message message={normalizedInfo} {...formFieldTheme.info} />
-              </Box>
-            </Button>
-            {overRef.current && over && (
-              <Drop
-                direction="row"
-                align={{ left: 'right' }}
-                target={overRef.current}
-                elevation="none"
-                plain
-                style={{ boxShadow: 'none' }}
+          {normalizedInfo || normalizedInfoMsg ? (
+            <Box>
+              <Button
+                ref={overRef}
+                onMouseOver={() => setOver(true)}
+                onMouseOut={() => setOver(false)}
               >
-                <Box
-                  alignSelf="center"
-                  style={{
-                    width: 0,
-                    height: 0,
-                    borderTop: '5px solid transparent',
-                    borderBottom: '5px solid transparent',
-                    borderRight: '5px solid #313340',
-                  }}
-                />
-                <Box pad="medium" background="dark-1" round={{ size: 'small' }}>
-                  {normalizedInfoMsg}
+                <Box style={{ position: 'relative', top: '3px' }}>
+                  <Message message={normalizedInfo} {...formFieldTheme.info} />
                 </Box>
-              </Drop>
-            )}
-          </Box>
+              </Button>
+              {overRef.current && over && (
+                <Drop
+                  direction="row"
+                  align={{ left: 'right' }}
+                  target={overRef.current}
+                  elevation="none"
+                  plain
+                  style={{ boxShadow: 'none' }}
+                >
+                  <Box
+                    alignSelf="center"
+                    style={{
+                      width: 0,
+                      height: 0,
+                      borderTop: '5px solid transparent',
+                      borderBottom: '5px solid transparent',
+                      borderRight: '5px solid #313340',
+                    }}
+                  />
+                  <Box
+                    pad="medium"
+                    background="dark-1"
+                    round={{ size: 'small' }}
+                  >
+                    {normalizedInfoMsg}
+                  </Box>
+                </Drop>
+              )}
+            </Box>
+          ) : null}
         </Box>
       </FormFieldBox>
     );
