@@ -2,6 +2,9 @@ import React from 'react';
 import 'jest-styled-components';
 import renderer from 'react-test-renderer';
 import { cleanup, render, fireEvent, act } from '@testing-library/react';
+import { axe } from 'jest-axe';
+import 'jest-axe/extend-expect';
+import 'regenerator-runtime/runtime';
 
 import { CaretDown, CaretUp, FormDown } from 'grommet-icons';
 import { createPortal, expectPortal } from '../../../utils/portal';
@@ -13,6 +16,16 @@ describe('Select', () => {
   beforeEach(createPortal);
 
   afterEach(cleanup);
+
+  test('should have not accessibility violations', async () => {
+    const { container } = render(
+      <Grommet>
+        <Select options={['one', 'two', 'three']} a11yTitle="test" />
+      </Grommet>,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 
   test('basic', () => {
     const component = renderer.create(
