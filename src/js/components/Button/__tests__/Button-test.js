@@ -300,4 +300,19 @@ describe('Button', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  test(`disabled state cursor should indicate the button cannot be 
+  clicked`, () => {
+    const { getByText } = render(
+      <Grommet>
+        <Button disabled label="Button" />
+      </Grommet>,
+    );
+
+    const button = getByText('Button');
+    // eslint-disable-next-line no-underscore-dangle
+    const cursorStyle = window.getComputedStyle(button)._values.cursor;
+    expect(cursorStyle).not.toBe('pointer');
+    expect(cursorStyle).toBe('default');
+  });
 });
