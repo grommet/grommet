@@ -2011,7 +2011,7 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
   padding-bottom: 6px;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2049,13 +2049,33 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
   color: inherit;
 }
 
+.c7 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  color: inherit;
+  opacity: 0.3;
+  cursor: default;
+}
+
 .c6 {
   font-size: 18px;
   line-height: 24px;
   color: #444444;
 }
 
-.c9 {
+.c10 {
   font-size: 18px;
   line-height: 24px;
   color: blue;
@@ -2082,7 +2102,7 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
   color: #000000;
 }
 
-.c8 {
+.c9 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 3px;
@@ -2090,7 +2110,7 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
   color: blue;
 }
 
-.c10 {
+.c11 {
   min-height: 0;
 }
 
@@ -2121,27 +2141,27 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c8 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c8 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c8 {
     border-bottom: solid 2px green;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c8 {
     padding-bottom: 3px;
   }
 }
@@ -2177,18 +2197,18 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="c3"
+        class="c7"
         disabled=""
         kind="default"
         role="tab"
         type="button"
       >
         <div
-          class="c7 c8"
+          class="c8 c9"
           disabled=""
         >
           <span
-            class="c9"
+            class="c10"
           >
             Disabled Tab
           </span>
@@ -2197,7 +2217,7 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
     </div>
     <div
       aria-label="Enabled Tab Tab Contents"
-      class="c10"
+      class="c11"
       role="tabpanel"
     >
       This tab is enabled

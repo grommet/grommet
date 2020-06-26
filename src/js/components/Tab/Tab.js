@@ -53,6 +53,13 @@ const Tab = forwardRef(
       onActivate();
     };
 
+    if (active && disabled) {
+      console.warn(
+        // eslint-disable-next-line max-len
+        `Warning: Tab props 'active' and 'disabled' have both been set to TRUE on the same Tab resulting in an interesting Tab state. Is this your intent?`,
+      );
+    }
+
     if (!plain) {
       if (typeof title !== 'string') {
         normalizedTitle = title;
@@ -100,6 +107,9 @@ const Tab = forwardRef(
         return React.cloneElement(iconProp, {
           ...theme.tab.active,
         });
+      }
+      if (disabled) {
+        return React.cloneElement(iconProp, { ...theme.tab.disabled });
       }
       return React.cloneElement(iconProp, {
         color: over ? theme.tab.hover.color : theme.tab.color,
