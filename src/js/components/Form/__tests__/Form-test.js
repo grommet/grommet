@@ -1,17 +1,35 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { cleanup, render, fireEvent } from '@testing-library/react';
-import 'jest-styled-components';
 
+import 'jest-styled-components';
+import 'jest-axe/extend-expect';
+import 'regenerator-runtime/runtime';
+
+import { cleanup, render, fireEvent } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import { Grommet } from '../../Grommet';
 import { Form } from '..';
 import { FormField } from '../../FormField';
 import { Button } from '../../Button';
 import { Text } from '../../Text';
 import { TextInput } from '../../TextInput';
+import { Select } from '../../Select';
 
 describe('Form', () => {
   afterEach(cleanup);
+
+  test('should have no accessibility violations', async () => {
+    const { container } = render(
+      <Grommet>
+        <Form>
+          <FormField a11yTitle="formField test" name="test" />
+        </Form>
+      </Grommet>,
+    );
+    const results = await axe(container);
+    expect(container.firstChild).toMatchSnapshot();
+    expect(results).toHaveNoViolations();
+  });
 
   test('empty', () => {
     const component = renderer.create(
@@ -483,36 +501,7 @@ describe('Form', () => {
   });
 
   test('validate on blur', () => {
-    const Test = () => (
-      <Form validate="blur">
-        <FormField
-          label="Name"
-          name="name"
-          placeholder="name"
-          required
-          validate={[
-            { regexp: /^[a-z]/i },
-            name => {
-              if (name && name.length === 1) return 'must be >1 character';
-              return undefined;
-            },
-            name => {
-              if (name === 'good')
-                return {
-                  message: 'good',
-                  status: 'info',
-                };
-              return undefined;
-            },
-          ]}
-        />
-
-        <FormField label="Email" name="email" required>
-          <TextInput name="email" type="email" placeholder="email" />
-        </FormField>
-        <Button label="submit" type="submit" />
-      </Form>
-    );
+    const onFocus = jest.fn();
     const {
       getByText,
       getByPlaceholderText,
@@ -520,11 +509,40 @@ describe('Form', () => {
       queryByText,
     } = render(
       <Grommet>
-        <Test />
+        <Form validate="blur">
+          <FormField
+            onFocus={onFocus}
+            label="Name"
+            name="name"
+            placeholder="name"
+            required
+            validate={[
+              { regexp: /^[a-z]/i },
+              name => {
+                if (name && name.length === 1) return 'must be >1 character';
+                return undefined;
+              },
+              name => {
+                if (name === 'good')
+                  return {
+                    message: 'good',
+                    status: 'info',
+                  };
+                return undefined;
+              },
+            ]}
+          />
+
+          <FormField onFocus={onFocus} label="Email" name="email" required>
+            <TextInput name="email" type="email" placeholder="email" />
+          </FormField>
+          <Button onFocus={onFocus} label="submit" type="submit" />
+        </Form>
       </Grommet>,
     );
 
     // both fields have required error message
+    getByText('submit').focus();
     fireEvent.click(getByText('submit'));
     expect(queryAllByText('required')).toHaveLength(2);
 
@@ -552,6 +570,7 @@ describe('Form', () => {
     fireEvent.change(getByPlaceholderText('name'), {
       target: { value: 'abc' },
     });
+    expect(onFocus).toBeCalledTimes(6);
     expect(queryByText('required')).toBeTruthy();
     expect(queryByText('must be >1 character')).toBe(null);
   });
@@ -604,7 +623,7 @@ describe('Form', () => {
     });
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('Submit'));
-    expect(onSubmit).toBeCalled();
+    expect(onSubmit).toBeCalledTimes(1);
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -633,6 +652,7 @@ describe('Form', () => {
       target: { value: 'Input has changed' },
     });
     fireEvent.click(getByText('Reset'));
+    expect(onReset).toBeCalledTimes(1);
     expect(queryByText('Input has changed')).toBeNull();
   });
 
@@ -649,7 +669,35 @@ describe('Form', () => {
     fireEvent.change(getByPlaceholderText('test input'), {
       target: { value: 'Input has changed' },
     });
+    expect(onChange).toBeCalledTimes(1);
     fireEvent.click(getByText('Reset'));
     expect(queryByText('Input has changed')).toBeNull();
+  });
+
+  test('form with select', () => {
+    const Test = () => {
+      const [value, setValue] = React.useState('medium');
+      return (
+        <Grommet>
+          <Form>
+            <FormField>
+              <Select
+                name="select"
+                placeholder="test input"
+                options={['small', 'medium', 'large']}
+                value={value}
+                onChange={({ option }) => setValue(option)}
+              />
+            </FormField>
+            <FormField name="test" required placeholder="test input 2" />
+          </Form>
+        </Grommet>
+      );
+    };
+    const { getByPlaceholderText, container } = render(<Test />);
+    fireEvent.change(getByPlaceholderText('test input'), {
+      target: { value: 'small' },
+    });
+    expect(container.firstChild).toMatchSnapshot();
   });
 });
