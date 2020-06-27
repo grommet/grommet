@@ -110,7 +110,10 @@ with plain Buttons.`,
       padding, border radius, text size and line height. 
       'size' will not impact any icon related sizing.`,
     ),
-    target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']).description(
+    target: PropTypes.oneOfType([
+      PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
+      PropTypes.string,
+    ]).description(
       `Specifies where to display the URL defined in the href property.`,
     ),
     type: PropTypes.oneOf(['button', 'reset', 'submit'])
