@@ -327,6 +327,7 @@ _self
 _blank
 _parent
 _top
+string
 ```
 
 **type**
