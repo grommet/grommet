@@ -29,7 +29,7 @@ var doc = function doc(Button) {
     reverse: _reactDesc.PropTypes.bool.description("Whether an icon and label should be reversed so that the icon is at the\n              end of the anchor.").defaultValue(false),
     secondary: _reactDesc.PropTypes.bool.description("Whether this is a secondary button."),
     size: _reactDesc.PropTypes.oneOf(['small', 'medium', 'large']).description("The possible sizes of Button, that impacts the overall Button \n      padding, border radius, text size and line height. \n      'size' will not impact any icon related sizing."),
-    target: _reactDesc.PropTypes.oneOf(['_self', '_blank', '_parent', '_top']).description("Specifies where to display the URL defined in the href property."),
+    target: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['_self', '_blank', '_parent', '_top']), _reactDesc.PropTypes.string]).description("Specifies where to display the URL defined in the href property."),
     type: _reactDesc.PropTypes.oneOf(['button', 'reset', 'submit']).description("The type of button. Set the type to submit for the default button on \n                forms.").defaultValue('button')
   });
   return DocumentedButton;

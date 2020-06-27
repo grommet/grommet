@@ -25,7 +25,7 @@ export interface ButtonProps {
   gap?: GapType;
   hoverIndicator?: BackgroundType | boolean;
   href?: string;
-  target?: "_self" | "_blank" | "_parent" | "_top";
+  target?: "_self" | "_blank" | "_parent" | "_top" | string;
   icon?: JSX.Element;
   label?: React.ReactNode;
   plain?: boolean;
