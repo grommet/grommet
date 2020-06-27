@@ -1,0 +1,1295 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form controlled controlled 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c5:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c4 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  width: 100%;
+  outline: none;
+  border: none;
+}
+
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c4::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c4::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c4:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c4::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c3 {
+  position: relative;
+  width: 100%;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+<div
+  class="c0"
+>
+  <form>
+    <div
+      class="c1 "
+    >
+      <div
+        class="c2 "
+      >
+        <div
+          class="c3"
+        >
+          <input
+            autocomplete="off"
+            class="c4"
+            name="test"
+            placeholder="test input"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+    <button
+      class="c5"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Form controlled controlled 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+>
+  <form>
+    <div
+      class="StyledBox-sc-13pk1d4-0 dtCrhk FormField__FormFieldBox-m9hood-0 eenrNp"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
+      >
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+            name="test"
+            placeholder="test input"
+            value="v"
+          />
+        </div>
+      </div>
+    </div>
+    <button
+      class="StyledButton-sc-323bzc-0 kIXxtf"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Form controlled controlled 3`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+>
+  <form>
+    <div
+      class="StyledBox-sc-13pk1d4-0 dtCrhk FormField__FormFieldBox-m9hood-0 eenrNp"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
+      >
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+            name="test"
+            placeholder="test input"
+            value="v"
+          />
+        </div>
+      </div>
+    </div>
+    <button
+      class="StyledButton-sc-323bzc-0 kIXxtf"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Form controlled controlled FormField deprecated 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.c2 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c6 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c6:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c5 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  width: 100%;
+  outline: none;
+  border: none;
+}
+
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c5::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c5:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c4 {
+  position: relative;
+  width: 100%;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+<div
+  class="c0"
+>
+  <form>
+    <div
+      class="c1 "
+    >
+      <label
+        class="c2"
+        for="test"
+      >
+        test
+      </label>
+      <div
+        class="c3 "
+      >
+        <div
+          class="c4"
+        >
+          <input
+            autocomplete="off"
+            class="c5"
+            id="test"
+            name="test"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+    <button
+      class="c6"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Form controlled controlled FormField deprecated 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+>
+  <form>
+    <div
+      class="StyledBox-sc-13pk1d4-0 dtCrhk FormField__FormFieldBox-m9hood-0 eenrNp"
+    >
+      <label
+        class="StyledText-sc-1sadyjn-0 enbIRN"
+        for="test"
+      >
+        test
+      </label>
+      <div
+        class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
+      >
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+            id="test"
+            name="test"
+            value="v"
+          />
+        </div>
+      </div>
+    </div>
+    <button
+      class="StyledButton-sc-323bzc-0 kIXxtf"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Form controlled controlled FormField deprecated 3`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+>
+  <form>
+    <div
+      class="StyledBox-sc-13pk1d4-0 dtCrhk FormField__FormFieldBox-m9hood-0 eenrNp"
+    >
+      <label
+        class="StyledText-sc-1sadyjn-0 enbIRN"
+        for="test"
+      >
+        test
+      </label>
+      <div
+        class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
+      >
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+            id="test"
+            name="test"
+            value="v"
+          />
+        </div>
+      </div>
+    </div>
+    <button
+      class="StyledButton-sc-323bzc-0 kIXxtf"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Form controlled controlled input 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c5:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c4 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  width: 100%;
+  outline: none;
+  border: none;
+}
+
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c4::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c4::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c4:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c4::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c3 {
+  position: relative;
+  width: 100%;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+<div
+  class="c0"
+>
+  <form>
+    <div
+      class="c1 "
+    >
+      <div
+        class="c2 "
+      >
+        <div
+          class="c3"
+        >
+          <input
+            autocomplete="off"
+            class="c4"
+            name="test"
+            placeholder="test input"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+    <button
+      class="c5"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Form controlled controlled input 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+>
+  <form>
+    <div
+      class="StyledBox-sc-13pk1d4-0 dtCrhk FormField__FormFieldBox-m9hood-0 eenrNp"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
+      >
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+            name="test"
+            placeholder="test input"
+            value="v"
+          />
+        </div>
+      </div>
+    </div>
+    <button
+      class="StyledButton-sc-323bzc-0 kIXxtf"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Form controlled controlled input 3`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+>
+  <form>
+    <div
+      class="StyledBox-sc-13pk1d4-0 dtCrhk FormField__FormFieldBox-m9hood-0 eenrNp"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
+      >
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+            name="test"
+            placeholder="test input"
+            value="v"
+          />
+        </div>
+      </div>
+    </div>
+    <button
+      class="StyledButton-sc-323bzc-0 kIXxtf"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Form controlled controlled input lazy 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c5:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c4 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  width: 100%;
+  outline: none;
+  border: none;
+}
+
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c4::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c4::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c4:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c4::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c3 {
+  position: relative;
+  width: 100%;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+<div
+  class="c0"
+>
+  <form>
+    <div
+      class="c1 "
+    >
+      <div
+        class="c2 "
+      >
+        <div
+          class="c3"
+        >
+          <input
+            autocomplete="off"
+            class="c4"
+            name="test"
+            placeholder="test input"
+            value="test"
+          />
+        </div>
+      </div>
+    </div>
+    <button
+      class="c5"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Form controlled controlled input lazy 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+>
+  <form>
+    <div
+      class="StyledBox-sc-13pk1d4-0 dtCrhk FormField__FormFieldBox-m9hood-0 eenrNp"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
+      >
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+            name="test"
+            placeholder="test input"
+            value="v"
+          />
+        </div>
+      </div>
+    </div>
+    <button
+      class="StyledButton-sc-323bzc-0 kIXxtf"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Form controlled controlled input lazy 3`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+>
+  <form>
+    <div
+      class="StyledBox-sc-13pk1d4-0 dtCrhk FormField__FormFieldBox-m9hood-0 eenrNp"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
+      >
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+            name="test"
+            placeholder="test input"
+            value="v"
+          />
+        </div>
+      </div>
+    </div>
+    <button
+      class="StyledButton-sc-323bzc-0 kIXxtf"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Form controlled controlled lazy 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c5:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c4 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  width: 100%;
+  outline: none;
+  border: none;
+}
+
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c4::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c4::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c4:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c4::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c3 {
+  position: relative;
+  width: 100%;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+<div
+  class="c0"
+>
+  <form>
+    <div
+      class="c1 "
+    >
+      <div
+        class="c2 "
+      >
+        <div
+          class="c3"
+        >
+          <input
+            autocomplete="off"
+            class="c4"
+            name="test"
+            placeholder="test input"
+            value="test"
+          />
+        </div>
+      </div>
+    </div>
+    <button
+      class="c5"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Form controlled controlled lazy 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+>
+  <form>
+    <div
+      class="StyledBox-sc-13pk1d4-0 dtCrhk FormField__FormFieldBox-m9hood-0 eenrNp"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
+      >
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+            name="test"
+            placeholder="test input"
+            value="v"
+          />
+        </div>
+      </div>
+    </div>
+    <button
+      class="StyledButton-sc-323bzc-0 kIXxtf"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Form controlled controlled lazy 3`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+>
+  <form>
+    <div
+      class="StyledBox-sc-13pk1d4-0 dtCrhk FormField__FormFieldBox-m9hood-0 eenrNp"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
+      >
+        <div
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
+        >
+          <input
+            autocomplete="off"
+            class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+            name="test"
+            placeholder="test input"
+            value="v"
+          />
+        </div>
+      </div>
+    </div>
+    <button
+      class="StyledButton-sc-323bzc-0 kIXxtf"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Form controlled lazy value 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c3:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c2 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  width: 100%;
+}
+
+.c2::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c2::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c2:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c2::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c1 {
+  position: relative;
+  width: 100%;
+}
+
+<div
+  class="c0"
+>
+  <form>
+    <div
+      class="c1"
+    >
+      <input
+        autocomplete="off"
+        class="c2"
+        name="test"
+        value=""
+      />
+    </div>
+    <button
+      class="c3"
+      type="button"
+    >
+      set
+    </button>
+    <button
+      class="c3"
+      type="submit"
+    >
+      submit
+    </button>
+  </form>
+</div>
+`;
