@@ -264,25 +264,24 @@ const DataChart = forwardRef(
         steps[1] = granularities.y[granularity] - 1;
       } else steps[1] = 1;
 
-      return chartValues.map((_, index) =>
-        Array.isArray(chartValues[index][0])
-          ? chartValues[index].map(values => calcs(values, { steps }))
-          : calcs(chartValues[index], { steps }),
-      );
+      return chartValues.map((_, index) => {
+        if (Array.isArray(chartValues[index][0])) {
+          // merge values for stacked bars case
+          const mergedValues = [...chartValues[index][0]];
+          chartValues[index].slice(1).forEach(values => {
+            mergedValues.forEach((__, i) => {
+              mergedValues[i] = [
+                i,
+                Math.min(mergedValues[i][1], values[i][1]),
+                Math.max(mergedValues[i][2], values[1][2]),
+              ];
+            });
+          });
+          return calcs(mergedValues, { steps });
+        }
+        return calcs(chartValues[index], { steps });
+      });
     }, [axis, chartValues, data, granularities]);
-
-    // set the pad to half the thickness, if not defined
-    const pad = useMemo(() => {
-      if (padProp !== undefined) return padProp;
-      const { thickness } = chartProps[0]; // TODO: look across charts
-      const padSize = halfPad[thickness];
-      const allSides =
-        charts.filter(({ type }) => type && type !== 'bar').length > 0;
-      if (allSides) return padSize;
-      if (axis && axis.y)
-        return { horizontal: padSize, vertical: halfPad.medium };
-      return { horizontal: padSize };
-    }, [axis, charts, chartProps, padProp]);
 
     // normalize guide
     const guide = useMemo(() => {
@@ -313,9 +312,16 @@ const DataChart = forwardRef(
       return result;
     }, [axis, granularities, guideProp]);
 
+    // set the pad to half the thickness, if not defined
+    const pad = useMemo(() => {
+      if (padProp !== undefined) return padProp;
+      const { thickness } = chartProps[0]; // TODO: look across charts
+      return halfPad[thickness];
+    }, [chartProps, padProp]);
+
     const dateFormats = useMemo(() => {
       const result = {};
-      const full = !(axis && axis.x && axis.x.granularity === 'coarse');
+      const full = axis && axis.x && axis.x.granularity === 'coarse';
       Object.values(properties).forEach(prop => {
         if (
           !prop.render &&
@@ -360,13 +366,6 @@ const DataChart = forwardRef(
     /* eslint-disable react/no-array-index-key */
     let xAxisElement;
     if (axis && axis.x) {
-      // Set basis to match thickness. This works well for bar charts,
-      // to align each bar's label.
-      let basis;
-      // if (thickness && axisXX[0].length === numValues) {
-      //   basis = theme.global.edgeSize[thickness] || thickness;
-      // }
-
       const prop = axis.x.property && properties[axis.x.property];
       // pull the x-axis values from the first chart, all should have the same
       const [axisValues] = (Array.isArray(chartProps[0])
@@ -376,16 +375,17 @@ const DataChart = forwardRef(
 
       xAxisElement = (
         <Box ref={xRef} gridArea="xAxis" direction="row" justify="between">
-          {axisValues.map((dataIndex, i) => (
-            <Box
-              key={i}
-              basis={basis}
-              flex="shrink"
-              align={basis ? 'center' : undefined}
-            >
-              {prop ? renderProperty(prop, dataIndex) : dataIndex}
-            </Box>
-          ))}
+          {axisValues.map((dataIndex, i) => {
+            let align;
+            if (axisValues.length === data.length) align = 'center';
+            else if (i === 0) align = 'start';
+            else if (i === axisValues.length - 1) align = 'end';
+            return (
+              <Box key={i} flex align={align}>
+                {prop ? renderProperty(prop, dataIndex) : dataIndex}
+              </Box>
+            );
+          })}
         </Box>
       );
     }
@@ -417,11 +417,8 @@ const DataChart = forwardRef(
 
       // Set basis to match double the vertical pad, so we can align the
       // text with the guides
-      let basis;
-      if (axis.y.count === data.length) {
-        const edgeSize = doublePad[pad.vertical || pad];
-        basis = theme.global.edgeSize[edgeSize] || edgeSize;
-      }
+      const edgeSize = doublePad[pad.vertical || pad];
+      const basis = theme.global.edgeSize[edgeSize] || edgeSize;
 
       yAxisElement = (
         <Box gridArea="yAxis" justify="between" flex>
@@ -529,6 +526,7 @@ const DataChart = forwardRef(
         {detail && (
           <>
             <Box
+              key="band"
               ref={detailContainer}
               direction="row"
               fill
@@ -569,6 +567,7 @@ const DataChart = forwardRef(
             </Box>
             {detailIndex !== undefined && detailRefs[detailIndex] && (
               <Drop
+                key="drop"
                 target={detailRefs[detailIndex]}
                 align={
                   detailIndex > data.length / 2
@@ -577,29 +576,33 @@ const DataChart = forwardRef(
                 }
                 plain
               >
-                <Box
-                  pad="small"
-                  background={{ color: 'background', opacity: 'strong' }}
-                >
+                <Box pad="small" background={{ color: 'background-back' }}>
                   <Grid
                     columns={['auto', 'auto', 'auto']}
                     gap="xsmall"
                     align="center"
                   >
-                    {Object.values(properties).map(prop => {
-                      const color = propertyColors[prop.property];
-                      return (
-                        <>
-                          <Box pad="small" background={color} />
-                          <Text size="small">
-                            {prop.label || prop.property}
-                          </Text>
-                          <Text size="small" weight="bold">
-                            {renderProperty(prop, detailIndex)}
-                          </Text>
-                        </>
-                      );
-                    })}
+                    {Object.values(properties)
+                      .filter(
+                        p =>
+                          !activeProperty ||
+                          activeProperty === p.property ||
+                          (axis && axis.x && axis.x.property === p.property),
+                      )
+                      .map(prop => {
+                        const color = propertyColors[prop.property];
+                        return (
+                          <>
+                            <Box pad="xsmall" background={color} />
+                            <Text size="small">
+                              {prop.label || prop.property}
+                            </Text>
+                            <Text size="small" weight="bold">
+                              {renderProperty(prop, detailIndex)}
+                            </Text>
+                          </>
+                        );
+                      })}
                   </Grid>
                 </Box>
               </Drop>

@@ -79,9 +79,9 @@ exports[`DataChart axis 1`] = `
   -webkit-flex: 0 1;
   -ms-flex: 0 1;
   flex: 0 1;
-  -webkit-flex-basis: 24px;
-  -ms-flex-preferred-size: 24px;
-  flex-basis: 24px;
+  -webkit-flex-basis: 96px;
+  -ms-flex-preferred-size: 96px;
+  flex-basis: 96px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -131,35 +131,18 @@ exports[`DataChart axis 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
-}
-
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: flex-end;
-  -webkit-box-align: flex-end;
-  -ms-flex-align: flex-end;
-  align-items: flex-end;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
 }
 
 .c8 {
@@ -495,27 +478,27 @@ exports[`DataChart axis 1`] = `
         className="c3"
       >
         <div
-          className="c11"
+          className="c4"
         >
           2
         </div>
         <div
-          className="c11"
+          className="c4"
         >
           1.7
         </div>
         <div
-          className="c11"
+          className="c4"
         >
           1.4
         </div>
         <div
-          className="c11"
+          className="c4"
         >
           1.1
         </div>
         <div
-          className="c11"
+          className="c4"
         >
           0.8
         </div>
@@ -635,7 +618,6 @@ exports[`DataChart dates 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  max-width: 100%;
   -webkit-align-items: flex-end;
   -webkit-box-align: flex-end;
   -ms-flex-align: flex-end;
@@ -645,9 +627,16 @@ exports[`DataChart dates 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
+  -webkit-flex: 0 1;
+  -ms-flex: 0 1;
+  flex: 0 1;
+  -webkit-flex-basis: 96px;
+  -ms-flex-preferred-size: 96px;
+  flex-basis: 96px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c5 {
@@ -685,10 +674,7 @@ exports[`DataChart dates 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 48px;
-  padding-right: 48px;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding: 48px;
 }
 
 .c9 {
@@ -724,10 +710,7 @@ exports[`DataChart dates 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 48px;
-  padding-right: 48px;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding: 48px;
 }
 
 .c11 {
@@ -771,14 +754,39 @@ exports[`DataChart dates 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+}
+
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
 }
 
 .c13 {
@@ -937,12 +945,12 @@ exports[`DataChart dates 1`] = `
         <div
           className="c15"
         >
-          1
+          08:04:01 AM
         </div>
         <div
-          className="c15"
+          className="c16"
         >
-          4
+          08:04:04 AM
         </div>
       </div>
     </div>
@@ -1064,12 +1072,12 @@ exports[`DataChart dates 1`] = `
         <div
           className="c15"
         >
-          1
+          8:01 AM
         </div>
         <div
-          className="c15"
+          className="c16"
         >
-          4
+          8:04 AM
         </div>
       </div>
     </div>
@@ -1194,7 +1202,7 @@ exports[`DataChart dates 1`] = `
           1 AM
         </div>
         <div
-          className="c15"
+          className="c16"
         >
           4 AM
         </div>
@@ -1318,12 +1326,12 @@ exports[`DataChart dates 1`] = `
         <div
           className="c15"
         >
-          5/1
+          May 1
         </div>
         <div
-          className="c15"
+          className="c16"
         >
-          5/4
+          May 4
         </div>
       </div>
     </div>
@@ -1445,12 +1453,12 @@ exports[`DataChart dates 1`] = `
         <div
           className="c15"
         >
-          Jan
+          January
         </div>
         <div
-          className="c15"
+          className="c16"
         >
-          Apr
+          April
         </div>
       </div>
     </div>
@@ -1575,7 +1583,7 @@ exports[`DataChart dates 1`] = `
           2001
         </div>
         <div
-          className="c15"
+          className="c16"
         >
           2004
         </div>
@@ -1840,8 +1848,7 @@ exports[`DataChart guide 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 48px;
-  padding-right: 48px;
+  padding: 48px;
 }
 
 .c4 {
@@ -1877,8 +1884,7 @@ exports[`DataChart guide 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 48px;
-  padding-right: 48px;
+  padding: 48px;
 }
 
 .c6 {

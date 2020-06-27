@@ -36,10 +36,13 @@ const chartType = PropTypes.shape({
   property: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.arrayOf(
-      PropTypes.shape({
-        key: PropTypes.string,
-        color: colorType,
-      }),
+      PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.shape({
+          key: PropTypes.string,
+          color: colorType,
+        }),
+      ]),
     ),
   ]),
   dash: PropTypes.bool,

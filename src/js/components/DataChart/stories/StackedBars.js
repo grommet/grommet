@@ -39,7 +39,7 @@ const Example = () => (
             type: 'bar',
           },
         ]}
-        axis={{ x: 'date' }}
+        axis={{ x: { property: 'date', granularity: 'fine' } }}
         guide={{ y: true }}
         legend
         gap="medium"

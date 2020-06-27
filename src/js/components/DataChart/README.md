@@ -165,23 +165,26 @@ How to visualize the data.
 {
   property: 
     string
-    [{
-  key: string,
-  color: 
-    string
-    {
-      color: string,
-      opacity: 
-        weak
-        medium
-        strong
-        boolean
-    }
-    [{
+    [
+      string
+      {
+        key: string,
+        color: 
+          string
+          {
+            color: string,
+            opacity: 
+              weak
+              medium
+              strong
+              boolean
+          }
+          [{
   color: string,
   value: number
 }]
-}],
+      }
+    ],
   dash: boolean,
   round: boolean,
   thickness: 
@@ -202,23 +205,26 @@ How to visualize the data.
 [{
   property: 
     string
-    [{
-  key: string,
-  color: 
-    string
-    {
-      color: string,
-      opacity: 
-        weak
-        medium
-        strong
-        boolean
-    }
-    [{
+    [
+      string
+      {
+        key: string,
+        color: 
+          string
+          {
+            color: string,
+            opacity: 
+              weak
+              medium
+              strong
+              boolean
+          }
+          [{
   color: string,
   value: number
 }]
-}],
+      }
+    ],
   dash: boolean,
   round: boolean,
   thickness: 
