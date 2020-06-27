@@ -193,7 +193,6 @@ describe('Form controlled', () => {
   });
 
   // deprecated FormField+input pattern
-
   test('controlled FormField deprecated', () => {
     const onSubmit = jest.fn();
     const Test = () => {
