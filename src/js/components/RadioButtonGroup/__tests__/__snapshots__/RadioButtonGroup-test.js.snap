@@ -410,9 +410,6 @@ exports[`RadioButtonGroup boolean options 1`] = `
       </div>
       <span
         className=""
-        onBlur={[Function]}
-        onFocus={[Function]}
-        value={true}
       >
         true
       </span>
@@ -447,9 +444,6 @@ exports[`RadioButtonGroup boolean options 1`] = `
       </div>
       <span
         className=""
-        onBlur={[Function]}
-        onFocus={[Function]}
-        value={false}
       >
         false
       </span>
@@ -891,9 +885,6 @@ exports[`RadioButtonGroup number options 1`] = `
       </div>
       <span
         className=""
-        onBlur={[Function]}
-        onFocus={[Function]}
-        value={1}
       >
         1
       </span>
@@ -928,9 +919,6 @@ exports[`RadioButtonGroup number options 1`] = `
       </div>
       <span
         className=""
-        onBlur={[Function]}
-        onFocus={[Function]}
-        value={2}
       >
         2
       </span>
@@ -1105,9 +1093,6 @@ exports[`RadioButtonGroup object options 1`] = `
       </div>
       <span
         className=""
-        onBlur={[Function]}
-        onFocus={[Function]}
-        value="one"
       >
         One
       </span>
@@ -1142,9 +1127,6 @@ exports[`RadioButtonGroup object options 1`] = `
       </div>
       <span
         className=""
-        onBlur={[Function]}
-        onFocus={[Function]}
-        value="two"
       >
         Two
       </span>
@@ -1833,9 +1815,6 @@ exports[`RadioButtonGroup string options 1`] = `
       </div>
       <span
         className=""
-        onBlur={[Function]}
-        onFocus={[Function]}
-        value="one"
       >
         one
       </span>
@@ -1870,9 +1849,6 @@ exports[`RadioButtonGroup string options 1`] = `
       </div>
       <span
         className=""
-        onBlur={[Function]}
-        onFocus={[Function]}
-        value="two"
       >
         two
       </span>

@@ -768,7 +768,6 @@ exports[`RadioButton label 1`] = `
     </div>
     <span
       className=""
-      value="1"
     >
       test label
     </span>

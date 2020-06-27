@@ -23,7 +23,7 @@ const RadioButton = forwardRef(
     const [hover, setHover] = useState();
     const normalizedLabel =
       typeof label === 'string' ? (
-        <StyledRadioButtonLabel {...rest}>{label}</StyledRadioButtonLabel>
+        <StyledRadioButtonLabel>{label}</StyledRadioButtonLabel>
       ) : (
         label
       );
