@@ -29,6 +29,21 @@ describe('RadioButton', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  test('label themed', () => {
+    const customTheme = {
+      radioButton: {
+        fontWeight: 500,
+      },
+    };
+    const component = renderer.create(
+      <Grommet theme={customTheme}>
+        <RadioButton label="test" />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('checked', () => {
     const component = renderer.create(
       <Grommet>

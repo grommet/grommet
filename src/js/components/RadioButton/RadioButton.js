@@ -10,6 +10,7 @@ import {
   StyledRadioButtonContainer,
   StyledRadioButtonIcon,
   StyledRadioButtonInput,
+  StyledRadioButtonLabel,
   StyledRadioButtonBox,
 } from './StyledRadioButton';
 
@@ -21,7 +22,11 @@ const RadioButton = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const [hover, setHover] = useState();
     const normalizedLabel =
-      typeof label === 'string' ? <span>{label}</span> : label;
+      typeof label === 'string' ? (
+        <StyledRadioButtonLabel {...rest}>{label}</StyledRadioButtonLabel>
+      ) : (
+        label
+      );
 
     const Icon = theme.radioButton.icons.circle;
     let borderColor = normalizeColor(theme.radioButton.border.color, theme);

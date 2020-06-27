@@ -408,7 +408,12 @@ exports[`RadioButtonGroup boolean options 1`] = `
           </svg>
         </div>
       </div>
-      <span>
+      <span
+        className=""
+        onBlur={[Function]}
+        onFocus={[Function]}
+        value={true}
+      >
         true
       </span>
     </label>
@@ -440,7 +445,12 @@ exports[`RadioButtonGroup boolean options 1`] = `
           className="c8 "
         />
       </div>
-      <span>
+      <span
+        className=""
+        onBlur={[Function]}
+        onFocus={[Function]}
+        value={false}
+      >
         false
       </span>
     </label>
@@ -879,7 +889,12 @@ exports[`RadioButtonGroup number options 1`] = `
           </svg>
         </div>
       </div>
-      <span>
+      <span
+        className=""
+        onBlur={[Function]}
+        onFocus={[Function]}
+        value={1}
+      >
         1
       </span>
     </label>
@@ -911,7 +926,12 @@ exports[`RadioButtonGroup number options 1`] = `
           className="c8 "
         />
       </div>
-      <span>
+      <span
+        className=""
+        onBlur={[Function]}
+        onFocus={[Function]}
+        value={2}
+      >
         2
       </span>
     </label>
@@ -1083,7 +1103,12 @@ exports[`RadioButtonGroup object options 1`] = `
           className="c5 "
         />
       </div>
-      <span>
+      <span
+        className=""
+        onBlur={[Function]}
+        onFocus={[Function]}
+        value="one"
+      >
         One
       </span>
     </label>
@@ -1115,7 +1140,12 @@ exports[`RadioButtonGroup object options 1`] = `
           className="c5 "
         />
       </div>
-      <span>
+      <span
+        className=""
+        onBlur={[Function]}
+        onFocus={[Function]}
+        value="two"
+      >
         Two
       </span>
     </label>
@@ -1801,7 +1831,12 @@ exports[`RadioButtonGroup string options 1`] = `
           </svg>
         </div>
       </div>
-      <span>
+      <span
+        className=""
+        onBlur={[Function]}
+        onFocus={[Function]}
+        value="one"
+      >
         one
       </span>
     </label>
@@ -1833,7 +1868,12 @@ exports[`RadioButtonGroup string options 1`] = `
           className="c8 "
         />
       </div>
-      <span>
+      <span
+        className=""
+        onBlur={[Function]}
+        onFocus={[Function]}
+        value="two"
+      >
         two
       </span>
     </label>

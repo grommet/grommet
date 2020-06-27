@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { focusStyle, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
@@ -42,6 +42,17 @@ const StyledRadioButtonInput = styled.input`
 StyledRadioButtonInput.defaultProps = {};
 Object.setPrototypeOf(StyledRadioButtonInput.defaultProps, defaultProps);
 
+const StyledRadioButtonLabel = styled.span`
+  ${props =>
+    props.theme.radioButton.fontWeight &&
+    css`
+      font-weight: ${props.theme.radioButton.fontWeight};
+    `}
+`;
+
+StyledRadioButtonLabel.defaultProps = {};
+Object.setPrototypeOf(StyledRadioButtonLabel.defaultProps, defaultProps);
+
 const StyledRadioButtonIcon = styled.svg`
   box-sizing: border-box;
   width: ${props =>
@@ -77,6 +88,7 @@ Object.setPrototypeOf(StyledRadioButton.defaultProps, defaultProps);
 export {
   StyledRadioButtonContainer,
   StyledRadioButtonInput,
+  StyledRadioButtonLabel,
   StyledRadioButtonIcon,
   StyledRadioButtonBox,
   StyledRadioButton,
