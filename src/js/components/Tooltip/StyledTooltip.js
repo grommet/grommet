@@ -11,33 +11,33 @@ const ArrowStyle = props => {
     ),
     props.theme,
   );
+  switch (position) {
+    case 'up':
+      return css`
+        border-left: solid transparent;
+        border-right: solid transparent;
+        border-top: solid ${tipColor};
+      `;
+    case 'down':
+      return css`
+        border-left: solid transparent;
+        border-right: solid transparent;
+        border-bottom: solid ${tipColor};
+      `;
+    case 'left':
+      return css`
+        border-top: solid transparent;
+        border-bottom: solid transparent;
+        border-left: solid ${tipColor};
+      `;
 
-  if (position === 'up') {
-    return css`
-      border-left: solid transparent;
-      border-right: solid transparent;
-      border-top: solid ${tipColor};
-    `;
+    default:
+      return css`
+        border-top: solid transparent;
+        border-bottom: solid transparent;
+        border-right: solid ${tipColor};
+      `;
   }
-  if (position === 'down') {
-    return css`
-      border-left: solid transparent;
-      border-right: solid transparent;
-      border-bottom: solid ${tipColor};
-    `;
-  }
-  if (position === 'left') {
-    return css`
-      border-top: solid transparent;
-      border-bottom: solid transparent;
-      border-left: solid ${tipColor};
-    `;
-  }
-  return css`
-    border-top: solid transparent;
-    border-bottom: solid transparent;
-    border-right: solid ${tipColor};
-  `;
 };
 
 export const Arrow = styled(Box)`
@@ -49,30 +49,27 @@ export const Arrow = styled(Box)`
 
 const Alignment = props => {
   const { position } = props;
-  if (position === 'up') {
-    return css`
-      flex-direction: column-reverse;
-      align-items: center;
-    `;
+  switch (position) {
+    case 'up':
+      return css`
+        flex-direction: column-reverse;
+      `;
+    case 'down':
+      return css`
+        flex-direction: column;
+      `;
+    case 'left':
+      return css`
+        flex-direction: row-reverse;
+      `;
+    default:
+      return css`
+        flex-direction: row;
+      `;
   }
-  if (position === 'down') {
-    return css`
-      flex-direction: column;
-      align-items: center;
-    `;
-  }
-  if (position === 'left') {
-    return css`
-      flex-direction: row-reverse;
-      align-items: center;
-    `;
-  }
-  return css`
-    flex-direction: row;
-    align-items: center;
-  `;
 };
 
 export const ArrowWrap = styled(Box)`
+  align-items: center;
   ${props => Alignment(props)}
 `;
