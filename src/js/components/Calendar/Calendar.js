@@ -79,6 +79,8 @@ const buildDisplayBounds = (reference, firstDayOfWeek) => {
   return [start, end];
 };
 
+const millisecondsPerYear = 31557600000;
+
 const Calendar = forwardRef(
   (
     {
@@ -147,19 +149,30 @@ const Calendar = forwardRef(
     useEffect(() => {
       if (targetDisplayBounds) {
         if (targetDisplayBounds[0].getTime() < displayBounds[0].getTime()) {
-          setDisplayBounds([targetDisplayBounds[0], displayBounds[1]]);
-          setSlide({
-            direction: 'down',
-            weeks: daysApart(displayBounds[0], targetDisplayBounds[0]) / 7,
-          });
+          // only animate if the duration is within a year
+          if (
+            displayBounds[0].getTime() - targetDisplayBounds[0].getTime() <
+            millisecondsPerYear
+          ) {
+            setDisplayBounds([targetDisplayBounds[0], displayBounds[1]]);
+            setSlide({
+              direction: 'down',
+              weeks: daysApart(displayBounds[0], targetDisplayBounds[0]) / 7,
+            });
+          }
         } else if (
           targetDisplayBounds[1].getTime() > displayBounds[1].getTime()
         ) {
-          setDisplayBounds([displayBounds[0], targetDisplayBounds[1]]);
-          setSlide({
-            direction: 'up',
-            weeks: daysApart(targetDisplayBounds[1], displayBounds[1]) / 7,
-          });
+          if (
+            targetDisplayBounds[1].getTime() - displayBounds[1].getTime() <
+            millisecondsPerYear
+          ) {
+            setDisplayBounds([displayBounds[0], targetDisplayBounds[1]]);
+            setSlide({
+              direction: 'up',
+              weeks: daysApart(targetDisplayBounds[1], displayBounds[1]) / 7,
+            });
+          }
         }
 
         // Wait for animation to finish before cleaning up.
