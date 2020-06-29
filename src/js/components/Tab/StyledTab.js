@@ -26,7 +26,7 @@ const StyledTab = styled.div`
   ${genericStyles}
   ${props =>
     !props.plain && !props.disabled && props.theme.tab.hover && tabHoverStyle}
-  ${props => !props.plain && props.disabled && props.theme.tab.disabled}
+  ${props => props.disabled && props.theme.tab.disabled}
   ${props => props.theme.tab.extend}
 `;
 
