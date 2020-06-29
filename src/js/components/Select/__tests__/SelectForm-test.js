@@ -1,6 +1,6 @@
 import React from 'react';
 import 'jest-styled-components';
-import { cleanup, render, fireEvent } from '@testing-library/react';
+import { cleanup, render, fireEvent, act } from '@testing-library/react';
 
 // import { CaretDown, CaretUp, FormDown } from 'grommet-icons';
 import { createPortal } from '../../../utils/portal';
@@ -86,10 +86,11 @@ describe('Select in form context', () => {
     const { getByPlaceholderText, container, getByText } = render(
       <Grommet>
         <Form onSubmit={onSubmit}>
-          <FormField required>
+          <FormField name="test" label="Test" required>
             <Select
-              placeholder="test select"
               options={['one', 'two', 'three']}
+              name="test"
+              placeholder="test select"
             />
           </FormField>
           <Button type="submit" primary label="Submit" />
@@ -104,13 +105,13 @@ describe('Select in form context', () => {
     fireEvent.click(document.activeElement.querySelector('button'));
     expect(getByPlaceholderText('test select').value).toEqual('one');
     fireEvent.click(getByText('Submit'));
-    // expect(onSubmit).toHaveBeenCalled();
+    expect(onSubmit).toHaveBeenCalled();
   });
 
   test('search', () => {
     jest.useFakeTimers();
     const onSearch = jest.fn();
-    const { getByPlaceholderText, debug } = render(
+    const { getByPlaceholderText } = render(
       <Grommet>
         <Form>
           <FormField>
@@ -125,9 +126,11 @@ describe('Select in form context', () => {
       </Grommet>,
     );
     fireEvent.click(getByPlaceholderText('test select'));
-    jest.advanceTimersByTime(100);
+    act(() => {
+      jest.advanceTimersByTime(100);
+    });
     expect(document.activeElement).toMatchSnapshot();
-    console.log(debug());
-    //  expect(onSearch).toHaveBeenCalled();
+    fireEvent.change(document.activeElement, { target: { value: 'o' } });
+    expect(onSearch).toBeCalledWith('o');
   });
 });
