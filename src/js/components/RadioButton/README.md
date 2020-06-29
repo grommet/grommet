@@ -88,7 +88,8 @@ input
   
 **global.colors.control**
 
-The default color to use for the button border. Expects `string | { dark: string, light: string }`.
+The default color of the border surrounding 
+    the checked icon in RadioButton checked state. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 

@@ -52,7 +52,8 @@ with the same name so form submissions work.`,
 
 export const themeDoc = {
   'global.colors.control': {
-    description: `The default color to use for the button border.`,
+    description: `The default color of the border surrounding 
+    the checked icon in RadioButton checked state.`,
     type: 'string | { dark: string, light: string }',
     defaultValue: `{ dark: 'accent-1', light: 'brand'}`,
   },
