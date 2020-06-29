@@ -927,7 +927,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       // searchInput: undefined,
       step: 20,
-      multiselect: {
+      custom: {
         checkbox: {
           box: {
             margin: {
@@ -937,32 +937,28 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           },
           checkmark: {
             size: `${baseSpacing}px`,
-            color:'white',
+            color: 'white',
           },
           check: {
             height: `${baseSpacing}px`,
             width: `${baseSpacing}px`,
             margin: 'auto',
             round: 'xsmall',
+            align: 'center',
             active: {
               background: 'accent-3',
-              border: 'light-5',
+              border: 'light-6',
             },
           },
         },
-        displayContainer: {
+        chips: {
           wrapper: {
             pad: 'medium',
             direction: 'row',
-            border: {
-              side: 'bottom',
-              size: 'xsmall',
-              color: '#D9DBE5',
-            },
             // extend: undefined,
           },
           option: {
-            background: 'brand',
+            background: 'light-3',
             round: 'small',
             pad: {
               vertical: 'small',
@@ -972,10 +968,21 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             direction: 'row',
             align: 'center',
           },
-          text: {},
+          label: {
+            color: 'dark-3',
+            size: 'medium',
+            weight: 600,
+            margin: {
+              right: 'small',
+            },
+          },
           icon: {
             size: 'small',
-            color: 'white',
+            color: 'dark-3',
+          },
+          clear: {
+            color: 'accent-2',
+            size: 'small',
           },
         },
         controls: {
