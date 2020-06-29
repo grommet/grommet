@@ -75,6 +75,7 @@ const FormField = forwardRef(
       postfix,
       prefix,
       labelWidth = 0,
+      width = 'auto',
       ...rest
     },
     ref,
@@ -242,7 +243,7 @@ const FormField = forwardRef(
       }
     }
     contents = (
-      <Box {...contentProps} width={formFieldTheme.content.width || 'auto'}>
+      <Box {...contentProps} width={width || 'auto'}>
         <Box direction="row">
           {prefix && (
             <Box {...formFieldTheme.prefix} style={{ wordBreak: 'normal' }}>
@@ -416,10 +417,16 @@ const FormField = forwardRef(
               </Text>
             )}
           </Box>
-          <Box style={{ position: 'relative' }}>
+          <Box>
             {contents}
-            <Box style={{ position: 'absolute', bottom: '-30px' }}>
-              <Message message={normalizedError} {...formFieldTheme.error} />
+            <Box>
+              <Message
+                message={normalizedError}
+                {...formFieldTheme.error}
+                style={{
+                  position: `${direction === 'row' ? 'absolute' : 'static'}`,
+                }}
+              />
             </Box>
             <Message message={normalizedInfo} {...formFieldTheme.info} />
           </Box>
