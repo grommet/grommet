@@ -1,7 +1,7 @@
 {
   "name": "mnet-ui-base",
   "version": "1.0.1",
-  "main": "dist/index.js",
+  "main": "index.js",
   "module": "es6/index.js",
   "jsnext:main": "es6/index.js",
   "sideEffects": [
