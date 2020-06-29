@@ -342,7 +342,7 @@ describe('MaskedInput', () => {
     expect(optionButton).toMatchSnapshot();
   });
 
-  test.only('with no mask', async () => {
+  test('with no mask', async () => {
     const onChange = jest.fn(event => event.target.value);
     const { getByTestId, container } = render(
       <MaskedInput
