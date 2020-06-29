@@ -1354,7 +1354,8 @@ large",
         "format": "_self
 _blank
 _parent
-_top",
+_top
+string",
         "name": "target",
       },
       Object {
