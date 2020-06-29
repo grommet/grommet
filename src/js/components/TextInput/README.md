@@ -11,6 +11,14 @@ import { TextInput } from 'grommet';
 
 ## Properties
 
+**a11yTitle**
+
+Custom title to be used by screen readers.
+
+```
+string
+```
+
 **dropAlign**
 
 How to align the drop. Defaults to `{
