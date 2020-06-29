@@ -242,11 +242,21 @@ const DropContainer = forwardRef(
       const onClickDocument = event => {
         // determine which portal id the target is in, if any
         let clickedPortalId = null;
-        let node = event.target;
+        // using the first node in composedPath (if available) allows getting
+        // the real target if it is in a shadow root (as long as the shadow
+        // root mode is set to open)
+        let node = event.composedPath ? event.composedPath()[0] : event.target;
         while (clickedPortalId === null && node !== document) {
-          const attr = node.getAttribute('data-g-portal-id');
-          if (attr !== null) clickedPortalId = parseInt(attr, 10);
-          node = node.parentNode;
+          if (!node.getAttribute) {
+            // node is a DocumentFragment, continue to host element
+            // DocumentFragment is not defined in IE which prevents using
+            // an instanceof check
+            node = node.host;
+          } else {
+            const attr = node.getAttribute('data-g-portal-id');
+            if (attr !== null) clickedPortalId = parseInt(attr, 10);
+            node = node.parentNode;
+          }
         }
         if (
           clickedPortalId === null ||

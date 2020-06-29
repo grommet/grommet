@@ -129,6 +129,36 @@ describe('Drop', () => {
     expect(onClickOutside).toBeCalled();
   });
 
+  test('clicking in a shadow root drop does not invoke onClickOutside', () => {
+    const onClickOutside = jest.fn();
+    const host = document.createElement('div');
+    const shadowRoot = host.attachShadow({ mode: 'open' });
+    const container = document.createElement('div');
+    shadowRoot.appendChild(container);
+    const containerTarget = document.createElement('div');
+    shadowRoot.appendChild(containerTarget);
+    document.body.appendChild(host);
+    try {
+      render(
+        <TestInput
+          onClickOutside={onClickOutside}
+          containerTarget={containerTarget}
+          showDrop
+        />,
+        { container },
+      );
+      const event = new MouseEvent('mousedown', {
+        bubbles: true,
+        cancelable: true,
+      });
+      event.composedPath = () => [shadowRoot.querySelector('#drop-node')];
+      fireEvent(host, event);
+      expect(onClickOutside).not.toBeCalled();
+    } finally {
+      document.body.removeChild(host);
+    }
+  });
+
   test('resize', () => {
     render(<TestInput />);
     global.window.innerWidth = 1000;
