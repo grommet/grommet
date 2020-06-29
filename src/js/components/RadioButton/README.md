@@ -86,6 +86,16 @@ input
 ```
 ## Theme
   
+**global.colors.control**
+
+The default color to use for the button border. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+{ dark: 'accent-1', light: 'brand'}
+```
+
 **radioButton.border.color**
 
 The color of the border of the Radio Button. Expects `string | { dark: string, light: string }`.
