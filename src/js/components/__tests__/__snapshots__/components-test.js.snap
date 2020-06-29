@@ -1616,6 +1616,10 @@ string",
     "usage": "import { Calendar } from 'grommet';
 <Calendar />",
   },
+  "Card": [Function],
+  "CardBody": [Function],
+  "CardFooter": [Function],
+  "CardHeader": [Function],
   "Carousel": [Function],
   "Chart": Object {
     "availableAt": Array [

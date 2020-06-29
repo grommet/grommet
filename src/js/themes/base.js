@@ -519,6 +519,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       heading: { level: '4' }, // level ranges from 1-6
     },
+    card: {
+      container: {},
+      header: {},
+      body: {},
+      footer: {},
+    },
     carousel: {
       icons: {
         current: Subtract,

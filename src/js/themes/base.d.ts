@@ -397,6 +397,12 @@ export interface ThemeType {
       };
     };
   };
+  card?: {
+    container?:{},
+    header?:{},
+    body?:{},
+    footer?:{},
+  },
   carousel?: {
     animation?: {
       duration?: number;
