@@ -1,0 +1,1193 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select in form context opens 1`] = `
+.c11 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c11 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c11 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c11 *[stroke*="#"],
+.c11 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c11 *[fill-rule],
+.c11 *[FILL-RULE],
+.c11 *[fill*="#"],
+.c11 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c4 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c8 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  width: 100%;
+  outline: none;
+  border: none;
+}
+
+.c8::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c8::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c8::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c8:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c8::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c7 {
+  position: relative;
+  width: 100%;
+}
+
+.c3 {
+  outline: none;
+  border-color: #6FFFB0;
+}
+
+.c3 > circle,
+.c3 > ellipse,
+.c3 > line,
+.c3 > path,
+.c3 > polygon,
+.c3 > polyline,
+.c3 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c9 {
+  cursor: pointer;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+<div
+  class="c0"
+>
+  <form>
+    <div
+      class="c1 "
+    >
+      <div
+        class="c2 c3"
+      >
+        <button
+          aria-label="Open Drop"
+          class="c4 "
+          type="button"
+        >
+          <div
+            class="c5"
+          >
+            <div
+              class="c6"
+            >
+              <div
+                class="c7"
+              >
+                <input
+                  autocomplete="off"
+                  class="c8 c9"
+                  placeholder="test select"
+                  readonly=""
+                  tabindex="-1"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              class="c10"
+              style="min-width: auto;"
+            >
+              <svg
+                aria-label="FormDown"
+                class="c11"
+                viewBox="0 0 24 24"
+              >
+                <polyline
+                  fill="none"
+                  points="18 9 12 15 6 9"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </div>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Select in form context opens 2`] = `
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c1:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c4 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c0 {
+  position: relative;
+  -webkit-scroll-behavior: smooth;
+  -moz-scroll-behavior: smooth;
+  -ms-scroll-behavior: smooth;
+  scroll-behavior: smooth;
+  overflow: auto;
+  outline: none;
+}
+
+.c2 {
+  display: block;
+  width: 100%;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 6px;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+<div
+  class="c0"
+  role="menubar"
+  tabindex="-1"
+>
+  <button
+    class="c1 c2"
+    role="menuitem"
+    tabindex="-1"
+    type="button"
+  >
+    <div
+      class="c3 "
+    >
+      <span
+        class="c4"
+      >
+        one
+      </span>
+    </div>
+  </button>
+  <button
+    class="c1 c2"
+    role="menuitem"
+    tabindex="-1"
+    type="button"
+  >
+    <div
+      class="c3 "
+    >
+      <span
+        class="c4"
+      >
+        two
+      </span>
+    </div>
+  </button>
+  <button
+    class="c1 c2"
+    role="menuitem"
+    tabindex="-1"
+    type="button"
+  >
+    <div
+      class="c3 "
+    >
+      <span
+        class="c4"
+      >
+        three
+      </span>
+    </div>
+  </button>
+  <div
+    class="c5"
+  />
+</div>
+`;
+
+exports[`Select in form context renders 1`] = `
+.c10 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c10 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c10 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c10 *[stroke*="#"],
+.c10 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*="#"],
+.c10 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c7 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  width: 100%;
+  outline: none;
+  border: none;
+}
+
+.c7::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c7::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c7::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c7:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c7::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c6 {
+  position: relative;
+  width: 100%;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c8 {
+  cursor: pointer;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <form>
+    <div
+      class="c1 "
+    >
+      <div
+        class="c2 "
+      >
+        <button
+          aria-label="Open Drop"
+          class="c3 "
+          type="button"
+        >
+          <div
+            class="c4"
+          >
+            <div
+              class="c5"
+            >
+              <div
+                class="c6"
+              >
+                <input
+                  autocomplete="off"
+                  class="c7 c8"
+                  placeholder="test Select"
+                  readonly=""
+                  tabindex="-1"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              class="c9"
+              style="min-width: auto;"
+            >
+              <svg
+                aria-label="FormDown"
+                class="c10"
+                viewBox="0 0 24 24"
+              >
+                <polyline
+                  fill="none"
+                  points="18 9 12 15 6 9"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </div>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Select in form context required 1`] = `
+.c10 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c10 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c10 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c10 *[stroke*="#"],
+.c10 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*="#"],
+.c10 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px #FF4040;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c12 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c12:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c11 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #FF4040;
+}
+
+.c7 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  width: 100%;
+  outline: none;
+  border: none;
+}
+
+.c7::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c7::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c7::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c7:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c7::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c6 {
+  position: relative;
+  width: 100%;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c8 {
+  cursor: pointer;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    border-bottom: solid 1px #FF4040;
+  }
+}
+
+<div
+  class="c0"
+>
+  <form>
+    <div
+      class="c1 "
+    >
+      <div
+        class="c2 "
+      >
+        <button
+          aria-label="Open Drop"
+          class="c3 "
+          type="button"
+        >
+          <div
+            class="c4"
+          >
+            <div
+              class="c5"
+            >
+              <div
+                class="c6"
+              >
+                <input
+                  autocomplete="off"
+                  class="c7 c8"
+                  placeholder="test select"
+                  readonly=""
+                  tabindex="-1"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              class="c9"
+              style="min-width: auto;"
+            >
+              <svg
+                aria-label="FormDown"
+                class="c10"
+                viewBox="0 0 24 24"
+              >
+                <polyline
+                  fill="none"
+                  points="18 9 12 15 6 9"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </div>
+        </button>
+      </div>
+      <span
+        class="c11"
+      >
+        required
+      </span>
+    </div>
+    <button
+      class="c12"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Select in form context search 1`] = `
+.c0 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  width: 100%;
+  font-size: 14px;
+  line-height: 20px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c0::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c0::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c0:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c0::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c0 > circle,
+.c0 > ellipse,
+.c0 > line,
+.c0 > path,
+.c0 > polygon,
+.c0 > polyline,
+.c0 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0::-moz-focus-inner {
+  border: 0;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+<input
+  autocomplete="off"
+  class="c0"
+  type="search"
+  value=""
+/>
+`;
