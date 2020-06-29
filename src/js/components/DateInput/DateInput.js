@@ -101,7 +101,7 @@ const DateInput = forwardRef(
       return (
         <DropButton
           ref={ref}
-          dropProps={{ align: { top: 'bottom' }, ...dropProps }}
+          dropProps={{ align: { top: 'bottom', left: 'left' }, ...dropProps }}
           dropContent={calendar}
           icon={<CalendarIcon />}
           {...buttonProps}
@@ -159,7 +159,7 @@ const DateInput = forwardRef(
         {open && (
           <Drop
             target={ref.current}
-            align={{ top: 'bottom', ...dropProps }}
+            align={{ top: 'bottom', left: 'left', ...dropProps }}
             onEsc={() => setOpen(false)}
             onClickOutside={() => setOpen(false)}
           >
