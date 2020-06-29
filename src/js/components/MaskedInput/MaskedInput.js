@@ -214,12 +214,16 @@ const MaskedInput = forwardRef(
         const nextValueParts = parseValue(mask, event.target.value);
         const nextValue = nextValueParts.map(part => part.part).join('');
 
-        if (value !== nextValue) {
+        if (nextValue !== event.target.value) {
+          // The mask required inserting something, change the input.
+          // This will re-trigger this callback with the next value
+          setInputValue(nextValue);
+        } else if (value !== nextValue) {
           setValue(nextValue);
           if (onChange) onChange(event);
         }
       },
-      [mask, onChange, setValue, value],
+      [mask, onChange, setInputValue, setValue, value],
     );
 
     const onOption = useCallback(
