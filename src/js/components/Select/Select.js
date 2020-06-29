@@ -244,7 +244,6 @@ const Select = forwardRef(
               selected={selected}
               value={value}
               valueKey={valueKey}
-              onClose={onRequestClose}
               customSearch={customSearch}
               renderBottomPanel={renderBottomPanel}
               renderCustomContent={renderCustomContent}
