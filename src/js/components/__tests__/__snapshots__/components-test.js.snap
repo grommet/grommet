@@ -6361,6 +6361,11 @@ string",
     "name": "TextInput",
     "properties": Array [
       Object {
+        "description": "Custom title to be used by screen readers.",
+        "format": "string",
+        "name": "a11yTitle",
+      },
+      Object {
         "defaultValue": Object {
           "left": "left",
           "top": "bottom",
