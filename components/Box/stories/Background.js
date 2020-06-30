@@ -37,13 +37,13 @@ var BackgroundBox = function BackgroundBox() {
   }, "brand object"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "small",
     background: {
-      image: 'url(http://librelogo.org/wp-content/uploads/2014/04/gradient2.png)'
+      image: 'url(https://images.unsplash.com/photo-1487088678257-3a541e6e3922?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2167&q=80)'
     }
   }, "image"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "small",
     background: {
       color: 'accent-2',
-      image: 'url(http://librelogo.org/wp-content/uploads/2014/04/gradient2.png)'
+      image: 'url(https://images.unsplash.com/photo-1487088678257-3a541e6e3922?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2167&q=80)'
     }
   }, "image + color"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     background: "dark-1",
