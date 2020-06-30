@@ -87,7 +87,14 @@ class Grommet extends Component {
   onResize = () => {
     const { theme, responsive } = this.state;
 
-    const breakpoint = getBreakpoint(window.innerWidth, theme);
+    let breakpoint;
+    // responsive would be undefined in the case of SSR or initial page load
+    if (!responsive) {
+      // In the case of SSR we'll need to use the user agent breakpoint
+      breakpoint = this.deviceResponsive();
+    }
+    // Initial page load where both responsive and breakpoint are undefined
+    if (!breakpoint) breakpoint = getBreakpoint(window.innerWidth, theme);
 
     if (breakpoint !== responsive) {
       this.setState({ responsive: breakpoint });

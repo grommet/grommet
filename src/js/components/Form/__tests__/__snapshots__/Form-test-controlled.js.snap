@@ -298,7 +298,6 @@ exports[`Form controlled controlled FormField deprecated 1`] = `
   flex-direction: column;
   overflow: hidden;
 }
-
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;

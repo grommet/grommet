@@ -281,4 +281,5 @@ describe('Form controlled', () => {
     });
     expect(container.firstChild).toMatchSnapshot();
   });
+
 });
