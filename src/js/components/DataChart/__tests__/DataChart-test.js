@@ -169,4 +169,20 @@ describe('DataChart', () => {
     expect(warnSpy).toHaveBeenCalledWith(warnMsg);
     warnSpy.mockRestore();
   });
+
+  test('detail', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
+    const component = renderer.create(
+      <Grommet>
+        {[true, false].map((detail, i) => (
+          // eslint-disable-next-line react/no-array-index-key
+          <DataChart key={i} data={data} property="a" detail={detail} />
+        ))}
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+    expect(warnSpy).toHaveBeenCalledWith(warnMsg);
+    warnSpy.mockRestore();
+  });
 });

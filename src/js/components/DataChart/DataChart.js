@@ -6,14 +6,16 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { ThemeContext } from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Chart, calcs, round } from '../Chart';
 import { Drop } from '../Drop';
 import { Grid } from '../Grid';
+import { Keyboard } from '../Keyboard';
 import { Stack } from '../Stack';
 import { Text } from '../Text';
+import { focusStyle } from '../../utils';
 
 const halfPad = {
   xlarge: 'large',
@@ -76,6 +78,12 @@ const createDateFormat = (firstValue, lastValue, full) => {
   }
   return dateFormat;
 };
+
+const DetailControl = styled(Box)`
+  &:focus {
+    ${focusStyle()}
+  }
+`;
 
 const DataChart = forwardRef(
   (
@@ -525,46 +533,59 @@ const DataChart = forwardRef(
         })}
         {detail && (
           <>
-            <Box
-              key="band"
-              ref={detailContainer}
-              direction="row"
-              fill
-              justify="between"
-              gap={`${data.length / 2 + 1}px`}
-              responsive={false}
-              onMouseOut={event => {
-                const rect = detailContainer.current.getBoundingClientRect();
-                if (
-                  event.pageX < rect.left ||
-                  event.pageX > rect.right ||
-                  event.pageY < rect.top ||
-                  event.pageY > rect.bottom
-                )
-                  setDetailIndex(undefined);
+            <Keyboard
+              onLeft={() => {
+                if (detailIndex === undefined) setDetailIndex(data.length - 1);
+                else if (detailIndex > 0) setDetailIndex(detailIndex - 1);
               }}
-              onFocus={() => {}}
-              onBlur={() => {}}
+              onRight={() => {
+                if (detailIndex === undefined) setDetailIndex(0);
+                else if (detailIndex < data.length - 1)
+                  setDetailIndex(detailIndex + 1);
+              }}
             >
-              {data.map((_, i) => (
-                <Box
-                  key={i}
-                  flex
-                  align="center"
-                  onMouseOver={() => setDetailIndex(i)}
-                  onFocus={() => {}}
-                  onBlur={() => {}}
-                >
+              <DetailControl
+                key="band"
+                ref={detailContainer}
+                tabIndex={0}
+                direction="row"
+                fill
+                justify="between"
+                gap={`${data.length / 2 + 1}px`}
+                responsive={false}
+                onMouseOut={event => {
+                  const rect = detailContainer.current.getBoundingClientRect();
+                  if (
+                    event.pageX < rect.left ||
+                    event.pageX > rect.right ||
+                    event.pageY < rect.top ||
+                    event.pageY > rect.bottom
+                  )
+                    setDetailIndex(undefined);
+                }}
+                onFocus={() => {}}
+                onBlur={() => setDetailIndex(undefined)}
+              >
+                {data.map((_, i) => (
                   <Box
-                    ref={c => {
-                      detailRefs[i] = c;
-                    }}
-                    fill="vertical"
-                    border={detailIndex === i ? true : undefined}
-                  />
-                </Box>
-              ))}
-            </Box>
+                    key={i}
+                    flex
+                    align="center"
+                    onMouseOver={() => setDetailIndex(i)}
+                    onFocus={() => {}}
+                    onBlur={() => {}}
+                  >
+                    <Box
+                      ref={c => {
+                        detailRefs[i] = c;
+                      }}
+                      fill="vertical"
+                      border={detailIndex === i ? true : undefined}
+                    />
+                  </Box>
+                ))}
+              </DetailControl>
+            </Keyboard>
             {detailIndex !== undefined && detailRefs[detailIndex] && (
               <Drop
                 key="drop"
