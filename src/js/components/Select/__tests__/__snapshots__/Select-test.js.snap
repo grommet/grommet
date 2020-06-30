@@ -236,6 +236,40 @@ exports[`Select 0 value 1`] = `
 `;
 
 exports[`Select Search timeout 1`] = `
+.c9 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -243,31 +277,54 @@ exports[`Select Search timeout 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 12px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
-.c5 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+}
+
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 0px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -291,40 +348,82 @@ exports[`Select Search timeout 1`] = `
   text-align: inherit;
 }
 
-.c1:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
+.c6 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  width: 100%;
+  outline: none;
+  border: none;
 }
 
-.c4 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
-.c0 {
-  position: relative;
-  -webkit-scroll-behavior: smooth;
-  -moz-scroll-behavior: smooth;
-  -ms-scroll-behavior: smooth;
-  scroll-behavior: smooth;
-  overflow: auto;
+.c6::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c6::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c6:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c6::-moz-focus-inner {
+  border: none;
   outline: none;
 }
 
-.c2 {
-  display: block;
+.c5 {
+  position: relative;
   width: 100%;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c7 {
+  cursor: pointer;
+}
+
+.c2 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
 @media only screen and (max-width:768px) {
 
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
-    padding: 6px;
-  }
+
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
@@ -337,45 +436,142 @@ exports[`Select Search timeout 1`] = `
 
 <div
   class="c0"
-  role="menubar"
-  tabindex="-1"
 >
   <button
+    aria-label="Open Drop"
     class="c1 c2"
-    role="menuitem"
+    data-g-tabindex="none"
+    id="test-select"
     tabindex="-1"
     type="button"
   >
     <div
-      class="c3 "
+      class="c3"
     >
-      <span
+      <div
         class="c4"
       >
-        one
-      </span>
-    </div>
-  </button>
-  <button
-    class="c1 c2"
-    role="menuitem"
-    tabindex="-1"
-    type="button"
-  >
-    <div
-      class="c3 "
-    >
-      <span
-        class="c4"
+        <div
+          class="c5"
+        >
+          <input
+            autocomplete="off"
+            class="c6 c7"
+            data-g-tabindex="-1"
+            id="test-select__input"
+            placeholder="test select"
+            readonly=""
+            tabindex="-1"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="c8"
+        style="min-width: auto;"
       >
-        two
-      </span>
+        <svg
+          aria-label="FormDown"
+          class="c9"
+          viewBox="0 0 24 24"
+        >
+          <polyline
+            fill="none"
+            points="18 9 12 15 6 9"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
     </div>
   </button>
-  <div
-    class="c5"
-  />
 </div>
+`;
+
+exports[`Select Search timeout 2`] = `
+.c0 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  width: 100%;
+  font-size: 14px;
+  line-height: 20px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c0::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c0::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c0:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c0::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c0 > circle,
+.c0 > ellipse,
+.c0 > line,
+.c0 > path,
+.c0 > polygon,
+.c0 > polyline,
+.c0 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0::-moz-focus-inner {
+  border: 0;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+<input
+  autocomplete="off"
+  class="c0"
+  type="search"
+  value="o"
+/>
 `;
 
 exports[`Select a11yTitle 1`] = `
@@ -2622,101 +2818,94 @@ exports[`Select disabled key 3`] = `
 `;
 
 exports[`Select disabled option value 1`] = `
-.c9 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*="#"],
-.c9 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*="#"],
-.c9 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c3 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
-}
-
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
-.c1 {
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
+}
+
+.c9 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2734,51 +2923,18 @@ exports[`Select disabled option value 1`] = `
   text-align: inherit;
 }
 
-.c6 {
-  box-sizing: border-box;
-  font-size: inherit;
-  font-family: inherit;
-  border: none;
-  -webkit-appearance: none;
-  background: transparent;
-  color: inherit;
-  padding: 11px;
-  font-weight: 600;
-  margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
-  width: 100%;
-  outline: none;
-  border: none;
+.c9:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
 }
 
-.c6::-webkit-search-decoration {
-  -webkit-appearance: none;
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
 }
 
-.c6::-webkit-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c6::-moz-placeholder {
-  color: #AAAAAA;
-}
-
-.c6:-ms-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c6::-moz-focus-inner {
-  border: none;
-  outline: none;
-}
-
-.c5 {
-  position: relative;
-  width: 100%;
-}
-
-.c0 {
+.c1 {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2786,86 +2942,134 @@ exports[`Select disabled option value 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
 }
 
-.c7 {
-  cursor: pointer;
+.c3 {
+  max-height: inherit;
 }
 
-.c2 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
+.c4 {
+  position: relative;
+  -webkit-scroll-behavior: smooth;
+  -moz-scroll-behavior: smooth;
+  -ms-scroll-behavior: smooth;
+  scroll-behavior: smooth;
+  overflow: auto;
+  outline: none;
+}
+
+.c6 {
+  display: block;
+  width: 100%;
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
-    margin-left: 6px;
-    margin-right: 6px;
+
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
-
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
+  .c3 {
+    width: 100%;
+  }
 }
 
 <div
-  class="c0"
+  class="c0 c1"
+  data-g-portal-id="0"
+  id="test-select__drop"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  tabindex="-1"
 >
-  <button
-    aria-label="Open Drop"
-    class="c1 c2"
-    id="test-select"
-    type="button"
+  <div
+    class="c2 c3"
+    id="test-select__select-drop"
   >
     <div
-      class="c3"
+      class="c4"
+      role="menubar"
+      tabindex="-1"
     >
-      <div
-        class="c4"
+      <button
+        class="c5 c6"
+        disabled=""
+        role="menuitem"
+        tabindex="-1"
+        type="button"
       >
         <div
-          class="c5"
+          class="c7 "
         >
-          <input
-            autocomplete="off"
-            class="c6 c7"
-            id="test-select__input"
-            placeholder="test select"
-            readonly=""
-            tabindex="-1"
-            type="text"
-            value=""
-          />
+          <span
+            class="c8"
+          >
+            one
+          </span>
         </div>
-      </div>
-      <div
-        class="c8"
-        style="min-width: auto;"
+      </button>
+      <button
+        class="c9 c6"
+        role="menuitem"
+        tabindex="-1"
+        type="button"
       >
-        <svg
-          aria-label="FormDown"
-          class="c9"
-          viewBox="0 0 24 24"
+        <div
+          class="c7 "
         >
-          <polyline
-            fill="none"
-            points="18 9 12 15 6 9"
-            stroke="#000"
-            stroke-width="2"
-          />
-        </svg>
-      </div>
+          <span
+            class="c8"
+          >
+            two
+          </span>
+        </div>
+      </button>
+      <div
+        class="c10"
+      />
     </div>
-  </button>
+  </div>
 </div>
+`;
+
+exports[`Select disabled option value 2`] = `
+"@media only screen and (max-width: 768px) {
+  .iCDnTm {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}"
 `;
 
 exports[`Select empty results search 1`] = `
@@ -8492,6 +8696,50 @@ exports[`Select opens and closes 4`] = `
 `;
 
 exports[`Select opens and closes 5`] = `
+<div
+  class="SelectContainer__OptionsBox-sc-1wi0ul8-0 Knkxk"
+  role="menubar"
+  tabindex="-1"
+>
+  <button
+    class="StyledButton-sc-323bzc-0 gSWBFn SelectContainer__SelectOption-sc-1wi0ul8-2 kkPGyb"
+    role="menuitem"
+    tabindex="-1"
+    type="button"
+  >
+    <div
+      class="StyledBox-sc-13pk1d4-0 lcXThF SelectContainer__OptionBox-sc-1wi0ul8-1 cjPAAw"
+    >
+      <span
+        class="StyledText-sc-1sadyjn-0 bilRua"
+      >
+        one
+      </span>
+    </div>
+  </button>
+  <button
+    class="StyledButton-sc-323bzc-0 gSWBFn SelectContainer__SelectOption-sc-1wi0ul8-2 kkPGyb"
+    role="menuitem"
+    tabindex="-1"
+    type="button"
+  >
+    <div
+      class="StyledBox-sc-13pk1d4-0 lcXThF SelectContainer__OptionBox-sc-1wi0ul8-1 cjPAAw"
+    >
+      <span
+        class="StyledText-sc-1sadyjn-0 bilRua"
+      >
+        two
+      </span>
+    </div>
+  </button>
+  <div
+    class="StyledBox-sc-13pk1d4-0 bokQlS"
+  />
+</div>
+`;
+
+exports[`Select opens and closes 6`] = `
 <button
   aria-label="Open Drop"
   class="StyledButton-sc-323bzc-0 bwJeiP Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
@@ -8540,7 +8788,7 @@ exports[`Select opens and closes 5`] = `
 </button>
 `;
 
-exports[`Select opens and closes 6`] = `
+exports[`Select opens and closes 7`] = `
 .c8 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -8779,14 +9027,6 @@ exports[`Select opens and closes 6`] = `
       </div>
     </button>
   </div>
-</body>
-`;
-
-exports[`Select opens and closes 7`] = `
-<body>
-  <div
-    aria-hidden="false"
-  />
 </body>
 `;
 
@@ -10833,6 +11073,8 @@ exports[`Select search 2`] = `
   width: 100%;
   font-size: 14px;
   line-height: 20px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
 .c6::-webkit-search-decoration {
@@ -10854,6 +11096,21 @@ exports[`Select search 2`] = `
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c6 > circle,
+.c6 > ellipse,
+.c6 > line,
+.c6 > path,
+.c6 > polygon,
+.c6 > polyline,
+.c6 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -11005,6 +11262,15 @@ exports[`Select search 4`] = `
   class="StyledTextInput-sc-1x30a0s-0 dbCTDH"
   type="search"
   value=""
+/>
+`;
+
+exports[`Select search 5`] = `
+<input
+  autocomplete="off"
+  class="StyledTextInput-sc-1x30a0s-0 dbCTDH"
+  type="search"
+  value="o"
 />
 `;
 
