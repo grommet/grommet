@@ -2,8 +2,7 @@ import React from 'react';
 import 'jest-styled-components';
 import { cleanup, render, fireEvent, act } from '@testing-library/react';
 
-// import { CaretDown, CaretUp, FormDown } from 'grommet-icons';
-import { createPortal } from '../../../utils/portal';
+import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { Grommet } from '../..';
 import { Select } from '..';
@@ -31,9 +30,11 @@ describe('Select in form context', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('opens', () => {
+  test('opens and closes', () => {
     window.scrollTo = jest.fn();
     jest.useFakeTimers();
+    const onOpen = jest.fn();
+    const onClose = jest.fn();
     const { container, getByPlaceholderText } = render(
       <Grommet>
         <Form>
@@ -41,26 +42,42 @@ describe('Select in form context', () => {
             <Select
               placeholder="test select"
               options={['one', 'two', 'three']}
+              id="test-select"
+              onOpen={onOpen}
+              onClose={onClose}
             />
           </FormField>
         </Form>
       </Grommet>,
     );
+    // open select
     fireEvent.click(getByPlaceholderText('test select'));
-    expect(container.firstChild).toMatchSnapshot();
     // wait for select to open
     jest.advanceTimersByTime(100);
+    expect(container.firstChild).toMatchSnapshot();
     expect(document.activeElement).toMatchSnapshot();
+    expectPortal('test-select__drop').toMatchSnapshot();
+    expect(onOpen).toHaveBeenCalled();
+    // close select
+    fireEvent.click(getByPlaceholderText('test select'));
+    // wait for select to close
+    jest.advanceTimersByTime(100);
+    expect(container.firstChild).toMatchSnapshot();
+    expect(document.activeElement).toMatchSnapshot();
+    expect(document.getElementById('test-select__drop')).toBeNull();
+    expect(onClose).toHaveBeenCalled();
+
     window.scrollTo.mockRestore();
   });
 
   test('Select an option', () => {
     jest.useFakeTimers();
+    const onSubmit = jest.fn();
     window.scrollTo = jest.fn();
     const onChange = jest.fn();
-    const { getByPlaceholderText } = render(
+    const { getByPlaceholderText, getByText } = render(
       <Grommet>
-        <Form>
+        <Form onSubmit={onSubmit}>
           <FormField>
             <Select
               placeholder="test select"
@@ -68,6 +85,7 @@ describe('Select in form context', () => {
               onChange={onChange}
             />
           </FormField>
+          <Button type="submit" primary label="Submit" />
         </Form>
       </Grommet>,
     );
@@ -76,6 +94,8 @@ describe('Select in form context', () => {
     fireEvent.click(document.activeElement.querySelector('button'));
     expect(getByPlaceholderText('test select').value).toEqual('one');
     expect(onChange).toBeCalledWith(expect.objectContaining({ value: 'one' }));
+    fireEvent.click(getByText('Submit'));
+    expect(onSubmit).toHaveBeenCalled();
     window.scrollTo.mockRestore();
   });
 
@@ -121,7 +141,6 @@ describe('Select in form context', () => {
               onSearch={onSearch}
             />
           </FormField>
-          <Button type="submit" primary label="Submit" />
         </Form>
       </Grommet>,
     );
@@ -132,5 +151,67 @@ describe('Select in form context', () => {
     expect(document.activeElement).toMatchSnapshot();
     fireEvent.change(document.activeElement, { target: { value: 'o' } });
     expect(onSearch).toBeCalledWith('o');
+  });
+
+  test('select multiple', () => {
+    jest.useFakeTimers();
+    const onSubmit = jest.fn();
+    const { getByPlaceholderText, getByText } = render(
+      <Grommet>
+        <Form onSubmit={onSubmit}>
+          <FormField>
+            <Select
+              placeholder="test select"
+              id="test-select"
+              options={['one', 'two', 'three']}
+              multiple
+            />
+          </FormField>
+          <Button type="submit" primary label="Submit" />
+        </Form>
+      </Grommet>,
+    );
+    const select = getByPlaceholderText('test select');
+    fireEvent.click(select);
+
+    fireEvent.click(
+      document.getElementById('test-select__drop').querySelector('button'),
+    );
+    expect(select.value).toEqual('one');
+    // open select again
+    fireEvent.click(select);
+    fireEvent.click(
+      document
+        .getElementById('test-select__drop')
+        .querySelectorAll('button')[1],
+    );
+    expect(select.value).toEqual('multiple');
+    fireEvent.click(getByText('Submit'));
+    expect(onSubmit).toHaveBeenCalled();
+  });
+
+  test('multiple selected', () => {
+    jest.useFakeTimers();
+    const onSubmit = jest.fn();
+    const { container, getByPlaceholderText, getByText } = render(
+      <Grommet>
+        <Form onSubmit={onSubmit}>
+          <FormField>
+            <Select
+              placeholder="test select"
+              id="test-select"
+              options={['one', 'two', 'three']}
+              multiple
+              selected={[0, 1]}
+            />
+          </FormField>
+          <Button type="submit" primary label="Submit" />
+        </Form>
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    expect(getByPlaceholderText('test select').value).toEqual('multiple');
+    fireEvent.click(getByText('Submit'));
+    expect(onSubmit).toHaveBeenCalled();
   });
 });
