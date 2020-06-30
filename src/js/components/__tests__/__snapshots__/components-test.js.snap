@@ -1354,7 +1354,8 @@ large",
         "format": "_self
 _blank
 _parent
-_top",
+_top
+string",
         "name": "target",
       },
       Object {
@@ -6331,6 +6332,11 @@ string",
     "intrinsicElement": "input",
     "name": "TextInput",
     "properties": Array [
+      Object {
+        "description": "Custom title to be used by screen readers.",
+        "format": "string",
+        "name": "a11yTitle",
+      },
       Object {
         "defaultValue": Object {
           "left": "left",
