@@ -363,8 +363,8 @@ describe('Form uncontrolled', () => {
     const onSubmit = jest.fn();
     const { getByText, queryByText } = render(
       <Grommet>
-        {/* this test continues running forever if the whole event passed to 
-            onSubmit */}
+        {/* this test continues running forever if the whole event 
+                passed to onSubmit */}
         <Form onSubmit={({ value, touched }) => onSubmit({ value, touched })}>
           <FormField
             name="test"

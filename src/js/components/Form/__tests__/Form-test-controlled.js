@@ -255,7 +255,7 @@ describe('Form controlled', () => {
     expect(queryByText('Input has changed')).toBeNull();
   });
 
-  test('form with select', async () => {
+  test('form with select', () => {
     const Test = () => {
       const [value, setValue] = React.useState('medium');
       return (
@@ -281,5 +281,4 @@ describe('Form controlled', () => {
     });
     expect(container.firstChild).toMatchSnapshot();
   });
-
 });
