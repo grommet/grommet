@@ -71,7 +71,6 @@ describe('Select in form context', () => {
   });
 
   test('Select an option', () => {
-    jest.useFakeTimers();
     const onSubmit = jest.fn();
     window.scrollTo = jest.fn();
     const onChange = jest.fn();
@@ -90,17 +89,16 @@ describe('Select in form context', () => {
       </Grommet>,
     );
     fireEvent.click(getByPlaceholderText('test select'));
-    jest.advanceTimersByTime(100);
     fireEvent.click(document.activeElement.querySelector('button'));
     expect(getByPlaceholderText('test select').value).toEqual('one');
     expect(onChange).toBeCalledWith(expect.objectContaining({ value: 'one' }));
+    // submit form
     fireEvent.click(getByText('Submit'));
     expect(onSubmit).toHaveBeenCalled();
     window.scrollTo.mockRestore();
   });
 
   test('required', () => {
-    jest.useFakeTimers();
     const onSubmit = jest.fn();
     window.scrollTo = jest.fn();
     const { getByPlaceholderText, container, getByText } = render(
@@ -121,9 +119,9 @@ describe('Select in form context', () => {
     expect(onSubmit).not.toHaveBeenCalled();
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByPlaceholderText('test select'));
-    jest.advanceTimersByTime(100);
     fireEvent.click(document.activeElement.querySelector('button'));
     expect(getByPlaceholderText('test select').value).toEqual('one');
+    // submit form
     fireEvent.click(getByText('Submit'));
     expect(onSubmit).toHaveBeenCalled();
   });
@@ -145,6 +143,7 @@ describe('Select in form context', () => {
       </Grommet>,
     );
     fireEvent.click(getByPlaceholderText('test select'));
+    // wait for select to open so search can have focus
     act(() => {
       jest.advanceTimersByTime(100);
     });
@@ -154,7 +153,6 @@ describe('Select in form context', () => {
   });
 
   test('select multiple', () => {
-    jest.useFakeTimers();
     const onSubmit = jest.fn();
     const { getByPlaceholderText, getByText } = render(
       <Grommet>
@@ -191,7 +189,6 @@ describe('Select in form context', () => {
   });
 
   test('multiple selected', () => {
-    jest.useFakeTimers();
     const onSubmit = jest.fn();
     const { container, getByPlaceholderText, getByText } = render(
       <Grommet>
