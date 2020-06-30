@@ -12,6 +12,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 var doc = function doc(TextInput) {
   var DocumentedTextInput = (0, _reactDesc.describe)(TextInput).availableAt((0, _utils.getAvailableAtBadge)('TextInput')).description('A control to input a single line of text, with optional suggestions.').usage("import { TextInput } from 'grommet';\n<TextInput id='item' name='item' />").intrinsicElement('input');
   DocumentedTextInput.propTypes = {
+    a11yTitle: _reactDesc.PropTypes.string.description('Custom title to be used by screen readers.'),
     dropAlign: _reactDesc.PropTypes.shape({
       top: _reactDesc.PropTypes.oneOf(['top', 'bottom']),
       bottom: _reactDesc.PropTypes.oneOf(['top', 'bottom']),

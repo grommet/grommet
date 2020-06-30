@@ -5,6 +5,7 @@ import { getAvailableAtBadge, themeDocUtils } from '../../utils';
 export var doc = function doc(TextInput) {
   var DocumentedTextInput = describe(TextInput).availableAt(getAvailableAtBadge('TextInput')).description('A control to input a single line of text, with optional suggestions.').usage("import { TextInput } from 'grommet';\n<TextInput id='item' name='item' />").intrinsicElement('input');
   DocumentedTextInput.propTypes = {
+    a11yTitle: PropTypes.string.description('Custom title to be used by screen readers.'),
     dropAlign: PropTypes.shape({
       top: PropTypes.oneOf(['top', 'bottom']),
       bottom: PropTypes.oneOf(['top', 'bottom']),
