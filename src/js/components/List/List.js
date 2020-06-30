@@ -186,12 +186,14 @@ const List = React.forwardRef(
                   tabIndex: -1,
                   active: active === index,
                   onClick: event => {
-                    // extract from React's synthetic event pool
-                    event.persist();
-                    const adjustedEvent = event;
-                    adjustedEvent.item = item;
-                    adjustedEvent.index = index;
-                    onClickItem(adjustedEvent);
+                    if (event.type === 'click') {
+                      // extract from React's synthetic event pool
+                      event.persist();
+                      const adjustedEvent = event;
+                      adjustedEvent.item = item;
+                      adjustedEvent.index = index;
+                      onClickItem(adjustedEvent);
+                    }
                   },
                   onMouseOver: () => setActive(index),
                   onMouseOut: () => setActive(undefined),
