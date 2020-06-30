@@ -1,7 +1,6 @@
 import React from 'react';
 
 import 'jest-styled-components';
-import 'regenerator-runtime/runtime';
 
 import { cleanup, render, fireEvent } from '@testing-library/react';
 import { Grommet } from '../../Grommet';
