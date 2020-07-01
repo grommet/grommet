@@ -196,22 +196,5 @@ describe('TextArea', () => {
       expect(container.firstChild).toMatchSnapshot();
       expect(onBlur).toHaveBeenCalled();
     });
-
-    // test("onEsc", () => {
-    //   const {container, getByPlaceholderText} = render(
-    //     <Grommet>
-    //       <TextArea
-    //         id="item"
-    //         name="item"
-    //         placeholder="item"
-    //       />
-    //     </Grommet>,
-    //   );
-    //   fireEvent.focus(getByPlaceholderText('item'));
-    //   fireEvent.keyDown(getByPlaceholderText('item'), {
-    //     key: 'Escape',
-    //     which: 27
-    //   });
-    // });
   });
 });
