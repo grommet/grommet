@@ -61,7 +61,8 @@ const SelectContainer = forwardRef(
       valueKey,
       replace = true,
       customSearch,
-      renderBottomPanel,
+      renderOptionTop,
+      renderOptionBottom,
       renderCustomContent,
     },
     ref,
@@ -307,6 +308,13 @@ const SelectContainer = forwardRef(
           id={id ? `${id}__select-drop` : undefined}
           dropHeight={dropHeight}
         >
+          {renderOptionTop && renderOptionTop({
+            options,
+            value,
+            isSelected,
+            optionLabel,
+            selectOption,
+          })}
           {onSearch && !customSearch && (
             <Box
               pad={!customSearchInput ?
@@ -398,7 +406,7 @@ const SelectContainer = forwardRef(
                     </SelectOption>
                   )}
               </OptionsBox>
-              {renderBottomPanel && renderBottomPanel({
+              {renderOptionBottom && renderOptionBottom({
                 options,
                 value,
                 isSelected,

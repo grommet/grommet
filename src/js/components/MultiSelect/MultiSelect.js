@@ -10,9 +10,10 @@ import { ValueLabelWithNumber } from './ValueLabelWithNumber';
 const MultiSelect = ({
   width,
   options,
-  values,
+  value,
   onValueChange,
-  column,
+  layout,
+  emptySearchMessage,
   ...rest
 }) => {
   const {
@@ -22,7 +23,7 @@ const MultiSelect = ({
   } = useCustomSelectState();
 
   useEffect(() => {
-    setSelectState({ previousValue: values });
+    setSelectState({ previousValue: value });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -32,18 +33,19 @@ const MultiSelect = ({
   }
 
   const renderContent = (props) => {
-    if (column === 'single') {
+    if (layout === 'single-column') {
       return (
         <SingleColumnSelect
           width={width}
           onUpdate={() =>
-            setSelectState({ open: false, previousValue: values })
+            setSelectState({ open: false, previousValue: value })
           }
           onCancel={onCancelClick}
-          setValues={(value) => onValueChange(value)}
+          setValues={(nextValue) => onValueChange(nextValue)}
+          emptySearchMessage={emptySearchMessage}
           {...props}
         />
-      )
+      );
     }
     return null;
   }
@@ -52,8 +54,8 @@ const MultiSelect = ({
     return (
       <ValueLabelWithNumber
         value="Selected"
-        number={values.length}
-        color="#FC564F"
+        number={value.length}
+        color="brand"
       />
     );
   }
@@ -62,22 +64,22 @@ const MultiSelect = ({
     <Box width={width}>
       <Select
         multiple
-        value={values}
+        value={value}
         options={options}
-        onChange={({ value }) => onValueChange(value)}
+        onChange={({ value: nextValue }) => onValueChange(nextValue)}
         open={open}
         onOpen={() => setSelectState({ open: true })}
         onClose={() => onValueChange(previousValue)}
         closeOnChange={false}
         renderCustomContent={
-          ['single', 'double'].includes(column) ?
+          ['single-column', 'double-column'].includes(layout) ?
             (props) => renderContent(props) : undefined
         }
         valueLabel={renderLabel()}
         {...rest}
       />
     </Box>
-  )
+  );
 }
 
 MultiSelect.displayName = 'MultiSelect';

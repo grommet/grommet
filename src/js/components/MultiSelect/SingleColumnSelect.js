@@ -26,6 +26,7 @@ const SingleColumnSelect = ({
   onUpdate,
   setValues,
   width,
+  emptySearchMessage,
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
 
@@ -57,6 +58,8 @@ const SingleColumnSelect = ({
                 <>
                   {index === 0 && (
                     <SelectOption
+                      // eslint-disable-next-line react/no-array-index-key
+                      key={`${index}_select_all`}
                       tabIndex="-1"
                       role="menuitem"
                       hoverIndicator="light-5"
@@ -107,7 +110,7 @@ const SingleColumnSelect = ({
             >
               <OptionBox {...selectOptionsStyle}>
                 <Text {...theme.select.container.text}>
-                  No values available
+                  {emptySearchMessage || 'No values available'}
                 </Text>
               </OptionBox>
             </SelectOption>

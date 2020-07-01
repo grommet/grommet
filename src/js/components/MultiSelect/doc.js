@@ -212,7 +212,26 @@ export const doc = MultiSelect => {
         `Empty option message to display when no matching results were found`,
       )
       .defaultValue('No matches found'),
-  };
+    customSearch: PropTypes.func
+      .description(`Render custom search component`),
+    renderOptionTop: PropTypes.func
+      .description(
+        `Render custom top panel component above the option list`,
+      ),
+    renderOptionBottom: PropTypes.func
+      .description(
+        `Render custom bottom panel component below the option list`,
+      ),
+    renderCustomContent: PropTypes.func
+      .description(`Render custom select component`),
+    width: PropTypes.string.description(`Width for the multiselect dropdown`)
+      .defaultValue('auto'),
+    onValueChange: PropTypes.func.description(
+      'Function that will be called when the user selects an option.',
+    ),
+    layout: PropTypes.oneOf(['single-column', 'double-column'])
+      .description(`Column layout for custom multiselect dropdown`),
+  }; 
 
   return DocumentedSelect;
 };

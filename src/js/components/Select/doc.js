@@ -211,6 +211,18 @@ export const doc = Select => {
         `Empty option message to display when no matching results were found`,
       )
       .defaultValue('No matches found'),
+    customSearch: PropTypes.func
+      .description(`Render custom search component`),
+    renderOptionTop: PropTypes.func
+      .description(
+        `Render custom top panel component above the option list`,
+      ),
+    renderOptionBottom: PropTypes.func
+      .description(
+        `Render custom bottom panel component below the option list`,
+      ),
+      renderCustomContent: PropTypes.func
+      .description(`Render custom select component`),
   };
 
   return DocumentedSelect;

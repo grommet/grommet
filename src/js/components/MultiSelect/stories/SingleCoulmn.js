@@ -15,9 +15,9 @@ const Example = () => {
       <Box fill align="center" justify="start" pad="large">
         <MultiSelect
           options={filteredOptions}
-          values={value}
+          value={value}
           onValueChange={(nextValue) => setValue(nextValue)}
-          column="single"
+          layout="single-column"
           width="medium"
           onSearch={text => {
             const escapedText = text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');

@@ -97,7 +97,8 @@ const Select = forwardRef(
       valueKey,
       valueLabel,
       customSearch,
-      renderBottomPanel,
+      renderOptionTop,
+      renderOptionBottom,
       renderCustomContent,
       ...rest
     },
@@ -245,7 +246,8 @@ const Select = forwardRef(
               value={value}
               valueKey={valueKey}
               customSearch={customSearch}
-              renderBottomPanel={renderBottomPanel}
+              renderOptionTop={renderOptionTop}
+              renderOptionBottom={renderOptionBottom}
               renderCustomContent={renderCustomContent}
             >
               {children}
