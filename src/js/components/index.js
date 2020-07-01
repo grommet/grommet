@@ -56,3 +56,4 @@ export * from './TextArea';
 export * from './TextInput';
 export * from './Pagination';
 export * from './Tooltip';
+export * from './Loader';
