@@ -4110,6 +4110,21 @@ xlarge
 string
 \`\`\`
 
+**point**
+
+When using a 'point' type, what shape the points should use.
+      If not specified, 'square' will be used if not 'round',
+      otherwise 'circle' will be used if 'round' is true.
+
+\`\`\`
+circle
+diamond
+square
+star
+triangle
+triangleDown
+\`\`\`
+
 **round**
 
 Whether to round the line ends.

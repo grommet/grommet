@@ -1895,6 +1895,18 @@ string",
         "name": "pad",
       },
       Object {
+        "description": "When using a 'point' type, what shape the points should use.
+      If not specified, 'square' will be used if not 'round',
+      otherwise 'circle' will be used if 'round' is true.",
+        "format": "circle
+diamond
+square
+star
+triangle
+triangleDown",
+        "name": "point",
+      },
+      Object {
         "defaultValue": false,
         "description": "Whether to round the line ends.",
         "format": "boolean",

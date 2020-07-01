@@ -80,6 +80,18 @@ export const doc = Chart => {
       Related to 'overflow', this allows control over how much space
       is available for bars and points to overflow into.`,
     ),
+    point: PropTypes.oneOf([
+      'circle',
+      'diamond',
+      'square',
+      'star',
+      'triangle',
+      'triangleDown',
+    ]).description(
+      `When using a 'point' type, what shape the points should use.
+      If not specified, 'square' will be used if not 'round',
+      otherwise 'circle' will be used if 'round' is true.`,
+    ),
     round: PropTypes.bool
       .description('Whether to round the line ends.')
       .defaultValue(false),
