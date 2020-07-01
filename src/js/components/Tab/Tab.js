@@ -1,4 +1,4 @@
-import React, { forwardRef, useContext, useState } from 'react';
+import React, { forwardRef, useContext, useEffect, useState } from 'react';
 import { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
@@ -7,29 +7,47 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
 import { normalizeColor } from '../../utils';
+import { TabsContext } from '../Tabs/TabsContext';
 
 import { StyledTab } from './StyledTab';
 
 const Tab = forwardRef(
   (
-    {
-      active,
-      icon,
-      plain,
-      title,
-      onActivate,
-      onMouseOver,
-      onMouseOut,
-      reverse,
-      ...rest
-    },
+    { children, icon, plain, title, onMouseOver, onMouseOut, reverse, ...rest },
     ref,
   ) => {
+    const {
+      active,
+      activeIndex,
+      setActiveContent,
+      setActiveTitle,
+      onActivate,
+    } = useContext(TabsContext);
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const [over, setOver] = useState(undefined);
     const [focus, setFocus] = useState(undefined);
     let normalizedTitle = title;
     const tabStyles = {};
+
+    useEffect(() => {
+      if (active) {
+        setActiveContent(children);
+        let activeTitle;
+        if (typeof title === 'string') {
+          activeTitle = title;
+        } else {
+          activeTitle = activeIndex + 1;
+        }
+        setActiveTitle(activeTitle);
+      }
+    }, [
+      active,
+      activeIndex,
+      children,
+      setActiveContent,
+      setActiveTitle,
+      title,
+    ]);
 
     const onMouseOverTab = event => {
       setOver(true);
