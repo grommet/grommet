@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-export default function useCustomSelectState() {
+export default function useCustomSelectState(value) {
   const [selectState, setStateValues] = useState({
-    previousValue: [],
+    previousValue: value,
     open: false,
   });
 

@@ -27,6 +27,8 @@ const SingleColumnSelect = ({
   setValues,
   width,
   emptySearchMessage,
+  showOptionChips,
+  showControlButtons,
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
 
@@ -116,16 +118,20 @@ const SingleColumnSelect = ({
             </SelectOption>
           )}
       </OptionsBox>
-      <OptionChips
-        width={width}
-        options={options}
-        value={value}
-        isSelected={isSelected}
-        optionLabel={optionLabel}
-        selectOption={selectOption}
-        clearAll={setValues}
-      />
-      <ControlButton onUpdate={onUpdate} onCancel={onCancel} />
+      {showOptionChips && (
+        <OptionChips
+          width={width}
+          options={options}
+          value={value}
+          isSelected={isSelected}
+          optionLabel={optionLabel}
+          selectOption={selectOption}
+          clearAll={setValues}
+        />
+      )}
+      {showControlButtons && (
+        <ControlButton onUpdate={onUpdate} onCancel={onCancel} />
+      )}
     </>
   );
 }

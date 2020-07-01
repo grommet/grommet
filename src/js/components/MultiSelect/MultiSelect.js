@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import { Box } from '../Box';
 import { Select } from '../Select';
@@ -14,18 +14,15 @@ const MultiSelect = ({
   onValueChange,
   layout,
   emptySearchMessage,
+  withOptionChips,
+  withUpdateCancelButtons,
   ...rest
 }) => {
   const {
     previousValue,
     open,
     setSelectState,
-  } = useCustomSelectState();
-
-  useEffect(() => {
-    setSelectState({ previousValue: value });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  } = useCustomSelectState(value);
 
   const onCancelClick = () => {
     onValueChange(previousValue);
@@ -43,6 +40,8 @@ const MultiSelect = ({
           onCancel={onCancelClick}
           setValues={(nextValue) => onValueChange(nextValue)}
           emptySearchMessage={emptySearchMessage}
+          showOptionChips={withOptionChips}
+          showControlButtons={withUpdateCancelButtons}
           {...props}
         />
       );
@@ -69,7 +68,10 @@ const MultiSelect = ({
         onChange={({ value: nextValue }) => onValueChange(nextValue)}
         open={open}
         onOpen={() => setSelectState({ open: true })}
-        onClose={() => onValueChange(previousValue)}
+        onClose={
+          withUpdateCancelButtons ?
+          () => onValueChange(previousValue) : undefined
+        }
         closeOnChange={false}
         renderCustomContent={
           ['single-column', 'double-column'].includes(layout) ?

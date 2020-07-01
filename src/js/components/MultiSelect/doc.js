@@ -231,7 +231,13 @@ export const doc = MultiSelect => {
     ),
     layout: PropTypes.oneOf(['single-column', 'double-column'])
       .description(`Column layout for custom multiselect dropdown`),
-  }; 
+    withOptionChips: PropTypes.bool
+      .description(`Control to show the selected option chips`)
+      .defaultValue(false),
+    withUpdateCancelButtons: PropTypes.bool.description(
+      `Control to show the control buttons with OK and Cancel values`,
+      ).defaultValue(false),
+  };
 
   return DocumentedSelect;
 };

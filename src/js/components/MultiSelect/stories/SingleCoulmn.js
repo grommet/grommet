@@ -34,6 +34,8 @@ const Example = () => {
               />
             </Box>
           )}
+          withOptionChips
+          withUpdateCancelButtons
         />
       </Box>
     </MnetUIBase>
