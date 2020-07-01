@@ -50,6 +50,7 @@ export const doc = FormField => {
       `The name of the value data when in a Form and the name of
       the input field.`,
     ),
+    width: PropTypes.string.description(`The width of the field.`),
     margin: marginProp,
     pad: PropTypes.bool.description(
       'Whether to add padding to align with the padding of TextInput.',

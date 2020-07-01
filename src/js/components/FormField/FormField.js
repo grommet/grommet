@@ -243,7 +243,7 @@ const FormField = forwardRef(
       }
     }
     contents = (
-      <Box {...contentProps} width={width || 'auto'}>
+      <Box {...contentProps} width={width}>
         <Box direction="row">
           {prefix && (
             <Box {...formFieldTheme.prefix} style={{ wordBreak: 'normal' }}>
