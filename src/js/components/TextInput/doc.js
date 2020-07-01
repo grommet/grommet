@@ -15,6 +15,9 @@ export const doc = TextInput => {
     .intrinsicElement('input');
 
   DocumentedTextInput.propTypes = {
+    a11yTitle: PropTypes.string.description(
+      'Custom title to be used by screen readers.',
+    ),
     dropAlign: PropTypes.shape({
       top: PropTypes.oneOf(['top', 'bottom']),
       bottom: PropTypes.oneOf(['top', 'bottom']),
