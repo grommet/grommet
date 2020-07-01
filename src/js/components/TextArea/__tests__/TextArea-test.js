@@ -148,5 +148,70 @@ describe('TextArea', () => {
 
       expect(capturedEvent).toEqual(expect.objectContaining(keyEvent));
     });
+
+    test('onFocus', () => {
+      const onFocus = jest.fn();
+      const { container, getByPlaceholderText } = render(
+        <Grommet>
+          <TextArea
+            id="item"
+            name="item"
+            placeholder="item"
+            onFocus={onFocus}
+          />
+        </Grommet>,
+      );
+      fireEvent.focus(getByPlaceholderText('item'));
+      expect(container.firstChild).toMatchSnapshot();
+      expect(onFocus).toHaveBeenCalled();
+    });
+
+    test('onChange', () => {
+      const onChange = jest.fn();
+      const { container, getByPlaceholderText } = render(
+        <Grommet>
+          <TextArea
+            id="item"
+            name="item"
+            placeholder="item"
+            onChange={onChange}
+          />
+        </Grommet>,
+      );
+      fireEvent.change(getByPlaceholderText('item'), {
+        target: { value: 'o' },
+      });
+      expect(container.firstChild).toMatchSnapshot();
+      expect(onChange).toHaveBeenCalled();
+    });
+
+    test('onBlur', () => {
+      const onBlur = jest.fn();
+      const { container, getByPlaceholderText } = render(
+        <Grommet>
+          <TextArea id="item" name="item" placeholder="item" onBlur={onBlur} />
+        </Grommet>,
+      );
+      fireEvent.blur(getByPlaceholderText('item'));
+      expect(container.firstChild).toMatchSnapshot();
+      expect(onBlur).toHaveBeenCalled();
+    });
+
+    // test("onEsc", () => {
+    //   const {container, getByPlaceholderText} = render(
+    //     <Grommet>
+    //       <TextArea
+    //         id="item"
+    //         name="item"
+    //         placeholder="item"
+    //       />
+    //     </Grommet>,
+    //   );
+    //   fireEvent.focus(getByPlaceholderText('item'));
+    //   fireEvent.keyDown(getByPlaceholderText('item'), {
+    //     key: 'Escape',
+    //     which: 27
+    //   });
+    // });
   });
 });
