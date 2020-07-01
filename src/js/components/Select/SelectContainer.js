@@ -312,8 +312,14 @@ const SelectContainer = forwardRef(
             options,
             value,
             isSelected,
-            optionLabel,
+            isDisabled,
             selectOption,
+            onMore,
+            replace,
+            activeIndex,
+            onActiveOption,
+            optionLabel,
+            optionValue,
           })}
           {onSearch && !customSearch && (
             <Box
@@ -410,8 +416,14 @@ const SelectContainer = forwardRef(
                 options,
                 value,
                 isSelected,
-                optionLabel,
+                isDisabled,
                 selectOption,
+                onMore,
+                replace,
+                activeIndex,
+                onActiveOption,
+                optionLabel,
+                optionValue,
               })}
             </>
           )}
@@ -426,6 +438,7 @@ const SelectContainer = forwardRef(
             activeIndex,
             onActiveOption,
             optionLabel,
+            optionValue,
           })}
         </StyledContainer>
       </Keyboard>

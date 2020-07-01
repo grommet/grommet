@@ -1,15 +1,17 @@
 import { useState } from 'react';
 
-export default function useCustomSelectState(value) {
+export default function useCustomSelectState(options, value) {
   const [selectState, setStateValues] = useState({
+    filteredOptions: options,
     previousValue: value,
     open: false,
+    searchVal: '',
   });
 
-  const { displayOptions, previousValue, open } = selectState;
+  const { filteredOptions, previousValue, open, searchVal } = selectState;
 
   const setSelectState = (params, ...rest) =>
     setStateValues({ ...selectState, ...params }, ...rest);
 
-  return { displayOptions, previousValue, open, setSelectState };
+  return { filteredOptions, previousValue, open, searchVal, setSelectState };
 }

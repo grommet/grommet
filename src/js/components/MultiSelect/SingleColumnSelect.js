@@ -10,6 +10,7 @@ import { OptionBox, OptionsBox, SelectOption } from './StyledMultiSelect';
 import { OptionWithCheckControl } from './OptionWithCheckControl';
 import { OptionChips } from './OptionChips';
 import { ControlButton } from './ControlButton';
+import { Searchbox } from './Searchbox';
 
 const SingleColumnSelect = ({
   options,
@@ -22,6 +23,7 @@ const SingleColumnSelect = ({
   activeIndex,
   onActiveOption,
   optionLabel,
+  optionValue,
   onCancel,
   onUpdate,
   setValues,
@@ -29,6 +31,10 @@ const SingleColumnSelect = ({
   emptySearchMessage,
   showOptionChips,
   showControlButtons,
+  renderSearch,
+  searchPlaceholder,
+  searchValue,
+  onSearchChange,
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
 
@@ -37,12 +43,17 @@ const SingleColumnSelect = ({
     ...theme.select.options.container,
   };
 
-  const allSelected =
-    options.every(item => value.includes(item)) &&
-    options.every(item => value.includes(item));
+  const allSelected = options.every((item, index) => isSelected(index));
 
   return (
     <>
+      {renderSearch && (
+        <Searchbox
+          placeholder={searchPlaceholder}
+          value={searchValue}
+          onValueChange={onSearchChange}
+        />
+      )}
       <OptionsBox role="menubar" tabIndex="-1">
         {options.length > 0 ? (
           <InfiniteScroll
@@ -67,7 +78,9 @@ const SingleColumnSelect = ({
                       hoverIndicator="light-5"
                       selected={allSelected}
                       plain
-                      onClick={() => setValues(allSelected ? [] : options)}
+                      onClick={() => setValues(allSelected ?
+                        [] : options.map((item, ind) => optionValue(ind)))
+                      }
                     >
                       <OptionWithCheckControl
                         selected={allSelected}

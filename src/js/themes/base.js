@@ -841,6 +841,92 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // colors: [] || colors: ['graph-0', 'graph-1', 'graph-2', 'graph-3'],
       // extend: undefined,
     },
+    multiselect: {
+      checkbox: {
+        box: {
+          margin: {
+            horizontal: 'medium',
+            // extend: undefined,
+          },
+        },
+        checkmark: {
+          size: `${baseSpacing}px`,
+          color: 'white',
+        },
+        check: {
+          height: `${baseSpacing}px`,
+          width: `${baseSpacing}px`,
+          margin: 'auto',
+          round: 'xsmall',
+          align: 'center',
+          active: {
+            background: 'accent-3',
+            border: 'light-6',
+          },
+        },
+      },
+      chips: {
+        wrapper: {
+          pad: 'medium',
+          direction: 'row',
+          // extend: undefined,
+        },
+        option: {
+          background: 'light-3',
+          round: 'small',
+          pad: {
+            vertical: 'small',
+            horizontal: 'medium',
+          },
+          margin: 'small',
+          direction: 'row',
+          align: 'center',
+        },
+        label: {
+          color: 'dark-3',
+          size: 'medium',
+          weight: 600,
+          margin: {
+            right: 'small',
+          },
+        },
+        icon: {
+          size: 'small',
+          color: 'dark-3',
+        },
+        clear: {
+          color: 'accent-2',
+          size: 'small',
+        },
+      },
+      controls: {
+        wrapper: {
+          pad: 'medium',
+          direction: 'row',
+          // extend: undefined,
+        },
+        button: {
+          margin: 'small',
+        },
+      },
+      searchbox: {
+        container: {
+          height: 'xxsmall',
+          direction: 'row',
+          align: 'center',
+          background: 'light-2',
+          pad: { right: 'medium', vertical: 'small' },
+        },
+        placeholder: {
+          color: 'dark-5',
+          size: 'medium',
+        },
+        icon: {
+          size: 'small',
+          color: 'dark-3',
+        },
+      },
+    },
     paragraph: {
       small: { ...fontSizing(-1) },
       medium: { ...fontSizing(0) },
@@ -927,75 +1013,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       // searchInput: undefined,
       step: 20,
-      custom: {
-        checkbox: {
-          box: {
-            margin: {
-              horizontal: 'medium',
-              // extend: undefined,
-            },
-          },
-          checkmark: {
-            size: `${baseSpacing}px`,
-            color: 'white',
-          },
-          check: {
-            height: `${baseSpacing}px`,
-            width: `${baseSpacing}px`,
-            margin: 'auto',
-            round: 'xsmall',
-            align: 'center',
-            active: {
-              background: 'accent-3',
-              border: 'light-6',
-            },
-          },
-        },
-        chips: {
-          wrapper: {
-            pad: 'medium',
-            direction: 'row',
-            // extend: undefined,
-          },
-          option: {
-            background: 'light-3',
-            round: 'small',
-            pad: {
-              vertical: 'small',
-              horizontal: 'medium',
-            },
-            margin: 'small',
-            direction: 'row',
-            align: 'center',
-          },
-          label: {
-            color: 'dark-3',
-            size: 'medium',
-            weight: 600,
-            margin: {
-              right: 'small',
-            },
-          },
-          icon: {
-            size: 'small',
-            color: 'dark-3',
-          },
-          clear: {
-            color: 'accent-2',
-            size: 'small',
-          },
-        },
-        controls: {
-          wrapper: {
-            pad: 'medium',
-            direction: 'row',
-            // extend: undefined,
-          },
-          button: {
-            margin: 'small',
-          },
-        },
-      },
     },
     tab: {
       active: {

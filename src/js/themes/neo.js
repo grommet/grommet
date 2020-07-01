@@ -911,6 +911,23 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           margin: 'small',
         },
       },
+      searchbox: {
+        container: {
+          height: 'xxsmall',
+          direction: 'row',
+          align: 'center',
+          background: 'light-2',
+          pad: { right: 'medium', vertical: 'small' },
+        },
+        placeholder: {
+          color: 'dark-5',
+          size: 'medium',
+        },
+        icon: {
+          size: 'small',
+          color: 'dark-3',
+        },
+      },
     },
     paragraph: {
       small: { ...fontSizing(-1) },
