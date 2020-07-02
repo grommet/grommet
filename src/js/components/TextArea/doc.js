@@ -14,7 +14,8 @@ export const doc = TextArea => {
 
   DocumentedTextArea.propTypes = {
     a11yTitle: PropTypes.string.description(
-      'Custom title to be used by screen readers.',
+      `Custom label to be used by screen readers.
+      When provided, an aria-label will be added to the element.`,
     ),
     id: PropTypes.string.description('The id attribute of the textarea.'),
     fill: PropTypes.bool
