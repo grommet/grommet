@@ -24,9 +24,11 @@ export const doc = DateInput => {
       PropTypes.string,
       PropTypes.arrayOf(PropTypes.string),
     ]).description('The default date or date range value in ISO8601 format.'),
-    dropProps: PropTypes.shape({}).description(
-      'Any properties to pass on to the underlying Drop when not inline.',
-    ),
+    dropProps: PropTypes.shape({})
+      .description(
+        'Any properties to pass on to the underlying Drop when not inline.',
+      )
+      .defaultValue({ align: { top: 'bottom', left: 'left' } }),
     format: PropTypes.string.description(
       `The date format to use. If not specified, the date value will not
       be displayed as a text string and the user will not be able to enter
@@ -44,9 +46,13 @@ export const doc = DateInput => {
       `Any properties to pass on to the underlying MaskedInput
       when there is a format.`,
     ),
-    name: PropTypes.string.description('The name of the input.'),
+    name: PropTypes.string.description(
+      `The name of the input.
+      This property is required when used within FormField.`,
+    ),
     onChange: PropTypes.func.description(
-      'Function that will be called when the user types or selects a date.',
+      `Function that will be called when the user types or selects a date.
+      The updated value will be available via 'event.value'.`,
     ),
     value: PropTypes.oneOfType([
       PropTypes.string,

@@ -7,7 +7,7 @@ import { grommet } from 'grommet/themes';
 const Example = () => {
   const [value, setValue] = React.useState('');
   const onChange = event => {
-    const nextValue = event.target.value;
+    const nextValue = event.value;
     console.log('onChange', nextValue);
     setValue(nextValue);
   };

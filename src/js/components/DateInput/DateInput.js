@@ -1,10 +1,4 @@
-import React, {
-  forwardRef,
-  useContext,
-  // useEffect,
-  useMemo,
-  useState,
-} from 'react';
+import React, { forwardRef, useContext, useMemo, useState } from 'react';
 import { Calendar as CalendarIcon } from 'grommet-icons';
 import { Box } from '../Box';
 import { Calendar } from '../Calendar';
@@ -25,10 +19,11 @@ const DateInput = forwardRef(
       dropProps, // when inline isn't true
       format,
       id,
-      inline,
+      inline = false,
       inputProps, // for MaskedInput, when format is specified
       name,
       onChange,
+      onFocus,
       value: valueArg,
       ...rest
     },
@@ -62,7 +57,7 @@ const DateInput = forwardRef(
       schema ? valueToText(value, schema) : undefined,
     );
 
-    // when format and not inline, wether to show the Calendar in a Drop
+    // when format and not inline, whether to show the Calendar in a Drop
     const [open, setOpen] = useState();
 
     const range = Array.isArray(value);
@@ -139,7 +134,10 @@ const DateInput = forwardRef(
               }
             }
           }}
-          onFocus={() => setOpen(true)}
+          onFocus={event => {
+            setOpen(true);
+            if (onFocus) onFocus(event);
+          }}
         />
       </FormContext.Provider>
     );

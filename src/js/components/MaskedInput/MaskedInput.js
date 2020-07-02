@@ -124,6 +124,7 @@ const dropAlign = { top: 'bottom', left: 'left' };
 const MaskedInput = forwardRef(
   (
     {
+      a11yTitle,
       focus: focusProp,
       icon,
       id,
@@ -323,6 +324,7 @@ const MaskedInput = forwardRef(
         >
           <StyledMaskedInput
             ref={inputRef}
+            aria-label={a11yTitle}
             id={id}
             name={name}
             autoComplete="off"

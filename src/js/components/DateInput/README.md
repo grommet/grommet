@@ -43,7 +43,12 @@ string
 
 **dropProps**
 
-Any properties to pass on to the underlying Drop when not inline.
+Any properties to pass on to the underlying Drop when not inline. Defaults to `{
+  "align": {
+    "top": "bottom",
+    "left": "left"
+  }
+}`.
 
 ```
 {
@@ -93,6 +98,7 @@ Any properties to pass on to the underlying MaskedInput
 **name**
 
 The name of the input.
+      This property is required when used within FormField.
 
 ```
 string
@@ -101,6 +107,7 @@ string
 **onChange**
 
 Function that will be called when the user types or selects a date.
+      The updated value will be available via 'event.value'.
 
 ```
 function
