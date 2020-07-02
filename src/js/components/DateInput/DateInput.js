@@ -106,6 +106,7 @@ const DateInput = forwardRef(
 
     const input = (
       <FormContext.Provider
+        key="input"
         // don't let MaskedInput drive the Form
         value={{ useFormInput: (_, val) => [val, () => {}] }}
       >
@@ -151,21 +152,22 @@ const DateInput = forwardRef(
       );
     }
 
-    return (
-      <>
-        {input}
-        {open && (
-          <Drop
-            target={ref.current}
-            align={{ top: 'bottom', left: 'left', ...dropProps }}
-            onEsc={() => setOpen(false)}
-            onClickOutside={() => setOpen(false)}
-          >
-            {calendar}
-          </Drop>
-        )}
-      </>
-    );
+    if (open) {
+      return [
+        input,
+        <Drop
+          key="drop"
+          target={ref.current}
+          align={{ top: 'bottom', left: 'left', ...dropProps }}
+          onEsc={() => setOpen(false)}
+          onClickOutside={() => setOpen(false)}
+        >
+          {calendar}
+        </Drop>,
+      ];
+    }
+
+    return input;
   },
 );
 
