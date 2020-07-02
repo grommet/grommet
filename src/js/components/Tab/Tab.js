@@ -32,12 +32,7 @@ const Tab = forwardRef(
     useEffect(() => {
       if (active) {
         setActiveContent(children);
-        let activeTitle;
-        if (typeof title === 'string') {
-          activeTitle = title;
-        } else {
-          activeTitle = activeIndex + 1;
-        }
+       const activeTitle = typeof title === 'string' ? title : activeIndex + 1;
         setActiveTitle(activeTitle);
       }
     }, [
