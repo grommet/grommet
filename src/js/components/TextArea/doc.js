@@ -13,6 +13,9 @@ export const doc = TextArea => {
     .intrinsicElement('textarea');
 
   DocumentedTextArea.propTypes = {
+    a11yTitle: PropTypes.string.description(
+      'Custom title to be used by screen readers.',
+    ),
     id: PropTypes.string.description('The id attribute of the textarea.'),
     fill: PropTypes.bool
       .description('Whether the width and height should fill the container.')

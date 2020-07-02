@@ -6252,6 +6252,11 @@ currently active tab changes.",
     "name": "TextArea",
     "properties": Array [
       Object {
+        "description": "Custom title to be used by screen readers.",
+        "format": "string",
+        "name": "a11yTitle",
+      },
+      Object {
         "description": "The id attribute of the textarea.",
         "format": "string",
         "name": "id",

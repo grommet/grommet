@@ -11,6 +11,14 @@ import { TextArea } from 'grommet';
 
 ## Properties
 
+**a11yTitle**
+
+Custom title to be used by screen readers.
+
+```
+string
+```
+
 **id**
 
 The id attribute of the textarea.
