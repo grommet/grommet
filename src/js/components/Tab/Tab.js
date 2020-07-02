@@ -6,8 +6,8 @@ import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
-import { normalizeColor } from '../../utils';
 import { TabsContext } from '../Tabs/TabsContext';
+import { normalizeColor } from '../../utils';
 
 import { StyledTab } from './StyledTab';
 
