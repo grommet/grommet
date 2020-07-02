@@ -840,7 +840,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
       icons: {
         down: FormDown,
-        up: FormDown,
+        up: undefined,
         // color: { dark: undefined, light: undefined },
       },
     },

@@ -133,7 +133,7 @@ export const themeDoc = {
   'menu.icons.up': {
     description: `The icon to show to the right of the label when menu is 
     opened.`,
-    type: 'React.Element',
-    defaultValue: '<FormDown />',
+    type: 'undefined | React.Element',
+    defaultValue: 'undefined',
   },
 };

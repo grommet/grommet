@@ -94,7 +94,8 @@ const Menu = forwardRef((props, ref) => {
   const [activeItemIndex, setActiveItemIndex] = useState(constants.none);
   const [isOpen, setOpen] = useState(open || false);
 
-  const MenuIcon = isOpen ? theme.menu.icons.up : theme.menu.icons.down;
+  const MenuIcon =
+    isOpen && theme.menu.icons.up ? theme.menu.icons.up : theme.menu.icons.down;
 
   const onDropClose = useCallback(() => {
     setActiveItemIndex(constants.none);
