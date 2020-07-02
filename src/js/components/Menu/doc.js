@@ -126,7 +126,7 @@ export const themeDoc = {
   },
   'menu.icons.down': {
     description: `The icon to show to the right of the label when menu is 
-    closed`,
+    closed.`,
     type: 'React.Element',
     defaultValue: '<FormDown />',
   },
