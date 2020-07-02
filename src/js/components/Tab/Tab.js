@@ -19,9 +19,9 @@ const Tab = forwardRef(
     const {
       active,
       activeIndex,
+      onActivate,
       setActiveContent,
       setActiveTitle,
-      onActivate,
     } = useContext(TabsContext);
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const [over, setOver] = useState(undefined);
