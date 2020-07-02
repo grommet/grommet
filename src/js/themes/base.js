@@ -520,10 +520,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       heading: { level: '4' }, // level ranges from 1-6
     },
     card: {
-      container: {},
+      container: {
+        round: 'small',
+        elevation: 'small',
+      },
       header: {},
       body: {},
-      footer: {},
+      footer: {
+        background: 'background-contrast',
+      },
     },
     carousel: {
       icons: {
