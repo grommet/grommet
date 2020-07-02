@@ -20,14 +20,15 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 var TextArea = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
-  var fill = _ref.fill,
+  var a11yTitle = _ref.a11yTitle,
+      fill = _ref.fill,
       name = _ref.name,
       _onBlur = _ref.onBlur,
       _onChange = _ref.onChange,
       _onFocus = _ref.onFocus,
       onKeyDown = _ref.onKeyDown,
       valueProp = _ref.value,
-      rest = _objectWithoutPropertiesLoose(_ref, ["fill", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "value"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "fill", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "value"]);
 
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
 
@@ -48,6 +49,7 @@ var TextArea = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     },
     onKeyDown: onKeyDown
   }, /*#__PURE__*/_react["default"].createElement(_StyledTextArea.StyledTextArea, _extends({
+    "aria-label": a11yTitle,
     ref: ref,
     name: name,
     fillArg: fill,

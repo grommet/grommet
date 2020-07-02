@@ -12,6 +12,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 var doc = function doc(TextArea) {
   var DocumentedTextArea = (0, _reactDesc.describe)(TextArea).availableAt((0, _utils.getAvailableAtBadge)('TextArea')).description('A control to input multiple lines of text.').usage("import { TextArea } from 'grommet';\n<TextArea id='item' name='item' />").intrinsicElement('textarea');
   DocumentedTextArea.propTypes = {
+    a11yTitle: _reactDesc.PropTypes.string.description("Custom label to be used by screen readers.\n      When provided, an aria-label will be added to the element."),
     id: _reactDesc.PropTypes.string.description('The id attribute of the textarea.'),
     fill: _reactDesc.PropTypes.bool.description('Whether the width and height should fill the container.').defaultValue(false),
     focusIndicator: _reactDesc.PropTypes.bool.description('Whether the plain textarea should receive a focus outline.'),

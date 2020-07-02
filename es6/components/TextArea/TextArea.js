@@ -7,14 +7,15 @@ import { FormContext } from '../Form/FormContext';
 import { Keyboard } from '../Keyboard';
 import { StyledTextArea } from './StyledTextArea';
 var TextArea = /*#__PURE__*/forwardRef(function (_ref, ref) {
-  var fill = _ref.fill,
+  var a11yTitle = _ref.a11yTitle,
+      fill = _ref.fill,
       name = _ref.name,
       _onBlur = _ref.onBlur,
       _onChange = _ref.onChange,
       _onFocus = _ref.onFocus,
       onKeyDown = _ref.onKeyDown,
       valueProp = _ref.value,
-      rest = _objectWithoutPropertiesLoose(_ref, ["fill", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "value"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "fill", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "value"]);
 
   var formContext = useContext(FormContext);
 
@@ -35,6 +36,7 @@ var TextArea = /*#__PURE__*/forwardRef(function (_ref, ref) {
     },
     onKeyDown: onKeyDown
   }, /*#__PURE__*/React.createElement(StyledTextArea, _extends({
+    "aria-label": a11yTitle,
     ref: ref,
     name: name,
     fillArg: fill,

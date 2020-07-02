@@ -5,6 +5,7 @@ import { getAvailableAtBadge, themeDocUtils } from '../../utils';
 export var doc = function doc(TextArea) {
   var DocumentedTextArea = describe(TextArea).availableAt(getAvailableAtBadge('TextArea')).description('A control to input multiple lines of text.').usage("import { TextArea } from 'grommet';\n<TextArea id='item' name='item' />").intrinsicElement('textarea');
   DocumentedTextArea.propTypes = {
+    a11yTitle: PropTypes.string.description("Custom label to be used by screen readers.\n      When provided, an aria-label will be added to the element."),
     id: PropTypes.string.description('The id attribute of the textarea.'),
     fill: PropTypes.bool.description('Whether the width and height should fill the container.').defaultValue(false),
     focusIndicator: PropTypes.bool.description('Whether the plain textarea should receive a focus outline.'),
