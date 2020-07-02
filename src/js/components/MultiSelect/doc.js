@@ -2,13 +2,14 @@ import { describe, PropTypes } from 'react-desc';
 
 import { genericProps, getAvailableAtBadge } from '../../utils';
 
-export const doc = Select => {
-  const DocumentedSelect = describe(Select)
-    .availableAt(getAvailableAtBadge('Select'))
-    .description('A control to select a value, with optional search.')
+export const doc = MultiSelect => {
+  const DocumentedSelect = describe(MultiSelect)
+    .availableAt(getAvailableAtBadge('MultiSelect'))
+    .description(
+      'A control to select multiple values, with optional customization.')
     .usage(
-      `import { Select } from 'mnet-ui-base';
-<Select />`,
+      `import { MultiSelect } from 'mnet-ui-base';
+      <MultiSelect />`,
     );
   // We don't include svg due to a collision on the values property
   // .intrinsicElement('select');
@@ -221,8 +222,21 @@ export const doc = Select => {
       .description(
         `Render custom bottom panel component below the option list`,
       ),
-      renderCustomContent: PropTypes.func
+    renderCustomContent: PropTypes.func
       .description(`Render custom select component`),
+    width: PropTypes.string.description(`Width for the multiselect dropdown`)
+      .defaultValue('auto'),
+    onValueChange: PropTypes.func.description(
+      'Function that will be called when the user selects an option.',
+    ),
+    layout: PropTypes.oneOf(['single-column', 'double-column'])
+      .description(`Column layout for custom multiselect dropdown`),
+    withOptionChips: PropTypes.bool
+      .description(`Control to show the selected option chips`)
+      .defaultValue(false),
+    withUpdateCancelButtons: PropTypes.bool.description(
+      `Control to show the control buttons with OK and Cancel values`,
+      ).defaultValue(false),
   };
 
   return DocumentedSelect;
