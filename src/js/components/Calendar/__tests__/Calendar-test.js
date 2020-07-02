@@ -1,8 +1,12 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { cleanup, fireEvent, render } from '@testing-library/react';
-import 'jest-styled-components';
 
+import 'jest-styled-components';
+import 'jest-axe/extend-expect';
+import 'regenerator-runtime/runtime';
+
+// import { axe } from 'jest-axe';
+import { cleanup, fireEvent, render, act } from '@testing-library/react';
 import { FormNextLink, FormPreviousLink } from 'grommet-icons';
 import { Box, Button, Calendar, Grommet, Text } from '../..';
 
@@ -148,5 +152,209 @@ describe('Calendar', () => {
     fireEvent.click(getByText('17'));
     expect(onSelect).toBeCalledWith(expect.stringMatching(/^2018-01-17T/));
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('first day sunday week monday', () => {
+    // the first day of the month is on Sunday but the
+    // user wants the week to start on Monday
+    const { container } = render(
+      <Grommet>
+        <Calendar
+          firstDayOfWeek={1}
+          date="2020-03-01T00:00:00-08:00"
+          animate={false}
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('animate', () => {
+    jest.useFakeTimers();
+    const { container, getByLabelText } = render(
+      <Grommet>
+        <Calendar bounds={['2017-10-08', '2018-12-13']} date={DATE} />
+      </Grommet>,
+    );
+    fireEvent.click(getByLabelText('December 2017'));
+    act(() => {
+      jest.advanceTimersByTime(400);
+    });
+    fireEvent.click(getByLabelText('January 2018'));
+    act(() => {
+      jest.advanceTimersByTime(400);
+    });
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('onEnter', async () => {
+    const onSelect = jest.fn();
+    const { container, getByText } = render(
+      <Grommet>
+        <Calendar
+          bounds={['2018-01-01', '2018-01-31']}
+          date={DATE}
+          onSelect={onSelect}
+          animate={false}
+        />
+      </Grommet>,
+    );
+    fireEvent.mouseOver(getByText('15'));
+    fireEvent.click(getByText('15'));
+    fireEvent.keyDown(getByText('15'), {
+      key: 'Enter',
+      keyCode: 13,
+      which: 13,
+    });
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('onKeyUp', () => {
+    const onSelect = jest.fn();
+    const { container, getByText } = render(
+      <Grommet>
+        <Calendar
+          bounds={['2018-01-01', '2018-01-31']}
+          date={DATE}
+          onSelect={onSelect}
+          animate={false}
+        />
+      </Grommet>,
+    );
+    fireEvent.mouseOver(getByText('15'));
+    fireEvent.click(getByText('15'));
+    fireEvent.keyDown(getByText('15'), {
+      key: 'ArrowUp',
+      keyCode: 38,
+      which: 38,
+    });
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('onKeyDown', () => {
+    const onSelect = jest.fn();
+    const { container, getByText } = render(
+      <Grommet>
+        <Calendar
+          bounds={['2018-01-01', '2018-01-31']}
+          date={DATE}
+          onSelect={onSelect}
+          animate={false}
+        />
+      </Grommet>,
+    );
+    fireEvent.mouseOver(getByText('15'));
+    fireEvent.click(getByText('15'));
+    fireEvent.keyDown(getByText('15'), {
+      key: 'ArrowDown',
+      keyCode: 40,
+      which: 40,
+    });
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('onKeyLeft', () => {
+    const onSelect = jest.fn();
+    const { container, getByText } = render(
+      <Grommet>
+        <Calendar
+          bounds={['2018-01-01', '2018-01-31']}
+          date={DATE}
+          onSelect={onSelect}
+          animate={false}
+        />
+      </Grommet>,
+    );
+    fireEvent.mouseOver(getByText('15'));
+    fireEvent.click(getByText('15'));
+    fireEvent.keyDown(getByText('15'), {
+      key: 'ArrowLeft',
+      keyCode: 37,
+      which: 37,
+    });
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('onKeyRight', () => {
+    const onSelect = jest.fn();
+    const { container, getByText } = render(
+      <Grommet>
+        <Calendar
+          bounds={['2018-01-01', '2018-01-31']}
+          date={DATE}
+          onSelect={onSelect}
+          animate={false}
+        />
+      </Grommet>,
+    );
+    fireEvent.mouseOver(getByText('15'));
+    fireEvent.click(getByText('15'));
+    fireEvent.keyDown(getByText('15'), {
+      key: 'ArrowRight',
+      keyCode: 39,
+      which: 39,
+    });
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('select date with range', () => {
+    const onSelect = jest.fn();
+    const { getByText } = render(
+      <Grommet>
+        <Calendar date={DATE} onSelect={onSelect} range animate={false} />
+      </Grommet>,
+    );
+    fireEvent.click(getByText('11'));
+    expect(onSelect).toBeCalledWith([
+      [
+        expect.stringMatching(/^2018-01-11T/),
+        expect.stringMatching(/^2018-01-15T/),
+      ],
+    ]);
+    fireEvent.click(getByText('20'));
+    expect(onSelect).toHaveBeenNthCalledWith(2, [
+      [
+        expect.stringMatching(/^2018-01-11T/),
+        expect.stringMatching(/^2018-01-20T/),
+      ],
+    ]);
+  });
+
+  test('select date with range not date set', () => {
+    const onSelect = jest.fn();
+    const { getByText } = render(
+      <Grommet>
+        <Calendar
+          reference="2020-07-01T00:00:00-08:00"
+          onSelect={onSelect}
+          range
+          animate={false}
+        />
+      </Grommet>,
+    );
+    fireEvent.click(getByText('17'));
+    fireEvent.click(getByText('20'));
+    expect(onSelect).toBeCalledWith([
+      [
+        expect.stringMatching(/^2020-07-17T/),
+        expect.stringMatching(/^2020-07-20T/),
+      ],
+    ]);
+  });
+
+  test('mouse events', () => {
+    const onSelect = jest.fn();
+    const { container, getByText } = render(
+      <Grommet>
+        <Calendar date={DATE} onSelect={onSelect} animate={false} />
+      </Grommet>,
+    );
+    fireEvent.mouseOver(getByText('15'));
+    // date 15 should be active
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.mouseOut(getByText('15'));
+    getByText('15').focus();
+    // fireEvent.blur(getByText('15'));
   });
 });
