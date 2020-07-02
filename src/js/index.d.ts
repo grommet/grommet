@@ -13,6 +13,7 @@ export * from './components/Clock';
 export * from './components/Collapsible';
 export * from './components/DataChart';
 export * from './components/DataTable';
+export * from './components/DateInput';
 export * from './components/Diagram';
 export * from './components/Distribution';
 export * from './components/Drop';
