@@ -7,6 +7,7 @@ import 'regenerator-runtime/runtime';
 
 import { cleanup, render, fireEvent } from '@testing-library/react';
 import { axe } from 'jest-axe';
+
 import { Grommet } from '../../Grommet';
 import { Form } from '..';
 import { FormField } from '../../FormField';
@@ -20,7 +21,7 @@ import { Box } from '../../Box';
 describe('Form accessibility', () => {
   afterEach(cleanup);
 
-  test('should have no accessibility violations', async () => {
+  test('TextInput in Form should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>
         <Form>
@@ -33,7 +34,7 @@ describe('Form accessibility', () => {
     expect(results).toHaveNoViolations();
   });
 
-  test('form with select accessibility', async () => {
+  test('Select in Form should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>
         <Form>
@@ -48,7 +49,7 @@ describe('Form accessibility', () => {
     expect(results).toHaveNoViolations();
   });
 
-  test('form with checkbox accessiility', async () => {
+  test('CheckBox in Form should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>
         <Form>
@@ -63,7 +64,7 @@ describe('Form accessibility', () => {
     expect(results).toHaveNoViolations();
   });
 
-  test('form with textinput accessiility', async () => {
+  test('FormField with TextInput child should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>
         <Form>
@@ -78,7 +79,7 @@ describe('Form accessibility', () => {
     expect(results).toHaveNoViolations();
   });
 
-  test('box with textinput accessibility', async () => {
+  test('Box with TextInput in Form should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>
         <Form>
@@ -421,7 +422,12 @@ describe('Form uncontrolled', () => {
           />
 
           <FormField onFocus={onFocus} label="Email" name="email" required>
-            <TextInput name="email" type="email" placeholder="email" />
+            <TextInput
+              a11yTitle="test"
+              name="email"
+              type="email"
+              placeholder="email"
+            />
           </FormField>
           <Button onFocus={onFocus} label="submit" type="submit" />
         </Form>
@@ -467,7 +473,7 @@ describe('Form uncontrolled', () => {
     const { getByPlaceholderText, getByText, container } = render(
       <Form onSubmit={onSubmit}>
         <FormField>
-          <TextInput placeholder="test input" />
+          <TextInput a11yTitle="test" placeholder="test input" />
         </FormField>
         <Button type="submit" primary label="Submit" />
       </Form>,
@@ -487,7 +493,12 @@ describe('Form uncontrolled', () => {
     const { getByPlaceholderText, getByText, queryByText } = render(
       <Grommet>
         <Form onChange={onChange}>
-          <FormField name="test" required placeholder="test input" />
+          <FormField
+            name="test"
+            required
+            placeholder="test input"
+            a11yTitle="test"
+          />
           <Button type="reset" primary label="Reset" />
         </Form>
       </Grommet>,
@@ -539,6 +550,7 @@ describe('Form uncontrolled', () => {
               status: 'info',
             }}
             placeholder="test input"
+            a11yTitle="test"
           />
           <Button type="submit" primary label="Submit" />
         </Form>

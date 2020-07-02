@@ -1428,6 +1428,7 @@ exports[`Form controlled form with select 1`] = `
                 class="c6"
               >
                 <input
+                  aria-label="select form, medium"
                   autocomplete="off"
                   class="c7 c8"
                   name="select"
@@ -1458,25 +1459,6 @@ exports[`Form controlled form with select 1`] = `
             </div>
           </div>
         </button>
-      </div>
-    </div>
-    <div
-      class="c1 "
-    >
-      <div
-        class="c2 "
-      >
-        <div
-          class="c6"
-        >
-          <input
-            autocomplete="off"
-            class="c7"
-            name="test"
-            placeholder="test input 2"
-            value=""
-          />
-        </div>
       </div>
     </div>
   </form>

@@ -239,7 +239,12 @@ describe('Form controlled', () => {
             value={value}
             onSubmit={onSubmit}
           >
-            <FormField name="test" required placeholder="test input" />
+            <FormField
+              a11yTitle="test"
+              name="test"
+              required
+              placeholder="test input"
+            />
             <Button type="reset" primary label="Reset" />
           </Form>
         </Grommet>
@@ -262,6 +267,7 @@ describe('Form controlled', () => {
           <Form>
             <FormField>
               <Select
+                a11yTitle="select form"
                 name="select"
                 placeholder="test input"
                 options={['small', 'medium', 'large']}
@@ -269,7 +275,6 @@ describe('Form controlled', () => {
                 onChange={({ option }) => setValue(option)}
               />
             </FormField>
-            <FormField name="test" required placeholder="test input 2" />
           </Form>
         </Grommet>
       );
