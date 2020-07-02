@@ -16,7 +16,7 @@ const Example = () => {
         <Form
           value={value}
           onChange={onChange}
-          onSubmit={() => console.log(value)}
+          onSubmit={({ value: nextValue }) => console.log(nextValue)}
         >
           <FormField name="value" label="value" required>
             <DateInput name="value" format="mm/dd/yyyy" />
