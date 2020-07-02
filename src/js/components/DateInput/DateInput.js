@@ -5,6 +5,7 @@ import { Calendar } from '../Calendar';
 import { Drop } from '../Drop';
 import { DropButton } from '../DropButton';
 import { FormContext } from '../Form';
+import { Keyboard } from '../Keyboard';
 import { MaskedInput } from '../MaskedInput';
 import { useForwardedRef } from '../../utils';
 import { formatToSchema, valueToText, textToValue } from './utils';
@@ -110,36 +111,38 @@ const DateInput = forwardRef(
         // don't let MaskedInput drive the Form
         value={{ useFormInput: (_, val) => [val, () => {}] }}
       >
-        <MaskedInput
-          ref={ref}
-          name={name}
-          icon={<CalendarIcon />}
-          reverse
-          disabled={disabled}
-          mask={mask}
-          {...inputProps}
-          {...rest}
-          value={textValue}
-          onChange={event => {
-            const nextTextValue = event.target.value;
-            setTextValue(nextTextValue);
-            const nextValue = textToValue(nextTextValue, schema);
-            if (nextValue) {
-              // valid value
-              setValue(nextValue);
-              if (onChange) {
-                event.persist(); // extract from React synthetic event pool
-                const adjustedEvent = event;
-                adjustedEvent.value = nextValue;
-                onChange(adjustedEvent);
+        <Keyboard onEsc={open ? () => setOpen(false) : undefined}>
+          <MaskedInput
+            ref={ref}
+            name={name}
+            icon={<CalendarIcon />}
+            reverse
+            disabled={disabled}
+            mask={mask}
+            {...inputProps}
+            {...rest}
+            value={textValue}
+            onChange={event => {
+              const nextTextValue = event.target.value;
+              setTextValue(nextTextValue);
+              const nextValue = textToValue(nextTextValue, schema);
+              if (nextValue) {
+                // valid value
+                setValue(nextValue);
+                if (onChange) {
+                  event.persist(); // extract from React synthetic event pool
+                  const adjustedEvent = event;
+                  adjustedEvent.value = nextValue;
+                  onChange(adjustedEvent);
+                }
               }
-            }
-          }}
-          onFocus={event => {
-            setOpen(true);
-            if (onFocus) onFocus(event);
-          }}
-        />
+            }}
+            onFocus={event => {
+              setOpen(true);
+              if (onFocus) onFocus(event);
+            }}
+          />
+        </Keyboard>
       </FormContext.Provider>
     );
 
