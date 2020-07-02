@@ -10,7 +10,7 @@ const customTheme = deepMerge(grommet, {
   menu: {
     icons: {
       down: HamburgerMenu,
-      open: Close,
+      up: Close,
     },
   },
 });

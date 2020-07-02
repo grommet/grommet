@@ -1455,12 +1455,12 @@ exports[`DataChart xAxis dates 1`] = `
       <div
         className="c6"
       >
-        08:04:01 AM
+        8:04:01 AM
       </div>
       <div
         className="c6"
       >
-        08:04:04 AM
+        8:04:04 AM
       </div>
     </div>
   </div>
@@ -1929,12 +1929,12 @@ exports[`DataChart xAxis dates 1`] = `
       <div
         className="c6"
       >
-        May 1
+        M05 1
       </div>
       <div
         className="c6"
       >
-        May 4
+        M05 4
       </div>
     </div>
   </div>
@@ -2003,22 +2003,22 @@ exports[`DataChart xAxis dates 1`] = `
       <div
         className="c7"
       >
-        5/1
+        05-01
       </div>
       <div
         className="c7"
       >
-        5/2
+        05-02
       </div>
       <div
         className="c7"
       >
-        5/3
+        05-03
       </div>
       <div
         className="c7"
       >
-        5/4
+        05-04
       </div>
     </div>
   </div>
@@ -2087,12 +2087,12 @@ exports[`DataChart xAxis dates 1`] = `
       <div
         className="c6"
       >
-        January
+        M01
       </div>
       <div
         className="c6"
       >
-        April
+        M04
       </div>
     </div>
   </div>
@@ -2161,22 +2161,22 @@ exports[`DataChart xAxis dates 1`] = `
       <div
         className="c7"
       >
-        Jan
+        M01
       </div>
       <div
         className="c7"
       >
-        Feb
+        M02
       </div>
       <div
         className="c7"
       >
-        Mar
+        M03
       </div>
       <div
         className="c7"
       >
-        Apr
+        M04
       </div>
     </div>
   </div>

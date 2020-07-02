@@ -10554,7 +10554,7 @@ Defaults to
 <FormDown />
 \`\`\`
 
-**menu.icons.open**
+**menu.icons.up**
 
 The icon to show to the right of the label when menu is 
     opened Expects \`React.Element\`.
