@@ -53,7 +53,6 @@ exports[`TextArea Event tests onBlur 1`] = `
 >
   <textarea
     class="c1"
-    id="item"
     name="item"
     placeholder="item"
   />
@@ -113,7 +112,6 @@ exports[`TextArea Event tests onChange 1`] = `
 >
   <textarea
     class="c1"
-    id="item"
     name="item"
     placeholder="item"
   />
@@ -190,7 +188,6 @@ exports[`TextArea Event tests onFocus 1`] = `
 >
   <textarea
     class="c1"
-    id="item"
     name="item"
     placeholder="item"
   />

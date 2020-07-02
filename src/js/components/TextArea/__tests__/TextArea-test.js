@@ -2,11 +2,26 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { cleanup, fireEvent, render } from '@testing-library/react';
 import 'jest-styled-components';
+// import { axe } from 'jest-axe';
+// import 'jest-axe/extend-expect';
+// import 'regenerator-runtime/runtime';
 
 import { Grommet } from '../../Grommet';
 import { TextArea } from '..';
 
 describe('TextArea', () => {
+  afterEach(cleanup);
+
+  // test('should not have accessibility violations', async () => {
+  //   const { container } = render(
+  //     <Grommet>
+  //       <TextArea a11yTitle="test" id="item" name="item" />
+  //     </Grommet>,
+  //   );
+  //   const results = await axe(container);
+  //   expect(results).toHaveNoViolations();
+  // });
+
   test('basic', () => {
     const component = renderer.create(
       <Grommet>
@@ -153,48 +168,38 @@ describe('TextArea', () => {
       const onFocus = jest.fn();
       const { container, getByPlaceholderText } = render(
         <Grommet>
-          <TextArea
-            id="item"
-            name="item"
-            placeholder="item"
-            onFocus={onFocus}
-          />
+          <TextArea name="item" placeholder="item" onFocus={onFocus} />
         </Grommet>,
       );
       fireEvent.focus(getByPlaceholderText('item'));
       expect(container.firstChild).toMatchSnapshot();
-      expect(onFocus).toHaveBeenCalled();
+      expect(onFocus).toHaveBeenCalledTimes(1);
     });
 
     test('onChange', () => {
       const onChange = jest.fn();
       const { container, getByPlaceholderText } = render(
         <Grommet>
-          <TextArea
-            id="item"
-            name="item"
-            placeholder="item"
-            onChange={onChange}
-          />
+          <TextArea name="item" placeholder="item" onChange={onChange} />
         </Grommet>,
       );
       fireEvent.change(getByPlaceholderText('item'), {
         target: { value: 'o' },
       });
       expect(container.firstChild).toMatchSnapshot();
-      expect(onChange).toHaveBeenCalled();
+      expect(onChange).toHaveBeenCalledTimes(1);
     });
 
     test('onBlur', () => {
       const onBlur = jest.fn();
       const { container, getByPlaceholderText } = render(
         <Grommet>
-          <TextArea id="item" name="item" placeholder="item" onBlur={onBlur} />
+          <TextArea name="item" placeholder="item" onBlur={onBlur} />
         </Grommet>,
       );
       fireEvent.blur(getByPlaceholderText('item'));
       expect(container.firstChild).toMatchSnapshot();
-      expect(onBlur).toHaveBeenCalled();
+      expect(onBlur).toHaveBeenCalledTimes(1);
     });
   });
 });
