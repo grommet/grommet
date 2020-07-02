@@ -125,7 +125,14 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'menu.icons.down': {
-    description: 'The icon to show to the right of the label.',
+    description: `The icon to show to the right of the label when menu is 
+    closed`,
+    type: 'React.Element',
+    defaultValue: '<FormDown />',
+  },
+  'menu.icons.open': {
+    description: `The icon to show to the right of the label when menu is 
+    opened`,
     type: 'React.Element',
     defaultValue: '<FormDown />',
   },
