@@ -25,6 +25,7 @@ const Tabs = forwardRef(
     const { activeIndex: propsActiveIndex, onActive } = rest;
     const [activeIndex, setActiveIndex] = useState(rest.activeIndex || 0);
     const [activeContent, setActiveContent] = useState();
+    const [activeTitle, setActiveTitle] = useState();
 
     if (activeIndex !== propsActiveIndex && propsActiveIndex !== undefined) {
       setActiveIndex(propsActiveIndex);
@@ -44,7 +45,19 @@ const Tabs = forwardRef(
     delete rest.onActive;
     /* eslint-enable no-param-reassign */
 
-    const [activeTitle, setActiveTitle] = useState();
+    const tabs = React.Children.map(children, (child, index) => (
+      <TabsContext.Provider
+        value={{
+          activeIndex,
+          active: activeIndex === index,
+          onActivate: () => activateTab(index),
+          setActiveContent,
+          setActiveTitle,
+        }}
+      >
+        {child}
+      </TabsContext.Provider>
+    ));
 
     const tabsHeaderStyles = {};
     if (theme.tabs.header && theme.tabs.header.border) {
@@ -83,21 +96,7 @@ const Tabs = forwardRef(
           gap={theme.tabs.gap}
           {...tabsHeaderStyles}
         >
-          {React.Children.map(children, (child, index) => (
-            <TabsContext.Provider
-              // eslint-disable-next-line react/no-array-index-key
-              key={index}
-              value={{
-                activeIndex,
-                active: activeIndex === index,
-                onActivate: () => activateTab(index),
-                setActiveContent,
-                setActiveTitle,
-              }}
-            >
-              {child}
-            </TabsContext.Provider>
-          ))}
+          {tabs}
         </StyledTabsHeader>
         <StyledTabPanel
           flex={flex}
