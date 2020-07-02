@@ -34,6 +34,6 @@ const MenuCustomIcons = () => (
   </Grommet>
 );
 
-storiesOf('Menu', module).add('Menu with different icons', () => (
+storiesOf('Menu', module).add('Themed', () => (
   <MenuCustomIcons />
 ));
