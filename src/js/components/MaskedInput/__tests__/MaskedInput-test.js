@@ -341,4 +341,23 @@ describe('MaskedInput', () => {
     fireEvent.mouseOver(optionButton);
     expect(optionButton).toMatchSnapshot();
   });
+
+  test('with no mask', async () => {
+    const onChange = jest.fn(event => event.target.value);
+    const { getByTestId, container } = render(
+      <MaskedInput
+        data-testid="test-input"
+        plain
+        size="large"
+        id="item"
+        name="item"
+        onChange={onChange}
+      />,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.change(getByTestId('test-input'), { target: { value: 'aa' } });
+
+    expect(onChange).toHaveBeenCalled();
+    expect(onChange).toReturnWith('aa');
+  });
 });

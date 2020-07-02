@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 import {
   backgroundStyle,
+  disabledStyle,
   focusStyle,
   genericStyles,
   normalizeColor,
@@ -242,6 +243,8 @@ const StyledButtonKind = styled.button`
   text-align: ${props.align};
   `}
   ${props => props.hoverIndicator && hoverIndicatorStyle(props)}
+  ${props =>
+    props.disabled && disabledStyle(props.theme.button.disabled.opacity)}
   ${props =>
     props.focus && (!props.plain || props.focusIndicator) && focusStyle()}
   ${props =>

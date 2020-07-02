@@ -2175,6 +2175,7 @@ _self
 _blank
 _parent
 _top
+string
 \`\`\`
 
 **type**
@@ -11225,6 +11226,17 @@ input
 \`\`\`
 ## Theme
   
+**global.colors.control**
+
+The default color of the border surrounding 
+    the checked icon in RadioButton checked state. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: 'accent-1', light: 'brand'}
+\`\`\`
+
 **radioButton.border.color**
 
 The color of the border of the Radio Button. Expects \`string | { dark: string, light: string }\`.
@@ -14489,6 +14501,14 @@ import { TextInput } from 'grommet';
 
 ## Properties
 
+**a11yTitle**
+
+Custom title to be used by screen readers.
+
+\`\`\`
+string
+\`\`\`
+
 **dropAlign**
 
 How to align the drop. Defaults to \`{
@@ -15190,6 +15210,76 @@ Defaults to
 
 \`\`\`
 rgba(0, 0, 0, 0.7)
+\`\`\`
+
+**video.icons.closedCaption**
+
+The icon to use for the caption. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+<ClosedCaption />
+\`\`\`
+
+**video.icons.configure**
+
+The icon to use for the configuration action. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+<Actions />
+\`\`\`
+
+**video.icons.fullScreen**
+
+The icon to use for viewing the video in full screen. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+<Expand />
+\`\`\`
+
+**video.icons.pause**
+
+The icon to use for pausing the video. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+<Pause />
+\`\`\`
+
+**video.icons.play**
+
+The icon to use for playing the video. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+<Play />
+\`\`\`
+
+**video.icons.reduceVolume**
+
+The icon to use for the action of lowering the volume. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+<VolumeLow />
+\`\`\`
+
+**video.icons.volume**
+
+The icon to use for the action of raising the volume. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+<Volume />
 \`\`\`
 
 **video.scrubber.color**
