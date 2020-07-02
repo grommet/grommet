@@ -6,6 +6,8 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
 
+import { OptionsBox } from './StyledMultiSelect';
+
 const OptionChips = ({
   options,
   value,
@@ -28,7 +30,7 @@ const OptionChips = ({
     }, []);
 
   return(
-    <>
+    <OptionsBox>
       {Array.isArray(value) && value.length > 0 && (
         <OptionWrapper
           width={width}
@@ -58,7 +60,7 @@ const OptionChips = ({
           </Button>
         </OptionWrapper>
       )}
-    </>
+    </OptionsBox>
   )
 }
 
