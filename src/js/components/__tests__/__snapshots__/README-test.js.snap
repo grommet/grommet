@@ -4113,8 +4113,8 @@ string
 **point**
 
 When using a 'point' type, what shape the points should use.
-      If not specified, 'square' will be used if not 'round',
-      otherwise 'circle' will be used if 'round' is true.
+      If this property is not specified, points will be drawn as a square or
+      a circle, based on how 'round' is specified.
 
 \`\`\`
 circle
