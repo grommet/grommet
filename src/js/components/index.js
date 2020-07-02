@@ -55,3 +55,4 @@ export * from './Tabs';
 export * from './Text';
 export * from './TextArea';
 export * from './TextInput';
+export * from './Tooltip';
