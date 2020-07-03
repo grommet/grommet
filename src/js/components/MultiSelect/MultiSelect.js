@@ -22,6 +22,7 @@ const MultiSelect = ({
   withOptionChips,
   withUpdateCancelButtons,
   searchable,
+  type,
   ...rest
 }) => {
   const {
@@ -39,7 +40,7 @@ const MultiSelect = ({
 
   const getValue = (index, array, param) => applyKey(array[index], param);
 
-  const onSearchChange = (search) => {
+  const onSearchChange = search => {
     const escapedText = search.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
     const exp = new RegExp(escapedText, 'i');
     setSelectState({
@@ -50,40 +51,58 @@ const MultiSelect = ({
     });
   };
 
-  const onSelectValueChange = (selectValue) => {
+  const onSelectValueChange = selectValue => {
     if (!searchVal) onValueChange(selectValue);
     else {
       const newValue = value.slice(0);
-      const nonSelected = filteredOptions.map(
-        (val, ind) => getValue(ind, filteredOptions, valueKey),
+      const nonSelected = filteredOptions.map((val, ind) =>
+        getValue(ind, filteredOptions, valueKey),
       );
       selectValue.forEach(item => {
         if (nonSelected.includes(item))
           nonSelected.splice(nonSelected.indexOf(item), 1);
-        if (!value.includes(item))
-          newValue.push(item);
+        if (!value.includes(item)) newValue.push(item);
       });
       onValueChange(newValue.filter(item => !nonSelected.includes(item)));
     }
   };
 
-  const renderContent = (props) => {
+  const renderContent = props => {
     if (layout === 'single-column') {
       return (
         <SingleColumnSelect
           width={width}
-          onUpdate={() =>
-            setSelectState({ open: false, previousValue: value })
-          }
+          onUpdate={() => setSelectState({ open: false, previousValue: value })}
           onCancel={onCancelClick}
-          setValues={(nextValue) => onSelectValueChange(nextValue)}
+          setValues={nextValue => onSelectValueChange(nextValue)}
           emptySearchMessage={emptySearchMessage}
           showOptionChips={withOptionChips}
           showControlButtons={withUpdateCancelButtons}
           renderSearch={searchable && !onSearch}
           searchPlaceholder={searchPlaceholder}
           searchValue={searchVal || ''}
-          onSearchChange={(search) => onSearchChange(search)}
+          onSearchChange={search => onSearchChange(search)}
+          type={type}
+          {...props}
+        />
+      );
+    }
+    if (layout === 'double-column') {
+      return (
+        <SingleColumnSelect
+          width={width}
+          onUpdate={() => setSelectState({ open: false, previousValue: value })}
+          onCancel={onCancelClick}
+          setValues={nextValue => onSelectValueChange(nextValue)}
+          emptySearchMessage={emptySearchMessage}
+          showOptionChips={withOptionChips}
+          showControlButtons={withUpdateCancelButtons}
+          renderSearch={searchable && !onSearch}
+          searchPlaceholder={searchPlaceholder}
+          searchValue={searchVal || ''}
+          onSearchChange={search => onSearchChange(search)}
+          onValueChange={onValueChange}
+          type={type}
           {...props}
         />
       );
@@ -91,13 +110,10 @@ const MultiSelect = ({
     return null;
   };
 
+  const count = type ? value.items.length : value.length;
   const renderLabel = () => {
     return (
-      <ValueLabelWithNumber
-        value="Selected"
-        number={value.length}
-        color="brand"
-      />
+      <ValueLabelWithNumber value="Selected" number={count} color="brand" />
     );
   };
 
@@ -111,13 +127,15 @@ const MultiSelect = ({
         open={open}
         onOpen={() => setSelectState({ open: true })}
         onClose={
-          withUpdateCancelButtons ?
-          () => onValueChange(previousValue) : undefined
+          withUpdateCancelButtons
+            ? () => onValueChange(previousValue)
+            : undefined
         }
         closeOnChange={false}
         renderCustomContent={
-          ['single-column', 'double-column'].includes(layout) ?
-            (props) => renderContent(props) : undefined
+          ['single-column', 'double-column'].includes(layout)
+            ? props => renderContent(props)
+            : undefined
         }
         valueLabel={renderLabel()}
         labelKey={labelKey}
