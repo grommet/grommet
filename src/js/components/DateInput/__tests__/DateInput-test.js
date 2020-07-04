@@ -1,6 +1,11 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
+import { render } from '@testing-library/react';
+
+import { axe } from 'jest-axe';
+import 'jest-axe/extend-expect';
+import 'regenerator-runtime/runtime';
 
 import { Grommet } from '../../Grommet';
 import { DateInput } from '..';
@@ -9,6 +14,16 @@ const DATE = '2020-07-02T00:00:00-08:00';
 const DATES = ['2020-07-02T00:00:00-08:00', '2020-07-07T00:00:00-08:00'];
 
 describe('DateInput', () => {
+  test('should have no accessibility violations', async () => {
+    const { container } = render(
+      <Grommet>
+        <DateInput format="mm/dd/yyyy" a11yTitle="axe test" />
+      </Grommet>,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
   test('basic', () => {
     const component = renderer.create(
       <Grommet>
