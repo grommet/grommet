@@ -307,6 +307,21 @@ xlarge
 string
 ```
 
+**point**
+
+When using a 'point' type, what shape the points should use.
+      If this property is not specified, points will be drawn as a square or
+      a circle, based on how 'round' is specified.
+
+```
+circle
+diamond
+square
+star
+triangle
+triangleDown
+```
+
 **round**
 
 Whether to round the line ends.

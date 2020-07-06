@@ -22,6 +22,7 @@ export var doc = function doc(Chart) {
     onHover: PropTypes.func.description("Called with a boolean argument\n      indicating when the user hovers onto or away from it.\n      This is only available when the type is line or area."),
     overflow: PropTypes.bool.description("Whether the chart strokes should overflow the component. Set this\n      to true for precise positioning when stacking charts or including\n      precise axes. Set this to false to have the graphical elements\n      align with the component boundaries.").defaultValue(false),
     pad: padPropType.description("Spacing around the outer edge of the drawing coordinate area.\n      Related to 'overflow', this allows control over how much space\n      is available for bars and points to overflow into."),
+    point: PropTypes.oneOf(['circle', 'diamond', 'square', 'star', 'triangle', 'triangleDown']).description("When using a 'point' type, what shape the points should use.\n      If this property is not specified, points will be drawn as a square or\n      a circle, based on how 'round' is specified."),
     round: PropTypes.bool.description('Whether to round the line ends.').defaultValue(false),
     size: PropTypes.oneOfType([PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'fill', 'full']), PropTypes.shape({
       height: PropTypes.oneOfType([PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'fill', 'full']), PropTypes.string]),

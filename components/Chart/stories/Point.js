@@ -1,0 +1,45 @@
+"use strict";
+
+var _react = _interopRequireDefault(require("react"));
+
+var _react2 = require("@storybook/react");
+
+var _grommet = require("grommet");
+
+var _themes = require("grommet/themes");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var values = [{
+  value: [10, 20]
+}, {
+  value: [20, 30]
+}, {
+  value: [30, 15]
+}];
+
+var Example = function Example() {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
+    theme: _themes.grommet
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+    direction: "row-responsive",
+    wrap: true,
+    pad: "large"
+  }, ['circle', 'square', 'diamond', 'star', 'triangle', 'triangleDown'].map(function (point) {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      key: point,
+      margin: "medium"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
+      size: "small",
+      textAlign: "center"
+    }, point), /*#__PURE__*/_react["default"].createElement(_grommet.Chart, {
+      type: "point",
+      values: values,
+      point: point
+    }));
+  })));
+};
+
+(0, _react2.storiesOf)('Chart', module).add('Point', function () {
+  return /*#__PURE__*/_react["default"].createElement(Example, null);
+});

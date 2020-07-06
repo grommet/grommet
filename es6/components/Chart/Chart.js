@@ -27,6 +27,7 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       _ref$overflow = _ref.overflow,
       overflow = _ref$overflow === void 0 ? false : _ref$overflow,
       pad = _ref.pad,
+      point = _ref.point,
       round = _ref.round,
       _ref$size = _ref.size,
       propsSize = _ref$size === void 0 ? defaultSize : _ref$size,
@@ -36,7 +37,7 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       type = _ref$type === void 0 ? 'bar' : _ref$type,
       _ref$values = _ref.values,
       propsValues = _ref$values === void 0 ? defaultValues : _ref$values,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "bounds", "color", "dash", "gap", "id", "onClick", "onHover", "overflow", "pad", "round", "size", "thickness", "type", "values"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "bounds", "color", "dash", "gap", "id", "onClick", "onHover", "overflow", "pad", "point", "round", "size", "thickness", "type", "values"]);
 
   var containerRef = useForwardedRef(ref);
   var theme = useContext(ThemeContext) || defaultProps.theme; // normalize variables
@@ -342,36 +343,28 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       }
 
       var renderPoint = function renderPoint(valueX, valueY) {
-        var center = valueY;
-
         var props = _extends({}, hoverProps, clickProps, valueRest);
 
-        if (round) {
-          var _valueToCoordinate = valueToCoordinate(valueX, center),
-              cx = _valueToCoordinate[0],
-              cy = _valueToCoordinate[1];
+        var _valueToCoordinate = valueToCoordinate(valueX, valueY),
+            cx = _valueToCoordinate[0],
+            cy = _valueToCoordinate[1];
 
-          return /*#__PURE__*/React.createElement("circle", _extends({
-            cx: cx,
-            cy: cy,
-            r: strokeWidth / 2
-          }, props));
-        }
-
-        var _valueToCoordinate$ma = valueToCoordinate(value[0], center).map( // for rect, offset half strokeWidth to top left corner coord
-        function (c) {
-          return c - strokeWidth / 2;
-        }),
-            x = _valueToCoordinate$ma[0],
-            y = _valueToCoordinate$ma[1];
-
-        var dim = strokeWidth;
-        return /*#__PURE__*/React.createElement("rect", _extends({
-          x: x,
-          y: y,
-          width: dim,
-          height: dim
+        var off = strokeWidth / 2;
+        if (point === 'circle' || !point && round) return /*#__PURE__*/React.createElement("circle", _extends({
+          cx: cx,
+          cy: cy,
+          r: off
         }, props));
+        var d;
+        if (point === 'diamond') d = "M " + cx + " " + (cy - off) + " L " + (cx + off) + " " + cy + " L " + cx + " " + (cy + off) + " L " + (cx - off) + " " + cy + " Z";else if (point === 'star') {
+          var off1 = off / 3;
+          var off2 = off1 * 2;
+          d = "M " + cx + " " + (cy - off) + " L " + (cx - off2) + " " + (cy + off) + " L " + (cx + off) + " " + (cy - off1) + " L " + (cx - off) + " " + (cy - off1) + " L " + (cx + off2) + " " + (cy + off) + " Z";
+        } else if (point === 'triangle') d = "M " + cx + " " + (cy - off) + " L " + (cx + off) + " " + (cy + off) + " L " + (cx - off) + " " + (cy + off) + " Z";else if (point === 'triangleDown') d = "M " + (cx - off) + " " + (cy - off) + " L " + (cx + off) + " " + (cy - off) + " L " + cx + " " + (cy + off) + " Z"; // square
+        else d = "M " + (cx - off) + " " + (cy - off) + " L " + (cx + off) + " " + (cy - off) + " L " + (cx + off) + " " + (cy + off) + " L " + (cx - off) + " " + (cy + off) + " Z";
+        return /*#__PURE__*/React.createElement("path", {
+          d: d
+        });
       };
 
       return /*#__PURE__*/React.createElement("g", {
