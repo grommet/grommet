@@ -75,7 +75,7 @@ describe('Select', () => {
     expectPortal('test-select__drop').toMatchSnapshot();
     // advance timers so the select opens
     jest.advanceTimersByTime(100);
-    //verify that select is open
+    // verify that select is open
     expect(document.activeElement).toMatchSnapshot();
     expect(onOpen).toHaveBeenCalled();
 
@@ -85,7 +85,7 @@ describe('Select', () => {
     expect(document.getElementById('test-select__drop')).toBeNull();
     // advance timers so the select closes
     jest.advanceTimersByTime(100);
-    //verify that select was closed
+    // verify that select was closed
     expect(document.activeElement).toMatchSnapshot();
     expect(onClose).toHaveBeenCalled();
   });
@@ -132,7 +132,7 @@ describe('Select', () => {
     act(() => {
       jest.advanceTimersByTime(200);
     });
-    //snapshot on search box
+    // snapshot on search box
     expectPortal('test-select__drop').toMatchSnapshot();
     expect(document.activeElement).toMatchSnapshot();
     // add content to search box
@@ -209,7 +209,7 @@ describe('Select', () => {
     expect(container.firstChild).toMatchSnapshot();
 
     fireEvent.click(getByPlaceholderText('test select'));
-    //verify that keyboard navigation is working
+    // verify that keyboard navigation is working
     fireEvent.keyDown(document.getElementById('test-select__select-drop'), {
       key: 'Down',
       keyCode: 40,
