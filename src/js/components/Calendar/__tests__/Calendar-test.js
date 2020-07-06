@@ -364,7 +364,7 @@ describe('Calendar', () => {
     ]);
   });
 
-  test('select date with range and dates', () => {
+  test('select date greater and less than', () => {
     const onSelect = jest.fn();
     const { getByLabelText } = render(
       <Grommet>
@@ -449,7 +449,7 @@ describe('Calendar', () => {
     expect(onSelect).toBeCalledWith(expect.stringMatching(/^2018-01-01T/));
   });
 
-  test('undefined date', () => {
+  test('undefined dates', () => {
     const { container } = render(
       <Grommet>
         <Calendar dates={[undefined]} animate={false} />
