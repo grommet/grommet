@@ -1,5 +1,5 @@
 import React, { forwardRef, useContext, useMemo, useState } from 'react';
-import { Calendar as CalendarIcon } from 'grommet-icons';
+import { Calendar as CalendarIcon } from 'grommet-icons/icons/Calendar';
 import { Box } from '../Box';
 import { Calendar } from '../Calendar';
 import { Drop } from '../Drop';
