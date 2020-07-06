@@ -14,6 +14,7 @@ const CustomMultiSelect = ({
   placeholder,
   renderEmptySelected,
   width,
+  custom,
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const { isInclude, values } = value;
@@ -46,39 +47,47 @@ const CustomMultiSelect = ({
   );
 
   return (
-    <Box direction="row">
-      <Box border={{ side: 'right' }} pad="large">
-        <Text weight={600}>Enter one domain per line</Text>
-        <Box width="medium" height="medium" margin={{ vertical: 'medium' }}>
+    <Box {...theme.multiselect.custom.wrapper}>
+      <Box {...theme.multiselect.custom.textAreaWrap} width={width}>
+        <Text {...theme.multiselect.custom.label}>
+          {(custom && custom.label) || 'Label'}
+        </Text>
+        <Box {...theme.multiselect.custom.textAreaContainer}>
           <TextArea
             value={textAreaValue}
             onChange={event => setTextAreaValue(event.target.value)}
             fill
           />
         </Box>
-        <Box direction="row" margin={{ vertical: 'small' }} gap="medium">
+        <Box {...theme.multiselect.custom.actions.wrapper}>
           {(isInclude || isInclude === null) && (
             <Button primary onClick={() => setItems(true)}>
-              INCLUDE
+              <Box {...theme.multiselect.custom.actions.button}>
+                <Text weight={600}>INCLUDE</Text>
+              </Box>
             </Button>
           )}
           {(isInclude === false || isInclude === null) && (
-            <Button secondary color="brand" onClick={() => setItems(false)}>
-              EXCLUDE
+            <Button secondary onClick={() => setItems(false)}>
+              <Box {...theme.multiselect.custom.actions.button}>
+                <Text weight={600}>EXCLUDE</Text>
+              </Box>
             </Button>
           )}
         </Box>
       </Box>
-      <CustomSelectedList
-        selectedItems={values}
-        isInclude={isInclude}
-        onValueChange={onValueChange}
-        renderSearch={renderSearch}
-        searchPlaceholder={placeholder}
-        onRemove={removeItem}
-        renderEmptySelected={renderEmptySelected}
-        width={width}
-      />
+      <Box width={width}>
+        <CustomSelectedList
+          selectedItems={values}
+          isInclude={isInclude}
+          onValueChange={onValueChange}
+          renderSearch={renderSearch}
+          searchPlaceholder={placeholder}
+          onRemove={removeItem}
+          renderEmptySelected={renderEmptySelected}
+          width={width}
+        />
+      </Box>
     </Box>
   );
 };

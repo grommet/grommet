@@ -45,7 +45,7 @@ const SelectedList = ({
   );
 
   return (
-    <OptionsBox>
+    <OptionsBox style={{ height: '100%' }}>
       {selectedItems && selectedItems.length > 0 && (
         <>
           <Box {...theme.multiselect.rightPanel.incExcHeader.box}>
@@ -76,7 +76,7 @@ const SelectedList = ({
                   value={isInclude}
                   {...theme.multiselect.chips.label}
                 >
-                  <Text color={isInclude ? 'accent-2' : 'brand'}>{val}</Text>
+                  <Text color={isInclude ? 'accent-1' : 'brand'}>{val}</Text>
                 </OptionLabel>
                 <Close
                   onClick={() => onRemove(val)}
@@ -87,7 +87,9 @@ const SelectedList = ({
           </OptionWrapper>
         </>
       )}
-      {!selectedItems.length && renderEmptySelected}
+      <Box align="center" justify="center" fill>
+        {!selectedItems.length && renderEmptySelected}
+      </Box>
     </OptionsBox>
   );
 };

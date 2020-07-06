@@ -26,10 +26,9 @@ const OptionBox = styled(Box)`
 `;
 
 const CheckBox = styled(Box)`
-    ${props =>
+  ${props =>
     props.theme.multiselect.checkbox.check &&
-    props.theme.multiselect.checkbox.check.extend
-  };
+    props.theme.multiselect.checkbox.check.extend};
 `;
 
 const OptionWrapper = styled(Box)`

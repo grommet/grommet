@@ -78,6 +78,7 @@ const SingleColumnSelect = ({
         placeholder={searchPlaceholder}
         renderEmptySelected={renderEmptySelected}
         width={width}
+        custom={custom}
       />
     );
   }

@@ -22,7 +22,7 @@ const Example = () => {
         searchPlaceholder="Search"
         searchable
         renderEmptySelected={<Text>No domains selected</Text>}
-        custom
+        custom={{ label: 'Enter one domain per line' }}
       />
     </Box>
   );
