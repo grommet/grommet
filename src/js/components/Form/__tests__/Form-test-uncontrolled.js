@@ -10,7 +10,7 @@ import { Button } from '../../Button';
 import { Text } from '../../Text';
 import { TextInput } from '../../TextInput';
 
-describe('Form', () => {
+describe('Form uncontrolled', () => {
   afterEach(cleanup);
 
   test('empty', () => {
@@ -59,75 +59,6 @@ describe('Form', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test('controlled', () => {
-    const onSubmit = jest.fn();
-    const Test = () => {
-      const [value, setValue] = React.useState({ test: '' });
-      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
-      return (
-        <Form value={value} onChange={onChange} onSubmit={onSubmit}>
-          <FormField name="test">
-            <TextInput name="test" placeholder="test input" />
-          </FormField>
-          <Button type="submit" primary label="Submit" />
-        </Form>
-      );
-    };
-    const { getByPlaceholderText, getByText, container } = render(
-      <Grommet>
-        <Test />
-      </Grommet>,
-    );
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.change(getByPlaceholderText('test input'), {
-      target: { value: 'v' },
-    });
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.click(getByText('Submit'));
-    expect(onSubmit).toBeCalledWith(
-      expect.objectContaining({
-        value: { test: 'v' },
-        touched: { test: true },
-      }),
-    );
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
-  test('controlled lazy', () => {
-    const onSubmit = jest.fn();
-    const Test = () => {
-      const [value, setValue] = React.useState({ test: '' });
-      React.useEffect(() => setValue({ test: 'test' }), []);
-      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
-      return (
-        <Form value={value} onChange={onChange} onSubmit={onSubmit}>
-          <FormField name="test">
-            <TextInput name="test" placeholder="test input" />
-          </FormField>
-          <Button type="submit" primary label="Submit" />
-        </Form>
-      );
-    };
-    const { getByPlaceholderText, getByText, container } = render(
-      <Grommet>
-        <Test />
-      </Grommet>,
-    );
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.change(getByPlaceholderText('test input'), {
-      target: { value: 'v' },
-    });
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.click(getByText('Submit'));
-    expect(onSubmit).toBeCalledWith(
-      expect.objectContaining({
-        value: { test: 'v' },
-        touched: { test: true },
-      }),
-    );
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
   test('uncontrolled', () => {
     const onSubmit = jest.fn();
     const { getByPlaceholderText, getByText, container } = render(
@@ -138,91 +69,6 @@ describe('Form', () => {
           </FormField>
           <Button type="submit" primary label="Submit" />
         </Form>
-      </Grommet>,
-    );
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.change(getByPlaceholderText('test input'), {
-      target: { value: 'v' },
-    });
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.click(getByText('Submit'));
-    expect(onSubmit).toBeCalledWith(
-      expect.objectContaining({
-        value: { test: 'v' },
-        touched: { test: true },
-      }),
-    );
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
-  test('controlled input', () => {
-    const onSubmit = jest.fn();
-    const Test = () => {
-      const [value, setValue] = React.useState('');
-      const onChange = React.useCallback(
-        event => setValue(event.target.value),
-        [],
-      );
-      return (
-        <Form onSubmit={onSubmit}>
-          <FormField name="test">
-            <TextInput
-              name="test"
-              placeholder="test input"
-              value={value}
-              onChange={onChange}
-            />
-          </FormField>
-          <Button type="submit" primary label="Submit" />
-        </Form>
-      );
-    };
-    const { getByPlaceholderText, getByText, container } = render(
-      <Grommet>
-        <Test />
-      </Grommet>,
-    );
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.change(getByPlaceholderText('test input'), {
-      target: { value: 'v' },
-    });
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.click(getByText('Submit'));
-    expect(onSubmit).toBeCalledWith(
-      expect.objectContaining({
-        value: { test: 'v' },
-        touched: { test: true },
-      }),
-    );
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
-  test('controlled input lazy', () => {
-    const onSubmit = jest.fn();
-    const Test = () => {
-      const [value, setValue] = React.useState('');
-      React.useEffect(() => setValue('test'), []);
-      const onChange = React.useCallback(
-        event => setValue(event.target.value),
-        [],
-      );
-      return (
-        <Form onSubmit={onSubmit}>
-          <FormField name="test">
-            <TextInput
-              name="test"
-              placeholder="test input"
-              value={value}
-              onChange={onChange}
-            />
-          </FormField>
-          <Button type="submit" primary label="Submit" />
-        </Form>
-      );
-    };
-    const { getByPlaceholderText, getByText, container } = render(
-      <Grommet>
-        <Test />
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -431,8 +277,8 @@ describe('Form', () => {
     const onSubmit = jest.fn();
     const { getByText, queryByText } = render(
       <Grommet>
-        {/* this test continues running forever if the whole event passed to 
-            onSubmit */}
+        {/* this test continues running forever if the whole event 
+                passed to onSubmit */}
         <Form onSubmit={({ value, touched }) => onSubmit({ value, touched })}>
           <FormField
             name="test"
@@ -455,32 +301,6 @@ describe('Form', () => {
     );
   });
 
-  test('lazy value', () => {
-    const onSubmit = jest.fn();
-    const Test = () => {
-      const [test, setTest] = React.useState('');
-      return (
-        <Form onSubmit={({ value, touched }) => onSubmit({ value, touched })}>
-          <TextInput name="test" value={test} />
-          <Button label="set" onClick={() => setTest('a')} />
-          <Button label="submit" type="submit" />
-        </Form>
-      );
-    };
-    const { container, getByText } = render(
-      <Grommet>
-        <Test />
-      </Grommet>,
-    );
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.click(getByText('set'));
-    fireEvent.click(getByText('submit'));
-    expect(onSubmit).toBeCalledWith(
-      expect.objectContaining({
-        value: { test: 'a' },
-      }),
-    );
-  });
   test('validate on blur', () => {
     const Test = () => (
       <Form validate="blur">
@@ -534,7 +354,8 @@ describe('Form', () => {
     fireEvent.click(getByText('submit'));
     expect(queryAllByText('required')).toHaveLength(1);
 
-    // name field has new error and email field still has required error message
+    // name field has new error and email field still
+    // has required error message
     fireEvent.change(getByPlaceholderText('name'), {
       target: { value: 'a' },
     });
@@ -548,37 +369,5 @@ describe('Form', () => {
     });
     expect(queryByText('required')).toBeTruthy();
     expect(queryByText('must be >1 character')).toBe(null);
-  });
-
-  // deprecated FormField+input pattern
-
-  test('controlled FormField deprecated', () => {
-    const onSubmit = jest.fn();
-    const Test = () => {
-      const [value, setValue] = React.useState({ test: '' });
-      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
-      return (
-        <Form value={value} onChange={onChange} onSubmit={onSubmit}>
-          <FormField label="test" name="test" id="test" htmlFor="test" />
-          <Button type="submit" primary label="Submit" />
-        </Form>
-      );
-    };
-    const { getByLabelText, getByText, container } = render(
-      <Grommet>
-        <Test />
-      </Grommet>,
-    );
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.change(getByLabelText('test'), { target: { value: 'v' } });
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.click(getByText('Submit'));
-    expect(onSubmit).toBeCalledWith(
-      expect.objectContaining({
-        value: { test: 'v' },
-        touched: { test: true },
-      }),
-    );
-    expect(container.firstChild).toMatchSnapshot();
   });
 });

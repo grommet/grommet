@@ -2,9 +2,9 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { cleanup, fireEvent, render } from '@testing-library/react';
 import 'jest-styled-components';
-// import { axe } from 'jest-axe';
-// import 'jest-axe/extend-expect';
-// import 'regenerator-runtime/runtime';
+import { axe } from 'jest-axe';
+import 'jest-axe/extend-expect';
+import 'regenerator-runtime/runtime';
 
 import { Grommet } from '../../Grommet';
 import { TextArea } from '..';
@@ -12,15 +12,15 @@ import { TextArea } from '..';
 describe('TextArea', () => {
   afterEach(cleanup);
 
-  // test('should not have accessibility violations', async () => {
-  //   const { container } = render(
-  //     <Grommet>
-  //       <TextArea a11yTitle="test" id="item" name="item" />
-  //     </Grommet>,
-  //   );
-  //   const results = await axe(container);
-  //   expect(results).toHaveNoViolations();
-  // });
+  test('should not have accessibility violations', async () => {
+    const { container } = render(
+      <Grommet>
+        <TextArea a11yTitle="test" id="item" name="item" />
+      </Grommet>,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 
   test('basic', () => {
     const component = renderer.create(
