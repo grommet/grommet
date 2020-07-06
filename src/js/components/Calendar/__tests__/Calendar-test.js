@@ -219,6 +219,7 @@ describe('Calendar', () => {
       which: 13,
     });
     fireEvent.mouseOut(getByText('15'));
+    // snapshot shows Jan 15th as being set to active
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -242,6 +243,7 @@ describe('Calendar', () => {
       which: 38,
     });
     fireEvent.mouseOut(getByText('15'));
+    // snapshot shows Jan 8th as being set to active
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -265,6 +267,7 @@ describe('Calendar', () => {
       which: 40,
     });
     fireEvent.mouseOut(getByText('15'));
+    // snapshot shows Jan 22th as being set to active
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -288,6 +291,7 @@ describe('Calendar', () => {
       which: 37,
     });
     fireEvent.mouseOut(getByText('15'));
+    // snapshot shows Jan 14th as being set to active
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -311,6 +315,7 @@ describe('Calendar', () => {
       which: 39,
     });
     fireEvent.mouseOut(getByText('15'));
+    // snapshot shows Jan 16th as being set to active
     expect(container.firstChild).toMatchSnapshot();
   });
 
