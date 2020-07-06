@@ -21,9 +21,8 @@ import { Box } from '../../Box';
 describe('Form accessibility', () => {
   afterEach(cleanup);
 
-  // TextInput in Form should have no accessibility violations
   test(`TextInput in Form should have 
-        no accessibility violations`, async () => {
+  no accessibility violations`, async () => {
     const { container } = render(
       <Grommet>
         <Form>
@@ -66,9 +65,8 @@ describe('Form accessibility', () => {
     expect(results).toHaveNoViolations();
   });
 
-  // FormField with an explicit TextInput child
-  // should have no accessibility violations
-  test('TextInput-child should have no accessibility violations', async () => {
+  test(`FormField with an explicit TextInput child
+  should have no accessibility violations`, async () => {
     const { container } = render(
       <Grommet>
         <Form>
@@ -83,8 +81,8 @@ describe('Form accessibility', () => {
     expect(results).toHaveNoViolations();
   });
 
-  // Box with TextInput in Form should have no accessibility violations
-  test('Box-TextInput should have no accessibility violations', async () => {
+  test(`Box with TextInput in Form should 
+  have no accessibility violations`, async () => {
     const { container } = render(
       <Grommet>
         <Form>
