@@ -11,13 +11,7 @@ import { columns, DATA } from './data';
 const SimpleDataTable = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
-      <DataTable
-        pad={{ vertical: '100px', horizontal: '80px' }}
-        // pad={{ vertical: "medium", horizontal: "small" }}
-        columns={columns}
-        data={DATA}
-        step={10}
-      />
+      <DataTable columns={columns} data={DATA} step={10} />
     </Box>
   </Grommet>
 );
