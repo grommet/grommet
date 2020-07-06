@@ -105,7 +105,7 @@ export const Example = () => (
                 title={value.title}
                 subTitle={value.subTitle}
                 size="small"
-                align="left"
+                align="start"
               >
                 {value.icon}
               </Identifier>
@@ -120,4 +120,4 @@ export const Example = () => (
   </Grommet>
 );
 
-storiesOf('Card', module).add('Identifier', () => <Example />);
+storiesOf('Card', module).add('Themed', () => <Example />);

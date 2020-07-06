@@ -3,11 +3,13 @@ import { cleanup } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
-import { Avatar } from '../../Avatar';
-import { Grommet } from '../../Grommet';
+import { Box } from '../../Box';
 import { Card } from '../Card';
-
-const src = '';
+import { CardBody } from '../../CardBody';
+import { CardFooter } from '../../CardFooter';
+import { CardHeader } from '../../CardHeader';
+import { Grommet } from '../../Grommet';
+import { Text } from '../../Text';
 
 describe('Card', () => {
   afterEach(cleanup);
@@ -15,7 +17,7 @@ describe('Card', () => {
   test('renders', () => {
     const component = renderer.create(
       <Grommet>
-        <Card id="test id" name="test name" />
+        <Card />
       </Grommet>,
     );
     const tree = component.toJSON();
@@ -25,7 +27,9 @@ describe('Card', () => {
   test('header', () => {
     const component = renderer.create(
       <Grommet>
-        <Card header={<Avatar src={src} />} />
+        <Card>
+          <CardHeader>header</CardHeader>
+        </Card>
       </Grommet>,
     );
     const tree = component.toJSON();
@@ -35,7 +39,9 @@ describe('Card', () => {
   test('footer', () => {
     const component = renderer.create(
       <Grommet>
-        <Card footer={<Avatar src={src} />} />
+        <Card>
+          <CardFooter>footer</CardFooter>
+        </Card>
       </Grommet>,
     );
     const tree = component.toJSON();
@@ -46,8 +52,9 @@ describe('Card', () => {
     const component = renderer.create(
       <Grommet>
         <Card>
-          <Avatar src={src} />
-          children test
+          <Box>
+            <Text>test</Text>
+          </Box>
         </Card>
       </Grommet>,
     );
@@ -58,7 +65,11 @@ describe('Card', () => {
   test('all', () => {
     const component = renderer.create(
       <Grommet>
-        <Card background="dark-1">content</Card>
+        <Card>
+          <CardHeader>header</CardHeader>
+          <CardBody>body</CardBody>
+          <CardFooter>footer</CardFooter>
+        </Card>
       </Grommet>,
     );
     const tree = component.toJSON();
