@@ -199,7 +199,7 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
 
             if (aValidate.status) {
               result = {
-                message: error,
+                message: result,
                 status: aValidate.status
               };
             }

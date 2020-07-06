@@ -210,7 +210,7 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
 
             if (aValidate.status) {
               result = {
-                message: error,
+                message: result,
                 status: aValidate.status
               };
             }
