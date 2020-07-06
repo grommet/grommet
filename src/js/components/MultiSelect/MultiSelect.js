@@ -22,7 +22,9 @@ const MultiSelect = ({
   withOptionChips,
   withUpdateCancelButtons,
   searchable,
-  type,
+  custom,
+  withInclusionExclusion,
+  renderEmptySelected,
   ...rest
 }) => {
   const {
@@ -30,8 +32,9 @@ const MultiSelect = ({
     previousValue,
     open,
     searchVal,
+    incExcVal,
     setSelectState,
-  } = useCustomSelectState(options, value);
+  } = useCustomSelectState(options, value, withInclusionExclusion);
 
   const onCancelClick = () => {
     onValueChange(previousValue);
@@ -68,9 +71,10 @@ const MultiSelect = ({
   };
 
   const renderContent = props => {
-    if (layout === 'single-column') {
+    if (['single-column', 'double-column'].includes(layout)) {
       return (
         <SingleColumnSelect
+          layout={layout}
           width={width}
           onUpdate={() => setSelectState({ open: false, previousValue: value })}
           onCancel={onCancelClick}
@@ -78,31 +82,15 @@ const MultiSelect = ({
           emptySearchMessage={emptySearchMessage}
           showOptionChips={withOptionChips}
           showControlButtons={withUpdateCancelButtons}
+          inclusionExclusion={withInclusionExclusion}
+          incExcVal={incExcVal}
           renderSearch={searchable && !onSearch}
           searchPlaceholder={searchPlaceholder}
           searchValue={searchVal || ''}
           onSearchChange={search => onSearchChange(search)}
-          type={type}
-          {...props}
-        />
-      );
-    }
-    if (layout === 'double-column') {
-      return (
-        <SingleColumnSelect
-          width={width}
-          onUpdate={() => setSelectState({ open: false, previousValue: value })}
-          onCancel={onCancelClick}
-          setValues={nextValue => onSelectValueChange(nextValue)}
-          emptySearchMessage={emptySearchMessage}
-          showOptionChips={withOptionChips}
-          showControlButtons={withUpdateCancelButtons}
-          renderSearch={searchable && !onSearch}
-          searchPlaceholder={searchPlaceholder}
-          searchValue={searchVal || ''}
-          onSearchChange={search => onSearchChange(search)}
+          renderEmptySelected={renderEmptySelected}
           onValueChange={onValueChange}
-          type={type}
+          custom={custom}
           {...props}
         />
       );
@@ -110,7 +98,7 @@ const MultiSelect = ({
     return null;
   };
 
-  const count = type ? value.items.length : value.length;
+  const count = custom ? value.values.length : value.length;
   const renderLabel = () => {
     return (
       <ValueLabelWithNumber value="Selected" number={count} color="brand" />

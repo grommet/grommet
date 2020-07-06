@@ -1,11 +1,10 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import { Close } from 'grommet-icons/icons/Close';
-
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
-
+import { Searchbox } from './Searchbox';
 import {
   OptionsBox,
   OptionWrapper,
@@ -13,22 +12,27 @@ import {
   OptionLabel,
 } from './StyledMultiSelect';
 
-const OptionChips = ({
-  options,
-  value,
-  isSelected,
-  optionLabel,
-  selectOption,
-  clearAll,
-  width,
-  inclusionExclusion,
-  incExcVal,
+const SelectedList = ({
+  selectedItems,
+  isInclude,
+  onValueChange,
+  renderSearch,
+  searchPlaceholder,
+  onRemove,
   renderEmptySelected,
+  width,
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
+  const [search, setSearch] = React.useState('');
+
+  const filteredItems = selectedItems.filter(val => val.includes(search));
 
   const renderClearButton = () => (
-    <Button focusIndicator={false} onClick={() => clearAll([])} plain>
+    <Button
+      focusIndicator={false}
+      onClick={() => onValueChange({ isInclude: null, values: [] })}
+      plain
+    >
       <Box
         border={{
           side: 'bottom',
@@ -40,54 +44,52 @@ const OptionChips = ({
     </Button>
   );
 
-  const getSelectedOption = () =>
-    options.reduce((acc, item, index) => {
-      if (isSelected(index)) acc.push(index);
-      return acc;
-    }, []);
-
   return (
     <OptionsBox>
-      {Array.isArray(value) && value.length > 0 && (
+      {selectedItems && selectedItems.length > 0 && (
         <>
-          {inclusionExclusion && incExcVal && (
-            <Box {...theme.multiselect.rightPanel.incExcHeader.box}>
-              <Text {...theme.multiselect.rightPanel.incExcHeader.text}>
-                {incExcVal.charAt(0).toUpperCase() + incExcVal.slice(1)} List
-              </Text>
-              {renderClearButton()}
-            </Box>
+          <Box {...theme.multiselect.rightPanel.incExcHeader.box}>
+            <Text {...theme.multiselect.rightPanel.incExcHeader.text}>
+              {isInclude ? 'Included List' : 'Excluded List'}
+            </Text>
+            {renderClearButton()}
+          </Box>
+          {renderSearch && (
+            <Searchbox
+              placeholder={searchPlaceholder}
+              value={search}
+              onValueChange={val => setSearch(val)}
+            />
           )}
           <OptionWrapper
-            inclusionExclusion={inclusionExclusion}
             width={width}
             {...theme.multiselect.chips.wrapper}
             wrap
           >
-            {getSelectedOption().map(item => (
+            {filteredItems.map((val, id) => (
               <OptionText
-                key={item}
-                incExcVal={incExcVal}
+                key={`${id}-${val}`}
+                incExcVal
                 {...theme.multiselect.chips.option}
               >
                 <OptionLabel
-                  value={incExcVal}
+                  value={isInclude}
                   {...theme.multiselect.chips.label}
                 >
-                  {optionLabel(item)}
+                  <Text color={isInclude ? 'accent-2' : 'brand'}>{val}</Text>
                 </OptionLabel>
                 <Close
-                  onClick={selectOption(item)}
+                  onClick={() => onRemove(val)}
                   {...theme.multiselect.chips.icon}
                 />
               </OptionText>
             ))}
-            {!inclusionExclusion && renderClearButton()}
           </OptionWrapper>
         </>
       )}
-      {(!Array.isArray(value) || !value.length) && renderEmptySelected}
+      {!selectedItems.length && renderEmptySelected}
     </OptionsBox>
   );
 };
-export { OptionChips };
+
+export default React.memo(SelectedList);

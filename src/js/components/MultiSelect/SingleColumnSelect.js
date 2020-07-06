@@ -5,13 +5,14 @@ import { defaultProps } from '../../default-props';
 
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Text } from '../Text';
+import { Box } from '../Box';
 
 import { OptionBox, OptionsBox, SelectOption } from './StyledMultiSelect';
 import { OptionWithCheckControl } from './OptionWithCheckControl';
 import { OptionChips } from './OptionChips';
 import { ControlButton } from './ControlButton';
 import { Searchbox } from './Searchbox';
-import Domain from './Domain';
+import { CustomMultiSelect } from './CustomMultiSelect';
 
 const SingleColumnSelect = ({
   options,
@@ -28,16 +29,20 @@ const SingleColumnSelect = ({
   onCancel,
   onUpdate,
   setValues,
+  layout,
   width,
   emptySearchMessage,
   showOptionChips,
   showControlButtons,
+  inclusionExclusion,
+  incExcVal,
   renderSearch,
   searchPlaceholder,
   searchValue,
   onSearchChange,
+  renderEmptySelected,
   onValueChange,
-  type,
+  custom,
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
 
@@ -49,26 +54,47 @@ const SingleColumnSelect = ({
   const allSelected =
     options && options.every((item, index) => isSelected(index));
 
+  const renderOptionChips = () => (
+    <OptionChips
+      width={width}
+      options={options}
+      value={value}
+      isSelected={isSelected}
+      optionLabel={optionLabel}
+      selectOption={selectOption}
+      clearAll={setValues}
+      inclusionExclusion={inclusionExclusion}
+      incExcVal={incExcVal}
+      renderEmptySelected={renderEmptySelected}
+    />
+  );
+
+  if (custom) {
+    return (
+      <CustomMultiSelect
+        value={value}
+        onValueChange={onValueChange}
+        renderSearch={renderSearch}
+        placeholder={searchPlaceholder}
+        renderEmptySelected={renderEmptySelected}
+        width={width}
+      />
+    );
+  }
+
   return (
     <>
-      {type && type === 'domain' ? (
-        <Domain
-          value={value}
-          renderSearch={renderSearch}
-          onValueChange={onValueChange}
-          searchPlaceholder={searchPlaceholder}
+      {renderSearch && (
+        <Searchbox
+          placeholder={searchPlaceholder}
+          value={searchValue}
+          onValueChange={onSearchChange}
         />
-      ) : (
-        <>
-          {renderSearch && (
-            <Searchbox
-              placeholder={searchPlaceholder}
-              value={searchValue}
-              onValueChange={onSearchChange}
-            />
-          )}
+      )}
+      <Box direction="row">
+        <Box width={width}>
           <OptionsBox role="menubar" tabIndex="-1">
-            {options.length > 0 ? (
+            {options && options.length > 0 ? (
               <InfiniteScroll
                 items={options}
                 step={theme.select.step}
@@ -102,6 +128,8 @@ const SingleColumnSelect = ({
                           <OptionWithCheckControl
                             selected={allSelected}
                             label="Select All"
+                            inclusionExclusion={inclusionExclusion}
+                            incExcVal={incExcVal}
                           />
                         </SelectOption>
                       )}
@@ -127,6 +155,8 @@ const SingleColumnSelect = ({
                         <OptionWithCheckControl
                           selected={optionSelected}
                           label={optionLabel(index)}
+                          inclusionExclusion={inclusionExclusion}
+                          incExcVal={incExcVal}
                         />
                       </SelectOption>
                     </>
@@ -150,21 +180,22 @@ const SingleColumnSelect = ({
               </SelectOption>
             )}
           </OptionsBox>
-          {showOptionChips && (
-            <OptionChips
-              width={width}
-              options={options}
-              value={value}
-              isSelected={isSelected}
-              optionLabel={optionLabel}
-              selectOption={selectOption}
-              clearAll={setValues}
-            />
-          )}
-          {showControlButtons && (
-            <ControlButton onUpdate={onUpdate} onCancel={onCancel} />
-          )}
-        </>
+        </Box>
+        {layout === 'double-column' && (
+          <Box
+            width={width}
+            border={[
+              { side: 'left', color: theme.multiselect.rightPanel.border },
+              { side: 'bottom', color: theme.multiselect.rightPanel.border },
+            ]}
+          >
+            {renderOptionChips()}
+          </Box>
+        )}
+      </Box>
+      {showOptionChips && layout === 'single-column' && renderOptionChips()}
+      {showControlButtons && (
+        <ControlButton onUpdate={onUpdate} onCancel={onCancel} />
       )}
     </>
   );

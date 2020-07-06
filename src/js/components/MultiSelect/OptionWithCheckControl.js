@@ -1,13 +1,19 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import { FormCheckmark } from 'grommet-icons/icons/FormCheckmark';
+import { FormClose } from 'grommet-icons/icons/FormClose';
 
 import { Box } from '../Box';
 import { Text } from '../Text';
 
-import { OptionBox, CheckBoxWrapper } from './StyledMultiSelect';
+import { OptionBox, CheckBoxWrapper, CheckBox } from './StyledMultiSelect';
 
-const OptionWithCheckControl = ({ selected, label }) => {
+const OptionWithCheckControl = ({
+  selected,
+  label,
+  inclusionExclusion,
+  incExcVal,
+}) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
 
   const selectOptionsStyle = {
@@ -15,29 +21,48 @@ const OptionWithCheckControl = ({ selected, label }) => {
     ...theme.select.options.container,
   };
 
+  const renderCheckbox = (check, type) => {
+    return (
+      <CheckBoxWrapper {...theme.multiselect.checkbox.box}>
+        <CheckBox
+          {...theme.multiselect.checkbox.check}
+          active={selected || (inclusionExclusion && !incExcVal)}
+          checkType={type}
+        >
+          {(selected || (inclusionExclusion && !incExcVal)) && (
+            <>
+              {check === 'check' && (
+                <FormCheckmark {...theme.multiselect.checkbox.checkmark} />
+              )}
+              {check === 'cross' && (
+                <FormClose {...theme.multiselect.checkbox.checkmark} />
+              )}
+            </>
+          )}
+        </CheckBox>
+      </CheckBoxWrapper>
+    );
+  };
+
   return (
     <OptionBox {...selectOptionsStyle} selected={selected}>
-      <Box direction="row">
-        <CheckBoxWrapper {...theme.multiselect.checkbox.box}>
-          <Box
-            {...theme.multiselect.checkbox.check}
-            background={
-              selected
-                ? theme.multiselect.checkbox.check.active.background
-                : 'white'
+      <Box {...theme.multiselect.option}>
+        <Box direction="row">
+          {!inclusionExclusion && renderCheckbox('check', 'default')}
+          <Text {...theme.select.options.text}>{label}</Text>
+        </Box>
+        {inclusionExclusion && (
+          <Box direction="row">
+            {
+              [null, 'included'].includes(incExcVal)
+              && renderCheckbox('check', 'included')
             }
-            border={{
-              color: selected
-                ? theme.multiselect.checkbox.check.active.background
-                : theme.multiselect.checkbox.check.active.border,
-            }}
-          >
-            {selected && (
-              <FormCheckmark {...theme.multiselect.checkbox.checkmark} />
-            )}
+            {
+              [null, 'excluded'].includes(incExcVal)
+              && renderCheckbox('cross', 'excluded')
+            }
           </Box>
-        </CheckBoxWrapper>
-        <Text {...theme.select.options.text}>{label}</Text>
+        )}
       </Box>
     </OptionBox>
   );

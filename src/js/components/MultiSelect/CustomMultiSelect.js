@@ -1,24 +1,31 @@
 import React, { useContext, useCallback } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import { ThemeContext } from 'styled-components';
 import { TextArea } from '../TextArea';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
-import SelectedList from './SelectedList';
+import CustomSelectedList from './CustomSelectedList';
 
-const Domain = ({ value, onValueChange, renderSearch, searchPlaceholder }) => {
+const CustomMultiSelect = ({
+  value,
+  onValueChange,
+  renderSearch,
+  placeholder,
+  renderEmptySelected,
+  width,
+}) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
-  const { isInclude, items } = value;
+  const { isInclude, values } = value;
   const [textAreaValue, setTextAreaValue] = React.useState('');
 
   const setItems = isInclude => {
     if (textAreaValue.length) {
-      const values = textAreaValue.trim().split('\n');
+      const textValues = textAreaValue.trim().split('\n');
       onValueChange({
         ...value,
         isInclude,
-        items: [...items, ...values],
+        values: [...values, ...textValues],
       });
       setTextAreaValue('');
     }
@@ -26,16 +33,16 @@ const Domain = ({ value, onValueChange, renderSearch, searchPlaceholder }) => {
 
   const removeItem = useCallback(
     item => {
-      const lists = [...items];
+      const lists = [...values];
       const index = lists.indexOf(item);
       lists.splice(index, 1);
       if (!lists.length) {
-        onValueChange({ ...value, isInclude: null, items: [...lists] });
+        onValueChange({ ...value, isInclude: null, values: [...lists] });
         return;
       }
-      onValueChange({ ...value, items: [...lists] });
+      onValueChange({ ...value, values: [...lists] });
     },
-    [value, items, onValueChange],
+    [value, values, onValueChange],
   );
 
   return (
@@ -62,16 +69,18 @@ const Domain = ({ value, onValueChange, renderSearch, searchPlaceholder }) => {
           )}
         </Box>
       </Box>
-      <SelectedList
-        selectedItems={items}
+      <CustomSelectedList
+        selectedItems={values}
         isInclude={isInclude}
         onValueChange={onValueChange}
         renderSearch={renderSearch}
-        searchPlaceholder={searchPlaceholder}
+        searchPlaceholder={placeholder}
         onRemove={removeItem}
+        renderEmptySelected={renderEmptySelected}
+        width={width}
       />
     </Box>
   );
 };
 
-export default Domain;
+export { CustomMultiSelect };
