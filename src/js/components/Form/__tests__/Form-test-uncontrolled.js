@@ -370,4 +370,207 @@ describe('Form uncontrolled', () => {
     expect(queryByText('required')).toBeTruthy();
     expect(queryByText('must be >1 character')).toBe(null);
   });
+
+  /* The three following tests align with FormField's supported 'validate' types
+   * FormField's 'validate' prop accepts the following types:
+   * 1) object in the shape of: {
+   *  regexp?: object,
+   *  message?: string | React.ReactNode,
+   *  status?: 'error' | 'info'
+   * }
+   * 2) function: (...args: any[]) => any )
+   * 3) array of 1) and/or 2) above
+   */
+  test('should validate when supplied an object', () => {
+    const regexValidation = {
+      regexp: new RegExp('(?=.*?[#?!@$ %^&*-])'),
+      message: 'At least one special character or space',
+      status: 'error',
+    };
+    const expectedMessage = 'At least one special character or space';
+
+    const { getByPlaceholderText, getByText, queryByText } = render(
+      <Grommet>
+        <Form>
+          <FormField
+            label="Create a Password"
+            name="password"
+            // required
+            validate={regexValidation}
+            // placeholder="Enter Password"
+          >
+            <TextInput name="password" placeholder="Enter Password" />
+          </FormField>
+          <Button type="submit" label="Submit" />
+        </Form>
+      </Grommet>,
+    );
+
+    const input = getByPlaceholderText('Enter Password');
+    const submitButton = getByText('Submit');
+
+    // Absence of a special character in input should display
+    // 'special character' error message
+    fireEvent.change(input, {
+      target: { value: 'abcde' },
+    });
+    fireEvent.click(submitButton);
+    expect(getByText(expectedMessage).innerHTML).toBeTruthy();
+
+    // Including a special character should validate. 'Special character'
+    // error message should not be displayed.
+    fireEvent.change(input, {
+      target: { value: 'abcde%' },
+    });
+    fireEvent.click(submitButton);
+    expect(queryByText(expectedMessage)).toBeNull();
+  });
+
+  test('should validate when supplied a function', () => {
+    const functionValidation = combination => {
+      return combination === '12345'
+        ? {
+            message:
+              "That's amazing. I've got the same combination on my luggage!",
+            status: 'info',
+          }
+        : undefined;
+    };
+    const infoMessage =
+      "That's amazing. I've got the same combination on my luggage!";
+
+    const { getByPlaceholderText, getByText, queryByText } = render(
+      <Grommet>
+        <Form>
+          <FormField
+            label="Druidia Shield Combination"
+            name="combination"
+            validate={functionValidation}
+          >
+            <TextInput name="combination" placeholder="Enter Combination" />
+          </FormField>
+          <Button type="submit" label="Submit" />
+        </Form>
+      </Grommet>,
+    );
+
+    const input = getByPlaceholderText('Enter Combination');
+    const submitButton = getByText('Submit');
+
+    // If combination input matches value in function, should display
+    // info message
+    fireEvent.change(input, {
+      target: { value: '12345' },
+    });
+    fireEvent.click(submitButton);
+    expect(getByText(infoMessage)).toBeTruthy();
+
+    // Combination info message should not be shown if value does not match.
+    fireEvent.change(input, {
+      target: { value: 'abcde%' },
+    });
+    fireEvent.click(submitButton);
+    expect(queryByText(infoMessage)).toBeNull();
+  });
+
+  test(`should validate with array of objects and/or functions`, () => {
+    const validationArray = [
+      {
+        regexp: new RegExp('(?=.*?[0-9])'),
+        message: 'At least one number',
+        status: 'error',
+      },
+      {
+        regexp: new RegExp('.{5,}'),
+        message: 'At least five characters',
+        status: 'error',
+      },
+      combination => {
+        return combination === '12345'
+          ? {
+              message:
+                "That's amazing. I've got the same combination on my luggage!",
+              status: 'info',
+            }
+          : undefined;
+      },
+      {
+        regexp: new RegExp('(?=.*?[#?!@$ %^&*-])'),
+        message: 'At least one special character or space',
+        status: 'error',
+      },
+    ];
+
+    const validationMessages = [
+      'At least one number',
+      'At least five characters',
+      "That's amazing. I've got the same combination on my luggage!",
+      'At least one special character or space',
+    ];
+
+    const { getByPlaceholderText, getByText, queryByText } = render(
+      <Grommet>
+        <Form>
+          <FormField
+            label="Druidia Shield Combination"
+            name="combination"
+            validate={validationArray}
+          >
+            <TextInput name="combination" placeholder="Enter Combination" />
+          </FormField>
+          <Button type="submit" label="Submit" />
+        </Form>
+      </Grommet>,
+    );
+
+    const input = getByPlaceholderText('Enter Combination');
+    const submitButton = getByText('Submit');
+
+    // Needs to include a number. Show message.
+    fireEvent.change(input, {
+      target: { value: 'a' },
+    });
+    fireEvent.click(submitButton);
+    expect(getByText('At least one number')).toBeTruthy();
+
+    // Needs five characters. Show message.
+    fireEvent.change(input, {
+      target: { value: '1' },
+    });
+    fireEvent.click(submitButton);
+    expect(getByText('At least five characters')).toBeTruthy();
+
+    // Still needs five characters. Show message.
+    fireEvent.change(input, {
+      target: { value: '12' },
+    });
+    fireEvent.click(submitButton);
+    expect(getByText('At least five characters')).toBeTruthy();
+
+    // Input satifies condition in funciton. Show message.
+    fireEvent.change(input, {
+      target: { value: '12345' },
+    });
+    fireEvent.click(submitButton);
+
+    expect(
+      getByText("That's amazing. I've got the same combination on my luggage!"),
+    ).toBeTruthy();
+
+    // No special character included. Show message.
+    fireEvent.change(input, {
+      target: { value: '123456' },
+    });
+    fireEvent.click(submitButton);
+    expect(getByText('At least one special character or space')).toBeTruthy();
+
+    // All validation criteria met, so none of the messages should appear.
+    fireEvent.change(input, {
+      target: { value: '123456%' },
+    });
+    fireEvent.click(submitButton);
+    validationMessages.forEach(message =>
+      expect(queryByText(message)).toBeNull(),
+    );
+  });
 });
