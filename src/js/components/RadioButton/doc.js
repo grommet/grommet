@@ -51,6 +51,12 @@ with the same name so form submissions work.`,
 };
 
 export const themeDoc = {
+  'global.colors.control': {
+    description: `The default color of the border surrounding 
+    the checked icon in RadioButton checked state.`,
+    type: 'string | { dark: string, light: string }',
+    defaultValue: `{ dark: 'accent-1', light: 'brand'}`,
+  },
   'radioButton.border.color': {
     description: 'The color of the border of the Radio Button.',
     type: 'string | { dark: string, light: string }',
