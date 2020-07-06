@@ -3,6 +3,7 @@ import React, {
   useCallback,
   useContext,
   useMemo,
+  useRef,
   useState,
   useEffect,
 } from 'react';
@@ -203,6 +204,7 @@ const Calendar = forwardRef(
       [reference],
     );
 
+    const daysRef = useRef();
     const [focus, setFocus] = useState();
     const [active, setActive] = useState();
     // when working on a range, remember the last selected date so we know
@@ -398,7 +400,12 @@ const Calendar = forwardRef(
               tabIndex={-1}
               active={active && active.getTime() === day.getTime()}
               disabled={dayDisabled}
-              onClick={() => selectDate(dateString)}
+              onClick={() => {
+                selectDate(dateString);
+                // Chrome moves the focus indicator to this button. Set
+                // the focus to the grid of days instead.
+                daysRef.current.focus();
+              }}
               onMouseOver={() => setActive(new Date(dateString))}
               onMouseOut={() => setActive(undefined)}
               onFocus={() => {}}
@@ -451,6 +458,7 @@ const Calendar = forwardRef(
             onRight={() => active && setActive(addDays(active, 1))}
           >
             <StyledWeeksContainer
+              ref={daysRef}
               sizeProp={size}
               tabIndex={0}
               focus={focus}
