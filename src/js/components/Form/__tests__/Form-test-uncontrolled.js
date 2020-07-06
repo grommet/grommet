@@ -22,7 +22,8 @@ describe('Form accessibility', () => {
   afterEach(cleanup);
 
   // TextInput in Form should have no accessibility violations
-  test('TextInput-Form should have no accessibility violations', async () => {
+  test(`TextInput in Form should have 
+        no accessibility violations`, async () => {
     const { container } = render(
       <Grommet>
         <Form>
