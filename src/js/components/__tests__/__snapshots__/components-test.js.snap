@@ -1895,6 +1895,18 @@ string",
         "name": "pad",
       },
       Object {
+        "description": "When using a 'point' type, what shape the points should use.
+      If this property is not specified, points will be drawn as a square or
+      a circle, based on how 'round' is specified.",
+        "format": "circle
+diamond
+square
+star
+triangle
+triangleDown",
+        "name": "point",
+      },
+      Object {
         "defaultValue": false,
         "description": "Whether to round the line ends.",
         "format": "boolean",
@@ -6252,6 +6264,12 @@ currently active tab changes.",
     "intrinsicElement": "textarea",
     "name": "TextArea",
     "properties": Array [
+      Object {
+        "description": "Custom label to be used by screen readers.
+      When provided, an aria-label will be added to the element.",
+        "format": "string",
+        "name": "a11yTitle",
+      },
       Object {
         "description": "The id attribute of the textarea.",
         "format": "string",
