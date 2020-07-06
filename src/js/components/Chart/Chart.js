@@ -33,6 +33,7 @@ const Chart = React.forwardRef(
       onHover,
       overflow = false,
       pad,
+      point,
       round,
       size: propsSize = defaultSize,
       thickness = 'medium',
@@ -385,18 +386,32 @@ const Chart = React.forwardRef(
           }
 
           const renderPoint = (valueX, valueY) => {
-            const center = valueY;
             const props = { ...hoverProps, ...clickProps, ...valueRest };
-            if (round) {
-              const [cx, cy] = valueToCoordinate(valueX, center);
-              return <circle cx={cx} cy={cy} r={strokeWidth / 2} {...props} />;
-            }
-            const [x, y] = valueToCoordinate(value[0], center).map(
-              // for rect, offset half strokeWidth to top left corner coord
-              c => c - strokeWidth / 2,
-            );
-            const dim = strokeWidth;
-            return <rect x={x} y={y} width={dim} height={dim} {...props} />;
+            const [cx, cy] = valueToCoordinate(valueX, valueY);
+            const off = strokeWidth / 2;
+            if (point === 'circle' || (!point && round))
+              return <circle cx={cx} cy={cy} r={off} {...props} />;
+            let d;
+            if (point === 'diamond')
+              d = `M ${cx} ${cy - off} L ${cx + off} ${cy} L ${cx} ${cy +
+                off} L ${cx - off} ${cy} Z`;
+            else if (point === 'star') {
+              const off1 = off / 3;
+              const off2 = off1 * 2;
+              d = `M ${cx} ${cy - off} L ${cx - off2} ${cy + off} L ${cx +
+                off} ${cy - off1} L ${cx - off} ${cy - off1} L ${cx +
+                off2} ${cy + off} Z`;
+            } else if (point === 'triangle')
+              d = `M ${cx} ${cy - off} L ${cx + off} ${cy + off} L ${cx -
+                off} ${cy + off} Z`;
+            else if (point === 'triangleDown')
+              d = `M ${cx - off} ${cy - off} L ${cx + off} ${cy -
+                off} L ${cx} ${cy + off} Z`;
+            // square
+            else
+              d = `M ${cx - off} ${cy - off} L ${cx + off} ${cy - off} L ${cx +
+                off} ${cy + off} L ${cx - off} ${cy + off} Z`;
+            return <path d={d} />;
           };
 
           return (
