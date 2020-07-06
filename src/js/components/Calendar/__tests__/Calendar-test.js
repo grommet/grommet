@@ -5,7 +5,7 @@ import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
-// import { axe } from 'jest-axe';
+import { axe } from 'jest-axe';
 import { cleanup, fireEvent, render, act } from '@testing-library/react';
 import { FormNextLink, FormPreviousLink } from 'grommet-icons';
 import { Box, Button, Calendar, Grommet, Text } from '../..';
@@ -18,6 +18,17 @@ const DATES = [
 
 describe('Calendar', () => {
   afterEach(cleanup);
+
+  test('Calendar should have no accessbility violations', async () => {
+    const { container } = render(
+      <Grommet>
+        <Calendar date={DATE} animate={false} />
+      </Grommet>,
+    );
+
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 
   test('date', () => {
     // need to set the date to avoid snapshot drift over time
@@ -174,7 +185,7 @@ describe('Calendar', () => {
     jest.useFakeTimers();
     const { container, getByLabelText } = render(
       <Grommet>
-        <Calendar bounds={['2017-10-08', '2018-12-13']} date={DATE} />
+        <Calendar date={DATE} />
       </Grommet>,
     );
     fireEvent.click(getByLabelText('December 2017'));
@@ -193,7 +204,7 @@ describe('Calendar', () => {
     const { container, getByText } = render(
       <Grommet>
         <Calendar
-          bounds={['2018-01-01', '2018-01-31']}
+          bounds={['2018-01-14', '2018-01-16']}
           date={DATE}
           onSelect={onSelect}
           animate={false}
@@ -207,6 +218,7 @@ describe('Calendar', () => {
       keyCode: 13,
       which: 13,
     });
+    fireEvent.mouseOut(getByText('15'));
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -215,7 +227,7 @@ describe('Calendar', () => {
     const { container, getByText } = render(
       <Grommet>
         <Calendar
-          bounds={['2018-01-01', '2018-01-31']}
+          bounds={['2018-01-14', '2018-01-16']}
           date={DATE}
           onSelect={onSelect}
           animate={false}
@@ -229,6 +241,7 @@ describe('Calendar', () => {
       keyCode: 38,
       which: 38,
     });
+    fireEvent.mouseOut(getByText('15'));
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -237,7 +250,7 @@ describe('Calendar', () => {
     const { container, getByText } = render(
       <Grommet>
         <Calendar
-          bounds={['2018-01-01', '2018-01-31']}
+          bounds={['2018-01-14', '2018-01-16']}
           date={DATE}
           onSelect={onSelect}
           animate={false}
@@ -251,6 +264,7 @@ describe('Calendar', () => {
       keyCode: 40,
       which: 40,
     });
+    fireEvent.mouseOut(getByText('15'));
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -259,7 +273,7 @@ describe('Calendar', () => {
     const { container, getByText } = render(
       <Grommet>
         <Calendar
-          bounds={['2018-01-01', '2018-01-31']}
+          bounds={['2018-01-14', '2018-01-16']}
           date={DATE}
           onSelect={onSelect}
           animate={false}
@@ -273,6 +287,7 @@ describe('Calendar', () => {
       keyCode: 37,
       which: 37,
     });
+    fireEvent.mouseOut(getByText('15'));
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -281,7 +296,7 @@ describe('Calendar', () => {
     const { container, getByText } = render(
       <Grommet>
         <Calendar
-          bounds={['2018-01-01', '2018-01-31']}
+          bounds={['2018-01-14', '2018-01-16']}
           date={DATE}
           onSelect={onSelect}
           animate={false}
@@ -295,6 +310,7 @@ describe('Calendar', () => {
       keyCode: 39,
       which: 39,
     });
+    fireEvent.mouseOut(getByText('15'));
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -321,7 +337,7 @@ describe('Calendar', () => {
     ]);
   });
 
-  test('select date with range not date set', () => {
+  test('select date with range no date set', () => {
     const onSelect = jest.fn();
     const { getByText } = render(
       <Grommet>
@@ -343,18 +359,97 @@ describe('Calendar', () => {
     ]);
   });
 
-  test('mouse events', () => {
+  test('select date with range and dates', () => {
     const onSelect = jest.fn();
-    const { container, getByText } = render(
+    const { getByLabelText } = render(
       <Grommet>
-        <Calendar date={DATE} onSelect={onSelect} animate={false} />
+        <Calendar
+          dates={[['2018-01-01T00:00:00-08:00', '2018-01-05T00:00:00-08:00']]}
+          onSelect={onSelect}
+          range
+          animate={false}
+        />
       </Grommet>,
     );
-    fireEvent.mouseOver(getByText('15'));
-    // date 15 should be active
+    // select date greater than January 1st
+    fireEvent.click(getByLabelText('Wed Jan 03 2018'));
+    expect(onSelect).toBeCalledWith([
+      [
+        expect.stringMatching(/^2018-01-03T/),
+        expect.stringMatching(/^2018-01-05T/),
+      ],
+    ]);
+    // select date less than January 3rd
+    fireEvent.click(getByLabelText('Mon Jan 01 2018'));
+    expect(onSelect).toBeCalledWith([
+      [
+        expect.stringMatching(/^2018-01-01T/),
+        expect.stringMatching(/^2018-01-05T/),
+      ],
+    ]);
+  });
+
+  test('select date with same start date', () => {
+    const onSelect = jest.fn();
+    const { getByLabelText } = render(
+      <Grommet>
+        <Calendar
+          dates={[['2018-01-01T00:00:00-08:00', '2018-01-03T00:00:00-08:00']]}
+          onSelect={onSelect}
+          range
+          animate={false}
+        />
+      </Grommet>,
+    );
+    // selecting same starting day
+    fireEvent.click(getByLabelText('Mon Jan 01 2018'));
+    expect(onSelect).toBeCalledWith(expect.stringMatching(/^2018-01-03T/));
+  });
+
+  test('select date with same date twice', () => {
+    const onSelect = jest.fn();
+    const { getByLabelText } = render(
+      <Grommet>
+        <Calendar
+          reference="2018-01-01T00:00:00-08:00"
+          onSelect={onSelect}
+          range
+          animate={false}
+        />
+      </Grommet>,
+    );
+    fireEvent.click(getByLabelText('Wed Jan 03 2018'));
+    expect(onSelect).toHaveBeenNthCalledWith(
+      1,
+      expect.stringMatching(/^2018-01-03T/),
+    );
+    fireEvent.click(getByLabelText('Wed Jan 03 2018'));
+    expect(onSelect).toHaveBeenNthCalledWith(2, undefined);
+  });
+
+  test('select date with same end date', () => {
+    const onSelect = jest.fn();
+    const { getByLabelText } = render(
+      <Grommet>
+        <Calendar
+          dates={[['2018-01-01T00:00:00-08:00', '2018-01-03T00:00:00-08:00']]}
+          onSelect={onSelect}
+          range
+          animate={false}
+        />
+      </Grommet>,
+    );
+    // selecting same ending day
+    fireEvent.click(getByLabelText('Wed Jan 03 2018'));
+    expect(onSelect).toBeCalledWith(expect.stringMatching(/^2018-01-01T/));
+  });
+
+  test('undefined date', () => {
+    const { container } = render(
+      <Grommet>
+        <Calendar dates={[undefined]} animate={false} />
+      </Grommet>,
+    );
     expect(container.firstChild).toMatchSnapshot();
-    fireEvent.mouseOut(getByText('15'));
-    getByText('15').focus();
-    // fireEvent.blur(getByText('15'));
   });
 });
