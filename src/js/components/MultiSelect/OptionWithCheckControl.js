@@ -13,6 +13,7 @@ const OptionWithCheckControl = ({
   label,
   inclusionExclusion,
   incExcVal,
+  onSelect,
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
 
@@ -28,6 +29,10 @@ const OptionWithCheckControl = ({
           {...theme.multiselect.checkbox.check}
           active={selected || (inclusionExclusion && !incExcVal)}
           checkType={type}
+          onClick={
+            (inclusionExclusion && !incExcVal) ?
+              (event) => onSelect(event, type) : undefined
+          }
         >
           {(selected || (inclusionExclusion && !incExcVal)) && (
             <>

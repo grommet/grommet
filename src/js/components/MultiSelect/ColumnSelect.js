@@ -13,7 +13,7 @@ import { OptionChips } from './OptionChips';
 import { ControlButton } from './ControlButton';
 import { Searchbox } from './Searchbox';
 
-const SingleColumnSelect = ({
+const ColumnSelect = ({
   options,
   value,
   isSelected,
@@ -35,6 +35,7 @@ const SingleColumnSelect = ({
   showControlButtons,
   inclusionExclusion,
   incExcVal,
+  setIncExcVal,
   renderSearch,
   searchPlaceholder,
   searchValue,
@@ -49,6 +50,15 @@ const SingleColumnSelect = ({
   };
 
   const allSelected = options.every((item, index) => isSelected(index));
+
+  const setOption = (event, type, index) => {
+    setIncExcVal(type);
+    if (index !== -1) selectOption(index)(event);
+    else
+      setValues(allSelected ?
+        [] : options.map((item, ind) => optionValue(ind)),
+      );
+  };
 
   const renderOptionChips = () => (
     <OptionChips
@@ -100,8 +110,11 @@ const SingleColumnSelect = ({
                           hoverIndicator="light-5"
                           selected={allSelected}
                           plain
-                          onClick={() => setValues(allSelected ?
-                            [] : options.map((item, ind) => optionValue(ind)))
+                          onClick={(!inclusionExclusion) ||
+                            (inclusionExclusion && incExcVal) ?
+                            (() => setValues(allSelected ?
+                              [] : options.map((item, ind) => optionValue(ind)))
+                            ) : undefined
                           }
                         >
                           <OptionWithCheckControl
@@ -109,6 +122,9 @@ const SingleColumnSelect = ({
                             label="Select All"
                             inclusionExclusion={inclusionExclusion}
                             incExcVal={incExcVal}
+                            onSelect={
+                              (event, type) => setOption(event, type, -1)
+                            }
                           />
                         </SelectOption>
                       )}
@@ -128,7 +144,9 @@ const SingleColumnSelect = ({
                           !optionDisabled ? onActiveOption(index) : undefined
                         }
                         onClick={
-                          !optionDisabled ? selectOption(index) : undefined
+                          (!optionDisabled && !inclusionExclusion) || 
+                          (!optionDisabled && inclusionExclusion && incExcVal) ?
+                          selectOption(index) : undefined
                         }
                       >
                         <OptionWithCheckControl
@@ -136,6 +154,9 @@ const SingleColumnSelect = ({
                           label={optionLabel(index)}
                           inclusionExclusion={inclusionExclusion}
                           incExcVal={incExcVal}
+                          onSelect={
+                            (event, type) => setOption(event, type, index)
+                          }
                         />
                       </SelectOption>
                     </>
@@ -180,4 +201,4 @@ const SingleColumnSelect = ({
   );
 }
 
-export { SingleColumnSelect };
+export { ColumnSelect };

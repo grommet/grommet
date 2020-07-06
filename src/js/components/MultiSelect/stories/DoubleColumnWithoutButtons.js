@@ -28,7 +28,6 @@ const Example = () => {
         searchPlaceholder="Search"
         searchable
         withOptionChips
-        withUpdateCancelButtons
         withInclusionExclusion={{ setIncExc: incExc, labelCount: 1 }}
         onIncExcChange={(nextIncExc) => setIncExc(nextIncExc)}
         renderEmptySelected={<span>Empty</span>}
@@ -37,4 +36,5 @@ const Example = () => {
   )
 }
 
-storiesOf('MultiSelect', module).add('Double Column', () => <Example />);
+storiesOf('MultiSelect', module)
+  .add('Double Column without Control Buttons', () => <Example />);
