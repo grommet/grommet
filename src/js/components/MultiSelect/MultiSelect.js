@@ -22,6 +22,8 @@ const MultiSelect = ({
   withOptionChips,
   withUpdateCancelButtons,
   searchable,
+  withInclusionExclusion,
+  renderEmptySelected,
   ...rest
 }) => {
   const {
@@ -29,8 +31,9 @@ const MultiSelect = ({
     previousValue,
     open,
     searchVal,
+    incExcVal,
     setSelectState,
-  } = useCustomSelectState(options, value);
+  } = useCustomSelectState(options, value, withInclusionExclusion);
 
   const onCancelClick = () => {
     onValueChange(previousValue);
@@ -68,9 +71,10 @@ const MultiSelect = ({
   };
 
   const renderContent = (props) => {
-    if (layout === 'single-column') {
+    if (['single-column', 'double-column'].includes(layout)) {
       return (
         <SingleColumnSelect
+          layout={layout}
           width={width}
           onUpdate={() =>
             setSelectState({ open: false, previousValue: value })
@@ -80,10 +84,13 @@ const MultiSelect = ({
           emptySearchMessage={emptySearchMessage}
           showOptionChips={withOptionChips}
           showControlButtons={withUpdateCancelButtons}
+          inclusionExclusion={withInclusionExclusion}
+          incExcVal={incExcVal}
           renderSearch={searchable && !onSearch}
           searchPlaceholder={searchPlaceholder}
           searchValue={searchVal || ''}
           onSearchChange={(search) => onSearchChange(search)}
+          renderEmptySelected={renderEmptySelected}
           {...props}
         />
       );

@@ -5,6 +5,7 @@ import { defaultProps } from '../../default-props';
 
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Text } from '../Text';
+import { Box } from '../Box';
 
 import { OptionBox, OptionsBox, SelectOption } from './StyledMultiSelect';
 import { OptionWithCheckControl } from './OptionWithCheckControl';
@@ -27,14 +28,18 @@ const SingleColumnSelect = ({
   onCancel,
   onUpdate,
   setValues,
+  layout,
   width,
   emptySearchMessage,
   showOptionChips,
   showControlButtons,
+  inclusionExclusion,
+  incExcVal,
   renderSearch,
   searchPlaceholder,
   searchValue,
   onSearchChange,
+  renderEmptySelected,
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
 
@@ -45,6 +50,21 @@ const SingleColumnSelect = ({
 
   const allSelected = options.every((item, index) => isSelected(index));
 
+  const renderOptionChips = () => (
+    <OptionChips
+      width={width}
+      options={options}
+      value={value}
+      isSelected={isSelected}
+      optionLabel={optionLabel}
+      selectOption={selectOption}
+      clearAll={setValues}
+      inclusionExclusion={inclusionExclusion}
+      incExcVal={incExcVal}
+      renderEmptySelected={renderEmptySelected}
+    />
+  );
+
   return (
     <>
       {renderSearch && (
@@ -54,94 +74,105 @@ const SingleColumnSelect = ({
           onValueChange={onSearchChange}
         />
       )}
-      <OptionsBox role="menubar" tabIndex="-1">
-        {options.length > 0 ? (
-          <InfiniteScroll
-            items={options}
-            step={theme.select.step}
-            onMore={onMore}
-            replace={replace}
-            show={activeIndex !== -1 ? activeIndex : undefined}
+      <Box direction="row">
+        <Box width={width}>
+          <OptionsBox role="menubar" tabIndex="-1">
+            {options.length > 0 ? (
+              <InfiniteScroll
+                items={options}
+                step={theme.select.step}
+                onMore={onMore}
+                replace={replace}
+                show={activeIndex !== -1 ? activeIndex : undefined}
+              >
+                {(option, index, optionRef) => {
+                  const optionDisabled = isDisabled(index);
+                  const optionSelected = isSelected(index);
+                  const optionActive = activeIndex === index;
+                  return (
+                    <>
+                      {index === 0 && (
+                        <SelectOption
+                          // eslint-disable-next-line react/no-array-index-key
+                          key={`${index}_select_all`}
+                          tabIndex="-1"
+                          role="menuitem"
+                          hoverIndicator="light-5"
+                          selected={allSelected}
+                          plain
+                          onClick={() => setValues(allSelected ?
+                            [] : options.map((item, ind) => optionValue(ind)))
+                          }
+                        >
+                          <OptionWithCheckControl
+                            selected={allSelected}
+                            label="Select All"
+                            inclusionExclusion={inclusionExclusion}
+                            incExcVal={incExcVal}
+                          />
+                        </SelectOption>
+                      )}
+                      <SelectOption
+                        // eslint-disable-next-line react/no-array-index-key
+                        key={index}
+                        ref={optionRef}
+                        tabIndex="-1"
+                        role="menuitem"
+                        hoverIndicator="light-5"
+                        disabled={optionDisabled || undefined}
+                        active={optionActive}
+                        selected={optionSelected}
+                        option={option}
+                        plain
+                        onMouseOver={
+                          !optionDisabled ? onActiveOption(index) : undefined
+                        }
+                        onClick={
+                          !optionDisabled ? selectOption(index) : undefined
+                        }
+                      >
+                        <OptionWithCheckControl
+                          selected={optionSelected}
+                          label={optionLabel(index)}
+                          inclusionExclusion={inclusionExclusion}
+                          incExcVal={incExcVal}
+                        />
+                      </SelectOption>
+                    </>
+                  );
+                }}
+              </InfiniteScroll>
+            ) : (
+                <SelectOption
+                  key="search_empty"
+                  tabIndex="-1"
+                  role="menuitem"
+                  hoverIndicator="background"
+                  disabled
+                  option="No values available"
+                >
+                  <OptionBox {...selectOptionsStyle}>
+                    <Text {...theme.select.container.text}>
+                      {emptySearchMessage || 'No values available'}
+                    </Text>
+                  </OptionBox>
+                </SelectOption>
+              )}
+          </OptionsBox>
+        </Box>
+        {layout === 'double-column' && (
+          <Box 
+            width={width}
+            border={[
+              { side: 'left', color: theme.multiselect.rightPanel.border },
+              { side: 'bottom', color: theme.multiselect.rightPanel.border },
+            ]}
           >
-            {(option, index, optionRef) => {
-              const optionDisabled = isDisabled(index);
-              const optionSelected = isSelected(index);
-              const optionActive = activeIndex === index;
-              return (
-                <>
-                  {index === 0 && (
-                    <SelectOption
-                      // eslint-disable-next-line react/no-array-index-key
-                      key={`${index}_select_all`}
-                      tabIndex="-1"
-                      role="menuitem"
-                      hoverIndicator="light-5"
-                      selected={allSelected}
-                      plain
-                      onClick={() => setValues(allSelected ?
-                        [] : options.map((item, ind) => optionValue(ind)))
-                      }
-                    >
-                      <OptionWithCheckControl
-                        selected={allSelected}
-                        label="Select All"
-                      />
-                    </SelectOption>
-                  )}
-                  <SelectOption
-                    // eslint-disable-next-line react/no-array-index-key
-                    key={index}
-                    ref={optionRef}
-                    tabIndex="-1"
-                    role="menuitem"
-                    hoverIndicator="light-5"
-                    disabled={optionDisabled || undefined}
-                    active={optionActive}
-                    selected={optionSelected}
-                    option={option}
-                    plain
-                    onMouseOver={
-                      !optionDisabled ? onActiveOption(index) : undefined
-                    }
-                    onClick={!optionDisabled ? selectOption(index) : undefined}
-                  >
-                    <OptionWithCheckControl
-                      selected={optionSelected}
-                      label={optionLabel(index)}
-                    />
-                  </SelectOption>
-                </>
-              );
-            }}
-          </InfiniteScroll>
-        ) : (
-            <SelectOption
-              key="search_empty"
-              tabIndex="-1"
-              role="menuitem"
-              hoverIndicator="background"
-              disabled
-              option="No values available"
-            >
-              <OptionBox {...selectOptionsStyle}>
-                <Text {...theme.select.container.text}>
-                  {emptySearchMessage || 'No values available'}
-                </Text>
-              </OptionBox>
-            </SelectOption>
-          )}
-      </OptionsBox>
-      {showOptionChips && (
-        <OptionChips
-          width={width}
-          options={options}
-          value={value}
-          isSelected={isSelected}
-          optionLabel={optionLabel}
-          selectOption={selectOption}
-          clearAll={setValues}
-        />
-      )}
+            {renderOptionChips()}
+          </Box>
+        )}
+      </Box>
+      {showOptionChips && layout === 'single-column' && renderOptionChips()}
       {showControlButtons && (
         <ControlButton onUpdate={onUpdate} onCancel={onCancel} />
       )}

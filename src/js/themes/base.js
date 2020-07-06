@@ -842,26 +842,44 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
     },
     multiselect: {
+      option: {
+        width: 'full',
+        direction: 'row',
+        justify: 'between',
+        pad: { horizontal: 'medium' },
+      },
       checkbox: {
         box: {
           margin: {
-            horizontal: 'medium',
+            right: 'medium',
             // extend: undefined,
           },
         },
         checkmark: {
-          size: `${baseSpacing}px`,
+          size: `${baseSpacing * 1.2}px`,
           color: 'white',
         },
         check: {
-          height: `${baseSpacing}px`,
-          width: `${baseSpacing}px`,
+          height: `${baseSpacing * 1.2}px`,
+          width: `${baseSpacing * 1.2}px`,
           margin: 'auto',
-          round: 'xsmall',
+          round: 'small',
           align: 'center',
-          active: {
-            background: 'accent-3',
-            border: 'light-6',
+          background: 'white',
+          border: { color: 'light-6' },
+          extend: (props) => {
+            const getBackground = () => {
+              switch(props.checkType) {
+                case 'default': return accentColors[2];
+                case 'included': return '#38C18B';
+                case 'excluded': return '#FC564F';
+                default: return accentColors[2];
+              }
+            };
+            return ({
+              background: props.active ? getBackground() : 'white',
+              'border-color': props.active ? 'transparent' : lightColors[5],
+            });
           },
         },
       },
@@ -869,7 +887,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         wrapper: {
           pad: 'medium',
           direction: 'row',
-          // extend: undefined,
+          extend: (props) => ({
+            padding: props.inclusionExclusion ? 0 : `${baseSpacing / 1.618}px`,
+          }),
         },
         option: {
           background: 'light-3',
@@ -881,6 +901,17 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           margin: 'small',
           direction: 'row',
           align: 'center',
+          extend: (props) => ({
+            width: props.incExcVal ? '100%' : 'auto',
+            margin: props.incExcVal ? 0 : `${baseSpacing / (1.618 * 2)}px`,
+            background: props.incExcVal ? 'white' : lightColors[2],
+            padding: props.incExcVal ? `${baseSpacing / 1.618}px` : 
+              `${baseSpacing / (1.618 * 2)}px ${baseSpacing / 1.618}px`,
+            'border-radius': props.incExcVal ?
+              0 : `${baseSpacing / (1.618 * 2)}px`,
+            'border-bottom': '1px solid #D9DBE5',
+            'justify-content': props.incExcVal ? 'space-between' : 'flex-start',
+          }),
         },
         label: {
           color: 'dark-3',
@@ -888,6 +919,18 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           weight: 600,
           margin: {
             right: 'small',
+          },
+          extend: (props) => {
+            const getTextColor = () => {
+              switch (props.value) {
+                case 'included': return '#38C18B';
+                case 'excluded': return '#FC564F';
+                default: return darkColors[2];
+              }
+            };
+            return({
+              color: getTextColor(),
+            });
           },
         },
         icon: {
@@ -924,6 +967,26 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         icon: {
           size: 'small',
           color: 'dark-3',
+        },
+      },
+      rightPanel: {
+        border: '#D9DBE5',
+        incExcHeader: {
+          box: {
+            direction: 'row',
+            justify: 'between',
+            pad: 'medium',
+            background: 'background-back',
+            border: {
+              side: 'bottom',
+              color: '#D9DBE5',
+            },
+          },
+          text: {
+            color: 'accent-2',
+            size: 'medium',
+            weight: 600,
+          },
         },
       },
     },
