@@ -1138,19 +1138,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         color: 'light-4',
       },
     },
-    worldMap: {
-      color: 'light-3',
-      continent: {
-        active: '8px',
-        base: '6px',
-      },
-      hover: {
-        color: 'light-4',
-      },
-      place: {
-        active: '20px',
-        base: '8px',
-      },
+    tooptip: {
+      background: 'dark-1',
+      color: 'white',
+      tipSize: '5px',
+      round: 'small',
     },
   });
 
