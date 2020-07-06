@@ -4662,6 +4662,11 @@ function",
     "name": "MaskedInput",
     "properties": Array [
       Object {
+        "description": "Custom title to be used by screen readers.",
+        "format": "string",
+        "name": "a11yTitle",
+      },
+      Object {
         "description": "An optional icon to show. This could be used to provide an
       indication of what kind of input is expected, like an email icon,
       or what the input will be used for, like a search icon.",

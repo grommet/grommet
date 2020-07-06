@@ -345,18 +345,6 @@ exports[`DateInput format disabled 1`] = `
   right: 12px;
 }
 
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
 <div
   className="c0"
 >
@@ -3242,18 +3230,6 @@ exports[`DateInput range format 1`] = `
   transform: translateY(-50%);
   pointer-events: none;
   right: 12px;
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
 }
 
 <div
