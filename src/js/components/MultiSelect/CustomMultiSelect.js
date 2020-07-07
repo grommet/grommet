@@ -24,10 +24,12 @@ const CustomMultiSelect = ({
   const [textAreaValue, setTextAreaValue] = React.useState('');
 
   const setItems = isIncExc => {
-    if (textAreaValue && textAreaValue.trim().length) {
-      const textValues = textAreaValue.split('\n');
+    const trimedValue = textAreaValue.trim();
+    if (trimedValue && trimedValue.length) {
+      const textValues = trimedValue.split('\n');
+      const filteredValues = textValues.filter(text => text.length);
       setIncExcVal(isIncExc);
-      onValueChange([...value, ...textValues]);
+      onValueChange([...value, ...filteredValues]);
       setTextAreaValue('');
     }
   };
