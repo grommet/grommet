@@ -24,6 +24,7 @@ const OptionChips = ({
   inclusionExclusion,
   isExcluded,
   renderEmptySelected,
+  layout,
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
 
@@ -59,7 +60,7 @@ const OptionChips = ({
             </Box>
           )}
           <OptionWrapper
-            inclusionExclusion={inclusionExclusion}
+            twoColumnLayout={layout === 'double-column'}
             width={width}
             {...theme.multiselect.chips.wrapper}
             wrap
@@ -67,7 +68,7 @@ const OptionChips = ({
             {getSelectedOption().map(item => (
               <OptionText
                 key={item}
-                incExcVal={![null, undefined].includes(isExcluded)}
+                twoColumnLayout={layout === 'double-column'}
                 {...theme.multiselect.chips.option}
               >
                 <OptionLabel

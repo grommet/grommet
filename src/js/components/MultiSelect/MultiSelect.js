@@ -109,8 +109,10 @@ const MultiSelect = ({
 
   const renderLabel = () => {
     const getLabel = () => {
-      if (withInclusionExclusion)
-        return isExcluded ? 'Excluded' : 'Included';
+      if (withInclusionExclusion && isExcluded)
+        return 'Excluded';
+      if (withInclusionExclusion && isExcluded === false)
+        return 'Included';
       return 'Selected';
     }
 

@@ -73,6 +73,7 @@ const ColumnSelect = ({
       inclusionExclusion={inclusionExclusion}
       isExcluded={isExcluded}
       renderEmptySelected={renderEmptySelected}
+      layout={layout}
     />
   );
 
@@ -185,7 +186,7 @@ const ColumnSelect = ({
           </OptionsBox>
         </Box>
         {layout === 'double-column' && (
-          <Box 
+          <Box
             width={width}
             border={[
               { side: 'left', color: theme.multiselect.rightPanel.border },
