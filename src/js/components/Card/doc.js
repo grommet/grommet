@@ -19,21 +19,21 @@ export const themeDoc = {
   'card.container': {
     description: 'Any valid Box prop for the Card container.',
     type: 'object',
-    defaultValue: undefined,
+    defaultValue: "{ round: 'small', elevation: 'small' }",
   },
   'card.header': {
     description: 'Any valid Box prop for the CardHeader.',
     type: 'object',
-    defaultValue: undefined,
+    defaultValue: {},
   },
   'card.body': {
     description: 'Any valid Box prop for the CardBody.',
     type: 'object',
-    defaultValue: undefined,
+    defaultValue: {},
   },
   'card.footer': {
     description: 'Any valid Box prop for the CardFooter container.',
     type: 'object',
-    defaultValue: undefined,
+    defaultValue: "{ background: 'background-contrast' }",
   },
 };

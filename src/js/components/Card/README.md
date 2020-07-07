@@ -26,7 +26,7 @@ Any valid Box prop for the Card container. Expects `object`.
 Defaults to
 
 ```
-undefined
+{ round: 'small', elevation: 'small' }
 ```
 
 **card.header**
@@ -36,7 +36,7 @@ Any valid Box prop for the CardHeader. Expects `object`.
 Defaults to
 
 ```
-undefined
+[object Object]
 ```
 
 **card.body**
@@ -46,7 +46,7 @@ Any valid Box prop for the CardBody. Expects `object`.
 Defaults to
 
 ```
-undefined
+[object Object]
 ```
 
 **card.footer**
@@ -56,5 +56,5 @@ Any valid Box prop for the CardFooter container. Expects `object`.
 Defaults to
 
 ```
-undefined
+{ background: 'background-contrast' }
 ```
