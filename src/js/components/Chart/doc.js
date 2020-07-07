@@ -13,7 +13,8 @@ export const doc = Chart => {
   DocumentedChart.propTypes = {
     ...genericProps,
     bounds: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).description(
-      `The limits for the values, specified as a two dimensional array.
+      `The limits for the values, specified as a two dimensional array for each 
+      x-axis and y-axis correspondingly.
       If not specified, the bounds will automatically be set to fit
       the provided values.`,
     ),
