@@ -3,19 +3,19 @@ import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Menu } from 'grommet';
 import { grommet } from 'grommet/themes';
-import { Menu as HamburgerMenu, Close } from 'grommet-icons';
+import { FormDown, FormUp } from 'grommet-icons';
 import { deepMerge } from '../../../utils';
 
 const customTheme = deepMerge(grommet, {
   menu: {
     icons: {
-      down: HamburgerMenu,
-      up: Close,
+      down: FormDown,
+      up: FormUp,
     },
   },
 });
 
-const MenuCustomIcons = () => (
+const Themed = () => (
   <Grommet theme={customTheme}>
     <Box align="center" pad="large">
       <Menu
@@ -34,6 +34,4 @@ const MenuCustomIcons = () => (
   </Grommet>
 );
 
-storiesOf('Menu', module).add('Themed', () => (
-  <MenuCustomIcons />
-));
+storiesOf('Menu', module).add('Themed', () => <Themed />);
