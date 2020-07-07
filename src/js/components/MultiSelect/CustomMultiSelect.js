@@ -9,21 +9,23 @@ import CustomSelectedList from './CustomSelectedList';
 
 const CustomMultiSelect = ({
   value,
+  layout,
   onValueChange,
   renderSearch,
   placeholder,
   renderEmptySelected,
   width,
   custom,
-  incExcVal,
+  isExcluded,
   setIncExcVal,
+  inclusionExclusion,
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const [textAreaValue, setTextAreaValue] = React.useState('');
 
   const setItems = isIncExc => {
-    if (textAreaValue.length) {
-      const textValues = textAreaValue.trim().split('\n');
+    if (textAreaValue && textAreaValue.trim().length) {
+      const textValues = textAreaValue.split('\n');
       setIncExcVal(isIncExc);
       onValueChange([...value, ...textValues]);
       setTextAreaValue('');
@@ -52,40 +54,39 @@ const CustomMultiSelect = ({
         <Text {...theme.multiselect.custom.label}>
           {(custom && custom.label) || 'Label'}
         </Text>
-        <Box {...theme.multiselect.custom.textAreaContainer}>
+        <Box {...theme.multiselect.custom.textAreaContainer} width={width}>
           <TextArea
             value={textAreaValue}
             onChange={event => setTextAreaValue(event.target.value)}
+            resize={false}
             fill
           />
         </Box>
         <Box {...theme.multiselect.custom.actions.wrapper}>
-          {(incExcVal || incExcVal === null) && (
-            <Button primary onClick={() => setItems(true)}>
-              <Box {...theme.multiselect.custom.actions.button}>
-                <Text weight={600}>INCLUDE</Text>
-              </Box>
+          {(isExcluded === false || isExcluded === null) && (
+            <Button primary onClick={() => setItems(false)}>
+              <Text weight={600}>INCLUDE</Text>
             </Button>
           )}
-          {(incExcVal === false || incExcVal === null) && (
-            <Button secondary onClick={() => setItems(false)}>
-              <Box {...theme.multiselect.custom.actions.button}>
-                <Text weight={600}>EXCLUDE</Text>
-              </Box>
+          {(isExcluded || isExcluded === null) && (
+            <Button secondary color="brand" onClick={() => setItems(true)}>
+              <Text weight={600}>EXCLUDE</Text>
             </Button>
           )}
         </Box>
       </Box>
       <Box width={width}>
         <CustomSelectedList
+          layout={layout}
           selectedItems={value}
-          incExcVal={incExcVal}
+          isExcluded={isExcluded}
           renderSearch={renderSearch}
           searchPlaceholder={placeholder}
           onRemove={removeItem}
           clearAll={clearAll}
           renderEmptySelected={renderEmptySelected}
           width={width}
+          inclusionExclusion={inclusionExclusion}
         />
       </Box>
     </Box>

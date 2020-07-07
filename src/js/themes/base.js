@@ -1020,7 +1020,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           weight: 600,
         },
         textAreaContainer: {
-          width: 'medium',
           height: 'medium',
           margin: { vertical: 'medium' },
         },
@@ -1029,9 +1028,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             direction: 'row',
             margin: { vertical: 'small' },
             gap: 'medium',
-          },
-          button: {
-            pad: 'medium',
           },
         },
       },

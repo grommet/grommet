@@ -14,12 +14,14 @@ import {
 
 const SelectedList = ({
   selectedItems,
-  incExcVal,
+  layout,
+  isExcluded,
   renderSearch,
   searchPlaceholder,
   onRemove,
   clearAll,
   renderEmptySelected,
+  inclusionExclusion,
   width,
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
@@ -48,36 +50,38 @@ const SelectedList = ({
         <>
           <Box {...theme.multiselect.rightPanel.incExcHeader.box}>
             <Text {...theme.multiselect.rightPanel.incExcHeader.text}>
-              {incExcVal ? 'Included List' : 'Excluded List'}
+              {isExcluded ? 'Excluded List' : 'Included List'}
             </Text>
             {renderClearButton()}
           </Box>
           {renderSearch && (
             <Searchbox
+              layout={layout}
               placeholder={searchPlaceholder}
               value={search}
               onValueChange={val => setSearch(val)}
             />
           )}
           <OptionWrapper
+            inclusionExclusion={inclusionExclusion}
             width={width}
             {...theme.multiselect.chips.wrapper}
             wrap
           >
-            {filteredItems.map((val, id) => (
+            {filteredItems.map((item, id) => (
               <OptionText
-                key={`${id}-${val}`}
-                incExcVal
+                key={`${id}-${item}`}
+                incExcVal={isExcluded !== null}
                 {...theme.multiselect.chips.option}
               >
                 <OptionLabel
-                  value={incExcVal}
+                  value={isExcluded !== null}
                   {...theme.multiselect.chips.label}
                 >
-                  <Text color={incExcVal ? 'accent-1' : 'brand'}>{val}</Text>
+                  <Text>{item}</Text>
                 </OptionLabel>
                 <Close
-                  onClick={() => onRemove(val)}
+                  onClick={() => onRemove(item)}
                   {...theme.multiselect.chips.icon}
                 />
               </OptionText>

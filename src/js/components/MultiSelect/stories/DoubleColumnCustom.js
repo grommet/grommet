@@ -9,7 +9,7 @@ const Example = () => {
     'media.net',
     'testing.com',
   ]);
-  const [incExc, setIncExc] = useState(false);
+  const [isExcluded, setIncExc] = useState(true);
 
   return (
     <Box fill align="center" justify="start" pad="large">
@@ -23,13 +23,14 @@ const Example = () => {
         width="medium"
         searchPlaceholder="Search"
         searchable
-        renderEmptySelected={<Text>No domains selected</Text>}
         custom={{ label: 'Enter one domain per line' }}
-        withInclusionExclusion={{ setIncExc: incExc, labelCount: 1 }}
+        withInclusionExclusion
+        isExcluded={isExcluded}
         onIncExcChange={nextIncExc => {
           setIncExc(nextIncExc);
-          console.log(nextIncExc, 'next');
+          console.log(nextIncExc, 'nextIncExc');
         }}
+        renderEmptySelected={<Text>No domains selected</Text>}
       />
     </Box>
   );

@@ -83,14 +83,16 @@ const ColumnSelect = ({
     return (
       <CustomMultiSelect
         value={value}
+        layout={layout}
         onValueChange={onValueChange}
         renderSearch={renderSearch}
         placeholder={searchPlaceholder}
         renderEmptySelected={renderEmptySelected}
         width={width}
         custom={custom}
-        incExcVal={incExcVal}
+        isExcluded={isExcluded}
         setIncExcVal={setIncExcVal}
+        inclusionExclusion={inclusionExclusion}
       />
     );
   }
