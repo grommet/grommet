@@ -544,6 +544,41 @@ Control to show the control buttons with OK and Cancel values
 ```
 boolean
 ```
+
+**withInclusionExclusion**
+
+Control for include / exclude feature
+
+```
+boolean
+```
+
+**isExcluded**
+
+Flag for identifying whether selected options 
+      are included or exluded
+
+```
+null
+true
+false
+```
+
+**onIncExcChange**
+
+Function to return the included/excluded value
+
+```
+function
+```
+
+**renderEmptySelected**
+
+Component for rendering when no options are selected
+
+```
+node
+```
   
 ## Theme
   

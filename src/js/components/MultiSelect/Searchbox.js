@@ -2,11 +2,12 @@ import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import { Search } from 'grommet-icons/icons/Search';
 
-import { Box } from '../Box';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 
-const Searchbox = ({ placeholder, value, onValueChange }) => {
+import { SearchWrapper } from './StyledMultiSelect';
+
+const Searchbox = ({ placeholder, value, onValueChange, layout }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
 
   const handleChange = (textValue) => {
@@ -16,7 +17,7 @@ const Searchbox = ({ placeholder, value, onValueChange }) => {
   };
 
   return (
-    <Box {...theme.multiselect.searchbox.container}>
+    <SearchWrapper layout={layout} {...theme.multiselect.searchbox.container}>
       <TextInput
         plain
         value={value}
@@ -29,7 +30,7 @@ const Searchbox = ({ placeholder, value, onValueChange }) => {
         }
       />
       <Search {...theme.multiselect.searchbox.icon} />
-    </Box>
+    </SearchWrapper>
   );
 }
 

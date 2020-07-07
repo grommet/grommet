@@ -968,6 +968,16 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           align: 'center',
           background: 'light-2',
           pad: { right: 'medium', vertical: 'small' },
+          extend: (props) => ({
+            background: props.layout === 'double-column' ?
+              'white' : lightColors[1],
+            'flex-direction': props.layout === 'double-column' ?
+              'row-reverse' : 'row',
+            'padding-left': props.layout === 'double-column' ?
+              `${baseSpacing / 1.618}px` : 0,
+            'border-bottom': props.layout === 'double-column' ?
+              '1px solid #D9DBE5' : 'none',
+          }),
         },
         placeholder: {
           color: 'dark-5',

@@ -9,7 +9,7 @@ const Example = () => {
     'media.net',
     'testing.com',
   ]);
-  const [incExc, setIncExc] = useState(null);
+  const [incExc, setIncExc] = useState(false);
 
   return (
     <Box fill align="center" justify="start" pad="large">

@@ -237,23 +237,15 @@ export const doc = MultiSelect => {
     withUpdateCancelButtons: PropTypes.bool.description(
       `Control to show the control buttons with OK and Cancel values`,
       ).defaultValue(false),
-    withInclusionExclusion: PropTypes.shape({
-      value: PropTypes.oneOf([1, 2])
-        .description(`Label count to be displayed when value is selected 
-        in case of Included and Excluded options are selected. For either 
-        one of Included or Excluded to be shown, the value needs to be passed 
-        as 1, else bor both to be displayed, it has to be 2.`)
-        .defaultValue(1),
-      setIncExc: PropTypes.oneOf([null, 'included', 'excluded'])
-        .description(`Control to identify whether the values are part 
-        of Inclusion or Exclusion. Null value refers to neither being 
-        included or excluded, ie, options are yet to classified as Included 
-        or Excluded`)
-        .defaultValue(null),
-    })
-      .description(
-        `Control to provide Inclusion and Exclusion option for the multiselect`,
-      ),
+    withInclusionExclusion: PropTypes.bool
+      .description(`Control for include / exclude feature`)
+      .defaultValue(false),
+    isExcluded: PropTypes.oneOf([null, true, false])
+      .description(`Flag for identifying whether selected options 
+      are included or exluded`)
+      .defaultValue(null),
+    onIncExcChange: PropTypes.func
+      .description(`Function to return the included/excluded value`),
     renderEmptySelected: PropTypes.node
       .description(`Component for rendering when no options are selected`),
   };

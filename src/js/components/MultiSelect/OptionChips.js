@@ -86,7 +86,11 @@ const OptionChips = ({
           </OptionWrapper>
         </>
       )}
-      {(!Array.isArray(value) || !value.length) && renderEmptySelected}
+      {(!Array.isArray(value) || !value.length) && (
+        renderEmptySelected || (
+          <Text>No Values Selected</Text>
+        )
+      )}
     </OptionsBox>
   );
 };
