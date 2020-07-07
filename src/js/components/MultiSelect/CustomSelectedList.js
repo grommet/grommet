@@ -14,25 +14,23 @@ import {
 
 const SelectedList = ({
   selectedItems,
-  isInclude,
-  onValueChange,
+  incExcVal,
   renderSearch,
   searchPlaceholder,
   onRemove,
+  clearAll,
   renderEmptySelected,
   width,
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const [search, setSearch] = React.useState('');
 
-  const filteredItems = selectedItems.filter(val => val.includes(search));
+  let filteredItems = selectedItems;
+  if (search.length)
+    filteredItems = selectedItems.filter(val => val.includes(search));
 
   const renderClearButton = () => (
-    <Button
-      focusIndicator={false}
-      onClick={() => onValueChange({ isInclude: null, values: [] })}
-      plain
-    >
+    <Button focusIndicator={false} onClick={() => clearAll()} plain>
       <Box
         border={{
           side: 'bottom',
@@ -50,7 +48,7 @@ const SelectedList = ({
         <>
           <Box {...theme.multiselect.rightPanel.incExcHeader.box}>
             <Text {...theme.multiselect.rightPanel.incExcHeader.text}>
-              {isInclude ? 'Included List' : 'Excluded List'}
+              {incExcVal ? 'Included List' : 'Excluded List'}
             </Text>
             {renderClearButton()}
           </Box>
@@ -73,10 +71,10 @@ const SelectedList = ({
                 {...theme.multiselect.chips.option}
               >
                 <OptionLabel
-                  value={isInclude}
+                  value={incExcVal}
                   {...theme.multiselect.chips.label}
                 >
-                  <Text color={isInclude ? 'accent-1' : 'brand'}>{val}</Text>
+                  <Text color={incExcVal ? 'accent-1' : 'brand'}>{val}</Text>
                 </OptionLabel>
                 <Close
                   onClick={() => onRemove(val)}

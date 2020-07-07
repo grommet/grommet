@@ -14,7 +14,6 @@ const options = [
 const Example = () => {
   const [value, setValue] = useState([]);
   const [incExc, setIncExc] = useState(null);
-  console.log(incExc, 'inc');
 
   return (
     <Box fill align="center" justify="start" pad="large">
@@ -23,22 +22,19 @@ const Example = () => {
         value={value}
         labelKey="label"
         valueKey={{ key: 'id', reduce: true }}
-        onValueChange={nextValue => setValue(nextValue)}
+        onValueChange={(nextValue) => setValue(nextValue)}
         layout="double-column"
         width="medium"
         searchPlaceholder="Search"
         searchable
         withOptionChips
-        withUpdateCancelButtons
         withInclusionExclusion={{ setIncExc: incExc, labelCount: 1 }}
-        onIncExcChange={nextIncExc => {
-          setIncExc(nextIncExc);
-          console.log(nextIncExc);
-        }}
+        onIncExcChange={(nextIncExc) => setIncExc(nextIncExc)}
         renderEmptySelected={<span>Empty</span>}
       />
     </Box>
-  );
-};
+  )
+}
 
-storiesOf('MultiSelect', module).add('Double Column', () => <Example />);
+storiesOf('MultiSelect', module)
+  .add('Double Column without Control Buttons', () => <Example />);

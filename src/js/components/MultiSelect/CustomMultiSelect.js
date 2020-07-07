@@ -15,36 +15,36 @@ const CustomMultiSelect = ({
   renderEmptySelected,
   width,
   custom,
+  incExcVal,
+  setIncExcVal,
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
-  const { isInclude, values } = value;
   const [textAreaValue, setTextAreaValue] = React.useState('');
 
-  const setItems = isInclude => {
+  const setItems = isIncExc => {
     if (textAreaValue.length) {
       const textValues = textAreaValue.trim().split('\n');
-      onValueChange({
-        ...value,
-        isInclude,
-        values: [...values, ...textValues],
-      });
+      setIncExcVal(isIncExc);
+      onValueChange([...value, ...textValues]);
       setTextAreaValue('');
     }
   };
 
   const removeItem = useCallback(
     item => {
-      const lists = [...values];
+      const lists = [...value];
       const index = lists.indexOf(item);
       lists.splice(index, 1);
-      if (!lists.length) {
-        onValueChange({ ...value, isInclude: null, values: [...lists] });
-        return;
-      }
-      onValueChange({ ...value, values: [...lists] });
+      onValueChange([...lists]);
+      if (!lists.length) setIncExcVal(null);
     },
-    [value, values, onValueChange],
+    [value, onValueChange, setIncExcVal],
   );
+
+  const clearAll = () => {
+    setIncExcVal(null);
+    onValueChange([]);
+  };
 
   return (
     <Box {...theme.multiselect.custom.wrapper}>
@@ -60,14 +60,14 @@ const CustomMultiSelect = ({
           />
         </Box>
         <Box {...theme.multiselect.custom.actions.wrapper}>
-          {(isInclude || isInclude === null) && (
+          {(incExcVal || incExcVal === null) && (
             <Button primary onClick={() => setItems(true)}>
               <Box {...theme.multiselect.custom.actions.button}>
                 <Text weight={600}>INCLUDE</Text>
               </Box>
             </Button>
           )}
-          {(isInclude === false || isInclude === null) && (
+          {(incExcVal === false || incExcVal === null) && (
             <Button secondary onClick={() => setItems(false)}>
               <Box {...theme.multiselect.custom.actions.button}>
                 <Text weight={600}>EXCLUDE</Text>
@@ -78,12 +78,12 @@ const CustomMultiSelect = ({
       </Box>
       <Box width={width}>
         <CustomSelectedList
-          selectedItems={values}
-          isInclude={isInclude}
-          onValueChange={onValueChange}
+          selectedItems={value}
+          incExcVal={incExcVal}
           renderSearch={renderSearch}
           searchPlaceholder={placeholder}
           onRemove={removeItem}
+          clearAll={clearAll}
           renderEmptySelected={renderEmptySelected}
           width={width}
         />

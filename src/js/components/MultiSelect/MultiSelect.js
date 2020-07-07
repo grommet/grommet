@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { Box } from '../Box';
 import { Select } from '../Select';
 
 import useCustomSelectState from './useCustomSelectState';
-import { SingleColumnSelect } from './SingleColumnSelect';
+import { ColumnSelect } from './ColumnSelect';
 import { ValueLabelWithNumber } from './ValueLabelWithNumber';
 import { applyKey } from './utils';
 
@@ -24,6 +24,7 @@ const MultiSelect = ({
   searchable,
   custom,
   withInclusionExclusion,
+  onIncExcChange,
   renderEmptySelected,
   ...rest
 }) => {
@@ -35,6 +36,12 @@ const MultiSelect = ({
     incExcVal,
     setSelectState,
   } = useCustomSelectState(options, value, withInclusionExclusion);
+
+  useEffect(() => {
+    if (withInclusionExclusion && value.length === 0)
+      setSelectState({ incExcVal: null });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [value]);
 
   const onCancelClick = () => {
     onValueChange(previousValue);
@@ -70,10 +77,15 @@ const MultiSelect = ({
     }
   };
 
+  const setIncExcVal = incExc => {
+    setSelectState({ incExcVal: incExc });
+    onIncExcChange(incExc);
+  };
+
   const renderContent = props => {
     if (['single-column', 'double-column'].includes(layout)) {
       return (
-        <SingleColumnSelect
+        <ColumnSelect
           layout={layout}
           width={width}
           onUpdate={() => setSelectState({ open: false, previousValue: value })}
@@ -84,6 +96,7 @@ const MultiSelect = ({
           showControlButtons={withUpdateCancelButtons}
           inclusionExclusion={withInclusionExclusion}
           incExcVal={incExcVal}
+          setIncExcVal={incExc => setIncExcVal(incExc)}
           renderSearch={searchable && !onSearch}
           searchPlaceholder={searchPlaceholder}
           searchValue={searchVal || ''}
@@ -98,10 +111,12 @@ const MultiSelect = ({
     return null;
   };
 
-  const count = custom ? value.values.length : value.length;
   const renderLabel = () => {
+    const label = withInclusionExclusion
+      ? incExcVal?.charAt(0).toUpperCase() + incExcVal?.slice(1)
+      : 'Selected';
     return (
-      <ValueLabelWithNumber value="Selected" number={count} color="brand" />
+      <ValueLabelWithNumber value={label} number={value.length} color="brand" />
     );
   };
 
