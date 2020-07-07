@@ -12,7 +12,7 @@ const OptionWithCheckControl = ({
   selected,
   label,
   inclusionExclusion,
-  incExcVal,
+  isExcluded,
   onSelect,
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
@@ -22,19 +22,20 @@ const OptionWithCheckControl = ({
     ...theme.select.options.container,
   };
 
-  const renderCheckbox = (check, type) => {
+  const renderCheckbox = (check, exc) => {
     return (
       <CheckBoxWrapper {...theme.multiselect.checkbox.box}>
         <CheckBox
           {...theme.multiselect.checkbox.check}
-          active={selected || (inclusionExclusion && !incExcVal)}
-          checkType={type}
+          active={selected || (inclusionExclusion && isExcluded === null)}
+          isExcluded={exc}
           onClick={
-            (inclusionExclusion && !incExcVal) ?
-              (event) => onSelect(event, type) : undefined
+            inclusionExclusion && isExcluded === null
+              ? event => onSelect(event, exc)
+              : undefined
           }
         >
-          {(selected || (inclusionExclusion && !incExcVal)) && (
+          {(selected || (inclusionExclusion && isExcluded === null)) && (
             <>
               {check === 'check' && (
                 <FormCheckmark {...theme.multiselect.checkbox.checkmark} />
@@ -53,24 +54,19 @@ const OptionWithCheckControl = ({
     <OptionBox {...selectOptionsStyle} selected={selected}>
       <Box {...theme.multiselect.option}>
         <Box direction="row">
-          {!inclusionExclusion && renderCheckbox('check', 'default')}
+          {!inclusionExclusion && renderCheckbox('check', null)}
           <Text {...theme.select.options.text}>{label}</Text>
         </Box>
         {inclusionExclusion && (
           <Box direction="row">
-            {
-              [null, 'included'].includes(incExcVal)
-              && renderCheckbox('check', 'included')
-            }
-            {
-              [null, 'excluded'].includes(incExcVal)
-              && renderCheckbox('cross', 'excluded')
-            }
+            {[null, false].includes(isExcluded) &&
+              renderCheckbox('check', false)}
+            {[null, true].includes(isExcluded) && renderCheckbox('cross', true)}
           </Box>
         )}
       </Box>
     </OptionBox>
   );
-}
+};
 
 export { OptionWithCheckControl };
