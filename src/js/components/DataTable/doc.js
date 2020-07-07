@@ -8,7 +8,10 @@ const parts = ['header', 'body', 'footer'];
 
 const padShapeSides = {};
 sides.forEach(side => {
-  padShapeSides[side] = PropTypes.oneOf(sizes);
+  padShapeSides[side] = PropTypes.oneOfType([
+    PropTypes.oneOf(sizes),
+    PropTypes.string,
+  ]);
 });
 
 const padShapeParts = {};
