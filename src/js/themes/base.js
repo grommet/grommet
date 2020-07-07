@@ -867,12 +867,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           align: 'center',
           background: 'white',
           border: { color: 'light-6' },
-          extend: (props) => {
+          extend: props => {
             const getBackground = () => {
-              switch(props.checkType) {
-                case 'default': return accentColors[2];
-                case 'included': return '#38C18B';
-                case 'excluded': return '#FC564F';
+              switch(props.isExcluded) {
+                case null: return accentColors[2];
+                case false: return '#38C18B';
+                case true: return '#FC564F';
                 default: return accentColors[2];
               }
             };
@@ -887,7 +887,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         wrapper: {
           pad: 'medium',
           direction: 'row',
-          extend: (props) => ({
+          extend: props => ({
             padding: props.inclusionExclusion ? 0 : `${baseSpacing / 1.618}px`,
           }),
         },
@@ -901,7 +901,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           margin: 'small',
           direction: 'row',
           align: 'center',
-          extend: (props) => ({
+          extend: props => ({
             width: props.incExcVal ? '100%' : 'auto',
             margin: props.incExcVal ? 0 : `${baseSpacing / (1.618 * 2)}px`,
             background: props.incExcVal ? 'white' : lightColors[2],
@@ -909,7 +909,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
               `${baseSpacing / (1.618 * 2)}px ${baseSpacing / 1.618}px`,
             'border-radius': props.incExcVal ?
               0 : `${baseSpacing / (1.618 * 2)}px`,
-            'border-bottom': '1px solid #D9DBE5',
+            'border-bottom': props.incExcVal ? '1px solid #D9DBE5' : 'none',
             'justify-content': props.incExcVal ? 'space-between' : 'flex-start',
           }),
         },
@@ -920,11 +920,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           margin: {
             right: 'small',
           },
-          extend: (props) => {
+          extend: props => {
             const getTextColor = () => {
-              switch (props.value) {
-                case 'included': return '#38C18B';
-                case 'excluded': return '#FC564F';
+              switch (props.isExcluded) {
+                case false: return '#38C18B';
+                case true: return '#FC564F';
                 default: return darkColors[2];
               }
             };
@@ -959,7 +959,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           align: 'center',
           background: 'light-2',
           pad: { right: 'medium', vertical: 'small' },
-          extend: (props) => ({
+          extend: props => ({
             background: props.layout === 'double-column' ?
               'white' : lightColors[1],
             'flex-direction': props.layout === 'double-column' ?
