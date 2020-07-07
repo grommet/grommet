@@ -30,9 +30,8 @@ const OptionWithCheckControl = ({
           active={selected || (inclusionExclusion && isExcluded === null)}
           isExcluded={exc}
           onClick={
-            inclusionExclusion && isExcluded === null
-              ? event => onSelect(event, exc)
-              : undefined
+            (inclusionExclusion && isExcluded === null) ?
+              event => onSelect(event, exc) : undefined
           }
         >
           {(selected || (inclusionExclusion && isExcluded === null)) && (
@@ -59,14 +58,19 @@ const OptionWithCheckControl = ({
         </Box>
         {inclusionExclusion && (
           <Box direction="row">
-            {[null, false].includes(isExcluded) &&
-              renderCheckbox('check', false)}
-            {[null, true].includes(isExcluded) && renderCheckbox('cross', true)}
+            {
+              [null, false].includes(isExcluded)
+              && renderCheckbox('check', false)
+            }
+            {
+              [null, true].includes(isExcluded)
+              && renderCheckbox('cross', true)
+            }
           </Box>
         )}
       </Box>
     </OptionBox>
   );
-};
+}
 
 export { OptionWithCheckControl };

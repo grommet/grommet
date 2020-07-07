@@ -27,6 +27,7 @@ const Example = () => {
         width="medium"
         searchPlaceholder="Search"
         searchable
+        withSelectAll
         withOptionChips
         withUpdateCancelButtons
         withInclusionExclusion

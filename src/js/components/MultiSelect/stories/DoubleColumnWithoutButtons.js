@@ -22,7 +22,7 @@ const Example = () => {
         value={value}
         labelKey="label"
         valueKey={{ key: 'id', reduce: true }}
-        onValueChange={(nextValue) => setValue(nextValue)}
+        onValueChange={nextValue => setValue(nextValue)}
         layout="double-column"
         width="medium"
         searchPlaceholder="Search"
@@ -30,7 +30,7 @@ const Example = () => {
         withOptionChips
         withInclusionExclusion
         isExcluded={isExcluded}        
-        onIncExcChange={(nextIncExc) => setIncExc(nextIncExc)}
+        onIncExcChange={nextIncExc => setIncExc(nextIncExc)}
         renderEmptySelected={<span>Empty</span>}
       />
     </Box>

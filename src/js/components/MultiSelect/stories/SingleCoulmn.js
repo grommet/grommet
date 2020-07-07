@@ -21,11 +21,12 @@ const Example = () => {
         value={value}
         labelKey="label"
         valueKey={{ key: 'id', reduce: true }}
-        onValueChange={(nextValue) => setValue(nextValue)}
+        onValueChange={nextValue => setValue(nextValue)}
         layout="single-column"
         width="medium"
         searchPlaceholder="Search"
         searchable
+        withSelectAll
         withOptionChips
         withUpdateCancelButtons
       />

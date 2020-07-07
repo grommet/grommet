@@ -869,12 +869,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           border: { color: 'light-6' },
           extend: props => {
             const getBackground = () => {
-              switch (props.checkType) {
-                case 'default':
+              switch (props.isExcluded) {
+                case null:
                   return accentColors[2];
-                case 'included':
+                case false:
                   return '#38C18B';
-                case 'excluded':
+                case true:
                   return '#FC564F';
                 default:
                   return accentColors[2];
@@ -915,7 +915,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             'border-radius': props.incExcVal
               ? 0
               : `${baseSpacing / (1.618 * 2)}px`,
-            'border-bottom': '1px solid #D9DBE5',
+            'border-bottom': props.incExcVal ? '1px solid #D9DBE5' : 'none',
             'justify-content': props.incExcVal ? 'space-between' : 'flex-start',
           }),
         },
@@ -928,10 +928,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           },
           extend: props => {
             const getTextColor = () => {
-              switch (props.value) {
-                case 'included':
+              switch (props.isExcluded) {
+                case false:
                   return '#38C18B';
-                case 'excluded':
+                case true:
                   return '#FC564F';
                 default:
                   return darkColors[2];

@@ -67,11 +67,11 @@ const OptionChips = ({
             {getSelectedOption().map(item => (
               <OptionText
                 key={item}
-                incExcVal={isExcluded !== null}
+                incExcVal={![null, undefined].includes(isExcluded)}
                 {...theme.multiselect.chips.option}
               >
                 <OptionLabel
-                  value={isExcluded !== null}
+                  isExcluded={isExcluded}
                   {...theme.multiselect.chips.label}
                 >
                   {optionLabel(item)}

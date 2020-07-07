@@ -19,6 +19,7 @@ const MultiSelect = ({
   onSearch,
   searchPlaceholder,
   emptySearchMessage,
+  withSelectAll,
   withOptionChips,
   withUpdateCancelButtons,
   searchable,
@@ -75,10 +76,6 @@ const MultiSelect = ({
     }
   };
 
-  const setIncExcVal = incExc => {
-    onIncExcChange(incExc);
-  };
-
   const renderContent = props => {
     if (['single-column', 'double-column'].includes(layout)) {
       return (
@@ -89,11 +86,12 @@ const MultiSelect = ({
           onCancel={onCancelClick}
           setValues={nextValue => onSelectValueChange(nextValue)}
           emptySearchMessage={emptySearchMessage}
+          showSelectAll={withSelectAll}
           showOptionChips={withOptionChips}
           showControlButtons={withUpdateCancelButtons}
           inclusionExclusion={withInclusionExclusion}
           isExcluded={isExcluded}
-          setIncExcVal={incExc => setIncExcVal(incExc)}
+          setIncExcVal={incExc => onIncExcChange(incExc)}
           renderSearch={searchable && !onSearch}
           searchPlaceholder={searchPlaceholder}
           searchValue={searchVal || ''}

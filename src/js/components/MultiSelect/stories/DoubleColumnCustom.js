@@ -9,7 +9,7 @@ const Example = () => {
     'media.net',
     'testing.com',
   ]);
-  const [isExcluded, setIncExc] = useState(true);
+  const [isExcluded, setIncExc] = useState(null);
 
   return (
     <Box fill align="center" justify="start" pad="large">
