@@ -892,7 +892,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           pad: 'medium',
           direction: 'row',
           extend: props => ({
-            padding: props.inclusionExclusion ? 0 : `${baseSpacing / 1.618}px`,
+            padding: props.twoColumnLayout ? 0 : `${baseSpacing / 1.618}px`,
           }),
         },
         option: {
@@ -906,17 +906,23 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           direction: 'row',
           align: 'center',
           extend: props => ({
-            width: props.incExcVal ? '100%' : 'auto',
-            margin: props.incExcVal ? 0 : `${baseSpacing / (1.618 * 2)}px`,
-            background: props.incExcVal ? 'white' : lightColors[2],
-            padding: props.incExcVal
-              ? `${baseSpacing / 1.618}px`
-              : `${baseSpacing / (1.618 * 2)}px ${baseSpacing / 1.618}px`,
-            'border-radius': props.incExcVal
+            width: props.twoColumnLayout ? '100%' : 'auto',
+            margin: props.twoColumnLayout
               ? 0
               : `${baseSpacing / (1.618 * 2)}px`,
-            'border-bottom': props.incExcVal ? '1px solid #D9DBE5' : 'none',
-            'justify-content': props.incExcVal ? 'space-between' : 'flex-start',
+            background: props.twoColumnLayout ? 'white' : lightColors[2],
+            padding: props.twoColumnLayout
+              ? `${baseSpacing / 1.618}px`
+              : `${baseSpacing / (1.618 * 2)}px ${baseSpacing / 1.618}px`,
+            'border-radius': props.twoColumnLayout
+              ? 0
+              : `${baseSpacing / (1.618 * 2)}px`,
+            'border-bottom': props.twoColumnLayout
+              ? '1px solid #D9DBE5'
+              : 'none',
+            'justify-content': props.twoColumnLayout
+              ? 'space-between'
+              : 'flex-start',
           }),
         },
         label: {

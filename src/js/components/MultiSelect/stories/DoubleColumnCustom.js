@@ -15,10 +15,7 @@ const Example = () => {
     <Box fill align="center" justify="start" pad="large">
       <MultiSelect
         value={value}
-        onValueChange={nextValue => {
-          setValue(nextValue);
-          console.log(nextValue, 'next');
-        }}
+        onValueChange={nextValue => setValue(nextValue)}
         layout="double-column"
         width="medium"
         searchPlaceholder="Search"
@@ -26,10 +23,7 @@ const Example = () => {
         custom={{ label: 'Enter one domain per line' }}
         withInclusionExclusion
         isExcluded={isExcluded}
-        onIncExcChange={nextIncExc => {
-          setIncExc(nextIncExc);
-          console.log(nextIncExc, 'nextIncExc');
-        }}
+        onIncExcChange={nextIncExc => setIncExc(nextIncExc)}
         renderEmptySelected={<Text>No domains selected</Text>}
       />
     </Box>

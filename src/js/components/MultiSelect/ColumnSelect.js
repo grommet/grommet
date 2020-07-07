@@ -77,6 +77,7 @@ const ColumnSelect = ({
       inclusionExclusion={inclusionExclusion}
       isExcluded={isExcluded}
       renderEmptySelected={renderEmptySelected}
+      layout={layout}
     />
   );
 

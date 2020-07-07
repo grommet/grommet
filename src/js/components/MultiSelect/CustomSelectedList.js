@@ -21,7 +21,6 @@ const SelectedList = ({
   onRemove,
   clearAll,
   renderEmptySelected,
-  inclusionExclusion,
   width,
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
@@ -63,29 +62,35 @@ const SelectedList = ({
             />
           )}
           <OptionWrapper
-            inclusionExclusion={inclusionExclusion}
+            twoColumnLayout={layout === 'double-column'}
             width={width}
             {...theme.multiselect.chips.wrapper}
             wrap
           >
-            {filteredItems.map((item, id) => (
-              <OptionText
-                key={`${id}-${item}`}
-                incExcVal={![null, undefined].includes(isExcluded)}
-                {...theme.multiselect.chips.option}
-              >
-                <OptionLabel
-                  isExcluded={isExcluded}
-                  {...theme.multiselect.chips.label}
+            {filteredItems.length ? (
+              filteredItems.map((item, id) => (
+                <OptionText
+                  key={`${id}-${item}`}
+                  twoColumnLayout={layout === 'double-column'}
+                  {...theme.multiselect.chips.option}
                 >
-                  <Text>{item}</Text>
-                </OptionLabel>
-                <Close
-                  onClick={() => onRemove(item)}
-                  {...theme.multiselect.chips.icon}
-                />
-              </OptionText>
-            ))}
+                  <OptionLabel
+                    isExcluded={isExcluded}
+                    {...theme.multiselect.chips.label}
+                  >
+                    <Text>{item}</Text>
+                  </OptionLabel>
+                  <Close
+                    onClick={() => onRemove(item)}
+                    {...theme.multiselect.chips.icon}
+                  />
+                </OptionText>
+              ))
+            ) : (
+              <Box align="center" margin="medium" fill>
+                <Text>No Result Found</Text>
+              </Box>
+            )}
           </OptionWrapper>
         </>
       )}
