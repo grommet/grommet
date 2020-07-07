@@ -935,7 +935,8 @@ var generate = function generate(baseSpacing, scale) {
       // background: undefined,
       // extend: undefined,
       icons: {
-        down: _FormDown.FormDown // color: { dark: undefined, light: undefined },
+        down: _FormDown.FormDown // up: undefined,
+        // color: { dark: undefined, light: undefined },
 
       }
     },

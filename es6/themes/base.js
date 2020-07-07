@@ -911,7 +911,8 @@ export var generate = function generate(baseSpacing, scale) {
       // background: undefined,
       // extend: undefined,
       icons: {
-        down: FormDown // color: { dark: undefined, light: undefined },
+        down: FormDown // up: undefined,
+        // color: { dark: undefined, light: undefined },
 
       }
     },

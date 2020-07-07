@@ -47,7 +47,7 @@ To open menu when menu button is focused:
 To navigate within menu:
 - Up/down arrow keys can be used and will loop through options
 (keeping focus within the Menu)
-- Tab can be used, but once the last menu item is reached, Tab will close the 
+- Tab can be used, but once the last menu item is reached, Tab will close the
 Menu and continue through page content.
 
 To close the menu:
@@ -81,7 +81,6 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
-  var MenuIcon = theme.menu.icons.down;
   var iconColor = (0, _utils.normalizeColor)(theme.menu.icons.color || 'control', theme);
   var align = dropProps.align || dropAlign;
   var controlButtonIndex = (0, _react.useMemo)(function () {
@@ -110,6 +109,7 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
       isOpen = _useState2[0],
       setOpen = _useState2[1];
 
+  var MenuIcon = isOpen && theme.menu.icons.up ? theme.menu.icons.up : theme.menu.icons.down;
   var onDropClose = (0, _react.useCallback)(function () {
     setActiveItemIndex(constants.none);
     setOpen(false);
