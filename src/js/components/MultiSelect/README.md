@@ -529,6 +529,14 @@ single-column
 double-column
 ```
 
+**withSelectAll**
+
+Control flag to add select all option feature
+
+```
+boolean
+```
+
 **withOptionChips**
 
 Control to show the selected option chips
