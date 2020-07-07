@@ -10,7 +10,7 @@ import { SearchWrapper } from './StyledMultiSelect';
 const Searchbox = ({ placeholder, value, onValueChange, layout }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
 
-  const handleChange = (textValue) => {
+  const handleChange = textValue => {
     if (textValue.replace(/\s/g, '').length || !textValue.length)
       return onValueChange(textValue);
     return null;
@@ -22,7 +22,7 @@ const Searchbox = ({ placeholder, value, onValueChange, layout }) => {
         plain
         value={value}
         valueLabel={<Text>value</Text>}
-        onChange={(event) => handleChange(event.target.value)}
+        onChange={event => handleChange(event.target.value)}
         placeholder={
           <Text {...theme.multiselect.searchbox.placeholder}>
             {value ? '' : placeholder}

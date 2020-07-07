@@ -31,6 +31,7 @@ const ColumnSelect = ({
   layout,
   width,
   emptySearchMessage,
+  showSelectAll,
   showOptionChips,
   showControlButtons,
   inclusionExclusion,
@@ -102,7 +103,7 @@ const ColumnSelect = ({
                   const optionActive = activeIndex === index;
                   return (
                     <>
-                      {index === 0 && (
+                      {index === 0 && showSelectAll && (
                         <SelectOption
                           // eslint-disable-next-line react/no-array-index-key
                           key={`${index}_select_all`}

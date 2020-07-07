@@ -19,6 +19,7 @@ const MultiSelect = ({
   onSearch,
   searchPlaceholder,
   emptySearchMessage,
+  withSelectAll,
   withOptionChips,
   withUpdateCancelButtons,
   searchable,
@@ -48,7 +49,7 @@ const MultiSelect = ({
 
   const getValue = (index, array, param) => applyKey(array[index], param);
 
-  const onSearchChange = (search) => {
+  const onSearchChange = search => {
     const escapedText = search.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
     const exp = new RegExp(escapedText, 'i');
     setSelectState({
@@ -59,7 +60,7 @@ const MultiSelect = ({
     });
   };
 
-  const onSelectValueChange = (selectValue) => {
+  const onSelectValueChange = selectValue => {
     if (!searchVal) onValueChange(selectValue);
     else {
       const newValue = value.slice(0);
@@ -76,11 +77,7 @@ const MultiSelect = ({
     }
   };
 
-  const setIncExcVal = (incExc) => {
-    onIncExcChange(incExc);
-  };
-
-  const renderContent = (props) => {
+  const renderContent = props => {
     if (['single-column', 'double-column'].includes(layout)) {
       return (
         <ColumnSelect
@@ -90,17 +87,18 @@ const MultiSelect = ({
             setSelectState({ open: false, previousValue: value })
           }
           onCancel={onCancelClick}
-          setValues={(nextValue) => onSelectValueChange(nextValue)}
+          setValues={nextValue => onSelectValueChange(nextValue)}
           emptySearchMessage={emptySearchMessage}
+          showSelectAll={withSelectAll}
           showOptionChips={withOptionChips}
           showControlButtons={withUpdateCancelButtons}
           inclusionExclusion={withInclusionExclusion}
           isExcluded={isExcluded}
-          setIncExcVal={(incExc) => setIncExcVal(incExc)}
+          setIncExcVal={incExc => onIncExcChange(incExc)}
           renderSearch={searchable && !onSearch}
           searchPlaceholder={searchPlaceholder}
           searchValue={searchVal || ''}
-          onSearchChange={(search) => onSearchChange(search)}
+          onSearchChange={search => onSearchChange(search)}
           renderEmptySelected={renderEmptySelected}
           {...props}
         />
@@ -141,7 +139,7 @@ const MultiSelect = ({
         closeOnChange={false}
         renderCustomContent={
           ['single-column', 'double-column'].includes(layout) ?
-            (props) => renderContent(props) : undefined
+            props => renderContent(props) : undefined
         }
         valueLabel={renderLabel()}
         labelKey={labelKey}

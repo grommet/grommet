@@ -231,6 +231,9 @@ export const doc = MultiSelect => {
     ),
     layout: PropTypes.oneOf(['single-column', 'double-column'])
       .description(`Column layout for custom multiselect dropdown`),
+    withSelectAll: PropTypes.bool
+      .description(`Control flag to add select all option feature`)
+      .defaultValue(false),
     withOptionChips: PropTypes.bool
       .description(`Control to show the selected option chips`)
       .defaultValue(false),

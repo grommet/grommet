@@ -13,7 +13,7 @@ const Example = () => {
       <MultiSelect
         options={options}
         value={value}
-        onValueChange={(nextValue) => setValue(nextValue)}
+        onValueChange={nextValue => setValue(nextValue)}
         layout="single-column"
         width="medium"
         withOptionChips

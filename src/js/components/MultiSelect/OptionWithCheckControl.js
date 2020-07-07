@@ -31,7 +31,7 @@ const OptionWithCheckControl = ({
           isExcluded={exc}
           onClick={
             (inclusionExclusion && isExcluded === null) ?
-              (event) => onSelect(event, exc) : undefined
+              event => onSelect(event, exc) : undefined
           }
         >
           {(selected || (inclusionExclusion && isExcluded === null)) && (
