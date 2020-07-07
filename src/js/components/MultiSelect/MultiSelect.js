@@ -33,15 +33,13 @@ const MultiSelect = ({
     previousValue,
     open,
     searchVal,
-    incExcVal,
     setSelectState,
-  } = useCustomSelectState(options, value, withInclusionExclusion, isExcluded);
+  } = useCustomSelectState(options, value);
 
   useEffect(() => {
     if (withInclusionExclusion && value.length === 0)
-      setSelectState({ incExcVal: null });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [value]);
+      onIncExcChange(null);
+  }, [onIncExcChange, value, withInclusionExclusion]);
 
   const onCancelClick = () => {
     onValueChange(previousValue);
@@ -79,8 +77,7 @@ const MultiSelect = ({
   };
 
   const setIncExcVal = (incExc) => {
-    setSelectState({ incExcVal: incExc });
-    onIncExcChange((incExc && incExc === 'excluded') || null);
+    onIncExcChange(incExc);
   };
 
   const renderContent = (props) => {
@@ -98,7 +95,7 @@ const MultiSelect = ({
           showOptionChips={withOptionChips}
           showControlButtons={withUpdateCancelButtons}
           inclusionExclusion={withInclusionExclusion}
-          incExcVal={incExcVal}
+          isExcluded={isExcluded}
           setIncExcVal={(incExc) => setIncExcVal(incExc)}
           renderSearch={searchable && !onSearch}
           searchPlaceholder={searchPlaceholder}
@@ -113,12 +110,15 @@ const MultiSelect = ({
   };
 
   const renderLabel = () => {
-    const label = withInclusionExclusion ?
-      incExcVal?.charAt(0).toUpperCase() + incExcVal?.slice(1) :
-      'Selected';
+    const getLabel = () => {
+      if (withInclusionExclusion)
+        return isExcluded ? 'Excluded' : 'Included';
+      return 'Selected';
+    }
+
     return (
       <ValueLabelWithNumber
-        value={label}
+        value={getLabel()}
         number={value.length}
         color="brand"
       />

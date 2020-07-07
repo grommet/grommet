@@ -1,23 +1,11 @@
 import { useState } from 'react';
 
-export default function useCustomSelectState(
-  options,
-  value,
-  includeExclude,
-  isExcluded,
-) {
-  const getincExcVal = () => {
-    if (includeExclude)
-     return isExcluded ? 'excluded' : 'included';
-    return null;
-  };
-
+export default function useCustomSelectState(options,value) {
   const [selectState, setStateValues] = useState({
     filteredOptions: options,
     previousValue: value,
     open: false,
     searchVal: '',
-    incExcVal: getincExcVal(),
   });
 
   const {
@@ -25,7 +13,6 @@ export default function useCustomSelectState(
     previousValue,
     open,
     searchVal,
-    incExcVal,
   } = selectState;
 
   const setSelectState = (params, ...rest) =>
@@ -36,7 +23,6 @@ export default function useCustomSelectState(
     previousValue,
     open,
     searchVal,
-    incExcVal,
     setSelectState,
   };
 }

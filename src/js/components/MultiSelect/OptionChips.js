@@ -22,7 +22,7 @@ const OptionChips = ({
   clearAll,
   width,
   inclusionExclusion,
-  incExcVal,
+  isExcluded,
   renderEmptySelected,
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
@@ -50,10 +50,10 @@ const OptionChips = ({
     <OptionsBox>
       {Array.isArray(value) && value.length > 0 && (
         <>
-          {inclusionExclusion && incExcVal && (
+          {inclusionExclusion && isExcluded !== null && (
             <Box {...theme.multiselect.rightPanel.incExcHeader.box}>
               <Text {...theme.multiselect.rightPanel.incExcHeader.text}>
-                {incExcVal.charAt(0).toUpperCase() + incExcVal.slice(1)} List
+                {isExcluded ? 'Excluded' : 'Included'} List
               </Text>
               {renderClearButton()}
             </Box>
@@ -67,11 +67,11 @@ const OptionChips = ({
             {getSelectedOption().map(item => (
               <OptionText
                 key={item}
-                incExcVal={incExcVal}
+                incExcVal={isExcluded !== null}
                 {...theme.multiselect.chips.option}
               >
                 <OptionLabel
-                  value={incExcVal}
+                  value={isExcluded !== null}
                   {...theme.multiselect.chips.label}
                 >
                   {optionLabel(item)}
@@ -86,11 +86,7 @@ const OptionChips = ({
           </OptionWrapper>
         </>
       )}
-      {(!Array.isArray(value) || !value.length) && (
-        renderEmptySelected || (
-          <Text>No Values Selected</Text>
-        )
-      )}
+      {(!Array.isArray(value) || !value.length) && renderEmptySelected}
     </OptionsBox>
   );
 }

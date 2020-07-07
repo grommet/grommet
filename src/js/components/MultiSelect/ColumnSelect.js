@@ -34,7 +34,7 @@ const ColumnSelect = ({
   showOptionChips,
   showControlButtons,
   inclusionExclusion,
-  incExcVal,
+  isExcluded,
   setIncExcVal,
   renderSearch,
   searchPlaceholder,
@@ -70,7 +70,7 @@ const ColumnSelect = ({
       selectOption={selectOption}
       clearAll={setValues}
       inclusionExclusion={inclusionExclusion}
-      incExcVal={incExcVal}
+      isExcluded={isExcluded}
       renderEmptySelected={renderEmptySelected}
     />
   );
@@ -112,7 +112,7 @@ const ColumnSelect = ({
                           selected={allSelected}
                           plain
                           onClick={(!inclusionExclusion) ||
-                            (inclusionExclusion && incExcVal) ?
+                            (inclusionExclusion && isExcluded !== null) ?
                             (() => setValues(allSelected ?
                               [] : options.map((item, ind) => optionValue(ind)))
                             ) : undefined
@@ -122,7 +122,7 @@ const ColumnSelect = ({
                             selected={allSelected}
                             label="Select All"
                             inclusionExclusion={inclusionExclusion}
-                            incExcVal={incExcVal}
+                            isExcluded={isExcluded}
                             onSelect={
                               (event, type) => setOption(event, type, -1)
                             }
@@ -146,7 +146,8 @@ const ColumnSelect = ({
                         }
                         onClick={
                           (!optionDisabled && !inclusionExclusion) || 
-                          (!optionDisabled && inclusionExclusion && incExcVal) ?
+                          (!optionDisabled && inclusionExclusion
+                            && isExcluded !== null) ?
                           selectOption(index) : undefined
                         }
                       >
@@ -154,7 +155,7 @@ const ColumnSelect = ({
                           selected={optionSelected}
                           label={optionLabel(index)}
                           inclusionExclusion={inclusionExclusion}
-                          incExcVal={incExcVal}
+                          isExcluded={isExcluded}
                           onSelect={
                             (event, type) => setOption(event, type, index)
                           }
