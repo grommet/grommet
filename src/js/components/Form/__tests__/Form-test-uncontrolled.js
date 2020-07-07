@@ -800,4 +800,31 @@ describe('Form uncontrolled', () => {
       expect(queryByText(message)).toBeNull(),
     );
   });
+
+  test('form with select', () => {
+    const Test = () => {
+      const [value, setValue] = React.useState('medium');
+      return (
+        <Grommet>
+          <Form>
+            <FormField>
+              <Select
+                a11yTitle="select form"
+                name="select"
+                placeholder="test input"
+                options={['small', 'medium', 'large']}
+                value={value}
+                onChange={({ option }) => setValue(option)}
+              />
+            </FormField>
+          </Form>
+        </Grommet>
+      );
+    };
+    const { getByPlaceholderText, container } = render(<Test />);
+    fireEvent.change(getByPlaceholderText('test input'), {
+      target: { value: 'small' },
+    });
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
