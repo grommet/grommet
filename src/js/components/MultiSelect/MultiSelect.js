@@ -23,6 +23,7 @@ const MultiSelect = ({
   withUpdateCancelButtons,
   searchable,
   withInclusionExclusion,
+  isExcluded,
   onIncExcChange,
   renderEmptySelected,
   ...rest
@@ -34,7 +35,7 @@ const MultiSelect = ({
     searchVal,
     incExcVal,
     setSelectState,
-  } = useCustomSelectState(options, value, withInclusionExclusion);
+  } = useCustomSelectState(options, value, withInclusionExclusion, isExcluded);
 
   useEffect(() => {
     if (withInclusionExclusion && value.length === 0)
@@ -79,7 +80,7 @@ const MultiSelect = ({
 
   const setIncExcVal = (incExc) => {
     setSelectState({ incExcVal: incExc });
-    onIncExcChange(incExc);
+    onIncExcChange((incExc && incExc === 'excluded') || null);
   };
 
   const renderContent = (props) => {

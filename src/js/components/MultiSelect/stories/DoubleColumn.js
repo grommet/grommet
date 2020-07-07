@@ -13,7 +13,7 @@ const options = [
 
 const Example = () => {
   const [value, setValue] = useState([]);
-  const [incExc, setIncExc] = useState(null);
+  const [isExcluded, setIncExc] = useState(null);
 
   return (
     <Box fill align="center" justify="start" pad="large">
@@ -29,7 +29,8 @@ const Example = () => {
         searchable
         withOptionChips
         withUpdateCancelButtons
-        withInclusionExclusion={{ setIncExc: incExc, labelCount: 1 }}
+        withInclusionExclusion
+        isExcluded={isExcluded}
         onIncExcChange={(nextIncExc) => setIncExc(nextIncExc)}
         renderEmptySelected={<span>Empty</span>}
       />

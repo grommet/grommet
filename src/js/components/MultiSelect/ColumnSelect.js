@@ -82,6 +82,7 @@ const ColumnSelect = ({
           placeholder={searchPlaceholder}
           value={searchValue}
           onValueChange={onSearchChange}
+          layout={layout}
         />
       )}
       <Box direction="row">

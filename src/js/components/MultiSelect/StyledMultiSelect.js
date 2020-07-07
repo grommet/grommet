@@ -44,6 +44,10 @@ const OptionLabel = styled(Text)`
   ${props => props.theme.multiselect.chips.label.extend};
 `;
 
+const SearchWrapper = styled(Box)`
+  ${props => props.theme.multiselect.searchbox.container.extend};
+`;
+
 export {
   CheckBoxWrapper,
   OptionsBox,
@@ -53,4 +57,5 @@ export {
   OptionWrapper,
   OptionText,
   OptionLabel,
+  SearchWrapper,
 };
