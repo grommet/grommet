@@ -11,6 +11,34 @@ import { CardHeader } from '../../CardHeader';
 import { Grommet } from '../../Grommet';
 import { Text } from '../../Text';
 
+const customTheme = {
+  global: {
+    font: {
+      family: `-apple-system,
+           BlinkMacSystemFont, 
+           "Segoe UI"`,
+    },
+  },
+  card: {
+    container: {
+      background: 'brand',
+      elevation: 'large',
+    },
+    body: {
+      pad: 'small',
+      background: 'light-1',
+    },
+    header: {
+      justify: 'start',
+      pad: 'small',
+    },
+    footer: {
+      pad: { horizontal: 'medium', vertical: 'small' },
+      background: '#FFFFFF27',
+    },
+  },
+};
+
 describe('Card', () => {
   afterEach(cleanup);
 
@@ -66,6 +94,20 @@ describe('Card', () => {
     const component = renderer.create(
       <Grommet>
         <Card>
+          <CardHeader>header</CardHeader>
+          <CardBody>body</CardBody>
+          <CardFooter>footer</CardFooter>
+        </Card>
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('Themed', () => {
+    const component = renderer.create(
+      <Grommet theme={customTheme}>
+        <Card width="small">
           <CardHeader>header</CardHeader>
           <CardBody>body</CardBody>
           <CardFooter>footer</CardFooter>
