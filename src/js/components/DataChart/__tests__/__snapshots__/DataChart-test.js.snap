@@ -2161,22 +2161,22 @@ exports[`DataChart xAxis dates 1`] = `
       <div
         className="c7"
       >
-        M01
+        Jan
       </div>
       <div
         className="c7"
       >
-        M02
+        Feb
       </div>
       <div
         className="c7"
       >
-        M03
+        Mar
       </div>
       <div
         className="c7"
       >
-        M04
+        Apr
       </div>
     </div>
   </div>
