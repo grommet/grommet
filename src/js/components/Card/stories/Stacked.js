@@ -67,7 +67,8 @@ const Example = () => {
         >
           {data.map(item => (
             <Card width="medium" key={item.location}>
-              {/* Overlap CardBody and CardHeader in that order */}
+              {/* Stacked CardBody and CardHeader on top of each other 
+              in that order */}
               <Stack anchor="bottom-left">
                 <CardBody height="medium">
                   <Image
@@ -100,4 +101,4 @@ const Example = () => {
   );
 };
 
-storiesOf('Card', module).add('Collapsible', () => <Example />);
+storiesOf('Card', module).add('Stacked', () => <Example />);

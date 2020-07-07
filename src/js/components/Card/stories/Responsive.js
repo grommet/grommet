@@ -22,8 +22,11 @@ const Example = () => {
     <Grommet theme={grommet}>
       <Box pad="large">
         <Grid columns={size !== 'small' ? 'small' : '100%'} gap="small">
-          {cards.map(card => (
-            <Card pad="large">{card} </Card>
+          {cards.map((card, index) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <Card pad="large" key={index}>
+              {card}
+            </Card>
           ))}
         </Grid>
       </Box>

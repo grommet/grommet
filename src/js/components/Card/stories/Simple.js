@@ -31,9 +31,9 @@ const Example = () => (
         <CardHeader>header</CardHeader>
         <CardFooter>footer</CardFooter>
       </Card>
-      {/* internal components are optional  */}
-      <Card pad="small" gap="medium" background="light-4">
-        <Text>text</Text>
+      {/* children that are not Card internal components */}
+      <Card pad="small" gap="medium" background="light-1">
+        <Text>text - random component</Text>
         <Box>box - random component</Box>
       </Card>
     </Box>

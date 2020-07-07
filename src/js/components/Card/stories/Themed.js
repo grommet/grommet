@@ -96,6 +96,7 @@ const Identifier = ({ children, title, subTitle, size, ...rest }) => (
 export const Example = () => (
   <Grommet theme={theme} full>
     <Box pad="large">
+      {/* Responsive Grid */}
       <Grid gap="medium" rows="small" columns={{ count: 'fit', size: 'small' }}>
         {data.map(value => (
           <Card background={value.color} key={value.message}>

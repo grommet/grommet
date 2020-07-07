@@ -13,6 +13,8 @@ import {
   RoundType,
   PadType,
 } from '../utils';
+
+import { BoxProps } from '../components/Box';
 import { TextProps } from '../components/Text';
 import { ReactComponentElement } from 'react';
 
@@ -398,10 +400,10 @@ export interface ThemeType {
     };
   };
   card?: {
-    container?:{},
-    header?:{},
-    body?:{},
-    footer?:{},
+    container?:BoxProps;
+    header?:BoxProps;
+    body?:BoxProps;
+    footer?:BoxProps;
   },
   carousel?: {
     animation?: {
@@ -910,10 +912,7 @@ export interface ThemeType {
       margin?: MarginType;
     };
     options?: {
-      container?: {
-        align?: string;
-        pad?: string;
-      };
+      container?: BoxProps;
       text?: {
         margin?: MarginType;
       };

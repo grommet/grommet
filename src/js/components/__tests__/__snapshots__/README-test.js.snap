@@ -3596,6 +3596,43 @@ Defaults to
 undefined
 \`\`\`
 ",
+  "CardBody": "## CardBody
+The Card Body.
+
+
+## Properties
+
+  
+## Intrinsic element
+
+\`\`\`
+div
+\`\`\`",
+  "CardFooter": "## CardFooter
+The Card Footer. Works best as the latter sibling of CardBody or any 
+      other flex container.
+
+
+## Properties
+
+  
+## Intrinsic element
+
+\`\`\`
+div
+\`\`\`",
+  "CardHeader": "## CardHeader
+The Card Header.
+
+
+## Properties
+
+  
+## Intrinsic element
+
+\`\`\`
+div
+\`\`\`",
   "Carousel": "## Carousel
 A carousel that cycles through children. Child components
       would typically be Images. It is the caller's responsibility to ensure
