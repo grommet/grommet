@@ -33,7 +33,7 @@ var doc = function doc(TextInput) {
       suggestionsCount: _reactDesc.PropTypes.string,
       suggestionsExist: _reactDesc.PropTypes.string,
       suggestionIsOpen: _reactDesc.PropTypes.string
-    }).description("Custom messages for TextInput. Used for accessibility by screen \n        readers.").defaultValue({
+    }).description("Custom messages for TextInput. Used for accessibility by screen\n        readers.").defaultValue({
       enterSelect: '(Press Enter to Select)',
       suggestionsCount: 'suggestions available',
       suggestionsExist: 'This input has suggestions use arrow keys to navigate',
@@ -50,7 +50,9 @@ var doc = function doc(TextInput) {
     size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']), _reactDesc.PropTypes.string]).description('The size of the TextInput.'),
     suggestions: _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.shape({
       label: _reactDesc.PropTypes.node,
-      value: _reactDesc.PropTypes.any
+      // eslint-disable-next-line
+      value: _reactDesc.PropTypes.any // this is intentional any
+
     }), _reactDesc.PropTypes.string])).description("Suggestions to show. It is recommended to avoid showing too many\nsuggestions and instead rely on the user to type more."),
     value: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.number]).description('What text to put in the input.')
   };
@@ -89,7 +91,7 @@ var themeDoc = _extends({
     defaultValue: 20
   },
   text: {
-    description: "The possible sizes of the text in terms of its font-size and \n    line-height.",
+    description: "The possible sizes of the text in terms of its font-size and\n    line-height.",
     type: 'object',
     defaultValue: "{\n      xsmall: {\n        size: '12px',\n        height: '18px',\n       },\n      small: {\n        size: '14px',\n        height: '20px',\n       },\n      medium: {\n        size: '18px',\n        height: '24px',\n      },\n      large: {\n        size: '22px',\n        height: '28px',\n      },\n      xlarge: {\n        size: '26px',\n        height: '32px',\n      },\n      xxlarge: {\n        size: '34px',\n        height: '40px',\n      },\n    }"
   },

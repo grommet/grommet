@@ -3,7 +3,7 @@ import { getAvailableAtBadge, marginProp } from '../../utils';
 export var doc = function doc(FormField) {
   var DocumentedFormField = describe(FormField).availableAt(getAvailableAtBadge('FormField')).description("A single field in a form. FormField wraps an input component with\n      a label, help, and/or error messaging. It typically contains an input\n      control like TextInput, TextArea, Select, etc.").usage("import { FormField } from 'grommet';\n<FormField />").intrinsicElement('div');
   DocumentedFormField.propTypes = {
-    component: PropTypes.oneOfType([PropTypes.func, PropTypes.object]).description("The component to insert in the FormField. Grommet will add update the \n      form values when this field changes. Any additional properties \n      (such as initial value) you pass to FormField will be forwarded to this\n      component. The component may be custom as long it supports the properties\n      of name, value, onChange (event => {}), while event has either event.value\n      or event.target.value."),
+    component: PropTypes.oneOfType([PropTypes.func, PropTypes.object]).description("The component to insert in the FormField. Grommet will add update the\n      form values when this field changes. Any additional properties\n      (such as initial value) you pass to FormField will be forwarded to this\n      component. The component may be custom as long it supports the properties\n      of name, value, onChange (event => {}), while event has either event.value\n      or event.target.value."),
     disabled: PropTypes.bool.description('Whether the field should look disabled.'),
     error: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).description("Any error text describing issues with the field's value"),
     help: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).description('Any help text describing how the field works'),
@@ -15,12 +15,12 @@ export var doc = function doc(FormField) {
     pad: PropTypes.bool.description('Whether to add padding to align with the padding of TextInput.'),
     required: PropTypes.bool.description('Whether the field is required.'),
     validate: PropTypes.oneOfType([PropTypes.shape({
-      regexp: PropTypes.object,
+      regexp: PropTypes.instanceOf(RegExp),
       // regular expression
       message: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
       status: PropTypes.oneOf(['error', 'info'])
     }), PropTypes.func, PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.shape({
-      regexp: PropTypes.object,
+      regexp: PropTypes.instanceOf(RegExp),
       // regular expression
       message: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
       status: PropTypes.oneOf(['error', 'info'])

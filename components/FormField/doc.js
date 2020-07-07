@@ -10,7 +10,7 @@ var _utils = require("../../utils");
 var doc = function doc(FormField) {
   var DocumentedFormField = (0, _reactDesc.describe)(FormField).availableAt((0, _utils.getAvailableAtBadge)('FormField')).description("A single field in a form. FormField wraps an input component with\n      a label, help, and/or error messaging. It typically contains an input\n      control like TextInput, TextArea, Select, etc.").usage("import { FormField } from 'grommet';\n<FormField />").intrinsicElement('div');
   DocumentedFormField.propTypes = {
-    component: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.func, _reactDesc.PropTypes.object]).description("The component to insert in the FormField. Grommet will add update the \n      form values when this field changes. Any additional properties \n      (such as initial value) you pass to FormField will be forwarded to this\n      component. The component may be custom as long it supports the properties\n      of name, value, onChange (event => {}), while event has either event.value\n      or event.target.value."),
+    component: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.func, _reactDesc.PropTypes.object]).description("The component to insert in the FormField. Grommet will add update the\n      form values when this field changes. Any additional properties\n      (such as initial value) you pass to FormField will be forwarded to this\n      component. The component may be custom as long it supports the properties\n      of name, value, onChange (event => {}), while event has either event.value\n      or event.target.value."),
     disabled: _reactDesc.PropTypes.bool.description('Whether the field should look disabled.'),
     error: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.node]).description("Any error text describing issues with the field's value"),
     help: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.node]).description('Any help text describing how the field works'),
@@ -22,12 +22,12 @@ var doc = function doc(FormField) {
     pad: _reactDesc.PropTypes.bool.description('Whether to add padding to align with the padding of TextInput.'),
     required: _reactDesc.PropTypes.bool.description('Whether the field is required.'),
     validate: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.shape({
-      regexp: _reactDesc.PropTypes.object,
+      regexp: _reactDesc.PropTypes.instanceOf(RegExp),
       // regular expression
       message: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.node]),
       status: _reactDesc.PropTypes.oneOf(['error', 'info'])
     }), _reactDesc.PropTypes.func, _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.shape({
-      regexp: _reactDesc.PropTypes.object,
+      regexp: _reactDesc.PropTypes.instanceOf(RegExp),
       // regular expression
       message: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.node]),
       status: _reactDesc.PropTypes.oneOf(['error', 'info'])

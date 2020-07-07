@@ -26,7 +26,7 @@ export var doc = function doc(TextInput) {
       suggestionsCount: PropTypes.string,
       suggestionsExist: PropTypes.string,
       suggestionIsOpen: PropTypes.string
-    }).description("Custom messages for TextInput. Used for accessibility by screen \n        readers.").defaultValue({
+    }).description("Custom messages for TextInput. Used for accessibility by screen\n        readers.").defaultValue({
       enterSelect: '(Press Enter to Select)',
       suggestionsCount: 'suggestions available',
       suggestionsExist: 'This input has suggestions use arrow keys to navigate',
@@ -43,7 +43,9 @@ export var doc = function doc(TextInput) {
     size: PropTypes.oneOfType([PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']), PropTypes.string]).description('The size of the TextInput.'),
     suggestions: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.shape({
       label: PropTypes.node,
-      value: PropTypes.any
+      // eslint-disable-next-line
+      value: PropTypes.any // this is intentional any
+
     }), PropTypes.string])).description("Suggestions to show. It is recommended to avoid showing too many\nsuggestions and instead rely on the user to type more."),
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).description('What text to put in the input.')
   };
@@ -79,7 +81,7 @@ export var themeDoc = _extends({
     defaultValue: 20
   },
   text: {
-    description: "The possible sizes of the text in terms of its font-size and \n    line-height.",
+    description: "The possible sizes of the text in terms of its font-size and\n    line-height.",
     type: 'object',
     defaultValue: "{\n      xsmall: {\n        size: '12px',\n        height: '18px',\n       },\n      small: {\n        size: '14px',\n        height: '20px',\n       },\n      medium: {\n        size: '18px',\n        height: '24px',\n      },\n      large: {\n        size: '22px',\n        height: '28px',\n      },\n      xlarge: {\n        size: '26px',\n        height: '32px',\n      },\n      xxlarge: {\n        size: '34px',\n        height: '40px',\n      },\n    }"
   },
