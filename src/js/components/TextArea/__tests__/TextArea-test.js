@@ -178,27 +178,27 @@ describe('TextArea', () => {
 
     test('onChange', () => {
       const onChange = jest.fn();
-      const { container, getByPlaceholderText } = render(
+      const { getByPlaceholderText } = render(
         <Grommet>
           <TextArea name="item" placeholder="item" onChange={onChange} />
         </Grommet>,
       );
-      fireEvent.change(getByPlaceholderText('item'), {
-        target: { value: 'o' },
+      const input = getByPlaceholderText('item');
+      fireEvent.change(input, {
+        target: { value: 'Test' },
       });
-      expect(container.firstChild).toMatchSnapshot();
+      expect(input.value).toEqual('Test');
       expect(onChange).toHaveBeenCalledTimes(1);
     });
 
-    test('onBlur', () => {
+    test('onBlur is being called', () => {
       const onBlur = jest.fn();
-      const { container, getByPlaceholderText } = render(
+      const { getByPlaceholderText } = render(
         <Grommet>
           <TextArea name="item" placeholder="item" onBlur={onBlur} />
         </Grommet>,
       );
       fireEvent.blur(getByPlaceholderText('item'));
-      expect(container.firstChild).toMatchSnapshot();
       expect(onBlur).toHaveBeenCalledTimes(1);
     });
   });
