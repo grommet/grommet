@@ -14,7 +14,7 @@ var sides = ['horizontal', 'vertical', 'top', 'bottom', 'left', 'right'];
 var parts = ['header', 'body', 'footer'];
 var padShapeSides = {};
 sides.forEach(function (side) {
-  padShapeSides[side] = _reactDesc.PropTypes.oneOf(sizes);
+  padShapeSides[side] = _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(sizes), _reactDesc.PropTypes.string]);
 });
 var padShapeParts = {};
 parts.forEach(function (part) {

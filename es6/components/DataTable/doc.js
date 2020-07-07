@@ -7,7 +7,7 @@ var sides = ['horizontal', 'vertical', 'top', 'bottom', 'left', 'right'];
 var parts = ['header', 'body', 'footer'];
 var padShapeSides = {};
 sides.forEach(function (side) {
-  padShapeSides[side] = PropTypes.oneOf(sizes);
+  padShapeSides[side] = PropTypes.oneOfType([PropTypes.oneOf(sizes), PropTypes.string]);
 });
 var padShapeParts = {};
 parts.forEach(function (part) {
