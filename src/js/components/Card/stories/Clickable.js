@@ -113,7 +113,7 @@ const Identifier = ({ children, title, subTitle, size, ...rest }) => (
 );
 
 export const Example = () => (
-  <Grommet theme={theme} height="100%" full>
+  <Grommet theme={theme} full>
     <Box pad="large" background="dark-1" height="100%">
       <Grid gap="medium" rows="small" columns={{ count: 'fit', size: 'small' }}>
         {data.map(value => (
