@@ -231,8 +231,7 @@ The object values can be any Button prop,
 for example: label, onClick, and href. Defaults to `[]`.
 
 ```
-  { label: "string", onClick: () => {}, href: "//my.com/path" },
-  { ... }
+[object]
 ```
 
 **label**
