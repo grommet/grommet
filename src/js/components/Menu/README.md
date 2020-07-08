@@ -326,10 +326,22 @@ undefined
 
 **menu.icons.down**
 
-The icon to show to the right of the label. Expects `React.Element`.
+The icon to show to the right of the label when menu is 
+    closed. Expects `React.Element`.
 
 Defaults to
 
 ```
 <FormDown />
+```
+
+**menu.icons.up**
+
+The icon to show to the right of the label when menu is 
+    opened. Expects `undefined | React.Element`.
+
+Defaults to
+
+```
+undefined
 ```
