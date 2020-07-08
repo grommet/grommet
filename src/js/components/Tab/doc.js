@@ -72,7 +72,7 @@ export const themeDoc = {
   },
   'tab.color': {
     description: 'text color for the Tab.',
-    type: 'string',
+    type: 'string | {dark: string, light: string}',
     defaultValue: 'control',
   },
   'tab.disabled.color': {
