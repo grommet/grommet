@@ -68,7 +68,7 @@ describe('RadioButton', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test('bgColor', () => {
+  test('Theme background color', () => {
     const customTheme = {
       radioButton: {
         check: {
