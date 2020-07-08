@@ -72,7 +72,9 @@ describe('RadioButton', () => {
     const customTheme = {
       radioButton: {
         check: {
-          backgroundColor: 'red',
+          background: {
+            color: 'red',
+          },
         },
       },
     };
