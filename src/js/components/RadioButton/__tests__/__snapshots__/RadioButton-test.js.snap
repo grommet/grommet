@@ -919,6 +919,7 @@ exports[`RadioButton label themed 1`] = `
     >
       <input
         className="c3"
+        name="test"
         type="radio"
       />
       <div

@@ -97,7 +97,7 @@ export const themeDoc = {
     type: 'string',
     defaultValue: 'small',
   },
-  'radioButton.fontWeight': {
+  'radioButton.font.weight': {
     description: 'The font weight of the label.',
     type: 'number | string',
     defaultValue: undefined,

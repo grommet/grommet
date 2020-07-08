@@ -44,9 +44,9 @@ Object.setPrototypeOf(StyledRadioButtonInput.defaultProps, defaultProps);
 
 const StyledRadioButtonLabel = styled.span`
   ${props =>
-    props.theme.radioButton.fontWeight &&
+    props.theme.radioButton.font.weight &&
     css`
-      font-weight: ${props.theme.radioButton.fontWeight};
+      font-weight: ${props.theme.radioButton.font.weight};
     `}
 `;
 

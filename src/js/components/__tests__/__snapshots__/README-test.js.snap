@@ -11333,7 +11333,7 @@ Defaults to
 small
 \`\`\`
 
-**radioButton.fontWeight**
+**radioButton.font.weight**
 
 The font weight of the label. Expects \`number | string\`.
 

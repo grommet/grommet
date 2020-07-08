@@ -22,7 +22,9 @@ const theme = deepMerge(grommet, {
     icon: {
       size: '10px',
     },
-    fontWeight: 500,
+    font: {
+      weight: 500,
+    },
   },
 });
 
