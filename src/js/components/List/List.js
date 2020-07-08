@@ -59,17 +59,6 @@ const List = React.forwardRef(
 
     return (
       <Keyboard
-        onEnter={
-          onClickItem && active >= 0
-            ? event => {
-                event.persist();
-                const adjustedEvent = event;
-                adjustedEvent.item = data[active];
-                adjustedEvent.index = active;
-                onClickItem(adjustedEvent);
-              }
-            : undefined
-        }
         onUp={
           onClickItem && active
             ? () => {
@@ -186,14 +175,12 @@ const List = React.forwardRef(
                   tabIndex: -1,
                   active: active === index,
                   onClick: event => {
-                    if (event.type === 'click') {
-                      // extract from React's synthetic event pool
-                      event.persist();
-                      const adjustedEvent = event;
-                      adjustedEvent.item = item;
-                      adjustedEvent.index = index;
-                      onClickItem(adjustedEvent);
-                    }
+                    // extract from React's synthetic event pool
+                    event.persist();
+                    const adjustedEvent = event;
+                    adjustedEvent.item = data[active];
+                    adjustedEvent.index = active;
+                    onClickItem(adjustedEvent);
                   },
                   onMouseOver: () => setActive(index),
                   onMouseOut: () => setActive(undefined),

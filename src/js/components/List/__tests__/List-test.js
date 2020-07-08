@@ -70,7 +70,9 @@ describe('List', () => {
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
-    fireEvent.click(getByText('beta'));
+    const item = getByText('beta');
+    fireEvent.mouseOver(item);
+    fireEvent.click(item);
     expect(onClickItem).toBeCalledWith(
       expect.objectContaining({ item: { a: 'beta' } }),
     );
