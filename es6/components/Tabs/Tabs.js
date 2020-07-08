@@ -1,13 +1,12 @@
-var _this = this;
-
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { forwardRef, cloneElement, Children, useContext, useState } from 'react';
+import React, { forwardRef, useContext, useState } from 'react';
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
+import { TabsContext } from './TabsContext';
 import { StyledTabPanel, StyledTabs, StyledTabsHeader } from './StyledTabs';
 import { normalizeColor } from '../../utils';
 var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
@@ -32,6 +31,14 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
       activeIndex = _useState[0],
       setActiveIndex = _useState[1];
 
+  var _useState2 = useState(),
+      activeContent = _useState2[0],
+      setActiveContent = _useState2[1];
+
+  var _useState3 = useState(),
+      activeTitle = _useState3[0],
+      setActiveTitle = _useState3[1];
+
   if (activeIndex !== propsActiveIndex && propsActiveIndex !== undefined) {
     setActiveIndex(propsActiveIndex);
   }
@@ -52,30 +59,19 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
   delete rest.onActive;
   /* eslint-enable no-param-reassign */
 
-  var activeContent;
-  var activeTitle;
-  var tabs = Children.map(children, function (tab, index) {
-    if (!tab) return undefined;
-    var tabProps = tab.props || {};
-    var isTabActive = index === activeIndex;
-
-    if (isTabActive) {
-      activeContent = tabProps.children;
-
-      if (typeof tabProps.title === 'string') {
-        activeTitle = tabProps.title;
-      } else {
-        activeTitle = index + 1;
+  var tabs = React.Children.map(children, function (child, index) {
+    return /*#__PURE__*/React.createElement(TabsContext.Provider, {
+      value: {
+        activeIndex: activeIndex,
+        active: activeIndex === index,
+        onActivate: function onActivate() {
+          return activateTab(index);
+        },
+        setActiveContent: setActiveContent,
+        setActiveTitle: setActiveTitle
       }
-    }
-
-    return /*#__PURE__*/cloneElement(tab, {
-      active: isTabActive,
-      onActivate: function onActivate() {
-        return activateTab(index);
-      }
-    });
-  }, _this);
+    }, child);
+  });
   var tabsHeaderStyles = {};
 
   if (theme.tabs.header && theme.tabs.header.border) {

@@ -2,24 +2,31 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { forwardRef, useContext, useState } from 'react';
+import React, { forwardRef, useContext, useEffect, useState } from 'react';
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
+import { TabsContext } from '../Tabs/TabsContext';
 import { normalizeColor } from '../../utils';
 import { StyledTab } from './StyledTab';
 var Tab = /*#__PURE__*/forwardRef(function (_ref, ref) {
-  var active = _ref.active,
+  var children = _ref.children,
       icon = _ref.icon,
       plain = _ref.plain,
       title = _ref.title,
-      onActivate = _ref.onActivate,
       onMouseOver = _ref.onMouseOver,
       onMouseOut = _ref.onMouseOut,
       reverse = _ref.reverse,
-      rest = _objectWithoutPropertiesLoose(_ref, ["active", "icon", "plain", "title", "onActivate", "onMouseOver", "onMouseOut", "reverse"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["children", "icon", "plain", "title", "onMouseOver", "onMouseOut", "reverse"]);
+
+  var _useContext = useContext(TabsContext),
+      active = _useContext.active,
+      activeIndex = _useContext.activeIndex,
+      onActivate = _useContext.onActivate,
+      setActiveContent = _useContext.setActiveContent,
+      setActiveTitle = _useContext.setActiveTitle;
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
 
@@ -33,6 +40,13 @@ var Tab = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
   var normalizedTitle = title;
   var tabStyles = {};
+  useEffect(function () {
+    if (active) {
+      setActiveContent(children);
+      var activeTitle = typeof title === 'string' ? title : activeIndex + 1;
+      setActiveTitle(activeTitle);
+    }
+  }, [active, activeIndex, children, setActiveContent, setActiveTitle, title]);
 
   var onMouseOverTab = function onMouseOverTab(event) {
     setOver(true);

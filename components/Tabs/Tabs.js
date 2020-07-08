@@ -11,11 +11,11 @@ var _defaultProps = require("../../default-props");
 
 var _Box = require("../Box");
 
+var _TabsContext = require("./TabsContext");
+
 var _StyledTabs = require("./StyledTabs");
 
 var _utils = require("../../utils");
-
-var _this = void 0;
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -48,6 +48,14 @@ var Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       activeIndex = _useState[0],
       setActiveIndex = _useState[1];
 
+  var _useState2 = (0, _react.useState)(),
+      activeContent = _useState2[0],
+      setActiveContent = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(),
+      activeTitle = _useState3[0],
+      setActiveTitle = _useState3[1];
+
   if (activeIndex !== propsActiveIndex && propsActiveIndex !== undefined) {
     setActiveIndex(propsActiveIndex);
   }
@@ -68,31 +76,19 @@ var Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   delete rest.onActive;
   /* eslint-enable no-param-reassign */
 
-  var activeContent;
-  var activeTitle;
-
-  var tabs = _react.Children.map(children, function (tab, index) {
-    if (!tab) return undefined;
-    var tabProps = tab.props || {};
-    var isTabActive = index === activeIndex;
-
-    if (isTabActive) {
-      activeContent = tabProps.children;
-
-      if (typeof tabProps.title === 'string') {
-        activeTitle = tabProps.title;
-      } else {
-        activeTitle = index + 1;
+  var tabs = _react["default"].Children.map(children, function (child, index) {
+    return /*#__PURE__*/_react["default"].createElement(_TabsContext.TabsContext.Provider, {
+      value: {
+        activeIndex: activeIndex,
+        active: activeIndex === index,
+        onActivate: function onActivate() {
+          return activateTab(index);
+        },
+        setActiveContent: setActiveContent,
+        setActiveTitle: setActiveTitle
       }
-    }
-
-    return /*#__PURE__*/(0, _react.cloneElement)(tab, {
-      active: isTabActive,
-      onActivate: function onActivate() {
-        return activateTab(index);
-      }
-    });
-  }, _this);
+    }, child);
+  });
 
   var tabsHeaderStyles = {};
 
