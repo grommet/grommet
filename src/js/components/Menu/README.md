@@ -227,10 +227,12 @@ node
 **items**
 
 Required. Menu items to be placed inside the drop down.
-The object values can be any Button prop, for example: label and onClick. Defaults to `[]`.
+The object values can be any Button prop, 
+for example: label, onClick, and href. Defaults to `[]`.
 
 ```
-[object]
+  { label: "string", onClick: () => {}, href: "//my.com/path" },
+  { ... }
 ```
 
 **label**

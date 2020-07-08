@@ -4848,7 +4848,8 @@ node",
       Object {
         "defaultValue": Array [],
         "description": "Menu items to be placed inside the drop down.
-The object values can be any Button prop, for example: label and onClick.",
+The object values can be any Button prop, 
+for example: label, onClick, and href.",
         "format": "[object]",
         "name": "items",
         "required": true,
