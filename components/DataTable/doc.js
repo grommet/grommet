@@ -103,6 +103,11 @@ var themeDoc = {
     type: 'string | { dark: string, light: string }',
     defaultValue: "{ dark: 'white', light: 'black' }"
   },
+  'dataTable.body.extend': {
+    description: 'Any additional style for an DataTable Body',
+    type: 'string | (props) => {}',
+    defaultValue: undefined
+  },
   'dataTable.groupHeader.background': {
     description: 'The background color of the group header.',
     type: 'string | { dark: string, light: string }',

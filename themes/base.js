@@ -720,6 +720,9 @@ var generate = function generate(baseSpacing, scale) {
       baseline: 500
     },
     dataTable: {
+      // body: {
+      //   extend: undefined,
+      // },
       groupHeader: {
         background: {
           dark: 'dark-2',

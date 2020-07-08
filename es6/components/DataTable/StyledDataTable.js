@@ -9,7 +9,9 @@ import { TableFooter } from '../TableFooter';
 var StyledDataTable = styled(Table).withConfig({
   displayName: "StyledDataTable",
   componentId: "xrlyjm-0"
-})(["border-spacing:0;border-collapse:collapse;height:auto;", ";"], genericStyles);
+})(["border-spacing:0;border-collapse:collapse;height:auto;", " ", ";"], genericStyles, function (props) {
+  return props.theme.dataTable && props.theme.dataTable.body && props.theme.dataTable.body.extend;
+});
 StyledDataTable.defaultProps = {};
 Object.setPrototypeOf(StyledDataTable.defaultProps, defaultProps);
 var hoverStyle = css(["", " color:", ";"], function (props) {

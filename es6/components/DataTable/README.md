@@ -617,6 +617,16 @@ Defaults to
 { dark: 'white', light: 'black' }
 ```
 
+**dataTable.body.extend**
+
+Any additional style for an DataTable Body Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
 **dataTable.groupHeader.background**
 
 The background color of the group header. Expects `string | { dark: string, light: string }`.
