@@ -77,7 +77,7 @@ export const themeDoc = {
   },
   'tab.disabled.color': {
     description: 'text color of the Tab when disabled.',
-    type: 'string | object',
+    type: 'string | {dark: string, light: string}',
     defaultValue: undefined,
   },
   'tab.hover.background': {
