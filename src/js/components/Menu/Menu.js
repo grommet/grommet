@@ -36,7 +36,7 @@ To open menu when menu button is focused:
 To navigate within menu:
 - Up/down arrow keys can be used and will loop through options
 (keeping focus within the Menu)
-- Tab can be used, but once the last menu item is reached, Tab will close the 
+- Tab can be used, but once the last menu item is reached, Tab will close the
 Menu and continue through page content.
 
 To close the menu:
@@ -70,7 +70,6 @@ const Menu = forwardRef((props, ref) => {
     ...rest
   } = props;
   const theme = useContext(ThemeContext) || defaultProps.theme;
-  const MenuIcon = theme.menu.icons.down;
   const iconColor = normalizeColor(theme.menu.icons.color || 'control', theme);
   const align = dropProps.align || dropAlign;
   const controlButtonIndex = useMemo(() => {
@@ -94,6 +93,9 @@ const Menu = forwardRef((props, ref) => {
 
   const [activeItemIndex, setActiveItemIndex] = useState(constants.none);
   const [isOpen, setOpen] = useState(open || false);
+
+  const MenuIcon =
+    isOpen && theme.menu.icons.up ? theme.menu.icons.up : theme.menu.icons.down;
 
   const onDropClose = useCallback(() => {
     setActiveItemIndex(constants.none);

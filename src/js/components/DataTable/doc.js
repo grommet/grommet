@@ -8,7 +8,10 @@ const parts = ['header', 'body', 'footer'];
 
 const padShapeSides = {};
 sides.forEach(side => {
-  padShapeSides[side] = PropTypes.oneOf(sizes);
+  padShapeSides[side] = PropTypes.oneOfType([
+    PropTypes.oneOf(sizes),
+    PropTypes.string,
+  ]);
 });
 
 const padShapeParts = {};
@@ -248,6 +251,11 @@ export const themeDoc = {
     description: 'The text color when hovering over an interactive row.',
     type: 'string | { dark: string, light: string }',
     defaultValue: "{ dark: 'white', light: 'black' }",
+  },
+  'dataTable.body.extend': {
+    description: 'Any additional style for an DataTable Body',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
   },
   'dataTable.groupHeader.background': {
     description: 'The background color of the group header.',
