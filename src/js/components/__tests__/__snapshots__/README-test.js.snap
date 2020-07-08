@@ -2175,6 +2175,7 @@ _self
 _blank
 _parent
 _top
+string
 \`\`\`
 
 **type**
@@ -4109,6 +4110,21 @@ xlarge
 string
 \`\`\`
 
+**point**
+
+When using a 'point' type, what shape the points should use.
+      If this property is not specified, points will be drawn as a square or
+      a circle, based on how 'round' is specified.
+
+\`\`\`
+circle
+diamond
+square
+star
+triangle
+triangleDown
+\`\`\`
+
 **round**
 
 Whether to round the line ends.
@@ -6011,35 +6027,40 @@ string
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   vertical: 
     xxsmall
     xsmall
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   top: 
     xxsmall
     xsmall
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   bottom: 
     xxsmall
     xsmall
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   left: 
     xxsmall
     xsmall
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   right: 
     xxsmall
     xsmall
@@ -6047,6 +6068,7 @@ string
     medium
     large
     xlarge
+    string
 }
 {
   header: custom,
@@ -7199,8 +7221,8 @@ import { FormField } from 'grommet';
 
 **component**
 
-The component to insert in the FormField. Grommet will add update the 
-      form values when this field changes. Any additional properties 
+The component to insert in the FormField. Grommet will add update the
+      form values when this field changes. Any additional properties
       (such as initial value) you pass to FormField will be forwarded to this
       component. The component may be custom as long it supports the properties
       of name, value, onChange (event => {}), while event has either event.value
@@ -7383,7 +7405,7 @@ Validation rule when used within a grommet Form. Provide an object
 
 \`\`\`
 {
-  regexp: object,
+  regexp: new RegExp(...),
   message: 
     string
     node,
@@ -7394,7 +7416,7 @@ Validation rule when used within a grommet Form. Provide an object
 function
 [
   {
-    regexp: object,
+    regexp: new RegExp(...),
     message: 
       string
       node,
@@ -10544,12 +10566,24 @@ undefined
 
 **menu.icons.down**
 
-The icon to show to the right of the label. Expects \`React.Element\`.
+The icon to show to the right of the label when menu is 
+    closed. Expects \`React.Element\`.
 
 Defaults to
 
 \`\`\`
 <FormDown />
+\`\`\`
+
+**menu.icons.up**
+
+The icon to show to the right of the label when menu is 
+    opened. Expects \`undefined | React.Element\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 ",
   "Meter": "## Meter
@@ -11225,6 +11259,17 @@ input
 \`\`\`
 ## Theme
   
+**global.colors.control**
+
+The default color of the border surrounding 
+    the checked icon in RadioButton checked state. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: 'accent-1', light: 'brand'}
+\`\`\`
+
 **radioButton.border.color**
 
 The color of the border of the Radio Button. Expects \`string | { dark: string, light: string }\`.
@@ -14199,6 +14244,15 @@ import { TextArea } from 'grommet';
 
 ## Properties
 
+**a11yTitle**
+
+Custom label to be used by screen readers.
+      When provided, an aria-label will be added to the element.
+
+\`\`\`
+string
+\`\`\`
+
 **id**
 
 The id attribute of the textarea.
@@ -14489,6 +14543,14 @@ import { TextInput } from 'grommet';
 
 ## Properties
 
+**a11yTitle**
+
+Custom title to be used by screen readers.
+
+\`\`\`
+string
+\`\`\`
+
 **dropAlign**
 
 How to align the drop. Defaults to \`{
@@ -14572,7 +14634,7 @@ boolean
 
 **messages**
 
-Custom messages for TextInput. Used for accessibility by screen 
+Custom messages for TextInput. Used for accessibility by screen
         readers. Defaults to \`{
   \\"enterSelect\\": \\"(Press Enter to Select)\\",
   \\"suggestionsCount\\": \\"suggestions available\\",
@@ -14751,7 +14813,7 @@ Defaults to
 
 **text**
 
-The possible sizes of the text in terms of its font-size and 
+The possible sizes of the text in terms of its font-size and
     line-height. Expects \`object\`.
 
 Defaults to
@@ -15190,6 +15252,76 @@ Defaults to
 
 \`\`\`
 rgba(0, 0, 0, 0.7)
+\`\`\`
+
+**video.icons.closedCaption**
+
+The icon to use for the caption. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+<ClosedCaption />
+\`\`\`
+
+**video.icons.configure**
+
+The icon to use for the configuration action. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+<Actions />
+\`\`\`
+
+**video.icons.fullScreen**
+
+The icon to use for viewing the video in full screen. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+<Expand />
+\`\`\`
+
+**video.icons.pause**
+
+The icon to use for pausing the video. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+<Pause />
+\`\`\`
+
+**video.icons.play**
+
+The icon to use for playing the video. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+<Play />
+\`\`\`
+
+**video.icons.reduceVolume**
+
+The icon to use for the action of lowering the volume. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+<VolumeLow />
+\`\`\`
+
+**video.icons.volume**
+
+The icon to use for the action of raising the volume. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+<Volume />
 \`\`\`
 
 **video.scrubber.color**

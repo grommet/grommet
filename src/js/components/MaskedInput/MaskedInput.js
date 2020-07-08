@@ -113,7 +113,12 @@ const parseValue = (mask, value) => {
   return valueParts;
 };
 
-const defaultMask = [];
+const defaultMask = [
+  {
+    regexp: /[^]*/,
+  },
+];
+
 const dropAlign = { top: 'bottom', left: 'left' };
 
 const MaskedInput = forwardRef(
