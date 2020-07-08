@@ -109,7 +109,7 @@ Defaults to
 
 **radioButton.border.width**
 
-The width size of the border of the RadioButton. Expects `string | {dark: string, light: string}`.
+The width size of the border of the RadioButton. Expects `string`.
 
 Defaults to
 
@@ -119,7 +119,7 @@ Defaults to
 
 **radioButton.check.background.color**
 
-The background color of the checked icon in the RadioButton. Expects `string`.
+The background color of the checked icon in the RadioButton. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
