@@ -585,6 +585,17 @@ var generate = function generate(baseSpacing, scale) {
       } // level ranges from 1-6
 
     },
+    card: {
+      container: {
+        round: 'small',
+        elevation: 'small'
+      },
+      header: {},
+      body: {},
+      footer: {
+        background: 'background-contrast'
+      }
+    },
     carousel: {
       icons: {
         current: _Subtract.Subtract,
