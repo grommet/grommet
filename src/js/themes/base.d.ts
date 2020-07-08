@@ -264,7 +264,7 @@ export interface ThemeType {
     hover?: {
       color?: ColorType; // deprecated
       heading?: {
-        color?: ColorType; 
+        color?: ColorType;
       };
     };
     icons?: {
@@ -797,6 +797,7 @@ export interface ThemeType {
     extend?: ExtendType;
     icons?: {
       down?: any;
+      up?: any;
       color?: ColorType;
     };
   };
