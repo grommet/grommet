@@ -518,6 +518,9 @@ export interface ThemeType {
     baseline?: number;
   };
   dataTable?: {
+    body?:{
+      extend?: ExtendType;
+    }
     header?: {};
     groupHeader?: {
       border?: {
