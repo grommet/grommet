@@ -140,12 +140,39 @@ export const backgroundStyle = (backgroundArg, theme, textColorArg) => {
   if (background.image) {
     // allow both background color and image, in case the image doesn't fill
     return css`
+      ${!background.opacity &&
+        `
       background-image: ${background.image};
       background-repeat: ${background.repeat || 'no-repeat'};
       background-position: ${background.position || 'center center'};
-      background-size: ${background.size || 'cover'};
+      background-size: ${background.size || 'cover'};`}
       ${backgroundColor ? `background-color: ${backgroundColor};` : ''}
       ${textColor ? `color: ${textColor};` : ''}
+      ${
+        background.opacity
+          ? `
+        position: relative;
+        z-index: 0;
+        &:before {
+        content: '';
+        position: absolute;
+        background-image: ${background.image};
+        background-repeat: ${background.repeat || 'no-repeat'};
+        background-position: ${background.position || 'center center'};
+        background-size: ${background.size || 'cover'};
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        opacity: ${
+          background.opacity === true
+            ? theme.global.opacity.medium
+            : theme.global.opacity[background.opacity] || background.opacity
+        };
+        z-index: -1;
+      }`
+          : ''
+      }
     `;
   }
 
