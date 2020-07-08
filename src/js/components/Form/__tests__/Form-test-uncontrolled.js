@@ -485,7 +485,7 @@ describe('Form uncontrolled', () => {
     fireEvent.change(getByPlaceholderText('test input'), {
       target: { value: 'v' },
     });
-    expect(container.firstChild).toMatchSnapshot();
+    expect(getByPlaceholderText('test input').value).toBe('v');
     fireEvent.click(getByText('Submit'));
     expect(onSubmit).toBeCalledTimes(1);
     expect(container.firstChild).toMatchSnapshot();
@@ -514,9 +514,9 @@ describe('Form uncontrolled', () => {
     expect(queryByText('Input has changed')).toBeNull();
   });
 
-  test('disabled', () => {
+  test('disabled FormField', () => {
     const onSubmit = jest.fn();
-    const { getByPlaceholderText, getByText, container } = render(
+    const { getByPlaceholderText, getByText } = render(
       <Grommet>
         <Form onSubmit={onSubmit}>
           <FormField disabled>
@@ -529,6 +529,7 @@ describe('Form uncontrolled', () => {
     fireEvent.change(getByPlaceholderText('test input'), {
       target: { value: 'v' },
     });
+    expect(getByPlaceholderText('test input').value).toBe('v');
     fireEvent.click(getByText('Submit'));
     expect(onSubmit).not.toBeCalledWith(
       expect.objectContaining({
@@ -536,7 +537,6 @@ describe('Form uncontrolled', () => {
         touched: { test: true },
       }),
     );
-    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('regexp validation with status', () => {
@@ -568,7 +568,7 @@ describe('Form uncontrolled', () => {
   });
 
   test('custom component', () => {
-    const TextIn = ({ name, value, onChange }) => {
+    const CustomTextInput = ({ name, value, onChange }) => {
       return (
         <div>
           <input
@@ -587,7 +587,11 @@ describe('Form uncontrolled', () => {
       <Grommet>
         <Form onChange={onChange}>
           <FormField required placeholder="test input">
-            <TextIn value="Hello World" name="test" onChange={onChange} />
+            <CustomTextInput
+              value="Hello World"
+              name="test"
+              onChange={onChange}
+            />
           </FormField>
         </Form>
       </Grommet>,
@@ -802,29 +806,31 @@ describe('Form uncontrolled', () => {
   });
 
   test('form with select', () => {
-    const Test = () => {
-      const [value, setValue] = React.useState('medium');
-      return (
-        <Grommet>
-          <Form>
-            <FormField>
-              <Select
-                a11yTitle="select form"
-                name="select"
-                placeholder="test input"
-                options={['small', 'medium', 'large']}
-                value={value}
-                onChange={({ option }) => setValue(option)}
-              />
-            </FormField>
-          </Form>
-        </Grommet>
-      );
-    };
-    const { getByPlaceholderText, container } = render(<Test />);
-    fireEvent.change(getByPlaceholderText('test input'), {
-      target: { value: 'small' },
-    });
-    expect(container.firstChild).toMatchSnapshot();
+    const onChange = jest.fn();
+    window.scrollTo = jest.fn();
+    const { getByPlaceholderText } = render(
+      <Grommet>
+        <Form>
+          <FormField>
+            <Select
+              a11yTitle="select form"
+              name="select"
+              placeholder="test input"
+              options={['small', 'medium', 'large']}
+              onChange={onChange}
+            />
+          </FormField>
+          <Button type="submit" primary label="Submit" />
+        </Form>
+      </Grommet>,
+    );
+
+    fireEvent.click(getByPlaceholderText('test input'));
+    fireEvent.click(document.activeElement.querySelector('button'));
+    expect(getByPlaceholderText('test input').value).toEqual('small');
+    expect(onChange).toBeCalledWith(
+      expect.objectContaining({ value: 'small' }),
+    );
+    window.scrollTo.mockRestore();
   });
 });

@@ -253,6 +253,7 @@ describe('Form controlled', () => {
     fireEvent.change(getByPlaceholderText('test input'), {
       target: { value: 'Input has changed' },
     });
+    expect(getByPlaceholderText('test input').value).toBe('Input has changed');
     fireEvent.click(getByText('Reset'));
     expect(onReset).toBeCalledTimes(1);
     expect(queryByText('Input has changed')).toBeNull();
