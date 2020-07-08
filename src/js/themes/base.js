@@ -708,7 +708,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // },
       error: {
         color: 'status-critical',
-        margin: { vertical: 'xsmall', horizontal: 'small' },
+        margin: { vertical: 'medium', horizontal: 'none' },
         // background: undefined,
       },
       // extend: undefined,
@@ -720,12 +720,32 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       info: {
         color: 'text-xweak',
-        margin: { vertical: 'xsmall', horizontal: 'small' },
+        margin: { vertical: 'xsmall', left: 'medium' },
       },
       label: {
         margin: { vertical: 'xsmall', horizontal: 'small' },
+        width: 'xxsmall',
       },
       margin: { bottom: 'small' },
+      postfix: {
+        color: 'white',
+        background: 'dark-3',
+        justify: 'center',
+        pad: { horizontal: 'medium', vertical: 'medium' },
+      },
+      prefix: {
+        color: 'white',
+        background: 'dark-3',
+        justify: 'center',
+        pad: { horizontal: 'medium', vertical: 'medium' },
+      },
+      extend: {
+        button: {
+          flex: 1,
+          border: 'none',
+        },
+      },
+
       // round: undefined,
     },
     mnet: {
