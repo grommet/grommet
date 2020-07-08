@@ -67,7 +67,7 @@ export const themeDoc = {
   },
   'tab.border.disabled.color': {
     description: 'border color of the Tab when disabled',
-    type: 'string | object',
+    type: 'string | {dark: string, light: string}',
     defaultValue: undefined,
   },
   'tab.color': {
