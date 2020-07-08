@@ -208,7 +208,6 @@ describe('DateInput', () => {
     expect(onChange).toHaveBeenCalled();
     expect(onChange).toHaveReturnedWith('2020-07-20T08:00:00.000Z');
     expect(container.firstChild).toMatchSnapshot();
-    expect(document.getElementById('item__drop')).toBeNull();
   });
 
   test('select format', () => {
@@ -233,6 +232,7 @@ describe('DateInput', () => {
     fireEvent.click(getByText('20'));
     expect(onChange).toHaveBeenCalled();
     expect(onChange).toHaveReturnedWith('2020-07-20T08:00:00.000Z');
+    expect(document.getElementById('item__drop')).toBeNull();
   });
 
   test('type format inline', () => {

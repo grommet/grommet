@@ -149,6 +149,7 @@ const Calendar = forwardRef(
 
     useEffect(() => {
       if (targetDisplayBounds) {
+        let animating;
         if (targetDisplayBounds[0].getTime() < displayBounds[0].getTime()) {
           // only animate if the duration is within a year
           if (
@@ -160,6 +161,7 @@ const Calendar = forwardRef(
               direction: 'down',
               weeks: daysApart(displayBounds[0], targetDisplayBounds[0]) / 7,
             });
+            animating = true;
           }
         } else if (
           targetDisplayBounds[1].getTime() > displayBounds[1].getTime()
@@ -173,19 +175,23 @@ const Calendar = forwardRef(
               direction: 'up',
               weeks: daysApart(targetDisplayBounds[1], displayBounds[1]) / 7,
             });
+            animating = true;
           }
         }
 
-        // Wait for animation to finish before cleaning up.
-        const timer = setTimeout(
-          () => {
-            setDisplayBounds(targetDisplayBounds);
-            setTargetDisplayBounds(undefined);
-            setSlide(undefined);
-          },
-          400, // Empirically determined.
-        );
-        return () => clearTimeout(timer);
+        if (animating) {
+          // Wait for animation to finish before cleaning up.
+          const timer = setTimeout(
+            () => {
+              setDisplayBounds(targetDisplayBounds);
+              setTargetDisplayBounds(undefined);
+              setSlide(undefined);
+            },
+            400, // Empirically determined.
+          );
+          return () => clearTimeout(timer);
+        }
+        return undefined;
       }
 
       setSlide(undefined);
