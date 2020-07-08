@@ -97,6 +97,7 @@ const DateInput = forwardRef(
       return (
         <DropButton
           ref={ref}
+          id={id}
           dropProps={{ align: { top: 'bottom', left: 'left' }, ...dropProps }}
           dropContent={calendar}
           icon={<CalendarIcon />}
@@ -114,6 +115,7 @@ const DateInput = forwardRef(
         <Keyboard onEsc={open ? () => setOpen(false) : undefined}>
           <MaskedInput
             ref={ref}
+            id={id}
             name={name}
             icon={<CalendarIcon />}
             reverse
@@ -160,6 +162,7 @@ const DateInput = forwardRef(
         input,
         <Drop
           key="drop"
+          id={id ? `${id}__drop` : undefined}
           target={ref.current}
           align={{ top: 'bottom', left: 'left', ...dropProps }}
           onEsc={() => setOpen(false)}
