@@ -31,7 +31,7 @@ const Tooltip = forwardRef(
         <Box
           ref={overRef}
           onMouseOver={() => setOver(true)}
-          onMouseOut={() => setOver(true)}
+          onMouseOut={() => setOver(false)}
           onFocus={() => {}}
           onBlur={() => {}}
         >

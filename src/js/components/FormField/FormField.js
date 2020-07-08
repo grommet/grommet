@@ -17,6 +17,9 @@ import { RadioButtonGroup } from '../RadioButtonGroup';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
+import { Drop } from '../Drop';
+import { Button } from '../Button';
+import { Tooltip } from '../Tooltip';
 
 const mnetInputNames = ['TextInput', 'Select', 'MaskedInput', 'TextArea'];
 const mnetInputPadNames = [
@@ -68,6 +71,11 @@ const FormField = forwardRef(
       required, // pass through in renderInput()
       style,
       validate,
+      direction = 'column',
+      postfix,
+      prefix,
+      labelWidth = 0,
+      width = 'auto',
       ...rest
     },
     ref,
@@ -234,7 +242,23 @@ const FormField = forwardRef(
         contentProps.background = formFieldTheme.disabled.background;
       }
     }
-    contents = <Box {...contentProps}>{contents}</Box>;
+    contents = (
+      <Box {...contentProps} width={width}>
+        <Box direction="row">
+          {prefix && (
+            <Box {...formFieldTheme.prefix} style={{ wordBreak: 'normal' }}>
+              {prefix}
+            </Box>
+          )}
+          {contents}
+          {postfix && (
+            <Box {...formFieldTheme.postfix} style={{ wordBreak: 'normal' }}>
+              {postfix}
+            </Box>
+          )}
+        </Box>
+      </Box>
+    );
 
     let borderColor;
 
@@ -349,6 +373,14 @@ const FormField = forwardRef(
       }
     }
 
+    const layoutType =
+      direction && direction === 'row'
+        ? {
+            flexDirection: direction,
+            alignItems: 'center',
+          }
+        : { flexDirection: direction };
+
     const outerProps =
       themeBorder && themeBorder.position === 'outer'
         ? {
@@ -377,21 +409,28 @@ const FormField = forwardRef(
         }}
         {...containerRest}
       >
-        {(label && component !== CheckBox) || help ? (
-          <>
+        <Box style={{ ...layoutType }}>
+          <Box {...labelStyle} width={labelWidth}>
             {label && component !== CheckBox && (
-              <Text as="label" htmlFor={htmlFor} {...labelStyle}>
+              <Text as="label" htmlFor={htmlFor}>
                 {label}
               </Text>
             )}
-            <Message message={help} {...formFieldTheme.help} />
-          </>
-        ) : (
-          undefined
-        )}
-        {contents}
-        <Message message={normalizedError} {...formFieldTheme.error} />
-        <Message message={normalizedInfo} {...formFieldTheme.info} />
+          </Box>
+          <Box>
+            {contents}
+            <Box>
+              <Message
+                message={normalizedError}
+                {...formFieldTheme.error}
+                style={{
+                  position: `${direction === 'row' ? 'absolute' : 'static'}`,
+                }}
+              />
+            </Box>
+            <Message message={normalizedInfo} {...formFieldTheme.info} />
+          </Box>
+        </Box>
       </FormFieldBox>
     );
   },
