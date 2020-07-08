@@ -640,6 +640,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       baseline: 500,
     },
     dataTable: {
+      // body: {
+      //   extend: undefined,
+      // },
       groupHeader: {
         background: {
           dark: 'dark-2',
