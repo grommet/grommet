@@ -24,19 +24,13 @@ describe('Select', () => {
       </Grommet>,
     );
     const results = await axe(container);
+    expect(container.firstChild).toMatchSnapshot();
     expect(results).toHaveNoViolations();
   });
 
   test('basic', () => {
     const component = renderer.create(
-      <Select id="test-select" options={['one', 'two']} />,
-    );
-    expect(component.toJSON()).toMatchSnapshot();
-  });
-
-  test('a11yTitle', () => {
-    const component = renderer.create(
-      <Select a11yTitle="aria-test" id="test-select" options={['one']} />,
+      <Select id="test-select" options={['one', 'two']} a11yTitle="Select" />,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -64,7 +58,7 @@ describe('Select', () => {
     jest.advanceTimersByTime(100);
     // verify that select is open
     expect(document.activeElement).toMatchSnapshot();
-    expect(onOpen).toHaveBeenCalled();
+    expect(onOpen).toHaveBeenCalledTimes(2);
 
     // closes select
     fireEvent.click(getByPlaceholderText('test select'));
@@ -74,7 +68,7 @@ describe('Select', () => {
     jest.advanceTimersByTime(100);
     // verify that select was closed
     expect(document.activeElement).toMatchSnapshot();
-    expect(onClose).toHaveBeenCalled();
+    expect(onClose).toHaveBeenCalledTimes(1);
   });
 
   test('complex options and children', () => {
