@@ -58,6 +58,10 @@ describe('Select', () => {
     jest.advanceTimersByTime(100);
     // verify that select is open
     expect(document.activeElement).toMatchSnapshot();
+    /* called twice because of bug, issue #4283
+    https://github.com/grommet/grommet/issues/4283
+    Test should be changed when bug is fixed
+    */
     expect(onOpen).toHaveBeenCalledTimes(2);
 
     // closes select
