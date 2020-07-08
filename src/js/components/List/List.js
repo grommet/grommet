@@ -5,7 +5,7 @@ import { Box } from '../Box';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
-import { focusStyle, genericStyles } from '../../utils';
+import { backgroundStyle, focusStyle, genericStyles } from '../../utils';
 
 const StyledList = styled.ul`
   list-style: none;
@@ -24,6 +24,13 @@ const StyledList = styled.ul`
 
 const StyledItem = styled(Box)`
   ${props => props.onClick && `cursor: pointer;`}
+  &:hover {
+    ${props =>
+      props.theme.list.hover &&
+      props.theme.list.hover.item &&
+      props.theme.list.hover.item.background &&
+      backgroundStyle(props.theme.list.hover.item.background, props.theme)}
+  }
 `;
 
 const normalize = (item, index, property) => {

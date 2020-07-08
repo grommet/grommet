@@ -410,6 +410,16 @@ Defaults to
 horizontal
 ```
 
+**list.hover.item.background**
+
+Background of a list item on hover. Overrides global.hover.background. Expects `string | object`.
+
+Defaults to
+
+```
+undefined
+```
+
 **list.item.pad**
 
 Border for list items. Expects `boolean | string | object`.

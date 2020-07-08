@@ -149,6 +149,12 @@ export const themeDoc = {
     type: 'boolean | string | object',
     defaultValue: 'horizontal',
   },
+  'list.hover.item.background': {
+    description:
+      'Background of a list item on hover. Overrides global.hover.background.',
+    type: 'string | object',
+    defaultValue: undefined,
+  },
   'list.item.pad': {
     description: 'Border for list items.',
     type: 'boolean | string | object',

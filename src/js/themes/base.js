@@ -829,6 +829,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         pad: { horizontal: 'medium', vertical: 'small' },
         // extend: undefined,
       },
+      // hover: {
+      //   item: {
+      //     background: undefined,
+      //   },
+      // },
       // extend: undefined,
     },
     maskedInput: {
