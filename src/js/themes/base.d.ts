@@ -852,6 +852,7 @@ export interface ThemeType {
     };
     check?: {
       radius?: string;
+      background?: Object;
     };
     color?: ColorType;
     hover?: {
