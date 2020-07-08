@@ -55,7 +55,7 @@ export const doc = TextInput => {
       suggestionIsOpen: PropTypes.string,
     })
       .description(
-        `Custom messages for TextInput. Used for accessibility by screen 
+        `Custom messages for TextInput. Used for accessibility by screen
         readers.`,
       )
       .defaultValue({
@@ -101,7 +101,8 @@ Only use this when the containing context provides sufficient affordance`,
       PropTypes.oneOfType([
         PropTypes.shape({
           label: PropTypes.node,
-          value: PropTypes.any,
+          // eslint-disable-next-line
+          value: PropTypes.any, // this is intentional any
         }),
         PropTypes.string,
       ]),
@@ -148,7 +149,7 @@ export const themeDoc = {
     defaultValue: 20,
   },
   text: {
-    description: `The possible sizes of the text in terms of its font-size and 
+    description: `The possible sizes of the text in terms of its font-size and
     line-height.`,
     type: 'object',
     defaultValue: `{
