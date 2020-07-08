@@ -10,10 +10,10 @@ import { cleanup, fireEvent, render, act } from '@testing-library/react';
 import { FormNextLink, FormPreviousLink } from 'grommet-icons';
 import { Box, Button, Calendar, Grommet, Text } from '../..';
 
-const DATE = '2018-01-15T00:00:00-08:00';
+const DATE = '2020-01-15T00:00:00-08:00';
 const DATES = [
-  '2018-01-12T00:00:00-08:00',
-  ['2018-01-8T00:00:00-08:00', '2018-01-10T00:00:00-08:00'],
+  '2020-01-12T00:00:00-08:00',
+  ['2020-01-8T00:00:00-08:00', '2020-01-10T00:00:00-08:00'],
 ];
 
 describe('Calendar', () => {
@@ -101,7 +101,7 @@ describe('Calendar', () => {
           date={DATE}
           onSelect={() => {}}
           size="small"
-          bounds={['2018-09-08', '2018-12-13']}
+          bounds={['2020-09-08', '2020-12-13']}
           header={({
             date,
             locale,
@@ -148,7 +148,7 @@ describe('Calendar', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('17'));
-    expect(onSelect).toBeCalledWith(expect.stringMatching(/^2018-01-17T/));
+    expect(onSelect).toBeCalledWith(expect.stringMatching(/^2020-01-17T/));
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -161,13 +161,14 @@ describe('Calendar', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('17'));
-    expect(onSelect).toBeCalledWith(expect.stringMatching(/^2018-01-17T/));
+    expect(onSelect).toBeCalledWith(expect.stringMatching(/^2020-01-17T/));
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('first day sunday week monday', () => {
-    // the first day of the month is on Sunday but the
-    // user wants the week to start on Monday
+    // When the first day of the month is Sunday,
+    // and the request of firstDayOfWeek
+    // is Monday, we are verifing we are not missing a week, issue 3253.
     const { container } = render(
       <Grommet>
         <Calendar
@@ -181,141 +182,24 @@ describe('Calendar', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('animate', () => {
+  test('change months', () => {
     jest.useFakeTimers();
     const { container, getByLabelText } = render(
       <Grommet>
         <Calendar date={DATE} />
       </Grommet>,
     );
-    fireEvent.click(getByLabelText('December 2017'));
+    // Change the Calendar from January to December
+    fireEvent.click(getByLabelText('December 2019'));
     act(() => {
       jest.advanceTimersByTime(400);
     });
-    fireEvent.click(getByLabelText('January 2018'));
+    expect(container.firstChild).toMatchSnapshot();
+    // Change the Calendar back to January
+    fireEvent.click(getByLabelText('January 2020'));
     act(() => {
       jest.advanceTimersByTime(400);
     });
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
-  test('onEnter', async () => {
-    const onSelect = jest.fn();
-    const { container, getByText } = render(
-      <Grommet>
-        <Calendar
-          bounds={['2018-01-14', '2018-01-16']}
-          date={DATE}
-          onSelect={onSelect}
-          animate={false}
-        />
-      </Grommet>,
-    );
-    fireEvent.mouseOver(getByText('15'));
-    fireEvent.click(getByText('15'));
-    fireEvent.keyDown(getByText('15'), {
-      key: 'Enter',
-      keyCode: 13,
-      which: 13,
-    });
-    fireEvent.mouseOut(getByText('15'));
-    // snapshot shows Jan 15th as being set to active
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
-  test('onKeyUp', () => {
-    const onSelect = jest.fn();
-    const { container, getByText } = render(
-      <Grommet>
-        <Calendar
-          bounds={['2018-01-14', '2018-01-16']}
-          date={DATE}
-          onSelect={onSelect}
-          animate={false}
-        />
-      </Grommet>,
-    );
-    fireEvent.mouseOver(getByText('15'));
-    fireEvent.click(getByText('15'));
-    fireEvent.keyDown(getByText('15'), {
-      key: 'ArrowUp',
-      keyCode: 38,
-      which: 38,
-    });
-    fireEvent.mouseOut(getByText('15'));
-    // snapshot shows Jan 8th as being set to active
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
-  test('onKeyDown', () => {
-    const onSelect = jest.fn();
-    const { container, getByText } = render(
-      <Grommet>
-        <Calendar
-          bounds={['2018-01-14', '2018-01-16']}
-          date={DATE}
-          onSelect={onSelect}
-          animate={false}
-        />
-      </Grommet>,
-    );
-    fireEvent.mouseOver(getByText('15'));
-    fireEvent.click(getByText('15'));
-    fireEvent.keyDown(getByText('15'), {
-      key: 'ArrowDown',
-      keyCode: 40,
-      which: 40,
-    });
-    fireEvent.mouseOut(getByText('15'));
-    // snapshot shows Jan 22th as being set to active
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
-  test('onKeyLeft', () => {
-    const onSelect = jest.fn();
-    const { container, getByText } = render(
-      <Grommet>
-        <Calendar
-          bounds={['2018-01-14', '2018-01-16']}
-          date={DATE}
-          onSelect={onSelect}
-          animate={false}
-        />
-      </Grommet>,
-    );
-    fireEvent.mouseOver(getByText('15'));
-    fireEvent.click(getByText('15'));
-    fireEvent.keyDown(getByText('15'), {
-      key: 'ArrowLeft',
-      keyCode: 37,
-      which: 37,
-    });
-    fireEvent.mouseOut(getByText('15'));
-    // snapshot shows Jan 14th as being set to active
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
-  test('onKeyRight', () => {
-    const onSelect = jest.fn();
-    const { container, getByText } = render(
-      <Grommet>
-        <Calendar
-          bounds={['2018-01-14', '2018-01-16']}
-          date={DATE}
-          onSelect={onSelect}
-          animate={false}
-        />
-      </Grommet>,
-    );
-    fireEvent.mouseOver(getByText('15'));
-    fireEvent.click(getByText('15'));
-    fireEvent.keyDown(getByText('15'), {
-      key: 'ArrowRight',
-      keyCode: 39,
-      which: 39,
-    });
-    fireEvent.mouseOut(getByText('15'));
-    // snapshot shows Jan 16th as being set to active
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -329,15 +213,15 @@ describe('Calendar', () => {
     fireEvent.click(getByText('11'));
     expect(onSelect).toBeCalledWith([
       [
-        expect.stringMatching(/^2018-01-11T/),
-        expect.stringMatching(/^2018-01-15T/),
+        expect.stringMatching(/2020-01-11T/),
+        expect.stringMatching(/^2020-01-15T/),
       ],
     ]);
     fireEvent.click(getByText('20'));
     expect(onSelect).toHaveBeenNthCalledWith(2, [
       [
-        expect.stringMatching(/^2018-01-11T/),
-        expect.stringMatching(/^2018-01-20T/),
+        expect.stringMatching(/^2020-01-11T/),
+        expect.stringMatching(/^2020-01-20T/),
       ],
     ]);
   });
@@ -369,7 +253,7 @@ describe('Calendar', () => {
     const { getByLabelText } = render(
       <Grommet>
         <Calendar
-          dates={[['2018-01-01T00:00:00-08:00', '2018-01-05T00:00:00-08:00']]}
+          dates={[['2020-01-01T00:00:00-08:00', '2020-01-05T00:00:00-08:00']]}
           onSelect={onSelect}
           range
           animate={false}
@@ -377,19 +261,19 @@ describe('Calendar', () => {
       </Grommet>,
     );
     // select date greater than January 1st
-    fireEvent.click(getByLabelText('Wed Jan 03 2018'));
+    fireEvent.click(getByLabelText('Fri Jan 03 2020'));
     expect(onSelect).toBeCalledWith([
       [
-        expect.stringMatching(/^2018-01-03T/),
-        expect.stringMatching(/^2018-01-05T/),
+        expect.stringMatching(/^2020-01-03T/),
+        expect.stringMatching(/^2020-01-05T/),
       ],
     ]);
     // select date less than January 3rd
-    fireEvent.click(getByLabelText('Mon Jan 01 2018'));
+    fireEvent.click(getByLabelText('Wed Jan 01 2020'));
     expect(onSelect).toBeCalledWith([
       [
-        expect.stringMatching(/^2018-01-01T/),
-        expect.stringMatching(/^2018-01-05T/),
+        expect.stringMatching(/2020-01-01T/),
+        expect.stringMatching(/^2020-01-05T/),
       ],
     ]);
   });
@@ -399,7 +283,7 @@ describe('Calendar', () => {
     const { getByLabelText } = render(
       <Grommet>
         <Calendar
-          dates={[['2018-01-01T00:00:00-08:00', '2018-01-03T00:00:00-08:00']]}
+          dates={[['2020-01-01T00:00:00-08:00', '2020-01-03T00:00:00-08:00']]}
           onSelect={onSelect}
           range
           animate={false}
@@ -407,8 +291,8 @@ describe('Calendar', () => {
       </Grommet>,
     );
     // selecting same starting day
-    fireEvent.click(getByLabelText('Mon Jan 01 2018'));
-    expect(onSelect).toBeCalledWith(expect.stringMatching(/^2018-01-03T/));
+    fireEvent.click(getByLabelText('Wed Jan 01 2020'));
+    expect(onSelect).toBeCalledWith(expect.stringMatching(/^2020-01-03T/));
   });
 
   test('select date with same date twice', () => {
@@ -416,19 +300,19 @@ describe('Calendar', () => {
     const { getByLabelText } = render(
       <Grommet>
         <Calendar
-          reference="2018-01-01T00:00:00-08:00"
+          reference="2020-01-01T00:00:00-08:00"
           onSelect={onSelect}
           range
           animate={false}
         />
       </Grommet>,
     );
-    fireEvent.click(getByLabelText('Wed Jan 03 2018'));
+    fireEvent.click(getByLabelText('Fri Jan 03 2020'));
     expect(onSelect).toHaveBeenNthCalledWith(
       1,
-      expect.stringMatching(/^2018-01-03T/),
+      expect.stringMatching(/^2020-01-03T/),
     );
-    fireEvent.click(getByLabelText('Wed Jan 03 2018'));
+    fireEvent.click(getByLabelText('Fri Jan 03 2020'));
     expect(onSelect).toHaveBeenNthCalledWith(2, undefined);
   });
 
@@ -437,7 +321,7 @@ describe('Calendar', () => {
     const { getByLabelText } = render(
       <Grommet>
         <Calendar
-          dates={[['2018-01-01T00:00:00-08:00', '2018-01-03T00:00:00-08:00']]}
+          dates={[['2020-01-01T00:00:00-08:00', '2020-01-03T00:00:00-08:00']]}
           onSelect={onSelect}
           range
           animate={false}
@@ -445,16 +329,100 @@ describe('Calendar', () => {
       </Grommet>,
     );
     // selecting same ending day
-    fireEvent.click(getByLabelText('Wed Jan 03 2018'));
-    expect(onSelect).toBeCalledWith(expect.stringMatching(/^2018-01-01T/));
+    fireEvent.click(getByLabelText('Fri Jan 03 2020'));
+    expect(onSelect).toBeCalledWith(expect.stringMatching(/^2020-01-01T/));
+  });
+});
+
+describe('Calendar Keyboard events', () => {
+  let onSelect;
+  let App;
+
+  beforeEach(() => {
+    onSelect = jest.fn();
+    App = () => {
+      return (
+        <Grommet>
+          <Calendar
+            bounds={['2020-01-14', '2020-01-16']}
+            date={DATE}
+            onSelect={onSelect}
+            animate={false}
+          />
+        </Grommet>
+      );
+    };
   });
 
-  test('undefined dates', () => {
-    const { container } = render(
-      <Grommet>
-        <Calendar dates={[undefined]} animate={false} />
-      </Grommet>,
-    );
+  afterEach(cleanup);
+
+  test('onEnter', async () => {
+    const { container, getByText } = render(<App />);
+    fireEvent.mouseOver(getByText('15'));
+    fireEvent.click(getByText('15'));
+    fireEvent.keyDown(getByText('15'), {
+      key: 'Enter',
+      keyCode: 13,
+      which: 13,
+    });
+    fireEvent.mouseOut(getByText('15'));
+    // snapshot shows Jan 15th as being set to active
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('onKeyUp', () => {
+    const { container, getByText } = render(<App />);
+    fireEvent.mouseOver(getByText('15'));
+    fireEvent.click(getByText('15'));
+    fireEvent.keyDown(getByText('15'), {
+      key: 'ArrowUp',
+      keyCode: 38,
+      which: 38,
+    });
+    fireEvent.mouseOut(getByText('15'));
+    // snapshot shows Jan 8th as being set to active
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('onKeyDown', () => {
+    const { container, getByText } = render(<App />);
+    fireEvent.mouseOver(getByText('15'));
+    fireEvent.click(getByText('15'));
+    fireEvent.keyDown(getByText('15'), {
+      key: 'ArrowDown',
+      keyCode: 40,
+      which: 40,
+    });
+    fireEvent.mouseOut(getByText('15'));
+    // snapshot shows Jan 22th as being set to active
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('onKeyLeft', () => {
+    const { container, getByText } = render(<App />);
+    fireEvent.mouseOver(getByText('15'));
+    fireEvent.click(getByText('15'));
+    fireEvent.keyDown(getByText('15'), {
+      key: 'ArrowLeft',
+      keyCode: 37,
+      which: 37,
+    });
+    fireEvent.mouseOut(getByText('15'));
+    // snapshot shows Jan 14th as being set to active
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('onKeyRight', () => {
+    const { container, getByText } = render(<App />);
+    fireEvent.mouseOver(getByText('15'));
+    fireEvent.click(getByText('15'));
+    fireEvent.keyDown(getByText('15'), {
+      key: 'ArrowRight',
+      keyCode: 39,
+      which: 39,
+    });
+    fireEvent.mouseOut(getByText('15'));
+    // snapshot shows Jan 16th as being set to active
     expect(container.firstChild).toMatchSnapshot();
   });
 });
