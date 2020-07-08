@@ -138,41 +138,39 @@ export const backgroundStyle = (backgroundArg, theme, textColorArg) => {
   );
 
   if (background.image) {
-    // allow both background color and image, in case the image doesn't fill
-    return css`
-      ${!background.opacity &&
-        `
+    const backgroundStyles = `
+      ${backgroundColor ? `background-color: ${backgroundColor};` : ''}
       background-image: ${background.image};
       background-repeat: ${background.repeat || 'no-repeat'};
       background-position: ${background.position || 'center center'};
-      background-size: ${background.size || 'cover'};`}
-      ${backgroundColor ? `background-color: ${backgroundColor};` : ''}
+      background-size: ${background.size || 'cover'};
+    `;
+
+    // allow both background color and image, in case the image doesn't fill
+    // when image and opacity are used together, we need to use pseudo :before
+    // to ensure that only image and background color are affected by opacity
+    // but not the container contents
+    return css`
       ${textColor ? `color: ${textColor};` : ''}
-      ${
-        background.opacity
-          ? `
-        position: relative;
+      ${!background.opacity
+        ? backgroundStyles
+        : `position: relative;
         z-index: 0;
         &:before {
-        content: '';
-        position: absolute;
-        background-image: ${background.image};
-        background-repeat: ${background.repeat || 'no-repeat'};
-        background-position: ${background.position || 'center center'};
-        background-size: ${background.size || 'cover'};
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        opacity: ${
-          background.opacity === true
-            ? theme.global.opacity.medium
-            : theme.global.opacity[background.opacity] || background.opacity
-        };
-        z-index: -1;
-      }`
-          : ''
-      }
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          z-index: -1;
+          ${backgroundStyles}
+          opacity: ${
+            background.opacity === true
+              ? theme.global.opacity.medium
+              : theme.global.opacity[background.opacity] || background.opacity
+          };
+        }`}
     `;
   }
 

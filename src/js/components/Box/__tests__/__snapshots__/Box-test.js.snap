@@ -959,11 +959,11 @@ exports[`Box background 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  color: #444444;
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -978,11 +978,11 @@ exports[`Box background 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  color: #f8f8f8;
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1027,16 +1027,16 @@ exports[`Box background 1`] = `
 .c17:before {
   content: '';
   position: absolute;
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
   top: 0;
   right: 0;
   left: 0;
   bottom: 0;
-  opacity: 0.8;
   z-index: -1;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 0.8;
 }
 
 .c18 {
@@ -1046,12 +1046,12 @@ exports[`Box background 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  color: #444444;
+  background-color: rgba(111,255,176,1);
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  background-color: rgba(111,255,176,1);
-  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1114,16 +1114,16 @@ exports[`Box background 1`] = `
 .c21:before {
   content: '';
   position: absolute;
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
   top: 0;
   right: 0;
   left: 0;
   bottom: 0;
-  opacity: 0.5;
   z-index: -1;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 0.5;
 }
 
 <div
