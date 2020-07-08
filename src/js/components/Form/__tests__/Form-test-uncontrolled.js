@@ -473,7 +473,7 @@ describe('Form uncontrolled', () => {
 
   test('uncontrolled without name', () => {
     const onSubmit = jest.fn();
-    const { getByPlaceholderText, getByText, container } = render(
+    const { getByPlaceholderText, getByText } = render(
       <Form onSubmit={onSubmit}>
         <FormField>
           <TextInput a11yTitle="test" placeholder="test input" />
@@ -481,14 +481,12 @@ describe('Form uncontrolled', () => {
         <Button type="submit" primary label="Submit" />
       </Form>,
     );
-    expect(container.firstChild).toMatchSnapshot();
     fireEvent.change(getByPlaceholderText('test input'), {
       target: { value: 'v' },
     });
     expect(getByPlaceholderText('test input').value).toBe('v');
     fireEvent.click(getByText('Submit'));
     expect(onSubmit).toBeCalledTimes(1);
-    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('uncontrolled reset without value', () => {
@@ -509,6 +507,7 @@ describe('Form uncontrolled', () => {
     fireEvent.change(getByPlaceholderText('test input'), {
       target: { value: 'Input has changed' },
     });
+    expect(getByPlaceholderText('test input').value).toBe('Input has changed');
     expect(onChange).toBeCalledTimes(1);
     fireEvent.click(getByText('Reset'));
     expect(queryByText('Input has changed')).toBeNull();
@@ -563,7 +562,9 @@ describe('Form uncontrolled', () => {
     fireEvent.change(getByPlaceholderText('test input'), {
       target: { value: '1' },
     });
+    expect(getByPlaceholderText('test input').value).toBe('1');
     fireEvent.click(getByText('Submit'));
+    expect(onSubmit).toBeCalledTimes(1);
     expect(getAllByText('invalid')).toMatchSnapshot();
   });
 
@@ -586,12 +587,8 @@ describe('Form uncontrolled', () => {
     const { getByPlaceholderText } = render(
       <Grommet>
         <Form onChange={onChange}>
-          <FormField required placeholder="test input">
-            <CustomTextInput
-              value="Hello World"
-              name="test"
-              onChange={onChange}
-            />
+          <FormField required>
+            <CustomTextInput name="test" onChange={onChange} />
           </FormField>
         </Form>
       </Grommet>,
@@ -599,6 +596,7 @@ describe('Form uncontrolled', () => {
     fireEvent.change(getByPlaceholderText('Username'), {
       target: { value: 'v' },
     });
+    expect(getByPlaceholderText('Username').value).toBe('v');
     expect(onChange).toBeCalledTimes(1);
   });
 
