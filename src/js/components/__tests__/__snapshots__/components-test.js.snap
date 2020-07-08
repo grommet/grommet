@@ -3291,8 +3291,8 @@ submit",
     "name": "FormField",
     "properties": Array [
       Object {
-        "description": "The component to insert in the FormField. Grommet will add update the 
-      form values when this field changes. Any additional properties 
+        "description": "The component to insert in the FormField. Grommet will add update the
+      form values when this field changes. Any additional properties
       (such as initial value) you pass to FormField will be forwarded to this
       component. The component may be custom as long it supports the properties
       of name, value, onChange (event => {}), while event has either event.value
@@ -3440,7 +3440,7 @@ string",
       describing the validation issue, if any, or an object with 'message'
       and 'status' properties.",
         "format": "{
-  regexp: object,
+  regexp: new RegExp(...),
   message: 
     string
     node,
@@ -3451,7 +3451,7 @@ string",
 function
 [
   {
-    regexp: object,
+    regexp: new RegExp(...),
     message: 
       string
       node,
@@ -6427,7 +6427,7 @@ string",
           "suggestionsCount": "suggestions available",
           "suggestionsExist": "This input has suggestions use arrow keys to navigate",
         },
-        "description": "Custom messages for TextInput. Used for accessibility by screen 
+        "description": "Custom messages for TextInput. Used for accessibility by screen
         readers.",
         "format": "{
   enterSelect: string,
