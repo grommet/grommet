@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { Box } from '../Box';
 import { Select } from '../Select';
 
 import useCustomSelectState from './useCustomSelectState';
-import { SingleColumnSelect } from './SingleColumnSelect';
+import { ColumnSelect } from './ColumnSelect';
 import { ValueLabelWithNumber } from './ValueLabelWithNumber';
 import { applyKey } from './utils';
 
 const MultiSelect = ({
   width,
+  height,
   options,
   value,
   labelKey,
@@ -19,9 +20,14 @@ const MultiSelect = ({
   onSearch,
   searchPlaceholder,
   emptySearchMessage,
+  withSelectAll,
   withOptionChips,
   withUpdateCancelButtons,
   searchable,
+  withInclusionExclusion,
+  isExcluded,
+  onIncExcChange,
+  renderEmptySelected,
   ...rest
 }) => {
   const {
@@ -32,6 +38,11 @@ const MultiSelect = ({
     setSelectState,
   } = useCustomSelectState(options, value);
 
+  useEffect(() => {
+    if (withInclusionExclusion && value.length === 0)
+      onIncExcChange(null);
+  }, [onIncExcChange, value, withInclusionExclusion]);
+
   const onCancelClick = () => {
     onValueChange(previousValue);
     setSelectState({ open: false });
@@ -39,7 +50,7 @@ const MultiSelect = ({
 
   const getValue = (index, array, param) => applyKey(array[index], param);
 
-  const onSearchChange = (search) => {
+  const onSearchChange = search => {
     const escapedText = search.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
     const exp = new RegExp(escapedText, 'i');
     setSelectState({
@@ -50,7 +61,7 @@ const MultiSelect = ({
     });
   };
 
-  const onSelectValueChange = (selectValue) => {
+  const onSelectValueChange = selectValue => {
     if (!searchVal) onValueChange(selectValue);
     else {
       const newValue = value.slice(0);
@@ -67,23 +78,30 @@ const MultiSelect = ({
     }
   };
 
-  const renderContent = (props) => {
-    if (layout === 'single-column') {
+  const renderContent = props => {
+    if (['single-column', 'double-column'].includes(layout)) {
       return (
-        <SingleColumnSelect
+        <ColumnSelect
+          layout={layout}
           width={width}
+          height={height}
           onUpdate={() =>
             setSelectState({ open: false, previousValue: value })
           }
           onCancel={onCancelClick}
-          setValues={(nextValue) => onSelectValueChange(nextValue)}
+          setValues={nextValue => onSelectValueChange(nextValue)}
           emptySearchMessage={emptySearchMessage}
+          showSelectAll={withSelectAll}
           showOptionChips={withOptionChips}
           showControlButtons={withUpdateCancelButtons}
+          inclusionExclusion={withInclusionExclusion}
+          isExcluded={isExcluded}
+          setIncExcVal={incExc => onIncExcChange(incExc)}
           renderSearch={searchable && !onSearch}
           searchPlaceholder={searchPlaceholder}
           searchValue={searchVal || ''}
-          onSearchChange={(search) => onSearchChange(search)}
+          onSearchChange={search => onSearchChange(search)}
+          renderEmptySelected={renderEmptySelected}
           {...props}
         />
       );
@@ -92,9 +110,17 @@ const MultiSelect = ({
   };
 
   const renderLabel = () => {
+    const getLabel = () => {
+      if (withInclusionExclusion && isExcluded)
+        return 'Excluded';
+      if (withInclusionExclusion && isExcluded === false)
+        return 'Included';
+      return 'Selected';
+    }
+
     return (
       <ValueLabelWithNumber
-        value="Selected"
+        value={getLabel()}
         number={value.length}
         color="brand"
       />
@@ -117,7 +143,7 @@ const MultiSelect = ({
         closeOnChange={false}
         renderCustomContent={
           ['single-column', 'double-column'].includes(layout) ?
-            (props) => renderContent(props) : undefined
+            props => renderContent(props) : undefined
         }
         valueLabel={renderLabel()}
         labelKey={labelKey}

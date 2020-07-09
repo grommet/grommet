@@ -512,6 +512,14 @@ Width for the multiselect dropdown Defaults to `auto`.
 string
 ```
 
+**height**
+
+Height for the multiselect dropdown option panel Defaults to `medium`.
+
+```
+string
+```
+
 **onValueChange**
 
 Function that will be called when the user selects an option.
@@ -529,6 +537,14 @@ single-column
 double-column
 ```
 
+**withSelectAll**
+
+Control flag to add select all option feature
+
+```
+boolean
+```
+
 **withOptionChips**
 
 Control to show the selected option chips
@@ -543,6 +559,41 @@ Control to show the control buttons with OK and Cancel values
 
 ```
 boolean
+```
+
+**withInclusionExclusion**
+
+Control for include / exclude feature
+
+```
+boolean
+```
+
+**isExcluded**
+
+Flag for identifying whether selected options 
+      are included or exluded
+
+```
+null
+true
+false
+```
+
+**onIncExcChange**
+
+Function to return the included/excluded value
+
+```
+function
+```
+
+**renderEmptySelected**
+
+Component for rendering when no options are selected
+
+```
+node
 ```
   
 ## Theme

@@ -6,7 +6,12 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
 
-import { OptionsBox } from './StyledMultiSelect';
+import {
+  OptionsBox,
+  OptionWrapper,
+  OptionText,
+  OptionLabel,
+} from './StyledMultiSelect';
 
 const OptionChips = ({
   options,
@@ -16,12 +21,26 @@ const OptionChips = ({
   selectOption,
   clearAll,
   width,
+  height,
+  inclusionExclusion,
+  isExcluded,
+  renderEmptySelected,
+  layout,
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
 
-  const OptionWrapper = styled(Box)`
-    ${props => props.theme.multiselect.chips.wrapper.extend};
-  `;
+  const renderClearButton = () => (
+    <Button focusIndicator={false} onClick={() => clearAll([])} plain>
+      <Box
+        border={{
+          side: 'bottom',
+          color: theme.multiselect.chips.clear.color,
+        }}
+      >
+        <Text {...theme.multiselect.chips.clear}>CLEAR ALL</Text>
+      </Box>
+    </Button>
+  );
 
   const getSelectedOption = () =>
     options.reduce((acc, item, index) => {
@@ -29,39 +48,54 @@ const OptionChips = ({
       return acc;
     }, []);
 
-  return(
+  const IncExcHeader = styled(Box)`
+    position: sticky;
+    top: 0;
+  `;
+
+  return (
     <OptionsBox>
       {Array.isArray(value) && value.length > 0 && (
-        <OptionWrapper
-          width={width}
-          {...theme.multiselect.chips.wrapper}
-          wrap
-        >
-          {getSelectedOption().map(item => (
-            <Box key={item} {...theme.multiselect.chips.option}>
-              <Text {...theme.multiselect.chips.label}>
-                {optionLabel(item)}
+        <Box height={{ max: layout === 'single-column' ? height : 'auto' }}>
+          {inclusionExclusion && isExcluded !== null && (
+            <IncExcHeader {...theme.multiselect.rightPanel.incExcHeader.box}>
+              <Text {...theme.multiselect.rightPanel.incExcHeader.text}>
+                {isExcluded ? 'Excluded' : 'Included'} List
               </Text>
-              <Close
-                onClick={selectOption(item)}
-                {...theme.multiselect.chips.icon}
-              />
-            </Box>
-          ))}
-          <Button focusIndicator={false} onClick={() => clearAll([])} plain>
-            <Box
-              border={{
-                side: 'bottom',
-                color: theme.multiselect.chips.clear.color,
-              }}
-            >
-              <Text {...theme.multiselect.chips.clear}>CLEAR ALL</Text>
-            </Box>
-          </Button>
-        </OptionWrapper>
+              {renderClearButton()}
+            </IncExcHeader>
+          )}
+          <OptionWrapper
+            twoColumnLayout={layout === 'double-column'}
+            width={width}
+            {...theme.multiselect.chips.wrapper}
+            wrap
+          >
+            {getSelectedOption().map(item => (
+              <OptionText
+                key={item}
+                twoColumnLayout={layout === 'double-column'}
+                {...theme.multiselect.chips.option}
+              >
+                <OptionLabel
+                  isExcluded={isExcluded}
+                  {...theme.multiselect.chips.label}
+                >
+                  {optionLabel(item)}
+                </OptionLabel>
+                <Close
+                  onClick={selectOption(item)}
+                  {...theme.multiselect.chips.icon}
+                />
+              </OptionText>
+            ))}
+            {!inclusionExclusion && renderClearButton()}
+          </OptionWrapper>
+        </Box>
       )}
+      {(!Array.isArray(value) || !value.length) && renderEmptySelected}
     </OptionsBox>
-  )
+  );
 }
 
 export { OptionChips };

@@ -36,6 +36,8 @@ const OptionBox = styled(Box)`
 const SelectOption = styled(Button)`
   display: block;
   width: 100%;
+  background: ${props => props.active ?
+    props.theme.select.activeColor : 'transparent'};
 `;
 
 const SelectContainer = forwardRef(
@@ -362,7 +364,7 @@ const SelectContainer = forwardRef(
                           ref={optionRef}
                           tabIndex="-1"
                           role="menuitem"
-                          hoverIndicator="light-5"
+                          hoverIndicator={theme.select.activeColor}
                           disabled={optionDisabled || undefined}
                           active={optionActive}
                           selected={optionSelected}
