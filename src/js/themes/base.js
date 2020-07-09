@@ -15,6 +15,8 @@ import { Previous } from 'grommet-icons/icons/Previous';
 import { Subtract } from 'grommet-icons/icons/Subtract';
 import { Volume } from 'grommet-icons/icons/Volume';
 import { VolumeLow } from 'grommet-icons/icons/VolumeLow';
+import { Info } from 'grommet-icons/icons/Info';
+import { FormClose } from 'grommet-icons/icons/FormClose';
 import { base as iconBase } from 'grommet-icons/themes/base';
 
 import { deepFreeze, deepMerge } from '../utils/object';
@@ -708,7 +710,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // },
       error: {
         color: 'status-critical',
-        margin: { vertical: 'xsmall', horizontal: 'small' },
+        margin: { vertical: 'medium', horizontal: 'none' },
         // background: undefined,
       },
       // extend: undefined,
@@ -720,12 +722,32 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       info: {
         color: 'text-xweak',
-        margin: { vertical: 'xsmall', horizontal: 'small' },
+        margin: { vertical: 'xsmall', left: 'medium' },
       },
       label: {
         margin: { vertical: 'xsmall', horizontal: 'small' },
+        width: 'xxsmall',
       },
       margin: { bottom: 'small' },
+      postfix: {
+        color: 'white',
+        background: 'dark-3',
+        justify: 'center',
+        pad: { horizontal: 'medium', vertical: 'medium' },
+      },
+      prefix: {
+        color: 'white',
+        background: 'dark-3',
+        justify: 'center',
+        pad: { horizontal: 'medium', vertical: 'medium' },
+      },
+      extend: {
+        button: {
+          flex: 1,
+          border: 'none',
+        },
+      },
+
       // round: undefined,
     },
     mnet: {
@@ -840,6 +862,92 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       color: 'graph-0',
       // colors: [] || colors: ['graph-0', 'graph-1', 'graph-2', 'graph-3'],
       // extend: undefined,
+    },
+    multiselect: {
+      checkbox: {
+        box: {
+          margin: {
+            horizontal: 'medium',
+            // extend: undefined,
+          },
+        },
+        checkmark: {
+          size: `${baseSpacing}px`,
+          color: 'white',
+        },
+        check: {
+          height: `${baseSpacing}px`,
+          width: `${baseSpacing}px`,
+          margin: 'auto',
+          round: 'xsmall',
+          align: 'center',
+          active: {
+            background: 'accent-3',
+            border: 'light-6',
+          },
+        },
+      },
+      chips: {
+        wrapper: {
+          pad: 'medium',
+          direction: 'row',
+          // extend: undefined,
+        },
+        option: {
+          background: 'light-3',
+          round: 'small',
+          pad: {
+            vertical: 'small',
+            horizontal: 'medium',
+          },
+          margin: 'small',
+          direction: 'row',
+          align: 'center',
+        },
+        label: {
+          color: 'dark-3',
+          size: 'medium',
+          weight: 600,
+          margin: {
+            right: 'small',
+          },
+        },
+        icon: {
+          size: 'small',
+          color: 'dark-3',
+        },
+        clear: {
+          color: 'accent-2',
+          size: 'small',
+        },
+      },
+      controls: {
+        wrapper: {
+          pad: 'medium',
+          direction: 'row',
+          // extend: undefined,
+        },
+        button: {
+          margin: 'small',
+        },
+      },
+      searchbox: {
+        container: {
+          height: 'xxsmall',
+          direction: 'row',
+          align: 'center',
+          background: 'light-2',
+          pad: { right: 'medium', vertical: 'small' },
+        },
+        placeholder: {
+          color: 'dark-5',
+          size: 'medium',
+        },
+        icon: {
+          size: 'small',
+          color: 'dark-3',
+        },
+      },
     },
     paragraph: {
       small: { ...fontSizing(-1) },
@@ -1052,18 +1160,51 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         color: 'light-4',
       },
     },
-    worldMap: {
-      color: 'light-3',
-      continent: {
-        active: '8px',
-        base: '6px',
-      },
-      hover: {
-        color: 'light-4',
-      },
-      place: {
-        active: '20px',
-        base: '8px',
+    tooptip: {
+      background: 'dark-1',
+      color: 'white',
+      tipSize: '5px',
+      round: 'small',
+    },
+    notification: {
+      toast: {
+        closeIcon: FormClose,
+        position: 'top-right',
+        icon: {
+          default: Info,
+        },
+        text: {
+          default: {},
+        },
+        default: {
+          background: 'dark-1',
+          // border: {},
+          size: 'medium',
+          align: 'center',
+          direction: 'row',
+          gap: 'small',
+          justify: 'between',
+          round: 'xsmall',
+          elevation: 'medium',
+          pad: { vertical: 'medium', horizontal: 'medium' },
+          margin: { vertical: 'small', horizontal: 'large' },
+        },
+        ok: {
+          background: 'status-ok',
+          // text: {},
+        },
+        critical: {
+          background: 'status-critical',
+          // text: {},
+        },
+        error: {
+          background: 'status-error',
+          // text: {},
+        },
+        warning: {
+          background: 'status-warning',
+          // text: {},
+        },
       },
     },
   });
