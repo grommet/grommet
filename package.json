@@ -137,6 +137,9 @@
   "jest": {
     "collectCoverage": true,
     "testURL": "http://localhost/",
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setupTests.js"
+    ],
     "coverageReporters": [
       "lcov"
     ],

@@ -901,6 +901,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       gap: 'small',
       size: `${baseSpacing}px`,
+      font: {
+        // weight: undefined,
+      },
     },
     rangeInput: {
       // extend: undefined

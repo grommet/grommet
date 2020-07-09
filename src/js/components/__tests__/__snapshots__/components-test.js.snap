@@ -1740,7 +1740,10 @@ string",
         "name": "margin",
       },
       Object {
-        "description": "The limits for the values, specified as a two dimensional array.
+        "description": "The limits for the values, specified as a two dimensional array. 
+      The first array specifies the limits of the x-axis. The second array 
+      specifies the limits of the y-axis. 
+      For example: [[x-min, x-max], [y-min, y-max]].
       If not specified, the bounds will automatically be set to fit
       the provided values.",
         "format": "[[number]]",
@@ -4852,7 +4855,8 @@ node",
       Object {
         "defaultValue": Array [],
         "description": "Menu items to be placed inside the drop down.
-The object values can be any Button prop, for example: label and onClick.",
+The object values can be any Button prop, 
+for example: label, onClick, and href.",
         "format": "[object]",
         "name": "items",
         "required": true,
