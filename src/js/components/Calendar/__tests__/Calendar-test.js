@@ -357,7 +357,7 @@ describe('Calendar Keyboard events', () => {
   afterEach(cleanup);
 
   test('onEnter', async () => {
-    const { container, getByText } = render(<App />);
+    const { getByText } = render(<App />);
     fireEvent.mouseOver(getByText('15'));
     fireEvent.click(getByText('15'));
     fireEvent.keyDown(getByText('15'), {
@@ -366,12 +366,12 @@ describe('Calendar Keyboard events', () => {
       which: 13,
     });
     fireEvent.mouseOut(getByText('15'));
-    // snapshot shows Jan 15th as being set to active
-    expect(container.firstChild).toMatchSnapshot();
+    // Jan 15th is set to active
+    expect(onSelect).toBeCalledWith(expect.stringMatching(/^2020-01-15T/));
   });
 
   test('onKeyUp', () => {
-    const { container, getByText } = render(<App />);
+    const { getByText } = render(<App />);
     fireEvent.mouseOver(getByText('15'));
     fireEvent.click(getByText('15'));
     fireEvent.keyDown(getByText('15'), {
@@ -379,13 +379,18 @@ describe('Calendar Keyboard events', () => {
       keyCode: 38,
       which: 38,
     });
-    fireEvent.mouseOut(getByText('15'));
-    // snapshot shows Jan 8th as being set to active
-    expect(container.firstChild).toMatchSnapshot();
+    // press enter to change date to active
+    fireEvent.keyDown(getByText('15'), {
+      key: 'Enter',
+      keyCode: 13,
+      which: 13,
+    });
+    // Jan 8th is set to active
+    expect(onSelect).toBeCalledWith(expect.stringMatching(/^2020-01-08T/));
   });
 
   test('onKeyDown', () => {
-    const { container, getByText } = render(<App />);
+    const { getByText } = render(<App />);
     fireEvent.mouseOver(getByText('15'));
     fireEvent.click(getByText('15'));
     fireEvent.keyDown(getByText('15'), {
@@ -393,13 +398,18 @@ describe('Calendar Keyboard events', () => {
       keyCode: 40,
       which: 40,
     });
-    fireEvent.mouseOut(getByText('15'));
-    // snapshot shows Jan 22th as being set to active
-    expect(container.firstChild).toMatchSnapshot();
+    // press enter to change date to active
+    fireEvent.keyDown(getByText('15'), {
+      key: 'Enter',
+      keyCode: 13,
+      which: 13,
+    });
+    // Jan 22th is set to active
+    expect(onSelect).toBeCalledWith(expect.stringMatching(/^2020-01-22T/));
   });
 
   test('onKeyLeft', () => {
-    const { container, getByText } = render(<App />);
+    const { getByText } = render(<App />);
     fireEvent.mouseOver(getByText('15'));
     fireEvent.click(getByText('15'));
     fireEvent.keyDown(getByText('15'), {
@@ -407,13 +417,18 @@ describe('Calendar Keyboard events', () => {
       keyCode: 37,
       which: 37,
     });
-    fireEvent.mouseOut(getByText('15'));
-    // snapshot shows Jan 14th as being set to active
-    expect(container.firstChild).toMatchSnapshot();
+    // press enter to change date to active
+    fireEvent.keyDown(getByText('15'), {
+      key: 'Enter',
+      keyCode: 13,
+      which: 13,
+    });
+    // Jan 14th is set to active
+    expect(onSelect).toBeCalledWith(expect.stringMatching(/^2020-01-14T/));
   });
 
   test('onKeyRight', () => {
-    const { container, getByText } = render(<App />);
+    const { getByText } = render(<App />);
     fireEvent.mouseOver(getByText('15'));
     fireEvent.click(getByText('15'));
     fireEvent.keyDown(getByText('15'), {
@@ -421,8 +436,13 @@ describe('Calendar Keyboard events', () => {
       keyCode: 39,
       which: 39,
     });
-    fireEvent.mouseOut(getByText('15'));
-    // snapshot shows Jan 16th as being set to active
-    expect(container.firstChild).toMatchSnapshot();
+    // press enter to change date to active
+    fireEvent.keyDown(getByText('15'), {
+      key: 'Enter',
+      keyCode: 13,
+      which: 13,
+    });
+    // Jan 16th is set to active
+    expect(onSelect).toBeCalledWith(expect.stringMatching(/^2020-01-16T/));
   });
 });
