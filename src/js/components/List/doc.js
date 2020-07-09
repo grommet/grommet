@@ -151,7 +151,7 @@ export const themeDoc = {
   },
   'list.hover.item.background': {
     description:
-      'Background of a list item on hover. Overrides global.hover.background.',
+      'The background of a list item on hover. Overrides global.hover.background.',
     type: 'string | object',
     defaultValue: undefined,
   },
