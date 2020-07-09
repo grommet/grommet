@@ -28,6 +28,9 @@ var theme = (0, _utils.deepMerge)(_themes.grommet, {
     },
     icon: {
       size: '10px'
+    },
+    font: {
+      weight: 500
     }
   }
 });

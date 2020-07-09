@@ -868,6 +868,9 @@ export interface ThemeType {
     };
     gap?: string;
     size?: string;
+    font?: {
+      weight?: number | string;
+    }
   };
   rangeInput?: {
     track?: {

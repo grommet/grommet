@@ -19,6 +19,9 @@ var theme = deepMerge(grommet, {
     },
     icon: {
       size: '10px'
+    },
+    font: {
+      weight: 500
     }
   }
 });

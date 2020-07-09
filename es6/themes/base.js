@@ -970,7 +970,9 @@ export var generate = function generate(baseSpacing, scale) {
       icons: {// circle: undefined,
       },
       gap: 'small',
-      size: baseSpacing + "px"
+      size: baseSpacing + "px",
+      font: {// weight: undefined,
+      }
     },
     rangeInput: {
       // extend: undefined

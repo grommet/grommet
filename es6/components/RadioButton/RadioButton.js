@@ -7,7 +7,7 @@ import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { defaultProps } from '../../default-props';
 import { normalizeColor, removeUndefined } from '../../utils';
-import { StyledRadioButton, StyledRadioButtonContainer, StyledRadioButtonIcon, StyledRadioButtonInput, StyledRadioButtonBox } from './StyledRadioButton';
+import { StyledRadioButton, StyledRadioButtonContainer, StyledRadioButtonIcon, StyledRadioButtonInput, StyledRadioButtonLabel, StyledRadioButtonBox } from './StyledRadioButton';
 var RadioButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var checked = _ref.checked,
       children = _ref.children,
@@ -25,7 +25,7 @@ var RadioButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
       hover = _useState[0],
       setHover = _useState[1];
 
-  var normalizedLabel = typeof label === 'string' ? /*#__PURE__*/React.createElement("span", null, label) : label;
+  var normalizedLabel = typeof label === 'string' ? /*#__PURE__*/React.createElement(StyledRadioButtonLabel, null, label) : label;
   var Icon = theme.radioButton.icons.circle;
   var borderColor = normalizeColor(theme.radioButton.border.color, theme);
 

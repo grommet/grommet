@@ -1,15 +1,17 @@
 "use strict";
 
 exports.__esModule = true;
-exports.StyledRadioButton = exports.StyledRadioButtonBox = exports.StyledRadioButtonIcon = exports.StyledRadioButtonInput = exports.StyledRadioButtonContainer = void 0;
+exports.StyledRadioButton = exports.StyledRadioButtonBox = exports.StyledRadioButtonIcon = exports.StyledRadioButtonLabel = exports.StyledRadioButtonInput = exports.StyledRadioButtonContainer = void 0;
 
-var _styledComponents = _interopRequireDefault(require("styled-components"));
+var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
 var _utils = require("../../utils");
 
 var _defaultProps = require("../../default-props");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 var disabledStyle = "\n  opacity: 0.5;\n  cursor: default;\n";
 
@@ -41,9 +43,20 @@ exports.StyledRadioButtonInput = StyledRadioButtonInput;
 StyledRadioButtonInput.defaultProps = {};
 Object.setPrototypeOf(StyledRadioButtonInput.defaultProps, _defaultProps.defaultProps);
 
+var StyledRadioButtonLabel = _styledComponents["default"].span.withConfig({
+  displayName: "StyledRadioButton__StyledRadioButtonLabel",
+  componentId: "g1f6ld-2"
+})(["", ""], function (props) {
+  return props.theme.radioButton.font.weight && (0, _styledComponents.css)(["font-weight:", ";"], props.theme.radioButton.font.weight);
+});
+
+exports.StyledRadioButtonLabel = StyledRadioButtonLabel;
+StyledRadioButtonLabel.defaultProps = {};
+Object.setPrototypeOf(StyledRadioButtonLabel.defaultProps, _defaultProps.defaultProps);
+
 var StyledRadioButtonIcon = _styledComponents["default"].svg.withConfig({
   displayName: "StyledRadioButton__StyledRadioButtonIcon",
-  componentId: "g1f6ld-2"
+  componentId: "g1f6ld-3"
 })(["box-sizing:border-box;width:", ";height:", ";fill:", ";", ";"], function (props) {
   return props.theme.radioButton.icon.size || props.theme.radioButton.size;
 }, function (props) {
@@ -60,7 +73,7 @@ Object.setPrototypeOf(StyledRadioButtonIcon.defaultProps, _defaultProps.defaultP
 
 var StyledRadioButtonBox = _styledComponents["default"].div.withConfig({
   displayName: "StyledRadioButton__StyledRadioButtonBox",
-  componentId: "g1f6ld-3"
+  componentId: "g1f6ld-4"
 })(["", ";", ";"], function (props) {
   return props.focus && (0, _utils.focusStyle)();
 }, function (props) {
@@ -73,7 +86,7 @@ Object.setPrototypeOf(StyledRadioButtonBox.defaultProps, _defaultProps.defaultPr
 
 var StyledRadioButton = _styledComponents["default"].div.withConfig({
   displayName: "StyledRadioButton",
-  componentId: "g1f6ld-4"
+  componentId: "g1f6ld-5"
 })(["", ";"], function (props) {
   return props.theme.radioButton && props.theme.radioButton.extend;
 });

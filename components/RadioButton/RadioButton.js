@@ -40,7 +40,7 @@ var RadioButton = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       hover = _useState[0],
       setHover = _useState[1];
 
-  var normalizedLabel = typeof label === 'string' ? /*#__PURE__*/_react["default"].createElement("span", null, label) : label;
+  var normalizedLabel = typeof label === 'string' ? /*#__PURE__*/_react["default"].createElement(_StyledRadioButton.StyledRadioButtonLabel, null, label) : label;
   var Icon = theme.radioButton.icons.circle;
   var borderColor = (0, _utils.normalizeColor)(theme.radioButton.border.color, theme);
 

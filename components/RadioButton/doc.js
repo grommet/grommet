@@ -66,6 +66,11 @@ var themeDoc = {
     type: 'string',
     defaultValue: 'small'
   },
+  'radioButton.font.weight': {
+    description: 'The font weight of the label.',
+    type: 'number | string',
+    defaultValue: undefined
+  },
   'radioButton.size': {
     description: 'The size of the RadioButton.',
     type: 'string',
