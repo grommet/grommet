@@ -408,7 +408,9 @@ exports[`RadioButtonGroup boolean options 1`] = `
           </svg>
         </div>
       </div>
-      <span>
+      <span
+        className=""
+      >
         true
       </span>
     </label>
@@ -440,7 +442,9 @@ exports[`RadioButtonGroup boolean options 1`] = `
           className="c8 "
         />
       </div>
-      <span>
+      <span
+        className=""
+      >
         false
       </span>
     </label>
@@ -879,7 +883,9 @@ exports[`RadioButtonGroup number options 1`] = `
           </svg>
         </div>
       </div>
-      <span>
+      <span
+        className=""
+      >
         1
       </span>
     </label>
@@ -911,7 +917,9 @@ exports[`RadioButtonGroup number options 1`] = `
           className="c8 "
         />
       </div>
-      <span>
+      <span
+        className=""
+      >
         2
       </span>
     </label>
@@ -1083,7 +1091,9 @@ exports[`RadioButtonGroup object options 1`] = `
           className="c5 "
         />
       </div>
-      <span>
+      <span
+        className=""
+      >
         One
       </span>
     </label>
@@ -1115,7 +1125,9 @@ exports[`RadioButtonGroup object options 1`] = `
           className="c5 "
         />
       </div>
-      <span>
+      <span
+        className=""
+      >
         Two
       </span>
     </label>
@@ -1801,7 +1813,9 @@ exports[`RadioButtonGroup string options 1`] = `
           </svg>
         </div>
       </div>
-      <span>
+      <span
+        className=""
+      >
         one
       </span>
     </label>
@@ -1833,7 +1847,9 @@ exports[`RadioButtonGroup string options 1`] = `
           className="c8 "
         />
       </div>
-      <span>
+      <span
+        className=""
+      >
         two
       </span>
     </label>
