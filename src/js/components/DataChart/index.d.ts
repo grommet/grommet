@@ -20,6 +20,7 @@ type PropertyType = string | {
   bounds?: number[]; // defaults to largest and smallest data values
   color?: string;    // defaults to auto-assigned sequentially
   label?: string | React.ReactNode; // used for legend and/or hover/touch detail
+  point?: ChartProps["point"];
   prefix?: string;   // used for values in axes and hover/touch detail
   property: string;  // property key to get values from objects in data
   render?: ((value: any, datum: {}, property: string) => React.ReactNode); // used for hover/touch detail

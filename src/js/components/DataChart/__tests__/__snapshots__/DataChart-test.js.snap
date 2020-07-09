@@ -2469,37 +2469,41 @@ exports[`DataChart legend 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  background-color: #6FFFB0;
-  color: #444444;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 12px;
-}
-
-.c9 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
   align-self: stretch;
-  width: 12px;
+  width: 6px;
+}
+
+.c4 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.c2 {
+  position: relative;
+  grid-area: charts;
+}
+
+.c3 {
+  position: relative;
+  display: block;
+}
+
+.c9 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c6 {
@@ -2525,22 +2529,6 @@ exports[`DataChart legend 1`] = `
   color: #000000;
 }
 
-.c4 {
-  display: block;
-  max-width: 100%;
-  overflow: visible;
-}
-
-.c2 {
-  position: relative;
-  grid-area: charts;
-}
-
-.c3 {
-  position: relative;
-  display: block;
-}
-
 @media only screen and (max-width:768px) {
   .c5 {
     margin-top: 6px;
@@ -2548,8 +2536,16 @@ exports[`DataChart legend 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
-    padding: 6px;
+  .c7 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding-top: 3px;
+    padding-bottom: 3px;
   }
 }
 
@@ -2613,13 +2609,27 @@ exports[`DataChart legend 1`] = `
         <div
           className="c7"
         >
+          <svg
+            fill="#6FFFB0"
+            height={12}
+            stroke="none"
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              r={6}
+            />
+          </svg>
           <div
             className="c8"
           />
-          <div
+          <span
             className="c9"
-          />
-          a
+          >
+            a
+          </span>
         </div>
       </button>
     </div>

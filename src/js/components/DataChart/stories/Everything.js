@@ -20,13 +20,17 @@ const Example = () => (
     <Box align="center" justify="start" pad="large">
       <DataChart
         data={data}
-        property={['date', 'amount', 'need']}
+        property={[
+          'date',
+          { property: 'amount', color: 'graph-2', point: 'circle' },
+          { property: 'need', color: 'graph-1', point: 'star' },
+        ]}
         chart={[
           {
             property: 'amount',
             type: 'area',
             thickness: 'xsmall',
-            color: { color: 'graph-0', opacity: 'medium' },
+            color: { color: 'graph-2', opacity: 'medium' },
           },
           {
             property: 'amount',
@@ -38,7 +42,6 @@ const Example = () => (
           {
             property: 'amount',
             type: 'point',
-            round: true,
             thickness: 'small',
           },
           {

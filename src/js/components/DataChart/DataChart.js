@@ -1,89 +1,21 @@
 import React, {
   forwardRef,
-  useContext,
   useLayoutEffect,
   useMemo,
   useRef,
   useState,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
-import { Button } from '../Button';
-import { Chart, calcs, round } from '../Chart';
-import { Drop } from '../Drop';
+import { Chart, calcs } from '../Chart';
 import { Grid } from '../Grid';
-import { Keyboard } from '../Keyboard';
 import { Stack } from '../Stack';
-import { Text } from '../Text';
-import { focusStyle } from '../../utils';
-
-const halfPad = {
-  xlarge: 'large',
-  large: 'medium',
-  medium: 'small',
-  small: 'xsmall',
-  xsmall: 'xxsmall',
-};
-
-const doublePad = {
-  large: 'xlarge',
-  medium: 'large',
-  small: 'medium',
-  xsmall: 'small',
-  xxsmall: 'xsmall',
-};
-
-const createDateFormat = (firstValue, lastValue, full) => {
-  let dateFormat;
-  const startDate = new Date(firstValue);
-  const endDate = new Date(lastValue);
-  if (
-    // check for valid dates, this is the fastest way
-    !Number.isNaN(startDate.getTime()) &&
-    !Number.isNaN(endDate.getTime())
-  ) {
-    const delta = Math.abs(endDate - startDate);
-    let options;
-    if (delta < 60000)
-      // less than 1 minute
-      options = full
-        ? {
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit',
-            day: undefined,
-          }
-        : { second: '2-digit', day: undefined };
-    else if (delta < 3600000)
-      // less than 1 hour
-      options = full
-        ? { hour: 'numeric', minute: '2-digit', day: undefined }
-        : { minute: '2-digit', day: undefined };
-    else if (delta < 86400000)
-      // less than 1 day
-      options = { hour: 'numeric' };
-    else if (delta < 2592000000)
-      // less than 30 days
-      options = {
-        month: full ? 'short' : 'numeric',
-        day: 'numeric',
-      };
-    else if (delta < 31557600000)
-      // less than 1 year
-      options = { month: full ? 'long' : 'short' };
-    // 1 year or more
-    else options = { year: 'numeric' };
-    if (options)
-      dateFormat = new Intl.DateTimeFormat(undefined, options).format;
-  }
-  return dateFormat;
-};
-
-const DetailControl = styled(Box)`
-  &:focus {
-    ${focusStyle()}
-  }
-`;
+import { Detail } from './Detail';
+import { Legend } from './Legend';
+import { XAxis } from './XAxis';
+import { YAxis } from './YAxis';
+import { XGuide } from './XGuide';
+import { YGuide } from './YGuide';
+import { createDateFormat, halfPad, pointTypes } from './utils';
 
 const DataChart = forwardRef(
   (
@@ -107,14 +39,9 @@ const DataChart = forwardRef(
       It is not guaranteed to be backwards compatible until it is explicitly
       released. Keep an eye on the release notes and #announcements channel
       in Slack.`);
-    const theme = useContext(ThemeContext);
 
+    // legend interaction, if any
     const [activeProperty, setActiveProperty] = useState();
-
-    // detail interaction, if any
-    const [detailIndex, setDetailIndex] = useState();
-    const detailContainer = useRef();
-    const detailRefs = useMemo(() => [], []);
 
     // refs used for ie11 not having Grid
     const xRef = useRef();
@@ -130,10 +57,6 @@ const DataChart = forwardRef(
         });
       else if (typeof property === 'string') result[property] = { property };
       else result[property.property] = property;
-      // Object.keys(result).forEach((key, i) => {
-      //   const prop = result[key];
-      //   if (!prop.color) prop.color = `graph-${i}`;
-      // })
       return result;
     }, [property]);
 
@@ -151,6 +74,39 @@ const DataChart = forwardRef(
         return chart.map(c => (typeof c === 'string' ? { property: c } : c));
       return typeof chart === 'string' ? [{ property: chart }] : [chart];
     }, [chart, properties]);
+
+    // normalize property color and point style
+    const propertyStyles = useMemo(() => {
+      const result = {};
+      let colorIndex = 0;
+      let pointIndex = 0;
+      Object.values(properties)
+        // only if we're charting it
+        .filter(p => charts.find(c => c.property === p.property))
+        .forEach(prop => {
+          const { color, point } = prop;
+          const propertyStyle = { color, point };
+          if (!color) {
+            propertyStyle.color = `graph-${colorIndex}`;
+            colorIndex += 1;
+          }
+          if (!point) {
+            propertyStyle.point = pointTypes[pointIndex];
+            pointIndex += 1;
+          }
+          if (
+            activeProperty !== undefined &&
+            activeProperty !== prop.property
+          ) {
+            propertyStyle.color = {
+              color: propertyStyle.color,
+              opacity: 'medium',
+            };
+          }
+          result[prop.property] = propertyStyle;
+        });
+      return result;
+    }, [activeProperty, charts, properties]);
 
     // map the property values into their own arrays
     const propertyValues = useMemo(() => {
@@ -237,26 +193,6 @@ const DataChart = forwardRef(
 
       return result;
     }, [axisProp, granularities, properties]);
-
-    // determine the colors to use for each property we are charting
-    const propertyColors = useMemo(() => {
-      const result = {};
-      let suffix = 0;
-      charts.forEach(c => {
-        if (Array.isArray(c.property)) {
-          c.property.forEach(cp => {
-            if (!result[cp]) {
-              result[cp] = `graph-${suffix}`;
-              suffix += 1;
-            }
-          });
-        } else if (!result[c.property]) {
-          result[c.property] = `graph-${suffix}`;
-          suffix += 1;
-        }
-      });
-      return result;
-    }, [charts]);
 
     // calculate axis, bounds, and thickness for each chart
     const chartProps = useMemo(() => {
@@ -371,86 +307,29 @@ const DataChart = forwardRef(
       return value;
     };
 
-    /* eslint-disable react/no-array-index-key */
-    let xAxisElement;
-    if (axis && axis.x) {
-      const prop = axis.x.property && properties[axis.x.property];
-      // pull the x-axis values from the first chart, all should have the same
-      const [axisValues] = (Array.isArray(chartProps[0])
-        ? chartProps[0][0]
-        : chartProps[0]
-      ).axis;
+    const xAxisElement =
+      axis && axis.x ? (
+        <XAxis
+          ref={xRef}
+          axis={axis}
+          chartProps={chartProps}
+          data={data}
+          properties={properties}
+          renderProperty={renderProperty}
+        />
+      ) : null;
 
-      xAxisElement = (
-        <Box ref={xRef} gridArea="xAxis" direction="row" justify="between">
-          {axisValues.map((dataIndex, i) => {
-            let align;
-            if (axisValues.length === data.length) align = 'center';
-            else if (i === 0) align = 'start';
-            else if (i === axisValues.length - 1) align = 'end';
-            return (
-              <Box key={i} flex align={align}>
-                {prop ? renderProperty(prop, dataIndex) : dataIndex}
-              </Box>
-            );
-          })}
-        </Box>
-      );
-    }
-
-    let yAxisElement;
-    if (axis && axis.y) {
-      const prop = axis.y.property && properties[axis.y.property];
-      let axisValues;
-      charts.forEach(({ property: p }, i) => {
-        if (p === prop.property)
-          [, axisValues] = (Array.isArray(chartProps[i])
-            ? chartProps[i][0]
-            : chartProps[i]
-          ).axis;
-      });
-      let divideBy;
-      let unit;
-      if (!prop.render && !prop.suffix) {
-        // figure out how many digits to show
-        const maxValue = Math.max(...axisValues.map(v => Math.abs(v)));
-        if (maxValue > 10000000) {
-          divideBy = 1000000;
-          unit = 'M';
-        } else if (maxValue > 10000) {
-          divideBy = 1000;
-          unit = 'K';
-        }
-      }
-
-      // Set basis to match double the vertical pad, so we can align the
-      // text with the guides
-      const edgeSize = doublePad[pad.vertical || pad];
-      const basis = theme.global.edgeSize[edgeSize] || edgeSize;
-
-      yAxisElement = (
-        <Box gridArea="yAxis" justify="between" flex>
-          {axisValues.map((axisValue, i) => {
-            let content = renderProperty(prop, undefined, axisValue);
-            if (content === axisValue) {
-              if (divideBy) content = round(content / divideBy, 0);
-              if (unit) content = `${content}${unit}`;
-            }
-            return (
-              <Box
-                key={i}
-                align="end"
-                basis={basis}
-                flex="shrink"
-                justify={basis ? 'center' : undefined}
-              >
-                {content}
-              </Box>
-            );
-          })}
-        </Box>
-      );
-    }
+    const yAxisElement =
+      axis && axis.y ? (
+        <YAxis
+          axis={axis}
+          charts={charts}
+          chartProps={chartProps}
+          pad={pad}
+          properties={properties}
+          renderProperty={renderProperty}
+        />
+      ) : null;
 
     const stackFill = useMemo(() => {
       if (
@@ -470,48 +349,23 @@ const DataChart = forwardRef(
       return result;
     }, [guide]);
 
-    const propertyColor = prop => ({
-      color: propertyColors[prop],
-      opacity:
-        activeProperty !== undefined && activeProperty !== prop
-          ? 'medium'
-          : undefined,
-    });
-
     const stackElement = (
       <Stack gridArea="charts" guidingChild={guidingChild} fill={stackFill}>
-        {guide && guide.x && (
-          <Box
-            fill
-            direction="row"
-            justify="between"
-            pad={pad}
-            responsive={false}
-          >
-            {Array.from({ length: guide.x.count }).map((_, i) => (
-              <Box key={i} border="left" />
-            ))}
-          </Box>
-        )}
-        {guide && guide.y && (
-          <Box fill justify="between" pad={pad} responsive={false}>
-            {Array.from({ length: guide.y.count }).map((_, i) => (
-              <Box key={i} border="top" />
-            ))}
-          </Box>
-        )}
+        {guide && guide.x && <XGuide guide={guide} pad={pad} />}
+        {guide && guide.y && <YGuide guide={guide} pad={pad} />}
         {charts.map(({ property: prop, ...chartRest }, i) => {
           if (Array.isArray(prop)) {
             // reverse to ensure area Charts are stacked in the right order
             return prop
               .map((cProp, j) => (
                 <Chart
+                  // eslint-disable-next-line react/no-array-index-key
                   key={j}
                   values={chartValues[i][j]}
-                  color={propertyColor(cProp)}
                   overflow
                   pad={pad}
                   size={size}
+                  {...propertyStyles[cProp]}
                   {...chartProps[i]}
                   {...chartRest}
                 />
@@ -520,152 +374,39 @@ const DataChart = forwardRef(
           }
           return (
             <Chart
+              // eslint-disable-next-line react/no-array-index-key
               key={i}
               values={chartValues[i]}
               overflow
-              color={propertyColor(prop)}
               pad={pad}
               size={size}
+              {...propertyStyles[prop]}
               {...chartProps[i]}
               {...chartRest}
             />
           );
         })}
         {detail && (
-          <>
-            <Keyboard
-              onLeft={() => {
-                if (detailIndex === undefined) setDetailIndex(data.length - 1);
-                else if (detailIndex > 0) setDetailIndex(detailIndex - 1);
-              }}
-              onRight={() => {
-                if (detailIndex === undefined) setDetailIndex(0);
-                else if (detailIndex < data.length - 1)
-                  setDetailIndex(detailIndex + 1);
-              }}
-            >
-              <DetailControl
-                key="band"
-                ref={detailContainer}
-                tabIndex={0}
-                direction="row"
-                fill
-                justify="between"
-                gap={`${data.length / 2 + 1}px`}
-                responsive={false}
-                onMouseOut={event => {
-                  const rect = detailContainer.current.getBoundingClientRect();
-                  if (
-                    event.pageX < rect.left ||
-                    event.pageX > rect.right ||
-                    event.pageY < rect.top ||
-                    event.pageY > rect.bottom
-                  )
-                    setDetailIndex(undefined);
-                }}
-                onFocus={() => {}}
-                onBlur={() => setDetailIndex(undefined)}
-              >
-                {data.map((_, i) => (
-                  <Box
-                    key={i}
-                    flex
-                    align="center"
-                    onMouseOver={() => setDetailIndex(i)}
-                    onFocus={() => {}}
-                    onBlur={() => {}}
-                  >
-                    <Box
-                      ref={c => {
-                        detailRefs[i] = c;
-                      }}
-                      fill="vertical"
-                      border={detailIndex === i ? true : undefined}
-                    />
-                  </Box>
-                ))}
-              </DetailControl>
-            </Keyboard>
-            {detailIndex !== undefined && detailRefs[detailIndex] && (
-              <Drop
-                key="drop"
-                target={detailRefs[detailIndex]}
-                align={
-                  detailIndex > data.length / 2
-                    ? { right: 'left' }
-                    : { left: 'right' }
-                }
-                plain
-              >
-                <Box pad="small" background={{ color: 'background-back' }}>
-                  <Grid
-                    columns={['auto', 'auto', 'auto']}
-                    gap="xsmall"
-                    align="center"
-                  >
-                    {Object.values(properties)
-                      .filter(
-                        p =>
-                          !activeProperty ||
-                          activeProperty === p.property ||
-                          (axis && axis.x && axis.x.property === p.property),
-                      )
-                      .map(prop => {
-                        const color = propertyColors[prop.property];
-                        return (
-                          <>
-                            <Box pad="xsmall" background={color} />
-                            <Text size="small">
-                              {prop.label || prop.property}
-                            </Text>
-                            <Text size="small" weight="bold">
-                              {renderProperty(prop, detailIndex)}
-                            </Text>
-                          </>
-                        );
-                      })}
-                  </Grid>
-                </Box>
-              </Drop>
-            )}
-          </>
+          <Detail
+            activeProperty={activeProperty}
+            axis={axis}
+            data={data}
+            properties={properties}
+            propertyStyles={propertyStyles}
+            renderProperty={renderProperty}
+          />
         )}
       </Stack>
     );
 
-    let legendElement;
-    if (legend) {
-      legendElement = (
-        <Box
-          gridArea="legend"
-          margin={{ top: 'small' }}
-          direction="row"
-          gap="medium"
-        >
-          {Object.keys(propertyColors).map(key => {
-            const prop = properties[key];
-            const isActive = key === activeProperty;
-            return (
-              <Button
-                key={key}
-                active={isActive}
-                icon={<Box pad="small" background={propertyColors[key]} />}
-                label={prop.label || prop.property}
-                onClick={
-                  Object.keys(propertyColors).length > 1
-                    ? () => {
-                        setActiveProperty(isActive ? undefined : key);
-                      }
-                    : undefined
-                }
-                hoverIndicator
-                plain
-              />
-            );
-          })}
-        </Box>
-      );
-    }
+    const legendElement = legend ? (
+      <Legend
+        properties={properties}
+        propertyStyles={propertyStyles}
+        activeProperty={activeProperty}
+        setActiveProperty={setActiveProperty}
+      />
+    ) : null;
 
     // IE11
     if (!Grid.available) {
