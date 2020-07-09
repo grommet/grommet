@@ -11,15 +11,6 @@ import { RadioButtonGroup } from 'grommet';
 
 ## Properties
 
-**a11yTitle**
-
-Custom label to be used by screen readers.
-      When provided, an aria-label will be added to the element.
-
-```
-string
-```
-
 **children**
 
 Function that will be called to render the visual representation.
@@ -61,8 +52,8 @@ function
 
 **options**
 
-Required. Options can be either a string, boolean, number 
-      or an object. Each option is rendered as a single RadioButton.
+Required. Options can be either a string or an object. 
+    Each option is rendered as a single RadioButton.
 
 ```
 [string]

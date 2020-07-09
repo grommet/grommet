@@ -5350,12 +5350,6 @@ with the same name so form submissions work.",
     "name": "RadioButtonGroup",
     "properties": Array [
       Object {
-        "description": "Custom label to be used by screen readers.
-      When provided, an aria-label will be added to the element.",
-        "format": "string",
-        "name": "a11yTitle",
-      },
-      Object {
         "description": "Function that will be called to render the visual representation.
       It will be passed an object indicating whether the button is checked. It
       should return a react element.
@@ -5385,8 +5379,8 @@ with the same name so form submissions work.",
         "name": "onChange",
       },
       Object {
-        "description": "Options can be either a string, boolean, number 
-      or an object. Each option is rendered as a single RadioButton.",
+        "description": "Options can be either a string or an object. 
+    Each option is rendered as a single RadioButton.",
         "format": "[string]
 [number]
 [boolean]
@@ -5433,6 +5427,12 @@ object",
     "intrinsicElement": "input",
     "name": "RangeInput",
     "properties": Array [
+      Object {
+        "description": "Custom label to be used by screen readers.
+      When provided, an aria-label will be added to the element.",
+        "format": "string",
+        "name": "a11yTitle",
+      },
       Object {
         "description": "The id attribute of the range input.",
         "format": "string",

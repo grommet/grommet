@@ -13,10 +13,6 @@ export const doc = RadioButtonGroup => {
     .intrinsicElement('div');
 
   DocumentedRadioButtonGroup.propTypes = {
-    a11yTitle: PropTypes.string.description(
-      `Custom label to be used by screen readers.
-      When provided, an aria-label will be added to the element.`,
-    ),
     children: PropTypes.func.description(
       `Function that will be called to render the visual representation.
       It will be passed an object indicating whether the button is checked. It
@@ -52,9 +48,8 @@ export const doc = RadioButtonGroup => {
           ]).isRequired,
         }),
       ),
-    ]).description(`Options can be either a string, boolean, number 
-      or an object. Each option is rendered as a single RadioButton.`)
-      .isRequired,
+    ]).description(`Options can be either a string or an object. 
+    Each option is rendered as a single RadioButton.`).isRequired,
     value: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.number,
