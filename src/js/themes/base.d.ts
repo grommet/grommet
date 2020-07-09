@@ -13,6 +13,8 @@ import {
   RoundType,
   PadType,
 } from '../utils';
+
+import { BoxProps } from '../components/Box';
 import { TextProps } from '../components/Text';
 import { ReactComponentElement } from 'react';
 
@@ -397,6 +399,12 @@ export interface ThemeType {
       };
     };
   };
+  card?: {
+    container?:BoxProps;
+    header?:BoxProps;
+    body?:BoxProps;
+    footer?:BoxProps;
+  },
   carousel?: {
     animation?: {
       duration?: number;
@@ -518,6 +526,9 @@ export interface ThemeType {
     baseline?: number;
   };
   dataTable?: {
+    body?:{
+      extend?: ExtendType;
+    }
     header?: {};
     groupHeader?: {
       border?: {
@@ -857,6 +868,9 @@ export interface ThemeType {
     };
     gap?: string;
     size?: string;
+    font?: {
+      weight?: number | string;
+    }
   };
   rangeInput?: {
     track?: {
@@ -905,10 +919,7 @@ export interface ThemeType {
       margin?: MarginType;
     };
     options?: {
-      container?: {
-        align?: string;
-        pad?: string;
-      };
+      container?: BoxProps;
       text?: {
         margin?: MarginType;
       };
