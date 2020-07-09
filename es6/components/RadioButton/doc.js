@@ -3,6 +3,7 @@ import { getAvailableAtBadge } from '../../utils';
 export var doc = function doc(RadioButton) {
   var DocumentedRadioButton = describe(RadioButton).availableAt(getAvailableAtBadge('RadioButton')).description('A radio button control.').details("RadioButton should typically not be used directly.\n      Instead, use RadioButtonGroup.").usage("import { RadioButton } from 'grommet';\n<RadioButton />").intrinsicElement('input');
   DocumentedRadioButton.propTypes = {
+    a11yTitle: PropTypes.string.description("Custom label to be used by screen readers.\n      When provided, an aria-label will be added to the element."),
     checked: PropTypes.bool.description('Same as React <input checked={} />'),
     children: PropTypes.func.description("Function that will be called to render the visual representation.\n      It will be passed an object indicating whether the button is checked. It\n      should return a react element.\n      For example:\n      `children={({ checked }) => <Box ...>{...}</Box>}`\n      "),
     disabled: PropTypes.bool.description("Same as React <input disabled={} />. Also adds a hidden input element\nwith the same name so form submissions work."),

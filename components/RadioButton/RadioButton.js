@@ -24,7 +24,8 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 var RadioButton = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
-  var checked = _ref.checked,
+  var a11yTitle = _ref.a11yTitle,
+      checked = _ref.checked,
       children = _ref.children,
       disabled = _ref.disabled,
       focus = _ref.focus,
@@ -32,7 +33,7 @@ var RadioButton = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       label = _ref.label,
       name = _ref.name,
       onChange = _ref.onChange,
-      rest = _objectWithoutPropertiesLoose(_ref, ["checked", "children", "disabled", "focus", "id", "label", "name", "onChange"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "checked", "children", "disabled", "focus", "id", "label", "name", "onChange"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
@@ -71,7 +72,9 @@ var RadioButton = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     margin: label ? {
       right: theme.radioButton.gap || 'small'
     } : undefined
-  }, /*#__PURE__*/_react["default"].createElement(_StyledRadioButton.StyledRadioButtonInput, _extends({}, rest, {
+  }, /*#__PURE__*/_react["default"].createElement(_StyledRadioButton.StyledRadioButtonInput, _extends({
+    "aria-label": a11yTitle
+  }, rest, {
     ref: ref,
     type: "radio"
   }, (0, _utils.removeUndefined)({

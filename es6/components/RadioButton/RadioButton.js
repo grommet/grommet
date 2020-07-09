@@ -9,7 +9,8 @@ import { defaultProps } from '../../default-props';
 import { normalizeColor, removeUndefined } from '../../utils';
 import { StyledRadioButton, StyledRadioButtonContainer, StyledRadioButtonIcon, StyledRadioButtonInput, StyledRadioButtonLabel, StyledRadioButtonBox } from './StyledRadioButton';
 var RadioButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
-  var checked = _ref.checked,
+  var a11yTitle = _ref.a11yTitle,
+      checked = _ref.checked,
       children = _ref.children,
       disabled = _ref.disabled,
       focus = _ref.focus,
@@ -17,7 +18,7 @@ var RadioButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
       label = _ref.label,
       name = _ref.name,
       onChange = _ref.onChange,
-      rest = _objectWithoutPropertiesLoose(_ref, ["checked", "children", "disabled", "focus", "id", "label", "name", "onChange"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "checked", "children", "disabled", "focus", "id", "label", "name", "onChange"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
 
@@ -56,7 +57,9 @@ var RadioButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
     margin: label ? {
       right: theme.radioButton.gap || 'small'
     } : undefined
-  }, /*#__PURE__*/React.createElement(StyledRadioButtonInput, _extends({}, rest, {
+  }, /*#__PURE__*/React.createElement(StyledRadioButtonInput, _extends({
+    "aria-label": a11yTitle
+  }, rest, {
     ref: ref,
     type: "radio"
   }, removeUndefined({
