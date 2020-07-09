@@ -1354,7 +1354,8 @@ large",
         "format": "_self
 _blank
 _parent
-_top",
+_top
+string",
         "name": "target",
       },
       Object {
@@ -1616,6 +1617,10 @@ string",
     "usage": "import { Calendar } from 'grommet';
 <Calendar />",
   },
+  "Card": [Function],
+  "CardBody": [Function],
+  "CardFooter": [Function],
+  "CardHeader": [Function],
   "Carousel": [Function],
   "Chart": Object {
     "availableAt": Array [
@@ -1892,6 +1897,18 @@ xlarge
 }
 string",
         "name": "pad",
+      },
+      Object {
+        "description": "When using a 'point' type, what shape the points should use.
+      If this property is not specified, points will be drawn as a square or
+      a circle, based on how 'round' is specified.",
+        "format": "circle
+diamond
+square
+star
+triangle
+triangleDown",
+        "name": "point",
       },
       Object {
         "defaultValue": false,
@@ -3274,8 +3291,8 @@ submit",
     "name": "FormField",
     "properties": Array [
       Object {
-        "description": "The component to insert in the FormField. Grommet will add update the 
-      form values when this field changes. Any additional properties 
+        "description": "The component to insert in the FormField. Grommet will add update the
+      form values when this field changes. Any additional properties
       (such as initial value) you pass to FormField will be forwarded to this
       component. The component may be custom as long it supports the properties
       of name, value, onChange (event => {}), while event has either event.value
@@ -3423,7 +3440,7 @@ string",
       describing the validation issue, if any, or an object with 'message'
       and 'status' properties.",
         "format": "{
-  regexp: object,
+  regexp: new RegExp(...),
   message: 
     string
     node,
@@ -3434,7 +3451,7 @@ string",
 function
 [
   {
-    regexp: object,
+    regexp: new RegExp(...),
     message: 
       string
       node,
@@ -6252,6 +6269,12 @@ currently active tab changes.",
     "name": "TextArea",
     "properties": Array [
       Object {
+        "description": "Custom label to be used by screen readers.
+      When provided, an aria-label will be added to the element.",
+        "format": "string",
+        "name": "a11yTitle",
+      },
+      Object {
         "description": "The id attribute of the textarea.",
         "format": "string",
         "name": "id",
@@ -6332,6 +6355,11 @@ string",
     "name": "TextInput",
     "properties": Array [
       Object {
+        "description": "Custom title to be used by screen readers.",
+        "format": "string",
+        "name": "a11yTitle",
+      },
+      Object {
         "defaultValue": Object {
           "left": "left",
           "top": "bottom",
@@ -6399,7 +6427,7 @@ string",
           "suggestionsCount": "suggestions available",
           "suggestionsExist": "This input has suggestions use arrow keys to navigate",
         },
-        "description": "Custom messages for TextInput. Used for accessibility by screen 
+        "description": "Custom messages for TextInput. Used for accessibility by screen
         readers.",
         "format": "{
   enterSelect: string,

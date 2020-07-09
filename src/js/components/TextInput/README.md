@@ -11,6 +11,14 @@ import { TextInput } from 'grommet';
 
 ## Properties
 
+**a11yTitle**
+
+Custom title to be used by screen readers.
+
+```
+string
+```
+
 **dropAlign**
 
 How to align the drop. Defaults to `{
@@ -94,7 +102,7 @@ boolean
 
 **messages**
 
-Custom messages for TextInput. Used for accessibility by screen 
+Custom messages for TextInput. Used for accessibility by screen
         readers. Defaults to `{
   "enterSelect": "(Press Enter to Select)",
   "suggestionsCount": "suggestions available",
@@ -273,7 +281,7 @@ Defaults to
 
 **text**
 
-The possible sizes of the text in terms of its font-size and 
+The possible sizes of the text in terms of its font-size and
     line-height. Expects `object`.
 
 Defaults to

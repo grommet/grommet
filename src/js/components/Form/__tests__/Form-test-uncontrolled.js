@@ -10,7 +10,7 @@ import { Button } from '../../Button';
 import { Text } from '../../Text';
 import { TextInput } from '../../TextInput';
 
-describe('Form', () => {
+describe('Form uncontrolled', () => {
   afterEach(cleanup);
 
   test('empty', () => {
@@ -59,75 +59,6 @@ describe('Form', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test('controlled', () => {
-    const onSubmit = jest.fn();
-    const Test = () => {
-      const [value, setValue] = React.useState({ test: '' });
-      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
-      return (
-        <Form value={value} onChange={onChange} onSubmit={onSubmit}>
-          <FormField name="test">
-            <TextInput name="test" placeholder="test input" />
-          </FormField>
-          <Button type="submit" primary label="Submit" />
-        </Form>
-      );
-    };
-    const { getByPlaceholderText, getByText, container } = render(
-      <Grommet>
-        <Test />
-      </Grommet>,
-    );
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.change(getByPlaceholderText('test input'), {
-      target: { value: 'v' },
-    });
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.click(getByText('Submit'));
-    expect(onSubmit).toBeCalledWith(
-      expect.objectContaining({
-        value: { test: 'v' },
-        touched: { test: true },
-      }),
-    );
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
-  test('controlled lazy', () => {
-    const onSubmit = jest.fn();
-    const Test = () => {
-      const [value, setValue] = React.useState({ test: '' });
-      React.useEffect(() => setValue({ test: 'test' }), []);
-      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
-      return (
-        <Form value={value} onChange={onChange} onSubmit={onSubmit}>
-          <FormField name="test">
-            <TextInput name="test" placeholder="test input" />
-          </FormField>
-          <Button type="submit" primary label="Submit" />
-        </Form>
-      );
-    };
-    const { getByPlaceholderText, getByText, container } = render(
-      <Grommet>
-        <Test />
-      </Grommet>,
-    );
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.change(getByPlaceholderText('test input'), {
-      target: { value: 'v' },
-    });
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.click(getByText('Submit'));
-    expect(onSubmit).toBeCalledWith(
-      expect.objectContaining({
-        value: { test: 'v' },
-        touched: { test: true },
-      }),
-    );
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
   test('uncontrolled', () => {
     const onSubmit = jest.fn();
     const { getByPlaceholderText, getByText, container } = render(
@@ -138,91 +69,6 @@ describe('Form', () => {
           </FormField>
           <Button type="submit" primary label="Submit" />
         </Form>
-      </Grommet>,
-    );
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.change(getByPlaceholderText('test input'), {
-      target: { value: 'v' },
-    });
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.click(getByText('Submit'));
-    expect(onSubmit).toBeCalledWith(
-      expect.objectContaining({
-        value: { test: 'v' },
-        touched: { test: true },
-      }),
-    );
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
-  test('controlled input', () => {
-    const onSubmit = jest.fn();
-    const Test = () => {
-      const [value, setValue] = React.useState('');
-      const onChange = React.useCallback(
-        event => setValue(event.target.value),
-        [],
-      );
-      return (
-        <Form onSubmit={onSubmit}>
-          <FormField name="test">
-            <TextInput
-              name="test"
-              placeholder="test input"
-              value={value}
-              onChange={onChange}
-            />
-          </FormField>
-          <Button type="submit" primary label="Submit" />
-        </Form>
-      );
-    };
-    const { getByPlaceholderText, getByText, container } = render(
-      <Grommet>
-        <Test />
-      </Grommet>,
-    );
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.change(getByPlaceholderText('test input'), {
-      target: { value: 'v' },
-    });
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.click(getByText('Submit'));
-    expect(onSubmit).toBeCalledWith(
-      expect.objectContaining({
-        value: { test: 'v' },
-        touched: { test: true },
-      }),
-    );
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
-  test('controlled input lazy', () => {
-    const onSubmit = jest.fn();
-    const Test = () => {
-      const [value, setValue] = React.useState('');
-      React.useEffect(() => setValue('test'), []);
-      const onChange = React.useCallback(
-        event => setValue(event.target.value),
-        [],
-      );
-      return (
-        <Form onSubmit={onSubmit}>
-          <FormField name="test">
-            <TextInput
-              name="test"
-              placeholder="test input"
-              value={value}
-              onChange={onChange}
-            />
-          </FormField>
-          <Button type="submit" primary label="Submit" />
-        </Form>
-      );
-    };
-    const { getByPlaceholderText, getByText, container } = render(
-      <Grommet>
-        <Test />
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -431,8 +277,8 @@ describe('Form', () => {
     const onSubmit = jest.fn();
     const { getByText, queryByText } = render(
       <Grommet>
-        {/* this test continues running forever if the whole event passed to 
-            onSubmit */}
+        {/* this test continues running forever if the whole event 
+                passed to onSubmit */}
         <Form onSubmit={({ value, touched }) => onSubmit({ value, touched })}>
           <FormField
             name="test"
@@ -455,32 +301,6 @@ describe('Form', () => {
     );
   });
 
-  test('lazy value', () => {
-    const onSubmit = jest.fn();
-    const Test = () => {
-      const [test, setTest] = React.useState('');
-      return (
-        <Form onSubmit={({ value, touched }) => onSubmit({ value, touched })}>
-          <TextInput name="test" value={test} />
-          <Button label="set" onClick={() => setTest('a')} />
-          <Button label="submit" type="submit" />
-        </Form>
-      );
-    };
-    const { container, getByText } = render(
-      <Grommet>
-        <Test />
-      </Grommet>,
-    );
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.click(getByText('set'));
-    fireEvent.click(getByText('submit'));
-    expect(onSubmit).toBeCalledWith(
-      expect.objectContaining({
-        value: { test: 'a' },
-      }),
-    );
-  });
   test('validate on blur', () => {
     const Test = () => (
       <Form validate="blur">
@@ -534,7 +354,8 @@ describe('Form', () => {
     fireEvent.click(getByText('submit'));
     expect(queryAllByText('required')).toHaveLength(1);
 
-    // name field has new error and email field still has required error message
+    // name field has new error and email field still
+    // has required error message
     fireEvent.change(getByPlaceholderText('name'), {
       target: { value: 'a' },
     });
@@ -550,35 +371,206 @@ describe('Form', () => {
     expect(queryByText('must be >1 character')).toBe(null);
   });
 
-  // deprecated FormField+input pattern
-
-  test('controlled FormField deprecated', () => {
-    const onSubmit = jest.fn();
-    const Test = () => {
-      const [value, setValue] = React.useState({ test: '' });
-      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
-      return (
-        <Form value={value} onChange={onChange} onSubmit={onSubmit}>
-          <FormField label="test" name="test" id="test" htmlFor="test" />
-          <Button type="submit" primary label="Submit" />
-        </Form>
-      );
+  /* The three following tests align with FormField's supported 'validate' types
+   * FormField's 'validate' prop accepts the following types:
+   * 1) object in the shape of: {
+   *  regexp?: object,
+   *  message?: string | React.ReactNode,
+   *  status?: 'error' | 'info'
+   * }
+   * 2) function: (...args: any[]) => any )
+   * 3) array of 1) and/or 2) above
+   */
+  test('should validate when supplied an object', () => {
+    const regexValidation = {
+      regexp: new RegExp('(?=.*?[#?!@$ %^&*-])'),
+      message: 'At least one special character or space',
+      status: 'error',
     };
-    const { getByLabelText, getByText, container } = render(
+    const expectedMessage = 'At least one special character or space';
+
+    const { getByPlaceholderText, getByText, queryByText } = render(
       <Grommet>
-        <Test />
+        <Form>
+          <FormField
+            label="Create a Password"
+            name="password"
+            // required
+            validate={regexValidation}
+            // placeholder="Enter Password"
+          >
+            <TextInput name="password" placeholder="Enter Password" />
+          </FormField>
+          <Button type="submit" label="Submit" />
+        </Form>
       </Grommet>,
     );
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.change(getByLabelText('test'), { target: { value: 'v' } });
-    expect(container.firstChild).toMatchSnapshot();
-    fireEvent.click(getByText('Submit'));
-    expect(onSubmit).toBeCalledWith(
-      expect.objectContaining({
-        value: { test: 'v' },
-        touched: { test: true },
-      }),
+
+    const input = getByPlaceholderText('Enter Password');
+    const submitButton = getByText('Submit');
+
+    // Absence of a special character in input should display
+    // 'special character' error message
+    fireEvent.change(input, {
+      target: { value: 'abcde' },
+    });
+    fireEvent.click(submitButton);
+    expect(getByText(expectedMessage).innerHTML).toBeTruthy();
+
+    // Including a special character should validate. 'Special character'
+    // error message should not be displayed.
+    fireEvent.change(input, {
+      target: { value: 'abcde%' },
+    });
+    fireEvent.click(submitButton);
+    expect(queryByText(expectedMessage)).toBeNull();
+  });
+
+  test('should validate when supplied a function', () => {
+    const functionValidation = combination => {
+      return combination === '12345'
+        ? {
+            message:
+              "That's amazing. I've got the same combination on my luggage!",
+            status: 'info',
+          }
+        : undefined;
+    };
+    const infoMessage =
+      "That's amazing. I've got the same combination on my luggage!";
+
+    const { getByPlaceholderText, getByText, queryByText } = render(
+      <Grommet>
+        <Form>
+          <FormField
+            label="Druidia Shield Combination"
+            name="combination"
+            validate={functionValidation}
+          >
+            <TextInput name="combination" placeholder="Enter Combination" />
+          </FormField>
+          <Button type="submit" label="Submit" />
+        </Form>
+      </Grommet>,
     );
-    expect(container.firstChild).toMatchSnapshot();
+
+    const input = getByPlaceholderText('Enter Combination');
+    const submitButton = getByText('Submit');
+
+    // If combination input matches value in function, should display
+    // info message
+    fireEvent.change(input, {
+      target: { value: '12345' },
+    });
+    fireEvent.click(submitButton);
+    expect(getByText(infoMessage)).toBeTruthy();
+
+    // Combination info message should not be shown if value does not match.
+    fireEvent.change(input, {
+      target: { value: 'abcde%' },
+    });
+    fireEvent.click(submitButton);
+    expect(queryByText(infoMessage)).toBeNull();
+  });
+
+  test(`should validate with array of objects and/or functions`, () => {
+    const validationArray = [
+      {
+        regexp: new RegExp('(?=.*?[0-9])'),
+        message: 'At least one number',
+        status: 'error',
+      },
+      {
+        regexp: new RegExp('.{5,}'),
+        message: 'At least five characters',
+        status: 'error',
+      },
+      combination => {
+        return combination === '12345'
+          ? {
+              message:
+                "That's amazing. I've got the same combination on my luggage!",
+              status: 'info',
+            }
+          : undefined;
+      },
+      {
+        regexp: new RegExp('(?=.*?[#?!@$ %^&*-])'),
+        message: 'At least one special character or space',
+        status: 'error',
+      },
+    ];
+
+    const validationMessages = [
+      'At least one number',
+      'At least five characters',
+      "That's amazing. I've got the same combination on my luggage!",
+      'At least one special character or space',
+    ];
+
+    const { getByPlaceholderText, getByText, queryByText } = render(
+      <Grommet>
+        <Form>
+          <FormField
+            label="Druidia Shield Combination"
+            name="combination"
+            validate={validationArray}
+          >
+            <TextInput name="combination" placeholder="Enter Combination" />
+          </FormField>
+          <Button type="submit" label="Submit" />
+        </Form>
+      </Grommet>,
+    );
+
+    const input = getByPlaceholderText('Enter Combination');
+    const submitButton = getByText('Submit');
+
+    // Needs to include a number. Show message.
+    fireEvent.change(input, {
+      target: { value: 'a' },
+    });
+    fireEvent.click(submitButton);
+    expect(getByText('At least one number')).toBeTruthy();
+
+    // Needs five characters. Show message.
+    fireEvent.change(input, {
+      target: { value: '1' },
+    });
+    fireEvent.click(submitButton);
+    expect(getByText('At least five characters')).toBeTruthy();
+
+    // Still needs five characters. Show message.
+    fireEvent.change(input, {
+      target: { value: '12' },
+    });
+    fireEvent.click(submitButton);
+    expect(getByText('At least five characters')).toBeTruthy();
+
+    // Input satifies condition in funciton. Show message.
+    fireEvent.change(input, {
+      target: { value: '12345' },
+    });
+    fireEvent.click(submitButton);
+
+    expect(
+      getByText("That's amazing. I've got the same combination on my luggage!"),
+    ).toBeTruthy();
+
+    // No special character included. Show message.
+    fireEvent.change(input, {
+      target: { value: '123456' },
+    });
+    fireEvent.click(submitButton);
+    expect(getByText('At least one special character or space')).toBeTruthy();
+
+    // All validation criteria met, so none of the messages should appear.
+    fireEvent.change(input, {
+      target: { value: '123456%' },
+    });
+    fireEvent.click(submitButton);
+    validationMessages.forEach(message =>
+      expect(queryByText(message)).toBeNull(),
+    );
   });
 });

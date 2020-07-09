@@ -60,7 +60,7 @@ describe('Select', () => {
     expect(document.activeElement).toMatchSnapshot();
     /* called twice because of bug, issue #4283
     https://github.com/grommet/grommet/issues/4283
-    Test should be changed when bug is fixed
+    Test should be changed to 'toHaveBeenCalledTimes(1)' when the bug is fixed
     */
     expect(onOpen).toHaveBeenCalledTimes(2);
 

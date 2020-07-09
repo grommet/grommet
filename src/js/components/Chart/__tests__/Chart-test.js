@@ -129,6 +129,21 @@ describe('Chart', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  test('point', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Chart type="point" point="circle" values={VALUES} />
+        <Chart type="point" point="diamond" values={VALUES} />
+        <Chart type="point" point="square" values={VALUES} />
+        <Chart type="point" point="star" values={VALUES} />
+        <Chart type="point" point="triangle" values={VALUES} />
+        <Chart type="point" point="triangleDown" values={VALUES} />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('pad', () => {
     const component = renderer.create(
       <Grommet>
