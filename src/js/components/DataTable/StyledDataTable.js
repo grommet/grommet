@@ -18,7 +18,10 @@ const StyledDataTable = styled(Table)`
   border-collapse: collapse;
   height: auto; /* helps Firefox to get table contents to not overflow */
 
-  ${genericStyles};
+  ${genericStyles} ${props =>
+    props.theme.dataTable &&
+    props.theme.dataTable.body &&
+    props.theme.dataTable.body.extend};
 `;
 
 StyledDataTable.defaultProps = {};
