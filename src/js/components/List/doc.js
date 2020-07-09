@@ -150,8 +150,8 @@ export const themeDoc = {
     defaultValue: 'horizontal',
   },
   'list.hover.item.background': {
-    description:
-      'The background of a list item on hover. Overrides global.hover.background.',
+    description: `The background of a list item on hover. Overrides 
+      global.hover.background.`,
     type: 'string | object',
     defaultValue: undefined,
   },

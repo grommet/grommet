@@ -412,7 +412,8 @@ horizontal
 
 **list.hover.item.background**
 
-Background of a list item on hover. Overrides global.hover.background. Expects `string | object`.
+The background of a list item on hover. Overrides 
+      global.hover.background. Expects `string | object`.
 
 Defaults to
 
