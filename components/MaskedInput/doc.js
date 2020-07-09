@@ -12,6 +12,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 var doc = function doc(MaskedInput) {
   var DocumentedMaskedInput = (0, _reactDesc.describe)(MaskedInput).availableAt((0, _utils.getAvailableAtBadge)('MaskedInput')).description('An input field with formalized syntax.').usage("import { MaskedInput } from 'grommet';\n<MaskedInput id='item' name='item' />").intrinsicElement('input');
   DocumentedMaskedInput.propTypes = {
+    a11yTitle: _reactDesc.PropTypes.string.description('Custom title to be used by screen readers.'),
     icon: _reactDesc.PropTypes.element.description("An optional icon to show. This could be used to provide an\n      indication of what kind of input is expected, like an email icon,\n      or what the input will be used for, like a search icon."),
     id: _reactDesc.PropTypes.string.description('The id attribute of the input.'),
     name: _reactDesc.PropTypes.string.description('The name attribute of the input.'),

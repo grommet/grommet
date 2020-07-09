@@ -132,7 +132,8 @@ var dropAlign = {
   left: 'left'
 };
 var MaskedInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
-  var focusProp = _ref.focus,
+  var a11yTitle = _ref.a11yTitle,
+      focusProp = _ref.focus,
       icon = _ref.icon,
       id = _ref.id,
       _ref$mask = _ref.mask,
@@ -146,7 +147,7 @@ var MaskedInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       plain = _ref.plain,
       reverse = _ref.reverse,
       valueProp = _ref.value,
-      rest = _objectWithoutPropertiesLoose(_ref, ["focus", "icon", "id", "mask", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "placeholder", "plain", "reverse", "value"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "focus", "icon", "id", "mask", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "placeholder", "plain", "reverse", "value"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
@@ -240,8 +241,11 @@ var MaskedInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       return part.part;
     }).join('');
 
-    if (value !== nextValue) {
+    if (nextValue !== event.target.value) {
+      // The mask required inserting something, change the input.
+      // This will re-trigger this callback with the next value
       setInputValue(nextValue);
+    } else if (value !== nextValue) {
       setValue(nextValue);
       if (onChange) onChange(event);
     }
@@ -332,6 +336,7 @@ var MaskedInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     onKeyDown: onKeyDown
   }, /*#__PURE__*/_react["default"].createElement(_StyledMaskedInput.StyledMaskedInput, _extends({
     ref: inputRef,
+    "aria-label": a11yTitle,
     id: id,
     name: name,
     autoComplete: "off",

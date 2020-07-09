@@ -17,6 +17,7 @@ export * from './Clock';
 export * from './Collapsible';
 export * from './DataChart';
 export * from './DataTable';
+export * from './DateInput';
 export * from './Diagram';
 export * from './Distribution';
 export * from './Drop';

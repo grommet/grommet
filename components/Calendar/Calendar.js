@@ -73,6 +73,7 @@ var buildDisplayBounds = function buildDisplayBounds(reference, firstDayOfWeek) 
   return [start, end];
 };
 
+var millisecondsPerYear = 31557600000;
 var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var _ref$animate = _ref.animate,
       animate = _ref$animate === void 0 ? true : _ref$animate,
@@ -153,30 +154,43 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   }, [animate, firstDayOfWeek, reference]);
   (0, _react.useEffect)(function () {
     if (targetDisplayBounds) {
+      var animating;
+
       if (targetDisplayBounds[0].getTime() < displayBounds[0].getTime()) {
-        setDisplayBounds([targetDisplayBounds[0], displayBounds[1]]);
-        setSlide({
-          direction: 'down',
-          weeks: (0, _utils.daysApart)(displayBounds[0], targetDisplayBounds[0]) / 7
-        });
+        // only animate if the duration is within a year
+        if (displayBounds[0].getTime() - targetDisplayBounds[0].getTime() < millisecondsPerYear) {
+          setDisplayBounds([targetDisplayBounds[0], displayBounds[1]]);
+          setSlide({
+            direction: 'down',
+            weeks: (0, _utils.daysApart)(displayBounds[0], targetDisplayBounds[0]) / 7
+          });
+          animating = true;
+        }
       } else if (targetDisplayBounds[1].getTime() > displayBounds[1].getTime()) {
-        setDisplayBounds([displayBounds[0], targetDisplayBounds[1]]);
-        setSlide({
-          direction: 'up',
-          weeks: (0, _utils.daysApart)(targetDisplayBounds[1], displayBounds[1]) / 7
-        });
-      } // Wait for animation to finish before cleaning up.
+        if (targetDisplayBounds[1].getTime() - displayBounds[1].getTime() < millisecondsPerYear) {
+          setDisplayBounds([displayBounds[0], targetDisplayBounds[1]]);
+          setSlide({
+            direction: 'up',
+            weeks: (0, _utils.daysApart)(targetDisplayBounds[1], displayBounds[1]) / 7
+          });
+          animating = true;
+        }
+      }
 
+      if (animating) {
+        // Wait for animation to finish before cleaning up.
+        var timer = setTimeout(function () {
+          setDisplayBounds(targetDisplayBounds);
+          setTargetDisplayBounds(undefined);
+          setSlide(undefined);
+        }, 400 // Empirically determined.
+        );
+        return function () {
+          return clearTimeout(timer);
+        };
+      }
 
-      var timer = setTimeout(function () {
-        setDisplayBounds(targetDisplayBounds);
-        setTargetDisplayBounds(undefined);
-        setSlide(undefined);
-      }, 400 // Empirically determined.
-      );
-      return function () {
-        return clearTimeout(timer);
-      };
+      return undefined;
     }
 
     setSlide(undefined);
@@ -191,6 +205,7 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var nextMonth = (0, _react.useMemo)(function () {
     return (0, _utils.startOfMonth)((0, _utils.addMonths)((0, _utils.startOfMonth)(reference), 1));
   }, [reference]);
+  var daysRef = (0, _react.useRef)();
 
   var _useState7 = (0, _react.useState)(),
       focus = _useState7[0],
@@ -399,7 +414,10 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
           active: active && active.getTime() === day.getTime(),
           disabled: dayDisabled,
           onClick: function onClick() {
-            return selectDate(dateString);
+            selectDate(dateString); // Chrome moves the focus indicator to this button. Set
+            // the focus to the grid of days instead.
+
+            daysRef.current.focus();
           },
           onMouseOver: function onMouseOver() {
             return setActive(new Date(dateString));
@@ -461,6 +479,7 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       return active && setActive((0, _utils.addDays)(active, 1));
     }
   }, /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledWeeksContainer, {
+    ref: daysRef,
     sizeProp: size,
     tabIndex: 0,
     focus: focus,

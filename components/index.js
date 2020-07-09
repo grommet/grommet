@@ -135,6 +135,13 @@ Object.keys(_DataTable).forEach(function (key) {
   exports[key] = _DataTable[key];
 });
 
+var _DateInput = require("./DateInput");
+
+Object.keys(_DateInput).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  exports[key] = _DateInput[key];
+});
+
 var _Diagram = require("./Diagram");
 
 Object.keys(_Diagram).forEach(function (key) {
