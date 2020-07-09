@@ -24,5 +24,6 @@ export interface CalendarProps {
 }
 
 declare const Calendar: React.ComponentClass<CalendarProps & JSX.IntrinsicElements['div']>;
+export type CalendarType = CalendarProps & JSX.IntrinsicElements['div'];
 
 export { Calendar };
