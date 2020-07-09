@@ -163,5 +163,43 @@ describe('TextArea', () => {
 
       expect(capturedEvent).toEqual(expect.objectContaining(keyEvent));
     });
+
+    test('onFocus', () => {
+      const onFocus = jest.fn();
+      const { container, getByPlaceholderText } = render(
+        <Grommet>
+          <TextArea name="item" placeholder="item" onFocus={onFocus} />
+        </Grommet>,
+      );
+      fireEvent.focus(getByPlaceholderText('item'));
+      expect(container.firstChild).toMatchSnapshot();
+      expect(onFocus).toHaveBeenCalledTimes(1);
+    });
+
+    test('onChange', () => {
+      const onChange = jest.fn();
+      const { getByPlaceholderText } = render(
+        <Grommet>
+          <TextArea name="item" placeholder="item" onChange={onChange} />
+        </Grommet>,
+      );
+      const input = getByPlaceholderText('item');
+      fireEvent.change(input, {
+        target: { value: 'Test' },
+      });
+      expect(input.value).toEqual('Test');
+      expect(onChange).toHaveBeenCalledTimes(1);
+    });
+
+    test('onBlur is being called', () => {
+      const onBlur = jest.fn();
+      const { getByPlaceholderText } = render(
+        <Grommet>
+          <TextArea name="item" placeholder="item" onBlur={onBlur} />
+        </Grommet>,
+      );
+      fireEvent.blur(getByPlaceholderText('item'));
+      expect(onBlur).toHaveBeenCalledTimes(1);
+    });
   });
 });

@@ -178,6 +178,16 @@ Defaults to
 small
 ```
 
+**radioButton.font.weight**
+
+The font weight of the label. Expects `number | string`.
+
+Defaults to
+
+```
+undefined
+```
+
 **radioButton.size**
 
 The size of the RadioButton. Expects `string`.
