@@ -88,7 +88,7 @@ const ScanChart = props => {
                           background="dark-3"
                         >
                           <Text size="large">{data[active].value}</Text>
-                          {/* className="chromatic-ignore" is used for this 
+                          {/* className="chromatic-ignore" is used for this
                             component testing. grommet doesn't reccomend the
                             usage of className */}
                           <Text className="chromatic-ignore" size="small">
@@ -123,5 +123,5 @@ const ScanChart = props => {
 };
 
 storiesOf('Chart', module).add('Scan', () => (
-  <ScanChart data={generateData(30, 100)} max={100} />
+  <ScanChart data={generateData()(30, 100)} max={100} />
 ));

@@ -1,5 +1,5 @@
 // generate a data set
-export const generateData = (count, max) => {
+export const generateData = () => (count, max) => {
   const data = [];
   let value = max / 2;
   let increase = true;
