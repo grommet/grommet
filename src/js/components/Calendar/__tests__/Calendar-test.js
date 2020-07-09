@@ -192,13 +192,13 @@ describe('Calendar', () => {
     // Change the Calendar from January to December
     fireEvent.click(getByLabelText('December 2019'));
     act(() => {
-      jest.advanceTimersByTime(400);
+      jest.runAllTimers();
     });
     expect(container.firstChild).toMatchSnapshot();
     // Change the Calendar back to January
     fireEvent.click(getByLabelText('January 2020'));
     act(() => {
-      jest.advanceTimersByTime(400);
+      jest.runAllTimers();
     });
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -218,7 +218,7 @@ describe('Calendar', () => {
       ],
     ]);
     fireEvent.click(getByText('20'));
-    expect(onSelect).toHaveBeenNthCalledWith(2, [
+    expect(onSelect).toBeCalledWith([
       [
         expect.stringMatching(/^2020-01-11T/),
         expect.stringMatching(/^2020-01-20T/),
@@ -308,12 +308,9 @@ describe('Calendar', () => {
       </Grommet>,
     );
     fireEvent.click(getByLabelText('Fri Jan 03 2020'));
-    expect(onSelect).toHaveBeenNthCalledWith(
-      1,
-      expect.stringMatching(/^2020-01-03T/),
-    );
+    expect(onSelect).toBeCalledWith(expect.stringMatching(/^2020-01-03T/));
     fireEvent.click(getByLabelText('Fri Jan 03 2020'));
-    expect(onSelect).toHaveBeenNthCalledWith(2, undefined);
+    expect(onSelect).toBeCalledWith(undefined);
   });
 
   test('select date with same end date', () => {
