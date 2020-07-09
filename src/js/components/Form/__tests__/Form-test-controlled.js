@@ -1,7 +1,8 @@
 import React from 'react';
-import { cleanup, render, fireEvent } from '@testing-library/react';
+
 import 'jest-styled-components';
 
+import { cleanup, render, fireEvent } from '@testing-library/react';
 import { Grommet } from '../../Grommet';
 import { Form } from '..';
 import { FormField } from '../../FormField';
@@ -221,5 +222,40 @@ describe('Form controlled', () => {
       }),
     );
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('controlled reset', () => {
+    const onSubmit = jest.fn();
+    const onReset = jest.fn();
+    const Test = () => {
+      const [value, setValue] = React.useState({ test: '' });
+      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
+      return (
+        <Grommet>
+          <Form
+            onReset={onReset}
+            onChange={onChange}
+            value={value}
+            onSubmit={onSubmit}
+          >
+            <FormField
+              a11yTitle="test"
+              name="test"
+              required
+              placeholder="test input"
+            />
+            <Button type="reset" primary label="Reset" />
+          </Form>
+        </Grommet>
+      );
+    };
+    const { getByPlaceholderText, getByText, queryByText } = render(<Test />);
+    fireEvent.change(getByPlaceholderText('test input'), {
+      target: { value: 'Input has changed' },
+    });
+    expect(getByPlaceholderText('test input').value).toBe('Input has changed');
+    fireEvent.click(getByText('Reset'));
+    expect(onReset).toBeCalledTimes(1);
+    expect(queryByText('Input has changed')).toBeNull();
   });
 });
