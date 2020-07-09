@@ -4886,6 +4886,12 @@ with the same name so form submissions work.",
     "name": "RadioButtonGroup",
     "properties": Array [
       Object {
+        "description": "Custom label to be used by screen readers.
+      When provided, an aria-label will be added to the element.",
+        "format": "string",
+        "name": "a11yTitle",
+      },
+      Object {
         "description": "Function that will be called to render the visual representation.
       It will be passed an object indicating whether the button is checked. It
       should return a react element.

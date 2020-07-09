@@ -11,6 +11,15 @@ import { RadioButtonGroup } from 'grommet';
 
 ## Properties
 
+**a11yTitle**
+
+Custom label to be used by screen readers.
+      When provided, an aria-label will be added to the element.
+
+```
+string
+```
+
 **children**
 
 Function that will be called to render the visual representation.
