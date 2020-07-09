@@ -25,7 +25,7 @@ export var doc = function doc(Menu) {
     dropProps: PropTypes.object.description('Any valid Drop prop.'),
     justifyContent: PropTypes.oneOf(['start', 'center', 'end', 'between', 'around', 'stretch']).description('How to align the contents along the row axis.').defaultValue('start'),
     icon: PropTypes.oneOfType([PropTypes.bool, PropTypes.node]).description('Indicates the icon shown as a control to open it.'),
-    items: PropTypes.arrayOf(PropTypes.object).description("Menu items to be placed inside the drop down.\nThe object values can be any Button prop, for example: label and onClick.").isRequired,
+    items: PropTypes.arrayOf(PropTypes.object).description("Menu items to be placed inside the drop down.\nThe object values can be any Button prop, \nfor example: label, onClick, and href.").isRequired,
     label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).description('Indicates the label shown as a control to open it.'),
     messages: PropTypes.shape({
       closeMenu: PropTypes.string,
