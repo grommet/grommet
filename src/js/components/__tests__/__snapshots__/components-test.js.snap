@@ -4855,7 +4855,8 @@ node",
       Object {
         "defaultValue": Array [],
         "description": "Menu items to be placed inside the drop down.
-The object values can be any Button prop, for example: label and onClick.",
+The object values can be any Button prop, 
+for example: label, onClick, and href.",
         "format": "[object]",
         "name": "items",
         "required": true,
@@ -5282,6 +5283,12 @@ end",
     "intrinsicElement": "input",
     "name": "RadioButton",
     "properties": Array [
+      Object {
+        "description": "Custom label to be used by screen readers.
+      When provided, an aria-label will be added to the element.",
+        "format": "string",
+        "name": "a11yTitle",
+      },
       Object {
         "description": "Same as React <input checked={} />",
         "format": "boolean",
