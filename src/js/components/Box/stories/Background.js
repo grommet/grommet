@@ -36,7 +36,6 @@ const BackgroundBox = () => (
           color: 'accent-2',
           image:
             'url(https://images.unsplash.com/photo-1487088678257-3a541e6e3922?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2167&q=80)',
-          opacity: 'medium',
         }}
       >
         image + color
