@@ -5284,6 +5284,12 @@ end",
     "name": "RadioButton",
     "properties": Array [
       Object {
+        "description": "Custom label to be used by screen readers.
+      When provided, an aria-label will be added to the element.",
+        "format": "string",
+        "name": "a11yTitle",
+      },
+      Object {
         "description": "Same as React <input checked={} />",
         "format": "boolean",
         "name": "checked",
