@@ -1,14 +1,30 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { cleanup, fireEvent, render } from '@testing-library/react';
-import 'jest-styled-components';
-import { Add, Next } from 'grommet-icons';
 
+import 'jest-styled-components';
+import 'jest-axe/extend-expect';
+import 'regenerator-runtime/runtime';
+
+import { axe } from 'jest-axe';
+import { Add, Next } from 'grommet-icons';
+import { cleanup, fireEvent, render } from '@testing-library/react';
 import { findAllByType } from '../../../utils';
 import { Grommet, Button, Text } from '../..';
 
 describe('Button', () => {
   afterEach(cleanup);
+
+  test('should have no accessibility violations', async () => {
+    const { container, getByText } = render(
+      <Grommet>
+        <Button a11yTitle="Test button" label="Test" onClick={() => {}} />
+      </Grommet>,
+    );
+
+    fireEvent.click(getByText('Test'));
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 
   test('basic', () => {
     const component = renderer.create(
@@ -283,5 +299,20 @@ describe('Button', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+  });
+
+  test(`disabled state cursor should indicate the button cannot be 
+  clicked`, () => {
+    const { getByText } = render(
+      <Grommet>
+        <Button disabled label="Button" />
+      </Grommet>,
+    );
+
+    const button = getByText('Button');
+    // eslint-disable-next-line no-underscore-dangle
+    const cursorStyle = window.getComputedStyle(button)._values.cursor;
+    expect(cursorStyle).not.toBe('pointer');
+    expect(cursorStyle).toBe('default');
   });
 });
