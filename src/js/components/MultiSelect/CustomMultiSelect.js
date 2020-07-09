@@ -15,6 +15,7 @@ const CustomMultiSelect = ({
   placeholder,
   renderEmptySelected,
   width,
+  height,
   custom,
   isExcluded,
   setIncExcVal,
@@ -51,12 +52,16 @@ const CustomMultiSelect = ({
   };
 
   return (
-    <Box {...theme.multiselect.custom.wrapper}>
+    <Box {...theme.multiselect.custom.wrapper} height={height}>
       <Box {...theme.multiselect.custom.textAreaWrap} width={width}>
         <Text {...theme.multiselect.custom.label}>
           {(custom && custom.label) || 'Label'}
         </Text>
-        <Box {...theme.multiselect.custom.textAreaContainer} width={width}>
+        <Box
+          {...theme.multiselect.custom.textAreaContainer}
+          width={width}
+          style={{ height: '100%' }}
+        >
           <TextArea
             value={textAreaValue}
             onChange={event => setTextAreaValue(event.target.value)}
@@ -88,6 +93,7 @@ const CustomMultiSelect = ({
           clearAll={clearAll}
           renderEmptySelected={renderEmptySelected}
           width={width}
+          height={height}
           inclusionExclusion={inclusionExclusion}
         />
       </Box>

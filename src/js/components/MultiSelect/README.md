@@ -512,6 +512,14 @@ Width for the multiselect dropdown Defaults to `auto`.
 string
 ```
 
+**height**
+
+Height for the multiselect dropdown option panel Defaults to `medium`.
+
+```
+string
+```
+
 **onValueChange**
 
 Function that will be called when the user selects an option.

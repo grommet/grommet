@@ -6,7 +6,7 @@ import { FormClose } from 'grommet-icons/icons/FormClose';
 import { Box } from '../Box';
 import { Text } from '../Text';
 
-import { OptionBox, CheckBoxWrapper, CheckBox } from './StyledMultiSelect';
+import { CheckBoxWrapper, CheckBox } from './StyledMultiSelect';
 
 const OptionWithCheckControl = ({
   selected,
@@ -50,7 +50,7 @@ const OptionWithCheckControl = ({
   };
 
   return (
-    <OptionBox {...selectOptionsStyle} selected={selected}>
+    <Box {...selectOptionsStyle} selected={selected}>
       <Box {...theme.multiselect.option}>
         <Box direction="row">
           {!inclusionExclusion && renderCheckbox('check', null)}
@@ -69,7 +69,7 @@ const OptionWithCheckControl = ({
           </Box>
         )}
       </Box>
-    </OptionBox>
+    </Box>
   );
 }
 

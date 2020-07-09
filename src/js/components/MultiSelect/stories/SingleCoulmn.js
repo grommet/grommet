@@ -24,6 +24,7 @@ const Example = () => {
         onValueChange={nextValue => setValue(nextValue)}
         layout="single-column"
         width="medium"
+        height="small"
         searchPlaceholder="Search"
         searchable
         withSelectAll

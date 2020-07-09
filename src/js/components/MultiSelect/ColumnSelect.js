@@ -7,7 +7,7 @@ import { InfiniteScroll } from '../InfiniteScroll';
 import { Text } from '../Text';
 import { Box } from '../Box';
 
-import { OptionBox, OptionsBox, SelectOption } from './StyledMultiSelect';
+import { OptionsBox, SelectOption } from './StyledMultiSelect';
 import { OptionWithCheckControl } from './OptionWithCheckControl';
 import { OptionChips } from './OptionChips';
 import { ControlButton } from './ControlButton';
@@ -31,6 +31,7 @@ const ColumnSelect = ({
   setValues,
   layout,
   width,
+  height,
   emptySearchMessage,
   showSelectAll,
   showOptionChips,
@@ -68,6 +69,7 @@ const ColumnSelect = ({
   const renderOptionChips = () => (
     <OptionChips
       width={width}
+      height={height || 'small'}
       options={options}
       value={value}
       isSelected={isSelected}
@@ -91,6 +93,7 @@ const ColumnSelect = ({
         placeholder={searchPlaceholder}
         renderEmptySelected={renderEmptySelected}
         width={width}
+        height={height}
         custom={custom}
         isExcluded={isExcluded}
         setIncExcVal={setIncExcVal}
@@ -109,10 +112,15 @@ const ColumnSelect = ({
           layout={layout}
         />
       )}
-      <Box direction="row">
-        <Box width={width}>
+      <Box direction="row" height={height || 'small'}>
+        <Box
+          width={width}
+          border={[
+            { side: 'bottom', color: theme.multiselect.rightPanel.border },
+          ]}
+        >
           <OptionsBox role="menubar" tabIndex="-1">
-            {options && options.length > 0 ? (
+            {options.length > 0 ? (
               <InfiniteScroll
                 items={options}
                 step={theme.select.step}
@@ -166,7 +174,7 @@ const ColumnSelect = ({
                         ref={optionRef}
                         tabIndex="-1"
                         role="menuitem"
-                        hoverIndicator="light-5"
+                        hoverIndicator={theme.select.activeColor}
                         disabled={optionDisabled || undefined}
                         active={optionActive}
                         selected={optionSelected}
@@ -207,11 +215,11 @@ const ColumnSelect = ({
                 disabled
                 option="No values available"
               >
-                <OptionBox {...selectOptionsStyle}>
+                <Box {...selectOptionsStyle}>
                   <Text {...theme.select.container.text}>
                     {emptySearchMessage || 'No values available'}
                   </Text>
-                </OptionBox>
+                </Box>
               </SelectOption>
             )}
           </OptionsBox>

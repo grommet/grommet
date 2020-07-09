@@ -19,6 +19,8 @@ const OptionsBox = styled.div`
 const SelectOption = styled(Button)`
   display: block;
   width: 100%;
+  background: ${props => props.active ?
+    props.theme.select.activeColor : 'transparent'};
 `;
 
 const OptionBox = styled(Box)`
@@ -26,9 +28,10 @@ const OptionBox = styled(Box)`
 `;
 
 const CheckBox = styled(Box)`
-  ${props =>
+    ${props =>
     props.theme.multiselect.checkbox.check &&
-    props.theme.multiselect.checkbox.check.extend};
+    props.theme.multiselect.checkbox.check.extend
+  };
 `;
 
 const OptionWrapper = styled(Box)`

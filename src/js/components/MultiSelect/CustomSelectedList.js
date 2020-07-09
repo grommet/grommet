@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 import { Close } from 'grommet-icons/icons/Close';
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -22,6 +22,7 @@ const SelectedList = ({
   clearAll,
   renderEmptySelected,
   width,
+  height,
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const [search, setSearch] = React.useState('');
@@ -43,16 +44,22 @@ const SelectedList = ({
     </Button>
   );
 
+  const Sticky = styled(Box)`
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  `;
+
   return (
     <OptionsBox style={{ height: '100%' }}>
       {selectedItems && selectedItems.length > 0 && (
         <>
-          <Box {...theme.multiselect.rightPanel.incExcHeader.box}>
+          <Sticky {...theme.multiselect.rightPanel.incExcHeader.box}>
             <Text {...theme.multiselect.rightPanel.incExcHeader.text}>
               {isExcluded ? 'Excluded List' : 'Included List'}
             </Text>
             {renderClearButton()}
-          </Box>
+          </Sticky>
           {renderSearch && (
             <Searchbox
               layout={layout}
@@ -61,6 +68,7 @@ const SelectedList = ({
               onValueChange={val => setSearch(val)}
             />
           )}
+
           <OptionWrapper
             twoColumnLayout={layout === 'double-column'}
             width={width}
@@ -94,9 +102,11 @@ const SelectedList = ({
           </OptionWrapper>
         </>
       )}
-      <Box align="center" justify="center" fill>
-        {!selectedItems.length && renderEmptySelected}
-      </Box>
+      {!selectedItems.length && (
+        <Box align="center" justify="center" fill>
+          {renderEmptySelected}
+        </Box>
+      )}
     </OptionsBox>
   );
 };

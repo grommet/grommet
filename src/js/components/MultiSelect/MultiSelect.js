@@ -10,6 +10,7 @@ import { applyKey } from './utils';
 
 const MultiSelect = ({
   width,
+  height,
   options,
   value,
   labelKey,
@@ -38,9 +39,9 @@ const MultiSelect = ({
     setSelectState,
   } = useCustomSelectState(options, value);
 
-  useEffect(() => {
-    if (withInclusionExclusion && value.length === 0) onIncExcChange(null);
-  }, [onIncExcChange, value, withInclusionExclusion]);
+  // useEffect(() => {
+  //   if (withInclusionExclusion && value.length === 0) onIncExcChange(null);
+  // }, [onIncExcChange, value, withInclusionExclusion]);
 
   const onCancelClick = () => {
     onValueChange(previousValue);
@@ -82,6 +83,7 @@ const MultiSelect = ({
         <ColumnSelect
           layout={layout}
           width={width}
+          height={height}
           onUpdate={() => setSelectState({ open: false, previousValue: value })}
           onCancel={onCancelClick}
           setValues={nextValue => onSelectValueChange(nextValue)}

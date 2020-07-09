@@ -8,6 +8,12 @@ const Example = () => {
     'google.com',
     'media.net',
     'testing.com',
+    'google.com',
+    'media.net',
+    'testing.com',
+    'google.com',
+    'media.net',
+    'testing.com',
   ]);
   const [isExcluded, setIncExc] = useState(null);
 
@@ -18,6 +24,7 @@ const Example = () => {
         onValueChange={nextValue => setValue(nextValue)}
         layout="double-column"
         width="medium"
+        height="large"
         searchPlaceholder="Search"
         searchable
         custom={{ label: 'Enter one domain per line' }}

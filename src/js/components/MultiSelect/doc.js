@@ -226,6 +226,9 @@ export const doc = MultiSelect => {
       .description(`Render custom select component`),
     width: PropTypes.string.description(`Width for the multiselect dropdown`)
       .defaultValue('auto'),
+    height: PropTypes.string
+      .description(`Height for the multiselect dropdown option panel`)
+      .defaultValue('medium'),
     onValueChange: PropTypes.func.description(
       'Function that will be called when the user selects an option.',
     ),

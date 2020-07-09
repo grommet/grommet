@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 import { Close } from 'grommet-icons/icons/Close';
 
 import { Box } from '../Box';
@@ -21,6 +21,7 @@ const OptionChips = ({
   selectOption,
   clearAll,
   width,
+  height,
   inclusionExclusion,
   isExcluded,
   renderEmptySelected,
@@ -47,17 +48,22 @@ const OptionChips = ({
       return acc;
     }, []);
 
+  const IncExcHeader = styled(Box)`
+    position: sticky;
+    top: 0;
+  `;
+
   return (
     <OptionsBox>
       {Array.isArray(value) && value.length > 0 && (
-        <>
+        <Box height={{ max: layout === 'single-column' ? height : 'auto' }}>
           {inclusionExclusion && isExcluded !== null && (
-            <Box {...theme.multiselect.rightPanel.incExcHeader.box}>
+            <IncExcHeader {...theme.multiselect.rightPanel.incExcHeader.box}>
               <Text {...theme.multiselect.rightPanel.incExcHeader.text}>
                 {isExcluded ? 'Excluded' : 'Included'} List
               </Text>
               {renderClearButton()}
-            </Box>
+            </IncExcHeader>
           )}
           <OptionWrapper
             twoColumnLayout={layout === 'double-column'}
@@ -85,7 +91,7 @@ const OptionChips = ({
             ))}
             {!inclusionExclusion && renderClearButton()}
           </OptionWrapper>
-        </>
+        </Box>
       )}
       {(!Array.isArray(value) || !value.length) && renderEmptySelected}
     </OptionsBox>

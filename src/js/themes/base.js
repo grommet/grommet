@@ -913,6 +913,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           direction: 'row',
           extend: props => ({
             padding: props.twoColumnLayout ? 0 : `${baseSpacing / 1.618}px`,
+            'border-bottom': props.twoColumnLayout
+              ? 'none'
+              : '1px solid #D9DBE5',
           }),
         },
         option: {
@@ -1046,7 +1049,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           weight: 600,
         },
         textAreaContainer: {
-          height: 'medium',
           margin: { vertical: 'medium' },
         },
         actions: {
@@ -1120,6 +1122,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     select: {
       // background: undefined,
       background: 'dark-2',
+      activeColor: lightColors[4],
       container: {
         // extend: undefined,
       },
