@@ -1832,7 +1832,7 @@ exports[`DataTable click 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 bJymoW StyledDataTable-xrlyjm-0 hJcOxq"
+    class="StyledTable-sc-1m3u5g-6 bJymoW StyledDataTable-xrlyjm-0 dqmKUB"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 hOGMbn"
@@ -2488,7 +2488,7 @@ exports[`DataTable groupBy 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 bJymoW StyledDataTable-xrlyjm-0 hJcOxq"
+    class="StyledTable-sc-1m3u5g-6 bJymoW StyledDataTable-xrlyjm-0 dqmKUB"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 hOGMbn"
@@ -3402,7 +3402,7 @@ exports[`DataTable groupBy property 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 bJymoW StyledDataTable-xrlyjm-0 hJcOxq"
+    class="StyledTable-sc-1m3u5g-6 bJymoW StyledDataTable-xrlyjm-0 dqmKUB"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 hOGMbn"
@@ -3798,7 +3798,7 @@ exports[`DataTable onSort 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 bJymoW StyledDataTable-xrlyjm-0 hJcOxq"
+    class="StyledTable-sc-1m3u5g-6 bJymoW StyledDataTable-xrlyjm-0 dqmKUB"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 hOGMbn"
@@ -5881,7 +5881,7 @@ exports[`DataTable search 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 bJymoW StyledDataTable-xrlyjm-0 hJcOxq"
+    class="StyledTable-sc-1m3u5g-6 bJymoW StyledDataTable-xrlyjm-0 dqmKUB"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 hOGMbn"
@@ -6310,7 +6310,7 @@ exports[`DataTable sortable 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <table
-    class="StyledTable-sc-1m3u5g-6 bJymoW StyledDataTable-xrlyjm-0 hJcOxq"
+    class="StyledTable-sc-1m3u5g-6 bJymoW StyledDataTable-xrlyjm-0 dqmKUB"
   >
     <thead
       class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 hOGMbn"
