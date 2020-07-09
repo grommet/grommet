@@ -344,7 +344,7 @@ describe('Calendar Keyboard events', () => {
       return (
         <Grommet>
           <Calendar
-            bounds={['2020-01-14', '2020-01-16']}
+            bounds={['2020-01-01', '2020-01-31']}
             date={DATE}
             onSelect={onSelect}
             animate={false}
