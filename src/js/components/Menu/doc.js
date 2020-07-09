@@ -74,7 +74,8 @@ one of top or bottom should be specified.`,
     ),
     items: PropTypes.arrayOf(PropTypes.object).description(
       `Menu items to be placed inside the drop down.
-The object values can be any Button prop, for example: label and onClick.`,
+The object values can be any Button prop, 
+for example: label, onClick, and href.`,
     ).isRequired,
     label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).description(
       'Indicates the label shown as a control to open it.',
@@ -125,8 +126,15 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'menu.icons.down': {
-    description: 'The icon to show to the right of the label.',
+    description: `The icon to show to the right of the label when menu is 
+    closed.`,
     type: 'React.Element',
     defaultValue: '<FormDown />',
+  },
+  'menu.icons.up': {
+    description: `The icon to show to the right of the label when menu is 
+    opened.`,
+    type: 'undefined | React.Element',
+    defaultValue: 'undefined',
   },
 };
