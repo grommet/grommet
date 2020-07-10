@@ -4,7 +4,10 @@ import { FormContext } from '../Form/FormContext';
 import { StyledRangeInput } from './StyledRangeInput';
 
 const RangeInput = forwardRef(
-  ({ name, onChange, onFocus, onBlur, value: valueProp, ...rest }, ref) => {
+  (
+    { a11yTitle, name, onChange, onFocus, onBlur, value: valueProp, ...rest },
+    ref,
+  ) => {
     const formContext = useContext(FormContext);
 
     const [value, setValue] = formContext.useFormInput(name, valueProp);
@@ -12,6 +15,7 @@ const RangeInput = forwardRef(
     const [focus, setFocus] = useState();
     return (
       <StyledRangeInput
+        aria-label={a11yTitle}
         ref={ref}
         name={name}
         focus={focus}

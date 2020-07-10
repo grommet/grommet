@@ -71,6 +71,20 @@ describe('Tabs', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
 
+  test('Custom Tab component', () => {
+    const CustomTab = () => <Tab title="Tab 1">Tab body 1</Tab>;
+    const { container } = render(
+      <Grommet>
+        <Tabs>
+          <CustomTab />
+          <Tab title="Tab 2">Tab body 2</Tab>
+        </Tabs>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('change to second tab', () => {
     const onActive = jest.fn();
     const { getByText, container } = render(

@@ -1,6 +1,8 @@
 import * as React from "react";
+import { A11yTitleType } from "../../utils";
 
 export interface RadioButtonProps {
+  a11yTitle?: A11yTitleType;
   checked?: boolean;
   disabled?: boolean;
   id?: string;
