@@ -15,5 +15,6 @@ export interface DropProps {
 }
 
 declare const Drop: React.ComponentClass<DropProps & JSX.IntrinsicElements['div']>;
+export type DropType = DropProps & JSX.IntrinsicElements['div'];
 
 export { Drop };
