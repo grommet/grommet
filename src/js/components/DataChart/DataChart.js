@@ -82,7 +82,13 @@ const DataChart = forwardRef(
       let pointIndex = 0;
       Object.values(properties)
         // only if we're charting it
-        .filter(p => charts.find(c => c.property === p.property))
+        .filter(p =>
+          charts.find(c =>
+            Array.isArray(c.property)
+              ? c.property.includes(p.property)
+              : c.property === p.property,
+          ),
+        )
         .forEach(prop => {
           const { color, point } = prop;
           const propertyStyle = { color, point };
