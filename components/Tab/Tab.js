@@ -30,14 +30,15 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 var Tab = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
-  var children = _ref.children,
+  var disabled = _ref.disabled,
+      children = _ref.children,
       icon = _ref.icon,
       plain = _ref.plain,
       title = _ref.title,
       onMouseOver = _ref.onMouseOver,
       onMouseOut = _ref.onMouseOut,
       reverse = _ref.reverse,
-      rest = _objectWithoutPropertiesLoose(_ref, ["children", "icon", "plain", "title", "onMouseOver", "onMouseOut", "reverse"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["disabled", "children", "icon", "plain", "title", "onMouseOver", "onMouseOut", "reverse"]);
 
   var _useContext = (0, _react.useContext)(_TabsContext.TabsContext),
       active = _useContext.active,
@@ -90,11 +91,18 @@ var Tab = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     onActivate();
   };
 
+  if (active && disabled) {
+    console.warn( // eslint-disable-next-line max-len
+    "Warning: Tab props 'active' and 'disabled' have both been set to TRUE on the same Tab resulting in an interesting Tab state. Is this your intent?");
+  }
+
   if (!plain) {
     if (typeof title !== 'string') {
       normalizedTitle = title;
     } else if (active) {
       normalizedTitle = /*#__PURE__*/_react["default"].createElement(_Text.Text, theme.tab.active, title);
+    } else if (disabled && theme.tab.disabled) {
+      normalizedTitle = /*#__PURE__*/_react["default"].createElement(_Text.Text, theme.tab.disabled, title);
     } else {
       normalizedTitle = /*#__PURE__*/_react["default"].createElement(_Text.Text, {
         color: over ? theme.tab.hover.color : theme.tab.color
@@ -106,6 +114,8 @@ var Tab = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
       if (active) {
         borderColor = theme.tab.border.active.color || borderColor;
+      } else if (disabled && theme.tab.border.disabled) {
+        borderColor = theme.tab.border.disabled.color || borderColor;
       } else if (over) {
         borderColor = theme.tab.border.hover.color || borderColor;
       }
@@ -127,6 +137,10 @@ var Tab = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var renderIcon = function renderIcon(iconProp) {
     if (active) {
       return /*#__PURE__*/_react["default"].cloneElement(iconProp, _extends({}, theme.tab.active));
+    }
+
+    if (disabled) {
+      return /*#__PURE__*/_react["default"].cloneElement(iconProp, _extends({}, theme.tab.disabled));
     }
 
     return /*#__PURE__*/_react["default"].cloneElement(iconProp, {
@@ -158,7 +172,8 @@ var Tab = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     plain: true,
     role: "tab",
     "aria-selected": active,
-    "aria-expanded": active
+    "aria-expanded": active,
+    disabled: disabled
   }, rest, {
     onClick: onClickTab,
     onMouseOver: onMouseOverTab,
@@ -178,6 +193,7 @@ var Tab = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     }
   }), /*#__PURE__*/_react["default"].createElement(_StyledTab.StyledTab, _extends({
     as: _Box.Box,
+    disabled: disabled,
     plain: plain
   }, withIconStyles, tabStyles), first, second));
 });

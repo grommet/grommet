@@ -34,10 +34,20 @@ var themeDoc = {
     type: 'object',
     defaultValue: "{\n      side: 'bottom',\n      size: 'small',\n      color: {\n        dark: 'accent-1',\n        light: 'brand',\n      },\n      active: {\n        color: {\n          dark: 'white',\n          light: 'black',\n        },\n      },\n      hover: {\n        color: {\n          dark: 'white',\n          light: 'black',\n        },\n        // extend: undefined,\n      },\n    }"
   },
+  'tab.border.disabled.color': {
+    description: 'border color of the Tab when disabled',
+    type: 'string | {dark: string, light: string}',
+    defaultValue: undefined
+  },
   'tab.color': {
     description: 'text color for the Tab.',
-    type: 'string',
+    type: 'string | {dark: string, light: string}',
     defaultValue: 'control'
+  },
+  'tab.disabled.color': {
+    description: 'text color of the Tab when disabled.',
+    type: 'string | {dark: string, light: string}',
+    defaultValue: undefined
   },
   'tab.hover.background': {
     description: 'background style of the Tab on hover.',

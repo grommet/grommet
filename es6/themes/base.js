@@ -1050,6 +1050,8 @@ export var generate = function generate(baseSpacing, scale) {
             light: 'black'
           }
         },
+        disabled: {// color: undefined,
+        },
         hover: {
           color: {
             dark: 'white',
@@ -1059,6 +1061,9 @@ export var generate = function generate(baseSpacing, scale) {
         }
       },
       color: 'control',
+      // disabled: {
+      //   color: undefined,
+      // },
       // extend: undefined,
       hover: {
         // background: undefined,

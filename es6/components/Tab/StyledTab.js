@@ -11,8 +11,10 @@ var tabHoverStyle = css(["&:hover{", " ", " ", ";}"], function (props) {
 var StyledTab = styled.div.withConfig({
   displayName: "StyledTab",
   componentId: "sc-1nnwnsb-0"
-})(["", " ", " ", ""], genericStyles, function (props) {
-  return !props.plain && props.theme.tab.hover && tabHoverStyle;
+})(["", " ", " ", " ", ""], genericStyles, function (props) {
+  return !props.plain && !props.disabled && props.theme.tab.hover && tabHoverStyle;
+}, function (props) {
+  return props.disabled && props.theme.tab.disabled;
 }, function (props) {
   return props.theme.tab.extend;
 });
