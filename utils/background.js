@@ -143,8 +143,12 @@ var backgroundStyle = function backgroundStyle(backgroundArg, theme, textColorAr
       textColor = _backgroundAndTextCol[1];
 
   if (background.image) {
-    // allow both background color and image, in case the image doesn't fill
-    return (0, _styledComponents.css)(["background-image:", ";background-repeat:", ";background-position:", ";background-size:", ";", " ", ""], background.image, background.repeat || 'no-repeat', background.position || 'center center', background.size || 'cover', backgroundColor ? "background-color: " + backgroundColor + ";" : '', textColor ? "color: " + textColor + ";" : '');
+    var backgroundStyles = "\n      " + (backgroundColor ? "background-color: " + backgroundColor + ";" : '') + "\n      background-image: " + background.image + ";\n      background-repeat: " + (background.repeat || 'no-repeat') + ";\n      background-position: " + (background.position || 'center center') + ";\n      background-size: " + (background.size || 'cover') + ";\n    "; // allow both background color and image, in case the image doesn't fill
+    // when image and opacity are used together, we need to use pseudo :before
+    // to ensure that only image and background color are affected by opacity
+    // but not the container contents
+
+    return (0, _styledComponents.css)(["", " ", ""], textColor ? "color: " + textColor + ";" : '', !background.opacity ? backgroundStyles : "position: relative;\n        z-index: 0;\n        &:before {\n          content: '';\n          position: absolute;\n          top: 0;\n          right: 0;\n          left: 0;\n          bottom: 0;\n          z-index: -1;\n          " + backgroundStyles + "\n          opacity: " + (background.opacity === true ? theme.global.opacity.medium : theme.global.opacity[background.opacity] || background.opacity) + ";\n        }");
   }
 
   if (backgroundColor) {

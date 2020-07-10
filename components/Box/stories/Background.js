@@ -37,7 +37,8 @@ var BackgroundBox = function BackgroundBox() {
   }, "brand object"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "small",
     background: {
-      image: 'url(https://images.unsplash.com/photo-1487088678257-3a541e6e3922?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2167&q=80)'
+      image: 'url(https://images.unsplash.com/photo-1487088678257-3a541e6e3922?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2167&q=80)',
+      opacity: 'strong'
     }
   }, "image"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "small",
