@@ -24,7 +24,8 @@ const BackgroundBox = () => (
         pad="small"
         background={{
           image:
-            'url(http://librelogo.org/wp-content/uploads/2014/04/gradient2.png)',
+            'url(https://images.unsplash.com/photo-1487088678257-3a541e6e3922?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2167&q=80)',
+          opacity: 'strong',
         }}
       >
         image
@@ -34,7 +35,7 @@ const BackgroundBox = () => (
         background={{
           color: 'accent-2',
           image:
-            'url(http://librelogo.org/wp-content/uploads/2014/04/gradient2.png)',
+            'url(https://images.unsplash.com/photo-1487088678257-3a541e6e3922?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2167&q=80)',
         }}
       >
         image + color

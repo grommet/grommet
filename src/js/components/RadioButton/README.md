@@ -14,6 +14,15 @@ import { RadioButton } from 'grommet';
 
 ## Properties
 
+**a11yTitle**
+
+Custom label to be used by screen readers.
+      When provided, an aria-label will be added to the element.
+
+```
+string
+```
+
 **checked**
 
 Same as React <input checked={} />
@@ -86,6 +95,17 @@ input
 ```
 ## Theme
   
+**global.colors.control**
+
+The default color of the border surrounding 
+    the checked icon in RadioButton checked state. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+{ dark: 'accent-1', light: 'brand'}
+```
+
 **radioButton.border.color**
 
 The color of the border of the Radio Button. Expects `string | { dark: string, light: string }`.
@@ -136,6 +156,17 @@ Defaults to
 100%
 ```
 
+**radioButton.color**
+
+The color of the border surrounding the checked 
+    icon in RadioButton checked state. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
 **radioButton.extend**
 
 Any additional style for the RadioButton. Expects `string | (props) => {}`.
@@ -154,6 +185,16 @@ Defaults to
 
 ```
 small
+```
+
+**radioButton.font.weight**
+
+The font weight of the label. Expects `number | string`.
+
+Defaults to
+
+```
+undefined
 ```
 
 **radioButton.size**

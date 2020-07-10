@@ -441,6 +441,16 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   },
       //   extend: undefined,
       // },
+      // option: {
+      //   background: undefined,
+      //   border: undefined,
+      //   color: undefined,
+      //   padding: {
+      //     vertical: undefined,
+      //     horizontal: undefined,
+      //   },
+      //   extend: undefined,
+      // },
       active: {
         background: 'active-background',
         //   border: undefined,
@@ -508,6 +518,17 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       heading: { level: '4' }, // level ranges from 1-6
+    },
+    card: {
+      container: {
+        round: 'small',
+        elevation: 'small',
+      },
+      header: {},
+      body: {},
+      footer: {
+        background: 'background-contrast',
+      },
     },
     carousel: {
       icons: {
@@ -630,6 +651,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       baseline: 500,
     },
     dataTable: {
+      // body: {
+      //   extend: undefined,
+      // },
       groupHeader: {
         background: {
           dark: 'dark-2',
@@ -831,6 +855,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
       icons: {
         down: FormDown,
+        // up: undefined,
         // color: { dark: undefined, light: undefined },
       },
     },
@@ -859,6 +884,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // color: { dark: undefined, light: undefined },
         // extend: undefined,
       },
+      // color: undefined,
       hover: {
         border: {
           color: {
@@ -876,6 +902,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       gap: 'small',
       size: `${baseSpacing}px`,
+      font: {
+        // weight: undefined,
+      },
     },
     rangeInput: {
       // extend: undefined
@@ -986,6 +1015,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // gap: undefined,
       header: {
         // background: undefined,
+        // border: {
+        //   side: undefined,
+        //   size: undefined,
+        //   style: undefined,
+        //   color: undefined,
+        // },
         // extend: undefined,
       },
       panel: {

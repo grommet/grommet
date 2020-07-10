@@ -21,6 +21,7 @@ export interface ChartProps {
   onHover?: ((...args: any[]) => any);
   overflow?: boolean;
   pad?: EdgeSizeType | { horizontal?: EdgeSizeType, vertical?: EdgeSizeType };
+  point?: "circle" | "diamond" | "square" | "star" | "triangle" | "triangleDown";
   round?: boolean;
   size?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "fill" | "full" | {height?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "fill" | "full" | string,width?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "fill" | "full" | string} | string;
   thickness?: "hair" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "none" | string;

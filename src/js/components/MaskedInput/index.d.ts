@@ -21,5 +21,6 @@ export interface MaskedInputProps {
 declare const MaskedInput: React.ComponentClass<
     MaskedInputProps & Omit<JSX.IntrinsicElements['input'], keyof MaskedInputProps>
 >;
+export type MaskedInputType = MaskedInputProps & Omit<JSX.IntrinsicElements['input'], keyof MaskedInputProps>;
 
 export { MaskedInput };

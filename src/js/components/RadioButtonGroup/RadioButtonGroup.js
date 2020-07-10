@@ -32,11 +32,11 @@ const RadioButtonGroup = forwardRef(
     const options = useMemo(
       () =>
         optionsProp.map(o =>
-          typeof o === 'string'
+          typeof o !== 'object'
             ? {
                 disabled,
-                id: rest.id ? `${rest.id}-${o}` : o,
-                label: o,
+                id: rest.id ? `${rest.id}-${o}` : `${o}`, // force string
+                label: typeof o !== 'string' ? JSON.stringify(o) : o,
                 value: o,
               }
             : { disabled, ...o },
@@ -44,7 +44,7 @@ const RadioButtonGroup = forwardRef(
       [disabled, optionsProp, rest.id],
     );
 
-    const [value, setValue] = formContext.useFormContext(name, valueProp, '');
+    const [value, setValue] = formContext.useFormInput(name, valueProp, '');
 
     const [focus, setFocus] = useState();
 
@@ -131,7 +131,7 @@ const RadioButtonGroup = forwardRef(
                 onFocus={onFocus}
                 onBlur={onBlur}
                 onChange={event => {
-                  setValue(event.target.value);
+                  setValue(optionValue);
                   if (onChange) onChange(event);
                 }}
                 {...optionRest}

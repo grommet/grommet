@@ -1,6 +1,5 @@
 import React, {
   forwardRef,
-  isValidElement,
   useCallback,
   useContext,
   useEffect,
@@ -18,7 +17,12 @@ import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { FormContext } from '../Form/FormContext';
 import { AnnounceContext } from '../../contexts';
-import { isNodeAfterScroll, isNodeBeforeScroll, sizeStyle } from '../../utils';
+import {
+  isNodeAfterScroll,
+  isNodeBeforeScroll,
+  sizeStyle,
+  useForwardedRef,
+} from '../../utils';
 
 import {
   StyledTextInput,
@@ -100,14 +104,14 @@ const TextInput = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const announce = useContext(AnnounceContext);
     const formContext = useContext(FormContext);
-    const inputRef = useRef();
+    const inputRef = useForwardedRef(ref);
     const dropRef = useRef();
     const suggestionsRef = useRef();
     const suggestionRefs = {};
 
     // if this is a readOnly property, don't set a name with the form context
     // this allows Select to control the form context for the name.
-    const [value, setValue] = formContext.useFormContext(
+    const [value, setValue] = formContext.useFormInput(
       readOnly ? undefined : name,
       valueProp,
     );
@@ -237,7 +241,7 @@ const TextInput = forwardRef(
           onUp={event => onPreviousSuggestion(event)}
           onEnter={event => {
             // we stole the focus, give it back
-            (ref || inputRef).current.focus();
+            inputRef.current.focus();
             closeDrop();
             if (onSelect) {
               const adjustedEvent = event;
@@ -252,7 +256,7 @@ const TextInput = forwardRef(
             id={id ? `text-input-drop__${id}` : undefined}
             align={dropAlign}
             responsive={false}
-            target={dropTarget || (ref || inputRef).current}
+            target={dropTarget || inputRef.current}
             onClickOutside={closeDrop}
             onEsc={closeDrop}
             {...dropProps}
@@ -265,9 +269,22 @@ const TextInput = forwardRef(
               <StyledSuggestions>
                 <InfiniteScroll items={suggestions} step={theme.select.step}>
                   {(suggestion, index, itemRef) => {
-                    const plainLabel =
-                      typeof suggestion === 'object' &&
-                      typeof isValidElement(suggestion.label);
+                    // Determine whether the label is done as a child or
+                    // as an option Button kind property.
+                    const renderedLabel = renderLabel(suggestion);
+                    let child;
+                    if (typeof renderedLabel !== 'string')
+                      // must be an element rendered by suggestions.label
+                      child = renderedLabel;
+                    else if (!theme.button.option)
+                      // don't have theme support, need to layout here
+                      child = (
+                        <Box align="start" pad="small">
+                          {renderedLabel}
+                        </Box>
+                      );
+                    // if we have a child, turn on plain, and hoverIndicator
+
                     return (
                       <li
                         key={`${stringLabel(suggestion)}-${index}`}
@@ -282,17 +299,20 @@ const TextInput = forwardRef(
                             suggestionRefs[index] = r;
                           }}
                           fill
-                          hoverIndicator="background"
-                          plain={theme.button.default ? true : undefined}
+                          plain={!child ? undefined : true}
+                          align="start"
+                          kind={!child ? 'option' : undefined}
+                          hoverIndicator={!child ? undefined : 'background'}
+                          label={!child ? renderedLabel : undefined}
                           onClick={event => {
                             // we stole the focus, give it back
-                            (ref || inputRef).current.focus();
+                            inputRef.current.focus();
                             closeDrop();
                             if (onSelect) {
                               event.persist();
                               const adjustedEvent = event;
                               adjustedEvent.suggestion = suggestion;
-                              adjustedEvent.target = (ref || inputRef).current;
+                              adjustedEvent.target = inputRef.current;
                               onSelect(adjustedEvent);
                             }
                             setValue(suggestion);
@@ -300,13 +320,7 @@ const TextInput = forwardRef(
                           onMouseOver={() => setActiveSuggestionIndex(index)}
                           onFocus={() => setActiveSuggestionIndex(index)}
                         >
-                          {plainLabel ? (
-                            renderLabel(suggestion)
-                          ) : (
-                            <Box align="start" pad="small">
-                              {renderLabel(suggestion)}
-                            </Box>
-                          )}
+                          {child}
                         </Button>
                       </li>
                     );
@@ -338,7 +352,7 @@ const TextInput = forwardRef(
               event.persist();
               const adjustedEvent = event;
               adjustedEvent.suggestion = suggestions[activeSuggestionIndex];
-              adjustedEvent.target = (ref || inputRef).current;
+              adjustedEvent.target = inputRef.current;
               onSelect(adjustedEvent);
             }
           }}
@@ -380,7 +394,7 @@ const TextInput = forwardRef(
         >
           <StyledTextInput
             aria-label={a11yTitle}
-            ref={ref || inputRef}
+            ref={inputRef}
             id={id}
             name={name}
             autoComplete="off"

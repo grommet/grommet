@@ -13,6 +13,8 @@ import {
   RoundType,
   PadType,
 } from '../utils';
+
+import { BoxProps } from '../components/Box';
 import { TextProps } from '../components/Text';
 import { ReactComponentElement } from 'react';
 
@@ -264,7 +266,7 @@ export interface ThemeType {
     hover?: {
       color?: ColorType; // deprecated
       heading?: {
-        color?: ColorType; 
+        color?: ColorType;
       };
     };
     icons?: {
@@ -319,6 +321,7 @@ export interface ThemeType {
     default?: ButtonKindType;
     primary?: ButtonKindType;
     secondary?: ButtonKindType;
+    option?: ButtonKindType;
     active?: ButtonKindType & {
       default?: ButtonKindType;
       primary?: ButtonKindType;
@@ -396,6 +399,12 @@ export interface ThemeType {
       };
     };
   };
+  card?: {
+    container?:BoxProps;
+    header?:BoxProps;
+    body?:BoxProps;
+    footer?:BoxProps;
+  },
   carousel?: {
     animation?: {
       duration?: number;
@@ -517,6 +526,9 @@ export interface ThemeType {
     baseline?: number;
   };
   dataTable?: {
+    body?:{
+      extend?: ExtendType;
+    }
     header?: {};
     groupHeader?: {
       border?: {
@@ -586,6 +598,10 @@ export interface ThemeType {
       margin?: MarginType;
     };
     help?: {
+      color?: ColorType;
+      margin?: MarginType;
+    };
+    info?: {
       color?: ColorType;
       margin?: MarginType;
     };
@@ -793,6 +809,7 @@ export interface ThemeType {
     extend?: ExtendType;
     icons?: {
       down?: any;
+      up?: any;
       color?: ColorType;
     };
   };
@@ -837,6 +854,7 @@ export interface ThemeType {
     check?: {
       radius?: string;
     };
+    color?: ColorType;
     hover?: {
       border?: {
         color?: ColorType;
@@ -851,6 +869,9 @@ export interface ThemeType {
     };
     gap?: string;
     size?: string;
+    font?: {
+      weight?: number | string;
+    }
   };
   rangeInput?: {
     track?: {
@@ -899,10 +920,7 @@ export interface ThemeType {
       margin?: MarginType;
     };
     options?: {
-      container?: {
-        align?: string;
-        pad?: string;
-      };
+      container?: BoxProps;
       text?: {
         margin?: MarginType;
       };
@@ -945,6 +963,12 @@ export interface ThemeType {
     gap?: GapType;
     header?: {
       background?: BackgroundType;
+      border?: {
+        side?: string;
+        size?: string;
+        style?: string;
+        color?: ColorType;
+      };
       extend?: ExtendType;
     };
     panel?: {
@@ -985,6 +1009,7 @@ export interface ThemeType {
     };
   };
   text?: {
+    extend?: ExtendType;
     xsmall?: {
       size?: string;
       height?: string;

@@ -33,6 +33,7 @@ const Chart = React.forwardRef(
       onHover,
       overflow = false,
       pad,
+      point,
       round,
       size: propsSize = defaultSize,
       thickness = 'medium',
@@ -44,15 +45,55 @@ const Chart = React.forwardRef(
   ) => {
     const containerRef = useForwardedRef(ref);
     const theme = useContext(ThemeContext) || defaultProps.theme;
-    const [values, setValues] = useState([]);
-    const [bounds, setBounds] = useState([
-      [0, 0],
-      [0, 0],
+
+    // normalize variables
+
+    const values = useMemo(() => normalizeValues(propsValues), [propsValues]);
+
+    const bounds = useMemo(() => normalizeBounds(propsBounds, values), [
+      propsBounds,
+      values,
     ]);
+
+    const strokeWidth = useMemo(
+      () => parseMetricToNum(theme.global.edgeSize[thickness] || thickness),
+      [theme.global.edgeSize, thickness],
+    );
+
+    const inset = useMemo(() => {
+      let result = [0, 0, 0, 0];
+      if (pad) {
+        if (pad.horizontal) {
+          const padSize = parseMetricToNum(
+            theme.global.edgeSize[pad.horizontal],
+          );
+          result[0] += padSize;
+          result[2] += padSize;
+        }
+        if (pad.vertical) {
+          const padSize = parseMetricToNum(theme.global.edgeSize[pad.vertical]);
+          result[1] += padSize;
+          result[3] += padSize;
+        }
+        if (typeof pad === 'string') {
+          const padSize = parseMetricToNum(theme.global.edgeSize[pad]);
+          result = [padSize, padSize, padSize, padSize];
+        }
+      }
+      return result;
+    }, [pad, theme.global.edgeSize]);
+
+    const strokeDasharray = useMemo(() => {
+      if (dash) {
+        if (round) return `${strokeWidth} ${strokeWidth * 1.5}`;
+        return `${strokeWidth * 2} ${strokeWidth / 2}`;
+      }
+      return undefined;
+    }, [dash, round, strokeWidth]);
+
+    // potentially dynamic sizing
+
     const [containerSize, setContainerSize] = useState([0, 0]);
-    const [size, setSize] = useState([0, 0]);
-    const [scale, setScale] = useState([1, 1]);
-    const [strokeWidth, setStrokeWidth] = useState(0);
 
     const needContainerSize = useMemo(
       () =>
@@ -66,27 +107,14 @@ const Chart = React.forwardRef(
       [propsSize],
     );
 
-    // calculations
-    useEffect(() => {
-      const nextValues = normalizeValues(propsValues);
-      setValues(nextValues);
-
-      const nextBounds = normalizeBounds(propsBounds, nextValues);
-      setBounds(nextBounds);
-
-      const nextStrokeWidth = parseMetricToNum(
-        theme.global.edgeSize[thickness] || thickness,
-      );
-      setStrokeWidth(nextStrokeWidth);
-
+    const size = useMemo(() => {
       const gapWidth = gap
         ? parseMetricToNum(theme.global.edgeSize[gap] || gap)
-        : nextStrokeWidth;
+        : strokeWidth;
 
       // autoWidth is how wide we'd pefer
       const autoWidth =
-        nextStrokeWidth * nextValues.length +
-        (nextValues.length - 1) * gapWidth;
+        strokeWidth * values.length + (values.length - 1) * gapWidth;
 
       const sizeWidth =
         typeof propsSize === 'string'
@@ -112,24 +140,39 @@ const Chart = React.forwardRef(
         height = parseMetricToNum(theme.global.size[sizeHeight] || sizeHeight);
       }
 
-      setSize([width, height]);
-
-      const nextScale = [
-        (sizeWidth === 'auto' ? autoWidth : width) /
-          (nextBounds[0][1] - nextBounds[0][0]),
-        height / (nextBounds[1][1] - nextBounds[1][0]),
-      ];
-      setScale(nextScale);
+      return [width, height];
     }, [
       containerSize,
       gap,
-      propsBounds,
       propsSize,
-      propsValues,
+      strokeWidth,
       theme.global.edgeSize,
       theme.global.size,
-      thickness,
+      values,
     ]);
+
+    const scale = useMemo(
+      () => [
+        (size[0] - (inset[0] + inset[2])) / (bounds[0][1] - bounds[0][0]),
+        (size[1] - (inset[1] + inset[3])) / (bounds[1][1] - bounds[1][0]),
+      ],
+      [bounds, inset, size],
+    );
+
+    const viewBounds = useMemo(
+      () =>
+        overflow
+          ? [0, 0, size[0], size[1]]
+          : [
+              -(strokeWidth / 2),
+              -(strokeWidth / 2),
+              size[0] + strokeWidth,
+              size[1] + strokeWidth,
+            ],
+      [overflow, size, strokeWidth],
+    );
+
+    const useGradient = color && Array.isArray(color);
 
     // set container size when we get ref or when size changes
     useLayoutEffect(() => {
@@ -165,16 +208,14 @@ const Chart = React.forwardRef(
       return undefined;
     }, [containerRef, needContainerSize]);
 
-    const useGradient = color && Array.isArray(color);
-
-    let strokeDasharray;
-    if (dash) {
-      if (round) {
-        strokeDasharray = `${strokeWidth} ${strokeWidth * 1.5}`;
-      } else {
-        strokeDasharray = `${strokeWidth * 2} ${strokeWidth / 2}`;
-      }
-    }
+    // Converts values to drawing coordinates.
+    // Takes into account the bounds, any inset, and the scale.
+    const valueToCoordinate = (xValue, yValue) => {
+      return [
+        (xValue - bounds[0][0]) * scale[0] + inset[0],
+        size[1] - ((yValue - bounds[1][0]) * scale[1] + inset[1]),
+      ];
+    };
 
     const renderBars = () =>
       (values || [])
@@ -188,6 +229,7 @@ const Chart = React.forwardRef(
           } = valueArg;
 
           const key = `p-${index}`;
+          // Math.min/max are to handle negative values
           const bottom =
             value.length === 2
               ? Math.min(Math.max(0, bounds[1][0]), value[1])
@@ -197,10 +239,8 @@ const Chart = React.forwardRef(
               ? Math.max(Math.min(0, bounds[1][1]), value[1])
               : Math.max(value[1], value[2]);
           const d =
-            `M ${(value[0] - bounds[0][0]) * scale[0]},` +
-            `${size[1] - (bottom - bounds[1][0]) * scale[1]}` +
-            ` L ${(value[0] - bounds[0][0]) * scale[0]},` +
-            `${size[1] - (top - bounds[1][0]) * scale[1]}`;
+            `M ${valueToCoordinate(value[0], bottom).join(',')}` +
+            ` L ${valueToCoordinate(value[0], top).join(',')}`;
 
           let hoverProps;
           if (valueOnHover) {
@@ -230,12 +270,19 @@ const Chart = React.forwardRef(
 
     const renderLine = () => {
       let d = '';
+      let d2 = '';
       (values || [])
         .filter(({ value }) => value[1] !== undefined)
-        .forEach(({ value }, index) => {
-          d +=
-            `${index ? ' L' : 'M'} ${(value[0] - bounds[0][0]) * scale[0]},` +
-            `${size[1] - (value[1] - bounds[1][0]) * scale[1]}`;
+        .forEach(({ value }) => {
+          d += `${d ? ' L' : 'M'} ${valueToCoordinate(value[0], value[1]).join(
+            ',',
+          )}`;
+          if (value[2] !== undefined) {
+            d2 += `${d2 ? ' L' : 'M'} ${valueToCoordinate(
+              value[0],
+              value[2],
+            ).join(',')}`;
+          }
         });
 
       let hoverProps;
@@ -258,6 +305,14 @@ const Chart = React.forwardRef(
             {...clickProps}
             strokeDasharray={strokeDasharray}
           />
+          {d2 && (
+            <path
+              d={d2}
+              {...hoverProps}
+              {...clickProps}
+              strokeDasharray={strokeDasharray}
+            />
+          )}
         </g>
       );
     };
@@ -267,20 +322,20 @@ const Chart = React.forwardRef(
       (values || [])
         .filter(({ value }) => value[1] !== undefined)
         .forEach(({ value }, index) => {
-          const top = value.length === 2 ? value[1] : value[2];
-          d +=
-            `${!index ? 'M' : ' L'} ${(value[0] - bounds[0][0]) * scale[0]},` +
-            `${size[1] - (top - bounds[1][0]) * scale[1]}`;
+          d += `${!index ? 'M' : ' L'} ${valueToCoordinate(
+            value[0],
+            value[value.length === 2 ? 1 : 2],
+          ).join(',')}`;
         });
       (values || [])
         .reverse()
         .filter(({ value }) => value[1] !== undefined)
         .forEach(({ value }) => {
-          const bottom =
-            value.length === 2 ? Math.max(0, bounds[1][0]) : value[1];
-          d +=
-            ` L ${(value[0] - bounds[0][0]) * scale[0]},` +
-            `${size[1] - (bottom - bounds[1][0]) * scale[1]}`;
+          d += ` L ${valueToCoordinate(
+            value[0],
+            // Math.max() is to account for value[1] being negative
+            value.length === 2 ? Math.max(0, bounds[1][0]) : value[1],
+          ).join(',')}`;
         });
       if (d.length > 0) {
         d += ' Z';
@@ -330,42 +385,40 @@ const Chart = React.forwardRef(
             clickProps = { onClick };
           }
 
-          const center = value.length === 2 ? value[1] : value[2];
-          let shape;
-          if (round) {
-            const cx = (value[0] - bounds[0][0]) * scale[0];
-            const cy = size[1] - (center - bounds[1][0]) * scale[1];
-            shape = (
-              <circle
-                cx={cx}
-                cy={cy}
-                r={strokeWidth / 2}
-                {...hoverProps}
-                {...clickProps}
-                {...valueRest}
-              />
-            );
-          } else {
-            const x = (value[0] - bounds[0][0]) * scale[0] - strokeWidth / 2;
-            const y =
-              size[1] - (center - bounds[1][0]) * scale[1] - strokeWidth / 2;
-            shape = (
-              <rect
-                x={x}
-                y={y}
-                width={strokeWidth}
-                height={strokeWidth}
-                {...hoverProps}
-                {...clickProps}
-                {...valueRest}
-              />
-            );
-          }
+          const renderPoint = (valueX, valueY) => {
+            const props = { ...hoverProps, ...clickProps, ...valueRest };
+            const [cx, cy] = valueToCoordinate(valueX, valueY);
+            const off = strokeWidth / 2;
+            if (point === 'circle' || (!point && round))
+              return <circle cx={cx} cy={cy} r={off} {...props} />;
+            let d;
+            if (point === 'diamond')
+              d = `M ${cx} ${cy - off} L ${cx + off} ${cy} L ${cx} ${cy +
+                off} L ${cx - off} ${cy} Z`;
+            else if (point === 'star') {
+              const off1 = off / 3;
+              const off2 = off1 * 2;
+              d = `M ${cx} ${cy - off} L ${cx - off2} ${cy + off} L ${cx +
+                off} ${cy - off1} L ${cx - off} ${cy - off1} L ${cx +
+                off2} ${cy + off} Z`;
+            } else if (point === 'triangle')
+              d = `M ${cx} ${cy - off} L ${cx + off} ${cy + off} L ${cx -
+                off} ${cy + off} Z`;
+            else if (point === 'triangleDown')
+              d = `M ${cx - off} ${cy - off} L ${cx + off} ${cy -
+                off} L ${cx} ${cy + off} Z`;
+            // square
+            else
+              d = `M ${cx - off} ${cy - off} L ${cx + off} ${cy - off} L ${cx +
+                off} ${cy + off} L ${cx - off} ${cy + off} Z`;
+            return <path d={d} />;
+          };
 
           return (
             <g key={key} stroke="none">
               <title>{label}</title>
-              {shape}
+              {renderPoint(value[0], value[1])}
+              {value[2] !== undefined && renderPoint(value[0], value[2])}
             </g>
           );
         });
@@ -379,34 +432,6 @@ const Chart = React.forwardRef(
       contents = renderArea();
     } else if (type === 'point') {
       contents = renderPoints();
-    }
-
-    const viewBounds = overflow
-      ? [0, 0, size[0], size[1]]
-      : [
-          -(strokeWidth / 2),
-          -(strokeWidth / 2),
-          size[0] + strokeWidth,
-          size[1] + strokeWidth,
-        ];
-    if (pad) {
-      if (pad.horizontal) {
-        const padSize = parseMetricToNum(theme.global.edgeSize[pad.horizontal]);
-        viewBounds[0] -= padSize;
-        viewBounds[2] += padSize * 2;
-      }
-      if (pad.vertical) {
-        const padSize = parseMetricToNum(theme.global.edgeSize[pad.vertical]);
-        viewBounds[1] -= padSize;
-        viewBounds[3] += padSize * 2;
-      }
-      if (typeof pad === 'string') {
-        const padSize = parseMetricToNum(theme.global.edgeSize[pad]);
-        viewBounds[0] -= padSize;
-        viewBounds[1] -= padSize;
-        viewBounds[2] += padSize * 2;
-        viewBounds[3] += padSize * 2;
-      }
     }
 
     const viewBox = viewBounds.join(' ');
@@ -458,6 +483,7 @@ const Chart = React.forwardRef(
                 <stop
                   key={value}
                   offset={
+                    // TODO:
                     (size[1] - (value - bounds[1][0]) * scale[1]) / size[1]
                   }
                   stopColor={normalizeColor(gradientColor, theme)}

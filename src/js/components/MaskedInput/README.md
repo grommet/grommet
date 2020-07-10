@@ -11,6 +11,14 @@ import { MaskedInput } from 'grommet';
 
 ## Properties
 
+**a11yTitle**
+
+Custom title to be used by screen readers.
+
+```
+string
+```
+
 **icon**
 
 An optional icon to show. This could be used to provide an

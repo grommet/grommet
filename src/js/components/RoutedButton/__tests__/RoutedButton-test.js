@@ -39,7 +39,12 @@ class FakeRouter extends Component {
 describe('RoutedButton', () => {
   const push = jest.fn();
   const replace = jest.fn();
+  const warning = `This component will be deprecated in the upcoming releases.
+         Please refer to https://github.com/grommet/grommet/issues/2855 
+         for more information.`;
   test('renders', () => {
+    console.warn = jest.fn();
+    const warnSpy = jest.spyOn(console, 'warn');
     const component = renderer.create(
       <Grommet>
         <FakeRouter replace={replace} push={push}>
@@ -49,9 +54,17 @@ describe('RoutedButton', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+
+    expect(warnSpy).toBeCalledWith(warning);
+
+    warnSpy.mockReset();
+    warnSpy.mockRestore();
+    console.warn.mockReset();
   });
 
   test('RoutedButton is clickable', () => {
+    console.warn = jest.fn();
+    const warnSpy = jest.spyOn(console, 'warn');
     const preventDefault = jest.fn();
     const onClick = jest.fn();
     const component = renderer.create(
@@ -67,9 +80,17 @@ describe('RoutedButton', () => {
     expect(onClick).toBeCalled();
     expect(push).toBeCalled();
     expect(preventDefault).toBeCalled();
+
+    expect(warnSpy).toBeCalledWith(warning);
+
+    warnSpy.mockReset();
+    warnSpy.mockRestore();
+    console.warn.mockReset();
   });
 
   test('RoutedButton skips onClick if right clicked', () => {
+    console.warn = jest.fn();
+    const warnSpy = jest.spyOn(console, 'warn');
     const onClick = jest.fn();
     const component = renderer.create(
       <Grommet>
@@ -88,9 +109,17 @@ describe('RoutedButton', () => {
       metaKey: true,
     });
     expect(onClick).not.toBeCalled();
+
+    expect(warnSpy).toBeCalledWith(warning);
+
+    warnSpy.mockReset();
+    warnSpy.mockRestore();
+    console.warn.mockReset();
   });
 
   test('RoutedButton calls router context push', () => {
+    console.warn = jest.fn();
+    const warnSpy = jest.spyOn(console, 'warn');
     const preventDefault = jest.fn();
     const component = renderer.create(
       <Grommet>
@@ -107,9 +136,17 @@ describe('RoutedButton', () => {
     });
     expect(preventDefault).toBeCalled();
     expect(push).toBeCalledWith('/');
+
+    expect(warnSpy).toBeCalledWith(warning);
+
+    warnSpy.mockReset();
+    warnSpy.mockRestore();
+    console.warn.mockReset();
   });
 
   test('RoutedButton calls router context replace', () => {
+    console.warn = jest.fn();
+    const warnSpy = jest.spyOn(console, 'warn');
     const preventDefault = jest.fn();
     const component = renderer.create(
       <Grommet>
@@ -126,5 +163,11 @@ describe('RoutedButton', () => {
     });
     expect(preventDefault).toBeCalled();
     expect(replace).toBeCalledWith('/');
+
+    expect(warnSpy).toBeCalledWith(warning);
+
+    warnSpy.mockReset();
+    warnSpy.mockRestore();
+    console.warn.mockReset();
   });
 });

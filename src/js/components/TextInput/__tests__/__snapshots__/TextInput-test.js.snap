@@ -949,6 +949,25 @@ exports[`TextInput complex suggestions 2`] = `
   overflow: auto;
 }
 
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 12px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -1014,6 +1033,12 @@ exports[`TextInput complex suggestions 2`] = `
   max-height: inherit;
 }
 
+@media only screen and (max-width:768px) {
+  .c6 {
+    padding: 6px;
+  }
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
     display: -webkit-box;
@@ -1051,7 +1076,11 @@ exports[`TextInput complex suggestions 2`] = `
           class="c5"
           type="button"
         >
-          test
+          <div
+            class="c6"
+          >
+            test
+          </div>
         </button>
       </li>
       <li>
@@ -1059,7 +1088,11 @@ exports[`TextInput complex suggestions 2`] = `
           class="c5"
           type="button"
         >
-          test1
+          <div
+            class="c6"
+          >
+            test1
+          </div>
         </button>
       </li>
     </ol>
@@ -2178,6 +2211,76 @@ exports[`TextInput select suggestion 4`] = `
       class="StyledTextInput-sc-1x30a0s-0 cWvRjL"
       data-testid="test-input"
       id="item"
+      name="item"
+      value=""
+    />
+  </div>
+</div>
+`;
+
+exports[`TextInput should not have accessibility violations 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  width: 100%;
+}
+
+.c2::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c2::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c2:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c2::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c1 {
+  position: relative;
+  width: 100%;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <input
+      aria-label="aria-test"
+      autocomplete="off"
+      class="c2"
       name="item"
       value=""
     />
