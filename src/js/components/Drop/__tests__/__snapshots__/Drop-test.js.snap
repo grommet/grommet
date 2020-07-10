@@ -1737,6 +1737,36 @@ exports[`Drop restrict focus 4`] = `
 <body />
 `;
 
+exports[`Drop should have no accessibility violations 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+<div
+  aria-hidden="true"
+>
+  <div
+    class="c0"
+  >
+    <input
+      aria-label="test"
+      data-g-tabindex="none"
+      tabindex="-1"
+    />
+  </div>
+</div>
+`;
+
 exports[`Drop theme elevation renders 1`] = `
 .c0 {
   display: -webkit-box;

@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import 'jest-styled-components';
+import 'jest-axe/extend-expect';
+import 'regenerator-runtime/runtime';
+
+import { axe } from 'jest-axe';
 import { cleanup, fireEvent, render } from '@testing-library/react';
 
 import { expectPortal } from '../../../utils/portal';
@@ -50,7 +54,7 @@ class TestInput extends Component {
     }
     return (
       <Grommet theme={theme} containerTarget={containerTarget}>
-        <input ref={this.inputRef} {...inputProps} />
+        <input ref={this.inputRef} {...inputProps} aria-label="test" />
         {drop}
       </Grommet>
     );
@@ -59,6 +63,14 @@ class TestInput extends Component {
 
 describe('Drop', () => {
   afterEach(cleanup);
+
+  test('should have no accessibility violations', async () => {
+    window.scrollTo = jest.fn();
+    const { container } = render(<TestInput />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+    expect(container).toMatchSnapshot();
+  });
 
   test('basic', () => {
     window.scrollTo = jest.fn();
