@@ -423,6 +423,46 @@ exports[`Anchor reverse icon label renders 1`] = `
 </div>
 `;
 
+exports[`Anchor should have no accessibility violations 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
+  color: #7D4CDB;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c1:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <a
+      class="c1"
+    >
+      Link
+    </a>
+  </div>
+</div>
+`;
+
 exports[`Anchor warns about invalid icon render 1`] = `
 .c0 {
   font-size: 18px;
