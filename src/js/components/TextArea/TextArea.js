@@ -8,6 +8,7 @@ import { StyledTextArea } from './StyledTextArea';
 const TextArea = forwardRef(
   (
     {
+      a11yTitle,
       fill,
       name,
       onBlur,
@@ -34,6 +35,7 @@ const TextArea = forwardRef(
         onKeyDown={onKeyDown}
       >
         <StyledTextArea
+          aria-label={a11yTitle}
           ref={ref}
           name={name}
           fillArg={fill}

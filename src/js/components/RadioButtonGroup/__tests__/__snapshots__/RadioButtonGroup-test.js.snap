@@ -269,23 +269,6 @@ exports[`RadioButtonGroup boolean options 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -371,7 +354,7 @@ exports[`RadioButtonGroup boolean options 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c8 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
@@ -425,6 +408,11 @@ exports[`RadioButtonGroup boolean options 1`] = `
           </svg>
         </div>
       </div>
+      <span
+        className=""
+      >
+        true
+      </span>
     </label>
     <div
       className="c7"
@@ -437,7 +425,7 @@ exports[`RadioButtonGroup boolean options 1`] = `
       onMouseLeave={[Function]}
     >
       <div
-        className="c8 "
+        className="c3 "
       >
         <input
           checked={false}
@@ -451,9 +439,14 @@ exports[`RadioButtonGroup boolean options 1`] = `
           value={false}
         />
         <div
-          className="c9 "
+          className="c8 "
         />
       </div>
+      <span
+        className=""
+      >
+        false
+      </span>
     </label>
   </div>
 </div>
@@ -856,7 +849,11 @@ exports[`RadioButtonGroup number options 1`] = `
           </svg>
         </div>
       </div>
-      1
+      <span
+        className=""
+      >
+        1
+      </span>
     </label>
     <div
       className="c7"
@@ -886,7 +883,11 @@ exports[`RadioButtonGroup number options 1`] = `
           className="c8 "
         />
       </div>
-      2
+      <span
+        className=""
+      >
+        2
+      </span>
     </label>
   </div>
 </div>
@@ -1056,7 +1057,9 @@ exports[`RadioButtonGroup object options 1`] = `
           className="c5 "
         />
       </div>
-      <span>
+      <span
+        className=""
+      >
         One
       </span>
     </label>
@@ -1088,7 +1091,9 @@ exports[`RadioButtonGroup object options 1`] = `
           className="c5 "
         />
       </div>
-      <span>
+      <span
+        className=""
+      >
         Two
       </span>
     </label>
@@ -1810,7 +1815,9 @@ exports[`RadioButtonGroup string options 1`] = `
           </svg>
         </div>
       </div>
-      <span>
+      <span
+        className=""
+      >
         one
       </span>
     </label>
@@ -1842,7 +1849,9 @@ exports[`RadioButtonGroup string options 1`] = `
           className="c8 "
         />
       </div>
-      <span>
+      <span
+        className=""
+      >
         two
       </span>
     </label>

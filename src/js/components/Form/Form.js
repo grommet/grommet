@@ -179,7 +179,7 @@ const Form = forwardRef(
             if (!aValidate.regexp.test(value2)) {
               result = aValidate.message || messages.invalid;
               if (aValidate.status) {
-                result = { message: error, status: aValidate.status };
+                result = { message: result, status: aValidate.status };
               }
             }
           }

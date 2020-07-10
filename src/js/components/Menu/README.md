@@ -227,7 +227,8 @@ node
 **items**
 
 Required. Menu items to be placed inside the drop down.
-The object values can be any Button prop, for example: label and onClick. Defaults to `[]`.
+The object values can be any Button prop, 
+for example: label, onClick, and href. Defaults to `[]`.
 
 ```
 [object]
@@ -326,10 +327,22 @@ undefined
 
 **menu.icons.down**
 
-The icon to show to the right of the label. Expects `React.Element`.
+The icon to show to the right of the label when menu is 
+    closed. Expects `React.Element`.
 
 Defaults to
 
 ```
 <FormDown />
+```
+
+**menu.icons.up**
+
+The icon to show to the right of the label when menu is 
+    opened. Expects `undefined | React.Element`.
+
+Defaults to
+
+```
+undefined
 ```

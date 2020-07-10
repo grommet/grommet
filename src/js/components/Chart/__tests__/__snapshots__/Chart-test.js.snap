@@ -701,6 +701,243 @@ exports[`Chart pad 1`] = `
 </div>
 `;
 
+exports[`Chart point 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+}
+
+<div
+  className="c0"
+>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      fill="#6FFFB0"
+      stroke="none"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+    >
+      <g
+        stroke="none"
+      >
+        <title>
+          sixty
+        </title>
+        <circle
+          cx={384}
+          cy={0}
+          r={12}
+        />
+      </g>
+      <g
+        stroke="none"
+      >
+        <title>
+          zero
+        </title>
+        <circle
+          cx={0}
+          cy={192}
+          r={12}
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      fill="#6FFFB0"
+      stroke="none"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+    >
+      <g
+        stroke="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 384 -12 L 396 0 L 384 12 L 372 0 Z"
+        />
+      </g>
+      <g
+        stroke="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0 180 L 12 192 L 0 204 L -12 192 Z"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      fill="#6FFFB0"
+      stroke="none"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+    >
+      <g
+        stroke="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 372 -12 L 396 -12 L 396 12 L 372 12 Z"
+        />
+      </g>
+      <g
+        stroke="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M -12 180 L 12 180 L 12 204 L -12 204 Z"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      fill="#6FFFB0"
+      stroke="none"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+    >
+      <g
+        stroke="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 384 -12 L 376 12 L 396 -4 L 372 -4 L 392 12 Z"
+        />
+      </g>
+      <g
+        stroke="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0 180 L -8 204 L 12 188 L -12 188 L 8 204 Z"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      fill="#6FFFB0"
+      stroke="none"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+    >
+      <g
+        stroke="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 384 -12 L 396 12 L 372 12 Z"
+        />
+      </g>
+      <g
+        stroke="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0 180 L 12 204 L -12 204 Z"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      fill="#6FFFB0"
+      stroke="none"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+    >
+      <g
+        stroke="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 372 -12 L 396 -12 L 384 12 Z"
+        />
+      </g>
+      <g
+        stroke="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M -12 180 L 12 180 L 0 204 Z"
+        />
+      </g>
+    </g>
+  </svg>
+</div>
+`;
+
 exports[`Chart size 1`] = `
 .c0 {
   font-size: 18px;
@@ -1354,11 +1591,8 @@ exports[`Chart type 1`] = `
         <title>
           sixty
         </title>
-        <rect
-          height={24}
-          width={24}
-          x={372}
-          y={-12}
+        <path
+          d="M 372 -12 L 396 -12 L 396 12 L 372 12 Z"
         />
       </g>
       <g
@@ -1367,11 +1601,8 @@ exports[`Chart type 1`] = `
         <title>
           zero
         </title>
-        <rect
-          height={24}
-          width={24}
-          x={-12}
-          y={180}
+        <path
+          d="M -12 180 L 12 180 L 12 204 L -12 204 Z"
         />
       </g>
     </g>
@@ -1499,11 +1730,8 @@ exports[`Chart undefined values 1`] = `
         <title>
           sixty
         </title>
-        <rect
-          height={24}
-          width={24}
-          x={372}
-          y={-12}
+        <path
+          d="M 372 -12 L 396 -12 L 396 12 L 372 12 Z"
         />
       </g>
       <g
@@ -1512,11 +1740,8 @@ exports[`Chart undefined values 1`] = `
         <title>
           zero
         </title>
-        <rect
-          height={24}
-          width={24}
-          x={-12}
-          y={180}
+        <path
+          d="M -12 180 L 12 180 L 12 204 L -12 204 Z"
         />
       </g>
     </g>
