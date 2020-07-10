@@ -255,20 +255,6 @@ exports[`FormField custom input margin 1`] = `
   overflow: hidden;
 }
 
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .c2 {
   margin-left: 12px;
   margin-right: 12px;
@@ -278,7 +264,7 @@ exports[`FormField custom input margin 1`] = `
   line-height: 24px;
 }
 
-.c6 {
+.c5 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -296,28 +282,28 @@ exports[`FormField custom input margin 1`] = `
   border: none;
 }
 
-.c6::-webkit-search-decoration {
+.c5::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-webkit-input-placeholder {
+.c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c5::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c5:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c5 {
+.c4 {
   position: relative;
   width: 100%;
 }
@@ -364,18 +350,14 @@ exports[`FormField custom input margin 1`] = `
         <div
           className="c4"
         >
-          <div
+          <input
+            autoComplete="off"
             className="c5"
-          >
-            <input
-              autoComplete="off"
-              className="c6"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-            />
-          </div>
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+          />
         </div>
       </div>
     </div>
