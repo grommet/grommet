@@ -2,6 +2,9 @@ import React from 'react';
 import 'jest-styled-components';
 import renderer from 'react-test-renderer';
 import { cleanup, fireEvent, render } from '@testing-library/react';
+import { axe } from 'jest-axe';
+import 'jest-axe/extend-expect';
+import 'regenerator-runtime/runtime';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
@@ -11,6 +14,18 @@ describe('DropButton', () => {
   beforeEach(createPortal);
 
   afterEach(cleanup);
+
+  test('should have no accessibility violations', async () => {
+    const { container } = render(
+      <DropButton
+        a11yTitle="test"
+        dropContent={<div id="drop-contents">drop contents</div>}
+      />,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+    expect(container.firstChild).toMatchSnapshot();
+  });
 
   test('closed', () => {
     const component = renderer.create(
