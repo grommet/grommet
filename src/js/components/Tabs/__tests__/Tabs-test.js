@@ -1,11 +1,29 @@
 import React from 'react';
 import 'jest-styled-components';
 import renderer from 'react-test-renderer';
+import 'jest-axe/extend-expect';
+import 'regenerator-runtime/runtime';
+
+import { axe } from 'jest-axe';
 import { render, fireEvent } from '@testing-library/react';
 
 import { Grommet, Tab, Tabs } from '../..';
 
 describe('Tabs', () => {
+  test('should have no accessibility violations', async () => {
+    const { container } = render(
+      <Grommet>
+        <Tabs>
+          <Tab a11yTitle="test"/>
+        </Tabs>
+      </Grommet>,
+    );
+
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+    expect(container).toMatchSnapshot();
+  });
+
   test('no Tab', () => {
     const component = renderer.create(
       <Grommet>
