@@ -983,6 +983,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             light: 'black',
           },
         },
+        disabled: {
+          // color: undefined,
+        },
         hover: {
           color: {
             dark: 'white',
@@ -992,6 +995,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       color: 'control',
+      // disabled: {
+      //   color: undefined,
+      // },
       // extend: undefined,
       hover: {
         // background: undefined,
