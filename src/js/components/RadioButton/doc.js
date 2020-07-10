@@ -69,12 +69,12 @@ export const themeDoc = {
   },
   'radioButton.border.width': {
     description: 'The width size of the border of the RadioButton.',
-    type: 'string | {dark: string, light: string}',
+    type: 'string',
     defaultValue: '2px',
   },
   'radioButton.check.background.color': {
     description: 'The background color of the checked icon in the RadioButton.',
-    type: 'string',
+    type: 'string | {dark: string, light: string}',
     defaultValue: 'undefined',
   },
   'radioButton.check.color': {
