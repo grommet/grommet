@@ -13,6 +13,10 @@ export const doc = RangeInput => {
     .intrinsicElement('input');
 
   DocumentedRangeInput.propTypes = {
+    a11yTitle: PropTypes.string.description(
+      `Custom label to be used by screen readers.
+      When provided, an aria-label will be added to the element.`,
+    ),
     id: PropTypes.string.description('The id attribute of the range input.'),
     min: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).description(
       'The minimum value permitted.',

@@ -408,7 +408,9 @@ exports[`RadioButtonGroup boolean options 1`] = `
           </svg>
         </div>
       </div>
-      <span>
+      <span
+        className=""
+      >
         true
       </span>
     </label>
@@ -440,7 +442,9 @@ exports[`RadioButtonGroup boolean options 1`] = `
           className="c8 "
         />
       </div>
-      <span>
+      <span
+        className=""
+      >
         false
       </span>
     </label>
@@ -627,40 +631,6 @@ exports[`RadioButtonGroup children 1`] = `
       </div>
     </label>
   </div>
-</div>
-`;
-
-exports[`RadioButtonGroup default 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-<div
-  className="c0"
->
-  <div
-    className="c1"
-  />
 </div>
 `;
 
@@ -879,7 +849,9 @@ exports[`RadioButtonGroup number options 1`] = `
           </svg>
         </div>
       </div>
-      <span>
+      <span
+        className=""
+      >
         1
       </span>
     </label>
@@ -911,7 +883,9 @@ exports[`RadioButtonGroup number options 1`] = `
           className="c8 "
         />
       </div>
-      <span>
+      <span
+        className=""
+      >
         2
       </span>
     </label>
@@ -1083,7 +1057,9 @@ exports[`RadioButtonGroup object options 1`] = `
           className="c5 "
         />
       </div>
-      <span>
+      <span
+        className=""
+      >
         One
       </span>
     </label>
@@ -1115,7 +1091,9 @@ exports[`RadioButtonGroup object options 1`] = `
           className="c5 "
         />
       </div>
-      <span>
+      <span
+        className=""
+      >
         Two
       </span>
     </label>
@@ -1586,6 +1564,42 @@ exports[`RadioButtonGroup object options just value 1`] = `
 </div>
 `;
 
+exports[`RadioButtonGroup should have no accessibility violations 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <div
+      class="c1"
+    />
+  </div>
+</div>
+`;
+
 exports[`RadioButtonGroup string options 1`] = `
 .c0 {
   font-size: 18px;
@@ -1801,7 +1815,9 @@ exports[`RadioButtonGroup string options 1`] = `
           </svg>
         </div>
       </div>
-      <span>
+      <span
+        className=""
+      >
         one
       </span>
     </label>
@@ -1833,7 +1849,9 @@ exports[`RadioButtonGroup string options 1`] = `
           className="c8 "
         />
       </div>
-      <span>
+      <span
+        className=""
+      >
         two
       </span>
     </label>
