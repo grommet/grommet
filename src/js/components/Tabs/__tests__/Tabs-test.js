@@ -14,7 +14,7 @@ describe('Tabs', () => {
     const { container } = render(
       <Grommet>
         <Tabs>
-          <Tab a11yTitle="test"/>
+          <Tab a11yTitle="test" />
         </Tabs>
       </Grommet>,
     );
