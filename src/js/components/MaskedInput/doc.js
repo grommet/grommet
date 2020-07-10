@@ -13,6 +13,9 @@ export const doc = MaskedInput => {
     .intrinsicElement('input');
 
   DocumentedMaskedInput.propTypes = {
+    a11yTitle: PropTypes.string.description(
+      'Custom title to be used by screen readers.',
+    ),
     icon: PropTypes.element.description(
       `An optional icon to show. This could be used to provide an
       indication of what kind of input is expected, like an email icon,

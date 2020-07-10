@@ -17,6 +17,10 @@ export const doc = RadioButton => {
     .intrinsicElement('input');
 
   DocumentedRadioButton.propTypes = {
+    a11yTitle: PropTypes.string.description(
+      `Custom label to be used by screen readers.
+      When provided, an aria-label will be added to the element.`,
+    ),
     checked: PropTypes.bool.description('Same as React <input checked={} />'),
     children: PropTypes.func.description(
       `Function that will be called to render the visual representation.
