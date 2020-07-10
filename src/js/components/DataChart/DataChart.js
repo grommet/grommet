@@ -447,7 +447,7 @@ const DataChart = forwardRef(
       return content;
     }
 
-    return (
+    let content = (
       <Grid
         ref={ref}
         aria-label={a11yTitle}
@@ -459,22 +459,30 @@ const DataChart = forwardRef(
         rows={[
           stackFill === true || stackFill === 'vertical' ? 'flex' : 'auto',
           'auto',
-          'auto',
         ]}
         areas={[
           { name: 'yAxis', start: [0, 0], end: [0, 0] },
           { name: 'xAxis', start: [1, 1], end: [1, 1] },
           { name: 'charts', start: [1, 0], end: [1, 0] },
-          { name: 'legend', start: [1, 2], end: [1, 2] },
         ]}
         {...rest}
       >
         {xAxisElement}
         {yAxisElement}
         {stackElement}
-        {legendElement}
       </Grid>
     );
+
+    if (legendElement) {
+      content = (
+        <Box align="start">
+          {content}
+          {legendElement}
+        </Box>
+      );
+    }
+
+    return content;
   },
 );
 

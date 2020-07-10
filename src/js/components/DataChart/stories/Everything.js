@@ -12,6 +12,7 @@ for (let i = 0; i < 13; i += 1) {
     date: `2020-07-${((i % 30) + 1).toString().padStart(2, 0)}`,
     amount: Math.floor(v * 100),
     need: Math.floor(v2 * 10),
+    growth: i * 10,
   });
 }
 
@@ -24,6 +25,7 @@ const Example = () => (
           'date',
           { property: 'amount', color: 'graph-2', point: 'circle' },
           { property: 'need', color: 'graph-1', point: 'star' },
+          'growth',
         ]}
         chart={[
           {
@@ -55,6 +57,11 @@ const Example = () => (
             property: 'need',
             type: 'point',
             thickness: 'small',
+          },
+          {
+            property: 'growth',
+            type: 'line',
+            thickness: 'hair',
           },
         ]}
         axis={{ x: 'date', y: { property: 'amount', granularity: 'medium' } }}

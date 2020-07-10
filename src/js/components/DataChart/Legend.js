@@ -18,12 +18,7 @@ const Legend = ({
     properties,
   ]);
   return (
-    <Box
-      gridArea="legend"
-      margin={{ top: 'small' }}
-      direction="row"
-      gap="small"
-    >
+    <Box margin={{ top: 'small' }} direction="row" wrap>
       {properties.map(({ property, label }) => {
         const isActive = property === activeProperty;
         const swatchProps = {};
@@ -48,6 +43,7 @@ const Legend = ({
                 : undefined
             }
             hoverIndicator
+            margin={{ right: 'small' }}
           >
             <Box
               direction="row"

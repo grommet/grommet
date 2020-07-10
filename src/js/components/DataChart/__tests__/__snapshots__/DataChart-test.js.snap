@@ -2444,13 +2444,15 @@ exports[`DataChart legend 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  grid-area: legend;
   margin-top: 12px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .c7 {
@@ -2517,6 +2519,7 @@ exports[`DataChart legend 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
+  margin-right: 12px;
   color: inherit;
   outline: none;
   border: none;
