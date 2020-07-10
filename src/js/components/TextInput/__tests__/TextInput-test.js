@@ -10,7 +10,6 @@ import {
 import { getByText, screen } from '@testing-library/dom';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
-import 'regenerator-runtime/runtime';
 import { Search } from 'grommet-icons';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
