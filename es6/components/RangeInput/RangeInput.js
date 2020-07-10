@@ -6,12 +6,13 @@ import React, { forwardRef, useContext, useState } from 'react';
 import { FormContext } from '../Form/FormContext';
 import { StyledRangeInput } from './StyledRangeInput';
 var RangeInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
-  var name = _ref.name,
+  var a11yTitle = _ref.a11yTitle,
+      name = _ref.name,
       _onChange = _ref.onChange,
       _onFocus = _ref.onFocus,
       _onBlur = _ref.onBlur,
       valueProp = _ref.value,
-      rest = _objectWithoutPropertiesLoose(_ref, ["name", "onChange", "onFocus", "onBlur", "value"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "name", "onChange", "onFocus", "onBlur", "value"]);
 
   var formContext = useContext(FormContext);
 
@@ -24,6 +25,7 @@ var RangeInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       setFocus = _useState[1];
 
   return /*#__PURE__*/React.createElement(StyledRangeInput, _extends({
+    "aria-label": a11yTitle,
     ref: ref,
     name: name,
     focus: focus,

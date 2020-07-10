@@ -5,6 +5,7 @@ import { getAvailableAtBadge, themeDocUtils } from '../../utils';
 export var doc = function doc(RangeInput) {
   var DocumentedRangeInput = describe(RangeInput).availableAt(getAvailableAtBadge('RangeInput')).description('A slider control to input a value within a fixed range.').usage("import { RangeInput } from 'grommet';\n<RangeInput />").intrinsicElement('input');
   DocumentedRangeInput.propTypes = {
+    a11yTitle: PropTypes.string.description("Custom label to be used by screen readers.\n      When provided, an aria-label will be added to the element."),
     id: PropTypes.string.description('The id attribute of the range input.'),
     min: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).description('The minimum value permitted.'),
     max: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).description('The maximum value permitted.'),

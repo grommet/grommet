@@ -18,12 +18,13 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 var RangeInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
-  var name = _ref.name,
+  var a11yTitle = _ref.a11yTitle,
+      name = _ref.name,
       _onChange = _ref.onChange,
       _onFocus = _ref.onFocus,
       _onBlur = _ref.onBlur,
       valueProp = _ref.value,
-      rest = _objectWithoutPropertiesLoose(_ref, ["name", "onChange", "onFocus", "onBlur", "value"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "name", "onChange", "onFocus", "onBlur", "value"]);
 
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
 
@@ -36,6 +37,7 @@ var RangeInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       setFocus = _useState[1];
 
   return /*#__PURE__*/_react["default"].createElement(_StyledRangeInput.StyledRangeInput, _extends({
+    "aria-label": a11yTitle,
     ref: ref,
     name: name,
     focus: focus,
