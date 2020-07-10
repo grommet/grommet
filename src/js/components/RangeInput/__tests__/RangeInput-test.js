@@ -9,7 +9,7 @@ import { cleanup, render } from '@testing-library/react';
 import { Grommet } from '../../Grommet';
 import { RangeInput } from '..';
 
-describe('RadioButtonGroup', () => {
+describe('RangeInput', () => {
   afterEach(cleanup);
 
   test('should have no accessibility violations', async () => {
@@ -24,7 +24,7 @@ describe('RadioButtonGroup', () => {
     expect(container).toMatchSnapshot();
   });
 
-  test('RangeInput renders', () => {
+  test('renders', () => {
     const component = renderer.create(
       <Grommet>
         <RangeInput value="50" />
@@ -34,7 +34,7 @@ describe('RadioButtonGroup', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test('RangeInput track themed', () => {
+  test('track themed', () => {
     const component = renderer.create(
       <Grommet theme={{ rangeInput: { track: { color: 'brand' } } }}>
         <RangeInput value="10" />
@@ -44,7 +44,7 @@ describe('RadioButtonGroup', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test('RangeInput track themed with color and opacity', () => {
+  test('track themed with color and opacity', () => {
     const component = renderer.create(
       <Grommet
         theme={{ rangeInput: { track: { color: 'brand', opacity: 0.3 } } }}
