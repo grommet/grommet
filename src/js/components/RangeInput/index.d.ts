@@ -7,7 +7,7 @@ export interface RangeInputProps {
   min?: number | string;
   max?: number | string;
   name?: string;
-  onChange?: ((event: React.ChangeEvent) => void);
+  onChange?: ((event: React.ChangeEvent<HTMLInputElement>) => void);
   step?: number;
   value?: number | string;
 }

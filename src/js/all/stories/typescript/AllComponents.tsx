@@ -163,7 +163,7 @@ const Components = () => {
       />
       <RangeInput
         value={rangeInputValue}
-        onChange={event => setRangeInputValue(event.target.value)}
+        onChange={event => setRangeInputValue(parseInt(event.target.value, 10))}
       />
       <Stack>
         <Box direction="row" justify="between">
