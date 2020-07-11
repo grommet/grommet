@@ -224,7 +224,6 @@ exports[`Select 0 value 1`] = `
           className="c5 c6"
           id="test-select__input"
           onBlur={[Function]}
-          onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           placeholder="test select"
@@ -1227,7 +1226,6 @@ exports[`Select basic 1`] = `
           className="c5 c6"
           id="test-select__input"
           onBlur={[Function]}
-          onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           readOnly={true}
@@ -5062,7 +5060,668 @@ exports[`Select onChange without valueKey 3`] = `
 }"
 `;
 
-exports[`Select opens and closes 1`] = `
+exports[`Select prop: onClose 1`] = `
+.c8 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c0 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus > circle,
+.c0:focus > ellipse,
+.c0:focus > line,
+.c0:focus > path,
+.c0:focus > polygon,
+.c0:focus > polyline,
+.c0:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c5 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+
+.c5::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c5:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c5::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
+}
+
+.c4 {
+  position: relative;
+  width: 100%;
+}
+
+.c6 {
+  cursor: pointer;
+}
+
+.c1 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+<button
+  aria-label="Open Drop"
+  class="c0 c1"
+  id="test-select"
+  type="button"
+>
+  <div
+    class="c2"
+  >
+    <div
+      class="c3"
+    >
+      <div
+        class="c4"
+      >
+        <input
+          autocomplete="off"
+          class="c5 c6"
+          id="test-select__input"
+          placeholder="test select"
+          readonly=""
+          tabindex="-1"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      class="c7"
+      style="min-width: auto;"
+    >
+      <svg
+        aria-label="FormDown"
+        class="c8"
+        viewBox="0 0 24 24"
+      >
+        <polyline
+          fill="none"
+          points="18 9 12 15 6 9"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+  </div>
+</button>
+`;
+
+<<<<<<< HEAD
+exports[`Select opens and closes 2`] = `
+<button
+  aria-label="Open Drop"
+  class="StyledButton-sc-323bzc-0 jFJBys Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
+  id="test-select"
+  type="button"
+>
+  <div
+    class="StyledBox-sc-13pk1d4-0 VvbUh"
+  >
+    <div
+      class="StyledBox-sc-13pk1d4-0 bVYLzf"
+    >
+      <div
+        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
+      >
+        <input
+          autocomplete="off"
+          class="StyledTextInput-sc-1x30a0s-0 fVbmbP Select__SelectTextInput-sc-17idtfo-0 hWmVID"
+          id="test-select__input"
+          placeholder="test select"
+          readonly=""
+          tabindex="-1"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      class="StyledBox-sc-13pk1d4-0 iCDnTm"
+      style="min-width: auto;"
+    >
+      <svg
+        aria-label="FormDown"
+        class="StyledIcon-ofa7kd-0 kbXEEj"
+        viewBox="0 0 24 24"
+      >
+        <polyline
+          fill="none"
+          points="18 9 12 15 6 9"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+  </div>
+</button>
+`;
+=======
+exports[`Select prop: onClose 2`] = `
+.c8 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+>>>>>>> fix: fix onOpen called twice
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c0 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c5 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  width: 100%;
+  outline: none;
+  border: none;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c5::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c5:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c4 {
+  position: relative;
+  width: 100%;
+}
+
+.c6 {
+  cursor: pointer;
+}
+
+.c1 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+<body>
+  <div
+    aria-hidden="false"
+  />
+  <div
+    aria-hidden="false"
+  >
+    <button
+      aria-label="Open Drop"
+      class="c0 c1"
+      id="test-select"
+      type="button"
+    >
+      <div
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          <div
+            class="c4"
+          >
+            <input
+              autocomplete="off"
+              class="c5 c6"
+              id="test-select__input"
+              placeholder="test select"
+              readonly=""
+              tabindex="-1"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="c7"
+          style="min-width: auto;"
+        >
+          <svg
+            aria-label="FormDown"
+            class="c8"
+            viewBox="0 0 24 24"
+          >
+            <polyline
+              fill="none"
+              points="18 9 12 15 6 9"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+      </button>
+      <div
+        class="c9"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select opens and closes 4`] = `
+"@media only screen and (max-width: 768px) {
+  .iCDnTm {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}"
+`;
+
+exports[`Select opens and closes 5`] = `
+<div
+  class="SelectContainer__OptionsBox-sc-1wi0ul8-0 Knkxk"
+  role="menubar"
+  tabindex="-1"
+>
+  <button
+    class="StyledButton-sc-323bzc-0 ynEro SelectContainer__SelectOption-sc-1wi0ul8-2 kkPGyb"
+    role="menuitem"
+    tabindex="-1"
+    type="button"
+  >
+    <div
+      class="StyledBox-sc-13pk1d4-0 lcXThF SelectContainer__OptionBox-sc-1wi0ul8-1 cjPAAw"
+    >
+      <span
+        class="StyledText-sc-1sadyjn-0 bilRua"
+      >
+        one
+      </span>
+    </div>
+  </button>
+  <button
+    class="StyledButton-sc-323bzc-0 ynEro SelectContainer__SelectOption-sc-1wi0ul8-2 kkPGyb"
+    role="menuitem"
+    tabindex="-1"
+    type="button"
+  >
+    <div
+      class="StyledBox-sc-13pk1d4-0 lcXThF SelectContainer__OptionBox-sc-1wi0ul8-1 cjPAAw"
+    >
+      <span
+        class="StyledText-sc-1sadyjn-0 bilRua"
+      >
+        two
+      </span>
+    </div>
+  </button>
+  <div
+    class="StyledBox-sc-13pk1d4-0 bokQlS"
+  />
+</div>
+`;
+
+exports[`Select opens and closes 6`] = `
+<button
+  aria-label="Open Drop"
+  class="StyledButton-sc-323bzc-0 jFJBys Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
+  id="test-select"
+  type="button"
+>
+  <div
+    class="StyledBox-sc-13pk1d4-0 VvbUh"
+  >
+    <div
+      class="StyledBox-sc-13pk1d4-0 bVYLzf"
+    >
+      <div
+        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
+      >
+        <input
+          autocomplete="off"
+          class="StyledTextInput-sc-1x30a0s-0 fVbmbP Select__SelectTextInput-sc-17idtfo-0 hWmVID"
+          id="test-select__input"
+          placeholder="test select"
+          readonly=""
+          tabindex="-1"
+          type="text"
+          value=""
+        />
+      </div>
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Select prop: onOpen 1`] = `
 .c8 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -5308,10 +5967,10 @@ exports[`Select opens and closes 1`] = `
 </button>
 `;
 
-exports[`Select opens and closes 2`] = `
+exports[`Select prop: onOpen 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 jFJBys Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
+  class="StyledButton-sc-323bzc-0 bwJeiP Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
   id="test-select"
   type="button"
 >
@@ -5326,7 +5985,7 @@ exports[`Select opens and closes 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 fVbmbP Select__SelectTextInput-sc-17idtfo-0 hWmVID"
+          class="StyledTextInput-sc-1x30a0s-0 jsQcHW Select__SelectTextInput-sc-17idtfo-0 hWmVID"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -5357,7 +6016,7 @@ exports[`Select opens and closes 2`] = `
 </button>
 `;
 
-exports[`Select opens and closes 3`] = `
+exports[`Select prop: onOpen 3`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -5446,26 +6105,6 @@ exports[`Select opens and closes 3`] = `
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus::-moz-focus-inner {
-  border: 0;
 }
 
 .c8 {
@@ -5602,7 +6241,7 @@ exports[`Select opens and closes 3`] = `
 </div>
 `;
 
-exports[`Select opens and closes 4`] = `
+exports[`Select prop: onOpen 4`] = `
 "@media only screen and (max-width: 768px) {
   .iCDnTm {
     margin-left: 6px;
@@ -5611,14 +6250,14 @@ exports[`Select opens and closes 4`] = `
 }"
 `;
 
-exports[`Select opens and closes 5`] = `
+exports[`Select prop: onOpen 5`] = `
 <div
   class="SelectContainer__OptionsBox-sc-1wi0ul8-0 Knkxk"
   role="menubar"
   tabindex="-1"
 >
   <button
-    class="StyledButton-sc-323bzc-0 ynEro SelectContainer__SelectOption-sc-1wi0ul8-2 kkPGyb"
+    class="StyledButton-sc-323bzc-0 gSWBFn SelectContainer__SelectOption-sc-1wi0ul8-2 kkPGyb"
     role="menuitem"
     tabindex="-1"
     type="button"
@@ -5634,7 +6273,7 @@ exports[`Select opens and closes 5`] = `
     </div>
   </button>
   <button
-    class="StyledButton-sc-323bzc-0 ynEro SelectContainer__SelectOption-sc-1wi0ul8-2 kkPGyb"
+    class="StyledButton-sc-323bzc-0 gSWBFn SelectContainer__SelectOption-sc-1wi0ul8-2 kkPGyb"
     role="menuitem"
     tabindex="-1"
     type="button"
@@ -5653,322 +6292,6 @@ exports[`Select opens and closes 5`] = `
     class="StyledBox-sc-13pk1d4-0 bokQlS"
   />
 </div>
-`;
-
-exports[`Select opens and closes 6`] = `
-<button
-  aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 jFJBys Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
-  id="test-select"
-  type="button"
->
-  <div
-    class="StyledBox-sc-13pk1d4-0 VvbUh"
-  >
-    <div
-      class="StyledBox-sc-13pk1d4-0 bVYLzf"
-    >
-      <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
-      >
-        <input
-          autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 fVbmbP Select__SelectTextInput-sc-17idtfo-0 hWmVID"
-          id="test-select__input"
-          placeholder="test select"
-          readonly=""
-          tabindex="-1"
-          type="text"
-          value=""
-        />
-      </div>
-    </div>
-    <div
-      class="StyledBox-sc-13pk1d4-0 iCDnTm"
-      style="min-width: auto;"
-    >
-      <svg
-        aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 kbXEEj"
-        viewBox="0 0 24 24"
-      >
-        <polyline
-          fill="none"
-          points="18 9 12 15 6 9"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
-    </div>
-  </div>
-</button>
-`;
-
-exports[`Select opens and closes 7`] = `
-.c8 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c0 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c0:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c0:focus > circle,
-.c0:focus > ellipse,
-.c0:focus > line,
-.c0:focus > path,
-.c0:focus > polygon,
-.c0:focus > polyline,
-.c0:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c0:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c5 {
-  box-sizing: border-box;
-  font-size: inherit;
-  font-family: inherit;
-  border: none;
-  -webkit-appearance: none;
-  background: transparent;
-  color: inherit;
-  width: 100%;
-  padding: 11px;
-  font-weight: 600;
-  margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
-  outline: none;
-  border: none;
-}
-
-.c5::-webkit-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c5::-moz-placeholder {
-  color: #AAAAAA;
-}
-
-.c5:-ms-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-.c5::-moz-focus-inner {
-  border: none;
-  outline: none;
-}
-
-.c5:-moz-placeholder,
-.c5::-moz-placeholder {
-  opacity: 1;
-}
-
-.c4 {
-  position: relative;
-  width: 100%;
-}
-
-.c6 {
-  cursor: pointer;
-}
-
-.c1 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    margin-left: 6px;
-    margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-
-}
-
-<body>
-  <div
-    aria-hidden="false"
-  />
-  <div
-    aria-hidden="false"
-  >
-    <button
-      aria-label="Open Drop"
-      class="c0 c1"
-      id="test-select"
-      type="button"
-    >
-      <div
-        class="c2"
-      >
-        <div
-          class="c3"
-        >
-          <div
-            class="c4"
-          >
-            <input
-              autocomplete="off"
-              class="c5 c6"
-              id="test-select__input"
-              placeholder="test select"
-              readonly=""
-              tabindex="-1"
-              type="text"
-              value=""
-            />
-          </div>
-        </div>
-        <div
-          class="c7"
-          style="min-width: auto;"
-        >
-          <svg
-            aria-label="FormDown"
-            class="c8"
-            viewBox="0 0 24 24"
-          >
-            <polyline
-              fill="none"
-              points="18 9 12 15 6 9"
-              stroke="#000"
-              stroke-width="2"
-            />
-          </svg>
-        </div>
-      </div>
-    </button>
-  </div>
-</body>
 `;
 
 exports[`Select renders custom icon 1`] = `
@@ -6195,7 +6518,6 @@ exports[`Select renders custom icon 1`] = `
           className="c5 c6"
           id="test-select__input"
           onBlur={[Function]}
-          onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           readOnly={true}
@@ -6814,7 +7136,6 @@ exports[`Select renders default icon 1`] = `
           className="c5 c6"
           id="test-select__input"
           onBlur={[Function]}
-          onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           readOnly={true}
@@ -7799,7 +8120,6 @@ exports[`Select renders without icon 1`] = `
           className="c5 c6"
           id="test-select__input"
           onBlur={[Function]}
-          onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           readOnly={true}
@@ -9853,7 +10173,6 @@ exports[`Select size 1`] = `
           className="c5 c6"
           id="test-select__input"
           onBlur={[Function]}
-          onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           readOnly={true}
