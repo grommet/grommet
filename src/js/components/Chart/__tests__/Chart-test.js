@@ -210,61 +210,31 @@ describe('Chart', () => {
   });
 
   test('calcs large thickness', () => {
-    const vals = [];
-    for (let i = 0; i < 8; i += 1) {
-      vals[i] = [];
-      vals[i].push(1);
-      vals[i].push(2);
-      vals[i].push(3);
-    }
+    const vals = Array(8).fill([1, 2, 3]);
     const result = calcs(vals);
     expect(result).toMatchSnapshot();
   });
 
   test('calcs medium thickness', () => {
-    const vals = [];
-    for (let i = 0; i < 14; i += 1) {
-      vals[i] = [];
-      vals[i].push(1);
-      vals[i].push(2);
-      vals[i].push(3);
-    }
+    const vals = Array(14).fill([1, 2, 3]);
     const result = calcs(vals);
     expect(result).toMatchSnapshot();
   });
 
   test('calcs small thickness', () => {
-    const vals = [];
-    for (let i = 0; i < 24; i += 1) {
-      vals[i] = [];
-      vals[i].push(1);
-      vals[i].push(2);
-      vals[i].push(3);
-    }
+    const vals = Array(24).fill([1, 2, 3]);
     const result = calcs(vals);
     expect(result).toMatchSnapshot();
   });
 
   test('calcs xsmall thickness', () => {
-    const vals = [];
-    for (let i = 0; i < 64; i += 1) {
-      vals[i] = [];
-      vals[i].push(1);
-      vals[i].push(2);
-      vals[i].push(3);
-    }
+    const vals = Array(64).fill([1, 2, 3]);
     const result = calcs(vals);
     expect(result).toMatchSnapshot();
   });
 
   test('calcs hair thickness', () => {
-    const vals = [];
-    for (let i = 0; i < 123; i += 1) {
-      vals[i] = [];
-      vals[i].push(1);
-      vals[i].push(2);
-      vals[i].push(3);
-    }
+    const vals = Array(124).fill([1, 2, 3]);
     const result = calcs(vals);
     expect(result).toMatchSnapshot();
   });
