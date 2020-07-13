@@ -941,12 +941,18 @@ export interface ThemeType {
       active?: {
         color?: ColorType;
       };
+      disabled?: {
+        color?: ColorType;
+      };
       hover?: {
         color?: ColorType;
         extend?: ExtendType;
       };
     };
     color?: ColorType;
+    disabled?: {
+      color?: ColorType;
+    };
     extend?: ExtendType;
     hover?: {
       background?: BackgroundType;
