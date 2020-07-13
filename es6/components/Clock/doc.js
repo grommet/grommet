@@ -10,7 +10,7 @@ export var doc = function doc(Clock) {
     precision: PropTypes.oneOf(['hours', 'minutes', 'seconds']).description('How precise a time to represent.').defaultValue('seconds'),
     run: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['backward', 'forward'])]).description("Whether the clock should actively adjust time or be fixed to the\n      time specified. 'backward' could be used as a countdown timer.").defaultValue('forward'),
     size: PropTypes.oneOfType([PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']), PropTypes.string]).description('Clock size').defaultValue('medium'),
-    time: PropTypes.string.description("ISO8601 time or duration. For example: 'PT8H12M23S',\n      'T08:12:23', or '2015-02-22T08:12:23'. Any included date\n      portion will be ignored for an analog clock. If not provided, the\n      current browser time will be used."),
+    time: PropTypes.string.description("ISO8601 time or duration. For example: 'PT8H12M23S',\n      'T08:12:23', or '2015-02-22T08:12:23'. Any included date\n      portion will be ignored. If not provided, the\n      current browser time will be used."),
     type: PropTypes.oneOf(['analog', 'digital']).description('What type of visualization to show.').defaultValue('analog')
   });
   return DocumentedClock;
