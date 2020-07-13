@@ -12,6 +12,7 @@ import { OptionWithCheckControl } from './OptionWithCheckControl';
 import { OptionChips } from './OptionChips';
 import { ControlButton } from './ControlButton';
 import { Searchbox } from './Searchbox';
+import { CustomMultiSelect } from './CustomMultiSelect';
 
 const ColumnSelect = ({
   options,
@@ -43,6 +44,8 @@ const ColumnSelect = ({
   searchValue,
   onSearchChange,
   renderEmptySelected,
+  onValueChange,
+  custom,
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
 
@@ -51,14 +54,15 @@ const ColumnSelect = ({
     ...theme.select.options.container,
   };
 
-  const allSelected = options.every((item, index) => isSelected(index));
+  const allSelected =
+    options && options.every((item, index) => isSelected(index));
 
   const setOption = (event, type, index) => {
     setIncExcVal(type);
     if (index !== -1) selectOption(index)(event);
     else
-      setValues(allSelected ?
-        [] : options.map((item, ind) => optionValue(ind)),
+      setValues(
+        allSelected ? [] : options.map((item, ind) => optionValue(ind)),
       );
   };
 
@@ -78,6 +82,25 @@ const ColumnSelect = ({
       layout={layout}
     />
   );
+
+  if (custom) {
+    return (
+      <CustomMultiSelect
+        value={value}
+        layout={layout}
+        onValueChange={onValueChange}
+        renderSearch={renderSearch}
+        placeholder={searchPlaceholder}
+        renderEmptySelected={renderEmptySelected}
+        width={width}
+        height={height}
+        custom={custom}
+        isExcluded={isExcluded}
+        setIncExcVal={setIncExcVal}
+        inclusionExclusion={inclusionExclusion}
+      />
+    );
+  }
 
   return (
     <>
@@ -120,11 +143,18 @@ const ColumnSelect = ({
                           hoverIndicator="light-5"
                           selected={allSelected}
                           plain
-                          onClick={(!inclusionExclusion) ||
-                            (inclusionExclusion && isExcluded !== null) ?
-                            (() => setValues(allSelected ?
-                              [] : options.map((item, ind) => optionValue(ind)))
-                            ) : undefined
+                          onClick={
+                            !inclusionExclusion ||
+                            (inclusionExclusion && isExcluded !== null)
+                              ? () =>
+                                  setValues(
+                                    allSelected
+                                      ? []
+                                      : options.map((item, ind) =>
+                                          optionValue(ind),
+                                        ),
+                                  )
+                              : undefined
                           }
                         >
                           <OptionWithCheckControl
@@ -132,8 +162,8 @@ const ColumnSelect = ({
                             label="Select All"
                             inclusionExclusion={inclusionExclusion}
                             isExcluded={isExcluded}
-                            onSelect={
-                              (event, type) => setOption(event, type, -1)
+                            onSelect={(event, type) =>
+                              setOption(event, type, -1)
                             }
                           />
                         </SelectOption>
@@ -154,10 +184,12 @@ const ColumnSelect = ({
                           !optionDisabled ? onActiveOption(index) : undefined
                         }
                         onClick={
-                          (!optionDisabled && !inclusionExclusion) || 
-                          (!optionDisabled && inclusionExclusion
-                            && isExcluded !== null) ?
-                          selectOption(index) : undefined
+                          (!optionDisabled && !inclusionExclusion) ||
+                          (!optionDisabled &&
+                            inclusionExclusion &&
+                            isExcluded !== null)
+                            ? selectOption(index)
+                            : undefined
                         }
                       >
                         <OptionWithCheckControl
@@ -165,8 +197,8 @@ const ColumnSelect = ({
                           label={optionLabel(index)}
                           inclusionExclusion={inclusionExclusion}
                           isExcluded={isExcluded}
-                          onSelect={
-                            (event, type) => setOption(event, type, index)
+                          onSelect={(event, type) =>
+                            setOption(event, type, index)
                           }
                         />
                       </SelectOption>
@@ -175,21 +207,21 @@ const ColumnSelect = ({
                 }}
               </InfiniteScroll>
             ) : (
-                <SelectOption
-                  key="search_empty"
-                  tabIndex="-1"
-                  role="menuitem"
-                  hoverIndicator="background"
-                  disabled
-                  option="No values available"
-                >
-                  <Box {...selectOptionsStyle}>
-                    <Text {...theme.select.container.text}>
-                      {emptySearchMessage || 'No values available'}
-                    </Text>
-                  </Box>
-                </SelectOption>
-              )}
+              <SelectOption
+                key="search_empty"
+                tabIndex="-1"
+                role="menuitem"
+                hoverIndicator="background"
+                disabled
+                option="No values available"
+              >
+                <Box {...selectOptionsStyle}>
+                  <Text {...theme.select.container.text}>
+                    {emptySearchMessage || 'No values available'}
+                  </Text>
+                </Box>
+              </SelectOption>
+            )}
           </OptionsBox>
         </Box>
         {layout === 'double-column' && (
@@ -210,6 +242,6 @@ const ColumnSelect = ({
       )}
     </>
   );
-}
+};
 
 export { ColumnSelect };

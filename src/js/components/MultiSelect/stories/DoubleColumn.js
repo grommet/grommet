@@ -42,7 +42,7 @@ const Example = () => {
         renderEmptySelected={<span>Empty</span>}
       />
     </Box>
-  )
-}
+  );
+};
 
 storiesOf('MultiSelect', module).add('Double Column', () => <Example />);

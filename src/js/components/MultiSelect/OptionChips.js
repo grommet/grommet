@@ -96,6 +96,6 @@ const OptionChips = ({
       {(!Array.isArray(value) || !value.length) && renderEmptySelected}
     </OptionsBox>
   );
-}
+};
 
 export { OptionChips };
