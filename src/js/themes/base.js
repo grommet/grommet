@@ -984,6 +984,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         wrapper: {
           pad: 'medium',
           direction: 'row',
+          height: {
+            min: 'auto',
+          },
           // extend: undefined,
         },
         button: {
@@ -992,7 +995,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       searchbox: {
         container: {
-          height: 'xxsmall',
+          height: {
+            min: 'xxsmall',
+            max: 'xxsmall',
+          },
           direction: 'row',
           align: 'center',
           background: 'light-2',
@@ -1271,12 +1277,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       scrubber: {
         color: 'light-4',
       },
-    },
-    tooptip: {
-      background: 'dark-1',
-      color: 'white',
-      tipSize: '5px',
-      round: 'small',
     },
     tooptip: {
       background: 'dark-1',

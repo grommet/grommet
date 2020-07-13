@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useCallback } from 'react';
 import { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
@@ -57,14 +57,33 @@ const ColumnSelect = ({
   const allSelected =
     options && options.every((item, index) => isSelected(index));
 
-  const setOption = (event, type, index) => {
-    setIncExcVal(type);
-    if (index !== -1) selectOption(index)(event);
-    else
-      setValues(
-        allSelected ? [] : options.map((item, ind) => optionValue(ind)),
-      );
-  };
+  const setOption = useCallback(
+    (event, type, index) => {
+      setIncExcVal(type);
+      if (index !== -1) selectOption(index)(event);
+      else
+        setValues(
+          allSelected ? [] : options.map((item, i) => optionValue(i)),
+        );
+    },
+    [allSelected, optionValue, options, selectOption, setIncExcVal, setValues],
+  );
+
+  const onChipRemove = useCallback(
+    (event, index) => {
+      if (inclusionExclusion && value.length === 1) setIncExcVal(null);
+      selectOption(index)(event);
+    },
+    [inclusionExclusion, selectOption, setIncExcVal, value],
+  );
+
+  const setUnsetChips = useCallback(
+    updatedValues => {
+      if (inclusionExclusion && !updatedValues.length) setIncExcVal(null);
+      setValues(updatedValues);
+    },
+    [inclusionExclusion, setIncExcVal, setValues],
+  );
 
   const renderOptionChips = () => (
     <OptionChips
@@ -74,8 +93,8 @@ const ColumnSelect = ({
       value={value}
       isSelected={isSelected}
       optionLabel={optionLabel}
-      selectOption={selectOption}
-      clearAll={setValues}
+      onRemove={onChipRemove}
+      clearAll={setUnsetChips}
       inclusionExclusion={inclusionExclusion}
       isExcluded={isExcluded}
       renderEmptySelected={renderEmptySelected}
@@ -147,7 +166,7 @@ const ColumnSelect = ({
                             !inclusionExclusion ||
                             (inclusionExclusion && isExcluded !== null)
                               ? () =>
-                                  setValues(
+                                  setUnsetChips(
                                     allSelected
                                       ? []
                                       : options.map((item, ind) =>

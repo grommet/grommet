@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import { Box } from '../Box';
 import { Select } from '../Select';
@@ -38,10 +38,6 @@ const MultiSelect = ({
     searchVal,
     setSelectState,
   } = useCustomSelectState(options, value);
-
-  // useEffect(() => {
-  //   if (withInclusionExclusion && value.length === 0) onIncExcChange(null);
-  // }, [onIncExcChange, value, withInclusionExclusion]);
 
   const onCancelClick = () => {
     onValueChange(previousValue);
