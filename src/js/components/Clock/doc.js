@@ -42,7 +42,7 @@ export const doc = Clock => {
     time: PropTypes.string.description(
       `ISO8601 time or duration. For example: 'PT8H12M23S',
       'T08:12:23', or '2015-02-22T08:12:23'. Any included date
-      portion will be ignored for an analog clock. If not provided, the
+      portion will be ignored. If not provided, the
       current browser time will be used.`,
     ),
     type: PropTypes.oneOf(['analog', 'digital'])
