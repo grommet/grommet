@@ -16,7 +16,7 @@ export interface CalendarProps {
   header?: ((...args: any[]) => any);
   locale?: string;
   onReference?: ((reference: string) => void);
-  onSelect?: ((select: string[]) => any);
+  onSelect?: ((select: string | string[]) => any);
   range?: boolean;
   reference?: string;
   showAdjacentDays?: boolean;
