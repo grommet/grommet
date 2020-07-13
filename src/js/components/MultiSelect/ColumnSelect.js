@@ -69,7 +69,7 @@ const ColumnSelect = ({
     [allSelected, optionValue, options, selectOption, setIncExcVal, setValues],
   );
 
-  const onChipRemove = useCallback(
+  const optionSelect = useCallback(
     (event, index) => {
       if (inclusionExclusion && value.length === 1) setIncExcVal(null);
       selectOption(index)(event);
@@ -93,7 +93,7 @@ const ColumnSelect = ({
       value={value}
       isSelected={isSelected}
       optionLabel={optionLabel}
-      onRemove={onChipRemove}
+      onRemove={optionSelect}
       clearAll={setUnsetChips}
       inclusionExclusion={inclusionExclusion}
       isExcluded={isExcluded}
@@ -207,7 +207,7 @@ const ColumnSelect = ({
                           (!optionDisabled &&
                             inclusionExclusion &&
                             isExcluded !== null)
-                            ? selectOption(index)
+                            ? event => optionSelect(event, index)
                             : undefined
                         }
                       >
