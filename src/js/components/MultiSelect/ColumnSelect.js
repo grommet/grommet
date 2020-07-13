@@ -71,10 +71,11 @@ const ColumnSelect = ({
 
   const optionSelect = useCallback(
     (event, index) => {
-      if (inclusionExclusion && value.length === 1) setIncExcVal(null);
+      if (inclusionExclusion && value.length === 1 && isSelected(index))
+        setIncExcVal(null);
       selectOption(index)(event);
     },
-    [inclusionExclusion, selectOption, setIncExcVal, value],
+    [inclusionExclusion, isSelected, selectOption, setIncExcVal, value],
   );
 
   const setUnsetChips = useCallback(
