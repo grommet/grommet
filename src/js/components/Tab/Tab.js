@@ -13,7 +13,17 @@ import { StyledTab } from './StyledTab';
 
 const Tab = forwardRef(
   (
-    { children, icon, plain, title, onMouseOver, onMouseOut, reverse, ...rest },
+    {
+      disabled,
+      children,
+      icon,
+      plain,
+      title,
+      onMouseOver,
+      onMouseOut,
+      reverse,
+      ...rest
+    },
     ref,
   ) => {
     const {
@@ -65,11 +75,20 @@ const Tab = forwardRef(
       onActivate();
     };
 
+    if (active && disabled) {
+      console.warn(
+        // eslint-disable-next-line max-len
+        `Warning: Tab props 'active' and 'disabled' have both been set to TRUE on the same Tab resulting in an interesting Tab state. Is this your intent?`,
+      );
+    }
+
     if (!plain) {
       if (typeof title !== 'string') {
         normalizedTitle = title;
       } else if (active) {
         normalizedTitle = <Text {...theme.tab.active}>{title}</Text>;
+      } else if (disabled && theme.tab.disabled) {
+        normalizedTitle = <Text {...theme.tab.disabled}>{title}</Text>;
       } else {
         normalizedTitle = (
           <Text color={over ? theme.tab.hover.color : theme.tab.color}>
@@ -83,6 +102,8 @@ const Tab = forwardRef(
           theme.tab.border.color || theme.global.control.border.color;
         if (active) {
           borderColor = theme.tab.border.active.color || borderColor;
+        } else if (disabled && theme.tab.border.disabled) {
+          borderColor = theme.tab.border.disabled.color || borderColor;
         } else if (over) {
           borderColor = theme.tab.border.hover.color || borderColor;
         }
@@ -108,6 +129,9 @@ const Tab = forwardRef(
         return React.cloneElement(iconProp, {
           ...theme.tab.active,
         });
+      }
+      if (disabled) {
+        return React.cloneElement(iconProp, { ...theme.tab.disabled });
       }
       return React.cloneElement(iconProp, {
         color: over ? theme.tab.hover.color : theme.tab.color,
@@ -139,6 +163,7 @@ const Tab = forwardRef(
         role="tab"
         aria-selected={active}
         aria-expanded={active}
+        disabled={disabled}
         {...rest}
         onClick={onClickTab}
         onMouseOver={onMouseOverTab}
@@ -155,7 +180,13 @@ const Tab = forwardRef(
         // of adjacent tabs
         style={focus && { zIndex: 1 }}
       >
-        <StyledTab as={Box} plain={plain} {...withIconStyles} {...tabStyles}>
+        <StyledTab
+          as={Box}
+          disabled={disabled}
+          plain={plain}
+          {...withIconStyles}
+          {...tabStyles}
+        >
           {first}
           {second}
         </StyledTab>
