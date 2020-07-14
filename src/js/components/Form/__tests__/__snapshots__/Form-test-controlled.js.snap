@@ -113,6 +113,11 @@ exports[`Form controlled controlled 1`] = `
   outline: none;
 }
 
+.c4:-moz-placeholder,
+.c4::-moz-placeholder {
+  opacity: 1;
+}
+
 .c3 {
   position: relative;
   width: 100%;
@@ -179,7 +184,7 @@ exports[`Form controlled controlled 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+            class="StyledTextInput-sc-1x30a0s-0 jGsEcv"
             name="test"
             placeholder="test input"
             value="v"
@@ -213,7 +218,7 @@ exports[`Form controlled controlled 3`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+            class="StyledTextInput-sc-1x30a0s-0 jGsEcv"
             name="test"
             placeholder="test input"
             value="v"
@@ -353,6 +358,11 @@ exports[`Form controlled controlled FormField deprecated 1`] = `
   outline: none;
 }
 
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
+}
+
 .c4 {
   position: relative;
   width: 100%;
@@ -431,7 +441,7 @@ exports[`Form controlled controlled FormField deprecated 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+            class="StyledTextInput-sc-1x30a0s-0 jGsEcv"
             id="test"
             name="test"
             value="v"
@@ -471,7 +481,7 @@ exports[`Form controlled controlled FormField deprecated 3`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+            class="StyledTextInput-sc-1x30a0s-0 jGsEcv"
             id="test"
             name="test"
             value="v"
@@ -602,6 +612,11 @@ exports[`Form controlled controlled input 1`] = `
   outline: none;
 }
 
+.c4:-moz-placeholder,
+.c4::-moz-placeholder {
+  opacity: 1;
+}
+
 .c3 {
   position: relative;
   width: 100%;
@@ -668,7 +683,7 @@ exports[`Form controlled controlled input 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+            class="StyledTextInput-sc-1x30a0s-0 jGsEcv"
             name="test"
             placeholder="test input"
             value="v"
@@ -702,7 +717,7 @@ exports[`Form controlled controlled input 3`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+            class="StyledTextInput-sc-1x30a0s-0 jGsEcv"
             name="test"
             placeholder="test input"
             value="v"
@@ -833,6 +848,11 @@ exports[`Form controlled controlled input lazy 1`] = `
   outline: none;
 }
 
+.c4:-moz-placeholder,
+.c4::-moz-placeholder {
+  opacity: 1;
+}
+
 .c3 {
   position: relative;
   width: 100%;
@@ -899,7 +919,7 @@ exports[`Form controlled controlled input lazy 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+            class="StyledTextInput-sc-1x30a0s-0 jGsEcv"
             name="test"
             placeholder="test input"
             value="v"
@@ -933,7 +953,7 @@ exports[`Form controlled controlled input lazy 3`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+            class="StyledTextInput-sc-1x30a0s-0 jGsEcv"
             name="test"
             placeholder="test input"
             value="v"
@@ -1064,6 +1084,11 @@ exports[`Form controlled controlled lazy 1`] = `
   outline: none;
 }
 
+.c4:-moz-placeholder,
+.c4::-moz-placeholder {
+  opacity: 1;
+}
+
 .c3 {
   position: relative;
   width: 100%;
@@ -1130,7 +1155,7 @@ exports[`Form controlled controlled lazy 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+            class="StyledTextInput-sc-1x30a0s-0 jGsEcv"
             name="test"
             placeholder="test input"
             value="v"
@@ -1164,7 +1189,7 @@ exports[`Form controlled controlled lazy 3`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+            class="StyledTextInput-sc-1x30a0s-0 jGsEcv"
             name="test"
             placeholder="test input"
             value="v"
@@ -1257,6 +1282,11 @@ exports[`Form controlled lazy value 1`] = `
 .c2::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c2:-moz-placeholder,
+.c2::-moz-placeholder {
+  opacity: 1;
 }
 
 .c1 {

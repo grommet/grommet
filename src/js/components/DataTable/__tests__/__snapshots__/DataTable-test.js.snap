@@ -5962,6 +5962,11 @@ exports[`DataTable search 2`] = `
   outline: none;
 }
 
+.c2:-moz-placeholder,
+.c2::-moz-placeholder {
+  opacity: 1;
+}
+
 .c2 > circle,
 .c2 > ellipse,
 .c2 > line,

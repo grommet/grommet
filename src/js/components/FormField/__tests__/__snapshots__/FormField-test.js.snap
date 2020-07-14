@@ -303,6 +303,11 @@ exports[`FormField custom input margin 1`] = `
   outline: none;
 }
 
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
+}
+
 .c4 {
   position: relative;
   width: 100%;
@@ -454,6 +459,11 @@ exports[`FormField custom label 1`] = `
   outline: none;
 }
 
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
+}
+
 .c4 {
   position: relative;
   width: 100%;
@@ -589,6 +599,11 @@ exports[`FormField default 1`] = `
 .c4::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c4:-moz-placeholder,
+.c4::-moz-placeholder {
+  opacity: 1;
 }
 
 .c3 {
@@ -728,6 +743,11 @@ exports[`FormField disabled 1`] = `
 .c4::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c4:-moz-placeholder,
+.c4::-moz-placeholder {
+  opacity: 1;
 }
 
 .c3 {
@@ -882,6 +902,11 @@ exports[`FormField disabled with custom label 1`] = `
 .c5::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
 }
 
 .c4 {
@@ -1645,6 +1670,11 @@ exports[`FormField pad with border undefined 1`] = `
   outline: none;
 }
 
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
+}
+
 .c4 {
   position: relative;
   width: 100%;
@@ -1779,6 +1809,11 @@ exports[`FormField required 1`] = `
 .c4::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c4:-moz-placeholder,
+.c4::-moz-placeholder {
+  opacity: 1;
 }
 
 .c3 {

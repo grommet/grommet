@@ -152,6 +152,11 @@ exports[`Select 0 value 1`] = `
   outline: none;
 }
 
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
+}
+
 .c4 {
   position: relative;
   width: 100%;
@@ -387,6 +392,11 @@ exports[`Select Search timeout 1`] = `
   outline: none;
 }
 
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
+  opacity: 1;
+}
+
 .c5 {
   position: relative;
   width: 100%;
@@ -529,6 +539,11 @@ exports[`Select Search timeout 2`] = `
 .c0::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c0:-moz-placeholder,
+.c0::-moz-placeholder {
+  opacity: 1;
 }
 
 .c0 > circle,
@@ -724,6 +739,11 @@ exports[`Select applies custom global.hover theme to options 1`] = `
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
+  opacity: 1;
 }
 
 .c5 {
@@ -1054,6 +1074,11 @@ exports[`Select basic 1`] = `
   outline: none;
 }
 
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
+}
+
 .c4 {
   position: relative;
   width: 100%;
@@ -1289,6 +1314,11 @@ exports[`Select complex options and children 1`] = `
   outline: none;
 }
 
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
+}
+
 .c4 {
   position: relative;
   width: 100%;
@@ -1376,7 +1406,7 @@ exports[`Select complex options and children 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 jsQcHW Select__SelectTextInput-sc-17idtfo-0 hWmVID"
+          class="StyledTextInput-sc-1x30a0s-0 jGsEcv Select__SelectTextInput-sc-17idtfo-0 hWmVID"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -1752,6 +1782,11 @@ exports[`Select disabled 1`] = `
   outline: none;
 }
 
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
+}
+
 .c4 {
   position: relative;
   width: 100%;
@@ -1841,7 +1876,7 @@ exports[`Select disabled 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 jsQcHW Select__SelectTextInput-sc-17idtfo-0 hWmVID"
+          class="StyledTextInput-sc-1x30a0s-0 jGsEcv Select__SelectTextInput-sc-17idtfo-0 hWmVID"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -2022,6 +2057,11 @@ exports[`Select disabled key 1`] = `
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
+  opacity: 1;
 }
 
 .c5 {
@@ -2659,6 +2699,11 @@ exports[`Select empty results search 1`] = `
   outline: none;
 }
 
+.c0:-moz-placeholder,
+.c0::-moz-placeholder {
+  opacity: 1;
+}
+
 .c0 > circle,
 .c0 > ellipse,
 .c0 > line,
@@ -2852,6 +2897,11 @@ exports[`Select keyboard navigation timeout 1`] = `
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
+  opacity: 1;
 }
 
 .c5 {
@@ -3554,6 +3604,11 @@ exports[`Select modifies select control style on open 1`] = `
   outline: none;
 }
 
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
+  opacity: 1;
+}
+
 .c5 {
   position: relative;
   width: 100%;
@@ -3789,6 +3844,11 @@ exports[`Select onChange with valueKey string 1`] = `
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
+  opacity: 1;
 }
 
 .c5 {
@@ -4260,6 +4320,11 @@ exports[`Select onChange without valueKey 1`] = `
   outline: none;
 }
 
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
+  opacity: 1;
+}
+
 .c5 {
   position: relative;
   width: 100%;
@@ -4729,6 +4794,11 @@ exports[`Select opens and closes 1`] = `
   outline: none;
 }
 
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
+}
+
 .c4 {
   position: relative;
   width: 100%;
@@ -4816,7 +4886,7 @@ exports[`Select opens and closes 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 jsQcHW Select__SelectTextInput-sc-17idtfo-0 hWmVID"
+          class="StyledTextInput-sc-1x30a0s-0 jGsEcv Select__SelectTextInput-sc-17idtfo-0 hWmVID"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -5143,7 +5213,7 @@ exports[`Select opens and closes 6`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 jsQcHW Select__SelectTextInput-sc-17idtfo-0 hWmVID"
+          class="StyledTextInput-sc-1x30a0s-0 jGsEcv Select__SelectTextInput-sc-17idtfo-0 hWmVID"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -5324,6 +5394,11 @@ exports[`Select opens and closes 7`] = `
 .c5::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
 }
 
 .c4 {
@@ -5568,6 +5643,11 @@ exports[`Select renders custom icon 1`] = `
   outline: none;
 }
 
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
+}
+
 .c4 {
   position: relative;
   width: 100%;
@@ -5802,6 +5882,11 @@ exports[`Select renders custom up and down icons 1`] = `
   outline: none;
 }
 
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
+  opacity: 1;
+}
+
 .c5 {
   position: relative;
   width: 100%;
@@ -5903,7 +5988,7 @@ exports[`Select renders custom up and down icons 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 jsQcHW Select__SelectTextInput-sc-17idtfo-0 hWmVID"
+            class="StyledTextInput-sc-1x30a0s-0 jGsEcv Select__SelectTextInput-sc-17idtfo-0 hWmVID"
             placeholder="Select..."
             readonly=""
             tabindex="-1"
@@ -6135,6 +6220,11 @@ exports[`Select renders default icon 1`] = `
 .c5::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
 }
 
 .c4 {
@@ -6370,6 +6460,11 @@ exports[`Select renders styled select options backwards compatible with legacy
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
+  opacity: 1;
 }
 
 .c5 {
@@ -6610,6 +6705,11 @@ exports[`Select renders styled select options combining select.options.box &&
   outline: none;
 }
 
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
+  opacity: 1;
+}
+
 .c5 {
   position: relative;
   width: 100%;
@@ -6846,6 +6946,11 @@ exports[`Select renders styled select options using select.options.container 1`]
   outline: none;
 }
 
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
+  opacity: 1;
+}
+
 .c5 {
   position: relative;
   width: 100%;
@@ -7027,6 +7132,11 @@ exports[`Select renders without icon 1`] = `
 .c5::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
 }
 
 .c4 {
@@ -7233,6 +7343,11 @@ exports[`Select search 1`] = `
 .c5::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
 }
 
 .c4 {
@@ -7484,6 +7599,11 @@ exports[`Select search 2`] = `
   outline: none;
 }
 
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
+  opacity: 1;
+}
+
 .c6 > circle,
 .c6 > ellipse,
 .c6 > line,
@@ -7645,7 +7765,7 @@ exports[`Select search 3`] = `
 exports[`Select search 4`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 dbCTDH"
+  class="StyledTextInput-sc-1x30a0s-0 fIotSm"
   type="search"
   value=""
 />
@@ -7654,7 +7774,7 @@ exports[`Select search 4`] = `
 exports[`Select search 5`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 dbCTDH"
+  class="StyledTextInput-sc-1x30a0s-0 fIotSm"
   type="search"
   value="o"
 />
@@ -7810,6 +7930,11 @@ exports[`Select select an option 1`] = `
 .c5::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
 }
 
 .c4 {
@@ -8190,6 +8315,11 @@ exports[`Select select an option with enter 1`] = `
   outline: none;
 }
 
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
+}
+
 .c4 {
   position: relative;
   width: 100%;
@@ -8409,6 +8539,11 @@ exports[`Select selected 1`] = `
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
+  opacity: 1;
 }
 
 .c5 {
@@ -8646,6 +8781,11 @@ exports[`Select should not have accessibility violations 1`] = `
   outline: none;
 }
 
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
+  opacity: 1;
+}
+
 .c5 {
   position: relative;
   width: 100%;
@@ -8879,6 +9019,11 @@ exports[`Select size 1`] = `
 .c5::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
 }
 
 .c4 {
