@@ -180,6 +180,11 @@ exports[`DateInput focus 1`] = `
   outline: none;
 }
 
+.c4:-moz-placeholder,
+.c4::-moz-placeholder {
+  opacity: 1;
+}
+
 .c4 > circle,
 .c4 > ellipse,
 .c4 > line,
@@ -1450,6 +1455,11 @@ exports[`DateInput format 1`] = `
   outline: none;
 }
 
+.c4:-moz-placeholder,
+.c4::-moz-placeholder {
+  opacity: 1;
+}
+
 .c1 {
   position: relative;
   width: 100%;
@@ -1594,6 +1604,11 @@ exports[`DateInput format disabled 1`] = `
 .c4::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c4:-moz-placeholder,
+.c4::-moz-placeholder {
+  opacity: 1;
 }
 
 .c1 {
@@ -1950,6 +1965,11 @@ exports[`DateInput format inline 1`] = `
 .c5::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
 }
 
 .c2 {
@@ -4486,6 +4506,11 @@ exports[`DateInput range format 1`] = `
   outline: none;
 }
 
+.c4:-moz-placeholder,
+.c4::-moz-placeholder {
+  opacity: 1;
+}
+
 .c1 {
   position: relative;
   width: 100%;
@@ -4857,6 +4882,11 @@ exports[`DateInput range format inline 1`] = `
 .c5::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
 }
 
 .c2 {
@@ -7316,6 +7346,11 @@ exports[`DateInput select format 1`] = `
   outline: none;
 }
 
+.c4:-moz-placeholder,
+.c4::-moz-placeholder {
+  opacity: 1;
+}
+
 .c1 {
   position: relative;
   width: 100%;
@@ -7398,7 +7433,7 @@ exports[`DateInput select format 2`] = `
     </div>
     <input
       autocomplete="off"
-      class="StyledMaskedInput-sc-99vkfa-0 hskbfc"
+      class="StyledMaskedInput-sc-99vkfa-0 caCMJZ"
       id="item"
       name="item"
       placeholder="mm/dd/yyyy"
@@ -8801,6 +8836,11 @@ exports[`DateInput select format inline 1`] = `
   outline: none;
 }
 
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
+}
+
 .c2 {
   position: relative;
   width: 100%;
@@ -9678,7 +9718,7 @@ exports[`DateInput select format inline 2`] = `
       </div>
       <input
         autocomplete="off"
-        class="StyledMaskedInput-sc-99vkfa-0 bsKaHx"
+        class="StyledMaskedInput-sc-99vkfa-0 jOcLJM"
         id="item"
         name="item"
         placeholder="mm/dd/yyyy"
@@ -10768,6 +10808,11 @@ exports[`DateInput select format inline range 1`] = `
   outline: none;
 }
 
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
+}
+
 .c2 {
   position: relative;
   width: 100%;
@@ -11645,7 +11690,7 @@ exports[`DateInput select format inline range 2`] = `
       </div>
       <input
         autocomplete="off"
-        class="StyledMaskedInput-sc-99vkfa-0 bsKaHx"
+        class="StyledMaskedInput-sc-99vkfa-0 jOcLJM"
         id="item"
         name="item"
         placeholder="mm/dd/yyyy-mm/dd/yyyy"
@@ -13768,6 +13813,11 @@ exports[`DateInput type format inline 1`] = `
   outline: none;
 }
 
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
+}
+
 .c2 {
   position: relative;
   width: 100%;
@@ -14645,7 +14695,7 @@ exports[`DateInput type format inline 2`] = `
       </div>
       <input
         autocomplete="off"
-        class="StyledMaskedInput-sc-99vkfa-0 bsKaHx"
+        class="StyledMaskedInput-sc-99vkfa-0 jOcLJM"
         id="item"
         name="item"
         placeholder="mm/dd/yyyy"

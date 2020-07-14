@@ -39,6 +39,11 @@ export const StyledMaskedInput = styled.input`
     outline: none;
   }
 
+  &:-moz-placeholder, // FF 18-
+  &::-moz-placeholder { // FF 19+
+    opacity: 1;
+  }
+
   ${props => props.focus && !props.plain && focusStyle()};
   ${props =>
     props.disabled &&
