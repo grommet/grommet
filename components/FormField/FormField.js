@@ -183,7 +183,11 @@ var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
     }, rest));
   }
 
-  var contentProps = pad || wantContentPad ? _extends({}, formFieldTheme.content) : {};
+  var contentProps = _extends({}, formFieldTheme.content);
+
+  if (!pad && !wantContentPad) {
+    contentProps.pad = undefined;
+  }
 
   if (themeBorder && themeBorder.position === 'inner') {
     if (error && formFieldTheme.error) {
@@ -191,7 +195,11 @@ var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
     } else if (disabled && formFieldTheme.disabled) {
       contentProps.background = formFieldTheme.disabled.background;
     }
-  }
+  } // Removing margin from contentProps because margin should be applied
+  // on containing <FormFieldContentBox>
+  // contentProps.margin = undefined;
+  // contents = <Box {...contentProps}>{contents}</Box>;
+
 
   if (!themeBorder) {
     contents = /*#__PURE__*/_react["default"].createElement(_Box.Box, contentProps, contents);

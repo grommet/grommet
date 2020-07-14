@@ -794,6 +794,7 @@ var generate = function generate(baseSpacing, scale) {
         side: 'bottom'
       },
       content: {
+        // margin: undefined,
         pad: 'small'
       },
       disabled: {
