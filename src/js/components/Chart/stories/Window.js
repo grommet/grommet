@@ -150,5 +150,5 @@ const WindowChart = ({ data, max }) => {
 };
 
 storiesOf('Chart', module).add('Window', () => (
-  <WindowChart data={generateData()(1000, 100)} max={100} />
+  <WindowChart data={generateData(1000, 100)} max={100} />
 ));

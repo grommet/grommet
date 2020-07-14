@@ -124,5 +124,5 @@ const ZoomChart = ({ data, max }) => {
 };
 
 storiesOf('Chart', module).add('Zoom', () => (
-  <ZoomChart data={generateData()(1000, 100)} max={100} />
+  <ZoomChart data={generateData(1000, 100)} max={100} />
 ));
