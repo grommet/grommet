@@ -21,8 +21,8 @@ import {
   PropsOf,
 } from '../utils';
 
+import { BoxProps } from '../components/Box';
 import { Anchor } from '../components/Anchor';
-import { Button } from '../components/Button';
 import { Box } from '../components/Box';
 import { Text, TextProps } from '../components/Text';
 import { ReactComponentElement } from 'react';
@@ -52,7 +52,7 @@ type ExtendValue<TProps> = string | FlattenSimpleInterpolation | FlattenInterpol
 type ExtendFn<TProps> = (props: ExtendProps<TProps>) => ExtendValue<TProps>;
 
 /**
- * ExtendType represents a valid value for `extend` in the theme.
+ * ExtendType represents the type for `extend` values in the theme.
  *
  * Acceptable values for `extend` are one of:
  *
@@ -112,7 +112,7 @@ type Colors = typeof colors & {
   'graph-3'?: ColorType;
   'graph-4'?: ColorType;
   'graph-5'?: ColorType;
-  [x: string]: ColorType | undefined;
+  [x: string]: ColorType;
 };
 
 interface ButtonKindType {

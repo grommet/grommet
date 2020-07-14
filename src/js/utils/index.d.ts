@@ -40,9 +40,9 @@ export {isObject, deepFreeze, deepMerge, removeUndefined};
  * Example:
  *
  * ```typescript
- * import { Box } from 'grommet';
+ * import { SomeComponent } from 'grommet';
  *
- * type BoxProps = PropsOf<typeof Box>;
+ * type SomeComponentProps = PropsOf<typeof SomeComponent>;
  * ```
  */
 export type PropsOf<TComponent> = TComponent extends React.ComponentType<infer P> ? P : never;
@@ -97,7 +97,7 @@ declare const breakpointBorderSize: {
 }
 export type BreakpointBorderSize = typeof breakpointBorderSize;
 
-declare const breakpointSize: {          
+declare const breakpointSize: {
   xxsmall?: string;
   xsmall?: string;
   small?: string;
