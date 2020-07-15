@@ -24,6 +24,9 @@ var theme = (0, _utils.deepMerge)(_themes.grommet, {
     check: {
       color: {
         light: 'neutral-1'
+      },
+      background: {
+        color: 'red'
       }
     },
     icon: {

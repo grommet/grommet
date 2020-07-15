@@ -976,7 +976,10 @@ var generate = function generate(baseSpacing, scale) {
         width: '2px'
       },
       check: {
-        radius: '100%' // color: { dark: undefined, light: undefined },
+        radius: '100%' // background: {
+        //  color: undefined,
+        // },
+        // color: { dark: undefined, light: undefined },
         // extend: undefined,
 
       },

@@ -49,7 +49,9 @@ Object.setPrototypeOf(StyledRadioButtonIcon.defaultProps, defaultProps);
 var StyledRadioButtonBox = styled.div.withConfig({
   displayName: "StyledRadioButton__StyledRadioButtonBox",
   componentId: "g1f6ld-4"
-})(["", ";", ";"], function (props) {
+})(["background-color:", ";", ";", ";"], function (props) {
+  return props.theme.radioButton.check.background && props.theme.radioButton.check.background.color;
+}, function (props) {
   return props.focus && focusStyle();
 }, function (props) {
   return props.theme.radioButton.check.extend;

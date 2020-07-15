@@ -30,6 +30,11 @@ export var themeDoc = {
     type: 'string',
     defaultValue: '2px'
   },
+  'radioButton.check.background.color': {
+    description: 'The background color of the checked icon in the RadioButton.',
+    type: 'string | {dark: string, light: string}',
+    defaultValue: 'undefined'
+  },
   'radioButton.check.color': {
     description: 'The color of the checked icon in the RadioButton.',
     type: 'string | { dark: string, light: string }',
