@@ -13,7 +13,7 @@ var verticalAlignToJustify = {
   top: 'start',
   bottom: 'end'
 };
-var TableCell = /*#__PURE__*/forwardRef(function (_ref, ref) {
+var TableCell = forwardRef(function (_ref, ref) {
   var align = _ref.align,
       background = _ref.background,
       border = _ref.border,

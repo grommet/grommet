@@ -7,7 +7,7 @@ import { Box } from '../Box';
 import { FormContext } from '../Form/FormContext';
 import { Keyboard } from '../Keyboard';
 import { RadioButton } from '../RadioButton';
-var RadioButtonGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
+var RadioButtonGroup = forwardRef(function (_ref, ref) {
   var children = _ref.children,
       disabled = _ref.disabled,
       _ref$gap = _ref.gap,

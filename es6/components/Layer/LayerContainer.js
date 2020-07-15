@@ -19,7 +19,7 @@ var fullBounds = {
   top: 0,
   bottom: 0
 };
-var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
+var LayerContainer = forwardRef(function (_ref, ref) {
   var children = _ref.children,
       _ref$full = _ref.full,
       full = _ref$full === void 0 ? false : _ref$full,

@@ -35,7 +35,7 @@ var stopLabelClick = function stopLabelClick(event) {
   }
 };
 
-var CheckBox = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
+var CheckBox = (0, _react.forwardRef)(function (_ref, ref) {
   var _ref2;
 
   var checkedProp = _ref.checked,

@@ -10,8 +10,6 @@ var _grommet = require("grommet");
 
 var _theme = require("./theme");
 
-var _SearchInputContext = require("./components/SearchInputContext");
-
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -188,16 +186,13 @@ var CustomSearchSelect = function CustomSearchSelect() {
     align: "center",
     justify: "center",
     width: "medium"
-  }, /*#__PURE__*/_react["default"].createElement(_SearchInputContext.SearchInputContext.Provider, {
-    value: {
-      searching: searching
-    }
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
     ref: selectRef,
     closeOnChange: false,
     placeholder: "Select Content Partners",
     searchPlaceholder: "Search Content Partners",
     emptySearchMessage: "No partners found",
+    searching: searching,
     multiple: true,
     value: selectedContentPartners.length ? renderContentPartners() : undefined,
     selected: selectedContentPartners.map(function (option) {
@@ -230,7 +225,7 @@ var CustomSearchSelect = function CustomSearchSelect() {
       setSearching(true);
       setSerchQuery(query);
     }
-  }, renderOption))));
+  }, renderOption)));
 };
 
 (0, _react2.storiesOf)('Select', module).add('Custom Search', function () {

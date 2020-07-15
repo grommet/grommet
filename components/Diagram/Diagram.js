@@ -65,7 +65,7 @@ var findTarget = function findTarget(target) {
   return target;
 };
 
-var Diagram = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
+var Diagram = (0, _react.forwardRef)(function (_ref, ref) {
   var connections = _ref.connections,
       rest = _objectWithoutPropertiesLoose(_ref, ["connections"]);
 

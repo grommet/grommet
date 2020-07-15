@@ -23,7 +23,7 @@ var defaultDropAlign = {
   top: 'top',
   left: 'left'
 };
-var DropButton = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
+var DropButton = (0, _react.forwardRef)(function (_ref, ref) {
   var _ref$a11yTitle = _ref.a11yTitle,
       a11yTitle = _ref$a11yTitle === void 0 ? 'Open Drop' : _ref$a11yTitle,
       disabled = _ref.disabled,

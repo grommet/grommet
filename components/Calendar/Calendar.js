@@ -74,7 +74,7 @@ var buildDisplayBounds = function buildDisplayBounds(reference, firstDayOfWeek) 
 };
 
 var millisecondsPerYear = 31557600000;
-var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
+var Calendar = (0, _react.forwardRef)(function (_ref, ref) {
   var _ref$animate = _ref.animate,
       animate = _ref$animate === void 0 ? true : _ref$animate,
       validBounds = _ref.bounds,

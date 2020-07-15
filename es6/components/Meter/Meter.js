@@ -19,7 +19,7 @@ var deriveMax = function deriveMax(values) {
   return max;
 };
 
-var Meter = /*#__PURE__*/forwardRef(function (_ref, ref) {
+var Meter = forwardRef(function (_ref, ref) {
   var _ref$background = _ref.background,
       background = _ref$background === void 0 ? {
     color: 'light-2',

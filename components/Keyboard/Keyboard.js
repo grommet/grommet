@@ -54,7 +54,7 @@ var Keyboard = function Keyboard(_ref) {
       }
     };
   }, [onKeyDownHandler, target]);
-  return target === 'document' ? children : /*#__PURE__*/(0, _react.cloneElement)(_react.Children.only(children), {
+  return target === 'document' ? children : (0, _react.cloneElement)(_react.Children.only(children), {
     onKeyDown: onKeyDownHandler
   });
 };

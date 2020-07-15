@@ -774,5 +774,5 @@ var hpe = deepFreeze({
   spacing: 24
 });
 exports.hpe = hpe;
-var colors = hpe.global.colors;
+var colors = hpe().global.colors;
 exports.colors = colors;

@@ -194,7 +194,7 @@ var buildInteractiveProps = function buildInteractiveProps(_ref2, activeFunc, ac
   };
 };
 
-var WorldMap = /*#__PURE__*/forwardRef(function (_ref3, ref) {
+var WorldMap = forwardRef(function (_ref3, ref) {
   var fill = _ref3.fill,
       color = _ref3.color,
       continentsProp = _ref3.continents,

@@ -21,7 +21,7 @@ var activeAsArray = function activeAsArray(active) {
   return typeof active === 'number' ? [active] : active;
 };
 
-var Accordion = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
+var Accordion = (0, _react.forwardRef)(function (_ref, ref) {
   var activeIndex = _ref.activeIndex,
       _ref$animate = _ref.animate,
       animate = _ref$animate === void 0 ? true : _ref$animate,

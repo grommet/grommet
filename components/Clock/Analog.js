@@ -50,7 +50,7 @@ var getClockState = function getClockState(_ref) {
   };
 };
 
-var Analog = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
+var Analog = (0, _react.forwardRef)(function (_ref2, ref) {
   var elements = _ref2.elements,
       precision = _ref2.precision,
       rest = _objectWithoutPropertiesLoose(_ref2, ["elements", "precision"]);

@@ -6,7 +6,7 @@ import React, { forwardRef, useContext, useMemo } from 'react';
 import { Box } from '../Box';
 import { CheckBox } from '../CheckBox';
 import { FormContext } from '../Form/FormContext';
-export var CheckBoxGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
+export var CheckBoxGroup = forwardRef(function (_ref, ref) {
   var valueProp = _ref.value,
       disabledProp = _ref.disabled,
       _ref$gap = _ref.gap,

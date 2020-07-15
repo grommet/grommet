@@ -49,7 +49,7 @@ var SelectOption = (0, _styledComponents["default"])(_Button.Button).withConfig(
   displayName: "SelectContainer__SelectOption",
   componentId: "sc-1wi0ul8-2"
 })(["display:block;width:100%;"]);
-var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
+var SelectContainer = (0, _react.forwardRef)(function (_ref, ref) {
   var _ref$children = _ref.children,
       children = _ref$children === void 0 ? null : _ref$children,
       disabled = _ref.disabled,

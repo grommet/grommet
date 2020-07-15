@@ -36,7 +36,7 @@ var defaultDropAlign = {
 var defaultMessages = {
   multiple: 'multiple'
 };
-var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
+var Select = forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       alignSelf = _ref.alignSelf,
       children = _ref.children,
@@ -169,7 +169,7 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
   var selectValue = useMemo(function () {
     if (valueLabel) return valueLabel;
-    if ( /*#__PURE__*/React.isValidElement(value)) return value; // deprecated
+    if (React.isValidElement(value)) return value; // deprecated
 
     return undefined;
   }, [value, valueLabel]); // text to show
@@ -258,7 +258,7 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
     style: {
       minWidth: 'auto'
     }
-  }, /*#__PURE__*/isValidElement(SelectIcon) ? SelectIcon : /*#__PURE__*/React.createElement(SelectIcon, {
+  }, isValidElement(SelectIcon) ? SelectIcon : /*#__PURE__*/React.createElement(SelectIcon, {
     color: iconColor,
     size: size
   })))));

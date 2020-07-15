@@ -8,7 +8,7 @@ import { defaultProps } from '../../default-props';
 import { backgroundIsDark } from '../../utils';
 import { Keyboard } from '../Keyboard';
 import { StyledBox, StyledBoxGap } from './StyledBox';
-var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
+var Box = forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       background = _ref.background,
       border = _ref.border,

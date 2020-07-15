@@ -19,7 +19,7 @@ var stopLabelClick = function stopLabelClick(event) {
   }
 };
 
-var CheckBox = /*#__PURE__*/forwardRef(function (_ref, ref) {
+var CheckBox = forwardRef(function (_ref, ref) {
   var _ref2;
 
   var checkedProp = _ref.checked,

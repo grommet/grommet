@@ -30,7 +30,7 @@ var deriveMax = function deriveMax(values) {
   return max;
 };
 
-var Meter = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
+var Meter = (0, _react.forwardRef)(function (_ref, ref) {
   var _ref$background = _ref.background,
       background = _ref$background === void 0 ? {
     color: 'light-2',

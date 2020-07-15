@@ -8,7 +8,7 @@ import { defaultProps } from '../../default-props';
 import { parseMetricToNum } from '../../utils';
 import { StyledMeter } from './StyledMeter';
 import { strokeProps, defaultColor } from './utils';
-var Bar = /*#__PURE__*/forwardRef(function (props, ref) {
+var Bar = forwardRef(function (props, ref) {
   var background = props.background,
       max = props.max,
       round = props.round,

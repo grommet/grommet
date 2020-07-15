@@ -8,7 +8,7 @@ import { defaultProps } from '../../default-props';
 import { arcCommands, parseMetricToNum, translateEndAngle } from '../../utils';
 import { StyledMeter } from './StyledMeter';
 import { strokeProps, defaultColor } from './utils';
-var Circle = /*#__PURE__*/forwardRef(function (props, ref) {
+var Circle = forwardRef(function (props, ref) {
   var background = props.background,
       max = props.max,
       round = props.round,

@@ -28,7 +28,7 @@ var verticalAlignToJustify = {
   top: 'start',
   bottom: 'end'
 };
-var TableCell = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
+var TableCell = (0, _react.forwardRef)(function (_ref, ref) {
   var align = _ref.align,
       background = _ref.background,
       border = _ref.border,

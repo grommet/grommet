@@ -32,7 +32,7 @@ var formatTime = function formatTime(time) {
   return minutes + ":" + seconds;
 };
 
-var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
+var Video = forwardRef(function (_ref, ref) {
   var alignSelf = _ref.alignSelf,
       autoPlay = _ref.autoPlay,
       children = _ref.children,

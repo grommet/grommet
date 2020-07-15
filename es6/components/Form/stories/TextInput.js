@@ -4,7 +4,9 @@ import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Form, FormField, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
-import { allSuggestions } from './data';
+var allSuggestions = Array(100).fill().map(function (_, i) {
+  return "suggestion " + (i + 1);
+});
 
 var FormFieldTextInput = function FormFieldTextInput(props) {
   var _useState = useState({

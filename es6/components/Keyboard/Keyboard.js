@@ -48,7 +48,7 @@ var Keyboard = function Keyboard(_ref) {
       }
     };
   }, [onKeyDownHandler, target]);
-  return target === 'document' ? children : /*#__PURE__*/cloneElement(Children.only(children), {
+  return target === 'document' ? children : cloneElement(Children.only(children), {
     onKeyDown: onKeyDownHandler
   });
 };

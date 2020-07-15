@@ -3,7 +3,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 import React, { forwardRef } from 'react';
 import { TableContext } from '../Table/TableContext';
 import { StyledTableBody } from '../Table/StyledTable';
-var TableBody = /*#__PURE__*/forwardRef(function (props, ref) {
+var TableBody = forwardRef(function (props, ref) {
   return /*#__PURE__*/React.createElement(TableContext.Provider, {
     value: "body"
   }, /*#__PURE__*/React.createElement(StyledTableBody, _extends({

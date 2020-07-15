@@ -186,7 +186,7 @@ var InfiniteScroll = function InfiniteScroll(_ref) {
 
     if (renderMarker) {
       // need to give it a key
-      marker = /*#__PURE__*/_react["default"].cloneElement(renderMarker(marker), {
+      marker = _react["default"].cloneElement(renderMarker(marker), {
         key: 'above'
       });
     }
@@ -234,7 +234,7 @@ var InfiniteScroll = function InfiniteScroll(_ref) {
 
     if (renderMarker) {
       // need to give it a key
-      _marker = /*#__PURE__*/_react["default"].cloneElement(renderMarker(_marker), {
+      _marker = _react["default"].cloneElement(renderMarker(_marker), {
         key: 'below'
       });
     }

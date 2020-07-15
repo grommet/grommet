@@ -3,7 +3,6 @@ import { storiesOf } from '@storybook/react';
 import { FormClose } from "grommet-icons/es6/icons/FormClose";
 import { Box, Button, CheckBox, Grommet, Select, Text } from 'grommet';
 import { theme as customSearchTheme } from './theme';
-import { SearchInputContext } from './components/SearchInputContext';
 var allContentPartners = [{
   name: 'Test Partner',
   id: '32131232'
@@ -176,16 +175,13 @@ var CustomSearchSelect = function CustomSearchSelect() {
     align: "center",
     justify: "center",
     width: "medium"
-  }, /*#__PURE__*/React.createElement(SearchInputContext.Provider, {
-    value: {
-      searching: searching
-    }
   }, /*#__PURE__*/React.createElement(Select, {
     ref: selectRef,
     closeOnChange: false,
     placeholder: "Select Content Partners",
     searchPlaceholder: "Search Content Partners",
     emptySearchMessage: "No partners found",
+    searching: searching,
     multiple: true,
     value: selectedContentPartners.length ? renderContentPartners() : undefined,
     selected: selectedContentPartners.map(function (option) {
@@ -218,7 +214,7 @@ var CustomSearchSelect = function CustomSearchSelect() {
       setSearching(true);
       setSerchQuery(query);
     }
-  }, renderOption))));
+  }, renderOption)));
 };
 
 storiesOf('Select', module).add('Custom Search', function () {

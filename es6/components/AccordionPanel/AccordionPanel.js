@@ -11,7 +11,7 @@ import { Button } from '../Button';
 import { Collapsible } from '../Collapsible';
 import { Heading } from '../Heading';
 import { AccordionContext } from '../Accordion/AccordionContext';
-var AccordionPanel = /*#__PURE__*/forwardRef(function (_ref, ref) {
+var AccordionPanel = forwardRef(function (_ref, ref) {
   var children = _ref.children,
       header = _ref.header,
       label = _ref.label,

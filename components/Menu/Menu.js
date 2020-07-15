@@ -60,7 +60,7 @@ To make a selection:
 - Space is pressed.
 */
 
-var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
+var Menu = (0, _react.forwardRef)(function (props, ref) {
   var a11yTitle = props.a11yTitle,
       children = props.children,
       disabled = props.disabled,

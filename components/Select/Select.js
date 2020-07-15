@@ -56,7 +56,7 @@ var defaultDropAlign = {
 var defaultMessages = {
   multiple: 'multiple'
 };
-var Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
+var Select = (0, _react.forwardRef)(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       alignSelf = _ref.alignSelf,
       children = _ref.children,
@@ -190,7 +190,7 @@ var Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
   var selectValue = (0, _react.useMemo)(function () {
     if (valueLabel) return valueLabel;
-    if ( /*#__PURE__*/_react["default"].isValidElement(value)) return value; // deprecated
+    if (_react["default"].isValidElement(value)) return value; // deprecated
 
     return undefined;
   }, [value, valueLabel]); // text to show
@@ -279,7 +279,7 @@ var Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     style: {
       minWidth: 'auto'
     }
-  }, /*#__PURE__*/(0, _react.isValidElement)(SelectIcon) ? SelectIcon : /*#__PURE__*/_react["default"].createElement(SelectIcon, {
+  }, (0, _react.isValidElement)(SelectIcon) ? SelectIcon : /*#__PURE__*/_react["default"].createElement(SelectIcon, {
     color: iconColor,
     size: size
   })))));

@@ -21,7 +21,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-var RadioButtonGroup = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
+var RadioButtonGroup = (0, _react.forwardRef)(function (_ref, ref) {
   var children = _ref.children,
       disabled = _ref.disabled,
       _ref$gap = _ref.gap,

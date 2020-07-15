@@ -25,7 +25,7 @@ var Container = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "RangeSelector__Container",
   componentId: "siof5p-0"
 })(["user-select:none;"]);
-var RangeSelector = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
+var RangeSelector = (0, _react.forwardRef)(function (_ref, ref) {
   var color = _ref.color,
       _ref$direction = _ref.direction,
       direction = _ref$direction === void 0 ? 'horizontal' : _ref$direction,

@@ -26,7 +26,7 @@ var defaultAlign = {
   left: 'left'
 };
 var defaultPortalContext = [];
-var DropContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
+var DropContainer = forwardRef(function (_ref, ref) {
   var _ref$align = _ref.align,
       align = _ref$align === void 0 ? defaultAlign : _ref$align,
       children = _ref.children,

@@ -13,7 +13,7 @@ import { Keyboard } from '../Keyboard';
 import { MaskedInput } from '../MaskedInput';
 import { useForwardedRef } from '../../utils';
 import { formatToSchema, valueToText, textToValue } from './utils';
-var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
+var DateInput = forwardRef(function (_ref, refArg) {
   var buttonProps = _ref.buttonProps,
       calendarProps = _ref.calendarProps,
       defaultValue = _ref.defaultValue,

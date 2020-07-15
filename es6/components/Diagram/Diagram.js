@@ -52,7 +52,7 @@ var findTarget = function findTarget(target) {
   return target;
 };
 
-var Diagram = /*#__PURE__*/forwardRef(function (_ref, ref) {
+var Diagram = forwardRef(function (_ref, ref) {
   var connections = _ref.connections,
       rest = _objectWithoutPropertiesLoose(_ref, ["connections"]);
 
