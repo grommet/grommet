@@ -8,13 +8,12 @@ import { Grommet, Accordion, AccordionPanel, Anchor, Box, Button, Calendar, Char
 import { FormNext } from "grommet-icons/es6/icons/FormNext";
 import { grommet } from 'grommet/themes';
 import { generate } from 'grommet/themes/base';
-import { deepMerge } from 'grommet/utils'; // import { hpe } from 'grommet-theme-hpe';
-
+import { deepMerge } from 'grommet/utils';
+import { hpe } from 'grommet-theme-hpe';
 import { aruba } from 'grommet-theme-aruba';
 import { hp } from 'grommet-theme-hp';
 import { dxc } from 'grommet-theme-dxc';
 import { v1 } from 'grommet-theme-v1';
-import { hpe } from './theme';
 
 var Node = function Node(_ref) {
   var id = _ref.id,

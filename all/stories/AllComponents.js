@@ -14,6 +14,8 @@ var _base = require("grommet/themes/base");
 
 var _utils = require("grommet/utils");
 
+var _grommetThemeHpe = require("grommet-theme-hpe");
+
 var _grommetThemeAruba = require("grommet-theme-aruba");
 
 var _grommetThemeHp = require("grommet-theme-hp");
@@ -21,8 +23,6 @@ var _grommetThemeHp = require("grommet-theme-hp");
 var _grommetThemeDxc = require("grommet-theme-dxc");
 
 var _grommetThemeV = require("grommet-theme-v1");
-
-var _theme = require("./theme");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -63,7 +63,7 @@ var connection = function connection(fromTarget, toTarget, _temp) {
 
 var themes = {
   grommet: _themes.grommet,
-  hpe: _theme.hpe,
+  hpe: _grommetThemeHpe.hpe,
   aruba: _grommetThemeAruba.aruba,
   hp: _grommetThemeHp.hp,
   dxc: _grommetThemeDxc.dxc,
