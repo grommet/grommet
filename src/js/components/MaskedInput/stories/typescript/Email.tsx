@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import isChromatic from 'storybook-chromatic/isChromatic';
+import isChromatic from 'chromatic/isChromatic';
 
 import { Box, Grommet, MaskedInput } from 'grommet';
 import { MailOption } from 'grommet-icons';
