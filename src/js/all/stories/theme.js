@@ -810,4 +810,4 @@ export const hpe = deepFreeze({
   spacing: 24,
 });
 
-export const { colors } = hpe.global;
+export const { colors } = hpe().global;

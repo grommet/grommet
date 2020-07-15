@@ -9,6 +9,9 @@ import {
   waitForElement,
 } from '@testing-library/react';
 import { getByText, screen } from '@testing-library/dom';
+import { axe } from 'jest-axe';
+import 'jest-axe/extend-expect';
+
 import { Search } from 'grommet-icons';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
@@ -20,6 +23,14 @@ import { MaskedInput } from '..';
 describe('MaskedInput', () => {
   beforeEach(createPortal);
   afterEach(cleanup);
+
+  test('should have no accessibility violations', async () => {
+    const { container } = render(
+      <MaskedInput name="item" a11yTitle="axe-test" />,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 
   test('basic', () => {
     const { container } = render(<MaskedInput name="item" />);

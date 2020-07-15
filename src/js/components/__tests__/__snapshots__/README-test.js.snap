@@ -4986,7 +4986,7 @@ string
 
 ISO8601 time or duration. For example: 'PT8H12M23S',
       'T08:12:23', or '2015-02-22T08:12:23'. Any included date
-      portion will be ignored for an analog clock. If not provided, the
+      portion will be ignored. If not provided, the
       current browser time will be used.
 
 \`\`\`
@@ -6444,6 +6444,137 @@ Defaults to
 undefined
 \`\`\`
 ",
+  "DateInput": "## DateInput
+A control to input a single date or a date range.
+
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=DateInput&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=dateinput&module=%2Fsrc%2FDateInput.js)
+## Usage
+
+\`\`\`javascript
+import { DateInput } from 'grommet';
+<DateInput id='item' name='item' />
+\`\`\`
+
+## Properties
+
+**buttonProps**
+
+Any properties to pass on to the underlying DropButton
+      when not inline and no format.
+
+\`\`\`
+{
+
+}
+\`\`\`
+
+**calendarProps**
+
+Any properties to pass on to the underlying Calendar.
+
+\`\`\`
+{
+
+}
+\`\`\`
+
+**defaultValue**
+
+The default date or date range value in ISO8601 format.
+
+\`\`\`
+string
+[string]
+\`\`\`
+
+**dropProps**
+
+Any properties to pass on to the underlying Drop when not inline. Defaults to \`{
+  \\"align\\": {
+    \\"top\\": \\"bottom\\",
+    \\"left\\": \\"left\\"
+  }
+}\`.
+
+\`\`\`
+{
+
+}
+\`\`\`
+
+**format**
+
+The date format to use. If not specified, the date value will not
+      be displayed as a text string and the user will not be able to enter
+      a date by typing. For example: 'mm/dd/yyyy', or for a range:
+      'mm/dd/yyyy-mm/dd/yyyy'. This property should be used when in a Form.
+
+\`\`\`
+string
+\`\`\`
+
+**id**
+
+The id of the input.
+
+\`\`\`
+string
+\`\`\`
+
+**inline**
+
+Whether the calendar should always be shown or via a Drop when
+      interacting with the input.
+
+\`\`\`
+boolean
+\`\`\`
+
+**inputProps**
+
+Any properties to pass on to the underlying MaskedInput
+      when there is a format.
+
+\`\`\`
+{
+
+}
+\`\`\`
+
+**name**
+
+The name of the input.
+      This property is required when used within FormField.
+
+\`\`\`
+string
+\`\`\`
+
+**onChange**
+
+Function that will be called when the user types or selects a date.
+      The updated value will be available via 'event.value'.
+
+\`\`\`
+function
+\`\`\`
+
+**value**
+
+The date or date range value(s) in ISO8601 format.
+
+\`\`\`
+string
+[string]
+\`\`\`
+  
+## Intrinsic element
+
+\`\`\`
+div
+\`\`\`
+## Theme
+  ",
   "Diagram": "## Diagram
 Graphical connection lines. Diagram is meant to be used with Stack.
       Boxes can be used in the \`guidingChild\` layer of Stack and then
@@ -7584,6 +7715,16 @@ Defaults to
 
 \`\`\`
 bottom
+\`\`\`
+
+**formField.content.margin**
+
+The margin of the FormField content. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **formField.content.pad**
@@ -10084,6 +10225,14 @@ import { MaskedInput } from 'grommet';
 
 ## Properties
 
+**a11yTitle**
+
+Custom title to be used by screen readers.
+
+\`\`\`
+string
+\`\`\`
+
 **icon**
 
 An optional icon to show. This could be used to provide an
@@ -11422,6 +11571,16 @@ Defaults to
 2px
 \`\`\`
 
+**radioButton.check.background.color**
+
+The background color of the checked icon in the RadioButton. Expects \`string | {dark: string, light: string}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **radioButton.check.color**
 
 The color of the checked icon in the RadioButton. Expects \`string | { dark: string, light: string }\`.
@@ -11635,6 +11794,15 @@ import { RangeInput } from 'grommet';
 \`\`\`
 
 ## Properties
+
+**a11yTitle**
+
+Custom label to be used by screen readers.
+      When provided, an aria-label will be added to the element.
+
+\`\`\`
+string
+\`\`\`
 
 **id**
 
@@ -13180,14 +13348,34 @@ Defaults to
     }
 \`\`\`
 
+**tab.border.disabled.color**
+
+border color of the Tab when disabled Expects \`string | {dark: string, light: string}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **tab.color**
 
-text color for the Tab. Expects \`string\`.
+text color for the Tab. Expects \`string | {dark: string, light: string}\`.
 
 Defaults to
 
 \`\`\`
 control
+\`\`\`
+
+**tab.disabled.color**
+
+text color of the Tab when disabled. Expects \`string | {dark: string, light: string}\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **tab.hover.background**

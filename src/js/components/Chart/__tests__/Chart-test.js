@@ -1,6 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
+import { cleanup, render } from '@testing-library/react';
+import { axe } from 'jest-axe';
+import 'jest-axe/extend-expect';
+import 'regenerator-runtime/runtime';
 
 import { Grommet } from '../../Grommet';
 import { Box } from '../../Box';
@@ -18,6 +22,19 @@ const UNDEFINED_VALUES = [
 ];
 
 describe('Chart', () => {
+  afterEach(cleanup);
+
+  test('should not have accessibility violations', async () => {
+    const { container } = render(
+      <Grommet>
+        <Chart values={VALUES} />
+      </Grommet>,
+    );
+    const results = await axe(container);
+    expect(container.firstChild).toMatchSnapshot();
+    expect(results).toHaveNoViolations();
+  });
+
   test('default', () => {
     const component = renderer.create(
       <Grommet>
@@ -171,8 +188,54 @@ describe('Chart', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test('calcs', () => {
-    const result = calcs([1, 2, 3]);
+  test('calcs basic', () => {
+    const result = calcs([
+      [1, 2, 2],
+      [2, 2, 2],
+    ]);
+    expect(result).toMatchSnapshot();
+  });
+
+  test('calcs with single value', () => {
+    const result = calcs([1]);
+    expect(result).toMatchSnapshot();
+  });
+
+  test('calcs with negative min', () => {
+    const result = calcs([
+      [1, -2, -2],
+      [2, 2, 2],
+    ]);
+    expect(result).toMatchSnapshot();
+  });
+
+  test('calcs large thickness', () => {
+    const vals = Array(8).fill([1, 2, 3]);
+    const result = calcs(vals);
+    expect(result).toMatchSnapshot();
+  });
+
+  test('calcs medium thickness', () => {
+    const vals = Array(14).fill([1, 2, 3]);
+    const result = calcs(vals);
+    expect(result).toMatchSnapshot();
+  });
+
+  test('calcs small thickness', () => {
+    const vals = Array(24).fill([1, 2, 3]);
+    const result = calcs(vals);
+    expect(result).toMatchSnapshot();
+  });
+
+  test('calcs xsmall thickness', () => {
+    const vals = Array(64).fill([1, 2, 3]);
+    const result = calcs(vals);
+    expect(result).toMatchSnapshot();
+  });
+
+  test('calcs hair thickness', () => {
+    const vals = Array(124).fill([1, 2, 3]);
+    const result = calcs(vals);
     expect(result).toMatchSnapshot();
   });
 });
