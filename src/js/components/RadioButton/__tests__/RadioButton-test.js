@@ -102,4 +102,25 @@ describe('RadioButton', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  test('background-color themed', () => {
+    const customTheme = {
+      radioButton: {
+        check: {
+          background: {
+            color: 'red',
+          },
+        },
+      },
+    };
+
+    const component = renderer.create(
+      <Grommet theme={customTheme}>
+        <RadioButton name="test" />
+      </Grommet>,
+    );
+
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
