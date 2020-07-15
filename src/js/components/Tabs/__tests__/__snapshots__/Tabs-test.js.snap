@@ -1,5 +1,247 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Tabs Custom Tab component 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  border-bottom: solid 2px #000000;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 6px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  border-bottom: solid 2px #7D4CDB;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 6px;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+}
+
+.c8 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #7D4CDB;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c5 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.c5:hover {
+  color: #000000;
+}
+
+.c9 {
+  min-height: 0;
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    border-bottom: solid 2px #000000;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    border-bottom: solid 2px #7D4CDB;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding-bottom: 3px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 "
+    role="tablist"
+  >
+    <div
+      class="c2 "
+    >
+      <button
+        aria-expanded="true"
+        aria-selected="true"
+        class="c3"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="c4 c5"
+        >
+          <span
+            class="c6"
+          >
+            Tab 1
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="c3"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="c7 c5"
+        >
+          <span
+            class="c8"
+          >
+            Tab 2
+          </span>
+        </div>
+      </button>
+    </div>
+    <div
+      aria-label="Tab 1 Tab Contents"
+      class="c9"
+      role="tabpanel"
+    >
+      Tab body 1
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Tabs Tab 1`] = `
 .c1 {
   display: -webkit-box;
@@ -771,7 +1013,7 @@ exports[`Tabs change to second tab 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 iwzLzf StyledTab-sc-1nnwnsb-0 cuuQmA"
+          class="StyledBox-sc-13pk1d4-0 iwzLzf StyledTab-sc-1nnwnsb-0 eWIFpw"
         >
           <span
             class="StyledText-sc-1sadyjn-0 iBFVwz"
@@ -788,7 +1030,7 @@ exports[`Tabs change to second tab 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fQtdUH StyledTab-sc-1nnwnsb-0 cuuQmA"
+          class="StyledBox-sc-13pk1d4-0 fQtdUH StyledTab-sc-1nnwnsb-0 eWIFpw"
         >
           <span
             class="StyledText-sc-1sadyjn-0 kJdDnV"
@@ -1470,7 +1712,7 @@ exports[`Tabs set on hover 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fQtdUH StyledTab-sc-1nnwnsb-0 cuuQmA"
+          class="StyledBox-sc-13pk1d4-0 fQtdUH StyledTab-sc-1nnwnsb-0 eWIFpw"
         >
           <span
             class="StyledText-sc-1sadyjn-0 kJdDnV"
@@ -1487,7 +1729,7 @@ exports[`Tabs set on hover 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 iwzLzf StyledTab-sc-1nnwnsb-0 cuuQmA"
+          class="StyledBox-sc-13pk1d4-0 iwzLzf StyledTab-sc-1nnwnsb-0 eWIFpw"
         >
           <span
             class="StyledText-sc-1sadyjn-0 iBFVwz"
@@ -1527,7 +1769,7 @@ exports[`Tabs set on hover 3`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fQtdUH StyledTab-sc-1nnwnsb-0 cuuQmA"
+          class="StyledBox-sc-13pk1d4-0 fQtdUH StyledTab-sc-1nnwnsb-0 eWIFpw"
         >
           <span
             class="StyledText-sc-1sadyjn-0 kJdDnV"
@@ -1544,7 +1786,7 @@ exports[`Tabs set on hover 3`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fQtdUH StyledTab-sc-1nnwnsb-0 cuuQmA"
+          class="StyledBox-sc-13pk1d4-0 fQtdUH StyledTab-sc-1nnwnsb-0 eWIFpw"
         >
           <span
             class="StyledText-sc-1sadyjn-0 jvLdFN"
@@ -1584,7 +1826,7 @@ exports[`Tabs set on hover 4`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fQtdUH StyledTab-sc-1nnwnsb-0 cuuQmA"
+          class="StyledBox-sc-13pk1d4-0 fQtdUH StyledTab-sc-1nnwnsb-0 eWIFpw"
         >
           <span
             class="StyledText-sc-1sadyjn-0 kJdDnV"
@@ -1601,7 +1843,7 @@ exports[`Tabs set on hover 4`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fQtdUH StyledTab-sc-1nnwnsb-0 cuuQmA"
+          class="StyledBox-sc-13pk1d4-0 fQtdUH StyledTab-sc-1nnwnsb-0 eWIFpw"
         >
           <span
             class="StyledText-sc-1sadyjn-0 jvLdFN"
@@ -1641,7 +1883,7 @@ exports[`Tabs set on hover 5`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fQtdUH StyledTab-sc-1nnwnsb-0 cuuQmA"
+          class="StyledBox-sc-13pk1d4-0 fQtdUH StyledTab-sc-1nnwnsb-0 eWIFpw"
         >
           <span
             class="StyledText-sc-1sadyjn-0 kJdDnV"
@@ -1658,7 +1900,7 @@ exports[`Tabs set on hover 5`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 iwzLzf StyledTab-sc-1nnwnsb-0 cuuQmA"
+          class="StyledBox-sc-13pk1d4-0 iwzLzf StyledTab-sc-1nnwnsb-0 eWIFpw"
         >
           <span
             class="StyledText-sc-1sadyjn-0 iBFVwz"
@@ -1674,6 +1916,986 @@ exports[`Tabs set on hover 5`] = `
       role="tabpanel"
     >
       Tab body 1
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tabs should apply custom theme disabled style 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  border-bottom: solid 2px #000000;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 6px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  border-bottom: solid 2px green;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 6px;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c7 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+}
+
+.c10 {
+  font-size: 18px;
+  line-height: 24px;
+  color: blue;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c5 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.c5:hover {
+  color: #000000;
+}
+
+.c9 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  color: blue;
+}
+
+.c11 {
+  min-height: 0;
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    border-bottom: solid 2px #000000;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    border-bottom: solid 2px green;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    padding-bottom: 3px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 "
+    role="tablist"
+  >
+    <div
+      class="c2 "
+    >
+      <button
+        aria-expanded="true"
+        aria-selected="true"
+        class="c3"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="c4 c5"
+        >
+          <span
+            class="c6"
+          >
+            Enabled Tab
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="c7"
+        disabled=""
+        role="tab"
+        type="button"
+      >
+        <div
+          class="c8 c9"
+          disabled=""
+        >
+          <span
+            class="c10"
+          >
+            Disabled Tab
+          </span>
+        </div>
+      </button>
+    </div>
+    <div
+      aria-label="Enabled Tab Tab Contents"
+      class="c11"
+      role="tabpanel"
+    >
+      This tab is enabled
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tabs should apply custom theme disabled style when theme.button.default is 
+  defined 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  border-bottom: solid 2px #000000;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 6px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  border-bottom: solid 2px green;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 6px;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  color: inherit;
+}
+
+.c7 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  color: inherit;
+  opacity: 0.3;
+  cursor: default;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+}
+
+.c10 {
+  font-size: 18px;
+  line-height: 24px;
+  color: blue;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c5 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.c5:hover {
+  color: #000000;
+}
+
+.c9 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  color: blue;
+}
+
+.c11 {
+  min-height: 0;
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    border-bottom: solid 2px #000000;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    border-bottom: solid 2px green;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    padding-bottom: 3px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 "
+    role="tablist"
+  >
+    <div
+      class="c2 "
+    >
+      <button
+        aria-expanded="true"
+        aria-selected="true"
+        class="c3"
+        kind="default"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="c4 c5"
+        >
+          <span
+            class="c6"
+          >
+            Enabled Tab
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="c7"
+        disabled=""
+        kind="default"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="c8 c9"
+          disabled=""
+        >
+          <span
+            class="c10"
+          >
+            Disabled Tab
+          </span>
+        </div>
+      </button>
+    </div>
+    <div
+      aria-label="Enabled Tab Tab Contents"
+      class="c11"
+      role="tabpanel"
+    >
+      This tab is enabled
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tabs should have no accessibility violations 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  border-bottom: solid 2px #000000;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 6px;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c5 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.c5:hover {
+  color: #000000;
+}
+
+.c6 {
+  min-height: 0;
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    border-bottom: solid 2px #000000;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding-bottom: 3px;
+  }
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <div
+      class="c1 "
+      role="tablist"
+    >
+      <div
+        class="c2 "
+      >
+        <button
+          aria-expanded="true"
+          aria-label="test"
+          aria-selected="true"
+          class="c3"
+          role="tab"
+          type="button"
+        >
+          <div
+            class="c4 c5"
+          />
+        </button>
+      </div>
+      <div
+        aria-label="1 Tab Contents"
+        class="c6"
+        role="tabpanel"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tabs should style as disabled 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  border-bottom: solid 2px #000000;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 6px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  border-bottom: solid 2px #7D4CDB;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 6px;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c7 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+}
+
+.c10 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #7D4CDB;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c5 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.c5:hover {
+  color: #000000;
+}
+
+.c9 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.c11 {
+  min-height: 0;
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    border-bottom: solid 2px #000000;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    border-bottom: solid 2px #7D4CDB;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    padding-bottom: 3px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 "
+    role="tablist"
+  >
+    <div
+      class="c2 "
+    >
+      <button
+        aria-expanded="true"
+        aria-selected="true"
+        class="c3"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="c4 c5"
+        >
+          <span
+            class="c6"
+          >
+            Enabled Tab
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="c7"
+        disabled=""
+        role="tab"
+        type="button"
+      >
+        <div
+          class="c8 c9"
+          disabled=""
+        >
+          <span
+            class="c10"
+          >
+            Disabled Tab
+          </span>
+        </div>
+      </button>
+    </div>
+    <div
+      aria-label="Enabled Tab Tab Contents"
+      class="c11"
+      role="tabpanel"
+    >
+      This tab is enabled
     </div>
   </div>
 </div>
