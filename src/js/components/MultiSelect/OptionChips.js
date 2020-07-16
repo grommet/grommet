@@ -18,7 +18,7 @@ const OptionChips = ({
   value,
   isSelected,
   optionLabel,
-  selectOption,
+  onRemove,
   clearAll,
   width,
   height,
@@ -84,7 +84,7 @@ const OptionChips = ({
                   {optionLabel(item)}
                 </OptionLabel>
                 <Close
-                  onClick={selectOption(item)}
+                  onClick={event => onRemove(event, item)}
                   {...theme.multiselect.chips.icon}
                 />
               </OptionText>

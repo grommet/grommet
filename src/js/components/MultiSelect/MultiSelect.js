@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
 
 import { Box } from '../Box';
@@ -39,9 +40,13 @@ const MultiSelect = ({
     setSelectState,
   } = useCustomSelectState(options, value);
 
-  // useEffect(() => {
-  //   if (withInclusionExclusion && value.length === 0) onIncExcChange(null);
-  // }, [onIncExcChange, value, withInclusionExclusion]);
+  useEffect(() => {
+    setSelectState({ filteredOptions: options });
+  }, [options]);
+
+  useEffect(() => {
+    setSelectState({ previousValue: value });
+  }, [value]);
 
   const onCancelClick = () => {
     onValueChange(previousValue);
