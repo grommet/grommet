@@ -31,7 +31,11 @@ var weightStyle = css(["font-weight:", ";"], function (props) {
 var wordBreakStyle = css(["word-break:", ";"], function (props) {
   return props.wordBreak;
 });
-var StyledText = styled.span.withConfig({
+var StyledText = styled('span').withConfig({
+  shouldForwardProp: function shouldForwardProp(prop, defaultValidatorFn) {
+    return defaultValidatorFn(prop) && prop !== 'size';
+  }
+}).withConfig({
   displayName: "StyledText",
   componentId: "sc-1sadyjn-0"
 })(["", " ", " ", " ", " ", " ", " ", " ", ""], genericStyles, function (props) {

@@ -42,8 +42,11 @@ var weightStyle = (0, _styledComponents.css)(["font-weight:", ";"], function (pr
 var wordBreakStyle = (0, _styledComponents.css)(["word-break:", ";"], function (props) {
   return props.wordBreak;
 });
-
-var StyledText = _styledComponents["default"].span.withConfig({
+var StyledText = (0, _styledComponents["default"])('span').withConfig({
+  shouldForwardProp: function shouldForwardProp(prop, defaultValidatorFn) {
+    return defaultValidatorFn(prop) && prop !== 'size';
+  }
+}).withConfig({
   displayName: "StyledText",
   componentId: "sc-1sadyjn-0"
 })(["", " ", " ", " ", " ", " ", " ", " ", ""], _utils.genericStyles, function (props) {
@@ -61,7 +64,6 @@ var StyledText = _styledComponents["default"].span.withConfig({
 }, function (props) {
   return props.theme.text && props.theme.text.extend;
 });
-
 exports.StyledText = StyledText;
 StyledText.defaultProps = {};
 Object.setPrototypeOf(StyledText.defaultProps, _defaultProps.defaultProps);
