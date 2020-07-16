@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { storiesOf } from '@storybook/react';
-import isChromatic from 'storybook-chromatic/isChromatic';
+import isChromatic from 'chromatic/isChromatic';
 
 import { Search } from 'grommet-icons';
 import { Box, Image, Grommet, Text, TextInput } from 'grommet';
@@ -15,7 +15,7 @@ const myCustomTheme = deepMerge(grommet, {
       extend: `
           border-bottom-left-radius: 12px;
           border-bottom-right-radius: 12px;
-  
+
           overflow: hidden;
         `,
     },

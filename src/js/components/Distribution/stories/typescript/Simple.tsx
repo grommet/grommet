@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import isChromatic from 'storybook-chromatic/isChromatic';
+import isChromatic from 'chromatic/isChromatic';
 
 import { Grommet, Box, Distribution, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -27,5 +27,7 @@ const SimpleDistribution = () => (
 );
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/Distribution', module).add('Simple', () => <SimpleDistribution />);
+  storiesOf('TypeScript/Distribution', module).add('Simple', () => (
+    <SimpleDistribution />
+  ));
 }

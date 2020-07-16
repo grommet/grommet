@@ -286,4 +286,24 @@ describe('FormField', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  test('custom input margin', () => {
+    const component = renderer.create(
+      <Grommet
+        theme={{
+          formField: {
+            content: {
+              margin: { vertical: 'large' },
+            },
+          },
+        }}
+      >
+        <Form>
+          <FormField label="label" />
+        </Form>
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
