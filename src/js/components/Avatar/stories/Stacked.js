@@ -1,12 +1,11 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Favorite, UserFemale, UserNew } from 'grommet-icons';
 
 import { Avatar, Box, Grommet, Stack } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Stacked = () => {
+export const Stacked = () => {
   const shimi = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
   const eric = '//s.gravatar.com/avatar/99020cae7ff399a4fbea19c0634f77c3?s=80';
   const bryan = '//s.gravatar.com/avatar/10d15019166606cfed23846a7f902660?s=80';
@@ -80,5 +79,3 @@ const Stacked = () => {
     </Grommet>
   );
 };
-
-storiesOf('Avatar', module).add('Stacked', () => <Stacked />);

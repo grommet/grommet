@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Text } from 'grommet';
 import { grommet } from '../../../themes';
 
-const ElevationBox = () => (
+export const ElevationBox = () => (
   <Grommet theme={grommet}>
     <Box pad="small" align="start">
       <Box pad="medium" background="dark-1" elevation="medium" gap="medium">
@@ -27,5 +26,3 @@ const ElevationBox = () => (
     </Box>
   </Grommet>
 );
-
-storiesOf('Box', module).add('Elevation', () => <ElevationBox />);

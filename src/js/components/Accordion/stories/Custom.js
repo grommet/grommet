@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { SubtractCircle, AddCircle } from 'grommet-icons';
 
@@ -9,8 +8,8 @@ const customAccordionTheme = {
   global: {
     font: {
       family: `-apple-system,
-       BlinkMacSystemFont, 
-       "Segoe UI", 
+       BlinkMacSystemFont,
+       "Segoe UI",
        Roboto`,
     },
   },
@@ -39,7 +38,7 @@ const customAccordionTheme = {
   },
 };
 
-const CustomAccordion = ({ animate, multiple, ...rest }) => (
+export const CustomAccordion = ({ animate, multiple, ...rest }) => (
   <Grommet theme={customAccordionTheme}>
     <Box {...rest} pad="large" align="center" justify="center">
       <Accordion animate={animate} multiple>
@@ -71,5 +70,3 @@ const CustomAccordion = ({ animate, multiple, ...rest }) => (
     </Box>
   </Grommet>
 );
-
-storiesOf('Accordion', module).add('Custom', () => <CustomAccordion />);

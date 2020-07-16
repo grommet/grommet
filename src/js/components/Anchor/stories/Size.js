@@ -1,10 +1,8 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-
 import { Anchor, Box, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Size = () => {
+export const Size = () => {
   return (
     <Grommet theme={grommet}>
       <Box align="center" pad="large">
@@ -19,5 +17,3 @@ const Size = () => {
     </Grommet>
   );
 };
-
-storiesOf('Anchor', module).add('Size', () => <Size />);

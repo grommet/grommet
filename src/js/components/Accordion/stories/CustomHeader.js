@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
   Accordion,
@@ -20,7 +19,7 @@ const renderPanelHeader = (title, active) => (
   </Box>
 );
 
-const CustomHeaderAccordion = () => {
+export const CustomHeaderAccordion = () => {
   const [activeIndex, setActiveIndex] = useState([0]);
 
   return (
@@ -55,5 +54,3 @@ const CustomHeaderAccordion = () => {
     </Grommet>
   );
 };
-
-storiesOf('Accordion', module).add('Header', () => <CustomHeaderAccordion />);

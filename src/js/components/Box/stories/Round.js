@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Grid } from 'grommet';
 import { grommet } from '../../../themes';
 
-const RoundBox = () => (
+export const RoundBox = () => (
   <Grommet theme={grommet}>
     <Box pad="small" gap="small">
       <Box pad="small" background="brand" round alignSelf="start">
@@ -56,5 +55,3 @@ const RoundBox = () => (
     </Box>
   </Grommet>
 );
-
-storiesOf('Box', module).add('Round', () => <RoundBox />);
