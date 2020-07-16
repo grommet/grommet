@@ -1,4 +1,4 @@
-import { base, ThemeType } from "./themes/base";
+import { base, ThemeType } from './themes/base';
 
 export namespace defaultProps {
   export { base as theme };
