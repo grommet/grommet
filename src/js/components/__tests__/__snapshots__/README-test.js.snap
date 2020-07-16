@@ -13367,6 +13367,16 @@ Defaults to
 undefined
 \`\`\`
 
+**tab.extend**
+
+Any additional style for Tab. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **tab.hover.background**
 
 background style of the Tab on hover. Expects \`string | object\`.
