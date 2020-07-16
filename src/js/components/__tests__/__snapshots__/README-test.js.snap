@@ -7717,6 +7717,16 @@ Defaults to
 bottom
 \`\`\`
 
+**formField.content.margin**
+
+The margin of the FormField content. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **formField.content.pad**
 
 The pad of the FormField content. Expects \`object\`.
@@ -11550,6 +11560,16 @@ Defaults to
 2px
 \`\`\`
 
+**radioButton.check.background.color**
+
+The background color of the checked icon in the RadioButton. Expects \`string | {dark: string, light: string}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **radioButton.check.color**
 
 The color of the checked icon in the RadioButton. Expects \`string | { dark: string, light: string }\`.
@@ -13340,6 +13360,16 @@ control
 **tab.disabled.color**
 
 text color of the Tab when disabled. Expects \`string | {dark: string, light: string}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**tab.extend**
+
+Any additional style for Tab. Expects \`string | (props) => {}\`.
 
 Defaults to
 
