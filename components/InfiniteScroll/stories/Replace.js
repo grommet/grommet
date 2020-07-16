@@ -4,7 +4,7 @@ var _react = _interopRequireDefault(require("react"));
 
 var _react2 = require("@storybook/react");
 
-var _isChromatic = _interopRequireDefault(require("storybook-chromatic/isChromatic"));
+var _isChromatic = _interopRequireDefault(require("chromatic/isChromatic"));
 
 var _themes = require("grommet/themes");
 
