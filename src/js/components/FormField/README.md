@@ -239,16 +239,6 @@ Defaults to
 border
 ```
 
-**formField.border.error.color**
-
-The border color of the error. Expects `string | {'dark': string, 'light': string}`.
-
-Defaults to
-
-```
-{ dark: 'white', light: 'status-critical' },
-```
-
 **formField.border.position**
 
 The border position. Expects `string`.
@@ -347,6 +337,16 @@ Defaults to
 
 ```
 undefined
+```
+
+**formField.error.border.color**
+
+The border color of the error. Expects `string | {'dark': string, 'light': string}`.
+
+Defaults to
+
+```
+{ dark: 'white', light: 'status-critical' },
 ```
 
 **formField.error.color**

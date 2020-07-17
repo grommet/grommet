@@ -92,11 +92,6 @@ export const themeDoc = {
     type: "string | { 'dark': string, 'light': string }",
     defaultValue: 'border',
   },
-  'formField.border.error.color': {
-    description: 'The border color of the error.',
-    type: "string | {'dark': string, 'light': string}",
-    defaultValue: "{ dark: 'white', light: 'status-critical' },",
-  },
   'formField.border.position': {
     description: 'The border position.',
     type: 'string',
@@ -148,6 +143,11 @@ export const themeDoc = {
       'The opacity of the FormField background when there is an error.',
     type: 'string | boolean | number',
     defaultValue: undefined,
+  },
+  'formField.error.border.color': {
+    description: 'The border color of the error.',
+    type: "string | {'dark': string, 'light': string}",
+    defaultValue: "{ dark: 'white', light: 'status-critical' },",
   },
   'formField.error.color': {
     description: 'The color of the FormField error.',
