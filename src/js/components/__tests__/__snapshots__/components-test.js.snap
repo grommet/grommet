@@ -1202,6 +1202,16 @@ string",
         "name": "margin",
       },
       Object {
+        "description": "Function that can be called to render the visual representation.
+      Button can take in Children as a function, node, or object. 
+      \`children={<Box ...>{...}</Box>}\`
+      ",
+        "format": "function
+object
+node",
+        "name": "children",
+      },
+      Object {
         "defaultValue": false,
         "description": "Whether the button is active.",
         "format": "boolean",

@@ -25,6 +25,16 @@ export const doc = Button => {
 
   DocumentedButton.propTypes = {
     ...genericProps,
+    children: PropTypes.oneOfType([
+      PropTypes.func,
+      PropTypes.object,
+      PropTypes.node,
+    ]).description(
+      `Function that can be called to render the visual representation.
+      Button can take in Children as a function, node, or object. 
+      \`children={<Box ...>{...}</Box>}\`
+      `,
+    ),
     active: PropTypes.bool
       .description('Whether the button is active.')
       .defaultValue(false),
