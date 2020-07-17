@@ -7619,6 +7619,30 @@ xlarge
 string
 \`\`\`
 
+**overflow**
+
+How the form field content should overflow.
+
+\`\`\`
+auto
+hidden
+scroll
+visible
+{
+  horizontal: 
+    auto
+    hidden
+    scroll
+    visible,
+  vertical: 
+    auto
+    hidden
+    scroll
+    visible
+}
+string
+\`\`\`
+
 **pad**
 
 Whether to add padding to align with the padding of TextInput.

@@ -104,6 +104,7 @@ const FormField = forwardRef(
       required,
       style,
       validate,
+      overflow = 'hidden',
       ...rest
     },
     ref,
@@ -250,7 +251,7 @@ const FormField = forwardRef(
           : {};
       contents = (
         <FormFieldContentBox
-          overflow="hidden"
+          overflow={overflow}
           {...contentProps}
           {...innerProps}
         >
