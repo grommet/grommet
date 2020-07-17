@@ -3,9 +3,8 @@ import React, { useEffect, useRef } from 'react';
 import { TextInput } from '../../..';
 
 import { SearchBorderBox } from './SearchBorderBox';
-import { SearchInputContext } from './SearchInputContext';
 
-export const SearchInput = props => {
+export const SearchInput = ({ searching, ...props }) => {
   const textInputRef = useRef();
 
   useEffect(() => {
@@ -19,12 +18,8 @@ export const SearchInput = props => {
   }, []);
 
   return (
-    <SearchInputContext.Consumer>
-      {({ searching }) => (
-        <SearchBorderBox searching={searching}>
-          <TextInput {...props} plain ref={textInputRef} />
-        </SearchBorderBox>
-      )}
-    </SearchInputContext.Consumer>
+    <SearchBorderBox searching={searching}>
+      <TextInput {...props} plain ref={textInputRef} />
+    </SearchBorderBox>
   );
 };

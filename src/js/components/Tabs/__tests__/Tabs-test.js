@@ -1,11 +1,29 @@
 import React from 'react';
 import 'jest-styled-components';
 import renderer from 'react-test-renderer';
+import 'jest-axe/extend-expect';
+import 'regenerator-runtime/runtime';
+
+import { axe } from 'jest-axe';
 import { render, fireEvent } from '@testing-library/react';
 
 import { Grommet, Tab, Tabs } from '../..';
 
 describe('Tabs', () => {
+  test('should have no accessibility violations', async () => {
+    const { container } = render(
+      <Grommet>
+        <Tabs>
+          <Tab a11yTitle="test" />
+        </Tabs>
+      </Grommet>,
+    );
+
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+    expect(container).toMatchSnapshot();
+  });
+
   test('no Tab', () => {
     const component = renderer.create(
       <Grommet>
@@ -128,5 +146,94 @@ describe('Tabs', () => {
 
     fireEvent.mouseOut(getByText('Tab 2'));
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should style as disabled', () => {
+    const { container } = render(
+      <Grommet>
+        <Tabs>
+          <Tab title="Enabled Tab">This tab is enabled</Tab>
+          <Tab title="Disabled Tab" disabled>
+            This tab is disabled
+          </Tab>
+        </Tabs>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should apply custom theme disabled style', () => {
+    const disabledTextColor = 'blue';
+    const disabledBorderBottomColor = 'green';
+    const customTheme = {
+      tab: {
+        border: {
+          disabled: {
+            color: disabledBorderBottomColor,
+          },
+        },
+        disabled: {
+          color: disabledTextColor,
+        },
+      },
+    };
+
+    const { container, getByText } = render(
+      <Grommet theme={customTheme}>
+        <Tabs>
+          <Tab title="Enabled Tab">This tab is enabled</Tab>
+          <Tab title="Disabled Tab" disabled>
+            This tab is disabled
+          </Tab>
+        </Tabs>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+
+    const disabledTab = getByText('Disabled Tab').parentElement;
+    const disabledTabStyle = window.getComputedStyle(disabledTab);
+    expect(disabledTabStyle.color).toBe(disabledTextColor);
+    expect(disabledTabStyle.borderBottomColor).toBe(disabledBorderBottomColor);
+  });
+
+  test(`should apply custom theme disabled style when theme.button.default is 
+  defined`, () => {
+    const disabledTextColor = 'blue';
+    const disabledBorderBottomColor = 'green';
+    const customTheme = {
+      button: {
+        default: {},
+      },
+      tab: {
+        border: {
+          disabled: {
+            color: disabledBorderBottomColor,
+          },
+        },
+        disabled: {
+          color: disabledTextColor,
+        },
+      },
+    };
+
+    const { container, getByText } = render(
+      <Grommet theme={customTheme}>
+        <Tabs>
+          <Tab title="Enabled Tab">This tab is enabled</Tab>
+          <Tab title="Disabled Tab" disabled>
+            This tab is disabled
+          </Tab>
+        </Tabs>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+
+    const disabledTab = getByText('Disabled Tab').parentElement;
+    const disabledTabStyle = window.getComputedStyle(disabledTab);
+    expect(disabledTabStyle.color).toBe(disabledTextColor);
+    expect(disabledTabStyle.borderBottomColor).toBe(disabledBorderBottomColor);
   });
 });

@@ -16,7 +16,18 @@ import {
 
 const RadioButton = forwardRef(
   (
-    { checked, children, disabled, focus, id, label, name, onChange, ...rest },
+    {
+      a11yTitle,
+      checked,
+      children,
+      disabled,
+      focus,
+      id,
+      label,
+      name,
+      onChange,
+      ...rest
+    },
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
@@ -55,6 +66,7 @@ const RadioButton = forwardRef(
           }
         >
           <StyledRadioButtonInput
+            aria-label={a11yTitle}
             {...rest}
             ref={ref}
             type="radio"

@@ -17,6 +17,10 @@ export const doc = RadioButton => {
     .intrinsicElement('input');
 
   DocumentedRadioButton.propTypes = {
+    a11yTitle: PropTypes.string.description(
+      `Custom label to be used by screen readers.
+      When provided, an aria-label will be added to the element.`,
+    ),
     checked: PropTypes.bool.description('Same as React <input checked={} />'),
     children: PropTypes.func.description(
       `Function that will be called to render the visual representation.
@@ -67,6 +71,11 @@ export const themeDoc = {
     description: 'The width size of the border of the RadioButton.',
     type: 'string',
     defaultValue: '2px',
+  },
+  'radioButton.check.background.color': {
+    description: 'The background color of the checked icon in the RadioButton.',
+    type: 'string | {dark: string, light: string}',
+    defaultValue: 'undefined',
   },
   'radioButton.check.color': {
     description: 'The color of the checked icon in the RadioButton.',

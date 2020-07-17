@@ -14,6 +14,15 @@ import { RadioButton } from 'grommet';
 
 ## Properties
 
+**a11yTitle**
+
+Custom label to be used by screen readers.
+      When provided, an aria-label will be added to the element.
+
+```
+string
+```
+
 **checked**
 
 Same as React <input checked={} />
@@ -115,6 +124,16 @@ Defaults to
 
 ```
 2px
+```
+
+**radioButton.check.background.color**
+
+The background color of the checked icon in the RadioButton. Expects `string | {dark: string, light: string}`.
+
+Defaults to
+
+```
+undefined
 ```
 
 **radioButton.check.color**

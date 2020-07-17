@@ -65,7 +65,7 @@ const WindowChart = ({ data, max }) => {
   return (
     <Grommet theme={grommet}>
       <Box pad="large">
-        {/* className="chromatic-ignore" is used for the story testing. 
+        {/* className="chromatic-ignore" is used for the story testing.
             grommet doesn't reccomend the usage of className */}
         <Box direction="row" justify="between" className="chromatic-ignore">
           {innerAxis[0].reverse().map(t => (

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { FormDown } from 'grommet-icons';
-import isChromatic from 'storybook-chromatic/isChromatic';
+import isChromatic from 'chromatic/isChromatic';
 
 import { Grommet, Box, Calendar, DropButton, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
