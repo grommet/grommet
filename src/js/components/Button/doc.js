@@ -34,7 +34,7 @@ export const doc = Button => {
     color: colorPropType.description(
       'Fill color for primary, label color for plain, border color otherwise.',
     ),
-    disabled: PropTypes.bool
+    disabled: PropTypes.oneOfType([PropTypes.number, PropTypes.bool])
       .description('Whether the button is disabled.')
       .defaultValue(false),
     fill: PropTypes.oneOfType([
