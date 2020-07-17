@@ -32,7 +32,8 @@ export const doc = Button => {
     ]).description(
       `Function that can be called to render the visual representation.
       Button can take in Children as a function, node, or object. 
-      \`children={<Box ...>{...}</Box>}\`
+      For example a Text component can be passed as a child.
+      \`children={() => <Text>Child</Text>}\`
       `,
     ),
     active: PropTypes.bool
