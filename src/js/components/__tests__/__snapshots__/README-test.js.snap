@@ -1976,6 +1976,21 @@ xlarge
 string
 \`\`\`
 
+**children**
+
+Function that can be called to render the visual representation.
+      Button can take in Children as a function, node, or object. 
+      For example hover can be passed as an object that would 
+      then return a react element.
+      \`children={({ hover }) => <Box...>{...}</Box>}\`
+      
+
+\`\`\`
+function
+object
+node
+\`\`\`
+
 **active**
 
 Whether the button is active.
@@ -10628,6 +10643,19 @@ xlarge
     string
 }
 string
+\`\`\`
+
+**children**
+
+Function that will be called to render the visual representation.
+      It will be passed an object containing button props.
+      It should return a react element.
+      For example:
+      \`children={({ drop, hover }) => <Box ...>{...}</Box>}\`
+      
+
+\`\`\`
+function
 \`\`\`
 
 **disabled**
