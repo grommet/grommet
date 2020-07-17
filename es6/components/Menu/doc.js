@@ -7,6 +7,7 @@ var HORIZONTAL_ALIGN_OPTIONS = ['right', 'left'];
 export var doc = function doc(Menu) {
   var DocumentedMenu = describe(Menu).availableAt(getAvailableAtBadge('Menu')).description("A control that opens a Drop containing plain Buttons.").details("The labels and behavior of the contained Buttons are described\n      via the `items` property.\n      You can provide a single function child that will be called with\n      'hover', 'focus', and 'drop' keys. This allows you to customize\n      the rendering of the Menu button in those cases.").usage("import { Menu } from 'grommet';\n<Menu />").intrinsicElement('button');
   DocumentedMenu.propTypes = _extends({}, genericProps, {
+    children: PropTypes.func.description("Function that will be called to render the visual representation.\n      It will be passed an object containing button props.\n      It should return a react element.\n      For example:\n      `children={({ drop, hover }) => <Box ...>{...}</Box>}`\n      "),
     disabled: PropTypes.bool.description('Whether the menu should be disabled.').defaultValue(false),
     dropAlign: PropTypes.shape({
       top: PropTypes.oneOf(VERTICAL_ALIGN_OPTIONS),

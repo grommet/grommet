@@ -5,6 +5,7 @@ import { colorPropType, genericProps, getAvailableAtBadge, hoverIndicatorPropTyp
 export var doc = function doc(Button) {
   var DocumentedButton = describe(Button).availableAt(getAvailableAtBadge('Button')).description('A button.').details("You can provide a single function child that will be called with\n      'hover' and 'focus' keys. This allows you to customize the rendering\n      of the Button in those cases.").usage("import { Button } from 'grommet';\n<Button primary label='Label' />").intrinsicElement('button');
   DocumentedButton.propTypes = _extends({}, genericProps, {
+    children: PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.node]).description("Function that can be called to render the visual representation.\n      Button can take in Children as a function, node, or object. \n      For example hover can be passed as an object that would \n      then return a react element.\n      `children={({ hover }) => <Box...>{...}</Box>}`\n      "),
     active: PropTypes.bool.description('Whether the button is active.').defaultValue(false),
     as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description("The DOM tag or react component to use for the element."),
     color: colorPropType.description('Fill color for primary, label color for plain, border color otherwise.'),

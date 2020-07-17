@@ -12,6 +12,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 var doc = function doc(Button) {
   var DocumentedButton = (0, _reactDesc.describe)(Button).availableAt((0, _utils.getAvailableAtBadge)('Button')).description('A button.').details("You can provide a single function child that will be called with\n      'hover' and 'focus' keys. This allows you to customize the rendering\n      of the Button in those cases.").usage("import { Button } from 'grommet';\n<Button primary label='Label' />").intrinsicElement('button');
   DocumentedButton.propTypes = _extends({}, _utils.genericProps, {
+    children: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.func, _reactDesc.PropTypes.object, _reactDesc.PropTypes.node]).description("Function that can be called to render the visual representation.\n      Button can take in Children as a function, node, or object. \n      For example hover can be passed as an object that would \n      then return a react element.\n      `children={({ hover }) => <Box...>{...}</Box>}`\n      "),
     active: _reactDesc.PropTypes.bool.description('Whether the button is active.').defaultValue(false),
     as: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.func]).description("The DOM tag or react component to use for the element."),
     color: _utils.colorPropType.description('Fill color for primary, label color for plain, border color otherwise.'),
