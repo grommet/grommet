@@ -17,7 +17,13 @@ import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
 
-const grommetInputNames = ['TextInput', 'Select', 'MaskedInput', 'TextArea'];
+const grommetInputNames = [
+  'TextInput',
+  'Select',
+  'MaskedInput',
+  'TextArea',
+  'DateInput',
+];
 const grommetInputPadNames = [
   'CheckBox',
   'CheckBoxGroup',
@@ -173,8 +179,11 @@ const FormField = forwardRef(
       );
     }
 
-    const contentProps =
-      pad || wantContentPad ? { ...formFieldTheme.content } : {};
+    const contentProps = { ...formFieldTheme.content };
+
+    if (!pad && !wantContentPad) {
+      contentProps.pad = undefined;
+    }
 
     if (themeBorder && themeBorder.position === 'inner') {
       if (error && formFieldTheme.error) {
@@ -183,6 +192,10 @@ const FormField = forwardRef(
         contentProps.background = formFieldTheme.disabled.background;
       }
     }
+    // Removing margin from contentProps because margin should be applied
+    // on containing <FormFieldContentBox>
+    // contentProps.margin = undefined;
+    // contents = <Box {...contentProps}>{contents}</Box>;
 
     if (!themeBorder) {
       contents = <Box {...contentProps}>{contents}</Box>;

@@ -16,7 +16,7 @@ export interface CalendarProps {
   header?: ((...args: any[]) => any);
   locale?: string;
   onReference?: ((reference: string) => void);
-  onSelect?: ((select: string[]) => any);
+  onSelect?: ((select: string | string[]) => any);
   range?: boolean;
   reference?: string;
   showAdjacentDays?: boolean;
@@ -24,5 +24,6 @@ export interface CalendarProps {
 }
 
 declare const Calendar: React.ComponentClass<CalendarProps & JSX.IntrinsicElements['div']>;
+export type CalendarType = CalendarProps & Omit<JSX.IntrinsicElements['div'], 'onSelect'>;
 
 export { Calendar };

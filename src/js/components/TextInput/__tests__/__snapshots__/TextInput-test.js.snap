@@ -2218,6 +2218,76 @@ exports[`TextInput select suggestion 4`] = `
 </div>
 `;
 
+exports[`TextInput should not have accessibility violations 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  width: 100%;
+}
+
+.c2::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c2::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c2:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c2::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c1 {
+  position: relative;
+  width: 100%;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <input
+      aria-label="aria-test"
+      autocomplete="off"
+      class="c2"
+      name="item"
+      value=""
+    />
+  </div>
+</div>
+`;
+
 exports[`TextInput small drop height 1`] = `
 .c0 {
   display: -webkit-box;

@@ -208,27 +208,21 @@ exports[`renders size 1`] = `
 >
   <span
     className="c1"
-    size="xsmall"
   />
   <span
     className="c2"
-    size="small"
   />
   <span
     className="c3"
-    size="medium"
   />
   <span
     className="c4"
-    size="large"
   />
   <span
     className="c5"
-    size="xlarge"
   />
   <span
     className="c6"
-    size="xxlarge"
   />
 </div>
 `;

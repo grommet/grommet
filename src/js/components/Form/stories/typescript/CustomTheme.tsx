@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import isChromatic from 'storybook-chromatic/isChromatic';
+import isChromatic from 'chromatic/isChromatic';
 
 import { grommet, Box, FormField, TextArea, Grommet } from 'grommet';
 import { deepMerge } from 'grommet/utils';

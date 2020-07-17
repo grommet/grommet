@@ -2,7 +2,11 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import styled from 'styled-components';
 import 'jest-styled-components';
+import 'jest-axe/extend-expect';
+import 'regenerator-runtime/runtime';
 
+import { axe } from 'jest-axe';
+import { cleanup, render } from '@testing-library/react';
 import { Grommet } from '../../Grommet';
 import { Form } from '../../Form';
 import { FormField } from '..';
@@ -13,6 +17,19 @@ const CustomFormField = styled(FormField)`
 `;
 
 describe('FormField', () => {
+  afterEach(cleanup);
+
+  test(`should have no accessibility violations`, async () => {
+    const { container } = render(
+      <Grommet>
+        <FormField />
+      </Grommet>,
+    );
+    const results = await axe(container);
+    expect(container.firstChild).toMatchSnapshot();
+    expect(results).toHaveNoViolations();
+  });
+
   test('default', () => {
     const component = renderer.create(
       <Grommet>
@@ -263,6 +280,26 @@ describe('FormField', () => {
       >
         <Form>
           <FormField label="label" pad />
+        </Form>
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('custom input margin', () => {
+    const component = renderer.create(
+      <Grommet
+        theme={{
+          formField: {
+            content: {
+              margin: { vertical: 'large' },
+            },
+          },
+        }}
+      >
+        <Form>
+          <FormField label="label" />
         </Form>
       </Grommet>,
     );

@@ -2,7 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { cleanup, fireEvent, render } from '@testing-library/react';
 import 'jest-styled-components';
+import 'jest-axe/extend-expect';
+import 'regenerator-runtime/runtime';
 
+import { axe } from 'jest-axe';
 import { findAllByType } from '../../../utils';
 
 import { Grommet } from '../../Grommet';
@@ -10,6 +13,18 @@ import { Anchor } from '..';
 
 describe('Anchor', () => {
   afterEach(cleanup);
+
+  test('should have no accessibility violations', async () => {
+    const { container } = render(
+      <Grommet>
+        <Anchor>Link</Anchor>
+      </Grommet>,
+    );
+
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+    expect(container).toMatchSnapshot();
+  });
 
   test('renders', () => {
     const component = renderer.create(
