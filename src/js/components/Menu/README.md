@@ -130,6 +130,19 @@ xlarge
 string
 ```
 
+**children**
+
+Function that will be called to render the visual representation.
+      It will be passed an object containing button props.
+      It should return a react element.
+      For example:
+      `children={({ drop, hover }) => <Box ...>{...}</Box>}`
+      
+
+```
+function
+```
+
 **disabled**
 
 Whether the menu should be disabled.
