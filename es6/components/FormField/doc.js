@@ -3,6 +3,7 @@ import { getAvailableAtBadge, marginProp } from '../../utils';
 export var doc = function doc(FormField) {
   var DocumentedFormField = describe(FormField).availableAt(getAvailableAtBadge('FormField')).description("A single field in a form. FormField wraps an input component with\n      a label, help, and/or error messaging. It typically contains an input\n      control like TextInput, TextArea, Select, etc.").usage("import { FormField } from 'grommet';\n<FormField />").intrinsicElement('div');
   DocumentedFormField.propTypes = {
+    a11yTitle: PropTypes.string.description("Custom label to be used by screen readers.\n       Should only be provided if FormField has no children.\n       When a11yTitle is provided an aria-label will be added to the element\n       if it has no children."),
     component: PropTypes.oneOfType([PropTypes.func, PropTypes.object]).description("The component to insert in the FormField. Grommet will add update the\n      form values when this field changes. Any additional properties\n      (such as initial value) you pass to FormField will be forwarded to this\n      component. The component may be custom as long it supports the properties\n      of name, value, onChange (event => {}), while event has either event.value\n      or event.target.value."),
     disabled: PropTypes.bool.description('Whether the field should look disabled.'),
     error: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).description("Any error text describing issues with the field's value"),
