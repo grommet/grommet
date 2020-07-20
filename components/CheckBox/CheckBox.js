@@ -38,7 +38,8 @@ var stopLabelClick = function stopLabelClick(event) {
 var CheckBox = (0, _react.forwardRef)(function (_ref, ref) {
   var _ref2;
 
-  var checkedProp = _ref.checked,
+  var a11yTitle = _ref.a11yTitle,
+      checkedProp = _ref.checked,
       disabled = _ref.disabled,
       focusProp = _ref.focus,
       id = _ref.id,
@@ -50,7 +51,7 @@ var CheckBox = (0, _react.forwardRef)(function (_ref, ref) {
       reverse = _ref.reverse,
       toggle = _ref.toggle,
       indeterminate = _ref.indeterminate,
-      rest = _objectWithoutPropertiesLoose(_ref, ["checked", "disabled", "focus", "id", "label", "name", "onBlur", "onChange", "onFocus", "reverse", "toggle", "indeterminate"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "checked", "disabled", "focus", "id", "label", "name", "onBlur", "onChange", "onFocus", "reverse", "toggle", "indeterminate"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
@@ -169,6 +170,7 @@ var CheckBox = (0, _react.forwardRef)(function (_ref, ref) {
   var first = reverse ? normalizedLabel : checkBoxNode;
   var second = reverse ? checkBoxNode : normalizedLabel;
   return /*#__PURE__*/_react["default"].createElement(_StyledCheckBox.StyledCheckBoxContainer, _extends({
+    "aria-label": a11yTitle,
     reverse: reverse
   }, (0, _object.removeUndefined)({
     htmlFor: id,
