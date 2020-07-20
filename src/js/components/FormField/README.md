@@ -16,7 +16,7 @@ import { FormField } from 'grommet';
 **a11yTitle**
 
 Custom label to be used by screen readers. When provided,
-        an aria-label will be added to the element. Should only be used
+        an aria-label will be added to the element. Should be provided
         when FormField does not have a child with a11yTitle property.
 
 ```
