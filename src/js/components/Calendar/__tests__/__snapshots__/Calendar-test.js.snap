@@ -10222,7 +10222,6 @@ exports[`Calendar header 1`] = `
         </button>
         <span
           className="c6"
-          size="small"
         >
           <strong>
             January 2020

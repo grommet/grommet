@@ -345,3 +345,40 @@ exports[`DropButton ref function 2`] = `
 `;
 
 exports[`DropButton ref function 3`] = `""`;
+
+exports[`DropButton should have no accessibility violations 1`] = `
+.c0 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c0:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+<button
+  aria-label="test"
+  class="c0"
+  type="button"
+/>
+`;

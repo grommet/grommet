@@ -574,6 +574,7 @@ export interface ThemeType {
   formField?: {
     border?: BorderType;
     content?: {
+      margin?: MarginType;
       pad?: PadType;
     };
     disabled?: {
@@ -852,6 +853,9 @@ export interface ThemeType {
     };
     check?: {
       radius?: string;
+      background?: {
+        color?: ColorType;
+      }
     };
     color?: ColorType;
     hover?: {
