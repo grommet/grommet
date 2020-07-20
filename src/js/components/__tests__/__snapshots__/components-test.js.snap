@@ -3407,6 +3407,13 @@ submit",
     "name": "FormField",
     "properties": Array [
       Object {
+        "description": "Custom label to be used by screen readers. When provided,
+        an aria-label will be added to the element. Should only be used
+        when FormField does not have a child with a11yTitle property.",
+        "format": "string",
+        "name": "a11yTitle",
+      },
+      Object {
         "description": "The component to insert in the FormField. Grommet will add update the
       form values when this field changes. Any additional properties
       (such as initial value) you pass to FormField will be forwarded to this
