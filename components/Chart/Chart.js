@@ -437,8 +437,11 @@ var Chart = _react["default"].forwardRef(function (_ref, ref) {
   var gradientRect;
 
   if (useGradient && size[1]) {
-    var gradientId = id + "-gradient";
-    var maskId = id + "-mask";
+    var uniqueGradientId = color.map(function (element) {
+      return element.color;
+    }).join('-');
+    var gradientId = uniqueGradientId + "-" + id + "-gradient";
+    var maskId = uniqueGradientId + "-" + id + "-mask";
     defs = /*#__PURE__*/_react["default"].createElement("defs", null, /*#__PURE__*/_react["default"].createElement("linearGradient", {
       id: gradientId,
       x1: 0,
