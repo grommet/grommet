@@ -22,7 +22,7 @@ const StyledRadioButtonContainer = styled.label`
     border-color: ${props =>
       normalizeColor(props.theme.radioButton.hover.border.color, props.theme)};
   }
-  :not(div):hover {
+  :hover {
     background-color: ${props =>
       normalizeColor(
         props.theme.radioButton.hover &&

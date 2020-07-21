@@ -117,7 +117,8 @@ export const themeDoc = {
     defaultValue: '24px',
   },
   'radioButton.hover.background.color': {
-    description: `The color of the RadioButton border when hovered over.`,
+    description: `The color of the Box surronding the RadioButton
+    when hovered over.`,
     type: 'string | { dark: string, light: string }',
     defaultValue: '{dark: undefined, light: undefined}',
   },
