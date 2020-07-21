@@ -11702,7 +11702,7 @@ Defaults to
 
 **radioButton.hover.background.color**
 
-The color of the Box surronding the RadioButton
+The background color of the Box surrounding the RadioButton
     when hovered over. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
