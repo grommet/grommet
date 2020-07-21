@@ -17,6 +17,12 @@ export const doc = FormField => {
     .intrinsicElement('div');
 
   DocumentedFormField.propTypes = {
+    a11yTitle: PropTypes.string.description(
+      `Custom label to be used by screen readers.
+       Should only be provided if FormField has no children.
+       When a11yTitle is provided an aria-label will be added to the element
+       if it has no children.`,
+    ),
     component: PropTypes.oneOfType([
       PropTypes.func,
       PropTypes.object,
