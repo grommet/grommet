@@ -889,6 +889,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       // color: undefined,
       hover: {
+        // background: {
+        //   color: { dark: undefined, light: undefined },
+        // },
         border: {
           color: {
             dark: 'white',

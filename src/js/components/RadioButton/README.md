@@ -217,6 +217,16 @@ Defaults to
 24px
 ```
 
+**radioButton.hover.background.color**
+
+The color of the RadioButton border when hovered over. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+{dark: undefined, light: undefined}
+```
+
 **radioButton.hover.border.color**
 
 The color of the RadioButton border when hovered over. Expects `string | { dark: string, light: string }`.
