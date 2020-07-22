@@ -15,7 +15,8 @@ const StyledRadioButtonContainer = styled.label`
   user-select: none;
   width: fit-content;
   ${props => props.disabled && disabledStyle} ${props =>
-  !props.disabled && 'cursor: pointer;'}
+    !props.disabled &&
+    'cursor: pointer;'}
 
   :hover input:not([disabled]) + div,
   :hover input:not([disabled]) + span {
@@ -25,14 +26,13 @@ const StyledRadioButtonContainer = styled.label`
   :hover {
     background-color: ${props =>
       normalizeColor(
-        props.theme.radioButton.hover &&
+        !props.disabled &&
+          props.theme.radioButton.hover &&
           props.theme.radioButton.hover.background &&
           props.theme.radioButton.hover.background.color,
         props.theme,
       )};
   }
-  }
-
   ${props => props.theme.radioButton.extend};
 `;
 
