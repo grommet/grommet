@@ -162,7 +162,6 @@ string
 Whether the button is disabled.
 
 ```
-number
 boolean
 ```
 

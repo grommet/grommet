@@ -16,7 +16,7 @@ const SimpleCalendar = () => {
     <Grommet theme={grommet}>
       <Box align="center" pad="large">
         <Calendar
-          bounds={['2020-06-05', '2020-06-12']}
+          bounds={['2020-08-05', '2020-08-12']}
           disabled={['2020-08-07']}
         />
       </Box>
