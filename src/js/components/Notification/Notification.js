@@ -57,6 +57,7 @@ export function Notification() {
       margin={{ vertical: 'medium', horizontal: 'small' }}
       onEsc={deleteLast}
       responsive={false}
+      style={{ zIndex: theme.notification.toast.zIndex }}
       plain
     >
       {notifications.map(({ id, config: { msg, type } }) => (

@@ -1170,11 +1170,21 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       toast: {
         closeIcon: FormClose,
         position: 'top-right',
+        zIndex: 1,
         icon: {
+          size: 'large',
           default: Info,
         },
         text: {
-          default: {},
+          default: {
+            weight: 600,
+          },
+          ok: {
+            color: '#44b88d',
+          },
+          error: {
+            color: '#E9716C',
+          },
         },
         default: {
           background: 'dark-1',
