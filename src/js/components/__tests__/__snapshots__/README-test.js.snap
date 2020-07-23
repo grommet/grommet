@@ -1976,6 +1976,21 @@ xlarge
 string
 \`\`\`
 
+**children**
+
+Function that can be called to render the visual representation.
+      Button can take in Children as a function, node, or object. 
+      For example hover can be passed as an object that would 
+      then return a react element.
+      \`children={({ hover }) => <Box...>{...}</Box>}\`
+      
+
+\`\`\`
+function
+object
+node
+\`\`\`
+
 **active**
 
 Whether the button is active.
@@ -4429,6 +4444,15 @@ import { CheckBox } from 'grommet';
 
 ## Properties
 
+**a11yTitle**
+
+Custom label to be used by screen readers.
+      When provided, an aria-label will be added to the element.
+
+\`\`\`
+string
+\`\`\`
+
 **checked**
 
 Same as React <input checked={} />
@@ -4456,7 +4480,8 @@ string
 
 **label**
 
-Label text to place next to the control.
+Label text to place next to the control. 
+      Can be used instead of a11yTitle to meet accessibility requirements
 
 \`\`\`
 node
@@ -7460,6 +7485,17 @@ import { FormField } from 'grommet';
 \`\`\`
 
 ## Properties
+
+**a11yTitle**
+
+Custom label to be used by screen readers.
+       Should only be provided if FormField has no children.
+       When a11yTitle is provided an aria-label will be added to the element
+       if it has no children.
+
+\`\`\`
+string
+\`\`\`
 
 **component**
 
@@ -10630,6 +10666,19 @@ xlarge
 string
 \`\`\`
 
+**children**
+
+Function that will be called to render the visual representation.
+      It will be passed an object containing button props.
+      It should return a react element.
+      For example:
+      \`children={({ drop, hover }) => <Box ...>{...}</Box>}\`
+      
+
+\`\`\`
+function
+\`\`\`
+
 **disabled**
 
 Whether the menu should be disabled.
@@ -11558,6 +11607,16 @@ Defaults to
 
 \`\`\`
 2px
+\`\`\`
+
+**radioButton.check.background.color**
+
+The background color of the checked icon in the RadioButton. Expects \`string | {dark: string, light: string}\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **radioButton.check.color**
@@ -13350,6 +13409,16 @@ control
 **tab.disabled.color**
 
 text color of the Tab when disabled. Expects \`string | {dark: string, light: string}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**tab.extend**
+
+Any additional style for Tab. Expects \`string | (props) => {}\`.
 
 Defaults to
 

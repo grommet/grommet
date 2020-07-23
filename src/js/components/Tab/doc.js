@@ -80,6 +80,11 @@ export const themeDoc = {
     type: 'string | {dark: string, light: string}',
     defaultValue: undefined,
   },
+  'tab.extend': {
+    description: 'Any additional style for Tab.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
   'tab.hover.background': {
     description: 'background style of the Tab on hover.',
     type: 'string | object',

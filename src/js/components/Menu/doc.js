@@ -24,6 +24,14 @@ export const doc = Menu => {
 
   DocumentedMenu.propTypes = {
     ...genericProps,
+    children: PropTypes.func.description(
+      `Function that will be called to render the visual representation.
+      It will be passed an object containing button props.
+      It should return a react element.
+      For example:
+      \`children={({ drop, hover }) => <Box ...>{...}</Box>}\`
+      `,
+    ),
     disabled: PropTypes.bool
       .description('Whether the menu should be disabled.')
       .defaultValue(false),

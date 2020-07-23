@@ -495,7 +495,6 @@ exports[`FormField custom label 1`] = `
     >
       <label
         className="c2"
-        size="small"
       >
         label
       </label>
@@ -940,7 +939,6 @@ exports[`FormField disabled with custom label 1`] = `
     >
       <label
         className="c2"
-        size="small"
       >
         label
       </label>
