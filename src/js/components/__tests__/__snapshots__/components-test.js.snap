@@ -5155,6 +5155,11 @@ number",
     "usage": "import { TextInput } from 'mnet-ui-base';
 <TextInput id='item' name='item' />",
   },
+  "Tooltip": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "displayName": "Tooltip",
+    "render": [Function],
+  },
   "__esModule": true,
 }
 `;

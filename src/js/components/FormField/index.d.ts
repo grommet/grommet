@@ -13,9 +13,10 @@ export interface FormFieldProps {
   options?: string[];
   pad?: boolean;
   // Although Placeholder is not a prop within FormField we Omit the HTML placeholder attribute and replaced with following.
-  placeholder?: PlaceHolderType
+  placeholder?: PlaceHolderType;
   required?: boolean;
   component?: any;
+  width?: string;
   validate?: {regexp?: object,message?: string|React.ReactNode, status?: 'error' | 'info'} | ((...args: any[]) => any) | ({regexp?: object,message?: string|React.ReactNode, status?: 'error' | 'info'} | ((...args: any[]) => any))[];
 }
 
