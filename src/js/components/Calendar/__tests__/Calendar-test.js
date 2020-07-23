@@ -30,16 +30,6 @@ describe('Calendar', () => {
     expect(results).toHaveNoViolations();
   });
 
-  test('disabled', () => {
-    const component = renderer.create(
-      <Grommet>
-        <Calendar size="small" disabled={['2020-08-07']} />
-      </Grommet>,
-    );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
   test('date', () => {
     // need to set the date to avoid snapshot drift over time
     const component = renderer.create(
@@ -451,5 +441,15 @@ describe('Calendar Keyboard events', () => {
     });
     // Jan 16th is set to active
     expect(onSelect).toBeCalledWith(expect.stringMatching(/^2020-01-16T/));
+  });
+
+  test('disabled', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Calendar disabled={['2020-08-07']} />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });
