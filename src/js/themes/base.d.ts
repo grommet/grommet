@@ -82,9 +82,9 @@ type Colors = typeof colors & {
 interface ButtonKindType {
   background?: BackgroundType;
   border?: {
-        color?: ColorType;
-        width?: string;
-      } | boolean;
+    color?: ColorType;
+    width?: string;
+   } | boolean;
   color?: ColorType;
   padding?: {
     vertical?: string;
@@ -135,11 +135,11 @@ export interface ThemeType {
         size?: BreakpointSize;
       };
       [x: string]: {
-            value?: number;
-            borderSize?: BreakpointBorderSize;
-            edgeSize?: BreakpointEdgeSize;
-            size?: BreakpointSize;
-          } | undefined;
+        value?: number;
+        borderSize?: BreakpointBorderSize;
+        edgeSize?: BreakpointEdgeSize;
+        size?: BreakpointSize;
+     } | undefined;
     };
     deviceBreakpoints?: {
       phone?: string;
@@ -224,7 +224,7 @@ export interface ThemeType {
       color?: ColorType;
     };
     input?: {
-      padding?: string | { top?: string; bottom?: string; left?: string; right?: string; horizontal?: string; vertical?: string;};
+      padding?: string | { top?: string, bottom?: string, left?: string, right?: string, horizontal?: string, vertical?: string};
       font?: {
         height?: string;
         size?: string;
