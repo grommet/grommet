@@ -84,7 +84,7 @@ interface ButtonKindType {
   border?: {
     color?: ColorType;
     width?: string;
-   } | boolean;
+  } | boolean;
   color?: ColorType;
   padding?: {
     vertical?: string;
@@ -139,7 +139,7 @@ export interface ThemeType {
         borderSize?: BreakpointBorderSize;
         edgeSize?: BreakpointEdgeSize;
         size?: BreakpointSize;
-     } | undefined;
+      } | undefined;
     };
     deviceBreakpoints?: {
       phone?: string;
