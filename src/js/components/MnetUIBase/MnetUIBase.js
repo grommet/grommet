@@ -16,6 +16,7 @@ import {
 } from '../../utils';
 import { base as baseTheme } from '../../themes';
 import { StyledMnetUIBase } from './StyledMnetUIBase';
+import { Notification } from '../Notification';
 
 const FullGlobalStyle = createGlobalStyle`
   body { margin: 0; }
@@ -151,6 +152,7 @@ class MnetUIBase extends Component {
             </StyledMnetUIBase>
             {full && <FullGlobalStyle />}
             <GlobalStyle />
+            <Notification />
           </ContainerTargetContext.Provider>
         </ResponsiveContext.Provider>
       </ThemeContext.Provider>
