@@ -44,7 +44,7 @@ describe('Calendar', () => {
   test('disabled', () => {
     const component = renderer.create(
       <Grommet>
-        <Calendar disabled={[['2020-08-07', '2020-08-06']]} />
+        <Calendar disabled={[DATE]} />
       </Grommet>,
     );
     const tree = component.toJSON();

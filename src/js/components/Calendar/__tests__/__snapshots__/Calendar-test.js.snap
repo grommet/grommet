@@ -6799,26 +6799,6 @@ exports[`Calendar disabled 1`] = `
   text-align: inherit;
 }
 
-.c16 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-  opacity: 0.3;
-  cursor: default;
-}
-
 .c5 {
   margin: 0px;
   font-size: 26px;
@@ -7839,8 +7819,7 @@ exports[`Calendar disabled 1`] = `
             >
               <button
                 aria-label="Wed Aug 05 2020"
-                className="c16"
-                disabled={2}
+                className="c13"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -7861,8 +7840,7 @@ exports[`Calendar disabled 1`] = `
             >
               <button
                 aria-label="Thu Aug 06 2020"
-                className="c16"
-                disabled={2}
+                className="c13"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
