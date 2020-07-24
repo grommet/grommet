@@ -13,6 +13,10 @@ export const doc = CheckBox => {
     .intrinsicElement('input');
 
   DocumentedCheckBox.propTypes = {
+    a11yTitle: PropTypes.string.description(
+      `Custom label to be used by screen readers.
+      When provided, an aria-label will be added to the element.`,
+    ),
     checked: PropTypes.bool
       .description('Same as React <input checked={} />')
       .defaultValue(false),
@@ -26,7 +30,8 @@ export const doc = CheckBox => {
       'The DOM id attribute value to use for the underlying <input/> element.',
     ),
     label: PropTypes.node.description(
-      'Label text to place next to the control.',
+      `Label text to place next to the control. 
+      Can be used instead of a11yTitle to meet accessibility requirements`,
     ),
     name: PropTypes.string.description(
       `The DOM name attribute value to use for the underlying <input/> 

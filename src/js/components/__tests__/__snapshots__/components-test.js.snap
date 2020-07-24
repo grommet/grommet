@@ -2038,6 +2038,12 @@ point",
     "name": "CheckBox",
     "properties": Array [
       Object {
+        "description": "Custom label to be used by screen readers.
+      When provided, an aria-label will be added to the element.",
+        "format": "string",
+        "name": "a11yTitle",
+      },
+      Object {
         "defaultValue": false,
         "description": "Same as React <input checked={} />",
         "format": "boolean",
@@ -2056,7 +2062,8 @@ point",
         "name": "id",
       },
       Object {
-        "description": "Label text to place next to the control.",
+        "description": "Label text to place next to the control. 
+      Can be used instead of a11yTitle to meet accessibility requirements",
         "format": "node",
         "name": "label",
       },
