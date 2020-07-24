@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { Omit, PlaceHolderType, MarginType } from '../../utils';
+import { BoxProps } from '../Box';
 
 export interface FormFieldProps {
+  contentProps?: BoxProps;
   disabled?: boolean;
   error?: string | React.ReactNode;
   help?: string | React.ReactNode;

@@ -306,11 +306,17 @@ describe('FormField', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
-  test('overflow set', () => {
+
+  test('contentProps', () => {
     const component = renderer.create(
       <Grommet>
         <Form>
-          <FormField label="label" overflow="auto" />
+          <FormField
+            label="label"
+            contentProps={{
+              border: false,
+            }}
+          />
         </Form>
       </Grommet>,
     );

@@ -40,7 +40,6 @@ exports[`Form accessibility Box with TextInput in Form should
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c3 {
@@ -181,7 +180,6 @@ exports[`Form accessibility CheckBox in Form should have no accessibility violat
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
-  overflow: hidden;
 }
 
 .c4 {
@@ -384,7 +382,6 @@ exports[`Form accessibility FormField with an explicit TextInput child
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c4 {
@@ -542,7 +539,6 @@ exports[`Form accessibility Select in Form should have no accessibility violatio
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c4 {
@@ -790,7 +786,6 @@ exports[`Form accessibility TextInput in Form should have
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c4 {
@@ -935,7 +930,6 @@ exports[`Form uncontrolled errors 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c5 {
@@ -1083,7 +1077,6 @@ exports[`Form uncontrolled infos 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c5 {
@@ -1341,7 +1334,6 @@ exports[`Form uncontrolled uncontrolled 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c5 {
@@ -1474,7 +1466,7 @@ exports[`Form uncontrolled uncontrolled 2`] = `
       class="StyledBox-sc-13pk1d4-0 dtCrhk FormField__FormFieldBox-m9hood-0 eenrNp"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
+        class="StyledBox-sc-13pk1d4-0 cptOIG FormField__FormFieldContentBox-m9hood-1 ckZStK"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
@@ -1508,7 +1500,7 @@ exports[`Form uncontrolled uncontrolled 3`] = `
       class="StyledBox-sc-13pk1d4-0 dtCrhk FormField__FormFieldBox-m9hood-0 eenrNp"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
+        class="StyledBox-sc-13pk1d4-0 cptOIG FormField__FormFieldContentBox-m9hood-1 ckZStK"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
@@ -1572,7 +1564,6 @@ exports[`Form uncontrolled update 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c5 {
@@ -1893,7 +1884,6 @@ exports[`Form uncontrolled with field 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c4 {

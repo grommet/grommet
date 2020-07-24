@@ -90,6 +90,7 @@ const FormField = forwardRef(
       children,
       className,
       component,
+      contentProps,
       disabled, // pass through in renderInput()
       error: errorProp,
       help,
@@ -104,7 +105,6 @@ const FormField = forwardRef(
       required,
       style,
       validate,
-      overflow = 'hidden',
       ...rest
     },
     ref,
@@ -180,26 +180,30 @@ const FormField = forwardRef(
       );
     }
 
-    const contentProps = { ...formFieldTheme.content };
+    const fieldContentProps = { ...formFieldTheme.content };
 
     if (!pad && !wantContentPad) {
-      contentProps.pad = undefined;
+      fieldContentProps.pad = undefined;
     }
 
     if (themeBorder && themeBorder.position === 'inner') {
       if (error && formFieldTheme.error) {
-        contentProps.background = formFieldTheme.error.background;
+        fieldContentProps.background = formFieldTheme.error.background;
       } else if (disabled && formFieldTheme.disabled) {
-        contentProps.background = formFieldTheme.disabled.background;
+        fieldContentProps.background = formFieldTheme.disabled.background;
       }
     }
-    // Removing margin from contentProps because margin should be applied
+    // Removing margin from fieldContentProps because margin should be applied
     // on containing <FormFieldContentBox>
-    // contentProps.margin = undefined;
-    // contents = <Box {...contentProps}>{contents}</Box>;
+    // fieldContentProps.margin = undefined;
+    // contents = <Box {...fieldContentProps}>{contents}</Box>;
 
     if (!themeBorder) {
-      contents = <Box {...contentProps}>{contents}</Box>;
+      contents = (
+        <Box {...fieldContentProps} {...contentProps}>
+          {contents}
+        </Box>
+      );
     }
 
     let borderColor;
@@ -251,9 +255,9 @@ const FormField = forwardRef(
           : {};
       contents = (
         <FormFieldContentBox
-          overflow={overflow}
-          {...contentProps}
+          {...fieldContentProps}
           {...innerProps}
+          {...contentProps}
         >
           {contents}
         </FormFieldContentBox>

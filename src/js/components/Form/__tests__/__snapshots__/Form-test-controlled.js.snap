@@ -39,7 +39,6 @@ exports[`Form controlled controlled 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c5 {
@@ -172,7 +171,7 @@ exports[`Form controlled controlled 2`] = `
       class="StyledBox-sc-13pk1d4-0 dtCrhk FormField__FormFieldBox-m9hood-0 eenrNp"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
+        class="StyledBox-sc-13pk1d4-0 cptOIG FormField__FormFieldContentBox-m9hood-1 ckZStK"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
@@ -206,7 +205,7 @@ exports[`Form controlled controlled 3`] = `
       class="StyledBox-sc-13pk1d4-0 dtCrhk FormField__FormFieldBox-m9hood-0 eenrNp"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
+        class="StyledBox-sc-13pk1d4-0 cptOIG FormField__FormFieldContentBox-m9hood-1 ckZStK"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
@@ -270,7 +269,6 @@ exports[`Form controlled controlled FormField deprecated 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c2 {
@@ -424,7 +422,7 @@ exports[`Form controlled controlled FormField deprecated 2`] = `
         test
       </label>
       <div
-        class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
+        class="StyledBox-sc-13pk1d4-0 cptOIG FormField__FormFieldContentBox-m9hood-1 ckZStK"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
@@ -464,7 +462,7 @@ exports[`Form controlled controlled FormField deprecated 3`] = `
         test
       </label>
       <div
-        class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
+        class="StyledBox-sc-13pk1d4-0 cptOIG FormField__FormFieldContentBox-m9hood-1 ckZStK"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
@@ -528,7 +526,6 @@ exports[`Form controlled controlled input 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c5 {
@@ -661,7 +658,7 @@ exports[`Form controlled controlled input 2`] = `
       class="StyledBox-sc-13pk1d4-0 dtCrhk FormField__FormFieldBox-m9hood-0 eenrNp"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
+        class="StyledBox-sc-13pk1d4-0 cptOIG FormField__FormFieldContentBox-m9hood-1 ckZStK"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
@@ -695,7 +692,7 @@ exports[`Form controlled controlled input 3`] = `
       class="StyledBox-sc-13pk1d4-0 dtCrhk FormField__FormFieldBox-m9hood-0 eenrNp"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
+        class="StyledBox-sc-13pk1d4-0 cptOIG FormField__FormFieldContentBox-m9hood-1 ckZStK"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
@@ -759,7 +756,6 @@ exports[`Form controlled controlled input lazy 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c5 {
@@ -892,7 +888,7 @@ exports[`Form controlled controlled input lazy 2`] = `
       class="StyledBox-sc-13pk1d4-0 dtCrhk FormField__FormFieldBox-m9hood-0 eenrNp"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
+        class="StyledBox-sc-13pk1d4-0 cptOIG FormField__FormFieldContentBox-m9hood-1 ckZStK"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
@@ -926,7 +922,7 @@ exports[`Form controlled controlled input lazy 3`] = `
       class="StyledBox-sc-13pk1d4-0 dtCrhk FormField__FormFieldBox-m9hood-0 eenrNp"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
+        class="StyledBox-sc-13pk1d4-0 cptOIG FormField__FormFieldContentBox-m9hood-1 ckZStK"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
@@ -990,7 +986,6 @@ exports[`Form controlled controlled lazy 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c5 {
@@ -1123,7 +1118,7 @@ exports[`Form controlled controlled lazy 2`] = `
       class="StyledBox-sc-13pk1d4-0 dtCrhk FormField__FormFieldBox-m9hood-0 eenrNp"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
+        class="StyledBox-sc-13pk1d4-0 cptOIG FormField__FormFieldContentBox-m9hood-1 ckZStK"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
@@ -1157,7 +1152,7 @@ exports[`Form controlled controlled lazy 3`] = `
       class="StyledBox-sc-13pk1d4-0 dtCrhk FormField__FormFieldBox-m9hood-0 eenrNp"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kGPDbB FormField__FormFieldContentBox-m9hood-1 ckZStK"
+        class="StyledBox-sc-13pk1d4-0 cptOIG FormField__FormFieldContentBox-m9hood-1 ckZStK"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
