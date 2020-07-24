@@ -412,7 +412,7 @@ var Calendar = (0, _react.forwardRef)(function (_ref, ref) {
           plain: true,
           tabIndex: -1,
           active: active && active.getTime() === day.getTime(),
-          disabled: dayDisabled,
+          disabled: dayDisabled && !!dayDisabled,
           onClick: function onClick() {
             selectDate(dateString); // Chrome moves the focus indicator to this button. Set
             // the focus to the grid of days instead.
