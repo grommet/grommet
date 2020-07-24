@@ -2,8 +2,6 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge, marginProp } from '../../utils';
 
-export const OVERFLOW_VALUES = ['auto', 'hidden', 'scroll', 'visible'];
-
 export const doc = FormField => {
   const DocumentedFormField = describe(FormField)
     .availableAt(getAvailableAtBadge('FormField'))
