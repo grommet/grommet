@@ -15,12 +15,17 @@ const heightStyle = css`
 
 const beforeWidthStyle = css`
   width: ${props =>
-    (props.width && getSize(props, props.width) / 2) || `${defaultSize / 2}px`};
+    (props.width &&
+      getSize(props, props.width) &&
+      `${getSize(props, props.width).split('px')[0] / 2}px`) ||
+    `${defaultSize / 2}px`};
 `;
 
 const beforeHeightStyle = css`
   height: ${props =>
-    (props.height && getSize(props, props.height) / 2) ||
+    (props.height &&
+      getSize(props, props.width) &&
+      `${getSize(props, props.height).split('px')[0] / 2}px`) ||
     `${defaultSize / 2}px`};
 `;
 
@@ -42,7 +47,7 @@ export const LoaderWrap = styled(Box)`
 export const StyledLoader = styled(Box)`
   ${widthStyle}
   ${heightStyle}
-  margin: 10px auto;
+  margin: auto;
   position: relative;
   animation: ${loading} 1.4s infinite linear;
   transform: translate3d(0, 0, 0);

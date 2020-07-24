@@ -1,12 +1,12 @@
-## Select
-A control to select a value, with optional search.
+## MultiSelect
+A control to select multiple values, with optional customization.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Select&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=select&module=%2Fsrc%2FSelect.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=MultiSelect&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=multiselect&module=%2Fsrc%2FMultiSelect.js)
 ## Usage
 
 ```javascript
-import { Select } from 'mnet-ui-base';
-<Select />
+import { MultiSelect } from 'mnet-ui-base';
+      <MultiSelect />
 ```
 
 ## Properties
@@ -502,6 +502,98 @@ Render custom select component
 
 ```
 function
+```
+
+**width**
+
+Width for the multiselect dropdown Defaults to `auto`.
+
+```
+string
+```
+
+**height**
+
+Height for the multiselect dropdown option panel Defaults to `medium`.
+
+```
+string
+```
+
+**onValueChange**
+
+Function that will be called when the user selects an option.
+
+```
+function
+```
+
+**layout**
+
+Column layout for custom multiselect dropdown
+
+```
+single-column
+double-column
+```
+
+**withSelectAll**
+
+Control flag to add select all option feature
+
+```
+boolean
+```
+
+**withOptionChips**
+
+Control to show the selected option chips
+
+```
+boolean
+```
+
+**withUpdateCancelButtons**
+
+Control to show the control buttons with OK and Cancel values
+
+```
+boolean
+```
+
+**withInclusionExclusion**
+
+Control for include / exclude feature
+
+```
+boolean
+```
+
+**isExcluded**
+
+Flag for identifying whether selected options 
+      are included or exluded
+
+```
+null
+true
+false
+```
+
+**onIncExcChange**
+
+Function to return the included/excluded value
+
+```
+function
+```
+
+**renderEmptySelected**
+
+Component for rendering when no options are selected
+
+```
+node
 ```
   
 ## Theme

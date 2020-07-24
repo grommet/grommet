@@ -13,15 +13,7 @@ const LoaderPreview = () => {
       </Box>
       <Box margin="small" align="center">
         <Text margin="large">Inline Button Loader</Text>
-        <Button primary>
-          <Box width="xsmall">
-            <Loader
-              type="inline"
-              primaryColor="white"
-              secondaryColor="control"
-            />
-          </Box>
-        </Button>
+        <Button primary label="Loading" isLoading />
       </Box>
     </>
   );
