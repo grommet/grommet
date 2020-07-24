@@ -29,6 +29,7 @@ const stopLabelClick = event => {
 const CheckBox = forwardRef(
   (
     {
+      a11yTitle,
       checked: checkedProp,
       disabled,
       focus: focusProp,
@@ -190,6 +191,7 @@ const CheckBox = forwardRef(
 
     return (
       <StyledCheckBoxContainer
+        aria-label={a11yTitle}
         reverse={reverse}
         {...removeUndefined({ htmlFor: id, disabled })}
         checked={checked}

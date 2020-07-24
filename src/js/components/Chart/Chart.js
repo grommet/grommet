@@ -472,8 +472,9 @@ const Chart = React.forwardRef(
     let defs;
     let gradientRect;
     if (useGradient && size[1]) {
-      const gradientId = `${id}-gradient`;
-      const maskId = `${id}-mask`;
+      const uniqueGradientId = color.map(element => element.color).join('-');
+      const gradientId = `${uniqueGradientId}-${id}-gradient`;
+      const maskId = `${uniqueGradientId}-${id}-mask`;
       defs = (
         <defs>
           <linearGradient id={gradientId} x1={0} y1={0} x2={0} y2={1}>
