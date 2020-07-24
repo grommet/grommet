@@ -13,16 +13,6 @@ export interface FormFieldProps {
   margin?: MarginType;
   name?: string;
   options?: string[];
-  overflow?:
-    | 'auto'
-    | 'hidden'
-    | 'scroll'
-    | 'visible'
-    | {
-        horizontal?: 'auto' | 'hidden' | 'scroll' | 'visible';
-        vertical?: 'auto' | 'hidden' | 'scroll' | 'visible';
-      }
-    | string;
   pad?: boolean;
   // Although Placeholder is not a prop within FormField we Omit the HTML placeholder attribute and replaced with following.
   placeholder?: PlaceHolderType;

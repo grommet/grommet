@@ -4,15 +4,6 @@ import { getAvailableAtBadge, marginProp } from '../../utils';
 
 export const OVERFLOW_VALUES = ['auto', 'hidden', 'scroll', 'visible'];
 
-const overflowPropType = PropTypes.oneOfType([
-  PropTypes.oneOf(OVERFLOW_VALUES),
-  PropTypes.shape({
-    horizontal: PropTypes.oneOf(OVERFLOW_VALUES),
-    vertical: PropTypes.oneOf(OVERFLOW_VALUES),
-  }),
-  PropTypes.string,
-]);
-
 export const doc = FormField => {
   const DocumentedFormField = describe(FormField)
     .availableAt(getAvailableAtBadge('FormField'))
@@ -69,9 +60,6 @@ export const doc = FormField => {
       the input field.`,
     ),
     margin: marginProp,
-    overflow: overflowPropType.description(
-      `How the form field content should overflow.`,
-    ),
     pad: PropTypes.bool.description(
       'Whether to add padding to align with the padding of TextInput.',
     ),

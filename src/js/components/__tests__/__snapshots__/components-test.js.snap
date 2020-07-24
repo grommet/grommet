@@ -3551,27 +3551,6 @@ string",
         "name": "margin",
       },
       Object {
-        "description": "How the form field content should overflow.",
-        "format": "auto
-hidden
-scroll
-visible
-{
-  horizontal: 
-    auto
-    hidden
-    scroll
-    visible,
-  vertical: 
-    auto
-    hidden
-    scroll
-    visible
-}
-string",
-        "name": "overflow",
-      },
-      Object {
         "description": "Whether to add padding to align with the padding of TextInput.",
         "format": "boolean",
         "name": "pad",
