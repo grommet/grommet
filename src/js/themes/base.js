@@ -1292,19 +1292,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         position: 'top-right',
         zIndex: 1,
         icon: {
-          size: 'large',
+          size: 'medium',
           default: Info,
         },
         text: {
           default: {
             weight: 600,
           },
-          ok: {
-            color: '#44b88d',
-          },
-          error: {
-            color: '#E9716C',
-          },
+          ok: {},
+          error: {},
         },
         default: {
           background: 'dark-1',

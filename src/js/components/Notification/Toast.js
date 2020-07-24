@@ -13,7 +13,8 @@ export function Toast({ type, id, msg, onClose }) {
     theme.notification.toast.icon.default;
   const IconSize = theme.notification.toast.icon.size;
   const IconColor =
-    theme.notification.toast.text[type].color ||
+    (theme.notification.toast.text[type] &&
+      theme.notification.toast.text[type].color) ||
     theme.notification.toast.text.default.color;
   const { closeIcon: CloseIcon } = theme.notification.toast;
   const handleClose = () => {
