@@ -1237,8 +1237,7 @@ function",
       Object {
         "defaultValue": false,
         "description": "Whether the button is disabled.",
-        "format": "boolean
-number",
+        "format": "boolean",
         "name": "disabled",
       },
       Object {

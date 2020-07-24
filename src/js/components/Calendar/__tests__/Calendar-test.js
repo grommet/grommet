@@ -442,14 +442,4 @@ describe('Calendar Keyboard events', () => {
     // Jan 16th is set to active
     expect(onSelect).toBeCalledWith(expect.stringMatching(/^2020-01-16T/));
   });
-
-  test('disabled', () => {
-    const component = renderer.create(
-      <Grommet>
-        <Calendar disabled={['2020-08-07']} />
-      </Grommet>,
-    );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-  });
 });
