@@ -273,7 +273,25 @@ const Button = forwardRef(
           sizeProp={size}
           type={!href ? type : undefined}
         >
-          {contents}
+          {isLoading ? (
+            <Box direction="row" align="center">
+              {contents}
+              {isLoading ? (
+                <Box margin={{ horizontal: 'small' }}>
+                  <Loader
+                    width="18px"
+                    height="18px"
+                    type="inline"
+                    primaryColor="white"
+                    secondaryColor={background}
+                    margin={{ left: 'small' }}
+                  />
+                </Box>
+              ) : null}
+            </Box>
+          ) : (
+            contents
+          )}
         </StyledButtonKind>
       );
     }
@@ -317,21 +335,25 @@ const Button = forwardRef(
         sizeProp={size}
         type={!href ? type : undefined}
       >
-        <Box direction="row" align="center">
-          {contents}
-          {isLoading ? (
-            <Box margin={{ horizontal: 'small', vertical: 'small' }}>
-              <Loader
-                width="18px"
-                height="18px"
-                type="inline"
-                primaryColor="white"
-                secondaryColor={background}
-                margin={{ left: 'small' }}
-              />
-            </Box>
-          ) : null}
-        </Box>
+        {isLoading ? (
+          <Box direction="row" align="center">
+            {contents}
+            {isLoading ? (
+              <Box margin={{ horizontal: 'small' }}>
+                <Loader
+                  width="18px"
+                  height="18px"
+                  type="inline"
+                  primaryColor="white"
+                  secondaryColor={background}
+                  margin={{ left: 'small' }}
+                />
+              </Box>
+            ) : null}
+          </Box>
+        ) : (
+          contents
+        )}
       </StyledButton>
     );
   },
