@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import isChromatic from 'storybook-chromatic/isChromatic';
+import isChromatic from 'chromatic/isChromatic';
 import { grommet, Box, Grommet, InfiniteScroll, Text } from 'grommet';
 
 export const allItems = Array(3) // (2000)

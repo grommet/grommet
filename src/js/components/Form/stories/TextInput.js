@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Form, FormField, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
-import { allSuggestions } from './data';
+
+const allSuggestions = Array(100)
+  .fill()
+  .map((_, i) => `suggestion ${i + 1}`);
 
 const FormFieldTextInput = props => {
   const [state, setState] = useState({

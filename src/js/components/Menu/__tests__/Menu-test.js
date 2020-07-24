@@ -1,6 +1,10 @@
 import React from 'react';
 import 'jest-styled-components';
 import renderer from 'react-test-renderer';
+import 'jest-axe/extend-expect';
+import 'regenerator-runtime/runtime';
+
+import { axe } from 'jest-axe';
 import { cleanup, fireEvent, render } from '@testing-library/react';
 import { getByText as getByTextDOM } from '@testing-library/dom';
 import '@testing-library/jest-dom/extend-expect';
@@ -20,6 +24,18 @@ describe('Menu', () => {
   beforeEach(createPortal);
 
   afterEach(cleanup);
+
+  test('should have no accessibility violations', async () => {
+    const { container } = render(
+      <Grommet>
+        <Menu />
+      </Grommet>,
+    );
+
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+    expect(container).toMatchSnapshot();
+  });
 
   test('basic', () => {
     const component = renderer.create(

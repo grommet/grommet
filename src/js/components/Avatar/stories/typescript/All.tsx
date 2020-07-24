@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import isChromatic from 'storybook-chromatic/isChromatic';
+import isChromatic from 'chromatic/isChromatic';
 
 import {
   Favorite,
@@ -21,7 +21,7 @@ const theme: ThemeType = {
       fontWeight: 700,
       extend: `font-family: Comic Sans MS; font-size: 30px`,
     },
-    extend: `border: 2px solid white; 
+    extend: `border: 2px solid white;
             box-shadow: 2px 2px 15px 1px white;`,
   },
 };

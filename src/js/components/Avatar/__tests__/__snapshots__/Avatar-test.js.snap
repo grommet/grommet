@@ -718,7 +718,6 @@ exports[`Avatar text renders 1`] = `
   >
     <span
       className="c2"
-      size="xlarge"
     >
       R
     </span>
@@ -728,7 +727,6 @@ exports[`Avatar text renders 1`] = `
   >
     <span
       className="c2"
-      size="xlarge"
     >
       SY
     </span>

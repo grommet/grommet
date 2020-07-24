@@ -13,6 +13,17 @@ import { FormField } from 'grommet';
 
 ## Properties
 
+**a11yTitle**
+
+Custom label to be used by screen readers.
+       Should only be provided if FormField has no children.
+       When a11yTitle is provided an aria-label will be added to the element
+       if it has no children.
+
+```
+string
+```
+
 **component**
 
 The component to insert in the FormField. Grommet will add update the
@@ -267,6 +278,16 @@ Defaults to
 
 ```
 bottom
+```
+
+**formField.content.margin**
+
+The margin of the FormField content. Expects `object`.
+
+Defaults to
+
+```
+undefined
 ```
 
 **formField.content.pad**

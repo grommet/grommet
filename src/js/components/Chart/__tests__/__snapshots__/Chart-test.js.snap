@@ -1,33 +1,232 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Chart calcs 1`] = `
+exports[`Chart calcs basic 1`] = `
 Object {
   "axis": Array [
     Array [
-      0,
+      1,
       2,
     ],
     Array [
-      3.2,
+      2,
       0.8,
     ],
   ],
   "bounds": Array [
     Array [
-      0,
+      1,
       2,
     ],
     Array [
       0.8,
-      3.2,
+      2,
     ],
   ],
   "dimensions": Array [
-    2,
-    2.4,
+    1,
+    1.2,
   ],
   "pad": "large",
   "thickness": "xlarge",
+}
+`;
+
+exports[`Chart calcs hair thickness 1`] = `
+Object {
+  "axis": Array [
+    Array [],
+    Array [
+      3,
+      1.8,
+    ],
+  ],
+  "bounds": Array [
+    Array [
+      1,
+      1,
+    ],
+    Array [
+      1.8,
+      3.0000000000000004,
+    ],
+  ],
+  "dimensions": Array [
+    0,
+    1.2,
+  ],
+  "pad": undefined,
+  "thickness": "hair",
+}
+`;
+
+exports[`Chart calcs large thickness 1`] = `
+Object {
+  "axis": Array [
+    Array [],
+    Array [
+      3,
+      1.8,
+    ],
+  ],
+  "bounds": Array [
+    Array [
+      1,
+      1,
+    ],
+    Array [
+      1.8,
+      3.0000000000000004,
+    ],
+  ],
+  "dimensions": Array [
+    0,
+    1.2,
+  ],
+  "pad": "medium",
+  "thickness": "large",
+}
+`;
+
+exports[`Chart calcs medium thickness 1`] = `
+Object {
+  "axis": Array [
+    Array [],
+    Array [
+      3,
+      1.8,
+    ],
+  ],
+  "bounds": Array [
+    Array [
+      1,
+      1,
+    ],
+    Array [
+      1.8,
+      3.0000000000000004,
+    ],
+  ],
+  "dimensions": Array [
+    0,
+    1.2,
+  ],
+  "pad": "small",
+  "thickness": "medium",
+}
+`;
+
+exports[`Chart calcs small thickness 1`] = `
+Object {
+  "axis": Array [
+    Array [],
+    Array [
+      3,
+      1.8,
+    ],
+  ],
+  "bounds": Array [
+    Array [
+      1,
+      1,
+    ],
+    Array [
+      1.8,
+      3.0000000000000004,
+    ],
+  ],
+  "dimensions": Array [
+    0,
+    1.2,
+  ],
+  "pad": "xsmall",
+  "thickness": "small",
+}
+`;
+
+exports[`Chart calcs with negative min 1`] = `
+Object {
+  "axis": Array [
+    Array [
+      1,
+      2,
+    ],
+    Array [],
+  ],
+  "bounds": Array [
+    Array [
+      1,
+      2,
+    ],
+    Array [
+      -Infinity,
+      NaN,
+    ],
+  ],
+  "dimensions": Array [
+    1,
+    NaN,
+  ],
+  "pad": "large",
+  "thickness": "xlarge",
+}
+`;
+
+exports[`Chart calcs with single value 1`] = `
+Object {
+  "axis": Array [
+    Array [
+      0,
+      1,
+    ],
+    Array [
+      1,
+      0,
+    ],
+  ],
+  "bounds": Array [
+    Array [
+      0,
+      1,
+    ],
+    Array [
+      0,
+      1,
+    ],
+  ],
+  "dimensions": Array [
+    1,
+    1,
+  ],
+  "pad": "large",
+  "thickness": "xlarge",
+}
+`;
+
+exports[`Chart calcs xsmall thickness 1`] = `
+Object {
+  "axis": Array [
+    Array [],
+    Array [
+      3,
+      1.8,
+    ],
+  ],
+  "bounds": Array [
+    Array [
+      1,
+      1,
+    ],
+    Array [
+      1.8,
+      3.0000000000000004,
+    ],
+  ],
+  "dimensions": Array [
+    0,
+    1.2,
+  ],
+  "pad": "xxsmall",
+  "thickness": "xsmall",
 }
 `;
 
@@ -276,7 +475,7 @@ exports[`Chart color 1`] = `
   >
     <defs>
       <linearGradient
-        id="undefined-gradient"
+        id="border-brand-undefined-gradient"
         x1={0}
         x2={0}
         y1={0}
@@ -292,7 +491,7 @@ exports[`Chart color 1`] = `
         />
       </linearGradient>
       <mask
-        id="undefined-mask"
+        id="border-brand-undefined-mask"
       >
         <g
           fill="none"
@@ -325,9 +524,9 @@ exports[`Chart color 1`] = `
       </mask>
     </defs>
     <rect
-      fill="url(#undefined-gradient)"
+      fill="url(#border-brand-undefined-gradient)"
       height={216}
-      mask="url(#undefined-mask)"
+      mask="url(#border-brand-undefined-mask)"
       width={408}
       x={-12}
       y={-12}
@@ -931,6 +1130,65 @@ exports[`Chart point 1`] = `
         </title>
         <path
           d="M -12 180 L 12 180 L 0 204 Z"
+        />
+      </g>
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Chart should not have accessibility violations 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+}
+
+<div
+  class="c0"
+>
+  <svg
+    class="c1"
+    height="192"
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width="384"
+  >
+    <g
+      fill="none"
+      stroke="#6FFFB0"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="24"
+    >
+      <g
+        fill="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 384,192 L 384,0"
+        />
+      </g>
+      <g
+        fill="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0,192 L 0,192"
         />
       </g>
     </g>
