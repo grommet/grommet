@@ -178,6 +178,7 @@ Whether the button is disabled.
 
 ```
 boolean
+number
 ```
 
 **fill**

@@ -41,6 +41,16 @@ describe('Calendar', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  test('disabled', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Calendar disabled={['2020-08-07']} />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('dates', () => {
     const component = renderer.create(
       <Grommet>
