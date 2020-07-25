@@ -2006,3 +2006,107 @@ exports[`Chart undefined values 1`] = `
   </svg>
 </div>
 `;
+
+exports[`Chart value style 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+}
+
+<div
+  className="c0"
+>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      fill="#6FFFB0"
+      stroke="none"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+    >
+      <g
+        fill="#00C781"
+        stroke="none"
+      >
+        <title>
+          sixty
+        </title>
+        <circle
+          cx={384}
+          cy={0}
+          r={6}
+        />
+      </g>
+      <g
+        fill="#FFAA15"
+        stroke="none"
+      >
+        <title>
+          zero
+        </title>
+        <circle
+          cx={0}
+          cy={192}
+          r={24}
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      fill="none"
+      stroke="#6FFFB0"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+      strokeWidth={24}
+    >
+      <g
+        fill="none"
+        stroke="#00C781"
+        strokeWidth={12}
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 384,192 L 384,0"
+        />
+      </g>
+      <g
+        fill="none"
+        stroke="#FFAA15"
+        strokeWidth={48}
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0,192 L 0,192"
+        />
+      </g>
+    </g>
+  </svg>
+</div>
+`;

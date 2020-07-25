@@ -416,9 +416,19 @@ Required. Array of value objects describing the data.
   number
   [number]
   {
+    color: string,
     label: string,
     onClick: function,
     onHover: function,
+    thickness: 
+      hair
+      xsmall
+      small
+      medium
+      large
+      xlarge
+      none
+      string,
     value: 
       number
       [number]

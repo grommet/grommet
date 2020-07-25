@@ -222,8 +222,10 @@ const Chart = React.forwardRef(
         .filter(({ value }) => value[1] !== undefined)
         .map((valueArg, index) => {
           const {
+            color: valueColor,
             label,
             onHover: valueOnHover,
+            thickness: valueThickness,
             value,
             ...valueRest
           } = valueArg;
@@ -255,7 +257,20 @@ const Chart = React.forwardRef(
           }
 
           return (
-            <g key={key} fill="none">
+            <g
+              key={key}
+              fill="none"
+              stroke={
+                valueColor ? normalizeColor(valueColor, theme) : undefined
+              }
+              strokeWidth={
+                valueThickness
+                  ? parseMetricToNum(
+                      theme.global.edgeSize[valueThickness] || valueThickness,
+                    )
+                  : undefined
+              }
+            >
               <title>{label}</title>
               <path
                 d={d}
@@ -365,8 +380,10 @@ const Chart = React.forwardRef(
         .filter(({ value }) => value[1] !== undefined)
         .map((valueArg, index) => {
           const {
+            color: valueColor,
             label,
             onHover: valueOnHover,
+            thickness: valueThickness,
             value,
             ...valueRest
           } = valueArg;
@@ -385,10 +402,16 @@ const Chart = React.forwardRef(
             clickProps = { onClick };
           }
 
+          const width = valueThickness
+            ? parseMetricToNum(
+                theme.global.edgeSize[valueThickness] || valueThickness,
+              )
+            : strokeWidth;
+
           const renderPoint = (valueX, valueY) => {
             const props = { ...hoverProps, ...clickProps, ...valueRest };
             const [cx, cy] = valueToCoordinate(valueX, valueY);
-            const off = strokeWidth / 2;
+            const off = width / 2;
             if (point === 'circle' || (!point && round))
               return <circle cx={cx} cy={cy} r={off} {...props} />;
             let d;
@@ -415,7 +438,11 @@ const Chart = React.forwardRef(
           };
 
           return (
-            <g key={key} stroke="none">
+            <g
+              key={key}
+              stroke="none"
+              fill={valueColor ? normalizeColor(valueColor, theme) : undefined}
+            >
               <title>{label}</title>
               {renderPoint(value[0], value[1])}
               {value[2] !== undefined && renderPoint(value[0], value[2])}

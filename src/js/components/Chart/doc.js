@@ -2,6 +2,19 @@ import { describe, PropTypes } from 'react-desc';
 
 import { genericProps, getAvailableAtBadge, padPropType } from '../../utils';
 
+const thicknessType = PropTypes.oneOfType([
+  PropTypes.oneOf([
+    'hair',
+    'xsmall',
+    'small',
+    'medium',
+    'large',
+    'xlarge',
+    'none',
+  ]),
+  PropTypes.string,
+]);
+
 export const doc = Chart => {
   const DocumentedChart = describe(Chart)
     .availableAt(getAvailableAtBadge('Chart'))
@@ -146,18 +159,7 @@ export const doc = Chart => {
       used elsewhere.`,
       )
       .defaultValue({ width: 'medium', height: 'small' }),
-    thickness: PropTypes.oneOfType([
-      PropTypes.oneOf([
-        'hair',
-        'xsmall',
-        'small',
-        'medium',
-        'large',
-        'xlarge',
-        'none',
-      ]),
-      PropTypes.string,
-    ])
+    thickness: thicknessType
       .description('The width of the stroke.')
       .defaultValue('medium'),
     type: PropTypes.oneOf(['bar', 'line', 'area', 'point'])
@@ -168,9 +170,11 @@ export const doc = Chart => {
         PropTypes.number,
         PropTypes.arrayOf(PropTypes.number),
         PropTypes.shape({
-          label: PropTypes.string, // for accessibility of bars
+          color: PropTypes.string,
+          label: PropTypes.string, // for accessibility of bars and points
           onClick: PropTypes.func,
           onHover: PropTypes.func,
+          thickness: thicknessType,
           value: PropTypes.oneOfType([
             PropTypes.number.isRequired,
             PropTypes.arrayOf(PropTypes.number).isRequired,
