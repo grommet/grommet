@@ -225,7 +225,7 @@ The background color of the Box surrounding the RadioButton
 Defaults to
 
 ```
-{dark: undefined, light: undefined}
+undefined
 ```
 
 **radioButton.hover.border.color**
