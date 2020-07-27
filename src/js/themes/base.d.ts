@@ -81,11 +81,16 @@ type Colors = typeof colors & {
 
 interface ButtonKindType {
   background?: BackgroundType;
-  border?: {
-    color?: ColorType;
-    width?: string;
-  } | boolean;
+  border?:
+    | {
+        color?: ColorType;
+        width?: string;
+      }
+    | boolean;
   color?: ColorType;
+  font?: {
+    weight?: number | string;
+  };
   padding?: {
     vertical?: string;
     horizontal?: string;
@@ -134,12 +139,14 @@ export interface ThemeType {
         edgeSize?: BreakpointEdgeSize;
         size?: BreakpointSize;
       };
-      [x: string]: {
-        value?: number;
-        borderSize?: BreakpointBorderSize;
-        edgeSize?: BreakpointEdgeSize;
-        size?: BreakpointSize;
-      } | undefined;
+      [x: string]:
+        | {
+            value?: number;
+            borderSize?: BreakpointBorderSize;
+            edgeSize?: BreakpointEdgeSize;
+            size?: BreakpointSize;
+          }
+        | undefined;
     };
     deviceBreakpoints?: {
       phone?: string;
@@ -224,7 +231,16 @@ export interface ThemeType {
       color?: ColorType;
     };
     input?: {
-      padding?: string | { top?: string, bottom?: string, left?: string, right?: string, horizontal?: string, vertical?: string};
+      padding?:
+        | string
+        | {
+            top?: string;
+            bottom?: string;
+            left?: string;
+            right?: string;
+            horizontal?: string;
+            vertical?: string;
+          };
       font?: {
         height?: string;
         size?: string;
@@ -293,13 +309,13 @@ export interface ThemeType {
       large?: string;
       xlarge?: string;
       [x: string]: string | undefined;
-    },
+    };
     text?: {
       fontWeight?: number;
       extend?: ExtendType;
-    }
+    };
     extend?: ExtendType;
-  },
+  };
   box?: {
     extend?: ExtendType;
     responsiveBreakpoint?: string;
@@ -400,11 +416,11 @@ export interface ThemeType {
     };
   };
   card?: {
-    container?:BoxProps;
-    header?:BoxProps;
-    body?:BoxProps;
-    footer?:BoxProps;
-  },
+    container?: BoxProps;
+    header?: BoxProps;
+    body?: BoxProps;
+    footer?: BoxProps;
+  };
   carousel?: {
     animation?: {
       duration?: number;
@@ -526,9 +542,9 @@ export interface ThemeType {
     baseline?: number;
   };
   dataTable?: {
-    body?:{
+    body?: {
       extend?: ExtendType;
-    }
+    };
     header?: {};
     groupHeader?: {
       border?: {
@@ -581,16 +597,16 @@ export interface ThemeType {
       background?: BackgroundType;
       border?: {
         color?: ColorType;
-      },
+      };
       label?: {
         color?: ColorType;
-      },
+      };
     };
     focus?: {
       background?: BackgroundType;
       border?: {
-        color?: ColorType
-      },
+        color?: ColorType;
+      };
     };
     error?: {
       background?: BackgroundType;
@@ -855,7 +871,7 @@ export interface ThemeType {
       radius?: string;
       background?: {
         color?: ColorType;
-      }
+      };
     };
     color?: ColorType;
     hover?: {
@@ -874,7 +890,7 @@ export interface ThemeType {
     size?: string;
     font?: {
       weight?: number | string;
-    }
+    };
   };
   rangeInput?: {
     track?: {
@@ -885,11 +901,11 @@ export interface ThemeType {
       lower?: {
         color?: ColorType;
         opacity?: OpacityType;
-      }
+      };
       upper?: {
         color?: ColorType;
         opacity?: OpacityType;
-      }
+      };
     };
     thumb?: {
       color?: ColorType;
