@@ -272,9 +272,8 @@ const Chart = React.forwardRef(
                   : undefined
               }
               opacity={
+                (valueOpacity && theme.global.opacity[valueOpacity]) ||
                 valueOpacity
-                  ? theme.global.opacity[valueOpacity] || valueOpacity
-                  : undefined
               }
             >
               <title>{label}</title>
@@ -450,9 +449,8 @@ const Chart = React.forwardRef(
               stroke="none"
               fill={valueColor ? normalizeColor(valueColor, theme) : undefined}
               opacity={
+                (valueOpacity && theme.global.opacity[valueOpacity]) ||
                 valueOpacity
-                  ? theme.global.opacity[valueOpacity] || valueOpacity
-                  : undefined
               }
             >
               <title>{label}</title>
