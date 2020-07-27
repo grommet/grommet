@@ -890,7 +890,7 @@ export interface ThemeType {
     };
   };
   radioButtonGroup?: {
-    gap?: string;
+    gap?: GapType;
   };
   rangeInput?: {
     track?: {

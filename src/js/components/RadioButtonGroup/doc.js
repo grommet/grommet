@@ -64,9 +64,7 @@ export const doc = RadioButtonGroup => {
 
 export const themeDoc = {
   'radioButtonGroup.gap': {
-    description: `The amount of spacing between child elements. This
-    should not be used in conjunction with 'wrap' as the gap elements
-    will not wrap gracefully.`,
+    description: `The amount of spacing between child elements.`,
     type: 'string',
     defaultValue: `{
       none,

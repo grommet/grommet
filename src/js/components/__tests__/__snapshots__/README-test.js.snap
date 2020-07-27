@@ -11824,9 +11824,7 @@ div
   
 **radioButtonGroup.gap**
 
-The amount of spacing between child elements. This
-    should not be used in conjunction with 'wrap' as the gap elements
-    will not wrap gracefully. Expects \`string\`.
+The amount of spacing between child elements. Expects \`string\`.
 
 Defaults to
 
