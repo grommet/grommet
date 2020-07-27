@@ -7,9 +7,11 @@ import React, {
   useState,
 } from 'react';
 
-import { Box } from '../Box';
+import { ThemeContext } from 'styled-components';
 import { FormContext } from '../Form/FormContext';
+import { defaultProps } from '../../default-props';
 import { Keyboard } from '../Keyboard';
+import { Box } from '../Box';
 import { RadioButton } from '../RadioButton';
 
 const RadioButtonGroup = forwardRef(
@@ -17,7 +19,6 @@ const RadioButtonGroup = forwardRef(
     {
       children,
       disabled,
-      gap = 'small',
       name,
       onChange,
       options: optionsProp,
@@ -27,6 +28,10 @@ const RadioButtonGroup = forwardRef(
     ref,
   ) => {
     const formContext = useContext(FormContext);
+    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const gap = theme.global.radioButtonGroup
+      ? theme.global.radioButtonGroup.gap
+      : 'small';
 
     // normalize options to always use an object
     const options = useMemo(

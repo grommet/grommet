@@ -909,6 +909,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // weight: undefined,
       },
     },
+    radioButtonGroup: {
+      gap: 'small',
+    },
     rangeInput: {
       // extend: undefined
       track: {

@@ -6,6 +6,11 @@ import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
 
 const customTheme = deepMerge(grommet, {
+  global: {
+    radioButtonGroup: {
+      gap: 'medium',
+    },
+  },
   radioButton: {
     border: {
       color: 'red',

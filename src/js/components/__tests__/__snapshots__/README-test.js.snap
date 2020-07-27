@@ -11819,7 +11819,30 @@ object
 
 \`\`\`
 div
-\`\`\`",
+\`\`\`
+## Theme
+  
+**radioButtonGroup.gap**
+
+The amount of spacing between child elements. This
+    should not be used in conjunction with 'wrap' as the gap elements
+    will not wrap gracefully. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+{
+      none,
+      xxsmall,
+      xsmall,
+      small,
+      medium,
+      large,
+      xlarge,
+      any css size,
+    }
+\`\`\`
+",
   "RangeInput": "## RangeInput
 A slider control to input a value within a fixed range.
 
