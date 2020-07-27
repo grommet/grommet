@@ -1253,7 +1253,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       xxlarge: { ...fontSizing(4) },
     },
     textArea: {
-      // extend: undefined,
+      extend: {
+        minHeight: '300px',
+      },
       // disabled: { opacity: undefined },
     },
     textInput: {

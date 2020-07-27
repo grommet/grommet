@@ -46,6 +46,7 @@ const ColumnSelect = ({
   renderEmptySelected,
   onValueChange,
   custom,
+  validate,
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
 
@@ -62,9 +63,7 @@ const ColumnSelect = ({
       setIncExcVal(type);
       if (index !== -1) selectOption(index)(event);
       else
-        setValues(
-          allSelected ? [] : options.map((item, i) => optionValue(i)),
-        );
+        setValues(allSelected ? [] : options.map((item, i) => optionValue(i)));
     },
     [allSelected, optionValue, options, selectOption, setIncExcVal, setValues],
   );
@@ -118,6 +117,7 @@ const ColumnSelect = ({
         isExcluded={isExcluded}
         setIncExcVal={setIncExcVal}
         inclusionExclusion={inclusionExclusion}
+        validate={validate}
       />
     );
   }
