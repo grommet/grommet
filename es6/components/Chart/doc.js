@@ -1,18 +1,19 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import { describe, PropTypes } from 'react-desc';
-import { genericProps, getAvailableAtBadge, padPropType } from '../../utils';
+import { colorPropType, genericProps, getAvailableAtBadge, padPropType } from '../../utils';
+var thicknessType = PropTypes.oneOfType([PropTypes.oneOf(['hair', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'none']), PropTypes.string, PropTypes.number]);
 export var doc = function doc(Chart) {
   var DocumentedChart = describe(Chart).availableAt(getAvailableAtBadge('Chart')).description('A graphical chart.').usage("import { Chart } from 'grommet';\n<Chart />"); // We don't include svg due to a collision on the values property
   // .intrinsicElement('svg');
 
   DocumentedChart.propTypes = _extends({}, genericProps, {
     bounds: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).description("The limits for the values, specified as a two dimensional array. \n      The first array specifies the limits of the x-axis. The second array \n      specifies the limits of the y-axis. \n      For example: [[x-min, x-max], [y-min, y-max]].\n      If not specified, the bounds will automatically be set to fit\n      the provided values."),
-    color: PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
-      color: PropTypes.string,
+    color: PropTypes.oneOfType([colorPropType, PropTypes.shape({
+      color: colorPropType,
       opacity: PropTypes.oneOfType([PropTypes.oneOf(['weak', 'medium', 'strong']), PropTypes.bool])
     }), PropTypes.arrayOf(PropTypes.shape({
-      color: PropTypes.string,
+      color: colorPropType,
       value: PropTypes.number
     }))]).description("A color identifier to use for the graphic color. If an\n      array is specified, it is used to create a gradient mask. Array objects\n      indicate what color to show at what value. In the simplest case, the\n      values should map to the Y bounds values, resulting in a vertical\n      gradient. Specifying more objects allows more fine grained control over\n      where the gradient colors change.").defaultValue('accent-1'),
     id: PropTypes.string.description("A unique identifier for the Chart. This\n      is required if more than one Chart is shown and they use color\n      gradients."),
@@ -31,15 +32,18 @@ export var doc = function doc(Chart) {
       width: 'medium',
       height: 'small'
     }),
-    thickness: PropTypes.oneOfType([PropTypes.oneOf(['hair', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'none']), PropTypes.string]).description('The width of the stroke.').defaultValue('medium'),
+    thickness: thicknessType.description('The width of the stroke.').defaultValue('medium'),
     type: PropTypes.oneOf(['bar', 'line', 'area', 'point']).description('The visual type of chart.').defaultValue('bar'),
     values: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.arrayOf(PropTypes.number), PropTypes.shape({
+      color: colorPropType,
       label: PropTypes.string,
-      // for accessibility of bars
+      // for accessibility of bars and points
       onClick: PropTypes.func,
       onHover: PropTypes.func,
+      opacity: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      thickness: thicknessType,
       value: PropTypes.oneOfType([PropTypes.number.isRequired, PropTypes.arrayOf(PropTypes.number).isRequired]).isRequired
-    })])).description("Array of value objects describing the data.\n      'value' is a tuple indicating the coordinate of the value or a triple\n      indicating the x coordinate and a range of two y coordinates.\n      'label' is a text string describing it.\n      'onHover' and 'onClick' only work when type='bar'.").isRequired
+    })])).description("Array of value objects describing the data.\n      'value' is a tuple indicating the coordinate of the value or a triple\n      indicating the x coordinate and a range of two y coordinates.\n      'label' is a text string describing it.\n      'onHover' and 'onClick' only work when type='bar'.\n      'color', 'opacity', and 'thickness' allow bar and point charts to have\n      color variation per-value.").isRequired
   });
   return DocumentedChart;
 };

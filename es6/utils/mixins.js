@@ -1,10 +1,12 @@
 import { css } from 'styled-components';
-export var parseMetricToNum = function parseMetricToNum(fontAsString) {
-  if (fontAsString.match(/\s/) && process.env.NODE_ENV !== 'production') {
-    console.warn("Invalid single measurement value: \"" + fontAsString + "\"");
+export var parseMetricToNum = function parseMetricToNum(metric) {
+  if (typeof metric === 'number') return metric;
+
+  if (metric.match(/\s/) && process.env.NODE_ENV !== 'production') {
+    console.warn("Invalid single measurement value: \"" + metric + "\"");
   }
 
-  return parseFloat(fontAsString.match(/\d+(\.\d+)?/), 10);
+  return parseFloat(metric.match(/\d+(\.\d+)?/), 10);
 };
 export var fontSize = function fontSize(size, lineHeight) {
   return css(["font-size:", ";line-height:", ";"], function (props) {

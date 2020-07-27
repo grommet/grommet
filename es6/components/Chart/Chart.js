@@ -172,10 +172,13 @@ var Chart = React.forwardRef(function (_ref, ref) {
       var value = _ref2.value;
       return value[1] !== undefined;
     }).map(function (valueArg, index) {
-      var label = valueArg.label,
+      var valueColor = valueArg.color,
+          label = valueArg.label,
           valueOnHover = valueArg.onHover,
+          valueOpacity = valueArg.opacity,
+          valueThickness = valueArg.thickness,
           value = valueArg.value,
-          valueRest = _objectWithoutPropertiesLoose(valueArg, ["label", "onHover", "value"]);
+          valueRest = _objectWithoutPropertiesLoose(valueArg, ["color", "label", "onHover", "opacity", "thickness", "value"]);
 
       var key = "p-" + index; // Math.min/max are to handle negative values
 
@@ -205,7 +208,10 @@ var Chart = React.forwardRef(function (_ref, ref) {
 
       return /*#__PURE__*/React.createElement("g", {
         key: key,
-        fill: "none"
+        fill: "none",
+        stroke: valueColor ? normalizeColor(valueColor, theme) : undefined,
+        strokeWidth: valueThickness ? parseMetricToNum(theme.global.edgeSize[valueThickness] || valueThickness) : undefined,
+        opacity: valueOpacity && theme.global.opacity[valueOpacity] || valueOpacity
       }, /*#__PURE__*/React.createElement("title", null, label), /*#__PURE__*/React.createElement("path", _extends({
         d: d
       }, hoverProps, clickProps, valueRest, {
@@ -315,10 +321,13 @@ var Chart = React.forwardRef(function (_ref, ref) {
       var value = _ref9.value;
       return value[1] !== undefined;
     }).map(function (valueArg, index) {
-      var label = valueArg.label,
+      var valueColor = valueArg.color,
+          label = valueArg.label,
           valueOnHover = valueArg.onHover,
+          valueOpacity = valueArg.opacity,
+          valueThickness = valueArg.thickness,
           value = valueArg.value,
-          valueRest = _objectWithoutPropertiesLoose(valueArg, ["label", "onHover", "value"]);
+          valueRest = _objectWithoutPropertiesLoose(valueArg, ["color", "label", "onHover", "opacity", "thickness", "value"]);
 
       var key = "p-" + index;
       var hoverProps;
@@ -342,6 +351,8 @@ var Chart = React.forwardRef(function (_ref, ref) {
         };
       }
 
+      var width = valueThickness ? parseMetricToNum(theme.global.edgeSize[valueThickness] || valueThickness) : strokeWidth;
+
       var renderPoint = function renderPoint(valueX, valueY) {
         var props = _extends({}, hoverProps, clickProps, valueRest);
 
@@ -349,7 +360,7 @@ var Chart = React.forwardRef(function (_ref, ref) {
             cx = _valueToCoordinate[0],
             cy = _valueToCoordinate[1];
 
-        var off = strokeWidth / 2;
+        var off = width / 2;
         if (point === 'circle' || !point && round) return /*#__PURE__*/React.createElement("circle", _extends({
           cx: cx,
           cy: cy,
@@ -369,7 +380,9 @@ var Chart = React.forwardRef(function (_ref, ref) {
 
       return /*#__PURE__*/React.createElement("g", {
         key: key,
-        stroke: "none"
+        stroke: "none",
+        fill: valueColor ? normalizeColor(valueColor, theme) : undefined,
+        opacity: valueOpacity && theme.global.opacity[valueOpacity] || valueOpacity
       }, /*#__PURE__*/React.createElement("title", null, label), renderPoint(value[0], value[1]), value[2] !== undefined && renderPoint(value[0], value[2]));
     });
   };
@@ -393,7 +406,7 @@ var Chart = React.forwardRef(function (_ref, ref) {
     if (color && color.color) colorName = color.color;else if (color) colorName = color;else if (theme.chart && theme.chart.color) colorName = theme.chart.color;
   }
 
-  var opacity = color && color.opacity ? theme.global.opacity[color.opacity] : undefined;
+  var opacity = color && color.opacity ? theme.global.opacity[color.opacity] || color.opacity : undefined;
   var stroke;
 
   if (type !== 'point') {
