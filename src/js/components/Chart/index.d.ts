@@ -16,7 +16,8 @@ type ThicknessType =
   | 'large'
   | 'xlarge'
   | 'none'
-  | string;
+  | string
+  | number;
 
 export interface ChartProps {
   a11yTitle?: A11yTitleType;
@@ -26,7 +27,10 @@ export interface ChartProps {
   bounds?: number[][];
   color?:
     | string
-    | { color?: string; opacity?: 'weak' | 'medium' | 'strong' | boolean }
+    | {
+        color?: string;
+        opacity?: 'weak' | 'medium' | 'strong' | boolean | number;
+      }
     | { color: string; value: number | number[] }[];
   dash?: boolean;
   gap?: GapType;
@@ -84,6 +88,7 @@ export interface ChartProps {
         label?: string;
         onClick?: (...args: any[]) => any;
         onHover?: (...args: any[]) => any;
+        opacity?: 'weak' | 'medium' | 'strong' | boolean | number;
         thickness?: ThicknessType;
         value: number | number[];
       }

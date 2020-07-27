@@ -1983,7 +1983,8 @@ medium
 large
 xlarge
 none
-string",
+string
+number",
         "name": "thickness",
       },
       Object {
@@ -2009,6 +2010,9 @@ point",
     label: string,
     onClick: function,
     onHover: function,
+    opacity: 
+      string
+      number,
     thickness: 
       hair
       xsmall
@@ -2017,7 +2021,8 @@ point",
       large
       xlarge
       none
-      string,
+      string
+      number,
     value: 
       number
       [number]

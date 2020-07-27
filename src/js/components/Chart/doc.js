@@ -13,6 +13,7 @@ const thicknessType = PropTypes.oneOfType([
     'none',
   ]),
   PropTypes.string,
+  PropTypes.number,
 ]);
 
 export const doc = Chart => {
@@ -174,6 +175,7 @@ export const doc = Chart => {
           label: PropTypes.string, // for accessibility of bars and points
           onClick: PropTypes.func,
           onHover: PropTypes.func,
+          opacity: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
           thickness: thicknessType,
           value: PropTypes.oneOfType([
             PropTypes.number.isRequired,

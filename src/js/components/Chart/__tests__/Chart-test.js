@@ -22,8 +22,20 @@ const UNDEFINED_VALUES = [
 ];
 
 const STYLED_VALUES = [
-  { value: [1, 60], label: 'sixty', color: 'status-ok', thickness: 'small' },
-  { value: [0, 0], label: 'zero', color: 'status-warning', thickness: 'large' },
+  {
+    value: [1, 60],
+    label: 'sixty',
+    color: 'status-ok',
+    opacity: 'strong',
+    thickness: 'small',
+  },
+  {
+    value: [0, 0],
+    label: 'zero',
+    color: '#123456',
+    opacity: 0.27,
+    thickness: 27,
+  },
 ];
 
 describe('Chart', () => {

@@ -2042,6 +2042,7 @@ exports[`Chart value style 1`] = `
     >
       <g
         fill="#00C781"
+        opacity={0.8}
         stroke="none"
       >
         <title>
@@ -2054,7 +2055,8 @@ exports[`Chart value style 1`] = `
         />
       </g>
       <g
-        fill="#FFAA15"
+        fill="#123456"
+        opacity={0.27}
         stroke="none"
       >
         <title>
@@ -2063,7 +2065,7 @@ exports[`Chart value style 1`] = `
         <circle
           cx={0}
           cy={192}
-          r={24}
+          r={13.5}
         />
       </g>
     </g>
@@ -2084,6 +2086,7 @@ exports[`Chart value style 1`] = `
     >
       <g
         fill="none"
+        opacity={0.8}
         stroke="#00C781"
         strokeWidth={12}
       >
@@ -2096,8 +2099,9 @@ exports[`Chart value style 1`] = `
       </g>
       <g
         fill="none"
-        stroke="#FFAA15"
-        strokeWidth={48}
+        opacity={0.27}
+        stroke="#123456"
+        strokeWidth={27}
       >
         <title>
           zero

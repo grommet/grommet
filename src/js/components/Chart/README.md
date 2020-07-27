@@ -390,6 +390,7 @@ large
 xlarge
 none
 string
+number
 ```
 
 **type**
@@ -420,6 +421,9 @@ Required. Array of value objects describing the data.
     label: string,
     onClick: function,
     onHover: function,
+    opacity: 
+      string
+      number,
     thickness: 
       hair
       xsmall
@@ -428,7 +432,8 @@ Required. Array of value objects describing the data.
       large
       xlarge
       none
-      string,
+      string
+      number,
     value: 
       number
       [number]

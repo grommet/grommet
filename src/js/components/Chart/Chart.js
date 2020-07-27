@@ -225,6 +225,7 @@ const Chart = React.forwardRef(
             color: valueColor,
             label,
             onHover: valueOnHover,
+            opacity: valueOpacity,
             thickness: valueThickness,
             value,
             ...valueRest
@@ -268,6 +269,11 @@ const Chart = React.forwardRef(
                   ? parseMetricToNum(
                       theme.global.edgeSize[valueThickness] || valueThickness,
                     )
+                  : undefined
+              }
+              opacity={
+                valueOpacity
+                  ? theme.global.opacity[valueOpacity] || valueOpacity
                   : undefined
               }
             >
@@ -383,6 +389,7 @@ const Chart = React.forwardRef(
             color: valueColor,
             label,
             onHover: valueOnHover,
+            opacity: valueOpacity,
             thickness: valueThickness,
             value,
             ...valueRest
@@ -442,6 +449,11 @@ const Chart = React.forwardRef(
               key={key}
               stroke="none"
               fill={valueColor ? normalizeColor(valueColor, theme) : undefined}
+              opacity={
+                valueOpacity
+                  ? theme.global.opacity[valueOpacity] || valueOpacity
+                  : undefined
+              }
             >
               <title>{label}</title>
               {renderPoint(value[0], value[1])}
@@ -469,7 +481,9 @@ const Chart = React.forwardRef(
       else if (theme.chart && theme.chart.color) colorName = theme.chart.color;
     }
     const opacity =
-      color && color.opacity ? theme.global.opacity[color.opacity] : undefined;
+      color && color.opacity
+        ? theme.global.opacity[color.opacity] || color.opacity
+        : undefined;
 
     let stroke;
     if (type !== 'point') {
