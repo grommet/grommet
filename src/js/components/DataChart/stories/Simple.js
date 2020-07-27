@@ -5,7 +5,7 @@ import { Box, DataChart, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const data = [];
-for (let i = 0; i < 7; i += 1) {
+for (let i = 1; i < 8; i += 1) {
   const v = Math.sin(i / 2.0);
   data.push({
     date: `2020-07-${((i % 30) + 1).toString().padStart(2, 0)}`,
@@ -16,7 +16,7 @@ for (let i = 0; i < 7; i += 1) {
 const Example = () => (
   <Grommet theme={grommet}>
     <Box align="center" justify="start" pad="large">
-      <DataChart data={data} property="percent" />
+      <DataChart data={data} series="percent" />
     </Box>
   </Grommet>
 );

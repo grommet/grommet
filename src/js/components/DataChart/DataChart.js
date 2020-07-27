@@ -21,15 +21,15 @@ const DataChart = forwardRef(
   (
     {
       a11yTitle,
-      axis: axisProp,
+      axis: axisProp = true,
       chart,
       data = [],
       detail,
-      gap,
+      gap = 'small',
       guide: guideProp,
       legend,
       pad: padProp,
-      property,
+      series: seriesProp,
       size,
       ...rest
     },
@@ -47,50 +47,48 @@ const DataChart = forwardRef(
     const xRef = useRef();
     const spacerRef = useRef();
 
-    // normalize property to an object
-    const properties = useMemo(() => {
-      const result = {};
-      if (Array.isArray(property))
-        property.forEach(p => {
-          if (typeof p === 'string') result[p] = { property: p };
-          else result[p.property] = p;
-        });
-      else if (typeof property === 'string') result[property] = { property };
-      else result[property.property] = property;
-      return result;
-    }, [property]);
+    // normalize seriesProp to an array of objects
+    const series = useMemo(() => {
+      if (Array.isArray(seriesProp))
+        return seriesProp.map(s =>
+          typeof s === 'string' ? { property: s } : s,
+        );
+      if (typeof seriesProp === 'string') return [{ property: seriesProp }];
+      return [seriesProp];
+    }, [seriesProp]);
+
+    const getPropertySeries = prop =>
+      series.find(({ property }) => prop === property);
 
     // normalize chart to an array of objects
     const charts = useMemo(() => {
       if (!chart) {
-        const props = Object.values(properties);
-        if (props.length === 1)
-          return props.map(p => ({ property: p.property }));
+        if (series.length === 1)
+          return series.map(s => ({ property: s.property }));
         // if we have more than one property, we'll use the first for
         // the x-axis and we'll plot the rest
-        return props.slice(1).map(p => ({ property: p.property }));
+        return series.slice(1).map(s => ({ property: s.property }));
       }
       if (Array.isArray(chart))
         return chart.map(c => (typeof c === 'string' ? { property: c } : c));
       return typeof chart === 'string' ? [{ property: chart }] : [chart];
-    }, [chart, properties]);
+    }, [chart, series]);
 
-    // normalize property color and point style
-    const propertyStyles = useMemo(() => {
+    // normalize series color and point style
+    const seriesStyles = useMemo(() => {
       const result = {};
       let colorIndex = 0;
       let pointIndex = 0;
-      Object.values(properties)
+      series
         // only if we're charting it
-        .filter(p =>
+        .filter(s =>
           charts.find(c =>
             Array.isArray(c.property)
-              ? c.property.includes(p.property)
-              : c.property === p.property,
+              ? c.property.includes(s.property)
+              : c.property === s.property,
           ),
         )
-        .forEach(prop => {
-          const { color, point } = prop;
+        .forEach(({ color, property, point }) => {
           const propertyStyle = { color, point };
           if (!color) {
             propertyStyle.color = `graph-${colorIndex}`;
@@ -100,28 +98,25 @@ const DataChart = forwardRef(
             propertyStyle.point = pointTypes[pointIndex];
             pointIndex += 1;
           }
-          if (
-            activeProperty !== undefined &&
-            activeProperty !== prop.property
-          ) {
+          if (activeProperty !== undefined && activeProperty !== property) {
             propertyStyle.color = {
               color: propertyStyle.color,
               opacity: 'medium',
             };
           }
-          result[prop.property] = propertyStyle;
+          result[property] = propertyStyle;
         });
       return result;
-    }, [activeProperty, charts, properties]);
+    }, [activeProperty, charts, series]);
 
     // map the property values into their own arrays
-    const propertyValues = useMemo(() => {
+    const seriesValues = useMemo(() => {
       const result = {};
-      Object.values(properties).forEach(({ property: prop }) => {
-        result[prop] = data.map(d => d[prop]);
+      series.forEach(({ property }) => {
+        result[property] = data.map(d => d[property]);
       });
       return result;
-    }, [properties, data]);
+    }, [data, series]);
 
     // setup the values property for each chart
     const chartValues = useMemo(
@@ -131,16 +126,16 @@ const DataChart = forwardRef(
             // stacked bar chart
             const totals = [];
             return prop.map(cp => {
-              return propertyValues[cp].map((v, i) => {
+              return seriesValues[cp].map((v, i) => {
                 const base = totals[i] || 0;
                 totals[i] = base + v;
                 return [i, base, base + v];
               });
             });
           }
-          return propertyValues[prop];
+          return seriesValues[prop];
         }),
-      [charts, propertyValues],
+      [charts, seriesValues],
     );
 
     // map granularities to counts
@@ -162,16 +157,15 @@ const DataChart = forwardRef(
       if (!axisProp) return undefined;
       let result;
       if (axisProp === true) {
-        const props = Object.values(properties);
         result = {
           x: { granularity: 'coarse' },
           y: { granularity: 'coarse' },
         };
-        if (props.length === 1) {
-          result.y.property = props[0].property;
+        if (series.length === 1) {
+          result.y.property = series[0].property;
         } else {
-          result.x.property = props[0].property;
-          result.y.property = props[1].property;
+          result.x.property = series[0].property;
+          result.y.property = series[1].property;
         }
       } else {
         result = {};
@@ -198,7 +192,7 @@ const DataChart = forwardRef(
       }
 
       return result;
-    }, [axisProp, granularities, properties]);
+    }, [axisProp, granularities, series]);
 
     // calculate axis, bounds, and thickness for each chart
     const chartProps = useMemo(() => {
@@ -272,21 +266,21 @@ const DataChart = forwardRef(
     const dateFormats = useMemo(() => {
       const result = {};
       const full = axis && axis.x && axis.x.granularity === 'coarse';
-      Object.values(properties).forEach(prop => {
+      series.forEach(({ property, render }) => {
         if (
-          !prop.render &&
+          !render &&
           data.length > 1 &&
-          typeof data[0][prop.property] === 'string'
+          typeof data[0][property] === 'string'
         ) {
-          result[prop.property] = createDateFormat(
-            data[0][prop.property],
-            data[data.length - 1][prop.property],
+          result[property] = createDateFormat(
+            data[0][property],
+            data[data.length - 1][property],
             full,
           );
         }
       });
       return result;
-    }, [axis, data, properties]);
+    }, [axis, data, series]);
 
     // for ie11, align the spacer Box height to the x-axis height
     useLayoutEffect(() => {
@@ -320,8 +314,8 @@ const DataChart = forwardRef(
           axis={axis}
           chartProps={chartProps}
           data={data}
-          properties={properties}
           renderProperty={renderProperty}
+          serie={axis.x.property && getPropertySeries(axis.x.property)}
         />
       ) : null;
 
@@ -332,8 +326,8 @@ const DataChart = forwardRef(
           charts={charts}
           chartProps={chartProps}
           pad={pad}
-          properties={properties}
           renderProperty={renderProperty}
+          serie={axis.y.property && getPropertySeries(axis.y.property)}
         />
       ) : null;
 
@@ -371,7 +365,7 @@ const DataChart = forwardRef(
                   overflow
                   pad={pad}
                   size={size}
-                  {...propertyStyles[cProp]}
+                  {...seriesStyles[cProp]}
                   {...chartProps[i]}
                   {...chartRest}
                 />
@@ -386,7 +380,7 @@ const DataChart = forwardRef(
               overflow
               pad={pad}
               size={size}
-              {...propertyStyles[prop]}
+              {...seriesStyles[prop]}
               {...chartProps[i]}
               {...chartRest}
             />
@@ -397,8 +391,8 @@ const DataChart = forwardRef(
             activeProperty={activeProperty}
             axis={axis}
             data={data}
-            properties={properties}
-            propertyStyles={propertyStyles}
+            series={series}
+            seriesStyles={seriesStyles}
             renderProperty={renderProperty}
           />
         )}
@@ -407,8 +401,8 @@ const DataChart = forwardRef(
 
     const legendElement = legend ? (
       <Legend
-        properties={properties}
-        propertyStyles={propertyStyles}
+        series={series}
+        seriesStyles={seriesStyles}
         activeProperty={activeProperty}
         setActiveProperty={setActiveProperty}
       />
@@ -465,6 +459,7 @@ const DataChart = forwardRef(
           { name: 'xAxis', start: [1, 1], end: [1, 1] },
           { name: 'charts', start: [1, 0], end: [1, 0] },
         ]}
+        gap={gap}
         {...rest}
       >
         {xAxisElement}

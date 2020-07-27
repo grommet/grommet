@@ -18,7 +18,7 @@ const Example = () => (
     <Box align="center" justify="start" pad="large">
       <DataChart
         data={data}
-        property={[
+        series={[
           {
             property: 'date',
             render: date => (

@@ -6,20 +6,18 @@ import { Swatch } from './Swatch';
 
 const Legend = ({
   activeProperty,
-  properties: propertiesProp,
-  propertyStyles,
+  series: seriesProp,
+  seriesStyles,
   setActiveProperty,
 }) => {
-  const properties = useMemo(
-    () => Object.values(propertiesProp).filter(p => propertyStyles[p.property]),
-    [propertiesProp, propertyStyles],
+  const series = useMemo(
+    () => seriesProp.filter(s => seriesStyles[s.property]),
+    [seriesProp, seriesStyles],
   );
-  const interactive = useMemo(() => Object.keys(properties).length > 1, [
-    properties,
-  ]);
+  const interactive = useMemo(() => Object.keys(series).length > 1, [series]);
   return (
     <Box margin={{ top: 'small' }} direction="row" wrap>
-      {properties.map(({ property, label }) => {
+      {series.map(({ property, label }) => {
         const isActive = property === activeProperty;
         const swatchProps = {};
         const textProps = {};
@@ -51,7 +49,7 @@ const Legend = ({
               pad={{ horizontal: 'small', vertical: 'xsmall' }}
               gap="xsmall"
             >
-              <Swatch {...propertyStyles[property]} {...swatchProps} />
+              <Swatch {...seriesStyles[property]} {...swatchProps} />
               <Text {...textProps}>{label || property}</Text>
             </Box>
           </Button>

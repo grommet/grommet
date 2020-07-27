@@ -2,8 +2,7 @@ import React, { forwardRef } from 'react';
 import { Box } from '../Box';
 
 const XAxis = forwardRef(
-  ({ axis, chartProps, data, properties, renderProperty }, ref) => {
-    const prop = axis.x.property && properties[axis.x.property];
+  ({ chartProps, data, renderProperty, serie }, ref) => {
     // pull the x-axis values from the first chart, all should have the same
     const [axisValues] = (Array.isArray(chartProps[0])
       ? chartProps[0][0]
@@ -20,7 +19,7 @@ const XAxis = forwardRef(
           return (
             // eslint-disable-next-line react/no-array-index-key
             <Box key={i} flex align={align}>
-              {prop ? renderProperty(prop, dataIndex) : dataIndex}
+              {serie ? renderProperty(serie, dataIndex) : dataIndex}
             </Box>
           );
         })}

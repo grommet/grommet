@@ -18,8 +18,8 @@ const Detail = ({
   activeProperty,
   axis,
   data,
-  properties,
-  propertyStyles,
+  series,
+  seriesStyles,
   renderProperty,
 }) => {
   const [detailIndex, setDetailIndex] = useState();
@@ -98,21 +98,21 @@ const Detail = ({
               gap="xsmall"
               align="center"
             >
-              {Object.values(properties)
+              {series
                 .filter(
-                  p =>
+                  ({ property }) =>
                     !activeProperty ||
-                    activeProperty === p.property ||
-                    (axis && axis.x && axis.x.property === p.property),
+                    activeProperty === property ||
+                    (axis && axis.x && axis.x.property === property),
                 )
-                .map(prop => {
-                  const propertyStyle = propertyStyles[prop.property];
+                .map(serie => {
+                  const propertyStyle = seriesStyles[serie.property];
                   return (
                     <>
                       {propertyStyle ? <Swatch {...propertyStyle} /> : <span />}
-                      <Text size="small">{prop.label || prop.property}</Text>
+                      <Text size="small">{serie.label || serie.property}</Text>
                       <Text size="small" weight="bold">
-                        {renderProperty(prop, detailIndex)}
+                        {renderProperty(serie, detailIndex)}
                       </Text>
                     </>
                   );

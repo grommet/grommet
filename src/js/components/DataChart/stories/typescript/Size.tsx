@@ -21,7 +21,7 @@ const Example = () => (
         data={data}
         chart="percent"
         guide
-        property={[
+        series={[
           {
             property: 'date',
             render: date => (

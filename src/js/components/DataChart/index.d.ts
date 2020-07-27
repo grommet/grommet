@@ -9,18 +9,18 @@ import { ChartProps } from "../Chart";
 import { GridProps } from "../Grid";
 
 type ChartType = string | {
-  property: string | string[]; // property to get values from objects in data 
   dash?: ChartProps["dash"]; // defaults to undefined
+  point?: ChartProps["point"]; // default across points
+  property: string | string[]; // property to get values from objects in data 
   round?: ChartProps["round"]; // defaults to undefined
   thickness?: ChartProps["thickness"]; // defaults to auto assigned based on available space and amount of data
   type?: ChartProps["type"]; // defaults to 'bar'
 }
 
-type PropertyType = string | {
+type SeriesType = string | {
   bounds?: number[]; // defaults to largest and smallest data values
-  color?: string;    // defaults to auto-assigned sequentially
+  color?: string;    // defaults to auto-assigned sequentially from 'graph-*'
   label?: string | React.ReactNode; // used for legend and/or hover/touch detail
-  point?: ChartProps["point"];
   prefix?: string;   // used for values in axes and hover/touch detail
   property: string;  // property key to get values from objects in data
   render?: ((value: any, datum: {}, property: string) => React.ReactNode); // used for hover/touch detail
@@ -55,7 +55,7 @@ export interface DataChartProps {
   // defaults to what's needed based on axis and chart types
   pad?: GridProps["pad"];
   // property - for richer axis and detail
-  property: PropertyType | PropertyType[];
+  series: SeriesType | SeriesType[];
   margin?: MarginType;      // generic
   size?: ChartProps["size"]; // width and height, defaults to 'fill'
 }

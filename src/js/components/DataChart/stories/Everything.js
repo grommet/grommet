@@ -21,11 +21,10 @@ const Example = () => (
     <Box align="center" justify="start" pad="large">
       <DataChart
         data={data}
-        property={[
-          'date',
+        series={[
           { property: 'amount', color: 'graph-2', point: 'circle' },
           { property: 'need', color: 'graph-1', point: 'star' },
-          'growth',
+          { property: 'growth' },
         ]}
         chart={[
           {
