@@ -276,7 +276,7 @@ export const themeDoc = {
   },
   'button.default.font.weight': {
     description: `The weight of the text label for default buttons.`,
-    type: 'string',
+    type: 'string | number',
   },
   'button.default.extend': {
     description: 'Any additional style for a default button.',
@@ -400,7 +400,7 @@ export const themeDoc = {
   },
   'button.primary.font.weight': {
     description: `The wight of the text label for default buttons.`,
-    type: 'string',
+    type: 'string | number',
   },
   'button.primary.padding.horizontal': {
     description: 'The horizontal padding for a primary button.',
@@ -438,7 +438,7 @@ export const themeDoc = {
   },
   'button.secondary.font.weight': {
     description: `The weight of the text label for secondary buttons.`,
-    type: 'string',
+    type: 'string | number',
   },
   'button.secondary.padding.horizontal': {
     description: 'The horizontal padding for a secondary button.',
