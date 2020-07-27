@@ -58,3 +58,4 @@ export * from './TextInput';
 export * from './Notification';
 export * from './Pagination';
 export * from './Tooltip';
+export * from './Loader';
