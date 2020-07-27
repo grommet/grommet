@@ -10,7 +10,7 @@ import {
 export const doc = Heading => {
   const DocumentedHeading = describe(Heading)
     .availableAt(getAvailableAtBadge('Heading'))
-    .description('Heading text structed in levels.')
+    .description('Heading text structured in levels.')
     .usage(
       `import { Heading } from 'grommet';
 <Heading />`,
@@ -71,8 +71,9 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'heading.level': {
-    description:
-      'The level that impacts line height, max width, font size, weight and family of the Heading.',
+    description: `The level that impacts line-height, max-width, font size, 
+weight and family of the Heading. Heading level is automatically adjusted at 
+different screen sizes. These screen sizes are derived from breakpoints.`,
     type: 'object',
     defaultValue: `
       1: {
@@ -101,8 +102,8 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'heading.responsiveBreakpoint': {
-    description:
-      'The breakpoint to trigger changes in the Heading layout. The actual values will be derived from global.breakpoints.',
+    description: `The breakpoint to trigger changes in the Heading layout. 
+The actual values will be derived from global.breakpoints.`,
     type: 'string',
     defaultValue: 'small',
   },

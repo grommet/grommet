@@ -15,6 +15,9 @@ export const doc = TextInput => {
     .intrinsicElement('input');
 
   DocumentedTextInput.propTypes = {
+    a11yTitle: PropTypes.string.description(
+      'Custom title to be used by screen readers.',
+    ),
     dropAlign: PropTypes.shape({
       top: PropTypes.oneOf(['top', 'bottom']),
       bottom: PropTypes.oneOf(['top', 'bottom']),
@@ -36,6 +39,11 @@ export const doc = TextInput => {
       aligned to the TextInput itself by default.`,
     ),
     dropProps: PropTypes.object.description('Any valid Drop prop.'),
+    icon: PropTypes.element.description(
+      `An optional icon to show. This could be used to provide an
+      indication of what kind of input is expected, like an email icon,
+      or what the input will be used for, like a search icon.`,
+    ),
     id: PropTypes.string.description('The id attribute of the input.'),
     focusIndicator: PropTypes.bool.description(
       'Whether the plain text input should receive a focus outline.',
@@ -47,7 +55,8 @@ export const doc = TextInput => {
       suggestionIsOpen: PropTypes.string,
     })
       .description(
-        'Custom messages for TextInput. Used for accessibility by screen readers.',
+        `Custom messages for TextInput. Used for accessibility by screen
+        readers.`,
       )
       .defaultValue({
         enterSelect: '(Press Enter to Select)',
@@ -57,7 +66,9 @@ export const doc = TextInput => {
         suggestionIsOpen:
           'Suggestions drop is open, continue to use arrow keys to navigate',
       }),
-    name: PropTypes.string.description('The name attribute of the input.'),
+    name: PropTypes.string.description(
+      `The name of the attribute when in a Form or FormField.`,
+    ),
     onChange: PropTypes.func.description(
       'Function that will be called when the user types in the input.',
     ),
@@ -71,14 +82,16 @@ The suggestion contains the object chosen from the supplied suggestions.`,
     onSuggestionsClose: PropTypes.func.description(
       'Function that will be called when the suggestions drop is closed.',
     ),
-    placeholder: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.node,
-      PropTypes.element,
-    ]).description('Placeholder to use when no value is provided.'),
+    placeholder: PropTypes.node.description(
+      'Placeholder to use when no value is provided.',
+    ),
     plain: PropTypes.bool.description(
       `Whether this is a plain input with no border or padding.
 Only use this when the containing context provides sufficient affordance`,
+    ),
+    reverse: PropTypes.bool.description(
+      `Whether an icon should be reversed so that the icon is at the
+      end of the input.`,
     ),
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
@@ -88,7 +101,8 @@ Only use this when the containing context provides sufficient affordance`,
       PropTypes.oneOfType([
         PropTypes.shape({
           label: PropTypes.node,
-          value: PropTypes.any,
+          // eslint-disable-next-line
+          value: PropTypes.any, // this is intentional any
         }),
         PropTypes.string,
       ]),
@@ -135,7 +149,8 @@ export const themeDoc = {
     defaultValue: 20,
   },
   text: {
-    description: `The possible sizes of the text in terms of its font-size and line-height.`,
+    description: `The possible sizes of the text in terms of its font-size and
+    line-height.`,
     type: 'object',
     defaultValue: `{
       xsmall: {
@@ -187,8 +202,8 @@ export const themeDoc = {
   },
   'textInput.disabled.opacity': {
     description: 'The opacity when the textInput is disabled.',
-    type: 'number',
-    defaultValue: 0.3,
+    type: 'number | string',
+    defaultValue: undefined,
   },
   ...themeDocUtils.focusStyle,
   ...themeDocUtils.placeholderStyle,

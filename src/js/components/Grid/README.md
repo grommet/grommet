@@ -18,7 +18,8 @@ import { Grid } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 ```
 string
@@ -48,8 +49,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 ```
 none
@@ -61,6 +62,14 @@ large
 xlarge
 {
   bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
     xxsmall
     xsmall
     small
@@ -85,6 +94,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -139,7 +156,9 @@ stretch
 
 **areas**
 
-Area names and column,row coordinates.
+Grid areas.
+      Either area names and column,row coordinates.
+      Or, an array of string arrays that specify named grid areas.
 
 ```
 [{
@@ -147,6 +166,7 @@ Area names and column,row coordinates.
   start: [number],
   end: [number]
 }]
+[[string]]
 ```
 
 **columns**
@@ -244,21 +264,30 @@ boolean
 Gap sizes between rows and/or columns.
 
 ```
+xxsmall
+xsmall
 small
 medium
 large
+xlarge
 none
 {
   row: 
+    xxsmall
+    xsmall
     small
     medium
     large
+    xlarge
     none
     string,
   column: 
+    xxsmall
+    xsmall
     small
     medium
     large
+    xlarge
     none
     string
 }
@@ -288,6 +317,97 @@ end
 between
 around
 stretch
+```
+
+**pad**
+
+Spacing around the outer edge of
+    the drawing coordinate area for the graphic elements to overflow into. Defaults to `none`.
+
+```
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+```
+
+**responsive**
+
+Whether margin and pad sizes should be scaled for mobile
+        environments. Defaults to `true`.
+
+```
+boolean
 ```
 
 **rows**

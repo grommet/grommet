@@ -1,4 +1,10 @@
-import React, { createRef, Component } from 'react';
+import React, {
+  useState,
+  useRef,
+  useEffect,
+  useCallback,
+  useMemo,
+} from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Search } from 'grommet-icons';
@@ -74,31 +80,42 @@ const folks = [
   },
 ];
 
-class CustomSuggestionsTextInput extends Component {
-  state = { value: '', suggestionOpen: false, suggestedFolks: [] };
+const CustomSuggestionsTextInput = () => {
+  const [value, setValue] = useState('');
+  const [suggestionOpen, setSuggestionOpen] = useState(false);
+  const [suggestedFolks, setSuggestedFolks] = useState([]);
 
-  boxRef = createRef();
+  const [, updateState] = useState();
+  const forceUpdate = useCallback(() => updateState({}), []);
 
-  componentDidMount() {
-    this.forceUpdate();
-  }
+  const boxRef = useRef();
 
-  onChange = event =>
-    this.setState({ value: event.target.value }, () => {
-      const { value } = this.state;
-      if (!value.trim()) {
-        this.setState({ suggestedFolks: [] });
-      } else {
-        // simulate an async call to the backend
-        setTimeout(() => this.setState({ suggestedFolks: folks }), 300);
-      }
-    });
+  useEffect(() => {
+    forceUpdate();
+  }, [forceUpdate]);
 
-  onSelect = event => this.setState({ value: event.suggestion.value });
+  const onChange = event => {
+    const { value: newValue } = event.target;
+    setValue(newValue);
 
-  renderSuggestions = () => {
-    const { value, suggestedFolks } = this.state;
+    if (!newValue.trim()) {
+      setSuggestedFolks([]);
+    } else {
+      // simulate an async call to the backend
+      setTimeout(() => setSuggestedFolks(folks), 300);
+    }
+  };
 
+  const onSelect = event => setValue(event.suggestion.value);
+
+  const onOpen = useCallback(() => setSuggestionOpen(true), [
+    setSuggestionOpen,
+  ]);
+  const onClose = useCallback(() => setSuggestionOpen(false), [
+    setSuggestionOpen,
+  ]);
+
+  const suggestions = useMemo(() => {
     return suggestedFolks
       .filter(
         ({ name }) => name.toLowerCase().indexOf(value.toLowerCase()) >= 0,
@@ -124,56 +141,50 @@ class CustomSuggestionsTextInput extends Component {
         ),
         value: name,
       }));
-  };
+  }, [suggestedFolks, value]);
 
-  render() {
-    const { suggestionOpen, value } = this.state;
-
-    return (
-      <Grommet theme={myCustomTheme} full>
-        <Box background="dark-1" fill align="center" pad={{ top: 'large' }}>
-          <Box
-            ref={this.boxRef}
-            width="large"
-            direction="row"
-            align="center"
-            pad={{ horizontal: 'small', vertical: 'xsmall' }}
-            round="small"
-            elevation={suggestionOpen ? 'medium' : undefined}
-            border={{
-              side: 'all',
-              color: suggestionOpen ? 'transparent' : 'border',
-            }}
-            style={
-              suggestionOpen
-                ? {
-                    borderBottomLeftRadius: '0px',
-                    borderBottomRightRadius: '0px',
-                  }
-                : undefined
-            }
-          >
-            <Search color="brand" />
-            <TextInput
-              type="search"
-              dropTarget={this.boxRef.current}
-              plain
-              value={value}
-              onChange={this.onChange}
-              onSelect={this.onSelect}
-              suggestions={this.renderSuggestions()}
-              placeholder="Enter your name..."
-              onSuggestionsOpen={() => this.setState({ suggestionOpen: true })}
-              onSuggestionsClose={() =>
-                this.setState({ suggestionOpen: false })
-              }
-            />
-          </Box>
+  return (
+    <Grommet theme={myCustomTheme} full>
+      <Box background="dark-1" fill align="center" pad={{ top: 'large' }}>
+        <Box
+          ref={boxRef}
+          width="large"
+          direction="row"
+          align="center"
+          pad={{ horizontal: 'small', vertical: 'xsmall' }}
+          round="small"
+          elevation={suggestionOpen ? 'medium' : undefined}
+          border={{
+            side: 'all',
+            color: suggestionOpen ? 'transparent' : 'border',
+          }}
+          style={
+            suggestionOpen
+              ? {
+                  borderBottomLeftRadius: '0px',
+                  borderBottomRightRadius: '0px',
+                }
+              : undefined
+          }
+        >
+          <Search color="brand" />
+          <TextInput
+            type="search"
+            dropTarget={boxRef.current}
+            plain
+            value={value}
+            onChange={onChange}
+            onSelect={onSelect}
+            suggestions={suggestions}
+            placeholder="Enter your name..."
+            onSuggestionsOpen={onOpen}
+            onSuggestionsClose={onClose}
+          />
         </Box>
-      </Grommet>
-    );
-  }
-}
+      </Box>
+    </Grommet>
+  );
+};
 
 storiesOf('TextInput', module).add('Custom', () => (
   <CustomSuggestionsTextInput />

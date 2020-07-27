@@ -1,92 +1,87 @@
-import React, { cloneElement, Children, Component } from 'react';
-import { compose } from 'recompose';
-
-import { withTheme } from 'styled-components';
+import React, { forwardRef, useContext, useState } from 'react';
+import { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
-
+import { TabsContext } from './TabsContext';
 import { StyledTabPanel, StyledTabs, StyledTabsHeader } from './StyledTabs';
+import { normalizeColor } from '../../utils';
 
-class Tabs extends Component {
-  static defaultProps = {
-    justify: 'center',
-    messages: {
-      tabContents: 'Tab Contents',
-    },
-    responsive: true,
-  };
-
-  static getDerivedStateFromProps(nextProps, prevState) {
-    const { activeIndex } = nextProps;
-    const { activeIndex: stateActiveIndex } = prevState;
-    if (stateActiveIndex !== activeIndex && activeIndex !== undefined) {
-      return { activeIndex };
-    }
-    return { activeIndex: stateActiveIndex || 0 };
-  }
-
-  state = {};
-
-  activateTab = index => {
-    const { activeIndex, onActive } = this.props;
-    if (activeIndex === undefined) {
-      this.setState({ activeIndex: index });
-    }
-    if (onActive) {
-      onActive(index);
-    }
-  };
-
-  render() {
-    const {
+const Tabs = forwardRef(
+  (
+    {
+      alignControls,
       children,
       flex,
-      justify,
-      messages: { tabContents },
-      theme,
+      justify = 'center',
+      messages = { tabContents: 'Tab Contents' },
+      responsive = true,
       ...rest
-    } = this.props;
+    },
+    ref,
+  ) => {
+    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { activeIndex: propsActiveIndex, onActive } = rest;
+    const [activeIndex, setActiveIndex] = useState(rest.activeIndex || 0);
+    const [activeContent, setActiveContent] = useState();
+    const [activeTitle, setActiveTitle] = useState();
+
+    if (activeIndex !== propsActiveIndex && propsActiveIndex !== undefined) {
+      setActiveIndex(propsActiveIndex);
+    }
+
+    const activateTab = index => {
+      if (propsActiveIndex === undefined) {
+        setActiveIndex(index);
+      }
+      if (onActive) {
+        onActive(index);
+      }
+    };
+
+    /* eslint-disable no-param-reassign */
     delete rest.activeIndex;
     delete rest.onActive;
-    const { activeIndex } = this.state;
+    /* eslint-enable no-param-reassign */
 
-    let activeContent;
-    let activeTitle;
-    const tabs = Children.map(
-      children,
-      (tab, index) => {
-        if (!tab) return undefined;
+    const tabs = React.Children.map(children, (child, index) => (
+      <TabsContext.Provider
+        value={{
+          activeIndex,
+          active: activeIndex === index,
+          onActivate: () => activateTab(index),
+          setActiveContent,
+          setActiveTitle,
+        }}
+      >
+        {child}
+      </TabsContext.Provider>
+    ));
 
-        const tabProps = tab.props || {};
+    const tabsHeaderStyles = {};
+    if (theme.tabs.header && theme.tabs.header.border) {
+      let borderColor =
+        theme.tabs.header.border.color || theme.global.control.border.color;
+      borderColor = normalizeColor(borderColor, theme);
 
-        const isTabActive = index === activeIndex;
+      tabsHeaderStyles.border = {
+        side: theme.tabs.header.border.side,
+        size: theme.tabs.header.border.size,
+        style: theme.tabs.header.border.style,
+        color: borderColor,
+      };
+    }
 
-        if (isTabActive) {
-          activeContent = tabProps.children;
-          if (typeof tabProps.title === 'string') {
-            activeTitle = tabProps.title;
-          } else {
-            activeTitle = index + 1;
-          }
-        }
-
-        return cloneElement(tab, {
-          active: isTabActive,
-          onActivate: () => this.activateTab(index),
-        });
-      },
-      this,
-    );
-
-    const tabContentTitle = `${activeTitle || ''} ${tabContents}`;
+    const tabContentTitle = `${activeTitle || ''} ${messages.tabContents}`;
 
     return (
       <StyledTabs
+        ref={ref}
         as={Box}
         role="tablist"
         flex={flex}
+        responsive={responsive}
         {...rest}
         background={theme.tabs.background}
       >
@@ -94,10 +89,12 @@ class Tabs extends Component {
           as={Box}
           direction="row"
           justify={justify}
+          alignSelf={alignControls}
           flex={false}
           wrap
           background={theme.tabs.header.background}
           gap={theme.tabs.gap}
+          {...tabsHeaderStyles}
         >
           {tabs}
         </StyledTabsHeader>
@@ -110,15 +107,15 @@ class Tabs extends Component {
         </StyledTabPanel>
       </StyledTabs>
     );
-  }
-}
+  },
+);
 
-Object.setPrototypeOf(Tabs.defaultProps, defaultProps);
+Tabs.displayName = 'Tabs';
 
 let TabsDoc;
 if (process.env.NODE_ENV !== 'production') {
   TabsDoc = require('./doc').doc(Tabs); // eslint-disable-line global-require
 }
-const TabsWrapper = compose(withTheme)(TabsDoc || Tabs);
+const TabsWrapper = TabsDoc || Tabs;
 
 export { TabsWrapper as Tabs };

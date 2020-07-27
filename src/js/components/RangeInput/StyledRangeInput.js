@@ -1,14 +1,84 @@
+import { rgba } from 'polished';
 import styled, { css } from 'styled-components';
 
 import { focusStyle, normalizeColor, parseMetricToNum } from '../../utils';
 import { defaultProps } from '../../default-props';
 
+// opacity of the bound trumps the track opacity
+const getBoundOpacity = (props, bound) => {
+  return props.theme.rangeInput &&
+    props.theme.rangeInput.track &&
+    props.theme.rangeInput.track[bound] &&
+    props.theme.rangeInput.track[bound].opacity
+    ? props.theme.rangeInput.track[bound].opacity
+    : 1;
+};
+
+const getBoundColor = (props, bound) => {
+  if (
+    props.theme.rangeInput &&
+    props.theme.rangeInput.track &&
+    props.theme.rangeInput.track[bound] &&
+    props.theme.rangeInput.track[bound].color
+  ) {
+    return rgba(
+      normalizeColor(props.theme.rangeInput.track[bound].color, props.theme),
+      getBoundOpacity(props, bound),
+    );
+  }
+  // If bound color is undefined pick the default track color with bound opacity
+  return rgba(
+    normalizeColor(props.theme.rangeInput.track.color, props.theme),
+    getBoundOpacity(props, bound),
+  );
+};
+
+const trackColorStyle = props => {
+  // backward compatibility in case no bounds are defined
+  if (
+    props.theme.rangeInput &&
+    props.theme.rangeInput.track &&
+    !props.theme.rangeInput.track.lower &&
+    !props.theme.rangeInput.track.upper
+  ) {
+    const color = rgba(
+      normalizeColor(props.theme.rangeInput.track.color, props.theme),
+      0.2,
+    );
+    // Since the track color was changed from border-with-opacity to just border
+    // this condition is used to make sure we are applying the opacity correctly
+    // for 'border' color (for backward compatibility purposes).
+    if (color === 'rgba(0,0,0,0.2)') return `background: ${color}`;
+
+    // no bounds are defined but color may have changed
+    return `background: ${rgba(
+      normalizeColor(props.theme.rangeInput.track.color, props.theme),
+      props.theme.rangeInput.track.opacity || 1,
+    )}`;
+  }
+
+  const max = props.max || 100; // 'max' defaults to 100 in case not specified
+  const min = props.min || 0; // 'min' defaults to 0 in case not specified
+  const thumbPosition = `${((props.value - min) / (max - min)) * 100}%`;
+
+  const lowerTrackColor = getBoundColor(props, 'lower');
+  const upperTrackColor = getBoundColor(props, 'upper');
+
+  return `background: linear-gradient(
+      to right,
+      ${lowerTrackColor},
+      ${lowerTrackColor} ${thumbPosition},
+      ${upperTrackColor} ${thumbPosition},
+      ${upperTrackColor}
+    );
+  `;
+};
+
 const rangeTrackStyle = css`
   box-sizing: border-box;
   width: 100%;
   height: ${props => props.theme.rangeInput.track.height};
-  background: ${props =>
-    normalizeColor(props.theme.rangeInput.track.color, props.theme)};
+  ${props => trackColorStyle(props)};
   ${props =>
     props.theme.rangeInput &&
     props.theme.rangeInput.track &&
@@ -45,6 +115,7 @@ const firefoxMicrosoftThumbStyle = css`
     props.theme.rangeInput.thumb.extend}
 `;
 
+/* eslint-disable max-len */
 const StyledRangeInput = styled.input`
   box-sizing: border-box;
   position: relative;
@@ -55,10 +126,6 @@ const StyledRangeInput = styled.input`
   padding: 0px;
   cursor: pointer;
   background: transparent;
-
-  &:focus {
-    outline: none;
-  }
 
   &::-moz-focus-inner {
     border: none;
@@ -128,20 +195,19 @@ const StyledRangeInput = styled.input`
   }
 
   &::-ms-fill-lower {
-    background: ${props =>
-      normalizeColor(props.theme.rangeInput.track.color, props.theme)};
+    ${props => trackColorStyle(props, 'lower')};
     border-color: transparent;
   }
 
   &::-ms-fill-upper {
-    background: ${props =>
-      normalizeColor(props.theme.rangeInput.track.color, props.theme)};
+    ${props => trackColorStyle(props, 'upper')};
     border-color: transparent;
   }
 
-  ${props => props.focus && focusStyle}
+  ${props => props.focus && focusStyle()}
   ${props => props.theme.rangeInput && props.theme.rangeInput.extend}
 `;
+/* eslint-enable max-len */
 
 StyledRangeInput.defaultProps = {};
 Object.setPrototypeOf(StyledRangeInput.defaultProps, defaultProps);

@@ -10,12 +10,20 @@ export const doc = Tab => {
     .intrinsicElement('button');
 
   DocumentedTab.propTypes = {
+    disabled: PropTypes.bool
+      .description('Whether the tab is disabled.')
+      .defaultValue(false),
+    icon: PropTypes.element.description('Icon element to place in the tab.'),
     plain: PropTypes.bool
       .description('Whether this is a plain tab with no style.')
       .defaultValue(false),
-    title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).description(
-      'The title of the tab.',
-    ),
+    reverse: PropTypes.bool
+      .description(
+        `Whether an icon and label should be reversed so that the icon is at the
+              end of the tab.`,
+      )
+      .defaultValue(false),
+    title: PropTypes.node.description('The title of the tab.'),
   };
 
   return DocumentedTab;
@@ -57,10 +65,25 @@ export const themeDoc = {
       },
     }`,
   },
+  'tab.border.disabled.color': {
+    description: 'border color of the Tab when disabled',
+    type: 'string | {dark: string, light: string}',
+    defaultValue: undefined,
+  },
   'tab.color': {
     description: 'text color for the Tab.',
-    type: 'string',
+    type: 'string | {dark: string, light: string}',
     defaultValue: 'control',
+  },
+  'tab.disabled.color': {
+    description: 'text color of the Tab when disabled.',
+    type: 'string | {dark: string, light: string}',
+    defaultValue: undefined,
+  },
+  'tab.extend': {
+    description: 'Any additional style for Tab.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
   },
   'tab.hover.background': {
     description: 'background style of the Tab on hover.',

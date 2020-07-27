@@ -36,6 +36,29 @@ exports[`Grommet announce 3`] = `
 />
 `;
 
+exports[`Grommet background 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #0000ff;
+  color: #f8f8f8;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+}
+
+<div
+  className="c0"
+>
+  Grommet App
+</div>
+`;
+
 exports[`Grommet basic 1`] = `
 .c0 {
   font-size: 18px;
@@ -62,11 +85,20 @@ exports[`Grommet cssVars 1`] = `
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   --active: rgba(221,221,221,0.5);
+  --active-background: background-contrast;
+  --active-text: text-strong;
   --black: #000000;
   --brand: #7D4CDB;
   --focus: #6FFFB0;
+  --graph-0: accent-1;
+  --graph-1: neutral-1;
+  --graph-2: neutral-2;
+  --graph-3: neutral-3;
+  --graph-4: neutral-4;
   --placeholder: #AAAAAA;
   --selected: brand;
+  --selected-background: brand;
+  --selected-text: text-strong;
   --white: #FFFFFF;
   --accent-1: #6FFFB0;
   --accent-2: #FD6FFF;
@@ -124,11 +156,32 @@ exports[`Grommet full 1`] = `
 </div>
 `;
 
+exports[`Grommet grommet theme 1`] = `
+.c0 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial,sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #ffffff;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  className="c0"
+/>
+`;
+
 exports[`Grommet hpe theme 1`] = `
 .c0 {
   font-family: 'Metric',Arial,sans-serif;
   font-size: 18px;
   line-height: 24px;
+  background-color: #FFFFFF;
+  color: #333333;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -252,4 +305,23 @@ exports[`Grommet ssr rendering Mozilla/5.0 (iPhone; CPU  1`] = `
     Received size small for Mozilla/5.0 (iPhone; CPU iPhone OS 9_0_2 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13A452 Safari/601.1 PTST/396
   </h1>
 </div>
+`;
+
+exports[`Grommet themeMode 1`] = `
+.c0 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial,sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #000000;
+  color: #f8f8f8;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  className="c0"
+/>
 `;

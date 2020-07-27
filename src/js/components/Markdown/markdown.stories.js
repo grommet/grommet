@@ -9,7 +9,8 @@ const CONTENT = `
   # Out of Breath
 
   You know, sometimes in life it seems like there's no way out. Like
-  a sheep trapped in a maze designed by wolves.
+  a sheep trapped in a maze designed by wolves. See all the
+  options [here](https://github.com/probablyup/markdown-to-jsx/)
 
   [reference](#)
 
@@ -48,5 +49,5 @@ const ComponentOverrideMarkdown = () => (
 );
 
 storiesOf('Markdown', module)
-  .add('Simple Markdown', () => <SimpleMarkdown />)
+  .add('Simple', () => <SimpleMarkdown />)
   .add('Component Override Markdown', () => <ComponentOverrideMarkdown />);

@@ -1,9 +1,9 @@
 import path from 'path';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
-import CleanWebpackPlugin from 'clean-webpack-plugin';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 
 const plugins = [
-  new CleanWebpackPlugin(['dist']),
+  new CleanWebpackPlugin(),
   new CopyWebpackPlugin([
     { from: './README.md' },
     { from: './package.json' },
@@ -21,8 +21,9 @@ export default {
     library: 'Grommet',
   },
   externals: {
-    'react': 'React',
+    react: 'React',
     'react-dom': 'ReactDOM',
+    'styled-components': 'styled',
   },
   resolve: {
     extensions: ['.js', '.json'],

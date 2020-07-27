@@ -19,7 +19,8 @@ import { Menu } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 ```
 string
@@ -49,8 +50,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 ```
 none
@@ -62,6 +63,14 @@ large
 xlarge
 {
   bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
     xxsmall
     xsmall
     small
@@ -93,6 +102,14 @@ xlarge
     large
     xlarge
     string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   top: 
     xxsmall
     xsmall
@@ -113,6 +130,19 @@ xlarge
 string
 ```
 
+**children**
+
+Function that will be called to render the visual representation.
+      It will be passed an object containing button props.
+      It should return a react element.
+      For example:
+      `children={({ drop, hover }) => <Box ...>{...}</Box>}`
+      
+
+```
+function
+```
+
 **disabled**
 
 Whether the menu should be disabled.
@@ -123,7 +153,8 @@ boolean
 
 **dropAlign**
 
-Where to place the drop down. The keys correspond to a side of the drop down.
+Where to place the drop down.
+The keys correspond to a side of the drop down.
 The values correspond to a side of the control. For instance,
 {left: 'left', top: 'bottom'} would align the left edges and the top of
 the drop down to the bottom of the control. At most one of left or right and
@@ -209,7 +240,8 @@ node
 **items**
 
 Required. Menu items to be placed inside the drop down.
-The object values can be any Button prop, for example: label and onClick. Defaults to `[]`.
+The object values can be any Button prop, 
+for example: label, onClick, and href. Defaults to `[]`.
 
 ```
 [object]
@@ -226,7 +258,8 @@ node
 
 **messages**
 
-Custom messages. Used for accessibility by screen readers. Defaults to `{
+Custom messages. Used for accessibility by screen readers. 
+      These values will be overridden if an a11yTitle is provided. Defaults to `{
   "openMenu": "Open Menu",
   "closeMenu": "Close Menu"
 }`.
@@ -267,12 +300,22 @@ button
   
 **global.colors.control**
 
+The default color to use for the icon. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+{ dark: 'accent-1', light: 'brand'}
+```
+
+**menu.icons.color**
+
 The color to use for the icon. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
 ```
-undefined
+control
 ```
 
 **menu.background**
@@ -297,10 +340,22 @@ undefined
 
 **menu.icons.down**
 
-The icon to show to the right of the label. Expects `React.Element`.
+The icon to show to the right of the label when menu is 
+    closed. Expects `React.Element`.
 
 Defaults to
 
 ```
 <FormDown />
+```
+
+**menu.icons.up**
+
+The icon to show to the right of the label when menu is 
+    opened. Expects `undefined | React.Element`.
+
+Defaults to
+
+```
+undefined
 ```

@@ -1,12 +1,16 @@
 import * as React from "react";
+import {
+  A11yTitleType, AlignSelfType, FillType, GridAreaType, MarginType,
+} from "../../utils";
 
 export interface ImageProps {
-  a11yTitle?: string;
-  alignSelf?: "start" | "center" | "end" | "stretch";
-  fit?: "cover" | "contain";
+  a11yTitle?: A11yTitleType;
+  alignSelf?: AlignSelfType;
   fallback?: string;
-  gridArea?: string;
-  margin?: "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string} | string;
+  fill?: FillType;
+  fit?: "cover" | "contain";
+  gridArea?: GridAreaType;
+  margin?: MarginType;
   opacity?: "weak" | "medium" | "strong" | string | boolean;
 }
 

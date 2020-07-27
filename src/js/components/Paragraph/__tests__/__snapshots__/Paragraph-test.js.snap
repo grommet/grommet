@@ -114,16 +114,16 @@ exports[`Paragraph size renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
-}
-
 .c1 {
   font-size: 14px;
   line-height: 20px;
   max-width: 336px;
+}
+
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
 }
 
 .c3 {
@@ -142,6 +142,12 @@ exports[`Paragraph size renders 1`] = `
   font-size: 34px;
   line-height: 40px;
   max-width: 816px;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+  max-width: none;
 }
 
 <div
@@ -166,6 +172,12 @@ exports[`Paragraph size renders 1`] = `
   <p
     className="c5"
     size="xxlarge"
+  />
+  <p
+    className="c6"
+  />
+  <p
+    className="c2"
   />
 </div>
 `;

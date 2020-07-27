@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 import { StyledParagraph } from './StyledParagraph';
 
-const Paragraph = ({ color, ...rest }) => (
-  <StyledParagraph colorProp={color} {...rest} />
-);
+const Paragraph = forwardRef(({ color, fill, ...rest }, ref) => (
+  <StyledParagraph ref={ref} colorProp={color} fillProp={fill} {...rest} />
+));
+
+Paragraph.displayName = 'Paragraph';
 
 let ParagraphDoc;
 if (process.env.NODE_ENV !== 'production') {
-  ParagraphDoc = require('./doc').doc(Paragraph); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  ParagraphDoc = require('./doc').doc(Paragraph);
 }
 const ParagraphWrapper = ParagraphDoc || Paragraph;
 

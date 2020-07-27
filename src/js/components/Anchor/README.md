@@ -47,8 +47,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 ```
 none
@@ -60,6 +60,14 @@ large
 xlarge
 {
   bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
     xxsmall
     xsmall
     small
@@ -84,6 +92,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -121,6 +137,14 @@ string
   dark: string,
   light: string
 }
+```
+
+**disabled**
+
+Whether the anchor is disabled.
+
+```
+boolean
 ```
 
 **href**
@@ -168,8 +192,8 @@ boolean
 **size**
 
 The font size is typically driven by the components containing
-this component. But, it can be adjusted directly via this size property, typically
-when it is not contained in a 'Heading', 'Paragraph', or 'Text'.
+this component. But, it can be adjusted directly via this size property,
+typically when it is not contained in a 'Heading', 'Paragraph', or 'Text'.
 
 ```
 xsmall
@@ -219,7 +243,9 @@ Defaults to
 
 **anchor.textDecoration**
 
-The text decoration of the label. Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration) for possible values. Expects `string`.
+The text decoration of the label. 
+Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
+for possible values. Expects `string`.
 
 Defaults to
 
@@ -239,7 +265,9 @@ undefined
 
 **anchor.hover.textDecoration**
 
-The text decoration of the label when hovering. Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration) for possible values. Expects `string`.
+The text decoration of the label when hovering. 
+Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
+for possible values. Expects `string`.
 
 Defaults to
 
@@ -289,12 +317,52 @@ Defaults to
 
 **global.focus.border.color**
 
-The color around the component when in focus. Expects `string | { dark: string, light: string }`.
+The border color of the component when in focus. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
 ```
 focus
+```
+
+**global.focus.outline.color**
+
+The outline color around the component when in focus. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.focus.outline.size**
+
+The size of the outline around the component when in focus. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.focus.shadow.color**
+
+The shadow color around the component when in focus. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+focus
+```
+
+**global.focus.shadow.size**
+
+The size of the shadow around the component when in focus. Expects `string`.
+
+Defaults to
+
+```
+2px
 ```
 
 **global.edgeSize**

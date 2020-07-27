@@ -13,7 +13,8 @@ import { Text } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 ```
 string
@@ -43,8 +44,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 ```
 none
@@ -56,6 +57,14 @@ large
 xlarge
 {
   bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
     xxsmall
     xsmall
     small
@@ -80,6 +89,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -121,9 +138,9 @@ string
 
 **size**
 
-The font size and line height are primarily driven by the chosen tag. But, it can
-be adjusted via this size property. The tag should be set for semantic
-correctness and accessibility. This size property allows for stylistic
+The font size and line height are primarily driven by the chosen tag. 
+But, it can be adjusted via this size property. The tag should be set for 
+semantic correctness and accessibility. This size property allows for stylistic
 adjustments. Defaults to `medium`.
 
 ```
@@ -153,6 +170,7 @@ The DOM tag or react component to use for the element. Defaults to `span`.
 ```
 string
 function
+element
 ```
 
 **textAlign**
@@ -214,7 +232,8 @@ Defaults to
 
 **text**
 
-The possible sizes of the text in terms of its font-size and line-height. Expects `object`.
+The possible sizes of the text in terms of its font-size and 
+line-height. Expects `object`.
 
 Defaults to
 

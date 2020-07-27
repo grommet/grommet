@@ -9,8 +9,10 @@ export const addDays = (date, days) => {
   // where adding a day's worth when the time is midnight results in
   // being a day off.
   let hourDelta = result.getHours() - date.getHours();
-  // At this point, hourDelta is typically 0 (normal day), +23 (November daylight saving), or -23 (March Daylight saving)
-  // depending on which side of the switch we are on. Convert so that hourDelta is either +1 or -1.
+  // At this point, hourDelta is typically 0 (normal day),
+  // +23 (November daylight saving), or -23 (March Daylight saving)
+  // depending on which side of the switch we are on.
+  // Convert so that hourDelta is either +1 or -1.
   if (hourDelta === 23) {
     hourDelta -= 24;
   } else if (hourDelta === -23) {
@@ -67,7 +69,7 @@ export const sameDayOrBefore = (date1, date2) =>
 export const daysApart = (date1, date2) =>
   Math.floor((date1.getTime() - date2.getTime()) / DAY_MILLISECONDS);
 
-// betweenDates takes and array of two elements and checks if the
+// betweenDates takes an array of two elements and checks if the
 // supplied date lies between them, inclusive.
 // returns 2 if exact match to one end, 1 if between, undefined otherwise
 export const betweenDates = (date, dates) => {
@@ -85,7 +87,7 @@ export const betweenDates = (date, dates) => {
   return result;
 };
 
-// withinDates takes and array of string dates or 2 element arrays and
+// withinDates takes an array of string dates or 2 element arrays and
 // checks whether the supplied date matches any string or is between
 // any dates in arrays.
 // returns 2 if exact match, 1 if between, undefined otherwise
@@ -105,54 +107,6 @@ export const withinDates = (date, dates) => {
       });
     } else if (sameDay(date, new Date(dates))) {
       result = 2;
-    }
-  }
-  return result;
-};
-
-export const updateDateRange = (
-  selectedDate,
-  { date, dates, previousSelectedDate },
-) => {
-  const result = { previousSelectedDate: selectedDate };
-  if (!dates) {
-    if (!date) {
-      result.date = selectedDate;
-    } else {
-      const priorDate = new Date(date);
-      const nextDate = new Date(selectedDate);
-      if (priorDate.getTime() < nextDate.getTime()) {
-        result.date = undefined;
-        result.dates = [[date, selectedDate]];
-      } else if (priorDate.getTime() > nextDate.getTime()) {
-        result.date = undefined;
-        result.dates = [[selectedDate, date]];
-      } else {
-        result.date = undefined;
-      }
-    }
-  } else {
-    const priorDates = dates[0].map(d => new Date(d));
-    const previousDate = new Date(previousSelectedDate);
-    const nextDate = new Date(selectedDate);
-    if (nextDate.getTime() === priorDates[0].getTime()) {
-      result.dates = undefined;
-      [[, result.date]] = dates;
-    } else if (nextDate.getTime() === priorDates[1].getTime()) {
-      result.dates = undefined;
-      [[result.date]] = dates;
-    } else if (nextDate.getTime() < previousDate.getTime()) {
-      if (nextDate.getTime() < priorDates[0].getTime()) {
-        result.dates = [[selectedDate, dates[0][1]]];
-      } else if (nextDate.getTime() > priorDates[0].getTime()) {
-        result.dates = [[dates[0][0], selectedDate]];
-      }
-    } else if (nextDate.getTime() > previousDate.getTime()) {
-      if (nextDate.getTime() > priorDates[1].getTime()) {
-        result.dates = [[dates[0][0], selectedDate]];
-      } else if (nextDate.getTime() < priorDates[1].getTime()) {
-        result.dates = [[selectedDate, dates[0][1]]];
-      }
     }
   }
   return result;

@@ -1,21 +1,22 @@
 import * as React from "react";
+import { KeyboardType } from '../../utils';
 
 export interface KeyboardProps {
   target?: "component" | "document";
-  onBackspace?: ((...args: any[]) => any);
-  onComma?: ((...args: any[]) => any);
-  onDown?: ((...args: any[]) => any);
-  onEnter?: ((...args: any[]) => any);
-  onEsc?: ((...args: any[]) => any);
-  onKeyDown?: ((...args: any[]) => any);
-  onLeft?: ((...args: any[]) => any);
-  onRight?: ((...args: any[]) => any);
-  onShift?: ((...args: any[]) => any);
-  onSpace?: ((...args: any[]) => any);
-  onTab?: ((...args: any[]) => any);
-  onUp?: ((...args: any[]) => any);
+  onBackspace?: KeyboardType;
+  onComma?: KeyboardType;
+  onDown?: KeyboardType;
+  onEnter?: KeyboardType;
+  onEsc?: KeyboardType;
+  onKeyDown?: KeyboardType;
+  onLeft?: KeyboardType;
+  onRight?: KeyboardType;
+  onShift?: KeyboardType;
+  onSpace?: KeyboardType;
+  onTab?: KeyboardType;
+  onUp?: KeyboardType;
 }
 
-declare const Keyboard: React.ComponentClass<KeyboardProps>;
+declare const Keyboard: React.FC<KeyboardProps>;
 
 export { Keyboard };

@@ -13,9 +13,9 @@ import { Drop } from 'grommet';
 
 **align**
 
-How to align the drop with respect to the target element. Not specifying
-      a vertical or horizontal alignment will cause it to be aligned in the
-      center. Defaults to `{
+How to align the drop with respect to the target element. Not 
+        specifying a vertical or horizontal alignment will cause it to be 
+        aligned in the center. Defaults to `{
   "top": "top",
   "left": "left"
 }`.
@@ -47,7 +47,8 @@ function
 
 **onEsc**
 
-Function that will be called when the user presses the escape key inside the drop.
+Function that will be called when the user presses the escape key inside
+       the drop.
 
 ```
 function
@@ -105,7 +106,8 @@ boolean
 
 **target**
 
-Required. Target where the drop will be aligned to. This should be a React reference.
+Required. Target where the drop will be aligned to. This should be a React 
+      reference.
 
 ```
 object

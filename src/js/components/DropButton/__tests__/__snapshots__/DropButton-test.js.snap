@@ -5,7 +5,6 @@ exports[`DropButton close by clicking outside 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -19,8 +18,12 @@ exports[`DropButton close by clicking outside 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
 }
 
 .c0:hover {
@@ -37,6 +40,10 @@ exports[`DropButton close by clicking outside 1`] = `
 `;
 
 exports[`DropButton close by clicking outside 2`] = `
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
 <div
   id="drop-contents"
 >
@@ -44,39 +51,13 @@ exports[`DropButton close by clicking outside 2`] = `
 </div>
 `;
 
-exports[`DropButton close by clicking outside 3`] = `
-"@media only screen and (max-width:768px) {
-  .fvdSSs {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fvdSSs {
-    padding: 0px;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hEnyXU {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}"
-`;
+exports[`DropButton close by clicking outside 3`] = `""`;
 
 exports[`DropButton closed 1`] = `
 .c0 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -90,8 +71,12 @@ exports[`DropButton closed 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
 }
 
 .c0:hover {
@@ -117,7 +102,6 @@ exports[`DropButton disabled 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -133,8 +117,12 @@ exports[`DropButton disabled 1`] = `
   line-height: 24px;
   opacity: 0.3;
   cursor: default;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
 }
 
 <button
@@ -152,7 +140,6 @@ exports[`DropButton open and close 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -166,8 +153,12 @@ exports[`DropButton open and close 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
 }
 
 .c0:hover {
@@ -184,6 +175,10 @@ exports[`DropButton open and close 1`] = `
 `;
 
 exports[`DropButton open and close 2`] = `
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
 <div
   id="drop-contents"
 >
@@ -191,39 +186,13 @@ exports[`DropButton open and close 2`] = `
 </div>
 `;
 
-exports[`DropButton open and close 3`] = `
-"@media only screen and (max-width:768px) {
-  .fvdSSs {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .fvdSSs {
-    padding: 0px;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hEnyXU {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}"
-`;
+exports[`DropButton open and close 3`] = `""`;
 
 exports[`DropButton opened 1`] = `
 .c0 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -237,8 +206,12 @@ exports[`DropButton opened 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
 }
 
 .c0:hover {
@@ -264,7 +237,6 @@ exports[`DropButton opened ref 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -278,12 +250,20 @@ exports[`DropButton opened ref 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
 }
 
 .c0:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
 }
 
 <button
@@ -296,6 +276,10 @@ exports[`DropButton opened ref 1`] = `
 `;
 
 exports[`DropButton opened ref 2`] = `
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
 <div
   id="drop-contents"
 >
@@ -303,29 +287,98 @@ exports[`DropButton opened ref 2`] = `
 </div>
 `;
 
-exports[`DropButton opened ref 3`] = `
-"@media only screen and (max-width:768px) {
-  .fvdSSs {
-    margin: 0px;
-  }
+exports[`DropButton opened ref 3`] = `""`;
+
+exports[`DropButton ref function 1`] = `
+.c0 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
 }
 
-@media only screen and (max-width:768px) {
-  .fvdSSs {
-    padding: 0px;
-  }
+.c0:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hEnyXU {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-}"
+
+}
+
+<button
+  aria-label="Open Drop"
+  class="c0"
+  type="button"
+>
+  Dropper
+</button>
+`;
+
+exports[`DropButton ref function 2`] = `
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+<div
+  id="drop-contents"
+>
+  Drop Contents
+</div>
+`;
+
+exports[`DropButton ref function 3`] = `""`;
+
+exports[`DropButton should have no accessibility violations 1`] = `
+.c0 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c0:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+<button
+  aria-label="test"
+  class="c0"
+  type="button"
+/>
 `;

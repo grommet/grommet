@@ -15,7 +15,8 @@ import { Carousel } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 ```
 string
@@ -45,8 +46,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 ```
 none
@@ -58,6 +59,14 @@ large
 xlarge
 {
   bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
     xxsmall
     xsmall
     small
@@ -82,6 +91,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -127,6 +144,25 @@ If specified, the number of
 ```
 number
 ```
+
+**initialChild**
+
+If specified, the index of
+      the first element to be shown. Defaults to 0.
+
+```
+number
+```
+
+**controls**
+
+Whether to show carousel controls and which type of controls. Defaults to `true`.
+
+```
+boolean
+arrows
+selectors
+```
   
 ## Intrinsic element
 
@@ -167,7 +203,8 @@ Defaults to
 
 **carousel.icons.current**
 
-The icon to use on the middle navigation control. One icon per carousel image. Expects `element`.
+The icon to use on the middle navigation control. 
+      One icon per carousel image. Expects `element`.
 
 Defaults to
 
@@ -197,12 +234,12 @@ undefined
 
 **global.colors.icon**
 
-The color used for Carousel icons. Expects `string | { 'dark': string, 'light': string }`.
+The color of a given icon. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
 ```
-[object Object]
+{ dark: #f8f8f8, light: #666666 }
 ```
 
 **global.edgeSize**

@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 import { TableContext } from '../Table/TableContext';
 import { StyledTableBody } from '../Table/StyledTable';
 
-const TableBody = props => (
+const TableBody = forwardRef((props, ref) => (
   <TableContext.Provider value="body">
-    <StyledTableBody {...props} />
+    <StyledTableBody ref={ref} {...props} />
   </TableContext.Provider>
-);
+));
+
+TableBody.displayName = 'TableBody';
 
 let TableBodyDoc;
 if (process.env.NODE_ENV !== 'production') {
-  TableBodyDoc = require('./doc').doc(TableBody); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  TableBodyDoc = require('./doc').doc(TableBody);
 }
 const TableBodyWrapper = TableBodyDoc || TableBody;
 

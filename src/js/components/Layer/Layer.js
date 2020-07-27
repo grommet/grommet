@@ -1,57 +1,81 @@
-import React, { Component } from 'react';
+import React, { forwardRef, useContext, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 import { getNewContainer } from '../../utils';
 
 import { LayerContainer } from './LayerContainer';
+import { animationDuration } from './StyledLayer';
+import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
 
-class Layer extends Component {
-  static defaultProps = {
-    full: false,
-    margin: 'none',
-    modal: true,
-    position: 'center',
-    responsive: true,
-  };
+const Layer = forwardRef((props, ref) => {
+  const { animate, animation } = props;
+  const [originalFocusedElement, setOriginalFocusedElement] = useState();
+  useEffect(() => setOriginalFocusedElement(document.activeElement), []);
+  const [layerContainer, setLayerContainer] = useState();
+  const containerTarget = useContext(ContainerTargetContext);
+  useEffect(() => setLayerContainer(getNewContainer(containerTarget)), [
+    containerTarget,
+  ]);
 
-  state = {
-    islayerContainerAvailable: false,
-  };
-
-  componentDidMount() {
-    // ensure document is available
-    this.originalFocusedElement = document.activeElement;
-    this.layerContainer = getNewContainer();
-    this.setState({ islayerContainerAvailable: true });
-  }
-
-  componentWillUnmount() {
-    if (this.originalFocusedElement) {
-      if (this.originalFocusedElement.focus) {
-        // wait for the fixed positioning to come back to normal
-        // see layer styling for reference
-        setTimeout(() => {
-          this.originalFocusedElement.focus();
-        }, 0);
-      } else if (
-        this.originalFocusedElement.parentNode &&
-        this.originalFocusedElement.parentNode.focus
-      ) {
-        // required for IE11 and Edge
-        this.originalFocusedElement.parentNode.focus();
+  // just a few things to clean up when the Layer is unmounted
+  useEffect(
+    () => () => {
+      if (originalFocusedElement) {
+        if (originalFocusedElement.focus) {
+          // wait for the fixed positioning to come back to normal
+          // see layer styling for reference
+          setTimeout(() => originalFocusedElement.focus(), 0);
+        } else if (
+          originalFocusedElement.parentNode &&
+          originalFocusedElement.parentNode.focus
+        ) {
+          // required for IE11 and Edge
+          originalFocusedElement.parentNode.focus();
+        }
       }
-    }
-    document.body.removeChild(this.layerContainer);
-  }
 
-  render() {
-    const { islayerContainerAvailable } = this.state;
+      if (layerContainer) {
+        const activeAnimation = animation !== undefined ? animation : animate;
+        if (activeAnimation !== false) {
+          // undefined uses 'slide' as the default
+          // animate out and remove later
+          const layerClone = layerContainer.cloneNode(true);
+          layerClone.id = 'layerClone';
+          containerTarget.appendChild(layerClone);
+          const clonedContainer = layerClone.querySelector(
+            '[class*="StyledLayer__StyledContainer"]',
+          );
+          if (clonedContainer && clonedContainer.style) {
+            clonedContainer.style.animationDirection = 'reverse';
+          }
+          setTimeout(() => {
+            // we add the id and query here so the unit tests work
+            const clone = document.getElementById('layerClone');
+            if (clone) {
+              containerTarget.removeChild(clone);
+              layerContainer.remove();
+            }
+          }, animationDuration);
+        } else {
+          containerTarget.removeChild(layerContainer);
+        }
+      }
+    },
+    [
+      animate,
+      animation,
+      containerTarget,
+      layerContainer,
+      originalFocusedElement,
+    ],
+  );
 
-    return islayerContainerAvailable
-      ? createPortal(<LayerContainer {...this.props} />, this.layerContainer)
-      : null;
-  }
-}
+  return layerContainer
+    ? createPortal(<LayerContainer ref={ref} {...props} />, layerContainer)
+    : null;
+});
+
+Layer.displayName = 'Layer';
 
 let LayerDoc;
 if (process.env.NODE_ENV !== 'production') {

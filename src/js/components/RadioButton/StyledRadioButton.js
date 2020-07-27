@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { focusStyle, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
@@ -9,7 +9,11 @@ const disabledStyle = `
 `;
 
 const StyledRadioButtonContainer = styled.label`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   user-select: none;
+  width: fit-content;
   ${props => props.disabled && disabledStyle} ${props =>
     !props.disabled &&
     'cursor: pointer;'}
@@ -38,6 +42,17 @@ const StyledRadioButtonInput = styled.input`
 StyledRadioButtonInput.defaultProps = {};
 Object.setPrototypeOf(StyledRadioButtonInput.defaultProps, defaultProps);
 
+const StyledRadioButtonLabel = styled.span`
+  ${props =>
+    props.theme.radioButton.font.weight &&
+    css`
+      font-weight: ${props.theme.radioButton.font.weight};
+    `}
+`;
+
+StyledRadioButtonLabel.defaultProps = {};
+Object.setPrototypeOf(StyledRadioButtonLabel.defaultProps, defaultProps);
+
 const StyledRadioButtonIcon = styled.svg`
   box-sizing: border-box;
   width: ${props =>
@@ -56,7 +71,10 @@ StyledRadioButtonIcon.defaultProps = {};
 Object.setPrototypeOf(StyledRadioButtonIcon.defaultProps, defaultProps);
 
 const StyledRadioButtonBox = styled.div`
-  ${props => props.focus && focusStyle};
+  background-color: ${props =>
+    props.theme.radioButton.check.background &&
+    props.theme.radioButton.check.background.color};
+  ${props => props.focus && focusStyle()};
   ${props => props.theme.radioButton.check.extend};
 `;
 
@@ -73,6 +91,7 @@ Object.setPrototypeOf(StyledRadioButton.defaultProps, defaultProps);
 export {
   StyledRadioButtonContainer,
   StyledRadioButtonInput,
+  StyledRadioButtonLabel,
   StyledRadioButtonIcon,
   StyledRadioButtonBox,
   StyledRadioButton,

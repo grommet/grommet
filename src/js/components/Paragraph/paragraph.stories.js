@@ -20,6 +20,10 @@ const All = () => (
       </Paragraph>
     ))}
     <Paragraph color="status-critical">This is an error message.</Paragraph>
+    <Paragraph fill>
+      This is a full-width paragraph, using the &quot;fill&quot; property:{' '}
+      {paragraphFiller}
+    </Paragraph>
   </Grommet>
 );
 

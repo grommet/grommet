@@ -13,8 +13,19 @@ import { Form } from 'grommet';
 
 **errors**
 
-An object representing any errors in the data. They keys should
+An object representing any errors in the data. Their keys should
         match the keys in the value object. Defaults to `{}`.
+
+```
+{
+
+}
+```
+
+**infos**
+
+An object representing any information details in the data.
+        Their keys should match the keys in the value object. Defaults to `{}`.
 
 ```
 {
@@ -39,6 +50,7 @@ Custom validation messages. Defaults to `{
 **onChange**
 
 Function that will be called when any fields are updated.
+      The fields must have a non-null `name` property assigned.
 
 ```
 function
@@ -48,7 +60,8 @@ function
 
 Function that will be called when the form is submitted. The
       single argument is an event containing the latest value object
-      via `event.value`.
+      via `event.value` and an object indicating which fields were
+      touched via `event.touched`.
 
 ```
 function
@@ -61,6 +74,15 @@ Function that will be called when the form is reset. The
 
 ```
 function
+```
+
+**validate**
+
+When to perform validation Defaults to `submit`.
+
+```
+blur
+submit
 ```
 
 **value**

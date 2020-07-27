@@ -8,7 +8,7 @@ An accordion containing collapsible panels.
 import { Accordion, AccordionPanel } from 'grommet';
 <Accordion>
   <AccordionPanel label='Panel 1'>...</AccordionPanel>
-  <AccordionPanel label='Panek 2'>...</AccordionPanel>
+  <AccordionPanel label='Panel 2'>...</AccordionPanel>
 </Accordion>
 ```
 
@@ -16,7 +16,8 @@ import { Accordion, AccordionPanel } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 ```
 string
@@ -46,8 +47,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 ```
 none
@@ -59,6 +60,14 @@ large
 xlarge
 {
   bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
     xxsmall
     xsmall
     small
@@ -90,6 +99,14 @@ xlarge
     large
     xlarge
     string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   top: 
     xxsmall
     xsmall
@@ -112,9 +129,9 @@ string
 
 **activeIndex**
 
-Active panel index. If specified, Accordion will be a controlled component. This means that future
-panel changes will not work unless you subscribe to onActive function and update activeIndex
-accordingly.
+Active panel index. If specified, Accordion will be a controlled 
+component. This means that future panel changes will not work unless you
+subscribe to onActive function and update activeIndex accordingly.
 
 ```
 number

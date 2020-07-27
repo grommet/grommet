@@ -1,7 +1,7 @@
 {
   "parser": "babel-eslint",
   "extends": ["airbnb", "prettier"],
-  "plugins": ["prettier"],
+  "plugins": ["prettier", "react-hooks"],
   "env": {
     "node": true,
     "es6": true
@@ -27,6 +27,7 @@
     "afterEach": true,
     "beforeEach": true,
     "afterAll": true,
+    "KeyboardEvent": true,
     "MouseEvent": true,
     "requestAnimationFrame": true
   },
@@ -40,7 +41,15 @@
     "react/jsx-one-expression-per-line": 0,
     "react/jsx-wrap-multilines": 0,
     "no-useless-concat": 0,
-    "react/jsx-indent": 0
+    "react/jsx-indent": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/state-in-constructor": 0,
+    "react/static-property-placement": 0,
+    "react/jsx-curly-newline": 0,
+    "max-len": [2, { "ignoreUrls": true, "ignoreRegExpLiterals": true }],
+    "react-hooks/rules-of-hooks": 2,
+    "react-hooks/exhaustive-deps": 1,
+    "react/sort-comp": 0
   },
   "overrides": [
     {

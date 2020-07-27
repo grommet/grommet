@@ -1,17 +1,17 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { grommet, Grommet, Box, Button } from 'grommet';
-import { deepMerge } from '../../../utils';
+import { Grommet, Box, Button } from 'grommet';
 
-const customButtonColor = deepMerge(grommet, {
+const customButtonColor = {
+  global: { font: { family: 'Arial' } },
   button: {
     color: {
       light: 'white',
       dark: 'white',
     },
   },
-});
+};
 
 const Colored = props => (
   <Grommet theme={customButtonColor}>
@@ -45,12 +45,7 @@ const Colored = props => (
         onClick={() => {}}
         {...props}
       />
-      <Button
-        plain
-        label="plain inherit"
-        onClick={() => {}}
-        {...props}
-      />
+      <Button plain label="plain inherit" onClick={() => {}} {...props} />
     </Box>
   </Grommet>
 );

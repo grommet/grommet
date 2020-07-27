@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
@@ -10,44 +10,48 @@ describe('InfiniteScroll', () => {
   while (items.length < 4) items.push(items.length);
 
   test('basic', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <InfiniteScroll />
+        <InfiniteScroll items={items}>
+          {(item, index, ref) => (
+            <div ref={ref} key={index}>
+              {item}
+            </div>
+          )}
+        </InfiniteScroll>
         <InfiniteScroll items={items}>
           {(item, index) => <div key={index}>{item}</div>}
         </InfiniteScroll>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('step', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <InfiniteScroll items={items} step={2}>
           {(item, index) => <div key={index}>{item}</div>}
         </InfiniteScroll>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('show', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <InfiniteScroll items={items} step={2} show={3}>
           {(item, index) => <div key={index}>{item}</div>}
         </InfiniteScroll>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('renderMarker', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <InfiniteScroll
           items={items}
@@ -58,19 +62,17 @@ describe('InfiniteScroll', () => {
         </InfiniteScroll>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('replace', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <InfiniteScroll items={items} step={2} replace>
           {(item, index) => <div key={index}>{item}</div>}
         </InfiniteScroll>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

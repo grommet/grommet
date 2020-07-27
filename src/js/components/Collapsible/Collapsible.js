@@ -1,140 +1,118 @@
-import React, { createRef, Component } from 'react';
-import { compose } from 'recompose';
-import styled, { withTheme } from 'styled-components';
+import React, {
+  forwardRef,
+  useContext,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useState,
+} from 'react';
+import styled, { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
-
+import { useForwardedRef } from '../../utils';
 import { Box } from '../Box';
-
-const animatedBoxProperty = direction =>
-  direction === 'horizontal' ? 'width' : 'height';
 
 const AnimatedBox = styled(Box)`
   ${props =>
-    !props.animate &&
-    (props.open
-      ? `
-    max-${animatedBoxProperty(props.collapsibleDirection)}: unset;
-    visibility: visible;
-  `
-      : `
-    max-${animatedBoxProperty(props.collapsibleDirection)}: 0;
-    visibility: hidden;
-    overflow: hidden;
-  `)};
+    // eslint-disable-next-line max-len
+    `transition: ${`max-${props.dimension} ${props.speedProp}ms, opacity ${props.speedProp}ms`};
+      opacity: ${props.open ? 1 : 0};
+      overflow: ${props.animate || !props.open ? 'hidden' : 'visible'};
+      max-${props.dimension}: ${props.open ? 'unset' : 0};
+    `}
 `;
 
-class Collapsible extends Component {
-  ref = createRef();
+const Collapsible = forwardRef(
+  ({ children, direction, open: openArg }, ref) => {
+    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const [open, setOpen] = useState(openArg);
+    const [animate, setAnimate] = useState(false);
+    const [size, setSize] = useState();
+    const [speed, setSpeed] = useState(theme.collapsible.minSpeed);
+    const dimension = useMemo(
+      () => (direction === 'horizontal' ? 'width' : 'height'),
+      [direction],
+    );
+    const containerRef = useForwardedRef(ref);
 
-  static getDerivedStateFromProps(nextProps, prevState) {
-    const { open } = nextProps;
-    if (open !== prevState.open) {
-      return {
-        animate: true,
-        open,
-      };
-    }
-    return null;
-  }
-
-  constructor(props, context) {
-    super(props, context);
-
-    /* eslint-disable-next-line react/prop-types */
-    this.state = { open: props.open, animate: false };
-  }
-
-  componentDidUpdate(prevProps, prevState, snapshot) {
-    const {
-      /* eslint-disable-next-line react/prop-types */
-      direction,
-      theme: {
-        collapsible: { minSpeed, baseline },
-      },
-    } = this.props;
-    const { animate, open } = this.state;
-
-    const container = this.ref.current;
-    if (container) {
-      const dimension = animatedBoxProperty(direction);
-      const boudingClientRect = container.getBoundingClientRect();
-      const dimensionSize = boudingClientRect[dimension];
-
-      let shouldAnimate = animate && prevState.open !== open;
-
-      if (
-        open &&
-        snapshot[dimension] &&
-        dimensionSize !== snapshot[dimension]
-      ) {
-        shouldAnimate = true;
+    // when the caller changes openArg, trigger animation
+    useEffect(() => {
+      if (openArg !== open) {
+        setAnimate(true);
+        setOpen(openArg);
       }
+    }, [open, openArg]);
 
-      if (shouldAnimate) {
-        if (this.animationTimeout) {
-          clearTimeout(this.animationTimeout);
-        }
+    // When we animate, start a timer to clear out the animation when it
+    // has finished.
+    useEffect(() => {
+      if (animate) {
+        const timer = setTimeout(() => {
+          setAnimate(false);
+          setSize(undefined);
+          const container = containerRef.current;
+          container.removeAttribute('style');
+        }, speed);
+        return () => clearTimeout(timer);
+      }
+      return undefined;
+    }, [animate, containerRef, speed]);
 
-        const speed = Math.max((dimensionSize / baseline) * minSpeed, minSpeed);
+    useEffect(() => {
+      if (animate) {
+        const {
+          collapsible: { minSpeed, baseline },
+        } = theme;
+        const container = containerRef.current;
+        // get the desired size by unsetting the max temporarily
+        container.style[`max-${dimension}`] = 'unset';
+        const rect = container.getBoundingClientRect();
+        container.removeAttribute('style');
+        const nextSize = rect[dimension];
+        // start with the max set to the size we are starting from
+        container.style[`max-${dimension}`] = open ? 0 : `${nextSize}px`;
+        setSize(nextSize);
+        const nextSpeed = Math.max((nextSize / baseline) * minSpeed, minSpeed);
+        setSpeed(nextSpeed);
+      }
+    }, [animate, containerRef, dimension, open, theme]);
 
-        container.style[`max-${dimension}`] = `${snapshot[dimension]}px`;
-        container.style.overflow = 'hidden';
-
+    useLayoutEffect(() => {
+      if (animate && size) {
+        const container = containerRef.current;
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
-            container.style.transition = `max-${dimension} ${speed}ms, visibility 50ms`;
-            container.style[`max-${dimension}`] = open
-              ? `${dimensionSize}px`
-              : '0px';
-
-            this.animationTimeout = setTimeout(() => {
-              container.removeAttribute('style');
-              this.setState({
-                animate: false,
-              });
-            }, speed);
+            // Change the max to where we want to end up, the transition will
+            // animate to get there. We do this in an animation frame to
+            // give our starter setting a chance to fully render.
+            container.style[`max-${dimension}`] = open ? `${size}px` : 0;
           });
         });
       }
-    }
-  }
-
-  componentWillUnmount() {
-    if (this.animationTimeout) {
-      clearTimeout(this.animationTimeout);
-    }
-  }
-
-  getSnapshotBeforeUpdate = () =>
-    this.ref.current && this.ref.current.getBoundingClientRect();
-
-  render() {
-    /* eslint-disable-next-line react/prop-types */
-    const { children, direction } = this.props;
-    const { animate, open } = this.state;
+    }, [animate, containerRef, dimension, open, size]);
 
     return (
       <AnimatedBox
         aria-hidden={!open}
-        ref={this.ref}
+        ref={containerRef}
         open={open}
         animate={animate}
-        collapsibleDirection={direction}
+        dimension={dimension}
+        speedProp={speed}
       >
         {children}
       </AnimatedBox>
     );
-  }
-}
+  },
+);
 
-Collapsible.defaultProps = {};
-Object.setPrototypeOf(Collapsible.defaultProps, defaultProps);
+Collapsible.displayName = 'Collapsible';
 
 let CollapsibleDoc;
 if (process.env.NODE_ENV !== 'production') {
-  CollapsibleDoc = require('./doc').doc(Collapsible); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  CollapsibleDoc = require('./doc').doc(Collapsible);
 }
-const CollapsibleWrapper = compose(withTheme)(CollapsibleDoc || Collapsible);
+const CollapsibleWrapper = CollapsibleDoc || Collapsible;
 
 export { CollapsibleWrapper as Collapsible };

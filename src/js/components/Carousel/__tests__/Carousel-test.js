@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
-import { cleanup, render, fireEvent } from 'react-testing-library';
+import { cleanup, render, fireEvent, act } from '@testing-library/react';
 
 import { Grommet } from '../../Grommet';
 import { Carousel } from '..';
@@ -14,6 +14,19 @@ describe('Carousel', () => {
     const component = renderer.create(
       <Grommet>
         <Carousel>
+          <Image src="//v2.grommet.io/assets/IMG_4245.jpg" />
+          <Image src="//v2.grommet.io/assets/IMG_4210.jpg" />
+        </Carousel>
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('basic with `initialChild: 1`', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Carousel initialChild={1}>
           <Image src="//v2.grommet.io/assets/IMG_4245.jpg" />
           <Image src="//v2.grommet.io/assets/IMG_4210.jpg" />
         </Carousel>
@@ -49,7 +62,8 @@ describe('Carousel', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('play', done => {
+  test('play', () => {
+    jest.useFakeTimers();
     const { container } = render(
       <Grommet>
         <Carousel play={1000}>
@@ -59,11 +73,10 @@ describe('Carousel', () => {
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
-
-    // give some time for the carousel to advance
-    setTimeout(() => {
-      expect(container.firstChild).toMatchSnapshot();
-      done();
-    }, 1300);
+    // Advance timers so the carousel advances
+    act(() => {
+      jest.advanceTimersByTime(1300);
+    });
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

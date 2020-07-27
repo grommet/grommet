@@ -17,7 +17,8 @@ base so we can style it. You can either set the icon and/or label properties
 or just use children.`,
     )
     .usage(
-      "import { Anchor } from 'grommet';\n<Anchor href={location} label='Label' />",
+      "import { Anchor } from 'grommet';\n" +
+        "<Anchor href={location} label='Label' />",
     )
     .intrinsicElement('a');
 
@@ -29,6 +30,9 @@ or just use children.`,
     color: colorPropType.description(
       'Label color and icon color, if not specified on the icon.',
     ),
+    disabled: PropTypes.bool
+      .description('Whether the anchor is disabled.')
+      .defaultValue(false),
     href: PropTypes.string.description(
       'Hyperlink reference to place in the anchor.',
     ),
@@ -56,8 +60,8 @@ or just use children.`,
       PropTypes.string,
     ]).description(
       `The font size is typically driven by the components containing
-this component. But, it can be adjusted directly via this size property, typically
-when it is not contained in a 'Heading', 'Paragraph', or 'Text'.`,
+this component. But, it can be adjusted directly via this size property,
+typically when it is not contained in a 'Heading', 'Paragraph', or 'Text'.`,
     ),
     as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description(
       `The DOM tag or react component to use for the element.`,
@@ -79,8 +83,9 @@ export const themeDoc = {
     defaultValue: 600,
   },
   'anchor.textDecoration': {
-    description:
-      'The text decoration of the label. Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration) for possible values.',
+    description: `The text decoration of the label. 
+Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
+for possible values.`,
     type: 'string',
     defaultValue: 'none',
   },
@@ -90,8 +95,9 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'anchor.hover.textDecoration': {
-    description:
-      'The text decoration of the label when hovering. Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration) for possible values.',
+    description: `The text decoration of the label when hovering. 
+Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
+for possible values.`,
     type: 'string',
     defaultValue: 'underline',
   },

@@ -23,6 +23,16 @@ export const doc = Carousel => {
     play: PropTypes.number.description(`If specified, the number of
       milliseconds between automatically transitioning to the next child. It
       will loop through all children indefinitely.`),
+    initialChild: PropTypes.number.description(`If specified, the index of
+      the first element to be shown. Defaults to 0.`),
+    controls: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.oneOf(['arrows', 'selectors']),
+    ])
+      .description(
+        `Whether to show carousel controls and which type of controls.`,
+      )
+      .defaultValue(true),
   };
 
   return DocumentedCarousel;
@@ -45,8 +55,8 @@ export const themeDoc = {
     defaultValue: '<Previous />',
   },
   'carousel.icons.current': {
-    description:
-      'The icon to use on the middle navigation control. One icon per carousel image.',
+    description: `The icon to use on the middle navigation control. 
+      One icon per carousel image.`,
     type: 'element',
     defaultValue: '<Next />',
   },
@@ -60,13 +70,6 @@ export const themeDoc = {
     type: "string | { 'dark': string, 'light': string }",
     defaultValue: undefined,
   },
-  'global.colors.icon': {
-    description: 'The color used for Carousel icons.',
-    type: "string | { 'dark': string, 'light': string }",
-    defaultValue: {
-      dark: '#f8f8f8',
-      light: '#666666',
-    },
-  },
+  ...themeDocUtils.iconColor,
   ...themeDocUtils.edgeStyle('The possible sizes for margin.'),
 };

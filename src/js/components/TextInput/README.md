@@ -11,6 +11,14 @@ import { TextInput } from 'grommet';
 
 ## Properties
 
+**a11yTitle**
+
+Custom title to be used by screen readers.
+
+```
+string
+```
+
 **dropAlign**
 
 How to align the drop. Defaults to `{
@@ -66,6 +74,16 @@ Any valid Drop prop.
 object
 ```
 
+**icon**
+
+An optional icon to show. This could be used to provide an
+      indication of what kind of input is expected, like an email icon,
+      or what the input will be used for, like a search icon.
+
+```
+element
+```
+
 **id**
 
 The id attribute of the input.
@@ -84,7 +102,8 @@ boolean
 
 **messages**
 
-Custom messages for TextInput. Used for accessibility by screen readers. Defaults to `{
+Custom messages for TextInput. Used for accessibility by screen
+        readers. Defaults to `{
   "enterSelect": "(Press Enter to Select)",
   "suggestionsCount": "suggestions available",
   "suggestionsExist": "This input has suggestions use arrow keys to navigate",
@@ -102,7 +121,7 @@ Custom messages for TextInput. Used for accessibility by screen readers. Default
 
 **name**
 
-The name attribute of the input.
+The name of the attribute when in a Form or FormField.
 
 ```
 string
@@ -146,15 +165,22 @@ function
 Placeholder to use when no value is provided.
 
 ```
-string
 node
-element
 ```
 
 **plain**
 
 Whether this is a plain input with no border or padding.
 Only use this when the containing context provides sufficient affordance
+
+```
+boolean
+```
+
+**reverse**
+
+Whether an icon should be reversed so that the icon is at the
+      end of the input.
 
 ```
 boolean
@@ -255,7 +281,8 @@ Defaults to
 
 **text**
 
-The possible sizes of the text in terms of its font-size and line-height. Expects `object`.
+The possible sizes of the text in terms of its font-size and
+    line-height. Expects `object`.
 
 Defaults to
 
@@ -330,22 +357,62 @@ undefined
 
 **textInput.disabled.opacity**
 
-The opacity when the textInput is disabled. Expects `number`.
+The opacity when the textInput is disabled. Expects `number | string`.
 
 Defaults to
 
 ```
-0.3
+undefined
 ```
 
 **global.focus.border.color**
 
-The color around the component when in focus. Expects `string | { dark: string, light: string }`.
+The border color of the component when in focus. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
 ```
 focus
+```
+
+**global.focus.outline.color**
+
+The outline color around the component when in focus. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.focus.outline.size**
+
+The size of the outline around the component when in focus. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.focus.shadow.color**
+
+The shadow color around the component when in focus. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+focus
+```
+
+**global.focus.shadow.size**
+
+The size of the shadow around the component when in focus. Expects `string`.
+
+Defaults to
+
+```
+2px
 ```
 
 **global.colors.placeholder**
@@ -368,9 +435,30 @@ Defaults to
 0.3
 ```
 
-**global.input.weight**
+**global.input.font.height**
 
-The font weight of the text entered. Expects `number`.
+The line-height of the text. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.input.font.size**
+
+The size of the text. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.input.font.weight**
+
+The font-weight of the text. This value will only be 
+      applied if global.input.weight is undefined. Expects `number | string`.
 
 Defaults to
 
@@ -378,9 +466,21 @@ Defaults to
 600
 ```
 
+**global.input.weight**
+
+This value has been deprecated and replaced by 
+      global.input.font.weight. Expects `number | string`.
+
+Defaults to
+
+```
+undefined
+```
+
 **global.input.padding**
 
-The padding of the text. Expects `string`.
+The padding of the text. Expects `string | { top: string, bottom: string, left: string, right: 
+        string, horizontal: string, vertical: string }`.
 
 Defaults to
 

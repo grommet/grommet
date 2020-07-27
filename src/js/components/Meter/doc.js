@@ -1,10 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import {
-  backgroundPropType,
-  genericProps,
-  getAvailableAtBadge,
-} from '../../utils';
+import { genericProps, getAvailableAtBadge } from '../../utils';
 
 export const doc = Meter => {
   const DocumentedMeter = describe(Meter)
@@ -19,10 +15,25 @@ export const doc = Meter => {
 
   DocumentedMeter.propTypes = {
     ...genericProps,
-    background: backgroundPropType.defaultValue({
-      color: 'light-2',
-      opacity: 'medium',
-    }),
+    background: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.shape({
+        color: PropTypes.string,
+        opacity: PropTypes.oneOfType([
+          PropTypes.oneOf(['weak', 'medium', 'strong']),
+          PropTypes.number,
+          PropTypes.bool,
+        ]),
+      }),
+    ])
+      .description('Background color')
+      .defaultValue({
+        color: 'light-2',
+        opacity: 'medium',
+      }),
+    max: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).description(
+      'The maximum value for the Meter.',
+    ),
     round: PropTypes.bool
       .description('Whether to round the line ends')
       .defaultValue(false),
@@ -67,8 +78,18 @@ export const doc = Meter => {
 };
 
 export const themeDoc = {
+  'global.colors': {
+    description: 'Color options.',
+    type: 'object',
+    defaultValue: `{
+      "accent-1": "#6FFFB0",
+      "graph-0": "accent-1",
+      ...
+    }`,
+  },
   'global.edgeSize': {
-    description: 'The border-radius of the styled Meter. thickness, height and width of the Bar Meter, height of the Circle Meter.',
+    description: `The border-radius of the styled Meter. thickness, height and 
+    width of the Bar Meter, height of the Circle Meter.`,
     type: 'object',
     defaultValue: `{
         none: '0px',
@@ -111,4 +132,4 @@ export const themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
-}
+};

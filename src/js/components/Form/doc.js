@@ -15,8 +15,14 @@ export const doc = Form => {
   DocumentedForm.propTypes = {
     errors: PropTypes.shape({})
       .description(
-        `An object representing any errors in the data. They keys should
+        `An object representing any errors in the data. Their keys should
         match the keys in the value object.`,
+      )
+      .defaultValue({}),
+    infos: PropTypes.shape({})
+      .description(
+        `An object representing any information details in the data.
+        Their keys should match the keys in the value object.`,
       )
       .defaultValue({}),
     messages: PropTypes.shape({
@@ -26,17 +32,22 @@ export const doc = Form => {
       .description('Custom validation messages.')
       .defaultValue({ invalid: 'invalid', required: 'required' }),
     onChange: PropTypes.func.description(
-      'Function that will be called when any fields are updated.',
+      `Function that will be called when any fields are updated.
+      The fields must have a non-null \`name\` property assigned.`,
     ),
     onSubmit: PropTypes.func.description(
       `Function that will be called when the form is submitted. The
       single argument is an event containing the latest value object
-      via \`event.value\`.`,
+      via \`event.value\` and an object indicating which fields were
+      touched via \`event.touched\`.`,
     ),
     onReset: PropTypes.func.description(
       `Function that will be called when the form is reset. The
       single argument is the event provided by react.`,
     ),
+    validate: PropTypes.oneOf(['blur', 'submit'])
+      .description('When to perform validation')
+      .defaultValue('submit'),
     value: PropTypes.shape({})
       .description('An object representing all of the data in the form.')
       .defaultValue({}),

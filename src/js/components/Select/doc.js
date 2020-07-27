@@ -83,7 +83,8 @@ export const doc = Select => {
       PropTypes.func,
       PropTypes.node,
     ]).description(
-      'A custom icon to be used when rendering the select. You can use false to not render an icon at all.',
+      `A custom icon to be used when rendering the select. You can use false to
+       not render an icon at all.`,
     ),
     labelKey: PropTypes.oneOfType([
       PropTypes.string,
@@ -100,6 +101,9 @@ export const doc = Select => {
     }).description('Custom messages.'),
     multiple: PropTypes.bool.description(
       'Whether to allow multiple options to be selected.',
+    ),
+    name: PropTypes.string.description(
+      `The name of the attribute when in a Form or FormField.`,
     ),
     onChange: PropTypes.func.description(
       'Function that will be called when the user selects an option.',
@@ -121,17 +125,11 @@ export const doc = Select => {
       is more than you'd want to load into the browser. 'onMore' allows you
       to lazily fetch more from the server only when needed.`,
     ),
-    replace: PropTypes.bool
-      .description(
-        `Whether to replace previously rendered items with a generic spacing
-      element when they have scrolled out of view. This is more performant but
-      means that in-page searching will not find elements that have been
-      replaced.`,
-      )
-      .defaultValue(true),
     options: PropTypes.arrayOf(
       PropTypes.oneOfType([
         PropTypes.string,
+        PropTypes.number,
+        PropTypes.bool,
         PropTypes.element,
         PropTypes.object,
       ]),
@@ -142,14 +140,23 @@ export const doc = Select => {
     open: PropTypes.bool.description(`Control the state of the component.`),
     placeholder: PropTypes.oneOfType([
       PropTypes.string,
-      PropTypes.node,
       PropTypes.element,
-    ]).description('Placeholder text to use when no value is provided.'),
+      PropTypes.node,
+    ]).description('Placeholder to use when no value is provided.'),
     plain: PropTypes.bool.description(
       'Whether this is a plain Select input with no border or padding.',
     ),
+    replace: PropTypes.bool
+      .description(
+        `Whether to replace previously rendered items with a generic spacing
+      element when they have scrolled out of view. This is more performant but
+      means that in-page searching will not find elements that have been
+      replaced.`,
+      )
+      .defaultValue(true),
     searchPlaceholder: PropTypes.string.description(
-      'Placeholder text to use in the search box when the search input is empty.',
+      `Placeholder text to use in the search box when the search input is 
+      empty.`,
     ),
     selected: PropTypes.oneOfType([
       PropTypes.number,
@@ -162,13 +169,18 @@ export const doc = Select => {
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
       PropTypes.string,
-    ]).description('The size of the select.'),
+    ]).description('The size of the text and icon.'),
     value: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.element, // deprecated, use valueLabel
       PropTypes.object,
+      PropTypes.number,
       PropTypes.arrayOf(
-        PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+        PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.object,
+          PropTypes.number,
+        ]),
       ),
     ]).description(`Currently selected value. This can be an array
       when multiple. Passing an element allows the caller to control how
@@ -181,12 +193,18 @@ export const doc = Select => {
     valueKey: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.func,
+      PropTypes.shape({
+        key: PropTypes.string,
+        reduce: PropTypes.bool,
+      }),
     ]).description(
       `When the options array contains objects, this property indicates how
       to determine the value of each option. If a string is
       provided, it is used as the key to retrieve each option's value.
       If a function is provided, it is called with the option and the
-      return value indicates the value.`,
+      return value indicates the value. If reduce is true, the value
+      coming via the key will be used for the onChange value and the value
+      property is expected to be reduced to align.`,
     ),
     emptySearchMessage: PropTypes.string
       .description(
@@ -199,6 +217,16 @@ export const doc = Select => {
 };
 
 export const themeDoc = {
+  'global.hover.background': {
+    description: 'The background style when hovering.',
+    type: 'string | { color: string, opacity: string }',
+    defaultValue: "{ color: 'active', opacity: 'medium' }",
+  },
+  'global.hover.color': {
+    description: 'The text color when hovering.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: "{ dark: 'white', light: 'black' }",
+  },
   'select.background': {
     description: 'The background color used for Select.',
     type: 'string',
@@ -222,9 +250,9 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'select.control.open': {
-    description:
-      'Any additional style for the control open state of the Select component.',
-    type: 'object',
+    description: `Any additional style for the Select DropButton when using the
+    controlled open state.`,
+    type: 'string | object',
     defaultValue: undefined,
   },
   'select.control.extend': {
@@ -247,6 +275,11 @@ export const themeDoc = {
     description: 'The down icon to use for opening the Select.',
     type: 'React.Element',
     defaultValue: '<FormDown />',
+  },
+  'select.icons.up': {
+    description: 'The up icon to use for closing the Select.',
+    type: 'React.Element',
+    defaultValue: undefined,
   },
   'select.searchInput': {
     description: `Component for the Select search input field.`,

@@ -13,7 +13,8 @@ import { Meter } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 ```
 string
@@ -43,8 +44,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 ```
 none
@@ -56,6 +57,14 @@ large
 xlarge
 {
   bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
     xxsmall
     xsmall
     small
@@ -80,6 +89,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -122,8 +139,18 @@ string
     weak
     medium
     strong
+    number
     boolean
 }
+```
+
+**max**
+
+The maximum value for the Meter.
+
+```
+number
+string
 ```
 
 **round**
@@ -195,9 +222,24 @@ Array of value objects describing the data.
   
 ## Theme
   
+**global.colors**
+
+Color options. Expects `object`.
+
+Defaults to
+
+```
+{
+      "accent-1": "#6FFFB0",
+      "graph-0": "accent-1",
+      ...
+    }
+```
+
 **global.edgeSize**
 
-The border-radius of the styled Meter. thickness, height and width of the Bar Meter, height of the Circle Meter. Expects `object`.
+The border-radius of the styled Meter. thickness, height and 
+    width of the Bar Meter, height of the Circle Meter. Expects `object`.
 
 Defaults to
 

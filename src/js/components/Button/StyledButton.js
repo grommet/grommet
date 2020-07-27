@@ -6,9 +6,50 @@ import {
   disabledStyle,
   focusStyle,
   genericStyles,
+  getHoverIndicatorStyle,
   normalizeColor,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
+
+const radiusStyle = props => {
+  // border.radius shouldn't impact an only-icon rendering.
+  const isIconOnly = props.hasIcon && !props.hasLabel;
+  const size = props.sizeProp;
+
+  if (
+    !isIconOnly &&
+    size &&
+    props.theme.button.size &&
+    props.theme.button.size[size]
+  ) {
+    return props.theme.button.size[size].border.radius;
+  }
+  return props.theme.button.border.radius;
+};
+
+const fontStyle = props => {
+  const size = props.sizeProp || 'medium';
+  const data = props.theme.text[size];
+  return css`
+    font-size: ${data.size};
+    line-height: ${data.height};
+  `;
+};
+
+const padStyle = props => {
+  const size = props.sizeProp;
+
+  if (size && props.theme.button.size && props.theme.button.size[size]) {
+    return css`
+      ${props.theme.button.size[size].pad.vertical}
+      ${props.theme.button.size[size].pad.horizontal}
+    `;
+  }
+  return css`
+    ${props.theme.button.padding.vertical}
+    ${props.theme.button.padding.horizontal}
+  `;
+};
 
 const basicStyle = props => css`
   border: ${props.theme.button.border.width} solid
@@ -16,47 +57,48 @@ const basicStyle = props => css`
       props.colorValue || props.theme.button.border.color || 'control',
       props.theme,
     )};
-  border-radius: ${props.theme.button.border.radius};
+  border-radius: ${radiusStyle(props)};
   color: ${normalizeColor(props.theme.button.color || 'text', props.theme)};
-  padding: ${props.theme.button.padding.vertical}
-    ${props.theme.button.padding.horizontal};
-  font-size: ${props.theme.text.medium.size};
-  line-height: ${props.theme.text.medium.height};
+  padding: ${padStyle(props)};
+  ${fontStyle(props)}
 `;
 
 const primaryStyle = props => css`
   ${backgroundStyle(
     normalizeColor(
-      props.colorValue || props.theme.button.primary.color || 'control',
+      props.colorValue ||
+        (props.theme.button.primary && props.theme.button.primary.color) ||
+        'control',
       props.theme,
     ),
     props.theme,
     props.theme.button.color,
   )}
-  border-radius: ${props.theme.button.border.radius};
+  border-radius: ${radiusStyle(props)};
+  ${props.theme.button.primary && props.theme.button.primary.extend}
 `;
 
 function getHoverColor(props) {
   if (props.colorValue) {
     return normalizeColor(props.colorValue, props.theme);
   }
+  if (
+    props.active &&
+    props.primary &&
+    props.theme.button.primary &&
+    props.theme.button.primary.active &&
+    props.theme.button.primary.active.border &&
+    props.theme.button.primary.active.border.color
+  ) {
+    return normalizeColor(
+      props.theme.button.primary.active.border.color,
+      props.theme,
+    );
+  }
   return normalizeColor(
     props.theme.button.border.color || 'control',
     props.theme,
   );
-}
-
-function getHoverIndicatorStyle(hoverIndicator, theme) {
-  let background;
-  if (hoverIndicator === true || hoverIndicator === 'background') {
-    ({ background } = theme.global.hover);
-  } else {
-    background = hoverIndicator;
-  }
-  return css`
-    ${backgroundStyle(background, theme)}
-    color: ${normalizeColor(theme.global.hover.color, theme)};
-  `;
 }
 
 const hoverStyle = css`
@@ -91,9 +133,52 @@ const fillStyle = fillContainer => {
 
 const plainStyle = props => css`
   color: ${normalizeColor(props.colorValue || 'inherit', props.theme)};
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
+`;
+
+const activeButtonStyle = props => css`
+  ${activeStyle}
+  ${props.primary &&
+    props.theme.button.primary &&
+    props.theme.button.primary.active &&
+    props.theme.button.primary.active.border &&
+    props.theme.button.primary.active.border.color &&
+    `border: ${props.theme.button.border.width} solid
+    ${normalizeColor(
+      props.theme.button.primary.active.border.color,
+      props.theme,
+    )};
+    `}
+  ${props.primary &&
+    props.theme.button.primary &&
+    props.theme.button.primary.active &&
+    props.theme.button.primary.active.extend}
+`;
+
+const disabledButtonStyle = props => css`
+  ${disabledStyle(props.theme.button.disabled.opacity)}
+  ${!props.plain &&
+    props.theme.button.disabled.border &&
+    props.theme.button.disabled.border.color &&
+    `border: ${props.theme.button.border.width} solid
+    ${normalizeColor(props.theme.button.disabled.border.color, props.theme)};`}
+  ${props.theme.button.disabled.color &&
+    // if primary button, apply disabled color to background. otherwise,
+    // apply disabled color to the label
+    (props.primary
+      ? backgroundStyle(
+          normalizeColor(props.theme.button.disabled.color, props.theme),
+          props.theme,
+          props.theme.button.color,
+        )
+      : `color: ${normalizeColor(
+          props.theme.button.disabled.color,
+          props.theme,
+        )};`)}
+  ${props.theme.button.disabled && props.theme.button.disabled.extend}
 `;
 
 // Deprecate props.theme.button.disabled.opacity in V3
@@ -101,7 +186,6 @@ const StyledButton = styled.button`
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   text-decoration: none;
   margin: 0;
@@ -116,18 +200,21 @@ const StyledButton = styled.button`
 
   ${props => !props.disabled && !props.focus && hoverStyle}
 
-  ${props => !props.disabled && props.active && activeStyle}
+  ${props => !props.disabled && props.active && activeButtonStyle(props)}
   ${props =>
     props.disabled &&
-    disabledStyle(
-      props.theme.button.disabled && props.theme.button.disabled.opacity,
-    )}
+    props.theme.button &&
+    props.theme.button.disabled &&
+    disabledButtonStyle(props)}
   ${props =>
-    props.focus && (!props.plain || props.focusIndicator) && focusStyle}
+    props.focus && (!props.plain || props.focusIndicator) && focusStyle()}
   ${props =>
     !props.plain &&
+    props.theme.button.transition &&
     `
-    transition: 0.1s ease-in-out;
+    transition-property: ${props.theme.button.transition.properties.join(',')};
+    transition-duration: ${props.theme.button.transition.duration}s;
+    transition-timing-function: ${props.theme.button.transition.timing};
   `}
   ${props => props.fillContainer && fillStyle(props.fillContainer)}
   ${props =>
@@ -136,14 +223,14 @@ const StyledButton = styled.button`
     `
     line-height: 0;
   `}
-${props =>
-  props.pad &&
-  props.hasIcon &&
-  !props.hasLabel &&
-  `
-padding: ${props.theme.global.edgeSize.small};
-`}
-  ${props => props.theme.button.extend}
+  ${props =>
+    props.pad &&
+    props.hasIcon &&
+    !props.hasLabel &&
+    `
+    padding: ${props.theme.global.edgeSize.small};
+  `}
+  ${props => props.theme.button && props.theme.button.extend}
 `;
 
 StyledButton.defaultProps = {};

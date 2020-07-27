@@ -1,38 +1,43 @@
-import React, { Component } from 'react';
-import { compose } from 'recompose';
+import React, { forwardRef, useContext, useState } from 'react';
+import { ThemeContext } from 'styled-components';
 
-import { withTheme } from 'styled-components';
-
+import { Box } from '../Box';
 import { defaultProps } from '../../default-props';
 import { normalizeColor, removeUndefined } from '../../utils';
-import { Box } from '../Box';
-import { withForwardRef } from '../hocs';
 
 import {
   StyledRadioButton,
   StyledRadioButtonContainer,
   StyledRadioButtonIcon,
   StyledRadioButtonInput,
+  StyledRadioButtonLabel,
   StyledRadioButtonBox,
 } from './StyledRadioButton';
 
-class RadioButton extends Component {
-  render() {
-    const {
+const RadioButton = forwardRef(
+  (
+    {
+      a11yTitle,
       checked,
+      children,
       disabled,
       focus,
-      forwardRef,
       id,
       label,
       name,
       onChange,
-      theme,
       ...rest
-    } = this.props;
-
+    },
+    ref,
+  ) => {
+    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const [hover, setHover] = useState();
     const normalizedLabel =
-      typeof label === 'string' ? <span>{label}</span> : label;
+      typeof label === 'string' ? (
+        <StyledRadioButtonLabel>{label}</StyledRadioButtonLabel>
+      ) : (
+        label
+      );
 
     const Icon = theme.radioButton.icons.circle;
     let borderColor = normalizeColor(theme.radioButton.border.color, theme);
@@ -42,9 +47,6 @@ class RadioButton extends Component {
 
     return (
       <StyledRadioButtonContainer
-        as={props => <Box as="label" {...props} />}
-        direction="row"
-        align="center"
         {...removeUndefined({ htmlFor: id, disabled })}
         onClick={event => {
           // prevents clicking on the label trigging the event twice
@@ -53,14 +55,20 @@ class RadioButton extends Component {
             event.stopPropagation();
           }
         }}
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
       >
         <StyledRadioButton
           as={Box}
-          margin={{ right: theme.radioButton.gap || 'small' }}
+          flex={false}
+          margin={
+            label ? { right: theme.radioButton.gap || 'small' } : undefined
+          }
         >
           <StyledRadioButtonInput
+            aria-label={a11yTitle}
             {...rest}
-            ref={forwardRef}
+            ref={ref}
             type="radio"
             {...removeUndefined({
               id,
@@ -70,48 +78,49 @@ class RadioButton extends Component {
               onChange,
             })}
           />
-          <StyledRadioButtonBox
-            focus={focus}
-            as={Box}
-            align="center"
-            justify="center"
-            width={theme.radioButton.size}
-            height={theme.radioButton.size}
-            border={{
-              size: theme.radioButton.border.width,
-              color: borderColor,
-            }}
-            round={theme.radioButton.check.radius}
-          >
-            {checked &&
-              (Icon ? (
-                <Icon as={StyledRadioButtonIcon} />
-              ) : (
-                <StyledRadioButtonIcon
-                  viewBox="0 0 24 24"
-                  preserveAspectRatio="xMidYMid meet"
-                >
-                  <circle cx={12} cy={12} r={6} />
-                </StyledRadioButtonIcon>
-              ))}
-          </StyledRadioButtonBox>
+          {children ? (
+            children({ checked, hover })
+          ) : (
+            <StyledRadioButtonBox
+              focus={focus}
+              as={Box}
+              align="center"
+              justify="center"
+              width={theme.radioButton.size}
+              height={theme.radioButton.size}
+              border={{
+                size: theme.radioButton.border.width,
+                color: borderColor,
+              }}
+              round={theme.radioButton.check.radius}
+            >
+              {checked &&
+                (Icon ? (
+                  <Icon as={StyledRadioButtonIcon} />
+                ) : (
+                  <StyledRadioButtonIcon
+                    viewBox="0 0 24 24"
+                    preserveAspectRatio="xMidYMid meet"
+                  >
+                    <circle cx={12} cy={12} r={6} />
+                  </StyledRadioButtonIcon>
+                ))}
+            </StyledRadioButtonBox>
+          )}
         </StyledRadioButton>
         {normalizedLabel}
       </StyledRadioButtonContainer>
     );
-  }
-}
+  },
+);
 
-RadioButton.defaultProps = {};
-Object.setPrototypeOf(RadioButton.defaultProps, defaultProps);
+RadioButton.displayName = 'RadioButton';
 
 let RadioButtonDoc;
 if (process.env.NODE_ENV !== 'production') {
-  RadioButtonDoc = require('./doc').doc(RadioButton); // eslint-disable-line global-require
+  // eslint-disable-next-line global-require
+  RadioButtonDoc = require('./doc').doc(RadioButton);
 }
-const RadioButtonWrapper = compose(
-  withTheme,
-  withForwardRef,
-)(RadioButtonDoc || RadioButton);
+const RadioButtonWrapper = RadioButtonDoc || RadioButton;
 
 export { RadioButtonWrapper as RadioButton };

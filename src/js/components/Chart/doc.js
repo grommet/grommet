@@ -1,6 +1,25 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { genericProps, getAvailableAtBadge } from '../../utils';
+import {
+  colorPropType,
+  genericProps,
+  getAvailableAtBadge,
+  padPropType,
+} from '../../utils';
+
+const thicknessType = PropTypes.oneOfType([
+  PropTypes.oneOf([
+    'hair',
+    'xsmall',
+    'small',
+    'medium',
+    'large',
+    'xlarge',
+    'none',
+  ]),
+  PropTypes.string,
+  PropTypes.number,
+]);
 
 export const doc = Chart => {
   const DocumentedChart = describe(Chart)
@@ -13,24 +32,60 @@ export const doc = Chart => {
   DocumentedChart.propTypes = {
     ...genericProps,
     bounds: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).description(
-      `The limits for the values, specified as a two dimensional array.
+      `The limits for the values, specified as a two dimensional array. 
+      The first array specifies the limits of the x-axis. The second array 
+      specifies the limits of the y-axis. 
+      For example: [[x-min, x-max], [y-min, y-max]].
       If not specified, the bounds will automatically be set to fit
       the provided values.`,
     ),
     color: PropTypes.oneOfType([
-      PropTypes.string,
+      colorPropType,
       PropTypes.shape({
-        color: PropTypes.string,
+        color: colorPropType,
         opacity: PropTypes.oneOfType([
           PropTypes.oneOf(['weak', 'medium', 'strong']),
           PropTypes.bool,
         ]),
       }),
+      PropTypes.arrayOf(
+        PropTypes.shape({
+          color: colorPropType,
+          value: PropTypes.number,
+        }),
+      ),
     ])
-      .description('A color identifier to use for the graphic color.')
+      .description(
+        `A color identifier to use for the graphic color. If an
+      array is specified, it is used to create a gradient mask. Array objects
+      indicate what color to show at what value. In the simplest case, the
+      values should map to the Y bounds values, resulting in a vertical
+      gradient. Specifying more objects allows more fine grained control over
+      where the gradient colors change.`,
+      )
       .defaultValue('accent-1'),
-    onClick: PropTypes.func.description(`Called when the user clicks on it.
-      This is only available when the type is line or area.`),
+    id: PropTypes.string.description(`A unique identifier for the Chart. This
+      is required if more than one Chart is shown and they use color
+      gradients.`),
+    dash: PropTypes.bool
+      .description(`Whether to use dashed lines for line or bar charts.`)
+      .defaultValue(false),
+    gap: PropTypes.oneOfType([
+      PropTypes.oneOf([
+        'none',
+        'xxsmall',
+        'xsmall',
+        'small',
+        'medium',
+        'large',
+        'xlarge',
+      ]),
+      PropTypes.string,
+    ]).description(`The amount of spacing between data points. This
+      is only used when the size specifies width as 'auto'.`),
+    onClick: PropTypes.func.description(`Called when the user clicks on the
+     visualization. Clicking on individual bars or points are handled via
+     values[].onClick for those types of charts.`),
     onHover: PropTypes.func.description(`Called with a boolean argument
       indicating when the user hovers onto or away from it.
       This is only available when the type is line or area.`),
@@ -42,6 +97,23 @@ export const doc = Chart => {
       align with the component boundaries.`,
       )
       .defaultValue(false),
+    pad: padPropType.description(
+      `Spacing around the outer edge of the drawing coordinate area.
+      Related to 'overflow', this allows control over how much space
+      is available for bars and points to overflow into.`,
+    ),
+    point: PropTypes.oneOf([
+      'circle',
+      'diamond',
+      'square',
+      'star',
+      'triangle',
+      'triangleDown',
+    ]).description(
+      `When using a 'point' type, what shape the points should use.
+      If this property is not specified, points will be drawn as a square or
+      a circle, based on how 'round' is specified.`,
+    ),
     round: PropTypes.bool
       .description('Whether to round the line ends.')
       .defaultValue(false),
@@ -53,6 +125,7 @@ export const doc = Chart => {
         'medium',
         'large',
         'xlarge',
+        'fill',
         'full',
       ]),
       PropTypes.shape({
@@ -64,6 +137,7 @@ export const doc = Chart => {
             'medium',
             'large',
             'xlarge',
+            'fill',
             'full',
           ]),
           PropTypes.string,
@@ -76,40 +150,38 @@ export const doc = Chart => {
             'medium',
             'large',
             'xlarge',
+            'fill',
             'full',
+            'auto',
           ]),
           PropTypes.string,
         ]),
       }),
       PropTypes.string,
     ])
-      .description('The size of the Chart.')
+      .description(
+        `The size of the Chart.
+      'full' is deprecated as 'fill' is more consistent with how that term is
+      used elsewhere.`,
+      )
       .defaultValue({ width: 'medium', height: 'small' }),
-    thickness: PropTypes.oneOfType([
-      PropTypes.oneOf([
-        'hair',
-        'xsmall',
-        'small',
-        'medium',
-        'large',
-        'xlarge',
-        'none',
-      ]),
-      PropTypes.string,
-    ])
+    thickness: thicknessType
       .description('The width of the stroke.')
       .defaultValue('medium'),
-    type: PropTypes.oneOf(['bar', 'line', 'area'])
-      .description('The visual type of meter.')
+    type: PropTypes.oneOf(['bar', 'line', 'area', 'point'])
+      .description('The visual type of chart.')
       .defaultValue('bar'),
     values: PropTypes.arrayOf(
       PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.arrayOf(PropTypes.number),
         PropTypes.shape({
-          label: PropTypes.string, // for accessibility of bars
+          color: colorPropType,
+          label: PropTypes.string, // for accessibility of bars and points
           onClick: PropTypes.func,
           onHover: PropTypes.func,
+          opacity: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+          thickness: thicknessType,
           value: PropTypes.oneOfType([
             PropTypes.number.isRequired,
             PropTypes.arrayOf(PropTypes.number).isRequired,
@@ -121,7 +193,9 @@ export const doc = Chart => {
       'value' is a tuple indicating the coordinate of the value or a triple
       indicating the x coordinate and a range of two y coordinates.
       'label' is a text string describing it.
-      'onHover' and 'onClick' only work when type='bar'.`,
+      'onHover' and 'onClick' only work when type='bar'.
+      'color', 'opacity', and 'thickness' allow bar and point charts to have
+      color variation per-value.`,
     ).isRequired,
   };
 
@@ -146,15 +220,24 @@ const data = calcs(<values>, { coarseness: 5, steps: [1, 1] });`,
 };
 
 export const themeDoc = {
+  'chart.color': {
+    description: 'Color of the Chart.',
+    type: 'string | {dark: string, light: string}',
+    defaultValue: 'accent-1',
+  },
   'chart.extend': {
     description: 'Any additional style for the Chart.',
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
   'global.colors': {
-    description: 'color options used for Chart fill area.',
+    description: 'Color options.',
     type: 'object',
-    defaultValue: 'accent-1',
+    defaultValue: `{
+      "accent-1": "#6FFFB0",
+      "graph-0": "accent-1",
+      ...
+    }`,
   },
   'global.edgeSize': {
     description: 'The possible sizes for the thickness in the Chart.',
@@ -173,8 +256,12 @@ export const themeDoc = {
   },
   'global.opacity': {
     description: 'The opacity of the Chart stroke.',
-    type: 'string',
-    defaultValue: undefined,
+    type: 'object',
+    defaultValue: `{
+      strong: 0.8,
+      medium: 0.4,
+      weak: 0.1,
+    }`,
   },
   'global.size': {
     description: 'The possible sizes for Chart width and height.',

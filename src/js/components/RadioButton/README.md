@@ -14,12 +14,34 @@ import { RadioButton } from 'grommet';
 
 ## Properties
 
+**a11yTitle**
+
+Custom label to be used by screen readers.
+      When provided, an aria-label will be added to the element.
+
+```
+string
+```
+
 **checked**
 
 Same as React <input checked={} />
 
 ```
 boolean
+```
+
+**children**
+
+Function that will be called to render the visual representation.
+      It will be passed an object indicating whether the button is checked. It
+      should return a react element.
+      For example:
+      `children={({ checked }) => <Box ...>{...}</Box>}`
+      
+
+```
+function
 ```
 
 **disabled**
@@ -49,7 +71,8 @@ node
 
 **name**
 
-Required. The DOM name attribute value to use for the underlying <input/> element.
+Required. The DOM name attribute value to use for the underlying <input/>
+       element.
 
 ```
 string
@@ -69,4 +92,157 @@ function
 
 ```
 input
+```
+## Theme
+  
+**global.colors.control**
+
+The default color of the border surrounding 
+    the checked icon in RadioButton checked state. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+{ dark: 'accent-1', light: 'brand'}
+```
+
+**radioButton.border.color**
+
+The color of the border of the Radio Button. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+{dark: 'rgba(255, 255, 255, 0.5), light: 'rgba(0, 0, 0, 0.15)}
+```
+
+**radioButton.border.width**
+
+The width size of the border of the RadioButton. Expects `string`.
+
+Defaults to
+
+```
+2px
+```
+
+**radioButton.check.background.color**
+
+The background color of the checked icon in the RadioButton. Expects `string | {dark: string, light: string}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**radioButton.check.color**
+
+The color of the checked icon in the RadioButton. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**radioButton.check.extend**
+
+Any additional style for the checked RadioButton. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**radioButton.check.radius**
+
+The border-radius of the RadioButton. Expects `string`.
+
+Defaults to
+
+```
+100%
+```
+
+**radioButton.color**
+
+The color of the border surrounding the checked 
+    icon in RadioButton checked state. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**radioButton.extend**
+
+Any additional style for the RadioButton. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**radioButton.gap**
+
+The gap between the label and the RadioButton itself. Expects `string`.
+
+Defaults to
+
+```
+small
+```
+
+**radioButton.font.weight**
+
+The font weight of the label. Expects `number | string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**radioButton.size**
+
+The size of the RadioButton. Expects `string`.
+
+Defaults to
+
+```
+24px
+```
+
+**radioButton.hover.border.color**
+
+The color of the RadioButton border when hovered over. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+{dark: white, light: black}
+```
+
+**radioButton.icon.extend**
+
+Any additional style for the RadioButton icon. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**radioButton.icon.size**
+
+The size of the icon in the RadioButton. Expects `string`.
+
+Defaults to
+
+```
+undefined
 ```

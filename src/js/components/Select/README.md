@@ -13,7 +13,8 @@ import { Select } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 ```
 string
@@ -43,8 +44,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 ```
 none
@@ -56,6 +57,14 @@ large
 xlarge
 {
   bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
     xxsmall
     xsmall
     small
@@ -80,6 +89,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -223,7 +240,8 @@ boolean
 
 **icon**
 
-A custom icon to be used when rendering the select. You can use false to not render an icon at all.
+A custom icon to be used when rendering the select. You can use false to
+       not render an icon at all.
 
 ```
 boolean
@@ -246,9 +264,7 @@ function
 
 **messages**
 
-Custom messages. Defaults to `{
-  "multiple": "multiple"
-}`.
+Custom messages.
 
 ```
 {
@@ -262,6 +278,14 @@ Whether to allow multiple options to be selected.
 
 ```
 boolean
+```
+
+**name**
+
+The name of the attribute when in a Form or FormField.
+
+```
+string
 ```
 
 **onChange**
@@ -309,17 +333,6 @@ Use this to indicate that 'items' doesn't contain all that it could.
 function
 ```
 
-**replace**
-
-Whether to replace previously rendered items with a generic spacing
-      element when they have scrolled out of view. This is more performant but
-      means that in-page searching will not find elements that have been
-      replaced. Defaults to `true`.
-
-```
-boolean
-```
-
 **options**
 
 Required. Options can be either a string or an object. If an object is used, use
@@ -328,6 +341,8 @@ Required. Options can be either a string or an object. If an object is used, use
 ```
 [
   string
+  number
+  boolean
   element
   object
 ]
@@ -343,12 +358,12 @@ boolean
 
 **placeholder**
 
-Placeholder text to use when no value is provided.
+Placeholder to use when no value is provided.
 
 ```
 string
-node
 element
+node
 ```
 
 **plain**
@@ -359,9 +374,21 @@ Whether this is a plain Select input with no border or padding.
 boolean
 ```
 
+**replace**
+
+Whether to replace previously rendered items with a generic spacing
+      element when they have scrolled out of view. This is more performant but
+      means that in-page searching will not find elements that have been
+      replaced. Defaults to `true`.
+
+```
+boolean
+```
+
 **searchPlaceholder**
 
-Placeholder text to use in the search box when the search input is empty.
+Placeholder text to use in the search box when the search input is 
+      empty.
 
 ```
 string
@@ -380,7 +407,7 @@ number
 
 **size**
 
-The size of the select.
+The size of the text and icon.
 
 ```
 small
@@ -401,9 +428,11 @@ Currently selected value. This can be an array
 string
 element
 object
+number
 [
   string
   object
+  number
 ]
 ```
 
@@ -422,11 +451,17 @@ When the options array contains objects, this property indicates how
       to determine the value of each option. If a string is
       provided, it is used as the key to retrieve each option's value.
       If a function is provided, it is called with the option and the
-      return value indicates the value.
+      return value indicates the value. If reduce is true, the value
+      coming via the key will be used for the onChange value and the value
+      property is expected to be reduced to align.
 
 ```
 string
 function
+{
+  key: string,
+  reduce: boolean
+}
 ```
 
 **emptySearchMessage**
@@ -439,6 +474,26 @@ string
   
 ## Theme
   
+**global.hover.background**
+
+The background style when hovering. Expects `string | { color: string, opacity: string }`.
+
+Defaults to
+
+```
+{ color: 'active', opacity: 'medium' }
+```
+
+**global.hover.color**
+
+The text color when hovering. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+{ dark: 'white', light: 'black' }
+```
+
 **select.background**
 
 The background color used for Select. Expects `string`.
@@ -481,7 +536,8 @@ undefined
 
 **select.control.open**
 
-Any additional style for the control open state of the Select component. Expects `object`.
+Any additional style for the Select DropButton when using the
+    controlled open state. Expects `string | object`.
 
 Defaults to
 
@@ -527,6 +583,16 @@ Defaults to
 
 ```
 <FormDown />
+```
+
+**select.icons.up**
+
+The up icon to use for closing the Select. Expects `React.Element`.
+
+Defaults to
+
+```
+undefined
 ```
 
 **select.searchInput**

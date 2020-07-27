@@ -13,7 +13,10 @@ import { InfiniteScroll } from 'grommet';
 
 **children**
 
-Function that will be called when each item is rendered.
+Function that will be called when each item is rendered. It will be
+      called with three arguments, the item to render, the index of the item,
+      and a ref that should be applied to the element. For example:
+      {(item, index, ref) => <li key={index} ref={ref}>{item}</li>}
 
 ```
 function
@@ -21,7 +24,7 @@ function
 
 **items**
 
-The children callback will be called to render each item. Defaults to `[]`.
+The children callback will be called to render each item.
 
 ```
 [any]

@@ -11,9 +11,31 @@ import { RadioButtonGroup } from 'grommet';
 
 ## Properties
 
+**children**
+
+Function that will be called to render the visual representation.
+      It will be passed an object indicating whether the button is checked. It
+      should return a react element.
+      For example:
+      `children={(option, { checked }) => <Box ...>{...}</Box>}`
+      
+
+```
+function
+```
+
+**disabled**
+
+Disables all options.
+
+```
+boolean
+```
+
 **name**
 
-Required. The DOM name attribute value to use for the underlying <input/> elements.
+Required. The DOM name attribute value to use for the underlying <input/> 
+      elements.
 
 ```
 string
@@ -21,7 +43,7 @@ string
 
 **onChange**
 
-Function that will be called when the user clicks on of the radio
+Function that will be called when the user clicks on one of the radio
       buttons. It will be passed a React event object.
 
 ```
@@ -30,17 +52,23 @@ function
 
 **options**
 
-Required. Options can be either a string or an object.
+Required. Options can be either a string, boolean, number 
+      or an object. Each option is rendered as a single RadioButton.
 
 ```
 [string]
+[number]
+[boolean]
 [{
   disabled: boolean,
   id: string,
   label: 
     string
     element,
-  value: string
+  value: 
+    string
+    number
+    boolean
 }]
 ```
 
@@ -50,6 +78,9 @@ Currently selected option value.
 
 ```
 string
+number
+boolean
+object
 ```
   
 ## Intrinsic element

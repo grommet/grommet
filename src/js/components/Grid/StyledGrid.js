@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { genericStyles } from '../../utils';
+import { edgeStyle, genericStyles } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 const fillStyle = fill => {
@@ -69,23 +69,27 @@ const justifyContentStyle = css`
 
 const gapStyle = props => {
   if (typeof props.gap === 'string') {
-    const gapSize = props.theme.global.edgeSize[props.gap];
+    const gapSize = props.theme.global.edgeSize[props.gap] || props.gap;
     return `grid-gap: ${gapSize} ${gapSize};`;
   }
   if (props.gap.row && props.gap.column) {
     return `
-      grid-row-gap: ${props.theme.global.edgeSize[props.gap.row]};
-      grid-column-gap: ${props.theme.global.edgeSize[props.gap.column]};
+      grid-row-gap: ${props.theme.global.edgeSize[props.gap.row] ||
+        props.gap.row};
+      grid-column-gap: ${props.theme.global.edgeSize[props.gap.column] ||
+        props.gap.column};
     `;
   }
   if (props.gap.row) {
     return `
-      grid-row-gap: ${props.theme.global.edgeSize[props.gap.row]};
+      grid-row-gap: ${props.theme.global.edgeSize[props.gap.row] ||
+        props.gap.row};
     `;
   }
   if (props.gap.column) {
     return `
-      grid-column-gap: ${props.theme.global.edgeSize[props.gap.column]};
+      grid-column-gap: ${props.theme.global.edgeSize[props.gap.column] ||
+        props.gap.column};
     `;
   }
   return '';
@@ -110,6 +114,7 @@ const getRepeatSize = (size, theme) => {
     return `minmax(${theme.global.size[size[0]] || size[0]}, ${theme.global
       .size[size[1]] || size[1]})`;
   }
+  if (size === 'flex') return '1fr';
   return `minmax(${theme.global.size[size] || size}, 1fr)`;
 };
 
@@ -181,6 +186,14 @@ const areasStyle = props => {
   if (!Array.isArray(props.rowsProp) || !Array.isArray(props.columns)) {
     console.warn('Grid `areas` requires `rows` and `columns` to be arrays.');
   }
+  if (
+    Array.isArray(props.areas) &&
+    props.areas.every(area => Array.isArray(area))
+  ) {
+    return `grid-template-areas: ${props.areas
+      .map(area => `"${area.join(' ')}"`)
+      .join(' ')};`;
+  }
   const cells = props.rowsProp.map(() => props.columns.map(() => '.'));
   props.areas.forEach(area => {
     for (let row = area.start[1]; row <= area.end[1]; row += 1) {
@@ -194,7 +207,9 @@ const areasStyle = props => {
     .join(' ')};`;
 };
 
-const StyledGrid = styled.div`
+const StyledGrid = styled.div.attrs(props => ({
+  'aria-label': props.a11yTitleProp,
+}))`
   display: grid;
   box-sizing: border-box;
 
@@ -207,6 +222,15 @@ const StyledGrid = styled.div`
   ${props => props.gap && gapStyle(props)}
   ${props => props.justify && justifyStyle}
   ${props => props.justifyContent && justifyContentStyle}
+  ${props =>
+    props.pad &&
+    edgeStyle(
+      'padding',
+      props.pad,
+      props.responsive,
+      props.theme.global.edgeSize.responsiveBreakpoint,
+      props.theme,
+    )}
   ${props => props.rowsProp && rowsStyle(props)}
   ${props => props.theme.grid && props.theme.grid.extend}
 `;

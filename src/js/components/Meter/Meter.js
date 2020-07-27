@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { forwardRef, useMemo } from 'react';
 
 import { Bar } from './Bar';
 import { Circle } from './Circle';
@@ -14,39 +14,50 @@ const deriveMax = values => {
   return max;
 };
 
-class Meter extends Component {
-  static defaultProps = {
-    background: { color: 'light-2', opacity: 'medium' },
-    size: 'medium',
-    thickness: 'medium',
-    type: 'bar',
-  };
-
-  static getDerivedStateFromProps(nextProps, prevState) {
-    const { max } = prevState;
-    const nextMax = deriveMax(nextProps.values);
-    if (!max || nextMax !== max) {
-      return { max: nextMax };
-    }
-    return null;
-  }
-
-  state = {};
-
-  render() {
-    const { type, ...rest } = this.props;
-    const { max } = this.state;
-
+const Meter = forwardRef(
+  (
+    {
+      background = { color: 'light-2', opacity: 'medium' },
+      size = 'medium',
+      thickness = 'medium',
+      type = 'bar',
+      values,
+      ...rest
+    },
+    ref,
+  ) => {
+    const memoizedMax = useMemo(() => deriveMax(values), [values]);
     let content;
     if (type === 'bar') {
-      content = <Bar max={max} {...rest} />;
+      content = (
+        <Bar
+          ref={ref}
+          max={memoizedMax}
+          values={values}
+          size={size}
+          thickness={thickness}
+          background={background}
+          {...rest}
+        />
+      );
     } else if (type === 'circle') {
-      content = <Circle max={max} {...rest} />;
+      content = (
+        <Circle
+          ref={ref}
+          max={memoizedMax}
+          values={values}
+          size={size}
+          thickness={thickness}
+          background={background}
+          {...rest}
+        />
+      );
     }
-
     return content;
-  }
-}
+  },
+);
+
+Meter.displayName = 'Meter';
 
 let MeterDoc;
 if (process.env.NODE_ENV !== 'production') {

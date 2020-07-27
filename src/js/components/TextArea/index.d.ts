@@ -1,18 +1,19 @@
 import * as React from "react";
+import { A11yTitleType } from "../../utils";
 
 export interface TextAreaProps {
-  id?: string;
+  a11yTitle?: A11yTitleType;
   fill?: boolean;
   focusIndicator?: boolean;
+  id?: string;
   name?: string;
-  onChange?: ((...args: any[]) => any);
   placeholder?: string;
   plain?: boolean;
-  value?: string;
   resize?: "vertical" | "horizontal" | boolean;
   size?: "small" | "medium" | "large" | "xlarge" | string;
+  value?: string;
 }
 
-declare const TextArea: React.ComponentClass<TextAreaProps & JSX.IntrinsicElements['textarea']>;
+declare const TextArea: React.FC<TextAreaProps & JSX.IntrinsicElements['textarea']>;
 
 export { TextArea };

@@ -1,23 +1,36 @@
-export const normalizeColor = (color, theme, required) => {
-  const colorSpec = theme.global.colors[color] || color;
+// Returns the specific color that should be used according to the theme.
+// If 'dark' is supplied, it takes precedence over 'theme.dark'.
+// Can return undefined.
+export const normalizeColor = (color, theme, dark) => {
+  const colorSpec =
+    theme.global && theme.global.colors[color] !== undefined
+      ? theme.global.colors[color]
+      : color;
   // If the color has a light or dark object, use that
   let result = colorSpec;
   if (colorSpec) {
-    if (theme.dark && colorSpec.dark) {
+    if (
+      (dark === true || (dark === undefined && theme.dark)) &&
+      colorSpec.dark !== undefined
+    ) {
       result = colorSpec.dark;
-    } else if (!theme.dark && colorSpec.light) {
+    } else if (
+      (dark === false || !theme.dark) &&
+      colorSpec.light !== undefined
+    ) {
       result = colorSpec.light;
     }
   }
   // allow one level of indirection in color names
-  if (result && theme.global.colors[result]) {
-    result = normalizeColor(result, theme);
+  if (result && theme.global && theme.global.colors[result] !== undefined) {
+    result = normalizeColor(result, theme, dark);
   }
-  return required && result === color ? 'inherit' : result;
+
+  return result;
 };
 
 const parseHexToRGB = color =>
-  color.length === 4
+  color.length < 7 // 7 is what's needed for '#RRGGBB'
     ? color.match(/[A-Za-z0-9]{1}/g).map(v => parseInt(`${v}${v}`, 16))
     : // https://stackoverflow.com/a/42429333
       color.match(/[A-Za-z0-9]{2}/g).map(v => parseInt(v, 16));
@@ -58,21 +71,31 @@ const hslToRGB = (h, s, l) => {
   return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
 };
 
-const hexExp = /^#[A-Za-z0-9]{3}$|^#[A-Za-z0-9]{6}$/;
-const rgbExp = /rgba?\(\s?([0-9]*)\s?,\s?([0-9]*)\s?,\s?([0-9]*)\s?.*?\)/;
+// allow for alpha: #RGB, #RGBA, #RRGGBB, or #RRGGBBAA
+const hexExp = /^#[A-Za-z0-9]{3,4}$|^#[A-Za-z0-9]{6,8}$/;
+const rgbExp = /rgba?\(\s?([0-9]*)\s?,\s?([0-9]*)\s?,\s?([0-9]*)\s?\)/;
+const rgbaExp = /rgba?\(\s?([0-9]*)\s?,\s?([0-9]*)\s?,\s?([0-9]*)\s?,\s?([.0-9]*)\s?\)/;
 // e.g. hsl(240, 60%, 50%)
 const hslExp = /hsla?\(\s?([0-9]*)\s?,\s?([0-9]*)%?\s?,\s?([0-9]*)%?\s?.*?\)/;
 
 const canExtractRGBArray = color =>
-  hexExp.test(color) || rgbExp.test(color) || hslExp.test(color);
+  hexExp.test(color) ||
+  rgbExp.test(color) ||
+  rgbaExp.test(color) ||
+  hslExp.test(color);
 
 const getRGBArray = color => {
   if (hexExp.test(color)) {
-    return parseHexToRGB(color);
+    const [red, green, blue, alpha] = parseHexToRGB(color);
+    return [red, green, blue, alpha !== undefined ? alpha / 255.0 : undefined];
   }
   let match = color.match(rgbExp);
   if (match) {
-    return match.splice(1);
+    return match.splice(1).map(v => parseInt(v, 10));
+  }
+  match = color.match(rgbaExp);
+  if (match) {
+    return match.splice(1).map(v => parseFloat(v, 10));
   }
   match = color.match(hslExp);
   if (match) {
@@ -83,17 +106,30 @@ const getRGBArray = color => {
 };
 
 export const colorIsDark = color => {
-  const [red, green, blue] = getRGBArray(color);
-  // http://www.had2know.com/technology/
-  //  color-contrast-calculator-web-design.html
-  const brightness = (299 * red + 587 * green + 114 * blue) / 1000;
-  return brightness < 125;
+  if (color && canExtractRGBArray(color)) {
+    const [red, green, blue, alpha] = getRGBArray(color);
+    // if there is an alpha and it's greater than 50%, we can't really tell
+    if (alpha < 0.5) return undefined;
+    const brightness = (299 * red + 587 * green + 114 * blue) / 1000;
+    // From: http://www.had2know.com/technology/color-contrast-calculator-web-design.html
+    // Above domain is no longer registered.
+    return brightness < 125;
+  }
+  return undefined;
 };
 
 export const getRGBA = (color, opacity) => {
   if (color && canExtractRGBArray(color)) {
-    const [red, green, blue] = getRGBArray(color);
-    return `rgba(${red}, ${green}, ${blue}, ${opacity || 1})`;
+    const [red, green, blue, alpha] = getRGBArray(color);
+    let normalizedAlpha;
+    if (opacity !== undefined) {
+      normalizedAlpha = opacity;
+    } else if (alpha !== undefined) {
+      normalizedAlpha = alpha;
+    } else {
+      normalizedAlpha = 1;
+    }
+    return `rgba(${red}, ${green}, ${blue}, ${normalizedAlpha})`;
   }
   return undefined;
 };

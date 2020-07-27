@@ -13,7 +13,8 @@ import { DataTable } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 ```
 string
@@ -43,8 +44,8 @@ string
 **margin**
 
 The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
 
 ```
 none
@@ -56,6 +57,14 @@ large
 xlarge
 {
   bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
     xxsmall
     xsmall
     small
@@ -87,6 +96,14 @@ xlarge
     large
     xlarge
     string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   top: 
     xxsmall
     xsmall
@@ -107,6 +124,173 @@ xlarge
 string
 ```
 
+**background**
+
+Cell background. You can set the background per context by passing an
+      object with keys for 'heading', 'body', and/or 'footer'. If you pass
+      an array, rows will cycle between the array values.
+
+```
+string
+[string]
+{
+  header: 
+    string
+    {
+      dark: string,
+      light: string
+    }
+    [string],
+  body: 
+    string
+    {
+      dark: string,
+      light: string
+    }
+    [string],
+  footer: 
+    string
+    {
+      dark: string,
+      light: string
+    }
+    [string]
+}
+```
+
+**border**
+
+Cell border. You can set the border per context by passing an
+      object with keys for 'heading', 'body', and/or 'footer'.
+
+```
+boolean
+horizontal
+vertical
+top
+bottom
+left
+right
+{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  side: 
+    horizontal
+    vertical
+    top
+    bottom
+    left
+    right,
+  size: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+{
+  header: 
+    boolean
+    horizontal
+    vertical
+    top
+    bottom
+    left
+    right
+    {
+      color: 
+        string
+        {
+          dark: string,
+          light: string
+        },
+      side: 
+        horizontal
+        vertical
+        top
+        bottom
+        left
+        right,
+      size: 
+        xxsmall
+        xsmall
+        small
+        medium
+        large
+        xlarge
+        string
+    },
+  body: 
+    boolean
+    horizontal
+    vertical
+    top
+    bottom
+    left
+    right
+    {
+      color: 
+        string
+        {
+          dark: string,
+          light: string
+        },
+      side: 
+        horizontal
+        vertical
+        top
+        bottom
+        left
+        right,
+      size: 
+        xxsmall
+        xsmall
+        small
+        medium
+        large
+        xlarge
+        string
+    },
+  footer: 
+    boolean
+    horizontal
+    vertical
+    top
+    bottom
+    left
+    right
+    {
+      color: 
+        string
+        {
+          dark: string,
+          light: string
+        },
+      side: 
+        horizontal
+        vertical
+        top
+        bottom
+        left
+        right,
+      size: 
+        xxsmall
+        xsmall
+        small
+        medium
+        large
+        xlarge
+        string
+    }
+}
+```
+
 **columns**
 
 A description of the data. The order controls the column order.
@@ -122,7 +306,7 @@ A description of the data. The order controls the column order.
       made available for the column. 'primary' indicates that this property
       should be used as the unique identifier, which gives the cell 'row' scope
       for accessibility. If 'primary' is not used for any column, and
-      'primaryKey' isn't specified either, then the first column will be used. Defaults to `[]`.
+      'primaryKey' isn't specified either, then the first column will be used.
 
 ```
 [{
@@ -150,13 +334,29 @@ A description of the data. The order controls the column order.
   property: string,
   render: function,
   search: boolean,
-  sortable: boolean
+  sortable: boolean,
+  size: 
+    small
+    medium
+    large
+    xlarge
+    1/2
+    1/4
+    2/4
+    3/4
+    1/3
+    2/3
+    string,
+  verticalAlign: 
+    middle
+    top
+    bottom
 }]
 ```
 
 **data**
 
-Array of data objects. Defaults to `[]`.
+Array of data objects.
 
 ```
 [{
@@ -166,10 +366,19 @@ Array of data objects. Defaults to `[]`.
 
 **groupBy**
 
-Property to group data by.
+Property to group data by. If object is specified
+      'property' is used to group data by, 'expand' accepts array of 
+       group keys that sets expanded groups and 'onExpand' is a function
+       that will be called after expand button is clicked with
+       an array of keys of expanded groups.
 
 ```
 string
+{
+  property: string,
+  expand: [string],
+  onExpand: function
+}
 ```
 
 **onMore**
@@ -180,7 +389,31 @@ Use this to indicate that 'data' doesn't contain all that it could.
       is more than you'd want to load into the browser. 'onMore' allows you
       to lazily fetch more from the server only when needed. This cannot
       be combined with properties that expect all data to be present in the
-      browser, such as columns.search, sortable, groupBy, or columns.aggregate.
+      browser, such as columns.search, sortable, groupBy, or 
+      columns.aggregate.
+
+```
+function
+```
+
+**replace**
+
+Whether to replace previously rendered items with a generic spacing
+      element when they have scrolled out of view. This is more performant but
+      means that in-page searching will not find elements that have been
+      replaced.
+
+```
+boolean
+```
+
+**onClickRow**
+
+When supplied, this function will be called with an event object that
+      include a 'datum' property containing the data value associated with
+      the clicked row. You should not include interactive elements, like
+      Anchor or Button inside table cells as that can cause confusion with
+      overlapping interactive elements.
 
 ```
 function
@@ -197,15 +430,98 @@ When supplied, and when at least one column has 'search' enabled,
 function
 ```
 
+**onSort**
+
+When supplied, this function will be called with an object
+      with a 'property' property that indicates which property
+      is being sorted on and a 'direction' property that will either be
+      'asc' or 'desc'. onSort={({ property, direction }) => {}}
+
+```
+function
+```
+
+**pad**
+
+Cell padding. You can set the padding per context by passing an
+      object with keys for 'heading', 'body', and/or 'footer'.
+
+```
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string
+{
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+{
+  header: custom,
+  body: custom,
+  footer: custom
+}
+```
+
 **primaryKey**
 
 When supplied, indicates the property for a data object to use to
       get a unique identifier. See also the 'columns.primary' description.
       Use this property when the columns approach will not work for your
-      data set.
+      data set. Setting primaryKey to false indicates there should be no
+      unique identifier, avoid this as it's less accessible.
 
 ```
 string
+boolean
 ```
 
 **resizeable**
@@ -214,6 +530,20 @@ Whether to allow the user to resize column widths.
 
 ```
 boolean
+```
+
+**rowProps**
+
+Row specific background, border, and pad, keyed by primary key value.
+      For example:
+      { "primary-key-value": { background: ..., border: ..., pad: ... }},
+      where the background, border, and pad accept the same values as
+      the same named properties on DataTable.
+
+```
+{
+
+}
 ```
 
 **size**
@@ -229,6 +559,19 @@ medium
 large
 xlarge
 string
+```
+
+**sort**
+
+Which property to sort on and which direction to sort.
+
+```
+{
+  direction: 
+    asc
+    desc,
+  property: string
+}
 ```
 
 **sortable**
@@ -254,6 +597,36 @@ table
 ```
 ## Theme
   
+**global.hover.background**
+
+The background style when hovering over an interactive row. Expects `string | { color: string, opacity: string }`.
+
+Defaults to
+
+```
+{ color: 'active', opacity: 'medium' }
+```
+
+**global.hover.color**
+
+The text color when hovering over an interactive row. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+{ dark: 'white', light: 'black' }
+```
+
+**dataTable.body.extend**
+
+Any additional style for an DataTable Body Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
 **dataTable.groupHeader.background**
 
 The background color of the group header. Expects `string | { dark: string, light: string }`.
@@ -382,4 +755,24 @@ Defaults to
 
 ```
 right
+```
+
+**table.row.hover.background**
+
+The background color when hovering over an interactive row. Expects `string | { color: string, opacity: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**table.row.hover.color**
+
+The text color when hovering over an interactive row. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
 ```

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Omit } from "../../utils";
+import { Omit, PlaceHolderType, } from "../../utils";
 import { DropProps } from "../Drop";
 
 export interface TextInputProps {
@@ -7,20 +7,22 @@ export interface TextInputProps {
   dropHeight?: "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
   dropTarget?: object;
   dropProps?: DropProps;
-  id?: string;
   focusIndicator?: boolean;
+  icon?: JSX.Element,
+  id?: string;
   messages?: {enterSelect?: string,suggestionsCount?: string,suggestionsExist?: string,suggestionIsOpen?: string};
   name?: string;
   onSelect?: ((x: { target: React.RefObject<HTMLElement>['current'], suggestion: any }) => void);
-  onSuggestionsOpen?: ((...args: any[]) => any);
-  onSuggestionsClose?: ((...args: any[]) => any);
-  placeholder?: string | React.ReactNode | JSX.Element;
+  onSuggestionsOpen?: (() => void);
+  onSuggestionsClose?: (() => void);
+  placeholder?: PlaceHolderType;
   plain?: boolean;
+  reverse?: boolean;
   size?: "small" | "medium" | "large" | "xlarge" | string;
   suggestions?: ({label?: React.ReactNode,value?: any} | string)[];
   value?: string | number;
 }
 
-declare const TextInput: React.ComponentClass<TextInputProps & Omit<JSX.IntrinsicElements['input'], 'onSelect' | 'size'>>;
+declare const TextInput: React.ComponentClass<TextInputProps & Omit<JSX.IntrinsicElements['input'], 'onSelect' | 'size' | 'placeholder'>>;
 
 export { TextInput };

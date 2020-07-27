@@ -1,4 +1,4 @@
-import React, { Component, PureComponent } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Box, CheckBox, Grommet, Select } from 'grommet';
@@ -11,36 +11,29 @@ const dummyOptions = Array(2000)
     a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }),
   );
 
-class Option extends PureComponent {
-  render() {
-    const { value, selected } = this.props;
-    return (
-      <Box direction="row" gap="small" align="center" pad="xsmall">
-        <CheckBox tabIndex="-1" checked={selected} onChange={() => {}} />
-        {value}
-      </Box>
-    );
-  }
-}
+const Option = ({ value, selected }) => {
+  return (
+    <Box direction="row" gap="small" align="center" pad="xsmall">
+      <CheckBox tabIndex="-1" checked={selected} onChange={() => {}} />
+      {value}
+    </Box>
+  );
+};
 
-class LazyLoading extends Component {
-  state = {
-    selected: [],
-    options: dummyOptions.slice(0, 200),
-  };
+const LazyLoading = () => {
+  const [selected, setSelected] = React.useState([]);
+  const [options, setOptions] = React.useState(dummyOptions.slice(0, 200));
 
-  onMore = () => {
+  const onMore = () => {
     setTimeout(() => {
-      const { options } = this.state;
       console.log('onmore called');
-      this.setState({ options: dummyOptions.slice(0, options.length + 200) });
+      setOptions(dummyOptions.slice(0, options.length + 200));
     }, 1000);
   };
 
-  onClose = () => {
-    const { selected, options } = this.state;
-    this.setState({
-      options: options.sort((p1, p2) => {
+  const onClose = () => {
+    setOptions(
+      options.sort((p1, p2) => {
         const p1Exists = selected.includes(p1);
         const p2Exists = selected.includes(p2);
 
@@ -55,39 +48,32 @@ class LazyLoading extends Component {
           sensitivity: 'base',
         });
       }),
-    });
-  };
-
-  onChange = ({ selected: nextSelected }) => {
-    this.setState({ selected: nextSelected });
-  };
-
-  render() {
-    const { selected, options } = this.state;
-    return (
-      <Grommet theme={grommet}>
-        <Box fill align="center" justify="start" pad="large">
-          <Select
-            multiple
-            closeOnChange={false}
-            placeholder="select an option..."
-            selected={selected}
-            options={options}
-            dropHeight="medium"
-            onMore={this.onMore}
-            onClose={this.onClose}
-            onChange={this.onChange}
-          >
-            {(option, index) => (
-              <Option
-                value={option}
-                selected={selected.indexOf(index) !== -1}
-              />
-            )}
-          </Select>
-        </Box>
-      </Grommet>
     );
-  }
-}
+  };
+
+  const onChange = ({ selected: nextSelected }) => setSelected(nextSelected);
+
+  return (
+    <Grommet theme={grommet}>
+      <Box fill align="center" justify="start" pad="large">
+        <Select
+          multiple
+          closeOnChange={false}
+          placeholder="select an option..."
+          selected={selected}
+          options={options}
+          dropHeight="medium"
+          onMore={onMore}
+          onClose={onClose}
+          onChange={onChange}
+        >
+          {(option, index) => (
+            <Option value={option} selected={selected.indexOf(index) !== -1} />
+          )}
+        </Select>
+      </Box>
+    </Grommet>
+  );
+};
+
 storiesOf('Select', module).add('Lazy Loading options', () => <LazyLoading />);

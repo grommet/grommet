@@ -1,4 +1,4 @@
-import React, { createRef, Component } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Box, Button, Grommet, Keyboard, Text, TextInput } from 'grommet';
@@ -31,137 +31,109 @@ const Tag = ({ children, onRemove, ...rest }) => {
   return tag;
 };
 
-class TagInput extends Component {
-  state = {
-    currentTag: '',
-  };
+const TagInput = ({ value = [], onAdd, onChange, onRemove, ...rest }) => {
+  const [currentTag, setCurrentTag] = React.useState('');
+  const [box, setBox] = React.useState();
+  const boxRef = React.useCallback(setBox, []);
 
-  boxRef = createRef();
-
-  componentDidMount() {
-    this.forceUpdate();
-  }
-
-  updateCurrentTag = event => {
-    const { onChange } = this.props;
-    this.setState({ currentTag: event.target.value });
+  const updateCurrentTag = event => {
+    setCurrentTag(event.target.value);
     if (onChange) {
       onChange(event);
     }
   };
 
-  onAddTag = tag => {
-    const { onAdd } = this.props;
+  const onAddTag = tag => {
     if (onAdd) {
       onAdd(tag);
     }
   };
 
-  onEnter = () => {
-    const { currentTag } = this.state;
+  const onEnter = () => {
     if (currentTag.length) {
-      this.onAddTag(currentTag);
-      this.setState({ currentTag: '' });
+      onAddTag(currentTag);
+      setCurrentTag('');
     }
   };
 
-  renderValue = () => {
-    const { value, onRemove } = this.props;
-    /* eslint-disable react/no-array-index-key */
-    return value.map((v, index) => (
-      <Tag margin="xxsmall" key={`${v}${index}`} onRemove={() => onRemove(v)}>
+  const renderValue = () =>
+    value.map((v, index) => (
+      <Tag
+        margin="xxsmall"
+        key={`${v}${index + 0}`}
+        onRemove={() => onRemove(v)}
+      >
         {v}
       </Tag>
     ));
-    /* eslint-enable react/no-array-index-key */
-  };
 
-  render() {
-    const { value = [], onAdd, onRemove, onChange, ...rest } = this.props;
-    const { currentTag } = this.state;
-    return (
-      <Keyboard onEnter={this.onEnter}>
-        <Box
-          direction="row"
-          align="center"
-          pad={{ horizontal: 'xsmall' }}
-          border="all"
-          ref={this.boxRef}
-          wrap
-        >
-          {value.length > 0 && this.renderValue()}
-          <Box flex style={{ minWidth: '120px' }}>
-            <TextInput
-              type="search"
-              plain
-              dropTarget={this.boxRef.current}
-              {...rest}
-              onChange={this.updateCurrentTag}
-              value={currentTag}
-              onSelect={event => {
-                event.stopPropagation();
-                this.onAddTag(event.suggestion);
-              }}
-            />
-          </Box>
+  return (
+    <Keyboard onEnter={onEnter}>
+      <Box
+        direction="row"
+        align="center"
+        pad={{ horizontal: 'xsmall' }}
+        border="all"
+        ref={boxRef}
+        wrap
+      >
+        {value.length > 0 && renderValue()}
+        <Box flex style={{ minWidth: '120px' }}>
+          <TextInput
+            type="search"
+            plain
+            dropTarget={box}
+            {...rest}
+            onChange={updateCurrentTag}
+            value={currentTag}
+            onSelect={event => {
+              event.stopPropagation();
+              onAddTag(event.suggestion);
+            }}
+          />
         </Box>
-      </Keyboard>
-    );
-  }
-}
+      </Box>
+    </Keyboard>
+  );
+};
 
-class TagTextInput extends Component {
-  state = {
-    selectedTags: ['foo', 'sony'],
-    suggestions: allSuggestions,
-  };
+const TagTextInput = () => {
+  const [selectedTags, setSelectedTags] = React.useState(['foo', 'sony']);
+  const [suggestions, setSuggestions] = React.useState(allSuggestions);
 
-  onRemoveTag = tag => {
-    const { selectedTags } = this.state;
-
+  const onRemoveTag = tag => {
     const removeIndex = selectedTags.indexOf(tag);
-
     const newTags = [...selectedTags];
     if (removeIndex >= 0) {
       newTags.splice(removeIndex, 1);
     }
-    this.setState({
-      selectedTags: newTags,
-    });
+    setSelectedTags(newTags);
   };
 
-  onAddTag = tag => {
-    const { selectedTags } = this.state;
-    this.setState({
-      selectedTags: [...selectedTags, tag],
-    });
-  };
+  const onAddTag = tag => setSelectedTags([...selectedTags, tag]);
 
-  onFilterSuggestion = value =>
-    this.setState({
-      suggestions: allSuggestions.filter(
+  const onFilterSuggestion = value =>
+    setSuggestions(
+      allSuggestions.filter(
         suggestion =>
           suggestion.toLowerCase().indexOf(value.toLowerCase()) >= 0,
       ),
-    });
-
-  render() {
-    const { selectedTags, suggestions } = this.state;
-    return (
-      <Grommet full theme={grommet}>
-        <Box pad="small">
-          <TagInput
-            placeholder="Search for aliases..."
-            suggestions={suggestions}
-            value={selectedTags}
-            onRemove={this.onRemoveTag}
-            onAdd={this.onAddTag}
-            onChange={({ target: { value } }) => this.onFilterSuggestion(value)}
-          />
-        </Box>
-      </Grommet>
     );
-  }
-}
 
-storiesOf('TextInput', module).add('Tag TextInput', () => <TagTextInput />);
+  return (
+    <Grommet full theme={grommet}>
+      <Box pad="small">
+        <TagInput
+          placeholder="Search for aliases..."
+          suggestions={suggestions}
+          value={selectedTags}
+          onRemove={onRemoveTag}
+          onAdd={onAddTag}
+          onChange={({ target: { value } }) => onFilterSuggestion(value)}
+        />
+      </Box>
+    </Grommet>
+  );
+};
+
+storiesOf('TextInput', module).add('Tag', () => <TagTextInput />);
