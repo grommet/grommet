@@ -1,10 +1,11 @@
 import { css } from 'styled-components';
 
-export const parseMetricToNum = fontAsString => {
-  if (fontAsString.match(/\s/) && process.env.NODE_ENV !== 'production') {
-    console.warn(`Invalid single measurement value: "${fontAsString}"`);
+export const parseMetricToNum = metric => {
+  if (typeof metric === 'number') return metric;
+  if (metric.match(/\s/) && process.env.NODE_ENV !== 'production') {
+    console.warn(`Invalid single measurement value: "${metric}"`);
   }
-  return parseFloat(fontAsString.match(/\d+(\.\d+)?/), 10);
+  return parseFloat(metric.match(/\d+(\.\d+)?/), 10);
 };
 
 export const fontSize = (size, lineHeight) => css`
