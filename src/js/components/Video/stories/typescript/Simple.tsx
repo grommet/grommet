@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import isChromatic from 'storybook-chromatic/isChromatic';
+import isChromatic from 'chromatic/isChromatic';
 
 import { Box, Grommet, Video } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -9,6 +9,7 @@ const SimpleVideo = props => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
       <Video {...props}>
+        <source src="small.mp4" type="video/mp4" />
         <source
           src="http://techslides.com/demos/sample-videos/small.webm"
           type="video/webm"
@@ -16,10 +17,6 @@ const SimpleVideo = props => (
         <source
           src="http://techslides.com/demos/sample-videos/small.ogv"
           type="video/ogg"
-        />
-        <source
-          src="http://techslides.com/demos/sample-videos/small.mp4"
-          type="video/mp4"
         />
         <source
           src="http://techslides.com/demos/sample-videos/small.3gp"

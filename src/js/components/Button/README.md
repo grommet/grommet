@@ -128,6 +128,21 @@ xlarge
 string
 ```
 
+**children**
+
+Function that can be called to render the visual representation.
+      Button can take in Children as a function, node, or object. 
+      For example hover can be passed as an object that would 
+      then return a react element.
+      `children={({ hover }) => <Box...>{...}</Box>}`
+      
+
+```
+function
+object
+node
+```
+
 **active**
 
 Whether the button is active.
@@ -327,6 +342,7 @@ _self
 _blank
 _parent
 _top
+string
 ```
 
 **type**

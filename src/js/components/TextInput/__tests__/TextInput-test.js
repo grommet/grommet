@@ -8,6 +8,8 @@ import {
   waitForElement,
 } from '@testing-library/react';
 import { getByText, screen } from '@testing-library/dom';
+import { axe } from 'jest-axe';
+import 'jest-axe/extend-expect';
 import { Search } from 'grommet-icons';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
@@ -19,6 +21,17 @@ import { Keyboard } from '../../Keyboard';
 describe('TextInput', () => {
   beforeEach(createPortal);
   afterEach(cleanup);
+
+  test('should not have accessibility violations', async () => {
+    const { container } = render(
+      <Grommet>
+        <TextInput a11yTitle="aria-test" name="item" />
+      </Grommet>,
+    );
+    const results = await axe(container);
+    expect(container.firstChild).toMatchSnapshot();
+    expect(results).toHaveNoViolations();
+  });
 
   test('basic', () => {
     const { container } = render(<TextInput name="item" />);

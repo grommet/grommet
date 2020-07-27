@@ -104,7 +104,7 @@ const ZoomChart = ({ data, max }) => {
             </Box>
           </Stack>
           <Box direction="row" justify="between">
-            {/* className="chromatic-ignore" is used for the story testing. 
+            {/* className="chromatic-ignore" is used for the story testing.
                 grommet doesn't recommend the usage of className */}
             {axis[0].map(t => (
               <Text key={t} className="chromatic-ignore">

@@ -126,7 +126,10 @@ string
 
 **bounds**
 
-The limits for the values, specified as a two dimensional array.
+The limits for the values, specified as a two dimensional array. 
+      The first array specifies the limits of the x-axis. The second array 
+      specifies the limits of the y-axis. 
+      For example: [[x-min, x-max], [y-min, y-max]].
       If not specified, the bounds will automatically be set to fit
       the provided values.
 
@@ -159,22 +162,6 @@ string
 }]
 ```
 
-**gap**
-
-The amount of spacing between data points. This
-      is only used when the size specifies width as 'auto'.
-
-```
-none
-xxsmall
-xsmall
-small
-medium
-large
-xlarge
-string
-```
-
 **id**
 
 A unique identifier for the Chart. This
@@ -191,6 +178,22 @@ Whether to use dashed lines for line or bar charts.
 
 ```
 boolean
+```
+
+**gap**
+
+The amount of spacing between data points. This
+      is only used when the size specifies width as 'auto'.
+
+```
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string
 ```
 
 **onClick**
@@ -224,6 +227,104 @@ Whether the chart strokes should overflow the component. Set this
 boolean
 ```
 
+**pad**
+
+Spacing around the outer edge of the drawing coordinate area.
+      Related to 'overflow', this allows control over how much space
+      is available for bars and points to overflow into. Defaults to `none`.
+
+```
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+```
+
+**point**
+
+When using a 'point' type, what shape the points should use.
+      If this property is not specified, points will be drawn as a square or
+      a circle, based on how 'round' is specified.
+
+```
+circle
+diamond
+square
+star
+triangle
+triangleDown
+```
+
 **round**
 
 Whether to round the line ends.
@@ -234,7 +335,9 @@ boolean
 
 **size**
 
-The size of the Chart. Defaults to `{
+The size of the Chart.
+      'full' is deprecated as 'fill' is more consistent with how that term is
+      used elsewhere. Defaults to `{
   "width": "medium",
   "height": "small"
 }`.
@@ -246,6 +349,7 @@ small
 medium
 large
 xlarge
+fill
 full
 {
   height: 
@@ -255,6 +359,7 @@ full
     medium
     large
     xlarge
+    fill
     full
     string,
   width: 
@@ -264,6 +369,7 @@ full
     medium
     large
     xlarge
+    fill
     full
     auto
     string

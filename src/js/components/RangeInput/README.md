@@ -11,6 +11,15 @@ import { RangeInput } from 'grommet';
 
 ## Properties
 
+**a11yTitle**
+
+Custom label to be used by screen readers.
+      When provided, an aria-label will be added to the element.
+
+```
+string
+```
+
 **id**
 
 The id attribute of the range input.
@@ -129,6 +138,16 @@ Defaults to
 2px
 ```
 
+**global.colors.border**
+
+The color used for rangeInput.track.color. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+{ dark: rgba(255, 255, 255, 0.33), light: rgba(0, 0, 0, 0.33) }
+```
+
 **global.spacing**
 
 The height, width and border-radius of the range thumb. Expects `string`.
@@ -173,12 +192,62 @@ undefined
 
 **rangeInput.track.color**
 
-The color of the track. Expects `string`.
+The color of the track. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
 ```
-{ dark: rgba(255, 255, 255, 0.33), light: rgba(0, 0, 0, 0.33) }
+border
+```
+
+**rangeInput.track.opacity**
+
+The opacity of the track color. Expects `string | number`.
+
+Defaults to
+
+```
+undefined
+```
+
+**rangeInput.track.lower.color**
+
+The color of the lower bound track. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**rangeInput.track.lower.opacity**
+
+The opacity on the lower bound track color. Expects `string | number`.
+
+Defaults to
+
+```
+undefined
+```
+
+**rangeInput.track.upper.color**
+
+The color of the upper track. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**rangeInput.track.upper.opacity**
+
+The opacity on the upper track color. Expects `string | number`.
+
+Defaults to
+
+```
+undefined
 ```
 
 **rangeInput.track.extend**

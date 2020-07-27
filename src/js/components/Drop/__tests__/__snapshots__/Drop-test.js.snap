@@ -79,10 +79,9 @@ exports[`Drop align left left 2`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
@@ -175,9 +174,8 @@ exports[`Drop align left right top bottom 2`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
 .kQAKuZ {
   font-size: 18px;
   line-height: 24px;
@@ -201,8 +199,7 @@ exports[`Drop align left right top bottom 2`] = `
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
@@ -295,10 +292,9 @@ exports[`Drop align right left top top 2`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
@@ -391,10 +387,9 @@ exports[`Drop align right right 2`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
@@ -487,10 +482,9 @@ exports[`Drop align right right bottom top 2`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
@@ -583,10 +577,9 @@ exports[`Drop align right right bottom top 4`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
@@ -679,9 +672,8 @@ exports[`Drop basic 2`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
 .kQAKuZ {
   font-size: 18px;
   line-height: 24px;
@@ -705,8 +697,7 @@ exports[`Drop basic 2`] = `
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
@@ -799,9 +790,8 @@ exports[`Drop close 2`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
 .kQAKuZ {
   font-size: 18px;
   line-height: 24px;
@@ -825,8 +815,7 @@ exports[`Drop close 2`] = `
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
@@ -919,9 +908,8 @@ exports[`Drop default elevation renders 2`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
 .kQAKuZ {
   font-size: 18px;
   line-height: 24px;
@@ -945,8 +933,7 @@ exports[`Drop default elevation renders 2`] = `
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1039,9 +1026,8 @@ exports[`Drop invalid align 2`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
 .kQAKuZ {
   font-size: 18px;
   line-height: 24px;
@@ -1065,8 +1051,7 @@ exports[`Drop invalid align 2`] = `
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1159,9 +1144,8 @@ exports[`Drop invoke onClickOutside 2`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
 .kQAKuZ {
   font-size: 18px;
   line-height: 24px;
@@ -1185,8 +1169,7 @@ exports[`Drop invoke onClickOutside 2`] = `
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1279,9 +1262,8 @@ exports[`Drop no stretch 2`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
 .kQAKuZ {
   font-size: 18px;
   line-height: 24px;
@@ -1305,8 +1287,7 @@ exports[`Drop no stretch 2`] = `
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1383,7 +1364,7 @@ exports[`Drop plain renders 1`] = `
 `;
 
 exports[`Drop plain renders 2`] = `
-"@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+"@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1486,8 +1467,7 @@ exports[`Drop props elevation renders 2`] = `
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1580,9 +1560,8 @@ exports[`Drop resize 2`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
 .kQAKuZ {
   font-size: 18px;
   line-height: 24px;
@@ -1606,8 +1585,7 @@ exports[`Drop resize 2`] = `
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1712,9 +1690,8 @@ exports[`Drop restrict focus 3`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   overflow: auto;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
 .kQAKuZ {
   font-size: 18px;
   line-height: 24px;
@@ -1738,8 +1715,7 @@ exports[`Drop restrict focus 3`] = `
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1759,6 +1735,36 @@ exports[`Drop restrict focus 4`] = `
 }
 
 <body />
+`;
+
+exports[`Drop should have no accessibility violations 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+<div
+  aria-hidden="true"
+>
+  <div
+    class="c0"
+  >
+    <input
+      aria-label="test"
+      data-g-tabindex="none"
+      tabindex="-1"
+    />
+  </div>
+</div>
 `;
 
 exports[`Drop theme elevation renders 1`] = `
@@ -1850,8 +1856,7 @@ exports[`Drop theme elevation renders 2`] = `
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .kQAKuZ {
     display: -webkit-box;
     display: -webkit-flex;

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 import { StyledGrid } from './StyledGrid';
 
-const Grid = props => {
+const Grid = forwardRef((props, ref) => {
   const {
     a11yTitle,
     fill, // munged to avoid styled-components putting it in the DOM
@@ -15,6 +15,7 @@ const Grid = props => {
 
   return (
     <StyledGrid
+      ref={ref}
       a11yTitleProp={a11yTitle}
       as={!as && tag ? tag : as}
       fillContainer={fill}
@@ -23,7 +24,9 @@ const Grid = props => {
       {...rest}
     />
   );
-};
+});
+
+Grid.displayName = 'Grid';
 
 let GridDoc;
 if (process.env.NODE_ENV !== 'production') {

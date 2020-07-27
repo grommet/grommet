@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import isChromatic from 'storybook-chromatic/isChromatic';
+import isChromatic from 'chromatic/isChromatic';
 
 import {
   Box,
@@ -15,7 +15,7 @@ import {
   TextArea,
 } from 'grommet';
 import { grommet } from 'grommet/themes';
-import { TypedForm } from '../../Form';
+import { FormExtendedEvent } from '../../Form';
 
 interface FormState {
   name?: string;
@@ -33,7 +33,10 @@ const Example = () => (
       <Box width="medium">
         <Form
           onReset={event => console.log(event)}
-          onChange={(value: FormState) => console.log('Submit', value)}
+          onChange={(value: FormState) => console.log('onChange', value)}
+          onSubmit={(event: FormExtendedEvent) =>
+            console.log('onSubmit', event.value, event.touched)
+          }
         >
           <FormField
             label="Name"

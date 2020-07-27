@@ -155,7 +155,6 @@ exports[`Sidebar all 1`] = `
     >
       <span
         className="c6 "
-        size="large"
       >
         SY
       </span>

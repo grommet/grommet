@@ -231,15 +231,15 @@ exports[`Grommet custom theme 1`] = `
 }
 
 .c12::-webkit-input-placeholder {
-  color: #AAAAAA;
+  color: #cc6633;
 }
 
 .c12::-moz-placeholder {
-  color: #AAAAAA;
+  color: #cc6633;
 }
 
 .c12:-ms-input-placeholder {
-  color: #AAAAAA;
+  color: #cc6633;
 }
 
 .c12::-moz-focus-inner {
@@ -410,6 +410,7 @@ exports[`Grommet custom theme 1`] = `
         onChange={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
+        placeholder="Placeholder"
         value="Value"
       />
     </div>

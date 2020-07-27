@@ -1019,6 +1019,8 @@ fadeIn
 fadeOut
 jiggle
 pulse
+rotateLeft
+rotateRight
 slideUp
 slideDown
 slideLeft
@@ -1031,6 +1033,8 @@ zoomOut
     fadeOut
     jiggle
     pulse
+    rotateLeft
+    rotateRight
     slideUp
     slideDown
     slideLeft
@@ -1051,6 +1055,8 @@ zoomOut
   fadeOut
   jiggle
   pulse
+  rotateLeft
+  rotateRight
   slideUp
   slideDown
   slideLeft
@@ -1063,6 +1069,8 @@ zoomOut
       fadeOut
       jiggle
       pulse
+      rotateLeft
+      rotateRight
       slideUp
       slideDown
       slideLeft
@@ -1968,6 +1976,21 @@ xlarge
 string
 \`\`\`
 
+**children**
+
+Function that can be called to render the visual representation.
+      Button can take in Children as a function, node, or object. 
+      For example hover can be passed as an object that would 
+      then return a react element.
+      \`children={({ hover }) => <Box...>{...}</Box>}\`
+      
+
+\`\`\`
+function
+object
+node
+\`\`\`
+
 **active**
 
 Whether the button is active.
@@ -2167,6 +2190,7 @@ _self
 _blank
 _parent
 _top
+string
 \`\`\`
 
 **type**
@@ -3526,6 +3550,104 @@ Defaults to
   }
 \`\`\`
 ",
+  "Card": "## Card
+A Card.
+
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Card&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=card&module=%2Fsrc%2FCard.js)
+## Usage
+
+\`\`\`javascript
+import { Card } from 'grommet';
+<Card/>
+\`\`\`
+
+## Properties
+
+  
+## Intrinsic element
+
+\`\`\`
+div
+\`\`\`
+## Theme
+  
+**card.container**
+
+Any valid Box prop for the Card container. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{ round: 'small', elevation: 'small' }
+\`\`\`
+
+**card.header**
+
+Any valid Box prop for the CardHeader. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+[object Object]
+\`\`\`
+
+**card.body**
+
+Any valid Box prop for the CardBody. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+[object Object]
+\`\`\`
+
+**card.footer**
+
+Any valid Box prop for the CardFooter container. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{ background: 'background-contrast' }
+\`\`\`
+",
+  "CardBody": "## CardBody
+The Card Body.
+
+
+## Properties
+
+  
+## Intrinsic element
+
+\`\`\`
+div
+\`\`\`",
+  "CardFooter": "## CardFooter
+The Card Footer. Works best as the latter sibling of CardBody or any 
+      other flex container.
+
+
+## Properties
+
+  
+## Intrinsic element
+
+\`\`\`
+div
+\`\`\`",
+  "CardHeader": "## CardHeader
+The Card Header.
+
+
+## Properties
+
+  
+## Intrinsic element
+
+\`\`\`
+div
+\`\`\`",
   "Carousel": "## Carousel
 A carousel that cycles through children. Child components
       would typically be Images. It is the caller's responsibility to ensure
@@ -3920,7 +4042,10 @@ string
 
 **bounds**
 
-The limits for the values, specified as a two dimensional array.
+The limits for the values, specified as a two dimensional array. 
+      The first array specifies the limits of the x-axis. The second array 
+      specifies the limits of the y-axis. 
+      For example: [[x-min, x-max], [y-min, y-max]].
       If not specified, the bounds will automatically be set to fit
       the provided values.
 
@@ -3953,22 +4078,6 @@ string
 }]
 \`\`\`
 
-**gap**
-
-The amount of spacing between data points. This
-      is only used when the size specifies width as 'auto'.
-
-\`\`\`
-none
-xxsmall
-xsmall
-small
-medium
-large
-xlarge
-string
-\`\`\`
-
 **id**
 
 A unique identifier for the Chart. This
@@ -3985,6 +4094,22 @@ Whether to use dashed lines for line or bar charts.
 
 \`\`\`
 boolean
+\`\`\`
+
+**gap**
+
+The amount of spacing between data points. This
+      is only used when the size specifies width as 'auto'.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string
 \`\`\`
 
 **onClick**
@@ -4018,6 +4143,104 @@ Whether the chart strokes should overflow the component. Set this
 boolean
 \`\`\`
 
+**pad**
+
+Spacing around the outer edge of the drawing coordinate area.
+      Related to 'overflow', this allows control over how much space
+      is available for bars and points to overflow into. Defaults to \`none\`.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+\`\`\`
+
+**point**
+
+When using a 'point' type, what shape the points should use.
+      If this property is not specified, points will be drawn as a square or
+      a circle, based on how 'round' is specified.
+
+\`\`\`
+circle
+diamond
+square
+star
+triangle
+triangleDown
+\`\`\`
+
 **round**
 
 Whether to round the line ends.
@@ -4028,7 +4251,9 @@ boolean
 
 **size**
 
-The size of the Chart. Defaults to \`{
+The size of the Chart.
+      'full' is deprecated as 'fill' is more consistent with how that term is
+      used elsewhere. Defaults to \`{
   \\"width\\": \\"medium\\",
   \\"height\\": \\"small\\"
 }\`.
@@ -4040,6 +4265,7 @@ small
 medium
 large
 xlarge
+fill
 full
 {
   height: 
@@ -4049,6 +4275,7 @@ full
     medium
     large
     xlarge
+    fill
     full
     string,
   width: 
@@ -4058,6 +4285,7 @@ full
     medium
     large
     xlarge
+    fill
     full
     auto
     string
@@ -4216,6 +4444,15 @@ import { CheckBox } from 'grommet';
 
 ## Properties
 
+**a11yTitle**
+
+Custom label to be used by screen readers.
+      When provided, an aria-label will be added to the element.
+
+\`\`\`
+string
+\`\`\`
+
 **checked**
 
 Same as React <input checked={} />
@@ -4243,7 +4480,8 @@ string
 
 **label**
 
-Label text to place next to the control.
+Label text to place next to the control. 
+      Can be used instead of a11yTitle to meet accessibility requirements
 
 \`\`\`
 node
@@ -4773,7 +5011,7 @@ string
 
 ISO8601 time or duration. For example: 'PT8H12M23S',
       'T08:12:23', or '2015-02-22T08:12:23'. Any included date
-      portion will be ignored for an analog clock. If not provided, the
+      portion will be ignored. If not provided, the
       current browser time will be used.
 
 \`\`\`
@@ -5002,6 +5240,456 @@ Defaults to
 undefined
 \`\`\`
 ",
+  "DataChart": "## DataChart
+Takes a data set and visualizes it. While Chart renders a
+    single value across a data set. DataChart allows multiple overlayed
+    Charts and adds guides and axes for decoration.
+
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=DataChart&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=datachart&module=%2Fsrc%2FDataChart.js)
+## Usage
+
+\`\`\`javascript
+import { DataChart } from 'grommet';
+<DataChart data={data} chart={} />
+\`\`\`
+
+## Properties
+
+**a11yTitle**
+
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
+
+\`\`\`
+string
+\`\`\`
+
+**alignSelf**
+
+How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.
+
+\`\`\`
+start
+center
+end
+stretch
+\`\`\`
+
+**gridArea**
+
+The name of the area to place
+    this inside a parent Grid.
+
+\`\`\`
+string
+\`\`\`
+
+**margin**
+
+The amount of margin around the component. An object can
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+\`\`\`
+
+**chart**
+
+Chart properties indicating how to visualize the data.
+    'key' indicates which property of the data objects to use. 'keys' indicates
+    that multiple properties should be used for a stacked bar chart. DataChart
+    uses the key/keys to build the right 'values' for the underlying Chart.
+    All of the other properties in 'chart' are passed through to the Chart.
+
+\`\`\`
+{
+  key: string,
+  keys: [{
+  key: string,
+  color: 
+    string
+    {
+      color: string,
+      opacity: 
+        weak
+        medium
+        strong
+        boolean
+    }
+    [{
+  color: string,
+  value: number
+}]
+}],
+  a11yTitle: string,
+  bounds: [[number]],
+  color: 
+    string
+    {
+      color: string,
+      opacity: 
+        weak
+        medium
+        strong
+        boolean
+    }
+    [{
+  color: string,
+  value: number
+}],
+  dash: boolean,
+  onClick: function,
+  onHover: function,
+  overflow: boolean,
+  round: boolean,
+  thickness: 
+    hair
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    none
+    string,
+  type: 
+    bar
+    line
+    area
+    point
+}
+[{
+  key: string,
+  keys: [{
+  key: string,
+  color: 
+    string
+    {
+      color: string,
+      opacity: 
+        weak
+        medium
+        strong
+        boolean
+    }
+    [{
+  color: string,
+  value: number
+}]
+}],
+  a11yTitle: string,
+  bounds: [[number]],
+  color: 
+    string
+    {
+      color: string,
+      opacity: 
+        weak
+        medium
+        strong
+        boolean
+    }
+    [{
+  color: string,
+  value: number
+}],
+  dash: boolean,
+  onClick: function,
+  onHover: function,
+  overflow: boolean,
+  round: boolean,
+  thickness: 
+    hair
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    none
+    string,
+  type: 
+    bar
+    line
+    area
+    point
+}]
+\`\`\`
+
+**data**
+
+the data set
+
+\`\`\`
+[{
+
+}]
+\`\`\`
+
+**gap**
+
+The spacing between the axes and the Charts.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string
+\`\`\`
+
+**pad**
+
+Spacing around the outer edge of
+    the drawing coordinate area for the graphic elements to overflow into. Defaults to \`none\`.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+\`\`\`
+
+**size**
+
+The size of the Charts. This does not include the axes
+      and any gap. It is passed through to the underlying Chart. Defaults to \`{
+  \\"width\\": \\"medium\\",
+  \\"height\\": \\"small\\"
+}\`.
+
+\`\`\`
+fill
+{
+  height: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    fill
+    string,
+  width: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    fill
+    auto
+    string
+}
+\`\`\`
+
+**thickness**
+
+Chart thickness given to all
+    Charts if not specified per Chart in 'chart'.
+
+\`\`\`
+hair
+xsmall
+small
+medium
+large
+xlarge
+none
+string
+\`\`\`
+
+**xAxis**
+
+x-axis configuration. 'guide' specifies that vertical
+    guide lines should be drawn under the Chart, one per label.
+    'key' specifies what property in the 'data' should be used as
+    any label content. 'labels' specifies how many labels to show.
+    'render' allows for custom rendering of the labels. It will be
+    called with the current data index and axis index and should return
+    the element to render: (dataIndex, axisIndex) => element.
+
+\`\`\`
+boolean
+{
+  guide: boolean,
+  key: string,
+  labels: number,
+  render: function
+}
+\`\`\`
+
+**yAxis**
+
+y-axis configuration. 'guide' specifies that horizontal
+    guide lines should be drawn under the Chart, one per label.
+    'labels' specifies how many labels to show.
+    'render' allows for custom rendering of the labels. It will be
+    called with the value and axis index and should return
+    the element to render: (value, axisIndex) => element
+
+\`\`\`
+boolean
+{
+  guide: boolean,
+  labels: number,
+  prefix: string,
+  render: function,
+  suffix: string
+}
+\`\`\`
+  
+## Intrinsic element
+
+\`\`\`
+div
+\`\`\`",
   "DataTable": "## DataTable
 A data driven table.
 
@@ -5465,35 +6153,40 @@ string
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   vertical: 
     xxsmall
     xsmall
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   top: 
     xxsmall
     xsmall
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   bottom: 
     xxsmall
     xsmall
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   left: 
     xxsmall
     xsmall
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   right: 
     xxsmall
     xsmall
@@ -5501,6 +6194,7 @@ string
     medium
     large
     xlarge
+    string
 }
 {
   header: custom,
@@ -5613,6 +6307,16 @@ Defaults to
 
 \`\`\`
 { dark: 'white', light: 'black' }
+\`\`\`
+
+**dataTable.body.extend**
+
+Any additional style for an DataTable Body Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **dataTable.groupHeader.background**
@@ -5765,6 +6469,137 @@ Defaults to
 undefined
 \`\`\`
 ",
+  "DateInput": "## DateInput
+A control to input a single date or a date range.
+
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=DateInput&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=dateinput&module=%2Fsrc%2FDateInput.js)
+## Usage
+
+\`\`\`javascript
+import { DateInput } from 'grommet';
+<DateInput id='item' name='item' />
+\`\`\`
+
+## Properties
+
+**buttonProps**
+
+Any properties to pass on to the underlying DropButton
+      when not inline and no format.
+
+\`\`\`
+{
+
+}
+\`\`\`
+
+**calendarProps**
+
+Any properties to pass on to the underlying Calendar.
+
+\`\`\`
+{
+
+}
+\`\`\`
+
+**defaultValue**
+
+The default date or date range value in ISO8601 format.
+
+\`\`\`
+string
+[string]
+\`\`\`
+
+**dropProps**
+
+Any properties to pass on to the underlying Drop when not inline. Defaults to \`{
+  \\"align\\": {
+    \\"top\\": \\"bottom\\",
+    \\"left\\": \\"left\\"
+  }
+}\`.
+
+\`\`\`
+{
+
+}
+\`\`\`
+
+**format**
+
+The date format to use. If not specified, the date value will not
+      be displayed as a text string and the user will not be able to enter
+      a date by typing. For example: 'mm/dd/yyyy', or for a range:
+      'mm/dd/yyyy-mm/dd/yyyy'. This property should be used when in a Form.
+
+\`\`\`
+string
+\`\`\`
+
+**id**
+
+The id of the input.
+
+\`\`\`
+string
+\`\`\`
+
+**inline**
+
+Whether the calendar should always be shown or via a Drop when
+      interacting with the input.
+
+\`\`\`
+boolean
+\`\`\`
+
+**inputProps**
+
+Any properties to pass on to the underlying MaskedInput
+      when there is a format.
+
+\`\`\`
+{
+
+}
+\`\`\`
+
+**name**
+
+The name of the input.
+      This property is required when used within FormField.
+
+\`\`\`
+string
+\`\`\`
+
+**onChange**
+
+Function that will be called when the user types or selects a date.
+      The updated value will be available via 'event.value'.
+
+\`\`\`
+function
+\`\`\`
+
+**value**
+
+The date or date range value(s) in ISO8601 format.
+
+\`\`\`
+string
+[string]
+\`\`\`
+  
+## Intrinsic element
+
+\`\`\`
+div
+\`\`\`
+## Theme
+  ",
   "Diagram": "## Diagram
 Graphical connection lines. Diagram is meant to be used with Stack.
       Boxes can be used in the \`guidingChild\` layer of Stack and then
@@ -6549,7 +7384,7 @@ import { Form } from 'grommet';
 
 **errors**
 
-An object representing any errors in the data. They keys should
+An object representing any errors in the data. Their keys should
         match the keys in the value object. Defaults to \`{}\`.
 
 \`\`\`
@@ -6561,7 +7396,7 @@ An object representing any errors in the data. They keys should
 **infos**
 
 An object representing any information details in the data.
-        They keys should match the keys in the value object. Defaults to \`{}\`.
+        Their keys should match the keys in the value object. Defaults to \`{}\`.
 
 \`\`\`
 {
@@ -6651,10 +7486,21 @@ import { FormField } from 'grommet';
 
 ## Properties
 
+**a11yTitle**
+
+Custom label to be used by screen readers.
+       Should only be provided if FormField has no children.
+       When a11yTitle is provided an aria-label will be added to the element
+       if it has no children.
+
+\`\`\`
+string
+\`\`\`
+
 **component**
 
-The component to insert in the FormField. Grommet will add update the 
-      form values when this field changes. Any additional properties 
+The component to insert in the FormField. Grommet will add update the
+      form values when this field changes. Any additional properties
       (such as initial value) you pass to FormField will be forwarded to this
       component. The component may be custom as long it supports the properties
       of name, value, onChange (event => {}), while event has either event.value
@@ -6837,7 +7683,7 @@ Validation rule when used within a grommet Form. Provide an object
 
 \`\`\`
 {
-  regexp: object,
+  regexp: new RegExp(...),
   message: 
     string
     node,
@@ -6848,7 +7694,7 @@ Validation rule when used within a grommet Form. Provide an object
 function
 [
   {
-    regexp: object,
+    regexp: new RegExp(...),
     message: 
       string
       node,
@@ -6905,6 +7751,16 @@ Defaults to
 
 \`\`\`
 bottom
+\`\`\`
+
+**formField.content.margin**
+
+The margin of the FormField content. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **formField.content.pad**
@@ -7446,9 +8302,8 @@ stretch
 
 **pad**
 
-The amount of padding around the box contents. An
-    object can be specified to distinguish horizontal padding, vertical
-    padding, and padding on a particular side of the box Defaults to \`none\`.
+Spacing around the outer edge of
+    the drawing coordinate area for the graphic elements to overflow into. Defaults to \`none\`.
 
 \`\`\`
 none
@@ -9395,6 +10250,14 @@ import { MaskedInput } from 'grommet';
 
 ## Properties
 
+**a11yTitle**
+
+Custom title to be used by screen readers.
+
+\`\`\`
+string
+\`\`\`
+
 **icon**
 
 An optional icon to show. This could be used to provide an
@@ -9803,6 +10666,19 @@ xlarge
 string
 \`\`\`
 
+**children**
+
+Function that will be called to render the visual representation.
+      It will be passed an object containing button props.
+      It should return a react element.
+      For example:
+      \`children={({ drop, hover }) => <Box ...>{...}</Box>}\`
+      
+
+\`\`\`
+function
+\`\`\`
+
 **disabled**
 
 Whether the menu should be disabled.
@@ -9900,7 +10776,8 @@ node
 **items**
 
 Required. Menu items to be placed inside the drop down.
-The object values can be any Button prop, for example: label and onClick. Defaults to \`[]\`.
+The object values can be any Button prop, 
+for example: label, onClick, and href. Defaults to \`[]\`.
 
 \`\`\`
 [object]
@@ -9999,12 +10876,24 @@ undefined
 
 **menu.icons.down**
 
-The icon to show to the right of the label. Expects \`React.Element\`.
+The icon to show to the right of the label when menu is 
+    closed. Expects \`React.Element\`.
 
 Defaults to
 
 \`\`\`
 <FormDown />
+\`\`\`
+
+**menu.icons.up**
+
+The icon to show to the right of the label when menu is 
+    opened. Expects \`undefined | React.Element\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 ",
   "Meter": "## Meter
@@ -10608,6 +11497,15 @@ import { RadioButton } from 'grommet';
 
 ## Properties
 
+**a11yTitle**
+
+Custom label to be used by screen readers.
+      When provided, an aria-label will be added to the element.
+
+\`\`\`
+string
+\`\`\`
+
 **checked**
 
 Same as React <input checked={} />
@@ -10680,6 +11578,17 @@ input
 \`\`\`
 ## Theme
   
+**global.colors.control**
+
+The default color of the border surrounding 
+    the checked icon in RadioButton checked state. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: 'accent-1', light: 'brand'}
+\`\`\`
+
 **radioButton.border.color**
 
 The color of the border of the Radio Button. Expects \`string | { dark: string, light: string }\`.
@@ -10698,6 +11607,16 @@ Defaults to
 
 \`\`\`
 2px
+\`\`\`
+
+**radioButton.check.background.color**
+
+The background color of the checked icon in the RadioButton. Expects \`string | {dark: string, light: string}\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **radioButton.check.color**
@@ -10730,6 +11649,17 @@ Defaults to
 100%
 \`\`\`
 
+**radioButton.color**
+
+The color of the border surrounding the checked 
+    icon in RadioButton checked state. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **radioButton.extend**
 
 Any additional style for the RadioButton. Expects \`string | (props) => {}\`.
@@ -10748,6 +11678,16 @@ Defaults to
 
 \`\`\`
 small
+\`\`\`
+
+**radioButton.font.weight**
+
+The font weight of the label. Expects \`number | string\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **radioButton.size**
@@ -10844,18 +11784,23 @@ function
 
 **options**
 
-Required. Options can be either a string or an object. 
-    Each option is rendered as a single RadioButton.
+Required. Options can be either a string, boolean, number 
+      or an object. Each option is rendered as a single RadioButton.
 
 \`\`\`
 [string]
+[number]
+[boolean]
 [{
   disabled: boolean,
   id: string,
   label: 
     string
     element,
-  value: string
+  value: 
+    string
+    number
+    boolean
 }]
 \`\`\`
 
@@ -10865,6 +11810,8 @@ Currently selected option value.
 
 \`\`\`
 string
+number
+boolean
 object
 \`\`\`
   
@@ -10885,6 +11832,15 @@ import { RangeInput } from 'grommet';
 \`\`\`
 
 ## Properties
+
+**a11yTitle**
+
+Custom label to be used by screen readers.
+      When provided, an aria-label will be added to the element.
+
+\`\`\`
+string
+\`\`\`
 
 **id**
 
@@ -11004,6 +11960,16 @@ Defaults to
 2px
 \`\`\`
 
+**global.colors.border**
+
+The color used for rangeInput.track.color. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: rgba(255, 255, 255, 0.33), light: rgba(0, 0, 0, 0.33) }
+\`\`\`
+
 **global.spacing**
 
 The height, width and border-radius of the range thumb. Expects \`string\`.
@@ -11048,12 +12014,62 @@ undefined
 
 **rangeInput.track.color**
 
-The color of the track. Expects \`string\`.
+The color of the track. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
 \`\`\`
-{ dark: rgba(255, 255, 255, 0.33), light: rgba(0, 0, 0, 0.33) }
+border
+\`\`\`
+
+**rangeInput.track.opacity**
+
+The opacity of the track color. Expects \`string | number\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**rangeInput.track.lower.color**
+
+The color of the lower bound track. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**rangeInput.track.lower.opacity**
+
+The opacity on the lower bound track color. Expects \`string | number\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**rangeInput.track.upper.color**
+
+The color of the upper track. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**rangeInput.track.upper.opacity**
+
+The opacity on the upper track color. Expects \`string | number\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **rangeInput.track.extend**
@@ -12216,6 +13232,8 @@ Whether to expand to fill
       all of the available width and height in the parent container.
 
 \`\`\`
+horizontal
+vertical
 boolean
 \`\`\`
 
@@ -12368,14 +13386,44 @@ Defaults to
     }
 \`\`\`
 
+**tab.border.disabled.color**
+
+border color of the Tab when disabled Expects \`string | {dark: string, light: string}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **tab.color**
 
-text color for the Tab. Expects \`string\`.
+text color for the Tab. Expects \`string | {dark: string, light: string}\`.
 
 Defaults to
 
 \`\`\`
 control
+\`\`\`
+
+**tab.disabled.color**
+
+text color of the Tab when disabled. Expects \`string | {dark: string, light: string}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**tab.extend**
+
+Any additional style for Tab. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **tab.hover.background**
@@ -13058,6 +14106,17 @@ onActive function and update activeIndex accordingly.
 number
 \`\`\`
 
+**alignControls**
+
+How to align the tab controls within the tabs header.
+
+\`\`\`
+start
+center
+end
+stretch
+\`\`\`
+
 **children**
 
 Required. Array of Tab.
@@ -13183,6 +14242,46 @@ undefined
 **tabs.header.background**
 
 The background styles of Tabs header. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**tabs.header.border.color**
+
+border color of the tabs controls Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**tabs.header.border.side**
+
+side of the border of the tabs controls Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**tabs.header.border.size**
+
+border size of the tabs controls Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**tabs.header.border.style**
+
+border style of the tabs controls Expects \`string\`.
 
 Defaults to
 
@@ -13523,6 +14622,15 @@ import { TextArea } from 'grommet';
 
 ## Properties
 
+**a11yTitle**
+
+Custom label to be used by screen readers.
+      When provided, an aria-label will be added to the element.
+
+\`\`\`
+string
+\`\`\`
+
 **id**
 
 The id attribute of the textarea.
@@ -13813,6 +14921,14 @@ import { TextInput } from 'grommet';
 
 ## Properties
 
+**a11yTitle**
+
+Custom title to be used by screen readers.
+
+\`\`\`
+string
+\`\`\`
+
 **dropAlign**
 
 How to align the drop. Defaults to \`{
@@ -13896,7 +15012,7 @@ boolean
 
 **messages**
 
-Custom messages for TextInput. Used for accessibility by screen 
+Custom messages for TextInput. Used for accessibility by screen
         readers. Defaults to \`{
   \\"enterSelect\\": \\"(Press Enter to Select)\\",
   \\"suggestionsCount\\": \\"suggestions available\\",
@@ -14087,7 +15203,7 @@ Defaults to
 
 **text**
 
-The possible sizes of the text in terms of its font-size and 
+The possible sizes of the text in terms of its font-size and
     line-height. Expects \`object\`.
 
 Defaults to
@@ -14462,6 +15578,34 @@ Enables video muting. This option is best used with the autoPlay flag.
 \`\`\`
 boolean
 \`\`\`
+
+**messages**
+
+Custom messages. Used for accessibility by screen readers. Defaults to \`{
+  \\"closeMenu\\": \\"close menu\\",
+  \\"fullScreen\\": \\"full screen\\",
+  \\"progressMeter\\": \\"video progress\\",
+  \\"scrubber\\": \\"scrubber\\",
+  \\"openMenu\\": \\"open menu\\",
+  \\"pauseButton\\": \\"pause\\",
+  \\"playButton\\": \\"play\\",
+  \\"volumeDown\\": \\"volume down\\",
+  \\"volumeUp\\": \\"volume up\\"
+}\`.
+
+\`\`\`
+{
+  closeMenu: string,
+  fullScreen: string,
+  progressMeter: string,
+  openMenu: string,
+  pauseButton: string,
+  playButton: string,
+  scrubber: string,
+  volumeDown: string,
+  volumeUp: string
+}
+\`\`\`
   
 ## Intrinsic element
 
@@ -14498,6 +15642,76 @@ Defaults to
 
 \`\`\`
 rgba(0, 0, 0, 0.7)
+\`\`\`
+
+**video.icons.closedCaption**
+
+The icon to use for the caption. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+<ClosedCaption />
+\`\`\`
+
+**video.icons.configure**
+
+The icon to use for the configuration action. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+<Actions />
+\`\`\`
+
+**video.icons.fullScreen**
+
+The icon to use for viewing the video in full screen. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+<Expand />
+\`\`\`
+
+**video.icons.pause**
+
+The icon to use for pausing the video. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+<Pause />
+\`\`\`
+
+**video.icons.play**
+
+The icon to use for playing the video. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+<Play />
+\`\`\`
+
+**video.icons.reduceVolume**
+
+The icon to use for the action of lowering the volume. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+<VolumeLow />
+\`\`\`
+
+**video.icons.volume**
+
+The icon to use for the action of raising the volume. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+<Volume />
 \`\`\`
 
 **video.scrubber.color**

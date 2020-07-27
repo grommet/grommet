@@ -52,18 +52,23 @@ function
 
 **options**
 
-Required. Options can be either a string or an object. 
-    Each option is rendered as a single RadioButton.
+Required. Options can be either a string, boolean, number 
+      or an object. Each option is rendered as a single RadioButton.
 
 ```
 [string]
+[number]
+[boolean]
 [{
   disabled: boolean,
   id: string,
   label: 
     string
     element,
-  value: string
+  value: 
+    string
+    number
+    boolean
 }]
 ```
 
@@ -73,6 +78,8 @@ Currently selected option value.
 
 ```
 string
+number
+boolean
 object
 ```
   

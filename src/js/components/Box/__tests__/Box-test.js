@@ -155,6 +155,13 @@ describe('Box', () => {
           background={{
             image:
               'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==)',
+            opacity: 'strong',
+          }}
+        />
+        <Box
+          background={{
+            image:
+              'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==)',
             color: 'accent-1',
           }}
         />
@@ -484,6 +491,8 @@ describe('Box', () => {
           'fadeOut',
           'jiggle',
           'pulse',
+          'rotateLeft',
+          'rotateRight',
           'slideUp',
           'slideDown',
           'slideLeft',
