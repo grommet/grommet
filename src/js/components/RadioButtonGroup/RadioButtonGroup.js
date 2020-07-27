@@ -19,6 +19,7 @@ const RadioButtonGroup = forwardRef(
     {
       children,
       disabled,
+      gap = 'small',
       name,
       onChange,
       options: optionsProp,
@@ -29,9 +30,9 @@ const RadioButtonGroup = forwardRef(
   ) => {
     const formContext = useContext(FormContext);
     const theme = useContext(ThemeContext) || defaultProps.theme;
-    const gap = theme.global.radioButtonGroup
+    const radioButtonGap = theme.global.radioButtonGroup
       ? theme.global.radioButtonGroup.gap
-      : 'small';
+      : gap;
 
     // normalize options to always use an object
     const options = useMemo(
@@ -106,7 +107,7 @@ const RadioButtonGroup = forwardRef(
         onLeft={focus ? onPrevious : undefined}
         onRight={focus ? onNext : undefined}
       >
-        <Box ref={ref} gap={gap} {...rest}>
+        <Box ref={ref} gap={radioButtonGap} {...rest}>
           {options.map(
             (
               {
