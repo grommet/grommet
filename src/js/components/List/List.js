@@ -12,14 +12,7 @@ const StyledList = styled.ul`
   ${props => !props.margin && 'margin: 0;'}
   padding: 0;
   ${genericStyles}
-
-  ${props =>
-    props.onClickItem &&
-    `
-    &:focus {
-      ${focusStyle({ forceOutline: true, skipSvgChildren: true })}
-    }
-  `}
+  ${props => props.focus && focusStyle({ skipSvgChildren: true })}
 `;
 
 const StyledItem = styled(Box)`
@@ -42,7 +35,6 @@ const List = React.forwardRef(
       border,
       children,
       data,
-      focus,
       itemProps,
       pad,
       primaryKey,
@@ -56,6 +48,8 @@ const List = React.forwardRef(
   ) => {
     const theme = useContext(ThemeContext);
     const [active, setActive] = useState();
+    const [focus, setFocus] = useState();
+    const listRef = React.createRef();
 
     return (
       <Keyboard
@@ -88,9 +82,16 @@ const List = React.forwardRef(
         }
       >
         <StyledList
-          ref={ref}
+          ref={ref || listRef}
           as={as || 'ul'}
           tabIndex={onClickItem ? 0 : undefined}
+          focus={focus}
+          onFocus={() => {
+            setFocus(true);
+          }}
+          onBlur={() => {
+            setFocus(false);
+          }}
           {...rest}
         >
           <InfiniteScroll
@@ -192,6 +193,9 @@ const List = React.forwardRef(
                     adjustedEvent.item = item;
                     adjustedEvent.index = index;
                     onClickItem(adjustedEvent);
+                    // put focus back on the List container to meet
+                    // WCAG accessibility guidelines
+                    (ref || listRef).current.focus();
                   },
                   onMouseOver: () => setActive(index),
                   onMouseOut: () => setActive(undefined),
