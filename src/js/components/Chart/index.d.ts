@@ -2,10 +2,12 @@ import * as React from 'react';
 import {
   A11yTitleType,
   AlignSelfType,
+  ColorType,
   EdgeSizeType,
   GapType,
   GridAreaType,
   MarginType,
+  ThicknessType,
 } from '../../utils';
 
 export interface ChartProps {
@@ -15,9 +17,12 @@ export interface ChartProps {
   margin?: MarginType;
   bounds?: number[][];
   color?:
-    | string
-    | { color?: string; opacity?: 'weak' | 'medium' | 'strong' | boolean }
-    | { color: string; value: number | number[] }[];
+    | ColorType
+    | {
+        color?: ColorType;
+        opacity?: 'weak' | 'medium' | 'strong' | boolean | number;
+      }
+    | { color: ColorType; value: number | number[] }[];
   dash?: boolean;
   gap?: GapType;
   onClick?: (...args: any[]) => any;
@@ -64,23 +69,18 @@ export interface ChartProps {
           | string;
       }
     | string;
-  thickness?:
-    | 'hair'
-    | 'xsmall'
-    | 'small'
-    | 'medium'
-    | 'large'
-    | 'xlarge'
-    | 'none'
-    | string;
+  thickness?: ThicknessType;
   type?: 'bar' | 'line' | 'area' | 'point';
   values: (
     | number
     | number[]
     | {
+        color?: ColorType;
         label?: string;
         onClick?: (...args: any[]) => any;
         onHover?: (...args: any[]) => any;
+        opacity?: 'weak' | 'medium' | 'strong' | boolean | number;
+        thickness?: ThicknessType;
         value: number | number[];
       }
   )[];
