@@ -84,6 +84,7 @@ const OptionChips = ({
                   {optionLabel(item)}
                 </OptionLabel>
                 <Close
+                  style={{cursor: 'pointer'}}
                   onClick={event => onRemove(event, item)}
                   {...theme.multiselect.chips.icon}
                 />
