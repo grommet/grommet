@@ -10,7 +10,7 @@ var _themes = require("grommet/themes");
 
 var _grommetIcons = require("grommet-icons");
 
-var _utils = require("../../../utils");
+var _utils = require("grommet/utils");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 

@@ -3,7 +3,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { grommet, Box, Form, FormField, Grid, Grommet, Heading, RadioButtonGroup, TextInput, ThemeContext } from 'grommet';
-import { deepMerge } from '../../../utils';
+import { deepMerge } from 'grommet/utils';
 var customTheme = deepMerge(grommet, {
   formField: {
     border: {

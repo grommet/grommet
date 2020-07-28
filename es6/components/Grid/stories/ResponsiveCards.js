@@ -29,6 +29,6 @@ var Example = function Example() {
   }))));
 };
 
-storiesOf('Card', module).add('Responsive', function () {
+storiesOf('Grid', module).add('Responsive Cards', function () {
   return /*#__PURE__*/React.createElement(Example, null);
 });

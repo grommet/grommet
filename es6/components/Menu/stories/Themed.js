@@ -4,7 +4,7 @@ import { Grommet, Box, Menu } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { FormDown } from "grommet-icons/es6/icons/FormDown";
 import { FormUp } from "grommet-icons/es6/icons/FormUp";
-import { deepMerge } from '../../../utils';
+import { deepMerge } from 'grommet/utils';
 var customTheme = deepMerge(grommet, {
   menu: {
     icons: {

@@ -6,7 +6,7 @@ var _react2 = require("@storybook/react");
 
 var _grommet = require("grommet");
 
-var _utils = require("../../../utils");
+var _utils = require("grommet/utils");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 

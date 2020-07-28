@@ -22,15 +22,6 @@ var theme = {
   global: {
     font: {
       family: "-apple-system,\n           BlinkMacSystemFont, \n           \"Segoe UI\""
-    },
-    colors: {
-      blue: '#00C8FF',
-      green: '#17EBA0',
-      teal: '#82FFF2',
-      purple: '#F740FF',
-      red: '#FC6161',
-      orange: '#FFBC44',
-      yellow: '#FFEB59'
     }
   },
   card: {
@@ -48,9 +39,6 @@ var theme = {
   }
 };
 var gradient = [{
-  value: 0,
-  color: 'status-ok'
-}, {
   value: 28,
   color: 'status-ok'
 }, {
@@ -66,27 +54,32 @@ var data = [{
   }),
   title: 'Memory (EEC)',
   subTitle: '8 GB @ 400Hz',
-  message: 'Past 24hrs'
+  message: 'Past 24hrs',
+  type: 'bar'
 }, {
   icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Storage, {
     size: "large"
   }),
   title: 'Storage',
   subTitle: 'Sub-system and Devices',
-  message: '36.8 TB available'
+  message: '36.8 TB available',
+  type: 'line'
 }, {
   icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Trigger, {
     size: "large"
   }),
   title: 'Power (Watts)',
   subTitle: '720 Watt Service',
-  message: 'Past 12hrs'
+  message: 'Past 12hrs',
+  type: 'point'
 }];
 
-var LineChartPreview = function LineChartPreview() {
+var ChartPreview = function ChartPreview(_ref) {
+  var type = _ref.type;
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Chart, {
-    type: "line",
-    dash: true,
+    type: type,
+    id: type,
+    dash: type === 'line',
     round: true,
     thickness: "xsmall",
     bounds: [[0, 6], [0, 100]],
@@ -112,7 +105,7 @@ var LineChartPreview = function LineChartPreview() {
       value: [0, 25],
       label: 'sixty'
     }],
-    "aria-label": "Card with analytics",
+    "aria-label": "chart card",
     color: gradient,
     size: {
       height: 'xsmall'
@@ -120,12 +113,12 @@ var LineChartPreview = function LineChartPreview() {
   }));
 };
 
-var Identifier = function Identifier(_ref) {
-  var children = _ref.children,
-      title = _ref.title,
-      subTitle = _ref.subTitle,
-      size = _ref.size,
-      rest = _objectWithoutPropertiesLoose(_ref, ["children", "title", "subTitle", "size"]);
+var Identifier = function Identifier(_ref2) {
+  var children = _ref2.children,
+      title = _ref2.title,
+      subTitle = _ref2.subTitle,
+      size = _ref2.size,
+      rest = _objectWithoutPropertiesLoose(_ref2, ["children", "title", "subTitle", "size"]);
 
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, _extends({
     gap: "small",
@@ -150,7 +143,6 @@ var Example = function Example() {
     height: "100%"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Grid, {
     gap: "medium",
-    rows: "small",
     columns: {
       count: 'fit',
       size: 'small'
@@ -168,7 +160,9 @@ var Example = function Example() {
       title: value.title,
       subTitle: value.subTitle,
       size: "small"
-    }, value.icon), /*#__PURE__*/_react["default"].createElement(LineChartPreview, null)), /*#__PURE__*/_react["default"].createElement(_grommet.CardFooter, {
+    }, value.icon), /*#__PURE__*/_react["default"].createElement(ChartPreview, {
+      type: value.type
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.CardFooter, {
       pad: {
         horizontal: 'medium',
         vertical: 'small'

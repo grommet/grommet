@@ -6,7 +6,7 @@ var _react2 = require("@storybook/react");
 
 var _grommet = require("grommet");
 
-var _utils = require("../../../utils");
+var _utils = require("grommet/utils");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
