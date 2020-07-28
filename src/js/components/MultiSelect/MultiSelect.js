@@ -38,6 +38,7 @@ const MultiSelect = ({
     previousValue,
     open,
     searchVal,
+    valueInternalChange,
     setSelectState,
   } = useCustomSelectState(options, value);
 
@@ -46,12 +47,16 @@ const MultiSelect = ({
   }, [options]);
 
   useEffect(() => {
-    setSelectState({ previousValue: value });
+    if (valueInternalChange)
+      setSelectState({ previousValue: value });
+    setSelectState({ valueInternalChange: false });
+    if (withInclusionExclusion && Array.isArray(value) && !value.length)
+      onIncExcChange(null);
   }, [value]);
 
   const onCancelClick = () => {
     onValueChange(previousValue);
-    setSelectState({ open: false });
+    setSelectState({ open: false, valueInternalChange: true });
   };
 
   const getValue = (index, array, param) => applyKey(array[index], param);
@@ -81,6 +86,12 @@ const MultiSelect = ({
       });
       onValueChange(newValue.filter(item => !nonSelected.includes(item)));
     }
+    setSelectState({ valueInternalChange: true });
+  };
+
+  const onClose = () => {
+    onValueChange(previousValue);
+    setSelectState({ valueInternalChange: true });
   };
 
   const renderContent = props => {
@@ -142,7 +153,7 @@ const MultiSelect = ({
         onOpen={() => setSelectState({ open: true })}
         onClose={
           withUpdateCancelButtons
-            ? () => onValueChange(previousValue)
+            ? () => onClose()
             : undefined
         }
         closeOnChange={false}

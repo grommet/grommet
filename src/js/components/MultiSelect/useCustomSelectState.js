@@ -6,6 +6,7 @@ export default function useCustomSelectState(options,value) {
     previousValue: value,
     open: false,
     searchVal: '',
+    valueInternalChange: false,
   });
 
   const {
@@ -13,6 +14,7 @@ export default function useCustomSelectState(options,value) {
     previousValue,
     open,
     searchVal,
+    valueInternalChange,
   } = selectState;
 
   const setSelectState = (params, ...rest) =>
@@ -23,6 +25,7 @@ export default function useCustomSelectState(options,value) {
     previousValue,
     open,
     searchVal,
+    valueInternalChange,
     setSelectState,
   };
 }
