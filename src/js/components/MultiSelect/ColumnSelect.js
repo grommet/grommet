@@ -158,11 +158,14 @@ const ColumnSelect = ({
                         <SelectOption
                           // eslint-disable-next-line react/no-array-index-key
                           key={`${index}_select_all`}
+                          ref={optionRef}
                           tabIndex="-1"
                           role="menuitem"
-                          hoverIndicator="light-5"
+                          hoverIndicator={theme.select.activeColor}
                           selected={allSelected}
                           plain
+                          onMouseOver={onActiveOption(-1)}
+                          onFocus={onActiveOption(-1)}
                           onClick={
                             !inclusionExclusion ||
                             (inclusionExclusion && isExcluded !== null)
@@ -185,6 +188,7 @@ const ColumnSelect = ({
                             onSelect={(event, type) =>
                               setOption(event, type, -1)
                             }
+                            active={activeIndex === -1}
                           />
                         </SelectOption>
                       )}
@@ -220,6 +224,7 @@ const ColumnSelect = ({
                           onSelect={(event, type) =>
                             setOption(event, type, index)
                           }
+                          active={optionActive}
                         />
                       </SelectOption>
                     </>
