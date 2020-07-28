@@ -27,7 +27,7 @@ export function Toast({ type, id, msg, onClose }) {
       {...theme.notification.toast[type]}
     >
       <Box align="center" direction="row" gap="xsmall">
-        <Icon size={IconSize} color={IconColor} />
+        {Icon && <Icon size={IconSize} color={IconColor} />}
         <Text
           {...(theme.notification.toast.text[type] ||
             theme.notification.toast.text.default)}
