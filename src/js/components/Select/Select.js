@@ -143,7 +143,10 @@ const Select = forwardRef(
           event.persist();
           const adjustedEvent = event;
           // Preact support, target is read only property on a native event.
-          Object.defineProperty(event, 'target', { writable: true, value: inputRef.current, name });
+          Object.defineProperty(event, 'target', {
+            writable: true,
+            value: inputRef.current,
+          });
           adjustedEvent.value = nextValue;
           adjustedEvent.option = option;
           adjustedEvent.selected = nextSelected;
