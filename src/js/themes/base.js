@@ -15,6 +15,8 @@ import { Previous } from 'grommet-icons/icons/Previous';
 import { Subtract } from 'grommet-icons/icons/Subtract';
 import { Volume } from 'grommet-icons/icons/Volume';
 import { VolumeLow } from 'grommet-icons/icons/VolumeLow';
+import { Info } from 'grommet-icons/icons/Info';
+import { FormClose } from 'grommet-icons/icons/FormClose';
 import { base as iconBase } from 'grommet-icons/themes/base';
 
 import { deepFreeze, deepMerge } from '../utils/object';
@@ -1251,7 +1253,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       xxlarge: { ...fontSizing(4) },
     },
     textArea: {
-      // extend: undefined,
+      extend: {
+        minHeight: '300px',
+      },
       // disabled: { opacity: undefined },
     },
     textInput: {
@@ -1283,6 +1287,68 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       color: 'white',
       tipSize: '5px',
       round: 'small',
+    },
+    pagination: {
+      background: 'white',
+      round: 'small',
+      border: {
+        color: 'dark-6',
+      },
+      pad: 'xlarge',
+      active: {
+        color: '#e7eaf1',
+      },
+      icon: {
+        bgColor: 'light-2',
+        pad: 'xsmall',
+      },
+    },
+    notification: {
+      toast: {
+        closeIcon: FormClose,
+        position: 'top-right',
+        zIndex: 1,
+        icon: {
+          size: 'medium',
+          default: Info,
+        },
+        text: {
+          default: {
+            weight: 600,
+          },
+          ok: {},
+          error: {},
+        },
+        default: {
+          background: 'dark-1',
+          // border: {},
+          size: 'medium',
+          align: 'center',
+          direction: 'row',
+          gap: 'small',
+          justify: 'between',
+          round: 'xsmall',
+          elevation: 'medium',
+          pad: { vertical: 'medium', horizontal: 'medium' },
+          margin: { vertical: 'small', horizontal: 'large' },
+        },
+        ok: {
+          background: 'status-ok',
+          // text: {},
+        },
+        critical: {
+          background: 'status-critical',
+          // text: {},
+        },
+        error: {
+          background: 'status-error',
+          // text: {},
+        },
+        warning: {
+          background: 'status-warning',
+          // text: {},
+        },
+      },
     },
   });
 

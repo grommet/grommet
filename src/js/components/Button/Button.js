@@ -17,6 +17,7 @@ import {
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
+import { Loader } from '../Loader';
 
 import { StyledButton } from './StyledButton';
 import { StyledButtonKind } from './StyledButtonKind';
@@ -117,6 +118,8 @@ const Button = forwardRef(
       tertiary,
       type = 'button',
       as,
+      isLoading,
+      background,
       ...rest
     },
     ref,
@@ -270,7 +273,25 @@ const Button = forwardRef(
           sizeProp={size}
           type={!href ? type : undefined}
         >
-          {contents}
+          {isLoading ? (
+            <Box direction="row" align="center">
+              {contents}
+              {isLoading ? (
+                <Box margin={{ horizontal: 'small' }}>
+                  <Loader
+                    width="18px"
+                    height="18px"
+                    type="inline"
+                    primaryColor="white"
+                    secondaryColor={background}
+                    margin={{ left: 'small' }}
+                  />
+                </Box>
+              ) : null}
+            </Box>
+          ) : (
+            contents
+          )}
         </StyledButtonKind>
       );
     }
@@ -314,7 +335,25 @@ const Button = forwardRef(
         sizeProp={size}
         type={!href ? type : undefined}
       >
-        {contents}
+        {isLoading ? (
+          <Box direction="row" align="center">
+            {contents}
+            {isLoading ? (
+              <Box margin={{ horizontal: 'small' }}>
+                <Loader
+                  width="18px"
+                  height="18px"
+                  type="inline"
+                  primaryColor="white"
+                  secondaryColor={background}
+                  margin={{ left: 'small' }}
+                />
+              </Box>
+            ) : null}
+          </Box>
+        ) : (
+          contents
+        )}
       </StyledButton>
     );
   },

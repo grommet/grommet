@@ -30,6 +30,7 @@ const MultiSelect = ({
   isExcluded,
   onIncExcChange,
   renderEmptySelected,
+  validate,
   ...rest
 }) => {
   const {
@@ -106,6 +107,7 @@ const MultiSelect = ({
           renderEmptySelected={renderEmptySelected}
           onValueChange={onValueChange}
           custom={custom}
+          validate={validate}
           {...props}
         />
       );

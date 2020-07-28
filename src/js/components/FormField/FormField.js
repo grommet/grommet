@@ -410,25 +410,32 @@ const FormField = forwardRef(
         {...containerRest}
       >
         <Box style={{ ...layoutType }}>
-          <Box {...labelStyle} width={labelWidth}>
-            {label && component !== CheckBox && (
-              <Text as="label" htmlFor={htmlFor}>
-                {label}
-              </Text>
-            )}
-          </Box>
+          {(label && component !== CheckBox) || labelWidth ? (
+            <Box {...labelStyle} width={labelWidth}>
+              {label && component !== CheckBox && (
+                <Text as="label" htmlFor={htmlFor}>
+                  {label}
+                </Text>
+              )}
+            </Box>
+          ) : null}
+
           <Box>
             {contents}
-            <Box>
-              <Message
-                message={normalizedError}
-                {...formFieldTheme.error}
-                style={{
-                  position: `${direction === 'row' ? 'absolute' : 'static'}`,
-                }}
-              />
-            </Box>
-            <Message message={normalizedInfo} {...formFieldTheme.info} />
+            {normalizedError && (
+              <Box>
+                <Message
+                  message={normalizedError}
+                  {...formFieldTheme.error}
+                  style={{
+                    position: `${direction === 'row' ? 'absolute' : 'static'}`,
+                  }}
+                />
+              </Box>
+            )}
+            {normalizedInfo && (
+              <Message message={normalizedInfo} {...formFieldTheme.info} />
+            )}
           </Box>
         </Box>
       </FormFieldBox>
