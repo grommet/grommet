@@ -212,9 +212,8 @@ export const doc = Box => {
       PropTypes.string,
     ]).description(`The amount of spacing between child elements. This
         should not be used in conjunction with 'wrap' as the gap elements
-        will not wrap gracefully. If a child component renders a fragment,
-        Box will not add a gap between the individual elements in the
-        fragment.`),
+        will not wrap gracefully. If a child is a Fragment,
+        Box will not add a gap between the choldren of the Fragment.`),
     height: PropTypes.oneOfType([
       PropTypes.oneOf([
         'xxsmall',
