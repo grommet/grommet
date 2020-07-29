@@ -2472,6 +2472,16 @@ Defaults to
 undefined
 \`\`\`
 
+**button.default.font.weight**
+
+The weight of the text label for default buttons. Expects \`string | number\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **button.default.extend**
 
 Any additional style for a default button. Expects \`string | (props) => {}\`.
@@ -2712,6 +2722,16 @@ Defaults to
 undefined
 \`\`\`
 
+**button.primary.font.weight**
+
+The weight of the text label for primary buttons. Expects \`string | number\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **button.primary.padding.horizontal**
 
 The horizontal padding for a primary button. Expects \`string\`.
@@ -2775,6 +2795,16 @@ undefined
 **button.secondary.color**
 
 The color of the label for secondary buttons. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.secondary.font.weight**
+
+The weight of the text label for secondary buttons. Expects \`string | number\`.
 
 Defaults to
 
