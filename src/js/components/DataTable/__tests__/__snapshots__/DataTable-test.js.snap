@@ -5931,35 +5931,14 @@ exports[`DataTable search 2`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
-  width: 100%;
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c2::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-.c2::-webkit-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c2::-moz-placeholder {
-  color: #AAAAAA;
-}
-
-.c2:-ms-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c2::-moz-focus-inner {
-  border: none;
-  outline: none;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
 }
 
 .c2 > circle,
@@ -5975,6 +5954,27 @@ exports[`DataTable search 2`] = `
 
 .c2::-moz-focus-inner {
   border: 0;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c2::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c2:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c2::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c2::-moz-focus-inner {
+  border: none;
+  outline: none;
 }
 
 .c1 {

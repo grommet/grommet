@@ -65,16 +65,12 @@ exports[`Form accessibility Box with TextInput in Form should
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-webkit-input-placeholder {
@@ -87,6 +83,10 @@ exports[`Form accessibility Box with TextInput in Form should
 
 .c5:-ms-input-placeholder {
   color: #AAAAAA;
+}
+
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
 .c5::-moz-focus-inner {
@@ -395,18 +395,14 @@ exports[`Form accessibility FormField with an explicit TextInput child
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c4::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c4::-webkit-input-placeholder {
@@ -419,6 +415,10 @@ exports[`Form accessibility FormField with an explicit TextInput child
 
 .c4:-ms-input-placeholder {
   color: #AAAAAA;
+}
+
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
 .c4::-moz-focus-inner {
@@ -631,18 +631,14 @@ exports[`Form accessibility Select in Form should have no accessibility violatio
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c7::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c7::-webkit-input-placeholder {
@@ -655,6 +651,10 @@ exports[`Form accessibility Select in Form should have no accessibility violatio
 
 .c7:-ms-input-placeholder {
   color: #AAAAAA;
+}
+
+.c7::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
 .c7::-moz-focus-inner {
@@ -801,18 +801,14 @@ exports[`Form accessibility TextInput in Form should have
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c4::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c4::-webkit-input-placeholder {
@@ -825,6 +821,10 @@ exports[`Form accessibility TextInput in Form should have
 
 .c4:-ms-input-placeholder {
   color: #AAAAAA;
+}
+
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
 .c4::-moz-focus-inner {
@@ -956,18 +956,14 @@ exports[`Form uncontrolled errors 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c4::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c4::-webkit-input-placeholder {
@@ -980,6 +976,10 @@ exports[`Form uncontrolled errors 1`] = `
 
 .c4:-ms-input-placeholder {
   color: #AAAAAA;
+}
+
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
 .c4::-moz-focus-inner {
@@ -1104,18 +1104,14 @@ exports[`Form uncontrolled infos 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c4::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c4::-webkit-input-placeholder {
@@ -1128,6 +1124,10 @@ exports[`Form uncontrolled infos 1`] = `
 
 .c4:-ms-input-placeholder {
   color: #AAAAAA;
+}
+
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
 .c4::-moz-focus-inner {
@@ -1384,18 +1384,14 @@ exports[`Form uncontrolled uncontrolled 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c4::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c4::-webkit-input-placeholder {
@@ -1408,6 +1404,10 @@ exports[`Form uncontrolled uncontrolled 1`] = `
 
 .c4:-ms-input-placeholder {
   color: #AAAAAA;
+}
+
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
 .c4::-moz-focus-inner {
@@ -1481,7 +1481,7 @@ exports[`Form uncontrolled uncontrolled 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+            class="StyledTextInput-sc-1x30a0s-0 lnoLDW"
             name="test"
             placeholder="test input"
             value=""
@@ -1515,7 +1515,7 @@ exports[`Form uncontrolled uncontrolled 3`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+            class="StyledTextInput-sc-1x30a0s-0 lnoLDW"
             name="test"
             placeholder="test input"
             value=""
@@ -1615,18 +1615,14 @@ exports[`Form uncontrolled update 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c4::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c4::-webkit-input-placeholder {
@@ -1639,6 +1635,10 @@ exports[`Form uncontrolled update 1`] = `
 
 .c4:-ms-input-placeholder {
   color: #AAAAAA;
+}
+
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
 .c4::-moz-focus-inner {
@@ -1904,18 +1904,14 @@ exports[`Form uncontrolled with field 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c4::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c4::-webkit-input-placeholder {
@@ -1928,6 +1924,10 @@ exports[`Form uncontrolled with field 1`] = `
 
 .c4:-ms-input-placeholder {
   color: #AAAAAA;
+}
+
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
 .c4::-moz-focus-inner {
