@@ -218,7 +218,7 @@ var inputSizeStyle = function inputSizeStyle(props) {
   return (0, _styledComponents.css)(["font-size:", ";line-height:", ";"], data.size, data.height);
 };
 
-var inputStyle = (0, _styledComponents.css)(["box-sizing:border-box;", " font-family:inherit;border:none;-webkit-appearance:none;background:transparent;color:inherit;width:100%;", " ", " ", " margin:0;", " ", ";", " ", "::-webkit-search-decoration{-webkit-appearance:none;}&::-moz-focus-inner{border:none;outline:none;}"], function (props) {
+var inputStyle = (0, _styledComponents.css)(["box-sizing:border-box;", " font-family:inherit;border:none;-webkit-appearance:none;background:transparent;color:inherit;width:100%;", " ", " ", " margin:0;", " ", ";", " ", "::-webkit-search-decoration{-webkit-appearance:none;}&::-moz-focus-inner{border:none;outline:none;}&:-moz-placeholder,&::-moz-placeholder{opacity:1;}"], function (props) {
   return "font-size: " + (props.theme.global.input.font.size ? props.theme.text[props.theme.global.input.font.size].size || props.theme.global.input.font.size : 'inherit') + ";";
 }, function (props) {
   return props.theme.global.input.font.height && "line-height: " + props.theme.global.input.font.height + ";";
