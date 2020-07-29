@@ -226,10 +226,6 @@ exports[`Grommet custom theme 1`] = `
   width: 100%;
 }
 
-.c12::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
 .c12::-webkit-input-placeholder {
   color: #cc6633;
 }
@@ -240,6 +236,10 @@ exports[`Grommet custom theme 1`] = `
 
 .c12:-ms-input-placeholder {
   color: #cc6633;
+}
+
+.c12::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
 .c12::-moz-focus-inner {
