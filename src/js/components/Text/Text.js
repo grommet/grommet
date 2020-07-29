@@ -2,8 +2,13 @@ import React from 'react';
 
 import { StyledText } from './StyledText';
 
-const Text = ({ color, tag, as, ...rest }) => (
-  <StyledText as={!as && tag ? tag : as} colorProp={color} {...rest} />
+const Text = ({ color, tag, as, a11yTitle, ...rest }) => (
+  <StyledText
+    as={!as && tag ? tag : as}
+    colorProp={color}
+    aria-label={a11yTitle}
+    {...rest}
+  />
 );
 
 Text.defaultProps = {

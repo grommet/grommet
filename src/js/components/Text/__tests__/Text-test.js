@@ -1,9 +1,25 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import 'jest-styled-components';
+
+import { axe } from 'jest-axe';
+import 'jest-axe/extend-expect';
+import 'regenerator-runtime/runtime';
 
 import { Grommet } from '../../Grommet';
 import { Text } from '..';
+
+test('should have no accessibility violations', async () => {
+  const { container } = render(
+    <Grommet>
+      <Text a11yTitle="test"> Example</Text>
+    </Grommet>,
+  );
+  const results = await axe(container);
+  expect(results).toHaveNoViolations();
+  expect(container.firstChild).toMatchSnapshot();
+});
 
 test('renders', () => {
   const component = renderer.create(
