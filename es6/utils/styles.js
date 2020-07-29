@@ -186,7 +186,17 @@ export var getInputPadBySide = function getInputPadBySide(props, side) {
   var adjustedPad = adjustPad(props, pad);
   return adjustedPad;
 };
-export var inputStyle = css(["box-sizing:border-box;", " font-family:inherit;border:none;-webkit-appearance:none;background:transparent;color:inherit;", " ", " ", " margin:0;", "::-webkit-search-decoration{-webkit-appearance:none;}"], function (props) {
+var placeholderColor = css(["color:", ";"], function (props) {
+  return normalizeColor(props.theme.global.colors.placeholder, props.theme);
+});
+var placeholderStyle = css(["&::-webkit-input-placeholder{", ";}&::-moz-placeholder{", ";}&:-ms-input-placeholder{", ";}"], placeholderColor, placeholderColor, placeholderColor);
+
+var inputSizeStyle = function inputSizeStyle(props) {
+  var data = props.theme.text[props.size];
+  return css(["font-size:", ";line-height:", ";"], data.size, data.height);
+};
+
+export var inputStyle = css(["box-sizing:border-box;", " font-family:inherit;border:none;-webkit-appearance:none;background:transparent;color:inherit;width:100%;", " ", " ", " margin:0;", " ", ";", " ", "::-webkit-search-decoration{-webkit-appearance:none;}&::-moz-focus-inner{border:none;outline:none;}"], function (props) {
   return "font-size: " + (props.theme.global.input.font.size ? props.theme.text[props.theme.global.input.font.size].size || props.theme.global.input.font.size : 'inherit') + ";";
 }, function (props) {
   return props.theme.global.input.font.height && "line-height: " + props.theme.global.input.font.height + ";";
@@ -200,7 +210,11 @@ export var inputStyle = css(["box-sizing:border-box;", " font-family:inherit;bor
   return (// for backwards compatibility, check if props.theme.global.input.weight
     (props.theme.global.input.weight || props.theme.global.input.font.weight) && css(["font-weight:", ";"], props.theme.global.input.weight || props.theme.global.input.font.weight)
   );
-}, controlBorderStyle);
+}, function (props) {
+  return props.size && inputSizeStyle(props);
+}, function (props) {
+  return props.focus && !props.plain && focusStyle();
+}, controlBorderStyle, placeholderStyle);
 export var overflowStyle = function overflowStyle(overflowProp) {
   if (typeof overflowProp === 'string') {
     return css(["overflow:", ";"], overflowProp);
@@ -208,10 +222,6 @@ export var overflowStyle = function overflowStyle(overflowProp) {
 
   return css(["", " ", ";"], overflowProp.horizontal && "overflow-x: " + overflowProp.horizontal + ";", overflowProp.vertical && "overflow-y: " + overflowProp.vertical + ";");
 };
-var placeholderColor = css(["color:", ";"], function (props) {
-  return normalizeColor(props.theme.global.colors.placeholder, props.theme);
-});
-export var placeholderStyle = css(["&::-webkit-input-placeholder{", ";}&::-moz-placeholder{", ";}&:-ms-input-placeholder{", ";}"], placeholderColor, placeholderColor, placeholderColor);
 var ALIGN_SELF_MAP = {
   center: 'center',
   end: 'flex-end',
@@ -233,3 +243,4 @@ export var disabledStyle = function disabledStyle(componentStyle) {
 export var sizeStyle = function sizeStyle(name, value, theme) {
   return css(["", ":", ";"], name, theme.global.size[value] || value);
 };
+export var plainInputStyle = css(["outline:none;border:none;"]);

@@ -1,12 +1,7 @@
 import styled, { css } from 'styled-components';
-import { disabledStyle, focusStyle, inputStyle, placeholderStyle } from '../../utils';
+import { disabledStyle, inputStyle } from '../../utils';
 import { defaultProps } from '../../default-props';
 var plainStyle = css(["outline:none;border:none;width:100%;-webkit-appearance:none;"]);
-
-var sizeStyle = function sizeStyle(props) {
-  var data = props.theme.text[props.size];
-  return css(["font-size:", ";line-height:", ";"], data.size, data.height);
-};
 
 var resizeStyle = function resizeStyle(resize) {
   if (resize === 'horizontal') {
@@ -27,18 +22,14 @@ var resizeStyle = function resizeStyle(resize) {
 var StyledTextArea = styled.textarea.withConfig({
   displayName: "StyledTextArea",
   componentId: "sc-17i3mwp-0"
-})(["", " width:100%;", " ", " ", " ", " ", " ", " &::-moz-focus-inner{border:none;outline:none;}", ";", ";"], inputStyle, function (props) {
+})(["", " ", " ", " ", " ", " ", ";"], inputStyle, function (props) {
   return props.resize !== undefined && resizeStyle(props.resize);
 }, function (props) {
   return props.fillArg && 'height: 100%;';
 }, function (props) {
-  return props.size && sizeStyle(props);
-}, function (props) {
   return props.plain && plainStyle;
 }, function (props) {
   return props.disabled && disabledStyle(props.theme.textArea.disabled && props.theme.textArea.disabled.opacity);
-}, placeholderStyle, function (props) {
-  return props.focus && !props.plain && focusStyle();
 }, function (props) {
   return props.theme.textArea && props.theme.textArea.extend;
 });

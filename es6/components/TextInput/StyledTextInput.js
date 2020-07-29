@@ -1,24 +1,13 @@
-import styled, { css } from 'styled-components';
-import { disabledStyle, getInputPadBySide, focusStyle, inputStyle, parseMetricToNum, placeholderStyle } from '../../utils';
+import styled from 'styled-components';
+import { disabledStyle, getInputPadBySide, inputStyle, parseMetricToNum, plainInputStyle } from '../../utils';
 import { defaultProps } from '../../default-props';
-
-var sizeStyle = function sizeStyle(props) {
-  var data = props.theme.text[props.size];
-  return css(["font-size:", ";line-height:", ";"], data.size, data.height);
-};
-
-var plainStyle = css(["outline:none;border:none;"]);
 var StyledTextInput = styled.input.withConfig({
   displayName: "StyledTextInput",
   componentId: "sc-1x30a0s-0"
-})(["", " width:100%;", " ", " ", " ", " &::-moz-focus-inner{border:none;outline:none;}", ";", " ", ";"], inputStyle, function (props) {
-  return props.size && sizeStyle(props);
+})(["", " ", " ", " ", " ", ";"], inputStyle, function (props) {
+  return props.plain && plainInputStyle;
 }, function (props) {
-  return props.plain && plainStyle;
-}, placeholderStyle, function (props) {
   return props.icon && (props.reverse ? "padding-right: " + props.theme.global.edgeSize.large + ";" : "padding-left: " + props.theme.global.edgeSize.large + ";");
-}, function (props) {
-  return props.focus && !props.plain && focusStyle();
 }, function (props) {
   return props.disabled && disabledStyle(props.theme.textInput.disabled && props.theme.textInput.disabled.opacity);
 }, function (props) {

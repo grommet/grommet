@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.sizeStyle = exports.disabledStyle = exports.genericStyles = exports.placeholderStyle = exports.overflowStyle = exports.inputStyle = exports.getInputPadBySide = exports.focusStyle = exports.fillStyle = exports.edgeStyle = exports.controlBorderStyle = exports.baseStyle = void 0;
+exports.plainInputStyle = exports.sizeStyle = exports.disabledStyle = exports.genericStyles = exports.overflowStyle = exports.inputStyle = exports.getInputPadBySide = exports.focusStyle = exports.fillStyle = exports.edgeStyle = exports.controlBorderStyle = exports.baseStyle = void 0;
 
 var _styledComponents = require("styled-components");
 
@@ -208,7 +208,17 @@ var getInputPadBySide = function getInputPadBySide(props, side) {
 };
 
 exports.getInputPadBySide = getInputPadBySide;
-var inputStyle = (0, _styledComponents.css)(["box-sizing:border-box;", " font-family:inherit;border:none;-webkit-appearance:none;background:transparent;color:inherit;", " ", " ", " margin:0;", "::-webkit-search-decoration{-webkit-appearance:none;}"], function (props) {
+var placeholderColor = (0, _styledComponents.css)(["color:", ";"], function (props) {
+  return (0, _colors.normalizeColor)(props.theme.global.colors.placeholder, props.theme);
+});
+var placeholderStyle = (0, _styledComponents.css)(["&::-webkit-input-placeholder{", ";}&::-moz-placeholder{", ";}&:-ms-input-placeholder{", ";}"], placeholderColor, placeholderColor, placeholderColor);
+
+var inputSizeStyle = function inputSizeStyle(props) {
+  var data = props.theme.text[props.size];
+  return (0, _styledComponents.css)(["font-size:", ";line-height:", ";"], data.size, data.height);
+};
+
+var inputStyle = (0, _styledComponents.css)(["box-sizing:border-box;", " font-family:inherit;border:none;-webkit-appearance:none;background:transparent;color:inherit;width:100%;", " ", " ", " margin:0;", " ", ";", " ", "::-webkit-search-decoration{-webkit-appearance:none;}&::-moz-focus-inner{border:none;outline:none;}"], function (props) {
   return "font-size: " + (props.theme.global.input.font.size ? props.theme.text[props.theme.global.input.font.size].size || props.theme.global.input.font.size : 'inherit') + ";";
 }, function (props) {
   return props.theme.global.input.font.height && "line-height: " + props.theme.global.input.font.height + ";";
@@ -222,7 +232,11 @@ var inputStyle = (0, _styledComponents.css)(["box-sizing:border-box;", " font-fa
   return (// for backwards compatibility, check if props.theme.global.input.weight
     (props.theme.global.input.weight || props.theme.global.input.font.weight) && (0, _styledComponents.css)(["font-weight:", ";"], props.theme.global.input.weight || props.theme.global.input.font.weight)
   );
-}, controlBorderStyle);
+}, function (props) {
+  return props.size && inputSizeStyle(props);
+}, function (props) {
+  return props.focus && !props.plain && focusStyle();
+}, controlBorderStyle, placeholderStyle);
 exports.inputStyle = inputStyle;
 
 var overflowStyle = function overflowStyle(overflowProp) {
@@ -234,11 +248,6 @@ var overflowStyle = function overflowStyle(overflowProp) {
 };
 
 exports.overflowStyle = overflowStyle;
-var placeholderColor = (0, _styledComponents.css)(["color:", ";"], function (props) {
-  return (0, _colors.normalizeColor)(props.theme.global.colors.placeholder, props.theme);
-});
-var placeholderStyle = (0, _styledComponents.css)(["&::-webkit-input-placeholder{", ";}&::-moz-placeholder{", ";}&:-ms-input-placeholder{", ";}"], placeholderColor, placeholderColor, placeholderColor);
-exports.placeholderStyle = placeholderStyle;
 var ALIGN_SELF_MAP = {
   center: 'center',
   end: 'flex-end',
@@ -267,3 +276,5 @@ var sizeStyle = function sizeStyle(name, value, theme) {
 };
 
 exports.sizeStyle = sizeStyle;
+var plainInputStyle = (0, _styledComponents.css)(["outline:none;border:none;"]);
+exports.plainInputStyle = plainInputStyle;
