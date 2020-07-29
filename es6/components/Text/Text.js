@@ -9,11 +9,13 @@ var Text = function Text(_ref) {
   var color = _ref.color,
       tag = _ref.tag,
       as = _ref.as,
-      rest = _objectWithoutPropertiesLoose(_ref, ["color", "tag", "as"]);
+      a11yTitle = _ref.a11yTitle,
+      rest = _objectWithoutPropertiesLoose(_ref, ["color", "tag", "as", "a11yTitle"]);
 
   return /*#__PURE__*/React.createElement(StyledText, _extends({
     as: !as && tag ? tag : as,
-    colorProp: color
+    colorProp: color,
+    "aria-label": a11yTitle
   }, rest));
 };
 
