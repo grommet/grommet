@@ -994,6 +994,9 @@ var generate = function generate(baseSpacing, scale) {
       },
       // color: undefined,
       hover: {
+        // background: {
+        //   color: undefined,
+        // },
         border: {
           color: {
             dark: 'white',

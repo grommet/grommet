@@ -18,12 +18,14 @@ var disabledStyle = "\n  opacity: 0.5;\n  cursor: default;\n";
 var StyledRadioButtonContainer = _styledComponents["default"].label.withConfig({
   displayName: "StyledRadioButton__StyledRadioButtonContainer",
   componentId: "g1f6ld-0"
-})(["display:flex;flex-direction:row;align-items:center;user-select:none;width:fit-content;", " ", ":hover input:not([disabled]) + div,:hover input:not([disabled]) + span{border-color:", ";}", ";"], function (props) {
+})(["display:flex;flex-direction:row;align-items:center;user-select:none;width:fit-content;", " ", ":hover input:not([disabled]) + div,:hover input:not([disabled]) + span{border-color:", ";}:hover{background-color:", ";}", ";"], function (props) {
   return props.disabled && disabledStyle;
 }, function (props) {
   return !props.disabled && 'cursor: pointer;';
 }, function (props) {
   return (0, _utils.normalizeColor)(props.theme.radioButton.hover.border.color, props.theme);
+}, function (props) {
+  return (0, _utils.normalizeColor)(!props.disabled && props.theme.radioButton.hover && props.theme.radioButton.hover.background && props.theme.radioButton.hover.background.color, props.theme);
 }, function (props) {
   return props.theme.radioButton.extend;
 });

@@ -16,6 +16,9 @@ var customTheme = deepMerge(grommet, {
     hover: {
       border: {
         color: 'blue'
+      },
+      background: {
+        color: 'accent-4'
       }
     },
     size: '100px',
