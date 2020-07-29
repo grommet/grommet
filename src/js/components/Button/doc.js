@@ -399,7 +399,7 @@ export const themeDoc = {
     type: 'string | { dark: string, light: string }',
   },
   'button.primary.font.weight': {
-    description: `The wight of the text label for primary buttons.`,
+    description: `The weight of the text label for primary buttons.`,
     type: 'string | number',
   },
   'button.primary.padding.horizontal': {

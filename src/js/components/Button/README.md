@@ -875,7 +875,7 @@ undefined
 
 **button.primary.font.weight**
 
-The wight of the text label for default buttons. Expects `string | number`.
+The weight of the text label for primary buttons. Expects `string | number`.
 
 Defaults to
 
