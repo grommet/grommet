@@ -129,6 +129,9 @@ interface ButtonKindType {
       }
     | boolean;
   color?: ColorType;
+  font?: {
+    weight?: number | string;
+  };
   padding?: {
     vertical?: string;
     horizontal?: string;
