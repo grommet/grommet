@@ -126,6 +126,16 @@ Defaults to
 2px
 ```
 
+**radioButton.check.background.color**
+
+The background color of the checked icon in the RadioButton. Expects `string | {dark: string, light: string}`.
+
+Defaults to
+
+```
+undefined
+```
+
 **radioButton.check.color**
 
 The color of the checked icon in the RadioButton. Expects `string | { dark: string, light: string }`.
