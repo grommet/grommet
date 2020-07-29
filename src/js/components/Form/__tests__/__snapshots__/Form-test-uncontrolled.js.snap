@@ -94,6 +94,11 @@ exports[`Form accessibility Box with TextInput in Form should
   outline: none;
 }
 
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
+}
+
 .c4 {
   position: relative;
   width: 100%;
@@ -426,6 +431,11 @@ exports[`Form accessibility FormField with an explicit TextInput child
   outline: none;
 }
 
+.c4:-moz-placeholder,
+.c4::-moz-placeholder {
+  opacity: 1;
+}
+
 .c3 {
   position: relative;
   width: 100%;
@@ -662,6 +672,11 @@ exports[`Form accessibility Select in Form should have no accessibility violatio
   outline: none;
 }
 
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
+  opacity: 1;
+}
+
 .c6 {
   position: relative;
   width: 100%;
@@ -832,6 +847,11 @@ exports[`Form accessibility TextInput in Form should have
   outline: none;
 }
 
+.c4:-moz-placeholder,
+.c4::-moz-placeholder {
+  opacity: 1;
+}
+
 .c3 {
   position: relative;
   width: 100%;
@@ -987,6 +1007,11 @@ exports[`Form uncontrolled errors 1`] = `
   outline: none;
 }
 
+.c4:-moz-placeholder,
+.c4::-moz-placeholder {
+  opacity: 1;
+}
+
 .c3 {
   position: relative;
   width: 100%;
@@ -1133,6 +1158,11 @@ exports[`Form uncontrolled infos 1`] = `
 .c4::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c4:-moz-placeholder,
+.c4::-moz-placeholder {
+  opacity: 1;
 }
 
 .c3 {
@@ -1415,6 +1445,11 @@ exports[`Form uncontrolled uncontrolled 1`] = `
   outline: none;
 }
 
+.c4:-moz-placeholder,
+.c4::-moz-placeholder {
+  opacity: 1;
+}
+
 .c3 {
   position: relative;
   width: 100%;
@@ -1481,7 +1516,7 @@ exports[`Form uncontrolled uncontrolled 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 lnoLDW"
+            class="StyledTextInput-sc-1x30a0s-0 fVbmbP"
             name="test"
             placeholder="test input"
             value=""
@@ -1515,7 +1550,7 @@ exports[`Form uncontrolled uncontrolled 3`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 lnoLDW"
+            class="StyledTextInput-sc-1x30a0s-0 fVbmbP"
             name="test"
             placeholder="test input"
             value=""
@@ -1644,6 +1679,11 @@ exports[`Form uncontrolled update 1`] = `
 .c4::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c4:-moz-placeholder,
+.c4::-moz-placeholder {
+  opacity: 1;
 }
 
 .c3 {
@@ -1933,6 +1973,11 @@ exports[`Form uncontrolled with field 1`] = `
 .c4::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c4:-moz-placeholder,
+.c4::-moz-placeholder {
+  opacity: 1;
 }
 
 .c3 {

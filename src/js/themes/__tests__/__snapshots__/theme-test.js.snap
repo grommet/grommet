@@ -247,6 +247,11 @@ exports[`Grommet custom theme 1`] = `
   outline: none;
 }
 
+.c12:-moz-placeholder,
+.c12::-moz-placeholder {
+  opacity: 1;
+}
+
 .c11 {
   position: relative;
   width: 100%;

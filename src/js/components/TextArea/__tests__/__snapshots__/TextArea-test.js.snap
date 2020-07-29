@@ -65,6 +65,11 @@ exports[`TextArea Event tests onFocus 1`] = `
   outline: none;
 }
 
+.c1:-moz-placeholder,
+.c1::-moz-placeholder {
+  opacity: 1;
+}
+
 <div
   class="c0"
 >
@@ -122,6 +127,11 @@ exports[`TextArea basic 1`] = `
 .c1::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c1:-moz-placeholder,
+.c1::-moz-placeholder {
+  opacity: 1;
 }
 
 <div
@@ -193,6 +203,11 @@ exports[`TextArea disabled 1`] = `
   outline: none;
 }
 
+.c1:-moz-placeholder,
+.c1::-moz-placeholder {
+  opacity: 1;
+}
+
 <div
   className="c0"
 >
@@ -258,6 +273,11 @@ exports[`TextArea fill 1`] = `
   outline: none;
 }
 
+.c1:-moz-placeholder,
+.c1::-moz-placeholder {
+  opacity: 1;
+}
+
 <div
   className="c0"
 >
@@ -321,6 +341,11 @@ exports[`TextArea focusIndicator 1`] = `
   outline: none;
 }
 
+.c1:-moz-placeholder,
+.c1::-moz-placeholder {
+  opacity: 1;
+}
+
 <div
   className="c0"
 >
@@ -382,6 +407,11 @@ exports[`TextArea placeholder 1`] = `
 .c1::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c1:-moz-placeholder,
+.c1::-moz-placeholder {
+  opacity: 1;
 }
 
 <div
@@ -452,6 +482,11 @@ exports[`TextArea plain 1`] = `
   outline: none;
 }
 
+.c1:-moz-placeholder,
+.c1::-moz-placeholder {
+  opacity: 1;
+}
+
 <div
   className="c0"
 >
@@ -514,6 +549,11 @@ exports[`TextArea resize false 1`] = `
 .c1::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c1:-moz-placeholder,
+.c1::-moz-placeholder {
+  opacity: 1;
 }
 
 <div
@@ -580,6 +620,11 @@ exports[`TextArea resize horizontal 1`] = `
   outline: none;
 }
 
+.c1:-moz-placeholder,
+.c1::-moz-placeholder {
+  opacity: 1;
+}
+
 <div
   className="c0"
 >
@@ -642,6 +687,11 @@ exports[`TextArea resize true 1`] = `
 .c1::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c1:-moz-placeholder,
+.c1::-moz-placeholder {
+  opacity: 1;
 }
 
 <div
@@ -708,6 +758,11 @@ exports[`TextArea resize vertical 1`] = `
   outline: none;
 }
 
+.c1:-moz-placeholder,
+.c1::-moz-placeholder {
+  opacity: 1;
+}
+
 <div
   className="c0"
 >
@@ -771,6 +826,11 @@ exports[`TextArea size large 1`] = `
 .c1::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c1:-moz-placeholder,
+.c1::-moz-placeholder {
+  opacity: 1;
 }
 
 <div
@@ -839,6 +899,11 @@ exports[`TextArea size medium 1`] = `
   outline: none;
 }
 
+.c1:-moz-placeholder,
+.c1::-moz-placeholder {
+  opacity: 1;
+}
+
 <div
   className="c0"
 >
@@ -903,6 +968,11 @@ exports[`TextArea size small 1`] = `
 .c1::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c1:-moz-placeholder,
+.c1::-moz-placeholder {
+  opacity: 1;
 }
 
 <div

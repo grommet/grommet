@@ -152,6 +152,11 @@ exports[`Select Controlled deselect an option 1`] = `
   outline: none;
 }
 
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
+}
+
 .c4 {
   position: relative;
   width: 100%;
@@ -371,6 +376,11 @@ exports[`Select Controlled multiple 1`] = `
 .c5::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
 }
 
 .c4 {
@@ -605,6 +615,11 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 1`] = `
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
+  opacity: 1;
 }
 
 .c5 {
@@ -1081,6 +1096,11 @@ exports[`Select Controlled multiple onChange with valueKey reduce 1`] = `
   outline: none;
 }
 
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
+  opacity: 1;
+}
+
 .c5 {
   position: relative;
   width: 100%;
@@ -1550,6 +1570,11 @@ exports[`Select Controlled multiple onChange with valueKey string 1`] = `
   outline: none;
 }
 
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
+  opacity: 1;
+}
+
 .c5 {
   position: relative;
   width: 100%;
@@ -2017,6 +2042,11 @@ exports[`Select Controlled multiple onChange without valueKey 1`] = `
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
+  opacity: 1;
 }
 
 .c5 {
@@ -2554,6 +2584,11 @@ exports[`Select Controlled multiple values 1`] = `
   outline: none;
 }
 
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
+}
+
 .c4 {
   position: relative;
   width: 100%;
@@ -2641,7 +2676,7 @@ exports[`Select Controlled multiple values 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 lnoLDW Select__SelectTextInput-sc-17idtfo-0 hWmVID"
+          class="StyledTextInput-sc-1x30a0s-0 fVbmbP Select__SelectTextInput-sc-17idtfo-0 hWmVID"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -3061,6 +3096,11 @@ exports[`Select Controlled multiple with empty results 1`] = `
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
+  opacity: 1;
 }
 
 .c5 {
@@ -3532,6 +3572,11 @@ exports[`Select Controlled select another option 1`] = `
   outline: none;
 }
 
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
+}
+
 .c4 {
   position: relative;
   width: 100%;
@@ -3751,6 +3796,11 @@ exports[`Select Controlled should not have accessibility violations 1`] = `
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
+  opacity: 1;
 }
 
 .c5 {

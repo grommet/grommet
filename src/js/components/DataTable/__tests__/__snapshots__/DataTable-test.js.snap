@@ -5977,6 +5977,11 @@ exports[`DataTable search 2`] = `
   outline: none;
 }
 
+.c2:-moz-placeholder,
+.c2::-moz-placeholder {
+  opacity: 1;
+}
+
 .c1 {
   position: relative;
   width: 100%;

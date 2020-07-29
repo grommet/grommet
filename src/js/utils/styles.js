@@ -401,6 +401,11 @@ export const inputStyle = css`
     border: none;
     outline: none;
   }
+
+  &:-moz-placeholder, // FF 18-
+  &::-moz-placeholder { // FF 19+
+    opacity: 1;
+  }
 `;
 
 export const overflowStyle = overflowProp => {
