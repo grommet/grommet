@@ -15,6 +15,17 @@ describe('CheckBox', () => {
   test('should not have accessibility violations', async () => {
     const { container } = render(
       <Grommet>
+        <CheckBox a11yTitle="test" />
+      </Grommet>,
+    );
+    const results = await axe(container);
+    expect(container.firstChild).toMatchSnapshot();
+    expect(results).toHaveNoViolations();
+  });
+
+  test('label should not have accessibility violations', async () => {
+    const { container } = render(
+      <Grommet>
         <CheckBox label="test" />
       </Grommet>,
     );

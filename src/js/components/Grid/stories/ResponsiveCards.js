@@ -34,4 +34,4 @@ const Example = () => {
   );
 };
 
-storiesOf('Card', module).add('Responsive', () => <Example />);
+storiesOf('Grid', module).add('Responsive Cards', () => <Example />);

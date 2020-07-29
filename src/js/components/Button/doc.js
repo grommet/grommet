@@ -274,6 +274,10 @@ export const themeDoc = {
     description: `The color of the label for default buttons.`,
     type: 'string | { dark: string, light: string }',
   },
+  'button.default.font.weight': {
+    description: `The weight of the text label for default buttons.`,
+    type: 'string | number',
+  },
   'button.default.extend': {
     description: 'Any additional style for a default button.',
     type: 'string | (props) => {}',
@@ -394,6 +398,10 @@ export const themeDoc = {
     description: `The color of the label for primary buttons.`,
     type: 'string | { dark: string, light: string }',
   },
+  'button.primary.font.weight': {
+    description: `The weight of the text label for primary buttons.`,
+    type: 'string | number',
+  },
   'button.primary.padding.horizontal': {
     description: 'The horizontal padding for a primary button.',
     type: 'string',
@@ -427,6 +435,10 @@ export const themeDoc = {
   'button.secondary.color': {
     description: `The color of the label for secondary buttons.`,
     type: 'string | { dark: string, light: string }',
+  },
+  'button.secondary.font.weight': {
+    description: `The weight of the text label for secondary buttons.`,
+    type: 'string | number',
   },
   'button.secondary.padding.horizontal': {
     description: 'The horizontal padding for a secondary button.',
