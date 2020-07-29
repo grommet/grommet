@@ -282,6 +282,10 @@ exports[`FormField custom input margin 1`] = `
   border: none;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -292,10 +296,6 @@ exports[`FormField custom input margin 1`] = `
 
 .c5:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-moz-focus-inner {
@@ -438,6 +438,10 @@ exports[`FormField custom label 1`] = `
   border: none;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -448,10 +452,6 @@ exports[`FormField custom label 1`] = `
 
 .c5:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-moz-focus-inner {
@@ -579,6 +579,10 @@ exports[`FormField default 1`] = `
   border: none;
 }
 
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c4::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -589,10 +593,6 @@ exports[`FormField default 1`] = `
 
 .c4:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c4::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c4::-moz-focus-inner {
@@ -723,6 +723,10 @@ exports[`FormField disabled 1`] = `
   cursor: default;
 }
 
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c4::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -733,10 +737,6 @@ exports[`FormField disabled 1`] = `
 
 .c4:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c4::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c4::-moz-focus-inner {
@@ -882,6 +882,10 @@ exports[`FormField disabled with custom label 1`] = `
   cursor: default;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -892,10 +896,6 @@ exports[`FormField disabled with custom label 1`] = `
 
 .c5:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-moz-focus-inner {
@@ -1647,6 +1647,10 @@ exports[`FormField pad with border undefined 1`] = `
   border: none;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -1657,10 +1661,6 @@ exports[`FormField pad with border undefined 1`] = `
 
 .c5:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-moz-focus-inner {
@@ -1788,6 +1788,10 @@ exports[`FormField required 1`] = `
   border: none;
 }
 
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c4::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -1798,10 +1802,6 @@ exports[`FormField required 1`] = `
 
 .c4:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c4::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c4::-moz-focus-inner {

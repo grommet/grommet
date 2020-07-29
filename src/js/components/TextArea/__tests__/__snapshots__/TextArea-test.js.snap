@@ -22,11 +22,32 @@ exports[`TextArea Event tests onFocus 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c1::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c1::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c1:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c1::-moz-focus-inner {
+  border: none;
+  outline: none;
 }
 
 .c1 > circle,
@@ -42,32 +63,6 @@ exports[`TextArea Event tests onFocus 1`] = `
 
 .c1::-moz-focus-inner {
   border: 0;
-}
-
-.c1::-webkit-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c1::-moz-placeholder {
-  color: #AAAAAA;
-}
-
-.c1:-ms-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-.c1::-moz-focus-inner {
-  border: none;
-  outline: none;
-}
-
-.c1:-moz-placeholder,
-.c1::-moz-placeholder {
-  opacity: 1;
 }
 
 <div
@@ -108,6 +103,10 @@ exports[`TextArea basic 1`] = `
   width: 100%;
 }
 
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c1::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -120,18 +119,9 @@ exports[`TextArea basic 1`] = `
   color: #AAAAAA;
 }
 
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
 .c1::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c1:-moz-placeholder,
-.c1::-moz-placeholder {
-  opacity: 1;
 }
 
 <div
@@ -182,6 +172,10 @@ exports[`TextArea disabled 1`] = `
   cursor: default;
 }
 
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c1::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -194,18 +188,9 @@ exports[`TextArea disabled 1`] = `
   color: #AAAAAA;
 }
 
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
 .c1::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c1:-moz-placeholder,
-.c1::-moz-placeholder {
-  opacity: 1;
 }
 
 <div
@@ -252,6 +237,10 @@ exports[`TextArea fill 1`] = `
   height: 100%;
 }
 
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c1::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -264,18 +253,9 @@ exports[`TextArea fill 1`] = `
   color: #AAAAAA;
 }
 
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
 .c1::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c1:-moz-placeholder,
-.c1::-moz-placeholder {
-  opacity: 1;
 }
 
 <div
@@ -320,6 +300,10 @@ exports[`TextArea focusIndicator 1`] = `
   width: 100%;
 }
 
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c1::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -332,18 +316,9 @@ exports[`TextArea focusIndicator 1`] = `
   color: #AAAAAA;
 }
 
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
 .c1::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c1:-moz-placeholder,
-.c1::-moz-placeholder {
-  opacity: 1;
 }
 
 <div
@@ -388,6 +363,10 @@ exports[`TextArea placeholder 1`] = `
   width: 100%;
 }
 
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c1::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -400,18 +379,9 @@ exports[`TextArea placeholder 1`] = `
   color: #AAAAAA;
 }
 
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
 .c1::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c1:-moz-placeholder,
-.c1::-moz-placeholder {
-  opacity: 1;
 }
 
 <div
@@ -461,6 +431,10 @@ exports[`TextArea plain 1`] = `
   -webkit-appearance: none;
 }
 
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c1::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -473,18 +447,9 @@ exports[`TextArea plain 1`] = `
   color: #AAAAAA;
 }
 
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
 .c1::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c1:-moz-placeholder,
-.c1::-moz-placeholder {
-  opacity: 1;
 }
 
 <div
@@ -530,6 +495,10 @@ exports[`TextArea resize false 1`] = `
   resize: none;
 }
 
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c1::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -542,18 +511,9 @@ exports[`TextArea resize false 1`] = `
   color: #AAAAAA;
 }
 
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
 .c1::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c1:-moz-placeholder,
-.c1::-moz-placeholder {
-  opacity: 1;
 }
 
 <div
@@ -599,6 +559,10 @@ exports[`TextArea resize horizontal 1`] = `
   resize: horizontal;
 }
 
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c1::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -611,18 +575,9 @@ exports[`TextArea resize horizontal 1`] = `
   color: #AAAAAA;
 }
 
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
 .c1::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c1:-moz-placeholder,
-.c1::-moz-placeholder {
-  opacity: 1;
 }
 
 <div
@@ -668,6 +623,10 @@ exports[`TextArea resize true 1`] = `
   resize: both;
 }
 
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c1::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -680,18 +639,9 @@ exports[`TextArea resize true 1`] = `
   color: #AAAAAA;
 }
 
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
 .c1::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c1:-moz-placeholder,
-.c1::-moz-placeholder {
-  opacity: 1;
 }
 
 <div
@@ -737,6 +687,10 @@ exports[`TextArea resize vertical 1`] = `
   resize: vertical;
 }
 
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c1::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -749,18 +703,9 @@ exports[`TextArea resize vertical 1`] = `
   color: #AAAAAA;
 }
 
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
 .c1::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c1:-moz-placeholder,
-.c1::-moz-placeholder {
-  opacity: 1;
 }
 
 <div
@@ -800,11 +745,15 @@ exports[`TextArea size large 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  font-size: 22px;
-  line-height: 28px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  font-size: 22px;
+  line-height: 28px;
+}
+
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
 .c1::-webkit-input-placeholder {
@@ -819,18 +768,9 @@ exports[`TextArea size large 1`] = `
   color: #AAAAAA;
 }
 
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
 .c1::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c1:-moz-placeholder,
-.c1::-moz-placeholder {
-  opacity: 1;
 }
 
 <div
@@ -871,11 +811,15 @@ exports[`TextArea size medium 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  font-size: 18px;
-  line-height: 24px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
 .c1::-webkit-input-placeholder {
@@ -890,18 +834,9 @@ exports[`TextArea size medium 1`] = `
   color: #AAAAAA;
 }
 
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
 .c1::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c1:-moz-placeholder,
-.c1::-moz-placeholder {
-  opacity: 1;
 }
 
 <div
@@ -942,11 +877,15 @@ exports[`TextArea size small 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  font-size: 14px;
-  line-height: 20px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
 .c1::-webkit-input-placeholder {
@@ -961,18 +900,9 @@ exports[`TextArea size small 1`] = `
   color: #AAAAAA;
 }
 
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
 .c1::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c1:-moz-placeholder,
-.c1::-moz-placeholder {
-  opacity: 1;
 }
 
 <div

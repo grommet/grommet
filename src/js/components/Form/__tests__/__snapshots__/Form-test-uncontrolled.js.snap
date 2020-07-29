@@ -73,6 +73,10 @@ exports[`Form accessibility Box with TextInput in Form should
   width: 100%;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -83,10 +87,6 @@ exports[`Form accessibility Box with TextInput in Form should
 
 .c5:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-moz-focus-inner {
@@ -410,6 +410,10 @@ exports[`Form accessibility FormField with an explicit TextInput child
   border: none;
 }
 
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c4::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -420,10 +424,6 @@ exports[`Form accessibility FormField with an explicit TextInput child
 
 .c4:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c4::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c4::-moz-focus-inner {
@@ -651,6 +651,10 @@ exports[`Form accessibility Select in Form should have no accessibility violatio
   border: none;
 }
 
+.c7::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c7::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -661,10 +665,6 @@ exports[`Form accessibility Select in Form should have no accessibility violatio
 
 .c7:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c7::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c7::-moz-focus-inner {
@@ -826,6 +826,10 @@ exports[`Form accessibility TextInput in Form should have
   border: none;
 }
 
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c4::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -836,10 +840,6 @@ exports[`Form accessibility TextInput in Form should have
 
 .c4:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c4::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c4::-moz-focus-inner {
@@ -986,6 +986,10 @@ exports[`Form uncontrolled errors 1`] = `
   border: none;
 }
 
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c4::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -996,10 +1000,6 @@ exports[`Form uncontrolled errors 1`] = `
 
 .c4:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c4::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c4::-moz-focus-inner {
@@ -1139,6 +1139,10 @@ exports[`Form uncontrolled infos 1`] = `
   border: none;
 }
 
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c4::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -1149,10 +1153,6 @@ exports[`Form uncontrolled infos 1`] = `
 
 .c4:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c4::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c4::-moz-focus-inner {
@@ -1424,6 +1424,10 @@ exports[`Form uncontrolled uncontrolled 1`] = `
   border: none;
 }
 
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c4::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -1434,10 +1438,6 @@ exports[`Form uncontrolled uncontrolled 1`] = `
 
 .c4:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c4::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c4::-moz-focus-inner {
@@ -1516,7 +1516,7 @@ exports[`Form uncontrolled uncontrolled 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 itVjcL"
+            class="StyledTextInput-sc-1x30a0s-0 jGsEcv"
             name="test"
             placeholder="test input"
             value=""
@@ -1550,7 +1550,7 @@ exports[`Form uncontrolled uncontrolled 3`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 itVjcL"
+            class="StyledTextInput-sc-1x30a0s-0 jGsEcv"
             name="test"
             placeholder="test input"
             value=""
@@ -1660,6 +1660,10 @@ exports[`Form uncontrolled update 1`] = `
   border: none;
 }
 
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c4::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -1670,10 +1674,6 @@ exports[`Form uncontrolled update 1`] = `
 
 .c4:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c4::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c4::-moz-focus-inner {
@@ -1954,6 +1954,10 @@ exports[`Form uncontrolled with field 1`] = `
   border: none;
 }
 
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c4::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -1964,10 +1968,6 @@ exports[`Form uncontrolled with field 1`] = `
 
 .c4:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c4::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c4::-moz-focus-inner {

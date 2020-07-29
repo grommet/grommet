@@ -151,12 +151,38 @@ exports[`DateInput focus 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  padding-right: 48px;
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  padding-right: 48px;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c4::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c4::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c4:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c4::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c4:-moz-placeholder,
+.c4::-moz-placeholder {
+  opacity: 1;
 }
 
 .c4 > circle,
@@ -172,32 +198,6 @@ exports[`DateInput focus 1`] = `
 
 .c4::-moz-focus-inner {
   border: 0;
-}
-
-.c4::-webkit-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c4::-moz-placeholder {
-  color: #AAAAAA;
-}
-
-.c4:-ms-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c4::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-.c4::-moz-focus-inner {
-  border: none;
-  outline: none;
-}
-
-.c4:-moz-placeholder,
-.c4::-moz-placeholder {
-  opacity: 1;
 }
 
 .c1 {
@@ -1428,10 +1428,14 @@ exports[`DateInput format 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  padding-right: 48px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  padding-right: 48px;
+}
+
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
 .c4::-webkit-input-placeholder {
@@ -1444,10 +1448,6 @@ exports[`DateInput format 1`] = `
 
 .c4:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c4::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c4::-moz-focus-inner {
@@ -1577,12 +1577,16 @@ exports[`DateInput format disabled 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  padding-right: 48px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  padding-right: 48px;
   opacity: 0.3;
   cursor: default;
+}
+
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
 .c4::-webkit-input-placeholder {
@@ -1595,10 +1599,6 @@ exports[`DateInput format disabled 1`] = `
 
 .c4:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c4::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c4::-moz-focus-inner {
@@ -1940,10 +1940,14 @@ exports[`DateInput format inline 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  padding-right: 48px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  padding-right: 48px;
+}
+
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
 .c5::-webkit-input-placeholder {
@@ -1956,10 +1960,6 @@ exports[`DateInput format inline 1`] = `
 
 .c5:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-moz-focus-inner {
@@ -4479,10 +4479,14 @@ exports[`DateInput range format 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  padding-right: 48px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  padding-right: 48px;
+}
+
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
 .c4::-webkit-input-placeholder {
@@ -4495,10 +4499,6 @@ exports[`DateInput range format 1`] = `
 
 .c4:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c4::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c4::-moz-focus-inner {
@@ -4857,10 +4857,14 @@ exports[`DateInput range format inline 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  padding-right: 48px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  padding-right: 48px;
+}
+
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
 .c5::-webkit-input-placeholder {
@@ -4873,10 +4877,6 @@ exports[`DateInput range format inline 1`] = `
 
 .c5:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-moz-focus-inner {
@@ -7319,10 +7319,14 @@ exports[`DateInput select format 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  padding-right: 48px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  padding-right: 48px;
+}
+
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
 .c4::-webkit-input-placeholder {
@@ -7335,10 +7339,6 @@ exports[`DateInput select format 1`] = `
 
 .c4:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c4::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c4::-moz-focus-inner {
@@ -7433,7 +7433,7 @@ exports[`DateInput select format 2`] = `
     </div>
     <input
       autocomplete="off"
-      class="StyledMaskedInput-sc-99vkfa-0 RGbup"
+      class="StyledMaskedInput-sc-99vkfa-0 caCMJZ"
       id="item"
       name="item"
       placeholder="mm/dd/yyyy"
@@ -8809,10 +8809,14 @@ exports[`DateInput select format inline 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  padding-right: 48px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  padding-right: 48px;
+}
+
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
 .c5::-webkit-input-placeholder {
@@ -8825,10 +8829,6 @@ exports[`DateInput select format inline 1`] = `
 
 .c5:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-moz-focus-inner {
@@ -9718,7 +9718,7 @@ exports[`DateInput select format inline 2`] = `
       </div>
       <input
         autocomplete="off"
-        class="StyledMaskedInput-sc-99vkfa-0 eaZJGc"
+        class="StyledMaskedInput-sc-99vkfa-0 jOcLJM"
         id="item"
         name="item"
         placeholder="mm/dd/yyyy"
@@ -10781,10 +10781,14 @@ exports[`DateInput select format inline range 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  padding-right: 48px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  padding-right: 48px;
+}
+
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
 .c5::-webkit-input-placeholder {
@@ -10797,10 +10801,6 @@ exports[`DateInput select format inline range 1`] = `
 
 .c5:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-moz-focus-inner {
@@ -11690,7 +11690,7 @@ exports[`DateInput select format inline range 2`] = `
       </div>
       <input
         autocomplete="off"
-        class="StyledMaskedInput-sc-99vkfa-0 eaZJGc"
+        class="StyledMaskedInput-sc-99vkfa-0 jOcLJM"
         id="item"
         name="item"
         placeholder="mm/dd/yyyy-mm/dd/yyyy"
@@ -13786,10 +13786,14 @@ exports[`DateInput type format inline 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  padding-right: 48px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  padding-right: 48px;
+}
+
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
 .c5::-webkit-input-placeholder {
@@ -13802,10 +13806,6 @@ exports[`DateInput type format inline 1`] = `
 
 .c5:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-moz-focus-inner {
@@ -14695,7 +14695,7 @@ exports[`DateInput type format inline 2`] = `
       </div>
       <input
         autocomplete="off"
-        class="StyledMaskedInput-sc-99vkfa-0 eaZJGc"
+        class="StyledMaskedInput-sc-99vkfa-0 jOcLJM"
         id="item"
         name="item"
         placeholder="mm/dd/yyyy"

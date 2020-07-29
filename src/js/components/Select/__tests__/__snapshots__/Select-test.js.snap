@@ -131,6 +131,10 @@ exports[`Select 0 value 1`] = `
   border: none;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -141,10 +145,6 @@ exports[`Select 0 value 1`] = `
 
 .c5:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-moz-focus-inner {
@@ -371,6 +371,10 @@ exports[`Select Search timeout 1`] = `
   border: none;
 }
 
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -381,10 +385,6 @@ exports[`Select Search timeout 1`] = `
 
 .c6:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c6::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c6::-moz-focus-inner {
@@ -511,13 +511,39 @@ exports[`Select Search timeout 2`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  width: 100%;
   font-size: 14px;
   line-height: 20px;
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
-  width: 100%;
+}
+
+.c0::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c0::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c0::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c0:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c0::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c0:-moz-placeholder,
+.c0::-moz-placeholder {
+  opacity: 1;
 }
 
 .c0 > circle,
@@ -533,32 +559,6 @@ exports[`Select Search timeout 2`] = `
 
 .c0::-moz-focus-inner {
   border: 0;
-}
-
-.c0::-webkit-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c0::-moz-placeholder {
-  color: #AAAAAA;
-}
-
-.c0:-ms-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c0::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-.c0::-moz-focus-inner {
-  border: none;
-  outline: none;
-}
-
-.c0:-moz-placeholder,
-.c0::-moz-placeholder {
-  opacity: 1;
 }
 
 @media only screen and (max-width:768px) {
@@ -720,6 +720,10 @@ exports[`Select applies custom global.hover theme to options 1`] = `
   border: none;
 }
 
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -730,10 +734,6 @@ exports[`Select applies custom global.hover theme to options 1`] = `
 
 .c6:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c6::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c6::-moz-focus-inner {
@@ -1053,6 +1053,10 @@ exports[`Select basic 1`] = `
   border: none;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -1063,10 +1067,6 @@ exports[`Select basic 1`] = `
 
 .c5:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-moz-focus-inner {
@@ -1293,6 +1293,10 @@ exports[`Select complex options and children 1`] = `
   border: none;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -1303,10 +1307,6 @@ exports[`Select complex options and children 1`] = `
 
 .c5:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-moz-focus-inner {
@@ -1406,7 +1406,7 @@ exports[`Select complex options and children 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 itVjcL Select__SelectTextInput-sc-17idtfo-0 hWmVID"
+          class="StyledTextInput-sc-1x30a0s-0 jGsEcv Select__SelectTextInput-sc-17idtfo-0 hWmVID"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -1761,6 +1761,10 @@ exports[`Select disabled 1`] = `
   border: none;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -1771,10 +1775,6 @@ exports[`Select disabled 1`] = `
 
 .c5:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-moz-focus-inner {
@@ -1876,7 +1876,7 @@ exports[`Select disabled 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 itVjcL Select__SelectTextInput-sc-17idtfo-0 hWmVID"
+          class="StyledTextInput-sc-1x30a0s-0 jGsEcv Select__SelectTextInput-sc-17idtfo-0 hWmVID"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -2038,6 +2038,10 @@ exports[`Select disabled key 1`] = `
   border: none;
 }
 
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -2048,10 +2052,6 @@ exports[`Select disabled key 1`] = `
 
 .c6:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c6::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c6::-moz-focus-inner {
@@ -2669,13 +2669,39 @@ exports[`Select empty results search 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  width: 100%;
   font-size: 14px;
   line-height: 20px;
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
-  width: 100%;
+}
+
+.c0::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c0::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c0::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c0:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c0::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c0:-moz-placeholder,
+.c0::-moz-placeholder {
+  opacity: 1;
 }
 
 .c0 > circle,
@@ -2691,32 +2717,6 @@ exports[`Select empty results search 1`] = `
 
 .c0::-moz-focus-inner {
   border: 0;
-}
-
-.c0::-webkit-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c0::-moz-placeholder {
-  color: #AAAAAA;
-}
-
-.c0:-ms-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c0::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-.c0::-moz-focus-inner {
-  border: none;
-  outline: none;
-}
-
-.c0:-moz-placeholder,
-.c0::-moz-placeholder {
-  opacity: 1;
 }
 
 @media only screen and (max-width:768px) {
@@ -2878,6 +2878,10 @@ exports[`Select keyboard navigation timeout 1`] = `
   border: none;
 }
 
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -2888,10 +2892,6 @@ exports[`Select keyboard navigation timeout 1`] = `
 
 .c6:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c6::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c6::-moz-focus-inner {
@@ -3583,6 +3583,10 @@ exports[`Select modifies select control style on open 1`] = `
   border: none;
 }
 
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -3593,10 +3597,6 @@ exports[`Select modifies select control style on open 1`] = `
 
 .c6:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c6::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c6::-moz-focus-inner {
@@ -3825,6 +3825,10 @@ exports[`Select onChange with valueKey string 1`] = `
   border: none;
 }
 
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -3835,10 +3839,6 @@ exports[`Select onChange with valueKey string 1`] = `
 
 .c6:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c6::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c6::-moz-focus-inner {
@@ -4299,6 +4299,10 @@ exports[`Select onChange without valueKey 1`] = `
   border: none;
 }
 
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -4309,10 +4313,6 @@ exports[`Select onChange without valueKey 1`] = `
 
 .c6:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c6::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c6::-moz-focus-inner {
@@ -4773,6 +4773,10 @@ exports[`Select opens and closes 1`] = `
   border: none;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -4783,10 +4787,6 @@ exports[`Select opens and closes 1`] = `
 
 .c5:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-moz-focus-inner {
@@ -4886,7 +4886,7 @@ exports[`Select opens and closes 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 itVjcL Select__SelectTextInput-sc-17idtfo-0 hWmVID"
+          class="StyledTextInput-sc-1x30a0s-0 jGsEcv Select__SelectTextInput-sc-17idtfo-0 hWmVID"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -5213,7 +5213,7 @@ exports[`Select opens and closes 6`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 itVjcL Select__SelectTextInput-sc-17idtfo-0 hWmVID"
+          class="StyledTextInput-sc-1x30a0s-0 jGsEcv Select__SelectTextInput-sc-17idtfo-0 hWmVID"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -5375,6 +5375,10 @@ exports[`Select opens and closes 7`] = `
   border: none;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -5385,10 +5389,6 @@ exports[`Select opens and closes 7`] = `
 
 .c5:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-moz-focus-inner {
@@ -5622,6 +5622,10 @@ exports[`Select renders custom icon 1`] = `
   border: none;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -5632,10 +5636,6 @@ exports[`Select renders custom icon 1`] = `
 
 .c5:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-moz-focus-inner {
@@ -5861,6 +5861,10 @@ exports[`Select renders custom up and down icons 1`] = `
   border: none;
 }
 
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -5871,10 +5875,6 @@ exports[`Select renders custom up and down icons 1`] = `
 
 .c6:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c6::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c6::-moz-focus-inner {
@@ -5988,7 +5988,7 @@ exports[`Select renders custom up and down icons 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 itVjcL Select__SelectTextInput-sc-17idtfo-0 hWmVID"
+            class="StyledTextInput-sc-1x30a0s-0 jGsEcv Select__SelectTextInput-sc-17idtfo-0 hWmVID"
             placeholder="Select..."
             readonly=""
             tabindex="-1"
@@ -6201,6 +6201,10 @@ exports[`Select renders default icon 1`] = `
   border: none;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -6211,10 +6215,6 @@ exports[`Select renders default icon 1`] = `
 
 .c5:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-moz-focus-inner {
@@ -6441,6 +6441,10 @@ exports[`Select renders styled select options backwards compatible with legacy
   border: none;
 }
 
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -6451,10 +6455,6 @@ exports[`Select renders styled select options backwards compatible with legacy
 
 .c6:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c6::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c6::-moz-focus-inner {
@@ -6684,6 +6684,10 @@ exports[`Select renders styled select options combining select.options.box &&
   border: none;
 }
 
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -6694,10 +6698,6 @@ exports[`Select renders styled select options combining select.options.box &&
 
 .c6:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c6::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c6::-moz-focus-inner {
@@ -6925,6 +6925,10 @@ exports[`Select renders styled select options using select.options.container 1`]
   border: none;
 }
 
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -6935,10 +6939,6 @@ exports[`Select renders styled select options using select.options.container 1`]
 
 .c6:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c6::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c6::-moz-focus-inner {
@@ -7113,6 +7113,10 @@ exports[`Select renders without icon 1`] = `
   border: none;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -7123,10 +7127,6 @@ exports[`Select renders without icon 1`] = `
 
 .c5:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-moz-focus-inner {
@@ -7324,6 +7324,10 @@ exports[`Select search 1`] = `
   border: none;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -7334,10 +7338,6 @@ exports[`Select search 1`] = `
 
 .c5:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-moz-focus-inner {
@@ -7569,13 +7569,39 @@ exports[`Select search 2`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  width: 100%;
   font-size: 14px;
   line-height: 20px;
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
-  width: 100%;
+}
+
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c6::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c6::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c6:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c6::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
+  opacity: 1;
 }
 
 .c6 > circle,
@@ -7591,32 +7617,6 @@ exports[`Select search 2`] = `
 
 .c6::-moz-focus-inner {
   border: 0;
-}
-
-.c6::-webkit-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c6::-moz-placeholder {
-  color: #AAAAAA;
-}
-
-.c6:-ms-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c6::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-.c6::-moz-focus-inner {
-  border: none;
-  outline: none;
-}
-
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
-  opacity: 1;
 }
 
 .c5 {
@@ -7765,7 +7765,7 @@ exports[`Select search 3`] = `
 exports[`Select search 4`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 hIGmEu"
+  class="StyledTextInput-sc-1x30a0s-0 fIotSm"
   type="search"
   value=""
 />
@@ -7774,7 +7774,7 @@ exports[`Select search 4`] = `
 exports[`Select search 5`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 hIGmEu"
+  class="StyledTextInput-sc-1x30a0s-0 fIotSm"
   type="search"
   value="o"
 />
@@ -7911,6 +7911,10 @@ exports[`Select select an option 1`] = `
   border: none;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -7921,10 +7925,6 @@ exports[`Select select an option 1`] = `
 
 .c5:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-moz-focus-inner {
@@ -8294,6 +8294,10 @@ exports[`Select select an option with enter 1`] = `
   border: none;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -8304,10 +8308,6 @@ exports[`Select select an option with enter 1`] = `
 
 .c5:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-moz-focus-inner {
@@ -8520,6 +8520,10 @@ exports[`Select selected 1`] = `
   border: none;
 }
 
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -8530,10 +8534,6 @@ exports[`Select selected 1`] = `
 
 .c6:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c6::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c6::-moz-focus-inner {
@@ -8760,6 +8760,10 @@ exports[`Select should not have accessibility violations 1`] = `
   border: none;
 }
 
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -8770,10 +8774,6 @@ exports[`Select should not have accessibility violations 1`] = `
 
 .c6:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c6::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c6::-moz-focus-inner {
@@ -8991,13 +8991,17 @@ exports[`Select size 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  font-size: 22px;
-  line-height: 28px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  font-size: 22px;
+  line-height: 28px;
   outline: none;
   border: none;
+}
+
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
 .c5::-webkit-input-placeholder {
@@ -9010,10 +9014,6 @@ exports[`Select size 1`] = `
 
 .c5:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-moz-focus-inner {

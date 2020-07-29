@@ -318,6 +318,55 @@ export const getInputPadBySide = (props, side) => {
   return adjustedPad;
 };
 
+export const inputStyle = css`
+  box-sizing: border-box;
+  ${props =>
+    `font-size: ${
+      props.theme.global.input.font.size
+        ? props.theme.text[props.theme.global.input.font.size].size ||
+          props.theme.global.input.font.size
+        : 'inherit'
+    };`}
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  ${props =>
+    props.theme.global.input.font.height &&
+    `line-height: ${props.theme.global.input.font.height};`}
+  ${props =>
+    props.theme.global.input.padding &&
+    typeof props.theme.global.input.padding !== 'object'
+      ? // On a breaking change release, this condition could be removed and
+        // just the edgeStyle could remain. Currently, this is needed for
+        // backwards compatibility since we are placing the calculation in
+        // base.js
+        `padding: ${parseMetricToNum(
+          props.theme.global.edgeSize[props.theme.global.input.padding] ||
+            props.theme.global.input.padding,
+        ) - parseMetricToNum(props.theme.global.control.border.width)}px;`
+      : edgeStyle(
+          'padding',
+          props.theme.global.input.padding,
+          props.responsive,
+          props.theme.box.responsiveBreakpoint,
+          props.theme,
+        )}
+  ${props =>
+    // for backwards compatibility, check if props.theme.global.input.weight
+    (props.theme.global.input.weight || props.theme.global.input.font.weight) &&
+    css`
+      font-weight: ${props.theme.global.input.weight ||
+        props.theme.global.input.font.weight};
+    `} margin: 0;
+  ${controlBorderStyle}
+
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+`;
+
 export const overflowStyle = overflowProp => {
   if (typeof overflowProp === 'string') {
     return css`
@@ -382,85 +431,4 @@ export const disabledStyle = componentStyle => css`
 
 export const sizeStyle = (name, value, theme) => css`
   ${name}: ${theme.global.size[value] || value};
-`;
-
-export const plainInputStyle = css`
-  outline: none;
-  border: none;
-`;
-
-const inputSizeStyle = props => {
-  const data = props.theme.text[props.size];
-  return css`
-    font-size: ${data.size};
-    line-height: ${data.height};
-  `;
-};
-
-export const inputStyle = css`
-  box-sizing: border-box;
-  ${props =>
-    `font-size: ${
-      props.theme.global.input.font.size
-        ? props.theme.text[props.theme.global.input.font.size].size ||
-          props.theme.global.input.font.size
-        : 'inherit'
-    };`}
-  font-family: inherit;
-  border: none;
-  -webkit-appearance: none;
-  background: transparent;
-  color: inherit;
-  ${props =>
-    props.theme.global.input.font.height &&
-    `line-height: ${props.theme.global.input.font.height};`}
-  ${props =>
-    props.theme.global.input.padding &&
-    typeof props.theme.global.input.padding !== 'object'
-      ? // On a breaking change release, this condition could be removed and
-        // just the edgeStyle could remain. Currently, this is needed for
-        // backwards compatibility since we are placing the calculation in
-        // base.js
-        `padding: ${parseMetricToNum(
-          props.theme.global.edgeSize[props.theme.global.input.padding] ||
-            props.theme.global.input.padding,
-        ) - parseMetricToNum(props.theme.global.control.border.width)}px;`
-      : edgeStyle(
-          'padding',
-          props.theme.global.input.padding,
-          props.responsive,
-          props.theme.box.responsiveBreakpoint,
-          props.theme,
-        )}
-  ${props =>
-    // for backwards compatibility, check if props.theme.global.input.weight
-    (props.theme.global.input.weight || props.theme.global.input.font.weight) &&
-    css`
-      font-weight: ${props.theme.global.input.weight ||
-        props.theme.global.input.font.weight};
-    `} margin: 0;
-  ${props =>
-    props.icon &&
-    (props.reverse
-      ? `padding-right: ${props.theme.global.edgeSize.large};`
-      : `padding-left: ${props.theme.global.edgeSize.large};`)}
-  ${props => props.size && inputSizeStyle(props)}
-  ${props => props.focus && !props.plain && focusStyle()};
-  ${controlBorderStyle}
-  width: 100%;
-  ${placeholderStyle}
-
-  ::-webkit-search-decoration {
-    -webkit-appearance: none;
-  }
-
-  &::-moz-focus-inner {
-    border: none;
-    outline: none;
-  }
-
-  &:-moz-placeholder, // FF 18-
-  &::-moz-placeholder { // FF 19+
-    opacity: 1;
-  }
 `;

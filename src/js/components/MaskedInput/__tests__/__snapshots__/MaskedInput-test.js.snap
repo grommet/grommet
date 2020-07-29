@@ -22,13 +22,17 @@ exports[`MaskedInput applies custom global.hover theme to options 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  font-size: 22px;
-  line-height: 28px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  font-size: 22px;
+  line-height: 28px;
   outline: none;
   border: none;
+}
+
+.c2::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
 .c2::-webkit-input-placeholder {
@@ -41,10 +45,6 @@ exports[`MaskedInput applies custom global.hover theme to options 1`] = `
 
 .c2:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c2::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c2::-moz-focus-inner {
@@ -173,6 +173,10 @@ exports[`MaskedInput basic 1`] = `
   width: 100%;
 }
 
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c1::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -183,10 +187,6 @@ exports[`MaskedInput basic 1`] = `
 
 .c1:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c1::-moz-focus-inner {
@@ -236,6 +236,10 @@ exports[`MaskedInput disabled 1`] = `
   cursor: default;
 }
 
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c1::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -246,10 +250,6 @@ exports[`MaskedInput disabled 1`] = `
 
 .c1:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c1::-moz-focus-inner {
@@ -293,11 +293,15 @@ exports[`MaskedInput event target props are available option via keyboard 1`] = 
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  font-size: 18px;
-  line-height: 24px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
 .c1::-webkit-input-placeholder {
@@ -310,10 +314,6 @@ exports[`MaskedInput event target props are available option via keyboard 1`] = 
 
 .c1:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c1::-moz-focus-inner {
@@ -358,13 +358,17 @@ exports[`MaskedInput event target props are available option via mouse 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  font-size: 22px;
-  line-height: 28px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  font-size: 22px;
+  line-height: 28px;
   outline: none;
   border: none;
+}
+
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
 .c1::-webkit-input-placeholder {
@@ -377,10 +381,6 @@ exports[`MaskedInput event target props are available option via mouse 1`] = `
 
 .c1:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c1::-moz-focus-inner {
@@ -605,7 +605,7 @@ exports[`MaskedInput event target props are available option via mouse 4`] = `
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-sc-99vkfa-0 kBjYjw"
+    class="StyledMaskedInput-sc-99vkfa-0 dWahlE"
     data-testid="test-input"
     id="item"
     name="item"
@@ -661,10 +661,14 @@ exports[`MaskedInput icon 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  padding-left: 48px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  padding-left: 48px;
+}
+
+.c3::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
 .c3::-webkit-input-placeholder {
@@ -677,10 +681,6 @@ exports[`MaskedInput icon 1`] = `
 
 .c3:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c3::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c3::-moz-focus-inner {
@@ -791,10 +791,14 @@ exports[`MaskedInput icon reverse 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  padding-right: 48px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  padding-right: 48px;
+}
+
+.c3::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
 .c3::-webkit-input-placeholder {
@@ -807,10 +811,6 @@ exports[`MaskedInput icon reverse 1`] = `
 
 .c3:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c3::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c3::-moz-focus-inner {
@@ -892,6 +892,10 @@ exports[`MaskedInput mask 1`] = `
   width: 100%;
 }
 
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c1::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -902,10 +906,6 @@ exports[`MaskedInput mask 1`] = `
 
 .c1:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c1::-moz-focus-inner {
@@ -1141,6 +1141,10 @@ exports[`MaskedInput next and previous without options 1`] = `
   width: 100%;
 }
 
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c1::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -1151,10 +1155,6 @@ exports[`MaskedInput next and previous without options 1`] = `
 
 .c1:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c1::-moz-focus-inner {
@@ -1193,7 +1193,7 @@ exports[`MaskedInput next and previous without options 2`] = `
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-sc-99vkfa-0 dBDRDI"
+    class="StyledMaskedInput-sc-99vkfa-0 jtarI"
     data-testid="test-input"
     id="item"
     name="item"
@@ -1220,6 +1220,10 @@ exports[`MaskedInput option via keyboard 1`] = `
   width: 100%;
 }
 
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c1::-webkit-input-placeholder {
   color: #AAAAAA;
 }
@@ -1230,10 +1234,6 @@ exports[`MaskedInput option via keyboard 1`] = `
 
 .c1:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c1::-moz-focus-inner {
@@ -1278,13 +1278,17 @@ exports[`MaskedInput option via mouse 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  font-size: 22px;
-  line-height: 28px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  font-size: 22px;
+  line-height: 28px;
   outline: none;
   border: none;
+}
+
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
 .c1::-webkit-input-placeholder {
@@ -1297,10 +1301,6 @@ exports[`MaskedInput option via mouse 1`] = `
 
 .c1:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c1::-moz-focus-inner {
@@ -1525,7 +1525,7 @@ exports[`MaskedInput option via mouse 4`] = `
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-sc-99vkfa-0 kBjYjw"
+    class="StyledMaskedInput-sc-99vkfa-0 dWahlE"
     data-testid="test-input"
     id="item"
     name="item"
@@ -1547,13 +1547,17 @@ exports[`MaskedInput with no mask 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  font-size: 22px;
-  line-height: 28px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
+  font-size: 22px;
+  line-height: 28px;
   outline: none;
   border: none;
+}
+
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
 .c1::-webkit-input-placeholder {
@@ -1566,10 +1570,6 @@ exports[`MaskedInput with no mask 1`] = `
 
 .c1:-ms-input-placeholder {
   color: #AAAAAA;
-}
-
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c1::-moz-focus-inner {
