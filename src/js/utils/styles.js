@@ -323,7 +323,7 @@ const placeholderColor = css`
     normalizeColor(props.theme.global.colors.placeholder, props.theme)};
 `;
 
-export const placeholderStyle = css`
+const placeholderStyle = css`
   &::-webkit-input-placeholder {
     ${placeholderColor};
   }
