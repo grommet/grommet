@@ -7,6 +7,6 @@ var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var TabsContext = _react["default"].createContext({});
+var TabsContext = /*#__PURE__*/_react["default"].createContext({});
 
 exports.TabsContext = TabsContext;

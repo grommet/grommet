@@ -11,7 +11,7 @@ import { Text } from '../Text';
 import { TabsContext } from '../Tabs/TabsContext';
 import { normalizeColor } from '../../utils';
 import { StyledTab } from './StyledTab';
-var Tab = forwardRef(function (_ref, ref) {
+var Tab = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var disabled = _ref.disabled,
       children = _ref.children,
       icon = _ref.icon,
@@ -118,14 +118,14 @@ var Tab = forwardRef(function (_ref, ref) {
 
   var renderIcon = function renderIcon(iconProp) {
     if (active) {
-      return React.cloneElement(iconProp, _extends({}, theme.tab.active));
+      return /*#__PURE__*/React.cloneElement(iconProp, _extends({}, theme.tab.active));
     }
 
     if (disabled) {
-      return React.cloneElement(iconProp, _extends({}, theme.tab.disabled));
+      return /*#__PURE__*/React.cloneElement(iconProp, _extends({}, theme.tab.disabled));
     }
 
-    return React.cloneElement(iconProp, {
+    return /*#__PURE__*/React.cloneElement(iconProp, {
       color: over ? theme.tab.hover.color : theme.tab.color
     });
   };

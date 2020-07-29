@@ -8,7 +8,7 @@ import { defaultProps } from '../../default-props';
 import { normalizeColor } from '../../utils';
 import { Box } from '../Box';
 import { StyledAnchor } from './StyledAnchor';
-var Anchor = forwardRef(function (_ref, ref) {
+var Anchor = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       children = _ref.children,
       color = _ref.color,
@@ -36,7 +36,7 @@ var Anchor = forwardRef(function (_ref, ref) {
   var coloredIcon = icon;
 
   if (icon && !icon.props.color) {
-    coloredIcon = cloneElement(icon, {
+    coloredIcon = /*#__PURE__*/cloneElement(icon, {
       color: normalizeColor(color || theme.anchor.color, theme)
     });
   }

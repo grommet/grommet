@@ -8,7 +8,7 @@ import { Box } from '../Box';
 import { defaultProps } from '../../default-props';
 import { normalizeColor, removeUndefined } from '../../utils';
 import { StyledRadioButton, StyledRadioButtonContainer, StyledRadioButtonIcon, StyledRadioButtonInput, StyledRadioButtonLabel, StyledRadioButtonBox } from './StyledRadioButton';
-var RadioButton = forwardRef(function (_ref, ref) {
+var RadioButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       checked = _ref.checked,
       children = _ref.children,

@@ -1,2 +1,2 @@
 import React from 'react';
-export var ContainerTargetContext = React.createContext(typeof document === 'object' ? document.body : undefined);
+export var ContainerTargetContext = /*#__PURE__*/React.createContext(typeof document === 'object' ? document.body : undefined);

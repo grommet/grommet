@@ -1,2 +1,2 @@
 import React from 'react';
-export var PortalContext = React.createContext(undefined);
+export var PortalContext = /*#__PURE__*/React.createContext(undefined);

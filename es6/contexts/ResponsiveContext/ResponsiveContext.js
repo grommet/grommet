@@ -1,2 +1,2 @@
 import React from 'react';
-export var ResponsiveContext = React.createContext(undefined);
+export var ResponsiveContext = /*#__PURE__*/React.createContext(undefined);

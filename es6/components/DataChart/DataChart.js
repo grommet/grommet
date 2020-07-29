@@ -69,7 +69,7 @@ var checkDateFormat = function checkDateFormat(firstValue, lastValue, full) {
   return dateFormat;
 };
 
-var DataChart = forwardRef(function (_ref, ref) {
+var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       chart = _ref.chart,
       data = _ref.data,

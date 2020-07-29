@@ -36,7 +36,7 @@ var fullBounds = {
   top: 0,
   bottom: 0
 };
-var LayerContainer = (0, _react.forwardRef)(function (_ref, ref) {
+var LayerContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var children = _ref.children,
       _ref$full = _ref.full,
       full = _ref$full === void 0 ? false : _ref$full,

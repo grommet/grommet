@@ -15,7 +15,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-var Grid = (0, _react.forwardRef)(function (props, ref) {
+var Grid = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
   var a11yTitle = props.a11yTitle,
       fill = props.fill,
       _props$responsive = props.responsive,

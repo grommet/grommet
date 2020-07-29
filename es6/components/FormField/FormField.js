@@ -89,7 +89,7 @@ var Input = function Input(_ref2) {
   }, rest, extraProps));
 };
 
-var FormField = forwardRef(function (_ref3, ref) {
+var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
   var children = _ref3.children,
       className = _ref3.className,
       component = _ref3.component,
@@ -140,7 +140,7 @@ var FormField = forwardRef(function (_ref3, ref) {
     }
 
     if (child && child.type && grommetInputNames.indexOf(child.type.displayName) !== -1 && child.props.plain === undefined && child.props.focusIndicator === undefined) {
-      return cloneElement(child, {
+      return /*#__PURE__*/cloneElement(child, {
         plain: true,
         focusIndicator: false
       });

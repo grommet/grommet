@@ -17,7 +17,7 @@ var createAnnouncer = function createAnnouncer() {
   return announcer;
 };
 
-var AnnounceContext = _react["default"].createContext(function (message, mode, timeout) {
+var AnnounceContext = /*#__PURE__*/_react["default"].createContext(function (message, mode, timeout) {
   if (mode === void 0) {
     mode = 'polite';
   }

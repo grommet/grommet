@@ -44,7 +44,7 @@ var defaultAlign = {
   left: 'left'
 };
 var defaultPortalContext = [];
-var DropContainer = (0, _react.forwardRef)(function (_ref, ref) {
+var DropContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var _ref$align = _ref.align,
       align = _ref$align === void 0 ? defaultAlign : _ref$align,
       children = _ref.children,

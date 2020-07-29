@@ -4,7 +4,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 import React, { forwardRef, useState } from 'react';
 import { StyledImage } from './StyledImage';
-var Image = forwardRef(function (_ref, ref) {
+var Image = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       fallback = _ref.fallback,
       onError = _ref.onError,

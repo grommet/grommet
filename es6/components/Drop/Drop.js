@@ -9,7 +9,7 @@ import { defaultProps } from '../../default-props';
 import { getNewContainer, setFocusWithoutScroll } from '../../utils';
 import { DropContainer } from './DropContainer';
 import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
-var Drop = forwardRef(function (_ref, ref) {
+var Drop = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var restrictFocus = _ref.restrictFocus,
       dropTarget = _ref.target,
       rest = _objectWithoutPropertiesLoose(_ref, ["restrictFocus", "target"]);
@@ -49,7 +49,7 @@ var Drop = forwardRef(function (_ref, ref) {
       }
     };
   }, [containerTarget, dropContainer, originalFocusedElement, restrictFocus]);
-  return dropContainer ? createPortal( /*#__PURE__*/React.createElement(DropContainer, _extends({
+  return dropContainer ? /*#__PURE__*/createPortal( /*#__PURE__*/React.createElement(DropContainer, _extends({
     ref: ref,
     dir: theme && theme.dir,
     dropTarget: dropTarget,

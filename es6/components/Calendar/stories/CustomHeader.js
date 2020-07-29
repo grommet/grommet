@@ -51,6 +51,6 @@ var CustomHeaderCalendar = function CustomHeaderCalendar() {
   })));
 };
 
-storiesOf('Calendar', module).add('Custom Header', function () {
+storiesOf('Calendar', module).add('Header', function () {
   return /*#__PURE__*/React.createElement(CustomHeaderCalendar, null);
 });

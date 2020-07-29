@@ -33,7 +33,7 @@ var useFormField = function useFormField(_ref) {
   };
 };
 
-var FormContext = _react["default"].createContext({
+var FormContext = /*#__PURE__*/_react["default"].createContext({
   useFormField: useFormField,
   useFormInput: useFormInput
 });

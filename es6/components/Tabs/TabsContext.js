@@ -1,2 +1,2 @@
 import React from 'react';
-export var TabsContext = React.createContext({});
+export var TabsContext = /*#__PURE__*/React.createContext({});

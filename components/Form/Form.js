@@ -52,7 +52,7 @@ var validate = function validate(validations, value, omitValid) {
   return [nextErrors, nextInfos];
 };
 
-var Form = (0, _react.forwardRef)(function (_ref2, ref) {
+var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
   var children = _ref2.children,
       _ref2$errors = _ref2.errors,
       errorsProp = _ref2$errors === void 0 ? defaultErrors : _ref2$errors,

@@ -25,7 +25,7 @@ var AnimatedBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
     "transition: " + ("max-" + props.dimension + " " + props.speedProp + "ms, opacity " + props.speedProp + "ms") + ";\n      opacity: " + (props.open ? 1 : 0) + ";\n      overflow: " + (props.animate || !props.open ? 'hidden' : 'visible') + ";\n      max-" + props.dimension + ": " + (props.open ? 'unset' : 0) + ";\n    "
   );
 });
-var Collapsible = (0, _react.forwardRef)(function (_ref, ref) {
+var Collapsible = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var children = _ref.children,
       direction = _ref.direction,
       openArg = _ref.open;

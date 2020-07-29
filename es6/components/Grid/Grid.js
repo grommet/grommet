@@ -4,7 +4,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 import React, { forwardRef } from 'react';
 import { StyledGrid } from './StyledGrid';
-var Grid = forwardRef(function (props, ref) {
+var Grid = /*#__PURE__*/forwardRef(function (props, ref) {
   var a11yTitle = props.a11yTitle,
       fill = props.fill,
       _props$responsive = props.responsive,

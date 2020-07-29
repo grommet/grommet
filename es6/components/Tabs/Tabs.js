@@ -9,7 +9,7 @@ import { Box } from '../Box';
 import { TabsContext } from './TabsContext';
 import { StyledTabPanel, StyledTabs, StyledTabsHeader } from './StyledTabs';
 import { normalizeColor } from '../../utils';
-var Tabs = forwardRef(function (_ref, ref) {
+var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var alignControls = _ref.alignControls,
       children = _ref.children,
       flex = _ref.flex,

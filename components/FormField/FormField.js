@@ -109,7 +109,7 @@ var Input = function Input(_ref2) {
   }, rest, extraProps));
 };
 
-var FormField = (0, _react.forwardRef)(function (_ref3, ref) {
+var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
   var children = _ref3.children,
       className = _ref3.className,
       component = _ref3.component,
@@ -161,7 +161,7 @@ var FormField = (0, _react.forwardRef)(function (_ref3, ref) {
     }
 
     if (child && child.type && grommetInputNames.indexOf(child.type.displayName) !== -1 && child.props.plain === undefined && child.props.focusIndicator === undefined) {
-      return (0, _react.cloneElement)(child, {
+      return /*#__PURE__*/(0, _react.cloneElement)(child, {
         plain: true,
         focusIndicator: false
       });

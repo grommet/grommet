@@ -6,7 +6,7 @@ import React, { forwardRef, useContext, useState } from 'react';
 import { FormContext } from '../Form/FormContext';
 import { Keyboard } from '../Keyboard';
 import { StyledTextArea } from './StyledTextArea';
-var TextArea = forwardRef(function (_ref, ref) {
+var TextArea = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       fill = _ref.fill,
       name = _ref.name,

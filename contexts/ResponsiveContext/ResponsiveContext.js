@@ -7,6 +7,6 @@ var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var ResponsiveContext = _react["default"].createContext(undefined);
+var ResponsiveContext = /*#__PURE__*/_react["default"].createContext(undefined);
 
 exports.ResponsiveContext = ResponsiveContext;

@@ -52,7 +52,7 @@ var SkipLinks = function SkipLinks(_ref) {
       bottom: 'medium'
     }
   }, children.map(function (element, index) {
-    return cloneElement(element, {
+    return /*#__PURE__*/cloneElement(element, {
       key: "skip-link-" + index,
       onClick: removeLayer
     });

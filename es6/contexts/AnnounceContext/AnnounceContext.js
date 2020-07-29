@@ -10,7 +10,7 @@ var createAnnouncer = function createAnnouncer() {
   return announcer;
 };
 
-export var AnnounceContext = React.createContext(function (message, mode, timeout) {
+export var AnnounceContext = /*#__PURE__*/React.createContext(function (message, mode, timeout) {
   if (mode === void 0) {
     mode = 'polite';
   }

@@ -39,7 +39,7 @@ To make a selection:
 - Space is pressed.
 */
 
-var Menu = forwardRef(function (props, ref) {
+var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
   var a11yTitle = props.a11yTitle,
       children = props.children,
       disabled = props.disabled,

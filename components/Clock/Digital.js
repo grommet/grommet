@@ -90,7 +90,7 @@ var Element = function Element(_ref2) {
   return result;
 };
 
-var Digital = (0, _react.forwardRef)(function (props, ref) {
+var Digital = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
   var elements = props.elements,
       precision = props.precision,
       run = props.run,

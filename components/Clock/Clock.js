@@ -62,7 +62,7 @@ var parseTime = function parseTime(time, hourLimit) {
   return result;
 };
 
-var Clock = (0, _react.forwardRef)(function (_ref, ref) {
+var Clock = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var _ref$hourLimit = _ref.hourLimit,
       hourLimit = _ref$hourLimit === void 0 ? 24 : _ref$hourLimit,
       onChange = _ref.onChange,
