@@ -21,15 +21,6 @@ const theme = {
            BlinkMacSystemFont, 
            "Segoe UI"`,
     },
-    colors: {
-      blue: '#00C8FF',
-      green: '#17EBA0',
-      teal: '#82FFF2',
-      purple: '#F740FF',
-      red: '#FC6161',
-      orange: '#FFBC44',
-      yellow: '#FFEB59',
-    },
   },
   card: {
     container: {
@@ -44,7 +35,6 @@ const theme = {
 };
 
 const gradient = [
-  { value: 0, color: 'status-ok' },
   { value: 28, color: 'status-ok' },
   { value: 50, color: 'status-warning' },
   { value: 80, color: 'status-critical' },
@@ -56,49 +46,51 @@ const data = [
     title: 'Memory (EEC)',
     subTitle: '8 GB @ 400Hz',
     message: 'Past 24hrs',
+    type: 'bar',
   },
   {
     icon: <Storage size="large" />,
     title: 'Storage',
     subTitle: 'Sub-system and Devices',
     message: '36.8 TB available',
+    type: 'line',
   },
   {
     icon: <Trigger size="large" />,
     title: 'Power (Watts)',
     subTitle: '720 Watt Service',
     message: 'Past 12hrs',
+    type: 'point',
   },
 ];
 
-const LineChartPreview = () => {
-  return (
-    <Box>
-      <Chart
-        type="line"
-        dash
-        round
-        thickness="xsmall"
-        bounds={[
-          [0, 6],
-          [0, 100],
-        ]}
-        values={[
-          { value: [6, 100], label: 'one hundred' },
-          { value: [5, 70], label: 'seventy' },
-          { value: [4, 40], label: 'sixty' },
-          { value: [3, 80], label: 'eighty' },
-          { value: [2, 25], label: 'forty' },
-          { value: [1, 50], label: 'thirty' },
-          { value: [0, 25], label: 'sixty' },
-        ]}
-        aria-label="Card with analytics"
-        color={gradient}
-        size={{ height: 'xsmall' }}
-      />
-    </Box>
-  );
-};
+const ChartPreview = ({ type }) => (
+  <Box>
+    <Chart
+      type={type}
+      id={type}
+      dash={type === 'line'}
+      round
+      thickness="xsmall"
+      bounds={[
+        [0, 6],
+        [0, 100],
+      ]}
+      values={[
+        { value: [6, 100], label: 'one hundred' },
+        { value: [5, 70], label: 'seventy' },
+        { value: [4, 40], label: 'sixty' },
+        { value: [3, 80], label: 'eighty' },
+        { value: [2, 25], label: 'forty' },
+        { value: [1, 50], label: 'thirty' },
+        { value: [0, 25], label: 'sixty' },
+      ]}
+      aria-label="chart card"
+      color={gradient}
+      size={{ height: 'xsmall' }}
+    />
+  </Box>
+);
 
 const Identifier = ({ children, title, subTitle, size, ...rest }) => (
   <Box gap="small" align="center" direction="row" pad="small" {...rest}>
@@ -115,7 +107,7 @@ const Identifier = ({ children, title, subTitle, size, ...rest }) => (
 export const Example = () => (
   <Grommet theme={theme} full>
     <Box pad="large" background="dark-1" height="100%">
-      <Grid gap="medium" rows="small" columns={{ count: 'fit', size: 'small' }}>
+      <Grid gap="medium" columns={{ count: 'fit', size: 'small' }}>
         {data.map(value => (
           <Card
             key={value.title}
@@ -132,7 +124,7 @@ export const Example = () => (
               >
                 {value.icon}
               </Identifier>
-              <LineChartPreview />
+              <ChartPreview type={value.type} />
             </CardBody>
             <CardFooter pad={{ horizontal: 'medium', vertical: 'small' }}>
               <Text size="xsmall">{value.message}</Text>

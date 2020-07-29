@@ -19,6 +19,8 @@
       "grommet/themes": ["src/js/themes"],
       "grommet/utils": ["src/js/utils"]
     },
+    "lib": ["dom", "es2017"],
+    "types": [],
     "typeRoots": ["./node_modules/@types/", "./src/@types/"]
   },
   "exclude": ["node_modules"],
