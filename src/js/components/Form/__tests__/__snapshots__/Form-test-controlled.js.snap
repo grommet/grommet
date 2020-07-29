@@ -82,18 +82,14 @@ exports[`Form controlled controlled 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c4::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c4::-webkit-input-placeholder {
@@ -108,14 +104,13 @@ exports[`Form controlled controlled 1`] = `
   color: #AAAAAA;
 }
 
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c4::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c4:-moz-placeholder,
-.c4::-moz-placeholder {
-  opacity: 1;
 }
 
 .c3 {
@@ -184,7 +179,7 @@ exports[`Form controlled controlled 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 jGsEcv"
+            class="StyledTextInput-sc-1x30a0s-0 lnoLDW"
             name="test"
             placeholder="test input"
             value="v"
@@ -218,7 +213,7 @@ exports[`Form controlled controlled 3`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 jGsEcv"
+            class="StyledTextInput-sc-1x30a0s-0 lnoLDW"
             name="test"
             placeholder="test input"
             value="v"
@@ -327,18 +322,14 @@ exports[`Form controlled controlled FormField deprecated 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-webkit-input-placeholder {
@@ -353,14 +344,13 @@ exports[`Form controlled controlled FormField deprecated 1`] = `
   color: #AAAAAA;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c5:-moz-placeholder,
-.c5::-moz-placeholder {
-  opacity: 1;
 }
 
 .c4 {
@@ -441,7 +431,7 @@ exports[`Form controlled controlled FormField deprecated 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 jGsEcv"
+            class="StyledTextInput-sc-1x30a0s-0 lnoLDW"
             id="test"
             name="test"
             value="v"
@@ -481,7 +471,7 @@ exports[`Form controlled controlled FormField deprecated 3`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 jGsEcv"
+            class="StyledTextInput-sc-1x30a0s-0 lnoLDW"
             id="test"
             name="test"
             value="v"
@@ -581,18 +571,14 @@ exports[`Form controlled controlled input 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c4::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c4::-webkit-input-placeholder {
@@ -607,14 +593,13 @@ exports[`Form controlled controlled input 1`] = `
   color: #AAAAAA;
 }
 
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c4::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c4:-moz-placeholder,
-.c4::-moz-placeholder {
-  opacity: 1;
 }
 
 .c3 {
@@ -683,7 +668,7 @@ exports[`Form controlled controlled input 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 jGsEcv"
+            class="StyledTextInput-sc-1x30a0s-0 lnoLDW"
             name="test"
             placeholder="test input"
             value="v"
@@ -717,7 +702,7 @@ exports[`Form controlled controlled input 3`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 jGsEcv"
+            class="StyledTextInput-sc-1x30a0s-0 lnoLDW"
             name="test"
             placeholder="test input"
             value="v"
@@ -817,18 +802,14 @@ exports[`Form controlled controlled input lazy 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c4::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c4::-webkit-input-placeholder {
@@ -843,14 +824,13 @@ exports[`Form controlled controlled input lazy 1`] = `
   color: #AAAAAA;
 }
 
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c4::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c4:-moz-placeholder,
-.c4::-moz-placeholder {
-  opacity: 1;
 }
 
 .c3 {
@@ -919,7 +899,7 @@ exports[`Form controlled controlled input lazy 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 jGsEcv"
+            class="StyledTextInput-sc-1x30a0s-0 lnoLDW"
             name="test"
             placeholder="test input"
             value="v"
@@ -953,7 +933,7 @@ exports[`Form controlled controlled input lazy 3`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 jGsEcv"
+            class="StyledTextInput-sc-1x30a0s-0 lnoLDW"
             name="test"
             placeholder="test input"
             value="v"
@@ -1053,18 +1033,14 @@ exports[`Form controlled controlled lazy 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c4::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c4::-webkit-input-placeholder {
@@ -1079,14 +1055,13 @@ exports[`Form controlled controlled lazy 1`] = `
   color: #AAAAAA;
 }
 
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c4::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c4:-moz-placeholder,
-.c4::-moz-placeholder {
-  opacity: 1;
 }
 
 .c3 {
@@ -1155,7 +1130,7 @@ exports[`Form controlled controlled lazy 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 jGsEcv"
+            class="StyledTextInput-sc-1x30a0s-0 lnoLDW"
             name="test"
             placeholder="test input"
             value="v"
@@ -1189,7 +1164,7 @@ exports[`Form controlled controlled lazy 3`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 jGsEcv"
+            class="StyledTextInput-sc-1x30a0s-0 lnoLDW"
             name="test"
             placeholder="test input"
             value="v"
@@ -1255,16 +1230,12 @@ exports[`Form controlled lazy value 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
-}
-
-.c2::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c2::-webkit-input-placeholder {
@@ -1279,14 +1250,13 @@ exports[`Form controlled lazy value 1`] = `
   color: #AAAAAA;
 }
 
+.c2::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c2::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c2:-moz-placeholder,
-.c2::-moz-placeholder {
-  opacity: 1;
 }
 
 .c1 {

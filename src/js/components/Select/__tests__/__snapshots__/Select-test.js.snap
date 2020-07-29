@@ -121,18 +121,14 @@ exports[`Select 0 value 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-webkit-input-placeholder {
@@ -147,14 +143,13 @@ exports[`Select 0 value 1`] = `
   color: #AAAAAA;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c5:-moz-placeholder,
-.c5::-moz-placeholder {
-  opacity: 1;
 }
 
 .c4 {
@@ -361,18 +356,14 @@ exports[`Select Search timeout 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c6::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c6::-webkit-input-placeholder {
@@ -387,14 +378,13 @@ exports[`Select Search timeout 1`] = `
   color: #AAAAAA;
 }
 
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
-  opacity: 1;
 }
 
 .c5 {
@@ -508,42 +498,16 @@ exports[`Select Search timeout 2`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
-  width: 100%;
   font-size: 14px;
   line-height: 20px;
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c0::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-.c0::-webkit-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c0::-moz-placeholder {
-  color: #AAAAAA;
-}
-
-.c0:-ms-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c0::-moz-focus-inner {
-  border: none;
-  outline: none;
-}
-
-.c0:-moz-placeholder,
-.c0::-moz-placeholder {
-  opacity: 1;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
 }
 
 .c0 > circle,
@@ -559,6 +523,27 @@ exports[`Select Search timeout 2`] = `
 
 .c0::-moz-focus-inner {
   border: 0;
+}
+
+.c0::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c0::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c0:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c0::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c0::-moz-focus-inner {
+  border: none;
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -710,18 +695,14 @@ exports[`Select applies custom global.hover theme to options 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c6::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c6::-webkit-input-placeholder {
@@ -736,14 +717,13 @@ exports[`Select applies custom global.hover theme to options 1`] = `
   color: #AAAAAA;
 }
 
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
-  opacity: 1;
 }
 
 .c5 {
@@ -1043,18 +1023,14 @@ exports[`Select basic 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-webkit-input-placeholder {
@@ -1069,14 +1045,13 @@ exports[`Select basic 1`] = `
   color: #AAAAAA;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c5:-moz-placeholder,
-.c5::-moz-placeholder {
-  opacity: 1;
 }
 
 .c4 {
@@ -1283,18 +1258,14 @@ exports[`Select complex options and children 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-webkit-input-placeholder {
@@ -1309,14 +1280,13 @@ exports[`Select complex options and children 1`] = `
   color: #AAAAAA;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c5:-moz-placeholder,
-.c5::-moz-placeholder {
-  opacity: 1;
 }
 
 .c4 {
@@ -1406,7 +1376,7 @@ exports[`Select complex options and children 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 jGsEcv Select__SelectTextInput-sc-17idtfo-0 hWmVID"
+          class="StyledTextInput-sc-1x30a0s-0 lnoLDW Select__SelectTextInput-sc-17idtfo-0 hWmVID"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -1751,18 +1721,14 @@ exports[`Select disabled 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-webkit-input-placeholder {
@@ -1777,14 +1743,13 @@ exports[`Select disabled 1`] = `
   color: #AAAAAA;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c5:-moz-placeholder,
-.c5::-moz-placeholder {
-  opacity: 1;
 }
 
 .c4 {
@@ -1876,7 +1841,7 @@ exports[`Select disabled 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 jGsEcv Select__SelectTextInput-sc-17idtfo-0 hWmVID"
+          class="StyledTextInput-sc-1x30a0s-0 lnoLDW Select__SelectTextInput-sc-17idtfo-0 hWmVID"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -2028,18 +1993,14 @@ exports[`Select disabled key 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c6::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c6::-webkit-input-placeholder {
@@ -2054,14 +2015,13 @@ exports[`Select disabled key 1`] = `
   color: #AAAAAA;
 }
 
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
-  opacity: 1;
 }
 
 .c5 {
@@ -2666,42 +2626,16 @@ exports[`Select empty results search 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
-  width: 100%;
   font-size: 14px;
   line-height: 20px;
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c0::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-.c0::-webkit-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c0::-moz-placeholder {
-  color: #AAAAAA;
-}
-
-.c0:-ms-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c0::-moz-focus-inner {
-  border: none;
-  outline: none;
-}
-
-.c0:-moz-placeholder,
-.c0::-moz-placeholder {
-  opacity: 1;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
 }
 
 .c0 > circle,
@@ -2717,6 +2651,27 @@ exports[`Select empty results search 1`] = `
 
 .c0::-moz-focus-inner {
   border: 0;
+}
+
+.c0::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c0::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c0:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c0::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c0::-moz-focus-inner {
+  border: none;
+  outline: none;
 }
 
 @media only screen and (max-width:768px) {
@@ -2868,18 +2823,14 @@ exports[`Select keyboard navigation timeout 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c6::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c6::-webkit-input-placeholder {
@@ -2894,14 +2845,13 @@ exports[`Select keyboard navigation timeout 1`] = `
   color: #AAAAAA;
 }
 
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
-  opacity: 1;
 }
 
 .c5 {
@@ -3573,18 +3523,14 @@ exports[`Select modifies select control style on open 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c6::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c6::-webkit-input-placeholder {
@@ -3599,14 +3545,13 @@ exports[`Select modifies select control style on open 1`] = `
   color: #AAAAAA;
 }
 
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
-  opacity: 1;
 }
 
 .c5 {
@@ -3815,18 +3760,14 @@ exports[`Select onChange with valueKey string 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c6::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c6::-webkit-input-placeholder {
@@ -3841,14 +3782,13 @@ exports[`Select onChange with valueKey string 1`] = `
   color: #AAAAAA;
 }
 
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
-  opacity: 1;
 }
 
 .c5 {
@@ -4289,18 +4229,14 @@ exports[`Select onChange without valueKey 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c6::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c6::-webkit-input-placeholder {
@@ -4315,14 +4251,13 @@ exports[`Select onChange without valueKey 1`] = `
   color: #AAAAAA;
 }
 
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
-  opacity: 1;
 }
 
 .c5 {
@@ -4763,18 +4698,14 @@ exports[`Select opens and closes 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-webkit-input-placeholder {
@@ -4789,14 +4720,13 @@ exports[`Select opens and closes 1`] = `
   color: #AAAAAA;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c5:-moz-placeholder,
-.c5::-moz-placeholder {
-  opacity: 1;
 }
 
 .c4 {
@@ -4886,7 +4816,7 @@ exports[`Select opens and closes 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 jGsEcv Select__SelectTextInput-sc-17idtfo-0 hWmVID"
+          class="StyledTextInput-sc-1x30a0s-0 lnoLDW Select__SelectTextInput-sc-17idtfo-0 hWmVID"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -5213,7 +5143,7 @@ exports[`Select opens and closes 6`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 jGsEcv Select__SelectTextInput-sc-17idtfo-0 hWmVID"
+          class="StyledTextInput-sc-1x30a0s-0 lnoLDW Select__SelectTextInput-sc-17idtfo-0 hWmVID"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -5365,18 +5295,14 @@ exports[`Select opens and closes 7`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-webkit-input-placeholder {
@@ -5391,14 +5317,13 @@ exports[`Select opens and closes 7`] = `
   color: #AAAAAA;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c5:-moz-placeholder,
-.c5::-moz-placeholder {
-  opacity: 1;
 }
 
 .c4 {
@@ -5612,18 +5537,14 @@ exports[`Select renders custom icon 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-webkit-input-placeholder {
@@ -5638,14 +5559,13 @@ exports[`Select renders custom icon 1`] = `
   color: #AAAAAA;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c5:-moz-placeholder,
-.c5::-moz-placeholder {
-  opacity: 1;
 }
 
 .c4 {
@@ -5851,18 +5771,14 @@ exports[`Select renders custom up and down icons 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c6::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c6::-webkit-input-placeholder {
@@ -5877,14 +5793,13 @@ exports[`Select renders custom up and down icons 1`] = `
   color: #AAAAAA;
 }
 
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
-  opacity: 1;
 }
 
 .c5 {
@@ -5988,7 +5903,7 @@ exports[`Select renders custom up and down icons 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 jGsEcv Select__SelectTextInput-sc-17idtfo-0 hWmVID"
+            class="StyledTextInput-sc-1x30a0s-0 lnoLDW Select__SelectTextInput-sc-17idtfo-0 hWmVID"
             placeholder="Select..."
             readonly=""
             tabindex="-1"
@@ -6191,18 +6106,14 @@ exports[`Select renders default icon 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-webkit-input-placeholder {
@@ -6217,14 +6128,13 @@ exports[`Select renders default icon 1`] = `
   color: #AAAAAA;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c5:-moz-placeholder,
-.c5::-moz-placeholder {
-  opacity: 1;
 }
 
 .c4 {
@@ -6431,18 +6341,14 @@ exports[`Select renders styled select options backwards compatible with legacy
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c6::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c6::-webkit-input-placeholder {
@@ -6457,14 +6363,13 @@ exports[`Select renders styled select options backwards compatible with legacy
   color: #AAAAAA;
 }
 
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
-  opacity: 1;
 }
 
 .c5 {
@@ -6674,18 +6579,14 @@ exports[`Select renders styled select options combining select.options.box &&
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c6::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c6::-webkit-input-placeholder {
@@ -6700,14 +6601,13 @@ exports[`Select renders styled select options combining select.options.box &&
   color: #AAAAAA;
 }
 
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
-  opacity: 1;
 }
 
 .c5 {
@@ -6915,18 +6815,14 @@ exports[`Select renders styled select options using select.options.container 1`]
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c6::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c6::-webkit-input-placeholder {
@@ -6941,14 +6837,13 @@ exports[`Select renders styled select options using select.options.container 1`]
   color: #AAAAAA;
 }
 
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
-  opacity: 1;
 }
 
 .c5 {
@@ -7103,18 +6998,14 @@ exports[`Select renders without icon 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-webkit-input-placeholder {
@@ -7129,14 +7020,13 @@ exports[`Select renders without icon 1`] = `
   color: #AAAAAA;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c5:-moz-placeholder,
-.c5::-moz-placeholder {
-  opacity: 1;
 }
 
 .c4 {
@@ -7314,18 +7204,14 @@ exports[`Select search 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-webkit-input-placeholder {
@@ -7340,14 +7226,13 @@ exports[`Select search 1`] = `
   color: #AAAAAA;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c5:-moz-placeholder,
-.c5::-moz-placeholder {
-  opacity: 1;
 }
 
 .c4 {
@@ -7566,42 +7451,16 @@ exports[`Select search 2`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
-  width: 100%;
   font-size: 14px;
   line-height: 20px;
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c6::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-.c6::-webkit-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c6::-moz-placeholder {
-  color: #AAAAAA;
-}
-
-.c6:-ms-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c6::-moz-focus-inner {
-  border: none;
-  outline: none;
-}
-
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
-  opacity: 1;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
 }
 
 .c6 > circle,
@@ -7617,6 +7476,27 @@ exports[`Select search 2`] = `
 
 .c6::-moz-focus-inner {
   border: 0;
+}
+
+.c6::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c6::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c6:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c6::-moz-focus-inner {
+  border: none;
+  outline: none;
 }
 
 .c5 {
@@ -7765,7 +7645,7 @@ exports[`Select search 3`] = `
 exports[`Select search 4`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 fIotSm"
+  class="StyledTextInput-sc-1x30a0s-0 kQHGIn"
   type="search"
   value=""
 />
@@ -7774,7 +7654,7 @@ exports[`Select search 4`] = `
 exports[`Select search 5`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 fIotSm"
+  class="StyledTextInput-sc-1x30a0s-0 kQHGIn"
   type="search"
   value="o"
 />
@@ -7901,18 +7781,14 @@ exports[`Select select an option 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-webkit-input-placeholder {
@@ -7927,14 +7803,13 @@ exports[`Select select an option 1`] = `
   color: #AAAAAA;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c5:-moz-placeholder,
-.c5::-moz-placeholder {
-  opacity: 1;
 }
 
 .c4 {
@@ -8284,18 +8159,14 @@ exports[`Select select an option with enter 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-webkit-input-placeholder {
@@ -8310,14 +8181,13 @@ exports[`Select select an option with enter 1`] = `
   color: #AAAAAA;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c5:-moz-placeholder,
-.c5::-moz-placeholder {
-  opacity: 1;
 }
 
 .c4 {
@@ -8510,18 +8380,14 @@ exports[`Select selected 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c6::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c6::-webkit-input-placeholder {
@@ -8536,14 +8402,13 @@ exports[`Select selected 1`] = `
   color: #AAAAAA;
 }
 
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
-  opacity: 1;
 }
 
 .c5 {
@@ -8750,18 +8615,14 @@ exports[`Select should not have accessibility violations 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c6::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c6::-webkit-input-placeholder {
@@ -8776,14 +8637,13 @@ exports[`Select should not have accessibility violations 1`] = `
   color: #AAAAAA;
 }
 
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c6:-moz-placeholder,
-.c6::-moz-placeholder {
-  opacity: 1;
 }
 
 .c5 {
@@ -8988,20 +8848,16 @@ exports[`Select size 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
-  width: 100%;
   font-size: 22px;
   line-height: 28px;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
   outline: none;
   border: none;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-webkit-input-placeholder {
@@ -9016,14 +8872,13 @@ exports[`Select size 1`] = `
   color: #AAAAAA;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c5:-moz-placeholder,
-.c5::-moz-placeholder {
-  opacity: 1;
 }
 
 .c4 {
