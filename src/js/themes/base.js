@@ -1308,6 +1308,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         closeIcon: FormClose,
         position: 'top-right',
         zIndex: 1,
+        width: '60%',
         icon: {
           size: 'medium',
           default: Info,
