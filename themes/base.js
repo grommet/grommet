@@ -478,6 +478,9 @@ var generate = function generate(baseSpacing, scale) {
       //   background: undefined,
       //   border: undefined,
       //   color: undefined,
+      //   font: {
+      //     weight: undefined,
+      //   },
       //   padding: {
       //     vertical: undefined,
       //     horizontal: undefined,
@@ -485,6 +488,9 @@ var generate = function generate(baseSpacing, scale) {
       //   extend: undefined,
       // },
       // primary: {
+      //   font: {
+      //     weight: undefined,
+      //   },
       //   background: undefined,
       //   border: undefined,
       //   color: undefined,
@@ -495,6 +501,9 @@ var generate = function generate(baseSpacing, scale) {
       //   extend: undefined,
       // },
       // secondary: {
+      //   font: {
+      //     weight: undefined,
+      //   },
       //   background: undefined,
       //   border: undefined,
       //   color: undefined,
