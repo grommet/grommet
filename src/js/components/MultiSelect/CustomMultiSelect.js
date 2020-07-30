@@ -75,12 +75,20 @@ const CustomMultiSelect = ({
           style={{ height: '100%' }}
         >
           <FormField error={!isValid ? validate.message : null}>
-            <TextArea
-              value={textAreaValue}
-              onChange={event => setTextAreaValueFn(event.target.value)}
-              resize={false}
-              fill
-            />
+            <Box
+              width="full"
+              style={{
+                minHeight: theme.multiselect.custom.textAreaContainer.minHeight,
+                overflow: 'auto',
+              }}
+            >
+              <TextArea
+                value={textAreaValue}
+                onChange={event => setTextAreaValueFn(event.target.value)}
+                resize={false}
+                fill
+              />
+            </Box>
           </FormField>
         </Box>
         <Box {...theme.multiselect.custom.actions.wrapper}>

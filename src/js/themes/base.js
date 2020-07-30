@@ -1057,6 +1057,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           weight: 600,
         },
         textAreaContainer: {
+          minHeight: '140px',
           margin: { vertical: 'medium' },
         },
         actions: {
@@ -1132,7 +1133,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       background: 'dark-2',
       activeColor: lightColors[4],
       container: {
-        // extend: undefined,
+        extend: undefined,
       },
       control: {
         // extend: undefined,
@@ -1253,9 +1254,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       xxlarge: { ...fontSizing(4) },
     },
     textArea: {
-      extend: {
-        minHeight: '300px',
-      },
+      // extend: undefined,
       // disabled: { opacity: undefined },
     },
     textInput: {
