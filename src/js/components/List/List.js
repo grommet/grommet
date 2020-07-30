@@ -5,7 +5,7 @@ import { Box } from '../Box';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
-import { focusStyle, genericStyles } from '../../utils';
+import { focusStyle, genericStyles, useForwardedRef } from '../../utils';
 
 const StyledList = styled.ul`
   list-style: none;
@@ -50,9 +50,9 @@ const List = React.forwardRef(
     },
     ref,
   ) => {
+    const listRef = useForwardedRef(ref);
     const theme = useContext(ThemeContext);
     const [active, setActive] = useState();
-    const listRef = React.createRef();
 
     return (
       <Keyboard
@@ -85,7 +85,7 @@ const List = React.forwardRef(
         }
       >
         <StyledList
-          ref={ref || listRef}
+          ref={listRef}
           as={as || 'ul'}
           tabIndex={onClickItem ? 0 : undefined}
           {...rest}
@@ -192,7 +192,7 @@ const List = React.forwardRef(
                     // put focus back on the List container to meet
                     // WCAG accessibility guidelines that focus remains
                     // on `ul`
-                    (ref || listRef).current.focus();
+                    listRef.current.focus();
                   },
                   // prevent default focus outline from being shown
                   // onMouseDown since `ul` is maintaining focus
