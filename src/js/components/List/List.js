@@ -12,7 +12,10 @@ const StyledList = styled.ul`
   ${props => !props.margin && 'margin: 0;'}
   padding: 0;
   ${genericStyles}
-  ${props => props.focus && focusStyle({ skipSvgChildren: true })}
+
+  &:focus {
+    ${props => props.tabIndex >= 0 && focusStyle({ skipSvgChildren: true })}
+  }
 `;
 
 const StyledItem = styled(Box)`
@@ -35,6 +38,7 @@ const List = React.forwardRef(
       border,
       children,
       data,
+      focus,
       itemProps,
       pad,
       primaryKey,
@@ -48,7 +52,6 @@ const List = React.forwardRef(
   ) => {
     const theme = useContext(ThemeContext);
     const [active, setActive] = useState();
-    const [focus, setFocus] = useState();
     const listRef = React.createRef();
 
     return (
@@ -85,13 +88,6 @@ const List = React.forwardRef(
           ref={ref || listRef}
           as={as || 'ul'}
           tabIndex={onClickItem ? 0 : undefined}
-          focus={focus}
-          onFocus={() => {
-            setFocus(true);
-          }}
-          onBlur={() => {
-            setFocus(false);
-          }}
           {...rest}
         >
           <InfiniteScroll

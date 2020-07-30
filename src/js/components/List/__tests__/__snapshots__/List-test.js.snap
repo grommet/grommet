@@ -1050,11 +1050,14 @@ exports[`List events ArrowDown key 1`] = `
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -1214,11 +1217,14 @@ exports[`List events ArrowDown key on last element 1`] = `
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -1366,11 +1372,14 @@ exports[`List events ArrowUp key 1`] = `
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -1530,6 +1539,15 @@ exports[`List events Enter key 1`] = `
   padding: 0;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   cursor: pointer;
 }
@@ -1603,7 +1621,7 @@ exports[`List events Enter key 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 eSoiSs"
+    class="List__StyledList-sc-130gdqg-0 deDxvH"
     tabindex="0"
   >
     <li
@@ -1686,11 +1704,14 @@ exports[`List events focus and blur 1`] = `
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c1::-moz-focus-inner {
+.c1:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -1779,7 +1800,7 @@ exports[`List events focus and blur 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 ckPrwz"
+    class="List__StyledList-sc-130gdqg-0 deDxvH"
     tabindex="0"
   >
     <li
@@ -1862,6 +1883,15 @@ exports[`List events mouse events 1`] = `
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c3 {
@@ -1949,7 +1979,7 @@ exports[`List events mouse events 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 ckPrwz"
+    class="List__StyledList-sc-130gdqg-0 deDxvH"
     tabindex="0"
   >
     <li
@@ -2395,6 +2425,15 @@ exports[`List onClickItem 1`] = `
   padding: 0;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   cursor: pointer;
 }
@@ -2468,7 +2507,7 @@ exports[`List onClickItem 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 eSoiSs"
+    class="List__StyledList-sc-130gdqg-0 deDxvH"
     tabindex="0"
   >
     <li
