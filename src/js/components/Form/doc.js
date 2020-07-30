@@ -26,8 +26,8 @@ export const doc = Form => {
       )
       .defaultValue({}),
     messages: PropTypes.shape({
-      invalid: PropTypes.string,
-      required: PropTypes.string,
+      invalid: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+      required: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
     })
       .description('Custom validation messages.')
       .defaultValue({ invalid: 'invalid', required: 'required' }),
