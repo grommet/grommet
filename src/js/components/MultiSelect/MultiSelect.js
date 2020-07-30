@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 
 import { Box } from '../Box';
 import { Select } from '../Select';
@@ -45,6 +45,12 @@ const MultiSelect = ({
   internalIsExcluded : isExcludedProp;
 
   const value = withUpdateCancelButtons ? internalValue: valueProp;
+
+  useEffect(() => {
+    if (isOpen && withUpdateCancelButtons) {
+      updateInternalValue(valueProp);
+    }
+  }, [isOpen, valueProp, withUpdateCancelButtons]);
 
   const onClose = () => {
     if (withInclusionExclusion) {
@@ -109,8 +115,9 @@ const MultiSelect = ({
 
   const onSelectValueChange = ({ value: newValue }) => {
     const valuesNotMatchingSearch = getOptionsNotMatchingSearch()
-    .filter((item, index) => value.includes(getValue(index, options, valueKey)))
-    .map((item, index)=>getValue(index, options, valueKey));
+    .filter((item, index, opt) => 
+    value.includes(getValue(index, opt, valueKey)))
+    .map((item, index, opt)=> getValue(index, opt, valueKey));
 
     const updater = withUpdateCancelButtons ? 
     updateInternalValue : 
