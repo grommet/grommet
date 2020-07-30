@@ -14,6 +14,7 @@ const Legend = ({
     () => seriesProp.filter(s => seriesStyles[s.property]),
     [seriesProp, seriesStyles],
   );
+  console.log('!!! Legend', seriesProp, seriesStyles);
   const interactive = useMemo(() => Object.keys(series).length > 1, [series]);
   return (
     <Box margin={{ top: 'small' }} direction="row" wrap>

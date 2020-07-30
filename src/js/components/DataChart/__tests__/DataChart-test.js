@@ -19,7 +19,7 @@ describe('DataChart', () => {
     const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const component = renderer.create(
       <Grommet>
-        <DataChart data={data} property="a" />
+        <DataChart data={data} series="a" />
       </Grommet>,
     );
     const tree = component.toJSON();
@@ -33,7 +33,7 @@ describe('DataChart', () => {
     const component = renderer.create(
       <Grommet>
         {['small', 'medium', 'large'].map(gap => (
-          <DataChart key={gap} data={data} property="a" gap={gap} />
+          <DataChart key={gap} data={data} series="a" gap={gap} />
         ))}
       </Grommet>,
     );
@@ -48,7 +48,7 @@ describe('DataChart', () => {
     const component = renderer.create(
       <Grommet>
         {['small', 'medium', 'large'].map(pad => (
-          <DataChart key={pad} data={data} property="a" pad={pad} />
+          <DataChart key={pad} data={data} series="a" pad={pad} />
         ))}
       </Grommet>,
     );
@@ -64,7 +64,7 @@ describe('DataChart', () => {
       <Grommet>
         {['fill', { width: 'fill' }, { width: 'auto' }].map((size, i) => (
           // eslint-disable-next-line react/no-array-index-key
-          <DataChart key={i} data={data} property="a" size={size} />
+          <DataChart key={i} data={data} series="a" size={size} />
         ))}
       </Grommet>,
     );
@@ -87,7 +87,7 @@ describe('DataChart', () => {
           { y: { property: 'a', granularity: 'fine' } },
         ].map((axis, i) => (
           // eslint-disable-next-line react/no-array-index-key
-          <DataChart key={i} data={data} property="a" axis={axis} />
+          <DataChart key={i} data={data} series="a" axis={axis} />
         ))}
       </Grommet>,
     );
@@ -119,7 +119,7 @@ describe('DataChart', () => {
           <Fragment key={key}>
             <DataChart
               data={dateData}
-              property={[{ property: key }, 'amount']}
+              series={[{ property: key }, 'amount']}
               axis
               guide
             />
@@ -144,7 +144,7 @@ describe('DataChart', () => {
           { y: { granularity: 'fine' } },
         ].map((guide, i) => (
           // eslint-disable-next-line react/no-array-index-key
-          <DataChart key={i} data={data} property="a" guide={guide} />
+          <DataChart key={i} data={data} series="a" guide={guide} />
         ))}
       </Grommet>,
     );
@@ -160,7 +160,7 @@ describe('DataChart', () => {
       <Grommet>
         {[true, false].map((legend, i) => (
           // eslint-disable-next-line react/no-array-index-key
-          <DataChart key={i} data={data} property="a" legend={legend} />
+          <DataChart key={i} data={data} series="a" legend={legend} />
         ))}
       </Grommet>,
     );
@@ -176,7 +176,7 @@ describe('DataChart', () => {
       <Grommet>
         {[true, false].map((detail, i) => (
           // eslint-disable-next-line react/no-array-index-key
-          <DataChart key={i} data={data} property="a" detail={detail} />
+          <DataChart key={i} data={data} series="a" detail={detail} />
         ))}
       </Grommet>,
     );

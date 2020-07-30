@@ -39,7 +39,8 @@ const Example = () => (
             property: 'amount',
             type: 'area',
             thickness: 'xsmall',
-            color: { color: 'graph-0', opacity: 'medium' },
+            color: 'graph-0',
+            opacity: 'medium',
           },
           {
             property: 'amount',

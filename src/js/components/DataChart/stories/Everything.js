@@ -22,6 +22,7 @@ const Example = () => (
       <DataChart
         data={data}
         series={[
+          'date',
           { property: 'amount', color: 'graph-2', point: 'circle' },
           { property: 'need', color: 'graph-1', point: 'star' },
           { property: 'growth' },
@@ -31,7 +32,8 @@ const Example = () => (
             property: 'amount',
             type: 'area',
             thickness: 'xsmall',
-            color: { color: 'graph-2', opacity: 'medium' },
+            color: 'graph-2',
+            opacity: 'medium',
           },
           {
             property: 'amount',
@@ -40,11 +42,7 @@ const Example = () => (
             round: true,
           },
           { property: 'amount', type: 'bar', thickness: 'hair' },
-          {
-            property: 'amount',
-            type: 'point',
-            thickness: 'small',
-          },
+          { property: 'amount', type: 'point', thickness: 'small' },
           {
             property: 'need',
             type: 'line',
@@ -52,20 +50,12 @@ const Example = () => (
             dash: true,
             round: true,
           },
-          {
-            property: 'need',
-            type: 'point',
-            thickness: 'small',
-          },
-          {
-            property: 'growth',
-            type: 'line',
-            thickness: 'hair',
-          },
+          { property: 'need', type: 'point', thickness: 'small' },
+          { property: 'growth', type: 'line', thickness: 'hair' },
         ]}
         axis={{ x: 'date', y: { property: 'amount', granularity: 'medium' } }}
         guide={{ y: { granularity: 'medium' }, x: { granularity: 'fine' } }}
-        gap="medium"
+        gap="xsmall"
         pad="small"
         legend
         detail

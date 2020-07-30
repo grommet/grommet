@@ -9,17 +9,20 @@ import { ChartProps } from "../Chart";
 import { GridProps } from "../Grid";
 
 type ChartType = string | {
+  color?: ChartProps["color"],
   dash?: ChartProps["dash"]; // defaults to undefined
+  opacity?: ChartProps["opacity"],
   point?: ChartProps["point"]; // default across points
-  property: string | string[]; // property to get values from objects in data 
+  // property to get values from objects in data 
+  property: string | string[] | { property?: string, color: string }[] | { color?: string | { property: string, transform: (...args: any[]) => React.ReactNode }, thickness?: string | { property: string, transform: (...args: any[]) => React.ReactNode }, x?: string, y?: string };
   round?: ChartProps["round"]; // defaults to undefined
   thickness?: ChartProps["thickness"]; // defaults to auto assigned based on available space and amount of data
-  type?: ChartProps["type"]; // defaults to 'bar'
+  type?: ChartProps["type"]; // defaults to 'bar',
+  
 }
 
 type SeriesType = string | {
   bounds?: number[]; // defaults to largest and smallest data values
-  color?: string;    // defaults to auto-assigned sequentially from 'graph-*'
   label?: string | React.ReactNode; // used for legend and/or hover/touch detail
   prefix?: string;   // used for values in axes and hover/touch detail
   property: string;  // property key to get values from objects in data
@@ -35,7 +38,7 @@ export interface DataChartProps {
   //   x: { property: 'date' <if any>, granularity: 'coarse' },
   //   y: { property: property[0].property, granularity: 'coarse' },
   // }
-  axis?: boolean | { x?: string | { property?: string, granularity?: GranularityType }, y?: string | { property?: string, granularity?: GranularityType } };
+  axis?: boolean | { x?: boolean | string | { property?: string, granularity?: GranularityType }, y?: boolean | string | { property?: string, granularity?: GranularityType } };
   // chart - if undefined, { type: 'bar', property: <first property> }
   chart?: ChartType | ChartType[];
   // data - an array of objects containing data values
@@ -59,38 +62,6 @@ export interface DataChartProps {
   margin?: MarginType;      // generic
   size?: ChartProps["size"]; // width and height, defaults to 'fill'
 }
-
-
-
-
-
-// type ChartType = {
-//   key?: string;
-//   keys?: { key: string, color?: ChartProps["color"] }[];
-//   a11yTitle?: A11yTitleType;
-//   bounds?: ChartProps["bounds"];
-//   color?: ChartProps["color"];
-//   dash?: ChartProps["dash"];
-//   overflow?: ChartProps["overflow"];
-//   round?: ChartProps["round"];
-//   thickness?: ChartProps["thickness"];
-//   type?: ChartProps["type"];
-// }
-
-// export interface DataChartProps {
-//   a11yTitle?: A11yTitleType;
-//   chart: ChartType | ChartType[];
-//   data: {}[];
-//   gap?: GridProps["gap"];
-//   gridArea?: GridAreaType,
-//   hover?: boolean,
-//   margin?: MarginType;
-//   pad?: GridProps["pad"];
-//   size?: ChartProps["size"];
-//   thickness?: ChartProps["thickness"];
-//   xAxis?: boolean | { guide?: boolean, key?: string, labels?: number, render?: (dataIndex: number, axisIndex: number) => (void) };
-//   yAxis?: boolean | { guide?: boolean, labels?: number, prefix?: string, render?: (value:any, data:{}[], dataIndex: number, axisIndex: number) => (void), suffix?: string };
-// }
 
 declare const DataChart: React.FC<DataChartProps>;
 

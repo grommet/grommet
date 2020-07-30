@@ -20,7 +20,7 @@ const Detail = ({
   data,
   series,
   seriesStyles,
-  renderProperty,
+  renderValue,
 }) => {
   const [detailIndex, setDetailIndex] = useState();
   const detailContainer = useRef();
@@ -112,7 +112,7 @@ const Detail = ({
                       {propertyStyle ? <Swatch {...propertyStyle} /> : <span />}
                       <Text size="small">{serie.label || serie.property}</Text>
                       <Text size="small" weight="bold">
-                        {renderProperty(serie, detailIndex)}
+                        {renderValue(serie, detailIndex)}
                       </Text>
                     </>
                   );

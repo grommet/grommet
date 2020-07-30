@@ -43,6 +43,7 @@ export const doc = Chart => {
       colorPropType,
       PropTypes.shape({
         color: colorPropType,
+        // deprecated, use top level 'opacity'
         opacity: PropTypes.oneOfType([
           PropTypes.oneOf(['weak', 'medium', 'strong']),
           PropTypes.bool,
@@ -89,6 +90,12 @@ export const doc = Chart => {
     onHover: PropTypes.func.description(`Called with a boolean argument
       indicating when the user hovers onto or away from it.
       This is only available when the type is line or area.`),
+    opacity: PropTypes.oneOfType([
+      PropTypes.oneOf(['weak', 'medium', 'strong']),
+      PropTypes.bool,
+    ]).description(
+      `What opacity to apply to the visuals. Supercedes 'color.opacity'`,
+    ),
     overflow: PropTypes.bool
       .description(
         `Whether the chart strokes should overflow the component. Set this

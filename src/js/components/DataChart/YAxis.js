@@ -5,18 +5,15 @@ import { round } from '../Chart';
 import { doublePad } from './utils';
 
 const YAxis = forwardRef(
-  ({ charts, chartProps, pad, renderProperty, serie }, ref) => {
+  ({ chartProps, pad, renderValue, serie }, ref) => {
     const theme = useContext(ThemeContext);
-    const { property, render, suffix } = serie;
+    const { render, suffix } = serie;
 
-    let axisValues;
-    charts.forEach(({ property: p }, i) => {
-      if (p === property)
-        [, axisValues] = (Array.isArray(chartProps[i])
-          ? chartProps[i][0]
-          : chartProps[i]
-        ).axis;
-    });
+    // pull the x-axis values from the first chart, all should have the same
+    const [,axisValues] = (Array.isArray(chartProps[0])
+      ? chartProps[0][0]
+      : chartProps[0]
+    ).axis;
 
     let divideBy;
     let unit;
@@ -40,7 +37,7 @@ const YAxis = forwardRef(
     return (
       <Box ref={ref} gridArea="yAxis" justify="between" flex>
         {axisValues.map((axisValue, i) => {
-          let content = renderProperty(serie, undefined, axisValue);
+          let content = renderValue(serie, undefined, axisValue);
           if (content === axisValue) {
             if (divideBy) content = round(content / divideBy, 0);
             if (unit) content = `${content}${unit}`;

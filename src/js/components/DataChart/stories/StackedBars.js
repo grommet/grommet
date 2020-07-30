@@ -42,7 +42,6 @@ const Example = () => (
         axis={{ x: { property: 'date', granularity: 'fine' } }}
         guide={{ y: true }}
         legend
-        gap="medium"
       />
     </Box>
   </Grommet>

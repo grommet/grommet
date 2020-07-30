@@ -29,7 +29,7 @@ const Example = () => (
     <Box align="center" justify="start" pad="large">
       <DataChart
         data={data}
-        series={{ property: 'percent', suffix: '%' }}
+        series={['day', { property: 'percent', suffix: '%' }]}
         chart="percent"
         axis={{
           x: { property: 'day', granularity: 'fine' },

@@ -4,13 +4,6 @@ import { genericProps, getAvailableAtBadge, padPropType } from '../../utils';
 
 const colorType = PropTypes.oneOfType([
   PropTypes.string,
-  PropTypes.shape({
-    color: PropTypes.string,
-    opacity: PropTypes.oneOfType([
-      PropTypes.oneOf(['weak', 'medium', 'strong']),
-      PropTypes.bool,
-    ]),
-  }),
   PropTypes.arrayOf(
     PropTypes.shape({
       color: PropTypes.string,
@@ -39,23 +32,46 @@ const chartType = PropTypes.shape({
       PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.shape({
-          key: PropTypes.string,
+          property: PropTypes.string,
           color: colorType,
         }),
       ]),
     ),
+    PropTypes.shape({
+      color: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.shape({
+          property: PropTypes.string,
+          transform: PropTypes.func,
+        }),
+      ]),
+      thickness: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.shape({
+          property: PropTypes.string,
+          transform: PropTypes.func,
+        }),
+      ]),
+      x: PropTypes.string,
+      y: PropTypes.string,
+    }),
   ]),
+  color: colorType,
   dash: PropTypes.bool,
+  opacity: PropTypes.oneOfType([
+    PropTypes.oneOf(['weak', 'medium', 'strong']),
+    PropTypes.number,
+    PropTypes.bool,
+  ]),
   round: PropTypes.bool,
   thickness: thicknessType,
   type: PropTypes.oneOf(['bar', 'line', 'area', 'point']),
 });
 
-const propertyType = PropTypes.oneOfType([
-  PropTypes.string,
+const seriesType = PropTypes.oneOfType([
+  PropTypes.string, // property
   PropTypes.shape({
     bounds: PropTypes.arrayOf(PropTypes.number),
-    color: colorType,
     label: PropTypes.oneOfType([PropTypes.string]),
     prefix: PropTypes.string,
     property: PropTypes.string,
@@ -86,6 +102,7 @@ export const doc = DataChart => {
       PropTypes.bool,
       PropTypes.shape({
         x: PropTypes.oneOfType([
+          PropTypes.bool,
           PropTypes.string,
           PropTypes.shape({
             property: PropTypes.string,
@@ -93,6 +110,7 @@ export const doc = DataChart => {
           }),
         ]),
         y: PropTypes.oneOfType([
+          PropTypes.bool,
           PropTypes.string,
           PropTypes.shape({
             property: PropTypes.string,
@@ -100,14 +118,33 @@ export const doc = DataChart => {
           }),
         ]),
       }),
-    ]).description('TBD'),
+    ])
+      .description(
+        `Whether to show an axis and how it should look.
+      If 'x' or 'y' is a string, it indicates the property to use
+      to determine the values to show.
+      If axis or 'x' is true, DataChart will look for a property called 'date'
+      or 'time' and automatically use that for the x-axis. If DataChart
+      can't find a property to use, it will use the data index for the x-axis.
+      If axis or 'y' is true, DataChart will use the first property in 'series'.
+      'granularity' indicates how many values to show.
+      'coarse' granularity shows two values, one at each end.
+      'fine' granularity shows all x-axis values and 5 y-axis values.
+      'medium' granularity picks something in between.`,
+      )
+      .defaultValue(true),
     chart: PropTypes.oneOfType([chartType, PropTypes.arrayOf(chartType)])
       .description(`How to visualize the data.
     'property' indicates which property of the data objects to use.
     When 'property' is an array, multiple properties are used for a
     stacked bar chart.`),
     data: PropTypes.arrayOf(PropTypes.shape({})).description('the data set'),
-    detail: PropTypes.bool.description('TBD'),
+    detail: PropTypes.bool.description(
+      `Whether to add the ability to interact with the chart
+      via mouse or keyboard to show details on specific values in the chart.
+      It shows all properties specified in 'series', using any 'render'
+      functions therein.`,
+    ),
     gap: PropTypes.oneOfType([
       PropTypes.oneOf([
         'none',
@@ -130,13 +167,14 @@ export const doc = DataChart => {
           granularity: granularityType,
         }),
       }),
-    ]).description('TBD'),
+    ]).description(`Whether to put guidelines underneath the chart graphics.
+    See the description of 'granularity' under 'axis'.`),
     legend: PropTypes.bool.description('Whether to include a legend'),
     pad: padPropType.description(`Spacing around the outer edge of
     the drawing coordinate area for the graphic elements to overflow into.`),
-    property: PropTypes.oneOfType([
-      propertyType,
-      PropTypes.arrayOf(propertyType),
+    series: PropTypes.oneOfType([
+      seriesType,
+      PropTypes.arrayOf(seriesType),
     ]).description('TBD'),
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['fill']),

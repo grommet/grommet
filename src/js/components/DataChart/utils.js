@@ -1,4 +1,4 @@
-export const pointTypes = [
+export const points = [
   'circle',
   'diamond',
   'square',
@@ -6,6 +6,15 @@ export const pointTypes = [
   'triangle',
   'triangleDown',
 ];
+
+export const heightYGranularity = {
+  xxsmall: { fine: 2, medium: 2 },
+  xsmall: { fine: 3, medium: 2 },
+  small: { fine: 5, medium: 3 },
+  medium: { fine: 7, medium: 5 },
+  large: { fine: 9, medium: 5 },
+  xlarge: { fine: 11, medium: 5 },
+};
 
 export const halfPad = {
   xlarge: 'large',
