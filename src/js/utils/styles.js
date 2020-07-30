@@ -318,6 +318,33 @@ export const getInputPadBySide = (props, side) => {
   return adjustedPad;
 };
 
+const placeholderColor = css`
+  color: ${props =>
+    normalizeColor(props.theme.global.colors.placeholder, props.theme)};
+`;
+
+const placeholderStyle = css`
+  &::-webkit-input-placeholder {
+    ${placeholderColor};
+  }
+
+  &::-moz-placeholder {
+    ${placeholderColor};
+  }
+
+  &:-ms-input-placeholder {
+    ${placeholderColor};
+  }
+`;
+
+const inputSizeStyle = props => {
+  const data = props.theme.text[props.size];
+  return css`
+    font-size: ${data.size};
+    line-height: ${data.height};
+  `;
+};
+
 export const inputStyle = css`
   box-sizing: border-box;
   ${props =>
@@ -332,6 +359,7 @@ export const inputStyle = css`
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   ${props =>
     props.theme.global.input.font.height &&
     `line-height: ${props.theme.global.input.font.height};`}
@@ -360,10 +388,23 @@ export const inputStyle = css`
       font-weight: ${props.theme.global.input.weight ||
         props.theme.global.input.font.weight};
     `} margin: 0;
+  ${props => props.size && inputSizeStyle(props)}
+  ${props => props.focus && !props.plain && focusStyle()};
   ${controlBorderStyle}
+  ${placeholderStyle}
 
   ::-webkit-search-decoration {
     -webkit-appearance: none;
+  }
+
+  &::-moz-focus-inner {
+    border: none;
+    outline: none;
+  }
+
+  &:-moz-placeholder, // FF 18-
+  &::-moz-placeholder { // FF 19+
+    opacity: 1;
   }
 `;
 
@@ -380,25 +421,6 @@ export const overflowStyle = overflowProp => {
       `overflow-y: ${overflowProp.vertical};`};
   `;
 };
-
-const placeholderColor = css`
-  color: ${props =>
-    normalizeColor(props.theme.global.colors.placeholder, props.theme)};
-`;
-
-export const placeholderStyle = css`
-  &::-webkit-input-placeholder {
-    ${placeholderColor};
-  }
-
-  &::-moz-placeholder {
-    ${placeholderColor};
-  }
-
-  &:-ms-input-placeholder {
-    ${placeholderColor};
-  }
-`;
 
 const ALIGN_SELF_MAP = {
   center: 'center',
@@ -431,4 +453,9 @@ export const disabledStyle = componentStyle => css`
 
 export const sizeStyle = (name, value, theme) => css`
   ${name}: ${theme.global.size[value] || value};
+`;
+
+export const plainInputStyle = css`
+  outline: none;
+  border: none;
 `;
