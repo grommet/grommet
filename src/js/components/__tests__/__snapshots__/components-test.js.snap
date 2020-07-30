@@ -1840,6 +1840,14 @@ string",
         "name": "onHover",
       },
       Object {
+        "description": "What opacity to apply to the visuals. Supercedes 'color.opacity'",
+        "format": "weak
+medium
+strong
+boolean",
+        "name": "opacity",
+      },
+      Object {
         "defaultValue": false,
         "description": "Whether the chart strokes should overflow the component. Set this
       to true for precise positioning when stacking charts or including
@@ -2538,10 +2546,22 @@ string",
         "name": "margin",
       },
       Object {
-        "description": "TBD",
+        "defaultValue": true,
+        "description": "Whether to show an axis and how it should look.
+      If 'x' or 'y' is a string, it indicates the property to use
+      to determine the values to show.
+      If axis or 'x' is true, DataChart will look for a property called 'date'
+      or 'time' and automatically use that for the x-axis. If DataChart
+      can't find a property to use, it will use the data index for the x-axis.
+      If axis or 'y' is true, DataChart will use the first property in 'series'.
+      'granularity' indicates how many values to show.
+      'coarse' granularity shows two values, one at each end.
+      'fine' granularity shows all x-axis values and 5 y-axis values.
+      'medium' granularity picks something in between.",
         "format": "boolean
 {
   x: 
+    boolean
     string
     {
       property: string,
@@ -2551,6 +2571,7 @@ string",
         fine
     },
   y: 
+    boolean
     string
     {
       property: string,
@@ -2573,24 +2594,44 @@ string",
     [
       string
       {
-        key: string,
+        property: string,
         color: 
           string
-          {
-            color: string,
-            opacity: 
-              weak
-              medium
-              strong
-              boolean
-          }
           [{
   color: string,
   value: number
 }]
       }
-    ],
+    ]
+    {
+      color: 
+        string
+        {
+          property: string,
+          transform: function
+        },
+      thickness: 
+        string
+        {
+          property: string,
+          transform: function
+        },
+      x: string,
+      y: string
+    },
+  color: 
+    string
+    [{
+  color: string,
+  value: number
+}],
   dash: boolean,
+  opacity: 
+    weak
+    medium
+    strong
+    number
+    boolean,
   round: boolean,
   thickness: 
     hair
@@ -2613,24 +2654,44 @@ string",
     [
       string
       {
-        key: string,
+        property: string,
         color: 
           string
-          {
-            color: string,
-            opacity: 
-              weak
-              medium
-              strong
-              boolean
-          }
           [{
   color: string,
   value: number
 }]
       }
-    ],
+    ]
+    {
+      color: 
+        string
+        {
+          property: string,
+          transform: function
+        },
+      thickness: 
+        string
+        {
+          property: string,
+          transform: function
+        },
+      x: string,
+      y: string
+    },
+  color: 
+    string
+    [{
+  color: string,
+  value: number
+}],
   dash: boolean,
+  opacity: 
+    weak
+    medium
+    strong
+    number
+    boolean,
   round: boolean,
   thickness: 
     hair
@@ -2657,7 +2718,10 @@ string",
         "name": "data",
       },
       Object {
-        "description": "TBD",
+        "description": "Whether to add the ability to interact with the chart
+      via mouse or keyboard to show details on specific values in the chart.
+      It shows all properties specified in 'series', using any 'render'
+      functions therein.",
         "format": "boolean",
         "name": "detail",
       },
@@ -2674,7 +2738,8 @@ string",
         "name": "gap",
       },
       Object {
-        "description": "TBD",
+        "description": "Whether to put guidelines underneath the chart graphics.
+    See the description of 'granularity' under 'axis'.",
         "format": "boolean
 {
   x: 
@@ -2784,20 +2849,6 @@ string",
         "format": "string
 {
   bounds: [number],
-  color: 
-    string
-    {
-      color: string,
-      opacity: 
-        weak
-        medium
-        strong
-        boolean
-    }
-    [{
-  color: string,
-  value: number
-}],
   label: 
     string,
   prefix: string,
@@ -2809,20 +2860,6 @@ string",
   string
   {
     bounds: [number],
-    color: 
-      string
-      {
-        color: string,
-        opacity: 
-          weak
-          medium
-          strong
-          boolean
-      }
-      [{
-  color: string,
-  value: number
-}],
     label: 
       string,
     prefix: string,
@@ -2831,7 +2868,7 @@ string",
     suffix: string
   }
 ]",
-        "name": "property",
+        "name": "series",
       },
       Object {
         "description": "The size of the Charts. This does not include the axes

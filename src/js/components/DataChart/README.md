@@ -128,12 +128,23 @@ string
 
 **axis**
 
-TBD
+Whether to show an axis and how it should look.
+      If 'x' or 'y' is a string, it indicates the property to use
+      to determine the values to show.
+      If axis or 'x' is true, DataChart will look for a property called 'date'
+      or 'time' and automatically use that for the x-axis. If DataChart
+      can't find a property to use, it will use the data index for the x-axis.
+      If axis or 'y' is true, DataChart will use the first property in 'series'.
+      'granularity' indicates how many values to show.
+      'coarse' granularity shows two values, one at each end.
+      'fine' granularity shows all x-axis values and 5 y-axis values.
+      'medium' granularity picks something in between. Defaults to `true`.
 
 ```
 boolean
 {
   x: 
+    boolean
     string
     {
       property: string,
@@ -143,6 +154,7 @@ boolean
         fine
     },
   y: 
+    boolean
     string
     {
       property: string,
@@ -168,24 +180,44 @@ How to visualize the data.
     [
       string
       {
-        key: string,
+        property: string,
         color: 
           string
-          {
-            color: string,
-            opacity: 
-              weak
-              medium
-              strong
-              boolean
-          }
           [{
   color: string,
   value: number
 }]
       }
-    ],
+    ]
+    {
+      color: 
+        string
+        {
+          property: string,
+          transform: function
+        },
+      thickness: 
+        string
+        {
+          property: string,
+          transform: function
+        },
+      x: string,
+      y: string
+    },
+  color: 
+    string
+    [{
+  color: string,
+  value: number
+}],
   dash: boolean,
+  opacity: 
+    weak
+    medium
+    strong
+    number
+    boolean,
   round: boolean,
   thickness: 
     hair
@@ -208,24 +240,44 @@ How to visualize the data.
     [
       string
       {
-        key: string,
+        property: string,
         color: 
           string
-          {
-            color: string,
-            opacity: 
-              weak
-              medium
-              strong
-              boolean
-          }
           [{
   color: string,
   value: number
 }]
       }
-    ],
+    ]
+    {
+      color: 
+        string
+        {
+          property: string,
+          transform: function
+        },
+      thickness: 
+        string
+        {
+          property: string,
+          transform: function
+        },
+      x: string,
+      y: string
+    },
+  color: 
+    string
+    [{
+  color: string,
+  value: number
+}],
   dash: boolean,
+  opacity: 
+    weak
+    medium
+    strong
+    number
+    boolean,
   round: boolean,
   thickness: 
     hair
@@ -256,7 +308,10 @@ the data set
 
 **detail**
 
-TBD
+Whether to add the ability to interact with the chart
+      via mouse or keyboard to show details on specific values in the chart.
+      It shows all properties specified in 'series', using any 'render'
+      functions therein.
 
 ```
 boolean
@@ -279,7 +334,8 @@ string
 
 **guide**
 
-TBD
+Whether to put guidelines underneath the chart graphics.
+    See the description of 'granularity' under 'axis'.
 
 ```
 boolean
@@ -391,7 +447,7 @@ xlarge
 string
 ```
 
-**property**
+**series**
 
 TBD
 
@@ -399,20 +455,6 @@ TBD
 string
 {
   bounds: [number],
-  color: 
-    string
-    {
-      color: string,
-      opacity: 
-        weak
-        medium
-        strong
-        boolean
-    }
-    [{
-  color: string,
-  value: number
-}],
   label: 
     string,
   prefix: string,
@@ -424,20 +466,6 @@ string
   string
   {
     bounds: [number],
-    color: 
-      string
-      {
-        color: string,
-        opacity: 
-          weak
-          medium
-          strong
-          boolean
-      }
-      [{
-  color: string,
-  value: number
-}],
     label: 
       string,
     prefix: string,
