@@ -12,7 +12,7 @@ const MultiSelect = ({
   width,
   height,
   options,
-  value,
+  value: valueProp,
   labelKey,
   valueKey,
   onValueChange,
@@ -33,7 +33,7 @@ const MultiSelect = ({
   ...rest
 }) => {
 
-  const [internalValue, updateInternalValue] = useState(value);
+  const [internalValue, updateInternalValue] = useState(valueProp);
   const [
     internalIsExcluded,
     updateInternalIsExcluded,
@@ -44,6 +44,24 @@ const MultiSelect = ({
   const isExcluded = withUpdateCancelButtons ? 
   internalIsExcluded : isExcludedProp;
 
+  const value = withUpdateCancelButtons ? internalValue: valueProp;
+
+  const onClose = () => {
+    if (withInclusionExclusion) {
+      updateInternalValue(valueProp);
+      updateInternalIsExcluded(isExcludedProp);
+    }
+    updateIsOpen(false);
+  };
+
+  const onOpen = () => {
+    if (withInclusionExclusion) {
+      updateInternalValue(valueProp);
+      updateInternalIsExcluded(isExcludedProp);
+    }
+    updateIsOpen(true);
+  }
+
   const onIncludeExclude = newValue => {
     const updater = withUpdateCancelButtons ? 
     updateInternalIsExcluded : onIncExcChange;
@@ -51,28 +69,15 @@ const MultiSelect = ({
   }
 
   const onCancelClick = () => {
-    updateInternalValue(value);
-    if (withInclusionExclusion && updateInternalIsExcluded) {
-      updateInternalIsExcluded(isExcludedProp);
-    }
-    updateIsOpen(false);
+    onClose();
   };
 
   const onOkClick = () => {
-    onValueChange(internalValue);
+    onValueChange(value);
     if (onIncExcChange) {
       onIncExcChange(isExcluded);
     }
     updateIsOpen(false);
-  }
-
-  const onClose = () => {
-    updateIsOpen(false);
-  };
-
-  const onOpen = () => {
-    updateInternalValue(value);
-    updateIsOpen(true);
   }
 
   const getValue = (index, array, param) => applyKey(array[index], param);
@@ -165,7 +170,7 @@ const MultiSelect = ({
     <Box width={width}>
       <Select
         multiple
-        value={withUpdateCancelButtons ? internalValue : value}
+        value={value}
         options={getOptions()}
         onChange={onSelectValueChange}
         open={isOpen}
