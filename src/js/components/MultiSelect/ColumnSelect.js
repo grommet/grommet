@@ -14,6 +14,8 @@ import { ControlButton } from './ControlButton';
 import { Searchbox } from './Searchbox';
 import { CustomMultiSelect } from './CustomMultiSelect';
 
+const SELECT_ALL_INDEX = -1;
+
 const ColumnSelect = ({
   options,
   value,
@@ -27,8 +29,7 @@ const ColumnSelect = ({
   optionLabel,
   optionValue,
   onCancel,
-  onUpdate,
-  setValues,
+  onOk,
   layout,
   width,
   height,
@@ -47,6 +48,7 @@ const ColumnSelect = ({
   onValueChange,
   custom,
   validate,
+  onChange,
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
 
@@ -61,11 +63,16 @@ const ColumnSelect = ({
   const setOption = useCallback(
     (event, type, index) => {
       setIncExcVal(type);
-      if (index !== -1) selectOption(index)(event);
-      else
-        setValues(allSelected ? [] : options.map((item, i) => optionValue(i)));
+      if (index !== SELECT_ALL_INDEX) {
+        selectOption(index)(event);
+      } else {
+        onChange(index, {
+          value: allSelected ? [] : options.map((item, i) => optionValue(i)),
+          selected: allSelected ? [] : options.map((item, i) => i),
+        });
+      }
     },
-    [allSelected, optionValue, options, selectOption, setIncExcVal, setValues],
+    [allSelected, onChange, optionValue, options, selectOption, setIncExcVal],
   );
 
   const optionSelect = useCallback(
@@ -80,9 +87,11 @@ const ColumnSelect = ({
   const setUnsetChips = useCallback(
     updatedValues => {
       if (inclusionExclusion && !updatedValues.length) setIncExcVal(null);
-      setValues(updatedValues);
+      onChange({
+        value: updatedValues,
+      });
     },
-    [inclusionExclusion, setIncExcVal, setValues],
+    [inclusionExclusion, setIncExcVal, onChange],
   );
 
   const renderOptionChips = () => (
@@ -185,9 +194,8 @@ const ColumnSelect = ({
                             label="Select All"
                             inclusionExclusion={inclusionExclusion}
                             isExcluded={isExcluded}
-                            onSelect={(event, type) =>
-                              setOption(event, type, -1)
-                            }
+                            index={SELECT_ALL_INDEX}
+                            onSelect={setOption}
                             active={activeIndex === -1}
                           />
                         </SelectOption>
@@ -221,9 +229,8 @@ const ColumnSelect = ({
                           label={optionLabel(index)}
                           inclusionExclusion={inclusionExclusion}
                           isExcluded={isExcluded}
-                          onSelect={(event, type) =>
-                            setOption(event, type, index)
-                          }
+                          index={index}
+                          onSelect={setOption}
                           active={optionActive}
                         />
                       </SelectOption>
@@ -263,7 +270,7 @@ const ColumnSelect = ({
       </Box>
       {showOptionChips && layout === 'single-column' && renderOptionChips()}
       {showControlButtons && (
-        <ControlButton onUpdate={onUpdate} onCancel={onCancel} />
+        <ControlButton onOk={onOk} onCancel={onCancel} />
       )}
     </>
   );

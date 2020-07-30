@@ -15,6 +15,7 @@ const OptionWithCheckControl = ({
   isExcluded,
   onSelect,
   active,
+  index,
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
 
@@ -32,7 +33,7 @@ const OptionWithCheckControl = ({
           isExcluded={exc}
           onClick={
             (inclusionExclusion && isExcluded === null) ?
-              event => onSelect(event, exc) : undefined
+              event => onSelect(event, exc, index) : undefined
           }
         >
           {(selected || (inclusionExclusion && isExcluded === null)) && (
