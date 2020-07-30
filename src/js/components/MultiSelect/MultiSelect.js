@@ -47,7 +47,7 @@ const MultiSelect = ({
   const value = withUpdateCancelButtons ? internalValue: valueProp;
 
   useEffect(() => {
-    if (isOpen && withUpdateCancelButtons) {
+    if (!isOpen && withUpdateCancelButtons) {
       updateInternalValue(valueProp);
     }
   }, [isOpen, valueProp, withUpdateCancelButtons]);
