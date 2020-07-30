@@ -102,7 +102,7 @@ const RadioButtonGroup = forwardRef(
         onLeft={focus ? onPrevious : undefined}
         onRight={focus ? onNext : undefined}
       >
-        <Box ref={ref} {...theme.global.radioButtonGroup} {...rest}>
+        <Box ref={ref} {...theme.radioButtonGroup.container} {...rest}>
           {options.map(
             (
               {

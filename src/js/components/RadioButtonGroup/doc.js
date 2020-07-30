@@ -63,18 +63,9 @@ export const doc = RadioButtonGroup => {
 };
 
 export const themeDoc = {
-  'radioButtonGroup.gap': {
-    description: `The amount of spacing between child elements.`,
-    type: 'string',
-    defaultValue: `{
-      none,
-      xxsmall,
-      xsmall,
-      small,
-      medium,
-      large,
-      xlarge,
-      any css size,
-    }`,
+  'radioButtonGroup.container': {
+    description: 'Any valid Box props for the RadioButtonGroup container.',
+    type: 'object',
+    defaultValue: "{ align: 'start', pad: 'small' , ...}",
   },
 };

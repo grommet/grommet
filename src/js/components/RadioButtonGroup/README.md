@@ -90,21 +90,12 @@ div
 ```
 ## Theme
   
-**radioButtonGroup.gap**
+**radioButtonGroup.container**
 
-The amount of spacing between child elements. Expects `string`.
+Any valid Box props for the RadioButtonGroup container. Expects `object`.
 
 Defaults to
 
 ```
-{
-      none,
-      xxsmall,
-      xsmall,
-      small,
-      medium,
-      large,
-      xlarge,
-      any css size,
-    }
+{ align: 'start', pad: 'small' , ...}
 ```

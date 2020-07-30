@@ -6,9 +6,10 @@ import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
 
 const customTheme = deepMerge(grommet, {
-  global: {
-    radioButtonGroup: {
-      gap: 'large',
+  radioButtonGroup: {
+    container: {
+      gap: 'xlarge',
+      animation: 'fadeIn',
     },
   },
   radioButton: {
