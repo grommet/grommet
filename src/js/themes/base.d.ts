@@ -384,7 +384,7 @@ export interface ThemeType {
       primary?: ButtonKindType;
       secondary?: ButtonKindType;
     };
-    disabled?: ButtonKindType;
+    disabled?: ButtonKindType & { opacity?: OpacityType };
     hover?: ButtonKindType & {
       default?: ButtonKindType;
       primary?: ButtonKindType;
