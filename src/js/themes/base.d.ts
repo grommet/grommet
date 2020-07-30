@@ -129,6 +129,9 @@ interface ButtonKindType {
       }
     | boolean;
   color?: ColorType;
+  font?: {
+    weight?: number | string;
+  };
   padding?: {
     vertical?: string;
     horizontal?: string;
@@ -918,6 +921,9 @@ export interface ThemeType {
     color?: ColorType;
     hover?: {
       border?: {
+        color?: ColorType;
+      };
+      background?: {
         color?: ColorType;
       };
     };

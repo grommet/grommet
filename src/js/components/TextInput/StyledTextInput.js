@@ -1,47 +1,22 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 import {
   disabledStyle,
   getInputPadBySide,
-  focusStyle,
   inputStyle,
   parseMetricToNum,
-  placeholderStyle,
+  plainInputStyle,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
 
-const sizeStyle = props => {
-  const data = props.theme.text[props.size];
-  return css`
-    font-size: ${data.size};
-    line-height: ${data.height};
-  `;
-};
-
-const plainStyle = css`
-  outline: none;
-  border: none;
-`;
-
 const StyledTextInput = styled.input`
-  ${inputStyle} width: 100%;
-
-  ${props => props.size && sizeStyle(props)}
-  ${props => props.plain && plainStyle}
-
-  ${placeholderStyle}
+  ${inputStyle}
+  ${props => props.plain && plainInputStyle}
   ${props =>
     props.icon &&
     (props.reverse
       ? `padding-right: ${props.theme.global.edgeSize.large};`
       : `padding-left: ${props.theme.global.edgeSize.large};`)}
-
-  &::-moz-focus-inner {
-    border: none;
-    outline: none;
-  }
-
-  ${props => props.focus && !props.plain && focusStyle()};
   ${props =>
     props.disabled &&
     disabledStyle(
