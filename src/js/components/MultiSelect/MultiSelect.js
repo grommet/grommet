@@ -1,10 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect } from 'react';
+import React, { useState, useCallback } from 'react';
 
 import { Box } from '../Box';
 import { Select } from '../Select';
 
-import useCustomSelectState from './useCustomSelectState';
 import { ColumnSelect } from './ColumnSelect';
 import { ValueLabelWithNumber } from './ValueLabelWithNumber';
 import { applyKey } from './utils';
@@ -27,71 +26,91 @@ const MultiSelect = ({
   searchable,
   custom,
   withInclusionExclusion,
-  isExcluded,
+  isExcluded: isExcludedProp,
   onIncExcChange,
   renderEmptySelected,
   validate,
   ...rest
 }) => {
-  const {
-    filteredOptions,
-    previousValue,
-    open,
-    searchVal,
-    valueInternalChange,
-    setSelectState,
-  } = useCustomSelectState(options, value);
 
-  useEffect(() => {
-    setSelectState({ filteredOptions: options });
-  }, [options]);
+  const [internalValue, updateInternalValue] = useState(value);
+  const [
+    internalIsExcluded,
+    updateInternalIsExcluded,
+  ] = useState(isExcludedProp);
+  const [isOpen, updateIsOpen] = useState(false);
+  const [search, updateSearch] = useState('');
 
-  useEffect(() => {
-    if (valueInternalChange)
-      setSelectState({ previousValue: value });
-    setSelectState({ valueInternalChange: false });
-    if (withInclusionExclusion && Array.isArray(value) && !value.length)
-      onIncExcChange(null);
-  }, [value]);
+  const isExcluded = withUpdateCancelButtons ? 
+  internalIsExcluded : isExcludedProp;
+
+  const onIncludeExclude = newValue => {
+    const updater = withUpdateCancelButtons ? 
+    updateInternalIsExcluded : onIncExcChange;
+    updater(newValue);
+  }
 
   const onCancelClick = () => {
-    onValueChange(previousValue);
-    setSelectState({ open: false, valueInternalChange: true });
+    updateInternalValue(value);
+    if (withInclusionExclusion && updateInternalIsExcluded) {
+      updateInternalIsExcluded(isExcludedProp);
+    }
+    updateIsOpen(false);
   };
+
+  const onOkClick = () => {
+    onValueChange(internalValue);
+    if (onIncExcChange) {
+      onIncExcChange(isExcluded);
+    }
+    updateIsOpen(false);
+  }
+
+  const onClose = () => {
+    updateIsOpen(false);
+  };
+
+  const onOpen = () => {
+    updateInternalValue(value);
+    updateIsOpen(true);
+  }
 
   const getValue = (index, array, param) => applyKey(array[index], param);
 
-  const onSearchChange = search => {
-    const escapedText = search.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
-    const exp = new RegExp(escapedText, 'i');
-    setSelectState({
-      searchVal: search,
-      filteredOptions: options.filter((item, index) =>
-        exp.test(getValue(index, options, labelKey)),
-      ),
-    });
+  const onSearchChange = searchInput => {
+    const escapedText = searchInput.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
+    updateSearch(escapedText);
   };
 
-  const onSelectValueChange = selectValue => {
-    if (!searchVal) onValueChange(selectValue);
-    else {
-      const newValue = value.slice(0);
-      const nonSelected = filteredOptions.map((val, ind) =>
-        getValue(ind, filteredOptions, valueKey),
-      );
-      selectValue.forEach(item => {
-        if (nonSelected.includes(item))
-          nonSelected.splice(nonSelected.indexOf(item), 1);
-        if (!value.includes(item)) newValue.push(item);
-      });
-      onValueChange(newValue.filter(item => !nonSelected.includes(item)));
+  const getOptions = useCallback(() => {
+    if (!search) {
+      return options;
     }
-    setSelectState({ valueInternalChange: true });
-  };
+    const exp = new RegExp(search, 'i');
+    return options.filter((item, index) =>
+      exp.test(getValue(index, options, labelKey)),
+    );
+  }, [options, search])
 
-  const onClose = () => {
-    onValueChange(previousValue);
-    setSelectState({ valueInternalChange: true });
+  const getOptionsNotMatchingSearch = useCallback(() => {
+    if (!search) {
+      return [];
+    }
+    const exp = new RegExp(search, 'i');
+    return options.filter((item, index) =>
+      !exp.test(getValue(index, options, labelKey)),
+    );
+  }, [options, search])
+
+  const onSelectValueChange = ({ value: newValue }) => {
+    const valuesNotMatchingSearch = getOptionsNotMatchingSearch()
+    .filter((item, index) => value.includes(getValue(index, options, valueKey)))
+    .map((item, index)=>getValue(index, options, valueKey));
+
+    const updater = withUpdateCancelButtons ? 
+    updateInternalValue : 
+    onValueChange;
+    updater([...valuesNotMatchingSearch, ...newValue]);
   };
 
   const renderContent = props => {
@@ -101,20 +120,20 @@ const MultiSelect = ({
           layout={layout}
           width={width}
           height={height}
-          onUpdate={() => setSelectState({ open: false, previousValue: value })}
+          onOk={onOkClick}
           onCancel={onCancelClick}
-          setValues={nextValue => onSelectValueChange(nextValue)}
+          onChange={onSelectValueChange}
           emptySearchMessage={emptySearchMessage}
           showSelectAll={withSelectAll}
           showOptionChips={withOptionChips}
           showControlButtons={withUpdateCancelButtons}
           inclusionExclusion={withInclusionExclusion}
           isExcluded={isExcluded}
-          setIncExcVal={incExc => onIncExcChange(incExc)}
+          setIncExcVal={onIncludeExclude}
           renderSearch={searchable && !onSearch}
           searchPlaceholder={searchPlaceholder}
-          searchValue={searchVal || ''}
-          onSearchChange={search => onSearchChange(search)}
+          searchValue={search}
+          onSearchChange={onSearchChange}
           renderEmptySelected={renderEmptySelected}
           onValueChange={onValueChange}
           custom={custom}
@@ -146,16 +165,12 @@ const MultiSelect = ({
     <Box width={width}>
       <Select
         multiple
-        value={value}
-        options={filteredOptions}
-        onChange={({ value: nextValue }) => onSelectValueChange(nextValue)}
-        open={open}
-        onOpen={() => setSelectState({ open: true })}
-        onClose={
-          withUpdateCancelButtons
-            ? () => onClose()
-            : undefined
-        }
+        value={withUpdateCancelButtons ? internalValue : value}
+        options={getOptions()}
+        onChange={onSelectValueChange}
+        open={isOpen}
+        onOpen={onOpen}
+        onClose={onClose}
         closeOnChange={false}
         renderCustomContent={
           ['single-column', 'double-column'].includes(layout)
