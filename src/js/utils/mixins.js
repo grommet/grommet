@@ -53,7 +53,7 @@ export const getAvailableAtBadge = availableAt => [
     label: 'Storybook',
   },
   {
-    url: `https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=${availableAt.toLowerCase()}&module=%2Fsrc%2F${availableAt}.js`,
+    url: `https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/${availableAt.toLowerCase()}&module=%2Fsrc%2F${availableAt}.js`,
     badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
     label: 'CodeSandbox',
   },
