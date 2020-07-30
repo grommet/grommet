@@ -14,6 +14,8 @@ const OptionWithCheckControl = ({
   inclusionExclusion,
   isExcluded,
   onSelect,
+  active,
+  index,
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
 
@@ -31,7 +33,7 @@ const OptionWithCheckControl = ({
           isExcluded={exc}
           onClick={
             (inclusionExclusion && isExcluded === null) ?
-              event => onSelect(event, exc) : undefined
+              event => onSelect(event, exc, index) : undefined
           }
         >
           {(selected || (inclusionExclusion && isExcluded === null)) && (
@@ -56,18 +58,19 @@ const OptionWithCheckControl = ({
           {!inclusionExclusion && renderCheckbox('check', null)}
           <Text {...theme.select.options.text}>{label}</Text>
         </Box>
-        {inclusionExclusion && (
-          <Box direction="row">
-            {
-              [null, false].includes(isExcluded)
-              && renderCheckbox('check', false)
-            }
-            {
-              [null, true].includes(isExcluded)
-              && renderCheckbox('cross', true)
-            }
-          </Box>
-        )}
+        {inclusionExclusion &&
+          ((isExcluded === null && active) || isExcluded !== null) && (
+            <Box direction="row">
+              {
+                [null, false].includes(isExcluded)
+                && renderCheckbox('check', false)
+              }
+              {
+                [null, true].includes(isExcluded)
+                && renderCheckbox('cross', true)
+              }
+            </Box>
+          )}
       </Box>
     </Box>
   );

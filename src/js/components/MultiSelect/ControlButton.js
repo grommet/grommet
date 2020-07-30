@@ -5,7 +5,7 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
 
-const ControlButton = ({ onUpdate, onCancel }) => {
+const ControlButton = ({ onOk, onCancel }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
 
   const ControlButtonWrapper = styled(Box)`
@@ -16,7 +16,7 @@ const ControlButton = ({ onUpdate, onCancel }) => {
     <ControlButtonWrapper {...theme.multiselect.controls.wrapper}>
       <Button
         {...theme.multiselect.controls.button}
-        onClick={onUpdate}
+        onClick={onOk}
         primary
       >
         <Text weight={600}>OK</Text>
