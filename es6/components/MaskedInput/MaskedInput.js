@@ -25,16 +25,37 @@ var parseValue = function parseValue(mask, value) {
     var found = void 0;
 
     if (item.fixed) {
-      var length = item.fixed.length;
-      valueParts.push({
-        part: item.fixed,
-        beginIndex: valueIndex,
-        endIndex: valueIndex + length - 1
-      });
-      var part = value.slice(valueIndex, valueIndex + length);
+      var length = item.fixed.length; // grab however much of value (starting at valueIndex) matches
+      // item.fixed. If none matches it and there is more in value
+      // add in the fixed item.
 
-      if (part === item.fixed) {
-        valueIndex += length;
+      var matching = 0;
+
+      while (matching < length && value[valueIndex + matching] === item.fixed[matching]) {
+        matching += 1;
+      }
+
+      if (matching > 0) {
+        var part = value.slice(valueIndex, valueIndex + matching);
+
+        if (valueIndex + matching < value.length) {
+          // matched part of the fixed portion but there's more stuff
+          // after it. Go ahead and fill in the entire fixed chunk
+          part = item.fixed;
+        }
+
+        valueParts.push({
+          part: part,
+          beginIndex: valueIndex,
+          endIndex: valueIndex + matching - 1
+        });
+        valueIndex += matching;
+      } else {
+        valueParts.push({
+          part: item.fixed,
+          beginIndex: valueIndex,
+          endIndex: valueIndex + length - 1
+        });
       }
 
       maskIndex += 1;
