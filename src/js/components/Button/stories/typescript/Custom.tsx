@@ -15,6 +15,9 @@ const customTheme = {
       radius: undefined,
       color: '#2196f3',
     },
+    disabled: {
+      opacity: 0.3,
+    },
     padding: {
       vertical: '12px',
       horizontal: '24px',
@@ -45,6 +48,16 @@ const CustomTheme = () => (
     <Grommet theme={customTheme}>
       <Box align="center" pad="large">
         <Button label="custom theme" onClick={() => {}} primary />
+      </Box>
+    </Grommet>
+    <Grommet theme={customTheme}>
+      <Box align="center" pad="large">
+        <Button
+          label="custom theme disabled"
+          onClick={() => {}}
+          primary
+          disabled
+        />
       </Box>
     </Grommet>
     <Grommet theme={grommet}>
