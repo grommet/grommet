@@ -16,7 +16,12 @@ const customTheme = {
       color: '#2196f3',
     },
     disabled: {
-      opacity: 0.3,
+      color: '#fe2693',
+      opacity: '.1',
+      border: {
+        color: '#000000',
+        width: '10px',
+      },
     },
     padding: {
       vertical: '12px',
@@ -52,7 +57,7 @@ const CustomTheme = () => (
     </Grommet>
     <Grommet theme={customTheme}>
       <Box align="center" pad="large">
-        <Button label="custom theme disabled" primary disabled />
+        <Button label="custom theme disabled" disabled primary />
       </Box>
     </Grommet>
     <Grommet theme={grommet}>
