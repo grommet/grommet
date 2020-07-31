@@ -83,12 +83,16 @@ const InfiniteScroll = ({
       let top;
       let height;
       let width;
+      let scrollHeight;
       if (scrollParent === document) {
         top = document.documentElement.scrollTop || document.body.scrollTop;
         height = window.innerHeight;
         width = window.innerWidth;
+        scrollHeight =
+          document.documentElement.scrolHeight || document.body.scrollHeight;
       } else {
         top = scrollParent.scrollTop;
+        scrollHeight = scrollParent.scrollHeight;
         const rect = scrollParent.getBoundingClientRect();
         ({ height, width } = rect);
       }
@@ -107,18 +111,10 @@ const InfiniteScroll = ({
             ),
           )
         : 0;
-      const nextEndPage = Math.min(
-        lastPage,
-        Math.max(
-          (!replace && endPage) || 0,
-          multiColumn
-            ? Math.ceil(((top + height + offset) * width) / pageArea)
-            : Math.floor((top + height + offset) / pageHeight),
-        ),
-      );
+      const nextEndPage = top + height + offset >= scrollHeight;
 
       if (nextBeginPage !== beginPage) setBeginPage(nextBeginPage);
-      if (nextEndPage !== endPage) setEndPage(nextEndPage);
+      if (nextEndPage) setEndPage(endPage + 1);
     };
 
     if (pageHeight && belowMarkerRef.current) {
@@ -135,15 +131,8 @@ const InfiniteScroll = ({
         );
       }
     };
-  }, [
-    beginPage,
-    endPage,
-    lastPage,
-    multiColumn,
-    pageArea,
-    pageHeight,
-    replace,
-  ]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [beginPage, lastPage, multiColumn, pageArea, pageHeight, replace]);
 
   // check if we need to ask for more
   useEffect(() => {
