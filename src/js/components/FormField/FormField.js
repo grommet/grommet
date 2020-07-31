@@ -193,10 +193,6 @@ const FormField = forwardRef(
         themeContentProps.background = formFieldTheme.disabled.background;
       }
     }
-    // Removing margin from themeContentProps because margin should be applied
-    // on containing <FormFieldContentBox>
-    // themeContentProps.margin = undefined;
-    // contents = <Box {...themeContentProps}>{contents}</Box>;
 
     if (!themeBorder) {
       contents = (

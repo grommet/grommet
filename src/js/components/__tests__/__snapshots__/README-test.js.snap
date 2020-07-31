@@ -7581,8 +7581,8 @@ object
 **contentProps**
 
 Any valid Box property. These
-     properties are applied to the FormField contents container and can override
-     properties from the theme.
+     properties are applied to the FormField contents container and will
+     override properties from the theme.
 
 \`\`\`
 object
