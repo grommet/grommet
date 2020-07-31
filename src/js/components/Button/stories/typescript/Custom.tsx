@@ -52,12 +52,7 @@ const CustomTheme = () => (
     </Grommet>
     <Grommet theme={customTheme}>
       <Box align="center" pad="large">
-        <Button
-          label="custom theme disabled"
-          onClick={() => {}}
-          primary
-          disabled
-        />
+        <Button label="custom theme disabled" disabled />
       </Box>
     </Grommet>
     <Grommet theme={grommet}>
