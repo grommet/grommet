@@ -111,10 +111,24 @@ const InfiniteScroll = ({
             ),
           )
         : 0;
-      const nextEndPage = top + height + offset >= scrollHeight;
 
+      let nextEndPage;
+      if (replace) {
+        nextEndPage = Math.min(
+          lastPage,
+          Math.max(
+            endPage || 0,
+            multiColumn
+              ? Math.ceil(((top + height + offset) * width) / pageArea)
+              : Math.floor((top + height + offset) / pageHeight),
+          ),
+        );
+      } else {
+        nextEndPage =
+          top + height + offset >= scrollHeight ? endPage + 1 : endPage;
+      }
       if (nextBeginPage !== beginPage) setBeginPage(nextBeginPage);
-      if (nextEndPage) setEndPage(endPage + 1);
+      if (nextEndPage !== endPage) setEndPage(nextEndPage);
     };
 
     if (pageHeight && belowMarkerRef.current) {
