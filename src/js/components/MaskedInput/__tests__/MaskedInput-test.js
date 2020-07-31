@@ -90,6 +90,45 @@ describe('MaskedInput', () => {
     expect(onFocus).toBeCalled();
   });
 
+  test('mask with long fixed', async () => {
+    const onChange = jest.fn(event => event.target.value);
+    const { getByTestId, container } = render(
+      <MaskedInput
+        data-testid="test-input"
+        id="item"
+        name="item"
+        mask={[
+          { fixed: 'https://' },
+          {
+            regexp: /^[ab]+$/,
+          },
+        ]}
+        value=""
+        onChange={onChange}
+      />,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    const input = getByTestId('test-input');
+
+    // Entering part of the fixed portion and then something that
+    // matches the next portion should auto-expand the fixed portion
+    fireEvent.change(input, {
+      target: { value: 'hta' },
+    });
+    expect(onChange).toHaveBeenCalled();
+    expect(onChange).toHaveReturnedWith('https://a');
+
+    // Removing all but a piece of the fixed portion should
+    // leave just that part of the fixed portion (like when
+    // you backspace over it)
+    fireEvent.change(input, {
+      target: { value: 'http' },
+    });
+    expect(onChange).toHaveBeenCalled();
+    expect(onChange).toHaveReturnedWith('http');
+  });
+
   test('option via mouse', async () => {
     const onChange = jest.fn(event => event.target.value);
     const { getByTestId, container } = render(
