@@ -21,6 +21,23 @@ const UNDEFINED_VALUES = [
   { value: [0, 0], label: 'zero' },
 ];
 
+const STYLED_VALUES = [
+  {
+    value: [1, 60],
+    label: 'sixty',
+    color: 'status-ok',
+    opacity: 'strong',
+    thickness: 'small',
+  },
+  {
+    value: [0, 0],
+    label: 'zero',
+    color: '#123456',
+    opacity: 0.27,
+    thickness: 27,
+  },
+];
+
 describe('Chart', () => {
   afterEach(cleanup);
 
@@ -155,6 +172,17 @@ describe('Chart', () => {
         <Chart type="point" point="star" values={VALUES} />
         <Chart type="point" point="triangle" values={VALUES} />
         <Chart type="point" point="triangleDown" values={VALUES} />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('value style', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Chart type="point" point="circle" values={STYLED_VALUES} />
+        <Chart type="bar" values={STYLED_VALUES} />
       </Grommet>,
     );
     const tree = component.toJSON();

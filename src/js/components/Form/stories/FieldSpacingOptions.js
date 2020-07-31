@@ -13,7 +13,7 @@ import {
   TextInput,
   ThemeContext,
 } from 'grommet';
-import { deepMerge } from '../../../utils';
+import { deepMerge } from 'grommet/utils';
 
 const customTheme = deepMerge(grommet, {
   formField: {
