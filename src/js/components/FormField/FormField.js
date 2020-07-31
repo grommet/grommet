@@ -414,7 +414,7 @@ const FormField = forwardRef(
             <Box {...labelStyle} width={labelWidth}>
               {label && component !== CheckBox && (
                 <Text as="label" htmlFor={htmlFor}>
-                  {label}
+                  {label} {required && <Text color="status-critical">*</Text>}
                 </Text>
               )}
             </Box>
