@@ -1124,6 +1124,69 @@ exports[`MaskedInput mask 2`] = `
 
 exports[`MaskedInput mask 3`] = `""`;
 
+exports[`MaskedInput mask with long fixed 1`] = `
+.c1 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
+.c1::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c1::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c1:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c1::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c1:-moz-placeholder,
+.c1::-moz-placeholder {
+  opacity: 1;
+}
+
+.c0 {
+  position: relative;
+  width: 100%;
+}
+
+<div
+  class="c0"
+>
+  <input
+    autocomplete="off"
+    class="c1"
+    data-testid="test-input"
+    id="item"
+    name="item"
+    placeholder="https://"
+    value=""
+  />
+</div>
+`;
+
 exports[`MaskedInput next and previous without options 1`] = `
 .c1 {
   box-sizing: border-box;
