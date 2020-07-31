@@ -117,7 +117,7 @@ const InfiniteScroll = ({
         nextEndPage = Math.min(
           lastPage,
           Math.max(
-            endPage || 0,
+            0,
             multiColumn
               ? Math.ceil(((top + height + offset) * width) / pageArea)
               : Math.floor((top + height + offset) / pageHeight),
