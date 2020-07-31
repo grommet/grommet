@@ -23,6 +23,16 @@ const StyledRadioButtonContainer = styled.label`
     border-color: ${props =>
       normalizeColor(props.theme.radioButton.hover.border.color, props.theme)};
   }
+  :hover {
+    background-color: ${props =>
+      normalizeColor(
+        !props.disabled &&
+          props.theme.radioButton.hover &&
+          props.theme.radioButton.hover.background &&
+          props.theme.radioButton.hover.background.color,
+        props.theme,
+      )};
+  }
 `;
 
 StyledRadioButtonContainer.defaultProps = {};

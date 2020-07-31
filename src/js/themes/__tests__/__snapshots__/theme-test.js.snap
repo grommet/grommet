@@ -217,17 +217,13 @@ exports[`Grommet custom theme 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   line-height: 50px;
   padding: 11px;
   font-weight: bold;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
-}
-
-.c12::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c12::-webkit-input-placeholder {
@@ -242,9 +238,18 @@ exports[`Grommet custom theme 1`] = `
   color: #cc6633;
 }
 
+.c12::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c12::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c12:-moz-placeholder,
+.c12::-moz-placeholder {
+  opacity: 1;
 }
 
 .c11 {

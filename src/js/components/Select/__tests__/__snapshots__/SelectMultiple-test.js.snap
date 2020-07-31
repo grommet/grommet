@@ -121,18 +121,14 @@ exports[`Select Controlled deselect an option 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-webkit-input-placeholder {
@@ -147,9 +143,18 @@ exports[`Select Controlled deselect an option 1`] = `
   color: #AAAAAA;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
 }
 
 .c4 {
@@ -342,18 +347,14 @@ exports[`Select Controlled multiple 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-webkit-input-placeholder {
@@ -368,9 +369,18 @@ exports[`Select Controlled multiple 1`] = `
   color: #AAAAAA;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
 }
 
 .c4 {
@@ -576,18 +586,14 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c6::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c6::-webkit-input-placeholder {
@@ -602,9 +608,18 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 1`] = `
   color: #AAAAAA;
 }
 
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
+  opacity: 1;
 }
 
 .c5 {
@@ -1050,18 +1065,14 @@ exports[`Select Controlled multiple onChange with valueKey reduce 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c6::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c6::-webkit-input-placeholder {
@@ -1076,9 +1087,18 @@ exports[`Select Controlled multiple onChange with valueKey reduce 1`] = `
   color: #AAAAAA;
 }
 
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
+  opacity: 1;
 }
 
 .c5 {
@@ -1519,18 +1539,14 @@ exports[`Select Controlled multiple onChange with valueKey string 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c6::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c6::-webkit-input-placeholder {
@@ -1545,9 +1561,18 @@ exports[`Select Controlled multiple onChange with valueKey string 1`] = `
   color: #AAAAAA;
 }
 
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
+  opacity: 1;
 }
 
 .c5 {
@@ -1988,18 +2013,14 @@ exports[`Select Controlled multiple onChange without valueKey 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c6::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c6::-webkit-input-placeholder {
@@ -2014,9 +2035,18 @@ exports[`Select Controlled multiple onChange without valueKey 1`] = `
   color: #AAAAAA;
 }
 
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
+  opacity: 1;
 }
 
 .c5 {
@@ -2523,18 +2553,14 @@ exports[`Select Controlled multiple values 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-webkit-input-placeholder {
@@ -2549,9 +2575,18 @@ exports[`Select Controlled multiple values 1`] = `
   color: #AAAAAA;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
 }
 
 .c4 {
@@ -2641,7 +2676,7 @@ exports[`Select Controlled multiple values 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 jsQcHW Select__SelectTextInput-sc-17idtfo-0 hWmVID"
+          class="StyledTextInput-sc-1x30a0s-0 fVbmbP Select__SelectTextInput-sc-17idtfo-0 hWmVID"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -3032,18 +3067,14 @@ exports[`Select Controlled multiple with empty results 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c6::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c6::-webkit-input-placeholder {
@@ -3058,9 +3089,18 @@ exports[`Select Controlled multiple with empty results 1`] = `
   color: #AAAAAA;
 }
 
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
+  opacity: 1;
 }
 
 .c5 {
@@ -3501,18 +3541,14 @@ exports[`Select Controlled select another option 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-webkit-input-placeholder {
@@ -3527,9 +3563,18 @@ exports[`Select Controlled select another option 1`] = `
   color: #AAAAAA;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
 }
 
 .c4 {
@@ -3722,18 +3767,14 @@ exports[`Select Controlled should not have accessibility violations 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c6::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c6::-webkit-input-placeholder {
@@ -3748,9 +3789,18 @@ exports[`Select Controlled should not have accessibility violations 1`] = `
   color: #AAAAAA;
 }
 
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c6:-moz-placeholder,
+.c6::-moz-placeholder {
+  opacity: 1;
 }
 
 .c5 {
