@@ -180,27 +180,27 @@ const FormField = forwardRef(
       );
     }
 
-    const fieldContentProps = { ...formFieldTheme.content };
+    const themeContentProps = { ...formFieldTheme.content };
 
     if (!pad && !wantContentPad) {
-      fieldContentProps.pad = undefined;
+      themeContentProps.pad = undefined;
     }
 
     if (themeBorder && themeBorder.position === 'inner') {
       if (error && formFieldTheme.error) {
-        fieldContentProps.background = formFieldTheme.error.background;
+        themeContentProps.background = formFieldTheme.error.background;
       } else if (disabled && formFieldTheme.disabled) {
-        fieldContentProps.background = formFieldTheme.disabled.background;
+        themeContentProps.background = formFieldTheme.disabled.background;
       }
     }
-    // Removing margin from fieldContentProps because margin should be applied
+    // Removing margin from themeContentProps because margin should be applied
     // on containing <FormFieldContentBox>
-    // fieldContentProps.margin = undefined;
-    // contents = <Box {...fieldContentProps}>{contents}</Box>;
+    // themeContentProps.margin = undefined;
+    // contents = <Box {...themeContentProps}>{contents}</Box>;
 
     if (!themeBorder) {
       contents = (
-        <Box {...fieldContentProps} {...contentProps}>
+        <Box {...themeContentProps} {...contentProps}>
           {contents}
         </Box>
       );
@@ -255,7 +255,7 @@ const FormField = forwardRef(
           : {};
       contents = (
         <FormFieldContentBox
-          {...fieldContentProps}
+          {...themeContentProps}
           {...innerProps}
           {...contentProps}
         >

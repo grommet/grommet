@@ -3433,7 +3433,9 @@ object",
         "name": "component",
       },
       Object {
-        "description": "Any valid Box prop.",
+        "description": "Any valid Box property. These
+     properties are applied to the FormField contents container and can override
+     properties from the theme.",
         "format": "object",
         "name": "contentProps",
       },
