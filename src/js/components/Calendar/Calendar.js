@@ -260,6 +260,12 @@ const Calendar = forwardRef(
           } else if (selDate.getTime() === priorDates[1].getTime()) {
             [[nextDate]] = dates;
             nextDates = undefined;
+          } else if (selDate.getTime() === previousDate.getTime()) {
+            if (selDate.getTime() < priorDates[0].getTime()) {
+              nextDates = [[selectedDate, dates[0][1]]];
+            } else if (selDate.getTime() > priorDates[0].getTime()) {
+              nextDates = [[dates[0][0], selectedDate]];
+            }
           } else if (selDate.getTime() < previousDate.getTime()) {
             if (selDate.getTime() < priorDates[0].getTime()) {
               nextDates = [[selectedDate, dates[0][1]]];
