@@ -15,6 +15,19 @@ test('Heading renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('Heading accepts ref', () => {
+  const ref = React.createRef();
+  const component = renderer.create(
+    <Grommet>
+      <Heading ref={ref} />
+    </Grommet>,
+    { createNodeMock: el => el },
+  );
+  expect(ref.current).not.toBeNull();
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 test('Heading level renders', () => {
   const component = renderer.create(
     <Grommet>
