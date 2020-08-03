@@ -227,6 +227,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
         shadowSize: 'small',
         zIndex: '20',
+        marginTop: '4px',
       },
       edgeSize: {
         none: '0px',

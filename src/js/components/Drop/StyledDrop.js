@@ -43,6 +43,7 @@ const StyledDrop = styled.div`
   transform-origin: ${props => getTransformOriginStyle(props.alignProp)};
   animation:  ${dropKeyFrames} 0.1s forwards;
   animation-delay: 0.01s;
+  margin-top: ${props => props.theme.global.drop.marginTop};
 
   /* IE11 hack to get drop contents to not overflow */
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
