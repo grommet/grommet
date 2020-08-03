@@ -189,17 +189,19 @@ const List = React.forwardRef(
                     adjustedEvent.item = item;
                     adjustedEvent.index = index;
                     onClickItem(adjustedEvent);
-                    // put focus back on the List container to meet
-                    // WCAG accessibility guidelines that focus remains
-                    // on `ul`
+                    // put focus on the List container to meet WCAG
+                    // accessibility guidelines that focus remains on `ul`
                     listRef.current.focus();
                   },
-                  // prevent default focus outline from being shown
-                  // onMouseDown since `ul` is maintaining focus
-                  onMouseDown: event => event.preventDefault(),
                   onMouseOver: () => setActive(index),
                   onMouseOut: () => setActive(undefined),
-                  onFocus: () => setActive(index),
+                  onFocus: () => {
+                    setActive(index);
+                    // when onmousedown fires, the list item is receiving focus
+                    // this puts focus back on the List container to meet WCAG
+                    // accessibility guidelines that focus remains on `ul`
+                    listRef.current.focus();
+                  },
                   onBlur: () => setActive(undefined),
                 };
               }
