@@ -41,11 +41,6 @@ const DataChart = forwardRef(
     },
     ref,
   ) => {
-    console.warn(`The DataChart component is still experimental.
-      It is not guaranteed to be backwards compatible until it is explicitly
-      released. Keep an eye on the release notes and #announcements channel
-      in Slack.`);
-
     // legend interaction, if any
     const [activeProperty, setActiveProperty] = useState();
 

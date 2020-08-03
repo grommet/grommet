@@ -9,10 +9,6 @@ const data = [
   { a: 1, b: 'one', c: 111111, d: '2020-06-24' },
   { a: 2, b: 'two', c: 222222, d: '2020-06-23' },
 ];
-const warnMsg = `The DataChart component is still experimental.
-      It is not guaranteed to be backwards compatible until it is explicitly
-      released. Keep an eye on the release notes and #announcements channel
-      in Slack.`;
 
 describe('DataChart', () => {
   test('default', () => {
@@ -24,7 +20,6 @@ describe('DataChart', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
-    expect(warnSpy).toHaveBeenLastCalledWith(warnMsg);
     warnSpy.mockRestore();
   });
 
@@ -39,7 +34,6 @@ describe('DataChart', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
-    expect(warnSpy).toHaveBeenCalledWith(warnMsg);
     warnSpy.mockRestore();
   });
 
@@ -54,7 +48,6 @@ describe('DataChart', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
-    expect(warnSpy).toHaveBeenCalledWith(warnMsg);
     warnSpy.mockRestore();
   });
 
@@ -70,7 +63,6 @@ describe('DataChart', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
-    expect(warnSpy).toHaveBeenCalledWith(warnMsg);
     warnSpy.mockRestore();
   });
 
@@ -93,7 +85,6 @@ describe('DataChart', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
-    expect(warnSpy).toHaveBeenCalledWith(warnMsg);
     warnSpy.mockRestore();
   });
 
@@ -129,7 +120,6 @@ describe('DataChart', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
-    expect(warnSpy).toHaveBeenCalledWith(warnMsg);
     warnSpy.mockRestore();
   });
 
@@ -150,7 +140,6 @@ describe('DataChart', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
-    expect(warnSpy).toHaveBeenCalledWith(warnMsg);
     warnSpy.mockRestore();
   });
 
@@ -166,7 +155,6 @@ describe('DataChart', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
-    expect(warnSpy).toHaveBeenCalledWith(warnMsg);
     warnSpy.mockRestore();
   });
 
@@ -182,7 +170,6 @@ describe('DataChart', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
-    expect(warnSpy).toHaveBeenCalledWith(warnMsg);
     warnSpy.mockRestore();
   });
 });
