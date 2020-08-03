@@ -89,6 +89,7 @@ const SelectedList = ({
                     <Text>{item}</Text>
                   </OptionLabel>
                   <Close
+                    style={{ cursor: 'pointer' }}
                     onClick={() => onRemove(item)}
                     {...theme.multiselect.chips.icon}
                   />
