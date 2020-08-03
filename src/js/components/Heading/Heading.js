@@ -21,6 +21,7 @@ const Heading = forwardRef((props, ref) => {
   );
 });
 
+Heading.displayName = 'Heading';
 Heading.defaultProps = {
   level: 1,
   responsive: true,

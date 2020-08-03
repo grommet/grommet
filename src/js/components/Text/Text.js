@@ -12,6 +12,7 @@ const Text = forwardRef(({ color, tag, as, a11yTitle, ...rest }, ref) => (
   />
 ));
 
+Text.displayName = 'Text';
 Text.defaultProps = {
   level: 1,
 };
