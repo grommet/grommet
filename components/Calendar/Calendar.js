@@ -267,6 +267,12 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
         var _dates$2 = dates[0];
         nextDate = _dates$2[0];
         nextDates = undefined;
+      } else if (_selDate.getTime() === previousDate.getTime()) {
+        if (_selDate.getTime() < priorDates[0].getTime()) {
+          nextDates = [[selectedDate, dates[0][1]]];
+        } else if (_selDate.getTime() > priorDates[0].getTime()) {
+          nextDates = [[dates[0][0], selectedDate]];
+        }
       } else if (_selDate.getTime() < previousDate.getTime()) {
         if (_selDate.getTime() < priorDates[0].getTime()) {
           nextDates = [[selectedDate, dates[0][1]]];
