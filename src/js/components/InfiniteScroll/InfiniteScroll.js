@@ -89,7 +89,7 @@ const InfiniteScroll = ({
         height = window.innerHeight;
         width = window.innerWidth;
         scrollHeight =
-          document.documentElement.scrolHeight || document.body.scrollHeight;
+          document.documentElement.scrollHeight || document.body.scrollHeight;
       } else {
         top = scrollParent.scrollTop;
         scrollHeight = scrollParent.scrollHeight;
