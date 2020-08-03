@@ -14,9 +14,15 @@ const Legend = ({
     () => seriesProp.filter(s => seriesStyles[s.property]),
     [seriesProp, seriesStyles],
   );
-  const interactive = useMemo(() => Object.keys(series).length > 1, [series]);
+  const interactive = useMemo(
+    // filter out properties that are used in point chart aspects
+    () =>
+      series.filter(({ property }) => !seriesStyles[property].aspect).length >
+      1,
+    [series, seriesStyles],
+  );
   return (
-    <Box margin={{ top: 'small' }} direction="row" wrap>
+    <Box margin={{ top: 'small' }} direction="row" wrap gap="small">
       {series.map(({ property, label }) => {
         const isActive = property === activeProperty;
         const swatchProps = {};
@@ -29,31 +35,31 @@ const Legend = ({
             textProps.color = 'text-strong';
           }
         }
-        return (
-          <Button
+        let content = (
+          <Box
             key={property}
-            active={isActive}
-            onClick={
-              interactive
-                ? () => {
-                    setActiveProperty(isActive ? undefined : property);
-                  }
-                : undefined
-            }
-            hoverIndicator
-            margin={{ right: 'small' }}
+            direction="row"
+            align="center"
+            pad={{ horizontal: 'small', vertical: 'xsmall' }}
+            gap="xsmall"
           >
-            <Box
-              direction="row"
-              align="center"
-              pad={{ horizontal: 'small', vertical: 'xsmall' }}
-              gap="xsmall"
-            >
-              <Swatch {...seriesStyles[property]} {...swatchProps} />
-              <Text {...textProps}>{label || property}</Text>
-            </Box>
-          </Button>
+            <Swatch {...seriesStyles[property]} {...swatchProps} />
+            <Text {...textProps}>{label || property}</Text>
+          </Box>
         );
+        if (interactive) {
+          content = (
+            <Button
+              key={property}
+              active={isActive}
+              onClick={() => setActiveProperty(isActive ? undefined : property)}
+              hoverIndicator
+            >
+              {content}
+            </Button>
+          );
+        }
+        return content;
       })}
     </Box>
   );

@@ -44,6 +44,7 @@ const Example = () => (
           x: { granularity: 'medium' },
           y: { granularity: 'medium' },
         }}
+        guide
         legend
       />
     </Box>

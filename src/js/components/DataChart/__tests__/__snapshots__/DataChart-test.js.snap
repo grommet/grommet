@@ -3482,7 +3482,7 @@ exports[`DataChart legend 1`] = `
   flex-wrap: wrap;
 }
 
-.c13 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3504,7 +3504,7 @@ exports[`DataChart legend 1`] = `
   padding-bottom: 6px;
 }
 
-.c14 {
+.c13 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -3530,33 +3530,9 @@ exports[`DataChart legend 1`] = `
   display: block;
 }
 
-.c15 {
+.c14 {
   font-size: 18px;
   line-height: 24px;
-}
-
-.c12 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  margin-right: 12px;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c12:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 @media only screen and (max-width:768px) {
@@ -3566,14 +3542,14 @@ exports[`DataChart legend 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c13 {
+  .c12 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c13 {
+  .c12 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
@@ -3671,38 +3647,29 @@ exports[`DataChart legend 1`] = `
     <div
       className="c11"
     >
-      <button
+      <div
         className="c12"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        onMouseOut={[Function]}
-        onMouseOver={[Function]}
-        type="button"
       >
+        <svg
+          fill="#6FFFB0"
+          height={12}
+          stroke="none"
+          viewBox="0 0 96 12"
+          width={96}
+        >
+          <path
+            d="M 0 0 L 96 0 L 96 12 L 0 12 Z"
+          />
+        </svg>
         <div
           className="c13"
+        />
+        <span
+          className="c14"
         >
-          <svg
-            fill="#6FFFB0"
-            height={12}
-            stroke="none"
-            viewBox="0 0 96 12"
-            width={96}
-          >
-            <path
-              d="M 0 0 L 96 0 L 96 12 L 0 12 Z"
-            />
-          </svg>
-          <div
-            className="c14"
-          />
-          <span
-            className="c15"
-          >
-            a
-          </span>
-        </div>
-      </button>
+          a
+        </span>
+      </div>
     </div>
   </div>
   <div
