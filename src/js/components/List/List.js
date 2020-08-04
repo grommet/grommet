@@ -14,7 +14,9 @@ const StyledList = styled.ul`
   ${genericStyles}
 
   &:focus {
-    ${props => props.tabIndex >= 0 && focusStyle({ skipSvgChildren: true })}
+    ${props =>
+      props.tabIndex >= 0 &&
+      focusStyle({ forceOutline: true, skipSvgChildren: true })}
   }
 `;
 

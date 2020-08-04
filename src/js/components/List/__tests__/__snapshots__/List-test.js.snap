@@ -1053,12 +1053,7 @@ exports[`List events ArrowDown key 1`] = `
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c1:focus::-moz-focus-inner {
-  border: 0;
+  outline: 2px solid #6FFFB0;
 }
 
 .c3 {
@@ -1220,12 +1215,7 @@ exports[`List events ArrowDown key on last element 1`] = `
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c1:focus::-moz-focus-inner {
-  border: 0;
+  outline: 2px solid #6FFFB0;
 }
 
 .c3 {
@@ -1375,12 +1365,7 @@ exports[`List events ArrowUp key 1`] = `
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c1:focus::-moz-focus-inner {
-  border: 0;
+  outline: 2px solid #6FFFB0;
 }
 
 .c3 {
@@ -1540,12 +1525,7 @@ exports[`List events Enter key 1`] = `
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c1:focus::-moz-focus-inner {
-  border: 0;
+  outline: 2px solid #6FFFB0;
 }
 
 .c3 {
@@ -1621,7 +1601,7 @@ exports[`List events Enter key 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 deDxvH"
+    class="List__StyledList-sc-130gdqg-0 ejwoGX"
     tabindex="0"
   >
     <li
@@ -1707,12 +1687,7 @@ exports[`List events focus and blur 1`] = `
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c1:focus::-moz-focus-inner {
-  border: 0;
+  outline: 2px solid #6FFFB0;
 }
 
 .c3 {
@@ -1800,7 +1775,7 @@ exports[`List events focus and blur 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 deDxvH"
+    class="List__StyledList-sc-130gdqg-0 ejwoGX"
     tabindex="0"
   >
     <li
@@ -1886,12 +1861,7 @@ exports[`List events mouse events 1`] = `
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c1:focus::-moz-focus-inner {
-  border: 0;
+  outline: 2px solid #6FFFB0;
 }
 
 .c3 {
@@ -1979,7 +1949,7 @@ exports[`List events mouse events 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 deDxvH"
+    class="List__StyledList-sc-130gdqg-0 ejwoGX"
     tabindex="0"
   >
     <li
@@ -2426,12 +2396,7 @@ exports[`List onClickItem 1`] = `
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c1:focus::-moz-focus-inner {
-  border: 0;
+  outline: 2px solid #6FFFB0;
 }
 
 .c3 {
@@ -2507,7 +2472,7 @@ exports[`List onClickItem 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 deDxvH"
+    class="List__StyledList-sc-130gdqg-0 ejwoGX"
     tabindex="0"
   >
     <li
