@@ -4088,7 +4088,196 @@ function",
   },
   "Grommet": [Function],
   "Header": [Function],
-  "Heading": [Function],
+  "Heading": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=Heading&full=0&addons=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/heading&module=%2Fsrc%2FHeading.js",
+      },
+    ],
+    "description": "Heading text structured in levels.",
+    "intrinsicElement": Array [
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+    ],
+    "name": "Heading",
+    "properties": Array [
+      Object {
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
+        "format": "string",
+        "name": "a11yTitle",
+      },
+      Object {
+        "description": "How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.",
+        "format": "start
+center
+end
+stretch",
+        "name": "alignSelf",
+      },
+      Object {
+        "description": "The name of the area to place
+    this inside a parent Grid.",
+        "format": "string",
+        "name": "gridArea",
+      },
+      Object {
+        "description": "The amount of margin around the component. An object can
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string",
+        "name": "margin",
+      },
+      Object {
+        "description": "Color when hovering over places while selecting.",
+        "format": "string
+{
+  dark: string,
+  light: string
+}",
+        "name": "color",
+      },
+      Object {
+        "defaultValue": 1,
+        "description": "The heading level. It corresponds to the number after the 'H' for
+the DOM tag. Set the level for semantic accuracy and accessibility.
+The sizing can be further adjusted using the size property.",
+        "format": "1
+2
+3
+4
+5
+6
+1
+2
+3
+4
+5
+6",
+        "name": "level",
+      },
+      Object {
+        "defaultValue": true,
+        "description": "Whether the font size should be scaled for
+      mobile environments.",
+        "format": "boolean",
+        "name": "responsive",
+      },
+      Object {
+        "defaultValue": "medium",
+        "description": "The font size is primarily driven by the chosen tag. But, it can
+be adjusted via this size property. The tag should be set for semantic
+correctness and accessibility. This size property allows for stylistic
+adjustments.",
+        "format": "small
+medium
+large
+xlarge
+string",
+        "name": "size",
+      },
+      Object {
+        "defaultValue": "start",
+        "description": "How to align the text inside the heading.",
+        "format": "start
+center
+end",
+        "name": "textAlign",
+      },
+      Object {
+        "defaultValue": false,
+        "description": "Restrict the text to a single line and truncate with ellipsis if it
+is too long to all fit.",
+        "format": "boolean",
+        "name": "truncate",
+      },
+    ],
+    "usage": "import { Heading } from 'grommet';
+<Heading />",
+  },
   "Image": Object {
     "availableAt": Array [
       Object {
@@ -6453,7 +6642,198 @@ currently active tab changes.",
   <Tab title='Tab 2'>...</Tab>
 </Tabs>",
   },
-  "Text": [Function],
+  "Text": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=Text&full=0&addons=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/text&module=%2Fsrc%2FText.js",
+      },
+    ],
+    "description": "Arbitrary text.",
+    "intrinsicElement": "span",
+    "name": "Text",
+    "properties": Array [
+      Object {
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
+        "format": "string",
+        "name": "a11yTitle",
+      },
+      Object {
+        "description": "How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.",
+        "format": "start
+center
+end
+stretch",
+        "name": "alignSelf",
+      },
+      Object {
+        "description": "The name of the area to place
+    this inside a parent Grid.",
+        "format": "string",
+        "name": "gridArea",
+      },
+      Object {
+        "description": "The amount of margin around the component. An object can
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string",
+        "name": "margin",
+      },
+      Object {
+        "description": "Color when hovering over places while selecting.",
+        "format": "string
+{
+  dark: string,
+  light: string
+}",
+        "name": "color",
+      },
+      Object {
+        "defaultValue": "medium",
+        "description": "The font size and line height are primarily driven by the chosen tag. 
+But, it can be adjusted via this size property. The tag should be set for 
+semantic correctness and accessibility. This size property allows for stylistic
+adjustments.",
+        "format": "xsmall
+small
+medium
+large
+xlarge
+xxlarge
+string",
+        "name": "size",
+      },
+      Object {
+        "description": "The DOM tag to use for the element. NOTE: This is deprecated in favor
+         of indicating the DOM tag via the 'as' property.",
+        "format": "string
+function",
+        "name": "tag",
+      },
+      Object {
+        "defaultValue": "span",
+        "description": "The DOM tag or react component to use for the element.",
+        "format": "string
+function
+element",
+        "name": "as",
+      },
+      Object {
+        "defaultValue": "start",
+        "description": "How to align the text inside the component.",
+        "format": "start
+center
+end",
+        "name": "textAlign",
+      },
+      Object {
+        "defaultValue": false,
+        "description": "Restrict the text to a single line and truncate with ellipsis if it
+is too long to all fit.",
+        "format": "boolean",
+        "name": "truncate",
+      },
+      Object {
+        "description": "Font weight",
+        "format": "normal
+bold
+number",
+        "name": "weight",
+      },
+      Object {
+        "defaultValue": "normal",
+        "description": "Whether words should break when reaching the end of a line.",
+        "format": "normal
+break-all
+keep-all
+break-word",
+        "name": "wordBreak",
+      },
+    ],
+    "usage": "import { Text } from 'grommet';
+<Text />",
+  },
   "TextArea": Object {
     "availableAt": Array [
       Object {
