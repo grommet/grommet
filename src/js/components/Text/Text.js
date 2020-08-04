@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 import { StyledText } from './StyledText';
 
-const Text = ({ color, tag, as, a11yTitle, ...rest }) => (
+const Text = forwardRef(({ color, tag, as, a11yTitle, ...rest }, ref) => (
   <StyledText
     as={!as && tag ? tag : as}
     colorProp={color}
     aria-label={a11yTitle}
     {...rest}
+    ref={ref}
   />
-);
+));
 
+Text.displayName = 'Text';
 Text.defaultProps = {
   level: 1,
 };
