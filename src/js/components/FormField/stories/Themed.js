@@ -39,7 +39,7 @@ const customTheme = deepMerge(grommet, {
   global: { font: { size: 'small' } },
 });
 
-const ContentProps = () => {
+const Themed = () => {
   return (
     <Grommet theme={customTheme}>
       <Box gap="medium">
@@ -104,4 +104,4 @@ const ContentProps = () => {
   );
 };
 
-storiesOf('Form', module).add('FormField ContentProps', () => <ContentProps />);
+storiesOf('Form', module).add('Themed', () => <Themed />);
