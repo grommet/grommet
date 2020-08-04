@@ -2,10 +2,9 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { StyledHeading } from './StyledHeading';
-
-var Heading = function Heading(props) {
+var Heading = /*#__PURE__*/forwardRef(function (props, ref) {
   var color = props.color,
       level = props.level,
       rest = _objectWithoutPropertiesLoose(props, ["color", "level"]); // enforce level to be a number
@@ -15,9 +14,11 @@ var Heading = function Heading(props) {
     as: "h" + level,
     colorProp: color,
     level: +level
-  }, rest));
-};
-
+  }, rest, {
+    ref: ref
+  }));
+});
+Heading.displayName = 'Heading';
 Heading.defaultProps = {
   level: 1,
   responsive: true

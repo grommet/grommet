@@ -2,10 +2,9 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { StyledText } from './StyledText';
-
-var Text = function Text(_ref) {
+var Text = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var color = _ref.color,
       tag = _ref.tag,
       as = _ref.as,
@@ -16,9 +15,11 @@ var Text = function Text(_ref) {
     as: !as && tag ? tag : as,
     colorProp: color,
     "aria-label": a11yTitle
-  }, rest));
-};
-
+  }, rest, {
+    ref: ref
+  }));
+});
+Text.displayName = 'Text';
 Text.defaultProps = {
   level: 1
 };
