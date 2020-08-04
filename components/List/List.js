@@ -28,13 +28,13 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 var StyledList = _styledComponents["default"].ul.withConfig({
   displayName: "List__StyledList",
   componentId: "sc-130gdqg-0"
-})(["list-style:none;", " padding:0;", " ", ""], function (props) {
+})(["list-style:none;", " padding:0;", " &:focus{", "}"], function (props) {
   return !props.margin && 'margin: 0;';
 }, _utils.genericStyles, function (props) {
-  return props.onClickItem && "\n    &:focus {\n      " + (0, _utils.focusStyle)({
+  return props.tabIndex >= 0 && (0, _utils.focusStyle)({
     forceOutline: true,
     skipSvgChildren: true
-  }) + "\n    }\n  ";
+  });
 });
 
 var StyledItem = (0, _styledComponents["default"])(_Box.Box).withConfig({
@@ -69,6 +69,7 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       onMore = _ref.onMore,
       rest = _objectWithoutPropertiesLoose(_ref, ["action", "as", "background", "border", "children", "data", "focus", "itemProps", "pad", "primaryKey", "secondaryKey", "step", "onClickItem", "onMore"]);
 
+  var listRef = (0, _utils.useForwardedRef)(ref);
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext);
 
   var _useState = (0, _react.useState)(),
@@ -90,7 +91,7 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       setActive(active >= 0 ? Math.min(active + 1, data.length - 1) : 0);
     } : undefined
   }, /*#__PURE__*/_react["default"].createElement(StyledList, _extends({
-    ref: ref,
+    ref: listRef,
     as: as || 'ul',
     tabIndex: onClickItem ? 0 : undefined
   }, rest), /*#__PURE__*/_react["default"].createElement(_InfiniteScroll.InfiniteScroll, {
@@ -187,7 +188,10 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
           var adjustedEvent = event;
           adjustedEvent.item = item;
           adjustedEvent.index = index;
-          onClickItem(adjustedEvent);
+          onClickItem(adjustedEvent); // put focus on the List container to meet WCAG
+          // accessibility guidelines that focus remains on `ul`
+
+          listRef.current.focus();
         },
         onMouseOver: function onMouseOver() {
           return setActive(index);
@@ -196,7 +200,11 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
           return setActive(undefined);
         },
         onFocus: function onFocus() {
-          return setActive(index);
+          setActive(index); // when onmousedown fires, the list item is receiving focus
+          // this puts focus back on the List container to meet WCAG
+          // accessibility guidelines that focus remains on `ul`
+
+          listRef.current.focus();
         },
         onBlur: function onBlur() {
           return setActive(undefined);

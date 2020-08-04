@@ -8,17 +8,17 @@ import { Box } from '../Box';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
-import { focusStyle, genericStyles } from '../../utils';
+import { focusStyle, genericStyles, useForwardedRef } from '../../utils';
 var StyledList = styled.ul.withConfig({
   displayName: "List__StyledList",
   componentId: "sc-130gdqg-0"
-})(["list-style:none;", " padding:0;", " ", ""], function (props) {
+})(["list-style:none;", " padding:0;", " &:focus{", "}"], function (props) {
   return !props.margin && 'margin: 0;';
 }, genericStyles, function (props) {
-  return props.onClickItem && "\n    &:focus {\n      " + focusStyle({
+  return props.tabIndex >= 0 && focusStyle({
     forceOutline: true,
     skipSvgChildren: true
-  }) + "\n    }\n  ";
+  });
 });
 var StyledItem = styled(Box).withConfig({
   displayName: "List__StyledItem",
@@ -52,6 +52,7 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       onMore = _ref.onMore,
       rest = _objectWithoutPropertiesLoose(_ref, ["action", "as", "background", "border", "children", "data", "focus", "itemProps", "pad", "primaryKey", "secondaryKey", "step", "onClickItem", "onMore"]);
 
+  var listRef = useForwardedRef(ref);
   var theme = useContext(ThemeContext);
 
   var _useState = useState(),
@@ -73,7 +74,7 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       setActive(active >= 0 ? Math.min(active + 1, data.length - 1) : 0);
     } : undefined
   }, /*#__PURE__*/React.createElement(StyledList, _extends({
-    ref: ref,
+    ref: listRef,
     as: as || 'ul',
     tabIndex: onClickItem ? 0 : undefined
   }, rest), /*#__PURE__*/React.createElement(InfiniteScroll, {
@@ -170,7 +171,10 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
           var adjustedEvent = event;
           adjustedEvent.item = item;
           adjustedEvent.index = index;
-          onClickItem(adjustedEvent);
+          onClickItem(adjustedEvent); // put focus on the List container to meet WCAG
+          // accessibility guidelines that focus remains on `ul`
+
+          listRef.current.focus();
         },
         onMouseOver: function onMouseOver() {
           return setActive(index);
@@ -179,7 +183,11 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
           return setActive(undefined);
         },
         onFocus: function onFocus() {
-          return setActive(index);
+          setActive(index); // when onmousedown fires, the list item is receiving focus
+          // this puts focus back on the List container to meet WCAG
+          // accessibility guidelines that focus remains on `ul`
+
+          listRef.current.focus();
         },
         onBlur: function onBlur() {
           return setActive(undefined);
