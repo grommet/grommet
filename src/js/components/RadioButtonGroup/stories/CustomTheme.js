@@ -21,6 +21,9 @@ const customTheme = deepMerge(grommet, {
       border: {
         color: 'blue',
       },
+      background: {
+        color: 'accent-4',
+      },
     },
     size: '100px', // affects the size of the outer circle
     icon: {

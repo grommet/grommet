@@ -65,16 +65,12 @@ exports[`Form accessibility Box with TextInput in Form should
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c5::-webkit-input-placeholder {
@@ -89,9 +85,18 @@ exports[`Form accessibility Box with TextInput in Form should
   color: #AAAAAA;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
 }
 
 .c4 {
@@ -395,18 +400,14 @@ exports[`Form accessibility FormField with an explicit TextInput child
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c4::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c4::-webkit-input-placeholder {
@@ -421,9 +422,18 @@ exports[`Form accessibility FormField with an explicit TextInput child
   color: #AAAAAA;
 }
 
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c4::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c4:-moz-placeholder,
+.c4::-moz-placeholder {
+  opacity: 1;
 }
 
 .c3 {
@@ -631,18 +641,14 @@ exports[`Form accessibility Select in Form should have no accessibility violatio
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c7::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c7::-webkit-input-placeholder {
@@ -657,9 +663,18 @@ exports[`Form accessibility Select in Form should have no accessibility violatio
   color: #AAAAAA;
 }
 
+.c7::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c7::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c7:-moz-placeholder,
+.c7::-moz-placeholder {
+  opacity: 1;
 }
 
 .c6 {
@@ -801,18 +816,14 @@ exports[`Form accessibility TextInput in Form should have
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c4::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c4::-webkit-input-placeholder {
@@ -827,9 +838,18 @@ exports[`Form accessibility TextInput in Form should have
   color: #AAAAAA;
 }
 
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c4::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c4:-moz-placeholder,
+.c4::-moz-placeholder {
+  opacity: 1;
 }
 
 .c3 {
@@ -956,18 +976,14 @@ exports[`Form uncontrolled errors 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c4::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c4::-webkit-input-placeholder {
@@ -982,9 +998,18 @@ exports[`Form uncontrolled errors 1`] = `
   color: #AAAAAA;
 }
 
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c4::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c4:-moz-placeholder,
+.c4::-moz-placeholder {
+  opacity: 1;
 }
 
 .c3 {
@@ -1104,18 +1129,14 @@ exports[`Form uncontrolled infos 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c4::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c4::-webkit-input-placeholder {
@@ -1130,9 +1151,18 @@ exports[`Form uncontrolled infos 1`] = `
   color: #AAAAAA;
 }
 
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c4::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c4:-moz-placeholder,
+.c4::-moz-placeholder {
+  opacity: 1;
 }
 
 .c3 {
@@ -1384,18 +1414,14 @@ exports[`Form uncontrolled uncontrolled 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c4::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c4::-webkit-input-placeholder {
@@ -1410,9 +1436,18 @@ exports[`Form uncontrolled uncontrolled 1`] = `
   color: #AAAAAA;
 }
 
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c4::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c4:-moz-placeholder,
+.c4::-moz-placeholder {
+  opacity: 1;
 }
 
 .c3 {
@@ -1481,7 +1516,7 @@ exports[`Form uncontrolled uncontrolled 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+            class="StyledTextInput-sc-1x30a0s-0 fVbmbP"
             name="test"
             placeholder="test input"
             value=""
@@ -1515,7 +1550,7 @@ exports[`Form uncontrolled uncontrolled 3`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 jsQcHW"
+            class="StyledTextInput-sc-1x30a0s-0 fVbmbP"
             name="test"
             placeholder="test input"
             value=""
@@ -1615,18 +1650,14 @@ exports[`Form uncontrolled update 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c4::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c4::-webkit-input-placeholder {
@@ -1641,9 +1672,18 @@ exports[`Form uncontrolled update 1`] = `
   color: #AAAAAA;
 }
 
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c4::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c4:-moz-placeholder,
+.c4::-moz-placeholder {
+  opacity: 1;
 }
 
 .c3 {
@@ -1904,18 +1944,14 @@ exports[`Form uncontrolled with field 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c4::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c4::-webkit-input-placeholder {
@@ -1930,9 +1966,18 @@ exports[`Form uncontrolled with field 1`] = `
   color: #AAAAAA;
 }
 
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c4::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c4:-moz-placeholder,
+.c4::-moz-placeholder {
+  opacity: 1;
 }
 
 .c3 {
