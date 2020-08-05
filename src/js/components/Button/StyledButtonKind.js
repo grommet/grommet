@@ -213,12 +213,19 @@ const fillStyle = fillContainer => {
   return undefined;
 };
 
+// The > svg rule is to ensure Buttons with just an icon don't add additional
+// vertical height internally.
+
 const plainStyle = () => css`
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
   color: inherit;
+
+  > svg {
+    vertical-align: bottom;
+  }
 `;
 
 const StyledButtonKind = styled.button`
