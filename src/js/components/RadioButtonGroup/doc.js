@@ -66,6 +66,6 @@ export const themeDoc = {
   'radioButtonGroup.container': {
     description: 'Any valid Box props for the RadioButtonGroup container.',
     type: 'object',
-    defaultValue: "{ align: 'start', pad: 'small' , ...}",
+    defaultValue: '{}',
   },
 };

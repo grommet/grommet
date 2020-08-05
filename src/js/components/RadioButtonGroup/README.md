@@ -97,5 +97,5 @@ Any valid Box props for the RadioButtonGroup container. Expects `object`.
 Defaults to
 
 ```
-{ align: 'start', pad: 'small' , ...}
+{}
 ```
