@@ -17,16 +17,16 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-var Card = function Card(_ref) {
+var Card = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var rest = _extends({}, _ref);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
   return /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
-    overflow: "hidden"
+    overflow: "hidden",
+    ref: ref
   }, theme.card.container, rest));
-};
-
+});
 Card.displayName = 'Card';
 var CardDoc;
 
