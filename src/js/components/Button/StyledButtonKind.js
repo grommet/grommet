@@ -215,7 +215,6 @@ const fillStyle = fillContainer => {
 
 // The > svg rule is to ensure Buttons with just an icon don't add additional
 // vertical height internally.
-
 const plainStyle = () => css`
   outline: none;
   border: none;
