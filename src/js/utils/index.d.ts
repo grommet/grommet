@@ -55,7 +55,6 @@ export type PropsOf<TComponent> = TComponent extends React.ComponentType<
 >
   ? P
   : never;
-
 // Extracting types for common properties among components
 type BoxSideType =
   | 'top'

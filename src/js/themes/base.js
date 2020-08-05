@@ -919,9 +919,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     radioButtonGroup: {
-      container: {
-        // gap: undefined
-      },
+      // container: {
+      // gap: undefined
+      // },
     },
     rangeInput: {
       // extend: undefined
