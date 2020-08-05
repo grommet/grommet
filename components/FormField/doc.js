@@ -12,6 +12,7 @@ var doc = function doc(FormField) {
   DocumentedFormField.propTypes = {
     a11yTitle: _reactDesc.PropTypes.string.description("Custom label to be used by screen readers.\n       Should only be provided if FormField has no children.\n       When a11yTitle is provided an aria-label will be added to the element\n       if it has no children."),
     component: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.func, _reactDesc.PropTypes.object]).description("The component to insert in the FormField. Grommet will add update the\n      form values when this field changes. Any additional properties\n      (such as initial value) you pass to FormField will be forwarded to this\n      component. The component may be custom as long it supports the properties\n      of name, value, onChange (event => {}), while event has either event.value\n      or event.target.value."),
+    contentProps: _reactDesc.PropTypes.object.description("Any valid Box property. These\n     properties are applied to the FormField contents container and will\n     override properties from the theme."),
     disabled: _reactDesc.PropTypes.bool.description('Whether the field should look disabled.'),
     error: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.node]).description("Any error text describing issues with the field's value"),
     help: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.node]).description('Any help text describing how the field works'),

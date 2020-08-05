@@ -113,6 +113,7 @@ var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
   var children = _ref3.children,
       className = _ref3.className,
       component = _ref3.component,
+      contentProps = _ref3.contentProps,
       disabled = _ref3.disabled,
       errorProp = _ref3.error,
       help = _ref3.help,
@@ -127,7 +128,7 @@ var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
       required = _ref3.required,
       style = _ref3.style,
       validate = _ref3.validate,
-      rest = _objectWithoutPropertiesLoose(_ref3, ["children", "className", "component", "disabled", "error", "help", "htmlFor", "info", "label", "margin", "name", "onBlur", "onFocus", "pad", "required", "style", "validate"]);
+      rest = _objectWithoutPropertiesLoose(_ref3, ["children", "className", "component", "contentProps", "disabled", "error", "help", "htmlFor", "info", "label", "margin", "name", "onBlur", "onFocus", "pad", "required", "style", "validate"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
@@ -183,26 +184,22 @@ var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
     }, rest));
   }
 
-  var contentProps = _extends({}, formFieldTheme.content);
+  var themeContentProps = _extends({}, formFieldTheme.content);
 
   if (!pad && !wantContentPad) {
-    contentProps.pad = undefined;
+    themeContentProps.pad = undefined;
   }
 
   if (themeBorder && themeBorder.position === 'inner') {
     if (error && formFieldTheme.error) {
-      contentProps.background = formFieldTheme.error.background;
+      themeContentProps.background = formFieldTheme.error.background;
     } else if (disabled && formFieldTheme.disabled) {
-      contentProps.background = formFieldTheme.disabled.background;
+      themeContentProps.background = formFieldTheme.disabled.background;
     }
-  } // Removing margin from contentProps because margin should be applied
-  // on containing <FormFieldContentBox>
-  // contentProps.margin = undefined;
-  // contents = <Box {...contentProps}>{contents}</Box>;
-
+  }
 
   if (!themeBorder) {
-    contents = /*#__PURE__*/_react["default"].createElement(_Box.Box, contentProps, contents);
+    contents = /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({}, themeContentProps, contentProps), contents);
   }
 
   var borderColor;
@@ -236,9 +233,7 @@ var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
       round: formFieldTheme.round,
       focus: focus
     } : {};
-    contents = /*#__PURE__*/_react["default"].createElement(FormFieldContentBox, _extends({
-      overflow: "hidden"
-    }, contentProps, innerProps), contents);
+    contents = /*#__PURE__*/_react["default"].createElement(FormFieldContentBox, _extends({}, themeContentProps, innerProps, contentProps), contents);
     var mergedMargin = margin || formFieldTheme.margin;
     abut = themeBorder.position === 'outer' && (themeBorder.side === 'all' || themeBorder.side === 'horizontal' || !themeBorder.side) && !(mergedMargin && (typeof mergedMargin === 'string' && mergedMargin !== 'none' || mergedMargin.bottom && mergedMargin.bottom !== 'none' || mergedMargin.horizontal && mergedMargin.horizontal !== 'none'));
 
