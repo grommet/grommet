@@ -545,6 +545,10 @@ exports[`Button kind hover 1`] = `
   color: inherit;
 }
 
+.c1 > svg {
+  vertical-align: bottom;
+}
+
 .c1:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
