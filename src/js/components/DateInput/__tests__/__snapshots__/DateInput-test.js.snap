@@ -447,6 +447,7 @@ exports[`DateInput focus 2`] = `
 }
 
 .c2 {
+  margin: 1px;
   font-size: 18px;
   line-height: 1.45;
   width: 384px;
@@ -1841,6 +1842,7 @@ exports[`DateInput format inline 1`] = `
 }
 
 .c6 {
+  margin: 1px;
   font-size: 18px;
   line-height: 1.45;
   width: 384px;
@@ -3219,6 +3221,7 @@ exports[`DateInput inline 1`] = `
 }
 
 .c1 {
+  margin: 1px;
   font-size: 18px;
   line-height: 1.45;
   width: 384px;
@@ -4740,6 +4743,7 @@ exports[`DateInput range format inline 1`] = `
 }
 
 .c6 {
+  margin: 1px;
   font-size: 18px;
   line-height: 1.45;
   width: 384px;
@@ -6136,6 +6140,7 @@ exports[`DateInput range inline 1`] = `
 }
 
 .c1 {
+  margin: 1px;
   font-size: 18px;
   line-height: 1.45;
   width: 384px;
@@ -7617,6 +7622,7 @@ exports[`DateInput select format 3`] = `
 }
 
 .c2 {
+  margin: 1px;
   font-size: 18px;
   line-height: 1.45;
   width: 384px;
@@ -8710,6 +8716,7 @@ exports[`DateInput select format inline 1`] = `
 }
 
 .c6 {
+  margin: 1px;
   font-size: 18px;
   line-height: 1.45;
   width: 384px;
@@ -9726,7 +9733,7 @@ exports[`DateInput select format inline 2`] = `
       />
     </div>
     <div
-      class="StyledCalendar-sc-1y4xhmp-0 eMLsHu"
+      class="StyledCalendar-sc-1y4xhmp-0 iuPHtj"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 bFwQzJ"
@@ -10664,6 +10671,7 @@ exports[`DateInput select format inline range 1`] = `
 }
 
 .c6 {
+  margin: 1px;
   font-size: 18px;
   line-height: 1.45;
   width: 384px;
@@ -11698,7 +11706,7 @@ exports[`DateInput select format inline range 2`] = `
       />
     </div>
     <div
-      class="StyledCalendar-sc-1y4xhmp-0 eMLsHu"
+      class="StyledCalendar-sc-1y4xhmp-0 iuPHtj"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 bFwQzJ"
@@ -12636,6 +12644,7 @@ exports[`DateInput select inline 1`] = `
 }
 
 .c1 {
+  margin: 1px;
   font-size: 18px;
   line-height: 1.45;
   width: 384px;
@@ -13687,6 +13696,7 @@ exports[`DateInput type format inline 1`] = `
 }
 
 .c6 {
+  margin: 1px;
   font-size: 18px;
   line-height: 1.45;
   width: 384px;
@@ -14703,7 +14713,7 @@ exports[`DateInput type format inline 2`] = `
       />
     </div>
     <div
-      class="StyledCalendar-sc-1y4xhmp-0 eMLsHu"
+      class="StyledCalendar-sc-1y4xhmp-0 iuPHtj"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 bFwQzJ"
