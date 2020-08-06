@@ -994,6 +994,11 @@ export interface ThemeType {
     searchInput?: ReactComponentElement<any>;
     step?: number;
   };
+  skipLinks?: {
+    position?: string;
+    container?: BoxProps;
+    text?: TextProps;
+  };
   tab?: {
     active?: {
       background?: BackgroundType;

@@ -23,7 +23,7 @@ node
 
 Custom messages for SkipLinks. Used for accessibility by screen 
 readers. Defaults to `{
-  "skipTo": "Skip To"
+  "skipTo": "Skip To:"
 }`.
 
 ```

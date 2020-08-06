@@ -85,10 +85,15 @@ export const getBodyChildElements = () => {
   return children;
 };
 
-export const getNewContainer = (rootNode = document.body) => {
+export const getNewContainer = (rootNode = document.body, bodyTarget) => {
   // setup DOM
   const container = document.createElement('div');
-  rootNode.appendChild(container);
+  if (bodyTarget === 'first') {
+    // for SkipLinks
+    rootNode.prepend(container);
+  } else {
+    rootNode.appendChild(container);
+  }
   return container;
 };
 
@@ -131,7 +136,7 @@ export const makeNodeUnfocusable = node => {
     node.setAttribute('aria-hidden', true);
     // prevent children to receive focus
     const elements = node.getElementsByTagName('*');
-    // first, save off the tabindex of any element with one
+    // first, save off the tabIndex of any element with one
     Array.prototype.filter
       .call(elements || [], element => element.getAttribute(TABINDEX) !== null)
       .forEach(element => {
@@ -139,7 +144,7 @@ export const makeNodeUnfocusable = node => {
         element.setAttribute(TABINDEX, -1);
       });
     // then, if any element is inherently focusable and not handled above,
-    // give it a tabindex of -1 so it can't receive focus
+    // give it a tabIndex of -1 so it can't receive focus
     Array.prototype.filter
       .call(elements || [], element => {
         const currentTag = element.tagName.toLowerCase();

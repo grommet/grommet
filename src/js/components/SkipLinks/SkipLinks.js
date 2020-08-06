@@ -1,10 +1,13 @@
-import React, { cloneElement, useRef, useState } from 'react';
+import React, { cloneElement, useContext, useRef, useState } from 'react';
+import { ThemeContext } from 'styled-components';
 
 import { Box } from '../Box';
-import { Heading } from '../Heading';
+import { Text } from '../Text';
 import { Layer } from '../Layer';
+import { defaultProps } from '../../default-props';
 
 const SkipLinks = ({ children, id, messages }) => {
+  const theme = useContext(ThemeContext) || defaultProps.theme;
   const [showLayer, setShowLayer] = useState(false);
 
   const layerRef = useRef(null);
@@ -20,12 +23,11 @@ const SkipLinks = ({ children, id, messages }) => {
   const onBlur = () => {
     // timeout needed so it gives enough time for activeElement to be updated
     setTimeout(() => {
-      const layerNode = layerRef.current;
+      // close the layer in case the activeElement isn't an anchor
       if (
-        layerNode &&
-        layerNode.layerContainer &&
-        layerNode.layerContainer.contains &&
-        !layerNode.layerContainer.contains(document.activeElement)
+        document &&
+        document.activeElement &&
+        document.activeElement.tagName !== 'A'
       ) {
         removeLayer();
       }
@@ -35,29 +37,38 @@ const SkipLinks = ({ children, id, messages }) => {
   return (
     <Layer
       id={id}
-      position={showLayer ? 'top' : 'hidden'}
+      position={showLayer ? theme.skipLinks.position : 'hidden'}
       ref={layerRef}
       onFocus={onFocus}
       onBlur={onBlur}
+      tabIndex={0}
+      modal={false}
+      bodyTarget="first" // prepend the Layer on the body container
+      // modal={false} will take the full screen a small breakpoint
+      responsive={false}
     >
-      <Box pad={{ horizontal: 'medium' }}>
-        <Heading level={2}>{messages.skipTo}:</Heading>
-        <Box direction="row" align="center" pad={{ bottom: 'medium' }}>
-          {children.map((element, index) =>
-            cloneElement(element, {
-              key: `skip-link-${index}`,
-              onClick: removeLayer,
-            }),
+      {showLayer && (
+        <Box {...theme.skipLinks.container}>
+          {messages.skipTo && (
+            <Text {...theme.skipLinks.text}>{messages.skipTo}</Text>
           )}
+          <Box align="center">
+            {children.map((element, index) =>
+              cloneElement(element, {
+                key: `skip-link-${index}`,
+                onClick: removeLayer,
+              }),
+            )}
+          </Box>
         </Box>
-      </Box>
+      )}
     </Layer>
   );
 };
 
 SkipLinks.defaultProps = {
   messages: {
-    skipTo: 'Skip To',
+    skipTo: 'Skip To:',
   },
 };
 
