@@ -39,6 +39,7 @@ exports[`FormField abut 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow: hidden;
 }
 
 @media only screen and (max-width:768px) {
@@ -107,6 +108,7 @@ exports[`FormField abut with margin 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow: hidden;
 }
 
 @media only screen and (max-width:768px) {
@@ -133,148 +135,6 @@ exports[`FormField abut with margin 1`] = `
       className="c2 "
     />
   </div>
-</div>
-`;
-
-exports[`FormField contentProps 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  margin-bottom: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c2 {
-  margin-left: 12px;
-  margin-right: 12px;
-  margin-top: 6px;
-  margin-bottom: 6px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c5 {
-  box-sizing: border-box;
-  font-size: inherit;
-  font-family: inherit;
-  border: none;
-  -webkit-appearance: none;
-  background: transparent;
-  color: inherit;
-  width: 100%;
-  padding: 11px;
-  font-weight: 600;
-  margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
-  outline: none;
-  border: none;
-}
-
-.c5::-webkit-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c5::-moz-placeholder {
-  color: #AAAAAA;
-}
-
-.c5:-ms-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c5::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-.c5::-moz-focus-inner {
-  border: none;
-  outline: none;
-}
-
-.c5:-moz-placeholder,
-.c5::-moz-placeholder {
-  opacity: 1;
-}
-
-.c4 {
-  position: relative;
-  width: 100%;
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin-bottom: 6px;
-  }
-}
-
-<div
-  className="c0"
->
-  <form
-    onReset={[Function]}
-    onSubmit={[Function]}
-  >
-    <div
-      className="c1 "
-      onBlur={[Function]}
-      onFocus={[Function]}
-    >
-      <label
-        className="c2"
-      >
-        label
-      </label>
-      <div
-        className="c3 "
-      >
-        <div
-          className="c4"
-        >
-          <input
-            autoComplete="off"
-            className="c5"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-          />
-        </div>
-      </div>
-    </div>
-  </form>
 </div>
 `;
 
@@ -317,6 +177,7 @@ exports[`FormField custom formfield 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .c2 {
@@ -391,6 +252,7 @@ exports[`FormField custom input margin 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .c2 {
@@ -547,6 +409,7 @@ exports[`FormField custom label 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .c2 {
@@ -695,6 +558,7 @@ exports[`FormField default 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .c4 {
@@ -836,6 +700,7 @@ exports[`FormField disabled 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .c4 {
@@ -986,6 +851,7 @@ exports[`FormField disabled with custom label 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .c2 {
@@ -1137,6 +1003,7 @@ exports[`FormField empty margin 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow: hidden;
 }
 
 @media only screen and (max-width:768px) {
@@ -1205,6 +1072,7 @@ exports[`FormField error 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .c3 {
@@ -1288,6 +1156,7 @@ exports[`FormField help 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .c2 {
@@ -1368,6 +1237,7 @@ exports[`FormField htmlFor 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow: hidden;
 }
 
 @media only screen and (max-width:768px) {
@@ -1436,6 +1306,7 @@ exports[`FormField info 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .c3 {
@@ -1519,6 +1390,7 @@ exports[`FormField label 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .c2 {
@@ -1601,6 +1473,7 @@ exports[`FormField margin 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow: hidden;
 }
 
 @media only screen and (max-width:768px) {
@@ -1670,6 +1543,7 @@ exports[`FormField pad 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
+  overflow: hidden;
 }
 
 @media only screen and (max-width:768px) {
@@ -1893,6 +1767,7 @@ exports[`FormField required 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .c4 {
@@ -2038,6 +1913,7 @@ exports[`FormField should have no accessibility violations 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow: hidden;
 }
 
 @media only screen and (max-width:768px) {

@@ -90,7 +90,6 @@ const FormField = forwardRef(
       children,
       className,
       component,
-      contentProps,
       disabled, // pass through in renderInput()
       error: errorProp,
       help,
@@ -180,26 +179,26 @@ const FormField = forwardRef(
       );
     }
 
-    const themeContentProps = { ...formFieldTheme.content };
+    const contentProps = { ...formFieldTheme.content };
 
     if (!pad && !wantContentPad) {
-      themeContentProps.pad = undefined;
+      contentProps.pad = undefined;
     }
 
     if (themeBorder && themeBorder.position === 'inner') {
       if (error && formFieldTheme.error) {
-        themeContentProps.background = formFieldTheme.error.background;
+        contentProps.background = formFieldTheme.error.background;
       } else if (disabled && formFieldTheme.disabled) {
-        themeContentProps.background = formFieldTheme.disabled.background;
+        contentProps.background = formFieldTheme.disabled.background;
       }
     }
+    // Removing margin from contentProps because margin should be applied
+    // on containing <FormFieldContentBox>
+    // contentProps.margin = undefined;
+    // contents = <Box {...contentProps}>{contents}</Box>;
 
     if (!themeBorder) {
-      contents = (
-        <Box {...themeContentProps} {...contentProps}>
-          {contents}
-        </Box>
-      );
+      contents = <Box {...contentProps}>{contents}</Box>;
     }
 
     let borderColor;
@@ -251,9 +250,9 @@ const FormField = forwardRef(
           : {};
       contents = (
         <FormFieldContentBox
-          {...themeContentProps}
-          {...innerProps}
+          overflow="hidden"
           {...contentProps}
+          {...innerProps}
         >
           {contents}
         </FormFieldContentBox>

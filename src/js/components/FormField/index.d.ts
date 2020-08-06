@@ -1,9 +1,7 @@
-import * as React from 'react';
-import { Omit, PlaceHolderType, MarginType } from '../../utils';
-import { BoxProps } from '../Box';
+import * as React from "react";
+import { Omit, PlaceHolderType, MarginType } from "../../utils";
 
 export interface FormFieldProps {
-  contentProps?: BoxProps;
   disabled?: boolean;
   error?: string | React.ReactNode;
   help?: string | React.ReactNode;
@@ -15,27 +13,12 @@ export interface FormFieldProps {
   options?: string[];
   pad?: boolean;
   // Although Placeholder is not a prop within FormField we Omit the HTML placeholder attribute and replaced with following.
-  placeholder?: PlaceHolderType;
+  placeholder?: PlaceHolderType
   required?: boolean;
   component?: any;
-  validate?:
-    | {
-        regexp?: object;
-        message?: string | React.ReactNode;
-        status?: 'error' | 'info';
-      }
-    | ((...args: any[]) => any)
-    | (
-        | {
-            regexp?: object;
-            message?: string | React.ReactNode;
-            status?: 'error' | 'info';
-          }
-        | ((...args: any[]) => any)
-      )[];
+  validate?: {regexp?: object,message?: string|React.ReactNode, status?: 'error' | 'info'} | ((...args: any[]) => any) | ({regexp?: object,message?: string|React.ReactNode, status?: 'error' | 'info'} | ((...args: any[]) => any))[];
 }
 
-declare const FormField: React.ComponentClass<FormFieldProps &
-  Omit<JSX.IntrinsicElements['input'], 'placeholder'>>;
+declare const FormField: React.ComponentClass<FormFieldProps & Omit<JSX.IntrinsicElements['input'], 'placeholder'>>;
 
 export { FormField };

@@ -38,16 +38,6 @@ function
 object
 ```
 
-**contentProps**
-
-Any valid Box property. These
-     properties are applied to the FormField contents container and will
-     override properties from the theme.
-
-```
-object
-```
-
 **disabled**
 
 Whether the field should look disabled.
