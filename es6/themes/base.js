@@ -990,6 +990,8 @@ export var generate = function generate(baseSpacing, scale) {
       font: {// weight: undefined,
       }
     },
+    radioButtonGroup: {// container: {}, // any box props
+    },
     rangeInput: {
       // extend: undefined
       track: {

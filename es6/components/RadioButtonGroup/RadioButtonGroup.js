@@ -3,22 +3,25 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 import React, { forwardRef, useContext, useEffect, useMemo, useRef, useState } from 'react';
-import { Box } from '../Box';
+import { ThemeContext } from 'styled-components';
 import { FormContext } from '../Form/FormContext';
+import { defaultProps } from '../../default-props';
 import { Keyboard } from '../Keyboard';
+import { Box } from '../Box';
 import { RadioButton } from '../RadioButton';
 var RadioButtonGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var children = _ref.children,
       disabled = _ref.disabled,
-      _ref$gap = _ref.gap,
-      gap = _ref$gap === void 0 ? 'small' : _ref$gap,
       name = _ref.name,
       _onChange = _ref.onChange,
       optionsProp = _ref.options,
       valueProp = _ref.value,
-      rest = _objectWithoutPropertiesLoose(_ref, ["children", "disabled", "gap", "name", "onChange", "options", "value"]);
+      _ref$gap = _ref.gap,
+      gap = _ref$gap === void 0 ? 'small' : _ref$gap,
+      rest = _objectWithoutPropertiesLoose(_ref, ["children", "disabled", "name", "onChange", "options", "value", "gap"]);
 
-  var formContext = useContext(FormContext); // normalize options to always use an object
+  var formContext = useContext(FormContext);
+  var theme = useContext(ThemeContext) || defaultProps.theme; // normalize options to always use an object
 
   var options = useMemo(function () {
     return optionsProp.map(function (o) {
@@ -107,7 +110,7 @@ var RadioButtonGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, /*#__PURE__*/React.createElement(Box, _extends({
     ref: ref,
     gap: gap
-  }, rest), options.map(function (_ref2, index) {
+  }, theme.radioButtonGroup.container, rest), options.map(function (_ref2, index) {
     var optionDisabled = _ref2.disabled,
         id = _ref2.id,
         label = _ref2.label,

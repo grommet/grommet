@@ -17,3 +17,10 @@ export var doc = function doc(RadioButtonGroup) {
   };
   return DocumentedRadioButtonGroup;
 };
+export var themeDoc = {
+  'radioButtonGroup.container': {
+    description: 'Any valid Box props for the RadioButtonGroup container.',
+    type: 'object',
+    defaultValue: 'undefined'
+  }
+};

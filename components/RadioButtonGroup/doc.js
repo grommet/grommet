@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.doc = void 0;
+exports.themeDoc = exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
@@ -26,3 +26,11 @@ var doc = function doc(RadioButtonGroup) {
 };
 
 exports.doc = doc;
+var themeDoc = {
+  'radioButtonGroup.container': {
+    description: 'Any valid Box props for the RadioButtonGroup container.',
+    type: 'object',
+    defaultValue: 'undefined'
+  }
+};
+exports.themeDoc = themeDoc;

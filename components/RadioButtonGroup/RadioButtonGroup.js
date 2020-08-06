@@ -5,11 +5,15 @@ exports.RadioButtonGroup = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _Box = require("../Box");
+var _styledComponents = require("styled-components");
 
 var _FormContext = require("../Form/FormContext");
 
+var _defaultProps = require("../../default-props");
+
 var _Keyboard = require("../Keyboard");
+
+var _Box = require("../Box");
 
 var _RadioButton = require("../RadioButton");
 
@@ -24,15 +28,18 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 var RadioButtonGroup = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var children = _ref.children,
       disabled = _ref.disabled,
-      _ref$gap = _ref.gap,
-      gap = _ref$gap === void 0 ? 'small' : _ref$gap,
       name = _ref.name,
       _onChange = _ref.onChange,
       optionsProp = _ref.options,
       valueProp = _ref.value,
-      rest = _objectWithoutPropertiesLoose(_ref, ["children", "disabled", "gap", "name", "onChange", "options", "value"]);
+      _ref$gap = _ref.gap,
+      gap = _ref$gap === void 0 ? 'small' : _ref$gap,
+      rest = _objectWithoutPropertiesLoose(_ref, ["children", "disabled", "name", "onChange", "options", "value", "gap"]);
 
-  var formContext = (0, _react.useContext)(_FormContext.FormContext); // normalize options to always use an object
+  var formContext = (0, _react.useContext)(_FormContext.FormContext);
+
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme; // normalize options to always use an object
+
 
   var options = (0, _react.useMemo)(function () {
     return optionsProp.map(function (o) {
@@ -123,7 +130,7 @@ var RadioButtonGroup = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) 
   }, /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
     ref: ref,
     gap: gap
-  }, rest), options.map(function (_ref2, index) {
+  }, theme.radioButtonGroup.container, rest), options.map(function (_ref2, index) {
     var optionDisabled = _ref2.disabled,
         id = _ref2.id,
         label = _ref2.label,
