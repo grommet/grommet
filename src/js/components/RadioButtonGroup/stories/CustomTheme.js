@@ -9,7 +9,6 @@ const customTheme = deepMerge(grommet, {
   radioButtonGroup: {
     container: {
       gap: 'xlarge',
-      animation: 'fadeIn',
     },
   },
   radioButton: {

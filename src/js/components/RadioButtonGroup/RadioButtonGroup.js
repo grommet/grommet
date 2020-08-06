@@ -23,6 +23,7 @@ const RadioButtonGroup = forwardRef(
       onChange,
       options: optionsProp,
       value: valueProp,
+      gap = 'small',
       ...rest
     },
     ref,
@@ -102,7 +103,12 @@ const RadioButtonGroup = forwardRef(
         onLeft={focus ? onPrevious : undefined}
         onRight={focus ? onNext : undefined}
       >
-        <Box ref={ref} {...theme.radioButtonGroup.container} {...rest}>
+        <Box
+          ref={ref}
+          gap={gap}
+          {...theme.radioButtonGroup.container}
+          {...rest}
+        >
           {options.map(
             (
               {
