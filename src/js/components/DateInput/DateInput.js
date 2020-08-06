@@ -65,6 +65,7 @@ const DateInput = forwardRef(
 
     const calendar = (
       <Calendar
+        margin="hair"
         ref={inline ? ref : undefined}
         id={inline && !format ? id : undefined}
         range={range}
