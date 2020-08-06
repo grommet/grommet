@@ -76,12 +76,15 @@ const FormField = forwardRef(
       prefix,
       labelWidth = 0,
       width = 'auto',
+      showBorder = true,
       ...rest
     },
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const context = useContext(FormContext);
+    
+    console.log(showBorder);
 
     useEffect(() => {
       if (context && context.addValidation) {
@@ -308,7 +311,7 @@ const FormField = forwardRef(
             }
           : {};
       contents = (
-        <FormFieldContentBox overflow="hidden" {...innerProps}>
+        <FormFieldContentBox overflow="hidden" {...(showBorder && innerProps)}>
           {contents}
         </FormFieldContentBox>
       );
