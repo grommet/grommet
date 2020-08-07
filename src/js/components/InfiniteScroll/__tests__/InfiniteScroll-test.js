@@ -4,6 +4,7 @@ import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
 import { InfiniteScroll } from '..';
+import { Box } from '../..';
 
 describe('InfiniteScroll', () => {
   const items = [];
@@ -74,5 +75,38 @@ describe('InfiniteScroll', () => {
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('length when step < array', () => {
+    const allItems = Array(1000)
+      .fill()
+      .map((_, i) => `item ${i + 1}`);
+    const step = 50;
+    const { container } = render(
+      <Grommet>
+        <InfiniteScroll
+          items={allItems}
+          // show={117}
+          step={step}
+        >
+          {item => <Box key={item}>{item}</Box>}
+        </InfiniteScroll>
+      </Grommet>,
+    );
+    expect(container.firstChild.children.length).toEqual(step + 1);
+  });
+
+  test('length when step > array', () => {
+    const allItems = Array(1000)
+      .fill()
+      .map((_, i) => `item ${i + 1}`);
+    const { container } = render(
+      <Grommet>
+        <InfiniteScroll items={allItems} step={allItems.length + 1}>
+          {item => <Box key={item}>{item}</Box>}
+        </InfiniteScroll>
+      </Grommet>,
+    );
+    expect(container.firstChild.children.length).toEqual(allItems.length);
   });
 });
