@@ -7,9 +7,11 @@ import React, {
   useState,
 } from 'react';
 
-import { Box } from '../Box';
+import { ThemeContext } from 'styled-components';
 import { FormContext } from '../Form/FormContext';
+import { defaultProps } from '../../default-props';
 import { Keyboard } from '../Keyboard';
+import { Box } from '../Box';
 import { RadioButton } from '../RadioButton';
 
 const RadioButtonGroup = forwardRef(
@@ -17,16 +19,17 @@ const RadioButtonGroup = forwardRef(
     {
       children,
       disabled,
-      gap = 'small',
       name,
       onChange,
       options: optionsProp,
       value: valueProp,
+      gap = 'small',
       ...rest
     },
     ref,
   ) => {
     const formContext = useContext(FormContext);
+    const theme = useContext(ThemeContext) || defaultProps.theme;
 
     // normalize options to always use an object
     const options = useMemo(
@@ -92,7 +95,6 @@ const RadioButtonGroup = forwardRef(
     };
 
     const onBlur = () => focus && setFocus(false);
-
     return (
       <Keyboard
         target="document"
@@ -101,7 +103,12 @@ const RadioButtonGroup = forwardRef(
         onLeft={focus ? onPrevious : undefined}
         onRight={focus ? onNext : undefined}
       >
-        <Box ref={ref} gap={gap} {...rest}>
+        <Box
+          ref={ref}
+          gap={gap}
+          {...theme.radioButtonGroup.container}
+          {...rest}
+        >
           {options.map(
             (
               {
