@@ -28,9 +28,11 @@ const customTheme = deepMerge(grommet, {
     },
     pad: 'small',
     margin: 'none',
-    extend: ({ theme }) => css`
-      border-top-left-radius: ${theme.global.control.border.radius};
-      border-top-right-radius: ${theme.global.control.border.radius};
+    extend: () => css`
+      border-top-left-radius: '4px';
+      /* or theme.global.control.border.radius */
+      border-top-right-radius: '4px';
+      /* or theme.global.control.border.radius */
       font-weight: bold;
     `,
   },
