@@ -17,9 +17,9 @@ import { RadioButtonGroup } from '../RadioButtonGroup';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
-import { Drop } from '../Drop';
-import { Button } from '../Button';
-import { Tooltip } from '../Tooltip';
+// import { Drop } from '../Drop';
+// import { Button } from '../Button';
+// import { Tooltip } from '../Tooltip';
 
 const mnetInputNames = ['TextInput', 'Select', 'MaskedInput', 'TextArea'];
 const mnetInputPadNames = [
@@ -76,13 +76,14 @@ const FormField = forwardRef(
       prefix,
       labelWidth = 0,
       width = 'auto',
+      showBorder = true,
       ...rest
     },
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const context = useContext(FormContext);
-
+    
     useEffect(() => {
       if (context && context.addValidation) {
         const { addValidation, messages, removeValidation } = context;
@@ -308,7 +309,7 @@ const FormField = forwardRef(
             }
           : {};
       contents = (
-        <FormFieldContentBox overflow="hidden" {...innerProps}>
+        <FormFieldContentBox overflow="hidden" {...(showBorder && innerProps)}>
           {contents}
         </FormFieldContentBox>
       );

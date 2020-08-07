@@ -35,7 +35,7 @@ const StyledRadioButtonInput = styled.input`
   -moz-appearance: none;
   width: 0;
   height: 0;
-  margin: 0;
+  margin: 0 !important;
   ${props => !props.disabled && 'cursor: pointer;'};
 `;
 
