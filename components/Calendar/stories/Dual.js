@@ -14,10 +14,6 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-var now = new Date();
-var next = new Date(now);
-next.setMonth(now.getMonth() + 1, 1);
-
 var DualCalendar = function DualCalendar() {
   var _useState = (0, _react.useState)(),
       date = _useState[0],
@@ -27,11 +23,11 @@ var DualCalendar = function DualCalendar() {
       dates = _useState2[0],
       setDates = _useState2[1];
 
-  var _useState3 = (0, _react.useState)(now),
+  var _useState3 = (0, _react.useState)('2020-08-07T15:13:47.290Z'),
       reference1 = _useState3[0],
       setReference1 = _useState3[1];
 
-  var _useState4 = (0, _react.useState)(next),
+  var _useState4 = (0, _react.useState)('2020-09-01T15:15:34.916Z'),
       reference2 = _useState4[0],
       setReference2 = _useState4[1];
 
@@ -59,10 +55,12 @@ var DualCalendar = function DualCalendar() {
     date: date,
     dates: dates,
     onSelect: onSelect,
-    reference: reference1.toISOString(),
+    reference: reference1,
     onReference: function onReference(reference) {
       var refDate = new Date(reference);
       var nextDate = new Date(refDate);
+      console.log(refDate);
+      console.log(nextDate);
       nextDate.setMonth(refDate.getMonth() + 1, 1);
       setReference1(refDate);
       setReference2(nextDate);
@@ -95,7 +93,7 @@ var DualCalendar = function DualCalendar() {
     dates: dates,
     range: true,
     onSelect: onSelect,
-    reference: reference2.toISOString(),
+    reference: reference2,
     onReference: function onReference(reference) {
       var refDate = new Date(reference);
       var priorDate = new Date(refDate);

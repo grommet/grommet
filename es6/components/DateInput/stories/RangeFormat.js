@@ -2,16 +2,13 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Grommet, Box, DateInput } from 'grommet';
 import { grommet } from 'grommet/themes';
-var now = new Date();
-var lastWeek = new Date(now);
-lastWeek.setDate(lastWeek.getDate() - 7);
 var dateFormat = new Intl.DateTimeFormat(undefined, {
   month: 'short',
   day: 'numeric'
 });
 
 var Example = function Example() {
-  var _React$useState = React.useState([lastWeek.toISOString(), now.toISOString()]),
+  var _React$useState = React.useState(['2020-07-31T15:24:26.256Z', '2020-08-07T15:24:26.256Z']),
       value = _React$useState[0],
       setValue = _React$useState[1];
 

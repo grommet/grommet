@@ -5,9 +5,6 @@ import { grommet } from 'grommet/themes';
 import { Blank } from "grommet-icons/es6/icons/Blank";
 import { Previous } from "grommet-icons/es6/icons/Previous";
 import { Next } from "grommet-icons/es6/icons/Next";
-var now = new Date();
-var next = new Date(now);
-next.setMonth(now.getMonth() + 1, 1);
 
 var DualCalendar = function DualCalendar() {
   var _useState = useState(),
@@ -18,11 +15,11 @@ var DualCalendar = function DualCalendar() {
       dates = _useState2[0],
       setDates = _useState2[1];
 
-  var _useState3 = useState(now),
+  var _useState3 = useState('2020-08-07T15:13:47.290Z'),
       reference1 = _useState3[0],
       setReference1 = _useState3[1];
 
-  var _useState4 = useState(next),
+  var _useState4 = useState('2020-09-01T15:15:34.916Z'),
       reference2 = _useState4[0],
       setReference2 = _useState4[1];
 
@@ -50,10 +47,12 @@ var DualCalendar = function DualCalendar() {
     date: date,
     dates: dates,
     onSelect: onSelect,
-    reference: reference1.toISOString(),
+    reference: reference1,
     onReference: function onReference(reference) {
       var refDate = new Date(reference);
       var nextDate = new Date(refDate);
+      console.log(refDate);
+      console.log(nextDate);
       nextDate.setMonth(refDate.getMonth() + 1, 1);
       setReference1(refDate);
       setReference2(nextDate);
@@ -86,7 +85,7 @@ var DualCalendar = function DualCalendar() {
     dates: dates,
     range: true,
     onSelect: onSelect,
-    reference: reference2.toISOString(),
+    reference: reference2,
     onReference: function onReference(reference) {
       var refDate = new Date(reference);
       var priorDate = new Date(refDate);

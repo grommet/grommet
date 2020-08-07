@@ -10,16 +10,13 @@ var _themes = require("grommet/themes");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var now = new Date();
-var lastWeek = new Date(now);
-lastWeek.setDate(lastWeek.getDate() - 7);
 var dateFormat = new Intl.DateTimeFormat(undefined, {
   month: 'short',
   day: 'numeric'
 });
 
 var Example = function Example() {
-  var _React$useState = _react["default"].useState([lastWeek.toISOString(), now.toISOString()]),
+  var _React$useState = _react["default"].useState(['2020-07-31T15:24:26.256Z', '2020-08-07T15:24:26.256Z']),
       value = _React$useState[0],
       setValue = _React$useState[1];
 
