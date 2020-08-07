@@ -31,6 +31,19 @@ test('renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('accepts ref', () => {
+  const ref = React.createRef();
+  const component = renderer.create(
+    <Grommet>
+      <Text ref={ref}>text</Text>
+    </Grommet>,
+    { createNodeMock: el => el },
+  );
+  expect(ref.current).not.toBeNull();
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 test('renders size', () => {
   const component = renderer.create(
     <Grommet>

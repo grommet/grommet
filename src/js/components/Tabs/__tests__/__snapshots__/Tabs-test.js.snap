@@ -2291,6 +2291,10 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
   color: inherit;
 }
 
+.c3 > svg {
+  vertical-align: bottom;
+}
+
 .c7 {
   display: inline-block;
   box-sizing: border-box;
@@ -2309,6 +2313,10 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
   color: inherit;
   opacity: 0.3;
   cursor: default;
+}
+
+.c7 > svg {
+  vertical-align: bottom;
 }
 
 .c6 {
