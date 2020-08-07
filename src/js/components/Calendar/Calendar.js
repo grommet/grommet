@@ -302,7 +302,7 @@ const Calendar = forwardRef(
           : theme.calendar.icons.next;
 
       return (
-        <Box direction="row" justify="between" align="center">
+        <Box pad="hair" direction="row" justify="between" align="center">
           <Box flex pad={{ horizontal: headingPadMap[size] || 'small' }}>
             <Heading
               level={

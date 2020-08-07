@@ -69,6 +69,7 @@ exports[`Calendar change months 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  padding: 1px;
 }
 
 .c4 {
@@ -257,6 +258,12 @@ exports[`Calendar change months 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 1px;
+  }
 }
 
 @media only screen and (max-width:768px) {
@@ -1528,7 +1535,7 @@ exports[`Calendar change months 2`] = `
       class="StyledBox-sc-13pk1d4-0 bFwQzJ"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 VvbUh"
+        class="StyledBox-sc-13pk1d4-0 fpgrDx"
       >
         <div
           class="StyledBox-sc-13pk1d4-0 ecbFEh"
@@ -2824,6 +2831,7 @@ exports[`Calendar date 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  padding: 1px;
 }
 
 .c4 {
@@ -3009,6 +3017,12 @@ exports[`Calendar date 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 1px;
+  }
 }
 
 @media only screen and (max-width:768px) {
@@ -4100,6 +4114,7 @@ exports[`Calendar dates 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  padding: 1px;
 }
 
 .c4 {
@@ -4285,6 +4300,12 @@ exports[`Calendar dates 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 1px;
+  }
 }
 
 @media only screen and (max-width:768px) {
@@ -5376,6 +5397,7 @@ exports[`Calendar daysOfWeek 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  padding: 1px;
 }
 
 .c4 {
@@ -5561,6 +5583,12 @@ exports[`Calendar daysOfWeek 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 1px;
+  }
 }
 
 @media only screen and (max-width:768px) {
@@ -6719,6 +6747,7 @@ exports[`Calendar disabled 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  padding: 1px;
 }
 
 .c4 {
@@ -6884,6 +6913,12 @@ exports[`Calendar disabled 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 1px;
+  }
 }
 
 @media only screen and (max-width:768px) {
@@ -7975,6 +8010,7 @@ exports[`Calendar first day sunday week monday 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  padding: 1px;
 }
 
 .c4 {
@@ -8160,6 +8196,12 @@ exports[`Calendar first day sunday week monday 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 1px;
+  }
 }
 
 @media only screen and (max-width:768px) {
@@ -9025,6 +9067,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  padding: 1px;
 }
 
 .c4 {
@@ -9210,6 +9253,12 @@ exports[`Calendar firstDayOfWeek 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 1px;
+  }
 }
 
 @media only screen and (max-width:768px) {
@@ -12543,6 +12592,7 @@ exports[`Calendar reference 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  padding: 1px;
 }
 
 .c4 {
@@ -12708,6 +12758,12 @@ exports[`Calendar reference 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 1px;
+  }
 }
 
 @media only screen and (max-width:768px) {
@@ -13799,6 +13855,7 @@ exports[`Calendar select date 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  padding: 1px;
 }
 
 .c4 {
@@ -13984,6 +14041,12 @@ exports[`Calendar select date 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 1px;
+  }
 }
 
 @media only screen and (max-width:768px) {
@@ -14791,7 +14854,7 @@ exports[`Calendar select date 2`] = `
       class="StyledBox-sc-13pk1d4-0 bFwQzJ"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 VvbUh"
+        class="StyledBox-sc-13pk1d4-0 fpgrDx"
       >
         <div
           class="StyledBox-sc-13pk1d4-0 ecbFEh"
@@ -15623,6 +15686,7 @@ exports[`Calendar select dates 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  padding: 1px;
 }
 
 .c4 {
@@ -15808,6 +15872,12 @@ exports[`Calendar select dates 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 1px;
+  }
 }
 
 @media only screen and (max-width:768px) {
@@ -16615,7 +16685,7 @@ exports[`Calendar select dates 2`] = `
       class="StyledBox-sc-13pk1d4-0 bFwQzJ"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 VvbUh"
+        class="StyledBox-sc-13pk1d4-0 fpgrDx"
       >
         <div
           class="StyledBox-sc-13pk1d4-0 ecbFEh"
@@ -17481,6 +17551,7 @@ exports[`Calendar size 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  padding: 1px;
 }
 
 .c4 {
@@ -17852,6 +17923,12 @@ exports[`Calendar size 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 1px;
+  }
 }
 
 @media only screen and (max-width:768px) {
