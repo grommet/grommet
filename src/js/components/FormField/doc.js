@@ -34,6 +34,9 @@ export const doc = FormField => {
       of name, value, onChange (event => {}), while event has either event.value
       or event.target.value.`,
     ),
+    contentProps: PropTypes.object.description(`Any valid Box property. These
+     properties are applied to the FormField contents container and will
+     override properties from the theme.`),
     disabled: PropTypes.bool.description(
       'Whether the field should look disabled.',
     ),

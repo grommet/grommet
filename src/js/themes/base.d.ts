@@ -940,6 +940,9 @@ export interface ThemeType {
       weight?: number | string;
     };
   };
+  radioButtonGroup?: {
+    container?: BoxProps;
+  };
   rangeInput?: {
     track?: {
       height?: string;

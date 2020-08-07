@@ -5,7 +5,7 @@ import { Box } from '../Box';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
-import { focusStyle, genericStyles } from '../../utils';
+import { focusStyle, genericStyles, useForwardedRef } from '../../utils';
 
 const StyledList = styled.ul`
   list-style: none;
@@ -13,13 +13,11 @@ const StyledList = styled.ul`
   padding: 0;
   ${genericStyles}
 
-  ${props =>
-    props.onClickItem &&
-    `
-    &:focus {
-      ${focusStyle({ forceOutline: true, skipSvgChildren: true })}
-    }
-  `}
+  &:focus {
+    ${props =>
+      props.tabIndex >= 0 &&
+      focusStyle({ forceOutline: true, skipSvgChildren: true })}
+  }
 `;
 
 const StyledItem = styled(Box)`
@@ -54,6 +52,7 @@ const List = React.forwardRef(
     },
     ref,
   ) => {
+    const listRef = useForwardedRef(ref);
     const theme = useContext(ThemeContext);
     const [active, setActive] = useState();
 
@@ -88,7 +87,7 @@ const List = React.forwardRef(
         }
       >
         <StyledList
-          ref={ref}
+          ref={listRef}
           as={as || 'ul'}
           tabIndex={onClickItem ? 0 : undefined}
           {...rest}
@@ -192,10 +191,19 @@ const List = React.forwardRef(
                     adjustedEvent.item = item;
                     adjustedEvent.index = index;
                     onClickItem(adjustedEvent);
+                    // put focus on the List container to meet WCAG
+                    // accessibility guidelines that focus remains on `ul`
+                    listRef.current.focus();
                   },
                   onMouseOver: () => setActive(index),
                   onMouseOut: () => setActive(undefined),
-                  onFocus: () => setActive(index),
+                  onFocus: () => {
+                    setActive(index);
+                    // when onmousedown fires, the list item is receiving focus
+                    // this puts focus back on the List container to meet WCAG
+                    // accessibility guidelines that focus remains on `ul`
+                    listRef.current.focus();
+                  },
                   onBlur: () => setActive(undefined),
                 };
               }
