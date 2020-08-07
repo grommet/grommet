@@ -257,3 +257,14 @@ Defaults to
 ```
 undefined
 ```
+
+**radioButton.container.extend**
+
+Any additional style for the container around 
+    the RadioButton. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```

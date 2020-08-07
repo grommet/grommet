@@ -135,4 +135,9 @@ export const themeDoc = {
     description: 'The size of the icon in the RadioButton.',
     type: 'string',
   },
+  'radioButton.container.extend': {
+    description: `Any additional style for the container around 
+    the RadioButton.`,
+    type: 'string | (props) => {}',
+  },
 };
