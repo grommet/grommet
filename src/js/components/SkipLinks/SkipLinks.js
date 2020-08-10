@@ -43,8 +43,9 @@ const SkipLinks = ({ children, id, messages }) => {
       onBlur={onBlur}
       tabIndex={0}
       modal={false}
-      bodyTarget="first" // prepend the Layer on the body container
-      // modal={false} will take the full screen a small breakpoint
+      targetChildPosition="first" // prepend the Layer on the body container
+      // Non-modal Layer's will take the full screen at small breakpoints 
+      // by default, which isn't what we want
       responsive={false}
     >
       {showLayer && (

@@ -85,10 +85,13 @@ export const getBodyChildElements = () => {
   return children;
 };
 
-export const getNewContainer = (rootNode = document.body, bodyTarget) => {
+export const getNewContainer = (
+  rootNode = document.body,
+  targetChildPosition,
+) => {
   // setup DOM
   const container = document.createElement('div');
-  if (bodyTarget === 'first') {
+  if (targetChildPosition === 'first') {
     // for SkipLinks
     rootNode.prepend(container);
   } else {
