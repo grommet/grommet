@@ -41,7 +41,7 @@ exports[`InfiniteScroll basic 1`] = `
 </div>
 `;
 
-exports[`InfiniteScroll renderMarker 1`] = `
+exports[`InfiniteScroll mixed items 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -52,6 +52,39 @@ exports[`InfiniteScroll renderMarker 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+<div
+  class="c0"
+>
+  <div>
+    1
+  </div>
+  <div>
+    Hello World
+  </div>
+  <div>
+    <img
+      aria-label="Gremlin"
+      class=""
+      src="https://v2.grommet.io/img/stak-hurrah.svg"
+    />
+  </div>
+  <div>
+    99
+  </div>
+  <div>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+      sed do eiusmod temporincididunt ut labore et dolore magna
+      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      Duis aute irure dolor in reprehenderit in voluptate velit
+      esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+      occaecat cupidatat non proident, sunt in culpa qui officia 
+      deserunt mollit anim id est laborum.
+  </div>
+</div>
+`;
+
+exports[`InfiniteScroll renderMarker 1`] = `
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -68,6 +101,16 @@ exports[`InfiniteScroll renderMarker 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 <div
@@ -88,16 +131,6 @@ exports[`InfiniteScroll renderMarker 1`] = `
 `;
 
 exports[`InfiniteScroll replace 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -114,6 +147,16 @@ exports[`InfiniteScroll replace 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 <div
@@ -132,16 +175,6 @@ exports[`InfiniteScroll replace 1`] = `
 `;
 
 exports[`InfiniteScroll show 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -158,6 +191,16 @@ exports[`InfiniteScroll show 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 <div
@@ -182,16 +225,6 @@ exports[`InfiniteScroll show 1`] = `
 `;
 
 exports[`InfiniteScroll step 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -208,6 +241,16 @@ exports[`InfiniteScroll step 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 <div
