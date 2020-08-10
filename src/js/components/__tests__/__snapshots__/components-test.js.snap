@@ -4741,6 +4741,11 @@ string",
         "name": "margin",
       },
       Object {
+        "description": "Action will map through an array and return the content within a box.",
+        "format": "function",
+        "name": "action",
+      },
+      Object {
         "defaultValue": "ul",
         "description": "The DOM tag or react component to use for the element.",
         "format": "string",

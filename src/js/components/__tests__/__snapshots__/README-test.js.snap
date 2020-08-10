@@ -9951,6 +9951,14 @@ xlarge
 string
 \`\`\`
 
+**action**
+
+Action will map through an array and return the content within a box.
+
+\`\`\`
+function
+\`\`\`
+
 **as**
 
 The DOM tag or react component to use for the element. Defaults to \`ul\`.

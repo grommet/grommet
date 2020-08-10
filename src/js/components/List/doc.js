@@ -47,6 +47,9 @@ export const doc = List => {
 
   DocumentedList.propTypes = {
     ...genericProps,
+    action: PropTypes.func.description(
+      'Action will map through an array and return the content within a box.',
+    ),
     as: PropTypes.string
       .description('The DOM tag or react component to use for the element.')
       .defaultValue('ul'),
