@@ -50,7 +50,7 @@ export const themeDoc = {
     type: 'boolean | string | object',
     defaultValue: 'small',
   },
-  'skipLinks.text': {
+  'skipLinks.label': {
     description: 'Any valid Text prop for the text message.',
     type: 'object',
     defaultValue: "{ margin: 'small', size: 'medium' }",

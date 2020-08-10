@@ -84,7 +84,7 @@ Defaults to
 small
 ```
 
-**skipLinks.text**
+**skipLinks.label**
 
 Any valid Text prop for the text message. Expects `object`.
 

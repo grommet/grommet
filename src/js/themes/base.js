@@ -986,7 +986,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         round: 'small',
         pad: 'medium',
       },
-      text: {
+      label: {
         margin: 'small',
         size: 'medium',
       },

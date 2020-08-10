@@ -998,7 +998,7 @@ export interface ThemeType {
   skipLinks?: {
     position?: LayerPositionType;
     container?: BoxProps;
-    text?: TextProps;
+    label?: TextProps;
   };
   tab?: {
     active?: {

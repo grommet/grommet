@@ -44,14 +44,14 @@ const SkipLinks = ({ children, id, messages }) => {
       tabIndex={0}
       modal={false}
       targetChildPosition="first" // prepend the Layer on the body container
-      // Non-modal Layer's will take the full screen at small breakpoints 
-      // by default, which isn't what we want
+      // Non-modal Layer's will take the full screen at small breakpoints
+      // by default, which isn't what we want, hence setting responsive false
       responsive={false}
     >
       {showLayer && (
         <Box {...theme.skipLinks.container}>
           {messages.skipTo && (
-            <Text {...theme.skipLinks.text}>{messages.skipTo}</Text>
+            <Text {...theme.skipLinks.label}>{messages.skipTo}</Text>
           )}
           <Box align="center">
             {children.map((element, index) =>
