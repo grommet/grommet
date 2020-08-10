@@ -123,9 +123,10 @@ describe('InfiniteScroll', () => {
 
   test(`Should render items equal to the length of 
   step when step > array`, () => {
+    const numItems = 1000;
     const { container } = render(
       <Grommet>
-        <InfiniteScroll items={simpleItems(1000)} show={117} step={1050}>
+        <InfiniteScroll items={simpleItems(numItems)} show={117} step={1050}>
           {item => <Box key={item}>{item}</Box>}
         </InfiniteScroll>
       </Grommet>,
@@ -135,7 +136,7 @@ describe('InfiniteScroll', () => {
     // don't approach the end of the page. This is why the total
     // number of items is the length of simpleItems, 1000.
     const renderedItems = container.firstChild.children.length;
-    const expectedItems = 1000;
+    const expectedItems = numItems;
     expect(renderedItems).toEqual(expectedItems);
   });
 });
