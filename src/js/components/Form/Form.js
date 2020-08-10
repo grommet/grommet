@@ -45,6 +45,7 @@ const Form = forwardRef(
       onChange,
       onReset,
       onSubmit,
+      onValidate,
       validate: validateOn = 'submit',
       value: valueProp,
       ...rest
@@ -233,6 +234,14 @@ const Form = forwardRef(
                 // which probably came from a submit
                 setErrors(prevErrors => ({ ...prevErrors, ...nextErrors }));
                 setInfos(prevInfos => ({ ...prevInfos, ...nextInfos }));
+
+                // give user access to errors that have occurred on validation
+                if (onValidate) {
+                  const validation = {};
+                  validation.error = { ...errors, ...nextErrors };
+                  validation.info = { ...infos, ...nextInfos };
+                  onValidate(validation);
+                }
               }
             : undefined,
       };
@@ -270,6 +279,16 @@ const Form = forwardRef(
           );
           setErrors(nextErrors);
           setInfos(nextInfos);
+
+          // give user access to errors that have occurred that are
+          // inhibiting form submission
+          if (onValidate) {
+            event.persist(); // extract from React's synthetic event pool
+            const adjustedEvent = event;
+            adjustedEvent.error = nextErrors;
+            adjustedEvent.info = nextInfos;
+            onValidate(adjustedEvent);
+          }
 
           if (Object.keys(nextErrors).length === 0 && onSubmit) {
             event.persist(); // extract from React's synthetic event pool

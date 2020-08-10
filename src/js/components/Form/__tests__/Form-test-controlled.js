@@ -46,6 +46,113 @@ describe('Form controlled', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('controlled onValidate', () => {
+    const onValidate = jest.fn();
+    const Test = () => {
+      const [value, setValue] = React.useState({ test: '' });
+      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
+      return (
+        <Form value={value} onChange={onChange} onValidate={onValidate}>
+          <FormField name="test" required>
+            <TextInput name="test" placeholder="test input" />
+          </FormField>
+          <Button type="submit" primary label="Submit" />
+        </Form>
+      );
+    };
+    const { getByText, container } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('Submit'));
+    expect(onValidate).toBeCalledWith(
+      expect.objectContaining({
+        error: { test: 'required' },
+        info: {},
+      }),
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('controlled onValidate custom error', () => {
+    const onValidate = jest.fn();
+    const errorMessage = 'One uppercase letter';
+    const testRules = {
+      regexp: new RegExp('(?=.*?[A-Z])'),
+      message: errorMessage,
+      status: 'error',
+    };
+
+    const Test = () => {
+      const [value, setValue] = React.useState({ test: '' });
+      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
+      return (
+        <Form value={value} onChange={onChange} onValidate={onValidate}>
+          <FormField name="test" validate={testRules}>
+            <TextInput name="test" placeholder="test input" />
+          </FormField>
+          <Button type="submit" primary label="Submit" />
+        </Form>
+      );
+    };
+    const { getByText, container } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('Submit'));
+    expect(onValidate).toBeCalledWith(
+      expect.objectContaining({
+        error: { test: errorMessage },
+        info: {},
+      }),
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('controlled onValidate custom info', () => {
+    const onValidate = jest.fn();
+    const infoMessage = 'One uppercase letter';
+    const testRules = {
+      regexp: new RegExp('(?=.*?[A-Z])'),
+      message: infoMessage,
+      status: 'info',
+    };
+
+    const Test = () => {
+      const [value, setValue] = React.useState({ test: '' });
+      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
+      return (
+        <Form value={value} onChange={onChange} onValidate={onValidate}>
+          <FormField name="test" validate={testRules}>
+            <TextInput name="test" placeholder="test input" />
+          </FormField>
+          <Button type="submit" primary label="Submit" />
+        </Form>
+      );
+    };
+    const { getByText, container } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('Submit'));
+    expect(onValidate).toBeCalledWith(
+      expect.objectContaining({
+        error: {},
+        info: { test: infoMessage },
+      }),
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('controlled lazy', () => {
     const onSubmit = jest.fn();
     const Test = () => {
