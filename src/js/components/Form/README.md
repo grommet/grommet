@@ -76,6 +76,16 @@ Function that will be called when the form is reset. The
 function
 ```
 
+**onValidate**
+
+Function that will be called when the form is validated. The
+      single argument is an event containing the latest error object
+      via `event.error` and info object via `event.info`.
+
+```
+function
+```
+
 **validate**
 
 When to perform validation Defaults to `submit`.

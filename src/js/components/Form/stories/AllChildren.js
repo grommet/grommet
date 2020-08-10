@@ -70,7 +70,7 @@ const Example = () => (
             htmlFor="password"
             validate={passwordRulesStrong}
           >
-            <TextInput name="password" id="password" />
+            <TextInput name="password" id="password" type="password" />
           </FormField>
           <FormField name="subscription">
             <CheckBoxGroup
