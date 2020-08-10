@@ -306,4 +306,21 @@ describe('FormField', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  test('contentProps', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Form>
+          <FormField
+            label="label"
+            contentProps={{
+              border: false,
+            }}
+          />
+        </Form>
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
