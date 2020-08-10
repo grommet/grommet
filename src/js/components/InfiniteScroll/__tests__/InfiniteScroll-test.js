@@ -96,13 +96,28 @@ describe('InfiniteScroll', () => {
     expect(container.firstChild.children.length).toEqual(step + 1);
   });
 
+  test('length when step = array', () => {
+    const allItems = Array(200)
+      .fill()
+      .map((_, i) => `item ${i + 1}`);
+    const step = 200;
+    const { container } = render(
+      <Grommet>
+        <InfiniteScroll items={allItems} show={117} step={step}>
+          {item => <Box key={item}>{item}</Box>}
+        </InfiniteScroll>
+      </Grommet>,
+    );
+    expect(container.firstChild.children.length).toEqual(step + 1);
+  });
+
   test('length when step > array', () => {
     const allItems = Array(1000)
       .fill()
       .map((_, i) => `item ${i + 1}`);
     const { container } = render(
       <Grommet>
-        <InfiniteScroll items={allItems} step={allItems.length + 1}>
+        <InfiniteScroll items={allItems} show={117} step={allItems.length + 50}>
           {item => <Box key={item}>{item}</Box>}
         </InfiniteScroll>
       </Grommet>,
