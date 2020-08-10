@@ -26,6 +26,7 @@ const CustomMultiSelect = ({
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const [textAreaValue, setTextAreaValue] = React.useState('');
   const [isValid, setIsValid] = React.useState(true);
+  const [errorMsg, setErrorMsg] = React.useState('');
 
   const setTextAreaValueFn = value => {
     setIsValid(true);
@@ -37,11 +38,13 @@ const CustomMultiSelect = ({
     if (trimedValue && trimedValue.length) {
       const textValues = trimedValue.split('\n');
       const filteredValues = textValues.filter(text => text.length);
-      if (validate && validate.callback(filteredValues)) {
+      const { isValid: isValueValid, errMsg } = validate(filteredValues, value);
+      if (validate && isValueValid) {
         setIncExcVal(isIncExc);
         onValueChange([...value, ...filteredValues]);
         setTextAreaValue('');
       } else {
+        setErrorMsg(errMsg);
         setIsValid(false);
       }
     }
@@ -74,7 +77,7 @@ const CustomMultiSelect = ({
           width={width}
           style={{ height: '100%' }}
         >
-          <FormField error={!isValid ? validate.message : null}>
+          <FormField error={!isValid ? errorMsg : null}>
             <Box
               width="full"
               style={{

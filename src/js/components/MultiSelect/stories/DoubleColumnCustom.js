@@ -17,9 +17,21 @@ const Example = () => {
   ]);
   const [isExcluded, setIncExc] = useState(null);
 
-  const validateDomains = values => {
-    const regx = /^((http|https):\/\/)?([a-zA-Z0-9_][-_a-zA-Z0-9]{0,62}\.)+([a-zA-Z0-9]{1,10})$/;
-    return values && values.every(val => regx.test(val));
+  const validateDomains = (values, list) => {
+    const regx = /^([a-zA-Z0-9_][-_a-zA-Z0-9]{0,62}\.)+([a-zA-Z0-9]{1,10})$/;
+    const errMsg = 'Some of the values already exists';
+    if (
+      new Set(values).size !== values.length ||
+      values.some(val => list.includes(val))
+    )
+      return {
+        isValid: false,
+        errMsg,
+      };
+    return {
+      isValid: values && values.every(val => regx.test(val)),
+      errMsg: 'Please Enter Correct Domains',
+    };
   };
 
   return (
@@ -37,10 +49,7 @@ const Example = () => {
         isExcluded={isExcluded}
         onIncExcChange={nextIncExc => setIncExc(nextIncExc)}
         renderEmptySelected={<Text>No domains selected</Text>}
-        validate={{
-          callback: validateDomains,
-          message: 'Please Enter Correct Domains',
-        }}
+        validate={validateDomains}
       />
     </Box>
   );
