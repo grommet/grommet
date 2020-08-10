@@ -1,7 +1,7 @@
 import React, { forwardRef, useContext, useMemo, useState } from 'react';
-import { defaultProps } from '../../default-props';
 import { ThemeContext } from 'styled-components';
 import { Calendar as CalendarIcon } from 'grommet-icons/icons/Calendar';
+import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Calendar } from '../Calendar';
 import { Drop } from '../Drop';
