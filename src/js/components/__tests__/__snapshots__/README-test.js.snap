@@ -11907,7 +11907,19 @@ object
 
 \`\`\`
 div
-\`\`\`",
+\`\`\`
+## Theme
+  
+**radioButtonGroup.container**
+
+Any valid Box props for the RadioButtonGroup container. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+",
   "RangeInput": "## RangeInput
 A slider control to input a value within a fixed range.
 

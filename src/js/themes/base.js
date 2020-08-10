@@ -921,6 +921,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // weight: undefined,
       },
     },
+    radioButtonGroup: {
+      // container: {}, // any box props
+    },
     rangeInput: {
       // extend: undefined
       track: {

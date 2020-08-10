@@ -385,7 +385,7 @@ export interface ThemeType {
       primary?: ButtonKindType;
       secondary?: ButtonKindType;
     };
-    disabled?: ButtonKindType;
+    disabled?: ButtonKindType & { opacity?: OpacityType };
     hover?: ButtonKindType & {
       default?: ButtonKindType;
       primary?: ButtonKindType;
@@ -940,6 +940,9 @@ export interface ThemeType {
     font?: {
       weight?: number | string;
     };
+  };
+  radioButtonGroup?: {
+    container?: BoxProps;
   };
   rangeInput?: {
     track?: {
