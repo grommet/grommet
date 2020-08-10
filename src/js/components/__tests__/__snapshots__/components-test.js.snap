@@ -4741,7 +4741,8 @@ string",
         "name": "margin",
       },
       Object {
-        "description": "Action will map through an array and return the content within a box.",
+        "description": "Action will be something for the user to click on and interact
+       with within the list component",
         "format": "function",
         "name": "action",
       },
