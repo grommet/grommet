@@ -19,14 +19,15 @@ const Example = () => {
 
   const validateDomains = (values, list) => {
     const regx = /^([a-zA-Z0-9_][-_a-zA-Z0-9]{0,62}\.)+([a-zA-Z0-9]{1,10})$/;
-    const errMsg = 'Some of the values already exists';
-    if (
-      new Set(values).size !== values.length ||
-      values.some(val => list.includes(val))
-    )
+    if (new Set(values).size !== values.length)
       return {
         isValid: false,
-        errMsg,
+        errMsg: 'Dublicate entry not allowed',
+      };
+    if (values.some(val => list.includes(val)))
+      return {
+        isValid: false,
+        errMsg: 'Some of the values already exists',
       };
     return {
       isValid: values && values.every(val => regx.test(val)),
