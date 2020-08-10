@@ -586,6 +586,11 @@ export interface ThemeType {
     minSpeed?: number;
     baseline?: number;
   };
+  dateInput?: {
+    icon?: {
+      size?: string;
+    };
+  };
   dataTable?: {
     body?: {
       extend?: ExtendType;

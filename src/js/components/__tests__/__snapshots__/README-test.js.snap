@@ -6666,7 +6666,17 @@ string
 div
 \`\`\`
 ## Theme
-  ",
+  
+**dateInput.icon.size**
+
+The size of the Calendar icon Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+24px
+\`\`\`
+",
   "Diagram": "## Diagram
 Graphical connection lines. Diagram is meant to be used with Stack.
       Boxes can be used in the \`guidingChild\` layer of Stack and then
