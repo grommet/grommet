@@ -23,12 +23,9 @@ const SkipLinks = ({ children, id, messages }) => {
   const onBlur = () => {
     // timeout needed so it gives enough time for activeElement to be updated
     setTimeout(() => {
-      // close the layer in case the activeElement isn't an anchor
-      if (
-        document &&
-        document.activeElement &&
-        document.activeElement.tagName !== 'A'
-      ) {
+      const layerNode = layerRef.current;
+      if (layerNode && !layerNode.contains(document.activeElement)) {
+        // close the layer when the activeElement isn't contained in the layer
         removeLayer();
       }
     }, 0);
