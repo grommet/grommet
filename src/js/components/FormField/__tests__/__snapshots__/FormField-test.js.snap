@@ -39,7 +39,6 @@ exports[`FormField abut 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 @media only screen and (max-width:768px) {
@@ -108,7 +107,6 @@ exports[`FormField abut with margin 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 @media only screen and (max-width:768px) {
@@ -177,7 +175,6 @@ exports[`FormField custom formfield 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c2 {
@@ -252,7 +249,6 @@ exports[`FormField custom input margin 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c2 {
@@ -409,7 +405,6 @@ exports[`FormField custom label 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c2 {
@@ -558,7 +553,6 @@ exports[`FormField default 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c4 {
@@ -700,7 +694,6 @@ exports[`FormField disabled 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c4 {
@@ -851,7 +844,6 @@ exports[`FormField disabled with custom label 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c2 {
@@ -1003,7 +995,6 @@ exports[`FormField empty margin 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 @media only screen and (max-width:768px) {
@@ -1072,7 +1063,6 @@ exports[`FormField error 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c3 {
@@ -1156,7 +1146,6 @@ exports[`FormField help 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c2 {
@@ -1237,7 +1226,6 @@ exports[`FormField htmlFor 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 @media only screen and (max-width:768px) {
@@ -1306,7 +1294,6 @@ exports[`FormField info 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c3 {
@@ -1390,7 +1377,6 @@ exports[`FormField label 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c2 {
@@ -1473,7 +1459,6 @@ exports[`FormField margin 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 @media only screen and (max-width:768px) {
@@ -1543,7 +1528,6 @@ exports[`FormField pad 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 12px;
-  overflow: hidden;
 }
 
 @media only screen and (max-width:768px) {
@@ -1767,7 +1751,6 @@ exports[`FormField required 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c4 {
@@ -1913,7 +1896,6 @@ exports[`FormField should have no accessibility violations 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 @media only screen and (max-width:768px) {

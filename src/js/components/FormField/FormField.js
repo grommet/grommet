@@ -6,6 +6,7 @@ import React, {
   useState,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
+import { Add } from 'grommet-icons';
 import { defaultProps } from '../../default-props';
 
 import { focusStyle, parseMetricToNum } from '../../utils';
@@ -46,7 +47,16 @@ const FormFieldContentBox = styled(Box)`
 `;
 
 const Message = ({ message, ...rest }) => {
+  const theme = useContext(ThemeContext) || defaultProps.theme;
+  const icon = theme.formField.error && theme.formField.error.icon;
   if (message) {
+    if (icon && typeof message === 'string')
+      return (
+        <Box direction="row" align="center" gap="xsmall">
+          {icon}
+          <Text {...rest}>{message}</Text>
+        </Box>
+      );
     if (typeof message === 'string') return <Text {...rest}>{message}</Text>;
     return <Box {...rest}>{message}</Box>;
   }
@@ -90,6 +100,7 @@ const FormField = forwardRef(
       children,
       className,
       component,
+      contentProps,
       disabled, // pass through in renderInput()
       error: errorProp,
       help,
@@ -179,26 +190,26 @@ const FormField = forwardRef(
       );
     }
 
-    const contentProps = { ...formFieldTheme.content };
+    const themeContentProps = { ...formFieldTheme.content };
 
     if (!pad && !wantContentPad) {
-      contentProps.pad = undefined;
+      themeContentProps.pad = undefined;
     }
 
     if (themeBorder && themeBorder.position === 'inner') {
       if (error && formFieldTheme.error) {
-        contentProps.background = formFieldTheme.error.background;
+        themeContentProps.background = formFieldTheme.error.background;
       } else if (disabled && formFieldTheme.disabled) {
-        contentProps.background = formFieldTheme.disabled.background;
+        themeContentProps.background = formFieldTheme.disabled.background;
       }
     }
-    // Removing margin from contentProps because margin should be applied
-    // on containing <FormFieldContentBox>
-    // contentProps.margin = undefined;
-    // contents = <Box {...contentProps}>{contents}</Box>;
 
     if (!themeBorder) {
-      contents = <Box {...contentProps}>{contents}</Box>;
+      contents = (
+        <Box {...themeContentProps} {...contentProps}>
+          {contents}
+        </Box>
+      );
     }
 
     let borderColor;
@@ -250,9 +261,9 @@ const FormField = forwardRef(
           : {};
       contents = (
         <FormFieldContentBox
-          overflow="hidden"
-          {...contentProps}
+          {...themeContentProps}
           {...innerProps}
+          {...contentProps}
         >
           {contents}
         </FormFieldContentBox>

@@ -340,6 +340,16 @@ Defaults to
 undefined
 ```
 
+**formField.formField.error.icon**
+
+An icon that can be placed next to the error message. Expects `React.Element`.
+
+Defaults to
+
+```
+undefined
+```
+
 **formField.error.background.color**
 
 The color of the FormField background when there is an error. Expects `string | {'dark': string, 'light': string}`.

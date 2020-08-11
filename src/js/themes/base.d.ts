@@ -657,6 +657,7 @@ export interface ThemeType {
       background?: BackgroundType;
       color?: ColorType;
       margin?: MarginType;
+      icon?: any;
     };
     help?: {
       color?: ColorType;
