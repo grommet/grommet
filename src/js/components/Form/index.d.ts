@@ -5,12 +5,6 @@ export interface FormExtendedEvent<T = Element> extends React.FormEvent<T> {
   touched: Record<string, boolean>;
 }
 
-export interface FormExtendedValidateEvent<T = Element>
-  extends React.FormEvent<T> {
-  errors: Record<string, any>;
-  infos: Record<string, any>;
-}
-
 export interface FormProps<T> {
   errors?: {};
   infos?: {};
@@ -18,7 +12,10 @@ export interface FormProps<T> {
   onChange?: (value: T) => void;
   onSubmit?: (event: FormExtendedEvent) => void;
   onReset?: (event: React.SyntheticEvent) => any;
-  onValidate?: (event: FormExtendedValidateEvent) => void;
+  onValidate?: (validationResults: {
+    errors: Record<string, any>;
+    infos: Record<string, any>;
+  }) => void;
   validate?: 'blur' | 'submit';
   value?: {};
 }
