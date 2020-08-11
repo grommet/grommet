@@ -55,12 +55,12 @@ export const themeDoc = {
     type: 'object',
     defaultValue: "{ margin: 'small', size: 'medium' }",
   },
-  'skipLinks.text.margin': {
+  'skipLinks.label.margin': {
     description: 'The margin size around the text message.',
     type: 'string',
     defaultValue: 'medium',
   },
-  'skipLinks.text.size': {
+  'skipLinks.label.size': {
     description: 'The font size of the text label.',
     type: 'string',
     defaultValue: 'medium',

@@ -94,7 +94,7 @@ Defaults to
 { margin: 'small', size: 'medium' }
 ```
 
-**skipLinks.text.margin**
+**skipLinks.label.margin**
 
 The margin size around the text message. Expects `string`.
 
@@ -104,7 +104,7 @@ Defaults to
 medium
 ```
 
-**skipLinks.text.size**
+**skipLinks.label.size**
 
 The font size of the text label. Expects `string`.
 
