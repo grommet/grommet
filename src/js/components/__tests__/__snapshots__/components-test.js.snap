@@ -6702,9 +6702,12 @@ stretch",
         "name": "gridArea",
       },
       Object {
-        "description": "The amount of margin around the component. An object can
-    be specified to distinguish horizontal margin, vertical margin, and
-    margin on a particular side.",
+        "description": "The amount of margin around the component. An object can be 
+    specified to distinguish horizontal margin, vertical margin, and margin on 
+    a particular side. For vertical margin to be applied, Text needs to be 
+    contained within a layout component (such as Box or a generic div) or 
+    behave as a div (by applying as=\\"div\\" or a display style of 
+    inline-block).",
         "format": "none
 xxsmall
 xsmall
