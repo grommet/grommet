@@ -95,12 +95,14 @@ describe('InfiniteScroll', () => {
         </InfiniteScroll>
       </Grommet>,
     );
-    // When step < the length of the number of items, an additional
-    // item is rendered as a marker for when scrolling nears the end
-    // of the rendered items. This is why expectedItems is step + 1.
-    const renderedItems = container.firstChild.children.length;
-    const expectedItems = step + 1;
-    expect(renderedItems).toEqual(expectedItems);
+
+    const allChildren = Array.from(container.firstChild.children);
+    // Removing any children which are serving as refs
+    const pageItems = allChildren.filter(
+      childItem => !!childItem.outerHTML.includes('item'),
+    );
+    const expectedItems = step;
+    expect(pageItems.length).toEqual(expectedItems);
   });
 
   test(`Should render items equal to the length of 
@@ -113,12 +115,14 @@ describe('InfiniteScroll', () => {
         </InfiniteScroll>
       </Grommet>,
     );
-    // When step = the length of the number of items, an additional
-    // item is rendered as a marker for when scrolling nears the end
-    // of the rendered items. This is why expectedItems is step + 1.
-    const renderedItems = container.firstChild.children.length;
-    const expectedItems = step + 1;
-    expect(renderedItems).toEqual(expectedItems);
+
+    const allChildren = Array.from(container.firstChild.children);
+    // Removing any children which are serving as refs
+    const pageItems = allChildren.filter(
+      childItem => !!childItem.outerHTML.includes('item'),
+    );
+    const expectedItems = step;
+    expect(pageItems.length).toEqual(expectedItems);
   });
 
   test(`Should render items equal to the length of 
@@ -131,12 +135,13 @@ describe('InfiniteScroll', () => {
         </InfiniteScroll>
       </Grommet>,
     );
-    // When step > the length of the number of items,
-    // an additional item is NOT rendered because the items
-    // don't approach the end of the page. This is why the total
-    // number of items is the length of simpleItems, 1000.
-    const renderedItems = container.firstChild.children.length;
+
+    const allChildren = Array.from(container.firstChild.children);
+    // Removing any children which are serving as refs
+    const pageItems = allChildren.filter(
+      childItem => !!childItem.outerHTML.includes('item'),
+    );
     const expectedItems = numItems;
-    expect(renderedItems).toEqual(expectedItems);
+    expect(pageItems.length).toEqual(expectedItems);
   });
 });
