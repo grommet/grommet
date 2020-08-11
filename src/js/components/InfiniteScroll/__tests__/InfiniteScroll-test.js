@@ -83,8 +83,11 @@ describe('Number of Items Rendered', () => {
     Array(value)
       .fill()
       .map((_, i) => `item ${i + 1}`);
-  function filterRefs(childItem) {
-    return childItem.outerHTML.includes('item');
+
+  function createPageItems(allChildren) {
+    const unfiltered = Array.from(allChildren);
+    // Removing any children which are serving as refs
+    return unfiltered.filter(childItem => childItem.outerHTML.includes('item'));
   }
 
   test(`Should render items equal to the length of 
@@ -102,9 +105,7 @@ describe('Number of Items Rendered', () => {
       </Grommet>,
     );
 
-    const allChildren = Array.from(container.firstChild.children);
-    // Removing any children which are serving as refs
-    const pageItems = allChildren.filter(filterRefs);
+    const pageItems = createPageItems(container.firstChild.children);
     const expectedItems = step;
     expect(pageItems.length).toEqual(expectedItems);
   });
@@ -120,9 +121,7 @@ describe('Number of Items Rendered', () => {
       </Grommet>,
     );
 
-    const allChildren = Array.from(container.firstChild.children);
-    // Removing any children which are serving as refs
-    const pageItems = allChildren.filter(filterRefs);
+    const pageItems = createPageItems(container.firstChild.children);
     const expectedItems = step;
     expect(pageItems.length).toEqual(expectedItems);
   });
@@ -138,9 +137,7 @@ describe('Number of Items Rendered', () => {
       </Grommet>,
     );
 
-    const allChildren = Array.from(container.firstChild.children);
-    // Removing any children which are serving as refs
-    const pageItems = allChildren.filter(filterRefs);
+    const pageItems = createPageItems(container.firstChild.children);
     const expectedItems = numItems;
     expect(pageItems.length).toEqual(expectedItems);
   });
