@@ -17883,9 +17883,9 @@ exports[`Calendar size 1`] = `
 
 @media only screen and (max-width:768px) {
   .c5 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
+    font-size: 16px;
+    line-height: 22px;
+    max-width: 384px;
   }
 }
 

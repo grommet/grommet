@@ -10,8 +10,7 @@ const sizeStyle = props => {
   const levelStyle = headingTheme.level[props.level];
   if (levelStyle) {
     const data = levelStyle[size];
-    const styles =  
-    [
+    const styles = [
       css`
         font-size: ${data ? data.size : size};
         line-height: ${data ? data.height : 'normal'};
@@ -24,8 +23,13 @@ const sizeStyle = props => {
         props.theme.global.breakpoints[headingTheme.responsiveBreakpoint];
       if (breakpoint) {
         const responsiveData =
-          headingTheme.level[Math.min(props.level + 1, 4)][size];
-        if(responsiveData) {
+          headingTheme.level[
+            Math.min(
+              props.level + 1,
+              Math.max(...Object.keys(headingTheme.level)),
+            )
+          ][size];
+        if (responsiveData) {
           styles.push(
             breakpointStyle(
               breakpoint,
