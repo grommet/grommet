@@ -16,7 +16,7 @@ export interface FormProps<T> {
   value?: {};
 }
 
-export type TypedForm<T = unknown> = React.ComponentClass<FormProps<T> & Omit<JSX.IntrinsicElements['form'], 'onChange', 'onSubmit'>>
+export type TypedForm<T = unknown> = React.ComponentClass<FormProps<T> & Omit<JSX.IntrinsicElements['form'], 'onChange' | 'onSubmit'>>
 declare const Form: TypedForm;
 
 export { Form };
