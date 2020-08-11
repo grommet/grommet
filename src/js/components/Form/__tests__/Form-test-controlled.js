@@ -70,8 +70,8 @@ describe('Form controlled', () => {
     fireEvent.click(getByText('Submit'));
     expect(onValidate).toBeCalledWith(
       expect.objectContaining({
-        error: { test: 'required' },
-        info: {},
+        errors: { test: 'required' },
+        infos: {},
       }),
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -108,8 +108,8 @@ describe('Form controlled', () => {
     fireEvent.click(getByText('Submit'));
     expect(onValidate).toBeCalledWith(
       expect.objectContaining({
-        error: { test: errorMessage },
-        info: {},
+        errors: { test: errorMessage },
+        infos: {},
       }),
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -146,8 +146,8 @@ describe('Form controlled', () => {
     fireEvent.click(getByText('Submit'));
     expect(onValidate).toBeCalledWith(
       expect.objectContaining({
-        error: {},
-        info: { test: infoMessage },
+        errors: {},
+        infos: { test: infoMessage },
       }),
     );
     expect(container.firstChild).toMatchSnapshot();

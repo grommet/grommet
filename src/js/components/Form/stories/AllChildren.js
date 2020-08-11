@@ -47,7 +47,10 @@ const Example = () => (
         <Form
           onReset={event => console.log(event)}
           onSubmit={({ value }) => console.log('Submit', value)}
-          onValidate={({ error, info }) => console.log('Validate', error, info)}
+          onValidate={({ errors, infos }) =>
+            console.log('Validate', errors, infos)
+          }
+          validate="blur"
         >
           <FormField label="Name" name="name" required>
             <TextInput name="name" />

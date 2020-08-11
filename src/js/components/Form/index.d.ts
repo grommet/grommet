@@ -7,8 +7,8 @@ export interface FormExtendedEvent<T = Element> extends React.FormEvent<T> {
 
 export interface FormExtendedValidateEvent<T = Element>
   extends React.FormEvent<T> {
-  error: Record<string, any>;
-  info: Record<string, any>;
+  errors: Record<string, any>;
+  infos: Record<string, any>;
 }
 
 export interface FormProps<T> {

@@ -222,7 +222,7 @@ const Form = forwardRef(
         inForm: true,
         onBlur:
           validateOn === 'blur'
-            ? () => {
+            ? event => {
                 // run validations on touched keys
                 const [nextErrors, nextInfos] = validate(
                   Object.entries(validations.current).filter(
@@ -237,10 +237,11 @@ const Form = forwardRef(
 
                 // give user access to errors that have occurred on validation
                 if (onValidate) {
-                  const validation = {};
-                  validation.error = { ...errors, ...nextErrors };
-                  validation.info = { ...infos, ...nextInfos };
-                  onValidate(validation);
+                  event.persist(); // extract from React's synthetic event pool
+                  const adjustedEvent = event;
+                  adjustedEvent.errors = { ...errors, ...nextErrors };
+                  adjustedEvent.infos = { ...infos, ...nextInfos };
+                  onValidate(adjustedEvent);
                 }
               }
             : undefined,
@@ -285,8 +286,8 @@ const Form = forwardRef(
           if (onValidate) {
             event.persist(); // extract from React's synthetic event pool
             const adjustedEvent = event;
-            adjustedEvent.error = nextErrors;
-            adjustedEvent.info = nextInfos;
+            adjustedEvent.errors = nextErrors;
+            adjustedEvent.infos = nextInfos;
             onValidate(adjustedEvent);
           }
 
