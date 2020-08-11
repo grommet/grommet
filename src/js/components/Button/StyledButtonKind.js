@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import {
+  activeStyle,
   backgroundStyle,
   disabledStyle,
   focusStyle,
@@ -246,9 +247,12 @@ const StyledButtonKind = styled.button`
     !props.plain &&
     props.align &&
     `
-  text-align: ${props.align};
-  `}
-  ${props => props.hoverIndicator && hoverIndicatorStyle(props)}
+    text-align: ${props.align};
+    `}
+    ${props => props.hoverIndicator && hoverIndicatorStyle(props)}
+  // plain buttons should still be able to receive active styling even
+  // though they do not have a kindStyle
+  ${props => !props.disabled && props.active && props.plain && activeStyle}
   ${props =>
     props.disabled && disabledStyle(props.theme.button.disabled.opacity)}
   ${props =>

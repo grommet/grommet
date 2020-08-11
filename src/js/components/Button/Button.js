@@ -253,6 +253,7 @@ const Button = forwardRef(
           {...rest}
           as={domTag}
           ref={ref}
+          active={active}
           align={align}
           aria-label={a11yTitle}
           colorValue={color}
