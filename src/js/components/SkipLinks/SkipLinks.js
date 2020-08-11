@@ -10,10 +10,24 @@ const SkipLinks = ({ children, id, messages }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const [showLayer, setShowLayer] = useState(false);
 
+  const firstAnchorRef = useRef(null);
   const layerRef = useRef(null);
 
   const onFocus = () => {
     setShowLayer(true);
+    // timeout needed so it gives enough time for activeElement to be updated
+    setTimeout(() => {
+      // The layer container is receiving the focus by default since the layer
+      // isn't on the DOM yet and its children are not accessible.
+      // Once the layer is focused and the children of the layer are
+      // accessible on the DOM, the first anchor of the skiplink list will
+      // steal the focus to itself.
+      const layerNode = layerRef.current;
+      // change the focus to the first SkipLink anchor
+      if (layerNode === document.activeElement) {
+        firstAnchorRef.current.focus();
+      }
+    }, 0);
   };
 
   const removeLayer = () => {
@@ -54,6 +68,7 @@ const SkipLinks = ({ children, id, messages }) => {
             {children.map((element, index) =>
               cloneElement(element, {
                 key: `skip-link-${index}`,
+                ref: index === 0 ? firstAnchorRef : undefined,
                 onClick: removeLayer,
               }),
             )}
