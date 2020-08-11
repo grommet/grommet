@@ -44,10 +44,6 @@ const MenuDropButton = () => {
   );
 };
 
-storiesOf('DropButton', module).add('Menu', () => <MenuDropButton />);
-
-MenuDropButton.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
-};
+storiesOf('DropButton', module).add('Menu', () => <MenuDropButton />, {
+  chromatic: { disable: true },
+});
