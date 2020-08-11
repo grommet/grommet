@@ -3145,6 +3145,12 @@ string",
         "format": "boolean",
         "name": "plain",
       },
+      Object {
+        "defaultValue": true,
+        "description": "Traps keyboard focus inside of drop.",
+        "format": "boolean",
+        "name": "trapFocus",
+      },
     ],
     "usage": "import { Drop } from 'grommet';
 <Drop target={reference}>...</Drop>",
