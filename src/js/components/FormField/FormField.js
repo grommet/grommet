@@ -53,7 +53,7 @@ const Message = ({ message, ...rest }) => {
       return (
         <Box direction="row" align="center" gap="xsmall">
           {icon}
-          <Text {...rest}>{message}</Text>
+          <Text size="small">{message}</Text>
         </Box>
       );
     if (typeof message === 'string') return <Text {...rest}>{message}</Text>;
