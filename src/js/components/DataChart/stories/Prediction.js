@@ -44,14 +44,30 @@ for (let i = 0; i < 13; i += 1) {
 const Example = () => (
   <Grommet theme={grommet}>
     <Box align="center" justify="start" pad="large">
-      <Stack anchor="top-right">
+      <Stack anchor="top-right" interactiveChild="first">
         <DataChart
           data={data}
-          property={[
+          series={[
             'date',
-            { property: 'amount', color: 'graph-2', point: 'circle' },
-            { property: 'amountPredicted', color: 'graph-2', point: 'circle' },
-            { property: 'need', color: 'graph-1', point: 'star' },
+            {
+              property: 'amount',
+              // color: 'graph-3',
+              // Should the color prop have an impact? because it doesn't
+              point: 'circle',
+              label: 'Amount',
+            },
+            {
+              property: 'need',
+              color: 'graph-1', // does not have any impact
+              point: 'star', // does not have any impact
+              label: 'Demand',
+            },
+            {
+              property: 'amountPredicted',
+              // color: 'graph-2', // does not have any impact
+              point: 'circle',
+              label: 'Predicted Amount',
+            },
             { property: 'needPredicted', color: 'graph-1' },
           ]}
           chart={[
@@ -59,24 +75,24 @@ const Example = () => (
               property: 'amount',
               type: 'area',
               thickness: 'xsmall',
-              color: { color: 'graph-2', opacity: 'medium' },
+              color: { color: 'graph-3', opacity: 'medium' },
             },
             {
               property: 'amount',
               type: 'line',
-              thickness: 'xxsmall',
+              thickness: 'xsmall',
               round: true,
             },
             {
               property: 'amountPredicted',
               type: 'area',
               thickness: 'xsmall',
-              color: { color: 'graph-2', opacity: 'medium' },
+              color: { color: 'graph-3', opacity: 'medium' },
             },
             {
               property: 'amountPredicted',
               type: 'line',
-              thickness: 'xxsmall',
+              thickness: 'xsmall',
               round: true,
               dash: true,
             },
@@ -84,8 +100,8 @@ const Example = () => (
               property: 'amountPredicted',
               type: 'point',
               thickness: 'small',
+              point: 'circle', // shouldn't be here
             },
-            { property: 'amount', type: 'bar', thickness: 'hair' },
             {
               property: 'amount',
               type: 'point',
@@ -98,28 +114,32 @@ const Example = () => (
             //   round: true,
             //   dash: true,
             // },
-            // {
-            //   property: 'need',
-            //   type: 'line',
-            //   thickness: 'xxsmall',
-            //   dash: true,
-            //   round: true,
-            // },
-            // {
-            //   property: 'need',
-            //   type: 'point',
-            //   thickness: 'small',
-            // },
+            {
+              property: 'need',
+              type: 'line',
+              thickness: 'xxsmall',
+              dash: true,
+              round: true,
+              // color: 'graph-3',
+            },
+            {
+              property: 'need',
+              type: 'point',
+              thickness: 'small',
+              // I would expect that enabling the following color
+              // won't affect the color of the line, but it impacts both
+              // the point and line.
+              // color: 'graph-1',
+            },
           ]}
           axis={{ x: 'date', y: { property: 'amount', granularity: 'medium' } }}
-          guide={{ y: { granularity: 'medium' }, x: { granularity: 'fine' } }}
+          guide={{ y: { granularity: 'fine' }, x: { granularity: 'fine' } }}
           gap="medium"
           pad="small"
           legend
           detail
         />
         {/* Start the prediction */}
-        {/* TODO details doesn't work on stack */}
         <Box
           width="small"
           height="small"
