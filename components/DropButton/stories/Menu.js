@@ -56,4 +56,8 @@ var MenuDropButton = function MenuDropButton() {
 
 (0, _react2.storiesOf)('DropButton', module).add('Menu', function () {
   return /*#__PURE__*/_react["default"].createElement(MenuDropButton, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

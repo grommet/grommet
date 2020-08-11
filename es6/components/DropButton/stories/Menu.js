@@ -48,4 +48,8 @@ var MenuDropButton = function MenuDropButton() {
 
 storiesOf('DropButton', module).add('Menu', function () {
   return /*#__PURE__*/React.createElement(MenuDropButton, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

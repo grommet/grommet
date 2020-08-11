@@ -47,4 +47,8 @@ var CalendarDropButton = function CalendarDropButton() {
 
 storiesOf('DropButton', module).add('Calendar', function () {
   return /*#__PURE__*/React.createElement(CalendarDropButton, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

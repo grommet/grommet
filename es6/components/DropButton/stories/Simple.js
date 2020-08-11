@@ -62,4 +62,8 @@ var SimpleDropButton = function SimpleDropButton() {
 
 storiesOf('DropButton', module).add('Simple', function () {
   return /*#__PURE__*/React.createElement(SimpleDropButton, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });
