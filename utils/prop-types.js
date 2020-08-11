@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.hoverIndicatorPropType = exports.genericProps = exports.padPropType = exports.marginProp = exports.backgroundDoc = exports.colorPropType = exports.a11yTitlePropType = void 0;
+exports.hoverIndicatorPropType = exports.genericProps = exports.padPropType = exports.marginProp = exports.MARGIN_SIZES = exports.backgroundDoc = exports.colorPropType = exports.a11yTitlePropType = void 0;
 
 var _reactDesc = require("react-desc");
 
@@ -29,6 +29,7 @@ var backgroundDoc = _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string,
 
 exports.backgroundDoc = backgroundDoc;
 var MARGIN_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
+exports.MARGIN_SIZES = MARGIN_SIZES;
 
 var marginProp = _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['none'].concat(MARGIN_SIZES)), _reactDesc.PropTypes.shape({
   bottom: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(MARGIN_SIZES), _reactDesc.PropTypes.string]),

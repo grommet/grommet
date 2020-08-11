@@ -13,6 +13,16 @@ var doc = function doc(Text) {
   var DocumentedText = (0, _reactDesc.describe)(Text).availableAt((0, _utils.getAvailableAtBadge)('Text')).description('Arbitrary text.').usage("import { Text } from 'grommet';\n<Text />").intrinsicElement('span');
   DocumentedText.propTypes = _extends({}, _utils.genericProps, {
     color: _utils.colorPropType.description('A color identifier to use for the text color.'),
+    margin: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['none'].concat(_utils.MARGIN_SIZES)), _reactDesc.PropTypes.shape({
+      bottom: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(_utils.MARGIN_SIZES), _reactDesc.PropTypes.string]),
+      end: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(_utils.MARGIN_SIZES), _reactDesc.PropTypes.string]),
+      horizontal: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(_utils.MARGIN_SIZES), _reactDesc.PropTypes.string]),
+      left: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(_utils.MARGIN_SIZES), _reactDesc.PropTypes.string]),
+      right: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(_utils.MARGIN_SIZES), _reactDesc.PropTypes.string]),
+      start: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(_utils.MARGIN_SIZES), _reactDesc.PropTypes.string]),
+      top: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(_utils.MARGIN_SIZES), _reactDesc.PropTypes.string]),
+      vertical: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(_utils.MARGIN_SIZES), _reactDesc.PropTypes.string])
+    }), _reactDesc.PropTypes.string]).description("The amount of margin around the component. An object can be \n    specified to distinguish horizontal margin, vertical margin, and margin on \n    a particular side. For vertical margin to be applied, Text needs to be \n    contained within a layout component (such as Box or a generic div) or \n    behave as a div (by applying as=\"div\" or a display style of \n    inline-block)."),
     size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']), _reactDesc.PropTypes.string]).description("The font size and line height are primarily driven by the chosen tag. \nBut, it can be adjusted via this size property. The tag should be set for \nsemantic correctness and accessibility. This size property allows for stylistic\nadjustments.").defaultValue('medium'),
     tag: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.func]).description("The DOM tag to use for the element. NOTE: This is deprecated in favor\n         of indicating the DOM tag via the 'as' property."),
     as: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.func, _reactDesc.PropTypes.element]).description("The DOM tag or react component to use for the element.").defaultValue('span'),

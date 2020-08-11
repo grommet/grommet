@@ -1,11 +1,21 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import { describe, PropTypes } from 'react-desc';
-import { colorPropType, genericProps, getAvailableAtBadge, themeDocUtils } from '../../utils';
+import { colorPropType, genericProps, getAvailableAtBadge, MARGIN_SIZES, themeDocUtils } from '../../utils';
 export var doc = function doc(Text) {
   var DocumentedText = describe(Text).availableAt(getAvailableAtBadge('Text')).description('Arbitrary text.').usage("import { Text } from 'grommet';\n<Text />").intrinsicElement('span');
   DocumentedText.propTypes = _extends({}, genericProps, {
     color: colorPropType.description('A color identifier to use for the text color.'),
+    margin: PropTypes.oneOfType([PropTypes.oneOf(['none'].concat(MARGIN_SIZES)), PropTypes.shape({
+      bottom: PropTypes.oneOfType([PropTypes.oneOf(MARGIN_SIZES), PropTypes.string]),
+      end: PropTypes.oneOfType([PropTypes.oneOf(MARGIN_SIZES), PropTypes.string]),
+      horizontal: PropTypes.oneOfType([PropTypes.oneOf(MARGIN_SIZES), PropTypes.string]),
+      left: PropTypes.oneOfType([PropTypes.oneOf(MARGIN_SIZES), PropTypes.string]),
+      right: PropTypes.oneOfType([PropTypes.oneOf(MARGIN_SIZES), PropTypes.string]),
+      start: PropTypes.oneOfType([PropTypes.oneOf(MARGIN_SIZES), PropTypes.string]),
+      top: PropTypes.oneOfType([PropTypes.oneOf(MARGIN_SIZES), PropTypes.string]),
+      vertical: PropTypes.oneOfType([PropTypes.oneOf(MARGIN_SIZES), PropTypes.string])
+    }), PropTypes.string]).description("The amount of margin around the component. An object can be \n    specified to distinguish horizontal margin, vertical margin, and margin on \n    a particular side. For vertical margin to be applied, Text needs to be \n    contained within a layout component (such as Box or a generic div) or \n    behave as a div (by applying as=\"div\" or a display style of \n    inline-block)."),
     size: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']), PropTypes.string]).description("The font size and line height are primarily driven by the chosen tag. \nBut, it can be adjusted via this size property. The tag should be set for \nsemantic correctness and accessibility. This size property allows for stylistic\nadjustments.").defaultValue('medium'),
     tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description("The DOM tag to use for the element. NOTE: This is deprecated in favor\n         of indicating the DOM tag via the 'as' property."),
     as: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.element]).description("The DOM tag or react component to use for the element.").defaultValue('span'),

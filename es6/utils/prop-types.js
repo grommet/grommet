@@ -14,7 +14,7 @@ export var backgroundDoc = PropTypes.oneOfType([PropTypes.string, PropTypes.shap
   size: PropTypes.oneOfType([PropTypes.oneOf(['cover', 'contain']), PropTypes.string]),
   light: PropTypes.string
 })]).description("Either a color \nidentifier to use for the background color. For example: 'neutral-1'. Or, a \n'url()' for an image. Dark is not needed if color is provided.");
-var MARGIN_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
+export var MARGIN_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
 export var marginProp = PropTypes.oneOfType([PropTypes.oneOf(['none'].concat(MARGIN_SIZES)), PropTypes.shape({
   bottom: PropTypes.oneOfType([PropTypes.oneOf(MARGIN_SIZES), PropTypes.string]),
   end: PropTypes.oneOfType([PropTypes.oneOf(MARGIN_SIZES), PropTypes.string]),
