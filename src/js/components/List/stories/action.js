@@ -5,7 +5,7 @@ import { Grommet, Box, List, Menu } from 'grommet';
 import { More } from 'grommet-icons';
 import { grommet } from 'grommet/themes';
 
-export const locations = [
+const locations = [
   'Boise',
   'Fort Collins',
   'Los Gatos',
@@ -13,7 +13,7 @@ export const locations = [
   'San Francisco',
 ];
 
-export const data = [];
+const data = [];
 
 for (let i = 0; i < 40; i += 1) {
   data.push({
