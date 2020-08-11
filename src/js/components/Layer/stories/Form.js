@@ -91,4 +91,6 @@ const FormLayer = () => {
   );
 };
 
-storiesOf('Layer', module).add('Form', () => <FormLayer />);
+storiesOf('Layer', module).add('Form', () => <FormLayer />, {
+  chromatic: { disable: true },
+});
