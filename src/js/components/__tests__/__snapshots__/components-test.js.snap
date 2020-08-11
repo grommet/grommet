@@ -12,7 +12,7 @@ Object {
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
         "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=accordion&module=%2Fsrc%2FAccordion.js",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/accordion&module=%2Fsrc%2FAccordion.js",
       },
     ],
     "description": "An accordion containing collapsible panels.",
@@ -197,7 +197,7 @@ node",
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
         "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=anchor&module=%2Fsrc%2FAnchor.js",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/anchor&module=%2Fsrc%2FAnchor.js",
       },
     ],
     "description": "A text link.",
@@ -384,7 +384,7 @@ function",
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
         "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=box&module=%2Fsrc%2FBox.js",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/box&module=%2Fsrc%2FBox.js",
       },
     ],
     "description": "A container that lays out its contents in one direction. Box
@@ -788,7 +788,8 @@ boolean",
       Object {
         "description": "The amount of spacing between child elements. This
         should not be used in conjunction with 'wrap' as the gap elements
-        will not wrap gracefully.",
+        will not wrap gracefully. If a child is a Fragment,
+        Box will not add a gap between the choldren of the Fragment.",
         "format": "none
 xxsmall
 xsmall
@@ -1090,7 +1091,7 @@ reverse",
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
         "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=button&module=%2Fsrc%2FButton.js",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/button&module=%2Fsrc%2FButton.js",
       },
     ],
     "description": "A button.",
@@ -1200,6 +1201,18 @@ xlarge
 }
 string",
         "name": "margin",
+      },
+      Object {
+        "description": "Function that can be called to render the visual representation.
+      Button can take in Children as a function, node, or object. 
+      For example hover can be passed as an object that would 
+      then return a react element.
+      \`children={({ hover }) => <Box...>{...}</Box>}\`
+      ",
+        "format": "function
+object
+node",
+        "name": "children",
       },
       Object {
         "defaultValue": false,
@@ -1381,7 +1394,7 @@ submit",
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
         "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=calendar&module=%2Fsrc%2FCalendar.js",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/calendar&module=%2Fsrc%2FCalendar.js",
       },
     ],
     "description": "A calendar of days displayed by month.
@@ -1632,7 +1645,7 @@ string",
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
         "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=chart&module=%2Fsrc%2FChart.js",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/chart&module=%2Fsrc%2FChart.js",
       },
     ],
     "description": "A graphical chart.",
@@ -1759,7 +1772,16 @@ string",
       where the gradient colors change.",
         "format": "string
 {
-  color: string,
+  dark: string,
+  light: string
+}
+{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   opacity: 
     weak
     medium
@@ -1767,7 +1789,12 @@ string",
     boolean
 }
 [{
-  color: string,
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   value: number
 }]",
         "name": "color",
@@ -1811,6 +1838,14 @@ string",
       This is only available when the type is line or area.",
         "format": "function",
         "name": "onHover",
+      },
+      Object {
+        "description": "What opacity to apply to the visuals. Supercedes 'color.opacity'",
+        "format": "weak
+medium
+strong
+boolean",
+        "name": "opacity",
       },
       Object {
         "defaultValue": false,
@@ -1971,7 +2006,8 @@ medium
 large
 xlarge
 none
-string",
+string
+number",
         "name": "thickness",
       },
       Object {
@@ -1988,14 +2024,35 @@ point",
       'value' is a tuple indicating the coordinate of the value or a triple
       indicating the x coordinate and a range of two y coordinates.
       'label' is a text string describing it.
-      'onHover' and 'onClick' only work when type='bar'.",
+      'onHover' and 'onClick' only work when type='bar'.
+      'color', 'opacity', and 'thickness' allow bar and point charts to have
+      color variation per-value.",
         "format": "[
   number
   [number]
   {
+    color: 
+      string
+      {
+        dark: string,
+        light: string
+      },
     label: string,
     onClick: function,
     onHover: function,
+    opacity: 
+      string
+      number,
+    thickness: 
+      hair
+      xsmall
+      small
+      medium
+      large
+      xlarge
+      none
+      string
+      number,
     value: 
       number
       [number]
@@ -2018,13 +2075,19 @@ point",
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
         "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=checkbox&module=%2Fsrc%2FCheckBox.js",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/checkbox&module=%2Fsrc%2FCheckBox.js",
       },
     ],
     "description": "A checkbox toggle control.",
     "intrinsicElement": "input",
     "name": "CheckBox",
     "properties": Array [
+      Object {
+        "description": "Custom label to be used by screen readers.
+      When provided, an aria-label will be added to the element.",
+        "format": "string",
+        "name": "a11yTitle",
+      },
       Object {
         "defaultValue": false,
         "description": "Same as React <input checked={} />",
@@ -2044,7 +2107,8 @@ point",
         "name": "id",
       },
       Object {
-        "description": "Label text to place next to the control.",
+        "description": "Label text to place next to the control. 
+      Can be used instead of a11yTitle to meet accessibility requirements",
         "format": "node",
         "name": "label",
       },
@@ -2094,7 +2158,7 @@ NOTE: This can only be used with non-toggle components",
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
         "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=checkboxgroup&module=%2Fsrc%2FCheckBoxGroup.js",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/checkboxgroup&module=%2Fsrc%2FCheckBoxGroup.js",
       },
     ],
     "description": "A group of CheckBoxes.",
@@ -2168,7 +2232,7 @@ NOTE: This can only be used with non-toggle components",
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
         "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=clock&module=%2Fsrc%2FClock.js",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/clock&module=%2Fsrc%2FClock.js",
       },
     ],
     "description": "A clock with timezone awareness.",
@@ -2324,7 +2388,7 @@ string",
       Object {
         "description": "ISO8601 time or duration. For example: 'PT8H12M23S',
       'T08:12:23', or '2015-02-22T08:12:23'. Any included date
-      portion will be ignored for an analog clock. If not provided, the
+      portion will be ignored. If not provided, the
       current browser time will be used.",
         "format": "string",
         "name": "time",
@@ -2371,7 +2435,7 @@ vertical",
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
         "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=datachart&module=%2Fsrc%2FDataChart.js",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/datachart&module=%2Fsrc%2FDataChart.js",
       },
     ],
     "description": "Takes a data set and visualizes it. While Chart renders a
@@ -2482,10 +2546,22 @@ string",
         "name": "margin",
       },
       Object {
-        "description": "TBD",
+        "defaultValue": true,
+        "description": "Whether to show an axis and how it should look.
+      If 'x' or 'y' is a string, it indicates the property to use
+      to determine the values to show.
+      If axis or 'x' is true, DataChart will look for a property called 'date'
+      or 'time' and automatically use that for the x-axis. If DataChart
+      can't find a property to use, it will use the data index for the x-axis.
+      If axis or 'y' is true, DataChart will use the first property in 'series'.
+      'granularity' indicates how many values to show.
+      'coarse' granularity shows two values, one at each end.
+      'fine' granularity shows all x-axis values and 5 y-axis values.
+      'medium' granularity picks something in between.",
         "format": "boolean
 {
   x: 
+    boolean
     string
     {
       property: string,
@@ -2495,6 +2571,7 @@ string",
         fine
     },
   y: 
+    boolean
     string
     {
       property: string,
@@ -2517,24 +2594,44 @@ string",
     [
       string
       {
-        key: string,
+        property: string,
         color: 
           string
-          {
-            color: string,
-            opacity: 
-              weak
-              medium
-              strong
-              boolean
-          }
           [{
   color: string,
   value: number
 }]
       }
-    ],
+    ]
+    {
+      color: 
+        string
+        {
+          property: string,
+          transform: function
+        },
+      thickness: 
+        string
+        {
+          property: string,
+          transform: function
+        },
+      x: string,
+      y: string
+    },
+  color: 
+    string
+    [{
+  color: string,
+  value: number
+}],
   dash: boolean,
+  opacity: 
+    weak
+    medium
+    strong
+    number
+    boolean,
   round: boolean,
   thickness: 
     hair
@@ -2557,24 +2654,44 @@ string",
     [
       string
       {
-        key: string,
+        property: string,
         color: 
           string
-          {
-            color: string,
-            opacity: 
-              weak
-              medium
-              strong
-              boolean
-          }
           [{
   color: string,
   value: number
 }]
       }
-    ],
+    ]
+    {
+      color: 
+        string
+        {
+          property: string,
+          transform: function
+        },
+      thickness: 
+        string
+        {
+          property: string,
+          transform: function
+        },
+      x: string,
+      y: string
+    },
+  color: 
+    string
+    [{
+  color: string,
+  value: number
+}],
   dash: boolean,
+  opacity: 
+    weak
+    medium
+    strong
+    number
+    boolean,
   round: boolean,
   thickness: 
     hair
@@ -2601,7 +2718,10 @@ string",
         "name": "data",
       },
       Object {
-        "description": "TBD",
+        "description": "Whether to add the ability to interact with the chart
+      via mouse or keyboard to show details on specific values in the chart.
+      It shows all properties specified in 'series', using any 'render'
+      functions therein.",
         "format": "boolean",
         "name": "detail",
       },
@@ -2618,7 +2738,8 @@ string",
         "name": "gap",
       },
       Object {
-        "description": "TBD",
+        "description": "Whether to put guidelines underneath the chart graphics.
+    See the description of 'granularity' under 'axis'.",
         "format": "boolean
 {
   x: 
@@ -2728,20 +2849,6 @@ string",
         "format": "string
 {
   bounds: [number],
-  color: 
-    string
-    {
-      color: string,
-      opacity: 
-        weak
-        medium
-        strong
-        boolean
-    }
-    [{
-  color: string,
-  value: number
-}],
   label: 
     string,
   prefix: string,
@@ -2753,20 +2860,6 @@ string",
   string
   {
     bounds: [number],
-    color: 
-      string
-      {
-        color: string,
-        opacity: 
-          weak
-          medium
-          strong
-          boolean
-      }
-      [{
-  color: string,
-  value: number
-}],
     label: 
       string,
     prefix: string,
@@ -2775,7 +2868,7 @@ string",
     suffix: string
   }
 ]",
-        "name": "property",
+        "name": "series",
       },
       Object {
         "description": "The size of the Charts. This does not include the axes
@@ -2819,7 +2912,7 @@ string",
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
         "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=dateinput&module=%2Fsrc%2FDateInput.js",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/dateinput&module=%2Fsrc%2FDateInput.js",
       },
     ],
     "description": "A control to input a single date or a date range.",
@@ -2920,7 +3013,7 @@ string",
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
         "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=diagram&module=%2Fsrc%2FDiagram.js",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/diagram&module=%2Fsrc%2FDiagram.js",
       },
     ],
     "description": "Graphical connection lines. Diagram is meant to be used with Stack.
@@ -2991,7 +3084,7 @@ string",
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
         "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=drop&module=%2Fsrc%2FDrop.js",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/drop&module=%2Fsrc%2FDrop.js",
       },
     ],
     "description": "A container that is overlaid next to a target.",
@@ -3113,7 +3206,7 @@ string",
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
         "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=dropbutton&module=%2Fsrc%2FDropButton.js",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/dropbutton&module=%2Fsrc%2FDropButton.js",
       },
     ],
     "description": "A Button that controls a Drop. When opened, the Drop will contain
@@ -3303,7 +3396,7 @@ string",
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
         "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=form&module=%2Fsrc%2FForm.js",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/form&module=%2Fsrc%2FForm.js",
       },
     ],
     "description": "A form that manages state for its fields.",
@@ -3413,7 +3506,7 @@ submit",
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
         "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=formfield&module=%2Fsrc%2FFormField.js",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/formfield&module=%2Fsrc%2FFormField.js",
       },
     ],
     "description": "A single field in a form. FormField wraps an input component with
@@ -3422,6 +3515,14 @@ submit",
     "intrinsicElement": "div",
     "name": "FormField",
     "properties": Array [
+      Object {
+        "description": "Custom label to be used by screen readers.
+       Should only be provided if FormField has no children.
+       When a11yTitle is provided an aria-label will be added to the element
+       if it has no children.",
+        "format": "string",
+        "name": "a11yTitle",
+      },
       Object {
         "description": "The component to insert in the FormField. Grommet will add update the
       form values when this field changes. Any additional properties
@@ -3609,7 +3710,7 @@ function
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
         "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=grid&module=%2Fsrc%2FGrid.js",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/grid&module=%2Fsrc%2FGrid.js",
       },
     ],
     "description": "A grid system for laying out content. To use, define the
@@ -4056,7 +4157,7 @@ function",
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
         "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=image&module=%2Fsrc%2FImage.js",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/image&module=%2Fsrc%2FImage.js",
       },
     ],
     "description": "An image.",
@@ -4208,7 +4309,7 @@ boolean",
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
         "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=layer&module=%2Fsrc%2FLayer.js",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/layer&module=%2Fsrc%2FLayer.js",
       },
     ],
     "description": "An overlay. Layer is typically modal and anchored to an edge, corner, or
@@ -4382,7 +4483,7 @@ top-right",
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
         "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=list&module=%2Fsrc%2FList.js",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/list&module=%2Fsrc%2FList.js",
       },
     ],
     "description": "An ordered list of items.",
@@ -4701,7 +4802,7 @@ function",
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
         "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=maskedinput&module=%2Fsrc%2FMaskedInput.js",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/maskedinput&module=%2Fsrc%2FMaskedInput.js",
       },
     ],
     "description": "An input field with formalized syntax.",
@@ -4796,7 +4897,7 @@ number",
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
         "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=menu&module=%2Fsrc%2FMenu.js",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/menu&module=%2Fsrc%2FMenu.js",
       },
     ],
     "description": "A control that opens a Drop containing plain Buttons.",
@@ -4908,6 +5009,16 @@ xlarge
 }
 string",
         "name": "margin",
+      },
+      Object {
+        "description": "Function that will be called to render the visual representation.
+      It will be passed an object containing button props.
+      It should return a react element.
+      For example:
+      \`children={({ drop, hover }) => <Box ...>{...}</Box>}\`
+      ",
+        "format": "function",
+        "name": "children",
       },
       Object {
         "defaultValue": false,
@@ -5044,7 +5155,7 @@ string",
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
         "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=meter&module=%2Fsrc%2FMeter.js",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/meter&module=%2Fsrc%2FMeter.js",
       },
     ],
     "description": "A graphical meter.",
@@ -5246,7 +5357,7 @@ circle",
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
         "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=paragraph&module=%2Fsrc%2FParagraph.js",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/paragraph&module=%2Fsrc%2FParagraph.js",
       },
     ],
     "description": "A paragraph of text.",
@@ -5408,7 +5519,7 @@ end",
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
         "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=radiobutton&module=%2Fsrc%2FRadioButton.js",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/radiobutton&module=%2Fsrc%2FRadioButton.js",
       },
     ],
     "description": "A radio button control.",
@@ -5482,7 +5593,7 @@ with the same name so form submissions work.",
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
         "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=radiobuttongroup&module=%2Fsrc%2FRadioButtonGroup.js",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/radiobuttongroup&module=%2Fsrc%2FRadioButtonGroup.js",
       },
     ],
     "description": "A group of radio buttons.",
@@ -5560,13 +5671,19 @@ object",
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
         "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=rangeinput&module=%2Fsrc%2FRangeInput.js",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/rangeinput&module=%2Fsrc%2FRangeInput.js",
       },
     ],
     "description": "A slider control to input a value within a fixed range.",
     "intrinsicElement": "input",
     "name": "RangeInput",
     "properties": Array [
+      Object {
+        "description": "Custom label to be used by screen readers.
+      When provided, an aria-label will be added to the element.",
+        "format": "string",
+        "name": "a11yTitle",
+      },
       Object {
         "description": "The id attribute of the range input.",
         "format": "string",
@@ -5621,7 +5738,7 @@ string",
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
         "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=rangeselector&module=%2Fsrc%2FRangeSelector.js",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/rangeselector&module=%2Fsrc%2FRangeSelector.js",
       },
     ],
     "description": "A control to input a range of values.",
@@ -5737,7 +5854,7 @@ string",
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
         "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=select&module=%2Fsrc%2FSelect.js",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/select&module=%2Fsrc%2FSelect.js",
       },
     ],
     "description": "A control to select a value, with optional search.",
@@ -6227,7 +6344,7 @@ bottom",
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
         "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=tabs&module=%2Fsrc%2FTabs.js",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/tabs&module=%2Fsrc%2FTabs.js",
       },
     ],
     "description": "A container with controls to show one Tab at a time.",
@@ -6405,7 +6522,7 @@ currently active tab changes.",
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
         "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=textarea&module=%2Fsrc%2FTextArea.js",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/textarea&module=%2Fsrc%2FTextArea.js",
       },
     ],
     "description": "A control to input multiple lines of text.",
@@ -6491,7 +6608,7 @@ string",
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
         "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=textinput&module=%2Fsrc%2FTextInput.js",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/textinput&module=%2Fsrc%2FTextInput.js",
       },
     ],
     "description": "A control to input a single line of text, with optional suggestions.",
@@ -6665,7 +6782,7 @@ number",
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
         "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=video&module=%2Fsrc%2FVideo.js",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/video&module=%2Fsrc%2FVideo.js",
       },
     ],
     "description": "A video player.",
@@ -6842,7 +6959,7 @@ contain",
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
         "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=worldmap&module=%2Fsrc%2FWorldMap.js",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/worldmap&module=%2Fsrc%2FWorldMap.js",
       },
     ],
     "description": "A map of the world, or a continent.",

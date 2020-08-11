@@ -67,6 +67,7 @@ exports[`DataChart axis 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  max-width: 100%;
   -webkit-align-items: flex-end;
   -webkit-box-align: flex-end;
   -ms-flex-align: flex-end;
@@ -76,16 +77,9 @@ exports[`DataChart axis 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 1;
-  -ms-flex: 0 1;
-  flex: 0 1;
-  -webkit-flex-basis: 96px;
-  -ms-flex-preferred-size: 96px;
-  flex-basis: 96px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
 }
 
 .c5 {
@@ -181,7 +175,7 @@ exports[`DataChart axis 1`] = `
         <div
           className="c4"
         >
-          0.8
+          0
         </div>
       </div>
       <div
@@ -216,7 +210,7 @@ exports[`DataChart axis 1`] = `
               >
                 <title />
                 <path
-                  d="M 48,144 L 48,128"
+                  d="M 48,192 L 48,96"
                 />
               </g>
               <g
@@ -224,7 +218,7 @@ exports[`DataChart axis 1`] = `
               >
                 <title />
                 <path
-                  d="M 336,144 L 336,48"
+                  d="M 336,192 L 336,0"
                 />
               </g>
             </g>
@@ -272,7 +266,7 @@ exports[`DataChart axis 1`] = `
           >
             <title />
             <path
-              d="M 48,144 L 48,128"
+              d="M 48,192 L 48,96"
             />
           </g>
           <g
@@ -280,7 +274,7 @@ exports[`DataChart axis 1`] = `
           >
             <title />
             <path
-              d="M 336,144 L 336,48"
+              d="M 336,192 L 336,0"
             />
           </g>
         </g>
@@ -315,7 +309,7 @@ exports[`DataChart axis 1`] = `
             >
               <title />
               <path
-                d="M 48,144 L 48,128"
+                d="M 48,192 L 48,96"
               />
             </g>
             <g
@@ -323,7 +317,7 @@ exports[`DataChart axis 1`] = `
             >
               <title />
               <path
-                d="M 336,144 L 336,48"
+                d="M 336,192 L 336,0"
               />
             </g>
           </g>
@@ -362,7 +356,7 @@ exports[`DataChart axis 1`] = `
         <div
           className="c4"
         >
-          0.8
+          0
         </div>
       </div>
       <div
@@ -394,7 +388,7 @@ exports[`DataChart axis 1`] = `
             >
               <title />
               <path
-                d="M 48,144 L 48,128"
+                d="M 48,192 L 48,96"
               />
             </g>
             <g
@@ -402,7 +396,7 @@ exports[`DataChart axis 1`] = `
             >
               <title />
               <path
-                d="M 336,144 L 336,48"
+                d="M 336,192 L 336,0"
               />
             </g>
           </g>
@@ -438,7 +432,7 @@ exports[`DataChart axis 1`] = `
             >
               <title />
               <path
-                d="M 48,144 L 48,128"
+                d="M 48,192 L 48,96"
               />
             </g>
             <g
@@ -446,7 +440,7 @@ exports[`DataChart axis 1`] = `
             >
               <title />
               <path
-                d="M 336,144 L 336,48"
+                d="M 336,192 L 336,0"
               />
             </g>
           </g>
@@ -485,22 +479,22 @@ exports[`DataChart axis 1`] = `
         <div
           className="c4"
         >
-          1.7
+          1.67
         </div>
         <div
           className="c4"
         >
-          1.4
+          1.34
         </div>
         <div
           className="c4"
         >
-          1.1
+          1
         </div>
         <div
           className="c4"
         >
-          0.8
+          0.67
         </div>
       </div>
       <div
@@ -532,7 +526,7 @@ exports[`DataChart axis 1`] = `
             >
               <title />
               <path
-                d="M 48,144 L 48,128"
+                d="M 48,192 L 48,144"
               />
             </g>
             <g
@@ -540,7 +534,7 @@ exports[`DataChart axis 1`] = `
             >
               <title />
               <path
-                d="M 336,144 L 336,48"
+                d="M 336,192 L 336,2.842170943040401e-14"
               />
             </g>
           </g>
@@ -618,6 +612,7 @@ exports[`DataChart dates 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  max-width: 100%;
   -webkit-align-items: flex-end;
   -webkit-box-align: flex-end;
   -ms-flex-align: flex-end;
@@ -627,16 +622,9 @@ exports[`DataChart dates 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 1;
-  -ms-flex: 0 1;
-  flex: 0 1;
-  -webkit-flex-basis: 96px;
-  -ms-flex-preferred-size: 96px;
-  flex-basis: 96px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
 }
 
 .c5 {
@@ -674,7 +662,8 @@ exports[`DataChart dates 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 48px;
+  padding-left: 48px;
+  padding-right: 48px;
 }
 
 .c9 {
@@ -710,7 +699,8 @@ exports[`DataChart dates 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 48px;
+  padding-left: 48px;
+  padding-right: 48px;
 }
 
 .c11 {
@@ -908,7 +898,7 @@ exports[`DataChart dates 1`] = `
               >
                 <title />
                 <path
-                  d="M 48,144 L 48,144"
+                  d="M 48,192 L 48,192"
                 />
               </g>
               <g
@@ -916,7 +906,7 @@ exports[`DataChart dates 1`] = `
               >
                 <title />
                 <path
-                  d="M 144,144 L 144,113.52384"
+                  d="M 144,192 L 144,131.04768"
                 />
               </g>
               <g
@@ -924,7 +914,7 @@ exports[`DataChart dates 1`] = `
               >
                 <title />
                 <path
-                  d="M 240,144 L 240,83.04768000000001"
+                  d="M 240,192 L 240,70.09536000000001"
                 />
               </g>
               <g
@@ -932,7 +922,7 @@ exports[`DataChart dates 1`] = `
               >
                 <title />
                 <path
-                  d="M 336,144 L 336,52.57152000000002"
+                  d="M 336,192 L 336,9.143040000000013"
                 />
               </g>
             </g>
@@ -945,12 +935,12 @@ exports[`DataChart dates 1`] = `
         <div
           className="c15"
         >
-          08:04:01 AM
+          0
         </div>
         <div
           className="c16"
         >
-          08:04:04 AM
+          3
         </div>
       </div>
     </div>
@@ -1035,7 +1025,7 @@ exports[`DataChart dates 1`] = `
               >
                 <title />
                 <path
-                  d="M 48,144 L 48,144"
+                  d="M 48,192 L 48,192"
                 />
               </g>
               <g
@@ -1043,7 +1033,7 @@ exports[`DataChart dates 1`] = `
               >
                 <title />
                 <path
-                  d="M 144,144 L 144,113.52384"
+                  d="M 144,192 L 144,131.04768"
                 />
               </g>
               <g
@@ -1051,7 +1041,7 @@ exports[`DataChart dates 1`] = `
               >
                 <title />
                 <path
-                  d="M 240,144 L 240,83.04768000000001"
+                  d="M 240,192 L 240,70.09536000000001"
                 />
               </g>
               <g
@@ -1059,7 +1049,7 @@ exports[`DataChart dates 1`] = `
               >
                 <title />
                 <path
-                  d="M 336,144 L 336,52.57152000000002"
+                  d="M 336,192 L 336,9.143040000000013"
                 />
               </g>
             </g>
@@ -1072,12 +1062,12 @@ exports[`DataChart dates 1`] = `
         <div
           className="c15"
         >
-          8:01 AM
+          0
         </div>
         <div
           className="c16"
         >
-          8:04 AM
+          3
         </div>
       </div>
     </div>
@@ -1162,7 +1152,7 @@ exports[`DataChart dates 1`] = `
               >
                 <title />
                 <path
-                  d="M 48,144 L 48,144"
+                  d="M 48,192 L 48,192"
                 />
               </g>
               <g
@@ -1170,7 +1160,7 @@ exports[`DataChart dates 1`] = `
               >
                 <title />
                 <path
-                  d="M 144,144 L 144,113.52384"
+                  d="M 144,192 L 144,131.04768"
                 />
               </g>
               <g
@@ -1178,7 +1168,7 @@ exports[`DataChart dates 1`] = `
               >
                 <title />
                 <path
-                  d="M 240,144 L 240,83.04768000000001"
+                  d="M 240,192 L 240,70.09536000000001"
                 />
               </g>
               <g
@@ -1186,7 +1176,7 @@ exports[`DataChart dates 1`] = `
               >
                 <title />
                 <path
-                  d="M 336,144 L 336,52.57152000000002"
+                  d="M 336,192 L 336,9.143040000000013"
                 />
               </g>
             </g>
@@ -1199,12 +1189,12 @@ exports[`DataChart dates 1`] = `
         <div
           className="c15"
         >
-          1 AM
+          0
         </div>
         <div
           className="c16"
         >
-          4 AM
+          3
         </div>
       </div>
     </div>
@@ -1289,7 +1279,7 @@ exports[`DataChart dates 1`] = `
               >
                 <title />
                 <path
-                  d="M 48,144 L 48,144"
+                  d="M 48,192 L 48,192"
                 />
               </g>
               <g
@@ -1297,7 +1287,7 @@ exports[`DataChart dates 1`] = `
               >
                 <title />
                 <path
-                  d="M 144,144 L 144,113.52384"
+                  d="M 144,192 L 144,131.04768"
                 />
               </g>
               <g
@@ -1305,7 +1295,7 @@ exports[`DataChart dates 1`] = `
               >
                 <title />
                 <path
-                  d="M 240,144 L 240,83.04768000000001"
+                  d="M 240,192 L 240,70.09536000000001"
                 />
               </g>
               <g
@@ -1313,7 +1303,7 @@ exports[`DataChart dates 1`] = `
               >
                 <title />
                 <path
-                  d="M 336,144 L 336,52.57152000000002"
+                  d="M 336,192 L 336,9.143040000000013"
                 />
               </g>
             </g>
@@ -1326,12 +1316,12 @@ exports[`DataChart dates 1`] = `
         <div
           className="c15"
         >
-          May 1
+          0
         </div>
         <div
           className="c16"
         >
-          May 4
+          3
         </div>
       </div>
     </div>
@@ -1416,7 +1406,7 @@ exports[`DataChart dates 1`] = `
               >
                 <title />
                 <path
-                  d="M 48,144 L 48,144"
+                  d="M 48,192 L 48,192"
                 />
               </g>
               <g
@@ -1424,7 +1414,7 @@ exports[`DataChart dates 1`] = `
               >
                 <title />
                 <path
-                  d="M 144,144 L 144,113.52384"
+                  d="M 144,192 L 144,131.04768"
                 />
               </g>
               <g
@@ -1432,7 +1422,7 @@ exports[`DataChart dates 1`] = `
               >
                 <title />
                 <path
-                  d="M 240,144 L 240,83.04768000000001"
+                  d="M 240,192 L 240,70.09536000000001"
                 />
               </g>
               <g
@@ -1440,7 +1430,7 @@ exports[`DataChart dates 1`] = `
               >
                 <title />
                 <path
-                  d="M 336,144 L 336,52.57152000000002"
+                  d="M 336,192 L 336,9.143040000000013"
                 />
               </g>
             </g>
@@ -1453,12 +1443,12 @@ exports[`DataChart dates 1`] = `
         <div
           className="c15"
         >
-          January
+          0
         </div>
         <div
           className="c16"
         >
-          April
+          3
         </div>
       </div>
     </div>
@@ -1543,7 +1533,7 @@ exports[`DataChart dates 1`] = `
               >
                 <title />
                 <path
-                  d="M 48,144 L 48,144"
+                  d="M 48,192 L 48,192"
                 />
               </g>
               <g
@@ -1551,7 +1541,7 @@ exports[`DataChart dates 1`] = `
               >
                 <title />
                 <path
-                  d="M 144,144 L 144,113.52384"
+                  d="M 144,192 L 144,131.04768"
                 />
               </g>
               <g
@@ -1559,7 +1549,7 @@ exports[`DataChart dates 1`] = `
               >
                 <title />
                 <path
-                  d="M 240,144 L 240,83.04768000000001"
+                  d="M 240,192 L 240,70.09536000000001"
                 />
               </g>
               <g
@@ -1567,7 +1557,7 @@ exports[`DataChart dates 1`] = `
               >
                 <title />
                 <path
-                  d="M 336,144 L 336,52.57152000000002"
+                  d="M 336,192 L 336,9.143040000000013"
                 />
               </g>
             </g>
@@ -1580,12 +1570,12 @@ exports[`DataChart dates 1`] = `
         <div
           className="c15"
         >
-          2001
+          0
         </div>
         <div
           className="c16"
         >
-          2004
+          3
         </div>
       </div>
     </div>
@@ -1604,80 +1594,7 @@ exports[`DataChart default 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c3 {
-  display: block;
-  max-width: 100%;
-  overflow: visible;
-}
-
 .c1 {
-  position: relative;
-  grid-area: charts;
-}
-
-.c2 {
-  position: relative;
-  display: block;
-}
-
-<div
-  className="c0"
->
-  <div
-    className="c1"
-  >
-    <div
-      className="c2"
-    >
-      <svg
-        className="c3"
-        height={192}
-        preserveAspectRatio="none"
-        viewBox="0 0 384 192"
-        width={384}
-      >
-        <g
-          fill="none"
-          stroke="#6FFFB0"
-          strokeLinecap="butt"
-          strokeLinejoin="miter"
-          strokeWidth={96}
-        >
-          <g
-            fill="none"
-          >
-            <title />
-            <path
-              d="M 48,144 L 48,128"
-            />
-          </g>
-          <g
-            fill="none"
-          >
-            <title />
-            <path
-              d="M 336,144 L 336,48"
-            />
-          </g>
-        </g>
-      </svg>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`DataChart detail 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1689,15 +1606,102 @@ exports[`DataChart detail 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  width: 100%;
-  height: 100%;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: yAxis;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
-.c7 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: xAxis;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1719,6 +1723,136 @@ exports[`DataChart detail 1`] = `
 }
 
 .c8 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.c6 {
+  position: relative;
+  grid-area: charts;
+}
+
+.c7 {
+  position: relative;
+  display: block;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          2
+        </div>
+        <div
+          className="c4"
+        >
+          0
+        </div>
+      </div>
+      <div
+        className="c5"
+      />
+    </div>
+    <div
+      className="c2"
+    >
+      <div
+        className="c6"
+      >
+        <div
+          className="c7"
+        >
+          <svg
+            className="c8"
+            height={192}
+            preserveAspectRatio="none"
+            viewBox="0 0 384 192"
+            width={384}
+          >
+            <g
+              fill="none"
+              stroke="#6FFFB0"
+              strokeLinecap="butt"
+              strokeLinejoin="miter"
+              strokeWidth={96}
+            >
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 48,192 L 48,96"
+                />
+              </g>
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 336,192 L 336,0"
+                />
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div
+        className="c9"
+      >
+        <div
+          className="c10"
+        >
+          0
+        </div>
+        <div
+          className="c10"
+        >
+          1
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DataChart detail 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1730,350 +1864,69 @@ exports[`DataChart detail 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 100%;
-}
-
-.c9 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 2px;
 }
 
 .c3 {
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
   max-width: 100%;
-  overflow: visible;
-}
-
-.c1 {
-  position: relative;
-  grid-area: charts;
-}
-
-.c2 {
-  position: relative;
-  display: block;
+  grid-area: yAxis;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .c4 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-
-.c6:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c6:focus > circle,
-.c6:focus > ellipse,
-.c6:focus > line,
-.c6:focus > path,
-.c6:focus > polygon,
-.c6:focus > polyline,
-.c6:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c6:focus::-moz-focus-inner {
-  border: 0;
-}
-
-<div
-  className="c0"
->
-  <div
-    className="c1"
-  >
-    <div
-      className="c2"
-    >
-      <svg
-        className="c3"
-        height={192}
-        preserveAspectRatio="none"
-        viewBox="0 0 384 192"
-        width={384}
-      >
-        <g
-          fill="none"
-          stroke="#6FFFB0"
-          strokeLinecap="butt"
-          strokeLinejoin="miter"
-          strokeWidth={96}
-        >
-          <g
-            fill="none"
-          >
-            <title />
-            <path
-              d="M 48,144 L 48,128"
-            />
-          </g>
-          <g
-            fill="none"
-          >
-            <title />
-            <path
-              d="M 336,144 L 336,48"
-            />
-          </g>
-        </g>
-      </svg>
-    </div>
-    <div
-      className="c4"
-    >
-      <div
-        className="c5 c6"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onMouseOut={[Function]}
-        tabIndex={0}
-      >
-        <div
-          className="c7"
-          onBlur={[Function]}
-          onFocus={[Function]}
-          onMouseOver={[Function]}
-        >
-          <div
-            className="c8"
-          />
-        </div>
-        <div
-          className="c9"
-        />
-        <div
-          className="c7"
-          onBlur={[Function]}
-          onFocus={[Function]}
-          onMouseOver={[Function]}
-        >
-          <div
-            className="c8"
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    className="c1"
-  >
-    <div
-      className="c2"
-    >
-      <svg
-        className="c3"
-        height={192}
-        preserveAspectRatio="none"
-        viewBox="0 0 384 192"
-        width={384}
-      >
-        <g
-          fill="none"
-          stroke="#6FFFB0"
-          strokeLinecap="butt"
-          strokeLinejoin="miter"
-          strokeWidth={96}
-        >
-          <g
-            fill="none"
-          >
-            <title />
-            <path
-              d="M 48,144 L 48,128"
-            />
-          </g>
-          <g
-            fill="none"
-          >
-            <title />
-            <path
-              d="M 336,144 L 336,48"
-            />
-          </g>
-        </g>
-      </svg>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`DataChart gap 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c3 {
-  display: block;
   max-width: 100%;
-  overflow: visible;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
 }
 
-.c1 {
-  position: relative;
-  grid-area: charts;
-}
-
-.c2 {
-  position: relative;
-  display: block;
-}
-
-<div
-  className="c0"
->
-  <div
-    className="c1"
-  >
-    <div
-      className="c2"
-    >
-      <svg
-        className="c3"
-        height={192}
-        preserveAspectRatio="none"
-        viewBox="0 0 384 192"
-        width={384}
-      >
-        <g
-          fill="none"
-          stroke="#6FFFB0"
-          strokeLinecap="butt"
-          strokeLinejoin="miter"
-          strokeWidth={96}
-        >
-          <g
-            fill="none"
-          >
-            <title />
-            <path
-              d="M 48,144 L 48,128"
-            />
-          </g>
-          <g
-            fill="none"
-          >
-            <title />
-            <path
-              d="M 336,144 L 336,48"
-            />
-          </g>
-        </g>
-      </svg>
-    </div>
-  </div>
-  <div
-    className="c1"
-  >
-    <div
-      className="c2"
-    >
-      <svg
-        className="c3"
-        height={192}
-        preserveAspectRatio="none"
-        viewBox="0 0 384 192"
-        width={384}
-      >
-        <g
-          fill="none"
-          stroke="#6FFFB0"
-          strokeLinecap="butt"
-          strokeLinejoin="miter"
-          strokeWidth={96}
-        >
-          <g
-            fill="none"
-          >
-            <title />
-            <path
-              d="M 48,144 L 48,128"
-            />
-          </g>
-          <g
-            fill="none"
-          >
-            <title />
-            <path
-              d="M 336,144 L 336,48"
-            />
-          </g>
-        </g>
-      </svg>
-    </div>
-  </div>
-  <div
-    className="c1"
-  >
-    <div
-      className="c2"
-    >
-      <svg
-        className="c3"
-        height={192}
-        preserveAspectRatio="none"
-        viewBox="0 0 384 192"
-        width={384}
-      >
-        <g
-          fill="none"
-          stroke="#6FFFB0"
-          strokeLinecap="butt"
-          strokeLinejoin="miter"
-          strokeWidth={96}
-        >
-          <g
-            fill="none"
-          >
-            <title />
-            <path
-              d="M 48,144 L 48,128"
-            />
-          </g>
-          <g
-            fill="none"
-          >
-            <title />
-            <path
-              d="M 336,144 L 336,48"
-            />
-          </g>
-        </g>
-      </svg>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`DataChart guide 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
-.c3 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2091,10 +1944,857 @@ exports[`DataChart guide 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 48px;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: xAxis;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c14 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 2px;
+}
+
+.c8 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.c6 {
+  position: relative;
+  grid-area: charts;
+}
+
+.c7 {
+  position: relative;
+  display: block;
+}
+
+.c9 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c11:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus > circle,
+.c11:focus > ellipse,
+.c11:focus > line,
+.c11:focus > path,
+.c11:focus > polygon,
+.c11:focus > polyline,
+.c11:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus::-moz-focus-inner {
+  border: 0;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          2
+        </div>
+        <div
+          className="c4"
+        >
+          0
+        </div>
+      </div>
+      <div
+        className="c5"
+      />
+    </div>
+    <div
+      className="c2"
+    >
+      <div
+        className="c6"
+      >
+        <div
+          className="c7"
+        >
+          <svg
+            className="c8"
+            height={192}
+            preserveAspectRatio="none"
+            viewBox="0 0 384 192"
+            width={384}
+          >
+            <g
+              fill="none"
+              stroke="#6FFFB0"
+              strokeLinecap="butt"
+              strokeLinejoin="miter"
+              strokeWidth={96}
+            >
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 48,192 L 48,96"
+                />
+              </g>
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 336,192 L 336,0"
+                />
+              </g>
+            </g>
+          </svg>
+        </div>
+        <div
+          className="c9"
+        >
+          <div
+            className="c10 c11"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseOut={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="c12"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c13"
+              />
+            </div>
+            <div
+              className="c14"
+            />
+            <div
+              className="c12"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onMouseOver={[Function]}
+            >
+              <div
+                className="c13"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="c15"
+      >
+        <div
+          className="c12"
+        >
+          0
+        </div>
+        <div
+          className="c12"
+        >
+          1
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          2
+        </div>
+        <div
+          className="c4"
+        >
+          0
+        </div>
+      </div>
+      <div
+        className="c5"
+      />
+    </div>
+    <div
+      className="c2"
+    >
+      <div
+        className="c6"
+      >
+        <div
+          className="c7"
+        >
+          <svg
+            className="c8"
+            height={192}
+            preserveAspectRatio="none"
+            viewBox="0 0 384 192"
+            width={384}
+          >
+            <g
+              fill="none"
+              stroke="#6FFFB0"
+              strokeLinecap="butt"
+              strokeLinejoin="miter"
+              strokeWidth={96}
+            >
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 48,192 L 48,96"
+                />
+              </g>
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 336,192 L 336,0"
+                />
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div
+        className="c15"
+      >
+        <div
+          className="c12"
+        >
+          0
+        </div>
+        <div
+          className="c12"
+        >
+          1
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DataChart gap 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: yAxis;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: xAxis;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+}
+
+.c8 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.c6 {
+  position: relative;
+  grid-area: charts;
+}
+
+.c7 {
+  position: relative;
+  display: block;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          2
+        </div>
+        <div
+          className="c4"
+        >
+          0
+        </div>
+      </div>
+      <div
+        className="c5"
+      />
+    </div>
+    <div
+      className="c2"
+    >
+      <div
+        className="c6"
+      >
+        <div
+          className="c7"
+        >
+          <svg
+            className="c8"
+            height={192}
+            preserveAspectRatio="none"
+            viewBox="0 0 384 192"
+            width={384}
+          >
+            <g
+              fill="none"
+              stroke="#6FFFB0"
+              strokeLinecap="butt"
+              strokeLinejoin="miter"
+              strokeWidth={96}
+            >
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 48,192 L 48,96"
+                />
+              </g>
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 336,192 L 336,0"
+                />
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div
+        className="c9"
+      >
+        <div
+          className="c10"
+        >
+          0
+        </div>
+        <div
+          className="c10"
+        >
+          1
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          2
+        </div>
+        <div
+          className="c4"
+        >
+          0
+        </div>
+      </div>
+      <div
+        className="c5"
+      />
+    </div>
+    <div
+      className="c2"
+    >
+      <div
+        className="c6"
+      >
+        <div
+          className="c7"
+        >
+          <svg
+            className="c8"
+            height={192}
+            preserveAspectRatio="none"
+            viewBox="0 0 384 192"
+            width={384}
+          >
+            <g
+              fill="none"
+              stroke="#6FFFB0"
+              strokeLinecap="butt"
+              strokeLinejoin="miter"
+              strokeWidth={96}
+            >
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 48,192 L 48,96"
+                />
+              </g>
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 336,192 L 336,0"
+                />
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div
+        className="c9"
+      >
+        <div
+          className="c10"
+        >
+          0
+        </div>
+        <div
+          className="c10"
+        >
+          1
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          2
+        </div>
+        <div
+          className="c4"
+        >
+          0
+        </div>
+      </div>
+      <div
+        className="c5"
+      />
+    </div>
+    <div
+      className="c2"
+    >
+      <div
+        className="c6"
+      >
+        <div
+          className="c7"
+        >
+          <svg
+            className="c8"
+            height={192}
+            preserveAspectRatio="none"
+            viewBox="0 0 384 192"
+            width={384}
+          >
+            <g
+              fill="none"
+              stroke="#6FFFB0"
+              strokeLinecap="butt"
+              strokeLinejoin="miter"
+              strokeWidth={96}
+            >
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 48,192 L 48,96"
+                />
+              </g>
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 336,192 L 336,0"
+                />
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div
+        className="c9"
+      >
+        <div
+          className="c10"
+        >
+          0
+        </div>
+        <div
+          className="c10"
+        >
+          1
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DataChart guide 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: yAxis;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2109,7 +2809,7 @@ exports[`DataChart guide 1`] = `
   flex-direction: column;
 }
 
-.c5 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2127,10 +2827,11 @@ exports[`DataChart guide 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 48px;
+  padding-left: 48px;
+  padding-right: 48px;
 }
 
-.c6 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2145,18 +2846,58 @@ exports[`DataChart guide 1`] = `
   flex-direction: column;
 }
 
-.c8 {
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: xAxis;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+}
+
+.c13 {
   display: block;
   max-width: 100%;
   overflow: visible;
 }
 
-.c1 {
+.c6 {
   position: relative;
   grid-area: charts;
 }
 
-.c2 {
+.c7 {
   position: absolute;
   top: 0;
   left: 0;
@@ -2164,19 +2905,19 @@ exports[`DataChart guide 1`] = `
   right: 0;
 }
 
-.c7 {
+.c12 {
   position: relative;
   display: block;
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c9 {
     border-left: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
+  .c11 {
     border-top: solid 1px rgba(0,0,0,0.33);
   }
 }
@@ -2195,101 +2936,104 @@ exports[`DataChart guide 1`] = `
       >
         <div
           className="c4"
-        />
+        >
+          2
+        </div>
         <div
           className="c4"
-        />
+        >
+          0
+        </div>
       </div>
+      <div
+        className="c5"
+      />
     </div>
     <div
       className="c2"
     >
       <div
-        className="c5"
+        className="c6"
       >
         <div
-          className="c6"
-        />
+          className="c7"
+        >
+          <div
+            className="c8"
+          >
+            <div
+              className="c9"
+            />
+            <div
+              className="c9"
+            />
+          </div>
+        </div>
         <div
-          className="c6"
-        />
+          className="c7"
+        >
+          <div
+            className="c10"
+          >
+            <div
+              className="c11"
+            />
+            <div
+              className="c11"
+            />
+          </div>
+        </div>
+        <div
+          className="c12"
+        >
+          <svg
+            className="c13"
+            height={192}
+            preserveAspectRatio="none"
+            viewBox="0 0 384 192"
+            width={384}
+          >
+            <g
+              fill="none"
+              stroke="#6FFFB0"
+              strokeLinecap="butt"
+              strokeLinejoin="miter"
+              strokeWidth={96}
+            >
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 48,192 L 48,96"
+                />
+              </g>
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 336,192 L 336,0"
+                />
+              </g>
+            </g>
+          </svg>
+        </div>
       </div>
-    </div>
-    <div
-      className="c7"
-    >
-      <svg
-        className="c8"
-        height={192}
-        preserveAspectRatio="none"
-        viewBox="0 0 384 192"
-        width={384}
+      <div
+        className="c14"
       >
-        <g
-          fill="none"
-          stroke="#6FFFB0"
-          strokeLinecap="butt"
-          strokeLinejoin="miter"
-          strokeWidth={96}
+        <div
+          className="c15"
         >
-          <g
-            fill="none"
-          >
-            <title />
-            <path
-              d="M 48,144 L 48,128"
-            />
-          </g>
-          <g
-            fill="none"
-          >
-            <title />
-            <path
-              d="M 336,144 L 336,48"
-            />
-          </g>
-        </g>
-      </svg>
-    </div>
-  </div>
-  <div
-    className="c1"
-  >
-    <div
-      className="c7"
-    >
-      <svg
-        className="c8"
-        height={192}
-        preserveAspectRatio="none"
-        viewBox="0 0 384 192"
-        width={384}
-      >
-        <g
-          fill="none"
-          stroke="#6FFFB0"
-          strokeLinecap="butt"
-          strokeLinejoin="miter"
-          strokeWidth={96}
+          0
+        </div>
+        <div
+          className="c15"
         >
-          <g
-            fill="none"
-          >
-            <title />
-            <path
-              d="M 48,144 L 48,128"
-            />
-          </g>
-          <g
-            fill="none"
-          >
-            <title />
-            <path
-              d="M 336,144 L 336,48"
-            />
-          </g>
-        </g>
-      </svg>
+          1
+        </div>
+      </div>
     </div>
   </div>
   <div
@@ -2303,47 +3047,76 @@ exports[`DataChart guide 1`] = `
       >
         <div
           className="c4"
-        />
+        >
+          2
+        </div>
         <div
           className="c4"
-        />
+        >
+          0
+        </div>
       </div>
+      <div
+        className="c5"
+      />
     </div>
     <div
-      className="c7"
+      className="c2"
     >
-      <svg
-        className="c8"
-        height={192}
-        preserveAspectRatio="none"
-        viewBox="0 0 384 192"
-        width={384}
+      <div
+        className="c6"
       >
-        <g
-          fill="none"
-          stroke="#6FFFB0"
-          strokeLinecap="butt"
-          strokeLinejoin="miter"
-          strokeWidth={96}
+        <div
+          className="c12"
         >
-          <g
-            fill="none"
+          <svg
+            className="c13"
+            height={192}
+            preserveAspectRatio="none"
+            viewBox="0 0 384 192"
+            width={384}
           >
-            <title />
-            <path
-              d="M 48,144 L 48,128"
-            />
-          </g>
-          <g
-            fill="none"
-          >
-            <title />
-            <path
-              d="M 336,144 L 336,48"
-            />
-          </g>
-        </g>
-      </svg>
+            <g
+              fill="none"
+              stroke="#6FFFB0"
+              strokeLinecap="butt"
+              strokeLinejoin="miter"
+              strokeWidth={96}
+            >
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 48,192 L 48,96"
+                />
+              </g>
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 336,192 L 336,0"
+                />
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div
+        className="c14"
+      >
+        <div
+          className="c15"
+        >
+          0
+        </div>
+        <div
+          className="c15"
+        >
+          1
+        </div>
+      </div>
     </div>
   </div>
   <div
@@ -2353,60 +3126,200 @@ exports[`DataChart guide 1`] = `
       className="c2"
     >
       <div
-        className="c5"
+        className="c3"
       >
         <div
-          className="c6"
-        />
+          className="c4"
+        >
+          2
+        </div>
         <div
-          className="c6"
-        />
-        <div
-          className="c6"
-        />
-        <div
-          className="c6"
-        />
-        <div
-          className="c6"
-        />
+          className="c4"
+        >
+          0
+        </div>
       </div>
+      <div
+        className="c5"
+      />
     </div>
     <div
-      className="c7"
+      className="c2"
     >
-      <svg
-        className="c8"
-        height={192}
-        preserveAspectRatio="none"
-        viewBox="0 0 384 192"
-        width={384}
+      <div
+        className="c6"
       >
-        <g
-          fill="none"
-          stroke="#6FFFB0"
-          strokeLinecap="butt"
-          strokeLinejoin="miter"
-          strokeWidth={96}
+        <div
+          className="c7"
         >
-          <g
-            fill="none"
+          <div
+            className="c8"
           >
-            <title />
-            <path
-              d="M 48,144 L 48,128"
+            <div
+              className="c9"
             />
-          </g>
-          <g
-            fill="none"
+            <div
+              className="c9"
+            />
+          </div>
+        </div>
+        <div
+          className="c12"
+        >
+          <svg
+            className="c13"
+            height={192}
+            preserveAspectRatio="none"
+            viewBox="0 0 384 192"
+            width={384}
           >
-            <title />
-            <path
-              d="M 336,144 L 336,48"
+            <g
+              fill="none"
+              stroke="#6FFFB0"
+              strokeLinecap="butt"
+              strokeLinejoin="miter"
+              strokeWidth={96}
+            >
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 48,192 L 48,96"
+                />
+              </g>
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 336,192 L 336,0"
+                />
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div
+        className="c14"
+      >
+        <div
+          className="c15"
+        >
+          0
+        </div>
+        <div
+          className="c15"
+        >
+          1
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          2
+        </div>
+        <div
+          className="c4"
+        >
+          0
+        </div>
+      </div>
+      <div
+        className="c5"
+      />
+    </div>
+    <div
+      className="c2"
+    >
+      <div
+        className="c6"
+      >
+        <div
+          className="c7"
+        >
+          <div
+            className="c10"
+          >
+            <div
+              className="c11"
             />
-          </g>
-        </g>
-      </svg>
+            <div
+              className="c11"
+            />
+            <div
+              className="c11"
+            />
+            <div
+              className="c11"
+            />
+            <div
+              className="c11"
+            />
+          </div>
+        </div>
+        <div
+          className="c12"
+        >
+          <svg
+            className="c13"
+            height={192}
+            preserveAspectRatio="none"
+            viewBox="0 0 384 192"
+            width={384}
+          >
+            <g
+              fill="none"
+              stroke="#6FFFB0"
+              strokeLinecap="butt"
+              strokeLinejoin="miter"
+              strokeWidth={96}
+            >
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 48,192 L 48,96"
+                />
+              </g>
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 336,192 L 336,0"
+                />
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div
+        className="c14"
+      >
+        <div
+          className="c15"
+        >
+          0
+        </div>
+        <div
+          className="c15"
+        >
+          1
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -2437,7 +3350,121 @@ exports[`DataChart legend 1`] = `
   flex-direction: column;
 }
 
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: yAxis;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
 .c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: xAxis;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+}
+
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2455,7 +3482,7 @@ exports[`DataChart legend 1`] = `
   flex-wrap: wrap;
 }
 
-.c7 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2477,7 +3504,7 @@ exports[`DataChart legend 1`] = `
   padding-bottom: 6px;
 }
 
-.c8 {
+.c13 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -2487,66 +3514,42 @@ exports[`DataChart legend 1`] = `
   width: 6px;
 }
 
-.c4 {
+.c8 {
   display: block;
   max-width: 100%;
   overflow: visible;
 }
 
-.c2 {
+.c6 {
   position: relative;
   grid-area: charts;
 }
 
-.c3 {
+.c7 {
   position: relative;
   display: block;
 }
 
-.c9 {
+.c14 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c6 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  margin-right: 12px;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c6:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c11 {
     margin-top: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c12 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c12 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
@@ -2562,119 +3565,194 @@ exports[`DataChart legend 1`] = `
       className="c2"
     >
       <div
-        className="c3"
+        className="c1"
       >
-        <svg
-          className="c4"
-          height={192}
-          preserveAspectRatio="none"
-          viewBox="0 0 384 192"
-          width={384}
+        <div
+          className="c3"
         >
-          <g
-            fill="none"
-            stroke="#6FFFB0"
-            strokeLinecap="butt"
-            strokeLinejoin="miter"
-            strokeWidth={96}
+          <div
+            className="c4"
           >
-            <g
-              fill="none"
+            2
+          </div>
+          <div
+            className="c4"
+          >
+            0
+          </div>
+        </div>
+        <div
+          className="c5"
+        />
+      </div>
+      <div
+        className="c1"
+      >
+        <div
+          className="c6"
+        >
+          <div
+            className="c7"
+          >
+            <svg
+              className="c8"
+              height={192}
+              preserveAspectRatio="none"
+              viewBox="0 0 384 192"
+              width={384}
             >
-              <title />
-              <path
-                d="M 48,144 L 48,128"
-              />
-            </g>
-            <g
-              fill="none"
-            >
-              <title />
-              <path
-                d="M 336,144 L 336,48"
-              />
-            </g>
-          </g>
-        </svg>
+              <g
+                fill="none"
+                stroke="#6FFFB0"
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+                strokeWidth={96}
+              >
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 48,192 L 48,96"
+                  />
+                </g>
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 336,192 L 336,0"
+                  />
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div
+          className="c9"
+        >
+          <div
+            className="c10"
+          >
+            0
+          </div>
+          <div
+            className="c10"
+          >
+            1
+          </div>
+        </div>
       </div>
     </div>
     <div
-      className="c5"
+      className="c11"
     >
-      <button
-        className="c6"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        onMouseOut={[Function]}
-        onMouseOver={[Function]}
-        type="button"
+      <div
+        className="c12"
       >
-        <div
-          className="c7"
+        <svg
+          fill="#6FFFB0"
+          height={12}
+          stroke="none"
+          viewBox="0 0 96 12"
+          width={96}
         >
-          <svg
-            fill="#6FFFB0"
-            height={12}
-            stroke="none"
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              r={6}
-            />
-          </svg>
-          <div
-            className="c8"
+          <path
+            d="M 0 0 L 96 0 L 96 12 L 0 12 Z"
           />
-          <span
-            className="c9"
-          >
-            a
-          </span>
-        </div>
-      </button>
+        </svg>
+        <div
+          className="c13"
+        />
+        <span
+          className="c14"
+        >
+          a
+        </span>
+      </div>
     </div>
   </div>
   <div
     className="c2"
   >
     <div
-      className="c3"
+      className="c1"
     >
-      <svg
-        className="c4"
-        height={192}
-        preserveAspectRatio="none"
-        viewBox="0 0 384 192"
-        width={384}
+      <div
+        className="c3"
       >
-        <g
-          fill="none"
-          stroke="#6FFFB0"
-          strokeLinecap="butt"
-          strokeLinejoin="miter"
-          strokeWidth={96}
+        <div
+          className="c4"
         >
-          <g
-            fill="none"
+          2
+        </div>
+        <div
+          className="c4"
+        >
+          0
+        </div>
+      </div>
+      <div
+        className="c5"
+      />
+    </div>
+    <div
+      className="c1"
+    >
+      <div
+        className="c6"
+      >
+        <div
+          className="c7"
+        >
+          <svg
+            className="c8"
+            height={192}
+            preserveAspectRatio="none"
+            viewBox="0 0 384 192"
+            width={384}
           >
-            <title />
-            <path
-              d="M 48,144 L 48,128"
-            />
-          </g>
-          <g
-            fill="none"
-          >
-            <title />
-            <path
-              d="M 336,144 L 336,48"
-            />
-          </g>
-        </g>
-      </svg>
+            <g
+              fill="none"
+              stroke="#6FFFB0"
+              strokeLinecap="butt"
+              strokeLinejoin="miter"
+              strokeWidth={96}
+            >
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 48,192 L 48,96"
+                />
+              </g>
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 336,192 L 336,0"
+                />
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div
+        className="c9"
+      >
+        <div
+          className="c10"
+        >
+          0
+        </div>
+        <div
+          className="c10"
+        >
+          1
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -2691,18 +3769,206 @@ exports[`DataChart pad 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: yAxis;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 1;
+  -ms-flex: 0 1;
+  flex: 0 1;
+  -webkit-flex-basis: 24px;
+  -ms-flex-preferred-size: 24px;
+  flex-basis: 24px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: xAxis;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 1;
+  -ms-flex: 0 1;
+  flex: 0 1;
+  -webkit-flex-basis: 48px;
+  -ms-flex-preferred-size: 48px;
+  flex-basis: 48px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 1;
+  -ms-flex: 0 1;
+  flex: 0 1;
+  -webkit-flex-basis: 96px;
+  -ms-flex-preferred-size: 96px;
+  flex-basis: 96px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c8 {
   display: block;
   max-width: 100%;
   overflow: visible;
 }
 
-.c1 {
+.c6 {
   position: relative;
   grid-area: charts;
 }
 
-.c2 {
+.c7 {
   position: relative;
   display: block;
 }
@@ -2716,38 +3982,81 @@ exports[`DataChart pad 1`] = `
     <div
       className="c2"
     >
-      <svg
+      <div
         className="c3"
-        height={192}
-        preserveAspectRatio="none"
-        viewBox="0 0 384 192"
-        width={384}
       >
-        <g
-          fill="none"
-          stroke="#6FFFB0"
-          strokeLinecap="butt"
-          strokeLinejoin="miter"
-          strokeWidth={96}
+        <div
+          className="c4"
         >
-          <g
-            fill="none"
+          2
+        </div>
+        <div
+          className="c4"
+        >
+          0
+        </div>
+      </div>
+      <div
+        className="c5"
+      />
+    </div>
+    <div
+      className="c2"
+    >
+      <div
+        className="c6"
+      >
+        <div
+          className="c7"
+        >
+          <svg
+            className="c8"
+            height={192}
+            preserveAspectRatio="none"
+            viewBox="0 0 384 192"
+            width={384}
           >
-            <title />
-            <path
-              d="M 48,144 L 48,128"
-            />
-          </g>
-          <g
-            fill="none"
-          >
-            <title />
-            <path
-              d="M 336,144 L 336,48"
-            />
-          </g>
-        </g>
-      </svg>
+            <g
+              fill="none"
+              stroke="#6FFFB0"
+              strokeLinecap="butt"
+              strokeLinejoin="miter"
+              strokeWidth={96}
+            >
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 12,180 L 12,96"
+                />
+              </g>
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 372,180 L 372,12"
+                />
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div
+        className="c9"
+      >
+        <div
+          className="c10"
+        >
+          0
+        </div>
+        <div
+          className="c10"
+        >
+          1
+        </div>
+      </div>
     </div>
   </div>
   <div
@@ -2756,38 +4065,81 @@ exports[`DataChart pad 1`] = `
     <div
       className="c2"
     >
-      <svg
+      <div
         className="c3"
-        height={192}
-        preserveAspectRatio="none"
-        viewBox="0 0 384 192"
-        width={384}
       >
-        <g
-          fill="none"
-          stroke="#6FFFB0"
-          strokeLinecap="butt"
-          strokeLinejoin="miter"
-          strokeWidth={96}
+        <div
+          className="c11"
         >
-          <g
-            fill="none"
+          2
+        </div>
+        <div
+          className="c11"
+        >
+          0
+        </div>
+      </div>
+      <div
+        className="c5"
+      />
+    </div>
+    <div
+      className="c2"
+    >
+      <div
+        className="c6"
+      >
+        <div
+          className="c7"
+        >
+          <svg
+            className="c8"
+            height={192}
+            preserveAspectRatio="none"
+            viewBox="0 0 384 192"
+            width={384}
           >
-            <title />
-            <path
-              d="M 48,144 L 48,128"
-            />
-          </g>
-          <g
-            fill="none"
-          >
-            <title />
-            <path
-              d="M 336,144 L 336,48"
-            />
-          </g>
-        </g>
-      </svg>
+            <g
+              fill="none"
+              stroke="#6FFFB0"
+              strokeLinecap="butt"
+              strokeLinejoin="miter"
+              strokeWidth={96}
+            >
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 24,168 L 24,96"
+                />
+              </g>
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 360,168 L 360,24"
+                />
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div
+        className="c9"
+      >
+        <div
+          className="c10"
+        >
+          0
+        </div>
+        <div
+          className="c10"
+        >
+          1
+        </div>
+      </div>
     </div>
   </div>
   <div
@@ -2796,38 +4148,81 @@ exports[`DataChart pad 1`] = `
     <div
       className="c2"
     >
-      <svg
+      <div
         className="c3"
-        height={192}
-        preserveAspectRatio="none"
-        viewBox="0 0 384 192"
-        width={384}
       >
-        <g
-          fill="none"
-          stroke="#6FFFB0"
-          strokeLinecap="butt"
-          strokeLinejoin="miter"
-          strokeWidth={96}
+        <div
+          className="c12"
         >
-          <g
-            fill="none"
+          2
+        </div>
+        <div
+          className="c12"
+        >
+          0
+        </div>
+      </div>
+      <div
+        className="c5"
+      />
+    </div>
+    <div
+      className="c2"
+    >
+      <div
+        className="c6"
+      >
+        <div
+          className="c7"
+        >
+          <svg
+            className="c8"
+            height={192}
+            preserveAspectRatio="none"
+            viewBox="0 0 384 192"
+            width={384}
           >
-            <title />
-            <path
-              d="M 48,144 L 48,128"
-            />
-          </g>
-          <g
-            fill="none"
-          >
-            <title />
-            <path
-              d="M 336,144 L 336,48"
-            />
-          </g>
-        </g>
-      </svg>
+            <g
+              fill="none"
+              stroke="#6FFFB0"
+              strokeLinecap="butt"
+              strokeLinejoin="miter"
+              strokeWidth={96}
+            >
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 48,144 L 48,96"
+                />
+              </g>
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 336,144 L 336,48"
+                />
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div
+        className="c9"
+      >
+        <div
+          className="c10"
+        >
+          0
+        </div>
+        <div
+          className="c10"
+        >
+          1
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -2844,13 +4239,141 @@ exports[`DataChart size 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: yAxis;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  grid-area: xAxis;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+}
+
+.c8 {
   display: block;
   max-width: 100%;
   overflow: visible;
 }
 
-.c1 {
+.c6 {
   position: relative;
   grid-area: charts;
   width: 100%;
@@ -2866,7 +4389,7 @@ exports[`DataChart size 1`] = `
   display: flex;
 }
 
-.c4 {
+.c11 {
   position: relative;
   grid-area: charts;
   width: 100%;
@@ -2881,19 +4404,19 @@ exports[`DataChart size 1`] = `
   display: flex;
 }
 
-.c5 {
+.c12 {
   position: relative;
   grid-area: charts;
 }
 
-.c2 {
+.c7 {
   position: relative;
   display: block;
   width: 100%;
   height: 100%;
 }
 
-.c6 {
+.c13 {
   position: relative;
   display: block;
 }
@@ -2907,118 +4430,247 @@ exports[`DataChart size 1`] = `
     <div
       className="c2"
     >
-      <svg
+      <div
         className="c3"
-        height={0}
-        preserveAspectRatio="none"
-        viewBox="0 0 0 0"
-        width={0}
       >
-        <g
-          fill="none"
-          stroke="#6FFFB0"
-          strokeLinecap="butt"
-          strokeLinejoin="miter"
-          strokeWidth={96}
+        <div
+          className="c4"
         >
-          <g
-            fill="none"
+          2
+        </div>
+        <div
+          className="c4"
+        >
+          0
+        </div>
+      </div>
+      <div
+        className="c5"
+      />
+    </div>
+    <div
+      className="c2"
+    >
+      <div
+        className="c6"
+      >
+        <div
+          className="c7"
+        >
+          <svg
+            className="c8"
+            height={0}
+            preserveAspectRatio="none"
+            viewBox="0 0 0 0"
+            width={0}
           >
-            <title />
-            <path
-              d="M 48,-48 L 48,-32"
-            />
-          </g>
-          <g
-            fill="none"
-          >
-            <title />
-            <path
-              d="M -48,-48 L -48,48"
-            />
-          </g>
-        </g>
-      </svg>
+            <g
+              fill="none"
+              stroke="#6FFFB0"
+              strokeLinecap="butt"
+              strokeLinejoin="miter"
+              strokeWidth={96}
+            >
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 48,0 L 48,0"
+                />
+              </g>
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M -48,0 L -48,0"
+                />
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div
+        className="c9"
+      >
+        <div
+          className="c10"
+        >
+          0
+        </div>
+        <div
+          className="c10"
+        >
+          1
+        </div>
+      </div>
     </div>
   </div>
   <div
-    className="c4"
+    className="c1"
   >
     <div
       className="c2"
     >
-      <svg
+      <div
         className="c3"
-        height={192}
-        preserveAspectRatio="none"
-        viewBox="0 0 0 192"
-        width={0}
       >
-        <g
-          fill="none"
-          stroke="#6FFFB0"
-          strokeLinecap="butt"
-          strokeLinejoin="miter"
-          strokeWidth={96}
+        <div
+          className="c4"
         >
-          <g
-            fill="none"
+          2
+        </div>
+        <div
+          className="c4"
+        >
+          0
+        </div>
+      </div>
+      <div
+        className="c5"
+      />
+    </div>
+    <div
+      className="c2"
+    >
+      <div
+        className="c11"
+      >
+        <div
+          className="c7"
+        >
+          <svg
+            className="c8"
+            height={192}
+            preserveAspectRatio="none"
+            viewBox="0 0 0 192"
+            width={0}
           >
-            <title />
-            <path
-              d="M 48,144 L 48,128"
-            />
-          </g>
-          <g
-            fill="none"
-          >
-            <title />
-            <path
-              d="M -48,144 L -48,48"
-            />
-          </g>
-        </g>
-      </svg>
+            <g
+              fill="none"
+              stroke="#6FFFB0"
+              strokeLinecap="butt"
+              strokeLinejoin="miter"
+              strokeWidth={96}
+            >
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 48,192 L 48,96"
+                />
+              </g>
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M -48,192 L -48,0"
+                />
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div
+        className="c9"
+      >
+        <div
+          className="c10"
+        >
+          0
+        </div>
+        <div
+          className="c10"
+        >
+          1
+        </div>
+      </div>
     </div>
   </div>
   <div
-    className="c5"
+    className="c1"
   >
     <div
-      className="c6"
+      className="c2"
     >
-      <svg
+      <div
         className="c3"
-        height={192}
-        preserveAspectRatio="none"
-        viewBox="0 0 288 192"
-        width={288}
       >
-        <g
-          fill="none"
-          stroke="#6FFFB0"
-          strokeLinecap="butt"
-          strokeLinejoin="miter"
-          strokeWidth={96}
+        <div
+          className="c4"
         >
-          <g
-            fill="none"
+          2
+        </div>
+        <div
+          className="c4"
+        >
+          0
+        </div>
+      </div>
+      <div
+        className="c5"
+      />
+    </div>
+    <div
+      className="c2"
+    >
+      <div
+        className="c12"
+      >
+        <div
+          className="c13"
+        >
+          <svg
+            className="c8"
+            height={192}
+            preserveAspectRatio="none"
+            viewBox="0 0 288 192"
+            width={288}
           >
-            <title />
-            <path
-              d="M 48,144 L 48,128"
-            />
-          </g>
-          <g
-            fill="none"
-          >
-            <title />
-            <path
-              d="M 240,144 L 240,48"
-            />
-          </g>
-        </g>
-      </svg>
+            <g
+              fill="none"
+              stroke="#6FFFB0"
+              strokeLinecap="butt"
+              strokeLinejoin="miter"
+              strokeWidth={96}
+            >
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 48,192 L 48,96"
+                />
+              </g>
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 240,192 L 240,0"
+                />
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div
+        className="c9"
+      >
+        <div
+          className="c10"
+        >
+          0
+        </div>
+        <div
+          className="c10"
+        >
+          1
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -1,7 +1,7 @@
 ## CheckBox
 A checkbox toggle control.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=CheckBox&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=checkbox&module=%2Fsrc%2FCheckBox.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=CheckBox&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/checkbox&module=%2Fsrc%2FCheckBox.js)
 ## Usage
 
 ```javascript
@@ -10,6 +10,15 @@ import { CheckBox } from 'grommet';
 ```
 
 ## Properties
+
+**a11yTitle**
+
+Custom label to be used by screen readers.
+      When provided, an aria-label will be added to the element.
+
+```
+string
+```
 
 **checked**
 
@@ -38,7 +47,8 @@ string
 
 **label**
 
-Label text to place next to the control.
+Label text to place next to the control. 
+      Can be used instead of a11yTitle to meet accessibility requirements
 
 ```
 node

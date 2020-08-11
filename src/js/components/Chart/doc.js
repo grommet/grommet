@@ -1,6 +1,25 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { genericProps, getAvailableAtBadge, padPropType } from '../../utils';
+import {
+  colorPropType,
+  genericProps,
+  getAvailableAtBadge,
+  padPropType,
+} from '../../utils';
+
+const thicknessType = PropTypes.oneOfType([
+  PropTypes.oneOf([
+    'hair',
+    'xsmall',
+    'small',
+    'medium',
+    'large',
+    'xlarge',
+    'none',
+  ]),
+  PropTypes.string,
+  PropTypes.number,
+]);
 
 export const doc = Chart => {
   const DocumentedChart = describe(Chart)
@@ -21,9 +40,10 @@ export const doc = Chart => {
       the provided values.`,
     ),
     color: PropTypes.oneOfType([
-      PropTypes.string,
+      colorPropType,
       PropTypes.shape({
-        color: PropTypes.string,
+        color: colorPropType,
+        // deprecated, use top level 'opacity'
         opacity: PropTypes.oneOfType([
           PropTypes.oneOf(['weak', 'medium', 'strong']),
           PropTypes.bool,
@@ -31,7 +51,7 @@ export const doc = Chart => {
       }),
       PropTypes.arrayOf(
         PropTypes.shape({
-          color: PropTypes.string,
+          color: colorPropType,
           value: PropTypes.number,
         }),
       ),
@@ -70,6 +90,12 @@ export const doc = Chart => {
     onHover: PropTypes.func.description(`Called with a boolean argument
       indicating when the user hovers onto or away from it.
       This is only available when the type is line or area.`),
+    opacity: PropTypes.oneOfType([
+      PropTypes.oneOf(['weak', 'medium', 'strong']),
+      PropTypes.bool,
+    ]).description(
+      `What opacity to apply to the visuals. Supercedes 'color.opacity'`,
+    ),
     overflow: PropTypes.bool
       .description(
         `Whether the chart strokes should overflow the component. Set this
@@ -146,18 +172,7 @@ export const doc = Chart => {
       used elsewhere.`,
       )
       .defaultValue({ width: 'medium', height: 'small' }),
-    thickness: PropTypes.oneOfType([
-      PropTypes.oneOf([
-        'hair',
-        'xsmall',
-        'small',
-        'medium',
-        'large',
-        'xlarge',
-        'none',
-      ]),
-      PropTypes.string,
-    ])
+    thickness: thicknessType
       .description('The width of the stroke.')
       .defaultValue('medium'),
     type: PropTypes.oneOf(['bar', 'line', 'area', 'point'])
@@ -168,9 +183,12 @@ export const doc = Chart => {
         PropTypes.number,
         PropTypes.arrayOf(PropTypes.number),
         PropTypes.shape({
-          label: PropTypes.string, // for accessibility of bars
+          color: colorPropType,
+          label: PropTypes.string, // for accessibility of bars and points
           onClick: PropTypes.func,
           onHover: PropTypes.func,
+          opacity: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+          thickness: thicknessType,
           value: PropTypes.oneOfType([
             PropTypes.number.isRequired,
             PropTypes.arrayOf(PropTypes.number).isRequired,
@@ -182,7 +200,9 @@ export const doc = Chart => {
       'value' is a tuple indicating the coordinate of the value or a triple
       indicating the x coordinate and a range of two y coordinates.
       'label' is a text string describing it.
-      'onHover' and 'onClick' only work when type='bar'.`,
+      'onHover' and 'onClick' only work when type='bar'.
+      'color', 'opacity', and 'thickness' allow bar and point charts to have
+      color variation per-value.`,
     ).isRequired,
   };
 

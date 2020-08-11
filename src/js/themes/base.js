@@ -415,6 +415,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   background: undefined,
       //   border: undefined,
       //   color: undefined,
+      //   font: {
+      //     weight: undefined,
+      //   },
       //   padding: {
       //     vertical: undefined,
       //     horizontal: undefined,
@@ -422,6 +425,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   extend: undefined,
       // },
       // primary: {
+      //   font: {
+      //     weight: undefined,
+      //   },
       //   background: undefined,
       //   border: undefined,
       //   color: undefined,
@@ -432,6 +438,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   extend: undefined,
       // },
       // secondary: {
+      //   font: {
+      //     weight: undefined,
+      //   },
       //   background: undefined,
       //   border: undefined,
       //   color: undefined,
@@ -705,6 +714,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         side: 'bottom',
       },
       content: {
+        // margin: undefined,
         pad: 'small',
       },
       disabled: {
@@ -880,11 +890,17 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       check: {
         radius: '100%',
+        // background: {
+        //  color: undefined,
+        // },
         // color: { dark: undefined, light: undefined },
         // extend: undefined,
       },
       // color: undefined,
       hover: {
+        // background: {
+        //   color: undefined,
+        // },
         border: {
           color: {
             dark: 'white',
@@ -982,6 +998,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             light: 'black',
           },
         },
+        disabled: {
+          // color: undefined,
+        },
         hover: {
           color: {
             dark: 'white',
@@ -991,6 +1010,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       color: 'control',
+      // disabled: {
+      //   color: undefined,
+      // },
       // extend: undefined,
       hover: {
         // background: undefined,

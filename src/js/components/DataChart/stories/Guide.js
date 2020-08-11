@@ -18,7 +18,7 @@ const Example = () => (
     <Box align="center" justify="start" pad="large">
       <DataChart
         data={data}
-        property={['date', 'percent']}
+        series="percent"
         guide={{
           x: { property: 'date', granularity: 'fine' },
           y: { property: 'percent', granularity: 'medium' },

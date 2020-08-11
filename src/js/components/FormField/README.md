@@ -3,7 +3,7 @@ A single field in a form. FormField wraps an input component with
       a label, help, and/or error messaging. It typically contains an input
       control like TextInput, TextArea, Select, etc.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=FormField&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=formfield&module=%2Fsrc%2FFormField.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=FormField&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/formfield&module=%2Fsrc%2FFormField.js)
 ## Usage
 
 ```javascript
@@ -12,6 +12,17 @@ import { FormField } from 'grommet';
 ```
 
 ## Properties
+
+**a11yTitle**
+
+Custom label to be used by screen readers.
+       Should only be provided if FormField has no children.
+       When a11yTitle is provided an aria-label will be added to the element
+       if it has no children.
+
+```
+string
+```
 
 **component**
 
@@ -267,6 +278,16 @@ Defaults to
 
 ```
 bottom
+```
+
+**formField.content.margin**
+
+The margin of the FormField content. Expects `object`.
+
+Defaults to
+
+```
+undefined
 ```
 
 **formField.content.pad**

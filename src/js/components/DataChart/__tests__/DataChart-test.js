@@ -9,22 +9,17 @@ const data = [
   { a: 1, b: 'one', c: 111111, d: '2020-06-24' },
   { a: 2, b: 'two', c: 222222, d: '2020-06-23' },
 ];
-const warnMsg = `The DataChart component is still experimental.
-      It is not guaranteed to be backwards compatible until it is explicitly
-      released. Keep an eye on the release notes and #announcements channel
-      in Slack.`;
 
 describe('DataChart', () => {
   test('default', () => {
     const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const component = renderer.create(
       <Grommet>
-        <DataChart data={data} property="a" />
+        <DataChart data={data} series="a" />
       </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
-    expect(warnSpy).toHaveBeenLastCalledWith(warnMsg);
     warnSpy.mockRestore();
   });
 
@@ -33,13 +28,12 @@ describe('DataChart', () => {
     const component = renderer.create(
       <Grommet>
         {['small', 'medium', 'large'].map(gap => (
-          <DataChart key={gap} data={data} property="a" gap={gap} />
+          <DataChart key={gap} data={data} series="a" gap={gap} />
         ))}
       </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
-    expect(warnSpy).toHaveBeenCalledWith(warnMsg);
     warnSpy.mockRestore();
   });
 
@@ -48,13 +42,12 @@ describe('DataChart', () => {
     const component = renderer.create(
       <Grommet>
         {['small', 'medium', 'large'].map(pad => (
-          <DataChart key={pad} data={data} property="a" pad={pad} />
+          <DataChart key={pad} data={data} series="a" pad={pad} />
         ))}
       </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
-    expect(warnSpy).toHaveBeenCalledWith(warnMsg);
     warnSpy.mockRestore();
   });
 
@@ -64,13 +57,12 @@ describe('DataChart', () => {
       <Grommet>
         {['fill', { width: 'fill' }, { width: 'auto' }].map((size, i) => (
           // eslint-disable-next-line react/no-array-index-key
-          <DataChart key={i} data={data} property="a" size={size} />
+          <DataChart key={i} data={data} series="a" size={size} />
         ))}
       </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
-    expect(warnSpy).toHaveBeenCalledWith(warnMsg);
     warnSpy.mockRestore();
   });
 
@@ -87,13 +79,12 @@ describe('DataChart', () => {
           { y: { property: 'a', granularity: 'fine' } },
         ].map((axis, i) => (
           // eslint-disable-next-line react/no-array-index-key
-          <DataChart key={i} data={data} property="a" axis={axis} />
+          <DataChart key={i} data={data} series="a" axis={axis} />
         ))}
       </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
-    expect(warnSpy).toHaveBeenCalledWith(warnMsg);
     warnSpy.mockRestore();
   });
 
@@ -119,7 +110,7 @@ describe('DataChart', () => {
           <Fragment key={key}>
             <DataChart
               data={dateData}
-              property={[{ property: key }, 'amount']}
+              series={[{ property: key }, 'amount']}
               axis
               guide
             />
@@ -129,7 +120,6 @@ describe('DataChart', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
-    expect(warnSpy).toHaveBeenCalledWith(warnMsg);
     warnSpy.mockRestore();
   });
 
@@ -144,13 +134,12 @@ describe('DataChart', () => {
           { y: { granularity: 'fine' } },
         ].map((guide, i) => (
           // eslint-disable-next-line react/no-array-index-key
-          <DataChart key={i} data={data} property="a" guide={guide} />
+          <DataChart key={i} data={data} series="a" guide={guide} />
         ))}
       </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
-    expect(warnSpy).toHaveBeenCalledWith(warnMsg);
     warnSpy.mockRestore();
   });
 
@@ -160,13 +149,12 @@ describe('DataChart', () => {
       <Grommet>
         {[true, false].map((legend, i) => (
           // eslint-disable-next-line react/no-array-index-key
-          <DataChart key={i} data={data} property="a" legend={legend} />
+          <DataChart key={i} data={data} series="a" legend={legend} />
         ))}
       </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
-    expect(warnSpy).toHaveBeenCalledWith(warnMsg);
     warnSpy.mockRestore();
   });
 
@@ -176,13 +164,12 @@ describe('DataChart', () => {
       <Grommet>
         {[true, false].map((detail, i) => (
           // eslint-disable-next-line react/no-array-index-key
-          <DataChart key={i} data={data} property="a" detail={detail} />
+          <DataChart key={i} data={data} series="a" detail={detail} />
         ))}
       </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
-    expect(warnSpy).toHaveBeenCalledWith(warnMsg);
     warnSpy.mockRestore();
   });
 });

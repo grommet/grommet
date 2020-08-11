@@ -179,8 +179,11 @@ const FormField = forwardRef(
       );
     }
 
-    const contentProps =
-      pad || wantContentPad ? { ...formFieldTheme.content } : {};
+    const contentProps = { ...formFieldTheme.content };
+
+    if (!pad && !wantContentPad) {
+      contentProps.pad = undefined;
+    }
 
     if (themeBorder && themeBorder.position === 'inner') {
       if (error && formFieldTheme.error) {
@@ -189,6 +192,10 @@ const FormField = forwardRef(
         contentProps.background = formFieldTheme.disabled.background;
       }
     }
+    // Removing margin from contentProps because margin should be applied
+    // on containing <FormFieldContentBox>
+    // contentProps.margin = undefined;
+    // contents = <Box {...contentProps}>{contents}</Box>;
 
     if (!themeBorder) {
       contents = <Box {...contentProps}>{contents}</Box>;

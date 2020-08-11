@@ -23,7 +23,16 @@ const StyledRadioButtonContainer = styled.label`
     border-color: ${props =>
       normalizeColor(props.theme.radioButton.hover.border.color, props.theme)};
   }
-
+  :hover {
+    background-color: ${props =>
+      normalizeColor(
+        !props.disabled &&
+          props.theme.radioButton.hover &&
+          props.theme.radioButton.hover.background &&
+          props.theme.radioButton.hover.background.color,
+        props.theme,
+      )};
+  }
   ${props => props.theme.radioButton.extend};
 `;
 
@@ -71,6 +80,9 @@ StyledRadioButtonIcon.defaultProps = {};
 Object.setPrototypeOf(StyledRadioButtonIcon.defaultProps, defaultProps);
 
 const StyledRadioButtonBox = styled.div`
+  background-color: ${props =>
+    props.theme.radioButton.check.background &&
+    props.theme.radioButton.check.background.color};
   ${props => props.focus && focusStyle()};
   ${props => props.theme.radioButton.check.extend};
 `;

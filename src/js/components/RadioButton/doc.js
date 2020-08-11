@@ -72,6 +72,11 @@ export const themeDoc = {
     type: 'string',
     defaultValue: '2px',
   },
+  'radioButton.check.background.color': {
+    description: 'The background color of the checked icon in the RadioButton.',
+    type: 'string | {dark: string, light: string}',
+    defaultValue: 'undefined',
+  },
   'radioButton.check.color': {
     description: 'The color of the checked icon in the RadioButton.',
     type: 'string | { dark: string, light: string }',
@@ -110,6 +115,12 @@ export const themeDoc = {
     description: 'The size of the RadioButton.',
     type: 'string',
     defaultValue: '24px',
+  },
+  'radioButton.hover.background.color': {
+    description: `The background color of the Box surrounding the RadioButton
+    when hovered over.`,
+    type: 'string | { dark: string, light: string }',
+    defaultValue: 'undefined',
   },
   'radioButton.hover.border.color': {
     description: `The color of the RadioButton border when hovered over.`,

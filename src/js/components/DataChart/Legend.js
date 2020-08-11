@@ -6,20 +6,24 @@ import { Swatch } from './Swatch';
 
 const Legend = ({
   activeProperty,
-  properties: propertiesProp,
-  propertyStyles,
+  series: seriesProp,
+  seriesStyles,
   setActiveProperty,
 }) => {
-  const properties = useMemo(
-    () => Object.values(propertiesProp).filter(p => propertyStyles[p.property]),
-    [propertiesProp, propertyStyles],
+  const series = useMemo(
+    () => seriesProp.filter(s => seriesStyles[s.property]),
+    [seriesProp, seriesStyles],
   );
-  const interactive = useMemo(() => Object.keys(properties).length > 1, [
-    properties,
-  ]);
+  const interactive = useMemo(
+    // filter out properties that are used in point chart aspects
+    () =>
+      series.filter(({ property }) => !seriesStyles[property].aspect).length >
+      1,
+    [series, seriesStyles],
+  );
   return (
-    <Box margin={{ top: 'small' }} direction="row" wrap>
-      {properties.map(({ property, label }) => {
+    <Box margin={{ top: 'small' }} direction="row" wrap gap="small">
+      {series.map(({ property, label }) => {
         const isActive = property === activeProperty;
         const swatchProps = {};
         const textProps = {};
@@ -31,31 +35,31 @@ const Legend = ({
             textProps.color = 'text-strong';
           }
         }
-        return (
-          <Button
+        let content = (
+          <Box
             key={property}
-            active={isActive}
-            onClick={
-              interactive
-                ? () => {
-                    setActiveProperty(isActive ? undefined : property);
-                  }
-                : undefined
-            }
-            hoverIndicator
-            margin={{ right: 'small' }}
+            direction="row"
+            align="center"
+            pad={{ horizontal: 'small', vertical: 'xsmall' }}
+            gap="xsmall"
           >
-            <Box
-              direction="row"
-              align="center"
-              pad={{ horizontal: 'small', vertical: 'xsmall' }}
-              gap="xsmall"
-            >
-              <Swatch {...propertyStyles[property]} {...swatchProps} />
-              <Text {...textProps}>{label || property}</Text>
-            </Box>
-          </Button>
+            <Swatch {...seriesStyles[property]} {...swatchProps} />
+            <Text {...textProps}>{label || property}</Text>
+          </Box>
         );
+        if (interactive) {
+          content = (
+            <Button
+              key={property}
+              active={isActive}
+              onClick={() => setActiveProperty(isActive ? undefined : property)}
+              hoverIndicator
+            >
+              {content}
+            </Button>
+          );
+        }
+        return content;
       })}
     </Box>
   );

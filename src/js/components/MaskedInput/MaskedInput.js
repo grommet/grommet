@@ -36,15 +36,39 @@ const parseValue = (mask, value) => {
     let found;
     if (item.fixed) {
       const { length } = item.fixed;
-      valueParts.push({
-        part: item.fixed,
-        beginIndex: valueIndex,
-        endIndex: valueIndex + length - 1,
-      });
-      const part = value.slice(valueIndex, valueIndex + length);
-      if (part === item.fixed) {
-        valueIndex += length;
+
+      // grab however much of value (starting at valueIndex) matches
+      // item.fixed. If none matches it and there is more in value
+      // add in the fixed item.
+      let matching = 0;
+      while (
+        matching < length &&
+        value[valueIndex + matching] === item.fixed[matching]
+      ) {
+        matching += 1;
       }
+
+      if (matching > 0) {
+        let part = value.slice(valueIndex, valueIndex + matching);
+        if (valueIndex + matching < value.length) {
+          // matched part of the fixed portion but there's more stuff
+          // after it. Go ahead and fill in the entire fixed chunk
+          part = item.fixed;
+        }
+        valueParts.push({
+          part,
+          beginIndex: valueIndex,
+          endIndex: valueIndex + matching - 1,
+        });
+        valueIndex += matching;
+      } else {
+        valueParts.push({
+          part: item.fixed,
+          beginIndex: valueIndex,
+          endIndex: valueIndex + length - 1,
+        });
+      }
+
       maskIndex += 1;
       found = true;
     } else if (item.options) {

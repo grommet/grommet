@@ -5,22 +5,19 @@ import { round } from '../Chart';
 import { doublePad } from './utils';
 
 const YAxis = forwardRef(
-  ({ axis, charts, chartProps, pad, properties, renderProperty }, ref) => {
+  ({ chartProps, pad, renderValue, serie }, ref) => {
     const theme = useContext(ThemeContext);
+    const { render, suffix } = serie;
 
-    const prop = axis.y.property && properties[axis.y.property];
-    let axisValues;
-    charts.forEach(({ property: p }, i) => {
-      if (p === prop.property)
-        [, axisValues] = (Array.isArray(chartProps[i])
-          ? chartProps[i][0]
-          : chartProps[i]
-        ).axis;
-    });
+    // pull the x-axis values from the first chart, all should have the same
+    const [,axisValues] = (Array.isArray(chartProps[0])
+      ? chartProps[0][0]
+      : chartProps[0]
+    ).axis;
 
     let divideBy;
     let unit;
-    if (!prop.render && !prop.suffix) {
+    if (!render && !suffix) {
       // figure out how many digits to show
       const maxValue = Math.max(...axisValues.map(v => Math.abs(v)));
       if (maxValue > 10000000) {
@@ -40,7 +37,7 @@ const YAxis = forwardRef(
     return (
       <Box ref={ref} gridArea="yAxis" justify="between" flex>
         {axisValues.map((axisValue, i) => {
-          let content = renderProperty(prop, undefined, axisValue);
+          let content = renderValue(serie, undefined, axisValue);
           if (content === axisValue) {
             if (divideBy) content = round(content / divideBy, 0);
             if (unit) content = `${content}${unit}`;

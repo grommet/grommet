@@ -16,7 +16,7 @@ for (let i = 0; i < 7; i += 1) {
 const Example = () => (
   <Grommet theme={grommet}>
     <Box align="center" justify="start" pad="large">
-      <DataChart data={data} property={['date', 'percent']} guide />
+      <DataChart data={data} series="percent" guide />
     </Box>
   </Grommet>
 );

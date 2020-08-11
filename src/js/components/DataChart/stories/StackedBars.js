@@ -18,7 +18,7 @@ const Example = () => (
     <Box align="center" justify="start" pad="large">
       <DataChart
         data={data}
-        property={[
+        series={[
           {
             property: 'date',
             render: date => (
@@ -42,7 +42,6 @@ const Example = () => (
         axis={{ x: { property: 'date', granularity: 'fine' } }}
         guide={{ y: true }}
         legend
-        gap="medium"
       />
     </Box>
   </Grommet>

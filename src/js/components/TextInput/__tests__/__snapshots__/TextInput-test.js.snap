@@ -9,16 +9,12 @@ exports[`TextInput a11yTitle 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
-}
-
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c1::-webkit-input-placeholder {
@@ -33,9 +29,18 @@ exports[`TextInput a11yTitle 1`] = `
   color: #AAAAAA;
 }
 
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c1::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c1:-moz-placeholder,
+.c1::-moz-placeholder {
+  opacity: 1;
 }
 
 .c0 {
@@ -65,16 +70,12 @@ exports[`TextInput basic 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
-}
-
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c1::-webkit-input-placeholder {
@@ -89,9 +90,18 @@ exports[`TextInput basic 1`] = `
   color: #AAAAAA;
 }
 
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c1::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c1:-moz-placeholder,
+.c1::-moz-placeholder {
+  opacity: 1;
 }
 
 .c0 {
@@ -130,16 +140,12 @@ exports[`TextInput calls onSuggestionsClose 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
-}
-
-.c2::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c2::-webkit-input-placeholder {
@@ -154,9 +160,18 @@ exports[`TextInput calls onSuggestionsClose 1`] = `
   color: #AAAAAA;
 }
 
+.c2::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c2::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c2:-moz-placeholder,
+.c2::-moz-placeholder {
+  opacity: 1;
 }
 
 .c1 {
@@ -376,7 +391,7 @@ exports[`TextInput calls onSuggestionsClose 4`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 jpgdHX"
+      class="StyledTextInput-sc-1x30a0s-0 jfUATO"
       data-testid="test-input"
       id="item"
       name="item"
@@ -590,16 +605,12 @@ exports[`TextInput close suggestion drop 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
-}
-
-.c2::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c2::-webkit-input-placeholder {
@@ -614,9 +625,18 @@ exports[`TextInput close suggestion drop 1`] = `
   color: #AAAAAA;
 }
 
+.c2::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c2::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c2:-moz-placeholder,
+.c2::-moz-placeholder {
+  opacity: 1;
 }
 
 .c1 {
@@ -836,7 +856,7 @@ exports[`TextInput close suggestion drop 4`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 jpgdHX"
+      class="StyledTextInput-sc-1x30a0s-0 jfUATO"
       data-testid="test-input"
       id="item"
       name="item"
@@ -865,16 +885,12 @@ exports[`TextInput complex suggestions 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
-}
-
-.c2::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c2::-webkit-input-placeholder {
@@ -889,9 +905,18 @@ exports[`TextInput complex suggestions 1`] = `
   color: #AAAAAA;
 }
 
+.c2::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c2::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c2:-moz-placeholder,
+.c2::-moz-placeholder {
+  opacity: 1;
 }
 
 .c1 {
@@ -1111,18 +1136,14 @@ exports[`TextInput disabled 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   opacity: 0.3;
   cursor: default;
-}
-
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c1::-webkit-input-placeholder {
@@ -1137,9 +1158,18 @@ exports[`TextInput disabled 1`] = `
   color: #AAAAAA;
 }
 
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c1::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c1:-moz-placeholder,
+.c1::-moz-placeholder {
+  opacity: 1;
 }
 
 .c0 {
@@ -1179,16 +1209,12 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
-}
-
-.c2::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c2::-webkit-input-placeholder {
@@ -1203,9 +1229,18 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
   color: #AAAAAA;
 }
 
+.c2::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c2::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c2:-moz-placeholder,
+.c2::-moz-placeholder {
+  opacity: 1;
 }
 
 .c1 {
@@ -1240,7 +1275,7 @@ exports[`TextInput handles next and previous without suggestion 2`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 dcnGDe"
+      class="StyledTextInput-sc-1x30a0s-0 hsswYj"
       data-testid="test-input"
       id="item"
       name="item"
@@ -1293,17 +1328,13 @@ exports[`TextInput icon 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   padding-left: 48px;
-}
-
-.c3::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c3::-webkit-input-placeholder {
@@ -1318,9 +1349,18 @@ exports[`TextInput icon 1`] = `
   color: #AAAAAA;
 }
 
+.c3::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c3::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c3:-moz-placeholder,
+.c3::-moz-placeholder {
+  opacity: 1;
 }
 
 .c0 {
@@ -1417,17 +1457,13 @@ exports[`TextInput icon reverse 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   padding-right: 48px;
-}
-
-.c3::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c3::-webkit-input-placeholder {
@@ -1442,9 +1478,18 @@ exports[`TextInput icon reverse 1`] = `
   color: #AAAAAA;
 }
 
+.c3::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c3::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c3:-moz-placeholder,
+.c3::-moz-placeholder {
+  opacity: 1;
 }
 
 .c0 {
@@ -1887,16 +1932,12 @@ exports[`TextInput select a suggestion 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
-}
-
-.c2::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c2::-webkit-input-placeholder {
@@ -1911,9 +1952,18 @@ exports[`TextInput select a suggestion 1`] = `
   color: #AAAAAA;
 }
 
+.c2::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c2::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c2:-moz-placeholder,
+.c2::-moz-placeholder {
+  opacity: 1;
 }
 
 .c1 {
@@ -1958,20 +2008,16 @@ exports[`TextInput select suggestion 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
-  width: 100%;
   font-size: 22px;
   line-height: 28px;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
   outline: none;
   border: none;
-}
-
-.c2::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c2::-webkit-input-placeholder {
@@ -1986,9 +2032,18 @@ exports[`TextInput select suggestion 1`] = `
   color: #AAAAAA;
 }
 
+.c2::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c2::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c2:-moz-placeholder,
+.c2::-moz-placeholder {
+  opacity: 1;
 }
 
 .c1 {
@@ -2208,9 +2263,84 @@ exports[`TextInput select suggestion 4`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 cWvRjL"
+      class="StyledTextInput-sc-1x30a0s-0 deAfJe"
       data-testid="test-input"
       id="item"
+      name="item"
+      value=""
+    />
+  </div>
+</div>
+`;
+
+exports[`TextInput should not have accessibility violations 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c2::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c2:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c2::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c2::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c2:-moz-placeholder,
+.c2::-moz-placeholder {
+  opacity: 1;
+}
+
+.c1 {
+  position: relative;
+  width: 100%;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <input
+      aria-label="aria-test"
+      autocomplete="off"
+      class="c2"
       name="item"
       value=""
     />
@@ -2412,16 +2542,12 @@ exports[`TextInput suggestions 1`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
-}
-
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c1::-webkit-input-placeholder {
@@ -2436,9 +2562,18 @@ exports[`TextInput suggestions 1`] = `
   color: #AAAAAA;
 }
 
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c1::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c1:-moz-placeholder,
+.c1::-moz-placeholder {
+  opacity: 1;
 }
 
 .c0 {
