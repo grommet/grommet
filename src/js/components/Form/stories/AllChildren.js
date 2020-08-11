@@ -50,7 +50,6 @@ const Example = () => (
           onValidate={({ errors, infos }) =>
             console.log('Validate', errors, infos)
           }
-          validate="blur"
         >
           <FormField label="Name" name="name" required>
             <TextInput name="name" />
