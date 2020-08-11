@@ -3363,12 +3363,8 @@ string",
         },
         "description": "Custom validation messages.",
         "format": "{
-  invalid: 
-    string
-    object,
-  required: 
-    string
-    object
+  invalid: string,
+  required: string
 }",
         "name": "messages",
       },

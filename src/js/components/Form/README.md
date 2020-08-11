@@ -42,12 +42,8 @@ Custom validation messages. Defaults to `{
 
 ```
 {
-  invalid: 
-    string
-    object,
-  required: 
-    string
-    object
+  invalid: string,
+  required: string
 }
 ```
 

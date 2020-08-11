@@ -6,7 +6,6 @@ import React, {
   useState,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
-import { Add } from 'grommet-icons';
 import { defaultProps } from '../../default-props';
 
 import { focusStyle, parseMetricToNum } from '../../utils';
