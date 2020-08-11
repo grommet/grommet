@@ -34,4 +34,8 @@ var Example = function Example() {
 
 storiesOf('DateInput', module).add('Range', function () {
   return /*#__PURE__*/React.createElement(Example, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

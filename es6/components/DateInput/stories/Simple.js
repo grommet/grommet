@@ -31,4 +31,8 @@ var Example = function Example() {
 
 storiesOf('DateInput', module).add('Simple', function () {
   return /*#__PURE__*/React.createElement(Example, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

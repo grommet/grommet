@@ -50,4 +50,8 @@ var FullLayer = function FullLayer() {
 
 (0, _react2.storiesOf)('Layer', module).add('Full', function () {
   return /*#__PURE__*/_react["default"].createElement(FullLayer, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

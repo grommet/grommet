@@ -43,4 +43,8 @@ var FullLayer = function FullLayer() {
 
 storiesOf('Layer', module).add('Full', function () {
   return /*#__PURE__*/React.createElement(FullLayer, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

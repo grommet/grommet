@@ -44,4 +44,8 @@ var CornerLayer = function CornerLayer() {
 
 storiesOf('Layer', module).add('Corner', function () {
   return /*#__PURE__*/React.createElement(CornerLayer, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

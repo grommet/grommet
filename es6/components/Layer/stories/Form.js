@@ -90,4 +90,8 @@ var FormLayer = function FormLayer() {
 
 storiesOf('Layer', module).add('Form', function () {
   return /*#__PURE__*/React.createElement(FormLayer, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

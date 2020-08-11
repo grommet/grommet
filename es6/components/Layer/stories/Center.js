@@ -105,4 +105,8 @@ var CenterLayer = function CenterLayer() {
 
 storiesOf('Layer', module).add('Center', function () {
   return /*#__PURE__*/React.createElement(CenterLayer, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });
