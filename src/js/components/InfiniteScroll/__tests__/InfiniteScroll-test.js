@@ -98,8 +98,8 @@ describe('InfiniteScroll', () => {
 
     const allChildren = Array.from(container.firstChild.children);
     // Removing any children which are serving as refs
-    const pageItems = allChildren.filter(
-      childItem => !!childItem.outerHTML.includes('item'),
+    const pageItems = allChildren.filter(childItem =>
+      childItem.outerHTML.includes('item'),
     );
     const expectedItems = step;
     expect(pageItems.length).toEqual(expectedItems);
@@ -118,8 +118,8 @@ describe('InfiniteScroll', () => {
 
     const allChildren = Array.from(container.firstChild.children);
     // Removing any children which are serving as refs
-    const pageItems = allChildren.filter(
-      childItem => !!childItem.outerHTML.includes('item'),
+    const pageItems = allChildren.filter(childItem =>
+      childItem.outerHTML.includes('item'),
     );
     const expectedItems = step;
     expect(pageItems.length).toEqual(expectedItems);
@@ -138,8 +138,8 @@ describe('InfiniteScroll', () => {
 
     const allChildren = Array.from(container.firstChild.children);
     // Removing any children which are serving as refs
-    const pageItems = allChildren.filter(
-      childItem => !!childItem.outerHTML.includes('item'),
+    const pageItems = allChildren.filter(childItem =>
+      childItem.outerHTML.includes('item'),
     );
     const expectedItems = numItems;
     expect(pageItems.length).toEqual(expectedItems);
