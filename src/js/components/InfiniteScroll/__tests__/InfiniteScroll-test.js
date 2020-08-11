@@ -86,15 +86,18 @@ describe('InfiniteScroll', () => {
       <Grommet>
         <InfiniteScroll
           items={simpleItems(300)}
+          /* Uncomment the next 2 lines once fix for show is in place */
           // show={105}
         >
           {item => <Box key={item}>{item}</Box>}
         </InfiniteScroll>
       </Grommet>,
     );
-    // item(104) = 'item 105' because indexing starts at 0
+    // item(104) = 'item 105' because indexing starts at 0.
+    /* Delete the next 2 lines once fix for show is in place */
     const renderedItems = container.firstChild.children.item(10).outerHTML;
     expect(renderedItems).toContain('item 11');
+    /* Uncomment the next 2 lines once fix for show is in place */
     // const renderedItems = container.firstChild.children.item(104).outerHTML;
     // expect(renderedItems).toContain('item 105');
   });
