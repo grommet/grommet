@@ -9,10 +9,6 @@ import { Box } from '../..';
 describe('InfiniteScroll', () => {
   const items = [];
   while (items.length < 4) items.push(items.length);
-  const simpleItems = value =>
-    Array(value)
-      .fill()
-      .map((_, i) => `item ${i + 1}`);
 
   test('basic', () => {
     const { container } = render(
@@ -80,6 +76,16 @@ describe('InfiniteScroll', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
   });
+});
+
+describe('Number of Items Rendered', () => {
+  const simpleItems = value =>
+    Array(value)
+      .fill()
+      .map((_, i) => `item ${i + 1}`);
+  function filterRefs(childItem) {
+    return childItem.outerHTML.includes('item');
+  }
 
   test(`Should render items equal to the length of 
   step + 1 when step < items.length`, () => {
@@ -98,9 +104,7 @@ describe('InfiniteScroll', () => {
 
     const allChildren = Array.from(container.firstChild.children);
     // Removing any children which are serving as refs
-    const pageItems = allChildren.filter(childItem =>
-      childItem.outerHTML.includes('item'),
-    );
+    const pageItems = allChildren.filter(filterRefs);
     const expectedItems = step;
     expect(pageItems.length).toEqual(expectedItems);
   });
@@ -118,9 +122,7 @@ describe('InfiniteScroll', () => {
 
     const allChildren = Array.from(container.firstChild.children);
     // Removing any children which are serving as refs
-    const pageItems = allChildren.filter(childItem =>
-      childItem.outerHTML.includes('item'),
-    );
+    const pageItems = allChildren.filter(filterRefs);
     const expectedItems = step;
     expect(pageItems.length).toEqual(expectedItems);
   });
@@ -138,9 +140,7 @@ describe('InfiniteScroll', () => {
 
     const allChildren = Array.from(container.firstChild.children);
     // Removing any children which are serving as refs
-    const pageItems = allChildren.filter(childItem =>
-      childItem.outerHTML.includes('item'),
-    );
+    const pageItems = allChildren.filter(filterRefs);
     const expectedItems = numItems;
     expect(pageItems.length).toEqual(expectedItems);
   });
