@@ -739,6 +739,10 @@ var generate = function generate(baseSpacing, scale) {
       minSpeed: 200,
       baseline: 500
     },
+    dateInput: {// icon: {
+      //   size: undefined,
+      // },
+    },
     dataTable: {
       // body: {
       //   extend: undefined,

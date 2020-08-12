@@ -5,7 +5,11 @@ exports.DateInput = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _styledComponents = require("styled-components");
+
 var _Calendar = require("grommet-icons/icons/Calendar");
+
+var _defaultProps = require("../../default-props");
 
 var _Box = require("../Box");
 
@@ -49,6 +53,10 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
       _onFocus = _ref.onFocus,
       valueArg = _ref.value,
       rest = _objectWithoutPropertiesLoose(_ref, ["buttonProps", "calendarProps", "defaultValue", "disabled", "dropProps", "format", "id", "inline", "inputProps", "name", "onChange", "onFocus", "value"]);
+
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
+
+  var iconSize = theme.dateInput.icon && theme.dateInput.icon.size || 'medium';
 
   var _useContext = (0, _react.useContext)(_Form.FormContext),
       useFormInput = _useContext.useFormInput;
@@ -130,7 +138,9 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
         }
       }, dropProps),
       dropContent: calendar,
-      icon: /*#__PURE__*/_react["default"].createElement(_Calendar.Calendar, null)
+      icon: /*#__PURE__*/_react["default"].createElement(_Calendar.Calendar, {
+        size: iconSize
+      })
     }, buttonProps));
   }
 
@@ -150,7 +160,9 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
     ref: ref,
     id: id,
     name: name,
-    icon: /*#__PURE__*/_react["default"].createElement(_Calendar.Calendar, null),
+    icon: /*#__PURE__*/_react["default"].createElement(_Calendar.Calendar, {
+      size: iconSize
+    }),
     reverse: true,
     disabled: disabled,
     mask: mask

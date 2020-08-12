@@ -22,4 +22,10 @@ export var doc = function doc(DateInput) {
   };
   return DocumentedDateInput;
 };
-export var themeDoc = {};
+export var themeDoc = {
+  'dateInput.icon.size': {
+    description: "The size of the Calendar icon",
+    type: 'string',
+    defaultValue: '24px'
+  }
+};

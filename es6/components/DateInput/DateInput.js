@@ -3,7 +3,9 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 import React, { forwardRef, useContext, useMemo, useState } from 'react';
+import { ThemeContext } from 'styled-components';
 import { Calendar as CalendarIcon } from 'grommet-icons/icons/Calendar';
+import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Calendar } from '../Calendar';
 import { Drop } from '../Drop';
@@ -29,6 +31,9 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
       _onFocus = _ref.onFocus,
       valueArg = _ref.value,
       rest = _objectWithoutPropertiesLoose(_ref, ["buttonProps", "calendarProps", "defaultValue", "disabled", "dropProps", "format", "id", "inline", "inputProps", "name", "onChange", "onFocus", "value"]);
+
+  var theme = useContext(ThemeContext) || defaultProps.theme;
+  var iconSize = theme.dateInput.icon && theme.dateInput.icon.size || 'medium';
 
   var _useContext = useContext(FormContext),
       useFormInput = _useContext.useFormInput;
@@ -109,7 +114,9 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
         }
       }, dropProps),
       dropContent: calendar,
-      icon: /*#__PURE__*/React.createElement(CalendarIcon, null)
+      icon: /*#__PURE__*/React.createElement(CalendarIcon, {
+        size: iconSize
+      })
     }, buttonProps));
   }
 
@@ -129,7 +136,9 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     ref: ref,
     id: id,
     name: name,
-    icon: /*#__PURE__*/React.createElement(CalendarIcon, null),
+    icon: /*#__PURE__*/React.createElement(CalendarIcon, {
+      size: iconSize
+    }),
     reverse: true,
     disabled: disabled,
     mask: mask

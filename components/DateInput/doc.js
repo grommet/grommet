@@ -31,5 +31,11 @@ var doc = function doc(DateInput) {
 };
 
 exports.doc = doc;
-var themeDoc = {};
+var themeDoc = {
+  'dateInput.icon.size': {
+    description: "The size of the Calendar icon",
+    type: 'string',
+    defaultValue: '24px'
+  }
+};
 exports.themeDoc = themeDoc;
