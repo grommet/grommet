@@ -157,4 +157,8 @@ storiesOf('Chart', module).add('Zoom', function () {
     data: generateData(1000, 100),
     max: 100
   });
+}, {
+  chromatic: {
+    disable: true
+  }
 });

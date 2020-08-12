@@ -158,4 +158,8 @@ var ScanChart = function ScanChart(props) {
     data: (0, _data.generateData)(30, 100),
     max: 100
   });
+}, {
+  chromatic: {
+    disable: true
+  }
 });

@@ -147,4 +147,8 @@ storiesOf('Chart', module).add('Scan', function () {
     data: generateData(30, 100),
     max: 100
   });
+}, {
+  chromatic: {
+    disable: true
+  }
 });
