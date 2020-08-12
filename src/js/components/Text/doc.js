@@ -4,6 +4,7 @@ import {
   colorPropType,
   genericProps,
   getAvailableAtBadge,
+  MARGIN_SIZES,
   themeDocUtils,
 } from '../../utils';
 
@@ -22,6 +23,49 @@ export const doc = Text => {
     color: colorPropType.description(
       'A color identifier to use for the text color.',
     ),
+    margin: PropTypes.oneOfType([
+      PropTypes.oneOf(['none', ...MARGIN_SIZES]),
+      PropTypes.shape({
+        bottom: PropTypes.oneOfType([
+          PropTypes.oneOf(MARGIN_SIZES),
+          PropTypes.string,
+        ]),
+        end: PropTypes.oneOfType([
+          PropTypes.oneOf(MARGIN_SIZES),
+          PropTypes.string,
+        ]),
+        horizontal: PropTypes.oneOfType([
+          PropTypes.oneOf(MARGIN_SIZES),
+          PropTypes.string,
+        ]),
+        left: PropTypes.oneOfType([
+          PropTypes.oneOf(MARGIN_SIZES),
+          PropTypes.string,
+        ]),
+        right: PropTypes.oneOfType([
+          PropTypes.oneOf(MARGIN_SIZES),
+          PropTypes.string,
+        ]),
+        start: PropTypes.oneOfType([
+          PropTypes.oneOf(MARGIN_SIZES),
+          PropTypes.string,
+        ]),
+        top: PropTypes.oneOfType([
+          PropTypes.oneOf(MARGIN_SIZES),
+          PropTypes.string,
+        ]),
+        vertical: PropTypes.oneOfType([
+          PropTypes.oneOf(MARGIN_SIZES),
+          PropTypes.string,
+        ]),
+      }),
+      PropTypes.string,
+    ]).description(`The amount of margin around the component. An object can be 
+    specified to distinguish horizontal margin, vertical margin, and margin on 
+    a particular side. For vertical margin to be applied, Text needs to be 
+    contained within a layout component (such as Box or a generic div) or 
+    behave as a div (by applying as="div" or a display style of 
+    inline-block).`),
     size: PropTypes.oneOfType([
       PropTypes.oneOf([
         'xsmall',
