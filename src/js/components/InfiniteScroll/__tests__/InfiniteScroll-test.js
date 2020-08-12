@@ -81,26 +81,59 @@ describe('InfiniteScroll', () => {
   });
 
   test('mixed items', () => {
-    const tempItems = [
-      1,
-      'Hello World',
-      <Image
-        a11yTitle="Gremlin"
-        src="https://v2.grommet.io/img/stak-hurrah.svg"
-      />,
-      99,
-      `Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-      sed do eiusmod temporincididunt ut labore et dolore magna
-      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-      ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Duis aute irure dolor in reprehenderit in voluptate velit
-      esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-      occaecat cupidatat non proident, sunt in culpa qui officia
-      deserunt mollit anim id est laborum.`,
-    ];
+    const lorem = `Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+    sed do eiusmod temporincididunt ut labore et dolore magna
+    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    Duis aute irure dolor in reprehenderit in voluptate velit
+    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+    occaecat cupidatat non proident, sunt in culpa qui officia
+    deserunt mollit anim id est laborum.`;
+    const mixedItems = [];
+    for (let i = 0; i < 1000; i += 1) {
+      switch (i % 5) {
+        case 0:
+          mixedItems.push(<Box>Hello World</Box>);
+          break;
+        case 1:
+          mixedItems.push(`This is a string at index ${i}`);
+          break;
+        case 2:
+          mixedItems.push(
+            <Image
+              a11yTitle="Gremlin"
+              src="https://v2.grommet.io/img/stak-hurrah.svg"
+            />,
+          );
+          break;
+        case 3:
+          switch (i % 4) {
+            case 0:
+              mixedItems.push(lorem);
+              break;
+            case 1:
+              mixedItems.push(lorem.slice(140));
+              break;
+            case 2:
+              mixedItems.push(lorem + lorem);
+              break;
+            case 3:
+              mixedItems.push(lorem.slice(Math.random()));
+              break;
+            default:
+              break;
+          }
+          break;
+        case 4:
+          mixedItems.push(i * 186282);
+          break;
+        default:
+          break;
+      }
+    }
     const { container } = render(
       <Grommet>
-        <InfiniteScroll items={tempItems}>
+        <InfiniteScroll items={mixedItems}>
           {(item, index) => <div key={index}>{item}</div>}
         </InfiniteScroll>
       </Grommet>,
