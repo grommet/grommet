@@ -1,20 +1,32 @@
-import * as React from "react";
-import { AnimateType, MarginType, KeyboardType } from "../../utils";
+import * as React from 'react';
+import { AnimateType, MarginType, KeyboardType } from '../../utils';
 
+export type LayerPositionType =
+  | 'bottom'
+  | 'bottom-left'
+  | 'bottom-right'
+  | 'center'
+  | 'hidden'
+  | 'left'
+  | 'right'
+  | 'top'
+  | 'top-left'
+  | 'top-right';
 export interface LayerProps {
   animate?: AnimateType;
-  animation?: "none" | "slide" | "fadeIn" | boolean;
-  full?: boolean | "vertical" | "horizontal";
+  animation?: 'none' | 'slide' | 'fadeIn' | boolean;
+  full?: boolean | 'vertical' | 'horizontal';
   margin?: MarginType;
   modal?: boolean;
-  onClickOutside?: ((...args: any[]) => any);
+  onClickOutside?: (...args: any[]) => any;
   onEsc?: KeyboardType;
   plain?: boolean;
-  position?: "bottom" | "bottom-left" | "bottom-right" | "center" | "hidden" | "left" | "right" | "top" | "top-left" | "top-right";
+  position?: LayerPositionType;
   responsive?: boolean;
   target?: object;
 }
 
-declare const Layer: React.ComponentClass<LayerProps & JSX.IntrinsicElements['div']>;
+declare const Layer: React.ComponentClass<LayerProps &
+  JSX.IntrinsicElements['div']>;
 
 export { Layer };

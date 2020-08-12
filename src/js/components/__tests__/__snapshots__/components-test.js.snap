@@ -6376,7 +6376,10 @@ function
 <Select />",
   },
   "Sidebar": [Function],
-  "SkipLink": [Function],
+  "SkipLink": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
   "SkipLinkTarget": [Function],
   "SkipLinks": [Function],
   "Stack": [Function],
