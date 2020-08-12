@@ -7,16 +7,16 @@ import { grommet } from 'grommet/themes';
 
 const Responsive = () => (
   <Grommet theme={grommet}>
-    <ResponsiveContext.Consumer>
-      {responsive =>
-        responsive === 'small' ? (
-          <Header height="xsmall">
-            <Anchor
-              margin={{ left: 'medium', vertical: 'xsmall' }}
-              href="#"
-              icon={<GrommetIcon color="brand" />}
-              label="Grommet Tools"
-            />
+    <Header background="light-4" height="xsmall">
+      <Anchor
+        margin={{ left: 'medium', vertical: 'xsmall' }}
+        href="https://tools.grommet.io/"
+        icon={<GrommetIcon color="brand" />}
+        label="Grommet Tools"
+      />
+      <ResponsiveContext.Consumer>
+        {size =>
+          size === 'small' ? (
             <Box alignSelf="end" margin="large">
               <Menu
                 a11yTitle="Navigation Menu"
@@ -26,41 +26,36 @@ const Responsive = () => (
                 items={[
                   {
                     label: <Box pad="small">Grommet Tools </Box>,
-                    href: '#',
+                    href: 'https://tools.grommet.io/',
                   },
                   {
                     label: <Box pad="small">Grommet.io</Box>,
-                    href: '#',
+                    href: 'https://v2.grommet.io/',
                   },
                   {
                     label: <Box pad="small">Feedback</Box>,
-                    href: '#',
+                    href: 'https://github.com/grommet/grommet/issues',
                   },
                 ]}
               />
             </Box>
-          </Header>
-        ) : (
-          <Header height="xsmall">
-            <Anchor
-              margin={{ left: 'medium', vertical: 'xsmall' }}
-              href="#"
-              icon={<GrommetIcon color="brand" />}
-              label="Grommet Tools"
-            />
+          ) : (
             <Box
               margin={{ right: 'large' }}
               justify="end"
               direction="row"
               gap="medium"
             >
-              <Anchor href="#" label="Grommet.io" />
-              <Anchor href="#" label="Feedback" />
+              <Anchor href="https://v2.grommet.io/" label="Grommet.io" />
+              <Anchor
+                href="https://github.com/grommet/grommet/issues"
+                label="Feedback"
+              />
             </Box>
-          </Header>
-        )
-      }
-    </ResponsiveContext.Consumer>
+          )
+        }
+      </ResponsiveContext.Consumer>
+    </Header>
   </Grommet>
 );
 
