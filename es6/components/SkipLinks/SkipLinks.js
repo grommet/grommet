@@ -1,12 +1,15 @@
-import React, { cloneElement, useRef, useState } from 'react';
+import React, { cloneElement, useContext, useRef, useState } from 'react';
+import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
-import { Heading } from '../Heading';
+import { Text } from '../Text';
 import { Layer } from '../Layer';
+import { defaultProps } from '../../default-props';
 
 var SkipLinks = function SkipLinks(_ref) {
   var children = _ref.children,
       id = _ref.id,
       messages = _ref.messages;
+  var theme = useContext(ThemeContext) || defaultProps.theme;
 
   var _useState = useState(false),
       showLayer = _useState[0],
@@ -27,7 +30,8 @@ var SkipLinks = function SkipLinks(_ref) {
     setTimeout(function () {
       var layerNode = layerRef.current;
 
-      if (layerNode && layerNode.layerContainer && layerNode.layerContainer.contains && !layerNode.layerContainer.contains(document.activeElement)) {
+      if (layerNode && !layerNode.contains(document.activeElement)) {
+        // close the layer when the activeElement isn't contained in the layer
         removeLayer();
       }
     }, 0);
@@ -35,22 +39,20 @@ var SkipLinks = function SkipLinks(_ref) {
 
   return /*#__PURE__*/React.createElement(Layer, {
     id: id,
-    position: showLayer ? 'top' : 'hidden',
+    position: showLayer ? theme.skipLinks.position : 'hidden',
     ref: layerRef,
     onFocus: onFocus,
-    onBlur: onBlur
-  }, /*#__PURE__*/React.createElement(Box, {
-    pad: {
-      horizontal: 'medium'
-    }
-  }, /*#__PURE__*/React.createElement(Heading, {
-    level: 2
-  }, messages.skipTo, ":"), /*#__PURE__*/React.createElement(Box, {
-    direction: "row",
+    onBlur: onBlur,
+    modal: false // Prepend the Layer so any SkipLink will be the first element that
+    // pressing the Tab key reaches, targetChildPosition triggers prepend.
+    ,
+    targetChildPosition: "first" // Non-modal Layer's will take the full screen at small breakpoints
+    // by default, which isn't what we want, hence setting responsive false
+    ,
+    responsive: false
+  }, /*#__PURE__*/React.createElement(Box, theme.skipLinks.container, messages.skipTo && /*#__PURE__*/React.createElement(Text, theme.skipLinks.label, messages.skipTo), /*#__PURE__*/React.createElement(Box, {
     align: "center",
-    pad: {
-      bottom: 'medium'
-    }
+    gap: "medium"
   }, children.map(function (element, index) {
     return /*#__PURE__*/cloneElement(element, {
       key: "skip-link-" + index,
@@ -61,7 +63,7 @@ var SkipLinks = function SkipLinks(_ref) {
 
 SkipLinks.defaultProps = {
   messages: {
-    skipTo: 'Skip To'
+    skipTo: 'Skip To:'
   }
 };
 var SkipLinksDoc;

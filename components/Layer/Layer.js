@@ -23,7 +23,8 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 var Layer = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
   var animate = props.animate,
-      animation = props.animation;
+      animation = props.animation,
+      targetChildPosition = props.targetChildPosition;
 
   var _useState = (0, _react.useState)(),
       originalFocusedElement = _useState[0],
@@ -39,8 +40,8 @@ var Layer = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
 
   var containerTarget = (0, _react.useContext)(_ContainerTargetContext.ContainerTargetContext);
   (0, _react.useEffect)(function () {
-    return setLayerContainer((0, _utils.getNewContainer)(containerTarget));
-  }, [containerTarget]); // just a few things to clean up when the Layer is unmounted
+    return setLayerContainer((0, _utils.getNewContainer)(containerTarget, targetChildPosition));
+  }, [containerTarget, targetChildPosition]); // just a few things to clean up when the Layer is unmounted
 
   (0, _react.useEffect)(function () {
     return function () {

@@ -8,7 +8,8 @@ import { animationDuration } from './StyledLayer';
 import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
 var Layer = /*#__PURE__*/forwardRef(function (props, ref) {
   var animate = props.animate,
-      animation = props.animation;
+      animation = props.animation,
+      targetChildPosition = props.targetChildPosition;
 
   var _useState = useState(),
       originalFocusedElement = _useState[0],
@@ -24,8 +25,8 @@ var Layer = /*#__PURE__*/forwardRef(function (props, ref) {
 
   var containerTarget = useContext(ContainerTargetContext);
   useEffect(function () {
-    return setLayerContainer(getNewContainer(containerTarget));
-  }, [containerTarget]); // just a few things to clean up when the Layer is unmounted
+    return setLayerContainer(getNewContainer(containerTarget, targetChildPosition));
+  }, [containerTarget, targetChildPosition]); // just a few things to clean up when the Layer is unmounted
 
   useEffect(function () {
     return function () {

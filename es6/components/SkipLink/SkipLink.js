@@ -2,18 +2,16 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { Anchor } from '../Anchor';
-import { Box } from '../Box';
-export var SkipLink = function SkipLink(_ref) {
+export var SkipLink = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var id = _ref.id,
       label = _ref.label,
       rest = _objectWithoutPropertiesLoose(_ref, ["id", "label"]);
 
-  return /*#__PURE__*/React.createElement(Box, {
-    margin: "small"
-  }, /*#__PURE__*/React.createElement(Anchor, _extends({
+  return /*#__PURE__*/React.createElement(Anchor, _extends({
     href: "#" + id,
+    ref: ref,
     label: label
-  }, rest)));
-};
+  }, rest));
+});

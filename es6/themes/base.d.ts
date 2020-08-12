@@ -3,6 +3,7 @@ import {
   FlattenSimpleInterpolation,
   ThemedStyledProps,
 } from 'styled-components';
+import { ReactComponentElement } from 'react';
 
 import {
   BackgroundType,
@@ -25,7 +26,7 @@ import { BoxProps } from '../components/Box';
 import { Anchor } from '../components/Anchor';
 import { Box } from '../components/Box';
 import { Text, TextProps } from '../components/Text';
-import { ReactComponentElement } from 'react';
+import { LayerPositionType } from '../components/Layer';
 
 export declare const base: DeepReadonly<ThemeType>;
 export declare const generate: (
@@ -996,6 +997,11 @@ export interface ThemeType {
     // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/37506
     searchInput?: ReactComponentElement<any>;
     step?: number;
+  };
+  skipLinks?: {
+    position?: LayerPositionType;
+    container?: BoxProps;
+    label?: TextProps;
   };
   tab?: {
     active?: {

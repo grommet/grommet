@@ -1073,6 +1073,20 @@ var generate = function generate(baseSpacing, scale) {
       // searchInput: undefined,
       step: 20
     },
+    skipLinks: {
+      position: 'top',
+      container: {
+        elevation: 'large',
+        round: 'small',
+        pad: 'medium'
+      },
+      label: {
+        margin: {
+          bottom: 'medium'
+        },
+        size: 'medium'
+      }
+    },
     tab: {
       active: {
         color: 'text' // background: undefined,

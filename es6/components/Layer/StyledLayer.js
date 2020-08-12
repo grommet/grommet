@@ -393,8 +393,12 @@ var POSITIONS = {
     }
   }
 };
-var desktopContainerStyle = css(["position:", ";max-height:", ";max-width:", ";border-radius:", ";", ";"], function (props) {
-  return props.modal ? 'absolute' : 'fixed';
+var desktopContainerStyle = css(["", " max-height:", ";max-width:", ";border-radius:", ";", ";"], function (props) {
+  if (!props.modal && props.position === 'hidden') {
+    return hiddenPositionStyle;
+  }
+
+  return css(["position:", ";"], props.modal ? 'absolute' : 'fixed');
 }, function (props) {
   return "calc(100% - " + getBounds(props.targetBounds, props.margin, props.theme, 'top') + "px - " + getBounds(props.targetBounds, props.margin, props.theme, 'bottom') + "px)";
 }, function (props) {

@@ -95,14 +95,21 @@ export var getBodyChildElements = function getBodyChildElements() {
   });
   return children;
 };
-export var getNewContainer = function getNewContainer(rootNode) {
-  if (rootNode === void 0) {
-    rootNode = document.body;
+export var getNewContainer = function getNewContainer(target, targetChildPosition) {
+  if (target === void 0) {
+    target = document.body;
   }
 
   // setup DOM
   var container = document.createElement('div');
-  rootNode.appendChild(container);
+
+  if (targetChildPosition === 'first') {
+    // for SkipLinks
+    target.prepend(container);
+  } else {
+    target.appendChild(container);
+  }
+
   return container;
 };
 export var setFocusWithoutScroll = function setFocusWithoutScroll(element) {
@@ -141,7 +148,7 @@ export var makeNodeUnfocusable = function makeNodeUnfocusable(node) {
   if (!node.hasAttribute('aria-live')) {
     node.setAttribute('aria-hidden', true); // prevent children to receive focus
 
-    var elements = node.getElementsByTagName('*'); // first, save off the tabindex of any element with one
+    var elements = node.getElementsByTagName('*'); // first, save off the tabIndex of any element with one
 
     Array.prototype.filter.call(elements || [], function (element) {
       return element.getAttribute(TABINDEX) !== null;
@@ -149,7 +156,7 @@ export var makeNodeUnfocusable = function makeNodeUnfocusable(node) {
       element.setAttribute(TABINDEX_STATE, element.getAttribute(TABINDEX));
       element.setAttribute(TABINDEX, -1);
     }); // then, if any element is inherently focusable and not handled above,
-    // give it a tabindex of -1 so it can't receive focus
+    // give it a tabIndex of -1 so it can't receive focus
 
     Array.prototype.filter.call(elements || [], function (element) {
       var currentTag = element.tagName.toLowerCase();

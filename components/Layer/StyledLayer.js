@@ -412,8 +412,12 @@ var POSITIONS = {
     }
   }
 };
-var desktopContainerStyle = (0, _styledComponents.css)(["position:", ";max-height:", ";max-width:", ";border-radius:", ";", ";"], function (props) {
-  return props.modal ? 'absolute' : 'fixed';
+var desktopContainerStyle = (0, _styledComponents.css)(["", " max-height:", ";max-width:", ";border-radius:", ";", ";"], function (props) {
+  if (!props.modal && props.position === 'hidden') {
+    return hiddenPositionStyle;
+  }
+
+  return (0, _styledComponents.css)(["position:", ";"], props.modal ? 'absolute' : 'fixed');
 }, function (props) {
   return "calc(100% - " + getBounds(props.targetBounds, props.margin, props.theme, 'top') + "px - " + getBounds(props.targetBounds, props.margin, props.theme, 'bottom') + "px)";
 }, function (props) {

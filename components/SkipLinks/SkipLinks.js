@@ -5,11 +5,15 @@ exports.SkipLinks = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _styledComponents = require("styled-components");
+
 var _Box = require("../Box");
 
-var _Heading = require("../Heading");
+var _Text = require("../Text");
 
 var _Layer = require("../Layer");
+
+var _defaultProps = require("../../default-props");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -19,6 +23,8 @@ var SkipLinks = function SkipLinks(_ref) {
   var children = _ref.children,
       id = _ref.id,
       messages = _ref.messages;
+
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
   var _useState = (0, _react.useState)(false),
       showLayer = _useState[0],
@@ -39,7 +45,8 @@ var SkipLinks = function SkipLinks(_ref) {
     setTimeout(function () {
       var layerNode = layerRef.current;
 
-      if (layerNode && layerNode.layerContainer && layerNode.layerContainer.contains && !layerNode.layerContainer.contains(document.activeElement)) {
+      if (layerNode && !layerNode.contains(document.activeElement)) {
+        // close the layer when the activeElement isn't contained in the layer
         removeLayer();
       }
     }, 0);
@@ -47,22 +54,20 @@ var SkipLinks = function SkipLinks(_ref) {
 
   return /*#__PURE__*/_react["default"].createElement(_Layer.Layer, {
     id: id,
-    position: showLayer ? 'top' : 'hidden',
+    position: showLayer ? theme.skipLinks.position : 'hidden',
     ref: layerRef,
     onFocus: onFocus,
-    onBlur: onBlur
-  }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-    pad: {
-      horizontal: 'medium'
-    }
-  }, /*#__PURE__*/_react["default"].createElement(_Heading.Heading, {
-    level: 2
-  }, messages.skipTo, ":"), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-    direction: "row",
+    onBlur: onBlur,
+    modal: false // Prepend the Layer so any SkipLink will be the first element that
+    // pressing the Tab key reaches, targetChildPosition triggers prepend.
+    ,
+    targetChildPosition: "first" // Non-modal Layer's will take the full screen at small breakpoints
+    // by default, which isn't what we want, hence setting responsive false
+    ,
+    responsive: false
+  }, /*#__PURE__*/_react["default"].createElement(_Box.Box, theme.skipLinks.container, messages.skipTo && /*#__PURE__*/_react["default"].createElement(_Text.Text, theme.skipLinks.label, messages.skipTo), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     align: "center",
-    pad: {
-      bottom: 'medium'
-    }
+    gap: "medium"
   }, children.map(function (element, index) {
     return /*#__PURE__*/(0, _react.cloneElement)(element, {
       key: "skip-link-" + index,
@@ -73,7 +78,7 @@ var SkipLinks = function SkipLinks(_ref) {
 
 SkipLinks.defaultProps = {
   messages: {
-    skipTo: 'Skip To'
+    skipTo: 'Skip To:'
   }
 };
 var SkipLinksDoc;
