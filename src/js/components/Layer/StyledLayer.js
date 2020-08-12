@@ -618,7 +618,14 @@ const POSITIONS = {
 };
 
 const desktopContainerStyle = css`
-  position: ${props => (props.modal ? 'absolute' : 'fixed')};
+  ${props => {
+    if (!props.modal && props.position === 'hidden') {
+      return hiddenPositionStyle;
+    }
+    return css`
+      position: ${props.modal ? 'absolute' : 'fixed'};
+    `;
+  }}
   max-height: ${props =>
     `calc(100% - ${getBounds(
       props.targetBounds,
@@ -670,7 +677,8 @@ const responsiveContainerStyle = css`
 `;
 
 const StyledContainer = styled.div`
-  ${props => (!props.modal ? baseStyle : '')} display: flex;
+  ${props => (!props.modal ? baseStyle : '')}
+  display: flex;
   flex-direction: column;
   min-height: ${props => props.theme.global.size.xxsmall};
   ${props =>
@@ -680,7 +688,8 @@ const StyledContainer = styled.div`
   pointer-events: all;
   z-index: ${props => props.theme.layer.container.zIndex};
 
-  ${desktopContainerStyle} ${props => {
+  ${desktopContainerStyle}
+  ${props => {
     if (props.responsive && props.theme.layer.responsiveBreakpoint) {
       const breakpoint =
         props.theme.global.breakpoints[props.theme.layer.responsiveBreakpoint];

@@ -36,4 +36,6 @@ const Example = () => {
   );
 };
 
-storiesOf('DateInput', module).add('Range', () => <Example />);
+storiesOf('DateInput', module).add('Range', () => <Example />, {
+  chromatic: { disable: true },
+});
