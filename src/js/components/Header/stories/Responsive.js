@@ -7,9 +7,8 @@ import { grommet } from 'grommet/themes';
 
 const Responsive = () => (
   <Grommet theme={grommet}>
-    <Header background="light-4" height="xsmall">
+    <Header background="light-4" pad="medium" height="xsmall">
       <Anchor
-        margin={{ left: 'medium', vertical: 'xsmall' }}
         href="https://tools.grommet.io/"
         icon={<GrommetIcon color="brand" />}
         label="Grommet Tools"
@@ -17,10 +16,9 @@ const Responsive = () => (
       <ResponsiveContext.Consumer>
         {size =>
           size === 'small' ? (
-            <Box alignSelf="end" margin="large">
+            <Box justify="end">
               <Menu
                 a11yTitle="Navigation Menu"
-                justifyContent="end"
                 dropProps={{ align: { top: 'bottom', right: 'right' } }}
                 icon={<MenuIcon color="brand" />}
                 items={[
@@ -40,12 +38,7 @@ const Responsive = () => (
               />
             </Box>
           ) : (
-            <Box
-              margin={{ right: 'large' }}
-              justify="end"
-              direction="row"
-              gap="medium"
-            >
+            <Box justify="end" direction="row" gap="medium">
               <Anchor href="https://v2.grommet.io/" label="Grommet.io" />
               <Anchor
                 href="https://github.com/grommet/grommet/issues"
