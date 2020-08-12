@@ -40,7 +40,7 @@ var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
     margin: 'none',
     extend: function extend(_ref) {
       var theme = _ref.theme;
-      return (0, _styledComponents.css)(["border-top-left-radius:", ";border-top-right-radius:", ";font-weight:bold;"], theme.global.control.border.radius, theme.global.control.border.radius);
+      return (0, _styledComponents.css)(["border-top-left-radius:'4px';border-top-right-radius:'4px';font-weight:bold;"]);
     }
   }
 });

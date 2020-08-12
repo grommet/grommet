@@ -31,7 +31,7 @@ var customTheme = deepMerge(grommet, {
     margin: 'none',
     extend: function extend(_ref) {
       var theme = _ref.theme;
-      return css(["border-top-left-radius:", ";border-top-right-radius:", ";font-weight:bold;"], theme.global.control.border.radius, theme.global.control.border.radius);
+      return css(["border-top-left-radius:'4px';border-top-right-radius:'4px';font-weight:bold;"]);
     }
   }
 });
