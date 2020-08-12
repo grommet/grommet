@@ -88,3 +88,14 @@ object
 ```
 div
 ```
+## Theme
+  
+**radioButtonGroup.container**
+
+Any valid Box props for the RadioButtonGroup container. Expects `object`.
+
+Defaults to
+
+```
+undefined
+```
