@@ -86,4 +86,6 @@ const CenterLayer = () => {
   );
 };
 
-storiesOf('Layer', module).add('Center', () => <CenterLayer />);
+storiesOf('Layer', module).add('Center', () => <CenterLayer />, {
+  chromatic: { disable: true },
+});

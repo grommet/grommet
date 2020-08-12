@@ -1,9 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Anchor, Box, Grommet, Header, Nav } from 'grommet';
+import { Avatar, Anchor, Box, Grommet, Header, Nav } from 'grommet';
 import { grommet } from 'grommet/themes';
-import { Avatar } from '../../Header/stories/Simple';
 
 const items = [
   { label: 'HTML', href: '#' },
@@ -12,11 +11,14 @@ const items = [
   { label: 'REACT', href: '#' },
 ];
 
+const gravatarSrc =
+  '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
+
 const OnHeader = () => (
   <Grommet theme={grommet}>
-    <Header background="dark-1" pad="medium">
+    <Header background="dark-1" pad="small">
       <Box direction="row" align="center" gap="small">
-        <Avatar />
+        <Avatar src={gravatarSrc} />
         <Anchor color="white" href="https://github.com/ShimiSun">
           ShimiSun
         </Anchor>

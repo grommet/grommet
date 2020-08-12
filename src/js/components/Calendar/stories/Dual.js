@@ -6,16 +6,11 @@ import { grommet } from 'grommet/themes';
 
 import { Blank, Previous, Next } from 'grommet-icons';
 
-const now = new Date();
-const next = new Date(now);
-next.setMonth(now.getMonth() + 1, 1);
-
 const DualCalendar = () => {
   const [date, setDate] = useState();
   const [dates, setDates] = useState();
-  const [reference1, setReference1] = useState(now);
-  const [reference2, setReference2] = useState(next);
-
+  const [reference1, setReference1] = useState('2020-08-07T15:13:47.290Z');
+  const [reference2, setReference2] = useState('2020-09-01T15:15:34.916Z');
   const onSelect = arg => {
     if (Array.isArray(arg)) {
       setDate(undefined);
@@ -36,10 +31,12 @@ const DualCalendar = () => {
           date={date}
           dates={dates}
           onSelect={onSelect}
-          reference={reference1.toISOString()}
+          reference={reference1}
           onReference={reference => {
             const refDate = new Date(reference);
             const nextDate = new Date(refDate);
+            console.log(refDate);
+            console.log(nextDate);
             nextDate.setMonth(refDate.getMonth() + 1, 1);
             setReference1(refDate);
             setReference2(nextDate);
@@ -73,7 +70,7 @@ const DualCalendar = () => {
           dates={dates}
           range
           onSelect={onSelect}
-          reference={reference2.toISOString()}
+          reference={reference2}
           onReference={reference => {
             const refDate = new Date(reference);
             const priorDate = new Date(refDate);
