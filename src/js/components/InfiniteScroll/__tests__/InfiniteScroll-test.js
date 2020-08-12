@@ -2,12 +2,16 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import 'jest-styled-components';
 
-import { Grommet, Image } from '../..';
+import { Grommet, Image, Box } from '../..';
 import { InfiniteScroll } from '..';
 
 describe('InfiniteScroll', () => {
   const items = [];
   while (items.length < 4) items.push(items.length);
+  const simpleItems = value =>
+    Array(value)
+      .fill()
+      .map((_, i) => `item ${i + 1}`);
 
   test('basic', () => {
     const { container } = render(
@@ -91,7 +95,7 @@ describe('InfiniteScroll', () => {
       ullamco laboris nisi ut aliquip ex ea commodo consequat.
       Duis aute irure dolor in reprehenderit in voluptate velit
       esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-      occaecat cupidatat non proident, sunt in culpa qui officia 
+      occaecat cupidatat non proident, sunt in culpa qui officia
       deserunt mollit anim id est laborum.`,
     ];
     const { container } = render(
@@ -102,5 +106,91 @@ describe('InfiniteScroll', () => {
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`Show item should be visible in window`, () => {
+    const { container } = render(
+      <Grommet>
+        <InfiniteScroll
+          items={simpleItems(300)}
+          /* Uncomment the next 2 lines once fix for show is in place */
+          // show={105}
+        >
+          {item => <Box key={item}>{item}</Box>}
+        </InfiniteScroll>
+      </Grommet>,
+    );
+    // item(104) = 'item 105' because indexing starts at 0.
+    /* Delete the next 2 lines once fix for show is in place */
+    const renderedItems = container.firstChild.children.item(10).outerHTML;
+    expect(renderedItems).toContain('item 11');
+    /* Uncomment the next 2 lines once fix for show is in place */
+    // const renderedItems = container.firstChild.children.item(104).outerHTML;
+    // expect(renderedItems).toContain('item 105');
+  });
+});
+
+describe('Number of Items Rendered', () => {
+  const simpleItems = value =>
+    Array(value)
+      .fill()
+      .map((_, i) => `item ${i + 1}`);
+
+  function createPageItems(allChildren) {
+    const unfiltered = Array.from(allChildren);
+    // Removing any children which are serving as refs
+    return unfiltered.filter(childItem => childItem.outerHTML.includes('item'));
+  }
+
+  test(`Should render items equal to the length of
+  step + 1 when step < items.length`, () => {
+    const step = 50;
+    const { container } = render(
+      <Grommet>
+        <InfiniteScroll
+          items={simpleItems(1000)}
+          // show={117}
+          step={step}
+        >
+          {item => <Box key={item}>{item}</Box>}
+        </InfiniteScroll>
+      </Grommet>,
+    );
+
+    const pageItems = createPageItems(container.firstChild.children);
+    const expectedItems = step;
+    expect(pageItems.length).toEqual(expectedItems);
+  });
+
+  test(`Should render items equal to the length of
+  step + 1 when step = array`, () => {
+    const step = 200;
+    const { container } = render(
+      <Grommet>
+        <InfiniteScroll items={simpleItems(200)} show={117} step={step}>
+          {item => <Box key={item}>{item}</Box>}
+        </InfiniteScroll>
+      </Grommet>,
+    );
+
+    const pageItems = createPageItems(container.firstChild.children);
+    const expectedItems = step;
+    expect(pageItems.length).toEqual(expectedItems);
+  });
+
+  test(`Should render items equal to the length of
+  step when step > array`, () => {
+    const numItems = 1000;
+    const { container } = render(
+      <Grommet>
+        <InfiniteScroll items={simpleItems(numItems)} show={117} step={1050}>
+          {item => <Box key={item}>{item}</Box>}
+        </InfiniteScroll>
+      </Grommet>,
+    );
+
+    const pageItems = createPageItems(container.firstChild.children);
+    const expectedItems = numItems;
+    expect(pageItems.length).toEqual(expectedItems);
   });
 });

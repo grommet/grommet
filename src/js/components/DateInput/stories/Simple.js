@@ -23,4 +23,6 @@ const Example = () => {
   );
 };
 
-storiesOf('DateInput', module).add('Simple', () => <Example />);
+storiesOf('DateInput', module).add('Simple', () => <Example />, {
+  chromatic: { disable: true },
+});
