@@ -1,5 +1,8 @@
 "use strict";
 
+exports.__esModule = true;
+exports.locations = void 0;
+
 var _react = _interopRequireDefault(require("react"));
 
 var _react2 = require("@storybook/react");
@@ -10,10 +13,10 @@ var _themes = require("grommet/themes");
 
 var _utils = require("grommet/utils");
 
-var _data = require("./data");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+var locations = ['Boise', 'Fort Collins', 'Los Gatos', 'Palo Alto', 'San Francisco'];
+exports.locations = locations;
 var theme = (0, _utils.deepMerge)(_themes.grommet, {
   list: {
     item: {
@@ -34,7 +37,7 @@ var ThemedList = function ThemedList() {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.List, {
-    data: _data.locations
+    data: locations
   })));
 };
 

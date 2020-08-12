@@ -8,9 +8,9 @@ var _grommet = require("grommet");
 
 var _themes = require("grommet/themes");
 
-var _data = require("./data");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var locations = ['Boise', 'Fort Collins', 'Los Gatos', 'Palo Alto', 'San Francisco'];
 
 var BasicList = function BasicList() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
@@ -19,7 +19,7 @@ var BasicList = function BasicList() {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.List, {
-    data: _data.locations
+    data: locations
   })));
 };
 

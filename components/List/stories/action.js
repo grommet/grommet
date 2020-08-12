@@ -10,9 +10,15 @@ var _grommetIcons = require("grommet-icons");
 
 var _themes = require("grommet/themes");
 
-var _data = require("./data");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var data = [];
+
+for (var i = 0; i < 40; i += 1) {
+  data.push({
+    entry: "entry-" + (i + 1)
+  });
+}
 
 var ActionList = function ActionList() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
@@ -20,7 +26,7 @@ var ActionList = function ActionList() {
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.List, {
-    data: _data.data.slice(0, 10),
+    data: data.slice(0, 10),
     pad: {
       left: 'small',
       right: 'none'

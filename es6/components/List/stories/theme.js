@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { Grommet, Box, List } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
-import { locations } from './data';
+export var locations = ['Boise', 'Fort Collins', 'Los Gatos', 'Palo Alto', 'San Francisco'];
 var theme = deepMerge(grommet, {
   list: {
     item: {

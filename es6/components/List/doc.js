@@ -19,6 +19,7 @@ var borderTypes = [PropTypes.bool, PropTypes.oneOf(sides), PropTypes.shape({
 export var doc = function doc(List) {
   var DocumentedList = describe(List).availableAt(getAvailableAtBadge('List')).description('An ordered list of items.').usage("import { List } from 'grommet';\n<List data={[...]} />").intrinsicElement('ol');
   DocumentedList.propTypes = _extends({}, genericProps, {
+    action: PropTypes.func.description("Accepts a function that allows for a custom rendering\n       of a component, it should be passed with an item and\n        index of an array and return a react element\n      `action = ({item, index}) => <Content />`\n    />"),
     as: PropTypes.string.description('The DOM tag or react component to use for the element.').defaultValue('ul'),
     background: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]).description("Item background. An array value indicates that items should have\n      different backgrounds, modulo the array index."),
     border: PropTypes.oneOfType(borderTypes).description("Item border."),
