@@ -659,6 +659,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       minSpeed: 200,
       baseline: 500,
     },
+    dateInput: {
+      // icon: {
+      //   size: undefined,
+      // },
+    },
     dataTable: {
       // body: {
       //   extend: undefined,
