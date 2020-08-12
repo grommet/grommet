@@ -26,9 +26,9 @@ const CarouselMulti = () => {
     return carouselView.map(view => {
       // return each view with three images
       return (
-        <Box direction="row">
+        <Box direction="row" key={view}>
           {view.map(img => (
-            <Image src={img} fit="contain" />
+            <Image src={img} fit="contain" key={img} />
           ))}
         </Box>
       );
