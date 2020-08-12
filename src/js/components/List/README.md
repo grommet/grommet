@@ -129,6 +129,7 @@ string
 The interactive element property for the user to be able to pass a 
       component within list. It should be passed with an item and index of an
       array and return a react element.
+      `action = ({item, index}) => <Content />`
     />
 
 ```
