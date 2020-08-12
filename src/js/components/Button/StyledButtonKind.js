@@ -241,6 +241,10 @@ const StyledButtonKind = styled.button`
 
   ${genericStyles}
   ${props => props.plain && plainStyle(props)}
+  // plain buttons should still be able to receive active styling even
+  // though they do not have a kindStyle.
+  // other button types are receiving active styling via their kindStyle.
+  ${props => !props.disabled && props.active && activeStyle}
   ${props => !props.plain && basicStyle(props)}
   ${props => !props.plain && kindStyle(props)}
   ${props =>
@@ -250,10 +254,6 @@ const StyledButtonKind = styled.button`
     text-align: ${props.align};
     `}
     ${props => props.hoverIndicator && hoverIndicatorStyle(props)}
-  // plain buttons should still be able to receive active styling even
-  // though they do not have a kindStyle.
-  // other button types are receiving active styling via their kindStyle.
-  ${props => !props.disabled && props.active && props.plain && activeStyle}
   ${props =>
     props.disabled && disabledStyle(props.theme.button.disabled.opacity)}
   ${props =>
