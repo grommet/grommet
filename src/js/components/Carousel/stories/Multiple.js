@@ -24,17 +24,19 @@ const CarouselMulti = () => {
 
     // add images to each view
     return carouselView.map(view => {
-      const getCarouselItem = () =>
-        view.map(img => <Image src={img} fit="contain" />);
-      // return view
-      return <Box direction="row">{getCarouselItem()}</Box>;
+      // return each view with three images
+      return (
+        <Box direction="row">
+          {view.map(img => (
+            <Image src={img} fit="contain" />
+          ))}
+        </Box>
+      );
     });
   };
   return (
     <Grommet>
-      <Carousel controls="arrows" play={0}>
-        {getCarouselView()}
-      </Carousel>
+      <Carousel controls="arrows">{getCarouselView()}</Carousel>
     </Grommet>
   );
 };
