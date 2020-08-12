@@ -49,7 +49,9 @@ export const doc = List => {
     ...genericProps,
     action: PropTypes.func.description(
       `The interactive element property for the user to be able to pass a 
-      component within list.`,
+      component within list. It should be passed with an item and index of an
+      array and return a react element.
+    />`,
     ),
     as: PropTypes.string
       .description('The DOM tag or react component to use for the element.')
