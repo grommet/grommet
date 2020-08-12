@@ -58,7 +58,7 @@ export const themeDoc = {
   'skipLinks.label.margin': {
     description: 'The margin size around the text message.',
     type: 'string',
-    defaultValue: 'medium',
+    defaultValue: '{ bottom: medium }',
   },
   'skipLinks.label.size': {
     description: 'The font size of the text label.',

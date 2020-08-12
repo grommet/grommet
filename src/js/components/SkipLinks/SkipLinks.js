@@ -39,7 +39,9 @@ const SkipLinks = ({ children, id, messages }) => {
       onFocus={onFocus}
       onBlur={onBlur}
       modal={false}
-      targetChildPosition="first" // prepend the Layer on the body container
+      // Prepend the Layer so any SkipLink will be the first element that
+      // pressing the Tab key reaches, targetChildPosition triggers prepend.
+      targetChildPosition="first"
       // Non-modal Layer's will take the full screen at small breakpoints
       // by default, which isn't what we want, hence setting responsive false
       responsive={false}
@@ -48,7 +50,7 @@ const SkipLinks = ({ children, id, messages }) => {
         {messages.skipTo && (
           <Text {...theme.skipLinks.label}>{messages.skipTo}</Text>
         )}
-        <Box align="center">
+        <Box align="center" gap="medium">
           {children.map((element, index) =>
             cloneElement(element, {
               key: `skip-link-${index}`,

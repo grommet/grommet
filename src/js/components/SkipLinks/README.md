@@ -101,7 +101,7 @@ The margin size around the text message. Expects `string`.
 Defaults to
 
 ```
-medium
+{ bottom: medium }
 ```
 
 **skipLinks.label.size**

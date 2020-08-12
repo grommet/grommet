@@ -990,7 +990,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         pad: 'medium',
       },
       label: {
-        margin: 'small',
+        margin: { bottom: 'medium' },
         size: 'medium',
       },
     },
