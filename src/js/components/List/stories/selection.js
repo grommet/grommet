@@ -4,7 +4,13 @@ import { storiesOf } from '@storybook/react';
 import { Grommet, Box, List } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-import { data } from './data';
+const data = [];
+
+for (let i = 0; i < 40; i += 1) {
+  data.push({
+    entry: `entry-${i + 1}`,
+  });
+}
 
 const SelectionList = () => {
   const [selected, setSelected] = React.useState();
