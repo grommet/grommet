@@ -118,7 +118,7 @@ describe('InfiniteScroll', () => {
               mixedItems.push(lorem + lorem);
               break;
             case 3:
-              mixedItems.push(lorem.slice(Math.random()));
+              mixedItems.push(lorem.slice(200));
               break;
             default:
               break;
