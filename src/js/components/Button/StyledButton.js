@@ -206,8 +206,11 @@ const StyledButton = styled.button`
     props.theme.button &&
     props.theme.button.disabled &&
     disabledButtonStyle(props)}
-  ${props =>
-    props.focus && (!props.plain || props.focusIndicator) && focusStyle()}
+  
+  &:focus {
+    ${props => (!props.plain || props.focusIndicator) && focusStyle()}
+  }
+
   ${props =>
     !props.plain &&
     props.theme.button.transition &&

@@ -73,6 +73,26 @@ exports[`Form controlled controlled 1`] = `
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c4 {
   box-sizing: border-box;
   font-size: inherit;
@@ -192,7 +212,7 @@ exports[`Form controlled controlled 2`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 kIXxtf"
+      class="StyledButton-sc-323bzc-0 gLndZo"
       type="submit"
     >
       Submit
@@ -226,7 +246,7 @@ exports[`Form controlled controlled 3`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 kIXxtf"
+      class="StyledButton-sc-323bzc-0 gLndZo"
       type="submit"
     >
       Submit
@@ -315,6 +335,26 @@ exports[`Form controlled controlled FormField deprecated 1`] = `
 
 .c6:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c6:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus > circle,
+.c6:focus > ellipse,
+.c6:focus > line,
+.c6:focus > path,
+.c6:focus > polygon,
+.c6:focus > polyline,
+.c6:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c6:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -448,7 +488,7 @@ exports[`Form controlled controlled FormField deprecated 2`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 kIXxtf"
+      class="StyledButton-sc-323bzc-0 gLndZo"
       type="submit"
     >
       Submit
@@ -488,7 +528,7 @@ exports[`Form controlled controlled FormField deprecated 3`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 kIXxtf"
+      class="StyledButton-sc-323bzc-0 gLndZo"
       type="submit"
     >
       Submit
@@ -568,6 +608,26 @@ exports[`Form controlled controlled input 1`] = `
 
 .c5:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c4 {
@@ -689,7 +749,7 @@ exports[`Form controlled controlled input 2`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 kIXxtf"
+      class="StyledButton-sc-323bzc-0 gLndZo"
       type="submit"
     >
       Submit
@@ -723,7 +783,7 @@ exports[`Form controlled controlled input 3`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 kIXxtf"
+      class="StyledButton-sc-323bzc-0 gLndZo"
       type="submit"
     >
       Submit
@@ -803,6 +863,26 @@ exports[`Form controlled controlled input lazy 1`] = `
 
 .c5:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c4 {
@@ -924,7 +1004,7 @@ exports[`Form controlled controlled input lazy 2`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 kIXxtf"
+      class="StyledButton-sc-323bzc-0 gLndZo"
       type="submit"
     >
       Submit
@@ -958,7 +1038,7 @@ exports[`Form controlled controlled input lazy 3`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 kIXxtf"
+      class="StyledButton-sc-323bzc-0 gLndZo"
       type="submit"
     >
       Submit
@@ -1038,6 +1118,26 @@ exports[`Form controlled controlled lazy 1`] = `
 
 .c5:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c4 {
@@ -1159,7 +1259,7 @@ exports[`Form controlled controlled lazy 2`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 kIXxtf"
+      class="StyledButton-sc-323bzc-0 gLndZo"
       type="submit"
     >
       Submit
@@ -1193,7 +1293,7 @@ exports[`Form controlled controlled lazy 3`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 kIXxtf"
+      class="StyledButton-sc-323bzc-0 gLndZo"
       type="submit"
     >
       Submit
@@ -1240,6 +1340,26 @@ exports[`Form controlled lazy value 1`] = `
 
 .c3:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c2 {

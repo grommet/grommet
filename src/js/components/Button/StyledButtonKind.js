@@ -251,8 +251,11 @@ const StyledButtonKind = styled.button`
   ${props => props.hoverIndicator && hoverIndicatorStyle(props)}
   ${props =>
     props.disabled && disabledStyle(props.theme.button.disabled.opacity)}
-  ${props =>
-    props.focus && (!props.plain || props.focusIndicator) && focusStyle()}
+
+  &:focus {
+    ${props => (!props.plain || props.focusIndicator) && focusStyle()}
+  }
+  
   ${props =>
     !props.plain &&
     props.theme.button.transition &&
