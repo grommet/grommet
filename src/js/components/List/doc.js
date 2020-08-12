@@ -48,8 +48,8 @@ export const doc = List => {
   DocumentedList.propTypes = {
     ...genericProps,
     action: PropTypes.func.description(
-      `Action will be something for the user to click on and interact
-       with within the list component`,
+      `The interactive element property for the user to be able to pass a 
+      component within list.`,
     ),
     as: PropTypes.string
       .description('The DOM tag or react component to use for the element.')

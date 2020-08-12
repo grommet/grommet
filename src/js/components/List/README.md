@@ -126,8 +126,8 @@ string
 
 **action**
 
-Action will be something for the user to click on and interact
-       with within the list component
+The interactive element property for the user to be able to pass a 
+      component within list.
 
 ```
 function
