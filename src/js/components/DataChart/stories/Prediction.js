@@ -49,26 +49,10 @@ const Example = () => (
           data={data}
           series={[
             'date',
-            {
-              property: 'amount',
-              // color: 'graph-3',
-              // Should the color prop have an impact? because it doesn't
-              point: 'circle',
-              label: 'Amount',
-            },
-            {
-              property: 'need',
-              color: 'graph-1', // does not have any impact
-              point: 'star', // does not have any impact
-              label: 'Demand',
-            },
-            {
-              property: 'amountPredicted',
-              // color: 'graph-2', // does not have any impact
-              point: 'circle',
-              label: 'Predicted Amount',
-            },
-            { property: 'needPredicted', color: 'graph-1' },
+            { property: 'amount', label: 'Amount' },
+            { property: 'need', label: 'Demand' },
+            { property: 'amountPredicted', label: 'Predicted Amount' },
+            { property: 'needPredicted' },
           ]}
           chart={[
             {
@@ -120,16 +104,11 @@ const Example = () => (
               thickness: 'xxsmall',
               dash: true,
               round: true,
-              // color: 'graph-3',
             },
             {
               property: 'need',
               type: 'point',
               thickness: 'small',
-              // I would expect that enabling the following color
-              // won't affect the color of the line, but it impacts both
-              // the point and line.
-              // color: 'graph-1',
             },
           ]}
           axis={{ x: 'date', y: { property: 'amount', granularity: 'medium' } }}
