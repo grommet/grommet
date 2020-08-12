@@ -13170,7 +13170,7 @@ node
 
 Custom messages for SkipLinks. Used for accessibility by screen 
 readers. Defaults to \`{
-  \\"skipTo\\": \\"Skip To\\"
+  \\"skipTo\\": \\"Skip To:\\"
 }\`.
 
 \`\`\`
@@ -13178,7 +13178,99 @@ readers. Defaults to \`{
   skipTo: string
 }
 \`\`\`
-  ",
+  
+## Theme
+  
+**skipLinks.position**
+
+Position of the layer content once opened. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+top
+\`\`\`
+
+**skipLinks.container**
+
+Any valid Box prop for the SkipLinks container. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{ elevation: 'large', pad: 'medium', round: 'small' }
+\`\`\`
+
+**skipLinks.container.elevation**
+
+The container shadow. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+large
+\`\`\`
+
+**skipLinks.container.pad**
+
+The pad used for the layer container. Expects \`string | object\`.
+
+Defaults to
+
+\`\`\`
+medium
+\`\`\`
+
+**skipLinks.container.round**
+
+The rounding of the later container. Expects \`boolean | string | object\`.
+
+Defaults to
+
+\`\`\`
+small
+\`\`\`
+
+**skipLinks.label**
+
+Any valid Text prop for the text message. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{ margin: 'small', size: 'medium' }
+\`\`\`
+
+**skipLinks.label.margin**
+
+The margin size around the text message. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+{ bottom: medium }
+\`\`\`
+
+**skipLinks.label.size**
+
+The font size of the text label. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+medium
+\`\`\`
+
+**text.medium.size**
+
+The font size of the text label. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+18px
+\`\`\`
+",
   "Stack": "## Stack
 A container that stacks contents on top of each other. One child is
       designated as the \`guidingChild\` which determines the size. All
@@ -14454,9 +14546,12 @@ string
 
 **margin**
 
-The amount of margin around the component. An object can
-    be specified to distinguish horizontal margin, vertical margin, and
-    margin on a particular side.
+The amount of margin around the component. An object can be 
+    specified to distinguish horizontal margin, vertical margin, and margin on 
+    a particular side. For vertical margin to be applied, Text needs to be 
+    contained within a layout component (such as Box or a generic div) or 
+    behave as a div (by applying as=\\"div\\" or a display style of 
+    inline-block).
 
 \`\`\`
 none
