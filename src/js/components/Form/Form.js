@@ -72,15 +72,16 @@ const Form = forwardRef(
     // clear any errors when value changes
     useEffect(() => {
       setValidationResults(prevValidationResults => {
-        const [nextErrors] = validate(
+        const [nextErrors, nextInfos] = validate(
           Object.entries(validations.current).filter(
-            ([n]) => prevValidationResults.errors[n],
+            ([n]) =>
+              prevValidationResults.errors[n] || prevValidationResults.infos[n],
           ),
           value,
         );
         return {
           errors: { ...prevValidationResults.errors, ...nextErrors },
-          infos: { ...prevValidationResults.infos },
+          infos: { ...prevValidationResults.infos, ...nextInfos },
         };
       });
     }, [touched, value]);
