@@ -31,7 +31,7 @@ var themeDoc = _extends({}, _utils.themeDocUtils.breakpointStyle('The possible b
     defaultValue: undefined
   },
   'heading.level': {
-    description: "The level that impacts line-height, max-width, font size, \nweight and family of the Heading. Heading level is automatically adjusted at \ndifferent screen sizes. These screen sizes are derived from breakpoints.",
+    description: "The level that impacts line-height, max-width, font size, \nweight and family of the Heading. Heading styling is automatically adjusted at \ndifferent screen sizes. When the heading.responsiveBreakpoint is hit (\"small\" \nby default), all heading styles will automatically be adjusted. A heading of \nlevel 1, for example, will use the styling defined in heading level 2; a \nheading of level 2 will use the styling defined in heading level 3 and so \nforth. The tag in the DOM is not adjusted. A heading of level 1 remains an h1. \nThe styling adjustment is intended to aid readability on smaller screens but \nwill not semantically affect your application structure. If you do not want \nthis responsive styling to occur, you can set header.responsiveBreakpoint to \nundefined.",
     type: 'object',
     defaultValue: "\n      1: {\n        medium: {\n          size: 34px,\n          height: 40px,\n          width: 826px,\n        },\n      },\n      weight: 600,\n      font:\n        {\n          family: undefined,\n        }"
   },
