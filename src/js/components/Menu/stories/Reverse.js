@@ -21,4 +21,6 @@ const Reverse = () => (
   </Grommet>
 );
 
-storiesOf('Menu', module).add('Reverse', () => <Reverse />);
+storiesOf('Menu', module).add('Reverse', () => <Reverse />, {
+  chromatic: { disable: true },
+});
