@@ -1,5 +1,4 @@
 import { configure } from '@storybook/react';
-import 'chromatic';
 
 const req = require.context(
   '../src/js',

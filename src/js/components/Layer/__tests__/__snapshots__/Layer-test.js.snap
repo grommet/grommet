@@ -157,7 +157,7 @@ exports[`Layer animation fadeIn 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .fYgBNY {
+  .gLOatX {
     position: relative;
     max-height: none;
     max-width: none;
@@ -332,7 +332,7 @@ exports[`Layer animation false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .fYgBNY {
+  .gLOatX {
     position: relative;
     max-height: none;
     max-width: none;
@@ -509,7 +509,7 @@ exports[`Layer animation slide 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .fYgBNY {
+  .gLOatX {
     position: relative;
     max-height: none;
     max-width: none;
@@ -686,7 +686,7 @@ exports[`Layer animation true 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .fYgBNY {
+  .gLOatX {
     position: relative;
     max-height: none;
     max-width: none;
@@ -863,7 +863,7 @@ exports[`Layer custom margin 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .fYgBNY {
+  .gLOatX {
     position: relative;
     max-height: none;
     max-width: none;
@@ -973,7 +973,7 @@ exports[`Layer dark context 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .fYgBNY {
+  .gLOatX {
     position: relative;
     max-height: none;
     max-width: none;
@@ -1226,7 +1226,7 @@ exports[`Layer full false 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .fYgBNY {
+  .gLOatX {
     position: relative;
     max-height: none;
     max-width: none;
@@ -1404,7 +1404,7 @@ exports[`Layer full horizontal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .fYgBNY {
+  .gLOatX {
     position: relative;
     max-height: none;
     max-width: none;
@@ -1580,7 +1580,7 @@ exports[`Layer full true 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .fYgBNY {
+  .gLOatX {
     position: relative;
     max-height: none;
     max-width: none;
@@ -1758,7 +1758,7 @@ exports[`Layer full vertical 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .fYgBNY {
+  .gLOatX {
     position: relative;
     max-height: none;
     max-width: none;
@@ -1899,7 +1899,7 @@ exports[`Layer hidden 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .fYgBNY {
+  .gLOatX {
     position: relative;
     max-height: none;
     max-width: none;
@@ -1929,7 +1929,7 @@ exports[`Layer hidden 3`] = `
     class="StyledLayer__StyledOverlay-rmtehz-1 TgNMj"
   />
   <div
-    class="StyledLayer__StyledContainer-rmtehz-2 hyqqbS"
+    class="StyledLayer__StyledContainer-rmtehz-2 cXCBJx"
     id="hidden-test"
   >
     <a
@@ -1976,7 +1976,7 @@ exports[`Layer hidden 4`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .fYgBNY {
+  .gLOatX {
     position: relative;
     max-height: none;
     max-width: none;
@@ -2210,7 +2210,7 @@ exports[`Layer margin large 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .fYgBNY {
+  .gLOatX {
     position: relative;
     max-height: none;
     max-width: none;
@@ -2387,7 +2387,7 @@ exports[`Layer margin medium 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .fYgBNY {
+  .gLOatX {
     position: relative;
     max-height: none;
     max-width: none;
@@ -2564,7 +2564,7 @@ exports[`Layer margin none 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .fYgBNY {
+  .gLOatX {
     position: relative;
     max-height: none;
     max-width: none;
@@ -2741,7 +2741,7 @@ exports[`Layer margin small 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .fYgBNY {
+  .gLOatX {
     position: relative;
     max-height: none;
     max-width: none;
@@ -2918,7 +2918,7 @@ exports[`Layer margin xsmall 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .fYgBNY {
+  .gLOatX {
     position: relative;
     max-height: none;
     max-width: none;
@@ -3028,7 +3028,7 @@ exports[`Layer non-modal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .fYgBNY {
+  .gLOatX {
     position: relative;
     max-height: none;
     max-width: none;
@@ -3284,7 +3284,7 @@ exports[`Layer plain 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .fYgBNY {
+  .gLOatX {
     position: relative;
     max-height: none;
     max-width: none;
@@ -3461,7 +3461,7 @@ exports[`Layer position bottom 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .fYgBNY {
+  .gLOatX {
     position: relative;
     max-height: none;
     max-width: none;
@@ -3638,7 +3638,7 @@ exports[`Layer position center 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .fYgBNY {
+  .gLOatX {
     position: relative;
     max-height: none;
     max-width: none;
@@ -3815,7 +3815,7 @@ exports[`Layer position end 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .fYgBNY {
+  .gLOatX {
     position: relative;
     max-height: none;
     max-width: none;
@@ -3992,7 +3992,7 @@ exports[`Layer position left 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .fYgBNY {
+  .gLOatX {
     position: relative;
     max-height: none;
     max-width: none;
@@ -4169,7 +4169,7 @@ exports[`Layer position right 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .fYgBNY {
+  .gLOatX {
     position: relative;
     max-height: none;
     max-width: none;
@@ -4346,7 +4346,7 @@ exports[`Layer position start 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .fYgBNY {
+  .gLOatX {
     position: relative;
     max-height: none;
     max-width: none;
@@ -4523,7 +4523,7 @@ exports[`Layer position top 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .fYgBNY {
+  .gLOatX {
     position: relative;
     max-height: none;
     max-width: none;
@@ -4685,7 +4685,7 @@ exports[`Layer target 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .fYgBNY {
+  .gLOatX {
     position: relative;
     max-height: none;
     max-width: none;
@@ -4799,7 +4799,7 @@ exports[`Layer target not modal 2`] = `
   }
 }
 @media only screen and (max-width: 768px) {
-  .fYgBNY {
+  .gLOatX {
     position: relative;
     max-height: none;
     max-width: none;

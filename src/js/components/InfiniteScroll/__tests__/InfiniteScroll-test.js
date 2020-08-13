@@ -146,22 +146,16 @@ describe('InfiniteScroll', () => {
   test(`Show item should be visible in window`, () => {
     const { container } = render(
       <Grommet>
-        <InfiniteScroll
-          items={simpleItems(300)}
-          /* Uncomment the next 2 lines once fix for show is in place */
-          // show={105}
-        >
+        <InfiniteScroll items={simpleItems(300)} show={105}>
           {item => <Box key={item}>{item}</Box>}
         </InfiniteScroll>
       </Grommet>,
     );
     // item(104) = 'item 105' because indexing starts at 0.
-    /* Delete the next 2 lines once fix for show is in place */
-    const renderedItems = container.firstChild.children.item(10).outerHTML;
-    expect(renderedItems).toContain('item 11');
-    /* Uncomment the next 2 lines once fix for show is in place */
-    // const renderedItems = container.firstChild.children.item(104).outerHTML;
-    // expect(renderedItems).toContain('item 105');
+    // Need to modify this next selection to only be concerned with the
+    // visible window.
+    const renderedItems = container.firstChild.children.item(104).outerHTML;
+    expect(renderedItems).toContain('item 105');
   });
 });
 
@@ -178,7 +172,7 @@ describe('Number of Items Rendered', () => {
   }
 
   test(`Should render items equal to the length of
-  step + 1 when step < items.length`, () => {
+  step when step < items.length`, () => {
     const step = 50;
     const { container } = render(
       <Grommet>
@@ -198,7 +192,7 @@ describe('Number of Items Rendered', () => {
   });
 
   test(`Should render items equal to the length of
-  step + 1 when step = array`, () => {
+  step when step = array.length`, () => {
     const step = 200;
     const { container } = render(
       <Grommet>
@@ -214,7 +208,7 @@ describe('Number of Items Rendered', () => {
   });
 
   test(`Should render items equal to the length of
-  step when step > array`, () => {
+  item array when step > array`, () => {
     const numItems = 1000;
     const { container } = render(
       <Grommet>
@@ -227,5 +221,32 @@ describe('Number of Items Rendered', () => {
     const pageItems = createPageItems(container.firstChild.children);
     const expectedItems = numItems;
     expect(pageItems.length).toEqual(expectedItems);
+  });
+
+  test(`Should not duplicate items
+  when provided an array of unique items`, () => {
+    const step = 25;
+    const numItems = 200;
+    const showIndex = 67;
+    const { container } = render(
+      <Grommet>
+        <InfiniteScroll
+          items={simpleItems(numItems)}
+          show={showIndex}
+          step={step}
+        >
+          {item => <Box key={item}>{item}</Box>}
+        </InfiniteScroll>
+      </Grommet>,
+    );
+
+    const pageItems = createPageItems(container.firstChild.children);
+    const distinctItems = new Set(pageItems);
+    /* Expected number of items should be at the show value rounded
+    up to the next step increment/ */
+    const expectedItems = Math.ceil(showIndex / step) * step;
+    /* If the number of distinct items is equivalent to the length
+    of results, then we have unique items. */
+    expect(distinctItems.size).toEqual(expectedItems);
   });
 });
