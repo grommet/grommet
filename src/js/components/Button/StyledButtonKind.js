@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import {
+  activeStyle,
   backgroundStyle,
   disabledStyle,
   focusStyle,
@@ -240,15 +241,19 @@ const StyledButtonKind = styled.button`
 
   ${genericStyles}
   ${props => props.plain && plainStyle(props)}
+  // set baseline activeStyle for all buttons including plain buttons
+  // buttons with kind will have active styling overridden by kindStyle
+  // if they have specific state styles
+  ${props => !props.disabled && props.active && activeStyle}
   ${props => !props.plain && basicStyle(props)}
   ${props => !props.plain && kindStyle(props)}
   ${props =>
     !props.plain &&
     props.align &&
     `
-  text-align: ${props.align};
-  `}
-  ${props => props.hoverIndicator && hoverIndicatorStyle(props)}
+    text-align: ${props.align};
+    `}
+    ${props => props.hoverIndicator && hoverIndicatorStyle(props)}
   ${props =>
     props.disabled && disabledStyle(props.theme.button.disabled.opacity)}
 
