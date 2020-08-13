@@ -38,4 +38,6 @@ const CustomMenu = () => (
   </Grommet>
 );
 
-storiesOf('Menu', module).add('Custom', () => <CustomMenu />);
+storiesOf('Menu', module).add('Custom', () => <CustomMenu />, {
+  chromatic: { disable: true },
+});
