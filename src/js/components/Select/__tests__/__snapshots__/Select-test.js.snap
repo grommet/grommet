@@ -5318,56 +5318,6 @@ exports[`Select prop: onClose 1`] = `
 </button>
 `;
 
-<<<<<<< HEAD
-exports[`Select opens and closes 2`] = `
-<button
-  aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 jFJBys Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
-  id="test-select"
-  type="button"
->
-  <div
-    class="StyledBox-sc-13pk1d4-0 VvbUh"
-  >
-    <div
-      class="StyledBox-sc-13pk1d4-0 bVYLzf"
-    >
-      <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
-      >
-        <input
-          autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 fVbmbP Select__SelectTextInput-sc-17idtfo-0 hWmVID"
-          id="test-select__input"
-          placeholder="test select"
-          readonly=""
-          tabindex="-1"
-          type="text"
-          value=""
-        />
-      </div>
-    </div>
-    <div
-      class="StyledBox-sc-13pk1d4-0 iCDnTm"
-      style="min-width: auto;"
-    >
-      <svg
-        aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 kbXEEj"
-        viewBox="0 0 24 24"
-      >
-        <polyline
-          fill="none"
-          points="18 9 12 15 6 9"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
-    </div>
-  </div>
-</button>
-`;
-=======
 exports[`Select prop: onClose 2`] = `
 .c8 {
   display: inline-block;
@@ -5379,7 +5329,6 @@ exports[`Select prop: onClose 2`] = `
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
->>>>>>> fix: fix onOpen called twice
 
 .c8 g {
   fill: inherit;
@@ -5482,6 +5431,26 @@ exports[`Select prop: onClose 2`] = `
   text-align: inherit;
 }
 
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus > circle,
+.c0:focus > ellipse,
+.c0:focus > line,
+.c0:focus > path,
+.c0:focus > polygon,
+.c0:focus > polyline,
+.c0:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c5 {
   box-sizing: border-box;
   font-size: inherit;
@@ -5490,40 +5459,14 @@ exports[`Select prop: onClose 2`] = `
   -webkit-appearance: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   outline: none;
   border: none;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c8 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c5::-webkit-input-placeholder {
@@ -5538,9 +5481,18 @@ exports[`Select prop: onClose 2`] = `
   color: #AAAAAA;
 }
 
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c5::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
 }
 
 .c4 {
@@ -5627,94 +5579,6 @@ exports[`Select prop: onClose 2`] = `
             />
           </svg>
         </div>
-      </button>
-      <div
-        class="c9"
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Select opens and closes 4`] = `
-"@media only screen and (max-width: 768px) {
-  .iCDnTm {
-    margin-left: 6px;
-    margin-right: 6px;
-  }
-}"
-`;
-
-exports[`Select opens and closes 5`] = `
-<div
-  class="SelectContainer__OptionsBox-sc-1wi0ul8-0 Knkxk"
-  role="menubar"
-  tabindex="-1"
->
-  <button
-    class="StyledButton-sc-323bzc-0 ynEro SelectContainer__SelectOption-sc-1wi0ul8-2 kkPGyb"
-    role="menuitem"
-    tabindex="-1"
-    type="button"
-  >
-    <div
-      class="StyledBox-sc-13pk1d4-0 lcXThF SelectContainer__OptionBox-sc-1wi0ul8-1 cjPAAw"
-    >
-      <span
-        class="StyledText-sc-1sadyjn-0 bilRua"
-      >
-        one
-      </span>
-    </div>
-  </button>
-  <button
-    class="StyledButton-sc-323bzc-0 ynEro SelectContainer__SelectOption-sc-1wi0ul8-2 kkPGyb"
-    role="menuitem"
-    tabindex="-1"
-    type="button"
-  >
-    <div
-      class="StyledBox-sc-13pk1d4-0 lcXThF SelectContainer__OptionBox-sc-1wi0ul8-1 cjPAAw"
-    >
-      <span
-        class="StyledText-sc-1sadyjn-0 bilRua"
-      >
-        two
-      </span>
-    </div>
-  </button>
-  <div
-    class="StyledBox-sc-13pk1d4-0 bokQlS"
-  />
-</div>
-`;
-
-exports[`Select opens and closes 6`] = `
-<button
-  aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 jFJBys Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
-  id="test-select"
-  type="button"
->
-  <div
-    class="StyledBox-sc-13pk1d4-0 VvbUh"
-  >
-    <div
-      class="StyledBox-sc-13pk1d4-0 bVYLzf"
-    >
-      <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
-      >
-        <input
-          autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 fVbmbP Select__SelectTextInput-sc-17idtfo-0 hWmVID"
-          id="test-select__input"
-          placeholder="test select"
-          readonly=""
-          tabindex="-1"
-          type="text"
-          value=""
-        />
       </div>
     </button>
   </div>
@@ -5970,7 +5834,7 @@ exports[`Select prop: onOpen 1`] = `
 exports[`Select prop: onOpen 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 bwJeiP Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
+  class="StyledButton-sc-323bzc-0 jFJBys Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
   id="test-select"
   type="button"
 >
@@ -5985,7 +5849,7 @@ exports[`Select prop: onOpen 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 jsQcHW Select__SelectTextInput-sc-17idtfo-0 hWmVID"
+          class="StyledTextInput-sc-1x30a0s-0 fVbmbP Select__SelectTextInput-sc-17idtfo-0 hWmVID"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -6105,6 +5969,26 @@ exports[`Select prop: onOpen 3`] = `
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c8 {
@@ -6257,7 +6141,7 @@ exports[`Select prop: onOpen 5`] = `
   tabindex="-1"
 >
   <button
-    class="StyledButton-sc-323bzc-0 gSWBFn SelectContainer__SelectOption-sc-1wi0ul8-2 kkPGyb"
+    class="StyledButton-sc-323bzc-0 ynEro SelectContainer__SelectOption-sc-1wi0ul8-2 kkPGyb"
     role="menuitem"
     tabindex="-1"
     type="button"
@@ -6273,7 +6157,7 @@ exports[`Select prop: onOpen 5`] = `
     </div>
   </button>
   <button
-    class="StyledButton-sc-323bzc-0 gSWBFn SelectContainer__SelectOption-sc-1wi0ul8-2 kkPGyb"
+    class="StyledButton-sc-323bzc-0 ynEro SelectContainer__SelectOption-sc-1wi0ul8-2 kkPGyb"
     role="menuitem"
     tabindex="-1"
     type="button"
