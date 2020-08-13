@@ -152,7 +152,7 @@ var plainStyle = function plainStyle() {
 var StyledButtonKind = styled.button.withConfig({
   displayName: "StyledButtonKind",
   componentId: "sc-1vhfpnt-0"
-})(["display:inline-block;box-sizing:border-box;cursor:pointer;font:inherit;text-decoration:none;margin:0;background:transparent;overflow:visible;text-transform:none;", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], genericStyles, function (props) {
+})(["display:inline-block;box-sizing:border-box;cursor:pointer;font:inherit;text-decoration:none;margin:0;background:transparent;overflow:visible;text-transform:none;", " ", " ", " ", " ", " ", " ", " ", " &:focus{", "}", " ", " ", ""], genericStyles, function (props) {
   return props.plain && plainStyle(props);
 }, function (props) {
   return !props.disabled && props.active && activeStyle;
@@ -167,7 +167,7 @@ var StyledButtonKind = styled.button.withConfig({
 }, function (props) {
   return props.disabled && disabledStyle(props.theme.button.disabled.opacity);
 }, function (props) {
-  return props.focus && (!props.plain || props.focusIndicator) && focusStyle();
+  return (!props.plain || props.focusIndicator) && focusStyle();
 }, function (props) {
   return !props.plain && props.theme.button.transition && "\n    transition-property: " + props.theme.button.transition.properties.join(',') + ";\n    transition-duration: " + props.theme.button.transition.duration + "s;\n    transition-timing-function: " + props.theme.button.transition.timing + ";\n  ";
 }, function (props) {

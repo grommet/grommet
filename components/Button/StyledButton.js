@@ -101,7 +101,7 @@ var disabledButtonStyle = function disabledButtonStyle(props) {
 var StyledButton = _styledComponents["default"].button.withConfig({
   displayName: "StyledButton",
   componentId: "sc-323bzc-0"
-})(["display:inline-block;box-sizing:border-box;cursor:pointer;font:inherit;text-decoration:none;margin:0;background:transparent;overflow:visible;text-transform:none;", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], _utils.genericStyles, function (props) {
+})(["display:inline-block;box-sizing:border-box;cursor:pointer;font:inherit;text-decoration:none;margin:0;background:transparent;overflow:visible;text-transform:none;", " ", " ", " ", " ", " ", " ", " &:focus{", "}", " ", " ", " ", " ", ""], _utils.genericStyles, function (props) {
   return props.plain && plainStyle(props);
 }, function (props) {
   return !props.plain && basicStyle(props);
@@ -114,7 +114,7 @@ var StyledButton = _styledComponents["default"].button.withConfig({
 }, function (props) {
   return props.disabled && props.theme.button && props.theme.button.disabled && disabledButtonStyle(props);
 }, function (props) {
-  return props.focus && (!props.plain || props.focusIndicator) && (0, _utils.focusStyle)();
+  return (!props.plain || props.focusIndicator) && (0, _utils.focusStyle)();
 }, function (props) {
   return !props.plain && props.theme.button.transition && "\n    transition-property: " + props.theme.button.transition.properties.join(',') + ";\n    transition-duration: " + props.theme.button.transition.duration + "s;\n    transition-timing-function: " + props.theme.button.transition.timing + ";\n  ";
 }, function (props) {
