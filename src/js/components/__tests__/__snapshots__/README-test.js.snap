@@ -6666,7 +6666,17 @@ string
 div
 \`\`\`
 ## Theme
-  ",
+  
+**dateInput.icon.size**
+
+The size of the Calendar icon Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+24px
+\`\`\`
+",
   "Diagram": "## Diagram
 Graphical connection lines. Diagram is meant to be used with Stack.
       Boxes can be used in the \`guidingChild\` layer of Stack and then
@@ -9949,6 +9959,18 @@ xlarge
     string
 }
 string
+\`\`\`
+
+**action**
+
+Accepts a function that allows for a custom rendering
+       of a component, it should be passed with an item and
+        index of an array and return a react element
+      \`action = ({item, index}) => <Content />\`
+    />
+
+\`\`\`
+function
 \`\`\`
 
 **as**

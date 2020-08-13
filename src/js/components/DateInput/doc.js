@@ -63,4 +63,10 @@ export const doc = DateInput => {
   return DocumentedDateInput;
 };
 
-export const themeDoc = {};
+export const themeDoc = {
+  'dateInput.icon.size': {
+    description: `The size of the Calendar icon`,
+    type: 'string',
+    defaultValue: '24px',
+  },
+};
