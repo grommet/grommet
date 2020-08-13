@@ -415,6 +415,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   background: undefined,
       //   border: undefined,
       //   color: undefined,
+      //   font: {
+      //     weight: undefined,
+      //   },
       //   padding: {
       //     vertical: undefined,
       //     horizontal: undefined,
@@ -422,6 +425,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   extend: undefined,
       // },
       // primary: {
+      //   font: {
+      //     weight: undefined,
+      //   },
       //   background: undefined,
       //   border: undefined,
       //   color: undefined,
@@ -432,6 +438,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   extend: undefined,
       // },
       // secondary: {
+      //   font: {
+      //     weight: undefined,
+      //   },
       //   background: undefined,
       //   border: undefined,
       //   color: undefined,
@@ -649,6 +658,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     collapsible: {
       minSpeed: 200,
       baseline: 500,
+    },
+    dateInput: {
+      // icon: {
+      //   size: undefined,
+      // },
     },
     dataTable: {
       // body: {
@@ -889,6 +903,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       // color: undefined,
       hover: {
+        // background: {
+        //   color: undefined,
+        // },
         border: {
           color: {
             dark: 'white',
@@ -908,6 +925,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       font: {
         // weight: undefined,
       },
+    },
+    radioButtonGroup: {
+      // container: {}, // any box props
     },
     rangeInput: {
       // extend: undefined
@@ -966,6 +986,18 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       // searchInput: undefined,
       step: 20,
+    },
+    skipLinks: {
+      position: 'top',
+      container: {
+        elevation: 'large',
+        round: 'small',
+        pad: 'medium',
+      },
+      label: {
+        margin: { bottom: 'medium' },
+        size: 'medium',
+      },
     },
     tab: {
       active: {

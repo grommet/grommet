@@ -1,7 +1,7 @@
 ## Text
 Arbitrary text.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Text&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=text&module=%2Fsrc%2FText.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Text&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/text&module=%2Fsrc%2FText.js)
 ## Usage
 
 ```javascript
@@ -43,9 +43,12 @@ string
 
 **margin**
 
-The amount of margin around the component. An object can
-    be specified to distinguish horizontal margin, vertical margin, and
-    margin on a particular side.
+The amount of margin around the component. An object can be 
+    specified to distinguish horizontal margin, vertical margin, and margin on 
+    a particular side. For vertical margin to be applied, Text needs to be 
+    contained within a layout component (such as Box or a generic div) or 
+    behave as a div (by applying as="div" or a display style of 
+    inline-block).
 
 ```
 none

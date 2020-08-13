@@ -3,6 +3,7 @@ import {
   FlattenSimpleInterpolation,
   ThemedStyledProps,
 } from 'styled-components';
+import { ReactComponentElement } from 'react';
 
 import {
   BackgroundType,
@@ -25,7 +26,7 @@ import { BoxProps } from '../components/Box';
 import { Anchor } from '../components/Anchor';
 import { Box } from '../components/Box';
 import { Text, TextProps } from '../components/Text';
-import { ReactComponentElement } from 'react';
+import { LayerPositionType } from '../components/Layer';
 
 export declare const base: DeepReadonly<ThemeType>;
 export declare const generate: (
@@ -43,7 +44,10 @@ type ExtendProps<TProps> = ThemedStyledProps<TProps, ThemeType>;
  * styled-components interpolation. In the theme an ExtendValue can be provided
  * directly to `extend` or it can be computed as the result of an ExtendFn.
  */
-type ExtendValue<TProps> = string | FlattenSimpleInterpolation | FlattenInterpolation<ExtendProps<TProps>>;
+type ExtendValue<TProps> =
+  | string
+  | FlattenSimpleInterpolation
+  | FlattenInterpolation<ExtendProps<TProps>>;
 
 /**
  * ExtendFn represents a function passed to `extend`. These functions receive
@@ -60,7 +64,9 @@ type ExtendFn<TProps> = (props: ExtendProps<TProps>) => ExtendValue<TProps>;
  * * An array of styled-components interpolations (usually returned by the styled-components `css` helper function)
  * * A function taking props and returning one of the above values
  */
-type ExtendType<TProps = Record<string, any>> = ExtendValue<TProps> | ExtendFn<TProps>;
+type ExtendType<TProps = Record<string, any>> =
+  | ExtendValue<TProps>
+  | ExtendFn<TProps>;
 
 declare const colors: {
   active?: ColorType;
@@ -117,11 +123,16 @@ type Colors = typeof colors & {
 
 interface ButtonKindType {
   background?: BackgroundType;
-  border?: {
-    color?: ColorType;
-    width?: string;
-  } | boolean;
+  border?:
+    | {
+        color?: ColorType;
+        width?: string;
+      }
+    | boolean;
   color?: ColorType;
+  font?: {
+    weight?: number | string;
+  };
   padding?: {
     vertical?: string;
     horizontal?: string;
@@ -170,12 +181,14 @@ export interface ThemeType {
         edgeSize?: BreakpointEdgeSize;
         size?: BreakpointSize;
       };
-      [x: string]: {
-        value?: number;
-        borderSize?: BreakpointBorderSize;
-        edgeSize?: BreakpointEdgeSize;
-        size?: BreakpointSize;
-      } | undefined;
+      [x: string]:
+        | {
+            value?: number;
+            borderSize?: BreakpointBorderSize;
+            edgeSize?: BreakpointEdgeSize;
+            size?: BreakpointSize;
+          }
+        | undefined;
     };
     deviceBreakpoints?: {
       phone?: string;
@@ -260,7 +273,16 @@ export interface ThemeType {
       color?: ColorType;
     };
     input?: {
-      padding?: string | { top?: string, bottom?: string, left?: string, right?: string, horizontal?: string, vertical?: string};
+      padding?:
+        | string
+        | {
+            top?: string;
+            bottom?: string;
+            left?: string;
+            right?: string;
+            horizontal?: string;
+            vertical?: string;
+          };
       font?: {
         height?: string;
         size?: string;
@@ -329,13 +351,13 @@ export interface ThemeType {
       large?: string;
       xlarge?: string;
       [x: string]: string | undefined;
-    },
+    };
     text?: {
       fontWeight?: number;
       extend?: ExtendType;
-    }
+    };
     extend?: ExtendType;
-  },
+  };
   box?: {
     extend?: ExtendType;
     responsiveBreakpoint?: string;
@@ -363,7 +385,7 @@ export interface ThemeType {
       primary?: ButtonKindType;
       secondary?: ButtonKindType;
     };
-    disabled?: ButtonKindType;
+    disabled?: ButtonKindType & { opacity?: OpacityType };
     hover?: ButtonKindType & {
       default?: ButtonKindType;
       primary?: ButtonKindType;
@@ -405,6 +427,10 @@ export interface ThemeType {
     };
   };
   calendar?: {
+    day?: {
+      extend?: ExtendType;
+    };
+    extend?: ExtendType;
     small?: {
       fontSize?: string;
       lineHeight?: number;
@@ -436,11 +462,11 @@ export interface ThemeType {
     };
   };
   card?: {
-    container?:BoxProps;
-    header?:BoxProps;
-    body?:BoxProps;
-    footer?:BoxProps;
-  },
+    container?: BoxProps;
+    header?: BoxProps;
+    body?: BoxProps;
+    footer?: BoxProps;
+  };
   carousel?: {
     animation?: {
       duration?: number;
@@ -561,10 +587,15 @@ export interface ThemeType {
     minSpeed?: number;
     baseline?: number;
   };
+  dateInput?: {
+    icon?: {
+      size?: string;
+    };
+  };
   dataTable?: {
-    body?:{
+    body?: {
       extend?: ExtendType;
-    }
+    };
     header?: {};
     groupHeader?: {
       border?: {
@@ -617,16 +648,16 @@ export interface ThemeType {
       background?: BackgroundType;
       border?: {
         color?: ColorType;
-      },
+      };
       label?: {
         color?: ColorType;
-      },
+      };
     };
     focus?: {
       background?: BackgroundType;
       border?: {
-        color?: ColorType
-      },
+        color?: ColorType;
+      };
     };
     error?: {
       background?: BackgroundType;
@@ -891,11 +922,14 @@ export interface ThemeType {
       radius?: string;
       background?: {
         color?: ColorType;
-      }
+      };
     };
     color?: ColorType;
     hover?: {
       border?: {
+        color?: ColorType;
+      };
+      background?: {
         color?: ColorType;
       };
     };
@@ -910,7 +944,10 @@ export interface ThemeType {
     size?: string;
     font?: {
       weight?: number | string;
-    }
+    };
+  };
+  radioButtonGroup?: {
+    container?: BoxProps;
   };
   rangeInput?: {
     track?: {
@@ -921,11 +958,11 @@ export interface ThemeType {
       lower?: {
         color?: ColorType;
         opacity?: OpacityType;
-      }
+      };
       upper?: {
         color?: ColorType;
         opacity?: OpacityType;
-      }
+      };
     };
     thumb?: {
       color?: ColorType;
@@ -965,6 +1002,11 @@ export interface ThemeType {
     // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/37506
     searchInput?: ReactComponentElement<any>;
     step?: number;
+  };
+  skipLinks?: {
+    position?: LayerPositionType;
+    container?: BoxProps;
+    label?: TextProps;
   };
   tab?: {
     active?: {
