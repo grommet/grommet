@@ -146,9 +146,19 @@ export const themeDoc = {
     type: "string | {'dark': string, 'light': string}",
     defaultValue: undefined,
   },
-  'formField.formField.error.icon': {
+  'formField.error.icon': {
     description: 'An icon that can be placed next to the error message.',
     type: 'React.Element',
+    defaultValue: undefined,
+  },
+  'formField.error.iconContainer.margin': {
+    description: 'The box container that is surronding the icon',
+    type: 'object',
+    defaultValue: undefined,
+  },
+  'formField.error.iconContainer.pad': {
+    description: 'The box container that is surronding the icon',
+    type: 'object',
     defaultValue: undefined,
   },
   'formField.error.background.color': {

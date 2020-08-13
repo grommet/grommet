@@ -664,6 +664,10 @@ export interface ThemeType {
       color?: ColorType;
       margin?: MarginType;
       icon?: any;
+      iconContainer: {
+        margin: MarginType;
+        pad: PadType;
+      };
     };
     help?: {
       color?: ColorType;

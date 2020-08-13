@@ -746,6 +746,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         color: 'status-critical',
         margin: { vertical: 'xsmall', horizontal: 'small' },
         // icon: undefined
+        // iconContainer: {
+        // margin: undefined,
+        // pad: undefined
+        // }
         // background: undefined,
       },
       // extend: undefined,

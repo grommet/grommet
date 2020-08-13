@@ -350,9 +350,29 @@ Defaults to
 undefined
 ```
 
-**formField.formField.error.icon**
+**formField.error.icon**
 
 An icon that can be placed next to the error message. Expects `React.Element`.
+
+Defaults to
+
+```
+undefined
+```
+
+**formField.error.iconContainer.margin**
+
+The box container that is surronding the icon Expects `object`.
+
+Defaults to
+
+```
+undefined
+```
+
+**formField.error.iconContainer.pad**
+
+The box container that is surronding the icon Expects `object`.
 
 Defaults to
 
