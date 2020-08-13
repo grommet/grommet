@@ -7064,10 +7064,19 @@ string",
         "name": "onChange",
       },
       Object {
-        "description": "Function that will be called when the user selects a suggestion.
-The suggestion contains the object chosen from the supplied suggestions.",
+        "description": "Note: This function is deprecated, use onSuggestionSelect instead.
+      Function that will be called when the user selects a suggestion.
+      The suggestion contains the object chosen from the supplied suggestions.
+      When used in conjunction with onSuggestionSelect 
+      this will default to React's onSelect",
         "format": "function",
         "name": "onSelect",
+      },
+      Object {
+        "description": "Function that will be called when the user selects a suggestion.
+      The suggestion contains the object chosen from the supplied suggestions.",
+        "format": "function",
+        "name": "onSuggestionSelect",
       },
       Object {
         "description": "Function that will be called when the suggestions drop is opened.",
@@ -7086,7 +7095,7 @@ The suggestion contains the object chosen from the supplied suggestions.",
       },
       Object {
         "description": "Whether this is a plain input with no border or padding.
-Only use this when the containing context provides sufficient affordance",
+      Only use this when the containing context provides sufficient affordance",
         "format": "boolean",
         "name": "plain",
       },
