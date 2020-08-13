@@ -1,5 +1,7 @@
 import React, { forwardRef, useContext, useMemo, useState } from 'react';
+import { ThemeContext } from 'styled-components';
 import { Calendar as CalendarIcon } from 'grommet-icons/icons/Calendar';
+import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Calendar } from '../Calendar';
 import { Drop } from '../Drop';
@@ -30,6 +32,9 @@ const DateInput = forwardRef(
     },
     refArg,
   ) => {
+    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const iconSize =
+      (theme.dateInput.icon && theme.dateInput.icon.size) || 'medium';
     const { useFormInput } = useContext(FormContext);
     const ref = useForwardedRef(refArg);
     const [value, setValue] = useFormInput(name, valueArg, defaultValue);
@@ -100,7 +105,7 @@ const DateInput = forwardRef(
           id={id}
           dropProps={{ align: { top: 'bottom', left: 'left' }, ...dropProps }}
           dropContent={calendar}
-          icon={<CalendarIcon />}
+          icon={<CalendarIcon size={iconSize} />}
           {...buttonProps}
         />
       );
@@ -117,7 +122,7 @@ const DateInput = forwardRef(
             ref={ref}
             id={id}
             name={name}
-            icon={<CalendarIcon />}
+            icon={<CalendarIcon size={iconSize} />}
             reverse
             disabled={disabled}
             mask={mask}

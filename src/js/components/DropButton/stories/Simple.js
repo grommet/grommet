@@ -47,4 +47,6 @@ const SimpleDropButton = () => {
   );
 };
 
-storiesOf('DropButton', module).add('Simple', () => <SimpleDropButton />);
+storiesOf('DropButton', module).add('Simple', () => <SimpleDropButton />, {
+  chromatic: { disable: true },
+});
