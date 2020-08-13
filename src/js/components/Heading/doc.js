@@ -72,8 +72,16 @@ export const themeDoc = {
   },
   'heading.level': {
     description: `The level that impacts line-height, max-width, font size, 
-weight and family of the Heading. Heading level is automatically adjusted at 
-different screen sizes. These screen sizes are derived from breakpoints.`,
+weight and family of the Heading. Heading styling is automatically adjusted at 
+different screen sizes. When the heading.responsiveBreakpoint is hit ("small" 
+by default), all heading styles will automatically be adjusted. A heading of 
+level 1, for example, will use the styling defined in heading level 2; a 
+heading of level 2 will use the styling defined in heading level 3 and so 
+forth. The tag in the DOM is not adjusted. A heading of level 1 remains an h1. 
+The styling adjustment is intended to aid readability on smaller screens but 
+will not semantically affect your application structure. If you do not want 
+this responsive styling to occur, you can set header.responsiveBreakpoint to 
+undefined.`,
     type: 'object',
     defaultValue: `
       1: {
