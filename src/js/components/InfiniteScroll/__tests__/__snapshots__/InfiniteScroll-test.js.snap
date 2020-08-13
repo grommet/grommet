@@ -41,7 +41,98 @@ exports[`InfiniteScroll basic 1`] = `
 </div>
 `;
 
-exports[`InfiniteScroll mixed items 1`] = `
+exports[`InfiniteScroll renderMarker 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  class="c0"
+>
+  <div>
+    0
+  </div>
+  <div>
+    1
+  </div>
+  <div>
+    <div
+      class="c1"
+    />
+  </div>
+</div>
+`;
+
+exports[`InfiniteScroll replace 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  class="c0"
+>
+  <div>
+    0
+  </div>
+  <div>
+    1
+  </div>
+  <div
+    class="c1"
+  />
+</div>
+`;
+
+exports[`InfiniteScroll should render expected items when supplied
+  assortment of mixed items 1`] = `
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -105,11 +196,7 @@ exports[`InfiniteScroll mixed items 1`] = `
     />
   </div>
   <div>
-    is nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit
-    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-    occaecat cupidatat non proident, sunt in culpa qui officia
-    deserunt mollit anim id est laborum.
+    em ips
   </div>
   <div>
     745128
@@ -227,11 +314,8 @@ exports[`InfiniteScroll mixed items 1`] = `
     />
   </div>
   <div>
-    is nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit
-    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-    occaecat cupidatat non proident, sunt in culpa qui officia
-    deserunt mollit anim id est laborum.
+    met, consectetur adipisicing elit,
+    sed do 
   </div>
   <div>
     4470768
@@ -349,11 +433,9 @@ exports[`InfiniteScroll mixed items 1`] = `
     />
   </div>
   <div>
-    is nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit
-    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-    occaecat cupidatat non proident, sunt in culpa qui officia
-    deserunt mollit anim id est laborum.
+    pisicing elit,
+    sed do eiusmod temporincididunt ut labore et dolore magna
+    aliqu
   </div>
   <div>
     8196408
@@ -390,96 +472,6 @@ exports[`InfiniteScroll mixed items 1`] = `
   </div>
   <div
     class="c2"
-  />
-</div>
-`;
-
-exports[`InfiniteScroll renderMarker 1`] = `
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-<div
-  class="c0"
->
-  <div>
-    0
-  </div>
-  <div>
-    1
-  </div>
-  <div>
-    <div
-      class="c1"
-    />
-  </div>
-</div>
-`;
-
-exports[`InfiniteScroll replace 1`] = `
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 0px;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-<div
-  class="c0"
->
-  <div>
-    0
-  </div>
-  <div>
-    1
-  </div>
-  <div
-    class="c1"
   />
 </div>
 `;

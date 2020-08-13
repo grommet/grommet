@@ -80,7 +80,8 @@ describe('InfiniteScroll', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('mixed items', () => {
+  test(`should render expected items when supplied
+  assortment of mixed items`, () => {
     const lorem = `Lorem ipsum dolor sit amet, consectetur adipisicing elit,
     sed do eiusmod temporincididunt ut labore et dolore magna
     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -90,7 +91,8 @@ describe('InfiniteScroll', () => {
     occaecat cupidatat non proident, sunt in culpa qui officia
     deserunt mollit anim id est laborum.`;
     const mixedItems = [];
-    for (let i = 0; i < 1000; i += 1) {
+    // Generate large array of mixed items to test different elements on a page
+    for (let i = 0; i < 200; i += 1) {
       switch (i % 5) {
         case 0:
           mixedItems.push(<Box>Hello World</Box>);
@@ -118,7 +120,7 @@ describe('InfiniteScroll', () => {
               mixedItems.push(lorem + lorem);
               break;
             case 3:
-              mixedItems.push(lorem.slice(200));
+              mixedItems.push(lorem.slice(i, Math.min(i * 3, lorem.length)));
               break;
             default:
               break;
