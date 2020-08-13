@@ -113,6 +113,26 @@ exports[`Select 0 value 1`] = `
   text-align: inherit;
 }
 
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus > circle,
+.c0:focus > ellipse,
+.c0:focus > line,
+.c0:focus > path,
+.c0:focus > polygon,
+.c0:focus > polyline,
+.c0:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c5 {
   box-sizing: border-box;
   font-size: inherit;
@@ -351,6 +371,26 @@ exports[`Select Search timeout 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c6 {
@@ -702,6 +742,26 @@ exports[`Select applies custom global.hover theme to options 1`] = `
   text-align: inherit;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c6 {
   box-sizing: border-box;
   font-size: inherit;
@@ -875,6 +935,26 @@ exports[`Select applies custom global.hover theme to options 2`] = `
   color: #7D4CDB;
 }
 
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus > circle,
+.c0:focus > ellipse,
+.c0:focus > line,
+.c0:focus > path,
+.c0:focus > polygon,
+.c0:focus > polyline,
+.c0:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c3 {
   margin: 0px;
   font-size: 18px;
@@ -1033,6 +1113,26 @@ exports[`Select basic 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus > circle,
+.c0:focus > ellipse,
+.c0:focus > line,
+.c0:focus > path,
+.c0:focus > polygon,
+.c0:focus > polyline,
+.c0:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -1275,6 +1375,26 @@ exports[`Select complex options and children 1`] = `
   text-align: inherit;
 }
 
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus > circle,
+.c0:focus > ellipse,
+.c0:focus > line,
+.c0:focus > path,
+.c0:focus > polygon,
+.c0:focus > polyline,
+.c0:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c5 {
   box-sizing: border-box;
   font-size: inherit;
@@ -1391,7 +1511,7 @@ exports[`Select complex options and children 1`] = `
 exports[`Select complex options and children 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 bwJeiP Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
+  class="StyledButton-sc-323bzc-0 jFJBys Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
   id="test-select"
   type="button"
 >
@@ -1507,6 +1627,26 @@ exports[`Select complex options and children 3`] = `
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c1 {
@@ -1743,6 +1883,26 @@ exports[`Select disabled 1`] = `
   cursor: default;
 }
 
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus > circle,
+.c0:focus > ellipse,
+.c0:focus > line,
+.c0:focus > path,
+.c0:focus > polygon,
+.c0:focus > polyline,
+.c0:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c5 {
   box-sizing: border-box;
   font-size: inherit;
@@ -1860,7 +2020,7 @@ exports[`Select disabled 1`] = `
 exports[`Select disabled 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 hzhigJ Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
+  class="StyledButton-sc-323bzc-0 bDZaCa Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
   disabled=""
   id="test-select"
   type="button"
@@ -2018,6 +2178,26 @@ exports[`Select disabled key 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c6 {
@@ -2235,6 +2415,26 @@ exports[`Select disabled key 2`] = `
   cursor: default;
 }
 
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c9 {
   display: inline-block;
   box-sizing: border-box;
@@ -2256,6 +2456,26 @@ exports[`Select disabled key 2`] = `
 .c9:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
+}
+
+.c9:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c8 {
@@ -2490,6 +2710,26 @@ exports[`Select disabled option value 1`] = `
   cursor: default;
 }
 
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c9 {
   display: inline-block;
   box-sizing: border-box;
@@ -2511,6 +2751,26 @@ exports[`Select disabled option value 1`] = `
 .c9:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
+}
+
+.c9:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c9:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c8 {
@@ -2860,6 +3120,26 @@ exports[`Select keyboard navigation timeout 1`] = `
   text-align: inherit;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c6 {
   box-sizing: border-box;
   font-size: inherit;
@@ -3093,6 +3373,26 @@ exports[`Select large drop container height 1`] = `
   color: #000000;
 }
 
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c8 {
   margin: 0px;
   font-size: 18px;
@@ -3316,6 +3616,26 @@ exports[`Select medium drop container height 1`] = `
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c8 {
@@ -3565,6 +3885,26 @@ exports[`Select modifies select control style on open 1`] = `
   text-align: inherit;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c6 {
   box-sizing: border-box;
   font-size: inherit;
@@ -3807,6 +4147,26 @@ exports[`Select onChange with valueKey string 1`] = `
   text-align: inherit;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c6 {
   box-sizing: border-box;
   font-size: inherit;
@@ -4023,6 +4383,26 @@ exports[`Select onChange with valueKey string 2`] = `
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c8 {
@@ -4281,6 +4661,26 @@ exports[`Select onChange without valueKey 1`] = `
   text-align: inherit;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c6 {
   box-sizing: border-box;
   font-size: inherit;
@@ -4497,6 +4897,26 @@ exports[`Select onChange without valueKey 2`] = `
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c8 {
@@ -4755,6 +5175,26 @@ exports[`Select opens and closes 1`] = `
   text-align: inherit;
 }
 
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus > circle,
+.c0:focus > ellipse,
+.c0:focus > line,
+.c0:focus > path,
+.c0:focus > polygon,
+.c0:focus > polyline,
+.c0:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c5 {
   box-sizing: border-box;
   font-size: inherit;
@@ -4871,7 +5311,7 @@ exports[`Select opens and closes 1`] = `
 exports[`Select opens and closes 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 bwJeiP Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
+  class="StyledButton-sc-323bzc-0 jFJBys Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
   id="test-select"
   type="button"
 >
@@ -5006,6 +5446,26 @@ exports[`Select opens and closes 3`] = `
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c8 {
@@ -5158,7 +5618,7 @@ exports[`Select opens and closes 5`] = `
   tabindex="-1"
 >
   <button
-    class="StyledButton-sc-323bzc-0 gSWBFn SelectContainer__SelectOption-sc-1wi0ul8-2 kkPGyb"
+    class="StyledButton-sc-323bzc-0 ynEro SelectContainer__SelectOption-sc-1wi0ul8-2 kkPGyb"
     role="menuitem"
     tabindex="-1"
     type="button"
@@ -5174,7 +5634,7 @@ exports[`Select opens and closes 5`] = `
     </div>
   </button>
   <button
-    class="StyledButton-sc-323bzc-0 gSWBFn SelectContainer__SelectOption-sc-1wi0ul8-2 kkPGyb"
+    class="StyledButton-sc-323bzc-0 ynEro SelectContainer__SelectOption-sc-1wi0ul8-2 kkPGyb"
     role="menuitem"
     tabindex="-1"
     type="button"
@@ -5198,7 +5658,7 @@ exports[`Select opens and closes 5`] = `
 exports[`Select opens and closes 6`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 bwJeiP Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
+  class="StyledButton-sc-323bzc-0 jFJBys Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
   id="test-select"
   type="button"
 >
@@ -5355,6 +5815,26 @@ exports[`Select opens and closes 7`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus > circle,
+.c0:focus > ellipse,
+.c0:focus > line,
+.c0:focus > path,
+.c0:focus > polygon,
+.c0:focus > polyline,
+.c0:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -5604,6 +6084,26 @@ exports[`Select renders custom icon 1`] = `
   text-align: inherit;
 }
 
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus > circle,
+.c0:focus > ellipse,
+.c0:focus > line,
+.c0:focus > path,
+.c0:focus > polygon,
+.c0:focus > polyline,
+.c0:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c5 {
   box-sizing: border-box;
   font-size: inherit;
@@ -5843,6 +6343,26 @@ exports[`Select renders custom up and down icons 1`] = `
   text-align: inherit;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c6 {
   box-sizing: border-box;
   font-size: inherit;
@@ -5974,7 +6494,7 @@ exports[`Select renders custom up and down icons 2`] = `
 >
   <button
     aria-label="Open Drop"
-    class="StyledButton-sc-323bzc-0 bwJeiP Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
+    class="StyledButton-sc-323bzc-0 jFJBys Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
     type="button"
   >
     <div
@@ -6181,6 +6701,26 @@ exports[`Select renders default icon 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus > circle,
+.c0:focus > ellipse,
+.c0:focus > line,
+.c0:focus > path,
+.c0:focus > polygon,
+.c0:focus > polyline,
+.c0:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -6421,6 +6961,26 @@ exports[`Select renders styled select options backwards compatible with legacy
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c6 {
@@ -6666,6 +7226,26 @@ exports[`Select renders styled select options combining select.options.box &&
   text-align: inherit;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c6 {
   box-sizing: border-box;
   font-size: inherit;
@@ -6907,6 +7487,26 @@ exports[`Select renders styled select options using select.options.container 1`]
   text-align: inherit;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c6 {
   box-sizing: border-box;
   font-size: inherit;
@@ -7093,6 +7693,26 @@ exports[`Select renders without icon 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus > circle,
+.c0:focus > ellipse,
+.c0:focus > line,
+.c0:focus > path,
+.c0:focus > polygon,
+.c0:focus > polyline,
+.c0:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -7304,6 +7924,26 @@ exports[`Select search 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus > circle,
+.c0:focus > ellipse,
+.c0:focus > line,
+.c0:focus > path,
+.c0:focus > polygon,
+.c0:focus > polyline,
+.c0:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -7526,6 +8166,26 @@ exports[`Select search 2`] = `
 .c8:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
+}
+
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus > circle,
+.c8:focus > ellipse,
+.c8:focus > line,
+.c8:focus > path,
+.c8:focus > polygon,
+.c8:focus > polyline,
+.c8:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c11 {
@@ -7893,6 +8553,26 @@ exports[`Select select an option 1`] = `
   text-align: inherit;
 }
 
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus > circle,
+.c0:focus > ellipse,
+.c0:focus > line,
+.c0:focus > path,
+.c0:focus > polygon,
+.c0:focus > polyline,
+.c0:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c5 {
   box-sizing: border-box;
   font-size: inherit;
@@ -8119,6 +8799,26 @@ exports[`Select select an option with complex options 1`] = `
   text-align: inherit;
 }
 
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus > circle,
+.c0:focus > ellipse,
+.c0:focus > line,
+.c0:focus > path,
+.c0:focus > polygon,
+.c0:focus > polyline,
+.c0:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus::-moz-focus-inner {
+  border: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c3 {
     margin-left: 6px;
@@ -8274,6 +8974,26 @@ exports[`Select select an option with enter 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus > circle,
+.c0:focus > ellipse,
+.c0:focus > line,
+.c0:focus > path,
+.c0:focus > polygon,
+.c0:focus > polyline,
+.c0:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -8500,6 +9220,26 @@ exports[`Select selected 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c6 {
@@ -8742,6 +9482,26 @@ exports[`Select should not have accessibility violations 1`] = `
   text-align: inherit;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c6 {
   box-sizing: border-box;
   font-size: inherit;
@@ -8980,6 +9740,26 @@ exports[`Select size 1`] = `
   text-align: inherit;
 }
 
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus > circle,
+.c0:focus > ellipse,
+.c0:focus > line,
+.c0:focus > path,
+.c0:focus > polygon,
+.c0:focus > polyline,
+.c0:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c0:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c5 {
   box-sizing: border-box;
   font-size: inherit;
@@ -9198,6 +9978,26 @@ exports[`Select small drop container height 1`] = `
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c8 {

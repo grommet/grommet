@@ -2236,6 +2236,26 @@ exports[`DataTable groupBy 1`] = `
   color: #000000;
 }
 
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c4 {
   margin: 0;
   padding: 0;
@@ -2501,7 +2521,7 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 iCVMHc"
+            class="StyledButton-sc-323bzc-0 iTBMXj"
             type="button"
           >
             <div
@@ -2555,7 +2575,7 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 iCVMHc"
+            class="StyledButton-sc-323bzc-0 iTBMXj"
             type="button"
           >
             <div
@@ -2598,7 +2618,7 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 iCVMHc"
+            class="StyledButton-sc-323bzc-0 iTBMXj"
             type="button"
           >
             <div
@@ -2729,6 +2749,26 @@ exports[`DataTable groupBy expand 1`] = `
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c4 {
@@ -3150,6 +3190,26 @@ exports[`DataTable groupBy property 1`] = `
   color: #000000;
 }
 
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c4 {
   margin: 0;
   padding: 0;
@@ -3415,7 +3475,7 @@ exports[`DataTable groupBy property 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 iCVMHc"
+            class="StyledButton-sc-323bzc-0 iTBMXj"
             type="button"
           >
             <div
@@ -3469,7 +3529,7 @@ exports[`DataTable groupBy property 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 iCVMHc"
+            class="StyledButton-sc-323bzc-0 iTBMXj"
             type="button"
           >
             <div
@@ -3512,7 +3572,7 @@ exports[`DataTable groupBy property 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 iCVMHc"
+            class="StyledButton-sc-323bzc-0 iTBMXj"
             type="button"
           >
             <div
@@ -3598,6 +3658,26 @@ exports[`DataTable onSort 1`] = `
   padding: 0;
   text-align: inherit;
   height: 100%;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c4 {
@@ -3811,7 +3891,7 @@ exports[`DataTable onSort 2`] = `
           scope="col"
         >
           <button
-            class="StyledButton-sc-323bzc-0 grapNN"
+            class="StyledButton-sc-323bzc-0 gCGTKO"
             type="button"
           >
             <div
@@ -3898,7 +3978,7 @@ exports[`DataTable onSort 2`] = `
           scope="col"
         >
           <button
-            class="StyledButton-sc-323bzc-0 grapNN"
+            class="StyledButton-sc-323bzc-0 gCGTKO"
             type="button"
           >
             <div
@@ -5713,6 +5793,26 @@ exports[`DataTable search 1`] = `
   color: #000000;
 }
 
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus > circle,
+.c8:focus > ellipse,
+.c8:focus > line,
+.c8:focus > path,
+.c8:focus > polygon,
+.c8:focus > polyline,
+.c8:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c4 {
   margin: 0;
   padding: 0;
@@ -6086,6 +6186,26 @@ exports[`DataTable sortable 1`] = `
   height: 100%;
 }
 
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c4 {
   margin: 0;
   padding: 0;
@@ -6297,7 +6417,7 @@ exports[`DataTable sortable 2`] = `
           scope="col"
         >
           <button
-            class="StyledButton-sc-323bzc-0 grapNN"
+            class="StyledButton-sc-323bzc-0 gCGTKO"
             type="button"
           >
             <div
@@ -6384,7 +6504,7 @@ exports[`DataTable sortable 2`] = `
           scope="col"
         >
           <button
-            class="StyledButton-sc-323bzc-0 grapNN"
+            class="StyledButton-sc-323bzc-0 gCGTKO"
             type="button"
           >
             <div
