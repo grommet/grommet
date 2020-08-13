@@ -20,7 +20,6 @@ const DropButton = forwardRef(
       onClick,
       onClose,
       onOpen,
-      trapFocus = true,
       ...rest
     },
     ref,
@@ -80,7 +79,6 @@ const DropButton = forwardRef(
             restrictFocus
             align={dropAlign}
             target={dropTarget || buttonRef.current}
-            trapFocus={trapFocus}
             onClickOutside={onDropClose}
             onEsc={onDropClose}
             {...dropProps}
