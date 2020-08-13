@@ -360,19 +360,9 @@ Defaults to
 undefined
 ```
 
-**formField.error.iconContainer.margin**
+**formField.error.iconContainer**
 
-The box container that is surronding the icon Expects `object`.
-
-Defaults to
-
-```
-undefined
-```
-
-**formField.error.iconContainer.pad**
-
-The box container that is surronding the icon Expects `object`.
+The box container that is surronding the icon, accepts box props Expects `undefined`.
 
 Defaults to
 

@@ -151,14 +151,9 @@ export const themeDoc = {
     type: 'React.Element',
     defaultValue: undefined,
   },
-  'formField.error.iconContainer.margin': {
-    description: 'The box container that is surronding the icon',
-    type: 'object',
-    defaultValue: undefined,
-  },
-  'formField.error.iconContainer.pad': {
-    description: 'The box container that is surronding the icon',
-    type: 'object',
+  'formField.error.iconContainer': {
+    description:
+      'The box container that is surronding the icon, accepts box props',
     defaultValue: undefined,
   },
   'formField.error.background.color': {
