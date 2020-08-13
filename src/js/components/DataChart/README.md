@@ -171,9 +171,11 @@ boolean
 How to visualize the data.
     'property' indicates which property of the data objects to use.
     When 'property' is an array, multiple properties are used for a
-    stacked bar chart.
+    stacked bar chart. If only a string is specified, that is the property
+    to use and all other aspects are defaulted.
 
 ```
+string
 {
   property: 
     string
@@ -218,6 +220,13 @@ How to visualize the data.
     strong
     number
     boolean,
+  point: 
+    circle
+    diamond
+    square
+    star
+    triangle
+    triangleDown,
   round: boolean,
   thickness: 
     hair
@@ -234,66 +243,76 @@ How to visualize the data.
     area
     point
 }
-[{
-  property: 
-    string
-    [
+[
+  string
+  {
+    property: 
       string
-      {
-        property: string,
-        color: 
-          string
-          [{
+      [
+        string
+        {
+          property: string,
+          color: 
+            string
+            [{
   color: string,
   value: number
 }]
-      }
-    ]
-    {
-      color: 
-        string
-        {
-          property: string,
-          transform: function
-        },
-      thickness: 
-        string
-        {
-          property: string,
-          transform: function
-        },
-      x: string,
-      y: string
-    },
-  color: 
-    string
-    [{
+        }
+      ]
+      {
+        color: 
+          string
+          {
+            property: string,
+            transform: function
+          },
+        thickness: 
+          string
+          {
+            property: string,
+            transform: function
+          },
+        x: string,
+        y: string
+      },
+    color: 
+      string
+      [{
   color: string,
   value: number
 }],
-  dash: boolean,
-  opacity: 
-    weak
-    medium
-    strong
-    number
-    boolean,
-  round: boolean,
-  thickness: 
-    hair
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    none
-    string,
-  type: 
-    bar
-    line
-    area
-    point
-}]
+    dash: boolean,
+    opacity: 
+      weak
+      medium
+      strong
+      number
+      boolean,
+    point: 
+      circle
+      diamond
+      square
+      star
+      triangle
+      triangleDown,
+    round: boolean,
+    thickness: 
+      hair
+      xsmall
+      small
+      medium
+      large
+      xlarge
+      none
+      string,
+    type: 
+      bar
+      line
+      area
+      point
+  }
+]
 ```
 
 **data**
@@ -341,6 +360,7 @@ Whether to put guidelines underneath the chart graphics.
 boolean
 {
   x: 
+    boolean
     {
       granularity: 
         coarse
@@ -348,6 +368,7 @@ boolean
         fine
     },
   y: 
+    boolean
     {
       granularity: 
         coarse

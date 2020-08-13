@@ -252,7 +252,7 @@ const DataChart = forwardRef(
       charts.forEach(({ color, point, property, thickness, type }, index) => {
         const { thickness: calcThickness } = chartProps[index];
 
-        if (typeof property === 'object') {
+        if (typeof property === 'object' && !Array.isArray(property)) {
           Object.keys(property).forEach(aspect => {
             const prop = property[aspect];
             if (!result[prop.property || prop])

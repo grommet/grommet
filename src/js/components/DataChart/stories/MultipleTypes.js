@@ -65,4 +65,4 @@ const Example = () => (
   </Grommet>
 );
 
-storiesOf('DataChart', module).add('Multiple', () => <Example />);
+storiesOf('DataChart', module).add('Multiple types', () => <Example />);

@@ -5,6 +5,7 @@ import {
   genericProps,
   getAvailableAtBadge,
   padPropType,
+  pointPropType,
 } from '../../utils';
 
 const thicknessType = PropTypes.oneOfType([
@@ -109,14 +110,7 @@ export const doc = Chart => {
       Related to 'overflow', this allows control over how much space
       is available for bars and points to overflow into.`,
     ),
-    point: PropTypes.oneOf([
-      'circle',
-      'diamond',
-      'square',
-      'star',
-      'triangle',
-      'triangleDown',
-    ]).description(
+    point: pointPropType.description(
       `When using a 'point' type, what shape the points should use.
       If this property is not specified, points will be drawn as a square or
       a circle, based on how 'round' is specified.`,

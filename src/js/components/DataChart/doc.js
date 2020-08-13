@@ -1,6 +1,11 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { genericProps, getAvailableAtBadge, padPropType } from '../../utils';
+import {
+  genericProps,
+  getAvailableAtBadge,
+  padPropType,
+  pointPropType,
+} from '../../utils';
 
 const colorType = PropTypes.oneOfType([
   PropTypes.string,
@@ -25,48 +30,52 @@ const thicknessType = PropTypes.oneOfType([
   PropTypes.string,
 ]);
 
-const chartType = PropTypes.shape({
-  property: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.arrayOf(
-      PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.shape({
-          property: PropTypes.string,
-          color: colorType,
-        }),
-      ]),
-    ),
-    PropTypes.shape({
-      color: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.shape({
-          property: PropTypes.string,
-          transform: PropTypes.func,
-        }),
-      ]),
-      thickness: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.shape({
-          property: PropTypes.string,
-          transform: PropTypes.func,
-        }),
-      ]),
-      x: PropTypes.string,
-      y: PropTypes.string,
-    }),
-  ]),
-  color: colorType,
-  dash: PropTypes.bool,
-  opacity: PropTypes.oneOfType([
-    PropTypes.oneOf(['weak', 'medium', 'strong']),
-    PropTypes.number,
-    PropTypes.bool,
-  ]),
-  round: PropTypes.bool,
-  thickness: thicknessType,
-  type: PropTypes.oneOf(['bar', 'line', 'area', 'point']),
-});
+const chartType = PropTypes.oneOfType([
+  PropTypes.string,
+  PropTypes.shape({
+    property: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.arrayOf(
+        PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.shape({
+            property: PropTypes.string,
+            color: colorType,
+          }),
+        ]),
+      ),
+      PropTypes.shape({
+        color: PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.shape({
+            property: PropTypes.string,
+            transform: PropTypes.func,
+          }),
+        ]),
+        thickness: PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.shape({
+            property: PropTypes.string,
+            transform: PropTypes.func,
+          }),
+        ]),
+        x: PropTypes.string,
+        y: PropTypes.string,
+      }),
+    ]),
+    color: colorType,
+    dash: PropTypes.bool,
+    opacity: PropTypes.oneOfType([
+      PropTypes.oneOf(['weak', 'medium', 'strong']),
+      PropTypes.number,
+      PropTypes.bool,
+    ]),
+    point: pointPropType,
+    round: PropTypes.bool,
+    thickness: thicknessType,
+    type: PropTypes.oneOf(['bar', 'line', 'area', 'point']),
+  }),
+]);
 
 const seriesType = PropTypes.oneOfType([
   PropTypes.string, // property
@@ -137,7 +146,8 @@ export const doc = DataChart => {
       .description(`How to visualize the data.
     'property' indicates which property of the data objects to use.
     When 'property' is an array, multiple properties are used for a
-    stacked bar chart.`),
+    stacked bar chart. If only a string is specified, that is the property
+    to use and all other aspects are defaulted.`),
     data: PropTypes.arrayOf(PropTypes.shape({})).description('the data set'),
     detail: PropTypes.bool.description(
       `Whether to add the ability to interact with the chart
@@ -160,12 +170,18 @@ export const doc = DataChart => {
     guide: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.shape({
-        x: PropTypes.shape({
-          granularity: granularityType,
-        }),
-        y: PropTypes.shape({
-          granularity: granularityType,
-        }),
+        x: PropTypes.oneOfType([
+          PropTypes.bool,
+          PropTypes.shape({
+            granularity: granularityType,
+          }),
+        ]),
+        y: PropTypes.oneOfType([
+          PropTypes.bool,
+          PropTypes.shape({
+            granularity: granularityType,
+          }),
+        ]),
       }),
     ]).description(`Whether to put guidelines underneath the chart graphics.
     See the description of 'granularity' under 'axis'.`),

@@ -59,7 +59,8 @@ const Example = () => (
               property: 'amount',
               type: 'area',
               thickness: 'xsmall',
-              color: { color: 'graph-3', opacity: 'medium' },
+              color: 'graph-3',
+              opacity: 'medium',
             },
             {
               property: 'amount',
@@ -71,7 +72,8 @@ const Example = () => (
               property: 'amountPredicted',
               type: 'area',
               thickness: 'xsmall',
-              color: { color: 'graph-3', opacity: 'medium' },
+              color: 'graph-3',
+              opacity: 'medium',
             },
             {
               property: 'amountPredicted',
@@ -84,7 +86,7 @@ const Example = () => (
               property: 'amountPredicted',
               type: 'point',
               thickness: 'small',
-              point: 'circle', // shouldn't be here
+              point: 'circle',
             },
             {
               property: 'amount',
