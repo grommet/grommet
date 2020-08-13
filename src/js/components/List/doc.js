@@ -47,6 +47,13 @@ export const doc = List => {
 
   DocumentedList.propTypes = {
     ...genericProps,
+    action: PropTypes.func.description(
+      `Accepts a function that allows for a custom rendering
+       of a component, it should be passed with an item and
+        index of an array and return a react element
+      \`action = ({item, index}) => <Content />\`
+    />`,
+    ),
     as: PropTypes.string
       .description('The DOM tag or react component to use for the element.')
       .defaultValue('ul'),
