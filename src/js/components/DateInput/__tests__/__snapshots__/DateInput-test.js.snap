@@ -235,10 +235,6 @@ exports[`DateInput focus 1`] = `
 
 }
 
-@media only screen and (max-width:768px) {
-
-}
-
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
@@ -324,7 +320,7 @@ exports[`DateInput focus 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: auto;
+  overflow: visible;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
@@ -362,7 +358,6 @@ exports[`DateInput focus 2`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 1px;
 }
 
 .c5 {
@@ -452,7 +447,6 @@ exports[`DateInput focus 2`] = `
 }
 
 .c2 {
-  margin: 1px;
   font-size: 18px;
   line-height: 1.45;
   width: 384px;
@@ -563,12 +557,6 @@ exports[`DateInput focus 2`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding: 1px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -1764,7 +1752,6 @@ exports[`DateInput format inline 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 1px;
 }
 
 .c8 {
@@ -1854,7 +1841,6 @@ exports[`DateInput format inline 1`] = `
 }
 
 .c6 {
-  margin: 1px;
   font-size: 18px;
   line-height: 1.45;
   width: 384px;
@@ -2007,12 +1993,6 @@ exports[`DateInput format inline 1`] = `
   transform: translateY(-50%);
   pointer-events: none;
   right: 12px;
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 1px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -3150,7 +3130,6 @@ exports[`DateInput inline 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 1px;
 }
 
 .c4 {
@@ -3240,7 +3219,6 @@ exports[`DateInput inline 1`] = `
 }
 
 .c1 {
-  margin: 1px;
   font-size: 18px;
   line-height: 1.45;
   width: 384px;
@@ -3327,12 +3305,6 @@ exports[`DateInput inline 1`] = `
   background-color: #7D4CDB;
   color: #f8f8f8;
   font-weight: bold;
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 1px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -4679,7 +4651,6 @@ exports[`DateInput range format inline 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 1px;
 }
 
 .c8 {
@@ -4769,7 +4740,6 @@ exports[`DateInput range format inline 1`] = `
 }
 
 .c6 {
-  margin: 1px;
   font-size: 18px;
   line-height: 1.45;
   width: 384px;
@@ -4940,12 +4910,6 @@ exports[`DateInput range format inline 1`] = `
   transform: translateY(-50%);
   pointer-events: none;
   right: 12px;
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 1px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -6083,7 +6047,6 @@ exports[`DateInput range inline 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 1px;
 }
 
 .c4 {
@@ -6173,7 +6136,6 @@ exports[`DateInput range inline 1`] = `
 }
 
 .c1 {
-  margin: 1px;
   font-size: 18px;
   line-height: 1.45;
   width: 384px;
@@ -6278,12 +6240,6 @@ exports[`DateInput range inline 1`] = `
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: rgba(125,76,219,0.1);
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 1px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -7534,7 +7490,7 @@ exports[`DateInput select format 3`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: auto;
+  overflow: visible;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
@@ -7572,7 +7528,6 @@ exports[`DateInput select format 3`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 1px;
 }
 
 .c5 {
@@ -7662,7 +7617,6 @@ exports[`DateInput select format 3`] = `
 }
 
 .c2 {
-  margin: 1px;
   font-size: 18px;
   line-height: 1.45;
   width: 384px;
@@ -7773,12 +7727,6 @@ exports[`DateInput select format 3`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding: 1px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -8673,7 +8621,6 @@ exports[`DateInput select format inline 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 1px;
 }
 
 .c8 {
@@ -8763,7 +8710,6 @@ exports[`DateInput select format inline 1`] = `
 }
 
 .c6 {
-  margin: 1px;
   font-size: 18px;
   line-height: 1.45;
   width: 384px;
@@ -8916,12 +8862,6 @@ exports[`DateInput select format inline 1`] = `
   transform: translateY(-50%);
   pointer-events: none;
   right: 12px;
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 1px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -9786,13 +9726,13 @@ exports[`DateInput select format inline 2`] = `
       />
     </div>
     <div
-      class="StyledCalendar-sc-1y4xhmp-0 iuPHtj"
+      class="StyledCalendar-sc-1y4xhmp-0 eMLsHu"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 bFwQzJ"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fpgrDx"
+          class="StyledBox-sc-13pk1d4-0 VvbUh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 ecbFEh"
@@ -10635,7 +10575,6 @@ exports[`DateInput select format inline range 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 1px;
 }
 
 .c8 {
@@ -10725,7 +10664,6 @@ exports[`DateInput select format inline range 1`] = `
 }
 
 .c6 {
-  margin: 1px;
   font-size: 18px;
   line-height: 1.45;
   width: 384px;
@@ -10896,12 +10834,6 @@ exports[`DateInput select format inline range 1`] = `
   transform: translateY(-50%);
   pointer-events: none;
   right: 12px;
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 1px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -11766,13 +11698,13 @@ exports[`DateInput select format inline range 2`] = `
       />
     </div>
     <div
-      class="StyledCalendar-sc-1y4xhmp-0 iuPHtj"
+      class="StyledCalendar-sc-1y4xhmp-0 eMLsHu"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 bFwQzJ"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fpgrDx"
+          class="StyledBox-sc-13pk1d4-0 VvbUh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 ecbFEh"
@@ -12615,7 +12547,6 @@ exports[`DateInput select inline 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 1px;
 }
 
 .c4 {
@@ -12705,7 +12636,6 @@ exports[`DateInput select inline 1`] = `
 }
 
 .c1 {
-  margin: 1px;
   font-size: 18px;
   line-height: 1.45;
   width: 384px;
@@ -12792,12 +12722,6 @@ exports[`DateInput select inline 1`] = `
   background-color: #7D4CDB;
   color: #f8f8f8;
   font-weight: bold;
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 1px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -13674,7 +13598,6 @@ exports[`DateInput type format inline 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 1px;
 }
 
 .c8 {
@@ -13764,7 +13687,6 @@ exports[`DateInput type format inline 1`] = `
 }
 
 .c6 {
-  margin: 1px;
   font-size: 18px;
   line-height: 1.45;
   width: 384px;
@@ -13917,12 +13839,6 @@ exports[`DateInput type format inline 1`] = `
   transform: translateY(-50%);
   pointer-events: none;
   right: 12px;
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 1px;
-  }
 }
 
 @media only screen and (max-width:768px) {
@@ -14787,13 +14703,13 @@ exports[`DateInput type format inline 2`] = `
       />
     </div>
     <div
-      class="StyledCalendar-sc-1y4xhmp-0 iuPHtj"
+      class="StyledCalendar-sc-1y4xhmp-0 eMLsHu"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 bFwQzJ"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fpgrDx"
+          class="StyledBox-sc-13pk1d4-0 VvbUh"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 ecbFEh"
