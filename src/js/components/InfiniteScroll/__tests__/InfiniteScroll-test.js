@@ -160,4 +160,31 @@ describe('Number of Items Rendered', () => {
     const expectedItems = numItems;
     expect(pageItems.length).toEqual(expectedItems);
   });
+
+  test(`Should not duplicate items 
+  when provided an array of unique items`, () => {
+    const step = 25;
+    const numItems = 200;
+    const showIndex = 67;
+    const { container } = render(
+      <Grommet>
+        <InfiniteScroll
+          items={simpleItems(numItems)}
+          show={showIndex}
+          step={step}
+        >
+          {item => <Box key={item}>{item}</Box>}
+        </InfiniteScroll>
+      </Grommet>,
+    );
+
+    const pageItems = createPageItems(container.firstChild.children);
+    const distinctItems = new Set(pageItems);
+    /* Expected number of items should be at the show value rounded
+    up to the next step increment/ */
+    const expectedItems = Math.ceil(showIndex / step) * step;
+    /* If the number of distinct items is equivalent to the length 
+    of results, then we have unique items. */
+    expect(distinctItems.size).toEqual(expectedItems);
+  });
 });
