@@ -184,30 +184,47 @@ var InfiniteScroll = function InfiniteScroll(_ref) {
   }
 
   items.slice(firstIndex, lastIndex + 1).forEach(function (item, index) {
-    var itemsIndex = firstIndex + index; // We only need page refs if we don't know the pageHeight
-    // The new way, we pass the ref we want to the children render function.
-
+    var itemsIndex = firstIndex + index;
     var ref;
-    if (!pageHeight && itemsIndex === 0) ref = firstPageItemRef;else if (!pageHeight && (itemsIndex === step - 1 || itemsIndex === lastIndex)) ref = lastPageItemRef;else if (show && show === itemsIndex) ref = showRef;
-    var child = children(item, itemsIndex, ref); // The old way, if we don't see that our ref was set, wrap it
+    var child = children(item, itemsIndex, ref); // Set firstPageItemRef & lastPageItemRef if we don't know the pageHeight.
 
-    if (!pageHeight && itemsIndex === 0 && child.ref !== firstPageItemRef) {
-      child = /*#__PURE__*/React.createElement(Ref, {
-        key: "first",
-        ref: firstPageItemRef
-      }, child);
-    } else if (!pageHeight && (itemsIndex === step - 1 || itemsIndex === lastIndex) && child.ref !== lastPageItemRef) {
-      child = /*#__PURE__*/React.createElement(Ref, {
-        key: "last",
-        ref: lastPageItemRef
-      }, child);
+    if (!pageHeight && itemsIndex === 0) {
+      // We pass the ref we want to the children render function.
+      // If we don't see that our ref was set, wrap it ("the old way").
+      child = children(item, itemsIndex, firstPageItemRef);
+
+      if (child.ref !== firstPageItemRef) {
+        child = /*#__PURE__*/React.createElement(Ref, {
+          key: "first",
+          ref: firstPageItemRef
+        }, child);
+      }
     }
 
-    if (show && show === itemsIndex && child.ref !== showRef) {
-      child = /*#__PURE__*/React.createElement(Ref, {
-        key: "show",
-        ref: showRef
-      }, child);
+    if (!pageHeight && (itemsIndex === step - 1 || itemsIndex === lastIndex)) {
+      // If show, we only want a single lastPageItemRef and it should be set at
+      // lastIndex. Ignore step - 1 scenario, otherwise will create duplicates.
+      child = show && itemsIndex === step - 1 ? child : children(item, itemsIndex, lastPageItemRef); // We pass the ref we want to the children render function.
+      // If we don't see that our ref was set, wrap it ("the old way").
+
+      if (child.ref !== lastPageItemRef && !(show && itemsIndex === step - 1)) {
+        child = /*#__PURE__*/React.createElement(Ref, {
+          key: "last",
+          ref: lastPageItemRef
+        }, child);
+      }
+    } // Set showRef
+
+
+    if (show && show === itemsIndex) {
+      child = children(item, itemsIndex, showRef);
+
+      if (child.ref !== showRef) {
+        child = /*#__PURE__*/React.createElement(Ref, {
+          key: "show",
+          ref: showRef
+        }, child);
+      }
     }
 
     result.push(child);
