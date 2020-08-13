@@ -320,7 +320,7 @@ exports[`DateInput focus 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: auto;
+  overflow: visible;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
@@ -7490,7 +7490,7 @@ exports[`DateInput select format 3`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: auto;
+  overflow: visible;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
