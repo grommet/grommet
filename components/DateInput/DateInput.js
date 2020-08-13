@@ -199,6 +199,7 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
 
   if (open) {
     return [input, /*#__PURE__*/_react["default"].createElement(_Drop.Drop, {
+      overflow: "visible",
       key: "drop",
       id: id ? id + "__drop" : undefined,
       target: ref.current,
