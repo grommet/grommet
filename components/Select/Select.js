@@ -148,9 +148,10 @@ var Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     return setOpen(propOpen);
   }, [propOpen]);
   var onRequestOpen = (0, _react.useCallback)(function () {
+    if (open) return;
     setOpen(true);
     if (onOpen) onOpen();
-  }, [onOpen]);
+  }, [onOpen, open]);
   var onRequestClose = (0, _react.useCallback)(function () {
     setOpen(false);
     if (onClose) onClose();
@@ -271,8 +272,7 @@ var Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     readOnly: true,
     value: inputValue,
     size: size,
-    theme: theme,
-    onClick: disabled === true ? undefined : onRequestOpen
+    theme: theme
   }))), SelectIcon && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     margin: theme.select.icons.margin,
     flex: false,

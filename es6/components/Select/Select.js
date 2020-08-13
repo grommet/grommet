@@ -127,9 +127,10 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
     return setOpen(propOpen);
   }, [propOpen]);
   var onRequestOpen = useCallback(function () {
+    if (open) return;
     setOpen(true);
     if (onOpen) onOpen();
-  }, [onOpen]);
+  }, [onOpen, open]);
   var onRequestClose = useCallback(function () {
     setOpen(false);
     if (onClose) onClose();
@@ -250,8 +251,7 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
     readOnly: true,
     value: inputValue,
     size: size,
-    theme: theme,
-    onClick: disabled === true ? undefined : onRequestOpen
+    theme: theme
   }))), SelectIcon && /*#__PURE__*/React.createElement(Box, {
     margin: theme.select.icons.margin,
     flex: false,
