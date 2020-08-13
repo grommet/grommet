@@ -70,4 +70,8 @@ var HorizontalCollapsible = function HorizontalCollapsible() {
 
 (0, _react2.storiesOf)('Collapsible', module).add('Horizontal', function () {
   return /*#__PURE__*/_react["default"].createElement(HorizontalCollapsible, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

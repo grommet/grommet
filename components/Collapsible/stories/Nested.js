@@ -130,4 +130,8 @@ var NestedCollapsible = function NestedCollapsible() {
 
 (0, _react2.storiesOf)('Collapsible', module).add('Nested', function () {
   return /*#__PURE__*/_react["default"].createElement(NestedCollapsible, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

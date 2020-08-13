@@ -34,4 +34,8 @@ var SimpleCollapsible = function SimpleCollapsible(props) {
 
 storiesOf('Collapsible', module).add('Default', function () {
   return /*#__PURE__*/React.createElement(SimpleCollapsible, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

@@ -36,4 +36,8 @@ var Reverse = function Reverse() {
 
 storiesOf('Menu', module).add('Reverse', function () {
   return /*#__PURE__*/React.createElement(Reverse, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

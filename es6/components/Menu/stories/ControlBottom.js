@@ -34,4 +34,8 @@ var ControlBottom = function ControlBottom() {
 
 storiesOf('Menu', module).add('Bottom Control Button', function () {
   return /*#__PURE__*/React.createElement(ControlBottom, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

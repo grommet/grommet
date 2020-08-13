@@ -50,4 +50,8 @@ var CustomMenu = function CustomMenu() {
 
 (0, _react2.storiesOf)('Menu', module).add('Custom', function () {
   return /*#__PURE__*/_react["default"].createElement(CustomMenu, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

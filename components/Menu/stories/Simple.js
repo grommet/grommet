@@ -40,4 +40,8 @@ var SimpleMenu = function SimpleMenu() {
 
 (0, _react2.storiesOf)('Menu', module).add('Simple', function () {
   return /*#__PURE__*/_react["default"].createElement(SimpleMenu, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

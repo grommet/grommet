@@ -33,4 +33,8 @@ var SimpleMenu = function SimpleMenu() {
 
 storiesOf('Menu', module).add('Simple', function () {
   return /*#__PURE__*/React.createElement(SimpleMenu, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

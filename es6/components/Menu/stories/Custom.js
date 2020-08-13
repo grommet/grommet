@@ -42,4 +42,8 @@ var CustomMenu = function CustomMenu() {
 
 storiesOf('Menu', module).add('Custom', function () {
   return /*#__PURE__*/React.createElement(CustomMenu, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

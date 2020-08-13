@@ -43,4 +43,8 @@ var Reverse = function Reverse() {
 
 (0, _react2.storiesOf)('Menu', module).add('Reverse', function () {
   return /*#__PURE__*/_react["default"].createElement(Reverse, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

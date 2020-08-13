@@ -53,4 +53,8 @@ var Themed = function Themed() {
 
 (0, _react2.storiesOf)('Menu', module).add('Themed', function () {
   return /*#__PURE__*/_react["default"].createElement(Themed, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });
