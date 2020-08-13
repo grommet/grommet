@@ -39,8 +39,10 @@ const customTheme = deepMerge(grommet, {
       horizontal: 'small',
     },
     extend: ({ theme }) => css`
-      border-radius: ${theme.global.control.border.radius};
-      box-shadow: ${theme.global.elevation.light.small};
+      border-radius: 4px;
+      /* or 'border-radius: ${theme.global.control.border.radius}' */
+      box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+      /* or 'box-shadow: ${theme.global.elevation.light.small}' */
     `,
   },
   tabs: {
@@ -49,15 +51,19 @@ const customTheme = deepMerge(grommet, {
     header: {
       background: 'dark-2',
       extend: ({ theme }) => css`
-        padding: ${theme.global.edgeSize.small};
-        box-shadow: ${theme.global.elevation.light.medium};
-      `,
+      padding: 10px;
+      /* or 'padding: ${theme.global.edgeSize.small}' */
+      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.50);
+      /* or 'box-shadow: ${theme.global.elevation.light.medium}' */
+    `,
     },
     panel: {
       extend: ({ theme }) => css`
-        padding: ${theme.global.edgeSize.large};
-        box-shadow: ${theme.global.elevation.light.medium};
-      `,
+      padding: 48px;
+      /* or 'padding: ${theme.global.edgeSize.large}' */
+      box-shadow:  0px 3px 8px rgba(0, 0, 0, 0.50);
+       /* or 'box-shadow: ${theme.global.elevation.light.medium}' */
+    `,
     },
   },
 });
