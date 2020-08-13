@@ -4827,6 +4827,15 @@ string",
         "name": "margin",
       },
       Object {
+        "description": "Accepts a function that allows for a custom rendering
+       of a component, it should be passed with an item and
+        index of an array and return a react element
+      \`action = ({item, index}) => <Content />\`
+    />",
+        "format": "function",
+        "name": "action",
+      },
+      Object {
         "defaultValue": "ul",
         "description": "The DOM tag or react component to use for the element.",
         "format": "string",
