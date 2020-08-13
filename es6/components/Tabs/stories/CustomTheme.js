@@ -37,7 +37,7 @@ var customTheme = deepMerge(grommet, {
     },
     extend: function extend(_ref) {
       var theme = _ref.theme;
-      return css(["border-radius:", ";box-shadow:", ";"], theme.global.control.border.radius, theme.global.elevation.light.small);
+      return css(["border-radius:4px;box-shadow:0px 1px 5px rgba(0,0,0,0.5);"]);
     }
   },
   tabs: {
@@ -47,13 +47,13 @@ var customTheme = deepMerge(grommet, {
       background: 'dark-2',
       extend: function extend(_ref2) {
         var theme = _ref2.theme;
-        return css(["padding:", ";box-shadow:", ";"], theme.global.edgeSize.small, theme.global.elevation.light.medium);
+        return css(["padding:10px;box-shadow:0px 3px 8px rgba(0,0,0,0.50);"]);
       }
     },
     panel: {
       extend: function extend(_ref3) {
         var theme = _ref3.theme;
-        return css(["padding:", ";box-shadow:", ";"], theme.global.edgeSize.large, theme.global.elevation.light.medium);
+        return css(["padding:48px;box-shadow:0px 3px 8px rgba(0,0,0,0.50);"]);
       }
     }
   }
