@@ -35,4 +35,6 @@ const CalendarDropButton = () => {
   );
 };
 
-storiesOf('DropButton', module).add('Calendar', () => <CalendarDropButton />);
+storiesOf('DropButton', module).add('Calendar', () => <CalendarDropButton />, {
+  chromatic: { disable: true },
+});
