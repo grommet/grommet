@@ -6119,46 +6119,15 @@ exports[`DataTable search 2`] = `
     <tbody
       class="StyledTable__StyledTableBody-sc-1m3u5g-3 bMdIOJ StyledDataTable__StyledDataTableBody-xrlyjm-2 kERYjL"
     >
-      .c1 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: 100%;
-  text-align: start;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c0 {
-  height: 100%;
-}
-
-.c2 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-
-}
-
-<tr
-        class="c0 "
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 dSAyNg StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
       >
         <th
-          class="c1"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 glVxec"
           scope="row"
         >
           <span
-            class="c2"
+            class="StyledText-sc-1sadyjn-0 gmtNWw"
           >
             []
           </span>
