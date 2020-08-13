@@ -248,6 +248,7 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     return /*#__PURE__*/_react["default"].createElement(_StyledButtonKind.StyledButtonKind, _extends({}, rest, {
       as: domTag,
       ref: ref,
+      active: active,
       align: align,
       "aria-label": a11yTitle,
       colorValue: color,
