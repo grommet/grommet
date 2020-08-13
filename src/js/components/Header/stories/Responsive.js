@@ -23,10 +23,6 @@ const Responsive = () => (
                 icon={<MenuIcon color="brand" />}
                 items={[
                   {
-                    label: <Box pad="small">Grommet Tools </Box>,
-                    href: 'https://tools.grommet.io/',
-                  },
-                  {
                     label: <Box pad="small">Grommet.io</Box>,
                     href: 'https://v2.grommet.io/',
                   },
