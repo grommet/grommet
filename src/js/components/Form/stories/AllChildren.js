@@ -17,6 +17,29 @@ import {
 } from 'grommet';
 import { grommet } from 'grommet/themes';
 
+const passwordRulesStrong = [
+  {
+    regexp: new RegExp('(?=.*?[A-Z])'),
+    message: 'One uppercase letter',
+    status: 'error',
+  },
+  {
+    regexp: new RegExp('(?=.*?[a-z])'),
+    message: 'One lowercase letter',
+    status: 'error',
+  },
+  {
+    regexp: new RegExp('(?=.*?[#?!@$ %^&*-])'),
+    message: 'One special character',
+    status: 'error',
+  },
+  {
+    regexp: new RegExp('.{8,}'),
+    message: 'At least 8 characters',
+    status: 'error',
+  },
+];
+
 const Example = () => (
   <Grommet full theme={grommet}>
     <Box fill align="center" justify="center">
@@ -24,6 +47,9 @@ const Example = () => (
         <Form
           onReset={event => console.log(event)}
           onSubmit={({ value }) => console.log('Submit', value)}
+          onValidate={({ errors, infos }) =>
+            console.log('Validate', errors, infos)
+          }
         >
           <FormField label="Name" name="name" required>
             <TextInput name="name" />
@@ -39,6 +65,14 @@ const Example = () => (
                 { regexp: /^[\w]+$/, placeholder: 'com' },
               ]}
             />
+          </FormField>
+          <FormField
+            label="Password"
+            name="password"
+            htmlFor="password"
+            validate={passwordRulesStrong}
+          >
+            <TextInput name="password" id="password" type="password" />
           </FormField>
           <FormField name="subscription">
             <CheckBoxGroup

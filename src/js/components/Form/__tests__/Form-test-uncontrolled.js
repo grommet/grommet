@@ -176,6 +176,89 @@ describe('Form uncontrolled', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('uncontrolled onValidate', () => {
+    const onValidate = jest.fn();
+    const { getByText, container } = render(
+      <Grommet>
+        <Form onValidate={onValidate}>
+          <FormField name="test" required>
+            <TextInput name="test" placeholder="test input" />
+          </FormField>
+          <Button type="submit" primary label="Submit" />
+        </Form>
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('Submit'));
+    expect(onValidate).toBeCalledWith(
+      expect.objectContaining({
+        errors: { test: 'required' },
+        infos: {},
+      }),
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('uncontrolled onValidate custom error', () => {
+    const onValidate = jest.fn();
+    const errorMessage = 'One uppercase letter';
+    const testRules = {
+      regexp: new RegExp('(?=.*?[A-Z])'),
+      message: errorMessage,
+      status: 'error',
+    };
+
+    const { getByText, container } = render(
+      <Grommet>
+        <Form onValidate={onValidate}>
+          <FormField name="test" validate={testRules}>
+            <TextInput name="test" placeholder="test input" />
+          </FormField>
+          <Button type="submit" primary label="Submit" />
+        </Form>
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('Submit'));
+    expect(onValidate).toBeCalledWith(
+      expect.objectContaining({
+        errors: { test: errorMessage },
+        infos: {},
+      }),
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('uncontrolled onValidate custom info', () => {
+    const onValidate = jest.fn();
+    const infoMessage = 'One uppercase letter';
+    const testRules = {
+      regexp: new RegExp('(?=.*?[A-Z])'),
+      message: infoMessage,
+      status: 'info',
+    };
+
+    const { getByText, container } = render(
+      <Grommet>
+        <Form onValidate={onValidate}>
+          <FormField name="test" validate={testRules}>
+            <TextInput name="test" placeholder="test input" />
+          </FormField>
+          <Button type="submit" primary label="Submit" />
+        </Form>
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('Submit'));
+    expect(onValidate).toBeCalledWith(
+      expect.objectContaining({
+        errors: {},
+        infos: { test: infoMessage },
+      }),
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('update', () => {
     const validate = jest
       .fn()
