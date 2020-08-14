@@ -154,7 +154,11 @@ export const doc = DataChart => {
     'property' indicates which property of the data objects to use.
     When 'property' is an array, multiple properties are used for a
     stacked bar chart. If only a string is specified, that is the property
-    to use and all other aspects are defaulted.`),
+    to use and all other aspects are defaulted. If 'property' is an object,
+    it specifies a map of properties to graphic aspects: x, y, color, thickness.
+    If 'transform' is specified, it will be used to transform the data value
+    before using it. For example, to convert a data value to a hex color
+    string for the color.`),
     data: PropTypes.arrayOf(PropTypes.shape({})).description('the data set'),
     detail: PropTypes.bool.description(
       `Whether to add the ability to interact with the chart
