@@ -156,7 +156,7 @@ const StyledDataTable = () => (
 );
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/DataTable', module).add('Style', () => (
+  storiesOf('DataTable/TypeScript', module).add('Style', () => (
     <StyledDataTable />
   ));
 }

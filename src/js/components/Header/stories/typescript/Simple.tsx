@@ -21,5 +21,5 @@ const Simple = () => (
 );
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/Header', module).add('Simple', () => <Simple />);
+  storiesOf('Header/TypeScript', module).add('Simple', () => <Simple />);
 }

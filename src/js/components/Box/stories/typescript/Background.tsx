@@ -45,7 +45,7 @@ const BackgroundBox = () => (
 );
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/Box', module).add('Background', () => (
+  storiesOf('Box/TypeScript', module).add('Background', () => (
     <BackgroundBox />
   ));
 }

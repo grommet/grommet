@@ -79,5 +79,5 @@ const App = () => {
 };
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/Menu', module).add('Themed', () => <App />);
+  storiesOf('Menu/TypeScript', module).add('Themed', () => <App />);
 }

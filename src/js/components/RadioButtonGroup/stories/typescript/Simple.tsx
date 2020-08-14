@@ -30,5 +30,5 @@ export const App = () => {
 };
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/RadioButtonGroup', module).add('Simple', () => <App />);
+  storiesOf('RadioButtonGroup/TypeScript', module).add('Simple', () => <App />);
 }

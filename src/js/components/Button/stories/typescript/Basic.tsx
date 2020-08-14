@@ -22,5 +22,5 @@ const BasicButtons = props => (
 );
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/Button', module).add('Basic', () => <BasicButtons />);
+  storiesOf('Button/TypeScript', module).add('Basic', () => <BasicButtons />);
 }

@@ -150,7 +150,7 @@ const ClickableDataTable = () => (
 );
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/DataTable', module).add('Clickable', () => (
+  storiesOf('DataTable/TypeScript', module).add('Clickable', () => (
     <ClickableDataTable />
   ));
 }

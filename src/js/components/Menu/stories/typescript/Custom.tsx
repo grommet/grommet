@@ -41,5 +41,5 @@ const CustomMenu = () => (
 );
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/Menu', module).add('Custom', () => <CustomMenu />);
+  storiesOf('Menu/TypeScript', module).add('Custom', () => <CustomMenu />);
 }

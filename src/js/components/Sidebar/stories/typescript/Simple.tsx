@@ -59,5 +59,5 @@ export const SidebarIcons = () => (
 );
 
 if (!isChromatic()) {
-  storiesOf('Typescript/Sidebar', module).add('Icons', () => <SidebarIcons />);
+  storiesOf('Sidebar/TypeScript', module).add('Icons', () => <SidebarIcons />);
 }

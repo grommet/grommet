@@ -37,7 +37,7 @@ const CalendarDropButton = () => {
 };
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/DropButton', module).add('Calendar', () => (
+  storiesOf('DropButton/TypeScript', module).add('Calendar', () => (
     <CalendarDropButton />
   ));
 }

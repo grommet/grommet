@@ -104,5 +104,5 @@ const Avatars = () => {
 };
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/Avatar', module).add('All', () => <Avatars />);
+  storiesOf('Avatar/TypeScript', module).add('All', () => <Avatars />);
 }

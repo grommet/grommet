@@ -69,5 +69,5 @@ const CustomTheme = () => (
 );
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/Button', module).add('Custom', () => <CustomTheme />);
+  storiesOf('Button/TypeScript', module).add('Custom', () => <CustomTheme />);
 }

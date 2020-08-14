@@ -30,7 +30,7 @@ const Example = props => (
 );
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/InfiniteScroll', module).add('Basic', () => (
+  storiesOf('InfiniteScroll/TypeScript', module).add('Basic', () => (
     <Example />
   ));
 }

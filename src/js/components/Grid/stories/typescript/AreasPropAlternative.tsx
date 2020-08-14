@@ -39,7 +39,7 @@ const GridAreasAlternative = () => {
 };
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/Grid', module).add('Areas prop alternative', () => (
+  storiesOf('Grid/TypeScript', module).add('Areas prop alternative', () => (
     <GridAreasAlternative />
   ));
 }

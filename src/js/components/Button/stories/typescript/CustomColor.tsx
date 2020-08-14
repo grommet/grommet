@@ -52,5 +52,5 @@ const Colored = props => (
 );
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/Button', module).add('Colored', () => <Colored />);
+  storiesOf('Button/TypeScript', module).add('Colored', () => <Colored />);
 }

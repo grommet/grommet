@@ -41,5 +41,5 @@ const CustomFocusFC = () => (
 );
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/Theme', module).add('Focus', () => <CustomFocusFC />);
+  storiesOf('Theme/TypeScript', module).add('Focus', () => <CustomFocusFC />);
 }

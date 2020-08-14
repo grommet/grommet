@@ -53,7 +53,7 @@ const MultipleValues = () => {
 };
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/Meter', module).add('Multiple Values', () => (
+  storiesOf('Meter/TypeScript', module).add('Multiple Values', () => (
     <MultipleValues />
   ));
 }

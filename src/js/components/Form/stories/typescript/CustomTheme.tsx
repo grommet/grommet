@@ -38,7 +38,7 @@ const CustomFormField = () => (
 );
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/Form', module).add('Custom Theme', () => (
+  storiesOf('Form/TypeScript', module).add('Custom Theme', () => (
     <CustomFormField />
   ));
 }

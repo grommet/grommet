@@ -27,7 +27,7 @@ const SimpleDistribution = () => (
 );
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/Distribution', module).add('Simple', () => (
+  storiesOf('Distribution/TypeScript', module).add('Simple', () => (
     <SimpleDistribution />
   ));
 }

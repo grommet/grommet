@@ -367,5 +367,5 @@ const Components = () => {
 };
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/All', module).add('All', () => <Components />);
+  storiesOf('All/TypeScript', module).add('All', () => <Components />);
 }

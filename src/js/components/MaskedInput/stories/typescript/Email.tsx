@@ -50,7 +50,7 @@ const EmailMaskedInput = () => {
 };
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/MaskedInput', module).add('Email', () => (
+  storiesOf('MaskedInput/TypeScript', module).add('Email', () => (
     <EmailMaskedInput />
   ));
 }

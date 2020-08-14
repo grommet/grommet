@@ -61,5 +61,5 @@ const AppGrid = () => {
 };
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/Grid', module).add('App', () => <AppGrid />);
+  storiesOf('Grid/TypeScript', module).add('App', () => <AppGrid />);
 }

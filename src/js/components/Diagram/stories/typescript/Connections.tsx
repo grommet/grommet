@@ -40,6 +40,6 @@ const Connections = () => {
   );
 };
 
-storiesOf('TypeScript/Diagram', module).add('Connections', () => (
+storiesOf('Diagram/TypeScript', module).add('Connections', () => (
   <Connections />
 ));

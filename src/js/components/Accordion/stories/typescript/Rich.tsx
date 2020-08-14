@@ -249,7 +249,7 @@ const RichAccordion = () => {
 };
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/Accordion', module).add('Rich', () => (
+  storiesOf('Accordion/TypeScript', module).add('Rich', () => (
     <RichAccordion />
   ));
 }

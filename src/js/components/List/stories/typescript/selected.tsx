@@ -48,7 +48,7 @@ const SelectedItem = () => {
 };
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/List', module).add('selectedItem', () => (
+  storiesOf('List/TypeScript', module).add('selectedItem', () => (
     <SelectedItem />
   ));
 }

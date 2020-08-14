@@ -90,7 +90,7 @@ const CreateOption = () => {
 };
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/Select', module).add('Create Option', () => (
+  storiesOf('Select/TypeScript', module).add('Create Option', () => (
     <CreateOption />
   ));
 }

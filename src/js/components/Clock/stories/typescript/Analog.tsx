@@ -14,5 +14,5 @@ const AnalogClock = () => (
 );
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/Clock', module).add('Analog', () => <AnalogClock />);
+  storiesOf('Clock/TypeScript', module).add('Analog', () => <AnalogClock />);
 }

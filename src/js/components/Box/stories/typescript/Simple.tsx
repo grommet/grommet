@@ -39,5 +39,5 @@ const SimpleBox = () => (
 );
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/Box', module).add('Simple', () => <SimpleBox />);
+  storiesOf('Box/TypeScript', module).add('Simple', () => <SimpleBox />);
 }

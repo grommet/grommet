@@ -14,5 +14,5 @@ const DigitalClock = () => (
 );
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/Clock', module).add('Digital', () => <DigitalClock />);
+  storiesOf('Clock/TypeScript', module).add('Digital', () => <DigitalClock />);
 }

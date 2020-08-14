@@ -59,4 +59,4 @@ const ExtendTheme: React.FC = () => {
   );
 };
 
-storiesOf('TypeScript/Theme', module).add('Extend', () => <ExtendTheme />);
+storiesOf('Theme/TypeScript', module).add('Extend', () => <ExtendTheme />);

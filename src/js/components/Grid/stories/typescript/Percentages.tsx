@@ -24,7 +24,7 @@ const Percentages = () => (
 );
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/Grid', module).add('Percentages', () => (
+  storiesOf('Grid/TypeScript', module).add('Percentages', () => (
     <Percentages />
   ));
 }

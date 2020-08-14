@@ -25,7 +25,7 @@ const NColumnGrid = () => (
 );
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/Grid', module).add('N-column layout', () => (
+  storiesOf('Grid/TypeScript', module).add('N-column layout', () => (
     <NColumnGrid />
   ));
 }
