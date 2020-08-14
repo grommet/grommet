@@ -864,6 +864,51 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // colors: [] || colors: ['graph-0', 'graph-1', 'graph-2', 'graph-3'],
       // extend: undefined,
     },
+    modalpopup: {
+      container: {
+        width: 'large',
+      },
+      title: {
+        wrapper: {
+          pad: {
+            horizontal: 'large',
+            vertical: 'small',
+          },
+          border: {
+            side: 'bottom',
+            color: 'dark-6',
+          },
+        },
+        text: {
+          level: 3,
+          size: 'small',
+          color: 'dark-3',
+        },
+      },
+      message: {
+        wrapper: {
+          pad: 'large',
+        },
+        text: {
+          size: 'medium',
+          color: 'dark-3',
+        },
+      },
+      buttons: {
+        wrapper: {
+          pad: {
+            horizontal: 'large',
+            bottom: 'large',
+          },
+          direction: 'row',
+        },
+        button: {
+          margin: {
+            right: 'medium',
+          },
+        },
+      },
+    },
     multiselect: {
       option: {
         width: 'full',
