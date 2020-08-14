@@ -51,6 +51,8 @@ const HorizontalCollapsible = () => {
   );
 };
 
-storiesOf('Collapsible', module).add('Horizontal', () => (
-  <HorizontalCollapsible />
-));
+storiesOf('Collapsible', module).add(
+  'Horizontal',
+  () => <HorizontalCollapsible />,
+  { chromatic: { disable: true } },
+);
