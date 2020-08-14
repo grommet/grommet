@@ -73,7 +73,7 @@ const chartType = PropTypes.oneOfType([
     point: pointPropType,
     round: PropTypes.bool,
     thickness: thicknessType,
-    type: PropTypes.oneOf(['bar', 'line', 'area', 'point']),
+    type: PropTypes.oneOf(['bar', 'bars', 'line', 'area', 'point']),
   }),
 ]);
 
@@ -142,6 +142,13 @@ export const doc = DataChart => {
       'medium' granularity picks something in between.`,
       )
       .defaultValue(true),
+    bounds: PropTypes.oneOf(['align'])
+      .description(
+        `When set to 'align', indicates that the bounds of all series
+      should be aligned. When not set, the bounds of each series
+      property are based solely on the data found for that property.`,
+      )
+      .defaultValue('align'),
     chart: PropTypes.oneOfType([chartType, PropTypes.arrayOf(chartType)])
       .description(`How to visualize the data.
     'property' indicates which property of the data objects to use.

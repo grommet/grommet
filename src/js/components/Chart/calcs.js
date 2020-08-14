@@ -23,7 +23,7 @@ const alignMin = (value, interval) => {
   return value;
 };
 
-export const calcs = (values, options = {}) => {
+export const calcBounds = (values, options = {}) => {
   // coarseness influences the rounding of the bounds, the smaller the
   // number, the more the bounds will be rounded. e.g. 111 -> 110 -> 100
   // Normalize to an array. Backwards compatible has no coarseness for x-axis
@@ -108,8 +108,6 @@ export const calcs = (values, options = {}) => {
       }
     }
   }
-  if (options.min !== undefined) ({ min: minY } = options);
-  if (options.max !== undefined) ({ max: maxY } = options);
 
   let bounds;
   if (calcValues.length)
@@ -118,6 +116,16 @@ export const calcs = (values, options = {}) => {
       [minY, maxY],
     ];
   else bounds = [[], []];
+  return bounds;
+};
+
+export const calcs = (values = [], options = {}) => {
+  // the number of steps is one less than the number of labels
+  const steps = options.steps || [1, 1];
+  const bounds = options.bounds || calcBounds(values, options);
+  if (options.min !== undefined) bounds[1][0] = options.min;
+  if (options.max !== undefined) bounds[1][1] = options.max;
+
   const dimensions = [
     round(bounds[0][1] - bounds[0][0], 2),
     round(bounds[1][1] - bounds[1][0], 2),
@@ -148,15 +156,15 @@ export const calcs = (values, options = {}) => {
     // Someday, it would be better to include the actual rendered size.
     // These values were emirically determined, trying to balance visibility
     // and overlap across resolutions.
-    if (calcValues.length < 5) {
+    if (values.length < 5) {
       thickness = 'xlarge';
-    } else if (calcValues.length < 11) {
+    } else if (values.length < 11) {
       thickness = 'large';
-    } else if (calcValues.length < 21) {
+    } else if (values.length < 21) {
       thickness = 'medium';
-    } else if (calcValues.length < 61) {
+    } else if (values.length < 61) {
       thickness = 'small';
-    } else if (calcValues.length < 121) {
+    } else if (values.length < 121) {
       thickness = 'xsmall';
     } else {
       thickness = 'hair';

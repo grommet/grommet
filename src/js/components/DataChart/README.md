@@ -166,6 +166,16 @@ boolean
 }
 ```
 
+**bounds**
+
+When set to 'align', indicates that the bounds of all series
+      should be aligned. When not set, the bounds of each series
+      property are based solely on the data found for that property. Defaults to `align`.
+
+```
+align
+```
+
 **chart**
 
 How to visualize the data.
@@ -239,6 +249,7 @@ string
     string,
   type: 
     bar
+    bars
     line
     area
     point
@@ -308,6 +319,7 @@ string
       string,
     type: 
       bar
+      bars
       line
       area
       point

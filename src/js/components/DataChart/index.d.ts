@@ -33,7 +33,7 @@ type ChartType =
           };
       round?: ChartProps['round']; // defaults to undefined
       thickness?: ChartProps['thickness']; // defaults to auto assigned based on available space and amount of data
-      type?: ChartProps['type']; // defaults to 'bar',
+      type?: ChartProps['type'] | 'bars'; // defaults to 'bar',
     };
 
 type SeriesType =
@@ -67,7 +67,8 @@ export interface DataChartProps {
           | string
           | { property?: string; granularity?: GranularityType };
       };
-  // chart - if undefined, { type: 'bar', property: <first property> }
+  bounds?: 'align';
+  // chart - if undefined, { type: 'bar', property: <first series property> }
   chart?: ChartType | ChartType[];
   // data - an array of objects containing data values
   data: {}[];
@@ -76,8 +77,8 @@ export interface DataChartProps {
   gap?: GridProps['gap']; // between axes and guides/visuals
   gridArea?: GridAreaType; // generic
   // guide - when true, {
-  //   x: { property: axis.x.property <if any>, granularity: 'coarse' },
-  //   y: { property: axis.y.property || property[0].property, granularity: 'coarse' },
+  //   x: { granularity: 'coarse' },
+  //   y: { granularity: 'coarse' },
   // }
   guide?:
     | boolean
@@ -90,7 +91,7 @@ export interface DataChartProps {
   // pad - padding around the guides/visuals
   // defaults to what's needed based on axis and chart types
   pad?: GridProps['pad'];
-  // property - for richer axis and detail
+  // series - the data item properties and any
   series: SeriesType | SeriesType[];
   margin?: MarginType; // generic
   size?: ChartProps['size']; // width and height, defaults to 'fill'

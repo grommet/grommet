@@ -2602,6 +2602,14 @@ string",
         "name": "axis",
       },
       Object {
+        "defaultValue": "align",
+        "description": "When set to 'align', indicates that the bounds of all series
+      should be aligned. When not set, the bounds of each series
+      property are based solely on the data found for that property.",
+        "format": "align",
+        "name": "bounds",
+      },
+      Object {
         "description": "How to visualize the data.
     'property' indicates which property of the data objects to use.
     When 'property' is an array, multiple properties are used for a
@@ -2671,6 +2679,7 @@ string",
     string,
   type: 
     bar
+    bars
     line
     area
     point
@@ -2740,6 +2749,7 @@ string",
       string,
     type: 
       bar
+      bars
       line
       area
       point
@@ -7581,6 +7591,7 @@ boolean",
 <WorldMap />",
   },
   "__esModule": true,
+  "calcBounds": [Function],
   "calcs": [Function],
   "round": [Function],
 }

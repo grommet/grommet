@@ -36,7 +36,7 @@ const Example = () => (
         chart={[
           {
             property: ['usage', 'bonus'],
-            type: 'bar',
+            type: 'bars',
           },
         ]}
         axis={{ x: { property: 'date', granularity: 'fine' } }}

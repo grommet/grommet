@@ -10,9 +10,11 @@ for (let i = 0; i < 13; i += 1) {
   const v2 = Math.cos(i / 2.0);
   data.push({
     date: `2020-07-${((i % 30) + 1).toString().padStart(2, 0)}`,
-    amount: Math.floor(v * 100),
-    need: Math.floor(v2 * 10),
-    growth: i * 10,
+    amount: Math.floor(v * 10),
+    need: Math.floor(v2 * 9),
+    needMax: Math.floor(v2 * 9) + i / 2,
+    needMin: Math.floor(v2 * 9) - i / 2,
+    growth: i,
   });
 }
 
@@ -22,6 +24,7 @@ const Example = () => (
       <DataChart
         data={data}
         series={['date', 'amount', 'need', 'growth']}
+        bounds="align"
         chart={[
           {
             property: 'amount',
@@ -38,6 +41,13 @@ const Example = () => (
           },
           { property: 'amount', type: 'bar', thickness: 'hair' },
           { property: 'amount', type: 'point', thickness: 'small' },
+          {
+            property: ['needMin', 'needMax'],
+            type: 'area',
+            thickness: 'xsmall',
+            color: 'graph-3',
+            opacity: 'medium',
+          },
           {
             property: 'need',
             type: 'line',

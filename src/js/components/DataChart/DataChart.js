@@ -6,7 +6,7 @@ import React, {
   useState,
 } from 'react';
 import { Box } from '../Box';
-import { Chart, calcs } from '../Chart';
+import { Chart, calcs, calcBounds } from '../Chart';
 import { Grid } from '../Grid';
 import { Stack } from '../Stack';
 import { Detail } from './Detail';
@@ -28,6 +28,7 @@ const DataChart = forwardRef(
     {
       a11yTitle,
       axis: axisProp = true,
+      bounds: boundsProp = 'align',
       chart,
       data = [],
       detail,
@@ -92,22 +93,31 @@ const DataChart = forwardRef(
     // The index into 'charts' can be used to index into 'chartValues'.
     const chartValues = useMemo(
       () =>
-        charts.map(({ opacity, property }) => {
+        charts.map(({ opacity, property, type }) => {
           if (property) {
             if (Array.isArray(property)) {
-              // A stacked bar chart has multiple properties. In this case,
-              // this returns an array of values, one per property.
-              // Further down, where we render, each property is rendered
-              // using a separate Chart component and the values are stacked
-              // such that they line up appropriately.
-              const totals = [];
-              return property.map(cp => {
-                return seriesValues[cp].map((v, i) => {
-                  const base = totals[i] || 0;
-                  totals[i] = base + v;
-                  return [i, base, base + v];
+              // A range chart or a stacked bar chart have multiple properties.
+              // In this case, this returns an array of values,
+              // one per property.
+              if (type === 'bars') {
+                // Further down, where we render, each property is rendered
+                // using a separate Chart component and the values are stacked
+                // such that they line up appropriately.
+                const totals = [];
+                return property.map(cp => {
+                  return seriesValues[cp].map((v, i) => {
+                    const base = totals[i] || 0;
+                    totals[i] = base + v;
+                    return [i, base, base + v];
+                  });
                 });
-              });
+              }
+              return data.map((_, index) => [
+                index,
+                ...property.map(p =>
+                  seriesValues[p] ? seriesValues[p][index] : data[index][p],
+                ),
+              ]);
             }
             if (typeof property === 'object') {
               // When 'property' is an array, the keys of this array indicate
@@ -136,7 +146,7 @@ const DataChart = forwardRef(
           }
           return undefined;
         }),
-      [charts, seriesValues],
+      [charts, data, seriesValues],
     );
 
     // map granularities to work well with the number of data points we have
@@ -222,9 +232,9 @@ const DataChart = forwardRef(
         steps[1] = granularities.y[granularity] - 1;
       } else steps[1] = 1;
 
-      return chartValues.map((_, index) => {
-        if (Array.isArray(chartValues[index][0])) {
-          // merge values for stacked bars case
+      let chartBounds = chartValues.map((_, index) => {
+        if (charts[index].type === 'bars') {
+          // merge values for bars cases
           const mergedValues = [...chartValues[index][0]];
           chartValues[index].slice(1).forEach(values => {
             mergedValues.forEach((__, i) => {
@@ -235,15 +245,30 @@ const DataChart = forwardRef(
               ];
             });
           });
-          return calcs(mergedValues, { coarseness, steps });
+          return calcBounds(mergedValues, { coarseness, steps });
         }
         // if this is a data driven x chart, set coarseness for x
-        return calcs(chartValues[index], {
+        return calcBounds(chartValues[index], {
           coarseness: charts[index].property.x ? [5, 5] : coarseness,
           steps,
         });
       });
-    }, [axis, charts, chartValues, data, granularities]);
+
+      if (boundsProp === 'align') {
+        const alignedBounds = [...chartBounds[0]];
+        chartBounds.forEach(bounds => {
+          alignedBounds[0][0] = Math.min(alignedBounds[0][0], bounds[0][0]);
+          alignedBounds[0][1] = Math.max(alignedBounds[0][1], bounds[0][1]);
+          alignedBounds[1][0] = Math.min(alignedBounds[1][0], bounds[1][0]);
+          alignedBounds[1][1] = Math.max(alignedBounds[1][1], bounds[1][1]);
+        });
+        chartBounds = chartBounds.map(() => alignedBounds);
+      }
+
+      return chartValues.map((values, index) => {
+        return calcs(values, { bounds: chartBounds[index], steps });
+      });
+    }, [axis, boundsProp, charts, chartValues, data, granularities]);
 
     // normalize how we style data properties for use by Legend and Detail
     const seriesStyles = useMemo(() => {
@@ -253,6 +278,7 @@ const DataChart = forwardRef(
         const { thickness: calcThickness } = chartProps[index];
 
         if (typeof property === 'object' && !Array.isArray(property)) {
+          // data driven point chart
           Object.keys(property).forEach(aspect => {
             const prop = property[aspect];
             if (!result[prop.property || prop])
@@ -426,8 +452,8 @@ const DataChart = forwardRef(
       <Stack gridArea="charts" guidingChild={guidingChild} fill={stackFill}>
         {guide && guide.x && <XGuide guide={guide} pad={pad} />}
         {guide && guide.y && <YGuide guide={guide} pad={pad} />}
-        {charts.map(({ property: prop, x, y, ...chartRest }, i) => {
-          if (Array.isArray(prop)) {
+        {charts.map(({ property: prop, type, x, y, ...chartRest }, i) => {
+          if (type === 'bars') {
             // reverse to ensure area Charts are stacked in the right order
             return prop
               .map((cProp, j) => (
@@ -439,6 +465,7 @@ const DataChart = forwardRef(
                   {...seriesStyles[cProp]}
                   {...chartProps[i]}
                   {...chartRest}
+                  type="bar"
                   size={size}
                   pad={pad}
                 />
@@ -454,6 +481,7 @@ const DataChart = forwardRef(
               {...seriesStyles[prop]}
               {...chartProps[i]}
               {...chartRest}
+              type={type}
               size={size}
               pad={pad}
             />
