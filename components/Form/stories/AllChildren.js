@@ -10,6 +10,24 @@ var _themes = require("grommet/themes");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+var passwordRulesStrong = [{
+  regexp: new RegExp('(?=.*?[A-Z])'),
+  message: 'One uppercase letter',
+  status: 'error'
+}, {
+  regexp: new RegExp('(?=.*?[a-z])'),
+  message: 'One lowercase letter',
+  status: 'error'
+}, {
+  regexp: new RegExp('(?=.*?[#?!@$ %^&*-])'),
+  message: 'One special character',
+  status: 'error'
+}, {
+  regexp: new RegExp('.{8,}'),
+  message: 'At least 8 characters',
+  status: 'error'
+}];
+
 var Example = function Example() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
@@ -27,6 +45,11 @@ var Example = function Example() {
     onSubmit: function onSubmit(_ref) {
       var value = _ref.value;
       return console.log('Submit', value);
+    },
+    onValidate: function onValidate(_ref2) {
+      var errors = _ref2.errors,
+          infos = _ref2.infos;
+      return console.log('Validate', errors, infos);
     }
   }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     label: "Name",
@@ -54,6 +77,15 @@ var Example = function Example() {
       regexp: /^[\w]+$/,
       placeholder: 'com'
     }]
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+    label: "Password",
+    name: "password",
+    htmlFor: "password",
+    validate: passwordRulesStrong
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
+    name: "password",
+    id: "password",
+    type: "password"
   })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     name: "subscription"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.CheckBoxGroup, {

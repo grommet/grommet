@@ -13,6 +13,10 @@ export interface FormProps<T> {
   onChange?: (value: T) => void;
   onSubmit?: (event: FormExtendedEvent<T>) => void;
   onReset?: (event: React.SyntheticEvent) => any;
+  onValidate?: (validationResults: {
+    errors: Record<string, any>;
+    infos: Record<string, any>;
+  }) => void;
   validate?: 'blur' | 'submit';
   value?: {};
 }

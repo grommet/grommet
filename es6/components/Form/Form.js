@@ -9,9 +9,11 @@ var defaultMessages = {
   required: 'required'
 };
 var defaultValue = {};
-var defaultErrors = {};
-var defaultInfos = {};
-var defaultTouched = {}; // validations is an array from Object.entries()
+var defaultTouched = {};
+var defaultValidationResults = {
+  errors: {},
+  infos: {}
+}; // validations is an array from Object.entries()
 
 var validate = function validate(validations, value, omitValid) {
   var nextErrors = {};
@@ -44,18 +46,19 @@ var validate = function validate(validations, value, omitValid) {
 var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   var children = _ref2.children,
       _ref2$errors = _ref2.errors,
-      errorsProp = _ref2$errors === void 0 ? defaultErrors : _ref2$errors,
+      errorsProp = _ref2$errors === void 0 ? defaultValidationResults.errors : _ref2$errors,
       _ref2$infos = _ref2.infos,
-      infosProp = _ref2$infos === void 0 ? defaultInfos : _ref2$infos,
+      infosProp = _ref2$infos === void 0 ? defaultValidationResults.infos : _ref2$infos,
       _ref2$messages = _ref2.messages,
       messages = _ref2$messages === void 0 ? defaultMessages : _ref2$messages,
       onChange = _ref2.onChange,
       _onReset = _ref2.onReset,
       _onSubmit = _ref2.onSubmit,
+      onValidate = _ref2.onValidate,
       _ref2$validate = _ref2.validate,
       validateOn = _ref2$validate === void 0 ? 'submit' : _ref2$validate,
       valueProp = _ref2.value,
-      rest = _objectWithoutPropertiesLoose(_ref2, ["children", "errors", "infos", "messages", "onChange", "onReset", "onSubmit", "validate", "value"]);
+      rest = _objectWithoutPropertiesLoose(_ref2, ["children", "errors", "infos", "messages", "onChange", "onReset", "onSubmit", "onValidate", "validate", "value"]);
 
   var _useState = useState(valueProp || defaultValue),
       valueState = _useState[0],
@@ -65,37 +68,35 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     return valueProp || valueState;
   }, [valueProp, valueState]);
 
-  var _useState2 = useState(errorsProp),
-      errors = _useState2[0],
-      setErrors = _useState2[1];
+  var _useState2 = useState(defaultTouched),
+      touched = _useState2[0],
+      setTouched = _useState2[1];
+
+  var _useState3 = useState(defaultValidationResults),
+      validationResults = _useState3[0],
+      setValidationResults = _useState3[1];
 
   useEffect(function () {
-    return setErrors(errorsProp);
-  }, [errorsProp]);
-
-  var _useState3 = useState(infosProp),
-      infos = _useState3[0],
-      setInfos = _useState3[1];
-
-  useEffect(function () {
-    return setInfos(infosProp);
-  }, [infosProp]);
-
-  var _useState4 = useState(defaultTouched),
-      touched = _useState4[0],
-      setTouched = _useState4[1];
-
+    return setValidationResults({
+      errors: errorsProp,
+      infos: infosProp
+    });
+  }, [errorsProp, infosProp]);
   var validations = useRef({}); // clear any errors when value changes
 
   useEffect(function () {
-    setErrors(function (prevErrors) {
+    setValidationResults(function (prevValidationResults) {
       var _validate = validate(Object.entries(validations.current).filter(function (_ref3) {
         var n = _ref3[0];
-        return prevErrors[n];
+        return prevValidationResults.errors[n] || prevValidationResults.infos[n];
       }), value),
-          nextErrors = _validate[0];
+          nextErrors = _validate[0],
+          nextInfos = _validate[1];
 
-      return _extends({}, prevErrors, nextErrors);
+      return {
+        errors: _extends({}, prevValidationResults.errors, nextErrors),
+        infos: _extends({}, prevValidationResults.infos, nextInfos)
+      };
     });
   }, [touched, value]); // There are three basic patterns of handling form input value state:
   //
@@ -131,9 +132,9 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   //
 
   var useFormInput = function useFormInput(name, componentValue, initialValue) {
-    var _useState5 = useState(initialValue),
-        inputValue = _useState5[0],
-        setInputValue = _useState5[1];
+    var _useState4 = useState(initialValue),
+        inputValue = _useState4[0],
+        setInputValue = _useState4[1];
 
     var formValue = name ? value[name] : undefined; // This effect is for pattern #2, where the controlled input
     // component is driving the value via componentValue.
@@ -185,8 +186,8 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
         name = _ref4.name,
         required = _ref4.required,
         validateArg = _ref4.validate;
-    var error = errorArg || errors[name];
-    var info = infoArg || infos[name];
+    var error = errorArg || validationResults.errors[name];
+    var info = infoArg || validationResults.infos[name];
     useEffect(function () {
       var validateSingle = function validateSingle(aValidate, value2, data) {
         var result;
@@ -249,15 +250,18 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
           return touched[n] || n === name;
         }), value),
             nextErrors = _validate2[0],
-            nextInfos = _validate2[1]; // keep any previous errors and infos for untouched keys,
-        // which probably came from a submit
+            nextInfos = _validate2[1]; // give user access to errors that have occurred on validation
 
 
-        setErrors(function (prevErrors) {
-          return _extends({}, prevErrors, nextErrors);
-        });
-        setInfos(function (prevInfos) {
-          return _extends({}, prevInfos, nextInfos);
+        setValidationResults(function (prevValidationResults) {
+          // keep any previous errors and infos for untouched keys,
+          // which probably came from a submit
+          var nextValidationResults = {
+            errors: _extends({}, prevValidationResults.errors, nextErrors),
+            infos: _extends({}, prevValidationResults.infos, nextInfos)
+          };
+          if (onValidate) onValidate(nextValidationResults);
+          return nextValidationResults;
         });
       } : undefined
     };
@@ -272,9 +276,8 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
         if (onChange) onChange(defaultValue);
       }
 
-      setErrors(defaultErrors);
-      setInfos(defaultInfos);
       setTouched(defaultTouched);
+      setValidationResults(defaultValidationResults);
 
       if (_onReset) {
         event.persist(); // extract from React's synthetic event pool
@@ -295,8 +298,14 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
           nextErrors = _validate3[0],
           nextInfos = _validate3[1];
 
-      setErrors(nextErrors);
-      setInfos(nextInfos);
+      setValidationResults(function () {
+        var nextValidationResults = {
+          errors: nextErrors,
+          infos: nextInfos
+        };
+        if (onValidate) onValidate(nextValidationResults);
+        return nextValidationResults;
+      });
 
       if (Object.keys(nextErrors).length === 0 && _onSubmit) {
         event.persist(); // extract from React's synthetic event pool
