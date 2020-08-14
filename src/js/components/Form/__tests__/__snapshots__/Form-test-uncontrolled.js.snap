@@ -1398,6 +1398,26 @@ exports[`Form uncontrolled uncontrolled 1`] = `
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c4 {
   box-sizing: border-box;
   font-size: inherit;
@@ -1517,7 +1537,7 @@ exports[`Form uncontrolled uncontrolled 2`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 kIXxtf"
+      class="StyledButton-sc-323bzc-0 gLndZo"
       type="submit"
     >
       Submit
@@ -1551,7 +1571,7 @@ exports[`Form uncontrolled uncontrolled 3`] = `
       </div>
     </div>
     <button
-      class="StyledButton-sc-323bzc-0 kIXxtf"
+      class="StyledButton-sc-323bzc-0 gLndZo"
       type="submit"
     >
       Submit
@@ -1631,6 +1651,26 @@ exports[`Form uncontrolled update 1`] = `
 
 .c5:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c4 {

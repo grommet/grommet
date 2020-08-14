@@ -35,17 +35,15 @@ describe('Select', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
 
-  test('opens and closes', () => {
+  test('prop: onOpen', () => {
     jest.useFakeTimers();
     const onOpen = jest.fn();
-    const onClose = jest.fn();
     const { getByPlaceholderText, container } = render(
       <Select
         placeholder="test select"
         id="test-select"
         options={['one', 'two']}
         onOpen={onOpen}
-        onClose={onClose}
       />,
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -58,13 +56,24 @@ describe('Select', () => {
     jest.advanceTimersByTime(100);
     // verify that select is open
     expect(document.activeElement).toMatchSnapshot();
-    /* called twice because of bug, issue #4283
-    https://github.com/grommet/grommet/issues/4283
-    Test should be changed to 'toHaveBeenCalledTimes(1)' when the bug is fixed
-    */
-    expect(onOpen).toHaveBeenCalledTimes(2);
 
-    // closes select
+    expect(onOpen).toHaveBeenCalledTimes(1);
+  });
+
+  test('prop: onClose', () => {
+    jest.useFakeTimers();
+    const onClose = jest.fn();
+    const { getByPlaceholderText, container } = render(
+      <Select
+        placeholder="test select"
+        id="test-select"
+        options={['one', 'two']}
+        onClose={onClose}
+      />,
+    );
+
+    fireEvent.click(getByPlaceholderText('test select'));
+    // closes
     fireEvent.click(getByPlaceholderText('test select'));
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('test-select__drop')).toBeNull();
