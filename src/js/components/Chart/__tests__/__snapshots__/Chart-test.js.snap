@@ -9,7 +9,7 @@ Object {
     ],
     Array [
       2,
-      0,
+      0.8,
     ],
   ],
   "bounds": Array [
@@ -18,13 +18,13 @@ Object {
       2,
     ],
     Array [
-      0,
+      0.8,
       2,
     ],
   ],
   "dimensions": Array [
     1,
-    2,
+    1.2,
   ],
   "pad": "large",
   "thickness": "xlarge",
@@ -40,6 +40,7 @@ Object {
     ],
     Array [
       3,
+      1.8,
     ],
   ],
   "bounds": Array [
@@ -48,13 +49,13 @@ Object {
       1,
     ],
     Array [
-      1.5000000000000002,
+      1.8,
       3.0000000000000004,
     ],
   ],
   "dimensions": Array [
     1,
-    1.5,
+    1.2,
   ],
   "pad": undefined,
   "thickness": "hair",
@@ -70,6 +71,7 @@ Object {
     ],
     Array [
       3,
+      1.8,
     ],
   ],
   "bounds": Array [
@@ -78,13 +80,13 @@ Object {
       1,
     ],
     Array [
-      1.5000000000000002,
+      1.8,
       3.0000000000000004,
     ],
   ],
   "dimensions": Array [
     1,
-    1.5,
+    1.2,
   ],
   "pad": "medium",
   "thickness": "large",
@@ -100,6 +102,7 @@ Object {
     ],
     Array [
       3,
+      1.8,
     ],
   ],
   "bounds": Array [
@@ -108,13 +111,13 @@ Object {
       1,
     ],
     Array [
-      1.5000000000000002,
+      1.8,
       3.0000000000000004,
     ],
   ],
   "dimensions": Array [
     1,
-    1.5,
+    1.2,
   ],
   "pad": "small",
   "thickness": "medium",
@@ -130,6 +133,7 @@ Object {
     ],
     Array [
       3,
+      1.8,
     ],
   ],
   "bounds": Array [
@@ -138,13 +142,13 @@ Object {
       1,
     ],
     Array [
-      1.5000000000000002,
+      1.8,
       3.0000000000000004,
     ],
   ],
   "dimensions": Array [
     1,
-    1.5,
+    1.2,
   ],
   "pad": "xsmall",
   "thickness": "small",
@@ -222,6 +226,7 @@ Object {
     ],
     Array [
       3,
+      1.8,
     ],
   ],
   "bounds": Array [
@@ -230,13 +235,13 @@ Object {
       1,
     ],
     Array [
-      1.5000000000000002,
+      1.8,
       3.0000000000000004,
     ],
   ],
   "dimensions": Array [
     1,
-    1.5,
+    1.2,
   ],
   "pad": "xxsmall",
   "thickness": "xsmall",

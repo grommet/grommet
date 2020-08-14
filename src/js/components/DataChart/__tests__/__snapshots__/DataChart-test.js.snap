@@ -175,7 +175,7 @@ exports[`DataChart axis 1`] = `
         <div
           className="c4"
         >
-          0
+          0.8
         </div>
       </div>
       <div
@@ -210,7 +210,7 @@ exports[`DataChart axis 1`] = `
               >
                 <title />
                 <path
-                  d="M 48,192 L 48,96"
+                  d="M 48,192 L 48,160"
                 />
               </g>
               <g
@@ -266,7 +266,7 @@ exports[`DataChart axis 1`] = `
           >
             <title />
             <path
-              d="M 48,192 L 48,96"
+              d="M 48,192 L 48,160"
             />
           </g>
           <g
@@ -309,7 +309,7 @@ exports[`DataChart axis 1`] = `
             >
               <title />
               <path
-                d="M 48,192 L 48,96"
+                d="M 48,192 L 48,160"
               />
             </g>
             <g
@@ -356,7 +356,7 @@ exports[`DataChart axis 1`] = `
         <div
           className="c4"
         >
-          0
+          0.8
         </div>
       </div>
       <div
@@ -388,7 +388,7 @@ exports[`DataChart axis 1`] = `
             >
               <title />
               <path
-                d="M 48,192 L 48,96"
+                d="M 48,192 L 48,160"
               />
             </g>
             <g
@@ -432,7 +432,7 @@ exports[`DataChart axis 1`] = `
             >
               <title />
               <path
-                d="M 48,192 L 48,96"
+                d="M 48,192 L 48,160"
               />
             </g>
             <g
@@ -479,22 +479,22 @@ exports[`DataChart axis 1`] = `
         <div
           className="c4"
         >
-          1.67
+          1.7
         </div>
         <div
           className="c4"
         >
-          1.34
+          1.4
         </div>
         <div
           className="c4"
         >
-          1
+          1.1
         </div>
         <div
           className="c4"
         >
-          0.67
+          0.8
         </div>
       </div>
       <div
@@ -526,7 +526,7 @@ exports[`DataChart axis 1`] = `
             >
               <title />
               <path
-                d="M 48,192 L 48,144"
+                d="M 48,192 L 48,160"
               />
             </g>
             <g
@@ -534,7 +534,7 @@ exports[`DataChart axis 1`] = `
             >
               <title />
               <path
-                d="M 336,192 L 336,2.842170943040401e-14"
+                d="M 336,192 L 336,0"
               />
             </g>
           </g>
@@ -1758,7 +1758,7 @@ exports[`DataChart default 1`] = `
         <div
           className="c4"
         >
-          0
+          0.8
         </div>
       </div>
       <div
@@ -1793,7 +1793,7 @@ exports[`DataChart default 1`] = `
               >
                 <title />
                 <path
-                  d="M 48,192 L 48,96"
+                  d="M 48,192 L 48,160"
                 />
               </g>
               <g
@@ -2075,7 +2075,7 @@ exports[`DataChart detail 1`] = `
         <div
           className="c4"
         >
-          0
+          0.8
         </div>
       </div>
       <div
@@ -2110,7 +2110,7 @@ exports[`DataChart detail 1`] = `
               >
                 <title />
                 <path
-                  d="M 48,192 L 48,96"
+                  d="M 48,192 L 48,160"
                 />
               </g>
               <g
@@ -2194,7 +2194,7 @@ exports[`DataChart detail 1`] = `
         <div
           className="c4"
         >
-          0
+          0.8
         </div>
       </div>
       <div
@@ -2229,7 +2229,7 @@ exports[`DataChart detail 1`] = `
               >
                 <title />
                 <path
-                  d="M 48,192 L 48,96"
+                  d="M 48,192 L 48,160"
                 />
               </g>
               <g
@@ -2438,7 +2438,7 @@ exports[`DataChart gap 1`] = `
         <div
           className="c4"
         >
-          0
+          0.8
         </div>
       </div>
       <div
@@ -2473,7 +2473,7 @@ exports[`DataChart gap 1`] = `
               >
                 <title />
                 <path
-                  d="M 48,192 L 48,96"
+                  d="M 48,192 L 48,160"
                 />
               </g>
               <g
@@ -2521,7 +2521,7 @@ exports[`DataChart gap 1`] = `
         <div
           className="c4"
         >
-          0
+          0.8
         </div>
       </div>
       <div
@@ -2556,7 +2556,7 @@ exports[`DataChart gap 1`] = `
               >
                 <title />
                 <path
-                  d="M 48,192 L 48,96"
+                  d="M 48,192 L 48,160"
                 />
               </g>
               <g
@@ -2604,7 +2604,7 @@ exports[`DataChart gap 1`] = `
         <div
           className="c4"
         >
-          0
+          0.8
         </div>
       </div>
       <div
@@ -2639,7 +2639,7 @@ exports[`DataChart gap 1`] = `
               >
                 <title />
                 <path
-                  d="M 48,192 L 48,96"
+                  d="M 48,192 L 48,160"
                 />
               </g>
               <g
@@ -2942,7 +2942,7 @@ exports[`DataChart guide 1`] = `
         <div
           className="c4"
         >
-          0
+          0.8
         </div>
       </div>
       <div
@@ -3005,7 +3005,7 @@ exports[`DataChart guide 1`] = `
               >
                 <title />
                 <path
-                  d="M 48,192 L 48,96"
+                  d="M 48,192 L 48,160"
                 />
               </g>
               <g
@@ -3053,7 +3053,7 @@ exports[`DataChart guide 1`] = `
         <div
           className="c4"
         >
-          0
+          0.8
         </div>
       </div>
       <div
@@ -3088,7 +3088,7 @@ exports[`DataChart guide 1`] = `
               >
                 <title />
                 <path
-                  d="M 48,192 L 48,96"
+                  d="M 48,192 L 48,160"
                 />
               </g>
               <g
@@ -3136,7 +3136,7 @@ exports[`DataChart guide 1`] = `
         <div
           className="c4"
         >
-          0
+          0.8
         </div>
       </div>
       <div
@@ -3185,7 +3185,7 @@ exports[`DataChart guide 1`] = `
               >
                 <title />
                 <path
-                  d="M 48,192 L 48,96"
+                  d="M 48,192 L 48,160"
                 />
               </g>
               <g
@@ -3233,7 +3233,7 @@ exports[`DataChart guide 1`] = `
         <div
           className="c4"
         >
-          0
+          0.8
         </div>
       </div>
       <div
@@ -3291,7 +3291,7 @@ exports[`DataChart guide 1`] = `
               >
                 <title />
                 <path
-                  d="M 48,192 L 48,96"
+                  d="M 48,192 L 48,160"
                 />
               </g>
               <g
@@ -3578,7 +3578,7 @@ exports[`DataChart legend 1`] = `
           <div
             className="c4"
           >
-            0
+            0.8
           </div>
         </div>
         <div
@@ -3613,7 +3613,7 @@ exports[`DataChart legend 1`] = `
                 >
                   <title />
                   <path
-                    d="M 48,192 L 48,96"
+                    d="M 48,192 L 48,160"
                   />
                 </g>
                 <g
@@ -3689,7 +3689,7 @@ exports[`DataChart legend 1`] = `
         <div
           className="c4"
         >
-          0
+          0.8
         </div>
       </div>
       <div
@@ -3724,7 +3724,7 @@ exports[`DataChart legend 1`] = `
               >
                 <title />
                 <path
-                  d="M 48,192 L 48,96"
+                  d="M 48,192 L 48,160"
                 />
               </g>
               <g
@@ -3993,7 +3993,7 @@ exports[`DataChart pad 1`] = `
         <div
           className="c4"
         >
-          0
+          0.8
         </div>
       </div>
       <div
@@ -4028,7 +4028,7 @@ exports[`DataChart pad 1`] = `
               >
                 <title />
                 <path
-                  d="M 12,180 L 12,96"
+                  d="M 12,180 L 12,152"
                 />
               </g>
               <g
@@ -4076,7 +4076,7 @@ exports[`DataChart pad 1`] = `
         <div
           className="c11"
         >
-          0
+          0.8
         </div>
       </div>
       <div
@@ -4111,7 +4111,7 @@ exports[`DataChart pad 1`] = `
               >
                 <title />
                 <path
-                  d="M 24,168 L 24,96"
+                  d="M 24,168 L 24,144"
                 />
               </g>
               <g
@@ -4159,7 +4159,7 @@ exports[`DataChart pad 1`] = `
         <div
           className="c12"
         >
-          0
+          0.8
         </div>
       </div>
       <div
@@ -4194,7 +4194,7 @@ exports[`DataChart pad 1`] = `
               >
                 <title />
                 <path
-                  d="M 48,144 L 48,96"
+                  d="M 48,144 L 48,128"
                 />
               </g>
               <g
@@ -4441,7 +4441,7 @@ exports[`DataChart size 1`] = `
         <div
           className="c4"
         >
-          0
+          0.8
         </div>
       </div>
       <div
@@ -4524,7 +4524,7 @@ exports[`DataChart size 1`] = `
         <div
           className="c4"
         >
-          0
+          0.8
         </div>
       </div>
       <div
@@ -4559,7 +4559,7 @@ exports[`DataChart size 1`] = `
               >
                 <title />
                 <path
-                  d="M 48,192 L 48,96"
+                  d="M 48,192 L 48,160"
                 />
               </g>
               <g
@@ -4607,7 +4607,7 @@ exports[`DataChart size 1`] = `
         <div
           className="c4"
         >
-          0
+          0.8
         </div>
       </div>
       <div
@@ -4642,7 +4642,7 @@ exports[`DataChart size 1`] = `
               >
                 <title />
                 <path
-                  d="M 48,192 L 48,96"
+                  d="M 48,192 L 48,160"
                 />
               </g>
               <g

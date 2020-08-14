@@ -72,9 +72,9 @@ export const calcBounds = (values, options = {}) => {
       else maxY = minY + 1;
     }
 
-    // Calculate some reasonable y bounds based on the max and min values.
+    // Calculate some reasonable bounds based on the max and min values.
     // This is so values like 87342.12 don't end up being displayed as the
-    // graph axis edge label.
+    // graph axis labels.
     const [cX, cY] = coarseness;
     if (cX) {
       const deltaX = maxX - minX;
@@ -89,7 +89,7 @@ export const calcBounds = (values, options = {}) => {
       maxY = alignMax(maxY, intervalY);
     }
 
-    if (minY > 0 && Math.abs(minY) !== Math.abs(maxY)) {
+    if (minY < 0 && maxY > 0 && Math.abs(minY) !== Math.abs(maxY)) {
       // Adjust min and max when crossing 0 to ensure 0 will be shown on
       // the Y axis based on the number of steps.
 
