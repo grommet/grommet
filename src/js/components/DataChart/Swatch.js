@@ -8,22 +8,29 @@ const Swatch = ({ aspect, color, point, thickness }) => {
   const half = dim / 2;
   let width = dim;
   let content;
-  if (aspect === 'y')
+  if (aspect === 'x')
     content = <path d={`M 0 ${half} L ${dim} ${half}`} stroke="#000" />;
-  else if (aspect === 'x')
+  else if (aspect === 'y')
     content = <path d={`M ${half} 0 L ${half} ${dim}`} stroke="#000" />;
   else if (aspect === 'thickness')
     content = (
       <g stroke="#000" fill="none">
-        <circle cx={half} cy={half} r={1} />
-        <circle cx={half} cy={half} r={half - 2} />
+        <circle cx={half} cy={half} r={half / 4} />
+        <circle cx={half} cy={half} r={half - 1} />
       </g>
     );
   else if (aspect === 'color')
     content = (
       <g>
-        <rect x={0} y={0} width={half} height={dim} fill="#000" opacity={0.5} />
-        <rect x={half} y={0} width={half} height={dim} fill="#000" />
+        <rect x={0} y={0} width={half} height={dim} fill="#000" opacity={0.4} />
+        <rect
+          x={half}
+          y={0}
+          width={half}
+          height={dim}
+          fill="#000"
+          opacity={0.8}
+        />
       </g>
     );
   else if (point === 'circle')
@@ -47,9 +54,8 @@ const Swatch = ({ aspect, color, point, thickness }) => {
     else if (thickness) {
       width = parseMetricToNum(theme.global.edgeSize[thickness]) || dim;
       d = `M 0 0 L ${width} 0 L ${width} ${dim} L 0 ${dim} Z`;
-    }
-    else // box
-      d = `M 0 0 L ${dim} 0 L ${dim} ${dim} L 0 ${dim} Z`;
+    } // box
+    else d = `M 0 0 L ${dim} 0 L ${dim} ${dim} L 0 ${dim} Z`;
     content = <path d={d} />;
   }
   const opacity =
