@@ -126,9 +126,10 @@ const Select = forwardRef(
     useEffect(() => setOpen(propOpen), [propOpen]);
 
     const onRequestOpen = useCallback(() => {
+      if (open) return;
       setOpen(true);
       if (onOpen) onOpen();
-    }, [onOpen]);
+    }, [onOpen, open]);
 
     const onRequestClose = useCallback(() => {
       setOpen(false);
@@ -264,7 +265,6 @@ const Select = forwardRef(
                   value={inputValue}
                   size={size}
                   theme={theme}
-                  onClick={disabled === true ? undefined : onRequestOpen}
                 />
               )}
             </Box>
