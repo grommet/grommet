@@ -13,6 +13,7 @@ import {
 export interface ChartProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
+  animate?: boolean;
   gridArea?: GridAreaType;
   margin?: MarginType;
   bounds?: number[][];

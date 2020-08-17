@@ -1771,6 +1771,11 @@ string",
         "name": "margin",
       },
       Object {
+        "description": "Whether to animate drawing.",
+        "format": "boolean",
+        "name": "animate",
+      },
+      Object {
         "description": "The limits for the values, specified as a two dimensional array. 
       The first array specifies the limits of the x-axis. The second array 
       specifies the limits of the y-axis. 

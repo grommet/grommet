@@ -124,6 +124,14 @@ xlarge
 string
 ```
 
+**animate**
+
+Whether to animate drawing.
+
+```
+boolean
+```
+
 **bounds**
 
 The limits for the values, specified as a two dimensional array. 

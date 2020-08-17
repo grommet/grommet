@@ -555,6 +555,7 @@ const Chart = React.forwardRef(
         preserveAspectRatio="none"
         width={size === 'full' ? '100%' : size[0]}
         height={size === 'full' ? '100%' : size[1]}
+        typeProp={type} // prevent adding to DOM
         {...rest}
       >
         {defs}

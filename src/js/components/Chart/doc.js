@@ -31,6 +31,7 @@ export const doc = Chart => {
 
   DocumentedChart.propTypes = {
     ...genericProps,
+    animate: PropTypes.bool.description('Whether to animate drawing.'),
     bounds: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).description(
       `The limits for the values, specified as a two dimensional array. 
       The first array specifies the limits of the x-axis. The second array 
