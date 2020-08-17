@@ -37,7 +37,7 @@ const PopUpContainer = ({
             background="accent-1"
             primary
           >
-            OK
+            <Text weight={600}>OK</Text>
           </Button>
           <Button
             {...theme.modalpopup.buttons.button}
@@ -45,7 +45,7 @@ const PopUpContainer = ({
             background="accent-2"
             secondary
           >
-            Cancel
+            <Text weight={600}>Cancel</Text>
           </Button>
         </Box>
       )}
