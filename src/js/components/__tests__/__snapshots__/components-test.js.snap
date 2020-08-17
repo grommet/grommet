@@ -3507,6 +3507,14 @@ string",
         "name": "onReset",
       },
       Object {
+        "description": "Function that will be called when the form is validated. The
+      single argument is an event containing the latest error object
+      via \`validationResults.errors\` and info object via 
+      \`validationResults.infos\`.",
+        "format": "function",
+        "name": "onValidate",
+      },
+      Object {
         "defaultValue": "submit",
         "description": "When to perform validation",
         "format": "blur
