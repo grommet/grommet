@@ -45,6 +45,12 @@ export const doc = Form => {
       `Function that will be called when the form is reset. The
       single argument is the event provided by react.`,
     ),
+    onValidate: PropTypes.func.description(
+      `Function that will be called when the form is validated. The
+      single argument is an event containing the latest error object
+      via \`validationResults.errors\` and info object via 
+      \`validationResults.infos\`.`,
+    ),
     validate: PropTypes.oneOf(['blur', 'submit'])
       .description('When to perform validation')
       .defaultValue('submit'),
