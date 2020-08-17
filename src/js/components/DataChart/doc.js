@@ -80,7 +80,6 @@ const chartType = PropTypes.oneOfType([
 const seriesType = PropTypes.oneOfType([
   PropTypes.string, // property
   PropTypes.shape({
-    bounds: PropTypes.arrayOf(PropTypes.number),
     label: PropTypes.oneOfType([PropTypes.string]),
     prefix: PropTypes.string,
     property: PropTypes.string,
@@ -199,10 +198,14 @@ export const doc = DataChart => {
     legend: PropTypes.bool.description('Whether to include a legend'),
     pad: padPropType.description(`Spacing around the outer edge of
     the drawing coordinate area for the graphic elements to overflow into.`),
-    series: PropTypes.oneOfType([
-      seriesType,
-      PropTypes.arrayOf(seriesType),
-    ]).description('TBD'),
+    series: PropTypes.oneOfType([seriesType, PropTypes.arrayOf(seriesType)])
+      .description(`Describes which parts of the 'data' are of interest and
+    how to handle them. 'property' indicates which property of the 'data'
+    objects this series refers to. 'label' indicates how to label the series
+    in a legend or hover details. 'prefix' and 'suffix' are applied to the
+    data values shown in an axis, legend, or details. 'render' allows custom
+    rendering of the data value. 'render' is called with:
+    (value, datum, property) => { return < />; }`),
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['fill']),
       PropTypes.shape({

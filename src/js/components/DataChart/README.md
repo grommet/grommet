@@ -486,12 +486,17 @@ string
 
 **series**
 
-TBD
+Describes which parts of the 'data' are of interest and
+    how to handle them. 'property' indicates which property of the 'data'
+    objects this series refers to. 'label' indicates how to label the series
+    in a legend or hover details. 'prefix' and 'suffix' are applied to the
+    data values shown in an axis, legend, or details. 'render' allows custom
+    rendering of the data value. 'render' is called with:
+    (value, datum, property) => { return < />; }
 
 ```
 string
 {
-  bounds: [number],
   label: 
     string,
   prefix: string,
@@ -502,7 +507,6 @@ string
 [
   string
   {
-    bounds: [number],
     label: 
       string,
     prefix: string,

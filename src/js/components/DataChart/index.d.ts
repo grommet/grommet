@@ -39,7 +39,6 @@ type ChartType =
 type SeriesType =
   | string
   | {
-      bounds?: number[]; // defaults to largest and smallest data values
       label?: string | React.ReactNode; // used for legend and/or hover/touch detail
       prefix?: string; // used for values in axes and hover/touch detail
       property: string; // property key to get values from objects in data
