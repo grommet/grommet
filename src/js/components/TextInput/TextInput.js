@@ -3,6 +3,7 @@ import React, {
   useCallback,
   useContext,
   useEffect,
+  useMemo,
   useRef,
   useState,
 } from 'react';
@@ -119,25 +120,14 @@ const TextInput = forwardRef(
     const [focus, setFocus] = useState();
     const [showDrop, setShowDrop] = useState();
 
-    const handleTextSelect = useRef();
-    const handleSuggestionSelect = useRef();
-
-    // assigns select handlers
-    useEffect(() => {
-      if (onSelect && !onSuggestionSelect) {
-        // only onSelect is defined - use grommet's onSelect
-        handleSuggestionSelect.current = onSelect;
-      } else if (!onSelect && onSuggestionSelect) {
-        // only onSuggestionSelect is defined - use grommet's onSelect
-        handleSuggestionSelect.current = onSuggestionSelect;
-      } else {
-        // both onSelect and onSuggestionSelect are defined -
-        // onSelect uses webAPI version
-        // onSuggestionSelect in grommet's onSelect
-        handleSuggestionSelect.current = onSuggestionSelect;
-        handleTextSelect.current = onSelect;
-      }
-    }, [onSelect, onSuggestionSelect]);
+    const handleSuggestionSelect = useMemo(
+      () => (onSelect && !onSuggestionSelect ? onSelect : onSuggestionSelect),
+      [onSelect, onSuggestionSelect],
+    );
+    const handleTextSelect = useMemo(
+      () => (onSelect && onSuggestionSelect ? onSelect : undefined),
+      [onSelect, onSuggestionSelect],
+    );
 
     // if we have no suggestions, close drop if it's open
     useEffect(() => {
@@ -253,7 +243,7 @@ const TextInput = forwardRef(
 
     let drop;
     const extraProps = {
-      onSelect: handleTextSelect.current,
+      onSelect: handleTextSelect,
     };
     if (showDrop) {
       drop = (
@@ -266,10 +256,10 @@ const TextInput = forwardRef(
             // we stole the focus, give it back
             inputRef.current.focus();
             closeDrop();
-            if (handleSuggestionSelect.current) {
+            if (handleSuggestionSelect) {
               const adjustedEvent = event;
               adjustedEvent.suggestion = suggestions[activeSuggestionIndex];
-              handleSuggestionSelect.current(adjustedEvent);
+              handleSuggestionSelect(adjustedEvent);
             }
             setValue(suggestions[activeSuggestionIndex]);
           }}
@@ -331,12 +321,12 @@ const TextInput = forwardRef(
                             // we stole the focus, give it back
                             inputRef.current.focus();
                             closeDrop();
-                            if (handleSuggestionSelect.current) {
+                            if (handleSuggestionSelect) {
                               event.persist();
                               const adjustedEvent = event;
                               adjustedEvent.suggestion = suggestion;
-                              adjustedEvent.target = (ref || inputRef).current;
-                              handleSuggestionSelect.current(adjustedEvent);
+                              adjustedEvent.target = inputRef.current;
+                              handleSuggestionSelect(adjustedEvent);
                             }
                             setValue(suggestion);
                           }}
@@ -369,14 +359,14 @@ const TextInput = forwardRef(
         <Keyboard
           onEnter={event => {
             closeDrop();
-            if (activeSuggestionIndex >= 0 && handleSuggestionSelect.current) {
+            if (activeSuggestionIndex >= 0 && handleSuggestionSelect) {
               // prevent submitting forms when choosing a suggestion
               event.preventDefault();
               event.persist();
               const adjustedEvent = event;
               adjustedEvent.suggestion = suggestions[activeSuggestionIndex];
               adjustedEvent.target = (ref || inputRef).current;
-              handleSuggestionSelect.current(adjustedEvent);
+              handleSuggestionSelect(adjustedEvent);
             }
           }}
           onEsc={
