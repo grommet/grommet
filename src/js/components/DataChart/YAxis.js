@@ -5,12 +5,12 @@ import { round } from '../Chart';
 import { doublePad } from './utils';
 
 const YAxis = forwardRef(
-  ({ chartProps, pad, renderValue, serie }, ref) => {
+  ({ chartProps, pad, renderValue, serie = {} }, ref) => {
     const theme = useContext(ThemeContext);
     const { render, suffix } = serie;
 
     // pull the x-axis values from the first chart, all should have the same
-    const [,axisValues] = (Array.isArray(chartProps[0])
+    const [, axisValues] = (Array.isArray(chartProps[0])
       ? chartProps[0][0]
       : chartProps[0]
     ).axis;

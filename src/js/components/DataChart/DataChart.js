@@ -234,16 +234,14 @@ const DataChart = forwardRef(
 
       let chartBounds = chartValues.map((_, index) => {
         if (charts[index].type === 'bars') {
-          // merge values for bars cases
-          const mergedValues = [...chartValues[index][0]];
+          // merge values for bars case
+          let mergedValues = chartValues[index][0].slice(0);
           chartValues[index].slice(1).forEach(values => {
-            mergedValues.forEach((__, i) => {
-              mergedValues[i] = [
-                i,
-                Math.min(mergedValues[i][1], values[i][1]),
-                Math.max(mergedValues[i][2], values[1][2]),
-              ];
-            });
+            mergedValues = mergedValues.map((__, i) => [
+              i,
+              Math.min(mergedValues[i][1], values[i][1]),
+              Math.max(mergedValues[i][2], values[i][2]),
+            ]);
           });
           return calcBounds(mergedValues, { coarseness, steps });
         }
@@ -266,7 +264,8 @@ const DataChart = forwardRef(
       }
 
       return chartValues.map((values, index) => {
-        return calcs(values, { bounds: chartBounds[index], steps });
+        const calcValues = charts[index].type === 'bars' ? values[0] : values;
+        return calcs(calcValues, { bounds: chartBounds[index], steps });
       });
     }, [axis, boundsProp, charts, chartValues, data, granularities]);
 
@@ -391,17 +390,20 @@ const DataChart = forwardRef(
     const renderValue = (serie, dataIndex, valueArg) => {
       let value;
       if (valueArg !== undefined) {
-        if (serie.render) return serie.render(valueArg);
+        if (serie && serie.render) return serie.render(valueArg);
         value = valueArg;
       } else {
         const datum = data[dataIndex];
         value = datum[serie.property];
-        if (serie.render) return serie.render(value, datum, serie.property);
+        if (serie && serie.render)
+          return serie.render(value, datum, serie.property);
       }
-      const dateFormat = dateFormats[serie.property];
-      if (dateFormat) return dateFormat(new Date(value));
-      if (serie.prefix) value = `${serie.prefix}${value}`;
-      if (serie.suffix) value = `${value}${serie.suffix}`;
+      if (serie) {
+        const dateFormat = dateFormats[serie.property];
+        if (dateFormat) return dateFormat(new Date(value));
+        if (serie.prefix) value = `${serie.prefix}${value}`;
+        if (serie.suffix) value = `${value}${serie.suffix}`;
+      }
       return value;
     };
 
