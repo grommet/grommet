@@ -2,7 +2,7 @@ import * as React from 'react';
 
 export interface InfiniteScrollProps {
   children?: (...args: [string, number]) => React.ReactElement;
-  items?: (string | Record<string, any>)[];
+  items?: (string | number | React.ReactElement | Record<string, any>)[];
   onMore?: () => void;
   renderMarker?: (marker: React.ReactElement) => React.ReactElement;
   replace?: boolean;
