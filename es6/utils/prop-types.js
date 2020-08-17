@@ -52,3 +52,4 @@ export var hoverIndicatorPropType = PropTypes.oneOfType([PropTypes.bool, PropTyp
   repeat: PropTypes.oneOfType([PropTypes.oneOf(['no-repeat', 'repeat']), PropTypes.string]),
   size: PropTypes.oneOfType([PropTypes.oneOf(['cover', 'contain']), PropTypes.string])
 })]);
+export var pointPropType = PropTypes.oneOf(['circle', 'diamond', 'square', 'star', 'triangle', 'triangleDown']);

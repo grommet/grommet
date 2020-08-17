@@ -4,7 +4,7 @@ import { Box, DataChart, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 var data = [];
 
-for (var i = 0; i < 7; i += 1) {
+for (var i = 1; i < 8; i += 1) {
   var v = Math.sin(i / 2.0);
   data.push({
     date: "2020-" + (i % 12 + 1).toString().padStart(2, 0) + "-01",
@@ -21,14 +21,18 @@ var Example = function Example() {
     pad: "large"
   }, /*#__PURE__*/React.createElement(DataChart, {
     data: data,
-    chart: {
-      key: 'percent'
-    },
-    xAxis: true,
-    yAxis: true
+    series: "percent",
+    guide: {
+      x: {
+        granularity: 'fine'
+      },
+      y: {
+        granularity: 'medium'
+      }
+    }
   })));
 };
 
-storiesOf('DataChart', module).add('Axes default', function () {
+storiesOf('DataChart', module).add('Guide', function () {
   return /*#__PURE__*/React.createElement(Example, null);
 });

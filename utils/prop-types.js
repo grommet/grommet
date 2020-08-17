@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.hoverIndicatorPropType = exports.genericProps = exports.padPropType = exports.marginProp = exports.MARGIN_SIZES = exports.backgroundDoc = exports.colorPropType = exports.a11yTitlePropType = void 0;
+exports.pointPropType = exports.hoverIndicatorPropType = exports.genericProps = exports.padPropType = exports.marginProp = exports.MARGIN_SIZES = exports.backgroundDoc = exports.colorPropType = exports.a11yTitlePropType = void 0;
 
 var _reactDesc = require("react-desc");
 
@@ -77,3 +77,7 @@ var hoverIndicatorPropType = _reactDesc.PropTypes.oneOfType([_reactDesc.PropType
 })]);
 
 exports.hoverIndicatorPropType = hoverIndicatorPropType;
+
+var pointPropType = _reactDesc.PropTypes.oneOf(['circle', 'diamond', 'square', 'star', 'triangle', 'triangleDown']);
+
+exports.pointPropType = pointPropType;

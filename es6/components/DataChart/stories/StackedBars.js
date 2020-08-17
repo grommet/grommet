@@ -21,18 +21,8 @@ var Example = function Example() {
     pad: "large"
   }, /*#__PURE__*/React.createElement(DataChart, {
     data: data,
-    chart: [{
-      keys: [{
-        key: 'usage',
-        color: 'graph-1'
-      }, {
-        key: 'bonus',
-        color: 'graph-2'
-      }],
-      type: 'bar'
-    }],
-    xAxis: {
-      key: 'date',
+    series: [{
+      property: 'date',
       render: function render(date) {
         return /*#__PURE__*/React.createElement(Text, {
           margin: {
@@ -43,11 +33,22 @@ var Example = function Example() {
           day: 'numeric'
         }));
       }
+    }, 'usage', 'bonus'],
+    chart: [{
+      property: ['usage', 'bonus'],
+      type: 'bars'
+    }],
+    axis: {
+      x: {
+        property: 'date',
+        granularity: 'fine'
+      },
+      y: true
     },
-    yAxis: {
-      guide: true
+    guide: {
+      y: true
     },
-    gap: "medium"
+    legend: true
   })));
 };
 

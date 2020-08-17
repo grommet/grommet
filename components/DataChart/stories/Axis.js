@@ -12,12 +12,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 var data = [];
 
-for (var i = 0; i < 7; i += 1) {
+for (var i = 1; i < 8; i += 1) {
   var v = Math.sin(i / 2.0);
   var digits = (i % 12 + 1).toString().padStart(2, 0);
   data.push({
     // explore variations in date format by changing the xAxis key to
-    // the timer period you are interested in
+    // the time period you are interested in
     second: "2020-05-15T08:04:" + digits,
     minute: "2020-05-15T08:" + digits + ":00",
     hour: "2020-05-15T" + digits + ":00:00",
@@ -33,7 +33,7 @@ for (var i = 0; i < 7; i += 1) {
   });
 }
 
-var AxesDataChart = function AxesDataChart() {
+var Example = function Example() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -42,22 +42,24 @@ var AxesDataChart = function AxesDataChart() {
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.DataChart, {
     data: data,
-    chart: {
-      key: 'percent',
-      type: 'bar'
-    },
-    xAxis: {
-      key: 'day',
-      guide: true
-    },
-    yAxis: {
-      guide: true,
-      labels: 3,
+    series: ['day', {
+      property: 'percent',
       suffix: '%'
+    }],
+    chart: "percent",
+    axis: {
+      x: {
+        property: 'day',
+        granularity: 'fine'
+      },
+      y: {
+        property: 'percent',
+        granularity: 'medium'
+      }
     }
   })));
 };
 
-(0, _react2.storiesOf)('DataChart', module).add('Axes', function () {
-  return /*#__PURE__*/_react["default"].createElement(AxesDataChart, null);
+(0, _react2.storiesOf)('DataChart', module).add('Axis', function () {
+  return /*#__PURE__*/_react["default"].createElement(Example, null);
 });

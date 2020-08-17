@@ -12,11 +12,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 var data = [];
 
-for (var i = 0; i < 7; i += 1) {
+for (var i = 1; i < 8; i += 1) {
+  var v = Math.sin(i / 2.0);
   data.push({
-    date: "2020-07-" + (i % 31 + 1).toString().padStart(2, 0),
-    usage: Math.floor(Math.abs(Math.sin(i / 2.0) * 100)),
-    bonus: Math.floor(Math.abs(Math.cos(i / 2.0) * 100))
+    date: "2020-07-" + (i % 30 + 1).toString().padStart(2, 0),
+    percent: Math.abs(v * 100)
   });
 }
 
@@ -31,35 +31,25 @@ var Example = function Example() {
     data: data,
     series: [{
       property: 'date',
-      render: function render(date) {
-        return /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-          margin: {
-            horizontal: 'xsmall'
-          }
-        }, new Date(date).toLocaleDateString('en-US', {
-          month: 'numeric',
-          day: 'numeric'
-        }));
+      label: 'Date'
+    }, {
+      property: 'percent',
+      label: 'Percent',
+      render: function render(value) {
+        return Math.round(value) + "%";
       }
-    }, 'usage', 'bonus'],
-    chart: [{
-      property: ['usage', 'bonus'],
-      type: 'bars'
     }],
+    chart: "percent",
+    detail: true,
     axis: {
       x: {
         property: 'date',
-        granularity: 'fine'
-      },
-      y: true
-    },
-    guide: {
-      y: true
-    },
-    legend: true
+        granularity: 'medium'
+      }
+    }
   })));
 };
 
-(0, _react2.storiesOf)('DataChart', module).add('Stacked bars', function () {
+(0, _react2.storiesOf)('DataChart', module).add('Detail', function () {
   return /*#__PURE__*/_react["default"].createElement(Example, null);
 });

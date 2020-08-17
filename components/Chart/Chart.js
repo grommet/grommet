@@ -40,6 +40,7 @@ var Chart = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       id = _ref.id,
       onClick = _ref.onClick,
       onHover = _ref.onHover,
+      propsOpacity = _ref.opacity,
       _ref$overflow = _ref.overflow,
       overflow = _ref$overflow === void 0 ? false : _ref$overflow,
       pad = _ref.pad,
@@ -53,7 +54,7 @@ var Chart = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       type = _ref$type === void 0 ? 'bar' : _ref$type,
       _ref$values = _ref.values,
       propsValues = _ref$values === void 0 ? defaultValues : _ref$values,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "bounds", "color", "dash", "gap", "id", "onClick", "onHover", "overflow", "pad", "point", "round", "size", "thickness", "type", "values"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "bounds", "color", "dash", "gap", "id", "onClick", "onHover", "opacity", "overflow", "pad", "point", "round", "size", "thickness", "type", "values"]);
 
   var containerRef = (0, _utils.useForwardedRef)(ref);
 
@@ -424,7 +425,7 @@ var Chart = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
     if (color && color.color) colorName = color.color;else if (color) colorName = color;else if (theme.chart && theme.chart.color) colorName = theme.chart.color;
   }
 
-  var opacity = color && color.opacity ? theme.global.opacity[color.opacity] || color.opacity : undefined;
+  var opacity = propsOpacity || color && color.opacity ? theme.global.opacity[propsOpacity || color.opacity] || propsOpacity || color.opacity : undefined;
   var stroke;
 
   if (type !== 'point') {

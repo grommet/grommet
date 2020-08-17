@@ -19,6 +19,7 @@ var doc = function doc(Chart) {
     bounds: _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.number)).description("The limits for the values, specified as a two dimensional array. \n      The first array specifies the limits of the x-axis. The second array \n      specifies the limits of the y-axis. \n      For example: [[x-min, x-max], [y-min, y-max]].\n      If not specified, the bounds will automatically be set to fit\n      the provided values."),
     color: _reactDesc.PropTypes.oneOfType([_utils.colorPropType, _reactDesc.PropTypes.shape({
       color: _utils.colorPropType,
+      // deprecated, use top level 'opacity'
       opacity: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['weak', 'medium', 'strong']), _reactDesc.PropTypes.bool])
     }), _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.shape({
       color: _utils.colorPropType,
@@ -29,9 +30,10 @@ var doc = function doc(Chart) {
     gap: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['none', 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge']), _reactDesc.PropTypes.string]).description("The amount of spacing between data points. This\n      is only used when the size specifies width as 'auto'."),
     onClick: _reactDesc.PropTypes.func.description("Called when the user clicks on the\n     visualization. Clicking on individual bars or points are handled via\n     values[].onClick for those types of charts."),
     onHover: _reactDesc.PropTypes.func.description("Called with a boolean argument\n      indicating when the user hovers onto or away from it.\n      This is only available when the type is line or area."),
+    opacity: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['weak', 'medium', 'strong']), _reactDesc.PropTypes.bool]).description("What opacity to apply to the visuals. Supercedes 'color.opacity'"),
     overflow: _reactDesc.PropTypes.bool.description("Whether the chart strokes should overflow the component. Set this\n      to true for precise positioning when stacking charts or including\n      precise axes. Set this to false to have the graphical elements\n      align with the component boundaries.").defaultValue(false),
     pad: _utils.padPropType.description("Spacing around the outer edge of the drawing coordinate area.\n      Related to 'overflow', this allows control over how much space\n      is available for bars and points to overflow into."),
-    point: _reactDesc.PropTypes.oneOf(['circle', 'diamond', 'square', 'star', 'triangle', 'triangleDown']).description("When using a 'point' type, what shape the points should use.\n      If this property is not specified, points will be drawn as a square or\n      a circle, based on how 'round' is specified."),
+    point: _utils.pointPropType.description("When using a 'point' type, what shape the points should use.\n      If this property is not specified, points will be drawn as a square or\n      a circle, based on how 'round' is specified."),
     round: _reactDesc.PropTypes.bool.description('Whether to round the line ends.').defaultValue(false),
     size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'fill', 'full']), _reactDesc.PropTypes.shape({
       height: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'fill', 'full']), _reactDesc.PropTypes.string]),

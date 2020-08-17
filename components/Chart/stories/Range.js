@@ -10,13 +10,7 @@ var _themes = require("grommet/themes");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var values = [{
-  value: [10, 20, 30]
-}, {
-  value: [20, 30, 60]
-}, {
-  value: [30, 15, 20]
-}];
+var values = [[10, 20, 30], [20, 30, 60], [30, 15, 20]];
 
 var Example = function Example() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {

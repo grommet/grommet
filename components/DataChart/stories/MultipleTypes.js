@@ -20,7 +20,7 @@ for (var i = 0; i < 13; i += 1) {
   });
 }
 
-var MultipleDataChart = function MultipleDataChart() {
+var Example = function Example() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -29,32 +29,8 @@ var MultipleDataChart = function MultipleDataChart() {
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.DataChart, {
     data: data,
-    chart: [{
-      key: 'amount',
-      type: 'area',
-      thickness: 'xsmall',
-      color: {
-        color: 'graph-0',
-        opacity: 'medium'
-      }
-    }, {
-      key: 'amount',
-      type: 'line',
-      thickness: 'xsmall',
-      round: true
-    }, {
-      key: 'amount',
-      type: 'bar',
-      thickness: 'hair'
-    }, {
-      key: 'amount',
-      type: 'point',
-      round: true,
-      thickness: 'medium'
-    }],
-    xAxis: {
-      labels: 2,
-      key: 'date',
+    series: [{
+      property: 'date',
       render: function render(date) {
         return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
           pad: "xsmall",
@@ -64,16 +40,43 @@ var MultipleDataChart = function MultipleDataChart() {
           day: 'numeric'
         })));
       }
+    }, 'amount'],
+    chart: [{
+      property: 'amount',
+      type: 'area',
+      thickness: 'xsmall',
+      color: 'graph-0',
+      opacity: 'medium'
+    }, {
+      property: 'amount',
+      type: 'line',
+      thickness: 'xsmall',
+      round: true
+    }, {
+      property: 'amount',
+      type: 'bar',
+      thickness: 'hair'
+    }, {
+      property: 'amount',
+      type: 'point',
+      round: true,
+      thickness: 'medium'
+    }],
+    axis: {
+      x: 'date',
+      y: {
+        property: 'amount',
+        granularity: 'medium'
+      }
     },
-    yAxis: {
-      guide: true,
-      labels: 3
+    guide: {
+      y: true
     },
     gap: "medium",
     pad: "small"
   })));
 };
 
-(0, _react2.storiesOf)('DataChart', module).add('Multiple', function () {
-  return /*#__PURE__*/_react["default"].createElement(MultipleDataChart, null);
+(0, _react2.storiesOf)('DataChart', module).add('Multiple types', function () {
+  return /*#__PURE__*/_react["default"].createElement(Example, null);
 });

@@ -8,7 +8,8 @@ for (var i = 1; i < 8; i += 1) {
   var v = Math.sin(i / 2.0);
   data.push({
     date: "2020-07-" + (i % 30 + 1).toString().padStart(2, 0),
-    percent: Math.abs(v * 100)
+    percent: Math.abs(v * 100),
+    amount: i
   });
 }
 
@@ -21,10 +22,33 @@ var Example = function Example() {
     pad: "large"
   }, /*#__PURE__*/React.createElement(DataChart, {
     data: data,
-    series: "percent"
+    series: [{
+      property: 'date',
+      label: 'Date'
+    }, {
+      property: 'percent',
+      label: 'Percent',
+      render: function render(value) {
+        return Math.round(value) + "%";
+      }
+    }, {
+      property: 'amount',
+      label: 'Amount'
+    }],
+    chart: ['percent', {
+      property: 'amount',
+      thickness: 'small'
+    }],
+    legend: true,
+    axis: {
+      x: {
+        property: 'date',
+        granularity: 'medium'
+      }
+    }
   })));
 };
 
-storiesOf('DataChart', module).add('Simple', function () {
+storiesOf('DataChart', module).add('Legend', function () {
   return /*#__PURE__*/React.createElement(Example, null);
 });

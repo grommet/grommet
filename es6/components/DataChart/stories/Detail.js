@@ -21,10 +21,27 @@ var Example = function Example() {
     pad: "large"
   }, /*#__PURE__*/React.createElement(DataChart, {
     data: data,
-    series: "percent"
+    series: [{
+      property: 'date',
+      label: 'Date'
+    }, {
+      property: 'percent',
+      label: 'Percent',
+      render: function render(value) {
+        return Math.round(value) + "%";
+      }
+    }],
+    chart: "percent",
+    detail: true,
+    axis: {
+      x: {
+        property: 'date',
+        granularity: 'medium'
+      }
+    }
   })));
 };
 
-storiesOf('DataChart', module).add('Simple', function () {
+storiesOf('DataChart', module).add('Detail', function () {
   return /*#__PURE__*/React.createElement(Example, null);
 });
