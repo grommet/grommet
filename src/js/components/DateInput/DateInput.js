@@ -166,6 +166,7 @@ const DateInput = forwardRef(
       return [
         input,
         <Drop
+          overflow="visible"
           key="drop"
           id={id ? `${id}__drop` : undefined}
           target={ref.current}

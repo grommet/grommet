@@ -28,4 +28,6 @@ const SimpleCollapsible = props => {
   );
 };
 
-storiesOf('Collapsible', module).add('Default', () => <SimpleCollapsible />);
+storiesOf('Collapsible', module).add('Default', () => <SimpleCollapsible />, {
+  chromatic: { disable: true },
+});

@@ -23,4 +23,6 @@ const SimpleMenu = () => (
   </Grommet>
 );
 
-storiesOf('Menu', module).add('Simple', () => <SimpleMenu />);
+storiesOf('Menu', module).add('Simple', () => <SimpleMenu />, {
+  chromatic: { disable: true },
+});
