@@ -21,4 +21,6 @@ const Example = () => (
   </Grommet>
 );
 
-storiesOf('Chart', module).add('Animate', () => <Example />);
+storiesOf('Chart', module).add('Animate', () => <Example />, {
+  chromatic: { disable: true },
+});
