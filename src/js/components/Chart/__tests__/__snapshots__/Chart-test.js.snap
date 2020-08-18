@@ -1,5 +1,166 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Chart animate 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+  -webkit-animation: eOzisH 1s forwards;
+  animation: eOzisH 1s forwards;
+  -webkit-transform-origin: center bottom 0;
+  -ms-transform-origin: center bottom 0;
+  transform-origin: center bottom 0;
+}
+
+.c2 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+  stroke-dasharray: 200%;
+  -webkit-animation: hbbtVo 1s forwards;
+  animation: hbbtVo 1s forwards;
+}
+
+.c3 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+  -webkit-animation: ipYAVD 1s forwards;
+  animation: ipYAVD 1s forwards;
+}
+
+<div
+  className="c0"
+>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      fill="none"
+      stroke="#6FFFB0"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+      strokeWidth={24}
+    >
+      <g
+        fill="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 384,192 L 384,0"
+        />
+      </g>
+      <g
+        fill="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0,192 L 0,192"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c2"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      fill="none"
+      stroke="#6FFFB0"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+      strokeWidth={24}
+    >
+      <g
+        fill="none"
+      >
+        <path
+          d="M 384,0 L 0,192"
+        />
+        
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      fill="#6FFFB0"
+      stroke="#6FFFB0"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+      strokeWidth={24}
+    >
+      <g>
+        <path
+          d="M 0,192 L 384,0 L 384,192 L 0,192 Z"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c3"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      fill="#6FFFB0"
+      stroke="none"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+    >
+      <g
+        stroke="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 372 -12 L 396 -12 L 396 12 L 372 12 Z"
+        />
+      </g>
+      <g
+        stroke="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M -12 180 L 12 180 L 12 204 L -12 204 Z"
+        />
+      </g>
+    </g>
+  </svg>
+</div>
+`;
+
 exports[`Chart calcs basic 1`] = `
 Object {
   "axis": Array [
