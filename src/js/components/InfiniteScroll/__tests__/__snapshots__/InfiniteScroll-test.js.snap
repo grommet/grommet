@@ -571,16 +571,6 @@ exports[`InfiniteScroll step 1`] = `
 `;
 
 exports[`Number of Items Rendered Should only contain unique items (i.e no duplicates) 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -611,6 +601,16 @@ exports[`Number of Items Rendered Should only contain unique items (i.e no dupli
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 <div
@@ -749,16 +749,6 @@ exports[`Number of Items Rendered Should only contain unique items (i.e no dupli
 
 exports[`show scenarios When show, should only contain unique 
           items (i.e no duplicates) 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -789,6 +779,16 @@ exports[`show scenarios When show, should only contain unique
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 <div
