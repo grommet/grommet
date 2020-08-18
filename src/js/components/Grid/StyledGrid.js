@@ -110,9 +110,7 @@ const getRepeatCount = count =>
   typeof count === 'number' ? count : `auto-${count}`;
 
 const getRepeatSize = (size, theme) => {
-  if (size === 'flex') {
-    return '1fr';
-  }
+  if (size === 'flex') return '1fr';
   let min;
   let max;
   if (Array.isArray(size)) {
@@ -122,7 +120,6 @@ const getRepeatSize = (size, theme) => {
     min = theme.global.size[size] || size;
     max = '1fr';
   }
-  console.log(min.search(/\d/));
   if (min.search(/\d/) !== -1) {
     console.log('i am here');
     min = `min(${min}, 100%)`;
