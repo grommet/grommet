@@ -111,7 +111,6 @@ const getRepeatCount = count =>
 
 const getRepeatSize = (size, theme) => {
   if (size === 'flex') {
-    console.log('hi');
     return '1fr';
   }
   let min;
