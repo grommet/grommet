@@ -133,15 +133,13 @@ const DateInput = forwardRef(
               const nextTextValue = event.target.value;
               setTextValue(nextTextValue);
               const nextValue = textToValue(nextTextValue, schema);
-              if (nextValue) {
-                // valid value
-                setValue(nextValue);
-                if (onChange) {
-                  event.persist(); // extract from React synthetic event pool
-                  const adjustedEvent = event;
-                  adjustedEvent.value = nextValue;
-                  onChange(adjustedEvent);
-                }
+              // update value even when undefined
+              setValue(nextValue);
+              if (onChange) {
+                event.persist(); // extract from React synthetic event pool
+                const adjustedEvent = event;
+                adjustedEvent.value = nextValue;
+                onChange(adjustedEvent);
               }
             }}
             onFocus={event => {
@@ -166,6 +164,7 @@ const DateInput = forwardRef(
       return [
         input,
         <Drop
+          overflow="visible"
           key="drop"
           id={id ? `${id}__drop` : undefined}
           target={ref.current}

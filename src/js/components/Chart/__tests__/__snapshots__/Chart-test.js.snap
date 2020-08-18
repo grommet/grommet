@@ -34,7 +34,10 @@ Object {
 exports[`Chart calcs hair thickness 1`] = `
 Object {
   "axis": Array [
-    Array [],
+    Array [
+      0,
+      1,
+    ],
     Array [
       3,
       1.8,
@@ -42,7 +45,7 @@ Object {
   ],
   "bounds": Array [
     Array [
-      1,
+      0,
       1,
     ],
     Array [
@@ -51,7 +54,7 @@ Object {
     ],
   ],
   "dimensions": Array [
-    0,
+    1,
     1.2,
   ],
   "pad": undefined,
@@ -62,7 +65,10 @@ Object {
 exports[`Chart calcs large thickness 1`] = `
 Object {
   "axis": Array [
-    Array [],
+    Array [
+      0,
+      1,
+    ],
     Array [
       3,
       1.8,
@@ -70,7 +76,7 @@ Object {
   ],
   "bounds": Array [
     Array [
-      1,
+      0,
       1,
     ],
     Array [
@@ -79,7 +85,7 @@ Object {
     ],
   ],
   "dimensions": Array [
-    0,
+    1,
     1.2,
   ],
   "pad": "medium",
@@ -90,7 +96,10 @@ Object {
 exports[`Chart calcs medium thickness 1`] = `
 Object {
   "axis": Array [
-    Array [],
+    Array [
+      0,
+      1,
+    ],
     Array [
       3,
       1.8,
@@ -98,7 +107,7 @@ Object {
   ],
   "bounds": Array [
     Array [
-      1,
+      0,
       1,
     ],
     Array [
@@ -107,7 +116,7 @@ Object {
     ],
   ],
   "dimensions": Array [
-    0,
+    1,
     1.2,
   ],
   "pad": "small",
@@ -118,7 +127,10 @@ Object {
 exports[`Chart calcs small thickness 1`] = `
 Object {
   "axis": Array [
-    Array [],
+    Array [
+      0,
+      1,
+    ],
     Array [
       3,
       1.8,
@@ -126,7 +138,7 @@ Object {
   ],
   "bounds": Array [
     Array [
-      1,
+      0,
       1,
     ],
     Array [
@@ -135,7 +147,7 @@ Object {
     ],
   ],
   "dimensions": Array [
-    0,
+    1,
     1.2,
   ],
   "pad": "xsmall",
@@ -150,7 +162,10 @@ Object {
       1,
       2,
     ],
-    Array [],
+    Array [
+      2.4,
+      -2.4,
+    ],
   ],
   "bounds": Array [
     Array [
@@ -158,13 +173,13 @@ Object {
       2,
     ],
     Array [
-      -Infinity,
-      NaN,
+      -2.4000000000000004,
+      2.4000000000000004,
     ],
   ],
   "dimensions": Array [
     1,
-    NaN,
+    4.8,
   ],
   "pad": "large",
   "thickness": "xlarge",
@@ -205,7 +220,10 @@ Object {
 exports[`Chart calcs xsmall thickness 1`] = `
 Object {
   "axis": Array [
-    Array [],
+    Array [
+      0,
+      1,
+    ],
     Array [
       3,
       1.8,
@@ -213,7 +231,7 @@ Object {
   ],
   "bounds": Array [
     Array [
-      1,
+      0,
       1,
     ],
     Array [
@@ -222,7 +240,7 @@ Object {
     ],
   ],
   "dimensions": Array [
-    0,
+    1,
     1.2,
   ],
   "pad": "xxsmall",

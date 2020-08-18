@@ -203,6 +203,26 @@ exports[`Carousel basic 1`] = `
   line-height: 0;
 }
 
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus > circle,
+.c8:focus > ellipse,
+.c8:focus > line,
+.c8:focus > path,
+.c8:focus > polygon,
+.c8:focus > polyline,
+.c8:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c12 {
   display: inline-block;
   box-sizing: border-box;
@@ -221,6 +241,26 @@ exports[`Carousel basic 1`] = `
   text-align: inherit;
   line-height: 0;
   padding: 12px;
+}
+
+.c12:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus > circle,
+.c12:focus > ellipse,
+.c12:focus > line,
+.c12:focus > path,
+.c12:focus > polygon,
+.c12:focus > polyline,
+.c12:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c14 {
@@ -246,6 +286,26 @@ exports[`Carousel basic 1`] = `
 .c14:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
+}
+
+.c14:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus > circle,
+.c14:focus > ellipse,
+.c14:focus > line,
+.c14:focus > path,
+.c14:focus > polygon,
+.c14:focus > polyline,
+.c14:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c1 {
@@ -624,6 +684,26 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   color: #000000;
 }
 
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus > circle,
+.c8:focus > ellipse,
+.c8:focus > line,
+.c8:focus > path,
+.c8:focus > polygon,
+.c8:focus > polyline,
+.c8:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c12 {
   display: inline-block;
   box-sizing: border-box;
@@ -642,6 +722,26 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   text-align: inherit;
   line-height: 0;
   padding: 12px;
+}
+
+.c12:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus > circle,
+.c12:focus > ellipse,
+.c12:focus > line,
+.c12:focus > path,
+.c12:focus > polygon,
+.c12:focus > polyline,
+.c12:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c14 {
@@ -664,6 +764,26 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   cursor: default;
   height: 100%;
   line-height: 0;
+}
+
+.c14:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus > circle,
+.c14:focus > ellipse,
+.c14:focus > line,
+.c14:focus > path,
+.c14:focus > polygon,
+.c14:focus > polyline,
+.c14:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c1 {
@@ -1039,6 +1159,26 @@ exports[`Carousel navigate 1`] = `
   line-height: 0;
 }
 
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus > circle,
+.c8:focus > ellipse,
+.c8:focus > line,
+.c8:focus > path,
+.c8:focus > polygon,
+.c8:focus > polyline,
+.c8:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c12 {
   display: inline-block;
   box-sizing: border-box;
@@ -1057,6 +1197,26 @@ exports[`Carousel navigate 1`] = `
   text-align: inherit;
   line-height: 0;
   padding: 12px;
+}
+
+.c12:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus > circle,
+.c12:focus > ellipse,
+.c12:focus > line,
+.c12:focus > path,
+.c12:focus > polygon,
+.c12:focus > polyline,
+.c12:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c14 {
@@ -1082,6 +1242,26 @@ exports[`Carousel navigate 1`] = `
 .c14:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
+}
+
+.c14:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus > circle,
+.c14:focus > ellipse,
+.c14:focus > line,
+.c14:focus > path,
+.c14:focus > polygon,
+.c14:focus > polyline,
+.c14:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c1 {
@@ -1279,7 +1459,7 @@ exports[`Carousel navigate 2`] = `
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 ccwczA"
+          class="StyledButton-sc-323bzc-0 ggXSon"
           type="button"
         >
           <svg
@@ -1303,7 +1483,7 @@ exports[`Carousel navigate 2`] = `
             class="StyledBox-sc-13pk1d4-0 jmTzhV"
           >
             <button
-              class="StyledButton-sc-323bzc-0 tdSht"
+              class="StyledButton-sc-323bzc-0 fKcmhi"
               type="button"
             >
               <svg
@@ -1320,7 +1500,7 @@ exports[`Carousel navigate 2`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 tdSht"
+              class="StyledButton-sc-323bzc-0 fKcmhi"
               type="button"
             >
               <svg
@@ -1339,7 +1519,7 @@ exports[`Carousel navigate 2`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 khdMiC"
+          class="StyledButton-sc-323bzc-0 elqUnZ"
           disabled=""
           type="button"
         >
@@ -1410,7 +1590,7 @@ exports[`Carousel navigate 3`] = `
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 khdMiC"
+          class="StyledButton-sc-323bzc-0 elqUnZ"
           disabled=""
           type="button"
         >
@@ -1435,7 +1615,7 @@ exports[`Carousel navigate 3`] = `
             class="StyledBox-sc-13pk1d4-0 jmTzhV"
           >
             <button
-              class="StyledButton-sc-323bzc-0 tdSht"
+              class="StyledButton-sc-323bzc-0 fKcmhi"
               type="button"
             >
               <svg
@@ -1452,7 +1632,7 @@ exports[`Carousel navigate 3`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 tdSht"
+              class="StyledButton-sc-323bzc-0 fKcmhi"
               type="button"
             >
               <svg
@@ -1471,7 +1651,7 @@ exports[`Carousel navigate 3`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 ccwczA"
+          class="StyledButton-sc-323bzc-0 ggXSon"
           type="button"
         >
           <svg
@@ -1696,6 +1876,26 @@ exports[`Carousel play 1`] = `
   line-height: 0;
 }
 
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus > circle,
+.c8:focus > ellipse,
+.c8:focus > line,
+.c8:focus > path,
+.c8:focus > polygon,
+.c8:focus > polyline,
+.c8:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c12 {
   display: inline-block;
   box-sizing: border-box;
@@ -1714,6 +1914,26 @@ exports[`Carousel play 1`] = `
   text-align: inherit;
   line-height: 0;
   padding: 12px;
+}
+
+.c12:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus > circle,
+.c12:focus > ellipse,
+.c12:focus > line,
+.c12:focus > path,
+.c12:focus > polygon,
+.c12:focus > polyline,
+.c12:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c14 {
@@ -1739,6 +1959,26 @@ exports[`Carousel play 1`] = `
 .c14:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
+}
+
+.c14:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus > circle,
+.c14:focus > ellipse,
+.c14:focus > line,
+.c14:focus > path,
+.c14:focus > polygon,
+.c14:focus > polyline,
+.c14:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c1 {
@@ -1934,7 +2174,7 @@ exports[`Carousel play 2`] = `
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 ccwczA"
+          class="StyledButton-sc-323bzc-0 ggXSon"
           type="button"
         >
           <svg
@@ -1958,7 +2198,7 @@ exports[`Carousel play 2`] = `
             class="StyledBox-sc-13pk1d4-0 jmTzhV"
           >
             <button
-              class="StyledButton-sc-323bzc-0 tdSht"
+              class="StyledButton-sc-323bzc-0 fKcmhi"
               type="button"
             >
               <svg
@@ -1975,7 +2215,7 @@ exports[`Carousel play 2`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 tdSht"
+              class="StyledButton-sc-323bzc-0 fKcmhi"
               type="button"
             >
               <svg
@@ -1994,7 +2234,7 @@ exports[`Carousel play 2`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 khdMiC"
+          class="StyledButton-sc-323bzc-0 elqUnZ"
           disabled=""
           type="button"
         >
