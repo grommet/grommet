@@ -6,9 +6,11 @@ const defaultMessages = {
   required: 'required',
 };
 const defaultValue = {};
-const defaultErrors = {};
-const defaultInfos = {};
 const defaultTouched = {};
+const defaultValidationResults = {
+  errors: {},
+  infos: {},
+};
 
 // validations is an array from Object.entries()
 const validate = (validations, value, omitValid) => {
@@ -39,12 +41,13 @@ const Form = forwardRef(
   (
     {
       children,
-      errors: errorsProp = defaultErrors,
-      infos: infosProp = defaultInfos,
+      errors: errorsProp = defaultValidationResults.errors,
+      infos: infosProp = defaultValidationResults.infos,
       messages = defaultMessages,
       onChange,
       onReset,
       onSubmit,
+      onValidate,
       validate: validateOn = 'submit',
       value: valueProp,
       ...rest
@@ -56,21 +59,30 @@ const Form = forwardRef(
       valueProp,
       valueState,
     ]);
-    const [errors, setErrors] = useState(errorsProp);
-    useEffect(() => setErrors(errorsProp), [errorsProp]);
-    const [infos, setInfos] = useState(infosProp);
-    useEffect(() => setInfos(infosProp), [infosProp]);
     const [touched, setTouched] = useState(defaultTouched);
+    const [validationResults, setValidationResults] = useState(
+      defaultValidationResults,
+    );
+    useEffect(
+      () => setValidationResults({ errors: errorsProp, infos: infosProp }),
+      [errorsProp, infosProp],
+    );
     const validations = useRef({});
 
     // clear any errors when value changes
     useEffect(() => {
-      setErrors(prevErrors => {
-        const [nextErrors] = validate(
-          Object.entries(validations.current).filter(([n]) => prevErrors[n]),
+      setValidationResults(prevValidationResults => {
+        const [nextErrors, nextInfos] = validate(
+          Object.entries(validations.current).filter(
+            ([n]) =>
+              prevValidationResults.errors[n] || prevValidationResults.infos[n],
+          ),
           value,
         );
-        return { ...prevErrors, ...nextErrors };
+        return {
+          errors: { ...prevValidationResults.errors, ...nextErrors },
+          infos: { ...prevValidationResults.infos, ...nextInfos },
+        };
       });
     }, [touched, value]);
 
@@ -167,8 +179,8 @@ const Form = forwardRef(
       required,
       validate: validateArg,
     }) => {
-      const error = errorArg || errors[name];
-      const info = infoArg || infos[name];
+      const error = errorArg || validationResults.errors[name];
+      const info = infoArg || validationResults.infos[name];
 
       useEffect(() => {
         const validateSingle = (aValidate, value2, data) => {
@@ -229,10 +241,17 @@ const Form = forwardRef(
                   ),
                   value,
                 );
-                // keep any previous errors and infos for untouched keys,
-                // which probably came from a submit
-                setErrors(prevErrors => ({ ...prevErrors, ...nextErrors }));
-                setInfos(prevInfos => ({ ...prevInfos, ...nextInfos }));
+                // give user access to errors that have occurred on validation
+                setValidationResults(prevValidationResults => {
+                  // keep any previous errors and infos for untouched keys,
+                  // which probably came from a submit
+                  const nextValidationResults = {
+                    errors: { ...prevValidationResults.errors, ...nextErrors },
+                    infos: { ...prevValidationResults.infos, ...nextInfos },
+                  };
+                  if (onValidate) onValidate(nextValidationResults);
+                  return nextValidationResults;
+                });
               }
             : undefined,
       };
@@ -247,9 +266,8 @@ const Form = forwardRef(
             setValueState(defaultValue);
             if (onChange) onChange(defaultValue);
           }
-          setErrors(defaultErrors);
-          setInfos(defaultInfos);
           setTouched(defaultTouched);
+          setValidationResults(defaultValidationResults);
 
           if (onReset) {
             event.persist(); // extract from React's synthetic event pool
@@ -268,8 +286,15 @@ const Form = forwardRef(
             value,
             true,
           );
-          setErrors(nextErrors);
-          setInfos(nextInfos);
+
+          setValidationResults(() => {
+            const nextValidationResults = {
+              errors: nextErrors,
+              infos: nextInfos,
+            };
+            if (onValidate) onValidate(nextValidationResults);
+            return nextValidationResults;
+          });
 
           if (Object.keys(nextErrors).length === 0 && onSubmit) {
             event.persist(); // extract from React's synthetic event pool

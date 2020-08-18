@@ -659,6 +659,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       minSpeed: 200,
       baseline: 500,
     },
+    dateInput: {
+      // icon: {
+      //   size: undefined,
+      // },
+    },
     dataTable: {
       // body: {
       //   extend: undefined,
@@ -981,6 +986,18 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       // searchInput: undefined,
       step: 20,
+    },
+    skipLinks: {
+      position: 'top',
+      container: {
+        elevation: 'large',
+        round: 'small',
+        pad: 'medium',
+      },
+      label: {
+        margin: { bottom: 'medium' },
+        size: 'medium',
+      },
     },
     tab: {
       active: {

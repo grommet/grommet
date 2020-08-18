@@ -38,4 +38,6 @@ const CornerLayer = () => {
   );
 };
 
-storiesOf('Layer', module).add('Corner', () => <CornerLayer />);
+storiesOf('Layer', module).add('Corner', () => <CornerLayer />, {
+  chromatic: { disable: true },
+});

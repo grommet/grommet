@@ -192,44 +192,52 @@ const InfiniteScroll = ({
 
   items.slice(firstIndex, lastIndex + 1).forEach((item, index) => {
     const itemsIndex = firstIndex + index;
-
-    // We only need page refs if we don't know the pageHeight
-    // The new way, we pass the ref we want to the children render function.
     let ref;
-    if (!pageHeight && itemsIndex === 0) ref = firstPageItemRef;
-    else if (
-      !pageHeight &&
-      (itemsIndex === step - 1 || itemsIndex === lastIndex)
-    )
-      ref = lastPageItemRef;
-    else if (show && show === itemsIndex) ref = showRef;
-
     let child = children(item, itemsIndex, ref);
 
-    // The old way, if we don't see that our ref was set, wrap it
-    if (!pageHeight && itemsIndex === 0 && child.ref !== firstPageItemRef) {
-      child = (
-        <Ref key="first" ref={firstPageItemRef}>
-          {child}
-        </Ref>
-      );
-    } else if (
-      !pageHeight &&
-      (itemsIndex === step - 1 || itemsIndex === lastIndex) &&
-      child.ref !== lastPageItemRef
-    ) {
-      child = (
-        <Ref key="last" ref={lastPageItemRef}>
-          {child}
-        </Ref>
-      );
+    // Set firstPageItemRef & lastPageItemRef if we don't know the pageHeight.
+    if (!pageHeight && itemsIndex === 0) {
+      // We pass the ref we want to the children render function.
+      // If we don't see that our ref was set, wrap it ("the old way").
+      child = children(item, itemsIndex, firstPageItemRef);
+      if (child.ref !== firstPageItemRef) {
+        child = (
+          <Ref key="first" ref={firstPageItemRef}>
+            {child}
+          </Ref>
+        );
+      }
     }
-    if (show && show === itemsIndex && child.ref !== showRef) {
-      child = (
-        <Ref key="show" ref={showRef}>
-          {child}
-        </Ref>
-      );
+
+    if (!pageHeight && (itemsIndex === step - 1 || itemsIndex === lastIndex)) {
+      // If show, we only want a single lastPageItemRef and it should be set at
+      // lastIndex. Ignore step - 1 scenario, otherwise will create duplicates.
+      child =
+        show && itemsIndex === step - 1
+          ? child
+          : children(item, itemsIndex, lastPageItemRef);
+
+      // We pass the ref we want to the children render function.
+      // If we don't see that our ref was set, wrap it ("the old way").
+      if (child.ref !== lastPageItemRef && !(show && itemsIndex === step - 1)) {
+        child = (
+          <Ref key="last" ref={lastPageItemRef}>
+            {child}
+          </Ref>
+        );
+      }
+    }
+
+    // Set showRef
+    if (show && show === itemsIndex) {
+      child = children(item, itemsIndex, showRef);
+      if (child.ref !== showRef) {
+        child = (
+          <Ref key="show" ref={showRef}>
+            {child}
+          </Ref>
+        );
+      }
     }
 
     result.push(child);
