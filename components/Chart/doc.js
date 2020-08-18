@@ -16,6 +16,7 @@ var doc = function doc(Chart) {
   // .intrinsicElement('svg');
 
   DocumentedChart.propTypes = _extends({}, _utils.genericProps, {
+    animate: _reactDesc.PropTypes.bool.description('Whether to animate drawing.'),
     bounds: _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.number)).description("The limits for the values, specified as a two dimensional array. \n      The first array specifies the limits of the x-axis. The second array \n      specifies the limits of the y-axis. \n      For example: [[x-min, x-max], [y-min, y-max]].\n      If not specified, the bounds will automatically be set to fit\n      the provided values."),
     color: _reactDesc.PropTypes.oneOfType([_utils.colorPropType, _reactDesc.PropTypes.shape({
       color: _utils.colorPropType,

@@ -474,7 +474,9 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     viewBox: viewBox,
     preserveAspectRatio: "none",
     width: size === 'full' ? '100%' : size[0],
-    height: size === 'full' ? '100%' : size[1]
+    height: size === 'full' ? '100%' : size[1],
+    typeProp: type // prevent adding to DOM
+
   }, rest), defs, useGradient ? gradientRect : drawing);
 });
 Chart.displayName = 'Chart';
