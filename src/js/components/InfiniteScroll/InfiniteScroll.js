@@ -177,8 +177,6 @@ const InfiniteScroll = ({
           showNode.scrollIntoView(true);
         } else if (isNodeAfterScroll(showNode, scrollParent)) {
           showNode.scrollIntoView(false);
-        } else if (showNode.scrollIntoView) {
-          showNode.scrollIntoView(true);
         }
       }
     }, 100);
