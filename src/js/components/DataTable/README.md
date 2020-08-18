@@ -154,6 +154,13 @@ string
       dark: string,
       light: string
     }
+    [string],
+  pinned: 
+    string
+    {
+      dark: string,
+      light: string
+    }
     [string]
 }
 ```
@@ -364,6 +371,16 @@ Array of data objects.
 }]
 ```
 
+**fill**
+
+Whether the width and/or height should fill the container.
+
+```
+horizontal
+vertical
+boolean
+```
+
 **groupBy**
 
 Property to group data by. If object is specified
@@ -394,6 +411,18 @@ Use this to indicate that 'data' doesn't contain all that it could.
 
 ```
 function
+```
+
+**pin**
+
+Whether the header and/or footer should be pinned when
+      not all rows are visible. This only takes effect when 'fill' is true
+      or 'vertical'.
+
+```
+boolean
+header
+footer
 ```
 
 **replace**

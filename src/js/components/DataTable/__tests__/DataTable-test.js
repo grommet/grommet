@@ -525,4 +525,48 @@ describe('DataTable', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('fill', () => {
+    const { container } = render(
+      <Grommet>
+        {[true, 'horizontal', 'vertical'].map(fill => (
+          <DataTable
+            key={JSON.stringify(fill)}
+            columns={[
+              { property: 'a', header: 'A', footer: 'Total' },
+              { property: 'b', header: 'B' },
+            ]}
+            data={[
+              { a: 'one', b: 1 },
+              { a: 'two', b: 2 },
+            ]}
+            fill={fill}
+          />
+        ))}
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('pin', () => {
+    const { container } = render(
+      <Grommet>
+        {[true, 'header', 'footer'].map(pin => (
+          <DataTable
+            key={JSON.stringify(pin)}
+            columns={[
+              { property: 'a', header: 'A', footer: 'Total', pin: true },
+              { property: 'b', header: 'B' },
+            ]}
+            data={[
+              { a: 'one', b: 1 },
+              { a: 'two', b: 2 },
+            ]}
+            pin={pin}
+          />
+        ))}
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

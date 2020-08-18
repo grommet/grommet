@@ -23,7 +23,7 @@ parts.forEach(part => {
 });
 
 const backgroundShape = {};
-parts.forEach(part => {
+[...parts, 'pinned'].forEach(part => {
   backgroundShape[part] = PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.shape({
@@ -141,6 +141,12 @@ export const doc = DataTable => {
     data: PropTypes.arrayOf(PropTypes.shape({})).description(
       'Array of data objects.',
     ),
+    fill: PropTypes.oneOfType([
+      PropTypes.oneOf(['horizontal', 'vertical']),
+      PropTypes.bool,
+    ]).description(
+      'Whether the width and/or height should fill the container.',
+    ),
     groupBy: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.shape({
@@ -162,6 +168,14 @@ export const doc = DataTable => {
       be combined with properties that expect all data to be present in the
       browser, such as columns.search, sortable, groupBy, or 
       columns.aggregate.`,
+    ),
+    pin: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.oneOf(['header', 'footer']),
+    ]).description(
+      `Whether the header and/or footer should be pinned when
+      not all rows are visible. This only takes effect when 'fill' is true
+      or 'vertical'.`,
     ),
     replace: PropTypes.bool.description(
       `Whether to replace previously rendered items with a generic spacing
