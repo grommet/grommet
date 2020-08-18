@@ -238,6 +238,17 @@ Called with a boolean argument
 function
 ```
 
+**opacity**
+
+What opacity to apply to the visuals. Supercedes 'color.opacity'
+
+```
+weak
+medium
+strong
+boolean
+```
+
 **overflow**
 
 Whether the chart strokes should overflow the component. Set this
