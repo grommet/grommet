@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import isChromatic from 'chromatic/isChromatic';
+import { FormDown, FormUp } from 'grommet-icons';
 
 import { Grommet, Box, Menu, ThemeType } from 'grommet';
 import { Next } from 'grommet-icons';
@@ -57,6 +58,12 @@ const customBreakpoints: ThemeType = {
           xxsmall: '24px',
         },
       },
+    },
+  },
+  menu: {
+    icons: {
+      down: FormDown,
+      up: FormUp,
     },
   },
 };
