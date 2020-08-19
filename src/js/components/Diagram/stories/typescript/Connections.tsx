@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import isChromatic from 'chromatic/isChromatic';
 
 import { Gremlin, IceCream } from 'grommet-icons';
 import { Stack, grommet, Grommet, Box, Diagram } from 'grommet';
@@ -41,4 +42,6 @@ const Connections = () => {
   );
 };
 
-storiesOf('Diagram', module).add('Connections', () => <Connections />);
+if (!isChromatic()) {
+  storiesOf('Diagram', module).add('Connections', () => <Connections />);
+}
