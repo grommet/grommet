@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import isChromatic from 'chromatic/isChromatic';
 
 import { Grommet, Box, Menu, ThemeType } from 'grommet';
 import { Next } from 'grommet-icons';
@@ -79,6 +78,4 @@ const App = () => {
   );
 };
 
-if (!isChromatic()) {
-  storiesOf('TypeScript/Menu', module).add('Themed', () => <App />);
-}
+storiesOf('Menu/TypeScript', module).add('Themed', () => <App />, {});
