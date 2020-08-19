@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import isChromatic from 'chromatic/isChromatic';
 
 import { Box, Grommet, Clock } from 'grommet';
 
@@ -37,4 +38,6 @@ const CustomAnalog = () => (
   </Grommet>
 );
 
-storiesOf('Clock', module).add('Custom Analog', () => <CustomAnalog />);
+if (!isChromatic()) {
+  storiesOf('Clock', module).add('Custom Analog', () => <CustomAnalog />);
+}
