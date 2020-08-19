@@ -8,6 +8,7 @@ import { grommet } from 'grommet/themes';
 const ControlledTabs = () => {
   const [index, setIndex] = React.useState(0);
 
+  // Remove ': number' if you are not using Typescript.
   const onActive = (nextIndex: number) => setIndex(nextIndex);
 
   return (
