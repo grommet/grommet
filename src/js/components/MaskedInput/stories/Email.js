@@ -1,7 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import isChromatic from 'chromatic/isChromatic';
-
 import { Box, Grommet, MaskedInput } from 'grommet';
 import { MailOption } from 'grommet-icons';
 import { grommet } from 'grommet/themes';
@@ -49,8 +47,6 @@ const EmailMaskedInput = () => {
   );
 };
 
-if (!isChromatic()) {
-  storiesOf('TypeScript/MaskedInput', module).add('Email', () => (
-    <EmailMaskedInput />
-  ));
-}
+storiesOf('MaskedInput', module).add('Email with Icon', () => (
+  <EmailMaskedInput />
+));
