@@ -6,6 +6,7 @@ import { grommet, Box, FormField, TextArea, Grommet } from 'grommet';
 import { deepMerge } from 'grommet/utils';
 import { ThemeType } from 'grommet/themes';
 
+// Type annotations can only be used in TypeScript files
 const customFormFieldTheme: ThemeType = {
   global: {
     font: {
@@ -38,7 +39,5 @@ const CustomFormField = () => (
 );
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/Form', module).add('Custom Theme', () => (
-    <CustomFormField />
-  ));
+  storiesOf('Form', module).add('Custom Theme', () => <CustomFormField />);
 }

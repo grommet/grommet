@@ -6,6 +6,7 @@ import { Stack, grommet, Grommet, Box, Diagram } from 'grommet';
 
 import { DiagramConnectionAnchor, DiagramConnectionType } from '../../index';
 
+// Type annotations can only be used in TyoeScript files
 const anchor: DiagramConnectionAnchor = 'horizontal';
 const type: DiagramConnectionType = 'curved';
 
@@ -40,6 +41,4 @@ const Connections = () => {
   );
 };
 
-storiesOf('TypeScript/Diagram', module).add('Connections', () => (
-  <Connections />
-));
+storiesOf('Diagram', module).add('Connections', () => <Connections />);
