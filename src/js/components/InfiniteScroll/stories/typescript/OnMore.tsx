@@ -13,6 +13,7 @@ import { grommet } from 'grommet/themes';
 
 import { allItems } from '../Basics';
 
+// Remove ': 'interface IProps' if you are not using Typescript.
 export interface IProps {
   props?: InfiniteScrollProps;
   step?: InfiniteScrollProps['step'];
