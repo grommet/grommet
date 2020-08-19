@@ -26,6 +26,6 @@ const SimpleVideo = props => (
   </Grommet>
 );
 
-storiesOf('Video', module).add('Controls Below', () => (
-  <SimpleVideo controls="below" />
-));
+storiesOf('Video', module)
+  .add('Simple', () => <SimpleVideo />)
+  .add('Controls Below', () => <SimpleVideo controls="below" />);
