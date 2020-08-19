@@ -105,4 +105,6 @@ const NestedCollapsible = () => {
   );
 };
 
-storiesOf('Collapsible', module).add('Nested', () => <NestedCollapsible />);
+storiesOf('Collapsible', module).add('Nested', () => <NestedCollapsible />, {
+  chromatic: { disable: true },
+});

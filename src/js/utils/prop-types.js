@@ -37,7 +37,7 @@ export const backgroundDoc = PropTypes.oneOfType([
 identifier to use for the background color. For example: 'neutral-1'. Or, a 
 'url()' for an image. Dark is not needed if color is provided.`);
 
-const MARGIN_SIZES = [
+export const MARGIN_SIZES = [
   'xxsmall',
   'xsmall',
   'small',
@@ -145,4 +145,13 @@ export const hoverIndicatorPropType = PropTypes.oneOfType([
       PropTypes.string,
     ]),
   }),
+]);
+
+export const pointPropType = PropTypes.oneOf([
+  'circle',
+  'diamond',
+  'square',
+  'star',
+  'triangle',
+  'triangleDown',
 ]);

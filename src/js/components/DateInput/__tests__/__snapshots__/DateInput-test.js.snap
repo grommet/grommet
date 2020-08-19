@@ -65,6 +65,26 @@ exports[`DateInput basic 1`] = `
   padding: 12px;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 <div
   className="c0"
 >
@@ -320,7 +340,7 @@ exports[`DateInput focus 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: auto;
+  overflow: visible;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
@@ -420,6 +440,26 @@ exports[`DateInput focus 2`] = `
   padding: 12px;
 }
 
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus > circle,
+.c8:focus > ellipse,
+.c8:focus > line,
+.c8:focus > path,
+.c8:focus > polygon,
+.c8:focus > polyline,
+.c8:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c14 {
   display: inline-block;
   box-sizing: border-box;
@@ -436,6 +476,26 @@ exports[`DateInput focus 2`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c14:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus > circle,
+.c14:focus > ellipse,
+.c14:focus > line,
+.c14:focus > path,
+.c14:focus > polygon,
+.c14:focus > polyline,
+.c14:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c6 {
@@ -1814,6 +1874,26 @@ exports[`DateInput format inline 1`] = `
   padding: 12px;
 }
 
+.c11:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus > circle,
+.c11:focus > ellipse,
+.c11:focus > line,
+.c11:focus > path,
+.c11:focus > polygon,
+.c11:focus > polyline,
+.c11:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c16 {
   display: inline-block;
   box-sizing: border-box;
@@ -1830,6 +1910,26 @@ exports[`DateInput format inline 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c16:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c16:focus > circle,
+.c16:focus > ellipse,
+.c16:focus > line,
+.c16:focus > path,
+.c16:focus > polygon,
+.c16:focus > polyline,
+.c16:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c16:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c9 {
@@ -3192,6 +3292,26 @@ exports[`DateInput inline 1`] = `
   padding: 12px;
 }
 
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c13 {
   display: inline-block;
   box-sizing: border-box;
@@ -3208,6 +3328,26 @@ exports[`DateInput inline 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -4393,6 +4533,26 @@ exports[`DateInput range 1`] = `
   padding: 12px;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
 <div
   className="c0"
 >
@@ -4713,6 +4873,26 @@ exports[`DateInput range format inline 1`] = `
   padding: 12px;
 }
 
+.c11:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus > circle,
+.c11:focus > ellipse,
+.c11:focus > line,
+.c11:focus > path,
+.c11:focus > polygon,
+.c11:focus > polyline,
+.c11:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c16 {
   display: inline-block;
   box-sizing: border-box;
@@ -4729,6 +4909,26 @@ exports[`DateInput range format inline 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c16:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c16:focus > circle,
+.c16:focus > ellipse,
+.c16:focus > line,
+.c16:focus > path,
+.c16:focus > polygon,
+.c16:focus > polyline,
+.c16:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c16:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c9 {
@@ -6109,6 +6309,26 @@ exports[`DateInput range inline 1`] = `
   padding: 12px;
 }
 
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c13 {
   display: inline-block;
   box-sizing: border-box;
@@ -6125,6 +6345,26 @@ exports[`DateInput range inline 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -7490,7 +7730,7 @@ exports[`DateInput select format 3`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: auto;
+  overflow: visible;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
@@ -7590,6 +7830,26 @@ exports[`DateInput select format 3`] = `
   padding: 12px;
 }
 
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus > circle,
+.c8:focus > ellipse,
+.c8:focus > line,
+.c8:focus > path,
+.c8:focus > polygon,
+.c8:focus > polyline,
+.c8:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c14 {
   display: inline-block;
   box-sizing: border-box;
@@ -7606,6 +7866,26 @@ exports[`DateInput select format 3`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c14:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus > circle,
+.c14:focus > ellipse,
+.c14:focus > line,
+.c14:focus > path,
+.c14:focus > polygon,
+.c14:focus > polyline,
+.c14:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c6 {
@@ -8683,6 +8963,26 @@ exports[`DateInput select format inline 1`] = `
   padding: 12px;
 }
 
+.c11:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus > circle,
+.c11:focus > ellipse,
+.c11:focus > line,
+.c11:focus > path,
+.c11:focus > polygon,
+.c11:focus > polyline,
+.c11:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c16 {
   display: inline-block;
   box-sizing: border-box;
@@ -8699,6 +8999,26 @@ exports[`DateInput select format inline 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c16:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c16:focus > circle,
+.c16:focus > ellipse,
+.c16:focus > line,
+.c16:focus > path,
+.c16:focus > polygon,
+.c16:focus > polyline,
+.c16:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c16:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c9 {
@@ -9748,7 +10068,7 @@ exports[`DateInput select format inline 2`] = `
           >
             <button
               aria-label="June 2020"
-              class="StyledButton-sc-323bzc-0 tdSht"
+              class="StyledButton-sc-323bzc-0 fKcmhi"
               type="button"
             >
               <svg
@@ -9767,7 +10087,7 @@ exports[`DateInput select format inline 2`] = `
             </button>
             <button
               aria-label="August 2020"
-              class="StyledButton-sc-323bzc-0 tdSht"
+              class="StyledButton-sc-323bzc-0 fKcmhi"
               type="button"
             >
               <svg
@@ -9800,7 +10120,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Sun Jun 28 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -9816,7 +10136,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Mon Jun 29 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -9832,7 +10152,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Tue Jun 30 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -9848,7 +10168,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Wed Jul 01 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -9864,7 +10184,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Thu Jul 02 2020"
-                  class="StyledButton-sc-323bzc-0 PtHXf"
+                  class="StyledButton-sc-323bzc-0 kUquzo"
                   tabindex="-1"
                   type="button"
                 >
@@ -9880,7 +10200,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Fri Jul 03 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -9896,7 +10216,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Sat Jul 04 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -9916,7 +10236,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Sun Jul 05 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -9932,7 +10252,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Mon Jul 06 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -9948,7 +10268,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Tue Jul 07 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -9964,7 +10284,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Wed Jul 08 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -9980,7 +10300,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Thu Jul 09 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -9996,7 +10316,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Fri Jul 10 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -10012,7 +10332,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Sat Jul 11 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -10032,7 +10352,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Sun Jul 12 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -10048,7 +10368,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Mon Jul 13 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -10064,7 +10384,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Tue Jul 14 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -10080,7 +10400,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Wed Jul 15 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -10096,7 +10416,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Thu Jul 16 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -10112,7 +10432,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Fri Jul 17 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -10128,7 +10448,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Sat Jul 18 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -10148,7 +10468,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Sun Jul 19 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -10164,7 +10484,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Mon Jul 20 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -10180,7 +10500,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Tue Jul 21 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -10196,7 +10516,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Wed Jul 22 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -10212,7 +10532,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Thu Jul 23 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -10228,7 +10548,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Fri Jul 24 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -10244,7 +10564,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Sat Jul 25 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -10264,7 +10584,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Sun Jul 26 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -10280,7 +10600,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Mon Jul 27 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -10296,7 +10616,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Tue Jul 28 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -10312,7 +10632,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Wed Jul 29 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -10328,7 +10648,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Thu Jul 30 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -10344,7 +10664,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Fri Jul 31 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -10360,7 +10680,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Sat Aug 01 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -10380,7 +10700,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Sun Aug 02 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -10396,7 +10716,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Mon Aug 03 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -10412,7 +10732,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Tue Aug 04 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -10428,7 +10748,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Wed Aug 05 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -10444,7 +10764,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Thu Aug 06 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -10460,7 +10780,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Fri Aug 07 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -10476,7 +10796,7 @@ exports[`DateInput select format inline 2`] = `
               >
                 <button
                   aria-label="Sat Aug 08 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -10637,6 +10957,26 @@ exports[`DateInput select format inline range 1`] = `
   padding: 12px;
 }
 
+.c11:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus > circle,
+.c11:focus > ellipse,
+.c11:focus > line,
+.c11:focus > path,
+.c11:focus > polygon,
+.c11:focus > polyline,
+.c11:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c16 {
   display: inline-block;
   box-sizing: border-box;
@@ -10653,6 +10993,26 @@ exports[`DateInput select format inline range 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c16:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c16:focus > circle,
+.c16:focus > ellipse,
+.c16:focus > line,
+.c16:focus > path,
+.c16:focus > polygon,
+.c16:focus > polyline,
+.c16:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c16:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c9 {
@@ -11720,7 +12080,7 @@ exports[`DateInput select format inline range 2`] = `
           >
             <button
               aria-label="June 2020"
-              class="StyledButton-sc-323bzc-0 tdSht"
+              class="StyledButton-sc-323bzc-0 fKcmhi"
               type="button"
             >
               <svg
@@ -11739,7 +12099,7 @@ exports[`DateInput select format inline range 2`] = `
             </button>
             <button
               aria-label="August 2020"
-              class="StyledButton-sc-323bzc-0 tdSht"
+              class="StyledButton-sc-323bzc-0 fKcmhi"
               type="button"
             >
               <svg
@@ -11772,7 +12132,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Sun Jun 28 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -11788,7 +12148,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Mon Jun 29 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -11804,7 +12164,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Tue Jun 30 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -11820,7 +12180,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Wed Jul 01 2020"
-                  class="StyledButton-sc-323bzc-0 PtHXf"
+                  class="StyledButton-sc-323bzc-0 kUquzo"
                   tabindex="-1"
                   type="button"
                 >
@@ -11836,7 +12196,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Thu Jul 02 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -11852,7 +12212,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Fri Jul 03 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -11868,7 +12228,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Sat Jul 04 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -11888,7 +12248,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Sun Jul 05 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -11904,7 +12264,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Mon Jul 06 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -11920,7 +12280,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Tue Jul 07 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -11936,7 +12296,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Wed Jul 08 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -11952,7 +12312,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Thu Jul 09 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -11968,7 +12328,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Fri Jul 10 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -11984,7 +12344,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Sat Jul 11 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -12004,7 +12364,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Sun Jul 12 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -12020,7 +12380,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Mon Jul 13 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -12036,7 +12396,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Tue Jul 14 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -12052,7 +12412,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Wed Jul 15 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -12068,7 +12428,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Thu Jul 16 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -12084,7 +12444,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Fri Jul 17 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -12100,7 +12460,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Sat Jul 18 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -12120,7 +12480,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Sun Jul 19 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -12136,7 +12496,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Mon Jul 20 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -12152,7 +12512,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Tue Jul 21 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -12168,7 +12528,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Wed Jul 22 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -12184,7 +12544,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Thu Jul 23 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -12200,7 +12560,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Fri Jul 24 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -12216,7 +12576,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Sat Jul 25 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -12236,7 +12596,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Sun Jul 26 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -12252,7 +12612,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Mon Jul 27 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -12268,7 +12628,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Tue Jul 28 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -12284,7 +12644,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Wed Jul 29 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -12300,7 +12660,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Thu Jul 30 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -12316,7 +12676,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Fri Jul 31 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -12332,7 +12692,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Sat Aug 01 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -12352,7 +12712,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Sun Aug 02 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -12368,7 +12728,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Mon Aug 03 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -12384,7 +12744,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Tue Aug 04 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -12400,7 +12760,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Wed Aug 05 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -12416,7 +12776,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Thu Aug 06 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -12432,7 +12792,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Fri Aug 07 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -12448,7 +12808,7 @@ exports[`DateInput select format inline range 2`] = `
               >
                 <button
                   aria-label="Sat Aug 08 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -12609,6 +12969,26 @@ exports[`DateInput select inline 1`] = `
   padding: 12px;
 }
 
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c13 {
   display: inline-block;
   box-sizing: border-box;
@@ -12625,6 +13005,26 @@ exports[`DateInput select inline 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -13660,6 +14060,26 @@ exports[`DateInput type format inline 1`] = `
   padding: 12px;
 }
 
+.c11:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus > circle,
+.c11:focus > ellipse,
+.c11:focus > line,
+.c11:focus > path,
+.c11:focus > polygon,
+.c11:focus > polyline,
+.c11:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c11:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c16 {
   display: inline-block;
   box-sizing: border-box;
@@ -13676,6 +14096,26 @@ exports[`DateInput type format inline 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c16:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c16:focus > circle,
+.c16:focus > ellipse,
+.c16:focus > line,
+.c16:focus > path,
+.c16:focus > polygon,
+.c16:focus > polyline,
+.c16:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c16:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c9 {
@@ -14725,7 +15165,7 @@ exports[`DateInput type format inline 2`] = `
           >
             <button
               aria-label="June 2020"
-              class="StyledButton-sc-323bzc-0 tdSht"
+              class="StyledButton-sc-323bzc-0 fKcmhi"
               type="button"
             >
               <svg
@@ -14744,7 +15184,7 @@ exports[`DateInput type format inline 2`] = `
             </button>
             <button
               aria-label="August 2020"
-              class="StyledButton-sc-323bzc-0 tdSht"
+              class="StyledButton-sc-323bzc-0 fKcmhi"
               type="button"
             >
               <svg
@@ -14777,7 +15217,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Sun Jun 28 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -14793,7 +15233,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Mon Jun 29 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -14809,7 +15249,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Tue Jun 30 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -14825,7 +15265,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Wed Jul 01 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -14841,7 +15281,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Thu Jul 02 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -14857,7 +15297,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Fri Jul 03 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -14873,7 +15313,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Sat Jul 04 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -14893,7 +15333,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Sun Jul 05 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -14909,7 +15349,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Mon Jul 06 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -14925,7 +15365,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Tue Jul 07 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -14941,7 +15381,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Wed Jul 08 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -14957,7 +15397,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Thu Jul 09 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -14973,7 +15413,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Fri Jul 10 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -14989,7 +15429,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Sat Jul 11 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -15009,7 +15449,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Sun Jul 12 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -15025,7 +15465,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Mon Jul 13 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -15041,7 +15481,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Tue Jul 14 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -15057,7 +15497,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Wed Jul 15 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -15073,7 +15513,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Thu Jul 16 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -15089,7 +15529,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Fri Jul 17 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -15105,7 +15545,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Sat Jul 18 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -15125,7 +15565,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Sun Jul 19 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -15141,7 +15581,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Mon Jul 20 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -15157,7 +15597,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Tue Jul 21 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -15173,7 +15613,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Wed Jul 22 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -15189,7 +15629,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Thu Jul 23 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -15205,7 +15645,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Fri Jul 24 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -15221,7 +15661,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Sat Jul 25 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -15241,7 +15681,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Sun Jul 26 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -15257,7 +15697,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Mon Jul 27 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -15273,7 +15713,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Tue Jul 28 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -15289,7 +15729,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Wed Jul 29 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -15305,7 +15745,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Thu Jul 30 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -15321,7 +15761,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Fri Jul 31 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -15337,7 +15777,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Sat Aug 01 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -15357,7 +15797,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Sun Aug 02 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -15373,7 +15813,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Mon Aug 03 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -15389,7 +15829,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Tue Aug 04 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -15405,7 +15845,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Wed Aug 05 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -15421,7 +15861,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Thu Aug 06 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -15437,7 +15877,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Fri Aug 07 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >
@@ -15453,7 +15893,7 @@ exports[`DateInput type format inline 2`] = `
               >
                 <button
                   aria-label="Sat Aug 08 2020"
-                  class="StyledButton-sc-323bzc-0 bwJeiP"
+                  class="StyledButton-sc-323bzc-0 jFJBys"
                   tabindex="-1"
                   type="button"
                 >

@@ -13,20 +13,23 @@ import {
 export interface ChartProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
+  animate?: boolean;
   gridArea?: GridAreaType;
   margin?: MarginType;
   bounds?: number[][];
   color?:
     | ColorType
+    | { color: ColorType; value: number | number[] }[]
+    // deprecated 
     | {
         color?: ColorType;
         opacity?: 'weak' | 'medium' | 'strong' | boolean | number;
-      }
-    | { color: ColorType; value: number | number[] }[];
+      };
   dash?: boolean;
   gap?: GapType;
   onClick?: (...args: any[]) => any;
   onHover?: (...args: any[]) => any;
+  opacity?: 'weak' | 'medium' | 'strong' | boolean | number;
   overflow?: boolean;
   pad?: EdgeSizeType | { horizontal?: EdgeSizeType; vertical?: EdgeSizeType };
   point?:

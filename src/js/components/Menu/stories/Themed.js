@@ -34,4 +34,6 @@ const Themed = () => (
   </Grommet>
 );
 
-storiesOf('Menu', module).add('Themed', () => <Themed />);
+storiesOf('Menu', module).add('Themed', () => <Themed />, {
+  chromatic: { disable: true },
+});
