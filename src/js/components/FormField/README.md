@@ -362,7 +362,7 @@ undefined
 
 **formField.error.iconContainer**
 
-The box container that is surronding the icon, accepts box props Expects `undefined`.
+Any valid Box props for the Box container surronding the icon Expects `object`.
 
 Defaults to
 

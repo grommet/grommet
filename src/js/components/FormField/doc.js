@@ -153,8 +153,9 @@ export const themeDoc = {
   },
   'formField.error.iconContainer': {
     description:
-      'The box container that is surronding the icon, accepts box props',
-    defaultValue: undefined,
+      'Any valid Box props for the Box container surronding the icon',
+    type: 'object',
+    defaultValue: 'undefined',
   },
   'formField.error.background.color': {
     description:
