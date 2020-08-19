@@ -17,6 +17,7 @@ const myCustomTheme: ThemeType = deepMerge(grommet, {
       extend: `
           border-bottom-left-radius: 12px;
           border-bottom-right-radius: 12px;
+          
           overflow: hidden;
         `,
     },
