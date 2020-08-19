@@ -78,4 +78,6 @@ const App = () => {
   );
 };
 
-storiesOf('Menu/TypeScript', module).add('Themed', () => <App />, {});
+storiesOf('Menu', module).add('Themed', () => <App />, {
+  chromatic: { disable: true },
+});
