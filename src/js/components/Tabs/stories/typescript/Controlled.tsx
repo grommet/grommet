@@ -1,13 +1,14 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import isChromatic from 'chromatic/isChromatic';
 import { Attraction, Car, TreeOption } from 'grommet-icons';
 import { Box, Grommet, Tab, Tabs } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const ControlledTabs = () => {
-  const [index, setIndex] = React.useState();
+  const [index, setIndex] = React.useState(0);
 
-  const onActive = nextIndex => setIndex(nextIndex);
+  const onActive = (nextIndex: number) => setIndex(nextIndex);
 
   return (
     <Grommet theme={grommet}>
@@ -32,4 +33,8 @@ const ControlledTabs = () => {
   );
 };
 
-storiesOf('Tabs', module).add('Controlled', () => <ControlledTabs />);
+if (!isChromatic()) {
+  storiesOf('TypeScript/Tabs', module).add('Controlled', () => (
+    <ControlledTabs />
+  ));
+}

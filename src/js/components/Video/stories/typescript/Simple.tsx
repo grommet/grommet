@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import isChromatic from 'chromatic/isChromatic';
 
 import { Box, Grommet, Video } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -26,6 +27,8 @@ const SimpleVideo = props => (
   </Grommet>
 );
 
-storiesOf('Video', module).add('Controls Below', () => (
-  <SimpleVideo controls="below" />
-));
+if (!isChromatic()) {
+  storiesOf('TypeScript/Video', module)
+    .add('Simple', () => <SimpleVideo />)
+    .add('Controls Below', () => <SimpleVideo controls="below" />);
+}

@@ -9,6 +9,7 @@ import { ThemeType } from 'grommet/themes';
 // the prefix name of the Create option entry
 const prefix = 'Create';
 
+// Remove ': ThemeType' if you are not using Typescript.
 const theme: ThemeType = {
   select: {
     control: {

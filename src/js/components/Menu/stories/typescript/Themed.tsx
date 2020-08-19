@@ -5,6 +5,7 @@ import isChromatic from 'chromatic/isChromatic';
 import { Grommet, Box, Menu, ThemeType } from 'grommet';
 import { Next } from 'grommet-icons';
 
+// Remove ': ThemeType' if you are not using Typescript.
 const customBreakpoints: ThemeType = {
   global: {
     breakpoints: {
