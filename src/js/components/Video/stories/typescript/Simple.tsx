@@ -28,7 +28,5 @@ const SimpleVideo = props => (
 );
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/Video', module)
-    .add('Simple', () => <SimpleVideo />)
-    .add('Controls Below', () => <SimpleVideo controls="below" />);
+  storiesOf('TypeScript/Video', module).add('Simple', () => <SimpleVideo />);
 }
