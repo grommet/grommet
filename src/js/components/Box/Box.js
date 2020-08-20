@@ -95,8 +95,8 @@ const Box = forwardRef(
           } else {
             contents.push(
               <StyledBoxGap
-                // eslint-disable-next-line react/no-array-index-key
                 as={gap && gap.as ? gap.as : undefined}
+                // eslint-disable-next-line react/no-array-index-key
                 key={`gap-${index}`}
                 gap={gapSize}
                 directionProp={direction}
