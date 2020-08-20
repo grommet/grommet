@@ -176,7 +176,7 @@ const CustomSuggestionsTextInput = () => {
 };
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/TextInput', module).add('Custom', () => (
+  storiesOf('TextInput', module).add('Custom', () => (
     <CustomSuggestionsTextInput />
   ));
 }

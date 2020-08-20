@@ -49,7 +49,7 @@ const OnMoreInfiniteScroll: React.FC<IProps> = ({ props }) => {
 };
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/InfiniteScroll', module)
+  storiesOf('InfiniteScroll', module)
     .add('onMore', () => <OnMoreInfiniteScroll />)
     .add('onMore step', () => <OnMoreInfiniteScroll step={75} />);
 }

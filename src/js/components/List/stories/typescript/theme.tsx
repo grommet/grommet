@@ -35,5 +35,5 @@ const ThemedList = () => (
 );
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/List', module).add('theme', () => <ThemedList />);
+  storiesOf('List', module).add('theme', () => <ThemedList />);
 }
