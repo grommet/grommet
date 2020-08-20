@@ -7271,6 +7271,14 @@ Whether the drop element should have no background nor shadow
 \`\`\`
 boolean
 \`\`\`
+
+**trapFocus**
+
+Traps keyboard focus inside of drop. Defaults to \`true\`.
+
+\`\`\`
+boolean
+\`\`\`
   
 ## Intrinsic element
 
