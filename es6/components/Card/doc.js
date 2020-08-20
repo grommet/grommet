@@ -1,7 +1,7 @@
 import { describe } from 'react-desc';
 import { getAvailableAtBadge } from '../../utils';
 export var doc = function doc(Card) {
-  var DocumentedCard = describe(Card).availableAt(getAvailableAtBadge('Card')).description('A Card.').usage("import { Card } from 'grommet';\n<Card/>").intrinsicElement('div');
+  var DocumentedCard = describe(Card).availableAt(getAvailableAtBadge('Card')).description("A Card is a container of information that provides access to more \n      details. Elements of a Card can include Header, Body, Footer or any \n      other custom component.").usage("import { Card } from 'grommet';\n<Card/>").intrinsicElement('div');
   return DocumentedCard;
 };
 export var themeDoc = {

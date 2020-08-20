@@ -8,7 +8,7 @@ var _reactDesc = require("react-desc");
 var _utils = require("../../utils");
 
 var doc = function doc(Card) {
-  var DocumentedCard = (0, _reactDesc.describe)(Card).availableAt((0, _utils.getAvailableAtBadge)('Card')).description('A Card.').usage("import { Card } from 'grommet';\n<Card/>").intrinsicElement('div');
+  var DocumentedCard = (0, _reactDesc.describe)(Card).availableAt((0, _utils.getAvailableAtBadge)('Card')).description("A Card is a container of information that provides access to more \n      details. Elements of a Card can include Header, Body, Footer or any \n      other custom component.").usage("import { Card } from 'grommet';\n<Card/>").intrinsicElement('div');
   return DocumentedCard;
 };
 
