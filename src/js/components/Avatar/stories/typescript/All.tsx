@@ -12,6 +12,8 @@ import {
 import { Avatar, Box, Grommet, Stack } from 'grommet';
 import { ThemeType } from 'grommet/themes';
 
+// Type annotations can only be used in TypeScript files.
+// Remove ': ThemeType' if you are not using Typescript.
 const theme: ThemeType = {
   avatar: {
     size: {
