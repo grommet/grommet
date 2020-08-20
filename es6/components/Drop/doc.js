@@ -26,7 +26,8 @@ export var doc = function doc(Drop) {
     stretch: PropTypes.bool.description("Whether the drop element should be stretched to at least match the\n      width of the target element. The default is true because\n      that is what most uses of Drop want, like Select and Menu.").defaultValue(true),
     target: PropTypes.object.description("Target where the drop will be aligned to. This should be a React \n      reference.").isRequired,
     elevation: PropTypes.oneOfType([PropTypes.oneOf(['none', 'xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string]).description("Elevated height of the target, indicated via a drop shadow."),
-    plain: PropTypes.bool.description("Whether the drop element should have no background nor shadow").defaultValue(false)
+    plain: PropTypes.bool.description("Whether the drop element should have no background nor shadow").defaultValue(false),
+    trapFocus: PropTypes.bool.description("Traps keyboard focus inside of drop.").defaultValue(true)
   };
   return DocumentedDrop;
 };

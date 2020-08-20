@@ -17,7 +17,8 @@ export var FocusedContainer = function FocusedContainer(_ref) {
       _ref$restrictScroll = _ref.restrictScroll,
       restrictScroll = _ref$restrictScroll === void 0 ? false : _ref$restrictScroll,
       children = _ref.children,
-      rest = _objectWithoutPropertiesLoose(_ref, ["hidden", "restrictScroll", "children"]);
+      trapFocus = _ref.trapFocus,
+      rest = _objectWithoutPropertiesLoose(_ref, ["hidden", "restrictScroll", "children", "trapFocus"]);
 
   var _useState = useState(''),
       bodyOverflowStyle = _useState[0],
@@ -34,7 +35,7 @@ export var FocusedContainer = function FocusedContainer(_ref) {
       }
     };
 
-    var trapFocus = function trapFocus() {
+    var handleTrapFocus = function handleTrapFocus() {
       var child = ref.current;
       getBodyChildElements().filter(isNotAncestorOf(child)).forEach(makeNodeUnfocusable);
 
@@ -45,15 +46,15 @@ export var FocusedContainer = function FocusedContainer(_ref) {
     };
 
     var timer = setTimeout(function () {
-      if (!hidden) {
-        trapFocus();
+      if (!hidden && trapFocus) {
+        handleTrapFocus();
       }
     }, 0);
     return function () {
       removeTrap();
       clearTimeout(timer);
     };
-  }, [hidden, bodyOverflowStyle, restrictScroll]);
+  }, [hidden, bodyOverflowStyle, restrictScroll, trapFocus]);
   return /*#__PURE__*/React.createElement("div", _extends({
     ref: ref,
     "aria-hidden": hidden

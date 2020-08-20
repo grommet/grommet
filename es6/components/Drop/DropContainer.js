@@ -42,7 +42,8 @@ var DropContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
       restrictFocus = _ref.restrictFocus,
       _ref$stretch = _ref.stretch,
       stretch = _ref$stretch === void 0 ? 'width' : _ref$stretch,
-      rest = _objectWithoutPropertiesLoose(_ref, ["align", "children", "dropTarget", "elevation", "onClickOutside", "onEsc", "onKeyDown", "overflow", "plain", "responsive", "restrictFocus", "stretch"]);
+      trapFocus = _ref.trapFocus,
+      rest = _objectWithoutPropertiesLoose(_ref, ["align", "children", "dropTarget", "elevation", "onClickOutside", "onEsc", "onKeyDown", "overflow", "plain", "responsive", "restrictFocus", "stretch", "trapFocus"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var portalContext = useContext(PortalContext) || defaultPortalContext;
@@ -306,7 +307,8 @@ var DropContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   return /*#__PURE__*/React.createElement(PortalContext.Provider, {
     value: nextPortalContext
   }, /*#__PURE__*/React.createElement(FocusedContainer, {
-    onKeyDown: onEsc && preventLayerClose
+    onKeyDown: onEsc && preventLayerClose,
+    trapFocus: trapFocus
   }, /*#__PURE__*/React.createElement(Keyboard, {
     onEsc: onEsc ? function (event) {
       event.stopPropagation();

@@ -12,7 +12,9 @@ import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
 var Drop = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var restrictFocus = _ref.restrictFocus,
       dropTarget = _ref.target,
-      rest = _objectWithoutPropertiesLoose(_ref, ["restrictFocus", "target"]);
+      _ref$trapFocus = _ref.trapFocus,
+      trapFocus = _ref$trapFocus === void 0 ? true : _ref$trapFocus,
+      rest = _objectWithoutPropertiesLoose(_ref, ["restrictFocus", "target", "trapFocus"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
 
@@ -53,7 +55,8 @@ var Drop = /*#__PURE__*/forwardRef(function (_ref, ref) {
     ref: ref,
     dir: theme && theme.dir,
     dropTarget: dropTarget,
-    restrictFocus: restrictFocus
+    restrictFocus: restrictFocus,
+    trapFocus: trapFocus
   }, rest)), dropContainer) : null;
 });
 Drop.displayName = 'Drop';

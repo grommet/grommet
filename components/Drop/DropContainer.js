@@ -60,7 +60,8 @@ var DropContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       restrictFocus = _ref.restrictFocus,
       _ref$stretch = _ref.stretch,
       stretch = _ref$stretch === void 0 ? 'width' : _ref$stretch,
-      rest = _objectWithoutPropertiesLoose(_ref, ["align", "children", "dropTarget", "elevation", "onClickOutside", "onEsc", "onKeyDown", "overflow", "plain", "responsive", "restrictFocus", "stretch"]);
+      trapFocus = _ref.trapFocus,
+      rest = _objectWithoutPropertiesLoose(_ref, ["align", "children", "dropTarget", "elevation", "onClickOutside", "onEsc", "onKeyDown", "overflow", "plain", "responsive", "restrictFocus", "stretch", "trapFocus"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
@@ -326,7 +327,8 @@ var DropContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   return /*#__PURE__*/_react["default"].createElement(_PortalContext.PortalContext.Provider, {
     value: nextPortalContext
   }, /*#__PURE__*/_react["default"].createElement(_FocusedContainer.FocusedContainer, {
-    onKeyDown: onEsc && preventLayerClose
+    onKeyDown: onEsc && preventLayerClose,
+    trapFocus: trapFocus
   }, /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
     onEsc: onEsc ? function (event) {
       event.stopPropagation();

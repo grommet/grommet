@@ -1,49 +1,73 @@
 import React, { useRef, useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import { Box, Button, Drop, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Grommet, grommet, Box, Button, Drop, Text } from 'grommet';
+import { Calculator } from "grommet-icons/es6/icons/Calculator";
+import { Bug } from "grommet-icons/es6/icons/Bug";
+import { Achievement } from "grommet-icons/es6/icons/Achievement";
 
-var TooltipDrop = function TooltipDrop() {
-  var _useState = useState(),
+var TooltipButton = function TooltipButton(_ref) {
+  var icon = _ref.icon,
+      name = _ref.name;
+
+  var _useState = useState(false),
       over = _useState[0],
       setOver = _useState[1];
 
   var ref = useRef();
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet,
-    full: true
-  }, /*#__PURE__*/React.createElement(Box, {
-    fill: true,
-    align: "center",
-    justify: "center"
-  }, /*#__PURE__*/React.createElement(Button, {
-    label: "Button",
+  return /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(Button, {
     ref: ref,
     onMouseOver: function onMouseOver() {
       return setOver(true);
     },
-    onMouseOut: function onMouseOut() {
+    onMouseLeave: function onMouseLeave() {
       return setOver(false);
     },
-    onFocus: function onFocus() {},
-    onBlur: function onBlur() {}
-  }), ref.current && over && /*#__PURE__*/React.createElement(Drop, {
+    onFocus: function onFocus() {
+      return setOver(true);
+    },
+    onBlur: function onBlur() {
+      return setOver(false);
+    },
+    plain: true
+  }, /*#__PURE__*/React.createElement(Box, {
+    pad: {
+      vertical: 'small'
+    },
+    align: "center"
+  }, icon)), ref.current && over && /*#__PURE__*/React.createElement(Drop, {
     align: {
       left: 'right'
     },
     target: ref.current,
-    plain: true
+    plain: true // trapFocus set to false allows tabbing through
+    ,
+    trapFocus: false
   }, /*#__PURE__*/React.createElement(Box, {
-    margin: "xsmall",
     pad: "small",
-    background: "dark-3",
-    round: {
-      size: 'medium',
-      corner: 'left'
-    }
-  }, "tooltip contents"))));
+    background: "pink"
+  }, /*#__PURE__*/React.createElement(Text, {
+    color: "white"
+  }, name))));
+};
+
+var Tooltip = function Tooltip() {
+  return /*#__PURE__*/React.createElement(Grommet, {
+    theme: grommet
+  }, /*#__PURE__*/React.createElement(Box, {
+    align: "center",
+    pad: "large"
+  }, /*#__PURE__*/React.createElement(TooltipButton, {
+    icon: /*#__PURE__*/React.createElement(Calculator, null),
+    name: "Calculator"
+  }), /*#__PURE__*/React.createElement(TooltipButton, {
+    icon: /*#__PURE__*/React.createElement(Bug, null),
+    name: "Bug"
+  }), /*#__PURE__*/React.createElement(TooltipButton, {
+    icon: /*#__PURE__*/React.createElement(Achievement, null),
+    name: "Achievement"
+  })));
 };
 
 storiesOf('Drop', module).add('Tooltip', function () {
-  return /*#__PURE__*/React.createElement(TooltipDrop, null);
+  return /*#__PURE__*/React.createElement(Tooltip, null);
 });

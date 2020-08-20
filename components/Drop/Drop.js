@@ -28,7 +28,9 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 var Drop = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var restrictFocus = _ref.restrictFocus,
       dropTarget = _ref.target,
-      rest = _objectWithoutPropertiesLoose(_ref, ["restrictFocus", "target"]);
+      _ref$trapFocus = _ref.trapFocus,
+      trapFocus = _ref$trapFocus === void 0 ? true : _ref$trapFocus,
+      rest = _objectWithoutPropertiesLoose(_ref, ["restrictFocus", "target", "trapFocus"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
@@ -69,7 +71,8 @@ var Drop = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     ref: ref,
     dir: theme && theme.dir,
     dropTarget: dropTarget,
-    restrictFocus: restrictFocus
+    restrictFocus: restrictFocus,
+    trapFocus: trapFocus
   }, rest)), dropContainer) : null;
 });
 Drop.displayName = 'Drop';
