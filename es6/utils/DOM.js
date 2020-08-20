@@ -179,7 +179,10 @@ export var isNodeAfterScroll = function isNodeAfterScroll(node, target) {
       bottom = _node$getBoundingClie.bottom; // target will be the document from findScrollParent()
 
 
-  var _ref = target.getBoundingClientRect ? target.getBoundingClientRect() : 0,
+  var _ref = target.getBoundingClientRect ? target.getBoundingClientRect() : {
+    height: 0,
+    top: 0
+  },
       height = _ref.height,
       top = _ref.top;
 
@@ -190,7 +193,9 @@ export var isNodeBeforeScroll = function isNodeBeforeScroll(node, target) {
       top = _node$getBoundingClie2.top; // target will be the document from findScrollParent()
 
 
-  var _ref2 = target.getBoundingClientRect ? target.getBoundingClientRect() : 0,
+  var _ref2 = target.getBoundingClientRect ? target.getBoundingClientRect() : {
+    top: 0
+  },
       targetTop = _ref2.top;
 
   return top <= targetTop;

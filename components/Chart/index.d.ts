@@ -20,7 +20,7 @@ export interface ChartProps {
   color?:
     | ColorType
     | { color: ColorType; value: number | number[] }[]
-    // deprecated 
+    // deprecated
     | {
         color?: ColorType;
         opacity?: 'weak' | 'medium' | 'strong' | boolean | number;

@@ -31,5 +31,15 @@ if (!isChromatic()) {
     return /*#__PURE__*/React.createElement(InfiniteScrollReplace, {
       replace: true
     });
+  }).add('Replace with Show 28th item', function () {
+    return /*#__PURE__*/React.createElement(InfiniteScrollReplace, {
+      replace: true,
+      show: 27
+    });
+  }).add('Replace with Show 88th item', function () {
+    return /*#__PURE__*/React.createElement(InfiniteScrollReplace, {
+      replace: true,
+      show: 87
+    });
   });
 }
