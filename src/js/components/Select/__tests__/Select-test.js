@@ -811,6 +811,10 @@ describe('Select', () => {
 
   test('keyboard navigation timeout', () => {
     jest.useFakeTimers();
+    // scrollIntoView is not implemented in jsdom, so we need to mock.
+    // Select keyboard / keyboard nav timeout uses InfiniteScroll which
+    // has scrollIntoView as part of its implementation.
+    window.HTMLElement.prototype.scrollIntoView = jest.fn();
     const { container, getByPlaceholderText } = render(
       <Grommet>
         <Select
