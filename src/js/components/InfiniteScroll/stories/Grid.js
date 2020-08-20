@@ -6,10 +6,10 @@ import { grommet } from 'grommet/themes';
 
 import { allItems } from './Basics';
 
-const GridInfiniteScroll = () => (
+const GridInfiniteScroll = ({ ...rest }) => (
   <Grommet theme={grommet}>
     <Grid columns="xsmall" rows="small">
-      <InfiniteScroll items={allItems} step={12}>
+      <InfiniteScroll items={allItems} step={12} {...rest}>
         {item => (
           <Box key={item} as="article" pad="xsmall">
             <Image src="https://via.placeholder.com/350x150" />
@@ -21,4 +21,6 @@ const GridInfiniteScroll = () => (
   </Grommet>
 );
 
-storiesOf('InfiniteScroll', module).add('Grid', () => <GridInfiniteScroll />);
+storiesOf('InfiniteScroll', module)
+  .add('Grid', () => <GridInfiniteScroll />)
+  .add('Grid with show item 77', () => <GridInfiniteScroll show={78} />);
