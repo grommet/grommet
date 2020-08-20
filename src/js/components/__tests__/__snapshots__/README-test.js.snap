@@ -6298,8 +6298,7 @@ function
 **pin**
 
 Whether the header and/or footer should be pinned when
-      not all rows are visible. This only takes effect when 'fill' is true
-      or 'vertical'.
+      not all rows are visible.
 
 \`\`\`
 boolean

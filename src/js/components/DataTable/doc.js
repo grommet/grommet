@@ -174,8 +174,7 @@ export const doc = DataTable => {
       PropTypes.oneOf(['header', 'footer']),
     ]).description(
       `Whether the header and/or footer should be pinned when
-      not all rows are visible. This only takes effect when 'fill' is true
-      or 'vertical'.`,
+      not all rows are visible.`,
     ),
     replace: PropTypes.bool.description(
       `Whether to replace previously rendered items with a generic spacing

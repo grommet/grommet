@@ -15,7 +15,7 @@ const Example = () => (
   <Grommet theme={grommet} full>
     <Box fill="vertical">
       <DataTable
-        columns={columns}
+        columns={pinnedColumns}
         data={data}
         step={10}
         fill
