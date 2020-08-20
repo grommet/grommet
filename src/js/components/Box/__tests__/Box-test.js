@@ -265,6 +265,10 @@ describe('Box', () => {
             <Box />
           </Box>
         ))}
+        <Box as="ul" gap={{ as: 'li', size: 'small' }}>
+          <li>first</li>
+          <li>second</li>
+        </Box>
       </Grommet>,
     );
     const tree = component.toJSON();

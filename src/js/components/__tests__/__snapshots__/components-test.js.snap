@@ -797,7 +797,19 @@ small
 medium
 large
 xlarge
-string",
+string
+{
+  as: string,
+  size: 
+    none
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}",
         "name": "gap",
       },
       Object {

@@ -83,7 +83,9 @@ const Box = forwardRef(
     }
 
     let contents = children;
-    if (gap && gap !== 'none') {
+    const gapSize = gap && gap.size ? gap.size : gap;
+
+    if (gapSize && gapSize !== 'none') {
       contents = [];
       let firstIndex;
       Children.forEach(children, (child, index) => {
@@ -94,8 +96,9 @@ const Box = forwardRef(
             contents.push(
               <StyledBoxGap
                 // eslint-disable-next-line react/no-array-index-key
+                as={gap && gap.as ? gap.as : undefined}
                 key={`gap-${index}`}
-                gap={gap}
+                gap={gapSize}
                 directionProp={direction}
                 responsive={responsive}
                 border={border}

@@ -210,6 +210,21 @@ export const doc = Box => {
         'xlarge',
       ]),
       PropTypes.string,
+      PropTypes.shape({
+        as: PropTypes.string,
+        size: PropTypes.oneOfType([
+          PropTypes.oneOf([
+            'none',
+            'xxsmall',
+            'xsmall',
+            'small',
+            'medium',
+            'large',
+            'xlarge',
+          ]),
+          PropTypes.string,
+        ]),
+      }),
     ]).description(`The amount of spacing between child elements. This
         should not be used in conjunction with 'wrap' as the gap elements
         will not wrap gracefully. If a child is a Fragment,

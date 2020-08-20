@@ -462,6 +462,18 @@ medium
 large
 xlarge
 string
+{
+  as: string,
+  size: 
+    none
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
 ```
 
 **height**
