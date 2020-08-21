@@ -47,6 +47,7 @@ const Select = forwardRef(
       a11yTitle,
       alignSelf,
       children,
+      clear = false,
       closeOnChange = true,
       disabled,
       disabledKey,
@@ -209,6 +210,7 @@ const Select = forwardRef(
           onClick={onClick}
           dropContent={
             <SelectContainer
+              clear={clear}
               disabled={disabled}
               disabledKey={disabledKey}
               dropHeight={dropHeight}

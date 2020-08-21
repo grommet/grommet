@@ -6255,6 +6255,19 @@ string",
         "name": "children",
       },
       Object {
+        "defaultValue": false,
+        "description": "Whether to provide button to clear selection.",
+        "format": "boolean
+{
+  position: 
+    top
+    bottom,
+  label: string,
+  render: function
+}",
+        "name": "clear",
+      },
+      Object {
         "defaultValue": true,
         "description": "Wether to close the drop when a selection is made.",
         "format": "boolean",

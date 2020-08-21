@@ -962,6 +962,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     select: {
       // background: undefined,
+      clear: {
+        container: {
+          pad: 'small',
+          background: 'light-2',
+        }, // any box props
+        text: {
+          color: 'dark-3',
+        }, // any text props
+      },
       container: {
         // extend: undefined,
       },

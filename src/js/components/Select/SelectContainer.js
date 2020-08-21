@@ -39,9 +39,27 @@ const SelectOption = styled(Button)`
   width: 100%;
 `;
 
+const ClearButton = ({ clear, onClear, theme }) => {
+  const { label, position, render } = clear;
+  const align = position !== 'bottom' ? 'start' : 'center';
+  if (render) {
+    return render({ onClear });
+  }
+  return (
+    <Box flex={false}>
+      <Button tabIndex="-1" onClick={onClear}>
+        <Box {...theme.select.clear.container} align={align}>
+          <Text {...theme.select.clear.text}>{label || 'Clear selection'}</Text>
+        </Box>
+      </Button>
+    </Box>
+  );
+};
+
 const SelectContainer = forwardRef(
   (
     {
+      clear,
       children = null,
       disabled,
       disabledKey,
@@ -207,6 +225,13 @@ const SelectContainer = forwardRef(
       [multiple, onChange, optionIndexesInValue, options, valueKey],
     );
 
+    const onClear = useCallback(
+      event => {
+        onChange(event, { option: '', value: '', selected: '' });
+      },
+      [onChange],
+    );
+
     const onNextOption = useCallback(
       event => {
         event.preventDefault();
@@ -297,6 +322,9 @@ const SelectContainer = forwardRef(
               />
             </Box>
           )}
+          {clear && clear.position !== 'bottom' && (
+            <ClearButton clear={clear} onClear={onClear} theme={theme} />
+          )}
           <OptionsBox role="menubar" tabIndex="-1" ref={optionsRef}>
             {options.length > 0 ? (
               <InfiniteScroll
@@ -377,6 +405,9 @@ const SelectContainer = forwardRef(
               </SelectOption>
             )}
           </OptionsBox>
+          {clear && clear.position === 'bottom' && (
+            <ClearButton clear={clear} onClear={onClear} theme={theme} />
+          )}
         </StyledContainer>
       </Keyboard>
     );

@@ -137,6 +137,21 @@ Function that will be called when each option is rendered.
 function
 ```
 
+**clear**
+
+Whether to provide button to clear selection.
+
+```
+boolean
+{
+  position: 
+    top
+    bottom,
+  label: string,
+  render: function
+}
+```
+
 **closeOnChange**
 
 Wether to close the drop when a selection is made. Defaults to `true`.
@@ -532,6 +547,26 @@ Defaults to
 
 ```
 undefined
+```
+
+**select.clear.container**
+
+Any valid Box prop for the clear button container. Expects `object`.
+
+Defaults to
+
+```
+{ pad: 'small', background: 'light-2' }
+```
+
+**select.clear.text**
+
+Any valid Text prop for text used inside the clear button container. Expects `object`.
+
+Defaults to
+
+```
+{ color: 'dark-3' }
 ```
 
 **select.control.open**
