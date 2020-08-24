@@ -25,7 +25,7 @@ const Searcher = ({ filtering, filters, onFilter, onFiltering, property }) => {
 
   return filtering === property ? (
     <Keyboard onEsc={() => onFiltering(undefined)}>
-      <Box flex pad={{ horizontal: 'small' }}>
+      <Box width={{ min: 'xsmall' }} flex pad={{ horizontal: 'small' }}>
         <TextInput
           name={`search-${property}`}
           ref={inputRef}
