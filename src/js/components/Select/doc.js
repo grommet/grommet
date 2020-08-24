@@ -42,7 +42,7 @@ export const doc = Select => {
         ),
       }),
     ])
-      .description(`Whether to provide button to clear selection.`)
+      .description(`Whether to provide a button option to clear selections.`)
       .defaultValue(false),
     closeOnChange: PropTypes.bool
       .description('Wether to close the drop when a selection is made.')
