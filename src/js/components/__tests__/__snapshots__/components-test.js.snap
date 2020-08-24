@@ -1643,7 +1643,9 @@ string",
         "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/card&module=%2Fsrc%2FCard.js",
       },
     ],
-    "description": "A Card.",
+    "description": "A Card is a container of information that provides access to more 
+      details. Elements of a Card can include Header, Body, Footer or any 
+      other custom component.",
     "intrinsicElement": "div",
     "name": "Card",
     "usage": "import { Card } from 'grommet';
@@ -3253,6 +3255,12 @@ string",
         "description": "Whether the drop element should have no background nor shadow",
         "format": "boolean",
         "name": "plain",
+      },
+      Object {
+        "defaultValue": true,
+        "description": "Traps keyboard focus inside of drop.",
+        "format": "boolean",
+        "name": "trapFocus",
       },
     ],
     "usage": "import { Drop } from 'grommet';

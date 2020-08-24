@@ -49,6 +49,7 @@ const DropContainer = forwardRef(
       responsive,
       restrictFocus,
       stretch = 'width',
+      trapFocus,
       ...rest
     },
     ref,
@@ -329,7 +330,10 @@ const DropContainer = forwardRef(
 
     return (
       <PortalContext.Provider value={nextPortalContext}>
-        <FocusedContainer onKeyDown={onEsc && preventLayerClose}>
+        <FocusedContainer
+          onKeyDown={onEsc && preventLayerClose}
+          trapFocus={trapFocus}
+        >
           <Keyboard
             onEsc={
               onEsc
