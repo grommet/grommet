@@ -5,7 +5,11 @@ import { getAvailableAtBadge } from '../../utils';
 export const doc = Card => {
   const DocumentedCard = describe(Card)
     .availableAt(getAvailableAtBadge('Card'))
-    .description('A Card.')
+    .description(
+      `A Card is a container of information that provides access to more 
+      details. Elements of a Card can include Header, Body, Footer or any 
+      other custom component.`,
+    )
     .usage(
       `import { Card } from 'grommet';
 <Card/>`,

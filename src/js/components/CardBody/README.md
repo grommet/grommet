@@ -1,5 +1,5 @@
 ## CardBody
-The Card Body.
+The body of the card. Mostly used for placing content.
 
 
 ## Properties
