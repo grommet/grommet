@@ -3,6 +3,8 @@ import { storiesOf } from '@storybook/react';
 import { ThemeType } from 'grommet/themes';
 import { grommet, Box, Button, Grommet } from 'grommet';
 
+// Type annotations can only be used in TypeScript files.
+// Remove ': ThemeType' if you are not using Typescript.
 const customTheme: ThemeType = {
   global: {
     font: {
