@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import isChromatic from 'chromatic/isChromatic';
 
 import { Gremlin, IceCream } from 'grommet-icons';
 import { Stack, grommet, Grommet, Box, Diagram } from 'grommet';
@@ -8,6 +7,7 @@ import { Stack, grommet, Grommet, Box, Diagram } from 'grommet';
 import { DiagramConnectionAnchor, DiagramConnectionType } from '../../index';
 
 // Type annotations can only be used in TyoeScript files
+// Remove ':DiagramConnection...'
 const anchor: DiagramConnectionAnchor = 'horizontal';
 const type: DiagramConnectionType = 'curved';
 
@@ -42,6 +42,4 @@ const Connections = () => {
   );
 };
 
-if (!isChromatic()) {
-  storiesOf('Diagram', module).add('Connections', () => <Connections />);
-}
+storiesOf('Diagram', module).add('Connections', () => <Connections />);

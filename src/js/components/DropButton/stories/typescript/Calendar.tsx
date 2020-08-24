@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { FormDown } from 'grommet-icons';
+import isChromatic from 'chromatic/isChromatic';
 
 import { Grommet, Box, Calendar, DropButton, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const CalendarDropButton = () => {
-  const [date, setDate] = React.useState();
-  const [open, setOpen] = React.useState();
+  const [date, setDate] = useState('');
+  const [open, setOpen] = useState(false);
 
   const onSelect = selectedDate => {
     setDate(selectedDate);
@@ -35,6 +36,6 @@ const CalendarDropButton = () => {
   );
 };
 
-storiesOf('DropButton', module).add('Calendar', () => <CalendarDropButton />, {
-  chromatic: { disable: true },
-});
+if (!isChromatic()) {
+  storiesOf('DropButton', module).add('Calendar', () => <CalendarDropButton />);
+}

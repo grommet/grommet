@@ -1,12 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import isChromatic from 'chromatic/isChromatic';
 
 import { grommet, Box, FormField, TextArea, Grommet } from 'grommet';
 import { deepMerge } from 'grommet/utils';
 import { ThemeType } from 'grommet/themes';
 
-// Type annotations can only be used in TypeScript files
+// Type annotations can only be used in TypeScript files.
+// Remove ': ThemeType' if you are not using Typescript.
 const customFormFieldTheme: ThemeType = {
   global: {
     font: {
@@ -38,6 +38,4 @@ const CustomFormField = () => (
   </Grommet>
 );
 
-if (!isChromatic()) {
-  storiesOf('Form', module).add('Custom Theme', () => <CustomFormField />);
-}
+storiesOf('FormField', module).add('Custom Theme', () => <CustomFormField />);
