@@ -178,7 +178,7 @@ export const isNodeAfterScroll = (node, target) => {
   // target will be the document from findScrollParent()
   const { height, top } = target.getBoundingClientRect
     ? target.getBoundingClientRect()
-    : 0;
+    : { height: 0, top: 0 };
   return bottom >= top + height;
 };
 
@@ -187,6 +187,6 @@ export const isNodeBeforeScroll = (node, target) => {
   // target will be the document from findScrollParent()
   const { top: targetTop } = target.getBoundingClientRect
     ? target.getBoundingClientRect()
-    : 0;
+    : { top: 0 };
   return top <= targetTop;
 };
