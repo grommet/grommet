@@ -30,4 +30,4 @@ const Example = () => (
   </Grommet>
 );
 
-storiesOf('DataTable', module).add('Fill', () => <Example />);
+storiesOf('DataTable', module).add('Fill and Pin', () => <Example />);

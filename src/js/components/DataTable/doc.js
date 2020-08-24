@@ -100,6 +100,7 @@ export const doc = DataTable => {
             aggregate: PropTypes.bool,
           }),
         ]),
+        pin: PropTypes.bool,
         primary: PropTypes.bool,
         property: PropTypes.string.isRequired,
         render: PropTypes.func,
@@ -136,7 +137,9 @@ export const doc = DataTable => {
       made available for the column. 'primary' indicates that this property
       should be used as the unique identifier, which gives the cell 'row' scope
       for accessibility. If 'primary' is not used for any column, and
-      'primaryKey' isn't specified either, then the first column will be used.`,
+      'primaryKey' isn't specified either, then the first column will be used.
+      'pin' indicates that this column should not scroll out of view
+      to the left when the table is scrolled horizontally.`,
     ),
     data: PropTypes.arrayOf(PropTypes.shape({})).description(
       'Array of data objects.',
@@ -159,6 +162,13 @@ export const doc = DataTable => {
        group keys that sets expanded groups and 'onExpand' is a function
        that will be called after expand button is clicked with
        an array of keys of expanded groups.`),
+    onClickRow: PropTypes.func.description(
+      `When supplied, this function will be called with an event object that
+      include a 'datum' property containing the data value associated with
+      the clicked row. You should not include interactive elements, like
+      Anchor or Button inside table cells as that can cause confusion with
+      overlapping interactive elements.`,
+    ),
     onMore: PropTypes.func.description(
       `Use this to indicate that 'data' doesn't contain all that it could.
       It will be called when all of the data rows have been rendered.
@@ -168,26 +178,6 @@ export const doc = DataTable => {
       be combined with properties that expect all data to be present in the
       browser, such as columns.search, sortable, groupBy, or 
       columns.aggregate.`,
-    ),
-    pin: PropTypes.oneOfType([
-      PropTypes.bool,
-      PropTypes.oneOf(['header', 'footer']),
-    ]).description(
-      `Whether the header and/or footer should be pinned when
-      not all rows are visible.`,
-    ),
-    replace: PropTypes.bool.description(
-      `Whether to replace previously rendered items with a generic spacing
-      element when they have scrolled out of view. This is more performant but
-      means that in-page searching will not find elements that have been
-      replaced.`,
-    ),
-    onClickRow: PropTypes.func.description(
-      `When supplied, this function will be called with an event object that
-      include a 'datum' property containing the data value associated with
-      the clicked row. You should not include interactive elements, like
-      Anchor or Button inside table cells as that can cause confusion with
-      overlapping interactive elements.`,
     ),
     onSearch: PropTypes.func.description(
       `When supplied, and when at least one column has 'search' enabled,
@@ -210,6 +200,13 @@ export const doc = DataTable => {
       `Cell padding. You can set the padding per context by passing an
       object with keys for 'heading', 'body', and/or 'footer'.`,
     ),
+    pin: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.oneOf(['header', 'footer']),
+    ]).description(
+      `Whether the header and/or footer should be pinned when
+      not all rows are visible. A value of true pins both header and footer.`,
+    ),
     primaryKey: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.bool,
@@ -219,6 +216,12 @@ export const doc = DataTable => {
       Use this property when the columns approach will not work for your
       data set. Setting primaryKey to false indicates there should be no
       unique identifier, avoid this as it's less accessible.`,
+    ),
+    replace: PropTypes.bool.description(
+      `Whether to replace previously rendered items with a generic spacing
+      element when they have scrolled out of view. This is more performant but
+      means that in-page searching will not find elements that have been
+      replaced.`,
     ),
     resizeable: PropTypes.bool.description(
       'Whether to allow the user to resize column widths.',

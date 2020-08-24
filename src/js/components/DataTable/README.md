@@ -314,6 +314,8 @@ A description of the data. The order controls the column order.
       should be used as the unique identifier, which gives the cell 'row' scope
       for accessibility. If 'primary' is not used for any column, and
       'primaryKey' isn't specified either, then the first column will be used.
+      'pin' indicates that this column should not scroll out of view
+      to the left when the table is scrolled horizontally.
 
 ```
 [{
@@ -337,6 +339,7 @@ A description of the data. The order controls the column order.
     {
       aggregate: boolean
     },
+  pin: boolean,
   primary: boolean,
   property: string,
   render: function,
@@ -398,6 +401,18 @@ string
 }
 ```
 
+**onClickRow**
+
+When supplied, this function will be called with an event object that
+      include a 'datum' property containing the data value associated with
+      the clicked row. You should not include interactive elements, like
+      Anchor or Button inside table cells as that can cause confusion with
+      overlapping interactive elements.
+
+```
+function
+```
+
 **onMore**
 
 Use this to indicate that 'data' doesn't contain all that it could.
@@ -408,40 +423,6 @@ Use this to indicate that 'data' doesn't contain all that it could.
       be combined with properties that expect all data to be present in the
       browser, such as columns.search, sortable, groupBy, or 
       columns.aggregate.
-
-```
-function
-```
-
-**pin**
-
-Whether the header and/or footer should be pinned when
-      not all rows are visible.
-
-```
-boolean
-header
-footer
-```
-
-**replace**
-
-Whether to replace previously rendered items with a generic spacing
-      element when they have scrolled out of view. This is more performant but
-      means that in-page searching will not find elements that have been
-      replaced.
-
-```
-boolean
-```
-
-**onClickRow**
-
-When supplied, this function will be called with an event object that
-      include a 'datum' property containing the data value associated with
-      the clicked row. You should not include interactive elements, like
-      Anchor or Button inside table cells as that can cause confusion with
-      overlapping interactive elements.
 
 ```
 function
@@ -539,6 +520,17 @@ string
 }
 ```
 
+**pin**
+
+Whether the header and/or footer should be pinned when
+      not all rows are visible. A value of true pins both header and footer.
+
+```
+boolean
+header
+footer
+```
+
 **primaryKey**
 
 When supplied, indicates the property for a data object to use to
@@ -549,6 +541,17 @@ When supplied, indicates the property for a data object to use to
 
 ```
 string
+boolean
+```
+
+**replace**
+
+Whether to replace previously rendered items with a generic spacing
+      element when they have scrolled out of view. This is more performant but
+      means that in-page searching will not find elements that have been
+      replaced.
+
+```
 boolean
 ```
 
