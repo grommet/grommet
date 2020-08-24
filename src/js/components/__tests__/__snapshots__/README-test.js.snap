@@ -3582,7 +3582,9 @@ Defaults to
 \`\`\`
 ",
   "Card": "## Card
-A Card.
+A Card is a container of information that provides access to more 
+      details. Elements of a Card can include Header, Body, Footer or any 
+      other custom component.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Card&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/card&module=%2Fsrc%2FCard.js)
 ## Usage
@@ -3643,7 +3645,7 @@ Defaults to
 \`\`\`
 ",
   "CardBody": "## CardBody
-The Card Body.
+The body of the card. Mostly used for placing content.
 
 
 ## Properties
@@ -7293,6 +7295,14 @@ string
 **plain**
 
 Whether the drop element should have no background nor shadow
+
+\`\`\`
+boolean
+\`\`\`
+
+**trapFocus**
+
+Traps keyboard focus inside of drop. Defaults to \`true\`.
 
 \`\`\`
 boolean

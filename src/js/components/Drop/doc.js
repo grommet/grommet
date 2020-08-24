@@ -76,6 +76,9 @@ export const doc = Drop => {
         `Whether the drop element should have no background nor shadow`,
       )
       .defaultValue(false),
+    trapFocus: PropTypes.bool
+      .description(`Traps keyboard focus inside of drop.`)
+      .defaultValue(true),
   };
 
   return DocumentedDrop;
