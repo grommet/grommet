@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import isChromatic from 'chromatic/isChromatic';
 
 import {
   Favorite,
@@ -105,6 +104,4 @@ const Avatars = () => {
   );
 };
 
-if (!isChromatic()) {
-  storiesOf('Avatar', module).add('All', () => <Avatars />);
-}
+storiesOf('Avatar', module).add('All', () => <Avatars />);
