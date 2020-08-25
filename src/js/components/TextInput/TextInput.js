@@ -365,7 +365,7 @@ const TextInput = forwardRef(
               event.persist();
               const adjustedEvent = event;
               adjustedEvent.suggestion = suggestions[activeSuggestionIndex];
-              adjustedEvent.target = (ref || inputRef).current;
+              adjustedEvent.target = inputRef.current;
               handleSuggestionSelect(adjustedEvent);
             }
           }}
