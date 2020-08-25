@@ -66,8 +66,16 @@ const LayerContainer = forwardRef(
         if (modal && !element && anchorRef.current) {
           anchorRef.current.focus();
         }
+        if (
+          !modal &&
+          !element &&
+          anchorRef.current &&
+          (onEsc || onClickOutside)
+        ) {
+          anchorRef.current.focus();
+        }
       }
-    }, [modal, position, ref]);
+    }, [modal, position, ref, onEsc, onClickOutside]);
 
     useEffect(() => {
       if (position !== 'hidden') {
