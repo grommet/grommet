@@ -9,10 +9,11 @@ import {
   BorderType,
 } from '../../utils';
 
-type Sections<TBody, THeader = TBody, TFooter = TBody> = {
+type Sections<TBody, THeader = TBody, TFooter = TBody, TPinned = TBody> = {
   header?: THeader;
   body?: TBody;
   footer?: TFooter;
+  pinned?: TPinned;
 };
 
 export type ColumnSizeType =
@@ -39,6 +40,7 @@ export interface ColumnConfig<TRowType> {
   aggregate?: 'avg' | 'max' | 'min' | 'sum';
   footer?: React.ReactNode | { aggregate?: boolean };
   header?: string | React.ReactNode | { aggregate?: boolean };
+  pin?: boolean;
   primary?: boolean;
   property: string;
   render?: (datum: TRowType) => React.ReactNode;
@@ -58,9 +60,11 @@ export interface DataTableProps<TRowType = any> {
     | Sections<BackgroundType | string[], BackgroundType, BackgroundType>;
   border?: BorderType | Sections<BorderType>;
   columns?: ColumnConfig<TRowType>[];
+  fill?: boolean | 'vertical' | 'horizontal';
   gridArea?: GridAreaType;
   margin?: MarginType;
   pad?: PadType | Sections<PadType>;
+  pin?: boolean | 'header' | 'footer';
   resizeable?: boolean;
   replace?: boolean;
   rowProps?: {
