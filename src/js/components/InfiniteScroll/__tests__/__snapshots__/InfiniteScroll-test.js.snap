@@ -569,3 +569,608 @@ exports[`InfiniteScroll step 1`] = `
   />
 </div>
 `;
+
+exports[`Number of Items Rendered Should only contain unique items (i.e no duplicates) 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    item 1
+  </div>
+  <div
+    class="c1"
+  >
+    item 2
+  </div>
+  <div
+    class="c1"
+  >
+    item 3
+  </div>
+  <div
+    class="c1"
+  >
+    item 4
+  </div>
+  <div
+    class="c1"
+  >
+    item 5
+  </div>
+  <div
+    class="c1"
+  >
+    item 6
+  </div>
+  <div
+    class="c1"
+  >
+    item 7
+  </div>
+  <div
+    class="c1"
+  >
+    item 8
+  </div>
+  <div
+    class="c1"
+  >
+    item 9
+  </div>
+  <div
+    class="c1"
+  >
+    item 10
+  </div>
+  <div
+    class="c1"
+  >
+    item 11
+  </div>
+  <div
+    class="c1"
+  >
+    item 12
+  </div>
+  <div
+    class="c1"
+  >
+    item 13
+  </div>
+  <div
+    class="c1"
+  >
+    item 14
+  </div>
+  <div
+    class="c1"
+  >
+    item 15
+  </div>
+  <div
+    class="c1"
+  >
+    item 16
+  </div>
+  <div
+    class="c1"
+  >
+    item 17
+  </div>
+  <div
+    class="c1"
+  >
+    item 18
+  </div>
+  <div
+    class="c1"
+  >
+    item 19
+  </div>
+  <div
+    class="c1"
+  >
+    item 20
+  </div>
+  <div
+    class="c1"
+  >
+    item 21
+  </div>
+  <div
+    class="c1"
+  >
+    item 22
+  </div>
+  <div
+    class="c1"
+  >
+    item 23
+  </div>
+  <div
+    class="c1"
+  >
+    item 24
+  </div>
+  <div
+    class="c1"
+  >
+    item 25
+  </div>
+  <div
+    class="c2"
+  />
+</div>
+`;
+
+exports[`show scenarios When show, should only contain unique 
+          items (i.e no duplicates) 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    item 1
+  </div>
+  <div
+    class="c1"
+  >
+    item 2
+  </div>
+  <div
+    class="c1"
+  >
+    item 3
+  </div>
+  <div
+    class="c1"
+  >
+    item 4
+  </div>
+  <div
+    class="c1"
+  >
+    item 5
+  </div>
+  <div
+    class="c1"
+  >
+    item 6
+  </div>
+  <div
+    class="c1"
+  >
+    item 7
+  </div>
+  <div
+    class="c1"
+  >
+    item 8
+  </div>
+  <div
+    class="c1"
+  >
+    item 9
+  </div>
+  <div
+    class="c1"
+  >
+    item 10
+  </div>
+  <div
+    class="c1"
+  >
+    item 11
+  </div>
+  <div
+    class="c1"
+  >
+    item 12
+  </div>
+  <div
+    class="c1"
+  >
+    item 13
+  </div>
+  <div
+    class="c1"
+  >
+    item 14
+  </div>
+  <div
+    class="c1"
+  >
+    item 15
+  </div>
+  <div
+    class="c1"
+  >
+    item 16
+  </div>
+  <div
+    class="c1"
+  >
+    item 17
+  </div>
+  <div
+    class="c1"
+  >
+    item 18
+  </div>
+  <div
+    class="c1"
+  >
+    item 19
+  </div>
+  <div
+    class="c1"
+  >
+    item 20
+  </div>
+  <div
+    class="c1"
+  >
+    item 21
+  </div>
+  <div
+    class="c1"
+  >
+    item 22
+  </div>
+  <div
+    class="c1"
+  >
+    item 23
+  </div>
+  <div
+    class="c1"
+  >
+    item 24
+  </div>
+  <div
+    class="c1"
+  >
+    item 25
+  </div>
+  <div
+    class="c1"
+  >
+    item 26
+  </div>
+  <div
+    class="c1"
+  >
+    item 27
+  </div>
+  <div
+    class="c1"
+  >
+    item 28
+  </div>
+  <div
+    class="c1"
+  >
+    item 29
+  </div>
+  <div
+    class="c1"
+  >
+    item 30
+  </div>
+  <div
+    class="c1"
+  >
+    item 31
+  </div>
+  <div
+    class="c1"
+  >
+    item 32
+  </div>
+  <div
+    class="c1"
+  >
+    item 33
+  </div>
+  <div
+    class="c1"
+  >
+    item 34
+  </div>
+  <div
+    class="c1"
+  >
+    item 35
+  </div>
+  <div
+    class="c1"
+  >
+    item 36
+  </div>
+  <div
+    class="c1"
+  >
+    item 37
+  </div>
+  <div
+    class="c1"
+  >
+    item 38
+  </div>
+  <div
+    class="c1"
+  >
+    item 39
+  </div>
+  <div
+    class="c1"
+  >
+    item 40
+  </div>
+  <div
+    class="c1"
+  >
+    item 41
+  </div>
+  <div
+    class="c1"
+  >
+    item 42
+  </div>
+  <div
+    class="c1"
+  >
+    item 43
+  </div>
+  <div
+    class="c1"
+  >
+    item 44
+  </div>
+  <div
+    class="c1"
+  >
+    item 45
+  </div>
+  <div
+    class="c1"
+  >
+    item 46
+  </div>
+  <div
+    class="c1"
+  >
+    item 47
+  </div>
+  <div
+    class="c1"
+  >
+    item 48
+  </div>
+  <div
+    class="c1"
+  >
+    item 49
+  </div>
+  <div
+    class="c1"
+  >
+    item 50
+  </div>
+  <div
+    class="c1"
+  >
+    item 51
+  </div>
+  <div
+    class="c1"
+  >
+    item 52
+  </div>
+  <div
+    class="c1"
+  >
+    item 53
+  </div>
+  <div
+    class="c1"
+  >
+    item 54
+  </div>
+  <div
+    class="c1"
+  >
+    item 55
+  </div>
+  <div
+    class="c1"
+  >
+    item 56
+  </div>
+  <div
+    class="c1"
+  >
+    item 57
+  </div>
+  <div
+    class="c1"
+  >
+    item 58
+  </div>
+  <div
+    class="c1"
+  >
+    item 59
+  </div>
+  <div
+    class="c1"
+  >
+    item 60
+  </div>
+  <div
+    class="c1"
+  >
+    item 61
+  </div>
+  <div
+    class="c1"
+  >
+    item 62
+  </div>
+  <div
+    class="c1"
+  >
+    item 63
+  </div>
+  <div
+    class="c1"
+  >
+    item 64
+  </div>
+  <div
+    class="c1"
+  >
+    item 65
+  </div>
+  <div
+    class="c1"
+  >
+    item 66
+  </div>
+  <div
+    class="c1"
+  >
+    item 67
+  </div>
+  <div
+    class="c1"
+  >
+    item 68
+  </div>
+  <div
+    class="c1"
+  >
+    item 69
+  </div>
+  <div
+    class="c1"
+  >
+    item 70
+  </div>
+  <div
+    class="c1"
+  >
+    item 71
+  </div>
+  <div
+    class="c1"
+  >
+    item 72
+  </div>
+  <div
+    class="c1"
+  >
+    item 73
+  </div>
+  <div
+    class="c1"
+  >
+    item 74
+  </div>
+  <div
+    class="c1"
+  >
+    item 75
+  </div>
+  <div
+    class="c2"
+  />
+</div>
+`;
