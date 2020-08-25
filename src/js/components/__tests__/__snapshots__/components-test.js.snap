@@ -6256,7 +6256,7 @@ string",
       },
       Object {
         "defaultValue": false,
-        "description": "Whether to provide button to clear selection.",
+        "description": "Whether to provide a button option to clear selections.",
         "format": "boolean
 {
   position: 

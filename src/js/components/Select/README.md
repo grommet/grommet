@@ -139,7 +139,7 @@ function
 
 **clear**
 
-Whether to provide button to clear selection.
+Whether to provide a button option to clear selections.
 
 ```
 boolean
