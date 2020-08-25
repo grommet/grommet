@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Button, Grommet, Select } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Grommet, Select, grommet } from 'grommet';
 
 const options = ['one', 'two'];
 
@@ -36,24 +35,16 @@ const ClearBottom = () => {
   );
 };
 
-const ClearRender = () => {
+const ClearLabel = () => {
   const [value, setValue] = useState('');
   return (
     <Box fill align="center" justify="start" pad="large">
       <Select
-        placeholder="Clear with render"
+        placeholder="Clear with label"
         value={value}
         options={options}
         onChange={({ option }) => setValue(option)}
-        clear={{
-          render: ({ onClear }) => {
-            return (
-              <Box pad="medium" background="accent-4">
-                <Button onClick={onClear}>Click me!</Button>
-              </Box>
-            );
-          },
-        }}
+        clear={{ label: 'Click me!' }}
       />
     </Box>
   );
@@ -64,7 +55,7 @@ const ClearExamples = () => (
     <Box direction="row">
       <ClearTop />
       <ClearBottom />
-      <ClearRender />
+      <ClearLabel />
     </Box>
   </Grommet>
 );

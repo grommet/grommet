@@ -90,7 +90,6 @@ const Select = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const inputRef = useRef();
     const formContext = useContext(FormContext);
-
     // value is used for what we receive in valueProp and the basis for
     // what we send with onChange
     const [value, setValue] = formContext.useFormInput(name, valueProp, '');

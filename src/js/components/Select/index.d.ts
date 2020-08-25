@@ -18,7 +18,6 @@ export interface SelectProps {
     | {
         position?: 'top' | 'bottom';
         label?: string;
-        render?: (param: { onClear: () => void }) => React.ReactNode;
       };
   closeOnChange?: boolean;
   disabled?: boolean | (number | string | object)[];

@@ -28,18 +28,13 @@ export const doc = Select => {
       PropTypes.shape({
         position: PropTypes.oneOf(['top', 'bottom'])
           .description(
-            `Add a clear value to the top or at the bottom of the
+            `Add a clear option to the top or at the bottom of the
             container. By default no clear option is present.`,
           )
           .defaultValue('top'),
         label: PropTypes.string
           .description('Label for the clear selection item')
           .defaultValue('Clear selection'),
-        render: PropTypes.func.description(
-          `Render function to customize clear value item.
-          It receives as a parameter the callback to call
-          when clicking on the item`,
-        ),
       }),
     ])
       .description(`Whether to provide button to clear selection.`)

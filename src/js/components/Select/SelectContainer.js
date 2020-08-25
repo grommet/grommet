@@ -39,20 +39,16 @@ const SelectOption = styled(Button)`
   width: 100%;
 `;
 
-const ClearButton = ({ clear, onClear, theme }) => {
-  const { label, position, render } = clear;
+const ClearButton = ({ clear, name, onClear, theme }) => {
+  const { label, position } = clear;
   const align = position !== 'bottom' ? 'start' : 'center';
-  if (render) {
-    return render({ onClear });
-  }
+  const buttonLabel = label || `Clear ${name || 'selection'}`;
   return (
-    <Box flex={false}>
-      <Button tabIndex="-1" onClick={onClear}>
-        <Box {...theme.select.clear.container} align={align}>
-          <Text {...theme.select.clear.text}>{label || 'Clear selection'}</Text>
-        </Box>
-      </Button>
-    </Box>
+    <Button tabIndex="-1" onClick={onClear}>
+      <Box {...theme.select.clear.container} align={align}>
+        <Text {...theme.select.clear.text}>{buttonLabel}</Text>
+      </Box>
+    </Button>
   );
 };
 
@@ -68,6 +64,7 @@ const SelectContainer = forwardRef(
       id,
       labelKey,
       multiple,
+      name,
       onChange,
       onKeyDown,
       onMore,
@@ -88,7 +85,6 @@ const SelectContainer = forwardRef(
     const [keyboardNavigation, setKeyboardNavigation] = useState();
     const searchRef = useRef();
     const optionsRef = useRef();
-
     // adjust activeIndex when options change
     useEffect(() => {
       if (activeIndex === -1 && search && optionIndexesInValue.length) {
@@ -227,7 +223,7 @@ const SelectContainer = forwardRef(
 
     const onClear = useCallback(
       event => {
-        onChange(event, { option: '', value: '', selected: '' });
+        onChange(event, { option: undefined, value: '', selected: '' });
       },
       [onChange],
     );
@@ -323,7 +319,12 @@ const SelectContainer = forwardRef(
             </Box>
           )}
           {clear && clear.position !== 'bottom' && (
-            <ClearButton clear={clear} onClear={onClear} theme={theme} />
+            <ClearButton
+              clear={clear}
+              name={name}
+              onClear={onClear}
+              theme={theme}
+            />
           )}
           <OptionsBox role="menubar" tabIndex="-1" ref={optionsRef}>
             {options.length > 0 ? (
@@ -406,7 +407,12 @@ const SelectContainer = forwardRef(
             )}
           </OptionsBox>
           {clear && clear.position === 'bottom' && (
-            <ClearButton clear={clear} onClear={onClear} theme={theme} />
+            <ClearButton
+              clear={clear}
+              name={name}
+              onClear={onClear}
+              theme={theme}
+            />
           )}
         </StyledContainer>
       </Keyboard>

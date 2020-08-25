@@ -147,8 +147,7 @@ boolean
   position: 
     top
     bottom,
-  label: string,
-  render: function
+  label: string
 }
 ```
 
