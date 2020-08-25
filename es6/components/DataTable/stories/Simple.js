@@ -6,7 +6,7 @@ import { grommet } from 'grommet/themes'; // Source code for the data can be fou
 
 import { columns, DATA } from './data';
 
-var SimpleDataTable = function SimpleDataTable() {
+var Example = function Example() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -20,5 +20,5 @@ var SimpleDataTable = function SimpleDataTable() {
 };
 
 storiesOf('DataTable', module).add('Simple', function () {
-  return /*#__PURE__*/React.createElement(SimpleDataTable, null);
+  return /*#__PURE__*/React.createElement(Example, null);
 });

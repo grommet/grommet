@@ -1,3 +1,5 @@
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 import React, { useContext } from 'react';
@@ -5,17 +7,17 @@ import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
-import { TableCell } from '../TableCell';
 import { Text } from '../Text';
 import { Resizer } from './Resizer';
 import { Searcher } from './Searcher';
 import { ExpanderCell } from './ExpanderCell';
-import { StyledDataTableHeader, StyledDataTableRow } from './StyledDataTable';
+import { StyledDataTableCell, StyledDataTableHeader, StyledDataTableRow } from './StyledDataTable';
 
 var Header = function Header(_ref) {
   var background = _ref.background,
       border = _ref.border,
       columns = _ref.columns,
+      fill = _ref.fill,
       filtering = _ref.filtering,
       filters = _ref.filters,
       groups = _ref.groups,
@@ -26,12 +28,15 @@ var Header = function Header(_ref) {
       onSort = _ref.onSort,
       onToggle = _ref.onToggle,
       pad = _ref.pad,
+      tablePin = _ref.pin,
       sort = _ref.sort,
       widths = _ref.widths,
-      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "filtering", "filters", "groups", "groupState", "onFilter", "onFiltering", "onResize", "onSort", "onToggle", "pad", "sort", "widths"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "fill", "filtering", "filters", "groups", "groupState", "onFilter", "onFiltering", "onResize", "onSort", "onToggle", "pad", "pin", "sort", "widths"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
-  return /*#__PURE__*/React.createElement(StyledDataTableHeader, rest, /*#__PURE__*/React.createElement(StyledDataTableRow, null, groups && /*#__PURE__*/React.createElement(ExpanderCell, {
+  return /*#__PURE__*/React.createElement(StyledDataTableHeader, _extends({
+    fillProp: fill
+  }, rest), /*#__PURE__*/React.createElement(StyledDataTableRow, null, groups && /*#__PURE__*/React.createElement(ExpanderCell, {
     context: "header",
     expanded: Object.keys(groupState).filter(function (k) {
       return !groupState[k].expanded;
@@ -41,6 +46,7 @@ var Header = function Header(_ref) {
     var property = _ref2.property,
         header = _ref2.header,
         align = _ref2.align,
+        columnPin = _ref2.pin,
         search = _ref2.search,
         sortable = _ref2.sortable,
         verticalAlign = _ref2.verticalAlign,
@@ -89,13 +95,17 @@ var Header = function Header(_ref) {
       }, searcher, resizer) : searcher || resizer);
     }
 
-    return /*#__PURE__*/React.createElement(TableCell, {
+    var pin = [];
+    if (tablePin) pin.push('top');
+    if (columnPin) pin.push('left');
+    return /*#__PURE__*/React.createElement(StyledDataTableCell, {
       key: property,
       align: align,
       verticalAlign: verticalAlign,
       background: background,
       border: border,
       pad: pad,
+      pin: pin,
       plain: true,
       scope: "col",
       size: widths && widths[property] ? undefined : size,

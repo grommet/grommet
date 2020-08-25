@@ -17,7 +17,7 @@ var sizeStyle = css(["width:", ";max-width:", ";overflow:hidden;"], function (pr
 var StyledTableCell = styled.td.withConfig({
   displayName: "StyledTable__StyledTableCell",
   componentId: "sc-1m3u5g-0"
-})(["margin:0;padding:0;font-weight:inherit;text-align:inherit;height:100%;", " ", " ", " ", " ", " ", " ", ""], function (props) {
+})(["margin:0;padding:0;font-weight:inherit;text-align:inherit;", " ", " ", " ", " ", " ", " ", ""], function (props) {
   return props.size && sizeStyle;
 }, function (props) {
   return props.verticalAlign && "vertical-align: " + props.verticalAlign + ";";
@@ -45,7 +45,7 @@ Object.setPrototypeOf(StyledTableDataCaption.defaultProps, defaultProps);
 var StyledTableRow = styled.tr.withConfig({
   displayName: "StyledTable__StyledTableRow",
   componentId: "sc-1m3u5g-2"
-})(["height:100%;"]);
+})([""]);
 StyledTableRow.defaultProps = {};
 Object.setPrototypeOf(StyledTableRow.defaultProps, defaultProps);
 var StyledTableBody = styled.tbody.withConfig({

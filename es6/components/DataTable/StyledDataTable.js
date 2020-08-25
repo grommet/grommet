@@ -1,15 +1,19 @@
 import styled, { css } from 'styled-components';
-import { backgroundStyle, focusStyle, genericStyles, normalizeColor } from '../../utils';
+import { backgroundStyle, fillStyle, focusStyle, genericStyles, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
 import { TableRow } from '../TableRow';
 import { Table } from '../Table';
 import { TableBody } from '../TableBody';
+import { TableCell } from '../TableCell';
 import { TableHeader } from '../TableHeader';
-import { TableFooter } from '../TableFooter';
+import { TableFooter } from '../TableFooter'; // border-collapse: separate is needed so pinned header/footer borders work
+
 var StyledDataTable = styled(Table).withConfig({
   displayName: "StyledDataTable",
   componentId: "xrlyjm-0"
-})(["border-spacing:0;border-collapse:collapse;height:auto;", " ", ";"], genericStyles, function (props) {
+})(["border-spacing:0;border-collapse:separate;height:auto;", " ", " ", ";"], genericStyles, function (props) {
+  return props.fillProp && fillStyle(props.fillProp);
+}, function (props) {
   return props.theme.dataTable && props.theme.dataTable.body && props.theme.dataTable.body.extend;
 });
 StyledDataTable.defaultProps = {};
@@ -61,4 +65,14 @@ var StyledDataTableFooter = styled(TableFooter).withConfig({
 });
 StyledDataTableFooter.defaultProps = {};
 Object.setPrototypeOf(StyledDataTableFooter.defaultProps, defaultProps);
-export { StyledDataTable, StyledDataTableRow, StyledDataTableBody, StyledDataTableHeader, StyledDataTableFooter };
+var StyledDataTableCell = styled(TableCell).withConfig({
+  displayName: "StyledDataTable__StyledDataTableCell",
+  componentId: "xrlyjm-5"
+})(["", ""], function (props) {
+  return props.pin && props.pin.length > 0 && "\n    position: sticky;\n    " + props.pin.map(function (p) {
+    return p + ": 0;";
+  }).join(' ') + "\n    z-index: " + Object.keys(props.pin).length + ";\n  ";
+});
+StyledDataTableCell.defaultProps = {};
+Object.setPrototypeOf(StyledDataTableCell.defaultProps, defaultProps);
+export { StyledDataTable, StyledDataTableRow, StyledDataTableBody, StyledDataTableCell, StyledDataTableHeader, StyledDataTableFooter };

@@ -13,8 +13,6 @@ var _Box = require("../Box");
 
 var _Button = require("../Button");
 
-var _TableCell = require("../TableCell");
-
 var _Text = require("../Text");
 
 var _Resizer = require("./Resizer");
@@ -29,12 +27,15 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 var Header = function Header(_ref) {
   var background = _ref.background,
       border = _ref.border,
       columns = _ref.columns,
+      fill = _ref.fill,
       filtering = _ref.filtering,
       filters = _ref.filters,
       groups = _ref.groups,
@@ -45,13 +46,16 @@ var Header = function Header(_ref) {
       onSort = _ref.onSort,
       onToggle = _ref.onToggle,
       pad = _ref.pad,
+      tablePin = _ref.pin,
       sort = _ref.sort,
       widths = _ref.widths,
-      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "filtering", "filters", "groups", "groupState", "onFilter", "onFiltering", "onResize", "onSort", "onToggle", "pad", "sort", "widths"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "fill", "filtering", "filters", "groups", "groupState", "onFilter", "onFiltering", "onResize", "onSort", "onToggle", "pad", "pin", "sort", "widths"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
-  return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableHeader, rest, /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableRow, null, groups && /*#__PURE__*/_react["default"].createElement(_ExpanderCell.ExpanderCell, {
+  return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableHeader, _extends({
+    fillProp: fill
+  }, rest), /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableRow, null, groups && /*#__PURE__*/_react["default"].createElement(_ExpanderCell.ExpanderCell, {
     context: "header",
     expanded: Object.keys(groupState).filter(function (k) {
       return !groupState[k].expanded;
@@ -61,6 +65,7 @@ var Header = function Header(_ref) {
     var property = _ref2.property,
         header = _ref2.header,
         align = _ref2.align,
+        columnPin = _ref2.pin,
         search = _ref2.search,
         sortable = _ref2.sortable,
         verticalAlign = _ref2.verticalAlign,
@@ -109,13 +114,17 @@ var Header = function Header(_ref) {
       }, searcher, resizer) : searcher || resizer);
     }
 
-    return /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, {
+    var pin = [];
+    if (tablePin) pin.push('top');
+    if (columnPin) pin.push('left');
+    return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableCell, {
       key: property,
       align: align,
       verticalAlign: verticalAlign,
       background: background,
       border: border,
       pad: pad,
+      pin: pin,
       plain: true,
       scope: "col",
       size: widths && widths[property] ? undefined : size,

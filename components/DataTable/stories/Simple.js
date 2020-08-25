@@ -14,7 +14,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 // Source code for the data can be found here
 // https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
-var SimpleDataTable = function SimpleDataTable() {
+var Example = function Example() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -28,5 +28,5 @@ var SimpleDataTable = function SimpleDataTable() {
 };
 
 (0, _react2.storiesOf)('DataTable', module).add('Simple', function () {
-  return /*#__PURE__*/_react["default"].createElement(SimpleDataTable, null);
+  return /*#__PURE__*/_react["default"].createElement(Example, null);
 });

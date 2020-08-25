@@ -19,12 +19,13 @@ var Body = /*#__PURE__*/forwardRef(function (_ref, ref) {
       replace = _ref.replace,
       onClickRow = _ref.onClickRow,
       pad = _ref.pad,
+      pinnedBackground = _ref.pinnedBackground,
       primaryProperty = _ref.primaryProperty,
       rowProps = _ref.rowProps,
       size = _ref.size,
       step = _ref.step,
       theme = _ref.theme,
-      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "onMore", "replace", "onClickRow", "pad", "primaryProperty", "rowProps", "size", "step", "theme"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "onMore", "replace", "onClickRow", "pad", "pinnedBackground", "primaryProperty", "rowProps", "size", "step", "theme"]);
 
   var _React$useState = React.useState(),
       active = _React$useState[0],
@@ -86,7 +87,7 @@ var Body = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }, columns.map(function (column) {
       return /*#__PURE__*/React.createElement(Cell, {
         key: column.property,
-        background: background,
+        background: column.pin ? pinnedBackground : background,
         border: border,
         context: "body",
         column: column,

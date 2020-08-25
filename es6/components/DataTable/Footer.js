@@ -1,3 +1,5 @@
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 import React from 'react';
@@ -11,18 +13,25 @@ var Footer = function Footer(_ref) {
   var background = _ref.background,
       border = _ref.border,
       columns = _ref.columns,
+      fill = _ref.fill,
       footerValues = _ref.footerValues,
       groups = _ref.groups,
       pad = _ref.pad,
+      tablePin = _ref.pin,
       primaryProperty = _ref.primaryProperty,
-      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "footerValues", "groups", "pad", "primaryProperty"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "fill", "footerValues", "groups", "pad", "pin", "primaryProperty"]);
 
-  return /*#__PURE__*/React.createElement(StyledDataTableFooter, rest, /*#__PURE__*/React.createElement(TableRow, null, groups && /*#__PURE__*/React.createElement(TableCell, {
+  return /*#__PURE__*/React.createElement(StyledDataTableFooter, _extends({
+    fillProp: fill
+  }, rest), /*#__PURE__*/React.createElement(TableRow, null, groups && /*#__PURE__*/React.createElement(TableCell, {
     plain: true,
     size: "xxsmall",
     pad: "none",
     verticalAlign: "top"
   }), columns.map(function (column) {
+    var pin = [];
+    if (tablePin) pin.push('bottom');
+    if (column.pin) pin.push('left');
     return /*#__PURE__*/React.createElement(Cell, {
       key: column.property,
       background: background,
@@ -31,6 +40,7 @@ var Footer = function Footer(_ref) {
       column: column,
       datum: footerValues,
       pad: pad,
+      pin: pin,
       primaryProperty: primaryProperty
     });
   })));

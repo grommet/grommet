@@ -46,6 +46,7 @@ var DataTable = function DataTable(_ref) {
       columns = _ref$columns === void 0 ? [] : _ref$columns,
       _ref$data = _ref.data,
       data = _ref$data === void 0 ? [] : _ref$data,
+      fill = _ref.fill,
       groupBy = _ref.groupBy,
       onClickRow = _ref.onClickRow,
       onMore = _ref.onMore,
@@ -53,6 +54,7 @@ var DataTable = function DataTable(_ref) {
       onSortProp = _ref.onSort,
       replace = _ref.replace,
       pad = _ref.pad,
+      pin = _ref.pin,
       primaryKey = _ref.primaryKey,
       resizeable = _ref.resizeable,
       rowProps = _ref.rowProps,
@@ -61,7 +63,7 @@ var DataTable = function DataTable(_ref) {
       sortable = _ref.sortable,
       _ref$step = _ref.step,
       step = _ref$step === void 0 ? 50 : _ref$step,
-      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "groupBy", "onClickRow", "onMore", "onSearch", "onSort", "replace", "pad", "primaryKey", "resizeable", "rowProps", "size", "sort", "sortable", "step"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "fill", "groupBy", "onClickRow", "onMore", "onSearch", "onSort", "replace", "pad", "pin", "primaryKey", "resizeable", "rowProps", "size", "sort", "sortable", "step"]);
 
   // property name of the primary property
   var primaryProperty = (0, _react.useMemo)(function () {
@@ -193,15 +195,19 @@ var DataTable = function DataTable(_ref) {
     console.warn('DataTable cannot combine "size" and "resizeble".');
   }
 
-  return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTable, rest, /*#__PURE__*/_react["default"].createElement(_Header.Header, {
+  return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTable, _extends({
+    fillProp: fill
+  }, rest), /*#__PURE__*/_react["default"].createElement(_Header.Header, {
     background: normalizeProp(background, 'header'),
     border: normalizeProp(border, 'header'),
     columns: columns,
+    fill: fill,
     filtering: filtering,
     filters: filters,
     groups: groups,
     groupState: groupState,
     pad: normalizeProp(pad, 'header'),
+    pin: pin === true || pin === 'header',
     size: size,
     sort: sort,
     widths: widths,
@@ -230,6 +236,7 @@ var DataTable = function DataTable(_ref) {
     replace: replace,
     onClickRow: onClickRow,
     pad: normalizeProp(pad, 'body'),
+    pinnedBackground: normalizeProp(background, 'pinned'),
     primaryProperty: primaryProperty,
     rowProps: rowProps,
     size: size,
@@ -238,9 +245,11 @@ var DataTable = function DataTable(_ref) {
     background: normalizeProp(background, 'footer'),
     border: normalizeProp(border, 'footer'),
     columns: columns,
+    fill: fill,
     footerValues: footerValues,
     groups: groups,
     pad: normalizeProp(pad, 'footer'),
+    pin: pin === true || pin === 'footer',
     primaryProperty: primaryProperty,
     size: size
   }));

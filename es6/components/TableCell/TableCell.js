@@ -18,13 +18,14 @@ var TableCell = /*#__PURE__*/forwardRef(function (_ref, ref) {
       background = _ref.background,
       border = _ref.border,
       children = _ref.children,
+      className = _ref.className,
       colSpan = _ref.colSpan,
       pad = _ref.pad,
       plain = _ref.plain,
       scope = _ref.scope,
       size = _ref.size,
       verticalAlign = _ref.verticalAlign,
-      rest = _objectWithoutPropertiesLoose(_ref, ["align", "background", "border", "children", "colSpan", "pad", "plain", "scope", "size", "verticalAlign"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["align", "background", "border", "children", "className", "colSpan", "pad", "plain", "scope", "size", "verticalAlign"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
   return /*#__PURE__*/React.createElement(TableContext.Consumer, null, function (tableContext) {
@@ -65,7 +66,9 @@ var TableCell = /*#__PURE__*/forwardRef(function (_ref, ref) {
       colSpan: colSpan,
       tableContext: tableContext,
       tableContextTheme: tableContextTheme
-    }, plain ? mergedProps : {}, cellProps), plain || !Object.keys(mergedProps).length ? children : /*#__PURE__*/React.createElement(Box, _extends({}, mergedProps, {
+    }, plain ? mergedProps : {}, cellProps, {
+      className: className
+    }), plain || !Object.keys(mergedProps).length ? children : /*#__PURE__*/React.createElement(Box, _extends({}, mergedProps, {
       align: align,
       justify: verticalAlignToJustify[verticalAlign]
     }), children));

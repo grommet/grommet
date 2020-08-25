@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.StyledDataTableFooter = exports.StyledDataTableHeader = exports.StyledDataTableBody = exports.StyledDataTableRow = exports.StyledDataTable = void 0;
+exports.StyledDataTableFooter = exports.StyledDataTableHeader = exports.StyledDataTableCell = exports.StyledDataTableBody = exports.StyledDataTableRow = exports.StyledDataTable = void 0;
 
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
@@ -15,6 +15,8 @@ var _Table = require("../Table");
 
 var _TableBody = require("../TableBody");
 
+var _TableCell = require("../TableCell");
+
 var _TableHeader = require("../TableHeader");
 
 var _TableFooter = require("../TableFooter");
@@ -23,10 +25,13 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+// border-collapse: separate is needed so pinned header/footer borders work
 var StyledDataTable = (0, _styledComponents["default"])(_Table.Table).withConfig({
   displayName: "StyledDataTable",
   componentId: "xrlyjm-0"
-})(["border-spacing:0;border-collapse:collapse;height:auto;", " ", ";"], _utils.genericStyles, function (props) {
+})(["border-spacing:0;border-collapse:separate;height:auto;", " ", " ", ";"], _utils.genericStyles, function (props) {
+  return props.fillProp && (0, _utils.fillStyle)(props.fillProp);
+}, function (props) {
   return props.theme.dataTable && props.theme.dataTable.body && props.theme.dataTable.body.extend;
 });
 exports.StyledDataTable = StyledDataTable;
@@ -83,3 +88,14 @@ var StyledDataTableFooter = (0, _styledComponents["default"])(_TableFooter.Table
 exports.StyledDataTableFooter = StyledDataTableFooter;
 StyledDataTableFooter.defaultProps = {};
 Object.setPrototypeOf(StyledDataTableFooter.defaultProps, _defaultProps.defaultProps);
+var StyledDataTableCell = (0, _styledComponents["default"])(_TableCell.TableCell).withConfig({
+  displayName: "StyledDataTable__StyledDataTableCell",
+  componentId: "xrlyjm-5"
+})(["", ""], function (props) {
+  return props.pin && props.pin.length > 0 && "\n    position: sticky;\n    " + props.pin.map(function (p) {
+    return p + ": 0;";
+  }).join(' ') + "\n    z-index: " + Object.keys(props.pin).length + ";\n  ";
+});
+exports.StyledDataTableCell = StyledDataTableCell;
+StyledDataTableCell.defaultProps = {};
+Object.setPrototypeOf(StyledDataTableCell.defaultProps, _defaultProps.defaultProps);

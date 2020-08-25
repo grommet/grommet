@@ -3,8 +3,8 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
-import { TableCell } from '../TableCell';
 import { Text } from '../Text';
+import { StyledDataTableCell } from './StyledDataTable';
 import { datumValue } from './buildState';
 
 var normalizeProp = function normalizeProp(name, rowProp, prop) {
@@ -17,6 +17,7 @@ var Cell = function Cell(_ref) {
       border = _ref.border,
       _ref$column = _ref.column,
       align = _ref$column.align,
+      columnPin = _ref$column.pin,
       property = _ref$column.property,
       render = _ref$column.render,
       verticalAlign = _ref$column.verticalAlign,
@@ -25,6 +26,7 @@ var Cell = function Cell(_ref) {
       datum = _ref.datum,
       index = _ref.index,
       pad = _ref.pad,
+      cellPin = _ref.pin,
       primaryProperty = _ref.primaryProperty,
       rowProp = _ref.rowProp,
       scope = _ref.scope;
@@ -43,7 +45,9 @@ var Cell = function Cell(_ref) {
     content = /*#__PURE__*/React.createElement(Text, textProps, content);
   }
 
-  return /*#__PURE__*/React.createElement(TableCell, _extends({
+  var pin;
+  if (cellPin) pin = cellPin;else if (columnPin) pin = ['left'];
+  return /*#__PURE__*/React.createElement(StyledDataTableCell, _extends({
     scope: scope
   }, theme.dataTable[context], {
     align: align,
@@ -51,7 +55,8 @@ var Cell = function Cell(_ref) {
     size: size,
     background: normalizeProp('background', rowProp, Array.isArray(background) ? background[index % background.length] : background),
     border: normalizeProp('border', rowProp, border),
-    pad: normalizeProp('pad', rowProp, pad)
+    pad: normalizeProp('pad', rowProp, pad),
+    pin: pin
   }), content);
 };
 
