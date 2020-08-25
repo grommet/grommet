@@ -1,0 +1,57 @@
+"use strict";
+
+var _react = _interopRequireDefault(require("react"));
+
+var _react2 = require("@storybook/react");
+
+var _grommet = require("grommet");
+
+var _themes = require("grommet/themes");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var suggestions = Array(100).fill().map(function (_, i) {
+  return "suggestion " + (i + 1);
+});
+
+var OnSelect = function OnSelect() {
+  var _React$useState = _react["default"].useState(''),
+      value = _React$useState[0],
+      setValue = _React$useState[1];
+
+  var onChange = function onChange(event) {
+    return setValue(event.target.value);
+  };
+
+  var onSelect = function onSelect(event) {
+    return setValue(event.suggestion);
+  };
+
+  var onHighlight = function onHighlight(event) {
+    if (event.target.selectionStart !== event.target.selectionEnd) {
+      console.log(event.target.value.substring(event.target.selectionStart, event.target.selectionEnd));
+    }
+  };
+
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
+    full: true,
+    theme: _themes.grommet
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+    fill: true,
+    align: "center",
+    justify: "start",
+    pad: "large"
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+    width: "medium"
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
+    value: value,
+    onChange: onChange,
+    onSelect: onHighlight,
+    onSuggestionSelect: onSelect,
+    suggestions: suggestions
+  }))));
+};
+
+(0, _react2.storiesOf)('TextInput', module).add('onSelect and onSuggestionSelect', function () {
+  return /*#__PURE__*/_react["default"].createElement(OnSelect, null);
+});

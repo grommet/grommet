@@ -89,6 +89,7 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       _onFocus = _ref.onFocus,
       onKeyDown = _ref.onKeyDown,
       onSelect = _ref.onSelect,
+      onSuggestionSelect = _ref.onSuggestionSelect,
       onSuggestionsClose = _ref.onSuggestionsClose,
       onSuggestionsOpen = _ref.onSuggestionsOpen,
       placeholder = _ref.placeholder,
@@ -97,7 +98,7 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       reverse = _ref.reverse,
       suggestions = _ref.suggestions,
       valueProp = _ref.value,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "defaultValue", "dropAlign", "dropHeight", "dropTarget", "dropProps", "icon", "id", "messages", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "onSelect", "onSuggestionsClose", "onSuggestionsOpen", "placeholder", "plain", "readOnly", "reverse", "suggestions", "value"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "defaultValue", "dropAlign", "dropHeight", "dropTarget", "dropProps", "icon", "id", "messages", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "onSelect", "onSuggestionSelect", "onSuggestionsClose", "onSuggestionsOpen", "placeholder", "plain", "readOnly", "reverse", "suggestions", "value"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
@@ -119,8 +120,14 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
   var _useState2 = (0, _react.useState)(),
       showDrop = _useState2[0],
-      setShowDrop = _useState2[1]; // if we have no suggestions, close drop if it's open
+      setShowDrop = _useState2[1];
 
+  var handleSuggestionSelect = (0, _react.useMemo)(function () {
+    return onSelect && !onSuggestionSelect ? onSelect : onSuggestionSelect;
+  }, [onSelect, onSuggestionSelect]);
+  var handleTextSelect = (0, _react.useMemo)(function () {
+    return onSelect && onSuggestionSelect ? onSelect : undefined;
+  }, [onSelect, onSuggestionSelect]); // if we have no suggestions, close drop if it's open
 
   (0, _react.useEffect)(function () {
     if (showDrop && (!suggestions || !suggestions.length)) {
@@ -212,6 +219,9 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
   var showStyledPlaceholder = placeholder && typeof placeholder !== 'string' && !value;
   var drop;
+  var extraProps = {
+    onSelect: handleTextSelect
+  };
 
   if (showDrop) {
     drop =
@@ -230,10 +240,10 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
         inputRef.current.focus();
         closeDrop();
 
-        if (onSelect) {
+        if (handleSuggestionSelect) {
           var adjustedEvent = event;
           adjustedEvent.suggestion = suggestions[activeSuggestionIndex];
-          onSelect(adjustedEvent);
+          handleSuggestionSelect(adjustedEvent);
         }
 
         setValue(suggestions[activeSuggestionIndex]);
@@ -284,12 +294,12 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
           inputRef.current.focus();
           closeDrop();
 
-          if (onSelect) {
+          if (handleSuggestionSelect) {
             event.persist();
             var adjustedEvent = event;
             adjustedEvent.suggestion = suggestion;
             adjustedEvent.target = inputRef.current;
-            onSelect(adjustedEvent);
+            handleSuggestionSelect(adjustedEvent);
           }
 
           setValue(suggestion);
@@ -313,14 +323,14 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     onEnter: function onEnter(event) {
       closeDrop();
 
-      if (activeSuggestionIndex >= 0 && onSelect) {
+      if (activeSuggestionIndex >= 0 && handleSuggestionSelect) {
         // prevent submitting forms when choosing a suggestion
         event.preventDefault();
         event.persist();
         var adjustedEvent = event;
         adjustedEvent.suggestion = suggestions[activeSuggestionIndex];
         adjustedEvent.target = inputRef.current;
-        onSelect(adjustedEvent);
+        handleSuggestionSelect(adjustedEvent);
       }
     },
     onEsc: showDrop ? function (event) {
@@ -354,7 +364,7 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     icon: icon,
     reverse: reverse,
     focus: focus
-  }, rest, {
+  }, rest, extraProps, {
     defaultValue: renderLabel(defaultValue),
     value: renderLabel(value),
     readOnly: readOnly,

@@ -2,7 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { forwardRef, useCallback, useContext, useEffect, useRef, useState } from 'react';
+import React, { forwardRef, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
@@ -69,6 +69,7 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       _onFocus = _ref.onFocus,
       onKeyDown = _ref.onKeyDown,
       onSelect = _ref.onSelect,
+      onSuggestionSelect = _ref.onSuggestionSelect,
       onSuggestionsClose = _ref.onSuggestionsClose,
       onSuggestionsOpen = _ref.onSuggestionsOpen,
       placeholder = _ref.placeholder,
@@ -77,7 +78,7 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       reverse = _ref.reverse,
       suggestions = _ref.suggestions,
       valueProp = _ref.value,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "defaultValue", "dropAlign", "dropHeight", "dropTarget", "dropProps", "icon", "id", "messages", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "onSelect", "onSuggestionsClose", "onSuggestionsOpen", "placeholder", "plain", "readOnly", "reverse", "suggestions", "value"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "defaultValue", "dropAlign", "dropHeight", "dropTarget", "dropProps", "icon", "id", "messages", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "onSelect", "onSuggestionSelect", "onSuggestionsClose", "onSuggestionsOpen", "placeholder", "plain", "readOnly", "reverse", "suggestions", "value"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var announce = useContext(AnnounceContext);
@@ -98,8 +99,14 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
   var _useState2 = useState(),
       showDrop = _useState2[0],
-      setShowDrop = _useState2[1]; // if we have no suggestions, close drop if it's open
+      setShowDrop = _useState2[1];
 
+  var handleSuggestionSelect = useMemo(function () {
+    return onSelect && !onSuggestionSelect ? onSelect : onSuggestionSelect;
+  }, [onSelect, onSuggestionSelect]);
+  var handleTextSelect = useMemo(function () {
+    return onSelect && onSuggestionSelect ? onSelect : undefined;
+  }, [onSelect, onSuggestionSelect]); // if we have no suggestions, close drop if it's open
 
   useEffect(function () {
     if (showDrop && (!suggestions || !suggestions.length)) {
@@ -191,6 +198,9 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
   var showStyledPlaceholder = placeholder && typeof placeholder !== 'string' && !value;
   var drop;
+  var extraProps = {
+    onSelect: handleTextSelect
+  };
 
   if (showDrop) {
     drop =
@@ -209,10 +219,10 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
         inputRef.current.focus();
         closeDrop();
 
-        if (onSelect) {
+        if (handleSuggestionSelect) {
           var adjustedEvent = event;
           adjustedEvent.suggestion = suggestions[activeSuggestionIndex];
-          onSelect(adjustedEvent);
+          handleSuggestionSelect(adjustedEvent);
         }
 
         setValue(suggestions[activeSuggestionIndex]);
@@ -263,12 +273,12 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
           inputRef.current.focus();
           closeDrop();
 
-          if (onSelect) {
+          if (handleSuggestionSelect) {
             event.persist();
             var adjustedEvent = event;
             adjustedEvent.suggestion = suggestion;
             adjustedEvent.target = inputRef.current;
-            onSelect(adjustedEvent);
+            handleSuggestionSelect(adjustedEvent);
           }
 
           setValue(suggestion);
@@ -292,14 +302,14 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     onEnter: function onEnter(event) {
       closeDrop();
 
-      if (activeSuggestionIndex >= 0 && onSelect) {
+      if (activeSuggestionIndex >= 0 && handleSuggestionSelect) {
         // prevent submitting forms when choosing a suggestion
         event.preventDefault();
         event.persist();
         var adjustedEvent = event;
         adjustedEvent.suggestion = suggestions[activeSuggestionIndex];
         adjustedEvent.target = inputRef.current;
-        onSelect(adjustedEvent);
+        handleSuggestionSelect(adjustedEvent);
       }
     },
     onEsc: showDrop ? function (event) {
@@ -333,7 +343,7 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     icon: icon,
     reverse: reverse,
     focus: focus
-  }, rest, {
+  }, rest, extraProps, {
     defaultValue: renderLabel(defaultValue),
     value: renderLabel(value),
     readOnly: readOnly,
