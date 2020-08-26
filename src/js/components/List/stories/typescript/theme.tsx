@@ -1,9 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import isChromatic from 'chromatic/isChromatic';
 
 import { Grommet, Box, List } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { grommet, ThemeType } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
 
 export const locations = [
@@ -14,7 +13,9 @@ export const locations = [
   'San Francisco',
 ];
 
-const theme = deepMerge(grommet, {
+// Type annotations can only be used in TypeScript files.
+// Remove ': ThemeType' if you are not using Typescript.
+const theme: ThemeType = deepMerge(grommet, {
   list: {
     item: {
       pad: { horizontal: 'large', vertical: 'xsmall' },
@@ -32,6 +33,4 @@ const ThemedList = () => (
   </Grommet>
 );
 
-if (!isChromatic()) {
-  storiesOf('TypeScript/List', module).add('theme', () => <ThemedList />);
-}
+storiesOf('List', module).add('theme', () => <ThemedList />);
