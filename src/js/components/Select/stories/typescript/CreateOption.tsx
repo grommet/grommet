@@ -91,4 +91,6 @@ const CreateOption = () => {
   );
 };
 
-storiesOf('Select', module).add('Create Option', () => <CreateOption />);
+if (!isChromatic()) {
+  storiesOf('Select', module).add('Create Option', () => <CreateOption />);
+}
