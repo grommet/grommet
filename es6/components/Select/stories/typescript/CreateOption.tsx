@@ -9,6 +9,8 @@ import { ThemeType } from 'grommet/themes';
 // the prefix name of the Create option entry
 const prefix = 'Create';
 
+// Type annotations can only be used in TypeScript files.
+// Remove ': ThemeType' if you are not using Typescript.
 const theme: ThemeType = {
   select: {
     control: {
@@ -89,8 +91,4 @@ const CreateOption = () => {
   );
 };
 
-if (!isChromatic()) {
-  storiesOf('TypeScript/Select', module).add('Create Option', () => (
-    <CreateOption />
-  ));
-}
+storiesOf('Select', module).add('Create Option', () => <CreateOption />);

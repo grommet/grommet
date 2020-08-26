@@ -4,10 +4,12 @@ import isChromatic from 'chromatic/isChromatic';
 
 import { Search } from 'grommet-icons';
 import { Box, Image, Grommet, Text, TextInput } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { grommet, ThemeType } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
 
-const myCustomTheme = deepMerge(grommet, {
+// Type annotations can only be used in TypeScript files.
+// Remove ': ThemeType' if you are not using Typescript.
+const myCustomTheme: ThemeType = deepMerge(grommet, {
   global: {
     drop: {
       background: '#444444',
@@ -15,7 +17,6 @@ const myCustomTheme = deepMerge(grommet, {
       extend: `
           border-bottom-left-radius: 12px;
           border-bottom-right-radius: 12px;
-
           overflow: hidden;
         `,
     },
@@ -174,8 +175,6 @@ const CustomSuggestionsTextInput = () => {
   );
 };
 
-if (!isChromatic()) {
-  storiesOf('TypeScript/TextInput', module).add('Custom', () => (
-    <CustomSuggestionsTextInput />
-  ));
-}
+storiesOf('TextInput', module).add('Custom', () => (
+  <CustomSuggestionsTextInput />
+));
