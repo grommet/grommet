@@ -20,6 +20,7 @@ const Body = forwardRef(
       replace,
       onClickRow,
       pad,
+      pinnedBackground,
       primaryProperty,
       rowProps,
       size,
@@ -109,7 +110,7 @@ const Body = forwardRef(
                   {columns.map(column => (
                     <Cell
                       key={column.property}
-                      background={background}
+                      background={column.pin ? pinnedBackground : background}
                       border={border}
                       context="body"
                       column={column}
