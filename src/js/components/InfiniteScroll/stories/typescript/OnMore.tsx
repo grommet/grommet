@@ -1,12 +1,27 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, InfiniteScroll, Text } from 'grommet';
+import {
+  Grommet,
+  Box,
+  InfiniteScroll,
+  InfiniteScrollProps,
+  Text,
+} from 'grommet';
 import { grommet } from 'grommet/themes';
 
-import { allItems } from './Basics';
+import { allItems } from '../Basics';
 
-const OnMoreInfiniteScroll = ({ props }) => {
+// 'interface' declarations can only be used in TypeScript files.
+// Remove ': 'interface IProps' if you are not using Typescript.
+export interface IProps {
+  props?: InfiniteScrollProps;
+  step?: InfiniteScrollProps['step'];
+}
+
+// Type annotations can only be used in TypeScript files.
+// Remove ': React.FC<IProps>' if you are not using Typescript.
+const OnMoreInfiniteScroll: React.FC<IProps> = ({ props }) => {
   const [items, setItems] = useState(allItems.slice(0, 50));
 
   const onMore = () => {
