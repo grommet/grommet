@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import isChromatic from 'chromatic/isChromatic';
 
 import { RadioButtonGroup } from 'grommet';
 
@@ -17,6 +16,8 @@ export const App = () => {
     },
   ];
 
+  // Type arguments can only be used in TypeScript files.
+  // Remove <string | object> if you are not using Typescript.
   const [value, setValue] = useState<string | object>(postMethods[0]);
 
   return (
@@ -29,6 +30,4 @@ export const App = () => {
   );
 };
 
-if (!isChromatic()) {
-  storiesOf('TypeScript/RadioButtonGroup', module).add('Simple', () => <App />);
-}
+storiesOf('RadioButtonGroup', module).add('TS-Simple', () => <App />);
