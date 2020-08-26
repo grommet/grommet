@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import isChromatic from 'chromatic/isChromatic';
 
 import { Avatar, Anchor, Nav, Grommet, Header } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -20,6 +19,4 @@ const Simple = () => (
   </Grommet>
 );
 
-if (!isChromatic()) {
-  storiesOf('TypeScript/Header', module).add('Simple', () => <Simple />);
-}
+storiesOf('Header', module).add('Simple', () => <Simple />);
