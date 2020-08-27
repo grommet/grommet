@@ -28,6 +28,9 @@ var Searcher = function Searcher(_ref) {
       return onFiltering(undefined);
     }
   }, /*#__PURE__*/React.createElement(Box, {
+    width: {
+      min: 'xsmall'
+    },
     flex: true,
     pad: {
       horizontal: 'small'
