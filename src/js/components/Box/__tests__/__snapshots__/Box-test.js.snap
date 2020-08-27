@@ -2578,6 +2578,22 @@ exports[`Box gap 1`] = `
   flex-direction: column;
 }
 
+.c3 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  height: 12px;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    height: 6px;
+  }
+}
+
 <div
   className="c0"
 >
@@ -2623,6 +2639,19 @@ exports[`Box gap 1`] = `
       className="c2"
     />
   </div>
+  <span
+    className="c2"
+  >
+    <span>
+      first
+    </span>
+    <span
+      className="c3"
+    />
+    <span>
+      second
+    </span>
+  </span>
 </div>
 `;
 

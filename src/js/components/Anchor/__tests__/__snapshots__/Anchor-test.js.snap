@@ -169,7 +169,7 @@ exports[`Anchor icon label renders 1`] = `
       <svg
         color="#7D4CDB"
       />
-      <div
+      <span
         className="c3"
       />
       Test
@@ -412,7 +412,7 @@ exports[`Anchor reverse icon label renders 1`] = `
       }
     >
       Test
-      <div
+      <span
         className="c3"
       />
       <svg
