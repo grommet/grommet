@@ -3,6 +3,7 @@ import React, {
   useCallback,
   useContext,
   useEffect,
+  useMemo,
   useRef,
   useState,
 } from 'react';
@@ -89,6 +90,7 @@ const TextInput = forwardRef(
       onFocus,
       onKeyDown,
       onSelect,
+      onSuggestionSelect,
       onSuggestionsClose,
       onSuggestionsOpen,
       placeholder,
@@ -108,7 +110,6 @@ const TextInput = forwardRef(
     const dropRef = useRef();
     const suggestionsRef = useRef();
     const suggestionRefs = {};
-
     // if this is a readOnly property, don't set a name with the form context
     // this allows Select to control the form context for the name.
     const [value, setValue] = formContext.useFormInput(
@@ -118,6 +119,15 @@ const TextInput = forwardRef(
 
     const [focus, setFocus] = useState();
     const [showDrop, setShowDrop] = useState();
+
+    const handleSuggestionSelect = useMemo(
+      () => (onSelect && !onSuggestionSelect ? onSelect : onSuggestionSelect),
+      [onSelect, onSuggestionSelect],
+    );
+    const handleTextSelect = useMemo(
+      () => (onSelect && onSuggestionSelect ? onSelect : undefined),
+      [onSelect, onSuggestionSelect],
+    );
 
     // if we have no suggestions, close drop if it's open
     useEffect(() => {
@@ -232,6 +242,9 @@ const TextInput = forwardRef(
       placeholder && typeof placeholder !== 'string' && !value;
 
     let drop;
+    const extraProps = {
+      onSelect: handleTextSelect,
+    };
     if (showDrop) {
       drop = (
         // keyboard access needed here in case user clicks
@@ -243,10 +256,10 @@ const TextInput = forwardRef(
             // we stole the focus, give it back
             inputRef.current.focus();
             closeDrop();
-            if (onSelect) {
+            if (handleSuggestionSelect) {
               const adjustedEvent = event;
               adjustedEvent.suggestion = suggestions[activeSuggestionIndex];
-              onSelect(adjustedEvent);
+              handleSuggestionSelect(adjustedEvent);
             }
             setValue(suggestions[activeSuggestionIndex]);
           }}
@@ -308,12 +321,12 @@ const TextInput = forwardRef(
                             // we stole the focus, give it back
                             inputRef.current.focus();
                             closeDrop();
-                            if (onSelect) {
+                            if (handleSuggestionSelect) {
                               event.persist();
                               const adjustedEvent = event;
                               adjustedEvent.suggestion = suggestion;
                               adjustedEvent.target = inputRef.current;
-                              onSelect(adjustedEvent);
+                              handleSuggestionSelect(adjustedEvent);
                             }
                             setValue(suggestion);
                           }}
@@ -346,14 +359,14 @@ const TextInput = forwardRef(
         <Keyboard
           onEnter={event => {
             closeDrop();
-            if (activeSuggestionIndex >= 0 && onSelect) {
+            if (activeSuggestionIndex >= 0 && handleSuggestionSelect) {
               // prevent submitting forms when choosing a suggestion
               event.preventDefault();
               event.persist();
               const adjustedEvent = event;
               adjustedEvent.suggestion = suggestions[activeSuggestionIndex];
               adjustedEvent.target = inputRef.current;
-              onSelect(adjustedEvent);
+              handleSuggestionSelect(adjustedEvent);
             }
           }}
           onEsc={
@@ -406,6 +419,7 @@ const TextInput = forwardRef(
             reverse={reverse}
             focus={focus}
             {...rest}
+            {...extraProps}
             defaultValue={renderLabel(defaultValue)}
             value={renderLabel(value)}
             readOnly={readOnly}

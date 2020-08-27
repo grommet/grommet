@@ -21,6 +21,7 @@ const TableCell = forwardRef(
       background,
       border,
       children,
+      className, // so StyledDataTableCell is applied to td/th
       colSpan,
       pad,
       plain,
@@ -75,6 +76,7 @@ const TableCell = forwardRef(
               tableContextTheme={tableContextTheme}
               {...(plain ? mergedProps : {})}
               {...cellProps}
+              className={className}
             >
               {plain || !Object.keys(mergedProps).length ? (
                 children
