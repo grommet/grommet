@@ -9,7 +9,7 @@ import 'regenerator-runtime/runtime';
 import { CaretDown, CaretUp, FormDown } from 'grommet-icons';
 import { createPortal, expectPortal } from '../../../utils/portal';
 
-import { Grommet } from '../..';
+import { Grommet, FormField } from '../..';
 import { Select } from '..';
 
 describe('Select', () => {
@@ -883,6 +883,138 @@ describe('Select', () => {
     );
     fireEvent.click(getByPlaceholderText('test select'));
     expectPortal('test-select__drop').toMatchSnapshot();
+  });
+
+  test('Clear option renders- top', () => {
+    const Test = () => {
+      const [value] = React.useState();
+      return (
+        <Select
+          id="test-select"
+          placeholder="test select"
+          value={value}
+          options={['one', 'two']}
+          clear
+        />
+      );
+    };
+    const { getByPlaceholderText } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+  });
+
+  test('Clear option renders - bottom', () => {
+    const Test = () => {
+      const [value] = React.useState();
+      return (
+        <Select
+          id="test-select"
+          placeholder="test select"
+          value={value}
+          options={['one', 'two']}
+          clear={{ position: 'bottom' }}
+        />
+      );
+    };
+    const { getByPlaceholderText } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+  });
+
+  test('Clear option renders custom label', () => {
+    const Test = () => {
+      const [value] = React.useState();
+      return (
+        <Select
+          id="test-select"
+          placeholder="test select"
+          value={value}
+          options={['one', 'two']}
+          clear={{ label: 'test label' }}
+        />
+      );
+    };
+    const { getByPlaceholderText } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+  });
+
+  test('Clear option renders correct label when wrapped in FormField', () => {
+    const Test = () => {
+      const [value] = React.useState();
+      return (
+        <FormField label="Test" name="test">
+          <Select
+            name="test"
+            id="test-select"
+            placeholder="test select"
+            value={value}
+            options={['one', 'two']}
+            clear
+          />
+        </FormField>
+      );
+    };
+    const { getByPlaceholderText } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    expectPortal('test-select__drop').toMatchSnapshot();
+  });
+
+  test('Clear option clears value onClick', () => {
+    const Test = () => {
+      const [value] = React.useState();
+      return (
+        <FormField label="Test" name="test">
+          <Select
+            name="test"
+            id="test-select"
+            placeholder="test select"
+            value={value}
+            options={['one', 'two']}
+            clear
+          />
+        </FormField>
+      );
+    };
+    const { getByPlaceholderText } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    const select = getByPlaceholderText('test select');
+    fireEvent.click(getByPlaceholderText('test select'));
+    fireEvent.click(
+      document
+        .getElementById('test-select__drop')
+        .querySelectorAll('button')[1],
+    );
+    fireEvent.click(getByPlaceholderText('test select'));
+    fireEvent.click(
+      document
+        .getElementById('test-select__drop')
+        .querySelectorAll('button')[0],
+    );
+    expect(select.value).toEqual('');
   });
   window.scrollTo.mockRestore();
 });
