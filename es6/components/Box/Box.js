@@ -75,6 +75,7 @@ var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var contents = children;
 
   if (gap && gap !== 'none') {
+    var boxAs = !as && tag ? tag : as;
     contents = [];
     var firstIndex;
     Children.forEach(children, function (child, index) {
@@ -85,6 +86,7 @@ var Box = /*#__PURE__*/forwardRef(function (_ref, ref) {
           contents.push( /*#__PURE__*/React.createElement(StyledBoxGap // eslint-disable-next-line react/no-array-index-key
           , {
             key: "gap-" + index,
+            as: boxAs === 'span' ? boxAs : 'div',
             gap: gap,
             directionProp: direction,
             responsive: responsive,
