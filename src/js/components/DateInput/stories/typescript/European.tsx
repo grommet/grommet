@@ -24,5 +24,5 @@ const Example = () => {
 };
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/DateInput', module).add('European', () => <Example />);
+  storiesOf('DateInput', module).add('European', () => <Example />);
 }
