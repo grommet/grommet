@@ -55,7 +55,13 @@ const Tabs = forwardRef(
           setActiveTitle,
         }}
       >
-        {child}
+        {/* possible to have undefined child. in that case, you can't
+        do cloneElement */}
+        {child
+          ? // need active to be passed as prop for custom styled component
+            // that uses props.active
+            React.cloneElement(child, { active: activeIndex === index })
+          : child}
       </TabsContext.Provider>
     ));
 
