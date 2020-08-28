@@ -17,6 +17,8 @@ import {
 import { grommet } from 'grommet/themes';
 import { FormExtendedEvent } from '../../Form';
 
+// interface declarations can only be used in TypeScript files
+// Remove 'interface FormState' if you are not using TypeScript
 interface FormState {
   name?: string;
   employeeId?: number;
@@ -33,6 +35,9 @@ const Example = () => (
       <Box width="medium">
         <Form
           onReset={event => console.log(event)}
+          // Type annotations can only be used in TypeScript files
+          // Remove ': FormState' and ': FormExtendEvent'
+          // if you are not using Typescript.
           onChange={(value: FormState) => console.log('onChange', value)}
           onSubmit={(event: FormExtendedEvent) =>
             console.log('onSubmit', event.value, event.touched)
@@ -91,5 +96,5 @@ const Example = () => (
 );
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/Form', module).add('All FormFields', () => <Example />);
+  storiesOf('Form', module).add('Typed Form', () => <Example />);
 }
