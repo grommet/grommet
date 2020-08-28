@@ -23,7 +23,7 @@ import { SelectContainer } from './SelectContainer';
 import { applyKey } from './utils';
 
 const SelectTextInput = styled(TextInput)`
-  cursor: pointer;
+  cursor: ${props => (props.defaultCursor ? 'default' : 'pointer')};
 `;
 
 const StyledSelectDropButton = styled(DropButton)`
@@ -253,6 +253,9 @@ const Select = forwardRef(
                       value && typeof value === 'string' ? `, ${value}` : ''
                     }`
                   }
+                  // When Select is disabled, we want to show a default cursor
+                  // but not have disabled styling come from TextInput
+                  defaultCursor={disabled}
                   id={id ? `${id}__input` : undefined}
                   name={name}
                   ref={inputRef}
