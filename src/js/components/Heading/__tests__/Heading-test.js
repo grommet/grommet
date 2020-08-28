@@ -205,3 +205,26 @@ test('Theme based font weight renders', () => {
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
+
+test('Throws a warning when heading.level is undefinedin the theme.', () => {
+  global.console = {
+    warn: jest.fn(),
+  };
+
+  const customTheme = {
+    heading: {
+      level: {
+        '6': undefined,
+      },
+    },
+  };
+
+  renderer.create(
+    <Grommet theme={customTheme}>
+      <Heading level={6} />
+    </Grommet>,
+  );
+
+  const consoleMsg = 'Heading level 6 is not defined in your theme.';
+  expect(global.console.warn).toHaveBeenCalledWith(consoleMsg);
+});
