@@ -1598,20 +1598,20 @@ exports[`List events Enter key 1`] = `
 
 exports[`List events Enter key 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+  class="StyledGrommet-sc-19lkkz7-0 kEDHfZ"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 ejwoGX"
+    class="List__StyledList-sc-130gdqg-0 kjYZw"
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 hRnMDt List__StyledItem-sc-130gdqg-1 fBniOQ"
+      class="StyledBox-sc-13pk1d4-0 gzxQla List__StyledItem-sc-130gdqg-1 fBniOQ"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 hEstNb List__StyledItem-sc-130gdqg-1 fBniOQ"
+      class="StyledBox-sc-13pk1d4-0 gABSTY List__StyledItem-sc-130gdqg-1 fBniOQ"
       tabindex="-1"
     >
       beta
@@ -1772,20 +1772,20 @@ exports[`List events focus and blur 1`] = `
 
 exports[`List events focus and blur 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+  class="StyledGrommet-sc-19lkkz7-0 kEDHfZ"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 ejwoGX"
+    class="List__StyledList-sc-130gdqg-0 kjYZw"
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 hRnMDt List__StyledItem-sc-130gdqg-1 fBniOQ"
+      class="StyledBox-sc-13pk1d4-0 gzxQla List__StyledItem-sc-130gdqg-1 fBniOQ"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 fbIRTP List__StyledItem-sc-130gdqg-1 fBniOQ"
+      class="StyledBox-sc-13pk1d4-0 kbeHxG List__StyledItem-sc-130gdqg-1 fBniOQ"
       tabindex="-1"
     >
       beta
@@ -1946,20 +1946,20 @@ exports[`List events mouse events 1`] = `
 
 exports[`List events mouse events 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+  class="StyledGrommet-sc-19lkkz7-0 kEDHfZ"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 ejwoGX"
+    class="List__StyledList-sc-130gdqg-0 kjYZw"
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 hRnMDt List__StyledItem-sc-130gdqg-1 fBniOQ"
+      class="StyledBox-sc-13pk1d4-0 gzxQla List__StyledItem-sc-130gdqg-1 fBniOQ"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 fbIRTP List__StyledItem-sc-130gdqg-1 fBniOQ"
+      class="StyledBox-sc-13pk1d4-0 kbeHxG List__StyledItem-sc-130gdqg-1 fBniOQ"
       tabindex="-1"
     >
       beta
@@ -2469,20 +2469,20 @@ exports[`List onClickItem 1`] = `
 
 exports[`List onClickItem 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+  class="StyledGrommet-sc-19lkkz7-0 kEDHfZ"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 ejwoGX"
+    class="List__StyledList-sc-130gdqg-0 kjYZw"
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 hRnMDt List__StyledItem-sc-130gdqg-1 fBniOQ"
+      class="StyledBox-sc-13pk1d4-0 gzxQla List__StyledItem-sc-130gdqg-1 fBniOQ"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 fbIRTP List__StyledItem-sc-130gdqg-1 fBniOQ"
+      class="StyledBox-sc-13pk1d4-0 kbeHxG List__StyledItem-sc-130gdqg-1 fBniOQ"
       tabindex="-1"
     >
       beta

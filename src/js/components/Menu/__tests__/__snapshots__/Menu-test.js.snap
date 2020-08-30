@@ -608,7 +608,7 @@ exports[`Menu close by clicking outside 2`] = `
 
 exports[`Menu close by clicking outside 3`] = `
 "@media only screen and (max-width: 768px) {
-  .hkbjbd {
+  .gUIQOS {
     padding: 6px;
   }
 }"
@@ -2609,19 +2609,19 @@ exports[`Menu open and close on click 1`] = `
 
 exports[`Menu open and close on click 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+  class="StyledGrommet-sc-19lkkz7-0 kEDHfZ"
 >
   <button
     aria-label="Open Menu"
-    class="StyledButton-sc-323bzc-0 jFJBys"
+    class="StyledButton-sc-323bzc-0 dRLPCJ"
     id="test-menu"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hkbjbd"
+      class="StyledBox-sc-13pk1d4-0 gUIQOS"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 hUokoe"
+        class="StyledText-sc-1sadyjn-0 eBGtOg"
       >
         Test
       </span>
@@ -2978,7 +2978,7 @@ exports[`Menu open and close on click 3`] = `
 
 exports[`Menu open and close on click 4`] = `
 "@media only screen and (max-width: 768px) {
-  .hkbjbd {
+  .gUIQOS {
     padding: 6px;
   }
 }"
@@ -4122,7 +4122,7 @@ exports[`Menu with dropAlign renders 2`] = `
 
 exports[`Menu with dropAlign renders 3`] = `
 "@media only screen and (max-width: 768px) {
-  .hkbjbd {
+  .gUIQOS {
     padding: 6px;
   }
 }"

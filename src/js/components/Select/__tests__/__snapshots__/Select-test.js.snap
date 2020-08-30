@@ -1509,22 +1509,22 @@ exports[`Select complex options and children 1`] = `
 exports[`Select complex options and children 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 jFJBys Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
+  class="StyledButton-sc-323bzc-0 dRLPCJ Select__StyledSelectDropButton-sc-17idtfo-1 hkjMbD"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 VvbUh"
+    class="StyledBox-sc-13pk1d4-0 gWfleo"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 bVYLzf"
+      class="StyledBox-sc-13pk1d4-0 bogiBm"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 fVbmbP Select__SelectTextInput-sc-17idtfo-0 hWmVID"
+          class="StyledTextInput-sc-1x30a0s-0 KPBDM Select__SelectTextInput-sc-17idtfo-0 hWmVID"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -1535,7 +1535,7 @@ exports[`Select complex options and children 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 iCDnTm"
+      class="StyledBox-sc-13pk1d4-0 idsnXD"
       style="min-width: auto;"
     >
       <svg
@@ -1759,7 +1759,7 @@ exports[`Select complex options and children 3`] = `
 
 exports[`Select complex options and children 4`] = `
 "@media only screen and (max-width: 768px) {
-  .iCDnTm {
+  .idsnXD {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -2018,23 +2018,23 @@ exports[`Select disabled 1`] = `
 exports[`Select disabled 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 bDZaCa Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
+  class="StyledButton-sc-323bzc-0 iAEwjN Select__StyledSelectDropButton-sc-17idtfo-1 hkjMbD"
   disabled=""
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 VvbUh"
+    class="StyledBox-sc-13pk1d4-0 gWfleo"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 bVYLzf"
+      class="StyledBox-sc-13pk1d4-0 bogiBm"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 fVbmbP Select__SelectTextInput-sc-17idtfo-0 hWmVID"
+          class="StyledTextInput-sc-1x30a0s-0 KPBDM Select__SelectTextInput-sc-17idtfo-0 hWmVID"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -2045,7 +2045,7 @@ exports[`Select disabled 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 iCDnTm"
+      class="StyledBox-sc-13pk1d4-0 idsnXD"
       style="min-width: auto;"
     >
       <svg
@@ -2613,7 +2613,7 @@ exports[`Select disabled key 2`] = `
 
 exports[`Select disabled key 3`] = `
 "@media only screen and (max-width: 768px) {
-  .iCDnTm {
+  .idsnXD {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -2908,7 +2908,7 @@ exports[`Select disabled option value 1`] = `
 
 exports[`Select disabled option value 2`] = `
 "@media only screen and (max-width: 768px) {
-  .iCDnTm {
+  .idsnXD {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -4539,7 +4539,7 @@ exports[`Select onChange with valueKey string 2`] = `
 
 exports[`Select onChange with valueKey string 3`] = `
 "@media only screen and (max-width: 768px) {
-  .iCDnTm {
+  .idsnXD {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -5053,7 +5053,7 @@ exports[`Select onChange without valueKey 2`] = `
 
 exports[`Select onChange without valueKey 3`] = `
 "@media only screen and (max-width: 768px) {
-  .iCDnTm {
+  .idsnXD {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -5834,22 +5834,22 @@ exports[`Select prop: onOpen 1`] = `
 exports[`Select prop: onOpen 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 jFJBys Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
+  class="StyledButton-sc-323bzc-0 dRLPCJ Select__StyledSelectDropButton-sc-17idtfo-1 hkjMbD"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 VvbUh"
+    class="StyledBox-sc-13pk1d4-0 gWfleo"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 bVYLzf"
+      class="StyledBox-sc-13pk1d4-0 bogiBm"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 fVbmbP Select__SelectTextInput-sc-17idtfo-0 hWmVID"
+          class="StyledTextInput-sc-1x30a0s-0 KPBDM Select__SelectTextInput-sc-17idtfo-0 hWmVID"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -5860,7 +5860,7 @@ exports[`Select prop: onOpen 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 iCDnTm"
+      class="StyledBox-sc-13pk1d4-0 idsnXD"
       style="min-width: auto;"
     >
       <svg
@@ -6127,7 +6127,7 @@ exports[`Select prop: onOpen 3`] = `
 
 exports[`Select prop: onOpen 4`] = `
 "@media only screen and (max-width: 768px) {
-  .iCDnTm {
+  .idsnXD {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -6141,39 +6141,39 @@ exports[`Select prop: onOpen 5`] = `
   tabindex="-1"
 >
   <button
-    class="StyledButton-sc-323bzc-0 ynEro SelectContainer__SelectOption-sc-1wi0ul8-2 kkPGyb"
+    class="StyledButton-sc-323bzc-0 gAioVD SelectContainer__SelectOption-sc-1wi0ul8-2 kkPGyb"
     role="menuitem"
     tabindex="-1"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 lcXThF SelectContainer__OptionBox-sc-1wi0ul8-1 cjPAAw"
+      class="StyledBox-sc-13pk1d4-0 jSfGpK SelectContainer__OptionBox-sc-1wi0ul8-1 cjPAAw"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 bilRua"
+        class="StyledText-sc-1sadyjn-0 jzejvm"
       >
         one
       </span>
     </div>
   </button>
   <button
-    class="StyledButton-sc-323bzc-0 ynEro SelectContainer__SelectOption-sc-1wi0ul8-2 kkPGyb"
+    class="StyledButton-sc-323bzc-0 gAioVD SelectContainer__SelectOption-sc-1wi0ul8-2 kkPGyb"
     role="menuitem"
     tabindex="-1"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 lcXThF SelectContainer__OptionBox-sc-1wi0ul8-1 cjPAAw"
+      class="StyledBox-sc-13pk1d4-0 jSfGpK SelectContainer__OptionBox-sc-1wi0ul8-1 cjPAAw"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 bilRua"
+        class="StyledText-sc-1sadyjn-0 jzejvm"
       >
         two
       </span>
     </div>
   </button>
   <div
-    class="StyledBox-sc-13pk1d4-0 bokQlS"
+    class="StyledBox-sc-13pk1d4-0 hWPwaP"
   />
 </div>
 `;
@@ -6696,25 +6696,25 @@ exports[`Select renders custom up and down icons 1`] = `
 
 exports[`Select renders custom up and down icons 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+  class="StyledGrommet-sc-19lkkz7-0 kEDHfZ"
 >
   <button
     aria-label="Open Drop"
-    class="StyledButton-sc-323bzc-0 jFJBys Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
+    class="StyledButton-sc-323bzc-0 dRLPCJ Select__StyledSelectDropButton-sc-17idtfo-1 hkjMbD"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 VvbUh"
+      class="StyledBox-sc-13pk1d4-0 gWfleo"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bVYLzf"
+        class="StyledBox-sc-13pk1d4-0 bogiBm"
       >
         <div
           class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 fVbmbP Select__SelectTextInput-sc-17idtfo-0 hWmVID"
+            class="StyledTextInput-sc-1x30a0s-0 KPBDM Select__SelectTextInput-sc-17idtfo-0 hWmVID"
             placeholder="Select..."
             readonly=""
             tabindex="-1"
@@ -6724,7 +6724,7 @@ exports[`Select renders custom up and down icons 2`] = `
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 iCDnTm"
+        class="StyledBox-sc-13pk1d4-0 idsnXD"
         style="min-width: auto;"
       >
         .c0 {
@@ -8619,7 +8619,7 @@ exports[`Select search 2`] = `
 
 exports[`Select search 3`] = `
 "@media only screen and (max-width: 768px) {
-  .iCDnTm {
+  .idsnXD {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -8629,7 +8629,7 @@ exports[`Select search 3`] = `
 exports[`Select search 4`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 fFeaOm"
+  class="StyledTextInput-sc-1x30a0s-0 cpRBxV"
   type="search"
   value=""
 />
@@ -8638,7 +8638,7 @@ exports[`Select search 4`] = `
 exports[`Select search 5`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 fFeaOm"
+  class="StyledTextInput-sc-1x30a0s-0 cpRBxV"
   type="search"
   value="o"
 />

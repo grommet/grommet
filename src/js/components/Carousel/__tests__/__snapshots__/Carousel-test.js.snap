@@ -1413,23 +1413,23 @@ exports[`Carousel navigate 1`] = `
 
 exports[`Carousel navigate 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+  class="StyledGrommet-sc-19lkkz7-0 kEDHfZ"
 >
   <div
-    class="StyledStack-ajspsk-0 liEjfH"
+    class="StyledStack-ajspsk-0 MouK"
     data-testid="test-carousel"
   >
     <div
       class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kpwHpK"
+        class="StyledBox-sc-13pk1d4-0 iqiriX"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fijLVp"
+          class="StyledBox-sc-13pk1d4-0 jRCHDw"
         >
           <img
-            class="StyledImage-ey4zx9-0 gtXVuX"
+            class="StyledImage-ey4zx9-0 AAkWw"
             src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
@@ -1439,13 +1439,13 @@ exports[`Carousel navigate 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 eFfYoG"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kpwHpK"
+        class="StyledBox-sc-13pk1d4-0 iqiriX"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fyNJTz"
+          class="StyledBox-sc-13pk1d4-0 icTVmm"
         >
           <img
-            class="StyledImage-ey4zx9-0 gtXVuX"
+            class="StyledImage-ey4zx9-0 AAkWw"
             src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
@@ -1455,11 +1455,11 @@ exports[`Carousel navigate 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 iLSfXS"
+        class="StyledBox-sc-13pk1d4-0 dfvURv"
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 ggXSon"
+          class="StyledButton-sc-323bzc-0 kpSdbQ"
           type="button"
         >
           <svg
@@ -1477,13 +1477,13 @@ exports[`Carousel navigate 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 idXMGj"
+          class="StyledBox-sc-13pk1d4-0 jysPFm"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jmTzhV"
+            class="StyledBox-sc-13pk1d4-0 iNaCiQ"
           >
             <button
-              class="StyledButton-sc-323bzc-0 fKcmhi"
+              class="StyledButton-sc-323bzc-0 gHTUFP"
               type="button"
             >
               <svg
@@ -1500,7 +1500,7 @@ exports[`Carousel navigate 2`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 fKcmhi"
+              class="StyledButton-sc-323bzc-0 gHTUFP"
               type="button"
             >
               <svg
@@ -1519,7 +1519,7 @@ exports[`Carousel navigate 2`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 elqUnZ"
+          class="StyledButton-sc-323bzc-0 gvkzWm"
           disabled=""
           type="button"
         >
@@ -1544,23 +1544,23 @@ exports[`Carousel navigate 2`] = `
 
 exports[`Carousel navigate 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+  class="StyledGrommet-sc-19lkkz7-0 kEDHfZ"
 >
   <div
-    class="StyledStack-ajspsk-0 liEjfH"
+    class="StyledStack-ajspsk-0 MouK"
     data-testid="test-carousel"
   >
     <div
       class="StyledStack__StyledStackLayer-ajspsk-1 eFfYoG"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kpwHpK"
+        class="StyledBox-sc-13pk1d4-0 iqiriX"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 dGhOz"
+          class="StyledBox-sc-13pk1d4-0 iXbCdS"
         >
           <img
-            class="StyledImage-ey4zx9-0 gtXVuX"
+            class="StyledImage-ey4zx9-0 AAkWw"
             src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
@@ -1570,13 +1570,13 @@ exports[`Carousel navigate 3`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kpwHpK"
+        class="StyledBox-sc-13pk1d4-0 iqiriX"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fijLVp"
+          class="StyledBox-sc-13pk1d4-0 jRCHDw"
         >
           <img
-            class="StyledImage-ey4zx9-0 gtXVuX"
+            class="StyledImage-ey4zx9-0 AAkWw"
             src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
@@ -1586,11 +1586,11 @@ exports[`Carousel navigate 3`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 iLSfXS"
+        class="StyledBox-sc-13pk1d4-0 dfvURv"
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 elqUnZ"
+          class="StyledButton-sc-323bzc-0 gvkzWm"
           disabled=""
           type="button"
         >
@@ -1609,13 +1609,13 @@ exports[`Carousel navigate 3`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 idXMGj"
+          class="StyledBox-sc-13pk1d4-0 jysPFm"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jmTzhV"
+            class="StyledBox-sc-13pk1d4-0 iNaCiQ"
           >
             <button
-              class="StyledButton-sc-323bzc-0 fKcmhi"
+              class="StyledButton-sc-323bzc-0 gHTUFP"
               type="button"
             >
               <svg
@@ -1632,7 +1632,7 @@ exports[`Carousel navigate 3`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 fKcmhi"
+              class="StyledButton-sc-323bzc-0 gHTUFP"
               type="button"
             >
               <svg
@@ -1651,7 +1651,7 @@ exports[`Carousel navigate 3`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 ggXSon"
+          class="StyledButton-sc-323bzc-0 kpSdbQ"
           type="button"
         >
           <svg
@@ -2129,22 +2129,22 @@ exports[`Carousel play 1`] = `
 
 exports[`Carousel play 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+  class="StyledGrommet-sc-19lkkz7-0 kEDHfZ"
 >
   <div
-    class="StyledStack-ajspsk-0 liEjfH"
+    class="StyledStack-ajspsk-0 MouK"
   >
     <div
       class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kpwHpK"
+        class="StyledBox-sc-13pk1d4-0 iqiriX"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fijLVp"
+          class="StyledBox-sc-13pk1d4-0 jRCHDw"
         >
           <img
-            class="StyledImage-ey4zx9-0 gtXVuX"
+            class="StyledImage-ey4zx9-0 AAkWw"
             src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
@@ -2154,13 +2154,13 @@ exports[`Carousel play 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 eFfYoG"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kpwHpK"
+        class="StyledBox-sc-13pk1d4-0 iqiriX"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fyNJTz"
+          class="StyledBox-sc-13pk1d4-0 icTVmm"
         >
           <img
-            class="StyledImage-ey4zx9-0 gtXVuX"
+            class="StyledImage-ey4zx9-0 AAkWw"
             src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
@@ -2170,11 +2170,11 @@ exports[`Carousel play 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 iLSfXS"
+        class="StyledBox-sc-13pk1d4-0 dfvURv"
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 ggXSon"
+          class="StyledButton-sc-323bzc-0 kpSdbQ"
           type="button"
         >
           <svg
@@ -2192,13 +2192,13 @@ exports[`Carousel play 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 idXMGj"
+          class="StyledBox-sc-13pk1d4-0 jysPFm"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jmTzhV"
+            class="StyledBox-sc-13pk1d4-0 iNaCiQ"
           >
             <button
-              class="StyledButton-sc-323bzc-0 fKcmhi"
+              class="StyledButton-sc-323bzc-0 gHTUFP"
               type="button"
             >
               <svg
@@ -2215,7 +2215,7 @@ exports[`Carousel play 2`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 fKcmhi"
+              class="StyledButton-sc-323bzc-0 gHTUFP"
               type="button"
             >
               <svg
@@ -2234,7 +2234,7 @@ exports[`Carousel play 2`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 elqUnZ"
+          class="StyledButton-sc-323bzc-0 gvkzWm"
           disabled=""
           type="button"
         >

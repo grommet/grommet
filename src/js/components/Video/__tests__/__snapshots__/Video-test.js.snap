@@ -1349,10 +1349,10 @@ exports[`Video Play and Pause event handlers 1`] = `
 
 exports[`Video Play and Pause event handlers 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+  class="StyledGrommet-sc-19lkkz7-0 kEDHfZ"
 >
   <div
-    class="StyledVideo__StyledVideoContainer-w4v8h9-1 hHffIs"
+    class="StyledVideo__StyledVideoContainer-w4v8h9-1 bjLVkT"
   >
     <video
       class="StyledVideo-w4v8h9-0 dgNywu"
@@ -1367,10 +1367,10 @@ exports[`Video Play and Pause event handlers 2`] = `
       class="StyledVideo__StyledVideoControls-w4v8h9-2 hEQzIv"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kVoZgG"
+        class="StyledBox-sc-13pk1d4-0 gwZIsB"
       >
         <button
-          class="StyledButton-sc-323bzc-0 WEFIC"
+          class="StyledButton-sc-323bzc-0 cIcNvl"
           type="button"
         >
           .c0 {
@@ -1429,20 +1429,20 @@ exports[`Video Play and Pause event handlers 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 cGtqlv"
+          class="StyledBox-sc-13pk1d4-0 lhDLgi"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jwQkzn"
+            class="StyledBox-sc-13pk1d4-0 jHgdMy"
           >
             <div
-              class="StyledStack-ajspsk-0 liEjfH"
+              class="StyledStack-ajspsk-0 MouK"
             >
               <div
                 class="StyledStack__StyledStackLayer-ajspsk-1 eFfYoG"
               >
                 <svg
                   aria-label="video progress"
-                  class="StyledMeter-nsxarx-0 bPssvJ"
+                  class="StyledMeter-nsxarx-0 dDlnEC"
                   height="12"
                   preserveAspectRatio="none"
                   viewBox="0 0 288 12"
@@ -1470,10 +1470,10 @@ exports[`Video Play and Pause event handlers 2`] = `
             </div>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 iEnXND"
+            class="StyledBox-sc-13pk1d4-0 lhNYay"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 bilRua"
+              class="StyledText-sc-1sadyjn-0 jzejvm"
             >
               NaN:NaN
             </span>
@@ -1481,14 +1481,14 @@ exports[`Video Play and Pause event handlers 2`] = `
         </div>
         <button
           aria-label="open menu"
-          class="StyledButton-sc-323bzc-0 jFJBys"
+          class="StyledButton-sc-323bzc-0 dRLPCJ"
           type="button"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hkbjbd"
+            class="StyledBox-sc-13pk1d4-0 gUIQOS"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hUokoe"
+              class="StyledText-sc-1sadyjn-0 eBGtOg"
             />
             <svg
               aria-label="Actions"

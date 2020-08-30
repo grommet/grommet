@@ -645,7 +645,7 @@ exports[`MaskedInput event target props are available option via mouse 4`] = `
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-sc-99vkfa-0 cDlpsY"
+    class="StyledMaskedInput-sc-99vkfa-0 cXWmON"
     data-testid="test-input"
     id="item"
     name="item"
@@ -1316,7 +1316,7 @@ exports[`MaskedInput next and previous without options 2`] = `
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-sc-99vkfa-0 dqSfNA"
+    class="StyledMaskedInput-sc-99vkfa-0 bVuJBp"
     data-testid="test-input"
     id="item"
     name="item"
@@ -1668,7 +1668,7 @@ exports[`MaskedInput option via mouse 4`] = `
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-sc-99vkfa-0 cDlpsY"
+    class="StyledMaskedInput-sc-99vkfa-0 cXWmON"
     data-testid="test-input"
     id="item"
     name="item"
