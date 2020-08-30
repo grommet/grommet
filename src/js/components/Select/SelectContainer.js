@@ -6,7 +6,8 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components/macro';
+import { ThemeContext } from 'styled-components';
 
 import { selectedStyle, setFocusWithoutScroll } from '../../utils';
 

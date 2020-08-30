@@ -1,4 +1,5 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components/macro';
+import { css } from 'styled-components';
 
 import {
   activeStyle,
@@ -206,7 +207,7 @@ const StyledButton = styled.button`
     props.theme.button &&
     props.theme.button.disabled &&
     disabledButtonStyle(props)}
-  
+
   &:focus {
     ${props => (!props.plain || props.focusIndicator) && focusStyle()}
   }

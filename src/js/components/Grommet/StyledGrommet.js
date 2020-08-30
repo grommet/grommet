@@ -1,4 +1,5 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components/macro';
+import { css } from 'styled-components';
 
 import { baseStyle } from '../../utils';
 import { defaultProps } from '../../default-props';

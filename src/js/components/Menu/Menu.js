@@ -5,7 +5,8 @@ import React, {
   useMemo,
   useState,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components/macro';
+import { ThemeContext } from 'styled-components';
 
 import PropTypes from 'react-desc/lib/PropTypes';
 import { defaultProps } from '../../default-props';

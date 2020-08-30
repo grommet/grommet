@@ -5,7 +5,8 @@ import React, {
   useContext,
   useState,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components/macro';
+import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 
 import { focusStyle, parseMetricToNum } from '../../utils';

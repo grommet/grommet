@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components/macro';
+import { ThemeContext } from 'styled-components';
 
 import { Box } from '../Box';
 import { InfiniteScroll } from '../InfiniteScroll';

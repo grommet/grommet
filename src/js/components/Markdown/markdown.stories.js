@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 import { Box, Grommet, Markdown } from 'grommet';
 import { grommet } from 'grommet/themes';

@@ -1,4 +1,5 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components/macro';
+import { css } from 'styled-components';
 
 import { breakpointStyle, genericStyles, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
@@ -10,8 +11,7 @@ const sizeStyle = props => {
   const levelStyle = headingTheme.level[props.level];
   if (levelStyle) {
     const data = levelStyle[size];
-    const styles =  
-    [
+    const styles = [
       css`
         font-size: ${data ? data.size : size};
         line-height: ${data ? data.height : 'normal'};
@@ -25,7 +25,7 @@ const sizeStyle = props => {
       if (breakpoint) {
         const responsiveData =
           headingTheme.level[Math.min(props.level + 1, 4)][size];
-        if(responsiveData) {
+        if (responsiveData) {
           styles.push(
             breakpointStyle(
               breakpoint,
