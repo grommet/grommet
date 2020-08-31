@@ -102,7 +102,7 @@ const aggregateColumn = (column, data) => {
   } else {
     value = data
       .map(d => datumValue(d, column.property))
-      .reduce(reducers[column.aggregate], 0);
+      .reduce(reducers[column.aggregate], column.aggregate === 'min' ? Number.MAX_VALUE : (column.aggregate === 'max' ? Number.MIN_VALUE : 0));
   }
   return value;
 };
