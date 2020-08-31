@@ -117,6 +117,12 @@ var reducers = {
   max: maxReducer,
   min: minReducer,
   sum: sumReducer
+}; // aggregate reducers init values
+
+var reducersInitValues = {
+  min: Number.MAX_VALUE,
+  max: Number.MIN_VALUE,
+  sum: 0
 }; // aggregate a single column
 
 var aggregateColumn = function aggregateColumn(column, data) {
@@ -130,7 +136,7 @@ var aggregateColumn = function aggregateColumn(column, data) {
   } else {
     value = data.map(function (d) {
       return datumValue(d, column.property);
-    }).reduce(reducers[column.aggregate], 0);
+    }).reduce(reducers[column.aggregate], reducersInitValues[column.aggregate]);
   }
 
   return value;
