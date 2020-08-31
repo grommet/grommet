@@ -163,6 +163,28 @@ export const themeDoc = {
     type: "string | {'dark': string, 'light': string}",
     defaultValue: 'status-critical',
   },
+  'formField.error.container': {
+    description: `Any valid Box props for the container surrounding the error 
+    message and icon.`,
+    type: 'object',
+    defaultValue: undefined,
+  },
+  'formField.error.icon': {
+    description: 'An icon placed next to the error message.',
+    type: 'React.Element',
+    defaultValue: undefined,
+  },
+  'formField.info.container': {
+    description: `Any valid Box props for the container surrounding the info 
+    message and icon.`,
+    type: 'object',
+    defaultValue: undefined,
+  },
+  'formField.info.icon': {
+    description: 'An icon placed next to the info message.',
+    type: 'React.Element',
+    defaultValue: undefined,
+  },
   'formField.error.margin': {
     description: 'The margin used for the FormField error.',
     type: 'string | object',

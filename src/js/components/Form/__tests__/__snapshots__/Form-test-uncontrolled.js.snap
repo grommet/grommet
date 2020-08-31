@@ -953,6 +953,20 @@ exports[`Form uncontrolled errors 1`] = `
 }
 
 .c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -1057,11 +1071,15 @@ exports[`Form uncontrolled errors 1`] = `
           />
         </div>
       </div>
-      <span
-        className="c5"
+      <div
+        className="c5 "
       >
-        missing
-      </span>
+        <span
+          className="c6"
+        >
+          missing
+        </span>
+      </div>
     </div>
   </form>
 </div>
@@ -1109,6 +1127,20 @@ exports[`Form uncontrolled infos 1`] = `
 }
 
 .c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -1208,11 +1240,15 @@ exports[`Form uncontrolled infos 1`] = `
           />
         </div>
       </div>
-      <span
-        className="c5"
+      <div
+        className="c5 "
       >
-        missing
-      </span>
+        <span
+          className="c6"
+        >
+          missing
+        </span>
+      </div>
     </div>
   </form>
 </div>
@@ -1795,6 +1831,20 @@ exports[`Form uncontrolled uncontrolled onValidate 2`] = `
         </div>
       </div>
       .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -1816,11 +1866,15 @@ exports[`Form uncontrolled uncontrolled onValidate 2`] = `
 
 }
 
-<span
-        class="c0"
+<div
+        class="c0 "
       >
-        required
-      </span>
+        <span
+          class="c1"
+        >
+          required
+        </span>
+      </div>
     </div>
     <button
       class="StyledButton-sc-323bzc-0 gLndZo"
@@ -2043,6 +2097,20 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 2`] = `
         </div>
       </div>
       .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -2064,11 +2132,15 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 2`] = `
 
 }
 
-<span
-        class="c0"
+<div
+        class="c0 "
       >
-        One uppercase letter
-      </span>
+        <span
+          class="c1"
+        >
+          One uppercase letter
+        </span>
+      </div>
     </div>
     <button
       class="StyledButton-sc-323bzc-0 gLndZo"
@@ -2291,6 +2363,20 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 2`] = `
         </div>
       </div>
       .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -2308,11 +2394,15 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 2`] = `
 
 }
 
-<span
-        class="c0"
+<div
+        class="c0 "
       >
-        One uppercase letter
-      </span>
+        <span
+          class="c1"
+        >
+          One uppercase letter
+        </span>
+      </div>
     </div>
     <button
       class="StyledButton-sc-323bzc-0 gLndZo"

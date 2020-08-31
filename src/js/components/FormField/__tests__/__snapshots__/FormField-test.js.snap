@@ -1208,6 +1208,20 @@ exports[`FormField error 1`] = `
 }
 
 .c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -1240,11 +1254,15 @@ exports[`FormField error 1`] = `
     <div
       className="c2 "
     />
-    <span
-      className="c3"
+    <div
+      className="c3 "
     >
-      test error
-    </span>
+      <span
+        className="c4"
+      >
+        test error
+      </span>
+    </div>
   </div>
 </div>
 `;
@@ -1275,7 +1293,21 @@ exports[`FormField help 1`] = `
   flex-direction: column;
 }
 
-.c3 {
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1290,7 +1322,7 @@ exports[`FormField help 1`] = `
   flex-direction: column;
 }
 
-.c2 {
+.c3 {
   margin-inline-start: 12px;
   font-size: 18px;
   line-height: 24px;
@@ -1304,7 +1336,7 @@ exports[`FormField help 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
@@ -1317,13 +1349,17 @@ exports[`FormField help 1`] = `
     onBlur={[Function]}
     onFocus={[Function]}
   >
-    <span
-      className="c2"
-    >
-      test help
-    </span>
     <div
-      className="c3 "
+      className="c2 "
+    >
+      <span
+        className="c3"
+      >
+        test help
+      </span>
+    </div>
+    <div
+      className="c4 "
     />
   </div>
 </div>
@@ -1439,6 +1475,20 @@ exports[`FormField info 1`] = `
 }
 
 .c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -1471,11 +1521,15 @@ exports[`FormField info 1`] = `
     <div
       className="c2 "
     />
-    <span
-      className="c3"
+    <div
+      className="c3 "
     >
-      test info
-    </span>
+      <span
+        className="c4"
+      >
+        test info
+      </span>
+    </div>
   </div>
 </div>
 `;

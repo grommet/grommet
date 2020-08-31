@@ -1513,6 +1513,20 @@ exports[`Form controlled controlled onValidate 2`] = `
         </div>
       </div>
       .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -1534,11 +1548,15 @@ exports[`Form controlled controlled onValidate 2`] = `
 
 }
 
-<span
-        class="c0"
+<div
+        class="c0 "
       >
-        required
-      </span>
+        <span
+          class="c1"
+        >
+          required
+        </span>
+      </div>
     </div>
     <button
       class="StyledButton-sc-323bzc-0 gLndZo"
@@ -1761,6 +1779,20 @@ exports[`Form controlled controlled onValidate custom error 2`] = `
         </div>
       </div>
       .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -1782,11 +1814,15 @@ exports[`Form controlled controlled onValidate custom error 2`] = `
 
 }
 
-<span
-        class="c0"
+<div
+        class="c0 "
       >
-        One uppercase letter
-      </span>
+        <span
+          class="c1"
+        >
+          One uppercase letter
+        </span>
+      </div>
     </div>
     <button
       class="StyledButton-sc-323bzc-0 gLndZo"
@@ -2009,6 +2045,20 @@ exports[`Form controlled controlled onValidate custom info 2`] = `
         </div>
       </div>
       .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c1 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -2026,11 +2076,15 @@ exports[`Form controlled controlled onValidate custom info 2`] = `
 
 }
 
-<span
-        class="c0"
+<div
+        class="c0 "
       >
-        One uppercase letter
-      </span>
+        <span
+          class="c1"
+        >
+          One uppercase letter
+        </span>
+      </div>
     </div>
     <button
       class="StyledButton-sc-323bzc-0 gLndZo"
