@@ -55,16 +55,16 @@ const StyledMessageContainer = styled(Box)`
 const Message = ({ error, info, message, ...rest }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
 
-  let messageType;
-  if (error) messageType = 'error';
-  if (info) messageType = 'info';
-  const icon =
-    theme.formField[messageType] && theme.formField[messageType].icon;
-
-  const containerProps =
-    theme.formField[messageType] && theme.formField[messageType].container;
-
   if (message) {
+    let messageType;
+    if (error) messageType = 'error';
+    if (info) messageType = 'info';
+    const icon =
+      theme.formField[messageType] && theme.formField[messageType].icon;
+
+    const containerProps =
+      theme.formField[messageType] && theme.formField[messageType].container;
+
     let messageContent;
     if (typeof message === 'string')
       messageContent = <Text {...rest}>{message}</Text>;
@@ -72,7 +72,7 @@ const Message = ({ error, info, message, ...rest }) => {
 
     return (
       <StyledMessageContainer
-        direction={icon ? 'row' : 'column'}
+        direction="row"
         messageType={messageType}
         {...containerProps}
       >
