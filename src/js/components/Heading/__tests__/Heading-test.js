@@ -206,7 +206,7 @@ test('Theme based font weight renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Throws a warning when heading.level is undefinedin the theme.', () => {
+test('Throws a warning when heading.level is undefined in the theme.', () => {
   global.console = {
     warn: jest.fn(),
   };
