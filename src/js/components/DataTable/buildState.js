@@ -93,11 +93,12 @@ const reducers = {
   sum: sumReducer,
 };
 
+// aggregate reducers init values
 const reducersInitValues = {
 	min : Number.MAX_VALUE,
 	max : Number.MIN_VALUE,
 	sum : 0
-}
+};
 
 // aggregate a single column
 const aggregateColumn = (column, data) => {
