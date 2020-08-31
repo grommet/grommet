@@ -93,6 +93,12 @@ const reducers = {
   sum: sumReducer,
 };
 
+const reducersInitValues = {
+	min : Number.MAX_VALUE,
+	max : Number.MIN_VALUE,
+	sum : 0
+}
+
 // aggregate a single column
 const aggregateColumn = (column, data) => {
   let value;
@@ -102,7 +108,7 @@ const aggregateColumn = (column, data) => {
   } else {
     value = data
       .map(d => datumValue(d, column.property))
-      .reduce(reducers[column.aggregate], column.aggregate === 'min' ? Number.MAX_VALUE : (column.aggregate === 'max' ? Number.MIN_VALUE : 0));
+      .reduce(reducers[column.aggregate], reducersInitValues[column.aggregate]);
   }
   return value;
 };
