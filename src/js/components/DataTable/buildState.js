@@ -97,7 +97,7 @@ const reducers = {
 const reducersInitValues = {
 	min : Number.MAX_VALUE,
 	max : Number.MIN_VALUE,
-	sum : 0
+	sum : 0,
 };
 
 // aggregate a single column
