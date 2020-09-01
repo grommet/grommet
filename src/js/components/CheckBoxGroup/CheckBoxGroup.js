@@ -62,8 +62,9 @@ export const CheckBoxGroup = forwardRef(
     return (
       <Box ref={ref} gap={gap} {...rest}>
         {options.map(option => {
+          const optionValue = option.value;
           const label = labelKey ? option[labelKey] : option.label;
-          const valueOption = valueKey ? option[valueKey] : option.value;
+          const valueOption = valueKey ? option[valueKey] : optionValue;
           const checked = value.indexOf(valueOption) >= 0;
           const disabled = disabledProp || option.disabled;
 
@@ -77,7 +78,7 @@ export const CheckBoxGroup = forwardRef(
           const optionProps = { ...optionRest, label, disabled };
           return (
             <CheckBox
-              key={label}
+              key={valueOption}
               {...optionProps}
               disabled={disabled}
               checked={checked}
