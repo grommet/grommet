@@ -185,6 +185,8 @@ const Calendar = forwardRef(
       return undefined;
     }, [animating, displayBounds, targetDisplayBounds]);
 
+    // Last step in updating the displayBounds. Allows for pruning
+    // displayBounds and cleaning up states to occur after animation.
     useEffect(() => {
       if (animating && targetDisplayBounds) {
         // Wait for animation to finish before cleaning up.
@@ -193,6 +195,7 @@ const Calendar = forwardRef(
             setDisplayBounds(targetDisplayBounds);
             setTargetDisplayBounds(undefined);
             setSlide(undefined);
+            setAnimating(false);
           },
           400, // Empirically determined.
         );
