@@ -78,7 +78,8 @@ const Themed = () => {
               help="Some helpful descriptive text"
               error={`Message to show on error. This is a long message to 
               demonstrate custom svg alignment.`}
-              info="Additional contextual information"
+              info={`Here is some additional information that should give the
+              user better context on how to properly complete the FormField.`}
               contentProps={{
                 background: 'lightblue',
                 border: { color: 'blue', size: 'small' },

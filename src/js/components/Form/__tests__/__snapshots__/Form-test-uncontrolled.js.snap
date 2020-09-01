@@ -953,20 +953,6 @@ exports[`Form uncontrolled errors 1`] = `
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-
-.c6 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -1071,15 +1057,11 @@ exports[`Form uncontrolled errors 1`] = `
           />
         </div>
       </div>
-      <div
-        className="c5 "
+      <span
+        className="c5"
       >
-        <span
-          className="c6"
-        >
-          missing
-        </span>
-      </div>
+        missing
+      </span>
     </div>
   </form>
 </div>
@@ -1127,20 +1109,6 @@ exports[`Form uncontrolled infos 1`] = `
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-
-.c6 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -1240,15 +1208,11 @@ exports[`Form uncontrolled infos 1`] = `
           />
         </div>
       </div>
-      <div
-        className="c5 "
+      <span
+        className="c5"
       >
-        <span
-          className="c6"
-        >
-          missing
-        </span>
-      </div>
+        missing
+      </span>
     </div>
   </form>
 </div>
@@ -1831,20 +1795,6 @@ exports[`Form uncontrolled uncontrolled onValidate 2`] = `
         </div>
       </div>
       .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-
-.c1 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -1866,15 +1816,11 @@ exports[`Form uncontrolled uncontrolled onValidate 2`] = `
 
 }
 
-<div
-        class="c0 "
+<span
+        class="c0"
       >
-        <span
-          class="c1"
-        >
-          required
-        </span>
-      </div>
+        required
+      </span>
     </div>
     <button
       class="StyledButton-sc-323bzc-0 gLndZo"
@@ -2097,20 +2043,6 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 2`] = `
         </div>
       </div>
       .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-
-.c1 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -2132,15 +2064,11 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 2`] = `
 
 }
 
-<div
-        class="c0 "
+<span
+        class="c0"
       >
-        <span
-          class="c1"
-        >
-          One uppercase letter
-        </span>
-      </div>
+        One uppercase letter
+      </span>
     </div>
     <button
       class="StyledButton-sc-323bzc-0 gLndZo"
@@ -2363,20 +2291,6 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 2`] = `
         </div>
       </div>
       .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-
-.c1 {
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 6px;
@@ -2394,15 +2308,11 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 2`] = `
 
 }
 
-<div
-        class="c0 "
+<span
+        class="c0"
       >
-        <span
-          class="c1"
-        >
-          One uppercase letter
-        </span>
-      </div>
+        One uppercase letter
+      </span>
     </div>
     <button
       class="StyledButton-sc-323bzc-0 gLndZo"
