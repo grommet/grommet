@@ -2,9 +2,13 @@
 
 var _react = _interopRequireDefault(require("react"));
 
+var _styledComponents = require("styled-components");
+
 var _react2 = require("@storybook/react");
 
 var _grommet = require("grommet");
+
+var _grommetIcons = require("grommet-icons");
 
 var _utils = require("../../../utils");
 
@@ -20,13 +24,37 @@ var customTheme = (0, _utils.deepMerge)(_grommet.grommet, {
       margin: 'medium'
     },
     error: {
+      container: {
+        background: 'black',
+        pad: {
+          horizontal: 'small'
+        },
+        extend: (0, _styledComponents.css)(["svg{margin-top:10px;}"])
+      },
+      color: 'white',
+      icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Alert, {
+        size: "small"
+      }),
       size: 'xsmall'
     },
     help: {
       size: 'xsmall'
     },
     info: {
-      size: 'xsmall'
+      size: 'xsmall',
+      icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.StatusInfo, {
+        size: "small"
+      }),
+      container: {
+        align: 'center',
+        background: 'dark-1',
+        pad: {
+          horizontal: 'small'
+        },
+        margin: {
+          top: 'small'
+        }
+      }
     },
     label: {
       size: 'small'
@@ -59,8 +87,8 @@ var Themed = function Themed() {
     name: "example1",
     label: "Field Label",
     help: "Some helpful descriptive text",
-    error: "Message to show on error",
-    info: "Additional contextual information",
+    error: "Message to show on error. This is a long message to \n              demonstrate custom svg alignment.",
+    info: "Here is some additional information that should give the\n              user better context on how to properly complete the FormField.",
     contentProps: {
       background: 'lightblue',
       border: {

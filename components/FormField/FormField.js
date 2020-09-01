@@ -58,14 +58,39 @@ var FormFieldContentBox = (0, _styledComponents["default"])(_Box.Box).withConfig
     justBorder: true
   });
 });
+var StyledMessageContainer = (0, _styledComponents["default"])(_Box.Box).withConfig({
+  displayName: "FormField__StyledMessageContainer",
+  componentId: "m9hood-2"
+})(["", ""], function (props) {
+  return props.messageType && props.theme.formField[props.messageType].container && props.theme.formField[props.messageType].container.extend;
+});
 
 var Message = function Message(_ref) {
-  var message = _ref.message,
-      rest = _objectWithoutPropertiesLoose(_ref, ["message"]);
+  var error = _ref.error,
+      info = _ref.info,
+      message = _ref.message,
+      type = _ref.type,
+      rest = _objectWithoutPropertiesLoose(_ref, ["error", "info", "message", "type"]);
+
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
   if (message) {
-    if (typeof message === 'string') return /*#__PURE__*/_react["default"].createElement(_Text.Text, rest, message);
-    return /*#__PURE__*/_react["default"].createElement(_Box.Box, rest, message);
+    var icon;
+    var containerProps;
+
+    if (type) {
+      icon = theme.formField[type] && theme.formField[type].icon;
+      containerProps = theme.formField[type] && theme.formField[type].container;
+    }
+
+    var messageContent;
+    if (typeof message === 'string') messageContent = /*#__PURE__*/_react["default"].createElement(_Text.Text, rest, message);else messageContent = /*#__PURE__*/_react["default"].createElement(_Box.Box, rest, message);
+    return icon || containerProps ? /*#__PURE__*/_react["default"].createElement(StyledMessageContainer, _extends({
+      direction: "row",
+      messageType: type
+    }, containerProps), icon && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+      flex: false
+    }, icon), messageContent) : messageContent;
   }
 
   return null;
@@ -301,8 +326,10 @@ var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
   }, labelStyle), label), /*#__PURE__*/_react["default"].createElement(Message, _extends({
     message: help
   }, formFieldTheme.help))) : undefined, contents, /*#__PURE__*/_react["default"].createElement(Message, _extends({
+    type: "error",
     message: error
   }, formFieldTheme.error)), /*#__PURE__*/_react["default"].createElement(Message, _extends({
+    type: "info",
     message: info
   }, formFieldTheme.info)));
 });

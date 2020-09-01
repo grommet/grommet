@@ -812,6 +812,8 @@ export var generate = function generate(baseSpacing, scale) {
           vertical: 'xsmall',
           horizontal: 'small'
         } // background: undefined,
+        // container: {}, // any Box props
+        // icon: undefined,
 
       },
       // extend: undefined,
@@ -826,7 +828,9 @@ export var generate = function generate(baseSpacing, scale) {
         margin: {
           vertical: 'xsmall',
           horizontal: 'small'
-        }
+        } // container: {}, // any Box props
+        // icon: undefined,
+
       },
       label: {
         margin: {

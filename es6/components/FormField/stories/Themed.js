@@ -1,6 +1,9 @@
 import React from 'react';
+import { css } from 'styled-components';
 import { storiesOf } from '@storybook/react';
 import { grommet, Box, Form, FormField, Grommet, Heading, Text, TextInput } from 'grommet';
+import { Alert } from "grommet-icons/es6/icons/Alert";
+import { StatusInfo } from "grommet-icons/es6/icons/StatusInfo";
 import { deepMerge } from '../../../utils';
 var customTheme = deepMerge(grommet, {
   formField: {
@@ -12,13 +15,37 @@ var customTheme = deepMerge(grommet, {
       margin: 'medium'
     },
     error: {
+      container: {
+        background: 'black',
+        pad: {
+          horizontal: 'small'
+        },
+        extend: css(["svg{margin-top:10px;}"])
+      },
+      color: 'white',
+      icon: /*#__PURE__*/React.createElement(Alert, {
+        size: "small"
+      }),
       size: 'xsmall'
     },
     help: {
       size: 'xsmall'
     },
     info: {
-      size: 'xsmall'
+      size: 'xsmall',
+      icon: /*#__PURE__*/React.createElement(StatusInfo, {
+        size: "small"
+      }),
+      container: {
+        align: 'center',
+        background: 'dark-1',
+        pad: {
+          horizontal: 'small'
+        },
+        margin: {
+          top: 'small'
+        }
+      }
     },
     label: {
       size: 'small'
@@ -51,8 +78,8 @@ var Themed = function Themed() {
     name: "example1",
     label: "Field Label",
     help: "Some helpful descriptive text",
-    error: "Message to show on error",
-    info: "Additional contextual information",
+    error: "Message to show on error. This is a long message to \n              demonstrate custom svg alignment.",
+    info: "Here is some additional information that should give the\n              user better context on how to properly complete the FormField.",
     contentProps: {
       background: 'lightblue',
       border: {
