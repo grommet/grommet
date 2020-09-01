@@ -54,13 +54,6 @@ describe('CheckBoxGroup', () => {
             { label: 'Wuhan', value: 'Wuhan' },
           ]}
         />
-        <CheckBoxGroup
-          value={['yes', 'yes-again']}
-          options={[
-            { label: 'Yes!', value: 'yes' },
-            { label: 'Yes!', value: 'yes-again' },
-          ]}
-        />
       </Grommet>,
     );
     const tree = component.toJSON();
@@ -150,6 +143,33 @@ describe('CheckBoxGroup', () => {
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('no duplicated key error', () => {
+    console.error = jest.fn();
+    const errorSpy = jest.spyOn(console, 'error');
+
+    render(
+      <Grommet>
+        <CheckBoxGroup
+          value={['yes', 'yes-again']}
+          options={[
+            { label: 'Yes!', value: 'yes' },
+            { label: 'Yes!', value: 'yes-again' },
+          ]}
+        />
+      </Grommet>,
+    );
+
+    expect(errorSpy).not.toBeCalledWith(
+      expect.stringMatching('same key'),
+      expect.stringMatching('Yes!'),
+      expect.anything(),
+    );
+
+    errorSpy.mockReset();
+    errorSpy.mockRestore();
+    console.error.mockReset();
   });
 
   test('checked warning', () => {
