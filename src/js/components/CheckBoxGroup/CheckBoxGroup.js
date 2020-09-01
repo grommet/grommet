@@ -67,6 +67,7 @@ export const CheckBoxGroup = forwardRef(
           const valueOption = valueKey ? option[valueKey] : optionValue;
           const checked = value.indexOf(valueOption) >= 0;
           const disabled = disabledProp || option.disabled;
+          const key = `${label}-${valueOption}`;
 
           if (option.checked)
             console.warn(
@@ -78,7 +79,7 @@ export const CheckBoxGroup = forwardRef(
           const optionProps = { ...optionRest, label, disabled };
           return (
             <CheckBox
-              key={valueOption}
+              key={key}
               {...optionProps}
               disabled={disabled}
               checked={checked}

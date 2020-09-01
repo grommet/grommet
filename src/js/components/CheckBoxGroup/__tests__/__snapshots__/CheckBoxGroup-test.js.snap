@@ -1,5 +1,71 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`CheckBoxGroup Checkbox Key 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 bFwQzJ"
+  >
+    <label
+      checked={false}
+      className="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 PHOTu"
+      onClick={[Function]}
+    >
+      <div
+        checked={false}
+        className="StyledBox-sc-13pk1d4-0 fuEVwc StyledCheckBox-sc-1dbk5ju-6 CBoMo"
+      >
+        <input
+          checked={false}
+          className="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 ljjPfS"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          type="checkbox"
+        />
+        <div
+          checked={false}
+          className="StyledBox-sc-13pk1d4-0 gDUCoH StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 iEciRS"
+        />
+      </div>
+      <span>
+        Yes!
+      </span>
+    </label>
+    <div
+      className="StyledBox__StyledBoxGap-sc-13pk1d4-1 liuKJs"
+    />
+    <label
+      checked={false}
+      className="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 PHOTu"
+      onClick={[Function]}
+    >
+      <div
+        checked={false}
+        className="StyledBox-sc-13pk1d4-0 fuEVwc StyledCheckBox-sc-1dbk5ju-6 CBoMo"
+      >
+        <input
+          checked={false}
+          className="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 ljjPfS"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          type="checkbox"
+        />
+        <div
+          checked={false}
+          className="StyledBox-sc-13pk1d4-0 gDUCoH StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 iEciRS"
+        />
+      </div>
+      <span>
+        Yes!
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
 exports[`CheckBoxGroup disabled renders 1`] = `
 <div
   className="StyledGrommet-sc-19lkkz7-0 lcXYAf"

@@ -76,6 +76,21 @@ describe('CheckBoxGroup', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  test('Checkbox Key', () => {
+    const component = renderer.create(
+      <Grommet>
+        <CheckBoxGroup
+          options={[
+            { label: 'Yes!', value: 'yes' },
+            { label: 'Yes!', value: 'yes-again' },
+          ]}
+        />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('onChange', () => {
     const onChange = jest.fn();
     const { container, getByText } = render(
