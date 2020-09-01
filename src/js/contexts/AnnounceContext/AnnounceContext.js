@@ -1,7 +1,8 @@
 import React from 'react';
 
-const createAnnouncer = () => {
+const createAnnouncer = (id) => {
   const announcer = document.createElement('div');
+  announcer.id = id;
   announcer.style.left = '-100%';
   announcer.style.right = '100%';
   announcer.style.position = 'fixed';
@@ -13,11 +14,11 @@ const createAnnouncer = () => {
 };
 
 export const AnnounceContext = React.createContext(
-  (message, mode = 'polite', timeout = 500) => {
+  (message, mode = 'polite', timeout = 500, id = 'grommet-announcer') => {
     // we only create a new container if we don't have one already
     // we create a separate node so that grommet does not set aria-hidden to it
     const announcer =
-      document.body.querySelector('[aria-live]') || createAnnouncer();
+      document.body.querySelector(`#${id}[aria-live]`) || createAnnouncer(id);
 
     announcer.setAttribute('aria-live', 'off');
     announcer.innerHTML = message;
