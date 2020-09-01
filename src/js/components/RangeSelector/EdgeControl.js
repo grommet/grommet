@@ -1,14 +1,11 @@
-import React, { useState } from 'react';
-import { compose } from 'recompose';
-
-import { withTheme } from 'styled-components';
+import React, { forwardRef, useContext, useState } from 'react';
+import styled, { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
-import { normalizeColor, parseMetricToNum } from '../../utils';
-import { withForwardRef } from '../hocs';
+import { focusStyle, normalizeColor, parseMetricToNum } from '../../utils';
 
 const DIRECTION_PROPS = {
   horizontal: {
@@ -21,93 +18,96 @@ const DIRECTION_PROPS = {
   },
 };
 
-const EdgeControl = ({
-  color,
-  direction,
-  edge,
-  forwardRef,
-  onDecrease,
-  onIncrease,
-  theme,
-  ...rest
-}) => {
-  const [focused, setFocused] = useState(false);
-  const { cursor, fill } = DIRECTION_PROPS[direction];
-  const size = parseMetricToNum(theme.global.spacing) / 2;
-  const keyboardProps =
-    direction === 'vertical'
-      ? { onUp: onDecrease, onDown: onIncrease }
-      : { onLeft: onDecrease, onRight: onIncrease };
-  const boxDirection = direction === 'vertical' ? 'row' : 'column';
-  const type =
-    (theme.rangeSelector &&
-      theme.rangeSelector.edge &&
-      theme.rangeSelector.edge.type) ||
-    'disc';
+const StyledBox = styled(Box)`
+  ${props => props.focus && focusStyle()}
+`;
 
-  let node;
-  if (type === 'bar') {
-    node = (
-      <Box
-        flex
-        justifySelf="stretch"
-        width={`${size}px`}
-        background={normalizeColor(color || 'control', theme)}
-        border={focused ? { color: normalizeColor('focus', theme) } : undefined}
-      />
-    );
-  } else if (type === 'disc') {
-    node = (
-      <Box
-        width={`${size + (focused ? 2 : 0)}px`}
-        height={`${size + (focused ? 2 : 0)}px`}
-        round="full"
-        background={normalizeColor(color || 'control', theme)}
-        border={focused ? { color: normalizeColor('focus', theme) } : undefined}
-      />
-    );
-  } else {
-    node = type;
-  }
-  return (
-    <Keyboard {...keyboardProps}>
-      <Box
-        direction={boxDirection}
-        style={{ flex: '0 0 1px' }}
-        overflow="visible"
-        align="center"
-        justify="center"
-      >
+const EdgeControl = forwardRef(
+  (
+    { color, direction, edge, onDecrease, onIncrease, thickness, ...rest },
+    ref,
+  ) => {
+    const theme = useContext(ThemeContext);
+    const [focus, setFocus] = useState(false);
+    const { cursor, fill } = DIRECTION_PROPS[direction];
+    const size = parseMetricToNum(theme.global.spacing) / 2;
+    const keyboardProps =
+      direction === 'vertical'
+        ? { onUp: onDecrease, onDown: onIncrease }
+        : { onLeft: onDecrease, onRight: onIncrease };
+    const boxDirection = direction === 'vertical' ? 'row' : 'column';
+    const type =
+      (theme.rangeSelector &&
+        theme.rangeSelector.edge &&
+        theme.rangeSelector.edge.type) ||
+      'disc';
+
+    let node;
+    const backgroundColor = normalizeColor(color || 'control', theme);
+    if (type === 'bar') {
+      node = (
+        <StyledBox
+          flex={!thickness}
+          justifySelf="stretch"
+          width={direction === 'vertical' ? thickness : `${size}px`}
+          height={direction === 'vertical' ? `${size}px` : thickness}
+          background={backgroundColor}
+          focus={focus}
+        />
+      );
+    } else if (type === 'disc') {
+      node = (
+        <StyledBox
+          width={`${size}px`}
+          height={`${size}px`}
+          round="full"
+          background={backgroundColor}
+          focus={focus}
+        />
+      );
+    } else {
+      node = type;
+    }
+    return (
+      <Keyboard {...keyboardProps}>
         <Box
-          ref={forwardRef}
           direction={boxDirection}
-          justify="center"
+          style={{ flex: '0 0 1px' }}
+          overflow="visible"
           align="center"
-          basis="full"
-          fill={fill}
-          style={{
-            cursor,
-            minWidth: size,
-            minHeight: size,
-            zIndex: 10,
-          }}
-          onFocus={() => setFocused(true)}
-          onBlur={() => setFocused(false)}
-          {...rest}
+          justify="center"
+          alignSelf="stretch"
         >
-          {node}
+          <Box
+            ref={ref}
+            direction={boxDirection}
+            justify="center"
+            align="center"
+            basis="full"
+            fill={fill}
+            style={{
+              cursor,
+              outline: 'none',
+              minWidth: size,
+              minHeight: size,
+              zIndex: 10,
+            }}
+            tabIndex={0}
+            onFocus={() => setFocus(true)}
+            onBlur={() => setFocus(false)}
+            {...rest}
+          >
+            {node}
+          </Box>
         </Box>
-      </Box>
-    </Keyboard>
-  );
-};
+      </Keyboard>
+    );
+  },
+);
+
+EdgeControl.displayName = 'EdgeControl';
 
 EdgeControl.defaultProps = {};
 Object.setPrototypeOf(EdgeControl.defaultProps, defaultProps);
 
-const EdgeControlWrapper = compose(
-  withForwardRef,
-  withTheme,
-)(EdgeControl);
-
-export { EdgeControlWrapper as EdgeControl };
+export { EdgeControl };

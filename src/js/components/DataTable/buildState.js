@@ -1,4 +1,9 @@
+// This file contains helper functions for DataTable, to keep the component
+// files simpler.
+
+// get the value for the property in the datum object
 export const datumValue = (datum, property) => {
+  if (!property) return undefined;
   const parts = property.split('.');
   if (parts.length === 1) {
     return datum[property];
@@ -9,6 +14,73 @@ export const datumValue = (datum, property) => {
   return datumValue(datum[parts[0]], parts.slice(1).join('.'));
 };
 
+// get the primary property name
+export const normalizePrimaryProperty = (columns, primaryKey) => {
+  let result;
+  columns.forEach(column => {
+    // remember the first key property
+    if (column.primary && !result) {
+      result = column.property;
+    }
+  });
+  if (!result) {
+    if (primaryKey === false) result = undefined;
+    else if (primaryKey) result = primaryKey;
+    else if (columns.length > 0) result = columns[0].property;
+  }
+  return result;
+};
+
+// initialize filters with empty strings
+export const initializeFilters = columns => {
+  const result = {};
+  columns.forEach(column => {
+    if (column.search) {
+      result[column.property] = '';
+    }
+  });
+  return result;
+};
+
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#Escaping
+const escapeRegExp = input => input.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+// filter data based on filters then sort
+export const filterAndSortData = (data, filters, onSearch, sort) => {
+  let result = data;
+  if (!onSearch) {
+    const regexps = {};
+    Object.keys(filters)
+      .filter(n => filters[n])
+      .forEach(n => {
+        regexps[n] = new RegExp(escapeRegExp(filters[n]), 'i');
+      });
+    if (Object.keys(regexps).length > 0) {
+      result = data.filter(
+        datum =>
+          !Object.keys(regexps).some(
+            property => !regexps[property].test(datumValue(datum, property)),
+          ),
+      );
+    }
+  }
+
+  if (sort) {
+    const { property, direction } = sort;
+    result = result === data ? [...data] : result; // don't sort caller's data
+    const before = direction === 'asc' ? 1 : -1;
+    const after = direction === 'asc' ? -1 : 1;
+    result.sort((d1, d2) => {
+      if (d1[property] > d2[property]) return before;
+      if (d1[property] < d2[property]) return after;
+      return 0;
+    });
+  }
+
+  return result;
+};
+
+// aggregate reducers
 const sumReducer = (accumulated, next) => accumulated + next;
 const minReducer = (accumulated, next) =>
   accumulated === undefined ? next : Math.min(accumulated, next);
@@ -21,6 +93,14 @@ const reducers = {
   sum: sumReducer,
 };
 
+// aggregate reducers init values
+const reducersInitValues = {
+  min: Number.MAX_VALUE,
+  max: Number.MIN_VALUE,
+  sum: 0,
+};
+
+// aggregate a single column
 const aggregateColumn = (column, data) => {
   let value;
   if (column.aggregate === 'avg') {
@@ -29,133 +109,46 @@ const aggregateColumn = (column, data) => {
   } else {
     value = data
       .map(d => datumValue(d, column.property))
-      .reduce(reducers[column.aggregate], 0);
+      .reduce(reducers[column.aggregate], reducersInitValues[column.aggregate]);
   }
   return value;
 };
 
-const findPrimary = (nextProps, prevState, nextState) => {
-  const { columns, primaryKey } = nextProps;
-
-  let primaryProperty;
-  columns.forEach(column => {
-    // remember the first key property
-    if (column.primary && !primaryProperty) {
-      primaryProperty = column.property;
-    }
-  });
-  if (!primaryProperty && columns.length > 0) {
-    primaryProperty = primaryKey || columns[0].property;
-  }
-
-  return { ...nextState, primaryProperty };
-};
-
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#Escaping
-const escapeRegExp = input => input.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-
-const filter = (nextProps, prevState, nextState) => {
-  const { columns, onSearch } = nextProps;
-  const { data, filters } = nextState;
-
-  let nextFilters;
-  let regexps;
-  columns.forEach(column => {
-    if (column.search) {
-      if (!nextFilters) {
-        nextFilters = {};
-        regexps = {};
-      }
-      nextFilters[column.property] = filters
-        ? filters[column.property] || ''
-        : '';
-      // don't do filtering if the caller has supplied onSearch
-      if (nextFilters[column.property] && column.search && !onSearch) {
-        regexps[column.property] = new RegExp(
-          escapeRegExp(nextFilters[column.property]),
-          'i',
-        );
-      }
-    }
-  });
-
-  let nextData = data;
-  if (nextFilters) {
-    nextData = data.filter(
-      datum =>
-        !Object.keys(regexps).some(
-          property => !regexps[property].test(datumValue(datum, property)),
-        ),
-    );
-  }
-
-  return { ...nextState, filters: nextFilters, data: nextData };
-};
-
-const aggregate = (nextProps, prevState, nextState) => {
-  const { columns } = nextProps;
-  const { data } = nextState;
-
-  const aggregateValues = {};
+// aggregate all columns that can
+const aggregate = (columns, data) => {
+  const result = {};
   columns.forEach(column => {
     if (column.aggregate) {
-      aggregateValues[column.property] = aggregateColumn(column, data);
+      result[column.property] = aggregateColumn(column, data);
     }
   });
-
-  return { ...nextState, aggregateValues };
+  return result;
 };
 
-const buildFooterValues = (nextProps, prevState, nextState) => {
-  const { columns } = nextProps;
-  const { aggregateValues } = nextState;
+// build the values for the footer cells
+export const buildFooterValues = (columns, data) => {
+  const aggregateValues = aggregate(columns, data);
 
-  let showFooter;
-  const footerValues = {};
+  const result = {};
   columns.forEach(column => {
     if (column.footer) {
-      showFooter = true;
       if (typeof column.footer === 'string') {
-        footerValues[column.property] = column.footer;
+        result[column.property] = column.footer;
       } else if (column.footer.aggregate) {
-        footerValues[column.property] = aggregateValues[column.property];
+        result[column.property] = aggregateValues[column.property];
       }
     }
   });
 
-  return { ...nextState, footerValues, showFooter };
+  return result;
 };
 
-const sortData = (nextProps, prevState, nextState) => {
-  const { sort } = prevState;
-  const { data } = nextState;
-
-  let nextData = data;
-  if (sort) {
-    const { property, ascending } = sort;
-    nextData = [...data];
-    const before = ascending ? 1 : -1;
-    const after = ascending ? -1 : 1;
-    nextData.sort((d1, d2) => {
-      if (d1[property] > d2[property]) return before;
-      if (d1[property] < d2[property]) return after;
-      return 0;
-    });
-  }
-
-  return { ...nextState, data: nextData };
-};
-
-const groupData = (nextProps, prevState, nextState) => {
-  const { columns, groupBy } = nextProps;
-  const { data } = nextState;
-
-  let groups;
-  let groupState;
-  let expandedState;
+// looks at the groupBy property of each data object and returns an
+// array with one item for each unique value of that property.
+export const buildGroups = (columns, data, groupBy) => {
+  let result;
   if (groupBy) {
-    groups = [];
-    groupState = {};
+    result = [];
     const groupMap = {};
     data.forEach(datum => {
       const groupByProperty = groupBy.property ? groupBy.property : groupBy;
@@ -163,50 +156,38 @@ const groupData = (nextProps, prevState, nextState) => {
       if (!groupMap[groupValue]) {
         const group = { data: [], datum: {}, key: groupValue };
         group.datum[groupByProperty] = groupValue;
-        groups.push(group);
-        if (groupBy.expand) {
-          expandedState = groupBy.expand.some(key => key === groupValue);
-        } else {
-          expandedState =
-            prevState.groupState && prevState.groupState[groupValue]
-              ? prevState.groupState[groupValue].expanded
-              : false;
-        }
-        groupState[groupValue] = { expanded: expandedState };
+        result.push(group);
         groupMap[groupValue] = group;
       }
       groupMap[groupValue].data.push(datum);
     });
 
-    // calculate any aggregates
+    // include any aggregate column values across the data for each group
     columns.forEach(column => {
       if (column.aggregate) {
-        groups.forEach(group => {
-          group.datum[column.property] = aggregateColumn(column, group.data); // eslint-disable-line
+        result.forEach(group => {
+          const { datum } = group;
+          datum[column.property] = aggregateColumn(column, group.data);
         });
       }
     });
   }
 
-  return { ...nextState, groups, groupState };
+  return result;
 };
 
-export const buildState = (nextProps, prevState) => {
-  const { data } = nextProps;
-  const { filters, sort, widths } = prevState;
-
-  let nextState = {
-    data,
-    filters,
-    sort,
-    widths,
-  };
-  nextState = findPrimary(nextProps, prevState, nextState);
-  nextState = filter(nextProps, prevState, nextState);
-  nextState = aggregate(nextProps, prevState, nextState);
-  nextState = buildFooterValues(nextProps, prevState, nextState);
-  nextState = sortData(nextProps, prevState, nextState);
-  nextState = groupData(nextProps, prevState, nextState);
-
-  return nextState;
+// build group expanded state, expanding any in groupBy.expand
+export const buildGroupState = (groups, groupBy) => {
+  const result = {};
+  if (groups) {
+    groups.forEach(({ key }) => {
+      result[key] = { expanded: false };
+    });
+  }
+  if (groupBy && groupBy.expand) {
+    groupBy.expand.forEach(value => {
+      result[value] = { expanded: true };
+    });
+  }
+  return result;
 };

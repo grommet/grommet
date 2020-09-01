@@ -18,6 +18,7 @@ import {
   FormField,
   Grid,
   Heading,
+  MaskedInput,
   Menu,
   Meter,
   Paragraph,
@@ -33,7 +34,8 @@ import {
   TextInput,
   Video,
 } from 'grommet';
-import { grommet, dark } from 'grommet/themes';
+import { FormNext } from 'grommet-icons';
+import { grommet } from 'grommet/themes';
 import { generate } from 'grommet/themes/base';
 import { deepMerge } from 'grommet/utils';
 import { hpe } from 'grommet-theme-hpe';
@@ -57,7 +59,7 @@ const Node = ({ id, ...rest }) => (
 const connection = (fromTarget, toTarget, { color, ...rest } = {}) => ({
   fromTarget,
   toTarget,
-  color: color || 'accent-1',
+  color: color || 'graph-0',
   thickness: 'xsmall',
   round: true,
   type: 'rectilinear',
@@ -65,7 +67,6 @@ const connection = (fromTarget, toTarget, { color, ...rest } = {}) => ({
 });
 
 const themes = {
-  dark,
   grommet,
   hpe,
   aruba,
@@ -77,6 +78,8 @@ const themes = {
 const Components = () => {
   const [baseSize, setBaseSize] = useState(24);
   const [checkBox, setCheckBox] = useState(true);
+  const [textInput, setTextInput] = useState('');
+  const [maskedInput, setMaskedInput] = useState('');
   const [radioButton, setRadioButton] = useState('RadioButton 1');
   const [rangeSelector, setRangeSelector] = useState([1, 2]);
   const [themeMode, setThemeMode] = useState();
@@ -98,16 +101,28 @@ const Components = () => {
   );
 
   const content = [
-    <Box key="type" align="start">
+    <Box key="type" align="start" gap="small">
       <Heading margin={{ top: 'none' }}>Heading</Heading>
       <Paragraph>Paragraph</Paragraph>
       <Text>Text</Text>
       <Anchor href="">Anchor</Anchor>
       <Menu
         label="Menu"
-        items={[{ label: 'One', onClick: () => {} }, { label: 'Two' }]}
+        items={[
+          {
+            label: 'One',
+            onClick: () => {},
+            icon: <FormNext />,
+            reverse: true,
+          },
+          { label: 'Two' },
+          { label: 'Thirty Three and 1/3' },
+        ]}
       />
       <Button label="Button" onClick={() => {}} />
+      <Button plain onClick={() => {}}>
+        <Text>plain button</Text>
+      </Button>
     </Box>,
     <Box key="input" gap="small">
       <Select
@@ -134,7 +149,32 @@ const Components = () => {
         value={radioButton}
         onChange={event => setRadioButton(event.target.value)}
       />
-      <TextInput placeholder="TextInput" />
+      <TextInput
+        placeholder="TextInput"
+        suggestions={['a', 'b', 'c']}
+        value={textInput}
+        onChange={event => setTextInput(event.target.value)}
+        onSelect={({ suggestion }) => setTextInput(suggestion)}
+      />
+      <MaskedInput
+        mask={[
+          {
+            length: [1, 4],
+            options: [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],
+            regexp: /^\d{1,4}$/,
+            placeholder: 'nnn',
+          },
+          { fixed: ' ' },
+          {
+            length: 2,
+            options: ['MB', 'GB', 'TB'],
+            regexp: /^[mgt]b$|^[MGT]B$|^[mMgGtT]$/,
+            placeholder: 'gb',
+          },
+        ]}
+        value={maskedInput}
+        onChange={event => setMaskedInput(event.target.value)}
+      />
       <TextArea placeholder="TextArea" />
       <RangeInput value={24} onChange={() => {}} />
       <Stack>
@@ -185,7 +225,7 @@ const Components = () => {
         basis="small"
         values={[
           { value: 50, color: 'light-3' },
-          { value: 30, color: 'accent-1' },
+          { value: 30, color: 'graph-0' },
           { value: 20, color: 'light-4' },
           { value: 10, color: 'light-3' },
           { value: 5, color: 'light-4' },
@@ -257,6 +297,7 @@ const Components = () => {
     </Box>,
     <Box key="video" alignSelf="start">
       <Video>
+        <source src="small.mp4" type="video/mp4" />
         <source
           src="http://techslides.com/demos/sample-videos/small.webm"
           type="video/webm"
@@ -264,10 +305,6 @@ const Components = () => {
         <source
           src="http://techslides.com/demos/sample-videos/small.ogv"
           type="video/ogg"
-        />
-        <source
-          src="http://techslides.com/demos/sample-videos/small.mp4"
-          type="video/mp4"
         />
         <source
           src="http://techslides.com/demos/sample-videos/small.3gp"
@@ -291,7 +328,7 @@ const Components = () => {
             <Select
               plain
               size="small"
-              options={['grommet', 'dark', 'hpe', 'aruba', 'hp', 'dxc', 'v1']}
+              options={Object.keys(themes)}
               value={themeName}
               onChange={event => setThemeName(event.option)}
             />

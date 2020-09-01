@@ -1,5 +1,4 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 import { cleanup, render, fireEvent } from '@testing-library/react';
 
@@ -10,81 +9,107 @@ describe('DataTable', () => {
   afterEach(cleanup);
 
   test('empty', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <DataTable />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('basic', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
             { property: 'b', header: 'B' },
           ]}
-          data={[{ a: 'one', b: 1 }, { a: 'two', b: 2 }]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
         />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('!primaryKey', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          primaryKey={false}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('paths', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
             { property: 'b.c', header: 'B' },
           ]}
-          data={[{ a: 'one', b: { c: 1 } }, { a: 'two', b: { c: 2 } }]}
+          data={[
+            { a: 'one', b: { c: 1 } },
+            { a: 'two', b: { c: 2 } },
+          ]}
         />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('primaryKey', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
             { property: 'b', header: 'B' },
           ]}
-          data={[{ a: 'one', b: 1 }, { a: 'two', b: 2 }]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
           primaryKey="b"
         />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('footer', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <DataTable
           columns={[
             { property: 'a', header: 'A', footer: 'Total' },
             { property: 'b', header: 'B' },
           ]}
-          data={[{ a: 'one', b: 1 }, { a: 'two', b: 2 }]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
         />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('sort', () => {
+  test('sortable', () => {
     const { container, getByText } = render(
       <Grommet>
         <DataTable
@@ -92,7 +117,11 @@ describe('DataTable', () => {
             { property: 'a', header: 'A' },
             { property: 'b', header: 'B' },
           ]}
-          data={[{ a: 'zero', b: 0 }, { a: 'one', b: 1 }, { a: 'two', b: 2 }]}
+          data={[
+            { a: 'zero', b: 0 },
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
           sortable
         />
       </Grommet>,
@@ -101,6 +130,35 @@ describe('DataTable', () => {
 
     const headerCell = getByText('A');
     fireEvent.click(headerCell, {});
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('onSort', () => {
+    const onSort = jest.fn();
+    const { container, getByText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'zero', b: 0 },
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          onSort={onSort}
+          sortable
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    const headerCell = getByText('A');
+    fireEvent.click(headerCell, {});
+    expect(onSort).toBeCalledWith(
+      expect.objectContaining({ property: 'a', direction: 'asc' }),
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -124,24 +182,26 @@ describe('DataTable', () => {
   });
 
   test('resizeable', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
             { property: 'b', header: 'B' },
           ]}
-          data={[{ a: 'one', b: 1 }, { a: 'two', b: 2 }]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
           resizeable
         />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('aggregate', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <DataTable
           columns={[
@@ -153,12 +213,14 @@ describe('DataTable', () => {
               footer: { aggregate: true },
             },
           ]}
-          data={[{ a: 'one', b: 1 }, { a: 'two', b: 2 }]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
         />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('groupBy', () => {
@@ -206,7 +268,7 @@ describe('DataTable', () => {
   });
 
   test('background', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         {[
           'accent-1',
@@ -219,18 +281,20 @@ describe('DataTable', () => {
               { property: 'a', header: 'A', footer: 'Total' },
               { property: 'b', header: 'B' },
             ]}
-            data={[{ a: 'one', b: 1 }, { a: 'two', b: 2 }]}
+            data={[
+              { a: 'one', b: 1 },
+              { a: 'two', b: 2 },
+            ]}
             background={background}
           />
         ))}
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('border', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         {[
           true,
@@ -247,18 +311,20 @@ describe('DataTable', () => {
               { property: 'a', header: 'A', footer: 'Total' },
               { property: 'b', header: 'B' },
             ]}
-            data={[{ a: 'one', b: 1 }, { a: 'two', b: 2 }]}
+            data={[
+              { a: 'one', b: 1 },
+              { a: 'two', b: 2 },
+            ]}
             border={border}
           />
         ))}
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('pad', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         {[
           'small',
@@ -274,33 +340,37 @@ describe('DataTable', () => {
               { property: 'a', header: 'A', footer: 'Total' },
               { property: 'b', header: 'B' },
             ]}
-            data={[{ a: 'one', b: 1 }, { a: 'two', b: 2 }]}
+            data={[
+              { a: 'one', b: 1 },
+              { a: 'two', b: 2 },
+            ]}
             pad={pad}
           />
         ))}
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('rowProps', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <DataTable
           columns={[
             { property: 'a', header: 'A', footer: 'Total' },
             { property: 'b', header: 'B' },
           ]}
-          data={[{ a: 'one', b: 1 }, { a: 'two', b: 2 }]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
           rowProps={{
             one: { background: 'accent-1', border: 'bottom', pad: 'large' },
           }}
         />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('groupBy property', () => {
@@ -380,7 +450,7 @@ describe('DataTable', () => {
   });
 
   test('replace', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <DataTable
           columns={[
@@ -399,7 +469,104 @@ describe('DataTable', () => {
         />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('themeColumnSizes', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A', size: 'medium' },
+            { property: 'b', header: 'B', size: 'small' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('absoluteColumnSizes', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A', size: '400px' },
+            { property: 'b', header: 'B', size: '200px' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('relativeColumnSizes', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A', size: '2/3' },
+            { property: 'b', header: 'B', size: '1/3' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('fill', () => {
+    const { container } = render(
+      <Grommet>
+        {[true, 'horizontal', 'vertical'].map(fill => (
+          <DataTable
+            key={JSON.stringify(fill)}
+            columns={[
+              { property: 'a', header: 'A', footer: 'Total' },
+              { property: 'b', header: 'B' },
+            ]}
+            data={[
+              { a: 'one', b: 1 },
+              { a: 'two', b: 2 },
+            ]}
+            fill={fill}
+          />
+        ))}
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('pin', () => {
+    const { container } = render(
+      <Grommet>
+        {[true, 'header', 'footer'].map(pin => (
+          <DataTable
+            key={JSON.stringify(pin)}
+            columns={[
+              { property: 'a', header: 'A', footer: 'Total', pin: true },
+              { property: 'b', header: 'B' },
+            ]}
+            data={[
+              { a: 'one', b: 1 },
+              { a: 'two', b: 2 },
+            ]}
+            pin={pin}
+          />
+        ))}
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

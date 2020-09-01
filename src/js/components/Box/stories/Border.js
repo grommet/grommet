@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box } from 'grommet';
+import { Grommet, Box, Text } from 'grommet';
 import { grommet } from '../../../themes';
 
 const BorderBox = () => (
@@ -64,6 +64,14 @@ const BorderBox = () => (
         ].map(type => (
           <Box key={type} pad="small" border={{ size: 'medium', style: type }}>
             {type}
+          </Box>
+        ))}
+      </Box>
+      <Box direction="row-responsive" gap="large" align="center">
+        {['column', 'row'].map(direction => (
+          <Box direction={direction} gap="medium" border="between">
+            <Text>between</Text>
+            <Text>{direction}</Text>
           </Box>
         ))}
       </Box>

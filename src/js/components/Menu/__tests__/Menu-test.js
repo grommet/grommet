@@ -1,16 +1,41 @@
 import React from 'react';
 import 'jest-styled-components';
 import renderer from 'react-test-renderer';
+import 'jest-axe/extend-expect';
+import 'regenerator-runtime/runtime';
+
+import { axe } from 'jest-axe';
 import { cleanup, fireEvent, render } from '@testing-library/react';
 import { getByText as getByTextDOM } from '@testing-library/dom';
+import '@testing-library/jest-dom/extend-expect';
 import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { Grommet, Menu } from '../..';
+
+const customTheme = {
+  menu: {
+    icons: {
+      color: '#F08080',
+    },
+  },
+};
 
 describe('Menu', () => {
   beforeEach(createPortal);
 
   afterEach(cleanup);
+
+  test('should have no accessibility violations', async () => {
+    const { container } = render(
+      <Grommet>
+        <Menu />
+      </Grommet>,
+    );
+
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+    expect(container).toMatchSnapshot();
+  });
 
   test('basic', () => {
     const component = renderer.create(
@@ -39,6 +64,21 @@ describe('Menu', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
 
+  test('custom a11yTitle', () => {
+    const { container, getByLabelText } = render(
+      <Grommet>
+        <Menu
+          a11yTitle="My Menu"
+          label="Test Menu"
+          items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
+        />
+      </Grommet>,
+    );
+    const menuWithLabel = getByLabelText('My Menu');
+    expect(menuWithLabel).toBeTruthy();
+    expect(container).toMatchSnapshot();
+  });
+
   test('justify content', () => {
     const component = renderer.create(
       <Grommet>
@@ -56,6 +96,29 @@ describe('Menu', () => {
       </Grommet>,
     );
     expect(component.toJSON()).toMatchSnapshot();
+  });
+
+  test('gap between icon and label', () => {
+    window.scrollTo = jest.fn();
+    const { container, getByText } = render(
+      <Grommet>
+        <Menu
+          open
+          label="actions"
+          items={[
+            { label: 'Item 1', icon: <svg />, gap: 'xlarge' },
+            { label: 'Item 2' },
+          ]}
+        />
+      </Grommet>,
+    );
+
+    const firstItem = getByText('Item 1');
+    expect(
+      firstItem.querySelector('div[class^=StyledBox__StyledBoxGap]'),
+    ).toBeInTheDocument();
+
+    expect(container).toMatchSnapshot();
   });
 
   test('open and close on click', () => {
@@ -312,5 +375,39 @@ describe('Menu', () => {
     fireEvent.click(getByText('Test'));
 
     expect(document.getElementById('test-menu__drop')).toBeNull();
+  });
+
+  test('reverse icon and label', () => {
+    window.scrollTo = jest.fn();
+    const { container, getByText } = render(
+      <Grommet>
+        <Menu
+          open
+          label="Test Menu"
+          items={[
+            { label: 'Item 1', icon: <svg />, reverse: true },
+            { label: 'Item 2' },
+          ]}
+        />
+      </Grommet>,
+    );
+
+    // Label should come before icon
+    expect(getByText('Item 1').innerHTML).toEqual(
+      expect.stringMatching(/^Item 1/),
+    );
+    expect(container).toMatchSnapshot();
+  });
+
+  test('custom theme icon color', () => {
+    const component = renderer.create(
+      <Grommet theme={customTheme}>
+        <Menu
+          label="Test Menu"
+          items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
+        />
+      </Grommet>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
   });
 });

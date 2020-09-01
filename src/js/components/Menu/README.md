@@ -7,7 +7,7 @@ The labels and behavior of the contained Buttons are described
       'hover', 'focus', and 'drop' keys. This allows you to customize
       the rendering of the Menu button in those cases.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Menu&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=menu&module=%2Fsrc%2FMenu.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Menu&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/menu&module=%2Fsrc%2FMenu.js)
 ## Usage
 
 ```javascript
@@ -19,7 +19,8 @@ import { Menu } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 ```
 string
@@ -69,6 +70,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -86,6 +95,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -111,6 +128,19 @@ xlarge
     string
 }
 string
+```
+
+**children**
+
+Function that will be called to render the visual representation.
+      It will be passed an object containing button props.
+      It should return a react element.
+      For example:
+      `children={({ drop, hover }) => <Box ...>{...}</Box>}`
+      
+
+```
+function
 ```
 
 **disabled**
@@ -210,7 +240,8 @@ node
 **items**
 
 Required. Menu items to be placed inside the drop down.
-The object values can be any Button prop, for example: label and onClick. Defaults to `[]`.
+The object values can be any Button prop, 
+for example: label, onClick, and href. Defaults to `[]`.
 
 ```
 [object]
@@ -227,7 +258,8 @@ node
 
 **messages**
 
-Custom messages. Used for accessibility by screen readers. Defaults to `{
+Custom messages. Used for accessibility by screen readers. 
+      These values will be overridden if an a11yTitle is provided. Defaults to `{
   "openMenu": "Open Menu",
   "closeMenu": "Close Menu"
 }`.
@@ -268,12 +300,22 @@ button
   
 **global.colors.control**
 
+The default color to use for the icon. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+{ dark: 'accent-1', light: 'brand'}
+```
+
+**menu.icons.color**
+
 The color to use for the icon. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
 ```
-undefined
+control
 ```
 
 **menu.background**
@@ -298,10 +340,22 @@ undefined
 
 **menu.icons.down**
 
-The icon to show to the right of the label. Expects `React.Element`.
+The icon to show to the right of the label when menu is 
+    closed. Expects `React.Element`.
 
 Defaults to
 
 ```
 <FormDown />
+```
+
+**menu.icons.up**
+
+The icon to show to the right of the label when menu is 
+    opened. Expects `undefined | React.Element`.
+
+Defaults to
+
+```
+undefined
 ```

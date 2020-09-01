@@ -1,40 +1,22 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 import {
   disabledStyle,
-  focusStyle,
+  getInputPadBySide,
   inputStyle,
   parseMetricToNum,
-  placeholderStyle,
+  plainInputStyle,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
 
-const sizeStyle = props => {
-  const data = props.theme.text[props.size];
-  return css`
-    font-size: ${data.size};
-    line-height: ${data.height};
-  `;
-};
-
-const plainStyle = css`
-  border: none;
-`;
-
 const StyledTextInput = styled.input`
-  ${inputStyle} width: 100%;
-
-  ${props => props.size && sizeStyle(props)}
-  ${props => props.plain && plainStyle}
-
-  ${placeholderStyle}
-
-  &::-moz-focus-inner {
-    border: none;
-    outline: none;
-  }
-
-  ${props => props.focus && !props.plain && focusStyle};
+  ${inputStyle}
+  ${props => props.plain && plainInputStyle}
+  ${props =>
+    props.icon &&
+    (props.reverse
+      ? `padding-right: ${props.theme.global.edgeSize.large};`
+      : `padding-left: ${props.theme.global.edgeSize.large};`)}
   ${props =>
     props.disabled &&
     disabledStyle(
@@ -62,7 +44,7 @@ Object.setPrototypeOf(StyledTextInputContainer.defaultProps, defaultProps);
 const StyledPlaceholder = styled.div`
   position: absolute;
   left: ${props =>
-    parseMetricToNum(props.theme.global.input.padding) -
+    parseMetricToNum(getInputPadBySide(props, 'left')) -
     parseMetricToNum(props.theme.global.control.border.width)}px;
   top: 50%;
   transform: translateY(-50%);
@@ -78,6 +60,19 @@ const StyledPlaceholder = styled.div`
 
 StyledPlaceholder.defaultProps = {};
 Object.setPrototypeOf(StyledPlaceholder.defaultProps, defaultProps);
+
+const StyledIcon = styled.div`
+  position: absolute;
+  display: flex;
+  justify: center;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  ${props =>
+    props.reverse
+      ? `right: ${getInputPadBySide(props, 'right')};`
+      : `left: ${getInputPadBySide(props, 'left')};`}
+`;
 
 const StyledSuggestions = styled.ol`
   border-top-left-radius: 0;
@@ -99,5 +94,6 @@ export {
   StyledTextInput,
   StyledTextInputContainer,
   StyledPlaceholder,
+  StyledIcon,
   StyledSuggestions,
 };

@@ -19,9 +19,9 @@ const SIZE_MAP = {
 
 const sizeStyle = css`
   width: ${props =>
-    SIZE_MAP[props.size] || props.theme.global.size[props.size]};
+    SIZE_MAP[props.size] || props.theme.global.size[props.size] || props.size};
   max-width: ${props =>
-    SIZE_MAP[props.size] || props.theme.global.size[props.size]};
+    SIZE_MAP[props.size] || props.theme.global.size[props.size] || props.size};
   overflow: hidden;
 `;
 
@@ -30,7 +30,6 @@ const StyledTableCell = styled.td`
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  height: 100%;
 
   ${props => props.size && sizeStyle}
   ${props => props.verticalAlign && `vertical-align: ${props.verticalAlign};`}
@@ -60,9 +59,7 @@ const StyledTableDataCaption = styled.caption`
 StyledTableDataCaption.defaultProps = {};
 Object.setPrototypeOf(StyledTableDataCaption.defaultProps, defaultProps);
 
-const StyledTableRow = styled.tr`
-  height: 100%;
-`;
+const StyledTableRow = styled.tr``;
 
 StyledTableRow.defaultProps = {};
 Object.setPrototypeOf(StyledTableRow.defaultProps, defaultProps);

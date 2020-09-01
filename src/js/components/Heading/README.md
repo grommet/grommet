@@ -1,7 +1,7 @@
 ## Heading
 Heading text structured in levels.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Heading&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=heading&module=%2Fsrc%2FHeading.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Heading&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/heading&module=%2Fsrc%2FHeading.js)
 ## Usage
 
 ```javascript
@@ -13,7 +13,8 @@ import { Heading } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 ```
 string
@@ -63,6 +64,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -80,6 +89,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -269,8 +286,16 @@ undefined
 **heading.level**
 
 The level that impacts line-height, max-width, font size, 
-weight and family of the Heading. Heading level is automatically adjusted at 
-different screen sizes. These screen sizes are derived from breakpoints. Expects `object`.
+weight and family of the Heading. Heading styling is automatically adjusted at 
+different screen sizes. When the heading.responsiveBreakpoint is hit ("small" 
+by default), all heading styles will automatically be adjusted. A heading of 
+level 1, for example, will use the styling defined in heading level 2; a 
+heading of level 2 will use the styling defined in heading level 3 and so 
+forth. The tag in the DOM is not adjusted. A heading of level 1 remains an h1. 
+The styling adjustment is intended to aid readability on smaller screens but 
+will not semantically affect your application structure. If you do not want 
+this responsive styling to occur, you can set header.responsiveBreakpoint to 
+undefined. Expects `object`.
 
 Defaults to
 

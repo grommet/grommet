@@ -1,7 +1,7 @@
 ## Chart
 A graphical chart.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Chart&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=chart&module=%2Fsrc%2FChart.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Chart&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/chart&module=%2Fsrc%2FChart.js)
 ## Usage
 
 ```javascript
@@ -13,7 +13,8 @@ import { Chart } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 ```
 string
@@ -63,6 +64,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -80,6 +89,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -107,9 +124,20 @@ xlarge
 string
 ```
 
+**animate**
+
+Whether to animate drawing.
+
+```
+boolean
+```
+
 **bounds**
 
-The limits for the values, specified as a two dimensional array.
+The limits for the values, specified as a two dimensional array. 
+      The first array specifies the limits of the x-axis. The second array 
+      specifies the limits of the y-axis. 
+      For example: [[x-min, x-max], [y-min, y-max]].
       If not specified, the bounds will automatically be set to fit
       the provided values.
 
@@ -119,18 +147,59 @@ The limits for the values, specified as a two dimensional array.
 
 **color**
 
-A color identifier to use for the graphic color. Defaults to `accent-1`.
+A color identifier to use for the graphic color. If an
+      array is specified, it is used to create a gradient mask. Array objects
+      indicate what color to show at what value. In the simplest case, the
+      values should map to the Y bounds values, resulting in a vertical
+      gradient. Specifying more objects allows more fine grained control over
+      where the gradient colors change. Defaults to `accent-1`.
 
 ```
 string
 {
-  color: string,
+  dark: string,
+  light: string
+}
+{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   opacity: 
     weak
     medium
     strong
     boolean
 }
+[{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  value: number
+}]
+```
+
+**id**
+
+A unique identifier for the Chart. This
+      is required if more than one Chart is shown and they use color
+      gradients.
+
+```
+string
+```
+
+**dash**
+
+Whether to use dashed lines for line or bar charts.
+
+```
+boolean
 ```
 
 **gap**
@@ -151,8 +220,9 @@ string
 
 **onClick**
 
-Called when the user clicks on it.
-      This is only available when the type is line or area.
+Called when the user clicks on the
+     visualization. Clicking on individual bars or points are handled via
+     values[].onClick for those types of charts.
 
 ```
 function
@@ -168,6 +238,17 @@ Called with a boolean argument
 function
 ```
 
+**opacity**
+
+What opacity to apply to the visuals. Supercedes 'color.opacity'
+
+```
+weak
+medium
+strong
+boolean
+```
+
 **overflow**
 
 Whether the chart strokes should overflow the component. Set this
@@ -177,6 +258,104 @@ Whether the chart strokes should overflow the component. Set this
 
 ```
 boolean
+```
+
+**pad**
+
+Spacing around the outer edge of the drawing coordinate area.
+      Related to 'overflow', this allows control over how much space
+      is available for bars and points to overflow into. Defaults to `none`.
+
+```
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+```
+
+**point**
+
+When using a 'point' type, what shape the points should use.
+      If this property is not specified, points will be drawn as a square or
+      a circle, based on how 'round' is specified.
+
+```
+circle
+diamond
+square
+star
+triangle
+triangleDown
 ```
 
 **round**
@@ -189,7 +368,9 @@ boolean
 
 **size**
 
-The size of the Chart. Defaults to `{
+The size of the Chart.
+      'full' is deprecated as 'fill' is more consistent with how that term is
+      used elsewhere. Defaults to `{
   "width": "medium",
   "height": "small"
 }`.
@@ -201,6 +382,7 @@ small
 medium
 large
 xlarge
+fill
 full
 {
   height: 
@@ -210,6 +392,7 @@ full
     medium
     large
     xlarge
+    fill
     full
     string,
   width: 
@@ -219,6 +402,7 @@ full
     medium
     large
     xlarge
+    fill
     full
     auto
     string
@@ -239,16 +423,18 @@ large
 xlarge
 none
 string
+number
 ```
 
 **type**
 
-The visual type of meter. Defaults to `bar`.
+The visual type of chart. Defaults to `bar`.
 
 ```
 bar
 line
 area
+point
 ```
 
 **values**
@@ -258,15 +444,36 @@ Required. Array of value objects describing the data.
       indicating the x coordinate and a range of two y coordinates.
       'label' is a text string describing it.
       'onHover' and 'onClick' only work when type='bar'.
+      'color', 'opacity', and 'thickness' allow bar and point charts to have
+      color variation per-value.
 
 ```
 [
   number
   [number]
   {
+    color: 
+      string
+      {
+        dark: string,
+        light: string
+      },
     label: string,
     onClick: function,
     onHover: function,
+    opacity: 
+      string
+      number,
+    thickness: 
+      hair
+      xsmall
+      small
+      medium
+      large
+      xlarge
+      none
+      string
+      number,
     value: 
       number
       [number]
@@ -276,6 +483,16 @@ Required. Array of value objects describing the data.
   
 ## Theme
   
+**chart.color**
+
+Color of the Chart. Expects `string | {dark: string, light: string}`.
+
+Defaults to
+
+```
+accent-1
+```
+
 **chart.extend**
 
 Any additional style for the Chart. Expects `string | (props) => {}`.
@@ -288,12 +505,16 @@ undefined
 
 **global.colors**
 
-color options used for Chart fill area. Expects `object`.
+Color options. Expects `object`.
 
 Defaults to
 
 ```
-accent-1
+{
+      "accent-1": "#6FFFB0",
+      "graph-0": "accent-1",
+      ...
+    }
 ```
 
 **global.edgeSize**
@@ -318,12 +539,16 @@ Defaults to
 
 **global.opacity**
 
-The opacity of the Chart stroke. Expects `string`.
+The opacity of the Chart stroke. Expects `object`.
 
 Defaults to
 
 ```
-undefined
+{
+      strong: 0.8,
+      medium: 0.4,
+      weak: 0.1,
+    }
 ```
 
 **global.size**

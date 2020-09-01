@@ -1,7 +1,7 @@
 ## Tabs
 A container with controls to show one Tab at a time.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Tabs&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=tabs&module=%2Fsrc%2FTabs.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Tabs&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/tabs&module=%2Fsrc%2FTabs.js)
 ## Usage
 
 ```javascript
@@ -16,7 +16,8 @@ import { Tabs, Tab } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 ```
 string
@@ -66,6 +67,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -83,6 +92,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -118,6 +135,17 @@ onActive function and update activeIndex accordingly.
 
 ```
 number
+```
+
+**alignControls**
+
+How to align the tab controls within the tabs header.
+
+```
+start
+center
+end
+stretch
 ```
 
 **children**
@@ -245,6 +273,46 @@ undefined
 **tabs.header.background**
 
 The background styles of Tabs header. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**tabs.header.border.color**
+
+border color of the tabs controls Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**tabs.header.border.side**
+
+side of the border of the tabs controls Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**tabs.header.border.size**
+
+border size of the tabs controls Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**tabs.header.border.style**
+
+border style of the tabs controls Expects `string`.
 
 Defaults to
 

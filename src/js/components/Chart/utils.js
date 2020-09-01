@@ -1,23 +1,31 @@
 export const normalizeValues = values =>
   (values || []).map((value, index) => {
-    if (Array.isArray(value)) {
-      return { value };
-    }
-    if (typeof value === 'number') {
-      return { value: [index, value] };
-    }
+    if (value === undefined) return { value: [index, undefined] };
+    if (typeof value === 'number') return { value: [index, value] };
+    if (Array.isArray(value)) return { value };
     return value;
   });
 
 export const normalizeBounds = (bounds, values) => {
   let result = bounds;
   if (!result) {
-    result = [[0, 1], [0, 1]];
+    result = [
+      [0, 1],
+      [0, 1],
+    ];
     (values || []).forEach(value => {
-      result[0][0] = Math.min(result[0][0], value.value[0]);
-      result[0][1] = Math.max(result[0][1], value.value[0]);
-      result[1][0] = Math.min(result[1][0], value.value[1]);
-      result[1][1] = Math.max(result[1][1], value.value[1]);
+      if (value.value[0] !== undefined) {
+        result[0][0] = Math.min(result[0][0], value.value[0]);
+        result[0][1] = Math.max(result[0][1], value.value[0]);
+      }
+      if (value.value[1] !== undefined) {
+        result[1][0] = Math.min(result[1][0], value.value[1]);
+        result[1][1] = Math.max(result[1][1], value.value[1]);
+      }
+      if (value.value[2] !== undefined) {
+        result[1][0] = Math.min(result[1][0], value.value[2]);
+        result[1][1] = Math.max(result[1][1], value.value[2]);
+      }
     });
   }
   return result;

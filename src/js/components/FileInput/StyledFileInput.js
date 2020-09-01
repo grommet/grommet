@@ -15,8 +15,6 @@ const StyledFileInput = styled.input`
     border: none;
     outline: none;
   }
-
-  ${props => props.theme.fileInput && props.theme.fileInput.extend};
 `;
 
 StyledFileInput.defaultProps = {};

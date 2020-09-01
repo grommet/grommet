@@ -1,8 +1,13 @@
-import React, { Component } from 'react';
-import { compose } from 'recompose';
-
-import { withTheme } from 'styled-components';
-
+import React, {
+  forwardRef,
+  useCallback,
+  useContext,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from 'react';
+import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
@@ -11,8 +16,7 @@ import { Menu } from '../Menu';
 import { Meter } from '../Meter';
 import { Stack } from '../Stack';
 import { Text } from '../Text';
-import { withForwardRef } from '../hocs';
-import { throttle } from '../../utils';
+import { containsFocus, useForwardedRef } from '../../utils';
 
 import {
   StyledVideo,
@@ -36,440 +40,339 @@ const formatTime = time => {
   return `${minutes}:${seconds}`;
 };
 
-const videoEvents = [
-  'onAbort',
-  'onCanPlay',
-  'onCanPlayThrough',
-  'onDurationChange',
-  'onEmptied',
-  'onEncrypted',
-  'onEnded',
-  'onError',
-  'onLoadedData',
-  'onLoadedMetadata',
-  'onLoadStart',
-  'onPause',
-  'onPlay',
-  'onPlaying',
-  'onProgress',
-  'onRateChange',
-  'onSeeked',
-  'onSeeking',
-  'onStalled',
-  'onSuspend',
-  'onTimeUpdate',
-  'onVolumeChange',
-  'onWaiting',
-];
-
-class Video extends Component {
-  static getDerivedStateFromProps(nextProps, prevState) {
-    const { forwardRef } = nextProps;
-    const { videoRef } = prevState;
-    const nextVideoRef = forwardRef || videoRef;
-    if (nextVideoRef !== videoRef) {
-      return { videoRef: nextVideoRef };
-    }
-    return null;
-  }
-
-  state = {
-    captions: [],
-    scrubberRef: React.createRef(),
-    videoRef: React.createRef(),
-  };
-
-  hasPlayed = false;
-
-  constructor(props) {
-    super(props);
-    this.update = throttle(this.update, 100, this);
-    this.mediaEventProps = this.injectUpdateVideoEvents();
-  }
-
-  componentDidMount() {
-    const { mute } = this.props;
-    const { videoRef } = this.state;
-    const video = videoRef.current;
-
-    if (mute) {
-      this.mute();
-    }
-
-    if (video) {
-      // hide all captioning to start with
-      const { textTracks } = video;
-      for (let i = 0; i < textTracks.length; i += 1) {
-        textTracks[i].mode = 'hidden';
-      }
-
-      this.restate();
-    }
-  }
-
-  componentDidUpdate(prevProps) {
-    const { autoPlay } = this.props;
-    if (autoPlay && !prevProps.autoPlay) {
-      // Caller wants the video to play now.
-      this.play();
-    }
-    this.restate();
-  }
-
-  componentWillUnmount() {
-    this.unmounted = true;
-  }
-
-  injectUpdateVideoEvents = () =>
-    videoEvents.reduce((previousValue, currentValue) => {
-      const nextValue = { ...previousValue };
-      nextValue[currentValue] = e => {
-        if (
-          currentValue in this.props &&
-          /* eslint-disable react/destructuring-assignment */
-          typeof this.props[currentValue] === 'function'
-        ) {
-          this.props[currentValue](e);
-          /* eslint-enable react/destructuring-assignment */
-        }
-        this.update();
-      };
-
-      return nextValue;
-    }, {});
-
-  update = () => {
-    const { videoRef } = this.state;
-    const video = videoRef.current;
-    // Set flag for Video first play
-    if (
-      (!this.hasPlayed && !video.paused && !video.loading) ||
-      video.currentTime
-    ) {
-      this.hasPlayed = true;
-    }
-
-    let { interacting } = this.state;
-    if (video.ended) {
-      interacting = false;
-    }
-
-    this.setState({
-      duration: video.duration,
-      currentTime: video.currentTime,
-      // buffered: video.buffered,
-      // paused: video.paused,
-      // muted: video.muted,
-      volume: video.volume,
-      // ended: video.ended,
-      // readyState: video.readyState,
-      interacting,
-      // computed values
-      // hasPlayed: this.hasPlayed,
-      playing: !video.paused && !video.loading,
-      // percentageBuffered: video.buffered.length &&
-      //   (video.buffered.end(video.buffered.length - 1) /
-      //   video.duration) * 100,
-      percentagePlayed: (video.currentTime / video.duration) * 100,
-      // loading: video.readyState < video.HAVE_ENOUGH_DATA,
-    });
-  };
-
-  play = () => {
-    const { videoRef } = this.state;
-    videoRef.current.play();
-  };
-
-  pause = () => {
-    const { videoRef } = this.state;
-    videoRef.current.pause();
-  };
-
-  scrub = event => {
-    const { duration, scrubberRef } = this.state;
-    if (scrubberRef.current) {
-      const scrubberRect = scrubberRef.current.getBoundingClientRect();
-      const percent = (event.clientX - scrubberRect.left) / scrubberRect.width;
-      this.setState({ scrubTime: duration * percent });
-    }
-  };
-
-  seek = event => {
-    const { duration, scrubberRef, videoRef } = this.state;
-    if (scrubberRef.current) {
-      const scrubberRect = scrubberRef.current.getBoundingClientRect();
-      const percent = (event.clientX - scrubberRect.left) / scrubberRect.width;
-      videoRef.current.currentTime = duration * percent;
-    }
-  };
-
-  unmute = () => {
-    const { videoRef } = this.state;
-    if (videoRef.current) {
-      videoRef.current.muted = false;
-    }
-  };
-
-  mute = () => {
-    const { videoRef } = this.state;
-    if (videoRef.current) {
-      videoRef.current.muted = true;
-    }
-  };
-
-  louder = () => {
-    const { videoRef } = this.state;
-    videoRef.current.volume += VOLUME_STEP;
-  };
-
-  quieter = () => {
-    const { videoRef } = this.state;
-    videoRef.current.volume -= VOLUME_STEP;
-  };
-
-  showCaptions = index => {
-    const { videoRef } = this.state;
-    const { textTracks } = videoRef.current;
-    for (let i = 0; i < textTracks.length; i += 1) {
-      textTracks[i].mode = i === index ? 'showing' : 'hidden';
-    }
-    // Using forceUpdate to force redraw of controls when changing captions
-    this.forceUpdate();
-  };
-
-  fullscreen = () => {
-    const { videoRef } = this.state;
-    const video = videoRef.current;
-    if (video.requestFullscreen) {
-      video.requestFullscreen();
-    } else if (video.msRequestFullscreen) {
-      video.msRequestFullscreen();
-    } else if (video.mozRequestFullScreen) {
-      video.mozRequestFullScreen();
-    } else if (video.webkitRequestFullscreen) {
-      video.webkitRequestFullscreen();
-    } else {
-      console.warn("Your browser doesn't support fullscreen.");
-    }
-  };
-
-  interactionStart = () => {
-    this.setState({ interacting: true });
-    clearTimeout(this.interactionTimer);
-    this.interactionTimer = setTimeout(this.interactionStop, 3000);
-  };
-
-  interactionStop = () => {
-    const { focus } = this.state;
-    if (!focus && !this.unmounted) {
-      this.setState({ interacting: false });
-    }
-  };
-
-  restate = () => {
-    const { captions, height, videoRef, width } = this.state;
-    const video = videoRef.current;
-
-    if (video) {
-      if (video.videoHeight) {
-        // set the size based on the video aspect ratio
-        const rect = video.getBoundingClientRect();
-        const ratio = rect.width / rect.height;
-        const videoRatio = video.videoWidth / video.videoHeight;
-        if (videoRatio > ratio) {
-          const nextHeight = rect.width / videoRatio;
-          if (nextHeight !== height) {
-            this.setState({ height: nextHeight, width: undefined });
-          }
-        } else {
-          const nextWidth = rect.height * videoRatio;
-          if (nextWidth !== width) {
-            this.setState({ height: undefined, width: nextWidth });
-          }
-        }
-      }
-
-      // remember the state of the text tracks for subsequent rendering
-      const { textTracks } = video;
-      if (textTracks.length > 0) {
-        if (textTracks.length === 1) {
-          const active = textTracks[0].mode === 'showing';
-          if (!captions || !captions[0] || captions[0].active !== active) {
-            this.setState({ captions: [{ active }] });
-          }
-        } else {
-          const nextCaptions = [];
-          let set = false;
-          for (let i = 0; i < textTracks.length; i += 1) {
-            const track = textTracks[i];
-            const active = track.mode === 'showing';
-            nextCaptions.push({ label: track.label, active });
-            if (!captions || !captions[i] || captions[i].active !== active) {
-              set = true;
-            }
-          }
-          if (set) {
-            this.setState({ captions: nextCaptions });
-          }
-        }
-      }
-    }
-  };
-
-  renderControls() {
-    const { controls, theme } = this.props;
-    const {
-      captions,
-      currentTime,
-      duration,
-      interacting,
-      percentagePlayed,
-      playing,
-      scrubberRef,
-      scrubTime,
-      volume,
-    } = this.state;
-    const over = controls === 'over';
-    const background = over
-      ? (theme.video.controls && theme.video.controls.background) || {
-          color: 'dark-1',
-          opacity: 'strong',
-        }
-      : undefined;
-    const iconColor = over && (theme.video.icons.color || 'light-1');
-
-    const formattedTime = formatTime(scrubTime || currentTime || duration);
-
-    const Icons = {
-      ClosedCaption: theme.video.icons.closedCaption,
-      Configure: theme.video.icons.configure,
-      FullScreen: theme.video.icons.fullScreen,
-      Pause: theme.video.icons.pause,
-      Play: theme.video.icons.play,
-      ReduceVolume: theme.video.icons.reduceVolume,
-      Volume: theme.video.icons.volume,
-    };
-
-    const captionControls = captions.map(caption => ({
-      icon: caption.label ? (
-        undefined
-      ) : (
-        <Icons.ClosedCaption color={iconColor} />
-      ),
-      label: caption.label,
-      active: caption.active,
-      onClick: () => this.showCaptions(caption.active ? -1 : 0),
-    }));
-
-    return (
-      <StyledVideoControls
-        over={over}
-        active={
-          !this.hasPlayed || controls === 'below' || (over && interacting)
-        }
-      >
-        <Box
-          direction="row"
-          align="center"
-          justify="between"
-          background={background}
-        >
-          <Button
-            icon={
-              playing ? (
-                <Icons.Pause color={iconColor} />
-              ) : (
-                <Icons.Play color={iconColor} />
-              )
-            }
-            hoverIndicator="background"
-            onClick={playing ? this.pause : this.play}
-          />
-          <Box direction="row" align="center" flex>
-            <Box flex>
-              <Stack>
-                <Meter
-                  aria-label="Video progress"
-                  background={
-                    over
-                      ? (theme.video.scrubber &&
-                          theme.video.scrubber.track &&
-                          theme.video.scrubber.track.color) ||
-                        'dark-3'
-                      : undefined
-                  }
-                  size="full"
-                  thickness="small"
-                  values={[{ value: percentagePlayed || 0 }]}
-                />
-                <StyledVideoScrubber
-                  ref={scrubberRef}
-                  tabIndex={0}
-                  role="button"
-                  value={
-                    scrubTime
-                      ? Math.round((scrubTime / duration) * 100)
-                      : undefined
-                  }
-                  onMouseMove={this.scrub}
-                  onMouseLeave={() => this.setState({ scrubTime: undefined })}
-                  onClick={this.seek}
-                />
-              </Stack>
-            </Box>
-            <Box pad={{ horizontal: 'small' }}>
-              <Text margin="none">{formattedTime}</Text>
-            </Box>
-          </Box>
-          <Menu
-            icon={<Icons.Configure color={iconColor} />}
-            dropAlign={{ bottom: 'top', right: 'right' }}
-            dropBackground={background}
-            items={[
-              {
-                icon: <Icons.Volume color={iconColor} />,
-                onClick: volume <= 1 - VOLUME_STEP ? this.louder : undefined,
-                close: false,
-              },
-              {
-                icon: <Icons.ReduceVolume color={iconColor} />,
-                onClick: volume >= VOLUME_STEP ? this.quieter : undefined,
-                close: false,
-              },
-              ...captionControls,
-              {
-                icon: <Icons.FullScreen color={iconColor} />,
-                onClick: this.fullscreen,
-              },
-            ]}
-          />
-        </Box>
-      </StyledVideoControls>
-    );
-  }
-
-  render() {
-    const {
+const Video = forwardRef(
+  (
+    {
       alignSelf,
       autoPlay,
       children,
-      controls,
+      controls = 'over',
       gridArea,
       loop,
       margin,
-      theme,
+      messages,
+      mute,
+      onDurationChange,
+      onEnded,
+      onPause,
+      onPlay,
+      onTimeUpdate,
+      onVolumeChange,
       ...rest
-    } = this.props;
-    const { height, videoRef, width } = this.state;
+    },
+    ref,
+  ) => {
+    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const [captions, setCaptions] = useState([]);
+    const [currentTime, setCurrentTime] = useState();
+    const [duration, setDuration] = useState();
+    const [percentagePlayed, setPercentagePlayed] = useState();
+    const [playing, setPlaying] = useState(false);
+    const [scrubTime, setScrubTime] = useState();
+    const [volume, setVolume] = useState();
+    const [hasPlayed, setHasPlayed] = useState(false);
+    const [interacting, setInteracting] = useState();
+    const [height, setHeight] = useState();
+    const [width, setWidth] = useState();
+    const containerRef = useRef();
+    const scrubberRef = useRef();
+    const videoRef = useForwardedRef(ref);
 
-    const controlsElement = controls ? this.renderControls() : undefined;
+    // mute if needed
+    useEffect(() => {
+      const video = videoRef.current;
+      if (video && mute) video.muted = true;
+    }, [mute, videoRef]);
+
+    // when the video is first rendered, set state from it where needed
+    useEffect(() => {
+      const video = videoRef.current;
+      if (video) {
+        // hide all captioning to start with
+        const { textTracks } = video;
+        for (let i = 0; i < textTracks.length; i += 1) {
+          textTracks[i].mode = 'hidden';
+        }
+
+        setCurrentTime(video.currentTime);
+        setPercentagePlayed((video.currentTime / video.duration) * 100);
+        setVolume(videoRef.current.volume);
+      }
+    }, [videoRef]);
+
+    // turn off interacting after a while
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        if (interacting && !containsFocus(containerRef.current)) {
+          setInteracting(false);
+        }
+      }, 3000);
+      return () => clearTimeout(timer);
+    }, [interacting]);
+
+    useLayoutEffect(() => {
+      const video = videoRef.current;
+      if (video) {
+        if (video.videoHeight) {
+          // set the size based on the video aspect ratio
+          const rect = video.getBoundingClientRect();
+          const ratio = rect.width / rect.height;
+          const videoRatio = video.videoWidth / video.videoHeight;
+          if (videoRatio > ratio) {
+            const nextHeight = rect.width / videoRatio;
+            if (nextHeight !== height) {
+              setHeight(nextHeight);
+              setWidth(undefined);
+            }
+          } else {
+            const nextWidth = rect.height * videoRatio;
+            if (nextWidth !== width) {
+              setHeight(undefined);
+              setWidth(nextWidth);
+            }
+          }
+        }
+
+        // remember the state of the text tracks for subsequent rendering
+        const { textTracks } = video;
+        if (textTracks.length > 0) {
+          if (textTracks.length === 1) {
+            const active = textTracks[0].mode === 'showing';
+            if (!captions || !captions[0] || captions[0].active !== active) {
+              setCaptions([{ active }]);
+            }
+          } else {
+            const nextCaptions = [];
+            let set = false;
+            for (let i = 0; i < textTracks.length; i += 1) {
+              const track = textTracks[i];
+              const active = track.mode === 'showing';
+              nextCaptions.push({ label: track.label, active });
+              if (!captions || !captions[i] || captions[i].active !== active) {
+                set = true;
+              }
+            }
+            if (set) {
+              setCaptions(nextCaptions);
+            }
+          }
+        }
+      }
+    }, [captions, height, videoRef, width]);
+
+    const play = useCallback(() => videoRef.current.play(), [videoRef]);
+
+    const pause = useCallback(() => videoRef.current.pause(), [videoRef]);
+
+    const scrub = useCallback(
+      event => {
+        if (scrubberRef.current) {
+          const scrubberRect = scrubberRef.current.getBoundingClientRect();
+          const percent =
+            (event.clientX - scrubberRect.left) / scrubberRect.width;
+          setScrubTime(duration * percent);
+        }
+      },
+      [duration],
+    );
+
+    const seek = useCallback(
+      event => {
+        if (scrubberRef.current) {
+          const scrubberRect = scrubberRef.current.getBoundingClientRect();
+          const percent =
+            (event.clientX - scrubberRect.left) / scrubberRect.width;
+          videoRef.current.currentTime = duration * percent;
+        }
+      },
+      [duration, videoRef],
+    );
+
+    const louder = useCallback(() => {
+      videoRef.current.volume += VOLUME_STEP;
+    }, [videoRef]);
+
+    const quieter = useCallback(() => {
+      videoRef.current.volume -= VOLUME_STEP;
+    }, [videoRef]);
+
+    const showCaptions = index => {
+      const { textTracks } = videoRef.current;
+      for (let i = 0; i < textTracks.length; i += 1) {
+        textTracks[i].mode = i === index ? 'showing' : 'hidden';
+      }
+    };
+
+    const fullscreen = useCallback(() => {
+      const video = videoRef.current;
+      if (video.requestFullscreen) {
+        video.requestFullscreen();
+      } else if (video.msRequestFullscreen) {
+        video.msRequestFullscreen();
+      } else if (video.mozRequestFullScreen) {
+        video.mozRequestFullScreen();
+      } else if (video.webkitRequestFullscreen) {
+        video.webkitRequestFullscreen();
+      } else {
+        console.warn("This browser doesn't support fullscreen.");
+      }
+    }, [videoRef]);
+
+    let controlsElement;
+    if (controls) {
+      const over = controls === 'over';
+      const background = over
+        ? (theme.video.controls && theme.video.controls.background) || {
+            color: 'background-back',
+            opacity: 'strong',
+            dark: true,
+          }
+        : undefined;
+      const iconColor = over && (theme.video.icons.color || 'text');
+
+      const formattedTime = formatTime(scrubTime || currentTime || duration);
+
+      const Icons = {
+        ClosedCaption: theme.video.icons.closedCaption,
+        Configure: theme.video.icons.configure,
+        FullScreen: theme.video.icons.fullScreen,
+        Pause: theme.video.icons.pause,
+        Play: theme.video.icons.play,
+        ReduceVolume: theme.video.icons.reduceVolume,
+        Volume: theme.video.icons.volume,
+      };
+
+      const captionControls = captions.map(caption => ({
+        icon: caption.label ? (
+          undefined
+        ) : (
+          <Icons.ClosedCaption color={iconColor} />
+        ),
+        label: caption.label,
+        active: caption.active,
+        onClick: () => showCaptions(caption.active ? -1 : 0),
+      }));
+
+      controlsElement = (
+        <StyledVideoControls
+          over={over}
+          active={!hasPlayed || controls === 'below' || (over && interacting)}
+          onBlur={() => {
+            if (!containsFocus(containerRef.current)) setInteracting(false);
+          }}
+        >
+          <Box
+            direction="row"
+            align="center"
+            justify="between"
+            background={background}
+          >
+            <Button
+              icon={
+                playing ? (
+                  <Icons.Pause
+                    color={iconColor}
+                    a11yTitle={messages.pauseButton}
+                  />
+                ) : (
+                  <Icons.Play
+                    color={iconColor}
+                    a11yTitle={messages.playButton}
+                  />
+                )
+              }
+              hoverIndicator="background"
+              onClick={playing ? pause : play}
+            />
+            <Box direction="row" align="center" flex>
+              <Box flex>
+                <Stack>
+                  <Meter
+                    aria-label={messages.progressMeter}
+                    background={
+                      over
+                        ? (theme.video.scrubber &&
+                            theme.video.scrubber.track &&
+                            theme.video.scrubber.track.color) ||
+                          'dark-3'
+                        : undefined
+                    }
+                    size="full"
+                    thickness="small"
+                    values={[{ value: percentagePlayed || 0 }]}
+                  />
+                  <StyledVideoScrubber
+                    aria-label={messages.scrubber}
+                    ref={scrubberRef}
+                    tabIndex={0}
+                    role="button"
+                    value={
+                      scrubTime
+                        ? Math.round((scrubTime / duration) * 100)
+                        : undefined
+                    }
+                    onMouseMove={scrub}
+                    onMouseLeave={() => setScrubTime(undefined)}
+                    onClick={seek}
+                  />
+                </Stack>
+              </Box>
+              <Box pad={{ horizontal: 'small' }}>
+                <Text margin="none">{formattedTime}</Text>
+              </Box>
+            </Box>
+            <Menu
+              icon={<Icons.Configure color={iconColor} />}
+              dropAlign={{ bottom: 'top', right: 'right' }}
+              dropBackground={background}
+              messages={{
+                openMenu: messages.openMenu,
+                closeMenu: messages.closeMenu,
+              }}
+              items={[
+                {
+                  icon: (
+                    <Icons.Volume
+                      color={iconColor}
+                      a11yTitle={messages.volumeUp}
+                    />
+                  ),
+                  onClick: volume <= 1 - VOLUME_STEP ? louder : undefined,
+                  close: false,
+                },
+                {
+                  icon: (
+                    <Icons.ReduceVolume
+                      color={iconColor}
+                      a11yTitle={messages.volumeDown}
+                    />
+                  ),
+                  onClick: volume >= VOLUME_STEP ? quieter : undefined,
+                  close: false,
+                },
+                ...captionControls,
+                {
+                  icon: (
+                    <Icons.FullScreen
+                      color={iconColor}
+                      a11yTitle={messages.fullScreen}
+                    />
+                  ),
+                  onClick: fullscreen,
+                },
+              ]}
+            />
+          </Box>
+        </StyledVideoControls>
+      );
+    }
 
     let mouseEventListeners;
     if (controls === 'over') {
       mouseEventListeners = {
-        onMouseEnter: this.interactionStart,
-        onMouseMove: this.interactionStart,
-        onTouchStart: this.interactionStart,
+        onMouseEnter: () => setInteracting(true),
+        onMouseMove: () => setInteracting(true),
+        onTouchStart: () => setInteracting(true),
       };
     }
 
@@ -486,6 +389,7 @@ class Video extends Component {
 
     return (
       <StyledVideoContainer
+        ref={containerRef}
         {...mouseEventListeners}
         alignSelf={alignSelf}
         gridArea={gridArea}
@@ -495,7 +399,35 @@ class Video extends Component {
         <StyledVideo
           {...rest}
           ref={videoRef}
-          {...this.mediaEventProps}
+          onDurationChange={event => {
+            const video = videoRef.current;
+            setDuration(video.duration);
+            setPercentagePlayed((video.currentTime / video.duration) * 100);
+            if (onDurationChange) onDurationChange(event);
+          }}
+          onEnded={event => {
+            setPlaying(false);
+            if (onEnded) onEnded(event);
+          }}
+          onPause={event => {
+            setPlaying(false);
+            if (onPause) onPause(event);
+          }}
+          onPlay={event => {
+            setPlaying(true);
+            setHasPlayed(true);
+            if (onPlay) onPlay(event);
+          }}
+          onTimeUpdate={event => {
+            const video = videoRef.current;
+            setCurrentTime(video.currentTime);
+            setPercentagePlayed((video.currentTime / video.duration) * 100);
+            if (onTimeUpdate) onTimeUpdate(event);
+          }}
+          onVolumeChange={event => {
+            setVolume(videoRef.current.volume);
+            if (onVolumeChange) onVolumeChange(event);
+          }}
           autoPlay={autoPlay || false}
           loop={loop || false}
         >
@@ -504,23 +436,30 @@ class Video extends Component {
         {controlsElement}
       </StyledVideoContainer>
     );
-  }
-}
+  },
+);
 
 Video.defaultProps = {
-  controls: 'over',
+  messages: {
+    closeMenu: 'close menu',
+    fullScreen: 'full screen',
+    progressMeter: 'video progress',
+    scrubber: 'scrubber',
+    openMenu: 'open menu',
+    pauseButton: 'pause',
+    playButton: 'play',
+    volumeDown: 'volume down',
+    volumeUp: 'volume up',
+  },
 };
 
-Object.setPrototypeOf(Video.defaultProps, defaultProps);
+Video.displayName = 'Video';
 
 let VideoDoc;
 if (process.env.NODE_ENV !== 'production') {
   // eslint-disable-next-line global-require
   VideoDoc = require('./doc').doc(Video);
 }
-const VideoWrapper = compose(
-  withTheme,
-  withForwardRef,
-)(VideoDoc || Video);
+const VideoWrapper = VideoDoc || Video;
 
 export { VideoWrapper as Video };

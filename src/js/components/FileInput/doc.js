@@ -37,7 +37,7 @@ export const doc = FileInput => {
     name: PropTypes.string.description('The name attribute of the input.'),
     onChange: PropTypes.func.description(
       `Function that will be called when one or more files are added the
-      input.`,
+      input. The file(s) can be found in event.target.files.`,
     ),
   };
 

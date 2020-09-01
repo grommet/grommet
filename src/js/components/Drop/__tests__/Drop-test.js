@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import 'jest-styled-components';
+import 'jest-axe/extend-expect';
+import 'regenerator-runtime/runtime';
+
+import { axe } from 'jest-axe';
 import { cleanup, fireEvent, render } from '@testing-library/react';
 
 import { expectPortal } from '../../../utils/portal';
@@ -27,7 +31,13 @@ class TestInput extends Component {
   }
 
   render() {
-    const { inputProps, theme, elevation, ...rest } = this.props;
+    const {
+      inputProps,
+      theme,
+      elevation,
+      containerTarget,
+      ...rest
+    } = this.props;
     const { showDrop } = this.state;
     let drop;
     if (showDrop) {
@@ -43,8 +53,8 @@ class TestInput extends Component {
       );
     }
     return (
-      <Grommet theme={theme}>
-        <input ref={this.inputRef} {...inputProps} />
+      <Grommet theme={theme} containerTarget={containerTarget}>
+        <input ref={this.inputRef} {...inputProps} aria-label="test" />
         {drop}
       </Grommet>
     );
@@ -53,6 +63,14 @@ class TestInput extends Component {
 
 describe('Drop', () => {
   afterEach(cleanup);
+
+  test('should have no accessibility violations', async () => {
+    window.scrollTo = jest.fn();
+    const { container } = render(<TestInput />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+    expect(container).toMatchSnapshot();
+  });
 
   test('basic', () => {
     window.scrollTo = jest.fn();
@@ -159,5 +177,25 @@ describe('Drop', () => {
   test('plain renders', () => {
     render(<TestInput plain />);
     expectPortal('drop-node').toMatchSnapshot();
+  });
+
+  test('default containerTarget', () => {
+    const { getByTestId } = render(<TestInput data-testid="drop" />);
+    const actualRoot = getByTestId('drop').parentNode.parentNode.parentNode;
+    expect(actualRoot).toBe(document.body);
+  });
+
+  test('custom containerTarget', () => {
+    const target = document.createElement('div');
+    document.body.appendChild(target);
+    try {
+      const { getByTestId } = render(
+        <TestInput data-testid="drop" containerTarget={target} />,
+      );
+      const actualRoot = getByTestId('drop').parentNode.parentNode.parentNode;
+      expect(actualRoot).toBe(target);
+    } finally {
+      document.body.removeChild(target);
+    }
   });
 });

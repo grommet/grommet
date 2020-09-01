@@ -5,7 +5,7 @@ We have a separate component from the browser
 base so we can style it. You can either set the icon and/or label properties
 or just use children.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Anchor&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=anchor&module=%2Fsrc%2FAnchor.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Anchor&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/anchor&module=%2Fsrc%2FAnchor.js)
 ## Usage
 
 ```javascript
@@ -67,6 +67,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -84,6 +92,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -301,12 +317,52 @@ Defaults to
 
 **global.focus.border.color**
 
-The color around the component when in focus. Expects `string | { dark: string, light: string }`.
+The border color of the component when in focus. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
 ```
 focus
+```
+
+**global.focus.outline.color**
+
+The outline color around the component when in focus. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.focus.outline.size**
+
+The size of the outline around the component when in focus. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.focus.shadow.color**
+
+The shadow color around the component when in focus. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+focus
+```
+
+**global.focus.shadow.size**
+
+The size of the shadow around the component when in focus. Expects `string`.
+
+Defaults to
+
+```
+2px
 ```
 
 **global.edgeSize**

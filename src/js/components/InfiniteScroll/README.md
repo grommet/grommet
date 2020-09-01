@@ -1,7 +1,7 @@
 ## InfiniteScroll
 A container that lazily renders items.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=InfiniteScroll&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=infinitescroll&module=%2Fsrc%2FInfiniteScroll.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=InfiniteScroll&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/infinitescroll&module=%2Fsrc%2FInfiniteScroll.js)
 ## Usage
 
 ```javascript
@@ -13,7 +13,10 @@ import { InfiniteScroll } from 'grommet';
 
 **children**
 
-Function that will be called when each item is rendered.
+Function that will be called when each item is rendered. It will be
+      called with three arguments, the item to render, the index of the item,
+      and a ref that should be applied to the element. For example:
+      {(item, index, ref) => <li key={index} ref={ref}>{item}</li>}
 
 ```
 function
@@ -21,7 +24,7 @@ function
 
 **items**
 
-The children callback will be called to render each item. Defaults to `[]`.
+The children callback will be called to render each item.
 
 ```
 [any]

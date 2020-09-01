@@ -1,13 +1,14 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import isChromatic from 'storybook-chromatic/isChromatic';
 import { Attraction, Car, TreeOption } from 'grommet-icons';
 import { Box, Grommet, Tab, Tabs } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const ControlledTabs = () => {
-  const [index, setIndex] = React.useState();
+  const [index, setIndex] = React.useState(0);
 
+  // Type annotations can only be used in TypeScript files.
+  // Remove ': number' if you are not using Typescript.
   const onActive = (nextIndex: number) => setIndex(nextIndex);
 
   return (
@@ -33,8 +34,4 @@ const ControlledTabs = () => {
   );
 };
 
-if (!isChromatic()) {
-  storiesOf('TypeScript/Tabs', module).add('Controlled', () => (
-    <ControlledTabs />
-  ));
-}
+storiesOf('Tabs', module).add('Controlled', () => <ControlledTabs />);

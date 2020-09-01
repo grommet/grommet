@@ -3,7 +3,7 @@ An overlay. Layer is typically modal and anchored to an edge, corner, or
       center of the window. It is the caller's responsibility to provide a
       control for the user to close the layer.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Layer&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=layer&module=%2Fsrc%2FLayer.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Layer&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/layer&module=%2Fsrc%2FLayer.js)
 ## Usage
 
 ```javascript
@@ -49,7 +49,7 @@ horizontal
 
 The amount of margin around the Layer. An object can be specified to
 distinguish horizontal margin, vertical margin, and margin on a
-particular side of the layer Defaults to `none`.
+particular side of the layer
 
 ```
 none
@@ -60,6 +60,13 @@ medium
 large
 {
   bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    string,
+  end: 
     xxsmall
     xsmall
     small
@@ -81,6 +88,13 @@ large
     large
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -149,9 +163,11 @@ bottom
 bottom-left
 bottom-right
 center
+end
 hidden
 left
 right
+start
 top
 top-left
 top-right
@@ -163,6 +179,15 @@ Whether the layer should take full width and height on mobile Defaults to `true`
 
 ```
 boolean
+```
+
+**target**
+
+Target where the layer will be aligned to. This should be a React 
+      reference.
+
+```
+object
 ```
   
 ## Intrinsic element

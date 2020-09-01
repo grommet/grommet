@@ -13,6 +13,14 @@ export const doc = MaskedInput => {
     .intrinsicElement('input');
 
   DocumentedMaskedInput.propTypes = {
+    a11yTitle: PropTypes.string.description(
+      'Custom title to be used by screen readers.',
+    ),
+    icon: PropTypes.element.description(
+      `An optional icon to show. This could be used to provide an
+      indication of what kind of input is expected, like an email icon,
+      or what the input will be used for, like a search icon.`,
+    ),
     id: PropTypes.string.description('The id attribute of the input.'),
     name: PropTypes.string.description('The name attribute of the input.'),
     onChange: PropTypes.func.description(
@@ -37,6 +45,10 @@ export const doc = MaskedInput => {
       `Describes the structure of the mask. If a regexp is provided, it should
       allow both the final full string element as well as partial strings
       as the user types characters one by one.`,
+    ),
+    reverse: PropTypes.bool.description(
+      `Whether an icon should be reversed so that the icon is at the
+      end of the input.`,
     ),
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
@@ -75,6 +87,12 @@ export const themeDoc = {
     type: 'string',
     defaultValue: '18px',
   },
+  'maskedInput.disabled.opacity': {
+    description: 'The opacity when the MaskedInput is disabled.',
+    type: 'number | string',
+    defaultValue: undefined,
+  },
+  ...themeDocUtils.disabledStyle,
   ...themeDocUtils.focusStyle,
   ...themeDocUtils.placeholderStyle,
   ...themeDocUtils.inputStyle,

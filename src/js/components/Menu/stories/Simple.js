@@ -8,7 +8,10 @@ const SimpleMenu = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
       <Menu
-        dropProps={{ align: { top: 'bottom', left: 'left' } }}
+        dropProps={{
+          align: { top: 'bottom', left: 'left' },
+          elevation: 'xlarge',
+        }}
         label="actions"
         items={[
           { label: 'Launch', onClick: () => {} },
@@ -20,4 +23,6 @@ const SimpleMenu = () => (
   </Grommet>
 );
 
-storiesOf('Menu', module).add('Simple', () => <SimpleMenu />);
+storiesOf('Menu', module).add('Simple', () => <SimpleMenu />, {
+  chromatic: { disable: true },
+});

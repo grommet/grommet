@@ -1,5 +1,10 @@
 import styled, { css, keyframes } from 'styled-components';
-import { backgroundStyle, genericStyles, parseMetricToNum } from '../../utils';
+import {
+  backgroundStyle,
+  focusStyle,
+  genericStyles,
+  parseMetricToNum,
+} from '../../utils';
 
 import { defaultProps } from '../../default-props';
 
@@ -26,6 +31,7 @@ const StyledWeeksContainer = styled.div`
   ${props =>
     `height: ${parseMetricToNum(props.theme.calendar[props.sizeProp].daySize) *
       6}px;`};
+  ${props => props.focus && !props.plain && focusStyle()};
 `;
 
 StyledWeeksContainer.defaultProps = {};

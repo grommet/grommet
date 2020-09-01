@@ -33,7 +33,7 @@ const CenterLayer = () => {
         />
       </Box>
       {open && (
-        <Layer position="center" modal onClickOutside={onClose} onEsc={onClose}>
+        <Layer position="center" onClickOutside={onClose} onEsc={onClose}>
           <Box pad="medium" gap="small" width="medium">
             <Heading level={3} margin="none">
               Confirm
@@ -63,7 +63,7 @@ const CenterLayer = () => {
         </Layer>
       )}
       {open2 && (
-        <Layer position="top" modal onClickOutside={onClose2} onEsc={onClose2}>
+        <Layer position="top" onClickOutside={onClose2} onEsc={onClose2}>
           <Box pad="medium" gap="small" width="medium">
             <Heading level={3} margin="none">
               Confirm 2
@@ -86,4 +86,6 @@ const CenterLayer = () => {
   );
 };
 
-storiesOf('Layer', module).add('Center', () => <CenterLayer />);
+storiesOf('Layer', module).add('Center', () => <CenterLayer />, {
+  chromatic: { disable: true },
+});

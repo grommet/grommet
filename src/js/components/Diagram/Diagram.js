@@ -1,10 +1,15 @@
-import React, { Component } from 'react';
-import { compose } from 'recompose';
-
-import { withTheme } from 'styled-components';
+import React, {
+  forwardRef,
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
+import { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
-import { normalizeColor, parseMetricToNum } from '../../utils';
+import { normalizeColor, parseMetricToNum, useForwardedRef } from '../../utils';
 
 import { StyledDiagram } from './StyledDiagram';
 
@@ -60,59 +65,57 @@ const findTarget = target => {
   return target;
 };
 
-class Diagram extends Component {
-  static defaultProps = { connections: [] };
+const Diagram = forwardRef(({ connections, ...rest }, ref) => {
+  const theme = useContext(ThemeContext) || defaultProps.theme;
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+  const [connectionPoints, setConnectionPoints] = useState();
+  const svgRef = useForwardedRef(ref);
 
-  static getDerivedStateFromProps(nextProps, prevState) {
-    // track whether the connections array changes so we can trigger re-placing
-    if (nextProps.connections !== prevState.connections) {
-      return {
-        connections: nextProps.connections,
-        connectionPoints: undefined,
-      };
-    }
-    return null;
-  }
+  useEffect(() => {
+    setConnectionPoints(undefined);
+  }, [connections]);
 
-  state = { height: 0, width: 0 };
+  const onResize = useCallback(() => {
+    const svg = svgRef.current;
 
-  svgRef = React.createRef();
-
-  componentDidMount() {
-    window.addEventListener('resize', this.onResize);
-    this.onResize();
-  }
-
-  componentDidUpdate() {
-    const { connectionPoints } = this.state;
-    if (!connectionPoints) {
-      this.placeConnections();
-    }
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.onResize);
-  }
-
-  onResize = () => {
-    const { width, height } = this.state;
-    const svg = this.svgRef.current;
     if (svg) {
       const rect = svg.getBoundingClientRect();
-      if (rect.width !== width || rect.height !== height) {
-        this.setState({
+      if (
+        rect.width !== dimensions.width ||
+        rect.height !== dimensions.height
+      ) {
+        setDimensions({
           width: rect.width,
           height: rect.height,
-          connectionPoints: undefined,
         });
+        setConnectionPoints(undefined);
       }
     }
-  };
+  }, [dimensions.width, dimensions.height, svgRef]);
 
-  placeConnections() {
-    const { connections } = this.props;
-    const containerRect = this.svgRef.current.getBoundingClientRect();
-    const connectionPoints = connections.map(
+  // Ref that stores resize handler
+  const savedOnResize = useRef();
+
+  // Update resize ref value if onResize changes.
+  // This allows our effect below to always get latest handler
+  useEffect(() => {
+    savedOnResize.current = onResize;
+  }, [onResize]);
+
+  useEffect(() => {
+    const onResizeHandler = event => savedOnResize.current(event);
+    onResizeHandler();
+
+    window.addEventListener('resize', onResizeHandler);
+
+    return () => {
+      window.removeEventListener('resize', onResizeHandler);
+    };
+  }, []);
+
+  const placeConnections = useCallback(() => {
+    const containerRect = svgRef.current.getBoundingClientRect();
+    const updatedConnectionPoints = connections.map(
       ({ anchor, fromTarget, toTarget }) => {
         let points;
         const fromElement = findTarget(fromTarget);
@@ -165,82 +168,90 @@ class Diagram extends Component {
         return points;
       },
     );
-    this.setState({ connectionPoints });
-  }
+    setConnectionPoints(updatedConnectionPoints);
+  }, [connections, svgRef]);
 
-  render() {
-    const { connections, theme, ...rest } = this.props;
-    const { connectionPoints, height, width } = this.state;
+  useEffect(() => {
+    if (!connectionPoints) {
+      placeConnections();
+    }
+  }, [connectionPoints, placeConnections]);
 
-    let paths;
-    if (connectionPoints) {
-      paths = connections.map(
-        (
-          { anchor, color, offset, round, thickness, type, ...connectionRest },
-          index,
-        ) => {
-          let path;
-          const cleanedRest = { ...connectionRest };
-          delete cleanedRest.fromTarget;
-          delete cleanedRest.toTarget;
-          const points = connectionPoints[index];
-          if (points) {
-            const offsetWidth = offset
-              ? parseMetricToNum(theme.global.edgeSize[offset])
-              : 0;
-            const d = COMMANDS[type || 'curved'](
-              points[0],
-              points[1],
-              offsetWidth,
-              anchor,
+  let paths;
+  if (connectionPoints) {
+    paths = connections.map(
+      (
+        { anchor, color, offset, round, thickness, type, ...connectionRest },
+        index,
+      ) => {
+        let path;
+        const cleanedRest = { ...connectionRest };
+        delete cleanedRest.fromTarget;
+        delete cleanedRest.toTarget;
+        const points = connectionPoints[index];
+        if (points) {
+          const offsetWidth = offset
+            ? parseMetricToNum(theme.global.edgeSize[offset])
+            : 0;
+          const d = COMMANDS[type || 'curved'](
+            points[0],
+            points[1],
+            offsetWidth,
+            anchor,
+          );
+          const strokeWidth = thickness
+            ? parseMetricToNum(theme.global.edgeSize[thickness] || thickness)
+            : 1;
+          let colorName =
+            color || (theme.diagram.line && theme.diagram.line.color);
+          if (!colorName) {
+            const colors = Object.keys(theme.global.colors).filter(n =>
+              n.match(/^graph-[0-9]$/),
             );
-            const strokeWidth = thickness
-              ? parseMetricToNum(theme.global.edgeSize[thickness] || thickness)
-              : 1;
-
-            path = (
-              <path
-                // eslint-disable-next-line react/no-array-index-key
-                key={index}
-                {...cleanedRest}
-                stroke={normalizeColor(
-                  color || theme.diagram.line.color,
-                  theme,
-                )}
-                strokeWidth={strokeWidth}
-                strokeLinecap={round ? 'round' : 'butt'}
-                strokeLinejoin={round ? 'round' : 'miter'}
-                fill="none"
-                d={d}
-              />
-            );
+            colorName = colors[index % colors.length];
           }
 
-          return path;
-        },
-      );
-    }
+          path = (
+            <path
+              // eslint-disable-next-line react/no-array-index-key
+              key={index}
+              {...cleanedRest}
+              stroke={normalizeColor(colorName, theme)}
+              strokeWidth={strokeWidth}
+              strokeLinecap={round ? 'round' : 'butt'}
+              strokeLinejoin={round ? 'round' : 'miter'}
+              fill="none"
+              d={d}
+            />
+          );
+        }
 
-    return (
-      <StyledDiagram
-        ref={this.svgRef}
-        viewBox={`0 0 ${width} ${height}`}
-        preserveAspectRatio="xMinYMin meet"
-        {...rest}
-      >
-        <g>{paths}</g>
-      </StyledDiagram>
+        return path;
+      },
     );
   }
-}
 
-Object.setPrototypeOf(Diagram.defaultProps, defaultProps);
+  return (
+    <StyledDiagram
+      ref={svgRef}
+      viewBox={`0 0 ${dimensions.width} ${dimensions.height}`}
+      preserveAspectRatio="xMinYMin meet"
+      {...rest}
+    >
+      <g>{paths}</g>
+    </StyledDiagram>
+  );
+});
+
+Diagram.displayName = 'Diagram';
+
+Diagram.defaultProps = { connections: [] };
 
 let DiagramDoc;
 if (process.env.NODE_ENV !== 'production') {
   // eslint-disable-next-line global-require
   DiagramDoc = require('./doc').doc(Diagram);
 }
-const DiagramWrapper = compose(withTheme)(DiagramDoc || Diagram);
+const DiagramWrapper = DiagramDoc || Diagram;
 
 export { DiagramWrapper as Diagram };

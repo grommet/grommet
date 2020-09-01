@@ -1,42 +1,62 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
 import 'jest-styled-components';
-import { cleanup, render, fireEvent } from '@testing-library/react';
+import 'jest-axe/extend-expect';
+import 'regenerator-runtime/runtime';
 
+import { cleanup, render, fireEvent } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import { Grommet } from '../../Grommet';
 import { List } from '..';
 
 describe('List', () => {
   afterEach(cleanup);
 
+  test('should have no accessibility violations', async () => {
+    const onClickItem = jest.fn();
+    const { container, getByText } = render(
+      <Grommet>
+        <List
+          data={[{ a: 'alpha' }, { a: 'beta' }]}
+          onClickItem={onClickItem}
+        />
+      </Grommet>,
+    );
+
+    fireEvent.click(getByText('alpha'));
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
   test('empty', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <List />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('data strings', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <List data={['one', 'two']} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('data objects', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
-        <List data={[{ a: 'one', b: 1 }, { a: 'two', b: 2 }]} />
+        <List
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+        />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('onClickItem', () => {
@@ -58,17 +78,16 @@ describe('List', () => {
   });
 
   test('background string', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <List data={['one', 'two']} background="accent-1" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('background array', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <List
           data={['one', 'two', 'three', 'four']}
@@ -76,32 +95,29 @@ describe('List', () => {
         />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('border boolean', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <List data={['one', 'two']} border />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('border side', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <List data={['one', 'two']} border="horizontal" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('border object', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <List
           data={['one', 'two']}
@@ -109,24 +125,22 @@ describe('List', () => {
         />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('children render', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <List data={['one', 'two']}>
           {(item, index) => `${item} - ${index}`}
         </List>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('itemProps', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <List
           data={['one', 'two']}
@@ -140,51 +154,182 @@ describe('List', () => {
         />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('margin string', () => {
+    const { container } = render(
+      <Grommet>
+        <List data={['one', 'two']} margin="large" />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('margin object', () => {
+    const { container } = render(
+      <Grommet>
+        <List data={['one', 'two']} margin={{ horizontal: 'large' }} />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('pad string', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <List data={['one', 'two']} pad="large" />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('pad object', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <List data={['one', 'two']} pad={{ horizontal: 'large' }} />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('primaryKey', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
-        <List data={[{ a: 'one', b: 1 }, { a: 'two', b: 2 }]} primaryKey="a" />
+        <List
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          primaryKey="a"
+        />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('secondaryKey', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <List
-          data={[{ a: 'one', b: 1 }, { a: 'two', b: 2 }]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
           primaryKey="a"
           secondaryKey="b"
         />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+});
+
+describe('List events', () => {
+  let onClickItem;
+  let App;
+
+  beforeEach(() => {
+    onClickItem = jest.fn();
+    App = () => {
+      return (
+        <Grommet>
+          <List
+            data={[{ a: 'alpha' }, { a: 'beta' }]}
+            onClickItem={onClickItem}
+          />
+        </Grommet>
+      );
+    };
+  });
+
+  afterEach(cleanup);
+
+  test('Enter key', () => {
+    const { container, getByText } = render(<App />);
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('beta'));
+    fireEvent.mouseOver(getByText('beta'));
+    fireEvent.keyDown(getByText('beta'), {
+      key: 'Enter',
+      keyCode: 13,
+      which: 13,
+    });
+    // Reported bug: onEnter calls onClickItem twice instead of once.
+    // Issue #4173. Once fixed it should be
+    // `expect(onClickItem).toHaveBeenCalledTimes(2);`
+    expect(onClickItem).toHaveBeenCalledTimes(3);
+    // Both focus and active should be placed on 'beta'
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('ArrowUp key', () => {
+    const { container, getByText } = render(<App />);
+
+    fireEvent.click(getByText('beta'));
+    fireEvent.mouseOver(getByText('beta'));
+    fireEvent.keyDown(getByText('beta'), {
+      key: 'ArrowUp',
+      keyCode: 38,
+      which: 38,
+    });
+    expect(onClickItem).toHaveBeenCalledTimes(1);
+    // Focus on beta while `active` is on alpha
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('ArrowDown key', () => {
+    const { container, getByText } = render(<App />);
+
+    fireEvent.click(getByText('alpha'));
+    fireEvent.mouseOver(getByText('alpha'));
+    fireEvent.keyDown(getByText('alpha'), {
+      key: 'ArrowDown',
+      keyCode: 40,
+      which: 40,
+    });
+    expect(onClickItem).toHaveBeenCalledTimes(1);
+    // Focus on alpha while `active` is on beta
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('ArrowDown key on last element', () => {
+    const { container, getByText } = render(<App />);
+
+    fireEvent.click(getByText('beta'));
+    fireEvent.mouseOver(getByText('beta'));
+    fireEvent.keyDown(getByText('beta'), {
+      key: 'ArrowDown',
+      keyCode: 40,
+      which: 40,
+    });
+    expect(onClickItem).toHaveBeenCalledTimes(1);
+    // Both focus and active should be placed on 'beta'
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('focus and blur', () => {
+    const { container, getByText } = render(<App />);
+
+    fireEvent.focus(getByText('beta'));
+    // Both focus and active should be placed on 'beta'
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.blur(getByText('beta'));
+    // Focus on beta while `active` is not on beta
+    expect(container.firstChild).toMatchSnapshot();
+    expect(onClickItem).toBeCalledTimes(0);
+  });
+
+  test('mouse events', () => {
+    const { container, getByText } = render(<App />);
+
+    fireEvent.mouseOver(getByText('beta'));
+    // Both focus and active should be placed on 'beta'
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.mouseOut(getByText('beta'));
+    // Focus on beta while `active` is not on beta
+    expect(container.firstChild).toMatchSnapshot();
+    expect(onClickItem).toBeCalledTimes(0);
   });
 });

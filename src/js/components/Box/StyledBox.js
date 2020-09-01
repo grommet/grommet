@@ -7,8 +7,12 @@ import {
   borderStyle,
   breakpointStyle,
   edgeStyle,
+  fillStyle,
+  focusStyle,
   genericStyles,
+  getHoverIndicatorStyle,
   overflowStyle,
+  parseMetricToNum,
 } from '../../utils';
 
 const ALIGN_MAP = {
@@ -87,12 +91,9 @@ const directionStyle = (direction, theme) => {
 
 const elevationStyle = css`
   box-shadow: ${props =>
-    props.theme.global.elevation[
-      (props.theme.dark && !props.theme.darkChanged) ||
-      (!props.theme.dark && props.theme.darkChanged)
-        ? 'dark'
-        : 'light'
-    ][props.elevationProp]};
+    props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][
+      props.elevationProp
+    ]};
 `;
 
 const FLEX_MAP = {
@@ -116,22 +117,6 @@ const flexStyle = css`
       props.flex !== true && !props.basis ? ' auto' : ''
     }`};
 `;
-
-const fillStyle = fillProp => {
-  if (fillProp === 'horizontal') {
-    return 'width: 100%;';
-  }
-  if (fillProp === 'vertical') {
-    return 'height: 100%;';
-  }
-  if (fillProp) {
-    return `
-      width: 100%;
-      height: 100%;
-    `;
-  }
-  return undefined;
-};
 
 const JUSTIFY_MAP = {
   around: 'space-around',
@@ -333,6 +318,12 @@ const animationBounds = (type, size = 'medium') => {
   if (type === 'pulse') {
     return ['transform: scale(1);', `transform: scale(${PULSE_SIZES[size]})`];
   }
+  if (type === 'rotateRight') {
+    return [`transform: rotate(0deg);`, `transform: rotate(359deg);`];
+  }
+  if (type === 'rotateLeft') {
+    return [`transform: rotate(0deg);`, `transform: rotate(-359deg);`];
+  }
   if (type === 'flipIn') {
     return ['transform: rotateY(90deg);', 'transform: rotateY(0);'];
   }
@@ -381,6 +372,9 @@ const animationEnding = type => {
   }
   if (type === 'pulse') {
     return 'alternate infinite';
+  }
+  if (type === 'rotateRight' || type === 'rotateLeft') {
+    return 'infinite linear';
   }
   return 'forwards';
 };
@@ -467,6 +461,16 @@ const animationStyle = css`
   `};
 `;
 
+const interactiveStyle = css`
+  cursor: pointer;
+
+  &:hover {
+    ${props =>
+      props.hoverIndicator &&
+      getHoverIndicatorStyle(props.hoverIndicator, props.theme)}
+  }
+`;
+
 const getSize = (props, size) => props.theme.global.size[size] || size;
 
 const heightObjectStyle = css`
@@ -507,7 +511,6 @@ const widthStyle = css`
 const StyledBox = styled.div`
   display: flex;
   box-sizing: border-box;
-  outline: none;
   ${props => !props.basis && 'max-width: 100%;'};
 
   ${genericStyles}
@@ -548,27 +551,54 @@ const StyledBox = styled.div`
   ${props => props.overflowProp && overflowStyle(props.overflowProp)}
   ${props => props.elevationProp && elevationStyle}
   ${props => props.animation && animationStyle}
+  ${props => props.onClick && interactiveStyle}
+  ${props =>
+    props.onClick &&
+    props.focus &&
+    props.focusIndicator !== false &&
+    focusStyle()}
   ${props => props.theme.box && props.theme.box.extend}
 `;
 
-const gapStyle = (directionProp, gap, responsive, theme) => {
+const gapStyle = (directionProp, gap, responsive, border, theme) => {
   const breakpoint =
     theme.box.responsiveBreakpoint &&
     theme.global.breakpoints[theme.box.responsiveBreakpoint];
   const responsiveSize =
     breakpoint && breakpoint.edgeSize[gap] && breakpoint.edgeSize[gap];
+  const hasBetweenBorder =
+    border === 'between' || (border && border.side === 'between');
   const styles = [];
-  if (directionProp === 'column') {
+  if (directionProp === 'column' || directionProp === 'column-reverse') {
+    const height = theme.global.edgeSize[gap] || gap;
     styles.push(
       css`
-        height: ${theme.global.edgeSize[gap] || gap};
+        height: ${height};
       `,
     );
     if (responsiveSize) {
       styles.push(breakpointStyle(breakpoint, `height: ${responsiveSize};`));
     }
+    if (hasBetweenBorder) {
+      const adjustedBorder =
+        typeof border === 'string' ? 'top' : { ...border, side: 'top' };
+      const borderSize = border.size || 'xsmall';
+      const borderHeight = theme.global.borderSize[borderSize] || borderSize;
+      styles.push(css`
+        position: relative;
+        &:after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          top: ${parseMetricToNum(height) / 2 -
+            parseMetricToNum(borderHeight) / 2}px;
+          ${borderStyle(adjustedBorder, responsive, theme)}
+        }
+      `);
+    }
   } else {
-    styles.push(`width: ${theme.global.edgeSize[gap] || gap};`);
+    const width = theme.global.edgeSize[gap] || gap;
+    styles.push(`width: ${width};`);
     if (responsive && directionProp === 'row-responsive') {
       styles.push(
         breakpointStyle(
@@ -580,6 +610,23 @@ const gapStyle = (directionProp, gap, responsive, theme) => {
         ),
       );
     }
+    if (hasBetweenBorder) {
+      const adjustedBorder =
+        typeof border === 'string' ? 'left' : { ...border, side: 'left' };
+      const borderSize = border.size || 'xsmall';
+      const borderWidth = theme.global.borderSize[borderSize] || borderSize;
+      styles.push(css`
+        position: relative;
+        &:after {
+          content: '';
+          position: absolute;
+          height: 100%;
+          left: ${parseMetricToNum(width) / 2 -
+            parseMetricToNum(borderWidth) / 2}px;
+          ${borderStyle(adjustedBorder, responsive, theme)}
+        }
+      `);
+    }
   }
   return styles;
 };
@@ -589,9 +636,16 @@ Object.setPrototypeOf(StyledBox.defaultProps, defaultProps);
 
 const StyledBoxGap = styled.div`
   flex: 0 0 auto;
+  align-self: stretch;
   ${props =>
     props.gap &&
-    gapStyle(props.directionProp, props.gap, props.responsive, props.theme)};
+    gapStyle(
+      props.directionProp,
+      props.gap,
+      props.responsive,
+      props.border,
+      props.theme,
+    )};
 `;
 
 StyledBoxGap.defaultProps = {};

@@ -1,7 +1,7 @@
 ## MaskedInput
 An input field with formalized syntax.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=MaskedInput&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=maskedinput&module=%2Fsrc%2FMaskedInput.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=MaskedInput&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/maskedinput&module=%2Fsrc%2FMaskedInput.js)
 ## Usage
 
 ```javascript
@@ -10,6 +10,24 @@ import { MaskedInput } from 'grommet';
 ```
 
 ## Properties
+
+**a11yTitle**
+
+Custom title to be used by screen readers.
+
+```
+string
+```
+
+**icon**
+
+An optional icon to show. This could be used to provide an
+      indication of what kind of input is expected, like an email icon,
+      or what the input will be used for, like a search icon.
+
+```
+element
+```
 
 **id**
 
@@ -47,7 +65,7 @@ function
 
 Describes the structure of the mask. If a regexp is provided, it should
       allow both the final full string element as well as partial strings
-      as the user types characters one by one. Defaults to `[]`.
+      as the user types characters one by one.
 
 ```
 [{
@@ -64,6 +82,15 @@ Describes the structure of the mask. If a regexp is provided, it should
 
     }
 }]
+```
+
+**reverse**
+
+Whether an icon should be reversed so that the icon is at the
+      end of the input.
+
+```
+boolean
 ```
 
 **size**
@@ -135,14 +162,74 @@ Defaults to
 18px
 ```
 
+**maskedInput.disabled.opacity**
+
+The opacity when the MaskedInput is disabled. Expects `number | string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.control.disabled.opacity**
+
+The opacity when a component is disabled. Expects `number`.
+
+Defaults to
+
+```
+0.3
+```
+
 **global.focus.border.color**
 
-The color around the component when in focus. Expects `string | { dark: string, light: string }`.
+The border color of the component when in focus. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
 ```
 focus
+```
+
+**global.focus.outline.color**
+
+The outline color around the component when in focus. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.focus.outline.size**
+
+The size of the outline around the component when in focus. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.focus.shadow.color**
+
+The shadow color around the component when in focus. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+focus
+```
+
+**global.focus.shadow.size**
+
+The size of the shadow around the component when in focus. Expects `string`.
+
+Defaults to
+
+```
+2px
 ```
 
 **global.colors.placeholder**
@@ -155,9 +242,30 @@ Defaults to
 #AAAAAA
 ```
 
-**global.input.weight**
+**global.input.font.height**
 
-The font weight of the text entered. Expects `number`.
+The line-height of the text. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.input.font.size**
+
+The size of the text. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.input.font.weight**
+
+The font-weight of the text. This value will only be 
+      applied if global.input.weight is undefined. Expects `number | string`.
 
 Defaults to
 
@@ -165,9 +273,21 @@ Defaults to
 600
 ```
 
+**global.input.weight**
+
+This value has been deprecated and replaced by 
+      global.input.font.weight. Expects `number | string`.
+
+Defaults to
+
+```
+undefined
+```
+
 **global.input.padding**
 
-The padding of the text. Expects `string`.
+The padding of the text. Expects `string | { top: string, bottom: string, left: string, right: 
+        string, horizontal: string, vertical: string }`.
 
 Defaults to
 

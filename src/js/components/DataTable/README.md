@@ -1,7 +1,7 @@
 ## DataTable
 A data driven table.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=DataTable&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=datatable&module=%2Fsrc%2FDataTable.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=DataTable&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/datatable&module=%2Fsrc%2FDataTable.js)
 ## Usage
 
 ```javascript
@@ -13,7 +13,8 @@ import { DataTable } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.
 
 ```
 string
@@ -63,6 +64,14 @@ xlarge
     large
     xlarge
     string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
@@ -80,6 +89,14 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
     xxsmall
     xsmall
     small
@@ -119,12 +136,31 @@ string
 {
   header: 
     string
+    {
+      dark: string,
+      light: string
+    }
     [string],
   body: 
     string
+    {
+      dark: string,
+      light: string
+    }
     [string],
   footer: 
     string
+    {
+      dark: string,
+      light: string
+    }
+    [string],
+  pinned: 
+    string
+    {
+      dark: string,
+      light: string
+    }
     [string]
 }
 ```
@@ -277,7 +313,9 @@ A description of the data. The order controls the column order.
       made available for the column. 'primary' indicates that this property
       should be used as the unique identifier, which gives the cell 'row' scope
       for accessibility. If 'primary' is not used for any column, and
-      'primaryKey' isn't specified either, then the first column will be used. Defaults to `[]`.
+      'primaryKey' isn't specified either, then the first column will be used.
+      'pin' indicates that this column should not scroll out of view
+      to the left when the table is scrolled horizontally.
 
 ```
 [{
@@ -301,22 +339,49 @@ A description of the data. The order controls the column order.
     {
       aggregate: boolean
     },
+  pin: boolean,
   primary: boolean,
   property: string,
   render: function,
   search: boolean,
-  sortable: boolean
+  sortable: boolean,
+  size: 
+    small
+    medium
+    large
+    xlarge
+    1/2
+    1/4
+    2/4
+    3/4
+    1/3
+    2/3
+    string,
+  verticalAlign: 
+    middle
+    top
+    bottom
 }]
 ```
 
 **data**
 
-Array of data objects. Defaults to `[]`.
+Array of data objects.
 
 ```
 [{
 
 }]
+```
+
+**fill**
+
+Whether the width and/or height should fill the container.
+
+```
+horizontal
+vertical
+boolean
 ```
 
 **groupBy**
@@ -336,6 +401,18 @@ string
 }
 ```
 
+**onClickRow**
+
+When supplied, this function will be called with an event object that
+      include a 'datum' property containing the data value associated with
+      the clicked row. You should not include interactive elements, like
+      Anchor or Button inside table cells as that can cause confusion with
+      overlapping interactive elements.
+
+```
+function
+```
+
 **onMore**
 
 Use this to indicate that 'data' doesn't contain all that it could.
@@ -351,35 +428,23 @@ Use this to indicate that 'data' doesn't contain all that it could.
 function
 ```
 
-**replace**
-
-Whether to replace previously rendered items with a generic spacing
-      element when they have scrolled out of view. This is more performant but
-      means that in-page searching will not find elements that have been
-      replaced.
-
-```
-boolean
-```
-
-**onClickRow**
-
-When supplied, this function will be called with an event object that
-      include a 'datum' property containing the data value associated with
-      the clicked row. You should not include interactive elements, like
-      Anchor or Button inside table cells as that can cause confusion with
-      overlapping interactive elements.
-
-```
-function
-```
-
 **onSearch**
 
 When supplied, and when at least one column has 'search' enabled,
       this function will be called with an object with keys for property
       names and values which are the search text strings. This is typically
       employed so a back-end can be used to search through the data.
+
+```
+function
+```
+
+**onSort**
+
+When supplied, this function will be called with an object
+      with a 'property' property that indicates which property
+      is being sorted on and a 'direction' property that will either be
+      'asc' or 'desc'. onSort={({ property, direction }) => {}}
 
 ```
 function
@@ -405,35 +470,40 @@ string
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   vertical: 
     xxsmall
     xsmall
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   top: 
     xxsmall
     xsmall
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   bottom: 
     xxsmall
     xsmall
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   left: 
     xxsmall
     xsmall
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   right: 
     xxsmall
     xsmall
@@ -441,6 +511,7 @@ string
     medium
     large
     xlarge
+    string
 }
 {
   header: custom,
@@ -449,15 +520,39 @@ string
 }
 ```
 
+**pin**
+
+Whether the header and/or footer should be pinned when
+      not all rows are visible. A value of true pins both header and footer.
+
+```
+boolean
+header
+footer
+```
+
 **primaryKey**
 
 When supplied, indicates the property for a data object to use to
       get a unique identifier. See also the 'columns.primary' description.
       Use this property when the columns approach will not work for your
-      data set.
+      data set. Setting primaryKey to false indicates there should be no
+      unique identifier, avoid this as it's less accessible.
 
 ```
 string
+boolean
+```
+
+**replace**
+
+Whether to replace previously rendered items with a generic spacing
+      element when they have scrolled out of view. This is more performant but
+      means that in-page searching will not find elements that have been
+      replaced.
+
+```
+boolean
 ```
 
 **resizeable**
@@ -495,6 +590,19 @@ medium
 large
 xlarge
 string
+```
+
+**sort**
+
+Which property to sort on and which direction to sort.
+
+```
+{
+  direction: 
+    asc
+    desc,
+  property: string
+}
 ```
 
 **sortable**
@@ -538,6 +646,16 @@ Defaults to
 
 ```
 { dark: 'white', light: 'black' }
+```
+
+**dataTable.body.extend**
+
+Any additional style for an DataTable Body Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
 ```
 
 **dataTable.groupHeader.background**

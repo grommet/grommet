@@ -1,10 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import isChromatic from 'storybook-chromatic/isChromatic';
-
+import { ThemeType } from 'grommet/themes';
 import { grommet, Box, Button, Grommet } from 'grommet';
 
-const customTheme = {
+// Type annotations can only be used in TypeScript files.
+// Remove ': ThemeType' if you are not using Typescript.
+const customTheme: ThemeType = {
   global: {
     font: {
       family: 'Arial',
@@ -14,6 +15,14 @@ const customTheme = {
     border: {
       radius: undefined,
       color: '#2196f3',
+    },
+    disabled: {
+      color: '#fe2693',
+      opacity: '.1',
+      border: {
+        color: '#000000',
+        width: '10px',
+      },
     },
     padding: {
       vertical: '12px',
@@ -47,6 +56,11 @@ const CustomTheme = () => (
         <Button label="custom theme" onClick={() => {}} primary />
       </Box>
     </Grommet>
+    <Grommet theme={customTheme}>
+      <Box align="center" pad="large">
+        <Button label="custom theme disabled" disabled primary />
+      </Box>
+    </Grommet>
     <Grommet theme={grommet}>
       <Box align="center" pad="large">
         <Button as="span" label="Custom as=span" />
@@ -55,6 +69,4 @@ const CustomTheme = () => (
   </>
 );
 
-if (!isChromatic()) {
-  storiesOf('TypeScript/Button', module).add('Custom', () => <CustomTheme />);
-}
+storiesOf('Button', module).add('TS-Custom', () => <CustomTheme />);

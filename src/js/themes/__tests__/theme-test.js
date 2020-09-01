@@ -5,7 +5,7 @@ import 'jest-styled-components';
 import { hpe } from 'grommet-theme-hpe';
 import { Add } from 'grommet-icons';
 
-import { Grommet, Anchor, Box, Text } from '../../components';
+import { Grommet, Anchor, Box, Text, TextInput } from '../../components';
 import { dark } from '..';
 
 const colors = [
@@ -38,8 +38,18 @@ const colors = [
 
 const customTheme = {
   global: {
+    input: {
+      // test backwards compatibility that string value works for input pad
+      padding: '12px',
+      font: {
+        height: '50px',
+        size: 'large',
+        weight: 'bold',
+      },
+    },
     colors: {
       custom: '#cc6633',
+      placeholder: 'custom',
     },
   },
 };
@@ -97,6 +107,9 @@ describe('Grommet', () => {
         <Box background="dark-1">
           <Anchor icon={<Add />} label="Add" />
           <Anchor icon={<Add />} label="Add" color="custom" />
+        </Box>
+        <Box>
+          <TextInput value="Value" placeholder="Placeholder" />
         </Box>
       </Grommet>,
     );

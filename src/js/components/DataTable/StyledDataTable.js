@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 import {
   backgroundStyle,
+  fillStyle,
   focusStyle,
   genericStyles,
   normalizeColor,
@@ -10,15 +11,22 @@ import { defaultProps } from '../../default-props';
 import { TableRow } from '../TableRow';
 import { Table } from '../Table';
 import { TableBody } from '../TableBody';
+import { TableCell } from '../TableCell';
 import { TableHeader } from '../TableHeader';
 import { TableFooter } from '../TableFooter';
 
+// border-collapse: separate is needed so pinned header/footer borders work
 const StyledDataTable = styled(Table)`
   border-spacing: 0;
-  border-collapse: collapse;
+  border-collapse: separate;
   height: auto; /* helps Firefox to get table contents to not overflow */
 
-  ${genericStyles};
+  ${genericStyles}
+  ${props => props.fillProp && fillStyle(props.fillProp)}
+  ${props =>
+    props.theme.dataTable &&
+    props.theme.dataTable.body &&
+    props.theme.dataTable.body.extend};
 `;
 
 StyledDataTable.defaultProps = {};
@@ -70,6 +78,7 @@ const StyledDataTableRow = styled(TableRow)`
 StyledDataTableRow.defaultProps = {};
 Object.setPrototypeOf(StyledDataTableRow.defaultProps, defaultProps);
 
+// focus styling other than outline doesn't work on <tbody />
 const StyledDataTableBody = styled(TableBody)`
   ${props =>
     props.size &&
@@ -79,7 +88,10 @@ const StyledDataTableBody = styled(TableBody)`
     max-height: ${props.theme.global.size[props.size]};
     overflow: auto;
   `}
-  ${props => props.focus && focusStyle}
+
+  &:focus {
+    ${focusStyle({ skipSvgChildren: true, forceOutline: true })}
+  }
 `;
 
 StyledDataTableBody.defaultProps = {};
@@ -111,10 +123,25 @@ const StyledDataTableFooter = styled(TableFooter)`
 StyledDataTableFooter.defaultProps = {};
 Object.setPrototypeOf(StyledDataTableFooter.defaultProps, defaultProps);
 
+const StyledDataTableCell = styled(TableCell)`
+  ${props =>
+    props.pin &&
+    props.pin.length > 0 &&
+    `
+    position: sticky;
+    ${props.pin.map(p => `${p}: 0;`).join(' ')}
+    z-index: ${Object.keys(props.pin).length};
+  `}
+`;
+
+StyledDataTableCell.defaultProps = {};
+Object.setPrototypeOf(StyledDataTableCell.defaultProps, defaultProps);
+
 export {
   StyledDataTable,
   StyledDataTableRow,
   StyledDataTableBody,
+  StyledDataTableCell,
   StyledDataTableHeader,
   StyledDataTableFooter,
 };
