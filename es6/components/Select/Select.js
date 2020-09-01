@@ -16,7 +16,9 @@ import { applyKey } from './utils';
 var SelectTextInput = styled(TextInput).withConfig({
   displayName: "Select__SelectTextInput",
   componentId: "sc-17idtfo-0"
-})(["cursor:pointer;"]);
+})(["cursor:", ";"], function (props) {
+  return props.defaultCursor ? 'default' : 'pointer';
+});
 var StyledSelectDropButton = styled(DropButton).withConfig({
   displayName: "Select__StyledSelectDropButton",
   componentId: "sc-17idtfo-1"
@@ -239,7 +241,14 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
     flex: true,
     basis: "auto"
   }, selectValue || /*#__PURE__*/React.createElement(SelectTextInput, _extends({
-    a11yTitle: a11yTitle && "" + a11yTitle + (value && typeof value === 'string' ? ", " + value : ''),
+    a11yTitle: a11yTitle && "" + a11yTitle + (value && typeof value === 'string' ? ", " + value : '') // When Select is disabled, we want to show a default cursor
+    // but not have disabled styling come from TextInput
+    // Disabled can be a bool or an array of options to disable.
+    // We only want to disable the TextInput if the control
+    // button should be disabled which occurs when disabled
+    // equals true.
+    ,
+    defaultCursor: disabled === true || undefined,
     id: id ? id + "__input" : undefined,
     name: name,
     ref: inputRef

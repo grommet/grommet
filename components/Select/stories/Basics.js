@@ -30,8 +30,11 @@ var SimpleSelect = function SimpleSelect(_ref) {
     fill: true,
     align: "center",
     justify: "start",
-    pad: "large"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, _extends({
+    pad: "large",
+    gap: "medium"
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+    weight: "bold"
+  }, "Enabled"), /*#__PURE__*/_react["default"].createElement(_grommet.Select, _extends({
     id: "select",
     name: "select",
     placeholder: "Select",
@@ -41,6 +44,19 @@ var SimpleSelect = function SimpleSelect(_ref) {
       var option = _ref2.option;
       return setValue(option);
     }
+  }, rest)), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+    weight: "bold"
+  }, "Disabled"), /*#__PURE__*/_react["default"].createElement(_grommet.Select, _extends({
+    id: "select",
+    name: "select",
+    placeholder: "Select",
+    value: value,
+    options: options,
+    onChange: function onChange(_ref3) {
+      var option = _ref3.option;
+      return setValue(option);
+    },
+    disabled: true
   }, rest))));
 };
 

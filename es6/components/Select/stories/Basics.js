@@ -2,7 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import { Box, Grommet, Select } from 'grommet';
+import { Box, Grommet, Select, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 var SimpleSelect = function SimpleSelect(_ref) {
@@ -21,8 +21,11 @@ var SimpleSelect = function SimpleSelect(_ref) {
     fill: true,
     align: "center",
     justify: "start",
-    pad: "large"
-  }, /*#__PURE__*/React.createElement(Select, _extends({
+    pad: "large",
+    gap: "medium"
+  }, /*#__PURE__*/React.createElement(Text, {
+    weight: "bold"
+  }, "Enabled"), /*#__PURE__*/React.createElement(Select, _extends({
     id: "select",
     name: "select",
     placeholder: "Select",
@@ -32,6 +35,19 @@ var SimpleSelect = function SimpleSelect(_ref) {
       var option = _ref2.option;
       return setValue(option);
     }
+  }, rest)), /*#__PURE__*/React.createElement(Text, {
+    weight: "bold"
+  }, "Disabled"), /*#__PURE__*/React.createElement(Select, _extends({
+    id: "select",
+    name: "select",
+    placeholder: "Select",
+    value: value,
+    options: options,
+    onChange: function onChange(_ref3) {
+      var option = _ref3.option;
+      return setValue(option);
+    },
+    disabled: true
   }, rest))));
 };
 
