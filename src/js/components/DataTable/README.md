@@ -594,13 +594,17 @@ string
 
 **sort**
 
-Which property to sort on and which direction to sort.
+Which property to sort on and which direction to sort. When 'external'
+      is true, it indicates that the caller will take care of sorting
+      the 'data' via 'onSort'. Otherwise, the existing data will be sorted
+      within DataTable.
 
 ```
 {
   direction: 
     asc
     desc,
+  external: boolean,
   property: string
 }
 ```
