@@ -170,7 +170,7 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'formField.error.icon': {
-    description: 'An icon placed next to the error message.',
+    description: 'An icon placed in a row with the error message.',
     type: 'React.Element',
     defaultValue: undefined,
   },
@@ -181,7 +181,7 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'formField.info.icon': {
-    description: 'An icon placed next to the info message.',
+    description: 'An icon placed in a row with the info message.',
     type: 'React.Element',
     defaultValue: undefined,
   },

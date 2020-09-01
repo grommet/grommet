@@ -393,7 +393,7 @@ undefined
 
 **formField.error.icon**
 
-An icon placed next to the error message. Expects `React.Element`.
+An icon placed in a row with the error message. Expects `React.Element`.
 
 Defaults to
 
@@ -414,7 +414,7 @@ undefined
 
 **formField.info.icon**
 
-An icon placed next to the info message. Expects `React.Element`.
+An icon placed in a row with the info message. Expects `React.Element`.
 
 Defaults to
 
