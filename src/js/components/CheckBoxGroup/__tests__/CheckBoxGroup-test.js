@@ -54,6 +54,13 @@ describe('CheckBoxGroup', () => {
             { label: 'Wuhan', value: 'Wuhan' },
           ]}
         />
+        <CheckBoxGroup
+          value={['yes', 'yes-again']}
+          options={[
+            { label: 'Yes!', value: 'yes' },
+            { label: 'Yes!', value: 'yes-again' },
+          ]}
+        />
       </Grommet>,
     );
     const tree = component.toJSON();
@@ -69,21 +76,6 @@ describe('CheckBoxGroup', () => {
         />
         <CheckBoxGroup
           options={[{ label: 'First', value: 'First', disabled: true }]}
-        />
-      </Grommet>,
-    );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  test('Checkbox Key', () => {
-    const component = renderer.create(
-      <Grommet>
-        <CheckBoxGroup
-          options={[
-            { label: 'Yes!', value: 'yes' },
-            { label: 'Yes!', value: 'yes-again' },
-          ]}
         />
       </Grommet>,
     );
