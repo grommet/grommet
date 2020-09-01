@@ -86,7 +86,7 @@ export interface DataTableProps<TRowType = any> {
         onExpand: (expandedKeys: string[]) => void;
       };
   primaryKey?: string | boolean;
-  sort?: { property: string; direction: 'asc' | 'desc' };
+  sort?: { property: string; direction: 'asc' | 'desc'; external?: boolean };
   sortable?: boolean;
   step?: number;
 
