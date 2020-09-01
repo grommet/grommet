@@ -16,7 +16,7 @@ var sizeStyle = function sizeStyle(props) {
       var breakpoint = props.theme.global.breakpoints[headingTheme.responsiveBreakpoint];
 
       if (breakpoint) {
-        var responsiveData = headingTheme.level[Math.min(props.level + 1, 4)][size];
+        var responsiveData = headingTheme.level[props.level + 1] ? headingTheme.level[props.level + 1][size] : headingTheme.level[props.level][size];
 
         if (responsiveData) {
           styles.push(breakpointStyle(breakpoint, "\n            font-size: " + responsiveData.size + ";\n            line-height: " + responsiveData.height + ";\n            max-width: " + responsiveData.maxWidth + ";\n          "));
@@ -32,7 +32,8 @@ var sizeStyle = function sizeStyle(props) {
 };
 
 var fontFamily = function fontFamily(props) {
-  var font = props.theme.heading.level[props.level].font;
+  var _ref = props.theme.heading.level[props.level] || {},
+      font = _ref.font;
 
   if (font && font.family) {
     return css(["font-family:", ";"], font.family);
