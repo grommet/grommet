@@ -78,8 +78,9 @@ export var doc = function doc(DataTable) {
     size: PropTypes.oneOfType([PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']), PropTypes.string]).description("The height of the table body. If set, the table body will have a fixed\n      height and the rows will be scrollable within it. In order to preserve\n      header and footer cell alignment, all cells will have the same\n      width. This cannot be used in combination with 'resizeable'."),
     sort: PropTypes.shape({
       direction: PropTypes.oneOf(['asc', 'desc']),
+      external: PropTypes.bool,
       property: PropTypes.string.isRequired
-    }).description('Which property to sort on and which direction to sort.'),
+    }).description("Which property to sort on and which direction to sort. When 'external'\n      is true, it indicates that the caller will take care of sorting\n      the 'data' via 'onSort'. Otherwise, the existing data will be sorted\n      within DataTable."),
     sortable: PropTypes.bool.description('Whether to allow the user to sort columns.'),
     step: PropTypes.number.description('How many items to render at a time.').defaultValue(50)
   });

@@ -67,7 +67,7 @@ export var filterAndSortData = function filterAndSortData(data, filters, onSearc
     }
   }
 
-  if (sort) {
+  if (sort && !sort.external) {
     var property = sort.property,
         direction = sort.direction;
     result = result === data ? [].concat(data) : result; // don't sort caller's data
