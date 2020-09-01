@@ -7,6 +7,7 @@ import 'regenerator-runtime/runtime';
 
 import { axe } from 'jest-axe';
 import { cleanup, render } from '@testing-library/react';
+import { Alert, StatusInfo } from 'grommet-icons';
 import { Grommet } from '../../Grommet';
 import { Form } from '../../Form';
 import { FormField } from '..';
@@ -313,6 +314,44 @@ describe('FormField', () => {
         <Form>
           <FormField
             label="label"
+            contentProps={{
+              border: false,
+            }}
+          />
+        </Form>
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('custom error and info icon and container', () => {
+    const component = renderer.create(
+      <Grommet
+        theme={{
+          formField: {
+            error: {
+              icon: <Alert />,
+              container: {
+                background: {
+                  color: 'green',
+                },
+              },
+            },
+            info: {
+              icon: <StatusInfo />,
+              container: {
+                pad: { horizontal: 'large' },
+              },
+            },
+          },
+        }}
+      >
+        <Form>
+          <FormField
+            label="label"
+            error="This is an error message."
+            info="Here is a little added info on FormField."
             contentProps={{
               border: false,
             }}
