@@ -298,6 +298,25 @@ right
 }
 ```
 
+**columnGroups**
+
+Causes an extra header row to be added to indicate any columns that
+      are grouped together. The label is what is shown in the cell that
+      spans the columns.
+
+```
+[{
+  align: 
+    center
+    start
+    end,
+  label: 
+    string
+    node,
+  properties: [string]
+}]
+```
+
 **columns**
 
 A description of the data. The order controls the column order.

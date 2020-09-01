@@ -59,6 +59,11 @@ export interface DataTableProps<TRowType = any> {
     | BackgroundType
     | Sections<BackgroundType | string[], BackgroundType, BackgroundType>;
   border?: BorderType | Sections<BorderType>;
+  columnGroups?: {
+    align?: 'center' | 'start' | 'end';
+    label: string | React.ReactNode;
+    properties: string[];
+  }[];
   columns?: ColumnConfig<TRowType>[];
   fill?: boolean | 'vertical' | 'horizontal';
   gridArea?: GridAreaType;

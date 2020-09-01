@@ -28,6 +28,7 @@ const normalizeProp = (prop, context) => {
 const DataTable = ({
   background,
   border,
+  columnGroups,
   columns = [],
   data = [],
   fill,
@@ -172,6 +173,7 @@ const DataTable = ({
       <Header
         background={normalizeProp(background, 'header')}
         border={normalizeProp(border, 'header')}
+        columnGroups={columnGroups}
         columns={columns}
         fill={fill}
         filtering={filtering}

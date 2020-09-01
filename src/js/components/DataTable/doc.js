@@ -83,6 +83,17 @@ export const doc = DataTable => {
       `Cell border. You can set the border per context by passing an
       object with keys for 'heading', 'body', and/or 'footer'.`,
     ),
+    columnGroups: PropTypes.arrayOf(
+      PropTypes.shape({
+        align: PropTypes.oneOf(['center', 'start', 'end']),
+        label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+        properties: PropTypes.arrayOf(PropTypes.string),
+      }),
+    ).description(
+      `Causes an extra header row to be added to indicate any columns that
+      are grouped together. The label is what is shown in the cell that
+      spans the columns.`,
+    ),
     columns: PropTypes.arrayOf(
       PropTypes.shape({
         align: PropTypes.oneOf(['center', 'start', 'end']),

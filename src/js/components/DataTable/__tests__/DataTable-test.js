@@ -609,4 +609,24 @@ describe('DataTable', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('columnGroups', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A', footer: 'Total' },
+            { property: 'b', header: 'B' },
+            { property: 'c', header: 'C' },
+          ]}
+          columnGroups={[{ label: 'Group', properties: ['b', 'c'] }]}
+          data={[
+            { a: 'one', b: 1, c: 10 },
+            { a: 'two', b: 2, c: 20 },
+          ]}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

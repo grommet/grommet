@@ -5,6 +5,8 @@ import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
+import { TableCell } from '../TableCell';
+import { TableRow } from '../TableRow';
 import { Text } from '../Text';
 
 import { Resizer } from './Resizer';
@@ -19,6 +21,7 @@ import {
 const Header = ({
   background,
   border,
+  columnGroups,
   columns,
   fill,
   filtering,
@@ -39,6 +42,34 @@ const Header = ({
   const theme = useContext(ThemeContext) || defaultProps.theme;
   return (
     <StyledDataTableHeader fillProp={fill} {...rest}>
+      {columnGroups && (
+        <TableRow>
+          {groups && <td />}
+          {columns.map(({ property }) => {
+            const columnGroup = columnGroups.find(({ properties }) =>
+              properties.includes(property),
+            );
+            if (columnGroup) {
+              if (columnGroup.properties.indexOf(property) === 0) {
+                const { align, properties } = columnGroup;
+                return (
+                  <TableCell
+                    key={property}
+                    align={align}
+                    colSpan={properties.length}
+                  >
+                    {columnGroup.label}
+                  </TableCell>
+                );
+              }
+              return null;
+            }
+            // We use <td/> because we don't want any styling for non-grouping
+            // cells here.
+            return <td key={property} />;
+          })}
+        </TableRow>
+      )}
       <StyledDataTableRow>
         {groups && (
           <ExpanderCell
