@@ -3198,7 +3198,7 @@ exports[`Select keyboard navigation timeout 1`] = `
 }
 
 .c7 {
-  cursor: default;
+  cursor: pointer;
 }
 
 .c2 {

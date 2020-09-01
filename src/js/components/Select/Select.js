@@ -255,7 +255,7 @@ const Select = forwardRef(
                   }
                   // When Select is disabled, we want to show a default cursor
                   // but not have disabled styling come from TextInput
-                  defaultCursor={disabled}
+                  defaultCursor={disabled === true || undefined}
                   id={id ? `${id}__input` : undefined}
                   name={name}
                   ref={inputRef}
