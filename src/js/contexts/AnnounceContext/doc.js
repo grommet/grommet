@@ -8,7 +8,7 @@ export const doc = AnnounceContext => {
     .description('A means of announcing events for screen readers.')
     .usage(
       "import { AnnounceContext } from 'grommet';\n" +
-      '<AnnounceContext.Consumer />\n{announce => ()}',
+        '<AnnounceContext.Consumer />\n{announce => ()}',
     );
 
   DocumentedAnnounceContext.propTypes = {
@@ -19,10 +19,16 @@ export const doc = AnnounceContext => {
       and these arguments can be passed as 'props' to the return component.
       'mode' can be one of 'polite', 'assertive' or 'off'. 
       'timeout' is measured in milliseconds.
-      'id' used to query a specific Announce Context. Default is 'grommet-announcer'
+      'id' used to query a specific Announce Context. 
+      Default is 'grommet-announcer'
       Example:  
       {announce => 
-        <Button onClick={() => announce("Button was clicked", "polite", 1000, "custom-announcer")
+        <Button onClick={() => announce(
+          "Button was clicked", 
+          "polite", 
+          1000, 
+          "custom-announcer"
+        )
       }
       `,
     ),

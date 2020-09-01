@@ -22,14 +22,14 @@ Announcer.propTypes = {
   message: PropTypes.string,
   mode: PropTypes.string,
   role: PropTypes.string,
-  id: PropTypes.string
+  id: PropTypes.string,
 };
 
 Announcer.defaultProps = {
   message: 'Here is a simple announcement. This will soon disappear',
   mode: 'polite',
   role: 'log',
-  id: 'grommet-announcer'
+  id: 'grommet-announcer',
 };
 
 const AnnounceContextComponent = props => (
