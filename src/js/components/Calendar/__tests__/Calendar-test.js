@@ -42,9 +42,13 @@ describe('Calendar', () => {
   });
 
   test('disabled', () => {
+    // need to set the date to avoid snapshot drift over time
+    // have disabled date be distinct from selected date
+    const disabledDate = new Date(DATE);
+    disabledDate.setDate(disabledDate.getDate() + 1);
     const component = renderer.create(
       <Grommet>
-        <Calendar disabled={[DATE]} />
+        <Calendar date={DATE} disabled={[disabledDate.toDateString()]} />
       </Grommet>,
     );
     const tree = component.toJSON();
