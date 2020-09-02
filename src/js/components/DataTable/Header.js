@@ -66,7 +66,9 @@ const Header = ({
                 selected.length > 0 && selected.length < data.length
               }
               onChange={() => {
+                // if any are selected, clear selection
                 if (selected.length > 0) onSelect([]);
+                // if none are selected, select all data
                 else
                   onSelect(
                     data.map(datum => datumValue(datum, primaryProperty)),
