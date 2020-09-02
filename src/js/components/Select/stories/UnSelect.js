@@ -49,10 +49,10 @@ const UnSelect = () => {
           disabled={!value}
           plain
           label="Clear All"
-        />    
+        />
       </Box>
     </Grommet>
   );
 };
 
-storiesOf('Select', module).add('UnSelect', () => <UnSelect />);
+storiesOf('Select', module).add('Unselect', () => <UnSelect />);

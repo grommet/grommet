@@ -59,6 +59,6 @@ const CustomEdgeControl = ({ direction = 'horizontal', ...rest }) => {
   );
 };
 
-storiesOf('RangeSelector', module).add('Custom Edge Controls', () => (
+storiesOf('RangeSelector', module).add('Custom edge controls', () => (
   <CustomEdgeControl />
 ));

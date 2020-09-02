@@ -50,4 +50,4 @@ const AlignControls = () => (
   </Grommet>
 );
 
-storiesOf('Tabs', module).add('Align Controls', () => <AlignControls />);
+storiesOf('Tabs', module).add('Align controls', () => <AlignControls />);

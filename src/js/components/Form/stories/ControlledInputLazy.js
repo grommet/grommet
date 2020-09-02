@@ -126,4 +126,4 @@ const Example = () => {
   );
 };
 
-storiesOf('Form', module).add('Controlled Input lazy', () => <Example />);
+storiesOf('Form', module).add('Controlled input lazy', () => <Example />);

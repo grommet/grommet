@@ -46,4 +46,4 @@ const MeterInTable = () => (
   </Grommet>
 );
 
-storiesOf('Table', module).add('Meter Inside Table', () => <MeterInTable />);
+storiesOf('Table', module).add('Meter inside table', () => <MeterInTable />);

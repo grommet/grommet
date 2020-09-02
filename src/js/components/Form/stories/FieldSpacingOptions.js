@@ -260,6 +260,6 @@ const FieldSpacingOptions = () => {
   );
 };
 
-storiesOf('Form', module).add('FormField Spacing', () => (
+storiesOf('Form', module).add('FormField spacing', () => (
   <FieldSpacingOptions />
 ));

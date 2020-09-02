@@ -21,4 +21,4 @@ const Example = () => (
   </Grommet>
 );
 
-storiesOf('DataTable', module).add('No Primary', () => <Example />);
+storiesOf('DataTable', module).add('No primary', () => <Example />);

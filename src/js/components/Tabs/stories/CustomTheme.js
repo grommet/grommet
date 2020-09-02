@@ -100,4 +100,4 @@ const CustomTabs = () => (
   </Grommet>
 );
 
-storiesOf('Tabs', module).add('Custom Theme', () => <CustomTabs />);
+storiesOf('Tabs', module).add('Custom theme', () => <CustomTabs />);
