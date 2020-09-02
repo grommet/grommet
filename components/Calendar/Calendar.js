@@ -134,7 +134,11 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
   var _useState6 = (0, _react.useState)(),
       slide = _useState6[0],
-      setSlide = _useState6[1]; // When the reference changes, we need to update the displayBounds.
+      setSlide = _useState6[1];
+
+  var _useState7 = (0, _react.useState)(),
+      animating = _useState7[0],
+      setAnimating = _useState7[1]; // When the reference changes, we need to update the displayBounds.
   // This is easy when we aren't animating. If we are animating,
   // we temporarily increase the displayBounds to be the union of the old
   // and new ones and set slide to drive the animation. We keep track
@@ -154,8 +158,6 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   }, [animate, firstDayOfWeek, reference]);
   (0, _react.useEffect)(function () {
     if (targetDisplayBounds) {
-      var animating;
-
       if (targetDisplayBounds[0].getTime() < displayBounds[0].getTime()) {
         // only animate if the duration is within a year
         if (displayBounds[0].getTime() - targetDisplayBounds[0].getTime() < millisecondsPerYear) {
@@ -164,7 +166,7 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
             direction: 'down',
             weeks: (0, _utils.daysApart)(displayBounds[0], targetDisplayBounds[0]) / 7
           });
-          animating = true;
+          setAnimating(true);
         }
       } else if (targetDisplayBounds[1].getTime() > displayBounds[1].getTime()) {
         if (targetDisplayBounds[1].getTime() - displayBounds[1].getTime() < millisecondsPerYear) {
@@ -173,21 +175,8 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
             direction: 'up',
             weeks: (0, _utils.daysApart)(targetDisplayBounds[1], displayBounds[1]) / 7
           });
-          animating = true;
+          setAnimating(true);
         }
-      }
-
-      if (animating) {
-        // Wait for animation to finish before cleaning up.
-        var timer = setTimeout(function () {
-          setDisplayBounds(targetDisplayBounds);
-          setTargetDisplayBounds(undefined);
-          setSlide(undefined);
-        }, 400 // Empirically determined.
-        );
-        return function () {
-          return clearTimeout(timer);
-        };
       }
 
       return undefined;
@@ -195,7 +184,26 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
     setSlide(undefined);
     return undefined;
-  }, [displayBounds, targetDisplayBounds]); // We have to deal with reference being the end of a month with more
+  }, [animating, displayBounds, targetDisplayBounds]); // Last step in updating the displayBounds. Allows for pruning
+  // displayBounds and cleaning up states to occur after animation.
+
+  (0, _react.useEffect)(function () {
+    if (animating && targetDisplayBounds) {
+      // Wait for animation to finish before cleaning up.
+      var timer = setTimeout(function () {
+        setDisplayBounds(targetDisplayBounds);
+        setTargetDisplayBounds(undefined);
+        setSlide(undefined);
+        setAnimating(false);
+      }, 400 // Empirically determined.
+      );
+      return function () {
+        return clearTimeout(timer);
+      };
+    }
+
+    return undefined;
+  }, [animating, targetDisplayBounds]); // We have to deal with reference being the end of a month with more
   // days than the month we are changing to. So, we always set reference
   // to the first of the month before changing the month.
 
@@ -207,19 +215,19 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   }, [reference]);
   var daysRef = (0, _react.useRef)();
 
-  var _useState7 = (0, _react.useState)(),
-      focus = _useState7[0],
-      setFocus = _useState7[1];
-
   var _useState8 = (0, _react.useState)(),
-      active = _useState8[0],
-      setActive = _useState8[1]; // when working on a range, remember the last selected date so we know
+      focus = _useState8[0],
+      setFocus = _useState8[1];
+
+  var _useState9 = (0, _react.useState)(),
+      active = _useState9[0],
+      setActive = _useState9[1]; // when working on a range, remember the last selected date so we know
   // how to handle subsequent date selection
 
 
-  var _useState9 = (0, _react.useState)(),
-      lastSelectedDate = _useState9[0],
-      setLastSelectedDate = _useState9[1];
+  var _useState10 = (0, _react.useState)(),
+      lastSelectedDate = _useState10[0],
+      setLastSelectedDate = _useState10[1];
 
   var changeReference = (0, _react.useCallback)(function (nextReference) {
     if ((0, _utils.betweenDates)(nextReference, validBounds)) {
