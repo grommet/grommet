@@ -31,6 +31,8 @@ const SuggestionsTextInput = () => {
   );
 };
 
-storiesOf('TextInput', module).add('Suggestions', () => (
-  <SuggestionsTextInput />
-));
+storiesOf('TextInput', module).add(
+  'Suggestions',
+  () => <SuggestionsTextInput />,
+  { chromatic: { disable: true } },
+);

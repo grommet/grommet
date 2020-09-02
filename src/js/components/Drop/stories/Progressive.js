@@ -68,4 +68,6 @@ const ProgressiveDrop = () => {
   );
 };
 
-storiesOf('Drop', module).add('Progressive', () => <ProgressiveDrop />);
+storiesOf('Drop', module).add('Progressive', () => <ProgressiveDrop />, {
+  chromatic: { disable: true },
+});
