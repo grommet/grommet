@@ -18,4 +18,6 @@ const Example = () => {
   );
 };
 
-storiesOf('TextInput', module).add('Uncontrolled', () => <Example />);
+storiesOf('TextInput', module).add('Uncontrolled', () => <Example />, {
+  chromatic: { disable: true },
+});

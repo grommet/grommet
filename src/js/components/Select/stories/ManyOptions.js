@@ -69,4 +69,6 @@ const ManyOptions = () => {
   );
 };
 
-storiesOf('Select', module).add('Lots of options', () => <ManyOptions />);
+storiesOf('Select', module).add('Lots of options', () => <ManyOptions />, {
+  chromatic: { disable: true },
+});
