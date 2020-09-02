@@ -664,6 +664,8 @@ export interface ThemeType {
       background?: BackgroundType;
       color?: ColorType;
       margin?: MarginType;
+      container?: BoxProps;
+      icon?: any;
     };
     help?: {
       color?: ColorType;
@@ -672,6 +674,8 @@ export interface ThemeType {
     info?: {
       color?: ColorType;
       margin?: MarginType;
+      container?: BoxProps;
+      icon?: any;
     };
     label?: TextProps;
     margin?: MarginType;

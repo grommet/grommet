@@ -747,6 +747,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         color: 'status-critical',
         margin: { vertical: 'xsmall', horizontal: 'small' },
         // background: undefined,
+        // container: {}, // any Box props
+        // icon: undefined,
       },
       // extend: undefined,
       help: {
@@ -758,6 +760,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       info: {
         color: 'text-xweak',
         margin: { vertical: 'xsmall', horizontal: 'small' },
+        // container: {}, // any Box props
+        // icon: undefined,
       },
       label: {
         margin: { vertical: 'xsmall', horizontal: 'small' },
