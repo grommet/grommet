@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Grommet, Select } from 'grommet';
+import { Box, Grommet, Select, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const SimpleSelect = ({ ...rest }) => {
@@ -9,7 +9,8 @@ const SimpleSelect = ({ ...rest }) => {
   const [value, setValue] = useState('');
   return (
     <Grommet full theme={grommet}>
-      <Box fill align="center" justify="start" pad="large">
+      <Box fill align="center" justify="start" pad="large" gap="medium">
+        <Text weight="bold">Enabled</Text>
         <Select
           id="select"
           name="select"
@@ -17,6 +18,17 @@ const SimpleSelect = ({ ...rest }) => {
           value={value}
           options={options}
           onChange={({ option }) => setValue(option)}
+          {...rest}
+        />
+        <Text weight="bold">Disabled</Text>
+        <Select
+          id="select"
+          name="select"
+          placeholder="Select"
+          value={value}
+          options={options}
+          onChange={({ option }) => setValue(option)}
+          disabled
           {...rest}
         />
       </Box>
