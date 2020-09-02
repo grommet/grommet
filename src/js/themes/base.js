@@ -969,10 +969,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       clear: {
         container: {
           pad: 'small',
-          background: 'light-2',
+          background: 'background-contrast',
         }, // any box props
         text: {
-          color: 'dark-3',
+          color: 'text-weak',
         }, // any text props
       },
       container: {

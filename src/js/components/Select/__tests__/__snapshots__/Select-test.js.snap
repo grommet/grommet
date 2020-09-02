@@ -320,8 +320,7 @@ exports[`Select Clear option renders - bottom 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #F2F2F2;
-  color: #444444;
+  background: #FFFFFF08;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -438,7 +437,7 @@ exports[`Select Clear option renders - bottom 1`] = `
 .c12 {
   font-size: 18px;
   line-height: 24px;
-  color: #777777;
+  color: #555555;
 }
 
 .c1 {
@@ -641,8 +640,7 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
-  background-color: #F2F2F2;
-  color: #444444;
+  background: #FFFFFF08;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -772,7 +770,7 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
 .c6 {
   font-size: 18px;
   line-height: 24px;
-  color: #777777;
+  color: #555555;
 }
 
 .c11 {
@@ -989,8 +987,7 @@ exports[`Select Clear option renders custom label 1`] = `
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
-  background-color: #F2F2F2;
-  color: #444444;
+  background: #FFFFFF08;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1120,7 +1117,7 @@ exports[`Select Clear option renders custom label 1`] = `
 .c6 {
   font-size: 18px;
   line-height: 24px;
-  color: #777777;
+  color: #555555;
 }
 
 .c11 {
@@ -1329,8 +1326,7 @@ exports[`Select Clear option renders- top 1`] = `
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
-  background-color: #F2F2F2;
-  color: #444444;
+  background: #FFFFFF08;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1460,7 +1456,7 @@ exports[`Select Clear option renders- top 1`] = `
 .c6 {
   font-size: 18px;
   line-height: 24px;
-  color: #777777;
+  color: #555555;
 }
 
 .c11 {
