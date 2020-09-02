@@ -130,6 +130,7 @@ const Calendar = forwardRef(
     );
     const [targetDisplayBounds, setTargetDisplayBounds] = useState();
     const [slide, setSlide] = useState();
+    const [animating, setAnimating] = useState();
 
     // When the reference changes, we need to update the displayBounds.
     // This is easy when we aren't animating. If we are animating,
@@ -149,7 +150,6 @@ const Calendar = forwardRef(
 
     useEffect(() => {
       if (targetDisplayBounds) {
-        let animating;
         if (targetDisplayBounds[0].getTime() < displayBounds[0].getTime()) {
           // only animate if the duration is within a year
           if (
@@ -161,7 +161,7 @@ const Calendar = forwardRef(
               direction: 'down',
               weeks: daysApart(displayBounds[0], targetDisplayBounds[0]) / 7,
             });
-            animating = true;
+            setAnimating(true);
           }
         } else if (
           targetDisplayBounds[1].getTime() > displayBounds[1].getTime()
@@ -175,28 +175,34 @@ const Calendar = forwardRef(
               direction: 'up',
               weeks: daysApart(targetDisplayBounds[1], displayBounds[1]) / 7,
             });
-            animating = true;
+            setAnimating(true);
           }
-        }
-
-        if (animating) {
-          // Wait for animation to finish before cleaning up.
-          const timer = setTimeout(
-            () => {
-              setDisplayBounds(targetDisplayBounds);
-              setTargetDisplayBounds(undefined);
-              setSlide(undefined);
-            },
-            400, // Empirically determined.
-          );
-          return () => clearTimeout(timer);
         }
         return undefined;
       }
 
       setSlide(undefined);
       return undefined;
-    }, [displayBounds, targetDisplayBounds]);
+    }, [animating, displayBounds, targetDisplayBounds]);
+
+    // Last step in updating the displayBounds. Allows for pruning
+    // displayBounds and cleaning up states to occur after animation.
+    useEffect(() => {
+      if (animating && targetDisplayBounds) {
+        // Wait for animation to finish before cleaning up.
+        const timer = setTimeout(
+          () => {
+            setDisplayBounds(targetDisplayBounds);
+            setTargetDisplayBounds(undefined);
+            setSlide(undefined);
+            setAnimating(false);
+          },
+          400, // Empirically determined.
+        );
+        return () => clearTimeout(timer);
+      }
+      return undefined;
+    }, [animating, targetDisplayBounds]);
 
     // We have to deal with reference being the end of a month with more
     // days than the month we are changing to. So, we always set reference
