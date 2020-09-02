@@ -39,6 +39,7 @@ const DropContainer = forwardRef(
     {
       align = defaultAlign,
       children,
+      constrain,
       dropTarget,
       elevation,
       onClickOutside,
@@ -62,7 +63,6 @@ const DropContainer = forwardRef(
       portalId,
     ]);
     const dropRef = useRef();
-
     useEffect(() => {
       // We try to preserve the maxHeight as changing it causes any scroll
       // position to be lost. We set the maxHeight on mount and if the window
@@ -85,12 +85,22 @@ const DropContainer = forwardRef(
           const targetRect = findVisibleParent(target).getBoundingClientRect();
           const containerRect = container.getBoundingClientRect();
           // determine width
-          const width = Math.min(
-            stretch
-              ? Math.max(targetRect.width, containerRect.width)
-              : containerRect.width,
-            windowWidth,
-          );
+          let width;
+          if (constrain) {
+            width = Math.min(
+              stretch
+                ? Math.min(targetRect.width, containerRect.width)
+                : containerRect.width,
+              windowWidth,
+            );
+          } else {
+            width = Math.min(
+              stretch
+                ? Math.max(targetRect.width, containerRect.width)
+                : containerRect.width,
+              windowWidth,
+            );
+          }
           // set left position
           let left;
           if (align.left) {

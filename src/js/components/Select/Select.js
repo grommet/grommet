@@ -48,6 +48,7 @@ const Select = forwardRef(
       alignSelf,
       children,
       closeOnChange = true,
+      constrain,
       disabled,
       disabledKey,
       dropAlign = defaultDropAlign,
@@ -196,6 +197,7 @@ const Select = forwardRef(
         <StyledSelectDropButton
           ref={ref}
           id={id}
+          constrain={constrain}
           disabled={disabled === true || undefined}
           dropAlign={dropAlign}
           dropTarget={dropTarget}
