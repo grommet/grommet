@@ -78,4 +78,8 @@ var OverflowDrop = function OverflowDrop() {
 
 storiesOf('Drop', module).add('Overflow', function () {
   return /*#__PURE__*/React.createElement(OverflowDrop, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

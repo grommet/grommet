@@ -47,4 +47,8 @@ var SuggestionsTextInput = function SuggestionsTextInput() {
 
 (0, _react2.storiesOf)('TextInput', module).add('Suggestions', function () {
   return /*#__PURE__*/_react["default"].createElement(SuggestionsTextInput, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

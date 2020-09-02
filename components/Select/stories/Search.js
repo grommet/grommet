@@ -64,4 +64,8 @@ var SearchSelect = function SearchSelect() {
 
 (0, _react2.storiesOf)('Select', module).add('Search', function () {
   return /*#__PURE__*/_react["default"].createElement(SearchSelect, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

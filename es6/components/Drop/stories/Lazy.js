@@ -119,4 +119,8 @@ var LazyDrop = function LazyDrop() {
 
 storiesOf('Drop', module).add('Lazy', function () {
   return /*#__PURE__*/React.createElement(LazyDrop, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

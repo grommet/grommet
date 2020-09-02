@@ -54,4 +54,8 @@ var SearchSelect = function SearchSelect() {
 
 storiesOf('Select', module).add('Search', function () {
   return /*#__PURE__*/React.createElement(SearchSelect, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

@@ -48,8 +48,16 @@ storiesOf('Accordion', module).add('Simple', function () {
     animate: false,
     background: "dark-2"
   });
+}, {
+  chromatic: {
+    disable: true
+  }
 }).add('Multiple', function () {
   return /*#__PURE__*/React.createElement(SimpleAccordion, {
     multiple: true
   });
+}, {
+  chromatic: {
+    disable: true
+  }
 });

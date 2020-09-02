@@ -77,4 +77,8 @@ var Tooltip = function Tooltip() {
 
 (0, _react2.storiesOf)('Drop', module).add('Tooltip', function () {
   return /*#__PURE__*/_react["default"].createElement(Tooltip, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

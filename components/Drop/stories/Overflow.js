@@ -87,4 +87,8 @@ var OverflowDrop = function OverflowDrop() {
 
 (0, _react2.storiesOf)('Drop', module).add('Overflow', function () {
   return /*#__PURE__*/_react["default"].createElement(OverflowDrop, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

@@ -39,4 +39,8 @@ var SuggestionsTextInput = function SuggestionsTextInput() {
 
 storiesOf('TextInput', module).add('Suggestions', function () {
   return /*#__PURE__*/React.createElement(SuggestionsTextInput, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

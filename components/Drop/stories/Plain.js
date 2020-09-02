@@ -49,4 +49,8 @@ var PlainDrop = function PlainDrop() {
 
 (0, _react2.storiesOf)('Drop', module).add('Plain', function () {
   return /*#__PURE__*/_react["default"].createElement(PlainDrop, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

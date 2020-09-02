@@ -40,4 +40,8 @@ var PlainDrop = function PlainDrop() {
 
 storiesOf('Drop', module).add('Plain', function () {
   return /*#__PURE__*/React.createElement(PlainDrop, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

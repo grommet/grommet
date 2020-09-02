@@ -94,4 +94,8 @@ var LazyLoading = function LazyLoading() {
 
 storiesOf('Select', module).add('Lazy Loading options', function () {
   return /*#__PURE__*/React.createElement(LazyLoading, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

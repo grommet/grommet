@@ -47,4 +47,8 @@ var Example = function Example() {
 
 storiesOf('Select', module).add('Object options', function () {
   return /*#__PURE__*/React.createElement(Example, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

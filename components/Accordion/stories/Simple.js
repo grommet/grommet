@@ -55,8 +55,16 @@ var SimpleAccordion = function SimpleAccordion(props) {
     animate: false,
     background: "dark-2"
   });
+}, {
+  chromatic: {
+    disable: true
+  }
 }).add('Multiple', function () {
   return /*#__PURE__*/_react["default"].createElement(SimpleAccordion, {
     multiple: true
   });
+}, {
+  chromatic: {
+    disable: true
+  }
 });

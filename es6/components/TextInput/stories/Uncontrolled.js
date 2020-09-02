@@ -23,4 +23,8 @@ var Example = function Example() {
 
 storiesOf('TextInput', module).add('Uncontrolled', function () {
   return /*#__PURE__*/React.createElement(Example, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

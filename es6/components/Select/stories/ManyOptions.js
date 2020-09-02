@@ -99,4 +99,8 @@ var ManyOptions = function ManyOptions() {
 
 storiesOf('Select', module).add('Lots of options', function () {
   return /*#__PURE__*/React.createElement(ManyOptions, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

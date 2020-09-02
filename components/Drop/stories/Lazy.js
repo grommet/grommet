@@ -130,4 +130,8 @@ var LazyDrop = function LazyDrop() {
 
 (0, _react2.storiesOf)('Drop', module).add('Lazy', function () {
   return /*#__PURE__*/_react["default"].createElement(LazyDrop, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

@@ -70,4 +70,8 @@ var Tooltip = function Tooltip() {
 
 storiesOf('Drop', module).add('Tooltip', function () {
   return /*#__PURE__*/React.createElement(Tooltip, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

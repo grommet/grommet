@@ -38,4 +38,8 @@ var SimpleDrop = function SimpleDrop() {
 
 storiesOf('Drop', module).add('Simple', function () {
   return /*#__PURE__*/React.createElement(SimpleDrop, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

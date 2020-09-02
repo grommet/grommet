@@ -47,4 +47,8 @@ var SimpleDrop = function SimpleDrop() {
 
 (0, _react2.storiesOf)('Drop', module).add('Simple', function () {
   return /*#__PURE__*/_react["default"].createElement(SimpleDrop, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

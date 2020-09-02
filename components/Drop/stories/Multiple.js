@@ -81,4 +81,8 @@ var MultipleDrop = function MultipleDrop() {
 
 (0, _react2.storiesOf)('Drop', module).add('Multiple', function () {
   return /*#__PURE__*/_react["default"].createElement(MultipleDrop, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

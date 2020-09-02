@@ -88,4 +88,8 @@ var ProgressiveDrop = function ProgressiveDrop() {
 
 (0, _react2.storiesOf)('Drop', module).add('Progressive', function () {
   return /*#__PURE__*/_react["default"].createElement(ProgressiveDrop, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });
