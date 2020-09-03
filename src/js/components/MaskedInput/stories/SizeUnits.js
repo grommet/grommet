@@ -35,6 +35,6 @@ const SizeUnitsMaskedInput = () => {
   );
 };
 
-storiesOf('MaskedInput', module).add('Size + Units', () => (
+storiesOf('MaskedInput', module).add('Size + units', () => (
   <SizeUnitsMaskedInput />
 ));

@@ -57,4 +57,4 @@ const DoubleFooter = () => {
   );
 };
 
-storiesOf('Footer', module).add('DoubleFooter', () => <DoubleFooter />);
+storiesOf('Footer', module).add('Double footer', () => <DoubleFooter />);
