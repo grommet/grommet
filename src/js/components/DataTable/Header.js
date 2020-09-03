@@ -93,14 +93,17 @@ const Header = ({
               typeof header === 'string' ? <Text>{header}</Text> : header;
 
             if (onSort && sortable !== false) {
-              const Icon =
-                onSort &&
-                sortable !== false &&
-                sort &&
-                sort.property === property &&
-                theme.dataTable.icons[
-                  sort.direction !== 'asc' ? 'ascending' : 'descending'
-                ];
+              let Icon;
+              if (onSort && sortable !== false) {
+                if (sort && sort.property === property) {
+                  Icon =
+                    theme.dataTable.icons[
+                      sort.direction !== 'asc' ? 'ascending' : 'descending'
+                    ];
+                } else if (theme.dataTable.icons.sortable) {
+                  Icon = theme.dataTable.icons.sortable;
+                }
+              }
               content = (
                 <Button plain fill="vertical" onClick={onSort(property)}>
                   <Box direction="row" align="center" gap="xsmall">

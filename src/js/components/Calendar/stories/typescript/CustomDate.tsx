@@ -48,4 +48,4 @@ export const Example = () => (
   </Grommet>
 );
 
-storiesOf('Calendar', module).add('Custom Date', () => <Example />);
+storiesOf('Calendar', module).add('Custom date', () => <Example />);

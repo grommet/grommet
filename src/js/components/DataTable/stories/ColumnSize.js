@@ -153,4 +153,4 @@ const Example = () => (
   </Grommet>
 );
 
-storiesOf('DataTable', module).add('Column Sizes', () => <Example />);
+storiesOf('DataTable', module).add('Column sizes', () => <Example />);

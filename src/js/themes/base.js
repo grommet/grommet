@@ -685,6 +685,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         contract: FormUp,
         descending: FormUp,
         expand: FormDown,
+        // sortable: undefined,
       },
       primary: {
         weight: 'bold',

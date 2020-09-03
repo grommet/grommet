@@ -788,6 +788,16 @@ Defaults to
 <FormDown />
 ```
 
+**dataTable.icons.sortable**
+
+The icon indicating a column can be sorted. Expects `React.Element`.
+
+Defaults to
+
+```
+undefined
+```
+
 **dataTable.primary.weight**
 
 The font weight for primary cells. Expects `string`.

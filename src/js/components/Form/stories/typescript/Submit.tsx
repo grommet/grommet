@@ -96,5 +96,5 @@ const Example = () => (
 );
 
 if (!isChromatic()) {
-  storiesOf('Form', module).add('Typed Form', () => <Example />);
+  storiesOf('Form', module).add('Typed form', () => <Example />);
 }

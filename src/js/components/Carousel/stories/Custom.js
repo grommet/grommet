@@ -38,4 +38,4 @@ const CustomCarousel = ({ controls, ...rest }) => (
   </Grommet>
 );
 
-storiesOf('Carousel', module).add('Custom Controls', () => <CustomCarousel />);
+storiesOf('Carousel', module).add('Custom controls', () => <CustomCarousel />);
