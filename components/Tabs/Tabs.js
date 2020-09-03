@@ -87,7 +87,14 @@ var Tabs = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
         setActiveContent: setActiveContent,
         setActiveTitle: setActiveTitle
       }
-    }, child);
+    }, child ?
+    /*#__PURE__*/
+    // cloneElement is needed for backward compatibility with custom
+    // styled components that rely on props.active. We should reassess
+    // if it is still necessary in our next major release.
+    _react["default"].cloneElement(child, {
+      active: activeIndex === index
+    }) : child);
   });
 
   var tabsHeaderStyles = {};

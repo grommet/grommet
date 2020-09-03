@@ -12,7 +12,8 @@ import { TabsContext } from '../Tabs/TabsContext';
 import { normalizeColor } from '../../utils';
 import { StyledTab } from './StyledTab';
 var Tab = /*#__PURE__*/forwardRef(function (_ref, ref) {
-  var disabled = _ref.disabled,
+  var activeProp = _ref.active,
+      disabled = _ref.disabled,
       children = _ref.children,
       icon = _ref.icon,
       plain = _ref.plain,
@@ -20,7 +21,7 @@ var Tab = /*#__PURE__*/forwardRef(function (_ref, ref) {
       onMouseOver = _ref.onMouseOver,
       onMouseOut = _ref.onMouseOut,
       reverse = _ref.reverse,
-      rest = _objectWithoutPropertiesLoose(_ref, ["disabled", "children", "icon", "plain", "title", "onMouseOver", "onMouseOut", "reverse"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["active", "disabled", "children", "icon", "plain", "title", "onMouseOver", "onMouseOut", "reverse"]);
 
   var _useContext = useContext(TabsContext),
       active = _useContext.active,
