@@ -51,4 +51,6 @@ const Tooltip = () => {
   );
 };
 
-storiesOf('Drop', module).add('Tooltip', () => <Tooltip />);
+storiesOf('Drop', module).add('Tooltip', () => <Tooltip />, {
+  chromatic: { disable: true },
+});

@@ -64,12 +64,8 @@ describe('CheckBoxGroup', () => {
     const component = renderer.create(
       <Grommet>
         <CheckBoxGroup disabled options={['First', 'Second']} />
-        <CheckBoxGroup
-          options={[{ label: 'First', value: 'First', disabled: true }]}
-        />
-        <CheckBoxGroup
-          options={[{ label: 'First', value: 'First', disabled: true }]}
-        />
+        <CheckBoxGroup options={[{ label: 'First', disabled: true }]} />
+        <CheckBoxGroup options={[{ label: 'First', disabled: true }]} />
       </Grommet>,
     );
     const tree = component.toJSON();
