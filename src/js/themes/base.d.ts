@@ -617,6 +617,7 @@ export interface ThemeType {
       contract?: any;
       descending?: any;
       expand?: any;
+      sortable?: any;
     };
     resize?: {
       border?: {
