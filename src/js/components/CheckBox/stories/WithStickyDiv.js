@@ -49,6 +49,6 @@ const CheckBoxWithStickyDiv = () => {
   );
 };
 
-storiesOf('CheckBox', module).add('With Sticky Div', () => (
+storiesOf('CheckBox', module).add('With sticky div', () => (
   <CheckBoxWithStickyDiv />
 ));

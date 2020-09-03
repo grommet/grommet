@@ -23,4 +23,4 @@ const WordBreak = () => (
 );
 /* eslint-enable max-len */
 
-storiesOf('Text', module).add('Word Break', () => <WordBreak />);
+storiesOf('Text', module).add('Word break', () => <WordBreak />);

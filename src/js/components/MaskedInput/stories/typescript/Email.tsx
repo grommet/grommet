@@ -48,6 +48,6 @@ const EmailMaskedInput = () => {
   );
 };
 
-storiesOf('MaskedInput', module).add('Email with Icon', () => (
+storiesOf('MaskedInput', module).add('Email with icon', () => (
   <EmailMaskedInput />
 ));

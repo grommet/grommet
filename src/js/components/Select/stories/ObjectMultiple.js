@@ -49,4 +49,4 @@ const Example = () => {
   );
 };
 
-storiesOf('Select', module).add('Object Multiple', () => <Example />);
+storiesOf('Select', module).add('Object multiple', () => <Example />);
