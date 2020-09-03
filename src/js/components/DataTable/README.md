@@ -127,14 +127,21 @@ string
 **background**
 
 Cell background. You can set the background per context by passing an
-      object with keys for 'heading', 'body', and/or 'footer'. If you pass
-      an array, rows will cycle between the array values.
+      object with keys for 'header', 'headerGroup', 'body', and/or 'footer'.
+      If you pass an array, rows will cycle between the array values.
 
 ```
 string
 [string]
 {
   header: 
+    string
+    {
+      dark: string,
+      light: string
+    }
+    [string],
+  headerGroup: 
     string
     {
       dark: string,
@@ -168,7 +175,7 @@ string
 **border**
 
 Cell border. You can set the border per context by passing an
-      object with keys for 'heading', 'body', and/or 'footer'.
+      object with keys for 'header', 'headerGroup', 'body', and/or 'footer'.
 
 ```
 boolean
@@ -233,6 +240,37 @@ right
         xlarge
         string
     },
+  headerGroup: 
+    boolean
+    horizontal
+    vertical
+    top
+    bottom
+    left
+    right
+    {
+      color: 
+        string
+        {
+          dark: string,
+          light: string
+        },
+      side: 
+        horizontal
+        vertical
+        top
+        bottom
+        left
+        right,
+      size: 
+        xxsmall
+        xsmall
+        small
+        medium
+        large
+        xlarge
+        string
+    },
   body: 
     boolean
     horizontal
@@ -296,25 +334,6 @@ right
         string
     }
 }
-```
-
-**columnGroups**
-
-Causes an extra header row to be added to indicate any columns that
-      are grouped together. The label is what is shown in the cell that
-      spans the columns.
-
-```
-[{
-  align: 
-    center
-    start
-    end,
-  label: 
-    string
-    node,
-  properties: [string]
-}]
 ```
 
 **columns**
@@ -418,6 +437,25 @@ string
   expand: [string],
   onExpand: function
 }
+```
+
+**headerGroups**
+
+Causes an extra header row to be added to indicate any columns that
+      are grouped together. The label is what is shown in the cell that
+      spans the columns.
+
+```
+[{
+  align: 
+    center
+    start
+    end,
+  label: 
+    string
+    node,
+  properties: [string]
+}]
 ```
 
 **onClickRow**
@@ -534,6 +572,7 @@ string
 }
 {
   header: custom,
+  headerGroup: custom,
   body: custom,
   footer: custom
 }
@@ -681,6 +720,16 @@ Defaults to
 undefined
 ```
 
+**dataTable.footer**
+
+Styles for the footer cells. Expects `object`.
+
+Defaults to
+
+```
+{}
+```
+
 **dataTable.groupHeader.background**
 
 The background color of the group header. Expects `string | { dark: string, light: string }`.
@@ -733,7 +782,17 @@ Defaults to
 
 **dataTable.header**
 
-Styles for the header. Expects `object`.
+Styles for the header cells. Expects `object`.
+
+Defaults to
+
+```
+{}
+```
+
+**dataTable.headerGroup**
+
+Styles for the header group cells. Expects `object`.
 
 Defaults to
 

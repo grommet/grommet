@@ -12,13 +12,13 @@ const Example = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
       <DataTable
-        columnGroups={[{ label: 'Result', properties: ['percent', 'paid'] }]}
         columns={columns}
         data={DATA}
+        headerGroups={[{ label: 'Result', properties: ['percent', 'paid'] }]}
         step={10}
       />
     </Box>
   </Grommet>
 );
 
-storiesOf('DataTable', module).add('ColumnGroups', () => <Example />);
+storiesOf('DataTable', module).add('HeaderGroups', () => <Example />);

@@ -4,7 +4,7 @@ import { genericProps, getAvailableAtBadge } from '../../utils';
 
 const sizes = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
 const sides = ['horizontal', 'vertical', 'top', 'bottom', 'left', 'right'];
-const parts = ['header', 'body', 'footer'];
+const parts = ['header', 'headerGroup', 'body', 'footer'];
 
 const padShapeSides = {};
 sides.forEach(side => {
@@ -73,26 +73,15 @@ export const doc = DataTable => {
       PropTypes.shape(backgroundShape),
     ]).description(
       `Cell background. You can set the background per context by passing an
-      object with keys for 'heading', 'body', and/or 'footer'. If you pass
-      an array, rows will cycle between the array values.`,
+      object with keys for 'header', 'headerGroup', 'body', and/or 'footer'.
+      If you pass an array, rows will cycle between the array values.`,
     ),
     border: PropTypes.oneOfType([
       ...borderTypes,
       PropTypes.shape(borderShape),
     ]).description(
       `Cell border. You can set the border per context by passing an
-      object with keys for 'heading', 'body', and/or 'footer'.`,
-    ),
-    columnGroups: PropTypes.arrayOf(
-      PropTypes.shape({
-        align: PropTypes.oneOf(['center', 'start', 'end']),
-        label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-        properties: PropTypes.arrayOf(PropTypes.string),
-      }),
-    ).description(
-      `Causes an extra header row to be added to indicate any columns that
-      are grouped together. The label is what is shown in the cell that
-      spans the columns.`,
+      object with keys for 'header', 'headerGroup', 'body', and/or 'footer'.`,
     ),
     columns: PropTypes.arrayOf(
       PropTypes.shape({
@@ -173,6 +162,17 @@ export const doc = DataTable => {
        group keys that sets expanded groups and 'onExpand' is a function
        that will be called after expand button is clicked with
        an array of keys of expanded groups.`),
+    headerGroups: PropTypes.arrayOf(
+      PropTypes.shape({
+        align: PropTypes.oneOf(['center', 'start', 'end']),
+        label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+        properties: PropTypes.arrayOf(PropTypes.string),
+      }),
+    ).description(
+      `Causes an extra header row to be added to indicate any columns that
+      are grouped together. The label is what is shown in the cell that
+      spans the columns.`,
+    ),
     onClickRow: PropTypes.func.description(
       `When supplied, this function will be called with an event object that
       include a 'datum' property containing the data value associated with
@@ -290,6 +290,11 @@ export const themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
+  'dataTable.footer': {
+    description: 'Styles for the footer cells.',
+    type: 'object',
+    defaultValue: '{}',
+  },
   'dataTable.groupHeader.background': {
     description: 'The background color of the group header.',
     type: 'string | { dark: string, light: string }',
@@ -316,7 +321,12 @@ export const themeDoc = {
     defaultValue: "{ horizontal: 'small', vertical: 'xsmall' }",
   },
   'dataTable.header': {
-    description: 'Styles for the header.',
+    description: 'Styles for the header cells.',
+    type: 'object',
+    defaultValue: '{}',
+  },
+  'dataTable.headerGroup': {
+    description: 'Styles for the header group cells.',
     type: 'object',
     defaultValue: '{}',
   },

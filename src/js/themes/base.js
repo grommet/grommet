@@ -668,6 +668,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // body: {
       //   extend: undefined,
       // },
+      footer: {},
       groupHeader: {
         background: {
           dark: 'dark-2',
@@ -680,6 +681,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         border: { side: 'bottom', size: 'xsmall' },
       },
       header: {},
+      headerGroup: {},
       icons: {
         ascending: FormDown,
         contract: FormUp,

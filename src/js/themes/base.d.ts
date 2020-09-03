@@ -596,7 +596,9 @@ export interface ThemeType {
     body?: {
       extend?: ExtendType;
     };
+    footer?: {};
     header?: {};
+    headerGroup?: {};
     groupHeader?: {
       border?: {
         side?: string;

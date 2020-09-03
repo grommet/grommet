@@ -610,7 +610,7 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('columnGroups', () => {
+  test('headerGroups', () => {
     const { container } = render(
       <Grommet>
         <DataTable
@@ -619,7 +619,7 @@ describe('DataTable', () => {
             { property: 'b', header: 'B' },
             { property: 'c', header: 'C' },
           ]}
-          columnGroups={[{ label: 'Group', properties: ['b', 'c'] }]}
+          headerGroups={[{ label: 'Group', properties: ['b', 'c'] }]}
           data={[
             { a: 'one', b: 1, c: 10 },
             { a: 'two', b: 2, c: 20 },

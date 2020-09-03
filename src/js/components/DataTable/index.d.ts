@@ -9,8 +9,15 @@ import {
   BorderType,
 } from '../../utils';
 
-type Sections<TBody, THeader = TBody, TFooter = TBody, TPinned = TBody> = {
+type Sections<
+  TBody,
+  THeader = TBody,
+  THeaderGroup = TBody,
+  TFooter = TBody,
+  TPinned = TBody
+> = {
   header?: THeader;
+  headerGroup?: THeaderGroup;
   body?: TBody;
   footer?: TFooter;
   pinned?: TPinned;
@@ -59,14 +66,14 @@ export interface DataTableProps<TRowType = any> {
     | BackgroundType
     | Sections<BackgroundType | string[], BackgroundType, BackgroundType>;
   border?: BorderType | Sections<BorderType>;
-  columnGroups?: {
+  columns?: ColumnConfig<TRowType>[];
+  fill?: boolean | 'vertical' | 'horizontal';
+  gridArea?: GridAreaType;
+  headerGroups?: {
     align?: 'center' | 'start' | 'end';
     label: string | React.ReactNode;
     properties: string[];
   }[];
-  columns?: ColumnConfig<TRowType>[];
-  fill?: boolean | 'vertical' | 'horizontal';
-  gridArea?: GridAreaType;
   margin?: MarginType;
   pad?: PadType | Sections<PadType>;
   pin?: boolean | 'header' | 'footer';

@@ -21,13 +21,13 @@ import {
 const Header = ({
   background,
   border,
-  columnGroups,
   columns,
   fill,
   filtering,
   filters,
   groups,
   groupState,
+  headerGroups,
   onFilter,
   onFiltering,
   onResize,
@@ -42,23 +42,27 @@ const Header = ({
   const theme = useContext(ThemeContext) || defaultProps.theme;
   return (
     <StyledDataTableHeader fillProp={fill} {...rest}>
-      {columnGroups && (
+      {headerGroups && (
         <TableRow>
           {groups && <td />}
           {columns.map(({ property }) => {
-            const columnGroup = columnGroups.find(({ properties }) =>
+            const headerGroup = headerGroups.groups.find(({ properties }) =>
               properties.includes(property),
             );
-            if (columnGroup) {
-              if (columnGroup.properties.indexOf(property) === 0) {
-                const { align, properties } = columnGroup;
+            if (headerGroup) {
+              if (headerGroup.properties.indexOf(property) === 0) {
+                const { align, properties } = headerGroup;
                 return (
                   <TableCell
                     key={property}
+                    {...theme.dataTable.headerGroup}
                     align={align}
                     colSpan={properties.length}
+                    background={headerGroups.background}
+                    border={headerGroups.border}
+                    pad={headerGroups.pad}
                   >
-                    {columnGroup.label}
+                    {headerGroup.label}
                   </TableCell>
                 );
               }

@@ -28,11 +28,11 @@ const normalizeProp = (prop, context) => {
 const DataTable = ({
   background,
   border,
-  columnGroups,
   columns = [],
   data = [],
   fill,
   groupBy,
+  headerGroups,
   onClickRow, // removing unknown DOM attributes
   onMore,
   onSearch, // removing unknown DOM attributes
@@ -173,13 +173,21 @@ const DataTable = ({
       <Header
         background={normalizeProp(background, 'header')}
         border={normalizeProp(border, 'header')}
-        columnGroups={columnGroups}
         columns={columns}
         fill={fill}
         filtering={filtering}
         filters={filters}
         groups={groups}
         groupState={groupState}
+        headerGroups={
+          headerGroups
+            ? {
+                groups: headerGroups,
+                background: normalizeProp(background, 'headerGroup'),
+                border: normalizeProp(border, 'headerGroup'),
+              }
+            : undefined
+        }
         pad={normalizeProp(pad, 'header')}
         pin={pin === true || pin === 'header'}
         size={size}
