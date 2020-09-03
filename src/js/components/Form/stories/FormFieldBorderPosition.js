@@ -145,6 +145,6 @@ const FormFieldBorderPosition = () => (
   </Grommet>
 );
 
-storiesOf('Form', module).add('Field Border Positions', () => (
+storiesOf('Form', module).add('Field border positions', () => (
   <FormFieldBorderPosition />
 ));

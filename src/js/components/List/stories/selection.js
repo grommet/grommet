@@ -32,4 +32,4 @@ const SelectionList = () => {
   );
 };
 
-storiesOf('List', module).add('selection', () => <SelectionList />);
+storiesOf('List', module).add('Selection', () => <SelectionList />);

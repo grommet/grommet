@@ -117,4 +117,4 @@ const Example = () => {
   );
 };
 
-storiesOf('Form', module).add('Controlled Input', () => <Example />);
+storiesOf('Form', module).add('Controlled input', () => <Example />);

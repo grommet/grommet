@@ -44,4 +44,4 @@ const Example = () => (
   </Grommet>
 );
 
-storiesOf('Chart', module).add('Value Style', () => <Example />);
+storiesOf('Chart', module).add('Value style', () => <Example />);
