@@ -253,8 +253,8 @@ const StyledButtonKind = styled.button`
     `
     text-align: ${props.align};
     `}
-    ${props =>
-      !props.disabled && props.hoverIndicator && hoverIndicatorStyle(props)}
+  ${props =>
+    !props.disabled && props.hoverIndicator && hoverIndicatorStyle(props)}
   ${props =>
     props.disabled && disabledStyle(props.theme.button.disabled.opacity)}
 

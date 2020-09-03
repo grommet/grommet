@@ -133,6 +133,6 @@ const CustomFormFieldStates = () => {
   );
 };
 
-storiesOf('Form', module).add('Field States Custom', () => (
+storiesOf('Form', module).add('Field states custom', () => (
   <CustomFormFieldStates />
 ));

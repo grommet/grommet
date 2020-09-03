@@ -20,4 +20,4 @@ const BasicList = () => (
   </Grommet>
 );
 
-storiesOf('List', module).add('basic', () => <BasicList />);
+storiesOf('List', module).add('Basic', () => <BasicList />);

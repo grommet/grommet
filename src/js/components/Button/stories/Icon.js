@@ -34,4 +34,4 @@ const IconPlain = () => (
   </Grommet>
 );
 
-storiesOf('Button', module).add('Icon Plain', () => <IconPlain />);
+storiesOf('Button', module).add('Icon plain', () => <IconPlain />);

@@ -43,6 +43,6 @@ const DSTCalendar = () => (
   </Grommet>
 );
 
-storiesOf('Calendar', module).add('Daylight Savings Time', () => (
+storiesOf('Calendar', module).add('Daylight savings time', () => (
   <DSTCalendar />
 ));

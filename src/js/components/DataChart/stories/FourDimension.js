@@ -51,4 +51,4 @@ const Example = () => (
   </Grommet>
 );
 
-storiesOf('DataChart', module).add('Four Dimensions', () => <Example />);
+storiesOf('DataChart', module).add('Four dimensions', () => <Example />);

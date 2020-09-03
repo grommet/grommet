@@ -21,7 +21,7 @@ const ControlBottom = () => (
 );
 
 storiesOf('Menu', module).add(
-  'Bottom Control Button',
+  'Bottom control button',
   () => <ControlBottom />,
   { chromatic: { disable: true } },
 );
