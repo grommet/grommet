@@ -70,4 +70,6 @@ const MultipleDrop = () => {
   );
 };
 
-storiesOf('Drop', module).add('Multiple', () => <MultipleDrop />);
+storiesOf('Drop', module).add('Multiple', () => <MultipleDrop />, {
+  chromatic: { disable: true },
+});

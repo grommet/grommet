@@ -162,6 +162,46 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('sort', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'zero', b: 0 },
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          sort={{ property: 'a', direction: 'asc' }}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('sort external', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'zero', b: 0 },
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          sort={{ property: 'a', direction: 'asc', external: true }}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('search', () => {
     const { container } = render(
       <Grommet>

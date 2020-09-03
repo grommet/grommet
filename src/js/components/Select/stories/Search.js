@@ -40,4 +40,6 @@ const SearchSelect = () => {
   );
 };
 
-storiesOf('Select', module).add('Search', () => <SearchSelect />);
+storiesOf('Select', module).add('Search', () => <SearchSelect />, {
+  chromatic: { disable: true },
+});
