@@ -174,7 +174,7 @@ var StyledButtonKind = _styledComponents["default"].button.withConfig({
 }, function (props) {
   return !props.plain && props.align && "\n    text-align: " + props.align + ";\n    ";
 }, function (props) {
-  return props.hoverIndicator && hoverIndicatorStyle(props);
+  return !props.disabled && props.hoverIndicator && hoverIndicatorStyle(props);
 }, function (props) {
   return props.disabled && (0, _utils.disabledStyle)(props.theme.button.disabled.opacity);
 }, function (props) {
