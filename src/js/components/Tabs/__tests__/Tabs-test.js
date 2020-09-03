@@ -1,4 +1,5 @@
 import React from 'react';
+import styled, { css } from 'styled-components';
 import 'jest-styled-components';
 import renderer from 'react-test-renderer';
 import 'jest-axe/extend-expect';
@@ -235,5 +236,27 @@ describe('Tabs', () => {
     const disabledTabStyle = window.getComputedStyle(disabledTab);
     expect(disabledTabStyle.color).toBe(disabledTextColor);
     expect(disabledTabStyle.borderBottomColor).toBe(disabledBorderBottomColor);
+  });
+
+  const ButtonTab = styled(Tab)`
+    ${props => {
+      return css`
+        background: ${props.active ? 'blue' : 'green'};
+      `;
+    }}
+  `;
+
+  test('styled component should change tab color when active', () => {
+    const { container, getByText } = render(
+      <Grommet>
+        <Tabs>
+          <ButtonTab title="About" />
+          <ButtonTab title="Activity" />
+          <ButtonTab title="Stickers" />
+        </Tabs>
+      </Grommet>,
+    );
+    fireEvent.click(getByText('Activity'));
+    expect(container.firstChild).toMatchSnapshot();
   });
 });
