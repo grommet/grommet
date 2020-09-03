@@ -45,10 +45,42 @@ const FormFieldContentBox = styled(Box)`
   ${props => props.focus && focusStyle({ justBorder: true })}
 `;
 
-const Message = ({ message, ...rest }) => {
+const StyledMessageContainer = styled(Box)`
+  ${props =>
+    props.messageType &&
+    props.theme.formField[props.messageType].container &&
+    props.theme.formField[props.messageType].container.extend}
+`;
+
+const Message = ({ error, info, message, type, ...rest }) => {
+  const theme = useContext(ThemeContext) || defaultProps.theme;
+
   if (message) {
-    if (typeof message === 'string') return <Text {...rest}>{message}</Text>;
-    return <Box {...rest}>{message}</Box>;
+    let icon;
+    let containerProps;
+
+    if (type) {
+      icon = theme.formField[type] && theme.formField[type].icon;
+      containerProps = theme.formField[type] && theme.formField[type].container;
+    }
+
+    let messageContent;
+    if (typeof message === 'string')
+      messageContent = <Text {...rest}>{message}</Text>;
+    else messageContent = <Box {...rest}>{message}</Box>;
+
+    return icon || containerProps ? (
+      <StyledMessageContainer
+        direction="row"
+        messageType={type}
+        {...containerProps}
+      >
+        {icon && <Box flex={false}>{icon}</Box>}
+        {messageContent}
+      </StyledMessageContainer>
+    ) : (
+      messageContent
+    );
   }
   return null;
 };
@@ -356,8 +388,8 @@ const FormField = forwardRef(
           undefined
         )}
         {contents}
-        <Message message={error} {...formFieldTheme.error} />
-        <Message message={info} {...formFieldTheme.info} />
+        <Message type="error" message={error} {...formFieldTheme.error} />
+        <Message type="info" message={info} {...formFieldTheme.info} />
       </FormFieldBox>
     );
   },

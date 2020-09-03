@@ -121,4 +121,6 @@ const LazyDrop = () => {
   );
 };
 
-storiesOf('Drop', module).add('Lazy', () => <LazyDrop />);
+storiesOf('Drop', module).add('Lazy', () => <LazyDrop />, {
+  chromatic: { disable: true },
+});

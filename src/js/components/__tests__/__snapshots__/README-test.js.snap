@@ -8129,6 +8129,48 @@ Defaults to
 status-critical
 \`\`\`
 
+**formField.error.container**
+
+Any valid Box props for the container surrounding the error 
+    message and icon. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**formField.error.icon**
+
+An icon placed in a row with the error message. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**formField.info.container**
+
+Any valid Box props for the container surrounding the info 
+    message and icon. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**formField.info.icon**
+
+An icon placed in a row with the info message. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **formField.error.margin**
 
 The margin used for the FormField error. Expects \`string | object\`.
