@@ -26,4 +26,4 @@ const IconLabel = () => (
   </Grommet>
 );
 
-storiesOf('Button', module).add('Icon Label', () => <IconLabel />);
+storiesOf('Button', module).add('Icon label', () => <IconLabel />);

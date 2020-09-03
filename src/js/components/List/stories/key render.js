@@ -40,4 +40,4 @@ const RenderedList = () => (
   </Grommet>
 );
 
-storiesOf('List', module).add('key render', () => <RenderedList />);
+storiesOf('List', module).add('Key render', () => <RenderedList />);

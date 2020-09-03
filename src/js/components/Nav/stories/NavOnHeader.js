@@ -32,4 +32,4 @@ const OnHeader = () => (
   </Grommet>
 );
 
-storiesOf('Nav', module).add('On Header', () => <OnHeader />);
+storiesOf('Nav', module).add('On header', () => <OnHeader />);
