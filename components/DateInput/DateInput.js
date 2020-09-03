@@ -195,7 +195,7 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
   }
 
   if (open) {
-    return [input, /*#__PURE__*/_react["default"].createElement(_Drop.Drop, {
+    return [input, /*#__PURE__*/_react["default"].createElement(_Drop.Drop, _extends({
       overflow: "visible",
       key: "drop",
       id: id ? id + "__drop" : undefined,
@@ -210,7 +210,7 @@ var DateInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
       onClickOutside: function onClickOutside() {
         return setOpen(false);
       }
-    }, calendar)];
+    }, dropProps), calendar)];
   }
 
   return input;
