@@ -748,7 +748,8 @@ export var generate = function generate(baseSpacing, scale) {
         ascending: FormDown,
         contract: FormUp,
         descending: FormUp,
-        expand: FormDown
+        expand: FormDown // sortable: undefined,
+
       },
       primary: {
         weight: 'bold'

@@ -162,6 +162,11 @@ var themeDoc = {
     type: 'React.Element',
     defaultValue: '<FormDown />'
   },
+  'dataTable.icons.sortable': {
+    description: 'The icon indicating a column can be sorted.',
+    type: 'React.Element',
+    defaultValue: undefined
+  },
   'dataTable.primary.weight': {
     description: 'The font weight for primary cells.',
     type: 'string',

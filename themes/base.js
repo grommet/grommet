@@ -772,7 +772,8 @@ var generate = function generate(baseSpacing, scale) {
         ascending: _FormDown.FormDown,
         contract: _FormUp.FormUp,
         descending: _FormUp.FormUp,
-        expand: _FormDown.FormDown
+        expand: _FormDown.FormDown // sortable: undefined,
+
       },
       primary: {
         weight: 'bold'
