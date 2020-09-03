@@ -71,10 +71,12 @@ var CheckBoxGroup = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     ref: ref,
     gap: gap
   }, rest), options.map(function (option) {
+    var optionValue = option.value;
     var label = labelKey ? option[labelKey] : option.label;
-    var valueOption = valueKey ? option[valueKey] : option.value;
+    var valueOption = valueKey ? option[valueKey] : optionValue;
     var checked = value.indexOf(valueOption) >= 0;
     var disabled = disabledProp || option.disabled;
+    var key = label + "-" + valueOption;
     if (option.checked) console.warn( // eslint-disable-next-line max-len
     "'checked' prop of an individual CheckBox shouldn't be used in a CheckBoxGroup component. Use the CheckBoxGroup 'value' prop instead."); // value shouldn't propagate the input field and the onChange option
 
@@ -87,7 +89,7 @@ var CheckBoxGroup = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     });
 
     return /*#__PURE__*/_react["default"].createElement(_CheckBox.CheckBox, _extends({
-      key: label
+      key: key
     }, optionProps, {
       disabled: disabled,
       checked: checked,
