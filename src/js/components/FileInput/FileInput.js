@@ -1,6 +1,5 @@
 import React, { forwardRef, useContext, useRef } from 'react';
 import styled, { ThemeContext } from 'styled-components';
-import { FormClose } from 'grommet-icons';
 
 import { defaultProps } from '../../default-props';
 
@@ -48,6 +47,7 @@ const FileInput = forwardRef(
     const [hover, setHover] = React.useState();
     const inputRef = useForwardedRef(ref);
     const controlRef = useRef();
+    const RemoveIcon = theme.fileInput.icons.remove;
 
     return (
       <Keyboard
@@ -117,7 +117,7 @@ const FileInput = forwardRef(
                 </Text>
                 <Button
                   a11yTitle={messages.removeAll || 'remove all'}
-                  icon={<FormClose />}
+                  icon={<RemoveIcon />}
                   hoverIndicator
                   onClick={event => {
                     event.stopPropagation();
@@ -147,7 +147,7 @@ const FileInput = forwardRef(
                   </Text>
                   <Button
                     a11yTitle={`${messages.remove || 'remove'} ${file.name}`}
-                    icon={<FormClose />}
+                    icon={<RemoveIcon />}
                     hoverIndicator
                     onClick={event => {
                       event.stopPropagation();
