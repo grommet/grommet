@@ -11,6 +11,22 @@ import { FileInput } from 'grommet';
 
 ## Properties
 
+**accept**
+
+MIME type pattern to match against. For example: "image/*".
+
+```
+string
+```
+
+**disabled**
+
+Whether the control is disabled.
+
+```
+boolean
+```
+
 **id**
 
 The id attribute of the input.
@@ -40,6 +56,14 @@ Custom messages for FileInput. Used for accessibility by screen
   remove: string,
   removeAll: string
 }
+```
+
+**multiple**
+
+Whether to allow multiple files
+
+```
+boolean
 ```
 
 **name**

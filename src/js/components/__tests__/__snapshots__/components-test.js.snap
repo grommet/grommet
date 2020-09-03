@@ -2440,88 +2440,6 @@ digital",
         "format": "boolean",
         "name": "open",
       },
-<<<<<<< HEAD
-    ],
-    "usage": "import { DropButton } from 'grommet';
-<DropButton dropContent={...} />",
-  },
-  "FileInput": Object {
-    "availableAt": Array [
-      Object {
-        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
-        "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=FileInput&full=0&addons=0&stories=1&panelRight=0",
-      },
-      Object {
-        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
-        "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=fileinput&module=%2Fsrc%2FFileInput.js",
-      },
-    ],
-    "description": "A control to input one or more files.",
-    "intrinsicElement": "input",
-    "name": "FileInput",
-    "properties": Array [
-      Object {
-        "description": "The id attribute of the input.",
-        "format": "string",
-        "name": "id",
-      },
-      Object {
-        "defaultValue": Object {
-          "browse": "browse",
-          "dropPrompt": "Drop file here or",
-          "dropPromptMultiple": "Drop files here or",
-          "files": "files",
-          "remove": "remove",
-          "removeAll": "remove all",
-        },
-        "description": "Custom messages for FileInput. Used for accessibility by screen
-        readers.",
-        "format": "{
-  browse: string,
-  dropPrompt: string,
-  dropPromptMultiple: string,
-  files: string,
-  remove: string,
-  removeAll: string
-}",
-        "name": "messages",
-      },
-      Object {
-        "description": "The name attribute of the input.",
-        "format": "string",
-        "name": "name",
-      },
-      Object {
-        "description": "Function that will be called when one or more files are added the
-      input.",
-        "format": "function",
-        "name": "onChange",
-      },
-    ],
-    "usage": "import { FileInput } from 'grommet';
-<FileInput id='file' name='file' />",
-  },
-  "Form": [Function],
-  "FormContext": Object {
-    "$$typeof": Symbol(react.context),
-    "Consumer": Object {
-      "$$typeof": Symbol(react.context),
-      "_calculateChangedBits": null,
-      "_context": [Circular],
-    },
-    "Provider": Object {
-      "$$typeof": Symbol(react.provider),
-      "_context": [Circular],
-    },
-    "_calculateChangedBits": null,
-    "_currentRenderer": null,
-    "_currentRenderer2": null,
-    "_currentValue": undefined,
-    "_currentValue2": undefined,
-    "_threadCount": 0,
-=======
       Object {
         "defaultValue": "vertical",
         "description": "Direction to animate the collapsible content.",
@@ -2532,7 +2450,6 @@ vertical",
     ],
     "usage": "import { Collapsible } from 'grommet';
 <Collapsible open>test</Collapsible>",
->>>>>>> master
   },
   "DataChart": Object {
     "availableAt": Array [
@@ -3538,6 +3455,80 @@ string",
     ],
     "usage": "import { DropButton } from 'grommet';
 <DropButton dropContent={...} />",
+  },
+  "FileInput": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=FileInput&full=0&addons=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/fileinput&module=%2Fsrc%2FFileInput.js",
+      },
+    ],
+    "description": "A control to input one or more files.",
+    "intrinsicElement": "input",
+    "name": undefined,
+    "properties": Array [
+      Object {
+        "description": "MIME type pattern to match against. For example: \\"image/*\\".",
+        "format": "string",
+        "name": "accept",
+      },
+      Object {
+        "defaultValue": false,
+        "description": "Whether the control is disabled.",
+        "format": "boolean",
+        "name": "disabled",
+      },
+      Object {
+        "description": "The id attribute of the input.",
+        "format": "string",
+        "name": "id",
+      },
+      Object {
+        "defaultValue": Object {
+          "browse": "browse",
+          "dropPrompt": "Drop file here or",
+          "dropPromptMultiple": "Drop files here or",
+          "files": "files",
+          "remove": "remove",
+          "removeAll": "remove all",
+        },
+        "description": "Custom messages for FileInput. Used for accessibility by screen
+        readers.",
+        "format": "{
+  browse: string,
+  dropPrompt: string,
+  dropPromptMultiple: string,
+  files: string,
+  remove: string,
+  removeAll: string
+}",
+        "name": "messages",
+      },
+      Object {
+        "description": "Whether to allow multiple files",
+        "format": "boolean",
+        "name": "multiple",
+      },
+      Object {
+        "description": "The name attribute of the input.",
+        "format": "string",
+        "name": "name",
+      },
+      Object {
+        "description": "Function that will be called when one or more files are added the
+      input. The file(s) can be found in event.target.files.",
+        "format": "function",
+        "name": "onChange",
+      },
+    ],
+    "usage": "import { FileInput } from 'grommet';
+<FileInput id='file' name='file' />",
   },
   "Footer": [Function],
   "Form": Object {

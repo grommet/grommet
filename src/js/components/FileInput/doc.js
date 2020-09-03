@@ -13,6 +13,12 @@ export const doc = FileInput => {
     .intrinsicElement('input');
 
   DocumentedFileInput.propTypes = {
+    accept: PropTypes.string.description(
+      'MIME type pattern to match against. For example: "image/*".',
+    ),
+    disabled: PropTypes.bool
+      .description('Whether the control is disabled.')
+      .defaultValue(false),
     id: PropTypes.string.description('The id attribute of the input.'),
     messages: PropTypes.shape({
       browse: PropTypes.string,
@@ -34,6 +40,7 @@ export const doc = FileInput => {
         remove: 'remove',
         removeAll: 'remove all',
       }),
+    multiple: PropTypes.bool.description('Whether to allow multiple files'),
     name: PropTypes.string.description('The name attribute of the input.'),
     onChange: PropTypes.func.description(
       `Function that will be called when one or more files are added the

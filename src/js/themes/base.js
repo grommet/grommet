@@ -707,6 +707,27 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     //   extend: undefined,
     //   maxHeight: undefined,
     // },
+    fileInput: {
+      // background: {},
+      border: {
+        // color: undefined,
+        side: 'all',
+        size: 'small',
+        style: 'dashed',
+      },
+      hover: {
+        border: {
+          color: 'brand',
+        },
+      },
+      // pad: {},
+      label: {
+        margin: 'small',
+      },
+      message: {
+        margin: 'small',
+      },
+    },
     formField: {
       border: {
         color: 'border',

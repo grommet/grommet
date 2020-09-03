@@ -8,6 +8,7 @@ import {
   Grommet,
   Form,
   FormField,
+  FileInput,
   MaskedInput,
   RadioButtonGroup,
   RangeInput,
@@ -57,6 +58,9 @@ const Example = () => {
             </FormField>
             <FormField label="Age" name="age" pad>
               <RangeInput name="age" min={15} max={75} />
+            </FormField>
+            <FormField label="Image" name="image">
+              <FileInput name="image" />
             </FormField>
             <Box direction="row" justify="between" margin={{ top: 'medium' }}>
               <Button label="Cancel" />

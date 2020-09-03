@@ -1,4 +1,4 @@
-import React, { forwardRef, useContext } from 'react';
+import React, { forwardRef, useContext, useRef } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { FormClose } from 'grommet-icons';
 
@@ -9,6 +9,7 @@ import { focusStyle, useForwardedRef } from '../../utils';
 import { Anchor } from '../Anchor';
 import { Box } from '../Box';
 import { Button } from '../Button';
+import { FormContext } from '../Form/FormContext';
 import { Keyboard } from '../Keyboard';
 import { Stack } from '../Stack';
 import { Text } from '../Text';
@@ -24,19 +25,37 @@ const ControlBox = styled(Box)`
 `;
 
 const FileInput = forwardRef(
-  ({ a11yTitle, messages, onChange, ...rest }, ref) => {
+  (
+    {
+      a11yTitle,
+      background,
+      border,
+      id,
+      messages,
+      margin,
+      multiple,
+      name,
+      onChange,
+      pad,
+      value: valueProp,
+      ...rest
+    },
+    ref,
+  ) => {
     const theme = useContext(ThemeContext);
+    const formContext = useContext(FormContext);
+    const [files, setFiles] = formContext.useFormInput(name, valueProp, []);
     const [hover, setHover] = React.useState();
-    const [files, setFiles] = React.useState([]);
     const inputRef = useForwardedRef(ref);
+    const controlRef = useRef();
 
     return (
       <Keyboard
         onSpace={event => {
-          if (event.currentTarget === event.target) inputRef.current.click();
+          if (controlRef.current === event.target) inputRef.current.click();
         }}
         onEnter={event => {
-          if (event.currentTarget === event.target) inputRef.current.click();
+          if (controlRef.current === event.target) inputRef.current.click();
         }}
       >
         <Stack
@@ -49,8 +68,11 @@ const FileInput = forwardRef(
           <StyledFileInput
             ref={inputRef}
             tabIndex={-1}
-            {...rest}
             type="file"
+            id={id}
+            name={name}
+            multiple={multiple}
+            {...rest}
             onDragOver={() => setHover(true)}
             onDragLeave={() => setHover(false)}
             onChange={event => {
@@ -61,27 +83,36 @@ const FileInput = forwardRef(
                 nextFiles.push(fileList[i]);
               }
               setFiles(nextFiles);
-              if (onChange) {
-                onChange(event);
-              }
+              if (onChange) onChange(event);
             }}
           />
 
           <ControlBox
+            ref={controlRef}
             tabIndex={0}
             theme={theme}
+            background={{
+              ...theme.fileInput.background,
+              ...(hover ? theme.fileInput.hover.background : {}),
+            }}
             border={{
-              color: hover ? 'brand' : undefined,
-              side: 'all',
-              size: 'medium',
-              style: 'dashed',
+              ...theme.fileInput.border,
+              ...(hover ? theme.fileInput.hover.border : {}),
+            }}
+            margin={{
+              ...theme.fileInput.margin,
+              ...(hover ? theme.fileInput.hover.margin : {}),
+            }}
+            pad={{
+              ...theme.fileInput.pad,
+              ...(hover ? theme.fileInput.hover.pad : {}),
             }}
             align={files.length ? 'stretch' : 'center'}
             justify="center"
           >
             {files.length > 10 && (
               <Box direction="row" align="center" justify="between">
-                <Text margin="small" weight="bold">
+                <Text {...theme.fileInput.label}>
                   {files.length} {messages.files || 'files'}
                 </Text>
                 <Button
@@ -105,7 +136,13 @@ const FileInput = forwardRef(
                   align="center"
                   justify="between"
                 >
-                  <Text margin="small" weight="bold">
+                  <Text
+                    weight={
+                      theme.global.input.weight ||
+                      theme.global.input.font.weight
+                    }
+                    {...theme.fileInput.label}
+                  >
                     {file.name}
                   </Text>
                   <Button
@@ -124,8 +161,8 @@ const FileInput = forwardRef(
                 </Box>
               ))}
             {!files.length && (
-              <Text margin="small">
-                {rest.multiple
+              <Text {...theme.fileInput.message}>
+                {multiple
                   ? messages.dropPromptMultiple || 'Drop files here or'
                   : messages.dropPrompt || 'Drop file here or'}{' '}
                 <Anchor label={messages.browse || 'browse'} />

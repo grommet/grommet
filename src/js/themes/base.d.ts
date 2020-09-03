@@ -639,6 +639,24 @@ export interface ThemeType {
     extend?: ExtendType;
     maxHeight?: string;
   };
+  fileInput?: {
+    background?: BackgroundType;
+    border?: BorderType;
+    hover?: {
+      background?: BackgroundType;
+      border?: BorderType;
+      pad?: PadType;
+    };
+    label?: {
+      margin?: MarginType;
+      weight?: number | string;
+    };
+    message?: {
+      margin?: MarginType;
+      weight?: number | string;
+    };
+    pad?: PadType;
+  };
   formField?: {
     border?: BorderType;
     content?: {
