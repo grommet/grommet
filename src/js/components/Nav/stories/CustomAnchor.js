@@ -42,4 +42,4 @@ const CustomAnchor = () => (
   </Grommet>
 );
 
-storiesOf('Nav', module).add('Custom Anchor', () => <CustomAnchor />);
+storiesOf('Nav', module).add('Custom anchor', () => <CustomAnchor />);

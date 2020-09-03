@@ -35,4 +35,6 @@ const PlainDrop = () => {
   );
 };
 
-storiesOf('Drop', module).add('Plain', () => <PlainDrop />);
+storiesOf('Drop', module).add('Plain', () => <PlainDrop />, {
+  chromatic: { disable: true },
+});

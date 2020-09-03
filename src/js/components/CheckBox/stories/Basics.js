@@ -22,4 +22,4 @@ storiesOf('CheckBox', module)
   .add('Toggle', () => <SimpleCheckBox label="Choice" toggle />)
   .add('Disabled', () => <SimpleCheckBox label="Choice" checked disabled />)
   .add('Reverse', () => <SimpleCheckBox label="Choice" reverse />)
-  .add('No Label', () => <SimpleCheckBox />);
+  .add('No label', () => <SimpleCheckBox />);

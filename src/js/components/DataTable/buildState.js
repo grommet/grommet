@@ -65,7 +65,7 @@ export const filterAndSortData = (data, filters, onSearch, sort) => {
     }
   }
 
-  if (sort) {
+  if (sort && !sort.external) {
     const { property, direction } = sort;
     result = result === data ? [...data] : result; // don't sort caller's data
     const before = direction === 'asc' ? 1 : -1;

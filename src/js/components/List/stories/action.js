@@ -34,4 +34,4 @@ const ActionList = () => (
   </Grommet>
 );
 
-storiesOf('List', module).add('action', () => <ActionList />);
+storiesOf('List', module).add('Action', () => <ActionList />);
