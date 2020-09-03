@@ -43,11 +43,11 @@ var SimpleCarousel = function SimpleCarousel(_ref) {
 
 (0, _react2.storiesOf)('Carousel', module).add('Simple', function () {
   return /*#__PURE__*/_react["default"].createElement(SimpleCarousel, null);
-}).add('Initial Child', function () {
+}).add('Initial child', function () {
   return /*#__PURE__*/_react["default"].createElement(SimpleCarousel, {
     initialChild: 1
   });
-}).add('Without Controls', function () {
+}).add('Without controls', function () {
   return /*#__PURE__*/_react["default"].createElement(SimpleCarousel, {
     controls: false,
     play: 1500

@@ -46,6 +46,6 @@ var SizeUnitsMaskedInput = function SizeUnitsMaskedInput() {
   }))));
 };
 
-(0, _react2.storiesOf)('MaskedInput', module).add('Size + Units', function () {
+(0, _react2.storiesOf)('MaskedInput', module).add('Size + units', function () {
   return /*#__PURE__*/_react["default"].createElement(SizeUnitsMaskedInput, null);
 });

@@ -23,6 +23,6 @@ var BasicList = function BasicList() {
   })));
 };
 
-(0, _react2.storiesOf)('List', module).add('basic', function () {
+(0, _react2.storiesOf)('List', module).add('Basic', function () {
   return /*#__PURE__*/_react["default"].createElement(BasicList, null);
 });

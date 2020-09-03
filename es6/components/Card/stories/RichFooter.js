@@ -103,6 +103,6 @@ var Example = function Example() {
   }, "The greatest bridge builders of antiquity were the ancient Romans. The Romans built arch bridges and aqueducts that could stand in conditions that would damage or destroy earlier designs. Some stand today.")))));
 };
 
-storiesOf('Card', module).add('Rich Footer', function () {
+storiesOf('Card', module).add('Rich footer', function () {
   return /*#__PURE__*/React.createElement(Example, null);
 });

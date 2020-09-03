@@ -42,6 +42,6 @@ var ChildrenExample = function ChildrenExample() {
 };
 
 exports.ChildrenExample = ChildrenExample;
-(0, _react2.storiesOf)('List', module).add('children', function () {
+(0, _react2.storiesOf)('List', module).add('Children', function () {
   return /*#__PURE__*/_react["default"].createElement(ChildrenExample, null);
 });

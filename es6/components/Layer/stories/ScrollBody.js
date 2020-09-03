@@ -46,6 +46,6 @@ var ScrollBodyLayer = function ScrollBodyLayer() {
   })))));
 };
 
-storiesOf('Layer', module).add('Fixed Header, Scroll Body', function () {
+storiesOf('Layer', module).add('Fixed header, scroll body', function () {
   return /*#__PURE__*/React.createElement(ScrollBodyLayer, null);
 });

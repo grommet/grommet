@@ -39,6 +39,6 @@ var CheckBoxInsideButton = function CheckBoxInsideButton() {
   }))));
 };
 
-(0, _react2.storiesOf)('CheckBox', module).add('Inside a Button', function () {
+(0, _react2.storiesOf)('CheckBox', module).add('Inside a button', function () {
   return /*#__PURE__*/_react["default"].createElement(CheckBoxInsideButton, null);
 });

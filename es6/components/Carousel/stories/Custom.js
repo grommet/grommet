@@ -53,6 +53,6 @@ var CustomCarousel = function CustomCarousel(_ref) {
   })))));
 };
 
-storiesOf('Carousel', module).add('Custom Controls', function () {
+storiesOf('Carousel', module).add('Custom controls', function () {
   return /*#__PURE__*/React.createElement(CustomCarousel, null);
 });

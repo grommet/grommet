@@ -51,6 +51,6 @@ var LabelFormField = function LabelFormField() {
   }, "* Required Field"))));
 };
 
-storiesOf('Form', module).add('Required Label', function () {
+storiesOf('Form', module).add('Required label', function () {
   return /*#__PURE__*/React.createElement(LabelFormField, null);
 });

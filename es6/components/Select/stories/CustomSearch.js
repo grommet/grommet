@@ -217,6 +217,6 @@ var CustomSearchSelect = function CustomSearchSelect() {
   }, renderOption)));
 };
 
-storiesOf('Select', module).add('Custom Search', function () {
+storiesOf('Select', module).add('Custom search', function () {
   return /*#__PURE__*/React.createElement(CustomSearchSelect, null);
 });

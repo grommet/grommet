@@ -80,6 +80,6 @@ var ExampleResizable = function ExampleResizable() {
   })));
 };
 
-storiesOf('DataTable', module).add('Column Sizes resizeable', function () {
+storiesOf('DataTable', module).add('Column sizes resizeable', function () {
   return /*#__PURE__*/React.createElement(ExampleResizable, null);
 });

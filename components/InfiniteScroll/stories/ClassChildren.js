@@ -39,6 +39,6 @@ var ClassChildrenInfiniteScroll = function ClassChildrenInfiniteScroll(props) {
   })));
 };
 
-(0, _react2.storiesOf)('InfiniteScroll', module).add('Class Children', function () {
+(0, _react2.storiesOf)('InfiniteScroll', module).add('Class children', function () {
   return /*#__PURE__*/_react["default"].createElement(ClassChildrenInfiniteScroll, null);
 });

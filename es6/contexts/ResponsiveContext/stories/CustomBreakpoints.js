@@ -46,7 +46,7 @@ var customBreakpoints = {
     }
   }
 };
-storiesOf('ResponsiveContext', module).add('Custom Breakpoints', function () {
+storiesOf('ResponsiveContext', module).add('Custom breakpoints', function () {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: customBreakpoints,
     full: true

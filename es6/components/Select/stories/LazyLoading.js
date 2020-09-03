@@ -92,7 +92,7 @@ var LazyLoading = function LazyLoading() {
   })));
 };
 
-storiesOf('Select', module).add('Lazy Loading options', function () {
+storiesOf('Select', module).add('Lazy loading options', function () {
   return /*#__PURE__*/React.createElement(LazyLoading, null);
 }, {
   chromatic: {

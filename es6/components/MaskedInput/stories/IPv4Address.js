@@ -50,6 +50,6 @@ var IPv4MaskedInput = function IPv4MaskedInput() {
   }))));
 };
 
-storiesOf('MaskedInput', module).add('IPv4 Address', function () {
+storiesOf('MaskedInput', module).add('IPv4 address', function () {
   return /*#__PURE__*/React.createElement(IPv4MaskedInput, null);
 });

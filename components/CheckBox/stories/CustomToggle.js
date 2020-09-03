@@ -85,6 +85,6 @@ var ThemedToggle = function ThemedToggle(props) {
   }))));
 };
 
-(0, _react2.storiesOf)('CheckBox', module).add('Custom Toggle', function () {
+(0, _react2.storiesOf)('CheckBox', module).add('Custom toggle', function () {
   return /*#__PURE__*/_react["default"].createElement(ThemedToggle, null);
 });

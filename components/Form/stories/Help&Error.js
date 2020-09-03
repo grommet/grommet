@@ -30,6 +30,6 @@ var FormFieldHelpError = function FormFieldHelpError(props) {
   })))));
 };
 
-(0, _react2.storiesOf)('Form', module).add('Help and Error', function () {
+(0, _react2.storiesOf)('Form', module).add('Help and error', function () {
   return /*#__PURE__*/_react["default"].createElement(FormFieldHelpError, null);
 });

@@ -53,7 +53,7 @@ var customBreakpoints = {
     }
   }
 };
-(0, _react2.storiesOf)('ResponsiveContext', module).add('Custom Breakpoints', function () {
+(0, _react2.storiesOf)('ResponsiveContext', module).add('Custom breakpoints', function () {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customBreakpoints,
     full: true

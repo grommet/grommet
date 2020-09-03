@@ -67,6 +67,6 @@ var CustomAnchor = function CustomAnchor() {
   })), /*#__PURE__*/_react["default"].createElement(_grommet.Main, null, "Place main content here"))));
 };
 
-(0, _react2.storiesOf)('Nav', module).add('Custom Anchor', function () {
+(0, _react2.storiesOf)('Nav', module).add('Custom anchor', function () {
   return /*#__PURE__*/_react["default"].createElement(CustomAnchor, null);
 });

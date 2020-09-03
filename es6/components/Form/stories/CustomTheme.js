@@ -133,6 +133,6 @@ var CustomFormField = function CustomFormField() {
   }))))));
 };
 
-storiesOf('Form', module).add('Custom Theme', function () {
+storiesOf('Form', module).add('Custom theme', function () {
   return /*#__PURE__*/React.createElement(CustomFormField, null);
 });

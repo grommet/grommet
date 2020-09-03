@@ -43,6 +43,6 @@ var IconItemsMenu = function IconItemsMenu() {
   }, /*#__PURE__*/React.createElement(FormDown, null), /*#__PURE__*/React.createElement(Text, null, "Menu with Icon on the left")))));
 };
 
-storiesOf('Menu', module).add('Item with Icon', function () {
+storiesOf('Menu', module).add('Item with icon', function () {
   return /*#__PURE__*/React.createElement(IconItemsMenu, null);
 });

@@ -157,6 +157,6 @@ var Example = function Example() {
   }))))));
 };
 
-storiesOf('Form', module).add('Controlled Input', function () {
+storiesOf('Form', module).add('Controlled input', function () {
   return /*#__PURE__*/React.createElement(Example, null);
 });

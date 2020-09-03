@@ -51,6 +51,6 @@ var OnHeader = function OnHeader() {
   }))));
 };
 
-(0, _react2.storiesOf)('Nav', module).add('On Header', function () {
+(0, _react2.storiesOf)('Nav', module).add('On header', function () {
   return /*#__PURE__*/_react["default"].createElement(OnHeader, null);
 });

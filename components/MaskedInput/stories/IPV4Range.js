@@ -82,6 +82,6 @@ var IPv4RangeMaskedInput = function IPv4RangeMaskedInput() {
   }))));
 };
 
-(0, _react2.storiesOf)('MaskedInput', module).add('IPv4 Range', function () {
+(0, _react2.storiesOf)('MaskedInput', module).add('IPv4 range', function () {
   return /*#__PURE__*/_react["default"].createElement(IPv4RangeMaskedInput, null);
 });

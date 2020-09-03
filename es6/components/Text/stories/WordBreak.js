@@ -23,6 +23,6 @@ var WordBreak = function WordBreak() {
 /* eslint-enable max-len */
 
 
-storiesOf('Text', module).add('Word Break', function () {
+storiesOf('Text', module).add('Word break', function () {
   return /*#__PURE__*/React.createElement(WordBreak, null);
 });

@@ -24,6 +24,6 @@ var FormFieldHelpError = function FormFieldHelpError(props) {
   })))));
 };
 
-storiesOf('Form', module).add('Help and Error', function () {
+storiesOf('Form', module).add('Help and error', function () {
   return /*#__PURE__*/React.createElement(FormFieldHelpError, null);
 });

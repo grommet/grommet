@@ -38,6 +38,6 @@ var MeterInTable = function MeterInTable() {
   }))))));
 };
 
-(0, _react2.storiesOf)('Table', module).add('Meter Inside Table', function () {
+(0, _react2.storiesOf)('Table', module).add('Meter inside table', function () {
   return /*#__PURE__*/_react["default"].createElement(MeterInTable, null);
 });

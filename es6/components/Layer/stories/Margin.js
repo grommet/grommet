@@ -42,11 +42,11 @@ storiesOf('Layer', module).add('Margin', function () {
   return /*#__PURE__*/React.createElement(MarginLayer, {
     full: true
   });
-}).add('Margin (Center)', function () {
+}).add('Margin (center)', function () {
   return /*#__PURE__*/React.createElement(MarginLayer, {
     margin: "large"
   });
-}).add('Margin Top (Center)', function () {
+}).add('Margin top (center)', function () {
   return /*#__PURE__*/React.createElement(MarginLayer, {
     margin: {
       top: 'large'

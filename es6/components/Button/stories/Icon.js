@@ -69,6 +69,6 @@ var IconPlain = function IconPlain() {
   }))));
 };
 
-storiesOf('Button', module).add('Icon Plain', function () {
+storiesOf('Button', module).add('Icon plain', function () {
   return /*#__PURE__*/React.createElement(IconPlain, null);
 });

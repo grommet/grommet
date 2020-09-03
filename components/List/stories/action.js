@@ -44,6 +44,6 @@ var ActionList = function ActionList() {
   })));
 };
 
-(0, _react2.storiesOf)('List', module).add('action', function () {
+(0, _react2.storiesOf)('List', module).add('Action', function () {
   return /*#__PURE__*/_react["default"].createElement(ActionList, null);
 });

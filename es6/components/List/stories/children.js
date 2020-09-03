@@ -27,6 +27,6 @@ export var ChildrenExample = function ChildrenExample() {
     }, datum));
   })));
 };
-storiesOf('List', module).add('children', function () {
+storiesOf('List', module).add('Children', function () {
   return /*#__PURE__*/React.createElement(ChildrenExample, null);
 });

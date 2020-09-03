@@ -223,6 +223,6 @@ var FieldSpacingOptions = function FieldSpacingOptions() {
   })))))));
 };
 
-storiesOf('Form', module).add('FormField Spacing', function () {
+storiesOf('Form', module).add('FormField spacing', function () {
   return /*#__PURE__*/React.createElement(FieldSpacingOptions, null);
 });

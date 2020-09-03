@@ -66,6 +66,6 @@ var DSTCalendar = function DSTCalendar() {
   })))));
 };
 
-(0, _react2.storiesOf)('Calendar', module).add('Daylight Savings Time', function () {
+(0, _react2.storiesOf)('Calendar', module).add('Daylight savings time', function () {
   return /*#__PURE__*/_react["default"].createElement(DSTCalendar, null);
 });

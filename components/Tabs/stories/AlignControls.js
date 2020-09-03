@@ -70,6 +70,6 @@ var AlignControls = function AlignControls() {
   })))));
 };
 
-(0, _react2.storiesOf)('Tabs', module).add('Align Controls', function () {
+(0, _react2.storiesOf)('Tabs', module).add('Align controls', function () {
   return /*#__PURE__*/_react["default"].createElement(AlignControls, null);
 });

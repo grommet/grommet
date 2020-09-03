@@ -59,6 +59,6 @@ var CustomCarousel = function CustomCarousel(_ref) {
   })))));
 };
 
-(0, _react2.storiesOf)('Carousel', module).add('Custom Controls', function () {
+(0, _react2.storiesOf)('Carousel', module).add('Custom controls', function () {
   return /*#__PURE__*/_react["default"].createElement(CustomCarousel, null);
 });

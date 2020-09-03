@@ -31,6 +31,6 @@ var WordBreak = function WordBreak() {
 /* eslint-enable max-len */
 
 
-(0, _react2.storiesOf)('Text', module).add('Word Break', function () {
+(0, _react2.storiesOf)('Text', module).add('Word break', function () {
   return /*#__PURE__*/_react["default"].createElement(WordBreak, null);
 });

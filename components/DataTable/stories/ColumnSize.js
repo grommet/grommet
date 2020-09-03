@@ -206,6 +206,6 @@ var Example = function Example() {
   })));
 };
 
-(0, _react2.storiesOf)('DataTable', module).add('Column Sizes', function () {
+(0, _react2.storiesOf)('DataTable', module).add('Column sizes', function () {
   return /*#__PURE__*/_react["default"].createElement(Example, null);
 });

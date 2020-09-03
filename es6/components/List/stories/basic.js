@@ -15,6 +15,6 @@ var BasicList = function BasicList() {
   })));
 };
 
-storiesOf('List', module).add('basic', function () {
+storiesOf('List', module).add('Basic', function () {
   return /*#__PURE__*/React.createElement(BasicList, null);
 });

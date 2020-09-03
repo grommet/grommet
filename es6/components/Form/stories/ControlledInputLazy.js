@@ -166,6 +166,6 @@ var Example = function Example() {
   }))))));
 };
 
-storiesOf('Form', module).add('Controlled Input lazy', function () {
+storiesOf('Form', module).add('Controlled input lazy', function () {
   return /*#__PURE__*/React.createElement(Example, null);
 });

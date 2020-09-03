@@ -84,6 +84,6 @@ var CustomEdgeControl = function CustomEdgeControl(_ref) {
   }, rest)))));
 };
 
-(0, _react2.storiesOf)('RangeSelector', module).add('Custom Edge Controls', function () {
+(0, _react2.storiesOf)('RangeSelector', module).add('Custom edge controls', function () {
   return /*#__PURE__*/_react["default"].createElement(CustomEdgeControl, null);
 });

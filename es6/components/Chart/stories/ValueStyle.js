@@ -57,6 +57,6 @@ var Example = function Example() {
   })));
 };
 
-storiesOf('Chart', module).add('Value Style', function () {
+storiesOf('Chart', module).add('Value style', function () {
   return /*#__PURE__*/React.createElement(Example, null);
 });

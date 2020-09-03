@@ -72,6 +72,6 @@ var CustomRadioButtomGroup = function CustomRadioButtomGroup(_ref) {
   }, props))));
 };
 
-storiesOf('RadioButtonGroup', module).add('Custom Theme', function () {
+storiesOf('RadioButtonGroup', module).add('Custom theme', function () {
   return /*#__PURE__*/React.createElement(CustomRadioButtomGroup, null);
 });

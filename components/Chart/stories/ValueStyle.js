@@ -65,6 +65,6 @@ var Example = function Example() {
   })));
 };
 
-(0, _react2.storiesOf)('Chart', module).add('Value Style', function () {
+(0, _react2.storiesOf)('Chart', module).add('Value style', function () {
   return /*#__PURE__*/_react["default"].createElement(Example, null);
 });

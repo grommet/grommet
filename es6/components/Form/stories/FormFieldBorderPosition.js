@@ -141,6 +141,6 @@ var FormFieldBorderPosition = function FormFieldBorderPosition() {
   }))));
 };
 
-storiesOf('Form', module).add('Field Border Positions', function () {
+storiesOf('Form', module).add('Field border positions', function () {
   return /*#__PURE__*/React.createElement(FormFieldBorderPosition, null);
 });

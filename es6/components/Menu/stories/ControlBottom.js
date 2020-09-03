@@ -32,7 +32,7 @@ var ControlBottom = function ControlBottom() {
   })));
 };
 
-storiesOf('Menu', module).add('Bottom Control Button', function () {
+storiesOf('Menu', module).add('Bottom control button', function () {
   return /*#__PURE__*/React.createElement(ControlBottom, null);
 }, {
   chromatic: {

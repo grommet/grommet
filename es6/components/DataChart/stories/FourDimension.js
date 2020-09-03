@@ -55,6 +55,6 @@ var Example = function Example() {
   })));
 };
 
-storiesOf('DataChart', module).add('Four Dimensions', function () {
+storiesOf('DataChart', module).add('Four dimensions', function () {
   return /*#__PURE__*/React.createElement(Example, null);
 });

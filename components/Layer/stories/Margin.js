@@ -49,11 +49,11 @@ var MarginLayer = function MarginLayer(_ref) {
   return /*#__PURE__*/_react["default"].createElement(MarginLayer, {
     full: true
   });
-}).add('Margin (Center)', function () {
+}).add('Margin (center)', function () {
   return /*#__PURE__*/_react["default"].createElement(MarginLayer, {
     margin: "large"
   });
-}).add('Margin Top (Center)', function () {
+}).add('Margin top (center)', function () {
   return /*#__PURE__*/_react["default"].createElement(MarginLayer, {
     margin: {
       top: 'large'

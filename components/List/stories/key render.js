@@ -43,6 +43,6 @@ var RenderedList = function RenderedList() {
   })));
 };
 
-(0, _react2.storiesOf)('List', module).add('key render', function () {
+(0, _react2.storiesOf)('List', module).add('Key render', function () {
   return /*#__PURE__*/_react["default"].createElement(RenderedList, null);
 });

@@ -89,6 +89,6 @@ var CustomTabs = function CustomTabs() {
   }, "This Tab has a different styling than the RichTabTitle (e.g tab.active.color)")));
 };
 
-storiesOf('Tabs', module).add('Custom Theme', function () {
+storiesOf('Tabs', module).add('Custom theme', function () {
   return /*#__PURE__*/React.createElement(CustomTabs, null);
 });

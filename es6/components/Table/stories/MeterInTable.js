@@ -30,6 +30,6 @@ var MeterInTable = function MeterInTable() {
   }))))));
 };
 
-storiesOf('Table', module).add('Meter Inside Table', function () {
+storiesOf('Table', module).add('Meter inside table', function () {
   return /*#__PURE__*/React.createElement(MeterInTable, null);
 });

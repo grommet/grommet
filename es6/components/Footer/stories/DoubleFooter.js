@@ -72,6 +72,6 @@ var DoubleFooter = function DoubleFooter() {
   }, "\xA9 2019 Copyright")));
 };
 
-storiesOf('Footer', module).add('DoubleFooter', function () {
+storiesOf('Footer', module).add('Double footer', function () {
   return /*#__PURE__*/React.createElement(DoubleFooter, null);
 });

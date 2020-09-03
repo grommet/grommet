@@ -130,6 +130,6 @@ var DateTimeDropButton = function DateTimeDropButton() {
   }, date ? new Date(date).toLocaleDateString() + " " + time : 'Select date & time'), /*#__PURE__*/_react["default"].createElement(_grommetIcons.Schedule, null)))));
 };
 
-(0, _react2.storiesOf)('MaskedInput', module).add('Date Time Drop', function () {
+(0, _react2.storiesOf)('MaskedInput', module).add('Date time drop', function () {
   return /*#__PURE__*/_react["default"].createElement(DateTimeDropButton, null);
 });

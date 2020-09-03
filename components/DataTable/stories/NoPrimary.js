@@ -36,6 +36,6 @@ var Example = function Example() {
   })));
 };
 
-(0, _react2.storiesOf)('DataTable', module).add('No Primary', function () {
+(0, _react2.storiesOf)('DataTable', module).add('No primary', function () {
   return /*#__PURE__*/_react["default"].createElement(Example, null);
 });

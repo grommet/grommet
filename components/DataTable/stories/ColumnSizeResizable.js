@@ -92,6 +92,6 @@ var ExampleResizable = function ExampleResizable() {
   })));
 };
 
-(0, _react2.storiesOf)('DataTable', module).add('Column Sizes resizeable', function () {
+(0, _react2.storiesOf)('DataTable', module).add('Column sizes resizeable', function () {
   return /*#__PURE__*/_react["default"].createElement(ExampleResizable, null);
 });

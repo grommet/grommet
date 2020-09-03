@@ -34,6 +34,6 @@ var ComponentOverrideMarkdown = function ComponentOverrideMarkdown() {
 
 storiesOf('Markdown', module).add('Simple', function () {
   return /*#__PURE__*/React.createElement(SimpleMarkdown, null);
-}).add('Component Override Markdown', function () {
+}).add('Component override markdown', function () {
   return /*#__PURE__*/React.createElement(ComponentOverrideMarkdown, null);
 });

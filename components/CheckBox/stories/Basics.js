@@ -59,6 +59,6 @@ var SimpleCheckBox = function SimpleCheckBox(_ref) {
     label: "Choice",
     reverse: true
   });
-}).add('No Label', function () {
+}).add('No label', function () {
   return /*#__PURE__*/_react["default"].createElement(SimpleCheckBox, null);
 });

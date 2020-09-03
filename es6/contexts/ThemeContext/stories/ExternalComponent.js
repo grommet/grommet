@@ -23,6 +23,6 @@ var ExternalComponentWithTheme = function ExternalComponentWithTheme() {
   }));
 };
 
-storiesOf('Theme', module).add('External Components', function () {
+storiesOf('Theme', module).add('External components', function () {
   return /*#__PURE__*/React.createElement(ExternalComponentWithTheme, null);
 });

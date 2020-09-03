@@ -208,6 +208,6 @@ var MinMaxSizesBox = function MinMaxSizesBox() {
   }, /*#__PURE__*/React.createElement(Text, null, "min-width=small, min-width=small")))));
 };
 
-storiesOf('Box', module).add('Min/Max sizes', function () {
+storiesOf('Box', module).add('Min/max sizes', function () {
   return /*#__PURE__*/React.createElement(MinMaxSizesBox, null);
 });

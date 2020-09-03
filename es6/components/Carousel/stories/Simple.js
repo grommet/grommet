@@ -38,11 +38,11 @@ var SimpleCarousel = function SimpleCarousel(_ref) {
 
 storiesOf('Carousel', module).add('Simple', function () {
   return /*#__PURE__*/React.createElement(SimpleCarousel, null);
-}).add('Initial Child', function () {
+}).add('Initial child', function () {
   return /*#__PURE__*/React.createElement(SimpleCarousel, {
     initialChild: 1
   });
-}).add('Without Controls', function () {
+}).add('Without controls', function () {
   return /*#__PURE__*/React.createElement(SimpleCarousel, {
     controls: false,
     play: 1500

@@ -38,4 +38,4 @@ const CustomFormField = () => (
   </Grommet>
 );
 
-storiesOf('FormField', module).add('Custom Theme', () => <CustomFormField />);
+storiesOf('FormField', module).add('Custom theme', () => <CustomFormField />);

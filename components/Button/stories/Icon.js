@@ -75,6 +75,6 @@ var IconPlain = function IconPlain() {
   }))));
 };
 
-(0, _react2.storiesOf)('Button', module).add('Icon Plain', function () {
+(0, _react2.storiesOf)('Button', module).add('Icon plain', function () {
   return /*#__PURE__*/_react["default"].createElement(IconPlain, null);
 });

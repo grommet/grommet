@@ -41,6 +41,6 @@ var CollapsableNav = function CollapsableNav() {
   })));
 };
 
-storiesOf('Nav', module).add('Collapsable Nav', function () {
+storiesOf('Nav', module).add('Collapsable nav', function () {
   return /*#__PURE__*/React.createElement(CollapsableNav, null);
 });

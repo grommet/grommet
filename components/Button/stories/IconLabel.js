@@ -52,6 +52,6 @@ var IconLabel = function IconLabel() {
   }))));
 };
 
-(0, _react2.storiesOf)('Button', module).add('Icon Label', function () {
+(0, _react2.storiesOf)('Button', module).add('Icon label', function () {
   return /*#__PURE__*/_react["default"].createElement(IconLabel, null);
 });

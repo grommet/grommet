@@ -41,6 +41,6 @@ var CustomSizeCalendar = function CustomSizeCalendar() {
   })));
 };
 
-(0, _react2.storiesOf)('Calendar', module).add('Heading Size', function () {
+(0, _react2.storiesOf)('Calendar', module).add('Heading size', function () {
   return /*#__PURE__*/_react["default"].createElement(CustomSizeCalendar, null);
 });

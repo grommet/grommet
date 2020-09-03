@@ -73,6 +73,6 @@ var CheckBoxWithStickyDiv = function CheckBoxWithStickyDiv() {
   }))));
 };
 
-(0, _react2.storiesOf)('CheckBox', module).add('With Sticky Div', function () {
+(0, _react2.storiesOf)('CheckBox', module).add('With sticky div', function () {
   return /*#__PURE__*/_react["default"].createElement(CheckBoxWithStickyDiv, null);
 });

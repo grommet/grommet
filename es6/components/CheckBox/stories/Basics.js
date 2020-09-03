@@ -50,6 +50,6 @@ storiesOf('CheckBox', module).add('Simple', function () {
     label: "Choice",
     reverse: true
   });
-}).add('No Label', function () {
+}).add('No label', function () {
   return /*#__PURE__*/React.createElement(SimpleCheckBox, null);
 });

@@ -136,6 +136,6 @@ var CustomFormFieldStates = function CustomFormFieldStates() {
   }))))));
 };
 
-(0, _react2.storiesOf)('Form', module).add('Field States Custom', function () {
+(0, _react2.storiesOf)('Form', module).add('Field states custom', function () {
   return /*#__PURE__*/_react["default"].createElement(CustomFormFieldStates, null);
 });

@@ -42,6 +42,6 @@ var SelectionList = function SelectionList() {
   })));
 };
 
-(0, _react2.storiesOf)('List', module).add('selection', function () {
+(0, _react2.storiesOf)('List', module).add('Selection', function () {
   return /*#__PURE__*/_react["default"].createElement(SelectionList, null);
 });

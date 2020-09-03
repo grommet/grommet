@@ -127,6 +127,6 @@ var ResponsiveGridExample = function ResponsiveGridExample() {
   })), /*#__PURE__*/React.createElement(Paragraph, null, "Below a certain threshold, Columns 1 & 2 switch to 50% and Column 3 moves down to a new spot in the grid."));
 };
 
-storiesOf('ResponsiveContext', module).add('Responsive Grid', function () {
+storiesOf('ResponsiveContext', module).add('Responsive grid', function () {
   return /*#__PURE__*/React.createElement(ResponsiveGridExample, null);
 });

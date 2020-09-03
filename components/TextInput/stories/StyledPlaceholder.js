@@ -15,6 +15,6 @@ var StyledPlaceholder = function StyledPlaceholder() {
   })));
 };
 
-(0, _react2.storiesOf)('TextInput', module).add('StyledPlaceholder', function () {
+(0, _react2.storiesOf)('TextInput', module).add('Styled placeholder', function () {
   return /*#__PURE__*/_react["default"].createElement(StyledPlaceholder, null);
 });

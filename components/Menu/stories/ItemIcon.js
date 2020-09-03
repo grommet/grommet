@@ -50,6 +50,6 @@ var IconItemsMenu = function IconItemsMenu() {
   }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.FormDown, null), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Menu with Icon on the left")))));
 };
 
-(0, _react2.storiesOf)('Menu', module).add('Item with Icon', function () {
+(0, _react2.storiesOf)('Menu', module).add('Item with icon', function () {
   return /*#__PURE__*/_react["default"].createElement(IconItemsMenu, null);
 });

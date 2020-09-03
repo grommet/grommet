@@ -43,6 +43,6 @@ var OnHeader = function OnHeader() {
   }))));
 };
 
-storiesOf('Nav', module).add('On Header', function () {
+storiesOf('Nav', module).add('On header', function () {
   return /*#__PURE__*/React.createElement(OnHeader, null);
 });

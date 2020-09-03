@@ -41,6 +41,6 @@ var UnSelect = function UnSelect() {
   })));
 };
 
-storiesOf('Select', module).add('UnSelect', function () {
+storiesOf('Select', module).add('Unselect', function () {
   return /*#__PURE__*/React.createElement(UnSelect, null);
 });

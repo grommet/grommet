@@ -187,6 +187,6 @@ var ResponsiveGrid = function ResponsiveGrid() {
   }, listAnimalsBoxes)));
 };
 
-storiesOf('Grid', module).add('Responsive Grid', function () {
+storiesOf('Grid', module).add('Responsive grid', function () {
   return /*#__PURE__*/React.createElement(ResponsiveGrid, null);
 });

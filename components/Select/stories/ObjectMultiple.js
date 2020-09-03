@@ -74,6 +74,6 @@ var Example = function Example() {
   })));
 };
 
-(0, _react2.storiesOf)('Select', module).add('Object Multiple', function () {
+(0, _react2.storiesOf)('Select', module).add('Object multiple', function () {
   return /*#__PURE__*/_react["default"].createElement(Example, null);
 });

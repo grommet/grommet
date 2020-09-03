@@ -27,6 +27,6 @@ var Example = function Example() {
   })));
 };
 
-storiesOf('DataTable', module).add('No Primary', function () {
+storiesOf('DataTable', module).add('No primary', function () {
   return /*#__PURE__*/React.createElement(Example, null);
 });

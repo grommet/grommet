@@ -122,6 +122,6 @@ var DateTimeDropButton = function DateTimeDropButton() {
   }, date ? new Date(date).toLocaleDateString() + " " + time : 'Select date & time'), /*#__PURE__*/React.createElement(Schedule, null)))));
 };
 
-storiesOf('MaskedInput', module).add('Date Time Drop', function () {
+storiesOf('MaskedInput', module).add('Date time drop', function () {
   return /*#__PURE__*/React.createElement(DateTimeDropButton, null);
 });

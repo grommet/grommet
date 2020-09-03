@@ -9,6 +9,6 @@ var StyledPlaceholder = function StyledPlaceholder() {
   })));
 };
 
-storiesOf('TextInput', module).add('StyledPlaceholder', function () {
+storiesOf('TextInput', module).add('Styled placeholder', function () {
   return /*#__PURE__*/React.createElement(StyledPlaceholder, null);
 });

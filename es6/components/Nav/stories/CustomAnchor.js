@@ -58,6 +58,6 @@ var CustomAnchor = function CustomAnchor() {
   })), /*#__PURE__*/React.createElement(Main, null, "Place main content here"))));
 };
 
-storiesOf('Nav', module).add('Custom Anchor', function () {
+storiesOf('Nav', module).add('Custom anchor', function () {
   return /*#__PURE__*/React.createElement(CustomAnchor, null);
 });

@@ -44,6 +44,6 @@ var IconLabel = function IconLabel() {
   }))));
 };
 
-storiesOf('Button', module).add('Icon Label', function () {
+storiesOf('Button', module).add('Icon label', function () {
   return /*#__PURE__*/React.createElement(IconLabel, null);
 });

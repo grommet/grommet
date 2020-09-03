@@ -35,6 +35,6 @@ var ActionList = function ActionList() {
   })));
 };
 
-storiesOf('List', module).add('action', function () {
+storiesOf('List', module).add('Action', function () {
   return /*#__PURE__*/React.createElement(ActionList, null);
 });

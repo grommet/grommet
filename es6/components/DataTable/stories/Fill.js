@@ -41,6 +41,6 @@ var Example = function Example() {
   })));
 };
 
-storiesOf('DataTable', module).add('Fill and Pin', function () {
+storiesOf('DataTable', module).add('Fill and pin', function () {
   return /*#__PURE__*/React.createElement(Example, null);
 });

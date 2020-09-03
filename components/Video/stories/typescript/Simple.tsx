@@ -28,4 +28,4 @@ const SimpleVideo = props => (
 
 storiesOf('Video', module)
   .add('Simple', () => <SimpleVideo />)
-  .add('Controls Below', () => <SimpleVideo controls="below" />);
+  .add('Controls below', () => <SimpleVideo controls="below" />);

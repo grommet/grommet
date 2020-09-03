@@ -35,6 +35,6 @@ var RenderedList = function RenderedList() {
   })));
 };
 
-storiesOf('List', module).add('key render', function () {
+storiesOf('List', module).add('Key render', function () {
   return /*#__PURE__*/React.createElement(RenderedList, null);
 });

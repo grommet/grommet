@@ -34,6 +34,6 @@ var SelectionList = function SelectionList() {
   })));
 };
 
-storiesOf('List', module).add('selection', function () {
+storiesOf('List', module).add('Selection', function () {
   return /*#__PURE__*/React.createElement(SelectionList, null);
 });

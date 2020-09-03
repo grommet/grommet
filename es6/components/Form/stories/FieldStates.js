@@ -67,6 +67,6 @@ var FormFieldStates = function FormFieldStates() {
   }))))));
 };
 
-storiesOf('Form', module).add('Field States', function () {
+storiesOf('Form', module).add('Field states', function () {
   return /*#__PURE__*/React.createElement(FormFieldStates, null);
 });
