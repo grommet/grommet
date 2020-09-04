@@ -5,12 +5,14 @@ exports.themeDoc = exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
-var _utils = require("../../utils");
+var _propTypes = require("../../utils/prop-types");
+
+var _mixins = require("../../utils/mixins");
 
 var doc = function doc(Grommet) {
-  var DocumentedGrommet = (0, _reactDesc.describe)(Grommet).availableAt((0, _utils.getAvailableAtBadge)('Grommet')).description('The top level Grommet container.').usage("import { Grommet } from 'grommet';\n<Grommet>...</Grommet>").intrinsicElement('div');
+  var DocumentedGrommet = (0, _reactDesc.describe)(Grommet).availableAt((0, _mixins.getAvailableAtBadge)('Grommet')).description('The top level Grommet container.').usage("import { Grommet } from 'grommet';\n<Grommet>...</Grommet>").intrinsicElement('div');
   DocumentedGrommet.propTypes = {
-    background: _utils.backgroundDoc,
+    background: _propTypes.backgroundDoc,
     dir: _reactDesc.PropTypes.oneOf(['rtl']).description('Layout direction for right to left contexts'),
     full: _reactDesc.PropTypes.bool.description('Whether to take the whole viewport.').defaultValue(false),
     plain: _reactDesc.PropTypes.bool.description("Whether or not Grommet should apply a global font-family, font-size,\n        and line-height.").defaultValue(false),

@@ -1,7 +1,9 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import { describe, PropTypes } from 'react-desc';
-import { colorPropType, genericProps, getAvailableAtBadge, hoverIndicatorPropType, themeDocUtils } from '../../utils';
+import { genericProps, colorPropType, hoverIndicatorPropType } from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
+import { themeDocUtils } from '../../utils/themeDocUtils';
 export var doc = function doc(Button) {
   var DocumentedButton = describe(Button).availableAt(getAvailableAtBadge('Button')).description('A button.').details("You can provide a single function child that will be called with\n      'hover' and 'focus' keys. This allows you to customize the rendering\n      of the Button in those cases.").usage("import { Button } from 'grommet';\n<Button primary label='Label' />").intrinsicElement('button');
   DocumentedButton.propTypes = _extends({}, genericProps, {

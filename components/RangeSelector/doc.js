@@ -5,12 +5,14 @@ exports.themeDoc = exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
-var _utils = require("../../utils");
+var _propTypes = require("../../utils/prop-types");
+
+var _mixins = require("../../utils/mixins");
 
 var doc = function doc(RangeSelector) {
-  var DocumentedRangeSelector = (0, _reactDesc.describe)(RangeSelector).availableAt((0, _utils.getAvailableAtBadge)('RangeSelector')).description('A control to input a range of values.').usage("import { RangeSelector } from 'grommet';\n<RangeSelector />").intrinsicElement('div');
+  var DocumentedRangeSelector = (0, _reactDesc.describe)(RangeSelector).availableAt((0, _mixins.getAvailableAtBadge)('RangeSelector')).description('A control to input a range of values.').usage("import { RangeSelector } from 'grommet';\n<RangeSelector />").intrinsicElement('div');
   DocumentedRangeSelector.propTypes = {
-    color: _utils.colorPropType.description('What color to use to indicate the selection.'),
+    color: _propTypes.colorPropType.description('What color to use to indicate the selection.'),
     direction: _reactDesc.PropTypes.oneOf(['horizontal', 'vertical']).description('').defaultValue('horizontal'),
     invert: _reactDesc.PropTypes.bool.description('Whether to indicate what has not been selected.'),
     max: _reactDesc.PropTypes.number.description('The maximum value permitted.').defaultValue(100),

@@ -1,7 +1,8 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import { describe, PropTypes } from 'react-desc';
-import { colorPropType, genericProps, getAvailableAtBadge } from '../../utils';
+import { colorPropType, genericProps } from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
 export var themeDoc = {
   'worldMap.color': {
     description: 'The color for each individual dot when a color is not passed as a prop',

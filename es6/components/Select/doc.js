@@ -1,7 +1,8 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import { describe, PropTypes } from 'react-desc';
-import { genericProps, getAvailableAtBadge } from '../../utils';
+import { genericProps } from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
 export var doc = function doc(Select) {
   var DocumentedSelect = describe(Select).availableAt(getAvailableAtBadge('Select')).description('A control to select a value, with optional search.').usage("import { Select } from 'grommet';\n<Select />"); // We don't include svg due to a collision on the values property
   // .intrinsicElement('select');

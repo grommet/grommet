@@ -5,10 +5,10 @@ exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
-var _utils = require("../../utils");
+var _mixins = require("../../utils/mixins");
 
 var doc = function doc(InfiniteScroll) {
-  var DocumentedInfiniteScroll = (0, _reactDesc.describe)(InfiniteScroll).availableAt((0, _utils.getAvailableAtBadge)('InfiniteScroll')).description('A container that lazily renders items.').usage("import { InfiniteScroll } from 'grommet';\n<InfiniteScroll />");
+  var DocumentedInfiniteScroll = (0, _reactDesc.describe)(InfiniteScroll).availableAt((0, _mixins.getAvailableAtBadge)('InfiniteScroll')).description('A container that lazily renders items.').usage("import { InfiniteScroll } from 'grommet';\n<InfiniteScroll />");
   DocumentedInfiniteScroll.propTypes = {
     children: _reactDesc.PropTypes.func.description("Function that will be called when each item is rendered. It will be\n      called with three arguments, the item to render, the index of the item,\n      and a ref that should be applied to the element. For example:\n      {(item, index, ref) => <li key={index} ref={ref}>{item}</li>}"),
     items: _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.any).description('The children callback will be called to render each item.'),

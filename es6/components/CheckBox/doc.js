@@ -1,5 +1,5 @@
 import { describe, PropTypes } from 'react-desc';
-import { getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge } from '../../utils/mixins';
 export var doc = function doc(CheckBox) {
   var DocumentedCheckBox = describe(CheckBox).availableAt(getAvailableAtBadge('CheckBox')).description('A checkbox toggle control.').usage("import { CheckBox } from 'grommet';\n<CheckBox />").intrinsicElement('input');
   DocumentedCheckBox.propTypes = {

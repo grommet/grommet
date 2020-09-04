@@ -4,7 +4,6 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 import React, { forwardRef, useCallback, useContext, useMemo, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
-import PropTypes from 'react-desc/lib/PropTypes';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -282,19 +281,6 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
     })), align.bottom === 'bottom' ? controlMirror : undefined))
   }), content));
 });
-Menu.propTypes = {
-  dropAlign: PropTypes.shape({
-    top: PropTypes.string,
-    left: PropTypes.string
-  }),
-  dropProps: PropTypes.shape({}),
-  items: PropTypes.arrayOf({}),
-  messages: PropTypes.shape({
-    openMenu: PropTypes.string,
-    closeMenu: PropTypes.string
-  }),
-  justifyContent: PropTypes.string
-};
 Menu.defaultProps = {
   dropAlign: {
     top: 'top',

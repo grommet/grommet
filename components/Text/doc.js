@@ -5,23 +5,27 @@ exports.themeDoc = exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
-var _utils = require("../../utils");
+var _propTypes = require("../../utils/prop-types");
+
+var _mixins = require("../../utils/mixins");
+
+var _themeDocUtils = require("../../utils/themeDocUtils");
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 var doc = function doc(Text) {
-  var DocumentedText = (0, _reactDesc.describe)(Text).availableAt((0, _utils.getAvailableAtBadge)('Text')).description('Arbitrary text.').usage("import { Text } from 'grommet';\n<Text />").intrinsicElement('span');
-  DocumentedText.propTypes = _extends({}, _utils.genericProps, {
-    color: _utils.colorPropType.description('A color identifier to use for the text color.'),
-    margin: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['none'].concat(_utils.MARGIN_SIZES)), _reactDesc.PropTypes.shape({
-      bottom: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(_utils.MARGIN_SIZES), _reactDesc.PropTypes.string]),
-      end: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(_utils.MARGIN_SIZES), _reactDesc.PropTypes.string]),
-      horizontal: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(_utils.MARGIN_SIZES), _reactDesc.PropTypes.string]),
-      left: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(_utils.MARGIN_SIZES), _reactDesc.PropTypes.string]),
-      right: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(_utils.MARGIN_SIZES), _reactDesc.PropTypes.string]),
-      start: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(_utils.MARGIN_SIZES), _reactDesc.PropTypes.string]),
-      top: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(_utils.MARGIN_SIZES), _reactDesc.PropTypes.string]),
-      vertical: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(_utils.MARGIN_SIZES), _reactDesc.PropTypes.string])
+  var DocumentedText = (0, _reactDesc.describe)(Text).availableAt((0, _mixins.getAvailableAtBadge)('Text')).description('Arbitrary text.').usage("import { Text } from 'grommet';\n<Text />").intrinsicElement('span');
+  DocumentedText.propTypes = _extends({}, _propTypes.genericProps, {
+    color: _propTypes.colorPropType.description('A color identifier to use for the text color.'),
+    margin: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['none'].concat(_propTypes.MARGIN_SIZES)), _reactDesc.PropTypes.shape({
+      bottom: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(_propTypes.MARGIN_SIZES), _reactDesc.PropTypes.string]),
+      end: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(_propTypes.MARGIN_SIZES), _reactDesc.PropTypes.string]),
+      horizontal: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(_propTypes.MARGIN_SIZES), _reactDesc.PropTypes.string]),
+      left: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(_propTypes.MARGIN_SIZES), _reactDesc.PropTypes.string]),
+      right: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(_propTypes.MARGIN_SIZES), _reactDesc.PropTypes.string]),
+      start: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(_propTypes.MARGIN_SIZES), _reactDesc.PropTypes.string]),
+      top: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(_propTypes.MARGIN_SIZES), _reactDesc.PropTypes.string]),
+      vertical: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(_propTypes.MARGIN_SIZES), _reactDesc.PropTypes.string])
     }), _reactDesc.PropTypes.string]).description("The amount of margin around the component. An object can be \n    specified to distinguish horizontal margin, vertical margin, and margin on \n    a particular side. For vertical margin to be applied, Text needs to be \n    contained within a layout component (such as Box or a generic div) or \n    behave as a div (by applying as=\"div\" or a display style of \n    inline-block)."),
     size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']), _reactDesc.PropTypes.string]).description("The font size and line height are primarily driven by the chosen tag. \nBut, it can be adjusted via this size property. The tag should be set for \nsemantic correctness and accessibility. This size property allows for stylistic\nadjustments.").defaultValue('medium'),
     tag: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.func]).description("The DOM tag to use for the element. NOTE: This is deprecated in favor\n         of indicating the DOM tag via the 'as' property."),
@@ -52,6 +56,6 @@ var themeDoc = _extends({
     type: 'string | (props) => {}',
     defaultValue: undefined
   }
-}, _utils.themeDocUtils.edgeStyle('The possible sizes for margin.'));
+}, _themeDocUtils.themeDocUtils.edgeStyle('The possible sizes for margin.'));
 
 exports.themeDoc = themeDoc;

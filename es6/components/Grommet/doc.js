@@ -1,5 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
-import { backgroundDoc, getAvailableAtBadge } from '../../utils';
+import { backgroundDoc } from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
 export var doc = function doc(Grommet) {
   var DocumentedGrommet = describe(Grommet).availableAt(getAvailableAtBadge('Grommet')).description('The top level Grommet container.').usage("import { Grommet } from 'grommet';\n<Grommet>...</Grommet>").intrinsicElement('div');
   DocumentedGrommet.propTypes = {

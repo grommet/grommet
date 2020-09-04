@@ -1,5 +1,5 @@
 import { describe, PropTypes } from 'react-desc';
-import { getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge } from '../../utils/mixins';
 export var doc = function doc(InfiniteScroll) {
   var DocumentedInfiniteScroll = describe(InfiniteScroll).availableAt(getAvailableAtBadge('InfiniteScroll')).description('A container that lazily renders items.').usage("import { InfiniteScroll } from 'grommet';\n<InfiniteScroll />");
   DocumentedInfiniteScroll.propTypes = {

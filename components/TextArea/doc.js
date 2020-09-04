@@ -5,12 +5,14 @@ exports.themeDoc = exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
-var _utils = require("../../utils");
+var _mixins = require("../../utils/mixins");
+
+var _themeDocUtils = require("../../utils/themeDocUtils");
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 var doc = function doc(TextArea) {
-  var DocumentedTextArea = (0, _reactDesc.describe)(TextArea).availableAt((0, _utils.getAvailableAtBadge)('TextArea')).description('A control to input multiple lines of text.').usage("import { TextArea } from 'grommet';\n<TextArea id='item' name='item' />").intrinsicElement('textarea');
+  var DocumentedTextArea = (0, _reactDesc.describe)(TextArea).availableAt((0, _mixins.getAvailableAtBadge)('TextArea')).description('A control to input multiple lines of text.').usage("import { TextArea } from 'grommet';\n<TextArea id='item' name='item' />").intrinsicElement('textarea');
   DocumentedTextArea.propTypes = {
     a11yTitle: _reactDesc.PropTypes.string.description("Custom label to be used by screen readers.\n      When provided, an aria-label will be added to the element."),
     id: _reactDesc.PropTypes.string.description('The id attribute of the textarea.'),
@@ -63,6 +65,6 @@ var themeDoc = _extends({
     type: 'number',
     defaultValue: 0.3
   }
-}, _utils.themeDocUtils.focusStyle, _utils.themeDocUtils.placeholderStyle, _utils.themeDocUtils.inputStyle, _utils.themeDocUtils.disabledStyle);
+}, _themeDocUtils.themeDocUtils.focusStyle, _themeDocUtils.themeDocUtils.placeholderStyle, _themeDocUtils.themeDocUtils.inputStyle, _themeDocUtils.themeDocUtils.disabledStyle);
 
 exports.themeDoc = themeDoc;

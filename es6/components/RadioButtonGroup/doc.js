@@ -1,5 +1,5 @@
 import { describe, PropTypes } from 'react-desc';
-import { getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge } from '../../utils/mixins';
 export var doc = function doc(RadioButtonGroup) {
   var DocumentedRadioButtonGroup = describe(RadioButtonGroup).availableAt(getAvailableAtBadge('RadioButtonGroup')).description('A group of radio buttons.').usage("import { RadioButtonGroup } from 'grommet';\n<RadioButtonGroup />").intrinsicElement('div');
   DocumentedRadioButtonGroup.propTypes = {

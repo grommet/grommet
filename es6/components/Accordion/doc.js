@@ -1,7 +1,8 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import { describe, PropTypes } from 'react-desc';
-import { genericProps, getAvailableAtBadge } from '../../utils';
+import { genericProps } from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
 export var doc = function doc(Accordion) {
   var DocumentedAccordion = describe(Accordion).availableAt(getAvailableAtBadge('Accordion')).description('An accordion containing collapsible panels.').usage("import { Accordion, AccordionPanel } from 'grommet';\n<Accordion>\n  <AccordionPanel label='Panel 1'>...</AccordionPanel>\n  <AccordionPanel label='Panel 2'>...</AccordionPanel>\n</Accordion>").intrinsicElement('div');
   DocumentedAccordion.propTypes = _extends({}, genericProps, {

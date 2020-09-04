@@ -5,15 +5,17 @@ exports.themeDoc = exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
-var _utils = require("../../utils");
+var _propTypes = require("../../utils/prop-types");
+
+var _mixins = require("../../utils/mixins");
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 var doc = function doc(Meter) {
-  var DocumentedMeter = (0, _reactDesc.describe)(Meter).availableAt((0, _utils.getAvailableAtBadge)('Meter')).description('A graphical meter.').usage("import { Meter } from 'grommet';\n<Meter />"); // We don't include svg due to a collision on the values property
+  var DocumentedMeter = (0, _reactDesc.describe)(Meter).availableAt((0, _mixins.getAvailableAtBadge)('Meter')).description('A graphical meter.').usage("import { Meter } from 'grommet';\n<Meter />"); // We don't include svg due to a collision on the values property
   // .intrinsicElement('svg');
 
-  DocumentedMeter.propTypes = _extends({}, _utils.genericProps, {
+  DocumentedMeter.propTypes = _extends({}, _propTypes.genericProps, {
     background: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.shape({
       color: _reactDesc.PropTypes.string,
       opacity: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['weak', 'medium', 'strong']), _reactDesc.PropTypes.number, _reactDesc.PropTypes.bool])

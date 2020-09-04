@@ -5,14 +5,18 @@ exports.themeDoc = exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
-var _utils = require("../../utils");
+var _propTypes = require("../../utils/prop-types");
+
+var _mixins = require("../../utils/mixins");
+
+var _themeDocUtils = require("../../utils/themeDocUtils");
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 var doc = function doc(Paragraph) {
-  var DocumentedParagraph = (0, _reactDesc.describe)(Paragraph).availableAt((0, _utils.getAvailableAtBadge)('Paragraph')).description('A paragraph of text.').usage("import { Paragraph } from 'grommet';\n<Paragraph />").intrinsicElement('p');
-  DocumentedParagraph.propTypes = _extends({}, _utils.genericProps, {
-    color: _utils.colorPropType.description('A color identifier to use for the text color.'),
+  var DocumentedParagraph = (0, _reactDesc.describe)(Paragraph).availableAt((0, _mixins.getAvailableAtBadge)('Paragraph')).description('A paragraph of text.').usage("import { Paragraph } from 'grommet';\n<Paragraph />").intrinsicElement('p');
+  DocumentedParagraph.propTypes = _extends({}, _propTypes.genericProps, {
+    color: _propTypes.colorPropType.description('A color identifier to use for the text color.'),
     fill: _reactDesc.PropTypes.bool.description('Whether the width should fill the container.').defaultValue(false),
     responsive: _reactDesc.PropTypes.bool.description("Whether margin should be scaled for mobile environments.").defaultValue(true),
     size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'xxlarge']), _reactDesc.PropTypes.string]).description('The size of the Paragraph text.').defaultValue('medium'),
@@ -39,6 +43,6 @@ var themeDoc = _extends({
     type: 'string | (props) => {}',
     defaultValue: undefined
   }
-}, _utils.themeDocUtils.edgeStyle('The possible sizes for margin.'));
+}, _themeDocUtils.themeDocUtils.edgeStyle('The possible sizes for margin.'));
 
 exports.themeDoc = themeDoc;

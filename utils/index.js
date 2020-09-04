@@ -51,13 +51,6 @@ Object.keys(_graphics).forEach(function (key) {
   exports[key] = _graphics[key];
 });
 
-var _propTypes = require("./prop-types");
-
-Object.keys(_propTypes).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  exports[key] = _propTypes[key];
-});
-
 var _styles = require("./styles");
 
 Object.keys(_styles).forEach(function (key) {
@@ -86,23 +79,9 @@ Object.keys(_responsive).forEach(function (key) {
   exports[key] = _responsive[key];
 });
 
-var _router = require("./router");
-
-Object.keys(_router).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  exports[key] = _router[key];
-});
-
 var _throttle = require("./throttle");
 
 Object.keys(_throttle).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
   exports[key] = _throttle[key];
-});
-
-var _themeDocUtils = require("./themeDocUtils");
-
-Object.keys(_themeDocUtils).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  exports[key] = _themeDocUtils[key];
 });

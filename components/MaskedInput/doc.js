@@ -5,12 +5,14 @@ exports.themeDoc = exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
-var _utils = require("../../utils");
+var _mixins = require("../../utils/mixins");
+
+var _themeDocUtils = require("../../utils/themeDocUtils");
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 var doc = function doc(MaskedInput) {
-  var DocumentedMaskedInput = (0, _reactDesc.describe)(MaskedInput).availableAt((0, _utils.getAvailableAtBadge)('MaskedInput')).description('An input field with formalized syntax.').usage("import { MaskedInput } from 'grommet';\n<MaskedInput id='item' name='item' />").intrinsicElement('input');
+  var DocumentedMaskedInput = (0, _reactDesc.describe)(MaskedInput).availableAt((0, _mixins.getAvailableAtBadge)('MaskedInput')).description('An input field with formalized syntax.').usage("import { MaskedInput } from 'grommet';\n<MaskedInput id='item' name='item' />").intrinsicElement('input');
   DocumentedMaskedInput.propTypes = {
     a11yTitle: _reactDesc.PropTypes.string.description('Custom title to be used by screen readers.'),
     icon: _reactDesc.PropTypes.element.description("An optional icon to show. This could be used to provide an\n      indication of what kind of input is expected, like an email icon,\n      or what the input will be used for, like a search icon."),
@@ -60,6 +62,6 @@ var themeDoc = _extends({
     type: 'number | string',
     defaultValue: undefined
   }
-}, _utils.themeDocUtils.disabledStyle, _utils.themeDocUtils.focusStyle, _utils.themeDocUtils.placeholderStyle, _utils.themeDocUtils.inputStyle);
+}, _themeDocUtils.themeDocUtils.disabledStyle, _themeDocUtils.themeDocUtils.focusStyle, _themeDocUtils.themeDocUtils.placeholderStyle, _themeDocUtils.themeDocUtils.inputStyle);
 
 exports.themeDoc = themeDoc;

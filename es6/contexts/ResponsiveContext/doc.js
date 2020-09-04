@@ -1,5 +1,5 @@
 import { describe, PropTypes } from 'react-desc';
-import { getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge } from '../../utils/mixins';
 export var doc = function doc(ResponsiveContext) {
   var DocumentedResponsiveContext = describe(ResponsiveContext).availableAt(getAvailableAtBadge('ResponsiveContext')).description("A means of providing different rendering behavior based on the\n      screen resolution.").usage("import { ResponsiveContext } from 'grommet'\n       const Example = () => {\n         const size = React.useContext(ResponsiveContext);\n         return (\n           <Box pad=\"medium\">\n             <Text>{size}</Text>\n           </Box>\n         );\n       }");
   DocumentedResponsiveContext.propTypes = {

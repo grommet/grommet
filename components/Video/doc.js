@@ -5,15 +5,17 @@ exports.themeDoc = exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
-var _utils = require("../../utils");
+var _propTypes = require("../../utils/prop-types");
+
+var _mixins = require("../../utils/mixins");
 
 var _themeDocUtils = require("../../utils/themeDocUtils");
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 var doc = function doc(Video) {
-  var DocumentedVideo = (0, _reactDesc.describe)(Video).availableAt((0, _utils.getAvailableAtBadge)('Video')).description('A video player.').usage("import { Video } from 'grommet';\n<Video />").intrinsicElement('video');
-  DocumentedVideo.propTypes = _extends({}, _utils.genericProps, {
+  var DocumentedVideo = (0, _reactDesc.describe)(Video).availableAt((0, _mixins.getAvailableAtBadge)('Video')).description('A video player.').usage("import { Video } from 'grommet';\n<Video />").intrinsicElement('video');
+  DocumentedVideo.propTypes = _extends({}, _propTypes.genericProps, {
     autoPlay: _reactDesc.PropTypes.bool.description('Enables automatic playback of the video as soon as it is loaded.'),
     controls: _reactDesc.PropTypes.oneOf([false, 'over', 'below']).description('Whether to show playback controls and where to place them.').defaultValue('over'),
     fit: _reactDesc.PropTypes.oneOf(['cover', 'contain']).description('How the image fills its container.'),

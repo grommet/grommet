@@ -1,7 +1,8 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import { describe, PropTypes } from 'react-desc';
-import { genericProps, getAvailableAtBadge } from '../../utils';
+import { genericProps } from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
 export var doc = function doc(Stack) {
   var DocumentedStack = describe(Stack).availableAt(getAvailableAtBadge('Stack')).description("A container that stacks contents on top of each other. One child is\n      designated as the `guidingChild` which determines the size. All\n      other children are placed within that size, either above or below\n      based on their order. Stack is typically used to decorate Meter, Chart,\n      or icons.").usage("import { Stack } from 'grommet';\n<Stack />").intrinsicElement('div');
   DocumentedStack.propTypes = _extends({}, genericProps, {

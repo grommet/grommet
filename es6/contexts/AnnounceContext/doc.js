@@ -1,5 +1,5 @@
 import { describe, PropTypes } from 'react-desc';
-import { getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge } from '../../utils/mixins';
 export var doc = function doc(AnnounceContext) {
   var DocumentedAnnounceContext = describe(AnnounceContext).availableAt(getAvailableAtBadge('AnnounceContext')).description('A means of announcing events for screen readers.').usage("import { AnnounceContext } from 'grommet';\n" + '<AnnounceContext.Consumer />\n{announce => ()}');
   DocumentedAnnounceContext.propTypes = {

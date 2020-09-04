@@ -5,7 +5,11 @@ exports.themeDoc = exports.doc = exports.OVERFLOW_VALUES = void 0;
 
 var _reactDesc = require("react-desc");
 
-var _utils = require("../../utils");
+var _propTypes = require("../../utils/prop-types");
+
+var _mixins = require("../../utils/mixins");
+
+var _themeDocUtils = require("../../utils/themeDocUtils");
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -38,12 +42,12 @@ var overflowPropType = _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneO
 }), _reactDesc.PropTypes.string]);
 
 var doc = function doc(Box) {
-  var DocumentedBox = (0, _reactDesc.describe)(Box).availableAt((0, _utils.getAvailableAtBadge)('Box')).description("A container that lays out its contents in one direction. Box\n      provides CSS flexbox capabilities for layout, as well as general\n      styling of things like background color, border, and animation.").usage("import { Box } from 'grommet';\n<Box />").intrinsicElement('div');
-  DocumentedBox.propTypes = _extends({}, _utils.genericProps, {
+  var DocumentedBox = (0, _reactDesc.describe)(Box).availableAt((0, _mixins.getAvailableAtBadge)('Box')).description("A container that lays out its contents in one direction. Box\n      provides CSS flexbox capabilities for layout, as well as general\n      styling of things like background color, border, and animation.").usage("import { Box } from 'grommet';\n<Box />").intrinsicElement('div');
+  DocumentedBox.propTypes = _extends({}, _propTypes.genericProps, {
     align: _reactDesc.PropTypes.oneOf(['start', 'center', 'end', 'baseline', 'stretch']).description('How to align the contents along the cross axis.'),
     alignContent: _reactDesc.PropTypes.oneOf(['start', 'center', 'end', 'between', 'around', 'stretch']).description("How to align the contents when there is extra space in\n        the cross axis.").defaultValue('stretch'),
     animation: _reactDesc.PropTypes.oneOfType([ANIMATION_TYPE, ANIMATION_SHAPE, _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.oneOfType([ANIMATION_TYPE, ANIMATION_SHAPE]))]).description("Animation effect(s) to use. 'duration' and 'delay' should\n        be in milliseconds. 'jiggle' and 'pulse' types are intended for\n        small elements, like icons."),
-    background: _utils.backgroundDoc,
+    background: _propTypes.backgroundDoc,
     basis: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', 'full', '1/2', '1/3', '2/3', '1/4', '2/4', '3/4', 'auto']), _reactDesc.PropTypes.string]).description("A fixed or relative size along its container's main axis."),
     border: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.bool, _reactDesc.PropTypes.oneOf(['top', 'left', 'bottom', 'right', 'start', 'end', 'horizontal', 'vertical', 'all', 'between']), BORDER_SHAPE, _reactDesc.PropTypes.arrayOf(BORDER_SHAPE)]).description("Include a border. 'between' will place a border in the gap between\n      child elements. You must have a 'gap' to use 'between'."),
     direction: _reactDesc.PropTypes.oneOf(['row', 'column', 'row-responsive', 'row-reverse', 'column-reverse']).description('The orientation to layout the child components in.').defaultValue('column'),
@@ -59,11 +63,11 @@ var doc = function doc(Box) {
       min: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']), _reactDesc.PropTypes.string]),
       max: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']), _reactDesc.PropTypes.string])
     })]).description('A fixed height.'),
-    hoverIndicator: _utils.hoverIndicatorPropType.description("When 'onClick' has been specified, the hover indicator to apply\n        when the user is mousing over the box.").defaultValue(false),
+    hoverIndicator: _propTypes.hoverIndicatorPropType.description("When 'onClick' has been specified, the hover indicator to apply\n        when the user is mousing over the box.").defaultValue(false),
     justify: _reactDesc.PropTypes.oneOf(['around', 'between', 'center', 'end', 'evenly', 'start', 'stretch']).description('How to align the contents along the main axis.').defaultValue('stretch'),
     onClick: _reactDesc.PropTypes.func.description("Click handler. Setting this property adds additional attributes to\n      the DOM for accessibility."),
     overflow: overflowPropType.description('box overflow.'),
-    pad: _utils.padPropType,
+    pad: _propTypes.padPropType,
     responsive: _reactDesc.PropTypes.bool.description("Whether margin, pad, and border\n      sizes should be scaled for mobile environments.").defaultValue(true),
     round: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.bool, _reactDesc.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'full']), _reactDesc.PropTypes.string, _reactDesc.PropTypes.shape({
       corner: _reactDesc.PropTypes.oneOf(['top', 'left', 'bottom', 'right', 'top-left', 'top-right', 'bottom-left', 'bottom-right']),
@@ -138,6 +142,6 @@ var themeDoc = _extends({
     type: 'string',
     defaultValue: 'small'
   }
-}, _utils.themeDocUtils.edgeStyle('The possible sizes for any of gap, margin, and pad.'), _utils.themeDocUtils.breakpointStyle("The possible breakpoints that could affect border, direction, gap, margin, \n    pad, and round."));
+}, _themeDocUtils.themeDocUtils.edgeStyle('The possible sizes for any of gap, margin, and pad.'), _themeDocUtils.themeDocUtils.breakpointStyle("The possible breakpoints that could affect border, direction, gap, margin, \n    pad, and round."));
 
 exports.themeDoc = themeDoc;

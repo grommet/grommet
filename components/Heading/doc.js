@@ -5,14 +5,18 @@ exports.themeDoc = exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
-var _utils = require("../../utils");
+var _propTypes = require("../../utils/prop-types");
+
+var _mixins = require("../../utils/mixins");
+
+var _themeDocUtils = require("../../utils/themeDocUtils");
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 var doc = function doc(Heading) {
-  var DocumentedHeading = (0, _reactDesc.describe)(Heading).availableAt((0, _utils.getAvailableAtBadge)('Heading')).description('Heading text structured in levels.').usage("import { Heading } from 'grommet';\n<Heading />").intrinsicElement(['h1', 'h2', 'h3', 'h4']);
-  DocumentedHeading.propTypes = _extends({}, _utils.genericProps, {
-    color: _utils.colorPropType.description('A color identifier to use for the text color.'),
+  var DocumentedHeading = (0, _reactDesc.describe)(Heading).availableAt((0, _mixins.getAvailableAtBadge)('Heading')).description('Heading text structured in levels.').usage("import { Heading } from 'grommet';\n<Heading />").intrinsicElement(['h1', 'h2', 'h3', 'h4']);
+  DocumentedHeading.propTypes = _extends({}, _propTypes.genericProps, {
+    color: _propTypes.colorPropType.description('A color identifier to use for the text color.'),
     level: _reactDesc.PropTypes.oneOf([1, 2, 3, 4, 5, 6, '1', '2', '3', '4', '5', '6']).description("The heading level. It corresponds to the number after the 'H' for\nthe DOM tag. Set the level for semantic accuracy and accessibility.\nThe sizing can be further adjusted using the size property.").defaultValue(1),
     responsive: _reactDesc.PropTypes.bool.description("Whether the font size should be scaled for\n      mobile environments.").defaultValue(true),
     size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']), _reactDesc.PropTypes.string]).description("The font size is primarily driven by the chosen tag. But, it can\nbe adjusted via this size property. The tag should be set for semantic\ncorrectness and accessibility. This size property allows for stylistic\nadjustments.").defaultValue('medium'),
@@ -24,7 +28,7 @@ var doc = function doc(Heading) {
 
 exports.doc = doc;
 
-var themeDoc = _extends({}, _utils.themeDocUtils.breakpointStyle('The possible breakpoints that could affect font-size and max-width'), _utils.themeDocUtils.edgeStyle('The possible sizes for margin.'), {
+var themeDoc = _extends({}, _themeDocUtils.themeDocUtils.breakpointStyle('The possible breakpoints that could affect font-size and max-width'), _themeDocUtils.themeDocUtils.edgeStyle('The possible sizes for margin.'), {
   'heading.extend': {
     description: 'Any additional style for Heading.',
     type: 'string | (props) => {}',

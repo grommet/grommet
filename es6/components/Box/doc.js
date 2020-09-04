@@ -1,7 +1,9 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import { describe, PropTypes } from 'react-desc';
-import { backgroundDoc, getAvailableAtBadge, genericProps, hoverIndicatorPropType, padPropType, themeDocUtils } from '../../utils';
+import { backgroundDoc, genericProps, hoverIndicatorPropType, padPropType } from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
+import { themeDocUtils } from '../../utils/themeDocUtils';
 export var OVERFLOW_VALUES = ['auto', 'hidden', 'scroll', 'visible'];
 var ANIMATION_TYPE = PropTypes.oneOf(['fadeIn', 'fadeOut', 'jiggle', 'pulse', 'rotateLeft', 'rotateRight', 'slideUp', 'slideDown', 'slideLeft', 'slideRight', 'zoomIn', 'zoomOut']);
 var ANIMATION_SHAPE = PropTypes.shape({

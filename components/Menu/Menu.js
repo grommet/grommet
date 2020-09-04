@@ -7,8 +7,6 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
-var _PropTypes = _interopRequireDefault(require("react-desc/lib/PropTypes"));
-
 var _defaultProps = require("../../default-props");
 
 var _Box = require("../Box");
@@ -22,8 +20,6 @@ var _Keyboard = require("../Keyboard");
 var _Text = require("../Text");
 
 var _utils = require("../../utils");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -306,19 +302,6 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
     })), align.bottom === 'bottom' ? controlMirror : undefined))
   }), content));
 });
-Menu.propTypes = {
-  dropAlign: _PropTypes["default"].shape({
-    top: _PropTypes["default"].string,
-    left: _PropTypes["default"].string
-  }),
-  dropProps: _PropTypes["default"].shape({}),
-  items: _PropTypes["default"].arrayOf({}),
-  messages: _PropTypes["default"].shape({
-    openMenu: _PropTypes["default"].string,
-    closeMenu: _PropTypes["default"].string
-  }),
-  justifyContent: _PropTypes["default"].string
-};
 Menu.defaultProps = {
   dropAlign: {
     top: 'top',

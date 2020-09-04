@@ -5,22 +5,26 @@ exports.themeDoc = exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
-var _utils = require("../../utils");
+var _propTypes = require("../../utils/prop-types");
+
+var _mixins = require("../../utils/mixins");
+
+var _themeDocUtils = require("../../utils/themeDocUtils");
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 var doc = function doc(Button) {
-  var DocumentedButton = (0, _reactDesc.describe)(Button).availableAt((0, _utils.getAvailableAtBadge)('Button')).description('A button.').details("You can provide a single function child that will be called with\n      'hover' and 'focus' keys. This allows you to customize the rendering\n      of the Button in those cases.").usage("import { Button } from 'grommet';\n<Button primary label='Label' />").intrinsicElement('button');
-  DocumentedButton.propTypes = _extends({}, _utils.genericProps, {
+  var DocumentedButton = (0, _reactDesc.describe)(Button).availableAt((0, _mixins.getAvailableAtBadge)('Button')).description('A button.').details("You can provide a single function child that will be called with\n      'hover' and 'focus' keys. This allows you to customize the rendering\n      of the Button in those cases.").usage("import { Button } from 'grommet';\n<Button primary label='Label' />").intrinsicElement('button');
+  DocumentedButton.propTypes = _extends({}, _propTypes.genericProps, {
     children: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.func, _reactDesc.PropTypes.object, _reactDesc.PropTypes.node]).description("Function that can be called to render the visual representation.\n      Button can take in Children as a function, node, or object. \n      For example hover can be passed as an object that would \n      then return a react element.\n      `children={({ hover }) => <Box...>{...}</Box>}`. When Button has\n      children, it is styled as a `plain` button.\n      "),
     active: _reactDesc.PropTypes.bool.description('Whether the button is active.').defaultValue(false),
     as: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.func]).description("The DOM tag or react component to use for the element."),
-    color: _utils.colorPropType.description('Fill color for primary, label color for plain, border color otherwise.'),
+    color: _propTypes.colorPropType.description('Fill color for primary, label color for plain, border color otherwise.'),
     disabled: _reactDesc.PropTypes.bool.description('Whether the button is disabled.').defaultValue(false),
     fill: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['horizontal', 'vertical']), _reactDesc.PropTypes.bool]).description("Whether the button expands to fill all of the available width and/or \n        height.").defaultValue(false),
     focusIndicator: _reactDesc.PropTypes.bool.description("Whether when 'plain' it should receive a focus outline.").defaultValue(true),
     gap: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['none', 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge']), _reactDesc.PropTypes.string]).description("The amount of spacing between icon and label in the button.").defaultValue('small'),
-    hoverIndicator: _utils.hoverIndicatorPropType.description("The hover indicator to apply when the user is mousing over the\nbutton. An object can be also be specified for color index support:\n{background: 'neutral-2'}. This prop is meant to be used only\nwith plain Buttons.").defaultValue(false),
+    hoverIndicator: _propTypes.hoverIndicatorPropType.description("The hover indicator to apply when the user is mousing over the\nbutton. An object can be also be specified for color index support:\n{background: 'neutral-2'}. This prop is meant to be used only\nwith plain Buttons.").defaultValue(false),
     href: _reactDesc.PropTypes.string.description('If specified, the button will behave like an anchor tag.'),
     icon: _reactDesc.PropTypes.element.description('Icon element to place in the button.'),
     label: _reactDesc.PropTypes.node.description('Label text to place in the button.'),
@@ -399,6 +403,6 @@ var themeDoc = _extends({
     description: 'Any additional style for the Button.',
     type: 'string | (props) => {}'
   }
-}, _utils.themeDocUtils.focusStyle, _utils.themeDocUtils.disabledStyle);
+}, _themeDocUtils.themeDocUtils.focusStyle, _themeDocUtils.themeDocUtils.disabledStyle);
 
 exports.themeDoc = themeDoc;

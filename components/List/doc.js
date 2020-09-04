@@ -5,7 +5,9 @@ exports.themeDoc = exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
-var _utils = require("../../utils");
+var _propTypes = require("../../utils/prop-types");
+
+var _mixins = require("../../utils/mixins");
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -25,8 +27,8 @@ var borderTypes = [_reactDesc.PropTypes.bool, _reactDesc.PropTypes.oneOf(sides),
 })];
 
 var doc = function doc(List) {
-  var DocumentedList = (0, _reactDesc.describe)(List).availableAt((0, _utils.getAvailableAtBadge)('List')).description('An ordered list of items.').usage("import { List } from 'grommet';\n<List data={[...]} />").intrinsicElement('ol');
-  DocumentedList.propTypes = _extends({}, _utils.genericProps, {
+  var DocumentedList = (0, _reactDesc.describe)(List).availableAt((0, _mixins.getAvailableAtBadge)('List')).description('An ordered list of items.').usage("import { List } from 'grommet';\n<List data={[...]} />").intrinsicElement('ol');
+  DocumentedList.propTypes = _extends({}, _propTypes.genericProps, {
     action: _reactDesc.PropTypes.func.description("Accepts a function that allows for a custom rendering\n       of a component, it should be passed with an item and\n        index of an array and return a react element\n      `action = ({item, index}) => <Content />`\n    />"),
     as: _reactDesc.PropTypes.string.description('The DOM tag or react component to use for the element.').defaultValue('ul'),
     background: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.string)]).description("Item background. An array value indicates that items should have\n      different backgrounds, modulo the array index."),

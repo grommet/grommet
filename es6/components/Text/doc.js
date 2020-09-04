@@ -1,7 +1,9 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import { describe, PropTypes } from 'react-desc';
-import { colorPropType, genericProps, getAvailableAtBadge, MARGIN_SIZES, themeDocUtils } from '../../utils';
+import { colorPropType, genericProps, MARGIN_SIZES } from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
+import { themeDocUtils } from '../../utils/themeDocUtils';
 export var doc = function doc(Text) {
   var DocumentedText = describe(Text).availableAt(getAvailableAtBadge('Text')).description('Arbitrary text.').usage("import { Text } from 'grommet';\n<Text />").intrinsicElement('span');
   DocumentedText.propTypes = _extends({}, genericProps, {

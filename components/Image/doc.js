@@ -5,13 +5,15 @@ exports.themeDoc = exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
-var _utils = require("../../utils");
+var _propTypes = require("../../utils/prop-types");
+
+var _mixins = require("../../utils/mixins");
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 var doc = function doc(Image) {
-  var DocumentedImage = (0, _reactDesc.describe)(Image).availableAt((0, _utils.getAvailableAtBadge)('Image')).description('An image.').usage("import { Image } from 'grommet';\n<Image/>").intrinsicElement('img');
-  DocumentedImage.propTypes = _extends({}, _utils.genericProps, {
+  var DocumentedImage = (0, _reactDesc.describe)(Image).availableAt((0, _mixins.getAvailableAtBadge)('Image')).description('An image.').usage("import { Image } from 'grommet';\n<Image/>").intrinsicElement('img');
+  DocumentedImage.propTypes = _extends({}, _propTypes.genericProps, {
     fill: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['horizontal', 'vertical']), _reactDesc.PropTypes.bool]).description('Whether the width and/or height should fill the container.'),
     fit: _reactDesc.PropTypes.oneOf(['cover', 'contain']).description('How the image fills its container.'),
     fallback: _reactDesc.PropTypes.string.description("Specifies the URL of the fallback image used when \n      src is failing to load"),

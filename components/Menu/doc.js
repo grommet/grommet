@@ -5,7 +5,9 @@ exports.themeDoc = exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
-var _utils = require("../../utils");
+var _propTypes = require("../../utils/prop-types");
+
+var _mixins = require("../../utils/mixins");
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -13,8 +15,8 @@ var VERTICAL_ALIGN_OPTIONS = ['top', 'bottom'];
 var HORIZONTAL_ALIGN_OPTIONS = ['right', 'left'];
 
 var doc = function doc(Menu) {
-  var DocumentedMenu = (0, _reactDesc.describe)(Menu).availableAt((0, _utils.getAvailableAtBadge)('Menu')).description("A control that opens a Drop containing plain Buttons.").details("The labels and behavior of the contained Buttons are described\n      via the `items` property.\n      You can provide a single function child that will be called with\n      'hover', 'focus', and 'drop' keys. This allows you to customize\n      the rendering of the Menu button in those cases.").usage("import { Menu } from 'grommet';\n<Menu />").intrinsicElement('button');
-  DocumentedMenu.propTypes = _extends({}, _utils.genericProps, {
+  var DocumentedMenu = (0, _reactDesc.describe)(Menu).availableAt((0, _mixins.getAvailableAtBadge)('Menu')).description("A control that opens a Drop containing plain Buttons.").details("The labels and behavior of the contained Buttons are described\n      via the `items` property.\n      You can provide a single function child that will be called with\n      'hover', 'focus', and 'drop' keys. This allows you to customize\n      the rendering of the Menu button in those cases.").usage("import { Menu } from 'grommet';\n<Menu />").intrinsicElement('button');
+  DocumentedMenu.propTypes = _extends({}, _propTypes.genericProps, {
     children: _reactDesc.PropTypes.func.description("Function that will be called to render the visual representation.\n      It will be passed an object containing button props.\n      It should return a react element.\n      For example:\n      `children={({ drop, hover }) => <Box ...>{...}</Box>}`\n      "),
     disabled: _reactDesc.PropTypes.bool.description('Whether the menu should be disabled.').defaultValue(false),
     dropAlign: _reactDesc.PropTypes.shape({

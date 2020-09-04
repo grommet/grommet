@@ -1,5 +1,5 @@
 import { describe, PropTypes } from 'react-desc';
-import { getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge } from '../../utils/mixins';
 export var doc = function doc(Avatar) {
   var DocumentedAvatar = describe(Avatar).availableAt(getAvailableAtBadge('Avatar')).description('An Avatar.').usage("import { Avatar } from 'grommet';\n<Avatar/>").intrinsicElement('div');
   DocumentedAvatar.propTypes = {

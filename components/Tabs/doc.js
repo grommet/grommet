@@ -5,13 +5,15 @@ exports.themeDoc = exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
-var _utils = require("../../utils");
+var _propTypes = require("../../utils/prop-types");
+
+var _mixins = require("../../utils/mixins");
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 var doc = function doc(Tabs) {
-  var DocumentedTabs = (0, _reactDesc.describe)(Tabs).availableAt((0, _utils.getAvailableAtBadge)('Tabs')).description('A container with controls to show one Tab at a time.').usage("import { Tabs, Tab } from 'grommet';\n<Tabs>\n  <Tab title='Tab 1'>...</Tab>\n  <Tab title='Tab 2'>...</Tab>\n</Tabs>").intrinsicElement('div');
-  DocumentedTabs.propTypes = _extends({}, _utils.genericProps, {
+  var DocumentedTabs = (0, _reactDesc.describe)(Tabs).availableAt((0, _mixins.getAvailableAtBadge)('Tabs')).description('A container with controls to show one Tab at a time.').usage("import { Tabs, Tab } from 'grommet';\n<Tabs>\n  <Tab title='Tab 1'>...</Tab>\n  <Tab title='Tab 2'>...</Tab>\n</Tabs>").intrinsicElement('div');
+  DocumentedTabs.propTypes = _extends({}, _propTypes.genericProps, {
     activeIndex: _reactDesc.PropTypes.number.description("Active tab index. If specified, Tabs will be a controlled component.\nThis means that future tab changes will not work unless you subscribe to\nonActive function and update activeIndex accordingly."),
     alignControls: _reactDesc.PropTypes.oneOf(['start', 'center', 'end', 'stretch']).description('How to align the tab controls within the tabs header.'),
     children: _reactDesc.PropTypes.node.description('Array of Tab.').isRequired,

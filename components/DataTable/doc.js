@@ -5,7 +5,9 @@ exports.themeDoc = exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
-var _utils = require("../../utils");
+var _propTypes = require("../../utils/prop-types");
+
+var _mixins = require("../../utils/mixins");
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -44,8 +46,8 @@ parts.forEach(function (part) {
 });
 
 var doc = function doc(DataTable) {
-  var DocumentedDataTable = (0, _reactDesc.describe)(DataTable).availableAt((0, _utils.getAvailableAtBadge)('DataTable')).description('A data driven table.').usage("import { DataTable } from 'grommet';\n<DataTable />").intrinsicElement('table');
-  DocumentedDataTable.propTypes = _extends({}, _utils.genericProps, {
+  var DocumentedDataTable = (0, _reactDesc.describe)(DataTable).availableAt((0, _mixins.getAvailableAtBadge)('DataTable')).description('A data driven table.').usage("import { DataTable } from 'grommet';\n<DataTable />").intrinsicElement('table');
+  DocumentedDataTable.propTypes = _extends({}, _propTypes.genericProps, {
     background: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.string), _reactDesc.PropTypes.shape(backgroundShape)]).description("Cell background. You can set the background per context by passing an\n      object with keys for 'heading', 'body', and/or 'footer'. If you pass\n      an array, rows will cycle between the array values."),
     border: _reactDesc.PropTypes.oneOfType([].concat(borderTypes, [_reactDesc.PropTypes.shape(borderShape)])).description("Cell border. You can set the border per context by passing an\n      object with keys for 'heading', 'body', and/or 'footer'."),
     columns: _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.shape({

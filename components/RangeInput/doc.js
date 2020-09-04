@@ -5,12 +5,14 @@ exports.themeDoc = exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
-var _utils = require("../../utils");
+var _mixins = require("../../utils/mixins");
+
+var _themeDocUtils = require("../../utils/themeDocUtils");
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 var doc = function doc(RangeInput) {
-  var DocumentedRangeInput = (0, _reactDesc.describe)(RangeInput).availableAt((0, _utils.getAvailableAtBadge)('RangeInput')).description('A slider control to input a value within a fixed range.').usage("import { RangeInput } from 'grommet';\n<RangeInput />").intrinsicElement('input');
+  var DocumentedRangeInput = (0, _reactDesc.describe)(RangeInput).availableAt((0, _mixins.getAvailableAtBadge)('RangeInput')).description('A slider control to input a value within a fixed range.').usage("import { RangeInput } from 'grommet';\n<RangeInput />").intrinsicElement('input');
   DocumentedRangeInput.propTypes = {
     a11yTitle: _reactDesc.PropTypes.string.description("Custom label to be used by screen readers.\n      When provided, an aria-label will be added to the element."),
     id: _reactDesc.PropTypes.string.description('The id attribute of the range input.'),
@@ -26,7 +28,7 @@ var doc = function doc(RangeInput) {
 
 exports.doc = doc;
 
-var themeDoc = _extends({}, _utils.themeDocUtils.focusStyle, {
+var themeDoc = _extends({}, _themeDocUtils.themeDocUtils.focusStyle, {
   'global.colors.border': {
     description: 'The color used for rangeInput.track.color.',
     type: 'string | { dark: string, light: string }',

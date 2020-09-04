@@ -5,15 +5,19 @@ exports.themeDoc = exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
-var _utils = require("../../utils");
+var _propTypes = require("../../utils/prop-types");
+
+var _mixins = require("../../utils/mixins");
+
+var _themeDocUtils = require("../../utils/themeDocUtils");
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 var doc = function doc(Anchor) {
-  var DocumentedAnchor = (0, _reactDesc.describe)(Anchor).availableAt((0, _utils.getAvailableAtBadge)('Anchor')).description('A text link.').details("We have a separate component from the browser\nbase so we can style it. You can either set the icon and/or label properties\nor just use children.").usage("import { Anchor } from 'grommet';\n" + "<Anchor href={location} label='Label' />").intrinsicElement('a');
-  DocumentedAnchor.propTypes = _extends({}, _utils.genericProps, {
+  var DocumentedAnchor = (0, _reactDesc.describe)(Anchor).availableAt((0, _mixins.getAvailableAtBadge)('Anchor')).description('A text link.').details("We have a separate component from the browser\nbase so we can style it. You can either set the icon and/or label properties\nor just use children.").usage("import { Anchor } from 'grommet';\n" + "<Anchor href={location} label='Label' />").intrinsicElement('a');
+  DocumentedAnchor.propTypes = _extends({}, _propTypes.genericProps, {
     a11yTitle: _reactDesc.PropTypes.string.description('Custom title to be used by screen readers.'),
-    color: _utils.colorPropType.description('Label color and icon color, if not specified on the icon.'),
+    color: _propTypes.colorPropType.description('Label color and icon color, if not specified on the icon.'),
     disabled: _reactDesc.PropTypes.bool.description('Whether the anchor is disabled.').defaultValue(false),
     href: _reactDesc.PropTypes.string.description('Hyperlink reference to place in the anchor.'),
     icon: _reactDesc.PropTypes.element.description('Icon element to place in the anchor.'),
@@ -74,6 +78,6 @@ var themeDoc = _extends({
     type: 'string',
     defaultValue: '24px'
   }
-}, _utils.themeDocUtils.focusStyle, _utils.themeDocUtils.edgeStyle('The possible sizes for margin.'));
+}, _themeDocUtils.themeDocUtils.focusStyle, _themeDocUtils.themeDocUtils.edgeStyle('The possible sizes for margin.'));
 
 exports.themeDoc = themeDoc;

@@ -5,7 +5,9 @@ exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
-var _utils = require("../../utils");
+var _propTypes = require("../../utils/prop-types");
+
+var _mixins = require("../../utils/mixins");
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -35,7 +37,7 @@ var chartType = _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _re
   color: colorType,
   dash: _reactDesc.PropTypes.bool,
   opacity: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['weak', 'medium', 'strong']), _reactDesc.PropTypes.number, _reactDesc.PropTypes.bool]),
-  point: _utils.pointPropType,
+  point: _propTypes.pointPropType,
   round: _reactDesc.PropTypes.bool,
   thickness: thicknessType,
   type: _reactDesc.PropTypes.oneOf(['bar', 'bars', 'line', 'area', 'point'])
@@ -53,8 +55,8 @@ _reactDesc.PropTypes.shape({
 var granularityType = _reactDesc.PropTypes.oneOf(['coarse', 'medium', 'fine']);
 
 var doc = function doc(DataChart) {
-  var DocumentedDataChart = (0, _reactDesc.describe)(DataChart).availableAt((0, _utils.getAvailableAtBadge)('DataChart')).description("Takes a data set and visualizes it. While Chart renders a\n    single value across a data set. DataChart allows multiple overlayed\n    Charts and adds guides and axes for decoration.").usage("import { DataChart } from 'grommet';\n<DataChart data={data} property={} />").intrinsicElement('div');
-  DocumentedDataChart.propTypes = _extends({}, _utils.genericProps, {
+  var DocumentedDataChart = (0, _reactDesc.describe)(DataChart).availableAt((0, _mixins.getAvailableAtBadge)('DataChart')).description("Takes a data set and visualizes it. While Chart renders a\n    single value across a data set. DataChart allows multiple overlayed\n    Charts and adds guides and axes for decoration.").usage("import { DataChart } from 'grommet';\n<DataChart data={data} property={} />").intrinsicElement('div');
+  DocumentedDataChart.propTypes = _extends({}, _propTypes.genericProps, {
     axis: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.bool, _reactDesc.PropTypes.shape({
       x: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.bool, _reactDesc.PropTypes.string, _reactDesc.PropTypes.shape({
         property: _reactDesc.PropTypes.string,
@@ -79,7 +81,7 @@ var doc = function doc(DataChart) {
       })])
     })]).description("Whether to put guidelines underneath the chart graphics.\n    See the description of 'granularity' under 'axis'."),
     legend: _reactDesc.PropTypes.bool.description('Whether to include a legend'),
-    pad: _utils.padPropType.description("Spacing around the outer edge of\n    the drawing coordinate area for the graphic elements to overflow into."),
+    pad: _propTypes.padPropType.description("Spacing around the outer edge of\n    the drawing coordinate area for the graphic elements to overflow into."),
     series: _reactDesc.PropTypes.oneOfType([seriesType, _reactDesc.PropTypes.arrayOf(seriesType)]).description("Describes which parts of the 'data' are of interest and\n    how to handle them. 'property' indicates which property of the 'data'\n    objects this series refers to. 'label' indicates how to label the series\n    in a legend or hover details. 'prefix' and 'suffix' are applied to the\n    data values shown in an axis, legend, or details. 'render' allows custom\n    rendering of the data value. 'render' is called with:\n    (value, datum, property) => { return < />; }"),
     size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['fill']), _reactDesc.PropTypes.shape({
       height: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'fill']), _reactDesc.PropTypes.string]),

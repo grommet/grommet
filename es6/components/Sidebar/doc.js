@@ -1,5 +1,5 @@
 import { describe, PropTypes } from 'react-desc';
-import { getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge } from '../../utils/mixins';
 export var doc = function doc(Sidebar) {
   var DocumentedSidebar = describe(Sidebar).availableAt(getAvailableAtBadge('Sidebar')).description('A sidebar, typically used with Nav children.').usage("import { Sidebar } from 'grommet';\n<Sidebar/>").intrinsicElement('div');
   DocumentedSidebar.propTypes = {

@@ -5,10 +5,12 @@ exports.themeDoc = exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
-var _utils = require("../../utils");
+var _propTypes = require("../../utils/prop-types");
+
+var _mixins = require("../../utils/mixins");
 
 var doc = function doc(FormField) {
-  var DocumentedFormField = (0, _reactDesc.describe)(FormField).availableAt((0, _utils.getAvailableAtBadge)('FormField')).description("A single field in a form. FormField wraps an input component with\n      a label, help, and/or error messaging. It typically contains an input\n      control like TextInput, TextArea, Select, etc.").usage("import { FormField } from 'grommet';\n<FormField />").intrinsicElement('div');
+  var DocumentedFormField = (0, _reactDesc.describe)(FormField).availableAt((0, _mixins.getAvailableAtBadge)('FormField')).description("A single field in a form. FormField wraps an input component with\n      a label, help, and/or error messaging. It typically contains an input\n      control like TextInput, TextArea, Select, etc.").usage("import { FormField } from 'grommet';\n<FormField />").intrinsicElement('div');
   DocumentedFormField.propTypes = {
     a11yTitle: _reactDesc.PropTypes.string.description("Custom label to be used by screen readers.\n       Should only be provided if FormField has no children.\n       When a11yTitle is provided an aria-label will be added to the element\n       if it has no children."),
     component: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.func, _reactDesc.PropTypes.object]).description("The component to insert in the FormField. Grommet will add update the\n      form values when this field changes. Any additional properties\n      (such as initial value) you pass to FormField will be forwarded to this\n      component. The component may be custom as long it supports the properties\n      of name, value, onChange (event => {}), while event has either event.value\n      or event.target.value."),
@@ -20,7 +22,7 @@ var doc = function doc(FormField) {
     info: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.node]).description("Any informational text regarding the field's value"),
     label: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.node]).description('A short label describing the field'),
     name: _reactDesc.PropTypes.string.description("The name of the value data when in a Form and the name of\n      the input field."),
-    margin: _utils.marginProp,
+    margin: _propTypes.marginProp,
     pad: _reactDesc.PropTypes.bool.description('Whether to add padding to align with the padding of TextInput.'),
     required: _reactDesc.PropTypes.bool.description('Whether the field is required.'),
     validate: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.shape({

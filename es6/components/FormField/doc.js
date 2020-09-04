@@ -1,5 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
-import { getAvailableAtBadge, marginProp } from '../../utils';
+import { marginProp } from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
 export var doc = function doc(FormField) {
   var DocumentedFormField = describe(FormField).availableAt(getAvailableAtBadge('FormField')).description("A single field in a form. FormField wraps an input component with\n      a label, help, and/or error messaging. It typically contains an input\n      control like TextInput, TextArea, Select, etc.").usage("import { FormField } from 'grommet';\n<FormField />").intrinsicElement('div');
   DocumentedFormField.propTypes = {

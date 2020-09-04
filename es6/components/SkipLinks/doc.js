@@ -1,5 +1,5 @@
 import { describe, PropTypes } from 'react-desc';
-import { getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge } from '../../utils/mixins';
 export var doc = function doc(SkipLinks) {
   var DocumentedSkipLinks = describe(SkipLinks).availableAt(getAvailableAtBadge('SkipLinks')).description('Describe a list of elements to skip to.').usage("import { SkipLinks } from 'grommet';\n<SkipLinks elements={['main', 'footer']} />");
   DocumentedSkipLinks.propTypes = {

@@ -5,10 +5,10 @@ exports.themeDoc = exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
-var _utils = require("../../utils");
+var _mixins = require("../../utils/mixins");
 
 var doc = function doc(Avatar) {
-  var DocumentedAvatar = (0, _reactDesc.describe)(Avatar).availableAt((0, _utils.getAvailableAtBadge)('Avatar')).description('An Avatar.').usage("import { Avatar } from 'grommet';\n<Avatar/>").intrinsicElement('div');
+  var DocumentedAvatar = (0, _reactDesc.describe)(Avatar).availableAt((0, _mixins.getAvailableAtBadge)('Avatar')).description('An Avatar.').usage("import { Avatar } from 'grommet';\n<Avatar/>").intrinsicElement('div');
   DocumentedAvatar.propTypes = {
     size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), _reactDesc.PropTypes.string]).description('A fixed size.').defaultValue('medium'),
     src: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string]).description("Specifies a URL string for an avatar image.")

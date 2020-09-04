@@ -1,5 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
-import { colorPropType, getAvailableAtBadge } from '../../utils';
+import { colorPropType } from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
 export var doc = function doc(Diagram) {
   var DocumentedDiagram = describe(Diagram).availableAt(getAvailableAtBadge('Diagram')).description("Graphical connection lines. Diagram is meant to be used with Stack.\n      Boxes can be used in the `guidingChild` layer of Stack and then\n      Diagram can be used to draw lines connecting the Boxes.").usage("import { Diagram } from 'grommet';\n<Diagram />").intrinsicElement('svg');
   DocumentedDiagram.propTypes = {

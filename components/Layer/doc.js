@@ -5,14 +5,16 @@ exports.themeDoc = exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
-var _utils = require("../../utils");
+var _mixins = require("../../utils/mixins");
+
+var _themeDocUtils = require("../../utils/themeDocUtils");
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 var PAD_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large'];
 
 var doc = function doc(Layer) {
-  var DocumentedLayer = (0, _reactDesc.describe)(Layer).availableAt((0, _utils.getAvailableAtBadge)('Layer')).description("An overlay. Layer is typically modal and anchored to an edge, corner, or\n      center of the window. It is the caller's responsibility to provide a\n      control for the user to close the layer.").usage("import { Layer } from 'grommet';\n<Layer />").intrinsicElement('div');
+  var DocumentedLayer = (0, _reactDesc.describe)(Layer).availableAt((0, _mixins.getAvailableAtBadge)('Layer')).description("An overlay. Layer is typically modal and anchored to an edge, corner, or\n      center of the window. It is the caller's responsibility to provide a\n      control for the user to close the layer.").usage("import { Layer } from 'grommet';\n<Layer />").intrinsicElement('div');
   DocumentedLayer.propTypes = {
     animate: _reactDesc.PropTypes.bool.description("Whether to animate the Layer content when it opens. This\n        property is deprecated and will be removed in the next major version\n        of grommet. Instead, use 'animation'.").defaultValue(true),
     animation: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['slide', 'fadeIn', 'none']), _reactDesc.PropTypes.bool]).description('Animation transition of the Layer content when it opens and closes.').defaultValue('slide'),
@@ -76,6 +78,6 @@ var themeDoc = _extends({
     type: 'number',
     defaultValue: '10'
   }
-}, _utils.themeDocUtils.breakpointStyle("The possible breakpoints that could affect border, direction, gap, margin, \n    pad, and round."));
+}, _themeDocUtils.themeDocUtils.breakpointStyle("The possible breakpoints that could affect border, direction, gap, margin, \n    pad, and round."));
 
 exports.themeDoc = themeDoc;
