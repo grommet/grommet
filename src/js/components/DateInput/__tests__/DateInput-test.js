@@ -289,8 +289,7 @@ describe('DateInput', () => {
       <Grommet>
         <DateInput
           dropProps={{
-            plain: true,
-            align: { bottom: 'top' },
+            plain: true
           }}
           format="mm/dd/yyyy"
         />
