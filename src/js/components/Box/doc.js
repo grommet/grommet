@@ -2,12 +2,12 @@ import { describe, PropTypes } from 'react-desc';
 
 import {
   backgroundDoc,
-  getAvailableAtBadge,
   genericProps,
   hoverIndicatorPropType,
   padPropType,
-  themeDocUtils,
-} from '../../utils';
+} from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
+import { themeDocUtils } from '../../utils/themeDocUtils';
 
 export const OVERFLOW_VALUES = ['auto', 'hidden', 'scroll', 'visible'];
 

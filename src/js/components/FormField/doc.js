@@ -1,6 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge, marginProp } from '../../utils';
+import { marginProp } from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = FormField => {
   const DocumentedFormField = describe(FormField)
