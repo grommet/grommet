@@ -26,4 +26,4 @@ const FormFieldHelpError = props => (
   </Grommet>
 );
 
-storiesOf('Form', module).add('Help and Error', () => <FormFieldHelpError />);
+storiesOf('Form', module).add('Help and error', () => <FormFieldHelpError />);

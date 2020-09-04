@@ -49,7 +49,7 @@ const customBreakpoints = {
   },
 };
 
-storiesOf('ResponsiveContext', module).add('Custom Breakpoints', () => (
+storiesOf('ResponsiveContext', module).add('Custom breakpoints', () => (
   <Grommet theme={customBreakpoints} full>
     <ResponsiveContext.Consumer>
       {size => (

@@ -293,4 +293,20 @@ describe('Button kind', () => {
     expect(cursorStyle).not.toBe('pointer');
     expect(cursorStyle).toBe('default');
   });
+
+  test(`disabled with hoverIndicator should not hover`, () => {
+    const { container, getByText } = render(
+      <Grommet
+        theme={{
+          button: { default: {} },
+        }}
+      >
+        <Button disabled hoverIndicator label="Button" />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.mouseOver(getByText('Button'));
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
