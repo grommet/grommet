@@ -44,7 +44,7 @@ const ClearButton = ({ clear, name, onClear, theme }) => {
   const align = position !== 'bottom' ? 'start' : 'center';
   const buttonLabel = label || `Clear ${name || 'selection'}`;
   return (
-    <Button tabIndex="-1" onClick={onClear}>
+    <Button onClick={onClear}>
       <Box {...theme.select.clear.container} align={align}>
         <Text {...theme.select.clear.text}>{buttonLabel}</Text>
       </Box>

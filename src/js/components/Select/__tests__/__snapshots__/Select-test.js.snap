@@ -572,7 +572,6 @@ exports[`Select Clear option renders - bottom 1`] = `
     </div>
     <button
       class="c10"
-      tabindex="-1"
       type="button"
     >
       <div
@@ -878,7 +877,6 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
   >
     <button
       class="c4"
-      tabindex="-1"
       type="button"
     >
       <div
@@ -1217,7 +1215,6 @@ exports[`Select Clear option renders custom label 1`] = `
   >
     <button
       class="c4"
-      tabindex="-1"
       type="button"
     >
       <div
@@ -1556,7 +1553,6 @@ exports[`Select Clear option renders- top 1`] = `
   >
     <button
       class="c4"
-      tabindex="-1"
       type="button"
     >
       <div
