@@ -43,4 +43,4 @@ const IconItemsMenu = () => (
   </Grommet>
 );
 
-storiesOf('Menu', module).add('Item with Icon', () => <IconItemsMenu />);
+storiesOf('Menu', module).add('Item with icon', () => <IconItemsMenu />);

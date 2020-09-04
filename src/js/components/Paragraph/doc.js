@@ -1,11 +1,8 @@
 import { describe, PropTypes } from 'react-desc';
 
-import {
-  colorPropType,
-  getAvailableAtBadge,
-  genericProps,
-  themeDocUtils,
-} from '../../utils';
+import { colorPropType, genericProps } from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
+import { themeDocUtils } from '../../utils/themeDocUtils';
 
 export const doc = Paragraph => {
   const DocumentedParagraph = describe(Paragraph)

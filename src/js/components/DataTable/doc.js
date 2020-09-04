@@ -1,6 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { genericProps, getAvailableAtBadge } from '../../utils';
+import { genericProps } from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
 
 const sizes = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
 const sides = ['horizontal', 'vertical', 'top', 'bottom', 'left', 'right'];
@@ -328,6 +329,11 @@ export const themeDoc = {
     description: 'The expand icon.',
     type: 'React.Element',
     defaultValue: '<FormDown />',
+  },
+  'dataTable.icons.sortable': {
+    description: 'The icon indicating a column can be sorted.',
+    type: 'React.Element',
+    defaultValue: undefined,
   },
   'dataTable.primary.weight': {
     description: 'The font weight for primary cells.',

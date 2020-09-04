@@ -26,7 +26,7 @@ const SimpleCarousel = ({ initialChild, ...props }) => {
 
 storiesOf('Carousel', module)
   .add('Simple', () => <SimpleCarousel />)
-  .add('Initial Child', () => <SimpleCarousel initialChild={1} />)
-  .add('Without Controls', () => (
+  .add('Initial child', () => <SimpleCarousel initialChild={1} />)
+  .add('Without controls', () => (
     <SimpleCarousel controls={false} play={1500} />
   ));

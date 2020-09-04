@@ -91,4 +91,4 @@ const CreateOption = () => {
   );
 };
 
-storiesOf('Select', module).add('Create Option', () => <CreateOption />);
+storiesOf('Select', module).add('Create option', () => <CreateOption />);
