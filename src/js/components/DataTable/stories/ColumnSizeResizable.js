@@ -76,6 +76,6 @@ const ExampleResizable = () => (
   </Grommet>
 );
 
-storiesOf('DataTable', module).add('Column Sizes resizeable', () => (
+storiesOf('DataTable', module).add('Column sizes resizeable', () => (
   <ExampleResizable />
 ));

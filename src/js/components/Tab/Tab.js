@@ -14,6 +14,7 @@ import { StyledTab } from './StyledTab';
 const Tab = forwardRef(
   (
     {
+      active: activeProp, // don't pass with rest
       disabled,
       children,
       icon,

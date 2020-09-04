@@ -22,6 +22,6 @@ const ExternalComponentWithTheme = () => (
   </Grommet>
 );
 
-storiesOf('Theme', module).add('External Components', () => (
+storiesOf('Theme', module).add('External components', () => (
   <ExternalComponentWithTheme />
 ));

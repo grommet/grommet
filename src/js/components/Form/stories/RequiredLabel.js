@@ -39,4 +39,4 @@ const LabelFormField = () => (
   </Grommet>
 );
 
-storiesOf('Form', module).add('Required Label', () => <LabelFormField />);
+storiesOf('Form', module).add('Required label', () => <LabelFormField />);

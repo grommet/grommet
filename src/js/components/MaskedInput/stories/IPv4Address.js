@@ -47,4 +47,4 @@ const IPv4MaskedInput = () => {
   );
 };
 
-storiesOf('MaskedInput', module).add('IPv4 Address', () => <IPv4MaskedInput />);
+storiesOf('MaskedInput', module).add('IPv4 address', () => <IPv4MaskedInput />);

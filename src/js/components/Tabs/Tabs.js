@@ -55,7 +55,14 @@ const Tabs = forwardRef(
           setActiveTitle,
         }}
       >
-        {child}
+        {/* possible to have undefined child. in that case, you can't
+        do cloneElement */}
+        {child
+          ? // cloneElement is needed for backward compatibility with custom
+            // styled components that rely on props.active. We should reassess
+            // if it is still necessary in our next major release.
+            React.cloneElement(child, { active: activeIndex === index })
+          : child}
       </TabsContext.Provider>
     ));
 

@@ -37,4 +37,6 @@ const SimpleDrop = () => {
   );
 };
 
-storiesOf('Drop', module).add('Simple', () => <SimpleDrop />);
+storiesOf('Drop', module).add('Simple', () => <SimpleDrop />, {
+  chromatic: { disable: true },
+});
