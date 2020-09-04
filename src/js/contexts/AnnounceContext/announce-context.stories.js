@@ -4,11 +4,11 @@ import { storiesOf } from '@storybook/react';
 import { grommet } from 'grommet/themes';
 import { AnnounceContext, Box, Grommet, Heading, Text } from 'grommet';
 
-const Announcer = ({ announce, message, mode, role, id }) => {
+const Announcer = ({ announce, message, mode, role }) => {
   React.useEffect(() => {
     const timeout = 3000;
-    announce(message, mode, timeout, id);
-  }, [announce, message, mode, id]);
+    announce(message, mode, timeout);
+  }, [announce, message, mode]);
 
   return (
     <Text align="center" role={role} aria-live={mode}>
@@ -22,14 +22,12 @@ Announcer.propTypes = {
   message: PropTypes.string,
   mode: PropTypes.string,
   role: PropTypes.string,
-  id: PropTypes.string,
 };
 
 Announcer.defaultProps = {
   message: 'Here is a simple announcement. This will soon disappear',
   mode: 'polite',
   role: 'log',
-  id: 'grommet-announcer',
 };
 
 const AnnounceContextComponent = props => (
@@ -47,10 +45,9 @@ storiesOf('AnnounceContext', module)
   .add('Polite', () => <AnnounceContextComponent />)
   .add('Assertive', () => (
     <AnnounceContextComponent
-      message="Turn on Accessibility feature to listen to this announcement. 
+      message="Turn on Accessibility feature to listen to this announcement.
       This will soon disappear"
       mode="assertive"
       role="alert"
-      id="storybook-announcer"
     />
   ));

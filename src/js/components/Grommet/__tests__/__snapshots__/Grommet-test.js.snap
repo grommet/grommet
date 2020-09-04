@@ -157,23 +157,9 @@ exports[`Grommet custom id announce 1`] = `
 </div>
 `;
 
-exports[`Grommet custom id announce 2`] = `
-<div
-  aria-live="assertive"
-  id="custom-announcer"
-  style="left: -100%; right: 100%; position: fixed; z-index: -1;"
->
-  hello
-</div>
-`;
+exports[`Grommet custom id announce 2`] = `null`;
 
-exports[`Grommet custom id announce 3`] = `
-<div
-  aria-live="assertive"
-  id="custom-announcer"
-  style="left: -100%; right: 100%; position: fixed; z-index: -1;"
-/>
-`;
+exports[`Grommet custom id announce 3`] = `null`;
 
 exports[`Grommet full 1`] = `
 .c0 {
