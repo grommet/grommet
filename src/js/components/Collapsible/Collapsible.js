@@ -5,6 +5,7 @@ import React, {
   useLayoutEffect,
   useMemo,
   useState,
+  useCallback,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 
@@ -29,11 +30,23 @@ const Collapsible = forwardRef(
     const [animate, setAnimate] = useState(false);
     const [size, setSize] = useState();
     const [speed, setSpeed] = useState(theme.collapsible.minSpeed);
+    const collapsed = !size && !open;
     const dimension = useMemo(
       () => (direction === 'horizontal' ? 'width' : 'height'),
       [direction],
     );
     const containerRef = useForwardedRef(ref);
+
+    const toggleChildrenVisibility = useCallback(() => {
+      const container = containerRef.current;
+      const canHide = !!container?.children;
+
+      if (canHide) {
+        Array.from(container.children).forEach(e => {
+          e.style.visibility = collapsed ? 'hidden' : 'initial';
+        });
+      }
+    }, [collapsed, containerRef])
 
     // when the caller changes openArg, trigger animation
     useEffect(() => {
@@ -42,6 +55,10 @@ const Collapsible = forwardRef(
         setOpen(openArg);
       }
     }, [open, openArg]);
+
+    useEffect(() => {
+      toggleChildrenVisibility();
+    }, [collapsed, toggleChildrenVisibility]);
 
     // When we animate, start a timer to clear out the animation when it
     // has finished.

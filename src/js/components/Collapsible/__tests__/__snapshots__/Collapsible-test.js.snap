@@ -48,6 +48,7 @@ exports[`Collapsible onClick open default 1`] = `
   >
     <span
       class="c3"
+      style="visibility: initial;"
     >
       Example
     </span>
@@ -66,6 +67,7 @@ exports[`Collapsible onClick open default 2`] = `
   >
     <span
       class="StyledText-sc-1sadyjn-0 hUokoe"
+      style="visibility: hidden;"
     >
       Example
     </span>
@@ -121,6 +123,7 @@ exports[`Collapsible open 1`] = `
   >
     <span
       class="c3"
+      style="visibility: initial;"
     >
       Example
     </span>
