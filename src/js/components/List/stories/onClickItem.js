@@ -40,4 +40,8 @@ const OnClickItemList = () => {
   );
 };
 
-storiesOf('List', module).add('onClickItem', () => <OnClickItemList />);
+// chromatic disabled because snapshot is covered by jest testing
+// and snapshot is the same as selection
+storiesOf('List', module).add('onClickItem', () => <OnClickItemList />, {
+  chromatic: { disable: true },
+});
