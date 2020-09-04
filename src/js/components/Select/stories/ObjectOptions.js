@@ -42,4 +42,6 @@ const Example = () => {
   );
 };
 
-storiesOf('Select', module).add('Object options', () => <Example />);
+storiesOf('Select', module).add('Object options', () => <Example />, {
+  chromatic: { disable: true },
+});

@@ -26,7 +26,7 @@ const MarginLayer = ({ margin, ...rest }) => (
 
 storiesOf('Layer', module)
   .add('Margin', () => <MarginLayer full />)
-  .add('Margin (Center)', () => <MarginLayer margin="large" />)
-  .add('Margin Top (Center)', () => (
+  .add('Margin (center)', () => <MarginLayer margin="large" />)
+  .add('Margin top (center)', () => (
     <MarginLayer margin={{ top: 'large' }} position="top" />
   ));

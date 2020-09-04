@@ -171,6 +171,7 @@ const DateInput = forwardRef(
           align={{ top: 'bottom', left: 'left', ...dropProps }}
           onEsc={() => setOpen(false)}
           onClickOutside={() => setOpen(false)}
+          {...dropProps}
         >
           {calendar}
         </Drop>,

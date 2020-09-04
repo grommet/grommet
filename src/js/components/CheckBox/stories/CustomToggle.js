@@ -77,4 +77,4 @@ const ThemedToggle = props => {
   );
 };
 
-storiesOf('CheckBox', module).add('Custom Toggle', () => <ThemedToggle />);
+storiesOf('CheckBox', module).add('Custom toggle', () => <ThemedToggle />);
