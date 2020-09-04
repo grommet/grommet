@@ -10,7 +10,6 @@ const DropButton = forwardRef(
   (
     {
       a11yTitle = 'Open Drop',
-      constrain,
       disabled,
       dropAlign = defaultDropAlign,
       dropProps,
@@ -76,7 +75,6 @@ const DropButton = forwardRef(
         {show && buttonRef.current && (
           <Drop
             id={id ? `${id}__drop` : undefined}
-            constrain={constrain}
             restrictFocus
             align={dropAlign}
             target={dropTarget || buttonRef.current}

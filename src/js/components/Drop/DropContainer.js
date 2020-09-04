@@ -39,7 +39,6 @@ const DropContainer = forwardRef(
     {
       align = defaultAlign,
       children,
-      constrain,
       dropTarget,
       elevation,
       onClickOutside,
@@ -86,20 +85,15 @@ const DropContainer = forwardRef(
           const containerRect = container.getBoundingClientRect();
           // determine width
           let width;
-          if (constrain) {
+          if (stretch) {
             width = Math.min(
-              stretch
+              stretch === 'align'
                 ? Math.min(targetRect.width, containerRect.width)
-                : containerRect.width,
+                : Math.max(targetRect.width, containerRect.width),
               windowWidth,
             );
           } else {
-            width = Math.min(
-              stretch
-                ? Math.max(targetRect.width, containerRect.width)
-                : containerRect.width,
-              windowWidth,
-            );
+            width = Math.min(containerRect.width, windowWidth);
           }
           // set left position
           let left;
