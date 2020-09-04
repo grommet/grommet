@@ -20,7 +20,7 @@ export var doc = function doc(Text) {
     tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description("The DOM tag to use for the element. NOTE: This is deprecated in favor\n         of indicating the DOM tag via the 'as' property."),
     as: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.element]).description("The DOM tag or react component to use for the element.").defaultValue('span'),
     textAlign: PropTypes.oneOf(['start', 'center', 'end']).description('How to align the text inside the component.').defaultValue('start'),
-    truncate: PropTypes.bool.description("Restrict the text to a single line and truncate with ellipsis if it\nis too long to all fit.").defaultValue(false),
+    truncate: PropTypes.bool.description("Restrict the text to a single line and truncate with ellipsis if it\nis too long to all fit. For truncate to be applied, Text needs to be \ncontained within a layout component (such as Box or a generic div).").defaultValue(false),
     weight: PropTypes.oneOfType([PropTypes.oneOf(['normal', 'bold']), PropTypes.number]).description('Font weight'),
     wordBreak: PropTypes.oneOf(['normal', 'break-all', 'keep-all', 'break-word']).description('Whether words should break when reaching the end of a line.').defaultValue('normal')
   });
