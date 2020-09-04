@@ -884,22 +884,5 @@ describe('Select', () => {
     fireEvent.click(getByPlaceholderText('test select'));
     expectPortal('test-select__drop').toMatchSnapshot();
   });
-
-  test('stretch = align restricts drop width to its select container', () => {
-    const { getByPlaceholderText } = render(
-      <Grommet>
-        <Select
-          id="test-select"
-          placeholder="test select"
-          options={[
-            'test test test test test test test test test test test test test',
-            'two',
-          ]}
-        />
-      </Grommet>,
-    );
-    fireEvent.click(getByPlaceholderText('test select'));
-    expectPortal('test-select__drop').toMatchSnapshot();
-  });
   window.scrollTo.mockRestore();
 });
