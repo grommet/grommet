@@ -1,6 +1,7 @@
 import { describe } from 'react-desc';
 
-import { ROUTER_PROPS, getAvailableAtBadge } from '../../utils';
+import { ROUTER_PROPS } from '../../utils/router';
+import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = RoutedAnchor => {
   const DocumentedRoutedAnchor = describe(RoutedAnchor)

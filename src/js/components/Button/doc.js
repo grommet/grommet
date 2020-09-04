@@ -1,12 +1,12 @@
 import { describe, PropTypes } from 'react-desc';
 
 import {
-  colorPropType,
   genericProps,
-  getAvailableAtBadge,
+  colorPropType,
   hoverIndicatorPropType,
-  themeDocUtils,
-} from '../../utils';
+} from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
+import { themeDocUtils } from '../../utils/themeDocUtils';
 
 export const doc = Button => {
   const DocumentedButton = describe(Button)
