@@ -2,10 +2,11 @@ import { describe, PropTypes } from 'react-desc';
 
 import {
   genericProps,
-  getAvailableAtBadge,
   padPropType,
   pointPropType,
-} from '../../utils';
+} from '../../utils/prop-types';
+
+import { getAvailableAtBadge } from '../../utils/mixins';
 
 const colorType = PropTypes.oneOfType([
   PropTypes.string,

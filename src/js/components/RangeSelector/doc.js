@@ -1,6 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { colorPropType, getAvailableAtBadge } from '../../utils';
+import { colorPropType } from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = RangeSelector => {
   const DocumentedRangeSelector = describe(RangeSelector)
