@@ -402,7 +402,7 @@ exports[`RadioButton checked 1`] = `
           <circle
             cx={12}
             cy={12}
-            r={6}
+            r="6"
           />
         </svg>
       </div>
@@ -757,7 +757,7 @@ exports[`RadioButton disabled 1`] = `
           <circle
             cx={12}
             cy={12}
-            r={6}
+            r="6"
           />
         </svg>
       </div>

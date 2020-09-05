@@ -9,6 +9,7 @@ import { cleanup, render } from '@testing-library/react';
 import { Grommet } from '../../Grommet';
 import { Box } from '../../Box';
 import { RadioButton } from '..';
+import { grommet } from '../../../themes';
 
 describe('RadioButton', () => {
   afterEach(cleanup);
@@ -122,5 +123,39 @@ describe('RadioButton', () => {
 
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+  });
+
+  describe('check size', () => {
+    test('default value', () => {
+      const { container } = render(
+        <Grommet theme={grommet}>
+          <RadioButton name="test" checked onChange={jest.fn()} />
+        </Grommet>,
+      );
+
+      expect(
+        container.querySelector('circle').hasAttribute('r', '6'),
+      ).toBeTruthy();
+    });
+
+    test('custom value', () => {
+      const customTheme = {
+        radioButton: {
+          check: {
+            size: '8',
+          },
+        },
+      };
+
+      const { container } = render(
+        <Grommet theme={customTheme}>
+          <RadioButton name="test" checked onChange={jest.fn()} />
+        </Grommet>,
+      );
+
+      expect(
+        container.querySelector('circle').hasAttribute('r', '6'),
+      ).toBeTruthy();
+    });
   });
 });

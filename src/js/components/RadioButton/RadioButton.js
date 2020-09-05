@@ -102,7 +102,7 @@ const RadioButton = forwardRef(
                     viewBox="0 0 24 24"
                     preserveAspectRatio="xMidYMid meet"
                   >
-                    <circle cx={12} cy={12} r={6} />
+                    <circle cx={12} cy={12} r={theme.radioButton.check.size} />
                   </StyledRadioButtonIcon>
                 ))}
             </StyledRadioButtonBox>

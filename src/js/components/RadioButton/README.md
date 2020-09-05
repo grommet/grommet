@@ -166,6 +166,16 @@ Defaults to
 100%
 ```
 
+**radioButton.check.size**
+
+The check size of the RadioButton. Expects `string`.
+
+Defaults to
+
+```
+6
+```
+
 **radioButton.color**
 
 The color of the border surrounding the checked 
