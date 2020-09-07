@@ -71,4 +71,8 @@ var DateMaskedInput = function DateMaskedInput() {
 
 (0, _react2.storiesOf)('MaskedInput', module).add('Date', function () {
   return /*#__PURE__*/_react["default"].createElement(DateMaskedInput, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

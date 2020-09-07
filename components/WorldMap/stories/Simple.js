@@ -17,8 +17,13 @@ var Example = function Example() {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.WorldMap, null)));
-};
+}; // chromatic disabled because snapshot is the same as SelectPlace
+
 
 (0, _react2.storiesOf)('WorldMap', module).add('Simple', function () {
   return /*#__PURE__*/_react["default"].createElement(Example, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

@@ -34,4 +34,8 @@ var UrlMaskedInput = function UrlMaskedInput() {
 
 storiesOf('MaskedInput', module).add('URL', function () {
   return /*#__PURE__*/React.createElement(UrlMaskedInput, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

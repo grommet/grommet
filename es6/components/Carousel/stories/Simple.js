@@ -38,6 +38,10 @@ var SimpleCarousel = function SimpleCarousel(_ref) {
 
 storiesOf('Carousel', module).add('Simple', function () {
   return /*#__PURE__*/React.createElement(SimpleCarousel, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 }).add('Initial child', function () {
   return /*#__PURE__*/React.createElement(SimpleCarousel, {
     initialChild: 1

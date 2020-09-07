@@ -46,4 +46,8 @@ var OnSelect = function OnSelect() {
 
 storiesOf('TextInput', module).add('onSelect and onSuggestionSelect', function () {
   return /*#__PURE__*/React.createElement(OnSelect, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

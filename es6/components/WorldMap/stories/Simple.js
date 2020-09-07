@@ -10,8 +10,13 @@ var Example = function Example() {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/React.createElement(WorldMap, null)));
-};
+}; // chromatic disabled because snapshot is the same as SelectPlace
+
 
 storiesOf('WorldMap', module).add('Simple', function () {
   return /*#__PURE__*/React.createElement(Example, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

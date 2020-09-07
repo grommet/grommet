@@ -28,8 +28,13 @@ var Example = function Example() {
       return setValue(nextValue);
     }
   })));
-};
+}; // chromatic disabled, similar to Object multiple
+
 
 storiesOf('Select', module).add('Multiple', function () {
   return /*#__PURE__*/React.createElement(Example, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

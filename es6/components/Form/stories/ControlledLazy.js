@@ -119,8 +119,13 @@ var Example = function Example() {
     label: "Update",
     primary: true
   }))))));
-};
+}; // chromatic disabled because snapshot is the same as Controlled
+
 
 storiesOf('Form', module).add('Controlled lazy', function () {
   return /*#__PURE__*/React.createElement(Example, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

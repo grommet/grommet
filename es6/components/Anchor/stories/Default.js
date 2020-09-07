@@ -16,4 +16,8 @@ var Default = function Default() {
 
 storiesOf('Anchor', module).add('Default', function () {
   return /*#__PURE__*/React.createElement(Default, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

@@ -30,4 +30,8 @@ var SimpleTextInput = function SimpleTextInput() {
 
 storiesOf('TextInput', module).add('Simple', function () {
   return /*#__PURE__*/React.createElement(SimpleTextInput, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

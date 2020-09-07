@@ -56,6 +56,6 @@ var FormFieldSelect = function FormFieldSelect() {
   }))));
 };
 
-(0, _react2.storiesOf)('Form', module).add('Select', function () {
+(0, _react2.storiesOf)('Select', module).add('Form select', function () {
   return /*#__PURE__*/_react["default"].createElement(FormFieldSelect, null);
 });

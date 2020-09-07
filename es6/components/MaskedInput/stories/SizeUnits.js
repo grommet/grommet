@@ -41,4 +41,8 @@ var SizeUnitsMaskedInput = function SizeUnitsMaskedInput() {
 
 storiesOf('MaskedInput', module).add('Size + units', function () {
   return /*#__PURE__*/React.createElement(SizeUnitsMaskedInput, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

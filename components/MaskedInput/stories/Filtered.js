@@ -67,4 +67,8 @@ var FilteredMaskedInput = function FilteredMaskedInput() {
 
 (0, _react2.storiesOf)('MaskedInput', module).add('Filtered', function () {
   return /*#__PURE__*/_react["default"].createElement(FilteredMaskedInput, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

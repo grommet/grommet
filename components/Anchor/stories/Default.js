@@ -23,4 +23,8 @@ var Default = function Default() {
 
 (0, _react2.storiesOf)('Anchor', module).add('Default', function () {
   return /*#__PURE__*/_react["default"].createElement(Default, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

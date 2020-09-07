@@ -32,8 +32,14 @@ var OnClickItemList = function OnClickItemList() {
       return setClicked(event.item);
     }
   }), clicked && JSON.stringify(clicked, null, 2)));
-};
+}; // chromatic disabled because snapshot is covered by jest testing
+// and snapshot is the same as selection
+
 
 storiesOf('List', module).add('onClickItem', function () {
   return /*#__PURE__*/React.createElement(OnClickItemList, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });

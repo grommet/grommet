@@ -41,4 +41,8 @@ var UrlMaskedInput = function UrlMaskedInput() {
 
 (0, _react2.storiesOf)('MaskedInput', module).add('URL', function () {
   return /*#__PURE__*/_react["default"].createElement(UrlMaskedInput, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });
