@@ -40,15 +40,31 @@ if (!(0, _isChromatic["default"])()) {
     return /*#__PURE__*/_react["default"].createElement(InfiniteScrollReplace, {
       replace: true
     });
-  }).add('Replace with show 28th item', function () {
-    return /*#__PURE__*/_react["default"].createElement(InfiniteScrollReplace, {
+  }).add('Replace with show', function () {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      direction: "row",
+      gap: "large",
+      pad: "large"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+      weight: "bold"
+    }, "replace with show < step"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      border: true,
+      height: "medium",
+      width: "medium",
+      overflow: "auto"
+    }, /*#__PURE__*/_react["default"].createElement(InfiniteScrollReplace, {
       replace: true,
       show: 27
-    });
-  }).add('Replace with show 88th item', function () {
-    return /*#__PURE__*/_react["default"].createElement(InfiniteScrollReplace, {
+    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+      weight: "bold"
+    }, "replace with show > step"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      border: true,
+      height: "medium",
+      width: "medium",
+      overflow: "auto"
+    }, /*#__PURE__*/_react["default"].createElement(InfiniteScrollReplace, {
       replace: true,
       show: 87
-    });
+    }))));
   });
 }

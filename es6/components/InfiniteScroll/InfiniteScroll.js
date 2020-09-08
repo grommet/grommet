@@ -30,42 +30,48 @@ var InfiniteScroll = function InfiniteScroll(_ref) {
       onMore = _ref.onMore,
       renderMarker = _ref.renderMarker,
       replace = _ref.replace,
-      show = _ref.show,
+      showIndex = _ref.show,
       _ref$step = _ref.step,
       step = _ref$step === void 0 ? 50 : _ref$step;
-  // the last page we have items for
+
+  // item index to be made visible initially
+  var _useState = useState(showIndex),
+      show = _useState[0],
+      setShow = _useState[1]; // the last page we have items for
+
+
   var lastPage = useMemo(function () {
     return Math.floor(items.length / step);
   }, [items.length, step]); // the first page we are displaying
 
-  var _useState = useState(0),
-      beginPage = _useState[0],
-      setBeginPage = _useState[1]; // the last page we are displaying
+  var _useState2 = useState(0),
+      beginPage = _useState2[0],
+      setBeginPage = _useState2[1]; // the last page we are displaying
 
 
-  var _useState2 = useState(show ? Math.floor((show + step) / step) - 1 : 0),
-      endPage = _useState2[0],
-      setEndPage = _useState2[1]; // how tall we've measured a page to be
-
-
-  var _useState3 = useState(),
-      pageHeight = _useState3[0],
-      setPageHeight = _useState3[1]; // how much area a page requires
+  var _useState3 = useState(show ? Math.floor((show + step) / step) - 1 : 0),
+      endPage = _useState3[0],
+      setEndPage = _useState3[1]; // how tall we've measured a page to be
 
 
   var _useState4 = useState(),
-      pageArea = _useState4[0],
-      setPageArea = _useState4[1]; // whether the items are laid out in a grid instead of linearly
+      pageHeight = _useState4[0],
+      setPageHeight = _useState4[1]; // how much area a page requires
 
 
   var _useState5 = useState(),
-      multiColumn = _useState5[0],
-      setMultiColumn = _useState5[1]; // what we're waiting for onMore to give us
+      pageArea = _useState5[0],
+      setPageArea = _useState5[1]; // whether the items are laid out in a grid instead of linearly
 
 
-  var _useState6 = useState(0),
-      pendingLength = _useState6[0],
-      setPendingLength = _useState6[1];
+  var _useState6 = useState(),
+      multiColumn = _useState6[0],
+      setMultiColumn = _useState6[1]; // what we're waiting for onMore to give us
+
+
+  var _useState7 = useState(0),
+      pendingLength = _useState7[0],
+      setPendingLength = _useState7[1];
 
   var belowMarkerRef = useRef();
   var firstPageItemRef = useRef();
@@ -117,9 +123,10 @@ var InfiniteScroll = function InfiniteScroll(_ref) {
       var offset = height / 4; // nextBeginPage will increment/decrement when using replace, otherwise
       // the beginPage will be at 0.
 
-      var nextBeginPage = replace ? Math.min(lastPage, Math.max(0, multiColumn ? Math.floor(Math.max(0, top - offset) * width / pageArea) : Math.floor(Math.max(0, top - offset) / pageHeight))) : 0; // Increment nextEndPage when nearing end of current page
+      var nextBeginPage = replace ? Math.min(lastPage, Math.max(0, multiColumn ? Math.floor(Math.max(0, top - offset) * width / pageArea) : Math.floor(Math.max(0, top - offset) / pageHeight))) : 0; // Increment/decrement nextEndPage when nearing bounds of current page.
+      // Ensure nextEndPage contains show index initially.
 
-      var nextEndPage = Math.min(lastPage, Math.max(!replace && endPage || 0, multiColumn ? Math.ceil((top + height + offset) * width / pageArea) : Math.floor((top + height + offset) / pageHeight)));
+      var nextEndPage = Math.min(lastPage, Math.max(!replace && endPage || 0, multiColumn ? Math.ceil((top + height + offset) * width / pageArea) : Math.floor((top + height + offset) / pageHeight), show ? Math.floor(show / step) : 0));
       if (nextBeginPage !== beginPage) setBeginPage(nextBeginPage);
       if (nextEndPage !== endPage) setEndPage(nextEndPage);
     };
@@ -139,7 +146,7 @@ var InfiniteScroll = function InfiniteScroll(_ref) {
         });
       }
     };
-  }, [beginPage, endPage, lastPage, multiColumn, pageArea, pageHeight, replace]); // check if we need to ask for more
+  }, [beginPage, endPage, lastPage, multiColumn, pageArea, pageHeight, replace, show, step]); // check if we need to ask for more
 
   useEffect(function () {
     if (onMore && endPage === lastPage && items.length >= pendingLength) {
@@ -161,7 +168,10 @@ var InfiniteScroll = function InfiniteScroll(_ref) {
           showNode.scrollIntoView(true);
         } else if (isNodeAfterScroll(showNode, scrollParent)) {
           showNode.scrollIntoView(false);
-        }
+        } // clean up after having shown
+
+
+        setShow(undefined);
       }
     }, 100);
     return function () {
