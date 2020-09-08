@@ -1536,8 +1536,7 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #6FFFB0;
-  color: #333333;
+  background: accent-1;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1552,8 +1551,7 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #FD6FFF;
-  color: #333333;
+  background: accent-2;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1568,8 +1566,7 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #81FCED;
-  color: #333333;
+  background: accent-3;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1585,7 +1582,7 @@ exports[`Grommet hpe theme 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   background-color: #01A982;
-  color: #FFFFFF;
+  color: #C0CADC;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1601,7 +1598,7 @@ exports[`Grommet hpe theme 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   background-color: #333333;
-  color: #FFFFFF;
+  color: #C0CADC;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1617,7 +1614,7 @@ exports[`Grommet hpe theme 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   background-color: #555555;
-  color: #FFFFFF;
+  color: #C0CADC;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1633,7 +1630,7 @@ exports[`Grommet hpe theme 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   background-color: #777777;
-  color: #FFFFFF;
+  color: #C0CADC;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1649,7 +1646,7 @@ exports[`Grommet hpe theme 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   background-color: #999999;
-  color: #333333;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1665,7 +1662,7 @@ exports[`Grommet hpe theme 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   background-color: #00E8CF;
-  color: #333333;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1681,7 +1678,7 @@ exports[`Grommet hpe theme 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   background-color: #F8F8F8;
-  color: #333333;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1697,7 +1694,7 @@ exports[`Grommet hpe theme 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   background-color: #F2F2F2;
-  color: #333333;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1713,7 +1710,7 @@ exports[`Grommet hpe theme 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   background-color: #EDEDED;
-  color: #333333;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1729,7 +1726,7 @@ exports[`Grommet hpe theme 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   background-color: #DADADA;
-  color: #333333;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1744,8 +1741,7 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #00873D;
-  color: #FFFFFF;
+  background: neutral-1;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1760,8 +1756,7 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #3D138D;
-  color: #FFFFFF;
+  background: neutral-2;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1776,8 +1771,7 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #00739D;
-  color: #FFFFFF;
+  background: neutral-3;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1792,8 +1786,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #FF4040;
-  color: #FFFFFF;
+  background-color: #FC5A5A;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1809,7 +1803,7 @@ exports[`Grommet hpe theme 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   background-color: #CCCCCC;
-  color: #333333;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1824,8 +1818,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #00C781;
-  color: #333333;
+  background-color: #17EBA0;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1840,8 +1834,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #FFAA15;
-  color: #333333;
+  background-color: #FFBC44;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1859,7 +1853,7 @@ exports[`Grommet hpe theme 1`] = `
   font-size: 18px;
   line-height: 24px;
   background-color: #FFFFFF;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
