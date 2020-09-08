@@ -629,11 +629,6 @@ exports[`Menu close by clicking outside 3`] = `
   .hkbjbd {
     padding: 6px;
   }
-}
-@media only screen and (max-width: 768px) {
-  .bRyuLk {
-    width: 6px;
-  }
 }"
 `;
 
@@ -3074,11 +3069,6 @@ exports[`Menu open and close on click 4`] = `
   .hkbjbd {
     padding: 6px;
   }
-}
-@media only screen and (max-width: 768px) {
-  .bRyuLk {
-    width: 6px;
-  }
 }"
 `;
 
@@ -4252,11 +4242,6 @@ exports[`Menu with dropAlign renders 3`] = `
 "@media only screen and (max-width: 768px) {
   .hkbjbd {
     padding: 6px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .bRyuLk {
-    width: 6px;
   }
 }"
 `;
