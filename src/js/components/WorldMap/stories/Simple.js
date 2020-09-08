@@ -14,4 +14,7 @@ const Example = () => {
   );
 };
 
-storiesOf('WorldMap', module).add('Simple', () => <Example />);
+// chromatic disabled because snapshot is the same as SelectPlace
+storiesOf('WorldMap', module).add('Simple', () => <Example />, {
+  chromatic: { disable: true },
+});

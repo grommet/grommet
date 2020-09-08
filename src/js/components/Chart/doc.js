@@ -3,10 +3,10 @@ import { describe, PropTypes } from 'react-desc';
 import {
   colorPropType,
   genericProps,
-  getAvailableAtBadge,
   padPropType,
   pointPropType,
-} from '../../utils';
+} from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
 
 const thicknessType = PropTypes.oneOfType([
   PropTypes.oneOf([

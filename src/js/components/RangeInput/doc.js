@@ -1,6 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge, themeDocUtils } from '../../utils';
+import { getAvailableAtBadge } from '../../utils/mixins';
+import { themeDocUtils } from '../../utils/themeDocUtils';
 
 export const doc = RangeInput => {
   const DocumentedRangeInput = describe(RangeInput)
