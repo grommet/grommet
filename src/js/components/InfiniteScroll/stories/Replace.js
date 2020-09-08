@@ -24,7 +24,7 @@ const InfiniteScrollReplace = props => (
 if (!isChromatic()) {
   storiesOf('InfiniteScroll', module)
     .add('Replace', () => <InfiniteScrollReplace replace />)
-    .add('Replace with Show', () => (
+    .add('Replace with show', () => (
       <Box direction="row" gap="large" pad="large">
         <Box>
           <Text weight="bold">replace with show &lt; step</Text>
