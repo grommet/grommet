@@ -458,4 +458,5 @@ export const sizeStyle = (name, value, theme) => css`
 export const plainInputStyle = css`
   outline: none;
   border: none;
+  padding: 0px;
 `;

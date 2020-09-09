@@ -201,6 +201,7 @@ exports[`FormField contentProps 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c5::-webkit-input-placeholder {
@@ -446,6 +447,7 @@ exports[`FormField custom error and info icon and container 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c5::-webkit-input-placeholder {
@@ -721,6 +723,7 @@ exports[`FormField custom input margin 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c5::-webkit-input-placeholder {
@@ -876,6 +879,7 @@ exports[`FormField custom label 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c5::-webkit-input-placeholder {
@@ -1016,6 +1020,7 @@ exports[`FormField default 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c4::-webkit-input-placeholder {
@@ -1157,6 +1162,7 @@ exports[`FormField disabled 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
   opacity: 0.3;
   cursor: default;
 }
@@ -1315,6 +1321,7 @@ exports[`FormField disabled with custom label 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
   opacity: 0.3;
   cursor: default;
 }
@@ -2074,6 +2081,7 @@ exports[`FormField pad with border undefined 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c5::-webkit-input-placeholder {
@@ -2214,6 +2222,7 @@ exports[`FormField required 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c4::-webkit-input-placeholder {

@@ -149,6 +149,7 @@ exports[`Select Controlled deselect an option 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c5::-webkit-input-placeholder {
@@ -395,6 +396,7 @@ exports[`Select Controlled multiple 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c5::-webkit-input-placeholder {
@@ -653,6 +655,7 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c6::-webkit-input-placeholder {
@@ -1172,6 +1175,7 @@ exports[`Select Controlled multiple onChange with valueKey reduce 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c6::-webkit-input-placeholder {
@@ -1686,6 +1690,7 @@ exports[`Select Controlled multiple onChange with valueKey string 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c6::-webkit-input-placeholder {
@@ -2200,6 +2205,7 @@ exports[`Select Controlled multiple onChange without valueKey 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c6::-webkit-input-placeholder {
@@ -2780,6 +2786,7 @@ exports[`Select Controlled multiple values 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c5::-webkit-input-placeholder {
@@ -2895,7 +2902,7 @@ exports[`Select Controlled multiple values 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 fVbmbP Select__SelectTextInput-sc-17idtfo-0 VIYrI"
+          class="StyledTextInput-sc-1x30a0s-0 iTMnaf Select__SelectTextInput-sc-17idtfo-0 VIYrI"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -3334,6 +3341,7 @@ exports[`Select Controlled multiple with empty results 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c6::-webkit-input-placeholder {
@@ -3848,6 +3856,7 @@ exports[`Select Controlled select another option 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c5::-webkit-input-placeholder {
@@ -4094,6 +4103,7 @@ exports[`Select Controlled should not have accessibility violations 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c6::-webkit-input-placeholder {

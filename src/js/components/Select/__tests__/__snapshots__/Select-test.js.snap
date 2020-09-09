@@ -149,6 +149,7 @@ exports[`Select 0 value 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c5::-webkit-input-placeholder {
@@ -408,6 +409,7 @@ exports[`Select Search timeout 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c6::-webkit-input-placeholder {
@@ -777,6 +779,7 @@ exports[`Select applies custom global.hover theme to options 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c6::-webkit-input-placeholder {
@@ -1150,6 +1153,7 @@ exports[`Select basic 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c5::-webkit-input-placeholder {
@@ -1409,6 +1413,7 @@ exports[`Select complex options and children 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c5::-webkit-input-placeholder {
@@ -1524,7 +1529,7 @@ exports[`Select complex options and children 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 fVbmbP Select__SelectTextInput-sc-17idtfo-0 VIYrI"
+          class="StyledTextInput-sc-1x30a0s-0 iTMnaf Select__SelectTextInput-sc-17idtfo-0 VIYrI"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -1917,6 +1922,7 @@ exports[`Select disabled 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c5::-webkit-input-placeholder {
@@ -2034,7 +2040,7 @@ exports[`Select disabled 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 fVbmbP Select__SelectTextInput-sc-17idtfo-0 nFqJk"
+          class="StyledTextInput-sc-1x30a0s-0 iTMnaf Select__SelectTextInput-sc-17idtfo-0 nFqJk"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -2214,6 +2220,7 @@ exports[`Select disabled key 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c6::-webkit-input-placeholder {
@@ -3154,6 +3161,7 @@ exports[`Select keyboard navigation timeout 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c6::-webkit-input-placeholder {
@@ -3919,6 +3927,7 @@ exports[`Select modifies select control style on open 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c6::-webkit-input-placeholder {
@@ -4181,6 +4190,7 @@ exports[`Select onChange with valueKey string 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c6::-webkit-input-placeholder {
@@ -4695,6 +4705,7 @@ exports[`Select onChange without valueKey 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c6::-webkit-input-placeholder {
@@ -5209,6 +5220,7 @@ exports[`Select prop: onClose 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c5::-webkit-input-placeholder {
@@ -5467,6 +5479,7 @@ exports[`Select prop: onClose 2`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c5::-webkit-input-placeholder {
@@ -5734,6 +5747,7 @@ exports[`Select prop: onOpen 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c5::-webkit-input-placeholder {
@@ -5849,7 +5863,7 @@ exports[`Select prop: onOpen 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 fVbmbP Select__SelectTextInput-sc-17idtfo-0 VIYrI"
+          class="StyledTextInput-sc-1x30a0s-0 iTMnaf Select__SelectTextInput-sc-17idtfo-0 VIYrI"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -6327,6 +6341,7 @@ exports[`Select renders custom icon 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c5::-webkit-input-placeholder {
@@ -6585,6 +6600,7 @@ exports[`Select renders custom up and down icons 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c6::-webkit-input-placeholder {
@@ -6714,7 +6730,7 @@ exports[`Select renders custom up and down icons 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 fVbmbP Select__SelectTextInput-sc-17idtfo-0 VIYrI"
+            class="StyledTextInput-sc-1x30a0s-0 iTMnaf Select__SelectTextInput-sc-17idtfo-0 VIYrI"
             placeholder="Select..."
             readonly=""
             tabindex="-1"
@@ -6945,6 +6961,7 @@ exports[`Select renders default icon 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c5::-webkit-input-placeholder {
@@ -7204,6 +7221,7 @@ exports[`Select renders styled select options backwards compatible with legacy
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c6::-webkit-input-placeholder {
@@ -7467,6 +7485,7 @@ exports[`Select renders styled select options combining select.options.box &&
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c6::-webkit-input-placeholder {
@@ -7728,6 +7747,7 @@ exports[`Select renders styled select options using select.options.container 1`]
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c6::-webkit-input-placeholder {
@@ -7936,6 +7956,7 @@ exports[`Select renders without icon 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c5::-webkit-input-placeholder {
@@ -8166,6 +8187,7 @@ exports[`Select search 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c5::-webkit-input-placeholder {
@@ -8793,6 +8815,7 @@ exports[`Select select an option 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c5::-webkit-input-placeholder {
@@ -9216,6 +9239,7 @@ exports[`Select select an option with enter 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c5::-webkit-input-placeholder {
@@ -9462,6 +9486,7 @@ exports[`Select selected 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c6::-webkit-input-placeholder {
@@ -9722,6 +9747,7 @@ exports[`Select should not have accessibility violations 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c6::-webkit-input-placeholder {
@@ -9982,6 +10008,7 @@ exports[`Select size 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
+  padding: 0px;
 }
 
 .c5::-webkit-input-placeholder {
