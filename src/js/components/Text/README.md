@@ -234,6 +234,16 @@ Defaults to
 { dark: '#f8f8f8', light: '#444444' }
 ```
 
+**text.font**
+
+The font to use for Text. Expects `object`.
+
+Defaults to
+
+```
+undefined
+```
+
 **text**
 
 The possible sizes of the text in terms of its font-size and 

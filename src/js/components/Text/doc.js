@@ -130,6 +130,11 @@ export const themeDoc = {
     type: 'object | { dark: string, light: string }',
     defaultValue: "{ dark: '#f8f8f8', light: '#444444' }",
   },
+  'text.font': {
+    description: 'The font to use for Text.',
+    type: 'object',
+    defaultValue: undefined,
+  },
   text: {
     description: `The possible sizes of the text in terms of its font-size and 
 line-height.`,

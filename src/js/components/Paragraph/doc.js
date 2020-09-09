@@ -72,6 +72,11 @@ export const themeDoc = {
       },
     }`,
   },
+  'text.paragraph': {
+    description: 'The font to use for Paragraph.',
+    type: 'object',
+    defaultValue: undefined,
+  },
   'paragraph.textAlign': {
     description: `How to align the text inside the Paragraph.`,
     type: 'string',

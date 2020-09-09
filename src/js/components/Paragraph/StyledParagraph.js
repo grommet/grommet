@@ -17,6 +17,14 @@ const sizeStyle = props => {
   `;
 };
 
+const fontFamily = props => {
+  return props.theme.paragraph.font
+    ? css`
+        font-family: ${props.theme.paragraph.font.family};
+      `
+    : '';
+};
+
 const TEXT_ALIGN_MAP = {
   center: 'center',
   end: 'right',
@@ -32,6 +40,7 @@ const StyledParagraph = styled.p`
   ${props => sizeStyle(props)}
   ${props => props.textAlign && textAlignStyle}
   ${props => props.colorProp && colorStyle}
+  ${props => fontFamily(props)}
 
   ${props => props.theme.paragraph && props.theme.paragraph.extend}
 `;

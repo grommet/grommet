@@ -2592,7 +2592,7 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
           class="StyledBox-sc-13pk1d4-0 lcXThF SelectContainer__OptionBox-sc-1wi0ul8-1 cjPAAw"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 bilRua"
+            class="StyledText-sc-1sadyjn-0 htoxQl"
           >
             Value1
           </span>
@@ -2608,7 +2608,7 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
           class="StyledBox-sc-13pk1d4-0 lcXThF SelectContainer__OptionBox-sc-1wi0ul8-1 cjPAAw"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 bilRua"
+            class="StyledText-sc-1sadyjn-0 htoxQl"
           >
             Value2
           </span>
