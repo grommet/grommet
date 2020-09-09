@@ -20,4 +20,8 @@ const ControlBottom = () => (
   </Grommet>
 );
 
-storiesOf('Menu', module).add('Bottom Control Button', () => <ControlBottom />);
+storiesOf('Menu', module).add(
+  'Bottom control button',
+  () => <ControlBottom />,
+  { chromatic: { disable: true } },
+);

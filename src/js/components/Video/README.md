@@ -1,7 +1,7 @@
 ## Video
 A video player.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Video&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=video&module=%2Fsrc%2FVideo.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Video&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/video&module=%2Fsrc%2FVideo.js)
 ## Usage
 
 ```javascript
@@ -166,6 +166,34 @@ Enables video muting. This option is best used with the autoPlay flag.
 ```
 boolean
 ```
+
+**messages**
+
+Custom messages. Used for accessibility by screen readers. Defaults to `{
+  "closeMenu": "close menu",
+  "fullScreen": "full screen",
+  "progressMeter": "video progress",
+  "scrubber": "scrubber",
+  "openMenu": "open menu",
+  "pauseButton": "pause",
+  "playButton": "play",
+  "volumeDown": "volume down",
+  "volumeUp": "volume up"
+}`.
+
+```
+{
+  closeMenu: string,
+  fullScreen: string,
+  progressMeter: string,
+  openMenu: string,
+  pauseButton: string,
+  playButton: string,
+  scrubber: string,
+  volumeDown: string,
+  volumeUp: string
+}
+```
   
 ## Intrinsic element
 
@@ -202,6 +230,76 @@ Defaults to
 
 ```
 rgba(0, 0, 0, 0.7)
+```
+
+**video.icons.closedCaption**
+
+The icon to use for the caption. Expects `React.Element`.
+
+Defaults to
+
+```
+<ClosedCaption />
+```
+
+**video.icons.configure**
+
+The icon to use for the configuration action. Expects `React.Element`.
+
+Defaults to
+
+```
+<Actions />
+```
+
+**video.icons.fullScreen**
+
+The icon to use for viewing the video in full screen. Expects `React.Element`.
+
+Defaults to
+
+```
+<Expand />
+```
+
+**video.icons.pause**
+
+The icon to use for pausing the video. Expects `React.Element`.
+
+Defaults to
+
+```
+<Pause />
+```
+
+**video.icons.play**
+
+The icon to use for playing the video. Expects `React.Element`.
+
+Defaults to
+
+```
+<Play />
+```
+
+**video.icons.reduceVolume**
+
+The icon to use for the action of lowering the volume. Expects `React.Element`.
+
+Defaults to
+
+```
+<VolumeLow />
+```
+
+**video.icons.volume**
+
+The icon to use for the action of raising the volume. Expects `React.Element`.
+
+Defaults to
+
+```
+<Volume />
 ```
 
 **video.scrubber.color**

@@ -986,6 +986,988 @@ exports[`List empty 1`] = `
 </div>
 `;
 
+exports[`List events ArrowDown key 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  cursor: pointer;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: rgba(221,221,221,0.4);
+  color: #444444;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  cursor: pointer;
+}
+
+.c1 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c1:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c3 {
+  cursor: pointer;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    border-top: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <ul
+    class="c1"
+    tabindex="0"
+  >
+    <li
+      class="c2 c3"
+      tabindex="-1"
+    >
+      alpha
+    </li>
+    <li
+      class="c4 c3"
+      tabindex="-1"
+    >
+      beta
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`List events ArrowDown key on last element 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  cursor: pointer;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: rgba(221,221,221,0.4);
+  color: #444444;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  cursor: pointer;
+}
+
+.c1 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c1:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c3 {
+  cursor: pointer;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    border-top: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <ul
+    class="c1"
+    tabindex="0"
+  >
+    <li
+      class="c2 c3"
+      tabindex="-1"
+    >
+      alpha
+    </li>
+    <li
+      class="c4 c3"
+      tabindex="-1"
+    >
+      beta
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`List events ArrowUp key 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  cursor: pointer;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: rgba(221,221,221,0.4);
+  color: #444444;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  cursor: pointer;
+}
+
+.c1 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c1:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c3 {
+  cursor: pointer;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    border-top: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <ul
+    class="c1"
+    tabindex="0"
+  >
+    <li
+      class="c2 c3"
+      tabindex="-1"
+    >
+      alpha
+    </li>
+    <li
+      class="c4 c3"
+      tabindex="-1"
+    >
+      beta
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`List events Enter key 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  cursor: pointer;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  cursor: pointer;
+}
+
+.c1 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c1:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c3 {
+  cursor: pointer;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    border-top: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <ul
+    class="c1"
+    tabindex="0"
+  >
+    <li
+      class="c2 c3"
+      tabindex="-1"
+    >
+      alpha
+    </li>
+    <li
+      class="c4 c3"
+      tabindex="-1"
+    >
+      beta
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`List events Enter key 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+>
+  <ul
+    class="List__StyledList-sc-130gdqg-0 ejwoGX"
+    tabindex="0"
+  >
+    <li
+      class="StyledBox-sc-13pk1d4-0 bGJPsF List__StyledItem-sc-130gdqg-1 fBniOQ"
+      tabindex="-1"
+    >
+      alpha
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 TLEKT List__StyledItem-sc-130gdqg-1 fBniOQ"
+      tabindex="-1"
+    >
+      beta
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`List events focus and blur 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  cursor: pointer;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: rgba(221,221,221,0.4);
+  color: #444444;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  cursor: pointer;
+}
+
+.c1 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c1:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c3 {
+  cursor: pointer;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    border-top: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <ul
+    class="c1"
+    tabindex="0"
+  >
+    <li
+      class="c2 c3"
+      tabindex="-1"
+    >
+      alpha
+    </li>
+    <li
+      class="c4 c3"
+      tabindex="-1"
+    >
+      beta
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`List events focus and blur 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+>
+  <ul
+    class="List__StyledList-sc-130gdqg-0 ejwoGX"
+    tabindex="0"
+  >
+    <li
+      class="StyledBox-sc-13pk1d4-0 bGJPsF List__StyledItem-sc-130gdqg-1 fBniOQ"
+      tabindex="-1"
+    >
+      alpha
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 dwrZcL List__StyledItem-sc-130gdqg-1 fBniOQ"
+      tabindex="-1"
+    >
+      beta
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`List events mouse events 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  cursor: pointer;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: rgba(221,221,221,0.4);
+  color: #444444;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  cursor: pointer;
+}
+
+.c1 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c1:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c3 {
+  cursor: pointer;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    border-top: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <ul
+    class="c1"
+    tabindex="0"
+  >
+    <li
+      class="c2 c3"
+      tabindex="-1"
+    >
+      alpha
+    </li>
+    <li
+      class="c4 c3"
+      tabindex="-1"
+    >
+      beta
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`List events mouse events 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+>
+  <ul
+    class="List__StyledList-sc-130gdqg-0 ejwoGX"
+    tabindex="0"
+  >
+    <li
+      class="StyledBox-sc-13pk1d4-0 bGJPsF List__StyledItem-sc-130gdqg-1 fBniOQ"
+      tabindex="-1"
+    >
+      alpha
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 dwrZcL List__StyledItem-sc-130gdqg-1 fBniOQ"
+      tabindex="-1"
+    >
+      beta
+    </li>
+  </ul>
+</div>
+`;
+
 exports[`List itemProps 1`] = `
 .c0 {
   font-size: 18px;
@@ -1413,6 +2395,10 @@ exports[`List onClickItem 1`] = `
   padding: 0;
 }
 
+.c1:focus {
+  outline: 2px solid #6FFFB0;
+}
+
 .c3 {
   cursor: pointer;
 }
@@ -1486,7 +2472,7 @@ exports[`List onClickItem 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 ckPrwz"
+    class="List__StyledList-sc-130gdqg-0 ejwoGX"
     tabindex="0"
   >
     <li

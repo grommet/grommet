@@ -1,6 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { genericProps, getAvailableAtBadge } from '../../utils';
+import { genericProps } from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
 
 const sizes = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
 const sides = ['horizontal', 'vertical', 'top', 'bottom', 'left', 'right'];
@@ -8,7 +9,10 @@ const parts = ['header', 'body', 'footer'];
 
 const padShapeSides = {};
 sides.forEach(side => {
-  padShapeSides[side] = PropTypes.oneOf(sizes);
+  padShapeSides[side] = PropTypes.oneOfType([
+    PropTypes.oneOf(sizes),
+    PropTypes.string,
+  ]);
 });
 
 const padShapeParts = {};
@@ -20,7 +24,7 @@ parts.forEach(part => {
 });
 
 const backgroundShape = {};
-parts.forEach(part => {
+[...parts, 'pinned'].forEach(part => {
   backgroundShape[part] = PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.shape({
@@ -97,6 +101,7 @@ export const doc = DataTable => {
             aggregate: PropTypes.bool,
           }),
         ]),
+        pin: PropTypes.bool,
         primary: PropTypes.bool,
         property: PropTypes.string.isRequired,
         render: PropTypes.func,
@@ -133,10 +138,18 @@ export const doc = DataTable => {
       made available for the column. 'primary' indicates that this property
       should be used as the unique identifier, which gives the cell 'row' scope
       for accessibility. If 'primary' is not used for any column, and
-      'primaryKey' isn't specified either, then the first column will be used.`,
+      'primaryKey' isn't specified either, then the first column will be used.
+      'pin' indicates that this column should not scroll out of view
+      to the left when the table is scrolled horizontally.`,
     ),
     data: PropTypes.arrayOf(PropTypes.shape({})).description(
       'Array of data objects.',
+    ),
+    fill: PropTypes.oneOfType([
+      PropTypes.oneOf(['horizontal', 'vertical']),
+      PropTypes.bool,
+    ]).description(
+      'Whether the width and/or height should fill the container.',
     ),
     groupBy: PropTypes.oneOfType([
       PropTypes.string,
@@ -150,6 +163,13 @@ export const doc = DataTable => {
        group keys that sets expanded groups and 'onExpand' is a function
        that will be called after expand button is clicked with
        an array of keys of expanded groups.`),
+    onClickRow: PropTypes.func.description(
+      `When supplied, this function will be called with an event object that
+      include a 'datum' property containing the data value associated with
+      the clicked row. You should not include interactive elements, like
+      Anchor or Button inside table cells as that can cause confusion with
+      overlapping interactive elements.`,
+    ),
     onMore: PropTypes.func.description(
       `Use this to indicate that 'data' doesn't contain all that it could.
       It will be called when all of the data rows have been rendered.
@@ -159,19 +179,6 @@ export const doc = DataTable => {
       be combined with properties that expect all data to be present in the
       browser, such as columns.search, sortable, groupBy, or 
       columns.aggregate.`,
-    ),
-    replace: PropTypes.bool.description(
-      `Whether to replace previously rendered items with a generic spacing
-      element when they have scrolled out of view. This is more performant but
-      means that in-page searching will not find elements that have been
-      replaced.`,
-    ),
-    onClickRow: PropTypes.func.description(
-      `When supplied, this function will be called with an event object that
-      include a 'datum' property containing the data value associated with
-      the clicked row. You should not include interactive elements, like
-      Anchor or Button inside table cells as that can cause confusion with
-      overlapping interactive elements.`,
     ),
     onSearch: PropTypes.func.description(
       `When supplied, and when at least one column has 'search' enabled,
@@ -194,6 +201,13 @@ export const doc = DataTable => {
       `Cell padding. You can set the padding per context by passing an
       object with keys for 'heading', 'body', and/or 'footer'.`,
     ),
+    pin: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.oneOf(['header', 'footer']),
+    ]).description(
+      `Whether the header and/or footer should be pinned when
+      not all rows are visible. A value of true pins both header and footer.`,
+    ),
     primaryKey: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.bool,
@@ -203,6 +217,12 @@ export const doc = DataTable => {
       Use this property when the columns approach will not work for your
       data set. Setting primaryKey to false indicates there should be no
       unique identifier, avoid this as it's less accessible.`,
+    ),
+    replace: PropTypes.bool.description(
+      `Whether to replace previously rendered items with a generic spacing
+      element when they have scrolled out of view. This is more performant but
+      means that in-page searching will not find elements that have been
+      replaced.`,
     ),
     resizeable: PropTypes.bool.description(
       'Whether to allow the user to resize column widths.',
@@ -225,8 +245,14 @@ export const doc = DataTable => {
     ),
     sort: PropTypes.shape({
       direction: PropTypes.oneOf(['asc', 'desc']),
+      external: PropTypes.bool,
       property: PropTypes.string.isRequired,
-    }).description('Which property to sort on and which direction to sort.'),
+    }).description(
+      `Which property to sort on and which direction to sort. When 'external'
+      is true, it indicates that the caller will take care of sorting
+      the 'data' via 'onSort'. Otherwise, the existing data will be sorted
+      within DataTable.`,
+    ),
     sortable: PropTypes.bool.description(
       'Whether to allow the user to sort columns.',
     ),
@@ -248,6 +274,11 @@ export const themeDoc = {
     description: 'The text color when hovering over an interactive row.',
     type: 'string | { dark: string, light: string }',
     defaultValue: "{ dark: 'white', light: 'black' }",
+  },
+  'dataTable.body.extend': {
+    description: 'Any additional style for an DataTable Body',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
   },
   'dataTable.groupHeader.background': {
     description: 'The background color of the group header.',
@@ -298,6 +329,11 @@ export const themeDoc = {
     description: 'The expand icon.',
     type: 'React.Element',
     defaultValue: '<FormDown />',
+  },
+  'dataTable.icons.sortable': {
+    description: 'The icon indicating a column can be sorted.',
+    type: 'React.Element',
+    defaultValue: undefined,
   },
   'dataTable.primary.weight': {
     description: 'The font weight for primary cells.',

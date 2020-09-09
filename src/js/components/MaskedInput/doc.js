@@ -1,6 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge, themeDocUtils } from '../../utils';
+import { getAvailableAtBadge } from '../../utils/mixins';
+import { themeDocUtils } from '../../utils/themeDocUtils';
 
 export const doc = MaskedInput => {
   const DocumentedMaskedInput = describe(MaskedInput)
@@ -13,6 +14,9 @@ export const doc = MaskedInput => {
     .intrinsicElement('input');
 
   DocumentedMaskedInput.propTypes = {
+    a11yTitle: PropTypes.string.description(
+      'Custom title to be used by screen readers.',
+    ),
     icon: PropTypes.element.description(
       `An optional icon to show. This could be used to provide an
       indication of what kind of input is expected, like an email icon,

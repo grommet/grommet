@@ -18,28 +18,30 @@ const Example = () => (
     <Box align="center" justify="start" pad="large">
       <DataChart
         data={data}
+        series={[
+          {
+            property: 'date',
+            render: date => (
+              <Text margin={{ horizontal: 'xsmall' }}>
+                {new Date(date).toLocaleDateString('en-US', {
+                  month: 'numeric',
+                  day: 'numeric',
+                })}
+              </Text>
+            ),
+          },
+          'usage',
+          'bonus',
+        ]}
         chart={[
           {
-            keys: [
-              { key: 'usage', color: 'graph-1' },
-              { key: 'bonus', color: 'graph-2' },
-            ],
-            type: 'bar',
+            property: ['usage', 'bonus'],
+            type: 'bars',
           },
         ]}
-        xAxis={{
-          key: 'date',
-          render: date => (
-            <Text margin={{ horizontal: 'xsmall' }}>
-              {new Date(date).toLocaleDateString('en-US', {
-                month: 'numeric',
-                day: 'numeric',
-              })}
-            </Text>
-          ),
-        }}
-        yAxis={{ guide: true }}
-        gap="medium"
+        axis={{ x: { property: 'date', granularity: 'fine' }, y: true }}
+        guide={{ y: true }}
+        legend
       />
     </Box>
   </Grommet>

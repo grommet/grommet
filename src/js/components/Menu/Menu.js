@@ -7,7 +7,6 @@ import React, {
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 
-import PropTypes from 'react-desc/lib/PropTypes';
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
@@ -36,7 +35,7 @@ To open menu when menu button is focused:
 To navigate within menu:
 - Up/down arrow keys can be used and will loop through options
 (keeping focus within the Menu)
-- Tab can be used, but once the last menu item is reached, Tab will close the 
+- Tab can be used, but once the last menu item is reached, Tab will close the
 Menu and continue through page content.
 
 To close the menu:
@@ -70,7 +69,6 @@ const Menu = forwardRef((props, ref) => {
     ...rest
   } = props;
   const theme = useContext(ThemeContext) || defaultProps.theme;
-  const MenuIcon = theme.menu.icons.down;
   const iconColor = normalizeColor(theme.menu.icons.color || 'control', theme);
   const align = dropProps.align || dropAlign;
   const controlButtonIndex = useMemo(() => {
@@ -94,6 +92,9 @@ const Menu = forwardRef((props, ref) => {
 
   const [activeItemIndex, setActiveItemIndex] = useState(constants.none);
   const [isOpen, setOpen] = useState(open || false);
+
+  const MenuIcon =
+    isOpen && theme.menu.icons.up ? theme.menu.icons.up : theme.menu.icons.down;
 
   const onDropClose = useCallback(() => {
     setActiveItemIndex(constants.none);
@@ -188,7 +189,7 @@ const Menu = forwardRef((props, ref) => {
       direction="row"
       justify={justifyContent}
       align="center"
-      pad="small"
+      pad={theme.button.default ? undefined : 'small'}
       gap={label && icon !== false ? 'small' : undefined}
     >
       <Text size={size}>{label}</Text>
@@ -256,41 +257,62 @@ const Menu = forwardRef((props, ref) => {
             <ContainerBox background={dropBackground || theme.menu.background}>
               {align.top === 'top' ? controlMirror : undefined}
               <Box overflow="auto">
-                {items.map((item, index) => (
-                  // eslint-disable-next-line react/no-array-index-key
-                  <Box key={index} flex={false}>
-                    <Button
-                      ref={r => {
-                        buttonRefs[index] = r;
-                      }}
-                      onFocus={() => setActiveItemIndex(index)}
-                      active={activeItemIndex === index}
-                      hoverIndicator="background"
-                      focusIndicator={false}
-                      plain={theme.button.default ? true : undefined}
-                      {...{ ...item, icon: undefined, label: undefined }}
-                      onClick={(...args) => {
-                        if (item.onClick) {
-                          item.onClick(...args);
-                        }
-                        if (item.close !== false) {
-                          onDropClose();
-                        }
-                      }}
+                {items.map((item, index) => {
+                  // Determine whether the label is done as a child or
+                  // as an option Button kind property.
+                  const child = !theme.button.option ? (
+                    <Box
+                      align="start"
+                      pad="small"
+                      direction="row"
+                      gap={item.gap}
                     >
-                      <Box
+                      {item.reverse && item.label}
+                      {item.icon}
+                      {!item.reverse && item.label}
+                    </Box>
+                  ) : (
+                    undefined
+                  );
+                  // if we have a child, turn on plain, and hoverIndicator
+
+                  return (
+                    // eslint-disable-next-line react/no-array-index-key
+                    <Box key={index} flex={false}>
+                      <Button
+                        ref={r => {
+                          buttonRefs[index] = r;
+                        }}
+                        onFocus={() => setActiveItemIndex(index)}
+                        active={activeItemIndex === index}
+                        focusIndicator={false}
+                        plain={!child ? undefined : true}
                         align="start"
-                        pad="small"
-                        direction="row"
-                        gap={item.gap}
+                        kind={!child ? 'option' : undefined}
+                        hoverIndicator={!child ? undefined : 'background'}
+                        {...(!child
+                          ? item
+                          : {
+                              ...item,
+                              gap: undefined,
+                              icon: undefined,
+                              label: undefined,
+                              reverse: undefined,
+                            })}
+                        onClick={(...args) => {
+                          if (item.onClick) {
+                            item.onClick(...args);
+                          }
+                          if (item.close !== false) {
+                            onDropClose();
+                          }
+                        }}
                       >
-                        {item.reverse && item.label}
-                        {item.icon}
-                        {!item.reverse && item.label}
-                      </Box>
-                    </Button>
-                  </Box>
-                ))}
+                        {child}
+                      </Button>
+                    </Box>
+                  );
+                })}
               </Box>
               {align.bottom === 'bottom' ? controlMirror : undefined}
             </ContainerBox>
@@ -302,20 +324,6 @@ const Menu = forwardRef((props, ref) => {
     </Keyboard>
   );
 });
-
-Menu.propTypes = {
-  dropAlign: PropTypes.shape({
-    top: PropTypes.string,
-    left: PropTypes.string,
-  }),
-  dropProps: PropTypes.shape({}),
-  items: PropTypes.arrayOf({}),
-  messages: PropTypes.shape({
-    openMenu: PropTypes.string,
-    closeMenu: PropTypes.string,
-  }),
-  justifyContent: PropTypes.string,
-};
 
 Menu.defaultProps = {
   dropAlign: {

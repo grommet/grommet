@@ -2,12 +2,12 @@ import { describe, PropTypes } from 'react-desc';
 
 import {
   backgroundDoc,
-  getAvailableAtBadge,
   genericProps,
   hoverIndicatorPropType,
   padPropType,
-  themeDocUtils,
-} from '../../utils';
+} from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
+import { themeDocUtils } from '../../utils/themeDocUtils';
 
 export const OVERFLOW_VALUES = ['auto', 'hidden', 'scroll', 'visible'];
 
@@ -212,7 +212,8 @@ export const doc = Box => {
       PropTypes.string,
     ]).description(`The amount of spacing between child elements. This
         should not be used in conjunction with 'wrap' as the gap elements
-        will not wrap gracefully.`),
+        will not wrap gracefully. If a child is a Fragment,
+        Box will not add a gap between the choldren of the Fragment.`),
     height: PropTypes.oneOfType([
       PropTypes.oneOf([
         'xxsmall',

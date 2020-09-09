@@ -5,18 +5,22 @@ import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
-import { TableCell } from '../TableCell';
 import { Text } from '../Text';
 
 import { Resizer } from './Resizer';
 import { Searcher } from './Searcher';
 import { ExpanderCell } from './ExpanderCell';
-import { StyledDataTableHeader, StyledDataTableRow } from './StyledDataTable';
+import {
+  StyledDataTableCell,
+  StyledDataTableHeader,
+  StyledDataTableRow,
+} from './StyledDataTable';
 
 const Header = ({
   background,
   border,
   columns,
+  fill,
   filtering,
   filters,
   groups,
@@ -27,13 +31,14 @@ const Header = ({
   onSort,
   onToggle,
   pad,
+  pin: tablePin,
   sort,
   widths,
   ...rest
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
   return (
-    <StyledDataTableHeader {...rest}>
+    <StyledDataTableHeader fillProp={fill} {...rest}>
       <StyledDataTableRow>
         {groups && (
           <ExpanderCell
@@ -51,6 +56,7 @@ const Header = ({
             property,
             header,
             align,
+            pin: columnPin,
             search,
             sortable,
             verticalAlign,
@@ -60,14 +66,17 @@ const Header = ({
               typeof header === 'string' ? <Text>{header}</Text> : header;
 
             if (onSort && sortable !== false) {
-              const Icon =
-                onSort &&
-                sortable !== false &&
-                sort &&
-                sort.property === property &&
-                theme.dataTable.icons[
-                  sort.direction !== 'asc' ? 'ascending' : 'descending'
-                ];
+              let Icon;
+              if (onSort && sortable !== false) {
+                if (sort && sort.property === property) {
+                  Icon =
+                    theme.dataTable.icons[
+                      sort.direction !== 'asc' ? 'ascending' : 'descending'
+                    ];
+                } else if (theme.dataTable.icons.sortable) {
+                  Icon = theme.dataTable.icons.sortable;
+                }
+              }
               content = (
                 <Button plain fill="vertical" onClick={onSort(property)}>
                   <Box direction="row" align="center" gap="xsmall">
@@ -118,15 +127,18 @@ const Header = ({
                 </Box>
               );
             }
-
+            const pin = [];
+            if (tablePin) pin.push('top');
+            if (columnPin) pin.push('left');
             return (
-              <TableCell
+              <StyledDataTableCell
                 key={property}
                 align={align}
                 verticalAlign={verticalAlign}
                 background={background}
                 border={border}
                 pad={pad}
+                pin={pin}
                 plain
                 scope="col"
                 size={widths && widths[property] ? undefined : size}
@@ -137,7 +149,7 @@ const Header = ({
                 }
               >
                 {content}
-              </TableCell>
+              </StyledDataTableCell>
             );
           },
         )}

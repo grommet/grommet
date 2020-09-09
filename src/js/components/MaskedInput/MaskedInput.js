@@ -14,6 +14,7 @@ import { Button } from '../Button';
 import { Drop } from '../Drop';
 import { FormContext } from '../Form/FormContext';
 import { Keyboard } from '../Keyboard';
+import { useForwardedRef } from '../../utils';
 
 import {
   StyledMaskedInput,
@@ -35,15 +36,39 @@ const parseValue = (mask, value) => {
     let found;
     if (item.fixed) {
       const { length } = item.fixed;
-      valueParts.push({
-        part: item.fixed,
-        beginIndex: valueIndex,
-        endIndex: valueIndex + length - 1,
-      });
-      const part = value.slice(valueIndex, valueIndex + length);
-      if (part === item.fixed) {
-        valueIndex += length;
+
+      // grab however much of value (starting at valueIndex) matches
+      // item.fixed. If none matches it and there is more in value
+      // add in the fixed item.
+      let matching = 0;
+      while (
+        matching < length &&
+        value[valueIndex + matching] === item.fixed[matching]
+      ) {
+        matching += 1;
       }
+
+      if (matching > 0) {
+        let part = value.slice(valueIndex, valueIndex + matching);
+        if (valueIndex + matching < value.length) {
+          // matched part of the fixed portion but there's more stuff
+          // after it. Go ahead and fill in the entire fixed chunk
+          part = item.fixed;
+        }
+        valueParts.push({
+          part,
+          beginIndex: valueIndex,
+          endIndex: valueIndex + matching - 1,
+        });
+        valueIndex += matching;
+      } else {
+        valueParts.push({
+          part: item.fixed,
+          beginIndex: valueIndex,
+          endIndex: valueIndex + length - 1,
+        });
+      }
+
       maskIndex += 1;
       found = true;
     } else if (item.options) {
@@ -112,12 +137,18 @@ const parseValue = (mask, value) => {
   return valueParts;
 };
 
-const defaultMask = [];
+const defaultMask = [
+  {
+    regexp: /[^]*/,
+  },
+];
+
 const dropAlign = { top: 'bottom', left: 'left' };
 
 const MaskedInput = forwardRef(
   (
     {
+      a11yTitle,
       focus: focusProp,
       icon,
       id,
@@ -138,14 +169,14 @@ const MaskedInput = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const formContext = useContext(FormContext);
 
-    const [value, setValue] = formContext.useFormContext(name, valueProp);
+    const [value, setValue] = formContext.useFormInput(name, valueProp);
 
     const [valueParts, setValueParts] = useState(parseValue(mask, value));
     useEffect(() => {
       setValueParts(parseValue(mask, value));
     }, [mask, value]);
 
-    const inputRef = useRef();
+    const inputRef = useForwardedRef(ref);
     const dropRef = useRef();
 
     const [focus, setFocus] = useState(focusProp);
@@ -157,7 +188,7 @@ const MaskedInput = forwardRef(
       if (focus) {
         const timer = setTimeout(() => {
           // determine which mask element the caret is at
-          const caretIndex = (ref || inputRef).current.selectionStart;
+          const caretIndex = inputRef.current.selectionStart;
           let maskIndex;
           valueParts.some((part, index) => {
             if (part.beginIndex <= caretIndex && part.endIndex >= caretIndex) {
@@ -181,7 +212,7 @@ const MaskedInput = forwardRef(
         return () => clearTimeout(timer);
       }
       return undefined;
-    }, [activeMaskIndex, focus, mask, ref, valueParts]);
+    }, [activeMaskIndex, focus, inputRef, mask, valueParts]);
 
     const setInputValue = useCallback(
       nextValue => {
@@ -194,11 +225,11 @@ const MaskedInput = forwardRef(
           window.HTMLInputElement.prototype,
           'value',
         ).set;
-        nativeInputValueSetter.call((ref || inputRef).current, nextValue);
+        nativeInputValueSetter.call(inputRef.current, nextValue);
         const event = new Event('input', { bubbles: true });
-        (ref || inputRef).current.dispatchEvent(event);
+        inputRef.current.dispatchEvent(event);
       },
-      [ref],
+      [inputRef],
     );
 
     // This could be due to a paste or as the user is typing.
@@ -208,8 +239,11 @@ const MaskedInput = forwardRef(
         const nextValueParts = parseValue(mask, event.target.value);
         const nextValue = nextValueParts.map(part => part.part).join('');
 
-        if (value !== nextValue) {
+        if (nextValue !== event.target.value) {
+          // The mask required inserting something, change the input.
+          // This will re-trigger this callback with the next value
           setInputValue(nextValue);
+        } else if (value !== nextValue) {
           setValue(nextValue);
           if (onChange) onChange(event);
         }
@@ -234,9 +268,9 @@ const MaskedInput = forwardRef(
         const nextValue = nextValueParts.map(part => part.part).join('');
         setInputValue(nextValue);
         // restore focus to input
-        (ref || inputRef).current.focus();
+        inputRef.current.focus();
       },
-      [activeMaskIndex, mask, ref, setInputValue, valueParts],
+      [activeMaskIndex, inputRef, mask, setInputValue, valueParts],
     );
 
     const onNextOption = useCallback(
@@ -313,7 +347,8 @@ const MaskedInput = forwardRef(
           onKeyDown={onKeyDown}
         >
           <StyledMaskedInput
-            ref={ref || inputRef}
+            ref={inputRef}
+            aria-label={a11yTitle}
             id={id}
             name={name}
             autoComplete="off"
@@ -347,28 +382,42 @@ const MaskedInput = forwardRef(
             id={id ? `masked-input-drop__${id}` : undefined}
             align={dropAlign}
             responsive={false}
-            target={(ref || inputRef).current}
+            target={inputRef.current}
             onClickOutside={onHideDrop}
             onEsc={onHideDrop}
           >
             <Box ref={dropRef}>
-              {mask[activeMaskIndex].options.map((option, index) => (
-                <Box key={option} flex={false}>
-                  <Button
-                    tabIndex="-1"
-                    onClick={onOption(option)}
-                    onMouseOver={() => setActiveOptionIndex(index)}
-                    onFocus={() => {}}
-                    active={index === activeOptionIndex}
-                    hoverIndicator="background"
-                    plain={theme.button.default ? true : undefined}
-                  >
-                    <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
-                      {option}
-                    </Box>
-                  </Button>
-                </Box>
-              ))}
+              {mask[activeMaskIndex].options.map((option, index) => {
+                // Determine whether the label is done as a child or
+                // as an option Button kind property.
+                const child = !theme.button.option ? (
+                  <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
+                    {option}
+                  </Box>
+                ) : (
+                  undefined
+                );
+                // if we have a child, turn on plain, and hoverIndicator
+
+                return (
+                  <Box key={option} flex={false}>
+                    <Button
+                      tabIndex="-1"
+                      onClick={onOption(option)}
+                      onMouseOver={() => setActiveOptionIndex(index)}
+                      onFocus={() => {}}
+                      active={index === activeOptionIndex}
+                      plain={!child ? undefined : true}
+                      align="start"
+                      kind={!child ? 'option' : undefined}
+                      hoverIndicator={!child ? undefined : 'background'}
+                      label={!child ? option : undefined}
+                    >
+                      {child}
+                    </Button>
+                  </Box>
+                );
+              })}
             </Box>
           </Drop>
         )}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import isChromatic from 'storybook-chromatic/isChromatic';
+import isChromatic from 'chromatic/isChromatic';
 
 import {
   Bookmark,
@@ -21,6 +21,8 @@ import {
 } from 'grommet';
 import { grommet, ThemeType } from 'grommet/themes';
 
+// Type annotations can only be used in TypeScript files.
+// Remove ': ThemeType' if you are not using Typescript.
 const richAccordionTheme: ThemeType = {
   accordion: {
     icons: {
@@ -78,7 +80,7 @@ const spinning = (
   >
     <path
       opacity=".25"
-      d="M16 0 A16 16 0 0 0 16 32 A16 16 0 0 0 16 0 M16 4 A12 12 0 0 1 16 28 
+      d="M16 0 A16 16 0 0 0 16 32 A16 16 0 0 0 16 0 M16 4 A12 12 0 0 1 16 28
       A12 12 0 0 1 16 4"
     />
     <path d="M16 0 A16 16 0 0 1 32 16 L28 16 A12 12 0 0 0 16 4z">
@@ -248,8 +250,4 @@ const RichAccordion = () => {
   );
 };
 
-if (!isChromatic()) {
-  storiesOf('TypeScript/Accordion', module).add('Rich', () => (
-    <RichAccordion />
-  ));
-}
+storiesOf('Accordion', module).add('Rich', () => <RichAccordion />);

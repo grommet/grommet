@@ -4,7 +4,7 @@ A radio button control.
 RadioButton should typically not be used directly.
       Instead, use RadioButtonGroup.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=RadioButton&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=radiobutton&module=%2Fsrc%2FRadioButton.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=RadioButton&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/radiobutton&module=%2Fsrc%2FRadioButton.js)
 ## Usage
 
 ```javascript
@@ -13,6 +13,15 @@ import { RadioButton } from 'grommet';
 ```
 
 ## Properties
+
+**a11yTitle**
+
+Custom label to be used by screen readers.
+      When provided, an aria-label will be added to the element.
+
+```
+string
+```
 
 **checked**
 
@@ -86,6 +95,17 @@ input
 ```
 ## Theme
   
+**global.colors.control**
+
+The default color of the border surrounding 
+    the checked icon in RadioButton checked state. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+{ dark: 'accent-1', light: 'brand'}
+```
+
 **radioButton.border.color**
 
 The color of the border of the Radio Button. Expects `string | { dark: string, light: string }`.
@@ -104,6 +124,16 @@ Defaults to
 
 ```
 2px
+```
+
+**radioButton.check.background.color**
+
+The background color of the checked icon in the RadioButton. Expects `string | {dark: string, light: string}`.
+
+Defaults to
+
+```
+undefined
 ```
 
 **radioButton.check.color**
@@ -136,6 +166,17 @@ Defaults to
 100%
 ```
 
+**radioButton.color**
+
+The color of the border surrounding the checked 
+    icon in RadioButton checked state. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
 **radioButton.extend**
 
 Any additional style for the RadioButton. Expects `string | (props) => {}`.
@@ -156,6 +197,16 @@ Defaults to
 small
 ```
 
+**radioButton.font.weight**
+
+The font weight of the label. Expects `number | string`.
+
+Defaults to
+
+```
+undefined
+```
+
 **radioButton.size**
 
 The size of the RadioButton. Expects `string`.
@@ -164,6 +215,17 @@ Defaults to
 
 ```
 24px
+```
+
+**radioButton.hover.background.color**
+
+The background color of the Box surrounding the RadioButton
+    when hovered over. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
 ```
 
 **radioButton.hover.border.color**

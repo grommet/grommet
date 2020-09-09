@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = RadioButtonGroup => {
   const DocumentedRadioButtonGroup = describe(RadioButtonGroup)
@@ -34,21 +34,38 @@ export const doc = RadioButtonGroup => {
     ),
     options: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.string),
+      PropTypes.arrayOf(PropTypes.number),
+      PropTypes.arrayOf(PropTypes.bool),
       PropTypes.arrayOf(
         PropTypes.shape({
           disabled: PropTypes.bool,
           id: PropTypes.string,
           label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-          value: PropTypes.string.isRequired,
+          value: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number,
+            PropTypes.bool,
+          ]).isRequired,
         }),
       ),
-    ]).description(`Options can be either a string or an object. 
-    Each option is rendered as a single RadioButton.`).isRequired,
+    ]).description(`Options can be either a string, boolean, number 
+      or an object. Each option is rendered as a single RadioButton.`)
+      .isRequired,
     value: PropTypes.oneOfType([
       PropTypes.string,
+      PropTypes.number,
+      PropTypes.bool,
       PropTypes.object,
     ]).description(`Currently selected option value.`),
   };
 
   return DocumentedRadioButtonGroup;
+};
+
+export const themeDoc = {
+  'radioButtonGroup.container': {
+    description: 'Any valid Box props for the RadioButtonGroup container.',
+    type: 'object',
+    defaultValue: 'undefined',
+  },
 };

@@ -3,7 +3,7 @@ A single field in a form. FormField wraps an input component with
       a label, help, and/or error messaging. It typically contains an input
       control like TextInput, TextArea, Select, etc.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=FormField&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=formfield&module=%2Fsrc%2FFormField.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=FormField&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/formfield&module=%2Fsrc%2FFormField.js)
 ## Usage
 
 ```javascript
@@ -13,10 +13,21 @@ import { FormField } from 'grommet';
 
 ## Properties
 
+**a11yTitle**
+
+Custom label to be used by screen readers.
+       Should only be provided if FormField has no children.
+       When a11yTitle is provided an aria-label will be added to the element
+       if it has no children.
+
+```
+string
+```
+
 **component**
 
-The component to insert in the FormField. Grommet will add update the 
-      form values when this field changes. Any additional properties 
+The component to insert in the FormField. Grommet will add update the
+      form values when this field changes. Any additional properties
       (such as initial value) you pass to FormField will be forwarded to this
       component. The component may be custom as long it supports the properties
       of name, value, onChange (event => {}), while event has either event.value
@@ -24,6 +35,16 @@ The component to insert in the FormField. Grommet will add update the
 
 ```
 function
+object
+```
+
+**contentProps**
+
+Any valid Box property. These
+     properties are applied to the FormField contents container and will
+     override properties from the theme.
+
+```
 object
 ```
 
@@ -199,7 +220,7 @@ Validation rule when used within a grommet Form. Provide an object
 
 ```
 {
-  regexp: object,
+  regexp: new RegExp(...),
   message: 
     string
     node,
@@ -210,7 +231,7 @@ Validation rule when used within a grommet Form. Provide an object
 function
 [
   {
-    regexp: object,
+    regexp: new RegExp(...),
     message: 
       string
       node,
@@ -267,6 +288,16 @@ Defaults to
 
 ```
 bottom
+```
+
+**formField.content.margin**
+
+The margin of the FormField content. Expects `object`.
+
+Defaults to
+
+```
+undefined
 ```
 
 **formField.content.pad**
@@ -347,6 +378,48 @@ Defaults to
 
 ```
 status-critical
+```
+
+**formField.error.container**
+
+Any valid Box props for the container surrounding the error 
+    message and icon. Expects `object`.
+
+Defaults to
+
+```
+undefined
+```
+
+**formField.error.icon**
+
+An icon placed in a row with the error message. Expects `React.Element`.
+
+Defaults to
+
+```
+undefined
+```
+
+**formField.info.container**
+
+Any valid Box props for the container surrounding the info 
+    message and icon. Expects `object`.
+
+Defaults to
+
+```
+undefined
+```
+
+**formField.info.icon**
+
+An icon placed in a row with the info message. Expects `React.Element`.
+
+Defaults to
+
+```
+undefined
 ```
 
 **formField.error.margin**

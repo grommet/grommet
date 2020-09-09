@@ -5,7 +5,7 @@ Object {
   "Accordion": "## Accordion
 An accordion containing collapsible panels.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Accordion&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=accordion&module=%2Fsrc%2FAccordion.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Accordion&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/accordion&module=%2Fsrc%2FAccordion.js)
 ## Usage
 
 \`\`\`javascript
@@ -351,7 +351,7 @@ We have a separate component from the browser
 base so we can style it. You can either set the icon and/or label properties
 or just use children.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Anchor&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=anchor&module=%2Fsrc%2FAnchor.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Anchor&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/anchor&module=%2Fsrc%2FAnchor.js)
 ## Usage
 
 \`\`\`javascript
@@ -736,7 +736,7 @@ Defaults to
   "Avatar": "## Avatar
 An Avatar.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Avatar&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=avatar&module=%2Fsrc%2FAvatar.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Avatar&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/avatar&module=%2Fsrc%2FAvatar.js)
 ## Usage
 
 \`\`\`javascript
@@ -859,7 +859,7 @@ A container that lays out its contents in one direction. Box
       provides CSS flexbox capabilities for layout, as well as general
       styling of things like background color, border, and animation.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Box&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=box&module=%2Fsrc%2FBox.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Box&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/box&module=%2Fsrc%2FBox.js)
 ## Usage
 
 \`\`\`javascript
@@ -1306,7 +1306,8 @@ boolean
 
 The amount of spacing between child elements. This
         should not be used in conjunction with 'wrap' as the gap elements
-        will not wrap gracefully.
+        will not wrap gracefully. If a child is a Fragment,
+        Box will not add a gap between the choldren of the Fragment.
 
 \`\`\`
 none
@@ -1853,7 +1854,7 @@ You can provide a single function child that will be called with
       'hover' and 'focus' keys. This allows you to customize the rendering
       of the Button in those cases.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Button&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=button&module=%2Fsrc%2FButton.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Button&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/button&module=%2Fsrc%2FButton.js)
 ## Usage
 
 \`\`\`javascript
@@ -1974,6 +1975,22 @@ xlarge
     string
 }
 string
+\`\`\`
+
+**children**
+
+Function that can be called to render the visual representation.
+      Button can take in Children as a function, node, or object. 
+      For example hover can be passed as an object that would 
+      then return a react element.
+      \`children={({ hover }) => <Box...>{...}</Box>}\`. When Button has
+      children, it is styled as a \`plain\` button.
+      
+
+\`\`\`
+function
+object
+node
 \`\`\`
 
 **active**
@@ -2175,6 +2192,7 @@ _self
 _blank
 _parent
 _top
+string
 \`\`\`
 
 **type**
@@ -2455,6 +2473,16 @@ Defaults to
 undefined
 \`\`\`
 
+**button.default.font.weight**
+
+The weight of the text label for default buttons. Expects \`string | number\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **button.default.extend**
 
 Any additional style for a default button. Expects \`string | (props) => {}\`.
@@ -2695,6 +2723,16 @@ Defaults to
 undefined
 \`\`\`
 
+**button.primary.font.weight**
+
+The weight of the text label for primary buttons. Expects \`string | number\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **button.primary.padding.horizontal**
 
 The horizontal padding for a primary button. Expects \`string\`.
@@ -2758,6 +2796,16 @@ undefined
 **button.secondary.color**
 
 The color of the label for secondary buttons. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**button.secondary.font.weight**
+
+The weight of the text label for secondary buttons. Expects \`string | number\`.
 
 Defaults to
 
@@ -2992,7 +3040,7 @@ A calendar of days displayed by month.
       It can be used to select a single date, a range of dates, or multiple
       individual dates.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Calendar&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=calendar&module=%2Fsrc%2FCalendar.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Calendar&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/calendar&module=%2Fsrc%2FCalendar.js)
 ## Usage
 
 \`\`\`javascript
@@ -3534,12 +3582,112 @@ Defaults to
   }
 \`\`\`
 ",
+  "Card": "## Card
+A Card is a container of information that provides access to more 
+      details. Elements of a Card can include Header, Body, Footer or any 
+      other custom component.
+
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Card&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/card&module=%2Fsrc%2FCard.js)
+## Usage
+
+\`\`\`javascript
+import { Card } from 'grommet';
+<Card/>
+\`\`\`
+
+## Properties
+
+  
+## Intrinsic element
+
+\`\`\`
+div
+\`\`\`
+## Theme
+  
+**card.container**
+
+Any valid Box prop for the Card container. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{ round: 'small', elevation: 'small' }
+\`\`\`
+
+**card.header**
+
+Any valid Box prop for the CardHeader. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+[object Object]
+\`\`\`
+
+**card.body**
+
+Any valid Box prop for the CardBody. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+[object Object]
+\`\`\`
+
+**card.footer**
+
+Any valid Box prop for the CardFooter container. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{ background: 'background-contrast' }
+\`\`\`
+",
+  "CardBody": "## CardBody
+The body of the card. Mostly used for placing content.
+
+
+## Properties
+
+  
+## Intrinsic element
+
+\`\`\`
+div
+\`\`\`",
+  "CardFooter": "## CardFooter
+The Card Footer. Works best as the latter sibling of CardBody or any 
+      other flex container.
+
+
+## Properties
+
+  
+## Intrinsic element
+
+\`\`\`
+div
+\`\`\`",
+  "CardHeader": "## CardHeader
+The Card Header.
+
+
+## Properties
+
+  
+## Intrinsic element
+
+\`\`\`
+div
+\`\`\`",
   "Carousel": "## Carousel
 A carousel that cycles through children. Child components
       would typically be Images. It is the caller's responsibility to ensure
       that all children are the same size.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Carousel&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=carousel&module=%2Fsrc%2FCarousel.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Carousel&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/carousel&module=%2Fsrc%2FCarousel.js)
 ## Usage
 
 \`\`\`javascript
@@ -3803,7 +3951,7 @@ Defaults to
   "Chart": "## Chart
 A graphical chart.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Chart&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=chart&module=%2Fsrc%2FChart.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Chart&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/chart&module=%2Fsrc%2FChart.js)
 ## Usage
 
 \`\`\`javascript
@@ -3926,9 +4074,20 @@ xlarge
 string
 \`\`\`
 
+**animate**
+
+Whether to animate drawing.
+
+\`\`\`
+boolean
+\`\`\`
+
 **bounds**
 
-The limits for the values, specified as a two dimensional array.
+The limits for the values, specified as a two dimensional array. 
+      The first array specifies the limits of the x-axis. The second array 
+      specifies the limits of the y-axis. 
+      For example: [[x-min, x-max], [y-min, y-max]].
       If not specified, the bounds will automatically be set to fit
       the provided values.
 
@@ -3948,7 +4107,16 @@ A color identifier to use for the graphic color. If an
 \`\`\`
 string
 {
-  color: string,
+  dark: string,
+  light: string
+}
+{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   opacity: 
     weak
     medium
@@ -3956,7 +4124,12 @@ string
     boolean
 }
 [{
-  color: string,
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   value: number
 }]
 \`\`\`
@@ -4013,6 +4186,17 @@ Called with a boolean argument
 
 \`\`\`
 function
+\`\`\`
+
+**opacity**
+
+What opacity to apply to the visuals. Supercedes 'color.opacity'
+
+\`\`\`
+weak
+medium
+strong
+boolean
 \`\`\`
 
 **overflow**
@@ -4109,6 +4293,21 @@ xlarge
 string
 \`\`\`
 
+**point**
+
+When using a 'point' type, what shape the points should use.
+      If this property is not specified, points will be drawn as a square or
+      a circle, based on how 'round' is specified.
+
+\`\`\`
+circle
+diamond
+square
+star
+triangle
+triangleDown
+\`\`\`
+
 **round**
 
 Whether to round the line ends.
@@ -4174,6 +4373,7 @@ large
 xlarge
 none
 string
+number
 \`\`\`
 
 **type**
@@ -4194,15 +4394,36 @@ Required. Array of value objects describing the data.
       indicating the x coordinate and a range of two y coordinates.
       'label' is a text string describing it.
       'onHover' and 'onClick' only work when type='bar'.
+      'color', 'opacity', and 'thickness' allow bar and point charts to have
+      color variation per-value.
 
 \`\`\`
 [
   number
   [number]
   {
+    color: 
+      string
+      {
+        dark: string,
+        light: string
+      },
     label: string,
     onClick: function,
     onHover: function,
+    opacity: 
+      string
+      number,
+    thickness: 
+      hair
+      xsmall
+      small
+      medium
+      large
+      xlarge
+      none
+      string
+      number,
     value: 
       number
       [number]
@@ -4302,7 +4523,7 @@ Defaults to
   "CheckBox": "## CheckBox
 A checkbox toggle control.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=CheckBox&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=checkbox&module=%2Fsrc%2FCheckBox.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=CheckBox&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/checkbox&module=%2Fsrc%2FCheckBox.js)
 ## Usage
 
 \`\`\`javascript
@@ -4311,6 +4532,15 @@ import { CheckBox } from 'grommet';
 \`\`\`
 
 ## Properties
+
+**a11yTitle**
+
+Custom label to be used by screen readers.
+      When provided, an aria-label will be added to the element.
+
+\`\`\`
+string
+\`\`\`
 
 **checked**
 
@@ -4339,7 +4569,8 @@ string
 
 **label**
 
-Label text to place next to the control.
+Label text to place next to the control. 
+      Can be used instead of a11yTitle to meet accessibility requirements
 
 \`\`\`
 node
@@ -4599,7 +4830,7 @@ Defaults to
   "CheckBoxGroup": "## CheckBoxGroup
 A group of CheckBoxes.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=CheckBoxGroup&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=checkboxgroup&module=%2Fsrc%2FCheckBoxGroup.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=CheckBoxGroup&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/checkboxgroup&module=%2Fsrc%2FCheckBoxGroup.js)
 ## Usage
 
 \`\`\`javascript
@@ -4689,7 +4920,7 @@ div
   "Clock": "## Clock
 A clock with timezone awareness.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Clock&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=clock&module=%2Fsrc%2FClock.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Clock&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/clock&module=%2Fsrc%2FClock.js)
 ## Usage
 
 \`\`\`javascript
@@ -4869,7 +5100,7 @@ string
 
 ISO8601 time or duration. For example: 'PT8H12M23S',
       'T08:12:23', or '2015-02-22T08:12:23'. Any included date
-      portion will be ignored for an analog clock. If not provided, the
+      portion will be ignored. If not provided, the
       current browser time will be used.
 
 \`\`\`
@@ -5103,12 +5334,12 @@ Takes a data set and visualizes it. While Chart renders a
     single value across a data set. DataChart allows multiple overlayed
     Charts and adds guides and axes for decoration.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=DataChart&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=datachart&module=%2Fsrc%2FDataChart.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=DataChart&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/datachart&module=%2Fsrc%2FDataChart.js)
 ## Usage
 
 \`\`\`javascript
 import { DataChart } from 'grommet';
-<DataChart data={data} chart={} />
+<DataChart data={data} property={} />
 \`\`\`
 
 ## Properties
@@ -5226,54 +5457,121 @@ xlarge
 string
 \`\`\`
 
-**chart**
+**axis**
 
-Chart properties indicating how to visualize the data.
-    'key' indicates which property of the data objects to use. 'keys' indicates
-    that multiple properties should be used for a stacked bar chart. DataChart
-    uses the key/keys to build the right 'values' for the underlying Chart.
-    All of the other properties in 'chart' are passed through to the Chart.
+Whether to show an axis and how it should look.
+      If 'x' or 'y' is a string, it indicates the property to use
+      to determine the values to show.
+      If axis or 'x' is true, DataChart will look for a property called 'date'
+      or 'time' and automatically use that for the x-axis. If DataChart
+      can't find a property to use, it will use the data index for the x-axis.
+      If axis or 'y' is true, DataChart will use the first property in 'series'.
+      'granularity' indicates how many values to show.
+      'coarse' granularity shows two values, one at each end.
+      'fine' granularity shows all x-axis values and 5 y-axis values.
+      'medium' granularity picks something in between. Defaults to \`true\`.
 
 \`\`\`
+boolean
 {
-  key: string,
-  keys: [{
-  key: string,
-  color: 
+  x: 
+    boolean
     string
     {
-      color: string,
-      opacity: 
-        weak
+      property: string,
+      granularity: 
+        coarse
         medium
-        strong
-        boolean
+        fine
+    },
+  y: 
+    boolean
+    string
+    {
+      property: string,
+      granularity: 
+        coarse
+        medium
+        fine
     }
-    [{
+}
+\`\`\`
+
+**bounds**
+
+When set to 'align', indicates that the bounds of all series
+      should be aligned. When not set, the bounds of each series
+      property are based solely on the data found for that property. Defaults to \`align\`.
+
+\`\`\`
+align
+\`\`\`
+
+**chart**
+
+How to visualize the data.
+    'property' indicates which property of the data objects to use.
+    When 'property' is an array, multiple properties are used for a
+    stacked bar chart. If only a string is specified, that is the property
+    to use and all other aspects are defaulted. If 'property' is an object,
+    it specifies a map of properties to graphic aspects: x, y, color, thickness.
+    If 'transform' is specified, it will be used to transform the data value
+    before using it. For example, to convert a data value to a hex color
+    string for the color.
+
+\`\`\`
+string
+{
+  property: 
+    string
+    [
+      string
+      {
+        property: string,
+        color: 
+          string
+          [{
   color: string,
   value: number
 }]
-}],
-  a11yTitle: string,
-  bounds: [[number]],
+      }
+    ]
+    {
+      color: 
+        string
+        {
+          property: string,
+          transform: function
+        },
+      thickness: 
+        string
+        {
+          property: string,
+          transform: function
+        },
+      x: string,
+      y: string
+    },
   color: 
     string
-    {
-      color: string,
-      opacity: 
-        weak
-        medium
-        strong
-        boolean
-    }
     [{
   color: string,
   value: number
 }],
   dash: boolean,
-  onClick: function,
-  onHover: function,
-  overflow: boolean,
+  opacity: 
+    weak
+    medium
+    strong
+    number
+    boolean,
+  point: 
+    circle
+    diamond
+    square
+    star
+    triangle
+    triangleDown,
   round: boolean,
   thickness: 
     hair
@@ -5286,65 +5584,82 @@ Chart properties indicating how to visualize the data.
     string,
   type: 
     bar
+    bars
     line
     area
     point
 }
-[{
-  key: string,
-  keys: [{
-  key: string,
-  color: 
-    string
-    {
-      color: string,
-      opacity: 
-        weak
-        medium
-        strong
-        boolean
-    }
-    [{
+[
+  string
+  {
+    property: 
+      string
+      [
+        string
+        {
+          property: string,
+          color: 
+            string
+            [{
   color: string,
   value: number
 }]
-}],
-  a11yTitle: string,
-  bounds: [[number]],
-  color: 
-    string
-    {
-      color: string,
-      opacity: 
-        weak
-        medium
-        strong
-        boolean
-    }
-    [{
+        }
+      ]
+      {
+        color: 
+          string
+          {
+            property: string,
+            transform: function
+          },
+        thickness: 
+          string
+          {
+            property: string,
+            transform: function
+          },
+        x: string,
+        y: string
+      },
+    color: 
+      string
+      [{
   color: string,
   value: number
 }],
-  dash: boolean,
-  onClick: function,
-  onHover: function,
-  overflow: boolean,
-  round: boolean,
-  thickness: 
-    hair
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    none
-    string,
-  type: 
-    bar
-    line
-    area
-    point
-}]
+    dash: boolean,
+    opacity: 
+      weak
+      medium
+      strong
+      number
+      boolean,
+    point: 
+      circle
+      diamond
+      square
+      star
+      triangle
+      triangleDown,
+    round: boolean,
+    thickness: 
+      hair
+      xsmall
+      small
+      medium
+      large
+      xlarge
+      none
+      string,
+    type: 
+      bar
+      bars
+      line
+      area
+      point
+  }
+]
 \`\`\`
 
 **data**
@@ -5355,6 +5670,17 @@ the data set
 [{
 
 }]
+\`\`\`
+
+**detail**
+
+Whether to add the ability to interact with the chart
+      via mouse or keyboard to show details on specific values in the chart.
+      It shows all properties specified in 'series', using any 'render'
+      functions therein.
+
+\`\`\`
+boolean
 \`\`\`
 
 **gap**
@@ -5370,6 +5696,41 @@ medium
 large
 xlarge
 string
+\`\`\`
+
+**guide**
+
+Whether to put guidelines underneath the chart graphics.
+    See the description of 'granularity' under 'axis'.
+
+\`\`\`
+boolean
+{
+  x: 
+    boolean
+    {
+      granularity: 
+        coarse
+        medium
+        fine
+    },
+  y: 
+    boolean
+    {
+      granularity: 
+        coarse
+        medium
+        fine
+    }
+}
+\`\`\`
+
+**legend**
+
+Whether to include a legend
+
+\`\`\`
+boolean
 \`\`\`
 
 **pad**
@@ -5454,13 +5815,43 @@ xlarge
 string
 \`\`\`
 
+**series**
+
+Describes which parts of the 'data' are of interest and
+    how to handle them. 'property' indicates which property of the 'data'
+    objects this series refers to. 'label' indicates how to label the series
+    in a legend or hover details. 'prefix' and 'suffix' are applied to the
+    data values shown in an axis, legend, or details. 'render' allows custom
+    rendering of the data value. 'render' is called with:
+    (value, datum, property) => { return < />; }
+
+\`\`\`
+string
+{
+  label: 
+    string,
+  prefix: string,
+  property: string,
+  render: function,
+  suffix: string
+}
+[
+  string
+  {
+    label: 
+      string,
+    prefix: string,
+    property: string,
+    render: function,
+    suffix: string
+  }
+]
+\`\`\`
+
 **size**
 
 The size of the Charts. This does not include the axes
-      and any gap. It is passed through to the underlying Chart. Defaults to \`{
-  \\"width\\": \\"medium\\",
-  \\"height\\": \\"small\\"
-}\`.
+      and any gap. It is passed through to the underlying Chart.
 
 \`\`\`
 fill
@@ -5486,62 +5877,6 @@ fill
     string
 }
 \`\`\`
-
-**thickness**
-
-Chart thickness given to all
-    Charts if not specified per Chart in 'chart'.
-
-\`\`\`
-hair
-xsmall
-small
-medium
-large
-xlarge
-none
-string
-\`\`\`
-
-**xAxis**
-
-x-axis configuration. 'guide' specifies that vertical
-    guide lines should be drawn under the Chart, one per label.
-    'key' specifies what property in the 'data' should be used as
-    any label content. 'labels' specifies how many labels to show.
-    'render' allows for custom rendering of the labels. It will be
-    called with the current data index and axis index and should return
-    the element to render: (dataIndex, axisIndex) => element.
-
-\`\`\`
-boolean
-{
-  guide: boolean,
-  key: string,
-  labels: number,
-  render: function
-}
-\`\`\`
-
-**yAxis**
-
-y-axis configuration. 'guide' specifies that horizontal
-    guide lines should be drawn under the Chart, one per label.
-    'labels' specifies how many labels to show.
-    'render' allows for custom rendering of the labels. It will be
-    called with the value and axis index and should return
-    the element to render: (value, axisIndex) => element
-
-\`\`\`
-boolean
-{
-  guide: boolean,
-  labels: number,
-  prefix: string,
-  render: function,
-  suffix: string
-}
-\`\`\`
   
 ## Intrinsic element
 
@@ -5551,7 +5886,7 @@ div
   "DataTable": "## DataTable
 A data driven table.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=DataTable&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=datatable&module=%2Fsrc%2FDataTable.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=DataTable&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/datatable&module=%2Fsrc%2FDataTable.js)
 ## Usage
 
 \`\`\`javascript
@@ -5699,6 +6034,13 @@ string
     }
     [string],
   footer: 
+    string
+    {
+      dark: string,
+      light: string
+    }
+    [string],
+  pinned: 
     string
     {
       dark: string,
@@ -5857,6 +6199,8 @@ A description of the data. The order controls the column order.
       should be used as the unique identifier, which gives the cell 'row' scope
       for accessibility. If 'primary' is not used for any column, and
       'primaryKey' isn't specified either, then the first column will be used.
+      'pin' indicates that this column should not scroll out of view
+      to the left when the table is scrolled horizontally.
 
 \`\`\`
 [{
@@ -5880,6 +6224,7 @@ A description of the data. The order controls the column order.
     {
       aggregate: boolean
     },
+  pin: boolean,
   primary: boolean,
   property: string,
   render: function,
@@ -5914,6 +6259,16 @@ Array of data objects.
 }]
 \`\`\`
 
+**fill**
+
+Whether the width and/or height should fill the container.
+
+\`\`\`
+horizontal
+vertical
+boolean
+\`\`\`
+
 **groupBy**
 
 Property to group data by. If object is specified
@@ -5931,6 +6286,18 @@ string
 }
 \`\`\`
 
+**onClickRow**
+
+When supplied, this function will be called with an event object that
+      include a 'datum' property containing the data value associated with
+      the clicked row. You should not include interactive elements, like
+      Anchor or Button inside table cells as that can cause confusion with
+      overlapping interactive elements.
+
+\`\`\`
+function
+\`\`\`
+
 **onMore**
 
 Use this to indicate that 'data' doesn't contain all that it could.
@@ -5941,29 +6308,6 @@ Use this to indicate that 'data' doesn't contain all that it could.
       be combined with properties that expect all data to be present in the
       browser, such as columns.search, sortable, groupBy, or 
       columns.aggregate.
-
-\`\`\`
-function
-\`\`\`
-
-**replace**
-
-Whether to replace previously rendered items with a generic spacing
-      element when they have scrolled out of view. This is more performant but
-      means that in-page searching will not find elements that have been
-      replaced.
-
-\`\`\`
-boolean
-\`\`\`
-
-**onClickRow**
-
-When supplied, this function will be called with an event object that
-      include a 'datum' property containing the data value associated with
-      the clicked row. You should not include interactive elements, like
-      Anchor or Button inside table cells as that can cause confusion with
-      overlapping interactive elements.
 
 \`\`\`
 function
@@ -6011,35 +6355,40 @@ string
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   vertical: 
     xxsmall
     xsmall
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   top: 
     xxsmall
     xsmall
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   bottom: 
     xxsmall
     xsmall
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   left: 
     xxsmall
     xsmall
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   right: 
     xxsmall
     xsmall
@@ -6047,12 +6396,24 @@ string
     medium
     large
     xlarge
+    string
 }
 {
   header: custom,
   body: custom,
   footer: custom
 }
+\`\`\`
+
+**pin**
+
+Whether the header and/or footer should be pinned when
+      not all rows are visible. A value of true pins both header and footer.
+
+\`\`\`
+boolean
+header
+footer
 \`\`\`
 
 **primaryKey**
@@ -6065,6 +6426,17 @@ When supplied, indicates the property for a data object to use to
 
 \`\`\`
 string
+boolean
+\`\`\`
+
+**replace**
+
+Whether to replace previously rendered items with a generic spacing
+      element when they have scrolled out of view. This is more performant but
+      means that in-page searching will not find elements that have been
+      replaced.
+
+\`\`\`
 boolean
 \`\`\`
 
@@ -6107,13 +6479,17 @@ string
 
 **sort**
 
-Which property to sort on and which direction to sort.
+Which property to sort on and which direction to sort. When 'external'
+      is true, it indicates that the caller will take care of sorting
+      the 'data' via 'onSort'. Otherwise, the existing data will be sorted
+      within DataTable.
 
 \`\`\`
 {
   direction: 
     asc
     desc,
+  external: boolean,
   property: string
 }
 \`\`\`
@@ -6159,6 +6535,16 @@ Defaults to
 
 \`\`\`
 { dark: 'white', light: 'black' }
+\`\`\`
+
+**dataTable.body.extend**
+
+Any additional style for an DataTable Body Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **dataTable.groupHeader.background**
@@ -6261,6 +6647,16 @@ Defaults to
 <FormDown />
 \`\`\`
 
+**dataTable.icons.sortable**
+
+The icon indicating a column can be sorted. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **dataTable.primary.weight**
 
 The font weight for primary cells. Expects \`string\`.
@@ -6311,12 +6707,153 @@ Defaults to
 undefined
 \`\`\`
 ",
+  "DateInput": "## DateInput
+A control to input a single date or a date range.
+
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=DateInput&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/dateinput&module=%2Fsrc%2FDateInput.js)
+## Usage
+
+\`\`\`javascript
+import { DateInput } from 'grommet';
+<DateInput id='item' name='item' />
+\`\`\`
+
+## Properties
+
+**buttonProps**
+
+Any properties to pass on to the underlying DropButton
+      when not inline and no format.
+
+\`\`\`
+{
+
+}
+\`\`\`
+
+**calendarProps**
+
+Any properties to pass on to the underlying Calendar.
+
+\`\`\`
+{
+
+}
+\`\`\`
+
+**defaultValue**
+
+The default date or date range value in ISO8601 format.
+
+\`\`\`
+string
+[string]
+\`\`\`
+
+**dropProps**
+
+Any properties to pass on to the underlying Drop when not inline. Defaults to \`{
+  \\"align\\": {
+    \\"top\\": \\"bottom\\",
+    \\"left\\": \\"left\\"
+  }
+}\`.
+
+\`\`\`
+{
+
+}
+\`\`\`
+
+**format**
+
+The date format to use. If not specified, the date value will not
+      be displayed as a text string and the user will not be able to enter
+      a date by typing. For example: 'mm/dd/yyyy', or for a range:
+      'mm/dd/yyyy-mm/dd/yyyy'. This property should be used when in a Form.
+
+\`\`\`
+string
+\`\`\`
+
+**id**
+
+The id of the input.
+
+\`\`\`
+string
+\`\`\`
+
+**inline**
+
+Whether the calendar should always be shown or via a Drop when
+      interacting with the input.
+
+\`\`\`
+boolean
+\`\`\`
+
+**inputProps**
+
+Any properties to pass on to the underlying MaskedInput
+      when there is a format.
+
+\`\`\`
+{
+
+}
+\`\`\`
+
+**name**
+
+The name of the input.
+      This property is required when used within FormField.
+
+\`\`\`
+string
+\`\`\`
+
+**onChange**
+
+Function that will be called when the user types or selects a date.
+      The updated value will be available via 'event.value'.
+
+\`\`\`
+function
+\`\`\`
+
+**value**
+
+The date or date range value(s) in ISO8601 format.
+
+\`\`\`
+string
+[string]
+\`\`\`
+  
+## Intrinsic element
+
+\`\`\`
+div
+\`\`\`
+## Theme
+  
+**dateInput.icon.size**
+
+The size of the Calendar icon Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+24px
+\`\`\`
+",
   "Diagram": "## Diagram
 Graphical connection lines. Diagram is meant to be used with Stack.
       Boxes can be used in the \`guidingChild\` layer of Stack and then
       Diagram can be used to draw lines connecting the Boxes.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Diagram&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=diagram&module=%2Fsrc%2FDiagram.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Diagram&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/diagram&module=%2Fsrc%2FDiagram.js)
 ## Usage
 
 \`\`\`javascript
@@ -6443,7 +6980,7 @@ Proportionally sized grid of boxes. The proportions are approximate. The
       manner that makes them more visually easy to scan. For example,
       two values of 48 and 52 will actually each get 50% of the area.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Distribution&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=distribution&module=%2Fsrc%2FDistribution.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Distribution&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/distribution&module=%2Fsrc%2FDistribution.js)
 ## Usage
 
 \`\`\`javascript
@@ -6647,7 +7184,7 @@ div
   "Drop": "## Drop
 A container that is overlaid next to a target.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Drop&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=drop&module=%2Fsrc%2FDrop.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Drop&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/drop&module=%2Fsrc%2FDrop.js)
 ## Usage
 
 \`\`\`javascript
@@ -6780,6 +7317,14 @@ Whether the drop element should have no background nor shadow
 \`\`\`
 boolean
 \`\`\`
+
+**trapFocus**
+
+Traps keyboard focus inside of drop. Defaults to \`true\`.
+
+\`\`\`
+boolean
+\`\`\`
   
 ## Intrinsic element
 
@@ -6855,7 +7400,7 @@ A Button that controls a Drop. When opened, the Drop will contain
       theme properties of Button or Drop can be passed through.
       
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=DropButton&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=dropbutton&module=%2Fsrc%2FDropButton.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=DropButton&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/dropbutton&module=%2Fsrc%2FDropButton.js)
 ## Usage
 
 \`\`\`javascript
@@ -7069,7 +7614,7 @@ button
   "Footer": "## Footer
 Footer for a document or section
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Footer&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=footer&module=%2Fsrc%2FFooter.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Footer&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/footer&module=%2Fsrc%2FFooter.js)
 ## Usage
 
 \`\`\`javascript
@@ -7083,7 +7628,7 @@ import { Footer } from 'grommet';
   "Form": "## Form
 A form that manages state for its fields.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Form&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=form&module=%2Fsrc%2FForm.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Form&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/form&module=%2Fsrc%2FForm.js)
 ## Usage
 
 \`\`\`javascript
@@ -7158,6 +7703,17 @@ Function that will be called when the form is reset. The
 function
 \`\`\`
 
+**onValidate**
+
+Function that will be called when the form is validated. The
+      single argument is an event containing the latest error object
+      via \`validationResults.errors\` and info object via 
+      \`validationResults.infos\`.
+
+\`\`\`
+function
+\`\`\`
+
 **validate**
 
 When to perform validation Defaults to \`submit\`.
@@ -7187,7 +7743,7 @@ A single field in a form. FormField wraps an input component with
       a label, help, and/or error messaging. It typically contains an input
       control like TextInput, TextArea, Select, etc.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=FormField&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=formfield&module=%2Fsrc%2FFormField.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=FormField&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/formfield&module=%2Fsrc%2FFormField.js)
 ## Usage
 
 \`\`\`javascript
@@ -7197,10 +7753,21 @@ import { FormField } from 'grommet';
 
 ## Properties
 
+**a11yTitle**
+
+Custom label to be used by screen readers.
+       Should only be provided if FormField has no children.
+       When a11yTitle is provided an aria-label will be added to the element
+       if it has no children.
+
+\`\`\`
+string
+\`\`\`
+
 **component**
 
-The component to insert in the FormField. Grommet will add update the 
-      form values when this field changes. Any additional properties 
+The component to insert in the FormField. Grommet will add update the
+      form values when this field changes. Any additional properties
       (such as initial value) you pass to FormField will be forwarded to this
       component. The component may be custom as long it supports the properties
       of name, value, onChange (event => {}), while event has either event.value
@@ -7208,6 +7775,16 @@ The component to insert in the FormField. Grommet will add update the
 
 \`\`\`
 function
+object
+\`\`\`
+
+**contentProps**
+
+Any valid Box property. These
+     properties are applied to the FormField contents container and will
+     override properties from the theme.
+
+\`\`\`
 object
 \`\`\`
 
@@ -7383,7 +7960,7 @@ Validation rule when used within a grommet Form. Provide an object
 
 \`\`\`
 {
-  regexp: object,
+  regexp: new RegExp(...),
   message: 
     string
     node,
@@ -7394,7 +7971,7 @@ Validation rule when used within a grommet Form. Provide an object
 function
 [
   {
-    regexp: object,
+    regexp: new RegExp(...),
     message: 
       string
       node,
@@ -7451,6 +8028,16 @@ Defaults to
 
 \`\`\`
 bottom
+\`\`\`
+
+**formField.content.margin**
+
+The margin of the FormField content. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **formField.content.pad**
@@ -7531,6 +8118,48 @@ Defaults to
 
 \`\`\`
 status-critical
+\`\`\`
+
+**formField.error.container**
+
+Any valid Box props for the container surrounding the error 
+    message and icon. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**formField.error.icon**
+
+An icon placed in a row with the error message. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**formField.info.container**
+
+Any valid Box props for the container surrounding the info 
+    message and icon. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**formField.info.icon**
+
+An icon placed in a row with the info message. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **formField.error.margin**
@@ -7677,7 +8306,7 @@ See https://css-tricks.com/snippets/css/complete-guide-grid/.
 The availability of Grid can be tested via \`Grid.available\`. Use this
 to create fallback rendering for older browsers, like ie11.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Grid&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=grid&module=%2Fsrc%2FGrid.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Grid&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/grid&module=%2Fsrc%2FGrid.js)
 ## Usage
 
 \`\`\`javascript
@@ -8212,7 +8841,7 @@ Defaults to
   "Grommet": "## Grommet
 The top level Grommet container.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Grommet&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=grommet&module=%2Fsrc%2FGrommet.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Grommet&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/grommet&module=%2Fsrc%2FGrommet.js)
 ## Usage
 
 \`\`\`javascript
@@ -8362,7 +8991,7 @@ undefined
   "Header": "## Header
 Is a Box container for introductory content
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Header&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=header&module=%2Fsrc%2FHeader.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Header&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/header&module=%2Fsrc%2FHeader.js)
 ## Usage
 
 \`\`\`javascript
@@ -8376,7 +9005,7 @@ import { Header } from 'grommet';
   "Heading": "## Heading
 Heading text structured in levels.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Heading&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=heading&module=%2Fsrc%2FHeading.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Heading&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/heading&module=%2Fsrc%2FHeading.js)
 ## Usage
 
 \`\`\`javascript
@@ -8661,8 +9290,16 @@ undefined
 **heading.level**
 
 The level that impacts line-height, max-width, font size, 
-weight and family of the Heading. Heading level is automatically adjusted at 
-different screen sizes. These screen sizes are derived from breakpoints. Expects \`object\`.
+weight and family of the Heading. Heading styling is automatically adjusted at 
+different screen sizes. When the heading.responsiveBreakpoint is hit (\\"small\\" 
+by default), all heading styles will automatically be adjusted. A heading of 
+level 1, for example, will use the styling defined in heading level 2; a 
+heading of level 2 will use the styling defined in heading level 3 and so 
+forth. The tag in the DOM is not adjusted. A heading of level 1 remains an h1. 
+The styling adjustment is intended to aid readability on smaller screens but 
+will not semantically affect your application structure. If you do not want 
+this responsive styling to occur, you can set header.responsiveBreakpoint to 
+undefined. Expects \`object\`.
 
 Defaults to
 
@@ -8716,7 +9353,7 @@ small
   "Image": "## Image
 An image.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Image&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=image&module=%2Fsrc%2FImage.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Image&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/image&module=%2Fsrc%2FImage.js)
 ## Usage
 
 \`\`\`javascript
@@ -8909,7 +9546,7 @@ undefined
   "InfiniteScroll": "## InfiniteScroll
 A container that lazily renders items.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=InfiniteScroll&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=infinitescroll&module=%2Fsrc%2FInfiniteScroll.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=InfiniteScroll&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/infinitescroll&module=%2Fsrc%2FInfiniteScroll.js)
 ## Usage
 
 \`\`\`javascript
@@ -9128,7 +9765,7 @@ An overlay. Layer is typically modal and anchored to an edge, corner, or
       center of the window. It is the caller's responsibility to provide a
       control for the user to close the layer.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Layer&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=layer&module=%2Fsrc%2FLayer.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Layer&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/layer&module=%2Fsrc%2FLayer.js)
 ## Usage
 
 \`\`\`javascript
@@ -9441,7 +10078,7 @@ Defaults to
   "List": "## List
 An ordered list of items.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=List&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=list&module=%2Fsrc%2FList.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=List&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/list&module=%2Fsrc%2FList.js)
 ## Usage
 
 \`\`\`javascript
@@ -9562,6 +10199,18 @@ xlarge
     string
 }
 string
+\`\`\`
+
+**action**
+
+Accepts a function that allows for a custom rendering
+       of a component, it should be passed with an item and
+        index of an array and return a react element
+      \`action = ({item, index}) => <Content />\`
+    />
+
+\`\`\`
+function
 \`\`\`
 
 **as**
@@ -9873,7 +10522,7 @@ undefined
   "Main": "## Main
 main content of a document.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Main&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=main&module=%2Fsrc%2FMain.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Main&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/main&module=%2Fsrc%2FMain.js)
 ## Usage
 
 \`\`\`javascript
@@ -9890,7 +10539,7 @@ Markdown formatting using Grommet components.
 Grommet uses 'markdown-to-jsx' in Markdown component,
       you can see all the options in the documentation.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Markdown&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=markdown&module=%2Fsrc%2FMarkdown.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Markdown&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/markdown&module=%2Fsrc%2FMarkdown.js)
 ## Usage
 
 \`\`\`javascript
@@ -9930,7 +10579,7 @@ div
   "MaskedInput": "## MaskedInput
 An input field with formalized syntax.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=MaskedInput&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=maskedinput&module=%2Fsrc%2FMaskedInput.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=MaskedInput&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/maskedinput&module=%2Fsrc%2FMaskedInput.js)
 ## Usage
 
 \`\`\`javascript
@@ -9939,6 +10588,14 @@ import { MaskedInput } from 'grommet';
 \`\`\`
 
 ## Properties
+
+**a11yTitle**
+
+Custom title to be used by screen readers.
+
+\`\`\`
+string
+\`\`\`
 
 **icon**
 
@@ -10225,7 +10882,7 @@ The labels and behavior of the contained Buttons are described
       'hover', 'focus', and 'drop' keys. This allows you to customize
       the rendering of the Menu button in those cases.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Menu&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=menu&module=%2Fsrc%2FMenu.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Menu&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/menu&module=%2Fsrc%2FMenu.js)
 ## Usage
 
 \`\`\`javascript
@@ -10348,6 +11005,19 @@ xlarge
 string
 \`\`\`
 
+**children**
+
+Function that will be called to render the visual representation.
+      It will be passed an object containing button props.
+      It should return a react element.
+      For example:
+      \`children={({ drop, hover }) => <Box ...>{...}</Box>}\`
+      
+
+\`\`\`
+function
+\`\`\`
+
 **disabled**
 
 Whether the menu should be disabled.
@@ -10445,7 +11115,8 @@ node
 **items**
 
 Required. Menu items to be placed inside the drop down.
-The object values can be any Button prop, for example: label and onClick. Defaults to \`[]\`.
+The object values can be any Button prop, 
+for example: label, onClick, and href. Defaults to \`[]\`.
 
 \`\`\`
 [object]
@@ -10544,18 +11215,30 @@ undefined
 
 **menu.icons.down**
 
-The icon to show to the right of the label. Expects \`React.Element\`.
+The icon to show to the right of the label when menu is 
+    closed. Expects \`React.Element\`.
 
 Defaults to
 
 \`\`\`
 <FormDown />
 \`\`\`
+
+**menu.icons.up**
+
+The icon to show to the right of the label when menu is 
+    opened. Expects \`undefined | React.Element\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
 ",
   "Meter": "## Meter
 A graphical meter.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Meter&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=meter&module=%2Fsrc%2FMeter.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Meter&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/meter&module=%2Fsrc%2FMeter.js)
 ## Usage
 
 \`\`\`javascript
@@ -10863,7 +11546,7 @@ undefined
   "Nav": "## Nav
 Is a Box container for navigation links
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Nav&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=nav&module=%2Fsrc%2FNav.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Nav&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/nav&module=%2Fsrc%2FNav.js)
 ## Usage
 
 \`\`\`javascript
@@ -10877,7 +11560,7 @@ import { Nav } from 'grommet';
   "Paragraph": "## Paragraph
 A paragraph of text.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Paragraph&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=paragraph&module=%2Fsrc%2FParagraph.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Paragraph&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/paragraph&module=%2Fsrc%2FParagraph.js)
 ## Usage
 
 \`\`\`javascript
@@ -11143,7 +11826,7 @@ A radio button control.
 RadioButton should typically not be used directly.
       Instead, use RadioButtonGroup.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=RadioButton&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=radiobutton&module=%2Fsrc%2FRadioButton.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=RadioButton&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/radiobutton&module=%2Fsrc%2FRadioButton.js)
 ## Usage
 
 \`\`\`javascript
@@ -11152,6 +11835,15 @@ import { RadioButton } from 'grommet';
 \`\`\`
 
 ## Properties
+
+**a11yTitle**
+
+Custom label to be used by screen readers.
+      When provided, an aria-label will be added to the element.
+
+\`\`\`
+string
+\`\`\`
 
 **checked**
 
@@ -11225,6 +11917,17 @@ input
 \`\`\`
 ## Theme
   
+**global.colors.control**
+
+The default color of the border surrounding 
+    the checked icon in RadioButton checked state. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: 'accent-1', light: 'brand'}
+\`\`\`
+
 **radioButton.border.color**
 
 The color of the border of the Radio Button. Expects \`string | { dark: string, light: string }\`.
@@ -11243,6 +11946,16 @@ Defaults to
 
 \`\`\`
 2px
+\`\`\`
+
+**radioButton.check.background.color**
+
+The background color of the checked icon in the RadioButton. Expects \`string | {dark: string, light: string}\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **radioButton.check.color**
@@ -11275,6 +11988,17 @@ Defaults to
 100%
 \`\`\`
 
+**radioButton.color**
+
+The color of the border surrounding the checked 
+    icon in RadioButton checked state. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **radioButton.extend**
 
 Any additional style for the RadioButton. Expects \`string | (props) => {}\`.
@@ -11295,6 +12019,16 @@ Defaults to
 small
 \`\`\`
 
+**radioButton.font.weight**
+
+The font weight of the label. Expects \`number | string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **radioButton.size**
 
 The size of the RadioButton. Expects \`string\`.
@@ -11303,6 +12037,17 @@ Defaults to
 
 \`\`\`
 24px
+\`\`\`
+
+**radioButton.hover.background.color**
+
+The background color of the Box surrounding the RadioButton
+    when hovered over. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **radioButton.hover.border.color**
@@ -11338,7 +12083,7 @@ undefined
   "RadioButtonGroup": "## RadioButtonGroup
 A group of radio buttons.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=RadioButtonGroup&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=radiobuttongroup&module=%2Fsrc%2FRadioButtonGroup.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=RadioButtonGroup&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/radiobuttongroup&module=%2Fsrc%2FRadioButtonGroup.js)
 ## Usage
 
 \`\`\`javascript
@@ -11389,18 +12134,23 @@ function
 
 **options**
 
-Required. Options can be either a string or an object. 
-    Each option is rendered as a single RadioButton.
+Required. Options can be either a string, boolean, number 
+      or an object. Each option is rendered as a single RadioButton.
 
 \`\`\`
 [string]
+[number]
+[boolean]
 [{
   disabled: boolean,
   id: string,
   label: 
     string
     element,
-  value: string
+  value: 
+    string
+    number
+    boolean
 }]
 \`\`\`
 
@@ -11410,6 +12160,8 @@ Currently selected option value.
 
 \`\`\`
 string
+number
+boolean
 object
 \`\`\`
   
@@ -11417,11 +12169,23 @@ object
 
 \`\`\`
 div
-\`\`\`",
+\`\`\`
+## Theme
+  
+**radioButtonGroup.container**
+
+Any valid Box props for the RadioButtonGroup container. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+",
   "RangeInput": "## RangeInput
 A slider control to input a value within a fixed range.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=RangeInput&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=rangeinput&module=%2Fsrc%2FRangeInput.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=RangeInput&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/rangeinput&module=%2Fsrc%2FRangeInput.js)
 ## Usage
 
 \`\`\`javascript
@@ -11430,6 +12194,15 @@ import { RangeInput } from 'grommet';
 \`\`\`
 
 ## Properties
+
+**a11yTitle**
+
+Custom label to be used by screen readers.
+      When provided, an aria-label will be added to the element.
+
+\`\`\`
+string
+\`\`\`
 
 **id**
 
@@ -11686,7 +12459,7 @@ Defaults to
   "RangeSelector": "## RangeSelector
 A control to input a range of values.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=RangeSelector&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=rangeselector&module=%2Fsrc%2FRangeSelector.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=RangeSelector&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/rangeselector&module=%2Fsrc%2FRangeSelector.js)
 ## Usage
 
 \`\`\`javascript
@@ -11914,7 +12687,7 @@ Defaults to
   "RoutedAnchor": "## RoutedAnchor
 An Anchor with support for React Router.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=RoutedAnchor&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=routedanchor&module=%2Fsrc%2FRoutedAnchor.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=RoutedAnchor&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/routedanchor&module=%2Fsrc%2FRoutedAnchor.js)
 ## Usage
 
 \`\`\`javascript
@@ -11950,7 +12723,7 @@ a
   "RoutedButton": "## RoutedButton
 A button with support for React Router.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=RoutedButton&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=routedbutton&module=%2Fsrc%2FRoutedButton.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=RoutedButton&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/routedbutton&module=%2Fsrc%2FRoutedButton.js)
 ## Usage
 
 \`\`\`javascript
@@ -11986,7 +12759,7 @@ button
   "Select": "## Select
 A control to select a value, with optional search.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Select&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=select&module=%2Fsrc%2FSelect.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Select&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/select&module=%2Fsrc%2FSelect.js)
 ## Usage
 
 \`\`\`javascript
@@ -12603,7 +13376,7 @@ Defaults to
   "Sidebar": "## Sidebar
 A sidebar, typically used with Nav children.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Sidebar&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=sidebar&module=%2Fsrc%2FSidebar.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Sidebar&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/sidebar&module=%2Fsrc%2FSidebar.js)
 ## Usage
 
 \`\`\`javascript
@@ -12637,7 +13410,7 @@ div
   "SkipLinks": "## SkipLinks
 Describe a list of elements to skip to.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=SkipLinks&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=skiplinks&module=%2Fsrc%2FSkipLinks.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=SkipLinks&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/skiplinks&module=%2Fsrc%2FSkipLinks.js)
 ## Usage
 
 \`\`\`javascript
@@ -12659,7 +13432,7 @@ node
 
 Custom messages for SkipLinks. Used for accessibility by screen 
 readers. Defaults to \`{
-  \\"skipTo\\": \\"Skip To\\"
+  \\"skipTo\\": \\"Skip To:\\"
 }\`.
 
 \`\`\`
@@ -12667,7 +13440,99 @@ readers. Defaults to \`{
   skipTo: string
 }
 \`\`\`
-  ",
+  
+## Theme
+  
+**skipLinks.position**
+
+Position of the layer content once opened. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+top
+\`\`\`
+
+**skipLinks.container**
+
+Any valid Box prop for the SkipLinks container. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{ elevation: 'large', pad: 'medium', round: 'small' }
+\`\`\`
+
+**skipLinks.container.elevation**
+
+The container shadow. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+large
+\`\`\`
+
+**skipLinks.container.pad**
+
+The pad used for the layer container. Expects \`string | object\`.
+
+Defaults to
+
+\`\`\`
+medium
+\`\`\`
+
+**skipLinks.container.round**
+
+The rounding of the later container. Expects \`boolean | string | object\`.
+
+Defaults to
+
+\`\`\`
+small
+\`\`\`
+
+**skipLinks.label**
+
+Any valid Text prop for the text message. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{ margin: 'small', size: 'medium' }
+\`\`\`
+
+**skipLinks.label.margin**
+
+The margin size around the text message. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+{ bottom: medium }
+\`\`\`
+
+**skipLinks.label.size**
+
+The font size of the text label. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+medium
+\`\`\`
+
+**text.medium.size**
+
+The font size of the text label. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+18px
+\`\`\`
+",
   "Stack": "## Stack
 A container that stacks contents on top of each other. One child is
       designated as the \`guidingChild\` which determines the size. All
@@ -12675,7 +13540,7 @@ A container that stacks contents on top of each other. One child is
       based on their order. Stack is typically used to decorate Meter, Chart,
       or icons.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Stack&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=stack&module=%2Fsrc%2FStack.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Stack&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/stack&module=%2Fsrc%2FStack.js)
 ## Usage
 
 \`\`\`javascript
@@ -12975,14 +13840,44 @@ Defaults to
     }
 \`\`\`
 
+**tab.border.disabled.color**
+
+border color of the Tab when disabled Expects \`string | {dark: string, light: string}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **tab.color**
 
-text color for the Tab. Expects \`string\`.
+text color for the Tab. Expects \`string | {dark: string, light: string}\`.
 
 Defaults to
 
 \`\`\`
 control
+\`\`\`
+
+**tab.disabled.color**
+
+text color of the Tab when disabled. Expects \`string | {dark: string, light: string}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**tab.extend**
+
+Any additional style for Tab. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **tab.hover.background**
@@ -13038,7 +13933,7 @@ Defaults to
   "Table": "## Table
 A table of data organized in cells.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Table&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=table&module=%2Fsrc%2FTable.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Table&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/table&module=%2Fsrc%2FTable.js)
 ## Usage
 
 \`\`\`javascript
@@ -13529,7 +14424,7 @@ tr
   "Tabs": "## Tabs
 A container with controls to show one Tab at a time.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Tabs&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=tabs&module=%2Fsrc%2FTabs.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Tabs&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/tabs&module=%2Fsrc%2FTabs.js)
 ## Usage
 
 \`\`\`javascript
@@ -13665,6 +14560,17 @@ onActive function and update activeIndex accordingly.
 number
 \`\`\`
 
+**alignControls**
+
+How to align the tab controls within the tabs header.
+
+\`\`\`
+start
+center
+end
+stretch
+\`\`\`
+
 **children**
 
 Required. Array of Tab.
@@ -13797,6 +14703,46 @@ Defaults to
 undefined
 \`\`\`
 
+**tabs.header.border.color**
+
+border color of the tabs controls Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**tabs.header.border.side**
+
+side of the border of the tabs controls Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**tabs.header.border.size**
+
+border size of the tabs controls Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**tabs.header.border.style**
+
+border style of the tabs controls Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **tabs.header.extend**
 
 Any additional style for Tabs header. Expects \`string | (props) => {}\`.
@@ -13820,7 +14766,7 @@ undefined
   "Text": "## Text
 Arbitrary text.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Text&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=text&module=%2Fsrc%2FText.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Text&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/text&module=%2Fsrc%2FText.js)
 ## Usage
 
 \`\`\`javascript
@@ -13862,9 +14808,12 @@ string
 
 **margin**
 
-The amount of margin around the component. An object can
-    be specified to distinguish horizontal margin, vertical margin, and
-    margin on a particular side.
+The amount of margin around the component. An object can be 
+    specified to distinguish horizontal margin, vertical margin, and margin on 
+    a particular side. For vertical margin to be applied, Text needs to be 
+    contained within a layout component (such as Box or a generic div) or 
+    behave as a div (by applying as=\\"div\\" or a display style of 
+    inline-block).
 
 \`\`\`
 none
@@ -14005,7 +14954,8 @@ end
 **truncate**
 
 Restrict the text to a single line and truncate with ellipsis if it
-is too long to all fit.
+is too long to all fit. For truncate to be applied, Text needs to be 
+contained within a layout component (such as Box or a generic div).
 
 \`\`\`
 boolean
@@ -14120,7 +15070,7 @@ Defaults to
   "TextArea": "## TextArea
 A control to input multiple lines of text.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=TextArea&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=textarea&module=%2Fsrc%2FTextArea.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=TextArea&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/textarea&module=%2Fsrc%2FTextArea.js)
 ## Usage
 
 \`\`\`javascript
@@ -14129,6 +15079,15 @@ import { TextArea } from 'grommet';
 \`\`\`
 
 ## Properties
+
+**a11yTitle**
+
+Custom label to be used by screen readers.
+      When provided, an aria-label will be added to the element.
+
+\`\`\`
+string
+\`\`\`
 
 **id**
 
@@ -14410,7 +15369,7 @@ Defaults to
   "TextInput": "## TextInput
 A control to input a single line of text, with optional suggestions.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=TextInput&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=textinput&module=%2Fsrc%2FTextInput.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=TextInput&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/textinput&module=%2Fsrc%2FTextInput.js)
 ## Usage
 
 \`\`\`javascript
@@ -14419,6 +15378,14 @@ import { TextInput } from 'grommet';
 \`\`\`
 
 ## Properties
+
+**a11yTitle**
+
+Custom title to be used by screen readers.
+
+\`\`\`
+string
+\`\`\`
 
 **dropAlign**
 
@@ -14503,7 +15470,7 @@ boolean
 
 **messages**
 
-Custom messages for TextInput. Used for accessibility by screen 
+Custom messages for TextInput. Used for accessibility by screen
         readers. Defaults to \`{
   \\"enterSelect\\": \\"(Press Enter to Select)\\",
   \\"suggestionsCount\\": \\"suggestions available\\",
@@ -14538,8 +15505,20 @@ function
 
 **onSelect**
 
+Note: This function is deprecated, use onSuggestionSelect instead.
+      Function that will be called when the user selects a suggestion.
+      The suggestion contains the object chosen from the supplied suggestions.
+      When used in conjunction with onSuggestionSelect 
+      this will default to React's onSelect
+
+\`\`\`
+function
+\`\`\`
+
+**onSuggestionSelect**
+
 Function that will be called when the user selects a suggestion.
-The suggestion contains the object chosen from the supplied suggestions.
+      The suggestion contains the object chosen from the supplied suggestions.
 
 \`\`\`
 function
@@ -14572,7 +15551,7 @@ node
 **plain**
 
 Whether this is a plain input with no border or padding.
-Only use this when the containing context provides sufficient affordance
+      Only use this when the containing context provides sufficient affordance
 
 \`\`\`
 boolean
@@ -14682,7 +15661,7 @@ Defaults to
 
 **text**
 
-The possible sizes of the text in terms of its font-size and 
+The possible sizes of the text in terms of its font-size and
     line-height. Expects \`object\`.
 
 Defaults to
@@ -14892,7 +15871,7 @@ Defaults to
   "Video": "## Video
 A video player.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Video&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=video&module=%2Fsrc%2FVideo.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Video&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/video&module=%2Fsrc%2FVideo.js)
 ## Usage
 
 \`\`\`javascript
@@ -15057,6 +16036,34 @@ Enables video muting. This option is best used with the autoPlay flag.
 \`\`\`
 boolean
 \`\`\`
+
+**messages**
+
+Custom messages. Used for accessibility by screen readers. Defaults to \`{
+  \\"closeMenu\\": \\"close menu\\",
+  \\"fullScreen\\": \\"full screen\\",
+  \\"progressMeter\\": \\"video progress\\",
+  \\"scrubber\\": \\"scrubber\\",
+  \\"openMenu\\": \\"open menu\\",
+  \\"pauseButton\\": \\"pause\\",
+  \\"playButton\\": \\"play\\",
+  \\"volumeDown\\": \\"volume down\\",
+  \\"volumeUp\\": \\"volume up\\"
+}\`.
+
+\`\`\`
+{
+  closeMenu: string,
+  fullScreen: string,
+  progressMeter: string,
+  openMenu: string,
+  pauseButton: string,
+  playButton: string,
+  scrubber: string,
+  volumeDown: string,
+  volumeUp: string
+}
+\`\`\`
   
 ## Intrinsic element
 
@@ -15095,6 +16102,76 @@ Defaults to
 rgba(0, 0, 0, 0.7)
 \`\`\`
 
+**video.icons.closedCaption**
+
+The icon to use for the caption. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+<ClosedCaption />
+\`\`\`
+
+**video.icons.configure**
+
+The icon to use for the configuration action. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+<Actions />
+\`\`\`
+
+**video.icons.fullScreen**
+
+The icon to use for viewing the video in full screen. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+<Expand />
+\`\`\`
+
+**video.icons.pause**
+
+The icon to use for pausing the video. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+<Pause />
+\`\`\`
+
+**video.icons.play**
+
+The icon to use for playing the video. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+<Play />
+\`\`\`
+
+**video.icons.reduceVolume**
+
+The icon to use for the action of lowering the volume. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+<VolumeLow />
+\`\`\`
+
+**video.icons.volume**
+
+The icon to use for the action of raising the volume. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+<Volume />
+\`\`\`
+
 **video.scrubber.color**
 
 The background color of the video scrubber. Expects \`string\`.
@@ -15118,7 +16195,7 @@ undefined
   "WorldMap": "## WorldMap
 A map of the world, or a continent.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=WorldMap&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=worldmap&module=%2Fsrc%2FWorldMap.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=WorldMap&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/worldmap&module=%2Fsrc%2FWorldMap.js)
 ## Usage
 
 \`\`\`javascript

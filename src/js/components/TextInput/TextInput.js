@@ -1,9 +1,9 @@
 import React, {
   forwardRef,
-  isValidElement,
   useCallback,
   useContext,
   useEffect,
+  useMemo,
   useRef,
   useState,
 } from 'react';
@@ -18,7 +18,12 @@ import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { FormContext } from '../Form/FormContext';
 import { AnnounceContext } from '../../contexts';
-import { isNodeAfterScroll, isNodeBeforeScroll, sizeStyle } from '../../utils';
+import {
+  isNodeAfterScroll,
+  isNodeBeforeScroll,
+  sizeStyle,
+  useForwardedRef,
+} from '../../utils';
 
 import {
   StyledTextInput,
@@ -85,6 +90,7 @@ const TextInput = forwardRef(
       onFocus,
       onKeyDown,
       onSelect,
+      onSuggestionSelect,
       onSuggestionsClose,
       onSuggestionsOpen,
       placeholder,
@@ -100,20 +106,28 @@ const TextInput = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const announce = useContext(AnnounceContext);
     const formContext = useContext(FormContext);
-    const inputRef = useRef();
+    const inputRef = useForwardedRef(ref);
     const dropRef = useRef();
     const suggestionsRef = useRef();
     const suggestionRefs = {};
-
     // if this is a readOnly property, don't set a name with the form context
     // this allows Select to control the form context for the name.
-    const [value, setValue] = formContext.useFormContext(
+    const [value, setValue] = formContext.useFormInput(
       readOnly ? undefined : name,
       valueProp,
     );
 
     const [focus, setFocus] = useState();
     const [showDrop, setShowDrop] = useState();
+
+    const handleSuggestionSelect = useMemo(
+      () => (onSelect && !onSuggestionSelect ? onSelect : onSuggestionSelect),
+      [onSelect, onSuggestionSelect],
+    );
+    const handleTextSelect = useMemo(
+      () => (onSelect && onSuggestionSelect ? onSelect : undefined),
+      [onSelect, onSuggestionSelect],
+    );
 
     // if we have no suggestions, close drop if it's open
     useEffect(() => {
@@ -228,6 +242,9 @@ const TextInput = forwardRef(
       placeholder && typeof placeholder !== 'string' && !value;
 
     let drop;
+    const extraProps = {
+      onSelect: handleTextSelect,
+    };
     if (showDrop) {
       drop = (
         // keyboard access needed here in case user clicks
@@ -237,12 +254,12 @@ const TextInput = forwardRef(
           onUp={event => onPreviousSuggestion(event)}
           onEnter={event => {
             // we stole the focus, give it back
-            (ref || inputRef).current.focus();
+            inputRef.current.focus();
             closeDrop();
-            if (onSelect) {
+            if (handleSuggestionSelect) {
               const adjustedEvent = event;
               adjustedEvent.suggestion = suggestions[activeSuggestionIndex];
-              onSelect(adjustedEvent);
+              handleSuggestionSelect(adjustedEvent);
             }
             setValue(suggestions[activeSuggestionIndex]);
           }}
@@ -252,7 +269,7 @@ const TextInput = forwardRef(
             id={id ? `text-input-drop__${id}` : undefined}
             align={dropAlign}
             responsive={false}
-            target={dropTarget || (ref || inputRef).current}
+            target={dropTarget || inputRef.current}
             onClickOutside={closeDrop}
             onEsc={closeDrop}
             {...dropProps}
@@ -265,9 +282,22 @@ const TextInput = forwardRef(
               <StyledSuggestions>
                 <InfiniteScroll items={suggestions} step={theme.select.step}>
                   {(suggestion, index, itemRef) => {
-                    const plainLabel =
-                      typeof suggestion === 'object' &&
-                      typeof isValidElement(suggestion.label);
+                    // Determine whether the label is done as a child or
+                    // as an option Button kind property.
+                    const renderedLabel = renderLabel(suggestion);
+                    let child;
+                    if (typeof renderedLabel !== 'string')
+                      // must be an element rendered by suggestions.label
+                      child = renderedLabel;
+                    else if (!theme.button.option)
+                      // don't have theme support, need to layout here
+                      child = (
+                        <Box align="start" pad="small">
+                          {renderedLabel}
+                        </Box>
+                      );
+                    // if we have a child, turn on plain, and hoverIndicator
+
                     return (
                       <li
                         key={`${stringLabel(suggestion)}-${index}`}
@@ -282,31 +312,28 @@ const TextInput = forwardRef(
                             suggestionRefs[index] = r;
                           }}
                           fill
-                          hoverIndicator="background"
-                          plain={theme.button.default ? true : undefined}
+                          plain={!child ? undefined : true}
+                          align="start"
+                          kind={!child ? 'option' : undefined}
+                          hoverIndicator={!child ? undefined : 'background'}
+                          label={!child ? renderedLabel : undefined}
                           onClick={event => {
                             // we stole the focus, give it back
-                            (ref || inputRef).current.focus();
+                            inputRef.current.focus();
                             closeDrop();
-                            if (onSelect) {
+                            if (handleSuggestionSelect) {
                               event.persist();
                               const adjustedEvent = event;
                               adjustedEvent.suggestion = suggestion;
-                              adjustedEvent.target = (ref || inputRef).current;
-                              onSelect(adjustedEvent);
+                              adjustedEvent.target = inputRef.current;
+                              handleSuggestionSelect(adjustedEvent);
                             }
                             setValue(suggestion);
                           }}
                           onMouseOver={() => setActiveSuggestionIndex(index)}
                           onFocus={() => setActiveSuggestionIndex(index)}
                         >
-                          {plainLabel ? (
-                            renderLabel(suggestion)
-                          ) : (
-                            <Box align="start" pad="small">
-                              {renderLabel(suggestion)}
-                            </Box>
-                          )}
+                          {child}
                         </Button>
                       </li>
                     );
@@ -332,14 +359,14 @@ const TextInput = forwardRef(
         <Keyboard
           onEnter={event => {
             closeDrop();
-            if (activeSuggestionIndex >= 0 && onSelect) {
+            if (activeSuggestionIndex >= 0 && handleSuggestionSelect) {
               // prevent submitting forms when choosing a suggestion
               event.preventDefault();
               event.persist();
               const adjustedEvent = event;
               adjustedEvent.suggestion = suggestions[activeSuggestionIndex];
-              adjustedEvent.target = (ref || inputRef).current;
-              onSelect(adjustedEvent);
+              adjustedEvent.target = inputRef.current;
+              handleSuggestionSelect(adjustedEvent);
             }
           }}
           onEsc={
@@ -380,7 +407,7 @@ const TextInput = forwardRef(
         >
           <StyledTextInput
             aria-label={a11yTitle}
-            ref={ref || inputRef}
+            ref={inputRef}
             id={id}
             name={name}
             autoComplete="off"
@@ -392,6 +419,7 @@ const TextInput = forwardRef(
             reverse={reverse}
             focus={focus}
             {...rest}
+            {...extraProps}
             defaultValue={renderLabel(defaultValue)}
             value={renderLabel(value)}
             readOnly={readOnly}

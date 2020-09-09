@@ -9,6 +9,9 @@ import {
   waitForElement,
 } from '@testing-library/react';
 import { getByText, screen } from '@testing-library/dom';
+import { axe } from 'jest-axe';
+import 'jest-axe/extend-expect';
+
 import { Search } from 'grommet-icons';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
@@ -20,6 +23,14 @@ import { MaskedInput } from '..';
 describe('MaskedInput', () => {
   beforeEach(createPortal);
   afterEach(cleanup);
+
+  test('should have no accessibility violations', async () => {
+    const { container } = render(
+      <MaskedInput name="item" a11yTitle="axe-test" />,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
 
   test('basic', () => {
     const { container } = render(<MaskedInput name="item" />);
@@ -77,6 +88,45 @@ describe('MaskedInput', () => {
     expectPortal('masked-input-drop__item').toMatchSnapshot();
     expect(onChange).not.toBeCalled();
     expect(onFocus).toBeCalled();
+  });
+
+  test('mask with long fixed', async () => {
+    const onChange = jest.fn(event => event.target.value);
+    const { getByTestId, container } = render(
+      <MaskedInput
+        data-testid="test-input"
+        id="item"
+        name="item"
+        mask={[
+          { fixed: 'https://' },
+          {
+            regexp: /^[ab]+$/,
+          },
+        ]}
+        value=""
+        onChange={onChange}
+      />,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    const input = getByTestId('test-input');
+
+    // Entering part of the fixed portion and then something that
+    // matches the next portion should auto-expand the fixed portion
+    fireEvent.change(input, {
+      target: { value: 'hta' },
+    });
+    expect(onChange).toHaveBeenCalled();
+    expect(onChange).toHaveReturnedWith('https://a');
+
+    // Removing all but a piece of the fixed portion should
+    // leave just that part of the fixed portion (like when
+    // you backspace over it)
+    fireEvent.change(input, {
+      target: { value: 'http' },
+    });
+    expect(onChange).toHaveBeenCalled();
+    expect(onChange).toHaveReturnedWith('http');
   });
 
   test('option via mouse', async () => {
@@ -340,5 +390,24 @@ describe('MaskedInput', () => {
     const optionButton = getByText(document, 'bb').closest('button');
     fireEvent.mouseOver(optionButton);
     expect(optionButton).toMatchSnapshot();
+  });
+
+  test('with no mask', async () => {
+    const onChange = jest.fn(event => event.target.value);
+    const { getByTestId, container } = render(
+      <MaskedInput
+        data-testid="test-input"
+        plain
+        size="large"
+        id="item"
+        name="item"
+        onChange={onChange}
+      />,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.change(getByTestId('test-input'), { target: { value: 'aa' } });
+
+    expect(onChange).toHaveBeenCalled();
+    expect(onChange).toReturnWith('aa');
   });
 });

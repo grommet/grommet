@@ -5,7 +5,13 @@ import { Grommet, Box, List, Menu } from 'grommet';
 import { More } from 'grommet-icons';
 import { grommet } from 'grommet/themes';
 
-import { data } from './data';
+const data = [];
+
+for (let i = 0; i < 40; i += 1) {
+  data.push({
+    entry: `entry-${i + 1}`,
+  });
+}
 
 const ActionList = () => (
   <Grommet theme={grommet}>
@@ -28,4 +34,4 @@ const ActionList = () => (
   </Grommet>
 );
 
-storiesOf('List', module).add('action', () => <ActionList />);
+storiesOf('List', module).add('Action', () => <ActionList />);

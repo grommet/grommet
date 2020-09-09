@@ -25,6 +25,6 @@ const ClassChildrenInfiniteScroll = props => (
   </Grommet>
 );
 
-storiesOf('InfiniteScroll', module).add('Class Children', () => (
+storiesOf('InfiniteScroll', module).add('Class children', () => (
   <ClassChildrenInfiniteScroll />
 ));

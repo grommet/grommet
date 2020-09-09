@@ -1,6 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { genericProps, getAvailableAtBadge } from '../../utils';
+import { genericProps } from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = Tabs => {
   const DocumentedTabs = describe(Tabs)
@@ -22,6 +23,12 @@ export const doc = Tabs => {
 This means that future tab changes will not work unless you subscribe to
 onActive function and update activeIndex accordingly.`,
     ),
+    alignControls: PropTypes.oneOf([
+      'start',
+      'center',
+      'end',
+      'stretch',
+    ]).description('How to align the tab controls within the tabs header.'),
     children: PropTypes.node.description('Array of Tab.').isRequired,
     flex: PropTypes.oneOfType([
       PropTypes.oneOf(['grow', 'shrink']),
@@ -89,6 +96,26 @@ export const themeDoc = {
     description: 'The background styles of Tabs header.',
     type: 'string | { dark: string, light: string }',
     defaultValue: undefined,
+  },
+  'tabs.header.border.color': {
+    description: 'border color of the tabs controls',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'tabs.header.border.side': {
+    description: 'side of the border of the tabs controls',
+    type: 'string',
+    defaultValue: undefined,
+  },
+  'tabs.header.border.size': {
+    description: 'border size of the tabs controls',
+    type: 'string',
+    defaultValue: undefined,
+  },
+  'tabs.header.border.style': {
+    description: 'border style of the tabs controls',
+    type: 'string',
+    defaultValue: 'undefined',
   },
   'tabs.header.extend': {
     description: 'Any additional style for Tabs header.',

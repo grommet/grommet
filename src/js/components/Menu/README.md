@@ -7,7 +7,7 @@ The labels and behavior of the contained Buttons are described
       'hover', 'focus', and 'drop' keys. This allows you to customize
       the rendering of the Menu button in those cases.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Menu&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=menu&module=%2Fsrc%2FMenu.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Menu&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/menu&module=%2Fsrc%2FMenu.js)
 ## Usage
 
 ```javascript
@@ -130,6 +130,19 @@ xlarge
 string
 ```
 
+**children**
+
+Function that will be called to render the visual representation.
+      It will be passed an object containing button props.
+      It should return a react element.
+      For example:
+      `children={({ drop, hover }) => <Box ...>{...}</Box>}`
+      
+
+```
+function
+```
+
 **disabled**
 
 Whether the menu should be disabled.
@@ -227,7 +240,8 @@ node
 **items**
 
 Required. Menu items to be placed inside the drop down.
-The object values can be any Button prop, for example: label and onClick. Defaults to `[]`.
+The object values can be any Button prop, 
+for example: label, onClick, and href. Defaults to `[]`.
 
 ```
 [object]
@@ -326,10 +340,22 @@ undefined
 
 **menu.icons.down**
 
-The icon to show to the right of the label. Expects `React.Element`.
+The icon to show to the right of the label when menu is 
+    closed. Expects `React.Element`.
 
 Defaults to
 
 ```
 <FormDown />
+```
+
+**menu.icons.up**
+
+The icon to show to the right of the label when menu is 
+    opened. Expects `undefined | React.Element`.
+
+Defaults to
+
+```
+undefined
 ```

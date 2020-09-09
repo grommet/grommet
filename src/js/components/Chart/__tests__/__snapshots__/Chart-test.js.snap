@@ -1,33 +1,411 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Chart calcs 1`] = `
+exports[`Chart animate 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+  -webkit-animation: eOzisH 1s forwards;
+  animation: eOzisH 1s forwards;
+  -webkit-transform-origin: center bottom 0;
+  -ms-transform-origin: center bottom 0;
+  transform-origin: center bottom 0;
+}
+
+.c2 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+  stroke-dasharray: 200%;
+  -webkit-animation: hbbtVo 1s forwards;
+  animation: hbbtVo 1s forwards;
+}
+
+.c3 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+  -webkit-animation: ipYAVD 1s forwards;
+  animation: ipYAVD 1s forwards;
+}
+
+<div
+  className="c0"
+>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      fill="none"
+      stroke="#6FFFB0"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+      strokeWidth={24}
+    >
+      <g
+        fill="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 384,192 L 384,0"
+        />
+      </g>
+      <g
+        fill="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0,192 L 0,192"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c2"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      fill="none"
+      stroke="#6FFFB0"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+      strokeWidth={24}
+    >
+      <g
+        fill="none"
+      >
+        <path
+          d="M 384,0 L 0,192"
+        />
+        
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      fill="#6FFFB0"
+      stroke="#6FFFB0"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+      strokeWidth={24}
+    >
+      <g>
+        <path
+          d="M 0,192 L 384,0 L 384,192 L 0,192 Z"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c3"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      fill="#6FFFB0"
+      stroke="none"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+    >
+      <g
+        stroke="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 372 -12 L 396 -12 L 396 12 L 372 12 Z"
+        />
+      </g>
+      <g
+        stroke="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M -12 180 L 12 180 L 12 204 L -12 204 Z"
+        />
+      </g>
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Chart calcs basic 1`] = `
 Object {
   "axis": Array [
     Array [
-      0,
+      1,
       2,
     ],
     Array [
-      3.2,
+      2,
       0.8,
     ],
   ],
   "bounds": Array [
     Array [
-      0,
+      1,
       2,
     ],
     Array [
       0.8,
-      3.2,
+      2,
     ],
   ],
   "dimensions": Array [
-    2,
-    2.4,
+    1,
+    1.2,
   ],
   "pad": "large",
   "thickness": "xlarge",
+}
+`;
+
+exports[`Chart calcs hair thickness 1`] = `
+Object {
+  "axis": Array [
+    Array [
+      0,
+      1,
+    ],
+    Array [
+      3,
+      1.8,
+    ],
+  ],
+  "bounds": Array [
+    Array [
+      0,
+      1,
+    ],
+    Array [
+      1.8,
+      3.0000000000000004,
+    ],
+  ],
+  "dimensions": Array [
+    1,
+    1.2,
+  ],
+  "pad": undefined,
+  "thickness": "hair",
+}
+`;
+
+exports[`Chart calcs large thickness 1`] = `
+Object {
+  "axis": Array [
+    Array [
+      0,
+      1,
+    ],
+    Array [
+      3,
+      1.8,
+    ],
+  ],
+  "bounds": Array [
+    Array [
+      0,
+      1,
+    ],
+    Array [
+      1.8,
+      3.0000000000000004,
+    ],
+  ],
+  "dimensions": Array [
+    1,
+    1.2,
+  ],
+  "pad": "medium",
+  "thickness": "large",
+}
+`;
+
+exports[`Chart calcs medium thickness 1`] = `
+Object {
+  "axis": Array [
+    Array [
+      0,
+      1,
+    ],
+    Array [
+      3,
+      1.8,
+    ],
+  ],
+  "bounds": Array [
+    Array [
+      0,
+      1,
+    ],
+    Array [
+      1.8,
+      3.0000000000000004,
+    ],
+  ],
+  "dimensions": Array [
+    1,
+    1.2,
+  ],
+  "pad": "small",
+  "thickness": "medium",
+}
+`;
+
+exports[`Chart calcs small thickness 1`] = `
+Object {
+  "axis": Array [
+    Array [
+      0,
+      1,
+    ],
+    Array [
+      3,
+      1.8,
+    ],
+  ],
+  "bounds": Array [
+    Array [
+      0,
+      1,
+    ],
+    Array [
+      1.8,
+      3.0000000000000004,
+    ],
+  ],
+  "dimensions": Array [
+    1,
+    1.2,
+  ],
+  "pad": "xsmall",
+  "thickness": "small",
+}
+`;
+
+exports[`Chart calcs with negative min 1`] = `
+Object {
+  "axis": Array [
+    Array [
+      1,
+      2,
+    ],
+    Array [
+      2.4,
+      -2.4,
+    ],
+  ],
+  "bounds": Array [
+    Array [
+      1,
+      2,
+    ],
+    Array [
+      -2.4000000000000004,
+      2.4000000000000004,
+    ],
+  ],
+  "dimensions": Array [
+    1,
+    4.8,
+  ],
+  "pad": "large",
+  "thickness": "xlarge",
+}
+`;
+
+exports[`Chart calcs with single value 1`] = `
+Object {
+  "axis": Array [
+    Array [
+      0,
+      1,
+    ],
+    Array [
+      1,
+      0,
+    ],
+  ],
+  "bounds": Array [
+    Array [
+      0,
+      1,
+    ],
+    Array [
+      0,
+      1,
+    ],
+  ],
+  "dimensions": Array [
+    1,
+    1,
+  ],
+  "pad": "large",
+  "thickness": "xlarge",
+}
+`;
+
+exports[`Chart calcs xsmall thickness 1`] = `
+Object {
+  "axis": Array [
+    Array [
+      0,
+      1,
+    ],
+    Array [
+      3,
+      1.8,
+    ],
+  ],
+  "bounds": Array [
+    Array [
+      0,
+      1,
+    ],
+    Array [
+      1.8,
+      3.0000000000000004,
+    ],
+  ],
+  "dimensions": Array [
+    1,
+    1.2,
+  ],
+  "pad": "xxsmall",
+  "thickness": "xsmall",
 }
 `;
 
@@ -107,6 +485,7 @@ exports[`Chart cap 1`] = `
         <path
           d="M 384,0 L 0,192"
         />
+        
       </g>
     </g>
   </svg>
@@ -126,7 +505,7 @@ exports[`Chart cap 1`] = `
     >
       <g>
         <path
-          d="M 384,0 L 0,192 L 0,192 L 384,192 Z"
+          d="M 0,192 L 384,0 L 384,192 L 0,192 Z"
         />
       </g>
     </g>
@@ -275,7 +654,7 @@ exports[`Chart color 1`] = `
   >
     <defs>
       <linearGradient
-        id="undefined-gradient"
+        id="border-brand-undefined-gradient"
         x1={0}
         x2={0}
         y1={0}
@@ -291,7 +670,7 @@ exports[`Chart color 1`] = `
         />
       </linearGradient>
       <mask
-        id="undefined-mask"
+        id="border-brand-undefined-mask"
       >
         <g
           fill="none"
@@ -324,9 +703,9 @@ exports[`Chart color 1`] = `
       </mask>
     </defs>
     <rect
-      fill="url(#undefined-gradient)"
+      fill="url(#border-brand-undefined-gradient)"
       height={216}
-      mask="url(#undefined-mask)"
+      mask="url(#border-brand-undefined-mask)"
       width={408}
       x={-12}
       y={-12}
@@ -629,7 +1008,7 @@ exports[`Chart pad 1`] = `
     className="c1"
     height={192}
     preserveAspectRatio="none"
-    viewBox="-18 -18 420 228"
+    viewBox="-12 -12 408 216"
     width={384}
   >
     <g
@@ -646,7 +1025,7 @@ exports[`Chart pad 1`] = `
           sixty
         </title>
         <path
-          d="M 384,192 L 384,0"
+          d="M 378,186 L 378,6"
         />
       </g>
       <g
@@ -656,7 +1035,7 @@ exports[`Chart pad 1`] = `
           zero
         </title>
         <path
-          d="M 0,192 L 0,192"
+          d="M 6,186 L 6,186"
         />
       </g>
     </g>
@@ -665,7 +1044,7 @@ exports[`Chart pad 1`] = `
     className="c1"
     height={192}
     preserveAspectRatio="none"
-    viewBox="-36 -24 456 240"
+    viewBox="-12 -12 408 216"
     width={384}
   >
     <g
@@ -674,6 +1053,302 @@ exports[`Chart pad 1`] = `
       strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
+    >
+      <g
+        fill="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 360,180 L 360,12"
+        />
+      </g>
+      <g
+        fill="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 24,180 L 24,180"
+        />
+      </g>
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Chart point 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+}
+
+<div
+  className="c0"
+>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      fill="#6FFFB0"
+      stroke="none"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+    >
+      <g
+        stroke="none"
+      >
+        <title>
+          sixty
+        </title>
+        <circle
+          cx={384}
+          cy={0}
+          r={12}
+        />
+      </g>
+      <g
+        stroke="none"
+      >
+        <title>
+          zero
+        </title>
+        <circle
+          cx={0}
+          cy={192}
+          r={12}
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      fill="#6FFFB0"
+      stroke="none"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+    >
+      <g
+        stroke="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 384 -12 L 396 0 L 384 12 L 372 0 Z"
+        />
+      </g>
+      <g
+        stroke="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0 180 L 12 192 L 0 204 L -12 192 Z"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      fill="#6FFFB0"
+      stroke="none"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+    >
+      <g
+        stroke="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 372 -12 L 396 -12 L 396 12 L 372 12 Z"
+        />
+      </g>
+      <g
+        stroke="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M -12 180 L 12 180 L 12 204 L -12 204 Z"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      fill="#6FFFB0"
+      stroke="none"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+    >
+      <g
+        stroke="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 384 -12 L 376 12 L 396 -4 L 372 -4 L 392 12 Z"
+        />
+      </g>
+      <g
+        stroke="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0 180 L -8 204 L 12 188 L -12 188 L 8 204 Z"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      fill="#6FFFB0"
+      stroke="none"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+    >
+      <g
+        stroke="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 384 -12 L 396 12 L 372 12 Z"
+        />
+      </g>
+      <g
+        stroke="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0 180 L 12 204 L -12 204 Z"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      fill="#6FFFB0"
+      stroke="none"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+    >
+      <g
+        stroke="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 372 -12 L 396 -12 L 384 12 Z"
+        />
+      </g>
+      <g
+        stroke="none"
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M -12 180 L 12 180 L 0 204 Z"
+        />
+      </g>
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Chart should not have accessibility violations 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+}
+
+<div
+  class="c0"
+>
+  <svg
+    class="c1"
+    height="192"
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width="384"
+  >
+    <g
+      fill="none"
+      stroke="#6FFFB0"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-width="24"
     >
       <g
         fill="none"
@@ -1309,6 +1984,7 @@ exports[`Chart type 1`] = `
         <path
           d="M 384,0 L 0,192"
         />
+        
       </g>
     </g>
   </svg>
@@ -1328,7 +2004,7 @@ exports[`Chart type 1`] = `
     >
       <g>
         <path
-          d="M 384,0 L 0,192 L 0,192 L 384,192 Z"
+          d="M 0,192 L 384,0 L 384,192 L 0,192 Z"
         />
       </g>
     </g>
@@ -1352,11 +2028,8 @@ exports[`Chart type 1`] = `
         <title>
           sixty
         </title>
-        <rect
-          height={24}
-          width={24}
-          x={372}
-          y={-12}
+        <path
+          d="M 372 -12 L 396 -12 L 396 12 L 372 12 Z"
         />
       </g>
       <g
@@ -1365,11 +2038,8 @@ exports[`Chart type 1`] = `
         <title>
           zero
         </title>
-        <rect
-          height={24}
-          width={24}
-          x={-12}
-          y={180}
+        <path
+          d="M -12 180 L 12 180 L 12 204 L -12 204 Z"
         />
       </g>
     </g>
@@ -1453,6 +2123,7 @@ exports[`Chart undefined values 1`] = `
         <path
           d="M 384,0 L 0,192"
         />
+        
       </g>
     </g>
   </svg>
@@ -1472,7 +2143,7 @@ exports[`Chart undefined values 1`] = `
     >
       <g>
         <path
-          d="M 384,0 L 0,192 L 0,192 L 384,192 Z"
+          d="M 0,192 L 384,0 L 384,192 L 0,192 Z"
         />
       </g>
     </g>
@@ -1496,11 +2167,8 @@ exports[`Chart undefined values 1`] = `
         <title>
           sixty
         </title>
-        <rect
-          height={24}
-          width={24}
-          x={372}
-          y={-12}
+        <path
+          d="M 372 -12 L 396 -12 L 396 12 L 372 12 Z"
         />
       </g>
       <g
@@ -1509,11 +2177,116 @@ exports[`Chart undefined values 1`] = `
         <title>
           zero
         </title>
-        <rect
-          height={24}
-          width={24}
-          x={-12}
-          y={180}
+        <path
+          d="M -12 180 L 12 180 L 12 204 L -12 204 Z"
+        />
+      </g>
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Chart value style 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+}
+
+<div
+  className="c0"
+>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      fill="#6FFFB0"
+      stroke="none"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+    >
+      <g
+        fill="#00C781"
+        opacity={0.8}
+        stroke="none"
+      >
+        <title>
+          sixty
+        </title>
+        <circle
+          cx={384}
+          cy={0}
+          r={6}
+        />
+      </g>
+      <g
+        fill="#123456"
+        opacity={0.27}
+        stroke="none"
+      >
+        <title>
+          zero
+        </title>
+        <circle
+          cx={0}
+          cy={192}
+          r={13.5}
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      fill="none"
+      stroke="#6FFFB0"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+      strokeWidth={24}
+    >
+      <g
+        fill="none"
+        opacity={0.8}
+        stroke="#00C781"
+        strokeWidth={12}
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 384,192 L 384,0"
+        />
+      </g>
+      <g
+        fill="none"
+        opacity={0.27}
+        stroke="#123456"
+        strokeWidth={27}
+      >
+        <title>
+          zero
+        </title>
+        <path
+          d="M 0,192 L 0,192"
         />
       </g>
     </g>

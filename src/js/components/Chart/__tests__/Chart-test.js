@@ -1,6 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
+import { cleanup, render } from '@testing-library/react';
+import { axe } from 'jest-axe';
+import 'jest-axe/extend-expect';
+import 'regenerator-runtime/runtime';
 
 import { Grommet } from '../../Grommet';
 import { Box } from '../../Box';
@@ -17,7 +21,37 @@ const UNDEFINED_VALUES = [
   { value: [0, 0], label: 'zero' },
 ];
 
+const STYLED_VALUES = [
+  {
+    value: [1, 60],
+    label: 'sixty',
+    color: 'status-ok',
+    opacity: 'strong',
+    thickness: 'small',
+  },
+  {
+    value: [0, 0],
+    label: 'zero',
+    color: '#123456',
+    opacity: 0.27,
+    thickness: 27,
+  },
+];
+
 describe('Chart', () => {
+  afterEach(cleanup);
+
+  test('should not have accessibility violations', async () => {
+    const { container } = render(
+      <Grommet>
+        <Chart values={VALUES} />
+      </Grommet>,
+    );
+    const results = await axe(container);
+    expect(container.firstChild).toMatchSnapshot();
+    expect(results).toHaveNoViolations();
+  });
+
   test('default', () => {
     const component = renderer.create(
       <Grommet>
@@ -129,6 +163,32 @@ describe('Chart', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  test('point', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Chart type="point" point="circle" values={VALUES} />
+        <Chart type="point" point="diamond" values={VALUES} />
+        <Chart type="point" point="square" values={VALUES} />
+        <Chart type="point" point="star" values={VALUES} />
+        <Chart type="point" point="triangle" values={VALUES} />
+        <Chart type="point" point="triangleDown" values={VALUES} />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('value style', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Chart type="point" point="circle" values={STYLED_VALUES} />
+        <Chart type="bar" values={STYLED_VALUES} />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('pad', () => {
     const component = renderer.create(
       <Grommet>
@@ -137,6 +197,19 @@ describe('Chart', () => {
           pad={{ horizontal: 'medium', vertical: 'small' }}
           values={VALUES}
         />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('animate', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Chart type="bar" values={VALUES} animate />
+        <Chart type="line" values={VALUES} animate />
+        <Chart type="area" values={VALUES} animate />
+        <Chart type="point" values={VALUES} animate />
       </Grommet>,
     );
     const tree = component.toJSON();
@@ -156,8 +229,54 @@ describe('Chart', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test('calcs', () => {
-    const result = calcs([1, 2, 3]);
+  test('calcs basic', () => {
+    const result = calcs([
+      [1, 2, 2],
+      [2, 2, 2],
+    ]);
+    expect(result).toMatchSnapshot();
+  });
+
+  test('calcs with single value', () => {
+    const result = calcs([1]);
+    expect(result).toMatchSnapshot();
+  });
+
+  test('calcs with negative min', () => {
+    const result = calcs([
+      [1, -2, -2],
+      [2, 2, 2],
+    ]);
+    expect(result).toMatchSnapshot();
+  });
+
+  test('calcs large thickness', () => {
+    const vals = Array(8).fill([1, 2, 3]);
+    const result = calcs(vals);
+    expect(result).toMatchSnapshot();
+  });
+
+  test('calcs medium thickness', () => {
+    const vals = Array(14).fill([1, 2, 3]);
+    const result = calcs(vals);
+    expect(result).toMatchSnapshot();
+  });
+
+  test('calcs small thickness', () => {
+    const vals = Array(24).fill([1, 2, 3]);
+    const result = calcs(vals);
+    expect(result).toMatchSnapshot();
+  });
+
+  test('calcs xsmall thickness', () => {
+    const vals = Array(64).fill([1, 2, 3]);
+    const result = calcs(vals);
+    expect(result).toMatchSnapshot();
+  });
+
+  test('calcs hair thickness', () => {
+    const vals = Array(124).fill([1, 2, 3]);
+    const result = calcs(vals);
     expect(result).toMatchSnapshot();
   });
 });

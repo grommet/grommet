@@ -30,6 +30,7 @@ const DataTable = ({
   border,
   columns = [],
   data = [],
+  fill,
   groupBy,
   onClickRow, // removing unknown DOM attributes
   onMore,
@@ -37,6 +38,7 @@ const DataTable = ({
   onSort: onSortProp,
   replace,
   pad,
+  pin,
   primaryKey,
   resizeable,
   rowProps,
@@ -166,16 +168,18 @@ const DataTable = ({
   }
 
   return (
-    <StyledDataTable {...rest}>
+    <StyledDataTable fillProp={fill} {...rest}>
       <Header
         background={normalizeProp(background, 'header')}
         border={normalizeProp(border, 'header')}
         columns={columns}
+        fill={fill}
         filtering={filtering}
         filters={filters}
         groups={groups}
         groupState={groupState}
         pad={normalizeProp(pad, 'header')}
+        pin={pin === true || pin === 'header'}
         size={size}
         sort={sort}
         widths={widths}
@@ -208,6 +212,7 @@ const DataTable = ({
           replace={replace}
           onClickRow={onClickRow}
           pad={normalizeProp(pad, 'body')}
+          pinnedBackground={normalizeProp(background, 'pinned')}
           primaryProperty={primaryProperty}
           rowProps={rowProps}
           size={size}
@@ -219,9 +224,11 @@ const DataTable = ({
           background={normalizeProp(background, 'footer')}
           border={normalizeProp(border, 'footer')}
           columns={columns}
+          fill={fill}
           footerValues={footerValues}
           groups={groups}
           pad={normalizeProp(pad, 'footer')}
+          pin={pin === true || pin === 'footer'}
           primaryProperty={primaryProperty}
           size={size}
         />

@@ -20,4 +20,6 @@ const Example = () => {
   );
 };
 
-storiesOf('Select', module).add('Uncontrolled', () => <Example />);
+storiesOf('Select', module).add('Uncontrolled', () => <Example />, {
+  chromatic: { disable: true },
+});

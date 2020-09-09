@@ -49,4 +49,6 @@ const DateMaskedInput = () => {
   );
 };
 
-storiesOf('MaskedInput', module).add('Date', () => <DateMaskedInput />);
+storiesOf('MaskedInput', module).add('Date', () => <DateMaskedInput />, {
+  chromatic: { disable: true },
+});

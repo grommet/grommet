@@ -8,7 +8,6 @@ import React, {
   useState,
 } from 'react';
 import { ThemeContext } from 'styled-components';
-
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
@@ -51,6 +50,7 @@ const Video = forwardRef(
       gridArea,
       loop,
       margin,
+      messages,
       mute,
       onDurationChange,
       onEnded,
@@ -270,9 +270,15 @@ const Video = forwardRef(
             <Button
               icon={
                 playing ? (
-                  <Icons.Pause color={iconColor} />
+                  <Icons.Pause
+                    color={iconColor}
+                    a11yTitle={messages.pauseButton}
+                  />
                 ) : (
-                  <Icons.Play color={iconColor} />
+                  <Icons.Play
+                    color={iconColor}
+                    a11yTitle={messages.playButton}
+                  />
                 )
               }
               hoverIndicator="background"
@@ -282,7 +288,7 @@ const Video = forwardRef(
               <Box flex>
                 <Stack>
                   <Meter
-                    aria-label="Video progress"
+                    aria-label={messages.progressMeter}
                     background={
                       over
                         ? (theme.video.scrubber &&
@@ -296,6 +302,7 @@ const Video = forwardRef(
                     values={[{ value: percentagePlayed || 0 }]}
                   />
                   <StyledVideoScrubber
+                    aria-label={messages.scrubber}
                     ref={scrubberRef}
                     tabIndex={0}
                     role="button"
@@ -318,20 +325,39 @@ const Video = forwardRef(
               icon={<Icons.Configure color={iconColor} />}
               dropAlign={{ bottom: 'top', right: 'right' }}
               dropBackground={background}
+              messages={{
+                openMenu: messages.openMenu,
+                closeMenu: messages.closeMenu,
+              }}
               items={[
                 {
-                  icon: <Icons.Volume color={iconColor} />,
+                  icon: (
+                    <Icons.Volume
+                      color={iconColor}
+                      a11yTitle={messages.volumeUp}
+                    />
+                  ),
                   onClick: volume <= 1 - VOLUME_STEP ? louder : undefined,
                   close: false,
                 },
                 {
-                  icon: <Icons.ReduceVolume color={iconColor} />,
+                  icon: (
+                    <Icons.ReduceVolume
+                      color={iconColor}
+                      a11yTitle={messages.volumeDown}
+                    />
+                  ),
                   onClick: volume >= VOLUME_STEP ? quieter : undefined,
                   close: false,
                 },
                 ...captionControls,
                 {
-                  icon: <Icons.FullScreen color={iconColor} />,
+                  icon: (
+                    <Icons.FullScreen
+                      color={iconColor}
+                      a11yTitle={messages.fullScreen}
+                    />
+                  ),
                   onClick: fullscreen,
                 },
               ]}
@@ -412,6 +438,20 @@ const Video = forwardRef(
     );
   },
 );
+
+Video.defaultProps = {
+  messages: {
+    closeMenu: 'close menu',
+    fullScreen: 'full screen',
+    progressMeter: 'video progress',
+    scrubber: 'scrubber',
+    openMenu: 'open menu',
+    pauseButton: 'pause',
+    playButton: 'play',
+    volumeDown: 'volume down',
+    volumeUp: 'volume up',
+  },
+};
 
 Video.displayName = 'Video';
 

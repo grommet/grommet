@@ -1,6 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { genericProps, getAvailableAtBadge } from '../../utils';
+import { genericProps } from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
 
 const VERTICAL_ALIGN_OPTIONS = ['top', 'bottom'];
 const HORIZONTAL_ALIGN_OPTIONS = ['right', 'left'];
@@ -24,6 +25,14 @@ export const doc = Menu => {
 
   DocumentedMenu.propTypes = {
     ...genericProps,
+    children: PropTypes.func.description(
+      `Function that will be called to render the visual representation.
+      It will be passed an object containing button props.
+      It should return a react element.
+      For example:
+      \`children={({ drop, hover }) => <Box ...>{...}</Box>}\`
+      `,
+    ),
     disabled: PropTypes.bool
       .description('Whether the menu should be disabled.')
       .defaultValue(false),
@@ -74,7 +83,8 @@ one of top or bottom should be specified.`,
     ),
     items: PropTypes.arrayOf(PropTypes.object).description(
       `Menu items to be placed inside the drop down.
-The object values can be any Button prop, for example: label and onClick.`,
+The object values can be any Button prop, 
+for example: label, onClick, and href.`,
     ).isRequired,
     label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).description(
       'Indicates the label shown as a control to open it.',
@@ -125,8 +135,15 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'menu.icons.down': {
-    description: 'The icon to show to the right of the label.',
+    description: `The icon to show to the right of the label when menu is 
+    closed.`,
     type: 'React.Element',
     defaultValue: '<FormDown />',
+  },
+  'menu.icons.up': {
+    description: `The icon to show to the right of the label when menu is 
+    opened.`,
+    type: 'undefined | React.Element',
+    defaultValue: 'undefined',
   },
 };

@@ -1,5 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Heading accepts ref 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  font-size: 50px;
+  line-height: 56px;
+  max-width: 1200px;
+  font-weight: 600;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <h1
+    className="c1"
+  />
+</div>
+`;
+
 exports[`Heading color renders 1`] = `
 .c0 {
   font-size: 18px;
@@ -101,9 +136,9 @@ exports[`Heading level renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c4 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
+    font-size: 16px;
+    line-height: 22px;
+    max-width: 384px;
   }
 }
 
@@ -566,9 +601,9 @@ exports[`Heading size renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c11 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
+    font-size: 16px;
+    line-height: 22px;
+    max-width: 384px;
   }
 }
 
@@ -849,9 +884,9 @@ exports[`Theme based font family renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c4 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
+    font-size: 16px;
+    line-height: 22px;
+    max-width: 384px;
   }
 }
 
@@ -938,9 +973,9 @@ exports[`Theme based font weight renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c4 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
+    font-size: 16px;
+    line-height: 22px;
+    max-width: 384px;
   }
 }
 

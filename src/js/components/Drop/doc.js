@@ -1,7 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 
 import { OVERFLOW_VALUES } from '../Box/doc';
-import { getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge } from '../../utils/mixins';
 
 // if you update values here, make sure to update in Box/doc too.
 const dropOverflowPropTypes = PropTypes.oneOfType([
@@ -76,6 +76,9 @@ export const doc = Drop => {
         `Whether the drop element should have no background nor shadow`,
       )
       .defaultValue(false),
+    trapFocus: PropTypes.bool
+      .description(`Traps keyboard focus inside of drop.`)
+      .defaultValue(true),
   };
 
   return DocumentedDrop;

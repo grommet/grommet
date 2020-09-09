@@ -1,7 +1,7 @@
 ## TextInput
 A control to input a single line of text, with optional suggestions.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=TextInput&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=textinput&module=%2Fsrc%2FTextInput.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=TextInput&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/textinput&module=%2Fsrc%2FTextInput.js)
 ## Usage
 
 ```javascript
@@ -10,6 +10,14 @@ import { TextInput } from 'grommet';
 ```
 
 ## Properties
+
+**a11yTitle**
+
+Custom title to be used by screen readers.
+
+```
+string
+```
 
 **dropAlign**
 
@@ -94,7 +102,7 @@ boolean
 
 **messages**
 
-Custom messages for TextInput. Used for accessibility by screen 
+Custom messages for TextInput. Used for accessibility by screen
         readers. Defaults to `{
   "enterSelect": "(Press Enter to Select)",
   "suggestionsCount": "suggestions available",
@@ -129,8 +137,20 @@ function
 
 **onSelect**
 
+Note: This function is deprecated, use onSuggestionSelect instead.
+      Function that will be called when the user selects a suggestion.
+      The suggestion contains the object chosen from the supplied suggestions.
+      When used in conjunction with onSuggestionSelect 
+      this will default to React's onSelect
+
+```
+function
+```
+
+**onSuggestionSelect**
+
 Function that will be called when the user selects a suggestion.
-The suggestion contains the object chosen from the supplied suggestions.
+      The suggestion contains the object chosen from the supplied suggestions.
 
 ```
 function
@@ -163,7 +183,7 @@ node
 **plain**
 
 Whether this is a plain input with no border or padding.
-Only use this when the containing context provides sufficient affordance
+      Only use this when the containing context provides sufficient affordance
 
 ```
 boolean
@@ -273,7 +293,7 @@ Defaults to
 
 **text**
 
-The possible sizes of the text in terms of its font-size and 
+The possible sizes of the text in terms of its font-size and
     line-height. Expects `object`.
 
 Defaults to

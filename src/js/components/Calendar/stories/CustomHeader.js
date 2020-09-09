@@ -56,6 +56,4 @@ const CustomHeaderCalendar = () => {
   );
 };
 
-storiesOf('Calendar', module).add('Custom Header', () => (
-  <CustomHeaderCalendar />
-));
+storiesOf('Calendar', module).add('Header', () => <CustomHeaderCalendar />);

@@ -60,4 +60,10 @@ const FilteredMaskedInput = () => {
   );
 };
 
-storiesOf('MaskedInput', module).add('Filtered', () => <FilteredMaskedInput />);
+storiesOf('MaskedInput', module).add(
+  'Filtered',
+  () => <FilteredMaskedInput />,
+  {
+    chromatic: { disable: true },
+  },
+);

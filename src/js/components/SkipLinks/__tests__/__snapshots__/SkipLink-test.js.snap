@@ -46,18 +46,6 @@ exports[`SkipLink basic 1`] = `
 
 }
 
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
-@media only screen and (max-width:768px) {
-
-}
-
 <div
   class="c0"
 >
@@ -129,14 +117,11 @@ exports[`SkipLink basic 3`] = `
     <a
       aria-hidden="true"
       class="StyledAnchor-sc-1rp7lwl-0 cfNrRd SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 iYKTUc"
-      data-g-tabindex="-1"
       id="main"
       tabindex="-1"
     />
     Main Content
     <input
-      data-g-tabindex="none"
-      tabindex="-1"
       type="text"
       value="main content"
     />
@@ -145,13 +130,10 @@ exports[`SkipLink basic 3`] = `
     <a
       aria-hidden="true"
       class="StyledAnchor-sc-1rp7lwl-0 cfNrRd SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 iYKTUc"
-      data-g-tabindex="-1"
       id="footer"
       tabindex="-1"
     />
     <input
-      data-g-tabindex="none"
-      tabindex="-1"
       type="text"
       value="footer"
     />

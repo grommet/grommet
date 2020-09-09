@@ -23,11 +23,11 @@ import { SelectContainer } from './SelectContainer';
 import { applyKey } from './utils';
 
 const SelectTextInput = styled(TextInput)`
-  cursor: pointer;
+  cursor: ${props => (props.defaultCursor ? 'default' : 'pointer')};
 `;
 
 const StyledSelectDropButton = styled(DropButton)`
-  ${props => !props.plain && controlBorderStyle};
+  ${props => !props.callerPlain && controlBorderStyle};
   ${props =>
     props.theme.select &&
     props.theme.select.control &&
@@ -92,7 +92,7 @@ const Select = forwardRef(
 
     // value is used for what we receive in valueProp and the basis for
     // what we send with onChange
-    const [value, setValue] = formContext.useFormContext(name, valueProp, '');
+    const [value, setValue] = formContext.useFormInput(name, valueProp, '');
     // valuedValue is the value mapped with any valueKey applied
     const valuedValue = useMemo(() => {
       if (Array.isArray(value))
@@ -126,9 +126,10 @@ const Select = forwardRef(
     useEffect(() => setOpen(propOpen), [propOpen]);
 
     const onRequestOpen = useCallback(() => {
+      if (open) return;
       setOpen(true);
       if (onOpen) onOpen();
-    }, [onOpen]);
+    }, [onOpen, open]);
 
     const onRequestClose = useCallback(() => {
       setOpen(false);
@@ -231,7 +232,9 @@ const Select = forwardRef(
               {children}
             </SelectContainer>
           }
-          plain={plain}
+          // StyledDropButton needs to know if the border should be shown
+          callerPlain={plain}
+          plain // Button should be plain
           dropProps={dropProps}
           theme={theme}
         >
@@ -250,6 +253,13 @@ const Select = forwardRef(
                       value && typeof value === 'string' ? `, ${value}` : ''
                     }`
                   }
+                  // When Select is disabled, we want to show a default cursor
+                  // but not have disabled styling come from TextInput
+                  // Disabled can be a bool or an array of options to disable.
+                  // We only want to disable the TextInput if the control
+                  // button should be disabled which occurs when disabled
+                  // equals true.
+                  defaultCursor={disabled === true || undefined}
                   id={id ? `${id}__input` : undefined}
                   name={name}
                   ref={inputRef}
@@ -262,7 +272,6 @@ const Select = forwardRef(
                   value={inputValue}
                   size={size}
                   theme={theme}
-                  onClick={disabled === true ? undefined : onRequestOpen}
                 />
               )}
             </Box>

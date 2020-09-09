@@ -37,7 +37,7 @@ export const CheckBoxGroup = forwardRef(
     );
 
     // 'value' is an array of checked valueKeys
-    const [value, setValue] = formContext.useFormContext(name, valueProp, []);
+    const [value, setValue] = formContext.useFormInput(name, valueProp, []);
 
     // Logic is necessary to maintain a proper data structure for Form logic
     const onCheckBoxChange = (event, optionValue, option) => {
@@ -62,10 +62,12 @@ export const CheckBoxGroup = forwardRef(
     return (
       <Box ref={ref} gap={gap} {...rest}>
         {options.map(option => {
+          const optionValue = option.value;
           const label = labelKey ? option[labelKey] : option.label;
-          const valueOption = valueKey ? option[valueKey] : option.value;
+          const valueOption = valueKey ? option[valueKey] : optionValue;
           const checked = value.indexOf(valueOption) >= 0;
           const disabled = disabledProp || option.disabled;
+          const key = `${label}-${valueOption}`;
 
           if (option.checked)
             console.warn(
@@ -77,7 +79,7 @@ export const CheckBoxGroup = forwardRef(
           const optionProps = { ...optionRest, label, disabled };
           return (
             <CheckBox
-              key={label}
+              key={key}
               {...optionProps}
               disabled={disabled}
               checked={checked}

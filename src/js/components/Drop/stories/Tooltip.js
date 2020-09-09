@@ -1,40 +1,56 @@
 import React, { useRef, useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Button, Drop, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Grommet, grommet, Box, Button, Drop, Text } from 'grommet';
+import { Calculator, Bug, Achievement } from 'grommet-icons';
 
-const TooltipDrop = () => {
-  const [over, setOver] = useState();
+const TooltipButton = ({ icon, name }) => {
+  const [over, setOver] = useState(false);
   const ref = useRef();
 
   return (
-    <Grommet theme={grommet} full>
-      <Box fill align="center" justify="center">
-        <Button
-          label="Button"
-          ref={ref}
-          onMouseOver={() => setOver(true)}
-          onMouseOut={() => setOver(false)}
-          onFocus={() => {}}
-          onBlur={() => {}}
-        />
+    <Box>
+      <Button
+        ref={ref}
+        onMouseOver={() => setOver(true)}
+        onMouseLeave={() => setOver(false)}
+        onFocus={() => setOver(true)}
+        onBlur={() => setOver(false)}
+        plain
+      >
+        <Box pad={{ vertical: 'small' }} align="center">
+          {icon}
+        </Box>
+      </Button>
+      {ref.current && over && (
+        <Drop
+          align={{ left: 'right' }}
+          target={ref.current}
+          plain
+          // trapFocus set to false allows tabbing through
+          trapFocus={false}
+        >
+          <Box pad="small" background="pink">
+            <Text color="white">{name}</Text>
+          </Box>
+        </Drop>
+      )}
+    </Box>
+  );
+};
 
-        {ref.current && over && (
-          <Drop align={{ left: 'right' }} target={ref.current} plain>
-            <Box
-              margin="xsmall"
-              pad="small"
-              background="dark-3"
-              round={{ size: 'medium', corner: 'left' }}
-            >
-              tooltip contents
-            </Box>
-          </Drop>
-        )}
+const Tooltip = () => {
+  return (
+    <Grommet theme={grommet}>
+      <Box align="center" pad="large">
+        <TooltipButton icon={<Calculator />} name="Calculator" />
+        <TooltipButton icon={<Bug />} name="Bug" />
+        <TooltipButton icon={<Achievement />} name="Achievement" />
       </Box>
     </Grommet>
   );
 };
 
-storiesOf('Drop', module).add('Tooltip', () => <TooltipDrop />);
+storiesOf('Drop', module).add('Tooltip', () => <Tooltip />, {
+  chromatic: { disable: true },
+});

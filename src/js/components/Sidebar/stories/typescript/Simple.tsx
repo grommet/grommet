@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import isChromatic from 'storybook-chromatic/isChromatic';
 
 import { Avatar, Button, Box, grommet, Grommet, Nav, Sidebar } from 'grommet';
 
@@ -58,6 +57,4 @@ export const SidebarIcons = () => (
   </Grommet>
 );
 
-if (!isChromatic()) {
-  storiesOf('Typescript/Sidebar', module).add('Icons', () => <SidebarIcons />);
-}
+storiesOf('Sidebar', module).add('Icons', () => <SidebarIcons />);

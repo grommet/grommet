@@ -1,5 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`accepts ref 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+<div
+  className="c0"
+>
+  <span
+    className="c1"
+  >
+    text
+  </span>
+</div>
+`;
+
 exports[`renders 1`] = `
 .c0 {
   font-size: 18px;
@@ -208,27 +235,21 @@ exports[`renders size 1`] = `
 >
   <span
     className="c1"
-    size="xsmall"
   />
   <span
     className="c2"
-    size="small"
   />
   <span
     className="c3"
-    size="medium"
   />
   <span
     className="c4"
-    size="large"
   />
   <span
     className="c5"
-    size="xlarge"
   />
   <span
     className="c6"
-    size="xxlarge"
   />
 </div>
 `;
@@ -374,5 +395,33 @@ exports[`renders weight 1`] = `
   <span
     className="c2"
   />
+</div>
+`;
+
+exports[`should have no accessibility violations 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+<div
+  class="c0"
+>
+  <span
+    aria-label="test"
+    class="c1"
+  >
+     Example
+  </span>
 </div>
 `;

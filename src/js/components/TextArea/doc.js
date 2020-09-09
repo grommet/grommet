@@ -1,6 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge, themeDocUtils } from '../../utils';
+import { getAvailableAtBadge } from '../../utils/mixins';
+import { themeDocUtils } from '../../utils/themeDocUtils';
 
 export const doc = TextArea => {
   const DocumentedTextArea = describe(TextArea)
@@ -13,6 +14,10 @@ export const doc = TextArea => {
     .intrinsicElement('textarea');
 
   DocumentedTextArea.propTypes = {
+    a11yTitle: PropTypes.string.description(
+      `Custom label to be used by screen readers.
+      When provided, an aria-label will be added to the element.`,
+    ),
     id: PropTypes.string.description('The id attribute of the textarea.'),
     fill: PropTypes.bool
       .description('Whether the width and height should fill the container.')

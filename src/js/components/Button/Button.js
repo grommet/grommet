@@ -94,6 +94,7 @@ const Button = forwardRef(
     {
       a11yTitle,
       active,
+      align = 'center',
       color, // munged to avoid styled-components putting it in the DOM
       children,
       disabled,
@@ -113,6 +114,7 @@ const Button = forwardRef(
       primary,
       reverse,
       secondary,
+      selected,
       size,
       type = 'button',
       as,
@@ -149,6 +151,10 @@ const Button = forwardRef(
       if (!kind || plain) return undefined;
       const result = { base: [], hover: [] };
       result.base.push(kind);
+      if (selected) {
+        result.base.push('selected');
+        if (kind) result.base.push(`selected.${kind}`);
+      }
       if (disabled) {
         result.base.push('disabled');
         if (kind) result.base.push(`disabled.${kind}`);
@@ -167,7 +173,7 @@ const Button = forwardRef(
         }
       }
       return result;
-    }, [active, disabled, kind, plain]);
+    }, [active, disabled, kind, plain, selected]);
 
     // only used when theme does not have button.default
     const isDarkBackground = () => {
@@ -228,7 +234,7 @@ const Button = forwardRef(
         <Box
           direction="row"
           align="center"
-          justify="center"
+          justify={align === 'center' ? 'center' : 'between'}
           gap={gap}
           responsive={false}
         >
@@ -248,6 +254,8 @@ const Button = forwardRef(
           {...rest}
           as={domTag}
           ref={ref}
+          active={active}
+          align={align}
           aria-label={a11yTitle}
           colorValue={color}
           disabled={disabled}
@@ -287,6 +295,7 @@ const Button = forwardRef(
         aria-label={a11yTitle}
         colorValue={color}
         active={active}
+        selected={selected}
         disabled={disabled}
         hasIcon={!!icon}
         gap={gap}

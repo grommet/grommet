@@ -1,12 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import isChromatic from 'storybook-chromatic/isChromatic';
 
 import { Grommet, Box, DataTable, Meter, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 import { ColumnConfig } from '../..';
 
+// This story uses TypeScript
 const amountFormatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
   currency: 'USD',
@@ -149,8 +149,6 @@ const ClickableDataTable = () => (
   </Grommet>
 );
 
-if (!isChromatic()) {
-  storiesOf('TypeScript/DataTable', module).add('Clickable', () => (
-    <ClickableDataTable />
-  ));
-}
+storiesOf('DataTable', module).add('TS-Clickable', () => (
+  <ClickableDataTable />
+));

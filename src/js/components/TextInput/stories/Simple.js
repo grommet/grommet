@@ -20,4 +20,6 @@ const SimpleTextInput = () => {
   );
 };
 
-storiesOf('TextInput', module).add('Simple', () => <SimpleTextInput />);
+storiesOf('TextInput', module).add('Simple', () => <SimpleTextInput />, {
+  chromatic: { disable: true },
+});

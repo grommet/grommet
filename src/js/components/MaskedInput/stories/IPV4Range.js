@@ -71,6 +71,6 @@ const IPv4RangeMaskedInput = () => {
   );
 };
 
-storiesOf('MaskedInput', module).add('IPv4 Range', () => (
+storiesOf('MaskedInput', module).add('IPv4 range', () => (
   <IPv4RangeMaskedInput />
 ));

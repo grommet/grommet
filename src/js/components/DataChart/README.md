@@ -3,12 +3,12 @@ Takes a data set and visualizes it. While Chart renders a
     single value across a data set. DataChart allows multiple overlayed
     Charts and adds guides and axes for decoration.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=DataChart&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=datachart&module=%2Fsrc%2FDataChart.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=DataChart&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/datachart&module=%2Fsrc%2FDataChart.js)
 ## Usage
 
 ```javascript
 import { DataChart } from 'grommet';
-<DataChart data={data} chart={} />
+<DataChart data={data} property={} />
 ```
 
 ## Properties
@@ -126,54 +126,121 @@ xlarge
 string
 ```
 
-**chart**
+**axis**
 
-Chart properties indicating how to visualize the data.
-    'key' indicates which property of the data objects to use. 'keys' indicates
-    that multiple properties should be used for a stacked bar chart. DataChart
-    uses the key/keys to build the right 'values' for the underlying Chart.
-    All of the other properties in 'chart' are passed through to the Chart.
+Whether to show an axis and how it should look.
+      If 'x' or 'y' is a string, it indicates the property to use
+      to determine the values to show.
+      If axis or 'x' is true, DataChart will look for a property called 'date'
+      or 'time' and automatically use that for the x-axis. If DataChart
+      can't find a property to use, it will use the data index for the x-axis.
+      If axis or 'y' is true, DataChart will use the first property in 'series'.
+      'granularity' indicates how many values to show.
+      'coarse' granularity shows two values, one at each end.
+      'fine' granularity shows all x-axis values and 5 y-axis values.
+      'medium' granularity picks something in between. Defaults to `true`.
 
 ```
+boolean
 {
-  key: string,
-  keys: [{
-  key: string,
-  color: 
+  x: 
+    boolean
     string
     {
-      color: string,
-      opacity: 
-        weak
+      property: string,
+      granularity: 
+        coarse
         medium
-        strong
-        boolean
+        fine
+    },
+  y: 
+    boolean
+    string
+    {
+      property: string,
+      granularity: 
+        coarse
+        medium
+        fine
     }
-    [{
+}
+```
+
+**bounds**
+
+When set to 'align', indicates that the bounds of all series
+      should be aligned. When not set, the bounds of each series
+      property are based solely on the data found for that property. Defaults to `align`.
+
+```
+align
+```
+
+**chart**
+
+How to visualize the data.
+    'property' indicates which property of the data objects to use.
+    When 'property' is an array, multiple properties are used for a
+    stacked bar chart. If only a string is specified, that is the property
+    to use and all other aspects are defaulted. If 'property' is an object,
+    it specifies a map of properties to graphic aspects: x, y, color, thickness.
+    If 'transform' is specified, it will be used to transform the data value
+    before using it. For example, to convert a data value to a hex color
+    string for the color.
+
+```
+string
+{
+  property: 
+    string
+    [
+      string
+      {
+        property: string,
+        color: 
+          string
+          [{
   color: string,
   value: number
 }]
-}],
-  a11yTitle: string,
-  bounds: [[number]],
+      }
+    ]
+    {
+      color: 
+        string
+        {
+          property: string,
+          transform: function
+        },
+      thickness: 
+        string
+        {
+          property: string,
+          transform: function
+        },
+      x: string,
+      y: string
+    },
   color: 
     string
-    {
-      color: string,
-      opacity: 
-        weak
-        medium
-        strong
-        boolean
-    }
     [{
   color: string,
   value: number
 }],
   dash: boolean,
-  onClick: function,
-  onHover: function,
-  overflow: boolean,
+  opacity: 
+    weak
+    medium
+    strong
+    number
+    boolean,
+  point: 
+    circle
+    diamond
+    square
+    star
+    triangle
+    triangleDown,
   round: boolean,
   thickness: 
     hair
@@ -186,65 +253,82 @@ Chart properties indicating how to visualize the data.
     string,
   type: 
     bar
+    bars
     line
     area
     point
 }
-[{
-  key: string,
-  keys: [{
-  key: string,
-  color: 
-    string
-    {
-      color: string,
-      opacity: 
-        weak
-        medium
-        strong
-        boolean
-    }
-    [{
+[
+  string
+  {
+    property: 
+      string
+      [
+        string
+        {
+          property: string,
+          color: 
+            string
+            [{
   color: string,
   value: number
 }]
-}],
-  a11yTitle: string,
-  bounds: [[number]],
-  color: 
-    string
-    {
-      color: string,
-      opacity: 
-        weak
-        medium
-        strong
-        boolean
-    }
-    [{
+        }
+      ]
+      {
+        color: 
+          string
+          {
+            property: string,
+            transform: function
+          },
+        thickness: 
+          string
+          {
+            property: string,
+            transform: function
+          },
+        x: string,
+        y: string
+      },
+    color: 
+      string
+      [{
   color: string,
   value: number
 }],
-  dash: boolean,
-  onClick: function,
-  onHover: function,
-  overflow: boolean,
-  round: boolean,
-  thickness: 
-    hair
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    none
-    string,
-  type: 
-    bar
-    line
-    area
-    point
-}]
+    dash: boolean,
+    opacity: 
+      weak
+      medium
+      strong
+      number
+      boolean,
+    point: 
+      circle
+      diamond
+      square
+      star
+      triangle
+      triangleDown,
+    round: boolean,
+    thickness: 
+      hair
+      xsmall
+      small
+      medium
+      large
+      xlarge
+      none
+      string,
+    type: 
+      bar
+      bars
+      line
+      area
+      point
+  }
+]
 ```
 
 **data**
@@ -255,6 +339,17 @@ the data set
 [{
 
 }]
+```
+
+**detail**
+
+Whether to add the ability to interact with the chart
+      via mouse or keyboard to show details on specific values in the chart.
+      It shows all properties specified in 'series', using any 'render'
+      functions therein.
+
+```
+boolean
 ```
 
 **gap**
@@ -270,6 +365,41 @@ medium
 large
 xlarge
 string
+```
+
+**guide**
+
+Whether to put guidelines underneath the chart graphics.
+    See the description of 'granularity' under 'axis'.
+
+```
+boolean
+{
+  x: 
+    boolean
+    {
+      granularity: 
+        coarse
+        medium
+        fine
+    },
+  y: 
+    boolean
+    {
+      granularity: 
+        coarse
+        medium
+        fine
+    }
+}
+```
+
+**legend**
+
+Whether to include a legend
+
+```
+boolean
 ```
 
 **pad**
@@ -354,13 +484,43 @@ xlarge
 string
 ```
 
+**series**
+
+Describes which parts of the 'data' are of interest and
+    how to handle them. 'property' indicates which property of the 'data'
+    objects this series refers to. 'label' indicates how to label the series
+    in a legend or hover details. 'prefix' and 'suffix' are applied to the
+    data values shown in an axis, legend, or details. 'render' allows custom
+    rendering of the data value. 'render' is called with:
+    (value, datum, property) => { return < />; }
+
+```
+string
+{
+  label: 
+    string,
+  prefix: string,
+  property: string,
+  render: function,
+  suffix: string
+}
+[
+  string
+  {
+    label: 
+      string,
+    prefix: string,
+    property: string,
+    render: function,
+    suffix: string
+  }
+]
+```
+
 **size**
 
 The size of the Charts. This does not include the axes
-      and any gap. It is passed through to the underlying Chart. Defaults to `{
-  "width": "medium",
-  "height": "small"
-}`.
+      and any gap. It is passed through to the underlying Chart.
 
 ```
 fill
@@ -384,62 +544,6 @@ fill
     fill
     auto
     string
-}
-```
-
-**thickness**
-
-Chart thickness given to all
-    Charts if not specified per Chart in 'chart'.
-
-```
-hair
-xsmall
-small
-medium
-large
-xlarge
-none
-string
-```
-
-**xAxis**
-
-x-axis configuration. 'guide' specifies that vertical
-    guide lines should be drawn under the Chart, one per label.
-    'key' specifies what property in the 'data' should be used as
-    any label content. 'labels' specifies how many labels to show.
-    'render' allows for custom rendering of the labels. It will be
-    called with the current data index and axis index and should return
-    the element to render: (dataIndex, axisIndex) => element.
-
-```
-boolean
-{
-  guide: boolean,
-  key: string,
-  labels: number,
-  render: function
-}
-```
-
-**yAxis**
-
-y-axis configuration. 'guide' specifies that horizontal
-    guide lines should be drawn under the Chart, one per label.
-    'labels' specifies how many labels to show.
-    'render' allows for custom rendering of the labels. It will be
-    called with the value and axis index and should return
-    the element to render: (value, axisIndex) => element
-
-```
-boolean
-{
-  guide: boolean,
-  labels: number,
-  prefix: string,
-  render: function,
-  suffix: string
 }
 ```
   

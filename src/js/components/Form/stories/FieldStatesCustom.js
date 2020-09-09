@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { grommet, Box, Form, FormField, TextInput, Grommet } from 'grommet';
-import { deepMerge } from '../../../utils';
+import { deepMerge } from 'grommet/utils';
 
 const customTheme = deepMerge(grommet, {
   formField: {
@@ -133,6 +133,6 @@ const CustomFormFieldStates = () => {
   );
 };
 
-storiesOf('Form', module).add('Field States Custom', () => (
+storiesOf('Form', module).add('Field states custom', () => (
   <CustomFormFieldStates />
 ));

@@ -18,6 +18,7 @@ import {
   FormField,
   Grid,
   Heading,
+  MaskedInput,
   Menu,
   Meter,
   Paragraph,
@@ -33,6 +34,7 @@ import {
   TextInput,
   Video,
 } from 'grommet';
+import { FormNext } from 'grommet-icons';
 import { grommet } from 'grommet/themes';
 import { generate } from 'grommet/themes/base';
 import { deepMerge } from 'grommet/utils';
@@ -76,6 +78,8 @@ const themes = {
 const Components = () => {
   const [baseSize, setBaseSize] = useState(24);
   const [checkBox, setCheckBox] = useState(true);
+  const [textInput, setTextInput] = useState('');
+  const [maskedInput, setMaskedInput] = useState('');
   const [radioButton, setRadioButton] = useState('RadioButton 1');
   const [rangeSelector, setRangeSelector] = useState([1, 2]);
   const [themeMode, setThemeMode] = useState();
@@ -104,7 +108,16 @@ const Components = () => {
       <Anchor href="">Anchor</Anchor>
       <Menu
         label="Menu"
-        items={[{ label: 'One', onClick: () => {} }, { label: 'Two' }]}
+        items={[
+          {
+            label: 'One',
+            onClick: () => {},
+            icon: <FormNext />,
+            reverse: true,
+          },
+          { label: 'Two' },
+          { label: 'Thirty Three and 1/3' },
+        ]}
       />
       <Button label="Button" onClick={() => {}} />
       <Button plain onClick={() => {}}>
@@ -136,7 +149,32 @@ const Components = () => {
         value={radioButton}
         onChange={event => setRadioButton(event.target.value)}
       />
-      <TextInput placeholder="TextInput" />
+      <TextInput
+        placeholder="TextInput"
+        suggestions={['a', 'b', 'c']}
+        value={textInput}
+        onChange={event => setTextInput(event.target.value)}
+        onSelect={({ suggestion }) => setTextInput(suggestion)}
+      />
+      <MaskedInput
+        mask={[
+          {
+            length: [1, 4],
+            options: [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],
+            regexp: /^\d{1,4}$/,
+            placeholder: 'nnn',
+          },
+          { fixed: ' ' },
+          {
+            length: 2,
+            options: ['MB', 'GB', 'TB'],
+            regexp: /^[mgt]b$|^[MGT]B$|^[mMgGtT]$/,
+            placeholder: 'gb',
+          },
+        ]}
+        value={maskedInput}
+        onChange={event => setMaskedInput(event.target.value)}
+      />
       <TextArea placeholder="TextArea" />
       <RangeInput value={24} onChange={() => {}} />
       <Stack>
@@ -259,6 +297,7 @@ const Components = () => {
     </Box>,
     <Box key="video" alignSelf="start">
       <Video>
+        <source src="small.mp4" type="video/mp4" />
         <source
           src="http://techslides.com/demos/sample-videos/small.webm"
           type="video/webm"
@@ -266,10 +305,6 @@ const Components = () => {
         <source
           src="http://techslides.com/demos/sample-videos/small.ogv"
           type="video/ogg"
-        />
-        <source
-          src="http://techslides.com/demos/sample-videos/small.mp4"
-          type="video/mp4"
         />
         <source
           src="http://techslides.com/demos/sample-videos/small.3gp"

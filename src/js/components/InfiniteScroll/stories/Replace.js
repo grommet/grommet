@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import isChromatic from 'storybook-chromatic/isChromatic';
+import isChromatic from 'chromatic/isChromatic';
 import { grommet } from 'grommet/themes';
 
 import { Grommet, Box, InfiniteScroll, Text } from 'grommet';
@@ -22,7 +22,12 @@ const InfiniteScrollReplace = props => (
 );
 
 if (!isChromatic()) {
-  storiesOf('InfiniteScroll', module).add('Replace', () => (
-    <InfiniteScrollReplace replace />
-  ));
+  storiesOf('InfiniteScroll', module)
+    .add('Replace', () => <InfiniteScrollReplace replace />)
+    .add('Replace with show 28th item', () => (
+      <InfiniteScrollReplace replace show={27} />
+    ))
+    .add('Replace with show 88th item', () => (
+      <InfiniteScrollReplace replace show={87} />
+    ));
 }

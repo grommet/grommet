@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import isChromatic from 'storybook-chromatic/isChromatic';
+import isChromatic from 'chromatic/isChromatic';
 
 import { Grommet, Box, Menu, ThemeType } from 'grommet';
-import { Next } from 'grommet-icons';
+import { FormUp, FormDown } from 'grommet-icons';
 
+// Type annotations can only be used in TypeScript files.
+// Remove ': ThemeType' if you are not using TypeScript.
 const customBreakpoints: ThemeType = {
   global: {
     breakpoints: {
@@ -58,6 +60,12 @@ const customBreakpoints: ThemeType = {
       },
     },
   },
+  menu: {
+    icons: {
+      down: FormDown,
+      up: FormUp,
+    },
+  },
 };
 const App = () => {
   return (
@@ -66,7 +74,6 @@ const App = () => {
         <Menu
           dropProps={{ align: { top: 'bottom', left: 'left' } }}
           label="actions"
-          icon={<Next />}
           items={[
             { label: 'Launch', onClick: () => {} },
             { label: 'Abort', onClick: () => {} },
@@ -79,5 +86,5 @@ const App = () => {
 };
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/Menu', module).add('Themed', () => <App />);
+  storiesOf('Menu', module).add('Themed', () => <App />);
 }

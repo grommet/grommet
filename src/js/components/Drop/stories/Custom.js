@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { Box, Drop, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
-import { deepMerge } from '../../../utils/object';
+import { deepMerge } from 'grommet/utils';
 
 const customTheme = deepMerge(grommet, {
   global: {
