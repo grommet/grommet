@@ -1354,6 +1354,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         position: 'top-right',
         zIndex: 1,
         width: '60%',
+        timeout: 2000,
         icon: {
           size: 'medium',
           default: Info,

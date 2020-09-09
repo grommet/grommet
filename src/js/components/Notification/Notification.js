@@ -9,6 +9,8 @@ import { Toast } from './Toast';
 
 const emitter = new EventEmitter();
 
+let timeoutId;
+
 export const addNotification = (type, config) => {
   const id = uuid();
   emitter.emit('addNotification', id, type, config);
@@ -38,6 +40,11 @@ export function Notification() {
     }
   };
 
+  const autoRemoveNotification = timeout => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => deleteLast(), timeout);
+  };
+
   emitter.on('removeNotification', id => {
     deleteNotification(id);
   });
@@ -49,6 +56,9 @@ export function Notification() {
   if (!notifications.length) {
     return null;
   }
+
+  if (notifications.length)
+    autoRemoveNotification(theme.notification.toast.timeout || 2000);
 
   return (
     <Layer
