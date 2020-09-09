@@ -117,4 +117,7 @@ const Example = () => {
   );
 };
 
-storiesOf('Form', module).add('Controlled input', () => <Example />);
+// chromatic disabled because snapshot is the same as Controlled Input Lazy
+storiesOf('Form', module).add('Controlled input', () => <Example />, {
+  chromatic: { disable: true },
+});
