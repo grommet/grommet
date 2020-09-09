@@ -72,7 +72,7 @@ export const themeDoc = {
       },
     }`,
   },
-  'text.paragraph': {
+  'paragraph.font': {
     description: 'The font to use for Paragraph.',
     type: 'object',
     defaultValue: undefined,
