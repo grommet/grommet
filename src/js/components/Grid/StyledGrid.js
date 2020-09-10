@@ -120,10 +120,10 @@ const getRepeatSize = (size, theme) => {
     min = theme.global.size[size] || size;
     max = '1fr';
   }
-  if (min.search(/\d/) !== -1) {
-    console.log('i am here');
-    min = `min(${min}, 100%)`;
-  }
+  // if (min.search(/\d/) !== -1) {
+  //   console.log('i am here');
+  //   min = `min(${min}, 100%)`;
+  // }
   return `minmax(${min}, ${max})`;
 };
 
