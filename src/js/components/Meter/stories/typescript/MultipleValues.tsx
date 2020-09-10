@@ -51,4 +51,4 @@ const MultipleValues = () => {
   );
 };
 
-storiesOf('Meter', module).add('Multiple Values', () => <MultipleValues />);
+storiesOf('Meter', module).add('Multiple values', () => <MultipleValues />);

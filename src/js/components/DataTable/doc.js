@@ -1,6 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { genericProps, getAvailableAtBadge } from '../../utils';
+import { genericProps } from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
 
 const sizes = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
 const sides = ['horizontal', 'vertical', 'top', 'bottom', 'left', 'right'];
@@ -244,8 +245,14 @@ export const doc = DataTable => {
     ),
     sort: PropTypes.shape({
       direction: PropTypes.oneOf(['asc', 'desc']),
+      external: PropTypes.bool,
       property: PropTypes.string.isRequired,
-    }).description('Which property to sort on and which direction to sort.'),
+    }).description(
+      `Which property to sort on and which direction to sort. When 'external'
+      is true, it indicates that the caller will take care of sorting
+      the 'data' via 'onSort'. Otherwise, the existing data will be sorted
+      within DataTable.`,
+    ),
     sortable: PropTypes.bool.description(
       'Whether to allow the user to sort columns.',
     ),
@@ -322,6 +329,11 @@ export const themeDoc = {
     description: 'The expand icon.',
     type: 'React.Element',
     defaultValue: '<FormDown />',
+  },
+  'dataTable.icons.sortable': {
+    description: 'The icon indicating a column can be sorted.',
+    type: 'React.Element',
+    defaultValue: undefined,
   },
   'dataTable.primary.weight': {
     description: 'The font weight for primary cells.',

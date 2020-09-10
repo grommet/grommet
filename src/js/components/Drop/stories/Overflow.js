@@ -61,4 +61,6 @@ const OverflowDrop = () => {
   );
 };
 
-storiesOf('Drop', module).add('Overflow', () => <OverflowDrop />);
+storiesOf('Drop', module).add('Overflow', () => <OverflowDrop />, {
+  chromatic: { disable: true },
+});

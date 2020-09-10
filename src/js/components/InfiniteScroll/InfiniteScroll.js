@@ -22,9 +22,11 @@ const InfiniteScroll = ({
   onMore,
   renderMarker,
   replace,
-  show,
+  show: showIndex,
   step = 50,
 }) => {
+  // item index to be made visible initially
+  const [show, setShow] = useState(showIndex);
   // the last page we have items for
   const lastPage = useMemo(() => Math.floor(items.length / step), [
     items.length,
@@ -115,7 +117,8 @@ const InfiniteScroll = ({
           )
         : 0;
 
-      // Increment nextEndPage when nearing end of current page
+      // Increment/decrement nextEndPage when nearing bounds of current page.
+      // Ensure nextEndPage contains show index initially.
       const nextEndPage = Math.min(
         lastPage,
         Math.max(
@@ -123,6 +126,7 @@ const InfiniteScroll = ({
           multiColumn
             ? Math.ceil(((top + height + offset) * width) / pageArea)
             : Math.floor((top + height + offset) / pageHeight),
+          show ? Math.floor(show / step) : 0,
         ),
       );
 
@@ -152,6 +156,8 @@ const InfiniteScroll = ({
     pageArea,
     pageHeight,
     replace,
+    show,
+    step,
   ]);
 
   // check if we need to ask for more
@@ -178,6 +184,8 @@ const InfiniteScroll = ({
         } else if (isNodeAfterScroll(showNode, scrollParent)) {
           showNode.scrollIntoView(false);
         }
+        // clean up after having shown
+        setShow(undefined);
       }
     }, 100);
     return () => clearTimeout(timer);

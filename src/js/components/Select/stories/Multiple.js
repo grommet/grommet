@@ -25,4 +25,7 @@ const Example = () => {
   );
 };
 
-storiesOf('Select', module).add('Multiple', () => <Example />);
+// chromatic disabled, similar to Object multiple
+storiesOf('Select', module).add('Multiple', () => <Example />, {
+  chromatic: { disable: true },
+});

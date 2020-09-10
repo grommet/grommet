@@ -35,6 +35,10 @@ const SizeUnitsMaskedInput = () => {
   );
 };
 
-storiesOf('MaskedInput', module).add('Size + Units', () => (
-  <SizeUnitsMaskedInput />
-));
+storiesOf('MaskedInput', module).add(
+  'Size + units',
+  () => <SizeUnitsMaskedInput />,
+  {
+    chromatic: { disable: true },
+  },
+);
