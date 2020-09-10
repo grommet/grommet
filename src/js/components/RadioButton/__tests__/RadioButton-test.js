@@ -133,16 +133,14 @@ describe('RadioButton', () => {
         </Grommet>,
       );
 
-      expect(
-        container.querySelector('circle').hasAttribute('r', '6'),
-      ).toBeTruthy();
+      expect(container.querySelector('circle').getAttribute('r')).toBe('6');
     });
 
     test('custom value', () => {
       const customTheme = {
         radioButton: {
           check: {
-            size: '8',
+            size: 8,
           },
         },
       };
@@ -153,9 +151,7 @@ describe('RadioButton', () => {
         </Grommet>,
       );
 
-      expect(
-        container.querySelector('circle').hasAttribute('r', '6'),
-      ).toBeTruthy();
+      expect(container.querySelector('circle').getAttribute('r')).toBe('8');
     });
   });
 });

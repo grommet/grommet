@@ -168,7 +168,7 @@ Defaults to
 
 **radioButton.check.size**
 
-The check size of the RadioButton. Expects `string`.
+The check size of the RadioButton. Expects `number`.
 
 Defaults to
 

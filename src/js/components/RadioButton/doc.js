@@ -93,8 +93,8 @@ export const themeDoc = {
   },
   'radioButton.check.size': {
     description: 'The check size of the RadioButton.',
-    type: 'string',
-    defaultValue: '6',
+    type: 'number',
+    defaultValue: 6,
   },
   'radioButton.color': {
     description: `The color of the border surrounding the checked 

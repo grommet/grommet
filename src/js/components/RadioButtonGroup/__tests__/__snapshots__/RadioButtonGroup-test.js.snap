@@ -403,7 +403,7 @@ exports[`RadioButtonGroup boolean options 1`] = `
             <circle
               cx={12}
               cy={12}
-              r="6"
+              r={6}
             />
           </svg>
         </div>
@@ -844,7 +844,7 @@ exports[`RadioButtonGroup number options 1`] = `
             <circle
               cx={12}
               cy={12}
-              r="6"
+              r={6}
             />
           </svg>
         </div>
@@ -1554,7 +1554,7 @@ exports[`RadioButtonGroup object options just value 1`] = `
             <circle
               cx={12}
               cy={12}
-              r="6"
+              r={6}
             />
           </svg>
         </div>
@@ -1810,7 +1810,7 @@ exports[`RadioButtonGroup string options 1`] = `
             <circle
               cx={12}
               cy={12}
-              r="6"
+              r={6}
             />
           </svg>
         </div>
