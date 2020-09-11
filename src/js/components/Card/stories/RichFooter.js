@@ -100,4 +100,4 @@ const Example = () => {
   );
 };
 
-storiesOf('Card', module).add('Rich Footer', () => <Example />);
+storiesOf('Card', module).add('Rich footer', () => <Example />);

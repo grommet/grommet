@@ -76,4 +76,4 @@ const FormFieldStates = () => {
   );
 };
 
-storiesOf('Form', module).add('Field States', () => <FormFieldStates />);
+storiesOf('Form', module).add('Field states', () => <FormFieldStates />);

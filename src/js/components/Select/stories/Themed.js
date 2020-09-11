@@ -81,4 +81,4 @@ for (let i = 1; i <= 200; i += 1) {
 storiesOf('Select', module)
   // Chromatic does not catch open Drop.
   // Screenshot taken before the Drop is open.
-  .add('Custom Theme', () => <SimpleSelect open />);
+  .add('Custom theme', () => <SimpleSelect open />);

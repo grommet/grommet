@@ -76,6 +76,6 @@ const ResponsiveGridExample = () => (
   </Grommet>
 );
 
-storiesOf('ResponsiveContext', module).add('Responsive Grid', () => (
+storiesOf('ResponsiveContext', module).add('Responsive grid', () => (
   <ResponsiveGridExample />
 ));

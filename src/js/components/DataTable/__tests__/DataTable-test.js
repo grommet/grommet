@@ -162,6 +162,46 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('sort', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'zero', b: 0 },
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          sort={{ property: 'a', direction: 'asc' }}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('sort external', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'zero', b: 0 },
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          sort={{ property: 'a', direction: 'asc', external: true }}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('search', () => {
     const { container } = render(
       <Grommet>
@@ -521,6 +561,50 @@ describe('DataTable', () => {
             { a: 'two', b: 2 },
           ]}
         />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('fill', () => {
+    const { container } = render(
+      <Grommet>
+        {[true, 'horizontal', 'vertical'].map(fill => (
+          <DataTable
+            key={JSON.stringify(fill)}
+            columns={[
+              { property: 'a', header: 'A', footer: 'Total' },
+              { property: 'b', header: 'B' },
+            ]}
+            data={[
+              { a: 'one', b: 1 },
+              { a: 'two', b: 2 },
+            ]}
+            fill={fill}
+          />
+        ))}
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('pin', () => {
+    const { container } = render(
+      <Grommet>
+        {[true, 'header', 'footer'].map(pin => (
+          <DataTable
+            key={JSON.stringify(pin)}
+            columns={[
+              { property: 'a', header: 'A', footer: 'Total', pin: true },
+              { property: 'b', header: 'B' },
+            ]}
+            data={[
+              { a: 'one', b: 1 },
+              { a: 'two', b: 2 },
+            ]}
+            pin={pin}
+          />
+        ))}
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();

@@ -1983,7 +1983,8 @@ Function that can be called to render the visual representation.
       Button can take in Children as a function, node, or object. 
       For example hover can be passed as an object that would 
       then return a react element.
-      \`children={({ hover }) => <Box...>{...}</Box>}\`
+      \`children={({ hover }) => <Box...>{...}</Box>}\`. When Button has
+      children, it is styled as a \`plain\` button.
       
 
 \`\`\`
@@ -3582,7 +3583,9 @@ Defaults to
 \`\`\`
 ",
   "Card": "## Card
-A Card.
+A Card is a container of information that provides access to more 
+      details. Elements of a Card can include Header, Body, Footer or any 
+      other custom component.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Card&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/card&module=%2Fsrc%2FCard.js)
 ## Usage
@@ -3643,7 +3646,7 @@ Defaults to
 \`\`\`
 ",
   "CardBody": "## CardBody
-The Card Body.
+The body of the card. Mostly used for placing content.
 
 
 ## Properties
@@ -4071,6 +4074,14 @@ xlarge
 string
 \`\`\`
 
+**animate**
+
+Whether to animate drawing.
+
+\`\`\`
+boolean
+\`\`\`
+
 **bounds**
 
 The limits for the values, specified as a two dimensional array. 
@@ -4175,6 +4186,17 @@ Called with a boolean argument
 
 \`\`\`
 function
+\`\`\`
+
+**opacity**
+
+What opacity to apply to the visuals. Supercedes 'color.opacity'
+
+\`\`\`
+weak
+medium
+strong
+boolean
 \`\`\`
 
 **overflow**
@@ -5317,7 +5339,7 @@ Takes a data set and visualizes it. While Chart renders a
 
 \`\`\`javascript
 import { DataChart } from 'grommet';
-<DataChart data={data} chart={} />
+<DataChart data={data} property={} />
 \`\`\`
 
 ## Properties
@@ -5435,54 +5457,121 @@ xlarge
 string
 \`\`\`
 
-**chart**
+**axis**
 
-Chart properties indicating how to visualize the data.
-    'key' indicates which property of the data objects to use. 'keys' indicates
-    that multiple properties should be used for a stacked bar chart. DataChart
-    uses the key/keys to build the right 'values' for the underlying Chart.
-    All of the other properties in 'chart' are passed through to the Chart.
+Whether to show an axis and how it should look.
+      If 'x' or 'y' is a string, it indicates the property to use
+      to determine the values to show.
+      If axis or 'x' is true, DataChart will look for a property called 'date'
+      or 'time' and automatically use that for the x-axis. If DataChart
+      can't find a property to use, it will use the data index for the x-axis.
+      If axis or 'y' is true, DataChart will use the first property in 'series'.
+      'granularity' indicates how many values to show.
+      'coarse' granularity shows two values, one at each end.
+      'fine' granularity shows all x-axis values and 5 y-axis values.
+      'medium' granularity picks something in between. Defaults to \`true\`.
 
 \`\`\`
+boolean
 {
-  key: string,
-  keys: [{
-  key: string,
-  color: 
+  x: 
+    boolean
     string
     {
-      color: string,
-      opacity: 
-        weak
+      property: string,
+      granularity: 
+        coarse
         medium
-        strong
-        boolean
+        fine
+    },
+  y: 
+    boolean
+    string
+    {
+      property: string,
+      granularity: 
+        coarse
+        medium
+        fine
     }
-    [{
+}
+\`\`\`
+
+**bounds**
+
+When set to 'align', indicates that the bounds of all series
+      should be aligned. When not set, the bounds of each series
+      property are based solely on the data found for that property. Defaults to \`align\`.
+
+\`\`\`
+align
+\`\`\`
+
+**chart**
+
+How to visualize the data.
+    'property' indicates which property of the data objects to use.
+    When 'property' is an array, multiple properties are used for a
+    stacked bar chart. If only a string is specified, that is the property
+    to use and all other aspects are defaulted. If 'property' is an object,
+    it specifies a map of properties to graphic aspects: x, y, color, thickness.
+    If 'transform' is specified, it will be used to transform the data value
+    before using it. For example, to convert a data value to a hex color
+    string for the color.
+
+\`\`\`
+string
+{
+  property: 
+    string
+    [
+      string
+      {
+        property: string,
+        color: 
+          string
+          [{
   color: string,
   value: number
 }]
-}],
-  a11yTitle: string,
-  bounds: [[number]],
+      }
+    ]
+    {
+      color: 
+        string
+        {
+          property: string,
+          transform: function
+        },
+      thickness: 
+        string
+        {
+          property: string,
+          transform: function
+        },
+      x: string,
+      y: string
+    },
   color: 
     string
-    {
-      color: string,
-      opacity: 
-        weak
-        medium
-        strong
-        boolean
-    }
     [{
   color: string,
   value: number
 }],
   dash: boolean,
-  onClick: function,
-  onHover: function,
-  overflow: boolean,
+  opacity: 
+    weak
+    medium
+    strong
+    number
+    boolean,
+  point: 
+    circle
+    diamond
+    square
+    star
+    triangle
+    triangleDown,
   round: boolean,
   thickness: 
     hair
@@ -5495,65 +5584,82 @@ Chart properties indicating how to visualize the data.
     string,
   type: 
     bar
+    bars
     line
     area
     point
 }
-[{
-  key: string,
-  keys: [{
-  key: string,
-  color: 
-    string
-    {
-      color: string,
-      opacity: 
-        weak
-        medium
-        strong
-        boolean
-    }
-    [{
+[
+  string
+  {
+    property: 
+      string
+      [
+        string
+        {
+          property: string,
+          color: 
+            string
+            [{
   color: string,
   value: number
 }]
-}],
-  a11yTitle: string,
-  bounds: [[number]],
-  color: 
-    string
-    {
-      color: string,
-      opacity: 
-        weak
-        medium
-        strong
-        boolean
-    }
-    [{
+        }
+      ]
+      {
+        color: 
+          string
+          {
+            property: string,
+            transform: function
+          },
+        thickness: 
+          string
+          {
+            property: string,
+            transform: function
+          },
+        x: string,
+        y: string
+      },
+    color: 
+      string
+      [{
   color: string,
   value: number
 }],
-  dash: boolean,
-  onClick: function,
-  onHover: function,
-  overflow: boolean,
-  round: boolean,
-  thickness: 
-    hair
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    none
-    string,
-  type: 
-    bar
-    line
-    area
-    point
-}]
+    dash: boolean,
+    opacity: 
+      weak
+      medium
+      strong
+      number
+      boolean,
+    point: 
+      circle
+      diamond
+      square
+      star
+      triangle
+      triangleDown,
+    round: boolean,
+    thickness: 
+      hair
+      xsmall
+      small
+      medium
+      large
+      xlarge
+      none
+      string,
+    type: 
+      bar
+      bars
+      line
+      area
+      point
+  }
+]
 \`\`\`
 
 **data**
@@ -5564,6 +5670,17 @@ the data set
 [{
 
 }]
+\`\`\`
+
+**detail**
+
+Whether to add the ability to interact with the chart
+      via mouse or keyboard to show details on specific values in the chart.
+      It shows all properties specified in 'series', using any 'render'
+      functions therein.
+
+\`\`\`
+boolean
 \`\`\`
 
 **gap**
@@ -5579,6 +5696,41 @@ medium
 large
 xlarge
 string
+\`\`\`
+
+**guide**
+
+Whether to put guidelines underneath the chart graphics.
+    See the description of 'granularity' under 'axis'.
+
+\`\`\`
+boolean
+{
+  x: 
+    boolean
+    {
+      granularity: 
+        coarse
+        medium
+        fine
+    },
+  y: 
+    boolean
+    {
+      granularity: 
+        coarse
+        medium
+        fine
+    }
+}
+\`\`\`
+
+**legend**
+
+Whether to include a legend
+
+\`\`\`
+boolean
 \`\`\`
 
 **pad**
@@ -5663,13 +5815,43 @@ xlarge
 string
 \`\`\`
 
+**series**
+
+Describes which parts of the 'data' are of interest and
+    how to handle them. 'property' indicates which property of the 'data'
+    objects this series refers to. 'label' indicates how to label the series
+    in a legend or hover details. 'prefix' and 'suffix' are applied to the
+    data values shown in an axis, legend, or details. 'render' allows custom
+    rendering of the data value. 'render' is called with:
+    (value, datum, property) => { return < />; }
+
+\`\`\`
+string
+{
+  label: 
+    string,
+  prefix: string,
+  property: string,
+  render: function,
+  suffix: string
+}
+[
+  string
+  {
+    label: 
+      string,
+    prefix: string,
+    property: string,
+    render: function,
+    suffix: string
+  }
+]
+\`\`\`
+
 **size**
 
 The size of the Charts. This does not include the axes
-      and any gap. It is passed through to the underlying Chart. Defaults to \`{
-  \\"width\\": \\"medium\\",
-  \\"height\\": \\"small\\"
-}\`.
+      and any gap. It is passed through to the underlying Chart.
 
 \`\`\`
 fill
@@ -5693,62 +5875,6 @@ fill
     fill
     auto
     string
-}
-\`\`\`
-
-**thickness**
-
-Chart thickness given to all
-    Charts if not specified per Chart in 'chart'.
-
-\`\`\`
-hair
-xsmall
-small
-medium
-large
-xlarge
-none
-string
-\`\`\`
-
-**xAxis**
-
-x-axis configuration. 'guide' specifies that vertical
-    guide lines should be drawn under the Chart, one per label.
-    'key' specifies what property in the 'data' should be used as
-    any label content. 'labels' specifies how many labels to show.
-    'render' allows for custom rendering of the labels. It will be
-    called with the current data index and axis index and should return
-    the element to render: (dataIndex, axisIndex) => element.
-
-\`\`\`
-boolean
-{
-  guide: boolean,
-  key: string,
-  labels: number,
-  render: function
-}
-\`\`\`
-
-**yAxis**
-
-y-axis configuration. 'guide' specifies that horizontal
-    guide lines should be drawn under the Chart, one per label.
-    'labels' specifies how many labels to show.
-    'render' allows for custom rendering of the labels. It will be
-    called with the value and axis index and should return
-    the element to render: (value, axisIndex) => element
-
-\`\`\`
-boolean
-{
-  guide: boolean,
-  labels: number,
-  prefix: string,
-  render: function,
-  suffix: string
 }
 \`\`\`
   
@@ -5913,6 +6039,13 @@ string
       dark: string,
       light: string
     }
+    [string],
+  pinned: 
+    string
+    {
+      dark: string,
+      light: string
+    }
     [string]
 }
 \`\`\`
@@ -6066,6 +6199,8 @@ A description of the data. The order controls the column order.
       should be used as the unique identifier, which gives the cell 'row' scope
       for accessibility. If 'primary' is not used for any column, and
       'primaryKey' isn't specified either, then the first column will be used.
+      'pin' indicates that this column should not scroll out of view
+      to the left when the table is scrolled horizontally.
 
 \`\`\`
 [{
@@ -6089,6 +6224,7 @@ A description of the data. The order controls the column order.
     {
       aggregate: boolean
     },
+  pin: boolean,
   primary: boolean,
   property: string,
   render: function,
@@ -6123,6 +6259,16 @@ Array of data objects.
 }]
 \`\`\`
 
+**fill**
+
+Whether the width and/or height should fill the container.
+
+\`\`\`
+horizontal
+vertical
+boolean
+\`\`\`
+
 **groupBy**
 
 Property to group data by. If object is specified
@@ -6140,6 +6286,18 @@ string
 }
 \`\`\`
 
+**onClickRow**
+
+When supplied, this function will be called with an event object that
+      include a 'datum' property containing the data value associated with
+      the clicked row. You should not include interactive elements, like
+      Anchor or Button inside table cells as that can cause confusion with
+      overlapping interactive elements.
+
+\`\`\`
+function
+\`\`\`
+
 **onMore**
 
 Use this to indicate that 'data' doesn't contain all that it could.
@@ -6150,29 +6308,6 @@ Use this to indicate that 'data' doesn't contain all that it could.
       be combined with properties that expect all data to be present in the
       browser, such as columns.search, sortable, groupBy, or 
       columns.aggregate.
-
-\`\`\`
-function
-\`\`\`
-
-**replace**
-
-Whether to replace previously rendered items with a generic spacing
-      element when they have scrolled out of view. This is more performant but
-      means that in-page searching will not find elements that have been
-      replaced.
-
-\`\`\`
-boolean
-\`\`\`
-
-**onClickRow**
-
-When supplied, this function will be called with an event object that
-      include a 'datum' property containing the data value associated with
-      the clicked row. You should not include interactive elements, like
-      Anchor or Button inside table cells as that can cause confusion with
-      overlapping interactive elements.
 
 \`\`\`
 function
@@ -6270,6 +6405,17 @@ string
 }
 \`\`\`
 
+**pin**
+
+Whether the header and/or footer should be pinned when
+      not all rows are visible. A value of true pins both header and footer.
+
+\`\`\`
+boolean
+header
+footer
+\`\`\`
+
 **primaryKey**
 
 When supplied, indicates the property for a data object to use to
@@ -6280,6 +6426,17 @@ When supplied, indicates the property for a data object to use to
 
 \`\`\`
 string
+boolean
+\`\`\`
+
+**replace**
+
+Whether to replace previously rendered items with a generic spacing
+      element when they have scrolled out of view. This is more performant but
+      means that in-page searching will not find elements that have been
+      replaced.
+
+\`\`\`
 boolean
 \`\`\`
 
@@ -6322,13 +6479,17 @@ string
 
 **sort**
 
-Which property to sort on and which direction to sort.
+Which property to sort on and which direction to sort. When 'external'
+      is true, it indicates that the caller will take care of sorting
+      the 'data' via 'onSort'. Otherwise, the existing data will be sorted
+      within DataTable.
 
 \`\`\`
 {
   direction: 
     asc
     desc,
+  external: boolean,
   property: string
 }
 \`\`\`
@@ -6484,6 +6645,16 @@ Defaults to
 
 \`\`\`
 <FormDown />
+\`\`\`
+
+**dataTable.icons.sortable**
+
+The icon indicating a column can be sorted. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **dataTable.primary.weight**
@@ -7142,6 +7313,14 @@ string
 **plain**
 
 Whether the drop element should have no background nor shadow
+
+\`\`\`
+boolean
+\`\`\`
+
+**trapFocus**
+
+Traps keyboard focus inside of drop. Defaults to \`true\`.
 
 \`\`\`
 boolean
@@ -7939,6 +8118,48 @@ Defaults to
 
 \`\`\`
 status-critical
+\`\`\`
+
+**formField.error.container**
+
+Any valid Box props for the container surrounding the error 
+    message and icon. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**formField.error.icon**
+
+An icon placed in a row with the error message. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**formField.info.container**
+
+Any valid Box props for the container surrounding the info 
+    message and icon. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**formField.info.icon**
+
+An icon placed in a row with the info message. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **formField.error.margin**
@@ -14733,7 +14954,8 @@ end
 **truncate**
 
 Restrict the text to a single line and truncate with ellipsis if it
-is too long to all fit.
+is too long to all fit. For truncate to be applied, Text needs to be 
+contained within a layout component (such as Box or a generic div).
 
 \`\`\`
 boolean
@@ -15283,8 +15505,20 @@ function
 
 **onSelect**
 
+Note: This function is deprecated, use onSuggestionSelect instead.
+      Function that will be called when the user selects a suggestion.
+      The suggestion contains the object chosen from the supplied suggestions.
+      When used in conjunction with onSuggestionSelect 
+      this will default to React's onSelect
+
+\`\`\`
+function
+\`\`\`
+
+**onSuggestionSelect**
+
 Function that will be called when the user selects a suggestion.
-The suggestion contains the object chosen from the supplied suggestions.
+      The suggestion contains the object chosen from the supplied suggestions.
 
 \`\`\`
 function
@@ -15317,7 +15551,7 @@ node
 **plain**
 
 Whether this is a plain input with no border or padding.
-Only use this when the containing context provides sufficient affordance
+      Only use this when the containing context provides sufficient affordance
 
 \`\`\`
 boolean

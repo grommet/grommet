@@ -24,6 +24,6 @@ const CheckBoxInsideButton = () => {
   );
 };
 
-storiesOf('CheckBox', module).add('Inside a Button', () => (
+storiesOf('CheckBox', module).add('Inside a button', () => (
   <CheckBoxInsideButton />
 ));

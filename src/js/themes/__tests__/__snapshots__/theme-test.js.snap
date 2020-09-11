@@ -298,7 +298,7 @@ exports[`Grommet custom theme 1`] = `
             strokeWidth="2"
           />
         </svg>
-        <div
+        <span
           className="c5"
         />
         Add
@@ -329,7 +329,7 @@ exports[`Grommet custom theme 1`] = `
             strokeWidth="2"
           />
         </svg>
-        <div
+        <span
           className="c5"
         />
         Add
@@ -364,7 +364,7 @@ exports[`Grommet custom theme 1`] = `
             strokeWidth="2"
           />
         </svg>
-        <div
+        <span
           className="c5"
         />
         Add
@@ -395,7 +395,7 @@ exports[`Grommet custom theme 1`] = `
             strokeWidth="2"
           />
         </svg>
-        <div
+        <span
           className="c5"
         />
         Add

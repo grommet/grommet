@@ -136,9 +136,9 @@ exports[`Heading level renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c4 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
+    font-size: 16px;
+    line-height: 22px;
+    max-width: 384px;
   }
 }
 
@@ -601,9 +601,9 @@ exports[`Heading size renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c11 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
+    font-size: 16px;
+    line-height: 22px;
+    max-width: 384px;
   }
 }
 
@@ -884,9 +884,9 @@ exports[`Theme based font family renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c4 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
+    font-size: 16px;
+    line-height: 22px;
+    max-width: 384px;
   }
 }
 
@@ -973,9 +973,9 @@ exports[`Theme based font weight renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c4 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
+    font-size: 16px;
+    line-height: 22px;
+    max-width: 384px;
   }
 }
 

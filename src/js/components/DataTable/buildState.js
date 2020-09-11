@@ -65,7 +65,7 @@ export const filterAndSortData = (data, filters, onSearch, sort) => {
     }
   }
 
-  if (sort) {
+  if (sort && !sort.external) {
     const { property, direction } = sort;
     result = result === data ? [...data] : result; // don't sort caller's data
     const before = direction === 'asc' ? 1 : -1;
@@ -93,6 +93,13 @@ const reducers = {
   sum: sumReducer,
 };
 
+// aggregate reducers init values
+const reducersInitValues = {
+  min: Number.MAX_VALUE,
+  max: Number.MIN_VALUE,
+  sum: 0,
+};
+
 // aggregate a single column
 const aggregateColumn = (column, data) => {
   let value;
@@ -102,7 +109,7 @@ const aggregateColumn = (column, data) => {
   } else {
     value = data
       .map(d => datumValue(d, column.property))
-      .reduce(reducers[column.aggregate], 0);
+      .reduce(reducers[column.aggregate], reducersInitValues[column.aggregate]);
   }
   return value;
 };

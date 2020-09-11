@@ -12,6 +12,6 @@ const StyledPlaceholder = () => {
   );
 };
 
-storiesOf('TextInput', module).add('StyledPlaceholder', () => (
+storiesOf('TextInput', module).add('Styled placeholder', () => (
   <StyledPlaceholder />
 ));

@@ -12,6 +12,7 @@ const Drop = forwardRef(
     {
       restrictFocus,
       target: dropTarget, // avoid DOM leakage
+      trapFocus = true,
       ...rest
     },
     ref,
@@ -53,6 +54,7 @@ const Drop = forwardRef(
             dir={theme && theme.dir}
             dropTarget={dropTarget}
             restrictFocus={restrictFocus}
+            trapFocus={trapFocus}
             {...rest}
           />,
           dropContainer,

@@ -22,9 +22,11 @@ const InfiniteScroll = ({
   onMore,
   renderMarker,
   replace,
-  show,
+  show: showIndex,
   step = 50,
 }) => {
+  // item index to be made visible initially
+  const [show, setShow] = useState(showIndex);
   // the last page we have items for
   const lastPage = useMemo(() => Math.floor(items.length / step), [
     items.length,
@@ -53,7 +55,7 @@ const InfiniteScroll = ({
   // calculating space based on where the first and last items being displayed
   // are located
   useEffect(() => {
-    if (firstPageItemRef.current && lastPageItemRef.current && !pageHeight) {
+    if (firstPageItemRef.current && lastPageItemRef.current) {
       /* eslint-disable react/no-find-dom-node */
       const beginRect = firstPageItemRef.current.getBoundingClientRect
         ? firstPageItemRef.current.getBoundingClientRect()
@@ -62,7 +64,11 @@ const InfiniteScroll = ({
         ? lastPageItemRef.current.getBoundingClientRect()
         : findDOMNode(lastPageItemRef.current).getBoundingClientRect();
 
-      const nextPageHeight = endRect.top + endRect.height - beginRect.top;
+      // Need to adjust for cases such as show where first and last page item
+      // refs can be much larger than the step.
+      const initialPage = show ? Math.floor(show / step) : 0;
+      const nextPageHeight =
+        (endRect.top + endRect.height - beginRect.top) / (initialPage + 1);
       // Check if the items are arranged in a single column or not.
       const nextMultiColumn = nextPageHeight / step < endRect.height;
       const nextPageArea = endRect.height * endRect.width * step;
@@ -70,7 +76,7 @@ const InfiniteScroll = ({
       setPageArea(nextPageArea);
       setMultiColumn(nextMultiColumn);
     }
-  }, [pageHeight, step]);
+  }, [beginPage, endPage, pageHeight, step, show]);
 
   // scroll handling
   useEffect(() => {
@@ -83,23 +89,22 @@ const InfiniteScroll = ({
       let top;
       let height;
       let width;
-      let scrollHeight;
       if (scrollParent === document) {
         top = document.documentElement.scrollTop || document.body.scrollTop;
         height = window.innerHeight;
         width = window.innerWidth;
-        scrollHeight =
-          document.documentElement.scrollHeight || document.body.scrollHeight;
       } else {
         top = scrollParent.scrollTop;
-        scrollHeight = scrollParent.scrollHeight;
         const rect = scrollParent.getBoundingClientRect();
         ({ height, width } = rect);
       }
 
       // Figure out which pages we should make visible based on the scroll
       // window.
-      const offset = height / 4;
+      const offset = height / 3;
+
+      // nextBeginPage will increment/decrement when using replace, otherwise
+      // the beginPage will be at 0.
       const nextBeginPage = replace
         ? Math.min(
             lastPage,
@@ -112,23 +117,24 @@ const InfiniteScroll = ({
           )
         : 0;
 
-      let nextEndPage;
-      if (replace || multiColumn) {
-        nextEndPage = Math.min(
-          lastPage,
-          Math.max(
-            (!replace && endPage) || 0,
-            multiColumn
-              ? Math.ceil(((top + height + offset) * width) / pageArea)
-              : Math.floor((top + height + offset) / pageHeight),
-          ),
-        );
-      } else {
-        nextEndPage =
-          top + height + offset >= scrollHeight
-            ? Math.min(lastPage, endPage + 1)
-            : endPage;
-      }
+      // Increment/decrement nextEndPage when nearing bounds of current page.
+      // Ensure nextEndPage contains show index initially.
+      const end = (top + height + offset) / pageHeight;
+      const radix = end % 1.0;
+      const roundedEnd =
+        end < lastPage && radix > 0.8 ? Math.ceil(end) : Math.floor(end);
+
+      const nextEndPage = Math.min(
+        lastPage,
+        Math.max(
+          (!replace && endPage) || 0,
+          multiColumn
+            ? Math.ceil(((top + height + offset) * width) / pageArea)
+            : roundedEnd,
+          show ? Math.floor(show / step) : 0,
+        ),
+      );
+
       if (nextBeginPage !== beginPage) setBeginPage(nextBeginPage);
       if (nextEndPage !== endPage) setEndPage(nextEndPage);
     };
@@ -155,6 +161,8 @@ const InfiniteScroll = ({
     pageArea,
     pageHeight,
     replace,
+    show,
+    step,
   ]);
 
   // check if we need to ask for more
@@ -181,6 +189,8 @@ const InfiniteScroll = ({
         } else if (isNodeAfterScroll(showNode, scrollParent)) {
           showNode.scrollIntoView(false);
         }
+        // clean up after having shown
+        setShow(undefined);
       }
     }, 100);
     return () => clearTimeout(timer);
@@ -207,8 +217,8 @@ const InfiniteScroll = ({
     let ref;
     let child = children(item, itemsIndex, ref);
 
-    // Set firstPageItemRef & lastPageItemRef if we don't know the pageHeight.
-    if (!pageHeight && itemsIndex === 0) {
+    // Set firstPageItemRef & lastPageItemRef
+    if (itemsIndex === lastIndex + 1 - step) {
       // We pass the ref we want to the children render function.
       // If we don't see that our ref was set, wrap it ("the old way").
       child = children(item, itemsIndex, firstPageItemRef);
@@ -221,17 +231,21 @@ const InfiniteScroll = ({
       }
     }
 
-    if (!pageHeight && (itemsIndex === step - 1 || itemsIndex === lastIndex)) {
-      // If show, we only want a single lastPageItemRef and it should be set at
-      // lastIndex. Ignore step - 1 scenario, otherwise will create duplicates.
+    if (itemsIndex === lastIndex) {
+      // If show && show > step, we only want a single lastPageItemRef and it
+      // should be set at lastIndex. Ignore step - 1 scenario, otherwise will
+      // create duplicates.
       child =
-        show && itemsIndex === step - 1
+        show && show > step && itemsIndex === step - 1
           ? child
           : children(item, itemsIndex, lastPageItemRef);
 
       // We pass the ref we want to the children render function.
       // If we don't see that our ref was set, wrap it ("the old way").
-      if (child.ref !== lastPageItemRef && !(show && itemsIndex === step - 1)) {
+      if (
+        child.ref !== lastPageItemRef &&
+        !(show && show > step && itemsIndex === step - 1)
+      ) {
         child = (
           <Ref key="last" ref={lastPageItemRef}>
             {child}

@@ -1,6 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge, themeDocUtils } from '../../utils';
+import { getAvailableAtBadge } from '../../utils/mixins';
+import { themeDocUtils } from '../../utils/themeDocUtils';
 
 export const doc = TextInput => {
   const DocumentedTextInput = describe(TextInput)
@@ -73,8 +74,15 @@ export const doc = TextInput => {
       'Function that will be called when the user types in the input.',
     ),
     onSelect: PropTypes.func.description(
+      `Note: This function is deprecated, use onSuggestionSelect instead.
+      Function that will be called when the user selects a suggestion.
+      The suggestion contains the object chosen from the supplied suggestions.
+      When used in conjunction with onSuggestionSelect 
+      this will default to React's onSelect`,
+    ),
+    onSuggestionSelect: PropTypes.func.description(
       `Function that will be called when the user selects a suggestion.
-The suggestion contains the object chosen from the supplied suggestions.`,
+      The suggestion contains the object chosen from the supplied suggestions.`,
     ),
     onSuggestionsOpen: PropTypes.func.description(
       'Function that will be called when the suggestions drop is opened.',
@@ -87,7 +95,7 @@ The suggestion contains the object chosen from the supplied suggestions.`,
     ),
     plain: PropTypes.bool.description(
       `Whether this is a plain input with no border or padding.
-Only use this when the containing context provides sufficient affordance`,
+      Only use this when the containing context provides sufficient affordance`,
     ),
     reverse: PropTypes.bool.description(
       `Whether an icon should be reversed so that the icon is at the

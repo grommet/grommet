@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = RadioButtonGroup => {
   const DocumentedRadioButtonGroup = describe(RadioButtonGroup)

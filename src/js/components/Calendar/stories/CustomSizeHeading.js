@@ -32,4 +32,4 @@ const CustomSizeCalendar = () => {
   );
 };
 
-storiesOf('Calendar', module).add('Heading Size', () => <CustomSizeCalendar />);
+storiesOf('Calendar', module).add('Heading size', () => <CustomSizeCalendar />);

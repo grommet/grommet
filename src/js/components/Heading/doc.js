@@ -1,11 +1,8 @@
 import { describe, PropTypes } from 'react-desc';
 
-import {
-  colorPropType,
-  genericProps,
-  getAvailableAtBadge,
-  themeDocUtils,
-} from '../../utils';
+import { colorPropType, genericProps } from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
+import { themeDocUtils } from '../../utils/themeDocUtils';
 
 export const doc = Heading => {
   const DocumentedHeading = describe(Heading)
