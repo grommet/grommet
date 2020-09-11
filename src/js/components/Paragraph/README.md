@@ -219,7 +219,7 @@ Defaults to
     }
 ```
 
-**paragraph.font**
+**paragraph.font.family**
 
 The font to use for Paragraph. Expects `object`.
 

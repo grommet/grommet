@@ -130,7 +130,7 @@ export const themeDoc = {
     type: 'object | { dark: string, light: string }',
     defaultValue: "{ dark: '#f8f8f8', light: '#444444' }",
   },
-  'text.font': {
+  'text.font.family': {
     description: 'The font to use for Text.',
     type: 'object',
     defaultValue: undefined,

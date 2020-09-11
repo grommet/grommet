@@ -234,7 +234,7 @@ Defaults to
 { dark: '#f8f8f8', light: '#444444' }
 ```
 
-**text.font**
+**text.font.family**
 
 The font to use for Text. Expects `object`.
 
