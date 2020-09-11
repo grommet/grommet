@@ -405,7 +405,7 @@ exports[`Form accessibility FormField with an explicit TextInput child
   border-radius: 4px;
   outline: none;
   border: none;
-  padding: 0px;
+  padding: 0;
 }
 
 .c4::-webkit-input-placeholder {
@@ -646,7 +646,7 @@ exports[`Form accessibility Select in Form should have no accessibility violatio
   border-radius: 4px;
   outline: none;
   border: none;
-  padding: 0px;
+  padding: 0;
 }
 
 .c7::-webkit-input-placeholder {
@@ -821,7 +821,7 @@ exports[`Form accessibility TextInput in Form should have
   border-radius: 4px;
   outline: none;
   border: none;
-  padding: 0px;
+  padding: 0;
 }
 
 .c4::-webkit-input-placeholder {
@@ -981,7 +981,7 @@ exports[`Form uncontrolled errors 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
-  padding: 0px;
+  padding: 0;
 }
 
 .c4::-webkit-input-placeholder {
@@ -1138,7 +1138,7 @@ exports[`Form uncontrolled infos 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
-  padding: 0px;
+  padding: 0;
 }
 
 .c4::-webkit-input-placeholder {
@@ -1443,7 +1443,7 @@ exports[`Form uncontrolled uncontrolled 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
-  padding: 0px;
+  padding: 0;
 }
 
 .c4::-webkit-input-placeholder {
@@ -1538,7 +1538,7 @@ exports[`Form uncontrolled uncontrolled 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 iTMnaf"
+            class="StyledTextInput-sc-1x30a0s-0 hBvVYf"
             name="test"
             placeholder="test input"
             value=""
@@ -1572,7 +1572,7 @@ exports[`Form uncontrolled uncontrolled 3`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 iTMnaf"
+            class="StyledTextInput-sc-1x30a0s-0 hBvVYf"
             name="test"
             placeholder="test input"
             value=""
@@ -1699,7 +1699,7 @@ exports[`Form uncontrolled uncontrolled onValidate 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
-  padding: 0px;
+  padding: 0;
 }
 
 .c4::-webkit-input-placeholder {
@@ -1794,7 +1794,7 @@ exports[`Form uncontrolled uncontrolled onValidate 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 iTMnaf"
+            class="StyledTextInput-sc-1x30a0s-0 hBvVYf"
             name="test"
             placeholder="test input"
             value=""
@@ -1948,7 +1948,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
-  padding: 0px;
+  padding: 0;
 }
 
 .c4::-webkit-input-placeholder {
@@ -2043,7 +2043,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 iTMnaf"
+            class="StyledTextInput-sc-1x30a0s-0 hBvVYf"
             name="test"
             placeholder="test input"
             value=""
@@ -2197,7 +2197,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
-  padding: 0px;
+  padding: 0;
 }
 
 .c4::-webkit-input-placeholder {
@@ -2292,7 +2292,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 iTMnaf"
+            class="StyledTextInput-sc-1x30a0s-0 hBvVYf"
             name="test"
             placeholder="test input"
             value=""
@@ -2442,7 +2442,7 @@ exports[`Form uncontrolled update 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
-  padding: 0px;
+  padding: 0;
 }
 
 .c4::-webkit-input-placeholder {
@@ -2736,7 +2736,7 @@ exports[`Form uncontrolled with field 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
-  padding: 0px;
+  padding: 0;
 }
 
 .c4::-webkit-input-placeholder {
