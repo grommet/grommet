@@ -14,4 +14,6 @@ const Default = () => {
   );
 };
 
-storiesOf('Anchor', module).add('Default', () => <Default />);
+storiesOf('Anchor', module).add('Default', () => <Default />, {
+  chromatic: { disable: true },
+});

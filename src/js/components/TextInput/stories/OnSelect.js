@@ -43,6 +43,10 @@ const OnSelect = () => {
   );
 };
 
-storiesOf('TextInput', module).add('onSelect and onSuggestionSelect', () => (
-  <OnSelect />
-));
+storiesOf('TextInput', module).add(
+  'onSelect and onSuggestionSelect',
+  () => <OnSelect />,
+  {
+    chromatic: { disable: true },
+  },
+);

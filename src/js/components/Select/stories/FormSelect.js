@@ -45,4 +45,4 @@ const FormFieldSelect = () => {
   );
 };
 
-storiesOf('Form', module).add('Select', () => <FormFieldSelect />);
+storiesOf('Select', module).add('Form select', () => <FormFieldSelect />);
