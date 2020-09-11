@@ -101,7 +101,7 @@ const InfiniteScroll = ({
 
       // Figure out which pages we should make visible based on the scroll
       // window.
-      const offset = height / 3;
+      const offset = height / 4;
 
       // nextBeginPage will increment/decrement when using replace, otherwise
       // the beginPage will be at 0.

@@ -826,7 +826,7 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 0px;
+  height: NaNpx;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -1345,7 +1345,7 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 0px;
+  height: NaNpx;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -1859,7 +1859,7 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 0px;
+  height: NaNpx;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -2373,7 +2373,7 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 0px;
+  height: NaNpx;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -2615,7 +2615,7 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 bokQlS"
+        class="StyledBox-sc-13pk1d4-0 cAHENn"
       />
     </div>
   </div>
@@ -2988,7 +2988,7 @@ exports[`Select Controlled multiple values 3`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 0px;
+  height: NaNpx;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -3507,7 +3507,7 @@ exports[`Select Controlled multiple with empty results 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 0px;
+  height: NaNpx;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;

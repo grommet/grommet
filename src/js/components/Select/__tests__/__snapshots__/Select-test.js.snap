@@ -1598,7 +1598,7 @@ exports[`Select complex options and children 3`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 0px;
+  height: NaNpx;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -2387,7 +2387,7 @@ exports[`Select disabled key 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 0px;
+  height: NaNpx;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -2682,7 +2682,7 @@ exports[`Select disabled option value 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 0px;
+  height: NaNpx;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -3342,7 +3342,7 @@ exports[`Select large drop container height 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 0px;
+  height: NaNpx;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -3587,7 +3587,7 @@ exports[`Select medium drop container height 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 0px;
+  height: NaNpx;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -4354,7 +4354,7 @@ exports[`Select onChange with valueKey string 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 0px;
+  height: NaNpx;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -4868,7 +4868,7 @@ exports[`Select onChange without valueKey 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 0px;
+  height: NaNpx;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -5942,7 +5942,7 @@ exports[`Select prop: onOpen 3`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 0px;
+  height: NaNpx;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -6173,7 +6173,7 @@ exports[`Select prop: onOpen 5`] = `
     </div>
   </button>
   <div
-    class="StyledBox-sc-13pk1d4-0 bokQlS"
+    class="StyledBox-sc-13pk1d4-0 cAHENn"
   />
 </div>
 `;
@@ -8343,7 +8343,7 @@ exports[`Select search 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 0px;
+  height: NaNpx;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -10154,7 +10154,7 @@ exports[`Select small drop container height 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 0px;
+  height: NaNpx;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
