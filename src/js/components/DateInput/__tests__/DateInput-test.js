@@ -282,4 +282,35 @@ describe('DateInput', () => {
     ]);
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test(`dropProps should pass props to Drop 
+  when not inline`, () => {
+    const { container } = render(
+      <Grommet>
+        <DateInput
+          dropProps={{
+            plain: true,
+          }}
+          format="mm/dd/yyyy"
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`buttonProps should pass props to Button 
+  when not inline and no format`, () => {
+    const component = renderer.create(
+      <Grommet>
+        <DateInput
+          buttonProps={{
+            open: true,
+            disabled: true,
+          }}
+        />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

@@ -24,10 +24,20 @@ const InfiniteScrollReplace = props => (
 if (!isChromatic()) {
   storiesOf('InfiniteScroll', module)
     .add('Replace', () => <InfiniteScrollReplace replace />)
-    .add('Replace with show 28th item', () => (
-      <InfiniteScrollReplace replace show={27} />
-    ))
-    .add('Replace with show 88th item', () => (
-      <InfiniteScrollReplace replace show={87} />
+    .add('Replace with show', () => (
+      <Box direction="row" gap="large" pad="large">
+        <Box>
+          <Text weight="bold">replace with show &lt; step</Text>
+          <Box border height="medium" width="medium" overflow="auto">
+            <InfiniteScrollReplace replace show={27} />
+          </Box>
+        </Box>
+        <Box>
+          <Text weight="bold">replace with show &gt; step</Text>
+          <Box border height="medium" width="medium" overflow="auto">
+            <InfiniteScrollReplace replace show={87} />
+          </Box>
+        </Box>
+      </Box>
     ));
 }

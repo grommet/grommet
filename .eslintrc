@@ -53,6 +53,12 @@
   },
   "overrides": [
     {
+      "files": ["doc.js", "prop-types.js", "router.js"],
+      "rules": {
+        "import/no-extraneous-dependencies": 0
+      }
+    },
+    {
       "files": ["*.stories.js", "**/stories/**"],
       "rules": {
         "import/no-unresolved": 0,
