@@ -8,10 +8,10 @@ import { Add } from 'grommet-icons';
 import { Grommet, Anchor, Box, Text, TextInput } from '../../components';
 import { dark } from '..';
 
+// accent colors should be deprecated. Used in tests for backward compatibility.
+const accentColors = ['accent-1', 'accent-2', 'accent-3'];
+
 const colors = [
-  'accent-1',
-  'accent-2',
-  'accent-3',
   'brand',
   'dark-1',
   'dark-2',
@@ -56,9 +56,10 @@ const customTheme = {
 
 describe('Grommet', () => {
   test('default theme', () => {
+    const allColors = [...accentColors, ...colors];
     const component = renderer.create(
       <Grommet>
-        {colors.map(color => (
+        {allColors.map(color => (
           <Box key={color} background={color}>
             <Text>{color}</Text>
           </Box>
@@ -70,9 +71,10 @@ describe('Grommet', () => {
   });
 
   test('dark theme', () => {
+    const allColors = [...accentColors, ...colors];
     const component = renderer.create(
       <Grommet theme={dark}>
-        {colors.map(color => (
+        {allColors.map(color => (
           <Box key={color} background={color}>
             <Text>{color}</Text>
           </Box>
@@ -86,6 +88,7 @@ describe('Grommet', () => {
   test('hpe theme', () => {
     const component = renderer.create(
       <Grommet theme={hpe}>
+        {/* {console.log(colors)} */}
         {colors.map(color => (
           <Box key={color} background={color}>
             <Text>{color}</Text>
