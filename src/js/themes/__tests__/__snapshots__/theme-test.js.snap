@@ -1552,8 +1552,7 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #333333;
-  color: #C0CADC;
+  background: #0000000A;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1568,8 +1567,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #555555;
-  color: #C0CADC;
+  background-color: #FFFFFF;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1578,195 +1577,6 @@ exports[`Grommet hpe theme 1`] = `
 }
 
 .c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  background-color: #777777;
-  color: #C0CADC;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  background-color: #999999;
-  color: #444444;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  background-color: #00E8CF;
-  color: #444444;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  background-color: #F8F8F8;
-  color: #444444;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  background-color: #F2F2F2;
-  color: #444444;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  background-color: #EDEDED;
-  color: #444444;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  background-color: #DADADA;
-  color: #444444;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  background: neutral-1;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  background: neutral-2;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  background: neutral-3;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  background-color: #FC5A5A;
-  color: #444444;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  background-color: #CCCCCC;
-  color: #444444;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1782,7 +1592,119 @@ exports[`Grommet hpe theme 1`] = `
   flex-direction: column;
 }
 
-.c18 {
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #FF8300;
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #00739D;
+  color: #C0CADC;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #7630EA;
+  color: #C0CADC;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #FEC901;
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #00E8CF;
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #FC5A5A;
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #CCCCCC;
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1791,6 +1713,22 @@ exports[`Grommet hpe theme 1`] = `
   max-width: 100%;
   background-color: #FFBC44;
   color: #444444;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #444444;
+  color: #C0CADC;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1834,7 +1772,7 @@ exports[`Grommet hpe theme 1`] = `
     <span
       className="c2"
     >
-      dark-1
+      background-contrast
     </span>
   </div>
   <div
@@ -1843,7 +1781,7 @@ exports[`Grommet hpe theme 1`] = `
     <span
       className="c2"
     >
-      dark-2
+      background-front
     </span>
   </div>
   <div
@@ -1852,7 +1790,7 @@ exports[`Grommet hpe theme 1`] = `
     <span
       className="c2"
     >
-      dark-3
+      control
     </span>
   </div>
   <div
@@ -1861,25 +1799,7 @@ exports[`Grommet hpe theme 1`] = `
     <span
       className="c2"
     >
-      dark-4
-    </span>
-  </div>
-  <div
-    className="c6"
-  >
-    <span
-      className="c2"
-    >
-      dark-5
-    </span>
-  </div>
-  <div
-    className="c6"
-  >
-    <span
-      className="c2"
-    >
-      dark-6
+      graph-0
     </span>
   </div>
   <div
@@ -1888,7 +1808,7 @@ exports[`Grommet hpe theme 1`] = `
     <span
       className="c2"
     >
-      focus
+      graph-1
     </span>
   </div>
   <div
@@ -1897,7 +1817,7 @@ exports[`Grommet hpe theme 1`] = `
     <span
       className="c2"
     >
-      light-1
+      graph-2
     </span>
   </div>
   <div
@@ -1906,7 +1826,7 @@ exports[`Grommet hpe theme 1`] = `
     <span
       className="c2"
     >
-      light-2
+      graph-3
     </span>
   </div>
   <div
@@ -1915,65 +1835,20 @@ exports[`Grommet hpe theme 1`] = `
     <span
       className="c2"
     >
-      light-3
+      graph-4
+    </span>
+  </div>
+  <div
+    className="c10"
+  >
+    <span
+      className="c2"
+    >
+      focus
     </span>
   </div>
   <div
     className="c11"
-  >
-    <span
-      className="c2"
-    >
-      light-4
-    </span>
-  </div>
-  <div
-    className="c11"
-  >
-    <span
-      className="c2"
-    >
-      light-5
-    </span>
-  </div>
-  <div
-    className="c11"
-  >
-    <span
-      className="c2"
-    >
-      light-6
-    </span>
-  </div>
-  <div
-    className="c12"
-  >
-    <span
-      className="c2"
-    >
-      neutral-1
-    </span>
-  </div>
-  <div
-    className="c13"
-  >
-    <span
-      className="c2"
-    >
-      neutral-2
-    </span>
-  </div>
-  <div
-    className="c14"
-  >
-    <span
-      className="c2"
-    >
-      neutral-3
-    </span>
-  </div>
-  <div
-    className="c15"
   >
     <span
       className="c2"
@@ -1982,7 +1857,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    className="c16"
+    className="c12"
   >
     <span
       className="c2"
@@ -1991,7 +1866,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    className="c17"
+    className="c5"
   >
     <span
       className="c2"
@@ -2000,7 +1875,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    className="c16"
+    className="c12"
   >
     <span
       className="c2"
@@ -2009,12 +1884,21 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    className="c18"
+    className="c13"
   >
     <span
       className="c2"
     >
       status-warning
+    </span>
+  </div>
+  <div
+    className="c14"
+  >
+    <span
+      className="c2"
+    >
+      text
     </span>
   </div>
 </div>
