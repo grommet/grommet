@@ -79,7 +79,14 @@ var DropContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
         var targetRect = findVisibleParent(target).getBoundingClientRect();
         var containerRect = container.getBoundingClientRect(); // determine width
 
-        var width = Math.min(stretch ? Math.max(targetRect.width, containerRect.width) : containerRect.width, windowWidth); // set left position
+        var width;
+
+        if (stretch) {
+          width = Math.min(stretch === 'align' ? Math.min(targetRect.width, containerRect.width) : Math.max(targetRect.width, containerRect.width), windowWidth);
+        } else {
+          width = Math.min(containerRect.width, windowWidth);
+        } // set left position
+
 
         var left;
 

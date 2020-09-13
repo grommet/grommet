@@ -96,12 +96,14 @@ boolean
 
 **stretch**
 
-Whether the drop element should be stretched to at least match the
-      width of the target element. The default is true because
-      that is what most uses of Drop want, like Select and Menu. Defaults to `true`.
+If set to true the drop element will be stretched to at least match the
+      width of the target element. If set to align the width of the drop element
+      will be restricted to the width of the target element. The default is true
+      because that is what most uses of Drop want, like Select and Menu. Defaults to `true`.
 
 ```
 boolean
+align
 ```
 
 **target**

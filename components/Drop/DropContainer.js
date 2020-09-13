@@ -98,7 +98,14 @@ var DropContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
         var targetRect = (0, _utils.findVisibleParent)(target).getBoundingClientRect();
         var containerRect = container.getBoundingClientRect(); // determine width
 
-        var width = Math.min(stretch ? Math.max(targetRect.width, containerRect.width) : containerRect.width, windowWidth); // set left position
+        var width;
+
+        if (stretch) {
+          width = Math.min(stretch === 'align' ? Math.min(targetRect.width, containerRect.width) : Math.max(targetRect.width, containerRect.width), windowWidth);
+        } else {
+          width = Math.min(containerRect.width, windowWidth);
+        } // set left position
+
 
         var left;
 
