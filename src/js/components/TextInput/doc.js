@@ -1,5 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
+import { plainPropType } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
 
@@ -93,9 +94,10 @@ export const doc = TextInput => {
     placeholder: PropTypes.node.description(
       'Placeholder to use when no value is provided.',
     ),
-    plain: PropTypes.bool.description(
+    plain: plainPropType.description(
       `Whether this is a plain input with no border or padding.
-      Only use this when the containing context provides sufficient affordance`,
+      Only use this when the containing context provides sufficient affordance.
+      Use "full" to remove padding in addition to removing border and outline.`,
     ),
     reverse: PropTypes.bool.description(
       `Whether an icon should be reversed so that the icon is at the

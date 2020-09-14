@@ -5,13 +5,13 @@ import {
   getInputPadBySide,
   inputStyle,
   parseMetricToNum,
-  plainInputStyle,
+  getPlainStyle,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 const StyledTextInput = styled.input`
   ${inputStyle}
-  ${props => props.plain && plainInputStyle}
+  ${props => getPlainStyle(props.plain)}
   ${props =>
     props.icon &&
     (props.reverse

@@ -147,6 +147,11 @@ export const hoverIndicatorPropType = PropTypes.oneOfType([
   }),
 ]);
 
+export const plainPropType = PropTypes.oneOfType([
+  PropTypes.bool,
+  PropTypes.oneOf(['full']),
+]);
+
 export const pointPropType = PropTypes.oneOf([
   'circle',
   'diamond',

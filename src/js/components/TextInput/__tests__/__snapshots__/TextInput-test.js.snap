@@ -2214,7 +2214,6 @@ exports[`TextInput select suggestion 1`] = `
   border-radius: 4px;
   outline: none;
   border: none;
-  padding: 0;
 }
 
 .c2::-webkit-input-placeholder {
@@ -2480,7 +2479,7 @@ exports[`TextInput select suggestion 4`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 bNtjBK"
+      class="StyledTextInput-sc-1x30a0s-0 deAfJe"
       data-testid="test-input"
       id="item"
       name="item"
@@ -2566,6 +2565,83 @@ exports[`TextInput select with onSuggestionSelect when onSelect is present 1`] =
 </div>
 `;
 
+exports[`TextInput should have padding when plain 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c2::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c2:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c2::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c2::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c2:-moz-placeholder,
+.c2::-moz-placeholder {
+  opacity: 1;
+}
+
+.c1 {
+  position: relative;
+  width: 100%;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <input
+      autocomplete="off"
+      class="c2"
+      name="name"
+      placeholder="should still have padding"
+      value=""
+    />
+  </div>
+</div>
+`;
+
 exports[`TextInput should not have accessibility violations 1`] = `
 .c0 {
   font-size: 18px;
@@ -2635,6 +2711,84 @@ exports[`TextInput should not have accessibility violations 1`] = `
       autocomplete="off"
       class="c2"
       name="item"
+      value=""
+    />
+  </div>
+</div>
+`;
+
+exports[`TextInput should not have padding when plain="full" 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  padding: 0;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c2::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c2:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c2::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c2::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c2:-moz-placeholder,
+.c2::-moz-placeholder {
+  opacity: 1;
+}
+
+.c1 {
+  position: relative;
+  width: 100%;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <input
+      autocomplete="off"
+      class="c2"
+      name="name"
+      placeholder="should not have padding"
       value=""
     />
   </div>
