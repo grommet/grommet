@@ -432,44 +432,62 @@ var StyledBox = _styledComponents["default"].div.withConfig({
 exports.StyledBox = StyledBox;
 
 var gapStyle = function gapStyle(directionProp, gap, responsive, border, theme) {
+  var metric = theme.global.edgeSize[gap] || gap;
   var breakpoint = theme.box.responsiveBreakpoint && theme.global.breakpoints[theme.box.responsiveBreakpoint];
-  var responsiveSize = breakpoint && breakpoint.edgeSize[gap] && breakpoint.edgeSize[gap];
-  var hasBetweenBorder = border === 'between' || border && border.side === 'between';
+  var responsiveMetric = responsive && breakpoint && breakpoint.edgeSize[gap];
   var styles = [];
 
   if (directionProp === 'column' || directionProp === 'column-reverse') {
-    var height = theme.global.edgeSize[gap] || gap;
-    styles.push((0, _styledComponents.css)(["height:", ";"], height));
+    styles.push("height: " + metric + ";");
 
-    if (responsiveSize) {
-      styles.push((0, _utils.breakpointStyle)(breakpoint, "height: " + responsiveSize + ";"));
+    if (responsiveMetric) {
+      styles.push((0, _utils.breakpointStyle)(breakpoint, "height: " + responsiveMetric + ";"));
     }
+  } else {
+    styles.push("width: " + metric + ";");
 
-    if (hasBetweenBorder) {
+    if (responsiveMetric) {
+      if (directionProp === 'row' || directionProp === 'row-reverse') {
+        styles.push((0, _utils.breakpointStyle)(breakpoint, "width: " + responsiveMetric + ";"));
+      } else if (directionProp === 'row-responsive') {
+        styles.push((0, _utils.breakpointStyle)(breakpoint, "\n          width: auto;\n          height: " + responsiveMetric + ";\n        "));
+      }
+    }
+  }
+
+  if (border === 'between' || border && border.side === 'between') {
+    var borderSize = border.size || 'xsmall';
+    var borderMetric = theme.global.borderSize[borderSize] || borderSize;
+    var borderOffset = (0, _utils.parseMetricToNum)(metric) / 2 - (0, _utils.parseMetricToNum)(borderMetric) / 2 + "px";
+    var responsiveBorderMetric = responsive && breakpoint && (breakpoint.borderSize[borderSize] || borderSize);
+    var responsiveBorderOffset = responsiveBorderMetric && (0, _utils.parseMetricToNum)(responsiveMetric) / 2 - (0, _utils.parseMetricToNum)(responsiveBorderMetric) / 2 + "px";
+
+    if (directionProp === 'column' || directionProp === 'column-reverse') {
       var adjustedBorder = typeof border === 'string' ? 'top' : _extends({}, border, {
         side: 'top'
       });
-      var borderSize = border.size || 'xsmall';
-      var borderHeight = theme.global.borderSize[borderSize] || borderSize;
-      styles.push((0, _styledComponents.css)(["position:relative;&:after{content:'';position:absolute;width:100%;top:", "px;", "}"], (0, _utils.parseMetricToNum)(height) / 2 - (0, _utils.parseMetricToNum)(borderHeight) / 2, (0, _utils.borderStyle)(adjustedBorder, responsive, theme)));
-    }
-  } else {
-    var width = theme.global.edgeSize[gap] || gap;
-    styles.push("width: " + width + ";");
+      styles.push((0, _styledComponents.css)(["position:relative;&:after{content:'';position:absolute;width:100%;top:", ";", "}"], borderOffset, (0, _utils.borderStyle)(adjustedBorder, responsive, theme)));
 
-    if (responsive && directionProp === 'row-responsive') {
-      styles.push((0, _utils.breakpointStyle)(breakpoint, "\n        width: auto;\n        height: " + responsiveSize + ";\n      "));
-    }
-
-    if (hasBetweenBorder) {
+      if (responsiveBorderOffset) {
+        styles.push((0, _utils.breakpointStyle)(breakpoint, "\n            &:after {\n              content: '';\n              top: " + responsiveBorderOffset + ";\n            }"));
+      }
+    } else {
       var _adjustedBorder = typeof border === 'string' ? 'left' : _extends({}, border, {
         side: 'left'
       });
 
-      var _borderSize = border.size || 'xsmall';
+      styles.push((0, _styledComponents.css)(["position:relative;&:after{content:'';position:absolute;height:100%;left:", ";", "}"], borderOffset, (0, _utils.borderStyle)(_adjustedBorder, directionProp !== 'row-responsive' && responsive, theme)));
 
-      var borderWidth = theme.global.borderSize[_borderSize] || _borderSize;
-      styles.push((0, _styledComponents.css)(["position:relative;&:after{content:'';position:absolute;height:100%;left:", "px;", "}"], (0, _utils.parseMetricToNum)(width) / 2 - (0, _utils.parseMetricToNum)(borderWidth) / 2, (0, _utils.borderStyle)(_adjustedBorder, responsive, theme)));
+      if (responsiveBorderOffset) {
+        if (directionProp === 'row' || directionProp === 'row-reverse') {
+          styles.push((0, _utils.breakpointStyle)(breakpoint, "\n              &:after {\n                content: '';\n                left: " + responsiveBorderOffset + ";\n              }"));
+        } else if (directionProp === 'row-responsive') {
+          var adjustedBorder2 = typeof border === 'string' ? 'top' : _extends({}, border, {
+            side: 'top'
+          });
+          styles.push((0, _utils.breakpointStyle)(breakpoint, "\n              &:after {\n                content: '';\n                height: auto;\n                left: unset;\n                width: 100%;\n                top: " + responsiveBorderOffset + ";\n                border-left: none;\n                " + (0, _utils.responsiveBorderStyle)(adjustedBorder2, theme) + "\n              }"));
+        }
+      }
     }
   }
 

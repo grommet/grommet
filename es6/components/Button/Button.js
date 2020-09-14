@@ -217,7 +217,8 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
       direction: "row",
       align: "center",
       justify: align === 'center' ? 'center' : 'between',
-      gap: gap
+      gap: gap,
+      responsive: false
     }, first, second);
   } else if (typeof children === 'function') {
     contents = children({

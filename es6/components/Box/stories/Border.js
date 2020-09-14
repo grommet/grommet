@@ -84,11 +84,14 @@ var BorderBox = function BorderBox() {
     direction: "row-responsive",
     gap: "large",
     align: "center"
-  }, ['column', 'row'].map(function (direction) {
+  }, ['column', 'row', 'row-responsive'].map(function (direction) {
     return /*#__PURE__*/React.createElement(Box, {
       direction: direction,
-      gap: "medium",
-      border: "between"
+      gap: "large",
+      border: {
+        side: 'between',
+        size: 'large'
+      }
     }, /*#__PURE__*/React.createElement(Text, null, "between"), /*#__PURE__*/React.createElement(Text, null, direction));
   }))));
 };

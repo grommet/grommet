@@ -67,6 +67,7 @@ var Anchor = /*#__PURE__*/forwardRef(function (_ref, ref) {
     direction: "row",
     align: "center",
     gap: "small",
+    responsive: false,
     style: {
       display: 'inline-flex'
     }

@@ -4,7 +4,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import styled, { css, keyframes } from 'styled-components';
 import { defaultProps } from '../../default-props';
-import { backgroundStyle, borderStyle, breakpointStyle, edgeStyle, fillStyle, focusStyle, genericStyles, getHoverIndicatorStyle, overflowStyle, parseMetricToNum } from '../../utils';
+import { backgroundStyle, borderStyle, breakpointStyle, edgeStyle, fillStyle, focusStyle, genericStyles, getHoverIndicatorStyle, overflowStyle, parseMetricToNum, responsiveBorderStyle } from '../../utils';
 var ALIGN_MAP = {
   baseline: 'baseline',
   center: 'center',
@@ -418,44 +418,62 @@ var StyledBox = styled.div.withConfig({
 });
 
 var gapStyle = function gapStyle(directionProp, gap, responsive, border, theme) {
+  var metric = theme.global.edgeSize[gap] || gap;
   var breakpoint = theme.box.responsiveBreakpoint && theme.global.breakpoints[theme.box.responsiveBreakpoint];
-  var responsiveSize = breakpoint && breakpoint.edgeSize[gap] && breakpoint.edgeSize[gap];
-  var hasBetweenBorder = border === 'between' || border && border.side === 'between';
+  var responsiveMetric = responsive && breakpoint && breakpoint.edgeSize[gap];
   var styles = [];
 
   if (directionProp === 'column' || directionProp === 'column-reverse') {
-    var height = theme.global.edgeSize[gap] || gap;
-    styles.push(css(["height:", ";"], height));
+    styles.push("height: " + metric + ";");
 
-    if (responsiveSize) {
-      styles.push(breakpointStyle(breakpoint, "height: " + responsiveSize + ";"));
+    if (responsiveMetric) {
+      styles.push(breakpointStyle(breakpoint, "height: " + responsiveMetric + ";"));
     }
+  } else {
+    styles.push("width: " + metric + ";");
 
-    if (hasBetweenBorder) {
+    if (responsiveMetric) {
+      if (directionProp === 'row' || directionProp === 'row-reverse') {
+        styles.push(breakpointStyle(breakpoint, "width: " + responsiveMetric + ";"));
+      } else if (directionProp === 'row-responsive') {
+        styles.push(breakpointStyle(breakpoint, "\n          width: auto;\n          height: " + responsiveMetric + ";\n        "));
+      }
+    }
+  }
+
+  if (border === 'between' || border && border.side === 'between') {
+    var borderSize = border.size || 'xsmall';
+    var borderMetric = theme.global.borderSize[borderSize] || borderSize;
+    var borderOffset = parseMetricToNum(metric) / 2 - parseMetricToNum(borderMetric) / 2 + "px";
+    var responsiveBorderMetric = responsive && breakpoint && (breakpoint.borderSize[borderSize] || borderSize);
+    var responsiveBorderOffset = responsiveBorderMetric && parseMetricToNum(responsiveMetric) / 2 - parseMetricToNum(responsiveBorderMetric) / 2 + "px";
+
+    if (directionProp === 'column' || directionProp === 'column-reverse') {
       var adjustedBorder = typeof border === 'string' ? 'top' : _extends({}, border, {
         side: 'top'
       });
-      var borderSize = border.size || 'xsmall';
-      var borderHeight = theme.global.borderSize[borderSize] || borderSize;
-      styles.push(css(["position:relative;&:after{content:'';position:absolute;width:100%;top:", "px;", "}"], parseMetricToNum(height) / 2 - parseMetricToNum(borderHeight) / 2, borderStyle(adjustedBorder, responsive, theme)));
-    }
-  } else {
-    var width = theme.global.edgeSize[gap] || gap;
-    styles.push("width: " + width + ";");
+      styles.push(css(["position:relative;&:after{content:'';position:absolute;width:100%;top:", ";", "}"], borderOffset, borderStyle(adjustedBorder, responsive, theme)));
 
-    if (responsive && directionProp === 'row-responsive') {
-      styles.push(breakpointStyle(breakpoint, "\n        width: auto;\n        height: " + responsiveSize + ";\n      "));
-    }
-
-    if (hasBetweenBorder) {
+      if (responsiveBorderOffset) {
+        styles.push(breakpointStyle(breakpoint, "\n            &:after {\n              content: '';\n              top: " + responsiveBorderOffset + ";\n            }"));
+      }
+    } else {
       var _adjustedBorder = typeof border === 'string' ? 'left' : _extends({}, border, {
         side: 'left'
       });
 
-      var _borderSize = border.size || 'xsmall';
+      styles.push(css(["position:relative;&:after{content:'';position:absolute;height:100%;left:", ";", "}"], borderOffset, borderStyle(_adjustedBorder, directionProp !== 'row-responsive' && responsive, theme)));
 
-      var borderWidth = theme.global.borderSize[_borderSize] || _borderSize;
-      styles.push(css(["position:relative;&:after{content:'';position:absolute;height:100%;left:", "px;", "}"], parseMetricToNum(width) / 2 - parseMetricToNum(borderWidth) / 2, borderStyle(_adjustedBorder, responsive, theme)));
+      if (responsiveBorderOffset) {
+        if (directionProp === 'row' || directionProp === 'row-reverse') {
+          styles.push(breakpointStyle(breakpoint, "\n              &:after {\n                content: '';\n                left: " + responsiveBorderOffset + ";\n              }"));
+        } else if (directionProp === 'row-responsive') {
+          var adjustedBorder2 = typeof border === 'string' ? 'top' : _extends({}, border, {
+            side: 'top'
+          });
+          styles.push(breakpointStyle(breakpoint, "\n              &:after {\n                content: '';\n                height: auto;\n                left: unset;\n                width: 100%;\n                top: " + responsiveBorderOffset + ";\n                border-left: none;\n                " + responsiveBorderStyle(adjustedBorder2, theme) + "\n              }"));
+        }
+      }
     }
   }
 
