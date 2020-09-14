@@ -6496,6 +6496,12 @@ grommet-icons@^4.2.0:
   dependencies:
     grommet-styles "^0.2.0"
 
+"grommet-icons@https://github.com/grommet/grommet-icons/tarball/stable":
+  version "4.4.0"
+  resolved "https://github.com/grommet/grommet-icons/tarball/stable#515576950d2777e71d3db8329546d567395a97e1"
+  dependencies:
+    grommet-styles "^0.2.0"
+
 grommet-styles@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/grommet-styles/-/grommet-styles-0.2.0.tgz#b2eac2b7e2747cb523434d21728ce5234f8ce4f4"
@@ -6516,10 +6522,12 @@ grommet-theme-hp@^0.1.1:
   resolved "https://registry.yarnpkg.com/grommet-theme-hp/-/grommet-theme-hp-0.1.2.tgz#52eac70d7cce2136b9ca6d7f6bf37649a40208a8"
   integrity sha512-pRJxgzJ6oWKNg4hq8csi7hEgH0qeMyP3m/cjQVTk473lH1OdgzqNfjyjQXJf80Fnp6Azm+ovwuNNGCKWCZxcvg==
 
-grommet-theme-hpe@^1.0.0:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/grommet-theme-hpe/-/grommet-theme-hpe-1.0.5.tgz#7394db9b08a5c745e7ad4794d1d0d7581099395b"
-  integrity sha512-6cHmxEGI8VG4Bz1rGzrUO9WmRS7mNr616/A3R5jkIXyqpY9nBMylS/GKQ41XKZCKW5aKuW/4wGKWXb/h3Ej+7Q==
+grommet-theme-hpe@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/grommet-theme-hpe/-/grommet-theme-hpe-2.0.0.tgz#b14889a2b5890a67691427c5c4da6f35af0c1ec3"
+  integrity sha512-Dbo2U0u4DdeCh6An1To6SIeRXyK3uAC9ayp45nqFH6UBAL9K28mZI5pBO9NluytjECmh31OyQAYjeTsIwFQGCw==
+  dependencies:
+    grommet-icons "https://github.com/grommet/grommet-icons/tarball/stable"
 
 grommet-theme-v1@^0.1.1:
   version "0.1.2"
@@ -9013,9 +9021,9 @@ node-environment-flags@^1.0.5:
     semver "^5.7.0"
 
 node-fetch@^2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.0.tgz#e633456386d4aa55863f676a7ab0daa8fdecb0fd"
-  integrity sha512-8dG4H5ujfvFiqDmVu9fQ5bOHUC15JMjMY/Zumv26oOvvVJjM67KF8koCWIabKQ1GJIa9r2mMZscBq/TbdOcmNA==
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
+  integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
 
 node-int64@^0.4.0:
   version "0.4.0"
