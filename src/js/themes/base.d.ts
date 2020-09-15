@@ -619,6 +619,20 @@ export interface ThemeType {
       expand?: any;
       sortable?: any;
     };
+    pinned?: {
+      body?: {
+        background?: BackgroundType;
+        extend?: ExtendType;
+      };
+      header?: {
+        background?: BackgroundType;
+        extend?: ExtendType;
+      };
+      footer?: {
+        background?: BackgroundType;
+        extend?: ExtendType;
+      };
+    };
     resize?: {
       border?: {
         side?: string;

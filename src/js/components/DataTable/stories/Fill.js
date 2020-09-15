@@ -25,6 +25,21 @@ const myTheme = deepMerge(grommet, {
       },
     },
   },
+  dataTable: {
+    pinned: {
+      header: {
+        background: {
+          color: 'brand',
+        },
+      },
+      footer: {
+        background: {
+          color: 'light-2',
+        },
+        extend: ({ theme }) => `color: ${theme.global.colors['dark-2']};`,
+      },
+    },
+  },
 });
 
 const Example = () => (

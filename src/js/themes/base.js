@@ -668,6 +668,17 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // body: {
       //   extend: undefined,
       // },
+      // pinned: {
+      //   body: {
+      //      extend: undefined,
+      //   },
+      //   header: {
+      //      extend: undefined,
+      //   },
+      //   footer: {
+      //      extend: undefined,
+      //   },
+      // },
       groupHeader: {
         background: {
           dark: 'dark-2',

@@ -612,15 +612,17 @@ describe('DataTable', () => {
 
   test('pin + background', () => {
     const theme = {
-      table: {
-        header: {
-          background: {
-            color: 'blue',
+      dataTable: {
+        pinned: {
+          header: {
+            background: {
+              color: 'blue',
+            },
           },
-        },
-        footer: {
-          background: {
-            color: 'green',
+          footer: {
+            background: {
+              color: 'green',
+            },
           },
         },
       },

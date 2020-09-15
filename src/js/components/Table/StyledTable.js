@@ -47,6 +47,7 @@ const StyledTableCell = styled.td`
       props.theme,
     )}
   ${props => props.tableContextTheme && props.tableContextTheme.extend}
+  ${props => props.pinnedDataTableTheme && props.pinnedDataTableTheme.extend}
 `;
 
 StyledTableCell.defaultProps = {};
