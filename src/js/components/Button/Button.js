@@ -236,6 +236,7 @@ const Button = forwardRef(
           align="center"
           justify={align === 'center' ? 'center' : 'between'}
           gap={gap}
+          responsive={false}
         >
           {first}
           {second}
