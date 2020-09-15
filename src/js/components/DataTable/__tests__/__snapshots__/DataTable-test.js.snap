@@ -4883,6 +4883,12 @@ exports[`DataTable onSort 2`] = `
   width: 6px;
 }
 
+@media only screen and (max-width:768px) {
+  .c0 {
+    width: 3px;
+  }
+}
+
 @media all and (min--moz-device-pixel-ratio:0) {
 
 }
@@ -4922,6 +4928,10 @@ exports[`DataTable onSort 2`] = `
 .c0 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -7053,6 +7063,12 @@ exports[`DataTable resizeable 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
+@media only screen and (max-width:768px) {
+  .c6 {
+    width: 6px;
+  }
+}
+
 @media all and (min--moz-device-pixel-ratio:0) {
   .c1 {
     table-layout: fixed;
@@ -7614,6 +7630,12 @@ exports[`DataTable search 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
+@media only screen and (max-width:768px) {
+  .c6 {
+    width: 6px;
+  }
+}
+
 @media all and (min--moz-device-pixel-ratio:0) {
   .c1 {
     table-layout: fixed;
@@ -7757,7 +7779,7 @@ exports[`DataTable search 2`] = `
               A
             </span>
             <div
-              class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffjnxm"
+              class="StyledBox__StyledBoxGap-sc-13pk1d4-1 bRyuLk"
             />
             .c0 {
   display: -webkit-box;
@@ -7848,6 +7870,10 @@ exports[`DataTable search 2`] = `
     padding-left: 6px;
     padding-right: 6px;
   }
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -8074,6 +8100,12 @@ exports[`DataTable sort 1`] = `
 
 .c9:focus {
   outline: 2px solid #6FFFB0;
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    width: 3px;
+  }
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -8427,6 +8459,12 @@ exports[`DataTable sort external 1`] = `
 
 .c9:focus {
   outline: 2px solid #6FFFB0;
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    width: 3px;
+  }
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -8936,6 +8974,12 @@ exports[`DataTable sortable 2`] = `
   width: 6px;
 }
 
+@media only screen and (max-width:768px) {
+  .c0 {
+    width: 3px;
+  }
+}
+
 @media all and (min--moz-device-pixel-ratio:0) {
 
 }
@@ -8975,6 +9019,10 @@ exports[`DataTable sortable 2`] = `
 .c0 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
