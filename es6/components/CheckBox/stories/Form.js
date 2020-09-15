@@ -64,6 +64,6 @@ var FormFieldCheckBox = function FormFieldCheckBox(props) {
   }))));
 };
 
-storiesOf('Form', module).add('CheckBox', function () {
+storiesOf('CheckBox', module).add('Form', function () {
   return /*#__PURE__*/React.createElement(FormFieldCheckBox, null);
 });

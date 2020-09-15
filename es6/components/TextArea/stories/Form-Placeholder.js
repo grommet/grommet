@@ -19,6 +19,6 @@ var FormFieldTextArea = function FormFieldTextArea(props) {
   })))));
 };
 
-storiesOf('Form', module).add('TextArea', function () {
+storiesOf('TextArea', module).add('Form with placeholder', function () {
   return /*#__PURE__*/React.createElement(FormFieldTextArea, null);
 });

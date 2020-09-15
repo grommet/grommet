@@ -58,6 +58,6 @@ var FormFieldTextInput = function FormFieldTextInput(props) {
   })))));
 };
 
-storiesOf('Form', module).add('TextInput', function () {
+storiesOf('TextInput', module).add('Form', function () {
   return /*#__PURE__*/React.createElement(FormFieldTextInput, null);
 });
