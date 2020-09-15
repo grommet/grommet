@@ -6657,6 +6657,66 @@ Defaults to
 undefined
 \`\`\`
 
+**dataTable.pinned.body.background.color**
+
+The background color for pinned body cells. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.pinned.body.extend**
+
+Any additional styles for pinned body cells. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.pinned.header.background.color**
+
+The background color for pinned header cells. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.pinned.header.extend**
+
+Any additional styles for pinned header cells. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.pinned.footer.background.color**
+
+The background color for pinned footer cells. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.pinned.footer.extend**
+
+Any additional styles for pinned footer cells. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **dataTable.primary.weight**
 
 The font weight for primary cells. Expects \`string\`.
