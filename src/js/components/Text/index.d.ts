@@ -23,6 +23,7 @@ export interface TextProps {
   truncate?: boolean;
   weight?: "normal" | "bold" | number;
   wordBreak?: "normal" | "break-all" | "keep-all" | "break-word";
+  type?: "text" | "email" | "hidden" | "password" | "tel" | "time" | "date" | "datetime-local" | "url" | "week"; 
 }
 
 declare const Text: React.FC<TextProps & Omit<JSX.IntrinsicElements['span'], 'color'>>;
