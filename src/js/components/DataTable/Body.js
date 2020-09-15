@@ -118,6 +118,7 @@ const Body = forwardRef(
                           isSelected ? 'unselect' : 'select'
                         } ${primaryValue}`}
                         checked={isSelected}
+                        disabled={!onSelect}
                         onChange={() => {
                           if (isSelected)
                             onSelect(selected.filter(s => s !== primaryValue));

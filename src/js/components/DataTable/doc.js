@@ -245,9 +245,11 @@ export const doc = DataTable => {
     select: PropTypes.arrayOf(
       PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     ).description(
-      `Which rows should be selected. The values in this array should match
-      the primaryKey or columns[].primary keyed value for the row's data
-      object.`,
+      `When supplied, causes checkboxes to be added to each row to indicate
+      which rows are selected. The values in this array should match
+      the 'primaryKey' or 'columns[].primary' keyed value for the row's data
+      object. If 'onSelect' is provided, the CheckBoxes are enabled
+      and this function can be used to track select changes.`,
     ),
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),

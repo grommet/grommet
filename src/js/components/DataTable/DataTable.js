@@ -94,8 +94,13 @@ const DataTable = ({
     buildGroupState(groups, groupBy),
   );
 
-  const [selected, setSelected] = useState(select);
-  useEffect(() => setSelected(select), [select]);
+  const [selected, setSelected] = useState(
+    select || (onSelect && []) || undefined,
+  );
+  useEffect(() => setSelected(select || (onSelect && []) || undefined), [
+    onSelect,
+    select,
+  ]);
 
   // any customized column widths
   const [widths, setWidths] = useState({});
@@ -193,7 +198,14 @@ const DataTable = ({
         onFiltering={onFiltering}
         onFilter={onFilter}
         onResize={resizeable ? onResize : undefined}
-        onSelect={onSelect}
+        onSelect={
+          onSelect
+            ? nextSelected => {
+                setSelected(nextSelected);
+                if (onSelect) onSelect(nextSelected);
+              }
+            : undefined
+        }
         onSort={sortable || sortProp || onSortProp ? onSort : undefined}
         onToggle={onToggleGroups}
         primaryProperty={primaryProperty}
@@ -220,7 +232,14 @@ const DataTable = ({
           onMore={onMore}
           replace={replace}
           onClickRow={onClickRow}
-          onSelect={onSelect}
+          onSelect={
+            onSelect
+              ? nextSelected => {
+                  setSelected(nextSelected);
+                  if (onSelect) onSelect(nextSelected);
+                }
+              : undefined
+          }
           pad={normalizeProp(pad, 'body')}
           pinnedBackground={normalizeProp(background, 'pinned')}
           primaryProperty={primaryProperty}

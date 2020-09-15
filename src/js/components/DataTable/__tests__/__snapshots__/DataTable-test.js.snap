@@ -8325,15 +8325,35 @@ exports[`DataTable select 2`] = `
                 type="checkbox"
               />
               <div
-                class="StyledBox-sc-13pk1d4-0 gDUCoH StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 iEciRS"
+                class="StyledBox-sc-13pk1d4-0 KsQmP StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 iEciRS"
               >
-                <svg
-                  class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 gHRhNW"
+                .c0 {
+  box-sizing: border-box;
+  stroke-width: 4px;
+  stroke: #7D4CDB;
+  width: 24px;
+  height: 24px;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+
+}
+
+<svg
+                  class="c0"
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 24 24"
                 >
                   <path
-                    d="M6,12 L18,12"
+                    d="M6,11.3 L10.3,16 L18,6.2"
                     fill="none"
                   />
                 </svg>
@@ -8413,7 +8433,7 @@ exports[`DataTable select 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK"
         >
           <label
-            aria-label="select beta"
+            aria-label="unselect beta"
             class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 PHOTu"
           >
             <div
@@ -8424,8 +8444,39 @@ exports[`DataTable select 2`] = `
                 type="checkbox"
               />
               <div
-                class="StyledBox-sc-13pk1d4-0 gDUCoH StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 iEciRS"
-              />
+                class="StyledBox-sc-13pk1d4-0 KsQmP StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 iEciRS"
+              >
+                .c0 {
+  box-sizing: border-box;
+  stroke-width: 4px;
+  stroke: #7D4CDB;
+  width: 24px;
+  height: 24px;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+
+}
+
+<svg
+                  class="c0"
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M6,11.3 L10.3,16 L18,6.2"
+                    fill="none"
+                  />
+                </svg>
+              </div>
             </div>
           </label>
         </td>

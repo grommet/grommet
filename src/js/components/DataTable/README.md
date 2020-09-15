@@ -592,9 +592,11 @@ Row specific background, border, and pad, keyed by primary key value.
 
 **select**
 
-Which rows should be selected. The values in this array should match
-      the primaryKey or columns[].primary keyed value for the row's data
-      object.
+When supplied, causes checkboxes to be added to each row to indicate
+      which rows are selected. The values in this array should match
+      the 'primaryKey' or 'columns[].primary' keyed value for the row's data
+      object. If 'onSelect' is provided, the CheckBoxes are enabled
+      and this function can be used to track select changes.
 
 ```
 [
