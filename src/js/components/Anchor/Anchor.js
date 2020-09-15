@@ -82,6 +82,7 @@ const Anchor = forwardRef(
             direction="row"
             align="center"
             gap="small"
+            responsive={false}
             style={{ display: 'inline-flex' }}
           >
             {first}

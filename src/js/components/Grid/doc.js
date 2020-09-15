@@ -1,11 +1,8 @@
 import { describe, PropTypes } from 'react-desc';
 
-import {
-  genericProps,
-  getAvailableAtBadge,
-  padPropType,
-  themeDocUtils,
-} from '../../utils';
+import { genericProps, padPropType } from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
+import { themeDocUtils } from '../../utils/themeDocUtils';
 
 const fixedSizes = ['xsmall', 'small', 'medium', 'large', 'xlarge'];
 const sizes = [

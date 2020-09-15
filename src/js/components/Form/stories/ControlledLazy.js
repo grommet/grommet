@@ -99,4 +99,7 @@ const Example = () => {
   );
 };
 
-storiesOf('Form', module).add('Controlled lazy', () => <Example />);
+// chromatic disabled because snapshot is the same as Controlled
+storiesOf('Form', module).add('Controlled lazy', () => <Example />, {
+  chromatic: { disable: true },
+});

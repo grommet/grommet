@@ -1,6 +1,6 @@
 import { describe } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = Nav => {
   const DocumentedNav = describe(Nav)
