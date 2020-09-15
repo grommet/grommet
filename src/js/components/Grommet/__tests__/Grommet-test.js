@@ -15,11 +15,6 @@ const TestAnnouncer = ({ announce }) => {
   return <div>hi</div>;
 };
 
-const CustomAnnouncer = ({ announce, id }) => {
-  React.useEffect(() => announce('hello', 'assertive', 500, id));
-  return <div>hi</div>;
-};
-
 const customBreakpointsTheme = {
   global: {
     deviceBreakpoints: {
@@ -108,33 +103,14 @@ describe('Grommet', () => {
     expect(container.firstChild).toMatchSnapshot();
 
     // no style, no need for expectPortal
-    expect(document.body.querySelector('[aria-live]')).toMatchSnapshot();
-
-    setTimeout(() => {
-      // should clear the aria-live container
-      expect(document.body.querySelector('[aria-live]')).toMatchSnapshot();
-      done();
-    }, 600); // wait the aria-live container to clear
-  });
-
-  test('custom id announce', done => {
-    const id = 'custom-announcer';
-    const { container } = render(
-      <Grommet>
-        <AnnounceContext.Consumer>
-          {announce => <CustomAnnouncer announce={announce} id={id} />}
-        </AnnounceContext.Consumer>
-      </Grommet>,
-    );
-    expect(container.firstChild).toMatchSnapshot();
-
-    // no style, no need for expectPortal
-    expect(document.body.querySelector(`#${id}[aria-live]`)).toMatchSnapshot();
+    expect(
+      document.body.querySelector('#grommet-announcer[aria-live]'),
+    ).toMatchSnapshot();
 
     setTimeout(() => {
       // should clear the aria-live container
       expect(
-        document.body.querySelector(`#${id}[aria-live]`),
+        document.body.querySelector('#grommet-announcer[aria-live]'),
       ).toMatchSnapshot();
       done();
     }, 600); // wait the aria-live container to clear
