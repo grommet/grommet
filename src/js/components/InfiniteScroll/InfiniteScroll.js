@@ -55,7 +55,7 @@ const InfiniteScroll = ({
   // calculating space based on where the first and last items being displayed
   // are located
   useEffect(() => {
-    if (firstPageItemRef.current && lastPageItemRef.current && !pageHeight) {
+    if (firstPageItemRef.current && lastPageItemRef.current) {
       /* eslint-disable react/no-find-dom-node */
       const beginRect = firstPageItemRef.current.getBoundingClientRect
         ? firstPageItemRef.current.getBoundingClientRect()
@@ -76,7 +76,7 @@ const InfiniteScroll = ({
       setPageArea(nextPageArea);
       setMultiColumn(nextMultiColumn);
     }
-  }, [pageHeight, step, show]);
+  }, [items, pageHeight, step, show]);
 
   // scroll handling
   useEffect(() => {
@@ -119,17 +119,23 @@ const InfiniteScroll = ({
 
       // Increment/decrement nextEndPage when nearing bounds of current page.
       // Ensure nextEndPage contains show index initially.
+      let scrollPos = (top + height + offset) / pageHeight;
+      const radix = scrollPos % 1.0;
+      scrollPos =
+        scrollPos < lastPage && radix > 0.8
+          ? Math.ceil(scrollPos)
+          : Math.floor(scrollPos);
+
       const nextEndPage = Math.min(
         lastPage,
         Math.max(
           (!replace && endPage) || 0,
           multiColumn
             ? Math.ceil(((top + height + offset) * width) / pageArea)
-            : Math.floor((top + height + offset) / pageHeight),
+            : scrollPos,
           show ? Math.floor(show / step) : 0,
         ),
       );
-
       if (nextBeginPage !== beginPage) setBeginPage(nextBeginPage);
       if (nextEndPage !== endPage) setEndPage(nextEndPage);
     };
@@ -212,8 +218,8 @@ const InfiniteScroll = ({
     let ref;
     let child = children(item, itemsIndex, ref);
 
-    // Set firstPageItemRef & lastPageItemRef if we don't know the pageHeight.
-    if (!pageHeight && itemsIndex === 0) {
+    // Set firstPageItemRef & lastPageItemRef
+    if (itemsIndex === lastIndex + 1 - step) {
       // We pass the ref we want to the children render function.
       // If we don't see that our ref was set, wrap it ("the old way").
       child = children(item, itemsIndex, firstPageItemRef);
@@ -226,7 +232,7 @@ const InfiniteScroll = ({
       }
     }
 
-    if (!pageHeight && (itemsIndex === step - 1 || itemsIndex === lastIndex)) {
+    if (itemsIndex === lastIndex) {
       // If show && show > step, we only want a single lastPageItemRef and it
       // should be set at lastIndex. Ignore step - 1 scenario, otherwise will
       // create duplicates.
@@ -270,7 +276,9 @@ const InfiniteScroll = ({
         key="below"
         ref={belowMarkerRef}
         flex={false}
-        height={`${replace ? (lastPage - endPage) * pageHeight : 0}px`}
+        height={`${
+          replace && pageHeight ? (lastPage - endPage) * pageHeight : 0
+        }px`}
       />
     );
     if (renderMarker) {
