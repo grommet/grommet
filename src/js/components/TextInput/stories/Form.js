@@ -51,4 +51,4 @@ const FormFieldTextInput = props => {
   );
 };
 
-storiesOf('Form', module).add('TextInput', () => <FormFieldTextInput />);
+storiesOf('TextInput', module).add('Form', () => <FormFieldTextInput />);
