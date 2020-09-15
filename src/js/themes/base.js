@@ -1120,6 +1120,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
       // disabled: { opacity: undefined },
     },
+    tip: {
+      // any drop props
+      container: {}, // any Box props
+    },
     video: {
       captions: {
         background: 'rgba(0, 0, 0, 0.7)',
