@@ -1,13 +1,30 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
+import { PropTypes } from 'react-desc';
 import {
   disabledStyle,
   getInputPadBySide,
   inputStyle,
   parseMetricToNum,
-  getPlainStyle,
+  plainInputStyle,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
+
+const getPlainStyle = plain => {
+  if (plain === 'full') {
+    return css`
+      outline: none;
+      border: none;
+      padding: 0;
+    `;
+  }
+  return plain && plainInputStyle;
+};
+
+const plainPropType = PropTypes.oneOfType([
+  PropTypes.bool,
+  PropTypes.oneOf(['full']),
+]);
 
 const StyledTextInput = styled.input`
   ${inputStyle}
@@ -96,4 +113,5 @@ export {
   StyledPlaceholder,
   StyledIcon,
   StyledSuggestions,
+  plainPropType,
 };

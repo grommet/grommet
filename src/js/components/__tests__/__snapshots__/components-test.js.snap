@@ -7223,7 +7223,7 @@ string",
         "name": "placeholder",
       },
       Object {
-        "description": "Whether this is a plain input with no border or padding.
+        "description": "Whether this is a plain input with no border or outline.
       Only use this when the containing context provides sufficient affordance.
       Use \\"full\\" to remove padding in addition to removing border and outline.",
         "format": "boolean

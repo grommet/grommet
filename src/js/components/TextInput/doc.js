@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { plainPropType } from '../../utils/prop-types';
+import { plainPropType } from './StyledTextInput';
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
 
@@ -95,7 +95,7 @@ export const doc = TextInput => {
       'Placeholder to use when no value is provided.',
     ),
     plain: plainPropType.description(
-      `Whether this is a plain input with no border or padding.
+      `Whether this is a plain input with no border or outline.
       Only use this when the containing context provides sufficient affordance.
       Use "full" to remove padding in addition to removing border and outline.`,
     ),
