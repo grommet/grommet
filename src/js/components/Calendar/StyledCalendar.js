@@ -73,36 +73,33 @@ const slideStyle = props => {
   `;
 };
 
-const weeksSizeStyle = props => {
+const weeksSizeStyle = () => {
   return css`
-    ${props.fillContainer && 'display: flex;'}
-    ${props.fillContainer && 'flex-direction: column;'}
-    ${props.fillContainer && 'height: 100%;'}
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   `;
 };
 const StyledWeeks = styled.div`
   position: relative;
-  ${props => weeksSizeStyle(props)}
+  ${props => props.fillContainer && weeksSizeStyle()}
   ${props => props.slide && slideStyle(props)};
 `;
 
 StyledWeeks.defaultProps = {};
 Object.setPrototypeOf(StyledWeeks.defaultProps, defaultProps);
 
-const weekSizeStyle = props => {
-  return css`
-    display: flex;
-    justify-content: space-between;
-    ${props.fillContainer && 'flex: 1;'}
-  `;
-};
 const StyledWeek = styled.div`
-  ${props => weekSizeStyle(props)}
+  display: flex;
+  justify-content: space-between;
+  ${props => props.fillContainer && 'flex: 1;'}
 `;
 
 StyledWeek.defaultProps = {};
 Object.setPrototypeOf(StyledWeek.defaultProps, defaultProps);
 
+// The width of 14.3% is derived from dividing 100/7. We want the
+// widths of 7 days to fill 100% of the row.
 const StyledDayContainer = styled.div`
   flex: 0 0 auto;
   ${props => props.fillContainer && 'width: 14.3%;'}

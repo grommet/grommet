@@ -1137,10 +1137,10 @@ exports[`Calendar change months 2`] = `
         tabindex="0"
       >
         <div
-          class="StyledCalendar__StyledWeeks-sc-1y4xhmp-2 gEHQWL"
+          class="StyledCalendar__StyledWeeks-sc-1y4xhmp-2 eUznsn"
         >
           <div
-            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 cigXNK"
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 dtVzqb"
           >
             <div
               class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
@@ -1256,7 +1256,7 @@ exports[`Calendar change months 2`] = `
             </div>
           </div>
           <div
-            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 cigXNK"
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 dtVzqb"
           >
             <div
               class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
@@ -16795,10 +16795,10 @@ exports[`Calendar select date 2`] = `
         tabindex="0"
       >
         <div
-          class="StyledCalendar__StyledWeeks-sc-1y4xhmp-2 gEHQWL"
+          class="StyledCalendar__StyledWeeks-sc-1y4xhmp-2 eUznsn"
         >
           <div
-            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 cigXNK"
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 dtVzqb"
           >
             <div
               class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
@@ -16914,7 +16914,7 @@ exports[`Calendar select date 2`] = `
             </div>
           </div>
           <div
-            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 cigXNK"
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 dtVzqb"
           >
             <div
               class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
@@ -17030,7 +17030,7 @@ exports[`Calendar select date 2`] = `
             </div>
           </div>
           <div
-            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 cigXNK"
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 dtVzqb"
           >
             <div
               class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
@@ -17146,7 +17146,7 @@ exports[`Calendar select date 2`] = `
             </div>
           </div>
           <div
-            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 cigXNK"
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 dtVzqb"
           >
             <div
               class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
@@ -17262,7 +17262,7 @@ exports[`Calendar select date 2`] = `
             </div>
           </div>
           <div
-            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 cigXNK"
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 dtVzqb"
           >
             <div
               class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
@@ -17378,7 +17378,7 @@ exports[`Calendar select date 2`] = `
             </div>
           </div>
           <div
-            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 cigXNK"
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 dtVzqb"
           >
             <div
               class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
@@ -18657,10 +18657,10 @@ exports[`Calendar select dates 2`] = `
         tabindex="0"
       >
         <div
-          class="StyledCalendar__StyledWeeks-sc-1y4xhmp-2 gEHQWL"
+          class="StyledCalendar__StyledWeeks-sc-1y4xhmp-2 eUznsn"
         >
           <div
-            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 cigXNK"
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 dtVzqb"
           >
             <div
               class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
@@ -18776,7 +18776,7 @@ exports[`Calendar select dates 2`] = `
             </div>
           </div>
           <div
-            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 cigXNK"
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 dtVzqb"
           >
             <div
               class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
@@ -18892,7 +18892,7 @@ exports[`Calendar select dates 2`] = `
             </div>
           </div>
           <div
-            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 cigXNK"
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 dtVzqb"
           >
             <div
               class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
@@ -19008,7 +19008,7 @@ exports[`Calendar select dates 2`] = `
             </div>
           </div>
           <div
-            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 cigXNK"
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 dtVzqb"
           >
             <div
               class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
@@ -19124,7 +19124,7 @@ exports[`Calendar select dates 2`] = `
             </div>
           </div>
           <div
-            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 cigXNK"
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 dtVzqb"
           >
             <div
               class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
@@ -19240,7 +19240,7 @@ exports[`Calendar select dates 2`] = `
             </div>
           </div>
           <div
-            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 cigXNK"
+            class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 dtVzqb"
           >
             <div
               class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"

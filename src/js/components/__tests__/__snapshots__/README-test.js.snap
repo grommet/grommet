@@ -3180,6 +3180,20 @@ An array of two numbers indicating the limits on
 [string]
 \`\`\`
 
+**children**
+
+Function that will be called to render each day.
+      It will be passed \`({date, day, isInRange, isSelected})\` where \`date\`
+      is a string containing an ISO8601 date for the day being rendered, \`day\`
+      is a number containing the day of the month being rendered, \`isInRange\`
+      is a boolean indicating whether the date is within a selected range of
+      dates, and \`isSelected\` is a boolean indicating whether this date
+      is selected.
+
+\`\`\`
+function
+\`\`\`
+
 **date**
 
 The selected date in ISO8601 format
@@ -3220,6 +3234,14 @@ Whether to show the days of the week.
 boolean
 \`\`\`
 
+**fill**
+
+Whether the calendar should fill the parent container.
+
+\`\`\`
+boolean
+\`\`\`
+
 **firstDayOfWeek**
 
 The first day of the week. 0 for Sunday. 1 for Monday.
@@ -3245,10 +3267,10 @@ The function passes the following options:
   }
 \`\`\`
 
-\`onPreviousMonth\` and \`onNextMonth\` are callbacks that will tell the 
+\`onPreviousMonth\` and \`onNextMonth\` are callbacks that will tell the
 calendar to move between months.
-\`previousInBound\` and \`nextInBound\` are booleans that tell, when using 
-\`bounds\`, if the current date is within that range. You can then use that 
+\`previousInBound\` and \`nextInBound\` are booleans that tell, when using
+\`bounds\`, if the current date is within that range. You can then use that
 to disable the previous and next buttons.
 
 

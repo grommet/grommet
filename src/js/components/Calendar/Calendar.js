@@ -82,34 +82,7 @@ const buildDisplayBounds = (reference, firstDayOfWeek) => {
 
 const millisecondsPerYear = 31557600000;
 
-const CalendarDayButton = ({
-  a11yTitle,
-  active,
-  disabled,
-  fill,
-  onClick,
-  onMouseOver,
-  onMouseOut,
-  children,
-}) => {
-  return (
-    <Button
-      a11yTitle={a11yTitle}
-      tabIndex={-1}
-      active={active}
-      disabled={disabled}
-      onClick={onClick}
-      onMouseOver={onMouseOver}
-      onMouseOut={onMouseOut}
-      onFocus={() => {}}
-      onBlur={() => {}}
-      fill={fill}
-      plain
-    >
-      {children}
-    </Button>
-  );
-};
+const CalendarDayButton = props => <Button tabIndex={-1} plain {...props} />;
 
 const CalendarDay = ({
   children,
