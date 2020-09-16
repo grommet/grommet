@@ -99,7 +99,7 @@ StyledWeek.defaultProps = {};
 Object.setPrototypeOf(StyledWeek.defaultProps, defaultProps);
 
 // The width of 14.3% is derived from dividing 100/7. We want the
-// widths of 7 days to fill 100% of the row.
+// widths of 7 days to equally fill 100% of the row.
 const StyledDayContainer = styled.div`
   flex: 0 0 auto;
   ${props => props.fillContainer && 'width: 14.3%;'}
