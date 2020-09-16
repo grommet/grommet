@@ -46,13 +46,9 @@ const wordBreakStyle = css`
   word-break: ${props => props.wordBreak};
 `;
 
-const fontFamily = props => {
-  return props.theme.text.font
-    ? css`
-        font-family: ${props.theme.text.font.family};
-      `
-    : '';
-};
+const fontFamily = css`
+  font-family: ${props => props.theme.text.font.family};
+`;
 
 const StyledText = styled('span').withConfig({
   shouldForwardProp: (prop, defaultValidatorFn) =>
@@ -65,7 +61,8 @@ const StyledText = styled('span').withConfig({
   ${props => props.colorProp && colorStyle}
   ${props => props.weight && weightStyle}
   ${props => props.wordBreak && wordBreakStyle}
-  ${props => fontFamily(props)}
+  ${props =>
+    props.theme.text.font && props.theme.text.font.family && fontFamily}
 
   ${props => props.theme.text && props.theme.text.extend}
 `;

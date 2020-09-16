@@ -6150,7 +6150,7 @@ exports[`Select prop: onOpen 5`] = `
       class="StyledBox-sc-13pk1d4-0 lcXThF SelectContainer__OptionBox-sc-1wi0ul8-1 cjPAAw"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 htoxQl"
+        class="StyledText-sc-1sadyjn-0 duzDHg"
       >
         one
       </span>
@@ -6166,7 +6166,7 @@ exports[`Select prop: onOpen 5`] = `
       class="StyledBox-sc-13pk1d4-0 lcXThF SelectContainer__OptionBox-sc-1wi0ul8-1 cjPAAw"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 htoxQl"
+        class="StyledText-sc-1sadyjn-0 duzDHg"
       >
         two
       </span>
