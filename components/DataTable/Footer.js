@@ -28,10 +28,12 @@ var Footer = function Footer(_ref) {
       fill = _ref.fill,
       footerValues = _ref.footerValues,
       groups = _ref.groups,
+      onSelect = _ref.onSelect,
       pad = _ref.pad,
       tablePin = _ref.pin,
       primaryProperty = _ref.primaryProperty,
-      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "fill", "footerValues", "groups", "pad", "pin", "primaryProperty"]);
+      selected = _ref.selected,
+      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "fill", "footerValues", "groups", "onSelect", "pad", "pin", "primaryProperty", "selected"]);
 
   return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableFooter, _extends({
     fillProp: fill
@@ -40,7 +42,7 @@ var Footer = function Footer(_ref) {
     size: "xxsmall",
     pad: "none",
     verticalAlign: "top"
-  }), columns.map(function (column) {
+  }), (selected || onSelect) && /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, null), columns.map(function (column) {
     var pin = [];
     if (tablePin) pin.push('bottom');
     if (column.pin) pin.push('left');

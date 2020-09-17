@@ -51,6 +51,7 @@ var DataTable = function DataTable(_ref) {
       onClickRow = _ref.onClickRow,
       onMore = _ref.onMore,
       onSearch = _ref.onSearch,
+      onSelect = _ref.onSelect,
       onSortProp = _ref.onSort,
       replace = _ref.replace,
       pad = _ref.pad,
@@ -58,12 +59,13 @@ var DataTable = function DataTable(_ref) {
       primaryKey = _ref.primaryKey,
       resizeable = _ref.resizeable,
       rowProps = _ref.rowProps,
+      select = _ref.select,
       size = _ref.size,
       sortProp = _ref.sort,
       sortable = _ref.sortable,
       _ref$step = _ref.step,
       step = _ref$step === void 0 ? 50 : _ref$step,
-      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "fill", "groupBy", "onClickRow", "onMore", "onSearch", "onSort", "replace", "pad", "pin", "primaryKey", "resizeable", "rowProps", "size", "sort", "sortable", "step"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "fill", "groupBy", "onClickRow", "onMore", "onSearch", "onSelect", "onSort", "replace", "pad", "pin", "primaryKey", "resizeable", "rowProps", "select", "size", "sort", "sortable", "step"]);
 
   // property name of the primary property
   var primaryProperty = (0, _react.useMemo)(function () {
@@ -105,12 +107,19 @@ var DataTable = function DataTable(_ref) {
 
   var _useState4 = (0, _react.useState)((0, _buildState.buildGroupState)(groups, groupBy)),
       groupState = _useState4[0],
-      setGroupState = _useState4[1]; // any customized column widths
+      setGroupState = _useState4[1];
 
+  var _useState5 = (0, _react.useState)(select || onSelect && [] || undefined),
+      selected = _useState5[0],
+      setSelected = _useState5[1];
 
-  var _useState5 = (0, _react.useState)({}),
-      widths = _useState5[0],
-      setWidths = _useState5[1]; // remember that we are filtering on this property
+  (0, _react.useEffect)(function () {
+    return setSelected(select || onSelect && [] || undefined);
+  }, [onSelect, select]); // any customized column widths
+
+  var _useState6 = (0, _react.useState)({}),
+      widths = _useState6[0],
+      setWidths = _useState6[1]; // remember that we are filtering on this property
 
 
   var onFiltering = function onFiltering(property) {
@@ -201,6 +210,7 @@ var DataTable = function DataTable(_ref) {
     background: normalizeProp(background, 'header'),
     border: normalizeProp(border, 'header'),
     columns: columns,
+    data: adjustedData,
     fill: fill,
     filtering: filtering,
     filters: filters,
@@ -208,14 +218,20 @@ var DataTable = function DataTable(_ref) {
     groupState: groupState,
     pad: normalizeProp(pad, 'header'),
     pin: pin === true || pin === 'header',
+    selected: selected,
     size: size,
     sort: sort,
     widths: widths,
     onFiltering: onFiltering,
     onFilter: onFilter,
     onResize: resizeable ? onResize : undefined,
+    onSelect: onSelect ? function (nextSelected) {
+      setSelected(nextSelected);
+      if (onSelect) onSelect(nextSelected);
+    } : undefined,
     onSort: sortable || sortProp || onSortProp ? onSort : undefined,
-    onToggle: onToggleGroups
+    onToggle: onToggleGroups,
+    primaryProperty: primaryProperty
   }), groups ? /*#__PURE__*/_react["default"].createElement(_GroupedBody.GroupedBody, {
     background: normalizeProp(background, 'body'),
     border: normalizeProp(border, 'body'),
@@ -235,10 +251,15 @@ var DataTable = function DataTable(_ref) {
     onMore: onMore,
     replace: replace,
     onClickRow: onClickRow,
+    onSelect: onSelect ? function (nextSelected) {
+      setSelected(nextSelected);
+      if (onSelect) onSelect(nextSelected);
+    } : undefined,
     pad: normalizeProp(pad, 'body'),
     pinnedBackground: normalizeProp(background, 'pinned'),
     primaryProperty: primaryProperty,
     rowProps: rowProps,
+    selected: selected,
     size: size,
     step: step
   }), showFooter && /*#__PURE__*/_react["default"].createElement(_Footer.Footer, {
@@ -248,9 +269,11 @@ var DataTable = function DataTable(_ref) {
     fill: fill,
     footerValues: footerValues,
     groups: groups,
+    onSelect: onSelect,
     pad: normalizeProp(pad, 'footer'),
     pin: pin === true || pin === 'footer',
     primaryProperty: primaryProperty,
+    selected: selected,
     size: size
   }));
 };

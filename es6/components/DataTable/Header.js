@@ -7,16 +7,20 @@ import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
+import { CheckBox } from '../CheckBox';
+import { TableCell } from '../TableCell';
 import { Text } from '../Text';
 import { Resizer } from './Resizer';
 import { Searcher } from './Searcher';
 import { ExpanderCell } from './ExpanderCell';
 import { StyledDataTableCell, StyledDataTableHeader, StyledDataTableRow } from './StyledDataTable';
+import { datumValue } from './buildState';
 
 var Header = function Header(_ref) {
   var background = _ref.background,
       border = _ref.border,
       columns = _ref.columns,
+      data = _ref.data,
       fill = _ref.fill,
       filtering = _ref.filtering,
       filters = _ref.filters,
@@ -25,13 +29,16 @@ var Header = function Header(_ref) {
       onFilter = _ref.onFilter,
       onFiltering = _ref.onFiltering,
       onResize = _ref.onResize,
+      onSelect = _ref.onSelect,
       onSort = _ref.onSort,
       onToggle = _ref.onToggle,
       pad = _ref.pad,
       tablePin = _ref.pin,
+      primaryProperty = _ref.primaryProperty,
+      selected = _ref.selected,
       sort = _ref.sort,
       widths = _ref.widths,
-      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "fill", "filtering", "filters", "groups", "groupState", "onFilter", "onFiltering", "onResize", "onSort", "onToggle", "pad", "pin", "sort", "widths"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "fill", "filtering", "filters", "groups", "groupState", "onFilter", "onFiltering", "onResize", "onSelect", "onSort", "onToggle", "pad", "pin", "primaryProperty", "selected", "sort", "widths"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
   return /*#__PURE__*/React.createElement(StyledDataTableHeader, _extends({
@@ -42,7 +49,17 @@ var Header = function Header(_ref) {
       return !groupState[k].expanded;
     }).length === 0,
     onToggle: onToggle
-  }), columns.map(function (_ref2) {
+  }), (selected || onSelect) && /*#__PURE__*/React.createElement(TableCell, null, onSelect && /*#__PURE__*/React.createElement(CheckBox, {
+    checked: selected.length === data.length,
+    indeterminate: selected.length > 0 && selected.length < data.length,
+    onChange: function onChange() {
+      // if any are selected, clear selection
+      if (selected.length === data.length) onSelect([]); // if none are selected, select all data
+      else onSelect(data.map(function (datum) {
+          return datumValue(datum, primaryProperty);
+        }));
+    }
+  })), columns.map(function (_ref2) {
     var property = _ref2.property,
         header = _ref2.header,
         align = _ref2.align,

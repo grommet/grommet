@@ -5,6 +5,8 @@ exports.Body = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _CheckBox = require("../CheckBox");
+
 var _InfiniteScroll = require("../InfiniteScroll");
 
 var _TableRow = require("../TableRow");
@@ -35,14 +37,16 @@ var Body = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       onMore = _ref.onMore,
       replace = _ref.replace,
       onClickRow = _ref.onClickRow,
+      onSelect = _ref.onSelect,
       pad = _ref.pad,
       pinnedBackground = _ref.pinnedBackground,
       primaryProperty = _ref.primaryProperty,
       rowProps = _ref.rowProps,
+      selected = _ref.selected,
       size = _ref.size,
       step = _ref.step,
       theme = _ref.theme,
-      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "onMore", "replace", "onClickRow", "pad", "pinnedBackground", "primaryProperty", "rowProps", "size", "step", "theme"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "onMore", "replace", "onClickRow", "onSelect", "pad", "pinnedBackground", "primaryProperty", "rowProps", "selected", "size", "step", "theme"]);
 
   var _React$useState = _react["default"].useState(),
       active = _React$useState[0],
@@ -76,6 +80,7 @@ var Body = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     step: step
   }, function (datum, index, rowRef) {
     var primaryValue = primaryProperty ? (0, _buildState.datumValue)(datum, primaryProperty) : undefined;
+    var isSelected = selected && selected.includes(primaryValue);
     return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableRow, {
       key: primaryValue || index,
       ref: rowRef,
@@ -101,7 +106,16 @@ var Body = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       onBlur: onClickRow ? function () {
         return setActive(undefined);
       } : undefined
-    }, columns.map(function (column) {
+    }, (selected || onSelect) && /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, null, /*#__PURE__*/_react["default"].createElement(_CheckBox.CheckBox, {
+      a11yTitle: (isSelected ? 'unselect' : 'select') + " " + primaryValue,
+      checked: isSelected,
+      disabled: !onSelect,
+      onChange: function onChange() {
+        if (isSelected) onSelect(selected.filter(function (s) {
+          return s !== primaryValue;
+        }));else onSelect([].concat(selected, [primaryValue]));
+      }
+    })), columns.map(function (column) {
       return /*#__PURE__*/_react["default"].createElement(_Cell.Cell, {
         key: column.property,
         background: column.pin ? pinnedBackground : background,

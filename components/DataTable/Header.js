@@ -13,6 +13,10 @@ var _Box = require("../Box");
 
 var _Button = require("../Button");
 
+var _CheckBox = require("../CheckBox");
+
+var _TableCell = require("../TableCell");
+
 var _Text = require("../Text");
 
 var _Resizer = require("./Resizer");
@@ -22,6 +26,8 @@ var _Searcher = require("./Searcher");
 var _ExpanderCell = require("./ExpanderCell");
 
 var _StyledDataTable = require("./StyledDataTable");
+
+var _buildState = require("./buildState");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -35,6 +41,7 @@ var Header = function Header(_ref) {
   var background = _ref.background,
       border = _ref.border,
       columns = _ref.columns,
+      data = _ref.data,
       fill = _ref.fill,
       filtering = _ref.filtering,
       filters = _ref.filters,
@@ -43,13 +50,16 @@ var Header = function Header(_ref) {
       onFilter = _ref.onFilter,
       onFiltering = _ref.onFiltering,
       onResize = _ref.onResize,
+      onSelect = _ref.onSelect,
       onSort = _ref.onSort,
       onToggle = _ref.onToggle,
       pad = _ref.pad,
       tablePin = _ref.pin,
+      primaryProperty = _ref.primaryProperty,
+      selected = _ref.selected,
       sort = _ref.sort,
       widths = _ref.widths,
-      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "fill", "filtering", "filters", "groups", "groupState", "onFilter", "onFiltering", "onResize", "onSort", "onToggle", "pad", "pin", "sort", "widths"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "fill", "filtering", "filters", "groups", "groupState", "onFilter", "onFiltering", "onResize", "onSelect", "onSort", "onToggle", "pad", "pin", "primaryProperty", "selected", "sort", "widths"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
@@ -61,7 +71,17 @@ var Header = function Header(_ref) {
       return !groupState[k].expanded;
     }).length === 0,
     onToggle: onToggle
-  }), columns.map(function (_ref2) {
+  }), (selected || onSelect) && /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, null, onSelect && /*#__PURE__*/_react["default"].createElement(_CheckBox.CheckBox, {
+    checked: selected.length === data.length,
+    indeterminate: selected.length > 0 && selected.length < data.length,
+    onChange: function onChange() {
+      // if any are selected, clear selection
+      if (selected.length === data.length) onSelect([]); // if none are selected, select all data
+      else onSelect(data.map(function (datum) {
+          return (0, _buildState.datumValue)(datum, primaryProperty);
+        }));
+    }
+  })), columns.map(function (_ref2) {
     var property = _ref2.property,
         header = _ref2.header,
         align = _ref2.align,
