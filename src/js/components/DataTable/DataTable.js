@@ -19,7 +19,14 @@ const contexts = ['header', 'body', 'footer'];
 const normalizeProp = (prop, context) => {
   if (prop) {
     if (prop[context]) return prop[context];
-    if (contexts.some(c => prop[c])) return undefined;
+
+    // if prop[context] wasn't defined, but other values
+    // exist on the prop, return undefined so that background
+    // for context will defaultto theme values instead
+    // note: need to include `pinned` since it is not a
+    // defined context
+    if (contexts.some(c => prop[c] || prop.pinned)) return undefined;
+
     return prop;
   }
   return undefined;

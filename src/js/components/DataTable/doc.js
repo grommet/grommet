@@ -352,6 +352,36 @@ export const themeDoc = {
     type: 'React.Element',
     defaultValue: undefined,
   },
+  'dataTable.pinned.body.background.color': {
+    description: 'The background color for pinned body cells.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'dataTable.pinned.body.extend': {
+    description: 'Any additional styles for pinned body cells.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'dataTable.pinned.header.background.color': {
+    description: 'The background color for pinned header cells.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'dataTable.pinned.header.extend': {
+    description: 'Any additional styles for pinned header cells.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'dataTable.pinned.footer.background.color': {
+    description: 'The background color for pinned footer cells.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'dataTable.pinned.footer.extend': {
+    description: 'Any additional styles for pinned footer cells.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
   'dataTable.primary.weight': {
     description: 'The font weight for primary cells.',
     type: 'string',

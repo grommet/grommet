@@ -2136,7 +2136,7 @@ exports[`DataTable click 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kLEWHI StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYEbGN StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
           scope="col"
         >
           <span
@@ -2155,7 +2155,7 @@ exports[`DataTable click 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 imGRIL"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eUqvkr StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
           scope="row"
         >
           <div
@@ -2173,7 +2173,7 @@ exports[`DataTable click 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 imGRIL"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eUqvkr StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
           scope="row"
         >
           <div
@@ -3365,7 +3365,7 @@ exports[`DataTable groupBy 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fxyVpq"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 WIfqD"
         >
           <button
             aria-label="expand"
@@ -3391,7 +3391,7 @@ exports[`DataTable groupBy 2`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kLEWHI StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYEbGN StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
           scope="col"
         >
           <span
@@ -3401,7 +3401,7 @@ exports[`DataTable groupBy 2`] = `
           </span>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kLEWHI StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYEbGN StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
           scope="col"
         >
           <span
@@ -3419,7 +3419,7 @@ exports[`DataTable groupBy 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cfmJQA"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iutZRh"
         >
           <button
             aria-label="expand"
@@ -3445,7 +3445,7 @@ exports[`DataTable groupBy 2`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eUqvkr StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
           scope="row"
         >
           <div
@@ -3459,7 +3459,7 @@ exports[`DataTable groupBy 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eUqvkr StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 bFwQzJ"
@@ -3470,7 +3470,7 @@ exports[`DataTable groupBy 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cfmJQA"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iutZRh"
         >
           <button
             aria-label="expand"
@@ -3496,7 +3496,7 @@ exports[`DataTable groupBy 2`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eUqvkr StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
           scope="row"
         >
           <div
@@ -3510,7 +3510,7 @@ exports[`DataTable groupBy 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eUqvkr StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 bFwQzJ"
@@ -4394,7 +4394,7 @@ exports[`DataTable groupBy property 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 fxyVpq"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 WIfqD"
         >
           <button
             aria-label="expand"
@@ -4420,7 +4420,7 @@ exports[`DataTable groupBy property 2`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kLEWHI StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYEbGN StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
           scope="col"
         >
           <span
@@ -4430,7 +4430,7 @@ exports[`DataTable groupBy property 2`] = `
           </span>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kLEWHI StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYEbGN StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
           scope="col"
         >
           <span
@@ -4448,7 +4448,7 @@ exports[`DataTable groupBy property 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cfmJQA"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iutZRh"
         >
           <button
             aria-label="expand"
@@ -4474,7 +4474,7 @@ exports[`DataTable groupBy property 2`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eUqvkr StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
           scope="row"
         >
           <div
@@ -4488,7 +4488,7 @@ exports[`DataTable groupBy property 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eUqvkr StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 bFwQzJ"
@@ -4499,7 +4499,7 @@ exports[`DataTable groupBy property 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cfmJQA"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iutZRh"
         >
           <button
             aria-label="expand"
@@ -4525,7 +4525,7 @@ exports[`DataTable groupBy property 2`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eUqvkr StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
           scope="row"
         >
           <div
@@ -4539,7 +4539,7 @@ exports[`DataTable groupBy property 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eUqvkr StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 bFwQzJ"
@@ -4858,7 +4858,7 @@ exports[`DataTable onSort 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kLEWHI StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYEbGN StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
           scope="col"
         >
           <button
@@ -4955,7 +4955,7 @@ exports[`DataTable onSort 2`] = `
           </button>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kLEWHI StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYEbGN StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
           scope="col"
         >
           <button
@@ -4982,7 +4982,7 @@ exports[`DataTable onSort 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eUqvkr StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
           scope="row"
         >
           <div
@@ -4996,7 +4996,7 @@ exports[`DataTable onSort 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eUqvkr StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 bFwQzJ"
@@ -5013,7 +5013,7 @@ exports[`DataTable onSort 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eUqvkr StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
           scope="row"
         >
           <div
@@ -5027,7 +5027,7 @@ exports[`DataTable onSort 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eUqvkr StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 bFwQzJ"
@@ -5044,7 +5044,7 @@ exports[`DataTable onSort 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eUqvkr StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
           scope="row"
         >
           <div
@@ -5058,7 +5058,7 @@ exports[`DataTable onSort 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eUqvkr StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 bFwQzJ"
@@ -5781,6 +5781,566 @@ exports[`DataTable paths 1`] = `
         </td>
       </tr>
     </tbody>
+  </table>
+</div>
+`;
+
+exports[`DataTable pin + background 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  background-color: blue;
+  color: #444444;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c8 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  background: red;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c12 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c13 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  background-color: green;
+  color: #444444;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c16 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c17 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c5 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c11 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c2 {
+  border-spacing: 0;
+  border-collapse: separate;
+  height: auto;
+}
+
+.c7:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c4 {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.c6 {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.c9 {
+  position: -webkit-sticky;
+  position: sticky;
+  left: 0;
+  z-index: 1;
+}
+
+.c14 {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.c15 {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+  .c1 {
+    table-layout: fixed;
+  }
+}
+
+<div
+  class="c0"
+>
+  <table
+    class="c1 c2"
+  >
+    <thead
+      class=""
+    >
+      <tr
+        class=""
+      >
+        <th
+          class="c3 c4"
+          scope="col"
+        >
+          <span
+            class="c5"
+          >
+            A
+          </span>
+        </th>
+        <th
+          class="c3 c6"
+          scope="col"
+        >
+          <span
+            class="c5"
+          >
+            B
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="c7"
+    >
+      <tr
+        class=""
+      >
+        <th
+          class="c8 c9"
+          scope="row"
+        >
+          <div
+            class="c10"
+          >
+            <span
+              class="c11"
+            >
+              one
+            </span>
+          </div>
+        </th>
+        <td
+          class="c12 "
+        >
+          <div
+            class="c10"
+          >
+            <span
+              class="c5"
+            >
+              1
+            </span>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class=""
+      >
+        <th
+          class="c8 c9"
+          scope="row"
+        >
+          <div
+            class="c10"
+          >
+            <span
+              class="c11"
+            >
+              two
+            </span>
+          </div>
+        </th>
+        <td
+          class="c12 "
+        >
+          <div
+            class="c10"
+          >
+            <span
+              class="c5"
+            >
+              2
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot
+      class=""
+    >
+      <tr
+        class=""
+      >
+        <td
+          class="c13 c14"
+        >
+          <div
+            class="c10"
+          >
+            <span
+              class="c11"
+            >
+              Total
+            </span>
+          </div>
+        </td>
+        <td
+          class="c13 c15"
+        >
+          <div
+            class="c10"
+          />
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+  <table
+    class="c1 c2"
+  >
+    <thead
+      class=""
+    >
+      <tr
+        class=""
+      >
+        <th
+          class="c3 c4"
+          scope="col"
+        >
+          <span
+            class="c5"
+          >
+            A
+          </span>
+        </th>
+        <th
+          class="c3 c6"
+          scope="col"
+        >
+          <span
+            class="c5"
+          >
+            B
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="c7"
+    >
+      <tr
+        class=""
+      >
+        <th
+          class="c8 c9"
+          scope="row"
+        >
+          <div
+            class="c10"
+          >
+            <span
+              class="c11"
+            >
+              one
+            </span>
+          </div>
+        </th>
+        <td
+          class="c12 "
+        >
+          <div
+            class="c10"
+          >
+            <span
+              class="c5"
+            >
+              1
+            </span>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class=""
+      >
+        <th
+          class="c8 c9"
+          scope="row"
+        >
+          <div
+            class="c10"
+          >
+            <span
+              class="c11"
+            >
+              two
+            </span>
+          </div>
+        </th>
+        <td
+          class="c12 "
+        >
+          <div
+            class="c10"
+          >
+            <span
+              class="c5"
+            >
+              2
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot
+      class=""
+    >
+      <tr
+        class=""
+      >
+        <td
+          class="c16 c9"
+        >
+          <div
+            class="c10"
+          >
+            <span
+              class="c11"
+            >
+              Total
+            </span>
+          </div>
+        </td>
+        <td
+          class="c16 "
+        >
+          <div
+            class="c10"
+          />
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+  <table
+    class="c1 c2"
+  >
+    <thead
+      class=""
+    >
+      <tr
+        class=""
+      >
+        <th
+          class="c17 c9"
+          scope="col"
+        >
+          <span
+            class="c5"
+          >
+            A
+          </span>
+        </th>
+        <th
+          class="c17 "
+          scope="col"
+        >
+          <span
+            class="c5"
+          >
+            B
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="c7"
+    >
+      <tr
+        class=""
+      >
+        <th
+          class="c8 c9"
+          scope="row"
+        >
+          <div
+            class="c10"
+          >
+            <span
+              class="c11"
+            >
+              one
+            </span>
+          </div>
+        </th>
+        <td
+          class="c12 "
+        >
+          <div
+            class="c10"
+          >
+            <span
+              class="c5"
+            >
+              1
+            </span>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class=""
+      >
+        <th
+          class="c8 c9"
+          scope="row"
+        >
+          <div
+            class="c10"
+          >
+            <span
+              class="c11"
+            >
+              two
+            </span>
+          </div>
+        </th>
+        <td
+          class="c12 "
+        >
+          <div
+            class="c10"
+          >
+            <span
+              class="c5"
+            >
+              2
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot
+      class=""
+    >
+      <tr
+        class=""
+      >
+        <td
+          class="c13 c14"
+        >
+          <div
+            class="c10"
+          >
+            <span
+              class="c11"
+            >
+              Total
+            </span>
+          </div>
+        </td>
+        <td
+          class="c13 c15"
+        >
+          <div
+            class="c10"
+          />
+        </td>
+      </tr>
+    </tfoot>
   </table>
 </div>
 `;
@@ -7767,7 +8327,7 @@ exports[`DataTable search 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kLEWHI StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYEbGN StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
           scope="col"
         >
           <div
@@ -7905,7 +8465,7 @@ exports[`DataTable search 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eUqvkr StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
           scope="row"
         >
           <div
@@ -8312,7 +8872,7 @@ exports[`DataTable select 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kLEWHI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYEbGN"
         >
           <label
             class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 PHOTu"
@@ -8362,7 +8922,7 @@ exports[`DataTable select 2`] = `
           </label>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kLEWHI StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYEbGN StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
           scope="col"
         >
           <span
@@ -8380,7 +8940,7 @@ exports[`DataTable select 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eUqvkr"
         >
           <label
             aria-label="unselect alpha"
@@ -8412,7 +8972,7 @@ exports[`DataTable select 2`] = `
           </label>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eUqvkr StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
           scope="row"
         >
           <div
@@ -8430,7 +8990,7 @@ exports[`DataTable select 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eUqvkr"
         >
           <label
             aria-label="unselect beta"
@@ -8481,7 +9041,7 @@ exports[`DataTable select 2`] = `
           </label>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eUqvkr StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
           scope="row"
         >
           <div
@@ -9525,7 +10085,7 @@ exports[`DataTable sortable 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kLEWHI StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYEbGN StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
           scope="col"
         >
           <button
@@ -9622,7 +10182,7 @@ exports[`DataTable sortable 2`] = `
           </button>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kLEWHI StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 iYEbGN StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
           scope="col"
         >
           <button
@@ -9649,7 +10209,7 @@ exports[`DataTable sortable 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eUqvkr StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
           scope="row"
         >
           <div
@@ -9663,7 +10223,7 @@ exports[`DataTable sortable 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eUqvkr StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 bFwQzJ"
@@ -9680,7 +10240,7 @@ exports[`DataTable sortable 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eUqvkr StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
           scope="row"
         >
           <div
@@ -9694,7 +10254,7 @@ exports[`DataTable sortable 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eUqvkr StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 bFwQzJ"
@@ -9711,7 +10271,7 @@ exports[`DataTable sortable 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eUqvkr StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
           scope="row"
         >
           <div
@@ -9725,7 +10285,7 @@ exports[`DataTable sortable 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 eUqvkr StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 bFwQzJ"

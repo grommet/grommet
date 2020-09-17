@@ -687,6 +687,17 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         expand: FormDown,
         // sortable: undefined,
       },
+      // pinned: {
+      //   body: {
+      //      extend: undefined,
+      //   },
+      //   header: {
+      //      extend: undefined,
+      //   },
+      //   footer: {
+      //      extend: undefined,
+      //   },
+      // },
       primary: {
         weight: 'bold',
       },

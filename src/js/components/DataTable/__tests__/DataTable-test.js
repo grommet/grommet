@@ -628,4 +628,44 @@ describe('DataTable', () => {
     expect(onSelect).toBeCalledWith(expect.arrayContaining(['alpha', 'beta']));
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('pin + background', () => {
+    const theme = {
+      dataTable: {
+        pinned: {
+          header: {
+            background: {
+              color: 'blue',
+            },
+          },
+          footer: {
+            background: {
+              color: 'green',
+            },
+          },
+        },
+      },
+    };
+
+    const { container } = render(
+      <Grommet theme={theme}>
+        {[true, 'header', 'footer'].map(pin => (
+          <DataTable
+            background={{ pinned: 'red' }}
+            key={JSON.stringify(pin)}
+            columns={[
+              { property: 'a', header: 'A', footer: 'Total', pin: true },
+              { property: 'b', header: 'B' },
+            ]}
+            data={[
+              { a: 'one', b: 1 },
+              { a: 'two', b: 2 },
+            ]}
+            pin={pin}
+          />
+        ))}
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

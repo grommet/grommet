@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, DataTable } from 'grommet';
 import { grommet } from 'grommet/themes';
+import { deepMerge } from 'grommet/utils';
 
 // Source code for the data can be found here
 // https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
@@ -11,8 +12,38 @@ import { columns, data } from './data';
 const pinnedColumns = columns.map(c => ({ ...c }));
 pinnedColumns[0].pin = true;
 
+const myTheme = deepMerge(grommet, {
+  table: {
+    header: {
+      background: {
+        color: 'background',
+      },
+    },
+    footer: {
+      background: {
+        color: 'background-back',
+      },
+    },
+  },
+  dataTable: {
+    pinned: {
+      header: {
+        background: {
+          color: 'brand',
+        },
+      },
+      footer: {
+        background: {
+          color: 'light-2',
+        },
+        extend: ({ theme }) => `color: ${theme.global.colors['dark-2']};`,
+      },
+    },
+  },
+});
+
 const Example = () => (
-  <Grommet theme={grommet} full>
+  <Grommet theme={myTheme} full>
     <Box fill="vertical">
       <DataTable
         columns={pinnedColumns}
@@ -21,9 +52,7 @@ const Example = () => (
         fill
         pin
         background={{
-          header: { color: 'background-front', opacity: 'strong' },
-          footer: { color: 'background-front', opacity: 'strong' },
-          pinned: { color: 'background-front', opacity: 'strong' },
+          pinned: { color: 'light-2' },
         }}
       />
     </Box>
