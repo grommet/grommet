@@ -439,6 +439,19 @@ When supplied, and when at least one column has 'search' enabled,
 function
 ```
 
+**onSelect**
+
+When supplied, causes checkboxes to be added to each row such that
+      the user can indicate which rows should be selected. This function
+      will be called with an array of primary key values, suitable to be
+      passed to the 'select' property. If you are storing select state via
+      a 'useState' hook, you can do something like:
+      '<DataTable select={select} onSelect={setSelect} />'.
+
+```
+function
+```
+
 **onSort**
 
 When supplied, this function will be called with an object
@@ -575,6 +588,21 @@ Row specific background, border, and pad, keyed by primary key value.
 {
 
 }
+```
+
+**select**
+
+When supplied, causes checkboxes to be added to each row to indicate
+      which rows are selected. The values in this array should match
+      the 'primaryKey' or 'columns[].primary' keyed value for the row's data
+      object. If 'onSelect' is provided, the CheckBoxes are enabled
+      and this function can be used to track select changes.
+
+```
+[
+  string
+  number
+]
 ```
 
 **size**
