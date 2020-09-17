@@ -24,7 +24,7 @@ import { normalizeColor } from '../utils/colors';
 import { parseMetricToNum } from '../utils/mixins';
 
 const brandColor = '#E15151';
-const accentColors = ['#20314f', '#519bff', '#4DFFEA', '#A4FF4D'];
+const accentColors = ['#38C18B', '#8F94A6', '#739FFC', '#439ADC'];
 const neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
 const statusColors = {
   critical: '#e35e59',

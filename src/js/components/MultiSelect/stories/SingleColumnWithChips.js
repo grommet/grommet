@@ -3,7 +3,18 @@ import { storiesOf } from '@storybook/react';
 
 import { Box, MultiSelect } from 'mnet-ui-base';
 
-const options = ['Test 1', 'Test 2', 'Test 3', 'Test 4', 'Test 5'];
+const options = [
+  'Test 1',
+  'Test 2',
+  'Test 3',
+  'Test 4',
+  'Test 5',
+  'Test 6',
+  'Test 7',
+  'Test 8',
+  'Test 9',
+  'Test 10',
+];
 
 const Example = () => {
   const [value, setValue] = useState([]);
@@ -16,11 +27,13 @@ const Example = () => {
         onValueChange={nextValue => setValue(nextValue)}
         layout="single-column"
         width="medium"
+        height="medium"
         withOptionChips
       />
     </Box>
-  )
-}
+  );
+};
 
-storiesOf('MultiSelect', module)
-  .add('Single Column with Option Chips', () => <Example />);
+storiesOf('MultiSelect', module).add('Single Column with Option Chips', () => (
+  <Example />
+));
