@@ -670,12 +670,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // },
       // pinned: {
       //   body: {
+      //      background: undefined,
       //      extend: undefined,
       //   },
       //   header: {
+      //      background: undefined,
       //      extend: undefined,
       //   },
       //   footer: {
+      //      background: undefined,
       //      extend: undefined,
       //   },
       // },
