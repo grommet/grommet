@@ -8,14 +8,19 @@ import { Box } from '../Box';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
-import { focusStyle, genericStyles, useForwardedRef } from '../../utils';
+import { focusStyle, genericStyles, unfocusStyle, useForwardedRef } from '../../utils';
 var StyledList = styled.ul.withConfig({
   displayName: "List__StyledList",
   componentId: "sc-130gdqg-0"
-})(["list-style:none;", " padding:0;", " &:focus{", "}"], function (props) {
+})(["list-style:none;", " padding:0;", " &:focus{", "}", "}"], function (props) {
   return !props.margin && 'margin: 0;';
 }, genericStyles, function (props) {
   return props.tabIndex >= 0 && focusStyle({
+    forceOutline: true,
+    skipSvgChildren: true
+  });
+}, function (props) {
+  return props.itemFocus && focusStyle({
     forceOutline: true,
     skipSvgChildren: true
   });
@@ -23,9 +28,12 @@ var StyledList = styled.ul.withConfig({
 var StyledItem = styled(Box).withConfig({
   displayName: "List__StyledItem",
   componentId: "sc-130gdqg-1"
-})(["", ""], function (props) {
+})(["", " &:focus{", "}"], function (props) {
   return props.onClick && "cursor: pointer;";
-});
+}, unfocusStyle({
+  forceOutline: true,
+  skipSvgChildren: true
+}));
 
 var normalize = function normalize(item, index, property) {
   if (typeof property === 'function') {
@@ -59,6 +67,10 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       active = _useState[0],
       setActive = _useState[1];
 
+  var _useState2 = useState(),
+      itemFocus = _useState2[0],
+      setItemFocus = _useState2[1];
+
   return /*#__PURE__*/React.createElement(Keyboard, {
     onEnter: onClickItem && active >= 0 ? function (event) {
       event.persist();
@@ -76,6 +88,7 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
   }, /*#__PURE__*/React.createElement(StyledList, _extends({
     ref: listRef,
     as: as || 'ul',
+    itemFocus: itemFocus,
     tabIndex: onClickItem ? 0 : undefined
   }, rest), /*#__PURE__*/React.createElement(InfiniteScroll, {
     items: data,
@@ -183,14 +196,12 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
           return setActive(undefined);
         },
         onFocus: function onFocus() {
-          setActive(index); // when onmousedown fires, the list item is receiving focus
-          // this puts focus back on the List container to meet WCAG
-          // accessibility guidelines that focus remains on `ul`
-
-          listRef.current.focus();
+          setActive(index);
+          setItemFocus(true);
         },
         onBlur: function onBlur() {
-          return setActive(undefined);
+          setActive(undefined);
+          setItemFocus(false);
         }
       };
     }

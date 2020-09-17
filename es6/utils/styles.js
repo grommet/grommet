@@ -143,19 +143,75 @@ var focusStyles = function focusStyles(props, _temp) {
   }
 
   return ''; // defensive
+};
+
+var unfocusStyles = function unfocusStyles(props, _temp2) {
+  var _ref2 = _temp2 === void 0 ? {} : _temp2,
+      forceOutline = _ref2.forceOutline,
+      justBorder = _ref2.justBorder;
+
+  var focus = props.theme.global.focus;
+
+  if (!focus || forceOutline && !focus.outline) {
+    var color = normalizeColor('focus', props.theme);
+    if (color) return "outline: none;";
+    return ''; // native
+  }
+
+  if (focus.outline && (!focus.border || !justBorder)) {
+    if (typeof focus.outline === 'object') {
+      return "\n        outline-offset: 0px;\n        outline: none;\n      ";
+    }
+
+    return "outline: none;";
+  }
+
+  if (focus.shadow && (!focus.border || !justBorder)) {
+    if (typeof focus.shadow === 'object') {
+      return "\n        outline: none;\n        box-shadow: none;\n      ";
+    }
+
+    return "\n      outline: none;\n      box-shadow: none;\n    ";
+  }
+
+  if (focus.border) {
+    return "\n      outline: none;\n      border-color: none;\n    ";
+  }
+
+  return ''; // defensive
 }; // focus also supports clickable elements inside svg
 
 
-export var focusStyle = function focusStyle(_temp2) {
-  var _ref2 = _temp2 === void 0 ? {} : _temp2,
-      forceOutline = _ref2.forceOutline,
-      justBorder = _ref2.justBorder,
-      skipSvgChildren = _ref2.skipSvgChildren;
+export var focusStyle = function focusStyle(_temp3) {
+  var _ref3 = _temp3 === void 0 ? {} : _temp3,
+      forceOutline = _ref3.forceOutline,
+      justBorder = _ref3.justBorder,
+      skipSvgChildren = _ref3.skipSvgChildren;
 
   return css(["", " ", " ", ""], function (props) {
     return !skipSvgChildren && "\n  > circle,\n  > ellipse,\n  > line,\n  > path,\n  > polygon,\n  > polyline,\n  > rect {\n    " + focusStyles(props) + "\n  }";
   }, function (props) {
     return focusStyles(props, {
+      forceOutline: forceOutline,
+      justBorder: justBorder
+    });
+  }, !forceOutline && "\n  ::-moz-focus-inner {\n    border: 0;\n  }\n  ");
+}; // This is placed next to focusStyle for easy maintainability
+// of code since changes to focusStyle should be reflected in
+// unfocusStyle as well. However, this function is only being used
+// by List for an iterim state. It is not recommended to rely on
+// this function for other components.
+
+export var unfocusStyle = function unfocusStyle(_temp4) {
+  var _ref4 = _temp4 === void 0 ? {} : _temp4,
+      forceOutline = _ref4.forceOutline,
+      justBorder = _ref4.justBorder,
+      skipSvgChildren = _ref4.skipSvgChildren;
+
+  return css(["", " ", " ", ""], function (props) {
+    return !skipSvgChildren && "\n  > circle,\n  > ellipse,\n  > line,\n  > path,\n  > polygon,\n  > polyline,\n  > rect {\n    " + unfocusStyles(props) + "\n  }";
+  }, function (props) {
+    return unfocusStyles(props, {
       forceOutline: forceOutline,
       justBorder: justBorder
     });
