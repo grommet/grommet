@@ -18,10 +18,26 @@ const StyledList = styled.ul`
       props.tabIndex >= 0 &&
       focusStyle({ forceOutline: true, skipSvgChildren: true })}
   }
+  // during the interim state when a user is holding down a click,
+  // the individual list item has focus in the DOM until the click
+  // completes and focus is placed back on the list container.
+  // for visual consistency, we want to keep the focus indicator on the
+  // list container the whole time.
+  ${props =>
+    props.itemFocus &&
+    focusStyle({ forceOutline: true, skipSvgChildren: true })}}
 `;
 
 const StyledItem = styled(Box)`
   ${props => props.onClick && `cursor: pointer;`}
+  // during the interim state when a user is holding down a click,
+  // the individual list item has focus in the DOM until the click
+  // completes and focus is placed back on the list container.
+  // for visual consistency, we are showing focus on the list container
+  // as opposed to the item itself.
+  &:focus {
+    outline: none;
+  }
 `;
 
 const normalize = (item, index, property) => {
@@ -55,6 +71,7 @@ const List = React.forwardRef(
     const listRef = useForwardedRef(ref);
     const theme = useContext(ThemeContext);
     const [active, setActive] = useState();
+    const [itemFocus, setItemFocus] = useState();
 
     return (
       <Keyboard
@@ -89,6 +106,7 @@ const List = React.forwardRef(
         <StyledList
           ref={listRef}
           as={as || 'ul'}
+          itemFocus={itemFocus}
           tabIndex={onClickItem ? 0 : undefined}
           {...rest}
         >
@@ -199,12 +217,12 @@ const List = React.forwardRef(
                   onMouseOut: () => setActive(undefined),
                   onFocus: () => {
                     setActive(index);
-                    // when onmousedown fires, the list item is receiving focus
-                    // this puts focus back on the List container to meet WCAG
-                    // accessibility guidelines that focus remains on `ul`
-                    listRef.current.focus();
+                    setItemFocus(true);
                   },
-                  onBlur: () => setActive(undefined),
+                  onBlur: () => {
+                    setActive(undefined);
+                    setItemFocus(false);
+                  },
                 };
               }
 
