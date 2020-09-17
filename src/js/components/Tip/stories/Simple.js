@@ -48,4 +48,6 @@ const Example = () => {
   );
 };
 
-storiesOf('Tip', module).add('Simple', () => <Example />);
+storiesOf('Tip', module).add('Simple', () => <Example />, {
+  chromatic: { disable: true },
+});

@@ -1,22 +1,30 @@
 import React, { createRef, useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Button, grommet, Grommet, Header, Text, Tip } from 'grommet';
-
 import {
-  Chat,
-  Grommet as GrommetIcon,
-  Notification,
-  User,
-} from 'grommet-icons';
+  Box,
+  Button,
+  grommet,
+  Grommet,
+  Header,
+  Main,
+  Text,
+  Tip,
+} from 'grommet';
+
+import { Grommet as GrommetIcon, User } from 'grommet-icons';
 
 export const Example = () => {
   const [over, setOver] = useState(false);
   const ref = createRef();
+
+  const [overUserIcon, setOverUserIcon] = useState(false);
+  const refUserIcon = createRef();
+
   return (
     <Grommet theme={grommet}>
       <Box>
-        <Header background="light-3" pad={{ horizontal: 'large' }}>
+        <Header background="light-3" pad="small">
           <Button
             onMouseOver={() => setOver(true)}
             onMouseLeave={() => setOver(false)}
@@ -27,31 +35,65 @@ export const Example = () => {
           >
             {over && (
               <Box>
-                <Tip
-                  elevation="large"
-                  targetRef={ref.current}
-                  align={{ left: 'right' }}
-                >
-                  <Box background="red">Shimisun</Box>
+                <Tip targetRef={ref.current}>
+                  <Box
+                    margin="small"
+                    pad="small"
+                    round="medium"
+                    background="light-4"
+                    elevation="medium"
+                  >
+                    the brand logo and product name
+                  </Box>
                 </Tip>
               </Box>
             )}
             <Box direction="row" align="center" gap="medium">
               <GrommetIcon color="brand" />
               <Box direction="row" gap="xsmall">
-                {over && <Text weight="bold">Grommet</Text>}
+                <Text ref={ref} weight="bold">
+                  Grommet
+                </Text>
               </Box>
             </Box>
           </Button>
 
+          {/* User icon tip */}
           <Box direction="row">
-            <Button icon={<Notification />} />
-            <Button icon={<Chat />} />
-            <Button icon={<User />} />
+            <Button
+              onMouseOver={() => setOverUserIcon(true)}
+              onMouseLeave={() => setOverUserIcon(false)}
+              onFocus={() => setOverUserIcon(true)}
+              onBlur={() => setOverUserIcon(false)}
+              ref={refUserIcon}
+              icon={<User />}
+            />
+            {overUserIcon && (
+              <Box>
+                <Tip targetRef={refUserIcon.current} align={{ left: 'right' }}>
+                  <Box
+                    margin="small"
+                    pad="small"
+                    round="medium"
+                    background="accent-1"
+                    elevation="small"
+                  >
+                    Hello! welcome back
+                  </Box>
+                </Tip>
+              </Box>
+            )}
           </Box>
         </Header>
+        <Main overflow="auto" flex fill background="light-4">
+          Hi filler
+          <Box flex />
+          Shimi
+        </Main>
       </Box>
     </Grommet>
   );
 };
-storiesOf('Tip', module).add('Header', () => <Example />);
+storiesOf('Tip', module).add('Header', () => <Example />, {
+  chromatic: { disable: true },
+});

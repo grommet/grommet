@@ -170,4 +170,6 @@ export const SidebarsTips = () => {
   );
 };
 
-storiesOf('Tip', module).add('Themed', () => <SidebarsTips />);
+storiesOf('Tip', module).add('Themed', () => <SidebarsTips />, {
+  chromatic: { disable: true },
+});
