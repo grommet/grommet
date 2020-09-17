@@ -3,10 +3,10 @@ import { describe, PropTypes } from 'react-desc';
 import {
   colorPropType,
   genericProps,
-  getAvailableAtBadge,
   MARGIN_SIZES,
-  themeDocUtils,
-} from '../../utils';
+} from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
+import { themeDocUtils } from '../../utils/themeDocUtils';
 
 export const doc = Text => {
   const DocumentedText = describe(Text)
@@ -101,7 +101,8 @@ adjustments.`,
     truncate: PropTypes.bool
       .description(
         `Restrict the text to a single line and truncate with ellipsis if it
-is too long to all fit.`,
+is too long to all fit. For truncate to be applied, Text needs to be 
+contained within a layout component (such as Box or a generic div).`,
       )
       .defaultValue(false),
     weight: PropTypes.oneOfType([

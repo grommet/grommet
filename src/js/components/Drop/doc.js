@@ -1,7 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 
 import { OVERFLOW_VALUES } from '../Box/doc';
-import { getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge } from '../../utils/mixins';
 
 // if you update values here, make sure to update in Box/doc too.
 const dropOverflowPropTypes = PropTypes.oneOfType([
@@ -54,11 +54,12 @@ export const doc = Drop => {
     restrictFocus: PropTypes.bool
       .description('Whether the drop should control focus.')
       .defaultValue(false),
-    stretch: PropTypes.bool
+    stretch: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['align'])])
       .description(
-        `Whether the drop element should be stretched to at least match the
-      width of the target element. The default is true because
-      that is what most uses of Drop want, like Select and Menu.`,
+        `If set to true the drop element will be stretched to at least match the
+      width of the target element. If set to align the width of the drop element
+      will be restricted to the width of the target element. The default is true
+      because that is what most uses of Drop want, like Select and Menu.`,
       )
       .defaultValue(true),
     target: PropTypes.object.description(

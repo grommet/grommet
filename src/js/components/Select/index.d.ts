@@ -46,7 +46,7 @@ export interface SelectProps {
   searchPlaceholder?: string;
   selected?: number | number[];
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
-  value?: string | JSX.Element | object | (string | object)[];
+  value?: string | JSX.Element | object | (string | number | object)[];
   valueLabel?: React.ReactNode;
   valueKey?:
     | string

@@ -3227,10 +3227,12 @@ string",
       },
       Object {
         "defaultValue": true,
-        "description": "Whether the drop element should be stretched to at least match the
-      width of the target element. The default is true because
-      that is what most uses of Drop want, like Select and Menu.",
-        "format": "boolean",
+        "description": "If set to true the drop element will be stretched to at least match the
+      width of the target element. If set to align the width of the drop element
+      will be restricted to the width of the target element. The default is true
+      because that is what most uses of Drop want, like Select and Menu.",
+        "format": "boolean
+align",
         "name": "stretch",
       },
       Object {
@@ -7043,7 +7045,8 @@ end",
       Object {
         "defaultValue": false,
         "description": "Restrict the text to a single line and truncate with ellipsis if it
-is too long to all fit.",
+is too long to all fit. For truncate to be applied, Text needs to be 
+contained within a layout component (such as Box or a generic div).",
         "format": "boolean",
         "name": "truncate",
       },

@@ -1,6 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { genericProps, getAvailableAtBadge } from '../../utils';
+import { genericProps } from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
 
 const sizes = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
 const sides = ['horizontal', 'vertical', 'top', 'bottom', 'left', 'right'];
@@ -185,6 +186,14 @@ export const doc = DataTable => {
       names and values which are the search text strings. This is typically
       employed so a back-end can be used to search through the data.`,
     ),
+    onSelect: PropTypes.func.description(
+      `When supplied, causes checkboxes to be added to each row such that
+      the user can indicate which rows should be selected. This function
+      will be called with an array of primary key values, suitable to be
+      passed to the 'select' property. If you are storing select state via
+      a 'useState' hook, you can do something like:
+      '<DataTable select={select} onSelect={setSelect} />'.`,
+    ),
     onSort: PropTypes.func.description(
       `When supplied, this function will be called with an object
       with a 'property' property that indicates which property
@@ -232,6 +241,15 @@ export const doc = DataTable => {
       { "primary-key-value": { background: ..., border: ..., pad: ... }},
       where the background, border, and pad accept the same values as
       the same named properties on DataTable.`,
+    ),
+    select: PropTypes.arrayOf(
+      PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    ).description(
+      `When supplied, causes checkboxes to be added to each row to indicate
+      which rows are selected. The values in this array should match
+      the 'primaryKey' or 'columns[].primary' keyed value for the row's data
+      object. If 'onSelect' is provided, the CheckBoxes are enabled
+      and this function can be used to track select changes.`,
     ),
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
