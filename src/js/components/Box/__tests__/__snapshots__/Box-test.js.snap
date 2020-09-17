@@ -1875,6 +1875,13 @@ exports[`Box border 1`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .c18:after {
+    content: '';
+    top: 2.5px;
+  }
+}
+
 <div
   className="c0"
 >

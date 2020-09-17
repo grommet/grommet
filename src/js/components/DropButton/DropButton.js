@@ -31,7 +31,6 @@ const DropButton = forwardRef(
         setShow(open);
       }
     }, [open, show]);
-
     const onDropClose = useCallback(
       event => {
         // if the user has clicked on our Button, don't do anything here,
