@@ -25,25 +25,25 @@ export var doc = function doc(Drop) {
     restrictFocus: PropTypes.bool.description('Whether the drop should control focus.').defaultValue(false),
     stretch: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['align'])]).description("If set to true the drop element will be stretched to at least match the\n      width of the target element. If set to align the width of the drop element\n      will be restricted to the width of the target element. The default is true\n      because that is what most uses of Drop want, like Select and Menu.").defaultValue(true),
     target: PropTypes.object.description("Target where the drop will be aligned to. This should be a React \n      reference.").isRequired,
-    elevation: PropTypes.oneOfType([PropTypes.oneOf(['none', 'xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string]).description("Elevated height of the target, indicated via a drop shadow."),
-    plain: PropTypes.bool.description("Whether the drop element should have no background nor shadow").defaultValue(false),
+    elevation: PropTypes.oneOfType([PropTypes.oneOf(['none', 'xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string]).description("Elevated height of the target, indicated via a drop shadow. \n      Only applicable if the Drop isn't plain."),
+    plain: PropTypes.bool.description("Whether the drop element should have no background nor elevation.").defaultValue(false),
     trapFocus: PropTypes.bool.description("Traps keyboard focus inside of drop.").defaultValue(true)
   };
   return DocumentedDrop;
 };
 export var themeDoc = {
   'drop.maxHeight': {
-    description: 'The max height of the Drop container',
+    description: 'The max height of the Drop container.',
     type: 'string',
     defaultValue: undefined
   },
   'global.drop.background': {
-    description: 'The background color of Drop',
+    description: 'The background color of Drop.',
     type: 'string | { dark: string, light: string }',
     defaultValue: '#ffffff'
   },
   'global.drop.border.radius': {
-    description: 'The corner radius',
+    description: 'The border radius of the Drop container.',
     type: 'string',
     defaultValue: '0px'
   },
@@ -53,12 +53,12 @@ export var themeDoc = {
     defaultValue: undefined
   },
   'global.drop.shadowSize': {
-    description: 'Elevated height of the Drop',
+    description: 'Elevated height of the Drop.',
     type: 'string',
     defaultValue: 'small'
   },
   'global.drop.zIndex': {
-    description: 'The stack order of the Drop',
+    description: 'The stack order of the Drop.',
     type: 'number',
     defaultValue: 20
   }
