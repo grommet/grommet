@@ -5,7 +5,12 @@ import { Box } from '../Box';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
-import { focusStyle, genericStyles, useForwardedRef } from '../../utils';
+import {
+  focusStyle,
+  genericStyles,
+  unfocusStyle,
+  useForwardedRef,
+} from '../../utils';
 
 const StyledList = styled.ul`
   list-style: none;
@@ -36,7 +41,7 @@ const StyledItem = styled(Box)`
   // for visual consistency, we are showing focus on the list container
   // as opposed to the item itself.
   &:focus {
-    outline: none;
+    ${unfocusStyle({ forceOutline: true, skipSvgChildren: true })}
   }
 `;
 
