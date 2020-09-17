@@ -3,10 +3,9 @@ import { storiesOf } from '@storybook/react';
 
 import { grommet, Box, Button, Grommet, Text, Tip } from 'grommet';
 
-
 // TODO light and dark
 // Tooltip on Charts
-
+// animation of tooltip
 const Example = () => {
   const [over, setOver] = useState(false);
   const ref = createRef();

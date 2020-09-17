@@ -5,11 +5,11 @@ import {
   Avatar,
   Button,
   Box,
-  Drop,
   grommet,
   Grommet,
   Nav,
   Stack,
+  Tip,
 } from 'grommet';
 
 import {
@@ -21,8 +21,21 @@ import {
 } from 'grommet-icons';
 
 import { Sidebar } from '../Sidebar';
+import { deepMerge } from '../../../utils';
 
 const src = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
+
+const customTip = deepMerge(grommet, {
+  tip: {
+    container: {
+      animation: 'slideRight',
+      margin: 'xsmall',
+      pad: 'small',
+      background: { color: 'accent-1', opacity: 0.9 },
+      round: { size: 'medium', corner: 'right' },
+    },
+  },
+});
 
 const NotificationIcon = () => (
   <Stack anchor="top-right">
@@ -45,17 +58,9 @@ const NotificationAlert = () => {
         ref={ref}
       />
       {ref.current && over && (
-        <Drop align={{ left: 'right' }} plain target={ref.current}>
-          <Box
-            animation="jiggle"
-            background="accent-1"
-            round={{ corner: 'left' }}
-            pad="small"
-            margin={{ vertical: 'large' }}
-          >
-            New Analytics!
-          </Box>
-        </Drop>
+        <Tip target={ref.current}>
+          <Box animation="jiggle">New Analytics!</Box>
+        </Tip>
       )}
     </Box>
   );
@@ -108,24 +113,16 @@ const SidebarButton = ({ iconName, index }) => {
         )}
       </Button>
       {ref.current && over && (
-        <Drop align={{ left: 'right' }} target={ref.current} plain>
-          <Box
-            animation="slideRight"
-            margin="xsmall"
-            pad="small"
-            background={tooltipColor}
-            round={{ size: 'medium', corner: 'right' }}
-          >
-            {iconName}
-          </Box>
-        </Drop>
+        <Tip target={ref.current}>
+          <Box>{iconName}</Box>
+        </Tip>
       )}
     </Box>
   );
 };
 
 export const TooltipsSidebar = () => (
-  <Grommet theme={grommet} full>
+  <Grommet theme={customTip} full>
     <Box direction="row" height={{ min: '100%' }}>
       <Sidebar
         overflow="auto"

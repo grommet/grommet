@@ -7265,6 +7265,16 @@ number",
     "usage": "import { TextInput } from 'grommet';
 <TextInput id='item' name='item' />",
   },
+  "Tip": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "defaultProps": Object {
+      "children": undefined,
+    },
+    "propTypes": Object {
+      "children": [Function],
+    },
+    "render": [Function],
+  },
   "Video": Object {
     "availableAt": Array [
       Object {
