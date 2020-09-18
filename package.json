@@ -129,7 +129,7 @@
     "regenerator-runtime": "^0.13.1",
     "require-reload": "^0.2.2",
     "simple-git": "^1.95.0",
-    "styled-components": "5.1.1",
+    "styled-components": "^5.1.0",
     "tarball-extract": "^0.0.6",
     "typescript": "^3.6.4",
     "webpack": "^4.39.3",
