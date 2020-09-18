@@ -47,7 +47,10 @@ export const doc = FileInput => {
         removeAll: 'remove all',
       }),
     multiple: PropTypes.bool.description('Whether to allow multiple files'),
-    name: PropTypes.string.description('The name attribute of the input.'),
+    name: PropTypes.string.description(
+      `The name attribute of the input. This is required when used within
+      a Form.`,
+    ),
     onChange: PropTypes.func.description(
       `Function that will be called when one or more files are added the
       input. The file(s) can be found in event.target.files.`,

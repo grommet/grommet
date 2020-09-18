@@ -78,7 +78,8 @@ boolean
 
 **name**
 
-The name attribute of the input.
+The name attribute of the input. This is required when used within
+      a Form.
 
 ```
 string

@@ -3543,7 +3543,8 @@ string",
         "name": "multiple",
       },
       Object {
-        "description": "The name attribute of the input.",
+        "description": "The name attribute of the input. This is required when used within
+      a Form.",
         "format": "string",
         "name": "name",
       },
