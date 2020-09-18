@@ -1518,6 +1518,17 @@ string",
         "name": "bounds",
       },
       Object {
+        "description": "Function that will be called to render each day.
+      It will be passed \`({date, day, isInRange, isSelected})\` where \`date\`
+      is a string containing an ISO8601 date for the day being rendered, \`day\`
+      is a number containing the day of the month being rendered, \`isInRange\`
+      is a boolean indicating whether the date is within a selected range of
+      dates, and \`isSelected\` is a boolean indicating whether this date
+      is selected.",
+        "format": "function",
+        "name": "children",
+      },
+      Object {
         "description": "The selected date in ISO8601 format",
         "format": "string",
         "name": "date",
@@ -1547,6 +1558,12 @@ string",
         "name": "daysOfWeek",
       },
       Object {
+        "defaultValue": false,
+        "description": "Whether the calendar should fill the parent container.",
+        "format": "boolean",
+        "name": "fill",
+      },
+      Object {
         "defaultValue": 0,
         "description": "The first day of the week. 0 for Sunday. 1 for Monday.",
         "format": "0
@@ -1568,10 +1585,10 @@ The function passes the following options:
   }
 \`\`\`
 
-\`onPreviousMonth\` and \`onNextMonth\` are callbacks that will tell the 
+\`onPreviousMonth\` and \`onNextMonth\` are callbacks that will tell the
 calendar to move between months.
-\`previousInBound\` and \`nextInBound\` are booleans that tell, when using 
-\`bounds\`, if the current date is within that range. You can then use that 
+\`previousInBound\` and \`nextInBound\` are booleans that tell, when using
+\`bounds\`, if the current date is within that range. You can then use that
 to disable the previous and next buttons.
 ",
         "format": "function",
@@ -3243,7 +3260,8 @@ align",
         "required": true,
       },
       Object {
-        "description": "Elevated height of the target, indicated via a drop shadow.",
+        "description": "Elevated height of the target, indicated via a drop shadow. 
+      Only applicable if the Drop isn't plain.",
         "format": "none
 xsmall
 small
@@ -3255,7 +3273,7 @@ string",
       },
       Object {
         "defaultValue": false,
-        "description": "Whether the drop element should have no background nor shadow",
+        "description": "Whether the drop element should have no background nor elevation.",
         "format": "boolean",
         "name": "plain",
       },
