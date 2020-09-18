@@ -80,7 +80,7 @@ const InfiniteScroll = ({
       setPageArea(nextPageArea);
       setMultiColumn(nextMultiColumn);
     }
-  }, [items, step, show]);
+  }, [beginPage, endPage, items, step, show]);
 
   // scroll handling
   useEffect(() => {
@@ -177,30 +177,6 @@ const InfiniteScroll = ({
 
       if (nextPageHeights !== pageHeights) setPageHeights(nextPageHeights);
       if (nextPageAreas !== pageAreas) setPageAreas(nextPageAreas);
-
-      console.log(
-        '\n',
-        'scrollBufferTop:',
-        scrollBufferTop,
-        '\n',
-        'scrollBufferBottom:',
-        scrollBufferBottom,
-        '\n',
-        'nextBeginPage',
-        nextBeginPage,
-        '\n',
-        'nextEndPage',
-        nextEndPage,
-        '\n',
-        'pageHeight:',
-        pageHeight,
-        '\n',
-        'pageHeights',
-        pageHeights,
-        '\n',
-        'avgPageHeight',
-        avgPageHeight,
-      );
     };
 
     if (pageHeight && belowMarkerRef.current) {
@@ -267,9 +243,15 @@ const InfiniteScroll = ({
 
   const result = [];
 
+  const avgPageHeight =
+    pageHeights.reduce((totalPageHeights, page) => {
+      return totalPageHeights + page;
+    }, pageHeight) /
+    (pageHeights.length + 1);
+
   if (replace && pageHeight && firstIndex) {
     let marker = (
-      <Box key="above" flex={false} height={`${beginPage * pageHeight}px`} />
+      <Box key="above" flex={false} height={`${beginPage * avgPageHeight}px`} />
     );
     if (renderMarker) {
       // need to give it a key
@@ -342,7 +324,9 @@ const InfiniteScroll = ({
         ref={belowMarkerRef}
         flex={false}
         height={`${
-          replace && pageHeight ? (lastPage - endPage) * pageHeight : 0
+          replace && pageHeight && !onMore
+            ? (lastPage - endPage) * avgPageHeight
+            : 0
         }px`}
       />
     );
@@ -352,21 +336,6 @@ const InfiniteScroll = ({
     }
     result.push(marker);
   }
-
-  console.log(
-    '\n',
-    'result.length: ',
-    result.length,
-    '\n',
-    'beginPage: ',
-    beginPage,
-    '\n',
-    'endPage: ',
-    endPage,
-    '\n',
-    'pageHeight: ',
-    pageHeight,
-  );
 
   return result;
 };

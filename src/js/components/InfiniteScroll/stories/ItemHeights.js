@@ -26,7 +26,7 @@ const ItemHeights = props => {
           {item => (
             <Box
               key={item}
-              height={item <= 50 ? 'xsmall' : 'xxsmall'}
+              height={item <= 25 ? 'xsmall' : 'xxsmall'}
               pad="medium"
               border={{ side: 'bottom' }}
               align="center"
