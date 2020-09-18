@@ -7860,6 +7860,26 @@ Defaults to
 undefined
 \`\`\`
 
+**fileInput.dragOver.extend**
+
+Any additional style for container when dragging over it. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**fileInput.extend**
+
+Any additional style for container. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **fileInput.hover.background**
 
 Background to use when hovering. Expects \`string\`.
@@ -7873,6 +7893,16 @@ undefined
 **fileInput.hover.border**
 
 Background to use when hovering. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**fileInput.hover.extend**
+
+Any additional style for container when hovering over it. Expects \`string | (props) => {}\`.
 
 Defaults to
 

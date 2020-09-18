@@ -21,6 +21,30 @@ const ControlBox = styled(Box)`
     ${focusStyle}
   }
   ${props => props.theme.fileInput && props.theme.fileInput.extend};
+  ${props =>
+    props.hover &&
+    props.theme.fileInput &&
+    props.theme.fileInput.hover &&
+    props.theme.fileInput.hover.extend};
+  ${props =>
+    props.dragOver &&
+    props.theme.fileInput &&
+    props.theme.fileInput.dragOver &&
+    props.theme.fileInput.dragOver.extend};
+`;
+
+const Label = styled(Text)`
+  ${props =>
+    props.theme.fileInput &&
+    props.theme.fileInput.label &&
+    props.theme.fileInput.label.extend};
+`;
+
+const Message = styled(Text)`
+  ${props =>
+    props.theme.fileInput &&
+    props.theme.fileInput.message &&
+    props.theme.fileInput.message.extend};
 `;
 
 const FileInput = forwardRef(
@@ -127,12 +151,14 @@ const FileInput = forwardRef(
             round={mergeTheme('round', 'size')}
             align={files.length ? 'stretch' : 'center'}
             justify="center"
+            hover={hover}
+            dragOver={dragOver}
           >
             {files.length > aggregateThreshold && (
               <Box direction="row" align="center" justify="between">
-                <Text {...theme.fileInput.label}>
+                <Label {...theme.fileInput.label}>
                   {files.length} {messages.files || 'files'}
-                </Text>
+                </Label>
                 <Button
                   a11yTitle={messages.removeAll || 'remove all'}
                   icon={<RemoveIcon />}
@@ -157,7 +183,7 @@ const FileInput = forwardRef(
                   {fileLabel ? (
                     fileLabel(file)
                   ) : (
-                    <Text
+                    <Label
                       weight={
                         theme.global.input.weight ||
                         theme.global.input.font.weight
@@ -165,7 +191,7 @@ const FileInput = forwardRef(
                       {...theme.fileInput.label}
                     >
                       {file.name}
-                    </Text>
+                    </Label>
                   )}
                   <Button
                     a11yTitle={`${messages.remove || 'remove'} ${file.name}`}
@@ -183,12 +209,12 @@ const FileInput = forwardRef(
                 </Box>
               ))}
             {!files.length && (
-              <Text {...theme.fileInput.label} {...theme.fileInput.message}>
+              <Message {...theme.fileInput.message}>
                 {multiple
                   ? messages.dropPromptMultiple || 'Drop files here or'
                   : messages.dropPrompt || 'Drop file here or'}{' '}
                 <Anchor label={messages.browse || 'browse'} />
-              </Text>
+              </Message>
             )}
           </ControlBox>
         </Stack>

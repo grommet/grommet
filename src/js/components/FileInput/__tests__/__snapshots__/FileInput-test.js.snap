@@ -181,7 +181,7 @@ exports[`FileInput accept 1`] = `
         tabindex="0"
       >
         <span
-          class="c7"
+          class="c7 "
         >
           Drop file here or
            
@@ -377,7 +377,7 @@ exports[`FileInput background 1`] = `
         tabindex="0"
       >
         <span
-          class="c7"
+          class="c7 "
         >
           Drop file here or
            
@@ -573,7 +573,7 @@ exports[`FileInput basic 1`] = `
         tabindex="0"
       >
         <span
-          class="c7"
+          class="c7 "
         >
           Drop file here or
            
@@ -769,7 +769,7 @@ exports[`FileInput border 1`] = `
         tabindex="0"
       >
         <span
-          class="c7"
+          class="c7 "
         >
           Drop file here or
            
@@ -966,7 +966,7 @@ exports[`FileInput disabled 1`] = `
         tabindex="0"
       >
         <span
-          class="c7"
+          class="c7 "
         >
           Drop file here or
            
@@ -1162,7 +1162,7 @@ exports[`FileInput margin 1`] = `
         tabindex="0"
       >
         <span
-          class="c7"
+          class="c7 "
         >
           Drop file here or
            
@@ -1358,7 +1358,7 @@ exports[`FileInput messages 1`] = `
         tabindex="0"
       >
         <span
-          class="c7"
+          class="c7 "
         >
           Drop file here or
            
@@ -1555,7 +1555,7 @@ exports[`FileInput multiple 1`] = `
         tabindex="0"
       >
         <span
-          class="c7"
+          class="c7 "
         >
           Drop files here or
            
@@ -1751,7 +1751,7 @@ exports[`FileInput pad 1`] = `
         tabindex="0"
       >
         <span
-          class="c7"
+          class="c7 "
         >
           Drop file here or
            

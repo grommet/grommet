@@ -82,6 +82,16 @@ export const themeDoc = {
     type: 'string',
     defaultValue: undefined,
   },
+  'fileInput.dragOver.extend': {
+    description: 'Any additional style for container when dragging over it.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'fileInput.extend': {
+    description: 'Any additional style for container.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
   'fileInput.hover.background': {
     description: 'Background to use when hovering.',
     type: 'string',
@@ -90,6 +100,11 @@ export const themeDoc = {
   'fileInput.hover.border': {
     description: 'Background to use when hovering.',
     type: 'string',
+    defaultValue: undefined,
+  },
+  'fileInput.hover.extend': {
+    description: 'Any additional style for container when hovering over it.',
+    type: 'string | (props) => {}',
     defaultValue: undefined,
   },
   'fileInput.icons.remove': {

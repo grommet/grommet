@@ -720,11 +720,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         border: {
           color: 'red',
         },
+        // extend: undefined,
       },
       hover: {
         border: {
           color: 'brand',
         },
+        // extend: undefined,
       },
       icons: {
         remove: FormClose,
@@ -732,10 +734,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // pad: {},
       label: {
         margin: 'small',
+        // extend: undefined,
       },
       message: {
         margin: 'small',
+        // extend: undefined,
       },
+      // extend: undefined,
     },
     formField: {
       border: {

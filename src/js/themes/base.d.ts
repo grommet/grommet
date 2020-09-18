@@ -642,16 +642,27 @@ export interface ThemeType {
   fileInput?: {
     background?: BackgroundType;
     border?: BorderType;
+    dragOver?: {
+      background?: BackgroundType;
+      border?: BorderType;
+      pad?: PadType;
+    };
+    extend?: ExtendType;
     hover?: {
       background?: BackgroundType;
       border?: BorderType;
       pad?: PadType;
     };
+    icons?: {
+      remove?: any;
+    };
     label?: {
+      extend?: ExtendType;
       margin?: MarginType;
       weight?: number | string;
     };
     message?: {
+      extend?: ExtendType;
       margin?: MarginType;
       weight?: number | string;
     };
