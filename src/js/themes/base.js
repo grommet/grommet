@@ -716,6 +716,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         size: 'small',
         style: 'dashed',
       },
+      dragOver: {
+        border: {
+          color: 'red',
+        },
+      },
       hover: {
         border: {
           color: 'brand',

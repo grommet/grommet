@@ -7678,6 +7678,16 @@ The id attribute of the input.
 string
 \`\`\`
 
+**fileLabel**
+
+Provides custom rendering of the file. If not provided, the file's
+      name will be shown. It will be passed the browser File object as
+      an argument. For example: (file) => <Text>{file.name}</Text>
+
+\`\`\`
+node
+\`\`\`
+
 **messages**
 
 Custom messages for FileInput. Used for accessibility by screen
@@ -7784,6 +7794,117 @@ Defaults to
 
 \`\`\`
 12px
+\`\`\`
+
+**fileInput.background**
+
+The Box background prop for the container. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**fileInput.border**
+
+The Box border prop for the container. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**fileInput.dragOver.background**
+
+Background to use when dragging over. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**fileInput.dragOver.border**
+
+Background to use when dragging over. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**fileInput.hover.background**
+
+Background to use when hovering. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**fileInput.hover.border**
+
+Background to use when hovering. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**fileInput.icons.remove**
+
+The icon to use for the control to remove a chosen file. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**fileInput.label**
+
+The Text props to use for the file label. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**fileInput.message**
+
+The Text props to use for the message shown before a file
+      has been selected. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**fileInput.pad**
+
+The Box pad prop for the container. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**fileInput.round**
+
+The Box round prop for the container. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 ",
   "Footer": "## Footer

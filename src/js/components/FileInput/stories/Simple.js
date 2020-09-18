@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { Box, Grommet, FileInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Simple = () => {
+const Example = () => {
   return (
     <Grommet full theme={grommet}>
       <Box fill align="center" justify="start" pad="large">
@@ -24,4 +24,4 @@ const Simple = () => {
   );
 };
 
-storiesOf('FileInput', module).add('Simple', () => <Simple />);
+storiesOf('FileInput', module).add('Simple', () => <Example />);

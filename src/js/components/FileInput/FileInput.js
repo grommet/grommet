@@ -30,6 +30,7 @@ const FileInput = forwardRef(
       background,
       border,
       id,
+      fileLabel,
       messages,
       margin,
       multiple,
@@ -45,9 +46,37 @@ const FileInput = forwardRef(
     const formContext = useContext(FormContext);
     const [files, setFiles] = formContext.useFormInput(name, valueProp, []);
     const [hover, setHover] = React.useState();
+    const [dragOver, setDragOver] = React.useState();
     const inputRef = useForwardedRef(ref);
     const controlRef = useRef();
     const RemoveIcon = theme.fileInput.icons.remove;
+    // When multiple and more than this #, don't show the files individually
+    const aggregateThreshold = 10;
+
+    const mergeTheme = (propertyName, defaultKey) => {
+      let result = {};
+      const themeProp = theme.fileInput[propertyName];
+      if (themeProp)
+        if (typeof themeProp !== 'object')
+          if (defaultKey) result[defaultKey] = themeProp;
+          else result = themeProp;
+        else result = { ...themeProp };
+      const hoverThemeProp = theme.fileInput.hover[propertyName];
+      if (hover && hoverThemeProp)
+        if (typeof hoverThemeProp !== 'object')
+          if (defaultKey) result[defaultKey] = hoverThemeProp;
+          else result = hoverThemeProp;
+        else result = { ...result, ...hoverThemeProp };
+      const dragOverThemeProp = theme.fileInput.dragOver[propertyName];
+      if (dragOver && dragOverThemeProp)
+        if (typeof dragOverThemeProp !== 'object')
+          if (defaultKey) result[defaultKey] = dragOverThemeProp;
+          else result = dragOverThemeProp;
+        else result = { ...result, ...dragOverThemeProp };
+      return typeof result === 'object' && Object.keys(result).length === 0
+        ? undefined
+        : result;
+    };
 
     return (
       <Keyboard
@@ -73,8 +102,8 @@ const FileInput = forwardRef(
             name={name}
             multiple={multiple}
             {...rest}
-            onDragOver={() => setHover(true)}
-            onDragLeave={() => setHover(false)}
+            onDragOver={() => setDragOver(true)}
+            onDragLeave={() => setDragOver(false)}
             onChange={event => {
               event.persist();
               const fileList = event.target.files;
@@ -91,26 +120,15 @@ const FileInput = forwardRef(
             ref={controlRef}
             tabIndex={0}
             theme={theme}
-            background={{
-              ...theme.fileInput.background,
-              ...(hover ? theme.fileInput.hover.background : {}),
-            }}
-            border={{
-              ...theme.fileInput.border,
-              ...(hover ? theme.fileInput.hover.border : {}),
-            }}
-            margin={{
-              ...theme.fileInput.margin,
-              ...(hover ? theme.fileInput.hover.margin : {}),
-            }}
-            pad={{
-              ...theme.fileInput.pad,
-              ...(hover ? theme.fileInput.hover.pad : {}),
-            }}
+            background={mergeTheme('background', 'color')}
+            border={mergeTheme('border', 'side')}
+            margin={mergeTheme('margin')}
+            pad={mergeTheme('pad')}
+            round={mergeTheme('round', 'size')}
             align={files.length ? 'stretch' : 'center'}
             justify="center"
           >
-            {files.length > 10 && (
+            {files.length > aggregateThreshold && (
               <Box direction="row" align="center" justify="between">
                 <Text {...theme.fileInput.label}>
                   {files.length} {messages.files || 'files'}
@@ -128,7 +146,7 @@ const FileInput = forwardRef(
               </Box>
             )}
             {files.length > 0 &&
-              files.length <= 10 &&
+              files.length <= aggregateThreshold &&
               files.map((file, index) => (
                 <Box
                   key={file.name}
@@ -136,15 +154,19 @@ const FileInput = forwardRef(
                   align="center"
                   justify="between"
                 >
-                  <Text
-                    weight={
-                      theme.global.input.weight ||
-                      theme.global.input.font.weight
-                    }
-                    {...theme.fileInput.label}
-                  >
-                    {file.name}
-                  </Text>
+                  {fileLabel ? (
+                    fileLabel(file)
+                  ) : (
+                    <Text
+                      weight={
+                        theme.global.input.weight ||
+                        theme.global.input.font.weight
+                      }
+                      {...theme.fileInput.label}
+                    >
+                      {file.name}
+                    </Text>
+                  )}
                   <Button
                     a11yTitle={`${messages.remove || 'remove'} ${file.name}`}
                     icon={<RemoveIcon />}
@@ -161,7 +183,7 @@ const FileInput = forwardRef(
                 </Box>
               ))}
             {!files.length && (
-              <Text {...theme.fileInput.message}>
+              <Text {...theme.fileInput.label} {...theme.fileInput.message}>
                 {multiple
                   ? messages.dropPromptMultiple || 'Drop files here or'
                   : messages.dropPrompt || 'Drop file here or'}{' '}
