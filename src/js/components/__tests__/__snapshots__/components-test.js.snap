@@ -3260,7 +3260,8 @@ align",
         "required": true,
       },
       Object {
-        "description": "Elevated height of the target, indicated via a drop shadow.",
+        "description": "Elevated height of the target, indicated via a drop shadow. 
+      Only applicable if the Drop isn't plain.",
         "format": "none
 xsmall
 small
@@ -3272,7 +3273,7 @@ string",
       },
       Object {
         "defaultValue": false,
-        "description": "Whether the drop element should have no background nor shadow",
+        "description": "Whether the drop element should have no background nor elevation.",
         "format": "boolean",
         "name": "plain",
       },
