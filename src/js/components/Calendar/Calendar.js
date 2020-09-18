@@ -82,15 +82,63 @@ const buildDisplayBounds = (reference, firstDayOfWeek) => {
 
 const millisecondsPerYear = 31557600000;
 
+const CalendarDayButton = props => <Button tabIndex={-1} plain {...props} />;
+
+const CalendarDay = ({
+  children,
+  fill,
+  size,
+  isInRange,
+  isSelected,
+  otherMonth,
+  buttonProps = {},
+}) => {
+  return (
+    <StyledDayContainer sizeProp={size} fillContainer={fill}>
+      <CalendarDayButton fill={fill} {...buttonProps}>
+        <StyledDay
+          inRange={isInRange}
+          otherMonth={otherMonth}
+          isSelected={isSelected}
+          sizeProp={size}
+          fillContainer={fill}
+        >
+          {children}
+        </StyledDay>
+      </CalendarDayButton>
+    </StyledDayContainer>
+  );
+};
+
+const CalendarCustomDay = ({ children, fill, size, buttonProps }) => {
+  if (!buttonProps) {
+    return (
+      <StyledDayContainer sizeProp={size} fillContainer={fill}>
+        {children}
+      </StyledDayContainer>
+    );
+  }
+
+  return (
+    <StyledDayContainer sizeProp={size} fillContainer={fill}>
+      <CalendarDayButton fill={fill} {...buttonProps}>
+        {children}
+      </CalendarDayButton>
+    </StyledDayContainer>
+  );
+};
+
 const Calendar = forwardRef(
   (
     {
       animate = true,
       bounds: validBounds,
+      children,
       date: dateProp,
       dates: datesProp,
       daysOfWeek,
       disabled,
+      fill,
       firstDayOfWeek = 0,
       header,
       locale = 'en-US',
@@ -356,8 +404,12 @@ const Calendar = forwardRef(
       const days = [];
       while (days.length < 7) {
         days.push(
-          <StyledDayContainer key={days.length} sizeProp={size}>
-            <StyledDay otherMonth sizeProp={size}>
+          <StyledDayContainer
+            key={days.length}
+            sizeProp={size}
+            fillContainer={fill}
+          >
+            <StyledDay otherMonth sizeProp={size} fillContainer={fill}>
               {day.toLocaleDateString(locale, { weekday: 'narrow' })}
             </StyledDay>
           </StyledDayContainer>,
@@ -375,7 +427,11 @@ const Calendar = forwardRef(
     while (day.getTime() < displayBounds[1].getTime()) {
       if (day.getDay() === firstDayOfWeek) {
         if (days) {
-          weeks.push(<StyledWeek key={day.getTime()}>{days}</StyledWeek>);
+          weeks.push(
+            <StyledWeek key={day.getTime()} fillContainer={fill}>
+              {days}
+            </StyledWeek>,
+          );
         }
         days = [];
       }
@@ -383,8 +439,12 @@ const Calendar = forwardRef(
       const otherMonth = day.getMonth() !== reference.getMonth();
       if (!showAdjacentDays && otherMonth) {
         days.push(
-          <StyledDayContainer key={day.getTime()} sizeProp={size}>
-            <StyledDay sizeProp={size} />
+          <StyledDayContainer
+            key={day.getTime()}
+            sizeProp={size}
+            fillContainer={fill}
+          >
+            <StyledDay sizeProp={size} fillContainer={fill} />
           </StyledDayContainer>,
         );
       } else {
@@ -410,45 +470,78 @@ const Calendar = forwardRef(
           firstDayInMonth = dateString;
         }
 
-        days.push(
-          <StyledDayContainer key={day.getTime()} sizeProp={size}>
-            <Button
-              a11yTitle={day.toDateString()}
-              plain
-              tabIndex={-1}
-              active={active && active.getTime() === day.getTime()}
-              disabled={dayDisabled && !!dayDisabled}
-              onClick={() => {
-                selectDate(dateString);
-                // Chrome moves the focus indicator to this button. Set
-                // the focus to the grid of days instead.
-                daysRef.current.focus();
+        if (!children) {
+          days.push(
+            <CalendarDay
+              key={day.getTime()}
+              buttonProps={{
+                a11yTitle: day.toDateString(),
+                active: active && active.getTime() === day.getTime(),
+                disabled: dayDisabled && !!dayDisabled,
+                onClick: () => {
+                  selectDate(dateString);
+                  // Chrome moves the focus indicator to this button. Set
+                  // the focus to the grid of days instead.
+                  daysRef.current.focus();
+                },
+                onMouseOver: () => setActive(new Date(dateString)),
+                onMouseOut: () => setActive(undefined),
               }}
-              onMouseOver={() => setActive(new Date(dateString))}
-              onMouseOut={() => setActive(undefined)}
-              onFocus={() => {}}
-              onBlur={() => {}}
+              isInRange={inRange}
+              isSelected={selected}
+              otherMonth={day.getMonth() !== reference.getMonth()}
+              size={size}
+              fill={fill}
             >
-              <StyledDay
-                inRange={inRange}
-                otherMonth={day.getMonth() !== reference.getMonth()}
-                isSelected={selected}
-                sizeProp={size}
-              >
-                {day.getDate()}
-              </StyledDay>
-            </Button>
-          </StyledDayContainer>,
-        );
+              {day.getDate()}
+            </CalendarDay>,
+          );
+        } else {
+          days.push(
+            <CalendarCustomDay
+              key={day.getTime()}
+              buttonProps={
+                onSelect
+                  ? {
+                      a11yTitle: day.toDateString(),
+                      active: active && active.getTime() === day.getTime(),
+                      disabled: dayDisabled && !!dayDisabled,
+                      onClick: () => {
+                        selectDate(dateString);
+                        // Chrome moves the focus indicator to this button. Set
+                        // the focus to the grid of days instead.
+                        daysRef.current.focus();
+                      },
+                      onMouseOver: () => setActive(new Date(dateString)),
+                      onMouseOut: () => setActive(undefined),
+                    }
+                  : null
+              }
+              size={size}
+              fill={fill}
+            >
+              {children({
+                date: day,
+                day: day.getDate(),
+                isInRange: inRange,
+                isSelected: selected,
+              })}
+            </CalendarCustomDay>,
+          );
+        }
       }
 
       day = addDays(day, 1);
     }
-    weeks.push(<StyledWeek key={day.getTime()}>{days}</StyledWeek>);
+    weeks.push(
+      <StyledWeek key={day.getTime()} fillContainer={fill}>
+        {days}
+      </StyledWeek>,
+    );
 
     return (
-      <StyledCalendar ref={ref} sizeProp={size} {...rest}>
-        <Box>
+      <StyledCalendar ref={ref} sizeProp={size} fillContainer={fill} {...rest}>
+        <Box fill={fill}>
           {header
             ? header({
                 date: reference,
@@ -478,6 +571,7 @@ const Calendar = forwardRef(
             <StyledWeeksContainer
               ref={daysRef}
               sizeProp={size}
+              fillContainer={fill}
               tabIndex={0}
               focus={focus}
               onFocus={() => {
@@ -493,7 +587,7 @@ const Calendar = forwardRef(
                 setActive(undefined);
               }}
             >
-              <StyledWeeks slide={slide} sizeProp={size}>
+              <StyledWeeks slide={slide} sizeProp={size} fillContainer={fill}>
                 {weeks}
               </StyledWeeks>
             </StyledWeeksContainer>

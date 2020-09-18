@@ -14,10 +14,12 @@ export interface CalendarProps {
   margin?: MarginType;
   animate?: AnimateType;
   bounds?: string[];
+  children?: (...args: any[]) => any;
   date?: string;
   dates?: (string | string[])[];
   daysOfWeek?: boolean;
   disabled?: (string | string[])[];
+  fill?: boolean;
   firstDayOfWeek?: 0 | 1;
   header?: (...args: any[]) => any;
   locale?: string;
