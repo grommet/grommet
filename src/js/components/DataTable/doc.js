@@ -356,16 +356,16 @@ export const themeDoc = {
     description: `The background color for pinned footer cells. Any valid Box 
     background options apply.`,
     type: `string | 
-               { dark: string, light: string } |
-               { 
-                   color: { dark: string, light: string }, 
-                   dark: bool, 
-                   image: string, 
-                   position: string, 
-                   opacity: bool | string, 
-                   repeat: no-repeat | repeat, 
-                   size: cover | contain | string
-               }`,
+      { dark: string, light: string } |
+      { 
+        color: { dark: string, light: string }, 
+        dark: bool, 
+        image: string, 
+        position: string, 
+        opacity: bool | string, 
+        repeat: no-repeat | repeat, 
+        size: cover | contain | string
+      }`,
     defaultValue: undefined,
   },
   'dataTable.pinned.body.extend': {
@@ -376,9 +376,17 @@ export const themeDoc = {
   'dataTable.pinned.header.background': {
     description: `The background color for pinned footer cells. Any valid Box 
     background options apply.`,
-    type: `string | { color: { dark: string, light: string }, dark: bool | 
-    string, image: string, position: string, opacity: string | { dark: string, 
-    light: string }, repeat: no-repeat | repeat, size: cover | contain }`,
+    type: `string | 
+      { dark: string, light: string } |
+      { 
+        color: { dark: string, light: string }, 
+        dark: bool, 
+        image: string, 
+        position: string, 
+        opacity: bool | string, 
+        repeat: no-repeat | repeat, 
+        size: cover | contain | string
+      }`,
     defaultValue: undefined,
   },
   'dataTable.pinned.header.extend': {
@@ -389,9 +397,17 @@ export const themeDoc = {
   'dataTable.pinned.footer.background': {
     description: `The background color for pinned footer cells. Any valid Box 
     background options apply.`,
-    type: `string | { color: { dark: string, light: string }, dark: bool | 
-    string, image: string, position: string, opacity: string | { dark: string, 
-    light: string }, repeat: no-repeat | repeat, size: cover | contain }`,
+    type: `string | 
+      { dark: string, light: string } |
+      { 
+        color: { dark: string, light: string }, 
+        dark: bool, 
+        image: string, 
+        position: string, 
+        opacity: bool | string, 
+        repeat: no-repeat | repeat, 
+        size: cover | contain | string
+      }`,
     defaultValue: undefined,
   },
   'dataTable.pinned.footer.extend': {

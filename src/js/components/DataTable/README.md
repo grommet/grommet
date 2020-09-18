@@ -803,9 +803,17 @@ undefined
 **dataTable.pinned.body.background**
 
 The background color for pinned footer cells. Any valid Box 
-    background options apply. Expects `string | { color: { dark: string, light: string }, dark: bool | 
-    string, image: string, position: string, opacity: string | { dark: string, 
-    light: string }, repeat: no-repeat | repeat, size: cover | contain }`.
+    background options apply. Expects `string | 
+      { dark: string, light: string } |
+      { 
+        color: { dark: string, light: string }, 
+        dark: bool, 
+        image: string, 
+        position: string, 
+        opacity: bool | string, 
+        repeat: no-repeat | repeat, 
+        size: cover | contain | string
+      }`.
 
 Defaults to
 
@@ -826,9 +834,17 @@ undefined
 **dataTable.pinned.header.background**
 
 The background color for pinned footer cells. Any valid Box 
-    background options apply. Expects `string | { color: { dark: string, light: string }, dark: bool | 
-    string, image: string, position: string, opacity: string | { dark: string, 
-    light: string }, repeat: no-repeat | repeat, size: cover | contain }`.
+    background options apply. Expects `string | 
+      { dark: string, light: string } |
+      { 
+        color: { dark: string, light: string }, 
+        dark: bool, 
+        image: string, 
+        position: string, 
+        opacity: bool | string, 
+        repeat: no-repeat | repeat, 
+        size: cover | contain | string
+      }`.
 
 Defaults to
 
@@ -849,9 +865,17 @@ undefined
 **dataTable.pinned.footer.background**
 
 The background color for pinned footer cells. Any valid Box 
-    background options apply. Expects `string | { color: { dark: string, light: string }, dark: bool | 
-    string, image: string, position: string, opacity: string | { dark: string, 
-    light: string }, repeat: no-repeat | repeat, size: cover | contain }`.
+    background options apply. Expects `string | 
+      { dark: string, light: string } |
+      { 
+        color: { dark: string, light: string }, 
+        dark: bool, 
+        image: string, 
+        position: string, 
+        opacity: bool | string, 
+        repeat: no-repeat | repeat, 
+        size: cover | contain | string
+      }`.
 
 Defaults to
 
