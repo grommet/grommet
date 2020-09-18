@@ -93,6 +93,12 @@ exports[`Menu basic 1`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .c4 {
+    width: 6px;
+  }
+}
+
 <div
   className="c0"
 >
@@ -249,6 +255,12 @@ exports[`Menu close by clicking outside 1`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    width: 6px;
   }
 }
 
@@ -506,6 +518,12 @@ exports[`Menu close by clicking outside 2`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .c8 {
+    width: 6px;
+  }
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c1 {
     display: -webkit-box;
@@ -741,6 +759,12 @@ exports[`Menu close on esc 1`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .c4 {
+    width: 6px;
+  }
+}
+
 <div
   class="c0"
 >
@@ -902,6 +926,12 @@ exports[`Menu close on tab 1`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    width: 6px;
   }
 }
 
@@ -1069,6 +1099,12 @@ exports[`Menu custom a11yTitle 1`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .c4 {
+    width: 6px;
+  }
+}
+
 <div>
   <div
     class="c0"
@@ -1231,6 +1267,12 @@ exports[`Menu custom message 1`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    width: 6px;
   }
 }
 
@@ -1400,6 +1442,12 @@ exports[`Menu custom theme icon color 1`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    width: 6px;
   }
 }
 
@@ -1574,6 +1622,12 @@ exports[`Menu disabled 1`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .c4 {
+    width: 6px;
+  }
+}
+
 <div
   class="c0"
 >
@@ -1736,6 +1790,16 @@ exports[`Menu gap between icon and label 1`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    width: 6px;
   }
 }
 
@@ -2054,6 +2118,12 @@ exports[`Menu justify content 1`] = `
 @media only screen and (max-width:768px) {
   .c10 {
     padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    width: 6px;
   }
 }
 
@@ -2406,6 +2476,12 @@ exports[`Menu navigate through suggestions and select 1`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .c4 {
+    width: 6px;
+  }
+}
+
 <div
   class="c0"
 >
@@ -2570,6 +2646,12 @@ exports[`Menu open and close on click 1`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .c4 {
+    width: 6px;
+  }
+}
+
 <div
   class="c0"
 >
@@ -2626,7 +2708,7 @@ exports[`Menu open and close on click 2`] = `
         Test
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffjnxm"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 bRyuLk"
       />
       <svg
         aria-label="FormDown"
@@ -2859,6 +2941,12 @@ exports[`Menu open and close on click 3`] = `
 @media only screen and (max-width:768px) {
   .c11 {
     padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    width: 6px;
   }
 }
 
@@ -3115,6 +3203,12 @@ exports[`Menu reverse icon and label 1`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+  .c4 {
+    width: 6px;
+  }
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
@@ -3285,6 +3379,12 @@ exports[`Menu select an item 1`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    width: 6px;
   }
 }
 
@@ -3602,6 +3702,12 @@ exports[`Menu tab through menu until it closes 1`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .c4 {
+    width: 6px;
+  }
+}
+
 <div
   class="c0"
 >
@@ -3763,6 +3869,12 @@ exports[`Menu with dropAlign renders 1`] = `
 @media only screen and (max-width:768px) {
   .c2 {
     padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    width: 6px;
   }
 }
 
@@ -4017,6 +4129,12 @@ exports[`Menu with dropAlign renders 2`] = `
 @media only screen and (max-width:768px) {
   .c11 {
     padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    width: 6px;
   }
 }
 

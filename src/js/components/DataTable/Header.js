@@ -5,6 +5,8 @@ import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
+import { CheckBox } from '../CheckBox';
+import { TableCell } from '../TableCell';
 import { Text } from '../Text';
 
 import { Resizer } from './Resizer';
@@ -15,11 +17,13 @@ import {
   StyledDataTableHeader,
   StyledDataTableRow,
 } from './StyledDataTable';
+import { datumValue } from './buildState';
 
 const Header = ({
   background,
   border,
   columns,
+  data,
   fill,
   filtering,
   filters,
@@ -28,10 +32,13 @@ const Header = ({
   onFilter,
   onFiltering,
   onResize,
+  onSelect,
   onSort,
   onToggle,
   pad,
   pin: tablePin,
+  primaryProperty,
+  selected,
   sort,
   widths,
   ...rest
@@ -49,6 +56,28 @@ const Header = ({
             }
             onToggle={onToggle}
           />
+        )}
+
+        {(selected || onSelect) && (
+          <TableCell>
+            {onSelect && (
+              <CheckBox
+                checked={selected.length === data.length}
+                indeterminate={
+                  selected.length > 0 && selected.length < data.length
+                }
+                onChange={() => {
+                  // if any are selected, clear selection
+                  if (selected.length === data.length) onSelect([]);
+                  // if none are selected, select all data
+                  else
+                    onSelect(
+                      data.map(datum => datumValue(datum, primaryProperty)),
+                    );
+                }}
+              />
+            )}
+          </TableCell>
         )}
 
         {columns.map(

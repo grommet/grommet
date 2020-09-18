@@ -25,11 +25,6 @@ exports[`DataTable !primaryKey 1`] = `
   flex-direction: column;
 }
 
-.c4 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c3 {
   margin: 0;
   padding: 0;
@@ -59,6 +54,11 @@ exports[`DataTable !primaryKey 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
+}
+
+.c4 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c2 {
@@ -204,17 +204,6 @@ exports[`DataTable absoluteColumnSizes 1`] = `
   flex-direction: column;
 }
 
-.c4 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c9 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
 .c3 {
   margin: 0;
   padding: 0;
@@ -281,6 +270,17 @@ exports[`DataTable absoluteColumnSizes 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
+}
+
+.c4 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c9 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
 }
 
 .c2 {
@@ -428,17 +428,6 @@ exports[`DataTable aggregate 1`] = `
   flex-direction: column;
 }
 
-.c4 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c8 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
 .c3 {
   margin: 0;
   padding: 0;
@@ -481,6 +470,17 @@ exports[`DataTable aggregate 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
+}
+
+.c4 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c8 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
 }
 
 .c2 {
@@ -656,17 +656,6 @@ exports[`DataTable background 1`] = `
   flex-direction: column;
 }
 
-.c4 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c8 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
 .c3 {
   margin: 0;
   padding: 0;
@@ -770,6 +759,17 @@ exports[`DataTable background 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
+}
+
+.c4 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c8 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
 }
 
 .c2 {
@@ -1197,17 +1197,6 @@ exports[`DataTable basic 1`] = `
   flex-direction: column;
 }
 
-.c4 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c8 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
 .c3 {
   margin: 0;
   padding: 0;
@@ -1237,6 +1226,17 @@ exports[`DataTable basic 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
+}
+
+.c4 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c8 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
 }
 
 .c2 {
@@ -1384,17 +1384,6 @@ exports[`DataTable border 1`] = `
   flex-direction: column;
 }
 
-.c4 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c7 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
 .c3 {
   margin: 0;
   padding: 0;
@@ -1438,6 +1427,17 @@ exports[`DataTable border 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
+}
+
+.c4 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c7 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
 }
 
 .c2 {
@@ -1991,17 +1991,6 @@ exports[`DataTable click 1`] = `
   flex-direction: column;
 }
 
-.c4 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c9 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
 .c3 {
   margin: 0;
   padding: 0;
@@ -2031,6 +2020,17 @@ exports[`DataTable click 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
+}
+
+.c4 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c9 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
 }
 
 .c2 {
@@ -2270,17 +2270,6 @@ exports[`DataTable fill 1`] = `
   flex-direction: column;
 }
 
-.c4 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c8 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
 .c3 {
   margin: 0;
   padding: 0;
@@ -2323,6 +2312,17 @@ exports[`DataTable fill 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
+}
+
+.c4 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c8 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
 }
 
 .c2 {
@@ -2766,17 +2766,6 @@ exports[`DataTable footer 1`] = `
   flex-direction: column;
 }
 
-.c4 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c8 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
 .c3 {
   margin: 0;
   padding: 0;
@@ -2819,6 +2808,17 @@ exports[`DataTable footer 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
+}
+
+.c4 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c8 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
 }
 
 .c2 {
@@ -3096,11 +3096,6 @@ exports[`DataTable groupBy 1`] = `
   border: 0;
 }
 
-.c8 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c3 {
   margin: 0;
   padding: 0;
@@ -3157,6 +3152,11 @@ exports[`DataTable groupBy 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
+}
+
+.c8 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c2 {
@@ -3649,11 +3649,6 @@ exports[`DataTable groupBy expand 1`] = `
   border: 0;
 }
 
-.c8 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c3 {
   margin: 0;
   padding: 0;
@@ -3723,6 +3718,11 @@ exports[`DataTable groupBy expand 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
+}
+
+.c8 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c2 {
@@ -4125,11 +4125,6 @@ exports[`DataTable groupBy property 1`] = `
   border: 0;
 }
 
-.c8 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c3 {
   margin: 0;
   padding: 0;
@@ -4186,6 +4181,11 @@ exports[`DataTable groupBy property 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
+}
+
+.c8 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c2 {
@@ -4633,17 +4633,6 @@ exports[`DataTable onSort 1`] = `
   border: 0;
 }
 
-.c6 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c10 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
 .c3 {
   margin: 0;
   padding: 0;
@@ -4673,6 +4662,17 @@ exports[`DataTable onSort 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c10 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
 }
 
 .c2 {
@@ -4883,6 +4883,12 @@ exports[`DataTable onSort 2`] = `
   width: 6px;
 }
 
+@media only screen and (max-width:768px) {
+  .c0 {
+    width: 3px;
+  }
+}
+
 @media all and (min--moz-device-pixel-ratio:0) {
 
 }
@@ -4922,6 +4928,10 @@ exports[`DataTable onSort 2`] = `
 .c0 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -5091,17 +5101,6 @@ exports[`DataTable pad 1`] = `
   flex-direction: column;
 }
 
-.c4 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c8 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
 .c3 {
   margin: 0;
   padding: 0;
@@ -5186,6 +5185,17 @@ exports[`DataTable pad 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
+}
+
+.c4 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c8 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
 }
 
 .c2 {
@@ -5613,17 +5623,6 @@ exports[`DataTable paths 1`] = `
   flex-direction: column;
 }
 
-.c4 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c8 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
 .c3 {
   margin: 0;
   padding: 0;
@@ -5653,6 +5652,17 @@ exports[`DataTable paths 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
+}
+
+.c4 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c8 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
 }
 
 .c2 {
@@ -5800,17 +5810,6 @@ exports[`DataTable pin 1`] = `
   flex-direction: column;
 }
 
-.c5 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c11 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
 .c3 {
   margin: 0;
   padding: 0;
@@ -5853,6 +5852,17 @@ exports[`DataTable pin 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
+}
+
+.c5 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c11 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
 }
 
 .c2 {
@@ -6317,17 +6327,6 @@ exports[`DataTable primaryKey 1`] = `
   flex-direction: column;
 }
 
-.c4 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c8 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
 .c3 {
   margin: 0;
   padding: 0;
@@ -6357,6 +6356,17 @@ exports[`DataTable primaryKey 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
+}
+
+.c4 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c8 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
 }
 
 .c2 {
@@ -6504,17 +6514,6 @@ exports[`DataTable relativeColumnSizes 1`] = `
   flex-direction: column;
 }
 
-.c4 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c9 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
 .c3 {
   margin: 0;
   padding: 0;
@@ -6581,6 +6580,17 @@ exports[`DataTable relativeColumnSizes 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
+}
+
+.c4 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c9 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
 }
 
 .c2 {
@@ -6746,17 +6756,6 @@ exports[`DataTable replace 1`] = `
   flex: 0 0 auto;
 }
 
-.c4 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c8 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
 .c3 {
   margin: 0;
   padding: 0;
@@ -6786,6 +6785,17 @@ exports[`DataTable replace 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
+}
+
+.c4 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c8 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
 }
 
 .c2 {
@@ -6997,21 +7007,6 @@ exports[`DataTable resizeable 1`] = `
   width: 12px;
 }
 
-.c5 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c12 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
-.c8 {
-  cursor: col-resize;
-}
-
 .c3 {
   margin: 0;
   padding: 0;
@@ -7043,6 +7038,21 @@ exports[`DataTable resizeable 1`] = `
   width: inherit;
 }
 
+.c5 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c12 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c8 {
+  cursor: col-resize;
+}
+
 .c2 {
   border-spacing: 0;
   border-collapse: separate;
@@ -7051,6 +7061,12 @@ exports[`DataTable resizeable 1`] = `
 
 .c9:focus {
   outline: 2px solid #6FFFB0;
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    width: 6px;
+  }
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -7210,17 +7226,6 @@ exports[`DataTable rowProps 1`] = `
   flex-direction: column;
 }
 
-.c4 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c8 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
 .c3 {
   margin: 0;
   padding: 0;
@@ -7275,6 +7280,17 @@ exports[`DataTable rowProps 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
+}
+
+.c4 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c8 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
 }
 
 .c2 {
@@ -7562,17 +7578,6 @@ exports[`DataTable search 1`] = `
   border: 0;
 }
 
-.c5 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c12 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
 .c3 {
   margin: 0;
   padding: 0;
@@ -7604,6 +7609,17 @@ exports[`DataTable search 1`] = `
   width: inherit;
 }
 
+.c5 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c12 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
 .c2 {
   border-spacing: 0;
   border-collapse: separate;
@@ -7612,6 +7628,12 @@ exports[`DataTable search 1`] = `
 
 .c9:focus {
   outline: 2px solid #6FFFB0;
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    width: 6px;
+  }
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -7757,7 +7779,7 @@ exports[`DataTable search 2`] = `
               A
             </span>
             <div
-              class="StyledBox__StyledBoxGap-sc-13pk1d4-1 ffjnxm"
+              class="StyledBox__StyledBoxGap-sc-13pk1d4-1 bRyuLk"
             />
             .c0 {
   display: -webkit-box;
@@ -7850,6 +7872,10 @@ exports[`DataTable search 2`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
 @media all and (min--moz-device-pixel-ratio:0) {
 
 }
@@ -7889,6 +7915,582 @@ exports[`DataTable search 2`] = `
               class="StyledText-sc-1sadyjn-0 fNZrpW"
             >
               []
+            </span>
+          </div>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`DataTable select 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: solid 2px rgba(0,0,0,0.15);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: solid 2px #7D4CDB;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c9 {
+  box-sizing: border-box;
+  stroke-width: 4px;
+  stroke: #7D4CDB;
+  width: 24px;
+  height: 24px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.c4:hover input:not([disabled]) + div,
+.c4:hover input:not([disabled]) + span {
+  border-color: #000000;
+}
+
+.c7 {
+  opacity: 0;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.c7:checked + span > span {
+  left: calc( 48px - 24px );
+  background: #7D4CDB;
+}
+
+.c6 {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.c3 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c12 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c10 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c15 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c2 {
+  border-spacing: 0;
+  border-collapse: separate;
+  height: auto;
+}
+
+.c11:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    border: solid 2px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c13 {
+    border: solid 2px #7D4CDB;
+  }
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+  .c1 {
+    table-layout: fixed;
+  }
+}
+
+<div
+  class="c0"
+>
+  <table
+    class="c1 c2"
+  >
+    <thead
+      class=""
+    >
+      <tr
+        class=""
+      >
+        <td
+          class="c3"
+        >
+          <label
+            class="c4"
+          >
+            <div
+              class="c5 c6"
+            >
+              <input
+                class="c7"
+                type="checkbox"
+              />
+              <div
+                class="c8 "
+              >
+                <svg
+                  class="c9"
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M6,12 L18,12"
+                    fill="none"
+                  />
+                </svg>
+              </div>
+            </div>
+          </label>
+        </td>
+        <th
+          class="c3 "
+          scope="col"
+        >
+          <span
+            class="c10"
+          >
+            A
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="c11"
+    >
+      <tr
+        class=""
+      >
+        <td
+          class="c12"
+        >
+          <label
+            aria-label="unselect alpha"
+            class="c4"
+          >
+            <div
+              class="c5 c6"
+            >
+              <input
+                checked=""
+                class="c7"
+                type="checkbox"
+              />
+              <div
+                class="c13 "
+              >
+                <svg
+                  class="c9"
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M6,11.3 L10.3,16 L18,6.2"
+                    fill="none"
+                  />
+                </svg>
+              </div>
+            </div>
+          </label>
+        </td>
+        <th
+          class="c12 "
+          scope="row"
+        >
+          <div
+            class="c14"
+          >
+            <span
+              class="c15"
+            >
+              alpha
+            </span>
+          </div>
+        </th>
+      </tr>
+      <tr
+        class=""
+      >
+        <td
+          class="c12"
+        >
+          <label
+            aria-label="select beta"
+            class="c4"
+          >
+            <div
+              class="c5 c6"
+            >
+              <input
+                class="c7"
+                type="checkbox"
+              />
+              <div
+                class="c8 "
+              />
+            </div>
+          </label>
+        </td>
+        <th
+          class="c12 "
+          scope="row"
+        >
+          <div
+            class="c14"
+          >
+            <span
+              class="c15"
+            >
+              beta
+            </span>
+          </div>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`DataTable select 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+>
+  <table
+    class="StyledTable-sc-1m3u5g-6 bJymoW StyledDataTable-xrlyjm-0 koBqev"
+  >
+    <thead
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 hOGMbn"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
+      >
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kLEWHI"
+        >
+          <label
+            class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 PHOTu"
+          >
+            <div
+              class="StyledBox-sc-13pk1d4-0 fHyGHh StyledCheckBox-sc-1dbk5ju-6 CBoMo"
+            >
+              <input
+                class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 ljjPfS"
+                type="checkbox"
+              />
+              <div
+                class="StyledBox-sc-13pk1d4-0 KsQmP StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 iEciRS"
+              >
+                .c0 {
+  box-sizing: border-box;
+  stroke-width: 4px;
+  stroke: #7D4CDB;
+  width: 24px;
+  height: 24px;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+
+}
+
+<svg
+                  class="c0"
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M6,11.3 L10.3,16 L18,6.2"
+                    fill="none"
+                  />
+                </svg>
+              </div>
+            </div>
+          </label>
+        </td>
+        <th
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kLEWHI StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          scope="col"
+        >
+          <span
+            class="StyledText-sc-1sadyjn-0 jlATGM"
+          >
+            A
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 bMdIOJ StyledDataTable__StyledDataTableBody-xrlyjm-2 kERYjL"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
+      >
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK"
+        >
+          <label
+            aria-label="unselect alpha"
+            class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 PHOTu"
+          >
+            <div
+              class="StyledBox-sc-13pk1d4-0 fHyGHh StyledCheckBox-sc-1dbk5ju-6 CBoMo"
+            >
+              <input
+                checked=""
+                class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 ljjPfS"
+                type="checkbox"
+              />
+              <div
+                class="StyledBox-sc-13pk1d4-0 KsQmP StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 iEciRS"
+              >
+                <svg
+                  class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 gHRhNW"
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M6,11.3 L10.3,16 L18,6.2"
+                    fill="none"
+                  />
+                </svg>
+              </div>
+            </div>
+          </label>
+        </td>
+        <th
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          scope="row"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 fNZrpW"
+            >
+              alpha
+            </span>
+          </div>
+        </th>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
+      >
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK"
+        >
+          <label
+            aria-label="unselect beta"
+            class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 PHOTu"
+          >
+            <div
+              class="StyledBox-sc-13pk1d4-0 fHyGHh StyledCheckBox-sc-1dbk5ju-6 CBoMo"
+            >
+              <input
+                class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 ljjPfS"
+                type="checkbox"
+              />
+              <div
+                class="StyledBox-sc-13pk1d4-0 KsQmP StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 iEciRS"
+              >
+                .c0 {
+  box-sizing: border-box;
+  stroke-width: 4px;
+  stroke: #7D4CDB;
+  width: 24px;
+  height: 24px;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+
+}
+
+<svg
+                  class="c0"
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M6,11.3 L10.3,16 L18,6.2"
+                    fill="none"
+                  />
+                </svg>
+              </div>
+            </div>
+          </label>
+        </td>
+        <th
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          scope="row"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 fNZrpW"
+            >
+              beta
             </span>
           </div>
         </th>
@@ -8024,17 +8626,6 @@ exports[`DataTable sort 1`] = `
   border: 0;
 }
 
-.c6 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c12 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
 .c3 {
   margin: 0;
   padding: 0;
@@ -8066,6 +8657,17 @@ exports[`DataTable sort 1`] = `
   width: inherit;
 }
 
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c12 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
 .c2 {
   border-spacing: 0;
   border-collapse: separate;
@@ -8074,6 +8676,12 @@ exports[`DataTable sort 1`] = `
 
 .c9:focus {
   outline: 2px solid #6FFFB0;
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    width: 3px;
+  }
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -8377,17 +8985,6 @@ exports[`DataTable sort external 1`] = `
   border: 0;
 }
 
-.c6 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c12 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
 .c3 {
   margin: 0;
   padding: 0;
@@ -8419,6 +9016,17 @@ exports[`DataTable sort external 1`] = `
   width: inherit;
 }
 
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c12 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
 .c2 {
   border-spacing: 0;
   border-collapse: separate;
@@ -8427,6 +9035,12 @@ exports[`DataTable sort external 1`] = `
 
 .c9:focus {
   outline: 2px solid #6FFFB0;
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    width: 3px;
+  }
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -8686,17 +9300,6 @@ exports[`DataTable sortable 1`] = `
   border: 0;
 }
 
-.c6 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c10 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
 .c3 {
   margin: 0;
   padding: 0;
@@ -8726,6 +9329,17 @@ exports[`DataTable sortable 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c10 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
 }
 
 .c2 {
@@ -8936,6 +9550,12 @@ exports[`DataTable sortable 2`] = `
   width: 6px;
 }
 
+@media only screen and (max-width:768px) {
+  .c0 {
+    width: 3px;
+  }
+}
+
 @media all and (min--moz-device-pixel-ratio:0) {
 
 }
@@ -8975,6 +9595,10 @@ exports[`DataTable sortable 2`] = `
 .c0 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
+}
+
+@media only screen and (max-width:768px) {
+
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -9144,17 +9768,6 @@ exports[`DataTable themeColumnSizes 1`] = `
   flex-direction: column;
 }
 
-.c4 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c9 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
 .c3 {
   margin: 0;
   padding: 0;
@@ -9221,6 +9834,17 @@ exports[`DataTable themeColumnSizes 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
+}
+
+.c4 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c9 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
 }
 
 .c2 {
