@@ -36,6 +36,7 @@ class TestInput extends Component {
       theme,
       elevation,
       containerTarget,
+      message = 'this is a test',
       ...rest
     } = this.props;
     const { showDrop } = this.state;
@@ -48,7 +49,7 @@ class TestInput extends Component {
           target={this.inputRef.current}
           {...rest}
         >
-          this is a test
+          {message}
         </Drop>
       );
     }
@@ -117,7 +118,13 @@ describe('Drop', () => {
 
   test('no stretch', () => {
     render(<TestInput stretch={false} />);
+    expectPortal('drop-node').toMatchSnapshot();
+  });
 
+  test('stretch = align', () => {
+    const message =
+      'test test test test test test test test test test test test test test';
+    render(<TestInput stretch="align" message={message} />);
     expectPortal('drop-node').toMatchSnapshot();
   });
 

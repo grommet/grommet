@@ -42,6 +42,10 @@ const InfiniteScroll = ({
   const [pageHeight, setPageHeight] = useState();
   // how much area a page requires
   const [pageArea, setPageArea] = useState();
+  // the heights of each page in our current result set
+  const [pageHeights, setPageHeights] = useState([]);
+  // track the areas of each page in our current result set
+  const [pageAreas, setPageAreas] = useState([]);
   // whether the items are laid out in a grid instead of linearly
   const [multiColumn, setMultiColumn] = useState();
   // what we're waiting for onMore to give us
@@ -76,7 +80,7 @@ const InfiniteScroll = ({
       setPageArea(nextPageArea);
       setMultiColumn(nextMultiColumn);
     }
-  }, [items, pageHeight, step, show]);
+  }, [items, step, show]);
 
   // scroll handling
   useEffect(() => {
@@ -101,7 +105,24 @@ const InfiniteScroll = ({
 
       // Figure out which pages we should make visible based on the scroll
       // window.
+
+      // Scroll window buffers allow for triggering effects ahead of a
+      // user's current scroll position and direction
       const offset = height / 4;
+      const scrollBufferTop = top - offset;
+      const scrollBufferBottom = top + height + offset;
+
+      // Account for page steps containing items of varying heights.
+      const avgPageHeight =
+        pageHeights.reduce((totalPageHeights, page) => {
+          return totalPageHeights + page;
+        }, pageHeight) /
+        (pageHeights.length + 1);
+      const avgPageArea =
+        pageAreas.reduce((totalPageAreas, page) => {
+          return totalPageAreas + page;
+        }, pageArea) /
+        (pageAreas.length + 1);
 
       // nextBeginPage will increment/decrement when using replace, otherwise
       // the beginPage will be at 0.
@@ -111,33 +132,75 @@ const InfiniteScroll = ({
             Math.max(
               0,
               multiColumn
-                ? Math.floor((Math.max(0, top - offset) * width) / pageArea)
-                : Math.floor(Math.max(0, top - offset) / pageHeight),
+                ? Math.floor(
+                    (Math.max(0, scrollBufferTop) * width) / avgPageArea,
+                  )
+                : Math.floor(Math.max(0, scrollBufferTop) / avgPageHeight),
             ),
           )
         : 0;
 
       // Increment/decrement nextEndPage when nearing bounds of current page.
       // Ensure nextEndPage contains show index initially.
-      let scrollPos = (top + height + offset) / pageHeight;
-      const radix = scrollPos % 1.0;
-      scrollPos =
-        scrollPos < lastPage && radix > 0.8
-          ? Math.ceil(scrollPos)
-          : Math.floor(scrollPos);
-
       const nextEndPage = Math.min(
         lastPage,
         Math.max(
           (!replace && endPage) || 0,
           multiColumn
-            ? Math.ceil(((top + height + offset) * width) / pageArea)
-            : scrollPos,
+            ? Math.ceil((scrollBufferBottom * width) / avgPageArea)
+            : Math.floor(scrollBufferBottom / avgPageHeight),
           show ? Math.floor(show / step) : 0,
         ),
       );
       if (nextBeginPage !== beginPage) setBeginPage(nextBeginPage);
       if (nextEndPage !== endPage) setEndPage(nextEndPage);
+
+      // Keep track of page heights as begin/end pages increment/decrement
+      const nextPageHeights = pageHeights;
+      const nextPageAreas = pageAreas;
+
+      if (nextBeginPage > beginPage) {
+        nextPageHeights.shift();
+        nextPageAreas.shift();
+      } else if (nextBeginPage < beginPage) {
+        nextPageHeights.slice(0, 1, pageHeight);
+        nextPageAreas.slice(0, 1, pageArea);
+      }
+
+      if (nextEndPage > endPage) {
+        nextPageHeights.push(pageHeight);
+        nextPageAreas.push(pageArea);
+      } else if (nextEndPage < endPage) {
+        nextPageHeights.pop();
+        nextPageAreas.pop();
+      }
+
+      if (nextPageHeights !== pageHeights) setPageHeights(nextPageHeights);
+      if (nextPageAreas !== pageAreas) setPageAreas(nextPageAreas);
+
+      console.log(
+        '\n',
+        'scrollBufferTop:',
+        scrollBufferTop,
+        '\n',
+        'scrollBufferBottom:',
+        scrollBufferBottom,
+        '\n',
+        'nextBeginPage',
+        nextBeginPage,
+        '\n',
+        'nextEndPage',
+        nextEndPage,
+        '\n',
+        'pageHeight:',
+        pageHeight,
+        '\n',
+        'pageHeights',
+        pageHeights,
+        '\n',
+        'avgPageHeight',
+        avgPageHeight,
+      );
     };
 
     if (pageHeight && belowMarkerRef.current) {
@@ -160,7 +223,9 @@ const InfiniteScroll = ({
     lastPage,
     multiColumn,
     pageArea,
+    pageAreas,
     pageHeight,
+    pageHeights,
     replace,
     show,
     step,
@@ -287,6 +352,21 @@ const InfiniteScroll = ({
     }
     result.push(marker);
   }
+
+  console.log(
+    '\n',
+    'result.length: ',
+    result.length,
+    '\n',
+    'beginPage: ',
+    beginPage,
+    '\n',
+    'endPage: ',
+    endPage,
+    '\n',
+    'pageHeight: ',
+    pageHeight,
+  );
 
   return result;
 };
