@@ -32,8 +32,7 @@ var RadioButtonGroup = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) 
       _onChange = _ref.onChange,
       optionsProp = _ref.options,
       valueProp = _ref.value,
-      _ref$gap = _ref.gap,
-      gap = _ref$gap === void 0 ? 'small' : _ref$gap,
+      gap = _ref.gap,
       rest = _objectWithoutPropertiesLoose(_ref, ["children", "disabled", "name", "onChange", "options", "value", "gap"]);
 
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
@@ -128,9 +127,10 @@ var RadioButtonGroup = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) 
     onLeft: focus ? onPrevious : undefined,
     onRight: focus ? onNext : undefined
   }, /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
-    ref: ref,
-    gap: gap
-  }, theme.radioButtonGroup.container, rest), options.map(function (_ref2, index) {
+    ref: ref
+  }, theme.radioButtonGroup.container, {
+    gap: gap || (theme.radioButtonGroup.container && theme.radioButtonGroup.container.gap ? theme.radioButtonGroup.container.gap : 'small')
+  }, rest), options.map(function (_ref2, index) {
     var optionDisabled = _ref2.disabled,
         id = _ref2.id,
         label = _ref2.label,
