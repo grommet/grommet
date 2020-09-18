@@ -25,9 +25,9 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 var headingPadMap = {
   small: 'xsmall',
@@ -74,28 +74,82 @@ var buildDisplayBounds = function buildDisplayBounds(reference, firstDayOfWeek) 
 };
 
 var millisecondsPerYear = 31557600000;
-var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
-  var _ref$animate = _ref.animate,
-      animate = _ref$animate === void 0 ? true : _ref$animate,
-      validBounds = _ref.bounds,
-      dateProp = _ref.date,
-      datesProp = _ref.dates,
-      daysOfWeek = _ref.daysOfWeek,
-      disabled = _ref.disabled,
-      _ref$firstDayOfWeek = _ref.firstDayOfWeek,
-      firstDayOfWeek = _ref$firstDayOfWeek === void 0 ? 0 : _ref$firstDayOfWeek,
-      header = _ref.header,
-      _ref$locale = _ref.locale,
-      locale = _ref$locale === void 0 ? 'en-US' : _ref$locale,
-      onReference = _ref.onReference,
-      onSelect = _ref.onSelect,
-      range = _ref.range,
-      referenceProp = _ref.reference,
-      _ref$showAdjacentDays = _ref.showAdjacentDays,
-      showAdjacentDays = _ref$showAdjacentDays === void 0 ? true : _ref$showAdjacentDays,
-      _ref$size = _ref.size,
-      size = _ref$size === void 0 ? 'medium' : _ref$size,
-      rest = _objectWithoutPropertiesLoose(_ref, ["animate", "bounds", "date", "dates", "daysOfWeek", "disabled", "firstDayOfWeek", "header", "locale", "onReference", "onSelect", "range", "reference", "showAdjacentDays", "size"]);
+
+var CalendarDayButton = function CalendarDayButton(props) {
+  return /*#__PURE__*/_react["default"].createElement(_Button.Button, _extends({
+    tabIndex: -1,
+    plain: true
+  }, props));
+};
+
+var CalendarDay = function CalendarDay(_ref) {
+  var children = _ref.children,
+      fill = _ref.fill,
+      size = _ref.size,
+      isInRange = _ref.isInRange,
+      isSelected = _ref.isSelected,
+      otherMonth = _ref.otherMonth,
+      _ref$buttonProps = _ref.buttonProps,
+      buttonProps = _ref$buttonProps === void 0 ? {} : _ref$buttonProps;
+  return /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDayContainer, {
+    sizeProp: size,
+    fillContainer: fill
+  }, /*#__PURE__*/_react["default"].createElement(CalendarDayButton, _extends({
+    fill: fill
+  }, buttonProps), /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDay, {
+    inRange: isInRange,
+    otherMonth: otherMonth,
+    isSelected: isSelected,
+    sizeProp: size,
+    fillContainer: fill
+  }, children)));
+};
+
+var CalendarCustomDay = function CalendarCustomDay(_ref2) {
+  var children = _ref2.children,
+      fill = _ref2.fill,
+      size = _ref2.size,
+      buttonProps = _ref2.buttonProps;
+
+  if (!buttonProps) {
+    return /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDayContainer, {
+      sizeProp: size,
+      fillContainer: fill
+    }, children);
+  }
+
+  return /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDayContainer, {
+    sizeProp: size,
+    fillContainer: fill
+  }, /*#__PURE__*/_react["default"].createElement(CalendarDayButton, _extends({
+    fill: fill
+  }, buttonProps), children));
+};
+
+var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
+  var _ref3$animate = _ref3.animate,
+      animate = _ref3$animate === void 0 ? true : _ref3$animate,
+      validBounds = _ref3.bounds,
+      children = _ref3.children,
+      dateProp = _ref3.date,
+      datesProp = _ref3.dates,
+      daysOfWeek = _ref3.daysOfWeek,
+      disabled = _ref3.disabled,
+      fill = _ref3.fill,
+      _ref3$firstDayOfWeek = _ref3.firstDayOfWeek,
+      firstDayOfWeek = _ref3$firstDayOfWeek === void 0 ? 0 : _ref3$firstDayOfWeek,
+      header = _ref3.header,
+      _ref3$locale = _ref3.locale,
+      locale = _ref3$locale === void 0 ? 'en-US' : _ref3$locale,
+      onReference = _ref3.onReference,
+      onSelect = _ref3.onSelect,
+      range = _ref3.range,
+      referenceProp = _ref3.reference,
+      _ref3$showAdjacentDay = _ref3.showAdjacentDays,
+      showAdjacentDays = _ref3$showAdjacentDay === void 0 ? true : _ref3$showAdjacentDay,
+      _ref3$size = _ref3.size,
+      size = _ref3$size === void 0 ? 'medium' : _ref3$size,
+      rest = _objectWithoutPropertiesLoose(_ref3, ["animate", "bounds", "children", "date", "dates", "daysOfWeek", "disabled", "fill", "firstDayOfWeek", "header", "locale", "onReference", "onSelect", "range", "reference", "showAdjacentDays", "size"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme; // set date when caller changes it, allows us to change it internally too
 
@@ -360,10 +414,12 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     while (days.length < 7) {
       days.push( /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDayContainer, {
         key: days.length,
-        sizeProp: size
+        sizeProp: size,
+        fillContainer: fill
       }, /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDay, {
         otherMonth: true,
-        sizeProp: size
+        sizeProp: size,
+        fillContainer: fill
       }, day.toLocaleDateString(locale, {
         weekday: 'narrow'
       }))));
@@ -382,7 +438,8 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     if (day.getDay() === firstDayOfWeek) {
       if (days) {
         weeks.push( /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledWeek, {
-          key: day.getTime()
+          key: day.getTime(),
+          fillContainer: fill
         }, days));
       }
 
@@ -394,9 +451,11 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     if (!showAdjacentDays && otherMonth) {
       days.push( /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDayContainer, {
         key: day.getTime(),
-        sizeProp: size
+        sizeProp: size,
+        fillContainer: fill
       }, /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDay, {
-        sizeProp: size
+        sizeProp: size,
+        fillContainer: fill
       })));
     } else {
       (function () {
@@ -418,35 +477,61 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
           firstDayInMonth = dateString;
         }
 
-        days.push( /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDayContainer, {
-          key: day.getTime(),
-          sizeProp: size
-        }, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
-          a11yTitle: day.toDateString(),
-          plain: true,
-          tabIndex: -1,
-          active: active && active.getTime() === day.getTime(),
-          disabled: dayDisabled && !!dayDisabled,
-          onClick: function onClick() {
-            selectDate(dateString); // Chrome moves the focus indicator to this button. Set
-            // the focus to the grid of days instead.
+        if (!children) {
+          days.push( /*#__PURE__*/_react["default"].createElement(CalendarDay, {
+            key: day.getTime(),
+            buttonProps: {
+              a11yTitle: day.toDateString(),
+              active: active && active.getTime() === day.getTime(),
+              disabled: dayDisabled && !!dayDisabled,
+              onClick: function onClick() {
+                selectDate(dateString); // Chrome moves the focus indicator to this button. Set
+                // the focus to the grid of days instead.
 
-            daysRef.current.focus();
-          },
-          onMouseOver: function onMouseOver() {
-            return setActive(new Date(dateString));
-          },
-          onMouseOut: function onMouseOut() {
-            return setActive(undefined);
-          },
-          onFocus: function onFocus() {},
-          onBlur: function onBlur() {}
-        }, /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledDay, {
-          inRange: inRange,
-          otherMonth: day.getMonth() !== reference.getMonth(),
-          isSelected: selected,
-          sizeProp: size
-        }, day.getDate()))));
+                daysRef.current.focus();
+              },
+              onMouseOver: function onMouseOver() {
+                return setActive(new Date(dateString));
+              },
+              onMouseOut: function onMouseOut() {
+                return setActive(undefined);
+              }
+            },
+            isInRange: inRange,
+            isSelected: selected,
+            otherMonth: day.getMonth() !== reference.getMonth(),
+            size: size,
+            fill: fill
+          }, day.getDate()));
+        } else {
+          days.push( /*#__PURE__*/_react["default"].createElement(CalendarCustomDay, {
+            key: day.getTime(),
+            buttonProps: onSelect ? {
+              a11yTitle: day.toDateString(),
+              active: active && active.getTime() === day.getTime(),
+              disabled: dayDisabled && !!dayDisabled,
+              onClick: function onClick() {
+                selectDate(dateString); // Chrome moves the focus indicator to this button. Set
+                // the focus to the grid of days instead.
+
+                daysRef.current.focus();
+              },
+              onMouseOver: function onMouseOver() {
+                return setActive(new Date(dateString));
+              },
+              onMouseOut: function onMouseOut() {
+                return setActive(undefined);
+              }
+            } : null,
+            size: size,
+            fill: fill
+          }, children({
+            date: day,
+            day: day.getDate(),
+            isInRange: inRange,
+            isSelected: selected
+          })));
+        }
       })();
     }
 
@@ -454,12 +539,16 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   }
 
   weeks.push( /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledWeek, {
-    key: day.getTime()
+    key: day.getTime(),
+    fillContainer: fill
   }, days));
   return /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledCalendar, _extends({
     ref: ref,
-    sizeProp: size
-  }, rest), /*#__PURE__*/_react["default"].createElement(_Box.Box, null, header ? header({
+    sizeProp: size,
+    fillContainer: fill
+  }, rest), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+    fill: fill
+  }, header ? header({
     date: reference,
     locale: locale,
     onPreviousMonth: function onPreviousMonth() {
@@ -495,6 +584,7 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   }, /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledWeeksContainer, {
     ref: daysRef,
     sizeProp: size,
+    fillContainer: fill,
     tabIndex: 0,
     focus: focus,
     onFocus: function onFocus() {
@@ -512,7 +602,8 @@ var Calendar = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     }
   }, /*#__PURE__*/_react["default"].createElement(_StyledCalendar.StyledWeeks, {
     slide: slide,
-    sizeProp: size
+    sizeProp: size,
+    fillContainer: fill
   }, weeks)))));
 });
 Calendar.displayName = 'Calendar';
