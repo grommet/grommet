@@ -263,6 +263,30 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('aggregate with nested object', () => {
+    const { container, getByText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            {
+              property: 'obj.value',
+              header: 'object',
+              aggregate: 'sum',
+              footer: { aggregate: true },
+            },
+          ]}
+          data={[
+            { a: 'one', obj: { value: 1 } },
+            { a: 'two', obj: { value: 2 } },
+          ]}
+        />
+      </Grommet>,
+    );
+    expect(getByText('3')).toBeTruthy();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('groupBy', () => {
     const { container, getByText } = render(
       <Grommet>
