@@ -352,9 +352,12 @@ export const themeDoc = {
     type: 'React.Element',
     defaultValue: undefined,
   },
-  'dataTable.pinned.body.background.color': {
-    description: 'The background color for pinned body cells.',
-    type: 'string | { dark: string, light: string }',
+  'dataTable.pinned.body.background': {
+    description: `The background color for pinned footer cells. Any valid Box 
+    background options apply.`,
+    type: `string | { color: { dark: string, light: string }, dark: bool | 
+    string, image: string, position: string, opacity: string | { dark: string, 
+    light: string }, repeat: no-repeat | repeat, size: cover | contain }`,
     defaultValue: undefined,
   },
   'dataTable.pinned.body.extend': {
@@ -362,9 +365,12 @@ export const themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
-  'dataTable.pinned.header.background.color': {
-    description: 'The background color for pinned header cells.',
-    type: 'string | { dark: string, light: string }',
+  'dataTable.pinned.header.background': {
+    description: `The background color for pinned footer cells. Any valid Box 
+    background options apply.`,
+    type: `string | { color: { dark: string, light: string }, dark: bool | 
+    string, image: string, position: string, opacity: string | { dark: string, 
+    light: string }, repeat: no-repeat | repeat, size: cover | contain }`,
     defaultValue: undefined,
   },
   'dataTable.pinned.header.extend': {

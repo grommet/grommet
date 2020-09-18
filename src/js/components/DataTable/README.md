@@ -800,9 +800,12 @@ Defaults to
 undefined
 ```
 
-**dataTable.pinned.body.background.color**
+**dataTable.pinned.body.background**
 
-The background color for pinned body cells. Expects `string | { dark: string, light: string }`.
+The background color for pinned footer cells. Any valid Box 
+    background options apply. Expects `string | { color: { dark: string, light: string }, dark: bool | 
+    string, image: string, position: string, opacity: string | { dark: string, 
+    light: string }, repeat: no-repeat | repeat, size: cover | contain }`.
 
 Defaults to
 
@@ -820,9 +823,12 @@ Defaults to
 undefined
 ```
 
-**dataTable.pinned.header.background.color**
+**dataTable.pinned.header.background**
 
-The background color for pinned header cells. Expects `string | { dark: string, light: string }`.
+The background color for pinned footer cells. Any valid Box 
+    background options apply. Expects `string | { color: { dark: string, light: string }, dark: bool | 
+    string, image: string, position: string, opacity: string | { dark: string, 
+    light: string }, repeat: no-repeat | repeat, size: cover | contain }`.
 
 Defaults to
 
