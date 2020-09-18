@@ -6725,9 +6725,12 @@ Defaults to
 undefined
 \`\`\`
 
-**dataTable.pinned.footer.background.color**
+**dataTable.pinned.footer.background**
 
-The background color for pinned footer cells. Expects \`string | { dark: string, light: string }\`.
+The background color for pinned footer cells. Any valid Box 
+    background options apply. Expects \`string | { color: { dark: string, light: string }, dark: bool | 
+    string, image: string, position: string, opacity: string | { dark: string, 
+    light: string }, repeat: no-repeat | repeat, size: cover | contain }\`.
 
 Defaults to
 

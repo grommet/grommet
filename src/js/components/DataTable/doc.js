@@ -372,9 +372,12 @@ export const themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
-  'dataTable.pinned.footer.background.color': {
-    description: 'The background color for pinned footer cells.',
-    type: 'string | { dark: string, light: string }',
+  'dataTable.pinned.footer.background': {
+    description: `The background color for pinned footer cells. Any valid Box 
+    background options apply.`,
+    type: `string | { color: { dark: string, light: string }, dark: bool | 
+    string, image: string, position: string, opacity: string | { dark: string, 
+    light: string }, repeat: no-repeat | repeat, size: cover | contain }`,
     defaultValue: undefined,
   },
   'dataTable.pinned.footer.extend': {
