@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
 
-import { PropTypes } from 'react-desc';
 import {
   disabledStyle,
   getInputPadBySide,
@@ -18,11 +17,6 @@ const getPlainStyle = plain => {
   }
   return plain && plainInputStyle;
 };
-
-const plainPropType = PropTypes.oneOfType([
-  PropTypes.bool,
-  PropTypes.oneOf(['full']),
-]);
 
 const StyledTextInput = styled.input`
   ${inputStyle}
@@ -111,5 +105,4 @@ export {
   StyledPlaceholder,
   StyledIcon,
   StyledSuggestions,
-  plainPropType,
 };
