@@ -47,7 +47,7 @@ const Avatar = ({
   if (typeof children === 'string') {
     return (
       <StyledAvatar {...avatarProps} {...rest}>
-        <StyledAvatarText alignSelf="center" size="large">
+        <StyledAvatarText alignSelf="center" size={size}>
           {children}
         </StyledAvatarText>
       </StyledAvatar>
