@@ -21,4 +21,6 @@ const All = () => (
   </Grommet>
 );
 
-storiesOf('Paragraph', module).add('Theme', () => <All />);
+storiesOf('Paragraph', module).add('Theme', () => <All />, {
+  chromatic: { disable: true },
+});
