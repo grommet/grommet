@@ -13,9 +13,7 @@ import { defaultProps } from '../../default-props';
 const getPlainStyle = plain => {
   if (plain === 'full') {
     return css`
-      outline: none;
-      border: none;
-      padding: 0;
+      ${plainInputStyle} padding: 0;
     `;
   }
   return plain && plainInputStyle;
