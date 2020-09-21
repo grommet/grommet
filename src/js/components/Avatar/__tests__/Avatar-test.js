@@ -101,4 +101,19 @@ describe('Avatar', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  test('text renders with different sizes', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Avatar background="dark-2" textSize="small">
+          R
+        </Avatar>
+        <Avatar background="brand" textSize="xlarge">
+          SY
+        </Avatar>
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

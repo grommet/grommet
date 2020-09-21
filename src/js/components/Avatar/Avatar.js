@@ -12,6 +12,7 @@ const Avatar = ({
   round = 'full',
   size = 'medium',
   src,
+  textSize = 'large',
   width, // for warning check and discarding the value
   ...rest
 }) => {
@@ -47,7 +48,7 @@ const Avatar = ({
   if (typeof children === 'string') {
     return (
       <StyledAvatar {...avatarProps} {...rest}>
-        <StyledAvatarText alignSelf="center" size={size}>
+        <StyledAvatarText alignSelf="center" size={textSize}>
           {children}
         </StyledAvatarText>
       </StyledAvatar>
