@@ -236,7 +236,7 @@ Defaults to
 
 **text.font.family**
 
-The font to use for Text. Expects `object`.
+The font family to use for Text. Expects `string`.
 
 Defaults to
 

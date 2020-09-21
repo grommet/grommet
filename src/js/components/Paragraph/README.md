@@ -221,7 +221,7 @@ Defaults to
 
 **paragraph.font.family**
 
-The font to use for Paragraph. Expects `object`.
+The font family to use for Paragraph. Expects `string`.
 
 Defaults to
 

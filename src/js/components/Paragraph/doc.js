@@ -73,8 +73,8 @@ export const themeDoc = {
     }`,
   },
   'paragraph.font.family': {
-    description: 'The font to use for Paragraph.',
-    type: 'object',
+    description: 'The font family to use for Paragraph.',
+    type: 'string',
     defaultValue: undefined,
   },
   'paragraph.textAlign': {

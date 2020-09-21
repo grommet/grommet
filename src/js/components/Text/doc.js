@@ -131,8 +131,8 @@ export const themeDoc = {
     defaultValue: "{ dark: '#f8f8f8', light: '#444444' }",
   },
   'text.font.family': {
-    description: 'The font to use for Text.',
-    type: 'object',
+    description: 'The font family to use for Text.',
+    type: 'string',
     defaultValue: undefined,
   },
   text: {
