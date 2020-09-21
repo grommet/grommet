@@ -31,6 +31,18 @@ Specifies a URL string for an avatar image.
 ```
 string
 ```
+
+**textSize**
+
+Controls text size inside Avatar. Defaults to `large`.
+
+```
+xsmall
+small
+medium
+large
+xlarge
+```
   
 ## Intrinsic element
 
