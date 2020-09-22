@@ -358,7 +358,7 @@ export const themeDoc = {
     type: `string | 
       { dark: string, light: string } |
       { 
-        color: { dark: string, light: string }, 
+        color: { dark: string, light: string } | string, 
         dark: bool, 
         image: string, 
         position: string, 
