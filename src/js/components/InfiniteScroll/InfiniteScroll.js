@@ -126,19 +126,22 @@ const InfiniteScroll = ({
 
       // nextBeginPage will increment/decrement when using replace, otherwise
       // the beginPage will be at 0.
-      const nextBeginPage = replace
-        ? Math.min(
-            lastPage,
-            Math.max(
-              0,
-              multiColumn
-                ? Math.floor(
-                    (Math.max(0, scrollBufferTop) * width) / avgPageArea,
-                  )
-                : Math.floor(Math.max(0, scrollBufferTop) / avgPageHeight),
-            ),
-          )
-        : 0;
+      // If onMore is present nextBeginPage should be 0,
+      // as there is no way of knowing lastPage.
+      const nextBeginPage =
+        replace && !onMore
+          ? Math.min(
+              lastPage,
+              Math.max(
+                0,
+                multiColumn
+                  ? Math.floor(
+                      (Math.max(0, scrollBufferTop) * width) / avgPageArea,
+                    )
+                  : Math.floor(Math.max(0, scrollBufferTop) / avgPageHeight),
+              ),
+            )
+          : 0;
 
       // Increment/decrement nextEndPage when nearing bounds of current page.
       // Ensure nextEndPage contains show index initially.
@@ -159,20 +162,9 @@ const InfiniteScroll = ({
       const nextPageHeights = pageHeights;
       const nextPageAreas = pageAreas;
 
-      if (nextBeginPage > beginPage) {
-        nextPageHeights.shift();
-        nextPageAreas.shift();
-      } else if (nextBeginPage < beginPage) {
-        nextPageHeights.slice(0, 1, pageHeight);
-        nextPageAreas.slice(0, 1, pageArea);
-      }
-
       if (nextEndPage > endPage) {
         nextPageHeights.push(pageHeight);
         nextPageAreas.push(pageArea);
-      } else if (nextEndPage < endPage) {
-        nextPageHeights.pop();
-        nextPageAreas.pop();
       }
 
       if (nextPageHeights !== pageHeights) setPageHeights(nextPageHeights);
@@ -198,6 +190,7 @@ const InfiniteScroll = ({
     endPage,
     lastPage,
     multiColumn,
+    onMore,
     pageArea,
     pageAreas,
     pageHeight,
@@ -323,6 +316,8 @@ const InfiniteScroll = ({
         key="below"
         ref={belowMarkerRef}
         flex={false}
+        // It is not possible to know the lastPage when onMore is present
+        // to make the height calculation, so height must be 0px.
         height={`${
           replace && pageHeight && !onMore
             ? (lastPage - endPage) * avgPageHeight
@@ -330,6 +325,7 @@ const InfiniteScroll = ({
         }px`}
       />
     );
+
     if (renderMarker) {
       // need to give it a key
       marker = React.cloneElement(renderMarker(marker), { key: 'below' });
