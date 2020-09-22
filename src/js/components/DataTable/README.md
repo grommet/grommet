@@ -802,11 +802,10 @@ undefined
 
 **dataTable.pinned.body.background**
 
-The background color for pinned footer cells. Any valid Box 
-    background options apply. Expects `string | 
+Any valid Box background options apply. Expects `string | 
       { dark: string, light: string } |
       { 
-        color: { dark: string, light: string }, 
+        color: { dark: string, light: string } | string, 
         dark: bool, 
         image: string, 
         position: string, 
@@ -833,11 +832,10 @@ undefined
 
 **dataTable.pinned.header.background**
 
-The background color for pinned footer cells. Any valid Box 
-    background options apply. Expects `string | 
+Any valid Box background options apply. Expects `string | 
       { dark: string, light: string } |
       { 
-        color: { dark: string, light: string }, 
+        color: { dark: string, light: string } | string, 
         dark: bool, 
         image: string, 
         position: string, 
@@ -864,11 +862,10 @@ undefined
 
 **dataTable.pinned.footer.background**
 
-The background color for pinned footer cells. Any valid Box 
-    background options apply. Expects `string | 
+Any valid Box background options apply. Expects `string | 
       { dark: string, light: string } |
       { 
-        color: { dark: string, light: string }, 
+        color: { dark: string, light: string } | string, 
         dark: bool, 
         image: string, 
         position: string, 

@@ -353,8 +353,7 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'dataTable.pinned.body.background': {
-    description: `The background color for pinned footer cells. Any valid Box 
-    background options apply.`,
+    description: 'Any valid Box background options apply.',
     type: `string | 
       { dark: string, light: string } |
       { 
@@ -374,12 +373,11 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'dataTable.pinned.header.background': {
-    description: `The background color for pinned footer cells. Any valid Box 
-    background options apply.`,
+    description: 'Any valid Box background options apply.',
     type: `string | 
       { dark: string, light: string } |
       { 
-        color: { dark: string, light: string }, 
+        color: { dark: string, light: string } | string, 
         dark: bool, 
         image: string, 
         position: string, 
@@ -395,12 +393,11 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'dataTable.pinned.footer.background': {
-    description: `The background color for pinned footer cells. Any valid Box 
-    background options apply.`,
+    description: 'Any valid Box background options apply.',
     type: `string | 
       { dark: string, light: string } |
       { 
-        color: { dark: string, light: string }, 
+        color: { dark: string, light: string } | string, 
         dark: bool, 
         image: string, 
         position: string, 
