@@ -75,8 +75,8 @@ export var filterAndSortData = function filterAndSortData(data, filters, onSearc
     var before = direction === 'asc' ? 1 : -1;
     var after = direction === 'asc' ? -1 : 1;
     result.sort(function (d1, d2) {
-      if (d1[property] > d2[property]) return before;
-      if (d1[property] < d2[property]) return after;
+      if (datumValue(d1, property) > datumValue(d2, property)) return before;
+      if (datumValue(d1, property) < datumValue(d2, property)) return after;
       return 0;
     });
   }
