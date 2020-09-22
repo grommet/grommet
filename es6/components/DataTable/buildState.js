@@ -1,6 +1,20 @@
 // This file contains helper functions for DataTable, to keep the component
 // files simpler.
-// get the value for the property in the datum object
+export var set = function set(obj, path, value) {
+  var parts = path;
+  if (Object(obj) !== obj) return obj;
+  if (!Array.isArray(path)) parts = path.toString().match(/[^.[\]]+/g) || [];
+  parts.slice(0, -1).reduce(function (acc, item, index) {
+    if (Object(acc[item]) === acc[item]) {
+      return acc[item];
+    }
+
+    acc[item] = Math.abs(parts[index + 1]) > 0 === +parts[index + 1] ? [] : {};
+    return acc[item];
+  }, obj)[parts[parts.length - 1]] = value;
+  return obj;
+}; // get the value for the property in the datum object
+
 export var datumValue = function datumValue(datum, property) {
   if (!property) return undefined;
   var parts = property.split('.');
@@ -130,7 +144,8 @@ var aggregate = function aggregate(columns, data) {
   var result = {};
   columns.forEach(function (column) {
     if (column.aggregate) {
-      result[column.property] = aggregateColumn(column, data);
+      var value = aggregateColumn(column, data);
+      result = set(result, column.property, value);
     }
   });
   return result;
@@ -143,9 +158,10 @@ export var buildFooterValues = function buildFooterValues(columns, data) {
   columns.forEach(function (column) {
     if (column.footer) {
       if (typeof column.footer === 'string') {
-        result[column.property] = column.footer;
+        result = set(result, column.property, column.footer);
       } else if (column.footer.aggregate) {
-        result[column.property] = aggregateValues[column.property];
+        var value = datumValue(aggregateValues, column.property);
+        result = set(result, column.property, value);
       }
     }
   });
