@@ -259,6 +259,47 @@ const focusStyles = (props, { forceOutline, justBorder } = {}) => {
   return ''; // defensive
 };
 
+const unfocusStyles = (props, { forceOutline, justBorder } = {}) => {
+  const {
+    theme: {
+      global: { focus },
+    },
+  } = props;
+  if (!focus || (forceOutline && !focus.outline)) {
+    const color = normalizeColor('focus', props.theme);
+    if (color) return `outline: none;`;
+    return ''; // native
+  }
+  if (focus.outline && (!focus.border || !justBorder)) {
+    if (typeof focus.outline === 'object') {
+      return `
+        outline-offset: 0px;
+        outline: none;
+      `;
+    }
+    return `outline: none;`;
+  }
+  if (focus.shadow && (!focus.border || !justBorder)) {
+    if (typeof focus.shadow === 'object') {
+      return `
+        outline: none;
+        box-shadow: none;
+      `;
+    }
+    return `
+      outline: none;
+      box-shadow: none;
+    `;
+  }
+  if (focus.border) {
+    return `
+      outline: none;
+      border-color: none;
+    `;
+  }
+  return ''; // defensive
+};
+
 // focus also supports clickable elements inside svg
 export const focusStyle = ({
   forceOutline,
@@ -278,6 +319,37 @@ export const focusStyle = ({
     ${focusStyles(props)}
   }`}
   ${props => focusStyles(props, { forceOutline, justBorder })}
+  ${!forceOutline &&
+    `
+  ::-moz-focus-inner {
+    border: 0;
+  }
+  `}
+`;
+
+// This is placed next to focusStyle for easy maintainability
+// of code since changes to focusStyle should be reflected in
+// unfocusStyle as well. However, this function is only being used
+// by List for an iterim state. It is not recommended to rely on
+// this function for other components.
+export const unfocusStyle = ({
+  forceOutline,
+  justBorder,
+  skipSvgChildren,
+} = {}) => css`
+  ${props =>
+    !skipSvgChildren &&
+    `
+  > circle,
+  > ellipse,
+  > line,
+  > path,
+  > polygon,
+  > polyline,
+  > rect {
+    ${unfocusStyles(props)}
+  }`}
+  ${props => unfocusStyles(props, { forceOutline, justBorder })}
   ${!forceOutline &&
     `
   ::-moz-focus-inner {
