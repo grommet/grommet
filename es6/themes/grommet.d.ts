@@ -1,3 +1,3 @@
-import { ThemeType } from "./base";
+import { ThemeType } from './base';
 
 export const grommet: ThemeType;
