@@ -1,11 +1,12 @@
-import * as React from "react";
-import { ButtonProps } from "../Button"
+import * as React from 'react';
+import { ButtonProps } from '../Button';
 
 export interface RoutedButtonProps {
   path: string;
-  method?: "push" | "replace";
+  method?: 'push' | 'replace';
 }
 
-declare const RoutedButton: React.ComponentClass<RoutedButtonProps & ButtonProps>;
+declare const RoutedButton: React.ComponentClass<RoutedButtonProps &
+  ButtonProps>;
 
 export { RoutedButton };

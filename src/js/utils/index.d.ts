@@ -50,7 +50,11 @@ export { isObject, deepFreeze, deepMerge, removeUndefined };
  * type SomeComponentProps = PropsOf<typeof SomeComponent>;
  * ```
  */
-export type PropsOf<TComponent> = TComponent extends React.ComponentType<infer P> ? P : never;
+export type PropsOf<TComponent> = TComponent extends React.ComponentType<
+  infer P
+>
+  ? P
+  : never;
 
 // Extracting types for common properties among components
 type BoxSideType =
