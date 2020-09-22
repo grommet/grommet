@@ -6,6 +6,7 @@ import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Drop } from '../Drop';
 
+// rename targetRef to ref
 export const Tip = forwardRef(({ children, targetRef, ...rest }, ref) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
   return (
