@@ -70,21 +70,18 @@ const basicStyle = props => css`
 `;
 
 // CSS for this sub-object in the theme
-const kindPartStyles = (obj, theme, colorValue) => {
+export const kindPartStyles = (obj, theme, colorValue) => {
   const styles = [];
-  if (obj.padding) {
-    if (obj.padding.vertical || obj.padding.horizontal)
+  if (obj.padding || obj.pad) {
+    // button uses `padding` but other components use Grommet `pad`
+    const pad = obj.padding || obj.pad;
+    if (pad.vertical || pad.horizontal)
       styles.push(
-        `padding: ${theme.global.edgeSize[obj.padding.vertical] ||
-          obj.padding.vertical ||
-          0} ${theme.global.edgeSize[obj.padding.horizontal] ||
-          obj.padding.horizontal ||
-          0};`,
+        `padding: ${theme.global.edgeSize[pad.vertical] ||
+          pad.vertical ||
+          0} ${theme.global.edgeSize[pad.horizontal] || pad.horizontal || 0};`,
       );
-    else
-      styles.push(
-        `padding: ${theme.global.edgeSize[obj.padding] || obj.padding || 0};`,
-      );
+    else styles.push(`padding: ${theme.global.edgeSize[pad] || pad || 0};`);
   }
   if (obj.background)
     styles.push(
