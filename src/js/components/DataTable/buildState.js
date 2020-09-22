@@ -87,8 +87,8 @@ export const filterAndSortData = (data, filters, onSearch, sort) => {
     const before = direction === 'asc' ? 1 : -1;
     const after = direction === 'asc' ? -1 : 1;
     result.sort((d1, d2) => {
-      if (d1[property] > d2[property]) return before;
-      if (d1[property] < d2[property]) return after;
+      if (datumValue(d1, property) > datumValue(d2, property)) return before;
+      if (datumValue(d1, property) < datumValue(d2, property)) return after;
       return 0;
     });
   }

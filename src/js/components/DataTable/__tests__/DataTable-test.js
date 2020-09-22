@@ -182,6 +182,82 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('sort nested object', () => {
+    const { container, getByText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            {
+              property: 'b.value',
+              header: 'Value',
+              render: datum => datum.b && datum.b.value,
+            },
+          ]}
+          data={[
+            { a: 'zero', b: { value: 1 } },
+            { a: 'one', b: { value: 2 } },
+            { a: 'two', b: { value: 3 } },
+          ]}
+          sort={{ property: 'b.value', direction: 'asc' }}
+        />
+      </Grommet>,
+    );
+
+    expect(container.querySelectorAll('td').item(0).textContent).toBe('1');
+    expect(container.querySelectorAll('td').item(1).textContent).toBe('2');
+    expect(container.querySelectorAll('td').item(2).textContent).toBe('3');
+
+    fireEvent.click(getByText('Value'));
+
+    expect(container.querySelectorAll('td').item(0).textContent).toBe('3');
+    expect(container.querySelectorAll('td').item(1).textContent).toBe('2');
+    expect(container.querySelectorAll('td').item(2).textContent).toBe('1');
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('sort nested object with onSort', () => {
+    const onSort = jest.fn();
+    const { container, getByText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            {
+              property: 'b.value',
+              header: 'Value',
+              render: datum => datum.b && datum.b.value,
+            },
+          ]}
+          data={[
+            { a: 'zero', b: { value: 1 } },
+            { a: 'one', b: { value: 2 } },
+            { a: 'two', b: { value: 3 } },
+          ]}
+          onSort={onSort}
+          sort={{ property: 'b.value', direction: 'asc' }}
+        />
+      </Grommet>,
+    );
+
+    expect(container.querySelectorAll('td').item(0).textContent).toBe('1');
+    expect(container.querySelectorAll('td').item(1).textContent).toBe('2');
+    expect(container.querySelectorAll('td').item(2).textContent).toBe('3');
+
+    fireEvent.click(getByText('Value'));
+
+    expect(onSort).toBeCalledWith(
+      expect.objectContaining({ property: 'b.value' }),
+    );
+
+    expect(container.querySelectorAll('td').item(0).textContent).toBe('3');
+    expect(container.querySelectorAll('td').item(1).textContent).toBe('2');
+    expect(container.querySelectorAll('td').item(2).textContent).toBe('1');
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('sort external', () => {
     const { container } = render(
       <Grommet>

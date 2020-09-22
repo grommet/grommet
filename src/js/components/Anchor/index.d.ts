@@ -1,13 +1,13 @@
-import * as React from "react";
-import { 
+import * as React from 'react';
+import {
   A11yTitleType,
-  AlignSelfType, 
-  ColorType, 
-  GridAreaType, 
-  MarginType, 
-  Omit, 
-  PolymorphicType 
-} from "../../utils";
+  AlignSelfType,
+  ColorType,
+  GridAreaType,
+  MarginType,
+  Omit,
+  PolymorphicType,
+} from '../../utils';
 
 export interface AnchorProps {
   a11yTitle?: A11yTitleType;
@@ -20,10 +20,18 @@ export interface AnchorProps {
   label?: React.ReactNode;
   margin?: MarginType;
   reverse?: boolean;
-  size?: "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | string;
+  size?:
+    | 'xsmall'
+    | 'small'
+    | 'medium'
+    | 'large'
+    | 'xlarge'
+    | 'xxlarge'
+    | string;
   as?: PolymorphicType;
 }
 
-declare const Anchor: React.FC<AnchorProps & Omit<JSX.IntrinsicElements['a'], 'color'>>;
+declare const Anchor: React.FC<AnchorProps &
+  Omit<JSX.IntrinsicElements['a'], 'color'>>;
 
 export { Anchor };
