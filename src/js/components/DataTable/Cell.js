@@ -6,6 +6,7 @@ import { defaultProps } from '../../default-props';
 import { Text } from '../Text';
 import { StyledDataTableCell } from './StyledDataTable';
 import { datumValue } from './buildState';
+import { TableContext } from '../Table/TableContext';
 
 const normalizeProp = (name, rowProp, prop) => {
   if (rowProp && rowProp[name]) return rowProp[name];
@@ -16,7 +17,6 @@ const Cell = ({
   background,
   border,
   column: { align, pin: columnPin, property, render, verticalAlign, size },
-  context,
   datum,
   index,
   pad,
@@ -27,6 +27,8 @@ const Cell = ({
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const value = datumValue(datum, property);
+  const context = useContext(TableContext);
+
   let content;
   if (render) {
     content = render(datum);
