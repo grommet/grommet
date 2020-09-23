@@ -2694,7 +2694,6 @@ exports[`DataTable custom theme 1`] = `
 
 .c6 {
   padding: 6px 12px;
-  font-weight: bold;
 }
 
 .c6:hover {
@@ -2886,7 +2885,7 @@ exports[`DataTable custom theme 2`] = `
           scope="col"
         >
           <button
-            class="StyledButton-sc-323bzc-0 gCGTKO Header__StyledHeaderCellButton-sc-1baku5q-0 hhnCts"
+            class="StyledButton-sc-323bzc-0 gCGTKO Header__StyledHeaderCellButton-sc-1baku5q-0 ixwBdO"
             type="button"
           >
             <div

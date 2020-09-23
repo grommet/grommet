@@ -20,24 +20,31 @@ import {
 import { datumValue } from './buildState';
 import { kindPartStyles } from '../../utils';
 
+// separate theme values into groupings depending on what
+// part of header cell they should style
+const separateThemeProps = theme => {
+  const { background, border, color, font, ...rest } = theme.dataTable.header;
+
+  const cellProps = { background, border };
+  const textProps = { color, ...font };
+  const layoutProps = { ...rest };
+
+  return [cellProps, layoutProps, textProps];
+};
+
 // build up CSS from basic to specific based on the supplied sub-object paths.
 // adapted from StyledButtonKind to only include parts relevant for DataTable
 const buttonStyle = ({ theme }) => {
   const styles = [];
-  // don't apply background or border on button. these
-  // should only apply to the `th`
-  const contentStyles = { ...theme.dataTable.header };
-  delete contentStyles.background;
-  delete contentStyles.border;
 
-  const obj = contentStyles;
-  if (obj) {
-    styles.push(kindPartStyles(obj, theme));
+  const [, layoutProps] = separateThemeProps(theme);
+  if (layoutProps) {
+    styles.push(kindPartStyles(layoutProps, theme));
   }
 
-  if (obj.hover) {
+  if (layoutProps.hover) {
     // CSS for this sub-object in the theme
-    const partStyles = kindPartStyles(obj.hover, theme);
+    const partStyles = kindPartStyles(layoutProps.hover, theme);
     if (partStyles.length > 0)
       styles.push(
         css`
@@ -128,19 +135,18 @@ const Header = ({
             verticalAlign,
             size,
           }) => {
-            // don't apply background or border on other contents of the cell
-            const contentStyles = { ...theme.dataTable.header };
-            delete contentStyles.background;
-            delete contentStyles.border;
+            const [cellProps, layoutProps, textProps] = separateThemeProps(
+              theme,
+            );
 
             let content;
             if (typeof header === 'string') {
-              content = <Text {...contentStyles.font}>{header}</Text>;
-              if (Object.keys(contentStyles).length && sortable === false) {
-                // apply rest of header cell styling if cell is not sortable,
+              content = <Text {...textProps}>{header}</Text>;
+              if (Object.keys(layoutProps).length && sortable === false) {
+                // apply rest of layout styling if cell is not sortable,
                 // otherwise this styling will be applied by
                 // StyledHeaderCellButton
-                content = <Box {...contentStyles}>{content}</Box>;
+                content = <Box {...layoutProps}>{content}</Box>;
               }
             } else content = header;
 
@@ -224,8 +230,8 @@ const Header = ({
                 key={property}
                 align={align}
                 verticalAlign={verticalAlign}
-                background={background || theme.dataTable.header.background}
-                border={border || theme.dataTable.header.border}
+                background={background || cellProps.background}
+                border={border || cellProps.border}
                 pad={pad}
                 pin={pin}
                 plain
