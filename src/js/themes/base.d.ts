@@ -353,6 +353,14 @@ export interface ThemeType {
       [x: string]: string | undefined;
     };
     text?: {
+      size?: {
+        xsmall?: string;
+        small?: string;
+        medium?: string;
+        large?: string;
+        xlarge?: string;
+        [x: string]: string | undefined;
+      };
       fontWeight?: number;
       extend?: ExtendType;
     };

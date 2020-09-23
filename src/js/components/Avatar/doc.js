@@ -73,4 +73,34 @@ export const themeDoc = {
     type: 'number',
     defaultValue: undefined,
   },
+  'avatar.text.size.xsmall': {
+    description:
+      'The xsmall size of the text in Avatar (Mapped according Avatar size).',
+    type: 'string',
+    defaultValue: 'small',
+  },
+  'avatar.text.size.small': {
+    description:
+      'The small size of the text in Avatar (Mapped according Avatar size).',
+    type: 'string',
+    defaultValue: 'medium',
+  },
+  'avatar.text.size.medium': {
+    description:
+      'The medium size of the text in Avatar (Mapped according Avatar size).',
+    type: 'string',
+    defaultValue: 'large',
+  },
+  'avatar.text.size.large': {
+    description:
+      'The large size of the text in Avatar (Mapped according Avatar size).',
+    type: 'string',
+    defaultValue: 'xlarge',
+  },
+  'avatar.text.size.xlarge': {
+    description:
+      'The xlarge size of the text in Avatar (Mapped according Avatar size).',
+    type: 'string',
+    defaultValue: 'xxlarge',
+  },
 };
