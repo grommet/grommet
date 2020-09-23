@@ -10294,7 +10294,7 @@ exports[`DataTable sort nested object 1`] = `
           scope="col"
         >
           <button
-            class="c4"
+            class="c4 "
             type="button"
           >
             <div
@@ -10313,7 +10313,7 @@ exports[`DataTable sort nested object 1`] = `
           scope="col"
         >
           <button
-            class="c4"
+            class="c4 "
             type="button"
           >
             <div
@@ -10652,7 +10652,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
           scope="col"
         >
           <button
-            class="c4"
+            class="c4 "
             type="button"
           >
             <div
@@ -10671,7 +10671,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
           scope="col"
         >
           <button
-            class="c4"
+            class="c4 "
             type="button"
           >
             <div

@@ -18,7 +18,7 @@ import {
   StyledDataTableRow,
 } from './StyledDataTable';
 import { datumValue } from './buildState';
-import { kindPartStyles } from '../Button/StyledButtonKind';
+import { kindPartStyles } from '../../utils';
 
 // build up CSS from basic to specific based on the supplied sub-object paths.
 // adapted from StyledButtonKind to only include parts relevant for DataTable
