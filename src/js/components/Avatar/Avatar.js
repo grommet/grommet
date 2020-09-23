@@ -18,7 +18,7 @@ const Avatar = ({
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const avatarSize = theme.avatar.size[size] || size;
-  const avatarTextSize = textSize || theme.avatar.text.size[size];
+  const avatarTextSize = textSize || theme.avatar.text.size[size] || 'large';
 
   const avatarProps = {
     align,
