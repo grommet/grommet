@@ -47,9 +47,9 @@ const Cell = ({
   return (
     <StyledDataTableCell
       scope={scope}
-      columnPin={columnPin}
       {...theme.dataTable[context]}
       align={align}
+      context={context}
       verticalAlign={verticalAlign}
       size={size}
       background={normalizeProp(

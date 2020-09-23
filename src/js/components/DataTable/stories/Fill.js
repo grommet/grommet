@@ -33,9 +33,7 @@ const myTheme = deepMerge(grommet, {
         },
       },
       footer: {
-        background: {
-          color: 'light-2',
-        },
+        background: 'light-2',
         extend: ({ theme }) => `color: ${theme.global.colors['dark-2']};`,
       },
     },
@@ -52,7 +50,7 @@ const Example = () => (
         fill
         pin
         background={{
-          pinned: { color: 'light-2' },
+          pinned: { color: 'orange' },
         }}
       />
     </Box>

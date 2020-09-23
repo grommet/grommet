@@ -166,6 +166,7 @@ const Header = ({
                 verticalAlign={verticalAlign}
                 background={background}
                 border={border}
+                context="header"
                 pad={pad}
                 pin={pin}
                 plain

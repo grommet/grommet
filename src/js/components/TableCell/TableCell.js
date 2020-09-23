@@ -23,10 +23,8 @@ const TableCell = forwardRef(
       children,
       className, // so StyledDataTableCell is applied to td/th
       colSpan,
-      columnPin,
       pad,
       plain,
-      pin,
       scope,
       size,
       verticalAlign,
@@ -38,45 +36,22 @@ const TableCell = forwardRef(
     return (
       <TableContext.Consumer>
         {tableContext => {
-          let pinnedDataTableTheme;
           let tableContextTheme;
           if (tableContext === 'header') {
             tableContextTheme = theme.table && theme.table.header;
-            if (Array.isArray(pin) && pin[0] === 'top') {
-              pinnedDataTableTheme =
-                theme.dataTable &&
-                theme.dataTable.pinned &&
-                theme.dataTable.pinned.header;
-            }
           } else if (tableContext === 'footer') {
             tableContextTheme = theme.table && theme.table.footer;
-            if (Array.isArray(pin) && pin[0] === 'bottom') {
-              pinnedDataTableTheme =
-                theme.dataTable &&
-                theme.dataTable.pinned &&
-                theme.dataTable.pinned.footer;
-            }
           } else {
             tableContextTheme = theme.table && theme.table.body;
-            if (columnPin)
-              pinnedDataTableTheme =
-                theme.dataTable &&
-                theme.dataTable.pinned &&
-                theme.dataTable.pinned.body;
           }
           // merge tabelContextTheme and rest
           const mergedProps = {
             ...tableContextTheme,
-            ...pinnedDataTableTheme,
             ...rest,
           };
           Object.keys(mergedProps).forEach(key => {
             if (rest[key] === undefined)
-              mergedProps[key] =
-                // allow pinned cell theming from DataTable to override default
-                pinnedDataTableTheme && pinnedDataTableTheme[key]
-                  ? pinnedDataTableTheme[key]
-                  : tableContextTheme[key];
+              mergedProps[key] = tableContextTheme[key];
           });
           // split out background, border, and pad
           const cellProps = {
@@ -100,7 +75,6 @@ const TableCell = forwardRef(
               scope={scope}
               size={size}
               colSpan={colSpan}
-              pinnedDataTableTheme={pinnedDataTableTheme}
               tableContext={tableContext}
               tableContextTheme={tableContextTheme}
               {...(plain ? mergedProps : {})}
