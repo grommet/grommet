@@ -161,7 +161,12 @@ var Header = function Header(_ref2) {
         gap: "xsmall",
         justify: align
       }, content, Icon && /*#__PURE__*/React.createElement(Icon, null)));
-    }
+    } // content should fill any available space in cell
+
+
+    content = /*#__PURE__*/React.createElement(Box, {
+      flex: "grow"
+    }, content);
 
     if (search || onResize) {
       var resizer = onResize ? /*#__PURE__*/React.createElement(Resizer, {
@@ -184,9 +189,7 @@ var Header = function Header(_ref2) {
         style: onResize ? {
           position: 'relative'
         } : undefined
-      }, /*#__PURE__*/React.createElement(Box, {
-        flex: "grow"
-      }, content), searcher && resizer ? /*#__PURE__*/React.createElement(Box, {
+      }, content, searcher && resizer ? /*#__PURE__*/React.createElement(Box, {
         flex: "shrink",
         direction: "row",
         align: "center",

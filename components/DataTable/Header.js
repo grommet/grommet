@@ -185,7 +185,12 @@ var Header = function Header(_ref2) {
         gap: "xsmall",
         justify: align
       }, content, Icon && /*#__PURE__*/_react["default"].createElement(Icon, null)));
-    }
+    } // content should fill any available space in cell
+
+
+    content = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+      flex: "grow"
+    }, content);
 
     if (search || onResize) {
       var resizer = onResize ? /*#__PURE__*/_react["default"].createElement(_Resizer.Resizer, {
@@ -208,9 +213,7 @@ var Header = function Header(_ref2) {
         style: onResize ? {
           position: 'relative'
         } : undefined
-      }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-        flex: "grow"
-      }, content), searcher && resizer ? /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+      }, content, searcher && resizer ? /*#__PURE__*/_react["default"].createElement(_Box.Box, {
         flex: "shrink",
         direction: "row",
         align: "center",
