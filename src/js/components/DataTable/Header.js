@@ -239,6 +239,7 @@ const Header = ({
               <StyledDataTableCell
                 key={property}
                 align={align}
+                context="header"
                 verticalAlign={verticalAlign}
                 background={background || cellProps.background}
                 border={border || cellProps.border}
