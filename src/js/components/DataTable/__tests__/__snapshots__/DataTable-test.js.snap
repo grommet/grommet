@@ -5835,7 +5835,7 @@ exports[`DataTable pin 1`] = `
   padding-bottom: 6px;
 }
 
-.c12 {
+.c13 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -5875,6 +5875,13 @@ exports[`DataTable pin 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
+.c12 {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+}
+
 .c4 {
   position: -webkit-sticky;
   position: sticky;
@@ -5897,7 +5904,7 @@ exports[`DataTable pin 1`] = `
   z-index: 1;
 }
 
-.c13 {
+.c14 {
   position: -webkit-sticky;
   position: sticky;
   bottom: 0;
@@ -5905,7 +5912,7 @@ exports[`DataTable pin 1`] = `
   z-index: 2;
 }
 
-.c14 {
+.c15 {
   position: -webkit-sticky;
   position: sticky;
   bottom: 0;
@@ -6019,13 +6026,13 @@ exports[`DataTable pin 1`] = `
       </tr>
     </tbody>
     <tfoot
-      class=""
+      class="c12"
     >
       <tr
         class=""
       >
         <td
-          class="c12 c13"
+          class="c13 c14"
         >
           <div
             class="c10"
@@ -6038,7 +6045,7 @@ exports[`DataTable pin 1`] = `
           </div>
         </td>
         <td
-          class="c12 c14"
+          class="c13 c15"
         >
           <div
             class="c10"
@@ -6151,7 +6158,7 @@ exports[`DataTable pin 1`] = `
         class=""
       >
         <td
-          class="c12 c9"
+          class="c13 c9"
         >
           <div
             class="c10"
@@ -6164,7 +6171,7 @@ exports[`DataTable pin 1`] = `
           </div>
         </td>
         <td
-          class="c12 "
+          class="c13 "
         >
           <div
             class="c10"
@@ -6271,13 +6278,13 @@ exports[`DataTable pin 1`] = `
       </tr>
     </tbody>
     <tfoot
-      class=""
+      class="c12"
     >
       <tr
         class=""
       >
         <td
-          class="c12 c13"
+          class="c13 c14"
         >
           <div
             class="c10"
@@ -6290,7 +6297,7 @@ exports[`DataTable pin 1`] = `
           </div>
         </td>
         <td
-          class="c12 c14"
+          class="c13 c15"
         >
           <div
             class="c10"
