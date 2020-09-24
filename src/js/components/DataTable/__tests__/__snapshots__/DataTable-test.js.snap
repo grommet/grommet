@@ -28,7 +28,7 @@ exports[`DataTable !primaryKey 1`] = `
   flex: 1 0 auto;
 }
 
-.c5 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -55,7 +55,7 @@ exports[`DataTable !primaryKey 1`] = `
   padding-bottom: 6px;
 }
 
-.c8 {
+.c7 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -73,7 +73,7 @@ exports[`DataTable !primaryKey 1`] = `
   width: inherit;
 }
 
-.c6 {
+.c5 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -84,7 +84,7 @@ exports[`DataTable !primaryKey 1`] = `
   height: auto;
 }
 
-.c7:focus {
+.c6:focus {
   outline: 2px solid #6FFFB0;
 }
 
@@ -113,15 +113,11 @@ exports[`DataTable !primaryKey 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
           </div>
         </th>
         <th
@@ -131,46 +127,42 @@ exports[`DataTable !primaryKey 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                B
-              </span>
-            </div>
+              B
+            </span>
           </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="c7"
+      class="c6"
     >
       <tr
         class=""
       >
         <td
-          class="c8 "
+          class="c7 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               one
             </span>
           </div>
         </td>
         <td
-          class="c8 "
+          class="c7 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               1
             </span>
@@ -181,26 +173,26 @@ exports[`DataTable !primaryKey 1`] = `
         class=""
       >
         <td
-          class="c8 "
+          class="c7 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               two
             </span>
           </div>
         </td>
         <td
-          class="c8 "
+          class="c7 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               2
             </span>
@@ -240,7 +232,7 @@ exports[`DataTable absoluteColumnSizes 1`] = `
   flex: 1 0 auto;
 }
 
-.c5 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -270,7 +262,7 @@ exports[`DataTable absoluteColumnSizes 1`] = `
   padding-bottom: 6px;
 }
 
-.c7 {
+.c6 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -286,7 +278,7 @@ exports[`DataTable absoluteColumnSizes 1`] = `
   padding-bottom: 6px;
 }
 
-.c9 {
+.c8 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -322,7 +314,7 @@ exports[`DataTable absoluteColumnSizes 1`] = `
   width: inherit;
 }
 
-.c6 {
+.c5 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -339,7 +331,7 @@ exports[`DataTable absoluteColumnSizes 1`] = `
   height: auto;
 }
 
-.c8:focus {
+.c7:focus {
   outline: 2px solid #6FFFB0;
 }
 
@@ -368,49 +360,41 @@ exports[`DataTable absoluteColumnSizes 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
           </div>
         </th>
         <th
-          class="c7 "
+          class="c6 "
           scope="col"
         >
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                B
-              </span>
-            </div>
+              B
+            </span>
           </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="c8"
+      class="c7"
     >
       <tr
         class=""
       >
         <th
-          class="c9 "
+          class="c8 "
           scope="row"
         >
           <div
-            class="c5"
+            class="c9"
           >
             <span
               class="c10"
@@ -423,10 +407,10 @@ exports[`DataTable absoluteColumnSizes 1`] = `
           class="c11 "
         >
           <div
-            class="c5"
+            class="c9"
           >
             <span
-              class="c6"
+              class="c5"
             >
               1
             </span>
@@ -437,11 +421,11 @@ exports[`DataTable absoluteColumnSizes 1`] = `
         class=""
       >
         <th
-          class="c9 "
+          class="c8 "
           scope="row"
         >
           <div
-            class="c5"
+            class="c9"
           >
             <span
               class="c10"
@@ -454,10 +438,10 @@ exports[`DataTable absoluteColumnSizes 1`] = `
           class="c11 "
         >
           <div
-            class="c5"
+            class="c9"
           >
             <span
-              class="c6"
+              class="c5"
             >
               2
             </span>
@@ -497,7 +481,7 @@ exports[`DataTable aggregate 1`] = `
   flex: 1 0 auto;
 }
 
-.c5 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -524,7 +508,7 @@ exports[`DataTable aggregate 1`] = `
   padding-bottom: 6px;
 }
 
-.c8 {
+.c7 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -555,7 +539,7 @@ exports[`DataTable aggregate 1`] = `
   width: inherit;
 }
 
-.c6 {
+.c5 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -572,7 +556,7 @@ exports[`DataTable aggregate 1`] = `
   height: auto;
 }
 
-.c7:focus {
+.c6:focus {
   outline: 2px solid #6FFFB0;
 }
 
@@ -601,15 +585,11 @@ exports[`DataTable aggregate 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
           </div>
         </th>
         <th
@@ -619,31 +599,27 @@ exports[`DataTable aggregate 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                B
-              </span>
-            </div>
+              B
+            </span>
           </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="c7"
+      class="c6"
     >
       <tr
         class=""
       >
         <th
-          class="c8 "
+          class="c7 "
           scope="row"
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -653,13 +629,13 @@ exports[`DataTable aggregate 1`] = `
           </div>
         </th>
         <td
-          class="c8 "
+          class="c7 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               1
             </span>
@@ -670,11 +646,11 @@ exports[`DataTable aggregate 1`] = `
         class=""
       >
         <th
-          class="c8 "
+          class="c7 "
           scope="row"
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -684,13 +660,13 @@ exports[`DataTable aggregate 1`] = `
           </div>
         </th>
         <td
-          class="c8 "
+          class="c7 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               2
             </span>
@@ -708,17 +684,17 @@ exports[`DataTable aggregate 1`] = `
           class="c10 "
         >
           <div
-            class="c5"
+            class="c8"
           />
         </td>
         <td
           class="c10 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               3
             </span>
@@ -758,7 +734,7 @@ exports[`DataTable aggregate with nested object 1`] = `
   flex: 1 0 auto;
 }
 
-.c5 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -785,7 +761,7 @@ exports[`DataTable aggregate with nested object 1`] = `
   padding-bottom: 6px;
 }
 
-.c8 {
+.c7 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -816,7 +792,7 @@ exports[`DataTable aggregate with nested object 1`] = `
   width: inherit;
 }
 
-.c6 {
+.c5 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -833,7 +809,7 @@ exports[`DataTable aggregate with nested object 1`] = `
   height: auto;
 }
 
-.c7:focus {
+.c6:focus {
   outline: 2px solid #6FFFB0;
 }
 
@@ -862,15 +838,11 @@ exports[`DataTable aggregate with nested object 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
           </div>
         </th>
         <th
@@ -880,31 +852,27 @@ exports[`DataTable aggregate with nested object 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                object
-              </span>
-            </div>
+              object
+            </span>
           </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="c7"
+      class="c6"
     >
       <tr
         class=""
       >
         <th
-          class="c8 "
+          class="c7 "
           scope="row"
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -914,13 +882,13 @@ exports[`DataTable aggregate with nested object 1`] = `
           </div>
         </th>
         <td
-          class="c8 "
+          class="c7 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               1
             </span>
@@ -931,11 +899,11 @@ exports[`DataTable aggregate with nested object 1`] = `
         class=""
       >
         <th
-          class="c8 "
+          class="c7 "
           scope="row"
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -945,13 +913,13 @@ exports[`DataTable aggregate with nested object 1`] = `
           </div>
         </th>
         <td
-          class="c8 "
+          class="c7 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               2
             </span>
@@ -969,17 +937,17 @@ exports[`DataTable aggregate with nested object 1`] = `
           class="c10 "
         >
           <div
-            class="c5"
+            class="c8"
           />
         </td>
         <td
           class="c10 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               3
             </span>
@@ -1019,7 +987,7 @@ exports[`DataTable background 1`] = `
   flex: 1 0 auto;
 }
 
-.c5 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1048,7 +1016,7 @@ exports[`DataTable background 1`] = `
   padding-bottom: 6px;
 }
 
-.c8 {
+.c7 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -1138,7 +1106,7 @@ exports[`DataTable background 1`] = `
   width: inherit;
 }
 
-.c6 {
+.c5 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -1155,7 +1123,7 @@ exports[`DataTable background 1`] = `
   height: auto;
 }
 
-.c7:focus {
+.c6:focus {
   outline: 2px solid #6FFFB0;
 }
 
@@ -1184,15 +1152,11 @@ exports[`DataTable background 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
           </div>
         </th>
         <th
@@ -1202,31 +1166,27 @@ exports[`DataTable background 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                B
-              </span>
-            </div>
+              B
+            </span>
           </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="c7"
+      class="c6"
     >
       <tr
         class=""
       >
         <th
-          class="c8 "
+          class="c7 "
           scope="row"
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -1236,13 +1196,13 @@ exports[`DataTable background 1`] = `
           </div>
         </th>
         <td
-          class="c8 "
+          class="c7 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               1
             </span>
@@ -1253,11 +1213,11 @@ exports[`DataTable background 1`] = `
         class=""
       >
         <th
-          class="c8 "
+          class="c7 "
           scope="row"
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -1267,13 +1227,13 @@ exports[`DataTable background 1`] = `
           </div>
         </th>
         <td
-          class="c8 "
+          class="c7 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               2
             </span>
@@ -1291,7 +1251,7 @@ exports[`DataTable background 1`] = `
           class="c10 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -1304,7 +1264,7 @@ exports[`DataTable background 1`] = `
           class="c10 "
         >
           <div
-            class="c5"
+            class="c8"
           />
         </td>
       </tr>
@@ -1326,15 +1286,11 @@ exports[`DataTable background 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
           </div>
         </th>
         <th
@@ -1344,31 +1300,27 @@ exports[`DataTable background 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                B
-              </span>
-            </div>
+              B
+            </span>
           </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="c7"
+      class="c6"
     >
       <tr
         class=""
       >
         <th
-          class="c8 "
+          class="c7 "
           scope="row"
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -1378,13 +1330,13 @@ exports[`DataTable background 1`] = `
           </div>
         </th>
         <td
-          class="c8 "
+          class="c7 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               1
             </span>
@@ -1399,7 +1351,7 @@ exports[`DataTable background 1`] = `
           scope="row"
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -1412,10 +1364,10 @@ exports[`DataTable background 1`] = `
           class="c12 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               2
             </span>
@@ -1433,7 +1385,7 @@ exports[`DataTable background 1`] = `
           class="c13 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -1446,7 +1398,7 @@ exports[`DataTable background 1`] = `
           class="c13 "
         >
           <div
-            class="c5"
+            class="c8"
           />
         </td>
       </tr>
@@ -1468,15 +1420,11 @@ exports[`DataTable background 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
           </div>
         </th>
         <th
@@ -1486,21 +1434,17 @@ exports[`DataTable background 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                B
-              </span>
-            </div>
+              B
+            </span>
           </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="c7"
+      class="c6"
     >
       <tr
         class=""
@@ -1510,7 +1454,7 @@ exports[`DataTable background 1`] = `
           scope="row"
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -1523,10 +1467,10 @@ exports[`DataTable background 1`] = `
           class="c12 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               1
             </span>
@@ -1541,7 +1485,7 @@ exports[`DataTable background 1`] = `
           scope="row"
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -1554,10 +1498,10 @@ exports[`DataTable background 1`] = `
           class="c12 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               2
             </span>
@@ -1575,7 +1519,7 @@ exports[`DataTable background 1`] = `
           class="c14 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -1588,7 +1532,7 @@ exports[`DataTable background 1`] = `
           class="c14 "
         >
           <div
-            class="c5"
+            class="c8"
           />
         </td>
       </tr>
@@ -1625,7 +1569,7 @@ exports[`DataTable basic 1`] = `
   flex: 1 0 auto;
 }
 
-.c5 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1652,7 +1596,7 @@ exports[`DataTable basic 1`] = `
   padding-bottom: 6px;
 }
 
-.c8 {
+.c7 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -1670,7 +1614,7 @@ exports[`DataTable basic 1`] = `
   width: inherit;
 }
 
-.c6 {
+.c5 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -1687,7 +1631,7 @@ exports[`DataTable basic 1`] = `
   height: auto;
 }
 
-.c7:focus {
+.c6:focus {
   outline: 2px solid #6FFFB0;
 }
 
@@ -1716,15 +1660,11 @@ exports[`DataTable basic 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
           </div>
         </th>
         <th
@@ -1734,31 +1674,27 @@ exports[`DataTable basic 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                B
-              </span>
-            </div>
+              B
+            </span>
           </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="c7"
+      class="c6"
     >
       <tr
         class=""
       >
         <th
-          class="c8 "
+          class="c7 "
           scope="row"
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -1768,13 +1704,13 @@ exports[`DataTable basic 1`] = `
           </div>
         </th>
         <td
-          class="c8 "
+          class="c7 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               1
             </span>
@@ -1785,11 +1721,11 @@ exports[`DataTable basic 1`] = `
         class=""
       >
         <th
-          class="c8 "
+          class="c7 "
           scope="row"
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -1799,13 +1735,13 @@ exports[`DataTable basic 1`] = `
           </div>
         </th>
         <td
-          class="c8 "
+          class="c7 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               2
             </span>
@@ -1845,7 +1781,7 @@ exports[`DataTable border 1`] = `
   flex: 1 0 auto;
 }
 
-.c5 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1904,7 +1840,7 @@ exports[`DataTable border 1`] = `
   width: inherit;
 }
 
-.c6 {
+.c5 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -1921,7 +1857,7 @@ exports[`DataTable border 1`] = `
   height: auto;
 }
 
-.c7:focus {
+.c6:focus {
   outline: 2px solid #6FFFB0;
 }
 
@@ -1950,15 +1886,11 @@ exports[`DataTable border 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
           </div>
         </th>
         <th
@@ -1968,21 +1900,17 @@ exports[`DataTable border 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                B
-              </span>
-            </div>
+              B
+            </span>
           </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="c7"
+      class="c6"
     >
       <tr
         class=""
@@ -1992,7 +1920,7 @@ exports[`DataTable border 1`] = `
           scope="row"
         >
           <div
-            class="c5"
+            class="c7"
           >
             <span
               class="c8"
@@ -2005,10 +1933,10 @@ exports[`DataTable border 1`] = `
           class="c3 "
         >
           <div
-            class="c5"
+            class="c7"
           >
             <span
-              class="c6"
+              class="c5"
             >
               1
             </span>
@@ -2023,7 +1951,7 @@ exports[`DataTable border 1`] = `
           scope="row"
         >
           <div
-            class="c5"
+            class="c7"
           >
             <span
               class="c8"
@@ -2036,10 +1964,10 @@ exports[`DataTable border 1`] = `
           class="c3 "
         >
           <div
-            class="c5"
+            class="c7"
           >
             <span
-              class="c6"
+              class="c5"
             >
               2
             </span>
@@ -2057,7 +1985,7 @@ exports[`DataTable border 1`] = `
           class="c3 "
         >
           <div
-            class="c5"
+            class="c7"
           >
             <span
               class="c8"
@@ -2070,7 +1998,7 @@ exports[`DataTable border 1`] = `
           class="c3 "
         >
           <div
-            class="c5"
+            class="c7"
           />
         </td>
       </tr>
@@ -2092,15 +2020,11 @@ exports[`DataTable border 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
           </div>
         </th>
         <th
@@ -2110,21 +2034,17 @@ exports[`DataTable border 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                B
-              </span>
-            </div>
+              B
+            </span>
           </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="c7"
+      class="c6"
     >
       <tr
         class=""
@@ -2134,7 +2054,7 @@ exports[`DataTable border 1`] = `
           scope="row"
         >
           <div
-            class="c5"
+            class="c7"
           >
             <span
               class="c8"
@@ -2147,10 +2067,10 @@ exports[`DataTable border 1`] = `
           class="c9 "
         >
           <div
-            class="c5"
+            class="c7"
           >
             <span
-              class="c6"
+              class="c5"
             >
               1
             </span>
@@ -2165,7 +2085,7 @@ exports[`DataTable border 1`] = `
           scope="row"
         >
           <div
-            class="c5"
+            class="c7"
           >
             <span
               class="c8"
@@ -2178,10 +2098,10 @@ exports[`DataTable border 1`] = `
           class="c9 "
         >
           <div
-            class="c5"
+            class="c7"
           >
             <span
-              class="c6"
+              class="c5"
             >
               2
             </span>
@@ -2199,7 +2119,7 @@ exports[`DataTable border 1`] = `
           class="c9 "
         >
           <div
-            class="c5"
+            class="c7"
           >
             <span
               class="c8"
@@ -2212,7 +2132,7 @@ exports[`DataTable border 1`] = `
           class="c9 "
         >
           <div
-            class="c5"
+            class="c7"
           />
         </td>
       </tr>
@@ -2234,15 +2154,11 @@ exports[`DataTable border 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
           </div>
         </th>
         <th
@@ -2252,21 +2168,17 @@ exports[`DataTable border 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                B
-              </span>
-            </div>
+              B
+            </span>
           </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="c7"
+      class="c6"
     >
       <tr
         class=""
@@ -2276,7 +2188,7 @@ exports[`DataTable border 1`] = `
           scope="row"
         >
           <div
-            class="c5"
+            class="c7"
           >
             <span
               class="c8"
@@ -2289,10 +2201,10 @@ exports[`DataTable border 1`] = `
           class="c10 "
         >
           <div
-            class="c5"
+            class="c7"
           >
             <span
-              class="c6"
+              class="c5"
             >
               1
             </span>
@@ -2307,7 +2219,7 @@ exports[`DataTable border 1`] = `
           scope="row"
         >
           <div
-            class="c5"
+            class="c7"
           >
             <span
               class="c8"
@@ -2320,10 +2232,10 @@ exports[`DataTable border 1`] = `
           class="c10 "
         >
           <div
-            class="c5"
+            class="c7"
           >
             <span
-              class="c6"
+              class="c5"
             >
               2
             </span>
@@ -2341,7 +2253,7 @@ exports[`DataTable border 1`] = `
           class="c10 "
         >
           <div
-            class="c5"
+            class="c7"
           >
             <span
               class="c8"
@@ -2354,7 +2266,7 @@ exports[`DataTable border 1`] = `
           class="c10 "
         >
           <div
-            class="c5"
+            class="c7"
           />
         </td>
       </tr>
@@ -2376,15 +2288,11 @@ exports[`DataTable border 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
           </div>
         </th>
         <th
@@ -2394,21 +2302,17 @@ exports[`DataTable border 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                B
-              </span>
-            </div>
+              B
+            </span>
           </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="c7"
+      class="c6"
     >
       <tr
         class=""
@@ -2418,7 +2322,7 @@ exports[`DataTable border 1`] = `
           scope="row"
         >
           <div
-            class="c5"
+            class="c7"
           >
             <span
               class="c8"
@@ -2431,10 +2335,10 @@ exports[`DataTable border 1`] = `
           class="c10 "
         >
           <div
-            class="c5"
+            class="c7"
           >
             <span
-              class="c6"
+              class="c5"
             >
               1
             </span>
@@ -2449,7 +2353,7 @@ exports[`DataTable border 1`] = `
           scope="row"
         >
           <div
-            class="c5"
+            class="c7"
           >
             <span
               class="c8"
@@ -2462,10 +2366,10 @@ exports[`DataTable border 1`] = `
           class="c10 "
         >
           <div
-            class="c5"
+            class="c7"
           >
             <span
-              class="c6"
+              class="c5"
             >
               2
             </span>
@@ -2483,7 +2387,7 @@ exports[`DataTable border 1`] = `
           class="c9 "
         >
           <div
-            class="c5"
+            class="c7"
           >
             <span
               class="c8"
@@ -2496,7 +2400,7 @@ exports[`DataTable border 1`] = `
           class="c9 "
         >
           <div
-            class="c5"
+            class="c7"
           />
         </td>
       </tr>
@@ -2533,7 +2437,7 @@ exports[`DataTable click 1`] = `
   flex: 1 0 auto;
 }
 
-.c5 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2560,7 +2464,7 @@ exports[`DataTable click 1`] = `
   padding-bottom: 6px;
 }
 
-.c9 {
+.c8 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -2578,7 +2482,7 @@ exports[`DataTable click 1`] = `
   width: inherit;
 }
 
-.c6 {
+.c5 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -2595,11 +2499,11 @@ exports[`DataTable click 1`] = `
   height: auto;
 }
 
-.c8 {
+.c7 {
   cursor: pointer;
 }
 
-.c7:focus {
+.c6:focus {
   outline: 2px solid #6FFFB0;
 }
 
@@ -2628,32 +2532,28 @@ exports[`DataTable click 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
           </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="c7"
+      class="c6"
       tabindex="0"
     >
       <tr
-        class="c8"
+        class="c7"
       >
         <th
-          class="c9 "
+          class="c8 "
           scope="row"
         >
           <div
-            class="c5"
+            class="c9"
           >
             <span
               class="c10"
@@ -2664,14 +2564,14 @@ exports[`DataTable click 1`] = `
         </th>
       </tr>
       <tr
-        class="c8"
+        class="c7"
       >
         <th
-          class="c9 "
+          class="c8 "
           scope="row"
         >
           <div
-            class="c5"
+            class="c9"
           >
             <span
               class="c10"
@@ -2706,15 +2606,11 @@ exports[`DataTable click 2`] = `
           <div
             class="StyledBox-sc-13pk1d4-0 bToxzR"
           >
-            <div
-              class="StyledBox-sc-13pk1d4-0 bFwQzJ Header__StyledContentBox-sc-1baku5q-1 fTroAz"
+            <span
+              class="StyledText-sc-1sadyjn-0 hUokoe"
             >
-              <span
-                class="StyledText-sc-1sadyjn-0 hUokoe"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
           </div>
         </th>
       </tr>
@@ -3460,7 +3356,7 @@ exports[`DataTable fill 1`] = `
   flex: 1 0 auto;
 }
 
-.c5 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3487,7 +3383,7 @@ exports[`DataTable fill 1`] = `
   padding-bottom: 6px;
 }
 
-.c8 {
+.c7 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -3518,7 +3414,7 @@ exports[`DataTable fill 1`] = `
   width: inherit;
 }
 
-.c6 {
+.c5 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -3551,7 +3447,7 @@ exports[`DataTable fill 1`] = `
   height: 100%;
 }
 
-.c7:focus {
+.c6:focus {
   outline: 2px solid #6FFFB0;
 }
 
@@ -3580,15 +3476,11 @@ exports[`DataTable fill 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
           </div>
         </th>
         <th
@@ -3598,31 +3490,27 @@ exports[`DataTable fill 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                B
-              </span>
-            </div>
+              B
+            </span>
           </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="c7"
+      class="c6"
     >
       <tr
         class=""
       >
         <th
-          class="c8 "
+          class="c7 "
           scope="row"
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -3632,13 +3520,13 @@ exports[`DataTable fill 1`] = `
           </div>
         </th>
         <td
-          class="c8 "
+          class="c7 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               1
             </span>
@@ -3649,11 +3537,11 @@ exports[`DataTable fill 1`] = `
         class=""
       >
         <th
-          class="c8 "
+          class="c7 "
           scope="row"
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -3663,13 +3551,13 @@ exports[`DataTable fill 1`] = `
           </div>
         </th>
         <td
-          class="c8 "
+          class="c7 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               2
             </span>
@@ -3687,7 +3575,7 @@ exports[`DataTable fill 1`] = `
           class="c10 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -3700,7 +3588,7 @@ exports[`DataTable fill 1`] = `
           class="c10 "
         >
           <div
-            class="c5"
+            class="c8"
           />
         </td>
       </tr>
@@ -3722,15 +3610,11 @@ exports[`DataTable fill 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
           </div>
         </th>
         <th
@@ -3740,31 +3624,27 @@ exports[`DataTable fill 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                B
-              </span>
-            </div>
+              B
+            </span>
           </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="c7"
+      class="c6"
     >
       <tr
         class=""
       >
         <th
-          class="c8 "
+          class="c7 "
           scope="row"
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -3774,13 +3654,13 @@ exports[`DataTable fill 1`] = `
           </div>
         </th>
         <td
-          class="c8 "
+          class="c7 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               1
             </span>
@@ -3791,11 +3671,11 @@ exports[`DataTable fill 1`] = `
         class=""
       >
         <th
-          class="c8 "
+          class="c7 "
           scope="row"
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -3805,13 +3685,13 @@ exports[`DataTable fill 1`] = `
           </div>
         </th>
         <td
-          class="c8 "
+          class="c7 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               2
             </span>
@@ -3829,7 +3709,7 @@ exports[`DataTable fill 1`] = `
           class="c10 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -3842,7 +3722,7 @@ exports[`DataTable fill 1`] = `
           class="c10 "
         >
           <div
-            class="c5"
+            class="c8"
           />
         </td>
       </tr>
@@ -3864,15 +3744,11 @@ exports[`DataTable fill 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
           </div>
         </th>
         <th
@@ -3882,31 +3758,27 @@ exports[`DataTable fill 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                B
-              </span>
-            </div>
+              B
+            </span>
           </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="c7"
+      class="c6"
     >
       <tr
         class=""
       >
         <th
-          class="c8 "
+          class="c7 "
           scope="row"
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -3916,13 +3788,13 @@ exports[`DataTable fill 1`] = `
           </div>
         </th>
         <td
-          class="c8 "
+          class="c7 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               1
             </span>
@@ -3933,11 +3805,11 @@ exports[`DataTable fill 1`] = `
         class=""
       >
         <th
-          class="c8 "
+          class="c7 "
           scope="row"
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -3947,13 +3819,13 @@ exports[`DataTable fill 1`] = `
           </div>
         </th>
         <td
-          class="c8 "
+          class="c7 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               2
             </span>
@@ -3971,7 +3843,7 @@ exports[`DataTable fill 1`] = `
           class="c10 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -3984,7 +3856,7 @@ exports[`DataTable fill 1`] = `
           class="c10 "
         >
           <div
-            class="c5"
+            class="c8"
           />
         </td>
       </tr>
@@ -4021,7 +3893,7 @@ exports[`DataTable footer 1`] = `
   flex: 1 0 auto;
 }
 
-.c5 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4048,7 +3920,7 @@ exports[`DataTable footer 1`] = `
   padding-bottom: 6px;
 }
 
-.c8 {
+.c7 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -4079,7 +3951,7 @@ exports[`DataTable footer 1`] = `
   width: inherit;
 }
 
-.c6 {
+.c5 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -4096,7 +3968,7 @@ exports[`DataTable footer 1`] = `
   height: auto;
 }
 
-.c7:focus {
+.c6:focus {
   outline: 2px solid #6FFFB0;
 }
 
@@ -4125,15 +3997,11 @@ exports[`DataTable footer 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
           </div>
         </th>
         <th
@@ -4143,31 +4011,27 @@ exports[`DataTable footer 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                B
-              </span>
-            </div>
+              B
+            </span>
           </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="c7"
+      class="c6"
     >
       <tr
         class=""
       >
         <th
-          class="c8 "
+          class="c7 "
           scope="row"
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -4177,13 +4041,13 @@ exports[`DataTable footer 1`] = `
           </div>
         </th>
         <td
-          class="c8 "
+          class="c7 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               1
             </span>
@@ -4194,11 +4058,11 @@ exports[`DataTable footer 1`] = `
         class=""
       >
         <th
-          class="c8 "
+          class="c7 "
           scope="row"
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -4208,13 +4072,13 @@ exports[`DataTable footer 1`] = `
           </div>
         </th>
         <td
-          class="c8 "
+          class="c7 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               2
             </span>
@@ -4232,7 +4096,7 @@ exports[`DataTable footer 1`] = `
           class="c10 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -4245,7 +4109,7 @@ exports[`DataTable footer 1`] = `
           class="c10 "
         >
           <div
-            class="c5"
+            class="c8"
           />
         </td>
       </tr>
@@ -4335,7 +4199,7 @@ exports[`DataTable groupBy 1`] = `
   flex: 1 0 auto;
 }
 
-.c9 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4425,7 +4289,7 @@ exports[`DataTable groupBy 1`] = `
   padding-bottom: 6px;
 }
 
-.c12 {
+.c11 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -4438,7 +4302,7 @@ exports[`DataTable groupBy 1`] = `
   padding: 0px;
 }
 
-.c13 {
+.c12 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -4456,7 +4320,7 @@ exports[`DataTable groupBy 1`] = `
   width: inherit;
 }
 
-.c10 {
+.c9 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -4467,7 +4331,7 @@ exports[`DataTable groupBy 1`] = `
   height: auto;
 }
 
-.c11:focus {
+.c10:focus {
   outline: 2px solid #6FFFB0;
 }
 
@@ -4528,15 +4392,11 @@ exports[`DataTable groupBy 1`] = `
           <div
             class="c8"
           >
-            <div
-              class="c9 "
+            <span
+              class="c9"
             >
-              <span
-                class="c10"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
           </div>
         </th>
         <th
@@ -4546,27 +4406,23 @@ exports[`DataTable groupBy 1`] = `
           <div
             class="c8"
           >
-            <div
-              class="c9 "
+            <span
+              class="c9"
             >
-              <span
-                class="c10"
-              >
-                B
-              </span>
-            </div>
+              B
+            </span>
           </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="c11"
+      class="c10"
     >
       <tr
         class=""
       >
         <td
-          class="c12"
+          class="c11"
         >
           <button
             aria-label="expand"
@@ -4592,24 +4448,24 @@ exports[`DataTable groupBy 1`] = `
           </button>
         </td>
         <th
-          class="c13 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c9"
+            class="c13"
           >
             <span
-              class="c10"
+              class="c9"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="c13 "
+          class="c12 "
         >
           <div
-            class="c9"
+            class="c13"
           />
         </td>
       </tr>
@@ -4617,7 +4473,7 @@ exports[`DataTable groupBy 1`] = `
         class=""
       >
         <td
-          class="c12"
+          class="c11"
         >
           <button
             aria-label="expand"
@@ -4643,24 +4499,24 @@ exports[`DataTable groupBy 1`] = `
           </button>
         </td>
         <th
-          class="c13 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c9"
+            class="c13"
           >
             <span
-              class="c10"
+              class="c9"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="c13 "
+          class="c12 "
         >
           <div
-            class="c9"
+            class="c13"
           />
         </td>
       </tr>
@@ -4715,15 +4571,11 @@ exports[`DataTable groupBy 2`] = `
           <div
             class="StyledBox-sc-13pk1d4-0 bToxzR"
           >
-            <div
-              class="StyledBox-sc-13pk1d4-0 bFwQzJ Header__StyledContentBox-sc-1baku5q-1 fTroAz"
+            <span
+              class="StyledText-sc-1sadyjn-0 hUokoe"
             >
-              <span
-                class="StyledText-sc-1sadyjn-0 hUokoe"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
           </div>
         </th>
         <th
@@ -4733,15 +4585,11 @@ exports[`DataTable groupBy 2`] = `
           <div
             class="StyledBox-sc-13pk1d4-0 bToxzR"
           >
-            <div
-              class="StyledBox-sc-13pk1d4-0 bFwQzJ Header__StyledContentBox-sc-1baku5q-1 fTroAz"
+            <span
+              class="StyledText-sc-1sadyjn-0 hUokoe"
             >
-              <span
-                class="StyledText-sc-1sadyjn-0 hUokoe"
-              >
-                B
-              </span>
-            </div>
+              B
+            </span>
           </div>
         </th>
       </tr>
@@ -4937,7 +4785,7 @@ exports[`DataTable groupBy expand 1`] = `
   flex: 1 0 auto;
 }
 
-.c9 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5027,7 +4875,7 @@ exports[`DataTable groupBy expand 1`] = `
   padding-bottom: 6px;
 }
 
-.c12 {
+.c11 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -5040,7 +4888,7 @@ exports[`DataTable groupBy expand 1`] = `
   padding: 0px;
 }
 
-.c13 {
+.c12 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -5071,7 +4919,7 @@ exports[`DataTable groupBy expand 1`] = `
   width: inherit;
 }
 
-.c10 {
+.c9 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -5082,7 +4930,7 @@ exports[`DataTable groupBy expand 1`] = `
   height: auto;
 }
 
-.c11:focus {
+.c10:focus {
   outline: 2px solid #6FFFB0;
 }
 
@@ -5143,15 +4991,11 @@ exports[`DataTable groupBy expand 1`] = `
           <div
             class="c8"
           >
-            <div
-              class="c9 "
+            <span
+              class="c9"
             >
-              <span
-                class="c10"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
           </div>
         </th>
         <th
@@ -5161,27 +5005,23 @@ exports[`DataTable groupBy expand 1`] = `
           <div
             class="c8"
           >
-            <div
-              class="c9 "
+            <span
+              class="c9"
             >
-              <span
-                class="c10"
-              >
-                B
-              </span>
-            </div>
+              B
+            </span>
           </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="c11"
+      class="c10"
     >
       <tr
         class=""
       >
         <td
-          class="c12"
+          class="c11"
         >
           <button
             aria-label="collapse"
@@ -5208,24 +5048,24 @@ exports[`DataTable groupBy expand 1`] = `
           </button>
         </td>
         <th
-          class="c13 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c9"
+            class="c13"
           >
             <span
-              class="c10"
+              class="c9"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="c13 "
+          class="c12 "
         >
           <div
-            class="c9"
+            class="c13"
           />
         </td>
       </tr>
@@ -5233,33 +5073,33 @@ exports[`DataTable groupBy expand 1`] = `
         class=""
       >
         <td
-          class="c12"
+          class="c11"
         >
           <div
             class="c5"
           />
         </td>
         <td
-          class="c13 "
+          class="c12 "
         >
           <div
-            class="c9"
+            class="c13"
           >
             <span
-              class="c10"
+              class="c9"
             >
               one
             </span>
           </div>
         </td>
         <td
-          class="c13 "
+          class="c12 "
         >
           <div
-            class="c9"
+            class="c13"
           >
             <span
-              class="c10"
+              class="c9"
             >
               1.1
             </span>
@@ -5277,26 +5117,26 @@ exports[`DataTable groupBy expand 1`] = `
           />
         </td>
         <td
-          class="c13 "
+          class="c12 "
         >
           <div
-            class="c9"
+            class="c13"
           >
             <span
-              class="c10"
+              class="c9"
             >
               one
             </span>
           </div>
         </td>
         <td
-          class="c13 "
+          class="c12 "
         >
           <div
-            class="c9"
+            class="c13"
           >
             <span
-              class="c10"
+              class="c9"
             >
               1.2
             </span>
@@ -5307,7 +5147,7 @@ exports[`DataTable groupBy expand 1`] = `
         class=""
       >
         <td
-          class="c12"
+          class="c11"
         >
           <button
             aria-label="expand"
@@ -5333,24 +5173,24 @@ exports[`DataTable groupBy expand 1`] = `
           </button>
         </td>
         <th
-          class="c13 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c9"
+            class="c13"
           >
             <span
-              class="c10"
+              class="c9"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="c13 "
+          class="c12 "
         >
           <div
-            class="c9"
+            class="c13"
           />
         </td>
       </tr>
@@ -5446,7 +5286,7 @@ exports[`DataTable groupBy property 1`] = `
   flex: 1 0 auto;
 }
 
-.c9 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5536,7 +5376,7 @@ exports[`DataTable groupBy property 1`] = `
   padding-bottom: 6px;
 }
 
-.c12 {
+.c11 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -5549,7 +5389,7 @@ exports[`DataTable groupBy property 1`] = `
   padding: 0px;
 }
 
-.c13 {
+.c12 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -5567,7 +5407,7 @@ exports[`DataTable groupBy property 1`] = `
   width: inherit;
 }
 
-.c10 {
+.c9 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -5578,7 +5418,7 @@ exports[`DataTable groupBy property 1`] = `
   height: auto;
 }
 
-.c11:focus {
+.c10:focus {
   outline: 2px solid #6FFFB0;
 }
 
@@ -5639,15 +5479,11 @@ exports[`DataTable groupBy property 1`] = `
           <div
             class="c8"
           >
-            <div
-              class="c9 "
+            <span
+              class="c9"
             >
-              <span
-                class="c10"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
           </div>
         </th>
         <th
@@ -5657,27 +5493,23 @@ exports[`DataTable groupBy property 1`] = `
           <div
             class="c8"
           >
-            <div
-              class="c9 "
+            <span
+              class="c9"
             >
-              <span
-                class="c10"
-              >
-                B
-              </span>
-            </div>
+              B
+            </span>
           </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="c11"
+      class="c10"
     >
       <tr
         class=""
       >
         <td
-          class="c12"
+          class="c11"
         >
           <button
             aria-label="expand"
@@ -5703,24 +5535,24 @@ exports[`DataTable groupBy property 1`] = `
           </button>
         </td>
         <th
-          class="c13 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c9"
+            class="c13"
           >
             <span
-              class="c10"
+              class="c9"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="c13 "
+          class="c12 "
         >
           <div
-            class="c9"
+            class="c13"
           />
         </td>
       </tr>
@@ -5728,7 +5560,7 @@ exports[`DataTable groupBy property 1`] = `
         class=""
       >
         <td
-          class="c12"
+          class="c11"
         >
           <button
             aria-label="expand"
@@ -5754,24 +5586,24 @@ exports[`DataTable groupBy property 1`] = `
           </button>
         </td>
         <th
-          class="c13 "
+          class="c12 "
           scope="row"
         >
           <div
-            class="c9"
+            class="c13"
           >
             <span
-              class="c10"
+              class="c9"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="c13 "
+          class="c12 "
         >
           <div
-            class="c9"
+            class="c13"
           />
         </td>
       </tr>
@@ -5826,15 +5658,11 @@ exports[`DataTable groupBy property 2`] = `
           <div
             class="StyledBox-sc-13pk1d4-0 bToxzR"
           >
-            <div
-              class="StyledBox-sc-13pk1d4-0 bFwQzJ Header__StyledContentBox-sc-1baku5q-1 fTroAz"
+            <span
+              class="StyledText-sc-1sadyjn-0 hUokoe"
             >
-              <span
-                class="StyledText-sc-1sadyjn-0 hUokoe"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
           </div>
         </th>
         <th
@@ -5844,15 +5672,11 @@ exports[`DataTable groupBy property 2`] = `
           <div
             class="StyledBox-sc-13pk1d4-0 bToxzR"
           >
-            <div
-              class="StyledBox-sc-13pk1d4-0 bFwQzJ Header__StyledContentBox-sc-1baku5q-1 fTroAz"
+            <span
+              class="StyledText-sc-1sadyjn-0 hUokoe"
             >
-              <span
-                class="StyledText-sc-1sadyjn-0 hUokoe"
-              >
-                B
-              </span>
-            </div>
+              B
+            </span>
           </div>
         </th>
       </tr>
@@ -6553,7 +6377,7 @@ exports[`DataTable pad 1`] = `
   flex: 1 0 auto;
 }
 
-.c5 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6577,7 +6401,7 @@ exports[`DataTable pad 1`] = `
   padding: 12px;
 }
 
-.c8 {
+.c7 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -6653,7 +6477,7 @@ exports[`DataTable pad 1`] = `
   width: inherit;
 }
 
-.c6 {
+.c5 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -6670,7 +6494,7 @@ exports[`DataTable pad 1`] = `
   height: auto;
 }
 
-.c7:focus {
+.c6:focus {
   outline: 2px solid #6FFFB0;
 }
 
@@ -6699,15 +6523,11 @@ exports[`DataTable pad 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
           </div>
         </th>
         <th
@@ -6717,31 +6537,27 @@ exports[`DataTable pad 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                B
-              </span>
-            </div>
+              B
+            </span>
           </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="c7"
+      class="c6"
     >
       <tr
         class=""
       >
         <th
-          class="c8 "
+          class="c7 "
           scope="row"
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -6751,13 +6567,13 @@ exports[`DataTable pad 1`] = `
           </div>
         </th>
         <td
-          class="c8 "
+          class="c7 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               1
             </span>
@@ -6768,11 +6584,11 @@ exports[`DataTable pad 1`] = `
         class=""
       >
         <th
-          class="c8 "
+          class="c7 "
           scope="row"
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -6782,13 +6598,13 @@ exports[`DataTable pad 1`] = `
           </div>
         </th>
         <td
-          class="c8 "
+          class="c7 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               2
             </span>
@@ -6806,7 +6622,7 @@ exports[`DataTable pad 1`] = `
           class="c10 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -6819,7 +6635,7 @@ exports[`DataTable pad 1`] = `
           class="c10 "
         >
           <div
-            class="c5"
+            class="c8"
           />
         </td>
       </tr>
@@ -6841,15 +6657,11 @@ exports[`DataTable pad 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
           </div>
         </th>
         <th
@@ -6859,21 +6671,17 @@ exports[`DataTable pad 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                B
-              </span>
-            </div>
+              B
+            </span>
           </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="c7"
+      class="c6"
     >
       <tr
         class=""
@@ -6883,7 +6691,7 @@ exports[`DataTable pad 1`] = `
           scope="row"
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -6896,10 +6704,10 @@ exports[`DataTable pad 1`] = `
           class="c12 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               1
             </span>
@@ -6914,7 +6722,7 @@ exports[`DataTable pad 1`] = `
           scope="row"
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -6927,10 +6735,10 @@ exports[`DataTable pad 1`] = `
           class="c12 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               2
             </span>
@@ -6948,7 +6756,7 @@ exports[`DataTable pad 1`] = `
           class="c13 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -6961,7 +6769,7 @@ exports[`DataTable pad 1`] = `
           class="c13 "
         >
           <div
-            class="c5"
+            class="c8"
           />
         </td>
       </tr>
@@ -6983,15 +6791,11 @@ exports[`DataTable pad 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
           </div>
         </th>
         <th
@@ -7001,21 +6805,17 @@ exports[`DataTable pad 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                B
-              </span>
-            </div>
+              B
+            </span>
           </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="c7"
+      class="c6"
     >
       <tr
         class=""
@@ -7025,7 +6825,7 @@ exports[`DataTable pad 1`] = `
           scope="row"
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -7038,10 +6838,10 @@ exports[`DataTable pad 1`] = `
           class="c12 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               1
             </span>
@@ -7056,7 +6856,7 @@ exports[`DataTable pad 1`] = `
           scope="row"
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -7069,10 +6869,10 @@ exports[`DataTable pad 1`] = `
           class="c12 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               2
             </span>
@@ -7090,7 +6890,7 @@ exports[`DataTable pad 1`] = `
           class="c14 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -7103,7 +6903,7 @@ exports[`DataTable pad 1`] = `
           class="c14 "
         >
           <div
-            class="c5"
+            class="c8"
           />
         </td>
       </tr>
@@ -7140,7 +6940,7 @@ exports[`DataTable paths 1`] = `
   flex: 1 0 auto;
 }
 
-.c5 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7167,7 +6967,7 @@ exports[`DataTable paths 1`] = `
   padding-bottom: 6px;
 }
 
-.c8 {
+.c7 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -7185,7 +6985,7 @@ exports[`DataTable paths 1`] = `
   width: inherit;
 }
 
-.c6 {
+.c5 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -7202,7 +7002,7 @@ exports[`DataTable paths 1`] = `
   height: auto;
 }
 
-.c7:focus {
+.c6:focus {
   outline: 2px solid #6FFFB0;
 }
 
@@ -7231,15 +7031,11 @@ exports[`DataTable paths 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
           </div>
         </th>
         <th
@@ -7249,31 +7045,27 @@ exports[`DataTable paths 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                B
-              </span>
-            </div>
+              B
+            </span>
           </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="c7"
+      class="c6"
     >
       <tr
         class=""
       >
         <th
-          class="c8 "
+          class="c7 "
           scope="row"
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -7283,13 +7075,13 @@ exports[`DataTable paths 1`] = `
           </div>
         </th>
         <td
-          class="c8 "
+          class="c7 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               1
             </span>
@@ -7300,11 +7092,11 @@ exports[`DataTable paths 1`] = `
         class=""
       >
         <th
-          class="c8 "
+          class="c7 "
           scope="row"
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -7314,13 +7106,13 @@ exports[`DataTable paths 1`] = `
           </div>
         </th>
         <td
-          class="c8 "
+          class="c7 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               2
             </span>
@@ -7360,7 +7152,7 @@ exports[`DataTable pin 1`] = `
   flex: 1 0 auto;
 }
 
-.c6 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7387,7 +7179,7 @@ exports[`DataTable pin 1`] = `
   padding-bottom: 6px;
 }
 
-.c10 {
+.c9 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -7418,7 +7210,7 @@ exports[`DataTable pin 1`] = `
   width: inherit;
 }
 
-.c7 {
+.c6 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -7435,7 +7227,7 @@ exports[`DataTable pin 1`] = `
   height: auto;
 }
 
-.c9:focus {
+.c8:focus {
   outline: 2px solid #6FFFB0;
 }
 
@@ -7447,14 +7239,14 @@ exports[`DataTable pin 1`] = `
   z-index: 2;
 }
 
-.c8 {
+.c7 {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 1;
 }
 
-.c11 {
+.c10 {
   position: -webkit-sticky;
   position: sticky;
   left: 0;
@@ -7501,49 +7293,41 @@ exports[`DataTable pin 1`] = `
           <div
             class="c5"
           >
-            <div
-              class="c6 "
+            <span
+              class="c6"
             >
-              <span
-                class="c7"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
           </div>
         </th>
         <th
-          class="c3 c8"
+          class="c3 c7"
           scope="col"
         >
           <div
             class="c5"
           >
-            <div
-              class="c6 "
+            <span
+              class="c6"
             >
-              <span
-                class="c7"
-              >
-                B
-              </span>
-            </div>
+              B
+            </span>
           </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="c9"
+      class="c8"
     >
       <tr
         class=""
       >
         <th
-          class="c10 c11"
+          class="c9 c10"
           scope="row"
         >
           <div
-            class="c6"
+            class="c11"
           >
             <span
               class="c12"
@@ -7553,13 +7337,13 @@ exports[`DataTable pin 1`] = `
           </div>
         </th>
         <td
-          class="c10 "
+          class="c9 "
         >
           <div
-            class="c6"
+            class="c11"
           >
             <span
-              class="c7"
+              class="c6"
             >
               1
             </span>
@@ -7570,11 +7354,11 @@ exports[`DataTable pin 1`] = `
         class=""
       >
         <th
-          class="c10 c11"
+          class="c9 c10"
           scope="row"
         >
           <div
-            class="c6"
+            class="c11"
           >
             <span
               class="c12"
@@ -7584,13 +7368,13 @@ exports[`DataTable pin 1`] = `
           </div>
         </th>
         <td
-          class="c10 "
+          class="c9 "
         >
           <div
-            class="c6"
+            class="c11"
           >
             <span
-              class="c7"
+              class="c6"
             >
               2
             </span>
@@ -7608,7 +7392,7 @@ exports[`DataTable pin 1`] = `
           class="c13 c14"
         >
           <div
-            class="c6"
+            class="c11"
           >
             <span
               class="c12"
@@ -7621,7 +7405,7 @@ exports[`DataTable pin 1`] = `
           class="c13 c15"
         >
           <div
-            class="c6"
+            class="c11"
           />
         </td>
       </tr>
@@ -7643,49 +7427,41 @@ exports[`DataTable pin 1`] = `
           <div
             class="c5"
           >
-            <div
-              class="c6 "
+            <span
+              class="c6"
             >
-              <span
-                class="c7"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
           </div>
         </th>
         <th
-          class="c3 c8"
+          class="c3 c7"
           scope="col"
         >
           <div
             class="c5"
           >
-            <div
-              class="c6 "
+            <span
+              class="c6"
             >
-              <span
-                class="c7"
-              >
-                B
-              </span>
-            </div>
+              B
+            </span>
           </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="c9"
+      class="c8"
     >
       <tr
         class=""
       >
         <th
-          class="c10 c11"
+          class="c9 c10"
           scope="row"
         >
           <div
-            class="c6"
+            class="c11"
           >
             <span
               class="c12"
@@ -7695,13 +7471,13 @@ exports[`DataTable pin 1`] = `
           </div>
         </th>
         <td
-          class="c10 "
+          class="c9 "
         >
           <div
-            class="c6"
+            class="c11"
           >
             <span
-              class="c7"
+              class="c6"
             >
               1
             </span>
@@ -7712,11 +7488,11 @@ exports[`DataTable pin 1`] = `
         class=""
       >
         <th
-          class="c10 c11"
+          class="c9 c10"
           scope="row"
         >
           <div
-            class="c6"
+            class="c11"
           >
             <span
               class="c12"
@@ -7726,13 +7502,13 @@ exports[`DataTable pin 1`] = `
           </div>
         </th>
         <td
-          class="c10 "
+          class="c9 "
         >
           <div
-            class="c6"
+            class="c11"
           >
             <span
-              class="c7"
+              class="c6"
             >
               2
             </span>
@@ -7747,10 +7523,10 @@ exports[`DataTable pin 1`] = `
         class=""
       >
         <td
-          class="c13 c11"
+          class="c13 c10"
         >
           <div
-            class="c6"
+            class="c11"
           >
             <span
               class="c12"
@@ -7763,7 +7539,7 @@ exports[`DataTable pin 1`] = `
           class="c13 "
         >
           <div
-            class="c6"
+            class="c11"
           />
         </td>
       </tr>
@@ -7779,21 +7555,17 @@ exports[`DataTable pin 1`] = `
         class=""
       >
         <th
-          class="c3 c11"
+          class="c3 c10"
           scope="col"
         >
           <div
             class="c5"
           >
-            <div
-              class="c6 "
+            <span
+              class="c6"
             >
-              <span
-                class="c7"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
           </div>
         </th>
         <th
@@ -7803,31 +7575,27 @@ exports[`DataTable pin 1`] = `
           <div
             class="c5"
           >
-            <div
-              class="c6 "
+            <span
+              class="c6"
             >
-              <span
-                class="c7"
-              >
-                B
-              </span>
-            </div>
+              B
+            </span>
           </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="c9"
+      class="c8"
     >
       <tr
         class=""
       >
         <th
-          class="c10 c11"
+          class="c9 c10"
           scope="row"
         >
           <div
-            class="c6"
+            class="c11"
           >
             <span
               class="c12"
@@ -7837,13 +7605,13 @@ exports[`DataTable pin 1`] = `
           </div>
         </th>
         <td
-          class="c10 "
+          class="c9 "
         >
           <div
-            class="c6"
+            class="c11"
           >
             <span
-              class="c7"
+              class="c6"
             >
               1
             </span>
@@ -7854,11 +7622,11 @@ exports[`DataTable pin 1`] = `
         class=""
       >
         <th
-          class="c10 c11"
+          class="c9 c10"
           scope="row"
         >
           <div
-            class="c6"
+            class="c11"
           >
             <span
               class="c12"
@@ -7868,13 +7636,13 @@ exports[`DataTable pin 1`] = `
           </div>
         </th>
         <td
-          class="c10 "
+          class="c9 "
         >
           <div
-            class="c6"
+            class="c11"
           >
             <span
-              class="c7"
+              class="c6"
             >
               2
             </span>
@@ -7892,7 +7660,7 @@ exports[`DataTable pin 1`] = `
           class="c13 c14"
         >
           <div
-            class="c6"
+            class="c11"
           >
             <span
               class="c12"
@@ -7905,7 +7673,7 @@ exports[`DataTable pin 1`] = `
           class="c13 c15"
         >
           <div
-            class="c6"
+            class="c11"
           />
         </td>
       </tr>
@@ -7942,7 +7710,7 @@ exports[`DataTable primaryKey 1`] = `
   flex: 1 0 auto;
 }
 
-.c5 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7969,7 +7737,7 @@ exports[`DataTable primaryKey 1`] = `
   padding-bottom: 6px;
 }
 
-.c8 {
+.c7 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -7987,7 +7755,7 @@ exports[`DataTable primaryKey 1`] = `
   width: inherit;
 }
 
-.c6 {
+.c5 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -8004,7 +7772,7 @@ exports[`DataTable primaryKey 1`] = `
   height: auto;
 }
 
-.c7:focus {
+.c6:focus {
   outline: 2px solid #6FFFB0;
 }
 
@@ -8033,15 +7801,11 @@ exports[`DataTable primaryKey 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
           </div>
         </th>
         <th
@@ -8051,44 +7815,40 @@ exports[`DataTable primaryKey 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                B
-              </span>
-            </div>
+              B
+            </span>
           </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="c7"
+      class="c6"
     >
       <tr
         class=""
       >
         <td
-          class="c8 "
+          class="c7 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               one
             </span>
           </div>
         </td>
         <th
-          class="c8 "
+          class="c7 "
           scope="row"
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -8102,24 +7862,24 @@ exports[`DataTable primaryKey 1`] = `
         class=""
       >
         <td
-          class="c8 "
+          class="c7 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               two
             </span>
           </div>
         </td>
         <th
-          class="c8 "
+          class="c7 "
           scope="row"
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -8162,7 +7922,7 @@ exports[`DataTable relativeColumnSizes 1`] = `
   flex: 1 0 auto;
 }
 
-.c5 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8192,7 +7952,7 @@ exports[`DataTable relativeColumnSizes 1`] = `
   padding-bottom: 6px;
 }
 
-.c7 {
+.c6 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -8208,7 +7968,7 @@ exports[`DataTable relativeColumnSizes 1`] = `
   padding-bottom: 6px;
 }
 
-.c9 {
+.c8 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -8244,7 +8004,7 @@ exports[`DataTable relativeColumnSizes 1`] = `
   width: inherit;
 }
 
-.c6 {
+.c5 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -8261,7 +8021,7 @@ exports[`DataTable relativeColumnSizes 1`] = `
   height: auto;
 }
 
-.c8:focus {
+.c7:focus {
   outline: 2px solid #6FFFB0;
 }
 
@@ -8290,49 +8050,41 @@ exports[`DataTable relativeColumnSizes 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
           </div>
         </th>
         <th
-          class="c7 "
+          class="c6 "
           scope="col"
         >
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                B
-              </span>
-            </div>
+              B
+            </span>
           </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="c8"
+      class="c7"
     >
       <tr
         class=""
       >
         <th
-          class="c9 "
+          class="c8 "
           scope="row"
         >
           <div
-            class="c5"
+            class="c9"
           >
             <span
               class="c10"
@@ -8345,10 +8097,10 @@ exports[`DataTable relativeColumnSizes 1`] = `
           class="c11 "
         >
           <div
-            class="c5"
+            class="c9"
           >
             <span
-              class="c6"
+              class="c5"
             >
               1
             </span>
@@ -8359,11 +8111,11 @@ exports[`DataTable relativeColumnSizes 1`] = `
         class=""
       >
         <th
-          class="c9 "
+          class="c8 "
           scope="row"
         >
           <div
-            class="c5"
+            class="c9"
           >
             <span
               class="c10"
@@ -8376,10 +8128,10 @@ exports[`DataTable relativeColumnSizes 1`] = `
           class="c11 "
         >
           <div
-            class="c5"
+            class="c9"
           >
             <span
-              class="c6"
+              class="c5"
             >
               2
             </span>
@@ -8419,7 +8171,7 @@ exports[`DataTable replace 1`] = `
   flex: 1 0 auto;
 }
 
-.c5 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8464,7 +8216,7 @@ exports[`DataTable replace 1`] = `
   padding-bottom: 6px;
 }
 
-.c8 {
+.c7 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -8482,7 +8234,7 @@ exports[`DataTable replace 1`] = `
   width: inherit;
 }
 
-.c6 {
+.c5 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -8499,7 +8251,7 @@ exports[`DataTable replace 1`] = `
   height: auto;
 }
 
-.c7:focus {
+.c6:focus {
   outline: 2px solid #6FFFB0;
 }
 
@@ -8528,15 +8280,11 @@ exports[`DataTable replace 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
           </div>
         </th>
         <th
@@ -8546,44 +8294,40 @@ exports[`DataTable replace 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                B
-              </span>
-            </div>
+              B
+            </span>
           </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="c7"
+      class="c6"
     >
       <tr
         class=""
       >
         <td
-          class="c8 "
+          class="c7 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               one
             </span>
           </div>
         </td>
         <th
-          class="c8 "
+          class="c7 "
           scope="row"
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -8597,24 +8341,24 @@ exports[`DataTable replace 1`] = `
         class=""
       >
         <td
-          class="c8 "
+          class="c7 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               one
             </span>
           </div>
         </td>
         <th
-          class="c8 "
+          class="c7 "
           scope="row"
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -8628,7 +8372,7 @@ exports[`DataTable replace 1`] = `
         class=""
       >
         <td
-          class="c8"
+          class="c7"
         >
           <div
             class="c10"
@@ -8691,21 +8435,7 @@ exports[`DataTable resizeable 1`] = `
   flex: 1 0 auto;
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c9 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8725,7 +8455,21 @@ exports[`DataTable resizeable 1`] = `
   padding-bottom: 12px;
 }
 
-.c8 {
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c7 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -8748,7 +8492,7 @@ exports[`DataTable resizeable 1`] = `
   padding-bottom: 6px;
 }
 
-.c12 {
+.c11 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -8766,7 +8510,7 @@ exports[`DataTable resizeable 1`] = `
   width: inherit;
 }
 
-.c7 {
+.c6 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -8777,7 +8521,7 @@ exports[`DataTable resizeable 1`] = `
   font-weight: bold;
 }
 
-.c10 {
+.c9 {
   cursor: col-resize;
 }
 
@@ -8787,12 +8531,12 @@ exports[`DataTable resizeable 1`] = `
   height: auto;
 }
 
-.c11:focus {
+.c10:focus {
   outline: 2px solid #6FFFB0;
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c7 {
     width: 6px;
   }
 }
@@ -8826,21 +8570,17 @@ exports[`DataTable resizeable 1`] = `
             <div
               class="c5"
             >
-              <div
-                class="c6 "
+              <span
+                class="c6"
               >
-                <span
-                  class="c7"
-                >
-                  A
-                </span>
-              </div>
+                A
+              </span>
             </div>
             <div
-              class="c8"
+              class="c7"
             />
             <div
-              class="c9 c10"
+              class="c8 c9"
             />
           </div>
         </th>
@@ -8855,38 +8595,34 @@ exports[`DataTable resizeable 1`] = `
             <div
               class="c5"
             >
-              <div
-                class="c6 "
+              <span
+                class="c6"
               >
-                <span
-                  class="c7"
-                >
-                  B
-                </span>
-              </div>
+                B
+              </span>
             </div>
             <div
-              class="c8"
+              class="c7"
             />
             <div
-              class="c9 c10"
+              class="c8 c9"
             />
           </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="c11"
+      class="c10"
     >
       <tr
         class=""
       >
         <th
-          class="c12 "
+          class="c11 "
           scope="row"
         >
           <div
-            class="c6"
+            class="c12"
           >
             <span
               class="c13"
@@ -8896,13 +8632,13 @@ exports[`DataTable resizeable 1`] = `
           </div>
         </th>
         <td
-          class="c12 "
+          class="c11 "
         >
           <div
-            class="c6"
+            class="c12"
           >
             <span
-              class="c7"
+              class="c6"
             >
               1
             </span>
@@ -8913,11 +8649,11 @@ exports[`DataTable resizeable 1`] = `
         class=""
       >
         <th
-          class="c12 "
+          class="c11 "
           scope="row"
         >
           <div
-            class="c6"
+            class="c12"
           >
             <span
               class="c13"
@@ -8927,13 +8663,13 @@ exports[`DataTable resizeable 1`] = `
           </div>
         </th>
         <td
-          class="c12 "
+          class="c11 "
         >
           <div
-            class="c6"
+            class="c12"
           >
             <span
-              class="c7"
+              class="c6"
             >
               2
             </span>
@@ -8973,7 +8709,7 @@ exports[`DataTable rowProps 1`] = `
   flex: 1 0 auto;
 }
 
-.c5 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9000,7 +8736,7 @@ exports[`DataTable rowProps 1`] = `
   padding-bottom: 6px;
 }
 
-.c8 {
+.c7 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -9043,7 +8779,7 @@ exports[`DataTable rowProps 1`] = `
   width: inherit;
 }
 
-.c6 {
+.c5 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -9060,7 +8796,7 @@ exports[`DataTable rowProps 1`] = `
   height: auto;
 }
 
-.c7:focus {
+.c6:focus {
   outline: 2px solid #6FFFB0;
 }
 
@@ -9089,15 +8825,11 @@ exports[`DataTable rowProps 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
           </div>
         </th>
         <th
@@ -9107,31 +8839,27 @@ exports[`DataTable rowProps 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                B
-              </span>
-            </div>
+              B
+            </span>
           </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="c7"
+      class="c6"
     >
       <tr
         class=""
       >
         <th
-          class="c8 "
+          class="c7 "
           scope="row"
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -9141,13 +8869,13 @@ exports[`DataTable rowProps 1`] = `
           </div>
         </th>
         <td
-          class="c8 "
+          class="c7 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               1
             </span>
@@ -9162,7 +8890,7 @@ exports[`DataTable rowProps 1`] = `
           scope="row"
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -9175,10 +8903,10 @@ exports[`DataTable rowProps 1`] = `
           class="c10 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
-              class="c6"
+              class="c5"
             >
               2
             </span>
@@ -9196,7 +8924,7 @@ exports[`DataTable rowProps 1`] = `
           class="c11 "
         >
           <div
-            class="c5"
+            class="c8"
           >
             <span
               class="c9"
@@ -9209,7 +8937,7 @@ exports[`DataTable rowProps 1`] = `
           class="c11 "
         >
           <div
-            class="c5"
+            class="c8"
           />
         </td>
       </tr>
@@ -9219,7 +8947,7 @@ exports[`DataTable rowProps 1`] = `
 `;
 
 exports[`DataTable search 1`] = `
-.c10 {
+.c9 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -9230,25 +8958,25 @@ exports[`DataTable search 1`] = `
   stroke: rgba(0,0,0,0.33);
 }
 
-.c10 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c10 *:not([stroke])[fill="none"] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c10 *[stroke*="#"],
-.c10 *[STROKE*="#"] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*="#"],
-.c10 *[FILL*="#"] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -9303,7 +9031,7 @@ exports[`DataTable search 1`] = `
   flex: 1 0 auto;
 }
 
-.c6 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9317,7 +9045,7 @@ exports[`DataTable search 1`] = `
   flex-direction: column;
 }
 
-.c8 {
+.c7 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -9327,7 +9055,7 @@ exports[`DataTable search 1`] = `
   width: 12px;
 }
 
-.c9 {
+.c8 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -9347,28 +9075,28 @@ exports[`DataTable search 1`] = `
   padding: 12px;
 }
 
-.c9:hover {
+.c8:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
-.c9:focus {
+.c8:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus > circle,
-.c9:focus > ellipse,
-.c9:focus > line,
-.c9:focus > path,
-.c9:focus > polygon,
-.c9:focus > polyline,
-.c9:focus > rect {
+.c8:focus > circle,
+.c8:focus > ellipse,
+.c8:focus > line,
+.c8:focus > path,
+.c8:focus > polygon,
+.c8:focus > polyline,
+.c8:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c9:focus::-moz-focus-inner {
+.c8:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -9385,7 +9113,7 @@ exports[`DataTable search 1`] = `
   padding-bottom: 6px;
 }
 
-.c12 {
+.c11 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -9403,7 +9131,7 @@ exports[`DataTable search 1`] = `
   width: inherit;
 }
 
-.c7 {
+.c6 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -9420,12 +9148,12 @@ exports[`DataTable search 1`] = `
   height: auto;
 }
 
-.c11:focus {
+.c10:focus {
   outline: 2px solid #6FFFB0;
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c7 {
     width: 6px;
   }
 }
@@ -9458,27 +9186,23 @@ exports[`DataTable search 1`] = `
             <div
               class="c5"
             >
-              <div
-                class="c6 "
+              <span
+                class="c6"
               >
-                <span
-                  class="c7"
-                >
-                  A
-                </span>
-              </div>
+                A
+              </span>
             </div>
             <div
-              class="c8"
+              class="c7"
             />
             <button
               aria-label="focus-search-a"
-              class="c9"
+              class="c8"
               type="button"
             >
               <svg
                 aria-label="FormSearch"
-                class="c10"
+                class="c9"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -9494,17 +9218,17 @@ exports[`DataTable search 1`] = `
       </tr>
     </thead>
     <tbody
-      class="c11"
+      class="c10"
     >
       <tr
         class=""
       >
         <th
-          class="c12 "
+          class="c11 "
           scope="row"
         >
           <div
-            class="c6"
+            class="c12"
           >
             <span
               class="c13"
@@ -9518,11 +9242,11 @@ exports[`DataTable search 1`] = `
         class=""
       >
         <th
-          class="c12 "
+          class="c11 "
           scope="row"
         >
           <div
-            class="c6"
+            class="c12"
           >
             <span
               class="c13"
@@ -9536,11 +9260,11 @@ exports[`DataTable search 1`] = `
         class=""
       >
         <th
-          class="c12 "
+          class="c11 "
           scope="row"
         >
           <div
-            class="c6"
+            class="c12"
           >
             <span
               class="c13"
@@ -9578,15 +9302,11 @@ exports[`DataTable search 2`] = `
             <div
               class="StyledBox-sc-13pk1d4-0 bToxzR"
             >
-              <div
-                class="StyledBox-sc-13pk1d4-0 bFwQzJ Header__StyledContentBox-sc-1baku5q-1 fTroAz"
+              <span
+                class="StyledText-sc-1sadyjn-0 hUokoe"
               >
-                <span
-                  class="StyledText-sc-1sadyjn-0 hUokoe"
-                >
-                  A
-                </span>
-              </div>
+                A
+              </span>
             </div>
             <div
               class="StyledBox__StyledBoxGap-sc-13pk1d4-1 bRyuLk"
@@ -9810,21 +9530,7 @@ exports[`DataTable select 1`] = `
   flex: 1 0 auto;
 }
 
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c15 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9848,6 +9554,20 @@ exports[`DataTable select 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c9 {
@@ -9918,7 +9638,7 @@ exports[`DataTable select 1`] = `
   padding-bottom: 6px;
 }
 
-.c14 {
+.c13 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -9936,7 +9656,7 @@ exports[`DataTable select 1`] = `
   width: inherit;
 }
 
-.c12 {
+.c11 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -9953,7 +9673,7 @@ exports[`DataTable select 1`] = `
   height: auto;
 }
 
-.c13:focus {
+.c12:focus {
   outline: 2px solid #6FFFB0;
 }
 
@@ -9964,7 +9684,7 @@ exports[`DataTable select 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c14 {
     border: solid 2px #7D4CDB;
   }
 }
@@ -10024,27 +9744,23 @@ exports[`DataTable select 1`] = `
           <div
             class="c10"
           >
-            <div
-              class="c11 "
+            <span
+              class="c11"
             >
-              <span
-                class="c12"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
           </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="c13"
+      class="c12"
     >
       <tr
         class=""
       >
         <td
-          class="c14"
+          class="c13"
         >
           <label
             aria-label="unselect alpha"
@@ -10059,7 +9775,7 @@ exports[`DataTable select 1`] = `
                 type="checkbox"
               />
               <div
-                class="c15 "
+                class="c14 "
               >
                 <svg
                   class="c9"
@@ -10076,11 +9792,11 @@ exports[`DataTable select 1`] = `
           </label>
         </td>
         <th
-          class="c14 "
+          class="c13 "
           scope="row"
         >
           <div
-            class="c11"
+            class="c15"
           >
             <span
               class="c16"
@@ -10094,7 +9810,7 @@ exports[`DataTable select 1`] = `
         class=""
       >
         <td
-          class="c14"
+          class="c13"
         >
           <label
             aria-label="select beta"
@@ -10114,11 +9830,11 @@ exports[`DataTable select 1`] = `
           </label>
         </td>
         <th
-          class="c14 "
+          class="c13 "
           scope="row"
         >
           <div
-            class="c11"
+            class="c15"
           >
             <span
               class="c16"
@@ -10203,15 +9919,11 @@ exports[`DataTable select 2`] = `
           <div
             class="StyledBox-sc-13pk1d4-0 bToxzR"
           >
-            <div
-              class="StyledBox-sc-13pk1d4-0 bFwQzJ Header__StyledContentBox-sc-1baku5q-1 fTroAz"
+            <span
+              class="StyledText-sc-1sadyjn-0 hUokoe"
             >
-              <span
-                class="StyledText-sc-1sadyjn-0 hUokoe"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
           </div>
         </th>
       </tr>
@@ -12463,7 +12175,7 @@ exports[`DataTable themeColumnSizes 1`] = `
   flex: 1 0 auto;
 }
 
-.c5 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -12493,7 +12205,7 @@ exports[`DataTable themeColumnSizes 1`] = `
   padding-bottom: 6px;
 }
 
-.c7 {
+.c6 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -12509,7 +12221,7 @@ exports[`DataTable themeColumnSizes 1`] = `
   padding-bottom: 6px;
 }
 
-.c9 {
+.c8 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -12545,7 +12257,7 @@ exports[`DataTable themeColumnSizes 1`] = `
   width: inherit;
 }
 
-.c6 {
+.c5 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -12562,7 +12274,7 @@ exports[`DataTable themeColumnSizes 1`] = `
   height: auto;
 }
 
-.c8:focus {
+.c7:focus {
   outline: 2px solid #6FFFB0;
 }
 
@@ -12591,49 +12303,41 @@ exports[`DataTable themeColumnSizes 1`] = `
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                A
-              </span>
-            </div>
+              A
+            </span>
           </div>
         </th>
         <th
-          class="c7 "
+          class="c6 "
           scope="col"
         >
           <div
             class="c4"
           >
-            <div
-              class="c5 "
+            <span
+              class="c5"
             >
-              <span
-                class="c6"
-              >
-                B
-              </span>
-            </div>
+              B
+            </span>
           </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="c8"
+      class="c7"
     >
       <tr
         class=""
       >
         <th
-          class="c9 "
+          class="c8 "
           scope="row"
         >
           <div
-            class="c5"
+            class="c9"
           >
             <span
               class="c10"
@@ -12646,10 +12350,10 @@ exports[`DataTable themeColumnSizes 1`] = `
           class="c11 "
         >
           <div
-            class="c5"
+            class="c9"
           >
             <span
-              class="c6"
+              class="c5"
             >
               1
             </span>
@@ -12660,11 +12364,11 @@ exports[`DataTable themeColumnSizes 1`] = `
         class=""
       >
         <th
-          class="c9 "
+          class="c8 "
           scope="row"
         >
           <div
-            class="c5"
+            class="c9"
           >
             <span
               class="c10"
@@ -12677,10 +12381,10 @@ exports[`DataTable themeColumnSizes 1`] = `
           class="c11 "
         >
           <div
-            class="c5"
+            class="c9"
           >
             <span
-              class="c6"
+              class="c5"
             >
               2
             </span>

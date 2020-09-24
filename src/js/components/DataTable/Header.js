@@ -23,7 +23,14 @@ import { kindPartStyles } from '../../utils';
 // separate theme values into groupings depending on what
 // part of header cell they should style
 const separateThemeProps = theme => {
-  const { background, border, color, font, ...rest } = theme.dataTable.header;
+  const {
+    background,
+    border,
+    color,
+    font,
+    gap, // gap is used for space between header cell elements only
+    ...rest
+  } = theme.dataTable.header;
 
   const cellProps = { background, border };
   const textProps = { color, ...font };
