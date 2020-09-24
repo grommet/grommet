@@ -743,7 +743,19 @@ export var generate = function generate(baseSpacing, scale) {
           size: 'xsmall'
         }
       },
-      header: {},
+      header: {
+        // background: undefined,
+        // border: undefined,
+        // font: {
+        //   weight: undefined,
+        //   size: undefined,
+        // },
+        gap: 'small' // hover: {
+        //   background: undefined,
+        // },
+        // pad: undefined,
+
+      },
       icons: {
         ascending: FormDown,
         contract: FormUp,

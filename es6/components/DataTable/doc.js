@@ -135,6 +135,41 @@ export var themeDoc = {
     type: 'object',
     defaultValue: '{}'
   },
+  'dataTable.header.background': {
+    description: 'Any valid Box background value.',
+    type: "string | \n    { dark: string, light: string } |\n    { \n      color: { dark: string, light: string } | string, \n      dark: bool, \n      image: string, \n      position: string, \n      opacity: bool | string, \n      repeat: no-repeat | repeat, \n      size: cover | contain | string\n    }",
+    defaultValue: undefined
+  },
+  'dataTable.header.border': {
+    description: 'Any valid Box border value.',
+    type: 'string | object',
+    defaultValue: undefined
+  },
+  'dataTable.header.font.weight': {
+    description: 'The font weight for text in header cells.',
+    type: 'string',
+    defaultValue: undefined
+  },
+  'dataTable.header.font.size': {
+    description: 'The font size for text in header cells.',
+    type: 'string',
+    defaultValue: undefined
+  },
+  'dataTable.header.gap': {
+    description: 'The gap between elements within the header cell.',
+    type: 'object',
+    defaultValue: 'small'
+  },
+  'dataTable.header.hover.background': {
+    description: "The hover background color of the header cell contents, if \n    clickable. Any valid Box background options apply.",
+    type: "string | \n    { dark: string, light: string } |\n    { \n      color: { dark: string, light: string } | string, \n      dark: bool, \n      image: string, \n      position: string, \n      opacity: bool | string, \n      repeat: no-repeat | repeat, \n      size: cover | contain | string\n    }",
+    defaultValue: undefined
+  },
+  'dataTable.header.pad': {
+    description: 'The pad around the contents of the header cell.',
+    type: 'string | object',
+    defaultValue: undefined
+  },
   'dataTable.icons.ascending': {
     description: 'The ascending icon.',
     type: 'React.Element',

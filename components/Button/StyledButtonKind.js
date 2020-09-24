@@ -45,47 +45,6 @@ var padStyle = function padStyle(_ref) {
 
 var basicStyle = function basicStyle(props) {
   return (0, _styledComponents.css)(["border:none;", ";", " ", " > svg{vertical-align:bottom;}"], radiusStyle(props), padStyle(props), fontStyle(props));
-}; // CSS for this sub-object in the theme
-
-
-var kindPartStyles = function kindPartStyles(obj, theme, colorValue) {
-  var styles = [];
-
-  if (obj.padding) {
-    if (obj.padding.vertical || obj.padding.horizontal) styles.push("padding: " + (theme.global.edgeSize[obj.padding.vertical] || obj.padding.vertical || 0) + " " + (theme.global.edgeSize[obj.padding.horizontal] || obj.padding.horizontal || 0) + ";");else styles.push("padding: " + (theme.global.edgeSize[obj.padding] || obj.padding || 0) + ";");
-  }
-
-  if (obj.background) styles.push((0, _utils.backgroundStyle)(colorValue || obj.background, theme, obj.color || (Object.prototype.hasOwnProperty.call(obj, 'color') && obj.color === undefined ? false : undefined)));else if (obj.color) styles.push("color: " + (0, _utils.normalizeColor)(obj.color, theme) + ";");
-
-  if (obj.border) {
-    if (obj.border.width) styles.push((0, _styledComponents.css)(["border-style:solid;border-width:", ";"], obj.border.width));
-    if (obj.border.color) styles.push((0, _styledComponents.css)(["border-color:", ";"], (0, _utils.normalizeColor)(!obj.background && colorValue || obj.border.color || 'border', theme)));
-    if (obj.border.radius) styles.push((0, _styledComponents.css)(["border-radius:", ";"], obj.border.radius));
-  } else if (obj.border === false) styles.push('border: none;');
-
-  if (colorValue && !obj.border && !obj.background) styles.push("color: " + (0, _utils.normalizeColor)(colorValue, theme) + ";");
-
-  if (obj.font) {
-    if (obj.font.size) {
-      styles.push("font-size: " + (theme.text[obj.font.size].size || obj.font.size) + ";");
-    }
-
-    if (obj.font.height) {
-      styles.push("line-height: " + obj.font.height + ";");
-    }
-
-    if (obj.font.weight) {
-      styles.push("font-weight: " + obj.font.weight + ";");
-    }
-  }
-
-  if (obj.opacity) {
-    var opacity = obj.opacity === true ? theme.global.opacity.medium : theme.global.opacity[obj.opacity] || obj.opacity;
-    styles.push("opacity: " + opacity + ";");
-  }
-
-  if (obj.extend) styles.push(obj.extend);
-  return styles;
 }; // build up CSS from basic to specific based on the supplied sub-object paths
 
 
@@ -106,7 +65,7 @@ var kindStyle = function kindStyle(_ref2) {
     }
 
     if (obj) {
-      styles.push(kindPartStyles(obj, theme, colorValue));
+      styles.push((0, _utils.kindPartStyles)(obj, theme, colorValue));
     }
   });
   themePaths.hover.forEach(function (themePath) {
@@ -120,7 +79,7 @@ var kindStyle = function kindStyle(_ref2) {
       }
 
       if (obj) {
-        var partStyles = kindPartStyles(obj, theme);
+        var partStyles = (0, _utils.kindPartStyles)(obj, theme);
         if (partStyles.length > 0) styles.push((0, _styledComponents.css)(["&:hover{", "}"], partStyles));
       }
     }
@@ -133,7 +92,7 @@ var hoverIndicatorStyle = function hoverIndicatorStyle(_ref3) {
       theme = _ref3.theme;
   var themishObj = {};
   if (hoverIndicator === true || hoverIndicator === 'background') themishObj.background = theme.global.hover.background;else themishObj.background = hoverIndicator;
-  var styles = kindPartStyles(themishObj, theme);
+  var styles = (0, _utils.kindPartStyles)(themishObj, theme);
   if (styles.length > 0) return (0, _styledComponents.css)(["&:hover{", "}"], styles);
   return '';
 };
