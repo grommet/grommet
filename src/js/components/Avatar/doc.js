@@ -22,11 +22,6 @@ export const doc = Avatar => {
     src: PropTypes.oneOfType([PropTypes.string]).description(
       `Specifies a URL string for an avatar image.`,
     ),
-    textSize: PropTypes.oneOfType([
-      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
-    ])
-      .description('Controls text size inside Avatar.')
-      .defaultValue('large'),
   };
 
   return DocumentedAvatar;

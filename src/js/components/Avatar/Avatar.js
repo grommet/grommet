@@ -12,13 +12,12 @@ const Avatar = ({
   round = 'full',
   size = 'medium',
   src,
-  textSize,
   width, // for warning check and discarding the value
   ...rest
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const avatarSize = theme.avatar.size[size] || size;
-  const avatarTextSize = textSize || theme.avatar.text.size[size] || 'large';
+  const avatarTextSize = theme.avatar.text.size[size] || 'large';
 
   const avatarProps = {
     align,
