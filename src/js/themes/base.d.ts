@@ -596,7 +596,19 @@ export interface ThemeType {
     body?: {
       extend?: ExtendType;
     };
-    header?: {};
+    header?: {
+      background?: BackgroundType;
+      border?: BorderType;
+      font?: {
+        weight?: string;
+        size?: string;
+      };
+      gap?: GapType;
+      hover?: {
+        background?: BackgroundType;
+      };
+      pad?: PadType;
+    };
     groupHeader?: {
       border?: {
         side?: string;

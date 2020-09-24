@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import styled, { css, ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 
@@ -18,6 +18,49 @@ import {
   StyledDataTableRow,
 } from './StyledDataTable';
 import { datumValue } from './buildState';
+import { kindPartStyles } from '../../utils';
+
+// separate theme values into groupings depending on what
+// part of header cell they should style
+const separateThemeProps = theme => {
+  const { background, border, color, font, ...rest } = theme.dataTable.header;
+
+  const cellProps = { background, border };
+  const textProps = { color, ...font };
+  const layoutProps = { ...rest };
+
+  return [cellProps, layoutProps, textProps];
+};
+
+// build up CSS from basic to specific based on the supplied sub-object paths.
+// adapted from StyledButtonKind to only include parts relevant for DataTable
+const buttonStyle = ({ theme }) => {
+  const styles = [];
+
+  const [, layoutProps] = separateThemeProps(theme);
+  if (layoutProps) {
+    styles.push(kindPartStyles(layoutProps, theme));
+  }
+
+  if (layoutProps.hover) {
+    // CSS for this sub-object in the theme
+    const partStyles = kindPartStyles(layoutProps.hover, theme);
+    if (partStyles.length > 0)
+      styles.push(
+        css`
+          &:hover {
+            ${partStyles}
+          }
+        `,
+      );
+  }
+
+  return styles;
+};
+
+const StyledHeaderCellButton = styled(Button)`
+  ${props => buttonStyle(props)}
+`;
 
 const Header = ({
   background: backgroundProp,
@@ -44,6 +87,7 @@ const Header = ({
   ...rest
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
+
   return (
     <StyledDataTableHeader fillProp={fill} {...rest}>
       <StyledDataTableRow>
@@ -91,8 +135,20 @@ const Header = ({
             verticalAlign,
             size,
           }) => {
-            let content =
-              typeof header === 'string' ? <Text>{header}</Text> : header;
+            const [cellProps, layoutProps, textProps] = separateThemeProps(
+              theme,
+            );
+
+            let content;
+            if (typeof header === 'string') {
+              content = <Text {...textProps}>{header}</Text>;
+              if (Object.keys(layoutProps).length && sortable === false) {
+                // apply rest of layout styling if cell is not sortable,
+                // otherwise this styling will be applied by
+                // StyledHeaderCellButton
+                content = <Box {...layoutProps}>{content}</Box>;
+              }
+            } else content = header;
 
             if (onSort && sortable !== false) {
               let Icon;
@@ -107,12 +163,21 @@ const Header = ({
                 }
               }
               content = (
-                <Button plain fill="vertical" onClick={onSort(property)}>
-                  <Box direction="row" align="center" gap="xsmall">
+                <StyledHeaderCellButton
+                  plain
+                  fill="vertical"
+                  onClick={onSort(property)}
+                >
+                  <Box
+                    direction="row"
+                    align="center"
+                    gap="xsmall"
+                    justify={align}
+                  >
                     {content}
                     {Icon && <Icon />}
                   </Box>
-                </Button>
+                </StyledHeaderCellButton>
               );
             }
 
@@ -135,17 +200,18 @@ const Header = ({
                   direction="row"
                   align="center"
                   justify={!align || align === 'start' ? 'between' : align}
-                  gap="small"
+                  gap={theme.dataTable.header.gap}
                   fill="vertical"
                   style={onResize ? { position: 'relative' } : undefined}
                 >
-                  {content}
+                  {/* content should fill any available space in cell */}
+                  <Box flex="grow">{content}</Box>
                   {searcher && resizer ? (
                     <Box
                       flex="shrink"
                       direction="row"
                       align="center"
-                      gap="small"
+                      gap={theme.dataTable.header.gap}
                     >
                       {searcher}
                       {resizer}
@@ -174,9 +240,8 @@ const Header = ({
                 key={property}
                 align={align}
                 verticalAlign={verticalAlign}
-                background={background}
-                border={border}
-                context="header"
+                background={background || cellProps.background}
+                border={border || cellProps.border}
                 pad={pad}
                 pin={pin}
                 plain
