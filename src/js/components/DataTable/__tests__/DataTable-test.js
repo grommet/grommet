@@ -339,6 +339,30 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('aggregate with nested object', () => {
+    const { container, getByText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            {
+              property: 'obj.value',
+              header: 'object',
+              aggregate: 'sum',
+              footer: { aggregate: true },
+            },
+          ]}
+          data={[
+            { a: 'one', obj: { value: 1 } },
+            { a: 'two', obj: { value: 2 } },
+          ]}
+        />
+      </Grommet>,
+    );
+    expect(getByText('3')).toBeTruthy();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('groupBy', () => {
     const { container, getByText } = render(
       <Grommet>
@@ -702,6 +726,46 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByLabelText('select beta'));
     expect(onSelect).toBeCalledWith(expect.arrayContaining(['alpha', 'beta']));
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('custom theme', () => {
+    const customTheme = {
+      dataTable: {
+        header: {
+          background: 'skyblue',
+          border: {
+            color: 'brand',
+            size: 'medium',
+          },
+          gap: 'none',
+          pad: { horizontal: 'small', vertical: 'xsmall' },
+          font: {
+            weight: 'bold',
+          },
+          hover: {
+            background: {
+              color: 'light-2',
+            },
+          },
+        },
+      },
+    };
+
+    const { container, getByLabelText } = render(
+      <Grommet theme={customTheme}>
+        <DataTable
+          columns={[{ property: 'a', header: 'A' }]}
+          data={[{ a: 'alpha' }, { a: 'beta' }]}
+          primaryKey="a"
+          select={['alpha']}
+          sortable
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.mouseOver(getByLabelText('select beta'));
     expect(container.firstChild).toMatchSnapshot();
   });
 });
