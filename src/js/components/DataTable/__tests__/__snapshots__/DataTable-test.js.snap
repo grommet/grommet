@@ -6044,6 +6044,8 @@ exports[`DataTable pin + background 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
+  background-color: blue;
+  color: #444444;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
   padding-right: 12px;
@@ -6082,7 +6084,22 @@ exports[`DataTable pin + background 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
+  background-color: green;
+  color: #444444;
   border-top: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c16 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -6122,8 +6139,6 @@ exports[`DataTable pin + background 1`] = `
   top: 0;
   left: 0;
   z-index: 2;
-  background-color: blue;
-  color: #444444;
 }
 
 .c6 {
@@ -6131,8 +6146,6 @@ exports[`DataTable pin + background 1`] = `
   position: sticky;
   top: 0;
   z-index: 1;
-  background-color: blue;
-  color: #444444;
 }
 
 .c9 {
@@ -6148,8 +6161,6 @@ exports[`DataTable pin + background 1`] = `
   bottom: 0;
   left: 0;
   z-index: 2;
-  background-color: green;
-  color: #444444;
 }
 
 .c15 {
@@ -6157,26 +6168,6 @@ exports[`DataTable pin + background 1`] = `
   position: sticky;
   bottom: 0;
   z-index: 1;
-  background-color: green;
-  color: #444444;
-}
-
-.c16 {
-  position: -webkit-sticky;
-  position: sticky;
-  left: 0;
-  z-index: 1;
-  background-color: green;
-  color: #444444;
-}
-
-.c17 {
-  position: -webkit-sticky;
-  position: sticky;
-  left: 0;
-  z-index: 1;
-  background-color: blue;
-  color: #444444;
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -6418,7 +6409,7 @@ exports[`DataTable pin + background 1`] = `
         class=""
       >
         <td
-          class="c13 c16"
+          class="c13 c9"
         >
           <div
             class="c10"
@@ -6450,7 +6441,7 @@ exports[`DataTable pin + background 1`] = `
         class=""
       >
         <th
-          class="c3 c17"
+          class="c3 c9"
           scope="col"
         >
           <span
@@ -6460,7 +6451,7 @@ exports[`DataTable pin + background 1`] = `
           </span>
         </th>
         <th
-          class="c3 "
+          class="c16 "
           scope="col"
         >
           <span

@@ -14,7 +14,7 @@ const normalizeProp = (name, rowProp, prop) => {
 };
 
 const Cell = ({
-  background,
+  background: backgroundProp,
   border,
   column: { align, pin: columnPin, property, render, verticalAlign, size },
   datum,
@@ -46,6 +46,11 @@ const Cell = ({
   if (cellPin) pin = cellPin;
   else if (columnPin) pin = ['left'];
 
+  let background;
+  if (pin && theme.dataTable.pinned && theme.dataTable.pinned[context]) {
+    background = theme.dataTable.pinned[context].background;
+  } else background = undefined;
+
   return (
     <StyledDataTableCell
       scope={scope}
@@ -54,13 +59,15 @@ const Cell = ({
       context={context}
       verticalAlign={verticalAlign}
       size={size}
-      background={normalizeProp(
-        'background',
-        rowProp,
-        Array.isArray(background)
-          ? background[index % background.length]
-          : background,
-      )}
+      background={
+        normalizeProp(
+          'background',
+          rowProp,
+          Array.isArray(backgroundProp)
+            ? backgroundProp[index % backgroundProp.length]
+            : backgroundProp,
+        ) || background
+      }
       border={normalizeProp('border', rowProp, border)}
       pad={normalizeProp('pad', rowProp, pad)}
       pin={pin}

@@ -20,7 +20,7 @@ import {
 import { datumValue } from './buildState';
 
 const Header = ({
-  background,
+  background: backgroundProp,
   border,
   columns,
   data,
@@ -159,6 +159,16 @@ const Header = ({
             const pin = [];
             if (tablePin) pin.push('top');
             if (columnPin) pin.push('left');
+
+            let background;
+            if (backgroundProp) background = backgroundProp;
+            else if (
+              pin.length > 0 &&
+              theme.dataTable.pinned &&
+              theme.dataTable.pinned.header
+            ) {
+              background = theme.dataTable.pinned.header.background;
+            } else background = undefined;
             return (
               <StyledDataTableCell
                 key={property}

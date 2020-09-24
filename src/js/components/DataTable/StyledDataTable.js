@@ -132,15 +132,11 @@ const StyledDataTableCell = styled(TableCell)`
     ${props.pin.map(p => `${p}: 0;`).join(' ')}
     z-index: ${Object.keys(props.pin).length};
     ${
-      !props.background &&
       props.theme.dataTable &&
       props.theme.dataTable.pinned &&
       props.theme.dataTable.pinned[props.context] &&
-      props.theme.dataTable.pinned[props.context].background
-        ? backgroundStyle(
-            props.theme.dataTable.pinned[props.context].background,
-            props.theme,
-          ).join(' ')
+      props.theme.dataTable.pinned[props.context].extend
+        ? props.theme.dataTable.pinned[props.context].extend
         : ''
     }
   `}

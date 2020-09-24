@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-
 import { Grommet, Box, DataTable } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
@@ -30,11 +29,12 @@ const myTheme = deepMerge(grommet, {
       header: {
         background: {
           color: 'brand',
+          opacity: 'medium',
         },
+        extend: `backdrop-filter: blur(8px);`,
       },
       footer: {
-        background: 'light-2',
-        extend: ({ theme }) => `color: ${theme.global.colors['dark-2']};`,
+        background: { color: 'light-2' },
       },
     },
   },
