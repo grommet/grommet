@@ -62,6 +62,11 @@ const StyledHeaderCellButton = styled(Button)`
   ${props => buttonStyle(props)}
 `;
 
+// allow extend to spread onto Box that surrounds column label
+const StyledContentBox = styled(Box)`
+  ${props => props.extend}
+`;
+
 const Header = ({
   background,
   border,
@@ -142,11 +147,18 @@ const Header = ({
             let content;
             if (typeof header === 'string') {
               content = <Text {...textProps}>{header}</Text>;
-              if (Object.keys(layoutProps).length && sortable === false) {
+              if (
+                Object.keys(layoutProps).length &&
+                (sortable === false || !onSort)
+              ) {
                 // apply rest of layout styling if cell is not sortable,
                 // otherwise this styling will be applied by
                 // StyledHeaderCellButton
-                content = <Box {...layoutProps}>{content}</Box>;
+                content = (
+                  <StyledContentBox {...layoutProps}>
+                    {content}
+                  </StyledContentBox>
+                );
               }
             } else content = header;
 
