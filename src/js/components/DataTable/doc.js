@@ -327,6 +327,63 @@ export const themeDoc = {
     type: 'object',
     defaultValue: '{}',
   },
+  'dataTable.header.background': {
+    description: 'Any valid Box background value.',
+    type: `string | 
+    { dark: string, light: string } |
+    { 
+      color: { dark: string, light: string } | string, 
+      dark: bool, 
+      image: string, 
+      position: string, 
+      opacity: bool | string, 
+      repeat: no-repeat | repeat, 
+      size: cover | contain | string
+    }`,
+    defaultValue: undefined,
+  },
+  'dataTable.header.border': {
+    description: 'Any valid Box border value.',
+    type: 'string | object',
+    defaultValue: undefined,
+  },
+  'dataTable.header.font.weight': {
+    description: 'The font weight for text in header cells.',
+    type: 'string',
+    defaultValue: undefined,
+  },
+  'dataTable.header.font.size': {
+    description: 'The font size for text in header cells.',
+    type: 'string',
+    defaultValue: undefined,
+  },
+  'dataTable.header.gap': {
+    description: 'The gap between elements within the header cell.',
+    type: 'object',
+    defaultValue: 'small',
+  },
+  'dataTable.header.hover.background': {
+    description: `The hover background color of the header cell contents, if 
+    clickable. Any valid Box background options apply.`,
+    type: `string | 
+    { dark: string, light: string } |
+    { 
+      color: { dark: string, light: string } | string, 
+      dark: bool, 
+      image: string, 
+      position: string, 
+      opacity: bool | string, 
+      repeat: no-repeat | repeat, 
+      size: cover | contain | string
+    }`,
+    defaultValue: undefined,
+  },
+
+  'dataTable.header.pad': {
+    description: 'The pad around the contents of the header cell.',
+    type: 'string | object',
+    defaultValue: undefined,
+  },
   'dataTable.icons.ascending': {
     description: 'The ascending icon.',
     type: 'React.Element',
@@ -350,6 +407,66 @@ export const themeDoc = {
   'dataTable.icons.sortable': {
     description: 'The icon indicating a column can be sorted.',
     type: 'React.Element',
+    defaultValue: undefined,
+  },
+  'dataTable.pinned.body.background': {
+    description: 'Any valid Box background options apply.',
+    type: `string | 
+      { dark: string, light: string } |
+      { 
+        color: { dark: string, light: string } | string, 
+        dark: bool, 
+        image: string, 
+        position: string, 
+        opacity: bool | string, 
+        repeat: no-repeat | repeat, 
+        size: cover | contain | string
+      }`,
+    defaultValue: undefined,
+  },
+  'dataTable.pinned.body.extend': {
+    description: 'Any additional styles for pinned body cells.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'dataTable.pinned.header.background': {
+    description: 'Any valid Box background options apply.',
+    type: `string | 
+      { dark: string, light: string } |
+      { 
+        color: { dark: string, light: string } | string, 
+        dark: bool, 
+        image: string, 
+        position: string, 
+        opacity: bool | string, 
+        repeat: no-repeat | repeat, 
+        size: cover | contain | string
+      }`,
+    defaultValue: undefined,
+  },
+  'dataTable.pinned.header.extend': {
+    description: 'Any additional styles for pinned header cells.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'dataTable.pinned.footer.background': {
+    description: 'Any valid Box background options apply.',
+    type: `string | 
+      { dark: string, light: string } |
+      { 
+        color: { dark: string, light: string } | string, 
+        dark: bool, 
+        image: string, 
+        position: string, 
+        opacity: bool | string, 
+        repeat: no-repeat | repeat, 
+        size: cover | contain | string
+      }`,
+    defaultValue: undefined,
+  },
+  'dataTable.pinned.footer.extend': {
+    description: 'Any additional styles for pinned footer cells.',
+    type: 'string | (props) => {}',
     defaultValue: undefined,
   },
   'dataTable.primary.weight': {

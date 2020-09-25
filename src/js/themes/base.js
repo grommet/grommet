@@ -668,6 +668,20 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // body: {
       //   extend: undefined,
       // },
+      // pinned: {
+      //   body: {
+      //      background: undefined,
+      //      extend: undefined,
+      //   },
+      //   header: {
+      //      background: undefined,
+      //      extend: undefined,
+      //   },
+      //   footer: {
+      //      background: undefined,
+      //      extend: undefined,
+      //   },
+      // },
       groupHeader: {
         background: {
           dark: 'dark-2',
@@ -679,7 +693,19 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       groupEnd: {
         border: { side: 'bottom', size: 'xsmall' },
       },
-      header: {},
+      header: {
+        // background: undefined,
+        // border: undefined,
+        // font: {
+        //   weight: undefined,
+        //   size: undefined,
+        // },
+        gap: 'small',
+        // hover: {
+        //   background: undefined,
+        // },
+        // pad: undefined,
+      },
       icons: {
         ascending: FormDown,
         contract: FormUp,
