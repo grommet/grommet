@@ -6,6 +6,7 @@ import { defaultProps } from '../../default-props';
 import { Text } from '../Text';
 import { StyledDataTableCell } from './StyledDataTable';
 import { datumValue } from './buildState';
+import { TableContext } from '../Table/TableContext';
 
 var normalizeProp = function normalizeProp(name, rowProp, prop) {
   if (rowProp && rowProp[name]) return rowProp[name];
@@ -13,7 +14,7 @@ var normalizeProp = function normalizeProp(name, rowProp, prop) {
 };
 
 var Cell = function Cell(_ref) {
-  var background = _ref.background,
+  var backgroundProp = _ref.background,
       border = _ref.border,
       _ref$column = _ref.column,
       align = _ref$column.align,
@@ -22,7 +23,6 @@ var Cell = function Cell(_ref) {
       render = _ref$column.render,
       verticalAlign = _ref$column.verticalAlign,
       size = _ref$column.size,
-      context = _ref.context,
       datum = _ref.datum,
       index = _ref.index,
       pad = _ref.pad,
@@ -32,6 +32,7 @@ var Cell = function Cell(_ref) {
       scope = _ref.scope;
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var value = datumValue(datum, property);
+  var context = useContext(TableContext);
   var content;
 
   if (render) {
@@ -47,13 +48,20 @@ var Cell = function Cell(_ref) {
 
   var pin;
   if (cellPin) pin = cellPin;else if (columnPin) pin = ['left'];
+  var background;
+
+  if (pin && theme.dataTable.pinned && theme.dataTable.pinned[context]) {
+    background = theme.dataTable.pinned[context].background;
+  } else background = undefined;
+
   return /*#__PURE__*/React.createElement(StyledDataTableCell, _extends({
     scope: scope
   }, theme.dataTable[context], {
     align: align,
+    context: context,
     verticalAlign: verticalAlign,
     size: size,
-    background: normalizeProp('background', rowProp, Array.isArray(background) ? background[index % background.length] : background),
+    background: normalizeProp('background', rowProp, Array.isArray(backgroundProp) ? backgroundProp[index % backgroundProp.length] : backgroundProp) || background,
     border: normalizeProp('border', rowProp, border),
     pad: normalizeProp('pad', rowProp, pad),
     pin: pin

@@ -13,10 +13,21 @@ var contexts = ['header', 'body', 'footer'];
 
 var normalizeProp = function normalizeProp(prop, context) {
   if (prop) {
-    if (prop[context]) return prop[context];
+    if (prop[context]) {
+      return prop[context];
+    } // if prop[context] wasn't defined, but other values
+    // exist on the prop, return undefined so that background
+    // for context will defaultto theme values instead
+    // note: need to include `pinned` since it is not a
+    // defined context
+
+
     if (contexts.some(function (c) {
-      return prop[c];
-    })) return undefined;
+      return prop[c] || prop.pinned;
+    })) {
+      return undefined;
+    }
+
     return prop;
   }
 

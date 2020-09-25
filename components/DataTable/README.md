@@ -891,6 +891,96 @@ Defaults to
 undefined
 ```
 
+**dataTable.pinned.body.background**
+
+Any valid Box background options apply. Expects `string | 
+      { dark: string, light: string } |
+      { 
+        color: { dark: string, light: string } | string, 
+        dark: bool, 
+        image: string, 
+        position: string, 
+        opacity: bool | string, 
+        repeat: no-repeat | repeat, 
+        size: cover | contain | string
+      }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**dataTable.pinned.body.extend**
+
+Any additional styles for pinned body cells. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**dataTable.pinned.header.background**
+
+Any valid Box background options apply. Expects `string | 
+      { dark: string, light: string } |
+      { 
+        color: { dark: string, light: string } | string, 
+        dark: bool, 
+        image: string, 
+        position: string, 
+        opacity: bool | string, 
+        repeat: no-repeat | repeat, 
+        size: cover | contain | string
+      }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**dataTable.pinned.header.extend**
+
+Any additional styles for pinned header cells. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**dataTable.pinned.footer.background**
+
+Any valid Box background options apply. Expects `string | 
+      { dark: string, light: string } |
+      { 
+        color: { dark: string, light: string } | string, 
+        dark: bool, 
+        image: string, 
+        position: string, 
+        opacity: bool | string, 
+        repeat: no-repeat | repeat, 
+        size: cover | contain | string
+      }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**dataTable.pinned.footer.extend**
+
+Any additional styles for pinned footer cells. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
 **dataTable.primary.weight**
 
 The font weight for primary cells. Expects `string`.

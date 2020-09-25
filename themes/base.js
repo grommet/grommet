@@ -747,6 +747,20 @@ var generate = function generate(baseSpacing, scale) {
       // body: {
       //   extend: undefined,
       // },
+      // pinned: {
+      //   body: {
+      //      background: undefined,
+      //      extend: undefined,
+      //   },
+      //   header: {
+      //      background: undefined,
+      //      extend: undefined,
+      //   },
+      //   footer: {
+      //      background: undefined,
+      //      extend: undefined,
+      //   },
+      // },
       groupHeader: {
         background: {
           dark: 'dark-2',

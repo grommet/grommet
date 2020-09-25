@@ -195,6 +195,36 @@ export var themeDoc = {
     type: 'React.Element',
     defaultValue: undefined
   },
+  'dataTable.pinned.body.background': {
+    description: 'Any valid Box background options apply.',
+    type: "string | \n      { dark: string, light: string } |\n      { \n        color: { dark: string, light: string } | string, \n        dark: bool, \n        image: string, \n        position: string, \n        opacity: bool | string, \n        repeat: no-repeat | repeat, \n        size: cover | contain | string\n      }",
+    defaultValue: undefined
+  },
+  'dataTable.pinned.body.extend': {
+    description: 'Any additional styles for pinned body cells.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined
+  },
+  'dataTable.pinned.header.background': {
+    description: 'Any valid Box background options apply.',
+    type: "string | \n      { dark: string, light: string } |\n      { \n        color: { dark: string, light: string } | string, \n        dark: bool, \n        image: string, \n        position: string, \n        opacity: bool | string, \n        repeat: no-repeat | repeat, \n        size: cover | contain | string\n      }",
+    defaultValue: undefined
+  },
+  'dataTable.pinned.header.extend': {
+    description: 'Any additional styles for pinned header cells.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined
+  },
+  'dataTable.pinned.footer.background': {
+    description: 'Any valid Box background options apply.',
+    type: "string | \n      { dark: string, light: string } |\n      { \n        color: { dark: string, light: string } | string, \n        dark: bool, \n        image: string, \n        position: string, \n        opacity: bool | string, \n        repeat: no-repeat | repeat, \n        size: cover | contain | string\n      }",
+    defaultValue: undefined
+  },
+  'dataTable.pinned.footer.extend': {
+    description: 'Any additional styles for pinned footer cells.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined
+  },
   'dataTable.primary.weight': {
     description: 'The font weight for primary cells.',
     type: 'string',

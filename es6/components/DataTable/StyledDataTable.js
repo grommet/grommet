@@ -71,7 +71,7 @@ var StyledDataTableCell = styled(TableCell).withConfig({
 })(["", ""], function (props) {
   return props.pin && props.pin.length > 0 && "\n    position: sticky;\n    " + props.pin.map(function (p) {
     return p + ": 0;";
-  }).join(' ') + "\n    z-index: " + Object.keys(props.pin).length + ";\n  ";
+  }).join(' ') + "\n    z-index: " + Object.keys(props.pin).length + ";\n    " + (props.theme.dataTable && props.theme.dataTable.pinned && props.theme.dataTable.pinned[props.context] && props.theme.dataTable.pinned[props.context].extend ? props.theme.dataTable.pinned[props.context].extend : '') + "\n  ";
 });
 StyledDataTableCell.defaultProps = {};
 Object.setPrototypeOf(StyledDataTableCell.defaultProps, defaultProps);

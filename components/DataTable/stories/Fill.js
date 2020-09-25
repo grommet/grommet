@@ -8,6 +8,8 @@ var _grommet = require("grommet");
 
 var _themes = require("grommet/themes");
 
+var _utils = require("grommet/utils");
+
 var _data = require("./data");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -19,10 +21,40 @@ var pinnedColumns = _data.columns.map(function (c) {
 });
 
 pinnedColumns[0].pin = true;
+var myTheme = (0, _utils.deepMerge)(_themes.grommet, {
+  table: {
+    header: {
+      background: {
+        color: 'background'
+      }
+    },
+    footer: {
+      background: {
+        color: 'background-back'
+      }
+    }
+  },
+  dataTable: {
+    pinned: {
+      header: {
+        background: {
+          color: 'brand',
+          opacity: 'medium'
+        },
+        extend: "backdrop-filter: blur(8px);"
+      },
+      footer: {
+        background: {
+          color: 'light-2'
+        }
+      }
+    }
+  }
+});
 
 var Example = function Example() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet,
+    theme: myTheme,
     full: true
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: "vertical"
@@ -33,17 +65,8 @@ var Example = function Example() {
     fill: true,
     pin: true,
     background: {
-      header: {
-        color: 'background-front',
-        opacity: 'strong'
-      },
-      footer: {
-        color: 'background-front',
-        opacity: 'strong'
-      },
       pinned: {
-        color: 'background-front',
-        opacity: 'strong'
+        color: 'orange'
       }
     }
   })));

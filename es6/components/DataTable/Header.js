@@ -78,7 +78,7 @@ var StyledContentBox = styled(Box).withConfig({
 });
 
 var Header = function Header(_ref2) {
-  var background = _ref2.background,
+  var backgroundProp = _ref2.background,
       border = _ref2.border,
       columns = _ref2.columns,
       data = _ref2.data,
@@ -208,9 +208,14 @@ var Header = function Header(_ref2) {
     var pin = [];
     if (tablePin) pin.push('top');
     if (columnPin) pin.push('left');
+    var background;
+    if (backgroundProp) background = backgroundProp;else if (pin.length > 0 && theme.dataTable.pinned && theme.dataTable.pinned.header) {
+      background = theme.dataTable.pinned.header.background;
+    } else background = undefined;
     return /*#__PURE__*/React.createElement(StyledDataTableCell, {
       key: property,
       align: align,
+      context: "header",
       verticalAlign: verticalAlign,
       background: background || cellProps.background,
       border: border || cellProps.border,

@@ -3,7 +3,8 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Grommet, Box, DataTable } from 'grommet';
-import { grommet } from 'grommet/themes'; // Source code for the data can be found here
+import { grommet } from 'grommet/themes';
+import { deepMerge } from 'grommet/utils'; // Source code for the data can be found here
 // https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
 
 import { columns, data } from './data';
@@ -11,10 +12,40 @@ var pinnedColumns = columns.map(function (c) {
   return _extends({}, c);
 });
 pinnedColumns[0].pin = true;
+var myTheme = deepMerge(grommet, {
+  table: {
+    header: {
+      background: {
+        color: 'background'
+      }
+    },
+    footer: {
+      background: {
+        color: 'background-back'
+      }
+    }
+  },
+  dataTable: {
+    pinned: {
+      header: {
+        background: {
+          color: 'brand',
+          opacity: 'medium'
+        },
+        extend: "backdrop-filter: blur(8px);"
+      },
+      footer: {
+        background: {
+          color: 'light-2'
+        }
+      }
+    }
+  }
+});
 
 var Example = function Example() {
   return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet,
+    theme: myTheme,
     full: true
   }, /*#__PURE__*/React.createElement(Box, {
     fill: "vertical"
@@ -25,17 +56,8 @@ var Example = function Example() {
     fill: true,
     pin: true,
     background: {
-      header: {
-        color: 'background-front',
-        opacity: 'strong'
-      },
-      footer: {
-        color: 'background-front',
-        opacity: 'strong'
-      },
       pinned: {
-        color: 'background-front',
-        opacity: 'strong'
+        color: 'orange'
       }
     }
   })));

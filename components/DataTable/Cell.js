@@ -15,6 +15,8 @@ var _StyledDataTable = require("./StyledDataTable");
 
 var _buildState = require("./buildState");
 
+var _TableContext = require("../Table/TableContext");
+
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -27,7 +29,7 @@ var normalizeProp = function normalizeProp(name, rowProp, prop) {
 };
 
 var Cell = function Cell(_ref) {
-  var background = _ref.background,
+  var backgroundProp = _ref.background,
       border = _ref.border,
       _ref$column = _ref.column,
       align = _ref$column.align,
@@ -36,7 +38,6 @@ var Cell = function Cell(_ref) {
       render = _ref$column.render,
       verticalAlign = _ref$column.verticalAlign,
       size = _ref$column.size,
-      context = _ref.context,
       datum = _ref.datum,
       index = _ref.index,
       pad = _ref.pad,
@@ -48,6 +49,7 @@ var Cell = function Cell(_ref) {
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
   var value = (0, _buildState.datumValue)(datum, property);
+  var context = (0, _react.useContext)(_TableContext.TableContext);
   var content;
 
   if (render) {
@@ -63,13 +65,20 @@ var Cell = function Cell(_ref) {
 
   var pin;
   if (cellPin) pin = cellPin;else if (columnPin) pin = ['left'];
+  var background;
+
+  if (pin && theme.dataTable.pinned && theme.dataTable.pinned[context]) {
+    background = theme.dataTable.pinned[context].background;
+  } else background = undefined;
+
   return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableCell, _extends({
     scope: scope
   }, theme.dataTable[context], {
     align: align,
+    context: context,
     verticalAlign: verticalAlign,
     size: size,
-    background: normalizeProp('background', rowProp, Array.isArray(background) ? background[index % background.length] : background),
+    background: normalizeProp('background', rowProp, Array.isArray(backgroundProp) ? backgroundProp[index % backgroundProp.length] : backgroundProp) || background,
     border: normalizeProp('border', rowProp, border),
     pad: normalizeProp('pad', rowProp, pad),
     pin: pin
