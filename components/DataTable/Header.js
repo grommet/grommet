@@ -47,7 +47,8 @@ var separateThemeProps = function separateThemeProps(theme) {
       border = _theme$dataTable$head.border,
       color = _theme$dataTable$head.color,
       font = _theme$dataTable$head.font,
-      rest = _objectWithoutPropertiesLoose(_theme$dataTable$head, ["background", "border", "color", "font"]);
+      gap = _theme$dataTable$head.gap,
+      rest = _objectWithoutPropertiesLoose(_theme$dataTable$head, ["background", "border", "color", "font", "gap"]);
 
   var cellProps = {
     background: background,
@@ -90,6 +91,13 @@ var StyledHeaderCellButton = (0, _styledComponents["default"])(_Button.Button).w
   componentId: "sc-1baku5q-0"
 })(["", ""], function (props) {
   return buttonStyle(props);
+}); // allow extend to spread onto Box that surrounds column label
+
+var StyledContentBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
+  displayName: "Header__StyledContentBox",
+  componentId: "sc-1baku5q-1"
+})(["", ""], function (props) {
+  return props.extend;
 });
 
 var Header = function Header(_ref2) {
@@ -156,11 +164,11 @@ var Header = function Header(_ref2) {
     if (typeof header === 'string') {
       content = /*#__PURE__*/_react["default"].createElement(_Text.Text, textProps, header);
 
-      if (Object.keys(layoutProps).length && sortable === false) {
+      if (Object.keys(layoutProps).length && (sortable === false || !onSort)) {
         // apply rest of layout styling if cell is not sortable,
         // otherwise this styling will be applied by
         // StyledHeaderCellButton
-        content = /*#__PURE__*/_react["default"].createElement(_Box.Box, layoutProps, content);
+        content = /*#__PURE__*/_react["default"].createElement(StyledContentBox, layoutProps, content);
       }
     } else content = header;
 
