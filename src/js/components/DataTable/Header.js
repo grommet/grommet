@@ -181,6 +181,9 @@ const Header = ({
               );
             }
 
+            // content should fill any available space in cell
+            content = <Box flex="grow">{content}</Box>;
+
             if (search || onResize) {
               const resizer = onResize ? (
                 <Resizer property={property} onResize={onResize} />
@@ -204,8 +207,7 @@ const Header = ({
                   fill="vertical"
                   style={onResize ? { position: 'relative' } : undefined}
                 >
-                  {/* content should fill any available space in cell */}
-                  <Box flex="grow">{content}</Box>
+                  {content}
                   {searcher && resizer ? (
                     <Box
                       flex="shrink"
