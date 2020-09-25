@@ -23,7 +23,14 @@ import { kindPartStyles } from '../../utils';
 // separate theme values into groupings depending on what
 // part of header cell they should style
 const separateThemeProps = theme => {
-  const { background, border, color, font, ...rest } = theme.dataTable.header;
+  const {
+    background,
+    border,
+    color,
+    font,
+    gap, // gap is used for space between header cell elements only
+    ...rest
+  } = theme.dataTable.header;
 
   const cellProps = { background, border };
   const textProps = { color, ...font };
@@ -60,6 +67,11 @@ const buttonStyle = ({ theme }) => {
 
 const StyledHeaderCellButton = styled(Button)`
   ${props => buttonStyle(props)}
+`;
+
+// allow extend to spread onto Box that surrounds column label
+const StyledContentBox = styled(Box)`
+  ${props => props.extend}
 `;
 
 const Header = ({
@@ -142,11 +154,18 @@ const Header = ({
             let content;
             if (typeof header === 'string') {
               content = <Text {...textProps}>{header}</Text>;
-              if (Object.keys(layoutProps).length && sortable === false) {
+              if (
+                Object.keys(layoutProps).length &&
+                (sortable === false || !onSort)
+              ) {
                 // apply rest of layout styling if cell is not sortable,
                 // otherwise this styling will be applied by
                 // StyledHeaderCellButton
-                content = <Box {...layoutProps}>{content}</Box>;
+                content = (
+                  <StyledContentBox {...layoutProps}>
+                    {content}
+                  </StyledContentBox>
+                );
               }
             } else content = header;
 
