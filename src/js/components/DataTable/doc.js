@@ -409,6 +409,66 @@ export const themeDoc = {
     type: 'React.Element',
     defaultValue: undefined,
   },
+  'dataTable.pinned.body.background': {
+    description: 'Any valid Box background options apply.',
+    type: `string | 
+      { dark: string, light: string } |
+      { 
+        color: { dark: string, light: string } | string, 
+        dark: bool, 
+        image: string, 
+        position: string, 
+        opacity: bool | string, 
+        repeat: no-repeat | repeat, 
+        size: cover | contain | string
+      }`,
+    defaultValue: undefined,
+  },
+  'dataTable.pinned.body.extend': {
+    description: 'Any additional styles for pinned body cells.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'dataTable.pinned.header.background': {
+    description: 'Any valid Box background options apply.',
+    type: `string | 
+      { dark: string, light: string } |
+      { 
+        color: { dark: string, light: string } | string, 
+        dark: bool, 
+        image: string, 
+        position: string, 
+        opacity: bool | string, 
+        repeat: no-repeat | repeat, 
+        size: cover | contain | string
+      }`,
+    defaultValue: undefined,
+  },
+  'dataTable.pinned.header.extend': {
+    description: 'Any additional styles for pinned header cells.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'dataTable.pinned.footer.background': {
+    description: 'Any valid Box background options apply.',
+    type: `string | 
+      { dark: string, light: string } |
+      { 
+        color: { dark: string, light: string } | string, 
+        dark: bool, 
+        image: string, 
+        position: string, 
+        opacity: bool | string, 
+        repeat: no-repeat | repeat, 
+        size: cover | contain | string
+      }`,
+    defaultValue: undefined,
+  },
+  'dataTable.pinned.footer.extend': {
+    description: 'Any additional styles for pinned footer cells.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
   'dataTable.primary.weight': {
     description: 'The font weight for primary cells.',
     type: 'string',
