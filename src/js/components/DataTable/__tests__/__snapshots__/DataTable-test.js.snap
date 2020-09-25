@@ -7135,7 +7135,24 @@ exports[`DataTable pin + background 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c10 {
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7164,7 +7181,7 @@ exports[`DataTable pin + background 1`] = `
   padding-bottom: 6px;
 }
 
-.c8 {
+.c9 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -7177,7 +7194,7 @@ exports[`DataTable pin + background 1`] = `
   padding-bottom: 6px;
 }
 
-.c12 {
+.c13 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -7189,7 +7206,7 @@ exports[`DataTable pin + background 1`] = `
   padding-bottom: 6px;
 }
 
-.c13 {
+.c14 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -7204,7 +7221,7 @@ exports[`DataTable pin + background 1`] = `
   padding-bottom: 6px;
 }
 
-.c16 {
+.c17 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -7223,12 +7240,12 @@ exports[`DataTable pin + background 1`] = `
   width: inherit;
 }
 
-.c5 {
+.c6 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c11 {
+.c12 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -7240,7 +7257,7 @@ exports[`DataTable pin + background 1`] = `
   height: auto;
 }
 
-.c7:focus {
+.c8:focus {
   outline: 2px solid #6FFFB0;
 }
 
@@ -7252,21 +7269,21 @@ exports[`DataTable pin + background 1`] = `
   z-index: 2;
 }
 
-.c6 {
+.c7 {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 1;
 }
 
-.c9 {
+.c10 {
   position: -webkit-sticky;
   position: sticky;
   left: 0;
   z-index: 1;
 }
 
-.c14 {
+.c15 {
   position: -webkit-sticky;
   position: sticky;
   bottom: 0;
@@ -7274,7 +7291,7 @@ exports[`DataTable pin + background 1`] = `
   z-index: 2;
 }
 
-.c15 {
+.c16 {
   position: -webkit-sticky;
   position: sticky;
   bottom: 0;
@@ -7303,52 +7320,60 @@ exports[`DataTable pin + background 1`] = `
           class="c3 c4"
           scope="col"
         >
-          <span
+          <div
             class="c5"
           >
-            A
-          </span>
+            <span
+              class="c6"
+            >
+              A
+            </span>
+          </div>
         </th>
         <th
-          class="c3 c6"
+          class="c3 c7"
           scope="col"
         >
-          <span
+          <div
             class="c5"
           >
-            B
-          </span>
+            <span
+              class="c6"
+            >
+              B
+            </span>
+          </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="c7"
+      class="c8"
     >
       <tr
         class=""
       >
         <th
-          class="c8 c9"
+          class="c9 c10"
           scope="row"
         >
           <div
-            class="c10"
+            class="c11"
           >
             <span
-              class="c11"
+              class="c12"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="c12 "
+          class="c13 "
         >
           <div
-            class="c10"
+            class="c11"
           >
             <span
-              class="c5"
+              class="c6"
             >
               1
             </span>
@@ -7359,27 +7384,27 @@ exports[`DataTable pin + background 1`] = `
         class=""
       >
         <th
-          class="c8 c9"
+          class="c9 c10"
           scope="row"
         >
           <div
-            class="c10"
+            class="c11"
           >
             <span
-              class="c11"
+              class="c12"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="c12 "
+          class="c13 "
         >
           <div
-            class="c10"
+            class="c11"
           >
             <span
-              class="c5"
+              class="c6"
             >
               2
             </span>
@@ -7394,23 +7419,23 @@ exports[`DataTable pin + background 1`] = `
         class=""
       >
         <td
-          class="c13 c14"
+          class="c14 c15"
         >
           <div
-            class="c10"
+            class="c11"
           >
             <span
-              class="c11"
+              class="c12"
             >
               Total
             </span>
           </div>
         </td>
         <td
-          class="c13 c15"
+          class="c14 c16"
         >
           <div
-            class="c10"
+            class="c11"
           />
         </td>
       </tr>
@@ -7429,52 +7454,60 @@ exports[`DataTable pin + background 1`] = `
           class="c3 c4"
           scope="col"
         >
-          <span
+          <div
             class="c5"
           >
-            A
-          </span>
+            <span
+              class="c6"
+            >
+              A
+            </span>
+          </div>
         </th>
         <th
-          class="c3 c6"
+          class="c3 c7"
           scope="col"
         >
-          <span
+          <div
             class="c5"
           >
-            B
-          </span>
+            <span
+              class="c6"
+            >
+              B
+            </span>
+          </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="c7"
+      class="c8"
     >
       <tr
         class=""
       >
         <th
-          class="c8 c9"
+          class="c9 c10"
           scope="row"
         >
           <div
-            class="c10"
+            class="c11"
           >
             <span
-              class="c11"
+              class="c12"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="c12 "
+          class="c13 "
         >
           <div
-            class="c10"
+            class="c11"
           >
             <span
-              class="c5"
+              class="c6"
             >
               1
             </span>
@@ -7485,27 +7518,27 @@ exports[`DataTable pin + background 1`] = `
         class=""
       >
         <th
-          class="c8 c9"
+          class="c9 c10"
           scope="row"
         >
           <div
-            class="c10"
+            class="c11"
           >
             <span
-              class="c11"
+              class="c12"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="c12 "
+          class="c13 "
         >
           <div
-            class="c10"
+            class="c11"
           >
             <span
-              class="c5"
+              class="c6"
             >
               2
             </span>
@@ -7520,23 +7553,23 @@ exports[`DataTable pin + background 1`] = `
         class=""
       >
         <td
-          class="c13 c9"
+          class="c14 c10"
         >
           <div
-            class="c10"
+            class="c11"
           >
             <span
-              class="c11"
+              class="c12"
             >
               Total
             </span>
           </div>
         </td>
         <td
-          class="c13 "
+          class="c14 "
         >
           <div
-            class="c10"
+            class="c11"
           />
         </td>
       </tr>
@@ -7552,55 +7585,63 @@ exports[`DataTable pin + background 1`] = `
         class=""
       >
         <th
-          class="c3 c9"
+          class="c3 c10"
           scope="col"
         >
-          <span
+          <div
             class="c5"
           >
-            A
-          </span>
+            <span
+              class="c6"
+            >
+              A
+            </span>
+          </div>
         </th>
         <th
-          class="c16 "
+          class="c17 "
           scope="col"
         >
-          <span
+          <div
             class="c5"
           >
-            B
-          </span>
+            <span
+              class="c6"
+            >
+              B
+            </span>
+          </div>
         </th>
       </tr>
     </thead>
     <tbody
-      class="c7"
+      class="c8"
     >
       <tr
         class=""
       >
         <th
-          class="c8 c9"
+          class="c9 c10"
           scope="row"
         >
           <div
-            class="c10"
+            class="c11"
           >
             <span
-              class="c11"
+              class="c12"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="c12 "
+          class="c13 "
         >
           <div
-            class="c10"
+            class="c11"
           >
             <span
-              class="c5"
+              class="c6"
             >
               1
             </span>
@@ -7611,27 +7652,27 @@ exports[`DataTable pin + background 1`] = `
         class=""
       >
         <th
-          class="c8 c9"
+          class="c9 c10"
           scope="row"
         >
           <div
-            class="c10"
+            class="c11"
           >
             <span
-              class="c11"
+              class="c12"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="c12 "
+          class="c13 "
         >
           <div
-            class="c10"
+            class="c11"
           >
             <span
-              class="c5"
+              class="c6"
             >
               2
             </span>
@@ -7646,23 +7687,23 @@ exports[`DataTable pin + background 1`] = `
         class=""
       >
         <td
-          class="c13 c14"
+          class="c14 c15"
         >
           <div
-            class="c10"
+            class="c11"
           >
             <span
-              class="c11"
+              class="c12"
             >
               Total
             </span>
           </div>
         </td>
         <td
-          class="c13 c15"
+          class="c14 c16"
         >
           <div
-            class="c10"
+            class="c11"
           />
         </td>
       </tr>
