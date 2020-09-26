@@ -44,3 +44,10 @@ export const defaultColor = (index, theme, valuesLength) => {
   );
   return neutralColors[colorIndex % neutralColors.length];
 };
+
+export const getPathByDirection = (direction, { start, mid, delta, width }) => {
+  if (direction && direction === 'rtl') {
+    return `M ${width},${mid} L ${width - delta},${mid}`;
+  }
+  return `M ${start},${mid} L ${start + delta},${mid}`;
+};
