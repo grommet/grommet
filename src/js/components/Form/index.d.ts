@@ -10,7 +10,7 @@ export interface FormProps<T> {
   errors?: {};
   infos?: {};
   messages?: { invalid?: string; required?: string };
-  onChange?: (value: T) => void;
+  onChange?: (event: FormExtendedEvent<T>) => void;
   onSubmit?: (event: FormExtendedEvent<T>) => void;
   onReset?: (event: React.SyntheticEvent) => any;
   onValidate?: (validationResults: {

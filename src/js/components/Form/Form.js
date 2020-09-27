@@ -153,19 +153,18 @@ const Form = forwardRef(
         nextComponentValue => {
           if (name) {
             // we have somewhere to put this
+            const nextTouched = { ...touched };
+            nextTouched[name] = true;
+
             if (!touched[name]) {
               // don't update if not needed
-              setTouched(prevTouched => {
-                const nextTouched = { ...prevTouched };
-                nextTouched[name] = true;
-                return nextTouched;
-              });
+              setTouched(nextTouched);
             }
 
             const nextValue = { ...value };
             nextValue[name] = nextComponentValue;
             setValueState(nextValue);
-            if (onChange) onChange(nextValue);
+            if (onChange) onChange({ value: nextValue, touched: nextTouched });
           }
           if (initialValue !== undefined) setInputValue(nextComponentValue);
         },
@@ -264,7 +263,8 @@ const Form = forwardRef(
         onReset={event => {
           if (!valueProp) {
             setValueState(defaultValue);
-            if (onChange) onChange(defaultValue);
+            if (onChange)
+              onChange({ value: defaultValue, touched: defaultTouched });
           }
           setTouched(defaultTouched);
           setValidationResults(defaultValidationResults);

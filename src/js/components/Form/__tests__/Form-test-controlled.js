@@ -16,7 +16,10 @@ describe('Form controlled', () => {
     const onSubmit = jest.fn();
     const Test = () => {
       const [value, setValue] = React.useState({ test: '' });
-      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
+      const onChange = React.useCallback(
+        ({ value: nextValue }) => setValue(nextValue),
+        [],
+      );
       return (
         <Form value={value} onChange={onChange} onSubmit={onSubmit}>
           <FormField name="test">
@@ -50,7 +53,10 @@ describe('Form controlled', () => {
     const onValidate = jest.fn();
     const Test = () => {
       const [value, setValue] = React.useState({ test: '' });
-      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
+      const onChange = React.useCallback(
+        ({ value: nextValue }) => setValue(nextValue),
+        [],
+      );
       return (
         <Form value={value} onChange={onChange} onValidate={onValidate}>
           <FormField name="test" required>
@@ -88,7 +94,10 @@ describe('Form controlled', () => {
 
     const Test = () => {
       const [value, setValue] = React.useState({ test: '' });
-      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
+      const onChange = React.useCallback(
+        ({ value: nextValue }) => setValue(nextValue),
+        [],
+      );
       return (
         <Form value={value} onChange={onChange} onValidate={onValidate}>
           <FormField name="test" validate={testRules}>
@@ -126,7 +135,10 @@ describe('Form controlled', () => {
 
     const Test = () => {
       const [value, setValue] = React.useState({ test: '' });
-      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
+      const onChange = React.useCallback(
+        ({ value: nextValue }) => setValue(nextValue),
+        [],
+      );
       return (
         <Form value={value} onChange={onChange} onValidate={onValidate}>
           <FormField name="test" validate={testRules}>
@@ -158,7 +170,10 @@ describe('Form controlled', () => {
     const Test = () => {
       const [value, setValue] = React.useState({ test: '' });
       React.useEffect(() => setValue({ test: 'test' }), []);
-      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
+      const onChange = React.useCallback(
+        ({ value: nextValue }) => setValue(nextValue),
+        [],
+      );
       return (
         <Form value={value} onChange={onChange} onSubmit={onSubmit}>
           <FormField name="test">
@@ -305,7 +320,10 @@ describe('Form controlled', () => {
     const onSubmit = jest.fn();
     const Test = () => {
       const [value, setValue] = React.useState({ test: '' });
-      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
+      const onChange = React.useCallback(
+        ({ value: nextValue }) => setValue(nextValue),
+        [],
+      );
       return (
         <Form value={value} onChange={onChange} onSubmit={onSubmit}>
           <FormField label="test" name="test" id="test" htmlFor="test" />
@@ -336,7 +354,10 @@ describe('Form controlled', () => {
     const onReset = jest.fn();
     const Test = () => {
       const [value, setValue] = React.useState({ test: '' });
-      const onChange = React.useCallback(nextValue => setValue(nextValue), []);
+      const onChange = React.useCallback(
+        ({ value: nextValue }) => setValue(nextValue),
+        [],
+      );
       return (
         <Grommet>
           <Form
@@ -364,5 +385,38 @@ describe('Form controlled', () => {
     fireEvent.click(getByText('Reset'));
     expect(onReset).toBeCalledTimes(1);
     expect(queryByText('Input has changed')).toBeNull();
+  });
+
+  test('controlled onChange touched', () => {
+    const onChange = jest.fn();
+    const onSubmit = jest.fn();
+    const Test = () => {
+      const [value] = React.useState({ test: '' });
+      return (
+        <Form value={value} onChange={onChange} onSubmit={onSubmit}>
+          <FormField name="test">
+            <TextInput name="test" placeholder="test input" />
+          </FormField>
+          <Button type="submit" primary label="Submit" />
+        </Form>
+      );
+    };
+    const { getByPlaceholderText, container } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+
+    fireEvent.change(getByPlaceholderText('test input'), {
+      target: { value: 'Input has changed' },
+    });
+
+    expect(onChange).toBeCalledWith(
+      expect.objectContaining({
+        touched: { test: true },
+      }),
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 });
