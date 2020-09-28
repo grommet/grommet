@@ -6,6 +6,7 @@ import { defaultProps } from '../../default-props';
 import { Text } from '../Text';
 import { StyledDataTableCell } from './StyledDataTable';
 import { datumValue } from './buildState';
+import { TableContext } from '../Table/TableContext';
 
 const normalizeProp = (name, rowProp, prop) => {
   if (rowProp && rowProp[name]) return rowProp[name];
@@ -13,10 +14,9 @@ const normalizeProp = (name, rowProp, prop) => {
 };
 
 const Cell = ({
-  background,
+  background: backgroundProp,
   border,
   column: { align, pin: columnPin, property, render, verticalAlign, size },
-  context,
   datum,
   index,
   pad,
@@ -27,6 +27,8 @@ const Cell = ({
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const value = datumValue(datum, property);
+  const context = useContext(TableContext);
+
   let content;
   if (render) {
     content = render(datum);
@@ -44,20 +46,28 @@ const Cell = ({
   if (cellPin) pin = cellPin;
   else if (columnPin) pin = ['left'];
 
+  let background;
+  if (pin && theme.dataTable.pinned && theme.dataTable.pinned[context]) {
+    background = theme.dataTable.pinned[context].background;
+  } else background = undefined;
+
   return (
     <StyledDataTableCell
       scope={scope}
       {...theme.dataTable[context]}
       align={align}
+      context={context}
       verticalAlign={verticalAlign}
       size={size}
-      background={normalizeProp(
-        'background',
-        rowProp,
-        Array.isArray(background)
-          ? background[index % background.length]
-          : background,
-      )}
+      background={
+        normalizeProp(
+          'background',
+          rowProp,
+          Array.isArray(backgroundProp)
+            ? backgroundProp[index % backgroundProp.length]
+            : backgroundProp,
+        ) || background
+      }
       border={normalizeProp('border', rowProp, border)}
       pad={normalizeProp('pad', rowProp, pad)}
       pin={pin}
