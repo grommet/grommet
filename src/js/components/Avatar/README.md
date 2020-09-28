@@ -121,7 +121,7 @@ undefined
 
 **avatar.text.size.xsmall**
 
-The xsmall size of the text in Avatar (Mapped according Avatar size). Expects `string`.
+The size of the text that is mapped according to 'avatar.size.xsmall'. Expects `string`.
 
 Defaults to
 
@@ -131,7 +131,7 @@ small
 
 **avatar.text.size.small**
 
-The small size of the text in Avatar (Mapped according Avatar size). Expects `string`.
+The size of the text that is mapped according to 'avatar.size.small'. Expects `string`.
 
 Defaults to
 
@@ -141,7 +141,7 @@ medium
 
 **avatar.text.size.medium**
 
-The medium size of the text in Avatar (Mapped according Avatar size). Expects `string`.
+The size of the text that is mapped according to 'avatar.size.medium'. Expects `string`.
 
 Defaults to
 
@@ -151,7 +151,7 @@ large
 
 **avatar.text.size.large**
 
-The large size of the text in Avatar (Mapped according Avatar size). Expects `string`.
+The size of the text that is mapped according to 'avatar.size.large'. Expects `string`.
 
 Defaults to
 
@@ -161,7 +161,7 @@ xlarge
 
 **avatar.text.size.xlarge**
 
-The xlarge size of the text in Avatar (Mapped according Avatar size). Expects `string`.
+The size of the text that is mapped according to 'avatar.size.xlarge'. Expects `string`.
 
 Defaults to
 

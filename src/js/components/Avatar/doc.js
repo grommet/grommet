@@ -70,31 +70,31 @@ export const themeDoc = {
   },
   'avatar.text.size.xsmall': {
     description:
-      'The xsmall size of the text in Avatar (Mapped according Avatar size).',
+      "The size of the text that is mapped according to 'avatar.size.xsmall'.",
     type: 'string',
     defaultValue: 'small',
   },
   'avatar.text.size.small': {
     description:
-      'The small size of the text in Avatar (Mapped according Avatar size).',
+      "The size of the text that is mapped according to 'avatar.size.small'.",
     type: 'string',
     defaultValue: 'medium',
   },
   'avatar.text.size.medium': {
     description:
-      'The medium size of the text in Avatar (Mapped according Avatar size).',
+      "The size of the text that is mapped according to 'avatar.size.medium'.",
     type: 'string',
     defaultValue: 'large',
   },
   'avatar.text.size.large': {
     description:
-      'The large size of the text in Avatar (Mapped according Avatar size).',
+      "The size of the text that is mapped according to 'avatar.size.large'.",
     type: 'string',
     defaultValue: 'xlarge',
   },
   'avatar.text.size.xlarge': {
     description:
-      'The xlarge size of the text in Avatar (Mapped according Avatar size).',
+      "The size of the text that is mapped according to 'avatar.size.xlarge'.",
     type: 'string',
     defaultValue: 'xxlarge',
   },
