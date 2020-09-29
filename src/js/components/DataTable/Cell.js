@@ -16,7 +16,15 @@ const normalizeProp = (name, rowProp, prop) => {
 const Cell = ({
   background: backgroundProp,
   border,
-  column: { align, pin: columnPin, property, render, verticalAlign, size },
+  column: {
+    align,
+    pin: columnPin,
+    footer,
+    property,
+    render,
+    verticalAlign,
+    size,
+  },
   datum,
   index,
   pad,
@@ -28,9 +36,11 @@ const Cell = ({
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const value = datumValue(datum, property);
   const context = useContext(TableContext);
+  const renderContexts =
+    context === 'body' || (context === 'footer' && footer && footer.aggregate);
 
   let content;
-  if (render && datum[property]) {
+  if (render && renderContexts) {
     content = render(datum);
   } else if (value !== undefined) {
     content = value;
