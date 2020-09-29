@@ -30,7 +30,7 @@ const Cell = ({
   const context = useContext(TableContext);
 
   let content;
-  if (render) {
+  if (render && datum[property]) {
     content = render(datum);
   } else if (value !== undefined) {
     content = value;
