@@ -351,10 +351,15 @@ describe('DataTable', () => {
               aggregate: 'sum',
               footer: { aggregate: true },
             },
+            {
+              property: 'obj2.value',
+              header: 'object 2',
+              render: datum => datum.obj2.value,
+            },
           ]}
           data={[
-            { a: 'one', obj: { value: 1 } },
-            { a: 'two', obj: { value: 2 } },
+            { a: 'one', obj: { value: 1 }, obj2: { value: 10 } },
+            { a: 'two', obj: { value: 2 }, obj2: { value: 20 } },
           ]}
         />
       </Grommet>,
