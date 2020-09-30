@@ -19,6 +19,7 @@ var Cell = function Cell(_ref) {
       _ref$column = _ref.column,
       align = _ref$column.align,
       columnPin = _ref$column.pin,
+      footer = _ref$column.footer,
       property = _ref$column.property,
       render = _ref$column.render,
       verticalAlign = _ref$column.verticalAlign,
@@ -33,9 +34,10 @@ var Cell = function Cell(_ref) {
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var value = datumValue(datum, property);
   var context = useContext(TableContext);
+  var renderContexts = context === 'body' || context === 'footer' && footer && footer.aggregate;
   var content;
 
-  if (render) {
+  if (render && renderContexts) {
     content = render(datum);
   } else if (value !== undefined) {
     content = value;
