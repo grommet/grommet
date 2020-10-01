@@ -736,12 +736,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     formField: {
       border: {
         color: 'border',
-        error: {
-          color: {
-            dark: 'white',
-            light: 'status-critical',
-          },
-        },
+        // error: {
+        //   color: {
+        //     dark: 'white',
+        //     light: 'status-critical',
+        //   },
+        // },
         position: 'inner',
         side: 'bottom',
       },
@@ -772,6 +772,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       error: {
         color: 'status-critical',
         margin: { vertical: 'xsmall', horizontal: 'small' },
+        error: {
+          color: {
+            dark: 'white',
+            light: 'status-critical',
+          },
+        },
         // background: undefined,
         // container: {}, // any Box props
         // icon: undefined,

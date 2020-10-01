@@ -242,8 +242,12 @@ const FormField = forwardRef(
       formFieldTheme.disabled.border.color
     ) {
       borderColor = formFieldTheme.disabled.border.color;
-    } else if (error && themeBorder && themeBorder.error.color) {
-      borderColor = themeBorder.error.color || 'status-critical';
+    } else if (
+      error &&
+      formFieldTheme.error.border &&
+      formFieldTheme.error.border.color
+    ) {
+      borderColor = formFieldTheme.error.border.color || 'status-critical';
     } else if (
       focus &&
       formFieldTheme.focus &&

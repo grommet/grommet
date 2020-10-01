@@ -7,9 +7,6 @@ import { deepMerge } from 'grommet/utils';
 const customTheme = deepMerge(grommet, {
   formField: {
     border: {
-      error: {
-        color: 'border',
-      },
       color: 'border',
       side: 'all',
     },
@@ -27,6 +24,9 @@ const customTheme = deepMerge(grommet, {
     error: {
       background: {
         color: { light: '#FF404033', dark: '#FF40404D' },
+      },
+      border: {
+        color: 'border',
       },
       size: 'xsmall',
       color: 'text-weak',
