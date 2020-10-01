@@ -46,7 +46,7 @@ export const defaultColor = (index, theme, valuesLength) => {
 };
 
 export const getPathByDirection = (direction, { start, mid, delta, width }) => {
-  if (direction && direction === 'rtl') {
+  if (direction === 'rtl') {
     return `M ${width},${mid} L ${width - delta},${mid}`;
   }
   return `M ${start},${mid} L ${start + delta},${mid}`;
