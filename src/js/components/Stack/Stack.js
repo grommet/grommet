@@ -1,6 +1,7 @@
 import React, { Children } from 'react';
 
 import { StyledStack, StyledStackLayer } from './StyledStack';
+import { Box } from '../Box';
 
 const buildStyledChildren = ({
   anchor,
@@ -18,7 +19,7 @@ const buildStyledChildren = ({
 
   return (
     <StyledStackLayer key={index} interactive={interactive} {...props}>
-      {child}
+      <Box>{child}</Box>
     </StyledStackLayer>
   );
 };

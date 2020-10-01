@@ -97,7 +97,21 @@ exports[`Video Configure Menu Button 1`] = `
   flex: 1 1;
 }
 
-.c14 {
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -113,7 +127,7 @@ exports[`Video Configure Menu Button 1`] = `
   padding-right: 12px;
 }
 
-.c17 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -181,7 +195,7 @@ exports[`Video Configure Menu Button 1`] = `
   border: 0;
 }
 
-.c16 {
+.c17 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -199,33 +213,33 @@ exports[`Video Configure Menu Button 1`] = `
   text-align: inherit;
 }
 
-.c16:focus {
+.c17:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus > circle,
-.c16:focus > ellipse,
-.c16:focus > line,
-.c16:focus > path,
-.c16:focus > polygon,
-.c16:focus > polyline,
-.c16:focus > rect {
+.c17:focus > circle,
+.c17:focus > ellipse,
+.c17:focus > line,
+.c17:focus > path,
+.c17:focus > polygon,
+.c17:focus > polyline,
+.c17:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus::-moz-focus-inner {
+.c17:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c15 {
+.c16 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c18 {
+.c19 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -239,7 +253,7 @@ exports[`Video Configure Menu Button 1`] = `
   display: block;
 }
 
-.c12 {
+.c13 {
   position: absolute;
   top: 0;
   left: 0;
@@ -257,12 +271,12 @@ exports[`Video Configure Menu Button 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c11 {
+.c12 {
   max-width: 100%;
   overflow: hidden;
 }
 
-.c11 path {
+.c12 path {
   -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
@@ -306,21 +320,21 @@ exports[`Video Configure Menu Button 1`] = `
   opacity: 1;
 }
 
-.c13 {
+.c14 {
   cursor: pointer;
   width: 100%;
   height: 100%;
 }
 
 @media only screen and (max-width:768px) {
-  .c14 {
+  .c15 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c17 {
+  .c18 {
     padding: 6px;
   }
 }
@@ -387,40 +401,48 @@ exports[`Video Configure Menu Button 1`] = `
               <div
                 class="c10"
               >
-                <svg
-                  aria-label="video progress"
+                <div
                   class="c11"
-                  height="12"
-                  preserveAspectRatio="none"
-                  viewBox="0 0 288 12"
-                  width="100%"
                 >
-                  <path
-                    d="M 0,6 L 288,6"
-                    fill="none"
-                    stroke="#777777"
-                    stroke-linecap="square"
-                    stroke-width="12"
-                  />
-                </svg>
+                  <svg
+                    aria-label="video progress"
+                    class="c12"
+                    height="12"
+                    preserveAspectRatio="none"
+                    viewBox="0 0 288 12"
+                    width="100%"
+                  >
+                    <path
+                      d="M 0,6 L 288,6"
+                      fill="none"
+                      stroke="#777777"
+                      stroke-linecap="square"
+                      stroke-width="12"
+                    />
+                  </svg>
+                </div>
               </div>
               <div
-                class="c12"
+                class="c13"
               >
                 <div
-                  aria-label="scrubber"
-                  class="c13"
-                  role="button"
-                  tabindex="0"
-                />
+                  class="c11"
+                >
+                  <div
+                    aria-label="scrubber"
+                    class="c14"
+                    role="button"
+                    tabindex="0"
+                  />
+                </div>
               </div>
             </div>
           </div>
           <div
-            class="c14"
+            class="c15"
           >
             <span
-              class="c15"
+              class="c16"
             >
               NaN:NaN
             </span>
@@ -428,14 +450,14 @@ exports[`Video Configure Menu Button 1`] = `
         </div>
         <button
           aria-label="open menu"
-          class="c16"
+          class="c17"
           type="button"
         >
           <div
-            class="c17"
+            class="c18"
           >
             <span
-              class="c18"
+              class="c19"
             />
             <svg
               aria-label="Actions"
@@ -554,7 +576,21 @@ exports[`Video End event handler 1`] = `
   flex: 1 1;
 }
 
-.c14 {
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -570,7 +606,7 @@ exports[`Video End event handler 1`] = `
   padding-right: 12px;
 }
 
-.c17 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -638,7 +674,7 @@ exports[`Video End event handler 1`] = `
   border: 0;
 }
 
-.c16 {
+.c17 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -656,33 +692,33 @@ exports[`Video End event handler 1`] = `
   text-align: inherit;
 }
 
-.c16:focus {
+.c17:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus > circle,
-.c16:focus > ellipse,
-.c16:focus > line,
-.c16:focus > path,
-.c16:focus > polygon,
-.c16:focus > polyline,
-.c16:focus > rect {
+.c17:focus > circle,
+.c17:focus > ellipse,
+.c17:focus > line,
+.c17:focus > path,
+.c17:focus > polygon,
+.c17:focus > polyline,
+.c17:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus::-moz-focus-inner {
+.c17:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c15 {
+.c16 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c18 {
+.c19 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -696,7 +732,7 @@ exports[`Video End event handler 1`] = `
   display: block;
 }
 
-.c12 {
+.c13 {
   position: absolute;
   top: 0;
   left: 0;
@@ -714,12 +750,12 @@ exports[`Video End event handler 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c11 {
+.c12 {
   max-width: 100%;
   overflow: hidden;
 }
 
-.c11 path {
+.c12 path {
   -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
@@ -763,21 +799,21 @@ exports[`Video End event handler 1`] = `
   pointer-events: none;
 }
 
-.c13 {
+.c14 {
   cursor: pointer;
   width: 100%;
   height: 100%;
 }
 
 @media only screen and (max-width:768px) {
-  .c14 {
+  .c15 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c17 {
+  .c18 {
     padding: 6px;
   }
 }
@@ -832,40 +868,48 @@ exports[`Video End event handler 1`] = `
               <div
                 class="c10"
               >
-                <svg
-                  aria-label="video progress"
+                <div
                   class="c11"
-                  height="12"
-                  preserveAspectRatio="none"
-                  viewBox="0 0 288 12"
-                  width="100%"
                 >
-                  <path
-                    d="M 0,6 L 288,6"
-                    fill="none"
-                    stroke="#777777"
-                    stroke-linecap="square"
-                    stroke-width="12"
-                  />
-                </svg>
+                  <svg
+                    aria-label="video progress"
+                    class="c12"
+                    height="12"
+                    preserveAspectRatio="none"
+                    viewBox="0 0 288 12"
+                    width="100%"
+                  >
+                    <path
+                      d="M 0,6 L 288,6"
+                      fill="none"
+                      stroke="#777777"
+                      stroke-linecap="square"
+                      stroke-width="12"
+                    />
+                  </svg>
+                </div>
               </div>
               <div
-                class="c12"
+                class="c13"
               >
                 <div
-                  aria-label="scrubber"
-                  class="c13"
-                  role="button"
-                  tabindex="0"
-                />
+                  class="c11"
+                >
+                  <div
+                    aria-label="scrubber"
+                    class="c14"
+                    role="button"
+                    tabindex="0"
+                  />
+                </div>
               </div>
             </div>
           </div>
           <div
-            class="c14"
+            class="c15"
           >
             <span
-              class="c15"
+              class="c16"
             >
               NaN:NaN
             </span>
@@ -873,14 +917,14 @@ exports[`Video End event handler 1`] = `
         </div>
         <button
           aria-label="open menu"
-          class="c16"
+          class="c17"
           type="button"
         >
           <div
-            class="c17"
+            class="c18"
           >
             <span
-              class="c18"
+              class="c19"
             />
             <svg
               aria-label="Actions"
@@ -999,7 +1043,21 @@ exports[`Video Play and Pause event handlers 1`] = `
   flex: 1 1;
 }
 
-.c14 {
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1015,7 +1073,7 @@ exports[`Video Play and Pause event handlers 1`] = `
   padding-right: 12px;
 }
 
-.c17 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1083,7 +1141,7 @@ exports[`Video Play and Pause event handlers 1`] = `
   border: 0;
 }
 
-.c16 {
+.c17 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1101,33 +1159,33 @@ exports[`Video Play and Pause event handlers 1`] = `
   text-align: inherit;
 }
 
-.c16:focus {
+.c17:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus > circle,
-.c16:focus > ellipse,
-.c16:focus > line,
-.c16:focus > path,
-.c16:focus > polygon,
-.c16:focus > polyline,
-.c16:focus > rect {
+.c17:focus > circle,
+.c17:focus > ellipse,
+.c17:focus > line,
+.c17:focus > path,
+.c17:focus > polygon,
+.c17:focus > polyline,
+.c17:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus::-moz-focus-inner {
+.c17:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c15 {
+.c16 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c18 {
+.c19 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -1141,7 +1199,7 @@ exports[`Video Play and Pause event handlers 1`] = `
   display: block;
 }
 
-.c12 {
+.c13 {
   position: absolute;
   top: 0;
   left: 0;
@@ -1159,12 +1217,12 @@ exports[`Video Play and Pause event handlers 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c11 {
+.c12 {
   max-width: 100%;
   overflow: hidden;
 }
 
-.c11 path {
+.c12 path {
   -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
@@ -1208,21 +1266,21 @@ exports[`Video Play and Pause event handlers 1`] = `
   pointer-events: none;
 }
 
-.c13 {
+.c14 {
   cursor: pointer;
   width: 100%;
   height: 100%;
 }
 
 @media only screen and (max-width:768px) {
-  .c14 {
+  .c15 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c17 {
+  .c18 {
     padding: 6px;
   }
 }
@@ -1277,40 +1335,48 @@ exports[`Video Play and Pause event handlers 1`] = `
               <div
                 class="c10"
               >
-                <svg
-                  aria-label="video progress"
+                <div
                   class="c11"
-                  height="12"
-                  preserveAspectRatio="none"
-                  viewBox="0 0 288 12"
-                  width="100%"
                 >
-                  <path
-                    d="M 0,6 L 288,6"
-                    fill="none"
-                    stroke="#777777"
-                    stroke-linecap="square"
-                    stroke-width="12"
-                  />
-                </svg>
+                  <svg
+                    aria-label="video progress"
+                    class="c12"
+                    height="12"
+                    preserveAspectRatio="none"
+                    viewBox="0 0 288 12"
+                    width="100%"
+                  >
+                    <path
+                      d="M 0,6 L 288,6"
+                      fill="none"
+                      stroke="#777777"
+                      stroke-linecap="square"
+                      stroke-width="12"
+                    />
+                  </svg>
+                </div>
               </div>
               <div
-                class="c12"
+                class="c13"
               >
                 <div
-                  aria-label="scrubber"
-                  class="c13"
-                  role="button"
-                  tabindex="0"
-                />
+                  class="c11"
+                >
+                  <div
+                    aria-label="scrubber"
+                    class="c14"
+                    role="button"
+                    tabindex="0"
+                  />
+                </div>
               </div>
             </div>
           </div>
           <div
-            class="c14"
+            class="c15"
           >
             <span
-              class="c15"
+              class="c16"
             >
               NaN:NaN
             </span>
@@ -1318,14 +1384,14 @@ exports[`Video Play and Pause event handlers 1`] = `
         </div>
         <button
           aria-label="open menu"
-          class="c16"
+          class="c17"
           type="button"
         >
           <div
-            class="c17"
+            class="c18"
           >
             <span
-              class="c18"
+              class="c19"
             />
             <svg
               aria-label="Actions"
@@ -1440,32 +1506,40 @@ exports[`Video Play and Pause event handlers 2`] = `
               <div
                 class="StyledStack__StyledStackLayer-ajspsk-1 eFfYoG"
               >
-                <svg
-                  aria-label="video progress"
-                  class="StyledMeter-nsxarx-0 bPssvJ"
-                  height="12"
-                  preserveAspectRatio="none"
-                  viewBox="0 0 288 12"
-                  width="100%"
+                <div
+                  class="StyledBox-sc-13pk1d4-0 bFwQzJ"
                 >
-                  <path
-                    d="M 0,6 L 288,6"
-                    fill="none"
-                    stroke="#777777"
-                    stroke-linecap="square"
-                    stroke-width="12"
-                  />
-                </svg>
+                  <svg
+                    aria-label="video progress"
+                    class="StyledMeter-nsxarx-0 bPssvJ"
+                    height="12"
+                    preserveAspectRatio="none"
+                    viewBox="0 0 288 12"
+                    width="100%"
+                  >
+                    <path
+                      d="M 0,6 L 288,6"
+                      fill="none"
+                      stroke="#777777"
+                      stroke-linecap="square"
+                      stroke-width="12"
+                    />
+                  </svg>
+                </div>
               </div>
               <div
                 class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
               >
                 <div
-                  aria-label="scrubber"
-                  class="StyledVideo__StyledVideoScrubber-w4v8h9-3 eXKIlp"
-                  role="button"
-                  tabindex="0"
-                />
+                  class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+                >
+                  <div
+                    aria-label="scrubber"
+                    class="StyledVideo__StyledVideoScrubber-w4v8h9-3 eXKIlp"
+                    role="button"
+                    tabindex="0"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -1607,7 +1681,21 @@ exports[`Video autoPlay renders 1`] = `
   flex: 1 1;
 }
 
-.c14 {
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1623,7 +1711,7 @@ exports[`Video autoPlay renders 1`] = `
   padding-right: 12px;
 }
 
-.c17 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1691,7 +1779,7 @@ exports[`Video autoPlay renders 1`] = `
   border: 0;
 }
 
-.c16 {
+.c17 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1709,33 +1797,33 @@ exports[`Video autoPlay renders 1`] = `
   text-align: inherit;
 }
 
-.c16:focus {
+.c17:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus > circle,
-.c16:focus > ellipse,
-.c16:focus > line,
-.c16:focus > path,
-.c16:focus > polygon,
-.c16:focus > polyline,
-.c16:focus > rect {
+.c17:focus > circle,
+.c17:focus > ellipse,
+.c17:focus > line,
+.c17:focus > path,
+.c17:focus > polygon,
+.c17:focus > polyline,
+.c17:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus::-moz-focus-inner {
+.c17:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c15 {
+.c16 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c18 {
+.c19 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -1749,7 +1837,7 @@ exports[`Video autoPlay renders 1`] = `
   display: block;
 }
 
-.c12 {
+.c13 {
   position: absolute;
   top: 0;
   left: 0;
@@ -1767,12 +1855,12 @@ exports[`Video autoPlay renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c11 {
+.c12 {
   max-width: 100%;
   overflow: hidden;
 }
 
-.c11 path {
+.c12 path {
   -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
@@ -1816,21 +1904,21 @@ exports[`Video autoPlay renders 1`] = `
   opacity: 1;
 }
 
-.c13 {
+.c14 {
   cursor: pointer;
   width: 100%;
   height: 100%;
 }
 
 @media only screen and (max-width:768px) {
-  .c14 {
+  .c15 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c17 {
+  .c18 {
     padding: 6px;
   }
 }
@@ -1886,40 +1974,48 @@ exports[`Video autoPlay renders 1`] = `
               <div
                 class="c10"
               >
-                <svg
-                  aria-label="video progress"
+                <div
                   class="c11"
-                  height="12"
-                  preserveAspectRatio="none"
-                  viewBox="0 0 288 12"
-                  width="100%"
                 >
-                  <path
-                    d="M 0,6 L 288,6"
-                    fill="none"
-                    stroke="#777777"
-                    stroke-linecap="square"
-                    stroke-width="12"
-                  />
-                </svg>
+                  <svg
+                    aria-label="video progress"
+                    class="c12"
+                    height="12"
+                    preserveAspectRatio="none"
+                    viewBox="0 0 288 12"
+                    width="100%"
+                  >
+                    <path
+                      d="M 0,6 L 288,6"
+                      fill="none"
+                      stroke="#777777"
+                      stroke-linecap="square"
+                      stroke-width="12"
+                    />
+                  </svg>
+                </div>
               </div>
               <div
-                class="c12"
+                class="c13"
               >
                 <div
-                  aria-label="scrubber"
-                  class="c13"
-                  role="button"
-                  tabindex="0"
-                />
+                  class="c11"
+                >
+                  <div
+                    aria-label="scrubber"
+                    class="c14"
+                    role="button"
+                    tabindex="0"
+                  />
+                </div>
               </div>
             </div>
           </div>
           <div
-            class="c14"
+            class="c15"
           >
             <span
-              class="c15"
+              class="c16"
             >
               NaN:NaN
             </span>
@@ -1927,14 +2023,14 @@ exports[`Video autoPlay renders 1`] = `
         </div>
         <button
           aria-label="open menu"
-          class="c16"
+          class="c17"
           type="button"
         >
           <div
-            class="c17"
+            class="c18"
           >
             <span
-              class="c18"
+              class="c19"
             />
             <svg
               aria-label="Actions"
@@ -2051,7 +2147,21 @@ exports[`Video controls below renders 1`] = `
   flex: 1 1;
 }
 
-.c14 {
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2067,7 +2177,7 @@ exports[`Video controls below renders 1`] = `
   padding-right: 12px;
 }
 
-.c17 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2135,7 +2245,7 @@ exports[`Video controls below renders 1`] = `
   border: 0;
 }
 
-.c16 {
+.c17 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2153,33 +2263,33 @@ exports[`Video controls below renders 1`] = `
   text-align: inherit;
 }
 
-.c16:focus {
+.c17:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus > circle,
-.c16:focus > ellipse,
-.c16:focus > line,
-.c16:focus > path,
-.c16:focus > polygon,
-.c16:focus > polyline,
-.c16:focus > rect {
+.c17:focus > circle,
+.c17:focus > ellipse,
+.c17:focus > line,
+.c17:focus > path,
+.c17:focus > polygon,
+.c17:focus > polyline,
+.c17:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus::-moz-focus-inner {
+.c17:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c15 {
+.c16 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c18 {
+.c19 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -2193,7 +2303,7 @@ exports[`Video controls below renders 1`] = `
   display: block;
 }
 
-.c12 {
+.c13 {
   position: absolute;
   top: 0;
   left: 0;
@@ -2211,12 +2321,12 @@ exports[`Video controls below renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c11 {
+.c12 {
   max-width: 100%;
   overflow: hidden;
 }
 
-.c11 path {
+.c12 path {
   -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
@@ -2255,21 +2365,21 @@ exports[`Video controls below renders 1`] = `
   opacity: 1;
 }
 
-.c13 {
+.c14 {
   cursor: pointer;
   width: 100%;
   height: 100%;
 }
 
 @media only screen and (max-width:768px) {
-  .c14 {
+  .c15 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c17 {
+  .c18 {
     padding: 6px;
   }
 }
@@ -2324,41 +2434,49 @@ exports[`Video controls below renders 1`] = `
               <div
                 class="c10"
               >
-                <svg
-                  aria-label="video progress"
+                <div
                   class="c11"
-                  height="12"
-                  preserveAspectRatio="none"
-                  viewBox="0 0 288 12"
-                  width="100%"
                 >
-                  <path
-                    d="M 0,6 L 288,6"
-                    fill="none"
-                    stroke="#F2F2F2"
-                    stroke-linecap="square"
-                    stroke-opacity="0.4"
-                    stroke-width="12"
-                  />
-                </svg>
+                  <svg
+                    aria-label="video progress"
+                    class="c12"
+                    height="12"
+                    preserveAspectRatio="none"
+                    viewBox="0 0 288 12"
+                    width="100%"
+                  >
+                    <path
+                      d="M 0,6 L 288,6"
+                      fill="none"
+                      stroke="#F2F2F2"
+                      stroke-linecap="square"
+                      stroke-opacity="0.4"
+                      stroke-width="12"
+                    />
+                  </svg>
+                </div>
               </div>
               <div
-                class="c12"
+                class="c13"
               >
                 <div
-                  aria-label="scrubber"
-                  class="c13"
-                  role="button"
-                  tabindex="0"
-                />
+                  class="c11"
+                >
+                  <div
+                    aria-label="scrubber"
+                    class="c14"
+                    role="button"
+                    tabindex="0"
+                  />
+                </div>
               </div>
             </div>
           </div>
           <div
-            class="c14"
+            class="c15"
           >
             <span
-              class="c15"
+              class="c16"
             >
               NaN:NaN
             </span>
@@ -2366,14 +2484,14 @@ exports[`Video controls below renders 1`] = `
         </div>
         <button
           aria-label="open menu"
-          class="c16"
+          class="c17"
           type="button"
         >
           <div
-            class="c17"
+            class="c18"
           >
             <span
-              class="c18"
+              class="c19"
             />
             <svg
               aria-label="Actions"
@@ -2492,7 +2610,21 @@ exports[`Video controls over renders 1`] = `
   flex: 1 1;
 }
 
-.c14 {
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2508,7 +2640,7 @@ exports[`Video controls over renders 1`] = `
   padding-right: 12px;
 }
 
-.c17 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2576,7 +2708,7 @@ exports[`Video controls over renders 1`] = `
   border: 0;
 }
 
-.c16 {
+.c17 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2594,33 +2726,33 @@ exports[`Video controls over renders 1`] = `
   text-align: inherit;
 }
 
-.c16:focus {
+.c17:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus > circle,
-.c16:focus > ellipse,
-.c16:focus > line,
-.c16:focus > path,
-.c16:focus > polygon,
-.c16:focus > polyline,
-.c16:focus > rect {
+.c17:focus > circle,
+.c17:focus > ellipse,
+.c17:focus > line,
+.c17:focus > path,
+.c17:focus > polygon,
+.c17:focus > polyline,
+.c17:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus::-moz-focus-inner {
+.c17:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c15 {
+.c16 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c18 {
+.c19 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -2634,7 +2766,7 @@ exports[`Video controls over renders 1`] = `
   display: block;
 }
 
-.c12 {
+.c13 {
   position: absolute;
   top: 0;
   left: 0;
@@ -2652,12 +2784,12 @@ exports[`Video controls over renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c11 {
+.c12 {
   max-width: 100%;
   overflow: hidden;
 }
 
-.c11 path {
+.c12 path {
   -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
@@ -2701,21 +2833,21 @@ exports[`Video controls over renders 1`] = `
   opacity: 1;
 }
 
-.c13 {
+.c14 {
   cursor: pointer;
   width: 100%;
   height: 100%;
 }
 
 @media only screen and (max-width:768px) {
-  .c14 {
+  .c15 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c17 {
+  .c18 {
     padding: 6px;
   }
 }
@@ -2770,40 +2902,48 @@ exports[`Video controls over renders 1`] = `
               <div
                 class="c10"
               >
-                <svg
-                  aria-label="video progress"
+                <div
                   class="c11"
-                  height="12"
-                  preserveAspectRatio="none"
-                  viewBox="0 0 288 12"
-                  width="100%"
                 >
-                  <path
-                    d="M 0,6 L 288,6"
-                    fill="none"
-                    stroke="#777777"
-                    stroke-linecap="square"
-                    stroke-width="12"
-                  />
-                </svg>
+                  <svg
+                    aria-label="video progress"
+                    class="c12"
+                    height="12"
+                    preserveAspectRatio="none"
+                    viewBox="0 0 288 12"
+                    width="100%"
+                  >
+                    <path
+                      d="M 0,6 L 288,6"
+                      fill="none"
+                      stroke="#777777"
+                      stroke-linecap="square"
+                      stroke-width="12"
+                    />
+                  </svg>
+                </div>
               </div>
               <div
-                class="c12"
+                class="c13"
               >
                 <div
-                  aria-label="scrubber"
-                  class="c13"
-                  role="button"
-                  tabindex="0"
-                />
+                  class="c11"
+                >
+                  <div
+                    aria-label="scrubber"
+                    class="c14"
+                    role="button"
+                    tabindex="0"
+                  />
+                </div>
               </div>
             </div>
           </div>
           <div
-            class="c14"
+            class="c15"
           >
             <span
-              class="c15"
+              class="c16"
             >
               NaN:NaN
             </span>
@@ -2811,14 +2951,14 @@ exports[`Video controls over renders 1`] = `
         </div>
         <button
           aria-label="open menu"
-          class="c16"
+          class="c17"
           type="button"
         >
           <div
-            class="c17"
+            class="c18"
           >
             <span
-              class="c18"
+              class="c19"
             />
             <svg
               aria-label="Actions"
@@ -2937,7 +3077,21 @@ exports[`Video fit  cover renders 1`] = `
   flex: 1 1;
 }
 
-.c14 {
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2953,7 +3107,7 @@ exports[`Video fit  cover renders 1`] = `
   padding-right: 12px;
 }
 
-.c17 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3021,7 +3175,7 @@ exports[`Video fit  cover renders 1`] = `
   border: 0;
 }
 
-.c16 {
+.c17 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3039,33 +3193,33 @@ exports[`Video fit  cover renders 1`] = `
   text-align: inherit;
 }
 
-.c16:focus {
+.c17:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus > circle,
-.c16:focus > ellipse,
-.c16:focus > line,
-.c16:focus > path,
-.c16:focus > polygon,
-.c16:focus > polyline,
-.c16:focus > rect {
+.c17:focus > circle,
+.c17:focus > ellipse,
+.c17:focus > line,
+.c17:focus > path,
+.c17:focus > polygon,
+.c17:focus > polyline,
+.c17:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus::-moz-focus-inner {
+.c17:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c15 {
+.c16 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c18 {
+.c19 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -3079,7 +3233,7 @@ exports[`Video fit  cover renders 1`] = `
   display: block;
 }
 
-.c12 {
+.c13 {
   position: absolute;
   top: 0;
   left: 0;
@@ -3097,12 +3251,12 @@ exports[`Video fit  cover renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c11 {
+.c12 {
   max-width: 100%;
   overflow: hidden;
 }
 
-.c11 path {
+.c12 path {
   -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
@@ -3151,21 +3305,21 @@ exports[`Video fit  cover renders 1`] = `
   opacity: 1;
 }
 
-.c13 {
+.c14 {
   cursor: pointer;
   width: 100%;
   height: 100%;
 }
 
 @media only screen and (max-width:768px) {
-  .c14 {
+  .c15 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c17 {
+  .c18 {
     padding: 6px;
   }
 }
@@ -3220,40 +3374,48 @@ exports[`Video fit  cover renders 1`] = `
               <div
                 class="c10"
               >
-                <svg
-                  aria-label="video progress"
+                <div
                   class="c11"
-                  height="12"
-                  preserveAspectRatio="none"
-                  viewBox="0 0 288 12"
-                  width="100%"
                 >
-                  <path
-                    d="M 0,6 L 288,6"
-                    fill="none"
-                    stroke="#777777"
-                    stroke-linecap="square"
-                    stroke-width="12"
-                  />
-                </svg>
+                  <svg
+                    aria-label="video progress"
+                    class="c12"
+                    height="12"
+                    preserveAspectRatio="none"
+                    viewBox="0 0 288 12"
+                    width="100%"
+                  >
+                    <path
+                      d="M 0,6 L 288,6"
+                      fill="none"
+                      stroke="#777777"
+                      stroke-linecap="square"
+                      stroke-width="12"
+                    />
+                  </svg>
+                </div>
               </div>
               <div
-                class="c12"
+                class="c13"
               >
                 <div
-                  aria-label="scrubber"
-                  class="c13"
-                  role="button"
-                  tabindex="0"
-                />
+                  class="c11"
+                >
+                  <div
+                    aria-label="scrubber"
+                    class="c14"
+                    role="button"
+                    tabindex="0"
+                  />
+                </div>
               </div>
             </div>
           </div>
           <div
-            class="c14"
+            class="c15"
           >
             <span
-              class="c15"
+              class="c16"
             >
               NaN:NaN
             </span>
@@ -3261,14 +3423,14 @@ exports[`Video fit  cover renders 1`] = `
         </div>
         <button
           aria-label="open menu"
-          class="c16"
+          class="c17"
           type="button"
         >
           <div
-            class="c17"
+            class="c18"
           >
             <span
-              class="c18"
+              class="c19"
             />
             <svg
               aria-label="Actions"
@@ -3387,7 +3549,21 @@ exports[`Video fit contain renders 1`] = `
   flex: 1 1;
 }
 
-.c14 {
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3403,7 +3579,7 @@ exports[`Video fit contain renders 1`] = `
   padding-right: 12px;
 }
 
-.c17 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3471,7 +3647,7 @@ exports[`Video fit contain renders 1`] = `
   border: 0;
 }
 
-.c16 {
+.c17 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3489,33 +3665,33 @@ exports[`Video fit contain renders 1`] = `
   text-align: inherit;
 }
 
-.c16:focus {
+.c17:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus > circle,
-.c16:focus > ellipse,
-.c16:focus > line,
-.c16:focus > path,
-.c16:focus > polygon,
-.c16:focus > polyline,
-.c16:focus > rect {
+.c17:focus > circle,
+.c17:focus > ellipse,
+.c17:focus > line,
+.c17:focus > path,
+.c17:focus > polygon,
+.c17:focus > polyline,
+.c17:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus::-moz-focus-inner {
+.c17:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c15 {
+.c16 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c18 {
+.c19 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -3529,7 +3705,7 @@ exports[`Video fit contain renders 1`] = `
   display: block;
 }
 
-.c12 {
+.c13 {
   position: absolute;
   top: 0;
   left: 0;
@@ -3547,12 +3723,12 @@ exports[`Video fit contain renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c11 {
+.c12 {
   max-width: 100%;
   overflow: hidden;
 }
 
-.c11 path {
+.c12 path {
   -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
@@ -3601,21 +3777,21 @@ exports[`Video fit contain renders 1`] = `
   opacity: 1;
 }
 
-.c13 {
+.c14 {
   cursor: pointer;
   width: 100%;
   height: 100%;
 }
 
 @media only screen and (max-width:768px) {
-  .c14 {
+  .c15 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c17 {
+  .c18 {
     padding: 6px;
   }
 }
@@ -3670,40 +3846,48 @@ exports[`Video fit contain renders 1`] = `
               <div
                 class="c10"
               >
-                <svg
-                  aria-label="video progress"
+                <div
                   class="c11"
-                  height="12"
-                  preserveAspectRatio="none"
-                  viewBox="0 0 288 12"
-                  width="100%"
                 >
-                  <path
-                    d="M 0,6 L 288,6"
-                    fill="none"
-                    stroke="#777777"
-                    stroke-linecap="square"
-                    stroke-width="12"
-                  />
-                </svg>
+                  <svg
+                    aria-label="video progress"
+                    class="c12"
+                    height="12"
+                    preserveAspectRatio="none"
+                    viewBox="0 0 288 12"
+                    width="100%"
+                  >
+                    <path
+                      d="M 0,6 L 288,6"
+                      fill="none"
+                      stroke="#777777"
+                      stroke-linecap="square"
+                      stroke-width="12"
+                    />
+                  </svg>
+                </div>
               </div>
               <div
-                class="c12"
+                class="c13"
               >
                 <div
-                  aria-label="scrubber"
-                  class="c13"
-                  role="button"
-                  tabindex="0"
-                />
+                  class="c11"
+                >
+                  <div
+                    aria-label="scrubber"
+                    class="c14"
+                    role="button"
+                    tabindex="0"
+                  />
+                </div>
               </div>
             </div>
           </div>
           <div
-            class="c14"
+            class="c15"
           >
             <span
-              class="c15"
+              class="c16"
             >
               NaN:NaN
             </span>
@@ -3711,14 +3895,14 @@ exports[`Video fit contain renders 1`] = `
         </div>
         <button
           aria-label="open menu"
-          class="c16"
+          class="c17"
           type="button"
         >
           <div
-            class="c17"
+            class="c18"
           >
             <span
-              class="c18"
+              class="c19"
             />
             <svg
               aria-label="Actions"
@@ -3837,7 +4021,21 @@ exports[`Video loop renders 1`] = `
   flex: 1 1;
 }
 
-.c14 {
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3853,7 +4051,7 @@ exports[`Video loop renders 1`] = `
   padding-right: 12px;
 }
 
-.c17 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3921,7 +4119,7 @@ exports[`Video loop renders 1`] = `
   border: 0;
 }
 
-.c16 {
+.c17 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3939,33 +4137,33 @@ exports[`Video loop renders 1`] = `
   text-align: inherit;
 }
 
-.c16:focus {
+.c17:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus > circle,
-.c16:focus > ellipse,
-.c16:focus > line,
-.c16:focus > path,
-.c16:focus > polygon,
-.c16:focus > polyline,
-.c16:focus > rect {
+.c17:focus > circle,
+.c17:focus > ellipse,
+.c17:focus > line,
+.c17:focus > path,
+.c17:focus > polygon,
+.c17:focus > polyline,
+.c17:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus::-moz-focus-inner {
+.c17:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c15 {
+.c16 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c18 {
+.c19 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -3979,7 +4177,7 @@ exports[`Video loop renders 1`] = `
   display: block;
 }
 
-.c12 {
+.c13 {
   position: absolute;
   top: 0;
   left: 0;
@@ -3997,12 +4195,12 @@ exports[`Video loop renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c11 {
+.c12 {
   max-width: 100%;
   overflow: hidden;
 }
 
-.c11 path {
+.c12 path {
   -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
@@ -4046,21 +4244,21 @@ exports[`Video loop renders 1`] = `
   opacity: 1;
 }
 
-.c13 {
+.c14 {
   cursor: pointer;
   width: 100%;
   height: 100%;
 }
 
 @media only screen and (max-width:768px) {
-  .c14 {
+  .c15 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c17 {
+  .c18 {
     padding: 6px;
   }
 }
@@ -4116,40 +4314,48 @@ exports[`Video loop renders 1`] = `
               <div
                 class="c10"
               >
-                <svg
-                  aria-label="video progress"
+                <div
                   class="c11"
-                  height="12"
-                  preserveAspectRatio="none"
-                  viewBox="0 0 288 12"
-                  width="100%"
                 >
-                  <path
-                    d="M 0,6 L 288,6"
-                    fill="none"
-                    stroke="#777777"
-                    stroke-linecap="square"
-                    stroke-width="12"
-                  />
-                </svg>
+                  <svg
+                    aria-label="video progress"
+                    class="c12"
+                    height="12"
+                    preserveAspectRatio="none"
+                    viewBox="0 0 288 12"
+                    width="100%"
+                  >
+                    <path
+                      d="M 0,6 L 288,6"
+                      fill="none"
+                      stroke="#777777"
+                      stroke-linecap="square"
+                      stroke-width="12"
+                    />
+                  </svg>
+                </div>
               </div>
               <div
-                class="c12"
+                class="c13"
               >
                 <div
-                  aria-label="scrubber"
-                  class="c13"
-                  role="button"
-                  tabindex="0"
-                />
+                  class="c11"
+                >
+                  <div
+                    aria-label="scrubber"
+                    class="c14"
+                    role="button"
+                    tabindex="0"
+                  />
+                </div>
               </div>
             </div>
           </div>
           <div
-            class="c14"
+            class="c15"
           >
             <span
-              class="c15"
+              class="c16"
             >
               NaN:NaN
             </span>
@@ -4157,14 +4363,14 @@ exports[`Video loop renders 1`] = `
         </div>
         <button
           aria-label="open menu"
-          class="c16"
+          class="c17"
           type="button"
         >
           <div
-            class="c17"
+            class="c18"
           >
             <span
-              class="c18"
+              class="c19"
             />
             <svg
               aria-label="Actions"
@@ -4283,7 +4489,21 @@ exports[`Video mute renders 1`] = `
   flex: 1 1;
 }
 
-.c14 {
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4299,7 +4519,7 @@ exports[`Video mute renders 1`] = `
   padding-right: 12px;
 }
 
-.c17 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4367,7 +4587,7 @@ exports[`Video mute renders 1`] = `
   border: 0;
 }
 
-.c16 {
+.c17 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -4385,33 +4605,33 @@ exports[`Video mute renders 1`] = `
   text-align: inherit;
 }
 
-.c16:focus {
+.c17:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus > circle,
-.c16:focus > ellipse,
-.c16:focus > line,
-.c16:focus > path,
-.c16:focus > polygon,
-.c16:focus > polyline,
-.c16:focus > rect {
+.c17:focus > circle,
+.c17:focus > ellipse,
+.c17:focus > line,
+.c17:focus > path,
+.c17:focus > polygon,
+.c17:focus > polyline,
+.c17:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus::-moz-focus-inner {
+.c17:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c15 {
+.c16 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c18 {
+.c19 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -4425,7 +4645,7 @@ exports[`Video mute renders 1`] = `
   display: block;
 }
 
-.c12 {
+.c13 {
   position: absolute;
   top: 0;
   left: 0;
@@ -4443,12 +4663,12 @@ exports[`Video mute renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c11 {
+.c12 {
   max-width: 100%;
   overflow: hidden;
 }
 
-.c11 path {
+.c12 path {
   -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
@@ -4492,21 +4712,21 @@ exports[`Video mute renders 1`] = `
   opacity: 1;
 }
 
-.c13 {
+.c14 {
   cursor: pointer;
   width: 100%;
   height: 100%;
 }
 
 @media only screen and (max-width:768px) {
-  .c14 {
+  .c15 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c17 {
+  .c18 {
     padding: 6px;
   }
 }
@@ -4561,40 +4781,48 @@ exports[`Video mute renders 1`] = `
               <div
                 class="c10"
               >
-                <svg
-                  aria-label="video progress"
+                <div
                   class="c11"
-                  height="12"
-                  preserveAspectRatio="none"
-                  viewBox="0 0 288 12"
-                  width="100%"
                 >
-                  <path
-                    d="M 0,6 L 288,6"
-                    fill="none"
-                    stroke="#777777"
-                    stroke-linecap="square"
-                    stroke-width="12"
-                  />
-                </svg>
+                  <svg
+                    aria-label="video progress"
+                    class="c12"
+                    height="12"
+                    preserveAspectRatio="none"
+                    viewBox="0 0 288 12"
+                    width="100%"
+                  >
+                    <path
+                      d="M 0,6 L 288,6"
+                      fill="none"
+                      stroke="#777777"
+                      stroke-linecap="square"
+                      stroke-width="12"
+                    />
+                  </svg>
+                </div>
               </div>
               <div
-                class="c12"
+                class="c13"
               >
                 <div
-                  aria-label="scrubber"
-                  class="c13"
-                  role="button"
-                  tabindex="0"
-                />
+                  class="c11"
+                >
+                  <div
+                    aria-label="scrubber"
+                    class="c14"
+                    role="button"
+                    tabindex="0"
+                  />
+                </div>
               </div>
             </div>
           </div>
           <div
-            class="c14"
+            class="c15"
           >
             <span
-              class="c15"
+              class="c16"
             >
               NaN:NaN
             </span>
@@ -4602,14 +4830,14 @@ exports[`Video mute renders 1`] = `
         </div>
         <button
           aria-label="open menu"
-          class="c16"
+          class="c17"
           type="button"
         >
           <div
-            class="c17"
+            class="c18"
           >
             <span
-              class="c18"
+              class="c19"
             />
             <svg
               aria-label="Actions"
@@ -4728,7 +4956,21 @@ exports[`Video renders 1`] = `
   flex: 1 1;
 }
 
-.c14 {
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4744,7 +4986,7 @@ exports[`Video renders 1`] = `
   padding-right: 12px;
 }
 
-.c17 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4812,7 +5054,7 @@ exports[`Video renders 1`] = `
   border: 0;
 }
 
-.c16 {
+.c17 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -4830,33 +5072,33 @@ exports[`Video renders 1`] = `
   text-align: inherit;
 }
 
-.c16:focus {
+.c17:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus > circle,
-.c16:focus > ellipse,
-.c16:focus > line,
-.c16:focus > path,
-.c16:focus > polygon,
-.c16:focus > polyline,
-.c16:focus > rect {
+.c17:focus > circle,
+.c17:focus > ellipse,
+.c17:focus > line,
+.c17:focus > path,
+.c17:focus > polygon,
+.c17:focus > polyline,
+.c17:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c16:focus::-moz-focus-inner {
+.c17:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c15 {
+.c16 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c18 {
+.c19 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -4870,7 +5112,7 @@ exports[`Video renders 1`] = `
   display: block;
 }
 
-.c12 {
+.c13 {
   position: absolute;
   top: 0;
   left: 0;
@@ -4888,12 +5130,12 @@ exports[`Video renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c11 {
+.c12 {
   max-width: 100%;
   overflow: hidden;
 }
 
-.c11 path {
+.c12 path {
   -webkit-transition: stroke 0.3s,stroke-width 0.3s;
   transition: stroke 0.3s,stroke-width 0.3s;
 }
@@ -4937,21 +5179,21 @@ exports[`Video renders 1`] = `
   opacity: 1;
 }
 
-.c13 {
+.c14 {
   cursor: pointer;
   width: 100%;
   height: 100%;
 }
 
 @media only screen and (max-width:768px) {
-  .c14 {
+  .c15 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c17 {
+  .c18 {
     padding: 6px;
   }
 }
@@ -5006,40 +5248,48 @@ exports[`Video renders 1`] = `
               <div
                 class="c10"
               >
-                <svg
-                  aria-label="video progress"
+                <div
                   class="c11"
-                  height="12"
-                  preserveAspectRatio="none"
-                  viewBox="0 0 288 12"
-                  width="100%"
                 >
-                  <path
-                    d="M 0,6 L 288,6"
-                    fill="none"
-                    stroke="#777777"
-                    stroke-linecap="square"
-                    stroke-width="12"
-                  />
-                </svg>
+                  <svg
+                    aria-label="video progress"
+                    class="c12"
+                    height="12"
+                    preserveAspectRatio="none"
+                    viewBox="0 0 288 12"
+                    width="100%"
+                  >
+                    <path
+                      d="M 0,6 L 288,6"
+                      fill="none"
+                      stroke="#777777"
+                      stroke-linecap="square"
+                      stroke-width="12"
+                    />
+                  </svg>
+                </div>
               </div>
               <div
-                class="c12"
+                class="c13"
               >
                 <div
-                  aria-label="scrubber"
-                  class="c13"
-                  role="button"
-                  tabindex="0"
-                />
+                  class="c11"
+                >
+                  <div
+                    aria-label="scrubber"
+                    class="c14"
+                    role="button"
+                    tabindex="0"
+                  />
+                </div>
               </div>
             </div>
           </div>
           <div
-            class="c14"
+            class="c15"
           >
             <span
-              class="c15"
+              class="c16"
             >
               NaN:NaN
             </span>
@@ -5047,14 +5297,14 @@ exports[`Video renders 1`] = `
         </div>
         <button
           aria-label="open menu"
-          class="c16"
+          class="c17"
           type="button"
         >
           <div
-            class="c17"
+            class="c18"
           >
             <span
-              class="c18"
+              class="c19"
             />
             <svg
               aria-label="Actions"

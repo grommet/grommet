@@ -191,38 +191,42 @@ exports[`DataChart axis 1`] = `
         <div
           className="c7"
         >
-          <svg
-            className="c8"
-            height={192}
-            preserveAspectRatio="none"
-            viewBox="0 0 384 192"
-            width={384}
+          <div
+            className="c2"
           >
-            <g
-              fill="none"
-              stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+            <svg
+              className="c8"
+              height={192}
+              preserveAspectRatio="none"
+              viewBox="0 0 384 192"
+              width={384}
             >
               <g
                 fill="none"
+                stroke="#6FFFB0"
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+                strokeWidth={96}
               >
-                <title />
-                <path
-                  d="M 48,192 L 48,160"
-                />
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 48,192 L 48,160"
+                  />
+                </g>
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 336,192 L 336,0"
+                  />
+                </g>
               </g>
-              <g
-                fill="none"
-              >
-                <title />
-                <path
-                  d="M 336,192 L 336,0"
-                />
-              </g>
-            </g>
-          </svg>
+            </svg>
+          </div>
         </div>
       </div>
       <div
@@ -247,48 +251,8 @@ exports[`DataChart axis 1`] = `
     <div
       className="c7"
     >
-      <svg
-        className="c8"
-        height={192}
-        preserveAspectRatio="none"
-        viewBox="0 0 384 192"
-        width={384}
-      >
-        <g
-          fill="none"
-          stroke="#6FFFB0"
-          strokeLinecap="butt"
-          strokeLinejoin="miter"
-          strokeWidth={96}
-        >
-          <g
-            fill="none"
-          >
-            <title />
-            <path
-              d="M 48,192 L 48,160"
-            />
-          </g>
-          <g
-            fill="none"
-          >
-            <title />
-            <path
-              d="M 336,192 L 336,0"
-            />
-          </g>
-        </g>
-      </svg>
-    </div>
-  </div>
-  <div
-    className="c2"
-  >
-    <div
-      className="c6"
-    >
       <div
-        className="c7"
+        className="c2"
       >
         <svg
           className="c8"
@@ -322,6 +286,54 @@ exports[`DataChart axis 1`] = `
             </g>
           </g>
         </svg>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c2"
+  >
+    <div
+      className="c6"
+    >
+      <div
+        className="c7"
+      >
+        <div
+          className="c2"
+        >
+          <svg
+            className="c8"
+            height={192}
+            preserveAspectRatio="none"
+            viewBox="0 0 384 192"
+            width={384}
+          >
+            <g
+              fill="none"
+              stroke="#6FFFB0"
+              strokeLinecap="butt"
+              strokeLinejoin="miter"
+              strokeWidth={96}
+            >
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 48,192 L 48,160"
+                />
+              </g>
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 336,192 L 336,0"
+                />
+              </g>
+            </g>
+          </svg>
+        </div>
       </div>
     </div>
     <div
@@ -369,38 +381,42 @@ exports[`DataChart axis 1`] = `
       <div
         className="c7"
       >
-        <svg
-          className="c8"
-          height={192}
-          preserveAspectRatio="none"
-          viewBox="0 0 384 192"
-          width={384}
+        <div
+          className="c2"
         >
-          <g
-            fill="none"
-            stroke="#6FFFB0"
-            strokeLinecap="butt"
-            strokeLinejoin="miter"
-            strokeWidth={96}
+          <svg
+            className="c8"
+            height={192}
+            preserveAspectRatio="none"
+            viewBox="0 0 384 192"
+            width={384}
           >
             <g
               fill="none"
+              stroke="#6FFFB0"
+              strokeLinecap="butt"
+              strokeLinejoin="miter"
+              strokeWidth={96}
             >
-              <title />
-              <path
-                d="M 48,192 L 48,160"
-              />
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 48,192 L 48,160"
+                />
+              </g>
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 336,192 L 336,0"
+                />
+              </g>
             </g>
-            <g
-              fill="none"
-            >
-              <title />
-              <path
-                d="M 336,192 L 336,0"
-              />
-            </g>
-          </g>
-        </svg>
+          </svg>
+        </div>
       </div>
     </div>
   </div>
@@ -413,38 +429,42 @@ exports[`DataChart axis 1`] = `
       <div
         className="c7"
       >
-        <svg
-          className="c8"
-          height={192}
-          preserveAspectRatio="none"
-          viewBox="0 0 384 192"
-          width={384}
+        <div
+          className="c2"
         >
-          <g
-            fill="none"
-            stroke="#6FFFB0"
-            strokeLinecap="butt"
-            strokeLinejoin="miter"
-            strokeWidth={96}
+          <svg
+            className="c8"
+            height={192}
+            preserveAspectRatio="none"
+            viewBox="0 0 384 192"
+            width={384}
           >
             <g
               fill="none"
+              stroke="#6FFFB0"
+              strokeLinecap="butt"
+              strokeLinejoin="miter"
+              strokeWidth={96}
             >
-              <title />
-              <path
-                d="M 48,192 L 48,160"
-              />
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 48,192 L 48,160"
+                />
+              </g>
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 336,192 L 336,0"
+                />
+              </g>
             </g>
-            <g
-              fill="none"
-            >
-              <title />
-              <path
-                d="M 336,192 L 336,0"
-              />
-            </g>
-          </g>
-        </svg>
+          </svg>
+        </div>
       </div>
     </div>
     <div
@@ -507,38 +527,42 @@ exports[`DataChart axis 1`] = `
       <div
         className="c7"
       >
-        <svg
-          className="c8"
-          height={192}
-          preserveAspectRatio="none"
-          viewBox="0 0 384 192"
-          width={384}
+        <div
+          className="c2"
         >
-          <g
-            fill="none"
-            stroke="#6FFFB0"
-            strokeLinecap="butt"
-            strokeLinejoin="miter"
-            strokeWidth={96}
+          <svg
+            className="c8"
+            height={192}
+            preserveAspectRatio="none"
+            viewBox="0 0 384 192"
+            width={384}
           >
             <g
               fill="none"
+              stroke="#6FFFB0"
+              strokeLinecap="butt"
+              strokeLinejoin="miter"
+              strokeWidth={96}
             >
-              <title />
-              <path
-                d="M 48,192 L 48,160"
-              />
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 48,192 L 48,160"
+                />
+              </g>
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 336,192 L 336,0"
+                />
+              </g>
             </g>
-            <g
-              fill="none"
-            >
-              <title />
-              <path
-                d="M 336,192 L 336,0"
-              />
-            </g>
-          </g>
-        </svg>
+          </svg>
+        </div>
       </div>
     </div>
   </div>
@@ -852,81 +876,93 @@ exports[`DataChart dates 1`] = `
           className="c7"
         >
           <div
-            className="c8"
+            className="c2"
           >
             <div
-              className="c9"
-            />
-            <div
-              className="c9"
-            />
+              className="c8"
+            >
+              <div
+                className="c9"
+              />
+              <div
+                className="c9"
+              />
+            </div>
           </div>
         </div>
         <div
           className="c7"
         >
           <div
-            className="c10"
+            className="c2"
           >
             <div
-              className="c11"
-            />
-            <div
-              className="c11"
-            />
+              className="c10"
+            >
+              <div
+                className="c11"
+              />
+              <div
+                className="c11"
+              />
+            </div>
           </div>
         </div>
         <div
           className="c12"
         >
-          <svg
-            className="c13"
-            height={192}
-            preserveAspectRatio="none"
-            viewBox="0 0 384 192"
-            width={384}
+          <div
+            className="c2"
           >
-            <g
-              fill="none"
-              stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+            <svg
+              className="c13"
+              height={192}
+              preserveAspectRatio="none"
+              viewBox="0 0 384 192"
+              width={384}
             >
               <g
                 fill="none"
+                stroke="#6FFFB0"
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+                strokeWidth={96}
               >
-                <title />
-                <path
-                  d="M 48,192 L 48,192"
-                />
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 48,192 L 48,192"
+                  />
+                </g>
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 144,192 L 144,131.04768"
+                  />
+                </g>
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 240,192 L 240,70.09536000000001"
+                  />
+                </g>
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 336,192 L 336,9.143040000000013"
+                  />
+                </g>
               </g>
-              <g
-                fill="none"
-              >
-                <title />
-                <path
-                  d="M 144,192 L 144,131.04768"
-                />
-              </g>
-              <g
-                fill="none"
-              >
-                <title />
-                <path
-                  d="M 240,192 L 240,70.09536000000001"
-                />
-              </g>
-              <g
-                fill="none"
-              >
-                <title />
-                <path
-                  d="M 336,192 L 336,9.143040000000013"
-                />
-              </g>
-            </g>
-          </svg>
+            </svg>
+          </div>
         </div>
       </div>
       <div
@@ -979,81 +1015,93 @@ exports[`DataChart dates 1`] = `
           className="c7"
         >
           <div
-            className="c8"
+            className="c2"
           >
             <div
-              className="c9"
-            />
-            <div
-              className="c9"
-            />
+              className="c8"
+            >
+              <div
+                className="c9"
+              />
+              <div
+                className="c9"
+              />
+            </div>
           </div>
         </div>
         <div
           className="c7"
         >
           <div
-            className="c10"
+            className="c2"
           >
             <div
-              className="c11"
-            />
-            <div
-              className="c11"
-            />
+              className="c10"
+            >
+              <div
+                className="c11"
+              />
+              <div
+                className="c11"
+              />
+            </div>
           </div>
         </div>
         <div
           className="c12"
         >
-          <svg
-            className="c13"
-            height={192}
-            preserveAspectRatio="none"
-            viewBox="0 0 384 192"
-            width={384}
+          <div
+            className="c2"
           >
-            <g
-              fill="none"
-              stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+            <svg
+              className="c13"
+              height={192}
+              preserveAspectRatio="none"
+              viewBox="0 0 384 192"
+              width={384}
             >
               <g
                 fill="none"
+                stroke="#6FFFB0"
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+                strokeWidth={96}
               >
-                <title />
-                <path
-                  d="M 48,192 L 48,192"
-                />
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 48,192 L 48,192"
+                  />
+                </g>
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 144,192 L 144,131.04768"
+                  />
+                </g>
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 240,192 L 240,70.09536000000001"
+                  />
+                </g>
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 336,192 L 336,9.143040000000013"
+                  />
+                </g>
               </g>
-              <g
-                fill="none"
-              >
-                <title />
-                <path
-                  d="M 144,192 L 144,131.04768"
-                />
-              </g>
-              <g
-                fill="none"
-              >
-                <title />
-                <path
-                  d="M 240,192 L 240,70.09536000000001"
-                />
-              </g>
-              <g
-                fill="none"
-              >
-                <title />
-                <path
-                  d="M 336,192 L 336,9.143040000000013"
-                />
-              </g>
-            </g>
-          </svg>
+            </svg>
+          </div>
         </div>
       </div>
       <div
@@ -1106,81 +1154,93 @@ exports[`DataChart dates 1`] = `
           className="c7"
         >
           <div
-            className="c8"
+            className="c2"
           >
             <div
-              className="c9"
-            />
-            <div
-              className="c9"
-            />
+              className="c8"
+            >
+              <div
+                className="c9"
+              />
+              <div
+                className="c9"
+              />
+            </div>
           </div>
         </div>
         <div
           className="c7"
         >
           <div
-            className="c10"
+            className="c2"
           >
             <div
-              className="c11"
-            />
-            <div
-              className="c11"
-            />
+              className="c10"
+            >
+              <div
+                className="c11"
+              />
+              <div
+                className="c11"
+              />
+            </div>
           </div>
         </div>
         <div
           className="c12"
         >
-          <svg
-            className="c13"
-            height={192}
-            preserveAspectRatio="none"
-            viewBox="0 0 384 192"
-            width={384}
+          <div
+            className="c2"
           >
-            <g
-              fill="none"
-              stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+            <svg
+              className="c13"
+              height={192}
+              preserveAspectRatio="none"
+              viewBox="0 0 384 192"
+              width={384}
             >
               <g
                 fill="none"
+                stroke="#6FFFB0"
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+                strokeWidth={96}
               >
-                <title />
-                <path
-                  d="M 48,192 L 48,192"
-                />
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 48,192 L 48,192"
+                  />
+                </g>
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 144,192 L 144,131.04768"
+                  />
+                </g>
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 240,192 L 240,70.09536000000001"
+                  />
+                </g>
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 336,192 L 336,9.143040000000013"
+                  />
+                </g>
               </g>
-              <g
-                fill="none"
-              >
-                <title />
-                <path
-                  d="M 144,192 L 144,131.04768"
-                />
-              </g>
-              <g
-                fill="none"
-              >
-                <title />
-                <path
-                  d="M 240,192 L 240,70.09536000000001"
-                />
-              </g>
-              <g
-                fill="none"
-              >
-                <title />
-                <path
-                  d="M 336,192 L 336,9.143040000000013"
-                />
-              </g>
-            </g>
-          </svg>
+            </svg>
+          </div>
         </div>
       </div>
       <div
@@ -1233,81 +1293,93 @@ exports[`DataChart dates 1`] = `
           className="c7"
         >
           <div
-            className="c8"
+            className="c2"
           >
             <div
-              className="c9"
-            />
-            <div
-              className="c9"
-            />
+              className="c8"
+            >
+              <div
+                className="c9"
+              />
+              <div
+                className="c9"
+              />
+            </div>
           </div>
         </div>
         <div
           className="c7"
         >
           <div
-            className="c10"
+            className="c2"
           >
             <div
-              className="c11"
-            />
-            <div
-              className="c11"
-            />
+              className="c10"
+            >
+              <div
+                className="c11"
+              />
+              <div
+                className="c11"
+              />
+            </div>
           </div>
         </div>
         <div
           className="c12"
         >
-          <svg
-            className="c13"
-            height={192}
-            preserveAspectRatio="none"
-            viewBox="0 0 384 192"
-            width={384}
+          <div
+            className="c2"
           >
-            <g
-              fill="none"
-              stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+            <svg
+              className="c13"
+              height={192}
+              preserveAspectRatio="none"
+              viewBox="0 0 384 192"
+              width={384}
             >
               <g
                 fill="none"
+                stroke="#6FFFB0"
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+                strokeWidth={96}
               >
-                <title />
-                <path
-                  d="M 48,192 L 48,192"
-                />
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 48,192 L 48,192"
+                  />
+                </g>
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 144,192 L 144,131.04768"
+                  />
+                </g>
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 240,192 L 240,70.09536000000001"
+                  />
+                </g>
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 336,192 L 336,9.143040000000013"
+                  />
+                </g>
               </g>
-              <g
-                fill="none"
-              >
-                <title />
-                <path
-                  d="M 144,192 L 144,131.04768"
-                />
-              </g>
-              <g
-                fill="none"
-              >
-                <title />
-                <path
-                  d="M 240,192 L 240,70.09536000000001"
-                />
-              </g>
-              <g
-                fill="none"
-              >
-                <title />
-                <path
-                  d="M 336,192 L 336,9.143040000000013"
-                />
-              </g>
-            </g>
-          </svg>
+            </svg>
+          </div>
         </div>
       </div>
       <div
@@ -1360,81 +1432,93 @@ exports[`DataChart dates 1`] = `
           className="c7"
         >
           <div
-            className="c8"
+            className="c2"
           >
             <div
-              className="c9"
-            />
-            <div
-              className="c9"
-            />
+              className="c8"
+            >
+              <div
+                className="c9"
+              />
+              <div
+                className="c9"
+              />
+            </div>
           </div>
         </div>
         <div
           className="c7"
         >
           <div
-            className="c10"
+            className="c2"
           >
             <div
-              className="c11"
-            />
-            <div
-              className="c11"
-            />
+              className="c10"
+            >
+              <div
+                className="c11"
+              />
+              <div
+                className="c11"
+              />
+            </div>
           </div>
         </div>
         <div
           className="c12"
         >
-          <svg
-            className="c13"
-            height={192}
-            preserveAspectRatio="none"
-            viewBox="0 0 384 192"
-            width={384}
+          <div
+            className="c2"
           >
-            <g
-              fill="none"
-              stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+            <svg
+              className="c13"
+              height={192}
+              preserveAspectRatio="none"
+              viewBox="0 0 384 192"
+              width={384}
             >
               <g
                 fill="none"
+                stroke="#6FFFB0"
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+                strokeWidth={96}
               >
-                <title />
-                <path
-                  d="M 48,192 L 48,192"
-                />
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 48,192 L 48,192"
+                  />
+                </g>
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 144,192 L 144,131.04768"
+                  />
+                </g>
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 240,192 L 240,70.09536000000001"
+                  />
+                </g>
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 336,192 L 336,9.143040000000013"
+                  />
+                </g>
               </g>
-              <g
-                fill="none"
-              >
-                <title />
-                <path
-                  d="M 144,192 L 144,131.04768"
-                />
-              </g>
-              <g
-                fill="none"
-              >
-                <title />
-                <path
-                  d="M 240,192 L 240,70.09536000000001"
-                />
-              </g>
-              <g
-                fill="none"
-              >
-                <title />
-                <path
-                  d="M 336,192 L 336,9.143040000000013"
-                />
-              </g>
-            </g>
-          </svg>
+            </svg>
+          </div>
         </div>
       </div>
       <div
@@ -1487,81 +1571,93 @@ exports[`DataChart dates 1`] = `
           className="c7"
         >
           <div
-            className="c8"
+            className="c2"
           >
             <div
-              className="c9"
-            />
-            <div
-              className="c9"
-            />
+              className="c8"
+            >
+              <div
+                className="c9"
+              />
+              <div
+                className="c9"
+              />
+            </div>
           </div>
         </div>
         <div
           className="c7"
         >
           <div
-            className="c10"
+            className="c2"
           >
             <div
-              className="c11"
-            />
-            <div
-              className="c11"
-            />
+              className="c10"
+            >
+              <div
+                className="c11"
+              />
+              <div
+                className="c11"
+              />
+            </div>
           </div>
         </div>
         <div
           className="c12"
         >
-          <svg
-            className="c13"
-            height={192}
-            preserveAspectRatio="none"
-            viewBox="0 0 384 192"
-            width={384}
+          <div
+            className="c2"
           >
-            <g
-              fill="none"
-              stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+            <svg
+              className="c13"
+              height={192}
+              preserveAspectRatio="none"
+              viewBox="0 0 384 192"
+              width={384}
             >
               <g
                 fill="none"
+                stroke="#6FFFB0"
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+                strokeWidth={96}
               >
-                <title />
-                <path
-                  d="M 48,192 L 48,192"
-                />
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 48,192 L 48,192"
+                  />
+                </g>
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 144,192 L 144,131.04768"
+                  />
+                </g>
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 240,192 L 240,70.09536000000001"
+                  />
+                </g>
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 336,192 L 336,9.143040000000013"
+                  />
+                </g>
               </g>
-              <g
-                fill="none"
-              >
-                <title />
-                <path
-                  d="M 144,192 L 144,131.04768"
-                />
-              </g>
-              <g
-                fill="none"
-              >
-                <title />
-                <path
-                  d="M 240,192 L 240,70.09536000000001"
-                />
-              </g>
-              <g
-                fill="none"
-              >
-                <title />
-                <path
-                  d="M 336,192 L 336,9.143040000000013"
-                />
-              </g>
-            </g>
-          </svg>
+            </svg>
+          </div>
         </div>
       </div>
       <div
@@ -1774,38 +1870,42 @@ exports[`DataChart default 1`] = `
         <div
           className="c7"
         >
-          <svg
-            className="c8"
-            height={192}
-            preserveAspectRatio="none"
-            viewBox="0 0 384 192"
-            width={384}
+          <div
+            className="c2"
           >
-            <g
-              fill="none"
-              stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+            <svg
+              className="c8"
+              height={192}
+              preserveAspectRatio="none"
+              viewBox="0 0 384 192"
+              width={384}
             >
               <g
                 fill="none"
+                stroke="#6FFFB0"
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+                strokeWidth={96}
               >
-                <title />
-                <path
-                  d="M 48,192 L 48,160"
-                />
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 48,192 L 48,160"
+                  />
+                </g>
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 336,192 L 336,0"
+                  />
+                </g>
               </g>
-              <g
-                fill="none"
-              >
-                <title />
-                <path
-                  d="M 336,192 L 336,0"
-                />
-              </g>
-            </g>
-          </svg>
+            </svg>
+          </div>
         </div>
       </div>
       <div
@@ -2091,72 +2191,80 @@ exports[`DataChart detail 1`] = `
         <div
           className="c7"
         >
-          <svg
-            className="c8"
-            height={192}
-            preserveAspectRatio="none"
-            viewBox="0 0 384 192"
-            width={384}
+          <div
+            className="c2"
           >
-            <g
-              fill="none"
-              stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+            <svg
+              className="c8"
+              height={192}
+              preserveAspectRatio="none"
+              viewBox="0 0 384 192"
+              width={384}
             >
               <g
                 fill="none"
+                stroke="#6FFFB0"
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+                strokeWidth={96}
               >
-                <title />
-                <path
-                  d="M 48,192 L 48,160"
-                />
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 48,192 L 48,160"
+                  />
+                </g>
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 336,192 L 336,0"
+                  />
+                </g>
               </g>
-              <g
-                fill="none"
-              >
-                <title />
-                <path
-                  d="M 336,192 L 336,0"
-                />
-              </g>
-            </g>
-          </svg>
+            </svg>
+          </div>
         </div>
         <div
           className="c9"
         >
           <div
-            className="c10 c11"
-            onBlur={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-            onMouseOut={[Function]}
-            tabIndex={0}
+            className="c2"
           >
             <div
-              className="c12"
+              className="c10 c11"
               onBlur={[Function]}
               onFocus={[Function]}
-              onMouseOver={[Function]}
+              onKeyDown={[Function]}
+              onMouseOut={[Function]}
+              tabIndex={0}
             >
               <div
-                className="c13"
-              />
-            </div>
-            <div
-              className="c14"
-            />
-            <div
-              className="c12"
-              onBlur={[Function]}
-              onFocus={[Function]}
-              onMouseOver={[Function]}
-            >
+                className="c12"
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <div
+                  className="c13"
+                />
+              </div>
               <div
-                className="c13"
+                className="c14"
               />
+              <div
+                className="c12"
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onMouseOver={[Function]}
+              >
+                <div
+                  className="c13"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -2210,38 +2318,42 @@ exports[`DataChart detail 1`] = `
         <div
           className="c7"
         >
-          <svg
-            className="c8"
-            height={192}
-            preserveAspectRatio="none"
-            viewBox="0 0 384 192"
-            width={384}
+          <div
+            className="c2"
           >
-            <g
-              fill="none"
-              stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+            <svg
+              className="c8"
+              height={192}
+              preserveAspectRatio="none"
+              viewBox="0 0 384 192"
+              width={384}
             >
               <g
                 fill="none"
+                stroke="#6FFFB0"
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+                strokeWidth={96}
               >
-                <title />
-                <path
-                  d="M 48,192 L 48,160"
-                />
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 48,192 L 48,160"
+                  />
+                </g>
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 336,192 L 336,0"
+                  />
+                </g>
               </g>
-              <g
-                fill="none"
-              >
-                <title />
-                <path
-                  d="M 336,192 L 336,0"
-                />
-              </g>
-            </g>
-          </svg>
+            </svg>
+          </div>
         </div>
       </div>
       <div
@@ -2454,38 +2566,42 @@ exports[`DataChart gap 1`] = `
         <div
           className="c7"
         >
-          <svg
-            className="c8"
-            height={192}
-            preserveAspectRatio="none"
-            viewBox="0 0 384 192"
-            width={384}
+          <div
+            className="c2"
           >
-            <g
-              fill="none"
-              stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+            <svg
+              className="c8"
+              height={192}
+              preserveAspectRatio="none"
+              viewBox="0 0 384 192"
+              width={384}
             >
               <g
                 fill="none"
+                stroke="#6FFFB0"
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+                strokeWidth={96}
               >
-                <title />
-                <path
-                  d="M 48,192 L 48,160"
-                />
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 48,192 L 48,160"
+                  />
+                </g>
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 336,192 L 336,0"
+                  />
+                </g>
               </g>
-              <g
-                fill="none"
-              >
-                <title />
-                <path
-                  d="M 336,192 L 336,0"
-                />
-              </g>
-            </g>
-          </svg>
+            </svg>
+          </div>
         </div>
       </div>
       <div
@@ -2537,38 +2653,42 @@ exports[`DataChart gap 1`] = `
         <div
           className="c7"
         >
-          <svg
-            className="c8"
-            height={192}
-            preserveAspectRatio="none"
-            viewBox="0 0 384 192"
-            width={384}
+          <div
+            className="c2"
           >
-            <g
-              fill="none"
-              stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+            <svg
+              className="c8"
+              height={192}
+              preserveAspectRatio="none"
+              viewBox="0 0 384 192"
+              width={384}
             >
               <g
                 fill="none"
+                stroke="#6FFFB0"
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+                strokeWidth={96}
               >
-                <title />
-                <path
-                  d="M 48,192 L 48,160"
-                />
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 48,192 L 48,160"
+                  />
+                </g>
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 336,192 L 336,0"
+                  />
+                </g>
               </g>
-              <g
-                fill="none"
-              >
-                <title />
-                <path
-                  d="M 336,192 L 336,0"
-                />
-              </g>
-            </g>
-          </svg>
+            </svg>
+          </div>
         </div>
       </div>
       <div
@@ -2620,38 +2740,42 @@ exports[`DataChart gap 1`] = `
         <div
           className="c7"
         >
-          <svg
-            className="c8"
-            height={192}
-            preserveAspectRatio="none"
-            viewBox="0 0 384 192"
-            width={384}
+          <div
+            className="c2"
           >
-            <g
-              fill="none"
-              stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+            <svg
+              className="c8"
+              height={192}
+              preserveAspectRatio="none"
+              viewBox="0 0 384 192"
+              width={384}
             >
               <g
                 fill="none"
+                stroke="#6FFFB0"
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+                strokeWidth={96}
               >
-                <title />
-                <path
-                  d="M 48,192 L 48,160"
-                />
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 48,192 L 48,160"
+                  />
+                </g>
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 336,192 L 336,0"
+                  />
+                </g>
               </g>
-              <g
-                fill="none"
-              >
-                <title />
-                <path
-                  d="M 336,192 L 336,0"
-                />
-              </g>
-            </g>
-          </svg>
+            </svg>
+          </div>
         </div>
       </div>
       <div
@@ -2959,65 +3083,77 @@ exports[`DataChart guide 1`] = `
           className="c7"
         >
           <div
-            className="c8"
+            className="c2"
           >
             <div
-              className="c9"
-            />
-            <div
-              className="c9"
-            />
+              className="c8"
+            >
+              <div
+                className="c9"
+              />
+              <div
+                className="c9"
+              />
+            </div>
           </div>
         </div>
         <div
           className="c7"
         >
           <div
-            className="c10"
+            className="c2"
           >
             <div
-              className="c11"
-            />
-            <div
-              className="c11"
-            />
+              className="c10"
+            >
+              <div
+                className="c11"
+              />
+              <div
+                className="c11"
+              />
+            </div>
           </div>
         </div>
         <div
           className="c12"
         >
-          <svg
-            className="c13"
-            height={192}
-            preserveAspectRatio="none"
-            viewBox="0 0 384 192"
-            width={384}
+          <div
+            className="c2"
           >
-            <g
-              fill="none"
-              stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+            <svg
+              className="c13"
+              height={192}
+              preserveAspectRatio="none"
+              viewBox="0 0 384 192"
+              width={384}
             >
               <g
                 fill="none"
+                stroke="#6FFFB0"
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+                strokeWidth={96}
               >
-                <title />
-                <path
-                  d="M 48,192 L 48,160"
-                />
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 48,192 L 48,160"
+                  />
+                </g>
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 336,192 L 336,0"
+                  />
+                </g>
               </g>
-              <g
-                fill="none"
-              >
-                <title />
-                <path
-                  d="M 336,192 L 336,0"
-                />
-              </g>
-            </g>
-          </svg>
+            </svg>
+          </div>
         </div>
       </div>
       <div
@@ -3069,135 +3205,42 @@ exports[`DataChart guide 1`] = `
         <div
           className="c12"
         >
-          <svg
-            className="c13"
-            height={192}
-            preserveAspectRatio="none"
-            viewBox="0 0 384 192"
-            width={384}
-          >
-            <g
-              fill="none"
-              stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
-            >
-              <g
-                fill="none"
-              >
-                <title />
-                <path
-                  d="M 48,192 L 48,160"
-                />
-              </g>
-              <g
-                fill="none"
-              >
-                <title />
-                <path
-                  d="M 336,192 L 336,0"
-                />
-              </g>
-            </g>
-          </svg>
-        </div>
-      </div>
-      <div
-        className="c14"
-      >
-        <div
-          className="c15"
-        >
-          0
-        </div>
-        <div
-          className="c15"
-        >
-          1
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    className="c1"
-  >
-    <div
-      className="c2"
-    >
-      <div
-        className="c3"
-      >
-        <div
-          className="c4"
-        >
-          2
-        </div>
-        <div
-          className="c4"
-        >
-          0.8
-        </div>
-      </div>
-      <div
-        className="c5"
-      />
-    </div>
-    <div
-      className="c2"
-    >
-      <div
-        className="c6"
-      >
-        <div
-          className="c7"
-        >
           <div
-            className="c8"
+            className="c2"
           >
-            <div
-              className="c9"
-            />
-            <div
-              className="c9"
-            />
-          </div>
-        </div>
-        <div
-          className="c12"
-        >
-          <svg
-            className="c13"
-            height={192}
-            preserveAspectRatio="none"
-            viewBox="0 0 384 192"
-            width={384}
-          >
-            <g
-              fill="none"
-              stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+            <svg
+              className="c13"
+              height={192}
+              preserveAspectRatio="none"
+              viewBox="0 0 384 192"
+              width={384}
             >
               <g
                 fill="none"
+                stroke="#6FFFB0"
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+                strokeWidth={96}
               >
-                <title />
-                <path
-                  d="M 48,192 L 48,160"
-                />
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 48,192 L 48,160"
+                  />
+                </g>
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 336,192 L 336,0"
+                  />
+                </g>
               </g>
-              <g
-                fill="none"
-              >
-                <title />
-                <path
-                  d="M 336,192 L 336,0"
-                />
-              </g>
-            </g>
-          </svg>
+            </svg>
+          </div>
         </div>
       </div>
       <div
@@ -3250,60 +3293,173 @@ exports[`DataChart guide 1`] = `
           className="c7"
         >
           <div
-            className="c10"
+            className="c2"
           >
             <div
-              className="c11"
-            />
-            <div
-              className="c11"
-            />
-            <div
-              className="c11"
-            />
-            <div
-              className="c11"
-            />
-            <div
-              className="c11"
-            />
+              className="c8"
+            >
+              <div
+                className="c9"
+              />
+              <div
+                className="c9"
+              />
+            </div>
           </div>
         </div>
         <div
           className="c12"
         >
-          <svg
-            className="c13"
-            height={192}
-            preserveAspectRatio="none"
-            viewBox="0 0 384 192"
-            width={384}
+          <div
+            className="c2"
           >
-            <g
-              fill="none"
-              stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+            <svg
+              className="c13"
+              height={192}
+              preserveAspectRatio="none"
+              viewBox="0 0 384 192"
+              width={384}
             >
               <g
                 fill="none"
+                stroke="#6FFFB0"
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+                strokeWidth={96}
               >
-                <title />
-                <path
-                  d="M 48,192 L 48,160"
-                />
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 48,192 L 48,160"
+                  />
+                </g>
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 336,192 L 336,0"
+                  />
+                </g>
               </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        className="c14"
+      >
+        <div
+          className="c15"
+        >
+          0
+        </div>
+        <div
+          className="c15"
+        >
+          1
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          2
+        </div>
+        <div
+          className="c4"
+        >
+          0.8
+        </div>
+      </div>
+      <div
+        className="c5"
+      />
+    </div>
+    <div
+      className="c2"
+    >
+      <div
+        className="c6"
+      >
+        <div
+          className="c7"
+        >
+          <div
+            className="c2"
+          >
+            <div
+              className="c10"
+            >
+              <div
+                className="c11"
+              />
+              <div
+                className="c11"
+              />
+              <div
+                className="c11"
+              />
+              <div
+                className="c11"
+              />
+              <div
+                className="c11"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="c12"
+        >
+          <div
+            className="c2"
+          >
+            <svg
+              className="c13"
+              height={192}
+              preserveAspectRatio="none"
+              viewBox="0 0 384 192"
+              width={384}
+            >
               <g
                 fill="none"
+                stroke="#6FFFB0"
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+                strokeWidth={96}
               >
-                <title />
-                <path
-                  d="M 336,192 L 336,0"
-                />
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 48,192 L 48,160"
+                  />
+                </g>
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 336,192 L 336,0"
+                  />
+                </g>
               </g>
-            </g>
-          </svg>
+            </svg>
+          </div>
         </div>
       </div>
       <div
@@ -3600,38 +3756,42 @@ exports[`DataChart legend 1`] = `
           <div
             className="c7"
           >
-            <svg
-              className="c8"
-              height={192}
-              preserveAspectRatio="none"
-              viewBox="0 0 384 192"
-              width={384}
+            <div
+              className="c1"
             >
-              <g
-                fill="none"
-                stroke="#6FFFB0"
-                strokeLinecap="butt"
-                strokeLinejoin="miter"
-                strokeWidth={96}
+              <svg
+                className="c8"
+                height={192}
+                preserveAspectRatio="none"
+                viewBox="0 0 384 192"
+                width={384}
               >
                 <g
                   fill="none"
+                  stroke="#6FFFB0"
+                  strokeLinecap="butt"
+                  strokeLinejoin="miter"
+                  strokeWidth={96}
                 >
-                  <title />
-                  <path
-                    d="M 48,192 L 48,160"
-                  />
+                  <g
+                    fill="none"
+                  >
+                    <title />
+                    <path
+                      d="M 48,192 L 48,160"
+                    />
+                  </g>
+                  <g
+                    fill="none"
+                  >
+                    <title />
+                    <path
+                      d="M 336,192 L 336,0"
+                    />
+                  </g>
                 </g>
-                <g
-                  fill="none"
-                >
-                  <title />
-                  <path
-                    d="M 336,192 L 336,0"
-                  />
-                </g>
-              </g>
-            </svg>
+              </svg>
+            </div>
           </div>
         </div>
         <div
@@ -3711,38 +3871,42 @@ exports[`DataChart legend 1`] = `
         <div
           className="c7"
         >
-          <svg
-            className="c8"
-            height={192}
-            preserveAspectRatio="none"
-            viewBox="0 0 384 192"
-            width={384}
+          <div
+            className="c1"
           >
-            <g
-              fill="none"
-              stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+            <svg
+              className="c8"
+              height={192}
+              preserveAspectRatio="none"
+              viewBox="0 0 384 192"
+              width={384}
             >
               <g
                 fill="none"
+                stroke="#6FFFB0"
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+                strokeWidth={96}
               >
-                <title />
-                <path
-                  d="M 48,192 L 48,160"
-                />
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 48,192 L 48,160"
+                  />
+                </g>
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 336,192 L 336,0"
+                  />
+                </g>
               </g>
-              <g
-                fill="none"
-              >
-                <title />
-                <path
-                  d="M 336,192 L 336,0"
-                />
-              </g>
-            </g>
-          </svg>
+            </svg>
+          </div>
         </div>
       </div>
       <div
@@ -4015,38 +4179,42 @@ exports[`DataChart pad 1`] = `
         <div
           className="c7"
         >
-          <svg
-            className="c8"
-            height={192}
-            preserveAspectRatio="none"
-            viewBox="0 0 384 192"
-            width={384}
+          <div
+            className="c2"
           >
-            <g
-              fill="none"
-              stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+            <svg
+              className="c8"
+              height={192}
+              preserveAspectRatio="none"
+              viewBox="0 0 384 192"
+              width={384}
             >
               <g
                 fill="none"
+                stroke="#6FFFB0"
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+                strokeWidth={96}
               >
-                <title />
-                <path
-                  d="M 12,180 L 12,152"
-                />
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 12,180 L 12,152"
+                  />
+                </g>
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 372,180 L 372,12"
+                  />
+                </g>
               </g>
-              <g
-                fill="none"
-              >
-                <title />
-                <path
-                  d="M 372,180 L 372,12"
-                />
-              </g>
-            </g>
-          </svg>
+            </svg>
+          </div>
         </div>
       </div>
       <div
@@ -4098,38 +4266,42 @@ exports[`DataChart pad 1`] = `
         <div
           className="c7"
         >
-          <svg
-            className="c8"
-            height={192}
-            preserveAspectRatio="none"
-            viewBox="0 0 384 192"
-            width={384}
+          <div
+            className="c2"
           >
-            <g
-              fill="none"
-              stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+            <svg
+              className="c8"
+              height={192}
+              preserveAspectRatio="none"
+              viewBox="0 0 384 192"
+              width={384}
             >
               <g
                 fill="none"
+                stroke="#6FFFB0"
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+                strokeWidth={96}
               >
-                <title />
-                <path
-                  d="M 24,168 L 24,144"
-                />
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 24,168 L 24,144"
+                  />
+                </g>
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 360,168 L 360,24"
+                  />
+                </g>
               </g>
-              <g
-                fill="none"
-              >
-                <title />
-                <path
-                  d="M 360,168 L 360,24"
-                />
-              </g>
-            </g>
-          </svg>
+            </svg>
+          </div>
         </div>
       </div>
       <div
@@ -4181,38 +4353,42 @@ exports[`DataChart pad 1`] = `
         <div
           className="c7"
         >
-          <svg
-            className="c8"
-            height={192}
-            preserveAspectRatio="none"
-            viewBox="0 0 384 192"
-            width={384}
+          <div
+            className="c2"
           >
-            <g
-              fill="none"
-              stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+            <svg
+              className="c8"
+              height={192}
+              preserveAspectRatio="none"
+              viewBox="0 0 384 192"
+              width={384}
             >
               <g
                 fill="none"
+                stroke="#6FFFB0"
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+                strokeWidth={96}
               >
-                <title />
-                <path
-                  d="M 48,144 L 48,128"
-                />
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 48,144 L 48,128"
+                  />
+                </g>
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 336,144 L 336,48"
+                  />
+                </g>
               </g>
-              <g
-                fill="none"
-              >
-                <title />
-                <path
-                  d="M 336,144 L 336,48"
-                />
-              </g>
-            </g>
-          </svg>
+            </svg>
+          </div>
         </div>
       </div>
       <div
@@ -4463,38 +4639,42 @@ exports[`DataChart size 1`] = `
         <div
           className="c7"
         >
-          <svg
-            className="c8"
-            height={0}
-            preserveAspectRatio="none"
-            viewBox="0 0 0 0"
-            width={0}
+          <div
+            className="c2"
           >
-            <g
-              fill="none"
-              stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+            <svg
+              className="c8"
+              height={0}
+              preserveAspectRatio="none"
+              viewBox="0 0 0 0"
+              width={0}
             >
               <g
                 fill="none"
+                stroke="#6FFFB0"
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+                strokeWidth={96}
               >
-                <title />
-                <path
-                  d="M 48,0 L 48,0"
-                />
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 48,0 L 48,0"
+                  />
+                </g>
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M -48,0 L -48,0"
+                  />
+                </g>
               </g>
-              <g
-                fill="none"
-              >
-                <title />
-                <path
-                  d="M -48,0 L -48,0"
-                />
-              </g>
-            </g>
-          </svg>
+            </svg>
+          </div>
         </div>
       </div>
       <div
@@ -4546,38 +4726,42 @@ exports[`DataChart size 1`] = `
         <div
           className="c7"
         >
-          <svg
-            className="c8"
-            height={192}
-            preserveAspectRatio="none"
-            viewBox="0 0 0 192"
-            width={0}
+          <div
+            className="c2"
           >
-            <g
-              fill="none"
-              stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+            <svg
+              className="c8"
+              height={192}
+              preserveAspectRatio="none"
+              viewBox="0 0 0 192"
+              width={0}
             >
               <g
                 fill="none"
+                stroke="#6FFFB0"
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+                strokeWidth={96}
               >
-                <title />
-                <path
-                  d="M 48,192 L 48,160"
-                />
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 48,192 L 48,160"
+                  />
+                </g>
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M -48,192 L -48,0"
+                  />
+                </g>
               </g>
-              <g
-                fill="none"
-              >
-                <title />
-                <path
-                  d="M -48,192 L -48,0"
-                />
-              </g>
-            </g>
-          </svg>
+            </svg>
+          </div>
         </div>
       </div>
       <div
@@ -4629,38 +4813,42 @@ exports[`DataChart size 1`] = `
         <div
           className="c13"
         >
-          <svg
-            className="c8"
-            height={192}
-            preserveAspectRatio="none"
-            viewBox="0 0 288 192"
-            width={288}
+          <div
+            className="c2"
           >
-            <g
-              fill="none"
-              stroke="#6FFFB0"
-              strokeLinecap="butt"
-              strokeLinejoin="miter"
-              strokeWidth={96}
+            <svg
+              className="c8"
+              height={192}
+              preserveAspectRatio="none"
+              viewBox="0 0 288 192"
+              width={288}
             >
               <g
                 fill="none"
+                stroke="#6FFFB0"
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+                strokeWidth={96}
               >
-                <title />
-                <path
-                  d="M 48,192 L 48,160"
-                />
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 48,192 L 48,160"
+                  />
+                </g>
+                <g
+                  fill="none"
+                >
+                  <title />
+                  <path
+                    d="M 240,192 L 240,0"
+                  />
+                </g>
               </g>
-              <g
-                fill="none"
-              >
-                <title />
-                <path
-                  d="M 240,192 L 240,0"
-                />
-              </g>
-            </g>
-          </svg>
+            </svg>
+          </div>
         </div>
       </div>
       <div

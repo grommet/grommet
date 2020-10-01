@@ -20,7 +20,7 @@ exports[`Stack anchor 1`] = `
   display: block;
 }
 
-.c3 {
+.c4 {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -29,7 +29,7 @@ exports[`Stack anchor 1`] = `
   transform: translate(-50%,-50%);
 }
 
-.c4 {
+.c5 {
   position: absolute;
   top: 0;
   left: 50%;
@@ -38,7 +38,7 @@ exports[`Stack anchor 1`] = `
   transform: translateX(-50%);
 }
 
-.c5 {
+.c6 {
   position: absolute;
   top: 50%;
   left: 0;
@@ -47,7 +47,7 @@ exports[`Stack anchor 1`] = `
   transform: translateY(-50%);
 }
 
-.c6 {
+.c7 {
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -56,7 +56,7 @@ exports[`Stack anchor 1`] = `
   transform: translateX(-50%);
 }
 
-.c7 {
+.c8 {
   position: absolute;
   top: 50%;
   right: 0;
@@ -65,28 +65,42 @@ exports[`Stack anchor 1`] = `
   transform: translateY(-50%);
 }
 
-.c8 {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
 .c9 {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
 }
 
 .c10 {
   position: absolute;
-  top: 0;
-  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .c11 {
   position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.c12 {
+  position: absolute;
   bottom: 0;
   right: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 <div
@@ -98,33 +112,23 @@ exports[`Stack anchor 1`] = `
     <div
       className="c2"
     >
-      <div>
-        first
-      </div>
-    </div>
-    <div
-      className="c3"
-    >
-      <div>
-        second
-      </div>
-    </div>
-  </div>
-  <div
-    className="c1"
-  >
-    <div
-      className="c2"
-    >
-      <div>
-        first
+      <div
+        className="c3"
+      >
+        <div>
+          first
+        </div>
       </div>
     </div>
     <div
       className="c4"
     >
-      <div>
-        second
+      <div
+        className="c3"
+      >
+        <div>
+          second
+        </div>
       </div>
     </div>
   </div>
@@ -134,15 +138,23 @@ exports[`Stack anchor 1`] = `
     <div
       className="c2"
     >
-      <div>
-        first
+      <div
+        className="c3"
+      >
+        <div>
+          first
+        </div>
       </div>
     </div>
     <div
       className="c5"
     >
-      <div>
-        second
+      <div
+        className="c3"
+      >
+        <div>
+          second
+        </div>
       </div>
     </div>
   </div>
@@ -152,15 +164,23 @@ exports[`Stack anchor 1`] = `
     <div
       className="c2"
     >
-      <div>
-        first
+      <div
+        className="c3"
+      >
+        <div>
+          first
+        </div>
       </div>
     </div>
     <div
       className="c6"
     >
-      <div>
-        second
+      <div
+        className="c3"
+      >
+        <div>
+          second
+        </div>
       </div>
     </div>
   </div>
@@ -170,15 +190,23 @@ exports[`Stack anchor 1`] = `
     <div
       className="c2"
     >
-      <div>
-        first
+      <div
+        className="c3"
+      >
+        <div>
+          first
+        </div>
       </div>
     </div>
     <div
       className="c7"
     >
-      <div>
-        second
+      <div
+        className="c3"
+      >
+        <div>
+          second
+        </div>
       </div>
     </div>
   </div>
@@ -188,15 +216,23 @@ exports[`Stack anchor 1`] = `
     <div
       className="c2"
     >
-      <div>
-        first
+      <div
+        className="c3"
+      >
+        <div>
+          first
+        </div>
       </div>
     </div>
     <div
       className="c8"
     >
-      <div>
-        second
+      <div
+        className="c3"
+      >
+        <div>
+          second
+        </div>
       </div>
     </div>
   </div>
@@ -206,15 +242,23 @@ exports[`Stack anchor 1`] = `
     <div
       className="c2"
     >
-      <div>
-        first
+      <div
+        className="c3"
+      >
+        <div>
+          first
+        </div>
       </div>
     </div>
     <div
       className="c9"
     >
-      <div>
-        second
+      <div
+        className="c3"
+      >
+        <div>
+          second
+        </div>
       </div>
     </div>
   </div>
@@ -224,15 +268,23 @@ exports[`Stack anchor 1`] = `
     <div
       className="c2"
     >
-      <div>
-        first
+      <div
+        className="c3"
+      >
+        <div>
+          first
+        </div>
       </div>
     </div>
     <div
       className="c10"
     >
-      <div>
-        second
+      <div
+        className="c3"
+      >
+        <div>
+          second
+        </div>
       </div>
     </div>
   </div>
@@ -242,15 +294,49 @@ exports[`Stack anchor 1`] = `
     <div
       className="c2"
     >
-      <div>
-        first
+      <div
+        className="c3"
+      >
+        <div>
+          first
+        </div>
       </div>
     </div>
     <div
       className="c11"
     >
-      <div>
-        second
+      <div
+        className="c3"
+      >
+        <div>
+          second
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div>
+          first
+        </div>
+      </div>
+    </div>
+    <div
+      className="c12"
+    >
+      <div
+        className="c3"
+      >
+        <div>
+          second
+        </div>
       </div>
     </div>
   </div>
@@ -277,12 +363,26 @@ exports[`Stack default 1`] = `
   display: block;
 }
 
-.c3 {
+.c4 {
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 <div
@@ -294,15 +394,23 @@ exports[`Stack default 1`] = `
     <div
       className="c2"
     >
-      <div>
-        first
+      <div
+        className="c3"
+      >
+        <div>
+          first
+        </div>
       </div>
     </div>
     <div
-      className="c3"
+      className="c4"
     >
-      <div>
-        second
+      <div
+        className="c3"
+      >
+        <div>
+          second
+        </div>
       </div>
     </div>
   </div>
@@ -335,11 +443,11 @@ exports[`Stack fill 1`] = `
   display: flex;
 }
 
-.c4 {
+.c5 {
   position: relative;
 }
 
-.c6 {
+.c7 {
   position: relative;
   width: 100%;
   max-width: none;
@@ -353,7 +461,7 @@ exports[`Stack fill 1`] = `
   display: flex;
 }
 
-.c7 {
+.c8 {
   position: relative;
   height: 100%;
   -webkit-box-flex: 1;
@@ -373,7 +481,7 @@ exports[`Stack fill 1`] = `
   height: 100%;
 }
 
-.c3 {
+.c4 {
   position: absolute;
   top: 0;
   left: 0;
@@ -381,9 +489,23 @@ exports[`Stack fill 1`] = `
   right: 0;
 }
 
-.c5 {
+.c6 {
   position: relative;
   display: block;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 <div
@@ -395,51 +517,49 @@ exports[`Stack fill 1`] = `
     <div
       className="c2"
     >
-      <div>
-        first
+      <div
+        className="c3"
+      >
+        <div>
+          first
+        </div>
       </div>
     </div>
     <div
-      className="c3"
+      className="c4"
     >
-      <div>
-        second
-      </div>
-    </div>
-  </div>
-  <div
-    className="c4"
-  >
-    <div
-      className="c5"
-    >
-      <div>
-        first
-      </div>
-    </div>
-    <div
-      className="c3"
-    >
-      <div>
-        second
+      <div
+        className="c3"
+      >
+        <div>
+          second
+        </div>
       </div>
     </div>
   </div>
   <div
-    className="c6"
+    className="c5"
   >
     <div
-      className="c2"
+      className="c6"
     >
-      <div>
-        first
+      <div
+        className="c3"
+      >
+        <div>
+          first
+        </div>
       </div>
     </div>
     <div
-      className="c3"
+      className="c4"
     >
-      <div>
-        second
+      <div
+        className="c3"
+      >
+        <div>
+          second
+        </div>
       </div>
     </div>
   </div>
@@ -449,15 +569,49 @@ exports[`Stack fill 1`] = `
     <div
       className="c2"
     >
-      <div>
-        first
+      <div
+        className="c3"
+      >
+        <div>
+          first
+        </div>
       </div>
     </div>
     <div
-      className="c3"
+      className="c4"
     >
-      <div>
-        second
+      <div
+        className="c3"
+      >
+        <div>
+          second
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c8"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div>
+          first
+        </div>
+      </div>
+    </div>
+    <div
+      className="c4"
+    >
+      <div
+        className="c3"
+      >
+        <div>
+          second
+        </div>
       </div>
     </div>
   </div>
@@ -484,12 +638,26 @@ exports[`Stack guidingChild 1`] = `
   display: block;
 }
 
-.c3 {
+.c4 {
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 <div
@@ -501,33 +669,23 @@ exports[`Stack guidingChild 1`] = `
     <div
       className="c2"
     >
-      <div>
-        first
+      <div
+        className="c3"
+      >
+        <div>
+          first
+        </div>
       </div>
     </div>
     <div
-      className="c3"
+      className="c4"
     >
-      <div>
-        second
-      </div>
-    </div>
-  </div>
-  <div
-    className="c1"
-  >
-    <div
-      className="c3"
-    >
-      <div>
-        first
-      </div>
-    </div>
-    <div
-      className="c2"
-    >
-      <div>
-        second
+      <div
+        className="c3"
+      >
+        <div>
+          second
+        </div>
       </div>
     </div>
   </div>
@@ -535,17 +693,51 @@ exports[`Stack guidingChild 1`] = `
     className="c1"
   >
     <div
-      className="c2"
+      className="c4"
     >
-      <div>
-        first
+      <div
+        className="c3"
+      >
+        <div>
+          first
+        </div>
       </div>
     </div>
     <div
-      className="c3"
+      className="c2"
     >
-      <div>
-        second
+      <div
+        className="c3"
+      >
+        <div>
+          second
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div>
+          first
+        </div>
+      </div>
+    </div>
+    <div
+      className="c4"
+    >
+      <div
+        className="c3"
+      >
+        <div>
+          second
+        </div>
       </div>
     </div>
   </div>
@@ -572,7 +764,7 @@ exports[`Stack interactiveChild 1`] = `
   display: block;
 }
 
-.c3 {
+.c4 {
   position: absolute;
   top: 0;
   left: 0;
@@ -581,18 +773,32 @@ exports[`Stack interactiveChild 1`] = `
   pointer-events: none;
 }
 
-.c4 {
+.c5 {
   position: relative;
   display: block;
   pointer-events: none;
 }
 
-.c5 {
+.c6 {
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 <div
@@ -604,15 +810,23 @@ exports[`Stack interactiveChild 1`] = `
     <div
       className="c2"
     >
-      <div>
-        first
+      <div
+        className="c3"
+      >
+        <div>
+          first
+        </div>
       </div>
     </div>
     <div
-      className="c3"
+      className="c4"
     >
-      <div>
-        second
+      <div
+        className="c3"
+      >
+        <div>
+          second
+        </div>
       </div>
     </div>
   </div>
@@ -620,17 +834,25 @@ exports[`Stack interactiveChild 1`] = `
     className="c1"
   >
     <div
-      className="c4"
+      className="c5"
     >
-      <div>
-        first
+      <div
+        className="c3"
+      >
+        <div>
+          first
+        </div>
       </div>
     </div>
     <div
-      className="c5"
+      className="c6"
     >
-      <div>
-        second
+      <div
+        className="c3"
+      >
+        <div>
+          second
+        </div>
       </div>
     </div>
   </div>
@@ -640,15 +862,23 @@ exports[`Stack interactiveChild 1`] = `
     <div
       className="c2"
     >
-      <div>
-        first
+      <div
+        className="c3"
+      >
+        <div>
+          first
+        </div>
       </div>
     </div>
     <div
-      className="c3"
+      className="c4"
     >
-      <div>
-        second
+      <div
+        className="c3"
+      >
+        <div>
+          second
+        </div>
       </div>
     </div>
   </div>

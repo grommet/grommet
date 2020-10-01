@@ -91,7 +91,6 @@ exports[`Carousel basic 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c4 {
@@ -106,6 +105,7 @@ exports[`Carousel basic 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .c6 {
@@ -341,10 +341,14 @@ exports[`Carousel basic 1`] = `
         <div
           className="c4"
         >
-          <img
-            className=""
-            src="//v2.grommet.io/assets/IMG_4245.jpg"
-          />
+          <div
+            className="c3"
+          >
+            <img
+              className=""
+              src="//v2.grommet.io/assets/IMG_4245.jpg"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -355,12 +359,16 @@ exports[`Carousel basic 1`] = `
         className="c3"
       >
         <div
-          className="c6"
+          className="c4"
         >
-          <img
-            className=""
-            src="//v2.grommet.io/assets/IMG_4210.jpg"
-          />
+          <div
+            className="c6"
+          >
+            <img
+              className=""
+              src="//v2.grommet.io/assets/IMG_4210.jpg"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -368,110 +376,114 @@ exports[`Carousel basic 1`] = `
       className="c5"
     >
       <div
-        className="c7"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        tabIndex="0"
+        className="c3"
       >
-        <button
-          className="c8"
-          disabled={true}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseOut={[Function]}
-          onMouseOver={[Function]}
-          type="button"
-        >
-          <svg
-            aria-label="Previous"
-            className="c9"
-            viewBox="0 0 24 24"
-          >
-            <polyline
-              fill="none"
-              points="7 2 17 12 7 22"
-              stroke="#000"
-              strokeWidth="2"
-              transform="matrix(-1 0 0 1 24 0)"
-            />
-          </svg>
-        </button>
         <div
-          className="c10"
-        >
-          <div
-            className="c11"
-          >
-            <button
-              className="c12"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              type="button"
-            >
-              <svg
-                aria-label="Subtract"
-                className="c13"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M2,12 L22,12"
-                  fill="none"
-                  stroke="#000"
-                  strokeWidth="2"
-                />
-              </svg>
-            </button>
-            <button
-              className="c12"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              type="button"
-            >
-              <svg
-                aria-label="Subtract"
-                className="c9"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M2,12 L22,12"
-                  fill="none"
-                  stroke="#000"
-                  strokeWidth="2"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-        <button
-          className="c14"
-          disabled={false}
+          className="c7"
           onBlur={[Function]}
-          onClick={[Function]}
           onFocus={[Function]}
-          onMouseOut={[Function]}
-          onMouseOver={[Function]}
-          type="button"
+          tabIndex="0"
         >
-          <svg
-            aria-label="Next"
-            className="c9"
-            viewBox="0 0 24 24"
+          <button
+            className="c8"
+            disabled={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            type="button"
           >
-            <polyline
-              fill="none"
-              points="7 2 17 12 7 22"
-              stroke="#000"
-              strokeWidth="2"
-            />
-          </svg>
-        </button>
+            <svg
+              aria-label="Previous"
+              className="c9"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                strokeWidth="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </button>
+          <div
+            className="c10"
+          >
+            <div
+              className="c11"
+            >
+              <button
+                className="c12"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                type="button"
+              >
+                <svg
+                  aria-label="Subtract"
+                  className="c13"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M2,12 L22,12"
+                    fill="none"
+                    stroke="#000"
+                    strokeWidth="2"
+                  />
+                </svg>
+              </button>
+              <button
+                className="c12"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                type="button"
+              >
+                <svg
+                  aria-label="Subtract"
+                  className="c9"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M2,12 L22,12"
+                    fill="none"
+                    stroke="#000"
+                    strokeWidth="2"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <button
+            className="c14"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            type="button"
+          >
+            <svg
+              aria-label="Next"
+              className="c9"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                strokeWidth="2"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -569,7 +581,6 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c4 {
@@ -584,12 +595,10 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  opacity: 1;
-  -webkit-animation: hftlBD 1s 0s forwards;
-  animation: hftlBD 1s 0s forwards;
+  overflow: hidden;
 }
 
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -601,6 +610,9 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  opacity: 1;
+  -webkit-animation: hftlBD 1s 0s forwards;
+  animation: hftlBD 1s 0s forwards;
 }
 
 .c7 {
@@ -798,7 +810,7 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   right: 0;
 }
 
-.c5 {
+.c6 {
   position: relative;
   display: block;
 }
@@ -819,26 +831,34 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
         <div
           className="c4"
         >
-          <img
-            className=""
-            src="//v2.grommet.io/assets/IMG_4245.jpg"
-          />
+          <div
+            className="c5"
+          >
+            <img
+              className=""
+              src="//v2.grommet.io/assets/IMG_4245.jpg"
+            />
+          </div>
         </div>
       </div>
     </div>
     <div
-      className="c5"
+      className="c6"
     >
       <div
         className="c3"
       >
         <div
-          className="c6"
+          className="c4"
         >
-          <img
-            className=""
-            src="//v2.grommet.io/assets/IMG_4210.jpg"
-          />
+          <div
+            className="c3"
+          >
+            <img
+              className=""
+              src="//v2.grommet.io/assets/IMG_4210.jpg"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -846,110 +866,114 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
       className="c2"
     >
       <div
-        className="c7"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        tabIndex="0"
+        className="c3"
       >
-        <button
-          className="c8"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseOut={[Function]}
-          onMouseOver={[Function]}
-          type="button"
-        >
-          <svg
-            aria-label="Previous"
-            className="c9"
-            viewBox="0 0 24 24"
-          >
-            <polyline
-              fill="none"
-              points="7 2 17 12 7 22"
-              stroke="#000"
-              strokeWidth="2"
-              transform="matrix(-1 0 0 1 24 0)"
-            />
-          </svg>
-        </button>
         <div
-          className="c10"
-        >
-          <div
-            className="c11"
-          >
-            <button
-              className="c12"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              type="button"
-            >
-              <svg
-                aria-label="Subtract"
-                className="c9"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M2,12 L22,12"
-                  fill="none"
-                  stroke="#000"
-                  strokeWidth="2"
-                />
-              </svg>
-            </button>
-            <button
-              className="c12"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onMouseOut={[Function]}
-              onMouseOver={[Function]}
-              type="button"
-            >
-              <svg
-                aria-label="Subtract"
-                className="c13"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M2,12 L22,12"
-                  fill="none"
-                  stroke="#000"
-                  strokeWidth="2"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-        <button
-          className="c14"
-          disabled={true}
+          className="c7"
           onBlur={[Function]}
-          onClick={[Function]}
           onFocus={[Function]}
-          onMouseOut={[Function]}
-          onMouseOver={[Function]}
-          type="button"
+          tabIndex="0"
         >
-          <svg
-            aria-label="Next"
-            className="c9"
-            viewBox="0 0 24 24"
+          <button
+            className="c8"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            type="button"
           >
-            <polyline
-              fill="none"
-              points="7 2 17 12 7 22"
-              stroke="#000"
-              strokeWidth="2"
-            />
-          </svg>
-        </button>
+            <svg
+              aria-label="Previous"
+              className="c9"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                strokeWidth="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </button>
+          <div
+            className="c10"
+          >
+            <div
+              className="c11"
+            >
+              <button
+                className="c12"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                type="button"
+              >
+                <svg
+                  aria-label="Subtract"
+                  className="c9"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M2,12 L22,12"
+                    fill="none"
+                    stroke="#000"
+                    strokeWidth="2"
+                  />
+                </svg>
+              </button>
+              <button
+                className="c12"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                type="button"
+              >
+                <svg
+                  aria-label="Subtract"
+                  className="c13"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M2,12 L22,12"
+                    fill="none"
+                    stroke="#000"
+                    strokeWidth="2"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <button
+            className="c14"
+            disabled={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            type="button"
+          >
+            <svg
+              aria-label="Next"
+              className="c9"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                strokeWidth="2"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1047,7 +1071,6 @@ exports[`Carousel navigate 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c4 {
@@ -1062,6 +1085,7 @@ exports[`Carousel navigate 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .c6 {
@@ -1297,10 +1321,14 @@ exports[`Carousel navigate 1`] = `
         <div
           class="c4"
         >
-          <img
-            class=""
-            src="//v2.grommet.io/assets/IMG_4245.jpg"
-          />
+          <div
+            class="c3"
+          >
+            <img
+              class=""
+              src="//v2.grommet.io/assets/IMG_4245.jpg"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -1311,12 +1339,16 @@ exports[`Carousel navigate 1`] = `
         class="c3"
       >
         <div
-          class="c6"
+          class="c4"
         >
-          <img
-            class=""
-            src="//v2.grommet.io/assets/IMG_4210.jpg"
-          />
+          <div
+            class="c6"
+          >
+            <img
+              class=""
+              src="//v2.grommet.io/assets/IMG_4210.jpg"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -1324,87 +1356,91 @@ exports[`Carousel navigate 1`] = `
       class="c5"
     >
       <div
-        class="c7"
-        tabindex="0"
+        class="c3"
       >
-        <button
-          class="c8"
-          disabled=""
-          type="button"
-        >
-          <svg
-            aria-label="Previous"
-            class="c9"
-            viewBox="0 0 24 24"
-          >
-            <polyline
-              fill="none"
-              points="7 2 17 12 7 22"
-              stroke="#000"
-              stroke-width="2"
-              transform="matrix(-1 0 0 1 24 0)"
-            />
-          </svg>
-        </button>
         <div
-          class="c10"
+          class="c7"
+          tabindex="0"
         >
+          <button
+            class="c8"
+            disabled=""
+            type="button"
+          >
+            <svg
+              aria-label="Previous"
+              class="c9"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </button>
           <div
-            class="c11"
+            class="c10"
           >
-            <button
-              class="c12"
-              type="button"
+            <div
+              class="c11"
             >
-              <svg
-                aria-label="Subtract"
-                class="c13"
-                viewBox="0 0 24 24"
+              <button
+                class="c12"
+                type="button"
               >
-                <path
-                  d="M2,12 L22,12"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </button>
-            <button
-              class="c12"
-              type="button"
-            >
-              <svg
-                aria-label="Subtract"
-                class="c9"
-                viewBox="0 0 24 24"
+                <svg
+                  aria-label="Subtract"
+                  class="c13"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M2,12 L22,12"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </button>
+              <button
+                class="c12"
+                type="button"
               >
-                <path
-                  d="M2,12 L22,12"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </button>
+                <svg
+                  aria-label="Subtract"
+                  class="c9"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M2,12 L22,12"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
-        </div>
-        <button
-          class="c14"
-          type="button"
-        >
-          <svg
-            aria-label="Next"
-            class="c9"
-            viewBox="0 0 24 24"
+          <button
+            class="c14"
+            type="button"
           >
-            <polyline
-              fill="none"
-              points="7 2 17 12 7 22"
-              stroke="#000"
-              stroke-width="2"
-            />
-          </svg>
-        </button>
+            <svg
+              aria-label="Next"
+              class="c9"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1423,15 +1459,19 @@ exports[`Carousel navigate 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kpwHpK"
+        class="StyledBox-sc-13pk1d4-0 bFwQzJ"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fijLVp"
+          class="StyledBox-sc-13pk1d4-0 kpwHpK"
         >
-          <img
-            class="StyledImage-ey4zx9-0 gtXVuX"
-            src="//v2.grommet.io/assets/IMG_4245.jpg"
-          />
+          <div
+            class="StyledBox-sc-13pk1d4-0 fijLVp"
+          >
+            <img
+              class="StyledImage-ey4zx9-0 gtXVuX"
+              src="//v2.grommet.io/assets/IMG_4245.jpg"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -1439,15 +1479,19 @@ exports[`Carousel navigate 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 eFfYoG"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kpwHpK"
+        class="StyledBox-sc-13pk1d4-0 bFwQzJ"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fyNJTz"
+          class="StyledBox-sc-13pk1d4-0 kpwHpK"
         >
-          <img
-            class="StyledImage-ey4zx9-0 gtXVuX"
-            src="//v2.grommet.io/assets/IMG_4210.jpg"
-          />
+          <div
+            class="StyledBox-sc-13pk1d4-0 fyNJTz"
+          >
+            <img
+              class="StyledImage-ey4zx9-0 gtXVuX"
+              src="//v2.grommet.io/assets/IMG_4210.jpg"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -1455,87 +1499,91 @@ exports[`Carousel navigate 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 iLSfXS"
-        tabindex="0"
+        class="StyledBox-sc-13pk1d4-0 bFwQzJ"
       >
-        <button
-          class="StyledButton-sc-323bzc-0 ggXSon"
-          type="button"
-        >
-          <svg
-            aria-label="Previous"
-            class="StyledIcon-ofa7kd-0 jXwebn"
-            viewBox="0 0 24 24"
-          >
-            <polyline
-              fill="none"
-              points="7 2 17 12 7 22"
-              stroke="#000"
-              stroke-width="2"
-              transform="matrix(-1 0 0 1 24 0)"
-            />
-          </svg>
-        </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 idXMGj"
+          class="StyledBox-sc-13pk1d4-0 iLSfXS"
+          tabindex="0"
         >
+          <button
+            class="StyledButton-sc-323bzc-0 ggXSon"
+            type="button"
+          >
+            <svg
+              aria-label="Previous"
+              class="StyledIcon-ofa7kd-0 jXwebn"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </button>
           <div
-            class="StyledBox-sc-13pk1d4-0 jmTzhV"
+            class="StyledBox-sc-13pk1d4-0 idXMGj"
           >
-            <button
-              class="StyledButton-sc-323bzc-0 fKcmhi"
-              type="button"
+            <div
+              class="StyledBox-sc-13pk1d4-0 jmTzhV"
             >
-              <svg
-                aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 jXwebn"
-                viewBox="0 0 24 24"
+              <button
+                class="StyledButton-sc-323bzc-0 fKcmhi"
+                type="button"
               >
-                <path
-                  d="M2,12 L22,12"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </button>
-            <button
-              class="StyledButton-sc-323bzc-0 fKcmhi"
-              type="button"
-            >
-              <svg
-                aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 kbXEEj"
-                viewBox="0 0 24 24"
+                <svg
+                  aria-label="Subtract"
+                  class="StyledIcon-ofa7kd-0 jXwebn"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M2,12 L22,12"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </button>
+              <button
+                class="StyledButton-sc-323bzc-0 fKcmhi"
+                type="button"
               >
-                <path
-                  d="M2,12 L22,12"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </button>
+                <svg
+                  aria-label="Subtract"
+                  class="StyledIcon-ofa7kd-0 kbXEEj"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M2,12 L22,12"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
-        </div>
-        <button
-          class="StyledButton-sc-323bzc-0 elqUnZ"
-          disabled=""
-          type="button"
-        >
-          <svg
-            aria-label="Next"
-            class="StyledIcon-ofa7kd-0 jXwebn"
-            viewBox="0 0 24 24"
+          <button
+            class="StyledButton-sc-323bzc-0 elqUnZ"
+            disabled=""
+            type="button"
           >
-            <polyline
-              fill="none"
-              points="7 2 17 12 7 22"
-              stroke="#000"
-              stroke-width="2"
-            />
-          </svg>
-        </button>
+            <svg
+              aria-label="Next"
+              class="StyledIcon-ofa7kd-0 jXwebn"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1554,119 +1602,131 @@ exports[`Carousel navigate 3`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 eFfYoG"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kpwHpK"
+        class="StyledBox-sc-13pk1d4-0 bFwQzJ"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 dGhOz"
-        >
-          <img
-            class="StyledImage-ey4zx9-0 gtXVuX"
-            src="//v2.grommet.io/assets/IMG_4245.jpg"
-          />
-        </div>
-      </div>
-    </div>
-    <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
-    >
-      <div
-        class="StyledBox-sc-13pk1d4-0 kpwHpK"
-      >
-        <div
-          class="StyledBox-sc-13pk1d4-0 fijLVp"
-        >
-          <img
-            class="StyledImage-ey4zx9-0 gtXVuX"
-            src="//v2.grommet.io/assets/IMG_4210.jpg"
-          />
-        </div>
-      </div>
-    </div>
-    <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
-    >
-      <div
-        class="StyledBox-sc-13pk1d4-0 iLSfXS"
-        tabindex="0"
-      >
-        <button
-          class="StyledButton-sc-323bzc-0 elqUnZ"
-          disabled=""
-          type="button"
-        >
-          <svg
-            aria-label="Previous"
-            class="StyledIcon-ofa7kd-0 jXwebn"
-            viewBox="0 0 24 24"
-          >
-            <polyline
-              fill="none"
-              points="7 2 17 12 7 22"
-              stroke="#000"
-              stroke-width="2"
-              transform="matrix(-1 0 0 1 24 0)"
-            />
-          </svg>
-        </button>
-        <div
-          class="StyledBox-sc-13pk1d4-0 idXMGj"
+          class="StyledBox-sc-13pk1d4-0 kpwHpK"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jmTzhV"
+            class="StyledBox-sc-13pk1d4-0 dGhOz"
           >
-            <button
-              class="StyledButton-sc-323bzc-0 fKcmhi"
-              type="button"
-            >
-              <svg
-                aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 kbXEEj"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M2,12 L22,12"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </button>
-            <button
-              class="StyledButton-sc-323bzc-0 fKcmhi"
-              type="button"
-            >
-              <svg
-                aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 jXwebn"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M2,12 L22,12"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </button>
+            <img
+              class="StyledImage-ey4zx9-0 gtXVuX"
+              src="//v2.grommet.io/assets/IMG_4245.jpg"
+            />
           </div>
         </div>
-        <button
-          class="StyledButton-sc-323bzc-0 ggXSon"
-          type="button"
+      </div>
+    </div>
+    <div
+      class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 kpwHpK"
         >
-          <svg
-            aria-label="Next"
-            class="StyledIcon-ofa7kd-0 jXwebn"
-            viewBox="0 0 24 24"
+          <div
+            class="StyledBox-sc-13pk1d4-0 fijLVp"
           >
-            <polyline
-              fill="none"
-              points="7 2 17 12 7 22"
-              stroke="#000"
-              stroke-width="2"
+            <img
+              class="StyledImage-ey4zx9-0 gtXVuX"
+              src="//v2.grommet.io/assets/IMG_4210.jpg"
             />
-          </svg>
-        </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 bFwQzJ"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 iLSfXS"
+          tabindex="0"
+        >
+          <button
+            class="StyledButton-sc-323bzc-0 elqUnZ"
+            disabled=""
+            type="button"
+          >
+            <svg
+              aria-label="Previous"
+              class="StyledIcon-ofa7kd-0 jXwebn"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </button>
+          <div
+            class="StyledBox-sc-13pk1d4-0 idXMGj"
+          >
+            <div
+              class="StyledBox-sc-13pk1d4-0 jmTzhV"
+            >
+              <button
+                class="StyledButton-sc-323bzc-0 fKcmhi"
+                type="button"
+              >
+                <svg
+                  aria-label="Subtract"
+                  class="StyledIcon-ofa7kd-0 kbXEEj"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M2,12 L22,12"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </button>
+              <button
+                class="StyledButton-sc-323bzc-0 fKcmhi"
+                type="button"
+              >
+                <svg
+                  aria-label="Subtract"
+                  class="StyledIcon-ofa7kd-0 jXwebn"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M2,12 L22,12"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <button
+            class="StyledButton-sc-323bzc-0 ggXSon"
+            type="button"
+          >
+            <svg
+              aria-label="Next"
+              class="StyledIcon-ofa7kd-0 jXwebn"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1764,7 +1824,6 @@ exports[`Carousel play 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .c4 {
@@ -1779,6 +1838,7 @@ exports[`Carousel play 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .c6 {
@@ -2013,10 +2073,14 @@ exports[`Carousel play 1`] = `
         <div
           class="c4"
         >
-          <img
-            class=""
-            src="//v2.grommet.io/assets/IMG_4245.jpg"
-          />
+          <div
+            class="c3"
+          >
+            <img
+              class=""
+              src="//v2.grommet.io/assets/IMG_4245.jpg"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -2027,12 +2091,16 @@ exports[`Carousel play 1`] = `
         class="c3"
       >
         <div
-          class="c6"
+          class="c4"
         >
-          <img
-            class=""
-            src="//v2.grommet.io/assets/IMG_4210.jpg"
-          />
+          <div
+            class="c6"
+          >
+            <img
+              class=""
+              src="//v2.grommet.io/assets/IMG_4210.jpg"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -2040,87 +2108,91 @@ exports[`Carousel play 1`] = `
       class="c5"
     >
       <div
-        class="c7"
-        tabindex="0"
+        class="c3"
       >
-        <button
-          class="c8"
-          disabled=""
-          type="button"
-        >
-          <svg
-            aria-label="Previous"
-            class="c9"
-            viewBox="0 0 24 24"
-          >
-            <polyline
-              fill="none"
-              points="7 2 17 12 7 22"
-              stroke="#000"
-              stroke-width="2"
-              transform="matrix(-1 0 0 1 24 0)"
-            />
-          </svg>
-        </button>
         <div
-          class="c10"
+          class="c7"
+          tabindex="0"
         >
+          <button
+            class="c8"
+            disabled=""
+            type="button"
+          >
+            <svg
+              aria-label="Previous"
+              class="c9"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </button>
           <div
-            class="c11"
+            class="c10"
           >
-            <button
-              class="c12"
-              type="button"
+            <div
+              class="c11"
             >
-              <svg
-                aria-label="Subtract"
-                class="c13"
-                viewBox="0 0 24 24"
+              <button
+                class="c12"
+                type="button"
               >
-                <path
-                  d="M2,12 L22,12"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </button>
-            <button
-              class="c12"
-              type="button"
-            >
-              <svg
-                aria-label="Subtract"
-                class="c9"
-                viewBox="0 0 24 24"
+                <svg
+                  aria-label="Subtract"
+                  class="c13"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M2,12 L22,12"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </button>
+              <button
+                class="c12"
+                type="button"
               >
-                <path
-                  d="M2,12 L22,12"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </button>
+                <svg
+                  aria-label="Subtract"
+                  class="c9"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M2,12 L22,12"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
-        </div>
-        <button
-          class="c14"
-          type="button"
-        >
-          <svg
-            aria-label="Next"
-            class="c9"
-            viewBox="0 0 24 24"
+          <button
+            class="c14"
+            type="button"
           >
-            <polyline
-              fill="none"
-              points="7 2 17 12 7 22"
-              stroke="#000"
-              stroke-width="2"
-            />
-          </svg>
-        </button>
+            <svg
+              aria-label="Next"
+              class="c9"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2138,15 +2210,19 @@ exports[`Carousel play 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kpwHpK"
+        class="StyledBox-sc-13pk1d4-0 bFwQzJ"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fijLVp"
+          class="StyledBox-sc-13pk1d4-0 kpwHpK"
         >
-          <img
-            class="StyledImage-ey4zx9-0 gtXVuX"
-            src="//v2.grommet.io/assets/IMG_4245.jpg"
-          />
+          <div
+            class="StyledBox-sc-13pk1d4-0 fijLVp"
+          >
+            <img
+              class="StyledImage-ey4zx9-0 gtXVuX"
+              src="//v2.grommet.io/assets/IMG_4245.jpg"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -2154,15 +2230,19 @@ exports[`Carousel play 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 eFfYoG"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kpwHpK"
+        class="StyledBox-sc-13pk1d4-0 bFwQzJ"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fyNJTz"
+          class="StyledBox-sc-13pk1d4-0 kpwHpK"
         >
-          <img
-            class="StyledImage-ey4zx9-0 gtXVuX"
-            src="//v2.grommet.io/assets/IMG_4210.jpg"
-          />
+          <div
+            class="StyledBox-sc-13pk1d4-0 fyNJTz"
+          >
+            <img
+              class="StyledImage-ey4zx9-0 gtXVuX"
+              src="//v2.grommet.io/assets/IMG_4210.jpg"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -2170,87 +2250,91 @@ exports[`Carousel play 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 iLSfXS"
-        tabindex="0"
+        class="StyledBox-sc-13pk1d4-0 bFwQzJ"
       >
-        <button
-          class="StyledButton-sc-323bzc-0 ggXSon"
-          type="button"
-        >
-          <svg
-            aria-label="Previous"
-            class="StyledIcon-ofa7kd-0 jXwebn"
-            viewBox="0 0 24 24"
-          >
-            <polyline
-              fill="none"
-              points="7 2 17 12 7 22"
-              stroke="#000"
-              stroke-width="2"
-              transform="matrix(-1 0 0 1 24 0)"
-            />
-          </svg>
-        </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 idXMGj"
+          class="StyledBox-sc-13pk1d4-0 iLSfXS"
+          tabindex="0"
         >
+          <button
+            class="StyledButton-sc-323bzc-0 ggXSon"
+            type="button"
+          >
+            <svg
+              aria-label="Previous"
+              class="StyledIcon-ofa7kd-0 jXwebn"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </button>
           <div
-            class="StyledBox-sc-13pk1d4-0 jmTzhV"
+            class="StyledBox-sc-13pk1d4-0 idXMGj"
           >
-            <button
-              class="StyledButton-sc-323bzc-0 fKcmhi"
-              type="button"
+            <div
+              class="StyledBox-sc-13pk1d4-0 jmTzhV"
             >
-              <svg
-                aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 jXwebn"
-                viewBox="0 0 24 24"
+              <button
+                class="StyledButton-sc-323bzc-0 fKcmhi"
+                type="button"
               >
-                <path
-                  d="M2,12 L22,12"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </button>
-            <button
-              class="StyledButton-sc-323bzc-0 fKcmhi"
-              type="button"
-            >
-              <svg
-                aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 kbXEEj"
-                viewBox="0 0 24 24"
+                <svg
+                  aria-label="Subtract"
+                  class="StyledIcon-ofa7kd-0 jXwebn"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M2,12 L22,12"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </button>
+              <button
+                class="StyledButton-sc-323bzc-0 fKcmhi"
+                type="button"
               >
-                <path
-                  d="M2,12 L22,12"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </button>
+                <svg
+                  aria-label="Subtract"
+                  class="StyledIcon-ofa7kd-0 kbXEEj"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M2,12 L22,12"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
-        </div>
-        <button
-          class="StyledButton-sc-323bzc-0 elqUnZ"
-          disabled=""
-          type="button"
-        >
-          <svg
-            aria-label="Next"
-            class="StyledIcon-ofa7kd-0 jXwebn"
-            viewBox="0 0 24 24"
+          <button
+            class="StyledButton-sc-323bzc-0 elqUnZ"
+            disabled=""
+            type="button"
           >
-            <polyline
-              fill="none"
-              points="7 2 17 12 7 22"
-              stroke="#000"
-              stroke-width="2"
-            />
-          </svg>
-        </button>
+            <svg
+              aria-label="Next"
+              class="StyledIcon-ofa7kd-0 jXwebn"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </div>

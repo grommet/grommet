@@ -610,26 +610,34 @@ exports[`Avatar stack renders 1`] = `
         className="c3"
       >
         <div
-          className="c4"
+          className="c3"
         >
           <div
-            className="c5 "
-          />
+            className="c4"
+          >
+            <div
+              className="c5 "
+            />
+            <div
+              className="c6"
+            />
+          </div>
           <div
             className="c6"
           />
         </div>
-        <div
-          className="c6"
-        />
       </div>
     </div>
     <div
       className="c7"
     >
       <div
-        className="c8 "
-      />
+        className="c3"
+      >
+        <div
+          className="c8 "
+        />
+      </div>
     </div>
   </div>
 </div>
