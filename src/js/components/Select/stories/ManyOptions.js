@@ -4,12 +4,12 @@ import { storiesOf } from '@storybook/react';
 import { Box, CheckBox, Grommet, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Option = ({ value, selected }) => (
+const Option = React.memo(({ value, selected }) => (
   <Box direction="row" gap="small" align="center" pad="xsmall">
     <CheckBox tabIndex="-1" checked={selected} onChange={() => {}} />
     {value}
   </Box>
-);
+));
 
 const dummyOptions = Array(2000)
   .fill()
