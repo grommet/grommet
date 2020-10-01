@@ -5,7 +5,11 @@ import { defaultProps } from '../../default-props';
 import { parseMetricToNum } from '../../utils';
 
 import { StyledMeter } from './StyledMeter';
-import { strokeProps, defaultColor, getPathByDirection } from './utils';
+import {
+  strokeProps,
+  defaultColor,
+  getPathByDirection as getPathByMargin,
+} from './utils';
 
 const Bar = forwardRef((props, ref) => {
   const {
@@ -15,7 +19,7 @@ const Bar = forwardRef((props, ref) => {
     size,
     thickness,
     values,
-    direction,
+    margin,
     ...rest
   } = props;
   const theme = useContext(ThemeContext) || defaultProps.theme;
@@ -37,7 +41,7 @@ const Bar = forwardRef((props, ref) => {
 
       const key = `p-${index}`;
       const delta = (value * (width - 2 * capOffset)) / max;
-      const d = getPathByDirection(direction, { start, mid, delta, width });
+      const d = getPathByMargin(margin, { start, mid, delta, width });
       const colorName =
         color || defaultColor(index, theme, values ? values.length : 0);
       let hoverProps;

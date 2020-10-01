@@ -13,7 +13,7 @@ const BarRTLMeter = () => {
         <Meter
           type="bar"
           background="light-2"
-          direction="rtl"
+          margin={{ start: 'xsmall' }}
           values={[{ value }]}
         />
       </Box>

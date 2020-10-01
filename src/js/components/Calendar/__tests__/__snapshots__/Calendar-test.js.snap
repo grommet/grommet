@@ -1100,7 +1100,7 @@ exports[`Calendar change months 2`] = `
           >
             <svg
               aria-label="Previous"
-              class="StyledIcon-ofa7kd-0 jXwebn"
+              class="StyledIcon-ofa7kd-0 FimRf"
               viewBox="0 0 24 24"
             >
               <polyline
@@ -1119,7 +1119,7 @@ exports[`Calendar change months 2`] = `
           >
             <svg
               aria-label="Next"
-              class="StyledIcon-ofa7kd-0 jXwebn"
+              class="StyledIcon-ofa7kd-0 FimRf"
               viewBox="0 0 24 24"
             >
               <polyline
@@ -2487,14 +2487,14 @@ exports[`Calendar children 1`] = `
             className="c5"
             size="medium"
           >
-            September 2020
+            October 2020
           </h3>
         </div>
         <div
           className="c6"
         >
           <button
-            aria-label="August 2020"
+            aria-label="September 2020"
             className="c7"
             disabled={false}
             onBlur={[Function]}
@@ -2519,7 +2519,7 @@ exports[`Calendar children 1`] = `
             </svg>
           </button>
           <button
-            aria-label="October 2020"
+            aria-label="November 2020"
             className="c7"
             disabled={false}
             onBlur={[Function]}
@@ -2554,274 +2554,6 @@ exports[`Calendar children 1`] = `
         <div
           className="c10"
         >
-          <div
-            className="c11"
-          >
-            <div
-              className="c12"
-            >
-              <div
-                className="c13"
-              >
-                30
-              </div>
-            </div>
-            <div
-              className="c12"
-            >
-              <div
-                className="c13"
-              >
-                31
-              </div>
-            </div>
-            <div
-              className="c12"
-            >
-              <div
-                className="c13"
-              >
-                1
-              </div>
-            </div>
-            <div
-              className="c12"
-            >
-              <div
-                className="c13"
-              >
-                2
-              </div>
-            </div>
-            <div
-              className="c12"
-            >
-              <div
-                className="c13"
-              >
-                3
-              </div>
-            </div>
-            <div
-              className="c12"
-            >
-              <div
-                className="c13"
-              >
-                4
-              </div>
-            </div>
-            <div
-              className="c12"
-            >
-              <div
-                className="c13"
-              >
-                5
-              </div>
-            </div>
-          </div>
-          <div
-            className="c11"
-          >
-            <div
-              className="c12"
-            >
-              <div
-                className="c13"
-              >
-                6
-              </div>
-            </div>
-            <div
-              className="c12"
-            >
-              <div
-                className="c13"
-              >
-                7
-              </div>
-            </div>
-            <div
-              className="c12"
-            >
-              <div
-                className="c13"
-              >
-                8
-              </div>
-            </div>
-            <div
-              className="c12"
-            >
-              <div
-                className="c13"
-              >
-                9
-              </div>
-            </div>
-            <div
-              className="c12"
-            >
-              <div
-                className="c13"
-              >
-                10
-              </div>
-            </div>
-            <div
-              className="c12"
-            >
-              <div
-                className="c13"
-              >
-                11
-              </div>
-            </div>
-            <div
-              className="c12"
-            >
-              <div
-                className="c13"
-              >
-                12
-              </div>
-            </div>
-          </div>
-          <div
-            className="c11"
-          >
-            <div
-              className="c12"
-            >
-              <div
-                className="c13"
-              >
-                13
-              </div>
-            </div>
-            <div
-              className="c12"
-            >
-              <div
-                className="c13"
-              >
-                14
-              </div>
-            </div>
-            <div
-              className="c12"
-            >
-              <div
-                className="c13"
-              >
-                15
-              </div>
-            </div>
-            <div
-              className="c12"
-            >
-              <div
-                className="c13"
-              >
-                16
-              </div>
-            </div>
-            <div
-              className="c12"
-            >
-              <div
-                className="c13"
-              >
-                17
-              </div>
-            </div>
-            <div
-              className="c12"
-            >
-              <div
-                className="c13"
-              >
-                18
-              </div>
-            </div>
-            <div
-              className="c12"
-            >
-              <div
-                className="c13"
-              >
-                19
-              </div>
-            </div>
-          </div>
-          <div
-            className="c11"
-          >
-            <div
-              className="c12"
-            >
-              <div
-                className="c13"
-              >
-                20
-              </div>
-            </div>
-            <div
-              className="c12"
-            >
-              <div
-                className="c13"
-              >
-                21
-              </div>
-            </div>
-            <div
-              className="c12"
-            >
-              <div
-                className="c13"
-              >
-                22
-              </div>
-            </div>
-            <div
-              className="c12"
-            >
-              <div
-                className="c13"
-              >
-                23
-              </div>
-            </div>
-            <div
-              className="c12"
-            >
-              <div
-                className="c13"
-              >
-                24
-              </div>
-            </div>
-            <div
-              className="c12"
-            >
-              <div
-                className="c13"
-              >
-                25
-              </div>
-            </div>
-            <div
-              className="c12"
-            >
-              <div
-                className="c13"
-              >
-                26
-              </div>
-            </div>
-          </div>
           <div
             className="c11"
           >
@@ -2953,6 +2685,274 @@ exports[`Calendar children 1`] = `
                 className="c13"
               >
                 10
+              </div>
+            </div>
+          </div>
+          <div
+            className="c11"
+          >
+            <div
+              className="c12"
+            >
+              <div
+                className="c13"
+              >
+                11
+              </div>
+            </div>
+            <div
+              className="c12"
+            >
+              <div
+                className="c13"
+              >
+                12
+              </div>
+            </div>
+            <div
+              className="c12"
+            >
+              <div
+                className="c13"
+              >
+                13
+              </div>
+            </div>
+            <div
+              className="c12"
+            >
+              <div
+                className="c13"
+              >
+                14
+              </div>
+            </div>
+            <div
+              className="c12"
+            >
+              <div
+                className="c13"
+              >
+                15
+              </div>
+            </div>
+            <div
+              className="c12"
+            >
+              <div
+                className="c13"
+              >
+                16
+              </div>
+            </div>
+            <div
+              className="c12"
+            >
+              <div
+                className="c13"
+              >
+                17
+              </div>
+            </div>
+          </div>
+          <div
+            className="c11"
+          >
+            <div
+              className="c12"
+            >
+              <div
+                className="c13"
+              >
+                18
+              </div>
+            </div>
+            <div
+              className="c12"
+            >
+              <div
+                className="c13"
+              >
+                19
+              </div>
+            </div>
+            <div
+              className="c12"
+            >
+              <div
+                className="c13"
+              >
+                20
+              </div>
+            </div>
+            <div
+              className="c12"
+            >
+              <div
+                className="c13"
+              >
+                21
+              </div>
+            </div>
+            <div
+              className="c12"
+            >
+              <div
+                className="c13"
+              >
+                22
+              </div>
+            </div>
+            <div
+              className="c12"
+            >
+              <div
+                className="c13"
+              >
+                23
+              </div>
+            </div>
+            <div
+              className="c12"
+            >
+              <div
+                className="c13"
+              >
+                24
+              </div>
+            </div>
+          </div>
+          <div
+            className="c11"
+          >
+            <div
+              className="c12"
+            >
+              <div
+                className="c13"
+              >
+                25
+              </div>
+            </div>
+            <div
+              className="c12"
+            >
+              <div
+                className="c13"
+              >
+                26
+              </div>
+            </div>
+            <div
+              className="c12"
+            >
+              <div
+                className="c13"
+              >
+                27
+              </div>
+            </div>
+            <div
+              className="c12"
+            >
+              <div
+                className="c13"
+              >
+                28
+              </div>
+            </div>
+            <div
+              className="c12"
+            >
+              <div
+                className="c13"
+              >
+                29
+              </div>
+            </div>
+            <div
+              className="c12"
+            >
+              <div
+                className="c13"
+              >
+                30
+              </div>
+            </div>
+            <div
+              className="c12"
+            >
+              <div
+                className="c13"
+              >
+                31
+              </div>
+            </div>
+          </div>
+          <div
+            className="c11"
+          >
+            <div
+              className="c12"
+            >
+              <div
+                className="c13"
+              >
+                1
+              </div>
+            </div>
+            <div
+              className="c12"
+            >
+              <div
+                className="c13"
+              >
+                2
+              </div>
+            </div>
+            <div
+              className="c12"
+            >
+              <div
+                className="c13"
+              >
+                3
+              </div>
+            </div>
+            <div
+              className="c12"
+            >
+              <div
+                className="c13"
+              >
+                4
+              </div>
+            </div>
+            <div
+              className="c12"
+            >
+              <div
+                className="c13"
+              >
+                5
+              </div>
+            </div>
+            <div
+              className="c12"
+            >
+              <div
+                className="c13"
+              >
+                6
+              </div>
+            </div>
+            <div
+              className="c12"
+            >
+              <div
+                className="c13"
+              >
+                7
               </div>
             </div>
           </div>
@@ -16758,7 +16758,7 @@ exports[`Calendar select date 2`] = `
           >
             <svg
               aria-label="Previous"
-              class="StyledIcon-ofa7kd-0 jXwebn"
+              class="StyledIcon-ofa7kd-0 FimRf"
               viewBox="0 0 24 24"
             >
               <polyline
@@ -16777,7 +16777,7 @@ exports[`Calendar select date 2`] = `
           >
             <svg
               aria-label="Next"
-              class="StyledIcon-ofa7kd-0 jXwebn"
+              class="StyledIcon-ofa7kd-0 FimRf"
               viewBox="0 0 24 24"
             >
               <polyline
@@ -18620,7 +18620,7 @@ exports[`Calendar select dates 2`] = `
           >
             <svg
               aria-label="Previous"
-              class="StyledIcon-ofa7kd-0 jXwebn"
+              class="StyledIcon-ofa7kd-0 FimRf"
               viewBox="0 0 24 24"
             >
               <polyline
@@ -18639,7 +18639,7 @@ exports[`Calendar select dates 2`] = `
           >
             <svg
               aria-label="Next"
-              class="StyledIcon-ofa7kd-0 jXwebn"
+              class="StyledIcon-ofa7kd-0 FimRf"
               viewBox="0 0 24 24"
             >
               <polyline
