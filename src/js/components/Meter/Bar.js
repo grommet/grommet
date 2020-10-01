@@ -5,11 +5,7 @@ import { defaultProps } from '../../default-props';
 import { parseMetricToNum } from '../../utils';
 
 import { StyledMeter } from './StyledMeter';
-import {
-  strokeProps,
-  defaultColor,
-  getPathByDirection as getPathByMargin,
-} from './utils';
+import { strokeProps, defaultColor, getPathByMargin } from './utils';
 
 const Bar = forwardRef((props, ref) => {
   const {

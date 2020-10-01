@@ -45,7 +45,7 @@ export const defaultColor = (index, theme, valuesLength) => {
   return neutralColors[colorIndex % neutralColors.length];
 };
 
-export const getPathByDirection = (margin, { start, mid, delta, width }) => {
+export const getPathByMargin = (margin, { start, mid, delta, width }) => {
   if (margin && margin.start) {
     return `M ${width},${mid} L ${width - delta},${mid}`;
   }
