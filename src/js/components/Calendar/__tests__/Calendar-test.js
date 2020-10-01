@@ -166,7 +166,7 @@ describe('Calendar', () => {
   test('children', () => {
     const component = renderer.create(
       <Grommet>
-        <Calendar fill animate={false}>
+        <Calendar date={DATE} fill animate={false}>
           {({ day }) => <Box>{day}</Box>}
         </Calendar>
       </Grommet>,
