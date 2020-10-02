@@ -23,7 +23,7 @@ export interface DropProps {
     | string;
   responsive?: boolean;
   restrictFocus?: boolean;
-  stretch?: boolean;
+  stretch?: boolean | 'align';
   target?: object;
   trapFocus?: boolean;
   plain?: boolean;

@@ -353,6 +353,14 @@ export interface ThemeType {
       [x: string]: string | undefined;
     };
     text?: {
+      size?: {
+        xsmall?: string;
+        small?: string;
+        medium?: string;
+        large?: string;
+        xlarge?: string;
+        [x: string]: string | undefined;
+      };
       fontWeight?: number;
       extend?: ExtendType;
     };
@@ -596,7 +604,19 @@ export interface ThemeType {
     body?: {
       extend?: ExtendType;
     };
-    header?: {};
+    header?: {
+      background?: BackgroundType;
+      border?: BorderType;
+      font?: {
+        weight?: string;
+        size?: string;
+      };
+      gap?: GapType;
+      hover?: {
+        background?: BackgroundType;
+      };
+      pad?: PadType;
+    };
     groupHeader?: {
       border?: {
         side?: string;
@@ -618,6 +638,20 @@ export interface ThemeType {
       descending?: any;
       expand?: any;
       sortable?: any;
+    };
+    pinned?: {
+      body?: {
+        background?: BackgroundType;
+        extend?: ExtendType;
+      };
+      header?: {
+        background?: BackgroundType;
+        extend?: ExtendType;
+      };
+      footer?: {
+        background?: BackgroundType;
+        extend?: ExtendType;
+      };
     };
     resize?: {
       border?: {

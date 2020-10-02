@@ -439,6 +439,19 @@ When supplied, and when at least one column has 'search' enabled,
 function
 ```
 
+**onSelect**
+
+When supplied, causes checkboxes to be added to each row such that
+      the user can indicate which rows should be selected. This function
+      will be called with an array of primary key values, suitable to be
+      passed to the 'select' property. If you are storing select state via
+      a 'useState' hook, you can do something like:
+      '<DataTable select={select} onSelect={setSelect} />'.
+
+```
+function
+```
+
 **onSort**
 
 When supplied, this function will be called with an object
@@ -575,6 +588,21 @@ Row specific background, border, and pad, keyed by primary key value.
 {
 
 }
+```
+
+**select**
+
+When supplied, causes checkboxes to be added to each row to indicate
+      which rows are selected. The values in this array should match
+      the 'primaryKey' or 'columns[].primary' keyed value for the row's data
+      object. If 'onSelect' is provided, the CheckBoxes are enabled
+      and this function can be used to track select changes.
+
+```
+[
+  string
+  number
+]
 ```
 
 **size**
@@ -722,6 +750,97 @@ Defaults to
 {}
 ```
 
+**dataTable.header.background**
+
+Any valid Box background value. Expects `string | 
+    { dark: string, light: string } |
+    { 
+      color: { dark: string, light: string } | string, 
+      dark: bool, 
+      image: string, 
+      position: string, 
+      opacity: bool | string, 
+      repeat: no-repeat | repeat, 
+      size: cover | contain | string
+    }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**dataTable.header.border**
+
+Any valid Box border value. Expects `string | object`.
+
+Defaults to
+
+```
+undefined
+```
+
+**dataTable.header.font.weight**
+
+The font weight for text in header cells. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**dataTable.header.font.size**
+
+The font size for text in header cells. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**dataTable.header.gap**
+
+The gap between elements within the header cell. Expects `object`.
+
+Defaults to
+
+```
+small
+```
+
+**dataTable.header.hover.background**
+
+The hover background color of the header cell contents, if 
+    clickable. Any valid Box background options apply. Expects `string | 
+    { dark: string, light: string } |
+    { 
+      color: { dark: string, light: string } | string, 
+      dark: bool, 
+      image: string, 
+      position: string, 
+      opacity: bool | string, 
+      repeat: no-repeat | repeat, 
+      size: cover | contain | string
+    }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**dataTable.header.pad**
+
+The pad around the contents of the header cell. Expects `string | object`.
+
+Defaults to
+
+```
+undefined
+```
+
 **dataTable.icons.ascending**
 
 The ascending icon. Expects `React.Element`.
@@ -765,6 +884,96 @@ Defaults to
 **dataTable.icons.sortable**
 
 The icon indicating a column can be sorted. Expects `React.Element`.
+
+Defaults to
+
+```
+undefined
+```
+
+**dataTable.pinned.body.background**
+
+Any valid Box background options apply. Expects `string | 
+      { dark: string, light: string } |
+      { 
+        color: { dark: string, light: string } | string, 
+        dark: bool, 
+        image: string, 
+        position: string, 
+        opacity: bool | string, 
+        repeat: no-repeat | repeat, 
+        size: cover | contain | string
+      }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**dataTable.pinned.body.extend**
+
+Any additional styles for pinned body cells. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**dataTable.pinned.header.background**
+
+Any valid Box background options apply. Expects `string | 
+      { dark: string, light: string } |
+      { 
+        color: { dark: string, light: string } | string, 
+        dark: bool, 
+        image: string, 
+        position: string, 
+        opacity: bool | string, 
+        repeat: no-repeat | repeat, 
+        size: cover | contain | string
+      }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**dataTable.pinned.header.extend**
+
+Any additional styles for pinned header cells. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**dataTable.pinned.footer.background**
+
+Any valid Box background options apply. Expects `string | 
+      { dark: string, light: string } |
+      { 
+        color: { dark: string, light: string } | string, 
+        dark: bool, 
+        image: string, 
+        position: string, 
+        opacity: bool | string, 
+        repeat: no-repeat | repeat, 
+        size: cover | contain | string
+      }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**dataTable.pinned.footer.extend**
+
+Any additional styles for pinned footer cells. Expects `string | (props) => {}`.
 
 Defaults to
 

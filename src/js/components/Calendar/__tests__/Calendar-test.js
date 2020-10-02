@@ -87,6 +87,16 @@ describe('Calendar', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  test('fill', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Calendar fill date={DATE} animate={false} />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('firstDayOfWeek', () => {
     const component = renderer.create(
       <Grommet>
@@ -147,6 +157,18 @@ describe('Calendar', () => {
           )}
           animate={false}
         />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('children', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Calendar date={DATE} fill animate={false}>
+          {({ day }) => <Box>{day}</Box>}
+        </Calendar>
       </Grommet>,
     );
     const tree = component.toJSON();

@@ -3555,6 +3555,12 @@ exports[`DataChart legend 1`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .c13 {
+    width: 3px;
+  }
+}
+
 <div
   className="c0"
 >

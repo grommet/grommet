@@ -853,6 +853,56 @@ Defaults to
 \`\`\`
 undefined
 \`\`\`
+
+**avatar.text.size.xsmall**
+
+The size of the text that is mapped according to 'avatar.size.xsmall'. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+small
+\`\`\`
+
+**avatar.text.size.small**
+
+The size of the text that is mapped according to 'avatar.size.small'. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+medium
+\`\`\`
+
+**avatar.text.size.medium**
+
+The size of the text that is mapped according to 'avatar.size.medium'. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+large
+\`\`\`
+
+**avatar.text.size.large**
+
+The size of the text that is mapped according to 'avatar.size.large'. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+xlarge
+\`\`\`
+
+**avatar.text.size.xlarge**
+
+The size of the text that is mapped according to 'avatar.size.xlarge'. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+xxlarge
+\`\`\`
 ",
   "Box": "## Box
 A container that lays out its contents in one direction. Box
@@ -3180,6 +3230,20 @@ An array of two numbers indicating the limits on
 [string]
 \`\`\`
 
+**children**
+
+Function that will be called to render each day.
+      It will be passed \`({date, day, isInRange, isSelected})\` where \`date\`
+      is a string containing an ISO8601 date for the day being rendered, \`day\`
+      is a number containing the day of the month being rendered, \`isInRange\`
+      is a boolean indicating whether the date is within a selected range of
+      dates, and \`isSelected\` is a boolean indicating whether this date
+      is selected.
+
+\`\`\`
+function
+\`\`\`
+
 **date**
 
 The selected date in ISO8601 format
@@ -3220,6 +3284,14 @@ Whether to show the days of the week.
 boolean
 \`\`\`
 
+**fill**
+
+Whether the calendar should fill the parent container.
+
+\`\`\`
+boolean
+\`\`\`
+
 **firstDayOfWeek**
 
 The first day of the week. 0 for Sunday. 1 for Monday.
@@ -3245,10 +3317,10 @@ The function passes the following options:
   }
 \`\`\`
 
-\`onPreviousMonth\` and \`onNextMonth\` are callbacks that will tell the 
+\`onPreviousMonth\` and \`onNextMonth\` are callbacks that will tell the
 calendar to move between months.
-\`previousInBound\` and \`nextInBound\` are booleans that tell, when using 
-\`bounds\`, if the current date is within that range. You can then use that 
+\`previousInBound\` and \`nextInBound\` are booleans that tell, when using
+\`bounds\`, if the current date is within that range. You can then use that
 to disable the previous and next buttons.
 
 
@@ -6324,6 +6396,19 @@ When supplied, and when at least one column has 'search' enabled,
 function
 \`\`\`
 
+**onSelect**
+
+When supplied, causes checkboxes to be added to each row such that
+      the user can indicate which rows should be selected. This function
+      will be called with an array of primary key values, suitable to be
+      passed to the 'select' property. If you are storing select state via
+      a 'useState' hook, you can do something like:
+      '<DataTable select={select} onSelect={setSelect} />'.
+
+\`\`\`
+function
+\`\`\`
+
 **onSort**
 
 When supplied, this function will be called with an object
@@ -6460,6 +6545,21 @@ Row specific background, border, and pad, keyed by primary key value.
 {
 
 }
+\`\`\`
+
+**select**
+
+When supplied, causes checkboxes to be added to each row to indicate
+      which rows are selected. The values in this array should match
+      the 'primaryKey' or 'columns[].primary' keyed value for the row's data
+      object. If 'onSelect' is provided, the CheckBoxes are enabled
+      and this function can be used to track select changes.
+
+\`\`\`
+[
+  string
+  number
+]
 \`\`\`
 
 **size**
@@ -6607,6 +6707,97 @@ Defaults to
 {}
 \`\`\`
 
+**dataTable.header.background**
+
+Any valid Box background value. Expects \`string | 
+    { dark: string, light: string } |
+    { 
+      color: { dark: string, light: string } | string, 
+      dark: bool, 
+      image: string, 
+      position: string, 
+      opacity: bool | string, 
+      repeat: no-repeat | repeat, 
+      size: cover | contain | string
+    }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.header.border**
+
+Any valid Box border value. Expects \`string | object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.header.font.weight**
+
+The font weight for text in header cells. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.header.font.size**
+
+The font size for text in header cells. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.header.gap**
+
+The gap between elements within the header cell. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+small
+\`\`\`
+
+**dataTable.header.hover.background**
+
+The hover background color of the header cell contents, if 
+    clickable. Any valid Box background options apply. Expects \`string | 
+    { dark: string, light: string } |
+    { 
+      color: { dark: string, light: string } | string, 
+      dark: bool, 
+      image: string, 
+      position: string, 
+      opacity: bool | string, 
+      repeat: no-repeat | repeat, 
+      size: cover | contain | string
+    }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.header.pad**
+
+The pad around the contents of the header cell. Expects \`string | object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **dataTable.icons.ascending**
 
 The ascending icon. Expects \`React.Element\`.
@@ -6650,6 +6841,96 @@ Defaults to
 **dataTable.icons.sortable**
 
 The icon indicating a column can be sorted. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.pinned.body.background**
+
+Any valid Box background options apply. Expects \`string | 
+      { dark: string, light: string } |
+      { 
+        color: { dark: string, light: string } | string, 
+        dark: bool, 
+        image: string, 
+        position: string, 
+        opacity: bool | string, 
+        repeat: no-repeat | repeat, 
+        size: cover | contain | string
+      }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.pinned.body.extend**
+
+Any additional styles for pinned body cells. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.pinned.header.background**
+
+Any valid Box background options apply. Expects \`string | 
+      { dark: string, light: string } |
+      { 
+        color: { dark: string, light: string } | string, 
+        dark: bool, 
+        image: string, 
+        position: string, 
+        opacity: bool | string, 
+        repeat: no-repeat | repeat, 
+        size: cover | contain | string
+      }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.pinned.header.extend**
+
+Any additional styles for pinned header cells. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.pinned.footer.background**
+
+Any valid Box background options apply. Expects \`string | 
+      { dark: string, light: string } |
+      { 
+        color: { dark: string, light: string } | string, 
+        dark: bool, 
+        image: string, 
+        position: string, 
+        opacity: bool | string, 
+        repeat: no-repeat | repeat, 
+        size: cover | contain | string
+      }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.pinned.footer.extend**
+
+Any additional styles for pinned footer cells. Expects \`string | (props) => {}\`.
 
 Defaults to
 
@@ -7279,12 +7560,14 @@ boolean
 
 **stretch**
 
-Whether the drop element should be stretched to at least match the
-      width of the target element. The default is true because
-      that is what most uses of Drop want, like Select and Menu. Defaults to \`true\`.
+If set to true the drop element will be stretched to at least match the
+      width of the target element. If set to align the width of the drop element
+      will be restricted to the width of the target element. The default is true
+      because that is what most uses of Drop want, like Select and Menu. Defaults to \`true\`.
 
 \`\`\`
 boolean
+align
 \`\`\`
 
 **target**
@@ -7298,7 +7581,8 @@ object
 
 **elevation**
 
-Elevated height of the target, indicated via a drop shadow.
+Elevated height of the target, indicated via a drop shadow. 
+      Only applicable if the Drop isn't plain.
 
 \`\`\`
 none
@@ -7312,7 +7596,7 @@ string
 
 **plain**
 
-Whether the drop element should have no background nor shadow
+Whether the drop element should have no background nor elevation.
 
 \`\`\`
 boolean
@@ -7335,7 +7619,7 @@ div
   
 **drop.maxHeight**
 
-The max height of the Drop container Expects \`string\`.
+The max height of the Drop container. Expects \`string\`.
 
 Defaults to
 
@@ -7345,7 +7629,7 @@ undefined
 
 **global.drop.background**
 
-The background color of Drop Expects \`string | { dark: string, light: string }\`.
+The background color of Drop. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
@@ -7355,7 +7639,7 @@ Defaults to
 
 **global.drop.border.radius**
 
-The corner radius Expects \`string\`.
+The border radius of the Drop container. Expects \`string\`.
 
 Defaults to
 
@@ -7375,7 +7659,7 @@ undefined
 
 **global.drop.shadowSize**
 
-Elevated height of the Drop Expects \`string\`.
+Elevated height of the Drop. Expects \`string\`.
 
 Defaults to
 
@@ -7385,7 +7669,7 @@ small
 
 **global.drop.zIndex**
 
-The stack order of the Drop Expects \`number\`.
+The stack order of the Drop. Expects \`number\`.
 
 Defaults to
 
@@ -15550,11 +15834,14 @@ node
 
 **plain**
 
-Whether this is a plain input with no border or padding.
-      Only use this when the containing context provides sufficient affordance
+Whether this is a plain input with no border or outline.
+      Use \\"full\\" to remove padding in addition to removing border and outline.
+      Only use this when the containing context provides sufficient 
+      affordance.
 
 \`\`\`
 boolean
+full
 \`\`\`
 
 **reverse**
