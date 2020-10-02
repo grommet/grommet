@@ -736,6 +736,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     formField: {
       border: {
         color: 'border',
+        // border.error will be deprecated, use error.border instead
         // error: {
         //   color: {
         //     dark: 'white',
