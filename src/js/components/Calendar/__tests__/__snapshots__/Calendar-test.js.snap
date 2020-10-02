@@ -2487,14 +2487,14 @@ exports[`Calendar children 1`] = `
             className="c5"
             size="medium"
           >
-            October 2020
+            January 2020
           </h3>
         </div>
         <div
           className="c6"
         >
           <button
-            aria-label="September 2020"
+            aria-label="December 2019"
             className="c7"
             disabled={false}
             onBlur={[Function]}
@@ -2519,7 +2519,7 @@ exports[`Calendar children 1`] = `
             </svg>
           </button>
           <button
-            aria-label="November 2020"
+            aria-label="February 2020"
             className="c7"
             disabled={false}
             onBlur={[Function]}
@@ -2563,24 +2563,6 @@ exports[`Calendar children 1`] = `
               <div
                 className="c13"
               >
-                27
-              </div>
-            </div>
-            <div
-              className="c12"
-            >
-              <div
-                className="c13"
-              >
-                28
-              </div>
-            </div>
-            <div
-              className="c12"
-            >
-              <div
-                className="c13"
-              >
                 29
               </div>
             </div>
@@ -2591,6 +2573,15 @@ exports[`Calendar children 1`] = `
                 className="c13"
               >
                 30
+              </div>
+            </div>
+            <div
+              className="c12"
+            >
+              <div
+                className="c13"
+              >
+                31
               </div>
             </div>
             <div
@@ -2620,10 +2611,6 @@ exports[`Calendar children 1`] = `
                 3
               </div>
             </div>
-          </div>
-          <div
-            className="c11"
-          >
             <div
               className="c12"
             >
@@ -2633,6 +2620,10 @@ exports[`Calendar children 1`] = `
                 4
               </div>
             </div>
+          </div>
+          <div
+            className="c11"
+          >
             <div
               className="c12"
             >
@@ -2687,10 +2678,6 @@ exports[`Calendar children 1`] = `
                 10
               </div>
             </div>
-          </div>
-          <div
-            className="c11"
-          >
             <div
               className="c12"
             >
@@ -2700,6 +2687,10 @@ exports[`Calendar children 1`] = `
                 11
               </div>
             </div>
+          </div>
+          <div
+            className="c11"
+          >
             <div
               className="c12"
             >
@@ -2754,10 +2745,6 @@ exports[`Calendar children 1`] = `
                 17
               </div>
             </div>
-          </div>
-          <div
-            className="c11"
-          >
             <div
               className="c12"
             >
@@ -2767,6 +2754,10 @@ exports[`Calendar children 1`] = `
                 18
               </div>
             </div>
+          </div>
+          <div
+            className="c11"
+          >
             <div
               className="c12"
             >
@@ -2821,10 +2812,6 @@ exports[`Calendar children 1`] = `
                 24
               </div>
             </div>
-          </div>
-          <div
-            className="c11"
-          >
             <div
               className="c12"
             >
@@ -2834,6 +2821,10 @@ exports[`Calendar children 1`] = `
                 25
               </div>
             </div>
+          </div>
+          <div
+            className="c11"
+          >
             <div
               className="c12"
             >
@@ -2888,10 +2879,6 @@ exports[`Calendar children 1`] = `
                 31
               </div>
             </div>
-          </div>
-          <div
-            className="c11"
-          >
             <div
               className="c12"
             >
@@ -2901,6 +2888,10 @@ exports[`Calendar children 1`] = `
                 1
               </div>
             </div>
+          </div>
+          <div
+            className="c11"
+          >
             <div
               className="c12"
             >
@@ -2953,6 +2944,15 @@ exports[`Calendar children 1`] = `
                 className="c13"
               >
                 7
+              </div>
+            </div>
+            <div
+              className="c12"
+            >
+              <div
+                className="c13"
+              >
+                8
               </div>
             </div>
           </div>

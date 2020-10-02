@@ -118,6 +118,14 @@ const StyledDataTableFooter = styled(TableFooter)`
     width: 100%;
     table-layout: fixed;
   `}
+  ${props =>
+    props.pin &&
+    `
+      /* Safari needs the relative positioning of tfoot specified */
+      position: sticky;
+      bottom: 0;
+      z-index: 1;
+  `}
 `;
 
 StyledDataTableFooter.defaultProps = {};
