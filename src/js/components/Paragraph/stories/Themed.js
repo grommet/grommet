@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { Grommet, Paragraph } from 'grommet';
 import { deepMerge } from 'grommet/utils';
 import { grommet } from 'grommet/themes';
+import isChromatic from 'chromatic/isChromatic';
 
 const customTheme = deepMerge(grommet, {
   paragraph: {
@@ -21,6 +22,6 @@ const All = () => (
   </Grommet>
 );
 
-storiesOf('Paragraph', module).add('Theme', () => <All />, {
-  chromatic: { disable: true },
-});
+if (isChromatic && document.fonts) {
+  storiesOf('Paragraph', module).add('Themed', () => <All />);
+}
