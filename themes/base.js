@@ -421,8 +421,16 @@ var generate = function generate(baseSpacing, scale) {
         large: baseSpacing * 3 + "px",
         xlarge: baseSpacing * 4 + "px"
       },
-      text: {// fontWeight: undefined,
+      text: {
+        size: {
+          xsmall: 'small',
+          small: 'medium',
+          medium: 'large',
+          large: 'xlarge',
+          xlarge: 'xxlarge'
+        } // fontWeight: undefined,
         // extend: undefined
+
       }
     },
     box: {

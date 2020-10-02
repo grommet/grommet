@@ -37,6 +37,7 @@ var Avatar = function Avatar(_ref) {
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
   var avatarSize = theme.avatar.size[size] || size;
+  var avatarTextSize = theme.avatar.text.size[size] || 'large';
   var avatarProps = {
     align: align,
     height: avatarSize,
@@ -63,7 +64,7 @@ var Avatar = function Avatar(_ref) {
   if (typeof children === 'string') {
     return /*#__PURE__*/_react["default"].createElement(_StyledAvatar.StyledAvatar, _extends({}, avatarProps, rest), /*#__PURE__*/_react["default"].createElement(_StyledAvatar.StyledAvatarText, {
       alignSelf: "center",
-      size: "large"
+      size: avatarTextSize
     }, children));
   }
 
