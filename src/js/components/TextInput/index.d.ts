@@ -29,7 +29,7 @@ export interface TextInputProps {
   onSuggestionsOpen?: () => void;
   onSuggestionsClose?: () => void;
   placeholder?: PlaceHolderType;
-  plain?: boolean;
+  plain?: boolean | 'full';
   reverse?: boolean;
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
   suggestions?: ({ label?: React.ReactNode; value?: any } | string)[];
