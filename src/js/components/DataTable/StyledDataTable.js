@@ -118,6 +118,14 @@ const StyledDataTableFooter = styled(TableFooter)`
     width: 100%;
     table-layout: fixed;
   `}
+  ${props =>
+    props.pin &&
+    `
+      /* Safari needs the relative positioning of tfoot specified */
+      position: sticky;
+      bottom: 0;
+      z-index: 1;
+  `}
 `;
 
 StyledDataTableFooter.defaultProps = {};
@@ -131,6 +139,14 @@ const StyledDataTableCell = styled(TableCell)`
     position: sticky;
     ${props.pin.map(p => `${p}: 0;`).join(' ')}
     z-index: ${Object.keys(props.pin).length};
+    ${
+      props.theme.dataTable &&
+      props.theme.dataTable.pinned &&
+      props.theme.dataTable.pinned[props.context] &&
+      props.theme.dataTable.pinned[props.context].extend
+        ? props.theme.dataTable.pinned[props.context].extend
+        : ''
+    }
   `}
 `;
 
