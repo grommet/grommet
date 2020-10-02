@@ -17,6 +17,7 @@ const Avatar = ({
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const avatarSize = theme.avatar.size[size] || size;
+  const avatarTextSize = theme.avatar.text.size[size] || 'large';
 
   const avatarProps = {
     align,
@@ -47,7 +48,7 @@ const Avatar = ({
   if (typeof children === 'string') {
     return (
       <StyledAvatar {...avatarProps} {...rest}>
-        <StyledAvatarText alignSelf="center" size="large">
+        <StyledAvatarText alignSelf="center" size={avatarTextSize}>
           {children}
         </StyledAvatarText>
       </StyledAvatar>
