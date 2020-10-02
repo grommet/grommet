@@ -40,7 +40,7 @@ export var doc = function doc(TextInput) {
     onSuggestionsOpen: PropTypes.func.description('Function that will be called when the suggestions drop is opened.'),
     onSuggestionsClose: PropTypes.func.description('Function that will be called when the suggestions drop is closed.'),
     placeholder: PropTypes.node.description('Placeholder to use when no value is provided.'),
-    plain: PropTypes.bool.description("Whether this is a plain input with no border or padding.\n      Only use this when the containing context provides sufficient affordance"),
+    plain: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['full'])]).description("Whether this is a plain input with no border or outline.\n      Use \"full\" to remove padding in addition to removing border and outline.\n      Only use this when the containing context provides sufficient \n      affordance."),
     reverse: PropTypes.bool.description("Whether an icon should be reversed so that the icon is at the\n      end of the input."),
     size: PropTypes.oneOfType([PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']), PropTypes.string]).description('The size of the TextInput.'),
     suggestions: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.shape({
