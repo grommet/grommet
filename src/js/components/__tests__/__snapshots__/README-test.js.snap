@@ -853,6 +853,56 @@ Defaults to
 \`\`\`
 undefined
 \`\`\`
+
+**avatar.text.size.xsmall**
+
+The size of the text that is mapped according to 'avatar.size.xsmall'. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+small
+\`\`\`
+
+**avatar.text.size.small**
+
+The size of the text that is mapped according to 'avatar.size.small'. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+medium
+\`\`\`
+
+**avatar.text.size.medium**
+
+The size of the text that is mapped according to 'avatar.size.medium'. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+large
+\`\`\`
+
+**avatar.text.size.large**
+
+The size of the text that is mapped according to 'avatar.size.large'. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+xlarge
+\`\`\`
+
+**avatar.text.size.xlarge**
+
+The size of the text that is mapped according to 'avatar.size.xlarge'. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+xxlarge
+\`\`\`
 ",
   "Box": "## Box
 A container that lays out its contents in one direction. Box
@@ -15804,11 +15854,14 @@ node
 
 **plain**
 
-Whether this is a plain input with no border or padding.
-      Only use this when the containing context provides sufficient affordance
+Whether this is a plain input with no border or outline.
+      Use \\"full\\" to remove padding in addition to removing border and outline.
+      Only use this when the containing context provides sufficient 
+      affordance.
 
 \`\`\`
 boolean
+full
 \`\`\`
 
 **reverse**
