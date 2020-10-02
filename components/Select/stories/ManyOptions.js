@@ -1,6 +1,6 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+var _react = _interopRequireDefault(require("react"));
 
 var _react2 = require("@storybook/react");
 
@@ -8,39 +8,22 @@ var _grommet = require("grommet");
 
 var _themes = require("grommet/themes");
 
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-var Option = /*#__PURE__*/function (_PureComponent) {
-  _inheritsLoose(Option, _PureComponent);
-
-  function Option() {
-    return _PureComponent.apply(this, arguments) || this;
-  }
-
-  var _proto = Option.prototype;
-
-  _proto.render = function render() {
-    var _this$props = this.props,
-        value = _this$props.value,
-        selected = _this$props.selected;
-    return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      direction: "row",
-      gap: "small",
-      align: "center",
-      pad: "xsmall"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.CheckBox, {
-      tabIndex: "-1",
-      checked: selected,
-      onChange: function onChange() {}
-    }), value);
-  };
-
-  return Option;
-}(_react.PureComponent);
+var Option = /*#__PURE__*/_react["default"].memo(function (_ref) {
+  var value = _ref.value,
+      selected = _ref.selected;
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+    direction: "row",
+    gap: "small",
+    align: "center",
+    pad: "xsmall"
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.CheckBox, {
+    tabIndex: "-1",
+    checked: selected,
+    onChange: function onChange() {}
+  }), value);
+});
 
 var dummyOptions = Array(2000).fill().map(function (_, i) {
   return "option " + i;
@@ -94,8 +77,8 @@ var ManyOptions = function ManyOptions() {
         });
       }));
     },
-    onChange: function onChange(_ref) {
-      var nextSelected = _ref.selected;
+    onChange: function onChange(_ref2) {
+      var nextSelected = _ref2.selected;
       setSelected(nextSelected);
     }
   }, function (option, index) {
