@@ -772,7 +772,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       error: {
         color: 'status-critical',
         margin: { vertical: 'xsmall', horizontal: 'small' },
-        error: {
+        border: {
           color: {
             dark: 'white',
             light: 'status-critical',
