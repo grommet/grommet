@@ -24,7 +24,8 @@ var Footer = function Footer(_ref) {
       rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "fill", "footerValues", "groups", "onSelect", "pad", "pin", "primaryProperty", "selected"]);
 
   return /*#__PURE__*/React.createElement(StyledDataTableFooter, _extends({
-    fillProp: fill
+    fillProp: fill,
+    pin: tablePin
   }, rest), /*#__PURE__*/React.createElement(TableRow, null, groups && /*#__PURE__*/React.createElement(TableCell, {
     plain: true,
     size: "xxsmall",
