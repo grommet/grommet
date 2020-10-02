@@ -859,6 +859,20 @@ exports[`DataTable aggregate with nested object 1`] = `
             </span>
           </div>
         </th>
+        <th
+          class="c3 "
+          scope="col"
+        >
+          <div
+            class="c4"
+          >
+            <span
+              class="c5"
+            >
+              object 2
+            </span>
+          </div>
+        </th>
       </tr>
     </thead>
     <tbody
@@ -894,6 +908,19 @@ exports[`DataTable aggregate with nested object 1`] = `
             </span>
           </div>
         </td>
+        <td
+          class="c7 "
+        >
+          <div
+            class="c8"
+          >
+            <span
+              class="c5"
+            >
+              10
+            </span>
+          </div>
+        </td>
       </tr>
       <tr
         class=""
@@ -925,6 +952,19 @@ exports[`DataTable aggregate with nested object 1`] = `
             </span>
           </div>
         </td>
+        <td
+          class="c7 "
+        >
+          <div
+            class="c8"
+          >
+            <span
+              class="c5"
+            >
+              20
+            </span>
+          </div>
+        </td>
       </tr>
     </tbody>
     <tfoot
@@ -952,6 +992,13 @@ exports[`DataTable aggregate with nested object 1`] = `
               3
             </span>
           </div>
+        </td>
+        <td
+          class="c10 "
+        >
+          <div
+            class="c8"
+          />
         </td>
       </tr>
     </tfoot>
@@ -7206,7 +7253,7 @@ exports[`DataTable pin + background 1`] = `
   padding-bottom: 6px;
 }
 
-.c14 {
+.c15 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -7221,7 +7268,7 @@ exports[`DataTable pin + background 1`] = `
   padding-bottom: 6px;
 }
 
-.c17 {
+.c18 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -7259,6 +7306,578 @@ exports[`DataTable pin + background 1`] = `
 
 .c8:focus {
   outline: 2px solid #6FFFB0;
+}
+
+.c14 {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+}
+
+.c4 {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.c7 {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.c10 {
+  position: -webkit-sticky;
+  position: sticky;
+  left: 0;
+  z-index: 1;
+}
+
+.c16 {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.c17 {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+  .c1 {
+    table-layout: fixed;
+  }
+}
+
+<div
+  class="c0"
+>
+  <table
+    class="c1 c2"
+  >
+    <thead
+      class=""
+    >
+      <tr
+        class=""
+      >
+        <th
+          class="c3 c4"
+          scope="col"
+        >
+          <div
+            class="c5"
+          >
+            <span
+              class="c6"
+            >
+              A
+            </span>
+          </div>
+        </th>
+        <th
+          class="c3 c7"
+          scope="col"
+        >
+          <div
+            class="c5"
+          >
+            <span
+              class="c6"
+            >
+              B
+            </span>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="c8"
+    >
+      <tr
+        class=""
+      >
+        <th
+          class="c9 c10"
+          scope="row"
+        >
+          <div
+            class="c11"
+          >
+            <span
+              class="c12"
+            >
+              one
+            </span>
+          </div>
+        </th>
+        <td
+          class="c13 "
+        >
+          <div
+            class="c11"
+          >
+            <span
+              class="c6"
+            >
+              1
+            </span>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class=""
+      >
+        <th
+          class="c9 c10"
+          scope="row"
+        >
+          <div
+            class="c11"
+          >
+            <span
+              class="c12"
+            >
+              two
+            </span>
+          </div>
+        </th>
+        <td
+          class="c13 "
+        >
+          <div
+            class="c11"
+          >
+            <span
+              class="c6"
+            >
+              2
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot
+      class="c14"
+    >
+      <tr
+        class=""
+      >
+        <td
+          class="c15 c16"
+        >
+          <div
+            class="c11"
+          >
+            <span
+              class="c12"
+            >
+              Total
+            </span>
+          </div>
+        </td>
+        <td
+          class="c15 c17"
+        >
+          <div
+            class="c11"
+          />
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+  <table
+    class="c1 c2"
+  >
+    <thead
+      class=""
+    >
+      <tr
+        class=""
+      >
+        <th
+          class="c3 c4"
+          scope="col"
+        >
+          <div
+            class="c5"
+          >
+            <span
+              class="c6"
+            >
+              A
+            </span>
+          </div>
+        </th>
+        <th
+          class="c3 c7"
+          scope="col"
+        >
+          <div
+            class="c5"
+          >
+            <span
+              class="c6"
+            >
+              B
+            </span>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="c8"
+    >
+      <tr
+        class=""
+      >
+        <th
+          class="c9 c10"
+          scope="row"
+        >
+          <div
+            class="c11"
+          >
+            <span
+              class="c12"
+            >
+              one
+            </span>
+          </div>
+        </th>
+        <td
+          class="c13 "
+        >
+          <div
+            class="c11"
+          >
+            <span
+              class="c6"
+            >
+              1
+            </span>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class=""
+      >
+        <th
+          class="c9 c10"
+          scope="row"
+        >
+          <div
+            class="c11"
+          >
+            <span
+              class="c12"
+            >
+              two
+            </span>
+          </div>
+        </th>
+        <td
+          class="c13 "
+        >
+          <div
+            class="c11"
+          >
+            <span
+              class="c6"
+            >
+              2
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot
+      class=""
+    >
+      <tr
+        class=""
+      >
+        <td
+          class="c15 c10"
+        >
+          <div
+            class="c11"
+          >
+            <span
+              class="c12"
+            >
+              Total
+            </span>
+          </div>
+        </td>
+        <td
+          class="c15 "
+        >
+          <div
+            class="c11"
+          />
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+  <table
+    class="c1 c2"
+  >
+    <thead
+      class=""
+    >
+      <tr
+        class=""
+      >
+        <th
+          class="c3 c10"
+          scope="col"
+        >
+          <div
+            class="c5"
+          >
+            <span
+              class="c6"
+            >
+              A
+            </span>
+          </div>
+        </th>
+        <th
+          class="c18 "
+          scope="col"
+        >
+          <div
+            class="c5"
+          >
+            <span
+              class="c6"
+            >
+              B
+            </span>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="c8"
+    >
+      <tr
+        class=""
+      >
+        <th
+          class="c9 c10"
+          scope="row"
+        >
+          <div
+            class="c11"
+          >
+            <span
+              class="c12"
+            >
+              one
+            </span>
+          </div>
+        </th>
+        <td
+          class="c13 "
+        >
+          <div
+            class="c11"
+          >
+            <span
+              class="c6"
+            >
+              1
+            </span>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class=""
+      >
+        <th
+          class="c9 c10"
+          scope="row"
+        >
+          <div
+            class="c11"
+          >
+            <span
+              class="c12"
+            >
+              two
+            </span>
+          </div>
+        </th>
+        <td
+          class="c13 "
+        >
+          <div
+            class="c11"
+          >
+            <span
+              class="c6"
+            >
+              2
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot
+      class="c14"
+    >
+      <tr
+        class=""
+      >
+        <td
+          class="c15 c16"
+        >
+          <div
+            class="c11"
+          >
+            <span
+              class="c12"
+            >
+              Total
+            </span>
+          </div>
+        </td>
+        <td
+          class="c15 c17"
+        >
+          <div
+            class="c11"
+          />
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+`;
+
+exports[`DataTable pin 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c9 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c14 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c12 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c2 {
+  border-spacing: 0;
+  border-collapse: separate;
+  height: auto;
+}
+
+.c8:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c13 {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
 }
 
 .c4 {
@@ -7367,7 +7986,7 @@ exports[`DataTable pin + background 1`] = `
           </div>
         </th>
         <td
-          class="c13 "
+          class="c9 "
         >
           <div
             class="c11"
@@ -7398,7 +8017,7 @@ exports[`DataTable pin + background 1`] = `
           </div>
         </th>
         <td
-          class="c13 "
+          class="c9 "
         >
           <div
             class="c11"
@@ -7413,7 +8032,7 @@ exports[`DataTable pin + background 1`] = `
       </tr>
     </tbody>
     <tfoot
-      class=""
+      class="c13"
     >
       <tr
         class=""
@@ -7501,7 +8120,7 @@ exports[`DataTable pin + background 1`] = `
           </div>
         </th>
         <td
-          class="c13 "
+          class="c9 "
         >
           <div
             class="c11"
@@ -7532,7 +8151,7 @@ exports[`DataTable pin + background 1`] = `
           </div>
         </th>
         <td
-          class="c13 "
+          class="c9 "
         >
           <div
             class="c11"
@@ -7567,564 +8186,6 @@ exports[`DataTable pin + background 1`] = `
         </td>
         <td
           class="c14 "
-        >
-          <div
-            class="c11"
-          />
-        </td>
-      </tr>
-    </tfoot>
-  </table>
-  <table
-    class="c1 c2"
-  >
-    <thead
-      class=""
-    >
-      <tr
-        class=""
-      >
-        <th
-          class="c3 c10"
-          scope="col"
-        >
-          <div
-            class="c5"
-          >
-            <span
-              class="c6"
-            >
-              A
-            </span>
-          </div>
-        </th>
-        <th
-          class="c17 "
-          scope="col"
-        >
-          <div
-            class="c5"
-          >
-            <span
-              class="c6"
-            >
-              B
-            </span>
-          </div>
-        </th>
-      </tr>
-    </thead>
-    <tbody
-      class="c8"
-    >
-      <tr
-        class=""
-      >
-        <th
-          class="c9 c10"
-          scope="row"
-        >
-          <div
-            class="c11"
-          >
-            <span
-              class="c12"
-            >
-              one
-            </span>
-          </div>
-        </th>
-        <td
-          class="c13 "
-        >
-          <div
-            class="c11"
-          >
-            <span
-              class="c6"
-            >
-              1
-            </span>
-          </div>
-        </td>
-      </tr>
-      <tr
-        class=""
-      >
-        <th
-          class="c9 c10"
-          scope="row"
-        >
-          <div
-            class="c11"
-          >
-            <span
-              class="c12"
-            >
-              two
-            </span>
-          </div>
-        </th>
-        <td
-          class="c13 "
-        >
-          <div
-            class="c11"
-          >
-            <span
-              class="c6"
-            >
-              2
-            </span>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-    <tfoot
-      class=""
-    >
-      <tr
-        class=""
-      >
-        <td
-          class="c14 c15"
-        >
-          <div
-            class="c11"
-          >
-            <span
-              class="c12"
-            >
-              Total
-            </span>
-          </div>
-        </td>
-        <td
-          class="c14 c16"
-        >
-          <div
-            class="c11"
-          />
-        </td>
-      </tr>
-    </tfoot>
-  </table>
-</div>
-`;
-
-exports[`DataTable pin 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-}
-
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c3 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c9 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c13 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c1 {
-  border-spacing: 0;
-  border-collapse: collapse;
-  width: inherit;
-}
-
-.c6 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c12 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
-.c2 {
-  border-spacing: 0;
-  border-collapse: separate;
-  height: auto;
-}
-
-.c8:focus {
-  outline: 2px solid #6FFFB0;
-}
-
-.c4 {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  left: 0;
-  z-index: 2;
-}
-
-.c7 {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
-
-.c10 {
-  position: -webkit-sticky;
-  position: sticky;
-  left: 0;
-  z-index: 1;
-}
-
-.c14 {
-  position: -webkit-sticky;
-  position: sticky;
-  bottom: 0;
-  left: 0;
-  z-index: 2;
-}
-
-.c15 {
-  position: -webkit-sticky;
-  position: sticky;
-  bottom: 0;
-  z-index: 1;
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
-<div
-  class="c0"
->
-  <table
-    class="c1 c2"
-  >
-    <thead
-      class=""
-    >
-      <tr
-        class=""
-      >
-        <th
-          class="c3 c4"
-          scope="col"
-        >
-          <div
-            class="c5"
-          >
-            <span
-              class="c6"
-            >
-              A
-            </span>
-          </div>
-        </th>
-        <th
-          class="c3 c7"
-          scope="col"
-        >
-          <div
-            class="c5"
-          >
-            <span
-              class="c6"
-            >
-              B
-            </span>
-          </div>
-        </th>
-      </tr>
-    </thead>
-    <tbody
-      class="c8"
-    >
-      <tr
-        class=""
-      >
-        <th
-          class="c9 c10"
-          scope="row"
-        >
-          <div
-            class="c11"
-          >
-            <span
-              class="c12"
-            >
-              one
-            </span>
-          </div>
-        </th>
-        <td
-          class="c9 "
-        >
-          <div
-            class="c11"
-          >
-            <span
-              class="c6"
-            >
-              1
-            </span>
-          </div>
-        </td>
-      </tr>
-      <tr
-        class=""
-      >
-        <th
-          class="c9 c10"
-          scope="row"
-        >
-          <div
-            class="c11"
-          >
-            <span
-              class="c12"
-            >
-              two
-            </span>
-          </div>
-        </th>
-        <td
-          class="c9 "
-        >
-          <div
-            class="c11"
-          >
-            <span
-              class="c6"
-            >
-              2
-            </span>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-    <tfoot
-      class=""
-    >
-      <tr
-        class=""
-      >
-        <td
-          class="c13 c14"
-        >
-          <div
-            class="c11"
-          >
-            <span
-              class="c12"
-            >
-              Total
-            </span>
-          </div>
-        </td>
-        <td
-          class="c13 c15"
-        >
-          <div
-            class="c11"
-          />
-        </td>
-      </tr>
-    </tfoot>
-  </table>
-  <table
-    class="c1 c2"
-  >
-    <thead
-      class=""
-    >
-      <tr
-        class=""
-      >
-        <th
-          class="c3 c4"
-          scope="col"
-        >
-          <div
-            class="c5"
-          >
-            <span
-              class="c6"
-            >
-              A
-            </span>
-          </div>
-        </th>
-        <th
-          class="c3 c7"
-          scope="col"
-        >
-          <div
-            class="c5"
-          >
-            <span
-              class="c6"
-            >
-              B
-            </span>
-          </div>
-        </th>
-      </tr>
-    </thead>
-    <tbody
-      class="c8"
-    >
-      <tr
-        class=""
-      >
-        <th
-          class="c9 c10"
-          scope="row"
-        >
-          <div
-            class="c11"
-          >
-            <span
-              class="c12"
-            >
-              one
-            </span>
-          </div>
-        </th>
-        <td
-          class="c9 "
-        >
-          <div
-            class="c11"
-          >
-            <span
-              class="c6"
-            >
-              1
-            </span>
-          </div>
-        </td>
-      </tr>
-      <tr
-        class=""
-      >
-        <th
-          class="c9 c10"
-          scope="row"
-        >
-          <div
-            class="c11"
-          >
-            <span
-              class="c12"
-            >
-              two
-            </span>
-          </div>
-        </th>
-        <td
-          class="c9 "
-        >
-          <div
-            class="c11"
-          >
-            <span
-              class="c6"
-            >
-              2
-            </span>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-    <tfoot
-      class=""
-    >
-      <tr
-        class=""
-      >
-        <td
-          class="c13 c10"
-        >
-          <div
-            class="c11"
-          >
-            <span
-              class="c12"
-            >
-              Total
-            </span>
-          </div>
-        </td>
-        <td
-          class="c13 "
         >
           <div
             class="c11"
@@ -8239,13 +8300,13 @@ exports[`DataTable pin 1`] = `
       </tr>
     </tbody>
     <tfoot
-      class=""
+      class="c13"
     >
       <tr
         class=""
       >
         <td
-          class="c13 c14"
+          class="c14 c15"
         >
           <div
             class="c11"
@@ -8258,7 +8319,7 @@ exports[`DataTable pin 1`] = `
           </div>
         </td>
         <td
-          class="c13 c15"
+          class="c14 c16"
         >
           <div
             class="c11"
