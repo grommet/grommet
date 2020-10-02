@@ -4,7 +4,6 @@ import { storiesOf } from '@storybook/react';
 import { Grommet, Paragraph } from 'grommet';
 import { deepMerge } from 'grommet/utils';
 import { grommet } from 'grommet/themes';
-import isChromatic from 'chromatic/isChromatic';
 
 const customTheme = deepMerge(grommet, {
   paragraph: {
@@ -22,6 +21,7 @@ const All = () => (
   </Grommet>
 );
 
-if (isChromatic && document.fonts) {
-  storiesOf('Paragraph', module).add('Themed', () => <All />);
-}
+// disabling chromatic because snapshot doesn't capture font
+storiesOf('Paragraph', module).add('Themed', () => <All />, {
+  chromatic: { disable: true },
+});
