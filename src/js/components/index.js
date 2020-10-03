@@ -64,5 +64,6 @@ export * from './Tabs';
 export * from './Text';
 export * from './TextArea';
 export * from './TextInput';
+export * from './TimeInput';
 export * from './Video';
 export * from './WorldMap';

@@ -54,7 +54,8 @@
     "markdown-to-jsx": "^6.11.4",
     "polished": "^3.4.1",
     "prop-types": "^15.7.2",
-    "react-desc": "^4.1.2"
+    "react-desc": "^4.1.2",
+    "dayjs": "^1.9.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",

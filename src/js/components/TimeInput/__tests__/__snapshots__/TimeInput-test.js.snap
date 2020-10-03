@@ -1,0 +1,2600 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TimeInput basic 1`] = `
+.c2 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c2 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c2 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c2 *[stroke*="#"],
+.c2 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c2 *[fill-rule],
+.c2 *[FILL-RULE],
+.c2 *[fill*="#"],
+.c2 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+<div
+  className="c0"
+>
+  <button
+    aria-label="Open Drop"
+    className="c1"
+    id="item"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    <svg
+      aria-label="Clock"
+      className="c2"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M12,5 L12,12 L17,12"
+        fill="none"
+        stroke="#000"
+        strokeWidth="2"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`TimeInput buttonProps should pass props to Button 
+  when not inline and no format 1`] = `
+.c2 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c2 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c2 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c2 *[stroke*="#"],
+.c2 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c2 *[fill-rule],
+.c2 *[FILL-RULE],
+.c2 *[fill*="#"],
+.c2 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+<div
+  className="c0"
+>
+  <button
+    aria-label="Open Drop"
+    className="c1"
+    disabled={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    <svg
+      aria-label="Clock"
+      className="c2"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M12,5 L12,12 L17,12"
+        fill="none"
+        stroke="#000"
+        strokeWidth="2"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`TimeInput dropProps should pass props to Drop 
+  when not inline 1`] = `
+.c3 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c3 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c3 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c3 *[stroke*="#"],
+.c3 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c3 *[fill-rule],
+.c3 *[FILL-RULE],
+.c3 *[fill*="#"],
+.c3 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  padding-right: 48px;
+}
+
+.c4::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c4::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c4:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c4::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c4:-moz-placeholder,
+.c4::-moz-placeholder {
+  opacity: 1;
+}
+
+.c1 {
+  position: relative;
+  width: 100%;
+}
+
+.c2 {
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-packjustify: center;
+  -webkit-justify: center;
+  -ms-flex-packjustify: center;
+  justify: center;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  pointer-events: none;
+  right: 12px;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <svg
+        aria-label="Clock"
+        class="c3"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M12,5 L12,12 L17,12"
+          fill="none"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+    <input
+      autocomplete="off"
+      class="c4"
+      placeholder="hh:mm"
+      value=""
+    />
+  </div>
+</div>
+`;
+
+exports[`TimeInput focus 1`] = `
+.c3 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c3 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c3 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c3 *[stroke*="#"],
+.c3 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c3 *[fill-rule],
+.c3 *[FILL-RULE],
+.c3 *[fill*="#"],
+.c3 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  padding-right: 48px;
+}
+
+.c4 > circle,
+.c4 > ellipse,
+.c4 > line,
+.c4 > path,
+.c4 > polygon,
+.c4 > polyline,
+.c4 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c4::-moz-focus-inner {
+  border: 0;
+}
+
+.c4::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c4::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c4:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c4::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c4:-moz-placeholder,
+.c4::-moz-placeholder {
+  opacity: 1;
+}
+
+.c1 {
+  position: relative;
+  width: 100%;
+}
+
+.c2 {
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-packjustify: center;
+  -webkit-justify: center;
+  -ms-flex-packjustify: center;
+  justify: center;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  pointer-events: none;
+  right: 12px;
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <svg
+        aria-label="Clock"
+        class="c3"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M12,5 L12,12 L17,12"
+          fill="none"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+    <input
+      autocomplete="off"
+      class="c4"
+      id="item"
+      name="item"
+      placeholder="hh:mm"
+      value="16:31"
+    />
+  </div>
+</div>
+`;
+
+exports[`TimeInput focus 2`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: visible;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.c9 {
+  stroke-width: 8px;
+  stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
+  transition: stroke 1s ease-out;
+}
+
+.c8 {
+  stroke-width: 4px;
+  stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
+  transition: stroke 1s ease-out;
+}
+
+.c7 {
+  width: 216px;
+  height: 216px;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
+.c2 {
+  position: relative;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c3 {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.c6 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+
+<div
+  class="c0 c1"
+  data-g-portal-id="0"
+  id="item__drop"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  tabindex="-1"
+>
+  <div
+    class="c2"
+    style="margin-top: 10px; margin-bottom: 10px;"
+  >
+    <div
+      class="c3"
+    >
+      <div
+        class="c4"
+      >
+        <div
+          class="c5"
+          style="height: 260px; width: 260px;"
+        >
+          <div
+            class="c4"
+            style="transform: translate(0px, -114px); width: 32px; height: 32px; display: inline-flex; position: absolute; align-items: center; user-select: none; border-radius: 50%;"
+          >
+            12
+          </div>
+          <div
+            class="c4"
+            style="transform: translate(57px, -98.7px); width: 32px; height: 32px; display: inline-flex; position: absolute; align-items: center; user-select: none; border-radius: 50%;"
+          >
+            1
+          </div>
+          <div
+            class="c4"
+            style="transform: translate(98.7px, -57px); width: 32px; height: 32px; display: inline-flex; position: absolute; align-items: center; user-select: none; border-radius: 50%;"
+          >
+            2
+          </div>
+          <div
+            class="c4"
+            style="transform: translate(114px, 0px); width: 32px; height: 32px; display: inline-flex; position: absolute; align-items: center; user-select: none; border-radius: 50%;"
+          >
+            3
+          </div>
+          <div
+            class="c4"
+            style="transform: translate(98.7px, 57px); width: 32px; height: 32px; display: inline-flex; position: absolute; align-items: center; user-select: none; border-radius: 50%;"
+          >
+            4
+          </div>
+          <div
+            class="c4"
+            style="transform: translate(57px, 98.7px); width: 32px; height: 32px; display: inline-flex; position: absolute; align-items: center; user-select: none; border-radius: 50%;"
+          >
+            5
+          </div>
+          <div
+            class="c4"
+            style="transform: translate(0px, 114px); width: 32px; height: 32px; display: inline-flex; position: absolute; align-items: center; user-select: none; border-radius: 50%;"
+          >
+            6
+          </div>
+          <div
+            class="c4"
+            style="transform: translate(-57px, 98.7px); width: 32px; height: 32px; display: inline-flex; position: absolute; align-items: center; user-select: none; border-radius: 50%;"
+          >
+            7
+          </div>
+          <div
+            class="c4"
+            style="transform: translate(-98.7px, 57px); width: 32px; height: 32px; display: inline-flex; position: absolute; align-items: center; user-select: none; border-radius: 50%;"
+          >
+            8
+          </div>
+          <div
+            class="c4"
+            style="transform: translate(-114px, 0px); width: 32px; height: 32px; display: inline-flex; position: absolute; align-items: center; user-select: none; border-radius: 50%;"
+          >
+            9
+          </div>
+          <div
+            class="c4"
+            style="transform: translate(-98.7px, -57px); width: 32px; height: 32px; display: inline-flex; position: absolute; align-items: center; user-select: none; border-radius: 50%;"
+          >
+            10
+          </div>
+          <div
+            class="c4"
+            style="transform: translate(-57px, -98.7px); width: 32px; height: 32px; display: inline-flex; position: absolute; align-items: center; user-select: none; border-radius: 50%;"
+          >
+            11
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="c6"
+    >
+      <div
+        class="c4"
+      >
+        <svg
+          class="c7"
+          height="96"
+          preserveAspectRatio="xMidYMid meet"
+          version="1.1"
+          viewBox="0 0 96 96"
+          width="96"
+        >
+          <line
+            class="c8"
+            stroke="#000000"
+            stroke-linecap="round"
+            style="transform: rotate(180deg); transform-origin: 48px 48px;"
+            x1="48"
+            x2="48"
+            y1="48"
+            y2="12"
+          />
+          <line
+            class="c9"
+            stroke="#000000"
+            stroke-linecap="round"
+            style="transform: rotate(135deg); transform-origin: 48px 48px;"
+            x1="48"
+            x2="48"
+            y1="48"
+            y2="24"
+          />
+        </svg>
+      </div>
+    </div>
+    <div
+      class="c6"
+    >
+      <div
+        class="c4"
+      >
+        <div
+          class="c4"
+          style="height: 260px; width: 260px;"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TimeInput focus 3`] = `""`;
+
+exports[`TimeInput format 1`] = `
+.c3 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c3 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c3 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c3 *[stroke*="#"],
+.c3 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c3 *[fill-rule],
+.c3 *[FILL-RULE],
+.c3 *[fill*="#"],
+.c3 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  padding-right: 48px;
+}
+
+.c4::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c4::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c4:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c4::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c4:-moz-placeholder,
+.c4::-moz-placeholder {
+  opacity: 1;
+}
+
+.c1 {
+  position: relative;
+  width: 100%;
+}
+
+.c2 {
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-packjustify: center;
+  -webkit-justify: center;
+  -ms-flex-packjustify: center;
+  justify: center;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  pointer-events: none;
+  right: 12px;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <svg
+        aria-label="Clock"
+        className="c3"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M12,5 L12,12 L17,12"
+          fill="none"
+          stroke="#000"
+          strokeWidth="2"
+        />
+      </svg>
+    </div>
+    <input
+      autoComplete="off"
+      className="c4"
+      id="item"
+      name="item"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      placeholder="hh:mm"
+      value="16:31"
+    />
+  </div>
+</div>
+`;
+
+exports[`TimeInput format disabled 1`] = `
+.c3 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c3 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c3 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c3 *[stroke*="#"],
+.c3 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c3 *[fill-rule],
+.c3 *[FILL-RULE],
+.c3 *[fill*="#"],
+.c3 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  padding-right: 48px;
+  opacity: 0.3;
+  cursor: default;
+}
+
+.c4::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c4::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c4:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c4::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c4:-moz-placeholder,
+.c4::-moz-placeholder {
+  opacity: 1;
+}
+
+.c1 {
+  position: relative;
+  width: 100%;
+}
+
+.c2 {
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-packjustify: center;
+  -webkit-justify: center;
+  -ms-flex-packjustify: center;
+  justify: center;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  pointer-events: none;
+  right: 12px;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <svg
+        aria-label="Clock"
+        className="c3"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M12,5 L12,12 L17,12"
+          fill="none"
+          stroke="#000"
+          strokeWidth="2"
+        />
+      </svg>
+    </div>
+    <input
+      autoComplete="off"
+      className="c4"
+      disabled={true}
+      id="item"
+      name="item"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      placeholder="hh:mm"
+      value="16:31"
+    />
+  </div>
+</div>
+`;
+
+exports[`TimeInput format inline 1`] = `
+.c4 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c4 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c4 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.c12 {
+  stroke-width: 8px;
+  stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
+  transition: stroke 1s ease-out;
+}
+
+.c11 {
+  stroke-width: 4px;
+  stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
+  transition: stroke 1s ease-out;
+}
+
+.c10 {
+  width: 216px;
+  height: 216px;
+}
+
+.c5 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  padding-right: 48px;
+}
+
+.c5::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c5:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c5::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
+  opacity: 1;
+}
+
+.c2 {
+  position: relative;
+  width: 100%;
+}
+
+.c3 {
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-packjustify: center;
+  -webkit-justify: center;
+  -ms-flex-packjustify: center;
+  justify: center;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  pointer-events: none;
+  right: 12px;
+}
+
+.c6 {
+  position: relative;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c7 {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.c9 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <svg
+          aria-label="Clock"
+          className="c4"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M12,5 L12,12 L17,12"
+            fill="none"
+            stroke="#000"
+            strokeWidth="2"
+          />
+        </svg>
+      </div>
+      <input
+        autoComplete="off"
+        className="c5"
+        id="item"
+        name="item"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder="hh:mm"
+        value="16:31"
+      />
+    </div>
+    <div
+      className="c6"
+      style={
+        Object {
+          "marginBottom": 10,
+          "marginTop": 10,
+        }
+      }
+    >
+      <div
+        className="c7"
+      >
+        <div
+          className="c1"
+        >
+          <div
+            className="c8"
+            style={
+              Object {
+                "height": 260,
+                "width": 260,
+              }
+            }
+          >
+            <div
+              className="c1"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "borderRadius": "50%",
+                  "display": "inline-flex",
+                  "height": 32,
+                  "justifyDontent": "center",
+                  "left": "calc((100% - 32px) / 2)",
+                  "position": "absolute",
+                  "top": "calc((100% - 32px) / 2)",
+                  "transform": "translate(0px, -114px)",
+                  "userSelect": "none",
+                  "width": 32,
+                }
+              }
+            >
+              12
+            </div>
+            <div
+              className="c1"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "borderRadius": "50%",
+                  "display": "inline-flex",
+                  "height": 32,
+                  "justifyDontent": "center",
+                  "left": "calc((100% - 32px) / 2)",
+                  "position": "absolute",
+                  "top": "calc((100% - 32px) / 2)",
+                  "transform": "translate(57px, -98.7px)",
+                  "userSelect": "none",
+                  "width": 32,
+                }
+              }
+            >
+              1
+            </div>
+            <div
+              className="c1"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "borderRadius": "50%",
+                  "display": "inline-flex",
+                  "height": 32,
+                  "justifyDontent": "center",
+                  "left": "calc((100% - 32px) / 2)",
+                  "position": "absolute",
+                  "top": "calc((100% - 32px) / 2)",
+                  "transform": "translate(98.7px, -57px)",
+                  "userSelect": "none",
+                  "width": 32,
+                }
+              }
+            >
+              2
+            </div>
+            <div
+              className="c1"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "borderRadius": "50%",
+                  "display": "inline-flex",
+                  "height": 32,
+                  "justifyDontent": "center",
+                  "left": "calc((100% - 32px) / 2)",
+                  "position": "absolute",
+                  "top": "calc((100% - 32px) / 2)",
+                  "transform": "translate(114px, 0px)",
+                  "userSelect": "none",
+                  "width": 32,
+                }
+              }
+            >
+              3
+            </div>
+            <div
+              className="c1"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "borderRadius": "50%",
+                  "display": "inline-flex",
+                  "height": 32,
+                  "justifyDontent": "center",
+                  "left": "calc((100% - 32px) / 2)",
+                  "position": "absolute",
+                  "top": "calc((100% - 32px) / 2)",
+                  "transform": "translate(98.7px, 57px)",
+                  "userSelect": "none",
+                  "width": 32,
+                }
+              }
+            >
+              4
+            </div>
+            <div
+              className="c1"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "borderRadius": "50%",
+                  "display": "inline-flex",
+                  "height": 32,
+                  "justifyDontent": "center",
+                  "left": "calc((100% - 32px) / 2)",
+                  "position": "absolute",
+                  "top": "calc((100% - 32px) / 2)",
+                  "transform": "translate(57px, 98.7px)",
+                  "userSelect": "none",
+                  "width": 32,
+                }
+              }
+            >
+              5
+            </div>
+            <div
+              className="c1"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "borderRadius": "50%",
+                  "display": "inline-flex",
+                  "height": 32,
+                  "justifyDontent": "center",
+                  "left": "calc((100% - 32px) / 2)",
+                  "position": "absolute",
+                  "top": "calc((100% - 32px) / 2)",
+                  "transform": "translate(0px, 114px)",
+                  "userSelect": "none",
+                  "width": 32,
+                }
+              }
+            >
+              6
+            </div>
+            <div
+              className="c1"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "borderRadius": "50%",
+                  "display": "inline-flex",
+                  "height": 32,
+                  "justifyDontent": "center",
+                  "left": "calc((100% - 32px) / 2)",
+                  "position": "absolute",
+                  "top": "calc((100% - 32px) / 2)",
+                  "transform": "translate(-57px, 98.7px)",
+                  "userSelect": "none",
+                  "width": 32,
+                }
+              }
+            >
+              7
+            </div>
+            <div
+              className="c1"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "borderRadius": "50%",
+                  "display": "inline-flex",
+                  "height": 32,
+                  "justifyDontent": "center",
+                  "left": "calc((100% - 32px) / 2)",
+                  "position": "absolute",
+                  "top": "calc((100% - 32px) / 2)",
+                  "transform": "translate(-98.7px, 57px)",
+                  "userSelect": "none",
+                  "width": 32,
+                }
+              }
+            >
+              8
+            </div>
+            <div
+              className="c1"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "borderRadius": "50%",
+                  "display": "inline-flex",
+                  "height": 32,
+                  "justifyDontent": "center",
+                  "left": "calc((100% - 32px) / 2)",
+                  "position": "absolute",
+                  "top": "calc((100% - 32px) / 2)",
+                  "transform": "translate(-114px, 0px)",
+                  "userSelect": "none",
+                  "width": 32,
+                }
+              }
+            >
+              9
+            </div>
+            <div
+              className="c1"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "borderRadius": "50%",
+                  "display": "inline-flex",
+                  "height": 32,
+                  "justifyDontent": "center",
+                  "left": "calc((100% - 32px) / 2)",
+                  "position": "absolute",
+                  "top": "calc((100% - 32px) / 2)",
+                  "transform": "translate(-98.7px, -57px)",
+                  "userSelect": "none",
+                  "width": 32,
+                }
+              }
+            >
+              10
+            </div>
+            <div
+              className="c1"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "borderRadius": "50%",
+                  "display": "inline-flex",
+                  "height": 32,
+                  "justifyDontent": "center",
+                  "left": "calc((100% - 32px) / 2)",
+                  "position": "absolute",
+                  "top": "calc((100% - 32px) / 2)",
+                  "transform": "translate(-57px, -98.7px)",
+                  "userSelect": "none",
+                  "width": 32,
+                }
+              }
+            >
+              11
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="c9"
+      >
+        <div
+          className="c1"
+        >
+          <svg
+            className="c10"
+            height={96}
+            preserveAspectRatio="xMidYMid meet"
+            size="xlarge"
+            version="1.1"
+            viewBox="0 0 96 96"
+            width={96}
+          >
+            <line
+              className="c11"
+              stroke="#000000"
+              strokeLinecap="round"
+              style={
+                Object {
+                  "transform": "rotate(180deg)",
+                  "transformOrigin": "48px 48px",
+                }
+              }
+              x1={48}
+              x2={48}
+              y1={48}
+              y2={12}
+            />
+            <line
+              className="c12"
+              stroke="#000000"
+              strokeLinecap="round"
+              style={
+                Object {
+                  "transform": "rotate(135deg)",
+                  "transformOrigin": "48px 48px",
+                }
+              }
+              x1={48}
+              x2={48}
+              y1={48}
+              y2={24}
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        className="c9"
+      >
+        <div
+          className="c1"
+        >
+          <div
+            className="c1"
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseMove={[Function]}
+            onMouseUp={[Function]}
+            style={
+              Object {
+                "height": 260,
+                "width": 260,
+              }
+            }
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TimeInput inline 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.c8 {
+  stroke-width: 8px;
+  stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
+  transition: stroke 1s ease-out;
+}
+
+.c7 {
+  stroke-width: 4px;
+  stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
+  transition: stroke 1s ease-out;
+}
+
+.c6 {
+  width: 216px;
+  height: 216px;
+}
+
+.c1 {
+  position: relative;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c2 {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.c5 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+    style={
+      Object {
+        "marginBottom": 10,
+        "marginTop": 10,
+      }
+    }
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+          style={
+            Object {
+              "height": 260,
+              "width": 260,
+            }
+          }
+        >
+          <div
+            className="c3"
+            style={
+              Object {
+                "alignItems": "center",
+                "borderRadius": "50%",
+                "display": "inline-flex",
+                "height": 32,
+                "justifyDontent": "center",
+                "left": "calc((100% - 32px) / 2)",
+                "position": "absolute",
+                "top": "calc((100% - 32px) / 2)",
+                "transform": "translate(0px, -114px)",
+                "userSelect": "none",
+                "width": 32,
+              }
+            }
+          >
+            12
+          </div>
+          <div
+            className="c3"
+            style={
+              Object {
+                "alignItems": "center",
+                "borderRadius": "50%",
+                "display": "inline-flex",
+                "height": 32,
+                "justifyDontent": "center",
+                "left": "calc((100% - 32px) / 2)",
+                "position": "absolute",
+                "top": "calc((100% - 32px) / 2)",
+                "transform": "translate(57px, -98.7px)",
+                "userSelect": "none",
+                "width": 32,
+              }
+            }
+          >
+            1
+          </div>
+          <div
+            className="c3"
+            style={
+              Object {
+                "alignItems": "center",
+                "borderRadius": "50%",
+                "display": "inline-flex",
+                "height": 32,
+                "justifyDontent": "center",
+                "left": "calc((100% - 32px) / 2)",
+                "position": "absolute",
+                "top": "calc((100% - 32px) / 2)",
+                "transform": "translate(98.7px, -57px)",
+                "userSelect": "none",
+                "width": 32,
+              }
+            }
+          >
+            2
+          </div>
+          <div
+            className="c3"
+            style={
+              Object {
+                "alignItems": "center",
+                "borderRadius": "50%",
+                "display": "inline-flex",
+                "height": 32,
+                "justifyDontent": "center",
+                "left": "calc((100% - 32px) / 2)",
+                "position": "absolute",
+                "top": "calc((100% - 32px) / 2)",
+                "transform": "translate(114px, 0px)",
+                "userSelect": "none",
+                "width": 32,
+              }
+            }
+          >
+            3
+          </div>
+          <div
+            className="c3"
+            style={
+              Object {
+                "alignItems": "center",
+                "borderRadius": "50%",
+                "display": "inline-flex",
+                "height": 32,
+                "justifyDontent": "center",
+                "left": "calc((100% - 32px) / 2)",
+                "position": "absolute",
+                "top": "calc((100% - 32px) / 2)",
+                "transform": "translate(98.7px, 57px)",
+                "userSelect": "none",
+                "width": 32,
+              }
+            }
+          >
+            4
+          </div>
+          <div
+            className="c3"
+            style={
+              Object {
+                "alignItems": "center",
+                "borderRadius": "50%",
+                "display": "inline-flex",
+                "height": 32,
+                "justifyDontent": "center",
+                "left": "calc((100% - 32px) / 2)",
+                "position": "absolute",
+                "top": "calc((100% - 32px) / 2)",
+                "transform": "translate(57px, 98.7px)",
+                "userSelect": "none",
+                "width": 32,
+              }
+            }
+          >
+            5
+          </div>
+          <div
+            className="c3"
+            style={
+              Object {
+                "alignItems": "center",
+                "borderRadius": "50%",
+                "display": "inline-flex",
+                "height": 32,
+                "justifyDontent": "center",
+                "left": "calc((100% - 32px) / 2)",
+                "position": "absolute",
+                "top": "calc((100% - 32px) / 2)",
+                "transform": "translate(0px, 114px)",
+                "userSelect": "none",
+                "width": 32,
+              }
+            }
+          >
+            6
+          </div>
+          <div
+            className="c3"
+            style={
+              Object {
+                "alignItems": "center",
+                "borderRadius": "50%",
+                "display": "inline-flex",
+                "height": 32,
+                "justifyDontent": "center",
+                "left": "calc((100% - 32px) / 2)",
+                "position": "absolute",
+                "top": "calc((100% - 32px) / 2)",
+                "transform": "translate(-57px, 98.7px)",
+                "userSelect": "none",
+                "width": 32,
+              }
+            }
+          >
+            7
+          </div>
+          <div
+            className="c3"
+            style={
+              Object {
+                "alignItems": "center",
+                "borderRadius": "50%",
+                "display": "inline-flex",
+                "height": 32,
+                "justifyDontent": "center",
+                "left": "calc((100% - 32px) / 2)",
+                "position": "absolute",
+                "top": "calc((100% - 32px) / 2)",
+                "transform": "translate(-98.7px, 57px)",
+                "userSelect": "none",
+                "width": 32,
+              }
+            }
+          >
+            8
+          </div>
+          <div
+            className="c3"
+            style={
+              Object {
+                "alignItems": "center",
+                "borderRadius": "50%",
+                "display": "inline-flex",
+                "height": 32,
+                "justifyDontent": "center",
+                "left": "calc((100% - 32px) / 2)",
+                "position": "absolute",
+                "top": "calc((100% - 32px) / 2)",
+                "transform": "translate(-114px, 0px)",
+                "userSelect": "none",
+                "width": 32,
+              }
+            }
+          >
+            9
+          </div>
+          <div
+            className="c3"
+            style={
+              Object {
+                "alignItems": "center",
+                "borderRadius": "50%",
+                "display": "inline-flex",
+                "height": 32,
+                "justifyDontent": "center",
+                "left": "calc((100% - 32px) / 2)",
+                "position": "absolute",
+                "top": "calc((100% - 32px) / 2)",
+                "transform": "translate(-98.7px, -57px)",
+                "userSelect": "none",
+                "width": 32,
+              }
+            }
+          >
+            10
+          </div>
+          <div
+            className="c3"
+            style={
+              Object {
+                "alignItems": "center",
+                "borderRadius": "50%",
+                "display": "inline-flex",
+                "height": 32,
+                "justifyDontent": "center",
+                "left": "calc((100% - 32px) / 2)",
+                "position": "absolute",
+                "top": "calc((100% - 32px) / 2)",
+                "transform": "translate(-57px, -98.7px)",
+                "userSelect": "none",
+                "width": 32,
+              }
+            }
+          >
+            11
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c5"
+    >
+      <div
+        className="c3"
+      >
+        <svg
+          className="c6"
+          height={96}
+          id="item"
+          preserveAspectRatio="xMidYMid meet"
+          size="xlarge"
+          version="1.1"
+          viewBox="0 0 96 96"
+          width={96}
+        >
+          <line
+            className="c7"
+            stroke="#000000"
+            strokeLinecap="round"
+            style={
+              Object {
+                "transform": "rotate(180deg)",
+                "transformOrigin": "48px 48px",
+              }
+            }
+            x1={48}
+            x2={48}
+            y1={48}
+            y2={12}
+          />
+          <line
+            className="c8"
+            stroke="#000000"
+            strokeLinecap="round"
+            style={
+              Object {
+                "transform": "rotate(135deg)",
+                "transformOrigin": "48px 48px",
+              }
+            }
+            x1={48}
+            x2={48}
+            y1={48}
+            y2={24}
+          />
+        </svg>
+      </div>
+    </div>
+    <div
+      className="c5"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c3"
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseMove={[Function]}
+          onMouseUp={[Function]}
+          style={
+            Object {
+              "height": 260,
+              "width": 260,
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TimeInput select format 1`] = `
+.c3 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c3 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c3 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c3 *[stroke*="#"],
+.c3 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c3 *[fill-rule],
+.c3 *[FILL-RULE],
+.c3 *[fill*="#"],
+.c3 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  padding-right: 48px;
+}
+
+.c4::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c4::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c4:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c4::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c4:-moz-placeholder,
+.c4::-moz-placeholder {
+  opacity: 1;
+}
+
+.c1 {
+  position: relative;
+  width: 100%;
+}
+
+.c2 {
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-packjustify: center;
+  -webkit-justify: center;
+  -ms-flex-packjustify: center;
+  justify: center;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  pointer-events: none;
+  right: 12px;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <svg
+        aria-label="Clock"
+        class="c3"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M12,5 L12,12 L17,12"
+          fill="none"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+    <input
+      autocomplete="off"
+      class="c4"
+      id="item"
+      name="item"
+      placeholder="hh:mm"
+      value="16:31"
+    />
+  </div>
+</div>
+`;
+
+exports[`TimeInput select format 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+>
+  <div
+    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 eZPDpF"
+  >
+    <div
+      class="StyledMaskedInput__StyledIcon-sc-99vkfa-2 kqyWRg"
+    >
+      <svg
+        aria-label="Clock"
+        class="StyledIcon-ofa7kd-0 jXwebn"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M12,5 L12,12 L17,12"
+          fill="none"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+    <input
+      autocomplete="off"
+      class="StyledMaskedInput-sc-99vkfa-0 eoroCF"
+      id="item"
+      name="item"
+      placeholder="hh:mm"
+      value="16:31"
+    />
+  </div>
+</div>
+`;
+
+exports[`TimeInput select format 3`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: visible;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.c9 {
+  stroke-width: 8px;
+  stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
+  transition: stroke 1s ease-out;
+}
+
+.c8 {
+  stroke-width: 4px;
+  stroke: #777777;
+  -webkit-transition: stroke 1s ease-out;
+  transition: stroke 1s ease-out;
+}
+
+.c7 {
+  width: 216px;
+  height: 216px;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
+.c2 {
+  position: relative;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c3 {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.c6 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+
+<div
+  class="c0 c1"
+  data-g-portal-id="0"
+  id="item__drop"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  tabindex="-1"
+>
+  <div
+    class="c2"
+    style="margin-top: 10px; margin-bottom: 10px;"
+  >
+    <div
+      class="c3"
+    >
+      <div
+        class="c4"
+      >
+        <div
+          class="c5"
+          style="height: 260px; width: 260px;"
+        >
+          <div
+            class="c4"
+            style="transform: translate(0px, -114px); width: 32px; height: 32px; display: inline-flex; position: absolute; align-items: center; user-select: none; border-radius: 50%;"
+          >
+            12
+          </div>
+          <div
+            class="c4"
+            style="transform: translate(57px, -98.7px); width: 32px; height: 32px; display: inline-flex; position: absolute; align-items: center; user-select: none; border-radius: 50%;"
+          >
+            1
+          </div>
+          <div
+            class="c4"
+            style="transform: translate(98.7px, -57px); width: 32px; height: 32px; display: inline-flex; position: absolute; align-items: center; user-select: none; border-radius: 50%;"
+          >
+            2
+          </div>
+          <div
+            class="c4"
+            style="transform: translate(114px, 0px); width: 32px; height: 32px; display: inline-flex; position: absolute; align-items: center; user-select: none; border-radius: 50%;"
+          >
+            3
+          </div>
+          <div
+            class="c4"
+            style="transform: translate(98.7px, 57px); width: 32px; height: 32px; display: inline-flex; position: absolute; align-items: center; user-select: none; border-radius: 50%;"
+          >
+            4
+          </div>
+          <div
+            class="c4"
+            style="transform: translate(57px, 98.7px); width: 32px; height: 32px; display: inline-flex; position: absolute; align-items: center; user-select: none; border-radius: 50%;"
+          >
+            5
+          </div>
+          <div
+            class="c4"
+            style="transform: translate(0px, 114px); width: 32px; height: 32px; display: inline-flex; position: absolute; align-items: center; user-select: none; border-radius: 50%;"
+          >
+            6
+          </div>
+          <div
+            class="c4"
+            style="transform: translate(-57px, 98.7px); width: 32px; height: 32px; display: inline-flex; position: absolute; align-items: center; user-select: none; border-radius: 50%;"
+          >
+            7
+          </div>
+          <div
+            class="c4"
+            style="transform: translate(-98.7px, 57px); width: 32px; height: 32px; display: inline-flex; position: absolute; align-items: center; user-select: none; border-radius: 50%;"
+          >
+            8
+          </div>
+          <div
+            class="c4"
+            style="transform: translate(-114px, 0px); width: 32px; height: 32px; display: inline-flex; position: absolute; align-items: center; user-select: none; border-radius: 50%;"
+          >
+            9
+          </div>
+          <div
+            class="c4"
+            style="transform: translate(-98.7px, -57px); width: 32px; height: 32px; display: inline-flex; position: absolute; align-items: center; user-select: none; border-radius: 50%;"
+          >
+            10
+          </div>
+          <div
+            class="c4"
+            style="transform: translate(-57px, -98.7px); width: 32px; height: 32px; display: inline-flex; position: absolute; align-items: center; user-select: none; border-radius: 50%;"
+          >
+            11
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="c6"
+    >
+      <div
+        class="c4"
+      >
+        <svg
+          class="c7"
+          height="96"
+          preserveAspectRatio="xMidYMid meet"
+          version="1.1"
+          viewBox="0 0 96 96"
+          width="96"
+        >
+          <line
+            class="c8"
+            stroke="#000000"
+            stroke-linecap="round"
+            style="transform: rotate(180deg); transform-origin: 48px 48px;"
+            x1="48"
+            x2="48"
+            y1="48"
+            y2="12"
+          />
+          <line
+            class="c9"
+            stroke="#000000"
+            stroke-linecap="round"
+            style="transform: rotate(135deg); transform-origin: 48px 48px;"
+            x1="48"
+            x2="48"
+            y1="48"
+            y2="24"
+          />
+        </svg>
+      </div>
+    </div>
+    <div
+      class="c6"
+    >
+      <div
+        class="c4"
+      >
+        <div
+          class="c4"
+          style="height: 260px; width: 260px;"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TimeInput select format 4`] = `""`;
