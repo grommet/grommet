@@ -91,8 +91,8 @@ export const themeDoc = {
     type: 'string',
     defaultValue: '100%',
   },
-  'radioButton.check.size': {
-    description: 'The check size of the RadioButton.',
+  'radioButton.check.size.radius': {
+    description: 'The check radius size of the RadioButton.',
     type: 'number',
     defaultValue: 6,
   },

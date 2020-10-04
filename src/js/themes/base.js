@@ -933,7 +933,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       check: {
         radius: '100%',
-        size: 6,
+        size: {
+          radius: 6,
+        },
         // background: {
         //  color: undefined,
         // },

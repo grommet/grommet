@@ -12272,9 +12272,9 @@ Defaults to
 100%
 \`\`\`
 
-**radioButton.check.size**
+**radioButton.check.size.radius**
 
-The check size of the RadioButton. Expects \`number\`.
+The check radius size of the RadioButton. Expects \`number\`.
 
 Defaults to
 

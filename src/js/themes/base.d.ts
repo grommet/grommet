@@ -962,7 +962,9 @@ export interface ThemeType {
       background?: {
         color?: ColorType;
       };
-      size?: number;
+      size?: {
+        radius?: number;
+      };
     };
     color?: ColorType;
     hover?: {

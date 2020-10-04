@@ -125,7 +125,7 @@ describe('RadioButton', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  describe('check size', () => {
+  describe('check radius size', () => {
     test('default value', () => {
       const { container } = render(
         <Grommet theme={grommet}>
@@ -140,7 +140,9 @@ describe('RadioButton', () => {
       const customTheme = {
         radioButton: {
           check: {
-            size: 8,
+            size: {
+              radius: 8,
+            },
           },
         },
       };

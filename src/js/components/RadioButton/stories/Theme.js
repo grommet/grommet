@@ -18,6 +18,9 @@ const theme = deepMerge(grommet, {
       color: {
         light: 'neutral-1',
       },
+      size: {
+        radius: 8,
+      },
     },
     icon: {
       size: '10px',
