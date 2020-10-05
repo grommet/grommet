@@ -183,9 +183,26 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
 
 
   useEffect(function () {
-    var nextDisplayBounds = buildDisplayBounds(reference, firstDayOfWeek);
+    var nextDisplayBounds = buildDisplayBounds(reference, firstDayOfWeek); // Checks if the difference between the current and next DisplayBounds is
+    // greater than a year. If that's the case, calendar should update without
+    // animation.
 
-    if (!animate) {
+    var diffBoundsAboveYearFlag = false;
+    var sameDisplayBounds = false;
+
+    if (nextDisplayBounds[0].getTime() < displayBounds[0].getTime()) {
+      if (displayBounds[0].getTime() - nextDisplayBounds[0].getTime() > millisecondsPerYear) {
+        diffBoundsAboveYearFlag = true;
+      }
+    } else if (nextDisplayBounds[1].getTime() > displayBounds[1].getTime()) {
+      if (nextDisplayBounds[1].getTime() - displayBounds[1].getTime() > millisecondsPerYear) {
+        diffBoundsAboveYearFlag = true;
+      }
+    } else if (nextDisplayBounds[0].getTime() === displayBounds[0].getTime() && nextDisplayBounds[1].getTime() === displayBounds[1].getTime()) {
+      sameDisplayBounds = true;
+    }
+
+    if (!animate || diffBoundsAboveYearFlag || sameDisplayBounds) {
       setDisplayBounds(nextDisplayBounds);
     } else {
       setTargetDisplayBounds(nextDisplayBounds);
