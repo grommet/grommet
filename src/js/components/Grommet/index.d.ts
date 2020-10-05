@@ -4,6 +4,7 @@ import { BackgroundType } from '../../utils';
 
 export interface GrommetProps {
   background?: BackgroundType;
+  containerTarget?: HTMLElement;
   cssVars?: boolean;
   dir?: 'rtl';
   full?: boolean;
