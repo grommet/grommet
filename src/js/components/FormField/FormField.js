@@ -246,7 +246,7 @@ const FormField = forwardRef(
       (error &&
         formFieldTheme.error.border &&
         formFieldTheme.error.border.color) ||
-      (error && themeBorder && themeBorder.error.color)
+      (error && themeBorder && themeBorder.error.color) // backward compatibility check
     ) {
       borderColor =
         formFieldTheme.error.border.color ||
