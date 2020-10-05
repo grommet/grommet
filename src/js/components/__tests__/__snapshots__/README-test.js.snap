@@ -12062,6 +12062,16 @@ Defaults to
     }
 \`\`\`
 
+**paragraph.font.family**
+
+The font family to use for Paragraph. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **paragraph.textAlign**
 
 How to align the text inside the Paragraph. Expects \`string\`.
@@ -15281,6 +15291,16 @@ Defaults to
 
 \`\`\`
 { dark: '#f8f8f8', light: '#444444' }
+\`\`\`
+
+**text.font.family**
+
+The font family to use for Text. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **text**
