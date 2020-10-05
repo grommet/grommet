@@ -42,6 +42,9 @@ var weightStyle = (0, _styledComponents.css)(["font-weight:", ";"], function (pr
 var wordBreakStyle = (0, _styledComponents.css)(["word-break:", ";"], function (props) {
   return props.wordBreak;
 });
+var fontFamily = (0, _styledComponents.css)(["font-family:", ";"], function (props) {
+  return props.theme.text.font.family;
+});
 var StyledText = (0, _styledComponents["default"])('span').withConfig({
   shouldForwardProp: function shouldForwardProp(prop, defaultValidatorFn) {
     return defaultValidatorFn(prop) && prop !== 'size';
@@ -49,7 +52,7 @@ var StyledText = (0, _styledComponents["default"])('span').withConfig({
 }).withConfig({
   displayName: "StyledText",
   componentId: "sc-1sadyjn-0"
-})(["", " ", " ", " ", " ", " ", " ", " ", ""], _utils.genericStyles, function (props) {
+})(["", " ", " ", " ", " ", " ", " ", " ", " ", ""], _utils.genericStyles, function (props) {
   return sizeStyle(props);
 }, function (props) {
   return props.textAlign && textAlignStyle;
@@ -61,6 +64,8 @@ var StyledText = (0, _styledComponents["default"])('span').withConfig({
   return props.weight && weightStyle;
 }, function (props) {
   return props.wordBreak && wordBreakStyle;
+}, function (props) {
+  return props.theme.text.font && props.theme.text.font.family && fontFamily;
 }, function (props) {
   return props.theme.text && props.theme.text.extend;
 });

@@ -23,6 +23,9 @@ var sizeStyle = function sizeStyle(props) {
   return (0, _styledComponents.css)(["font-size:", ";line-height:", ";max-width:", ";"], data.size, data.height, props.fillProp ? 'none' : data.maxWidth);
 };
 
+var fontFamily = (0, _styledComponents.css)(["font-family:", ";"], function (props) {
+  return props.theme.paragraph.font.family;
+});
 var TEXT_ALIGN_MAP = {
   center: 'center',
   end: 'right',
@@ -35,12 +38,14 @@ var textAlignStyle = (0, _styledComponents.css)(["text-align:", ";"], function (
 var StyledParagraph = _styledComponents["default"].p.withConfig({
   displayName: "StyledParagraph",
   componentId: "tbetod-0"
-})(["", " ", " ", " ", " ", ""], _utils.genericStyles, function (props) {
+})(["", " ", " ", " ", " ", " ", ""], _utils.genericStyles, function (props) {
   return sizeStyle(props);
 }, function (props) {
   return props.textAlign && textAlignStyle;
 }, function (props) {
   return props.colorProp && colorStyle;
+}, function (props) {
+  return props.theme.paragraph.font && props.theme.paragraph.font.family && fontFamily;
 }, function (props) {
   return props.theme.paragraph && props.theme.paragraph.extend;
 });

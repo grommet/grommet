@@ -31,6 +31,9 @@ var weightStyle = css(["font-weight:", ";"], function (props) {
 var wordBreakStyle = css(["word-break:", ";"], function (props) {
   return props.wordBreak;
 });
+var fontFamily = css(["font-family:", ";"], function (props) {
+  return props.theme.text.font.family;
+});
 var StyledText = styled('span').withConfig({
   shouldForwardProp: function shouldForwardProp(prop, defaultValidatorFn) {
     return defaultValidatorFn(prop) && prop !== 'size';
@@ -38,7 +41,7 @@ var StyledText = styled('span').withConfig({
 }).withConfig({
   displayName: "StyledText",
   componentId: "sc-1sadyjn-0"
-})(["", " ", " ", " ", " ", " ", " ", " ", ""], genericStyles, function (props) {
+})(["", " ", " ", " ", " ", " ", " ", " ", " ", ""], genericStyles, function (props) {
   return sizeStyle(props);
 }, function (props) {
   return props.textAlign && textAlignStyle;
@@ -50,6 +53,8 @@ var StyledText = styled('span').withConfig({
   return props.weight && weightStyle;
 }, function (props) {
   return props.wordBreak && wordBreakStyle;
+}, function (props) {
+  return props.theme.text.font && props.theme.text.font.family && fontFamily;
 }, function (props) {
   return props.theme.text && props.theme.text.extend;
 });

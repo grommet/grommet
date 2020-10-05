@@ -1013,6 +1013,8 @@ var generate = function generate(baseSpacing, scale) {
 
     },
     paragraph: {
+      font: {// family: undefined
+      },
       small: _extends({}, fontSizing(-1)),
       medium: _extends({}, fontSizing(0)),
       large: _extends({}, fontSizing(1)),
@@ -1237,6 +1239,8 @@ var generate = function generate(baseSpacing, scale) {
       }
     },
     text: {
+      font: {// family: undefined
+      },
       xsmall: _extends({}, fontSizing(-1.5)),
       small: _extends({}, fontSizing(-1)),
       medium: _extends({}, fontSizing(0)),

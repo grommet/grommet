@@ -46,6 +46,11 @@ var themeDoc = _extends({
     type: 'object | { dark: string, light: string }',
     defaultValue: "{ dark: '#f8f8f8', light: '#444444' }"
   },
+  'text.font.family': {
+    description: 'The font family to use for Text.',
+    type: 'string',
+    defaultValue: undefined
+  },
   text: {
     description: "The possible sizes of the text in terms of its font-size and \nline-height.",
     type: 'object',
