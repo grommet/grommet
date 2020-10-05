@@ -65,22 +65,36 @@ const TargetLayer = props => {
 describe('Layer', () => {
   beforeEach(createPortal);
   afterEach(cleanup);
+  const positions = [
+    'top',
+    'bottom',
+    'left',
+    'right',
+    'start',
+    'end',
+    'center',
+    'top-left',
+    'top-right',
+    'bottom-left',
+    'bottom-right',
+  ];
 
-  ['top', 'bottom', 'left', 'right', 'start', 'end', 'center'].forEach(
-    position =>
-      test(`position ${position}`, () => {
-        render(
-          <Grommet>
-            <Layer id="position-test" position={position}>
-              This is a layer
-            </Layer>
-          </Grommet>,
-        );
-        expectPortal('position-test').toMatchSnapshot();
-      }),
+  const fullOptions = [true, false, 'horizontal', 'vertical'];
+
+  positions.forEach(position =>
+    test(`position ${position}`, () => {
+      render(
+        <Grommet>
+          <Layer id="position-test" position={position}>
+            This is a layer
+          </Layer>
+        </Grommet>,
+      );
+      expectPortal('position-test').toMatchSnapshot();
+    }),
   );
 
-  [true, false, 'horizontal', 'vertical'].forEach(full =>
+  fullOptions.forEach(full =>
     test(`full ${full}`, () => {
       render(
         <Grommet>
@@ -103,6 +117,21 @@ describe('Layer', () => {
         </Grommet>,
       );
       expectPortal('margin-test').toMatchSnapshot();
+    }),
+  );
+
+  positions.forEach(position =>
+    fullOptions.forEach(full => {
+      test(`position: ${position} - full: ${full}`, () => {
+        render(
+          <Grommet>
+            <Layer id="position-full-test" position={position} full={full}>
+              This is a layer
+            </Layer>
+          </Grommet>,
+        );
+        expectPortal('position-full-test').toMatchSnapshot();
+      });
     }),
   );
 
