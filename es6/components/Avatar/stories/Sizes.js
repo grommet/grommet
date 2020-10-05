@@ -9,7 +9,8 @@ var Sizes = function Sizes() {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
     direction: "row",
-    pad: "large"
+    pad: "large",
+    gap: "small"
   }, /*#__PURE__*/React.createElement(Avatar, {
     size: "small",
     src: src
@@ -22,7 +23,24 @@ var Sizes = function Sizes() {
   }), /*#__PURE__*/React.createElement(Avatar, {
     size: "xlarge",
     src: src
-  })));
+  })), /*#__PURE__*/React.createElement(Box, {
+    direction: "row",
+    pad: "large",
+    align: "center",
+    gap: "small"
+  }, /*#__PURE__*/React.createElement(Avatar, {
+    background: "dark-2",
+    size: "small"
+  }, "S"), /*#__PURE__*/React.createElement(Avatar, {
+    background: "dark-2",
+    size: "medium"
+  }, "LS"), /*#__PURE__*/React.createElement(Avatar, {
+    background: "dark-2",
+    size: "large"
+  }, "JF"), /*#__PURE__*/React.createElement(Avatar, {
+    background: "dark-2",
+    size: "xlarge"
+  }, "SY")));
 };
 
 storiesOf('Avatar', module).add('Sizes', function () {

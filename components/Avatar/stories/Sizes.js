@@ -16,7 +16,8 @@ var Sizes = function Sizes() {
     theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row",
-    pad: "large"
+    pad: "large",
+    gap: "small"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
     size: "small",
     src: src
@@ -29,7 +30,24 @@ var Sizes = function Sizes() {
   }), /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
     size: "xlarge",
     src: src
-  })));
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+    direction: "row",
+    pad: "large",
+    align: "center",
+    gap: "small"
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
+    background: "dark-2",
+    size: "small"
+  }, "S"), /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
+    background: "dark-2",
+    size: "medium"
+  }, "LS"), /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
+    background: "dark-2",
+    size: "large"
+  }, "JF"), /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
+    background: "dark-2",
+    size: "xlarge"
+  }, "SY")));
 };
 
 (0, _react2.storiesOf)('Avatar', module).add('Sizes', function () {
