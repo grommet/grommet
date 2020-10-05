@@ -82,28 +82,17 @@ describe('Layer', () => {
   const fullOptions = [true, false, 'horizontal', 'vertical'];
 
   positions.forEach(position =>
-    test(`position ${position}`, () => {
-      render(
-        <Grommet>
-          <Layer id="position-test" position={position}>
-            This is a layer
-          </Layer>
-        </Grommet>,
-      );
-      expectPortal('position-test').toMatchSnapshot();
-    }),
-  );
-
-  fullOptions.forEach(full =>
-    test(`full ${full}`, () => {
-      render(
-        <Grommet>
-          <Layer id="full-test" full={full}>
-            This is a layer
-          </Layer>
-        </Grommet>,
-      );
-      expectPortal('full-test').toMatchSnapshot();
+    fullOptions.forEach(full => {
+      test(`position: ${position} - full: ${full}`, () => {
+        render(
+          <Grommet>
+            <Layer id="position-full-test" position={position} full={full}>
+              This is a layer
+            </Layer>
+          </Grommet>,
+        );
+        expectPortal('position-full-test').toMatchSnapshot();
+      });
     }),
   );
 
@@ -117,21 +106,6 @@ describe('Layer', () => {
         </Grommet>,
       );
       expectPortal('margin-test').toMatchSnapshot();
-    }),
-  );
-
-  positions.forEach(position =>
-    fullOptions.forEach(full => {
-      test(`position: ${position} - full: ${full}`, () => {
-        render(
-          <Grommet>
-            <Layer id="position-full-test" position={position} full={full}>
-              This is a layer
-            </Layer>
-          </Grommet>,
-        );
-        expectPortal('position-full-test').toMatchSnapshot();
-      });
     }),
   );
 
