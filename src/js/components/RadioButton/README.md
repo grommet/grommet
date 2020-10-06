@@ -187,16 +187,6 @@ Defaults to
 undefined
 ```
 
-**radioButton.gap**
-
-The gap between the label and the RadioButton itself. Expects `string`.
-
-Defaults to
-
-```
-small
-```
-
 **radioButton.font.weight**
 
 The font weight of the label. Expects `number | string`.
@@ -207,14 +197,14 @@ Defaults to
 undefined
 ```
 
-**radioButton.size**
+**radioButton.gap**
 
-The size of the RadioButton. Expects `string`.
+The gap between the label and the RadioButton itself. Expects `string`.
 
 Defaults to
 
 ```
-24px
+small
 ```
 
 **radioButton.hover.background.color**
@@ -256,4 +246,24 @@ Defaults to
 
 ```
 undefined
+```
+
+**radioButton.icons.circle**
+
+The icon to replace the inner checked circle. Expects `React.Element`.
+
+Defaults to
+
+```
+undefined
+```
+
+**radioButton.size**
+
+The size of the RadioButton. Expects `string`.
+
+Defaults to
+
+```
+24px
 ```
