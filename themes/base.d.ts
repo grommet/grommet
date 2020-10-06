@@ -143,7 +143,7 @@ interface ButtonKindType {
 export interface ThemeType {
   global?: {
     active?: {
-      background?: {
+      background?: ColorType | {
         color?: ColorType;
         opacity?: OpacityType;
       };
