@@ -3378,10 +3378,13 @@ string
 
 **showAdjacentDays**
 
-Whether to show the days from the previous and next months. Defaults to \`true\`.
+Whether to show the days from the previous and next months. 
+        \`trim\` limits adjacent days shown to rows containing days in 
+        the current month. Defaults to \`true\`.
 
 \`\`\`
 boolean
+trim
 \`\`\`
 
 **size**

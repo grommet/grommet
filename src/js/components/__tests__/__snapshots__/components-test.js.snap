@@ -1631,8 +1631,11 @@ to disable the previous and next buttons.
       },
       Object {
         "defaultValue": true,
-        "description": "Whether to show the days from the previous and next months.",
-        "format": "boolean",
+        "description": "Whether to show the days from the previous and next months. 
+        \`trim\` limits adjacent days shown to rows containing days in 
+        the current month.",
+        "format": "boolean
+trim",
         "name": "showAdjacentDays",
       },
       Object {

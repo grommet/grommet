@@ -118,6 +118,18 @@ describe('Calendar', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  test('showAdjacentDays', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Calendar date={DATE} animate={false} />
+        <Calendar date={DATE} animate={false} showAdjacentDays={false} />
+        <Calendar date={DATE} animate={false} showAdjacentDays="trim" />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('header', () => {
     const component = renderer.create(
       <Grommet>
