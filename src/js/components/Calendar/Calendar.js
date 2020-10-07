@@ -480,7 +480,9 @@ const Calendar = forwardRef(
         showAdjacentDays === 'trim' &&
         otherMonth &&
         weeks.length === 5 &&
-        day.getDate() >= days.length + 1
+        /* If the length days array is less than the current getDate()
+        we know that all days in the array are from the next month. */
+        days.length < day.getDate()
       ) {
         days.push(
           <StyledDayContainer
