@@ -49,9 +49,9 @@ const buttonStyle = ({ theme }) => {
     styles.push(kindPartStyles(layoutProps, theme));
   }
 
-  if (layoutProps.hover) {
+  if (theme.dataTable.hover && theme.dataTable.hover.header) {
     // CSS for this sub-object in the theme
-    const partStyles = kindPartStyles(layoutProps.hover, theme);
+    const partStyles = kindPartStyles(theme.dataTable.hover.header, theme);
     if (partStyles.length > 0)
       styles.push(
         css`

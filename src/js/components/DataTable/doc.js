@@ -362,7 +362,7 @@ export const themeDoc = {
     type: 'object',
     defaultValue: 'small',
   },
-  'dataTable.header.hover.background': {
+  'dataTable.hover.header.background': {
     description: `The hover background color of the header cell contents, if 
     clickable. Any valid Box background options apply.`,
     type: `string | 

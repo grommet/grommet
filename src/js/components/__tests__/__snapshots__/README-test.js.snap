@@ -6767,7 +6767,7 @@ Defaults to
 small
 \`\`\`
 
-**dataTable.header.hover.background**
+**dataTable.hover.header.background**
 
 The hover background color of the header cell contents, if 
     clickable. Any valid Box background options apply. Expects \`string | 

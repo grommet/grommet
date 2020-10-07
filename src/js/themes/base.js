@@ -708,11 +708,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //   size: undefined,
         // },
         gap: 'small',
-        // hover: {
-        //   background: undefined,
-        // },
         // pad: undefined,
       },
+      // hover: {
+      //   header: {
+      //     background: undefined,
+      //   },
+      // },
       icons: {
         ascending: FormDown,
         contract: FormUp,

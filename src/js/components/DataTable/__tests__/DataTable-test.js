@@ -788,7 +788,9 @@ describe('DataTable', () => {
           font: {
             weight: 'bold',
           },
-          hover: {
+        },
+        hover: {
+          header: {
             background: {
               color: 'light-2',
             },
