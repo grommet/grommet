@@ -366,17 +366,20 @@ describe('Menu', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
 
+    // Pressing up opens the menu
+    // Pressing escape closes it
     fireEvent.keyDown(getByLabelText('Open Menu'), {
       key: 'Up',
       keyCode: 38,
       which: 38,
     });
+    expectPortal('test-menu__drop').toMatchSnapshot();
+
     fireEvent.keyDown(getByLabelText('Close Menu'), {
       key: 'Esc',
       keyCode: 27,
       which: 27,
     });
-
     expect(document.getElementById('test-menu__drop')).toBeNull();
   });
 
