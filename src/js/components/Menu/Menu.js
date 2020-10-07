@@ -252,6 +252,8 @@ const Menu = forwardRef((props, ref) => {
             onTab={event =>
               event.shiftKey ? onPreviousMenuItem(event) : onNextMenuItem(event)
             }
+            onDown={onNextMenuItem}
+            onUp={onPreviousMenuItem}
             onEnter={onSelectMenuItem}
           >
             <ContainerBox background={dropBackground || theme.menu.background}>
