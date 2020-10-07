@@ -3355,7 +3355,7 @@ exports[`DataTable custom theme 2`] = `
                   class="StyledBox-sc-13pk1d4-0 rpWqh"
                 >
                   <span
-                    class="StyledText-sc-1sadyjn-0 gmtNWw"
+                    class="StyledText-sc-1sadyjn-0 fNZrpW"
                   >
                     A
                   </span>
@@ -3368,7 +3368,6 @@ exports[`DataTable custom theme 2`] = `
               <div
                 class="StyledStack__StyledStackLayer-ajspsk-1 eFfYoG"
               >
-<<<<<<< HEAD
                 <div
                   class="StyledBox-sc-13pk1d4-0 kJJevN"
                 />
@@ -3378,10 +3377,6 @@ exports[`DataTable custom theme 2`] = `
               >
                 <div
                   class="StyledBox-sc-13pk1d4-0 epaflb Resizer__InteractionBox-sc-8l808w-0 hCjwbA"
-=======
-                <span
-                  class="StyledText-sc-1sadyjn-0 fNZrpW"
->>>>>>> master
                 >
                   <div
                     class="StyledBox-sc-13pk1d4-0 kFaNVQ"
