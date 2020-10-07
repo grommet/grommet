@@ -277,7 +277,7 @@ describe('Menu', () => {
   });
 
   test('shift + tab through menu until it closes', () => {
-    const { getByLabelText, container } = render(
+    const { getByLabelText, getByText, container } = render(
       <Grommet>
         <Menu
           id="test-menu"
@@ -297,28 +297,37 @@ describe('Menu', () => {
       keyCode: 32,
       which: 32,
     });
+
     fireEvent.keyDown(document.activeElement.firstChild, {
       key: 'Tab',
       keyCode: 9,
       which: 9,
     });
+    expect(getByText('Item 1').parentElement).toHaveFocus();
+
     fireEvent.keyDown(document.activeElement, {
       key: 'Tab',
       keyCode: 9,
       which: 9,
     });
+    expect(getByText('Item 2').parentElement).toHaveFocus();
+
     fireEvent.keyDown(document.activeElement, {
       key: 'Tab',
       keyCode: 9,
       which: 9,
       shiftKey: true,
     });
+    expect(getByText('Item 1').parentElement).toHaveFocus();
+
     fireEvent.keyDown(document.activeElement, {
       key: 'Tab',
       keyCode: 9,
       which: 9,
       shiftKey: true,
     });
+    expect(getByLabelText('Close Menu')).toHaveFocus();
+
     fireEvent.keyDown(document.activeElement, {
       key: 'Tab',
       keyCode: 9,
