@@ -67,20 +67,15 @@ var themeDoc = {
     description: 'Any additional style for the RadioButton.',
     type: 'string | (props) => {}'
   },
-  'radioButton.gap': {
-    description: 'The gap between the label and the RadioButton itself.',
-    type: 'string',
-    defaultValue: 'small'
-  },
   'radioButton.font.weight': {
     description: 'The font weight of the label.',
     type: 'number | string',
     defaultValue: undefined
   },
-  'radioButton.size': {
-    description: 'The size of the RadioButton.',
+  'radioButton.gap': {
+    description: 'The gap between the label and the RadioButton itself.',
     type: 'string',
-    defaultValue: '24px'
+    defaultValue: 'small'
   },
   'radioButton.hover.background.color': {
     description: "The background color of the Box surrounding the RadioButton\n    when hovered over.",
@@ -99,6 +94,16 @@ var themeDoc = {
   'radioButton.icon.size': {
     description: 'The size of the icon in the RadioButton.',
     type: 'string'
+  },
+  'radioButton.icons.circle': {
+    description: 'The icon to replace the inner checked circle.',
+    type: 'React.Element',
+    defaultValue: undefined
+  },
+  'radioButton.size': {
+    description: 'The size of the RadioButton.',
+    type: 'string',
+    defaultValue: '24px'
   }
 };
 exports.themeDoc = themeDoc;
