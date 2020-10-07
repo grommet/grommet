@@ -143,10 +143,12 @@ interface ButtonKindType {
 export interface ThemeType {
   global?: {
     active?: {
-      background?: ColorType | {
-        color?: ColorType;
-        opacity?: OpacityType;
-      };
+      background?:
+        | ColorType
+        | {
+            color?: ColorType;
+            opacity?: OpacityType;
+          };
       color?: ColorType;
     };
     animation?: {
@@ -612,10 +614,12 @@ export interface ThemeType {
         size?: string;
       };
       gap?: GapType;
-      hover?: {
+      pad?: PadType;
+    };
+    hover?: {
+      header?: {
         background?: BackgroundType;
       };
-      pad?: PadType;
     };
     groupHeader?: {
       border?: {
