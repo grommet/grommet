@@ -106,6 +106,9 @@ const TextInput = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const announce = useContext(AnnounceContext);
     const formContext = useContext(FormContext);
+
+    // custom hook useForwardedRef seems to cause issues with class components.
+    // createRef always returns null, even with componentDidUpdate.
     const inputRef = useForwardedRef(ref);
     const dropRef = useRef();
     const suggestionsRef = useRef();
