@@ -794,6 +794,15 @@ describe('DataTable', () => {
             },
           },
         },
+        hover: {
+          resize: {
+            border: {
+              color: 'red',
+              side: 'end',
+              size: 'xsmall',
+            },
+          },
+        },
       },
     };
 
@@ -805,6 +814,7 @@ describe('DataTable', () => {
           primaryKey="a"
           select={['alpha']}
           sortable
+          resizeable
         />
       </Grommet>,
     );

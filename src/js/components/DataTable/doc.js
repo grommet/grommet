@@ -378,10 +378,24 @@ export const themeDoc = {
     }`,
     defaultValue: undefined,
   },
-
   'dataTable.header.pad': {
     description: 'The pad around the contents of the header cell.',
     type: 'string | object',
+    defaultValue: undefined,
+  },
+  'dataTable.hover.resize.color': {
+    description: 'The color of the resizer when hovered over.',
+    type: 'string | object',
+    defaultValue: undefined,
+  },
+  'dataTable.hover.resize.side': {
+    description: 'The side of the resizer when hovered over.',
+    type: 'string',
+    defaultValue: undefined,
+  },
+  'dataTable.hover.resize.size': {
+    description: 'The size of the resizer when hovered over.',
+    type: 'string',
     defaultValue: undefined,
   },
   'dataTable.icons.ascending': {

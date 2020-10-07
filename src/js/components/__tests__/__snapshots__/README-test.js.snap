@@ -6748,6 +6748,36 @@ Defaults to
 undefined
 \`\`\`
 
+**dataTable.hover.resize.color**
+
+The color of the resizer when hovered over. Expects \`string | object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.hover.resize.side**
+
+The side of the resizer when hovered over. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.hover.resize.size**
+
+The size of the resizer when hovered over. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **dataTable.icons.ascending**
 
 The ascending icon. Expects \`React.Element\`.

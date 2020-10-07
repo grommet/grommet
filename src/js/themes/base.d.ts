@@ -609,6 +609,15 @@ export interface ThemeType {
       };
       pad?: PadType;
     };
+    hover?: {
+      resize?: {
+        border?: {
+          color?: ColorType;
+          side: string;
+          size: string;
+        };
+      };
+    };
     groupHeader?: {
       border?: {
         side?: string;

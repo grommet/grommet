@@ -706,6 +706,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // },
         // pad: undefined,
       },
+      // hover: {
+      //   resize: {
+      //     border: {
+      //       color: undefined,
+      //       side: undefined,
+      //       size: undefined,
+      //     },
+      //   },
+      // },
       icons: {
         ascending: FormDown,
         contract: FormUp,
