@@ -853,6 +853,56 @@ Defaults to
 \`\`\`
 undefined
 \`\`\`
+
+**avatar.text.size.xsmall**
+
+The size of the text that is mapped according to 'avatar.size.xsmall'. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+small
+\`\`\`
+
+**avatar.text.size.small**
+
+The size of the text that is mapped according to 'avatar.size.small'. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+medium
+\`\`\`
+
+**avatar.text.size.medium**
+
+The size of the text that is mapped according to 'avatar.size.medium'. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+large
+\`\`\`
+
+**avatar.text.size.large**
+
+The size of the text that is mapped according to 'avatar.size.large'. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+xlarge
+\`\`\`
+
+**avatar.text.size.xlarge**
+
+The size of the text that is mapped according to 'avatar.size.xlarge'. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+xxlarge
+\`\`\`
 ",
   "Box": "## Box
 A container that lays out its contents in one direction. Box
@@ -12042,6 +12092,16 @@ Defaults to
     }
 \`\`\`
 
+**paragraph.font.family**
+
+The font family to use for Paragraph. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **paragraph.textAlign**
 
 How to align the text inside the Paragraph. Expects \`string\`.
@@ -12273,16 +12333,6 @@ Defaults to
 undefined
 \`\`\`
 
-**radioButton.gap**
-
-The gap between the label and the RadioButton itself. Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-small
-\`\`\`
-
 **radioButton.font.weight**
 
 The font weight of the label. Expects \`number | string\`.
@@ -12293,14 +12343,14 @@ Defaults to
 undefined
 \`\`\`
 
-**radioButton.size**
+**radioButton.gap**
 
-The size of the RadioButton. Expects \`string\`.
+The gap between the label and the RadioButton itself. Expects \`string\`.
 
 Defaults to
 
 \`\`\`
-24px
+small
 \`\`\`
 
 **radioButton.hover.background.color**
@@ -12342,6 +12392,26 @@ Defaults to
 
 \`\`\`
 undefined
+\`\`\`
+
+**radioButton.icons.circle**
+
+The icon to replace the inner checked circle. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**radioButton.size**
+
+The size of the RadioButton. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+24px
 \`\`\`
 ",
   "RadioButtonGroup": "## RadioButtonGroup
@@ -15263,6 +15333,16 @@ Defaults to
 { dark: '#f8f8f8', light: '#444444' }
 \`\`\`
 
+**text.font.family**
+
+The font family to use for Text. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **text**
 
 The possible sizes of the text in terms of its font-size and 
@@ -15814,11 +15894,14 @@ node
 
 **plain**
 
-Whether this is a plain input with no border or padding.
-      Only use this when the containing context provides sufficient affordance
+Whether this is a plain input with no border or outline.
+      Use \\"full\\" to remove padding in addition to removing border and outline.
+      Only use this when the containing context provides sufficient 
+      affordance.
 
 \`\`\`
 boolean
+full
 \`\`\`
 
 **reverse**

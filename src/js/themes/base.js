@@ -367,6 +367,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         xlarge: `${baseSpacing * 4}px`,
       },
       text: {
+        size: {
+          xsmall: 'small',
+          small: 'medium',
+          medium: 'large',
+          large: 'xlarge',
+          xlarge: 'xxlarge',
+        },
         // fontWeight: undefined,
         // extend: undefined
       },
@@ -919,6 +926,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
     },
     paragraph: {
+      font: {
+        // family: undefined
+      },
       small: { ...fontSizing(-1) },
       medium: { ...fontSizing(0) },
       large: { ...fontSizing(1) },
@@ -1140,6 +1150,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     text: {
+      font: {
+        // family: undefined
+      },
       xsmall: { ...fontSizing(-1.5) },
       small: { ...fontSizing(-1) },
       medium: { ...fontSizing(0) }, // 18px

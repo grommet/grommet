@@ -143,10 +143,12 @@ interface ButtonKindType {
 export interface ThemeType {
   global?: {
     active?: {
-      background?: {
-        color?: ColorType;
-        opacity?: OpacityType;
-      };
+      background?:
+        | ColorType
+        | {
+            color?: ColorType;
+            opacity?: OpacityType;
+          };
       color?: ColorType;
     };
     animation?: {
@@ -353,6 +355,14 @@ export interface ThemeType {
       [x: string]: string | undefined;
     };
     text?: {
+      size?: {
+        xsmall?: string;
+        small?: string;
+        medium?: string;
+        large?: string;
+        xlarge?: string;
+        [x: string]: string | undefined;
+      };
       fontWeight?: number;
       extend?: ExtendType;
     };

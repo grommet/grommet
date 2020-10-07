@@ -11,8 +11,11 @@ const theme = {
       myLarge: '70px',
     },
     text: {
+      size: {
+        myLarge: '32px',
+      },
       fontWeight: 700,
-      extend: `font-family: Comic Sans MS; font-size: 30px`,
+      extend: `font-family: Comic Sans MS;`,
     },
     extend: `border: 2px solid white; 
             box-shadow: 2px 2px 15px 1px white;`,
