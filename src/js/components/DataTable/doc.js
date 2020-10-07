@@ -383,17 +383,17 @@ export const themeDoc = {
     type: 'string | object',
     defaultValue: undefined,
   },
-  'dataTable.hover.resize.color': {
+  'dataTable.resize.hover.color': {
     description: 'The color of the resizer when hovered over.',
     type: 'string | object',
     defaultValue: undefined,
   },
-  'dataTable.hover.resize.side': {
+  'dataTable.resize.hover.side': {
     description: 'The side of the resizer when hovered over.',
     type: 'string',
     defaultValue: undefined,
   },
-  'dataTable.hover.resize.size': {
+  'dataTable.resize.hover.size': {
     description: 'The size of the resizer when hovered over.',
     type: 'string',
     defaultValue: undefined,

@@ -619,15 +619,6 @@ export interface ThemeType {
       };
       pad?: PadType;
     };
-    hover?: {
-      resize?: {
-        border?: {
-          color?: ColorType;
-          side: string;
-          size: string;
-        };
-      };
-    };
     groupHeader?: {
       border?: {
         side?: string;
@@ -668,6 +659,13 @@ export interface ThemeType {
       border?: {
         side?: string;
         color?: ColorType;
+      };
+      hover?: {
+        border?: {
+          color?: ColorType;
+          side: string;
+          size: string;
+        };
       };
     };
     primary?: {

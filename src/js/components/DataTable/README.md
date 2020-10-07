@@ -841,7 +841,7 @@ Defaults to
 undefined
 ```
 
-**dataTable.hover.resize.color**
+**dataTable.resize.hover.color**
 
 The color of the resizer when hovered over. Expects `string | object`.
 
@@ -851,7 +851,7 @@ Defaults to
 undefined
 ```
 
-**dataTable.hover.resize.side**
+**dataTable.resize.hover.side**
 
 The side of the resizer when hovered over. Expects `string`.
 
@@ -861,7 +861,7 @@ Defaults to
 undefined
 ```
 
-**dataTable.hover.resize.size**
+**dataTable.resize.hover.size**
 
 The size of the resizer when hovered over. Expects `string`.
 

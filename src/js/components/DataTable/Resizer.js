@@ -77,7 +77,6 @@ const Resizer = ({ onResize, property }) => {
     return undefined;
   }, [active, onMouseMove, onMouseUp]);
 
-  const hoverStyles = theme.dataTable.hover && theme.dataTable.hover.resize;
   return (
     <Stack anchor="right">
       <Box
@@ -97,7 +96,7 @@ const Resizer = ({ onResize, property }) => {
         onMouseMove={start !== undefined ? onMouseMove : undefined}
         onMouseUp={start !== undefined ? onMouseUp : undefined}
       >
-        <Box pad={{ vertical: 'small' }} {...hoverStyles} />
+        <Box pad={{ vertical: 'small' }} {...theme.dataTable.resize.hover} />
       </InteractionBox>
     </Stack>
   );

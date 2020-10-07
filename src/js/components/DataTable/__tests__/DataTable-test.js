@@ -794,8 +794,8 @@ describe('DataTable', () => {
             },
           },
         },
-        hover: {
-          resize: {
+        resize: {
+          hover: {
             border: {
               color: 'red',
               side: 'end',
