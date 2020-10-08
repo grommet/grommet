@@ -853,7 +853,8 @@ undefined
 
 **dataTable.resize.hover.side**
 
-The side of the resizer when hovered over. Expects `string`.
+The side of the resizer when hovered over. If color or size 
+    are defined, this will default to 'end' which is the recommended value. Expects `string`.
 
 Defaults to
 

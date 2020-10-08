@@ -77,6 +77,16 @@ const Resizer = ({ onResize, property }) => {
     return undefined;
   }, [active, onMouseMove, onMouseUp]);
 
+  let border;
+  if (theme.dataTable.resize.hover && theme.dataTable.resize.hover.border) {
+    const { color, side = 'end', size } = theme.dataTable.resize.hover.border;
+    border = {
+      color,
+      side,
+      size,
+    };
+  }
+
   return (
     <Stack anchor="right">
       <Box
@@ -96,7 +106,7 @@ const Resizer = ({ onResize, property }) => {
         onMouseMove={start !== undefined ? onMouseMove : undefined}
         onMouseUp={start !== undefined ? onMouseUp : undefined}
       >
-        <Box pad={{ vertical: 'small' }} {...theme.dataTable.resize.hover} />
+        <Box pad={{ vertical: 'small' }} border={border} />
       </InteractionBox>
     </Stack>
   );

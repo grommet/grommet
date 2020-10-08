@@ -389,7 +389,8 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'dataTable.resize.hover.side': {
-    description: 'The side of the resizer when hovered over.',
+    description: `The side of the resizer when hovered over. If color or size 
+    are defined, this will default to 'end' which is the recommended value.`,
     type: 'string',
     defaultValue: undefined,
   },
