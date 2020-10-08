@@ -394,7 +394,8 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'dataTable.resize.hover.size': {
-    description: 'The size of the resizer when hovered over.',
+    description: `The size of the resizer when hovered over. Size values 
+    correspond with those accepted by Box border.`,
     type: 'string',
     defaultValue: undefined,
   },

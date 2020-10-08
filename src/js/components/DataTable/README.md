@@ -863,7 +863,8 @@ undefined
 
 **dataTable.resize.hover.size**
 
-The size of the resizer when hovered over. Expects `string`.
+The size of the resizer when hovered over. Size values 
+    correspond with those accepted by Box border. Expects `string`.
 
 Defaults to
 
