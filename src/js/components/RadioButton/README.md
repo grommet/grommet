@@ -180,7 +180,7 @@ undefined
 **radioButton.container.extend**
 
 Any additional style for the container around 
-    the RadioButton. Expects `string | (props) => {}`.
+    the radio button and its label. Expects `string | (props) => {}`.
 
 Defaults to
 
@@ -190,7 +190,7 @@ undefined
 
 **radioButton.extend**
 
-Any additional style for the RadioButton. Expects `string | (props) => {}`.
+Any additional style for the radio button itself. Expects `string | (props) => {}`.
 
 Defaults to
 
