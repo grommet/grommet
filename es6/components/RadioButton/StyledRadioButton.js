@@ -14,7 +14,7 @@ var StyledRadioButtonContainer = styled.label.withConfig({
 }, function (props) {
   return normalizeColor(!props.disabled && props.theme.radioButton.hover && props.theme.radioButton.hover.background && props.theme.radioButton.hover.background.color, props.theme);
 }, function (props) {
-  return props.theme.radioButton.extend;
+  return props.theme.radioButton.container.extend;
 });
 StyledRadioButtonContainer.defaultProps = {};
 Object.setPrototypeOf(StyledRadioButtonContainer.defaultProps, defaultProps);

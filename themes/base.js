@@ -1057,6 +1057,8 @@ var generate = function generate(baseSpacing, scale) {
       gap: 'small',
       size: baseSpacing + "px",
       font: {// weight: undefined,
+      },
+      container: {// extend: undefined
       }
     },
     radioButtonGroup: {// container: {}, // any box props

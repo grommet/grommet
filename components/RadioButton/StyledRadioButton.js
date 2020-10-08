@@ -27,7 +27,7 @@ var StyledRadioButtonContainer = _styledComponents["default"].label.withConfig({
 }, function (props) {
   return (0, _utils.normalizeColor)(!props.disabled && props.theme.radioButton.hover && props.theme.radioButton.hover.background && props.theme.radioButton.hover.background.color, props.theme);
 }, function (props) {
-  return props.theme.radioButton.extend;
+  return props.theme.radioButton.container.extend;
 });
 
 exports.StyledRadioButtonContainer = StyledRadioButtonContainer;
