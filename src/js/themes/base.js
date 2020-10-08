@@ -966,6 +966,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       font: {
         // weight: undefined,
       },
+      container: {
+        // extend: undefined
+      },
     },
     radioButtonGroup: {
       // container: {}, // any box props
