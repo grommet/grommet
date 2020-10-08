@@ -1,11 +1,8 @@
 import { describe, PropTypes } from 'react-desc';
 
-import {
-  colorPropType,
-  getAvailableAtBadge,
-  genericProps,
-  themeDocUtils,
-} from '../../utils';
+import { colorPropType, genericProps } from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
+import { themeDocUtils } from '../../utils/themeDocUtils';
 
 export const doc = Paragraph => {
   const DocumentedParagraph = describe(Paragraph)
@@ -74,6 +71,11 @@ export const themeDoc = {
         maxWidth: '816px',
       },
     }`,
+  },
+  'paragraph.font.family': {
+    description: 'The font family to use for Paragraph.',
+    type: 'string',
+    defaultValue: undefined,
   },
   'paragraph.textAlign': {
     description: `How to align the text inside the Paragraph.`,

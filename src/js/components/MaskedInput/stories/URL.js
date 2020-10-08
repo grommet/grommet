@@ -21,4 +21,6 @@ const UrlMaskedInput = () => {
   );
 };
 
-storiesOf('MaskedInput', module).add('URL', () => <UrlMaskedInput />);
+storiesOf('MaskedInput', module).add('URL', () => <UrlMaskedInput />, {
+  chromatic: { disable: true },
+});

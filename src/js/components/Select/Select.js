@@ -23,7 +23,7 @@ import { SelectContainer } from './SelectContainer';
 import { applyKey } from './utils';
 
 const SelectTextInput = styled(TextInput)`
-  cursor: pointer;
+  cursor: ${props => (props.defaultCursor ? 'default' : 'pointer')};
 `;
 
 const StyledSelectDropButton = styled(DropButton)`
@@ -126,9 +126,10 @@ const Select = forwardRef(
     useEffect(() => setOpen(propOpen), [propOpen]);
 
     const onRequestOpen = useCallback(() => {
+      if (open) return;
       setOpen(true);
       if (onOpen) onOpen();
-    }, [onOpen]);
+    }, [onOpen, open]);
 
     const onRequestClose = useCallback(() => {
       setOpen(false);
@@ -252,6 +253,13 @@ const Select = forwardRef(
                       value && typeof value === 'string' ? `, ${value}` : ''
                     }`
                   }
+                  // When Select is disabled, we want to show a default cursor
+                  // but not have disabled styling come from TextInput
+                  // Disabled can be a bool or an array of options to disable.
+                  // We only want to disable the TextInput if the control
+                  // button should be disabled which occurs when disabled
+                  // equals true.
+                  defaultCursor={disabled === true || undefined}
                   id={id ? `${id}__input` : undefined}
                   name={name}
                   ref={inputRef}
@@ -264,7 +272,6 @@ const Select = forwardRef(
                   value={inputValue}
                   size={size}
                   theme={theme}
-                  onClick={disabled === true ? undefined : onRequestOpen}
                 />
               )}
             </Box>

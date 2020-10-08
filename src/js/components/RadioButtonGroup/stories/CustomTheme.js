@@ -59,6 +59,6 @@ const CustomRadioButtomGroup = ({ value: initialValue, ...props }) => {
   );
 };
 
-storiesOf('RadioButtonGroup', module).add('Custom Theme', () => (
+storiesOf('RadioButtonGroup', module).add('Custom theme', () => (
   <CustomRadioButtomGroup />
 ));

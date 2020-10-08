@@ -97,6 +97,26 @@ exports[`Tabs Custom Tab component 1`] = `
   text-align: inherit;
 }
 
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c6 {
   font-size: 18px;
   line-height: 24px;
@@ -337,6 +357,26 @@ exports[`Tabs Tab 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c6 {
@@ -594,6 +634,26 @@ exports[`Tabs alignControls 1`] = `
   text-align: inherit;
 }
 
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c6 {
   font-size: 18px;
   line-height: 24px;
@@ -849,6 +909,26 @@ exports[`Tabs change to second tab 1`] = `
   text-align: inherit;
 }
 
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c6 {
   font-size: 18px;
   line-height: 24px;
@@ -1008,15 +1088,15 @@ exports[`Tabs change to second tab 2`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 bwJeiP"
+        class="StyledButton-sc-323bzc-0 jFJBys"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 iwzLzf StyledTab-sc-1nnwnsb-0 eWIFpw"
+          class="StyledBox-sc-13pk1d4-0 eCFVUb StyledTab-sc-1nnwnsb-0 eWIFpw"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 iBFVwz"
+            class="StyledText-sc-1sadyjn-0 MYJUJ"
           >
             Tab 1
           </span>
@@ -1025,15 +1105,15 @@ exports[`Tabs change to second tab 2`] = `
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 bwJeiP"
+        class="StyledButton-sc-323bzc-0 jFJBys"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fQtdUH StyledTab-sc-1nnwnsb-0 eWIFpw"
+          class="StyledBox-sc-13pk1d4-0 gOsxLv StyledTab-sc-1nnwnsb-0 eWIFpw"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 kJdDnV"
+            class="StyledText-sc-1sadyjn-0 lcFryz"
           >
             Tab 2
           </span>
@@ -1146,6 +1226,26 @@ exports[`Tabs complex title 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c0 {
@@ -1364,6 +1464,26 @@ exports[`Tabs no Tab 1`] = `
   text-align: inherit;
 }
 
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -1548,6 +1668,26 @@ exports[`Tabs set on hover 1`] = `
   text-align: inherit;
 }
 
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c6 {
   font-size: 18px;
   line-height: 24px;
@@ -1707,15 +1847,15 @@ exports[`Tabs set on hover 2`] = `
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 bwJeiP"
+        class="StyledButton-sc-323bzc-0 jFJBys"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fQtdUH StyledTab-sc-1nnwnsb-0 eWIFpw"
+          class="StyledBox-sc-13pk1d4-0 gOsxLv StyledTab-sc-1nnwnsb-0 eWIFpw"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 kJdDnV"
+            class="StyledText-sc-1sadyjn-0 lcFryz"
           >
             Tab 1
           </span>
@@ -1724,15 +1864,15 @@ exports[`Tabs set on hover 2`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 bwJeiP"
+        class="StyledButton-sc-323bzc-0 jFJBys"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 iwzLzf StyledTab-sc-1nnwnsb-0 eWIFpw"
+          class="StyledBox-sc-13pk1d4-0 eCFVUb StyledTab-sc-1nnwnsb-0 eWIFpw"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 iBFVwz"
+            class="StyledText-sc-1sadyjn-0 MYJUJ"
           >
             Tab 2
           </span>
@@ -1764,15 +1904,15 @@ exports[`Tabs set on hover 3`] = `
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 bwJeiP"
+        class="StyledButton-sc-323bzc-0 jFJBys"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fQtdUH StyledTab-sc-1nnwnsb-0 eWIFpw"
+          class="StyledBox-sc-13pk1d4-0 gOsxLv StyledTab-sc-1nnwnsb-0 eWIFpw"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 kJdDnV"
+            class="StyledText-sc-1sadyjn-0 lcFryz"
           >
             Tab 1
           </span>
@@ -1781,15 +1921,15 @@ exports[`Tabs set on hover 3`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 bwJeiP"
+        class="StyledButton-sc-323bzc-0 jFJBys"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fQtdUH StyledTab-sc-1nnwnsb-0 eWIFpw"
+          class="StyledBox-sc-13pk1d4-0 gOsxLv StyledTab-sc-1nnwnsb-0 eWIFpw"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 jvLdFN"
+            class="StyledText-sc-1sadyjn-0 iISmoX"
           >
             Tab 2
           </span>
@@ -1821,15 +1961,15 @@ exports[`Tabs set on hover 4`] = `
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 bwJeiP"
+        class="StyledButton-sc-323bzc-0 jFJBys"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fQtdUH StyledTab-sc-1nnwnsb-0 eWIFpw"
+          class="StyledBox-sc-13pk1d4-0 gOsxLv StyledTab-sc-1nnwnsb-0 eWIFpw"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 kJdDnV"
+            class="StyledText-sc-1sadyjn-0 lcFryz"
           >
             Tab 1
           </span>
@@ -1838,15 +1978,15 @@ exports[`Tabs set on hover 4`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 bwJeiP"
+        class="StyledButton-sc-323bzc-0 jFJBys"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fQtdUH StyledTab-sc-1nnwnsb-0 eWIFpw"
+          class="StyledBox-sc-13pk1d4-0 gOsxLv StyledTab-sc-1nnwnsb-0 eWIFpw"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 jvLdFN"
+            class="StyledText-sc-1sadyjn-0 iISmoX"
           >
             Tab 2
           </span>
@@ -1878,15 +2018,15 @@ exports[`Tabs set on hover 5`] = `
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 bwJeiP"
+        class="StyledButton-sc-323bzc-0 jFJBys"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fQtdUH StyledTab-sc-1nnwnsb-0 eWIFpw"
+          class="StyledBox-sc-13pk1d4-0 gOsxLv StyledTab-sc-1nnwnsb-0 eWIFpw"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 kJdDnV"
+            class="StyledText-sc-1sadyjn-0 lcFryz"
           >
             Tab 1
           </span>
@@ -1895,15 +2035,15 @@ exports[`Tabs set on hover 5`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 bwJeiP"
+        class="StyledButton-sc-323bzc-0 jFJBys"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 iwzLzf StyledTab-sc-1nnwnsb-0 eWIFpw"
+          class="StyledBox-sc-13pk1d4-0 eCFVUb StyledTab-sc-1nnwnsb-0 eWIFpw"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 iBFVwz"
+            class="StyledText-sc-1sadyjn-0 MYJUJ"
           >
             Tab 2
           </span>
@@ -2018,6 +2158,26 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
   text-align: inherit;
 }
 
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c7 {
   display: inline-block;
   box-sizing: border-box;
@@ -2036,6 +2196,26 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
   text-align: inherit;
   opacity: 0.3;
   cursor: default;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c6 {
@@ -2295,6 +2475,26 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
   vertical-align: bottom;
 }
 
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c7 {
   display: inline-block;
   box-sizing: border-box;
@@ -2317,6 +2517,26 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
 
 .c7 > svg {
   vertical-align: bottom;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c6 {
@@ -2553,6 +2773,26 @@ exports[`Tabs should have no accessibility violations 1`] = `
   text-align: inherit;
 }
 
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -2735,6 +2975,26 @@ exports[`Tabs should style as disabled 1`] = `
   text-align: inherit;
 }
 
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c7 {
   display: inline-block;
   box-sizing: border-box;
@@ -2753,6 +3013,26 @@ exports[`Tabs should style as disabled 1`] = `
   text-align: inherit;
   opacity: 0.3;
   cursor: default;
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus > circle,
+.c7:focus > ellipse,
+.c7:focus > line,
+.c7:focus > path,
+.c7:focus > polygon,
+.c7:focus > polyline,
+.c7:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c7:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c6 {
@@ -2909,6 +3189,291 @@ exports[`Tabs should style as disabled 1`] = `
 </div>
 `;
 
+exports[`Tabs styled component should change tab color when active 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  border-bottom: solid 2px #000000;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 6px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  border-bottom: solid 2px #7D4CDB;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 6px;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c10 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+}
+
+.c7 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #7D4CDB;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c6 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.c6:hover {
+  color: #000000;
+}
+
+.c11 {
+  min-height: 0;
+}
+
+.c8 {
+  background: blue;
+}
+
+.c4 {
+  background: green;
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    border-bottom: solid 2px #000000;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    border-bottom: solid 2px #7D4CDB;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding-bottom: 3px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 "
+    role="tablist"
+  >
+    <div
+      class="c2 "
+    >
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="c3 c4"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="c5 c6"
+        >
+          <span
+            class="c7"
+          >
+            About
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded="true"
+        aria-selected="true"
+        class="c3 c8"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="c9 c6"
+        >
+          <span
+            class="c10"
+          >
+            Activity
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="c3 c4"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="c5 c6"
+        >
+          <span
+            class="c7"
+          >
+            Stickers
+          </span>
+        </div>
+      </button>
+    </div>
+    <div
+      aria-label="Activity Tab Contents"
+      class="c11"
+      role="tabpanel"
+    />
+  </div>
+</div>
+`;
+
 exports[`Tabs with icon + reverse 1`] = `
 .c1 {
   display: -webkit-box;
@@ -3032,6 +3597,26 @@ exports[`Tabs with icon + reverse 1`] = `
   text-align: inherit;
 }
 
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus > circle,
+.c3:focus > ellipse,
+.c3:focus > line,
+.c3:focus > path,
+.c3:focus > polygon,
+.c3:focus > polyline,
+.c3:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c7 {
   font-size: 18px;
   line-height: 24px;
@@ -3118,6 +3703,12 @@ exports[`Tabs with icon + reverse 1`] = `
 @media only screen and (max-width:768px) {
   .c8 {
     padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    width: 6px;
   }
 }
 

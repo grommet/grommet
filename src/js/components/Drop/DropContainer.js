@@ -49,6 +49,7 @@ const DropContainer = forwardRef(
       responsive,
       restrictFocus,
       stretch = 'width',
+      trapFocus,
       ...rest
     },
     ref,
@@ -61,7 +62,6 @@ const DropContainer = forwardRef(
       portalId,
     ]);
     const dropRef = useRef();
-
     useEffect(() => {
       // We try to preserve the maxHeight as changing it causes any scroll
       // position to be lost. We set the maxHeight on mount and if the window
@@ -84,12 +84,17 @@ const DropContainer = forwardRef(
           const targetRect = findVisibleParent(target).getBoundingClientRect();
           const containerRect = container.getBoundingClientRect();
           // determine width
-          const width = Math.min(
-            stretch
-              ? Math.max(targetRect.width, containerRect.width)
-              : containerRect.width,
-            windowWidth,
-          );
+          let width;
+          if (stretch) {
+            width = Math.min(
+              stretch === 'align'
+                ? Math.min(targetRect.width, containerRect.width)
+                : Math.max(targetRect.width, containerRect.width),
+              windowWidth,
+            );
+          } else {
+            width = Math.min(containerRect.width, windowWidth);
+          }
           // set left position
           let left;
           if (align.left) {
@@ -329,7 +334,10 @@ const DropContainer = forwardRef(
 
     return (
       <PortalContext.Provider value={nextPortalContext}>
-        <FocusedContainer onKeyDown={onEsc && preventLayerClose}>
+        <FocusedContainer
+          onKeyDown={onEsc && preventLayerClose}
+          trapFocus={trapFocus}
+        >
           <Keyboard
             onEsc={
               onEsc

@@ -43,9 +43,12 @@ string
 
 **margin**
 
-The amount of margin around the component. An object can
-    be specified to distinguish horizontal margin, vertical margin, and
-    margin on a particular side.
+The amount of margin around the component. An object can be 
+    specified to distinguish horizontal margin, vertical margin, and margin on 
+    a particular side. For vertical margin to be applied, Text needs to be 
+    contained within a layout component (such as Box or a generic div) or 
+    behave as a div (by applying as="div" or a display style of 
+    inline-block).
 
 ```
 none
@@ -186,7 +189,8 @@ end
 **truncate**
 
 Restrict the text to a single line and truncate with ellipsis if it
-is too long to all fit.
+is too long to all fit. For truncate to be applied, Text needs to be 
+contained within a layout component (such as Box or a generic div).
 
 ```
 boolean
@@ -228,6 +232,16 @@ Defaults to
 
 ```
 { dark: '#f8f8f8', light: '#444444' }
+```
+
+**text.font.family**
+
+The font family to use for Text. Expects `string`.
+
+Defaults to
+
+```
+undefined
 ```
 
 **text**

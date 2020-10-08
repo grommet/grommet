@@ -262,7 +262,7 @@ describe('TextInput', () => {
     }, 50);
   });
 
-  test('select a suggestion', () => {
+  test('select a suggestion with onSelect', () => {
     const onSelect = jest.fn();
     const { getByTestId, container } = render(
       <Grommet>
@@ -285,6 +285,66 @@ describe('TextInput', () => {
     fireEvent.keyDown(input, { keyCode: 38 }); // up
     fireEvent.keyDown(input, { keyCode: 13 }); // enter
     expect(onSelect).toBeCalledWith(
+      expect.objectContaining({
+        suggestion: 'test',
+      }),
+    );
+  });
+
+  test('select a suggestion with onSuggestionSelect', () => {
+    const onSuggestionSelect = jest.fn();
+    const { getByTestId, container } = render(
+      <Grommet>
+        <TextInput
+          data-testid="test-input"
+          id="item"
+          name="item"
+          suggestions={['test', { value: 'test1' }]}
+          onSuggestionSelect={onSuggestionSelect}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    const input = getByTestId('test-input');
+    // pressing enter here nothing will happen
+    fireEvent.keyDown(input, { keyCode: 13 }); // enter
+    fireEvent.keyDown(input, { keyCode: 40 }); // down
+    fireEvent.keyDown(input, { keyCode: 40 }); // down
+    fireEvent.keyDown(input, { keyCode: 38 }); // up
+    fireEvent.keyDown(input, { keyCode: 13 }); // enter
+    expect(onSuggestionSelect).toBeCalledWith(
+      expect.objectContaining({
+        suggestion: 'test',
+      }),
+    );
+  });
+
+  test('select with onSuggestionSelect when onSelect is present', () => {
+    const onSelect = jest.fn();
+    const onSuggestionSelect = jest.fn();
+    const { getByTestId, container } = render(
+      <Grommet>
+        <TextInput
+          data-testid="test-input"
+          id="item"
+          name="item"
+          suggestions={['test', { value: 'test1' }]}
+          onSelect={onSelect}
+          onSuggestionSelect={onSuggestionSelect}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    const input = getByTestId('test-input');
+    // pressing enter here nothing will happen
+    fireEvent.keyDown(input, { keyCode: 13 }); // enter
+    fireEvent.keyDown(input, { keyCode: 40 }); // down
+    fireEvent.keyDown(input, { keyCode: 40 }); // down
+    fireEvent.keyDown(input, { keyCode: 38 }); // up
+    fireEvent.keyDown(input, { keyCode: 13 }); // enter
+    expect(onSuggestionSelect).toBeCalledWith(
       expect.objectContaining({
         suggestion: 'test',
       }),
@@ -388,5 +448,27 @@ describe('TextInput', () => {
 
     fireEvent.click(selection);
     expect(document.activeElement).toEqual(input);
+  });
+
+  test('should not have padding when plain="full"', async () => {
+    const { container } = render(
+      <Grommet>
+        <TextInput
+          plain="full"
+          name="name"
+          placeholder="should not have padding"
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should have padding when plain', async () => {
+    const { container } = render(
+      <Grommet>
+        <TextInput plain name="name" placeholder="should still have padding" />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

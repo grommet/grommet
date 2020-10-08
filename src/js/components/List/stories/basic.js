@@ -4,7 +4,13 @@ import { storiesOf } from '@storybook/react';
 import { Grommet, Box, List } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-import { locations } from './data';
+const locations = [
+  'Boise',
+  'Fort Collins',
+  'Los Gatos',
+  'Palo Alto',
+  'San Francisco',
+];
 
 const BasicList = () => (
   <Grommet theme={grommet}>
@@ -14,4 +20,4 @@ const BasicList = () => (
   </Grommet>
 );
 
-storiesOf('List', module).add('basic', () => <BasicList />);
+storiesOf('List', module).add('Basic', () => <BasicList />);

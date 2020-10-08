@@ -96,12 +96,14 @@ boolean
 
 **stretch**
 
-Whether the drop element should be stretched to at least match the
-      width of the target element. The default is true because
-      that is what most uses of Drop want, like Select and Menu. Defaults to `true`.
+If set to true the drop element will be stretched to at least match the
+      width of the target element. If set to align the width of the drop element
+      will be restricted to the width of the target element. The default is true
+      because that is what most uses of Drop want, like Select and Menu. Defaults to `true`.
 
 ```
 boolean
+align
 ```
 
 **target**
@@ -115,7 +117,8 @@ object
 
 **elevation**
 
-Elevated height of the target, indicated via a drop shadow.
+Elevated height of the target, indicated via a drop shadow. 
+      Only applicable if the Drop isn't plain.
 
 ```
 none
@@ -129,7 +132,15 @@ string
 
 **plain**
 
-Whether the drop element should have no background nor shadow
+Whether the drop element should have no background nor elevation.
+
+```
+boolean
+```
+
+**trapFocus**
+
+Traps keyboard focus inside of drop. Defaults to `true`.
 
 ```
 boolean
@@ -144,7 +155,7 @@ div
   
 **drop.maxHeight**
 
-The max height of the Drop container Expects `string`.
+The max height of the Drop container. Expects `string`.
 
 Defaults to
 
@@ -154,7 +165,7 @@ undefined
 
 **global.drop.background**
 
-The background color of Drop Expects `string | { dark: string, light: string }`.
+The background color of Drop. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
@@ -164,7 +175,7 @@ Defaults to
 
 **global.drop.border.radius**
 
-The corner radius Expects `string`.
+The border radius of the Drop container. Expects `string`.
 
 Defaults to
 
@@ -184,7 +195,7 @@ undefined
 
 **global.drop.shadowSize**
 
-Elevated height of the Drop Expects `string`.
+Elevated height of the Drop. Expects `string`.
 
 Defaults to
 
@@ -194,7 +205,7 @@ small
 
 **global.drop.zIndex**
 
-The stack order of the Drop Expects `number`.
+The stack order of the Drop. Expects `number`.
 
 Defaults to
 

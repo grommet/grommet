@@ -10,8 +10,7 @@ const sizeStyle = props => {
   const levelStyle = headingTheme.level[props.level];
   if (levelStyle) {
     const data = levelStyle[size];
-    const styles =  
-    [
+    const styles = [
       css`
         font-size: ${data ? data.size : size};
         line-height: ${data ? data.height : 'normal'};
@@ -23,9 +22,10 @@ const sizeStyle = props => {
       const breakpoint =
         props.theme.global.breakpoints[headingTheme.responsiveBreakpoint];
       if (breakpoint) {
-        const responsiveData =
-          headingTheme.level[Math.min(props.level + 1, 4)][size];
-        if(responsiveData) {
+        const responsiveData = headingTheme.level[props.level + 1]
+          ? headingTheme.level[props.level + 1][size]
+          : headingTheme.level[props.level][size];
+        if (responsiveData) {
           styles.push(
             breakpointStyle(
               breakpoint,
@@ -47,7 +47,7 @@ const sizeStyle = props => {
 };
 
 const fontFamily = props => {
-  const { font } = props.theme.heading.level[props.level];
+  const { font } = props.theme.heading.level[props.level] || {};
   if (font && font.family) {
     return css`
       font-family: ${font.family};

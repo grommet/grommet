@@ -31,6 +31,7 @@ const Chart = React.forwardRef(
       id,
       onClick,
       onHover,
+      opacity: propsOpacity,
       overflow = false,
       pad,
       point,
@@ -479,8 +480,10 @@ const Chart = React.forwardRef(
       else if (theme.chart && theme.chart.color) colorName = theme.chart.color;
     }
     const opacity =
-      color && color.opacity
-        ? theme.global.opacity[color.opacity] || color.opacity
+      propsOpacity || (color && color.opacity)
+        ? theme.global.opacity[propsOpacity || color.opacity] ||
+          propsOpacity ||
+          color.opacity
         : undefined;
 
     let stroke;
@@ -555,6 +558,7 @@ const Chart = React.forwardRef(
         preserveAspectRatio="none"
         width={size === 'full' ? '100%' : size[0]}
         height={size === 'full' ? '100%' : size[1]}
+        typeProp={type} // prevent adding to DOM
         {...rest}
       >
         {defs}

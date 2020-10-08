@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = RadioButton => {
   const DocumentedRadioButton = describe(RadioButton)
@@ -97,24 +97,25 @@ export const themeDoc = {
     type: 'string | { dark: string, light: string }',
     defaultValue: 'undefined',
   },
+  'radioButton.container.extend': {
+    description: `Any additional style for the container around 
+    the RadioButton.`,
+    type: 'string | (props) => {}',
+    defaultValue: 'undefined',
+  },
   'radioButton.extend': {
     description: 'Any additional style for the RadioButton.',
     type: 'string | (props) => {}',
-  },
-  'radioButton.gap': {
-    description: 'The gap between the label and the RadioButton itself.',
-    type: 'string',
-    defaultValue: 'small',
   },
   'radioButton.font.weight': {
     description: 'The font weight of the label.',
     type: 'number | string',
     defaultValue: undefined,
   },
-  'radioButton.size': {
-    description: 'The size of the RadioButton.',
+  'radioButton.gap': {
+    description: 'The gap between the label and the RadioButton itself.',
     type: 'string',
-    defaultValue: '24px',
+    defaultValue: 'small',
   },
   'radioButton.hover.background.color': {
     description: `The background color of the Box surrounding the RadioButton
@@ -135,9 +136,14 @@ export const themeDoc = {
     description: 'The size of the icon in the RadioButton.',
     type: 'string',
   },
-  'radioButton.container.extend': {
-    description: `Any additional style for the container around 
-    the RadioButton.`,
-    type: 'string | (props) => {}',
+  'radioButton.icons.circle': {
+    description: 'The icon to replace the inner checked circle.',
+    type: 'React.Element',
+    defaultValue: undefined,
+  },
+  'radioButton.size': {
+    description: 'The size of the RadioButton.',
+    type: 'string',
+    defaultValue: '24px',
   },
 };

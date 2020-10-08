@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 import {
   backgroundStyle,
+  fillStyle,
   focusStyle,
   genericStyles,
   normalizeColor,
@@ -10,15 +11,19 @@ import { defaultProps } from '../../default-props';
 import { TableRow } from '../TableRow';
 import { Table } from '../Table';
 import { TableBody } from '../TableBody';
+import { TableCell } from '../TableCell';
 import { TableHeader } from '../TableHeader';
 import { TableFooter } from '../TableFooter';
 
+// border-collapse: separate is needed so pinned header/footer borders work
 const StyledDataTable = styled(Table)`
   border-spacing: 0;
-  border-collapse: collapse;
+  border-collapse: separate;
   height: auto; /* helps Firefox to get table contents to not overflow */
 
-  ${genericStyles} ${props =>
+  ${genericStyles}
+  ${props => props.fillProp && fillStyle(props.fillProp)}
+  ${props =>
     props.theme.dataTable &&
     props.theme.dataTable.body &&
     props.theme.dataTable.body.extend};
@@ -113,15 +118,46 @@ const StyledDataTableFooter = styled(TableFooter)`
     width: 100%;
     table-layout: fixed;
   `}
+  ${props =>
+    props.pin &&
+    `
+      /* Safari needs the relative positioning of tfoot specified */
+      position: sticky;
+      bottom: 0;
+      z-index: 1;
+  `}
 `;
 
 StyledDataTableFooter.defaultProps = {};
 Object.setPrototypeOf(StyledDataTableFooter.defaultProps, defaultProps);
 
+const StyledDataTableCell = styled(TableCell)`
+  ${props =>
+    props.pin &&
+    props.pin.length > 0 &&
+    `
+    position: sticky;
+    ${props.pin.map(p => `${p}: 0;`).join(' ')}
+    z-index: ${Object.keys(props.pin).length};
+    ${
+      props.theme.dataTable &&
+      props.theme.dataTable.pinned &&
+      props.theme.dataTable.pinned[props.context] &&
+      props.theme.dataTable.pinned[props.context].extend
+        ? props.theme.dataTable.pinned[props.context].extend
+        : ''
+    }
+  `}
+`;
+
+StyledDataTableCell.defaultProps = {};
+Object.setPrototypeOf(StyledDataTableCell.defaultProps, defaultProps);
+
 export {
   StyledDataTable,
   StyledDataTableRow,
   StyledDataTableBody,
+  StyledDataTableCell,
   StyledDataTableHeader,
   StyledDataTableFooter,
 };

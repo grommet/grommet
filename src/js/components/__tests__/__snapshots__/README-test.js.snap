@@ -853,6 +853,56 @@ Defaults to
 \`\`\`
 undefined
 \`\`\`
+
+**avatar.text.size.xsmall**
+
+The size of the text that is mapped according to 'avatar.size.xsmall'. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+small
+\`\`\`
+
+**avatar.text.size.small**
+
+The size of the text that is mapped according to 'avatar.size.small'. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+medium
+\`\`\`
+
+**avatar.text.size.medium**
+
+The size of the text that is mapped according to 'avatar.size.medium'. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+large
+\`\`\`
+
+**avatar.text.size.large**
+
+The size of the text that is mapped according to 'avatar.size.large'. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+xlarge
+\`\`\`
+
+**avatar.text.size.xlarge**
+
+The size of the text that is mapped according to 'avatar.size.xlarge'. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+xxlarge
+\`\`\`
 ",
   "Box": "## Box
 A container that lays out its contents in one direction. Box
@@ -1983,7 +2033,8 @@ Function that can be called to render the visual representation.
       Button can take in Children as a function, node, or object. 
       For example hover can be passed as an object that would 
       then return a react element.
-      \`children={({ hover }) => <Box...>{...}</Box>}\`
+      \`children={({ hover }) => <Box...>{...}</Box>}\`. When Button has
+      children, it is styled as a \`plain\` button.
       
 
 \`\`\`
@@ -3179,6 +3230,20 @@ An array of two numbers indicating the limits on
 [string]
 \`\`\`
 
+**children**
+
+Function that will be called to render each day.
+      It will be passed \`({date, day, isInRange, isSelected})\` where \`date\`
+      is a string containing an ISO8601 date for the day being rendered, \`day\`
+      is a number containing the day of the month being rendered, \`isInRange\`
+      is a boolean indicating whether the date is within a selected range of
+      dates, and \`isSelected\` is a boolean indicating whether this date
+      is selected.
+
+\`\`\`
+function
+\`\`\`
+
 **date**
 
 The selected date in ISO8601 format
@@ -3219,6 +3284,14 @@ Whether to show the days of the week.
 boolean
 \`\`\`
 
+**fill**
+
+Whether the calendar should fill the parent container.
+
+\`\`\`
+boolean
+\`\`\`
+
 **firstDayOfWeek**
 
 The first day of the week. 0 for Sunday. 1 for Monday.
@@ -3244,10 +3317,10 @@ The function passes the following options:
   }
 \`\`\`
 
-\`onPreviousMonth\` and \`onNextMonth\` are callbacks that will tell the 
+\`onPreviousMonth\` and \`onNextMonth\` are callbacks that will tell the
 calendar to move between months.
-\`previousInBound\` and \`nextInBound\` are booleans that tell, when using 
-\`bounds\`, if the current date is within that range. You can then use that 
+\`previousInBound\` and \`nextInBound\` are booleans that tell, when using
+\`bounds\`, if the current date is within that range. You can then use that
 to disable the previous and next buttons.
 
 
@@ -3582,7 +3655,9 @@ Defaults to
 \`\`\`
 ",
   "Card": "## Card
-A Card.
+A Card is a container of information that provides access to more 
+      details. Elements of a Card can include Header, Body, Footer or any 
+      other custom component.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Card&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/card&module=%2Fsrc%2FCard.js)
 ## Usage
@@ -3643,7 +3718,7 @@ Defaults to
 \`\`\`
 ",
   "CardBody": "## CardBody
-The Card Body.
+The body of the card. Mostly used for placing content.
 
 
 ## Properties
@@ -4071,6 +4146,14 @@ xlarge
 string
 \`\`\`
 
+**animate**
+
+Whether to animate drawing.
+
+\`\`\`
+boolean
+\`\`\`
+
 **bounds**
 
 The limits for the values, specified as a two dimensional array. 
@@ -4175,6 +4258,17 @@ Called with a boolean argument
 
 \`\`\`
 function
+\`\`\`
+
+**opacity**
+
+What opacity to apply to the visuals. Supercedes 'color.opacity'
+
+\`\`\`
+weak
+medium
+strong
+boolean
 \`\`\`
 
 **overflow**
@@ -5317,7 +5411,7 @@ Takes a data set and visualizes it. While Chart renders a
 
 \`\`\`javascript
 import { DataChart } from 'grommet';
-<DataChart data={data} chart={} />
+<DataChart data={data} property={} />
 \`\`\`
 
 ## Properties
@@ -5435,54 +5529,121 @@ xlarge
 string
 \`\`\`
 
-**chart**
+**axis**
 
-Chart properties indicating how to visualize the data.
-    'key' indicates which property of the data objects to use. 'keys' indicates
-    that multiple properties should be used for a stacked bar chart. DataChart
-    uses the key/keys to build the right 'values' for the underlying Chart.
-    All of the other properties in 'chart' are passed through to the Chart.
+Whether to show an axis and how it should look.
+      If 'x' or 'y' is a string, it indicates the property to use
+      to determine the values to show.
+      If axis or 'x' is true, DataChart will look for a property called 'date'
+      or 'time' and automatically use that for the x-axis. If DataChart
+      can't find a property to use, it will use the data index for the x-axis.
+      If axis or 'y' is true, DataChart will use the first property in 'series'.
+      'granularity' indicates how many values to show.
+      'coarse' granularity shows two values, one at each end.
+      'fine' granularity shows all x-axis values and 5 y-axis values.
+      'medium' granularity picks something in between. Defaults to \`true\`.
 
 \`\`\`
+boolean
 {
-  key: string,
-  keys: [{
-  key: string,
-  color: 
+  x: 
+    boolean
     string
     {
-      color: string,
-      opacity: 
-        weak
+      property: string,
+      granularity: 
+        coarse
         medium
-        strong
-        boolean
+        fine
+    },
+  y: 
+    boolean
+    string
+    {
+      property: string,
+      granularity: 
+        coarse
+        medium
+        fine
     }
-    [{
+}
+\`\`\`
+
+**bounds**
+
+When set to 'align', indicates that the bounds of all series
+      should be aligned. When not set, the bounds of each series
+      property are based solely on the data found for that property. Defaults to \`align\`.
+
+\`\`\`
+align
+\`\`\`
+
+**chart**
+
+How to visualize the data.
+    'property' indicates which property of the data objects to use.
+    When 'property' is an array, multiple properties are used for a
+    stacked bar chart. If only a string is specified, that is the property
+    to use and all other aspects are defaulted. If 'property' is an object,
+    it specifies a map of properties to graphic aspects: x, y, color, thickness.
+    If 'transform' is specified, it will be used to transform the data value
+    before using it. For example, to convert a data value to a hex color
+    string for the color.
+
+\`\`\`
+string
+{
+  property: 
+    string
+    [
+      string
+      {
+        property: string,
+        color: 
+          string
+          [{
   color: string,
   value: number
 }]
-}],
-  a11yTitle: string,
-  bounds: [[number]],
+      }
+    ]
+    {
+      color: 
+        string
+        {
+          property: string,
+          transform: function
+        },
+      thickness: 
+        string
+        {
+          property: string,
+          transform: function
+        },
+      x: string,
+      y: string
+    },
   color: 
     string
-    {
-      color: string,
-      opacity: 
-        weak
-        medium
-        strong
-        boolean
-    }
     [{
   color: string,
   value: number
 }],
   dash: boolean,
-  onClick: function,
-  onHover: function,
-  overflow: boolean,
+  opacity: 
+    weak
+    medium
+    strong
+    number
+    boolean,
+  point: 
+    circle
+    diamond
+    square
+    star
+    triangle
+    triangleDown,
   round: boolean,
   thickness: 
     hair
@@ -5495,65 +5656,82 @@ Chart properties indicating how to visualize the data.
     string,
   type: 
     bar
+    bars
     line
     area
     point
 }
-[{
-  key: string,
-  keys: [{
-  key: string,
-  color: 
-    string
-    {
-      color: string,
-      opacity: 
-        weak
-        medium
-        strong
-        boolean
-    }
-    [{
+[
+  string
+  {
+    property: 
+      string
+      [
+        string
+        {
+          property: string,
+          color: 
+            string
+            [{
   color: string,
   value: number
 }]
-}],
-  a11yTitle: string,
-  bounds: [[number]],
-  color: 
-    string
-    {
-      color: string,
-      opacity: 
-        weak
-        medium
-        strong
-        boolean
-    }
-    [{
+        }
+      ]
+      {
+        color: 
+          string
+          {
+            property: string,
+            transform: function
+          },
+        thickness: 
+          string
+          {
+            property: string,
+            transform: function
+          },
+        x: string,
+        y: string
+      },
+    color: 
+      string
+      [{
   color: string,
   value: number
 }],
-  dash: boolean,
-  onClick: function,
-  onHover: function,
-  overflow: boolean,
-  round: boolean,
-  thickness: 
-    hair
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    none
-    string,
-  type: 
-    bar
-    line
-    area
-    point
-}]
+    dash: boolean,
+    opacity: 
+      weak
+      medium
+      strong
+      number
+      boolean,
+    point: 
+      circle
+      diamond
+      square
+      star
+      triangle
+      triangleDown,
+    round: boolean,
+    thickness: 
+      hair
+      xsmall
+      small
+      medium
+      large
+      xlarge
+      none
+      string,
+    type: 
+      bar
+      bars
+      line
+      area
+      point
+  }
+]
 \`\`\`
 
 **data**
@@ -5564,6 +5742,17 @@ the data set
 [{
 
 }]
+\`\`\`
+
+**detail**
+
+Whether to add the ability to interact with the chart
+      via mouse or keyboard to show details on specific values in the chart.
+      It shows all properties specified in 'series', using any 'render'
+      functions therein.
+
+\`\`\`
+boolean
 \`\`\`
 
 **gap**
@@ -5579,6 +5768,41 @@ medium
 large
 xlarge
 string
+\`\`\`
+
+**guide**
+
+Whether to put guidelines underneath the chart graphics.
+    See the description of 'granularity' under 'axis'.
+
+\`\`\`
+boolean
+{
+  x: 
+    boolean
+    {
+      granularity: 
+        coarse
+        medium
+        fine
+    },
+  y: 
+    boolean
+    {
+      granularity: 
+        coarse
+        medium
+        fine
+    }
+}
+\`\`\`
+
+**legend**
+
+Whether to include a legend
+
+\`\`\`
+boolean
 \`\`\`
 
 **pad**
@@ -5663,13 +5887,43 @@ xlarge
 string
 \`\`\`
 
+**series**
+
+Describes which parts of the 'data' are of interest and
+    how to handle them. 'property' indicates which property of the 'data'
+    objects this series refers to. 'label' indicates how to label the series
+    in a legend or hover details. 'prefix' and 'suffix' are applied to the
+    data values shown in an axis, legend, or details. 'render' allows custom
+    rendering of the data value. 'render' is called with:
+    (value, datum, property) => { return < />; }
+
+\`\`\`
+string
+{
+  label: 
+    string,
+  prefix: string,
+  property: string,
+  render: function,
+  suffix: string
+}
+[
+  string
+  {
+    label: 
+      string,
+    prefix: string,
+    property: string,
+    render: function,
+    suffix: string
+  }
+]
+\`\`\`
+
 **size**
 
 The size of the Charts. This does not include the axes
-      and any gap. It is passed through to the underlying Chart. Defaults to \`{
-  \\"width\\": \\"medium\\",
-  \\"height\\": \\"small\\"
-}\`.
+      and any gap. It is passed through to the underlying Chart.
 
 \`\`\`
 fill
@@ -5693,62 +5947,6 @@ fill
     fill
     auto
     string
-}
-\`\`\`
-
-**thickness**
-
-Chart thickness given to all
-    Charts if not specified per Chart in 'chart'.
-
-\`\`\`
-hair
-xsmall
-small
-medium
-large
-xlarge
-none
-string
-\`\`\`
-
-**xAxis**
-
-x-axis configuration. 'guide' specifies that vertical
-    guide lines should be drawn under the Chart, one per label.
-    'key' specifies what property in the 'data' should be used as
-    any label content. 'labels' specifies how many labels to show.
-    'render' allows for custom rendering of the labels. It will be
-    called with the current data index and axis index and should return
-    the element to render: (dataIndex, axisIndex) => element.
-
-\`\`\`
-boolean
-{
-  guide: boolean,
-  key: string,
-  labels: number,
-  render: function
-}
-\`\`\`
-
-**yAxis**
-
-y-axis configuration. 'guide' specifies that horizontal
-    guide lines should be drawn under the Chart, one per label.
-    'labels' specifies how many labels to show.
-    'render' allows for custom rendering of the labels. It will be
-    called with the value and axis index and should return
-    the element to render: (value, axisIndex) => element
-
-\`\`\`
-boolean
-{
-  guide: boolean,
-  labels: number,
-  prefix: string,
-  render: function,
-  suffix: string
 }
 \`\`\`
   
@@ -5913,6 +6111,13 @@ string
       dark: string,
       light: string
     }
+    [string],
+  pinned: 
+    string
+    {
+      dark: string,
+      light: string
+    }
     [string]
 }
 \`\`\`
@@ -6066,6 +6271,8 @@ A description of the data. The order controls the column order.
       should be used as the unique identifier, which gives the cell 'row' scope
       for accessibility. If 'primary' is not used for any column, and
       'primaryKey' isn't specified either, then the first column will be used.
+      'pin' indicates that this column should not scroll out of view
+      to the left when the table is scrolled horizontally.
 
 \`\`\`
 [{
@@ -6089,6 +6296,7 @@ A description of the data. The order controls the column order.
     {
       aggregate: boolean
     },
+  pin: boolean,
   primary: boolean,
   property: string,
   render: function,
@@ -6123,6 +6331,16 @@ Array of data objects.
 }]
 \`\`\`
 
+**fill**
+
+Whether the width and/or height should fill the container.
+
+\`\`\`
+horizontal
+vertical
+boolean
+\`\`\`
+
 **groupBy**
 
 Property to group data by. If object is specified
@@ -6140,6 +6358,18 @@ string
 }
 \`\`\`
 
+**onClickRow**
+
+When supplied, this function will be called with an event object that
+      include a 'datum' property containing the data value associated with
+      the clicked row. You should not include interactive elements, like
+      Anchor or Button inside table cells as that can cause confusion with
+      overlapping interactive elements.
+
+\`\`\`
+function
+\`\`\`
+
 **onMore**
 
 Use this to indicate that 'data' doesn't contain all that it could.
@@ -6155,35 +6385,25 @@ Use this to indicate that 'data' doesn't contain all that it could.
 function
 \`\`\`
 
-**replace**
-
-Whether to replace previously rendered items with a generic spacing
-      element when they have scrolled out of view. This is more performant but
-      means that in-page searching will not find elements that have been
-      replaced.
-
-\`\`\`
-boolean
-\`\`\`
-
-**onClickRow**
-
-When supplied, this function will be called with an event object that
-      include a 'datum' property containing the data value associated with
-      the clicked row. You should not include interactive elements, like
-      Anchor or Button inside table cells as that can cause confusion with
-      overlapping interactive elements.
-
-\`\`\`
-function
-\`\`\`
-
 **onSearch**
 
 When supplied, and when at least one column has 'search' enabled,
       this function will be called with an object with keys for property
       names and values which are the search text strings. This is typically
       employed so a back-end can be used to search through the data.
+
+\`\`\`
+function
+\`\`\`
+
+**onSelect**
+
+When supplied, causes checkboxes to be added to each row such that
+      the user can indicate which rows should be selected. This function
+      will be called with an array of primary key values, suitable to be
+      passed to the 'select' property. If you are storing select state via
+      a 'useState' hook, you can do something like:
+      '<DataTable select={select} onSelect={setSelect} />'.
 
 \`\`\`
 function
@@ -6270,6 +6490,17 @@ string
 }
 \`\`\`
 
+**pin**
+
+Whether the header and/or footer should be pinned when
+      not all rows are visible. A value of true pins both header and footer.
+
+\`\`\`
+boolean
+header
+footer
+\`\`\`
+
 **primaryKey**
 
 When supplied, indicates the property for a data object to use to
@@ -6280,6 +6511,17 @@ When supplied, indicates the property for a data object to use to
 
 \`\`\`
 string
+boolean
+\`\`\`
+
+**replace**
+
+Whether to replace previously rendered items with a generic spacing
+      element when they have scrolled out of view. This is more performant but
+      means that in-page searching will not find elements that have been
+      replaced.
+
+\`\`\`
 boolean
 \`\`\`
 
@@ -6305,6 +6547,21 @@ Row specific background, border, and pad, keyed by primary key value.
 }
 \`\`\`
 
+**select**
+
+When supplied, causes checkboxes to be added to each row to indicate
+      which rows are selected. The values in this array should match
+      the 'primaryKey' or 'columns[].primary' keyed value for the row's data
+      object. If 'onSelect' is provided, the CheckBoxes are enabled
+      and this function can be used to track select changes.
+
+\`\`\`
+[
+  string
+  number
+]
+\`\`\`
+
 **size**
 
 The height of the table body. If set, the table body will have a fixed
@@ -6322,13 +6579,17 @@ string
 
 **sort**
 
-Which property to sort on and which direction to sort.
+Which property to sort on and which direction to sort. When 'external'
+      is true, it indicates that the caller will take care of sorting
+      the 'data' via 'onSort'. Otherwise, the existing data will be sorted
+      within DataTable.
 
 \`\`\`
 {
   direction: 
     asc
     desc,
+  external: boolean,
   property: string
 }
 \`\`\`
@@ -6446,6 +6707,97 @@ Defaults to
 {}
 \`\`\`
 
+**dataTable.header.background**
+
+Any valid Box background value. Expects \`string | 
+    { dark: string, light: string } |
+    { 
+      color: { dark: string, light: string } | string, 
+      dark: bool, 
+      image: string, 
+      position: string, 
+      opacity: bool | string, 
+      repeat: no-repeat | repeat, 
+      size: cover | contain | string
+    }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.header.border**
+
+Any valid Box border value. Expects \`string | object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.header.font.weight**
+
+The font weight for text in header cells. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.header.font.size**
+
+The font size for text in header cells. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.header.gap**
+
+The gap between elements within the header cell. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+small
+\`\`\`
+
+**dataTable.header.hover.background**
+
+The hover background color of the header cell contents, if 
+    clickable. Any valid Box background options apply. Expects \`string | 
+    { dark: string, light: string } |
+    { 
+      color: { dark: string, light: string } | string, 
+      dark: bool, 
+      image: string, 
+      position: string, 
+      opacity: bool | string, 
+      repeat: no-repeat | repeat, 
+      size: cover | contain | string
+    }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.header.pad**
+
+The pad around the contents of the header cell. Expects \`string | object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **dataTable.icons.ascending**
 
 The ascending icon. Expects \`React.Element\`.
@@ -6484,6 +6836,106 @@ Defaults to
 
 \`\`\`
 <FormDown />
+\`\`\`
+
+**dataTable.icons.sortable**
+
+The icon indicating a column can be sorted. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.pinned.body.background**
+
+Any valid Box background options apply. Expects \`string | 
+      { dark: string, light: string } |
+      { 
+        color: { dark: string, light: string } | string, 
+        dark: bool, 
+        image: string, 
+        position: string, 
+        opacity: bool | string, 
+        repeat: no-repeat | repeat, 
+        size: cover | contain | string
+      }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.pinned.body.extend**
+
+Any additional styles for pinned body cells. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.pinned.header.background**
+
+Any valid Box background options apply. Expects \`string | 
+      { dark: string, light: string } |
+      { 
+        color: { dark: string, light: string } | string, 
+        dark: bool, 
+        image: string, 
+        position: string, 
+        opacity: bool | string, 
+        repeat: no-repeat | repeat, 
+        size: cover | contain | string
+      }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.pinned.header.extend**
+
+Any additional styles for pinned header cells. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.pinned.footer.background**
+
+Any valid Box background options apply. Expects \`string | 
+      { dark: string, light: string } |
+      { 
+        color: { dark: string, light: string } | string, 
+        dark: bool, 
+        image: string, 
+        position: string, 
+        opacity: bool | string, 
+        repeat: no-repeat | repeat, 
+        size: cover | contain | string
+      }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.pinned.footer.extend**
+
+Any additional styles for pinned footer cells. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **dataTable.primary.weight**
@@ -6666,7 +7118,17 @@ string
 div
 \`\`\`
 ## Theme
-  ",
+  
+**dateInput.icon.size**
+
+The size of the Calendar icon Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+24px
+\`\`\`
+",
   "Diagram": "## Diagram
 Graphical connection lines. Diagram is meant to be used with Stack.
       Boxes can be used in the \`guidingChild\` layer of Stack and then
@@ -7098,12 +7560,14 @@ boolean
 
 **stretch**
 
-Whether the drop element should be stretched to at least match the
-      width of the target element. The default is true because
-      that is what most uses of Drop want, like Select and Menu. Defaults to \`true\`.
+If set to true the drop element will be stretched to at least match the
+      width of the target element. If set to align the width of the drop element
+      will be restricted to the width of the target element. The default is true
+      because that is what most uses of Drop want, like Select and Menu. Defaults to \`true\`.
 
 \`\`\`
 boolean
+align
 \`\`\`
 
 **target**
@@ -7117,7 +7581,8 @@ object
 
 **elevation**
 
-Elevated height of the target, indicated via a drop shadow.
+Elevated height of the target, indicated via a drop shadow. 
+      Only applicable if the Drop isn't plain.
 
 \`\`\`
 none
@@ -7131,7 +7596,15 @@ string
 
 **plain**
 
-Whether the drop element should have no background nor shadow
+Whether the drop element should have no background nor elevation.
+
+\`\`\`
+boolean
+\`\`\`
+
+**trapFocus**
+
+Traps keyboard focus inside of drop. Defaults to \`true\`.
 
 \`\`\`
 boolean
@@ -7146,7 +7619,7 @@ div
   
 **drop.maxHeight**
 
-The max height of the Drop container Expects \`string\`.
+The max height of the Drop container. Expects \`string\`.
 
 Defaults to
 
@@ -7156,7 +7629,7 @@ undefined
 
 **global.drop.background**
 
-The background color of Drop Expects \`string | { dark: string, light: string }\`.
+The background color of Drop. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
@@ -7166,7 +7639,7 @@ Defaults to
 
 **global.drop.border.radius**
 
-The corner radius Expects \`string\`.
+The border radius of the Drop container. Expects \`string\`.
 
 Defaults to
 
@@ -7186,7 +7659,7 @@ undefined
 
 **global.drop.shadowSize**
 
-Elevated height of the Drop Expects \`string\`.
+Elevated height of the Drop. Expects \`string\`.
 
 Defaults to
 
@@ -7196,7 +7669,7 @@ small
 
 **global.drop.zIndex**
 
-The stack order of the Drop Expects \`number\`.
+The stack order of the Drop. Expects \`number\`.
 
 Defaults to
 
@@ -7509,6 +7982,17 @@ function
 
 Function that will be called when the form is reset. The
       single argument is the event provided by react.
+
+\`\`\`
+function
+\`\`\`
+
+**onValidate**
+
+Function that will be called when the form is validated. The
+      single argument is an event containing the latest error object
+      via \`validationResults.errors\` and info object via 
+      \`validationResults.infos\`.
 
 \`\`\`
 function
@@ -7918,6 +8402,48 @@ Defaults to
 
 \`\`\`
 status-critical
+\`\`\`
+
+**formField.error.container**
+
+Any valid Box props for the container surrounding the error 
+    message and icon. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**formField.error.icon**
+
+An icon placed in a row with the error message. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**formField.info.container**
+
+Any valid Box props for the container surrounding the info 
+    message and icon. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**formField.info.icon**
+
+An icon placed in a row with the info message. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **formField.error.margin**
@@ -9048,8 +9574,16 @@ undefined
 **heading.level**
 
 The level that impacts line-height, max-width, font size, 
-weight and family of the Heading. Heading level is automatically adjusted at 
-different screen sizes. These screen sizes are derived from breakpoints. Expects \`object\`.
+weight and family of the Heading. Heading styling is automatically adjusted at 
+different screen sizes. When the heading.responsiveBreakpoint is hit (\\"small\\" 
+by default), all heading styles will automatically be adjusted. A heading of 
+level 1, for example, will use the styling defined in heading level 2; a 
+heading of level 2 will use the styling defined in heading level 3 and so 
+forth. The tag in the DOM is not adjusted. A heading of level 1 remains an h1. 
+The styling adjustment is intended to aid readability on smaller screens but 
+will not semantically affect your application structure. If you do not want 
+this responsive styling to occur, you can set header.responsiveBreakpoint to 
+undefined. Expects \`object\`.
 
 Defaults to
 
@@ -9949,6 +10483,18 @@ xlarge
     string
 }
 string
+\`\`\`
+
+**action**
+
+Accepts a function that allows for a custom rendering
+       of a component, it should be passed with an item and
+        index of an array and return a react element
+      \`action = ({item, index}) => <Content />\`
+    />
+
+\`\`\`
+function
 \`\`\`
 
 **as**
@@ -11516,6 +12062,16 @@ Defaults to
     }
 \`\`\`
 
+**paragraph.font.family**
+
+The font family to use for Paragraph. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **paragraph.textAlign**
 
 How to align the text inside the Paragraph. Expects \`string\`.
@@ -11737,9 +12293,30 @@ Defaults to
 undefined
 \`\`\`
 
+**radioButton.container.extend**
+
+Any additional style for the container around 
+    the RadioButton. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **radioButton.extend**
 
 Any additional style for the RadioButton. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**radioButton.font.weight**
+
+The font weight of the label. Expects \`number | string\`.
 
 Defaults to
 
@@ -11755,26 +12332,6 @@ Defaults to
 
 \`\`\`
 small
-\`\`\`
-
-**radioButton.font.weight**
-
-The font weight of the label. Expects \`number | string\`.
-
-Defaults to
-
-\`\`\`
-undefined
-\`\`\`
-
-**radioButton.size**
-
-The size of the RadioButton. Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-24px
 \`\`\`
 
 **radioButton.hover.background.color**
@@ -11818,15 +12375,24 @@ Defaults to
 undefined
 \`\`\`
 
-**radioButton.container.extend**
+**radioButton.icons.circle**
 
-Any additional style for the container around 
-    the RadioButton. Expects \`string | (props) => {}\`.
+The icon to replace the inner checked circle. Expects \`React.Element\`.
 
 Defaults to
 
 \`\`\`
 undefined
+\`\`\`
+
+**radioButton.size**
+
+The size of the RadioButton. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+24px
 \`\`\`
 ",
   "RadioButtonGroup": "## RadioButtonGroup
@@ -13181,7 +13747,7 @@ node
 
 Custom messages for SkipLinks. Used for accessibility by screen 
 readers. Defaults to \`{
-  \\"skipTo\\": \\"Skip To\\"
+  \\"skipTo\\": \\"Skip To:\\"
 }\`.
 
 \`\`\`
@@ -13189,7 +13755,99 @@ readers. Defaults to \`{
   skipTo: string
 }
 \`\`\`
-  ",
+  
+## Theme
+  
+**skipLinks.position**
+
+Position of the layer content once opened. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+top
+\`\`\`
+
+**skipLinks.container**
+
+Any valid Box prop for the SkipLinks container. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{ elevation: 'large', pad: 'medium', round: 'small' }
+\`\`\`
+
+**skipLinks.container.elevation**
+
+The container shadow. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+large
+\`\`\`
+
+**skipLinks.container.pad**
+
+The pad used for the layer container. Expects \`string | object\`.
+
+Defaults to
+
+\`\`\`
+medium
+\`\`\`
+
+**skipLinks.container.round**
+
+The rounding of the later container. Expects \`boolean | string | object\`.
+
+Defaults to
+
+\`\`\`
+small
+\`\`\`
+
+**skipLinks.label**
+
+Any valid Text prop for the text message. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{ margin: 'small', size: 'medium' }
+\`\`\`
+
+**skipLinks.label.margin**
+
+The margin size around the text message. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+{ bottom: medium }
+\`\`\`
+
+**skipLinks.label.size**
+
+The font size of the text label. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+medium
+\`\`\`
+
+**text.medium.size**
+
+The font size of the text label. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+18px
+\`\`\`
+",
   "Stack": "## Stack
 A container that stacks contents on top of each other. One child is
       designated as the \`guidingChild\` which determines the size. All
@@ -14465,9 +15123,12 @@ string
 
 **margin**
 
-The amount of margin around the component. An object can
-    be specified to distinguish horizontal margin, vertical margin, and
-    margin on a particular side.
+The amount of margin around the component. An object can be 
+    specified to distinguish horizontal margin, vertical margin, and margin on 
+    a particular side. For vertical margin to be applied, Text needs to be 
+    contained within a layout component (such as Box or a generic div) or 
+    behave as a div (by applying as=\\"div\\" or a display style of 
+    inline-block).
 
 \`\`\`
 none
@@ -14608,7 +15269,8 @@ end
 **truncate**
 
 Restrict the text to a single line and truncate with ellipsis if it
-is too long to all fit.
+is too long to all fit. For truncate to be applied, Text needs to be 
+contained within a layout component (such as Box or a generic div).
 
 \`\`\`
 boolean
@@ -14650,6 +15312,16 @@ Defaults to
 
 \`\`\`
 { dark: '#f8f8f8', light: '#444444' }
+\`\`\`
+
+**text.font.family**
+
+The font family to use for Text. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **text**
@@ -15158,8 +15830,20 @@ function
 
 **onSelect**
 
+Note: This function is deprecated, use onSuggestionSelect instead.
+      Function that will be called when the user selects a suggestion.
+      The suggestion contains the object chosen from the supplied suggestions.
+      When used in conjunction with onSuggestionSelect 
+      this will default to React's onSelect
+
+\`\`\`
+function
+\`\`\`
+
+**onSuggestionSelect**
+
 Function that will be called when the user selects a suggestion.
-The suggestion contains the object chosen from the supplied suggestions.
+      The suggestion contains the object chosen from the supplied suggestions.
 
 \`\`\`
 function
@@ -15191,11 +15875,14 @@ node
 
 **plain**
 
-Whether this is a plain input with no border or padding.
-Only use this when the containing context provides sufficient affordance
+Whether this is a plain input with no border or outline.
+      Use \\"full\\" to remove padding in addition to removing border and outline.
+      Only use this when the containing context provides sufficient 
+      affordance.
 
 \`\`\`
 boolean
+full
 \`\`\`
 
 **reverse**

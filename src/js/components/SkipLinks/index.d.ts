@@ -1,8 +1,8 @@
-import * as React from "react";
+import * as React from 'react';
 
 export interface SkipLinksProps {
   children: React.ReactNode;
-  messages?: {skipTo?: string};
+  messages?: { skipTo?: string };
 }
 
 declare const SkipLinks: React.FC<SkipLinksProps>;

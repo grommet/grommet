@@ -120,6 +120,6 @@ const DateTimeDropButton = () => {
   );
 };
 
-storiesOf('MaskedInput', module).add('Date Time Drop', () => (
+storiesOf('MaskedInput', module).add('Date time drop', () => (
   <DateTimeDropButton />
 ));

@@ -13,7 +13,7 @@ import { Box, Button, Calendar, Grommet, Text } from '../..';
 const DATE = '2020-01-15T00:00:00-08:00';
 const DATES = [
   '2020-01-12T00:00:00-08:00',
-  ['2020-01-8T00:00:00-08:00', '2020-01-10T00:00:00-08:00'],
+  ['2020-01-08T00:00:00-08:00', '2020-01-10T00:00:00-08:00'],
 ];
 
 describe('Calendar', () => {
@@ -42,9 +42,13 @@ describe('Calendar', () => {
   });
 
   test('disabled', () => {
+    // need to set the date to avoid snapshot drift over time
+    // have disabled date be distinct from selected date
+    const disabledDate = new Date(DATE);
+    disabledDate.setDate(disabledDate.getDate() + 1);
     const component = renderer.create(
       <Grommet>
-        <Calendar disabled={[DATE]} />
+        <Calendar date={DATE} disabled={[disabledDate.toDateString()]} />
       </Grommet>,
     );
     const tree = component.toJSON();
@@ -77,6 +81,16 @@ describe('Calendar', () => {
         <Calendar size="small" date={DATE} animate={false} />
         <Calendar size="medium" date={DATE} animate={false} />
         <Calendar size="large" date={DATE} animate={false} />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('fill', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Calendar fill date={DATE} animate={false} />
       </Grommet>,
     );
     const tree = component.toJSON();
@@ -143,6 +157,18 @@ describe('Calendar', () => {
           )}
           animate={false}
         />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('children', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Calendar date={DATE} fill animate={false}>
+          {({ day }) => <Box>{day}</Box>}
+        </Calendar>
       </Grommet>,
     );
     const tree = component.toJSON();

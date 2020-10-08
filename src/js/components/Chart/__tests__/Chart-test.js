@@ -203,6 +203,19 @@ describe('Chart', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  test('animate', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Chart type="bar" values={VALUES} animate />
+        <Chart type="line" values={VALUES} animate />
+        <Chart type="area" values={VALUES} animate />
+        <Chart type="point" values={VALUES} animate />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('undefined values', () => {
     const component = renderer.create(
       <Grommet>

@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { Header } from './Header';
 import { Footer } from './Footer';
@@ -18,8 +18,18 @@ const contexts = ['header', 'body', 'footer'];
 
 const normalizeProp = (prop, context) => {
   if (prop) {
-    if (prop[context]) return prop[context];
-    if (contexts.some(c => prop[c])) return undefined;
+    if (prop[context]) {
+      return prop[context];
+    }
+
+    // if prop[context] wasn't defined, but other values
+    // exist on the prop, return undefined so that background
+    // for context will defaultto theme values instead
+    // note: need to include `pinned` since it is not a
+    // defined context
+    if (contexts.some(c => prop[c] || prop.pinned)) {
+      return undefined;
+    }
     return prop;
   }
   return undefined;
@@ -30,16 +40,20 @@ const DataTable = ({
   border,
   columns = [],
   data = [],
+  fill,
   groupBy,
   onClickRow, // removing unknown DOM attributes
   onMore,
   onSearch, // removing unknown DOM attributes
+  onSelect,
   onSort: onSortProp,
   replace,
   pad,
+  pin,
   primaryKey,
   resizeable,
   rowProps,
+  select,
   size,
   sort: sortProp,
   sortable,
@@ -89,6 +103,14 @@ const DataTable = ({
   const [groupState, setGroupState] = useState(
     buildGroupState(groups, groupBy),
   );
+
+  const [selected, setSelected] = useState(
+    select || (onSelect && []) || undefined,
+  );
+  useEffect(() => setSelected(select || (onSelect && []) || undefined), [
+    onSelect,
+    select,
+  ]);
 
   // any customized column widths
   const [widths, setWidths] = useState({});
@@ -166,24 +188,37 @@ const DataTable = ({
   }
 
   return (
-    <StyledDataTable {...rest}>
+    <StyledDataTable fillProp={fill} {...rest}>
       <Header
         background={normalizeProp(background, 'header')}
         border={normalizeProp(border, 'header')}
         columns={columns}
+        data={adjustedData}
+        fill={fill}
         filtering={filtering}
         filters={filters}
         groups={groups}
         groupState={groupState}
         pad={normalizeProp(pad, 'header')}
+        pin={pin === true || pin === 'header'}
+        selected={selected}
         size={size}
         sort={sort}
         widths={widths}
         onFiltering={onFiltering}
         onFilter={onFilter}
         onResize={resizeable ? onResize : undefined}
+        onSelect={
+          onSelect
+            ? nextSelected => {
+                setSelected(nextSelected);
+                if (onSelect) onSelect(nextSelected);
+              }
+            : undefined
+        }
         onSort={sortable || sortProp || onSortProp ? onSort : undefined}
         onToggle={onToggleGroups}
+        primaryProperty={primaryProperty}
       />
       {groups ? (
         <GroupedBody
@@ -207,9 +242,19 @@ const DataTable = ({
           onMore={onMore}
           replace={replace}
           onClickRow={onClickRow}
+          onSelect={
+            onSelect
+              ? nextSelected => {
+                  setSelected(nextSelected);
+                  if (onSelect) onSelect(nextSelected);
+                }
+              : undefined
+          }
           pad={normalizeProp(pad, 'body')}
+          pinnedBackground={normalizeProp(background, 'pinned')}
           primaryProperty={primaryProperty}
           rowProps={rowProps}
+          selected={selected}
           size={size}
           step={step}
         />
@@ -219,10 +264,14 @@ const DataTable = ({
           background={normalizeProp(background, 'footer')}
           border={normalizeProp(border, 'footer')}
           columns={columns}
+          fill={fill}
           footerValues={footerValues}
           groups={groups}
+          onSelect={onSelect}
           pad={normalizeProp(pad, 'footer')}
+          pin={pin === true || pin === 'footer'}
           primaryProperty={primaryProperty}
+          selected={selected}
           size={size}
         />
       )}

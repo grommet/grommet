@@ -39,7 +39,5 @@ const CustomAnalog = () => (
 );
 
 if (!isChromatic()) {
-  storiesOf('TypeScript/Clock', module).add('Custom Analog', () => (
-    <CustomAnalog />
-  ));
+  storiesOf('Clock', module).add('Custom analog', () => <CustomAnalog />);
 }

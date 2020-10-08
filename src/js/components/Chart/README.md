@@ -124,6 +124,14 @@ xlarge
 string
 ```
 
+**animate**
+
+Whether to animate drawing.
+
+```
+boolean
+```
+
 **bounds**
 
 The limits for the values, specified as a two dimensional array. 
@@ -228,6 +236,17 @@ Called with a boolean argument
 
 ```
 function
+```
+
+**opacity**
+
+What opacity to apply to the visuals. Supercedes 'color.opacity'
+
+```
+weak
+medium
+strong
+boolean
 ```
 
 **overflow**

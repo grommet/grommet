@@ -367,6 +367,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         xlarge: `${baseSpacing * 4}px`,
       },
       text: {
+        size: {
+          xsmall: 'small',
+          small: 'medium',
+          medium: 'large',
+          large: 'xlarge',
+          xlarge: 'xxlarge',
+        },
         // fontWeight: undefined,
         // extend: undefined
       },
@@ -659,9 +666,28 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       minSpeed: 200,
       baseline: 500,
     },
+    dateInput: {
+      // icon: {
+      //   size: undefined,
+      // },
+    },
     dataTable: {
       // body: {
       //   extend: undefined,
+      // },
+      // pinned: {
+      //   body: {
+      //      background: undefined,
+      //      extend: undefined,
+      //   },
+      //   header: {
+      //      background: undefined,
+      //      extend: undefined,
+      //   },
+      //   footer: {
+      //      background: undefined,
+      //      extend: undefined,
+      //   },
       // },
       groupHeader: {
         background: {
@@ -674,12 +700,25 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       groupEnd: {
         border: { side: 'bottom', size: 'xsmall' },
       },
-      header: {},
+      header: {
+        // background: undefined,
+        // border: undefined,
+        // font: {
+        //   weight: undefined,
+        //   size: undefined,
+        // },
+        gap: 'small',
+        // hover: {
+        //   background: undefined,
+        // },
+        // pad: undefined,
+      },
       icons: {
         ascending: FormDown,
         contract: FormUp,
         descending: FormUp,
         expand: FormDown,
+        // sortable: undefined,
       },
       primary: {
         weight: 'bold',
@@ -741,6 +780,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         color: 'status-critical',
         margin: { vertical: 'xsmall', horizontal: 'small' },
         // background: undefined,
+        // container: {}, // any Box props
+        // icon: undefined,
       },
       // extend: undefined,
       help: {
@@ -752,6 +793,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       info: {
         color: 'text-xweak',
         margin: { vertical: 'xsmall', horizontal: 'small' },
+        // container: {}, // any Box props
+        // icon: undefined,
       },
       label: {
         margin: { vertical: 'xsmall', horizontal: 'small' },
@@ -874,6 +917,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
     },
     paragraph: {
+      font: {
+        // family: undefined
+      },
       small: { ...fontSizing(-1) },
       medium: { ...fontSizing(0) },
       large: { ...fontSizing(1) },
@@ -985,6 +1031,18 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // searchInput: undefined,
       step: 20,
     },
+    skipLinks: {
+      position: 'top',
+      container: {
+        elevation: 'large',
+        round: 'small',
+        pad: 'medium',
+      },
+      label: {
+        margin: { bottom: 'medium' },
+        size: 'medium',
+      },
+    },
     tab: {
       active: {
         color: 'text',
@@ -1086,6 +1144,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     text: {
+      font: {
+        // family: undefined
+      },
       xsmall: { ...fontSizing(-1.5) },
       small: { ...fontSizing(-1) },
       medium: { ...fontSizing(0) }, // 18px

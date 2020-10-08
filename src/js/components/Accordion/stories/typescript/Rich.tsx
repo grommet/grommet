@@ -21,6 +21,8 @@ import {
 } from 'grommet';
 import { grommet, ThemeType } from 'grommet/themes';
 
+// Type annotations can only be used in TypeScript files.
+// Remove ': ThemeType' if you are not using Typescript.
 const richAccordionTheme: ThemeType = {
   accordion: {
     icons: {
@@ -248,8 +250,4 @@ const RichAccordion = () => {
   );
 };
 
-if (!isChromatic()) {
-  storiesOf('TypeScript/Accordion', module).add('Rich', () => (
-    <RichAccordion />
-  ));
-}
+storiesOf('Accordion', module).add('Rich', () => <RichAccordion />);

@@ -4,6 +4,8 @@ import { storiesOf } from '@storybook/react';
 import { ThemeType, BoxTypes, Grommet, Box, Anchor, Button } from 'grommet';
 
 // Custom theme to verify that various `extend` types work correctly
+// Type annotations can only be used in TypeScript files.
+// Remove ': ThemeType' and :' BoxTypes' if you are not using TypeScript.
 const custom: ThemeType = {
   box: {
     extend: css`
@@ -41,6 +43,8 @@ const custom: ThemeType = {
   },
 };
 
+// Type annotations can only be used in TypeScript files.
+// Remove ': TReact.FC' is you are not using TypeScript.
 const ExtendTheme: React.FC = () => {
   return (
     <Grommet theme={custom}>
@@ -59,4 +63,4 @@ const ExtendTheme: React.FC = () => {
   );
 };
 
-storiesOf('TypeScript/Theme', module).add('Extend', () => <ExtendTheme />);
+storiesOf('Theme', module).add('Extend', () => <ExtendTheme />);

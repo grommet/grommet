@@ -1,11 +1,11 @@
 import styled, { css } from 'styled-components';
 
 import {
-  backgroundStyle,
+  activeStyle,
   disabledStyle,
   focusStyle,
   genericStyles,
-  normalizeColor,
+  kindPartStyles,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
 
@@ -67,81 +67,6 @@ const basicStyle = props => css`
     vertical-align: bottom;
   }
 `;
-
-// CSS for this sub-object in the theme
-const kindPartStyles = (obj, theme, colorValue) => {
-  const styles = [];
-  if (obj.padding) {
-    if (obj.padding.vertical || obj.padding.horizontal)
-      styles.push(
-        `padding: ${theme.global.edgeSize[obj.padding.vertical] ||
-          obj.padding.vertical ||
-          0} ${theme.global.edgeSize[obj.padding.horizontal] ||
-          obj.padding.horizontal ||
-          0};`,
-      );
-    else
-      styles.push(
-        `padding: ${theme.global.edgeSize[obj.padding] || obj.padding || 0};`,
-      );
-  }
-  if (obj.background)
-    styles.push(
-      backgroundStyle(
-        colorValue || obj.background,
-        theme,
-        obj.color ||
-          (Object.prototype.hasOwnProperty.call(obj, 'color') &&
-          obj.color === undefined
-            ? false
-            : undefined),
-      ),
-    );
-  else if (obj.color)
-    styles.push(`color: ${normalizeColor(obj.color, theme)};`);
-  if (obj.border) {
-    if (obj.border.width)
-      styles.push(css`
-        border-style: solid;
-        border-width: ${obj.border.width};
-      `);
-    if (obj.border.color)
-      styles.push(css`
-        border-color: ${normalizeColor(
-          (!obj.background && colorValue) || obj.border.color || 'border',
-          theme,
-        )};
-      `);
-    if (obj.border.radius)
-      styles.push(css`
-        border-radius: ${obj.border.radius};
-      `);
-  } else if (obj.border === false) styles.push('border: none;');
-  if (colorValue && !obj.border && !obj.background)
-    styles.push(`color: ${normalizeColor(colorValue, theme)};`);
-  if (obj.font) {
-    if (obj.font.size) {
-      styles.push(
-        `font-size: ${theme.text[obj.font.size].size || obj.font.size};`,
-      );
-    }
-    if (obj.font.height) {
-      styles.push(`line-height: ${obj.font.height};`);
-    }
-    if (obj.font.weight) {
-      styles.push(`font-weight: ${obj.font.weight};`);
-    }
-  }
-  if (obj.opacity) {
-    const opacity =
-      obj.opacity === true
-        ? theme.global.opacity.medium
-        : theme.global.opacity[obj.opacity] || obj.opacity;
-    styles.push(`opacity: ${opacity};`);
-  }
-  if (obj.extend) styles.push(obj.extend);
-  return styles;
-};
 
 // build up CSS from basic to specific based on the supplied sub-object paths
 const kindStyle = ({ colorValue, themePaths, theme }) => {
@@ -240,19 +165,27 @@ const StyledButtonKind = styled.button`
 
   ${genericStyles}
   ${props => props.plain && plainStyle(props)}
+  // set baseline activeStyle for all buttons including plain buttons
+  // buttons with kind will have active styling overridden by kindStyle
+  // if they have specific state styles
+  ${props => !props.disabled && props.active && activeStyle}
   ${props => !props.plain && basicStyle(props)}
   ${props => !props.plain && kindStyle(props)}
   ${props =>
     !props.plain &&
     props.align &&
     `
-  text-align: ${props.align};
-  `}
-  ${props => props.hoverIndicator && hoverIndicatorStyle(props)}
+    text-align: ${props.align};
+    `}
+  ${props =>
+    !props.disabled && props.hoverIndicator && hoverIndicatorStyle(props)}
   ${props =>
     props.disabled && disabledStyle(props.theme.button.disabled.opacity)}
-  ${props =>
-    props.focus && (!props.plain || props.focusIndicator) && focusStyle()}
+
+  &:focus {
+    ${props => (!props.plain || props.focusIndicator) && focusStyle()}
+  }
+  
   ${props =>
     !props.plain &&
     props.theme.button.transition &&

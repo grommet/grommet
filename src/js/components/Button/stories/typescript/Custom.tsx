@@ -1,10 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import isChromatic from 'chromatic/isChromatic';
-
+import { ThemeType } from 'grommet/themes';
 import { grommet, Box, Button, Grommet } from 'grommet';
 
-const customTheme = {
+// Type annotations can only be used in TypeScript files.
+// Remove ': ThemeType' if you are not using Typescript.
+const customTheme: ThemeType = {
   global: {
     font: {
       family: 'Arial',
@@ -68,6 +69,4 @@ const CustomTheme = () => (
   </>
 );
 
-if (!isChromatic()) {
-  storiesOf('TypeScript/Button', module).add('Custom', () => <CustomTheme />);
-}
+storiesOf('Button', module).add('TS-Custom', () => <CustomTheme />);

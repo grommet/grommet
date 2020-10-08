@@ -28,4 +28,4 @@ export const ChildrenExample = () => (
   </Grommet>
 );
 
-storiesOf('List', module).add('children', () => <ChildrenExample />);
+storiesOf('List', module).add('Children', () => <ChildrenExample />);

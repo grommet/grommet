@@ -3,6 +3,7 @@ import {
   FlattenSimpleInterpolation,
   ThemedStyledProps,
 } from 'styled-components';
+import { ReactComponentElement } from 'react';
 
 import {
   BackgroundType,
@@ -25,7 +26,7 @@ import { BoxProps } from '../components/Box';
 import { Anchor } from '../components/Anchor';
 import { Box } from '../components/Box';
 import { Text, TextProps } from '../components/Text';
-import { ReactComponentElement } from 'react';
+import { LayerPositionType } from '../components/Layer';
 
 export declare const base: DeepReadonly<ThemeType>;
 export declare const generate: (
@@ -142,10 +143,12 @@ interface ButtonKindType {
 export interface ThemeType {
   global?: {
     active?: {
-      background?: {
-        color?: ColorType;
-        opacity?: OpacityType;
-      };
+      background?:
+        | ColorType
+        | {
+            color?: ColorType;
+            opacity?: OpacityType;
+          };
       color?: ColorType;
     };
     animation?: {
@@ -352,6 +355,14 @@ export interface ThemeType {
       [x: string]: string | undefined;
     };
     text?: {
+      size?: {
+        xsmall?: string;
+        small?: string;
+        medium?: string;
+        large?: string;
+        xlarge?: string;
+        [x: string]: string | undefined;
+      };
       fontWeight?: number;
       extend?: ExtendType;
     };
@@ -586,11 +597,28 @@ export interface ThemeType {
     minSpeed?: number;
     baseline?: number;
   };
+  dateInput?: {
+    icon?: {
+      size?: string;
+    };
+  };
   dataTable?: {
     body?: {
       extend?: ExtendType;
     };
-    header?: {};
+    header?: {
+      background?: BackgroundType;
+      border?: BorderType;
+      font?: {
+        weight?: string;
+        size?: string;
+      };
+      gap?: GapType;
+      hover?: {
+        background?: BackgroundType;
+      };
+      pad?: PadType;
+    };
     groupHeader?: {
       border?: {
         side?: string;
@@ -611,6 +639,21 @@ export interface ThemeType {
       contract?: any;
       descending?: any;
       expand?: any;
+      sortable?: any;
+    };
+    pinned?: {
+      body?: {
+        background?: BackgroundType;
+        extend?: ExtendType;
+      };
+      header?: {
+        background?: BackgroundType;
+        extend?: ExtendType;
+      };
+      footer?: {
+        background?: BackgroundType;
+        extend?: ExtendType;
+      };
     };
     resize?: {
       border?: {
@@ -657,6 +700,8 @@ export interface ThemeType {
       background?: BackgroundType;
       color?: ColorType;
       margin?: MarginType;
+      container?: BoxProps;
+      icon?: any;
     };
     help?: {
       color?: ColorType;
@@ -665,6 +710,8 @@ export interface ThemeType {
     info?: {
       color?: ColorType;
       margin?: MarginType;
+      container?: BoxProps;
+      icon?: any;
     };
     label?: TextProps;
     margin?: MarginType;
@@ -996,6 +1043,11 @@ export interface ThemeType {
     // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/37506
     searchInput?: ReactComponentElement<any>;
     step?: number;
+  };
+  skipLinks?: {
+    position?: LayerPositionType;
+    container?: BoxProps;
+    label?: TextProps;
   };
   tab?: {
     active?: {

@@ -137,8 +137,20 @@ function
 
 **onSelect**
 
+Note: This function is deprecated, use onSuggestionSelect instead.
+      Function that will be called when the user selects a suggestion.
+      The suggestion contains the object chosen from the supplied suggestions.
+      When used in conjunction with onSuggestionSelect 
+      this will default to React's onSelect
+
+```
+function
+```
+
+**onSuggestionSelect**
+
 Function that will be called when the user selects a suggestion.
-The suggestion contains the object chosen from the supplied suggestions.
+      The suggestion contains the object chosen from the supplied suggestions.
 
 ```
 function
@@ -170,11 +182,14 @@ node
 
 **plain**
 
-Whether this is a plain input with no border or padding.
-Only use this when the containing context provides sufficient affordance
+Whether this is a plain input with no border or outline.
+      Use "full" to remove padding in addition to removing border and outline.
+      Only use this when the containing context provides sufficient 
+      affordance.
 
 ```
 boolean
+full
 ```
 
 **reverse**

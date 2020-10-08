@@ -265,6 +265,10 @@ describe('Box', () => {
             <Box />
           </Box>
         ))}
+        <Box as="span" gap="small">
+          <span>first</span>
+          <span>second</span>
+        </Box>
       </Grommet>,
     );
     const tree = component.toJSON();

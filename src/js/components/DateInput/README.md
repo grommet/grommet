@@ -129,3 +129,12 @@ div
 ```
 ## Theme
   
+**dateInput.icon.size**
+
+The size of the Calendar icon Expects `string`.
+
+Defaults to
+
+```
+24px
+```

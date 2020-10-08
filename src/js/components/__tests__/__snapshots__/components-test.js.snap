@@ -1207,7 +1207,8 @@ string",
       Button can take in Children as a function, node, or object. 
       For example hover can be passed as an object that would 
       then return a react element.
-      \`children={({ hover }) => <Box...>{...}</Box>}\`
+      \`children={({ hover }) => <Box...>{...}</Box>}\`. When Button has
+      children, it is styled as a \`plain\` button.
       ",
         "format": "function
 object
@@ -1517,6 +1518,17 @@ string",
         "name": "bounds",
       },
       Object {
+        "description": "Function that will be called to render each day.
+      It will be passed \`({date, day, isInRange, isSelected})\` where \`date\`
+      is a string containing an ISO8601 date for the day being rendered, \`day\`
+      is a number containing the day of the month being rendered, \`isInRange\`
+      is a boolean indicating whether the date is within a selected range of
+      dates, and \`isSelected\` is a boolean indicating whether this date
+      is selected.",
+        "format": "function",
+        "name": "children",
+      },
+      Object {
         "description": "The selected date in ISO8601 format",
         "format": "string",
         "name": "date",
@@ -1546,6 +1558,12 @@ string",
         "name": "daysOfWeek",
       },
       Object {
+        "defaultValue": false,
+        "description": "Whether the calendar should fill the parent container.",
+        "format": "boolean",
+        "name": "fill",
+      },
+      Object {
         "defaultValue": 0,
         "description": "The first day of the week. 0 for Sunday. 1 for Monday.",
         "format": "0
@@ -1567,10 +1585,10 @@ The function passes the following options:
   }
 \`\`\`
 
-\`onPreviousMonth\` and \`onNextMonth\` are callbacks that will tell the 
+\`onPreviousMonth\` and \`onNextMonth\` are callbacks that will tell the
 calendar to move between months.
-\`previousInBound\` and \`nextInBound\` are booleans that tell, when using 
-\`bounds\`, if the current date is within that range. You can then use that 
+\`previousInBound\` and \`nextInBound\` are booleans that tell, when using
+\`bounds\`, if the current date is within that range. You can then use that
 to disable the previous and next buttons.
 ",
         "format": "function",
@@ -1643,7 +1661,9 @@ string",
         "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/card&module=%2Fsrc%2FCard.js",
       },
     ],
-    "description": "A Card.",
+    "description": "A Card is a container of information that provides access to more 
+      details. Elements of a Card can include Header, Body, Footer or any 
+      other custom component.",
     "intrinsicElement": "div",
     "name": "Card",
     "usage": "import { Card } from 'grommet';
@@ -1771,6 +1791,11 @@ string",
         "name": "margin",
       },
       Object {
+        "description": "Whether to animate drawing.",
+        "format": "boolean",
+        "name": "animate",
+      },
+      Object {
         "description": "The limits for the values, specified as a two dimensional array. 
       The first array specifies the limits of the x-axis. The second array 
       specifies the limits of the y-axis. 
@@ -1856,6 +1881,14 @@ string",
       This is only available when the type is line or area.",
         "format": "function",
         "name": "onHover",
+      },
+      Object {
+        "description": "What opacity to apply to the visuals. Supercedes 'color.opacity'",
+        "format": "weak
+medium
+strong
+boolean",
+        "name": "opacity",
       },
       Object {
         "defaultValue": false,
@@ -2556,50 +2589,113 @@ string",
         "name": "margin",
       },
       Object {
-        "description": "Chart properties indicating how to visualize the data.
-    'key' indicates which property of the data objects to use. 'keys' indicates
-    that multiple properties should be used for a stacked bar chart. DataChart
-    uses the key/keys to build the right 'values' for the underlying Chart.
-    All of the other properties in 'chart' are passed through to the Chart.",
-        "format": "{
-  key: string,
-  keys: [{
-  key: string,
-  color: 
+        "defaultValue": true,
+        "description": "Whether to show an axis and how it should look.
+      If 'x' or 'y' is a string, it indicates the property to use
+      to determine the values to show.
+      If axis or 'x' is true, DataChart will look for a property called 'date'
+      or 'time' and automatically use that for the x-axis. If DataChart
+      can't find a property to use, it will use the data index for the x-axis.
+      If axis or 'y' is true, DataChart will use the first property in 'series'.
+      'granularity' indicates how many values to show.
+      'coarse' granularity shows two values, one at each end.
+      'fine' granularity shows all x-axis values and 5 y-axis values.
+      'medium' granularity picks something in between.",
+        "format": "boolean
+{
+  x: 
+    boolean
     string
     {
-      color: string,
-      opacity: 
-        weak
+      property: string,
+      granularity: 
+        coarse
         medium
-        strong
-        boolean
+        fine
+    },
+  y: 
+    boolean
+    string
+    {
+      property: string,
+      granularity: 
+        coarse
+        medium
+        fine
     }
-    [{
+}",
+        "name": "axis",
+      },
+      Object {
+        "defaultValue": "align",
+        "description": "When set to 'align', indicates that the bounds of all series
+      should be aligned. When not set, the bounds of each series
+      property are based solely on the data found for that property.",
+        "format": "align",
+        "name": "bounds",
+      },
+      Object {
+        "description": "How to visualize the data.
+    'property' indicates which property of the data objects to use.
+    When 'property' is an array, multiple properties are used for a
+    stacked bar chart. If only a string is specified, that is the property
+    to use and all other aspects are defaulted. If 'property' is an object,
+    it specifies a map of properties to graphic aspects: x, y, color, thickness.
+    If 'transform' is specified, it will be used to transform the data value
+    before using it. For example, to convert a data value to a hex color
+    string for the color.",
+        "format": "string
+{
+  property: 
+    string
+    [
+      string
+      {
+        property: string,
+        color: 
+          string
+          [{
   color: string,
   value: number
 }]
-}],
-  a11yTitle: string,
-  bounds: [[number]],
+      }
+    ]
+    {
+      color: 
+        string
+        {
+          property: string,
+          transform: function
+        },
+      thickness: 
+        string
+        {
+          property: string,
+          transform: function
+        },
+      x: string,
+      y: string
+    },
   color: 
     string
-    {
-      color: string,
-      opacity: 
-        weak
-        medium
-        strong
-        boolean
-    }
     [{
   color: string,
   value: number
 }],
   dash: boolean,
-  onClick: function,
-  onHover: function,
-  overflow: boolean,
+  opacity: 
+    weak
+    medium
+    strong
+    number
+    boolean,
+  point: 
+    circle
+    diamond
+    square
+    star
+    triangle
+    triangleDown,
   round: boolean,
   thickness: 
     hair
@@ -2612,65 +2708,82 @@ string",
     string,
   type: 
     bar
+    bars
     line
     area
     point
 }
-[{
-  key: string,
-  keys: [{
-  key: string,
-  color: 
-    string
-    {
-      color: string,
-      opacity: 
-        weak
-        medium
-        strong
-        boolean
-    }
-    [{
+[
+  string
+  {
+    property: 
+      string
+      [
+        string
+        {
+          property: string,
+          color: 
+            string
+            [{
   color: string,
   value: number
 }]
-}],
-  a11yTitle: string,
-  bounds: [[number]],
-  color: 
-    string
-    {
-      color: string,
-      opacity: 
-        weak
-        medium
-        strong
-        boolean
-    }
-    [{
+        }
+      ]
+      {
+        color: 
+          string
+          {
+            property: string,
+            transform: function
+          },
+        thickness: 
+          string
+          {
+            property: string,
+            transform: function
+          },
+        x: string,
+        y: string
+      },
+    color: 
+      string
+      [{
   color: string,
   value: number
 }],
-  dash: boolean,
-  onClick: function,
-  onHover: function,
-  overflow: boolean,
-  round: boolean,
-  thickness: 
-    hair
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    none
-    string,
-  type: 
-    bar
-    line
-    area
-    point
-}]",
+    dash: boolean,
+    opacity: 
+      weak
+      medium
+      strong
+      number
+      boolean,
+    point: 
+      circle
+      diamond
+      square
+      star
+      triangle
+      triangleDown,
+    round: boolean,
+    thickness: 
+      hair
+      xsmall
+      small
+      medium
+      large
+      xlarge
+      none
+      string,
+    type: 
+      bar
+      bars
+      line
+      area
+      point
+  }
+]",
         "name": "chart",
       },
       Object {
@@ -2679,6 +2792,14 @@ string",
 
 }]",
         "name": "data",
+      },
+      Object {
+        "description": "Whether to add the ability to interact with the chart
+      via mouse or keyboard to show details on specific values in the chart.
+      It shows all properties specified in 'series', using any 'render'
+      functions therein.",
+        "format": "boolean",
+        "name": "detail",
       },
       Object {
         "description": "The spacing between the axes and the Charts.",
@@ -2691,6 +2812,35 @@ large
 xlarge
 string",
         "name": "gap",
+      },
+      Object {
+        "description": "Whether to put guidelines underneath the chart graphics.
+    See the description of 'granularity' under 'axis'.",
+        "format": "boolean
+{
+  x: 
+    boolean
+    {
+      granularity: 
+        coarse
+        medium
+        fine
+    },
+  y: 
+    boolean
+    {
+      granularity: 
+        coarse
+        medium
+        fine
+    }
+}",
+        "name": "guide",
+      },
+      Object {
+        "description": "Whether to include a legend",
+        "format": "boolean",
+        "name": "legend",
       },
       Object {
         "defaultValue": "none",
@@ -2773,10 +2923,36 @@ string",
         "name": "pad",
       },
       Object {
-        "defaultValue": Object {
-          "height": "small",
-          "width": "medium",
-        },
+        "description": "Describes which parts of the 'data' are of interest and
+    how to handle them. 'property' indicates which property of the 'data'
+    objects this series refers to. 'label' indicates how to label the series
+    in a legend or hover details. 'prefix' and 'suffix' are applied to the
+    data values shown in an axis, legend, or details. 'render' allows custom
+    rendering of the data value. 'render' is called with:
+    (value, datum, property) => { return < />; }",
+        "format": "string
+{
+  label: 
+    string,
+  prefix: string,
+  property: string,
+  render: function,
+  suffix: string
+}
+[
+  string
+  {
+    label: 
+      string,
+    prefix: string,
+    property: string,
+    render: function,
+    suffix: string
+  }
+]",
+        "name": "series",
+      },
+      Object {
         "description": "The size of the Charts. This does not include the axes
       and any gap. It is passed through to the underlying Chart.",
         "format": "fill
@@ -2803,56 +2979,9 @@ string",
 }",
         "name": "size",
       },
-      Object {
-        "description": "Chart thickness given to all
-    Charts if not specified per Chart in 'chart'.",
-        "format": "hair
-xsmall
-small
-medium
-large
-xlarge
-none
-string",
-        "name": "thickness",
-      },
-      Object {
-        "description": "x-axis configuration. 'guide' specifies that vertical
-    guide lines should be drawn under the Chart, one per label.
-    'key' specifies what property in the 'data' should be used as
-    any label content. 'labels' specifies how many labels to show.
-    'render' allows for custom rendering of the labels. It will be
-    called with the current data index and axis index and should return
-    the element to render: (dataIndex, axisIndex) => element.",
-        "format": "boolean
-{
-  guide: boolean,
-  key: string,
-  labels: number,
-  render: function
-}",
-        "name": "xAxis",
-      },
-      Object {
-        "description": "y-axis configuration. 'guide' specifies that horizontal
-    guide lines should be drawn under the Chart, one per label.
-    'labels' specifies how many labels to show.
-    'render' allows for custom rendering of the labels. It will be
-    called with the value and axis index and should return
-    the element to render: (value, axisIndex) => element",
-        "format": "boolean
-{
-  guide: boolean,
-  labels: number,
-  prefix: string,
-  render: function,
-  suffix: string
-}",
-        "name": "yAxis",
-      },
     ],
     "usage": "import { DataChart } from 'grommet';
-<DataChart data={data} chart={} />",
+<DataChart data={data} property={} />",
   },
   "DataTable": [Function],
   "DateInput": Object {
@@ -3115,10 +3244,12 @@ string",
       },
       Object {
         "defaultValue": true,
-        "description": "Whether the drop element should be stretched to at least match the
-      width of the target element. The default is true because
-      that is what most uses of Drop want, like Select and Menu.",
-        "format": "boolean",
+        "description": "If set to true the drop element will be stretched to at least match the
+      width of the target element. If set to align the width of the drop element
+      will be restricted to the width of the target element. The default is true
+      because that is what most uses of Drop want, like Select and Menu.",
+        "format": "boolean
+align",
         "name": "stretch",
       },
       Object {
@@ -3129,7 +3260,8 @@ string",
         "required": true,
       },
       Object {
-        "description": "Elevated height of the target, indicated via a drop shadow.",
+        "description": "Elevated height of the target, indicated via a drop shadow. 
+      Only applicable if the Drop isn't plain.",
         "format": "none
 xsmall
 small
@@ -3141,9 +3273,15 @@ string",
       },
       Object {
         "defaultValue": false,
-        "description": "Whether the drop element should have no background nor shadow",
+        "description": "Whether the drop element should have no background nor elevation.",
         "format": "boolean",
         "name": "plain",
+      },
+      Object {
+        "defaultValue": true,
+        "description": "Traps keyboard focus inside of drop.",
+        "format": "boolean",
+        "name": "trapFocus",
       },
     ],
     "usage": "import { Drop } from 'grommet';
@@ -3405,6 +3543,14 @@ string",
       single argument is the event provided by react.",
         "format": "function",
         "name": "onReset",
+      },
+      Object {
+        "description": "Function that will be called when the form is validated. The
+      single argument is an event containing the latest error object
+      via \`validationResults.errors\` and info object via 
+      \`validationResults.infos\`.",
+        "format": "function",
+        "name": "onValidate",
       },
       Object {
         "defaultValue": "submit",
@@ -4739,6 +4885,15 @@ xlarge
 }
 string",
         "name": "margin",
+      },
+      Object {
+        "description": "Accepts a function that allows for a custom rendering
+       of a component, it should be passed with an item and
+        index of an array and return a react element
+      \`action = ({item, index}) => <Content />\`
+    />",
+        "format": "function",
+        "name": "action",
       },
       Object {
         "defaultValue": "ul",
@@ -6376,7 +6531,10 @@ function
 <Select />",
   },
   "Sidebar": [Function],
-  "SkipLink": [Function],
+  "SkipLink": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
   "SkipLinkTarget": [Function],
   "SkipLinks": [Function],
   "Stack": [Function],
@@ -6699,9 +6857,12 @@ stretch",
         "name": "gridArea",
       },
       Object {
-        "description": "The amount of margin around the component. An object can
-    be specified to distinguish horizontal margin, vertical margin, and
-    margin on a particular side.",
+        "description": "The amount of margin around the component. An object can be 
+    specified to distinguish horizontal margin, vertical margin, and margin on 
+    a particular side. For vertical margin to be applied, Text needs to be 
+    contained within a layout component (such as Box or a generic div) or 
+    behave as a div (by applying as=\\"div\\" or a display style of 
+    inline-block).",
         "format": "none
 xxsmall
 xsmall
@@ -6828,7 +6989,8 @@ end",
       Object {
         "defaultValue": false,
         "description": "Restrict the text to a single line and truncate with ellipsis if it
-is too long to all fit.",
+is too long to all fit. For truncate to be applied, Text needs to be 
+contained within a layout component (such as Box or a generic div).",
         "format": "boolean",
         "name": "truncate",
       },
@@ -7049,10 +7211,19 @@ string",
         "name": "onChange",
       },
       Object {
-        "description": "Function that will be called when the user selects a suggestion.
-The suggestion contains the object chosen from the supplied suggestions.",
+        "description": "Note: This function is deprecated, use onSuggestionSelect instead.
+      Function that will be called when the user selects a suggestion.
+      The suggestion contains the object chosen from the supplied suggestions.
+      When used in conjunction with onSuggestionSelect 
+      this will default to React's onSelect",
         "format": "function",
         "name": "onSelect",
+      },
+      Object {
+        "description": "Function that will be called when the user selects a suggestion.
+      The suggestion contains the object chosen from the supplied suggestions.",
+        "format": "function",
+        "name": "onSuggestionSelect",
       },
       Object {
         "description": "Function that will be called when the suggestions drop is opened.",
@@ -7070,9 +7241,12 @@ The suggestion contains the object chosen from the supplied suggestions.",
         "name": "placeholder",
       },
       Object {
-        "description": "Whether this is a plain input with no border or padding.
-Only use this when the containing context provides sufficient affordance",
-        "format": "boolean",
+        "description": "Whether this is a plain input with no border or outline.
+      Use \\"full\\" to remove padding in addition to removing border and outline.
+      Only use this when the containing context provides sufficient 
+      affordance.",
+        "format": "boolean
+full",
         "name": "plain",
       },
       Object {
@@ -7480,6 +7654,7 @@ boolean",
 <WorldMap />",
   },
   "__esModule": true,
+  "calcBounds": [Function],
   "calcs": [Function],
   "round": [Function],
 }

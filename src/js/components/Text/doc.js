@@ -3,9 +3,10 @@ import { describe, PropTypes } from 'react-desc';
 import {
   colorPropType,
   genericProps,
-  getAvailableAtBadge,
-  themeDocUtils,
-} from '../../utils';
+  MARGIN_SIZES,
+} from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
+import { themeDocUtils } from '../../utils/themeDocUtils';
 
 export const doc = Text => {
   const DocumentedText = describe(Text)
@@ -22,6 +23,49 @@ export const doc = Text => {
     color: colorPropType.description(
       'A color identifier to use for the text color.',
     ),
+    margin: PropTypes.oneOfType([
+      PropTypes.oneOf(['none', ...MARGIN_SIZES]),
+      PropTypes.shape({
+        bottom: PropTypes.oneOfType([
+          PropTypes.oneOf(MARGIN_SIZES),
+          PropTypes.string,
+        ]),
+        end: PropTypes.oneOfType([
+          PropTypes.oneOf(MARGIN_SIZES),
+          PropTypes.string,
+        ]),
+        horizontal: PropTypes.oneOfType([
+          PropTypes.oneOf(MARGIN_SIZES),
+          PropTypes.string,
+        ]),
+        left: PropTypes.oneOfType([
+          PropTypes.oneOf(MARGIN_SIZES),
+          PropTypes.string,
+        ]),
+        right: PropTypes.oneOfType([
+          PropTypes.oneOf(MARGIN_SIZES),
+          PropTypes.string,
+        ]),
+        start: PropTypes.oneOfType([
+          PropTypes.oneOf(MARGIN_SIZES),
+          PropTypes.string,
+        ]),
+        top: PropTypes.oneOfType([
+          PropTypes.oneOf(MARGIN_SIZES),
+          PropTypes.string,
+        ]),
+        vertical: PropTypes.oneOfType([
+          PropTypes.oneOf(MARGIN_SIZES),
+          PropTypes.string,
+        ]),
+      }),
+      PropTypes.string,
+    ]).description(`The amount of margin around the component. An object can be 
+    specified to distinguish horizontal margin, vertical margin, and margin on 
+    a particular side. For vertical margin to be applied, Text needs to be 
+    contained within a layout component (such as Box or a generic div) or 
+    behave as a div (by applying as="div" or a display style of 
+    inline-block).`),
     size: PropTypes.oneOfType([
       PropTypes.oneOf([
         'xsmall',
@@ -57,7 +101,8 @@ adjustments.`,
     truncate: PropTypes.bool
       .description(
         `Restrict the text to a single line and truncate with ellipsis if it
-is too long to all fit.`,
+is too long to all fit. For truncate to be applied, Text needs to be 
+contained within a layout component (such as Box or a generic div).`,
       )
       .defaultValue(false),
     weight: PropTypes.oneOfType([
@@ -84,6 +129,11 @@ export const themeDoc = {
     description: 'The text color used for Text.',
     type: 'object | { dark: string, light: string }',
     defaultValue: "{ dark: '#f8f8f8', light: '#444444' }",
+  },
+  'text.font.family': {
+    description: 'The font family to use for Text.',
+    type: 'string',
+    defaultValue: undefined,
   },
   text: {
     description: `The possible sizes of the text in terms of its font-size and 

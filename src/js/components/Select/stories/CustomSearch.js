@@ -199,4 +199,4 @@ const CustomSearchSelect = () => {
   );
 };
 
-storiesOf('Select', module).add('Custom Search', () => <CustomSearchSelect />);
+storiesOf('Select', module).add('Custom search', () => <CustomSearchSelect />);
