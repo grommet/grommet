@@ -134,8 +134,8 @@ Function that can be called to render the visual representation.
       Button can take in Children as a function, node, or object. 
       For example hover can be passed as an object that would 
       then return a react element.
-      `children={({ hover }) => <Box...>{...}</Box>}`. When Button has
-      children, it is styled as a `plain` button.
+      `children={({ hover, focus }) => <Box...>{...}</Box>}`. 
+      When Button has children, it is styled as a `plain` button.
       
 
 ```
