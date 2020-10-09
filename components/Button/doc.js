@@ -29,7 +29,7 @@ var doc = function doc(Button) {
     icon: _reactDesc.PropTypes.element.description('Icon element to place in the button.'),
     label: _reactDesc.PropTypes.node.description('Label text to place in the button.'),
     onClick: _reactDesc.PropTypes.func.description("Click handler. Not setting this property and not specifying a href\n        causes the Button to be disabled."),
-    plain: _reactDesc.PropTypes.bool.description("Whether this is a plain button with no border or pad.\n          Non plain button will show both pad and border.\n          The plain button has no border and unless the icon prop exist it has \n          no pad as well.").defaultValue(false),
+    plain: _reactDesc.PropTypes.bool.description("Whether this is a plain button with no border or pad.\n          Non plain button will show both pad and border.\n          The plain button has no border and unless the icon prop exist it has \n          no pad as well. \n          When using the kind button (i.e. button.default on the theme), \n          the usage of plain is deprecated.").defaultValue(false),
     primary: _reactDesc.PropTypes.bool.description("Whether this is a primary button. There should be at most one per page\n            or screen.").defaultValue(false),
     reverse: _reactDesc.PropTypes.bool.description("Whether an icon and label should be reversed so that the icon is at the\n              end of the anchor.").defaultValue(false),
     secondary: _reactDesc.PropTypes.bool.description("Whether this is a secondary button."),

@@ -20,7 +20,7 @@ export var doc = function doc(Button) {
     icon: PropTypes.element.description('Icon element to place in the button.'),
     label: PropTypes.node.description('Label text to place in the button.'),
     onClick: PropTypes.func.description("Click handler. Not setting this property and not specifying a href\n        causes the Button to be disabled."),
-    plain: PropTypes.bool.description("Whether this is a plain button with no border or pad.\n          Non plain button will show both pad and border.\n          The plain button has no border and unless the icon prop exist it has \n          no pad as well.").defaultValue(false),
+    plain: PropTypes.bool.description("Whether this is a plain button with no border or pad.\n          Non plain button will show both pad and border.\n          The plain button has no border and unless the icon prop exist it has \n          no pad as well. \n          When using the kind button (i.e. button.default on the theme), \n          the usage of plain is deprecated.").defaultValue(false),
     primary: PropTypes.bool.description("Whether this is a primary button. There should be at most one per page\n            or screen.").defaultValue(false),
     reverse: PropTypes.bool.description("Whether an icon and label should be reversed so that the icon is at the\n              end of the anchor.").defaultValue(false),
     secondary: PropTypes.bool.description("Whether this is a secondary button."),
