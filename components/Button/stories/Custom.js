@@ -8,7 +8,7 @@ var _grommet = require("grommet");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var newCustomTheme = {
+var kindButtonTheme = {
   global: {
     colors: {
       brand: '#ee9933',
@@ -145,7 +145,7 @@ var coloredButton = {
 
 var CustomTheme = function CustomTheme() {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: newCustomTheme
+    theme: kindButtonTheme
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     gap: "small",
     pad: "large"

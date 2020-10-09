@@ -6,12 +6,14 @@ import { Add } from "grommet-icons/es6/icons/Add";
 import { Box, Button, Grommet, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-var PlainButton = function PlainButton(props) {
-  return /*#__PURE__*/React.createElement(Grommet, {
+var PlainButtons = function PlainButtons(props) {
+  return /*#__PURE__*/React.createElement(Box, {
+    pad: "large",
+    gap: "large"
+  }, /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
-    align: "center",
-    pad: "large"
+    align: "center"
   }, /*#__PURE__*/React.createElement(Button, _extends({
     hoverIndicator: "light-1",
     onClick: function onClick() {}
@@ -20,13 +22,35 @@ var PlainButton = function PlainButton(props) {
     direction: "row",
     align: "center",
     gap: "small"
-  }, /*#__PURE__*/React.createElement(Add, null), /*#__PURE__*/React.createElement(Text, null, "Add")))));
+  }, /*#__PURE__*/React.createElement(Add, null), /*#__PURE__*/React.createElement(Text, null, "Add"))))), /*#__PURE__*/React.createElement(Grommet, {
+    theme: {
+      global: {
+        font: {
+          family: "-apple-system, BlinkMacSystemFont"
+        }
+      },
+      button: {
+        "default": {}
+      } // enabling kind button functionality
+
+    }
+  }, /*#__PURE__*/React.createElement(Box, {
+    align: "center"
+  }, /*#__PURE__*/React.createElement(Button, _extends({
+    hoverIndicator: "light-1",
+    onClick: function onClick() {}
+  }, props), /*#__PURE__*/React.createElement(Box, {
+    pad: "small",
+    direction: "row",
+    align: "center",
+    gap: "small"
+  }, /*#__PURE__*/React.createElement(Add, null), /*#__PURE__*/React.createElement(Text, null, "Kind"))))));
 };
 
 storiesOf('Button', module).add('Active', function () {
-  return /*#__PURE__*/React.createElement(PlainButton, {
+  return /*#__PURE__*/React.createElement(PlainButtons, {
     active: true
   });
 }).add('Plain', function () {
-  return /*#__PURE__*/React.createElement(PlainButton, null);
+  return /*#__PURE__*/React.createElement(PlainButtons, null);
 });

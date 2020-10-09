@@ -256,7 +256,7 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
       },
       onMouseOver: onMouseOverButton,
       onMouseOut: onMouseOutButton,
-      plain: plain,
+      plain: plain || Children.count(children) > 0,
       primary: primary,
       sizeProp: size,
       type: !href ? type : undefined

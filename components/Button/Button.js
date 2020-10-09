@@ -272,7 +272,7 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       },
       onMouseOver: onMouseOverButton,
       onMouseOut: onMouseOutButton,
-      plain: plain,
+      plain: plain || _react.Children.count(children) > 0,
       primary: primary,
       sizeProp: size,
       type: !href ? type : undefined

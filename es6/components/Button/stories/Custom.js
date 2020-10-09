@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { grommet, Box, Button, Grommet, Heading } from 'grommet';
-var newCustomTheme = {
+var kindButtonTheme = {
   global: {
     colors: {
       brand: '#ee9933',
@@ -138,7 +138,7 @@ var coloredButton = {
 
 var CustomTheme = function CustomTheme() {
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Grommet, {
-    theme: newCustomTheme
+    theme: kindButtonTheme
   }, /*#__PURE__*/React.createElement(Box, {
     gap: "small",
     pad: "large"
