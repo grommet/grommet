@@ -187,9 +187,30 @@ Defaults to
 undefined
 ```
 
+**radioButton.container.extend**
+
+Any additional style for the container around 
+    the radio button and its label. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
 **radioButton.extend**
 
-Any additional style for the RadioButton. Expects `string | (props) => {}`.
+Any additional style for the radio button itself. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**radioButton.font.weight**
+
+The font weight of the label. Expects `number | string`.
 
 Defaults to
 
@@ -205,26 +226,6 @@ Defaults to
 
 ```
 small
-```
-
-**radioButton.font.weight**
-
-The font weight of the label. Expects `number | string`.
-
-Defaults to
-
-```
-undefined
-```
-
-**radioButton.size**
-
-The size of the RadioButton. Expects `string`.
-
-Defaults to
-
-```
-24px
 ```
 
 **radioButton.hover.background.color**
@@ -266,4 +267,24 @@ Defaults to
 
 ```
 undefined
+```
+
+**radioButton.icons.circle**
+
+The icon to replace the inner checked circle. Expects `React.Element`.
+
+Defaults to
+
+```
+undefined
+```
+
+**radioButton.size**
+
+The size of the RadioButton. Expects `string`.
+
+Defaults to
+
+```
+24px
 ```

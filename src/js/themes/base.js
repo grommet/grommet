@@ -917,6 +917,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
     },
     paragraph: {
+      font: {
+        // family: undefined
+      },
       small: { ...fontSizing(-1) },
       medium: { ...fontSizing(0) },
       large: { ...fontSizing(1) },
@@ -965,6 +968,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       size: `${baseSpacing}px`,
       font: {
         // weight: undefined,
+      },
+      container: {
+        // extend: undefined
       },
     },
     radioButtonGroup: {
@@ -1141,6 +1147,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     text: {
+      font: {
+        // family: undefined
+      },
       xsmall: { ...fontSizing(-1.5) },
       small: { ...fontSizing(-1) },
       medium: { ...fontSizing(0) }, // 18px
