@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button kind border 1`] = `
+exports[`Button kind border on default button 1`] = `
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -76,7 +76,7 @@ exports[`Button kind border 1`] = `
 </div>
 `;
 
-exports[`Button kind custom theme 1`] = `
+exports[`Button kind default button 1`] = `
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -148,164 +148,7 @@ exports[`Button kind custom theme 1`] = `
 >
   <button
     class="c1"
-    default=""
     kind="default"
-    type="button"
-  />
-</div>
-`;
-
-exports[`Button kind custom theme primary 1`] = `
-.c1 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 10px;
-  font-size: 18px;
-  line-height: 24px;
-  padding: 6px 12px;
-  background-color: green;
-  color: #000000;
-  text-align: center;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c1 > svg {
-  vertical-align: bottom;
-}
-
-.c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c1:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-<div
-  class="c0"
->
-  <button
-    class="c1"
-    kind="primary"
-    type="button"
-  />
-</div>
-`;
-
-exports[`Button kind custom theme secondary 1`] = `
-.c1 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 10px;
-  font-size: 18px;
-  line-height: 24px;
-  padding: 4px 10px;
-  color: #444444;
-  border-style: solid;
-  border-width: 2px;
-  border-color: green;
-  text-align: center;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c1 > svg {
-  vertical-align: bottom;
-}
-
-.c1:hover {
-  padding: 3px 9px;
-  border-style: solid;
-  border-width: 3px;
-}
-
-.c1:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c1:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-<div
-  class="c0"
->
-  <button
-    class="c1"
-    kind="secondary"
     type="button"
   />
 </div>
@@ -403,7 +246,7 @@ exports[`Button kind disabled with hoverIndicator should not hover 2`] = `
 </div>
 `;
 
-exports[`Button kind extend 1`] = `
+exports[`Button kind extend on default button 1`] = `
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -670,7 +513,7 @@ exports[`Button kind fill 1`] = `
 </div>
 `;
 
-exports[`Button kind font 1`] = `
+exports[`Button kind font on button default 1`] = `
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -818,7 +661,7 @@ exports[`Button kind font undefined 1`] = `
 </div>
 `;
 
-exports[`Button kind hover 1`] = `
+exports[`Button kind hover on default button 1`] = `
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -889,7 +732,7 @@ exports[`Button kind hover 1`] = `
 </div>
 `;
 
-exports[`Button kind no border 1`] = `
+exports[`Button kind no border on default button 1`] = `
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -963,7 +806,7 @@ exports[`Button kind no border 1`] = `
 </div>
 `;
 
-exports[`Button kind no padding 1`] = `
+exports[`Button kind no padding on default button 1`] = `
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -1038,7 +881,7 @@ exports[`Button kind no padding 1`] = `
 </div>
 `;
 
-exports[`Button kind opacity 1`] = `
+exports[`Button kind opacity on default button 1`] = `
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -1112,7 +955,7 @@ exports[`Button kind opacity 1`] = `
 </div>
 `;
 
-exports[`Button kind padding 1`] = `
+exports[`Button kind padding on default button 1`] = `
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -1188,7 +1031,229 @@ exports[`Button kind padding 1`] = `
 </div>
 `;
 
-exports[`Button kind size 1`] = `
+exports[`Button kind primary button 1`] = `
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 18px;
+  line-height: 24px;
+  padding: 6px 12px;
+  background-color: green;
+  color: #000000;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c1 > svg {
+  vertical-align: bottom;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  class="c0"
+>
+  <button
+    class="c1"
+    kind="primary"
+    type="button"
+  />
+</div>
+`;
+
+exports[`Button kind render of children 1`] = `
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  color: inherit;
+}
+
+.c1 > svg {
+  vertical-align: bottom;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  class="c0"
+>
+  <button
+    class="c1"
+    kind="default"
+    type="button"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button kind secondary button 1`] = `
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 18px;
+  line-height: 24px;
+  padding: 4px 10px;
+  color: #444444;
+  border-style: solid;
+  border-width: 2px;
+  border-color: green;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c1 > svg {
+  vertical-align: bottom;
+}
+
+.c1:hover {
+  padding: 3px 9px;
+  border-style: solid;
+  border-width: 3px;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  class="c0"
+>
+  <button
+    class="c1"
+    kind="secondary"
+    type="button"
+  />
+</div>
+`;
+
+exports[`Button kind size of default button 1`] = `
 .c1 {
   display: inline-block;
   box-sizing: border-box;

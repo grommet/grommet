@@ -276,7 +276,68 @@ describe('Menu', () => {
     expect(document.getElementById('test-menu__drop')).toBeNull();
   });
 
-  test('close on esc', () => {
+  test('shift + tab through menu until it closes', () => {
+    const { getByLabelText, getByText, container } = render(
+      <Grommet>
+        <Menu
+          id="test-menu"
+          label="Test"
+          items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    // Pressing space opens drop
+    // First tab moves to first item
+    // Second tab moves to second item
+    // Next 3 Tabs + Shifts go back through menu in reverse order and close it
+    fireEvent.keyDown(getByLabelText('Open Menu'), {
+      key: 'Space',
+      keyCode: 32,
+      which: 32,
+    });
+
+    fireEvent.keyDown(document.activeElement.firstChild, {
+      key: 'Tab',
+      keyCode: 9,
+      which: 9,
+    });
+    expect(getByText('Item 1').parentElement).toHaveFocus();
+
+    fireEvent.keyDown(document.activeElement, {
+      key: 'Tab',
+      keyCode: 9,
+      which: 9,
+    });
+    expect(getByText('Item 2').parentElement).toHaveFocus();
+
+    fireEvent.keyDown(document.activeElement, {
+      key: 'Tab',
+      keyCode: 9,
+      which: 9,
+      shiftKey: true,
+    });
+    expect(getByText('Item 1').parentElement).toHaveFocus();
+
+    fireEvent.keyDown(document.activeElement, {
+      key: 'Tab',
+      keyCode: 9,
+      which: 9,
+      shiftKey: true,
+    });
+    expect(getByLabelText('Close Menu')).toHaveFocus();
+
+    fireEvent.keyDown(document.activeElement, {
+      key: 'Tab',
+      keyCode: 9,
+      which: 9,
+      shiftKey: true,
+    });
+    expect(document.getElementById('test-menu__drop')).toBeNull();
+  });
+
+  test('open on down close on esc', () => {
     const { getByLabelText, container } = render(
       <Grommet>
         <Menu
@@ -299,6 +360,35 @@ describe('Menu', () => {
       which: 27,
     });
 
+    expect(document.getElementById('test-menu__drop')).toBeNull();
+  });
+
+  test('open on up close on esc', () => {
+    const { getByLabelText, container } = render(
+      <Grommet>
+        <Menu
+          id="test-menu"
+          label="Test"
+          items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    // Pressing up opens the menu
+    // Pressing escape closes it
+    fireEvent.keyDown(getByLabelText('Open Menu'), {
+      key: 'Up',
+      keyCode: 38,
+      which: 38,
+    });
+    expectPortal('test-menu__drop').toMatchSnapshot();
+
+    fireEvent.keyDown(getByLabelText('Close Menu'), {
+      key: 'Esc',
+      keyCode: 27,
+      which: 27,
+    });
     expect(document.getElementById('test-menu__drop')).toBeNull();
   });
 
@@ -328,12 +418,34 @@ describe('Menu', () => {
     expect(document.getElementById('test-menu__drop')).toBeNull();
   });
 
-  test('with dropAlign renders', () => {
+  test('with dropAlign top renders', () => {
     const { getByText, container } = render(
       <Grommet>
         <Menu
           id="test-menu"
           dropAlign={{ top: 'top', right: 'right' }}
+          label="Test"
+          items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.keyDown(getByText('Test'), {
+      key: 'Down',
+      keyCode: 40,
+      which: 40,
+    });
+
+    expectPortal('test-menu__drop').toMatchSnapshot();
+  });
+
+  test('with dropAlign bottom renders', () => {
+    const { getByText, container } = render(
+      <Grommet>
+        <Menu
+          id="test-menu"
+          dropAlign={{ bottom: 'bottom', left: 'left' }}
           label="Test"
           items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
         />
