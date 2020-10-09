@@ -148,7 +148,6 @@ exports[`Button kind default button 1`] = `
 >
   <button
     class="c1"
-    default=""
     kind="default"
     type="button"
   />

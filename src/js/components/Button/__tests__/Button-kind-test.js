@@ -31,7 +31,7 @@ describe('Button kind', () => {
   test('default button', () => {
     const { container } = render(
       <Grommet theme={buttonKindTheme}>
-        <Button default />
+        <Button />
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
