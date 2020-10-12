@@ -841,6 +841,38 @@ Defaults to
 undefined
 ```
 
+**dataTable.resize.hover.color**
+
+The color of the resizer when hovered over. Expects `string | object`.
+
+Defaults to
+
+```
+undefined
+```
+
+**dataTable.resize.hover.side**
+
+The side of the resizer when hovered over. If color or size 
+    are defined, this will default to 'end' which is the recommended value. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**dataTable.resize.hover.size**
+
+The size of the resizer when hovered over. Size values 
+    correspond with those accepted by Box border. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
 **dataTable.icons.ascending**
 
 The ascending icon. Expects `React.Element`.

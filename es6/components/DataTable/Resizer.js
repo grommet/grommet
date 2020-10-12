@@ -4,10 +4,13 @@ import React, { useCallback, useContext, useEffect, useRef, useState } from 'rea
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
-var ResizerBox = styled(Box).withConfig({
-  displayName: "Resizer__ResizerBox",
+import { Stack } from '../Stack';
+var InteractionBox = styled(Box).withConfig({
+  displayName: "Resizer__InteractionBox",
   componentId: "sc-8l808w-0"
-})(["cursor:col-resize;"]);
+})(["cursor:col-resize;> *{opacity:0;}", " &:hover{> *{opacity:1;}}"], function (props) {
+  return props.active && '> * { opacity: 1; }';
+});
 
 var Resizer = function Resizer(_ref) {
   var onResize = _ref.onResize,
@@ -67,18 +70,46 @@ var Resizer = function Resizer(_ref) {
     remove();
     return undefined;
   }, [active, onMouseMove, onMouseUp]);
-  return /*#__PURE__*/React.createElement(ResizerBox, _extends({
-    ref: ref,
+  var border;
+
+  if (theme.dataTable.resize.hover && theme.dataTable.resize.hover.border) {
+    var _theme$dataTable$resi = theme.dataTable.resize.hover.border,
+        color = _theme$dataTable$resi.color,
+        _theme$dataTable$resi2 = _theme$dataTable$resi.side,
+        side = _theme$dataTable$resi2 === void 0 ? 'end' : _theme$dataTable$resi2,
+        size = _theme$dataTable$resi.size;
+    border = {
+      color: color,
+      side: side,
+      size: size
+    };
+  }
+
+  return /*#__PURE__*/React.createElement(Stack, {
+    anchor: "right"
+  }, /*#__PURE__*/React.createElement(Box, _extends({
     flex: false,
     responsive: false,
     pad: {
       vertical: 'small'
     }
-  }, theme.dataTable.resize, {
+  }, theme.dataTable.resize)), /*#__PURE__*/React.createElement(InteractionBox, {
+    active: active,
+    flex: false,
+    pad: {
+      left: 'xsmall'
+    },
+    ref: ref,
+    responsive: false,
     onMouseDown: onMouseDown,
     onMouseMove: start !== undefined ? onMouseMove : undefined,
     onMouseUp: start !== undefined ? onMouseUp : undefined
-  }));
+  }, /*#__PURE__*/React.createElement(Box, {
+    pad: {
+      vertical: 'small'
+    },
+    border: border
+  })));
 };
 
 Resizer.displayName = 'Resizer';

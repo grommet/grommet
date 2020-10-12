@@ -660,6 +660,13 @@ export interface ThemeType {
         side?: string;
         color?: ColorType;
       };
+      hover?: {
+        border?: {
+          color?: ColorType;
+          side: string;
+          size: string;
+        };
+      };
     };
     primary?: {
       weight?: string;

@@ -792,7 +792,14 @@ export var generate = function generate(baseSpacing, scale) {
         border: {
           color: 'border',
           side: 'end'
-        }
+        } // hover: {
+        //   border: {
+        //     color: undefined,
+        //     side: undefined,
+        //     size: undefined,
+        //   },
+        // },
+
       }
     },
     diagram: {

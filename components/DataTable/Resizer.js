@@ -11,16 +11,20 @@ var _defaultProps = require("../../default-props");
 
 var _Box = require("../Box");
 
+var _Stack = require("../Stack");
+
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-var ResizerBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
-  displayName: "Resizer__ResizerBox",
+var InteractionBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
+  displayName: "Resizer__InteractionBox",
   componentId: "sc-8l808w-0"
-})(["cursor:col-resize;"]);
+})(["cursor:col-resize;> *{opacity:0;}", " &:hover{> *{opacity:1;}}"], function (props) {
+  return props.active && '> * { opacity: 1; }';
+});
 
 var Resizer = function Resizer(_ref) {
   var onResize = _ref.onResize,
@@ -81,18 +85,46 @@ var Resizer = function Resizer(_ref) {
     remove();
     return undefined;
   }, [active, onMouseMove, onMouseUp]);
-  return /*#__PURE__*/_react["default"].createElement(ResizerBox, _extends({
-    ref: ref,
+  var border;
+
+  if (theme.dataTable.resize.hover && theme.dataTable.resize.hover.border) {
+    var _theme$dataTable$resi = theme.dataTable.resize.hover.border,
+        color = _theme$dataTable$resi.color,
+        _theme$dataTable$resi2 = _theme$dataTable$resi.side,
+        side = _theme$dataTable$resi2 === void 0 ? 'end' : _theme$dataTable$resi2,
+        size = _theme$dataTable$resi.size;
+    border = {
+      color: color,
+      side: side,
+      size: size
+    };
+  }
+
+  return /*#__PURE__*/_react["default"].createElement(_Stack.Stack, {
+    anchor: "right"
+  }, /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
     flex: false,
     responsive: false,
     pad: {
       vertical: 'small'
     }
-  }, theme.dataTable.resize, {
+  }, theme.dataTable.resize)), /*#__PURE__*/_react["default"].createElement(InteractionBox, {
+    active: active,
+    flex: false,
+    pad: {
+      left: 'xsmall'
+    },
+    ref: ref,
+    responsive: false,
     onMouseDown: onMouseDown,
     onMouseMove: start !== undefined ? onMouseMove : undefined,
     onMouseUp: start !== undefined ? onMouseUp : undefined
-  }));
+  }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+    pad: {
+      vertical: 'small'
+    },
+    border: border
+  })));
 };
 
 exports.Resizer = Resizer;

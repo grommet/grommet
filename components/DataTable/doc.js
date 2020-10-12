@@ -181,6 +181,21 @@ var themeDoc = {
     type: 'string | object',
     defaultValue: undefined
   },
+  'dataTable.resize.hover.color': {
+    description: 'The color of the resizer when hovered over.',
+    type: 'string | object',
+    defaultValue: undefined
+  },
+  'dataTable.resize.hover.side': {
+    description: "The side of the resizer when hovered over. If color or size \n    are defined, this will default to 'end' which is the recommended value.",
+    type: 'string',
+    defaultValue: undefined
+  },
+  'dataTable.resize.hover.size': {
+    description: "The size of the resizer when hovered over. Size values \n    correspond with those accepted by Box border.",
+    type: 'string',
+    defaultValue: undefined
+  },
   'dataTable.icons.ascending': {
     description: 'The ascending icon.',
     type: 'React.Element',
