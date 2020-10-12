@@ -15,14 +15,21 @@ var sizes = ['xxlarge', 'xlarge', 'large', 'medium', 'small', 'xsmall', '77px'];
 var All = function All() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, sizes.map(function (size) {
+  }, /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, sizes.map(function (size) {
     return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       key: size,
       margin: "small"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       size: size
     }, "Text " + size));
-  }));
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+    background: "light-3",
+    align: "end",
+    width: "small",
+    pad: "small"
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+    truncate: true
+  }, "This is a long truncated string of text that is aligned to the end."))));
 };
 
 (0, _react2.storiesOf)('Text', module).add('All', function () {

@@ -32,7 +32,7 @@ var TEXT_ALIGN_MAP = {
 var textAlignStyle = (0, _styledComponents.css)(["text-align:", ";"], function (props) {
   return TEXT_ALIGN_MAP[props.textAlign];
 });
-var truncateStyle = "\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n";
+var truncateStyle = "\n  white-space: nowrap;\n  max-width: 100%;\n  overflow: hidden;\n  text-overflow: ellipsis;\n";
 var colorStyle = (0, _styledComponents.css)(["color:", ";"], function (props) {
   return (0, _utils.normalizeColor)(props.colorProp, props.theme);
 });
