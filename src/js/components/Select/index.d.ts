@@ -8,14 +8,27 @@ import {
   PlaceHolderType,
 } from '../../utils';
 
+interface onChangeEvent {
+  value: string;
+  option: string;
+  selected: number[];
+}
+
 export interface SelectProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
-  children?: (...args: any[]) => any;
+  children?: (
+    option: object,
+    index: number,
+    options: object[],
+    state: { active: boolean; disabled: boolean; selected: boolean },
+  ) => React.ReactNode;
   closeOnChange?: boolean;
   disabled?: boolean | (number | string | object)[];
-  disabledKey?: string | ((...args: any[]) => any);
+  disabledKey?:
+    | string
+    | ((option: { label: string; value: number }) => boolean);
   dropAlign?: {
     top?: 'top' | 'bottom';
     bottom?: 'top' | 'bottom';
@@ -26,17 +39,17 @@ export interface SelectProps {
   dropTarget?: object;
   dropProps?: DropProps;
   focusIndicator?: boolean;
-  icon?: boolean | ((...args: any[]) => any) | React.ReactNode;
+  icon?: boolean | (() => React.ReactElement) | React.ReactNode;
   id?: string;
-  labelKey?: string | ((...args: any[]) => any);
+  labelKey?: string | ((option: { label: string; value: number }) => object);
   margin?: MarginType;
   messages?: { multiple?: string };
   multiple?: boolean;
   name?: string;
-  onChange?: (...args: any[]) => void;
-  onClose?: (...args: any[]) => any;
-  onMore?: (...args: any[]) => any;
-  onOpen?: (...args: any[]) => any;
+  onChange?: (event: onChangeEvent) => void;
+  onClose?: () => void;
+  onMore?: () => void;
+  onOpen?: () => void;
   onSearch?: (search: string) => void;
   options: (string | boolean | number | JSX.Element | object)[];
   open?: boolean;
@@ -51,7 +64,7 @@ export interface SelectProps {
   valueKey?:
     | string
     | { key: string; reduce?: boolean }
-    | ((...args: any[]) => any);
+    | ((option: { label: string; value: number }) => string);
   emptySearchMessage?: string;
 }
 
