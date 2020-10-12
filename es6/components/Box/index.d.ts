@@ -158,6 +158,15 @@ export interface BoxProps {
     | 'xxlarge'
     | string
     | {
+        width?:
+          | 'xxsmall'
+          | 'xsmall'
+          | 'small'
+          | 'medium'
+          | 'large'
+          | 'xlarge'
+          | 'xxlarge'
+          | string;
         max?:
           | 'xxsmall'
           | 'xsmall'

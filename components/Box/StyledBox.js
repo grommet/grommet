@@ -371,10 +371,12 @@ var heightObjectStyle = (0, _styledComponents.css)(["", ";", ";"], function (pro
 var heightStyle = (0, _styledComponents.css)(["height:", ";"], function (props) {
   return getSize(props, props.heightProp);
 });
-var widthObjectStyle = (0, _styledComponents.css)(["", ";", ";"], function (props) {
+var widthObjectStyle = (0, _styledComponents.css)(["", ";", ";", ";"], function (props) {
   return props.widthProp.max && (0, _styledComponents.css)(["max-width:", ";"], getSize(props, props.widthProp.max));
 }, function (props) {
   return props.widthProp.min && (0, _styledComponents.css)(["min-width:", ";"], getSize(props, props.widthProp.min));
+}, function (props) {
+  return props.widthProp.width && (0, _styledComponents.css)(["width:", ";"], getSize(props, props.widthProp.width));
 });
 var widthStyle = (0, _styledComponents.css)(["width:", ";"], function (props) {
   return getSize(props, props.widthProp);

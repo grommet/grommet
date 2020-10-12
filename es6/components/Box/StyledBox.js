@@ -359,10 +359,12 @@ var heightObjectStyle = css(["", ";", ";"], function (props) {
 var heightStyle = css(["height:", ";"], function (props) {
   return getSize(props, props.heightProp);
 });
-var widthObjectStyle = css(["", ";", ";"], function (props) {
+var widthObjectStyle = css(["", ";", ";", ";"], function (props) {
   return props.widthProp.max && css(["max-width:", ";"], getSize(props, props.widthProp.max));
 }, function (props) {
   return props.widthProp.min && css(["min-width:", ";"], getSize(props, props.widthProp.min));
+}, function (props) {
+  return props.widthProp.width && css(["width:", ";"], getSize(props, props.widthProp.width));
 });
 var widthStyle = css(["width:", ";"], function (props) {
   return getSize(props, props.widthProp);
