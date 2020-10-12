@@ -1645,6 +1645,15 @@ xlarge
 xxlarge
 string
 {
+  width: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
   min: 
     xxsmall
     xsmall
@@ -2033,8 +2042,8 @@ Function that can be called to render the visual representation.
       Button can take in Children as a function, node, or object. 
       For example hover can be passed as an object that would 
       then return a react element.
-      \`children={({ hover }) => <Box...>{...}</Box>}\`. When Button has
-      children, it is styled as a \`plain\` button.
+      \`children={({ hover, focus }) => <Box...>{...}</Box>}\`. 
+      When Button has children, it is styled as a \`plain\` button.
       
 
 \`\`\`
@@ -2189,7 +2198,9 @@ function
 Whether this is a plain button with no border or pad.
           Non plain button will show both pad and border.
           The plain button has no border and unless the icon prop exist it has 
-          no pad as well.
+          no pad as well. 
+          When using the kind button (i.e. button.default on the theme), 
+          the usage of plain is deprecated.
 
 \`\`\`
 boolean
@@ -6791,6 +6802,38 @@ undefined
 **dataTable.header.pad**
 
 The pad around the contents of the header cell. Expects \`string | object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.resize.hover.color**
+
+The color of the resizer when hovered over. Expects \`string | object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.resize.hover.side**
+
+The side of the resizer when hovered over. If color or size 
+    are defined, this will default to 'end' which is the recommended value. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.resize.hover.size**
+
+The size of the resizer when hovered over. Size values 
+    correspond with those accepted by Box border. Expects \`string\`.
 
 Defaults to
 

@@ -378,10 +378,26 @@ export const themeDoc = {
     }`,
     defaultValue: undefined,
   },
-
   'dataTable.header.pad': {
     description: 'The pad around the contents of the header cell.',
     type: 'string | object',
+    defaultValue: undefined,
+  },
+  'dataTable.resize.hover.color': {
+    description: 'The color of the resizer when hovered over.',
+    type: 'string | object',
+    defaultValue: undefined,
+  },
+  'dataTable.resize.hover.side': {
+    description: `The side of the resizer when hovered over. If color or size 
+    are defined, this will default to 'end' which is the recommended value.`,
+    type: 'string',
+    defaultValue: undefined,
+  },
+  'dataTable.resize.hover.size': {
+    description: `The size of the resizer when hovered over. Size values 
+    correspond with those accepted by Box border.`,
+    type: 'string',
     defaultValue: undefined,
   },
   'dataTable.icons.ascending': {
