@@ -105,6 +105,10 @@ const StyledDataTableHeader = styled(TableHeader)`
     width: 100%;
     table-layout: fixed;
   `}
+  ${props =>
+    props.theme.dataTable &&
+    props.theme.dataTable.header &&
+    props.theme.dataTable.header.extend};
 `;
 
 StyledDataTableHeader.defaultProps = {};

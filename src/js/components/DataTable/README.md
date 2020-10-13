@@ -780,6 +780,16 @@ Defaults to
 undefined
 ```
 
+**dataTable.header.extend**
+
+Any additional styles for header cells. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
 **dataTable.header.font.weight**
 
 The font weight for text in header cells. Expects `string`.

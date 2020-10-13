@@ -703,6 +703,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       header: {
         // background: undefined,
         // border: undefined,
+        // extend: undefined,
         // font: {
         //   weight: undefined,
         //   size: undefined,

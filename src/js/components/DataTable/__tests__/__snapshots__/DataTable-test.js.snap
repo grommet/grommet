@@ -2641,7 +2641,7 @@ exports[`DataTable click 2`] = `
     class="StyledTable-sc-1m3u5g-6 bJymoW StyledDataTable-xrlyjm-0 koBqev"
   >
     <thead
-      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 hOGMbn"
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 dtMFXM"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
@@ -3328,7 +3328,7 @@ exports[`DataTable custom theme 2`] = `
     class="StyledTable-sc-1m3u5g-6 bJymoW StyledDataTable-xrlyjm-0 koBqev"
   >
     <thead
-      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 hOGMbn"
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 dtMFXM"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
@@ -4755,7 +4755,7 @@ exports[`DataTable groupBy 2`] = `
     class="StyledTable-sc-1m3u5g-6 bJymoW StyledDataTable-xrlyjm-0 koBqev"
   >
     <thead
-      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 hOGMbn"
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 dtMFXM"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
@@ -5842,7 +5842,7 @@ exports[`DataTable groupBy property 2`] = `
     class="StyledTable-sc-1m3u5g-6 bJymoW StyledDataTable-xrlyjm-0 koBqev"
   >
     <thead
-      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 hOGMbn"
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 dtMFXM"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
@@ -6339,7 +6339,7 @@ exports[`DataTable onSort 2`] = `
     class="StyledTable-sc-1m3u5g-6 bJymoW StyledDataTable-xrlyjm-0 koBqev"
   >
     <thead
-      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 hOGMbn"
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 dtMFXM"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
@@ -10216,7 +10216,7 @@ exports[`DataTable search 2`] = `
     class="StyledTable-sc-1m3u5g-6 bJymoW StyledDataTable-xrlyjm-0 koBqev"
   >
     <thead
-      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 hOGMbn"
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 dtMFXM"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
@@ -10786,7 +10786,7 @@ exports[`DataTable select 2`] = `
     class="StyledTable-sc-1m3u5g-6 bJymoW StyledDataTable-xrlyjm-0 koBqev"
   >
     <thead
-      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 hOGMbn"
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 dtMFXM"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
@@ -12844,7 +12844,7 @@ exports[`DataTable sortable 2`] = `
     class="StyledTable-sc-1m3u5g-6 bJymoW StyledDataTable-xrlyjm-0 koBqev"
   >
     <thead
-      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 hOGMbn"
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 dtMFXM"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"

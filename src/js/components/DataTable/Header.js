@@ -184,8 +184,11 @@ const Header = ({
               content = (
                 <StyledHeaderCellButton
                   plain
+                  column={property}
                   fill="vertical"
                   onClick={onSort(property)}
+                  sort={sort}
+                  sortable
                 >
                   <Box
                     direction="row"
