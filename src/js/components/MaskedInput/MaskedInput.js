@@ -6,7 +6,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { ThemeContext } from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
@@ -14,7 +14,7 @@ import { Button } from '../Button';
 import { Drop } from '../Drop';
 import { FormContext } from '../Form/FormContext';
 import { Keyboard } from '../Keyboard';
-import { useForwardedRef } from '../../utils';
+import { sizeStyle, useForwardedRef } from '../../utils';
 
 import {
   StyledMaskedInput,
@@ -143,12 +143,26 @@ const defaultMask = [
   },
 ];
 
+const ContainerBox = styled(Box)`
+  ${props =>
+    props.dropHeight
+      ? sizeStyle('max-height', props.dropHeight, props.theme)
+      : 'max-height: inherit;'};
+
+  /* IE11 hack to get drop contents to not overflow */
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    width: 100%;
+  }
+`;
+
 const dropAlign = { top: 'bottom', left: 'left' };
 
 const MaskedInput = forwardRef(
   (
     {
       a11yTitle,
+      dropHeight,
+      dropProps,
       focus: focusProp,
       icon,
       id,
@@ -385,8 +399,9 @@ const MaskedInput = forwardRef(
             target={inputRef.current}
             onClickOutside={onHideDrop}
             onEsc={onHideDrop}
+            {...dropProps}
           >
-            <Box ref={dropRef}>
+            <ContainerBox ref={dropRef} overflow="auto" dropHeight={dropHeight}>
               {mask[activeMaskIndex].options.map((option, index) => {
                 // Determine whether the label is done as a child or
                 // as an option Button kind property.
@@ -418,7 +433,7 @@ const MaskedInput = forwardRef(
                   </Box>
                 );
               })}
-            </Box>
+            </ContainerBox>
           </Drop>
         )}
       </StyledMaskedInputContainer>
