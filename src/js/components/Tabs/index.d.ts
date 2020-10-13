@@ -1,5 +1,10 @@
-import * as React from "react";
-import { A11yTitleType, AlignSelfType, GridAreaType, MarginType } from "../../utils";
+import * as React from 'react';
+import {
+  A11yTitleType,
+  AlignSelfType,
+  GridAreaType,
+  MarginType,
+} from '../../utils';
 
 export interface TabsProps {
   a11yTitle?: A11yTitleType;
@@ -7,12 +12,12 @@ export interface TabsProps {
   alignSelf?: AlignSelfType;
   alignControls?: AlignSelfType;
   children: React.ReactNode;
-  flex?: "grow" | "shrink" | boolean;
+  flex?: 'grow' | 'shrink' | boolean;
   gridArea?: GridAreaType;
-  justify?: "start" | "center" | "end";
+  justify?: 'start' | 'center' | 'end';
   margin?: MarginType;
-  messages?: {tabContents?: string};
-  onActive?: ((index: number) => void);
+  messages?: { tabContents?: string };
+  onActive?: (index: number) => void;
 }
 
 declare const Tabs: React.FC<TabsProps & JSX.IntrinsicElements['div']>;

@@ -5,7 +5,7 @@ import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
 import { axe } from 'jest-axe';
-import { cleanup, render } from '@testing-library/react';
+import { cleanup, render, fireEvent } from '@testing-library/react';
 import { Grommet } from '../../Grommet';
 import { RangeInput } from '..';
 
@@ -64,5 +64,45 @@ describe('RangeInput', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+  });
+
+  test('onFocus', () => {
+    const onFocus = jest.fn();
+    const { container, getByDisplayValue } = render(
+      <Grommet>
+        <RangeInput min={0} max={10} step={1} value={5} onFocus={onFocus} />
+      </Grommet>,
+    );
+    fireEvent.focus(getByDisplayValue('5'));
+    expect(container.firstChild).toMatchSnapshot();
+    expect(onFocus).toHaveBeenCalledTimes(1);
+  });
+
+  test('onBlur', () => {
+    const onBlur = jest.fn();
+    const { container, getByDisplayValue } = render(
+      <Grommet>
+        <RangeInput min={0} max={10} step={1} value={5} onBlur={onBlur} />
+      </Grommet>,
+    );
+    fireEvent.blur(getByDisplayValue('5'));
+    expect(container.firstChild).toMatchSnapshot();
+    expect(onBlur).toHaveBeenCalledTimes(1);
+  });
+
+  test('onChange', () => {
+    const onChange = jest.fn();
+    const { container, getByDisplayValue } = render(
+      <Grommet>
+        <RangeInput min={0} max={10} step={1} value={5} onChange={onChange} />
+      </Grommet>,
+    );
+    fireEvent.change(getByDisplayValue('5'), {
+      target: {
+        value: '10',
+      },
+    });
+    expect(container.firstChild).toMatchSnapshot();
+    expect(onChange).toBeCalledTimes(1);
   });
 });

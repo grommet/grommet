@@ -182,11 +182,14 @@ node
 
 **plain**
 
-Whether this is a plain input with no border or padding.
-      Only use this when the containing context provides sufficient affordance
+Whether this is a plain input with no border or outline.
+      Use "full" to remove padding in addition to removing border and outline.
+      Only use this when the containing context provides sufficient 
+      affordance.
 
 ```
 boolean
+full
 ```
 
 **reverse**

@@ -143,10 +143,12 @@ interface ButtonKindType {
 export interface ThemeType {
   global?: {
     active?: {
-      background?: {
-        color?: ColorType;
-        opacity?: OpacityType;
-      };
+      background?:
+        | ColorType
+        | {
+            color?: ColorType;
+            opacity?: OpacityType;
+          };
       color?: ColorType;
     };
     animation?: {
@@ -353,6 +355,14 @@ export interface ThemeType {
       [x: string]: string | undefined;
     };
     text?: {
+      size?: {
+        xsmall?: string;
+        small?: string;
+        medium?: string;
+        large?: string;
+        xlarge?: string;
+        [x: string]: string | undefined;
+      };
       fontWeight?: number;
       extend?: ExtendType;
     };
@@ -596,7 +606,19 @@ export interface ThemeType {
     body?: {
       extend?: ExtendType;
     };
-    header?: {};
+    header?: {
+      background?: BackgroundType;
+      border?: BorderType;
+      font?: {
+        weight?: string;
+        size?: string;
+      };
+      gap?: GapType;
+      hover?: {
+        background?: BackgroundType;
+      };
+      pad?: PadType;
+    };
     groupHeader?: {
       border?: {
         side?: string;
@@ -619,10 +641,31 @@ export interface ThemeType {
       expand?: any;
       sortable?: any;
     };
+    pinned?: {
+      body?: {
+        background?: BackgroundType;
+        extend?: ExtendType;
+      };
+      header?: {
+        background?: BackgroundType;
+        extend?: ExtendType;
+      };
+      footer?: {
+        background?: BackgroundType;
+        extend?: ExtendType;
+      };
+    };
     resize?: {
       border?: {
         side?: string;
         color?: ColorType;
+      };
+      hover?: {
+        border?: {
+          color?: ColorType;
+          side: string;
+          size: string;
+        };
       };
     };
     primary?: {

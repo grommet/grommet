@@ -1049,6 +1049,15 @@ xlarge
 xxlarge
 string
 {
+  width: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
   min: 
     xxsmall
     xsmall
@@ -1207,8 +1216,8 @@ string",
       Button can take in Children as a function, node, or object. 
       For example hover can be passed as an object that would 
       then return a react element.
-      \`children={({ hover }) => <Box...>{...}</Box>}\`. When Button has
-      children, it is styled as a \`plain\` button.
+      \`children={({ hover, focus }) => <Box...>{...}</Box>}\`. 
+      When Button has children, it is styled as a \`plain\` button.
       ",
         "format": "function
 object
@@ -1331,7 +1340,9 @@ background
         "description": "Whether this is a plain button with no border or pad.
           Non plain button will show both pad and border.
           The plain button has no border and unless the icon prop exist it has 
-          no pad as well.",
+          no pad as well. 
+          When using the kind button (i.e. button.default on the theme), 
+          the usage of plain is deprecated.",
         "format": "boolean",
         "name": "plain",
       },
@@ -1518,6 +1529,17 @@ string",
         "name": "bounds",
       },
       Object {
+        "description": "Function that will be called to render each day.
+      It will be passed \`({date, day, isInRange, isSelected})\` where \`date\`
+      is a string containing an ISO8601 date for the day being rendered, \`day\`
+      is a number containing the day of the month being rendered, \`isInRange\`
+      is a boolean indicating whether the date is within a selected range of
+      dates, and \`isSelected\` is a boolean indicating whether this date
+      is selected.",
+        "format": "function",
+        "name": "children",
+      },
+      Object {
         "description": "The selected date in ISO8601 format",
         "format": "string",
         "name": "date",
@@ -1547,6 +1569,12 @@ string",
         "name": "daysOfWeek",
       },
       Object {
+        "defaultValue": false,
+        "description": "Whether the calendar should fill the parent container.",
+        "format": "boolean",
+        "name": "fill",
+      },
+      Object {
         "defaultValue": 0,
         "description": "The first day of the week. 0 for Sunday. 1 for Monday.",
         "format": "0
@@ -1568,10 +1596,10 @@ The function passes the following options:
   }
 \`\`\`
 
-\`onPreviousMonth\` and \`onNextMonth\` are callbacks that will tell the 
+\`onPreviousMonth\` and \`onNextMonth\` are callbacks that will tell the
 calendar to move between months.
-\`previousInBound\` and \`nextInBound\` are booleans that tell, when using 
-\`bounds\`, if the current date is within that range. You can then use that 
+\`previousInBound\` and \`nextInBound\` are booleans that tell, when using
+\`bounds\`, if the current date is within that range. You can then use that
 to disable the previous and next buttons.
 ",
         "format": "function",
@@ -3243,7 +3271,8 @@ align",
         "required": true,
       },
       Object {
-        "description": "Elevated height of the target, indicated via a drop shadow.",
+        "description": "Elevated height of the target, indicated via a drop shadow. 
+      Only applicable if the Drop isn't plain.",
         "format": "none
 xsmall
 small
@@ -3255,7 +3284,7 @@ string",
       },
       Object {
         "defaultValue": false,
-        "description": "Whether the drop element should have no background nor shadow",
+        "description": "Whether the drop element should have no background nor elevation.",
         "format": "boolean",
         "name": "plain",
       },
@@ -4365,6 +4394,12 @@ string",
   light: string
 }",
         "name": "color",
+      },
+      Object {
+        "defaultValue": undefined,
+        "description": "Whether the width should fill the container.",
+        "format": "boolean",
+        "name": "fill",
       },
       Object {
         "defaultValue": 1,
@@ -5761,7 +5796,7 @@ string",
         "name": "color",
       },
       Object {
-        "defaultValue": false,
+        "defaultValue": undefined,
         "description": "Whether the width should fill the container.",
         "format": "boolean",
         "name": "fill",
@@ -7223,9 +7258,12 @@ string",
         "name": "placeholder",
       },
       Object {
-        "description": "Whether this is a plain input with no border or padding.
-      Only use this when the containing context provides sufficient affordance",
-        "format": "boolean",
+        "description": "Whether this is a plain input with no border or outline.
+      Use \\"full\\" to remove padding in addition to removing border and outline.
+      Only use this when the containing context provides sufficient 
+      affordance.",
+        "format": "boolean
+full",
         "name": "plain",
       },
       Object {
