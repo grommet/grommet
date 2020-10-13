@@ -19,7 +19,6 @@ export const doc = AnnounceContext => {
       and these arguments can be passed as 'props' to the return component.
       'mode' can be one of 'polite', 'assertive' or 'off'.
       'timeout' is measured in milliseconds.
-      Default is 'grommet-announcer'
       Example:
       {announce =>
         <Button onClick={() => announce(
