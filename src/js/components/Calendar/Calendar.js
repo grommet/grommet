@@ -19,21 +19,24 @@ import {
   StyledCalendar,
   StyledDay,
   StyledDayContainer,
-  StyledWeek,
-  StyledWeeks,
-  StyledWeeksContainer,
   StyledMonth,
   StyledMonthContainer,
   StyledMonths,
   StyledMonthsContainer,
+  StyledWeek,
+  StyledWeeks,
+  StyledWeeksContainer,
 } from './StyledCalendar';
 import {
   addDays,
   addMonths,
   addYears,
   betweenDates,
+  betweenMonths,
   daysApart,
   endOfMonth,
+  sameMonth,
+  sameYear,
   startOfMonth,
   startOfYear,
   endOfYear,
@@ -42,8 +45,6 @@ import {
   subtractYears,
   withinDates,
   withinMonths,
-  betweenMonths,
-  sameMonth,
 } from './utils';
 
 const headingPadMap = {
@@ -724,6 +725,69 @@ const Calendar = forwardRef(
       const yearStart = startOfYear(reference);
       const yearEnd = endOfYear(reference);
       let day = new Date(yearStart);
+
+      const RewindIcon =
+        size === 'small'
+          ? theme.calendar.icons.small.rewind
+          : theme.calendar.icons.rewind;
+
+      const FastForwardIcon =
+        size === 'small'
+          ? theme.calendar.icons.small.fastForward
+          : theme.calendar.icons.fastForward;
+
+      const renderRewindYearsButton = () => {
+        const [from] = validBounds || [];
+        const rewindYear = from
+          ? endOfYear(from)
+          : subtractYears(reference, 10);
+        return (
+          <Button
+            a11yTitle={rewindYear.toLocaleDateString(locale, {
+              year: 'numeric',
+            })}
+            icon={<RewindIcon size={size} />}
+            disabled={
+              sameYear(rewindYear, reference) ||
+              !betweenDates(rewindYear, validBounds)
+            }
+            onClick={() => changeReference(rewindYear)}
+            label={rewindYear.getFullYear()}
+            size="small"
+            plain="undefined"
+          />
+        );
+      };
+
+      const renderNextTenYearsButton = () => {
+        const [, to] = validBounds || [];
+        const fastForwardYear = to ? startOfYear(to) : addYears(reference, 10);
+        return (
+          <Button
+            a11yTitle={fastForwardYear.toLocaleDateString(locale, {
+              year: 'numeric',
+            })}
+            icon={<FastForwardIcon size={size} />}
+            disabled={
+              sameYear(fastForwardYear, reference) ||
+              !betweenDates(fastForwardYear, validBounds)
+            }
+            onClick={() => changeReference(fastForwardYear)}
+            label={fastForwardYear.getFullYear()}
+            size="small"
+            plain="undefined"
+            reverse
+          />
+        );
+      };
+
+      const setActiveMonth = selectedMonth => {
+        if (selectedMonth && !sameYear(reference, selectedMonth)) {
+          changeReference(selectedMonth);
+        }
+        setActive(selectedMonth);
+      };
+
       while (day.getTime() <= yearEnd.getTime()) {
         const dateString = day.toISOString();
         let selected = false;
@@ -752,8 +816,8 @@ const Calendar = forwardRef(
                 // the focus to the grid of days instead.
                 daysRef.current.focus();
               },
-              onMouseOver: () => setActive(new Date(dateString)),
-              onMouseOut: () => setActive(undefined),
+              onMouseOver: () => setActiveMonth(new Date(dateString)),
+              onMouseOut: () => setActiveMonth(undefined),
             }}
             isInRange={inRange}
             isSelected={selected}
@@ -773,15 +837,15 @@ const Calendar = forwardRef(
             onUp={event => {
               event.preventDefault();
               event.stopPropagation(); // so the page doesn't scroll
-              setActive(addMonths(active, -3));
+              setActiveMonth(addMonths(active, -3));
             }}
             onDown={event => {
               event.preventDefault();
               event.stopPropagation(); // so the page doesn't scroll
-              setActive(addMonths(active, 3));
+              setActiveMonth(addMonths(active, 3));
             }}
-            onLeft={() => setActive(addMonths(active, -1))}
-            onRight={() => setActive(addMonths(active, 1))}
+            onLeft={() => setActiveMonth(addMonths(active, -1))}
+            onRight={() => setActiveMonth(addMonths(active, 1))}
           >
             <StyledMonthsContainer
               ref={daysRef}
@@ -791,16 +855,20 @@ const Calendar = forwardRef(
               focus={focus}
               onFocus={() => {
                 setFocus(true);
-                setActive(new Date(date));
+                setActiveMonth(new Date(date || yearStart));
               }}
               onBlur={() => {
                 setFocus(false);
-                setActive(undefined);
+                setActiveMonth(undefined);
               }}
             >
               <StyledMonths slide={slide} sizeProp={size} fillContainer={fill}>
                 {months}
               </StyledMonths>
+              <Box direction="row" justify="between" align="center">
+                {renderRewindYearsButton()}
+                {renderNextTenYearsButton()}
+              </Box>
             </StyledMonthsContainer>
           </Keyboard>
         </Box>

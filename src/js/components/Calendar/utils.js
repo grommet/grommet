@@ -93,6 +93,8 @@ export const sameMonth = (date1, date2) =>
   date1.getFullYear() === date2.getFullYear() &&
   date1.getMonth() === date2.getMonth();
 
+export const sameYear = (date1, date2) =>
+  date1.getFullYear() === date2.getFullYear();
 // betweenDates takes an array of two elements and checks if the
 // supplied date lies between them, inclusive.
 // returns 2 if exact match to one end, 1 if between, undefined otherwise

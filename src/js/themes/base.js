@@ -3,6 +3,7 @@ import { rgba } from 'polished';
 import { Actions } from 'grommet-icons/icons/Actions';
 import { ClosedCaption } from 'grommet-icons/icons/ClosedCaption';
 import { Expand } from 'grommet-icons/icons/Expand';
+import { FastForward } from 'grommet-icons/icons/FastForward';
 import { FormDown } from 'grommet-icons/icons/FormDown';
 import { FormNext } from 'grommet-icons/icons/FormNext';
 import { FormPrevious } from 'grommet-icons/icons/FormPrevious';
@@ -11,6 +12,7 @@ import { Next } from 'grommet-icons/icons/Next';
 import { Pause } from 'grommet-icons/icons/Pause';
 import { Play } from 'grommet-icons/icons/Play';
 import { Previous } from 'grommet-icons/icons/Previous';
+import { Rewind } from 'grommet-icons/icons/Rewind';
 import { Subtract } from 'grommet-icons/icons/Subtract';
 import { Volume } from 'grommet-icons/icons/Volume';
 import { VolumeLow } from 'grommet-icons/icons/VolumeLow';
@@ -511,29 +513,36 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         fontSize: `${baseFontSize - fontScale}px`,
         lineHeight: 1.375,
         daySize: `${(baseSpacing * 8) / 7}px`,
-        monthSize: `${(baseSpacing * 8) / 3}px`,
+        monthHeight: `${(baseSpacing * 8) / 5.5}px`,
+        monthWidth: `${(baseSpacing * 8) / 3}px`,
         slideDuration: '0.2s',
       },
       medium: {
         fontSize: `${baseFontSize}px`,
         lineHeight: 1.45,
         daySize: `${(baseSpacing * 16) / 7}px`,
-        monthSize: `${(baseSpacing * 16) / 3}px`,
+        monthHeight: `${(baseSpacing * 16) / 5}px`,
+        monthWidth: `${(baseSpacing * 16) / 3}px`,
         slideDuration: '0.5s',
       },
       large: {
         fontSize: `${baseFontSize + 3 * fontScale}px`,
         lineHeight: 1.11,
         daySize: `${(baseSpacing * 32) / 7}px`,
-        monthSize: `${(baseSpacing * 32) / 3}px`,
+        monthHeight: `${(baseSpacing * 32) / 5}px`,
+        monthWidth: `${(baseSpacing * 32) / 3}px`,
         slideDuration: '0.8s',
       },
       icons: {
         previous: Previous,
         next: Next,
+        fastForward: FastForward,
+        rewind: Rewind,
         small: {
           previous: FormPrevious,
           next: FormNext,
+          fastForward: FastForward,
+          rewind: Rewind,
         },
       },
       heading: { level: '4' }, // level ranges from 1-6

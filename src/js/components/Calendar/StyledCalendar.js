@@ -183,8 +183,8 @@ const monthSizeStyle = props => {
   const data = props.theme.calendar[props.sizeProp];
 
   return css`
-    width: ${props.fillContainer ? '100%' : data.monthSize};
-    height: ${props.fillContainer ? '100%' : data.daySize};
+    width: ${props.fillContainer ? '100%' : data.monthWidth};
+    height: ${props.fillContainer ? '100%' : data.monthHeight};
   `;
 };
 
