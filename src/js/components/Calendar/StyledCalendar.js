@@ -137,6 +137,77 @@ const StyledDay = styled.div`
 StyledDay.defaultProps = {};
 Object.setPrototypeOf(StyledDay.defaultProps, defaultProps);
 
+const monthsContainerSizeStyle = props => {
+  const height = props.fillContainer
+    ? '100%'
+    : `${parseMetricToNum(props.theme.calendar[props.sizeProp].daySize) * 6}px`;
+  return `
+    height: ${height};
+
+  `;
+};
+
+const StyledMonthsContainer = styled.div`
+  overflow: hidden;
+  ${props => monthsContainerSizeStyle(props)}
+  ${props => props.focus && !props.plain && focusStyle()};
+`;
+
+StyledMonthsContainer.defaultProps = {};
+Object.setPrototypeOf(StyledMonthsContainer.defaultProps, defaultProps);
+
+const StyledMonths = styled.div`
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  position: relative;
+`;
+
+StyledMonths.defaultProps = {};
+Object.setPrototypeOf(StyledMonths.defaultProps, defaultProps);
+
+// The width of 33.3% is derived from dividing 100/3. We want the
+// widths of 3 months to equally fill 100% of the row.
+const StyledMonthContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+  width: 33.3%;
+`;
+
+StyledMonthContainer.defaultProps = {};
+Object.setPrototypeOf(StyledMonthContainer.defaultProps, defaultProps);
+
+const monthSizeStyle = props => {
+  const data = props.theme.calendar[props.sizeProp];
+
+  return css`
+    width: ${props.fillContainer ? '100%' : data.monthSize};
+    height: ${props.fillContainer ? '100%' : data.daySize};
+  `;
+};
+
+const StyledMonth = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ${props => monthSizeStyle(props)}
+  ${props =>
+    (props.isSelected && backgroundStyle('control', props.theme)) ||
+    (props.inRange &&
+      backgroundStyle({ color: 'control', opacity: 'weak' }, props.theme))}
+  ${props => props.otherMonth && 'opacity: 0.5;'}
+  ${props => props.isSelected && 'font-weight: bold;'}
+  ${props =>
+    props.theme.calendar &&
+    props.theme.calendar.day &&
+    props.theme.calendar.day.extend}
+`;
+
+StyledMonth.defaultProps = {};
+Object.setPrototypeOf(StyledMonth.defaultProps, defaultProps);
+
 export {
   StyledCalendar,
   StyledWeeksContainer,
@@ -144,4 +215,8 @@ export {
   StyledWeek,
   StyledDayContainer,
   StyledDay,
+  StyledMonthContainer,
+  StyledMonthsContainer,
+  StyledMonths,
+  StyledMonth,
 };

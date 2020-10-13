@@ -35,6 +35,14 @@ export const addMonths = (date, months) => {
 
 export const subtractMonths = (date, months) => addMonths(date, -months);
 
+export const addYears = (date, years) => {
+  const result = new Date(date);
+  result.setFullYear(date.getFullYear() + years);
+  return result;
+};
+
+export const subtractYears = (date, years) => addYears(date, -years);
+
 export const startOfMonth = date => {
   const result = new Date(date);
   result.setDate(1);
@@ -45,6 +53,18 @@ export const endOfMonth = date => {
   const result = addMonths(date, 1);
   result.setDate(0);
   return result;
+};
+
+export const startOfYear = date => {
+  const result = startOfMonth(date);
+  result.setMonth(0);
+  return result;
+};
+
+export const endOfYear = date => {
+  const result = startOfYear(date);
+  result.setFullYear(result.getFullYear() + 1);
+  return addDays(result, -1);
 };
 
 export const sameDay = (date1, date2) =>
@@ -68,6 +88,10 @@ export const sameDayOrBefore = (date1, date2) =>
 
 export const daysApart = (date1, date2) =>
   Math.floor((date1.getTime() - date2.getTime()) / DAY_MILLISECONDS);
+
+export const sameMonth = (date1, date2) =>
+  date1.getFullYear() === date2.getFullYear() &&
+  date1.getMonth() === date2.getMonth();
 
 // betweenDates takes an array of two elements and checks if the
 // supplied date lies between them, inclusive.
@@ -108,6 +132,46 @@ export const withinDates = (date, dates) => {
     } else if (sameDay(date, new Date(dates))) {
       result = 2;
     }
+  }
+  return result;
+};
+
+export const withinMonths = (date, dates) => {
+  let result;
+  if (dates) {
+    if (Array.isArray(dates)) {
+      dates.some(d => {
+        if (typeof d === 'string') {
+          if (withinDates(startOfMonth(date), startOfMonth(d))) {
+            result = 2;
+          }
+        } else {
+          result = betweenDates(startOfMonth(date), d.map(startOfMonth));
+        }
+        return result;
+      });
+    } else if (sameDay(startOfMonth(date), startOfMonth(dates))) {
+      result = 2;
+    }
+  }
+  return result;
+};
+
+export const betweenMonths = (date, dates) => {
+  let result;
+  if (dates) {
+    const [from, to] = dates.map(startOfMonth);
+    const monthDate = startOfMonth(date);
+    if (sameDay(monthDate, from) || sameDay(monthDate, to)) {
+      result = 2;
+    } else if (
+      sameDayOrAfter(monthDate, from) &&
+      sameDayOrBefore(monthDate, to)
+    ) {
+      result = 1;
+    }
+  } else {
+    result = 1;
   }
   return result;
 };
