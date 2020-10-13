@@ -642,8 +642,8 @@ const Calendar = forwardRef(
                         disabled: dayDisabled && !!dayDisabled,
                         onClick: () => {
                           selectDate(dateString);
-                          // Chrome moves the focus indicator to this button. Set
-                          // the focus to the grid of days instead.
+                          // Chrome moves the focus indicator to this button.
+                          // Set the focus to the grid of days instead.
                           daysRef.current.focus();
                         },
                         onMouseOver: () => setActive(new Date(dateString)),
