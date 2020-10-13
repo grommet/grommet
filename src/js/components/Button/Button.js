@@ -277,7 +277,7 @@ const Button = forwardRef(
           }}
           onMouseOver={onMouseOverButton}
           onMouseOut={onMouseOutButton}
-          plain={plain}
+          plain={plain || Children.count(children) > 0}
           primary={primary}
           sizeProp={size}
           type={!href ? type : undefined}
