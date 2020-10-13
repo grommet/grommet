@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { Grommet, Grid, Heading } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const paragraphFiller = `
+const headingFiller = `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua.
 `;
@@ -40,7 +40,7 @@ const All = () => (
       <Set size="large" />
       <Set size="xlarge" />
     </Grid>
-    <Heading fill>{paragraphFiller}</Heading>
+    <Heading fill>{headingFiller}</Heading>
   </Grommet>
 );
 

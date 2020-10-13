@@ -21,7 +21,7 @@ export const doc = Heading => {
     ),
     fill: PropTypes.bool
       .description('Whether the width should fill the container.')
-      .defaultValue(false),
+      .defaultValue(undefined),
     level: PropTypes.oneOf([1, 2, 3, 4, 5, 6, '1', '2', '3', '4', '5', '6'])
       .description(
         `The heading level. It corresponds to the number after the 'H' for
