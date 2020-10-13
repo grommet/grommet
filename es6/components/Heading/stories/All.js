@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { Grommet, Grid, Heading } from 'grommet';
 import { grommet } from 'grommet/themes';
+var headingFiller = "\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.\n";
 
 var H = function H(_ref) {
   var level = _ref.level,
@@ -47,7 +48,9 @@ var All = function All() {
     size: "large"
   }), /*#__PURE__*/React.createElement(Set, {
     size: "xlarge"
-  })));
+  })), /*#__PURE__*/React.createElement(Heading, {
+    fill: true
+  }, headingFiller));
 };
 
 storiesOf('Heading', module).add('All', function () {

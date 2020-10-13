@@ -16,6 +16,7 @@ export interface HeadingProps {
   as?: PolymorphicType;
   color?: ColorType;
   gridArea?: GridAreaType;
+  fill?: boolean;
   level?: '1' | '2' | '3' | '4' | '5' | '6' | 1 | 2 | 3 | 4 | 5 | 6;
   margin?: MarginType;
   responsive?: boolean;

@@ -4,15 +4,17 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 import React, { forwardRef } from 'react';
 import { StyledHeading } from './StyledHeading';
-var Heading = /*#__PURE__*/forwardRef(function (props, ref) {
-  var color = props.color,
-      level = props.level,
-      rest = _objectWithoutPropertiesLoose(props, ["color", "level"]); // enforce level to be a number
+var Heading = /*#__PURE__*/forwardRef(function (_ref, ref) {
+  var color = _ref.color,
+      fill = _ref.fill,
+      level = _ref.level,
+      rest = _objectWithoutPropertiesLoose(_ref, ["color", "fill", "level"]);
 
-
+  // enforce level to be a number
   return /*#__PURE__*/React.createElement(StyledHeading, _extends({
     as: "h" + level,
     colorProp: color,
+    fillProp: fill,
     level: +level
   }, rest, {
     ref: ref

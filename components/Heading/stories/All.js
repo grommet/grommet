@@ -12,6 +12,8 @@ var _themes = require("grommet/themes");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+var headingFiller = "\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.\n";
+
 var H = function H(_ref) {
   var level = _ref.level,
       size = _ref.size;
@@ -55,7 +57,9 @@ var All = function All() {
     size: "large"
   }), /*#__PURE__*/_react["default"].createElement(Set, {
     size: "xlarge"
-  })));
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
+    fill: true
+  }, headingFiller));
 };
 
 (0, _react2.storiesOf)('Heading', module).add('All', function () {
