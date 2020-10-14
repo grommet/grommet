@@ -45,7 +45,7 @@ storiesOf('AnnounceContext', module)
   .add('Polite', () => <AnnounceContextComponent />)
   .add('Assertive', () => (
     <AnnounceContextComponent
-      message="Turn on Accessibility feature to listen to this announcement. 
+      message="Turn on Accessibility feature to listen to this announcement.
       This will soon disappear"
       mode="assertive"
       role="alert"
