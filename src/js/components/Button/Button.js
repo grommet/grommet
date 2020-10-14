@@ -243,7 +243,7 @@ const Button = forwardRef(
         </Box>
       );
     } else if (typeof children === 'function') {
-      contents = children({ hover, focus });
+      contents = children({ disabled, hover, focus });
     } else {
       contents = first || second || children;
     }
