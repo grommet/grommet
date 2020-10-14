@@ -164,7 +164,7 @@ const Form = forwardRef(
             const nextValue = { ...value };
             nextValue[name] = nextComponentValue;
             setValueState(nextValue);
-            if (onChange) onChange({ value: nextValue, touched: nextTouched });
+            if (onChange) onChange(nextValue, { touched: nextTouched });
           }
           if (initialValue !== undefined) setInputValue(nextComponentValue);
         },
@@ -263,8 +263,7 @@ const Form = forwardRef(
         onReset={event => {
           if (!valueProp) {
             setValueState(defaultValue);
-            if (onChange)
-              onChange({ value: defaultValue, touched: defaultTouched });
+            if (onChange) onChange(defaultValue, { touched: defaultTouched });
           }
           setTouched(defaultTouched);
           setValidationResults(defaultValidationResults);

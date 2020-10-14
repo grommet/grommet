@@ -936,7 +936,8 @@ describe('Form uncontrolled', () => {
     });
 
     expect(onChange).toBeCalledWith(
-      expect.objectContaining({ touched: { test: true } }),
+      { test: 'Input has changed' },
+      { touched: { test: true } },
     );
   });
 });

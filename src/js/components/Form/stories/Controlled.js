@@ -35,8 +35,8 @@ const Example = () => {
         <Box width="medium">
           <Form
             value={value}
-            onChange={({ value: nextValue }) => {
-              console.log('Change', nextValue);
+            onChange={(nextValue, { touched }) => {
+              console.log('Change', nextValue, touched);
               setValue(nextValue);
             }}
             onReset={() => setValue(defaultValue)}
