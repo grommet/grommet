@@ -33,7 +33,7 @@ const StyledRadioButtonContainer = styled.label`
         props.theme,
       )};
   }
-  ${props => props.theme.radioButton.extend};
+  ${props => props.theme.radioButton.container.extend};
 `;
 
 StyledRadioButtonContainer.defaultProps = {};

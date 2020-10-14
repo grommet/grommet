@@ -1645,6 +1645,15 @@ xlarge
 xxlarge
 string
 {
+  width: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
   min: 
     xxsmall
     xsmall
@@ -2033,8 +2042,8 @@ Function that can be called to render the visual representation.
       Button can take in Children as a function, node, or object. 
       For example hover can be passed as an object that would 
       then return a react element.
-      \`children={({ hover }) => <Box...>{...}</Box>}\`. When Button has
-      children, it is styled as a \`plain\` button.
+      \`children={({ hover, focus }) => <Box...>{...}</Box>}\`. 
+      When Button has children, it is styled as a \`plain\` button.
       
 
 \`\`\`
@@ -2189,7 +2198,9 @@ function
 Whether this is a plain button with no border or pad.
           Non plain button will show both pad and border.
           The plain button has no border and unless the icon prop exist it has 
-          no pad as well.
+          no pad as well. 
+          When using the kind button (i.e. button.default on the theme), 
+          the usage of plain is deprecated.
 
 \`\`\`
 boolean
@@ -6798,6 +6809,38 @@ Defaults to
 undefined
 \`\`\`
 
+**dataTable.resize.hover.color**
+
+The color of the resizer when hovered over. Expects \`string | object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.resize.hover.side**
+
+The side of the resizer when hovered over. If color or size 
+    are defined, this will default to 'end' which is the recommended value. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.resize.hover.size**
+
+The size of the resizer when hovered over. Size values 
+    correspond with those accepted by Box border. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **dataTable.icons.ascending**
 
 The ascending icon. Expects \`React.Element\`.
@@ -9424,6 +9467,14 @@ string
 }
 \`\`\`
 
+**fill**
+
+Whether the width should fill the container.
+
+\`\`\`
+boolean
+\`\`\`
+
 **level**
 
 The heading level. It corresponds to the number after the 'H' for
@@ -9573,16 +9624,16 @@ undefined
 
 **heading.level**
 
-The level that impacts line-height, max-width, font size, 
-weight and family of the Heading. Heading styling is automatically adjusted at 
-different screen sizes. When the heading.responsiveBreakpoint is hit (\\"small\\" 
-by default), all heading styles will automatically be adjusted. A heading of 
-level 1, for example, will use the styling defined in heading level 2; a 
-heading of level 2 will use the styling defined in heading level 3 and so 
-forth. The tag in the DOM is not adjusted. A heading of level 1 remains an h1. 
-The styling adjustment is intended to aid readability on smaller screens but 
-will not semantically affect your application structure. If you do not want 
-this responsive styling to occur, you can set header.responsiveBreakpoint to 
+The level that impacts line-height, max-width, font size,
+weight and family of the Heading. Heading styling is automatically adjusted at
+different screen sizes. When the heading.responsiveBreakpoint is hit (\\"small\\"
+by default), all heading styles will automatically be adjusted. A heading of
+level 1, for example, will use the styling defined in heading level 2; a
+heading of level 2 will use the styling defined in heading level 3 and so
+forth. The tag in the DOM is not adjusted. A heading of level 1 remains an h1.
+The styling adjustment is intended to aid readability on smaller screens but
+will not semantically affect your application structure. If you do not want
+this responsive styling to occur, you can set header.responsiveBreakpoint to
 undefined. Expects \`object\`.
 
 Defaults to
@@ -9625,7 +9676,7 @@ undefined
 
 **heading.responsiveBreakpoint**
 
-The breakpoint to trigger changes in the Heading layout. 
+The breakpoint to trigger changes in the Heading layout.
 The actual values will be derived from global.breakpoints. Expects \`string\`.
 
 Defaults to
@@ -12062,6 +12113,16 @@ Defaults to
     }
 \`\`\`
 
+**paragraph.font.family**
+
+The font family to use for Paragraph. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **paragraph.textAlign**
 
 How to align the text inside the Paragraph. Expects \`string\`.
@@ -12283,9 +12344,30 @@ Defaults to
 undefined
 \`\`\`
 
+**radioButton.container.extend**
+
+Any additional style for the container around 
+    the radio button and its label. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **radioButton.extend**
 
-Any additional style for the RadioButton. Expects \`string | (props) => {}\`.
+Any additional style for the radio button itself. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**radioButton.font.weight**
+
+The font weight of the label. Expects \`number | string\`.
 
 Defaults to
 
@@ -12301,26 +12383,6 @@ Defaults to
 
 \`\`\`
 small
-\`\`\`
-
-**radioButton.font.weight**
-
-The font weight of the label. Expects \`number | string\`.
-
-Defaults to
-
-\`\`\`
-undefined
-\`\`\`
-
-**radioButton.size**
-
-The size of the RadioButton. Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-24px
 \`\`\`
 
 **radioButton.hover.background.color**
@@ -12362,6 +12424,26 @@ Defaults to
 
 \`\`\`
 undefined
+\`\`\`
+
+**radioButton.icons.circle**
+
+The icon to replace the inner checked circle. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**radioButton.size**
+
+The size of the RadioButton. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+24px
 \`\`\`
 ",
   "RadioButtonGroup": "## RadioButtonGroup
@@ -15281,6 +15363,16 @@ Defaults to
 
 \`\`\`
 { dark: '#f8f8f8', light: '#444444' }
+\`\`\`
+
+**text.font.family**
+
+The font family to use for Text. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **text**

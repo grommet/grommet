@@ -21,7 +21,7 @@ export const doc = Paragraph => {
     ),
     fill: PropTypes.bool
       .description('Whether the width should fill the container.')
-      .defaultValue(false),
+      .defaultValue(undefined),
     responsive: PropTypes.bool
       .description(`Whether margin should be scaled for mobile environments.`)
       .defaultValue(true),
@@ -71,6 +71,11 @@ export const themeDoc = {
         maxWidth: '816px',
       },
     }`,
+  },
+  'paragraph.font.family': {
+    description: 'The font family to use for Paragraph.',
+    type: 'string',
+    defaultValue: undefined,
   },
   'paragraph.textAlign': {
     description: `How to align the text inside the Paragraph.`,

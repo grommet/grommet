@@ -4561,6 +4561,24 @@ exports[`Calendar dates 1`] = `
   font-weight: bold;
 }
 
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 54.857142857142854px;
+  height: 54.857142857142854px;
+  background-color: rgba(125,76,219,0.1);
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -4910,7 +4928,7 @@ exports[`Calendar dates 1`] = `
                 type="button"
               >
                 <div
-                  className="c15"
+                  className="c16"
                 >
                   8
                 </div>
@@ -4931,7 +4949,7 @@ exports[`Calendar dates 1`] = `
                 type="button"
               >
                 <div
-                  className="c15"
+                  className="c17"
                 >
                   9
                 </div>
@@ -5875,6 +5893,24 @@ exports[`Calendar daysOfWeek 1`] = `
   font-weight: bold;
 }
 
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 54.857142857142854px;
+  height: 54.857142857142854px;
+  background-color: rgba(125,76,219,0.1);
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -6291,7 +6327,7 @@ exports[`Calendar daysOfWeek 1`] = `
                 type="button"
               >
                 <div
-                  className="c15"
+                  className="c16"
                 >
                   8
                 </div>
@@ -6312,7 +6348,7 @@ exports[`Calendar daysOfWeek 1`] = `
                 type="button"
               >
                 <div
-                  className="c15"
+                  className="c17"
                 >
                   9
                 </div>
@@ -17784,6 +17820,24 @@ exports[`Calendar select dates 1`] = `
   font-weight: bold;
 }
 
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 54.857142857142854px;
+  height: 54.857142857142854px;
+  background-color: rgba(125,76,219,0.1);
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -18062,7 +18116,7 @@ exports[`Calendar select dates 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c16"
                 >
                   8
                 </div>
@@ -18078,7 +18132,7 @@ exports[`Calendar select dates 1`] = `
                 type="button"
               >
                 <div
-                  class="c15"
+                  class="c17"
                 >
                   9
                 </div>

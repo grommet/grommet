@@ -189,7 +189,34 @@ const Calendar = forwardRef(
     // clear the slide and targetDisplayBounds.
     useEffect(() => {
       const nextDisplayBounds = buildDisplayBounds(reference, firstDayOfWeek);
-      if (!animate) {
+
+      // Checks if the difference between the current and next DisplayBounds is
+      // greater than a year. If that's the case, calendar should update without
+      // animation.
+      let diffBoundsAboveYearFlag = false;
+      let sameDisplayBounds = false;
+      if (nextDisplayBounds[0].getTime() < displayBounds[0].getTime()) {
+        if (
+          displayBounds[0].getTime() - nextDisplayBounds[0].getTime() >
+          millisecondsPerYear
+        ) {
+          diffBoundsAboveYearFlag = true;
+        }
+      } else if (nextDisplayBounds[1].getTime() > displayBounds[1].getTime()) {
+        if (
+          nextDisplayBounds[1].getTime() - displayBounds[1].getTime() >
+          millisecondsPerYear
+        ) {
+          diffBoundsAboveYearFlag = true;
+        }
+      } else if (
+        nextDisplayBounds[0].getTime() === displayBounds[0].getTime() &&
+        nextDisplayBounds[1].getTime() === displayBounds[1].getTime()
+      ) {
+        sameDisplayBounds = true;
+      }
+
+      if (!animate || diffBoundsAboveYearFlag || sameDisplayBounds) {
         setDisplayBounds(nextDisplayBounds);
       } else {
         setTargetDisplayBounds(nextDisplayBounds);
