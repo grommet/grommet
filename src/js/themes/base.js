@@ -1121,8 +1121,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // disabled: { opacity: undefined },
     },
     tip: {
-      // any drop props
-      container: {}, // any Box props
+      // container: {}, // any Box props
+      content: {}, // any Box props
+      drop: {}, // any props for the drop
     },
     video: {
       captions: {
