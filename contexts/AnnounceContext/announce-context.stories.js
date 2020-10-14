@@ -64,7 +64,7 @@ var AnnounceContextComponent = function AnnounceContextComponent(props) {
   return /*#__PURE__*/_react["default"].createElement(AnnounceContextComponent, null);
 }).add('Assertive', function () {
   return /*#__PURE__*/_react["default"].createElement(AnnounceContextComponent, {
-    message: "Turn on Accessibility feature to listen to this announcement.  This will soon disappear",
+    message: "Turn on Accessibility feature to listen to this announcement. This will soon disappear",
     mode: "assertive",
     role: "alert"
   });
