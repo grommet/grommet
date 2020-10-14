@@ -9,7 +9,7 @@ import {
 } from '../../utils';
 
 interface onChangeEvent {
-  value: string;
+  value: string[];
   option: string;
   selected: number[];
 }
