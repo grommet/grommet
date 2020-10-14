@@ -1100,7 +1100,7 @@ exports[`Calendar change months 2`] = `
           >
             <svg
               aria-label="Previous"
-              class="StyledIcon-ofa7kd-0 jXwebn"
+              class="StyledIcon-ofa7kd-0 FimRf"
               viewBox="0 0 24 24"
             >
               <polyline
@@ -1119,7 +1119,7 @@ exports[`Calendar change months 2`] = `
           >
             <svg
               aria-label="Next"
-              class="StyledIcon-ofa7kd-0 jXwebn"
+              class="StyledIcon-ofa7kd-0 FimRf"
               viewBox="0 0 24 24"
             >
               <polyline
@@ -16758,7 +16758,7 @@ exports[`Calendar select date 2`] = `
           >
             <svg
               aria-label="Previous"
-              class="StyledIcon-ofa7kd-0 jXwebn"
+              class="StyledIcon-ofa7kd-0 FimRf"
               viewBox="0 0 24 24"
             >
               <polyline
@@ -16777,7 +16777,7 @@ exports[`Calendar select date 2`] = `
           >
             <svg
               aria-label="Next"
-              class="StyledIcon-ofa7kd-0 jXwebn"
+              class="StyledIcon-ofa7kd-0 FimRf"
               viewBox="0 0 24 24"
             >
               <polyline
@@ -18620,7 +18620,7 @@ exports[`Calendar select dates 2`] = `
           >
             <svg
               aria-label="Previous"
-              class="StyledIcon-ofa7kd-0 jXwebn"
+              class="StyledIcon-ofa7kd-0 FimRf"
               viewBox="0 0 24 24"
             >
               <polyline
@@ -18639,7 +18639,7 @@ exports[`Calendar select dates 2`] = `
           >
             <svg
               aria-label="Next"
-              class="StyledIcon-ofa7kd-0 jXwebn"
+              class="StyledIcon-ofa7kd-0 FimRf"
               viewBox="0 0 24 24"
             >
               <polyline
