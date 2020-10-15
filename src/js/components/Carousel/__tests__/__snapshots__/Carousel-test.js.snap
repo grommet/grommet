@@ -1464,7 +1464,7 @@ exports[`Carousel navigate 2`] = `
         >
           <svg
             aria-label="Previous"
-            class="StyledIcon-ofa7kd-0 FimRf"
+            class="StyledIcon-ofa7kd-0 jXwebn"
             viewBox="0 0 24 24"
           >
             <polyline
@@ -1488,7 +1488,7 @@ exports[`Carousel navigate 2`] = `
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 FimRf"
+                class="StyledIcon-ofa7kd-0 jXwebn"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1505,7 +1505,7 @@ exports[`Carousel navigate 2`] = `
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 JJNub"
+                class="StyledIcon-ofa7kd-0 kbXEEj"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1525,7 +1525,7 @@ exports[`Carousel navigate 2`] = `
         >
           <svg
             aria-label="Next"
-            class="StyledIcon-ofa7kd-0 FimRf"
+            class="StyledIcon-ofa7kd-0 jXwebn"
             viewBox="0 0 24 24"
           >
             <polyline
@@ -1596,7 +1596,7 @@ exports[`Carousel navigate 3`] = `
         >
           <svg
             aria-label="Previous"
-            class="StyledIcon-ofa7kd-0 FimRf"
+            class="StyledIcon-ofa7kd-0 jXwebn"
             viewBox="0 0 24 24"
           >
             <polyline
@@ -1620,7 +1620,7 @@ exports[`Carousel navigate 3`] = `
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 JJNub"
+                class="StyledIcon-ofa7kd-0 kbXEEj"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1637,7 +1637,7 @@ exports[`Carousel navigate 3`] = `
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 FimRf"
+                class="StyledIcon-ofa7kd-0 jXwebn"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1656,7 +1656,7 @@ exports[`Carousel navigate 3`] = `
         >
           <svg
             aria-label="Next"
-            class="StyledIcon-ofa7kd-0 FimRf"
+            class="StyledIcon-ofa7kd-0 jXwebn"
             viewBox="0 0 24 24"
           >
             <polyline
@@ -2179,7 +2179,7 @@ exports[`Carousel play 2`] = `
         >
           <svg
             aria-label="Previous"
-            class="StyledIcon-ofa7kd-0 FimRf"
+            class="StyledIcon-ofa7kd-0 jXwebn"
             viewBox="0 0 24 24"
           >
             <polyline
@@ -2203,7 +2203,7 @@ exports[`Carousel play 2`] = `
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 FimRf"
+                class="StyledIcon-ofa7kd-0 jXwebn"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -2220,7 +2220,7 @@ exports[`Carousel play 2`] = `
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 JJNub"
+                class="StyledIcon-ofa7kd-0 kbXEEj"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -2240,7 +2240,7 @@ exports[`Carousel play 2`] = `
         >
           <svg
             aria-label="Next"
-            class="StyledIcon-ofa7kd-0 FimRf"
+            class="StyledIcon-ofa7kd-0 jXwebn"
             viewBox="0 0 24 24"
           >
             <polyline
