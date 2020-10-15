@@ -14,8 +14,9 @@ export const doc = Menu => {
       `The labels and behavior of the contained Buttons are described
       via the \`items\` property.
       You can provide a single function child that will be called with
-      'hover', 'focus', and 'drop' keys. This allows you to customize
-      the rendering of the Menu button in those cases.`,
+      'disabled', 'hover', 'focus', and 'drop' keys. 
+      This allows you to customize the rendering of the Menu button 
+      in those cases.`,
     )
     .usage(
       `import { Menu } from 'grommet';
@@ -30,7 +31,7 @@ export const doc = Menu => {
       It will be passed an object containing button props.
       It should return a react element.
       For example:
-      \`children={({ drop, hover }) => <Box ...>{...}</Box>}\`
+      \`children={({ disabled, drop, hover, focus }) => <Box ...>{...}</Box>}\`
       `,
     ),
     disabled: PropTypes.bool
