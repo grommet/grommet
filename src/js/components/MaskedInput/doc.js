@@ -17,6 +17,11 @@ export const doc = MaskedInput => {
     a11yTitle: PropTypes.string.description(
       'Custom title to be used by screen readers.',
     ),
+    dropHeight: PropTypes.oneOfType([
+      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+      PropTypes.string,
+    ]).description('The height of the drop container.'),
+    dropProps: PropTypes.object.description('Any valid Drop prop.'),
     icon: PropTypes.element.description(
       `An optional icon to show. This could be used to provide an
       indication of what kind of input is expected, like an email icon,
