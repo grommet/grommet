@@ -9,7 +9,7 @@ import {
 } from '../../utils';
 
 interface onChangeEvent {
-  value: string[];
+  value: (number | string)[];
   option: string;
   selected: number[];
 }
@@ -66,6 +66,7 @@ export interface SelectProps {
     | { key: string; reduce?: boolean }
     | ((option: { label: string; value: number }) => string);
   emptySearchMessage?: string;
+  searching?: boolean;
 }
 
 declare const Select: React.ComponentClass<SelectProps>;
