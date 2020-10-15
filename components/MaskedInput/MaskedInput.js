@@ -5,7 +5,7 @@ exports.MaskedInput = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _styledComponents = require("styled-components");
+var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
 var _defaultProps = require("../../default-props");
 
@@ -148,12 +148,20 @@ var parseValue = function parseValue(mask, value) {
 var defaultMask = [{
   regexp: /[^]*/
 }];
+var ContainerBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
+  displayName: "MaskedInput__ContainerBox",
+  componentId: "af8hzu-0"
+})(["", ";@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){width:100%;}"], function (props) {
+  return props.dropHeight ? (0, _utils.sizeStyle)('max-height', props.dropHeight, props.theme) : 'max-height: inherit;';
+});
 var dropAlign = {
   top: 'bottom',
   left: 'left'
 };
 var MaskedInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
+      dropHeight = _ref.dropHeight,
+      dropProps = _ref.dropProps,
       focusProp = _ref.focus,
       icon = _ref.icon,
       id = _ref.id,
@@ -168,7 +176,7 @@ var MaskedInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       plain = _ref.plain,
       reverse = _ref.reverse,
       valueProp = _ref.value,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "focus", "icon", "id", "mask", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "placeholder", "plain", "reverse", "value"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "dropHeight", "dropProps", "focus", "icon", "id", "mask", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "placeholder", "plain", "reverse", "value"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
@@ -384,15 +392,17 @@ var MaskedInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       if (_onBlur) _onBlur(event);
     },
     onChange: onChangeInput
-  }))), showDrop && mask[activeMaskIndex] && mask[activeMaskIndex].options && /*#__PURE__*/_react["default"].createElement(_Drop.Drop, {
+  }))), showDrop && mask[activeMaskIndex] && mask[activeMaskIndex].options && /*#__PURE__*/_react["default"].createElement(_Drop.Drop, _extends({
     id: id ? "masked-input-drop__" + id : undefined,
     align: dropAlign,
     responsive: false,
     target: inputRef.current,
     onClickOutside: onHideDrop,
     onEsc: onHideDrop
-  }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-    ref: dropRef
+  }, dropProps), /*#__PURE__*/_react["default"].createElement(ContainerBox, {
+    ref: dropRef,
+    overflow: "auto",
+    dropHeight: dropHeight
   }, mask[activeMaskIndex].options.map(function (option, index) {
     // Determine whether the label is done as a child or
     // as an option Button kind property.

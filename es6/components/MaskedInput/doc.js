@@ -7,6 +7,8 @@ export var doc = function doc(MaskedInput) {
   var DocumentedMaskedInput = describe(MaskedInput).availableAt(getAvailableAtBadge('MaskedInput')).description('An input field with formalized syntax.').usage("import { MaskedInput } from 'grommet';\n<MaskedInput id='item' name='item' />").intrinsicElement('input');
   DocumentedMaskedInput.propTypes = {
     a11yTitle: PropTypes.string.description('Custom title to be used by screen readers.'),
+    dropHeight: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string]).description('The height of the drop container.'),
+    dropProps: PropTypes.object.description('Any valid Drop prop.'),
     icon: PropTypes.element.description("An optional icon to show. This could be used to provide an\n      indication of what kind of input is expected, like an email icon,\n      or what the input will be used for, like a search icon."),
     id: PropTypes.string.description('The id attribute of the input.'),
     name: PropTypes.string.description('The name attribute of the input.'),
