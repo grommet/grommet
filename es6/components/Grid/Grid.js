@@ -6,18 +6,20 @@ import React, { forwardRef } from 'react';
 import { StyledGrid } from './StyledGrid';
 var Grid = /*#__PURE__*/forwardRef(function (props, ref) {
   var a11yTitle = props.a11yTitle,
+      border = props.border,
       fill = props.fill,
       _props$responsive = props.responsive,
       responsive = _props$responsive === void 0 ? true : _props$responsive,
       rows = props.rows,
       tag = props.tag,
       as = props.as,
-      rest = _objectWithoutPropertiesLoose(props, ["a11yTitle", "fill", "responsive", "rows", "tag", "as"]);
+      rest = _objectWithoutPropertiesLoose(props, ["a11yTitle", "border", "fill", "responsive", "rows", "tag", "as"]);
 
   return /*#__PURE__*/React.createElement(StyledGrid, _extends({
     ref: ref,
     a11yTitleProp: a11yTitle,
     as: !as && tag ? tag : as,
+    border: border,
     fillContainer: fill,
     responsive: responsive,
     rowsProp: rows
