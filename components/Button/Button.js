@@ -238,6 +238,7 @@ var Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     }, first, second);
   } else if (typeof children === 'function') {
     contents = children({
+      disabled: disabled,
       hover: hover,
       focus: focus
     });
