@@ -32,7 +32,7 @@ export const doc = Button => {
     ]).description(
       `Function that can be called to render the visual representation.
       Button can take in Children as a function, node, or object. 
-      For example, disabled, hover, and focus can be passed as an 
+      For example, 'disabled', 'hover', and 'focus' can be passed as an 
       argument that would then return a react element.
       \`children={({ disabled, hover, focus }) => <Box...>{...}</Box>}\`. 
       When Button has children, it is styled as a \`plain\` button.

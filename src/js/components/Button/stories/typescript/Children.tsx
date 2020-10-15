@@ -7,18 +7,12 @@ import { Add } from 'grommet-icons';
 const ButtonWithChildren = props => (
   <Button hoverIndicator="light-1" onClick={() => {}} {...props}>
     {({ disabled, hover, focus }) => (
-      <Box
-        background={disabled ? 'light-2' : 'white'}
-        pad="small"
-        direction="row"
-        align={disabled ? 'start' : 'center'}
-        gap="small"
-      >
+      <Box pad="small" direction="row" align="center" gap="small">
         {hover || disabled ? <Add color="brand" /> : <Add />}
         {focus ? (
           <Text>Child Button is focused</Text>
         ) : (
-          <Text>Child Button</Text>
+          <Text color={disabled && 'control'}>Child Button</Text>
         )}
       </Box>
     )}

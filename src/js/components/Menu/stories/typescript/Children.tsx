@@ -31,7 +31,7 @@ const MenuWithChildren = props => (
   </Menu>
 );
 
-const CustomMenu = () => (
+const Example = () => (
   <Grommet theme={grommet}>
     <Box
       align="center"
@@ -44,4 +44,4 @@ const CustomMenu = () => (
   </Grommet>
 );
 
-storiesOf('Menu', module).add('Children', () => <CustomMenu />);
+storiesOf('Menu', module).add('Children', () => <Example />);
