@@ -6,17 +6,18 @@ import { themeDocUtils } from '../../utils/themeDocUtils';
 export const doc = Tip => {
   const DocumentedTip = describe(Tip)
     .availableAt(getAvailableAtBadge('Tip'))
-    .description('Arbitrary text.')
+    .description(`Tooltip or a hint when hovering over an UI item.`)
     .usage(
       `import { Tip } from 'grommet';
 <Tip />`,
     )
-    .intrinsicElement('span');
+    .intrinsicElement('span'); // TODO after resolving the Box wrapper issue
 
   DocumentedTip.propTypes = {
-    textAlign: PropTypes.oneOf(['start', 'center', 'end'])
-      .description('How to align the text inside the component.')
-      .defaultValue('start'),
+    content: PropTypes.node.description(`The tooltip content inside the drop.`),
+    dropProps: PropTypes.object.description(
+      'Any valid Drop prop to style the Tip drop container.',
+    ),
   };
 
   return DocumentedTip;
