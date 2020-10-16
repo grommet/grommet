@@ -47,6 +47,7 @@
     "grommet-icons": "^4.2.0",
     "hoist-non-react-statics": "^3.2.0",
     "markdown-to-jsx": "^6.9.1",
+    "mnet-ui-base-theme-hb": "mnet-ui/mnet-ui-base-theme-hb",
     "mnet-ui-base-theme-neo": "sabarnix/mnet-ui-base-theme-neo",
     "polished": "^3.4.1",
     "prop-types": "^15.7.2",
@@ -122,7 +123,8 @@
     "tarball-extract": "^0.0.6",
     "typescript": "^3.6.4",
     "webpack": "^4.39.3",
-    "webpack-cli": "^3.2.3"
+    "webpack-cli": "^3.2.3",
+    "mnet-icons": "git+ssh://git@tree.mn:saumik.s/mnet-icons.git"
   },
   "jest": {
     "collectCoverage": true,

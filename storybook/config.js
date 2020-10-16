@@ -2,8 +2,9 @@ import React from 'react';
 import { addParameters, configure, addDecorator } from '@storybook/react';
 import 'storybook-chromatic';
 import { neo } from 'mnet-ui-base-theme-neo';
+import { hb } from 'mnet-ui-base-theme-hb';
 import { withThemes } from 'storybook-addon-themes/react';
-import { mnet as hb, MnetUIBase } from '../src/js';
+import { MnetUIBase } from '../src/js';
 import grommetLight from './theme';
 
 const req = require.context(

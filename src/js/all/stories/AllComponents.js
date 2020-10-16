@@ -32,11 +32,12 @@ import { mnet, dark } from 'mnet-ui-base/themes';
 import { generate } from 'mnet-ui-base/themes/base';
 import { deepMerge } from 'mnet-ui-base/utils';
 import { neo } from 'mnet-ui-base-theme-neo';
+import { hb } from 'mnet-ui-base-theme-hb';
 
 const themes = {
+  hb,
   neo,
   dark,
-  mnet,
 };
 
 const Components = () => {
@@ -191,9 +192,9 @@ const Components = () => {
             <Select
               plain
               size="small"
-              options={Object.keys(themes)}
+              options={Object.keys(themes).map(val => val.toUpperCase())}
               value={themeName}
-              onChange={event => setThemeName(event.option)}
+              onChange={event => setThemeName(event.option.toLowerCase())}
             />
           </Box>
           {themeCanMode && (
