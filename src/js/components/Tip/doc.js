@@ -6,7 +6,11 @@ import { themeDocUtils } from '../../utils/themeDocUtils';
 export const doc = Tip => {
   const DocumentedTip = describe(Tip)
     .availableAt(getAvailableAtBadge('Tip'))
-    .description(`Tooltip or a hint when hovering over an UI item.`)
+    .description(
+      `Tooltip or a hint when hovering over a UI item. 
+    The tooltip will render when hovering on top of the 
+    Tip child node or string.`,
+    )
     .usage(
       `import { Tip } from 'grommet';
 <Tip />`,

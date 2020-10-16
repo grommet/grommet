@@ -27,10 +27,16 @@ export const Tip = forwardRef(
       ref,
     };
 
+    const getChildren = () => {
+      // handle the use case of a single string child
+      if (typeof children === 'string') return <span>{children}</span>;
+      return children;
+    };
+
     return (
       // Not sure about the extra Box, I'm still thinking of ways to simplify
       <Box ref={tipRef} {...rest}>
-        {cloneElement(children, childProps)}
+        {cloneElement(getChildren(), childProps)}
         {over && (
           <Drop
             align={{ left: 'right' }} // most common use case is a sidebar?!
