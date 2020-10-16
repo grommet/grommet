@@ -32,9 +32,7 @@ Custom components and props to override html elements such as 'img'
       tr: { component: TableRow }
 
 ```
-{
-
-}
+object
 ```
 
 **options**
