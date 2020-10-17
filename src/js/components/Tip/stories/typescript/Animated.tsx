@@ -7,7 +7,7 @@ import { Tip } from '../../Tip';
 
 const Circle = ({ ...rest }) => (
   <Box
-    animation={['slideUp', 'pulse']}
+    animation={['fadeIn', 'pulse']} // double animation
     round="full"
     background="linear-gradient(102.77deg, #FD6FFF -9.18%, #ffdde2 209.09%)"
     {...rest}
@@ -17,7 +17,7 @@ const Circle = ({ ...rest }) => (
 const Example = () => {
   return (
     <Grommet full theme={grommet}>
-      <Box align="center" justify="center" fill background="dark-1">
+      <Box align="center" justify="center" fill background="dark-1" gap="medium">
         <Tip
           align="start"
           content={
@@ -32,6 +32,7 @@ const Example = () => {
         >
           <Button icon={<UserFemale color="accent-1" size="large" />} />
         </Tip>
+        Animated Tooltip when hovering the lady
       </Box>
     </Grommet>
   );
