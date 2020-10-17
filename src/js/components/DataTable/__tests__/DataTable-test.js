@@ -182,6 +182,82 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('sort nested object', () => {
+    const { container, getByText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            {
+              property: 'b.value',
+              header: 'Value',
+              render: datum => datum.b && datum.b.value,
+            },
+          ]}
+          data={[
+            { a: 'zero', b: { value: 1 } },
+            { a: 'one', b: { value: 2 } },
+            { a: 'two', b: { value: 3 } },
+          ]}
+          sort={{ property: 'b.value', direction: 'asc' }}
+        />
+      </Grommet>,
+    );
+
+    expect(container.querySelectorAll('td').item(0).textContent).toBe('1');
+    expect(container.querySelectorAll('td').item(1).textContent).toBe('2');
+    expect(container.querySelectorAll('td').item(2).textContent).toBe('3');
+
+    fireEvent.click(getByText('Value'));
+
+    expect(container.querySelectorAll('td').item(0).textContent).toBe('3');
+    expect(container.querySelectorAll('td').item(1).textContent).toBe('2');
+    expect(container.querySelectorAll('td').item(2).textContent).toBe('1');
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('sort nested object with onSort', () => {
+    const onSort = jest.fn();
+    const { container, getByText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            {
+              property: 'b.value',
+              header: 'Value',
+              render: datum => datum.b && datum.b.value,
+            },
+          ]}
+          data={[
+            { a: 'zero', b: { value: 1 } },
+            { a: 'one', b: { value: 2 } },
+            { a: 'two', b: { value: 3 } },
+          ]}
+          onSort={onSort}
+          sort={{ property: 'b.value', direction: 'asc' }}
+        />
+      </Grommet>,
+    );
+
+    expect(container.querySelectorAll('td').item(0).textContent).toBe('1');
+    expect(container.querySelectorAll('td').item(1).textContent).toBe('2');
+    expect(container.querySelectorAll('td').item(2).textContent).toBe('3');
+
+    fireEvent.click(getByText('Value'));
+
+    expect(onSort).toBeCalledWith(
+      expect.objectContaining({ property: 'b.value' }),
+    );
+
+    expect(container.querySelectorAll('td').item(0).textContent).toBe('3');
+    expect(container.querySelectorAll('td').item(1).textContent).toBe('2');
+    expect(container.querySelectorAll('td').item(2).textContent).toBe('1');
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('sort external', () => {
     const { container } = render(
       <Grommet>
@@ -260,6 +336,35 @@ describe('DataTable', () => {
         />
       </Grommet>,
     );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('aggregate with nested object', () => {
+    const { container, getByText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            {
+              property: 'obj.value',
+              header: 'object',
+              aggregate: 'sum',
+              footer: { aggregate: true },
+            },
+            {
+              property: 'obj2.value',
+              header: 'object 2',
+              render: datum => datum.obj2.value,
+            },
+          ]}
+          data={[
+            { a: 'one', obj: { value: 1 }, obj2: { value: 10 } },
+            { a: 'two', obj: { value: 2 }, obj2: { value: 20 } },
+          ]}
+        />
+      </Grommet>,
+    );
+    expect(getByText('3')).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -607,6 +712,115 @@ describe('DataTable', () => {
         ))}
       </Grommet>,
     );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('pin + background', () => {
+    const theme = {
+      dataTable: {
+        pinned: {
+          header: {
+            background: {
+              color: 'blue',
+            },
+          },
+          footer: {
+            background: {
+              color: 'green',
+            },
+          },
+        },
+      },
+    };
+
+    const { container } = render(
+      <Grommet theme={theme}>
+        {[true, 'header', 'footer'].map(pin => (
+          <DataTable
+            background={{ pinned: 'red' }}
+            key={JSON.stringify(pin)}
+            columns={[
+              { property: 'a', header: 'A', footer: 'Total', pin: true },
+              { property: 'b', header: 'B' },
+            ]}
+            data={[
+              { a: 'one', b: 1 },
+              { a: 'two', b: 2 },
+            ]}
+            pin={pin}
+          />
+        ))}
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('select', () => {
+    const onSelect = jest.fn();
+    const { container, getByLabelText } = render(
+      <Grommet>
+        <DataTable
+          columns={[{ property: 'a', header: 'A' }]}
+          data={[{ a: 'alpha' }, { a: 'beta' }]}
+          primaryKey="a"
+          select={['alpha']}
+          onSelect={onSelect}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByLabelText('select beta'));
+    expect(onSelect).toBeCalledWith(expect.arrayContaining(['alpha', 'beta']));
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('custom theme', () => {
+    const customTheme = {
+      dataTable: {
+        header: {
+          background: 'skyblue',
+          border: {
+            color: 'brand',
+            size: 'medium',
+          },
+          gap: 'none',
+          pad: { horizontal: 'small', vertical: 'xsmall' },
+          font: {
+            weight: 'bold',
+          },
+          hover: {
+            background: {
+              color: 'light-2',
+            },
+          },
+        },
+        resize: {
+          hover: {
+            border: {
+              color: 'red',
+              side: 'end',
+              size: 'xsmall',
+            },
+          },
+        },
+      },
+    };
+
+    const { container, getByLabelText } = render(
+      <Grommet theme={customTheme}>
+        <DataTable
+          columns={[{ property: 'a', header: 'A' }]}
+          data={[{ a: 'alpha' }, { a: 'beta' }]}
+          primaryKey="a"
+          select={['alpha']}
+          sortable
+          resizeable
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.mouseOver(getByLabelText('select beta'));
     expect(container.firstChild).toMatchSnapshot();
   });
 });

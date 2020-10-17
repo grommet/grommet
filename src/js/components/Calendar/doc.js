@@ -28,6 +28,15 @@ export const doc = Calendar => {
     bounds: PropTypes.arrayOf(PropTypes.string)
       .description(`An array of two numbers indicating the limits on
         navigation in ISO8601 format`),
+    children: PropTypes.func.description(
+      `Function that will be called to render each day.
+      It will be passed \`({date, day, isInRange, isSelected})\` where \`date\`
+      is a string containing an ISO8601 date for the day being rendered, \`day\`
+      is a number containing the day of the month being rendered, \`isInRange\`
+      is a boolean indicating whether the date is within a selected range of
+      dates, and \`isSelected\` is a boolean indicating whether this date
+      is selected.`,
+    ),
     date: PropTypes.string.description('The selected date in ISO8601 format'),
     dates: PropTypes.arrayOf(
       PropTypes.oneOfType([
@@ -45,6 +54,9 @@ export const doc = Calendar => {
         selectable. Items that are an array indicate a range of dates.`),
     daysOfWeek: PropTypes.bool
       .description(`Whether to show the days of the week.`)
+      .defaultValue(false),
+    fill: PropTypes.bool
+      .description(`Whether the calendar should fill the parent container.`)
       .defaultValue(false),
     firstDayOfWeek: PropTypes.oneOf([0, 1])
       .description('The first day of the week. 0 for Sunday. 1 for Monday.')
@@ -64,10 +76,10 @@ The function passes the following options:
   }
 \`\`\`
 
-\`onPreviousMonth\` and \`onNextMonth\` are callbacks that will tell the 
+\`onPreviousMonth\` and \`onNextMonth\` are callbacks that will tell the
 calendar to move between months.
-\`previousInBound\` and \`nextInBound\` are booleans that tell, when using 
-\`bounds\`, if the current date is within that range. You can then use that 
+\`previousInBound\` and \`nextInBound\` are booleans that tell, when using
+\`bounds\`, if the current date is within that range. You can then use that
 to disable the previous and next buttons.
 `,
     ),

@@ -466,7 +466,7 @@ exports[`Form controlled controlled FormField deprecated 2`] = `
       class="StyledBox-sc-13pk1d4-0 dtCrhk FormField__FormFieldBox-m9hood-0 eenrNp"
     >
       <label
-        class="StyledText-sc-1sadyjn-0 enbIRN"
+        class="StyledText-sc-1sadyjn-0 hPvfbL"
         for="test"
       >
         test
@@ -506,7 +506,7 @@ exports[`Form controlled controlled FormField deprecated 3`] = `
       class="StyledBox-sc-13pk1d4-0 dtCrhk FormField__FormFieldBox-m9hood-0 eenrNp"
     >
       <label
-        class="StyledText-sc-1sadyjn-0 enbIRN"
+        class="StyledText-sc-1sadyjn-0 hPvfbL"
         for="test"
       >
         test

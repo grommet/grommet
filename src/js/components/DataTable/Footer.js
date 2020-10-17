@@ -15,16 +15,19 @@ const Footer = ({
   fill,
   footerValues,
   groups,
+  onSelect,
   pad,
   pin: tablePin,
   primaryProperty,
+  selected,
   ...rest
 }) => (
-  <StyledDataTableFooter fillProp={fill} {...rest}>
+  <StyledDataTableFooter fillProp={fill} pin={tablePin} {...rest}>
     <TableRow>
       {groups && (
         <TableCell plain size="xxsmall" pad="none" verticalAlign="top" />
       )}
+      {(selected || onSelect) && <TableCell />}
       {columns.map(column => {
         const pin = [];
         if (tablePin) pin.push('bottom');

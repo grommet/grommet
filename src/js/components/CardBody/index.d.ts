@@ -1,5 +1,5 @@
-import * as React from "react";
-import { BoxTypes } from '../Box' 
+import * as React from 'react';
+import { BoxTypes } from '../Box';
 
 declare const CardBody: React.FC<BoxTypes>;
 

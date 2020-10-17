@@ -259,6 +259,47 @@ const focusStyles = (props, { forceOutline, justBorder } = {}) => {
   return ''; // defensive
 };
 
+const unfocusStyles = (props, { forceOutline, justBorder } = {}) => {
+  const {
+    theme: {
+      global: { focus },
+    },
+  } = props;
+  if (!focus || (forceOutline && !focus.outline)) {
+    const color = normalizeColor('focus', props.theme);
+    if (color) return `outline: none;`;
+    return ''; // native
+  }
+  if (focus.outline && (!focus.border || !justBorder)) {
+    if (typeof focus.outline === 'object') {
+      return `
+        outline-offset: 0px;
+        outline: none;
+      `;
+    }
+    return `outline: none;`;
+  }
+  if (focus.shadow && (!focus.border || !justBorder)) {
+    if (typeof focus.shadow === 'object') {
+      return `
+        outline: none;
+        box-shadow: none;
+      `;
+    }
+    return `
+      outline: none;
+      box-shadow: none;
+    `;
+  }
+  if (focus.border) {
+    return `
+      outline: none;
+      border-color: none;
+    `;
+  }
+  return ''; // defensive
+};
+
 // focus also supports clickable elements inside svg
 export const focusStyle = ({
   forceOutline,
@@ -278,6 +319,37 @@ export const focusStyle = ({
     ${focusStyles(props)}
   }`}
   ${props => focusStyles(props, { forceOutline, justBorder })}
+  ${!forceOutline &&
+    `
+  ::-moz-focus-inner {
+    border: 0;
+  }
+  `}
+`;
+
+// This is placed next to focusStyle for easy maintainability
+// of code since changes to focusStyle should be reflected in
+// unfocusStyle as well. However, this function is only being used
+// by List for an iterim state. It is not recommended to rely on
+// this function for other components.
+export const unfocusStyle = ({
+  forceOutline,
+  justBorder,
+  skipSvgChildren,
+} = {}) => css`
+  ${props =>
+    !skipSvgChildren &&
+    `
+  > circle,
+  > ellipse,
+  > line,
+  > path,
+  > polygon,
+  > polyline,
+  > rect {
+    ${unfocusStyles(props)}
+  }`}
+  ${props => unfocusStyles(props, { forceOutline, justBorder })}
   ${!forceOutline &&
     `
   ::-moz-focus-inner {
@@ -459,3 +531,75 @@ export const plainInputStyle = css`
   outline: none;
   border: none;
 `;
+
+// CSS for this sub-object in the theme
+export const kindPartStyles = (obj, theme, colorValue) => {
+  const styles = [];
+  if (obj.padding || obj.pad) {
+    // button uses `padding` but other components use Grommet `pad`
+    const pad = obj.padding || obj.pad;
+    if (pad.vertical || pad.horizontal)
+      styles.push(
+        `padding: ${theme.global.edgeSize[pad.vertical] ||
+          pad.vertical ||
+          0} ${theme.global.edgeSize[pad.horizontal] || pad.horizontal || 0};`,
+      );
+    else styles.push(`padding: ${theme.global.edgeSize[pad] || pad || 0};`);
+  }
+  if (obj.background)
+    styles.push(
+      backgroundStyle(
+        colorValue || obj.background,
+        theme,
+        obj.color ||
+          (Object.prototype.hasOwnProperty.call(obj, 'color') &&
+          obj.color === undefined
+            ? false
+            : undefined),
+      ),
+    );
+  else if (obj.color)
+    styles.push(`color: ${normalizeColor(obj.color, theme)};`);
+  if (obj.border) {
+    if (obj.border.width)
+      styles.push(css`
+        border-style: solid;
+        border-width: ${obj.border.width};
+      `);
+    if (obj.border.color)
+      styles.push(css`
+        border-color: ${normalizeColor(
+          (!obj.background && colorValue) || obj.border.color || 'border',
+          theme,
+        )};
+      `);
+    if (obj.border.radius)
+      styles.push(css`
+        border-radius: ${obj.border.radius};
+      `);
+  } else if (obj.border === false) styles.push('border: none;');
+  if (colorValue && !obj.border && !obj.background)
+    styles.push(`color: ${normalizeColor(colorValue, theme)};`);
+  if (obj.font) {
+    if (obj.font.size) {
+      styles.push(
+        `font-size: ${theme.text[obj.font.size].size || obj.font.size};`,
+      );
+    }
+    if (obj.font.height) {
+      styles.push(`line-height: ${obj.font.height};`);
+    }
+    if (obj.font.weight) {
+      styles.push(`font-weight: ${obj.font.weight};`);
+    }
+  }
+  if (obj.opacity) {
+    const opacity =
+      obj.opacity === true
+        ? theme.global.opacity.medium
+        : theme.global.opacity[obj.opacity] || obj.opacity;
+    styles.push(`opacity: ${opacity};`);
+  }
+  if (obj.extend) styles.push(obj.extend);
+  return styles;
+};

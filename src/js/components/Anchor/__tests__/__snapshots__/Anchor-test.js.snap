@@ -1,5 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Anchor blur renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
+  color: #7D4CDB;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c1:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+<div
+  class="c0"
+>
+  <a
+    class="c1"
+    href="#"
+  >
+    Test
+  </a>
+</div>
+`;
+
 exports[`Anchor disabled renders 1`] = `
 .c0 {
   font-size: 18px;
@@ -460,6 +499,155 @@ exports[`Anchor should have no accessibility violations 1`] = `
       Link
     </a>
   </div>
+</div>
+`;
+
+exports[`Anchor size renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  box-sizing: border-box;
+  font-size: 12px;
+  line-height: 18px;
+  color: #7D4CDB;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c1:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c2 {
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 20px;
+  color: #7D4CDB;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c2:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c3 {
+  box-sizing: border-box;
+  font-size: 18px;
+  line-height: 24px;
+  color: #7D4CDB;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c3:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c4 {
+  box-sizing: border-box;
+  font-size: 22px;
+  line-height: 28px;
+  color: #7D4CDB;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c4:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c5 {
+  box-sizing: border-box;
+  font-size: 26px;
+  line-height: 32px;
+  color: #7D4CDB;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c5:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c6 {
+  box-sizing: border-box;
+  font-size: 34px;
+  line-height: 40px;
+  color: #7D4CDB;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c6:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+<div
+  className="c0"
+>
+  <a
+    className="c1"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    size="xsmall"
+  />
+  <a
+    className="c2"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    size="small"
+  />
+  <a
+    className="c3"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    size="medium"
+  />
+  <a
+    className="c4"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    size="large"
+  />
+  <a
+    className="c5"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    size="xlarge"
+  />
+  <a
+    className="c6"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    size="xxlarge"
+  />
 </div>
 `;
 

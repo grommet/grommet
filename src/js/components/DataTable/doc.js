@@ -186,6 +186,14 @@ export const doc = DataTable => {
       names and values which are the search text strings. This is typically
       employed so a back-end can be used to search through the data.`,
     ),
+    onSelect: PropTypes.func.description(
+      `When supplied, causes checkboxes to be added to each row such that
+      the user can indicate which rows should be selected. This function
+      will be called with an array of primary key values, suitable to be
+      passed to the 'select' property. If you are storing select state via
+      a 'useState' hook, you can do something like:
+      '<DataTable select={select} onSelect={setSelect} />'.`,
+    ),
     onSort: PropTypes.func.description(
       `When supplied, this function will be called with an object
       with a 'property' property that indicates which property
@@ -233,6 +241,15 @@ export const doc = DataTable => {
       { "primary-key-value": { background: ..., border: ..., pad: ... }},
       where the background, border, and pad accept the same values as
       the same named properties on DataTable.`,
+    ),
+    select: PropTypes.arrayOf(
+      PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    ).description(
+      `When supplied, causes checkboxes to be added to each row to indicate
+      which rows are selected. The values in this array should match
+      the 'primaryKey' or 'columns[].primary' keyed value for the row's data
+      object. If 'onSelect' is provided, the CheckBoxes are enabled
+      and this function can be used to track select changes.`,
     ),
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
@@ -310,6 +327,79 @@ export const themeDoc = {
     type: 'object',
     defaultValue: '{}',
   },
+  'dataTable.header.background': {
+    description: 'Any valid Box background value.',
+    type: `string | 
+    { dark: string, light: string } |
+    { 
+      color: { dark: string, light: string } | string, 
+      dark: bool, 
+      image: string, 
+      position: string, 
+      opacity: bool | string, 
+      repeat: no-repeat | repeat, 
+      size: cover | contain | string
+    }`,
+    defaultValue: undefined,
+  },
+  'dataTable.header.border': {
+    description: 'Any valid Box border value.',
+    type: 'string | object',
+    defaultValue: undefined,
+  },
+  'dataTable.header.font.weight': {
+    description: 'The font weight for text in header cells.',
+    type: 'string',
+    defaultValue: undefined,
+  },
+  'dataTable.header.font.size': {
+    description: 'The font size for text in header cells.',
+    type: 'string',
+    defaultValue: undefined,
+  },
+  'dataTable.header.gap': {
+    description: 'The gap between elements within the header cell.',
+    type: 'object',
+    defaultValue: 'small',
+  },
+  'dataTable.header.hover.background': {
+    description: `The hover background color of the header cell contents, if 
+    clickable. Any valid Box background options apply.`,
+    type: `string | 
+    { dark: string, light: string } |
+    { 
+      color: { dark: string, light: string } | string, 
+      dark: bool, 
+      image: string, 
+      position: string, 
+      opacity: bool | string, 
+      repeat: no-repeat | repeat, 
+      size: cover | contain | string
+    }`,
+    defaultValue: undefined,
+  },
+  'dataTable.header.pad': {
+    description: 'The pad around the contents of the header cell.',
+    type: 'string | object',
+    defaultValue: undefined,
+  },
+  'dataTable.resize.hover.color': {
+    description: 'The color of the resizer when hovered over.',
+    type: 'string | object',
+    defaultValue: undefined,
+  },
+  'dataTable.resize.hover.side': {
+    description: `The side of the resizer when hovered over. If color or size 
+    are defined, this will default to 'end' which is the recommended value.`,
+    type: 'string',
+    defaultValue: undefined,
+  },
+  'dataTable.resize.hover.size': {
+    description: `The size of the resizer when hovered over. Size values 
+    correspond with those accepted by Box border.`,
+    type: 'string',
+    defaultValue: undefined,
+  },
   'dataTable.icons.ascending': {
     description: 'The ascending icon.',
     type: 'React.Element',
@@ -333,6 +423,66 @@ export const themeDoc = {
   'dataTable.icons.sortable': {
     description: 'The icon indicating a column can be sorted.',
     type: 'React.Element',
+    defaultValue: undefined,
+  },
+  'dataTable.pinned.body.background': {
+    description: 'Any valid Box background options apply.',
+    type: `string | 
+      { dark: string, light: string } |
+      { 
+        color: { dark: string, light: string } | string, 
+        dark: bool, 
+        image: string, 
+        position: string, 
+        opacity: bool | string, 
+        repeat: no-repeat | repeat, 
+        size: cover | contain | string
+      }`,
+    defaultValue: undefined,
+  },
+  'dataTable.pinned.body.extend': {
+    description: 'Any additional styles for pinned body cells.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'dataTable.pinned.header.background': {
+    description: 'Any valid Box background options apply.',
+    type: `string | 
+      { dark: string, light: string } |
+      { 
+        color: { dark: string, light: string } | string, 
+        dark: bool, 
+        image: string, 
+        position: string, 
+        opacity: bool | string, 
+        repeat: no-repeat | repeat, 
+        size: cover | contain | string
+      }`,
+    defaultValue: undefined,
+  },
+  'dataTable.pinned.header.extend': {
+    description: 'Any additional styles for pinned header cells.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'dataTable.pinned.footer.background': {
+    description: 'Any valid Box background options apply.',
+    type: `string | 
+      { dark: string, light: string } |
+      { 
+        color: { dark: string, light: string } | string, 
+        dark: bool, 
+        image: string, 
+        position: string, 
+        opacity: bool | string, 
+        repeat: no-repeat | repeat, 
+        size: cover | contain | string
+      }`,
+    defaultValue: undefined,
+  },
+  'dataTable.pinned.footer.extend': {
+    description: 'Any additional styles for pinned footer cells.',
+    type: 'string | (props) => {}',
     defaultValue: undefined,
   },
   'dataTable.primary.weight': {

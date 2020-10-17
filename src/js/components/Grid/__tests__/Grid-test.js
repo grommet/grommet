@@ -233,4 +233,36 @@ describe('Grid', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  test.only('border', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Grid border="all" />
+        <Grid border="horizontal" />
+        <Grid border="vertical" />
+        <Grid border="top" />
+        <Grid border="left" />
+        <Grid border="bottom" />
+        <Grid border="right" />
+        <Grid border={{ color: 'accent-1' }} />
+        <Grid border={{ side: 'all' }} />
+        <Grid border={{ size: 'xsmall' }} />
+        <Grid border={{ size: 'small' }} />
+        <Grid border={{ size: 'medium' }} />
+        <Grid border={{ size: 'large' }} />
+        <Grid border={{ size: 'xlarge' }} />
+        <Grid border={{ style: 'dotted' }} />
+        <Grid border={{ style: 'double' }} />
+        <Grid border={{ style: 'dashed' }} />
+        <Grid
+          border={[
+            { side: 'top', color: 'accent-1', size: 'medium', style: 'dotted' },
+            { side: 'left', color: 'accent-2', size: 'large', style: 'dashed' },
+          ]}
+        />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

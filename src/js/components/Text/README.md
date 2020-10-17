@@ -234,6 +234,16 @@ Defaults to
 { dark: '#f8f8f8', light: '#444444' }
 ```
 
+**text.font.family**
+
+The font family to use for Text. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
 **text**
 
 The possible sizes of the text in terms of its font-size and 
