@@ -8,9 +8,9 @@ import {
   PlaceHolderType,
 } from '../../utils';
 
-interface onChangeEvent {
-  value: (number | string)[];
-  option: string;
+interface onChangeEvent extends React.ChangeEvent<HTMLSelectElement> {
+  value: any;
+  option: any;
   selected: number[];
 }
 
