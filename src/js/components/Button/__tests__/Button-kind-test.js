@@ -28,16 +28,16 @@ describe('Button kind', () => {
     expect(results).toHaveNoViolations();
   });
 
-  test('custom theme', () => {
+  test('default button', () => {
     const { container } = render(
       <Grommet theme={buttonKindTheme}>
-        <Button default />
+        <Button />
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('custom theme primary', () => {
+  test('primary button', () => {
     const { container } = render(
       <Grommet theme={buttonKindTheme}>
         <Button primary />
@@ -46,7 +46,7 @@ describe('Button kind', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('custom theme secondary', () => {
+  test('secondary button', () => {
     const { container } = render(
       <Grommet theme={buttonKindTheme}>
         <Button secondary />
@@ -55,7 +55,7 @@ describe('Button kind', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('border', () => {
+  test('border on default button', () => {
     const { container } = render(
       <Grommet
         theme={{
@@ -75,7 +75,7 @@ describe('Button kind', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('no border', () => {
+  test('no border on default button', () => {
     const { container } = render(
       <Grommet
         theme={{
@@ -92,7 +92,7 @@ describe('Button kind', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('extend', () => {
+  test('extend on default button', () => {
     const { container } = render(
       <Grommet
         theme={{
@@ -126,7 +126,7 @@ describe('Button kind', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('font', () => {
+  test('font on button default', () => {
     const { container } = render(
       <Grommet
         theme={{
@@ -166,7 +166,7 @@ describe('Button kind', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('hover', () => {
+  test('hover on default button', () => {
     const { container } = render(
       <Grommet
         theme={{
@@ -186,7 +186,7 @@ describe('Button kind', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('opacity', () => {
+  test('opacity on default button', () => {
     const { container } = render(
       <Grommet
         theme={{
@@ -203,7 +203,7 @@ describe('Button kind', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('padding', () => {
+  test('padding on default button', () => {
     const { container } = render(
       <Grommet
         theme={{
@@ -227,7 +227,16 @@ describe('Button kind', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('no padding', () => {
+  test('render of children', () => {
+    const { container } = render(
+      <Grommet theme={buttonKindTheme}>
+        <Button>Test</Button>
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('no padding on default button', () => {
     const { container } = render(
       <Grommet
         theme={{
@@ -248,7 +257,7 @@ describe('Button kind', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('size', () => {
+  test('size of default button', () => {
     const { container } = render(
       <Grommet
         theme={{

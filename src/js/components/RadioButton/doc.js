@@ -97,8 +97,14 @@ export const themeDoc = {
     type: 'string | { dark: string, light: string }',
     defaultValue: 'undefined',
   },
+  'radioButton.container.extend': {
+    description: `Any additional style for the container around 
+    the radio button and its label.`,
+    type: 'string | (props) => {}',
+    defaultValue: 'undefined',
+  },
   'radioButton.extend': {
-    description: 'Any additional style for the RadioButton.',
+    description: 'Any additional style for the radio button itself.',
     type: 'string | (props) => {}',
   },
   'radioButton.font.weight': {

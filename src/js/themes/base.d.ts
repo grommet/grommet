@@ -143,10 +143,12 @@ interface ButtonKindType {
 export interface ThemeType {
   global?: {
     active?: {
-      background?: ColorType | {
-        color?: ColorType;
-        opacity?: OpacityType;
-      };
+      background?:
+        | ColorType
+        | {
+            color?: ColorType;
+            opacity?: OpacityType;
+          };
       color?: ColorType;
     };
     animation?: {
@@ -657,6 +659,13 @@ export interface ThemeType {
       border?: {
         side?: string;
         color?: ColorType;
+      };
+      hover?: {
+        border?: {
+          color?: ColorType;
+          side: string;
+          size: string;
+        };
       };
     };
     primary?: {

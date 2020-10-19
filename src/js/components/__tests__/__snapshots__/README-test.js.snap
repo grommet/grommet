@@ -1645,6 +1645,15 @@ xlarge
 xxlarge
 string
 {
+  width: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
   min: 
     xxsmall
     xsmall
@@ -1901,8 +1910,8 @@ Defaults to
 A button.
 
 You can provide a single function child that will be called with
-      'hover' and 'focus' keys. This allows you to customize the rendering
-      of the Button in those cases.
+      'disabled', 'hover' and 'focus' keys. 
+      This allows you to customize the rendering of the Button in those cases.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Button&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/button&module=%2Fsrc%2FButton.js)
 ## Usage
@@ -2031,10 +2040,10 @@ string
 
 Function that can be called to render the visual representation.
       Button can take in Children as a function, node, or object. 
-      For example hover can be passed as an object that would 
-      then return a react element.
-      \`children={({ hover }) => <Box...>{...}</Box>}\`. When Button has
-      children, it is styled as a \`plain\` button.
+      For example, 'disabled', 'hover', and 'focus' can be passed as an 
+      argument that would then return a react element.
+      \`children={({ disabled, hover, focus }) => <Box...>{...}</Box>}\`. 
+      When Button has children, it is styled as a \`plain\` button.
       
 
 \`\`\`
@@ -2189,7 +2198,9 @@ function
 Whether this is a plain button with no border or pad.
           Non plain button will show both pad and border.
           The plain button has no border and unless the icon prop exist it has 
-          no pad as well.
+          no pad as well. 
+          When using the kind button (i.e. button.default on the theme), 
+          the usage of plain is deprecated.
 
 \`\`\`
 boolean
@@ -6798,6 +6809,38 @@ Defaults to
 undefined
 \`\`\`
 
+**dataTable.resize.hover.color**
+
+The color of the resizer when hovered over. Expects \`string | object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.resize.hover.side**
+
+The side of the resizer when hovered over. If color or size 
+    are defined, this will default to 'end' which is the recommended value. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.resize.hover.size**
+
+The size of the resizer when hovered over. Size values 
+    correspond with those accepted by Box border. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **dataTable.icons.ascending**
 
 The ascending icon. Expects \`React.Element\`.
@@ -9424,6 +9467,14 @@ string
 }
 \`\`\`
 
+**fill**
+
+Whether the width should fill the container.
+
+\`\`\`
+boolean
+\`\`\`
+
 **level**
 
 The heading level. It corresponds to the number after the 'H' for
@@ -9573,16 +9624,16 @@ undefined
 
 **heading.level**
 
-The level that impacts line-height, max-width, font size, 
-weight and family of the Heading. Heading styling is automatically adjusted at 
-different screen sizes. When the heading.responsiveBreakpoint is hit (\\"small\\" 
-by default), all heading styles will automatically be adjusted. A heading of 
-level 1, for example, will use the styling defined in heading level 2; a 
-heading of level 2 will use the styling defined in heading level 3 and so 
-forth. The tag in the DOM is not adjusted. A heading of level 1 remains an h1. 
-The styling adjustment is intended to aid readability on smaller screens but 
-will not semantically affect your application structure. If you do not want 
-this responsive styling to occur, you can set header.responsiveBreakpoint to 
+The level that impacts line-height, max-width, font size,
+weight and family of the Heading. Heading styling is automatically adjusted at
+different screen sizes. When the heading.responsiveBreakpoint is hit (\\"small\\"
+by default), all heading styles will automatically be adjusted. A heading of
+level 1, for example, will use the styling defined in heading level 2; a
+heading of level 2 will use the styling defined in heading level 3 and so
+forth. The tag in the DOM is not adjusted. A heading of level 1 remains an h1.
+The styling adjustment is intended to aid readability on smaller screens but
+will not semantically affect your application structure. If you do not want
+this responsive styling to occur, you can set header.responsiveBreakpoint to
 undefined. Expects \`object\`.
 
 Defaults to
@@ -9625,7 +9676,7 @@ undefined
 
 **heading.responsiveBreakpoint**
 
-The breakpoint to trigger changes in the Heading layout. 
+The breakpoint to trigger changes in the Heading layout.
 The actual values will be derived from global.breakpoints. Expects \`string\`.
 
 Defaults to
@@ -10881,6 +10932,27 @@ Custom title to be used by screen readers.
 string
 \`\`\`
 
+**dropHeight**
+
+The height of the drop container.
+
+\`\`\`
+xsmall
+small
+medium
+large
+xlarge
+string
+\`\`\`
+
+**dropProps**
+
+Any valid Drop prop.
+
+\`\`\`
+object
+\`\`\`
+
 **icon**
 
 An optional icon to show. This could be used to provide an
@@ -11163,8 +11235,9 @@ A control that opens a Drop containing plain Buttons.
 The labels and behavior of the contained Buttons are described
       via the \`items\` property.
       You can provide a single function child that will be called with
-      'hover', 'focus', and 'drop' keys. This allows you to customize
-      the rendering of the Menu button in those cases.
+      'disabled', 'hover', 'focus', and 'drop' keys. 
+      This allows you to customize the rendering of the Menu button 
+      in those cases.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Menu&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/menu&module=%2Fsrc%2FMenu.js)
 ## Usage
@@ -11295,7 +11368,7 @@ Function that will be called to render the visual representation.
       It will be passed an object containing button props.
       It should return a react element.
       For example:
-      \`children={({ drop, hover }) => <Box ...>{...}</Box>}\`
+      \`children={({ disabled, drop, hover, focus }) => <Box ...>{...}</Box>}\`
       
 
 \`\`\`
@@ -12293,9 +12366,20 @@ Defaults to
 undefined
 \`\`\`
 
+**radioButton.container.extend**
+
+Any additional style for the container around 
+    the radio button and its label. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **radioButton.extend**
 
-Any additional style for the RadioButton. Expects \`string | (props) => {}\`.
+Any additional style for the radio button itself. Expects \`string | (props) => {}\`.
 
 Defaults to
 
