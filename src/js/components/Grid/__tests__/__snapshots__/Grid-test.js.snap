@@ -1199,12 +1199,6 @@ exports[`Grid rows renders 1`] = `
   grid-auto-rows: 192px;
 }
 
-.c4 {
-  display: grid;
-  box-sizing: border-box;
-  grid-template-rows: 192px;
-}
-
 <div
   className="c0"
 >
@@ -1216,9 +1210,6 @@ exports[`Grid rows renders 1`] = `
   />
   <div
     className="c3"
-  />
-  <div
-    className="c4"
   />
 </div>
 `;
