@@ -4,8 +4,8 @@ import { borderStyle, edgeStyle, genericStyles } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 const fillStyle = fill => {
-  if (fill === false || fill === undefined) {
-    return false;
+  if (!fill) {
+    return fill;
   }
   if (fill === 'horizontal') {
     return 'width: 100%;';
