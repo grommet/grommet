@@ -3,6 +3,10 @@ import { borderStyle, edgeStyle, genericStyles } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 var fillStyle = function fillStyle(fill) {
+  if (!fill) {
+    return fill;
+  }
+
   if (fill === 'horizontal') {
     return 'width: 100%;';
   }
@@ -11,11 +15,7 @@ var fillStyle = function fillStyle(fill) {
     return 'height: 100%;';
   }
 
-  if (fill) {
-    return "\n      width: 100%;\n      height: 100%;\n    ";
-  }
-
-  return undefined;
+  return "\n      width: 100%;\n      height: 100%;\n    ";
 };
 
 var ALIGN_MAP = {
@@ -189,7 +189,7 @@ var StyledGrid = styled.div.attrs(function (props) {
     return borderStyle(border, props.responsive, props.theme);
   }) : borderStyle(props.border, props.responsive, props.theme));
 }, function (props) {
-  return props.fillContainer && fillStyle(props.fillContainer);
+  return fillStyle(props.fillContainer);
 }, function (props) {
   return props.align && alignStyle;
 }, function (props) {

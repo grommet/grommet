@@ -14,6 +14,10 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 var fillStyle = function fillStyle(fill) {
+  if (!fill) {
+    return fill;
+  }
+
   if (fill === 'horizontal') {
     return 'width: 100%;';
   }
@@ -22,11 +26,7 @@ var fillStyle = function fillStyle(fill) {
     return 'height: 100%;';
   }
 
-  if (fill) {
-    return "\n      width: 100%;\n      height: 100%;\n    ";
-  }
-
-  return undefined;
+  return "\n      width: 100%;\n      height: 100%;\n    ";
 };
 
 var ALIGN_MAP = {
@@ -200,7 +200,7 @@ var StyledGrid = _styledComponents["default"].div.attrs(function (props) {
     return (0, _utils.borderStyle)(border, props.responsive, props.theme);
   }) : (0, _utils.borderStyle)(props.border, props.responsive, props.theme));
 }, function (props) {
-  return props.fillContainer && fillStyle(props.fillContainer);
+  return fillStyle(props.fillContainer);
 }, function (props) {
   return props.align && alignStyle;
 }, function (props) {
