@@ -234,7 +234,7 @@ describe('Grid', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test.only('border', () => {
+  test('border', () => {
     const component = renderer.create(
       <Grommet>
         <Grid border="all" />
