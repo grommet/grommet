@@ -10126,7 +10126,7 @@ exports[`DataTable search 1`] = `
               class="c7"
             />
             <button
-              aria-label="focus-search-a"
+              aria-label="Open search by a"
               class="c8"
               type="button"
             >
@@ -10347,6 +10347,7 @@ exports[`DataTable search 2`] = `
                 class="c1"
               >
                 <input
+                  aria-label="Search by a"
                   autocomplete="off"
                   class="c2"
                   name="search-a"

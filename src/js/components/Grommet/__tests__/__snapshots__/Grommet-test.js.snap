@@ -23,6 +23,7 @@ exports[`Grommet announce 1`] = `
 exports[`Grommet announce 2`] = `
 <div
   aria-live="assertive"
+  id="grommet-announcer"
   style="left: -100%; right: 100%; position: fixed; z-index: -1;"
 >
   hello
@@ -32,6 +33,7 @@ exports[`Grommet announce 2`] = `
 exports[`Grommet announce 3`] = `
 <div
   aria-live="assertive"
+  id="grommet-announcer"
   style="left: -100%; right: 100%; position: fixed; z-index: -1;"
 />
 `;
