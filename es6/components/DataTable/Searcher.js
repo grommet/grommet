@@ -37,6 +37,7 @@ var Searcher = function Searcher(_ref) {
     }
   }, /*#__PURE__*/React.createElement(TextInput, {
     name: "search-" + property,
+    a11yTitle: "Search by " + property,
     ref: inputRef,
     value: filters[property],
     onChange: function onChange(event) {
@@ -53,7 +54,7 @@ var Searcher = function Searcher(_ref) {
     direction: "row",
     align: "center"
   }, /*#__PURE__*/React.createElement(Text, null, filters[property])) : null, /*#__PURE__*/React.createElement(Button, {
-    a11yTitle: "focus-search-" + property,
+    a11yTitle: "Open search by " + property,
     icon: /*#__PURE__*/React.createElement(FormSearch, {
       color: normalizeColor(filtering === property ? 'brand' : 'border', theme)
     }),
