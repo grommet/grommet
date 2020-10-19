@@ -45,8 +45,7 @@ var Body = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       selected = _ref.selected,
       size = _ref.size,
       step = _ref.step,
-      theme = _ref.theme,
-      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "onMore", "replace", "onClickRow", "onSelect", "pad", "pinnedBackground", "primaryProperty", "rowProps", "selected", "size", "step", "theme"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "onMore", "replace", "onClickRow", "onSelect", "pad", "pinnedBackground", "primaryProperty", "rowProps", "selected", "size", "step"]);
 
   var _React$useState = _react["default"].useState(),
       active = _React$useState[0],
@@ -106,7 +105,9 @@ var Body = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       onBlur: onClickRow ? function () {
         return setActive(undefined);
       } : undefined
-    }, (selected || onSelect) && /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, null, /*#__PURE__*/_react["default"].createElement(_CheckBox.CheckBox, {
+    }, (selected || onSelect) && /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, {
+      background: background
+    }, /*#__PURE__*/_react["default"].createElement(_CheckBox.CheckBox, {
       a11yTitle: (isSelected ? 'unselect' : 'select') + " " + primaryValue,
       checked: isSelected,
       disabled: !onSelect,

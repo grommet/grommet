@@ -126,6 +126,13 @@ var Header = function Header(_ref2) {
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
+  var _separateThemeProps2 = separateThemeProps(theme),
+      cellProps = _separateThemeProps2[0],
+      layoutProps = _separateThemeProps2[1],
+      textProps = _separateThemeProps2[2];
+
+  var background;
+  if (backgroundProp) background = backgroundProp;else background = undefined;
   return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableHeader, _extends({
     fillProp: fill
   }, rest), /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableRow, null, groups && /*#__PURE__*/_react["default"].createElement(_ExpanderCell.ExpanderCell, {
@@ -134,7 +141,9 @@ var Header = function Header(_ref2) {
       return !groupState[k].expanded;
     }).length === 0,
     onToggle: onToggle
-  }), (selected || onSelect) && /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, null, onSelect && /*#__PURE__*/_react["default"].createElement(_CheckBox.CheckBox, {
+  }), (selected || onSelect) && /*#__PURE__*/_react["default"].createElement(_TableCell.TableCell, {
+    background: background || cellProps.background
+  }, onSelect && /*#__PURE__*/_react["default"].createElement(_CheckBox.CheckBox, {
     checked: selected.length === data.length,
     indeterminate: selected.length > 0 && selected.length < data.length,
     onChange: function onChange() {
@@ -153,12 +162,6 @@ var Header = function Header(_ref2) {
         sortable = _ref3.sortable,
         verticalAlign = _ref3.verticalAlign,
         size = _ref3.size;
-
-    var _separateThemeProps2 = separateThemeProps(theme),
-        cellProps = _separateThemeProps2[0],
-        layoutProps = _separateThemeProps2[1],
-        textProps = _separateThemeProps2[2];
-
     var content;
 
     if (typeof header === 'string') {
@@ -232,7 +235,6 @@ var Header = function Header(_ref2) {
     var pin = [];
     if (tablePin) pin.push('top');
     if (columnPin) pin.push('left');
-    var background;
     if (backgroundProp) background = backgroundProp;else if (pin.length > 0 && theme.dataTable.pinned && theme.dataTable.pinned.header) {
       background = theme.dataTable.pinned.header.background;
     } else background = undefined;

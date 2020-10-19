@@ -31,7 +31,9 @@ var Footer = function Footer(_ref) {
     size: "xxsmall",
     pad: "none",
     verticalAlign: "top"
-  }), (selected || onSelect) && /*#__PURE__*/React.createElement(TableCell, null), columns.map(function (column) {
+  }), (selected || onSelect) && /*#__PURE__*/React.createElement(TableCell, {
+    background: background
+  }), columns.map(function (column) {
     var pin = [];
     if (tablePin) pin.push('bottom');
     if (column.pin) pin.push('left');
