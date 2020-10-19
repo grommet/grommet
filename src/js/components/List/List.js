@@ -4,12 +4,14 @@ import styled, { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
+import { Pagination } from '../Pagination';
 import { Text } from '../Text';
 import {
   focusStyle,
   genericStyles,
   unfocusStyle,
   useForwardedRef,
+  usePagination,
 } from '../../utils';
 
 const StyledList = styled.ul`
@@ -64,6 +66,9 @@ const List = React.forwardRef(
       focus,
       itemProps,
       pad,
+      paginate,
+      paginationProps,
+      itemsPerPage = 10,
       primaryKey,
       secondaryKey,
       step,
@@ -78,177 +83,202 @@ const List = React.forwardRef(
     const [active, setActive] = useState();
     const [itemFocus, setItemFocus] = useState();
 
-    return (
-      <Keyboard
-        onEnter={
-          onClickItem && active >= 0
-            ? event => {
-                event.persist();
-                const adjustedEvent = event;
-                adjustedEvent.item = data[active];
-                adjustedEvent.index = active;
-                onClickItem(adjustedEvent);
-              }
-            : undefined
-        }
-        onUp={
-          onClickItem && active
-            ? () => {
-                setActive(active - 1);
-              }
-            : undefined
-        }
-        onDown={
-          onClickItem && data && data.length
-            ? () => {
-                setActive(
-                  active >= 0 ? Math.min(active + 1, data.length - 1) : 0,
-                );
-              }
-            : undefined
-        }
-      >
-        <StyledList
-          ref={listRef}
-          as={as || 'ul'}
-          itemFocus={itemFocus}
-          tabIndex={onClickItem ? 0 : undefined}
-          {...rest}
-        >
-          <InfiniteScroll
-            items={data}
-            onMore={onMore}
-            scrollableAncestor="window"
-            step={step}
-            renderMarker={marker => (
-              <Box as="li" flex={false}>
-                {marker}
-              </Box>
-            )}
-          >
-            {(item, index) => {
-              let content;
-              let boxProps = {};
+    const [page, setPage, currentItems] = usePagination({
+      data,
+      itemsPerPage,
+      paginationProps,
+    });
 
-              if (children) {
-                content = children(
-                  item,
-                  index,
-                  onClickItem ? { active: active === index } : undefined,
-                );
-              } else if (primaryKey) {
-                if (typeof primaryKey === 'function') {
-                  content = primaryKey(item, index);
-                } else {
-                  content = (
-                    <Text key="p" weight="bold">
-                      {normalize(item, index, primaryKey)}
-                    </Text>
+    return (
+      <>
+        <Keyboard
+          onEnter={
+            onClickItem && active >= 0
+              ? event => {
+                  event.persist();
+                  const adjustedEvent = event;
+                  adjustedEvent.item = data[active];
+                  adjustedEvent.index = active;
+                  onClickItem(adjustedEvent);
+                }
+              : undefined
+          }
+          onUp={
+            onClickItem && active
+              ? () => {
+                  setActive(active - 1);
+                }
+              : undefined
+          }
+          onDown={
+            onClickItem && data && data.length
+              ? () => {
+                  setActive(
+                    active >= 0 ? Math.min(active + 1, data.length - 1) : 0,
                   );
                 }
-                if (secondaryKey) {
-                  if (typeof secondaryKey === 'function') {
-                    content = [content, secondaryKey(item, index)];
+              : undefined
+          }
+        >
+          <StyledList
+            ref={listRef}
+            as={as || 'ul'}
+            itemFocus={itemFocus}
+            tabIndex={onClickItem ? 0 : undefined}
+            {...rest}
+          >
+            <InfiniteScroll
+              items={!paginate ? data : currentItems}
+              onMore={onMore}
+              scrollableAncestor="window"
+              step={step}
+              renderMarker={marker => (
+                <Box as="li" flex={false}>
+                  {marker}
+                </Box>
+              )}
+            >
+              {(item, index) => {
+                let content;
+                let boxProps = {};
+
+                if (children) {
+                  content = children(
+                    item,
+                    index,
+                    onClickItem ? { active: active === index } : undefined,
+                  );
+                } else if (primaryKey) {
+                  if (typeof primaryKey === 'function') {
+                    content = primaryKey(item, index);
                   } else {
-                    content = [
-                      content,
-                      <Text key="s">
-                        {normalize(item, index, secondaryKey)}
-                      </Text>,
-                    ];
+                    content = (
+                      <Text key="p" weight="bold">
+                        {normalize(item, index, primaryKey)}
+                      </Text>
+                    );
                   }
+                  if (secondaryKey) {
+                    if (typeof secondaryKey === 'function') {
+                      content = [content, secondaryKey(item, index)];
+                    } else {
+                      content = [
+                        content,
+                        <Text key="s">
+                          {normalize(item, index, secondaryKey)}
+                        </Text>,
+                      ];
+                    }
+                    boxProps = {
+                      direction: 'row',
+                      align: 'center',
+                      justify: 'between',
+                      gap: 'medium',
+                    };
+                  }
+                } else if (typeof item === 'object') {
+                  content = item[Object.keys(item)[0]];
+                } else {
+                  content = item;
+                }
+
+                if (action) {
+                  content = [
+                    <Box align="start" key={`actionContainer${index}`}>
+                      {content}
+                    </Box>,
+                    action(item, index),
+                  ];
                   boxProps = {
                     direction: 'row',
-                    align: 'center',
+                    align: secondaryKey ? 'start' : 'center',
                     justify: 'between',
                     gap: 'medium',
                   };
                 }
-              } else if (typeof item === 'object') {
-                content = item[Object.keys(item)[0]];
-              } else {
-                content = item;
-              }
 
-              if (action) {
-                content = [
-                  <Box align="start" key={`actionContainer${index}`}>
+                let adjustedBackground =
+                  background || theme.list.item.background;
+                if (active === index) {
+                  adjustedBackground = theme.global.hover.background;
+                } else if (Array.isArray(adjustedBackground)) {
+                  adjustedBackground =
+                    adjustedBackground[index % adjustedBackground.length];
+                }
+
+                let adjustedBorder = border || theme.list.item.border;
+                if (adjustedBorder === 'horizontal' && index) {
+                  adjustedBorder = 'bottom';
+                }
+
+                if (itemProps && itemProps[index]) {
+                  boxProps = { ...boxProps, ...itemProps[index] };
+                }
+
+                let clickProps;
+                if (onClickItem) {
+                  clickProps = {
+                    tabIndex: -1,
+                    active: active === index,
+                    onClick: event => {
+                      // extract from React's synthetic event pool
+                      event.persist();
+                      const adjustedEvent = event;
+                      adjustedEvent.item = item;
+                      adjustedEvent.index = index;
+                      onClickItem(adjustedEvent);
+                      // put focus on the List container to meet WCAG
+                      // accessibility guidelines that focus remains on `ul`
+                      listRef.current.focus();
+                    },
+                    onMouseOver: () => setActive(index),
+                    onMouseOut: () => setActive(undefined),
+                    onFocus: () => {
+                      setActive(index);
+                      setItemFocus(true);
+                    },
+                    onBlur: () => {
+                      setActive(undefined);
+                      setItemFocus(false);
+                    },
+                  };
+                }
+
+                return (
+                  <StyledItem
+                    key={index}
+                    tag="li"
+                    flex={false}
+                    pad={pad || theme.list.item.pad}
+                    background={adjustedBackground}
+                    border={adjustedBorder}
+                    {...boxProps}
+                    {...clickProps}
+                  >
                     {content}
-                  </Box>,
-                  action(item, index),
-                ];
-                boxProps = {
-                  direction: 'row',
-                  align: secondaryKey ? 'start' : 'center',
-                  justify: 'between',
-                  gap: 'medium',
-                };
-              }
-
-              let adjustedBackground = background || theme.list.item.background;
-              if (active === index) {
-                adjustedBackground = theme.global.hover.background;
-              } else if (Array.isArray(adjustedBackground)) {
-                adjustedBackground =
-                  adjustedBackground[index % adjustedBackground.length];
-              }
-
-              let adjustedBorder = border || theme.list.item.border;
-              if (adjustedBorder === 'horizontal' && index) {
-                adjustedBorder = 'bottom';
-              }
-
-              if (itemProps && itemProps[index]) {
-                boxProps = { ...boxProps, ...itemProps[index] };
-              }
-
-              let clickProps;
-              if (onClickItem) {
-                clickProps = {
-                  tabIndex: -1,
-                  active: active === index,
-                  onClick: event => {
-                    // extract from React's synthetic event pool
-                    event.persist();
-                    const adjustedEvent = event;
-                    adjustedEvent.item = item;
-                    adjustedEvent.index = index;
-                    onClickItem(adjustedEvent);
-                    // put focus on the List container to meet WCAG
-                    // accessibility guidelines that focus remains on `ul`
-                    listRef.current.focus();
-                  },
-                  onMouseOver: () => setActive(index),
-                  onMouseOut: () => setActive(undefined),
-                  onFocus: () => {
-                    setActive(index);
-                    setItemFocus(true);
-                  },
-                  onBlur: () => {
-                    setActive(undefined);
-                    setItemFocus(false);
-                  },
-                };
-              }
-
-              return (
-                <StyledItem
-                  key={index}
-                  tag="li"
-                  flex={false}
-                  pad={pad || theme.list.item.pad}
-                  background={adjustedBackground}
-                  border={adjustedBorder}
-                  {...boxProps}
-                  {...clickProps}
-                >
-                  {content}
-                </StyledItem>
-              );
-            }}
-          </InfiniteScroll>
-        </StyledList>
-      </Keyboard>
+                  </StyledItem>
+                );
+              }}
+            </InfiniteScroll>
+          </StyledList>
+        </Keyboard>
+        {paginate && (
+          <Box
+            direction="row"
+            justify={(paginationProps && paginationProps.justify) || 'end'}
+            {...paginationProps}
+          >
+            <Pagination
+              totalPages={Math.ceil(data.length / itemsPerPage)}
+              page={page}
+              onChange={event => {
+                setPage(event.page);
+              }}
+              {...paginationProps}
+            />
+          </Box>
+        )}
+      </>
     );
   },
 );
