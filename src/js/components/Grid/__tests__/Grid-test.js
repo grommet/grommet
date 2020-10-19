@@ -31,12 +31,29 @@ describe('Grid', () => {
   test('rows renders', () => {
     const component = renderer.create(
       <Grommet>
+        <Grid rows={[['small', 'medium'], 'large', 'medium']} />
         <Grid rows={['small', 'large', 'medium']} />
         <Grid rows="small" />
+        <Grid rows={['small']} />
       </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+  });
+
+  test('rows renders with warning', () => {
+    console.warn = jest.fn();
+    const warnSpy = jest.spyOn(console, 'warn');
+    const component = renderer.create(
+      <Grommet>
+        <Grid rows={['flex']} fill={false} />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+    expect(warnSpy).toHaveBeenCalledWith(
+      'Grid needs `fill` when using fractional row sizes',
+    );
   });
 
   test('columns renders', () => {
@@ -45,7 +62,9 @@ describe('Grid', () => {
         <Grid columns={['1/2', '2/4']} />
         <Grid columns={['1/3', '2/3']} />
         <Grid columns={['1/4', '3/4']} />
+        <Grid columns={[['1/2', '2/4'], '1/4', '3/4']} />
         <Grid columns="small" />
+        <Grid columns="flex" />
         <Grid columns={{ count: 'fit', size: 'small' }} />
         <Grid columns={{ count: 'fill', size: ['small', 'medium'] }} />
       </Grommet>,
@@ -71,6 +90,31 @@ describe('Grid', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+  });
+
+  test('areas renders with warning and throws error', () => {
+    console.error = jest.fn();
+    console.warn = jest.fn();
+    const warnSpy = jest.spyOn(console, 'warn');
+    expect(() => {
+      renderer.create(
+        <Grommet>
+          <Grid
+            rows={['xxsmall', 'medium', 'xsmall']}
+            columns="small"
+            areas={[
+              { name: 'header', start: [0, 0], end: [0, 1] },
+              { name: 'main', start: [1, 0], end: [1, 0] },
+              { name: 'sidebar', start: [1, 1], end: [1, 1] },
+              { name: 'footer', start: [2, 0], end: [2, 1] },
+            ]}
+          />
+        </Grommet>,
+      );
+    }).toThrow('props.columns.map is not a function');
+    expect(warnSpy).toHaveBeenCalledWith(
+      'Grid `areas` requires `rows` and `columns` to be arrays.',
+    );
   });
 
   test('areas renders when given an array of string arrays', () => {
@@ -160,6 +204,7 @@ describe('Grid', () => {
         <Grid gap={{ column: 'medium' }} />
         <Grid gap={{ column: 'large' }} />
         <Grid gap={{ row: 'small', column: 'medium' }} />
+        <Grid gap={{ test: 'test' }} />
       </Grommet>,
     );
     const tree = component.toJSON();
