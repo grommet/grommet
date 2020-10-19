@@ -28,7 +28,6 @@ const Body = forwardRef(
       selected,
       size,
       step,
-      theme,
       ...rest
     },
     ref,
@@ -112,7 +111,7 @@ const Body = forwardRef(
                   onBlur={onClickRow ? () => setActive(undefined) : undefined}
                 >
                   {(selected || onSelect) && (
-                    <TableCell>
+                    <TableCell background={background}>
                       <CheckBox
                         a11yTitle={`${
                           isSelected ? 'unselect' : 'select'
