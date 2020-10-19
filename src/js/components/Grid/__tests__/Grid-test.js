@@ -34,7 +34,6 @@ describe('Grid', () => {
         <Grid rows={[['small', 'medium'], 'large', 'medium']} />
         <Grid rows={['small', 'large', 'medium']} />
         <Grid rows="small" />
-        <Grid rows={['small']} />
       </Grommet>,
     );
     const tree = component.toJSON();
