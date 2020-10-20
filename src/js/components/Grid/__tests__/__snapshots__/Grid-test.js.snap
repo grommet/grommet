@@ -563,16 +563,28 @@ exports[`Grid columns renders 1`] = `
 .c4 {
   display: grid;
   box-sizing: border-box;
-  grid-template-columns: repeat( auto-fill,minmax(192px,1fr) );
+  grid-template-columns: minmax(50%,50%) 25% 75%;
 }
 
 .c5 {
   display: grid;
   box-sizing: border-box;
-  grid-template-columns: repeat( auto-fit,minmax(192px,1fr) );
+  grid-template-columns: repeat( auto-fill,minmax(192px,1fr) );
 }
 
 .c6 {
+  display: grid;
+  box-sizing: border-box;
+  grid-template-columns: repeat( auto-fill,1fr );
+}
+
+.c7 {
+  display: grid;
+  box-sizing: border-box;
+  grid-template-columns: repeat( auto-fit,minmax(192px,1fr) );
+}
+
+.c8 {
   display: grid;
   box-sizing: border-box;
   grid-template-columns: repeat( auto-fill,minmax(192px,384px) );
@@ -598,6 +610,12 @@ exports[`Grid columns renders 1`] = `
   />
   <div
     className="c6"
+  />
+  <div
+    className="c7"
+  />
+  <div
+    className="c8"
   />
 </div>
 `;
@@ -727,6 +745,11 @@ exports[`Grid gap renders 1`] = `
   grid-column-gap: 24px;
 }
 
+.c11 {
+  display: grid;
+  box-sizing: border-box;
+}
+
 <div
   className="c0"
 >
@@ -759,6 +782,9 @@ exports[`Grid gap renders 1`] = `
   />
   <div
     className="c10"
+  />
+  <div
+    className="c11"
   />
 </div>
 `;
@@ -1158,10 +1184,16 @@ exports[`Grid rows renders 1`] = `
 .c1 {
   display: grid;
   box-sizing: border-box;
-  grid-template-rows: 192px 768px 384px;
+  grid-template-rows: minmax(192px,384px) 768px 384px;
 }
 
 .c2 {
+  display: grid;
+  box-sizing: border-box;
+  grid-template-rows: 192px 768px 384px;
+}
+
+.c3 {
   display: grid;
   box-sizing: border-box;
   grid-auto-rows: 192px;
@@ -1175,6 +1207,35 @@ exports[`Grid rows renders 1`] = `
   />
   <div
     className="c2"
+  />
+  <div
+    className="c3"
+  />
+</div>
+`;
+
+exports[`Grid rows renders with warning 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: grid;
+  box-sizing: border-box;
+  grid-template-rows: 1fr;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
   />
 </div>
 `;

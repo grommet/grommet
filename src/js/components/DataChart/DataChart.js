@@ -152,11 +152,17 @@ const DataChart = forwardRef(
     // map granularities to work well with the number of data points we have
     const granularities = useMemo(() => {
       let medium;
-      [10, 9, 8, 7, 6, 5, 4, 3, 2].some(i => {
-        if (data.length % i === 0) medium = i;
-        return medium;
-      });
-      if (!medium) medium = 3;
+      // determine a good medium granularity that will align well with the
+      // length of the data
+      const steps = data.length - 1;
+      // special case property driven point charts
+      if (charts[0] && typeof charts[0].property === 'object') medium = 3;
+      else if (steps < 4) medium = data.length;
+      else if (steps === 4) medium = 3;
+      else if (steps % 4 === 0) medium = 5;
+      else if (steps % 3 === 0) medium = 4;
+      else if (steps % 2 === 0) medium = 3;
+      else medium = 2;
       return {
         x: { coarse: 2, fine: data.length, medium },
         y: {
@@ -167,7 +173,7 @@ const DataChart = forwardRef(
           coarse: 2,
         },
       };
-    }, [data.length, size]);
+    }, [charts, data.length, size]);
 
     // normalize axis to objects, convert granularity to a number
     const axis = useMemo(() => {

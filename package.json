@@ -156,6 +156,14 @@
       "!src/js/**/**/doc.js",
       "!src/js/components/**/__tests__/**/*.js"
     ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 76.3,
+        "functions": 88,
+        "lines": 87.9,
+        "statements": 86.9
+      }
+    },
     "modulePathIgnorePatterns": [
       "<rootDir>/dist/"
     ],
