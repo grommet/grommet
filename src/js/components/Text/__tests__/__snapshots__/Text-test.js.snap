@@ -343,6 +343,7 @@ exports[`renders truncate 1`] = `
   font-size: 18px;
   line-height: 24px;
   white-space: nowrap;
+  max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
 }

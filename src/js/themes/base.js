@@ -728,6 +728,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'border',
           side: 'end',
         },
+        // hover: {
+        //   border: {
+        //     color: undefined,
+        //     side: undefined,
+        //     size: undefined,
+        //   },
+        // },
       },
     },
     diagram: {

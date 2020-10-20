@@ -21,7 +21,7 @@ export const doc = Paragraph => {
     ),
     fill: PropTypes.bool
       .description('Whether the width should fill the container.')
-      .defaultValue(false),
+      .defaultValue(undefined),
     responsive: PropTypes.bool
       .description(`Whether margin should be scaled for mobile environments.`)
       .defaultValue(true),

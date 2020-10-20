@@ -163,6 +163,10 @@ exports[`MaskedInput applies custom global.hover theme to options 2`] = `
 
 }
 
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
 <button
   class="c0"
   tabindex="-1"
@@ -462,9 +466,10 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow: auto;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -481,7 +486,7 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   flex: 0 0 auto;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -499,7 +504,7 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   padding-bottom: 6px;
 }
 
-.c4 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -517,28 +522,28 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   text-align: inherit;
 }
 
-.c4:hover {
+.c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
-.c4:focus {
+.c5:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus > circle,
-.c4:focus > ellipse,
-.c4:focus > line,
-.c4:focus > path,
-.c4:focus > polygon,
-.c4:focus > polyline,
-.c4:focus > rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -566,15 +571,19 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   animation-delay: 0.01s;
 }
 
+.c3 {
+  max-height: inherit;
+}
+
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
@@ -593,6 +602,12 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   }
 }
 
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c3 {
+    width: 100%;
+  }
+}
+
 <div
   class="c0 c1"
   data-g-portal-id="0"
@@ -601,33 +616,33 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   tabindex="-1"
 >
   <div
-    class="c2"
+    class="c2 c3"
   >
     <div
-      class="c3"
+      class="c4"
     >
       <button
-        class="c4"
+        class="c5"
         tabindex="-1"
         type="button"
       >
         <div
-          class="c5"
+          class="c6"
         >
           aa
         </div>
       </button>
     </div>
     <div
-      class="c3"
+      class="c4"
     >
       <button
-        class="c4"
+        class="c5"
         tabindex="-1"
         type="button"
       >
         <div
-          class="c5"
+          class="c6"
         >
           bb
         </div>
@@ -1007,9 +1022,10 @@ exports[`MaskedInput mask 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow: auto;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1026,7 +1042,7 @@ exports[`MaskedInput mask 2`] = `
   flex: 0 0 auto;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1044,7 +1060,7 @@ exports[`MaskedInput mask 2`] = `
   padding-bottom: 6px;
 }
 
-.c4 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1062,28 +1078,28 @@ exports[`MaskedInput mask 2`] = `
   text-align: inherit;
 }
 
-.c4:hover {
+.c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
-.c4:focus {
+.c5:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus > circle,
-.c4:focus > ellipse,
-.c4:focus > line,
-.c4:focus > path,
-.c4:focus > polygon,
-.c4:focus > polyline,
-.c4:focus > rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -1111,15 +1127,19 @@ exports[`MaskedInput mask 2`] = `
   animation-delay: 0.01s;
 }
 
+.c3 {
+  max-height: inherit;
+}
+
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
@@ -1138,6 +1158,12 @@ exports[`MaskedInput mask 2`] = `
   }
 }
 
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c3 {
+    width: 100%;
+  }
+}
+
 <div
   class="c0 c1"
   data-g-portal-id="0"
@@ -1146,33 +1172,33 @@ exports[`MaskedInput mask 2`] = `
   tabindex="-1"
 >
   <div
-    class="c2"
+    class="c2 c3"
   >
     <div
-      class="c3"
+      class="c4"
     >
       <button
-        class="c4"
+        class="c5"
         tabindex="-1"
         type="button"
       >
         <div
-          class="c5"
+          class="c6"
         >
           aa
         </div>
       </button>
     </div>
     <div
-      class="c3"
+      class="c4"
     >
       <button
-        class="c4"
+        class="c5"
         tabindex="-1"
         type="button"
       >
         <div
-          class="c5"
+          class="c6"
         >
           bb
         </div>
@@ -1485,9 +1511,10 @@ exports[`MaskedInput option via mouse 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  overflow: auto;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1504,7 +1531,7 @@ exports[`MaskedInput option via mouse 2`] = `
   flex: 0 0 auto;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1522,7 +1549,7 @@ exports[`MaskedInput option via mouse 2`] = `
   padding-bottom: 6px;
 }
 
-.c4 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1540,28 +1567,28 @@ exports[`MaskedInput option via mouse 2`] = `
   text-align: inherit;
 }
 
-.c4:hover {
+.c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
-.c4:focus {
+.c5:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus > circle,
-.c4:focus > ellipse,
-.c4:focus > line,
-.c4:focus > path,
-.c4:focus > polygon,
-.c4:focus > polyline,
-.c4:focus > rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -1589,15 +1616,19 @@ exports[`MaskedInput option via mouse 2`] = `
   animation-delay: 0.01s;
 }
 
+.c3 {
+  max-height: inherit;
+}
+
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
@@ -1616,6 +1647,12 @@ exports[`MaskedInput option via mouse 2`] = `
   }
 }
 
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c3 {
+    width: 100%;
+  }
+}
+
 <div
   class="c0 c1"
   data-g-portal-id="0"
@@ -1624,33 +1661,33 @@ exports[`MaskedInput option via mouse 2`] = `
   tabindex="-1"
 >
   <div
-    class="c2"
+    class="c2 c3"
   >
     <div
-      class="c3"
+      class="c4"
     >
       <button
-        class="c4"
+        class="c5"
         tabindex="-1"
         type="button"
       >
         <div
-          class="c5"
+          class="c6"
         >
           aa
         </div>
       </button>
     </div>
     <div
-      class="c3"
+      class="c4"
     >
       <button
-        class="c4"
+        class="c5"
         tabindex="-1"
         type="button"
       >
         <div
-          class="c5"
+          class="c6"
         >
           bb
         </div>
