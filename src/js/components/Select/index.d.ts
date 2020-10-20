@@ -28,7 +28,7 @@ export interface SelectProps {
   disabled?: boolean | (number | string | object)[];
   disabledKey?:
     | string
-    | ((option: { label: string; value: number }) => boolean);
+    | ((...args: any[]) => boolean);
   dropAlign?: {
     top?: 'top' | 'bottom';
     bottom?: 'top' | 'bottom';
@@ -64,7 +64,7 @@ export interface SelectProps {
   valueKey?:
     | string
     | { key: string; reduce?: boolean }
-    | ((option: { label: string; value: number }) => string);
+    | ((...args: any[]) => string);
   emptySearchMessage?: string;
   searching?: boolean;
 }
