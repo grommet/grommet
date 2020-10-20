@@ -27,7 +27,7 @@ const Footer = ({
       {groups && (
         <TableCell plain size="xxsmall" pad="none" verticalAlign="top" />
       )}
-      {(selected || onSelect) && <TableCell />}
+      {(selected || onSelect) && <TableCell background={background} />}
       {columns.map(column => {
         const pin = [];
         if (tablePin) pin.push('bottom');
