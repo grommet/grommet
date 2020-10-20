@@ -46,6 +46,21 @@ describe('Button', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  test('children function with disabled prop', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Button onClick={() => {}} disabled>
+          {({ disabled }) => <Text>{disabled ? 'Disabled' : 'Test'}</Text>}
+        </Button>
+        <Button onClick={() => {}}>
+          {({ disabled }) => <Text>{disabled ? 'Disabled' : 'Test'}</Text>}
+        </Button>
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('warns about invalid label', () => {
     console.warn = jest.fn();
     const warnSpy = jest.spyOn(console, 'warn');
