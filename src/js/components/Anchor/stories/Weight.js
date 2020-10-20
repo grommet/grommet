@@ -7,8 +7,8 @@ import { grommet } from 'grommet/themes';
 const Weight = () => {
   return (
     <Grommet theme={grommet}>
-      <Box align="center" pad="large">
-        <Anchor href="#" label="Anchor no weight" />
+      <Box align="center" pad="large" gap="xsmall">
+        <Anchor href="#" label="Anchor default weight" />
         <Anchor href="#" label="Anchor weight Normal" weight="normal" />
         <Anchor href="#" label="Anchor weight Bold" weight="bold" />
         <Anchor href="#" label="Anchor weight 200" weight="200" />

@@ -775,6 +775,22 @@ exports[`Anchor weight renders 1`] = `
   text-decoration: underline;
 }
 
+.c3 {
+  box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
+  color: #7D4CDB;
+  font-weight: 500;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c3:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
 <div
   className="c0"
 >
@@ -788,6 +804,14 @@ exports[`Anchor weight renders 1`] = `
   </a>
   <a
     className="c2"
+    href="#"
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    Bold
+  </a>
+  <a
+    className="c3"
     href="#"
     onBlur={[Function]}
     onFocus={[Function]}
