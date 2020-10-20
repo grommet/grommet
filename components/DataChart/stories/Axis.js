@@ -12,7 +12,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 var data = [];
 
-for (var i = 1; i < 8; i += 1) {
+for (var i = 1; i <= 7; i += 1) {
   var v = Math.sin(i / 2.0);
   var digits = (i % 12 + 1).toString().padStart(2, 0);
   data.push({
@@ -50,7 +50,7 @@ var Example = function Example() {
     axis: {
       x: {
         property: 'day',
-        granularity: 'fine'
+        granularity: 'medium'
       },
       y: {
         property: 'percent',
