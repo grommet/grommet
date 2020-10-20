@@ -28,8 +28,9 @@ var Example = function Example() {
     width: "medium"
   }, /*#__PURE__*/React.createElement(Form, {
     value: value,
-    onChange: function onChange(nextValue) {
-      console.log('Change', nextValue);
+    onChange: function onChange(nextValue, _ref) {
+      var touched = _ref.touched;
+      console.log('Change', nextValue, touched);
       setValue(nextValue);
     },
     onReset: function onReset() {

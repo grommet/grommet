@@ -159,21 +159,22 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     return [useValue, function (nextComponentValue) {
       if (name) {
         // we have somewhere to put this
+        var nextTouched = _extends({}, touched);
+
+        nextTouched[name] = true;
+
         if (!touched[name]) {
           // don't update if not needed
-          setTouched(function (prevTouched) {
-            var nextTouched = _extends({}, prevTouched);
-
-            nextTouched[name] = true;
-            return nextTouched;
-          });
+          setTouched(nextTouched);
         }
 
         var nextValue = _extends({}, value);
 
         nextValue[name] = nextComponentValue;
         setValueState(nextValue);
-        if (onChange) onChange(nextValue);
+        if (onChange) onChange(nextValue, {
+          touched: nextTouched
+        });
       }
 
       if (initialValue !== undefined) setInputValue(nextComponentValue);
@@ -273,7 +274,9 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     onReset: function onReset(event) {
       if (!valueProp) {
         setValueState(defaultValue);
-        if (onChange) onChange(defaultValue);
+        if (onChange) onChange(defaultValue, {
+          touched: defaultTouched
+        });
       }
 
       setTouched(defaultTouched);
