@@ -1540,7 +1540,7 @@ exports[`Select complex options and children 2`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 kbXEEj"
+        class="StyledIcon-ofa7kd-0 JJNub"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -2050,7 +2050,7 @@ exports[`Select disabled 2`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 kbXEEj"
+        class="StyledIcon-ofa7kd-0 JJNub"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -5865,7 +5865,7 @@ exports[`Select prop: onOpen 2`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 kbXEEj"
+        class="StyledIcon-ofa7kd-0 JJNub"
         viewBox="0 0 24 24"
       >
         <polyline
