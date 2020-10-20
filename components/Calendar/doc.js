@@ -31,7 +31,7 @@ var doc = function doc(Calendar) {
     onSelect: _reactDesc.PropTypes.func.description("Called with an ISO8601 date when\n      the user selects a day.\n      For single select, make this the subsequent `date` property value.\n      For multiple select or ranges, toggle values in `dates`.\n      Not specifying this property makes the component read only."),
     range: _reactDesc.PropTypes.bool.description("Whether to automatically manage multiple date selection as a range.\n        When the user clicks the first date, onSelect will be called with that\n        date. When the user selects another date, onSelect will be called with\n        an array of two dates.").defaultValue(false),
     reference: _reactDesc.PropTypes.string.description("The date to show if `date` isn't set, in ISO8601 format"),
-    showAdjacentDays: _reactDesc.PropTypes.bool.description("Whether to show the days from the previous and next months.").defaultValue(true),
+    showAdjacentDays: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.bool, _reactDesc.PropTypes.oneOf(['trim'])]).description("Whether to show the days from the previous and next months. \n        `trim` limits adjacent days shown to rows containing days in \n        the current month.").defaultValue(true),
     size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['small', 'medium', 'large']), _reactDesc.PropTypes.string]).description('What size to make it.').defaultValue('medium')
   });
   return DocumentedCalendar;

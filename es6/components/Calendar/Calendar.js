@@ -454,6 +454,21 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
         sizeProp: size,
         fillContainer: fill
       })));
+    } else if (
+    /* Do not show adjacent days in 6th row if all days 
+    fall in the next month */
+    showAdjacentDays === 'trim' && otherMonth && weeks.length === 5 &&
+    /* If the length days array is less than the current getDate()
+    we know that all days in the array are from the next month. */
+    days.length < day.getDate()) {
+      days.push( /*#__PURE__*/React.createElement(StyledDayContainer, {
+        key: day.getTime(),
+        sizeProp: size,
+        fillContainer: fill
+      }, /*#__PURE__*/React.createElement(StyledDay, {
+        sizeProp: size,
+        fillContainer: fill
+      })));
     } else {
       (function () {
         var dateString = day.toISOString(); // this.dayRefs[dateString] = React.createRef();
