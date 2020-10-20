@@ -30,6 +30,7 @@ const textAlignStyle = css`
 
 const truncateStyle = `
   white-space: nowrap;
+  max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
 `;

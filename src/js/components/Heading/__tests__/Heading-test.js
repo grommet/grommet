@@ -228,3 +228,13 @@ test('Throws a warning when heading.level is undefined in the theme.', () => {
   const consoleMsg = 'Heading level 6 is not defined in your theme.';
   expect(global.console.warn).toHaveBeenCalledWith(consoleMsg);
 });
+
+test('Heading fill renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Heading fill />
+    </Grommet>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});

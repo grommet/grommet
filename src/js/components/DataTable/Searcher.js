@@ -28,6 +28,7 @@ const Searcher = ({ filtering, filters, onFilter, onFiltering, property }) => {
       <Box width={{ min: 'xsmall' }} flex pad={{ horizontal: 'small' }}>
         <TextInput
           name={`search-${property}`}
+          a11yTitle={`Search by ${property}`}
           ref={inputRef}
           value={filters[property]}
           onChange={event => onFilter(property, event.target.value)}
@@ -48,7 +49,7 @@ const Searcher = ({ filtering, filters, onFilter, onFiltering, property }) => {
         </Box>
       ) : null}
       <Button
-        a11yTitle={`focus-search-${property}`}
+        a11yTitle={`Open search by ${property}`}
         icon={
           <FormSearch
             color={normalizeColor(

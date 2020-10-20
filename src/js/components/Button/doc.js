@@ -14,8 +14,8 @@ export const doc = Button => {
     .description('A button.')
     .details(
       `You can provide a single function child that will be called with
-      'hover' and 'focus' keys. This allows you to customize the rendering
-      of the Button in those cases.`,
+      'disabled', 'hover' and 'focus' keys. 
+      This allows you to customize the rendering of the Button in those cases.`,
     )
     .usage(
       `import { Button } from 'grommet';
@@ -32,10 +32,10 @@ export const doc = Button => {
     ]).description(
       `Function that can be called to render the visual representation.
       Button can take in Children as a function, node, or object. 
-      For example hover can be passed as an object that would 
-      then return a react element.
-      \`children={({ hover }) => <Box...>{...}</Box>}\`. When Button has
-      children, it is styled as a \`plain\` button.
+      For example, 'disabled', 'hover', and 'focus' can be passed as an 
+      argument that would then return a react element.
+      \`children={({ disabled, hover, focus }) => <Box...>{...}</Box>}\`. 
+      When Button has children, it is styled as a \`plain\` button.
       `,
     ),
     active: PropTypes.bool

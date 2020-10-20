@@ -502,6 +502,11 @@ const widthObjectStyle = css`
     css`
       min-width: ${getSize(props, props.widthProp.min)};
     `};
+  ${props =>
+    props.widthProp.width &&
+    css`
+      width: ${getSize(props, props.widthProp.width)};
+    `};
 `;
 
 const widthStyle = css`

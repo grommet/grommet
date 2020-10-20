@@ -288,7 +288,7 @@ describe('DataTable', () => {
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
-    fireEvent.click(container.querySelector('[aria-label="focus-search-a"]'));
+    fireEvent.click(container.querySelector('[aria-label="Open search by a"]'));
     const searchInput = container.querySelector('[name="search-a"]');
     expect(document.activeElement).toBe(searchInput);
     fireEvent.change(searchInput, {
@@ -794,6 +794,15 @@ describe('DataTable', () => {
             },
           },
         },
+        resize: {
+          hover: {
+            border: {
+              color: 'red',
+              side: 'end',
+              size: 'xsmall',
+            },
+          },
+        },
       },
     };
 
@@ -805,6 +814,7 @@ describe('DataTable', () => {
           primaryKey="a"
           select={['alpha']}
           sortable
+          resizeable
         />
       </Grommet>,
     );

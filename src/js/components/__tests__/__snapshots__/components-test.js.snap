@@ -1049,6 +1049,15 @@ xlarge
 xxlarge
 string
 {
+  width: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
   min: 
     xxsmall
     xsmall
@@ -1096,8 +1105,8 @@ reverse",
     ],
     "description": "A button.",
     "details": "You can provide a single function child that will be called with
-      'hover' and 'focus' keys. This allows you to customize the rendering
-      of the Button in those cases.",
+      'disabled', 'hover' and 'focus' keys. 
+      This allows you to customize the rendering of the Button in those cases.",
     "intrinsicElement": "button",
     "name": "Button",
     "properties": Array [
@@ -1205,10 +1214,10 @@ string",
       Object {
         "description": "Function that can be called to render the visual representation.
       Button can take in Children as a function, node, or object. 
-      For example hover can be passed as an object that would 
-      then return a react element.
-      \`children={({ hover }) => <Box...>{...}</Box>}\`. When Button has
-      children, it is styled as a \`plain\` button.
+      For example, 'disabled', 'hover', and 'focus' can be passed as an 
+      argument that would then return a react element.
+      \`children={({ disabled, hover, focus }) => <Box...>{...}</Box>}\`. 
+      When Button has children, it is styled as a \`plain\` button.
       ",
         "format": "function
 object
@@ -4390,6 +4399,12 @@ string",
         "name": "color",
       },
       Object {
+        "defaultValue": undefined,
+        "description": "Whether the width should fill the container.",
+        "format": "boolean",
+        "name": "fill",
+      },
+      Object {
         "defaultValue": 1,
         "description": "The heading level. It corresponds to the number after the 'H' for
 the DOM tag. Set the level for semantic accuracy and accessibility.
@@ -5124,6 +5139,21 @@ function",
         "name": "a11yTitle",
       },
       Object {
+        "description": "The height of the drop container.",
+        "format": "xsmall
+small
+medium
+large
+xlarge
+string",
+        "name": "dropHeight",
+      },
+      Object {
+        "description": "Any valid Drop prop.",
+        "format": "object",
+        "name": "dropProps",
+      },
+      Object {
         "description": "An optional icon to show. This could be used to provide an
       indication of what kind of input is expected, like an email icon,
       or what the input will be used for, like a search icon.",
@@ -5213,8 +5243,9 @@ number",
     "details": "The labels and behavior of the contained Buttons are described
       via the \`items\` property.
       You can provide a single function child that will be called with
-      'hover', 'focus', and 'drop' keys. This allows you to customize
-      the rendering of the Menu button in those cases.",
+      'disabled', 'hover', 'focus', and 'drop' keys. 
+      This allows you to customize the rendering of the Menu button 
+      in those cases.",
     "intrinsicElement": "button",
     "name": "Menu",
     "properties": Array [
@@ -5324,7 +5355,7 @@ string",
       It will be passed an object containing button props.
       It should return a react element.
       For example:
-      \`children={({ drop, hover }) => <Box ...>{...}</Box>}\`
+      \`children={({ disabled, drop, hover, focus }) => <Box ...>{...}</Box>}\`
       ",
         "format": "function",
         "name": "children",
@@ -5784,7 +5815,7 @@ string",
         "name": "color",
       },
       Object {
-        "defaultValue": false,
+        "defaultValue": undefined,
         "description": "Whether the width should fill the container.",
         "format": "boolean",
         "name": "fill",
@@ -6955,10 +6986,7 @@ string",
       },
       Object {
         "defaultValue": "medium",
-        "description": "The font size and line height are primarily driven by the chosen tag. 
-But, it can be adjusted via this size property. The tag should be set for 
-semantic correctness and accessibility. This size property allows for stylistic
-adjustments.",
+        "description": "The font size and line space height of the text.",
         "format": "xsmall
 small
 medium
