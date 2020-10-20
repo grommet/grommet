@@ -193,35 +193,35 @@ const Calendar = forwardRef(
       // Checks if the difference between the current and next DisplayBounds is
       // greater than a year. If that's the case, calendar should update without
       // animation.
-      let diffBoundsAboveYearFlag = false;
-      let sameDisplayBounds = false;
-      if (nextDisplayBounds[0].getTime() < displayBounds[0].getTime()) {
-        if (
-          displayBounds[0].getTime() - nextDisplayBounds[0].getTime() >
-          millisecondsPerYear
-        ) {
-          diffBoundsAboveYearFlag = true;
-        }
-      } else if (nextDisplayBounds[1].getTime() > displayBounds[1].getTime()) {
-        if (
-          nextDisplayBounds[1].getTime() - displayBounds[1].getTime() >
-          millisecondsPerYear
-        ) {
-          diffBoundsAboveYearFlag = true;
-        }
-      } else if (
-        nextDisplayBounds[0].getTime() === displayBounds[0].getTime() &&
-        nextDisplayBounds[1].getTime() === displayBounds[1].getTime()
+      if (
+        nextDisplayBounds[0].getTime() !== displayBounds[0].getTime() &&
+        nextDisplayBounds[1].getTime() !== displayBounds[1].getTime()
       ) {
-        sameDisplayBounds = true;
+        let diffBoundsAboveYear = false;
+        if (nextDisplayBounds[0].getTime() < displayBounds[0].getTime()) {
+          if (
+            displayBounds[0].getTime() - nextDisplayBounds[0].getTime() >
+            millisecondsPerYear
+          ) {
+            diffBoundsAboveYear = true;
+          }
+        } else if (
+          nextDisplayBounds[1].getTime() > displayBounds[1].getTime()
+        ) {
+          if (
+            nextDisplayBounds[1].getTime() - displayBounds[1].getTime() >
+            millisecondsPerYear
+          ) {
+            diffBoundsAboveYear = true;
+          }
+        }
+        if (!animate || diffBoundsAboveYear) {
+          setDisplayBounds(nextDisplayBounds);
+        } else {
+          setTargetDisplayBounds(nextDisplayBounds);
+        }
       }
-
-      if (!animate || diffBoundsAboveYearFlag || sameDisplayBounds) {
-        setDisplayBounds(nextDisplayBounds);
-      } else {
-        setTargetDisplayBounds(nextDisplayBounds);
-      }
-    }, [animate, firstDayOfWeek, reference]);
+    }, [animate, firstDayOfWeek, reference, displayBounds]);
 
     useEffect(() => {
       if (targetDisplayBounds) {
@@ -465,6 +465,25 @@ const Calendar = forwardRef(
 
       const otherMonth = day.getMonth() !== reference.getMonth();
       if (!showAdjacentDays && otherMonth) {
+        days.push(
+          <StyledDayContainer
+            key={day.getTime()}
+            sizeProp={size}
+            fillContainer={fill}
+          >
+            <StyledDay sizeProp={size} fillContainer={fill} />
+          </StyledDayContainer>,
+        );
+      } else if (
+        /* Do not show adjacent days in 6th row if all days 
+        fall in the next month */
+        showAdjacentDays === 'trim' &&
+        otherMonth &&
+        weeks.length === 5 &&
+        /* If the length days array is less than the current getDate()
+        we know that all days in the array are from the next month. */
+        days.length < day.getDate()
+      ) {
         days.push(
           <StyledDayContainer
             key={day.getTime()}
