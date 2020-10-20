@@ -33,7 +33,7 @@ var StyledAnchor = _styledComponents["default"].a.withConfig({
 }, function (props) {
   return (0, _utils.normalizeColor)(props.colorProp || props.theme.anchor.color, props.theme);
 }, function (props) {
-  return props.theme.anchor.fontWeight && "font-weight: " + props.theme.anchor.fontWeight + ";";
+  return props.weight ? "font-weight: " + props.weight + ";" : props.theme.anchor.fontWeight && "font-weight: " + props.theme.anchor.fontWeight + ";";
 }, function (props) {
   return props.hasIcon ? 'none' : props.theme.anchor.textDecoration;
 }, _utils.genericStyles, function (props) {

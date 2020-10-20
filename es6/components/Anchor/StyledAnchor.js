@@ -21,7 +21,7 @@ var StyledAnchor = styled.a.withConfig({
 }, function (props) {
   return normalizeColor(props.colorProp || props.theme.anchor.color, props.theme);
 }, function (props) {
-  return props.theme.anchor.fontWeight && "font-weight: " + props.theme.anchor.fontWeight + ";";
+  return props.weight ? "font-weight: " + props.weight + ";" : props.theme.anchor.fontWeight && "font-weight: " + props.theme.anchor.fontWeight + ";";
 }, function (props) {
   return props.hasIcon ? 'none' : props.theme.anchor.textDecoration;
 }, genericStyles, function (props) {
