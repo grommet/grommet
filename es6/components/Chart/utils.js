@@ -38,6 +38,7 @@ export var normalizeBounds = function normalizeBounds(bounds, values) {
   return result;
 };
 export var areNormalizedValuesEquals = function areNormalizedValuesEquals(valuesX, valuesY) {
+  console.warn("This function will be removed in the upcoming releases.\nPlease get in touch with us if you have concerns.");
   if (!valuesX || !valuesY) return false;
   if (valuesX.length !== valuesY.length) return false;
   if (valuesX.length === 0) return true;
@@ -49,6 +50,7 @@ export var areNormalizedValuesEquals = function areNormalizedValuesEquals(values
   });
 };
 export var areNormalizedBoundsEquals = function areNormalizedBoundsEquals(boundsX, boundsY) {
+  console.warn("This function will be removed in the upcoming releases.\nPlease get in touch with us if you have concerns.");
   if (!boundsX || !boundsY) return false;
   if (boundsX.length !== boundsY.length || !(boundsX.length > 0)) return false;
   return boundsX.every(function (_, i) {
