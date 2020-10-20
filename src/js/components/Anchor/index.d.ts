@@ -12,6 +12,7 @@ import {
 export interface AnchorProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
+  as?: PolymorphicType;
   color?: ColorType;
   disabled?: boolean;
   gridArea?: GridAreaType;
@@ -28,7 +29,7 @@ export interface AnchorProps {
     | 'xlarge'
     | 'xxlarge'
     | string;
-  as?: PolymorphicType;
+  weight?: 'normal' | 'bold' | number;
 }
 
 declare const Anchor: React.FC<AnchorProps &

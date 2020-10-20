@@ -308,6 +308,12 @@ string",
         "name": "margin",
       },
       Object {
+        "description": "The DOM tag or react component to use for the element.",
+        "format": "string
+function",
+        "name": "as",
+      },
+      Object {
         "description": "Color when hovering over places while selecting.",
         "format": "string
 {
@@ -364,10 +370,11 @@ string",
         "name": "size",
       },
       Object {
-        "description": "The DOM tag or react component to use for the element.",
-        "format": "string
-function",
-        "name": "as",
+        "description": "Sets font-weight property for anchor.",
+        "format": "normal
+bold
+number",
+        "name": "weight",
       },
     ],
     "usage": "import { Anchor } from 'grommet';
