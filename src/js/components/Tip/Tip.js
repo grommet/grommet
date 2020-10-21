@@ -5,59 +5,77 @@ import React, {
   useState,
   useRef,
 } from 'react';
-import PropTypes from 'prop-types';
 import { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Drop } from '../Drop';
 
-export const Tip = forwardRef(
-  ({ children, content, dropProps, ...rest }, tipRef) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
-    const [over, setOver] = useState(false);
-    const ref = useRef();
+const Tip = forwardRef(({ children, content, dropProps }, tipRef) => {
+  const theme = useContext(ThemeContext) || defaultProps.theme;
+  const [over, setOver] = useState(false);
 
-    // compliant with accessibility standards
-    const childProps = {
+  // console.log(tipRef);
+  const ref = useRef();
+  const componentRef = tipRef || ref;
+
+  const wrapChildIfString = child => {
+    // Handle the use case of a primitive string child
+    // so we'll be able to assign ref and events on the child.
+    // console.log(child);
+    return typeof child === 'string' ? <span>{child}</span> : child;
+  };
+
+  const clonedChild = React.Children.map(children, child =>
+    cloneElement(wrapChildIfString(child), {
       onMouseOver: () => setOver(true),
       onMouseLeave: () => setOver(false),
       onFocus: () => setOver(true),
       onBlur: () => setOver(false),
-      ref,
-    };
+      ref: node => {
+        // https://github.com/facebook/react/issues/8873#issuecomment-287873307
+        if (typeof componentRef === 'function') {
+          componentRef(node);
+        } else if (componentRef) {
+          // eslint-disable-next-line no-param-reassign
+          componentRef.current = node;
+        }
+        // Call the original ref, if any
+        const { ref: callerRef } = child;
+        if (typeof callerRef === 'function') {
+          callerRef(node);
+        } else if (callerRef) {
+          callerRef.current = node;
+        }
+      },
+    }),
+  );
 
-    const getChildren = () => {
-      // handle the use case of a single string child
-      if (typeof children === 'string') return <span>{children}</span>;
-      return children;
-    };
+  return [
+    clonedChild,
+    over && (
+      <Drop
+        align={{ left: 'right' }} // most common use case is a sidebar?!
+        target={componentRef.current}
+        trapFocus={false}
+        key="tip-drop"
+        plain
+        {...theme.tip.drop}
+        {...dropProps}
+      >
+        <Box {...theme.tip.content}>{content}</Box>
+      </Drop>
+    ),
+  ];
+});
 
-    return (
-      // Not sure about the extra Box, I'm still thinking of ways to simplify
-      <Box ref={tipRef} {...rest}>
-        {cloneElement(getChildren(), childProps)}
-        {over && (
-          <Drop
-            align={{ left: 'right' }} // most common use case is a sidebar?!
-            target={ref.current}
-            trapFocus={false}
-            plain
-            {...theme.tip.drop}
-            {...dropProps}
-          >
-            <Box {...theme.tip.content}>{content}</Box>
-          </Drop>
-        )}
-      </Box>
-    );
-  },
-);
+Tip.displayName = 'Tip';
 
-Tip.propTypes = {
-  children: PropTypes.node,
-};
+let TipDoc;
+if (process.env.NODE_ENV !== 'production') {
+  // eslint-disable-next-line global-require
+  TipDoc = require('./doc').doc(Tip);
+}
+const TipWrapper = TipDoc || Tip;
 
-Tip.defaultProps = {
-  children: undefined,
-};
+export { TipWrapper as Tip };

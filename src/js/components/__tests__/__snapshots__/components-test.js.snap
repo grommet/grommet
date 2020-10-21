@@ -7320,14 +7320,37 @@ number",
 <TextInput id='item' name='item' />",
   },
   "Tip": Object {
-    "$$typeof": Symbol(react.forward_ref),
-    "defaultProps": Object {
-      "children": undefined,
-    },
-    "propTypes": Object {
-      "children": [Function],
-    },
-    "render": [Function],
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=Tip&full=0&addons=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/tip&module=%2Fsrc%2FTip.js",
+      },
+    ],
+    "description": "Tooltip or a hint when hovering over a UI item. 
+    The tooltip will render when hovering on top of the 
+    Tip child node or string.",
+    "intrinsicElement": "span",
+    "name": "Tip",
+    "properties": Array [
+      Object {
+        "description": "The tooltip content inside the drop.",
+        "format": "node",
+        "name": "content",
+      },
+      Object {
+        "description": "Any valid Drop prop to style the Tip drop container.",
+        "format": "object",
+        "name": "dropProps",
+      },
+    ],
+    "usage": "import { Tip } from 'grommet';
+<Tip />",
   },
   "Video": Object {
     "availableAt": Array [

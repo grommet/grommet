@@ -1,4 +1,4 @@
-## undefined
+## Tip
 Tooltip or a hint when hovering over a UI item. 
     The tooltip will render when hovering on top of the 
     Tip child node or string.
@@ -36,9 +36,9 @@ span
 ```
 ## Theme
   
-**tip**
+**tip.content**
 
-Any valid Drop property for the Tip. Expects `object`.
+Any valid Box property for the Tip container. Expects `object`.
 
 Defaults to
 
@@ -46,34 +46,12 @@ Defaults to
 undefined
 ```
 
-**tip.container**
+**tip.drop**
 
-Any valid Box property for the Tip container. Expects `object`.
-
-Defaults to
-
-```
-{ round: 'small', elevation: 'small' }
-```
-
-**global.edgeSize**
-
-The possible sizes for margin. Expects `object`.
+Any valid Drop property for the Tooltip. Expects `object`.
 
 Defaults to
 
 ```
-{
-    edgeSize: {
-      none: '0px',
-      hair: '1px',
-      xxsmall: '3px',
-      xsmall: '6px',
-      small: '12px',
-      medium: '24px',
-      large: '48px',
-      xlarge: '96px',
-      responsiveBreakpoint: 'small',
-    },
-  }
+undefined
 ```

@@ -1,7 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils/mixins';
-import { themeDocUtils } from '../../utils/themeDocUtils';
 
 export const doc = Tip => {
   const DocumentedTip = describe(Tip)
@@ -28,15 +27,14 @@ export const doc = Tip => {
 };
 
 export const themeDoc = {
-  tip: {
-    description: 'Any valid Drop property for the Tip.',
+  'tip.content': {
+    description: 'Any valid Box property for the Tip container.',
     type: 'object',
     defaultValue: undefined,
   },
-  'tip.container': {
-    description: 'Any valid Box property for the Tip container.',
+  'tip.drop': {
+    description: 'Any valid Drop property for the Tooltip.',
     type: 'object',
-    defaultValue: "{ round: 'small', elevation: 'small' }",
+    defaultValue: undefined,
   },
-  ...themeDocUtils.edgeStyle('The possible sizes for margin.'),
 };

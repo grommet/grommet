@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import {
@@ -8,6 +8,7 @@ import {
   grommet,
   Grommet,
   Nav,
+  Sidebar,
   Stack,
   Tip,
 } from 'grommet';
@@ -20,14 +21,13 @@ import {
   Stakeholder,
 } from 'grommet-icons';
 
-import { Sidebar } from '../Sidebar';
-import { deepMerge } from '../../../utils';
+import { deepMerge } from 'grommet/utils';
 
 const src = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
 
 const customTip = deepMerge(grommet, {
   tip: {
-    container: {
+    content: {
       animation: 'slideRight',
       margin: 'xsmall',
       pad: 'small',
@@ -37,41 +37,27 @@ const customTip = deepMerge(grommet, {
   },
 });
 
-const NotificationIcon = () => (
-  <Stack anchor="top-right">
-    <Notification />
-    <Box background="accent-1" pad="xsmall" round responsive={false} />
-  </Stack>
-);
-
 const NotificationAlert = () => {
-  const ref = useRef();
-  const [over, setOver] = useState();
   return (
     <Box alignSelf="center">
-      <Button
-        onFocus={() => setOver(true)}
-        onBlur={() => setOver(false)}
-        onMouseOver={() => setOver(true)}
-        onMouseOut={() => setOver(false)}
-        icon={<NotificationIcon />}
-        ref={ref}
-      />
-      {ref.current && over && (
-        <Tip target={ref.current}>
-          <Box animation="jiggle">New Analytics!</Box>
-        </Tip>
-      )}
+      <Tip content={<Box animation="jiggle">New Analytics!</Box>}>
+        <Button
+          icon={
+            <Stack anchor="top-right">
+              <Notification />
+              <Box
+                background="accent-1"
+                pad="xsmall"
+                round
+                responsive={false}
+              />
+            </Stack>
+          }
+        />
+      </Tip>
     </Box>
   );
 };
-
-const SidebarFooter = () => (
-  <Box>
-    <NotificationAlert />
-    <Avatar margin="small" src={src} />
-  </Box>
-);
 
 const SidebarHeader = () => (
   <Box pad="small">
@@ -91,45 +77,36 @@ const iconsMap = color => [
   <Calculator color={color} />,
 ];
 const SidebarButton = ({ iconName, index }) => {
-  const [over, setOver] = useState();
-  const tooltipColor = { color: 'accent-1', opacity: 0.9 };
+  const hoverColor = { color: 'accent-1', opacity: 0.9 };
 
-  const ref = useRef();
   return (
     <Box fill="horizontal">
-      <Button
-        ref={ref}
-        onMouseOver={() => setOver(true)}
-        onMouseLeave={() => setOver(false)}
-        onFocus={() => setOver(false)}
-        onBlur={() => setOver(false)}
-        hoverIndicator={tooltipColor}
-        plain
-      >
-        {({ hover }) => (
-          <Box pad={{ vertical: 'small' }} align="center">
-            {iconsMap(hover ? 'black' : 'white')[index]}
-          </Box>
-        )}
-      </Button>
-      {ref.current && over && (
-        <Tip target={ref.current}>
-          <Box>{iconName}</Box>
-        </Tip>
-      )}
+      <Tip content={<Box>{iconName}</Box>}>
+        <Button hoverIndicator={hoverColor} plain>
+          {({ hover }) => (
+            <Box pad={{ vertical: 'small' }} align="center">
+              {iconsMap(hover ? 'black' : 'white')[index]}
+            </Box>
+          )}
+        </Button>
+      </Tip>
     </Box>
   );
 };
 
-export const TooltipsSidebar = () => (
+export const Example = () => (
   <Grommet theme={customTip} full>
-    <Box direction="row" height={{ min: '100%' }}>
+    <Box align="start" height={{ min: '100%' }}>
       <Sidebar
-        overflow="auto"
         background="brand"
         header={<SidebarHeader />}
-        footer={<SidebarFooter />}
-        pad="none"
+        pad={{ vertical: 'small' }}
+        footer={
+          <Box>
+            <NotificationAlert />
+            <Avatar margin="small" src={src} />
+          </Box>
+        }
       >
         <Nav>
           {['Analytics', 'Stakeholder', 'Calculator'].map((iconName, index) => (
@@ -141,4 +118,4 @@ export const TooltipsSidebar = () => (
   </Grommet>
 );
 
-storiesOf('Sidebar', module).add('Tooltips', () => <TooltipsSidebar />);
+storiesOf('Sidebar', module).add('Tooltips', () => <Example />);
