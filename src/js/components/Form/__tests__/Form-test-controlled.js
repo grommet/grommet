@@ -365,4 +365,36 @@ describe('Form controlled', () => {
     expect(onReset).toBeCalledTimes(1);
     expect(queryByText('Input has changed')).toBeNull();
   });
+
+  test('controlled onChange touched', () => {
+    const onChange = jest.fn();
+    const onSubmit = jest.fn();
+    const Test = () => {
+      const [value] = React.useState({ test: '' });
+      return (
+        <Form value={value} onChange={onChange} onSubmit={onSubmit}>
+          <FormField name="test">
+            <TextInput name="test" placeholder="test input" />
+          </FormField>
+          <Button type="submit" primary label="Submit" />
+        </Form>
+      );
+    };
+    const { getByPlaceholderText, container } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+
+    fireEvent.change(getByPlaceholderText('test input'), {
+      target: { value: 'Input has changed' },
+    });
+
+    expect(onChange).toBeCalledWith(
+      { test: 'Input has changed' },
+      { touched: { test: true } },
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
