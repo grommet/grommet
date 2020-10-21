@@ -65,7 +65,7 @@ const columnsResize = [
 const ExampleResizable = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
-      <Heading level="3">Table with resizeable & column sizes</Heading>
+      <Heading level="3">Table with resizable & column sizes</Heading>
       <DataTable
         columns={columnsResize}
         data={DATA}
@@ -76,6 +76,6 @@ const ExampleResizable = () => (
   </Grommet>
 );
 
-storiesOf('DataTable', module).add('Column sizes resizeable', () => (
+storiesOf('DataTable', module).add('Resizable columns', () => (
   <ExampleResizable />
 ));
