@@ -2,7 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import { Grommet, Box, Form, FormField, TextInput } from 'grommet';
+import { Grommet, Box, Button, Form, FormField, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 var allSuggestions = Array(100).fill().map(function (_, i) {
   return "suggestion " + (i + 1);
@@ -45,7 +45,16 @@ var FormFieldTextInput = function FormFieldTextInput(props) {
   }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, /*#__PURE__*/React.createElement(Form, null, /*#__PURE__*/React.createElement(FormField, _extends({
+  }, /*#__PURE__*/React.createElement(Form, {
+    onSubmit: function onSubmit(_ref) {
+      var nextValue = _ref.value;
+      console.log(nextValue);
+      setState({
+        value: '',
+        suggestions: allSuggestions
+      });
+    }
+  }, /*#__PURE__*/React.createElement(FormField, _extends({
     label: "Label",
     htmlFor: "text-input"
   }, props), /*#__PURE__*/React.createElement(TextInput, {
@@ -55,7 +64,10 @@ var FormFieldTextInput = function FormFieldTextInput(props) {
     onChange: onChange,
     onSelect: onSelect,
     suggestions: state.suggestions
-  })))));
+  })), /*#__PURE__*/React.createElement(Button, {
+    type: "submit",
+    label: "submit"
+  }))));
 };
 
 storiesOf('TextInput', module).add('Form', function () {

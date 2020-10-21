@@ -39,17 +39,21 @@ var Example = function Example() {
     }
   }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     name: "value",
-    label: "value",
+    label: "url",
     required: true
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.DateInput, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.MaskedInput, {
     name: "value",
-    format: "mm/dd/yyyy"
+    mask: [{
+      fixed: 'https://'
+    }, {
+      regexp: /^.*$/
+    }]
   })), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     type: "submit",
     label: "submit"
   }))));
 };
 
-(0, _react2.storiesOf)('DateInput', module).add('Form', function () {
+(0, _react2.storiesOf)('MaskedInput', module).add('Form', function () {
   return /*#__PURE__*/_react["default"].createElement(Example, null);
 });

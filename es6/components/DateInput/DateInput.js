@@ -2,7 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { forwardRef, useContext, useMemo, useState } from 'react';
+import React, { forwardRef, useContext, useEffect, useMemo, useState } from 'react';
 import { ThemeContext } from 'styled-components';
 import { Calendar as CalendarIcon } from 'grommet-icons/icons/Calendar';
 import { defaultProps } from '../../default-props';
@@ -70,12 +70,27 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
 
   var _useState = useState(schema ? valueToText(value, schema) : undefined),
       textValue = _useState[0],
-      setTextValue = _useState[1]; // when format and not inline, whether to show the Calendar in a Drop
+      setTextValue = _useState[1]; // We need to distinguish between the caller changing a Form value
+  // and the user typing a date that he isn't finished with yet.
+  // To track this, we keep track of the internalValue from interacting
+  // within this component. If the value has changed outside of this
+  // component, we reset the textValue.
 
 
-  var _useState2 = useState(),
-      open = _useState2[0],
-      setOpen = _useState2[1];
+  var _useState2 = useState(value),
+      internalValue = _useState2[0],
+      setInternalValue = _useState2[1];
+
+  useEffect(function () {
+    if (schema && !!value !== !!internalValue) {
+      setTextValue(valueToText(value, schema));
+      setInternalValue(value);
+    }
+  }, [internalValue, schema, value]); // when format and not inline, whether to show the Calendar in a Drop
+
+  var _useState3 = useState(),
+      open = _useState3[0],
+      setOpen = _useState3[1];
 
   var range = Array.isArray(value);
   var calendar = /*#__PURE__*/React.createElement(Calendar, _extends({
@@ -94,6 +109,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
 
       if (schema) setTextValue(valueToText(normalizedValue, schema));
       setValue(normalizedValue);
+      setInternalValue(normalizedValue);
       if (_onChange) _onChange({
         value: normalizedValue
       });
@@ -150,6 +166,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
       var nextValue = textToValue(nextTextValue, schema); // update value even when undefined
 
       setValue(nextValue);
+      setInternalValue(nextValue || '');
 
       if (_onChange) {
         event.persist(); // extract from React synthetic event pool

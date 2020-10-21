@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Box, Button, DateInput, Form, FormField, Grommet } from 'grommet';
+import { Box, Button, Form, FormField, Grommet, MaskedInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 var Example = function Example() {
@@ -32,17 +32,21 @@ var Example = function Example() {
     }
   }, /*#__PURE__*/React.createElement(FormField, {
     name: "value",
-    label: "value",
+    label: "url",
     required: true
-  }, /*#__PURE__*/React.createElement(DateInput, {
+  }, /*#__PURE__*/React.createElement(MaskedInput, {
     name: "value",
-    format: "mm/dd/yyyy"
+    mask: [{
+      fixed: 'https://'
+    }, {
+      regexp: /^.*$/
+    }]
   })), /*#__PURE__*/React.createElement(Button, {
     type: "submit",
     label: "submit"
   }))));
 };
 
-storiesOf('DateInput', module).add('Form', function () {
+storiesOf('MaskedInput', module).add('Form', function () {
   return /*#__PURE__*/React.createElement(Example, null);
 });
