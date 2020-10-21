@@ -19,6 +19,27 @@ Custom title to be used by screen readers.
 string
 ```
 
+**dropHeight**
+
+The height of the drop container.
+
+```
+xsmall
+small
+medium
+large
+xlarge
+string
+```
+
+**dropProps**
+
+Any valid Drop prop.
+
+```
+object
+```
+
 **icon**
 
 An optional icon to show. This could be used to provide an

@@ -308,6 +308,12 @@ string",
         "name": "margin",
       },
       Object {
+        "description": "The DOM tag or react component to use for the element.",
+        "format": "string
+function",
+        "name": "as",
+      },
+      Object {
         "description": "Color when hovering over places while selecting.",
         "format": "string
 {
@@ -364,10 +370,11 @@ string",
         "name": "size",
       },
       Object {
-        "description": "The DOM tag or react component to use for the element.",
-        "format": "string
-function",
-        "name": "as",
+        "description": "Sets font-weight property for anchor.",
+        "format": "normal
+bold
+number",
+        "name": "weight",
       },
     ],
     "usage": "import { Anchor } from 'grommet';
@@ -1049,6 +1056,15 @@ xlarge
 xxlarge
 string
 {
+  width: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
   min: 
     xxsmall
     xsmall
@@ -1096,8 +1112,8 @@ reverse",
     ],
     "description": "A button.",
     "details": "You can provide a single function child that will be called with
-      'hover' and 'focus' keys. This allows you to customize the rendering
-      of the Button in those cases.",
+      'disabled', 'hover' and 'focus' keys. 
+      This allows you to customize the rendering of the Button in those cases.",
     "intrinsicElement": "button",
     "name": "Button",
     "properties": Array [
@@ -1205,10 +1221,10 @@ string",
       Object {
         "description": "Function that can be called to render the visual representation.
       Button can take in Children as a function, node, or object. 
-      For example hover can be passed as an object that would 
-      then return a react element.
-      \`children={({ hover }) => <Box...>{...}</Box>}\`. When Button has
-      children, it is styled as a \`plain\` button.
+      For example, 'disabled', 'hover', and 'focus' can be passed as an 
+      argument that would then return a react element.
+      \`children={({ disabled, hover, focus }) => <Box...>{...}</Box>}\`. 
+      When Button has children, it is styled as a \`plain\` button.
       ",
         "format": "function
 object
@@ -1331,7 +1347,9 @@ background
         "description": "Whether this is a plain button with no border or pad.
           Non plain button will show both pad and border.
           The plain button has no border and unless the icon prop exist it has 
-          no pad as well.",
+          no pad as well. 
+          When using the kind button (i.e. button.default on the theme), 
+          the usage of plain is deprecated.",
         "format": "boolean",
         "name": "plain",
       },
@@ -1518,6 +1536,17 @@ string",
         "name": "bounds",
       },
       Object {
+        "description": "Function that will be called to render each day.
+      It will be passed \`({date, day, isInRange, isSelected})\` where \`date\`
+      is a string containing an ISO8601 date for the day being rendered, \`day\`
+      is a number containing the day of the month being rendered, \`isInRange\`
+      is a boolean indicating whether the date is within a selected range of
+      dates, and \`isSelected\` is a boolean indicating whether this date
+      is selected.",
+        "format": "function",
+        "name": "children",
+      },
+      Object {
         "description": "The selected date in ISO8601 format",
         "format": "string",
         "name": "date",
@@ -1547,6 +1576,12 @@ string",
         "name": "daysOfWeek",
       },
       Object {
+        "defaultValue": false,
+        "description": "Whether the calendar should fill the parent container.",
+        "format": "boolean",
+        "name": "fill",
+      },
+      Object {
         "defaultValue": 0,
         "description": "The first day of the week. 0 for Sunday. 1 for Monday.",
         "format": "0
@@ -1568,10 +1603,10 @@ The function passes the following options:
   }
 \`\`\`
 
-\`onPreviousMonth\` and \`onNextMonth\` are callbacks that will tell the 
+\`onPreviousMonth\` and \`onNextMonth\` are callbacks that will tell the
 calendar to move between months.
-\`previousInBound\` and \`nextInBound\` are booleans that tell, when using 
-\`bounds\`, if the current date is within that range. You can then use that 
+\`previousInBound\` and \`nextInBound\` are booleans that tell, when using
+\`bounds\`, if the current date is within that range. You can then use that
 to disable the previous and next buttons.
 ",
         "format": "function",
@@ -1614,8 +1649,11 @@ to disable the previous and next buttons.
       },
       Object {
         "defaultValue": true,
-        "description": "Whether to show the days from the previous and next months.",
-        "format": "boolean",
+        "description": "Whether to show the days from the previous and next months. 
+        \`trim\` limits adjacent days shown to rows containing days in 
+        the current month.",
+        "format": "boolean
+trim",
         "name": "showAdjacentDays",
       },
       Object {
@@ -3227,10 +3265,12 @@ string",
       },
       Object {
         "defaultValue": true,
-        "description": "Whether the drop element should be stretched to at least match the
-      width of the target element. The default is true because
-      that is what most uses of Drop want, like Select and Menu.",
-        "format": "boolean",
+        "description": "If set to true the drop element will be stretched to at least match the
+      width of the target element. If set to align the width of the drop element
+      will be restricted to the width of the target element. The default is true
+      because that is what most uses of Drop want, like Select and Menu.",
+        "format": "boolean
+align",
         "name": "stretch",
       },
       Object {
@@ -3241,7 +3281,8 @@ string",
         "required": true,
       },
       Object {
-        "description": "Elevated height of the target, indicated via a drop shadow.",
+        "description": "Elevated height of the target, indicated via a drop shadow. 
+      Only applicable if the Drop isn't plain.",
         "format": "none
 xsmall
 small
@@ -3253,7 +3294,7 @@ string",
       },
       Object {
         "defaultValue": false,
-        "description": "Whether the drop element should have no background nor shadow",
+        "description": "Whether the drop element should have no background nor elevation.",
         "format": "boolean",
         "name": "plain",
       },
@@ -4365,6 +4406,12 @@ string",
         "name": "color",
       },
       Object {
+        "defaultValue": undefined,
+        "description": "Whether the width should fill the container.",
+        "format": "boolean",
+        "name": "fill",
+      },
+      Object {
         "defaultValue": 1,
         "description": "The heading level. It corresponds to the number after the 'H' for
 the DOM tag. Set the level for semantic accuracy and accessibility.
@@ -5099,6 +5146,21 @@ function",
         "name": "a11yTitle",
       },
       Object {
+        "description": "The height of the drop container.",
+        "format": "xsmall
+small
+medium
+large
+xlarge
+string",
+        "name": "dropHeight",
+      },
+      Object {
+        "description": "Any valid Drop prop.",
+        "format": "object",
+        "name": "dropProps",
+      },
+      Object {
         "description": "An optional icon to show. This could be used to provide an
       indication of what kind of input is expected, like an email icon,
       or what the input will be used for, like a search icon.",
@@ -5188,8 +5250,9 @@ number",
     "details": "The labels and behavior of the contained Buttons are described
       via the \`items\` property.
       You can provide a single function child that will be called with
-      'hover', 'focus', and 'drop' keys. This allows you to customize
-      the rendering of the Menu button in those cases.",
+      'disabled', 'hover', 'focus', and 'drop' keys. 
+      This allows you to customize the rendering of the Menu button 
+      in those cases.",
     "intrinsicElement": "button",
     "name": "Menu",
     "properties": Array [
@@ -5299,7 +5362,7 @@ string",
       It will be passed an object containing button props.
       It should return a react element.
       For example:
-      \`children={({ drop, hover }) => <Box ...>{...}</Box>}\`
+      \`children={({ disabled, drop, hover, focus }) => <Box ...>{...}</Box>}\`
       ",
         "format": "function",
         "name": "children",
@@ -5759,7 +5822,7 @@ string",
         "name": "color",
       },
       Object {
-        "defaultValue": false,
+        "defaultValue": undefined,
         "description": "Whether the width should fill the container.",
         "format": "boolean",
         "name": "fill",
@@ -6942,10 +7005,7 @@ string",
       },
       Object {
         "defaultValue": "medium",
-        "description": "The font size and line height are primarily driven by the chosen tag. 
-But, it can be adjusted via this size property. The tag should be set for 
-semantic correctness and accessibility. This size property allows for stylistic
-adjustments.",
+        "description": "The font size and line space height of the text.",
         "format": "xsmall
 small
 medium
@@ -7233,9 +7293,12 @@ string",
         "name": "placeholder",
       },
       Object {
-        "description": "Whether this is a plain input with no border or padding.
-      Only use this when the containing context provides sufficient affordance",
-        "format": "boolean",
+        "description": "Whether this is a plain input with no border or outline.
+      Use \\"full\\" to remove padding in addition to removing border and outline.
+      Only use this when the containing context provides sufficient 
+      affordance.",
+        "format": "boolean
+full",
         "name": "plain",
       },
       Object {

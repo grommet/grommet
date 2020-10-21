@@ -535,6 +535,16 @@ describe('Box', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  test('width object', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Box width={{ width: '100px' }} />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('height', () => {
     const component = renderer.create(
       <Grommet>

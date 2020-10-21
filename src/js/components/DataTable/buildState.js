@@ -1,6 +1,22 @@
 // This file contains helper functions for DataTable, to keep the component
 // files simpler.
 
+export const set = (obj, path, value) => {
+  let parts = path;
+  if (Object(obj) !== obj) return obj;
+  if (!Array.isArray(path)) parts = path.toString().match(/[^.[\]]+/g) || [];
+
+  parts.slice(0, -1).reduce((acc, item, index) => {
+    if (Object(acc[item]) === acc[item]) {
+      return acc[item];
+    }
+    acc[item] = Math.abs(parts[index + 1]) > 0 === +parts[index + 1] ? [] : {};
+    return acc[item];
+  }, obj)[parts[parts.length - 1]] = value;
+
+  return obj;
+};
+
 // get the value for the property in the datum object
 export const datumValue = (datum, property) => {
   if (!property) return undefined;
@@ -71,8 +87,8 @@ export const filterAndSortData = (data, filters, onSearch, sort) => {
     const before = direction === 'asc' ? 1 : -1;
     const after = direction === 'asc' ? -1 : 1;
     result.sort((d1, d2) => {
-      if (d1[property] > d2[property]) return before;
-      if (d1[property] < d2[property]) return after;
+      if (datumValue(d1, property) > datumValue(d2, property)) return before;
+      if (datumValue(d1, property) < datumValue(d2, property)) return after;
       return 0;
     });
   }
@@ -116,12 +132,14 @@ const aggregateColumn = (column, data) => {
 
 // aggregate all columns that can
 const aggregate = (columns, data) => {
-  const result = {};
+  let result = {};
   columns.forEach(column => {
     if (column.aggregate) {
-      result[column.property] = aggregateColumn(column, data);
+      const value = aggregateColumn(column, data);
+      result = set(result, column.property, value);
     }
   });
+
   return result;
 };
 
@@ -129,13 +147,14 @@ const aggregate = (columns, data) => {
 export const buildFooterValues = (columns, data) => {
   const aggregateValues = aggregate(columns, data);
 
-  const result = {};
+  let result = {};
   columns.forEach(column => {
     if (column.footer) {
       if (typeof column.footer === 'string') {
-        result[column.property] = column.footer;
+        result = set(result, column.property, column.footer);
       } else if (column.footer.aggregate) {
-        result[column.property] = aggregateValues[column.property];
+        const value = datumValue(aggregateValues, column.property);
+        result = set(result, column.property, value);
       }
     }
   });

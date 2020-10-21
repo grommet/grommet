@@ -309,26 +309,6 @@ exports[`Select Clear option renders - bottom 1`] = `
   padding: 12px;
 }
 
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background: #FFFFFF08;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 12px;
-}
-
 .c9 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -345,44 +325,6 @@ exports[`Select Clear option renders - bottom 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-}
-
-.c10 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c10:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus > circle,
-.c10:focus > ellipse,
-.c10:focus > line,
-.c10:focus > path,
-.c10:focus > polygon,
-.c10:focus > polyline,
-.c10:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c10:focus::-moz-focus-inner {
-  border: 0;
 }
 
 .c5 {
@@ -434,12 +376,6 @@ exports[`Select Clear option renders - bottom 1`] = `
   line-height: 24px;
 }
 
-.c12 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #555555;
-}
-
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -489,12 +425,6 @@ exports[`Select Clear option renders - bottom 1`] = `
 
 @media only screen and (max-width:768px) {
   .c7 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c11 {
     padding: 6px;
   }
 }
@@ -570,20 +500,7 @@ exports[`Select Clear option renders - bottom 1`] = `
         class="c9"
       />
     </div>
-    <button
-      class="c10"
-      type="button"
-    >
-      <div
-        class="c11"
-      >
-        <span
-          class="c12"
-        >
-          Clear selection
-        </span>
-      </div>
-    </button>
+    
   </div>
 </div>
 `;
@@ -628,27 +545,7 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
   flex-direction: column;
 }
 
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  background: #FFFFFF08;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 12px;
-}
-
-.c10 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -667,7 +564,7 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
   padding: 12px;
 }
 
-.c12 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -685,7 +582,7 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
   flex: 0 0 auto;
 }
 
-.c4 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -703,76 +600,32 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
   text-align: inherit;
 }
 
-.c4:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c4:focus > circle,
-.c4:focus > ellipse,
-.c4:focus > line,
-.c4:focus > path,
-.c4:focus > polygon,
-.c4:focus > polyline,
-.c4:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c4:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c8 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c8:hover {
+.c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
-.c8:focus {
+.c5:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus > circle,
-.c8:focus > ellipse,
-.c8:focus > line,
-.c8:focus > path,
-.c8:focus > polygon,
-.c8:focus > polyline,
-.c8:focus > rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c6 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #555555;
-}
-
-.c11 {
+.c8 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -806,7 +659,7 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
   max-height: inherit;
 }
 
-.c7 {
+.c4 {
   position: relative;
   -webkit-scroll-behavior: smooth;
   -moz-scroll-behavior: smooth;
@@ -816,7 +669,7 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
   outline: none;
 }
 
-.c9 {
+.c6 {
   display: block;
   width: 100%;
 }
@@ -834,13 +687,7 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
+  .c7 {
     padding: 6px;
   }
 }
@@ -875,59 +722,46 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
     class="c2 c3"
     id="test-select__select-drop"
   >
-    <button
-      class="c4"
-      type="button"
-    >
-      <div
-        class="c5"
-      >
-        <span
-          class="c6"
-        >
-          Clear test
-        </span>
-      </div>
-    </button>
+    
     <div
-      class="c7"
+      class="c4"
       role="menubar"
       tabindex="-1"
     >
       <button
-        class="c8 c9"
+        class="c5 c6"
         role="menuitem"
         tabindex="-1"
         type="button"
       >
         <div
-          class="c10 "
+          class="c7 "
         >
           <span
-            class="c11"
+            class="c8"
           >
             one
           </span>
         </div>
       </button>
       <button
-        class="c8 c9"
+        class="c5 c6"
         role="menuitem"
         tabindex="-1"
         type="button"
       >
         <div
-          class="c10 "
+          class="c7 "
         >
           <span
-            class="c11"
+            class="c8"
           >
             two
           </span>
         </div>
       </button>
       <div
-        class="c12"
+        class="c9"
       />
     </div>
   </div>
@@ -974,27 +808,7 @@ exports[`Select Clear option renders custom label 1`] = `
   flex-direction: column;
 }
 
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  background: #FFFFFF08;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 12px;
-}
-
-.c10 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1013,7 +827,7 @@ exports[`Select Clear option renders custom label 1`] = `
   padding: 12px;
 }
 
-.c12 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1031,7 +845,7 @@ exports[`Select Clear option renders custom label 1`] = `
   flex: 0 0 auto;
 }
 
-.c4 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1049,76 +863,32 @@ exports[`Select Clear option renders custom label 1`] = `
   text-align: inherit;
 }
 
-.c4:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c4:focus > circle,
-.c4:focus > ellipse,
-.c4:focus > line,
-.c4:focus > path,
-.c4:focus > polygon,
-.c4:focus > polyline,
-.c4:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c4:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c8 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c8:hover {
+.c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
-.c8:focus {
+.c5:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus > circle,
-.c8:focus > ellipse,
-.c8:focus > line,
-.c8:focus > path,
-.c8:focus > polygon,
-.c8:focus > polyline,
-.c8:focus > rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c6 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #555555;
-}
-
-.c11 {
+.c8 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -1152,7 +922,7 @@ exports[`Select Clear option renders custom label 1`] = `
   max-height: inherit;
 }
 
-.c7 {
+.c4 {
   position: relative;
   -webkit-scroll-behavior: smooth;
   -moz-scroll-behavior: smooth;
@@ -1162,7 +932,7 @@ exports[`Select Clear option renders custom label 1`] = `
   outline: none;
 }
 
-.c9 {
+.c6 {
   display: block;
   width: 100%;
 }
@@ -1172,13 +942,7 @@ exports[`Select Clear option renders custom label 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
+  .c7 {
     padding: 6px;
   }
 }
@@ -1213,59 +977,46 @@ exports[`Select Clear option renders custom label 1`] = `
     class="c2 c3"
     id="test-select__select-drop"
   >
-    <button
-      class="c4"
-      type="button"
-    >
-      <div
-        class="c5"
-      >
-        <span
-          class="c6"
-        >
-          test label
-        </span>
-      </div>
-    </button>
+    
     <div
-      class="c7"
+      class="c4"
       role="menubar"
       tabindex="-1"
     >
       <button
-        class="c8 c9"
+        class="c5 c6"
         role="menuitem"
         tabindex="-1"
         type="button"
       >
         <div
-          class="c10 "
+          class="c7 "
         >
           <span
-            class="c11"
+            class="c8"
           >
             one
           </span>
         </div>
       </button>
       <button
-        class="c8 c9"
+        class="c5 c6"
         role="menuitem"
         tabindex="-1"
         type="button"
       >
         <div
-          class="c10 "
+          class="c7 "
         >
           <span
-            class="c11"
+            class="c8"
           >
             two
           </span>
         </div>
       </button>
       <div
-        class="c12"
+        class="c9"
       />
     </div>
   </div>
@@ -1312,27 +1063,7 @@ exports[`Select Clear option renders- top 1`] = `
   flex-direction: column;
 }
 
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  background: #FFFFFF08;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 12px;
-}
-
-.c10 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1351,7 +1082,7 @@ exports[`Select Clear option renders- top 1`] = `
   padding: 12px;
 }
 
-.c12 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1369,7 +1100,7 @@ exports[`Select Clear option renders- top 1`] = `
   flex: 0 0 auto;
 }
 
-.c4 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1387,76 +1118,32 @@ exports[`Select Clear option renders- top 1`] = `
   text-align: inherit;
 }
 
-.c4:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c4:focus > circle,
-.c4:focus > ellipse,
-.c4:focus > line,
-.c4:focus > path,
-.c4:focus > polygon,
-.c4:focus > polyline,
-.c4:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c4:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c8 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c8:hover {
+.c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
-.c8:focus {
+.c5:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus > circle,
-.c8:focus > ellipse,
-.c8:focus > line,
-.c8:focus > path,
-.c8:focus > polygon,
-.c8:focus > polyline,
-.c8:focus > rect {
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c8:focus::-moz-focus-inner {
+.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c6 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #555555;
-}
-
-.c11 {
+.c8 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -1490,7 +1177,7 @@ exports[`Select Clear option renders- top 1`] = `
   max-height: inherit;
 }
 
-.c7 {
+.c4 {
   position: relative;
   -webkit-scroll-behavior: smooth;
   -moz-scroll-behavior: smooth;
@@ -1500,7 +1187,7 @@ exports[`Select Clear option renders- top 1`] = `
   outline: none;
 }
 
-.c9 {
+.c6 {
   display: block;
   width: 100%;
 }
@@ -1510,13 +1197,7 @@ exports[`Select Clear option renders- top 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c10 {
+  .c7 {
     padding: 6px;
   }
 }
@@ -1551,59 +1232,46 @@ exports[`Select Clear option renders- top 1`] = `
     class="c2 c3"
     id="test-select__select-drop"
   >
-    <button
-      class="c4"
-      type="button"
-    >
-      <div
-        class="c5"
-      >
-        <span
-          class="c6"
-        >
-          Clear selection
-        </span>
-      </div>
-    </button>
+    
     <div
-      class="c7"
+      class="c4"
       role="menubar"
       tabindex="-1"
     >
       <button
-        class="c8 c9"
+        class="c5 c6"
         role="menuitem"
         tabindex="-1"
         type="button"
       >
         <div
-          class="c10 "
+          class="c7 "
         >
           <span
-            class="c11"
+            class="c8"
           >
             one
           </span>
         </div>
       </button>
       <button
-        class="c8 c9"
+        class="c5 c6"
         role="menuitem"
         tabindex="-1"
         type="button"
       >
         <div
-          class="c10 "
+          class="c7 "
         >
           <span
-            class="c11"
+            class="c8"
           >
             two
           </span>
         </div>
       </button>
       <div
-        class="c12"
+        class="c9"
       />
     </div>
   </div>
@@ -7510,7 +7178,7 @@ exports[`Select prop: onOpen 5`] = `
       class="StyledBox-sc-13pk1d4-0 lcXThF SelectContainer__OptionBox-sc-1wi0ul8-1 cjPAAw"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 bilRua"
+        class="StyledText-sc-1sadyjn-0 duzDHg"
       >
         one
       </span>
@@ -7526,7 +7194,7 @@ exports[`Select prop: onOpen 5`] = `
       class="StyledBox-sc-13pk1d4-0 lcXThF SelectContainer__OptionBox-sc-1wi0ul8-1 cjPAAw"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 bilRua"
+        class="StyledText-sc-1sadyjn-0 duzDHg"
       >
         two
       </span>

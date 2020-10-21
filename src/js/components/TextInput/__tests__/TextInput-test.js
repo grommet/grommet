@@ -449,4 +449,26 @@ describe('TextInput', () => {
     fireEvent.click(selection);
     expect(document.activeElement).toEqual(input);
   });
+
+  test('should not have padding when plain="full"', async () => {
+    const { container } = render(
+      <Grommet>
+        <TextInput
+          plain="full"
+          name="name"
+          placeholder="should not have padding"
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should have padding when plain', async () => {
+    const { container } = render(
+      <Grommet>
+        <TextInput plain name="name" placeholder="should still have padding" />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

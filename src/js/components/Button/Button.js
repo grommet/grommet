@@ -236,13 +236,14 @@ const Button = forwardRef(
           align="center"
           justify={align === 'center' ? 'center' : 'between'}
           gap={gap}
+          responsive={false}
         >
           {first}
           {second}
         </Box>
       );
     } else if (typeof children === 'function') {
-      contents = children({ hover, focus });
+      contents = children({ disabled, hover, focus });
     } else {
       contents = first || second || children;
     }
@@ -276,7 +277,7 @@ const Button = forwardRef(
           }}
           onMouseOver={onMouseOverButton}
           onMouseOut={onMouseOutButton}
-          plain={plain}
+          plain={plain || Children.count(children) > 0}
           primary={primary}
           sizeProp={size}
           type={!href ? type : undefined}

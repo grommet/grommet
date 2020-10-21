@@ -219,6 +219,16 @@ Defaults to
     }
 ```
 
+**paragraph.font.family**
+
+The font family to use for Paragraph. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
 **paragraph.textAlign**
 
 How to align the text inside the Paragraph. Expects `string`.

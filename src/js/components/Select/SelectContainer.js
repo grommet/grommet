@@ -90,7 +90,6 @@ const SelectContainer = forwardRef(
     const [focus, setFocus] = useState(false);
     const searchRef = useRef();
     const optionsRef = useRef();
-
     // adjust activeIndex when options change
     useEffect(() => {
       if (activeIndex === -1 && search && optionIndexesInValue.length) {
@@ -324,7 +323,7 @@ const SelectContainer = forwardRef(
               />
             </Box>
           )}
-          {clear && clear.position !== 'bottom' && (
+          {clear && clear.position !== 'bottom' && value && (
             <ClearButton
               clear={clear}
               name={name}
@@ -413,7 +412,7 @@ const SelectContainer = forwardRef(
               </SelectOption>
             )}
           </OptionsBox>
-          {clear && clear.position === 'bottom' && (
+          {clear && clear.position === 'bottom' && value && (
             <ClearButton
               clear={clear}
               name={name}

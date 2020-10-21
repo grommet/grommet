@@ -323,6 +323,18 @@ of indicating the DOM tag via the 'as' property.`,
       ]),
       PropTypes.string,
       PropTypes.shape({
+        width: PropTypes.oneOfType([
+          PropTypes.oneOf([
+            'xxsmall',
+            'xsmall',
+            'small',
+            'medium',
+            'large',
+            'xlarge',
+            'xxlarge',
+          ]),
+          PropTypes.string,
+        ]),
         min: PropTypes.oneOfType([
           PropTypes.oneOf([
             'xxsmall',

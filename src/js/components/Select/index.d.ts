@@ -13,12 +13,6 @@ export interface SelectProps {
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
   children?: (...args: any[]) => any;
-  clear?:
-    | boolean
-    | {
-        position?: 'top' | 'bottom';
-        label?: string;
-      };
   closeOnChange?: boolean;
   disabled?: boolean | (number | string | object)[];
   disabledKey?: string | ((...args: any[]) => any);
@@ -52,7 +46,7 @@ export interface SelectProps {
   searchPlaceholder?: string;
   selected?: number | number[];
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
-  value?: string | JSX.Element | object | (string | object)[];
+  value?: string | JSX.Element | object | (string | number | object)[];
   valueLabel?: React.ReactNode;
   valueKey?:
     | string

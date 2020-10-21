@@ -72,21 +72,29 @@ describe('Video', () => {
   });
 
   test('Play and Pause event handlers', () => {
-    const { container } = render(<App playing={false} />);
+    const onPlay = jest.fn();
+    const onPause = jest.fn();
+    const { container } = render(
+      <App playing={false} onPlay={onPlay} onPause={onPause} />,
+    );
     const videoContainer = document.querySelector('video');
     fireEvent.play(videoContainer);
     expect(container.firstChild).toMatchSnapshot();
+    expect(onPlay).toHaveBeenCalled();
     fireEvent.pause(videoContainer);
     expect(container.firstChild).toMatchSnapshot();
+    expect(onPause).toHaveBeenCalled();
   });
 
   test('End event handler', () => {
-    const { container } = render(<App />);
+    const onEnd = jest.fn();
+    const { container } = render(<App onEnded={onEnd} />);
     // Need to fire play event to get video playing before we fire ended event.
     const videoContainer = document.querySelector('video');
     fireEvent.play(videoContainer);
     fireEvent.ended(videoContainer);
     expect(container.firstChild).toMatchSnapshot();
+    expect(onEnd).toHaveBeenCalled();
   });
 
   test('Configure Menu Button', () => {
@@ -134,5 +142,23 @@ describe('Video', () => {
     expect(volMock).toHaveBeenCalledTimes(2);
 
     window.scrollTo.mockRestore();
+  });
+
+  test('timeUpdate event handler', () => {
+    const onTimeUpdate = jest.fn();
+    const { container } = render(<App onTimeUpdate={onTimeUpdate} />);
+    const videoContainer = document.querySelector('video');
+    fireEvent.timeUpdate(videoContainer);
+    expect(container.firstChild).toMatchSnapshot();
+    expect(onTimeUpdate).toHaveBeenCalled();
+  });
+
+  test('duration event handler', () => {
+    const onDurationChange = jest.fn();
+    const { container } = render(<App onDurationChange={onDurationChange} />);
+    const videoContainer = document.querySelector('video');
+    fireEvent.durationChange(videoContainer);
+    expect(container.firstChild).toMatchSnapshot();
+    expect(onDurationChange).toHaveBeenCalled();
   });
 });

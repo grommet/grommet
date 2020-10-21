@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import { Grommet, Box, Form, FormField, TextInput } from 'grommet';
+import { Grommet, Box, Button, Form, FormField, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const allSuggestions = Array(100)
@@ -34,7 +34,12 @@ const FormFieldTextInput = props => {
   return (
     <Grommet theme={grommet}>
       <Box align="center" pad="large">
-        <Form>
+        <Form
+          onSubmit={({ value: nextValue }) => {
+            console.log(nextValue);
+            setState({ value: '', suggestions: allSuggestions });
+          }}
+        >
           <FormField label="Label" htmlFor="text-input" {...props}>
             <TextInput
               id="text-input"
@@ -45,10 +50,11 @@ const FormFieldTextInput = props => {
               suggestions={state.suggestions}
             />
           </FormField>
+          <Button type="submit" label="submit" />
         </Form>
       </Box>
     </Grommet>
   );
 };
 
-storiesOf('Form', module).add('TextInput', () => <FormFieldTextInput />);
+storiesOf('TextInput', module).add('Form', () => <FormFieldTextInput />);

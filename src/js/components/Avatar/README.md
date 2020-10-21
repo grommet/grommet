@@ -118,3 +118,53 @@ Defaults to
 ```
 undefined
 ```
+
+**avatar.text.size.xsmall**
+
+The size of the text that is mapped according to 'avatar.size.xsmall'. Expects `string`.
+
+Defaults to
+
+```
+small
+```
+
+**avatar.text.size.small**
+
+The size of the text that is mapped according to 'avatar.size.small'. Expects `string`.
+
+Defaults to
+
+```
+medium
+```
+
+**avatar.text.size.medium**
+
+The size of the text that is mapped according to 'avatar.size.medium'. Expects `string`.
+
+Defaults to
+
+```
+large
+```
+
+**avatar.text.size.large**
+
+The size of the text that is mapped according to 'avatar.size.large'. Expects `string`.
+
+Defaults to
+
+```
+xlarge
+```
+
+**avatar.text.size.xlarge**
+
+The size of the text that is mapped according to 'avatar.size.xlarge'. Expects `string`.
+
+Defaults to
+
+```
+xxlarge
+```
