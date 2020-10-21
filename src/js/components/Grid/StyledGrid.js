@@ -1,22 +1,22 @@
 import styled, { css } from 'styled-components';
 
-import { edgeStyle, genericStyles } from '../../utils';
+import { borderStyle, edgeStyle, genericStyles } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 const fillStyle = fill => {
+  if (!fill) {
+    return fill;
+  }
   if (fill === 'horizontal') {
     return 'width: 100%;';
   }
   if (fill === 'vertical') {
     return 'height: 100%;';
   }
-  if (fill) {
-    return `
+  return `
       width: 100%;
       height: 100%;
     `;
-  }
-  return undefined;
 };
 
 const ALIGN_MAP = {
@@ -222,7 +222,14 @@ const StyledGrid = styled.div.attrs(props => ({
   box-sizing: border-box;
 
   ${genericStyles}
-  ${props => props.fillContainer && fillStyle(props.fillContainer)}
+  ${props =>
+    props.border &&
+    (Array.isArray(props.border)
+      ? props.border.map(border =>
+          borderStyle(border, props.responsive, props.theme),
+        )
+      : borderStyle(props.border, props.responsive, props.theme))}
+  ${props => fillStyle(props.fillContainer)}
   ${props => props.align && alignStyle}
   ${props => props.alignContent && alignContentStyle}
   ${props => props.areas && areasStyle(props)}

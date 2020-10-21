@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
@@ -19,47 +19,43 @@ const customTheme = {
   },
 };
 
-class TestInput extends Component {
-  state = {
-    showDrop: false,
-  };
+const TestInput = ({
+  inputProps,
+  theme,
+  elevation,
+  containerTarget,
+  message = 'this is a test',
+  ...rest
+}) => {
+  const [showDrop, setShowDrop] = useState(false);
 
-  inputRef = React.createRef();
+  const inputRef = useRef(null);
 
-  componentDidMount() {
-    this.setState({ showDrop: true }); // eslint-disable-line
-  }
+  useEffect(() => {
+    setShowDrop(true);
+  }, []);
 
-  render() {
-    const {
-      inputProps,
-      theme,
-      elevation,
-      containerTarget,
-      ...rest
-    } = this.props;
-    const { showDrop } = this.state;
-    let drop;
-    if (showDrop) {
-      drop = (
-        <Drop
-          id="drop-node"
-          elevation={elevation}
-          target={this.inputRef.current}
-          {...rest}
-        >
-          this is a test
-        </Drop>
-      );
-    }
-    return (
-      <Grommet theme={theme} containerTarget={containerTarget}>
-        <input ref={this.inputRef} {...inputProps} aria-label="test" />
-        {drop}
-      </Grommet>
+  let drop;
+
+  if (showDrop) {
+    drop = (
+      <Drop
+        id="drop-node"
+        elevation={elevation}
+        target={inputRef.current}
+        {...rest}
+      >
+        {message}
+      </Drop>
     );
   }
-}
+  return (
+    <Grommet theme={theme} containerTarget={containerTarget}>
+      <input ref={inputRef} {...inputProps} aria-label="test" />
+      {drop}
+    </Grommet>
+  );
+};
 
 describe('Drop', () => {
   afterEach(cleanup);
@@ -117,7 +113,13 @@ describe('Drop', () => {
 
   test('no stretch', () => {
     render(<TestInput stretch={false} />);
+    expectPortal('drop-node').toMatchSnapshot();
+  });
 
+  test('stretch = align', () => {
+    const message =
+      'test test test test test test test test test test test test test test';
+    render(<TestInput stretch="align" message={message} />);
     expectPortal('drop-node').toMatchSnapshot();
   });
 

@@ -10,10 +10,15 @@ import { defaultProps } from '../../default-props';
 
 const sizeStyle = props => {
   const data = props.theme.calendar[props.sizeProp];
+  const width = props.fillContainer
+    ? '100%'
+    : props.theme.global.size[props.sizeProp];
+
   return css`
     font-size: ${data.fontSize};
     line-height: ${data.lineHeight};
-    width: ${props.theme.global.size[props.sizeProp]};
+    width: ${width};
+    ${p => p.fillContainer && 'height: 100%;'}
   `;
 };
 
@@ -26,11 +31,18 @@ const StyledCalendar = styled.div`
 StyledCalendar.defaultProps = {};
 Object.setPrototypeOf(StyledCalendar.defaultProps, defaultProps);
 
+const weeksContainerSizeStyle = props => {
+  const height = props.fillContainer
+    ? '100%'
+    : `${parseMetricToNum(props.theme.calendar[props.sizeProp].daySize) * 6}px`;
+  return `
+    height: ${height};
+
+  `;
+};
 const StyledWeeksContainer = styled.div`
   overflow: hidden;
-  ${props =>
-    `height: ${parseMetricToNum(props.theme.calendar[props.sizeProp].daySize) *
-      6}px;`};
+  ${props => weeksContainerSizeStyle(props)}
   ${props => props.focus && !props.plain && focusStyle()};
 `;
 
@@ -61,8 +73,16 @@ const slideStyle = props => {
   `;
 };
 
+const weeksSizeStyle = () => {
+  return css`
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  `;
+};
 const StyledWeeks = styled.div`
   position: relative;
+  ${props => props.fillContainer && weeksSizeStyle()}
   ${props => props.slide && slideStyle(props)};
 `;
 
@@ -71,15 +91,18 @@ Object.setPrototypeOf(StyledWeeks.defaultProps, defaultProps);
 
 const StyledWeek = styled.div`
   display: flex;
-  flex-direction: row;
-  flex-justify: between;
+  justify-content: space-between;
+  ${props => props.fillContainer && 'flex: 1;'}
 `;
 
 StyledWeek.defaultProps = {};
 Object.setPrototypeOf(StyledWeek.defaultProps, defaultProps);
 
+// The width of 14.3% is derived from dividing 100/7. We want the
+// widths of 7 days to equally fill 100% of the row.
 const StyledDayContainer = styled.div`
   flex: 0 0 auto;
+  ${props => props.fillContainer && 'width: 14.3%;'}
 `;
 
 StyledDayContainer.defaultProps = {};
@@ -87,9 +110,10 @@ Object.setPrototypeOf(StyledDayContainer.defaultProps, defaultProps);
 
 const daySizeStyle = props => {
   const data = props.theme.calendar[props.sizeProp];
+
   return css`
-    width: ${data.daySize};
-    height: ${data.daySize};
+    width: ${props.fillContainer ? '100%' : data.daySize};
+    height: ${props.fillContainer ? '100%' : data.daySize};
   `;
 };
 

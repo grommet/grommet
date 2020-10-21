@@ -14,7 +14,9 @@ const sizeStyle = props => {
       css`
         font-size: ${data ? data.size : size};
         line-height: ${data ? data.height : 'normal'};
-        max-width: ${data ? data.maxWidth : levelStyle.medium.maxWidth};
+        max-width: ${(props.fillProp && 'none') ||
+          (data && data.maxWidth) ||
+          levelStyle.medium.maxWidth};
         font-weight: ${levelStyle.font.weight || headingTheme.weight};
       `,
     ];
@@ -32,7 +34,7 @@ const sizeStyle = props => {
               `
             font-size: ${responsiveData.size};
             line-height: ${responsiveData.height};
-            max-width: ${responsiveData.maxWidth};
+            max-width: ${(props.fillProp && 'none') || responsiveData.maxWidth};
           `,
             ),
           );

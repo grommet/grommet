@@ -8,6 +8,7 @@ const MultipleValues = () => {
   const total = 100;
   const [active, setActive] = useState(0);
   const [label, setLabel] = useState('');
+  const [highlight, setHighlight] = useState(false);
 
   return (
     <Grommet theme={grommet}>
@@ -18,11 +19,15 @@ const MultipleValues = () => {
             background="light-2"
             values={[
               {
-                value: 60,
+                value: 70,
                 onHover: over => {
                   setActive(over ? 70 : 0);
                   setLabel(over ? 'in use' : undefined);
                 },
+                onClick: event => {
+                  setHighlight(() => !highlight);
+                },
+                highlight,
               },
               {
                 value: 30,

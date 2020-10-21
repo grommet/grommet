@@ -788,12 +788,10 @@ exports[`DateInput focus 2`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-justify: between;
-  -ms-flex-justify: between;
-  flex-justify: between;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .c13 {
@@ -2222,12 +2220,10 @@ exports[`DateInput format inline 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-justify: between;
-  -ms-flex-justify: between;
-  flex-justify: between;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .c15 {
@@ -3640,12 +3636,10 @@ exports[`DateInput inline 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-justify: between;
-  -ms-flex-justify: between;
-  flex-justify: between;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .c12 {
@@ -5221,12 +5215,10 @@ exports[`DateInput range format inline 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-justify: between;
-  -ms-flex-justify: between;
-  flex-justify: between;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .c15 {
@@ -6657,12 +6649,10 @@ exports[`DateInput range inline 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-justify: between;
-  -ms-flex-justify: between;
-  flex-justify: between;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .c12 {
@@ -8178,12 +8168,10 @@ exports[`DateInput select format 3`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-justify: between;
-  -ms-flex-justify: between;
-  flex-justify: between;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .c13 {
@@ -9311,12 +9299,10 @@ exports[`DateInput select format inline 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-justify: between;
-  -ms-flex-justify: between;
-  flex-justify: between;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .c15 {
@@ -10368,17 +10354,17 @@ exports[`DateInput select format inline 2`] = `
           </div>
         </div>
         <div
-          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 bzlxGD"
+          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 gIlDni"
           tabindex="0"
         >
           <div
-            class="StyledCalendar__StyledWeeks-sc-1y4xhmp-2 lpkhRw"
+            class="StyledCalendar__StyledWeeks-sc-1y4xhmp-2 eUznsn"
           >
             <div
-              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 icsAJN"
+              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 dtVzqb"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Sun Jun 28 2020"
@@ -10394,7 +10380,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Mon Jun 29 2020"
@@ -10410,7 +10396,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Tue Jun 30 2020"
@@ -10426,7 +10412,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Wed Jul 01 2020"
@@ -10442,7 +10428,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Thu Jul 02 2020"
@@ -10458,7 +10444,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Fri Jul 03 2020"
@@ -10474,7 +10460,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Sat Jul 04 2020"
@@ -10491,10 +10477,10 @@ exports[`DateInput select format inline 2`] = `
               </div>
             </div>
             <div
-              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 icsAJN"
+              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 dtVzqb"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Sun Jul 05 2020"
@@ -10510,7 +10496,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Mon Jul 06 2020"
@@ -10526,7 +10512,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Tue Jul 07 2020"
@@ -10542,7 +10528,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Wed Jul 08 2020"
@@ -10558,7 +10544,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Thu Jul 09 2020"
@@ -10574,7 +10560,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Fri Jul 10 2020"
@@ -10590,7 +10576,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Sat Jul 11 2020"
@@ -10607,10 +10593,10 @@ exports[`DateInput select format inline 2`] = `
               </div>
             </div>
             <div
-              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 icsAJN"
+              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 dtVzqb"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Sun Jul 12 2020"
@@ -10626,7 +10612,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Mon Jul 13 2020"
@@ -10642,7 +10628,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Tue Jul 14 2020"
@@ -10658,7 +10644,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Wed Jul 15 2020"
@@ -10674,7 +10660,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Thu Jul 16 2020"
@@ -10690,7 +10676,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Fri Jul 17 2020"
@@ -10706,7 +10692,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Sat Jul 18 2020"
@@ -10723,10 +10709,10 @@ exports[`DateInput select format inline 2`] = `
               </div>
             </div>
             <div
-              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 icsAJN"
+              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 dtVzqb"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Sun Jul 19 2020"
@@ -10742,7 +10728,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Mon Jul 20 2020"
@@ -10758,7 +10744,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Tue Jul 21 2020"
@@ -10774,7 +10760,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Wed Jul 22 2020"
@@ -10790,7 +10776,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Thu Jul 23 2020"
@@ -10806,7 +10792,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Fri Jul 24 2020"
@@ -10822,7 +10808,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Sat Jul 25 2020"
@@ -10839,10 +10825,10 @@ exports[`DateInput select format inline 2`] = `
               </div>
             </div>
             <div
-              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 icsAJN"
+              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 dtVzqb"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Sun Jul 26 2020"
@@ -10858,7 +10844,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Mon Jul 27 2020"
@@ -10874,7 +10860,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Tue Jul 28 2020"
@@ -10890,7 +10876,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Wed Jul 29 2020"
@@ -10906,7 +10892,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Thu Jul 30 2020"
@@ -10922,7 +10908,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Fri Jul 31 2020"
@@ -10938,7 +10924,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Sat Aug 01 2020"
@@ -10955,10 +10941,10 @@ exports[`DateInput select format inline 2`] = `
               </div>
             </div>
             <div
-              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 icsAJN"
+              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 dtVzqb"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Sun Aug 02 2020"
@@ -10974,7 +10960,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Mon Aug 03 2020"
@@ -10990,7 +10976,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Tue Aug 04 2020"
@@ -11006,7 +10992,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Wed Aug 05 2020"
@@ -11022,7 +11008,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Thu Aug 06 2020"
@@ -11038,7 +11024,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Fri Aug 07 2020"
@@ -11054,7 +11040,7 @@ exports[`DateInput select format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Sat Aug 08 2020"
@@ -11305,12 +11291,10 @@ exports[`DateInput select format inline range 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-justify: between;
-  -ms-flex-justify: between;
-  flex-justify: between;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .c15 {
@@ -12380,17 +12364,17 @@ exports[`DateInput select format inline range 2`] = `
           </div>
         </div>
         <div
-          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 bzlxGD"
+          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 gIlDni"
           tabindex="0"
         >
           <div
-            class="StyledCalendar__StyledWeeks-sc-1y4xhmp-2 lpkhRw"
+            class="StyledCalendar__StyledWeeks-sc-1y4xhmp-2 eUznsn"
           >
             <div
-              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 icsAJN"
+              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 dtVzqb"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Sun Jun 28 2020"
@@ -12406,7 +12390,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Mon Jun 29 2020"
@@ -12422,7 +12406,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Tue Jun 30 2020"
@@ -12438,7 +12422,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Wed Jul 01 2020"
@@ -12454,7 +12438,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Thu Jul 02 2020"
@@ -12470,7 +12454,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Fri Jul 03 2020"
@@ -12486,7 +12470,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Sat Jul 04 2020"
@@ -12503,10 +12487,10 @@ exports[`DateInput select format inline range 2`] = `
               </div>
             </div>
             <div
-              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 icsAJN"
+              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 dtVzqb"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Sun Jul 05 2020"
@@ -12522,7 +12506,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Mon Jul 06 2020"
@@ -12538,7 +12522,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Tue Jul 07 2020"
@@ -12554,7 +12538,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Wed Jul 08 2020"
@@ -12570,7 +12554,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Thu Jul 09 2020"
@@ -12586,7 +12570,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Fri Jul 10 2020"
@@ -12602,7 +12586,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Sat Jul 11 2020"
@@ -12619,10 +12603,10 @@ exports[`DateInput select format inline range 2`] = `
               </div>
             </div>
             <div
-              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 icsAJN"
+              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 dtVzqb"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Sun Jul 12 2020"
@@ -12638,7 +12622,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Mon Jul 13 2020"
@@ -12654,7 +12638,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Tue Jul 14 2020"
@@ -12670,7 +12654,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Wed Jul 15 2020"
@@ -12686,7 +12670,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Thu Jul 16 2020"
@@ -12702,7 +12686,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Fri Jul 17 2020"
@@ -12718,7 +12702,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Sat Jul 18 2020"
@@ -12735,10 +12719,10 @@ exports[`DateInput select format inline range 2`] = `
               </div>
             </div>
             <div
-              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 icsAJN"
+              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 dtVzqb"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Sun Jul 19 2020"
@@ -12754,7 +12738,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Mon Jul 20 2020"
@@ -12770,7 +12754,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Tue Jul 21 2020"
@@ -12786,7 +12770,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Wed Jul 22 2020"
@@ -12802,7 +12786,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Thu Jul 23 2020"
@@ -12818,7 +12802,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Fri Jul 24 2020"
@@ -12834,7 +12818,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Sat Jul 25 2020"
@@ -12851,10 +12835,10 @@ exports[`DateInput select format inline range 2`] = `
               </div>
             </div>
             <div
-              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 icsAJN"
+              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 dtVzqb"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Sun Jul 26 2020"
@@ -12870,7 +12854,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Mon Jul 27 2020"
@@ -12886,7 +12870,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Tue Jul 28 2020"
@@ -12902,7 +12886,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Wed Jul 29 2020"
@@ -12918,7 +12902,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Thu Jul 30 2020"
@@ -12934,7 +12918,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Fri Jul 31 2020"
@@ -12950,7 +12934,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Sat Aug 01 2020"
@@ -12967,10 +12951,10 @@ exports[`DateInput select format inline range 2`] = `
               </div>
             </div>
             <div
-              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 icsAJN"
+              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 dtVzqb"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Sun Aug 02 2020"
@@ -12986,7 +12970,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Mon Aug 03 2020"
@@ -13002,7 +12986,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Tue Aug 04 2020"
@@ -13018,7 +13002,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Wed Aug 05 2020"
@@ -13034,7 +13018,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Thu Aug 06 2020"
@@ -13050,7 +13034,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Fri Aug 07 2020"
@@ -13066,7 +13050,7 @@ exports[`DateInput select format inline range 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Sat Aug 08 2020"
@@ -13317,12 +13301,10 @@ exports[`DateInput select inline 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-justify: between;
-  -ms-flex-justify: between;
-  flex-justify: between;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .c12 {
@@ -14408,12 +14390,10 @@ exports[`DateInput type format inline 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-justify: between;
-  -ms-flex-justify: between;
-  flex-justify: between;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .c15 {
@@ -15465,17 +15445,17 @@ exports[`DateInput type format inline 2`] = `
           </div>
         </div>
         <div
-          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 jSjbHS"
+          class="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 hXjVSb"
           tabindex="0"
         >
           <div
-            class="StyledCalendar__StyledWeeks-sc-1y4xhmp-2 lpkhRw"
+            class="StyledCalendar__StyledWeeks-sc-1y4xhmp-2 eUznsn"
           >
             <div
-              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 icsAJN"
+              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 dtVzqb"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Sun Jun 28 2020"
@@ -15491,7 +15471,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Mon Jun 29 2020"
@@ -15507,7 +15487,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Tue Jun 30 2020"
@@ -15523,7 +15503,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Wed Jul 01 2020"
@@ -15539,7 +15519,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Thu Jul 02 2020"
@@ -15555,7 +15535,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Fri Jul 03 2020"
@@ -15571,7 +15551,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Sat Jul 04 2020"
@@ -15588,10 +15568,10 @@ exports[`DateInput type format inline 2`] = `
               </div>
             </div>
             <div
-              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 icsAJN"
+              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 dtVzqb"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Sun Jul 05 2020"
@@ -15607,7 +15587,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Mon Jul 06 2020"
@@ -15623,7 +15603,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Tue Jul 07 2020"
@@ -15639,7 +15619,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Wed Jul 08 2020"
@@ -15655,7 +15635,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Thu Jul 09 2020"
@@ -15671,7 +15651,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Fri Jul 10 2020"
@@ -15687,7 +15667,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Sat Jul 11 2020"
@@ -15704,10 +15684,10 @@ exports[`DateInput type format inline 2`] = `
               </div>
             </div>
             <div
-              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 icsAJN"
+              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 dtVzqb"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Sun Jul 12 2020"
@@ -15723,7 +15703,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Mon Jul 13 2020"
@@ -15739,7 +15719,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Tue Jul 14 2020"
@@ -15755,7 +15735,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Wed Jul 15 2020"
@@ -15771,7 +15751,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Thu Jul 16 2020"
@@ -15787,7 +15767,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Fri Jul 17 2020"
@@ -15803,7 +15783,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Sat Jul 18 2020"
@@ -15820,10 +15800,10 @@ exports[`DateInput type format inline 2`] = `
               </div>
             </div>
             <div
-              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 icsAJN"
+              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 dtVzqb"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Sun Jul 19 2020"
@@ -15839,7 +15819,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Mon Jul 20 2020"
@@ -15855,7 +15835,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Tue Jul 21 2020"
@@ -15871,7 +15851,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Wed Jul 22 2020"
@@ -15887,7 +15867,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Thu Jul 23 2020"
@@ -15903,7 +15883,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Fri Jul 24 2020"
@@ -15919,7 +15899,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Sat Jul 25 2020"
@@ -15936,10 +15916,10 @@ exports[`DateInput type format inline 2`] = `
               </div>
             </div>
             <div
-              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 icsAJN"
+              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 dtVzqb"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Sun Jul 26 2020"
@@ -15955,7 +15935,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Mon Jul 27 2020"
@@ -15971,7 +15951,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Tue Jul 28 2020"
@@ -15987,7 +15967,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Wed Jul 29 2020"
@@ -16003,7 +15983,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Thu Jul 30 2020"
@@ -16019,7 +15999,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Fri Jul 31 2020"
@@ -16035,7 +16015,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Sat Aug 01 2020"
@@ -16052,10 +16032,10 @@ exports[`DateInput type format inline 2`] = `
               </div>
             </div>
             <div
-              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 icsAJN"
+              class="StyledCalendar__StyledWeek-sc-1y4xhmp-3 dtVzqb"
             >
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Sun Aug 02 2020"
@@ -16071,7 +16051,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Mon Aug 03 2020"
@@ -16087,7 +16067,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Tue Aug 04 2020"
@@ -16103,7 +16083,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Wed Aug 05 2020"
@@ -16119,7 +16099,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Thu Aug 06 2020"
@@ -16135,7 +16115,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Fri Aug 07 2020"
@@ -16151,7 +16131,7 @@ exports[`DateInput type format inline 2`] = `
                 </button>
               </div>
               <div
-                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 fxhDuD"
+                class="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 kmCvSS"
               >
                 <button
                   aria-label="Sat Aug 08 2020"

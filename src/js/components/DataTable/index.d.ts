@@ -86,6 +86,7 @@ export interface DataTableProps<TRowType = any> {
         onExpand: (expandedKeys: string[]) => void;
       };
   primaryKey?: string | boolean;
+  select?: (string | number)[];
   sort?: { property: string; direction: 'asc' | 'desc'; external?: boolean };
   sortable?: boolean;
   step?: number;
@@ -94,6 +95,7 @@ export interface DataTableProps<TRowType = any> {
   onClickRow?: (event: MouseClick<TRowType> | KeyPress<TRowType>) => void;
   onMore?: () => void;
   onSearch?: (search: string) => void;
+  onSelect?: (select: (string | number)[]) => void;
   onSort?: (sort: { property: string; direction: 'asc' | 'desc' }) => void;
 }
 

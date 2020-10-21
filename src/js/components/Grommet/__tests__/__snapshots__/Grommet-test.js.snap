@@ -23,6 +23,7 @@ exports[`Grommet announce 1`] = `
 exports[`Grommet announce 2`] = `
 <div
   aria-live="assertive"
+  id="grommet-announcer"
   style="left: -100%; right: 100%; position: fixed; z-index: -1;"
 >
   hello
@@ -32,6 +33,7 @@ exports[`Grommet announce 2`] = `
 exports[`Grommet announce 3`] = `
 <div
   aria-live="assertive"
+  id="grommet-announcer"
   style="left: -100%; right: 100%; position: fixed; z-index: -1;"
 />
 `;
@@ -181,7 +183,7 @@ exports[`Grommet hpe theme 1`] = `
   font-size: 18px;
   line-height: 24px;
   background-color: #FFFFFF;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
