@@ -2,8 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Grommet, Box, List } from 'grommet';
 import { grommet } from 'grommet/themes';
-export var locations = ['Boise', 'Fort Collins', 'Los Gatos', 'Palo Alto', 'San Francisco'];
-export var data = [];
+var locations = ['Boise', 'Fort Collins', 'Los Gatos', 'Palo Alto', 'San Francisco'];
+var data = [];
 
 for (var i = 0; i < 40; i += 1) {
   data.push({

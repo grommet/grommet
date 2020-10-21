@@ -12,7 +12,7 @@ import { focusStyle, genericStyles, unfocusStyle, useForwardedRef } from '../../
 var StyledList = styled.ul.withConfig({
   displayName: "List__StyledList",
   componentId: "sc-130gdqg-0"
-})(["list-style:none;", " padding:0;", " &:focus{", "}", "}"], function (props) {
+})(["list-style:none;", " padding:0;", " &:focus{", "}", "}", "}"], function (props) {
   return !props.margin && 'margin: 0;';
 }, genericStyles, function (props) {
   return props.tabIndex >= 0 && focusStyle({
@@ -24,16 +24,20 @@ var StyledList = styled.ul.withConfig({
     forceOutline: true,
     skipSvgChildren: true
   });
+}, function (props) {
+  return props.theme.list && props.theme.list.extend;
 });
 var StyledItem = styled(Box).withConfig({
   displayName: "List__StyledItem",
   componentId: "sc-130gdqg-1"
-})(["", " &:focus{", "}"], function (props) {
+})(["", " &:focus{", "}", ""], function (props) {
   return props.onClick && "cursor: pointer;";
 }, unfocusStyle({
   forceOutline: true,
   skipSvgChildren: true
-}));
+}), function (props) {
+  return props.theme.list && props.theme.list.item && props.theme.list.item.extend;
+});
 
 var normalize = function normalize(item, index, property) {
   if (typeof property === 'function') {

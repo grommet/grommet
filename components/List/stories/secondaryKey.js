@@ -1,8 +1,5 @@
 "use strict";
 
-exports.__esModule = true;
-exports.data = exports.locations = void 0;
-
 var _react = _interopRequireDefault(require("react"));
 
 var _react2 = require("@storybook/react");
@@ -14,9 +11,7 @@ var _themes = require("grommet/themes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var locations = ['Boise', 'Fort Collins', 'Los Gatos', 'Palo Alto', 'San Francisco'];
-exports.locations = locations;
 var data = [];
-exports.data = data;
 
 for (var i = 0; i < 40; i += 1) {
   data.push({
