@@ -29,6 +29,7 @@ const Example = () => {
         <Box>
           <Box fill direction="row" justify="between">
             <Tip
+              dropProps={{ align: { left: 'right' } }}
               content={<TipContent message="Designed with an SVG of Caret" />}
             >
               <Button icon={<Trash />} plain={false} />

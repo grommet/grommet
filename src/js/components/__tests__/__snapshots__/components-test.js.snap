@@ -7352,6 +7352,13 @@ number",
         "name": "content",
       },
       Object {
+        "defaultValue": Object {
+          "align": Object {
+            "top": "bottom",
+          },
+          "plain": true,
+          "trapFocus": false,
+        },
         "description": "Any valid Drop prop to style the Tip drop container.",
         "format": "object",
         "name": "dropProps",

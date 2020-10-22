@@ -18,9 +18,13 @@ export const doc = Tip => {
 
   DocumentedTip.propTypes = {
     content: PropTypes.node.description(`The tooltip content inside the drop.`),
-    dropProps: PropTypes.object.description(
-      'Any valid Drop prop to style the Tip drop container.',
-    ),
+    dropProps: PropTypes.object
+      .description('Any valid Drop prop to style the Tip drop container.')
+      .defaultValue({
+        align: { top: 'bottom' },
+        plain: true,
+        trapFocus: false,
+      }),
   };
 
   return DocumentedTip;

@@ -23,7 +23,13 @@ node
 
 **dropProps**
 
-Any valid Drop prop to style the Tip drop container.
+Any valid Drop prop to style the Tip drop container. Defaults to `{
+  "align": {
+    "top": "bottom"
+  },
+  "plain": true,
+  "trapFocus": false
+}`.
 
 ```
 object

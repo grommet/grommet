@@ -37,7 +37,7 @@ const Example = () => {
           </Box>
         </Tip>
         <Tip
-          dropProps={{ align: { top: 'bottom' } }}
+          dropProps={{ align: { left: 'right' } }}
           content={
             <Box
               background="accent-1"

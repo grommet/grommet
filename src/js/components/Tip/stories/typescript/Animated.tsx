@@ -17,9 +17,15 @@ const Circle = ({ ...rest }) => (
 const Example = () => {
   return (
     <Grommet full theme={grommet}>
-      <Box align="center" justify="center" fill background="dark-1" gap="medium">
+      <Box
+        align="center"
+        justify="center"
+        fill
+        background="dark-1"
+        gap="medium"
+      >
         <Tip
-          align="start"
+          dropProps={{ align: { left: 'right' } }}
           content={
             <Box align="start" margin={{ bottom: 'xlarge' }} pad="xsmall">
               <Circle margin={{ left: 'large' }} pad="small">

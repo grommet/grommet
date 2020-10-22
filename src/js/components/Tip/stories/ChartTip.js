@@ -60,7 +60,7 @@ const Example = () => (
   <Grommet theme={theme}>
     <Box align="center" justify="start" pad="large" gap="medium">
       <Heading size="small"> Hover the Chart </Heading>
-      <Tip content={<TipContent />}>
+      <Tip content={<TipContent />} dropProps={{ align: { left: 'right' } }}>
         <DataChart data={chartData} series="percent" />
       </Tip>
     </Box>

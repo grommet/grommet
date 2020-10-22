@@ -55,7 +55,7 @@ const Tip = forwardRef(({ children, content, dropProps }, tipRef) => {
     clonedChild,
     over && (
       <Drop
-        align={{ left: 'right' }} // most common use case is a sidebar?!
+        align={{ top: 'bottom' }} // most common use case is Header with Buttons
         target={componentRef.current}
         trapFocus={false}
         key="tip-drop"
