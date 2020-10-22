@@ -188,4 +188,16 @@ describe('Anchor', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  test('weight renders', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Anchor href="#" label="Normal" weight="normal" />
+        <Anchor href="#" label="Bold" weight="bold" />
+        <Anchor href="#" label="Bold" weight={500} />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

@@ -473,6 +473,15 @@ xlarge
 string
 \`\`\`
 
+**as**
+
+The DOM tag or react component to use for the element.
+
+\`\`\`
+string
+function
+\`\`\`
+
 **color**
 
 Label color and icon color, if not specified on the icon.
@@ -551,13 +560,14 @@ xxlarge
 string
 \`\`\`
 
-**as**
+**weight**
 
-The DOM tag or react component to use for the element.
+Sets font-weight property for anchor.
 
 \`\`\`
-string
-function
+normal
+bold
+number
 \`\`\`
   
 ## Intrinsic element
@@ -589,7 +599,7 @@ Defaults to
 
 **anchor.textDecoration**
 
-The text decoration of the label. 
+The text decoration of the label.
 Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
 for possible values. Expects \`string\`.
 
@@ -611,7 +621,7 @@ undefined
 
 **anchor.hover.textDecoration**
 
-The text decoration of the label when hovering. 
+The text decoration of the label when hovering.
 Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
 for possible values. Expects \`string\`.
 
@@ -3389,10 +3399,13 @@ string
 
 **showAdjacentDays**
 
-Whether to show the days from the previous and next months. Defaults to \`true\`.
+Whether to show the days from the previous and next months. 
+        \`trim\` limits adjacent days shown to rows containing days in 
+        the current month. Defaults to \`true\`.
 
 \`\`\`
 boolean
+trim
 \`\`\`
 
 **size**
@@ -10999,7 +11012,8 @@ function
 
 Describes the structure of the mask. If a regexp is provided, it should
       allow both the final full string element as well as partial strings
-      as the user types characters one by one.
+      as the user types characters one by one. When using regexp to match number
+      values make sure that the option values are numbers as well.
 
 \`\`\`
 [{
@@ -15294,10 +15308,7 @@ string
 
 **size**
 
-The font size and line height are primarily driven by the chosen tag. 
-But, it can be adjusted via this size property. The tag should be set for 
-semantic correctness and accessibility. This size property allows for stylistic
-adjustments. Defaults to \`medium\`.
+The font size and line space height of the text. Defaults to \`medium\`.
 
 \`\`\`
 xsmall

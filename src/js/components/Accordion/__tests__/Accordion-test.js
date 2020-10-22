@@ -361,4 +361,28 @@ describe('Accordion', () => {
     expect(getByText('Panel body 1')).not.toBeNull();
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('blur styles', () => {
+    const onBlur = jest.fn();
+    const { container, getByText } = render(
+      <Grommet theme={{ accordion: { hover: { heading: { color: 'red' } } } }}>
+        <Accordion>
+          <AccordionPanel
+            label="Panel 1"
+            onMouseOver={() => {}}
+            onMouseOut={() => {}}
+            onFocus={() => {}}
+            onBlur={onBlur}
+          >
+            Panel body 1
+          </AccordionPanel>
+        </Accordion>
+      </Grommet>,
+    );
+    // focus first then call blur
+    fireEvent.focus(getByText('Panel 1'));
+    fireEvent.blur(getByText('Panel 1'));
+    expect(container.firstChild).toMatchSnapshot();
+    expect(onBlur).toHaveBeenCalled();
+  });
 });

@@ -106,9 +106,14 @@ to disable the previous and next buttons.
     reference: PropTypes.string.description(
       "The date to show if `date` isn't set, in ISO8601 format",
     ),
-    showAdjacentDays: PropTypes.bool
+    showAdjacentDays: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.oneOf(['trim']),
+    ])
       .description(
-        `Whether to show the days from the previous and next months.`,
+        `Whether to show the days from the previous and next months. 
+        \`trim\` limits adjacent days shown to rows containing days in 
+        the current month.`,
       )
       .defaultValue(true),
     size: PropTypes.oneOfType([
