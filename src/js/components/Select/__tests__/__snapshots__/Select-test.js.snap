@@ -1659,7 +1659,7 @@ exports[`Select complex options and children 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -2494,7 +2494,7 @@ exports[`Select disabled key 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -2789,7 +2789,7 @@ exports[`Select disabled option value 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -3409,7 +3409,7 @@ exports[`Select large drop container height 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -3654,7 +3654,7 @@ exports[`Select medium drop container height 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -4421,7 +4421,7 @@ exports[`Select onChange with valueKey string 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -4935,7 +4935,7 @@ exports[`Select onChange without valueKey 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -6009,7 +6009,7 @@ exports[`Select prop: onOpen 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -8410,7 +8410,7 @@ exports[`Select search 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -10221,7 +10221,7 @@ exports[`Select small drop container height 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;

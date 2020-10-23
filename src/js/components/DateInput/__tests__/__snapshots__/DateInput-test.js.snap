@@ -867,7 +867,7 @@ exports[`DateInput focus 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -8247,7 +8247,7 @@ exports[`DateInput select format 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
