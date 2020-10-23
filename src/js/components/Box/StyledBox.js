@@ -73,6 +73,9 @@ const directionStyle = (direction, theme) => {
   ];
   if (direction === 'row-responsive' && theme.box.responsiveBreakpoint) {
     const breakpoint = theme.global.breakpoints[theme.box.responsiveBreakpoint];
+    if (!breakpoint.edgeSize) breakpoint.edgeSize = theme.global.edgeSize;
+    if (!breakpoint.borderSize) breakpoint.borderSize = theme.global.borderSize;
+    if (!breakpoint.size) breakpoint.size = theme.global.size;
     if (breakpoint) {
       styles.push(
         breakpointStyle(
@@ -149,6 +152,9 @@ const roundStyle = (data, responsive, theme) => {
   const breakpoint =
     theme.box.responsiveBreakpoint &&
     theme.global.breakpoints[theme.box.responsiveBreakpoint];
+  if (!breakpoint.edgeSize) breakpoint.edgeSize = theme.global.edgeSize;
+  if (!breakpoint.borderSize) breakpoint.borderSize = theme.global.borderSize;
+  if (!breakpoint.size) breakpoint.size = theme.global.size;
   const styles = [];
   if (typeof data === 'object') {
     const size =
@@ -571,6 +577,9 @@ const gapStyle = (directionProp, gap, responsive, border, theme) => {
   const breakpoint =
     theme.box.responsiveBreakpoint &&
     theme.global.breakpoints[theme.box.responsiveBreakpoint];
+  if (!breakpoint.edgeSize) breakpoint.edgeSize = theme.global.edgeSize;
+  if (!breakpoint.borderSize) breakpoint.borderSize = theme.global.borderSize;
+  if (!breakpoint.size) breakpoint.size = theme.global.size;
   const responsiveMetric = responsive && breakpoint && breakpoint.edgeSize[gap];
 
   const styles = [];
