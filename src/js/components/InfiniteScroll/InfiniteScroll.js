@@ -79,7 +79,10 @@ const InfiniteScroll = ({
         pagesHeight += pageHeights[index];
       }
       let nextEndPage = nextBeginPage;
-      while (pageHeights[index] && pagesHeight < top + height + offset) {
+      while (
+        pageHeights[index] !== undefined &&
+        pagesHeight < top + height + offset
+      ) {
         index += 1;
         nextEndPage += 1;
         // when we haven't rendered the nextEndPage and we aren't replacing,
@@ -172,7 +175,7 @@ const InfiniteScroll = ({
 
   // calculate and keep track of page heights
   useLayoutEffect(() => {
-    // if don't have a belowMarker, we must have done everything already
+    // if don't have a belowMarker, we must have rendered everything already
     if (!belowMarkerRef.current) return;
 
     // calculate page heights for rendered pages
@@ -205,7 +208,7 @@ const InfiniteScroll = ({
             : rendered.item(topIndex).getBoundingClientRect().top;
         const { bottom } = rendered.item(bottomIndex).getBoundingClientRect();
         const height = bottom - top;
-        if (!pageHeights || pageHeights[i] !== height) {
+        if (bottom && (!pageHeights || pageHeights[i] !== height)) {
           if (!nextPageHeights) nextPageHeights = [...(pageHeights || [])];
           nextPageHeights[i] = height;
         }
@@ -222,9 +225,7 @@ const InfiniteScroll = ({
         i += 1;
       }
 
-      if (nextPageHeights) {
-        setPageHeights(nextPageHeights);
-      }
+      if (nextPageHeights) setPageHeights(nextPageHeights);
     }
   }, [lastPage, pageHeights, renderPageBounds, replace, step]);
 
