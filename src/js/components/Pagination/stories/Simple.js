@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+// import { grommet } from 'grommet/themes';
 import { hpe } from 'grommet-theme-hpe';
 import { Pagination } from '../Pagination';
 
@@ -11,21 +11,40 @@ const Simple = () => (
     <Box pad="small" gap="medium">
       <Box>
         <Text>Default</Text>
-        <Pagination totalPages={10} />
+        <Pagination items={237} />
       </Box>
       <Box>
-        <Text>defaultPage = 6</Text>
-        <Pagination totalPages={10} defaultPage={6} />
+        <Text>show = 10</Text>
+        <Pagination items={237} show={10} />
       </Box>
       <Box>
-        <Text>edgeCount = 2 (number of pages on start/end)</Text>
-        <Pagination totalPages={25} defaultPage={10} edgeCount={2} />
+        <Text>numEdgePages = 2 (number of pages on start/end)</Text>
+        <Pagination items={237} show={10} numEdgePages={2} />
       </Box>
       <Box>
         <Text>
-          middleCount = 2 (number of pages to left/right of middle page)
+          numActivePages = 2 (number of pages to left/right of middle page)
         </Text>
-        <Pagination totalPages={25} defaultPage={10} middleCount={2} />
+        <Pagination items={237} show={10} numActivePages={2} />
+      </Box>
+      <Box>
+        <Text>numEdgePages = 0</Text>
+        <Pagination items={237} show={10} numEdgePages={0} />
+      </Box>
+      <Box>
+        <Text>showFirst and showLast</Text>
+        <Pagination items={237} numEdgePages={0} show={4} showFirst showLast />
+      </Box>
+      <Box>
+        <Text>Box Props</Text>
+        <Pagination
+          items={237}
+          show={2}
+          background="background-contrast"
+          align="center"
+          pad="medium"
+          margin="small"
+        />
       </Box>
     </Box>
   </Grommet>

@@ -1,84 +1,110 @@
-import React, { forwardRef, useState } from 'react';
-import { Previous, Next } from 'grommet-icons';
+import React, { forwardRef, useEffect, useState } from 'react';
+import { ChapterNext, ChapterPrevious, Next, Previous } from 'grommet-icons';
 import { Box } from '../Box';
-import { Button } from '../Button';
 import { Nav } from '../Nav';
-import { PaginationItem } from './PaginationItem';
+import { PageIndex } from './PageIndex';
+import { usePagination } from '../../utils/pagination';
 
 const Pagination = forwardRef(
   (
     {
       a11yTitle,
-      edgeCount = 1, // number of pages on start/end edge outside "..."
-      defaultPage = 1,
-      middleCount = 1, // number of pages surround middle page
+      children,
+      items,
+      numEdgePages = 1, // number of pages at each edge of page indices
+      numMiddlePages = 1, // number of pages surrounding the active page
       onChange,
       page: pageProp,
-      totalPages,
+      show = 1,
+      showFirst,
+      showLast,
+      step = 10,
+      ...rest
     },
     ref,
   ) => {
-    const [activePage, setActivePage] = useState(defaultPage);
+    const [activePage, setActivePage] = useState(show);
 
-    React.useEffect(() => {
+    useEffect(() => {
       if (pageProp) setActivePage(pageProp);
     }, [pageProp, setActivePage]);
 
-    const range = (start, end) => {
-      const length = end - start + 1;
-      return Array.from({ length }, (_, i) => start + i);
+    // if (children) {
+    const [setPage, currentItems] = usePagination({
+      data: items,
+      paginationProps: { show, step },
+    });
+
+    const getPageIndices = (begin, end) => {
+      const indices = [];
+      for (let i = begin; i <= end; i += 1) {
+        indices.push(i);
+      }
+      return indices;
     };
 
-    const startPages = range(1, Math.min(edgeCount, totalPages));
-    const endPages = range(
-      Math.max(totalPages - edgeCount + 1, edgeCount + 1),
+    /* Calculate total number pages */
+    let numItems;
+    if (typeof items === 'number') {
+      numItems = items;
+    } else if (typeof items === 'object' && Array.isArray(items)) {
+      numItems = items.length;
+    } else {
+      numItems = step;
+    }
+    const totalPages = Math.ceil(numItems / step);
+
+    /* Define page indices to display */
+    const beginPages = getPageIndices(1, Math.min(numEdgePages, totalPages));
+    const endPages = getPageIndices(
+      Math.max(totalPages - numEdgePages + 1, numEdgePages + 1),
       totalPages,
     );
 
-    const middleStart = Math.max(
+    const middlePagesBegin = Math.max(
       Math.min(
-        // Natural start
-        activePage - middleCount,
-        // Lower boundary when page is high
-        totalPages - edgeCount - middleCount * 2 - 1,
+        activePage - numMiddlePages,
+        totalPages - numEdgePages - numMiddlePages * 2 - 1,
       ),
-      // Greater than startPages
-      edgeCount + 2,
+      numEdgePages + 2,
     );
 
-    const middleEnd = Math.min(
+    const middlePagesEnd = Math.min(
       Math.max(
-        // Natural end
-        activePage + middleCount,
-        // Upper boundary when page is low
-        edgeCount + middleCount * 2 + 2,
+        activePage + numMiddlePages,
+        numEdgePages + numMiddlePages * 2 + 2,
       ),
-      // Less than endPages
       endPages.length > 0 ? endPages[0] - 2 : totalPages - 1,
     );
 
-    const middlePages = range(middleStart, middleEnd);
+    const middlePages = getPageIndices(middlePagesBegin, middlePagesEnd);
 
-    let startFlexPage;
-    if (middleStart > edgeCount + 2) startFlexPage = ['start-ellipsis'];
-    else if (edgeCount + 1 < totalPages - edgeCount)
-      startFlexPage = [edgeCount + 1];
-    else startFlexPage = [];
+    let beginFlex = [];
+    if (middlePagesBegin > numEdgePages + 2) beginFlex = ['more-prev'];
+    else if (numEdgePages + 1 < totalPages - numEdgePages)
+      beginFlex = [numEdgePages + 1];
 
-    let endFlexPage;
-    if (middleEnd < totalPages - edgeCount - 1) endFlexPage = ['end-ellipsis'];
-    else if (totalPages - edgeCount > edgeCount)
-      endFlexPage = [totalPages - edgeCount];
-    else endFlexPage = [];
+    let endFlex = [];
+    if (middlePagesEnd < totalPages - numEdgePages - 1) endFlex = ['more-next'];
+    else if (totalPages - numEdgePages > numEdgePages)
+      endFlex = [totalPages - numEdgePages];
 
-    const pagesList = [
-      ...startPages,
-      ...startFlexPage, // either "..." or single page to bridge start + middle
+    const navPages = [
+      ...(showFirst ? ['showFirst'] : []),
+      'previous',
+      ...beginPages,
+      ...beginFlex, // either "..." or single page to bridge start + middle
       ...middlePages,
-      ...endFlexPage, // either "..." or single page to bridge middle + end
+      ...endFlex, // either "..." or single page to bridge middle + end
       ...endPages,
+      'next',
+      ...(showLast ? ['showLast'] : []),
     ];
 
+    /* Set props for each page index. Each page index should display a
+     * clickable index, control, or placeholder (e.g. ellipsis) indicating
+     * more pages are available.
+     */
     const handleClick = event => {
       if (!pageProp) {
         setActivePage(event.page);
@@ -86,71 +112,108 @@ const Pagination = forwardRef(
       if (onChange) {
         onChange(event);
       }
+      if (children) {
+        setPage(event.page);
+      }
     };
 
-    // pass proper props to PaginationItem
-    const pages = pagesList.map(page => {
-      return typeof page === 'number'
-        ? {
-            active: page === activePage,
-            'aria-current': page === activePage ? 'true' : undefined,
-            page,
-            onClick: event => {
-              event.persist();
-              const adjustedEvent = event;
-              adjustedEvent.page = page;
-              handleClick(adjustedEvent);
-            },
-          }
-        : // otherwise, ellipsis
-          {
-            page,
-          };
+    const navProps = {
+      next: {
+        // https://a11y-style-guide.com/style-guide/section-navigation.html#kssref-navigation-pagination
+        'aria-disabled': activePage === totalPages ? 'true' : undefined,
+        disabled: activePage === totalPages,
+        icon: <Next />,
+        onClick: event => {
+          event.persist();
+          const adjustedEvent = event;
+          adjustedEvent.page = activePage + 1;
+          handleClick(adjustedEvent);
+        },
+        page: undefined,
+      },
+      previous: {
+        'aria-disabled': activePage === 1 ? 'true' : undefined,
+        disabled: activePage === 1,
+        icon: <Previous />,
+        onClick: event => {
+          event.persist();
+          const adjustedEvent = event;
+          adjustedEvent.page = activePage - 1;
+          handleClick(adjustedEvent);
+        },
+        page: undefined,
+      },
+      showFirst: {
+        a11yTitle: 'Go to first page',
+        'aria-disabled': activePage === 1 ? 'true' : undefined,
+        disabled: activePage === 1,
+        icon: <ChapterPrevious />,
+        onClick: event => {
+          event.persist();
+          const adjustedEvent = event;
+          adjustedEvent.page = 1;
+          handleClick(adjustedEvent);
+        },
+        page: undefined,
+      },
+      showLast: {
+        a11yTitle: 'Go to last page',
+        'aria-disabled': activePage === totalPages ? 'true' : undefined,
+        disabled: activePage === totalPages,
+        icon: <ChapterNext />,
+        onClick: event => {
+          event.persist();
+          const adjustedEvent = event;
+          adjustedEvent.page = totalPages;
+          handleClick(adjustedEvent);
+        },
+        page: undefined,
+      },
+    };
+
+    const pages = navPages.map(page => {
+      return {
+        active: page === activePage,
+        a11yTitle:
+          typeof page === 'number'
+            ? `Go to page ${page}`
+            : `Go to ${page} page`,
+        // https://a11y-style-guide.com/style-guide/section-navigation.html#kssref-navigation-pagination
+        // https://www.w3.org/TR/wai-aria-1.1/#aria-current
+        'aria-current': page === activePage ? 'page' : undefined,
+        page,
+        onClick: event => {
+          event.persist();
+          const adjustedEvent = event;
+          adjustedEvent.page = page;
+          handleClick(adjustedEvent);
+        },
+        ...navProps[page],
+      };
     });
 
     return (
-      <Nav a11yTitle={a11yTitle || 'Pagination Navigation'} ref={ref}>
-        <Box
-          as="ul"
-          align="center"
-          direction="row"
-          gap="xxsmall"
-          pad="none"
-          margin="none"
+      <>
+        {children && currentItems.map(item => children(item))}
+        <Nav
+          a11yTitle={a11yTitle || 'Pagination Navigation'}
+          ref={ref}
+          {...rest}
         >
-          <Box as="li">
-            <Button
-              a11yTitle="Go to previous page"
-              disabled={activePage === 1}
-              icon={<Previous />}
-              onClick={event => {
-                event.persist();
-                const adjustedEvent = event;
-                adjustedEvent.page = activePage - 1;
-                handleClick(adjustedEvent);
-              }}
-            />
+          <Box
+            as="ul"
+            align="center"
+            direction="row"
+            gap="xxsmall"
+            pad="none"
+            margin="none"
+          >
+            {pages.map(page => (
+              <PageIndex key={page.page} {...page} />
+            ))}
           </Box>
-          {pages.map(page => (
-            <Box as="li" key={page.page}>
-              <PaginationItem {...page} />
-            </Box>
-          ))}
-          <Box as="li">
-            <Button
-              a11yTitle="Go to next page"
-              disabled={activePage === totalPages}
-              icon={<Next />}
-              onClick={event => {
-                event.persist();
-                const adjustedEvent = event;
-                adjustedEvent.page = activePage + 1;
-                handleClick(adjustedEvent);
-              }}
-            />
-          </Box>
-        </Box>
-      </Nav>
+        </Nav>
+      </>
     );
   },
 );

@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { colorPropType, genericProps } from '../../utils/prop-types';
+import { genericProps } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
 
@@ -13,7 +13,7 @@ export const doc = Pagination => {
     )
     .usage(
       `import { Pagination } from 'grommet';
-<Pagination />`,
+      <Pagination />`,
     )
     .intrinsicElement('nav');
 
@@ -52,8 +52,8 @@ export const doc = Pagination => {
 
 export const themeDoc = {
   pagination: {
-    description: `The possible sizes of the Pagination in terms of its max-width,
-     font-size and line-height.`,
+    description: `The possible sizes of the Pagination in terms of its 
+      max-width, font-size and line-height.`,
     type: 'object',
     defaultValue: `{
       small: {

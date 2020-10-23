@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, List, Menu } from 'grommet';
-import { grommet } from 'grommet/themes';
+// import { grommet } from 'grommet/themes';
 import { hpe } from 'grommet-theme-hpe';
 import { More } from 'grommet-icons';
 
@@ -16,7 +16,7 @@ for (let i = 0; i < 95; i += 1) {
 
 const PaginatedList = () => (
   <Grommet theme={hpe}>
-    <Box pad="small">
+    <Box background="background-back" margin="large" pad="medium" round="small">
       <List
         data={data}
         pad={{ left: 'small', right: 'none', vertical: 'small' }}
@@ -30,14 +30,50 @@ const PaginatedList = () => (
             />
           );
         }}
-        itemsPerPage={10}
-        paginate
         paginationProps={{
           border: { side: 'top', color: 'border' },
           pad: { top: 'small' },
-          // justify: 'center',
-          //   defaultPage: 1,
+          justify: 'center',
         }}
+      />
+    </Box>
+    <Box background="background-back" margin="large" pad="medium" round="small">
+      <List
+        data={data}
+        pad={{ left: 'small', right: 'none', vertical: 'small' }}
+        action={(item, index) => {
+          return (
+            <Menu
+              key={index}
+              icon={<More />}
+              hoverIndicator
+              items={[{ label: 'one' }]}
+            />
+          );
+        }}
+        paginationProps={{
+          border: { side: 'top', color: 'border' },
+          show: 6,
+          step: 15,
+          pad: { top: 'small' },
+        }}
+      />
+    </Box>
+    <Box background="background-back" margin="large" pad="medium" round="small">
+      <List
+        data={data}
+        pad={{ left: 'small', right: 'none', vertical: 'small' }}
+        action={(item, index) => {
+          return (
+            <Menu
+              key={index}
+              icon={<More />}
+              hoverIndicator
+              items={[{ label: 'one' }]}
+            />
+          );
+        }}
+        paginationProps
       />
     </Box>
   </Grommet>

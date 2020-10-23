@@ -1,16 +1,27 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
-export const usePagination = ({ data, itemsPerPage, paginationProps }) => {
-  const defaultPage = (paginationProps && paginationProps.defaultPage) || 1;
-  const [page, setPage] = useState(defaultPage);
-
-  const pageStart = itemsPerPage * (page - 1);
-  const [currentItems, setCurrentItems] = useState(
-    data.slice(pageStart, pageStart + itemsPerPage),
+// getPaginatedItems
+export const usePagination = ({ data, paginationProps }) => {
+  const itemsPerPage = (paginationProps && paginationProps.step) || 10;
+  const [page, setPage] = useState(
+    (paginationProps && paginationProps.show) || 1,
   );
-  useEffect(() => {
-    setCurrentItems(data.slice(pageStart, pageStart + itemsPerPage));
-  }, [itemsPerPage, setCurrentItems, pageStart, data]);
+  const itemsBeginIndex = itemsPerPage * (page - 1);
+  const itemsEndIndex = itemsBeginIndex + itemsPerPage;
+  const getCurrentItems = useCallback(
+    items => {
+      if (Array.isArray(items)) {
+        return items.slice(itemsBeginIndex, itemsEndIndex);
+      }
+      return items;
+    },
+    [itemsBeginIndex, itemsEndIndex],
+  );
+  const [currentItems, setCurrentItems] = useState(getCurrentItems(data));
 
-  return [page, setPage, currentItems];
+  useEffect(() => {
+    setCurrentItems(getCurrentItems(data));
+  }, [data, getCurrentItems, setCurrentItems]);
+
+  return [setPage, currentItems];
 };

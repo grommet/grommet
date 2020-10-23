@@ -3,7 +3,6 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { Body } from './Body';
-import { Box } from '../Box';
 import { GroupedBody } from './GroupedBody';
 import { Pagination } from '../Pagination';
 import {
@@ -52,9 +51,7 @@ const DataTable = ({
   onSort: onSortProp,
   replace,
   pad,
-  paginate,
   paginationProps,
-  itemsPerPage = 10,
   pin,
   primaryKey,
   resizeable,
@@ -193,9 +190,8 @@ const DataTable = ({
     console.warn('DataTable cannot combine "size" and "resizeble".');
   }
 
-  const [page, setPage, currentItems] = usePagination({
+  const [setPage, currentItems] = usePagination({
     data: adjustedData,
-    itemsPerPage,
     paginationProps,
   });
 
@@ -251,7 +247,7 @@ const DataTable = ({
             background={normalizeProp(background, 'body')}
             border={normalizeProp(border, 'body')}
             columns={columns}
-            data={!paginate ? adjustedData : currentItems}
+            data={!paginationProps ? adjustedData : currentItems}
             onMore={onMore}
             replace={replace}
             onClickRow={onClickRow}
@@ -289,21 +285,16 @@ const DataTable = ({
           />
         )}
       </StyledDataTable>
-      {paginate && (
-        <Box
+      {paginationProps && (
+        <Pagination
           direction="row"
-          justify={(paginationProps && paginationProps.justify) || 'end'}
+          items={data.length}
+          justify={paginationProps.justify || 'end'}
+          onChange={event => {
+            setPage(event.page);
+          }}
           {...paginationProps}
-        >
-          <Pagination
-            totalPages={Math.ceil(adjustedData.length / itemsPerPage)}
-            page={page}
-            onChange={event => {
-              setPage(event.page);
-            }}
-            {...paginationProps}
-          />
-        </Box>
+        />
       )}
     </>
   );
