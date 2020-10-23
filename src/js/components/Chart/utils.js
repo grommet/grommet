@@ -32,6 +32,11 @@ export const normalizeBounds = (bounds, values) => {
 };
 
 export const areNormalizedValuesEquals = (valuesX, valuesY) => {
+  console.warn(
+    `This function will be removed in the upcoming releases.
+Please get in touch with us if you have concerns.`,
+  );
+
   if (!valuesX || !valuesY) return false;
 
   if (valuesX.length !== valuesY.length) return false;
@@ -46,6 +51,11 @@ export const areNormalizedValuesEquals = (valuesX, valuesY) => {
 };
 
 export const areNormalizedBoundsEquals = (boundsX, boundsY) => {
+  console.warn(
+    `This function will be removed in the upcoming releases.
+Please get in touch with us if you have concerns.`,
+  );
+
   if (!boundsX || !boundsY) return false;
 
   if (boundsX.length !== boundsY.length || !(boundsX.length > 0)) return false;

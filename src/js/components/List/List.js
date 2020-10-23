@@ -31,6 +31,7 @@ const StyledList = styled.ul`
   ${props =>
     props.itemFocus &&
     focusStyle({ forceOutline: true, skipSvgChildren: true })}}
+  ${props => props.theme.list && props.theme.list.extend}}
 `;
 
 const StyledItem = styled(Box)`
@@ -43,6 +44,8 @@ const StyledItem = styled(Box)`
   &:focus {
     ${unfocusStyle({ forceOutline: true, skipSvgChildren: true })}
   }
+  ${props =>
+    props.theme.list && props.theme.list.item && props.theme.list.item.extend}
 `;
 
 const normalize = (item, index, property) => {

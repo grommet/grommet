@@ -19,6 +19,27 @@ Custom title to be used by screen readers.
 string
 ```
 
+**dropHeight**
+
+The height of the drop container.
+
+```
+xsmall
+small
+medium
+large
+xlarge
+string
+```
+
+**dropProps**
+
+Any valid Drop prop.
+
+```
+object
+```
+
 **icon**
 
 An optional icon to show. This could be used to provide an
@@ -65,7 +86,8 @@ function
 
 Describes the structure of the mask. If a regexp is provided, it should
       allow both the final full string element as well as partial strings
-      as the user types characters one by one.
+      as the user types characters one by one. When using regexp to match number
+      values make sure that the option values are numbers as well.
 
 ```
 [{

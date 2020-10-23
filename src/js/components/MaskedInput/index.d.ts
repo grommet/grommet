@@ -1,6 +1,9 @@
 import * as React from 'react';
+import { DropProps } from '../Drop';
 
 export interface MaskedInputProps {
+  dropHeight?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
+  dropProps?: DropProps;
   icon?: JSX.Element;
   id?: string;
   mask?: Array<{
