@@ -29,7 +29,6 @@ const Pagination = forwardRef(
       if (pageProp) setActivePage(pageProp);
     }, [pageProp, setActivePage]);
 
-    // if (children) {
     const [setPage, currentItems] = usePagination({
       data: items,
       paginationProps: { show, step },
