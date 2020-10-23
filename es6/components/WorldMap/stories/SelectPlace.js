@@ -28,4 +28,8 @@ var Example = function Example() {
 
 storiesOf('WorldMap', module).add('Select place', function () {
   return /*#__PURE__*/React.createElement(Example, null);
+}, {
+  chromatic: {
+    disable: true
+  }
 });
