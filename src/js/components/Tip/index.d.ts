@@ -7,8 +7,6 @@ export interface TipProps {
   dropProps?: DropProps;
 }
 
-// TODO polish after resolving Box wrapper
-// declare const Tip: React.ComponentClass<TipProps & Omit<JSX.IntrinsicElements['TODO'], 'title'>>;
-declare const Tip: React.ComponentClass<TipProps>;
+declare const Tip: React.FC<TipProps>;
 
 export { Tip };
