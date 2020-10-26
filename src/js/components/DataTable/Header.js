@@ -99,6 +99,11 @@ const Header = ({
   ...rest
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
+  const [cellProps, layoutProps, textProps] = separateThemeProps(theme);
+
+  let background;
+  if (backgroundProp) background = backgroundProp;
+  else background = undefined;
 
   return (
     <StyledDataTableHeader fillProp={fill} {...rest}>
@@ -115,7 +120,7 @@ const Header = ({
         )}
 
         {(selected || onSelect) && (
-          <TableCell>
+          <TableCell background={background || cellProps.background}>
             {onSelect && (
               <CheckBox
                 checked={selected.length === data.length}
@@ -147,10 +152,6 @@ const Header = ({
             verticalAlign,
             size,
           }) => {
-            const [cellProps, layoutProps, textProps] = separateThemeProps(
-              theme,
-            );
-
             let content;
             if (typeof header === 'string') {
               content = <Text {...textProps}>{header}</Text>;
@@ -250,7 +251,6 @@ const Header = ({
             if (tablePin) pin.push('top');
             if (columnPin) pin.push('left');
 
-            let background;
             if (backgroundProp) background = backgroundProp;
             else if (
               pin.length > 0 &&

@@ -3019,6 +3019,7 @@ exports[`DataTable custom theme 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
+  background: skyblue;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
   padding-right: 12px;
@@ -3334,7 +3335,7 @@ exports[`DataTable custom theme 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kLEWHI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 jjivI"
         />
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 cYDXOf StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
@@ -10125,7 +10126,7 @@ exports[`DataTable search 1`] = `
               class="c7"
             />
             <button
-              aria-label="focus-search-a"
+              aria-label="Open search by a"
               class="c8"
               type="button"
             >
@@ -10346,6 +10347,7 @@ exports[`DataTable search 2`] = `
                 class="c1"
               >
                 <input
+                  aria-label="Search by a"
                   autocomplete="off"
                   class="c2"
                   name="search-a"
