@@ -7,12 +7,12 @@ import { Tip } from '../../Tip';
 const Example = () => {
   return (
     <Grommet full theme={grommet}>
-      <Box align="center" pad="xlarge" gap="xlarge" fill background="dark-1">
+      <Box align="center" pad="xlarge" gap="xlarge" fill>
         <Text>Tooltip will be displayed once hovering on the Tip's Child</Text>
         <Tip
           content={
             <Box align="center">
-              <Text color="white">Hello</Text>
+              <Text>Hello</Text>
             </Box>
           }
         >

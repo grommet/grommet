@@ -35,11 +35,6 @@ Any valid Drop prop to style the Tip drop container. Defaults to `{
 object
 ```
   
-## Intrinsic element
-
-```
-span
-```
 ## Theme
   
 **tip.content**

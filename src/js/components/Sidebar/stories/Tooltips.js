@@ -5,7 +5,6 @@ import {
   Avatar,
   Button,
   Box,
-  grommet,
   Grommet,
   Nav,
   Sidebar,
@@ -21,21 +20,27 @@ import {
   Stakeholder,
 } from 'grommet-icons';
 
-import { deepMerge } from 'grommet/utils';
-
 const src = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
 
-const customTip = deepMerge(grommet, {
+const customTip = {
+  global: {
+    font: {
+      family: `-apple-system, BlinkMacSystemFont`,
+    },
+  },
   tip: {
+    drop: {
+      align: { left: 'right' },
+    },
     content: {
       animation: 'slideRight',
-      margin: 'xsmall',
+      margin: 'small',
       pad: 'small',
       background: { color: 'accent-1', opacity: 0.9 },
       round: { size: 'medium', corner: 'right' },
     },
   },
-});
+};
 
 const NotificationAlert = () => {
   return (

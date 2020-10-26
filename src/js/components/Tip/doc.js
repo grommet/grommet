@@ -13,8 +13,7 @@ export const doc = Tip => {
     .usage(
       `import { Tip } from 'grommet';
 <Tip />`,
-    )
-    .intrinsicElement('span'); // TODO after resolving the Box wrapper issue
+    );
 
   DocumentedTip.propTypes = {
     content: PropTypes.node.description(`The tooltip content inside the drop.`),

@@ -8,22 +8,9 @@ const Example = () => {
   const ref = useRef();
   return (
     <Grommet full theme={grommet}>
-      <Box align="center" justify="center" background="dark-1" fill>
-        <Tip
-          content={
-            <Box
-              ref={ref}
-              margin="small"
-              background="dark-4"
-              round="medium"
-              pad="small"
-              align="center"
-            >
-              <Text color="accent-1">Tooltip</Text>
-            </Box>
-          }
-        >
-          <Button label="Hover Me" />
+      <Box align="center" justify="center" fill>
+        <Tip content="tooltip">
+          <Button label="action" />
         </Tip>
       </Box>
     </Grommet>
