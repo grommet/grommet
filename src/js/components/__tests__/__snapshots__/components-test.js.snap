@@ -1524,6 +1524,14 @@ string",
         "name": "margin",
       },
       Object {
+        "defaultValue": "start",
+        "description": "Whether the next date selection will affect the start or end bound of 
+        the range.",
+        "format": "start
+end",
+        "name": "activeRangeBound",
+      },
+      Object {
         "defaultValue": true,
         "description": "Whether to animate the calender as the user interacts with it.",
         "format": "boolean",
@@ -1638,8 +1646,10 @@ to disable the previous and next buttons.
         "description": "Whether to automatically manage multiple date selection as a range.
         When the user clicks the first date, onSelect will be called with that
         date. When the user selects another date, onSelect will be called with
-        an array of two dates.",
-        "format": "boolean",
+        an array of two dates. If range = bounds, then an array of dates will 
+        be returned even when one bound is undefined.",
+        "format": "boolean
+bounds",
         "name": "range",
       },
       Object {

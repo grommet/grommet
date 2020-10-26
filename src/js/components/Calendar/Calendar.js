@@ -51,7 +51,7 @@ const normalizeReference = (reference, date, dates) => {
     if (typeof dates[0] === 'string') {
       normalizedReference = new Date(dates[0]);
     } else if (Array.isArray(dates[0])) {
-      normalizedReference = new Date(dates[0][0]);
+      normalizedReference = new Date(dates[0][0] ? dates[0][0] : dates[0][1]);
     } else {
       normalizedReference = new Date();
       normalizedReference.setHours(0, 0, 0, 0);
@@ -131,6 +131,7 @@ const CalendarCustomDay = ({ children, fill, size, buttonProps }) => {
 const Calendar = forwardRef(
   (
     {
+      activeRangeBound: activeRangeBoundProp,
       animate = true,
       bounds: validBounds,
       children,
@@ -153,6 +154,19 @@ const Calendar = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
+
+    // set activeRangeBound when caller changes it, allows us to change
+    // it internally too
+    const activeRangeBounds = {
+      start: 'start',
+      end: 'end',
+    };
+    const [activeRangeBound, setActiveRangeBound] = useState(
+      dateProp && range ? activeRangeBounds.end : activeRangeBounds.start,
+    );
+    useEffect(() => {
+      if (activeRangeBoundProp) setActiveRangeBound(activeRangeBoundProp);
+    }, [activeRangeBoundProp, setActiveRangeBound]);
 
     // set date when caller changes it, allows us to change it internally too
     const [date, setDate] = useState(dateProp);
@@ -294,9 +308,6 @@ const Calendar = forwardRef(
     const daysRef = useRef();
     const [focus, setFocus] = useState();
     const [active, setActive] = useState();
-    // when working on a range, remember the last selected date so we know
-    // how to handle subsequent date selection
-    const [lastSelectedDate, setLastSelectedDate] = useState();
 
     const changeReference = useCallback(
       nextReference => {
@@ -314,61 +325,99 @@ const Calendar = forwardRef(
         let nextDate;
         if (!range) {
           nextDate = selectedDate;
-        } else if (!dates) {
-          if (!date) {
-            nextDate = selectedDate;
-          } else {
+        }
+        // everything down is a range
+        else if (!dates) {
+          // if user supplies date, convert this into dates
+          if (date) {
             const priorDate = new Date(date);
             const selDate = new Date(selectedDate);
-            if (priorDate.getTime() < selDate.getTime()) {
-              nextDates = [[date, selectedDate]];
-              nextDate = undefined;
-            } else if (priorDate.getTime() > selDate.getTime()) {
-              nextDates = [[selectedDate, date]];
-              nextDate = undefined;
-            } else {
-              nextDate = undefined;
+            if (activeRangeBound === activeRangeBounds.start) {
+              if (selDate.getTime() > priorDate.getTime()) {
+                nextDates = [[selectedDate, undefined]];
+              } else {
+                nextDates = [[selectedDate, date]];
+              }
+              setActiveRangeBound(activeRangeBounds.end);
+              if (activeRangeBoundProp)
+                setActiveRangeBound(activeRangeBoundProp);
+            } else if (activeRangeBound === activeRangeBounds.end) {
+              if (selDate.getTime() < priorDate.getTime()) {
+                nextDates = [[selectedDate, undefined]];
+                setActiveRangeBound(activeRangeBounds.end);
+              } else {
+                nextDates = [[date, selectedDate]];
+                setActiveRangeBound(activeRangeBounds.start);
+              }
+              if (activeRangeBoundProp)
+                setActiveRangeBound(activeRangeBoundProp);
             }
+          } else if (activeRangeBound === activeRangeBounds.start) {
+            nextDates = [[selectedDate, undefined]];
+            setActiveRangeBound(activeRangeBounds.end);
+          } else if (activeRangeBound === activeRangeBounds.end) {
+            nextDates = [[undefined, selectedDate]];
           }
+          if (activeRangeBoundProp) setActiveRangeBound(activeRangeBoundProp);
         } else {
           // have dates
           const priorDates = dates[0].map(d => new Date(d));
-          const previousDate = new Date(lastSelectedDate || dates[0][0]);
           const selDate = new Date(selectedDate);
           if (selDate.getTime() === priorDates[0].getTime()) {
-            [[, nextDate]] = dates;
-            nextDates = undefined;
+            nextDates = [[undefined, dates[0][1]]];
+            setActiveRangeBound(activeRangeBounds.start);
           } else if (selDate.getTime() === priorDates[1].getTime()) {
-            [[nextDate]] = dates;
-            nextDates = undefined;
-          } else if (selDate.getTime() === previousDate.getTime()) {
-            if (selDate.getTime() < priorDates[0].getTime()) {
-              nextDates = [[selectedDate, dates[0][1]]];
-            } else if (selDate.getTime() > priorDates[0].getTime()) {
-              nextDates = [[dates[0][0], selectedDate]];
-            }
-          } else if (selDate.getTime() < previousDate.getTime()) {
-            if (selDate.getTime() < priorDates[0].getTime()) {
-              nextDates = [[selectedDate, dates[0][1]]];
-            } else if (selDate.getTime() > priorDates[0].getTime()) {
-              nextDates = [[dates[0][0], selectedDate]];
-            }
-          } else if (selDate.getTime() > previousDate.getTime()) {
+            nextDates = [[dates[0][0], undefined]];
+            setActiveRangeBound(activeRangeBounds.end);
+            if (activeRangeBoundProp) setActiveRangeBound(activeRangeBoundProp);
+          } else if (activeRangeBound === activeRangeBounds.start) {
             if (selDate.getTime() > priorDates[1].getTime()) {
-              nextDates = [[dates[0][0], selectedDate]];
-            } else if (selDate.getTime() < priorDates[1].getTime()) {
+              nextDates = [[selectedDate, undefined]];
+            } else {
               nextDates = [[selectedDate, dates[0][1]]];
             }
+            setActiveRangeBound(activeRangeBounds.end);
+            if (activeRangeBoundProp) setActiveRangeBound(activeRangeBoundProp);
+          } else if (activeRangeBound === activeRangeBounds.end) {
+            if (selDate.getTime() < priorDates[0].getTime()) {
+              nextDates = [[selectedDate, undefined]];
+              setActiveRangeBound(activeRangeBounds.end);
+            } else {
+              nextDates = [[dates[0][0], selectedDate]];
+              setActiveRangeBound(activeRangeBounds.start);
+            }
+            if (activeRangeBoundProp) setActiveRangeBound(activeRangeBoundProp);
           }
+          // cleanup
+          if (!nextDates[0][0] && !nextDates[0][1]) nextDates = undefined;
         }
 
         setDates(nextDates);
         if (!dates) setDate(nextDate);
         setActive(new Date(selectedDate));
-        setLastSelectedDate(selectedDate);
-        if (onSelect) onSelect(nextDates || nextDate);
+        let adjustedDates;
+        if (
+          nextDates &&
+          Array.isArray(nextDates[0]) &&
+          (!nextDates[0][0] || !nextDates[0][1]) &&
+          range === true
+        ) {
+          // return string for backwards compatibility
+          [adjustedDates] = nextDates[0].filter(d => d);
+        } else {
+          adjustedDates = nextDates;
+        }
+        if (onSelect) onSelect(adjustedDates || nextDate);
       },
-      [date, dates, lastSelectedDate, onSelect, range],
+      [
+        activeRangeBound,
+        activeRangeBoundProp,
+        activeRangeBounds,
+        date,
+        dates,
+        onSelect,
+        range,
+      ],
     );
 
     const renderCalendarHeader = () => {

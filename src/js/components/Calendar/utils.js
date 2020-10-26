@@ -75,10 +75,15 @@ export const daysApart = (date1, date2) =>
 export const betweenDates = (date, dates) => {
   let result;
   if (dates) {
-    const [from, to] = dates.map(d => new Date(d));
-    if (sameDay(date, from) || sameDay(date, to)) {
+    const [from, to] = dates.map(d => (d ? new Date(d) : undefined));
+    if ((from && sameDay(date, from)) || (to && sameDay(date, to))) {
       result = 2;
-    } else if (sameDayOrAfter(date, from) && sameDayOrBefore(date, to)) {
+    } else if (
+      from &&
+      sameDayOrAfter(date, from) &&
+      to &&
+      sameDayOrBefore(date, to)
+    ) {
       result = 1;
     }
   } else {

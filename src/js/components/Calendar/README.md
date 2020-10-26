@@ -126,6 +126,16 @@ xlarge
 string
 ```
 
+**activeRangeBound**
+
+Whether the next date selection will affect the start or end bound of 
+        the range. Defaults to `start`.
+
+```
+start
+end
+```
+
 **animate**
 
 Whether to animate the calender as the user interacts with it. Defaults to `true`.
@@ -275,10 +285,12 @@ function
 Whether to automatically manage multiple date selection as a range.
         When the user clicks the first date, onSelect will be called with that
         date. When the user selects another date, onSelect will be called with
-        an array of two dates.
+        an array of two dates. If range = bounds, then an array of dates will 
+        be returned even when one bound is undefined.
 
 ```
 boolean
+bounds
 ```
 
 **reference**
