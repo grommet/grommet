@@ -1,13 +1,21 @@
-import { configure } from '@storybook/react';
+// import { configure } from '@storybook/react';
 
-const req = require.context(
-  '../src/js',
-  true,
-  /\.stories\.js$|\/stories\/.*\.js$|\/stories\/.*\.ts$|\/stories\/.*\.tsx$/,
-);
+// const req = require.context(
+//   '../src/js',
+//   true,
+//   /\.stories\.js$|\/stories\/.*\.js$|\/stories\/.*\.ts$|\/stories\/.*\.tsx$/,
+// );
 
-function loadStories() {
-  req.keys().forEach(filename => req(filename));
-}
+// function loadStories() {
+//   req.keys().forEach(filename => req(filename));
+// }
 
-configure(loadStories, module);
+// configure(loadStories, module);
+
+import { addParameters } from '@storybook/react';
+
+addParameters({
+  options: {
+    showRoots: true,
+  },
+});

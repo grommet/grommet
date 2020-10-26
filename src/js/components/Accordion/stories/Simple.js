@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Accordion, AccordionPanel, Box, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -33,13 +32,23 @@ const SimpleAccordion = props => {
   );
 };
 
-storiesOf('Accordion', module)
-  .add('Simple', () => <SimpleAccordion />)
-  .add(
-    'Dark no animation',
-    () => <SimpleAccordion animate={false} background="dark-2" />,
-    { chromatic: { disable: true } },
-  )
-  .add('Multiple', () => <SimpleAccordion multiple />, {
-    chromatic: { disable: true },
-  });
+export default {
+  title: 'Controls/Accordion',
+};
+
+export const Simple = () => <SimpleAccordion />;
+
+export const DarkNoAnimation = () => (
+  <SimpleAccordion animate={false} background="dark-2" />
+);
+DarkNoAnimation.story = { name: 'Dark no animation' };
+DarkNoAnimation.parameters = {
+  chromatic: { disable: true },
+};
+
+export const Multiple = () => (
+  <SimpleAccordion animate={false} background="dark-2" />
+);
+Multiple.parameters = {
+  chromatic: { disable: true },
+};
