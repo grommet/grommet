@@ -225,6 +225,7 @@ const Menu = forwardRef((props, ref) => {
         plain={plain}
         onClick={onDropClose}
         onFocus={() => setActiveItemIndex(controlButtonIndex)}
+        reverse={theme.button.default && !children ? true : undefined}
         // On first tab into menu, the control button should not
         // be able to receive tab focus because the focus should
         // go to the first menu item instead.
@@ -261,7 +262,7 @@ const Menu = forwardRef((props, ref) => {
         open={isOpen}
         onOpen={onDropOpen}
         onClose={onDropClose}
-        reverse={theme.button.default ? true : undefined}
+        reverse={theme.button.default && !children ? true : undefined}
         dropContent={
           <Keyboard
             onTab={event =>
