@@ -20,6 +20,19 @@ const customTheme = {
   },
 };
 
+const defaultButtonTheme = {
+  button: {
+    default: {
+      color: 'text-strong',
+      border: undefined,
+      padding: {
+        horizontal: '12px',
+        vertical: '6px',
+      },
+    },
+  },
+};
+
 describe('Menu', () => {
   beforeEach(createPortal);
 
@@ -514,6 +527,18 @@ describe('Menu', () => {
   test('custom theme icon color', () => {
     const component = renderer.create(
       <Grommet theme={customTheme}>
+        <Menu
+          label="Test Menu"
+          items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
+        />
+      </Grommet>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+
+  test('custom theme with default button', () => {
+    const component = renderer.create(
+      <Grommet theme={defaultButtonTheme}>
         <Menu
           label="Test Menu"
           items={[{ label: 'Item 1' }, { label: 'Item 2' }]}

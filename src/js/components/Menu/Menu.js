@@ -184,20 +184,30 @@ const Menu = forwardRef((props, ref) => {
     }
   };
 
-  const content = children || (
-    <Box
-      direction="row"
-      justify={justifyContent}
-      align="center"
-      pad={theme.button.default ? undefined : 'small'}
-      gap={label && icon !== false ? 'small' : undefined}
-    >
-      <Text size={size}>{label}</Text>
-      {icon !== false
-        ? (icon !== true && icon) || <MenuIcon color={iconColor} size={size} />
-        : null}
-    </Box>
-  );
+  const menuLabel = <Text size={size}>{label}</Text>;
+  const menuIcon =
+    icon !== false
+      ? (icon !== true && icon) || <MenuIcon color={iconColor} size={size} />
+      : null;
+
+  let content;
+  if (children) content = children;
+  else if (!theme.button.default) {
+    content = (
+      <Box
+        direction="row"
+        justify={justifyContent}
+        align="center"
+        pad="small"
+        gap={label && icon !== false ? 'small' : undefined}
+      >
+        {menuLabel}
+        {menuIcon}
+      </Box>
+    );
+  } else {
+    content = undefined;
+  }
 
   const controlMirror = (
     <Box flex={false}>
@@ -210,6 +220,8 @@ const Menu = forwardRef((props, ref) => {
         active={activeItemIndex === controlButtonIndex}
         focusIndicator={false}
         hoverIndicator="background"
+        label={theme.button.default && !children ? menuLabel : undefined}
+        icon={theme.button.default && !children ? menuIcon : undefined}
         plain={plain}
         onClick={onDropClose}
         onFocus={() => setActiveItemIndex(controlButtonIndex)}
@@ -243,10 +255,13 @@ const Menu = forwardRef((props, ref) => {
         dropAlign={align}
         dropTarget={dropTarget}
         dropProps={dropProps}
+        label={theme.button.default && !children ? menuLabel : undefined}
+        icon={theme.button.default && !children ? menuIcon : undefined}
         plain={plain}
         open={isOpen}
         onOpen={onDropOpen}
         onClose={onDropClose}
+        reverse={theme.button.default ? true : undefined}
         dropContent={
           <Keyboard
             onTab={event =>
