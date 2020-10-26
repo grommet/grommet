@@ -1649,17 +1649,17 @@ exports[`List events Enter key 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 iHffYx"
+    class="List__StyledList-sc-130gdqg-0 bVJdKv"
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 bGJPsF List__StyledItem-sc-130gdqg-1 lfUyea"
+      class="StyledBox-sc-13pk1d4-0 bGJPsF List__StyledItem-sc-130gdqg-1 fnhxkV"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 TLEKT List__StyledItem-sc-130gdqg-1 lfUyea"
+      class="StyledBox-sc-13pk1d4-0 TLEKT List__StyledItem-sc-130gdqg-1 fnhxkV"
       tabindex="-1"
     >
       beta
@@ -1828,17 +1828,17 @@ exports[`List events focus and blur 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 iHffYx"
+    class="List__StyledList-sc-130gdqg-0 bVJdKv"
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 bGJPsF List__StyledItem-sc-130gdqg-1 lfUyea"
+      class="StyledBox-sc-13pk1d4-0 bGJPsF List__StyledItem-sc-130gdqg-1 fnhxkV"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 dwrZcL List__StyledItem-sc-130gdqg-1 lfUyea"
+      class="StyledBox-sc-13pk1d4-0 dwrZcL List__StyledItem-sc-130gdqg-1 fnhxkV"
       tabindex="-1"
     >
       beta
@@ -2006,17 +2006,17 @@ exports[`List events mouse events 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 iHffYx"
+    class="List__StyledList-sc-130gdqg-0 bVJdKv"
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 bGJPsF List__StyledItem-sc-130gdqg-1 lfUyea"
+      class="StyledBox-sc-13pk1d4-0 bGJPsF List__StyledItem-sc-130gdqg-1 fnhxkV"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 dwrZcL List__StyledItem-sc-130gdqg-1 lfUyea"
+      class="StyledBox-sc-13pk1d4-0 dwrZcL List__StyledItem-sc-130gdqg-1 fnhxkV"
       tabindex="-1"
     >
       beta
@@ -2545,17 +2545,17 @@ exports[`List onClickItem 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 iHffYx"
+    class="List__StyledList-sc-130gdqg-0 bVJdKv"
     tabindex="0"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 bGJPsF List__StyledItem-sc-130gdqg-1 lfUyea"
+      class="StyledBox-sc-13pk1d4-0 bGJPsF List__StyledItem-sc-130gdqg-1 fnhxkV"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 dwrZcL List__StyledItem-sc-130gdqg-1 lfUyea"
+      class="StyledBox-sc-13pk1d4-0 dwrZcL List__StyledItem-sc-130gdqg-1 fnhxkV"
       tabindex="-1"
     >
       beta
