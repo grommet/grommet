@@ -4,19 +4,18 @@ import React, {
   forwardRef,
   useContext,
   useState,
-  useRef,
 } from 'react';
 import { ThemeContext } from 'styled-components';
 
 import { Box } from '../Box';
 import { Drop } from '../Drop';
+import { useForwardedRef } from '../../utils/refs';
 
 const Tip = forwardRef(({ children, content, dropProps }, tipRef) => {
   const theme = useContext(ThemeContext);
   const [over, setOver] = useState(false);
 
-  const ref = useRef();
-  const componentRef = tipRef || ref;
+  const componentRef = useForwardedRef(tipRef);
 
   // In cases the child is a primitive
   const wrapInvalidElement = () => {

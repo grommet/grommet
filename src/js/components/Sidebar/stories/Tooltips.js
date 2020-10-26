@@ -22,7 +22,7 @@ import {
 
 const src = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
 
-const customTip = {
+const customTheme = {
   global: {
     font: {
       family: `-apple-system, BlinkMacSystemFont`,
@@ -100,7 +100,7 @@ const SidebarButton = ({ iconName, index }) => {
 };
 
 export const Example = () => (
-  <Grommet theme={customTip} full>
+  <Grommet theme={customTheme} full>
     <Box align="start" height={{ min: '100%' }}>
       <Sidebar
         background="brand"
