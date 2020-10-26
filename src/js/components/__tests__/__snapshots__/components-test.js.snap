@@ -1529,7 +1529,7 @@ string",
         the range.",
         "format": "start
 end",
-        "name": "activeRangeBound",
+        "name": "activeDate",
       },
       Object {
         "defaultValue": true,

@@ -12,7 +12,7 @@ export interface CalendarProps {
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
   margin?: MarginType;
-  activeRangeBound?: 'start' | 'end';
+  activeDate?: 'start' | 'end';
   animate?: AnimateType;
   bounds?: string[];
   children?: (...args: any[]) => any;

@@ -20,7 +20,7 @@ export const doc = Calendar => {
 
   DocumentedCalendar.propTypes = {
     ...genericProps,
-    activeRangeBound: PropTypes.oneOf(['start', 'end'])
+    activeDate: PropTypes.oneOf(['start', 'end'])
       .description(
         `Whether the next date selection will affect the start or end bound of 
         the range.`,

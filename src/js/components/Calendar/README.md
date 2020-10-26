@@ -126,7 +126,7 @@ xlarge
 string
 ```
 
-**activeRangeBound**
+**activeDate**
 
 Whether the next date selection will affect the start or end bound of 
         the range. Defaults to `start`.

@@ -417,12 +417,12 @@ describe('Calendar', () => {
     ]);
   });
 
-  test('activeRangeBound start', () => {
+  test('activeDate start', () => {
     const onSelect = jest.fn();
     const { getByLabelText } = render(
       <Grommet>
         <Calendar
-          activeRangeBound="start"
+          activeDate="start"
           dates={[['2020-01-01T00:00:00-08:00', '2020-01-05T00:00:00-08:00']]}
           onSelect={onSelect}
           range="bounds"
@@ -439,12 +439,12 @@ describe('Calendar', () => {
     ]);
   });
 
-  test('activeRangeBound end', () => {
+  test('activeDate end', () => {
     const onSelect = jest.fn();
     const { getByLabelText } = render(
       <Grommet>
         <Calendar
-          activeRangeBound="end"
+          activeDate="end"
           dates={[['2020-01-01T00:00:00-08:00', '2020-01-05T00:00:00-08:00']]}
           onSelect={onSelect}
           range="bounds"
