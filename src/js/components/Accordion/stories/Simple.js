@@ -32,10 +32,6 @@ const SimpleAccordion = props => {
   );
 };
 
-export default {
-  title: 'Controls/Accordion',
-};
-
 export const Simple = () => <SimpleAccordion />;
 
 export const DarkNoAnimation = () => (
@@ -46,9 +42,7 @@ DarkNoAnimation.parameters = {
   chromatic: { disable: true },
 };
 
-export const Multiple = () => (
-  <SimpleAccordion animate={false} background="dark-2" />
-);
+export const Multiple = () => <SimpleAccordion multiple />;
 Multiple.parameters = {
   chromatic: { disable: true },
 };
