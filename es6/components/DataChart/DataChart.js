@@ -91,6 +91,9 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
       return typeof c === 'string' ? {
         property: c
       } : c;
+    }).filter(function (_ref3) {
+      var property = _ref3.property;
+      return property;
     });
     return typeof chart === 'string' ? [{
       property: chart
@@ -99,8 +102,8 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
   var seriesValues = useMemo(function () {
     var result = {};
-    series.forEach(function (_ref3) {
-      var property = _ref3.property;
+    series.forEach(function (_ref4) {
+      var property = _ref4.property;
       result[property] = data.map(function (d) {
         return d[property];
       });
@@ -110,10 +113,10 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
   // The index into 'charts' can be used to index into 'chartValues'.
 
   var chartValues = useMemo(function () {
-    return charts.map(function (_ref4) {
-      var opacity = _ref4.opacity,
-          property = _ref4.property,
-          type = _ref4.type;
+    return charts.map(function (_ref5) {
+      var opacity = _ref5.opacity,
+          property = _ref5.property,
+          type = _ref5.type;
 
       if (property) {
         if (Array.isArray(property)) {
@@ -310,12 +313,12 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var seriesStyles = useMemo(function () {
     var result = {}; // start from what we were explicitly given
 
-    charts.forEach(function (_ref5, index) {
-      var color = _ref5.color,
-          point = _ref5.point,
-          property = _ref5.property,
-          thickness = _ref5.thickness,
-          type = _ref5.type;
+    charts.forEach(function (_ref6, index) {
+      var color = _ref6.color,
+          point = _ref6.point,
+          property = _ref6.property,
+          thickness = _ref6.thickness,
+          type = _ref6.type;
       var calcThickness = chartProps[index].thickness;
 
       if (typeof property === 'object' && !Array.isArray(property)) {
@@ -395,8 +398,8 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var pad = useMemo(function () {
     if (padProp !== undefined) return padProp;
     var result = {};
-    charts.forEach(function (_ref6, index) {
-      var type = _ref6.type;
+    charts.forEach(function (_ref7, index) {
+      var type = _ref7.type;
       var thickness = chartProps[index].thickness;
       result.horizontal = halfPad[thickness];
       if (type && type !== 'bar') result.vertical = halfPad[thickness];
@@ -406,9 +409,9 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var dateFormats = useMemo(function () {
     var result = {};
     var full = axis && axis.x && axis.x.granularity === 'coarse';
-    series.forEach(function (_ref7) {
-      var property = _ref7.property,
-          render = _ref7.render;
+    series.forEach(function (_ref8) {
+      var property = _ref8.property,
+          render = _ref8.render;
 
       if (!render && data.length > 1 && typeof data[0][property] === 'string') {
         result[property] = createDateFormat(data[0][property], data[data.length - 1][property], full);
@@ -484,12 +487,12 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }), guide && guide.y && /*#__PURE__*/React.createElement(YGuide, {
     guide: guide,
     pad: pad
-  }), charts.map(function (_ref8, i) {
-    var prop = _ref8.property,
-        type = _ref8.type,
-        x = _ref8.x,
-        y = _ref8.y,
-        chartRest = _objectWithoutPropertiesLoose(_ref8, ["property", "type", "x", "y"]);
+  }), charts.map(function (_ref9, i) {
+    var prop = _ref9.property,
+        type = _ref9.type,
+        x = _ref9.x,
+        y = _ref9.y,
+        chartRest = _objectWithoutPropertiesLoose(_ref9, ["property", "type", "x", "y"]);
 
     if (type === 'bars') {
       // reverse to ensure area Charts are stacked in the right order
