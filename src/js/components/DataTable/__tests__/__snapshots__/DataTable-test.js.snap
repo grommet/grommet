@@ -2641,13 +2641,13 @@ exports[`DataTable click 2`] = `
     class="StyledTable-sc-1m3u5g-6 bJymoW StyledDataTable-xrlyjm-0 koBqev"
   >
     <thead
-      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 dtMFXM"
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 hOGMbn"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kLEWHI StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kLEWHI StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
           scope="col"
         >
           <div
@@ -2670,7 +2670,7 @@ exports[`DataTable click 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 imGRIL"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
           scope="row"
         >
           <div
@@ -2688,7 +2688,7 @@ exports[`DataTable click 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 imGRIL"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
           scope="row"
         >
           <div
@@ -3329,7 +3329,7 @@ exports[`DataTable custom theme 2`] = `
     class="StyledTable-sc-1m3u5g-6 bJymoW StyledDataTable-xrlyjm-0 koBqev"
   >
     <thead
-      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 dtMFXM"
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 hOGMbn"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
@@ -3338,7 +3338,7 @@ exports[`DataTable custom theme 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 jjivI"
         />
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cYDXOf StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 cYDXOf StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
           scope="col"
         >
           <div
@@ -3437,7 +3437,7 @@ exports[`DataTable custom theme 2`] = `
           </label>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
           scope="row"
         >
           <div
@@ -3479,7 +3479,7 @@ exports[`DataTable custom theme 2`] = `
           </label>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
           scope="row"
         >
           <div
@@ -4756,7 +4756,7 @@ exports[`DataTable groupBy 2`] = `
     class="StyledTable-sc-1m3u5g-6 bJymoW StyledDataTable-xrlyjm-0 koBqev"
   >
     <thead
-      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 dtMFXM"
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 hOGMbn"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
@@ -4788,7 +4788,7 @@ exports[`DataTable groupBy 2`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kLEWHI StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kLEWHI StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
           scope="col"
         >
           <div
@@ -4802,7 +4802,7 @@ exports[`DataTable groupBy 2`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kLEWHI StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kLEWHI StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
           scope="col"
         >
           <div
@@ -4850,7 +4850,7 @@ exports[`DataTable groupBy 2`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
           scope="row"
         >
           <div
@@ -4864,7 +4864,7 @@ exports[`DataTable groupBy 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 bFwQzJ"
@@ -4901,7 +4901,7 @@ exports[`DataTable groupBy 2`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
           scope="row"
         >
           <div
@@ -4915,7 +4915,7 @@ exports[`DataTable groupBy 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 bFwQzJ"
@@ -5843,7 +5843,7 @@ exports[`DataTable groupBy property 2`] = `
     class="StyledTable-sc-1m3u5g-6 bJymoW StyledDataTable-xrlyjm-0 koBqev"
   >
     <thead
-      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 dtMFXM"
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 hOGMbn"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
@@ -5875,7 +5875,7 @@ exports[`DataTable groupBy property 2`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kLEWHI StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kLEWHI StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
           scope="col"
         >
           <div
@@ -5889,7 +5889,7 @@ exports[`DataTable groupBy property 2`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kLEWHI StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kLEWHI StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
           scope="col"
         >
           <div
@@ -5937,7 +5937,7 @@ exports[`DataTable groupBy property 2`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
           scope="row"
         >
           <div
@@ -5951,7 +5951,7 @@ exports[`DataTable groupBy property 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 bFwQzJ"
@@ -5988,7 +5988,7 @@ exports[`DataTable groupBy property 2`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
           scope="row"
         >
           <div
@@ -6002,7 +6002,7 @@ exports[`DataTable groupBy property 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 bFwQzJ"
@@ -6340,13 +6340,13 @@ exports[`DataTable onSort 2`] = `
     class="StyledTable-sc-1m3u5g-6 bJymoW StyledDataTable-xrlyjm-0 koBqev"
   >
     <thead
-      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 dtMFXM"
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 hOGMbn"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kLEWHI StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kLEWHI StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
           scope="col"
         >
           <div
@@ -6447,7 +6447,7 @@ exports[`DataTable onSort 2`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kLEWHI StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kLEWHI StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
           scope="col"
         >
           <div
@@ -6478,7 +6478,7 @@ exports[`DataTable onSort 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
           scope="row"
         >
           <div
@@ -6492,7 +6492,7 @@ exports[`DataTable onSort 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 bFwQzJ"
@@ -6509,7 +6509,7 @@ exports[`DataTable onSort 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
           scope="row"
         >
           <div
@@ -6523,7 +6523,7 @@ exports[`DataTable onSort 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 bFwQzJ"
@@ -6540,7 +6540,7 @@ exports[`DataTable onSort 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
           scope="row"
         >
           <div
@@ -6554,7 +6554,7 @@ exports[`DataTable onSort 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 bFwQzJ"
@@ -10217,13 +10217,13 @@ exports[`DataTable search 2`] = `
     class="StyledTable-sc-1m3u5g-6 bJymoW StyledDataTable-xrlyjm-0 koBqev"
   >
     <thead
-      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 dtMFXM"
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 hOGMbn"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kLEWHI StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kLEWHI StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
           scope="col"
         >
           <div
@@ -10366,7 +10366,7 @@ exports[`DataTable search 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
           scope="row"
         >
           <div
@@ -10788,7 +10788,7 @@ exports[`DataTable select 2`] = `
     class="StyledTable-sc-1m3u5g-6 bJymoW StyledDataTable-xrlyjm-0 koBqev"
   >
     <thead
-      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 dtMFXM"
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 hOGMbn"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
@@ -10844,7 +10844,7 @@ exports[`DataTable select 2`] = `
           </label>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kLEWHI StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kLEWHI StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
           scope="col"
         >
           <div
@@ -10898,7 +10898,7 @@ exports[`DataTable select 2`] = `
           </label>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
           scope="row"
         >
           <div
@@ -10967,7 +10967,7 @@ exports[`DataTable select 2`] = `
           </label>
         </td>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
           scope="row"
         >
           <div
@@ -12846,13 +12846,13 @@ exports[`DataTable sortable 2`] = `
     class="StyledTable-sc-1m3u5g-6 bJymoW StyledDataTable-xrlyjm-0 koBqev"
   >
     <thead
-      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 dtMFXM"
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 kdPLsZ StyledDataTable__StyledDataTableHeader-xrlyjm-3 hOGMbn"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kLEWHI StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kLEWHI StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
           scope="col"
         >
           <div
@@ -12953,7 +12953,7 @@ exports[`DataTable sortable 2`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kLEWHI StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kLEWHI StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
           scope="col"
         >
           <div
@@ -12984,7 +12984,7 @@ exports[`DataTable sortable 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
           scope="row"
         >
           <div
@@ -12998,7 +12998,7 @@ exports[`DataTable sortable 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 bFwQzJ"
@@ -13015,7 +13015,7 @@ exports[`DataTable sortable 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
           scope="row"
         >
           <div
@@ -13029,7 +13029,7 @@ exports[`DataTable sortable 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 bFwQzJ"
@@ -13046,7 +13046,7 @@ exports[`DataTable sortable 2`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 enByxm StyledDataTable__StyledDataTableRow-xrlyjm-1 jKzMJr"
       >
         <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
           scope="row"
         >
           <div
@@ -13060,7 +13060,7 @@ exports[`DataTable sortable 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 kxeYJI"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bXELjK StyledDataTable__StyledDataTableCell-xrlyjm-5 fOoEfI"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 bFwQzJ"

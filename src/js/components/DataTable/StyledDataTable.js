@@ -105,10 +105,6 @@ const StyledDataTableHeader = styled(TableHeader)`
     width: 100%;
     table-layout: fixed;
   `}
-  ${props =>
-    props.theme.dataTable &&
-    props.theme.dataTable.header &&
-    props.theme.dataTable.header.extend};
 `;
 
 StyledDataTableHeader.defaultProps = {};
@@ -136,6 +132,11 @@ StyledDataTableFooter.defaultProps = {};
 Object.setPrototypeOf(StyledDataTableFooter.defaultProps, defaultProps);
 
 const StyledDataTableCell = styled(TableCell)`
+  ${props =>
+    props.context === 'header' &&
+    props.theme.dataTable &&
+    props.theme.dataTable.header &&
+    props.theme.dataTable.header.extend};
   ${props =>
     props.pin &&
     props.pin.length > 0 &&

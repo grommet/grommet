@@ -9,7 +9,7 @@ import { Blank } from 'grommet-icons';
 import { columns, DATA } from './data';
 
 const SortableIcon = () => (
-  <Blank color="text-xweak" opacity="0.5">
+  <Blank color="text-xweak">
     <g fill="none" stroke="#000" strokeWidth="2">
       <path d="M 6 10 L 12 6 L 18 10" />
       <path d="M 6 14 L 12 18 L 18 14" />
@@ -26,19 +26,21 @@ const customTheme = {
   dataTable: {
     header: {
       extend: ({ column, sort, sortable }) => {
-        if (sortable && sort && sort.property !== column) {
-          return `
-          svg {
-            opacity: 50%;
-          }
-          :hover {
-            svg {
-              opacity: 100%;
-            }
-          }
-        `;
-        }
-        return null;
+        return `
+          font-weight: bold;
+          background-color: #F0F0F0;
+          ${sortable &&
+            sort &&
+            sort.property !== column &&
+            `svg {
+             opacity: 50%;
+           }
+           :hover {
+             svg {
+               opacity: 100%;
+             }
+           }`}
+         `;
       },
     },
     icons: {
