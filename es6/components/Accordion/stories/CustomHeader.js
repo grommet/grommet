@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Accordion, AccordionPanel, Box, Grommet, Text, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 
@@ -53,6 +52,6 @@ var CustomHeaderAccordion = function CustomHeaderAccordion() {
   }, /*#__PURE__*/React.createElement(Text, null, "Panel 3 contents")))));
 };
 
-storiesOf('Accordion', module).add('Header', function () {
+export var Header = function Header() {
   return /*#__PURE__*/React.createElement(CustomHeaderAccordion, null);
-});
+};

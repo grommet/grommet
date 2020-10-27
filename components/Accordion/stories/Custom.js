@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Custom = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommetIcons = require("grommet-icons");
 
@@ -88,6 +89,8 @@ var CustomAccordion = function CustomAccordion(_ref) {
   }, "Important Info"))))));
 };
 
-(0, _react2.storiesOf)('Accordion', module).add('Custom', function () {
+var Custom = function Custom() {
   return /*#__PURE__*/_react["default"].createElement(CustomAccordion, null);
-});
+};
+
+exports.Custom = Custom;

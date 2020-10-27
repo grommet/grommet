@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.Header = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
@@ -62,6 +63,8 @@ var CustomHeaderAccordion = function CustomHeaderAccordion() {
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Panel 3 contents")))));
 };
 
-(0, _react2.storiesOf)('Accordion', module).add('Header', function () {
+var Header = function Header() {
   return /*#__PURE__*/_react["default"].createElement(CustomHeaderAccordion, null);
-});
+};
+
+exports.Header = Header;

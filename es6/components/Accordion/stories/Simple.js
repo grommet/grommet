@@ -1,7 +1,6 @@
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Accordion, AccordionPanel, Box, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 
@@ -41,23 +40,30 @@ var SimpleAccordion = function SimpleAccordion(props) {
   }, "Panel 3 contents")))));
 };
 
-storiesOf('Accordion', module).add('Simple', function () {
+export var Simple = function Simple() {
   return /*#__PURE__*/React.createElement(SimpleAccordion, null);
-}).add('Dark no animation', function () {
+};
+export var DarkNoAnimation = function DarkNoAnimation() {
   return /*#__PURE__*/React.createElement(SimpleAccordion, {
     animate: false,
     background: "dark-2"
   });
-}, {
+};
+DarkNoAnimation.story = {
+  name: 'Dark no animation'
+};
+DarkNoAnimation.parameters = {
   chromatic: {
     disable: true
   }
-}).add('Multiple', function () {
+};
+export var Multiple = function Multiple() {
   return /*#__PURE__*/React.createElement(SimpleAccordion, {
     multiple: true
   });
-}, {
+};
+Multiple.parameters = {
   chromatic: {
     disable: true
   }
-});
+};

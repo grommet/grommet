@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Multiple = exports.DarkNoAnimation = exports.Simple = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -48,23 +49,38 @@ var SimpleAccordion = function SimpleAccordion(props) {
   }, "Panel 3 contents")))));
 };
 
-(0, _react2.storiesOf)('Accordion', module).add('Simple', function () {
+var Simple = function Simple() {
   return /*#__PURE__*/_react["default"].createElement(SimpleAccordion, null);
-}).add('Dark no animation', function () {
+};
+
+exports.Simple = Simple;
+
+var DarkNoAnimation = function DarkNoAnimation() {
   return /*#__PURE__*/_react["default"].createElement(SimpleAccordion, {
     animate: false,
     background: "dark-2"
   });
-}, {
+};
+
+exports.DarkNoAnimation = DarkNoAnimation;
+DarkNoAnimation.story = {
+  name: 'Dark no animation'
+};
+DarkNoAnimation.parameters = {
   chromatic: {
     disable: true
   }
-}).add('Multiple', function () {
+};
+
+var Multiple = function Multiple() {
   return /*#__PURE__*/_react["default"].createElement(SimpleAccordion, {
     multiple: true
   });
-}, {
+};
+
+exports.Multiple = Multiple;
+Multiple.parameters = {
   chromatic: {
     disable: true
   }
-});
+};
