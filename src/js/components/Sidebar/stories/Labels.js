@@ -84,4 +84,4 @@ export const Labels = () => (
   </Grommet>
 );
 
-storiesOf('Sidebar', module).add('Labels', () => <Labels />);
+storiesOf('Layout | Sidebar', module).add('Labels', () => <Labels />);

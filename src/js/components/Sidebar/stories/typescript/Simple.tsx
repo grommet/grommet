@@ -57,4 +57,4 @@ export const SidebarIcons = () => (
   </Grommet>
 );
 
-storiesOf('Sidebar', module).add('Icons', () => <SidebarIcons />);
+storiesOf('Layout | Sidebar', module).add('Icons', () => <SidebarIcons />);

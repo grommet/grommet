@@ -144,4 +144,6 @@ export const TooltipsSidebar = () => (
   </Grommet>
 );
 
-storiesOf('Sidebar', module).add('Tooltips', () => <TooltipsSidebar />);
+storiesOf('Layout | Sidebar', module).add('Tooltips', () => (
+  <TooltipsSidebar />
+));
