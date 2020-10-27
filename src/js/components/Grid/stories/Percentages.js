@@ -22,4 +22,4 @@ const Percentages = () => (
   </Grommet>
 );
 
-storiesOf('Grid', module).add('Percentages', () => <Percentages />);
+storiesOf('Layout | Grid', module).add('Percentages', () => <Percentages />);

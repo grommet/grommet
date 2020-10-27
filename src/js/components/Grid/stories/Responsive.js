@@ -189,4 +189,6 @@ const ResponsiveGrid = () => (
   </Grommet>
 );
 
-storiesOf('Grid', module).add('Responsive grid', () => <ResponsiveGrid />);
+storiesOf('Layout | Grid', module).add('Responsive grid', () => (
+  <ResponsiveGrid />
+));

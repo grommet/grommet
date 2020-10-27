@@ -59,4 +59,4 @@ const AppGrid = () => {
   );
 };
 
-storiesOf('Grid', module).add('App', () => <AppGrid />);
+storiesOf('Layout | Grid', module).add('App', () => <AppGrid />);

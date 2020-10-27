@@ -71,4 +71,4 @@ const BorderGrid = () => (
   </Grommet>
 );
 
-storiesOf('Grid', module).add('Border', () => <BorderGrid />);
+storiesOf('Layout | Grid', module).add('Border', () => <BorderGrid />);

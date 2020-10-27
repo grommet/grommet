@@ -23,4 +23,6 @@ const NColumnGrid = () => (
   </Grommet>
 );
 
-storiesOf('Grid', module).add('N-column layout', () => <NColumnGrid />);
+storiesOf('Layout | Grid', module).add('N-column layout', () => (
+  <NColumnGrid />
+));
