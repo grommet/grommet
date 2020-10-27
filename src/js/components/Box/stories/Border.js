@@ -83,4 +83,4 @@ const BorderBox = () => (
   </Grommet>
 );
 
-storiesOf('Box', module).add('Border', () => <BorderBox />);
+storiesOf('Layout | Box', module).add('Border', () => <BorderBox />);

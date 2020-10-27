@@ -82,4 +82,4 @@ const BackgroundBox = () => (
   </Grommet>
 );
 
-storiesOf('Box', module).add('Background', () => <BackgroundBox />);
+storiesOf('Layout | Box', module).add('Background', () => <BackgroundBox />);

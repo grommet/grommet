@@ -47,4 +47,4 @@ const FixedSizesBox = () => (
   </Grommet>
 );
 
-storiesOf('Box', module).add('Fixed sizes', () => <FixedSizesBox />);
+storiesOf('Layout | Box', module).add('Fixed sizes', () => <FixedSizesBox />);

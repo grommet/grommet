@@ -18,4 +18,4 @@ const GradientColorBox = () => (
   </Grommet>
 );
 
-storiesOf('Box', module).add('Gradient', () => <GradientColorBox />);
+storiesOf('Layout | Box', module).add('Gradient', () => <GradientColorBox />);

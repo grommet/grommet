@@ -28,4 +28,4 @@ const ElevationBox = () => (
   </Grommet>
 );
 
-storiesOf('Box', module).add('Elevation', () => <ElevationBox />);
+storiesOf('Layout | Box', module).add('Elevation', () => <ElevationBox />);

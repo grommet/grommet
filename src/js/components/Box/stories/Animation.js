@@ -37,4 +37,4 @@ const Example = () => (
   </Grommet>
 );
 
-storiesOf('Box', module).add('Animation', () => <Example />);
+storiesOf('Layout | Box', module).add('Animation', () => <Example />);

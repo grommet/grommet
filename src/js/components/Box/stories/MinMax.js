@@ -206,4 +206,6 @@ const MinMaxSizesBox = () => (
   </Grommet>
 );
 
-storiesOf('Box', module).add('Min/max sizes', () => <MinMaxSizesBox />);
+storiesOf('Layout | Box', module).add('Min/max sizes', () => (
+  <MinMaxSizesBox />
+));

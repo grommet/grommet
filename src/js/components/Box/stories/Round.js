@@ -57,4 +57,4 @@ const RoundBox = () => (
   </Grommet>
 );
 
-storiesOf('Box', module).add('Round', () => <RoundBox />);
+storiesOf('Layout | Box', module).add('Round', () => <RoundBox />);

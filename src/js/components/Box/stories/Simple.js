@@ -37,4 +37,4 @@ const SimpleBox = () => (
   </Grommet>
 );
 
-storiesOf('Box', module).add('Simple', () => <SimpleBox />);
+storiesOf('Layout | Box', module).add('Simple', () => <SimpleBox />);

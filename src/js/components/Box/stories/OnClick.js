@@ -27,4 +27,4 @@ const OnClickBox = () => (
   </Grommet>
 );
 
-storiesOf('Box', module).add('onClick', () => <OnClickBox />);
+storiesOf('Layout | Box', module).add('onClick', () => <OnClickBox />);

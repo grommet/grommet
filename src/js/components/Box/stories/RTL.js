@@ -30,4 +30,4 @@ const RTLBox = () => (
   </Grommet>
 );
 
-storiesOf('Box', module).add('RTL', () => <RTLBox />);
+storiesOf('Layout | Box', module).add('RTL', () => <RTLBox />);
