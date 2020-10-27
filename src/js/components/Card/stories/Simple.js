@@ -40,4 +40,4 @@ const Example = () => (
   </Grommet>
 );
 
-storiesOf('Card', module).add('Simple', () => <Example />);
+storiesOf('Layout | Card', module).add('Simple', () => <Example />);

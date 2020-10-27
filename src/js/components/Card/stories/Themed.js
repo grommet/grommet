@@ -121,4 +121,4 @@ export const Example = () => (
   </Grommet>
 );
 
-storiesOf('Card', module).add('Themed', () => <Example />);
+storiesOf('Layout | Card', module).add('Themed', () => <Example />);

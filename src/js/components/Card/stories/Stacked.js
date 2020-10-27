@@ -101,4 +101,4 @@ const Example = () => {
   );
 };
 
-storiesOf('Card', module).add('Stacked', () => <Example />);
+storiesOf('Layout | Card', module).add('Stacked', () => <Example />);
