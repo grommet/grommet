@@ -23,6 +23,6 @@ const FillStack = () => (
   </Grommet>
 );
 
-storiesOf('Stack', module)
+storiesOf('Layout | Stack', module)
   .add('Simple', () => <SimpleStack />)
   .add('Fill', () => <FillStack />);
