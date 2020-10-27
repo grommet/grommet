@@ -47,7 +47,7 @@ Object.setPrototypeOf(StyledAnalog.defaultProps, defaultProps);
 const sizeStyle = props => {
   // size is a combination of the size and height properties
   const size = props.size || 'medium';
-  const data = props.theme.clock.digital.text[size];
+  const data = props.theme.clock.digital.text[size] || {};
   return css`
     font-size: ${data.size || props.theme.clock.digital.text.medium.size};
     line-height: ${data.height || props.theme.clock.digital.text.medium.height};
