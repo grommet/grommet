@@ -5221,7 +5221,7 @@ div,svg
   
 **clock.analog.extend**
 
-Any additional style for Clock. Expects \`string | (props) => {}\`.
+Any additional style for the Analog Clock. Expects \`string | (props) => {}\`.
 
 Defaults to
 
@@ -5271,7 +5271,7 @@ Defaults to
 
 **clock.analog.minute.color**
 
-The color of the hour minute. Expects \`string | { dark: string, light: string }\`.
+The color of the minute hand. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
@@ -5349,14 +5349,194 @@ Defaults to
 3px
 \`\`\`
 
+**clock.analog.size.xsmall**
+
+The whole size of the Analog Clock Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+48px
+\`\`\`
+
+**clock.analog.size.small**
+
+The whole size of the Analog Clock Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+72px
+\`\`\`
+
 **clock.analog.size.medium**
 
-The whole size of the Analog clock Expects \`string\`.
+The whole size of the Analog Clock Expects \`string\`.
 
 Defaults to
 
 \`\`\`
 96px
+\`\`\`
+
+**clock.analog.size.large**
+
+The whole size of the Analog Clock Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+144px
+\`\`\`
+
+**clock.analog.size.xlarge**
+
+The whole size of the Analog Clock Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+216px
+\`\`\`
+
+**clock.analog.size.xxlarge**
+
+The whole size of the Analog Clock Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+288px
+\`\`\`
+
+**clock.digital.extend**
+
+Any additional style for the Digital Clock. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**clock.digital.text.xsmall.size**
+
+Defines the font size of the Digital Clock Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+10px
+\`\`\`
+
+**clock.digital.text.xsmall.height**
+
+Defines the line height of the Digital Clock Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+1.5
+\`\`\`
+
+**clock.digital.text.small.size**
+
+Defines the font size of the Digital Clock Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+14px
+\`\`\`
+
+**clock.digital.text.small.height**
+
+Defines the line height of the Digital Clock Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+1.4375
+\`\`\`
+
+**clock.digital.text.medium.size**
+
+Defines the font size of the Digital Clock Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+18px
+\`\`\`
+
+**clock.digital.text.medium.height**
+
+Defines the line height of the Digital Clock Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+1.375
+\`\`\`
+
+**clock.analog.size.large.size**
+
+Defines the font size of the Digital Clock Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+22px
+\`\`\`
+
+**clock.analog.size.large.height**
+
+Defines the line height of the Digital Clock Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+1.3125
+\`\`\`
+
+**clock.analog.size.xlarge.size**
+
+Defines the font size of the Digital Clock Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+26px
+\`\`\`
+
+**clock.analog.size.xlarge.height**
+
+Defines the line height of the Digital Clock Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+1.25
+\`\`\`
+
+**clock.analog.size.xxlarge.size**
+
+Defines the font size of the Digital Clock Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+22px
+\`\`\`
+
+**clock.analog.size.xxlarge.height**
+
+Defines the line height of the Digital Clock Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+1.125
 \`\`\`
 ",
   "Collapsible": "## Collapsible

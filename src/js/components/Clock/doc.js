@@ -56,7 +56,7 @@ export const doc = Clock => {
 
 export const themeDoc = {
   'clock.analog.extend': {
-    description: 'Any additional style for Clock.',
+    description: 'Any additional style for the Analog Clock.',
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
@@ -81,7 +81,7 @@ export const themeDoc = {
     defaultValue: '8px',
   },
   'clock.analog.minute.color': {
-    description: 'The color of the hour minute.',
+    description: 'The color of the minute hand.',
     type: 'string | { dark: string, light: string }',
     defaultValue: '{ dark: light-4, light: dark-3 }',
   },
@@ -120,9 +120,99 @@ export const themeDoc = {
     type: 'string',
     defaultValue: '3px',
   },
+  'clock.analog.size.xsmall': {
+    description: 'The whole size of the Analog Clock',
+    type: 'string',
+    defaultValue: '48px',
+  },
+  'clock.analog.size.small': {
+    description: 'The whole size of the Analog Clock',
+    type: 'string',
+    defaultValue: '72px',
+  },
   'clock.analog.size.medium': {
-    description: 'The whole size of the Analog clock',
+    description: 'The whole size of the Analog Clock',
     type: 'string',
     defaultValue: '96px',
+  },
+  'clock.analog.size.large': {
+    description: 'The whole size of the Analog Clock',
+    type: 'string',
+    defaultValue: '144px',
+  },
+  'clock.analog.size.xlarge': {
+    description: 'The whole size of the Analog Clock',
+    type: 'string',
+    defaultValue: '216px',
+  },
+  'clock.analog.size.xxlarge': {
+    description: 'The whole size of the Analog Clock',
+    type: 'string',
+    defaultValue: '288px',
+  },
+  'clock.digital.extend': {
+    description: 'Any additional style for the Digital Clock.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'clock.digital.text.xsmall.size': {
+    description: 'Defines the font size of the Digital Clock',
+    type: 'string',
+    defaultValue: '10px',
+  },
+  'clock.digital.text.xsmall.height': {
+    description: 'Defines the line height of the Digital Clock',
+    type: 'string',
+    defaultValue: '1.5',
+  },
+  'clock.digital.text.small.size': {
+    description: 'Defines the font size of the Digital Clock',
+    type: 'string',
+    defaultValue: '14px',
+  },
+  'clock.digital.text.small.height': {
+    description: 'Defines the line height of the Digital Clock',
+    type: 'string',
+    defaultValue: '1.4375',
+  },
+  'clock.digital.text.medium.size': {
+    description: 'Defines the font size of the Digital Clock',
+    type: 'string',
+    defaultValue: '18px',
+  },
+  'clock.digital.text.medium.height': {
+    description: 'Defines the line height of the Digital Clock',
+    type: 'string',
+    defaultValue: '1.375',
+  },
+  'clock.analog.size.large.size': {
+    description: 'Defines the font size of the Digital Clock',
+    type: 'string',
+    defaultValue: '22px',
+  },
+  'clock.analog.size.large.height': {
+    description: 'Defines the line height of the Digital Clock',
+    type: 'string',
+    defaultValue: '1.3125',
+  },
+  'clock.analog.size.xlarge.size': {
+    description: 'Defines the font size of the Digital Clock',
+    type: 'string',
+    defaultValue: '26px',
+  },
+  'clock.analog.size.xlarge.height': {
+    description: 'Defines the line height of the Digital Clock',
+    type: 'string',
+    defaultValue: '1.25',
+  },
+  'clock.analog.size.xxlarge.size': {
+    description: 'Defines the font size of the Digital Clock',
+    type: 'string',
+    defaultValue: '22px',
+  },
+  'clock.analog.size.xxlarge.height': {
+    description: 'Defines the line height of the Digital Clock',
+    type: 'string',
+    defaultValue: '1.125',
   },
 };

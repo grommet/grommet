@@ -15,7 +15,14 @@ export interface ClockProps {
   onChange?: (time: string) => void;
   precision?: 'hours' | 'minutes' | 'seconds';
   run?: boolean | 'backward' | 'forward';
-  size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
+  size?:
+    | 'xsmall'
+    | 'small'
+    | 'medium'
+    | 'large'
+    | 'xlarge'
+    | 'xxlarge'
+    | string;
   time?: string;
   type?: 'analog' | 'digital';
 }
