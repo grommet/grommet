@@ -48,4 +48,4 @@ const Responsive = () => (
   </Grommet>
 );
 
-storiesOf('Header', module).add('Responsive', () => <Responsive />);
+storiesOf('Layout | Header', module).add('Responsive', () => <Responsive />);

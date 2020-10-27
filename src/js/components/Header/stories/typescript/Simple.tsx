@@ -19,4 +19,4 @@ const Simple = () => (
   </Grommet>
 );
 
-storiesOf('Header', module).add('Simple', () => <Simple />);
+storiesOf('Layout | Header', module).add('Simple', () => <Simple />);
