@@ -33,8 +33,8 @@ export interface WorldMapProps {
     color?: string | { dark?: string; light?: string };
     name?: string;
     location: number[];
-    onClick?: (...args: any[]) => any;
-    onHover?: (...args: any[]) => any;
+    onClick?: (name: string) => void;
+    onHover?: (active: boolean) => void;
   }[];
 }
 
