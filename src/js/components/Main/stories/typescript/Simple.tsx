@@ -15,4 +15,4 @@ const Simple = () => (
   </Grommet>
 );
 
-storiesOf('Main', module).add('Simple', () => <Simple />);
+storiesOf('Layout | Main', module).add('Simple', () => <Simple />);
