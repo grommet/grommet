@@ -51,16 +51,16 @@ const focusColor = accentColors[0];
 const colors = {
   active: rgba(221, 221, 221, 0.5),
   'background-back': {
-    dark: '#33333308',
-    light: '#EDEDED',
+    light: '#33333308',
+    dark: '#EDEDED',
   },
   'background-front': {
-    dark: '#444444',
-    light: '#FFFFFF',
+    light: '#444444',
+    dark: '#FFFFFF',
   },
   'background-contrast': {
-    dark: '#33333308',
-    light: '#FFFFFF08',
+    light: '#33333310',
+    dark: '#FFFFFF18',
   },
   'active-background': 'background-contrast',
   'active-text': 'text-strong',

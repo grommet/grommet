@@ -46,7 +46,7 @@ exports[`Video Configure Menu Button 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(51,51,51,0.8);
+  background-color: rgba(237,237,237,0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -503,7 +503,7 @@ exports[`Video End event handler 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(51,51,51,0.8);
+  background-color: rgba(237,237,237,0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -948,7 +948,7 @@ exports[`Video Play and Pause event handlers 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(51,51,51,0.8);
+  background-color: rgba(237,237,237,0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -1367,7 +1367,7 @@ exports[`Video Play and Pause event handlers 2`] = `
       class="StyledVideo__StyledVideoControls-w4v8h9-2 hEQzIv"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kVoZgG"
+        class="StyledBox-sc-13pk1d4-0 hHfUs"
       >
         <button
           class="StyledButton-sc-323bzc-0 WEFIC"
@@ -1556,7 +1556,7 @@ exports[`Video autoPlay renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(51,51,51,0.8);
+  background-color: rgba(237,237,237,0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -2441,7 +2441,7 @@ exports[`Video controls over renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(51,51,51,0.8);
+  background-color: rgba(237,237,237,0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -2886,7 +2886,7 @@ exports[`Video duration event handler 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(51,51,51,0.8);
+  background-color: rgba(237,237,237,0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -3331,7 +3331,7 @@ exports[`Video fit  cover renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(51,51,51,0.8);
+  background-color: rgba(237,237,237,0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -3781,7 +3781,7 @@ exports[`Video fit contain renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(51,51,51,0.8);
+  background-color: rgba(237,237,237,0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -4231,7 +4231,7 @@ exports[`Video loop renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(51,51,51,0.8);
+  background-color: rgba(237,237,237,0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -4677,7 +4677,7 @@ exports[`Video mute renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(51,51,51,0.8);
+  background-color: rgba(237,237,237,0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -5122,7 +5122,7 @@ exports[`Video renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(51,51,51,0.8);
+  background-color: rgba(237,237,237,0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -5567,7 +5567,7 @@ exports[`Video timeUpdate event handler 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(51,51,51,0.8);
+  background-color: rgba(237,237,237,0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
