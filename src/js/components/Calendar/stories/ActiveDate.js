@@ -4,9 +4,9 @@ import { storiesOf } from '@storybook/react';
 import { Box, Button, Calendar, Grommet, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const ActiveRangeBound = () => {
+const ActiveDate = () => {
   const [datesD, setDatesD] = useState();
-  const [activeRangeBound, setActiveRangeBound] = useState(undefined);
+  const [activeDate, setActiveDate] = useState(undefined);
 
   const startDateButton = useRef();
   const endDateButton = useRef();
@@ -17,7 +17,7 @@ const ActiveRangeBound = () => {
         <Box direction="row" gap="small">
           <Button
             ref={startDateButton}
-            active={activeRangeBound === 'start'}
+            active={activeDate === 'start'}
             label={
               <Box>
                 <Text>Start Date</Text>
@@ -28,11 +28,11 @@ const ActiveRangeBound = () => {
                 </Text>
               </Box>
             }
-            onClick={() => setActiveRangeBound('start')}
+            onClick={() => setActiveDate('start')}
           />
           <Button
             ref={endDateButton}
-            active={activeRangeBound === 'end'}
+            active={activeDate === 'end'}
             label={
               <Box>
                 <Text>End Date</Text>
@@ -43,15 +43,15 @@ const ActiveRangeBound = () => {
                 </Text>
               </Box>
             }
-            onClick={() => setActiveRangeBound('end')}
+            onClick={() => setActiveDate('end')}
           />
         </Box>
         <Calendar
-          activeRangeBound={activeRangeBound}
+          activeDate={activeDate}
           dates={datesD}
           onSelect={arg => {
             setDatesD(arg);
-            setActiveRangeBound('end');
+            setActiveDate('end');
           }}
           range="bounds"
         />
@@ -60,6 +60,4 @@ const ActiveRangeBound = () => {
   );
 };
 
-storiesOf('Calendar', module).add('ActiveRangeBound', () => (
-  <ActiveRangeBound />
-));
+storiesOf('Calendar', module).add('Active Date', () => <ActiveDate />);
