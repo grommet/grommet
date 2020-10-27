@@ -547,4 +547,15 @@ describe('Menu', () => {
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
+
+  test('menu with children when custom theme has default button', () => {
+    const component = renderer.create(
+      <Grommet theme={defaultButtonTheme}>
+        <Menu items={[{ label: 'Item 1' }, { label: 'Item 2' }]}>
+          {() => <>Test Menu</>}
+        </Menu>
+      </Grommet>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
 });
