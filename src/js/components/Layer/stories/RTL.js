@@ -22,4 +22,4 @@ const RTLLayer = () => (
   </Grommet>
 );
 
-storiesOf('Layer', module).add('RTL', () => <RTLLayer />);
+storiesOf('Layout | Layer', module).add('RTL', () => <RTLLayer />);

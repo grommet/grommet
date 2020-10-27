@@ -70,4 +70,4 @@ const TargetLayer = () => {
   );
 };
 
-storiesOf('Layer', module).add('Target', () => <TargetLayer />);
+storiesOf('Layout | Layer', module).add('Target', () => <TargetLayer />);

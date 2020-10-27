@@ -32,6 +32,6 @@ const FullLayer = () => {
   );
 };
 
-storiesOf('Layer', module).add('Full', () => <FullLayer />, {
+storiesOf('Layout | Layer', module).add('Full', () => <FullLayer />, {
   chromatic: { disable: true },
 });

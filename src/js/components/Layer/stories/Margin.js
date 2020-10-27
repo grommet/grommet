@@ -24,7 +24,7 @@ const MarginLayer = ({ margin, ...rest }) => (
   </Grommet>
 );
 
-storiesOf('Layer', module)
+storiesOf('Layout | Layer', module)
   .add('Margin', () => <MarginLayer full />)
   .add('Margin (center)', () => <MarginLayer margin="large" />)
   .add('Margin top (center)', () => (

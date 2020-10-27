@@ -99,6 +99,6 @@ const ScrollBodyLayer = () => (
     </Layer>
   </Grommet>
 );
-storiesOf('Layer', module).add('Fixed header, scroll body', () => (
+storiesOf('Layout | Layer', module).add('Fixed header, scroll body', () => (
   <ScrollBodyLayer />
 ));

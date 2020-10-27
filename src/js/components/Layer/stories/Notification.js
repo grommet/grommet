@@ -58,4 +58,6 @@ const NotificationLayer = () => {
   );
 };
 
-storiesOf('Layer', module).add('Notification', () => <NotificationLayer />);
+storiesOf('Layout | Layer', module).add('Notification', () => (
+  <NotificationLayer />
+));

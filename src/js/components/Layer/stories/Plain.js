@@ -16,4 +16,4 @@ const PlainLayer = () => (
   </Grommet>
 );
 
-storiesOf('Layer', module).add('Plain', () => <PlainLayer />);
+storiesOf('Layout | Layer', module).add('Plain', () => <PlainLayer />);
