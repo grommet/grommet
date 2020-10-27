@@ -76,7 +76,9 @@ const DataChart = forwardRef(
         return series.slice(1).map(s => ({ property: s.property }));
       }
       if (Array.isArray(chart))
-        return chart.map(c => (typeof c === 'string' ? { property: c } : c));
+        return chart
+          .map(c => (typeof c === 'string' ? { property: c } : c))
+          .filter(({ property }) => property);
       return typeof chart === 'string' ? [{ property: chart }] : [chart];
     }, [chart, series]);
 
