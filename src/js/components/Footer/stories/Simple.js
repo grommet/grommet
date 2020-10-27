@@ -19,4 +19,4 @@ const Simple = () => (
   </Grommet>
 );
 
-storiesOf('Footer', module).add('Simple', () => <Simple />);
+storiesOf('Layout | Footer', module).add('Simple', () => <Simple />);

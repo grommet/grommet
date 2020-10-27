@@ -54,4 +54,4 @@ const Sitemap = () => {
   );
 };
 
-storiesOf('Footer', module).add('Sitemap', () => <Sitemap />);
+storiesOf('Layout | Footer', module).add('Sitemap', () => <Sitemap />);

@@ -53,4 +53,4 @@ const Social = () => (
   </Grommet>
 );
 
-storiesOf('Footer', module).add('Social', () => <Social />);
+storiesOf('Layout | Footer', module).add('Social', () => <Social />);
