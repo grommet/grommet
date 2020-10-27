@@ -21,8 +21,8 @@ export interface WorldMapProps {
       | 'Europe'
       | 'North America'
       | 'South America';
-    onClick?: (...args: any[]) => any;
-    onHover?: (...args: any[]) => any;
+    onClick?: (name: string) => void;
+    onHover?: (hovered: boolean) => void;
   }[];
   fill?: FillType;
   gridArea?: GridAreaType;
@@ -34,7 +34,7 @@ export interface WorldMapProps {
     name?: string;
     location: number[];
     onClick?: (name: string) => void;
-    onHover?: (active: boolean) => void;
+    onHover?: (hovered: boolean) => void;
   }[];
 }
 
