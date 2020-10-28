@@ -542,9 +542,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       header: {},
       body: {},
-      footer: {
-        background: 'background-contrast',
-      },
+      footer: {},
     },
     carousel: {
       icons: {
