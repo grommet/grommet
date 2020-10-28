@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import isChromatic from 'chromatic/isChromatic';
 
 import {
   Bookmark,
@@ -250,4 +248,4 @@ const RichAccordion = () => {
   );
 };
 
-storiesOf('Accordion', module).add('Rich', () => <RichAccordion />);
+export const Rich = () => <RichAccordion />;

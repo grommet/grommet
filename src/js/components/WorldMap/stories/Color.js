@@ -14,4 +14,6 @@ const Example = () => {
   );
 };
 
-storiesOf('WorldMap', module).add('Color', () => <Example />);
+storiesOf('WorldMap', module).add('Color', () => <Example />, {
+  chromatic: { disable: true },
+});
