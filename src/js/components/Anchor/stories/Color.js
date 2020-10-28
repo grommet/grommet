@@ -1,12 +1,11 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Add } from 'grommet-icons';
 
 import { Anchor, Box, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Colors = () => {
+const ColorAnchor = () => {
   return (
     <Grommet theme={grommet}>
       <Box pad="medium" gap="medium">
@@ -24,4 +23,4 @@ const Colors = () => {
   );
 };
 
-storiesOf('Anchor', module).add('Colors', () => <Colors />);
+export const Color = () => <ColorAnchor />;
