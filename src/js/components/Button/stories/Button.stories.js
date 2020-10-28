@@ -8,6 +8,8 @@ export { Multiple } from './Multiple'
 export { RouteButton } from './RoutedButton'
 export { Sizes } from './Sizes'
 export { Active, Plain } from './Plain'
+export { Children } from './typescript/Children.tsx'
+export { TSCustom } from './typescript/Custom.tsx'
 
 export default {
   title: 'Controls/Button',
