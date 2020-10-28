@@ -27,8 +27,6 @@ const customTheme = {
     header: {
       extend: ({ column, sort, sortable }) => {
         return `
-          font-weight: bold;
-          background-color: #F0F0F0;
           ${sortable &&
             sort &&
             sort.property !== column &&
