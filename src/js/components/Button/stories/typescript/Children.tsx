@@ -30,4 +30,4 @@ const Example = () => {
   );
 };
 
-storiesOf('Button', module).add('Children', () => <Example />);
+storiesOf('Controls/Button', module).add('Children', () => <Example />);

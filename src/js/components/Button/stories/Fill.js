@@ -1,9 +1,8 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { grommet, Box, Button, Grommet } from 'grommet';
 
-const FillButtons = props => (
+export const Fill = props => (
   <Grommet theme={grommet}>
     <Box pad="medium" justify="center" direction="row">
       <Box justify="center" align="center" pad="medium" gap="medium">
@@ -81,5 +80,3 @@ const FillButtons = props => (
     </Box>
   </Grommet>
 );
-
-storiesOf('Button', module).add('Fill', () => <FillButtons />);

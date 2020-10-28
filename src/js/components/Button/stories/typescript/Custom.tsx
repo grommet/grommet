@@ -69,4 +69,4 @@ const CustomTheme = () => (
   </>
 );
 
-storiesOf('Button', module).add('TS-Custom', () => <CustomTheme />);
+storiesOf('Controls/Button', module).add('TS-Custom', () => <CustomTheme />);

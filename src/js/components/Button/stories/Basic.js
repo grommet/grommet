@@ -1,9 +1,8 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { grommet, Box, Button, Grommet } from 'grommet';
 
-const BasicButtons = props => (
+export const Basic = props => (
   <Grommet theme={grommet}>
     <Box align="center" pad="medium">
       <Button label="Default" onClick={() => {}} {...props} />
@@ -28,5 +27,3 @@ const BasicButtons = props => (
     </Box>
   </Grommet>
 );
-
-storiesOf('Button', module).add('Basic', () => <BasicButtons />);
