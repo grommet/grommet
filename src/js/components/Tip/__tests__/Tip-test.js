@@ -64,6 +64,21 @@ describe('Tip', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('plain', async () => {
+    const { getByText } = render(
+      <Grommet>
+        <Tip plain content="tooltip">
+          Example
+        </Tip>
+      </Grommet>,
+    );
+
+    // Styles of plain are captured in snapshots only when applying mouseOver
+    fireEvent.mouseOver(getByText('Example'));
+    const tooltip = await waitForElement(() => screen.getByText('tooltip'));
+    expect(tooltip.parentNode.parentNode).toMatchSnapshot();
+  });
+
   test(`dropProps should pass props to Drop`, async () => {
     const { getByText } = render(
       <Grommet>
@@ -122,20 +137,5 @@ describe('Tip', () => {
     }).toThrow(
       `React.Children.only expected to receive a single React element child.`,
     );
-  });
-
-  test('plain', async () => {
-    const { getByText } = render(
-      <Grommet>
-        <Tip plain content="tooltip">
-          Example
-        </Tip>
-      </Grommet>,
-    );
-
-    // Styles of plain are captured in snapshots only when applying mouseOver
-    fireEvent.mouseOver(getByText('Example'));
-    const tooltip = await waitForElement(() => screen.getByText('tooltip'));
-    expect(tooltip.parentNode.parentNode).toMatchSnapshot();
   });
 });

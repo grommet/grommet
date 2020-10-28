@@ -7352,15 +7352,18 @@ number",
       },
       Object {
         "defaultValue": Object {
-          "align": Object {
-            "top": "bottom",
-          },
           "plain": true,
           "trapFocus": false,
         },
         "description": "Any valid Drop prop to style the Tip drop container.",
         "format": "object",
         "name": "dropProps",
+      },
+      Object {
+        "defaultValue": undefined,
+        "description": "Whether content should have default styling.",
+        "format": "boolean",
+        "name": "plain",
       },
     ],
     "usage": "import { Tip } from 'grommet';

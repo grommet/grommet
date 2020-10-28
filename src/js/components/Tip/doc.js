@@ -25,7 +25,7 @@ export const doc = Tip => {
       }),
     plain: PropTypes.bool
       .description(`Whether content should have default styling.`)
-      .defaultValue(false),
+      .defaultValue(undefined),
   };
 
   return DocumentedTip;
