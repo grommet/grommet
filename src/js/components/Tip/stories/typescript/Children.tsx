@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { grommet, Box, Button, Grommet, Text } from 'grommet';
 import { Tip } from '../../Tip';
@@ -19,14 +18,16 @@ const Example = () => {
           String Child
         </Tip>
         <Tip
+          plain
           dropProps={{ align: { right: 'left' } }}
           content={
             <Box
+              animation="slideLeft"
+              align="center"
               background="light-4"
               round={{ size: 'medium', corner: 'left' }}
-              align="center"
-              margin="medium"
               pad="small"
+              margin="small"
             >
               <Text color="brand">Tooltip</Text>
             </Box>
@@ -37,26 +38,26 @@ const Example = () => {
           </Box>
         </Tip>
         <Tip
+          plain
           dropProps={{ align: { left: 'right' } }}
           content={
             <Box
-              background="accent-1"
-              round="medium"
               align="center"
+              background="accent-1" 
               margin="medium"
-              pad="small"
+              pad="xsmall"
+              round="medium"
             >
               <Text color="brand">Tooltip</Text>
             </Box>
           }
         >
-          <Button label=" Button Child" />
+          <Button label="Button Child" />
         </Tip>
       </Box>
     </Grommet>
   );
 };
 
-storiesOf('Tip', module).add('Children', () => <Example />, {
-  chromatic: { disable: true },
-});
+export const Children = () => <Example />
+Children.parameters = {  chromatic: { disable: true }};

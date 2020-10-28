@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
   grommet,
@@ -19,13 +18,7 @@ import { Trash, Refresh, Info } from 'grommet-icons';
 import { storageColumns, storageData } from '../../DataTable/stories/data';
 
 const TipContent = ({ message, icon }) => (
-  <Box
-    background="dark-3"
-    round="xsmall"
-    pad="xsmall"
-    direction="row"
-    gap="small"
-  >
+  <Box direction="row" gap="small">
     {icon && <Info color="accent-4" />}
     <Text color="accent-1">{message}</Text>
   </Box>
@@ -105,6 +98,5 @@ const Example = () => {
   );
 };
 
-storiesOf('Tip', module).add('Header actions', () => <Example />, {
-  chromatic: { disable: true },
-});
+export const HeaderActions = () => <Example />;
+HeaderActions.parameters = { chromatic: { disable: true } };

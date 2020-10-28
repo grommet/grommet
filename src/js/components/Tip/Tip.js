@@ -11,7 +11,7 @@ import { Box } from '../Box';
 import { Drop } from '../Drop';
 import { useForwardedRef } from '../../utils/refs';
 
-const Tip = forwardRef(({ children, content, dropProps }, tipRef) => {
+const Tip = forwardRef(({ children, content, dropProps, plain }, tipRef) => {
   const theme = useContext(ThemeContext);
   const [over, setOver] = useState(false);
 
@@ -26,7 +26,7 @@ const Tip = forwardRef(({ children, content, dropProps }, tipRef) => {
 
   /* Three major use case 
     1. Tip has a single child + it is a React Element => Great!
-    2. Tip has a single child +  not React Element => span to wrap the child.
+    2. Tip has a single child +  not React Element => span will wrap the child.
     3. Tip has more than one child => Abort, display Children.only error 
   */
   const child =
@@ -62,7 +62,6 @@ const Tip = forwardRef(({ children, content, dropProps }, tipRef) => {
     clonedChild,
     over && (
       <Drop
-        align={{ top: 'bottom' }} // most common use case is Header with Buttons
         target={componentRef.current}
         trapFocus={false}
         key="tip-drop"
@@ -70,7 +69,7 @@ const Tip = forwardRef(({ children, content, dropProps }, tipRef) => {
         {...theme.tip.drop}
         {...dropProps}
       >
-        <Box {...theme.tip.content}>{content}</Box>
+        {plain ? content : <Box {...theme.tip.content}>{content}</Box>}
       </Drop>
     ),
   ];

@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { grommet, Box, Button, Grommet } from 'grommet';
 import { UserFemale, Info } from 'grommet-icons';
@@ -25,6 +24,7 @@ const Example = () => {
         gap="medium"
       >
         <Tip
+          plain
           dropProps={{ align: { left: 'right' } }}
           content={
             <Box align="start" margin={{ bottom: 'xlarge' }} pad="xsmall">
@@ -38,12 +38,11 @@ const Example = () => {
         >
           <Button icon={<UserFemale color="accent-1" size="large" />} />
         </Tip>
-        Animated Tooltip when hovering the lady
+        Double animation of FadeIn and Pulse
       </Box>
     </Grommet>
   );
 };
 
-storiesOf('Tip', module).add('Animated', () => <Example />, {
-  chromatic: { disable: true },
-});
+export const Animated = () => <Example />
+Animated.parameters = {  chromatic: { disable: true }};

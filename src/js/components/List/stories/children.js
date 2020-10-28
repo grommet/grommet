@@ -3,9 +3,14 @@ import { storiesOf } from '@storybook/react';
 
 import { Gremlin } from 'grommet-icons';
 
-import { Box, Grommet, grommet, List, Text } from 'grommet';
+import { Box, Grommet, grommet, List, Text, Tip } from 'grommet';
 
-export const data = ['Boise', 'Fort Collins', 'Bay Area', 'North Carolina'];
+export const data = [
+  { city: 'Boise', state: 'Idaho' },
+  { city: 'Fort Collins', state: 'Colorado' },
+  { city: 'Bay Area', state: 'California' },
+  { city: 'San Diego', state: 'California' },
+];
 
 export const ChildrenExample = () => (
   <Grommet theme={grommet}>
@@ -20,7 +25,9 @@ export const ChildrenExample = () => (
             align="center"
           >
             <Gremlin size="large" />
-            <Text weight="bold">{datum}</Text>
+            <Tip content={datum.state} dropProps={{ align: { left: 'right' } }}>
+              <Text weight="bold">{datum.city}</Text>
+            </Tip>
           </Box>
         )}
       </List>

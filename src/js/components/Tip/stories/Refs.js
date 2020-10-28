@@ -1,6 +1,15 @@
 import React from 'react';
 
-import { grommet, Box, Button, Grommet, Heading, Text, Tip } from 'grommet';
+import {
+  grommet,
+  Box,
+  Button,
+  CheckBox,
+  Grommet,
+  Heading,
+  Text,
+  Tip,
+} from 'grommet';
 import { Trash } from 'grommet-icons';
 
 const TipContent = ({ message }) => (
@@ -25,12 +34,12 @@ const Example = () => {
         <Heading textAlign="center" level="1" size="xsmall">
           Tooltip is styled with a Caret
         </Heading>
-        <Box>
+        <Box gap="medium">
+          <CheckBox toggle label="toggle position" />
           <Box fill direction="row" justify="between">
             <Tip
               dropProps={{ align: { left: 'right' } }}
               content={<TipContent message="Designed with an SVG of Caret" />}
-              plain
             >
               <Button icon={<Trash />} plain={false} />
             </Tip>
@@ -41,5 +50,5 @@ const Example = () => {
   );
 };
 
-export const Caret = () => <Example />;
-Caret.parameters = { chromatic: { disable: true } };
+export const Refs = () => <Example />;
+Refs.parameters = { chromatic: { disable: true } };

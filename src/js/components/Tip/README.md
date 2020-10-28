@@ -24,15 +24,20 @@ node
 **dropProps**
 
 Any valid Drop prop to style the Tip drop container. Defaults to `{
-  "align": {
-    "top": "bottom"
-  },
   "plain": true,
   "trapFocus": false
 }`.
 
 ```
 object
+```
+
+**plain**
+
+Whether content should have default styling.
+
+```
+boolean
 ```
   
 ## Theme
@@ -54,5 +59,5 @@ Any valid Drop property for the Tooltip. Expects `object`.
 Defaults to
 
 ```
-undefined
+{align: { top: 'bottom' }}
 ```

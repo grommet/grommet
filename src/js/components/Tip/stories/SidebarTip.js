@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
   Avatar,
@@ -86,7 +85,10 @@ const SidebarButton = ({ iconName, index }) => {
 
   return (
     <Box fill="horizontal">
-      <Tip content={<Box>{iconName}</Box>}>
+      <Tip
+        content={<Box>{iconName}</Box>}
+        dropProps={{ align: { left: 'right' } }}
+      >
         <Button hoverIndicator={hoverColor} plain>
           {({ hover }) => (
             <Box pad={{ vertical: 'small' }} align="center">
@@ -101,7 +103,7 @@ const SidebarButton = ({ iconName, index }) => {
 
 export const Example = () => (
   <Grommet theme={customTheme} full>
-    <Box align="start" height={{ min: '100%' }}>
+    <Box direction="row" height={{ min: '100%' }}>
       <Sidebar
         background="brand"
         header={<SidebarHeader />}
@@ -123,4 +125,4 @@ export const Example = () => (
   </Grommet>
 );
 
-storiesOf('Sidebar', module).add('Tooltips', () => <Example />);
+export const SidebarTip = () => <Example />;

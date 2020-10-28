@@ -20,10 +20,12 @@ export const doc = Tip => {
     dropProps: PropTypes.object
       .description('Any valid Drop prop to style the Tip drop container.')
       .defaultValue({
-        align: { top: 'bottom' },
         plain: true,
         trapFocus: false,
       }),
+    plain: PropTypes.bool
+      .description(`Whether content should have default styling.`)
+      .defaultValue(false),
   };
 
   return DocumentedTip;
@@ -38,6 +40,6 @@ export const themeDoc = {
   'tip.drop': {
     description: 'Any valid Drop property for the Tooltip.',
     type: 'object',
-    defaultValue: undefined,
+    defaultValue: "{align: { top: 'bottom' }}",
   },
 };
