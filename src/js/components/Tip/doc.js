@@ -36,7 +36,8 @@ export const themeDoc = {
     description: 'Any valid Box property for the Tip container.',
     type: 'object',
     defaultValue: `{ background: 'background-contrast', elevation: 'small', 
-    margin: 'xsmall', pad: 'xsmall', round: 'small'}`,
+    margin: 'xsmall', pad: { vertical: 'xsmall', horizontal: 'small' }, 
+    round: 'small'}`,
   },
   'tip.drop': {
     description: 'Any valid Drop property for the Tooltip.',

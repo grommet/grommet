@@ -50,7 +50,8 @@ Defaults to
 
 ```
 { background: 'background-contrast', elevation: 'small', 
-    margin: 'xsmall', pad: 'xsmall', round: 'small'}
+    margin: 'xsmall', pad: { vertical: 'xsmall', horizontal: 'small' }, 
+    round: 'small'}
 ```
 
 **tip.drop**

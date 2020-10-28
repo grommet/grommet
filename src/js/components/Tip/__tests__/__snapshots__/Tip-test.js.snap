@@ -31,7 +31,10 @@ exports[`Tip dropProps should pass props to Drop 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 6px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
   border-radius: 12px;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
@@ -68,7 +71,15 @@ exports[`Tip dropProps should pass props to Drop 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding: 3px;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-top: 3px;
+    padding-bottom: 3px;
   }
 }
 
@@ -177,6 +188,10 @@ exports[`Tip focus and blur events on the Tip's child 1`] = `
 
 }
 
+@media only screen and (max-width:768px) {
+
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
 
 }
@@ -236,7 +251,10 @@ exports[`Tip mouseOver and mouseOut events on the Tip's child 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 6px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
   border-radius: 12px;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
@@ -285,7 +303,15 @@ exports[`Tip mouseOver and mouseOut events on the Tip's child 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding: 3px;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-top: 3px;
+    padding-bottom: 3px;
   }
 }
 
