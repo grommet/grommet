@@ -133,6 +133,11 @@ Object.setPrototypeOf(StyledDataTableFooter.defaultProps, defaultProps);
 
 const StyledDataTableCell = styled(TableCell)`
   ${props =>
+    props.context === 'header' &&
+    props.theme.dataTable &&
+    props.theme.dataTable.header &&
+    props.theme.dataTable.header.extend};
+  ${props =>
     props.pin &&
     props.pin.length > 0 &&
     `
