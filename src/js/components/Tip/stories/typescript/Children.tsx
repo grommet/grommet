@@ -47,6 +47,7 @@ const Example = () => {
               margin="medium"
               pad="xsmall"
               round="medium"
+              flex={false}
             >
               <Text color="brand">Tooltip</Text>
             </Box>

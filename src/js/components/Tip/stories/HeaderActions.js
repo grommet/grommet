@@ -36,13 +36,18 @@ const Example = () => {
 
   return (
     <Grommet full theme={grommet}>
-      <Box align="center" justify="center" background="dark-1" fill gap="large">
+      <Box
+        align="center"
+        background="dark-1"
+        gap="large"
+        height={{ min: '100%' }}
+      >
         <Paragraph textAlign="center">
           <b>Follow</b> the Tips of the Trash & Reload icons for directions.
           Those Tooltips <b>change</b> according to the actions the user perform
           on the table. The Table meters are also using the Tip component.
         </Paragraph>
-        <Box>
+        <Box gap="small">
           <Box fill direction="row" justify="between" align="center">
             <Heading level={2}> Storage Pools with tooltips</Heading>
             <Box gap="small" direction="row">
