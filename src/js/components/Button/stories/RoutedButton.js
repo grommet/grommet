@@ -1,6 +1,11 @@
 import React from 'react';
 
-import { Box, Grommet, RoutedButton as GrommetRoutedButton, Text } from 'grommet';
+import {
+  Box,
+  Grommet,
+  RoutedButton as GrommetRoutedButton,
+  Text,
+} from 'grommet';
 import { grommet } from 'grommet/themes';
 
 export const RoutedButton = () => (
