@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Button, Drop, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -68,6 +67,7 @@ const ProgressiveDrop = () => {
   );
 };
 
-storiesOf('Drop', module).add('Progressive', () => <ProgressiveDrop />, {
+export const Progressive = () => <ProgressiveDrop />;
+Progressive.parameters = {
   chromatic: { disable: true },
-});
+};
