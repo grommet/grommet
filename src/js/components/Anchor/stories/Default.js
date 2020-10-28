@@ -14,3 +14,6 @@ const DefaultAnchor = () => {
 };
 
 export const Default = () => <DefaultAnchor />;
+Default.parameters = {
+  chromatic: { disable: true },
+};
