@@ -225,32 +225,6 @@ exports[`Card all 1`] = `
   flex: 1 1;
 }
 
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background: #FFFFFF08;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -284,7 +258,7 @@ exports[`Card all 1`] = `
       body
     </div>
     <footer
-      className="c4"
+      className="c2"
     >
       footer
     </footer>
@@ -393,7 +367,6 @@ exports[`Card footer 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #FFFFFF08;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
