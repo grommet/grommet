@@ -688,28 +688,24 @@ export interface ThemeType {
     dragOver?: {
       background?: BackgroundType;
       border?: BorderType;
+      extend?: ExtendType;
       pad?: PadType;
     };
     extend?: ExtendType;
     hover?: {
       background?: BackgroundType;
       border?: BorderType;
+      extend?: ExtendType;
       pad?: PadType;
     };
     icons?: {
       remove?: any;
     };
-    label?: {
-      extend?: ExtendType;
-      margin?: MarginType;
-      weight?: number | string;
-    };
-    message?: {
-      extend?: ExtendType;
-      margin?: MarginType;
-      weight?: number | string;
-    };
+    label?: TextProps & { extend?: ExtendType };
+    margin?: MarginType;
+    message?: TextProps & { extend?: ExtendType };
     pad?: PadType;
+    round?: RoundType;
   };
   formField?: {
     border?: BorderType;
