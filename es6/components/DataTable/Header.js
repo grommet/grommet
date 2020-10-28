@@ -165,8 +165,11 @@ var Header = function Header(_ref2) {
 
       content = /*#__PURE__*/React.createElement(StyledHeaderCellButton, {
         plain: true,
+        column: property,
         fill: "vertical",
-        onClick: onSort(property)
+        onClick: onSort(property),
+        sort: sort,
+        sortable: true
       }, /*#__PURE__*/React.createElement(Box, {
         direction: "row",
         align: "center",
