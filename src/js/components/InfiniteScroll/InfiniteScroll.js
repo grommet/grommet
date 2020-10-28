@@ -295,6 +295,13 @@ const InfiniteScroll = ({
       const renderedMarker = renderMarker(marker);
       marker = React.cloneElement(renderedMarker, {
         key: 'below',
+        // We need to make sure our belowMarkerRef is tied to a component
+        // that has the same parent as the items being rendered. This is so
+        // we can use belowMarkerRef.current.parentNode.children to
+        // get a reference to the items in the DOM for calculating pageHeights.
+        //
+        // Since the caller might have included a ref in what their
+        // renderMarker returns, we have to take care of both refs.
         // https://github.com/facebook/react/issues/8873#issuecomment-489579878
         ref: node => {
           // Keep your own reference
