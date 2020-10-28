@@ -49,7 +49,8 @@ Any valid Box property for the Tip container. Expects `object`.
 Defaults to
 
 ```
-undefined
+{ background: 'background-contrast', elevation: 'small', 
+    margin: 'xsmall', pad: 'xsmall', round: 'small'}
 ```
 
 **tip.drop**
