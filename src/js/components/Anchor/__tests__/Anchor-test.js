@@ -97,13 +97,27 @@ describe('Anchor', () => {
   });
 
   test('focus renders', () => {
+    const onFocus = jest.fn();
     const { container, getByText } = render(
       <Grommet>
-        <Anchor href="#" label="Test" />
+        <Anchor href="#" label="Test" onFocus={onFocus} />
       </Grommet>,
     );
     fireEvent.focus(getByText('Test'));
     expect(container.firstChild).toMatchSnapshot();
+    expect(onFocus).toHaveBeenCalledTimes(1);
+  });
+
+  test('blur renders', () => {
+    const onBlur = jest.fn();
+    const { container, getByText } = render(
+      <Grommet>
+        <Anchor href="#" label="Test" onBlur={onBlur} />
+      </Grommet>,
+    );
+    fireEvent.blur(getByText('Test'));
+    expect(container.firstChild).toMatchSnapshot();
+    expect(onBlur).toHaveBeenCalledTimes(1);
   });
 
   test('disabled renders', () => {
@@ -136,6 +150,21 @@ describe('Anchor', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  test('size renders', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Anchor size="xsmall" />
+        <Anchor size="small" />
+        <Anchor size="medium" />
+        <Anchor size="large" />
+        <Anchor size="xlarge" />
+        <Anchor size="xxlarge" />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('is clickable', () => {
     const onClick = jest.fn();
     const component = renderer.create(
@@ -154,6 +183,18 @@ describe('Anchor', () => {
     const component = renderer.create(
       <Grommet>
         <Anchor href="#" label="Test" as="span" />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('weight renders', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Anchor href="#" label="Normal" weight="normal" />
+        <Anchor href="#" label="Bold" weight="bold" />
+        <Anchor href="#" label="Bold" weight={500} />
       </Grommet>,
     );
     const tree = component.toJSON();

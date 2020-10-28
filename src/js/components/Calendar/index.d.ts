@@ -27,7 +27,7 @@ export interface CalendarProps {
   onSelect?: (select: string | string[]) => any;
   range?: boolean;
   reference?: string;
-  showAdjacentDays?: boolean;
+  showAdjacentDays?: boolean | 'trim';
   size?: 'small' | 'medium' | 'large' | string;
 }
 

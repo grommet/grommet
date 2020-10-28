@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
   Accordion,
@@ -56,4 +55,4 @@ const CustomHeaderAccordion = () => {
   );
 };
 
-storiesOf('Accordion', module).add('Header', () => <CustomHeaderAccordion />);
+export const Header = () => <CustomHeaderAccordion />;

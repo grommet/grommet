@@ -78,10 +78,7 @@ export const doc = Text => {
       PropTypes.string,
     ])
       .description(
-        `The font size and line height are primarily driven by the chosen tag. 
-But, it can be adjusted via this size property. The tag should be set for 
-semantic correctness and accessibility. This size property allows for stylistic
-adjustments.`,
+        `The font size and line space height of the text.`,
       )
       .defaultValue('medium'),
     tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description(
@@ -129,6 +126,11 @@ export const themeDoc = {
     description: 'The text color used for Text.',
     type: 'object | { dark: string, light: string }',
     defaultValue: "{ dark: '#f8f8f8', light: '#444444' }",
+  },
+  'text.font.family': {
+    description: 'The font family to use for Text.',
+    type: 'string',
+    defaultValue: undefined,
   },
   text: {
     description: `The possible sizes of the text in terms of its font-size and 

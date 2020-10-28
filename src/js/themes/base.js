@@ -60,8 +60,8 @@ const colors = {
     light: '#FFFFFF',
   },
   'background-contrast': {
-    dark: '#33333308',
-    light: '#FFFFFF08',
+    light: '#33333310',
+    dark: '#FFFFFF18',
   },
   'active-background': 'background-contrast',
   'active-text': 'text-strong',
@@ -368,6 +368,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         xlarge: `${baseSpacing * 4}px`,
       },
       text: {
+        size: {
+          xsmall: 'small',
+          small: 'medium',
+          medium: 'large',
+          large: 'xlarge',
+          xlarge: 'xxlarge',
+        },
         // fontWeight: undefined,
         // extend: undefined
       },
@@ -536,9 +543,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       header: {},
       body: {},
-      footer: {
-        background: 'background-contrast',
-      },
+      footer: {},
     },
     carousel: {
       icons: {
@@ -669,6 +674,20 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // body: {
       //   extend: undefined,
       // },
+      // pinned: {
+      //   body: {
+      //      background: undefined,
+      //      extend: undefined,
+      //   },
+      //   header: {
+      //      background: undefined,
+      //      extend: undefined,
+      //   },
+      //   footer: {
+      //      background: undefined,
+      //      extend: undefined,
+      //   },
+      // },
       groupHeader: {
         background: {
           dark: 'dark-2',
@@ -680,7 +699,19 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       groupEnd: {
         border: { side: 'bottom', size: 'xsmall' },
       },
-      header: {},
+      header: {
+        // background: undefined,
+        // border: undefined,
+        // font: {
+        //   weight: undefined,
+        //   size: undefined,
+        // },
+        gap: 'small',
+        // hover: {
+        //   background: undefined,
+        // },
+        // pad: undefined,
+      },
       icons: {
         ascending: FormDown,
         contract: FormUp,
@@ -696,6 +727,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'border',
           side: 'end',
         },
+        // hover: {
+        //   border: {
+        //     color: undefined,
+        //     side: undefined,
+        //     size: undefined,
+        //   },
+        // },
       },
     },
     diagram: {
@@ -919,6 +957,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
     },
     paragraph: {
+      font: {
+        // family: undefined
+      },
       small: { ...fontSizing(-1) },
       medium: { ...fontSizing(0) },
       large: { ...fontSizing(1) },
@@ -964,6 +1005,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       size: `${baseSpacing}px`,
       font: {
         // weight: undefined,
+      },
+      container: {
+        // extend: undefined
       },
     },
     radioButtonGroup: {
@@ -1140,6 +1184,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     text: {
+      font: {
+        // family: undefined
+      },
       xsmall: { ...fontSizing(-1.5) },
       small: { ...fontSizing(-1) },
       medium: { ...fontSizing(0) }, // 18px

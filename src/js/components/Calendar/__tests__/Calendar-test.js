@@ -13,7 +13,7 @@ import { Box, Button, Calendar, Grommet, Text } from '../..';
 const DATE = '2020-01-15T00:00:00-08:00';
 const DATES = [
   '2020-01-12T00:00:00-08:00',
-  ['2020-01-8T00:00:00-08:00', '2020-01-10T00:00:00-08:00'],
+  ['2020-01-08T00:00:00-08:00', '2020-01-10T00:00:00-08:00'],
 ];
 
 describe('Calendar', () => {
@@ -118,6 +118,18 @@ describe('Calendar', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  test('showAdjacentDays', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Calendar date={DATE} animate={false} />
+        <Calendar date={DATE} animate={false} showAdjacentDays={false} />
+        <Calendar date={DATE} animate={false} showAdjacentDays="trim" />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('header', () => {
     const component = renderer.create(
       <Grommet>
@@ -166,7 +178,7 @@ describe('Calendar', () => {
   test('children', () => {
     const component = renderer.create(
       <Grommet>
-        <Calendar fill animate={false}>
+        <Calendar date={DATE} fill animate={false}>
           {({ day }) => <Box>{day}</Box>}
         </Calendar>
       </Grommet>,

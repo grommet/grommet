@@ -20,4 +20,6 @@ const Example = () => {
   );
 };
 
-storiesOf('WorldMap', module).add('Select place', () => <Example />);
+storiesOf('WorldMap', module).add('Select place', () => <Example />, {
+  chromatic: { disable: true },
+});

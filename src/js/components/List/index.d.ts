@@ -70,8 +70,8 @@ export interface ListProps {
     | ((event: React.MouseEvent) => void)
     | ((event: { item?: {}; index?: number }) => void);
   pad?: PadType;
-  primaryKey?: string | ((...args: any[]) => any);
-  secondaryKey?: string | ((...args: any[]) => any);
+  primaryKey?: string | ((item: any) => React.ReactElement);
+  secondaryKey?: string | ((item: any) => React.ReactElement);
   step?: number;
   action?: (item: any, index: number) => void;
 }

@@ -145,12 +145,16 @@ export type BorderType =
   | BoxSideType
   | {
       color?: ColorType;
+      error?: { color?: ColorType };
+      position?: string;
       side?: BoxSideType;
       size?: BoxSizeType;
       style?: BoxStyleType;
     }
   | {
       color?: ColorType;
+      error?: { color?: ColorType };
+      position?: string;
       side?: BoxSideType;
       size?: BoxSizeType;
       style?: BoxStyleType;

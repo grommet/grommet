@@ -473,6 +473,15 @@ xlarge
 string
 \`\`\`
 
+**as**
+
+The DOM tag or react component to use for the element.
+
+\`\`\`
+string
+function
+\`\`\`
+
 **color**
 
 Label color and icon color, if not specified on the icon.
@@ -551,13 +560,14 @@ xxlarge
 string
 \`\`\`
 
-**as**
+**weight**
 
-The DOM tag or react component to use for the element.
+Sets font-weight property for anchor.
 
 \`\`\`
-string
-function
+normal
+bold
+number
 \`\`\`
   
 ## Intrinsic element
@@ -589,7 +599,7 @@ Defaults to
 
 **anchor.textDecoration**
 
-The text decoration of the label. 
+The text decoration of the label.
 Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
 for possible values. Expects \`string\`.
 
@@ -611,7 +621,7 @@ undefined
 
 **anchor.hover.textDecoration**
 
-The text decoration of the label when hovering. 
+The text decoration of the label when hovering.
 Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
 for possible values. Expects \`string\`.
 
@@ -852,6 +862,56 @@ Defaults to
 
 \`\`\`
 undefined
+\`\`\`
+
+**avatar.text.size.xsmall**
+
+The size of the text that is mapped according to 'avatar.size.xsmall'. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+small
+\`\`\`
+
+**avatar.text.size.small**
+
+The size of the text that is mapped according to 'avatar.size.small'. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+medium
+\`\`\`
+
+**avatar.text.size.medium**
+
+The size of the text that is mapped according to 'avatar.size.medium'. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+large
+\`\`\`
+
+**avatar.text.size.large**
+
+The size of the text that is mapped according to 'avatar.size.large'. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+xlarge
+\`\`\`
+
+**avatar.text.size.xlarge**
+
+The size of the text that is mapped according to 'avatar.size.xlarge'. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+xxlarge
 \`\`\`
 ",
   "Box": "## Box
@@ -1595,6 +1655,15 @@ xlarge
 xxlarge
 string
 {
+  width: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    xxlarge
+    string,
   min: 
     xxsmall
     xsmall
@@ -1851,8 +1920,8 @@ Defaults to
 A button.
 
 You can provide a single function child that will be called with
-      'hover' and 'focus' keys. This allows you to customize the rendering
-      of the Button in those cases.
+      'disabled', 'hover' and 'focus' keys. 
+      This allows you to customize the rendering of the Button in those cases.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Button&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/button&module=%2Fsrc%2FButton.js)
 ## Usage
@@ -1981,10 +2050,10 @@ string
 
 Function that can be called to render the visual representation.
       Button can take in Children as a function, node, or object. 
-      For example hover can be passed as an object that would 
-      then return a react element.
-      \`children={({ hover }) => <Box...>{...}</Box>}\`. When Button has
-      children, it is styled as a \`plain\` button.
+      For example, 'disabled', 'hover', and 'focus' can be passed as an 
+      argument that would then return a react element.
+      \`children={({ disabled, hover, focus }) => <Box...>{...}</Box>}\`. 
+      When Button has children, it is styled as a \`plain\` button.
       
 
 \`\`\`
@@ -2139,7 +2208,9 @@ function
 Whether this is a plain button with no border or pad.
           Non plain button will show both pad and border.
           The plain button has no border and unless the icon prop exist it has 
-          no pad as well.
+          no pad as well. 
+          When using the kind button (i.e. button.default on the theme), 
+          the usage of plain is deprecated.
 
 \`\`\`
 boolean
@@ -3328,10 +3399,13 @@ string
 
 **showAdjacentDays**
 
-Whether to show the days from the previous and next months. Defaults to \`true\`.
+Whether to show the days from the previous and next months. 
+        \`trim\` limits adjacent days shown to rows containing days in 
+        the current month. Defaults to \`true\`.
 
 \`\`\`
 boolean
+trim
 \`\`\`
 
 **size**
@@ -6657,6 +6731,129 @@ Defaults to
 {}
 \`\`\`
 
+**dataTable.header.background**
+
+Any valid Box background value. Expects \`string | 
+    { dark: string, light: string } |
+    { 
+      color: { dark: string, light: string } | string, 
+      dark: bool, 
+      image: string, 
+      position: string, 
+      opacity: bool | string, 
+      repeat: no-repeat | repeat, 
+      size: cover | contain | string
+    }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.header.border**
+
+Any valid Box border value. Expects \`string | object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.header.font.weight**
+
+The font weight for text in header cells. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.header.font.size**
+
+The font size for text in header cells. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.header.gap**
+
+The gap between elements within the header cell. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+small
+\`\`\`
+
+**dataTable.header.hover.background**
+
+The hover background color of the header cell contents, if 
+    clickable. Any valid Box background options apply. Expects \`string | 
+    { dark: string, light: string } |
+    { 
+      color: { dark: string, light: string } | string, 
+      dark: bool, 
+      image: string, 
+      position: string, 
+      opacity: bool | string, 
+      repeat: no-repeat | repeat, 
+      size: cover | contain | string
+    }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.header.pad**
+
+The pad around the contents of the header cell. Expects \`string | object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.resize.hover.color**
+
+The color of the resizer when hovered over. Expects \`string | object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.resize.hover.side**
+
+The side of the resizer when hovered over. If color or size 
+    are defined, this will default to 'end' which is the recommended value. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.resize.hover.size**
+
+The size of the resizer when hovered over. Size values 
+    correspond with those accepted by Box border. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **dataTable.icons.ascending**
 
 The ascending icon. Expects \`React.Element\`.
@@ -6700,6 +6897,96 @@ Defaults to
 **dataTable.icons.sortable**
 
 The icon indicating a column can be sorted. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.pinned.body.background**
+
+Any valid Box background options apply. Expects \`string | 
+      { dark: string, light: string } |
+      { 
+        color: { dark: string, light: string } | string, 
+        dark: bool, 
+        image: string, 
+        position: string, 
+        opacity: bool | string, 
+        repeat: no-repeat | repeat, 
+        size: cover | contain | string
+      }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.pinned.body.extend**
+
+Any additional styles for pinned body cells. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.pinned.header.background**
+
+Any valid Box background options apply. Expects \`string | 
+      { dark: string, light: string } |
+      { 
+        color: { dark: string, light: string } | string, 
+        dark: bool, 
+        image: string, 
+        position: string, 
+        opacity: bool | string, 
+        repeat: no-repeat | repeat, 
+        size: cover | contain | string
+      }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.pinned.header.extend**
+
+Any additional styles for pinned header cells. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.pinned.footer.background**
+
+Any valid Box background options apply. Expects \`string | 
+      { dark: string, light: string } |
+      { 
+        color: { dark: string, light: string } | string, 
+        dark: bool, 
+        image: string, 
+        position: string, 
+        opacity: bool | string, 
+        repeat: no-repeat | repeat, 
+        size: cover | contain | string
+      }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.pinned.footer.extend**
+
+Any additional styles for pinned footer cells. Expects \`string | (props) => {}\`.
 
 Defaults to
 
@@ -9490,6 +9777,14 @@ string
 }
 \`\`\`
 
+**fill**
+
+Whether the width should fill the container.
+
+\`\`\`
+boolean
+\`\`\`
+
 **level**
 
 The heading level. It corresponds to the number after the 'H' for
@@ -9639,16 +9934,16 @@ undefined
 
 **heading.level**
 
-The level that impacts line-height, max-width, font size, 
-weight and family of the Heading. Heading styling is automatically adjusted at 
-different screen sizes. When the heading.responsiveBreakpoint is hit (\\"small\\" 
-by default), all heading styles will automatically be adjusted. A heading of 
-level 1, for example, will use the styling defined in heading level 2; a 
-heading of level 2 will use the styling defined in heading level 3 and so 
-forth. The tag in the DOM is not adjusted. A heading of level 1 remains an h1. 
-The styling adjustment is intended to aid readability on smaller screens but 
-will not semantically affect your application structure. If you do not want 
-this responsive styling to occur, you can set header.responsiveBreakpoint to 
+The level that impacts line-height, max-width, font size,
+weight and family of the Heading. Heading styling is automatically adjusted at
+different screen sizes. When the heading.responsiveBreakpoint is hit (\\"small\\"
+by default), all heading styles will automatically be adjusted. A heading of
+level 1, for example, will use the styling defined in heading level 2; a
+heading of level 2 will use the styling defined in heading level 3 and so
+forth. The tag in the DOM is not adjusted. A heading of level 1 remains an h1.
+The styling adjustment is intended to aid readability on smaller screens but
+will not semantically affect your application structure. If you do not want
+this responsive styling to occur, you can set header.responsiveBreakpoint to
 undefined. Expects \`object\`.
 
 Defaults to
@@ -9691,7 +9986,7 @@ undefined
 
 **heading.responsiveBreakpoint**
 
-The breakpoint to trigger changes in the Heading layout. 
+The breakpoint to trigger changes in the Heading layout.
 The actual values will be derived from global.breakpoints. Expects \`string\`.
 
 Defaults to
@@ -10903,12 +11198,21 @@ import { Markdown } from 'grommet';
 
 Custom components and props to override html elements such as 'img'
       or 'pre'. By default 'a', 'p', 'img', and table elements are overridden
-      with grommet components
+      with grommet components.
+      Available options:
+      a: { component: Anchor },
+      img: { component: Image },
+      p: { component: Paragraph },
+      table: { component: Table },
+      td: { component: TableCell },
+      tbody: { component: TableBody },
+      tfoot: { component: TableFooter },
+      th: { component: TableCell },
+      thead: { component: TableHeader },
+      tr: { component: TableRow }
 
 \`\`\`
-{
-
-}
+object
 \`\`\`
 
 **options**
@@ -10945,6 +11249,27 @@ Custom title to be used by screen readers.
 
 \`\`\`
 string
+\`\`\`
+
+**dropHeight**
+
+The height of the drop container.
+
+\`\`\`
+xsmall
+small
+medium
+large
+xlarge
+string
+\`\`\`
+
+**dropProps**
+
+Any valid Drop prop.
+
+\`\`\`
+object
 \`\`\`
 
 **icon**
@@ -10993,7 +11318,8 @@ function
 
 Describes the structure of the mask. If a regexp is provided, it should
       allow both the final full string element as well as partial strings
-      as the user types characters one by one.
+      as the user types characters one by one. When using regexp to match number
+      values make sure that the option values are numbers as well.
 
 \`\`\`
 [{
@@ -11229,8 +11555,9 @@ A control that opens a Drop containing plain Buttons.
 The labels and behavior of the contained Buttons are described
       via the \`items\` property.
       You can provide a single function child that will be called with
-      'hover', 'focus', and 'drop' keys. This allows you to customize
-      the rendering of the Menu button in those cases.
+      'disabled', 'hover', 'focus', and 'drop' keys. 
+      This allows you to customize the rendering of the Menu button 
+      in those cases.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Menu&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/menu&module=%2Fsrc%2FMenu.js)
 ## Usage
@@ -11361,7 +11688,7 @@ Function that will be called to render the visual representation.
       It will be passed an object containing button props.
       It should return a react element.
       For example:
-      \`children={({ drop, hover }) => <Box ...>{...}</Box>}\`
+      \`children={({ disabled, drop, hover, focus }) => <Box ...>{...}</Box>}\`
       
 
 \`\`\`
@@ -12128,6 +12455,16 @@ Defaults to
     }
 \`\`\`
 
+**paragraph.font.family**
+
+The font family to use for Paragraph. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **paragraph.textAlign**
 
 How to align the text inside the Paragraph. Expects \`string\`.
@@ -12349,9 +12686,30 @@ Defaults to
 undefined
 \`\`\`
 
+**radioButton.container.extend**
+
+Any additional style for the container around 
+    the radio button and its label. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **radioButton.extend**
 
-Any additional style for the RadioButton. Expects \`string | (props) => {}\`.
+Any additional style for the radio button itself. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**radioButton.font.weight**
+
+The font weight of the label. Expects \`number | string\`.
 
 Defaults to
 
@@ -12367,26 +12725,6 @@ Defaults to
 
 \`\`\`
 small
-\`\`\`
-
-**radioButton.font.weight**
-
-The font weight of the label. Expects \`number | string\`.
-
-Defaults to
-
-\`\`\`
-undefined
-\`\`\`
-
-**radioButton.size**
-
-The size of the RadioButton. Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-24px
 \`\`\`
 
 **radioButton.hover.background.color**
@@ -12428,6 +12766,26 @@ Defaults to
 
 \`\`\`
 undefined
+\`\`\`
+
+**radioButton.icons.circle**
+
+The icon to replace the inner checked circle. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**radioButton.size**
+
+The size of the RadioButton. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+24px
 \`\`\`
 ",
   "RadioButtonGroup": "## RadioButtonGroup
@@ -15256,10 +15614,7 @@ string
 
 **size**
 
-The font size and line height are primarily driven by the chosen tag. 
-But, it can be adjusted via this size property. The tag should be set for 
-semantic correctness and accessibility. This size property allows for stylistic
-adjustments. Defaults to \`medium\`.
+The font size and line space height of the text. Defaults to \`medium\`.
 
 \`\`\`
 xsmall
@@ -15347,6 +15702,16 @@ Defaults to
 
 \`\`\`
 { dark: '#f8f8f8', light: '#444444' }
+\`\`\`
+
+**text.font.family**
+
+The font family to use for Text. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **text**
@@ -15900,11 +16265,14 @@ node
 
 **plain**
 
-Whether this is a plain input with no border or padding.
-      Only use this when the containing context provides sufficient affordance
+Whether this is a plain input with no border or outline.
+      Use \\"full\\" to remove padding in addition to removing border and outline.
+      Only use this when the containing context provides sufficient 
+      affordance.
 
 \`\`\`
 boolean
+full
 \`\`\`
 
 **reverse**

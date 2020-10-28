@@ -22,12 +22,12 @@ const Footer = ({
   selected,
   ...rest
 }) => (
-  <StyledDataTableFooter fillProp={fill} {...rest}>
+  <StyledDataTableFooter fillProp={fill} pin={tablePin} {...rest}>
     <TableRow>
       {groups && (
         <TableCell plain size="xxsmall" pad="none" verticalAlign="top" />
       )}
-      {(selected || onSelect) && <TableCell />}
+      {(selected || onSelect) && <TableCell background={background} />}
       {columns.map(column => {
         const pin = [];
         if (tablePin) pin.push('bottom');

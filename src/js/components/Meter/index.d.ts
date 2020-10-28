@@ -22,8 +22,8 @@ export interface MeterProps {
     color?: string;
     highlight?: boolean;
     label?: string;
-    onClick?: (...args: any[]) => any;
-    onHover?: (...args: any[]) => any;
+    onClick?: (event: React.MouseEvent) => void;
+    onHover?: (over: boolean) => void;
     value: number;
   }[];
 }
