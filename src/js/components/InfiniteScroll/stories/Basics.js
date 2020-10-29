@@ -8,7 +8,7 @@ export const allItems = Array(2000)
   .fill()
   .map((_, i) => `item ${i + 1}`);
 
-const SimpleInfiniteScroll = props => (
+const Example = props => (
   <Grommet theme={grommet}>
     <Box>
       <InfiniteScroll items={allItems} {...props}>
@@ -28,10 +28,10 @@ const SimpleInfiniteScroll = props => (
 );
 
 storiesOf('InfiniteScroll', module)
-  .add('Simple', () => <SimpleInfiniteScroll />)
-  .add('Show 118th item', () => <SimpleInfiniteScroll show={117} />)
+  .add('Simple', () => <Example />)
+  .add('Show 118th item', () => <Example show={117} />)
   .add('Marker', () => (
-    <SimpleInfiniteScroll
+    <Example
       renderMarker={marker => (
         <Box pad="medium" background="accent-1">
           {marker}
