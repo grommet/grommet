@@ -230,13 +230,13 @@ const Menu = forwardRef((props, ref) => {
         active={activeItemIndex === controlButtonIndex}
         focusIndicator={false}
         hoverIndicator="background"
-        {...buttonProps}
         onClick={onDropClose}
         onFocus={() => setActiveItemIndex(controlButtonIndex)}
         // On first tab into menu, the control button should not
         // be able to receive tab focus because the focus should
         // go to the first menu item instead.
         tabIndex={activeItemIndex === constants.none ? '-1' : undefined}
+        {...buttonProps}
       >
         {typeof content === 'function'
           ? () => content({ ...props, drop: true })
@@ -258,12 +258,12 @@ const Menu = forwardRef((props, ref) => {
       <DropButton
         ref={ref}
         {...rest}
+        {...buttonProps}
         a11yTitle={a11yTitle || messages.openMenu || 'Open Menu'}
         disabled={disabled}
         dropAlign={align}
         dropTarget={dropTarget}
         dropProps={dropProps}
-        {...buttonProps}
         open={isOpen}
         onOpen={onDropOpen}
         onClose={onDropClose}
