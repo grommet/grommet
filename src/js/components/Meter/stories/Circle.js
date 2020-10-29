@@ -5,7 +5,7 @@ import { Grommet, Box, Meter } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const CircleMeter = () => {
-  const [ value, setValue ] = useState(20);
+  const [value, setValue] = useState(20);
 
   const timer = useRef();
   clearTimeout(timer.current);
@@ -16,7 +16,7 @@ const CircleMeter = () => {
   useEffect(() => {
     return () => {
       clearTimeout(timer.current);
-    }
+    };
   }, []);
 
   return (
