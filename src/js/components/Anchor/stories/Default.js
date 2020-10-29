@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Anchor, Box, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Default = () => {
+const DefaultAnchor = () => {
   return (
     <Grommet theme={grommet}>
       <Box align="center" pad="large">
@@ -14,6 +13,7 @@ const Default = () => {
   );
 };
 
-storiesOf('Anchor', module).add('Default', () => <Default />, {
+export const Default = () => <DefaultAnchor />;
+Default.parameters = {
   chromatic: { disable: true },
-});
+};

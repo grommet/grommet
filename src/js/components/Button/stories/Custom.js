@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { grommet, Box, Button, Grommet, Heading } from 'grommet';
 
@@ -124,7 +123,7 @@ const coloredButton = {
   },
 };
 
-const CustomTheme = () => (
+export const Custom = () => (
   <>
     <Grommet theme={kindButtonTheme}>
       <Box gap="small" pad="large">
@@ -195,5 +194,3 @@ const CustomTheme = () => (
     </Grommet>
   </>
 );
-
-storiesOf('Button', module).add('Custom', () => <CustomTheme />);
