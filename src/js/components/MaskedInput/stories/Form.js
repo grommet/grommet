@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Button, DateInput, Form, FormField, Grommet } from 'grommet';
+import { Box, Button, Form, FormField, Grommet, MaskedInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const Example = () => {
@@ -21,8 +21,11 @@ const Example = () => {
             setValue({ value: '' });
           }}
         >
-          <FormField name="value" label="value" required>
-            <DateInput name="value" format="mm/dd/yyyy" />
+          <FormField name="value" label="url" required>
+            <MaskedInput
+              name="value"
+              mask={[{ fixed: 'https://' }, { regexp: /^.*$/ }]}
+            />
           </FormField>
           <Button type="submit" label="submit" />
         </Form>
@@ -31,4 +34,4 @@ const Example = () => {
   );
 };
 
-storiesOf('DateInput', module).add('Form', () => <Example />);
+storiesOf('MaskedInput', module).add('Form', () => <Example />);
