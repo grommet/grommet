@@ -110,7 +110,7 @@ exports[`Button kind default button 1`] = `
 }
 
 .c1:hover {
-  background-color: rgba(255,255,255,0.03137254901960784);
+  background-color: rgba(51,51,51,0.06274509803921569);
 }
 
 .c1:focus {
