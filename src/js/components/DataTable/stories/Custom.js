@@ -24,6 +24,22 @@ const customTheme = {
     },
   },
   dataTable: {
+    header: {
+      extend: ({ column, sort, sortable }) => {
+        return `
+          ${sortable &&
+            sort &&
+            sort.property !== column &&
+            `
+              :hover {
+                svg {
+                  opacity: 100%;
+                }
+              }
+            `}
+         `;
+      },
+    },
     icons: {
       sortable: SortableIcon,
     },
