@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Drop, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
@@ -117,10 +116,11 @@ var LazyDrop = function LazyDrop() {
   }, "align top to bottom")))));
 };
 
-storiesOf('Drop', module).add('Lazy', function () {
+export var Lazy = function Lazy() {
   return /*#__PURE__*/React.createElement(LazyDrop, null);
-}, {
+};
+Lazy.parameters = {
   chromatic: {
     disable: true
   }
-});
+};

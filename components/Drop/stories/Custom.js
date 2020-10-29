@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.Custom = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
@@ -29,7 +30,7 @@ var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
   }
 });
 
-var Custom = function Custom() {
+var CustomDrop = function CustomDrop() {
   var _useState = (0, _react.useState)(false),
       setShowDrop = _useState[1];
 
@@ -61,6 +62,8 @@ var Custom = function Custom() {
   }, "This Drop uses a custom theme"))));
 };
 
-(0, _react2.storiesOf)('Drop', module).add('Custom', function () {
-  return /*#__PURE__*/_react["default"].createElement(Custom, null);
-});
+var Custom = function Custom() {
+  return /*#__PURE__*/_react["default"].createElement(CustomDrop, null);
+};
+
+exports.Custom = Custom;

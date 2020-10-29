@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.Plain = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
@@ -47,10 +48,13 @@ var PlainDrop = function PlainDrop() {
   }, "No background no shadow"))));
 };
 
-(0, _react2.storiesOf)('Drop', module).add('Plain', function () {
+var Plain = function Plain() {
   return /*#__PURE__*/_react["default"].createElement(PlainDrop, null);
-}, {
+};
+
+exports.Plain = Plain;
+Plain.parameters = {
   chromatic: {
     disable: true
   }
-});
+};

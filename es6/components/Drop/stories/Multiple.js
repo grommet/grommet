@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Button, Drop, DropButton, Grommet, Layer, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 
@@ -70,10 +69,11 @@ var MultipleDrop = function MultipleDrop() {
   })))));
 };
 
-storiesOf('Drop', module).add('Multiple', function () {
+export var Multiple = function Multiple() {
   return /*#__PURE__*/React.createElement(MultipleDrop, null);
-}, {
+};
+Multiple.parameters = {
   chromatic: {
     disable: true
   }
-});
+};

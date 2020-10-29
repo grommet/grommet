@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.Progressive = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
@@ -86,10 +87,13 @@ var ProgressiveDrop = function ProgressiveDrop() {
   }))))));
 };
 
-(0, _react2.storiesOf)('Drop', module).add('Progressive', function () {
+var Progressive = function Progressive() {
   return /*#__PURE__*/_react["default"].createElement(ProgressiveDrop, null);
-}, {
+};
+
+exports.Progressive = Progressive;
+Progressive.parameters = {
   chromatic: {
     disable: true
   }
-});
+};

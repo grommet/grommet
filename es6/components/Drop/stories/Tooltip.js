@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, grommet, Box, Button, Drop, Text } from 'grommet';
 import { Calculator } from "grommet-icons/es6/icons/Calculator";
 import { Bug } from "grommet-icons/es6/icons/Bug";
@@ -50,7 +49,7 @@ var TooltipButton = function TooltipButton(_ref) {
   }, name))));
 };
 
-var Tooltip = function Tooltip() {
+var TooltipDrop = function TooltipDrop() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -68,10 +67,11 @@ var Tooltip = function Tooltip() {
   })));
 };
 
-storiesOf('Drop', module).add('Tooltip', function () {
-  return /*#__PURE__*/React.createElement(Tooltip, null);
-}, {
+export var Tooltip = function Tooltip() {
+  return /*#__PURE__*/React.createElement(TooltipDrop, null);
+};
+Tooltip.parameters = {
   chromatic: {
     disable: true
   }
-});
+};

@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.Tooltip = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
@@ -57,7 +58,7 @@ var TooltipButton = function TooltipButton(_ref) {
   }, name))));
 };
 
-var Tooltip = function Tooltip() {
+var TooltipDrop = function TooltipDrop() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _grommet.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -75,10 +76,13 @@ var Tooltip = function Tooltip() {
   })));
 };
 
-(0, _react2.storiesOf)('Drop', module).add('Tooltip', function () {
-  return /*#__PURE__*/_react["default"].createElement(Tooltip, null);
-}, {
+var Tooltip = function Tooltip() {
+  return /*#__PURE__*/_react["default"].createElement(TooltipDrop, null);
+};
+
+exports.Tooltip = Tooltip;
+Tooltip.parameters = {
   chromatic: {
     disable: true
   }
-});
+};

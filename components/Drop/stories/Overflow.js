@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.Overflow = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
@@ -85,10 +86,13 @@ var OverflowDrop = function OverflowDrop() {
   })))))));
 };
 
-(0, _react2.storiesOf)('Drop', module).add('Overflow', function () {
+var Overflow = function Overflow() {
   return /*#__PURE__*/_react["default"].createElement(OverflowDrop, null);
-}, {
+};
+
+exports.Overflow = Overflow;
+Overflow.parameters = {
   chromatic: {
     disable: true
   }
-});
+};

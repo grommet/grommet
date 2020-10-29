@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.Multiple = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
@@ -79,10 +80,13 @@ var MultipleDrop = function MultipleDrop() {
   })))));
 };
 
-(0, _react2.storiesOf)('Drop', module).add('Multiple', function () {
+var Multiple = function Multiple() {
   return /*#__PURE__*/_react["default"].createElement(MultipleDrop, null);
-}, {
+};
+
+exports.Multiple = Multiple;
+Multiple.parameters = {
   chromatic: {
     disable: true
   }
-});
+};

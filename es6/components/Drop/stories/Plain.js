@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Drop, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 
@@ -38,10 +37,11 @@ var PlainDrop = function PlainDrop() {
   }, "No background no shadow"))));
 };
 
-storiesOf('Drop', module).add('Plain', function () {
+export var Plain = function Plain() {
   return /*#__PURE__*/React.createElement(PlainDrop, null);
-}, {
+};
+Plain.parameters = {
   chromatic: {
     disable: true
   }
-});
+};

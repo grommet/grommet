@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.Simple = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
@@ -45,10 +46,13 @@ var SimpleDrop = function SimpleDrop() {
   }, "Drop Contents"))));
 };
 
-(0, _react2.storiesOf)('Drop', module).add('Simple', function () {
+var Simple = function Simple() {
   return /*#__PURE__*/_react["default"].createElement(SimpleDrop, null);
-}, {
+};
+
+exports.Simple = Simple;
+Simple.parameters = {
   chromatic: {
     disable: true
   }
-});
+};
