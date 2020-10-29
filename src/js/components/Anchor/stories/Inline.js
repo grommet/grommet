@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Anchor, Box, Grommet, Paragraph } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Inline = () => {
+const InlineAnchor = () => {
   return (
     <Grommet theme={grommet}>
       <Box align="center" pad="large">
@@ -17,4 +16,4 @@ const Inline = () => {
   );
 };
 
-storiesOf('Anchor', module).add('Inline', () => <Inline />);
+export const Inline = () => <InlineAnchor />;
