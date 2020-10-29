@@ -1,9 +1,8 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Anchor, Box, Grommet, Paragraph } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-var Inline = function Inline() {
+var InlineAnchor = function InlineAnchor() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -15,6 +14,6 @@ var Inline = function Inline() {
   }), " with surrounding text.")));
 };
 
-storiesOf('Anchor', module).add('Inline', function () {
-  return /*#__PURE__*/React.createElement(Inline, null);
-});
+export var Inline = function Inline() {
+  return /*#__PURE__*/React.createElement(InlineAnchor, null);
+};

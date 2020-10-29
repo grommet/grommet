@@ -1,9 +1,8 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Anchor, Box, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-var Size = function Size() {
+var SizeAnchor = function SizeAnchor() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -21,6 +20,6 @@ var Size = function Size() {
   })));
 };
 
-storiesOf('Anchor', module).add('Size', function () {
-  return /*#__PURE__*/React.createElement(Size, null);
-});
+export var Size = function Size() {
+  return /*#__PURE__*/React.createElement(SizeAnchor, null);
+};

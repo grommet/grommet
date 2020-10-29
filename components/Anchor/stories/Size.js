@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Size = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -10,7 +11,7 @@ var _themes = require("grommet/themes");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var Size = function Size() {
+var SizeAnchor = function SizeAnchor() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -28,6 +29,8 @@ var Size = function Size() {
   })));
 };
 
-(0, _react2.storiesOf)('Anchor', module).add('Size', function () {
-  return /*#__PURE__*/_react["default"].createElement(Size, null);
-});
+var Size = function Size() {
+  return /*#__PURE__*/_react["default"].createElement(SizeAnchor, null);
+};
+
+exports.Size = Size;

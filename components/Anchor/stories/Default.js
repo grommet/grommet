@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Default = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -10,7 +11,7 @@ var _themes = require("grommet/themes");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var Default = function Default() {
+var DefaultAnchor = function DefaultAnchor() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -21,10 +22,13 @@ var Default = function Default() {
   }, "Link")));
 };
 
-(0, _react2.storiesOf)('Anchor', module).add('Default', function () {
-  return /*#__PURE__*/_react["default"].createElement(Default, null);
-}, {
+var Default = function Default() {
+  return /*#__PURE__*/_react["default"].createElement(DefaultAnchor, null);
+};
+
+exports.Default = Default;
+Default.parameters = {
   chromatic: {
     disable: true
   }
-});
+};

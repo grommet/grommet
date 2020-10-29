@@ -1,9 +1,8 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Anchor, Box, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-var Default = function Default() {
+var DefaultAnchor = function DefaultAnchor() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -14,10 +13,11 @@ var Default = function Default() {
   }, "Link")));
 };
 
-storiesOf('Anchor', module).add('Default', function () {
-  return /*#__PURE__*/React.createElement(Default, null);
-}, {
+export var Default = function Default() {
+  return /*#__PURE__*/React.createElement(DefaultAnchor, null);
+};
+Default.parameters = {
   chromatic: {
     disable: true
   }
-});
+};

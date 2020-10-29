@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Add } from "grommet-icons/es6/icons/Add";
 import { Anchor, Box, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-var Colors = function Colors() {
+var ColorAnchor = function ColorAnchor() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -41,6 +40,6 @@ var Colors = function Colors() {
   })));
 };
 
-storiesOf('Anchor', module).add('Colors', function () {
-  return /*#__PURE__*/React.createElement(Colors, null);
-});
+export var Color = function Color() {
+  return /*#__PURE__*/React.createElement(ColorAnchor, null);
+};

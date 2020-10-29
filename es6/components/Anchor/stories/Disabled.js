@@ -1,9 +1,8 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Anchor, Box, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-var Disabled = function Disabled() {
+var DisabledAnchor = function DisabledAnchor() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -17,6 +16,6 @@ var Disabled = function Disabled() {
   }))));
 };
 
-storiesOf('Anchor', module).add('Disabled', function () {
-  return /*#__PURE__*/React.createElement(Disabled, null);
-});
+export var Disabled = function Disabled() {
+  return /*#__PURE__*/React.createElement(DisabledAnchor, null);
+};

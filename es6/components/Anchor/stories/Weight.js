@@ -1,9 +1,8 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Anchor, Box, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-var Weight = function Weight() {
+var WeightAnchor = function WeightAnchor() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -36,6 +35,6 @@ var Weight = function Weight() {
   })));
 };
 
-storiesOf('Anchor', module).add('Weight', function () {
-  return /*#__PURE__*/React.createElement(Weight, null);
-});
+export var Weight = function Weight() {
+  return /*#__PURE__*/React.createElement(WeightAnchor, null);
+};
