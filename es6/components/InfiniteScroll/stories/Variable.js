@@ -6,40 +6,33 @@ import isChromatic from 'chromatic/isChromatic';
 import { grommet } from 'grommet/themes';
 import { Grommet, Box, InfiniteScroll, Text } from 'grommet';
 var allItems = Array(240).fill().map(function (_, i) {
-  return "item " + (i + 1);
+  return i + 1;
 });
 
 var Example = function Example(props) {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, /*#__PURE__*/React.createElement(InfiniteScroll, _extends({
+  }, /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(InfiniteScroll, _extends({
     items: allItems
   }, props), function (item) {
     return /*#__PURE__*/React.createElement(Box, {
       key: item,
+      height: item <= 25 ? 'xsmall' : 'xxsmall',
       pad: "medium",
       border: {
         side: 'bottom'
       },
       align: "center"
-    }, /*#__PURE__*/React.createElement(Text, null, item));
-  }));
+    }, /*#__PURE__*/React.createElement(Text, null, "item ", item));
+  })));
 };
 
 if (!isChromatic()) {
-  storiesOf('InfiniteScroll', module).add('Replace', function () {
+  storiesOf('InfiniteScroll', module).add('Variable Item Height', function () {
+    return /*#__PURE__*/React.createElement(Example, null);
+  }).add('Variable Item Height w/replace', function () {
     return /*#__PURE__*/React.createElement(Example, {
       replace: true
-    });
-  }).add('Replace, show before step', function () {
-    return /*#__PURE__*/React.createElement(Example, {
-      replace: true,
-      show: 27
-    });
-  }).add('Replace, show after step', function () {
-    return /*#__PURE__*/React.createElement(Example, {
-      replace: true,
-      show: 87
     });
   });
 }

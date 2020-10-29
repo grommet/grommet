@@ -8,7 +8,7 @@ export var allItems = Array(2000).fill().map(function (_, i) {
   return "item " + (i + 1);
 });
 
-var SimpleInfiniteScroll = function SimpleInfiniteScroll(props) {
+var Example = function Example(props) {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(InfiniteScroll, _extends({
@@ -26,13 +26,13 @@ var SimpleInfiniteScroll = function SimpleInfiniteScroll(props) {
 };
 
 storiesOf('InfiniteScroll', module).add('Simple', function () {
-  return /*#__PURE__*/React.createElement(SimpleInfiniteScroll, null);
+  return /*#__PURE__*/React.createElement(Example, null);
 }).add('Show 118th item', function () {
-  return /*#__PURE__*/React.createElement(SimpleInfiniteScroll, {
+  return /*#__PURE__*/React.createElement(Example, {
     show: 117
   });
 }).add('Marker', function () {
-  return /*#__PURE__*/React.createElement(SimpleInfiniteScroll, {
+  return /*#__PURE__*/React.createElement(Example, {
     renderMarker: function renderMarker(marker) {
       return /*#__PURE__*/React.createElement(Box, {
         pad: "medium",

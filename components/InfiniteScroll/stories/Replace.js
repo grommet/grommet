@@ -18,7 +18,7 @@ var allItems = Array(240).fill().map(function (_, i) {
   return "item " + (i + 1);
 });
 
-var InfiniteScrollReplace = function InfiniteScrollReplace(props) {
+var Example = function Example(props) {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.InfiniteScroll, _extends({
@@ -37,34 +37,18 @@ var InfiniteScrollReplace = function InfiniteScrollReplace(props) {
 
 if (!(0, _isChromatic["default"])()) {
   (0, _react2.storiesOf)('InfiniteScroll', module).add('Replace', function () {
-    return /*#__PURE__*/_react["default"].createElement(InfiniteScrollReplace, {
+    return /*#__PURE__*/_react["default"].createElement(Example, {
       replace: true
     });
-  }).add('Replace with show', function () {
-    return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      direction: "row",
-      gap: "large",
-      pad: "large"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-      weight: "bold"
-    }, "replace with show < step"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      border: true,
-      height: "medium",
-      width: "medium",
-      overflow: "auto"
-    }, /*#__PURE__*/_react["default"].createElement(InfiniteScrollReplace, {
+  }).add('Replace, show before step', function () {
+    return /*#__PURE__*/_react["default"].createElement(Example, {
       replace: true,
       show: 27
-    }))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-      weight: "bold"
-    }, "replace with show > step"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      border: true,
-      height: "medium",
-      width: "medium",
-      overflow: "auto"
-    }, /*#__PURE__*/_react["default"].createElement(InfiniteScrollReplace, {
+    });
+  }).add('Replace, show after step', function () {
+    return /*#__PURE__*/_react["default"].createElement(Example, {
       replace: true,
       show: 87
-    }))));
+    });
   });
 }

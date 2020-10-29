@@ -36,6 +36,7 @@ var findScrollParent = function findScrollParent(element, horizontal) {
 };
 
 exports.findScrollParent = findScrollParent;
+var documentTags = ['html', 'body'];
 
 var findScrollParents = function findScrollParents(element, horizontal) {
   var result = [];
@@ -61,7 +62,7 @@ var findScrollParents = function findScrollParents(element, horizontal) {
 
     if (result.length === 0) {
       result.push(document);
-    } else if (result[0].tagName.toLowerCase() === 'body') {
+    } else if (documentTags.includes(result[0].tagName.toLowerCase())) {
       result.length = 0;
       result.push(document);
     }

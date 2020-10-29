@@ -29,6 +29,7 @@ export var findScrollParent = function findScrollParent(element, horizontal) {
 
   return result;
 };
+var documentTags = ['html', 'body'];
 export var findScrollParents = function findScrollParents(element, horizontal) {
   var result = [];
 
@@ -53,7 +54,7 @@ export var findScrollParents = function findScrollParents(element, horizontal) {
 
     if (result.length === 0) {
       result.push(document);
-    } else if (result[0].tagName.toLowerCase() === 'body') {
+    } else if (documentTags.includes(result[0].tagName.toLowerCase())) {
       result.length = 0;
       result.push(document);
     }
