@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+
 import { User } from 'grommet-icons';
 import { Box, Button, grommet, Grommet, Heading, Text } from 'grommet';
 
@@ -32,7 +32,7 @@ const contents = [
   },
 ];
 
-const Example = () => (
+export const Kind = () => (
   <Box pad="large" gap="large">
     <Grommet theme={grommet}>
       <Box gap="medium">
@@ -72,5 +72,3 @@ const Example = () => (
     </Grommet>
   </Box>
 );
-
-storiesOf('Button', module).add('Kind', () => <Example />);
