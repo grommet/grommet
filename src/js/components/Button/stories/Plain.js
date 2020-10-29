@@ -43,5 +43,5 @@ const PlainButtons = props => (
   </Box>
 );
 
-export const Plain = () => <PlainButtons />
-export const Active = () => <PlainButtons active />
+export const Plain = () => <PlainButtons />;
+export const Active = () => <PlainButtons active />;
