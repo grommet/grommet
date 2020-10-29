@@ -1,7 +1,6 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { User } from "grommet-icons/es6/icons/User";
 import { Box, Button, grommet, Grommet, Heading, Text } from 'grommet';
 var darks = [false, true];
@@ -47,8 +46,7 @@ var contents = [{
     color: "orange"
   }, "label"))
 }];
-
-var Example = function Example() {
+export var Kind = function Kind() {
   return /*#__PURE__*/React.createElement(Box, {
     pad: "large",
     gap: "large"
@@ -93,7 +91,3 @@ var Example = function Example() {
     }));
   }))));
 };
-
-storiesOf('Button', module).add('Kind', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-});

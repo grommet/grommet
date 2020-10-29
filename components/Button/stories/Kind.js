@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Kind = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommetIcons = require("grommet-icons");
 
@@ -56,7 +57,7 @@ var contents = [{
   }, "label"))
 }];
 
-var Example = function Example() {
+var Kind = function Kind() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "large",
     gap: "large"
@@ -102,6 +103,4 @@ var Example = function Example() {
   }))));
 };
 
-(0, _react2.storiesOf)('Button', module).add('Kind', function () {
-  return /*#__PURE__*/_react["default"].createElement(Example, null);
-});
+exports.Kind = Kind;

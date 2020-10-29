@@ -1,10 +1,8 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { grommet, Box, Button, Grommet } from 'grommet';
-
-var FillButtons = function FillButtons(props) {
+export var Fill = function Fill(props) {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -79,7 +77,3 @@ var FillButtons = function FillButtons(props) {
     onClick: function onClick() {}
   }, props)))));
 };
-
-storiesOf('Button', module).add('Fill', function () {
-  return /*#__PURE__*/React.createElement(FillButtons, null);
-});

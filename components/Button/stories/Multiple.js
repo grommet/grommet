@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Multiple = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -12,7 +13,7 @@ var _grommetIcons = require("grommet-icons");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var MultipleButton = function MultipleButton() {
+var Multiple = function Multiple() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -78,6 +79,4 @@ var MultipleButton = function MultipleButton() {
   }))));
 };
 
-(0, _react2.storiesOf)('Button', module).add('Multiple', function () {
-  return /*#__PURE__*/_react["default"].createElement(MultipleButton, null);
-});
+exports.Multiple = Multiple;

@@ -1,10 +1,8 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Button } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { Add } from "grommet-icons/es6/icons/Add";
-
-var MultipleButton = function MultipleButton() {
+export var Multiple = function Multiple() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -69,7 +67,3 @@ var MultipleButton = function MultipleButton() {
     onClick: function onClick() {}
   }))));
 };
-
-storiesOf('Button', module).add('Multiple', function () {
-  return /*#__PURE__*/React.createElement(MultipleButton, null);
-});

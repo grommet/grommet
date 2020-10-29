@@ -1,10 +1,8 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Add } from "grommet-icons/es6/icons/Add";
 import { Box, Button, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var IconLabel = function IconLabel() {
+export var IconLabel = function IconLabel() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -43,7 +41,6 @@ var IconLabel = function IconLabel() {
     onClick: function onClick() {}
   }))));
 };
-
-storiesOf('Button', module).add('Icon label', function () {
-  return /*#__PURE__*/React.createElement(IconLabel, null);
-});
+IconLabel.story = {
+  name: 'Icon label'
+};

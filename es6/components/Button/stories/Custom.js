@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { grommet, Box, Button, Grommet, Heading } from 'grommet';
 var kindButtonTheme = {
   global: {
@@ -135,8 +134,7 @@ var coloredButton = {
     }
   }
 };
-
-var CustomTheme = function CustomTheme() {
+export var Custom = function Custom() {
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Grommet, {
     theme: kindButtonTheme
   }, /*#__PURE__*/React.createElement(Box, {
@@ -246,7 +244,3 @@ var CustomTheme = function CustomTheme() {
     label: "Custom as=span"
   }))));
 };
-
-storiesOf('Button', module).add('Custom', function () {
-  return /*#__PURE__*/React.createElement(CustomTheme, null);
-});

@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Custom = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -143,7 +144,7 @@ var coloredButton = {
   }
 };
 
-var CustomTheme = function CustomTheme() {
+var Custom = function Custom() {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: kindButtonTheme
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -254,6 +255,4 @@ var CustomTheme = function CustomTheme() {
   }))));
 };
 
-(0, _react2.storiesOf)('Button', module).add('Custom', function () {
-  return /*#__PURE__*/_react["default"].createElement(CustomTheme, null);
-});
+exports.Custom = Custom;

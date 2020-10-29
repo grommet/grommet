@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { Box, Grommet, RoutedButton, Text } from 'grommet';
+import { Box, Grommet, RoutedButton as GrommetRoutedButton, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var RouteButton = function RouteButton() {
+export var RoutedButton = function RoutedButton() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -12,12 +10,8 @@ var RouteButton = function RouteButton() {
   }, /*#__PURE__*/React.createElement(Text, {
     margin: "medium",
     size: "small"
-  }, "Note: RoutedButton will soon be deprecated"), /*#__PURE__*/React.createElement(RoutedButton, {
+  }, "Note: RoutedButton will soon be deprecated"), /*#__PURE__*/React.createElement(GrommetRoutedButton, {
     label: "Go",
     path: "/"
   })));
 };
-
-storiesOf('Button', module).add('RoutedButton', function () {
-  return /*#__PURE__*/React.createElement(RouteButton, null);
-});

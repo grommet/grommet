@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Active = exports.Plain = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommetIcons = require("grommet-icons");
 
@@ -55,10 +56,16 @@ var PlainButtons = function PlainButtons(props) {
   }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Add, null), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Kind"))))));
 };
 
-(0, _react2.storiesOf)('Button', module).add('Active', function () {
+var Plain = function Plain() {
+  return /*#__PURE__*/_react["default"].createElement(PlainButtons, null);
+};
+
+exports.Plain = Plain;
+
+var Active = function Active() {
   return /*#__PURE__*/_react["default"].createElement(PlainButtons, {
     active: true
   });
-}).add('Plain', function () {
-  return /*#__PURE__*/_react["default"].createElement(PlainButtons, null);
-});
+};
+
+exports.Active = Active;

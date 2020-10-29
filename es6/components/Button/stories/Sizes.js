@@ -1,11 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Button, Grommet } from 'grommet';
 import { Next } from "grommet-icons/es6/icons/Next";
 import { Add } from "grommet-icons/es6/icons/Add";
 import { grommet } from 'grommet/themes';
-
-var SizedButton = function SizedButton() {
+export var Sizes = function Sizes() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -88,9 +86,3 @@ var SizedButton = function SizedButton() {
     primary: true
   }))));
 };
-
-storiesOf('Button', module).add('Sizes', function () {
-  return /*#__PURE__*/React.createElement(SizedButton, {
-    active: true
-  });
-});
