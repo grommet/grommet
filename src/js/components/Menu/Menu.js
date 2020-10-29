@@ -190,6 +190,14 @@ const Menu = forwardRef((props, ref) => {
       ? (icon !== true && icon) || <MenuIcon color={iconColor} size={size} />
       : null;
 
+  const isDefaultButton = theme.button.default && !children;
+  const buttonProps = {
+    icon: isDefaultButton ? menuIcon : undefined,
+    label: isDefaultButton ? menuLabel : undefined,
+    reverse: isDefaultButton,
+    plain,
+  };
+
   let content;
   if (children) content = children;
   else if (!theme.button.default) {
@@ -206,6 +214,8 @@ const Menu = forwardRef((props, ref) => {
       </Box>
     );
   } else {
+    // when a theme has theme.button.default, keep content as
+    // undefined so we can rely on Button label & icon props
     content = undefined;
   }
 
@@ -220,12 +230,9 @@ const Menu = forwardRef((props, ref) => {
         active={activeItemIndex === controlButtonIndex}
         focusIndicator={false}
         hoverIndicator="background"
-        label={theme.button.default && !children ? menuLabel : undefined}
-        icon={theme.button.default && !children ? menuIcon : undefined}
-        plain={plain}
+        {...buttonProps}
         onClick={onDropClose}
         onFocus={() => setActiveItemIndex(controlButtonIndex)}
-        reverse={theme.button.default && !children ? true : undefined}
         // On first tab into menu, the control button should not
         // be able to receive tab focus because the focus should
         // go to the first menu item instead.
@@ -256,13 +263,10 @@ const Menu = forwardRef((props, ref) => {
         dropAlign={align}
         dropTarget={dropTarget}
         dropProps={dropProps}
-        label={theme.button.default && !children ? menuLabel : undefined}
-        icon={theme.button.default && !children ? menuIcon : undefined}
-        plain={plain}
+        {...buttonProps}
         open={isOpen}
         onOpen={onDropOpen}
         onClose={onDropClose}
-        reverse={theme.button.default && !children ? true : undefined}
         dropContent={
           <Keyboard
             onTab={event =>
