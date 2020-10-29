@@ -18,12 +18,6 @@ export interface SelectProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
-  children?: (
-    option: object,
-    index: number,
-    options: object[],
-    state: { active: boolean; disabled: boolean; selected: boolean },
-  ) => React.ReactNode;
   closeOnChange?: boolean;
   disabled?: boolean | (number | string | object)[];
   disabledKey?:
@@ -47,9 +41,9 @@ export interface SelectProps {
   multiple?: boolean;
   name?: string;
   onChange?: (event: onChangeEvent) => void;
-  onClose?: () => void;
-  onMore?: () => void;
-  onOpen?: () => void;
+  onClose?: (...args: any[]) => void;
+  onMore?: (...args: any[]) => void;
+  onOpen?: (...args: any[]) => void;
   onSearch?: (search: string) => void;
   options: (string | boolean | number | JSX.Element | object)[];
   open?: boolean;
@@ -64,7 +58,7 @@ export interface SelectProps {
   valueKey?:
     | string
     | { key: string; reduce?: boolean }
-    | ((...args: any[]) => string);
+    | ((...args: any[]) => any);
   emptySearchMessage?: string;
   searching?: boolean;
 }
