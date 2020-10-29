@@ -127,4 +127,6 @@ const ClearExamples = () => (
   </Grommet>
 );
 
-storiesOf('Select', module).add('Clear', () => <ClearExamples />);
+storiesOf('Select', module).add('Clear', () => <ClearExamples />, {
+  chromatic: { disable: true },
+});

@@ -48,6 +48,4 @@ for (let i = 1; i <= 200; i += 1) {
   });
 }
 
-storiesOf('Select', module).add('Simple', () => <SimpleSelect />, {
-  chromatic: { disable: true },
-});
+storiesOf('Select', module).add('Simple', () => <SimpleSelect />);
