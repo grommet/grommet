@@ -8,5 +8,6 @@ module.exports = {
     '../src/js/contexts/**/stories/typescript/*.tsx',
     '../src/js/contexts/**/stories/*.(ts|tsx|js|jsx)',
     '../src/js/all/**/stories/*.(ts|tsx|js|jsx)',
+    '../src/js/all/stories/typescript/*.tsx',
   ],
 };
