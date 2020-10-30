@@ -39,18 +39,41 @@ describe('Button kind', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('button with label, icon and align', () => {
+  test('button with icon and align', () => {
     const { container } = render(
       <Grommet
         theme={{
           button: {
             default: {
-              color: '#FFF',
+              color: undefined, // needed use case for the test coverage
             },
           },
         }}
       >
-        <Button label="label" icon={<Add />} align="start" />
+        <Button icon={<Add />} align="start" />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('button icon colors', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          button: {
+            default: {
+              background: {
+                color: '#666666',
+              },
+              border: {
+                color: '#666666',
+              },
+              color: undefined, // needed use case for the test coverage
+            },
+          },
+        }}
+      >
+        <Button icon={<Add />} color="#000" />
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
