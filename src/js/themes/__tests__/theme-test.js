@@ -13,6 +13,7 @@ import {
   Text,
   TextInput,
 } from '../../components';
+import { ThemeContext } from '../../contexts/ThemeContext';
 import { dark, grommet } from '..';
 
 // hpe theme has deprecated the accent and neutral colors
@@ -101,6 +102,26 @@ describe('Grommet', () => {
       <Grommet theme={grommet}>
         <Button label="test" />
         <Button plain label="test" />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('ThemeContext theme', () => {
+    const component = renderer.create(
+      <Grommet theme={grommet}>
+        <ThemeContext.Extend
+          value={{
+            global: {
+              colors: {
+                test: '#000',
+              },
+            },
+          }}
+        >
+          <Anchor color="test" label="Hello" />
+        </ThemeContext.Extend>
       </Grommet>,
     );
     const tree = component.toJSON();
