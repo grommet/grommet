@@ -39,20 +39,18 @@ describe('Button kind', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('button with label and icon', () => {
+  test('button with label, icon and align', () => {
     const { container } = render(
       <Grommet
         theme={{
           button: {
             default: {
               color: '#FFF',
-              background: '#000',
             },
           },
         }}
       >
-        <Button label="label" icon={<Add />} hoverIndicator />
-        <Button label="label" icon={<Add color="#EEEEEE" />} />
+        <Button label="label" icon={<Add />} align="start" />
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();

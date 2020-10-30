@@ -76,7 +76,7 @@ exports[`Button kind border on default button 1`] = `
 </div>
 `;
 
-exports[`Button kind button with label and icon 1`] = `
+exports[`Button kind button with label, icon and align 1`] = `
 .c3 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -111,40 +111,6 @@ exports[`Button kind button with label and icon 1`] = `
   stroke: none;
 }
 
-.c6 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #EEEEEE;
-  stroke: #EEEEEE;
-}
-
-.c6 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c6 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c6 *[stroke*="#"],
-.c6 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c6 *[fill-rule],
-.c6 *[FILL-RULE],
-.c6 *[fill*="#"],
-.c6 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -161,10 +127,10 @@ exports[`Button kind button with label and icon 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .c4 {
@@ -193,9 +159,8 @@ exports[`Button kind button with label and icon 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background-color: #000;
   color: #FFF;
-  text-align: center;
+  text-align: start;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -206,11 +171,6 @@ exports[`Button kind button with label and icon 1`] = `
 
 .c1 > svg {
   vertical-align: bottom;
-}
-
-.c1:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
 }
 
 .c1:focus {
@@ -230,57 +190,6 @@ exports[`Button kind button with label and icon 1`] = `
 }
 
 .c1:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c5 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: none;
-  border-radius: 18px;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  background-color: #000;
-  color: #FFF;
-  text-align: center;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c5 > svg {
-  vertical-align: bottom;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus > circle,
-.c5:focus > ellipse,
-.c5:focus > line,
-.c5:focus > path,
-.c5:focus > polygon,
-.c5:focus > polyline,
-.c5:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -308,32 +217,6 @@ exports[`Button kind button with label and icon 1`] = `
       <svg
         aria-label="Add"
         class="c3"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M12,22 L12,2 M2,12 L22,12"
-          fill="none"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
-      <div
-        class="c4"
-      />
-      label
-    </div>
-  </button>
-  <button
-    class="c5"
-    kind="default"
-    type="button"
-  >
-    <div
-      class="c2"
-    >
-      <svg
-        aria-label="Add"
-        class="c6"
         viewBox="0 0 24 24"
       >
         <path
