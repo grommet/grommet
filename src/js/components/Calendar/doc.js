@@ -106,8 +106,8 @@ to disable the previous and next buttons.
         `Whether to automatically manage multiple date selection as a range.
         When the user clicks the first date, onSelect will be called with that
         date. When the user selects another date, onSelect will be called with
-        an array of two dates. If range = bounds, then an array of dates will 
-        be returned even when one bound is undefined.`,
+        an array of two dates. If range = array, then an array of dates will 
+        be returned even when the start or end date of the range is undefined.`,
       )
       .defaultValue(false),
     reference: PropTypes.string.description(
