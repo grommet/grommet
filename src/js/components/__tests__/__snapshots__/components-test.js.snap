@@ -1649,7 +1649,7 @@ to disable the previous and next buttons.
         an array of two dates. If range = bounds, then an array of dates will 
         be returned even when one bound is undefined.",
         "format": "boolean
-bounds",
+array",
         "name": "range",
       },
       Object {

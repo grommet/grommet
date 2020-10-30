@@ -372,14 +372,14 @@ describe('Calendar', () => {
     expect(onSelect).toBeCalledWith(expect.stringMatching(/^2020-01-01T/));
   });
 
-  test('range as bounds', () => {
+  test('range as array', () => {
     const onSelect = jest.fn();
     const { getByLabelText } = render(
       <Grommet>
         <Calendar
           dates={[['2020-01-01T00:00:00-08:00', '2020-01-05T00:00:00-08:00']]}
           onSelect={onSelect}
-          range="bounds"
+          range="array"
           animate={false}
         />
       </Grommet>,
@@ -425,7 +425,7 @@ describe('Calendar', () => {
           activeDate="start"
           dates={[['2020-01-01T00:00:00-08:00', '2020-01-05T00:00:00-08:00']]}
           onSelect={onSelect}
-          range="bounds"
+          range="array"
           animate={false}
         />
       </Grommet>,
@@ -447,7 +447,7 @@ describe('Calendar', () => {
           activeDate="end"
           dates={[['2020-01-01T00:00:00-08:00', '2020-01-05T00:00:00-08:00']]}
           onSelect={onSelect}
-          range="bounds"
+          range="array"
           animate={false}
         />
       </Grommet>,

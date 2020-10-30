@@ -101,7 +101,7 @@ to disable the previous and next buttons.
       For single select, make this the subsequent \`date\` property value.
       For multiple select or ranges, toggle values in \`dates\`.
       Not specifying this property makes the component read only.`),
-    range: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['bounds'])])
+    range: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['array'])])
       .description(
         `Whether to automatically manage multiple date selection as a range.
         When the user clicks the first date, onSelect will be called with that

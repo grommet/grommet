@@ -290,7 +290,7 @@ Whether to automatically manage multiple date selection as a range.
 
 ```
 boolean
-bounds
+array
 ```
 
 **reference**

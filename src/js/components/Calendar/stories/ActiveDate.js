@@ -53,7 +53,7 @@ const ActiveDate = () => {
             setDatesD(arg);
             setActiveDate('end');
           }}
-          range="bounds"
+          range="array"
         />
       </Box>
     </Grommet>

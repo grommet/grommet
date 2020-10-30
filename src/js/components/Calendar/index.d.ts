@@ -26,7 +26,7 @@ export interface CalendarProps {
   locale?: string;
   onReference?: (reference: string) => void;
   onSelect?: (select: string | string[]) => any;
-  range?: boolean | 'bounds';
+  range?: boolean | 'array';
   reference?: string;
   showAdjacentDays?: boolean | 'trim';
   size?: 'small' | 'medium' | 'large' | string;
