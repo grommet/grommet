@@ -5,8 +5,15 @@ import 'jest-styled-components';
 import { hpe } from 'grommet-theme-hpe';
 import { Add } from 'grommet-icons';
 
-import { Grommet, Anchor, Box, Text, TextInput } from '../../components';
-import { dark } from '..';
+import {
+  Grommet,
+  Anchor,
+  Box,
+  Button,
+  Text,
+  TextInput,
+} from '../../components';
+import { dark, grommet } from '..';
 
 // hpe theme has deprecated the accent and neutral colors
 const hpeColors = [
@@ -83,6 +90,17 @@ describe('Grommet', () => {
             <Text>{color}</Text>
           </Box>
         ))}
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('grommet theme', () => {
+    const component = renderer.create(
+      <Grommet theme={grommet}>
+        <Button label="test" />
+        <Button plain label="test" />
       </Grommet>,
     );
     const tree = component.toJSON();
