@@ -6,6 +6,8 @@ import 'regenerator-runtime/runtime';
 
 import { axe } from 'jest-axe';
 import { cleanup, fireEvent, render } from '@testing-library/react';
+import { Add } from 'grommet-icons';
+
 import { Grommet, Button } from '../..';
 import { buttonKindTheme } from './theme/buttonKindTheme';
 
@@ -34,6 +36,46 @@ describe('Button kind', () => {
         <Button />
       </Grommet>,
     );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('button with label and icon', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          button: {
+            default: {
+              color: '#FFF',
+              background: '#000',
+            },
+          },
+        }}
+      >
+        <Button label="label" icon={<Add />} hoverIndicator />
+        <Button label="label" icon={<Add color="#EEEEEE" />} />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`mouseOver and mouseOut events`, async () => {
+    const { container, getByText } = render(
+      <Grommet
+        theme={{
+          button: {
+            default: {
+              background: '#000',
+            },
+          },
+        }}
+      >
+        <Button label="label" icon={<Add />} />
+      </Grommet>,
+    );
+    fireEvent.mouseOver(getByText('label'));
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.mouseOut(getByText('label'));
     expect(container.firstChild).toMatchSnapshot();
   });
 
