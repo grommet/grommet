@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, WorldMap } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Example = () => {
+export const SelectPlace = () => {
   const [places, setPlaces] = React.useState();
 
   const onSelectPlace = place => {
@@ -20,6 +19,8 @@ const Example = () => {
   );
 };
 
-storiesOf('WorldMap', module).add('Select place', () => <Example />, {
+SelectPlace.story = { name: 'Select place' };
+
+SelectPlace.parameters = {
   chromatic: { disable: true },
-});
+};
