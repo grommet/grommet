@@ -1,5 +1,5 @@
-export { Children } from './typescript/Children.tsx';
 export { BottomControlButton } from './BottomControlButton';
+export { Children } from './typescript/Children.tsx';
 export { ItemWithIcon } from './ItemWithIcon';
 export { Reverse } from './Reverse';
 export { Simple } from './Simple';
