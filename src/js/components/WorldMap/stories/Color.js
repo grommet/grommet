@@ -13,6 +13,8 @@ export const Color = () => {
   );
 };
 
-Color.parameters = {
-  chromatic: { disable: true },
+Color.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
 };

@@ -19,8 +19,9 @@ export const SelectPlace = () => {
   );
 };
 
-SelectPlace.story = { name: 'Select place' };
-
-SelectPlace.parameters = {
-  chromatic: { disable: true },
+SelectPlace.story = {
+  name: 'Select place',
+  parameters: {
+    chromatic: { disable: true },
+  },
 };

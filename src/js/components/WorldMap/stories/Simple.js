@@ -13,7 +13,9 @@ export const Simple = () => {
   );
 };
 
-// chromatic disabled because snapshot is the same as SelectPlace
-Simple.parameters = {
-  chromatic: { disable: true },
+Simple.story = {
+  parameters: {
+    // chromatic disabled because snapshot is the same as SelectPlace
+    chromatic: { disable: true },
+  },
 };
