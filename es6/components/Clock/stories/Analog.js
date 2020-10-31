@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, Clock } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var AnalogClock = function AnalogClock() {
+export var Analog = function Analog() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -14,11 +12,10 @@ var AnalogClock = function AnalogClock() {
     type: "analog"
   })));
 };
-
-storiesOf('Clock', module).add('Analog', function () {
-  return /*#__PURE__*/React.createElement(AnalogClock, null);
-}, {
-  chromatic: {
-    disable: true
+Analog.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

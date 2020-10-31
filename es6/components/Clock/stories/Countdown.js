@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, Clock } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var Example = function Example() {
+export var Countdown = function Countdown() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -16,11 +14,10 @@ var Example = function Example() {
     run: "backward"
   })));
 };
-
-storiesOf('Clock', module).add('Countdown', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-}, {
-  chromatic: {
-    disable: true
+Countdown.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};
