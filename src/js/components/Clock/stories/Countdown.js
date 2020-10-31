@@ -2,7 +2,6 @@ import React from 'react';
 
 import { Box, Grommet, Clock } from 'grommet';
 import { grommet } from 'grommet/themes';
-import {Analog} from "./Analog";
 
 export const Countdown = () => (
   <Grommet theme={grommet}>
