@@ -1,8 +1,6 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Footer, grommet, Grommet, Main, Text } from 'grommet';
-
-var Simple = function Simple() {
+export var Simple = function Simple() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Main, {
@@ -24,7 +22,3 @@ var Simple = function Simple() {
     size: "small"
   }, "\xA9 2019 Copyright Grommet")));
 };
-
-storiesOf('Footer', module).add('Simple', function () {
-  return /*#__PURE__*/React.createElement(Simple, null);
-});

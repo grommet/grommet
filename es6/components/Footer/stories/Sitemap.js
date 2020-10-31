@@ -1,7 +1,6 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet as GrommetIcon } from "grommet-icons/es6/icons/Grommet";
 import { Anchor, Box, Footer, grommet, Grommet, Main, Text } from 'grommet';
 import { threeColumns as data } from './data';
@@ -32,7 +31,7 @@ var FooterContent = function FooterContent() {
   });
 };
 
-var Sitemap = function Sitemap() {
+export var Sitemap = function Sitemap() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Main, {
@@ -64,7 +63,3 @@ var Sitemap = function Sitemap() {
     weight: "bold"
   }, "grommet.io"))), /*#__PURE__*/React.createElement(FooterContent, null)));
 };
-
-storiesOf('Footer', module).add('Sitemap', function () {
-  return /*#__PURE__*/React.createElement(Sitemap, null);
-});

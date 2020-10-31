@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Social = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommetIcons = require("grommet-icons");
 
@@ -69,6 +70,4 @@ var Social = function Social() {
   }, "\xA9Copyright")));
 };
 
-(0, _react2.storiesOf)('Footer', module).add('Social', function () {
-  return /*#__PURE__*/_react["default"].createElement(Social, null);
-});
+exports.Social = Social;

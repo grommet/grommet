@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.DoubleFooter = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
@@ -82,6 +83,7 @@ var DoubleFooter = function DoubleFooter() {
   }, "\xA9 2019 Copyright")));
 };
 
-(0, _react2.storiesOf)('Footer', module).add('Double footer', function () {
-  return /*#__PURE__*/_react["default"].createElement(DoubleFooter, null);
-});
+exports.DoubleFooter = DoubleFooter;
+DoubleFooter.story = {
+  name: 'Double footer'
+};

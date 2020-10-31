@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Sitemap = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommetIcons = require("grommet-icons");
 
@@ -73,6 +74,4 @@ var Sitemap = function Sitemap() {
   }, "grommet.io"))), /*#__PURE__*/_react["default"].createElement(FooterContent, null)));
 };
 
-(0, _react2.storiesOf)('Footer', module).add('Sitemap', function () {
-  return /*#__PURE__*/_react["default"].createElement(Sitemap, null);
-});
+exports.Sitemap = Sitemap;

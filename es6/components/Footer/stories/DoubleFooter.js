@@ -1,7 +1,6 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import styled from 'styled-components';
 import { Grommet as GrommetIcon } from "grommet-icons/es6/icons/Grommet";
 import { Anchor, Box, Footer, grommet, Grommet, Main, Text } from 'grommet';
@@ -37,7 +36,7 @@ var FooterContent = function FooterContent() {
   });
 };
 
-var DoubleFooter = function DoubleFooter() {
+export var DoubleFooter = function DoubleFooter() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Main, {
@@ -71,7 +70,6 @@ var DoubleFooter = function DoubleFooter() {
     size: "small"
   }, "\xA9 2019 Copyright")));
 };
-
-storiesOf('Footer', module).add('Double footer', function () {
-  return /*#__PURE__*/React.createElement(DoubleFooter, null);
-});
+DoubleFooter.story = {
+  name: 'Double footer'
+};

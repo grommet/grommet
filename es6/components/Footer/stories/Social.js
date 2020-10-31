@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet as GrommetIcon } from "grommet-icons/es6/icons/Grommet";
 import { FacebookOption } from "grommet-icons/es6/icons/FacebookOption";
 import { Instagram } from "grommet-icons/es6/icons/Instagram";
@@ -32,7 +31,7 @@ var Media = function Media() {
   }));
 };
 
-var Social = function Social() {
+export var Social = function Social() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Main, {
@@ -64,7 +63,3 @@ var Social = function Social() {
     size: "xsmall"
   }, "\xA9Copyright")));
 };
-
-storiesOf('Footer', module).add('Social', function () {
-  return /*#__PURE__*/React.createElement(Social, null);
-});
