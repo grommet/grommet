@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Meter } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var BarMeter = function BarMeter() {
+export var Bar = function Bar() {
   var value = 30;
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
@@ -18,7 +16,3 @@ var BarMeter = function BarMeter() {
     }]
   })));
 };
-
-storiesOf('Meter', module).add('Bar', function () {
-  return /*#__PURE__*/React.createElement(BarMeter, null);
-});

@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Labelled = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -10,7 +11,7 @@ var _themes = require("grommet/themes");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var LabelledMeter = function LabelledMeter() {
+var Labelled = function Labelled() {
   var meterValue = 30;
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
@@ -41,6 +42,4 @@ var LabelledMeter = function LabelledMeter() {
   }, "%")))));
 };
 
-(0, _react2.storiesOf)('Meter', module).add('Labelled', function () {
-  return /*#__PURE__*/_react["default"].createElement(LabelledMeter, null);
-});
+exports.Labelled = Labelled;

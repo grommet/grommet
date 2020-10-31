@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Meter } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var CircleMeter = function CircleMeter() {
+export var Circle = function Circle() {
   var _useState = useState(20),
       value = _useState[0],
       setValue = _useState[1];
@@ -32,7 +30,3 @@ var CircleMeter = function CircleMeter() {
     }]
   })));
 };
-
-storiesOf('Meter', module).add('Circle', function () {
-  return /*#__PURE__*/React.createElement(CircleMeter, null);
-});

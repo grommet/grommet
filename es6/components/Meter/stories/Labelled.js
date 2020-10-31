@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Meter, Stack, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var LabelledMeter = function LabelledMeter() {
+export var Labelled = function Labelled() {
   var meterValue = 30;
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
@@ -33,7 +31,3 @@ var LabelledMeter = function LabelledMeter() {
     size: "small"
   }, "%")))));
 };
-
-storiesOf('Meter', module).add('Labelled', function () {
-  return /*#__PURE__*/React.createElement(LabelledMeter, null);
-});
