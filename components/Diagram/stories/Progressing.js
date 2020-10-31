@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.Progressing = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
@@ -48,7 +49,7 @@ var connection = function connection(fromTarget, toTarget, _temp) {
 
 var fullTopRow = [1, 2, 3];
 
-var SimpleDiagram = function SimpleDiagram() {
+var Progressing = function Progressing() {
   var reducer = function reducer(topRow) {
     var sliceEnd = topRow.length < fullTopRow.length ? topRow.length + 1 : 1;
     return fullTopRow.slice(0, sliceEnd);
@@ -106,6 +107,4 @@ var SimpleDiagram = function SimpleDiagram() {
   }))));
 };
 
-(0, _react2.storiesOf)('Diagram', module).add('Progressing', function () {
-  return /*#__PURE__*/_react["default"].createElement(SimpleDiagram, null);
-});
+exports.Progressing = Progressing;

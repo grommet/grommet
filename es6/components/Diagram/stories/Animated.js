@@ -1,14 +1,13 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import React, { useReducer, useEffect } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Diagram, Grommet, grommet, Stack, Text } from 'grommet';
 import { Diamond } from "grommet-icons/es6/icons/Diamond";
 import { deepMerge } from 'grommet/utils';
 import { data } from './data';
 var customTheme = deepMerge(grommet, {
   diagram: {
-    extend: "@keyframes \n  example {\n    to {\n      stroke-dashoffset: 0;\n    }\n  }\n  path {\n    stroke-dasharray: 500;\n    stroke-dashoffset: 500;\n    animation: example 3s linear forwards;\n  }"
+    extend: "@keyframes\n  example {\n    to {\n      stroke-dashoffset: 0;\n    }\n  }\n  path {\n    stroke-dasharray: 500;\n    stroke-dashoffset: 500;\n    animation: example 3s linear forwards;\n  }"
   }
 });
 
@@ -73,7 +72,7 @@ var Container = function Container(_ref3) {
   });
 };
 
-var Animated = function Animated() {
+export var Animated = function Animated() {
   var reducer = function reducer(draw) {
     return !draw;
   };
@@ -140,7 +139,3 @@ var Animated = function Animated() {
     connections: connections
   })))));
 };
-
-storiesOf('Diagram', module).add('Animated', function () {
-  return /*#__PURE__*/React.createElement(Animated, null);
-});

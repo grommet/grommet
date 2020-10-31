@@ -3,7 +3,6 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 import React, { useReducer, useEffect } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Diagram, Stack, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
@@ -38,8 +37,7 @@ var connection = function connection(fromTarget, toTarget, _temp) {
 };
 
 var fullTopRow = [1, 2, 3];
-
-var SimpleDiagram = function SimpleDiagram() {
+export var Progressing = function Progressing() {
   var reducer = function reducer(topRow) {
     var sliceEnd = topRow.length < fullTopRow.length ? topRow.length + 1 : 1;
     return fullTopRow.slice(0, sliceEnd);
@@ -96,7 +94,3 @@ var SimpleDiagram = function SimpleDiagram() {
     connections: connections
   }))));
 };
-
-storiesOf('Diagram', module).add('Progressing', function () {
-  return /*#__PURE__*/React.createElement(SimpleDiagram, null);
-});

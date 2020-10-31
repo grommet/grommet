@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.Animated = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
@@ -20,7 +21,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 var customTheme = (0, _utils.deepMerge)(_grommet.grommet, {
   diagram: {
-    extend: "@keyframes \n  example {\n    to {\n      stroke-dashoffset: 0;\n    }\n  }\n  path {\n    stroke-dasharray: 500;\n    stroke-dashoffset: 500;\n    animation: example 3s linear forwards;\n  }"
+    extend: "@keyframes\n  example {\n    to {\n      stroke-dashoffset: 0;\n    }\n  }\n  path {\n    stroke-dasharray: 500;\n    stroke-dashoffset: 500;\n    animation: example 3s linear forwards;\n  }"
   }
 });
 
@@ -153,6 +154,4 @@ var Animated = function Animated() {
   })))));
 };
 
-(0, _react2.storiesOf)('Diagram', module).add('Animated', function () {
-  return /*#__PURE__*/_react["default"].createElement(Animated, null);
-});
+exports.Animated = Animated;

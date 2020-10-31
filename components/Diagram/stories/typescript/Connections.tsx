@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Gremlin, IceCream } from 'grommet-icons';
 import { Stack, grommet, Grommet, Box, Diagram } from 'grommet';
@@ -24,7 +23,7 @@ const connection = {
 
 const connections = [connection];
 
-const Connections = () => {
+export const Connections = () => {
   return (
     <Grommet theme={grommet}>
       <Stack>
@@ -41,5 +40,3 @@ const Connections = () => {
     </Grommet>
   );
 };
-
-storiesOf('Diagram', module).add('Connections', () => <Connections />);
