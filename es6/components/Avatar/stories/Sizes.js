@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Avatar, Box, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var Sizes = function Sizes() {
+export var Sizes = function Sizes() {
   var src = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
@@ -42,7 +40,3 @@ var Sizes = function Sizes() {
     size: "xlarge"
   }, "SY")));
 };
-
-storiesOf('Avatar', module).add('Sizes', function () {
-  return /*#__PURE__*/React.createElement(Sizes, null);
-});

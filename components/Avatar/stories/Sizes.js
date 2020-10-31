@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Sizes = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -50,6 +51,4 @@ var Sizes = function Sizes() {
   }, "SY")));
 };
 
-(0, _react2.storiesOf)('Avatar', module).add('Sizes', function () {
-  return /*#__PURE__*/_react["default"].createElement(Sizes, null);
-});
+exports.Sizes = Sizes;

@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Basic = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommetIcons = require("grommet-icons");
 
@@ -35,6 +36,4 @@ var Basic = function Basic() {
   }, "SY")));
 };
 
-(0, _react2.storiesOf)('Avatar', module).add('Basic', function () {
-  return /*#__PURE__*/_react["default"].createElement(Basic, null);
-});
+exports.Basic = Basic;

@@ -1,10 +1,8 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Favorite } from "grommet-icons/es6/icons/Favorite";
 import { Avatar, Box, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var Basic = function Basic() {
+export var Basic = function Basic() {
   var src = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
@@ -26,7 +24,3 @@ var Basic = function Basic() {
     background: "brand"
   }, "SY")));
 };
-
-storiesOf('Avatar', module).add('Basic', function () {
-  return /*#__PURE__*/React.createElement(Basic, null);
-});

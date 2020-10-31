@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Favorite } from "grommet-icons/es6/icons/Favorite";
 import { Avatar, Box, Grommet } from 'grommet';
 var theme = {
@@ -14,11 +13,10 @@ var theme = {
       fontWeight: 700,
       extend: "font-family: Comic Sans MS;"
     },
-    extend: "border: 2px solid white; \n            box-shadow: 2px 2px 15px 1px white;"
+    extend: "border: 2px solid white;\n            box-shadow: 2px 2px 15px 1px white;"
   }
 };
-
-var Themed = function Themed() {
+export var Themed = function Themed() {
   var src = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: theme
@@ -46,7 +44,3 @@ var Themed = function Themed() {
     background: "brand"
   }, "SY")));
 };
-
-storiesOf('Avatar', module).add('Themed', function () {
-  return /*#__PURE__*/React.createElement(Themed, null);
-});

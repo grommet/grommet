@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Themed = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommetIcons = require("grommet-icons");
 
@@ -22,7 +23,7 @@ var theme = {
       fontWeight: 700,
       extend: "font-family: Comic Sans MS;"
     },
-    extend: "border: 2px solid white; \n            box-shadow: 2px 2px 15px 1px white;"
+    extend: "border: 2px solid white;\n            box-shadow: 2px 2px 15px 1px white;"
   }
 };
 
@@ -55,6 +56,4 @@ var Themed = function Themed() {
   }, "SY")));
 };
 
-(0, _react2.storiesOf)('Avatar', module).add('Themed', function () {
-  return /*#__PURE__*/_react["default"].createElement(Themed, null);
-});
+exports.Themed = Themed;

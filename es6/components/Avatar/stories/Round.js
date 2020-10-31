@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Avatar, Box, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var Round = function Round() {
+export var Round = function Round() {
   var src = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
@@ -37,7 +35,3 @@ var Round = function Round() {
     src: src
   })));
 };
-
-storiesOf('Avatar', module).add('Round', function () {
-  return /*#__PURE__*/React.createElement(Round, null);
-});

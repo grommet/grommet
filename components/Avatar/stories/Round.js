@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Round = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -45,6 +46,4 @@ var Round = function Round() {
   })));
 };
 
-(0, _react2.storiesOf)('Avatar', module).add('Round', function () {
-  return /*#__PURE__*/_react["default"].createElement(Round, null);
-});
+exports.Round = Round;
