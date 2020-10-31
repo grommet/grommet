@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Grid } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var GridAreasAlternative = function GridAreasAlternative() {
+export var GridAreasAlternative = function GridAreasAlternative() {
   return /*#__PURE__*/React.createElement(Grommet, {
     full: true,
     theme: grommet
@@ -26,7 +24,6 @@ var GridAreasAlternative = function GridAreasAlternative() {
     gridArea: "footer"
   }, "Footer")));
 };
-
-storiesOf('Grid', module).add('Areas prop alternative', function () {
-  return /*#__PURE__*/React.createElement(GridAreasAlternative, null);
-});
+GridAreasAlternative.story = {
+  name: 'Areas prop alternative'
+};

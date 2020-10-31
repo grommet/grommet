@@ -3,7 +3,6 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Grid, Heading, ResponsiveContext } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils'; // Two responsive grids
@@ -153,7 +152,7 @@ var Responsive = function Responsive(_ref) {
   });
 };
 
-var ResponsiveGrid = function ResponsiveGrid() {
+export var ResponsiveGrid = function ResponsiveGrid() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: customBreakpoints
   }, /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(Heading, {
@@ -186,7 +185,6 @@ var ResponsiveGrid = function ResponsiveGrid() {
     rows: "xsmall"
   }, listAnimalsBoxes)));
 };
-
-storiesOf('Grid', module).add('Responsive grid', function () {
-  return /*#__PURE__*/React.createElement(ResponsiveGrid, null);
-});
+ResponsiveGrid.story = {
+  name: 'Responsive grid'
+};

@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grid, Grommet } from 'grommet';
 import { grommet } from '../../../themes';
-
-var BorderGrid = function BorderGrid() {
+export var BorderGrid = function BorderGrid() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -82,7 +80,6 @@ var BorderGrid = function BorderGrid() {
     }, type);
   }))));
 };
-
-storiesOf('Grid', module).add('Border', function () {
-  return /*#__PURE__*/React.createElement(BorderGrid, null);
-});
+BorderGrid.story = {
+  name: 'Border'
+};

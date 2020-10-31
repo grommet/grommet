@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Grid } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var NColumnGrid = function NColumnGrid() {
+export var NColumnGrid = function NColumnGrid() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet,
     full: true
@@ -27,7 +25,6 @@ var NColumnGrid = function NColumnGrid() {
     background: "brand"
   }, "Item 6")));
 };
-
-storiesOf('Grid', module).add('N-column layout', function () {
-  return /*#__PURE__*/React.createElement(NColumnGrid, null);
-});
+NColumnGrid.story = {
+  name: 'N-column layout'
+};

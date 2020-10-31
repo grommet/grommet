@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Grid } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var Percentages = function Percentages() {
+export var Percentages = function Percentages() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet,
     full: true
@@ -29,7 +27,3 @@ var Percentages = function Percentages() {
     background: "brand"
   })));
 };
-
-storiesOf('Grid', module).add('Percentages', function () {
-  return /*#__PURE__*/React.createElement(Percentages, null);
-});

@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Percentages = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -37,6 +38,4 @@ var Percentages = function Percentages() {
   })));
 };
 
-(0, _react2.storiesOf)('Grid', module).add('Percentages', function () {
-  return /*#__PURE__*/_react["default"].createElement(Percentages, null);
-});
+exports.Percentages = Percentages;

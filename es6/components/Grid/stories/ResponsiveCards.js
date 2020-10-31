@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { storiesOf } from '@storybook/react';
 import { grommet, Box, Card, Grid, Grommet, ResponsiveContext, Text } from 'grommet';
 var cards = Array(20).fill() // eslint-disable-next-line react/no-array-index-key
 .map(function (_, i) {
@@ -7,8 +6,7 @@ var cards = Array(20).fill() // eslint-disable-next-line react/no-array-index-ke
     key: i
   }, "Card " + i);
 });
-
-var Example = function Example() {
+export var Example = function Example() {
   var size = useContext(ResponsiveContext);
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
@@ -28,7 +26,6 @@ var Example = function Example() {
     );
   }))));
 };
-
-storiesOf('Grid', module).add('Responsive cards', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-});
+Example.story = {
+  name: 'Responsive cards'
+};

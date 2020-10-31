@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.ResponsiveGrid = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -196,6 +197,7 @@ var ResponsiveGrid = function ResponsiveGrid() {
   }, listAnimalsBoxes)));
 };
 
-(0, _react2.storiesOf)('Grid', module).add('Responsive grid', function () {
-  return /*#__PURE__*/_react["default"].createElement(ResponsiveGrid, null);
-});
+exports.ResponsiveGrid = ResponsiveGrid;
+ResponsiveGrid.story = {
+  name: 'Responsive grid'
+};

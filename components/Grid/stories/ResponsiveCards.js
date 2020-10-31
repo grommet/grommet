@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.Example = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
@@ -38,6 +39,7 @@ var Example = function Example() {
   }))));
 };
 
-(0, _react2.storiesOf)('Grid', module).add('Responsive cards', function () {
-  return /*#__PURE__*/_react["default"].createElement(Example, null);
-});
+exports.Example = Example;
+Example.story = {
+  name: 'Responsive cards'
+};
