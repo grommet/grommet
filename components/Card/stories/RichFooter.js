@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.RichFooter = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -27,7 +28,7 @@ var theme = {
   }
 };
 
-var Example = function Example() {
+var RichFooter = function RichFooter() {
   var _React$useState = _react["default"].useState(false),
       open = _React$useState[0],
       setOpen = _React$useState[1];
@@ -108,6 +109,7 @@ var Example = function Example() {
   }, "The greatest bridge builders of antiquity were the ancient Romans. The Romans built arch bridges and aqueducts that could stand in conditions that would damage or destroy earlier designs. Some stand today.")))));
 };
 
-(0, _react2.storiesOf)('Card', module).add('Rich footer', function () {
-  return /*#__PURE__*/_react["default"].createElement(Example, null);
-});
+exports.RichFooter = RichFooter;
+RichFooter.story = {
+  name: 'Rich footer'
+};

@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Avatar, Box, Card, Heading, CardBody, CardHeader, Grid, Grommet, Text, Image, Stack } from 'grommet';
 var theme = {
   global: {
@@ -34,8 +33,7 @@ var data = [{
   image: "https://img.jakpost.net/c/2020/04/07/2020_04_07_92088_1586233705._large.jpg",
   state: 'Australia'
 }];
-
-var Example = function Example() {
+export var Stacked = function Stacked() {
   var avatarSrc = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: theme
@@ -80,7 +78,3 @@ var Example = function Example() {
     }, item.state)))));
   }))));
 };
-
-storiesOf('Card', module).add('Stacked', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-});

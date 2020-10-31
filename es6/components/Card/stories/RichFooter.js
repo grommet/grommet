@@ -1,7 +1,6 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Anchor, Box, Button, Card, CardBody, CardFooter, Collapsible, Heading, Grommet, Image, Paragraph } from 'grommet';
 import { FormDown } from "grommet-icons/es6/icons/FormDown";
 import { FormUp } from "grommet-icons/es6/icons/FormUp";
@@ -21,8 +20,7 @@ var theme = {
     }
   }
 };
-
-var Example = function Example() {
+export var RichFooter = function RichFooter() {
   var _React$useState = React.useState(false),
       open = _React$useState[0],
       setOpen = _React$useState[1];
@@ -102,7 +100,6 @@ var Example = function Example() {
     color: "dark-3"
   }, "The greatest bridge builders of antiquity were the ancient Romans. The Romans built arch bridges and aqueducts that could stand in conditions that would damage or destroy earlier designs. Some stand today.")))));
 };
-
-storiesOf('Card', module).add('Rich footer', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-});
+RichFooter.story = {
+  name: 'Rich footer'
+};

@@ -1,11 +1,9 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Example = void 0;
+exports.Themed = void 0;
 
 var _react = _interopRequireDefault(require("react"));
-
-var _react2 = require("@storybook/react");
 
 var _grommetIcons = require("grommet-icons");
 
@@ -110,7 +108,7 @@ var Identifier = function Identifier(_ref) {
   }, subTitle)));
 };
 
-var Example = function Example() {
+var Themed = function Themed() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: theme,
     full: true
@@ -146,7 +144,4 @@ var Example = function Example() {
   }))));
 };
 
-exports.Example = Example;
-(0, _react2.storiesOf)('Card', module).add('Themed', function () {
-  return /*#__PURE__*/_react["default"].createElement(Example, null);
-});
+exports.Themed = Themed;

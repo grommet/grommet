@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Stacked = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -42,7 +43,7 @@ var data = [{
   state: 'Australia'
 }];
 
-var Example = function Example() {
+var Stacked = function Stacked() {
   var avatarSrc = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: theme
@@ -88,6 +89,4 @@ var Example = function Example() {
   }))));
 };
 
-(0, _react2.storiesOf)('Card', module).add('Stacked', function () {
-  return /*#__PURE__*/_react["default"].createElement(Example, null);
-});
+exports.Stacked = Stacked;

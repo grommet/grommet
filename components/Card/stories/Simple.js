@@ -1,14 +1,15 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Simple = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var Example = function Example() {
+var Simple = function Simple() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _grommet.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -34,6 +35,4 @@ var Example = function Example() {
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "text - random component"), /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, "box - random component"))));
 };
 
-(0, _react2.storiesOf)('Card', module).add('Simple', function () {
-  return /*#__PURE__*/_react["default"].createElement(Example, null);
-});
+exports.Simple = Simple;

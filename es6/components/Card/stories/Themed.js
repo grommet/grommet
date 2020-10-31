@@ -3,7 +3,6 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Location } from "grommet-icons/es6/icons/Location";
 import { System } from "grommet-icons/es6/icons/System";
 import { ShieldSecurity } from "grommet-icons/es6/icons/ShieldSecurity";
@@ -104,7 +103,7 @@ var Identifier = function Identifier(_ref) {
   }, subTitle)));
 };
 
-export var Example = function Example() {
+export var Themed = function Themed() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: theme,
     full: true
@@ -139,6 +138,3 @@ export var Example = function Example() {
     }, value.message)));
   }))));
 };
-storiesOf('Card', module).add('Themed', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-});

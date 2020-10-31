@@ -3,7 +3,6 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Bluetooth as Memory } from "grommet-icons/es6/icons/Bluetooth";
 import { Storage } from "grommet-icons/es6/icons/Storage";
 import { Trigger } from "grommet-icons/es6/icons/Trigger";
@@ -124,7 +123,7 @@ var Identifier = function Identifier(_ref2) {
   }, subTitle)));
 };
 
-export var Example = function Example() {
+export var Clickable = function Clickable() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: theme,
     full: true
@@ -163,6 +162,3 @@ export var Example = function Example() {
     }, value.message)));
   }))));
 };
-storiesOf('Card', module).add('Clickable', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-});
