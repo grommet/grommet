@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Text } from 'grommet';
 import { grommet } from '../../../themes';
-
-var GradientColorBox = function GradientColorBox() {
+export var GradientColorBox = function GradientColorBox() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -16,7 +14,6 @@ var GradientColorBox = function GradientColorBox() {
     color: "white"
   }, "I have a linear gradient background")));
 };
-
-storiesOf('Box', module).add('Gradient', function () {
-  return /*#__PURE__*/React.createElement(GradientColorBox, null);
-});
+GradientColorBox.story = {
+  name: 'Gradient'
+};

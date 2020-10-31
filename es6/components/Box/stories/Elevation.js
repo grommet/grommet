@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Text } from 'grommet';
 import { grommet } from '../../../themes';
-
-var ElevationBox = function ElevationBox() {
+export var ElevationBox = function ElevationBox() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -28,7 +26,6 @@ var ElevationBox = function ElevationBox() {
     elevation: "medium"
   }, /*#__PURE__*/React.createElement(Text, null, "light on light")))))));
 };
-
-storiesOf('Box', module).add('Elevation', function () {
-  return /*#__PURE__*/React.createElement(ElevationBox, null);
-});
+ElevationBox.story = {
+  name: 'Elevation'
+};

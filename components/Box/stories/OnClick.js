@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.OnClickBox = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommetIcons = require("grommet-icons");
 
@@ -34,6 +35,7 @@ var OnClickBox = function OnClickBox() {
   }), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Party"))));
 };
 
-(0, _react2.storiesOf)('Box', module).add('onClick', function () {
-  return /*#__PURE__*/_react["default"].createElement(OnClickBox, null);
-});
+exports.OnClickBox = OnClickBox;
+OnClickBox.story = {
+  name: 'onClick'
+};

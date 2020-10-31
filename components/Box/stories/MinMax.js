@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.MinMaxSizesBox = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -215,6 +216,7 @@ var MinMaxSizesBox = function MinMaxSizesBox() {
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "min-width=small, min-width=small")))));
 };
 
-(0, _react2.storiesOf)('Box', module).add('Min/max sizes', function () {
-  return /*#__PURE__*/_react["default"].createElement(MinMaxSizesBox, null);
-});
+exports.MinMaxSizesBox = MinMaxSizesBox;
+MinMaxSizesBox.story = {
+  name: 'Min/max sizes'
+};

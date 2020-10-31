@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.ElevationBox = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -36,6 +37,7 @@ var ElevationBox = function ElevationBox() {
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "light on light")))))));
 };
 
-(0, _react2.storiesOf)('Box', module).add('Elevation', function () {
-  return /*#__PURE__*/_react["default"].createElement(ElevationBox, null);
-});
+exports.ElevationBox = ElevationBox;
+ElevationBox.story = {
+  name: 'Elevation'
+};

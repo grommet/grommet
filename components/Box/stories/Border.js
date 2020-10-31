@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.BorderBox = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -103,6 +104,7 @@ var BorderBox = function BorderBox() {
   }))));
 };
 
-(0, _react2.storiesOf)('Box', module).add('Border', function () {
-  return /*#__PURE__*/_react["default"].createElement(BorderBox, null);
-});
+exports.BorderBox = BorderBox;
+BorderBox.story = {
+  name: 'Border'
+};

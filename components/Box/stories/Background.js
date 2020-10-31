@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.BackgroundBox = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -105,6 +106,7 @@ var BackgroundBox = function BackgroundBox() {
   }, "force light background with color as object")))));
 };
 
-(0, _react2.storiesOf)('Box', module).add('Background', function () {
-  return /*#__PURE__*/_react["default"].createElement(BackgroundBox, null);
-});
+exports.BackgroundBox = BackgroundBox;
+BackgroundBox.story = {
+  name: 'Background'
+};

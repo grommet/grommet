@@ -1,11 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Attraction } from "grommet-icons/es6/icons/Attraction";
 import { Car } from "grommet-icons/es6/icons/Car";
 import { Grommet, Anchor, Box, Button, Text } from 'grommet';
 import { grommet } from '../../../themes';
-
-var SimpleBox = function SimpleBox() {
+export var SimpleBox = function SimpleBox() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -49,7 +47,6 @@ var SimpleBox = function SimpleBox() {
     onClick: function onClick() {}
   }))));
 };
-
-storiesOf('Box', module).add('Simple', function () {
-  return /*#__PURE__*/React.createElement(SimpleBox, null);
-});
+SimpleBox.story = {
+  name: 'Simple'
+};

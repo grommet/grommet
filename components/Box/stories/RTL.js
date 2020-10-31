@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.RTLBox = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -42,6 +43,7 @@ var RTLBox = function RTLBox() {
   }, "margin start")));
 };
 
-(0, _react2.storiesOf)('Box', module).add('RTL', function () {
-  return /*#__PURE__*/_react["default"].createElement(RTLBox, null);
-});
+exports.RTLBox = RTLBox;
+RTLBox.story = {
+  name: 'RTL'
+};

@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Text } from 'grommet';
 import { grommet } from '../../../themes';
-
-var MinMaxSizesBox = function MinMaxSizesBox() {
+export var MinMaxSizesBox = function MinMaxSizesBox() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -207,7 +205,6 @@ var MinMaxSizesBox = function MinMaxSizesBox() {
     overflow: "auto"
   }, /*#__PURE__*/React.createElement(Text, null, "min-width=small, min-width=small")))));
 };
-
-storiesOf('Box', module).add('Min/max sizes', function () {
-  return /*#__PURE__*/React.createElement(MinMaxSizesBox, null);
-});
+MinMaxSizesBox.story = {
+  name: 'Min/max sizes'
+};

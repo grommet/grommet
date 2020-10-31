@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.FixedSizesBox = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -52,6 +53,7 @@ var FixedSizesBox = function FixedSizesBox() {
   }, "Large")));
 };
 
-(0, _react2.storiesOf)('Box', module).add('Fixed sizes', function () {
-  return /*#__PURE__*/_react["default"].createElement(FixedSizesBox, null);
-});
+exports.FixedSizesBox = FixedSizesBox;
+FixedSizesBox.story = {
+  name: 'Fixed sizes'
+};

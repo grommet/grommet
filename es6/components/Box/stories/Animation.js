@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Grid } from 'grommet';
 import { grommet } from '../../../themes';
-
-var Example = function Example() {
+export var Animation = function Animation() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -24,7 +22,3 @@ var Example = function Example() {
     }, animation);
   }))));
 };
-
-storiesOf('Box', module).add('Animation', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-});

@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box } from 'grommet';
 import { grommet } from '../../../themes';
-
-var RTLBox = function RTLBox() {
+export var RTLBox = function RTLBox() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet,
     dir: "rtl"
@@ -34,7 +32,6 @@ var RTLBox = function RTLBox() {
     background: "brand"
   }, "margin start")));
 };
-
-storiesOf('Box', module).add('RTL', function () {
-  return /*#__PURE__*/React.createElement(RTLBox, null);
-});
+RTLBox.story = {
+  name: 'RTL'
+};

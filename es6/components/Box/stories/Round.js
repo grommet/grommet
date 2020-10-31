@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Grid } from 'grommet';
 import { grommet } from '../../../themes';
-
-var RoundBox = function RoundBox() {
+export var RoundBox = function RoundBox() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -60,7 +58,6 @@ var RoundBox = function RoundBox() {
     }
   }, "left rounded corner px value"))));
 };
-
-storiesOf('Box', module).add('Round', function () {
-  return /*#__PURE__*/React.createElement(RoundBox, null);
-});
+RoundBox.story = {
+  name: 'Round'
+};

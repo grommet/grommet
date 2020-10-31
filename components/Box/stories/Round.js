@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.RoundBox = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -68,6 +69,7 @@ var RoundBox = function RoundBox() {
   }, "left rounded corner px value"))));
 };
 
-(0, _react2.storiesOf)('Box', module).add('Round', function () {
-  return /*#__PURE__*/_react["default"].createElement(RoundBox, null);
-});
+exports.RoundBox = RoundBox;
+RoundBox.story = {
+  name: 'Round'
+};

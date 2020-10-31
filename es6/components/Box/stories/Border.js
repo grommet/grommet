@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Text } from 'grommet';
 import { grommet } from '../../../themes';
-
-var BorderBox = function BorderBox() {
+export var BorderBox = function BorderBox() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -95,7 +93,6 @@ var BorderBox = function BorderBox() {
     }, /*#__PURE__*/React.createElement(Text, null, "between"), /*#__PURE__*/React.createElement(Text, null, direction));
   }))));
 };
-
-storiesOf('Box', module).add('Border', function () {
-  return /*#__PURE__*/React.createElement(BorderBox, null);
-});
+BorderBox.story = {
+  name: 'Border'
+};

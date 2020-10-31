@@ -1,10 +1,8 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Attraction } from "grommet-icons/es6/icons/Attraction";
 import { Grommet, Box, Text } from 'grommet';
 import { grommet } from '../../../themes';
-
-var OnClickBox = function OnClickBox() {
+export var OnClickBox = function OnClickBox() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -25,7 +23,6 @@ var OnClickBox = function OnClickBox() {
     size: "large"
   }), /*#__PURE__*/React.createElement(Text, null, "Party"))));
 };
-
-storiesOf('Box', module).add('onClick', function () {
-  return /*#__PURE__*/React.createElement(OnClickBox, null);
-});
+OnClickBox.story = {
+  name: 'onClick'
+};

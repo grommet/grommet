@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Text } from 'grommet';
 import { grommet } from '../../../themes';
-
-var BackgroundBox = function BackgroundBox() {
+export var BackgroundBox = function BackgroundBox() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -97,7 +95,6 @@ var BackgroundBox = function BackgroundBox() {
     color: "brand"
   }, "force light background with color as object")))));
 };
-
-storiesOf('Box', module).add('Background', function () {
-  return /*#__PURE__*/React.createElement(BackgroundBox, null);
-});
+BackgroundBox.story = {
+  name: 'Background'
+};
