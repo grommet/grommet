@@ -121,6 +121,8 @@ const LazyDrop = () => {
 };
 
 export const Lazy = () => <LazyDrop />;
-Lazy.parameters = {
-  chromatic: { disable: true },
+Lazy.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
 };
