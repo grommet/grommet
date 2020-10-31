@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet as GrommetIcon } from 'grommet-icons';
 import { Anchor, Box, Footer, grommet, Grommet, Main, Text } from 'grommet';
@@ -24,7 +23,7 @@ const FooterContent = () => {
   ));
 };
 
-const Sitemap = () => {
+export const Sitemap = () => {
   return (
     <Grommet theme={grommet}>
       <Main
@@ -53,5 +52,3 @@ const Sitemap = () => {
     </Grommet>
   );
 };
-
-storiesOf('Footer', module).add('Sitemap', () => <Sitemap />);
