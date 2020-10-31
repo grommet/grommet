@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, WorldMap } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var Example = function Example() {
+export var SelectPlace = function SelectPlace() {
   var _React$useState = React.useState(),
       places = _React$useState[0],
       setPlaces = _React$useState[1];
@@ -25,11 +23,11 @@ var Example = function Example() {
     places: places
   })));
 };
-
-storiesOf('WorldMap', module).add('Select place', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-}, {
-  chromatic: {
-    disable: true
+SelectPlace.story = {
+  name: 'Select place',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

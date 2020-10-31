@@ -81,8 +81,10 @@ var Tooltip = function Tooltip() {
 };
 
 exports.Tooltip = Tooltip;
-Tooltip.parameters = {
-  chromatic: {
-    disable: true
+Tooltip.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

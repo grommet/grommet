@@ -92,8 +92,10 @@ var Progressive = function Progressive() {
 };
 
 exports.Progressive = Progressive;
-Progressive.parameters = {
-  chromatic: {
-    disable: true
+Progressive.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

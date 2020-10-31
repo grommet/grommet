@@ -85,8 +85,10 @@ var Multiple = function Multiple() {
 };
 
 exports.Multiple = Multiple;
-Multiple.parameters = {
-  chromatic: {
-    disable: true
+Multiple.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

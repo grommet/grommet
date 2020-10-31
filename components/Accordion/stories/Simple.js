@@ -64,11 +64,11 @@ var DarkNoAnimation = function DarkNoAnimation() {
 
 exports.DarkNoAnimation = DarkNoAnimation;
 DarkNoAnimation.story = {
-  name: 'Dark no animation'
-};
-DarkNoAnimation.parameters = {
-  chromatic: {
-    disable: true
+  name: 'Dark no animation',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };
 
@@ -79,8 +79,10 @@ var Multiple = function Multiple() {
 };
 
 exports.Multiple = Multiple;
-Multiple.parameters = {
-  chromatic: {
-    disable: true
+Multiple.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

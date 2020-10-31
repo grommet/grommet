@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Places = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -10,7 +11,7 @@ var _themes = require("grommet/themes");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var Example = function Example() {
+var Places = function Places() {
   var _React$useState = _react["default"].useState(),
       active = _React$useState[0],
       setActive = _React$useState[1];
@@ -34,6 +35,4 @@ var Example = function Example() {
   }, "Sydney")));
 };
 
-(0, _react2.storiesOf)('WorldMap', module).add('Places', function () {
-  return /*#__PURE__*/_react["default"].createElement(Example, null);
-});
+exports.Places = Places;

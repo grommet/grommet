@@ -70,8 +70,10 @@ var TooltipDrop = function TooltipDrop() {
 export var Tooltip = function Tooltip() {
   return /*#__PURE__*/React.createElement(TooltipDrop, null);
 };
-Tooltip.parameters = {
-  chromatic: {
-    disable: true
+Tooltip.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

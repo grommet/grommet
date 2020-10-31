@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, WorldMap } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var Example = function Example() {
+export var Places = function Places() {
   var _React$useState = React.useState(),
       active = _React$useState[0],
       setActive = _React$useState[1];
@@ -26,7 +24,3 @@ var Example = function Example() {
     margin: "large"
   }, "Sydney")));
 };
-
-storiesOf('WorldMap', module).add('Places', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-});

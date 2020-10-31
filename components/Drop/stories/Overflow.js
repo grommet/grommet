@@ -91,8 +91,10 @@ var Overflow = function Overflow() {
 };
 
 exports.Overflow = Overflow;
-Overflow.parameters = {
-  chromatic: {
-    disable: true
+Overflow.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

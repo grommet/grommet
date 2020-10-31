@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Color = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -10,7 +11,7 @@ var _themes = require("grommet/themes");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var Example = function Example() {
+var Color = function Color() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -21,10 +22,11 @@ var Example = function Example() {
   })));
 };
 
-(0, _react2.storiesOf)('WorldMap', module).add('Color', function () {
-  return /*#__PURE__*/_react["default"].createElement(Example, null);
-}, {
-  chromatic: {
-    disable: true
+exports.Color = Color;
+Color.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

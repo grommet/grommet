@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, WorldMap } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var Example = function Example() {
+export var Color = function Color() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -13,11 +11,10 @@ var Example = function Example() {
     color: "graph-1"
   })));
 };
-
-storiesOf('WorldMap', module).add('Color', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-}, {
-  chromatic: {
-    disable: true
+Color.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};
