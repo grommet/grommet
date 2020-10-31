@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Meter, Stack, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const LabelledMeter = () => {
+export const Labelled = () => {
   const meterValue = 30;
 
   return (
@@ -29,5 +28,3 @@ const LabelledMeter = () => {
     </Grommet>
   );
 };
-
-storiesOf('Meter', module).add('Labelled', () => <LabelledMeter />);
