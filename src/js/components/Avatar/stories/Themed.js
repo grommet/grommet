@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Favorite } from 'grommet-icons';
 
@@ -17,12 +16,12 @@ const theme = {
       fontWeight: 700,
       extend: `font-family: Comic Sans MS;`,
     },
-    extend: `border: 2px solid white; 
+    extend: `border: 2px solid white;
             box-shadow: 2px 2px 15px 1px white;`,
   },
 };
 
-const Themed = () => {
+export const Themed = () => {
   const src = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
 
   return (
@@ -49,5 +48,3 @@ const Themed = () => {
     </Grommet>
   );
 };
-
-storiesOf('Avatar', module).add('Themed', () => <Themed />);
