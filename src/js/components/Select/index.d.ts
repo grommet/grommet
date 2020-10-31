@@ -6,16 +6,32 @@ import {
   GridAreaType,
   MarginType,
   PlaceHolderType,
+  ColorType,
 } from '../../utils';
+
+type SelectOption = string | boolean | number | JSX.Element | object;
+
+interface onChangeEvent
+  extends React.MouseEvent<
+    Omit<HTMLElement, 'value'> & { value: SelectOption | SelectOption[] }
+  > {
+  option: SelectOption;
+  value: SelectOption | SelectOption[];
+}
 
 export interface SelectProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
-  children?: (...args: any[]) => any;
+  children?: (
+    option: SelectOption,
+    index: number,
+    options: SelectOption[],
+    state: { active: boolean; disabled: boolean; selected: boolean },
+  ) => any;
   closeOnChange?: boolean;
   disabled?: boolean | (number | string | object)[];
-  disabledKey?: string | ((...args: any[]) => any);
+  disabledKey?: string | ((option: SelectOption) => boolean);
   dropAlign?: {
     top?: 'top' | 'bottom';
     bottom?: 'top' | 'bottom';
@@ -26,19 +42,25 @@ export interface SelectProps {
   dropTarget?: object;
   dropProps?: DropProps;
   focusIndicator?: boolean;
-  icon?: boolean | ((...args: any[]) => any) | React.ReactNode;
+  icon?:
+    | boolean
+    | ((props: {
+        color: ColorType;
+        size: 'small' | 'medium' | 'large' | 'xlarge' | string;
+      }) => React.ReactNode)
+    | React.ReactNode;
   id?: string;
-  labelKey?: string | ((...args: any[]) => any);
+  labelKey?: string | ((option: SelectOption) => any);
   margin?: MarginType;
   messages?: { multiple?: string };
   multiple?: boolean;
   name?: string;
-  onChange?: (...args: any[]) => void;
-  onClose?: (...args: any[]) => any;
-  onMore?: (...args: any[]) => any;
-  onOpen?: (...args: any[]) => any;
+  onChange?: (event: onChangeEvent) => void;
+  onClose?: () => void;
+  onMore?: () => void;
+  onOpen?: () => void;
   onSearch?: (search: string) => void;
-  options: (string | boolean | number | JSX.Element | object)[];
+  options: SelectOption[];
   open?: boolean;
   placeholder?: PlaceHolderType;
   plain?: boolean;
@@ -46,12 +68,12 @@ export interface SelectProps {
   searchPlaceholder?: string;
   selected?: number | number[];
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
-  value?: string | JSX.Element | object | (string | number | object)[];
+  value?: SelectOption | SelectOption[];
   valueLabel?: React.ReactNode;
   valueKey?:
     | string
     | { key: string; reduce?: boolean }
-    | ((...args: any[]) => any);
+    | ((option: SelectOption) => any);
   emptySearchMessage?: string;
 }
 

@@ -5,7 +5,6 @@ import React, {
   useContext,
   useMemo,
   useState,
-  useRef,
   useEffect,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
@@ -87,7 +86,6 @@ const Select = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
-    const inputRef = useRef();
     const formContext = useContext(FormContext);
 
     // value is used for what we receive in valueProp and the basis for
@@ -143,7 +141,7 @@ const Select = forwardRef(
         if (onChange) {
           event.persist();
           const adjustedEvent = event;
-          adjustedEvent.target = inputRef.current;
+          adjustedEvent.target.value = nextValue;
           adjustedEvent.value = nextValue;
           adjustedEvent.option = option;
           adjustedEvent.selected = nextSelected;
@@ -262,7 +260,6 @@ const Select = forwardRef(
                   defaultCursor={disabled === true || undefined}
                   id={id ? `${id}__input` : undefined}
                   name={name}
-                  ref={inputRef}
                   {...rest}
                   tabIndex="-1"
                   type="text"

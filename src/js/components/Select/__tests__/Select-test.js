@@ -885,4 +885,149 @@ describe('Select', () => {
     expectPortal('test-select__drop').toMatchSnapshot();
   });
   window.scrollTo.mockRestore();
+
+  test('event.target.value === event.target', () => {
+    const onTargetChange = jest.fn();
+    const { getByPlaceholderText, container } = render(
+      <Select
+        id="test-select"
+        placeholder="test select"
+        options={['one', 'two']}
+        onChange={event => onTargetChange(event.target)}
+      />,
+    );
+    const select = getByPlaceholderText('test select');
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    fireEvent.click(
+      document
+        .getElementById('test-select__drop')
+        .querySelectorAll('button')[1],
+    );
+
+    expect(select.value).toEqual('two');
+    expect(onTargetChange).toBeCalledWith(
+      expect.objectContaining({ value: 'two' }),
+    );
+  });
+
+  test("onChange target isn't undefined when using valueLabel", () => {
+    const onChange = jest.fn();
+    const { getByText, container } = render(
+      <Select
+        id="test-select"
+        value="one"
+        options={['one', 'two']}
+        valueLabel="test-value-label"
+        onChange={onChange}
+      />,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.click(getByText('test-value-label'));
+    fireEvent.click(
+      document
+        .getElementById('test-select__drop')
+        .querySelectorAll('button')[1],
+    );
+
+    expect(onChange).toBeCalledWith(expect.objectContaining({ value: 'two' }));
+    expect(onChange).toBeCalledWith(
+      expect.not.objectContaining({ target: undefined }),
+    );
+  });
+
+  test('icon function', () => {
+    const iconFn = jest.fn(({ color, size }) => (
+      <span style={{ background: color }} className={size}>
+        the-icon
+      </span>
+    ));
+
+    const customTheme = {
+      select: {
+        icons: {
+          color: 'purple',
+        },
+      },
+    };
+
+    const { getByText, container } = render(
+      <Grommet theme={customTheme}>
+        <Select
+          id="test-select"
+          options={['one', 'two']}
+          size="large"
+          icon={iconFn}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    const icon = getByText('the-icon');
+    const style = window.getComputedStyle(icon);
+
+    expect(style.background).toBe('purple');
+    expect(icon.className).toBe('large');
+    expect(iconFn).toBeCalledTimes(1);
+  });
+
+  test('labelKey function', () => {
+    const labelKey = jest.fn(option => option.person.name);
+    const onChange = jest.fn();
+
+    const { container, getByPlaceholderText } = render(
+      <Select
+        id="test-select"
+        placeholder="test select"
+        labelKey={labelKey}
+        options={[
+          { person: { name: 'one' }, id: { id: 1 } },
+          { person: { name: 'two' }, id: { id: 2 } },
+        ]}
+        onChange={onChange}
+      />,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    fireEvent.click(
+      document.getElementById('test-select__drop').querySelector('button'),
+    );
+
+    expect(labelKey).toHaveBeenCalledWith({
+      person: expect.anything(),
+      id: expect.anything(),
+    });
+  });
+
+  test('valueKey function with reduce', () => {
+    const valueKey = jest.fn(option => option.id.id);
+    valueKey.reduce = true;
+    const onChange = jest.fn();
+
+    const { container, getByPlaceholderText } = render(
+      <Select
+        id="test-select"
+        placeholder="test select"
+        labelKey="label"
+        valueKey={valueKey}
+        options={[
+          { label: 'one', id: { id: 1 } },
+          { label: 'two', id: { id: 2 } },
+        ]}
+        onChange={onChange}
+      />,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    fireEvent.click(
+      document.getElementById('test-select__drop').querySelector('button'),
+    );
+
+    expect(onChange).toBeCalledWith(expect.objectContaining({ value: 1 }));
+  });
 });

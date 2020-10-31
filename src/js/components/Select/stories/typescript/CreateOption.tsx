@@ -29,7 +29,7 @@ const theme: ThemeType = {
   },
 };
 
-const defaultOptions = [];
+const defaultOptions: string[] = [];
 for (let i = 1; i <= 5; i += 1) {
   defaultOptions.push(`option ${i}`);
 }
@@ -69,7 +69,8 @@ const CreateOption = () => {
           placeholder="Select"
           value={value}
           options={options}
-          onChange={({ option }) => {
+          onChange={event => {
+            const option = event.option as string;
             if (option.includes(prefix)) {
               defaultOptions.pop(); // remove Create option
               defaultOptions.push(searchValue);
