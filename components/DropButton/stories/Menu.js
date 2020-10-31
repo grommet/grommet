@@ -1,12 +1,13 @@
 "use strict";
 
+exports.__esModule = true;
+exports.Menu = void 0;
+
 var _react = _interopRequireDefault(require("react"));
 
-var _react2 = require("@storybook/react");
+var _grommetIcons = require("grommet-icons");
 
 var _grommet = require("grommet");
-
-var _grommetIcons = require("grommet-icons");
 
 var _themes = require("grommet/themes");
 
@@ -54,10 +55,15 @@ var MenuDropButton = function MenuDropButton() {
   }), /*#__PURE__*/_react["default"].createElement(GremlinDropButton, null))));
 };
 
-(0, _react2.storiesOf)('DropButton', module).add('Menu', function () {
+var Menu = function Menu() {
   return /*#__PURE__*/_react["default"].createElement(MenuDropButton, null);
-}, {
-  chromatic: {
-    disable: true
+};
+
+exports.Menu = Menu;
+Menu.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

@@ -1,10 +1,11 @@
 "use strict";
 
+exports.__esModule = true;
+exports.Simple = void 0;
+
 var _react = _interopRequireDefault(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
-
-var _react2 = require("@storybook/react");
 
 var _grommetIcons = require("grommet-icons");
 
@@ -69,10 +70,15 @@ var SimpleDropButton = function SimpleDropButton() {
   })));
 };
 
-(0, _react2.storiesOf)('DropButton', module).add('Simple', function () {
+var Simple = function Simple() {
   return /*#__PURE__*/_react["default"].createElement(SimpleDropButton, null);
-}, {
-  chromatic: {
-    disable: true
+};
+
+exports.Simple = Simple;
+Simple.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

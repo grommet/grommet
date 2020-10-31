@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { storiesOf } from '@storybook/react';
 import { Close } from "grommet-icons/es6/icons/Close";
 import { Grommet, Box, Button, DropButton, Heading, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -60,10 +59,13 @@ var SimpleDropButton = function SimpleDropButton() {
   })));
 };
 
-storiesOf('DropButton', module).add('Simple', function () {
+export var Simple = function Simple() {
   return /*#__PURE__*/React.createElement(SimpleDropButton, null);
-}, {
-  chromatic: {
-    disable: true
+};
+Simple.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

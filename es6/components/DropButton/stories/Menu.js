@@ -1,7 +1,6 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { Grommet, Box, DropButton, Text } from 'grommet';
 import { Gremlin } from "grommet-icons/es6/icons/Gremlin";
+import { Grommet, Box, DropButton, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 var renderItems = function renderItems() {
@@ -46,10 +45,13 @@ var MenuDropButton = function MenuDropButton() {
   }), /*#__PURE__*/React.createElement(GremlinDropButton, null))));
 };
 
-storiesOf('DropButton', module).add('Menu', function () {
+export var Menu = function Menu() {
   return /*#__PURE__*/React.createElement(MenuDropButton, null);
-}, {
-  chromatic: {
-    disable: true
+};
+Menu.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};
