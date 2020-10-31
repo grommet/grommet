@@ -98,3 +98,5 @@ export const RichFooter = () => {
     </Grommet>
   );
 };
+
+RichFooter.story = { name: 'Rich footer' };
