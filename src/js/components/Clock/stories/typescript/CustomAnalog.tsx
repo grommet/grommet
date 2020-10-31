@@ -36,8 +36,9 @@ export const CustomAnalog = () => (
   </Grommet>
 );
 
-CustomAnalog.story = { name: 'Custom analog' };
-
-CustomAnalog.parameters = {
-  chromatic: { disable: true },
+CustomAnalog.story = {
+  name: 'Custom analog',
+  parameters: {
+    chromatic: { disable: true },
+  },
 };

@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Box, Grommet, Clock } from 'grommet';
 import { grommet } from 'grommet/themes';
+import {Analog} from "./Analog";
 
 export const Digital = () => (
   <Grommet theme={grommet}>
@@ -11,6 +12,8 @@ export const Digital = () => (
   </Grommet>
 );
 
-Digital.parameters = {
-  chromatic: { disable: true },
+Digital.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
 };
