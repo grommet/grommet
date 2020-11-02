@@ -290,6 +290,11 @@ export interface ThemeType {
         size?: string;
         weight?: number | string;
       };
+      placeholder?: {
+        font?: {
+          weight?: number | string;
+        };
+      };
       weight?: number | string;
     };
     opacity?: {
