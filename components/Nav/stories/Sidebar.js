@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.Sidebar = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
@@ -59,6 +60,8 @@ var SidebarNav = function SidebarNav() {
   }))));
 };
 
-(0, _react2.storiesOf)('Nav', module).add('Sidebar', function () {
+var Sidebar = function Sidebar() {
   return /*#__PURE__*/_react["default"].createElement(SidebarNav, null);
-});
+};
+
+exports.Sidebar = Sidebar;

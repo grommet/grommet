@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.CustomAnchor = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -40,7 +41,7 @@ var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
   }
 });
 
-var CustomAnchor = function CustomAnchor() {
+var CustomAnchorNav = function CustomAnchorNav() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
     theme: customTheme
@@ -67,6 +68,11 @@ var CustomAnchor = function CustomAnchor() {
   })), /*#__PURE__*/_react["default"].createElement(_grommet.Main, null, "Place main content here"))));
 };
 
-(0, _react2.storiesOf)('Nav', module).add('Custom anchor', function () {
-  return /*#__PURE__*/_react["default"].createElement(CustomAnchor, null);
-});
+var CustomAnchor = function CustomAnchor() {
+  return /*#__PURE__*/_react["default"].createElement(CustomAnchorNav, null);
+};
+
+exports.CustomAnchor = CustomAnchor;
+CustomAnchor.story = {
+  name: 'Custom anchor'
+};

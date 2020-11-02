@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Anchor, Box, Grommet, Header, Nav, Menu, ResponsiveContext } from 'grommet';
 import { grommet } from 'grommet/themes';
 
@@ -41,6 +40,6 @@ var CollapsableNav = function CollapsableNav() {
   })));
 };
 
-storiesOf('Nav', module).add('Collapsable nav', function () {
+export var Collapsable = function Collapsable() {
   return /*#__PURE__*/React.createElement(CollapsableNav, null);
-});
+};

@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Anchor, Box, Grommet, Main, Nav } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
@@ -31,7 +30,7 @@ var customTheme = deepMerge(grommet, {
   }
 });
 
-var CustomAnchor = function CustomAnchor() {
+var CustomAnchorNav = function CustomAnchorNav() {
   return /*#__PURE__*/React.createElement(Grommet, {
     full: true,
     theme: customTheme
@@ -58,6 +57,9 @@ var CustomAnchor = function CustomAnchor() {
   })), /*#__PURE__*/React.createElement(Main, null, "Place main content here"))));
 };
 
-storiesOf('Nav', module).add('Custom anchor', function () {
-  return /*#__PURE__*/React.createElement(CustomAnchor, null);
-});
+export var CustomAnchor = function CustomAnchor() {
+  return /*#__PURE__*/React.createElement(CustomAnchorNav, null);
+};
+CustomAnchor.story = {
+  name: 'Custom anchor'
+};

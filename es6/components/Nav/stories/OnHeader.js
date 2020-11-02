@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Avatar, Anchor, Box, Grommet, Header, Nav } from 'grommet';
 import { grommet } from 'grommet/themes';
 var items = [{
@@ -17,7 +16,7 @@ var items = [{
 }];
 var gravatarSrc = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
 
-var OnHeader = function OnHeader() {
+var OnHeaderNav = function OnHeaderNav() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Header, {
@@ -43,6 +42,9 @@ var OnHeader = function OnHeader() {
   }))));
 };
 
-storiesOf('Nav', module).add('On header', function () {
-  return /*#__PURE__*/React.createElement(OnHeader, null);
-});
+export var OnHeader = function OnHeader() {
+  return /*#__PURE__*/React.createElement(OnHeaderNav, null);
+};
+OnHeader.story = {
+  name: 'On header'
+};

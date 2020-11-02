@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Simple = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -24,7 +25,7 @@ var items = [{
   href: '#'
 }];
 
-var Simple = function Simple() {
+var SimpleNav = function SimpleNav() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Nav, {
@@ -38,6 +39,8 @@ var Simple = function Simple() {
   })));
 };
 
-(0, _react2.storiesOf)('Nav', module).add('Simple', function () {
-  return /*#__PURE__*/_react["default"].createElement(Simple, null);
-});
+var Simple = function Simple() {
+  return /*#__PURE__*/_react["default"].createElement(SimpleNav, null);
+};
+
+exports.Simple = Simple;

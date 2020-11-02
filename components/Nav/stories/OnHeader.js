@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.OnHeader = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -25,7 +26,7 @@ var items = [{
 }];
 var gravatarSrc = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
 
-var OnHeader = function OnHeader() {
+var OnHeaderNav = function OnHeaderNav() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Header, {
@@ -51,6 +52,11 @@ var OnHeader = function OnHeader() {
   }))));
 };
 
-(0, _react2.storiesOf)('Nav', module).add('On header', function () {
-  return /*#__PURE__*/_react["default"].createElement(OnHeader, null);
-});
+var OnHeader = function OnHeader() {
+  return /*#__PURE__*/_react["default"].createElement(OnHeaderNav, null);
+};
+
+exports.OnHeader = OnHeader;
+OnHeader.story = {
+  name: 'On header'
+};

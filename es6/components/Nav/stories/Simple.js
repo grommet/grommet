@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Anchor, Grommet, Nav } from 'grommet';
 import { grommet } from 'grommet/themes';
 var items = [{
@@ -16,7 +15,7 @@ var items = [{
   href: '#'
 }];
 
-var Simple = function Simple() {
+var SimpleNav = function SimpleNav() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Nav, {
@@ -30,6 +29,6 @@ var Simple = function Simple() {
   })));
 };
 
-storiesOf('Nav', module).add('Simple', function () {
-  return /*#__PURE__*/React.createElement(Simple, null);
-});
+export var Simple = function Simple() {
+  return /*#__PURE__*/React.createElement(SimpleNav, null);
+};
