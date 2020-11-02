@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { TreeOption } from "grommet-icons/es6/icons/TreeOption";
 import { Box, Heading, Grommet, Tab, Tabs } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -32,6 +31,6 @@ var ScrollableTabs = function ScrollableTabs() {
   }))))));
 };
 
-storiesOf('Tabs', module).add('Scrollable', function () {
+export var Scrollable = function Scrollable() {
   return /*#__PURE__*/React.createElement(ScrollableTabs, null);
-});
+};

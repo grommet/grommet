@@ -1,13 +1,11 @@
 "use strict";
 
 exports.__esModule = true;
-exports.RichTabTitle = void 0;
+exports.Rich = exports.RichTabTitle = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
-
-var _react2 = require("@storybook/react");
 
 var _grommetIcons = require("grommet-icons");
 
@@ -63,6 +61,9 @@ RichTabTitle.propTypes = {
   icon: _propTypes["default"].node.isRequired,
   label: _propTypes["default"].string.isRequired
 };
-(0, _react2.storiesOf)('Tabs', module).add('Rich', function () {
+
+var Rich = function Rich() {
   return /*#__PURE__*/_react["default"].createElement(RichTabs, null);
-});
+};
+
+exports.Rich = Rich;

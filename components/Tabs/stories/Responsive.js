@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.Responsive = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommetIcons = require("grommet-icons");
 
@@ -211,6 +212,8 @@ var ResponsiveTabs = function ResponsiveTabs() {
   })))));
 };
 
-(0, _react2.storiesOf)('Tabs', module).add('Responsive', function () {
+var Responsive = function Responsive() {
   return /*#__PURE__*/_react["default"].createElement(ResponsiveTabs, null);
-});
+};
+
+exports.Responsive = Responsive;

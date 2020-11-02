@@ -1,10 +1,11 @@
 "use strict";
 
+exports.__esModule = true;
+exports.Icon = void 0;
+
 var _react = _interopRequireDefault(require("react"));
 
 var _styledComponents = require("styled-components");
-
-var _react2 = require("@storybook/react");
 
 var _grommetIcons = require("grommet-icons");
 
@@ -45,7 +46,7 @@ var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
   }
 });
 
-var Icon = function Icon() {
+var IconTabs = function IconTabs() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme,
     full: true
@@ -87,6 +88,8 @@ var Icon = function Icon() {
   }))))));
 };
 
-(0, _react2.storiesOf)('Tabs', module).add('Icon', function () {
-  return /*#__PURE__*/_react["default"].createElement(Icon, null);
-});
+var Icon = function Icon() {
+  return /*#__PURE__*/_react["default"].createElement(IconTabs, null);
+};
+
+exports.Icon = Icon;

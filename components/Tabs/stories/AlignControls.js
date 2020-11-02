@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.AlignControls = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommetIcons = require("grommet-icons");
 
@@ -36,7 +37,7 @@ var myTheme = (0, _utils.deepMerge)(_grommet.grommet, {
   }
 });
 
-var AlignControls = function AlignControls() {
+var AlignControlsTabs = function AlignControlsTabs() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: myTheme,
     full: true
@@ -70,6 +71,11 @@ var AlignControls = function AlignControls() {
   })))));
 };
 
-(0, _react2.storiesOf)('Tabs', module).add('Align controls', function () {
-  return /*#__PURE__*/_react["default"].createElement(AlignControls, null);
-});
+var AlignControls = function AlignControls() {
+  return /*#__PURE__*/_react["default"].createElement(AlignControlsTabs, null);
+};
+
+exports.AlignControls = AlignControls;
+AlignControls.story = {
+  name: 'Align controls'
+};

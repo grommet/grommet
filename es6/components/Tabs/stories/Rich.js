@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { storiesOf } from '@storybook/react';
 import { CircleInformation } from "grommet-icons/es6/icons/CircleInformation";
 import { Currency } from "grommet-icons/es6/icons/Currency";
 import { Box, Grommet, FormField, Tab, Tabs, Text, TextInput } from 'grommet';
@@ -51,7 +50,7 @@ RichTabTitle.propTypes = {
   icon: PropTypes.node.isRequired,
   label: PropTypes.string.isRequired
 };
-storiesOf('Tabs', module).add('Rich', function () {
-  return /*#__PURE__*/React.createElement(RichTabs, null);
-});
 export { RichTabTitle };
+export var Rich = function Rich() {
+  return /*#__PURE__*/React.createElement(RichTabs, null);
+};

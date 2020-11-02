@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, Tab, Tabs, Text, ThemeContext } from 'grommet';
 import { grommet } from 'grommet/themes';
 var colors = {
@@ -130,10 +129,10 @@ var TabStates = function TabStates() {
   })), /*#__PURE__*/React.createElement(ThemeContext.Extend, {
     value: customThemeWithButtonDefault
   }, /*#__PURE__*/React.createElement(TabsExample, {
-    label: "Customized Disabled State with  'theme.button.default' Defined"
+    label: "Customized Disabled State with 'theme.button.default' Defined"
   }))));
 };
 
-storiesOf('Tabs', module).add('States', function () {
+export var States = function States() {
   return /*#__PURE__*/React.createElement(TabStates, null);
-});
+};

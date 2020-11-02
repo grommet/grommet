@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { storiesOf } from '@storybook/react';
 import { Attraction } from "grommet-icons/es6/icons/Attraction";
 import { Car } from "grommet-icons/es6/icons/Car";
 import { TreeOption } from "grommet-icons/es6/icons/TreeOption";
@@ -54,10 +53,11 @@ UncontrolledTabs.propTypes = {
   plain: PropTypes.bool // eslint-disable-line react/require-default-props
 
 };
-storiesOf('Tabs', module).add('Uncontrolled', function () {
+export var Uncontrolled = function Uncontrolled() {
   return /*#__PURE__*/React.createElement(UncontrolledTabs, null);
-}).add('Plain', function () {
+};
+export var Plain = function Plain() {
   return /*#__PURE__*/React.createElement(UncontrolledTabs, {
     plain: true
   });
-});
+};

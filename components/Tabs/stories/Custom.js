@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Custom = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _styledComponents = require("styled-components");
 
@@ -100,6 +101,8 @@ var CustomTabs = function CustomTabs() {
   }, "This Tab has a different styling than the RichTabTitle (e.g tab.active.color)")));
 };
 
-(0, _react2.storiesOf)('Tabs', module).add('Custom theme', function () {
+var Custom = function Custom() {
   return /*#__PURE__*/_react["default"].createElement(CustomTabs, null);
-});
+};
+
+exports.Custom = Custom;

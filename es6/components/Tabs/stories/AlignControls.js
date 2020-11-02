@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Attraction } from "grommet-icons/es6/icons/Attraction";
 import { Car } from "grommet-icons/es6/icons/Car";
 import { TreeOption } from "grommet-icons/es6/icons/TreeOption";
@@ -29,7 +28,7 @@ var myTheme = deepMerge(grommet, {
   }
 });
 
-var AlignControls = function AlignControls() {
+var AlignControlsTabs = function AlignControlsTabs() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: myTheme,
     full: true
@@ -63,6 +62,9 @@ var AlignControls = function AlignControls() {
   })))));
 };
 
-storiesOf('Tabs', module).add('Align controls', function () {
-  return /*#__PURE__*/React.createElement(AlignControls, null);
-});
+export var AlignControls = function AlignControls() {
+  return /*#__PURE__*/React.createElement(AlignControlsTabs, null);
+};
+AlignControls.story = {
+  name: 'Align controls'
+};

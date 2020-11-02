@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.States = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
@@ -140,10 +141,12 @@ var TabStates = function TabStates() {
   })), /*#__PURE__*/_react["default"].createElement(_grommet.ThemeContext.Extend, {
     value: customThemeWithButtonDefault
   }, /*#__PURE__*/_react["default"].createElement(TabsExample, {
-    label: "Customized Disabled State with  'theme.button.default' Defined"
+    label: "Customized Disabled State with 'theme.button.default' Defined"
   }))));
 };
 
-(0, _react2.storiesOf)('Tabs', module).add('States', function () {
+var States = function States() {
   return /*#__PURE__*/_react["default"].createElement(TabStates, null);
-});
+};
+
+exports.States = States;

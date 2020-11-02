@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Attraction } from "grommet-icons/es6/icons/Attraction";
 import { Car } from "grommet-icons/es6/icons/Car";
 import { TreeOption } from "grommet-icons/es6/icons/TreeOption";
@@ -203,6 +202,6 @@ var ResponsiveTabs = function ResponsiveTabs() {
   })))));
 };
 
-storiesOf('Tabs', module).add('Responsive', function () {
+export var Responsive = function Responsive() {
   return /*#__PURE__*/React.createElement(ResponsiveTabs, null);
-});
+};

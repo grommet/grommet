@@ -1,10 +1,11 @@
 "use strict";
 
+exports.__esModule = true;
+exports.Plain = exports.Uncontrolled = void 0;
+
 var _react = _interopRequireDefault(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
-
-var _react2 = require("@storybook/react");
 
 var _grommetIcons = require("grommet-icons");
 
@@ -61,10 +62,17 @@ UncontrolledTabs.propTypes = {
   plain: _propTypes["default"].bool // eslint-disable-line react/require-default-props
 
 };
-(0, _react2.storiesOf)('Tabs', module).add('Uncontrolled', function () {
+
+var Uncontrolled = function Uncontrolled() {
   return /*#__PURE__*/_react["default"].createElement(UncontrolledTabs, null);
-}).add('Plain', function () {
+};
+
+exports.Uncontrolled = Uncontrolled;
+
+var Plain = function Plain() {
   return /*#__PURE__*/_react["default"].createElement(UncontrolledTabs, {
     plain: true
   });
-});
+};
+
+exports.Plain = Plain;

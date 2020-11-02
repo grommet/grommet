@@ -1,6 +1,5 @@
 import React from 'react';
 import { css } from 'styled-components';
-import { storiesOf } from '@storybook/react';
 import { Attraction } from "grommet-icons/es6/icons/Attraction";
 import { Car } from "grommet-icons/es6/icons/Car";
 import { TreeOption } from "grommet-icons/es6/icons/TreeOption";
@@ -36,7 +35,7 @@ var customTheme = deepMerge(grommet, {
   }
 });
 
-var Icon = function Icon() {
+var IconTabs = function IconTabs() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: customTheme,
     full: true
@@ -78,6 +77,6 @@ var Icon = function Icon() {
   }))))));
 };
 
-storiesOf('Tabs', module).add('Icon', function () {
-  return /*#__PURE__*/React.createElement(Icon, null);
-});
+export var Icon = function Icon() {
+  return /*#__PURE__*/React.createElement(IconTabs, null);
+};
