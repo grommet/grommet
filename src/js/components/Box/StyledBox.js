@@ -14,6 +14,7 @@ import {
   overflowStyle,
   parseMetricToNum,
   responsiveBorderStyle,
+  getBreakpointStyle,
 } from '../../utils';
 
 const ALIGN_MAP = {
@@ -59,16 +60,6 @@ const basisStyle = css`
     props.basis};
 `;
 
-const breakpointValues = theme => {
-  const breakpoint =
-    theme.box.responsiveBreakpoint &&
-    theme.global.breakpoints[theme.box.responsiveBreakpoint];
-  if (!breakpoint.edgeSize) breakpoint.edgeSize = theme.global.edgeSize;
-  if (!breakpoint.borderSize) breakpoint.borderSize = theme.global.borderSize;
-  if (!breakpoint.size) breakpoint.size = theme.global.size;
-  return breakpoint;
-};
-
 // min-width and min-height needed because of this
 // https://stackoverflow.com/questions/36247140/why-doesnt-flex-item-shrink-past-content-size
 // we assume we are in the context of a Box going the other direction
@@ -82,7 +73,10 @@ const directionStyle = (direction, theme) => {
     `,
   ];
   if (direction === 'row-responsive' && theme.box.responsiveBreakpoint) {
-    const breakpoint = breakpointValues(theme);
+    const breakpoint = getBreakpointStyle(
+      theme,
+      theme.box.responsiveBreakpoint,
+    );
     if (breakpoint) {
       styles.push(
         breakpointStyle(
@@ -156,7 +150,7 @@ const ROUND_MAP = {
 };
 
 const roundStyle = (data, responsive, theme) => {
-  const breakpoint = breakpointValues(theme);
+  const breakpoint = getBreakpointStyle(theme, theme.box.responsiveBreakpoint);
   const styles = [];
   if (typeof data === 'object') {
     const size =
@@ -576,7 +570,7 @@ const StyledBox = styled.div`
 
 const gapStyle = (directionProp, gap, responsive, border, theme) => {
   const metric = theme.global.edgeSize[gap] || gap;
-  const breakpoint = breakpointValues(theme);
+  const breakpoint = getBreakpointStyle(theme, theme.box.responsiveBreakpoint);
   const responsiveMetric = responsive && breakpoint && breakpoint.edgeSize[gap];
 
   const styles = [];
