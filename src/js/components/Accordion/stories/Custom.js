@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { SubtractCircle, AddCircle } from 'grommet-icons';
 
@@ -72,4 +71,4 @@ const CustomAccordion = ({ animate, multiple, ...rest }) => (
   </Grommet>
 );
 
-storiesOf('Accordion', module).add('Custom', () => <CustomAccordion />);
+export const Custom = () => <CustomAccordion />;

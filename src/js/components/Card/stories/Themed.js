@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
   Location,
@@ -93,7 +92,7 @@ const Identifier = ({ children, title, subTitle, size, ...rest }) => (
   </Box>
 );
 
-export const Example = () => (
+export const Themed = () => (
   <Grommet theme={theme} full>
     <Box pad="large">
       {/* Responsive Grid */}
@@ -120,5 +119,3 @@ export const Example = () => (
     </Box>
   </Grommet>
 );
-
-storiesOf('Card', module).add('Themed', () => <Example />);

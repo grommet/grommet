@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Menu } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const ControlBottom = () => (
+const ControlBottomMenu = () => (
   <Grommet theme={grommet}>
     <Box height="medium" justify="center" align="center" pad="large">
       <Menu
@@ -20,8 +19,10 @@ const ControlBottom = () => (
   </Grommet>
 );
 
-storiesOf('Menu', module).add(
-  'Bottom control button',
-  () => <ControlBottom />,
-  { chromatic: { disable: true } },
-);
+export const BottomControlButton = () => <ControlBottomMenu />;
+BottomControlButton.story = {
+  name: 'Bottom control button',
+  parameters: {
+    chromatic: { disable: true },
+  },
+};

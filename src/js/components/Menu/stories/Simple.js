@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Menu } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -23,6 +22,9 @@ const SimpleMenu = () => (
   </Grommet>
 );
 
-storiesOf('Menu', module).add('Simple', () => <SimpleMenu />, {
-  chromatic: { disable: true },
-});
+export const Simple = () => <SimpleMenu />;
+Simple.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
+};
