@@ -1,11 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Header, Anchor, Box, ResponsiveContext, Menu } from 'grommet';
 import { Grommet as GrommetIcon } from "grommet-icons/es6/icons/Grommet";
 import { Menu as MenuIcon } from "grommet-icons/es6/icons/Menu";
 import { grommet } from 'grommet/themes';
-
-var Responsive = function Responsive() {
+export var Responsive = function Responsive() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Header, {
@@ -56,7 +54,3 @@ var Responsive = function Responsive() {
     }));
   })));
 };
-
-storiesOf('Header', module).add('Responsive', function () {
-  return /*#__PURE__*/React.createElement(Responsive, null);
-});
