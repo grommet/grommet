@@ -479,7 +479,7 @@ export const inputStyle = css`
     opacity: 1;
   }
 
-  ${props => props.theme.global.input.extend && props.theme.global.input.extend}
+  ${props => props.theme.global.input.extend}
 `;
 
 export const overflowStyle = overflowProp => {
