@@ -1,11 +1,10 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Menu } from 'grommet';
 import { Power } from "grommet-icons/es6/icons/Power";
 import { User } from "grommet-icons/es6/icons/User";
 import { grommet } from 'grommet/themes';
 
-var Reverse = function Reverse() {
+var ReverseMenu = function ReverseMenu() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -34,10 +33,13 @@ var Reverse = function Reverse() {
   })));
 };
 
-storiesOf('Menu', module).add('Reverse', function () {
-  return /*#__PURE__*/React.createElement(Reverse, null);
-}, {
-  chromatic: {
-    disable: true
+export var Reverse = function Reverse() {
+  return /*#__PURE__*/React.createElement(ReverseMenu, null);
+};
+Reverse.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

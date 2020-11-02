@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.BottomControlButton = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -10,7 +11,7 @@ var _themes = require("grommet/themes");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var ControlBottom = function ControlBottom() {
+var ControlBottomMenu = function ControlBottomMenu() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -39,10 +40,16 @@ var ControlBottom = function ControlBottom() {
   })));
 };
 
-(0, _react2.storiesOf)('Menu', module).add('Bottom control button', function () {
-  return /*#__PURE__*/_react["default"].createElement(ControlBottom, null);
-}, {
-  chromatic: {
-    disable: true
+var BottomControlButton = function BottomControlButton() {
+  return /*#__PURE__*/_react["default"].createElement(ControlBottomMenu, null);
+};
+
+exports.BottomControlButton = BottomControlButton;
+BottomControlButton.story = {
+  name: 'Bottom control button',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

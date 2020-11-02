@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.ItemWithIcon = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -50,6 +51,11 @@ var IconItemsMenu = function IconItemsMenu() {
   }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.FormDown, null), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Menu with Icon on the left")))));
 };
 
-(0, _react2.storiesOf)('Menu', module).add('Item with icon', function () {
+var ItemWithIcon = function ItemWithIcon() {
   return /*#__PURE__*/_react["default"].createElement(IconItemsMenu, null);
-});
+};
+
+exports.ItemWithIcon = ItemWithIcon;
+ItemWithIcon.story = {
+  name: 'Item with icon'
+};

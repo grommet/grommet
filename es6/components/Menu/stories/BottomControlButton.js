@@ -1,9 +1,8 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Menu } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-var ControlBottom = function ControlBottom() {
+var ControlBottomMenu = function ControlBottomMenu() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -32,10 +31,14 @@ var ControlBottom = function ControlBottom() {
   })));
 };
 
-storiesOf('Menu', module).add('Bottom control button', function () {
-  return /*#__PURE__*/React.createElement(ControlBottom, null);
-}, {
-  chromatic: {
-    disable: true
+export var BottomControlButton = function BottomControlButton() {
+  return /*#__PURE__*/React.createElement(ControlBottomMenu, null);
+};
+BottomControlButton.story = {
+  name: 'Bottom control button',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Menu, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { FormDown } from "grommet-icons/es6/icons/FormDown";
@@ -43,6 +42,9 @@ var IconItemsMenu = function IconItemsMenu() {
   }, /*#__PURE__*/React.createElement(FormDown, null), /*#__PURE__*/React.createElement(Text, null, "Menu with Icon on the left")))));
 };
 
-storiesOf('Menu', module).add('Item with icon', function () {
+export var ItemWithIcon = function ItemWithIcon() {
   return /*#__PURE__*/React.createElement(IconItemsMenu, null);
-});
+};
+ItemWithIcon.story = {
+  name: 'Item with icon'
+};
