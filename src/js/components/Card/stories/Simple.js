@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
   grommet,
@@ -12,7 +11,7 @@ import {
   Text,
 } from 'grommet';
 
-const Example = () => (
+export const Simple = () => (
   <Grommet theme={grommet}>
     <Box pad="large" gap="medium" height="large" width="medium">
       <Card pad="small" background="dark-1" gap="medium">
@@ -39,5 +38,3 @@ const Example = () => (
     </Box>
   </Grommet>
 );
-
-storiesOf('Card', module).add('Simple', () => <Example />);

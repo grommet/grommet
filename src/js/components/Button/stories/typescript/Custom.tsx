@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+
 import { ThemeType } from 'grommet/themes';
 import { grommet, Box, Button, Grommet } from 'grommet';
 
@@ -49,7 +49,7 @@ const customTheme: ThemeType = {
   },
 };
 
-const CustomTheme = () => (
+export const TSCustom = () => (
   <>
     <Grommet theme={customTheme}>
       <Box align="center" pad="large">
@@ -68,5 +68,4 @@ const CustomTheme = () => (
     </Grommet>
   </>
 );
-
-storiesOf('Button', module).add('TS-Custom', () => <CustomTheme />);
+TSCustom.story = { name: 'TS-Custom' };

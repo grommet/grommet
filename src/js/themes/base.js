@@ -59,8 +59,8 @@ const colors = {
     light: '#FFFFFF',
   },
   'background-contrast': {
-    dark: '#33333308',
-    light: '#FFFFFF08',
+    light: '#33333310',
+    dark: '#FFFFFF18',
   },
   'active-background': 'background-contrast',
   'active-text': 'text-strong',
@@ -545,9 +545,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       header: {},
       body: {},
-      footer: {
-        background: 'background-contrast',
-      },
+      footer: {},
     },
     carousel: {
       icons: {
@@ -706,6 +704,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       header: {
         // background: undefined,
         // border: undefined,
+        // extend: undefined,
         // font: {
         //   weight: undefined,
         //   size: undefined,

@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import styled from 'styled-components';
 
 import { Grommet as GrommetIcon } from 'grommet-icons';
@@ -29,7 +28,7 @@ const FooterContent = () => {
   ));
 };
 
-const DoubleFooter = () => {
+export const DoubleFooter = () => {
   return (
     <Grommet theme={grommet}>
       <Main background="light-4" elevation="large" pad="large" border>
@@ -57,4 +56,4 @@ const DoubleFooter = () => {
   );
 };
 
-storiesOf('Footer', module).add('Double footer', () => <DoubleFooter />);
+DoubleFooter.story = { name: 'Double footer' };

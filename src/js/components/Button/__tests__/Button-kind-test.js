@@ -6,6 +6,8 @@ import 'regenerator-runtime/runtime';
 
 import { axe } from 'jest-axe';
 import { cleanup, fireEvent, render } from '@testing-library/react';
+import { Add } from 'grommet-icons';
+
 import { Grommet, Button } from '../..';
 import { buttonKindTheme } from './theme/buttonKindTheme';
 
@@ -34,6 +36,67 @@ describe('Button kind', () => {
         <Button />
       </Grommet>,
     );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('button with icon and align', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          button: {
+            default: {
+              color: undefined, // needed use case for the test coverage
+            },
+          },
+        }}
+      >
+        <Button icon={<Add />} align="start" />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('button icon colors', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          button: {
+            default: {
+              background: {
+                color: '#666666',
+              },
+              border: {
+                color: '#666666',
+              },
+              color: undefined, // needed use case for the test coverage
+            },
+          },
+        }}
+      >
+        <Button icon={<Add />} color="#000" />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`mouseOver and mouseOut events`, async () => {
+    const { container, getByText } = render(
+      <Grommet
+        theme={{
+          button: {
+            default: {
+              background: '#000',
+            },
+          },
+        }}
+      >
+        <Button label="label" icon={<Add />} />
+      </Grommet>,
+    );
+    fireEvent.mouseOver(getByText('label'));
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.mouseOut(getByText('label'));
     expect(container.firstChild).toMatchSnapshot();
   });
 

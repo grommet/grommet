@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+
 import { Add } from 'grommet-icons';
 
 import { Box, Button, Grommet, Text } from 'grommet';
@@ -43,6 +43,5 @@ const PlainButtons = props => (
   </Box>
 );
 
-storiesOf('Button', module)
-  .add('Active', () => <PlainButtons active />)
-  .add('Plain', () => <PlainButtons />);
+export const Plain = () => <PlainButtons />;
+export const Active = () => <PlainButtons active />;
