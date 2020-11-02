@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
   Anchor,
@@ -42,4 +41,4 @@ const CollapsableNav = () => (
   </Grommet>
 );
 
-storiesOf('Nav', module).add('Collapsable nav', () => <CollapsableNav />);
+export const Collapsable = () => <CollapsableNav />;

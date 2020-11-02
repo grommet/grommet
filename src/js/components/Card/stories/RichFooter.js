@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
   Anchor,
@@ -35,7 +34,7 @@ const theme = {
   },
 };
 
-const Example = () => {
+export const RichFooter = () => {
   const [open, setOpen] = React.useState(false);
   const [favorite, setFavorite] = React.useState(false);
 
@@ -100,4 +99,4 @@ const Example = () => {
   );
 };
 
-storiesOf('Card', module).add('Rich footer', () => <Example />);
+RichFooter.story = { name: 'Rich footer' };

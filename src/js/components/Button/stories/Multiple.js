@@ -1,12 +1,11 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Button } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 import { Add } from 'grommet-icons';
 
-const MultipleButton = () => (
+export const Multiple = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
       <Box direction="row" align="center" gap="small" pad="xsmall">
@@ -46,5 +45,3 @@ const MultipleButton = () => (
     </Box>
   </Grommet>
 );
-
-storiesOf('Button', module).add('Multiple', () => <MultipleButton />);

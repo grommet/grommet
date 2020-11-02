@@ -347,6 +347,11 @@ export const themeDoc = {
     type: 'string | object',
     defaultValue: undefined,
   },
+  'dataTable.header.extend': {
+    description: 'Any additional styles for header cells.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
   'dataTable.header.font.weight': {
     description: 'The font weight for text in header cells.',
     type: 'string',
