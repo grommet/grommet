@@ -59,6 +59,16 @@ const basisStyle = css`
     props.basis};
 `;
 
+const breakpointValues = theme => {
+  const breakpoint =
+    theme.box.responsiveBreakpoint &&
+    theme.global.breakpoints[theme.box.responsiveBreakpoint];
+  if (!breakpoint.edgeSize) breakpoint.edgeSize = theme.global.edgeSize;
+  if (!breakpoint.borderSize) breakpoint.borderSize = theme.global.borderSize;
+  if (!breakpoint.size) breakpoint.size = theme.global.size;
+  return breakpoint;
+};
+
 // min-width and min-height needed because of this
 // https://stackoverflow.com/questions/36247140/why-doesnt-flex-item-shrink-past-content-size
 // we assume we are in the context of a Box going the other direction
@@ -72,10 +82,7 @@ const directionStyle = (direction, theme) => {
     `,
   ];
   if (direction === 'row-responsive' && theme.box.responsiveBreakpoint) {
-    const breakpoint = theme.global.breakpoints[theme.box.responsiveBreakpoint];
-    if (!breakpoint.edgeSize) breakpoint.edgeSize = theme.global.edgeSize;
-    if (!breakpoint.borderSize) breakpoint.borderSize = theme.global.borderSize;
-    if (!breakpoint.size) breakpoint.size = theme.global.size;
+    const breakpoint = breakpointValues(theme);
     if (breakpoint) {
       styles.push(
         breakpointStyle(
@@ -149,12 +156,7 @@ const ROUND_MAP = {
 };
 
 const roundStyle = (data, responsive, theme) => {
-  const breakpoint =
-    theme.box.responsiveBreakpoint &&
-    theme.global.breakpoints[theme.box.responsiveBreakpoint];
-  if (!breakpoint.edgeSize) breakpoint.edgeSize = theme.global.edgeSize;
-  if (!breakpoint.borderSize) breakpoint.borderSize = theme.global.borderSize;
-  if (!breakpoint.size) breakpoint.size = theme.global.size;
+  const breakpoint = breakpointValues(theme);
   const styles = [];
   if (typeof data === 'object') {
     const size =
@@ -574,12 +576,7 @@ const StyledBox = styled.div`
 
 const gapStyle = (directionProp, gap, responsive, border, theme) => {
   const metric = theme.global.edgeSize[gap] || gap;
-  const breakpoint =
-    theme.box.responsiveBreakpoint &&
-    theme.global.breakpoints[theme.box.responsiveBreakpoint];
-  if (!breakpoint.edgeSize) breakpoint.edgeSize = theme.global.edgeSize;
-  if (!breakpoint.borderSize) breakpoint.borderSize = theme.global.borderSize;
-  if (!breakpoint.size) breakpoint.size = theme.global.size;
+  const breakpoint = breakpointValues(theme);
   const responsiveMetric = responsive && breakpoint && breakpoint.edgeSize[gap];
 
   const styles = [];
