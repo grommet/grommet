@@ -397,14 +397,35 @@ const placeholderColor = css`
 
 const placeholderStyle = css`
   &::-webkit-input-placeholder {
+    ${props =>
+      props.theme.global.input.placeholder &&
+      props.theme.global.input.placeholder.font.weight &&
+      props.theme.global.input.placeholder.font.weight &&
+      css`
+        font-weight: ${props.theme.global.input.placeholder.font.weight};
+      `};
     ${placeholderColor};
   }
 
   &::-moz-placeholder {
+    ${props =>
+      props.theme.global.input.placeholder &&
+      props.theme.global.input.placeholder.font &&
+      props.theme.global.input.placeholder.font.weight &&
+      css`
+        font-weight: ${props.theme.global.input.placeholder.font.weight};
+      `};
     ${placeholderColor};
   }
 
   &:-ms-input-placeholder {
+    ${props =>
+      props.theme.global.input.placeholder &&
+      props.theme.global.input.placeholder.font &&
+      props.theme.global.input.placeholder.font.weight &&
+      css`
+        font-weight: ${props.theme.global.input.placeholder.font.weight};
+      `};
     ${placeholderColor};
   }
 `;

@@ -270,14 +270,17 @@ exports[`Grommet custom theme 1`] = `
 }
 
 .c12::-webkit-input-placeholder {
+  font-weight: normal;
   color: #cc6633;
 }
 
 .c12::-moz-placeholder {
+  font-weight: normal;
   color: #cc6633;
 }
 
 .c12:-ms-input-placeholder {
+  font-weight: normal;
   color: #cc6633;
 }
 

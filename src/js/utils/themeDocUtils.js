@@ -119,6 +119,11 @@ export const themeDocUtils = {
       type: 'number | string',
       defaultValue: 600,
     },
+    'global.input.placeholder.font.weight': {
+      description: `The font-weight of the placeholder text.`,
+      type: 'number | string',
+      defaultValue: undefined,
+    },
     'global.input.weight': {
       description: `This value has been deprecated and replaced by 
       global.input.font.weight.`,

@@ -292,6 +292,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           // height: undefined,
           weight: 600,
         },
+        // placeholder: {
+        //   font: {
+        //     weight: undefined,
+        //   },
+        // },
         // deprecate in v3
         // weight: undefined,
       },

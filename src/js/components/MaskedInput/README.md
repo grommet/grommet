@@ -295,6 +295,16 @@ Defaults to
 600
 ```
 
+**global.input.placeholder.font.weight**
+
+The font-weight of the placeholder text. Expects `number | string`.
+
+Defaults to
+
+```
+undefined
+```
+
 **global.input.weight**
 
 This value has been deprecated and replaced by 

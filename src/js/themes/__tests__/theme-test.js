@@ -74,6 +74,11 @@ const customTheme = {
         size: 'large',
         weight: 'bold',
       },
+      placeholder: {
+        font: {
+          weight: 'normal',
+        },
+      },
     },
     colors: {
       custom: '#cc6633',
