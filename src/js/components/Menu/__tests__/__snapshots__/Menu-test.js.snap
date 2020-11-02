@@ -490,7 +490,7 @@ exports[`Menu close by clicking outside 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -3001,7 +3001,7 @@ exports[`Menu open and close on click 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -3686,7 +3686,7 @@ exports[`Menu open on up close on esc 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -5030,7 +5030,7 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: bottom left;
@@ -5531,7 +5531,7 @@ exports[`Menu with dropAlign top renders 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top right;
