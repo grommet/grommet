@@ -16,6 +16,10 @@ var headingPadMap = {
   medium: 'small',
   large: 'medium'
 };
+var activeDates = {
+  start: 'start',
+  end: 'end'
+};
 
 var normalizeReference = function normalizeReference(reference, date, dates) {
   var normalizedReference;
@@ -28,7 +32,7 @@ var normalizeReference = function normalizeReference(reference, date, dates) {
     if (typeof dates[0] === 'string') {
       normalizedReference = new Date(dates[0]);
     } else if (Array.isArray(dates[0])) {
-      normalizedReference = new Date(dates[0][0]);
+      normalizedReference = new Date(dates[0][0] ? dates[0][0] : dates[0][1]);
     } else {
       normalizedReference = new Date();
       normalizedReference.setHours(0, 0, 0, 0);
@@ -109,7 +113,8 @@ var CalendarCustomDay = function CalendarCustomDay(_ref2) {
 };
 
 var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
-  var _ref3$animate = _ref3.animate,
+  var activeDateProp = _ref3.activeDate,
+      _ref3$animate = _ref3.animate,
       animate = _ref3$animate === void 0 ? true : _ref3$animate,
       validBounds = _ref3.bounds,
       children = _ref3.children,
@@ -131,49 +136,58 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       showAdjacentDays = _ref3$showAdjacentDay === void 0 ? true : _ref3$showAdjacentDay,
       _ref3$size = _ref3.size,
       size = _ref3$size === void 0 ? 'medium' : _ref3$size,
-      rest = _objectWithoutPropertiesLoose(_ref3, ["animate", "bounds", "children", "date", "dates", "daysOfWeek", "disabled", "fill", "firstDayOfWeek", "header", "locale", "onReference", "onSelect", "range", "reference", "showAdjacentDays", "size"]);
+      rest = _objectWithoutPropertiesLoose(_ref3, ["activeDate", "animate", "bounds", "children", "date", "dates", "daysOfWeek", "disabled", "fill", "firstDayOfWeek", "header", "locale", "onReference", "onSelect", "range", "reference", "showAdjacentDays", "size"]);
 
-  var theme = useContext(ThemeContext) || defaultProps.theme; // set date when caller changes it, allows us to change it internally too
+  var theme = useContext(ThemeContext) || defaultProps.theme; // set activeDate when caller changes it, allows us to change
+  // it internally too
 
-  var _useState = useState(dateProp),
-      date = _useState[0],
-      setDate = _useState[1];
+  var _useState = useState(dateProp && range ? activeDates.end : activeDates.start),
+      activeDate = _useState[0],
+      setActiveDate = _useState[1];
+
+  useEffect(function () {
+    if (activeDateProp) setActiveDate(activeDateProp);
+  }, [activeDateProp]); // set date when caller changes it, allows us to change it internally too
+
+  var _useState2 = useState(dateProp),
+      date = _useState2[0],
+      setDate = _useState2[1];
 
   useEffect(function () {
     return setDate(dateProp);
   }, [dateProp]); // set dates when caller changes it, allows us to change it internally too
 
-  var _useState2 = useState(datesProp),
-      dates = _useState2[0],
-      setDates = _useState2[1];
+  var _useState3 = useState(datesProp),
+      dates = _useState3[0],
+      setDates = _useState3[1];
 
   useEffect(function () {
     return setDates(datesProp);
   }, [datesProp]); // set reference based on what the caller passed or date/dates.
 
-  var _useState3 = useState(normalizeReference(referenceProp, date, dates)),
-      reference = _useState3[0],
-      setReference = _useState3[1];
+  var _useState4 = useState(normalizeReference(referenceProp, date, dates)),
+      reference = _useState4[0],
+      setReference = _useState4[1];
 
   useEffect(function () {
     return setReference(normalizeReference(referenceProp, dateProp, datesProp));
   }, [dateProp, datesProp, referenceProp]); // calculate the bounds we display based on the reference
 
-  var _useState4 = useState(buildDisplayBounds(reference, firstDayOfWeek)),
-      displayBounds = _useState4[0],
-      setDisplayBounds = _useState4[1];
-
-  var _useState5 = useState(),
-      targetDisplayBounds = _useState5[0],
-      setTargetDisplayBounds = _useState5[1];
+  var _useState5 = useState(buildDisplayBounds(reference, firstDayOfWeek)),
+      displayBounds = _useState5[0],
+      setDisplayBounds = _useState5[1];
 
   var _useState6 = useState(),
-      slide = _useState6[0],
-      setSlide = _useState6[1];
+      targetDisplayBounds = _useState6[0],
+      setTargetDisplayBounds = _useState6[1];
 
   var _useState7 = useState(),
-      animating = _useState7[0],
-      setAnimating = _useState7[1]; // When the reference changes, we need to update the displayBounds.
+      slide = _useState7[0],
+      setSlide = _useState7[1];
+
+  var _useState8 = useState(),
+      animating = _useState8[0],
+      setAnimating = _useState8[1]; // When the reference changes, we need to update the displayBounds.
   // This is easy when we aren't animating. If we are animating,
   // we temporarily increase the displayBounds to be the union of the old
   // and new ones and set slide to drive the animation. We keep track
@@ -266,19 +280,13 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
   }, [reference]);
   var daysRef = useRef();
 
-  var _useState8 = useState(),
-      focus = _useState8[0],
-      setFocus = _useState8[1];
-
   var _useState9 = useState(),
-      active = _useState9[0],
-      setActive = _useState9[1]; // when working on a range, remember the last selected date so we know
-  // how to handle subsequent date selection
-
+      focus = _useState9[0],
+      setFocus = _useState9[1];
 
   var _useState10 = useState(),
-      lastSelectedDate = _useState10[0],
-      setLastSelectedDate = _useState10[1];
+      active = _useState10[0],
+      setActive = _useState10[1];
 
   var changeReference = useCallback(function (nextReference) {
     if (betweenDates(nextReference, validBounds)) {
@@ -292,67 +300,102 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
 
     if (!range) {
       nextDate = selectedDate;
-    } else if (!dates) {
-      if (!date) {
-        nextDate = selectedDate;
+    } // everything down is a range
+    else if (!dates) {
+        // if user supplies date, convert this into dates
+        if (date) {
+          var priorDate = new Date(date);
+          var selDate = new Date(selectedDate);
+
+          if (activeDate === activeDates.start) {
+            if (selDate.getTime() > priorDate.getTime()) {
+              nextDates = [[selectedDate, undefined]];
+            } else {
+              nextDates = [[selectedDate, date]];
+            }
+
+            setActiveDate(activeDates.end);
+            if (activeDateProp) setActiveDate(activeDateProp);
+          } else if (activeDate === activeDates.end) {
+            if (selDate.getTime() < priorDate.getTime()) {
+              nextDates = [[selectedDate, undefined]];
+              setActiveDate(activeDates.end);
+            } else {
+              nextDates = [[date, selectedDate]];
+              setActiveDate(activeDates.start);
+            }
+
+            if (activeDateProp) setActiveDate(activeDateProp);
+          }
+        } else if (activeDate === activeDates.start) {
+          nextDates = [[selectedDate, undefined]];
+          setActiveDate(activeDates.end);
+        } else if (activeDate === activeDates.end) {
+          nextDates = [[undefined, selectedDate]];
+        }
+
+        if (activeDateProp) setActiveDate(activeDateProp);
       } else {
-        var priorDate = new Date(date);
-        var selDate = new Date(selectedDate);
+        // have dates
+        var priorDates = dates[0].map(function (d) {
+          return new Date(d);
+        });
 
-        if (priorDate.getTime() < selDate.getTime()) {
-          nextDates = [[date, selectedDate]];
-          nextDate = undefined;
-        } else if (priorDate.getTime() > selDate.getTime()) {
-          nextDates = [[selectedDate, date]];
-          nextDate = undefined;
-        } else {
-          nextDate = undefined;
-        }
+        var _selDate = new Date(selectedDate);
+
+        if (_selDate.getTime() === priorDates[0].getTime()) {
+          nextDates = [[undefined, dates[0][1]]];
+          setActiveDate(activeDates.start);
+        } else if (_selDate.getTime() === priorDates[1].getTime()) {
+          nextDates = [[dates[0][0], undefined]];
+          setActiveDate(activeDates.end);
+          if (activeDateProp) setActiveDate(activeDateProp);
+        } else if (activeDate === activeDates.start) {
+          if (_selDate.getTime() > priorDates[1].getTime()) {
+            nextDates = [[selectedDate, undefined]];
+          } else {
+            nextDates = [[selectedDate, dates[0][1]]];
+          }
+
+          setActiveDate(activeDates.end);
+          if (activeDateProp) setActiveDate(activeDateProp);
+        } else if (activeDate === activeDates.end) {
+          if (_selDate.getTime() < priorDates[0].getTime()) {
+            nextDates = [[selectedDate, undefined]];
+            setActiveDate(activeDates.end);
+          } else {
+            nextDates = [[dates[0][0], selectedDate]];
+            setActiveDate(activeDates.start);
+          }
+
+          if (activeDateProp) setActiveDate(activeDateProp);
+        } // cleanup
+
+
+        if (!nextDates[0][0] && !nextDates[0][1]) nextDates = undefined;
       }
-    } else {
-      // have dates
-      var priorDates = dates[0].map(function (d) {
-        return new Date(d);
-      });
-      var previousDate = new Date(lastSelectedDate || dates[0][0]);
-
-      var _selDate = new Date(selectedDate);
-
-      if (_selDate.getTime() === priorDates[0].getTime()) {
-        var _dates$ = dates[0];
-        nextDate = _dates$[1];
-        nextDates = undefined;
-      } else if (_selDate.getTime() === priorDates[1].getTime()) {
-        var _dates$2 = dates[0];
-        nextDate = _dates$2[0];
-        nextDates = undefined;
-      } else if (_selDate.getTime() === previousDate.getTime()) {
-        if (_selDate.getTime() < priorDates[0].getTime()) {
-          nextDates = [[selectedDate, dates[0][1]]];
-        } else if (_selDate.getTime() > priorDates[0].getTime()) {
-          nextDates = [[dates[0][0], selectedDate]];
-        }
-      } else if (_selDate.getTime() < previousDate.getTime()) {
-        if (_selDate.getTime() < priorDates[0].getTime()) {
-          nextDates = [[selectedDate, dates[0][1]]];
-        } else if (_selDate.getTime() > priorDates[0].getTime()) {
-          nextDates = [[dates[0][0], selectedDate]];
-        }
-      } else if (_selDate.getTime() > previousDate.getTime()) {
-        if (_selDate.getTime() > priorDates[1].getTime()) {
-          nextDates = [[dates[0][0], selectedDate]];
-        } else if (_selDate.getTime() < priorDates[1].getTime()) {
-          nextDates = [[selectedDate, dates[0][1]]];
-        }
-      }
-    }
 
     setDates(nextDates);
     if (!dates) setDate(nextDate);
     setActive(new Date(selectedDate));
-    setLastSelectedDate(selectedDate);
-    if (onSelect) onSelect(nextDates || nextDate);
-  }, [date, dates, lastSelectedDate, onSelect, range]);
+
+    if (onSelect) {
+      var adjustedDates;
+
+      if (nextDates && Array.isArray(nextDates[0]) && (!nextDates[0][0] || !nextDates[0][1]) && range === true) {
+        // return string for backwards compatibility
+        var _nextDates$0$filter = nextDates[0].filter(function (d) {
+          return d;
+        });
+
+        adjustedDates = _nextDates$0$filter[0];
+      } else {
+        adjustedDates = nextDates;
+      }
+
+      onSelect(adjustedDates || nextDate);
+    }
+  }, [activeDate, activeDateProp, date, dates, onSelect, range]);
 
   var renderCalendarHeader = function renderCalendarHeader() {
     var PreviousIcon = size === 'small' ? theme.calendar.icons.small.previous : theme.calendar.icons.previous;

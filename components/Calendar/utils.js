@@ -99,14 +99,14 @@ var betweenDates = function betweenDates(date, dates) {
 
   if (dates) {
     var _dates$map = dates.map(function (d) {
-      return new Date(d);
+      return d ? new Date(d) : undefined;
     }),
         from = _dates$map[0],
         to = _dates$map[1];
 
-    if (sameDay(date, from) || sameDay(date, to)) {
+    if (from && sameDay(date, from) || to && sameDay(date, to)) {
       result = 2;
-    } else if (sameDayOrAfter(date, from) && sameDayOrBefore(date, to)) {
+    } else if (from && sameDayOrAfter(date, from) && to && sameDayOrBefore(date, to)) {
       result = 1;
     }
   } else {
