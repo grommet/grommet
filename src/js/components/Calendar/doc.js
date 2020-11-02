@@ -22,8 +22,8 @@ export const doc = Calendar => {
     ...genericProps,
     activeDate: PropTypes.oneOf(['start', 'end'])
       .description(
-        `Whether the next date selection will affect the start or end bound of 
-        the range.`,
+        `When using range, Whether the next date selection will affect the 
+        start or end bound of the range.`,
       )
       .defaultValue('start'),
     animate: PropTypes.bool
@@ -106,7 +106,7 @@ to disable the previous and next buttons.
         `Whether to automatically manage multiple date selection as a range.
         When the user clicks the first date, onSelect will be called with that
         date. When the user selects another date, onSelect will be called with
-        an array of two dates. If range = array, then an array of dates will 
+        an array of two dates. If range = "array", then an array of dates will 
         be returned even when the start or end date of the range is undefined.`,
       )
       .defaultValue(false),
