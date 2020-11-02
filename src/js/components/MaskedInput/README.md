@@ -316,3 +316,13 @@ Defaults to
 ```
 12px
 ```
+
+**global.input.extend**
+
+Any additional style for an input. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```

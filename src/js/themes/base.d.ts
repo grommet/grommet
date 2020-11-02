@@ -275,6 +275,7 @@ export interface ThemeType {
       color?: ColorType;
     };
     input?: {
+      extend?: ExtendType;
       padding?:
         | string
         | {

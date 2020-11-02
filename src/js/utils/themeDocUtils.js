@@ -131,6 +131,11 @@ export const themeDocUtils = {
         string, horizontal: string, vertical: string }`,
       defaultValue: '12px',
     },
+    'global.input.extend': {
+      description: 'Any additional style for an input.',
+      type: 'string | (props) => {}',
+      defaultValue: undefined,
+    },
   },
   placeholderStyle: {
     'global.colors.placeholder': {

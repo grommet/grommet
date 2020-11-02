@@ -295,6 +295,18 @@ exports[`Grommet custom theme 1`] = `
   opacity: 1;
 }
 
+.c12::-webkit-input-placeholder {
+  font-weight: normal;
+}
+
+.c12::-moz-placeholder {
+  font-weight: normal;
+}
+
+.c12:-ms-input-placeholder {
+  font-weight: normal;
+}
+
 .c11 {
   position: relative;
   width: 100%;
