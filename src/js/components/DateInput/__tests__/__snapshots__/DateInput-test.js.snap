@@ -12300,7 +12300,7 @@ exports[`DateInput select format inline range 2`] = `
         id="item"
         name="item"
         placeholder="mm/dd/yyyy-mm/dd/yyyy"
-        value="7/2/2020-7/10/2020"
+        value="7/10/2020-7/10/2020"
       />
     </div>
     <div
