@@ -184,23 +184,16 @@ const Menu = forwardRef((props, ref) => {
     }
   };
 
-  const menuLabel = <Text size={size}>{label}</Text>;
   const menuIcon =
     icon !== false
       ? (icon !== true && icon) || <MenuIcon color={iconColor} size={size} />
       : null;
 
-  const isDefaultButton = theme.button.default && !children;
-  const buttonProps = {
-    icon: isDefaultButton ? menuIcon : undefined,
-    label: isDefaultButton ? menuLabel : undefined,
-    reverse: isDefaultButton,
-    plain,
-  };
-
+  let buttonProps = { plain, size };
   let content;
-  if (children) content = children;
-  else if (!theme.button.default) {
+  if (children) {
+    content = children;
+  } else if (!theme.button.default) {
     content = (
       <Box
         direction="row"
@@ -209,13 +202,20 @@ const Menu = forwardRef((props, ref) => {
         pad="small"
         gap={label && icon !== false ? 'small' : undefined}
       >
-        {menuLabel}
+        <Text size={size}>{label}</Text>
         {menuIcon}
       </Box>
     );
   } else {
     // when a theme has theme.button.default, keep content as
     // undefined so we can rely on Button label & icon props
+    buttonProps = {
+      icon: menuIcon,
+      label,
+      plain,
+      reverse: true,
+      size,
+    };
     content = undefined;
   }
 
