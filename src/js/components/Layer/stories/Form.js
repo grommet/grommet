@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Add, Close } from 'grommet-icons';
 
@@ -16,7 +15,7 @@ import {
 } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const FormLayer = () => {
+export const FormLayer = () => {
   const [open, setOpen] = React.useState(false);
   const [select, setSelect] = React.useState('');
 
@@ -91,6 +90,9 @@ const FormLayer = () => {
   );
 };
 
-storiesOf('Layer', module).add('Form', () => <FormLayer />, {
-  chromatic: { disable: true },
-});
+FormLayer.story = {
+  name: 'Form',
+  parameters: {
+    chromatic: { disable: true },
+  },
+};
