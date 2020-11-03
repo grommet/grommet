@@ -273,7 +273,8 @@ var WorldMap = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     var _ref6 = continents[name] || {},
         continentColor = _ref6.color,
         onClick = _ref6.onClick,
-        onHover = _ref6.onHover;
+        onHover = _ref6.onHover,
+        restContinents = _objectWithoutPropertiesLoose(_ref6, ["color", "onClick", "onHover"]);
 
     var active = activeContinent && activeContinent === name;
     var interactiveProps = {};
@@ -286,7 +287,7 @@ var WorldMap = /*#__PURE__*/forwardRef(function (_ref3, ref) {
 
     return /*#__PURE__*/React.createElement("g", _extends({
       key: name
-    }, interactiveProps), /*#__PURE__*/React.createElement("path", {
+    }, interactiveProps, restContinents), /*#__PURE__*/React.createElement("path", {
       stroke: "none",
       fill: "#fff",
       fillOpacity: "0.01",
