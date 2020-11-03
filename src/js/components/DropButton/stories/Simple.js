@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { storiesOf } from '@storybook/react';
 import { Close } from 'grommet-icons';
 
 import { Grommet, Box, Button, DropButton, Heading, Text } from 'grommet';
@@ -47,6 +46,9 @@ const SimpleDropButton = () => {
   );
 };
 
-storiesOf('DropButton', module).add('Simple', () => <SimpleDropButton />, {
-  chromatic: { disable: true },
-});
+export const Simple = () => <SimpleDropButton />;
+Simple.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
+};

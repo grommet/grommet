@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
   grommet,
@@ -16,7 +15,7 @@ const cards = Array(20)
   // eslint-disable-next-line react/no-array-index-key
   .map((_, i) => <Text key={i}>{`Card ${i}`}</Text>);
 
-const Example = () => {
+export const Example = () => {
   const size = useContext(ResponsiveContext);
   return (
     <Grommet theme={grommet}>
@@ -34,4 +33,4 @@ const Example = () => {
   );
 };
 
-storiesOf('Grid', module).add('Responsive cards', () => <Example />);
+Example.story = { name: 'Responsive cards' };

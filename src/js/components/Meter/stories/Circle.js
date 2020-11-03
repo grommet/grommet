@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Meter } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const CircleMeter = () => {
+export const Circle = () => {
   const [value, setValue] = useState(20);
 
   const timer = useRef();
@@ -31,5 +30,3 @@ const CircleMeter = () => {
     </Grommet>
   );
 };
-
-storiesOf('Meter', module).add('Circle', () => <CircleMeter />);

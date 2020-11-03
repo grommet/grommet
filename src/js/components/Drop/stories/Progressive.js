@@ -68,6 +68,8 @@ const ProgressiveDrop = () => {
 };
 
 export const Progressive = () => <ProgressiveDrop />;
-Progressive.parameters = {
-  chromatic: { disable: true },
+Progressive.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
 };

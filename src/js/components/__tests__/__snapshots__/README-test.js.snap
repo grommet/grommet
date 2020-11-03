@@ -3234,6 +3234,16 @@ xlarge
 string
 \`\`\`
 
+**activeDate**
+
+When using range, Whether the next date selection will affect the 
+        start or end bound of the range. Defaults to \`start\`.
+
+\`\`\`
+start
+end
+\`\`\`
+
 **animate**
 
 Whether to animate the calender as the user interacts with it. Defaults to \`true\`.
@@ -3383,10 +3393,12 @@ function
 Whether to automatically manage multiple date selection as a range.
         When the user clicks the first date, onSelect will be called with that
         date. When the user selects another date, onSelect will be called with
-        an array of two dates.
+        an array of two dates. If range = \\"array\\", then an array of dates will 
+        be returned even when the start or end date of the range is undefined.
 
 \`\`\`
 boolean
+array
 \`\`\`
 
 **reference**
@@ -11119,6 +11131,17 @@ Defaults to
 undefined
 \`\`\`
 
+**maskedInput.container.extend**
+
+Any additional style for the container surrounding the input 
+    and, if present, icon. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **text.medium**
 
 The size of the text for MaskedInput. Expects \`string\`.
@@ -11260,6 +11283,16 @@ Defaults to
 
 \`\`\`
 12px
+\`\`\`
+
+**global.input.extend**
+
+Any additional style for an input. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 ",
   "Menu": "## Menu
@@ -15784,6 +15817,16 @@ Defaults to
 12px
 \`\`\`
 
+**global.input.extend**
+
+Any additional style for an input. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **global.control.disabled.opacity**
 
 The opacity when a component is disabled. Expects \`number\`.
@@ -16297,6 +16340,16 @@ Defaults to
 
 \`\`\`
 12px
+\`\`\`
+
+**global.input.extend**
+
+Any additional style for an input. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 ",
   "Video": "## Video

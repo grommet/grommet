@@ -51,6 +51,8 @@ const TooltipDrop = () => {
 };
 
 export const Tooltip = () => <TooltipDrop />;
-Tooltip.parameters = {
-  chromatic: { disable: true },
+Tooltip.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
 };

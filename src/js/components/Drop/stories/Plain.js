@@ -35,6 +35,8 @@ const PlainDrop = () => {
 };
 
 export const Plain = () => <PlainDrop />;
-Plain.parameters = {
-  chromatic: { disable: true },
+Plain.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
 };

@@ -900,8 +900,8 @@ exports[`Layer dark context 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
-  background-color: #FFFFFF;
-  color: #444444;
+  background-color: #000000;
+  color: #f8f8f8;
   outline: none;
   pointer-events: all;
   z-index: 15;

@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Meter, Stack, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const MultipleValues = () => {
+export const MultipleValues = () => {
   const total = 100;
   const [active, setActive] = useState(0);
   const [label, setLabel] = useState('');
@@ -56,4 +55,4 @@ const MultipleValues = () => {
   );
 };
 
-storiesOf('Meter', module).add('Multiple values', () => <MultipleValues />);
+MultipleValues.story = { name: 'Multiple values' };

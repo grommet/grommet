@@ -74,6 +74,19 @@ const customTheme = {
         size: 'large',
         weight: 'bold',
       },
+      extend: `
+        &::-webkit-input-placeholder {
+          font-weight: normal;
+        }
+
+        &::-moz-placeholder {
+          font-weight: normal;
+        }
+
+        &:-ms-input-placeholder {
+          font-weight: normal;
+        }
+      `,
     },
     colors: {
       custom: '#cc6633',
