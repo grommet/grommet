@@ -1,5 +1,4 @@
 import React, { useReducer, useEffect } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Diagram, Stack, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -29,7 +28,7 @@ const connection = (fromTarget, toTarget, { color, ...rest } = {}) => ({
 
 const fullTopRow = [1, 2, 3];
 
-const SimpleDiagram = () => {
+export const Progressing = () => {
   const reducer = topRow => {
     const sliceEnd = topRow.length < fullTopRow.length ? topRow.length + 1 : 1;
     return fullTopRow.slice(0, sliceEnd);
@@ -79,5 +78,3 @@ const SimpleDiagram = () => {
     </Grommet>
   );
 };
-
-storiesOf('Diagram', module).add('Progressing', () => <SimpleDiagram />);

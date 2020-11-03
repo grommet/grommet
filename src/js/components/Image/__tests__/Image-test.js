@@ -4,7 +4,7 @@ import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
-import { cleanup, render } from '@testing-library/react';
+import { act, cleanup, fireEvent, render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import { Grommet } from '../../Grommet';
 import { Image } from '..';
@@ -80,4 +80,19 @@ test('Image fillProp renders', () => {
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
+});
+
+test('Image onError', () => {
+  const onError = jest.fn();
+  const { getByAltText } = render(
+    <Grommet>
+      <Image alt="test" onError={onError} />
+    </Grommet>,
+  );
+
+  act(() => {
+    fireEvent(getByAltText('test'), new Event('error'));
+  });
+
+  expect(onError).toHaveBeenCalledTimes(1);
 });

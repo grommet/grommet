@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, WorldMap } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Example = () => {
+export const Places = () => {
   const [active, setActive] = React.useState();
   return (
     <Grommet theme={grommet}>
@@ -24,5 +23,3 @@ const Example = () => {
     </Grommet>
   );
 };
-
-storiesOf('WorldMap', module).add('Places', () => <Example />);

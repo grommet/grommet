@@ -1524,7 +1524,7 @@ exports[`Select complex options and children 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 fVbmbP Select__SelectTextInput-sc-17idtfo-0 VIYrI"
+          class="StyledTextInput-sc-1x30a0s-0 eGpyWD Select__SelectTextInput-sc-17idtfo-0 VIYrI"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -1659,7 +1659,7 @@ exports[`Select complex options and children 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -2034,7 +2034,7 @@ exports[`Select disabled 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 fVbmbP Select__SelectTextInput-sc-17idtfo-0 nFqJk"
+          class="StyledTextInput-sc-1x30a0s-0 eGpyWD Select__SelectTextInput-sc-17idtfo-0 nFqJk"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -2494,7 +2494,7 @@ exports[`Select disabled key 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -2789,7 +2789,7 @@ exports[`Select disabled option value 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -3409,7 +3409,7 @@ exports[`Select large drop container height 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -3654,7 +3654,7 @@ exports[`Select medium drop container height 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -4421,7 +4421,7 @@ exports[`Select onChange with valueKey string 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -4935,7 +4935,7 @@ exports[`Select onChange without valueKey 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -5849,7 +5849,7 @@ exports[`Select prop: onOpen 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 fVbmbP Select__SelectTextInput-sc-17idtfo-0 VIYrI"
+          class="StyledTextInput-sc-1x30a0s-0 eGpyWD Select__SelectTextInput-sc-17idtfo-0 VIYrI"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -6009,7 +6009,7 @@ exports[`Select prop: onOpen 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -6714,7 +6714,7 @@ exports[`Select renders custom up and down icons 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 fVbmbP Select__SelectTextInput-sc-17idtfo-0 VIYrI"
+            class="StyledTextInput-sc-1x30a0s-0 eGpyWD Select__SelectTextInput-sc-17idtfo-0 VIYrI"
             placeholder="Select..."
             readonly=""
             tabindex="-1"
@@ -8410,7 +8410,7 @@ exports[`Select search 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -8629,7 +8629,7 @@ exports[`Select search 3`] = `
 exports[`Select search 4`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 fFeaOm"
+  class="StyledTextInput-sc-1x30a0s-0 bSfUHy"
   type="search"
   value=""
 />
@@ -8638,7 +8638,7 @@ exports[`Select search 4`] = `
 exports[`Select search 5`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 fFeaOm"
+  class="StyledTextInput-sc-1x30a0s-0 bSfUHy"
   type="search"
   value="o"
 />
@@ -10221,7 +10221,7 @@ exports[`Select small drop container height 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
