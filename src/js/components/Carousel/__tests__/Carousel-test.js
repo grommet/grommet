@@ -62,7 +62,7 @@ describe('Carousel', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('focus, blur and click events should be trigger', () => {
+  test('should trigger events of focus, blur and click', () => {
     const onFocus = jest.fn();
     const onBlur = jest.fn();
     const { container } = render(
