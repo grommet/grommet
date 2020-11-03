@@ -87,6 +87,11 @@ var themeDocUtils = {
       description: 'The padding of the text.',
       type: "string | { top: string, bottom: string, left: string, right: \n        string, horizontal: string, vertical: string }",
       defaultValue: '12px'
+    },
+    'global.input.extend': {
+      description: 'Any additional style for an input.',
+      type: 'string | (props) => {}',
+      defaultValue: undefined
     }
   },
   placeholderStyle: {
