@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { css } from 'styled-components';
 
 import { CircleInformation, Currency } from 'grommet-icons';
-
 import { Grommet, FormField, Tab, Tabs, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
@@ -100,4 +98,4 @@ const CustomTabs = () => (
   </Grommet>
 );
 
-storiesOf('Tabs', module).add('Custom theme', () => <CustomTabs />);
+export const Custom = () => <CustomTabs />;

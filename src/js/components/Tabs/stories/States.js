@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
+
 import { Box, Grommet, Tab, Tabs, Text, ThemeContext } from 'grommet';
 import { grommet } from 'grommet/themes';
 
@@ -109,7 +109,7 @@ const TabStates = () => {
         </ThemeContext.Extend>
         <ThemeContext.Extend value={customThemeWithButtonDefault}>
           <TabsExample
-            label="Customized Disabled State with 
+            label="Customized Disabled State with
             'theme.button.default' Defined"
           />
         </ThemeContext.Extend>
@@ -118,4 +118,4 @@ const TabStates = () => {
   );
 };
 
-storiesOf('Tabs', module).add('States', () => <TabStates />);
+export const States = () => <TabStates />;

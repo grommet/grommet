@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Avatar, Anchor, Box, Grommet, Header, Nav } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -14,7 +13,7 @@ const items = [
 const gravatarSrc =
   '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
 
-const OnHeader = () => (
+const OnHeaderNav = () => (
   <Grommet theme={grommet}>
     <Header background="dark-1" pad="small">
       <Box direction="row" align="center" gap="small">
@@ -32,4 +31,7 @@ const OnHeader = () => (
   </Grommet>
 );
 
-storiesOf('Nav', module).add('On header', () => <OnHeader />);
+export const OnHeader = () => <OnHeaderNav />;
+OnHeader.story = {
+  name: 'On header',
+};
