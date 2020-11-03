@@ -137,12 +137,9 @@ describe('Video', () => {
 
   test('scrubber', () => {
     window.scrollTo = jest.fn();
-    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const { container, getByLabelText } = render(<App />);
     fireEvent.click(getByLabelText('scrubber'));
-    expect(warnSpy).toHaveBeenCalledWith(
-      'The video provided has no valid duration property.',
-    );
+
     // targeting scrub function
     fireEvent.mouseMove(getByLabelText('scrubber'));
     expect(container.firstChild).toMatchSnapshot();

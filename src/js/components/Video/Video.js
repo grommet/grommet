@@ -182,11 +182,7 @@ const Video = forwardRef(
           const scrubberRect = scrubberRef.current.getBoundingClientRect();
           const percent =
             (event.clientX - scrubberRect.left) / scrubberRect.width;
-          if (!duration) {
-            console.warn('The video provided has no valid duration property.');
-          } else {
-            videoRef.current.currentTime = duration * percent;
-          }
+          if (duration) videoRef.current.currentTime = duration * percent;
         }
       },
       [duration, videoRef],
