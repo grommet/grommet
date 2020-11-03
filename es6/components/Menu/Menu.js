@@ -166,21 +166,44 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
     }
   };
 
-  var content = children || /*#__PURE__*/React.createElement(Box, {
-    direction: "row",
-    justify: justifyContent,
-    align: "center",
-    pad: theme.button["default"] ? undefined : 'small',
-    gap: label && icon !== false ? 'small' : undefined
-  }, /*#__PURE__*/React.createElement(Text, {
-    size: size
-  }, label), icon !== false ? icon !== true && icon || /*#__PURE__*/React.createElement(MenuIcon, {
+  var menuIcon = icon !== false ? icon !== true && icon || /*#__PURE__*/React.createElement(MenuIcon, {
     color: iconColor,
     size: size
-  }) : null);
+  }) : null;
+  var buttonProps = {
+    plain: plain,
+    size: size
+  };
+  var content;
+
+  if (children) {
+    content = children;
+  } else if (!theme.button["default"]) {
+    content = /*#__PURE__*/React.createElement(Box, {
+      direction: "row",
+      justify: justifyContent,
+      align: "center",
+      pad: "small",
+      gap: label && icon !== false ? 'small' : undefined
+    }, /*#__PURE__*/React.createElement(Text, {
+      size: size
+    }, label), menuIcon);
+  } else {
+    // when a theme has theme.button.default, keep content as
+    // undefined so we can rely on Button label & icon props
+    buttonProps = {
+      icon: menuIcon,
+      label: label,
+      plain: plain,
+      reverse: true,
+      size: size
+    };
+    content = undefined;
+  }
+
   var controlMirror = /*#__PURE__*/React.createElement(Box, {
     flex: false
-  }, /*#__PURE__*/React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement(Button, _extends({
     ref: function ref(r) {
       // make it accessible at the end of all menu items
       buttonRefs[items.length] = r;
@@ -189,7 +212,6 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
     active: activeItemIndex === controlButtonIndex,
     focusIndicator: false,
     hoverIndicator: "background",
-    plain: plain,
     onClick: onDropClose,
     onFocus: function onFocus() {
       return setActiveItemIndex(controlButtonIndex);
@@ -198,7 +220,7 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
     // go to the first menu item instead.
     ,
     tabIndex: activeItemIndex === constants.none ? '-1' : undefined
-  }, typeof content === 'function' ? function () {
+  }, buttonProps), typeof content === 'function' ? function () {
     return content(_extends({}, props, {
       drop: true
     }));
@@ -213,13 +235,12 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
     onKeyDown: onKeyDown
   }, /*#__PURE__*/React.createElement(DropButton, _extends({
     ref: ref
-  }, rest, {
+  }, rest, buttonProps, {
     a11yTitle: a11yTitle || messages.openMenu || 'Open Menu',
     disabled: disabled,
     dropAlign: align,
     dropTarget: dropTarget,
     dropProps: dropProps,
-    plain: plain,
     open: isOpen,
     onOpen: onDropOpen,
     onClose: onDropClose,
