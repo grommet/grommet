@@ -15,7 +15,9 @@ export var StyledMaskedInput = styled.input.withConfig({
 export var StyledMaskedInputContainer = styled.div.withConfig({
   displayName: "StyledMaskedInput__StyledMaskedInputContainer",
   componentId: "sc-99vkfa-1"
-})(["position:relative;width:100%;"]);
+})(["position:relative;width:100%;", ";"], function (props) {
+  return props.theme.maskedInput && props.theme.maskedInput.container && props.theme.maskedInput.container.extend;
+});
 export var StyledIcon = styled.div.withConfig({
   displayName: "StyledMaskedInput__StyledIcon",
   componentId: "sc-99vkfa-2"

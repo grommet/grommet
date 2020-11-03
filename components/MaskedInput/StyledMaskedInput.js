@@ -27,7 +27,9 @@ exports.StyledMaskedInput = StyledMaskedInput;
 var StyledMaskedInputContainer = _styledComponents["default"].div.withConfig({
   displayName: "StyledMaskedInput__StyledMaskedInputContainer",
   componentId: "sc-99vkfa-1"
-})(["position:relative;width:100%;"]);
+})(["position:relative;width:100%;", ";"], function (props) {
+  return props.theme.maskedInput && props.theme.maskedInput.container && props.theme.maskedInput.container.extend;
+});
 
 exports.StyledMaskedInputContainer = StyledMaskedInputContainer;
 

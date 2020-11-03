@@ -43,6 +43,11 @@ export var themeDoc = _extends({
     type: 'string | (props) => {}',
     defaultValue: undefined
   },
+  'maskedInput.container.extend': {
+    description: "Any additional style for the container surrounding the input \n    and, if present, icon.",
+    type: 'string | (props) => {}',
+    defaultValue: undefined
+  },
   'text.medium': {
     description: 'The size of the text for MaskedInput.',
     type: 'string',

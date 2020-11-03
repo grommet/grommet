@@ -914,6 +914,9 @@ export interface ThemeType {
     extend?: ExtendType;
   };
   maskedInput?: {
+    container?: {
+      extend?: ExtendType;
+    };
     extend?: ExtendType;
     disabled?: {
       opacity?: OpacityType;

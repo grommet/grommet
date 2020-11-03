@@ -1007,7 +1007,10 @@ var generate = function generate(baseSpacing, scale) {
       } // extend: undefined,
 
     },
-    maskedInput: {// extend: undefined,
+    maskedInput: {// container: {
+      //   extend: undefined,
+      // },
+      // extend: undefined,
       // disabled: { opacity: undefined },
     },
     menu: {
