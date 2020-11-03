@@ -31,4 +31,9 @@ export const FullLayer = () => {
   );
 };
 
-FullLayer.story = { name: 'Full' };
+FullLayer.story = {
+  name: 'Full',
+  parameters: {
+    chromatic: { disable: true },
+  },
+};

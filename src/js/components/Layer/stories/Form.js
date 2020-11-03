@@ -90,4 +90,9 @@ export const FormLayer = () => {
   );
 };
 
-FormLayer.story = { name: 'Form' };
+FormLayer.story = {
+  name: 'Form',
+  parameters: {
+    chromatic: { disable: true },
+  },
+};

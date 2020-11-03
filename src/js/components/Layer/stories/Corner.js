@@ -37,4 +37,9 @@ export const CornerLayer = () => {
   );
 };
 
-CornerLayer.story = { name: 'Corner' };
+CornerLayer.story = {
+  name: 'Corner',
+  parameters: {
+    chromatic: { disable: true },
+  },
+};

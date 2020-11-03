@@ -85,4 +85,9 @@ export const CenterLayer = () => {
   );
 };
 
-CenterLayer.story = { name: 'Center' };
+CenterLayer.story = {
+  name: 'Center',
+  parameters: {
+    chromatic: { disable: true },
+  },
+};
