@@ -114,7 +114,7 @@ var Collapsible = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     animate: animate,
     dimension: dimension,
     speedProp: speed
-  }, children);
+  }, open || animate ? children : null);
 });
 Collapsible.displayName = 'Collapsible';
 var CollapsibleDoc;
