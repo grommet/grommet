@@ -1,10 +1,8 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Button, CheckBox, Grid, Grommet, Layer, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
 var positions = ['left', 'right', 'top', 'bottom', 'center'];
-
-var TargetLayer = function TargetLayer() {
+export var TargetLayer = function TargetLayer() {
   var _React$useState = React.useState(),
       open = _React$useState[0],
       setOpen = _React$useState[1];
@@ -92,7 +90,6 @@ var TargetLayer = function TargetLayer() {
     onClick: onClose
   }))));
 };
-
-storiesOf('Layer', module).add('Target', function () {
-  return /*#__PURE__*/React.createElement(TargetLayer, null);
-});
+TargetLayer.story = {
+  name: 'Target'
+};

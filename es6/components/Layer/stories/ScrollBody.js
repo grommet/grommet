@@ -1,10 +1,8 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { FormClose } from "grommet-icons/es6/icons/FormClose";
 import { Box, Button, Grommet, Layer, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var ScrollBodyLayer = function ScrollBodyLayer() {
+export var ScrollBodyLayer = function ScrollBodyLayer() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Layer, {
@@ -45,7 +43,6 @@ var ScrollBodyLayer = function ScrollBodyLayer() {
     label: "Save"
   })))));
 };
-
-storiesOf('Layer', module).add('Fixed header, scroll body', function () {
-  return /*#__PURE__*/React.createElement(ScrollBodyLayer, null);
-});
+ScrollBodyLayer.story = {
+  name: 'Fixed header, scroll body'
+};

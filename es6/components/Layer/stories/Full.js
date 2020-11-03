@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Button, Grommet, Layer } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var FullLayer = function FullLayer() {
+export var FullLayer = function FullLayer() {
   var _React$useState = React.useState(false),
       showLayer = _React$useState[0],
       setShowLayer = _React$useState[1];
@@ -40,11 +38,11 @@ var FullLayer = function FullLayer() {
     }
   })))));
 };
-
-storiesOf('Layer', module).add('Full', function () {
-  return /*#__PURE__*/React.createElement(FullLayer, null);
-}, {
-  chromatic: {
-    disable: true
+FullLayer.story = {
+  name: 'Full',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

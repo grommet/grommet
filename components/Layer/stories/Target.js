@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.TargetLayer = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -102,6 +103,7 @@ var TargetLayer = function TargetLayer() {
   }))));
 };
 
-(0, _react2.storiesOf)('Layer', module).add('Target', function () {
-  return /*#__PURE__*/_react["default"].createElement(TargetLayer, null);
-});
+exports.TargetLayer = TargetLayer;
+TargetLayer.story = {
+  name: 'Target'
+};

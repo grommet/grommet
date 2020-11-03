@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.ScrollBodyLayer = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommetIcons = require("grommet-icons");
 
@@ -54,6 +55,7 @@ var ScrollBodyLayer = function ScrollBodyLayer() {
   })))));
 };
 
-(0, _react2.storiesOf)('Layer', module).add('Fixed header, scroll body', function () {
-  return /*#__PURE__*/_react["default"].createElement(ScrollBodyLayer, null);
-});
+exports.ScrollBodyLayer = ScrollBodyLayer;
+ScrollBodyLayer.story = {
+  name: 'Fixed header, scroll body'
+};

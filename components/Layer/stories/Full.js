@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.FullLayer = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -48,10 +49,12 @@ var FullLayer = function FullLayer() {
   })))));
 };
 
-(0, _react2.storiesOf)('Layer', module).add('Full', function () {
-  return /*#__PURE__*/_react["default"].createElement(FullLayer, null);
-}, {
-  chromatic: {
-    disable: true
+exports.FullLayer = FullLayer;
+FullLayer.story = {
+  name: 'Full',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

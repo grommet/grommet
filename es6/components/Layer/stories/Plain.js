@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, Layer, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var PlainLayer = function PlainLayer() {
+export var PlainLayer = function PlainLayer() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet,
     full: true
@@ -23,7 +21,6 @@ var PlainLayer = function PlainLayer() {
     color: "accent-2"
   }, "Text")))));
 };
-
-storiesOf('Layer', module).add('Plain', function () {
-  return /*#__PURE__*/React.createElement(PlainLayer, null);
-});
+PlainLayer.story = {
+  name: 'Plain'
+};

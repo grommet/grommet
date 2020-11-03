@@ -1,10 +1,8 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Trash } from "grommet-icons/es6/icons/Trash";
 import { Box, Button, Grommet, Heading, Layer, Select, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var CenterLayer = function CenterLayer() {
+export var CenterLayer = function CenterLayer() {
   var _React$useState = React.useState(),
       open = _React$useState[0],
       setOpen = _React$useState[1];
@@ -102,11 +100,11 @@ var CenterLayer = function CenterLayer() {
     color: "dark-3"
   })))));
 };
-
-storiesOf('Layer', module).add('Center', function () {
-  return /*#__PURE__*/React.createElement(CenterLayer, null);
-}, {
-  chromatic: {
-    disable: true
+CenterLayer.story = {
+  name: 'Center',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

@@ -1,12 +1,10 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Add } from "grommet-icons/es6/icons/Add";
 import { FormClose } from "grommet-icons/es6/icons/FormClose";
 import { StatusGood } from "grommet-icons/es6/icons/StatusGood";
 import { Box, Button, Grommet, Layer, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var NotificationLayer = function NotificationLayer() {
+export var NotificationLayer = function NotificationLayer() {
   var _React$useState = React.useState(),
       open = _React$useState[0],
       setOpen = _React$useState[1];
@@ -65,7 +63,6 @@ var NotificationLayer = function NotificationLayer() {
     plain: true
   }))));
 };
-
-storiesOf('Layer', module).add('Notification', function () {
-  return /*#__PURE__*/React.createElement(NotificationLayer, null);
-});
+NotificationLayer.story = {
+  name: 'Notification'
+};

@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, Layer } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var RTLLayer = function RTLLayer() {
+export var RTLLayer = function RTLLayer() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet,
     dir: "rtl"
@@ -31,7 +29,6 @@ var RTLLayer = function RTLLayer() {
     pad: "xlarge"
   }, "text"))));
 };
-
-storiesOf('Layer', module).add('RTL', function () {
-  return /*#__PURE__*/React.createElement(RTLLayer, null);
-});
+RTLLayer.story = {
+  name: 'RTL'
+};

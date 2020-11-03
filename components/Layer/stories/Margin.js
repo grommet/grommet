@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.MarginTopCenter = exports.MarginCenter = exports.Margin = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -45,19 +46,35 @@ var MarginLayer = function MarginLayer(_ref) {
   }, "text"))));
 };
 
-(0, _react2.storiesOf)('Layer', module).add('Margin', function () {
+var Margin = function Margin() {
   return /*#__PURE__*/_react["default"].createElement(MarginLayer, {
     full: true
   });
-}).add('Margin (center)', function () {
+};
+
+exports.Margin = Margin;
+
+var MarginCenter = function MarginCenter() {
   return /*#__PURE__*/_react["default"].createElement(MarginLayer, {
     margin: "large"
   });
-}).add('Margin top (center)', function () {
+};
+
+exports.MarginCenter = MarginCenter;
+MarginCenter.story = {
+  name: 'Margin (center)'
+};
+
+var MarginTopCenter = function MarginTopCenter() {
   return /*#__PURE__*/_react["default"].createElement(MarginLayer, {
     margin: {
       top: 'large'
     },
     position: "top"
   });
-});
+};
+
+exports.MarginTopCenter = MarginTopCenter;
+MarginTopCenter.story = {
+  name: 'Margin top (center)'
+};

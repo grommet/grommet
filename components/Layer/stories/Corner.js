@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.CornerLayer = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommetIcons = require("grommet-icons");
 
@@ -50,10 +51,12 @@ var CornerLayer = function CornerLayer() {
   }, "Corner top-right position"))));
 };
 
-(0, _react2.storiesOf)('Layer', module).add('Corner', function () {
-  return /*#__PURE__*/_react["default"].createElement(CornerLayer, null);
-}, {
-  chromatic: {
-    disable: true
+exports.CornerLayer = CornerLayer;
+CornerLayer.story = {
+  name: 'Corner',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

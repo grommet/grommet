@@ -3,7 +3,6 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, Layer } from 'grommet';
 import { grommet } from 'grommet/themes';
 
@@ -38,19 +37,27 @@ var MarginLayer = function MarginLayer(_ref) {
   }, "text"))));
 };
 
-storiesOf('Layer', module).add('Margin', function () {
+export var Margin = function Margin() {
   return /*#__PURE__*/React.createElement(MarginLayer, {
     full: true
   });
-}).add('Margin (center)', function () {
+};
+export var MarginCenter = function MarginCenter() {
   return /*#__PURE__*/React.createElement(MarginLayer, {
     margin: "large"
   });
-}).add('Margin top (center)', function () {
+};
+MarginCenter.story = {
+  name: 'Margin (center)'
+};
+export var MarginTopCenter = function MarginTopCenter() {
   return /*#__PURE__*/React.createElement(MarginLayer, {
     margin: {
       top: 'large'
     },
     position: "top"
   });
-});
+};
+MarginTopCenter.story = {
+  name: 'Margin top (center)'
+};

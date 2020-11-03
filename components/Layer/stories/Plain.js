@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.PlainLayer = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -31,6 +32,7 @@ var PlainLayer = function PlainLayer() {
   }, "Text")))));
 };
 
-(0, _react2.storiesOf)('Layer', module).add('Plain', function () {
-  return /*#__PURE__*/_react["default"].createElement(PlainLayer, null);
-});
+exports.PlainLayer = PlainLayer;
+PlainLayer.story = {
+  name: 'Plain'
+};

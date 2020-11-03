@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.FormLayer = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommetIcons = require("grommet-icons");
 
@@ -95,10 +96,12 @@ var FormLayer = function FormLayer() {
   }))))));
 };
 
-(0, _react2.storiesOf)('Layer', module).add('Form', function () {
-  return /*#__PURE__*/_react["default"].createElement(FormLayer, null);
-}, {
-  chromatic: {
-    disable: true
+exports.FormLayer = FormLayer;
+FormLayer.story = {
+  name: 'Form',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

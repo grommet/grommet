@@ -1,11 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Add } from "grommet-icons/es6/icons/Add";
 import { Close } from "grommet-icons/es6/icons/Close";
 import { Box, Button, FormField, Grommet, Heading, Layer, Select, TextArea, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var FormLayer = function FormLayer() {
+export var FormLayer = function FormLayer() {
   var _React$useState = React.useState(false),
       open = _React$useState[0],
       setOpen = _React$useState[1];
@@ -87,11 +85,11 @@ var FormLayer = function FormLayer() {
     primary: true
   }))))));
 };
-
-storiesOf('Layer', module).add('Form', function () {
-  return /*#__PURE__*/React.createElement(FormLayer, null);
-}, {
-  chromatic: {
-    disable: true
+FormLayer.story = {
+  name: 'Form',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};
