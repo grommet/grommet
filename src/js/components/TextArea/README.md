@@ -287,6 +287,16 @@ Defaults to
 12px
 ```
 
+**global.input.extend**
+
+Any additional style for an input. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
 **global.control.disabled.opacity**
 
 The opacity when a component is disabled. Expects `number`.

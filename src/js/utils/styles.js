@@ -478,6 +478,8 @@ export const inputStyle = css`
   &::-moz-placeholder { // FF 19+
     opacity: 1;
   }
+
+  ${props => props.theme.global.input.extend}
 `;
 
 export const overflowStyle = overflowProp => {

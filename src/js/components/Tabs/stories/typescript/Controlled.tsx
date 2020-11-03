@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+
 import { Attraction, Car, TreeOption } from 'grommet-icons';
 import { Box, Grommet, Tab, Tabs } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -34,4 +34,4 @@ const ControlledTabs = () => {
   );
 };
 
-storiesOf('Tabs', module).add('Controlled', () => <ControlledTabs />);
+export const Controlled = () => <ControlledTabs />;

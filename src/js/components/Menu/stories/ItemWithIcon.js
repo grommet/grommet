@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Menu, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -43,4 +42,7 @@ const IconItemsMenu = () => (
   </Grommet>
 );
 
-storiesOf('Menu', module).add('Item with icon', () => <IconItemsMenu />);
+export const ItemWithIcon = () => <IconItemsMenu />;
+ItemWithIcon.story = {
+  name: 'Item with icon',
+};

@@ -893,7 +893,7 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -1412,7 +1412,7 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -1926,7 +1926,7 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -2440,7 +2440,7 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -2567,7 +2567,7 @@ exports[`Select Controlled multiple onChange without valueKey 3`] = `
 
 exports[`Select Controlled multiple onChange without valueKey 4`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 glPSfV StyledDrop-sc-16s5rx8-0 kQAKuZ"
+  class="StyledBox-sc-13pk1d4-0 glPSfV StyledDrop-sc-16s5rx8-0 iOhAlN"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
@@ -2895,7 +2895,7 @@ exports[`Select Controlled multiple values 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 fVbmbP Select__SelectTextInput-sc-17idtfo-0 VIYrI"
+          class="StyledTextInput-sc-1x30a0s-0 eGpyWD Select__SelectTextInput-sc-17idtfo-0 VIYrI"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -3055,7 +3055,7 @@ exports[`Select Controlled multiple values 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -3574,7 +3574,7 @@ exports[`Select Controlled multiple with empty results 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
