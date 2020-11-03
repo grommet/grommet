@@ -215,7 +215,7 @@ var Video = /*#__PURE__*/forwardRef(function (_ref, ref) {
     if (scrubberRef.current) {
       var scrubberRect = scrubberRef.current.getBoundingClientRect();
       var percent = (event.clientX - scrubberRect.left) / scrubberRect.width;
-      videoRef.current.currentTime = duration * percent;
+      if (duration) videoRef.current.currentTime = duration * percent;
     }
   }, [duration, videoRef]);
   var louder = useCallback(function () {
