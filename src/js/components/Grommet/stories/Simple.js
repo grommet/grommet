@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { grommet, Grommet, Anchor, Box } from 'grommet';
 import { Add } from 'grommet-icons';
@@ -12,7 +11,7 @@ const customTheme = {
   },
 };
 
-const Themed = () => (
+export const Theme = () => (
   <Grommet theme={customTheme}>
     <Box pad="medium">
       <Anchor icon={<Add />} label="Add" color="custom" />
@@ -20,7 +19,7 @@ const Themed = () => (
   </Grommet>
 );
 
-const Plain = () => (
+export const Plain = () => (
   <>
     <Grommet plain>
       <Box pad="medium">
@@ -35,7 +34,7 @@ const Plain = () => (
   </>
 );
 
-const GrommetVars = () => (
+export const Vars = () => (
   <Grommet theme={grommet} cssVars>
     <Box pad="medium" background="var(--accent-2)" gap="medium">
       <Box>
@@ -47,8 +46,3 @@ const GrommetVars = () => (
     </Box>
   </Grommet>
 );
-
-storiesOf('Grommet', module)
-  .add('Plain', () => <Plain />)
-  .add('Theme', () => <Themed />)
-  .add('Vars', () => <GrommetVars />);
