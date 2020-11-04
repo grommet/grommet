@@ -12,6 +12,7 @@ import {
   backgroundIsDark,
   findScrollParents,
   findVisibleParent,
+  getBoundingBoxInArbitrarySpace,
   parseMetricToNum,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
@@ -81,8 +82,21 @@ const DropContainer = forwardRef(
             container.style.maxHeight = '';
           }
           // get bounds
-          const targetRect = findVisibleParent(target).getBoundingClientRect();
+          let targetRect = {};
+          // TODO handling of SVG should be expanded to li and more
+          // eslint-disable-next-line no-undef
+          if (target instanceof SVGElement) {
+            console.log('The element is an svg', target);
+            targetRect = getBoundingBoxInArbitrarySpace(
+              target,
+              target.getScreenCTM(),
+            );
+          } else {
+            targetRect = findVisibleParent(target).getBoundingClientRect();
+          }
+          console.log('targetRect', targetRect);
           const containerRect = container.getBoundingClientRect();
+          console.log('containerRect', containerRect);
           // determine width
           let width;
           if (stretch) {
