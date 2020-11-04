@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Themed = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -20,17 +21,18 @@ var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
   }
 });
 
-var All = function All() {
+var Themed = function Themed() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Paragraph, null, "The font family for this paragraph is being defined by a custom theme."));
 }; // disabling chromatic because snapshot doesn't capture font
 
 
-(0, _react2.storiesOf)('Paragraph', module).add('Themed', function () {
-  return /*#__PURE__*/_react["default"].createElement(All, null);
-}, {
-  chromatic: {
-    disable: true
+exports.Themed = Themed;
+Themed.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

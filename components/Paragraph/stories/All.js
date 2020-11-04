@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.All = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -28,6 +29,4 @@ var All = function All() {
   }, "This is a full-width paragraph, using the \"fill\" property:", ' ', paragraphFiller));
 };
 
-(0, _react2.storiesOf)('Paragraph', module).add('All', function () {
-  return /*#__PURE__*/_react["default"].createElement(All, null);
-});
+exports.All = All;

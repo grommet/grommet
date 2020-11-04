@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Custom = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -36,7 +37,7 @@ var customlevel = (0, _utils.deepMerge)(_themes.grommet, {
   }
 });
 
-var CustomHeading = function CustomHeading() {
+var Custom = function Custom() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customlevel
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
@@ -51,6 +52,4 @@ var CustomHeading = function CustomHeading() {
   }, "Heading level 5 small"));
 };
 
-(0, _react2.storiesOf)('Heading', module).add('Custom', function () {
-  return /*#__PURE__*/_react["default"].createElement(CustomHeading, null);
-});
+exports.Custom = Custom;

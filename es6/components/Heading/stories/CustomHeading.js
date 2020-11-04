@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Heading } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
@@ -26,8 +25,7 @@ var customlevel = deepMerge(grommet, {
     }
   }
 });
-
-var CustomHeading = function CustomHeading() {
+export var Custom = function Custom() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: customlevel
   }, /*#__PURE__*/React.createElement(Heading, {
@@ -41,7 +39,3 @@ var CustomHeading = function CustomHeading() {
     size: "large"
   }, "Heading level 5 small"));
 };
-
-storiesOf('Heading', module).add('Custom', function () {
-  return /*#__PURE__*/React.createElement(CustomHeading, null);
-});

@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Extend = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -44,7 +45,7 @@ var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
   }
 });
 
-var HeadingExtend = function HeadingExtend() {
+var Extend = function Extend() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
@@ -59,6 +60,4 @@ var HeadingExtend = function HeadingExtend() {
   }, "This is using the extend property on Heading"));
 };
 
-(0, _react2.storiesOf)('Heading', module).add('Extend', function () {
-  return /*#__PURE__*/_react["default"].createElement(HeadingExtend, null);
-});
+exports.Extend = Extend;

@@ -1,11 +1,10 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, Text, Heading } from 'grommet';
 import { grommet } from 'grommet/themes';
 var wordBreakValues = ['normal', 'break-all', 'keep-all', 'break-word'];
 /* eslint-disable max-len */
 
-var WordBreak = function WordBreak() {
+export var WordBreak = function WordBreak() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, wordBreakValues.map(function (value) {
@@ -22,7 +21,6 @@ var WordBreak = function WordBreak() {
 };
 /* eslint-enable max-len */
 
-
-storiesOf('Text', module).add('Word break', function () {
-  return /*#__PURE__*/React.createElement(WordBreak, null);
-});
+WordBreak.story = {
+  name: 'Word break'
+};

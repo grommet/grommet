@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports["default"] = exports.ComponentOverrideMarkdown = exports.Simple = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
@@ -14,7 +15,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 var CONTENT = "\n  # Out of Breath\n\n  You know, sometimes in life it seems like there's no way out. Like\n  a sheep trapped in a maze designed by wolves. See all the\n  options [here](https://github.com/probablyup/markdown-to-jsx/)\n\n  [reference](#)\n\n```\nimport { Grommet } from 'grommet';\n```\n\n  > i carry your heart with me\n\n  ![alt text](//v2.grommet.io/assets/IMG_4245.jpg \"Markdown Image\")\n\n  Markdown | Less | Pretty\n  --- | --- | ---\n  *Still* | `renders` | **nicely**\n  1 | 2 | 3\n";
 
-var SimpleMarkdown = function SimpleMarkdown() {
+var Simple = function Simple() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -22,6 +23,8 @@ var SimpleMarkdown = function SimpleMarkdown() {
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Markdown, null, CONTENT)));
 };
+
+exports.Simple = Simple;
 
 var StyledPre = _styledComponents["default"].pre.withConfig({
   displayName: "markdownstories__StyledPre",
@@ -41,8 +44,11 @@ var ComponentOverrideMarkdown = function ComponentOverrideMarkdown() {
   }, CONTENT)));
 };
 
-(0, _react2.storiesOf)('Markdown', module).add('Simple', function () {
-  return /*#__PURE__*/_react["default"].createElement(SimpleMarkdown, null);
-}).add('Component override markdown', function () {
-  return /*#__PURE__*/_react["default"].createElement(ComponentOverrideMarkdown, null);
-});
+exports.ComponentOverrideMarkdown = ComponentOverrideMarkdown;
+ComponentOverrideMarkdown.story = {
+  name: 'Component override markdown'
+};
+var _default = {
+  title: 'Type/Markdown'
+};
+exports["default"] = _default;

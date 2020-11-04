@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Color = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -18,6 +19,4 @@ var Color = function Color() {
   }, "Colored Heading"));
 };
 
-(0, _react2.storiesOf)('Heading', module).add('Color', function () {
-  return /*#__PURE__*/_react["default"].createElement(Color, null);
-});
+exports.Color = Color;

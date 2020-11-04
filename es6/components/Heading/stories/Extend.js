@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Heading } from 'grommet';
 import { deepMerge } from 'grommet/utils';
 import { grommet } from 'grommet/themes';
@@ -34,8 +33,7 @@ var customTheme = deepMerge(grommet, {
     }
   }
 });
-
-var HeadingExtend = function HeadingExtend() {
+export var Extend = function Extend() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: customTheme
   }, /*#__PURE__*/React.createElement(Heading, {
@@ -49,7 +47,3 @@ var HeadingExtend = function HeadingExtend() {
     size: "small"
   }, "This is using the extend property on Heading"));
 };
-
-storiesOf('Heading', module).add('Extend', function () {
-  return /*#__PURE__*/React.createElement(HeadingExtend, null);
-});

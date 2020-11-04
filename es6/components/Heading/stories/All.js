@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Grid, Heading } from 'grommet';
 import { grommet } from 'grommet/themes';
 var headingFiller = "\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.\n";
@@ -33,8 +32,7 @@ var Set = function Set(_ref2) {
 Set.propTypes = {
   size: PropTypes.string.isRequired
 };
-
-var All = function All() {
+export var All = function All() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Grid, {
@@ -52,7 +50,3 @@ var All = function All() {
     fill: true
   }, headingFiller));
 };
-
-storiesOf('Heading', module).add('All', function () {
-  return /*#__PURE__*/React.createElement(All, null);
-});

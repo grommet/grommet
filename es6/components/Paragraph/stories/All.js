@@ -1,11 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Paragraph } from 'grommet';
 import { grommet } from 'grommet/themes';
 var sizes = ['xxlarge', 'xlarge', 'large', 'medium', 'small'];
 var paragraphFiller = "\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.\n";
-
-var All = function All() {
+export var All = function All() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, sizes.map(function (size) {
@@ -19,7 +17,3 @@ var All = function All() {
     fill: true
   }, "This is a full-width paragraph, using the \"fill\" property:", ' ', paragraphFiller));
 };
-
-storiesOf('Paragraph', module).add('All', function () {
-  return /*#__PURE__*/React.createElement(All, null);
-});

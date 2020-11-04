@@ -1,10 +1,11 @@
 "use strict";
 
+exports.__esModule = true;
+exports.All = void 0;
+
 var _react = _interopRequireDefault(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
-
-var _react2 = require("@storybook/react");
 
 var _grommet = require("grommet");
 
@@ -62,6 +63,4 @@ var All = function All() {
   }, headingFiller));
 };
 
-(0, _react2.storiesOf)('Heading', module).add('All', function () {
-  return /*#__PURE__*/_react["default"].createElement(All, null);
-});
+exports.All = All;
