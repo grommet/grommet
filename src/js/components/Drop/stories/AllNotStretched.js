@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Drop, Grommet, Text, ThemeContext } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -160,4 +159,5 @@ const AllDrops = () => (
   </Grommet>
 );
 
-storiesOf('Drop', module).add('All not stretch', () => <AllDrops />);
+export const AllNotStretched = () => <AllDrops />;
+AllNotStretched.story = { name: 'All not stretched' };

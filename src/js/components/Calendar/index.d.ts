@@ -12,6 +12,7 @@ export interface CalendarProps {
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
   margin?: MarginType;
+  activeDate?: 'start' | 'end';
   animate?: AnimateType;
   bounds?: string[];
   children?: (...args: any[]) => any;
@@ -25,7 +26,7 @@ export interface CalendarProps {
   locale?: string;
   onReference?: (reference: string) => void;
   onSelect?: (select: string | string[]) => any;
-  range?: boolean;
+  range?: boolean | 'array';
   reference?: string;
   showAdjacentDays?: boolean | 'trim';
   size?: 'small' | 'medium' | 'large' | string;

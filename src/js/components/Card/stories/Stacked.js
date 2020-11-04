@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
   Avatar,
@@ -53,7 +52,7 @@ const data = [
   },
 ];
 
-const Example = () => {
+export const Stacked = () => {
   const avatarSrc =
     '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
 
@@ -100,5 +99,3 @@ const Example = () => {
     </Grommet>
   );
 };
-
-storiesOf('Card', module).add('Stacked', () => <Example />);

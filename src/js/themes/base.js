@@ -59,8 +59,8 @@ const colors = {
     light: '#FFFFFF',
   },
   'background-contrast': {
-    dark: '#33333308',
-    light: '#FFFFFF08',
+    light: '#33333310',
+    dark: '#FFFFFF18',
   },
   'active-background': 'background-contrast',
   'active-text': 'text-strong',
@@ -217,7 +217,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // The time to wait after the user stopped typing, measured in ms.
       debounceDelay: 300,
       drop: {
-        background: '#ffffff',
+        background: {
+          dark: 'black',
+          light: 'white',
+        },
         border: {
           radius: '0px',
         },
@@ -542,9 +545,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       header: {},
       body: {},
-      footer: {
-        background: 'background-contrast',
-      },
+      footer: {},
     },
     carousel: {
       icons: {
@@ -703,6 +704,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       header: {
         // background: undefined,
         // border: undefined,
+        // extend: undefined,
         // font: {
         //   weight: undefined,
         //   size: undefined,
@@ -882,7 +884,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       weight: 600,
     },
     layer: {
-      background: 'white',
+      background: {
+        dark: 'black',
+        light: 'white',
+      },
       border: {
         radius: '4px',
       },
@@ -906,6 +911,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
     },
     maskedInput: {
+      // container: {
+      //   extend: undefined,
+      // },
       // extend: undefined,
       // disabled: { opacity: undefined },
     },

@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Button, Grid, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const AppGrid = () => {
+export const AppGrid = () => {
   const [sidebar, setSidebar] = useState(true);
 
   return (
@@ -59,4 +58,4 @@ const AppGrid = () => {
   );
 };
 
-storiesOf('Grid', module).add('App', () => <AppGrid />);
+AppGrid.story = { name: 'App' };
