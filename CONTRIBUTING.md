@@ -218,6 +218,6 @@ This contribution guide was inspired by the contribution guides for [Grunt],
 [prop-types]: https://www.npmjs.com/package/prop-types
 [pull requests]: https://help.github.com/en/articles/creating-a-pull-request-from-a-fork
 [react-desc]: https://github.com/grommet/react-desc
-[slack community]: http://slackin.grommet.io/
+[slack community]: https://slack-invite.grommet.io/
 [stack overflow]: https://stackoverflow.com/questions/tagged/grommet
 [video]: https://vimeo.com/129681048
