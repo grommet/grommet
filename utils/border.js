@@ -15,6 +15,7 @@ var responsiveBorderStyle = function responsiveBorderStyle(data, theme) {
   var style = data.style || 'solid';
   var side = typeof data === 'string' ? data : data.side || 'all';
   var breakpoint = theme.box.responsiveBreakpoint && theme.global.breakpoints[theme.box.responsiveBreakpoint];
+  if (!breakpoint.borderSize) breakpoint.borderSize = theme.global.borderSize;
   var value = breakpoint && (breakpoint.borderSize[borderSize] || borderSize) && style + " " + (breakpoint.borderSize[borderSize] || borderSize) + " " + color;
   if (!value) return undefined;
   if (side === 'top' || side === 'bottom' || side === 'left' || side === 'right') return "border-" + side + ": " + value + ";";

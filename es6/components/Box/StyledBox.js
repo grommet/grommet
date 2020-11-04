@@ -4,7 +4,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import styled, { css, keyframes } from 'styled-components';
 import { defaultProps } from '../../default-props';
-import { backgroundStyle, borderStyle, breakpointStyle, edgeStyle, fillStyle, focusStyle, genericStyles, getHoverIndicatorStyle, overflowStyle, parseMetricToNum, responsiveBorderStyle } from '../../utils';
+import { backgroundStyle, borderStyle, breakpointStyle, edgeStyle, fillStyle, focusStyle, genericStyles, getHoverIndicatorStyle, overflowStyle, parseMetricToNum, responsiveBorderStyle, getBreakpointStyle } from '../../utils';
 var ALIGN_MAP = {
   baseline: 'baseline',
   center: 'center',
@@ -47,7 +47,7 @@ var directionStyle = function directionStyle(direction, theme) {
   var styles = [css(["min-width:0;min-height:0;flex-direction:", ";"], direction === 'row-responsive' ? 'row' : direction)];
 
   if (direction === 'row-responsive' && theme.box.responsiveBreakpoint) {
-    var breakpoint = theme.global.breakpoints[theme.box.responsiveBreakpoint];
+    var breakpoint = getBreakpointStyle(theme, theme.box.responsiveBreakpoint);
 
     if (breakpoint) {
       styles.push(breakpointStyle(breakpoint, "\n        flex-direction: column;\n        flex-basis: auto;\n        justify-content: flex-start;\n        align-items: stretch;\n      "));
@@ -96,7 +96,7 @@ var ROUND_MAP = {
 };
 
 var roundStyle = function roundStyle(data, responsive, theme) {
-  var breakpoint = theme.box.responsiveBreakpoint && theme.global.breakpoints[theme.box.responsiveBreakpoint];
+  var breakpoint = getBreakpointStyle(theme, theme.box.responsiveBreakpoint);
   var styles = [];
 
   if (typeof data === 'object') {
@@ -421,7 +421,7 @@ var StyledBox = styled.div.withConfig({
 
 var gapStyle = function gapStyle(directionProp, gap, responsive, border, theme) {
   var metric = theme.global.edgeSize[gap] || gap;
-  var breakpoint = theme.box.responsiveBreakpoint && theme.global.breakpoints[theme.box.responsiveBreakpoint];
+  var breakpoint = getBreakpointStyle(theme, theme.box.responsiveBreakpoint);
   var responsiveMetric = responsive && breakpoint && breakpoint.edgeSize[gap];
   var styles = [];
 
