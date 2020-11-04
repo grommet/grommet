@@ -1,11 +1,9 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Example = void 0;
+exports.Themed = void 0;
 
 var _react = _interopRequireDefault(require("react"));
-
-var _react2 = require("@storybook/react");
 
 var _grommet = require("grommet");
 
@@ -39,7 +37,7 @@ var theme = {
   }
 };
 
-var Example = function Example() {
+var Themed = function Themed() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: theme
   }, /*#__PURE__*/_react["default"].createElement(_grommet.SkipLinks, {
@@ -118,7 +116,4 @@ var Example = function Example() {
   }), contentFiller))));
 };
 
-exports.Example = Example;
-(0, _react2.storiesOf)('SkipLinks', module).add('Themed', function () {
-  return /*#__PURE__*/_react["default"].createElement(Example, null);
-});
+exports.Themed = Themed;

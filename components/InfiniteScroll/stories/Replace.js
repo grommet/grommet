@@ -1,10 +1,9 @@
 "use strict";
 
+exports.__esModule = true;
+exports.ShowAfter = exports.ShowBefore = exports.Replace = void 0;
+
 var _react = _interopRequireDefault(require("react"));
-
-var _react2 = require("@storybook/react");
-
-var _isChromatic = _interopRequireDefault(require("chromatic/isChromatic"));
 
 var _themes = require("grommet/themes");
 
@@ -35,20 +34,51 @@ var Example = function Example(props) {
   }));
 };
 
-if (!(0, _isChromatic["default"])()) {
-  (0, _react2.storiesOf)('InfiniteScroll', module).add('Replace', function () {
-    return /*#__PURE__*/_react["default"].createElement(Example, {
-      replace: true
-    });
-  }).add('Replace, show before step', function () {
-    return /*#__PURE__*/_react["default"].createElement(Example, {
-      replace: true,
-      show: 27
-    });
-  }).add('Replace, show after step', function () {
-    return /*#__PURE__*/_react["default"].createElement(Example, {
-      replace: true,
-      show: 87
-    });
+var Replace = function Replace() {
+  return /*#__PURE__*/_react["default"].createElement(Example, {
+    replace: true
   });
-}
+};
+
+exports.Replace = Replace;
+
+var ShowBefore = function ShowBefore() {
+  return /*#__PURE__*/_react["default"].createElement(Example, {
+    replace: true,
+    show: 27
+  });
+};
+
+exports.ShowBefore = ShowBefore;
+
+var ShowAfter = function ShowAfter() {
+  return /*#__PURE__*/_react["default"].createElement(Example, {
+    replace: true,
+    show: 87
+  });
+};
+
+exports.ShowAfter = ShowAfter;
+Replace.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
+  }
+};
+ShowBefore.story = {
+  name: 'Replace, show before step',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
+  }
+};
+ShowAfter.story = {
+  name: 'Replace, show after step',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
+  }
+};

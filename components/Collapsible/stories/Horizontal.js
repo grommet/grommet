@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Horizontal = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommetIcons = require("grommet-icons");
 
@@ -12,7 +13,7 @@ var _themes = require("grommet/themes");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var HorizontalCollapsible = function HorizontalCollapsible() {
+var Horizontal = function Horizontal() {
   var _React$useState = _react["default"].useState(),
       openNotification = _React$useState[0],
       setOpenNotification = _React$useState[1];
@@ -68,10 +69,11 @@ var HorizontalCollapsible = function HorizontalCollapsible() {
   }, "Sidebar"))))));
 };
 
-(0, _react2.storiesOf)('Collapsible', module).add('Horizontal', function () {
-  return /*#__PURE__*/_react["default"].createElement(HorizontalCollapsible, null);
-}, {
-  chromatic: {
-    disable: true
+exports.Horizontal = Horizontal;
+Horizontal.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

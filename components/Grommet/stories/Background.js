@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Background = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -50,6 +51,4 @@ var Background = function Background() {
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Grommet with background as object containing color and image"))));
 };
 
-(0, _react2.storiesOf)('Grommet', module).add('Background', function () {
-  return /*#__PURE__*/_react["default"].createElement(Background, null);
-});
+exports.Background = Background;

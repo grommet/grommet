@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.CustomBreakpoints = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -53,7 +54,8 @@ var customBreakpoints = {
     }
   }
 };
-(0, _react2.storiesOf)('ResponsiveContext', module).add('Custom breakpoints', function () {
+
+var CustomBreakpoints = function CustomBreakpoints() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customBreakpoints,
     full: true
@@ -63,4 +65,9 @@ var customBreakpoints = {
       background: "brand"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, null, "Hi, I'm " + size + ", resize me!"));
   }));
-});
+};
+
+exports.CustomBreakpoints = CustomBreakpoints;
+CustomBreakpoints.story = {
+  name: 'Custom breakpoints'
+};

@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { grommet, Grommet, Anchor, Box } from 'grommet';
 import { Add } from "grommet-icons/es6/icons/Add";
 var customTheme = {
@@ -9,8 +8,7 @@ var customTheme = {
     }
   }
 };
-
-var Themed = function Themed() {
+export var Theme = function Theme() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: customTheme
   }, /*#__PURE__*/React.createElement(Box, {
@@ -21,8 +19,7 @@ var Themed = function Themed() {
     color: "custom"
   })));
 };
-
-var Plain = function Plain() {
+export var Plain = function Plain() {
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Grommet, {
     plain: true
   }, /*#__PURE__*/React.createElement(Box, {
@@ -31,8 +28,7 @@ var Plain = function Plain() {
     pad: "medium"
   }, /*#__PURE__*/React.createElement("p", null, "Not plain Grommet"))));
 };
-
-var GrommetVars = function GrommetVars() {
+export var Vars = function Vars() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet,
     cssVars: true
@@ -44,11 +40,3 @@ var GrommetVars = function GrommetVars() {
     "with": true
   }, "For example, the background color in this Box is using var(--accent-2)")));
 };
-
-storiesOf('Grommet', module).add('Plain', function () {
-  return /*#__PURE__*/React.createElement(Plain, null);
-}).add('Theme', function () {
-  return /*#__PURE__*/React.createElement(Themed, null);
-}).add('Vars', function () {
-  return /*#__PURE__*/React.createElement(GrommetVars, null);
-});

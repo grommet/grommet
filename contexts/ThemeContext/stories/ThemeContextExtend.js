@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.GlobalThemeWithThemeContext = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _themes = require("grommet/themes");
 
@@ -80,6 +81,7 @@ var GlobalThemeWithThemeContext = function GlobalThemeWithThemeContext() {
   })))));
 };
 
-(0, _react2.storiesOf)('Theme', module).add('ThemeContext.Extend', function () {
-  return /*#__PURE__*/_react["default"].createElement(GlobalThemeWithThemeContext, null);
-});
+exports.GlobalThemeWithThemeContext = GlobalThemeWithThemeContext;
+GlobalThemeWithThemeContext.story = {
+  name: 'ThemeContext.Extend'
+};

@@ -1,11 +1,9 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Example = void 0;
+exports.Simple = void 0;
 
 var _react = _interopRequireDefault(require("react"));
-
-var _react2 = require("@storybook/react");
 
 var _grommet = require("grommet");
 
@@ -22,7 +20,7 @@ var Info = function Info(_ref) {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Paragraph, null, "After choosing the ", label, " option on the SkipLinks layer, the following interactive element will be the next focusable item.");
 };
 
-var Example = function Example() {
+var Simple = function Simple() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _grommet.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.SkipLinks, null, /*#__PURE__*/_react["default"].createElement(_grommet.SkipLink, {
@@ -103,7 +101,4 @@ var Example = function Example() {
   }), contentFiller))));
 };
 
-exports.Example = Example;
-(0, _react2.storiesOf)('SkipLinks', module).add('Simple', function () {
-  return /*#__PURE__*/_react["default"].createElement(Example, null);
-});
+exports.Simple = Simple;

@@ -1,11 +1,9 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Button, Collapsible, Grommet, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var SimpleCollapsible = function SimpleCollapsible(props) {
+export var Default = function Default(props) {
   var _React$useState = React.useState(false),
       open = _React$useState[0],
       setOpen = _React$useState[1];
@@ -31,11 +29,10 @@ var SimpleCollapsible = function SimpleCollapsible(props) {
     justify: "center"
   }, /*#__PURE__*/React.createElement(Text, null, "This is a box inside a Collapsible component"))), /*#__PURE__*/React.createElement(Text, null, "This is other content outside the Collapsible box")));
 };
-
-storiesOf('Collapsible', module).add('Default', function () {
-  return /*#__PURE__*/React.createElement(SimpleCollapsible, null);
-}, {
-  chromatic: {
-    disable: true
+Default.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

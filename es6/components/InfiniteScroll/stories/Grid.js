@@ -1,12 +1,12 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grid, Grommet, Box, Image, InfiniteScroll, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
-import { allItems } from './Basics';
-
-var GridInfiniteScroll = function GridInfiniteScroll(_ref) {
+var allItems = Array(2000).fill().map(function (_, i) {
+  return "item " + (i + 1);
+});
+export var GridInfiniteScroll = function GridInfiniteScroll(_ref) {
   var rest = _extends({}, _ref);
 
   return /*#__PURE__*/React.createElement(Grommet, {
@@ -27,11 +27,14 @@ var GridInfiniteScroll = function GridInfiniteScroll(_ref) {
     }), /*#__PURE__*/React.createElement(Text, null, item));
   })));
 };
-
-storiesOf('InfiniteScroll', module).add('Grid', function () {
-  return /*#__PURE__*/React.createElement(GridInfiniteScroll, null);
-}).add('Grid with show item 77', function () {
+export var GridWithShow = function GridWithShow() {
   return /*#__PURE__*/React.createElement(GridInfiniteScroll, {
     show: 78
   });
-});
+};
+GridInfiniteScroll.story = {
+  name: 'Grid'
+};
+GridWithShow.story = {
+  name: 'Grid with show item 77'
+};

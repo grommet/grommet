@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/tabindex-no-positive */
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { grommet, Avatar, Box, Anchor, Grommet, Header, Nav, Paragraph, SkipLinkTarget, SkipLink, SkipLinks, Heading } from 'grommet';
 var avatarSrc = '//s.gravatar.com/avatar/b7fb138d53ba0f573212ccce38a7c43b?s=80';
 var contentFiller = "\nLorem ipsum dolor sit amet, consectetur adipiscing elit,\nsed do eiusmod tempor incididunt ut labore et dolore magna\naliqua. Ut enim ad minim veniam, quis nostrud exercitation\nullamco laboris nisi ut aliquip ex ea commodo consequat.\nDuis aute irure dolor in reprehenderit in voluptate velit\nesse cillum dolore eu fugiat nulla pariatur. Excepteur\nsint occaecat cupidatat non proident, sunt in culpa qui\nofficia deserunt mollit anim id est laborum.\n";
@@ -12,7 +11,7 @@ var Info = function Info(_ref) {
   return /*#__PURE__*/React.createElement(Paragraph, null, "After choosing the ", label, " option on the SkipLinks layer, the following interactive element will be the next focusable item.");
 };
 
-export var Example = function Example() {
+export var Simple = function Simple() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(SkipLinks, null, /*#__PURE__*/React.createElement(SkipLink, {
@@ -92,6 +91,3 @@ export var Example = function Example() {
     label: "Interactive Element"
   }), contentFiller))));
 };
-storiesOf('SkipLinks', module).add('Simple', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-});

@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Nested = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommetIcons = require("grommet-icons");
 
@@ -39,7 +40,7 @@ var MenuButton = function MenuButton(_ref) {
   }, label)));
 };
 
-var NestedCollapsible = function NestedCollapsible() {
+var Nested = function Nested() {
   var _React$useState = _react["default"].useState(false),
       openMenu1 = _React$useState[0],
       setOpenMenu1 = _React$useState[1];
@@ -128,10 +129,11 @@ var NestedCollapsible = function NestedCollapsible() {
   }, "Submenu item 1"))))));
 };
 
-(0, _react2.storiesOf)('Collapsible', module).add('Nested', function () {
-  return /*#__PURE__*/_react["default"].createElement(NestedCollapsible, null);
-}, {
-  chromatic: {
-    disable: true
+exports.Nested = Nested;
+Nested.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

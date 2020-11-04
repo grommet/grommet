@@ -3,7 +3,6 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { FormDown } from "grommet-icons/es6/icons/FormDown";
 import { FormNext } from "grommet-icons/es6/icons/FormNext";
 import { Box, Button, Collapsible, Grommet, Text } from 'grommet';
@@ -32,7 +31,7 @@ var MenuButton = function MenuButton(_ref) {
   }, label)));
 };
 
-var NestedCollapsible = function NestedCollapsible() {
+export var Nested = function Nested() {
   var _React$useState = React.useState(false),
       openMenu1 = _React$useState[0],
       setOpenMenu1 = _React$useState[1];
@@ -120,11 +119,10 @@ var NestedCollapsible = function NestedCollapsible() {
     size: "small"
   }, "Submenu item 1"))))));
 };
-
-storiesOf('Collapsible', module).add('Nested', function () {
-  return /*#__PURE__*/React.createElement(NestedCollapsible, null);
-}, {
-  chromatic: {
-    disable: true
+Nested.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

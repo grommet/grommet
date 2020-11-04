@@ -1,8 +1,6 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import isChromatic from 'chromatic/isChromatic';
 import { grommet } from 'grommet/themes';
 import { Grommet, Box, InfiniteScroll, Text } from 'grommet';
 var allItems = Array(240).fill().map(function (_, i) {
@@ -26,20 +24,43 @@ var Example = function Example(props) {
   }));
 };
 
-if (!isChromatic()) {
-  storiesOf('InfiniteScroll', module).add('Replace', function () {
-    return /*#__PURE__*/React.createElement(Example, {
-      replace: true
-    });
-  }).add('Replace, show before step', function () {
-    return /*#__PURE__*/React.createElement(Example, {
-      replace: true,
-      show: 27
-    });
-  }).add('Replace, show after step', function () {
-    return /*#__PURE__*/React.createElement(Example, {
-      replace: true,
-      show: 87
-    });
+export var Replace = function Replace() {
+  return /*#__PURE__*/React.createElement(Example, {
+    replace: true
   });
-}
+};
+export var ShowBefore = function ShowBefore() {
+  return /*#__PURE__*/React.createElement(Example, {
+    replace: true,
+    show: 27
+  });
+};
+export var ShowAfter = function ShowAfter() {
+  return /*#__PURE__*/React.createElement(Example, {
+    replace: true,
+    show: 87
+  });
+};
+Replace.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
+  }
+};
+ShowBefore.story = {
+  name: 'Replace, show before step',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
+  }
+};
+ShowAfter.story = {
+  name: 'Replace, show after step',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
+  }
+};

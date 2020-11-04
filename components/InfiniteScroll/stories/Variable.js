@@ -1,10 +1,9 @@
 "use strict";
 
+exports.__esModule = true;
+exports.HeightReplace = exports.Height = void 0;
+
 var _react = _interopRequireDefault(require("react"));
-
-var _react2 = require("@storybook/react");
-
-var _isChromatic = _interopRequireDefault(require("chromatic/isChromatic"));
 
 var _themes = require("grommet/themes");
 
@@ -36,12 +35,32 @@ var Example = function Example(props) {
   })));
 };
 
-if (!(0, _isChromatic["default"])()) {
-  (0, _react2.storiesOf)('InfiniteScroll', module).add('Variable Item Height', function () {
-    return /*#__PURE__*/_react["default"].createElement(Example, null);
-  }).add('Variable Item Height w/replace', function () {
-    return /*#__PURE__*/_react["default"].createElement(Example, {
-      replace: true
-    });
+var Height = function Height() {
+  return /*#__PURE__*/_react["default"].createElement(Example, null);
+};
+
+exports.Height = Height;
+
+var HeightReplace = function HeightReplace() {
+  return /*#__PURE__*/_react["default"].createElement(Example, {
+    replace: true
   });
-}
+};
+
+exports.HeightReplace = HeightReplace;
+Height.story = {
+  name: 'Variable item height',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
+  }
+};
+HeightReplace.story = {
+  name: 'Variable item height w/replace',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
+  }
+};

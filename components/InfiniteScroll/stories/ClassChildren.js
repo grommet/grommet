@@ -1,20 +1,23 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.ClassChildrenInfiniteScroll = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
 var _themes = require("grommet/themes");
 
-var _Basics = require("./Basics");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
+var allItems = Array(2000).fill().map(function (_, i) {
+  return "item " + (i + 1);
+});
 /* eslint-disable react/prefer-stateless-function */
+
 var MyItem = function MyItem(_ref) {
   var item = _ref.item;
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -30,7 +33,7 @@ var ClassChildrenInfiniteScroll = function ClassChildrenInfiniteScroll(props) {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.InfiniteScroll, _extends({
-    items: _Basics.allItems
+    items: allItems
   }, props), function (item) {
     return /*#__PURE__*/_react["default"].createElement(MyItem, {
       key: item,
@@ -39,6 +42,7 @@ var ClassChildrenInfiniteScroll = function ClassChildrenInfiniteScroll(props) {
   })));
 };
 
-(0, _react2.storiesOf)('InfiniteScroll', module).add('Class children', function () {
-  return /*#__PURE__*/_react["default"].createElement(ClassChildrenInfiniteScroll, null);
-});
+exports.ClassChildrenInfiniteScroll = ClassChildrenInfiniteScroll;
+ClassChildrenInfiniteScroll.story = {
+  name: 'Class children'
+};

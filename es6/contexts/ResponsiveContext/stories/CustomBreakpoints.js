@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, Heading, ResponsiveContext } from 'grommet';
 var customBreakpoints = {
   global: {
@@ -46,7 +45,7 @@ var customBreakpoints = {
     }
   }
 };
-storiesOf('ResponsiveContext', module).add('Custom breakpoints', function () {
+export var CustomBreakpoints = function CustomBreakpoints() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: customBreakpoints,
     full: true
@@ -56,4 +55,7 @@ storiesOf('ResponsiveContext', module).add('Custom breakpoints', function () {
       background: "brand"
     }, /*#__PURE__*/React.createElement(Heading, null, "Hi, I'm " + size + ", resize me!"));
   }));
-});
+};
+CustomBreakpoints.story = {
+  name: 'Custom breakpoints'
+};

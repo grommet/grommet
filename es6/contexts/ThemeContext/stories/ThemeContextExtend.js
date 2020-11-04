@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
 import { Box, Text, ThemeContext, Grommet, Select } from 'grommet';
@@ -15,8 +14,7 @@ var customTheme = deepMerge(grommet, {
     }
   }
 });
-
-var GlobalThemeWithThemeContext = function GlobalThemeWithThemeContext() {
+export var GlobalThemeWithThemeContext = function GlobalThemeWithThemeContext() {
   var options = ['one', 'two', 'three'];
 
   var _useState = useState(''),
@@ -68,7 +66,6 @@ var GlobalThemeWithThemeContext = function GlobalThemeWithThemeContext() {
     }
   })))));
 };
-
-storiesOf('Theme', module).add('ThemeContext.Extend', function () {
-  return /*#__PURE__*/React.createElement(GlobalThemeWithThemeContext, null);
-});
+GlobalThemeWithThemeContext.story = {
+  name: 'ThemeContext.Extend'
+};

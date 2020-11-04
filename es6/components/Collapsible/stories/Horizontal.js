@@ -1,10 +1,8 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Notification } from "grommet-icons/es6/icons/Notification";
 import { Box, Button, Collapsible, Heading, Grommet, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var HorizontalCollapsible = function HorizontalCollapsible() {
+export var Horizontal = function Horizontal() {
   var _React$useState = React.useState(),
       openNotification = _React$useState[0],
       setOpenNotification = _React$useState[1];
@@ -59,11 +57,10 @@ var HorizontalCollapsible = function HorizontalCollapsible() {
     size: "xlarge"
   }, "Sidebar"))))));
 };
-
-storiesOf('Collapsible', module).add('Horizontal', function () {
-  return /*#__PURE__*/React.createElement(HorizontalCollapsible, null);
-}, {
-  chromatic: {
-    disable: true
+Horizontal.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

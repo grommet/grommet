@@ -1,10 +1,9 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, InfiniteScroll, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
-export var allItems = Array(2000).fill().map(function (_, i) {
+var allItems = Array(2000).fill().map(function (_, i) {
   return "item " + (i + 1);
 });
 
@@ -25,13 +24,15 @@ var Example = function Example(props) {
   })));
 };
 
-storiesOf('InfiniteScroll', module).add('Simple', function () {
+export var Simple = function Simple() {
   return /*#__PURE__*/React.createElement(Example, null);
-}).add('Show 118th item', function () {
+};
+export var Show = function Show() {
   return /*#__PURE__*/React.createElement(Example, {
     show: 117
   });
-}).add('Marker', function () {
+};
+export var Marker = function Marker() {
   return /*#__PURE__*/React.createElement(Example, {
     renderMarker: function renderMarker(marker) {
       return /*#__PURE__*/React.createElement(Box, {
@@ -40,4 +41,7 @@ storiesOf('InfiniteScroll', module).add('Simple', function () {
       }, marker);
     }
   });
-});
+};
+Show.story = {
+  name: 'Show 118th item'
+};

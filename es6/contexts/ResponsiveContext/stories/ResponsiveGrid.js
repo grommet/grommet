@@ -3,7 +3,6 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { deepMerge } from 'grommet/utils';
 import { grommet } from 'grommet/themes';
 import { Box, Grid, Paragraph, Grommet, ResponsiveContext } from 'grommet';
@@ -35,7 +34,7 @@ var ResponsiveGrid = function ResponsiveGrid(_ref) {
   }, props), children);
 };
 
-var ResponsiveGridExample = function ResponsiveGridExample() {
+export var ResponsiveGridExample = function ResponsiveGridExample() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: customBreakpoints,
     full: true
@@ -126,7 +125,6 @@ var ResponsiveGridExample = function ResponsiveGridExample() {
     background: "dark-3"
   })), /*#__PURE__*/React.createElement(Paragraph, null, "Below a certain threshold, Columns 1 & 2 switch to 50% and Column 3 moves down to a new spot in the grid."));
 };
-
-storiesOf('ResponsiveContext', module).add('Responsive grid', function () {
-  return /*#__PURE__*/React.createElement(ResponsiveGridExample, null);
-});
+ResponsiveGridExample.story = {
+  name: 'Responsive grid'
+};

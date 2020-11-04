@@ -2,7 +2,6 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { storiesOf } from '@storybook/react';
 import { grommet } from 'grommet/themes';
 import { AnnounceContext, Box, Grommet, Heading, Text } from 'grommet';
 
@@ -50,12 +49,16 @@ var AnnounceContextComponent = function AnnounceContextComponent(props) {
   })));
 };
 
-storiesOf('AnnounceContext', module).add('Polite', function () {
+export var Polite = function Polite() {
   return /*#__PURE__*/React.createElement(AnnounceContextComponent, null);
-}).add('Assertive', function () {
+};
+export var Assertive = function Assertive() {
   return /*#__PURE__*/React.createElement(AnnounceContextComponent, {
     message: "Turn on Accessibility feature to listen to this announcement. This will soon disappear",
     mode: "assertive",
     role: "alert"
   });
-});
+};
+export default {
+  title: 'Utilities/AnnounceContext'
+};

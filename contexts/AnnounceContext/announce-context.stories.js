@@ -1,10 +1,11 @@
 "use strict";
 
+exports.__esModule = true;
+exports["default"] = exports.Assertive = exports.Polite = void 0;
+
 var _react = _interopRequireDefault(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
-
-var _react2 = require("@storybook/react");
 
 var _themes = require("grommet/themes");
 
@@ -60,12 +61,22 @@ var AnnounceContextComponent = function AnnounceContextComponent(props) {
   })));
 };
 
-(0, _react2.storiesOf)('AnnounceContext', module).add('Polite', function () {
+var Polite = function Polite() {
   return /*#__PURE__*/_react["default"].createElement(AnnounceContextComponent, null);
-}).add('Assertive', function () {
+};
+
+exports.Polite = Polite;
+
+var Assertive = function Assertive() {
   return /*#__PURE__*/_react["default"].createElement(AnnounceContextComponent, {
     message: "Turn on Accessibility feature to listen to this announcement. This will soon disappear",
     mode: "assertive",
     role: "alert"
   });
-});
+};
+
+exports.Assertive = Assertive;
+var _default = {
+  title: 'Utilities/AnnounceContext'
+};
+exports["default"] = _default;

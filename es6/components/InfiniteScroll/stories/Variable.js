@@ -1,8 +1,6 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import isChromatic from 'chromatic/isChromatic';
 import { grommet } from 'grommet/themes';
 import { Grommet, Box, InfiniteScroll, Text } from 'grommet';
 var allItems = Array(240).fill().map(function (_, i) {
@@ -27,12 +25,27 @@ var Example = function Example(props) {
   })));
 };
 
-if (!isChromatic()) {
-  storiesOf('InfiniteScroll', module).add('Variable Item Height', function () {
-    return /*#__PURE__*/React.createElement(Example, null);
-  }).add('Variable Item Height w/replace', function () {
-    return /*#__PURE__*/React.createElement(Example, {
-      replace: true
-    });
+export var Height = function Height() {
+  return /*#__PURE__*/React.createElement(Example, null);
+};
+export var HeightReplace = function HeightReplace() {
+  return /*#__PURE__*/React.createElement(Example, {
+    replace: true
   });
-}
+};
+Height.story = {
+  name: 'Variable item height',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
+  }
+};
+HeightReplace.story = {
+  name: 'Variable item height w/replace',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
+  }
+};

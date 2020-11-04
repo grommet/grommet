@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { grommet } from 'grommet/themes';
 import { Box, Text, ThemeContext, Grommet } from 'grommet';
-
-var ExternalComponentWithTheme = function ExternalComponentWithTheme() {
+export var ExternalComponentWithTheme = function ExternalComponentWithTheme() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -22,7 +20,6 @@ var ExternalComponentWithTheme = function ExternalComponentWithTheme() {
     }, "This component is leveraging the grommet theme capabilities although it is not a grommet component"));
   }));
 };
-
-storiesOf('Theme', module).add('External components', function () {
-  return /*#__PURE__*/React.createElement(ExternalComponentWithTheme, null);
-});
+ExternalComponentWithTheme.story = {
+  name: 'External components'
+};

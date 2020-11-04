@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Vars = exports.Plain = exports.Theme = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -18,7 +19,7 @@ var customTheme = {
   }
 };
 
-var Themed = function Themed() {
+var Theme = function Theme() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -30,6 +31,8 @@ var Themed = function Themed() {
   })));
 };
 
+exports.Theme = Theme;
+
 var Plain = function Plain() {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     plain: true
@@ -40,7 +43,9 @@ var Plain = function Plain() {
   }, /*#__PURE__*/_react["default"].createElement("p", null, "Not plain Grommet"))));
 };
 
-var GrommetVars = function GrommetVars() {
+exports.Plain = Plain;
+
+var Vars = function Vars() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _grommet.grommet,
     cssVars: true
@@ -53,10 +58,4 @@ var GrommetVars = function GrommetVars() {
   }, "For example, the background color in this Box is using var(--accent-2)")));
 };
 
-(0, _react2.storiesOf)('Grommet', module).add('Plain', function () {
-  return /*#__PURE__*/_react["default"].createElement(Plain, null);
-}).add('Theme', function () {
-  return /*#__PURE__*/_react["default"].createElement(Themed, null);
-}).add('Vars', function () {
-  return /*#__PURE__*/_react["default"].createElement(GrommetVars, null);
-});
+exports.Vars = Vars;

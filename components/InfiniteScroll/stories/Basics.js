@@ -1,11 +1,9 @@
 "use strict";
 
 exports.__esModule = true;
-exports.allItems = void 0;
+exports.Marker = exports.Show = exports.Simple = void 0;
 
 var _react = _interopRequireDefault(require("react"));
-
-var _react2 = require("@storybook/react");
 
 var _grommet = require("grommet");
 
@@ -18,7 +16,6 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 var allItems = Array(2000).fill().map(function (_, i) {
   return "item " + (i + 1);
 });
-exports.allItems = allItems;
 
 var Example = function Example(props) {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
@@ -37,13 +34,21 @@ var Example = function Example(props) {
   })));
 };
 
-(0, _react2.storiesOf)('InfiniteScroll', module).add('Simple', function () {
+var Simple = function Simple() {
   return /*#__PURE__*/_react["default"].createElement(Example, null);
-}).add('Show 118th item', function () {
+};
+
+exports.Simple = Simple;
+
+var Show = function Show() {
   return /*#__PURE__*/_react["default"].createElement(Example, {
     show: 117
   });
-}).add('Marker', function () {
+};
+
+exports.Show = Show;
+
+var Marker = function Marker() {
   return /*#__PURE__*/_react["default"].createElement(Example, {
     renderMarker: function renderMarker(marker) {
       return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -52,4 +57,9 @@ var Example = function Example(props) {
       }, marker);
     }
   });
-});
+};
+
+exports.Marker = Marker;
+Show.story = {
+  name: 'Show 118th item'
+};

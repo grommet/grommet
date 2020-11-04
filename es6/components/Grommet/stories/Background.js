@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { grommet, Grommet, Box, Text } from 'grommet';
 import { hpe } from 'grommet-theme-hpe';
-
-var Background = function Background() {
+export var Background = function Background() {
   var themeColor = 'background-back';
   var hexValue = '#DCD0FF';
   var cssColor = 'gold';
@@ -42,7 +40,3 @@ var Background = function Background() {
     pad: "medium"
   }, /*#__PURE__*/React.createElement(Text, null, "Grommet with background as object containing color and image"))));
 };
-
-storiesOf('Grommet', module).add('Background', function () {
-  return /*#__PURE__*/React.createElement(Background, null);
-});
