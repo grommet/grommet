@@ -30,13 +30,6 @@ Object.keys(_colors).forEach(function (key) {
   exports[key] = _colors[key];
 });
 
-var _debounce = require("./debounce");
-
-Object.keys(_debounce).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  exports[key] = _debounce[key];
-});
-
 var _DOM = require("./DOM");
 
 Object.keys(_DOM).forEach(function (key) {
@@ -77,11 +70,4 @@ var _responsive = require("./responsive");
 Object.keys(_responsive).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
   exports[key] = _responsive[key];
-});
-
-var _throttle = require("./throttle");
-
-Object.keys(_throttle).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  exports[key] = _throttle[key];
 });
