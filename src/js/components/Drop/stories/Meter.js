@@ -10,7 +10,7 @@ const TestDrop = () => {
   useEffect(() => setShowDrop(true), []);
   return (
     <Grommet theme={grommet} full>
-      <Box fill pad="large">
+      <Box fill align="center" justify="center" pad="large">
         <Meter
           ref={targetRef}
           size="small"

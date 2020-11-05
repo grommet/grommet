@@ -165,81 +165,9 @@ export const makeNodeUnfocusable = node => {
       });
   }
 };
-// https://svn.apache.org/repos/asf/commons/sandbox/gsoc/2010/scxml-js/trunk/src/javascript/scxml/cgf/util/svg.js
-// https://stackoverflow.com/questions/5996005/how-to-use-element-offsetparent-with-html-svg-elements/5996430#5996430
-export const getBoundingBoxInArbitrarySpace = (element, matrix) => {
-  // Get the smallest rectangle that you can draw around an element,
-  // that encloses the entire element -- all its points and edges.
-  const boundingBox = element.getBBox();
-  console.log('getBBox', boundingBox);
 
-  let cPt1 = element.createSVGPoint();
-  cPt1.x = boundingBox.x;
-  cPt1.y = boundingBox.y;
-  cPt1 = cPt1.matrixTransform(matrix);
-
-  // repeat for other corner points and the new bounding box is
-  // simply the minX/minY  to maxX/maxY of the four points.
-  let cPt2 = element.createSVGPoint();
-  cPt2.x = boundingBox.x + boundingBox.width;
-  cPt2.y = boundingBox.y;
-  cPt2 = cPt2.matrixTransform(matrix);
-
-  let cPt3 = element.createSVGPoint();
-  cPt3.x = boundingBox.x;
-  cPt3.y = boundingBox.y + boundingBox.height;
-  cPt3 = cPt3.matrixTransform(matrix);
-
-  let cPt4 = element.createSVGPoint();
-  cPt4.x = boundingBox.x + boundingBox.width;
-  cPt4.y = boundingBox.y + boundingBox.height;
-  cPt4 = cPt4.matrixTransform(matrix);
-
-  const points = [cPt1, cPt2, cPt3, cPt4];
-
-  // find minX, minY, maxX, maxY
-  let minX = Number.MAX_VALUE;
-  let minY = Number.MAX_VALUE;
-  let maxX = 0;
-  let maxY = 0;
-  for (let i = 0; i < points.length; i += 1) {
-    if (points[i].x < minX) {
-      minX = points[i].x;
-    }
-    if (points[i].y < minY) {
-      minY = points[i].y;
-    }
-    if (points[i].x > maxX) {
-      maxX = points[i].x;
-    }
-    if (points[i].y > maxY) {
-      maxY = points[i].y;
-    }
-  }
-
-  // instantiate new object that is like an SVGRect
-  const newBoundingBox = {
-    x: minX,
-    y: minY,
-    width: maxX - minX,
-    height: maxY - minY,
-    // Since the SVG doesn't have a position within the viewport
-    // we deduce the positioning values
-    // TODO consider using containerRect for that positioning
-    top: minX,
-    left: minY,
-    right: minY,
-    bottom: minX,
-  };
-  console.log('newBoundingBox', newBoundingBox);
-  return newBoundingBox;
-};
-
-// Deprecated on chrome for SVGElement https://www.chromestatus.com/features/5724912467574784
 export const findVisibleParent = element => {
   if (element) {
-    console.log('NOT an svg');
-    console.log('element', element);
     // Get the closest ancestor element that is positioned.
     return element.offsetParent
       ? element
