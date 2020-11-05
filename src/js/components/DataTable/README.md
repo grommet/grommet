@@ -780,6 +780,16 @@ Defaults to
 undefined
 ```
 
+**dataTable.header.color**
+
+The text color in a header cell. Expects `{ dark: string, light: string } | string`.
+
+Defaults to
+
+```
+undefined
+```
+
 **dataTable.header.extend**
 
 Any additional styles for header cells. Expects `string | (props) => {}`.
