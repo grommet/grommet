@@ -6,7 +6,7 @@ import { grommet } from 'grommet/themes';
 const objectOptions = [];
 for (let i = 1; i <= 5; i += 1) {
   objectOptions.push({
-    label: `option ${i}`,
+    lab: `option ${i}`,
     val: i,
   });
 }
