@@ -490,7 +490,7 @@ exports[`Menu close by clicking outside 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -1324,7 +1324,7 @@ exports[`Menu custom theme icon color 1`] = `
 `;
 
 exports[`Menu custom theme with default button 1`] = `
-.c5 {
+.c4 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -1335,25 +1335,25 @@ exports[`Menu custom theme with default button 1`] = `
   stroke: #7D4CDB;
 }
 
-.c5 g {
+.c4 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c4 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -1374,13 +1374,13 @@ exports[`Menu custom theme with default button 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
-.c4 {
+.c3 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -1401,11 +1401,20 @@ exports[`Menu custom theme with default button 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
-  color: inherit;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  padding: 6px 12px;
+  color: #000000;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
 }
 
 .c1 > svg {
@@ -1432,11 +1441,6 @@ exports[`Menu custom theme with default button 1`] = `
   border: 0;
 }
 
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -1445,12 +1449,6 @@ exports[`Menu custom theme with default button 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    width: 6px;
-  }
 }
 
 <div
@@ -1471,17 +1469,13 @@ exports[`Menu custom theme with default button 1`] = `
     <div
       className="c2"
     >
-      <span
-        className="c3"
-      >
-        Test Menu
-      </span>
+      Test Menu
       <div
-        className="c4"
+        className="c3"
       />
       <svg
         aria-label="FormDown"
-        className="c5"
+        className="c4"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -3001,7 +2995,7 @@ exports[`Menu open and close on click 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -3686,7 +3680,7 @@ exports[`Menu open on up close on esc 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -5030,7 +5024,7 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: bottom left;
@@ -5531,7 +5525,7 @@ exports[`Menu with dropAlign top renders 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top right;

@@ -27,6 +27,11 @@ export const StyledMaskedInput = styled.input`
 export const StyledMaskedInputContainer = styled.div`
   position: relative;
   width: 100%;
+
+  ${props =>
+    props.theme.maskedInput &&
+    props.theme.maskedInput.container &&
+    props.theme.maskedInput.container.extend};
 `;
 
 export const StyledIcon = styled.div`

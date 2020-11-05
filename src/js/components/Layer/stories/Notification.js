@@ -1,12 +1,11 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Add, FormClose, StatusGood } from 'grommet-icons';
 
 import { Box, Button, Grommet, Layer, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const NotificationLayer = () => {
+export const NotificationLayer = () => {
   const [open, setOpen] = React.useState();
 
   const onOpen = () => setOpen(true);
@@ -58,4 +57,4 @@ const NotificationLayer = () => {
   );
 };
 
-storiesOf('Layer', module).add('Notification', () => <NotificationLayer />);
+NotificationLayer.story = { name: 'Notification' };
