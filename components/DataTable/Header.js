@@ -29,7 +29,9 @@ var _StyledDataTable = require("./StyledDataTable");
 
 var _buildState = require("./buildState");
 
-var _utils = require("../../utils");
+var _styles = require("../../utils/styles");
+
+var _colors = require("../../utils/colors");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -59,9 +61,13 @@ var separateThemeProps = function separateThemeProps(theme) {
     color: color
   }, font);
 
+  var iconProps = {
+    color: color
+  };
+
   var layoutProps = _extends({}, rest);
 
-  return [cellProps, layoutProps, textProps];
+  return [cellProps, layoutProps, textProps, iconProps];
 }; // build up CSS from basic to specific based on the supplied sub-object paths.
 // adapted from StyledButtonKind to only include parts relevant for DataTable
 
@@ -71,16 +77,21 @@ var buttonStyle = function buttonStyle(_ref) {
   var styles = [];
 
   var _separateThemeProps = separateThemeProps(theme),
-      layoutProps = _separateThemeProps[1];
+      layoutProps = _separateThemeProps[1],
+      iconProps = _separateThemeProps[3];
 
   if (layoutProps) {
-    styles.push((0, _utils.kindPartStyles)(layoutProps, theme));
+    styles.push((0, _styles.kindPartStyles)(layoutProps, theme));
   }
 
   if (layoutProps.hover) {
     // CSS for this sub-object in the theme
-    var partStyles = (0, _utils.kindPartStyles)(layoutProps.hover, theme);
+    var partStyles = (0, _styles.kindPartStyles)(layoutProps.hover, theme);
     if (partStyles.length > 0) styles.push((0, _styledComponents.css)(["&:hover{", "}"], partStyles));
+  }
+
+  if (iconProps.color) {
+    styles.push((0, _styledComponents.css)(["svg{stroke:", ";fill:", ";}"], (0, _colors.normalizeColor)(iconProps.color, theme), (0, _colors.normalizeColor)(iconProps.color, theme)));
   }
 
   return styles;

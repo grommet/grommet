@@ -793,6 +793,7 @@ var generate = function generate(baseSpacing, scale) {
       header: {
         // background: undefined,
         // border: undefined,
+        // color: undefined,
         // extend: undefined,
         // font: {
         //   weight: undefined,

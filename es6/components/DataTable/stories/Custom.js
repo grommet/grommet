@@ -9,7 +9,7 @@ import { columns, DATA } from './data';
 var SortableIcon = function SortableIcon() {
   return /*#__PURE__*/React.createElement(Blank, {
     color: "text-xweak",
-    opacity: "0.5"
+    opacity: "0.3"
   }, /*#__PURE__*/React.createElement("g", {
     fill: "none",
     stroke: "#000",
@@ -29,6 +29,7 @@ var customTheme = {
   },
   dataTable: {
     header: {
+      color: 'text-strong',
       extend: function extend(_ref) {
         var column = _ref.column,
             sort = _ref.sort,

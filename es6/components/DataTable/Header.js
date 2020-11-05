@@ -15,7 +15,8 @@ import { Searcher } from './Searcher';
 import { ExpanderCell } from './ExpanderCell';
 import { StyledDataTableCell, StyledDataTableHeader, StyledDataTableRow } from './StyledDataTable';
 import { datumValue } from './buildState';
-import { kindPartStyles } from '../../utils'; // separate theme values into groupings depending on what
+import { kindPartStyles } from '../../utils/styles';
+import { normalizeColor } from '../../utils/colors'; // separate theme values into groupings depending on what
 // part of header cell they should style
 
 var separateThemeProps = function separateThemeProps(theme) {
@@ -36,9 +37,13 @@ var separateThemeProps = function separateThemeProps(theme) {
     color: color
   }, font);
 
+  var iconProps = {
+    color: color
+  };
+
   var layoutProps = _extends({}, rest);
 
-  return [cellProps, layoutProps, textProps];
+  return [cellProps, layoutProps, textProps, iconProps];
 }; // build up CSS from basic to specific based on the supplied sub-object paths.
 // adapted from StyledButtonKind to only include parts relevant for DataTable
 
@@ -48,7 +53,8 @@ var buttonStyle = function buttonStyle(_ref) {
   var styles = [];
 
   var _separateThemeProps = separateThemeProps(theme),
-      layoutProps = _separateThemeProps[1];
+      layoutProps = _separateThemeProps[1],
+      iconProps = _separateThemeProps[3];
 
   if (layoutProps) {
     styles.push(kindPartStyles(layoutProps, theme));
@@ -58,6 +64,10 @@ var buttonStyle = function buttonStyle(_ref) {
     // CSS for this sub-object in the theme
     var partStyles = kindPartStyles(layoutProps.hover, theme);
     if (partStyles.length > 0) styles.push(css(["&:hover{", "}"], partStyles));
+  }
+
+  if (iconProps.color) {
+    styles.push(css(["svg{stroke:", ";fill:", ";}"], normalizeColor(iconProps.color, theme), normalizeColor(iconProps.color, theme)));
   }
 
   return styles;
