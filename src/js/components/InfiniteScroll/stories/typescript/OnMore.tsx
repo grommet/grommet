@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
   Grommet,
@@ -10,7 +9,9 @@ import {
 } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-import { allItems } from '../Basics';
+const allItems = Array(2000)
+  .fill(0)
+  .map((_, i) => `item ${i + 1}`);
 
 // 'interface' declarations can only be used in TypeScript files.
 // Remove ': 'interface IProps' if you are not using Typescript.
@@ -50,6 +51,13 @@ const OnMoreInfiniteScroll: React.FC<IProps> = ({ props }) => {
   );
 };
 
-storiesOf('InfiniteScroll', module)
-  .add('onMore', () => <OnMoreInfiniteScroll />)
-  .add('onMore step', () => <OnMoreInfiniteScroll step={75} />);
+export const onMore = () => <OnMoreInfiniteScroll />;
+export const onMoreStep = () => <OnMoreInfiniteScroll step={75} />;
+
+onMore.story = {
+  name: 'onMore',
+};
+
+onMoreStep.story = {
+  name: 'onMore step',
+};

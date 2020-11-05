@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { FormDown, FormNext } from 'grommet-icons';
 
@@ -23,7 +22,7 @@ const MenuButton = ({ label, open, submenu, ...rest }) => {
   );
 };
 
-const NestedCollapsible = () => {
+export const Nested = () => {
   const [openMenu1, setOpenMenu1] = React.useState(false);
   const [openSubmenu1, setOpenSubmenu1] = React.useState(false);
   const [openMenu2, setOpenMenu2] = React.useState(false);
@@ -105,6 +104,8 @@ const NestedCollapsible = () => {
   );
 };
 
-storiesOf('Collapsible', module).add('Nested', () => <NestedCollapsible />, {
-  chromatic: { disable: true },
-});
+Nested.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
+};

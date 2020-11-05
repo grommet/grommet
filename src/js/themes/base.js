@@ -912,6 +912,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
     },
     maskedInput: {
+      // container: {
+      //   extend: undefined,
+      // },
       // extend: undefined,
       // disabled: { opacity: undefined },
     },

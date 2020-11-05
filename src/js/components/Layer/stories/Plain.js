@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, Layer, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const PlainLayer = () => (
+export const PlainLayer = () => (
   <Grommet theme={grommet} full>
     <Box fill background="dark-3">
       <Layer margin="medium" plain>
@@ -16,4 +15,4 @@ const PlainLayer = () => (
   </Grommet>
 );
 
-storiesOf('Layer', module).add('Plain', () => <PlainLayer />);
+PlainLayer.story = { name: 'Plain' };

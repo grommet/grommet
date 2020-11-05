@@ -7905,7 +7905,7 @@ exports[`DateInput select format 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
 >
   <div
-    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 eZPDpF"
+    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 cdPwB"
   >
     <div
       class="StyledMaskedInput__StyledIcon-sc-99vkfa-2 kqyWRg"
@@ -7925,7 +7925,7 @@ exports[`DateInput select format 2`] = `
     </div>
     <input
       autocomplete="off"
-      class="StyledMaskedInput-sc-99vkfa-0 eoroCF"
+      class="StyledMaskedInput-sc-99vkfa-0 TGSYh"
       id="item"
       name="item"
       placeholder="mm/dd/yyyy"
@@ -10266,7 +10266,7 @@ exports[`DateInput select format inline 2`] = `
     class="StyledBox-sc-13pk1d4-0 bFwQzJ"
   >
     <div
-      class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 eZPDpF"
+      class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 cdPwB"
     >
       <div
         class="StyledMaskedInput__StyledIcon-sc-99vkfa-2 kqyWRg"
@@ -10286,7 +10286,7 @@ exports[`DateInput select format inline 2`] = `
       </div>
       <input
         autocomplete="off"
-        class="StyledMaskedInput-sc-99vkfa-0 dyBLro"
+        class="StyledMaskedInput-sc-99vkfa-0 cSNjJM"
         id="item"
         name="item"
         placeholder="mm/dd/yyyy"
@@ -12276,7 +12276,7 @@ exports[`DateInput select format inline range 2`] = `
     class="StyledBox-sc-13pk1d4-0 bFwQzJ"
   >
     <div
-      class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 eZPDpF"
+      class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 cdPwB"
     >
       <div
         class="StyledMaskedInput__StyledIcon-sc-99vkfa-2 kqyWRg"
@@ -12296,11 +12296,11 @@ exports[`DateInput select format inline range 2`] = `
       </div>
       <input
         autocomplete="off"
-        class="StyledMaskedInput-sc-99vkfa-0 dyBLro"
+        class="StyledMaskedInput-sc-99vkfa-0 cSNjJM"
         id="item"
         name="item"
         placeholder="mm/dd/yyyy-mm/dd/yyyy"
-        value="7/2/2020-7/10/2020"
+        value="7/10/2020-7/10/2020"
       />
     </div>
     <div
@@ -15357,7 +15357,7 @@ exports[`DateInput type format inline 2`] = `
     class="StyledBox-sc-13pk1d4-0 bFwQzJ"
   >
     <div
-      class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 eZPDpF"
+      class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 cdPwB"
     >
       <div
         class="StyledMaskedInput__StyledIcon-sc-99vkfa-2 kqyWRg"
@@ -15377,7 +15377,7 @@ exports[`DateInput type format inline 2`] = `
       </div>
       <input
         autocomplete="off"
-        class="StyledMaskedInput-sc-99vkfa-0 dyBLro"
+        class="StyledMaskedInput-sc-99vkfa-0 cSNjJM"
         id="item"
         name="item"
         placeholder="mm/dd/yyyy"
