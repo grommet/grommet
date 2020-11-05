@@ -1,8 +1,6 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
-  grommet,
   Box,
   Button,
   CheckBox,
@@ -11,8 +9,9 @@ import {
   FormField,
   Grommet,
 } from 'grommet';
+import { grommet } from 'grommet/themes';
 
-const FormFieldCheckBox = props => (
+export const InsideFormField = props => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
       <Form
@@ -46,7 +45,7 @@ const FormFieldCheckBox = props => (
         >
           <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
             <CheckBoxGroup
-              id="group"
+              id="check-box-group"
               name="checkboxgroup"
               options={['Maui', 'Jerusalem', 'Wuhan']}
             />
@@ -58,4 +57,6 @@ const FormFieldCheckBox = props => (
   </Grommet>
 );
 
-storiesOf('CheckBox', module).add('Form', () => <FormFieldCheckBox />);
+InsideFormField.story = {
+  name: 'Inside a FormField',
+};

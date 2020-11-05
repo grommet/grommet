@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { css } from 'styled-components';
 
 import { Box, Grommet, CheckBox } from 'grommet';
@@ -59,7 +58,7 @@ const customToggleTheme = {
   },
 };
 
-const ThemedToggle = props => {
+export const CustomToggle = props => {
   const [checked, setChecked] = useState(false);
 
   return (
@@ -77,4 +76,6 @@ const ThemedToggle = props => {
   );
 };
 
-storiesOf('CheckBox', module).add('Custom toggle', () => <ThemedToggle />);
+CustomToggle.story = {
+  name: 'Custom toggle',
+};

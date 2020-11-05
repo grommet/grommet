@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
+
 import { Box, Button, CheckBox, Grommet, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const CheckBoxInsideButton = () => {
+export const InsideButton = () => {
   const [checked, setChecked] = useState(false);
   const onButtonClick = () => setChecked(!checked);
   const onCheckboxChange = () => {};
@@ -24,6 +24,6 @@ const CheckBoxInsideButton = () => {
   );
 };
 
-storiesOf('CheckBox', module).add('Inside a button', () => (
-  <CheckBoxInsideButton />
-));
+InsideButton.story = {
+  name: 'Inside a Button',
+};
