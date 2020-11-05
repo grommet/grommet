@@ -18,7 +18,8 @@ import {
   StyledDataTableRow,
 } from './StyledDataTable';
 import { datumValue } from './buildState';
-import { kindPartStyles, normalizeColor } from '../../utils';
+import { kindPartStyles } from '../../utils/styles';
+import { normalizeColor } from '../../utils/colors';
 
 // separate theme values into groupings depending on what
 // part of header cell they should style

@@ -348,7 +348,7 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'dataTable.header.color': {
-    description: 'The text color in a header cell.',
+    description: 'The label and icon color in a header cell.',
     type: '{ dark: string, light: string } | string',
     defaultValue: undefined,
   },

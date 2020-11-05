@@ -782,7 +782,7 @@ undefined
 
 **dataTable.header.color**
 
-The text color in a header cell. Expects `{ dark: string, light: string } | string`.
+The label and icon color in a header cell. Expects `{ dark: string, light: string } | string`.
 
 Defaults to
 
