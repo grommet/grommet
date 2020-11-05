@@ -704,6 +704,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       header: {
         // background: undefined,
         // border: undefined,
+        // color: undefined,
         // extend: undefined,
         // font: {
         //   weight: undefined,
