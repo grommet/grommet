@@ -3,7 +3,6 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, CheckBox } from 'grommet';
 import { grommet } from 'grommet/themes';
 
@@ -30,26 +29,33 @@ var SimpleCheckBox = function SimpleCheckBox(_ref) {
   }))));
 };
 
-storiesOf('CheckBox', module).add('Simple', function () {
+export var Simple = function Simple() {
   return /*#__PURE__*/React.createElement(SimpleCheckBox, {
     label: "Choice"
   });
-}).add('Toggle', function () {
+};
+export var Toggle = function Toggle() {
   return /*#__PURE__*/React.createElement(SimpleCheckBox, {
     label: "Choice",
     toggle: true
   });
-}).add('Disabled', function () {
+};
+export var Disabled = function Disabled() {
   return /*#__PURE__*/React.createElement(SimpleCheckBox, {
     label: "Choice",
     checked: true,
     disabled: true
   });
-}).add('Reverse', function () {
+};
+export var Reverse = function Reverse() {
   return /*#__PURE__*/React.createElement(SimpleCheckBox, {
     label: "Choice",
     reverse: true
   });
-}).add('No label', function () {
+};
+export var NoLabel = function NoLabel() {
   return /*#__PURE__*/React.createElement(SimpleCheckBox, null);
-});
+};
+NoLabel.story = {
+  name: 'No label'
+};

@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.NoLabel = exports.Reverse = exports.Disabled = exports.Toggle = exports.Simple = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
@@ -39,26 +40,47 @@ var SimpleCheckBox = function SimpleCheckBox(_ref) {
   }))));
 };
 
-(0, _react2.storiesOf)('CheckBox', module).add('Simple', function () {
+var Simple = function Simple() {
   return /*#__PURE__*/_react["default"].createElement(SimpleCheckBox, {
     label: "Choice"
   });
-}).add('Toggle', function () {
+};
+
+exports.Simple = Simple;
+
+var Toggle = function Toggle() {
   return /*#__PURE__*/_react["default"].createElement(SimpleCheckBox, {
     label: "Choice",
     toggle: true
   });
-}).add('Disabled', function () {
+};
+
+exports.Toggle = Toggle;
+
+var Disabled = function Disabled() {
   return /*#__PURE__*/_react["default"].createElement(SimpleCheckBox, {
     label: "Choice",
     checked: true,
     disabled: true
   });
-}).add('Reverse', function () {
+};
+
+exports.Disabled = Disabled;
+
+var Reverse = function Reverse() {
   return /*#__PURE__*/_react["default"].createElement(SimpleCheckBox, {
     label: "Choice",
     reverse: true
   });
-}).add('No label', function () {
+};
+
+exports.Reverse = Reverse;
+
+var NoLabel = function NoLabel() {
   return /*#__PURE__*/_react["default"].createElement(SimpleCheckBox, null);
-});
+};
+
+exports.NoLabel = NoLabel;
+NoLabel.story = {
+  name: 'No label'
+};

@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, CheckBox } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var IndeterminateCheckBox = function IndeterminateCheckBox() {
+export var Indeterminate = function Indeterminate() {
   var _useState = useState([]),
       checked = _useState[0],
       setChecked = _useState[1];
@@ -52,7 +50,3 @@ var IndeterminateCheckBox = function IndeterminateCheckBox() {
     });
   }))));
 };
-
-storiesOf('CheckBox', module).add('Indeterminate', function () {
-  return /*#__PURE__*/React.createElement(IndeterminateCheckBox, null);
-});

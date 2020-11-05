@@ -1,10 +1,9 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { grommet, Box, Button, CheckBox, CheckBoxGroup, Form, FormField, Grommet } from 'grommet';
-
-var FormFieldCheckBox = function FormFieldCheckBox(props) {
+import { Box, Button, CheckBox, CheckBoxGroup, Form, FormField, Grommet } from 'grommet';
+import { grommet } from 'grommet/themes';
+export var InsideFormField = function InsideFormField(props) {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -55,7 +54,7 @@ var FormFieldCheckBox = function FormFieldCheckBox(props) {
       vertical: 'xsmall'
     }
   }, /*#__PURE__*/React.createElement(CheckBoxGroup, {
-    id: "group",
+    id: "check-box-group",
     name: "checkboxgroup",
     options: ['Maui', 'Jerusalem', 'Wuhan']
   }))), /*#__PURE__*/React.createElement(Button, {
@@ -63,7 +62,6 @@ var FormFieldCheckBox = function FormFieldCheckBox(props) {
     label: "Submit"
   }))));
 };
-
-storiesOf('CheckBox', module).add('Form', function () {
-  return /*#__PURE__*/React.createElement(FormFieldCheckBox, null);
-});
+InsideFormField.story = {
+  name: 'Inside a FormField'
+};

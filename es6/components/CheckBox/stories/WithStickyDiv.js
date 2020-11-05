@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, CheckBox, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 var boxStyle = {
@@ -23,7 +22,7 @@ var removeItemFromArray = function removeItemFromArray(array, value) {
   });
 };
 
-var CheckBoxWithStickyDiv = function CheckBoxWithStickyDiv() {
+export var WithStickyDiv = function WithStickyDiv() {
   var _useState = useState([]),
       checks = _useState[0],
       setChecks = _useState[1];
@@ -62,7 +61,6 @@ var CheckBoxWithStickyDiv = function CheckBoxWithStickyDiv() {
     });
   }))));
 };
-
-storiesOf('CheckBox', module).add('With sticky div', function () {
-  return /*#__PURE__*/React.createElement(CheckBoxWithStickyDiv, null);
-});
+WithStickyDiv.story = {
+  name: 'With sticky div'
+};

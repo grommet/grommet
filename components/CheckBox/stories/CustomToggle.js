@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.CustomToggle = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = require("styled-components");
 
@@ -65,7 +66,7 @@ var customToggleTheme = {
   }
 };
 
-var ThemedToggle = function ThemedToggle(props) {
+var CustomToggle = function CustomToggle(props) {
   var _useState = (0, _react.useState)(false),
       checked = _useState[0],
       setChecked = _useState[1];
@@ -85,6 +86,7 @@ var ThemedToggle = function ThemedToggle(props) {
   }))));
 };
 
-(0, _react2.storiesOf)('CheckBox', module).add('Custom toggle', function () {
-  return /*#__PURE__*/_react["default"].createElement(ThemedToggle, null);
-});
+exports.CustomToggle = CustomToggle;
+CustomToggle.story = {
+  name: 'Custom toggle'
+};

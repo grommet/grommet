@@ -1,7 +1,6 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, CheckBox } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { normalizeColor, deepMerge } from 'grommet/utils';
@@ -43,8 +42,7 @@ var customCheckBoxTheme = {
     extend: "\n      color: #9C9C9C;\n    "
   }
 };
-
-var ThemedCheckBox = function ThemedCheckBox(props) {
+export var Custom = function Custom(props) {
   var _useState = useState(false),
       checked = _useState[0],
       setChecked = _useState[1];
@@ -62,7 +60,3 @@ var ThemedCheckBox = function ThemedCheckBox(props) {
     }
   }))));
 };
-
-storiesOf('CheckBox', module).add('Custom', function () {
-  return /*#__PURE__*/React.createElement(ThemedCheckBox, null);
-});

@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Button, CheckBox, Grommet, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var CheckBoxInsideButton = function CheckBoxInsideButton() {
+export var InsideButton = function InsideButton() {
   var _useState = useState(false),
       checked = _useState[0],
       setChecked = _useState[1];
@@ -29,7 +27,6 @@ var CheckBoxInsideButton = function CheckBoxInsideButton() {
     onChange: onCheckboxChange
   }))));
 };
-
-storiesOf('CheckBox', module).add('Inside a button', function () {
-  return /*#__PURE__*/React.createElement(CheckBoxInsideButton, null);
-});
+InsideButton.story = {
+  name: 'Inside a Button'
+};

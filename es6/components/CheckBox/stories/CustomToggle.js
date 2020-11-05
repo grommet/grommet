@@ -1,7 +1,6 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { css } from 'styled-components';
 import { Box, Grommet, CheckBox } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -52,8 +51,7 @@ var customToggleTheme = {
     size: '18px'
   }
 };
-
-var ThemedToggle = function ThemedToggle(props) {
+export var CustomToggle = function CustomToggle(props) {
   var _useState = useState(false),
       checked = _useState[0],
       setChecked = _useState[1];
@@ -72,7 +70,6 @@ var ThemedToggle = function ThemedToggle(props) {
     toggle: true
   }))));
 };
-
-storiesOf('CheckBox', module).add('Custom toggle', function () {
-  return /*#__PURE__*/React.createElement(ThemedToggle, null);
-});
+CustomToggle.story = {
+  name: 'Custom toggle'
+};

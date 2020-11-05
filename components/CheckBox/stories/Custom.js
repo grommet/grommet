@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.Custom = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
@@ -56,7 +57,7 @@ var customCheckBoxTheme = {
   }
 };
 
-var ThemedCheckBox = function ThemedCheckBox(props) {
+var Custom = function Custom(props) {
   var _useState = (0, _react.useState)(false),
       checked = _useState[0],
       setChecked = _useState[1];
@@ -75,6 +76,4 @@ var ThemedCheckBox = function ThemedCheckBox(props) {
   }))));
 };
 
-(0, _react2.storiesOf)('CheckBox', module).add('Custom', function () {
-  return /*#__PURE__*/_react["default"].createElement(ThemedCheckBox, null);
-});
+exports.Custom = Custom;

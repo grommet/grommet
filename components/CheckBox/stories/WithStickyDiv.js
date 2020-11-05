@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.WithStickyDiv = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
@@ -33,7 +34,7 @@ var removeItemFromArray = function removeItemFromArray(array, value) {
   });
 };
 
-var CheckBoxWithStickyDiv = function CheckBoxWithStickyDiv() {
+var WithStickyDiv = function WithStickyDiv() {
   var _useState = (0, _react.useState)([]),
       checks = _useState[0],
       setChecks = _useState[1];
@@ -73,6 +74,7 @@ var CheckBoxWithStickyDiv = function CheckBoxWithStickyDiv() {
   }))));
 };
 
-(0, _react2.storiesOf)('CheckBox', module).add('With sticky div', function () {
-  return /*#__PURE__*/_react["default"].createElement(CheckBoxWithStickyDiv, null);
-});
+exports.WithStickyDiv = WithStickyDiv;
+WithStickyDiv.story = {
+  name: 'With sticky div'
+};
