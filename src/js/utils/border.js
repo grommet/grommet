@@ -10,6 +10,7 @@ export const responsiveBorderStyle = (data, theme) => {
   const breakpoint =
     theme.box.responsiveBreakpoint &&
     theme.global.breakpoints[theme.box.responsiveBreakpoint];
+  if (!breakpoint.borderSize) breakpoint.borderSize = theme.global.borderSize;
   const value =
     breakpoint &&
     (breakpoint.borderSize[borderSize] || borderSize) &&

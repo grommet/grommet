@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, CheckBox } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -45,7 +44,7 @@ const customCheckBoxTheme = {
   },
 };
 
-const ThemedCheckBox = props => {
+export const Custom = props => {
   const [checked, setChecked] = useState(false);
 
   return (
@@ -61,5 +60,3 @@ const ThemedCheckBox = props => {
     </Grommet>
   );
 };
-
-storiesOf('CheckBox', module).add('Custom', () => <ThemedCheckBox />);

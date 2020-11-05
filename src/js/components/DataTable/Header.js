@@ -18,7 +18,8 @@ import {
   StyledDataTableRow,
 } from './StyledDataTable';
 import { datumValue } from './buildState';
-import { kindPartStyles } from '../../utils';
+import { kindPartStyles } from '../../utils/styles';
+import { normalizeColor } from '../../utils/colors';
 
 // separate theme values into groupings depending on what
 // part of header cell they should style
@@ -34,17 +35,18 @@ const separateThemeProps = theme => {
 
   const cellProps = { background, border };
   const textProps = { color, ...font };
+  const iconProps = { color };
   const layoutProps = { ...rest };
 
-  return [cellProps, layoutProps, textProps];
+  return [cellProps, layoutProps, textProps, iconProps];
 };
 
 // build up CSS from basic to specific based on the supplied sub-object paths.
 // adapted from StyledButtonKind to only include parts relevant for DataTable
 const buttonStyle = ({ theme }) => {
   const styles = [];
+  const [, layoutProps, , iconProps] = separateThemeProps(theme);
 
-  const [, layoutProps] = separateThemeProps(theme);
   if (layoutProps) {
     styles.push(kindPartStyles(layoutProps, theme));
   }
@@ -60,6 +62,17 @@ const buttonStyle = ({ theme }) => {
           }
         `,
       );
+  }
+
+  if (iconProps.color) {
+    styles.push(
+      css`
+        svg {
+          stroke: ${normalizeColor(iconProps.color, theme)};
+          fill: ${normalizeColor(iconProps.color, theme)};
+        }
+      `,
+    );
   }
 
   return styles;
@@ -185,8 +198,11 @@ const Header = ({
               content = (
                 <StyledHeaderCellButton
                   plain
+                  column={property}
                   fill="vertical"
                   onClick={onSort(property)}
+                  sort={sort}
+                  sortable
                 >
                   <Box
                     direction="row"

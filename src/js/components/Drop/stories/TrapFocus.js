@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, grommet, Box, Button, Drop, Nav, Text } from 'grommet';
 import { Calculator, Bug, Achievement } from 'grommet-icons';
@@ -40,7 +39,7 @@ const TooltipButton = ({ icon, name }) => {
   );
 };
 
-const Tooltip = () => {
+export const TrapFocus = () => {
   return (
     <Grommet theme={grommet}>
       <Nav align="center" pad="large">
@@ -52,6 +51,8 @@ const Tooltip = () => {
   );
 };
 
-storiesOf('Drop', module).add('trapFocus', () => <Tooltip />, {
-  chromatic: { disable: true },
-});
+TrapFocus.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
+};

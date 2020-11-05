@@ -174,6 +174,17 @@ Defaults to
 undefined
 ```
 
+**maskedInput.container.extend**
+
+Any additional style for the container surrounding the input 
+    and, if present, icon. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
 **text.medium**
 
 The size of the text for MaskedInput. Expects `string`.
@@ -315,4 +326,14 @@ Defaults to
 
 ```
 12px
+```
+
+**global.input.extend**
+
+Any additional style for an input. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
 ```

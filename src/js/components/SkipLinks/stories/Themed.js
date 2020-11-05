@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/tabindex-no-positive */
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
   Avatar,
@@ -96,7 +95,7 @@ const theme = {
   },
 };
 
-export const Example = () => (
+export const Themed = () => (
   <Grommet theme={theme}>
     <SkipLinks messages={{ skipTo: undefined }}>
       <SkipLink id="main" label="Main Content" />
@@ -143,5 +142,3 @@ export const Example = () => (
     </Box>
   </Grommet>
 );
-
-storiesOf('SkipLinks', module).add('Themed', () => <Example />);
