@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
   Box,
@@ -12,7 +11,7 @@ import {
 } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const CheckBoxGroupForm = () => {
+export const FormUncontrolled = () => {
   return (
     <Grommet theme={grommet}>
       <Box pad="medium">
@@ -55,6 +54,6 @@ const CheckBoxGroupForm = () => {
   );
 };
 
-storiesOf('CheckBoxGroup', module).add('Form uncontrolled', () => (
-  <CheckBoxGroupForm />
-));
+FormUncontrolled.story = {
+  name: 'Form uncontrolled',
+};

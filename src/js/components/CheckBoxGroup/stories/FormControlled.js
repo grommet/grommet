@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Button, CheckBoxGroup, Form, FormField, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const CheckBoxGroupForm = () => {
+export const FormControlled = () => {
   const [value, setValue] = useState();
 
   return (
@@ -33,6 +32,6 @@ const CheckBoxGroupForm = () => {
   );
 };
 
-storiesOf('CheckBoxGroup', module).add('Form controlled input', () => (
-  <CheckBoxGroupForm />
-));
+FormControlled.story = {
+  name: 'Form controlled',
+};
