@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Button, CheckBoxGroup, Form, FormField, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var CheckBoxGroupForm = function CheckBoxGroupForm() {
+export var FormControlled = function FormControlled() {
   var _useState = useState(),
       value = _useState[0],
       setValue = _useState[1];
@@ -38,7 +36,6 @@ var CheckBoxGroupForm = function CheckBoxGroupForm() {
     label: "Submit"
   }))));
 };
-
-storiesOf('CheckBoxGroup', module).add('Form controlled input', function () {
-  return /*#__PURE__*/React.createElement(CheckBoxGroupForm, null);
-});
+FormControlled.story = {
+  name: 'Form controlled'
+};

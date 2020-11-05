@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, CheckBoxGroup, Grommet, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var Disabled = function Disabled() {
+export var Disabled = function Disabled() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -32,7 +30,3 @@ var Disabled = function Disabled() {
     }]
   }))));
 };
-
-storiesOf('CheckBoxGroup', module).add('Disabled', function () {
-  return /*#__PURE__*/React.createElement(Disabled, null);
-});

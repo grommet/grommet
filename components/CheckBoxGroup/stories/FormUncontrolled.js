@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.FormUncontrolled = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -10,7 +11,7 @@ var _themes = require("grommet/themes");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var CheckBoxGroupForm = function CheckBoxGroupForm() {
+var FormUncontrolled = function FormUncontrolled() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -61,6 +62,7 @@ var CheckBoxGroupForm = function CheckBoxGroupForm() {
   }))));
 };
 
-(0, _react2.storiesOf)('CheckBoxGroup', module).add('Form uncontrolled', function () {
-  return /*#__PURE__*/_react["default"].createElement(CheckBoxGroupForm, null);
-});
+exports.FormUncontrolled = FormUncontrolled;
+FormUncontrolled.story = {
+  name: 'Form uncontrolled'
+};

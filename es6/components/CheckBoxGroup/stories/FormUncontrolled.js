@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Button, CheckBoxGroup, Form, FormField, Grommet, Heading } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var CheckBoxGroupForm = function CheckBoxGroupForm() {
+export var FormUncontrolled = function FormUncontrolled() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -53,7 +51,6 @@ var CheckBoxGroupForm = function CheckBoxGroupForm() {
     label: "Submit"
   }))));
 };
-
-storiesOf('CheckBoxGroup', module).add('Form uncontrolled', function () {
-  return /*#__PURE__*/React.createElement(CheckBoxGroupForm, null);
-});
+FormUncontrolled.story = {
+  name: 'Form uncontrolled'
+};
