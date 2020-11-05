@@ -5,7 +5,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 import React, { forwardRef, useContext, useEffect, useMemo, useRef } from 'react';
 import { ThemeContext } from 'styled-components';
 import { FocusedContainer } from '../FocusedContainer';
-import { backgroundIsDark, findScrollParents, findVisibleParent, parseMetricToNum } from '../../utils';
+import { backgroundIsDark, findScrollParents, parseMetricToNum } from '../../utils';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
@@ -76,7 +76,7 @@ var DropContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
         } // get bounds
 
 
-        var targetRect = findVisibleParent(target).getBoundingClientRect();
+        var targetRect = target.getBoundingClientRect();
         var containerRect = container.getBoundingClientRect(); // determine width
 
         var width;

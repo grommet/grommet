@@ -95,7 +95,7 @@ var DropContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
         } // get bounds
 
 
-        var targetRect = (0, _utils.findVisibleParent)(target).getBoundingClientRect();
+        var targetRect = target.getBoundingClientRect();
         var containerRect = container.getBoundingClientRect(); // determine width
 
         var width;

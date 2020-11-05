@@ -170,6 +170,7 @@ export var makeNodeUnfocusable = function makeNodeUnfocusable(node) {
 };
 export var findVisibleParent = function findVisibleParent(element) {
   if (element) {
+    // Get the closest ancestor element that is positioned.
     return element.offsetParent ? element : findVisibleParent(element.parentElement) || element;
   }
 

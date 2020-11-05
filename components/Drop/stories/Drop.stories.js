@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports["default"] = exports.Tooltip = exports.Simple = exports.Progressive = exports.Plain = exports.Overflow = exports.Multiple = exports.Lazy = exports.Custom = exports.AllNotStretched = void 0;
+exports["default"] = exports.SVGChild = exports.Tooltip = exports.Simple = exports.Progressive = exports.Plain = exports.Overflow = exports.Multiple = exports.Lazy = exports.Custom = exports.AllNotStretched = void 0;
 
 var _AllNotStretched = require("./AllNotStretched");
 
@@ -38,6 +38,10 @@ exports.Simple = _Simple.Simple;
 var _Tooltip = require("./Tooltip");
 
 exports.Tooltip = _Tooltip.Tooltip;
+
+var _Meter = require("./Meter");
+
+exports.SVGChild = _Meter.SVGChild;
 var _default = {
   title: 'Controls/Drop'
 };
