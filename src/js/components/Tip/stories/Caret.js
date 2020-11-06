@@ -18,7 +18,7 @@ const TipContent = ({ message }) => (
   </Box>
 );
 
-const Example = () => {
+export const Caret = () => {
   return (
     <Grommet full theme={grommet}>
       <Box align="center" justify="center" background="dark-1" fill gap="large">
@@ -41,5 +41,8 @@ const Example = () => {
   );
 };
 
-export const Caret = () => <Example />;
-Caret.parameters = { chromatic: { disable: true } };
+Caret.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
+};

@@ -24,7 +24,7 @@ const TipContent = ({ message, icon }) => (
   </Box>
 );
 
-const Example = () => {
+export const HeaderActions = () => {
   const [data, setData] = useState(storageData);
   const [selected, setSelected] = useState();
 
@@ -103,5 +103,8 @@ const Example = () => {
   );
 };
 
-export const HeaderActions = () => <Example />;
-HeaderActions.parameters = { chromatic: { disable: true } };
+HeaderActions.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
+};

@@ -1,10 +1,9 @@
 import React, { useRef } from 'react';
 
-import { grommet, Box, Button, Grommet, Text } from 'grommet';
+import { grommet, Box, Button, Grommet } from 'grommet';
 import { Tip } from '../../Tip';
 
-const Example = () => {
-  const ref = useRef();
+export const Simple = () => {
   return (
     <Grommet full theme={grommet}>
       <Box align="center" justify="center" fill>
@@ -16,5 +15,8 @@ const Example = () => {
   );
 };
 
-export const Simple = () => <Example />
-Simple.parameters = {  chromatic: { disable: true }};
+Simple.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
+};

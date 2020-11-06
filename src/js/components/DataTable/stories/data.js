@@ -251,6 +251,7 @@ export const storageColumns = [
     ),
     render: datum => (
       <Tip
+        plain
         dropProps={{ align: { left: 'right' }, stretch: false }}
         content={
           <Box

@@ -3,7 +3,7 @@ import React from 'react';
 import { grommet, Box, Button, Grommet, Text } from 'grommet';
 import { Tip } from '../../Tip';
 
-const Example = () => {
+export const Children = () => {
   return (
     <Grommet full theme={grommet}>
       <Box align="center" pad="xlarge" gap="xlarge" fill>
@@ -43,7 +43,7 @@ const Example = () => {
           content={
             <Box
               align="center"
-              background="accent-1" 
+              background="accent-1"
               margin="medium"
               pad="xsmall"
               round="medium"
@@ -60,5 +60,8 @@ const Example = () => {
   );
 };
 
-export const Children = () => <Example />
-Children.parameters = {  chromatic: { disable: true }};
+Children.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
+};

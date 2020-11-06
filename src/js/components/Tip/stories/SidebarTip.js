@@ -101,7 +101,7 @@ const SidebarButton = ({ iconName, index }) => {
   );
 };
 
-export const Example = () => (
+export const SidebarTip = () => (
   <Grommet theme={customTheme} full>
     <Box direction="row" height={{ min: '100%' }}>
       <Sidebar
@@ -125,4 +125,4 @@ export const Example = () => (
   </Grommet>
 );
 
-export const SidebarTip = () => <Example />;
+SidebarTip.story = { name: 'Sidebar' };

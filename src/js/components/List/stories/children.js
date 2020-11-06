@@ -17,17 +17,17 @@ export const ChildrenExample = () => (
     <Box pad="large" height="100%" align="center">
       <List data={data} pad="medium">
         {(datum, index) => (
-          <Box
-            key={index}
-            direction="row-responsive"
-            gap="medium"
-            align="center"
-          >
-            <Gremlin size="large" />
-            <Tip content={datum.state} dropProps={{ align: { left: 'right' } }}>
+          <Tip content={datum.state} dropProps={{ align: { left: 'right' } }}>
+            <Box
+              key={index}
+              direction="row-responsive"
+              gap="medium"
+              align="center"
+            >
+              <Gremlin size="large" />
               <Text weight="bold">{datum.city}</Text>
-            </Tip>
-          </Box>
+            </Box>
+          </Tip>
         )}
       </List>
     </Box>

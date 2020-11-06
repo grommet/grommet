@@ -13,7 +13,7 @@ const Circle = ({ ...rest }) => (
   />
 );
 
-const Example = () => {
+export const Animated = () => {
   return (
     <Grommet full theme={grommet}>
       <Box
@@ -38,11 +38,14 @@ const Example = () => {
         >
           <Button icon={<UserFemale color="accent-1" size="large" />} />
         </Tip>
-        Double animation of FadeIn and Pulse
+        Double animation of 'fadeIn' and 'pulse'
       </Box>
     </Grommet>
   );
 };
 
-export const Animated = () => <Example />
-Animated.parameters = {  chromatic: { disable: true }};
+Animated.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
+};
