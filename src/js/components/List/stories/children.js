@@ -14,14 +14,13 @@ export const data = [
 
 export const ChildrenExample = () => (
   <Grommet theme={grommet}>
-    <Box pad="large" height="100%" background="light-2">
+    <Box pad="large" height="100%" align="center">
       <List data={data} pad="medium">
         {(datum, index) => (
           <Box
             key={index}
             direction="row-responsive"
-            gap="large"
-            size="xsmall"
+            gap="medium"
             align="center"
           >
             <Gremlin size="large" />
