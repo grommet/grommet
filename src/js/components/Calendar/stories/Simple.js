@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Box, Calendar, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-export const SimpleCalendar = () => {
+export const Simple = () => {
   const [date, setDate] = useState();
 
   const onSelect = nextDate => {
@@ -31,8 +31,4 @@ export const SimpleCalendar = () => {
       </Box>
     </Grommet>
   );
-};
-
-SimpleCalendar.story = {
-  name: 'Simple',
 };

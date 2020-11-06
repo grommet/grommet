@@ -4,7 +4,7 @@ import { Box, Calendar, Grommet } from 'grommet';
 
 import { grommet } from 'grommet/themes';
 
-export const FillCalendar = () => {
+export const Fill = () => {
   return (
     <Grommet theme={grommet}>
       <Box align="center">
@@ -14,8 +14,4 @@ export const FillCalendar = () => {
       </Box>
     </Grommet>
   );
-};
-
-FillCalendar.story = {
-  name: 'Fill',
 };

@@ -5,7 +5,7 @@ import { grommet } from 'grommet/themes';
 
 import { Blank, Previous, Next } from 'grommet-icons';
 
-export const DualCalendar = () => {
+export const Dual = () => {
   const [date, setDate] = useState();
   const [dates, setDates] = useState();
   const [reference1, setReference1] = useState('2020-08-07T15:13:47.290Z');
@@ -97,8 +97,4 @@ export const DualCalendar = () => {
       </Box>
     </Grommet>
   );
-};
-
-DualCalendar.story = {
-  name: 'Dual',
 };
