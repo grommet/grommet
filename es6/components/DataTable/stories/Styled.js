@@ -1,12 +1,10 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, DataTable } from 'grommet';
 import { grommet } from 'grommet/themes'; // Source code for the data can be found here
 // https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
 
 import { columns, DATA } from './data';
-
-var StyledDataTable = function StyledDataTable() {
+export var StyledDataTable = function StyledDataTable() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -36,7 +34,6 @@ var StyledDataTable = function StyledDataTable() {
     }
   })));
 };
-
-storiesOf('DataTable', module).add('Styled', function () {
-  return /*#__PURE__*/React.createElement(StyledDataTable, null);
-});
+StyledDataTable.story = {
+  name: 'Styled'
+};

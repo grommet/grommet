@@ -1,11 +1,9 @@
 "use strict";
 
 exports.__esModule = true;
-exports.DATA = void 0;
+exports.ResizableDataTable = exports.DATA = void 0;
 
 var _react = _interopRequireDefault(require("react"));
-
-var _react2 = require("@storybook/react");
 
 var _grommet = require("grommet");
 
@@ -76,7 +74,7 @@ var columnsResize = [{
   align: 'end'
 }];
 
-var ExampleResizable = function ExampleResizable() {
+var ResizableDataTable = function ResizableDataTable() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -92,6 +90,7 @@ var ExampleResizable = function ExampleResizable() {
   })));
 };
 
-(0, _react2.storiesOf)('DataTable', module).add('Resizable columns', function () {
-  return /*#__PURE__*/_react["default"].createElement(ExampleResizable, null);
-});
+exports.ResizableDataTable = ResizableDataTable;
+ResizableDataTable.story = {
+  name: 'Resizable columns'
+};

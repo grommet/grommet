@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, DataTable } from 'grommet';
 import { Blank } from "grommet-icons/es6/icons/Blank"; // Source code for the data can be found here
 // https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
@@ -42,8 +41,7 @@ var customTheme = {
     }
   }
 };
-
-var Example = function Example() {
+export var Custom = function Custom() {
   var _React$useState = React.useState({
     property: 'name',
     direction: 'desc'
@@ -64,7 +62,3 @@ var Example = function Example() {
     onSort: setSort
   })));
 };
-
-storiesOf('DataTable', module).add('Custom', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-});

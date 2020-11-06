@@ -1,12 +1,10 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, DataTable } from 'grommet';
 import { grommet } from 'grommet/themes'; // Source code for the data can be found here
 // https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
 
 import { columns, DATA } from './data';
-
-var Example = function Example() {
+export var Select = function Select() {
   var _React$useState = React.useState([]),
       select = _React$useState[0],
       setSelect = _React$useState[1];
@@ -24,7 +22,3 @@ var Example = function Example() {
     onSelect: setSelect
   })));
 };
-
-storiesOf('DataTable', module).add('Select', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-});

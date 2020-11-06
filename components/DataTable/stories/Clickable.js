@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Clickable = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -14,7 +15,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 // Source code for the data can be found here
 // https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
-var ClickableDataTable = function ClickableDataTable() {
+var Clickable = function Clickable() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -30,6 +31,4 @@ var ClickableDataTable = function ClickableDataTable() {
   })));
 };
 
-(0, _react2.storiesOf)('DataTable', module).add('Clickable', function () {
-  return /*#__PURE__*/_react["default"].createElement(ClickableDataTable, null);
-});
+exports.Clickable = Clickable;

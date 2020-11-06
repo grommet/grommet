@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.GroupedDataTable = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -35,6 +36,7 @@ var GroupedDataTable = function GroupedDataTable() {
   })));
 };
 
-(0, _react2.storiesOf)('DataTable', module).add('Grouped', function () {
-  return /*#__PURE__*/_react["default"].createElement(GroupedDataTable, null);
-});
+exports.GroupedDataTable = GroupedDataTable;
+GroupedDataTable.story = {
+  name: 'Grouped'
+};

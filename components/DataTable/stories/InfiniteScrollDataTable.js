@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.InfiniteScrollDataTable = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -304,6 +305,7 @@ var InfiniteScrollDataTable = function InfiniteScrollDataTable() {
   })));
 };
 
-(0, _react2.storiesOf)('DataTable', module).add('Infinitescroll', function () {
-  return /*#__PURE__*/_react["default"].createElement(InfiniteScrollDataTable, null);
-});
+exports.InfiniteScrollDataTable = InfiniteScrollDataTable;
+InfiniteScrollDataTable.story = {
+  name: 'Infinite Scroll'
+};

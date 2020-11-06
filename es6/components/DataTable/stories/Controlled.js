@@ -1,7 +1,6 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, DataTable, CheckBox } from 'grommet';
 import { grommet } from 'grommet/themes'; // Source code for the data can be found here
 // https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
@@ -14,8 +13,7 @@ delete controlledColumns[0].footer;
 delete controlledColumns[3].footer;
 delete controlledColumns[4].footer;
 delete controlledColumns[4].aggregate;
-
-var ControlledDataTable = function ControlledDataTable() {
+export var ControlledDataTable = function ControlledDataTable() {
   var _React$useState = React.useState([]),
       checked = _React$useState[0],
       setChecked = _React$useState[1];
@@ -67,7 +65,6 @@ var ControlledDataTable = function ControlledDataTable() {
     size: "medium"
   })));
 };
-
-storiesOf('DataTable', module).add('Controlled', function () {
-  return /*#__PURE__*/React.createElement(ControlledDataTable, null);
-});
+ControlledDataTable.story = {
+  name: 'Controlled'
+};

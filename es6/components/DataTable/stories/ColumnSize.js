@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, DataTable, Heading } from 'grommet';
 import { grommet } from 'grommet/themes';
 export var DATA = [{
@@ -131,8 +130,7 @@ var columnsDefault = [{
   header: 'Paid',
   align: 'end'
 }];
-
-var Example = function Example() {
+export var ColumnSize = function ColumnSize() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -193,7 +191,6 @@ var Example = function Example() {
     }
   })));
 };
-
-storiesOf('DataTable', module).add('Column sizes', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-});
+ColumnSize.story = {
+  name: 'Column sizes'
+};

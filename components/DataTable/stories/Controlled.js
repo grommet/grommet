@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.ControlledDataTable = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -76,6 +77,7 @@ var ControlledDataTable = function ControlledDataTable() {
   })));
 };
 
-(0, _react2.storiesOf)('DataTable', module).add('Controlled', function () {
-  return /*#__PURE__*/_react["default"].createElement(ControlledDataTable, null);
-});
+exports.ControlledDataTable = ControlledDataTable;
+ControlledDataTable.story = {
+  name: 'Controlled'
+};

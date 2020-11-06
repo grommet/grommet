@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.TunableDataTable = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -32,6 +33,7 @@ var TunableDataTable = function TunableDataTable() {
   })));
 };
 
-(0, _react2.storiesOf)('DataTable', module).add('Tunable', function () {
-  return /*#__PURE__*/_react["default"].createElement(TunableDataTable, null);
-});
+exports.TunableDataTable = TunableDataTable;
+TunableDataTable.story = {
+  name: 'Tunable'
+};

@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.ServedDataTable = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -67,6 +68,7 @@ var ServedDataTable = function ServedDataTable() {
   })));
 };
 
-(0, _react2.storiesOf)('DataTable', module).add('Served', function () {
-  return /*#__PURE__*/_react["default"].createElement(ServedDataTable, null);
-});
+exports.ServedDataTable = ServedDataTable;
+ServedDataTable.story = {
+  name: 'Served'
+};

@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Custom = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -51,7 +52,7 @@ var customTheme = {
   }
 };
 
-var Example = function Example() {
+var Custom = function Custom() {
   var _React$useState = _react["default"].useState({
     property: 'name',
     direction: 'desc'
@@ -73,6 +74,4 @@ var Example = function Example() {
   })));
 };
 
-(0, _react2.storiesOf)('DataTable', module).add('Custom', function () {
-  return /*#__PURE__*/_react["default"].createElement(Example, null);
-});
+exports.Custom = Custom;

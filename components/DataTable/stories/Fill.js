@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Fill = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -52,7 +53,7 @@ var myTheme = (0, _utils.deepMerge)(_themes.grommet, {
   }
 });
 
-var Example = function Example() {
+var Fill = function Fill() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: myTheme,
     full: true
@@ -72,6 +73,7 @@ var Example = function Example() {
   })));
 };
 
-(0, _react2.storiesOf)('DataTable', module).add('Fill and pin', function () {
-  return /*#__PURE__*/_react["default"].createElement(Example, null);
-});
+exports.Fill = Fill;
+Fill.story = {
+  name: 'Fill and pin'
+};

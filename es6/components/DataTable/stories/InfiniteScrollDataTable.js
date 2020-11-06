@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, DataTable, Heading, Meter, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 var amountFormatter = new Intl.NumberFormat('en-US', {
@@ -269,8 +268,7 @@ var DATA = [{
   percent: 40,
   paid: 2345
 }];
-
-var InfiniteScrollDataTable = function InfiniteScrollDataTable() {
+export var InfiniteScrollDataTable = function InfiniteScrollDataTable() {
   var step = 10;
 
   var load = function load() {
@@ -295,7 +293,6 @@ var InfiniteScrollDataTable = function InfiniteScrollDataTable() {
     }
   })));
 };
-
-storiesOf('DataTable', module).add('Infinitescroll', function () {
-  return /*#__PURE__*/React.createElement(InfiniteScrollDataTable, null);
-});
+InfiniteScrollDataTable.story = {
+  name: 'Infinite Scroll'
+};

@@ -1,7 +1,6 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, DataTable } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils'; // Source code for the data can be found here
@@ -42,8 +41,7 @@ var myTheme = deepMerge(grommet, {
     }
   }
 });
-
-var Example = function Example() {
+export var Fill = function Fill() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: myTheme,
     full: true
@@ -62,7 +60,6 @@ var Example = function Example() {
     }
   })));
 };
-
-storiesOf('DataTable', module).add('Fill and pin', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-});
+Fill.story = {
+  name: 'Fill and pin'
+};

@@ -1,11 +1,9 @@
 "use strict";
 
 exports.__esModule = true;
-exports.DATA = void 0;
+exports.ColumnSize = exports.DATA = void 0;
 
 var _react = _interopRequireDefault(require("react"));
-
-var _react2 = require("@storybook/react");
 
 var _grommet = require("grommet");
 
@@ -144,7 +142,7 @@ var columnsDefault = [{
   align: 'end'
 }];
 
-var Example = function Example() {
+var ColumnSize = function ColumnSize() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -206,6 +204,7 @@ var Example = function Example() {
   })));
 };
 
-(0, _react2.storiesOf)('DataTable', module).add('Column sizes', function () {
-  return /*#__PURE__*/_react["default"].createElement(Example, null);
-});
+exports.ColumnSize = ColumnSize;
+ColumnSize.story = {
+  name: 'Column sizes'
+};

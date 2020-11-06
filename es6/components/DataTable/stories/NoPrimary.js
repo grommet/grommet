@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, DataTable } from 'grommet';
 import { grommet } from 'grommet/themes'; // Source code for the data can be found here
 // https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
@@ -12,8 +11,7 @@ var columns = [{
   property: 'location',
   header: 'Location'
 }];
-
-var Example = function Example() {
+export var NoPrimaryKeyDataTable = function NoPrimaryKeyDataTable() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -26,7 +24,6 @@ var Example = function Example() {
     primaryKey: false
   })));
 };
-
-storiesOf('DataTable', module).add('No primary', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-});
+NoPrimaryKeyDataTable.story = {
+  name: 'No primary'
+};
