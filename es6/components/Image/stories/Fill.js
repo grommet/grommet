@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Image, Anchor } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var Fill = function Fill() {
+export var Fill = function Fill() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -31,7 +29,3 @@ var Fill = function Fill() {
     src: "//v2.grommet.io/assets/IMG_4245.jpg"
   })))));
 };
-
-storiesOf('Image', module).add('Fill', function () {
-  return /*#__PURE__*/React.createElement(Fill, null);
-});

@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Image } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var Fit = function Fit() {
+export var Fit = function Fit() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -25,7 +23,3 @@ var Fit = function Fit() {
     fit: "cover"
   }))));
 };
-
-storiesOf('Image', module).add('Fit', function () {
-  return /*#__PURE__*/React.createElement(Fit, null);
-});

@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.CustomCarousel = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommetIcons = require("grommet-icons");
 
@@ -59,6 +60,7 @@ var CustomCarousel = function CustomCarousel(_ref) {
   })))));
 };
 
-(0, _react2.storiesOf)('Carousel', module).add('Custom controls', function () {
-  return /*#__PURE__*/_react["default"].createElement(CustomCarousel, null);
-});
+exports.CustomCarousel = CustomCarousel;
+CustomCarousel.story = {
+  name: 'Custom controls'
+};

@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Opacity = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -48,6 +49,4 @@ var Opacity = function Opacity() {
   })));
 };
 
-(0, _react2.storiesOf)('Image', module).add('Opacity', function () {
-  return /*#__PURE__*/_react["default"].createElement(Opacity, null);
-});
+exports.Opacity = Opacity;

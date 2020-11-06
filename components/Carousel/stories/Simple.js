@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.NoControls = exports.Initial = exports.Simple = exports.SimpleCarousel = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommetIcons = require("grommet-icons");
 
@@ -41,19 +42,40 @@ var SimpleCarousel = function SimpleCarousel(_ref) {
   })))));
 };
 
-(0, _react2.storiesOf)('Carousel', module).add('Simple', function () {
+exports.SimpleCarousel = SimpleCarousel;
+
+var Simple = function Simple() {
   return /*#__PURE__*/_react["default"].createElement(SimpleCarousel, null);
-}, {
-  chromatic: {
-    disable: true
-  }
-}).add('Initial child', function () {
+};
+
+exports.Simple = Simple;
+
+var Initial = function Initial() {
   return /*#__PURE__*/_react["default"].createElement(SimpleCarousel, {
     initialChild: 1
   });
-}).add('Without controls', function () {
+};
+
+exports.Initial = Initial;
+
+var NoControls = function NoControls() {
   return /*#__PURE__*/_react["default"].createElement(SimpleCarousel, {
     controls: false,
     play: 1500
   });
-});
+};
+
+exports.NoControls = NoControls;
+Simple.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
+  }
+};
+Initial.story = {
+  name: 'Initial child'
+};
+NoControls.story = {
+  name: 'Without controls'
+};

@@ -3,13 +3,11 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Attraction } from "grommet-icons/es6/icons/Attraction";
 import { Car } from "grommet-icons/es6/icons/Car";
 import { TreeOption } from "grommet-icons/es6/icons/TreeOption";
 import { Grommet, Box, Carousel } from 'grommet';
-
-var SimpleCarousel = function SimpleCarousel(_ref) {
+export var SimpleCarousel = function SimpleCarousel(_ref) {
   var initialChild = _ref.initialChild,
       props = _objectWithoutPropertiesLoose(_ref, ["initialChild"]);
 
@@ -35,20 +33,30 @@ var SimpleCarousel = function SimpleCarousel(_ref) {
     size: "xlarge"
   })))));
 };
-
-storiesOf('Carousel', module).add('Simple', function () {
+export var Simple = function Simple() {
   return /*#__PURE__*/React.createElement(SimpleCarousel, null);
-}, {
-  chromatic: {
-    disable: true
-  }
-}).add('Initial child', function () {
+};
+export var Initial = function Initial() {
   return /*#__PURE__*/React.createElement(SimpleCarousel, {
     initialChild: 1
   });
-}).add('Without controls', function () {
+};
+export var NoControls = function NoControls() {
   return /*#__PURE__*/React.createElement(SimpleCarousel, {
     controls: false,
     play: 1500
   });
-});
+};
+Simple.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
+  }
+};
+Initial.story = {
+  name: 'Initial child'
+};
+NoControls.story = {
+  name: 'Without controls'
+};

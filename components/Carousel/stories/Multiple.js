@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Multi = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -49,10 +50,8 @@ var View2 = function View2() {
   }));
 };
 
-var CarouselMulti = function CarouselMulti() {
+var Multi = function Multi() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_grommet.Carousel, null, /*#__PURE__*/_react["default"].createElement(View0, null), /*#__PURE__*/_react["default"].createElement(View1, null), /*#__PURE__*/_react["default"].createElement(View2, null)));
 };
 
-(0, _react2.storiesOf)('Carousel', module).add('Multi', function () {
-  return /*#__PURE__*/_react["default"].createElement(CarouselMulti, null);
-});
+exports.Multi = Multi;
