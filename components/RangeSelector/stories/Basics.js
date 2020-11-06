@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.Vertical = exports.Step = exports.Simple = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
@@ -60,14 +61,24 @@ var SimpleRangeSelector = function SimpleRangeSelector(_ref) {
   }, rest)))));
 };
 
-(0, _react2.storiesOf)('RangeSelector', module).add('Simple', function () {
+var Simple = function Simple() {
   return /*#__PURE__*/_react["default"].createElement(SimpleRangeSelector, null);
-}).add('Step', function () {
+};
+
+exports.Simple = Simple;
+
+var Step = function Step() {
   return /*#__PURE__*/_react["default"].createElement(SimpleRangeSelector, {
     step: 2
   });
-}).add('Vertical', function () {
+};
+
+exports.Step = Step;
+
+var Vertical = function Vertical() {
   return /*#__PURE__*/_react["default"].createElement(SimpleRangeSelector, {
     direction: "vertical"
   });
-});
+};
+
+exports.Vertical = Vertical;

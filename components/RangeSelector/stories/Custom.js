@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.Custom = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
@@ -44,7 +45,7 @@ var customThemeRangeSelector = (0, _utils.deepMerge)(_themes.grommet, {
   }
 });
 
-var CustomRangeSelector = function CustomRangeSelector(_ref) {
+var Custom = function Custom(_ref) {
   var _ref$direction = _ref.direction,
       direction = _ref$direction === void 0 ? 'horizontal' : _ref$direction,
       rest = _objectWithoutPropertiesLoose(_ref, ["direction"]);
@@ -89,6 +90,4 @@ var CustomRangeSelector = function CustomRangeSelector(_ref) {
   }, rest)))));
 };
 
-(0, _react2.storiesOf)('RangeSelector', module).add('Custom', function () {
-  return /*#__PURE__*/_react["default"].createElement(CustomRangeSelector, null);
-});
+exports.Custom = Custom;

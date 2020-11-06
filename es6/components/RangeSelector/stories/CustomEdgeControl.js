@@ -3,7 +3,6 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Gremlin } from "grommet-icons/es6/icons/Gremlin";
 import { Grommet as GrommetIcon } from "grommet-icons/es6/icons/Grommet";
 import { Grommet, Box, RangeSelector, Stack, Text } from 'grommet';
@@ -21,8 +20,7 @@ var customEdge = deepMerge(grommet, {
     }
   }
 });
-
-var CustomEdgeControl = function CustomEdgeControl(_ref) {
+export var CustomEdgeControl = function CustomEdgeControl(_ref) {
   var _ref$direction = _ref.direction,
       direction = _ref$direction === void 0 ? 'horizontal' : _ref$direction,
       rest = _objectWithoutPropertiesLoose(_ref, ["direction"]);
@@ -72,7 +70,6 @@ var CustomEdgeControl = function CustomEdgeControl(_ref) {
     onChange: onChange
   }, rest)))));
 };
-
-storiesOf('RangeSelector', module).add('Custom edge controls', function () {
-  return /*#__PURE__*/React.createElement(CustomEdgeControl, null);
-});
+CustomEdgeControl.story = {
+  name: 'Custom edge controls'
+};

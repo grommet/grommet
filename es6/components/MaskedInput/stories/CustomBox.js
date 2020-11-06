@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, MaskedInput } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var CustomBoxMaskedInput = function CustomBoxMaskedInput() {
+export var CustomBoxMaskedInput = function CustomBoxMaskedInput() {
   var _React$useState = React.useState(''),
       value = _React$useState[0],
       setValue = _React$useState[1];
@@ -56,11 +54,11 @@ var CustomBoxMaskedInput = function CustomBoxMaskedInput() {
     }
   }))));
 };
-
-storiesOf('MaskedInput', module).add('Custom box', function () {
-  return /*#__PURE__*/React.createElement(CustomBoxMaskedInput, null);
-}, {
-  chromatic: {
-    disable: true
+CustomBoxMaskedInput.story = {
+  name: 'Custom box',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

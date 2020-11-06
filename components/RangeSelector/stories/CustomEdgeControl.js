@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.CustomEdgeControl = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommetIcons = require("grommet-icons");
 
@@ -84,6 +85,7 @@ var CustomEdgeControl = function CustomEdgeControl(_ref) {
   }, rest)))));
 };
 
-(0, _react2.storiesOf)('RangeSelector', module).add('Custom edge controls', function () {
-  return /*#__PURE__*/_react["default"].createElement(CustomEdgeControl, null);
-});
+exports.CustomEdgeControl = CustomEdgeControl;
+CustomEdgeControl.story = {
+  name: 'Custom edge controls'
+};

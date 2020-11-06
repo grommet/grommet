@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, MaskedInput } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var TimeMaskedInput = function TimeMaskedInput() {
+export var Time = function Time() {
   var _React$useState = React.useState(''),
       value = _React$useState[0],
       setValue = _React$useState[1];
@@ -49,7 +47,3 @@ var TimeMaskedInput = function TimeMaskedInput() {
     }
   }))));
 };
-
-storiesOf('MaskedInput', module).add('Time', function () {
-  return /*#__PURE__*/React.createElement(TimeMaskedInput, null);
-});

@@ -1,11 +1,10 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, MaskedInput } from 'grommet';
 import { MailOption } from 'grommet-icons';
 import { grommet } from 'grommet/themes';
 
-const EmailMaskedInput = () => {
+export const EmailMaskedInput = () => {
   const [value, setValue] = React.useState('');
 
   const emailMask = [
@@ -48,6 +47,6 @@ const EmailMaskedInput = () => {
   );
 };
 
-storiesOf('MaskedInput', module).add('Email with icon', () => (
-  <EmailMaskedInput />
-));
+EmailMaskedInput.story = {
+  name: 'Email with icon',
+};

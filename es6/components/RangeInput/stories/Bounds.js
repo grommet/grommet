@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Button, Grommet, RangeInput } from 'grommet';
 import { Add } from "grommet-icons/es6/icons/Add";
 import { Subtract } from "grommet-icons/es6/icons/Subtract";
@@ -18,8 +17,7 @@ var rangeInputTheme = {
     }
   }
 };
-
-var CustomRangeInput = function CustomRangeInput() {
+export var Bounds = function Bounds() {
   var _React$useState = React.useState(3),
       value = _React$useState[0],
       setValue = _React$useState[1];
@@ -78,7 +76,3 @@ var CustomRangeInput = function CustomRangeInput() {
     }
   })));
 };
-
-storiesOf('RangeInput', module).add('Bounds', function () {
-  return /*#__PURE__*/React.createElement(CustomRangeInput, null);
-});

@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, DateInput } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var Example = function Example() {
+export var Format = function Format() {
   var _React$useState = React.useState(''),
       value = _React$useState[0],
       setValue = _React$useState[1];
@@ -27,7 +25,3 @@ var Example = function Example() {
     onChange: onChange
   }))));
 };
-
-storiesOf('DateInput', module).add('Format', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-});

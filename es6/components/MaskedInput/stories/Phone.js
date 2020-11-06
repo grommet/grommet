@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, MaskedInput } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var PhoneMaskedInput = function PhoneMaskedInput() {
+export var Phone = function Phone() {
   var _React$useState = React.useState(''),
       value = _React$useState[0],
       setValue = _React$useState[1];
@@ -46,7 +44,3 @@ var PhoneMaskedInput = function PhoneMaskedInput() {
     }
   }))));
 };
-
-storiesOf('MaskedInput', module).add('Phone', function () {
-  return /*#__PURE__*/React.createElement(PhoneMaskedInput, null);
-});

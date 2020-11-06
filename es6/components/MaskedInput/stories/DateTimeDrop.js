@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Button, Grommet, Keyboard, Text, Calendar, MaskedInput, DropButton } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { Schedule } from "grommet-icons/es6/icons/Schedule";
@@ -72,7 +71,7 @@ var DropContent = function DropContent(_ref) {
   }))));
 };
 
-var DateTimeDropButton = function DateTimeDropButton() {
+export var DateTimeDropButton = function DateTimeDropButton() {
   var _React$useState3 = React.useState(),
       date = _React$useState3[0],
       setDate = _React$useState3[1];
@@ -121,7 +120,6 @@ var DateTimeDropButton = function DateTimeDropButton() {
     color: date ? undefined : 'dark-5'
   }, date ? new Date(date).toLocaleDateString() + " " + time : 'Select date & time'), /*#__PURE__*/React.createElement(Schedule, null)))));
 };
-
-storiesOf('MaskedInput', module).add('Date time drop', function () {
-  return /*#__PURE__*/React.createElement(DateTimeDropButton, null);
-});
+DateTimeDropButton.story = {
+  name: 'Date time drop'
+};

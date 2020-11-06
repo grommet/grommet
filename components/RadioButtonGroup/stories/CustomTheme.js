@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.CustomRadioButtonGroup = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
@@ -49,7 +50,7 @@ var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
   }
 });
 
-var CustomRadioButtomGroup = function CustomRadioButtomGroup(_ref) {
+var CustomRadioButtonGroup = function CustomRadioButtonGroup(_ref) {
   var initialValue = _ref.value,
       props = _objectWithoutPropertiesLoose(_ref, ["value"]);
 
@@ -83,6 +84,7 @@ var CustomRadioButtomGroup = function CustomRadioButtomGroup(_ref) {
   }, props))));
 };
 
-(0, _react2.storiesOf)('RadioButtonGroup', module).add('Custom theme', function () {
-  return /*#__PURE__*/_react["default"].createElement(CustomRadioButtomGroup, null);
-});
+exports.CustomRadioButtonGroup = CustomRadioButtonGroup;
+CustomRadioButtonGroup.story = {
+  name: 'Custom theme'
+};

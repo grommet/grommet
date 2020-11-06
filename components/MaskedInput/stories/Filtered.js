@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Filtered = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -18,7 +19,7 @@ var data = {
   Whitman: ['To You', 'O Captain! My Captain!', 'O Me! O Life!']
 };
 
-var FilteredMaskedInput = function FilteredMaskedInput() {
+var Filtered = function Filtered() {
   var _React$useState = _react["default"].useState(''),
       value = _React$useState[0],
       setValue = _React$useState[1];
@@ -65,10 +66,11 @@ var FilteredMaskedInput = function FilteredMaskedInput() {
   }))));
 };
 
-(0, _react2.storiesOf)('MaskedInput', module).add('Filtered', function () {
-  return /*#__PURE__*/_react["default"].createElement(FilteredMaskedInput, null);
-}, {
-  chromatic: {
-    disable: true
+exports.Filtered = Filtered;
+Filtered.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

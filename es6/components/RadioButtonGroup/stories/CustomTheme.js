@@ -3,7 +3,6 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, RadioButtonGroup, ThemeContext } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
@@ -37,8 +36,7 @@ var customTheme = deepMerge(grommet, {
     }
   }
 });
-
-var CustomRadioButtomGroup = function CustomRadioButtomGroup(_ref) {
+export var CustomRadioButtonGroup = function CustomRadioButtonGroup(_ref) {
   var initialValue = _ref.value,
       props = _objectWithoutPropertiesLoose(_ref, ["value"]);
 
@@ -71,7 +69,6 @@ var CustomRadioButtomGroup = function CustomRadioButtomGroup(_ref) {
     }
   }, props))));
 };
-
-storiesOf('RadioButtonGroup', module).add('Custom theme', function () {
-  return /*#__PURE__*/React.createElement(CustomRadioButtomGroup, null);
-});
+CustomRadioButtonGroup.story = {
+  name: 'Custom theme'
+};

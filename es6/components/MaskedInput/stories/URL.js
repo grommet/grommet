@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, MaskedInput } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var UrlMaskedInput = function UrlMaskedInput() {
+export var UrlMaskedInput = function UrlMaskedInput() {
   var _React$useState = React.useState(''),
       value = _React$useState[0],
       setValue = _React$useState[1];
@@ -31,11 +29,11 @@ var UrlMaskedInput = function UrlMaskedInput() {
     }
   }))));
 };
-
-storiesOf('MaskedInput', module).add('URL', function () {
-  return /*#__PURE__*/React.createElement(UrlMaskedInput, null);
-}, {
-  chromatic: {
-    disable: true
+UrlMaskedInput.story = {
+  name: 'URL',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

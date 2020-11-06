@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.IPv4RangeMaskedInput = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -82,6 +83,7 @@ var IPv4RangeMaskedInput = function IPv4RangeMaskedInput() {
   }))));
 };
 
-(0, _react2.storiesOf)('MaskedInput', module).add('IPv4 range', function () {
-  return /*#__PURE__*/_react["default"].createElement(IPv4RangeMaskedInput, null);
-});
+exports.IPv4RangeMaskedInput = IPv4RangeMaskedInput;
+IPv4RangeMaskedInput.story = {
+  name: 'IPv4 range'
+};

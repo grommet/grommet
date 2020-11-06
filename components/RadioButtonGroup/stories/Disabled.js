@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.Disabled = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
@@ -16,7 +17,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-var DisabledRadioButtonGroup = function DisabledRadioButtonGroup(_ref) {
+var Disabled = function Disabled(_ref) {
   var initialValue = _ref.value,
       props = _objectWithoutPropertiesLoose(_ref, ["value"]);
 
@@ -49,6 +50,4 @@ var DisabledRadioButtonGroup = function DisabledRadioButtonGroup(_ref) {
   }, props))));
 };
 
-(0, _react2.storiesOf)('RadioButtonGroup', module).add('Disabled', function () {
-  return /*#__PURE__*/_react["default"].createElement(DisabledRadioButtonGroup, null);
-});
+exports.Disabled = Disabled;

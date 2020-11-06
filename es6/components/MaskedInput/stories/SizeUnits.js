@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, MaskedInput } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var SizeUnitsMaskedInput = function SizeUnitsMaskedInput() {
+export var SizeUnitsMaskedInput = function SizeUnitsMaskedInput() {
   var _React$useState = React.useState(''),
       value = _React$useState[0],
       setValue = _React$useState[1];
@@ -38,11 +36,11 @@ var SizeUnitsMaskedInput = function SizeUnitsMaskedInput() {
     }
   }))));
 };
-
-storiesOf('MaskedInput', module).add('Size + units', function () {
-  return /*#__PURE__*/React.createElement(SizeUnitsMaskedInput, null);
-}, {
-  chromatic: {
-    disable: true
+SizeUnitsMaskedInput.story = {
+  name: 'Size + units',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

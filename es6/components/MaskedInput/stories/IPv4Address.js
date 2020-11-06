@@ -1,10 +1,8 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, MaskedInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 var IPv4ElementExp = /^[0-1][0-9][0-9]$|^2[0-4][0-9]$|^25[0-5]$|^[0-9][0-9]$|^[0-9]$/;
-
-var IPv4MaskedInput = function IPv4MaskedInput() {
+export var IPv4MaskedInput = function IPv4MaskedInput() {
   var _React$useState = React.useState(''),
       value = _React$useState[0],
       setValue = _React$useState[1];
@@ -49,11 +47,11 @@ var IPv4MaskedInput = function IPv4MaskedInput() {
     }
   }))));
 };
-
-storiesOf('MaskedInput', module).add('IPv4 address', function () {
-  return /*#__PURE__*/React.createElement(IPv4MaskedInput, null);
-}, {
-  chromatic: {
-    disable: true
+IPv4MaskedInput.story = {
+  name: 'IPv4 address',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

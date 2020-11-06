@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.UrlMaskedInput = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -39,10 +40,12 @@ var UrlMaskedInput = function UrlMaskedInput() {
   }))));
 };
 
-(0, _react2.storiesOf)('MaskedInput', module).add('URL', function () {
-  return /*#__PURE__*/_react["default"].createElement(UrlMaskedInput, null);
-}, {
-  chromatic: {
-    disable: true
+exports.UrlMaskedInput = UrlMaskedInput;
+UrlMaskedInput.story = {
+  name: 'URL',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

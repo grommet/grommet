@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.CustomBoxMaskedInput = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -65,10 +66,12 @@ var CustomBoxMaskedInput = function CustomBoxMaskedInput() {
   }))));
 };
 
-(0, _react2.storiesOf)('MaskedInput', module).add('Custom box', function () {
-  return /*#__PURE__*/_react["default"].createElement(CustomBoxMaskedInput, null);
-}, {
-  chromatic: {
-    disable: true
+exports.CustomBoxMaskedInput = CustomBoxMaskedInput;
+CustomBoxMaskedInput.story = {
+  name: 'Custom box',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

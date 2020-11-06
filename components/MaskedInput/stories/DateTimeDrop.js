@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.DateTimeDropButton = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -130,6 +131,7 @@ var DateTimeDropButton = function DateTimeDropButton() {
   }, date ? new Date(date).toLocaleDateString() + " " + time : 'Select date & time'), /*#__PURE__*/_react["default"].createElement(_grommetIcons.Schedule, null)))));
 };
 
-(0, _react2.storiesOf)('MaskedInput', module).add('Date time drop', function () {
-  return /*#__PURE__*/_react["default"].createElement(DateTimeDropButton, null);
-});
+exports.DateTimeDropButton = DateTimeDropButton;
+DateTimeDropButton.story = {
+  name: 'Date time drop'
+};

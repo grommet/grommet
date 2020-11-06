@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.MaskedInputForm = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -10,7 +11,7 @@ var _themes = require("grommet/themes");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var Example = function Example() {
+var MaskedInputForm = function MaskedInputForm() {
   var _React$useState = _react["default"].useState({
     value: ''
   }),
@@ -54,6 +55,7 @@ var Example = function Example() {
   }))));
 };
 
-(0, _react2.storiesOf)('MaskedInput', module).add('Form', function () {
-  return /*#__PURE__*/_react["default"].createElement(Example, null);
-});
+exports.MaskedInputForm = MaskedInputForm;
+MaskedInputForm.story = {
+  name: 'Form'
+};

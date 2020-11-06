@@ -1,10 +1,11 @@
 "use strict";
 
+exports.__esModule = true;
+exports.ThinStory = void 0;
+
 var _react = _interopRequireWildcard(require("react"));
 
 var _reactDom = require("react-dom");
-
-var _react2 = require("@storybook/react");
 
 var _grommet = require("grommet");
 
@@ -60,6 +61,12 @@ function App() {
 }
 
 (0, _reactDom.render)( /*#__PURE__*/_react["default"].createElement(App, null), document.getElementById('root'));
-(0, _react2.storiesOf)('RangeSelector', module).add('Thin', function () {
+
+var ThinStory = function ThinStory() {
   return /*#__PURE__*/_react["default"].createElement(App, null);
-});
+};
+
+exports.ThinStory = ThinStory;
+ThinStory.story = {
+  name: 'Thin'
+};

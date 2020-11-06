@@ -3,7 +3,6 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, RangeSelector, Stack, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
@@ -51,14 +50,16 @@ var SimpleRangeSelector = function SimpleRangeSelector(_ref) {
   }, rest)))));
 };
 
-storiesOf('RangeSelector', module).add('Simple', function () {
+export var Simple = function Simple() {
   return /*#__PURE__*/React.createElement(SimpleRangeSelector, null);
-}).add('Step', function () {
+};
+export var Step = function Step() {
   return /*#__PURE__*/React.createElement(SimpleRangeSelector, {
     step: 2
   });
-}).add('Vertical', function () {
+};
+export var Vertical = function Vertical() {
   return /*#__PURE__*/React.createElement(SimpleRangeSelector, {
     direction: "vertical"
   });
-});
+};

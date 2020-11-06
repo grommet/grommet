@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.ThemeRadioButton = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -65,6 +66,7 @@ var ThemeRadioButton = function ThemeRadioButton() {
   })));
 };
 
-(0, _react2.storiesOf)('RadioButton', module).add('Theme', function () {
-  return /*#__PURE__*/_react["default"].createElement(ThemeRadioButton, null);
-});
+exports.ThemeRadioButton = ThemeRadioButton;
+ThemeRadioButton.story = {
+  name: 'Theme'
+};

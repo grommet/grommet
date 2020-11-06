@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Button, RadioButton } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
@@ -28,8 +27,7 @@ var theme = deepMerge(grommet, {
     }
   }
 });
-
-var ThemeRadioButton = function ThemeRadioButton() {
+export var ThemeRadioButton = function ThemeRadioButton() {
   var _React$useState = React.useState(),
       selected = _React$useState[0],
       setSelected = _React$useState[1];
@@ -55,7 +53,6 @@ var ThemeRadioButton = function ThemeRadioButton() {
     }
   })));
 };
-
-storiesOf('RadioButton', module).add('Theme', function () {
-  return /*#__PURE__*/React.createElement(ThemeRadioButton, null);
-});
+ThemeRadioButton.story = {
+  name: 'Theme'
+};

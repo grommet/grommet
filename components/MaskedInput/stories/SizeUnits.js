@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.SizeUnitsMaskedInput = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -46,10 +47,12 @@ var SizeUnitsMaskedInput = function SizeUnitsMaskedInput() {
   }))));
 };
 
-(0, _react2.storiesOf)('MaskedInput', module).add('Size + units', function () {
-  return /*#__PURE__*/_react["default"].createElement(SizeUnitsMaskedInput, null);
-}, {
-  chromatic: {
-    disable: true
+exports.SizeUnitsMaskedInput = SizeUnitsMaskedInput;
+SizeUnitsMaskedInput.story = {
+  name: 'Size + units',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

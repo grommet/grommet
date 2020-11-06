@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Range = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -15,7 +16,7 @@ var dateFormat = new Intl.DateTimeFormat(undefined, {
   day: 'numeric'
 });
 
-var Example = function Example() {
+var Range = function Range() {
   var _React$useState = _react["default"].useState(['2020-07-31T15:27:42.920Z', '2020-08-07T15:27:42.920Z']),
       value = _React$useState[0],
       setValue = _React$useState[1];
@@ -40,10 +41,11 @@ var Example = function Example() {
   })));
 };
 
-(0, _react2.storiesOf)('DateInput', module).add('Range', function () {
-  return /*#__PURE__*/_react["default"].createElement(Example, null);
-}, {
-  chromatic: {
-    disable: true
+exports.Range = Range;
+Range.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

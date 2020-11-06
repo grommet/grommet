@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Button, RadioButton } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var SimpleRadioButton = function SimpleRadioButton() {
+export var Simple = function Simple() {
   var _React$useState = React.useState(),
       selected = _React$useState[0],
       setSelected = _React$useState[1];
@@ -29,7 +27,3 @@ var SimpleRadioButton = function SimpleRadioButton() {
     }
   })));
 };
-
-storiesOf('RadioButton', module).add('Simple', function () {
-  return /*#__PURE__*/React.createElement(SimpleRadioButton, null);
-});

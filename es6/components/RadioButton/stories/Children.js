@@ -1,10 +1,8 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Button, RadioButton } from 'grommet';
 import { Ascend } from "grommet-icons/es6/icons/Ascend";
 import { grommet } from 'grommet/themes';
-
-var ChildrenRadioButton = function ChildrenRadioButton() {
+export var Children = function Children() {
   var _React$useState = React.useState(),
       selected = _React$useState[0],
       setSelected = _React$useState[1];
@@ -34,7 +32,3 @@ var ChildrenRadioButton = function ChildrenRadioButton() {
     }
   })));
 };
-
-storiesOf('RadioButton', module).add('Children', function () {
-  return /*#__PURE__*/React.createElement(ChildrenRadioButton, null);
-});

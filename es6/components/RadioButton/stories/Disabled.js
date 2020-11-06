@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, RadioButton } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var DisabledRadioButton = function DisabledRadioButton() {
+export var Disabled = function Disabled() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -18,7 +16,3 @@ var DisabledRadioButton = function DisabledRadioButton() {
     disabled: true
   })));
 };
-
-storiesOf('RadioButton', module).add('Disabled', function () {
-  return /*#__PURE__*/React.createElement(DisabledRadioButton, null);
-});

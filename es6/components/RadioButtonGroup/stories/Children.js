@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, RadioButtonGroup } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { Ascend } from "grommet-icons/es6/icons/Ascend";
 import { Descend } from "grommet-icons/es6/icons/Descend";
-
-var ChildrenRadioButtonGroup = function ChildrenRadioButtonGroup() {
+export var Children = function Children() {
   var _useState = useState(),
       value = _useState[0],
       setValue = _useState[1];
@@ -36,7 +34,3 @@ var ChildrenRadioButtonGroup = function ChildrenRadioButtonGroup() {
     }, /*#__PURE__*/React.createElement(Icon, null));
   })));
 };
-
-storiesOf('RadioButtonGroup', module).add('Children', function () {
-  return /*#__PURE__*/React.createElement(ChildrenRadioButtonGroup, null);
-});

@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Button, Form, FormField, Grommet, MaskedInput } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var Example = function Example() {
+export var MaskedInputForm = function MaskedInputForm() {
   var _React$useState = React.useState({
     value: ''
   }),
@@ -46,7 +44,6 @@ var Example = function Example() {
     label: "submit"
   }))));
 };
-
-storiesOf('MaskedInput', module).add('Form', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-});
+MaskedInputForm.story = {
+  name: 'Form'
+};

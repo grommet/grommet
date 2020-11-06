@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { render } from 'react-dom';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, RangeSelector, Stack, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 var RANGE_MIN = 0;
@@ -49,6 +48,9 @@ function App() {
 }
 
 render( /*#__PURE__*/React.createElement(App, null), document.getElementById('root'));
-storiesOf('RangeSelector', module).add('Thin', function () {
+export var ThinStory = function ThinStory() {
   return /*#__PURE__*/React.createElement(App, null);
-});
+};
+ThinStory.story = {
+  name: 'Thin'
+};
