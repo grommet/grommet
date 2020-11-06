@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 
 import { grommet, Box, Button, Grommet } from 'grommet';
 import { Tip } from '../../Tip';
