@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 
-import { Grommet, grommet, Box, Button, Drop, Text } from 'grommet';
+import { Grommet, grommet, Box, Button, Drop, Nav, Text } from 'grommet';
 import { Calculator, Bug, Achievement } from 'grommet-icons';
 
 const TooltipButton = ({ icon, name }) => {
@@ -21,15 +21,20 @@ const TooltipButton = ({ icon, name }) => {
           {icon}
         </Box>
       </Button>
+      {/* Since this example is demonstrating the Drop's `trapFocus` prop, we 
+      are using Drop component vs the Tip component. The best practice will be
+      the Tip component instead. The Tip is providing trapFocus={false{}
+      as a default behavior */}
       {ref.current && over && (
         <Drop
+          plain
           align={{ left: 'right' }}
           target={ref.current}
-          plain
-          // trapFocus set to false allows tabbing through
+          margin={{ horizontal: 'small' }}
+          // trapFocus set to false allows tabbing through the buttons
           trapFocus={false}
         >
-          <Box pad="small" background="pink">
+          <Box pad="small" background="brand">
             <Text color="white">{name}</Text>
           </Box>
         </Drop>
@@ -38,20 +43,19 @@ const TooltipButton = ({ icon, name }) => {
   );
 };
 
-const TooltipDrop = () => {
+export const TrapFocus = () => {
   return (
     <Grommet theme={grommet}>
-      <Box align="center" pad="large">
+      <Nav align="center" pad="large">
         <TooltipButton icon={<Calculator />} name="Calculator" />
         <TooltipButton icon={<Bug />} name="Bug" />
         <TooltipButton icon={<Achievement />} name="Achievement" />
-      </Box>
+      </Nav>
     </Grommet>
   );
 };
 
-export const Tooltip = () => <TooltipDrop />;
-Tooltip.story = {
+TrapFocus.story = {
   parameters: {
     chromatic: { disable: true },
   },

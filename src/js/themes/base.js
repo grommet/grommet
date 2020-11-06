@@ -1178,6 +1178,20 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
       // disabled: { opacity: undefined },
     },
+    tip: {
+      content: {
+        // any Box props
+        background: 'background-contrast',
+        elevation: 'small',
+        margin: 'xsmall',
+        pad: { vertical: 'xsmall', horizontal: 'small' },
+        round: 'small',
+      },
+      drop: {
+        // any props for the drop
+        align: { top: 'bottom' }, // most common use case is Header with Buttons
+      },
+    },
     video: {
       captions: {
         background: 'rgba(0, 0, 0, 0.7)',
