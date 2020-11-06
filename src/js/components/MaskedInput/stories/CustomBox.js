@@ -1,9 +1,8 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, MaskedInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const CustomBoxMaskedInput = () => {
+export const CustomBoxMaskedInput = () => {
   const [value, setValue] = React.useState('');
   const [box, setBox] = React.useState();
   const boxRef = React.useCallback(setBox, []);
@@ -49,10 +48,9 @@ const CustomBoxMaskedInput = () => {
   );
 };
 
-storiesOf('MaskedInput', module).add(
-  'Custom box',
-  () => <CustomBoxMaskedInput />,
-  {
+CustomBoxMaskedInput.story = {
+  name: 'Custom box',
+  parameters: {
     chromatic: { disable: true },
   },
-);
+};

@@ -1,11 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import isChromatic from 'chromatic/isChromatic';
 
 import { Box, DateInput, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Example = () => {
+export const European = () => {
   const [value, setValue] = React.useState();
   const onChange = event => {
     const nextValue = event.value;
@@ -23,6 +21,8 @@ const Example = () => {
   );
 };
 
-if (!isChromatic()) {
-  storiesOf('DateInput', module).add('European', () => <Example />);
-}
+European.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
+};
