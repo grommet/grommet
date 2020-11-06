@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Calendar, Grid, Grommet, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -9,7 +8,7 @@ const Container = ({ ...rest }) => {
   return <Box align="center" border gap="small" pad="medium" {...rest} />;
 };
 
-const ShowAdjacent = () => {
+export const ShowAdjacent = () => {
   const [date, setDate] = useState(new Date(2020, 6, 15).toDateString());
 
   const onSelect = nextDate => {
@@ -53,4 +52,6 @@ const ShowAdjacent = () => {
   );
 };
 
-storiesOf('Calendar', module).add('Show adjacent days', () => <ShowAdjacent />);
+ShowAdjacent.story = {
+  name: 'Show adjacent days',
+};

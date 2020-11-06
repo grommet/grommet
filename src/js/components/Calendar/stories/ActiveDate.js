@@ -1,10 +1,9 @@
 import React, { useRef, useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Button, Calendar, Grommet, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const ActiveDate = () => {
+export const ActiveDate = () => {
   const [datesD, setDatesD] = useState();
   const [activeDate, setActiveDate] = useState(undefined);
 
@@ -59,5 +58,3 @@ const ActiveDate = () => {
     </Grommet>
   );
 };
-
-storiesOf('Calendar', module).add('Active Date', () => <ActiveDate />);
