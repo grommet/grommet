@@ -1,9 +1,7 @@
 import React, { useRef, useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Button, Calendar, Grommet, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var ActiveDate = function ActiveDate() {
+export var ActiveDate = function ActiveDate() {
   var _useState = useState(),
       datesD = _useState[0],
       setDatesD = _useState[1];
@@ -47,7 +45,3 @@ var ActiveDate = function ActiveDate() {
     range: "array"
   })));
 };
-
-storiesOf('Calendar', module).add('Active Date', function () {
-  return /*#__PURE__*/React.createElement(ActiveDate, null);
-});

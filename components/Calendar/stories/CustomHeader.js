@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.CustomHeaderCalendar = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
@@ -60,6 +61,7 @@ var CustomHeaderCalendar = function CustomHeaderCalendar() {
   })));
 };
 
-(0, _react2.storiesOf)('Calendar', module).add('Header', function () {
-  return /*#__PURE__*/_react["default"].createElement(CustomHeaderCalendar, null);
-});
+exports.CustomHeaderCalendar = CustomHeaderCalendar;
+CustomHeaderCalendar.story = {
+  name: 'Header'
+};

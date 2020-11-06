@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Calendar, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var FillCalendar = function FillCalendar() {
+export var Fill = function Fill() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -17,7 +15,3 @@ var FillCalendar = function FillCalendar() {
     daysOfWeek: true
   }))));
 };
-
-storiesOf('Calendar', module).add('Fill', function () {
-  return /*#__PURE__*/React.createElement(FillCalendar, null);
-});

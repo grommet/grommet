@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.SundayFirstDayCalendar = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -12,7 +13,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 // When the first day of the month is Sunday, and the request of firstDayOfWeek
 // is Monday, we are verifing we are not missing a week, issue 3253.
-var SundayFirstDay = function SundayFirstDay() {
+var SundayFirstDayCalendar = function SundayFirstDayCalendar() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -24,6 +25,7 @@ var SundayFirstDay = function SundayFirstDay() {
   })));
 };
 
-(0, _react2.storiesOf)('Calendar', module).add('1st on Sunday', function () {
-  return /*#__PURE__*/_react["default"].createElement(SundayFirstDay, null);
-});
+exports.SundayFirstDayCalendar = SundayFirstDayCalendar;
+SundayFirstDayCalendar.story = {
+  name: '1st on Sunday'
+};

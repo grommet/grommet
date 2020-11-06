@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Calendar, DropButton, Grommet, Heading, Stack, Text } from 'grommet';
 import { Notification } from "grommet-icons/es6/icons/Notification";
 import { grommet } from 'grommet/themes';
-
-var CustomDayCalendar = function CustomDayCalendar() {
+export var CustomDayCalendar = function CustomDayCalendar() {
   var calendarContent = [7, 8, 9];
 
   var _useState = useState(),
@@ -85,7 +83,6 @@ var CustomDayCalendar = function CustomDayCalendar() {
     }, day)));
   })));
 };
-
-storiesOf('Calendar', module).add('Custom day', function () {
-  return /*#__PURE__*/React.createElement(CustomDayCalendar, null);
-});
+CustomDayCalendar.story = {
+  name: 'Custom day'
+};

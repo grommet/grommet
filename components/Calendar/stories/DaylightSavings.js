@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.DSTCalendar = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -66,6 +67,7 @@ var DSTCalendar = function DSTCalendar() {
   })))));
 };
 
-(0, _react2.storiesOf)('Calendar', module).add('Daylight savings time', function () {
-  return /*#__PURE__*/_react["default"].createElement(DSTCalendar, null);
-});
+exports.DSTCalendar = DSTCalendar;
+DSTCalendar.story = {
+  name: 'Daylight savings time'
+};

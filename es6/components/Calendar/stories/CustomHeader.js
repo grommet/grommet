@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Button, Calendar, Grommet, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { FormPreviousLink } from "grommet-icons/es6/icons/FormPreviousLink";
 import { FormNextLink } from "grommet-icons/es6/icons/FormNextLink";
-
-var CustomHeaderCalendar = function CustomHeaderCalendar() {
+export var CustomHeaderCalendar = function CustomHeaderCalendar() {
   var _useState = useState(),
       date = _useState[0],
       setDate = _useState[1];
@@ -50,7 +48,6 @@ var CustomHeaderCalendar = function CustomHeaderCalendar() {
     }
   })));
 };
-
-storiesOf('Calendar', module).add('Header', function () {
-  return /*#__PURE__*/React.createElement(CustomHeaderCalendar, null);
-});
+CustomHeaderCalendar.story = {
+  name: 'Header'
+};

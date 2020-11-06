@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Calendar, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var RangeCalendar = function RangeCalendar() {
+export var Range = function Range() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -14,7 +12,3 @@ var RangeCalendar = function RangeCalendar() {
     range: true
   })));
 };
-
-storiesOf('Calendar', module).add('Range', function () {
-  return /*#__PURE__*/React.createElement(RangeCalendar, null);
-});

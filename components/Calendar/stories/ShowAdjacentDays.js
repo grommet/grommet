@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.ShowAdjacent = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
@@ -70,6 +71,7 @@ var ShowAdjacent = function ShowAdjacent() {
   }))));
 };
 
-(0, _react2.storiesOf)('Calendar', module).add('Show adjacent days', function () {
-  return /*#__PURE__*/_react["default"].createElement(ShowAdjacent, null);
-});
+exports.ShowAdjacent = ShowAdjacent;
+ShowAdjacent.story = {
+  name: 'Show adjacent days'
+};

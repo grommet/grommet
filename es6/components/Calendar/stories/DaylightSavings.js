@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Calendar, Grommet, Text } from 'grommet';
 import { grommet } from 'grommet/themes'; // DSTCalendar has dates specifically chosen to identify issues with
 // crossing the daylight savings time boundary (from California).
 
-var DSTCalendar = function DSTCalendar() {
+export var DSTCalendar = function DSTCalendar() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -57,7 +56,6 @@ var DSTCalendar = function DSTCalendar() {
     bounds: ['2019-03-01', '2019-03-31']
   })))));
 };
-
-storiesOf('Calendar', module).add('Daylight savings time', function () {
-  return /*#__PURE__*/React.createElement(DSTCalendar, null);
-});
+DSTCalendar.story = {
+  name: 'Daylight savings time'
+};

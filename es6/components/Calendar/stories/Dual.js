@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Button, Calendar, Grommet, Heading } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { Blank } from "grommet-icons/es6/icons/Blank";
 import { Previous } from "grommet-icons/es6/icons/Previous";
 import { Next } from "grommet-icons/es6/icons/Next";
-
-var DualCalendar = function DualCalendar() {
+export var Dual = function Dual() {
   var _useState = useState(),
       date = _useState[0],
       setDate = _useState[1];
@@ -116,7 +114,3 @@ var DualCalendar = function DualCalendar() {
     }
   })));
 };
-
-storiesOf('Calendar', module).add('Dual', function () {
-  return /*#__PURE__*/React.createElement(DualCalendar, null);
-});

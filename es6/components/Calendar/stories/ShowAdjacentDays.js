@@ -1,7 +1,6 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Calendar, Grid, Grommet, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { Box } from '../../Box';
@@ -17,7 +16,7 @@ var Container = function Container(_ref) {
   }, rest));
 };
 
-var ShowAdjacent = function ShowAdjacent() {
+export var ShowAdjacent = function ShowAdjacent() {
   var _useState = useState(new Date(2020, 6, 15).toDateString()),
       date = _useState[0],
       setDate = _useState[1];
@@ -59,7 +58,6 @@ var ShowAdjacent = function ShowAdjacent() {
     showAdjacentDays: "trim"
   }))));
 };
-
-storiesOf('Calendar', module).add('Show adjacent days', function () {
-  return /*#__PURE__*/React.createElement(ShowAdjacent, null);
-});
+ShowAdjacent.story = {
+  name: 'Show adjacent days'
+};

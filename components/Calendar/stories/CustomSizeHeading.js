@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.CustomSizeCalendar = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _utils = require("grommet/utils");
 
@@ -41,6 +42,7 @@ var CustomSizeCalendar = function CustomSizeCalendar() {
   })));
 };
 
-(0, _react2.storiesOf)('Calendar', module).add('Heading size', function () {
-  return /*#__PURE__*/_react["default"].createElement(CustomSizeCalendar, null);
-});
+exports.CustomSizeCalendar = CustomSizeCalendar;
+CustomSizeCalendar.story = {
+  name: 'Heading size'
+};

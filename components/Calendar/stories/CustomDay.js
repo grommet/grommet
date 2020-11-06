@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.CustomDayCalendar = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
@@ -96,6 +97,7 @@ var CustomDayCalendar = function CustomDayCalendar() {
   })));
 };
 
-(0, _react2.storiesOf)('Calendar', module).add('Custom day', function () {
-  return /*#__PURE__*/_react["default"].createElement(CustomDayCalendar, null);
-});
+exports.CustomDayCalendar = CustomDayCalendar;
+CustomDayCalendar.story = {
+  name: 'Custom day'
+};

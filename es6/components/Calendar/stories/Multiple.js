@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Calendar, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var Example = function Example() {
+export var Multiple = function Multiple() {
   var _useState = useState([]),
       dates = _useState[0],
       setDates = _useState[1];
@@ -31,7 +29,3 @@ var Example = function Example() {
     bounds: ['2018-09-08', '2020-12-13']
   })));
 };
-
-storiesOf('Calendar', module).add('Multiple', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-});

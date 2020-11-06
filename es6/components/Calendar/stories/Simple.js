@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Calendar, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var SimpleCalendar = function SimpleCalendar() {
+export var Simple = function Simple() {
   var _useState = useState(),
       date = _useState[0],
       setDate = _useState[1];
@@ -33,7 +31,3 @@ var SimpleCalendar = function SimpleCalendar() {
     bounds: ['2018-09-08', '2020-12-13']
   })));
 };
-
-storiesOf('Calendar', module).add('Simple', function () {
-  return /*#__PURE__*/React.createElement(SimpleCalendar, null);
-});
