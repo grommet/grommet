@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Grommet, grommet, Box, Button, Drop, Text } from 'grommet';
+import { Grommet, grommet, Box, Button, Drop, Nav, Text } from 'grommet';
 import { Calculator } from "grommet-icons/es6/icons/Calculator";
 import { Bug } from "grommet-icons/es6/icons/Bug";
 import { Achievement } from "grommet-icons/es6/icons/Achievement";
@@ -34,25 +34,28 @@ var TooltipButton = function TooltipButton(_ref) {
     },
     align: "center"
   }, icon)), ref.current && over && /*#__PURE__*/React.createElement(Drop, {
+    plain: true,
     align: {
       left: 'right'
     },
     target: ref.current,
-    plain: true // trapFocus set to false allows tabbing through
+    margin: {
+      horizontal: 'small'
+    } // trapFocus set to false allows tabbing through the buttons
     ,
     trapFocus: false
   }, /*#__PURE__*/React.createElement(Box, {
     pad: "small",
-    background: "pink"
+    background: "brand"
   }, /*#__PURE__*/React.createElement(Text, {
     color: "white"
   }, name))));
 };
 
-var TooltipDrop = function TooltipDrop() {
+export var TrapFocus = function TrapFocus() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
-  }, /*#__PURE__*/React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Nav, {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/React.createElement(TooltipButton, {
@@ -66,11 +69,7 @@ var TooltipDrop = function TooltipDrop() {
     name: "Achievement"
   })));
 };
-
-export var Tooltip = function Tooltip() {
-  return /*#__PURE__*/React.createElement(TooltipDrop, null);
-};
-Tooltip.story = {
+TrapFocus.story = {
   parameters: {
     chromatic: {
       disable: true

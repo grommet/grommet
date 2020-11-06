@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports["default"] = exports.SVGChild = exports.Tooltip = exports.Simple = exports.Progressive = exports.Plain = exports.Overflow = exports.Multiple = exports.Lazy = exports.Custom = exports.AllNotStretched = void 0;
+exports["default"] = exports.SVGChild = exports.TrapFocus = exports.Simple = exports.Progressive = exports.Plain = exports.Overflow = exports.Multiple = exports.Lazy = exports.Custom = exports.AllNotStretched = void 0;
 
 var _AllNotStretched = require("./AllNotStretched");
 
@@ -35,9 +35,9 @@ var _Simple = require("./Simple");
 
 exports.Simple = _Simple.Simple;
 
-var _Tooltip = require("./Tooltip");
+var _TrapFocus = require("./TrapFocus");
 
-exports.Tooltip = _Tooltip.Tooltip;
+exports.TrapFocus = _TrapFocus.TrapFocus;
 
 var _Meter = require("./Meter");
 

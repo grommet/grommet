@@ -13,7 +13,19 @@ var _grommet = require("grommet");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var data = ['Boise', 'Fort Collins', 'Bay Area', 'North Carolina'];
+var data = [{
+  city: 'Boise',
+  state: 'Idaho'
+}, {
+  city: 'Fort Collins',
+  state: 'Colorado'
+}, {
+  city: 'Bay Area',
+  state: 'California'
+}, {
+  city: 'San Diego',
+  state: 'California'
+}];
 exports.data = data;
 
 var ChildrenExample = function ChildrenExample() {
@@ -22,22 +34,27 @@ var ChildrenExample = function ChildrenExample() {
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "large",
     height: "100%",
-    background: "light-2"
+    align: "center"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.List, {
     data: data,
     pad: "medium"
-  }, function (datum, index) {
-    return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      key: index,
+  }, function (datum) {
+    return /*#__PURE__*/_react["default"].createElement(_grommet.Tip, {
+      content: datum.state,
+      dropProps: {
+        align: {
+          left: 'right'
+        }
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       direction: "row-responsive",
-      gap: "large",
-      size: "xsmall",
+      gap: "medium",
       align: "center"
     }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Gremlin, {
       size: "large"
     }), /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
       weight: "bold"
-    }, datum));
+    }, datum.city)));
   })));
 };
 

@@ -464,6 +464,13 @@ Object.keys(_TextInput).forEach(function (key) {
   exports[key] = _TextInput[key];
 });
 
+var _Tip = require("./Tip");
+
+Object.keys(_Tip).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  exports[key] = _Tip[key];
+});
+
 var _Video = require("./Video");
 
 Object.keys(_Video).forEach(function (key) {

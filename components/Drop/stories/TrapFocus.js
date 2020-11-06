@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Tooltip = void 0;
+exports.TrapFocus = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -43,25 +43,28 @@ var TooltipButton = function TooltipButton(_ref) {
     },
     align: "center"
   }, icon)), ref.current && over && /*#__PURE__*/_react["default"].createElement(_grommet.Drop, {
+    plain: true,
     align: {
       left: 'right'
     },
     target: ref.current,
-    plain: true // trapFocus set to false allows tabbing through
+    margin: {
+      horizontal: 'small'
+    } // trapFocus set to false allows tabbing through the buttons
     ,
     trapFocus: false
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "small",
-    background: "pink"
+    background: "brand"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
     color: "white"
   }, name))));
 };
 
-var TooltipDrop = function TooltipDrop() {
+var TrapFocus = function TrapFocus() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _grommet.grommet
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Nav, {
     align: "center",
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(TooltipButton, {
@@ -76,12 +79,8 @@ var TooltipDrop = function TooltipDrop() {
   })));
 };
 
-var Tooltip = function Tooltip() {
-  return /*#__PURE__*/_react["default"].createElement(TooltipDrop, null);
-};
-
-exports.Tooltip = Tooltip;
-Tooltip.story = {
+exports.TrapFocus = TrapFocus;
+TrapFocus.story = {
   parameters: {
     chromatic: {
       disable: true
