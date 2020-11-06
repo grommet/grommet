@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, DataTable } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -8,7 +7,7 @@ import { grommet } from 'grommet/themes';
 // https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
 import { columns, DATA } from './data';
 
-const ClickableDataTable = () => (
+export const Clickable = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
       {/* eslint-disable no-alert */}
@@ -21,5 +20,3 @@ const ClickableDataTable = () => (
     </Box>
   </Grommet>
 );
-
-storiesOf('DataTable', module).add('Clickable', () => <ClickableDataTable />);
