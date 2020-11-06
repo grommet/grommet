@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, DataChart, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 var data = [];
@@ -11,7 +10,7 @@ for (var i = 1; i < 8; i += 1) {
   });
 }
 
-var Example = function Example() {
+export var Simple = function Simple() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -23,7 +22,3 @@ var Example = function Example() {
     series: "percent"
   })));
 };
-
-storiesOf('DataChart', module).add('Simple', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-});

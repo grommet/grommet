@@ -1,6 +1,5 @@
 /* eslint-disable max-len */
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import styled, { keyframes } from 'styled-components';
 import { Box, DataChart, Grommet, Stack } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -33,7 +32,7 @@ for (var _i = 0; _i < 13; _i += 1) {
   });
 }
 
-var Example = function Example() {
+export var Prediction = function Prediction() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -142,7 +141,3 @@ var Example = function Example() {
     height: "small"
   }))));
 };
-
-storiesOf('DataChart', module).add('Prediction', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-});

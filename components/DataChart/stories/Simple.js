@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Simple = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -19,7 +20,7 @@ for (var i = 1; i < 8; i += 1) {
   });
 }
 
-var Example = function Example() {
+var Simple = function Simple() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -32,6 +33,4 @@ var Example = function Example() {
   })));
 };
 
-(0, _react2.storiesOf)('DataChart', module).add('Simple', function () {
-  return /*#__PURE__*/_react["default"].createElement(Example, null);
-});
+exports.Simple = Simple;

@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, DataChart, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 var data = [];
@@ -14,7 +13,7 @@ for (var i = 1; i < 32; i += 1) {
   });
 }
 
-var Example = function Example() {
+export var FourDimensionDataChart = function FourDimensionDataChart() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -54,7 +53,6 @@ var Example = function Example() {
     legend: true
   })));
 };
-
-storiesOf('DataChart', module).add('Four dimensions', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-});
+FourDimensionDataChart.story = {
+  name: 'Four dimensions'
+};

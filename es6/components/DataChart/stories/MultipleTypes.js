@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, DataChart, Grommet, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 var data = [];
@@ -12,7 +11,7 @@ for (var i = 0; i < 13; i += 1) {
   });
 }
 
-var Example = function Example() {
+export var MultipleTypes = function MultipleTypes() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -68,7 +67,3 @@ var Example = function Example() {
     pad: "small"
   })));
 };
-
-storiesOf('DataChart', module).add('Multiple types', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-});
