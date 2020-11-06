@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
   Avatar,
@@ -144,4 +143,6 @@ export const TooltipsSidebar = () => (
   </Grommet>
 );
 
-storiesOf('Sidebar', module).add('Tooltips', () => <TooltipsSidebar />);
+TooltipsSidebar.story = {
+  name: 'Tooltips',
+};
