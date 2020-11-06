@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Image, Anchor } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Fill = () => {
+export const Fill = () => {
   return (
     <Grommet theme={grommet}>
       <Box align="start" gap="small">
@@ -26,5 +25,3 @@ const Fill = () => {
     </Grommet>
   );
 };
-
-storiesOf('Image', module).add('Fill', () => <Fill />);
