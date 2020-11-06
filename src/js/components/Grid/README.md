@@ -200,8 +200,7 @@ all
     end
     horizontal
     vertical
-    all
-    between,
+    all,
   size: 
     xsmall
     small
@@ -236,8 +235,7 @@ all
     end
     horizontal
     vertical
-    all
-    between,
+    all,
   size: 
     xsmall
     small

@@ -35,7 +35,7 @@ const edgeSizes = [
   'none',
 ];
 
-const BORDER_SHAPE = getBorderPropType({ includeBetween: true });
+const BORDER_SHAPE = getBorderPropType({ includeBetween: false });
 
 export const doc = Grid => {
   const DocumentedGrid = describe(Grid)
