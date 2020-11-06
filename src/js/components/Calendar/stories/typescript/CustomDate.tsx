@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Calendar, Box, Text, Grommet } from 'grommet';
 import { Plan } from 'grommet-icons';
@@ -10,7 +9,7 @@ const customTheme: ThemeType = {
   global: {
     font: {
       family: `-apple-system,
-       BlinkMacSystemFont, 
+       BlinkMacSystemFont,
        "Segoe UI"`,
     },
   },
@@ -23,7 +22,7 @@ const customTheme: ThemeType = {
   },
 };
 
-export const Example = () => (
+export const CustomDateCalendar = () => (
   <Grommet theme={customTheme} themeMode="dark">
     <Box align="center" background="dark-1" gap="small">
       <Box
@@ -48,4 +47,6 @@ export const Example = () => (
   </Grommet>
 );
 
-storiesOf('Calendar', module).add('Custom date', () => <Example />);
+CustomDateCalendar.story = {
+  name: 'Custom date',
+};

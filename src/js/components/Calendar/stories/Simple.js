@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Calendar, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const SimpleCalendar = () => {
+export const Simple = () => {
   const [date, setDate] = useState();
 
   const onSelect = nextDate => {
@@ -33,5 +32,3 @@ const SimpleCalendar = () => {
     </Grommet>
   );
 };
-
-storiesOf('Calendar', module).add('Simple', () => <SimpleCalendar />);
