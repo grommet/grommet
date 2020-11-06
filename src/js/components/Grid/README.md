@@ -169,6 +169,95 @@ Grid areas.
 [[string]]
 ```
 
+**border**
+
+Include a border.
+
+```
+boolean
+top
+left
+bottom
+right
+start
+end
+horizontal
+vertical
+all
+{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  side: 
+    top
+    left
+    bottom
+    right
+    start
+    end
+    horizontal
+    vertical
+    all
+    between,
+  size: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  style: 
+    solid
+    dashed
+    dotted
+    double
+    groove
+    ridge
+    inset
+    outset
+    hidden
+}
+[{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  side: 
+    top
+    left
+    bottom
+    right
+    start
+    end
+    horizontal
+    vertical
+    all
+    between,
+  size: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  style: 
+    solid
+    dashed
+    dotted
+    double
+    groove
+    ridge
+    inset
+    outset
+    hidden
+}]
+```
+
 **columns**
 
 Column sizes.
