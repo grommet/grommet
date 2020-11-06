@@ -1,6 +1,10 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { genericProps, padPropType } from '../../utils/prop-types';
+import {
+  genericProps,
+  getBorderPropType,
+  padPropType,
+} from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
 
@@ -30,6 +34,8 @@ const edgeSizes = [
   'xlarge',
   'none',
 ];
+
+const BORDER_SHAPE = getBorderPropType({ includeBetween: true });
 
 export const doc = Grid => {
   const DocumentedGrid = describe(Grid)
@@ -78,6 +84,22 @@ space in the column axis.`,
       Either area names and column,row coordinates.
       Or, an array of string arrays that specify named grid areas.`,
     ),
+    border: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.oneOf([
+        'top',
+        'left',
+        'bottom',
+        'right',
+        'start',
+        'end',
+        'horizontal',
+        'vertical',
+        'all',
+      ]),
+      BORDER_SHAPE,
+      PropTypes.arrayOf(BORDER_SHAPE),
+    ]).description(`Include a border.`),
     columns: PropTypes.oneOfType([
       PropTypes.arrayOf(
         PropTypes.oneOfType([
