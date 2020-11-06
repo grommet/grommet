@@ -7,6 +7,7 @@ export { Plain } from './Plain';
 export { Progressive } from './Progressive';
 export { Simple } from './Simple';
 export { TrapFocus } from './TrapFocus';
+export { SVGChild } from './Meter';
 
 export default {
   title: 'Controls/Drop',

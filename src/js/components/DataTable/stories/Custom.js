@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, DataTable } from 'grommet';
 import { Blank } from 'grommet-icons';
@@ -47,7 +46,7 @@ const customTheme = {
   },
 };
 
-const Example = () => {
+export const Custom = () => {
   const [sort, setSort] = React.useState({
     property: 'name',
     direction: 'desc',
@@ -66,5 +65,3 @@ const Example = () => {
     </Grommet>
   );
 };
-
-storiesOf('DataTable', module).add('Custom', () => <Example />);
