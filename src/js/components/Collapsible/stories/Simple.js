@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Button, Collapsible, Grommet, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const SimpleCollapsible = props => {
+export const Default = props => {
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -28,6 +27,8 @@ const SimpleCollapsible = props => {
   );
 };
 
-storiesOf('Collapsible', module).add('Default', () => <SimpleCollapsible />, {
-  chromatic: { disable: true },
-});
+Default.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
+};

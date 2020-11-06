@@ -168,6 +168,7 @@ export const makeNodeUnfocusable = node => {
 
 export const findVisibleParent = element => {
   if (element) {
+    // Get the closest ancestor element that is positioned.
     return element.offsetParent
       ? element
       : findVisibleParent(element.parentElement) || element;

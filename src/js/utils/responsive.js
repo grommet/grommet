@@ -29,3 +29,12 @@ export const getBreakpoint = (windowWidth, theme) => {
 
 export const getDeviceBreakpoint = (type, theme) =>
   theme.global.deviceBreakpoints[type];
+
+export const getBreakpointStyle = (theme, breakpointSize) => {
+  const breakpoint =
+    (breakpointSize && theme.global.breakpoints[breakpointSize]) || {};
+  if (!breakpoint.edgeSize) breakpoint.edgeSize = theme.global.edgeSize;
+  if (!breakpoint.borderSize) breakpoint.borderSize = theme.global.borderSize;
+  if (!breakpoint.size) breakpoint.size = theme.global.size;
+  return breakpoint;
+};
