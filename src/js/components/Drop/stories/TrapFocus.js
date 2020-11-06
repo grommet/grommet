@@ -21,6 +21,10 @@ const TooltipButton = ({ icon, name }) => {
           {icon}
         </Box>
       </Button>
+      {/* Since this example is demonstrating the Drop's `trapFocus` prop, we 
+      are using Drop component vs the Tip component. The best practice will be
+      the Tip component instead. The Tip is providing trapFocus={false{}
+      as a default behavior */}
       {ref.current && over && (
         <Drop
           plain
