@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, RangeSelector, Stack, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -46,7 +45,6 @@ const SimpleRangeSelector = ({ direction = 'horizontal', ...rest }) => {
   );
 };
 
-storiesOf('RangeSelector', module)
-  .add('Simple', () => <SimpleRangeSelector />)
-  .add('Step', () => <SimpleRangeSelector step={2} />)
-  .add('Vertical', () => <SimpleRangeSelector direction="vertical" />);
+export const Simple = () => <SimpleRangeSelector />;
+export const Step = () => <SimpleRangeSelector step={2} />;
+export const Vertical = () => <SimpleRangeSelector direction="vertical" />;

@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, RadioButton } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const DisabledRadioButton = () => {
+export const Disabled = () => {
   return (
     <Grommet theme={grommet}>
       <Box align="center" pad="large" gap="large">
@@ -19,5 +18,3 @@ const DisabledRadioButton = () => {
     </Grommet>
   );
 };
-
-storiesOf('RadioButton', module).add('Disabled', () => <DisabledRadioButton />);

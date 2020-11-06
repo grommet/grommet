@@ -1,9 +1,8 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, MaskedInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const TimeMaskedInput = () => {
+export const Time = () => {
   const [value, setValue] = React.useState('');
 
   return (
@@ -41,5 +40,3 @@ const TimeMaskedInput = () => {
     </Grommet>
   );
 };
-
-storiesOf('MaskedInput', module).add('Time', () => <TimeMaskedInput />);

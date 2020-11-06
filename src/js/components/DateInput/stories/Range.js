@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, DateInput } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -9,7 +8,7 @@ const dateFormat = new Intl.DateTimeFormat(undefined, {
   day: 'numeric',
 });
 
-const Example = () => {
+export const Range = () => {
   const [value, setValue] = React.useState([
     '2020-07-31T15:27:42.920Z',
     '2020-08-07T15:27:42.920Z',
@@ -36,6 +35,8 @@ const Example = () => {
   );
 };
 
-storiesOf('DateInput', module).add('Range', () => <Example />, {
-  chromatic: { disable: true },
-});
+Range.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
+};
