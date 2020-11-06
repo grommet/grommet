@@ -1,11 +1,10 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Calendar, Grommet } from 'grommet';
 
 import { grommet } from 'grommet/themes';
 
-const FillCalendar = () => {
+export const FillCalendar = () => {
   return (
     <Grommet theme={grommet}>
       <Box align="center">
@@ -17,4 +16,6 @@ const FillCalendar = () => {
   );
 };
 
-storiesOf('Calendar', module).add('Fill', () => <FillCalendar />);
+FillCalendar.story = {
+  name: 'Fill',
+};

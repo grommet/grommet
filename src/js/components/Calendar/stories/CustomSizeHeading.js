@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { deepMerge } from 'grommet/utils';
 
 import { Box, Calendar, Grommet, grommet } from 'grommet';
@@ -12,7 +11,7 @@ const customHeading = deepMerge(grommet, {
   },
 });
 
-const CustomSizeCalendar = () => {
+export const CustomSizeCalendar = () => {
   const [date, setDate] = useState();
 
   const onSelect = nextDate => {
@@ -32,4 +31,6 @@ const CustomSizeCalendar = () => {
   );
 };
 
-storiesOf('Calendar', module).add('Heading size', () => <CustomSizeCalendar />);
+CustomSizeCalendar.story = {
+  name: 'Heading size',
+};
