@@ -72,7 +72,4 @@ export const IPv4RangeMaskedInput = () => {
 
 IPv4RangeMaskedInput.story = {
   name: 'IPv4 range',
-  parameters: {
-    chromatic: { disable: true },
-  },
 };
