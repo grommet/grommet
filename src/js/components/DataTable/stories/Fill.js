@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, DataTable } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
@@ -40,7 +39,7 @@ const myTheme = deepMerge(grommet, {
   },
 });
 
-const Example = () => (
+export const Fill = () => (
   <Grommet theme={myTheme} full>
     <Box fill="vertical">
       <DataTable
@@ -57,4 +56,6 @@ const Example = () => (
   </Grommet>
 );
 
-storiesOf('DataTable', module).add('Fill and pin', () => <Example />);
+Fill.story = {
+  name: 'Fill and pin',
+};
