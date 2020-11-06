@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, CheckBox, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -18,7 +17,7 @@ const checkboxes = Array(8)
 const removeItemFromArray = (array, value) =>
   array.filter(item => item !== value);
 
-const CheckBoxWithStickyDiv = () => {
+export const WithStickyDiv = () => {
   const [checks, setChecks] = useState([]);
   const onCheck = value => ({ target }) => {
     if (target.checked) {
@@ -49,6 +48,6 @@ const CheckBoxWithStickyDiv = () => {
   );
 };
 
-storiesOf('CheckBox', module).add('With sticky div', () => (
-  <CheckBoxWithStickyDiv />
-));
+WithStickyDiv.story = {
+  name: 'With sticky div',
+};
