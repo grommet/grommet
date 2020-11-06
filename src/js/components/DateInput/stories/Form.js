@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Button, DateInput, Form, FormField, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Example = () => {
+export const DateForm = () => {
   const [value, setValue] = React.useState({ value: '' });
   const onChange = nextValue => {
     console.log('onChange', nextValue);
@@ -31,4 +30,6 @@ const Example = () => {
   );
 };
 
-storiesOf('DateInput', module).add('Form', () => <Example />);
+DateForm.story = {
+  name: 'Form',
+};

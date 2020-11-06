@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { RadioButtonGroup } from 'grommet';
 
-export const App = () => {
+export const SimpleTS = () => {
   const postMethods = [
     { label: 'FTP', value: 'FTP' },
     {
@@ -29,5 +28,3 @@ export const App = () => {
     />
   );
 };
-
-storiesOf('RadioButtonGroup', module).add('TS-Simple', () => <App />);
