@@ -3,6 +3,7 @@ import {
   A11yTitleType,
   AlignContentType,
   AlignSelfType,
+  BorderType,
   FillType,
   GapType,
   GridAreaType,
@@ -19,6 +20,7 @@ export interface GridProps {
   alignContent?: AlignContentType;
   areas?: { name?: string; start?: number[]; end?: number[] }[] | string[][];
   as?: PolymorphicType;
+  border?: BorderType;
   columns?:
     | (
         | 'xsmall'
