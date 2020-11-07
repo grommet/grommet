@@ -4,7 +4,7 @@ import { CaretDown } from 'grommet-icons';
 import { Box, Grommet, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-export const Custom = ({ ...rest }) => {
+export const Custom = () => {
   const options = ['one', 'two'];
   const [value, setValue] = useState('');
 
@@ -35,7 +35,6 @@ export const Custom = ({ ...rest }) => {
               <CaretDown color="black" />
             </Box>
           }
-          {...rest}
         />
       </Box>
     </Grommet>
