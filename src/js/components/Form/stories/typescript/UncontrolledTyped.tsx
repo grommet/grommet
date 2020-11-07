@@ -96,6 +96,6 @@ export const UncontrolledTyped = () => (
 UncontrolledTyped.story = {
   name: 'Uncontrolled typed',
   parameters: {
-    chromatic: 'disable',
+    chromatic: { disable: true },
   },
 };
