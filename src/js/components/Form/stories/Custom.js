@@ -1,24 +1,23 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { deepMerge } from 'grommet/utils';
 
 import {
-  grommet,
   Box,
   Button,
   CheckBox,
   Form,
   FormField,
+  Grommet,
   MaskedInput,
   RadioButtonGroup,
   RangeInput,
   Select,
   TextArea,
   TextInput,
-  Grommet,
 } from 'grommet';
+import { grommet } from 'grommet/themes';
+import { deepMerge } from 'grommet/utils';
 
-const customFormFieldTheme = {
+const customTheme = {
   global: {
     font: {
       size: '16px',
@@ -57,8 +56,8 @@ const customFormFieldTheme = {
   },
 };
 
-const CustomFormField = () => (
-  <Grommet full theme={deepMerge(grommet, customFormFieldTheme)}>
+export const Custom = () => (
+  <Grommet full theme={deepMerge(grommet, customTheme)}>
     <Box fill align="center" justify="center">
       <Box width="medium">
         <Form
@@ -105,5 +104,3 @@ const CustomFormField = () => (
     </Box>
   </Grommet>
 );
-
-storiesOf('Form', module).add('Custom theme', () => <CustomFormField />);

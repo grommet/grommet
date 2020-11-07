@@ -1,9 +1,8 @@
 import React from 'react';
 import { css } from 'styled-components';
-import { storiesOf } from '@storybook/react';
 
+import { Alert, StatusInfo } from 'grommet-icons';
 import {
-  grommet,
   Box,
   Form,
   FormField,
@@ -12,7 +11,7 @@ import {
   Text,
   TextInput,
 } from 'grommet';
-import { Alert, StatusInfo } from 'grommet-icons';
+import { grommet } from 'grommet/themes';
 import { deepMerge } from '../../../utils';
 
 const customTheme = deepMerge(grommet, {
@@ -59,7 +58,7 @@ const customTheme = deepMerge(grommet, {
   global: { font: { size: 'small' } },
 });
 
-const Themed = () => {
+export const Themed = () => {
   return (
     <Grommet theme={customTheme}>
       <Box gap="medium">
@@ -76,7 +75,7 @@ const Themed = () => {
               name="example1"
               label="Field Label"
               help="Some helpful descriptive text"
-              error={`Message to show on error. This is a long message to 
+              error={`Message to show on error. This is a long message to
               demonstrate custom svg alignment.`}
               info={`Here is some additional information that should give the
               user better context on how to properly complete the FormField.`}
@@ -125,5 +124,3 @@ const Themed = () => {
     </Grommet>
   );
 };
-
-storiesOf('Form', module).add('Themed', () => <Themed />);

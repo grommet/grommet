@@ -1,46 +1,51 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
   Box,
   Button,
   CheckBox,
-  Grommet,
   Form,
   FormField,
+  Grommet,
   RadioButtonGroup,
   RangeInput,
   Select,
   TextArea,
 } from 'grommet';
 import { grommet } from 'grommet/themes';
+import { FormExtendedEvent } from '../../Form';
 
-const Example = () => (
+// interface declarations can only be used in TypeScript files
+// Remove 'interface FormState' if you are not using TypeScript
+interface FormState {
+  name?: string;
+  employeeId?: number;
+  subscribe?: boolean;
+  ampm?: 'morning' | 'afternoon';
+  size?: 'small' | 'medium' | 'large' | 'xlarge';
+  comments?: string;
+  age?: number;
+}
+
+export const UncontrolledTyped = () => (
   <Grommet full theme={grommet}>
     <Box fill align="center" justify="center">
       <Box width="medium">
         <Form
           onReset={event => console.log(event)}
-          onSubmit={({ value, touched }) =>
-            console.log('Submit', value, touched)
+          // Type annotations can only be used in TypeScript files
+          // Remove ': FormState' and ': FormExtendEvent'
+          // if you are not using Typescript.
+          onChange={(value: FormState) => console.log('onChange', value)}
+          onSubmit={(event: FormExtendedEvent) =>
+            console.log('onSubmit', event.value, event.touched)
           }
         >
           <FormField
             label="Name"
             name="name"
             required
-            validate={[
-              { regexp: /^[a-z]/i },
-              name => {
-                if (name && name.length === 1) return 'must be >1 character';
-                return undefined;
-              },
-              name => {
-                if (name && name.length <= 2)
-                  return { message: "that's short", status: 'info' };
-                return undefined;
-              },
-            ]}
+            validate={{ regexp: /^[a-z]/i }}
           />
           <FormField label="Email" name="email" type="email" required />
           <FormField
@@ -49,10 +54,16 @@ const Example = () => (
             required
             validate={{ regexp: /^[0-9]{4,6}$/, message: '4-6 digits' }}
           />
-          <FormField name="subscribe" component={CheckBox} label="Subscribe?" />
+          <FormField
+            name="subscribe"
+            component={CheckBox}
+            pad
+            label="Subscribe?"
+          />
           <FormField
             name="ampm"
             component={RadioButtonGroup}
+            pad
             options={['morning', 'evening']}
           />
           <FormField
@@ -71,11 +82,6 @@ const Example = () => (
             min={15}
             max={75}
           />
-          <FormField
-            label="Custom"
-            name="custom"
-            component={props => <input {...props} />}
-          />
           <Box direction="row" justify="between" margin={{ top: 'medium' }}>
             <Button label="Cancel" />
             <Button type="reset" label="Reset" />
@@ -87,4 +93,9 @@ const Example = () => (
   </Grommet>
 );
 
-storiesOf('Form', module).add('FormField component', () => <Example />);
+UncontrolledTyped.story = {
+  name: 'Uncontrolled typed',
+  parameters: {
+    chromatic: 'disable',
+  },
+};
