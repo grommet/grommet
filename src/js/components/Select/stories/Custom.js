@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { CaretDown } from 'grommet-icons';
-
 import { Box, Grommet, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const CustomSelect = ({ ...rest }) => {
+export const Custom = ({ ...rest }) => {
   const options = ['one', 'two'];
   const [value, setValue] = useState('');
 
@@ -43,5 +41,3 @@ const CustomSelect = ({ ...rest }) => {
     </Grommet>
   );
 };
-
-storiesOf('Select', module).add('Custom', () => <CustomSelect />);
