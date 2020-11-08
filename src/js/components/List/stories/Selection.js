@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, List } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -12,7 +11,7 @@ for (let i = 0; i < 40; i += 1) {
   });
 }
 
-const SelectionList = () => {
+export const Selection = () => {
   const [selected, setSelected] = React.useState();
 
   return (
@@ -31,5 +30,3 @@ const SelectionList = () => {
     </Grommet>
   );
 };
-
-storiesOf('List', module).add('Selection', () => <SelectionList />);
