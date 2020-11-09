@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
 var defaultOptions = [];
@@ -8,7 +7,7 @@ for (var i = 1; i <= 200; i += 1) {
   defaultOptions.push("option " + i);
 }
 
-var SearchSelect = function SearchSelect() {
+export var Search = function Search() {
   var _useState = useState(defaultOptions),
       options = _useState[0],
       setOptions = _useState[1];
@@ -51,11 +50,10 @@ var SearchSelect = function SearchSelect() {
     }
   })));
 };
-
-storiesOf('Select', module).add('Search', function () {
-  return /*#__PURE__*/React.createElement(SearchSelect, null);
-}, {
-  chromatic: {
-    disable: true
+Search.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

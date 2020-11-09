@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
-import { Box, Grommet, Select, Button } from 'grommet';
+import { Box, Button, Grommet, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
 var optionList = ['One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten'];
-
-var UnSelect = function UnSelect() {
+export var Unselect = function Unselect() {
   var _useState = useState(''),
       value = _useState[0],
       setValue = _useState[1];
@@ -40,7 +38,3 @@ var UnSelect = function UnSelect() {
     label: "Clear All"
   })));
 };
-
-storiesOf('Select', module).add('Unselect', function () {
-  return /*#__PURE__*/React.createElement(UnSelect, null);
-});

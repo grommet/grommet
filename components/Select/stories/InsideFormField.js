@@ -1,10 +1,13 @@
 "use strict";
 
+exports.__esModule = true;
+exports.InsideFormField = void 0;
+
 var _react = _interopRequireWildcard(require("react"));
 
-var _react2 = require("@storybook/react");
-
 var _grommet = require("grommet");
+
+var _themes = require("grommet/themes");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -21,7 +24,7 @@ var options = [{
   value: 3
 }];
 
-var FormFieldSelect = function FormFieldSelect() {
+var InsideFormField = function InsideFormField() {
   var _useState = (0, _react.useState)({}),
       value = _useState[0],
       setValue = _useState[1];
@@ -30,7 +33,7 @@ var FormFieldSelect = function FormFieldSelect() {
     return setValue(nextValue);
   }, []);
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _grommet.grommet
+    theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
@@ -56,6 +59,7 @@ var FormFieldSelect = function FormFieldSelect() {
   }))));
 };
 
-(0, _react2.storiesOf)('Select', module).add('Form select', function () {
-  return /*#__PURE__*/_react["default"].createElement(FormFieldSelect, null);
-});
+exports.InsideFormField = InsideFormField;
+InsideFormField.story = {
+  name: 'Inside a FormField'
+};

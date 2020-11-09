@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.Multiple = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
@@ -14,7 +15,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 var options = ['one', 'two'];
 
-var Example = function Example() {
+var Multiple = function Multiple() {
   var _useState = (0, _react.useState)(['one']),
       value = _useState[0],
       setValue = _useState[1];
@@ -38,13 +39,13 @@ var Example = function Example() {
       return setValue(nextValue);
     }
   })));
-}; // chromatic disabled, similar to Object multiple
+};
 
-
-(0, _react2.storiesOf)('Select', module).add('Multiple', function () {
-  return /*#__PURE__*/_react["default"].createElement(Example, null);
-}, {
-  chromatic: {
-    disable: true
+exports.Multiple = Multiple;
+Multiple.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

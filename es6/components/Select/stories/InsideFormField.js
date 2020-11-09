@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
-import { storiesOf } from '@storybook/react';
-import { grommet, Box, Button, Form, FormField, Select, Grommet } from 'grommet';
+import { Box, Button, Form, FormField, Grommet, Select } from 'grommet';
+import { grommet } from 'grommet/themes';
 var options = [{
   label: 'option 1',
   value: 1
@@ -11,8 +11,7 @@ var options = [{
   label: 'option 3',
   value: 3
 }];
-
-var FormFieldSelect = function FormFieldSelect() {
+export var InsideFormField = function InsideFormField() {
   var _useState = useState({}),
       value = _useState[0],
       setValue = _useState[1];
@@ -46,7 +45,6 @@ var FormFieldSelect = function FormFieldSelect() {
     primary: true
   }))));
 };
-
-storiesOf('Select', module).add('Form select', function () {
-  return /*#__PURE__*/React.createElement(FormFieldSelect, null);
-});
+InsideFormField.story = {
+  name: 'Inside a FormField'
+};

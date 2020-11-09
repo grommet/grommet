@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, CheckBox, Grommet, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
 var dummyOptions = Array(2000).fill().map(function (_, i) {
@@ -26,7 +25,7 @@ var Option = function Option(_ref) {
   }), value);
 };
 
-var LazyLoading = function LazyLoading() {
+export var LazyLoadingOptions = function LazyLoadingOptions() {
   var _React$useState = React.useState([]),
       selected = _React$useState[0],
       setSelected = _React$useState[1];
@@ -91,11 +90,11 @@ var LazyLoading = function LazyLoading() {
     });
   })));
 };
-
-storiesOf('Select', module).add('Lazy loading options', function () {
-  return /*#__PURE__*/React.createElement(LazyLoading, null);
-}, {
-  chromatic: {
-    disable: true
+LazyLoadingOptions.story = {
+  name: 'Lazy loading options',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

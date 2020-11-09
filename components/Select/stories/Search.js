@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.Search = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
@@ -18,7 +19,7 @@ for (var i = 1; i <= 200; i += 1) {
   defaultOptions.push("option " + i);
 }
 
-var SearchSelect = function SearchSelect() {
+var Search = function Search() {
   var _useState = (0, _react.useState)(defaultOptions),
       options = _useState[0],
       setOptions = _useState[1];
@@ -62,10 +63,11 @@ var SearchSelect = function SearchSelect() {
   })));
 };
 
-(0, _react2.storiesOf)('Select', module).add('Search', function () {
-  return /*#__PURE__*/_react["default"].createElement(SearchSelect, null);
-}, {
-  chromatic: {
-    disable: true
+exports.Search = Search;
+Search.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

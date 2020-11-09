@@ -1,10 +1,13 @@
 "use strict";
 
+exports.__esModule = true;
+exports.ObjectOptions = void 0;
+
 var _react = _interopRequireWildcard(require("react"));
 
-var _react2 = require("@storybook/react");
-
 var _grommet = require("grommet");
+
+var _themes = require("grommet/themes");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -24,13 +27,13 @@ var objectOptions = [{
   value: 4
 }];
 
-var Example = function Example() {
+var ObjectOptions = function ObjectOptions() {
   var _useState = (0, _react.useState)(''),
       value = _useState[0],
       setValue = _useState[1];
 
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _grommet.grommet
+    theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
@@ -54,10 +57,12 @@ var Example = function Example() {
   })));
 };
 
-(0, _react2.storiesOf)('Select', module).add('Object options', function () {
-  return /*#__PURE__*/_react["default"].createElement(Example, null);
-}, {
-  chromatic: {
-    disable: true
+exports.ObjectOptions = ObjectOptions;
+ObjectOptions.story = {
+  name: 'Object options',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

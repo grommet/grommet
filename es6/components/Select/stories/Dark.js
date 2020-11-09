@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var DarkSelect = function DarkSelect() {
+export var Dark = function Dark() {
   var options = ['one', 'two'];
 
   var _useState = useState(''),
@@ -28,7 +26,3 @@ var DarkSelect = function DarkSelect() {
     }
   })));
 };
-
-storiesOf('Select', module).add('Dark', function () {
-  return /*#__PURE__*/React.createElement(DarkSelect, null);
-});

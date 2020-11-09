@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.LazyLoadingOptions = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -34,7 +35,7 @@ var Option = function Option(_ref) {
   }), value);
 };
 
-var LazyLoading = function LazyLoading() {
+var LazyLoadingOptions = function LazyLoadingOptions() {
   var _React$useState = _react["default"].useState([]),
       selected = _React$useState[0],
       setSelected = _React$useState[1];
@@ -100,10 +101,12 @@ var LazyLoading = function LazyLoading() {
   })));
 };
 
-(0, _react2.storiesOf)('Select', module).add('Lazy loading options', function () {
-  return /*#__PURE__*/_react["default"].createElement(LazyLoading, null);
-}, {
-  chromatic: {
-    disable: true
+exports.LazyLoadingOptions = LazyLoadingOptions;
+LazyLoadingOptions.story = {
+  name: 'Lazy loading options',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

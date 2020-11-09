@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.Unselect = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
@@ -14,7 +15,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 var optionList = ['One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten'];
 
-var UnSelect = function UnSelect() {
+var Unselect = function Unselect() {
   var _useState = (0, _react.useState)(''),
       value = _useState[0],
       setValue = _useState[1];
@@ -51,6 +52,4 @@ var UnSelect = function UnSelect() {
   })));
 };
 
-(0, _react2.storiesOf)('Select', module).add('Unselect', function () {
-  return /*#__PURE__*/_react["default"].createElement(UnSelect, null);
-});
+exports.Unselect = Unselect;

@@ -1,16 +1,12 @@
 import React, { useState } from 'react';
-import { Box, Button, Grommet, Select } from 'grommet';
+import { Box, Grommet, Select, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
-export var Controlled = function Controlled() {
+export var Simple = function Simple() {
   var options = ['one', 'two'];
 
   var _useState = useState(''),
       value = _useState[0],
       setValue = _useState[1];
-
-  var _useState2 = useState(false),
-      open = _useState2[0],
-      setOpen = _useState2[1];
 
   return /*#__PURE__*/React.createElement(Grommet, {
     full: true,
@@ -20,22 +16,31 @@ export var Controlled = function Controlled() {
     align: "center",
     justify: "start",
     pad: "large",
-    gap: "small"
-  }, /*#__PURE__*/React.createElement(Button, {
-    onClick: function onClick() {
-      return setOpen(!open);
-    },
-    label: "Control the select"
-  }), /*#__PURE__*/React.createElement(Select, {
+    gap: "medium"
+  }, /*#__PURE__*/React.createElement(Text, {
+    weight: "bold"
+  }, "Enabled"), /*#__PURE__*/React.createElement(Select, {
     id: "select",
     name: "select",
     placeholder: "Select",
-    open: open,
     value: value,
     options: options,
     onChange: function onChange(_ref) {
       var option = _ref.option;
       return setValue(option);
     }
+  }), /*#__PURE__*/React.createElement(Text, {
+    weight: "bold"
+  }, "Disabled"), /*#__PURE__*/React.createElement(Select, {
+    id: "select",
+    name: "select",
+    placeholder: "Select",
+    value: value,
+    options: options,
+    onChange: function onChange(_ref2) {
+      var option = _ref2.option;
+      return setValue(option);
+    },
+    disabled: true
   })));
 };

@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
 var options = ['one', 'two'];
-
-var Example = function Example() {
+export var Multiple = function Multiple() {
   var _useState = useState(['one']),
       value = _useState[0],
       setValue = _useState[1];
@@ -28,13 +26,11 @@ var Example = function Example() {
       return setValue(nextValue);
     }
   })));
-}; // chromatic disabled, similar to Object multiple
-
-
-storiesOf('Select', module).add('Multiple', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-}, {
-  chromatic: {
-    disable: true
+};
+Multiple.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

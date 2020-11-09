@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.CustomSearch = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommetIcons = require("grommet-icons");
 
@@ -52,7 +53,7 @@ var allContentPartners = [{
   id: '32131244'
 }];
 
-var CustomSearchSelect = function CustomSearchSelect() {
+var CustomSearch = function CustomSearch() {
   var _useState = (0, _react.useState)([]),
       selectedContentPartners = _useState[0],
       setSelectedContentPartners = _useState[1];
@@ -228,6 +229,7 @@ var CustomSearchSelect = function CustomSearchSelect() {
   }, renderOption)));
 };
 
-(0, _react2.storiesOf)('Select', module).add('Custom search', function () {
-  return /*#__PURE__*/_react["default"].createElement(CustomSearchSelect, null);
-});
+exports.CustomSearch = CustomSearch;
+CustomSearch.story = {
+  name: 'Custom search'
+};

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
 var objectOptions = [];
@@ -12,7 +11,7 @@ for (var i = 1; i <= 200; i += 1) {
   });
 }
 
-var Example = function Example() {
+export var ObjectMultiple = function ObjectMultiple() {
   var _useState = useState(objectOptions),
       options = _useState[0],
       setOptions = _useState[1];
@@ -63,7 +62,6 @@ var Example = function Example() {
     }
   })));
 };
-
-storiesOf('Select', module).add('Object multiple', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-});
+ObjectMultiple.story = {
+  name: 'Object multiple'
+};

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
-import { grommet, Box, Grommet, Select } from 'grommet';
+import { Box, Grommet, Select } from 'grommet';
+import { grommet } from 'grommet/themes';
 var objectOptions = [{
   label: 'Male',
   value: 1
@@ -14,8 +14,7 @@ var objectOptions = [{
   label: 'Other',
   value: 4
 }];
-
-var Example = function Example() {
+export var ObjectOptions = function ObjectOptions() {
   var _useState = useState(''),
       value = _useState[0],
       setValue = _useState[1];
@@ -44,11 +43,11 @@ var Example = function Example() {
     }
   })));
 };
-
-storiesOf('Select', module).add('Object options', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-}, {
-  chromatic: {
-    disable: true
+ObjectOptions.story = {
+  name: 'Object options',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

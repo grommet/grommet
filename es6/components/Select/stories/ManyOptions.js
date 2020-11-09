@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, CheckBox, Grommet, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
 var Option = /*#__PURE__*/React.memo(function (_ref) {
@@ -24,8 +23,7 @@ var dummyOptions = Array(2000).fill().map(function (_, i) {
     sensitivity: 'base'
   });
 });
-
-var ManyOptions = function ManyOptions() {
+export var ManyOptions = function ManyOptions() {
   var _React$useState = React.useState([]),
       selected = _React$useState[0],
       setSelected = _React$useState[1];
@@ -79,11 +77,11 @@ var ManyOptions = function ManyOptions() {
     });
   })));
 };
-
-storiesOf('Select', module).add('Lots of options', function () {
-  return /*#__PURE__*/React.createElement(ManyOptions, null);
-}, {
-  chromatic: {
-    disable: true
+ManyOptions.story = {
+  name: 'Many options',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

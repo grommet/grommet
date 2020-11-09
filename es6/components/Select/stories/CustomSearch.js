@@ -1,5 +1,4 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { storiesOf } from '@storybook/react';
 import { FormClose } from "grommet-icons/es6/icons/FormClose";
 import { Box, Button, CheckBox, Grommet, Select, Text } from 'grommet';
 import { theme as customSearchTheme } from './theme';
@@ -40,8 +39,7 @@ var allContentPartners = [{
   name: 'Test Partner 11',
   id: '32131244'
 }];
-
-var CustomSearchSelect = function CustomSearchSelect() {
+export var CustomSearch = function CustomSearch() {
   var _useState = useState([]),
       selectedContentPartners = _useState[0],
       setSelectedContentPartners = _useState[1];
@@ -216,7 +214,6 @@ var CustomSearchSelect = function CustomSearchSelect() {
     }
   }, renderOption)));
 };
-
-storiesOf('Select', module).add('Custom search', function () {
-  return /*#__PURE__*/React.createElement(CustomSearchSelect, null);
-});
+CustomSearch.story = {
+  name: 'Custom search'
+};

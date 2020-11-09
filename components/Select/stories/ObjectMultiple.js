@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.ObjectMultiple = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
@@ -22,7 +23,7 @@ for (var i = 1; i <= 200; i += 1) {
   });
 }
 
-var Example = function Example() {
+var ObjectMultiple = function ObjectMultiple() {
   var _useState = (0, _react.useState)(objectOptions),
       options = _useState[0],
       setOptions = _useState[1];
@@ -74,6 +75,7 @@ var Example = function Example() {
   })));
 };
 
-(0, _react2.storiesOf)('Select', module).add('Object multiple', function () {
-  return /*#__PURE__*/_react["default"].createElement(Example, null);
-});
+exports.ObjectMultiple = ObjectMultiple;
+ObjectMultiple.story = {
+  name: 'Object multiple'
+};

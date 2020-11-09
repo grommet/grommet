@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.Seasons = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommetIcons = require("grommet-icons");
 
@@ -16,7 +17,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 var allSeasons = ['S01', 'S02', 'S03', 'S04', 'S05', 'S06', 'S07', 'S08', 'S09', 'S10'];
 
-var SeasonsSelect = function SeasonsSelect() {
+var Seasons = function Seasons() {
   var _useState = (0, _react.useState)([]),
       selected = _useState[0],
       setSelected = _useState[1];
@@ -110,6 +111,4 @@ var SeasonsSelect = function SeasonsSelect() {
   }, renderOption)));
 };
 
-(0, _react2.storiesOf)('Select', module).add('Seasons', function () {
-  return /*#__PURE__*/_react["default"].createElement(SeasonsSelect, null);
-});
+exports.Seasons = Seasons;

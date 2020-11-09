@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { FormClose } from "grommet-icons/es6/icons/FormClose";
 import { Box, Button, Grommet, Select, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 var allSeasons = ['S01', 'S02', 'S03', 'S04', 'S05', 'S06', 'S07', 'S08', 'S09', 'S10'];
-
-var SeasonsSelect = function SeasonsSelect() {
+export var Seasons = function Seasons() {
   var _useState = useState([]),
       selected = _useState[0],
       setSelected = _useState[1];
@@ -98,7 +96,3 @@ var SeasonsSelect = function SeasonsSelect() {
     }
   }, renderOption)));
 };
-
-storiesOf('Select', module).add('Seasons', function () {
-  return /*#__PURE__*/React.createElement(SeasonsSelect, null);
-});
