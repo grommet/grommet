@@ -1,9 +1,7 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { storiesOf } from '@storybook/react';
-import isChromatic from 'chromatic/isChromatic';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 import { Search } from 'grommet-icons';
-import { Box, Image, Grommet, Text, TextInput } from 'grommet';
+import { Box, Grommet, Image, Text, TextInput } from 'grommet';
 import { grommet, ThemeType } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
 
@@ -28,12 +26,12 @@ const myCustomTheme: ThemeType = deepMerge(grommet, {
         medium: '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)',
       },
     },
-    input: {
-      weight: 400,
-    },
     font: {
       size: '14px',
       family: 'Arial',
+    },
+    input: {
+      weight: 400,
     },
   },
 });
@@ -76,7 +74,7 @@ const folks = [
   },
 ];
 
-const CustomSuggestionsTextInput = () => {
+export const CustomSuggestions = () => {
   const [value, setValue] = useState('');
   const [suggestionOpen, setSuggestionOpen] = useState(false);
   const [suggestedFolks, setSuggestedFolks] = useState([]);
@@ -133,7 +131,7 @@ const CustomSuggestionsTextInput = () => {
   };
 
   return (
-    <Grommet theme={myCustomTheme} full>
+    <Grommet full theme={myCustomTheme}>
       <Box background="dark-1" fill align="center" pad={{ top: 'large' }}>
         <Box
           ref={boxRef}
@@ -175,6 +173,6 @@ const CustomSuggestionsTextInput = () => {
   );
 };
 
-storiesOf('TextInput', module).add('Custom', () => (
-  <CustomSuggestionsTextInput />
-));
+CustomSuggestions.story = {
+  name: 'Custom suggestions',
+};

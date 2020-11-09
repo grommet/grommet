@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Example = () => {
+export const Uncontrolled = () => {
   return (
     <Grommet full theme={grommet}>
       <Box fill align="center" justify="start" pad="large">
@@ -18,6 +17,8 @@ const Example = () => {
   );
 };
 
-storiesOf('TextInput', module).add('Uncontrolled', () => <Example />, {
-  chromatic: { disable: true },
-});
+Uncontrolled.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
+};

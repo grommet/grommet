@@ -1,13 +1,12 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
   Box,
   Button,
   CheckBoxGroup,
-  Grommet,
   Form,
   FormField,
+  Grommet,
   MaskedInput,
   RadioButtonGroup,
   RangeInput,
@@ -40,7 +39,7 @@ const passwordRulesStrong = [
   },
 ];
 
-const Example = () => (
+export const FieldWithChildren = () => (
   <Grommet full theme={grommet}>
     <Box fill align="center" justify="center">
       <Box width="medium">
@@ -107,4 +106,6 @@ const Example = () => (
   </Grommet>
 );
 
-storiesOf('Form', module).add('FormField children', () => <Example />);
+FieldWithChildren.story = {
+  name: 'Field with children',
+};
