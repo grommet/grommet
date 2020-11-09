@@ -1,16 +1,15 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
-import { grommet, Box, Form, FormField, TextInput, Grommet } from 'grommet';
+import { Box, Form, FormField, Grommet, TextInput } from 'grommet';
+import { grommet } from 'grommet/themes';
 
-const FormFieldHelpError = props => (
+export const HelpAndError = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
       <Form>
         <FormField
           label="Label"
           htmlFor="text-input"
-          {...props}
           help="Text to help the user know what is possible"
           error="Text to call attention to an issue with this field"
         >
@@ -26,4 +25,6 @@ const FormFieldHelpError = props => (
   </Grommet>
 );
 
-storiesOf('Form', module).add('Help and error', () => <FormFieldHelpError />);
+HelpAndError.story = {
+  name: 'Help and error',
+};
