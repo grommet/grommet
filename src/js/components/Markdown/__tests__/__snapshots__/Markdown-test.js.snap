@@ -210,10 +210,10 @@ exports[`Markdown renders 1`] = `
       className="c7"
     >
       <thead
-        className=""
+        className="StyledTable__StyledTableHeader-sc-1m3u5g-4"
       >
         <tr
-          className=""
+          className="StyledTable__StyledTableRow-sc-1m3u5g-2"
         >
           <td
             className="c8"
@@ -248,10 +248,10 @@ exports[`Markdown renders 1`] = `
         </tr>
       </thead>
       <tbody
-        className=""
+        className="StyledTable__StyledTableBody-sc-1m3u5g-3"
       >
         <tr
-          className=""
+          className="StyledTable__StyledTableRow-sc-1m3u5g-2"
         >
           <td
             className="c10"
@@ -291,7 +291,7 @@ exports[`Markdown renders 1`] = `
           </td>
         </tr>
         <tr
-          className=""
+          className="StyledTable__StyledTableRow-sc-1m3u5g-2"
         >
           <td
             className="c10"

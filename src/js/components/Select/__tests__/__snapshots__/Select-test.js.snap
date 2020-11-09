@@ -990,7 +990,7 @@ exports[`Select applies custom global.hover theme to options 2`] = `
   type="button"
 >
   <div
-    class="c2 "
+    class="c2 SelectContainer__OptionBox-sc-1wi0ul8-1"
   >
     <span
       class="c3"
@@ -1509,22 +1509,22 @@ exports[`Select complex options and children 1`] = `
 exports[`Select complex options and children 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 jFJBys Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
+  class="StyledButton-sc-323bzc-0 ebqXLG Select__StyledSelectDropButton-sc-17idtfo-1 iGEQF"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 VvbUh"
+    class="StyledBox-sc-13pk1d4-0 jmuHez"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 bVYLzf"
+      class="StyledBox-sc-13pk1d4-0 iAryDB"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
+        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dpaJQp"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 eGpyWD Select__SelectTextInput-sc-17idtfo-0 VIYrI"
+          class="StyledTextInput-sc-1x30a0s-0 kfWKkd Select__SelectTextInput-sc-17idtfo-0 bIurki"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -1535,12 +1535,12 @@ exports[`Select complex options and children 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 iCDnTm"
+      class="StyledBox-sc-13pk1d4-0 eA-DBEo"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 kbXEEj"
+        class="StyledIcon-ofa7kd-0 fuviCN"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -1759,7 +1759,7 @@ exports[`Select complex options and children 3`] = `
 
 exports[`Select complex options and children 4`] = `
 "@media only screen and (max-width: 768px) {
-  .iCDnTm {
+  .eA-DBEo {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -2018,23 +2018,23 @@ exports[`Select disabled 1`] = `
 exports[`Select disabled 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 bDZaCa Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
+  class="StyledButton-sc-323bzc-0 emgczY Select__StyledSelectDropButton-sc-17idtfo-1 iGEQF"
   disabled=""
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 VvbUh"
+    class="StyledBox-sc-13pk1d4-0 jmuHez"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 bVYLzf"
+      class="StyledBox-sc-13pk1d4-0 iAryDB"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
+        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dpaJQp"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 eGpyWD Select__SelectTextInput-sc-17idtfo-0 nFqJk"
+          class="StyledTextInput-sc-1x30a0s-0 kfWKkd Select__SelectTextInput-sc-17idtfo-0 cANsmG"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -2045,12 +2045,12 @@ exports[`Select disabled 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 iCDnTm"
+      class="StyledBox-sc-13pk1d4-0 eA-DBEo"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 kbXEEj"
+        class="StyledIcon-ofa7kd-0 fuviCN"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -2578,7 +2578,7 @@ exports[`Select disabled key 2`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -2594,7 +2594,7 @@ exports[`Select disabled key 2`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -2613,7 +2613,7 @@ exports[`Select disabled key 2`] = `
 
 exports[`Select disabled key 3`] = `
 "@media only screen and (max-width: 768px) {
-  .iCDnTm {
+  .eA-DBEo {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -2873,7 +2873,7 @@ exports[`Select disabled option value 1`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -2889,7 +2889,7 @@ exports[`Select disabled option value 1`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -2908,7 +2908,7 @@ exports[`Select disabled option value 1`] = `
 
 exports[`Select disabled option value 2`] = `
 "@media only screen and (max-width: 768px) {
-  .iCDnTm {
+  .eA-DBEo {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -3492,7 +3492,7 @@ exports[`Select large drop container height 1`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -3508,7 +3508,7 @@ exports[`Select large drop container height 1`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -3737,7 +3737,7 @@ exports[`Select medium drop container height 1`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -3753,7 +3753,7 @@ exports[`Select medium drop container height 1`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -4504,7 +4504,7 @@ exports[`Select onChange with valueKey string 2`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -4520,7 +4520,7 @@ exports[`Select onChange with valueKey string 2`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -4539,7 +4539,7 @@ exports[`Select onChange with valueKey string 2`] = `
 
 exports[`Select onChange with valueKey string 3`] = `
 "@media only screen and (max-width: 768px) {
-  .iCDnTm {
+  .eA-DBEo {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -5018,7 +5018,7 @@ exports[`Select onChange without valueKey 2`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -5034,7 +5034,7 @@ exports[`Select onChange without valueKey 2`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -5053,7 +5053,7 @@ exports[`Select onChange without valueKey 2`] = `
 
 exports[`Select onChange without valueKey 3`] = `
 "@media only screen and (max-width: 768px) {
-  .iCDnTm {
+  .eA-DBEo {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -5834,22 +5834,22 @@ exports[`Select prop: onOpen 1`] = `
 exports[`Select prop: onOpen 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 jFJBys Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
+  class="StyledButton-sc-323bzc-0 ebqXLG Select__StyledSelectDropButton-sc-17idtfo-1 iGEQF"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 VvbUh"
+    class="StyledBox-sc-13pk1d4-0 jmuHez"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 bVYLzf"
+      class="StyledBox-sc-13pk1d4-0 iAryDB"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
+        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dpaJQp"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 eGpyWD Select__SelectTextInput-sc-17idtfo-0 VIYrI"
+          class="StyledTextInput-sc-1x30a0s-0 kfWKkd Select__SelectTextInput-sc-17idtfo-0 bIurki"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -5860,12 +5860,12 @@ exports[`Select prop: onOpen 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 iCDnTm"
+      class="StyledBox-sc-13pk1d4-0 eA-DBEo"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 kbXEEj"
+        class="StyledIcon-ofa7kd-0 fuviCN"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -6092,7 +6092,7 @@ exports[`Select prop: onOpen 3`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -6108,7 +6108,7 @@ exports[`Select prop: onOpen 3`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -6127,7 +6127,7 @@ exports[`Select prop: onOpen 3`] = `
 
 exports[`Select prop: onOpen 4`] = `
 "@media only screen and (max-width: 768px) {
-  .iCDnTm {
+  .eA-DBEo {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -6136,44 +6136,44 @@ exports[`Select prop: onOpen 4`] = `
 
 exports[`Select prop: onOpen 5`] = `
 <div
-  class="SelectContainer__OptionsBox-sc-1wi0ul8-0 Knkxk"
+  class="SelectContainer__OptionsBox-sc-1wi0ul8-0 jITnOq"
   role="menubar"
   tabindex="-1"
 >
   <button
-    class="StyledButton-sc-323bzc-0 ynEro SelectContainer__SelectOption-sc-1wi0ul8-2 kkPGyb"
+    class="StyledButton-sc-323bzc-0 bOgakS SelectContainer__SelectOption-sc-1wi0ul8-2 kNOKDt"
     role="menuitem"
     tabindex="-1"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 lcXThF SelectContainer__OptionBox-sc-1wi0ul8-1 cjPAAw"
+      class="StyledBox-sc-13pk1d4-0 kNEzzP SelectContainer__OptionBox-sc-1wi0ul8-1"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 duzDHg"
+        class="StyledText-sc-1sadyjn-0 fEvqji"
       >
         one
       </span>
     </div>
   </button>
   <button
-    class="StyledButton-sc-323bzc-0 ynEro SelectContainer__SelectOption-sc-1wi0ul8-2 kkPGyb"
+    class="StyledButton-sc-323bzc-0 bOgakS SelectContainer__SelectOption-sc-1wi0ul8-2 kNOKDt"
     role="menuitem"
     tabindex="-1"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 lcXThF SelectContainer__OptionBox-sc-1wi0ul8-1 cjPAAw"
+      class="StyledBox-sc-13pk1d4-0 kNEzzP SelectContainer__OptionBox-sc-1wi0ul8-1"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 duzDHg"
+        class="StyledText-sc-1sadyjn-0 fEvqji"
       >
         two
       </span>
     </div>
   </button>
   <div
-    class="StyledBox-sc-13pk1d4-0 bokQlS"
+    class="StyledBox-sc-13pk1d4-0 jCbIzQ"
   />
 </div>
 `;
@@ -6696,25 +6696,25 @@ exports[`Select renders custom up and down icons 1`] = `
 
 exports[`Select renders custom up and down icons 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
 >
   <button
     aria-label="Open Drop"
-    class="StyledButton-sc-323bzc-0 jFJBys Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
+    class="StyledButton-sc-323bzc-0 ebqXLG Select__StyledSelectDropButton-sc-17idtfo-1 iGEQF"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 VvbUh"
+      class="StyledBox-sc-13pk1d4-0 jmuHez"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bVYLzf"
+        class="StyledBox-sc-13pk1d4-0 iAryDB"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dpaJQp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 eGpyWD Select__SelectTextInput-sc-17idtfo-0 VIYrI"
+            class="StyledTextInput-sc-1x30a0s-0 kfWKkd Select__SelectTextInput-sc-17idtfo-0 bIurki"
             placeholder="Select..."
             readonly=""
             tabindex="-1"
@@ -6724,7 +6724,7 @@ exports[`Select renders custom up and down icons 2`] = `
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 iCDnTm"
+        class="StyledBox-sc-13pk1d4-0 eA-DBEo"
         style="min-width: auto;"
       >
         .c0 {
@@ -8619,7 +8619,7 @@ exports[`Select search 2`] = `
 
 exports[`Select search 3`] = `
 "@media only screen and (max-width: 768px) {
-  .iCDnTm {
+  .eA-DBEo {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -8629,7 +8629,7 @@ exports[`Select search 3`] = `
 exports[`Select search 4`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 bSfUHy"
+  class="StyledTextInput-sc-1x30a0s-0 iQPXZo"
   type="search"
   value=""
 />
@@ -8638,7 +8638,7 @@ exports[`Select search 4`] = `
 exports[`Select search 5`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 bSfUHy"
+  class="StyledTextInput-sc-1x30a0s-0 iQPXZo"
   type="search"
   value="o"
 />
@@ -10304,7 +10304,7 @@ exports[`Select small drop container height 1`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -10320,7 +10320,7 @@ exports[`Select small drop container height 1`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
