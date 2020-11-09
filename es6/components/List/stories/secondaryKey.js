@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, List } from 'grommet';
 import { grommet } from 'grommet/themes';
 var locations = ['Boise', 'Fort Collins', 'Los Gatos', 'Palo Alto', 'San Francisco'];
@@ -12,7 +11,7 @@ for (var i = 0; i < 40; i += 1) {
   });
 }
 
-var SecondaryKeyList = function SecondaryKeyList() {
+export var SecondaryKey = function SecondaryKey() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -24,7 +23,3 @@ var SecondaryKeyList = function SecondaryKeyList() {
     secondaryKey: "location"
   })));
 };
-
-storiesOf('List', module).add('secondaryKey', function () {
-  return /*#__PURE__*/React.createElement(SecondaryKeyList, null);
-});

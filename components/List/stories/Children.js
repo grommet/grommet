@@ -1,11 +1,9 @@
 "use strict";
 
 exports.__esModule = true;
-exports.ChildrenExample = exports.data = void 0;
+exports.Children = exports.data = void 0;
 
 var _react = _interopRequireDefault(require("react"));
-
-var _react2 = require("@storybook/react");
 
 var _grommetIcons = require("grommet-icons");
 
@@ -28,7 +26,7 @@ var data = [{
 }];
 exports.data = data;
 
-var ChildrenExample = function ChildrenExample() {
+var Children = function Children() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _grommet.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -58,7 +56,4 @@ var ChildrenExample = function ChildrenExample() {
   })));
 };
 
-exports.ChildrenExample = ChildrenExample;
-(0, _react2.storiesOf)('List', module).add('Children', function () {
-  return /*#__PURE__*/_react["default"].createElement(ChildrenExample, null);
-});
+exports.Children = Children;

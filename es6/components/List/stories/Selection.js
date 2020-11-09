@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, List } from 'grommet';
 import { grommet } from 'grommet/themes';
 var data = [];
@@ -10,7 +9,7 @@ for (var i = 0; i < 40; i += 1) {
   });
 }
 
-var SelectionList = function SelectionList() {
+export var Selection = function Selection() {
   var _ref;
 
   var _React$useState = React.useState(),
@@ -33,7 +32,3 @@ var SelectionList = function SelectionList() {
     }
   })));
 };
-
-storiesOf('List', module).add('Selection', function () {
-  return /*#__PURE__*/React.createElement(SelectionList, null);
-});

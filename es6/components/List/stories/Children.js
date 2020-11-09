@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Gremlin } from "grommet-icons/es6/icons/Gremlin";
 import { Box, Grommet, grommet, List, Text, Tip } from 'grommet';
 export var data = [{
@@ -15,7 +14,7 @@ export var data = [{
   city: 'San Diego',
   state: 'California'
 }];
-export var ChildrenExample = function ChildrenExample() {
+export var Children = function Children() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -44,6 +43,3 @@ export var ChildrenExample = function ChildrenExample() {
     }, datum.city)));
   })));
 };
-storiesOf('List', module).add('Children', function () {
-  return /*#__PURE__*/React.createElement(ChildrenExample, null);
-});

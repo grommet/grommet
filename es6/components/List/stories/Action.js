@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, List, Menu } from 'grommet';
 import { More } from "grommet-icons/es6/icons/More";
 import { grommet } from 'grommet/themes';
@@ -11,7 +10,7 @@ for (var i = 0; i < 40; i += 1) {
   });
 }
 
-var ActionList = function ActionList() {
+export var Action = function Action() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -34,7 +33,3 @@ var ActionList = function ActionList() {
     }
   })));
 };
-
-storiesOf('List', module).add('Action', function () {
-  return /*#__PURE__*/React.createElement(ActionList, null);
-});

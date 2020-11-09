@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Selection = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -18,7 +19,7 @@ for (var i = 0; i < 40; i += 1) {
   });
 }
 
-var SelectionList = function SelectionList() {
+var Selection = function Selection() {
   var _ref;
 
   var _React$useState = _react["default"].useState(),
@@ -42,6 +43,4 @@ var SelectionList = function SelectionList() {
   })));
 };
 
-(0, _react2.storiesOf)('List', module).add('Selection', function () {
-  return /*#__PURE__*/_react["default"].createElement(SelectionList, null);
-});
+exports.Selection = Selection;

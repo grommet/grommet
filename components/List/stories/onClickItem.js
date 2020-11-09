@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.OnClickItemList = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -40,14 +41,16 @@ var OnClickItemList = function OnClickItemList() {
       return setClicked(event.item);
     }
   }), clicked && JSON.stringify(clicked, null, 2)));
-}; // chromatic disabled because snapshot is covered by jest testing
-// and snapshot is the same as selection
+};
 
-
-(0, _react2.storiesOf)('List', module).add('onClickItem', function () {
-  return /*#__PURE__*/_react["default"].createElement(OnClickItemList, null);
-}, {
-  chromatic: {
-    disable: true
+exports.OnClickItemList = OnClickItemList;
+OnClickItemList.story = {
+  name: 'onClickItem',
+  parameters: {
+    // chromatic disabled because snapshot is covered by jest testing
+    // and snapshot is the same as selection
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

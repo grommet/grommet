@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.SecondaryKey = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -20,7 +21,7 @@ for (var i = 0; i < 40; i += 1) {
   });
 }
 
-var SecondaryKeyList = function SecondaryKeyList() {
+var SecondaryKey = function SecondaryKey() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -33,6 +34,4 @@ var SecondaryKeyList = function SecondaryKeyList() {
   })));
 };
 
-(0, _react2.storiesOf)('List', module).add('secondaryKey', function () {
-  return /*#__PURE__*/_react["default"].createElement(SecondaryKeyList, null);
-});
+exports.SecondaryKey = SecondaryKey;

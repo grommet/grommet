@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, List } from 'grommet';
 import { grommet } from 'grommet/themes';
 var locations = ['Boise', 'Fort Collins', 'Los Gatos', 'Palo Alto', 'San Francisco'];
@@ -15,7 +14,7 @@ for (var i = 0; i < 40; i += 1) {
   });
 }
 
-var OnClickItemList = function OnClickItemList() {
+export var OnClickItemList = function OnClickItemList() {
   var _React$useState = React.useState(),
       clicked = _React$useState[0],
       setClicked = _React$useState[1];
@@ -32,14 +31,14 @@ var OnClickItemList = function OnClickItemList() {
       return setClicked(event.item);
     }
   }), clicked && JSON.stringify(clicked, null, 2)));
-}; // chromatic disabled because snapshot is covered by jest testing
-// and snapshot is the same as selection
-
-
-storiesOf('List', module).add('onClickItem', function () {
-  return /*#__PURE__*/React.createElement(OnClickItemList, null);
-}, {
-  chromatic: {
-    disable: true
+};
+OnClickItemList.story = {
+  name: 'onClickItem',
+  parameters: {
+    // chromatic disabled because snapshot is covered by jest testing
+    // and snapshot is the same as selection
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

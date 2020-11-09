@@ -1,10 +1,8 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, List } from 'grommet';
 import { grommet } from 'grommet/themes';
 var locations = ['Boise', 'Fort Collins', 'Los Gatos', 'Palo Alto', 'San Francisco'];
-
-var BasicList = function BasicList() {
+export var Basic = function Basic() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -14,7 +12,3 @@ var BasicList = function BasicList() {
     data: locations
   })));
 };
-
-storiesOf('List', module).add('Basic', function () {
-  return /*#__PURE__*/React.createElement(BasicList, null);
-});

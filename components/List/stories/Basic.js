@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Basic = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -12,7 +13,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 var locations = ['Boise', 'Fort Collins', 'Los Gatos', 'Palo Alto', 'San Francisco'];
 
-var BasicList = function BasicList() {
+var Basic = function Basic() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -23,6 +24,4 @@ var BasicList = function BasicList() {
   })));
 };
 
-(0, _react2.storiesOf)('List', module).add('Basic', function () {
-  return /*#__PURE__*/_react["default"].createElement(BasicList, null);
-});
+exports.Basic = Basic;
