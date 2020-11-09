@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, List, Menu } from 'grommet';
 import { More } from 'grommet-icons';
@@ -13,7 +12,7 @@ for (let i = 0; i < 40; i += 1) {
   });
 }
 
-const ActionList = () => (
+export const Action = () => (
   <Grommet theme={grommet}>
     <Box pad="large">
       <List
@@ -33,5 +32,3 @@ const ActionList = () => (
     </Box>
   </Grommet>
 );
-
-storiesOf('List', module).add('Action', () => <ActionList />);
