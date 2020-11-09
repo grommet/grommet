@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, List } from 'grommet';
 import { grommet, ThemeType } from 'grommet/themes';
@@ -25,12 +24,10 @@ const theme: ThemeType = deepMerge(grommet, {
   },
 });
 
-const ThemedList = () => (
+export const Themed = () => (
   <Grommet theme={theme}>
     <Box align="center" pad="large">
       <List data={locations} />
     </Box>
   </Grommet>
 );
-
-storiesOf('List', module).add('Themed', () => <ThemedList />);
