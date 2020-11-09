@@ -3,6 +3,7 @@ import { describe, PropTypes } from 'react-desc';
 import {
   backgroundDoc,
   genericProps,
+  getBorderPropType,
   hoverIndicatorPropType,
   padPropType,
 } from '../../utils/prop-types';
@@ -32,42 +33,7 @@ const ANIMATION_SHAPE = PropTypes.shape({
   size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
 });
 
-const BORDER_SHAPE = PropTypes.shape({
-  color: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.shape({
-      dark: PropTypes.string,
-      light: PropTypes.string,
-    }),
-  ]),
-  side: PropTypes.oneOf([
-    'top',
-    'left',
-    'bottom',
-    'right',
-    'start',
-    'end',
-    'horizontal',
-    'vertical',
-    'all',
-    'between',
-  ]),
-  size: PropTypes.oneOfType([
-    PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
-    PropTypes.string,
-  ]),
-  style: PropTypes.oneOf([
-    'solid',
-    'dashed',
-    'dotted',
-    'double',
-    'groove',
-    'ridge',
-    'inset',
-    'outset',
-    'hidden',
-  ]).defaultValue('solid'),
-});
+const BORDER_SHAPE = getBorderPropType({ includeBetween: true });
 
 // if you update values here, make sure to update in Drop/doc too.
 const overflowPropType = PropTypes.oneOfType([
