@@ -13,7 +13,7 @@ const intervalDays = {
   '1 year': 365,
 };
 
-export const ZoomChart = ({ data, max }) => {
+const ZoomChart = ({ data, max }) => {
   const [reference, setReference] = useState(
     new Date(data[data.length - 1].time),
   );
