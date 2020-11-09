@@ -1,13 +1,29 @@
 "use strict";
 
 exports.__esModule = true;
-exports.pointPropType = exports.hoverIndicatorPropType = exports.genericProps = exports.padPropType = exports.marginProp = exports.MARGIN_SIZES = exports.backgroundDoc = exports.colorPropType = exports.a11yTitlePropType = void 0;
+exports.pointPropType = exports.hoverIndicatorPropType = exports.genericProps = exports.padPropType = exports.marginProp = exports.MARGIN_SIZES = exports.backgroundDoc = exports.colorPropType = exports.getBorderPropType = exports.a11yTitlePropType = void 0;
 
 var _reactDesc = require("react-desc");
 
 var a11yTitlePropType = _reactDesc.PropTypes.string.description("Custom label to be used by screen readers. When provided, an aria-label will\n   be added to the element.");
 
 exports.a11yTitlePropType = a11yTitlePropType;
+
+var getBorderPropType = function getBorderPropType(_ref) {
+  var _ref$includeBetween = _ref.includeBetween,
+      includeBetween = _ref$includeBetween === void 0 ? true : _ref$includeBetween;
+  return _reactDesc.PropTypes.shape({
+    color: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.shape({
+      dark: _reactDesc.PropTypes.string,
+      light: _reactDesc.PropTypes.string
+    })]),
+    side: _reactDesc.PropTypes.oneOf(['top', 'left', 'bottom', 'right', 'start', 'end', 'horizontal', 'vertical', 'all'].concat(includeBetween ? ['between'] : [])),
+    size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), _reactDesc.PropTypes.string]),
+    style: _reactDesc.PropTypes.oneOf(['solid', 'dashed', 'dotted', 'double', 'groove', 'ridge', 'inset', 'outset', 'hidden']).defaultValue('solid')
+  });
+};
+
+exports.getBorderPropType = getBorderPropType;
 
 var colorPropType = _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.shape({
   dark: _reactDesc.PropTypes.string,

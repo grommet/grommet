@@ -25,16 +25,9 @@ var ANIMATION_SHAPE = _reactDesc.PropTypes.shape({
   size: _reactDesc.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge'])
 });
 
-var BORDER_SHAPE = _reactDesc.PropTypes.shape({
-  color: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.shape({
-    dark: _reactDesc.PropTypes.string,
-    light: _reactDesc.PropTypes.string
-  })]),
-  side: _reactDesc.PropTypes.oneOf(['top', 'left', 'bottom', 'right', 'start', 'end', 'horizontal', 'vertical', 'all', 'between']),
-  size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), _reactDesc.PropTypes.string]),
-  style: _reactDesc.PropTypes.oneOf(['solid', 'dashed', 'dotted', 'double', 'groove', 'ridge', 'inset', 'outset', 'hidden']).defaultValue('solid')
+var BORDER_SHAPE = (0, _propTypes.getBorderPropType)({
+  includeBetween: true
 }); // if you update values here, make sure to update in Drop/doc too.
-
 
 var overflowPropType = _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(OVERFLOW_VALUES), _reactDesc.PropTypes.shape({
   horizontal: _reactDesc.PropTypes.oneOf(OVERFLOW_VALUES),

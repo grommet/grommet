@@ -1,7 +1,7 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import { describe, PropTypes } from 'react-desc';
-import { backgroundDoc, genericProps, hoverIndicatorPropType, padPropType } from '../../utils/prop-types';
+import { backgroundDoc, genericProps, getBorderPropType, hoverIndicatorPropType, padPropType } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
 export var OVERFLOW_VALUES = ['auto', 'hidden', 'scroll', 'visible'];
@@ -12,14 +12,8 @@ var ANIMATION_SHAPE = PropTypes.shape({
   duration: PropTypes.number,
   size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge'])
 });
-var BORDER_SHAPE = PropTypes.shape({
-  color: PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
-    dark: PropTypes.string,
-    light: PropTypes.string
-  })]),
-  side: PropTypes.oneOf(['top', 'left', 'bottom', 'right', 'start', 'end', 'horizontal', 'vertical', 'all', 'between']),
-  size: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string]),
-  style: PropTypes.oneOf(['solid', 'dashed', 'dotted', 'double', 'groove', 'ridge', 'inset', 'outset', 'hidden']).defaultValue('solid')
+var BORDER_SHAPE = getBorderPropType({
+  includeBetween: true
 }); // if you update values here, make sure to update in Drop/doc too.
 
 var overflowPropType = PropTypes.oneOfType([PropTypes.oneOf(OVERFLOW_VALUES), PropTypes.shape({
