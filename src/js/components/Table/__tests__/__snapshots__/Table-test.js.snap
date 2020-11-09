@@ -104,7 +104,7 @@ exports[`TableBody renders 1`] = `
     className="c1"
   >
     <tbody
-      className=""
+      className="StyledTable__StyledTableBody-sc-1m3u5g-3"
     />
   </table>
 </div>
@@ -153,10 +153,10 @@ exports[`TableCell plain renders 1`] = `
     className="c1"
   >
     <thead
-      className=""
+      className="StyledTable__StyledTableHeader-sc-1m3u5g-4"
     >
       <tr
-        className=""
+        className="StyledTable__StyledTableRow-sc-1m3u5g-2"
       >
         <td
           className="c2"
@@ -235,10 +235,10 @@ exports[`TableCell renders 1`] = `
     className="c1"
   >
     <thead
-      className=""
+      className="StyledTable__StyledTableHeader-sc-1m3u5g-4"
     >
       <tr
-        className=""
+        className="StyledTable__StyledTableRow-sc-1m3u5g-2"
       >
         <td
           className="c2"
@@ -246,10 +246,10 @@ exports[`TableCell renders 1`] = `
       </tr>
     </thead>
     <tbody
-      className=""
+      className="StyledTable__StyledTableBody-sc-1m3u5g-3"
     >
       <tr
-        className=""
+        className="StyledTable__StyledTableRow-sc-1m3u5g-2"
       >
         <td
           className="c3"
@@ -257,10 +257,10 @@ exports[`TableCell renders 1`] = `
       </tr>
     </tbody>
     <tfoot
-      className=""
+      className="StyledTable__StyledTableFooter-sc-1m3u5g-5"
     >
       <tr
-        className=""
+        className="StyledTable__StyledTableRow-sc-1m3u5g-2"
       >
         <td
           className="c4"
@@ -326,10 +326,10 @@ exports[`TableCell scope renders 1`] = `
     className="c1"
   >
     <thead
-      className=""
+      className="StyledTable__StyledTableHeader-sc-1m3u5g-4"
     >
       <tr
-        className=""
+        className="StyledTable__StyledTableRow-sc-1m3u5g-2"
       >
         <th
           className="c2"
@@ -338,10 +338,10 @@ exports[`TableCell scope renders 1`] = `
       </tr>
     </thead>
     <tbody
-      className=""
+      className="StyledTable__StyledTableBody-sc-1m3u5g-3"
     >
       <tr
-        className=""
+        className="StyledTable__StyledTableRow-sc-1m3u5g-2"
       >
         <th
           className="c3"
@@ -518,10 +518,10 @@ exports[`TableCell size renders 1`] = `
     className="c1"
   >
     <tbody
-      className=""
+      className="StyledTable__StyledTableBody-sc-1m3u5g-3"
     >
       <tr
-        className=""
+        className="StyledTable__StyledTableRow-sc-1m3u5g-2"
       >
         <td
           className="c2"
@@ -546,10 +546,10 @@ exports[`TableCell size renders 1`] = `
     className="c1"
   >
     <tbody
-      className=""
+      className="StyledTable__StyledTableBody-sc-1m3u5g-3"
     >
       <tr
-        className=""
+        className="StyledTable__StyledTableRow-sc-1m3u5g-2"
       >
         <td
           className="c6"
@@ -566,10 +566,10 @@ exports[`TableCell size renders 1`] = `
     className="c1"
   >
     <tbody
-      className=""
+      className="StyledTable__StyledTableBody-sc-1m3u5g-3"
     >
       <tr
-        className=""
+        className="StyledTable__StyledTableRow-sc-1m3u5g-2"
       >
         <td
           className="c7"
@@ -586,10 +586,10 @@ exports[`TableCell size renders 1`] = `
     className="c1"
   >
     <tbody
-      className=""
+      className="StyledTable__StyledTableBody-sc-1m3u5g-3"
     >
       <tr
-        className=""
+        className="StyledTable__StyledTableRow-sc-1m3u5g-2"
       >
         <td
           className="c9"
@@ -677,10 +677,10 @@ exports[`TableCell verticalAlign renders 1`] = `
     className="c1"
   >
     <thead
-      className=""
+      className="StyledTable__StyledTableHeader-sc-1m3u5g-4"
     >
       <tr
-        className=""
+        className="StyledTable__StyledTableRow-sc-1m3u5g-2"
       >
         <td
           className="c2"
@@ -727,7 +727,7 @@ exports[`TableFooter renders 1`] = `
     className="c1"
   >
     <tfoot
-      className=""
+      className="StyledTable__StyledTableFooter-sc-1m3u5g-5"
     />
   </table>
 </div>
@@ -763,7 +763,7 @@ exports[`TableHeader renders 1`] = `
     className="c1"
   >
     <thead
-      className=""
+      className="StyledTable__StyledTableHeader-sc-1m3u5g-4"
     />
   </table>
 </div>
@@ -799,10 +799,10 @@ exports[`TableRow renders 1`] = `
     className="c1"
   >
     <tbody
-      className=""
+      className="StyledTable__StyledTableBody-sc-1m3u5g-3"
     >
       <tr
-        className=""
+        className="StyledTable__StyledTableRow-sc-1m3u5g-2"
       />
     </tbody>
   </table>

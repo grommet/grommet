@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, DateInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Example = () => {
+export const FormatInline = () => {
   const [value, setValue] = React.useState('');
   const onChange = event => {
     const nextValue = event.value;
@@ -25,4 +24,6 @@ const Example = () => {
   );
 };
 
-storiesOf('DateInput', module).add('Format inline', () => <Example />);
+FormatInline.story = {
+  name: 'Format inline',
+};
