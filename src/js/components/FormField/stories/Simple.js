@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
-import { grommet, Box, FormField, Select, Grommet } from 'grommet';
+import { Box, FormField, Grommet, Select } from 'grommet';
+import { grommet } from 'grommet/themes';
 
 const allOptions = Array(100)
   .fill()
   .map((_, i) => `option ${i + 1}`);
 
-const FormFieldSelect = props => {
+export const Simple = () => {
   const [value, setValue] = useState('');
 
   return (
     <Grommet theme={grommet}>
       <Box align="center" pad="large">
-        <FormField label="Label" htmlFor="select" {...props}>
+        <FormField label="Label" htmlFor="select">
           <Select
             id="select"
             placeholder="placeholder"
@@ -26,5 +26,3 @@ const FormFieldSelect = props => {
     </Grommet>
   );
 };
-
-storiesOf('FormField', module).add('Select', () => <FormFieldSelect />);
