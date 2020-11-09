@@ -1,7 +1,6 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import React, { useMemo, useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Chart, RangeSelector, Stack, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { calcs } from '../calcs';
@@ -40,7 +39,7 @@ var compressData = function compressData(data, max, count) {
   return result;
 };
 
-var WindowChart = function WindowChart(_ref) {
+export var WindowChart = function WindowChart(_ref) {
   var data = _ref.data,
       max = _ref.max;
 
@@ -194,10 +193,9 @@ var WindowChart = function WindowChart(_ref) {
     }
   }))));
 };
-
-storiesOf('Chart', module).add('Window', function () {
+export var Window = function Window() {
   return /*#__PURE__*/React.createElement(WindowChart, {
     data: generateData(1000, 100),
     max: 100
   });
-});
+};

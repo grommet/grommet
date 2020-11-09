@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Chart, Heading } from 'grommet';
 import { grommet } from 'grommet/themes';
 var type = 'bar';
@@ -9,8 +8,7 @@ var values = Array(14).fill(0).map(function (_, index) {
   value += delta % 2 ? delta : -delta;
   return [index, value];
 });
-
-var LayoutChart = function LayoutChart() {
+export var Layout = function Layout() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -51,7 +49,3 @@ var LayoutChart = function LayoutChart() {
     round: true
   }))));
 };
-
-storiesOf('Chart', module).add('Layout', function () {
-  return /*#__PURE__*/React.createElement(LayoutChart, null);
-});

@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Chart, Heading } from 'grommet';
 import { grommet } from 'grommet/themes';
 var values = [{
@@ -9,8 +8,7 @@ var values = [{
 }, {
   value: [30, 15]
 }];
-
-var Example = function Example() {
+export var AnimatedChart = function AnimatedChart() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -31,11 +29,11 @@ var Example = function Example() {
     }));
   })));
 };
-
-storiesOf('Chart', module).add('Animate', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-}, {
-  chromatic: {
-    disable: true
+AnimatedChart.story = {
+  name: 'Animate',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.LabelledCharts = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -59,6 +60,7 @@ var LabelledCharts = function LabelledCharts() {
   })));
 };
 
-(0, _react2.storiesOf)('Chart', module).add('Labelled', function () {
-  return /*#__PURE__*/_react["default"].createElement(LabelledCharts, null);
-});
+exports.LabelledCharts = LabelledCharts;
+LabelledCharts.story = {
+  name: 'Labelled'
+};

@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.Zoom = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
@@ -164,13 +165,18 @@ var ZoomChart = function ZoomChart(_ref) {
   })));
 };
 
-(0, _react2.storiesOf)('Chart', module).add('Zoom', function () {
+var Zoom = function Zoom() {
   return /*#__PURE__*/_react["default"].createElement(ZoomChart, {
     data: (0, _data.generateData)(1000, 100),
     max: 100
   });
-}, {
-  chromatic: {
-    disable: true
+};
+
+exports.Zoom = Zoom;
+Zoom.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

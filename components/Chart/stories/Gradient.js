@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.GradientCharts = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -61,6 +62,7 @@ var GradientCharts = function GradientCharts() {
   })));
 };
 
-(0, _react2.storiesOf)('Chart', module).add('Gradient', function () {
-  return /*#__PURE__*/_react["default"].createElement(GradientCharts, null);
-});
+exports.GradientCharts = GradientCharts;
+GradientCharts.story = {
+  name: 'Gradient'
+};

@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Range = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -12,7 +13,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 var values = [[10, 20, 30], [20, 30, 60], [30, 15, 20]];
 
-var Example = function Example() {
+var Range = function Range() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -34,6 +35,4 @@ var Example = function Example() {
   })));
 };
 
-(0, _react2.storiesOf)('Chart', module).add('Range', function () {
-  return /*#__PURE__*/_react["default"].createElement(Example, null);
-});
+exports.Range = Range;

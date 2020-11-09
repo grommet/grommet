@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Chart, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
@@ -31,7 +30,7 @@ var LabelledChart = function LabelledChart(_ref) {
   }, value, " TiB")));
 };
 
-var LabelledCharts = function LabelledCharts() {
+export var LabelledCharts = function LabelledCharts() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -51,7 +50,6 @@ var LabelledCharts = function LabelledCharts() {
     color: "accent-3"
   })));
 };
-
-storiesOf('Chart', module).add('Labelled', function () {
-  return /*#__PURE__*/React.createElement(LabelledCharts, null);
-});
+LabelledCharts.story = {
+  name: 'Labelled'
+};

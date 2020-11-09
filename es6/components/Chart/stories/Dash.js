@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Chart } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var Example = function Example() {
+export var Dash = function Dash() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -36,7 +34,3 @@ var Example = function Example() {
     values: [[10, 20], [20, 30], [30, 15]]
   })));
 };
-
-storiesOf('Chart', module).add('Dash', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-});

@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.Scan = exports.ScanChart = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
@@ -153,13 +154,20 @@ var ScanChart = function ScanChart(props) {
   }))))));
 };
 
-(0, _react2.storiesOf)('Chart', module).add('Scan', function () {
+exports.ScanChart = ScanChart;
+
+var Scan = function Scan() {
   return /*#__PURE__*/_react["default"].createElement(ScanChart, {
     data: (0, _data.generateData)(30, 100),
     max: 100
   });
-}, {
-  chromatic: {
-    disable: true
+};
+
+exports.Scan = Scan;
+Scan.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

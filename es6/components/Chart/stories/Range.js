@@ -1,10 +1,8 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Chart, Heading } from 'grommet';
 import { grommet } from 'grommet/themes';
 var values = [[10, 20, 30], [20, 30, 60], [30, 15, 20]];
-
-var Example = function Example() {
+export var Range = function Range() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -25,7 +23,3 @@ var Example = function Example() {
     }));
   })));
 };
-
-storiesOf('Chart', module).add('Range', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-});

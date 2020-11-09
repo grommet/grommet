@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.Window = exports.WindowChart = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
@@ -207,9 +208,13 @@ var WindowChart = function WindowChart(_ref) {
   }))));
 };
 
-(0, _react2.storiesOf)('Chart', module).add('Window', function () {
+exports.WindowChart = WindowChart;
+
+var Window = function Window() {
   return /*#__PURE__*/_react["default"].createElement(WindowChart, {
     data: (0, _data.generateData)(1000, 100),
     max: 100
   });
-});
+};
+
+exports.Window = Window;

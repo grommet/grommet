@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.Rich = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
@@ -16,7 +17,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-var RichChart = function RichChart() {
+var Rich = function Rich() {
   var _useState = (0, _react.useState)({
     values: [],
     yAxis: [],
@@ -146,6 +147,4 @@ var RichChart = function RichChart() {
   })))));
 };
 
-(0, _react2.storiesOf)('Chart', module).add('Rich', function () {
-  return /*#__PURE__*/_react["default"].createElement(RichChart, null);
-});
+exports.Rich = Rich;

@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.ValueStyleChart = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -48,7 +49,7 @@ var values = [{
   color: 'status-warning'
 }];
 
-var Example = function Example() {
+var ValueStyleChart = function ValueStyleChart() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -65,6 +66,7 @@ var Example = function Example() {
   })));
 };
 
-(0, _react2.storiesOf)('Chart', module).add('Value style', function () {
-  return /*#__PURE__*/_react["default"].createElement(Example, null);
-});
+exports.ValueStyleChart = ValueStyleChart;
+ValueStyleChart.story = {
+  name: 'Value style'
+};

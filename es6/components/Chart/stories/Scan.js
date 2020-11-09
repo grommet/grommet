@@ -1,11 +1,9 @@
 import React, { useMemo, useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Chart, Keyboard, Stack, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { calcs } from '../calcs';
 import { generateData } from './data';
-
-var ScanChart = function ScanChart(props) {
+export var ScanChart = function ScanChart(props) {
   var _useState = useState(undefined),
       active = _useState[0],
       setActive = _useState[1];
@@ -141,14 +139,16 @@ var ScanChart = function ScanChart(props) {
     }, new Date(t).toLocaleDateString());
   }))))));
 };
-
-storiesOf('Chart', module).add('Scan', function () {
+export var Scan = function Scan() {
   return /*#__PURE__*/React.createElement(ScanChart, {
     data: generateData(30, 100),
     max: 100
   });
-}, {
-  chromatic: {
-    disable: true
+};
+Scan.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};
