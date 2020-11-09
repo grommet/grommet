@@ -1,11 +1,10 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
+import React, { useState } from 'react';
 
-import { Grommet, Box, TextArea } from 'grommet';
+import { Box, Grommet, TextArea } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const FillTextArea = () => {
-  const [value, setValue] = React.useState('');
+export const Fill = () => {
+  const [value, setValue] = useState('');
 
   const onChange = event => setValue(event.target.value);
 
@@ -21,5 +20,3 @@ const FillTextArea = () => {
     </Grommet>
   );
 };
-
-storiesOf('TextArea', module).add('Fill', () => <FillTextArea />);
