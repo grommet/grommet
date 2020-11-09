@@ -1,8 +1,8 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { grommet, Box, Form, FormField, Grid, Grommet, Heading, RadioButtonGroup, TextInput, ThemeContext } from 'grommet';
+import { Box, Form, FormField, Grid, Grommet, Heading, RadioButtonGroup, TextInput, ThemeContext } from 'grommet';
+import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
 var customTheme = deepMerge(grommet, {
   formField: {
@@ -43,8 +43,7 @@ var adjustedLabelMargins = {
     margin: 'none'
   }
 };
-
-var FieldSpacingOptions = function FieldSpacingOptions() {
+export var FieldSpacingOptions = function FieldSpacingOptions() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: customTheme
   }, /*#__PURE__*/React.createElement(Grid, {
@@ -222,7 +221,6 @@ var FieldSpacingOptions = function FieldSpacingOptions() {
     options: ['Eenie', 'Meenie', 'Miney', 'Moe']
   })))))));
 };
-
-storiesOf('Form', module).add('FormField spacing', function () {
-  return /*#__PURE__*/React.createElement(FieldSpacingOptions, null);
-});
+FieldSpacingOptions.story = {
+  name: 'Field spacing options'
+};

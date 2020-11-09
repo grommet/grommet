@@ -1,50 +1,27 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { deepMerge } from 'grommet/utils';
-import { grommet, Box, Button, CheckBox, Form, FormField, MaskedInput, RadioButtonGroup, RangeInput, Select, TextArea, TextInput, Grommet } from 'grommet';
-var customFormFieldTheme = {
-  global: {
-    font: {
-      size: '16px'
-    },
-    input: {
-      weight: 400
-    }
-  },
-  formField: {
-    label: {
-      color: 'dark-3',
-      size: 'small',
-      margin: 'xsmall',
-      weight: 600
-    },
-    border: {
-      position: 'outer',
-      side: 'all'
-    },
-    disabled: {
-      background: {
-        color: 'status-disabled',
-        opacity: true
-      }
-    },
-    content: {
-      pad: 'small'
-    },
-    error: {
-      background: {
-        color: 'status-critical',
-        opacity: 'weak'
-      }
-    },
-    margin: 'none'
-  }
-};
-
-var CustomFormField = function CustomFormField() {
+import { Box, Button, CheckBoxGroup, Form, FormField, Grommet, MaskedInput, RadioButtonGroup, RangeInput, Select, TextArea, TextInput } from 'grommet';
+import { grommet } from 'grommet/themes';
+var passwordRulesStrong = [{
+  regexp: new RegExp('(?=.*?[A-Z])'),
+  message: 'One uppercase letter',
+  status: 'error'
+}, {
+  regexp: new RegExp('(?=.*?[a-z])'),
+  message: 'One lowercase letter',
+  status: 'error'
+}, {
+  regexp: new RegExp('(?=.*?[#?!@$ %^&*-])'),
+  message: 'One special character',
+  status: 'error'
+}, {
+  regexp: new RegExp('.{8,}'),
+  message: 'At least 8 characters',
+  status: 'error'
+}];
+export var FieldWithChildren = function FieldWithChildren() {
   return /*#__PURE__*/React.createElement(Grommet, {
     full: true,
-    theme: deepMerge(grommet, customFormFieldTheme)
+    theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     align: "center",
@@ -58,6 +35,11 @@ var CustomFormField = function CustomFormField() {
     onSubmit: function onSubmit(_ref) {
       var value = _ref.value;
       return console.log('Submit', value);
+    },
+    onValidate: function onValidate(_ref2) {
+      var errors = _ref2.errors,
+          infos = _ref2.infos;
+      return console.log('Validate', errors, infos);
     }
   }, /*#__PURE__*/React.createElement(FormField, {
     label: "Name",
@@ -86,10 +68,19 @@ var CustomFormField = function CustomFormField() {
       placeholder: 'com'
     }]
   })), /*#__PURE__*/React.createElement(FormField, {
-    name: "subscribe"
-  }, /*#__PURE__*/React.createElement(CheckBox, {
-    name: "subscribe",
-    label: "Subscribe?"
+    label: "Password",
+    name: "password",
+    htmlFor: "password",
+    validate: passwordRulesStrong
+  }, /*#__PURE__*/React.createElement(TextInput, {
+    name: "password",
+    id: "password",
+    type: "password"
+  })), /*#__PURE__*/React.createElement(FormField, {
+    name: "subscription"
+  }, /*#__PURE__*/React.createElement(CheckBoxGroup, {
+    name: "subscription",
+    options: ['subscribe', 'receive email notifications']
   })), /*#__PURE__*/React.createElement(FormField, {
     name: "ampm"
   }, /*#__PURE__*/React.createElement(RadioButtonGroup, {
@@ -100,17 +91,17 @@ var CustomFormField = function CustomFormField() {
     name: "size"
   }, /*#__PURE__*/React.createElement(Select, {
     name: "size",
+    multiple: true,
     options: ['small', 'medium', 'large']
   })), /*#__PURE__*/React.createElement(FormField, {
     label: "Comments",
-    name: "comments",
-    disabled: true
+    name: "comments"
   }, /*#__PURE__*/React.createElement(TextArea, {
-    name: "comments",
-    disabled: true
+    name: "comments"
   })), /*#__PURE__*/React.createElement(FormField, {
     label: "Age",
-    name: "age"
+    name: "age",
+    pad: true
   }, /*#__PURE__*/React.createElement(RangeInput, {
     name: "age",
     min: 15,
@@ -132,7 +123,6 @@ var CustomFormField = function CustomFormField() {
     primary: true
   }))))));
 };
-
-storiesOf('Form', module).add('Custom theme', function () {
-  return /*#__PURE__*/React.createElement(CustomFormField, null);
-});
+FieldWithChildren.story = {
+  name: 'Field with children'
+};

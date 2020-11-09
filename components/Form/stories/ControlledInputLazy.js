@@ -1,45 +1,48 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.ControlledInputLazy = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
 var _themes = require("grommet/themes");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
-var Example = function Example() {
-  var _React$useState = _react["default"].useState(''),
-      name = _React$useState[0],
-      setName = _React$useState[1];
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-  var _React$useState2 = _react["default"].useState(''),
-      email = _React$useState2[0],
-      setEmail = _React$useState2[1];
+var ControlledInputLazy = function ControlledInputLazy() {
+  var _useState = (0, _react.useState)(''),
+      name = _useState[0],
+      setName = _useState[1];
 
-  var _React$useState3 = _react["default"].useState(false),
-      subscribe = _React$useState3[0],
-      setSubscribe = _React$useState3[1];
+  var _useState2 = (0, _react.useState)(''),
+      email = _useState2[0],
+      setEmail = _useState2[1];
 
-  var _React$useState4 = _react["default"].useState(''),
-      ampm = _React$useState4[0],
-      setAmpm = _React$useState4[1];
+  var _useState3 = (0, _react.useState)(false),
+      subscribe = _useState3[0],
+      setSubscribe = _useState3[1];
 
-  var _React$useState5 = _react["default"].useState(''),
-      size = _React$useState5[0],
-      setSize = _React$useState5[1];
+  var _useState4 = (0, _react.useState)(''),
+      ampm = _useState4[0],
+      setAmpm = _useState4[1];
 
-  var _React$useState6 = _react["default"].useState(''),
-      comments = _React$useState6[0],
-      setComments = _React$useState6[1];
+  var _useState5 = (0, _react.useState)(''),
+      size = _useState5[0],
+      setSize = _useState5[1];
 
-  var _React$useState7 = _react["default"].useState(''),
-      age = _React$useState7[0],
-      setAge = _React$useState7[1];
+  var _useState6 = (0, _react.useState)(''),
+      comments = _useState6[0],
+      setComments = _useState6[1];
 
-  _react["default"].useEffect(function () {
+  var _useState7 = (0, _react.useState)(''),
+      age = _useState7[0],
+      setAge = _useState7[1];
+
+  (0, _react.useEffect)(function () {
     setName('initial');
     setEmail('initial@my.com');
     setSubscribe(true);
@@ -48,7 +51,6 @@ var Example = function Example() {
     setComments('initial');
     setAge(60);
   }, []);
-
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
     theme: _themes.grommet
@@ -174,6 +176,7 @@ var Example = function Example() {
   }))))));
 };
 
-(0, _react2.storiesOf)('Form', module).add('Controlled input lazy', function () {
-  return /*#__PURE__*/_react["default"].createElement(Example, null);
-});
+exports.ControlledInputLazy = ControlledInputLazy;
+ControlledInputLazy.story = {
+  name: 'Controlled input lazy'
+};

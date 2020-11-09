@@ -1,14 +1,12 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import isChromatic from 'chromatic/isChromatic';
 
 import {
   Box,
   Button,
   CheckBox,
-  Grommet,
   Form,
   FormField,
+  Grommet,
   RadioButtonGroup,
   RangeInput,
   Select,
@@ -29,7 +27,7 @@ interface FormState {
   age?: number;
 }
 
-const Example = () => (
+export const UncontrolledTyped = () => (
   <Grommet full theme={grommet}>
     <Box fill align="center" justify="center">
       <Box width="medium">
@@ -95,6 +93,9 @@ const Example = () => (
   </Grommet>
 );
 
-if (!isChromatic()) {
-  storiesOf('Form', module).add('Typed form', () => <Example />);
-}
+UncontrolledTyped.story = {
+  name: 'Uncontrolled typed',
+  parameters: {
+    chromatic: { disable: true },
+  },
+};

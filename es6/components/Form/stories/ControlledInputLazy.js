@@ -1,38 +1,36 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { Box, Button, CheckBox, Grommet, Form, FormField, MaskedInput, RadioButtonGroup, RangeInput, Select, TextArea, TextInput } from 'grommet';
+import React, { useEffect, useState } from 'react';
+import { Box, Button, CheckBox, Form, FormField, Grommet, MaskedInput, RadioButtonGroup, RangeInput, Select, TextArea, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
+export var ControlledInputLazy = function ControlledInputLazy() {
+  var _useState = useState(''),
+      name = _useState[0],
+      setName = _useState[1];
 
-var Example = function Example() {
-  var _React$useState = React.useState(''),
-      name = _React$useState[0],
-      setName = _React$useState[1];
+  var _useState2 = useState(''),
+      email = _useState2[0],
+      setEmail = _useState2[1];
 
-  var _React$useState2 = React.useState(''),
-      email = _React$useState2[0],
-      setEmail = _React$useState2[1];
+  var _useState3 = useState(false),
+      subscribe = _useState3[0],
+      setSubscribe = _useState3[1];
 
-  var _React$useState3 = React.useState(false),
-      subscribe = _React$useState3[0],
-      setSubscribe = _React$useState3[1];
+  var _useState4 = useState(''),
+      ampm = _useState4[0],
+      setAmpm = _useState4[1];
 
-  var _React$useState4 = React.useState(''),
-      ampm = _React$useState4[0],
-      setAmpm = _React$useState4[1];
+  var _useState5 = useState(''),
+      size = _useState5[0],
+      setSize = _useState5[1];
 
-  var _React$useState5 = React.useState(''),
-      size = _React$useState5[0],
-      setSize = _React$useState5[1];
+  var _useState6 = useState(''),
+      comments = _useState6[0],
+      setComments = _useState6[1];
 
-  var _React$useState6 = React.useState(''),
-      comments = _React$useState6[0],
-      setComments = _React$useState6[1];
+  var _useState7 = useState(''),
+      age = _useState7[0],
+      setAge = _useState7[1];
 
-  var _React$useState7 = React.useState(''),
-      age = _React$useState7[0],
-      setAge = _React$useState7[1];
-
-  React.useEffect(function () {
+  useEffect(function () {
     setName('initial');
     setEmail('initial@my.com');
     setSubscribe(true);
@@ -165,7 +163,6 @@ var Example = function Example() {
     primary: true
   }))))));
 };
-
-storiesOf('Form', module).add('Controlled input lazy', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-});
+ControlledInputLazy.story = {
+  name: 'Controlled input lazy'
+};

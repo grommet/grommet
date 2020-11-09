@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.FieldCustomStates = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
@@ -71,7 +72,7 @@ var customTheme = (0, _utils.deepMerge)(_grommet.grommet, {
   }
 });
 
-var CustomFormFieldStates = function CustomFormFieldStates() {
+var FieldCustomStates = function FieldCustomStates() {
   var inputRef = (0, _react.useRef)();
   (0, _react.useEffect)(function () {
     inputRef.current.focus();
@@ -136,6 +137,7 @@ var CustomFormFieldStates = function CustomFormFieldStates() {
   }))))));
 };
 
-(0, _react2.storiesOf)('Form', module).add('Field states custom', function () {
-  return /*#__PURE__*/_react["default"].createElement(CustomFormFieldStates, null);
-});
+exports.FieldCustomStates = FieldCustomStates;
+FieldCustomStates.story = {
+  name: 'Field custom states'
+};

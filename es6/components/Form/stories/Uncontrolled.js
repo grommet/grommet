@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { Box, Button, CheckBox, Grommet, Form, FormField, MaskedInput, RadioButtonGroup, RangeInput, Select, TextArea, TextInput } from 'grommet';
+import { Box, Button, CheckBox, Form, FormField, Grommet, MaskedInput, RadioButtonGroup, RangeInput, Select, TextArea, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var Example = function Example() {
+export var Uncontrolled = function Uncontrolled() {
   return /*#__PURE__*/React.createElement(Grommet, {
     full: true,
     theme: grommet
@@ -91,7 +89,3 @@ var Example = function Example() {
     primary: true
   }))))));
 };
-
-storiesOf('Form', module).add('Uncontrolled', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-});

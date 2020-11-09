@@ -1,6 +1,5 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { Box, Button, CheckBox, Grommet, Form, FormField, MaskedInput, RadioButtonGroup, RangeInput, Select, TextArea, TextInput } from 'grommet';
+import React, { useEffect, useState } from 'react';
+import { Box, Button, CheckBox, Form, FormField, Grommet, MaskedInput, RadioButtonGroup, RangeInput, Select, TextArea, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 var defaultValue = {
   name: '',
@@ -11,13 +10,12 @@ var defaultValue = {
   comments: '',
   age: ''
 };
+export var ControlledLazy = function ControlledLazy() {
+  var _useState = useState(defaultValue),
+      value = _useState[0],
+      setValue = _useState[1];
 
-var Example = function Example() {
-  var _React$useState = React.useState(defaultValue),
-      value = _React$useState[0],
-      setValue = _React$useState[1];
-
-  React.useEffect(function () {
+  useEffect(function () {
     return setValue({
       name: 'initial',
       email: 'initial@my.com',
@@ -119,13 +117,13 @@ var Example = function Example() {
     label: "Update",
     primary: true
   }))))));
-}; // chromatic disabled because snapshot is the same as Controlled
-
-
-storiesOf('Form', module).add('Controlled lazy', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-}, {
-  chromatic: {
-    disable: true
+};
+ControlledLazy.story = {
+  name: 'Controlled lazy',
+  parameters: {
+    // chromatic disabled because snapshot is the same as Controlled
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

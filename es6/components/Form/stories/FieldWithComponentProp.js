@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { Box, Button, CheckBox, Grommet, Form, FormField, RadioButtonGroup, RangeInput, Select, TextArea } from 'grommet';
+import { Box, Button, CheckBox, Form, FormField, Grommet, RadioButtonGroup, RangeInput, Select, TextArea } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var Example = function Example() {
+export var FieldWithComponentProp = function FieldWithComponentProp() {
   return /*#__PURE__*/React.createElement(Grommet, {
     full: true,
     theme: grommet
@@ -101,7 +99,6 @@ var Example = function Example() {
     primary: true
   }))))));
 };
-
-storiesOf('Form', module).add('FormField component', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-});
+FieldWithComponentProp.story = {
+  name: 'Field with component prop'
+};

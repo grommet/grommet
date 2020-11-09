@@ -1,29 +1,49 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { Box, Button, CheckBoxGroup, Grommet, Form, FormField, MaskedInput, RadioButtonGroup, RangeInput, Select, TextArea, TextInput } from 'grommet';
+import { Box, Button, CheckBox, Form, FormField, Grommet, MaskedInput, RadioButtonGroup, RangeInput, Select, TextArea, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
-var passwordRulesStrong = [{
-  regexp: new RegExp('(?=.*?[A-Z])'),
-  message: 'One uppercase letter',
-  status: 'error'
-}, {
-  regexp: new RegExp('(?=.*?[a-z])'),
-  message: 'One lowercase letter',
-  status: 'error'
-}, {
-  regexp: new RegExp('(?=.*?[#?!@$ %^&*-])'),
-  message: 'One special character',
-  status: 'error'
-}, {
-  regexp: new RegExp('.{8,}'),
-  message: 'At least 8 characters',
-  status: 'error'
-}];
-
-var Example = function Example() {
+import { deepMerge } from 'grommet/utils';
+var customTheme = {
+  global: {
+    font: {
+      size: '16px'
+    },
+    input: {
+      weight: 400
+    }
+  },
+  formField: {
+    label: {
+      color: 'dark-3',
+      size: 'small',
+      margin: 'xsmall',
+      weight: 600
+    },
+    border: {
+      position: 'outer',
+      side: 'all'
+    },
+    disabled: {
+      background: {
+        color: 'status-disabled',
+        opacity: true
+      }
+    },
+    content: {
+      pad: 'small'
+    },
+    error: {
+      background: {
+        color: 'status-critical',
+        opacity: 'weak'
+      }
+    },
+    margin: 'none'
+  }
+};
+export var Custom = function Custom() {
   return /*#__PURE__*/React.createElement(Grommet, {
     full: true,
-    theme: grommet
+    theme: deepMerge(grommet, customTheme)
   }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
     align: "center",
@@ -37,11 +57,6 @@ var Example = function Example() {
     onSubmit: function onSubmit(_ref) {
       var value = _ref.value;
       return console.log('Submit', value);
-    },
-    onValidate: function onValidate(_ref2) {
-      var errors = _ref2.errors,
-          infos = _ref2.infos;
-      return console.log('Validate', errors, infos);
     }
   }, /*#__PURE__*/React.createElement(FormField, {
     label: "Name",
@@ -70,19 +85,10 @@ var Example = function Example() {
       placeholder: 'com'
     }]
   })), /*#__PURE__*/React.createElement(FormField, {
-    label: "Password",
-    name: "password",
-    htmlFor: "password",
-    validate: passwordRulesStrong
-  }, /*#__PURE__*/React.createElement(TextInput, {
-    name: "password",
-    id: "password",
-    type: "password"
-  })), /*#__PURE__*/React.createElement(FormField, {
-    name: "subscription"
-  }, /*#__PURE__*/React.createElement(CheckBoxGroup, {
-    name: "subscription",
-    options: ['subscribe', 'receive email notifications']
+    name: "subscribe"
+  }, /*#__PURE__*/React.createElement(CheckBox, {
+    name: "subscribe",
+    label: "Subscribe?"
   })), /*#__PURE__*/React.createElement(FormField, {
     name: "ampm"
   }, /*#__PURE__*/React.createElement(RadioButtonGroup, {
@@ -93,17 +99,17 @@ var Example = function Example() {
     name: "size"
   }, /*#__PURE__*/React.createElement(Select, {
     name: "size",
-    multiple: true,
     options: ['small', 'medium', 'large']
   })), /*#__PURE__*/React.createElement(FormField, {
     label: "Comments",
-    name: "comments"
+    name: "comments",
+    disabled: true
   }, /*#__PURE__*/React.createElement(TextArea, {
-    name: "comments"
+    name: "comments",
+    disabled: true
   })), /*#__PURE__*/React.createElement(FormField, {
     label: "Age",
-    name: "age",
-    pad: true
+    name: "age"
   }, /*#__PURE__*/React.createElement(RangeInput, {
     name: "age",
     min: 15,
@@ -125,7 +131,3 @@ var Example = function Example() {
     primary: true
   }))))));
 };
-
-storiesOf('Form', module).add('FormField children', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-});

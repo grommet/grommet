@@ -1,20 +1,23 @@
 "use strict";
 
+exports.__esModule = true;
+exports.Themed = void 0;
+
 var _react = _interopRequireDefault(require("react"));
 
 var _styledComponents = require("styled-components");
 
-var _react2 = require("@storybook/react");
+var _grommetIcons = require("grommet-icons");
 
 var _grommet = require("grommet");
 
-var _grommetIcons = require("grommet-icons");
+var _themes = require("grommet/themes");
 
 var _utils = require("../../../utils");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var customTheme = (0, _utils.deepMerge)(_grommet.grommet, {
+var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
   formField: {
     border: {
       side: 'all'
@@ -87,7 +90,7 @@ var Themed = function Themed() {
     name: "example1",
     label: "Field Label",
     help: "Some helpful descriptive text",
-    error: "Message to show on error. This is a long message to \n              demonstrate custom svg alignment.",
+    error: "Message to show on error. This is a long message to\n              demonstrate custom svg alignment.",
     info: "Here is some additional information that should give the\n              user better context on how to properly complete the FormField.",
     contentProps: {
       background: 'lightblue',
@@ -133,6 +136,4 @@ var Themed = function Themed() {
   }))))));
 };
 
-(0, _react2.storiesOf)('Form', module).add('Themed', function () {
-  return /*#__PURE__*/_react["default"].createElement(Themed, null);
-});
+exports.Themed = Themed;

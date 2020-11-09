@@ -1,9 +1,9 @@
 import React from 'react';
 import { css } from 'styled-components';
-import { storiesOf } from '@storybook/react';
-import { grommet, Box, Form, FormField, Grommet, Heading, Text, TextInput } from 'grommet';
 import { Alert } from "grommet-icons/es6/icons/Alert";
 import { StatusInfo } from "grommet-icons/es6/icons/StatusInfo";
+import { Box, Form, FormField, Grommet, Heading, Text, TextInput } from 'grommet';
+import { grommet } from 'grommet/themes';
 import { deepMerge } from '../../../utils';
 var customTheme = deepMerge(grommet, {
   formField: {
@@ -58,8 +58,7 @@ var customTheme = deepMerge(grommet, {
     }
   }
 });
-
-var Themed = function Themed() {
+export var Themed = function Themed() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: customTheme
   }, /*#__PURE__*/React.createElement(Box, {
@@ -78,7 +77,7 @@ var Themed = function Themed() {
     name: "example1",
     label: "Field Label",
     help: "Some helpful descriptive text",
-    error: "Message to show on error. This is a long message to \n              demonstrate custom svg alignment.",
+    error: "Message to show on error. This is a long message to\n              demonstrate custom svg alignment.",
     info: "Here is some additional information that should give the\n              user better context on how to properly complete the FormField.",
     contentProps: {
       background: 'lightblue',
@@ -123,7 +122,3 @@ var Themed = function Themed() {
     disabled: true
   }))))));
 };
-
-storiesOf('Form', module).add('Themed', function () {
-  return /*#__PURE__*/React.createElement(Themed, null);
-});

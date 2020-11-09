@@ -1,58 +1,38 @@
 "use strict";
 
+exports.__esModule = true;
+exports.FieldWithChildren = void 0;
+
 var _react = _interopRequireDefault(require("react"));
-
-var _react2 = require("@storybook/react");
-
-var _utils = require("grommet/utils");
 
 var _grommet = require("grommet");
 
+var _themes = require("grommet/themes");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var customFormFieldTheme = {
-  global: {
-    font: {
-      size: '16px'
-    },
-    input: {
-      weight: 400
-    }
-  },
-  formField: {
-    label: {
-      color: 'dark-3',
-      size: 'small',
-      margin: 'xsmall',
-      weight: 600
-    },
-    border: {
-      position: 'outer',
-      side: 'all'
-    },
-    disabled: {
-      background: {
-        color: 'status-disabled',
-        opacity: true
-      }
-    },
-    content: {
-      pad: 'small'
-    },
-    error: {
-      background: {
-        color: 'status-critical',
-        opacity: 'weak'
-      }
-    },
-    margin: 'none'
-  }
-};
+var passwordRulesStrong = [{
+  regexp: new RegExp('(?=.*?[A-Z])'),
+  message: 'One uppercase letter',
+  status: 'error'
+}, {
+  regexp: new RegExp('(?=.*?[a-z])'),
+  message: 'One lowercase letter',
+  status: 'error'
+}, {
+  regexp: new RegExp('(?=.*?[#?!@$ %^&*-])'),
+  message: 'One special character',
+  status: 'error'
+}, {
+  regexp: new RegExp('.{8,}'),
+  message: 'At least 8 characters',
+  status: 'error'
+}];
 
-var CustomFormField = function CustomFormField() {
+var FieldWithChildren = function FieldWithChildren() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
-    theme: (0, _utils.deepMerge)(_grommet.grommet, customFormFieldTheme)
+    theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
     align: "center",
@@ -66,6 +46,11 @@ var CustomFormField = function CustomFormField() {
     onSubmit: function onSubmit(_ref) {
       var value = _ref.value;
       return console.log('Submit', value);
+    },
+    onValidate: function onValidate(_ref2) {
+      var errors = _ref2.errors,
+          infos = _ref2.infos;
+      return console.log('Validate', errors, infos);
     }
   }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     label: "Name",
@@ -94,10 +79,19 @@ var CustomFormField = function CustomFormField() {
       placeholder: 'com'
     }]
   })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
-    name: "subscribe"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.CheckBox, {
-    name: "subscribe",
-    label: "Subscribe?"
+    label: "Password",
+    name: "password",
+    htmlFor: "password",
+    validate: passwordRulesStrong
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
+    name: "password",
+    id: "password",
+    type: "password"
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+    name: "subscription"
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.CheckBoxGroup, {
+    name: "subscription",
+    options: ['subscribe', 'receive email notifications']
   })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     name: "ampm"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.RadioButtonGroup, {
@@ -108,17 +102,17 @@ var CustomFormField = function CustomFormField() {
     name: "size"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
     name: "size",
+    multiple: true,
     options: ['small', 'medium', 'large']
   })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     label: "Comments",
-    name: "comments",
-    disabled: true
+    name: "comments"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.TextArea, {
-    name: "comments",
-    disabled: true
+    name: "comments"
   })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     label: "Age",
-    name: "age"
+    name: "age",
+    pad: true
   }, /*#__PURE__*/_react["default"].createElement(_grommet.RangeInput, {
     name: "age",
     min: 15,
@@ -141,6 +135,7 @@ var CustomFormField = function CustomFormField() {
   }))))));
 };
 
-(0, _react2.storiesOf)('Form', module).add('Custom theme', function () {
-  return /*#__PURE__*/_react["default"].createElement(CustomFormField, null);
-});
+exports.FieldWithChildren = FieldWithChildren;
+FieldWithChildren.story = {
+  name: 'Field with children'
+};

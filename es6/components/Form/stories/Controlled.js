@@ -1,6 +1,5 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { Box, Button, CheckBox, Grommet, Form, FormField, MaskedInput, RadioButtonGroup, RangeInput, Select, TextArea, TextInput } from 'grommet';
+import React, { useState } from 'react';
+import { Box, Button, CheckBox, Form, FormField, Grommet, MaskedInput, RadioButtonGroup, RangeInput, Select, TextArea, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 var defaultValue = {
   name: '',
@@ -11,11 +10,10 @@ var defaultValue = {
   comments: '',
   age: ''
 };
-
-var Example = function Example() {
-  var _React$useState = React.useState(defaultValue),
-      value = _React$useState[0],
-      setValue = _React$useState[1];
+export var Controlled = function Controlled() {
+  var _useState = useState(defaultValue),
+      value = _useState[0],
+      setValue = _useState[1];
 
   return /*#__PURE__*/React.createElement(Grommet, {
     full: true,
@@ -110,7 +108,3 @@ var Example = function Example() {
     primary: true
   }))))));
 };
-
-storiesOf('Form', module).add('Controlled', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-});

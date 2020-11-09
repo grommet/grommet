@@ -1,10 +1,8 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { Box, Button, Grommet, Form, FormField, TextInput } from 'grommet';
 import { StatusGood } from "grommet-icons/es6/icons/StatusGood";
+import { Box, Button, Grommet, Form, FormField, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var Example = function Example() {
+export var ValidateOnBlur = function ValidateOnBlur() {
   return /*#__PURE__*/React.createElement(Grommet, {
     full: true,
     theme: grommet
@@ -65,7 +63,6 @@ var Example = function Example() {
     primary: true
   }))))));
 };
-
-storiesOf('Form', module).add('Validate on blur', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-});
+ValidateOnBlur.story = {
+  name: 'Validate on blur'
+};

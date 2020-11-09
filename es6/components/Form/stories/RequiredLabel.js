@@ -3,8 +3,8 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { grommet, Box, FormField, Form, Text, Button, Grommet } from 'grommet';
+import { Box, Button, Form, FormField, Grommet, Text } from 'grommet';
+import { grommet } from 'grommet/themes';
 
 var FormFieldLabel = function FormFieldLabel(props) {
   var required = props.required,
@@ -21,7 +21,7 @@ var FormFieldLabel = function FormFieldLabel(props) {
   }, rest));
 };
 
-var LabelFormField = function LabelFormField() {
+export var RequiredLabel = function RequiredLabel() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -50,7 +50,6 @@ var LabelFormField = function LabelFormField() {
     color: "status-critical"
   }, "* Required Field"))));
 };
-
-storiesOf('Form', module).add('Required label', function () {
-  return /*#__PURE__*/React.createElement(LabelFormField, null);
-});
+RequiredLabel.story = {
+  name: 'Required label'
+};

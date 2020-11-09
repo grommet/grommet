@@ -1,10 +1,13 @@
 "use strict";
 
+exports.__esModule = true;
+exports.RequiredLabel = void 0;
+
 var _react = _interopRequireDefault(require("react"));
 
-var _react2 = require("@storybook/react");
-
 var _grommet = require("grommet");
+
+var _themes = require("grommet/themes");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -27,9 +30,9 @@ var FormFieldLabel = function FormFieldLabel(props) {
   }, rest));
 };
 
-var LabelFormField = function LabelFormField() {
+var RequiredLabel = function RequiredLabel() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _grommet.grommet
+    theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
@@ -57,6 +60,7 @@ var LabelFormField = function LabelFormField() {
   }, "* Required Field"))));
 };
 
-(0, _react2.storiesOf)('Form', module).add('Required label', function () {
-  return /*#__PURE__*/_react["default"].createElement(LabelFormField, null);
-});
+exports.RequiredLabel = RequiredLabel;
+RequiredLabel.story = {
+  name: 'Required label'
+};

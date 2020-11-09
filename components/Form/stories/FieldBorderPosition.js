@@ -1,12 +1,15 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.FieldBorderPosition = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
 var _utils = require("grommet/utils");
+
+var _themes = require("grommet/themes");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -17,10 +20,10 @@ var allOptions = Array(3).fill().map(function (_, i) {
 });
 var borderPositions = [{
   name: 'Default Grommet Theme',
-  theme: _grommet.grommet
+  theme: _themes.grommet
 }, {
   name: 'Border Inner',
-  theme: (0, _utils.deepMerge)(_grommet.grommet, {
+  theme: (0, _utils.deepMerge)(_themes.grommet, {
     formField: {
       border: {
         position: 'inner',
@@ -30,7 +33,7 @@ var borderPositions = [{
   })
 }, {
   name: 'Border Outer',
-  theme: (0, _utils.deepMerge)(_grommet.grommet, {
+  theme: (0, _utils.deepMerge)(_themes.grommet, {
     formField: {
       border: {
         position: 'outer',
@@ -40,7 +43,7 @@ var borderPositions = [{
   })
 }, {
   name: 'Border None',
-  theme: (0, _utils.deepMerge)(_grommet.grommet, {
+  theme: (0, _utils.deepMerge)(_themes.grommet, {
     formField: {
       border: {
         position: 'none'
@@ -49,7 +52,7 @@ var borderPositions = [{
   })
 }, {
   name: 'Border Undefined',
-  theme: (0, _utils.deepMerge)(_grommet.grommet, {
+  theme: (0, _utils.deepMerge)(_themes.grommet, {
     formField: {
       border: undefined,
       content: {
@@ -131,9 +134,9 @@ var FormExample = function FormExample(_ref) {
   })))));
 };
 
-var FormFieldBorderPosition = function FormFieldBorderPosition() {
+var FieldBorderPosition = function FieldBorderPosition() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _grommet.grommet
+    theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Grid, {
@@ -151,6 +154,7 @@ var FormFieldBorderPosition = function FormFieldBorderPosition() {
   }))));
 };
 
-(0, _react2.storiesOf)('Form', module).add('Field border positions', function () {
-  return /*#__PURE__*/_react["default"].createElement(FormFieldBorderPosition, null);
-});
+exports.FieldBorderPosition = FieldBorderPosition;
+FieldBorderPosition.story = {
+  name: 'Field border position'
+};

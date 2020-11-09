@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
-import { grommet, Box, CheckBoxGroup, Form, FormField, Select, Grid, Grommet, RadioButtonGroup, RangeInput, Text, TextArea, TextInput, ThemeContext } from 'grommet';
+import { Box, CheckBoxGroup, Form, FormField, Grid, Grommet, RadioButtonGroup, RangeInput, Select, Text, TextArea, TextInput, ThemeContext } from 'grommet';
 import { deepMerge } from 'grommet/utils';
+import { grommet } from 'grommet/themes';
 var allOptions = Array(3).fill().map(function (_, i) {
   return "option " + (i + 1);
 });
@@ -121,7 +121,7 @@ var FormExample = function FormExample(_ref) {
   })))));
 };
 
-var FormFieldBorderPosition = function FormFieldBorderPosition() {
+export var FieldBorderPosition = function FieldBorderPosition() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -140,7 +140,6 @@ var FormFieldBorderPosition = function FormFieldBorderPosition() {
     });
   }))));
 };
-
-storiesOf('Form', module).add('Field border positions', function () {
-  return /*#__PURE__*/React.createElement(FormFieldBorderPosition, null);
-});
+FieldBorderPosition.story = {
+  name: 'Field border position'
+};

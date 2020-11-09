@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
-import { Box, Button, CheckBox, Grommet, Form, FormField, TextInput } from 'grommet';
+import { Box, Button, CheckBox, Form, FormField, Grommet, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var Example = function Example() {
+export var DynamicFields = function DynamicFields() {
   var _useState = useState(),
       haveAlias = _useState[0],
       setHaveAlias = _useState[1];
@@ -61,7 +59,6 @@ var Example = function Example() {
     primary: true
   }))))));
 };
-
-storiesOf('Form', module).add('Dynamic fields', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-});
+DynamicFields.story = {
+  name: 'Dynamic fields'
+};

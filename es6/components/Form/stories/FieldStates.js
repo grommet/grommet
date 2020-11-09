@@ -1,8 +1,7 @@
-import React, { useRef, useEffect } from 'react';
-import { storiesOf } from '@storybook/react';
-import { grommet, Box, Form, FormField, TextInput, Grommet } from 'grommet';
-
-var FormFieldStates = function FormFieldStates() {
+import React, { useEffect, useRef } from 'react';
+import { Box, Form, FormField, Grommet, TextInput } from 'grommet';
+import { grommet } from 'grommet/themes';
+export var FieldStates = function FieldStates() {
   var inputRef = useRef();
   useEffect(function () {
     inputRef.current.focus();
@@ -66,7 +65,6 @@ var FormFieldStates = function FormFieldStates() {
     disabled: true
   }))))));
 };
-
-storiesOf('Form', module).add('Field states', function () {
-  return /*#__PURE__*/React.createElement(FormFieldStates, null);
-});
+FieldStates.story = {
+  name: 'Field states'
+};
