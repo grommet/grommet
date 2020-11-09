@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, CheckBoxGroup, Grommet, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Disabled = () => {
+export const Disabled = () => {
   return (
     <Grommet theme={grommet}>
       <Box pad="medium" gap="large">
@@ -26,5 +25,3 @@ const Disabled = () => {
     </Grommet>
   );
 };
-
-storiesOf('CheckBoxGroup', module).add('Disabled', () => <Disabled />);

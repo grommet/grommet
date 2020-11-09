@@ -11,7 +11,6 @@ import { FocusedContainer } from '../FocusedContainer';
 import {
   backgroundIsDark,
   findScrollParents,
-  findVisibleParent,
   parseMetricToNum,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
@@ -81,7 +80,7 @@ const DropContainer = forwardRef(
             container.style.maxHeight = '';
           }
           // get bounds
-          const targetRect = findVisibleParent(target).getBoundingClientRect();
+          const targetRect = target.getBoundingClientRect();
           const containerRect = container.getBoundingClientRect();
           // determine width
           let width;

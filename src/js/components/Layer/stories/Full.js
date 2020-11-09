@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Button, Grommet, Layer } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const FullLayer = () => {
+export const FullLayer = () => {
   const [showLayer, setShowLayer] = React.useState(false);
 
   return (
@@ -32,6 +31,9 @@ const FullLayer = () => {
   );
 };
 
-storiesOf('Layer', module).add('Full', () => <FullLayer />, {
-  chromatic: { disable: true },
-});
+FullLayer.story = {
+  name: 'Full',
+  parameters: {
+    chromatic: { disable: true },
+  },
+};

@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Paragraph } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -11,7 +10,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua.
 `;
 
-const All = () => (
+export const All = () => (
   <Grommet theme={grommet}>
     {sizes.map(size => (
       <Paragraph key={size} size={size}>
@@ -26,5 +25,3 @@ const All = () => (
     </Paragraph>
   </Grommet>
 );
-
-storiesOf('Paragraph', module).add('All', () => <All />);

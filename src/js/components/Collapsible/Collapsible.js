@@ -100,7 +100,7 @@ const Collapsible = forwardRef(
         dimension={dimension}
         speedProp={speed}
       >
-        {children}
+        {open || animate ? children : null}
       </AnimatedBox>
     );
   },

@@ -3234,6 +3234,16 @@ xlarge
 string
 \`\`\`
 
+**activeDate**
+
+When using range, Whether the next date selection will affect the 
+        start or end bound of the range. Defaults to \`start\`.
+
+\`\`\`
+start
+end
+\`\`\`
+
 **animate**
 
 Whether to animate the calender as the user interacts with it. Defaults to \`true\`.
@@ -3383,10 +3393,12 @@ function
 Whether to automatically manage multiple date selection as a range.
         When the user clicks the first date, onSelect will be called with that
         date. When the user selects another date, onSelect will be called with
-        an array of two dates.
+        an array of two dates. If range = \\"array\\", then an array of dates will 
+        be returned even when the start or end date of the range is undefined.
 
 \`\`\`
 boolean
+array
 \`\`\`
 
 **reference**
@@ -6761,6 +6773,16 @@ Defaults to
 undefined
 \`\`\`
 
+**dataTable.header.color**
+
+The label and icon color in a header cell. Expects \`{ dark: string, light: string } | string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **dataTable.header.extend**
 
 Any additional styles for header cells. Expects \`string | (props) => {}\`.
@@ -8817,6 +8839,93 @@ Grid areas.
   end: [number]
 }]
 [[string]]
+\`\`\`
+
+**border**
+
+Include a border.
+
+\`\`\`
+boolean
+top
+left
+bottom
+right
+start
+end
+horizontal
+vertical
+all
+{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  side: 
+    top
+    left
+    bottom
+    right
+    start
+    end
+    horizontal
+    vertical
+    all,
+  size: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  style: 
+    solid
+    dashed
+    dotted
+    double
+    groove
+    ridge
+    inset
+    outset
+    hidden
+}
+[{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  side: 
+    top
+    left
+    bottom
+    right
+    start
+    end
+    horizontal
+    vertical
+    all,
+  size: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  style: 
+    solid
+    dashed
+    dotted
+    double
+    groove
+    ridge
+    inset
+    outset
+    hidden
+}]
 \`\`\`
 
 **columns**
@@ -11119,6 +11228,17 @@ Defaults to
 undefined
 \`\`\`
 
+**maskedInput.container.extend**
+
+Any additional style for the container surrounding the input 
+    and, if present, icon. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **text.medium**
 
 The size of the text for MaskedInput. Expects \`string\`.
@@ -11260,6 +11380,16 @@ Defaults to
 
 \`\`\`
 12px
+\`\`\`
+
+**global.input.extend**
+
+Any additional style for an input. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 ",
   "Menu": "## Menu
@@ -15784,6 +15914,16 @@ Defaults to
 12px
 \`\`\`
 
+**global.input.extend**
+
+Any additional style for an input. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **global.control.disabled.opacity**
 
 The opacity when a component is disabled. Expects \`number\`.
@@ -16297,6 +16437,82 @@ Defaults to
 
 \`\`\`
 12px
+\`\`\`
+
+**global.input.extend**
+
+Any additional style for an input. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+",
+  "Tip": "## Tip
+Tooltip or a hint when hovering over a UI item. 
+    The tooltip will render when hovering on top of the 
+    Tip child node or string.
+
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Tip&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/tip&module=%2Fsrc%2FTip.js)
+## Usage
+
+\`\`\`javascript
+import { Tip } from 'grommet';
+<Tip />
+\`\`\`
+
+## Properties
+
+**content**
+
+The tooltip content inside the drop.
+
+\`\`\`
+node
+\`\`\`
+
+**dropProps**
+
+Any valid Drop prop to style the Tip drop container. Defaults to \`{
+  \\"plain\\": true,
+  \\"trapFocus\\": false
+}\`.
+
+\`\`\`
+object
+\`\`\`
+
+**plain**
+
+Whether content should have default styling.
+
+\`\`\`
+boolean
+\`\`\`
+  
+## Theme
+  
+**tip.content**
+
+Any valid Box property for the Tip container. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{ background: 'background-contrast', elevation: 'small', 
+    margin: 'xsmall', pad: { vertical: 'xsmall', horizontal: 'small' }, 
+    round: 'small'}
+\`\`\`
+
+**tip.drop**
+
+Any valid Drop property for the Tooltip. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{align: { top: 'bottom' }}
 \`\`\`
 ",
   "Video": "## Video
