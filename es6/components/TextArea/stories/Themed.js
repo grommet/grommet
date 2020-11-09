@@ -1,6 +1,5 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { Grommet, Box, TextArea } from 'grommet';
+import React, { useState } from 'react';
+import { Box, Grommet, TextArea } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
 var customTheme = deepMerge(grommet, {
@@ -10,11 +9,10 @@ var customTheme = deepMerge(grommet, {
     }
   }
 });
-
-var ThemedTextArea = function ThemedTextArea() {
-  var _React$useState = React.useState(''),
-      value = _React$useState[0],
-      setValue = _React$useState[1];
+export var Themed = function Themed() {
+  var _useState = useState(''),
+      value = _useState[0],
+      setValue = _useState[1];
 
   var onChange = function onChange(event) {
     return setValue(event.target.value);
@@ -35,7 +33,3 @@ var ThemedTextArea = function ThemedTextArea() {
     fill: true
   })));
 };
-
-storiesOf('TextArea', module).add('Themed', function () {
-  return /*#__PURE__*/React.createElement(ThemedTextArea, null);
-});

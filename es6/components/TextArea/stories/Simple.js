@@ -1,14 +1,13 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { Grommet, Box, TextArea } from 'grommet';
+import React, { useState } from 'react';
+import { Box, Grommet, TextArea } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-var SimpleTextArea = function SimpleTextArea(props) {
-  var _React$useState = React.useState(''),
-      value = _React$useState[0],
-      setValue = _React$useState[1];
+var Resize = function Resize(props) {
+  var _useState = useState(''),
+      value = _useState[0],
+      setValue = _useState[1];
 
   var onChange = function onChange(event) {
     return setValue(event.target.value);
@@ -25,12 +24,16 @@ var SimpleTextArea = function SimpleTextArea(props) {
   }, props))));
 };
 
-storiesOf('TextArea', module).add('Simple', function () {
-  return /*#__PURE__*/React.createElement(SimpleTextArea, {
+export var Simple = function Simple() {
+  return /*#__PURE__*/React.createElement(Resize, {
     resize: true
   });
-}).add('Non resizable', function () {
-  return /*#__PURE__*/React.createElement(SimpleTextArea, {
+};
+export var NonResizable = function NonResizable() {
+  return /*#__PURE__*/React.createElement(Resize, {
     resize: false
   });
-});
+};
+NonResizable.story = {
+  name: 'Non resizable'
+};

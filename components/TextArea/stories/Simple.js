@@ -1,21 +1,24 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.NonResizable = exports.Simple = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
 var _themes = require("grommet/themes");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-var SimpleTextArea = function SimpleTextArea(props) {
-  var _React$useState = _react["default"].useState(''),
-      value = _React$useState[0],
-      setValue = _React$useState[1];
+var Resize = function Resize(props) {
+  var _useState = (0, _react.useState)(''),
+      value = _useState[0],
+      setValue = _useState[1];
 
   var onChange = function onChange(event) {
     return setValue(event.target.value);
@@ -32,12 +35,21 @@ var SimpleTextArea = function SimpleTextArea(props) {
   }, props))));
 };
 
-(0, _react2.storiesOf)('TextArea', module).add('Simple', function () {
-  return /*#__PURE__*/_react["default"].createElement(SimpleTextArea, {
+var Simple = function Simple() {
+  return /*#__PURE__*/_react["default"].createElement(Resize, {
     resize: true
   });
-}).add('Non resizable', function () {
-  return /*#__PURE__*/_react["default"].createElement(SimpleTextArea, {
+};
+
+exports.Simple = Simple;
+
+var NonResizable = function NonResizable() {
+  return /*#__PURE__*/_react["default"].createElement(Resize, {
     resize: false
   });
-});
+};
+
+exports.NonResizable = NonResizable;
+NonResizable.story = {
+  name: 'Non resizable'
+};
