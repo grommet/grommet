@@ -1,14 +1,15 @@
 "use strict";
 
+exports.__esModule = true;
+exports.WithTags = void 0;
+
 var _react = _interopRequireDefault(require("react"));
 
-var _react2 = require("@storybook/react");
+var _grommetIcons = require("grommet-icons");
 
 var _grommet = require("grommet");
 
 var _themes = require("grommet/themes");
-
-var _grommetIcons = require("grommet-icons");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -135,7 +136,7 @@ var TagInput = function TagInput(_ref2) {
   })))));
 };
 
-var TagTextInput = function TagTextInput() {
+var WithTags = function WithTags() {
   var _React$useState3 = _react["default"].useState(['foo', 'sony']),
       selectedTags = _React$useState3[0],
       setSelectedTags = _React$useState3[1];
@@ -183,6 +184,7 @@ var TagTextInput = function TagTextInput() {
   })));
 };
 
-(0, _react2.storiesOf)('TextInput', module).add('Tag', function () {
-  return /*#__PURE__*/_react["default"].createElement(TagTextInput, null);
-});
+exports.WithTags = WithTags;
+WithTags.story = {
+  name: 'With tags'
+};

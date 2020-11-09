@@ -1,12 +1,10 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 var suggestions = Array(100).fill().map(function (_, i) {
   return "suggestion " + (i + 1);
 });
-
-var SuggestionsTextInput = function SuggestionsTextInput() {
+export var Suggestions = function Suggestions() {
   var _React$useState = React.useState(''),
       value = _React$useState[0],
       setValue = _React$useState[1];
@@ -36,11 +34,10 @@ var SuggestionsTextInput = function SuggestionsTextInput() {
     suggestions: suggestions
   }))));
 };
-
-storiesOf('TextInput', module).add('Suggestions', function () {
-  return /*#__PURE__*/React.createElement(SuggestionsTextInput, null);
-}, {
-  chromatic: {
-    disable: true
+Suggestions.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var SimpleTextInput = function SimpleTextInput() {
+export var Simple = function Simple() {
   var _React$useState = React.useState(''),
       value = _React$useState[0],
       setValue = _React$useState[1];
@@ -27,11 +25,10 @@ var SimpleTextInput = function SimpleTextInput() {
     onChange: onChange
   }))));
 };
-
-storiesOf('TextInput', module).add('Simple', function () {
-  return /*#__PURE__*/React.createElement(SimpleTextInput, null);
-}, {
-  chromatic: {
-    disable: true
+Simple.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

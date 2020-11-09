@@ -3,10 +3,9 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+import { FormClose } from "grommet-icons/es6/icons/FormClose";
 import { Box, Button, Grommet, Keyboard, Text, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
-import { FormClose } from "grommet-icons/es6/icons/FormClose";
 var allSuggestions = ['sony', 'sonar', 'foo', 'bar'];
 
 var Tag = function Tag(_ref) {
@@ -126,7 +125,7 @@ var TagInput = function TagInput(_ref2) {
   })))));
 };
 
-var TagTextInput = function TagTextInput() {
+export var WithTags = function WithTags() {
   var _React$useState3 = React.useState(['foo', 'sony']),
       selectedTags = _React$useState3[0],
       setSelectedTags = _React$useState3[1];
@@ -173,7 +172,6 @@ var TagTextInput = function TagTextInput() {
     }
   })));
 };
-
-storiesOf('TextInput', module).add('Tag', function () {
-  return /*#__PURE__*/React.createElement(TagTextInput, null);
-});
+WithTags.story = {
+  name: 'With tags'
+};

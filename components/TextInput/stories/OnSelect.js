@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.OnSelect = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -52,10 +53,12 @@ var OnSelect = function OnSelect() {
   }))));
 };
 
-(0, _react2.storiesOf)('TextInput', module).add('onSelect and onSuggestionSelect', function () {
-  return /*#__PURE__*/_react["default"].createElement(OnSelect, null);
-}, {
-  chromatic: {
-    disable: true
+exports.OnSelect = OnSelect;
+OnSelect.story = {
+  name: 'onSelect and onSuggestionSelect',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

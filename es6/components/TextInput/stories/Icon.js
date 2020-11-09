@@ -1,10 +1,8 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+import { Search } from "grommet-icons/es6/icons/Search";
 import { Box, Grommet, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
-import { Search } from "grommet-icons/es6/icons/Search";
-
-var IconTextInput = function IconTextInput() {
+export var Icon = function Icon() {
   return /*#__PURE__*/React.createElement(Grommet, {
     full: true,
     theme: grommet
@@ -25,7 +23,3 @@ var IconTextInput = function IconTextInput() {
     placeholder: "search ..."
   }))));
 };
-
-storiesOf('TextInput', module).add('Icon', function () {
-  return /*#__PURE__*/React.createElement(IconTextInput, null);
-});

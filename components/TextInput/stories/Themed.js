@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Themed = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -26,7 +27,7 @@ var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
   },
   textInput: {
     extend: function extend() {
-      return "\n      font-size: 20px;\n      background: #c9c19f;\n      width: 300px;\n      margin: 0 auto;\n      \n      &:focus {\n        box-shadow: none;\n        border-color: initial;\n      }\n    ";
+      return "\n      font-size: 20px;\n      background: #c9c19f;\n      width: 300px;\n      margin: 0 auto;\n\n      &:focus {\n        box-shadow: none;\n        border-color: initial;\n      }\n    ";
     },
     container: {
       extend: function extend() {
@@ -46,7 +47,7 @@ var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
   }
 });
 
-var ThemedTextInput = function ThemedTextInput() {
+var Themed = function Themed() {
   var _React$useState = _react["default"].useState(''),
       value = _React$useState[0],
       setValue = _React$useState[1];
@@ -82,6 +83,4 @@ var ThemedTextInput = function ThemedTextInput() {
   }))));
 };
 
-(0, _react2.storiesOf)('TextInput', module).add('Themed', function () {
-  return /*#__PURE__*/_react["default"].createElement(ThemedTextInput, null);
-});
+exports.Themed = Themed;

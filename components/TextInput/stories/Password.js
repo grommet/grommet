@@ -1,16 +1,19 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Password = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommetIcons = require("grommet-icons");
 
 var _grommet = require("grommet");
 
+var _themes = require("grommet/themes");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var PasswordInput = function PasswordInput() {
+var Password = function Password() {
   var _React$useState = _react["default"].useState(''),
       value = _React$useState[0],
       setValue = _React$useState[1];
@@ -19,7 +22,10 @@ var PasswordInput = function PasswordInput() {
       reveal = _React$useState2[0],
       setReveal = _React$useState2[1];
 
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
+    full: true,
+    theme: _themes.grommet
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     width: "medium",
     direction: "row",
     margin: "large",
@@ -42,9 +48,7 @@ var PasswordInput = function PasswordInput() {
     onClick: function onClick() {
       return setReveal(!reveal);
     }
-  }));
+  })));
 };
 
-(0, _react2.storiesOf)('TextInput', module).add('Password', function () {
-  return /*#__PURE__*/_react["default"].createElement(PasswordInput, null);
-});
+exports.Password = Password;

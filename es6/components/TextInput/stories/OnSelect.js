@@ -1,12 +1,10 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 var suggestions = Array(100).fill().map(function (_, i) {
   return "suggestion " + (i + 1);
 });
-
-var OnSelect = function OnSelect() {
+export var OnSelect = function OnSelect() {
   var _React$useState = React.useState(''),
       value = _React$useState[0],
       setValue = _React$useState[1];
@@ -43,11 +41,11 @@ var OnSelect = function OnSelect() {
     suggestions: suggestions
   }))));
 };
-
-storiesOf('TextInput', module).add('onSelect and onSuggestionSelect', function () {
-  return /*#__PURE__*/React.createElement(OnSelect, null);
-}, {
-  chromatic: {
-    disable: true
+OnSelect.story = {
+  name: 'onSelect and onSuggestionSelect',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

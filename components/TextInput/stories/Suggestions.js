@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Suggestions = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -14,7 +15,7 @@ var suggestions = Array(100).fill().map(function (_, i) {
   return "suggestion " + (i + 1);
 });
 
-var SuggestionsTextInput = function SuggestionsTextInput() {
+var Suggestions = function Suggestions() {
   var _React$useState = _react["default"].useState(''),
       value = _React$useState[0],
       setValue = _React$useState[1];
@@ -45,10 +46,11 @@ var SuggestionsTextInput = function SuggestionsTextInput() {
   }))));
 };
 
-(0, _react2.storiesOf)('TextInput', module).add('Suggestions', function () {
-  return /*#__PURE__*/_react["default"].createElement(SuggestionsTextInput, null);
-}, {
-  chromatic: {
-    disable: true
+exports.Suggestions = Suggestions;
+Suggestions.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

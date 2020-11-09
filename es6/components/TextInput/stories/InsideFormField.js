@@ -1,14 +1,12 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
-import { Grommet, Box, Button, Form, FormField, TextInput } from 'grommet';
+import { Box, Button, Form, FormField, Grommet, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 var allSuggestions = Array(100).fill().map(function (_, i) {
   return "suggestion " + (i + 1);
 });
-
-var FormFieldTextInput = function FormFieldTextInput(props) {
+export var InsideFormField = function InsideFormField(props) {
   var _useState = useState({
     value: '',
     suggestions: allSuggestions
@@ -69,7 +67,6 @@ var FormFieldTextInput = function FormFieldTextInput(props) {
     label: "submit"
   }))));
 };
-
-storiesOf('TextInput', module).add('Form', function () {
-  return /*#__PURE__*/React.createElement(FormFieldTextInput, null);
-});
+InsideFormField.story = {
+  name: 'Inside a FormField'
+};

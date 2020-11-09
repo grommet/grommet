@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.InsideFormField = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
@@ -18,7 +19,7 @@ var allSuggestions = Array(100).fill().map(function (_, i) {
   return "suggestion " + (i + 1);
 });
 
-var FormFieldTextInput = function FormFieldTextInput(props) {
+var InsideFormField = function InsideFormField(props) {
   var _useState = (0, _react.useState)({
     value: '',
     suggestions: allSuggestions
@@ -80,6 +81,7 @@ var FormFieldTextInput = function FormFieldTextInput(props) {
   }))));
 };
 
-(0, _react2.storiesOf)('TextInput', module).add('Form', function () {
-  return /*#__PURE__*/_react["default"].createElement(FormFieldTextInput, null);
-});
+exports.InsideFormField = InsideFormField;
+InsideFormField.story = {
+  name: 'Inside a FormField'
+};
