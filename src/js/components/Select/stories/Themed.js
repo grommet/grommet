@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
+import { FormDown, FormUp } from 'grommet-icons';
 import { Box, Grommet, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
-import { FormDown, FormUp } from 'grommet-icons';
 
 const customRoundedTheme = deepMerge(grommet, {
   global: {
@@ -46,7 +45,7 @@ const customRoundedTheme = deepMerge(grommet, {
   },
 });
 
-const SimpleSelect = ({ ...rest }) => {
+export const Themed = () => {
   const options = ['one', 'two'];
   const [value, setValue] = useState('');
   return (
@@ -59,26 +58,9 @@ const SimpleSelect = ({ ...rest }) => {
           value={value}
           options={options}
           onChange={({ option }) => setValue(option)}
-          {...rest}
+          open
         />
       </Box>
     </Grommet>
   );
 };
-
-const defaultOptions = [];
-const objectOptions = [];
-for (let i = 1; i <= 200; i += 1) {
-  defaultOptions.push(`option ${i}`);
-  objectOptions.push({
-    lab: `option ${i}`,
-    val: i,
-    dis: i % 5 === 0,
-    sel: i % 13 === 0,
-  });
-}
-
-storiesOf('Select', module)
-  // Chromatic does not catch open Drop.
-  // Screenshot taken before the Drop is open.
-  .add('Custom theme', () => <SimpleSelect open />);

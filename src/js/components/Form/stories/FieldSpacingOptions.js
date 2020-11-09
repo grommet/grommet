@@ -1,8 +1,6 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
-  grommet,
   Box,
   Form,
   FormField,
@@ -13,6 +11,7 @@ import {
   TextInput,
   ThemeContext,
 } from 'grommet';
+import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
 
 const customTheme = deepMerge(grommet, {
@@ -52,7 +51,7 @@ const adjustedLabelMargins = {
   },
 };
 
-const FieldSpacingOptions = () => {
+export const FieldSpacingOptions = () => {
   return (
     <Grommet theme={customTheme}>
       <Grid columns={{ count: 'fit', size: 'medium' }} gap="medium">
@@ -260,6 +259,6 @@ const FieldSpacingOptions = () => {
   );
 };
 
-storiesOf('Form', module).add('FormField spacing', () => (
-  <FieldSpacingOptions />
-));
+FieldSpacingOptions.story = {
+  name: 'Field spacing options',
+};

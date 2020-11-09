@@ -1,23 +1,22 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
-  grommet,
   Box,
   CheckBoxGroup,
   Form,
   FormField,
-  Select,
   Grid,
   Grommet,
   RadioButtonGroup,
   RangeInput,
+  Select,
   Text,
   TextArea,
   TextInput,
   ThemeContext,
 } from 'grommet';
 import { deepMerge } from 'grommet/utils';
+import { grommet } from 'grommet/themes';
 
 const allOptions = Array(3)
   .fill()
@@ -126,7 +125,7 @@ const FormExample = ({ index, borderPosition, theme }) => {
   );
 };
 
-const FormFieldBorderPosition = () => (
+export const FieldBorderPosition = () => (
   <Grommet theme={grommet}>
     <Box pad="large">
       <Grid columns={{ count: 'fit', size: ['auto', 'medium'] }} gap="medium">
@@ -145,6 +144,6 @@ const FormFieldBorderPosition = () => (
   </Grommet>
 );
 
-storiesOf('Form', module).add('Field border positions', () => (
-  <FormFieldBorderPosition />
-));
+FieldBorderPosition.story = {
+  name: 'Field border position',
+};

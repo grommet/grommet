@@ -1,9 +1,8 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
+import { FormClose } from 'grommet-icons';
 import { Box, Button, Grommet, Keyboard, Text, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
-import { FormClose } from 'grommet-icons';
 
 const allSuggestions = ['sony', 'sonar', 'foo', 'bar'];
 
@@ -97,7 +96,7 @@ const TagInput = ({ value = [], onAdd, onChange, onRemove, ...rest }) => {
   );
 };
 
-const TagTextInput = () => {
+export const WithTags = () => {
   const [selectedTags, setSelectedTags] = React.useState(['foo', 'sony']);
   const [suggestions, setSuggestions] = React.useState(allSuggestions);
 
@@ -136,4 +135,6 @@ const TagTextInput = () => {
   );
 };
 
-storiesOf('TextInput', module).add('Tag', () => <TagTextInput />);
+WithTags.story = {
+  name: 'With tags',
+};

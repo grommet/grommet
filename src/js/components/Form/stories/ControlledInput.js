@@ -1,13 +1,12 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
+import React, { useState } from 'react';
 
 import {
   Box,
   Button,
   CheckBox,
-  Grommet,
   Form,
   FormField,
+  Grommet,
   MaskedInput,
   RadioButtonGroup,
   RangeInput,
@@ -17,14 +16,14 @@ import {
 } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Example = () => {
-  const [name, setName] = React.useState('');
-  const [email, setEmail] = React.useState('');
-  const [subscribe, setSubscribe] = React.useState(false);
-  const [ampm, setAmpm] = React.useState('');
-  const [size, setSize] = React.useState('');
-  const [comments, setComments] = React.useState('');
-  const [age, setAge] = React.useState('');
+export const ControlledInput = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [subscribe, setSubscribe] = useState(false);
+  const [ampm, setAmpm] = useState('');
+  const [size, setSize] = useState('');
+  const [comments, setComments] = useState('');
+  const [age, setAge] = useState('');
   return (
     <Grommet full theme={grommet}>
       <Box fill align="center" justify="center">
@@ -117,7 +116,10 @@ const Example = () => {
   );
 };
 
-// chromatic disabled because snapshot is the same as Controlled Input Lazy
-storiesOf('Form', module).add('Controlled input', () => <Example />, {
-  chromatic: { disable: true },
-});
+ControlledInput.story = {
+  name: 'Controlled input',
+  parameters: {
+    // chromatic disabled because snapshot is the same as ControlledInputLazy
+    chromatic: { disable: true },
+  },
+};
