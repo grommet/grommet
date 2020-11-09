@@ -1,5 +1,4 @@
 import React, { useRef, useEffect } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { grommet, Box, Form, FormField, TextInput, Grommet } from 'grommet';
 import { deepMerge } from 'grommet/utils';
@@ -60,7 +59,7 @@ const customTheme = deepMerge(grommet, {
   },
 });
 
-const CustomFormFieldStates = () => {
+export const FieldCustomStates = () => {
   const inputRef = useRef();
 
   useEffect(() => {
@@ -133,6 +132,6 @@ const CustomFormFieldStates = () => {
   );
 };
 
-storiesOf('Form', module).add('Field states custom', () => (
-  <CustomFormFieldStates />
-));
+FieldCustomStates.story = {
+  name: 'Field custom states',
+};
