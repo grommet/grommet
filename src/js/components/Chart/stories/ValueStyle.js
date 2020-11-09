@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Chart } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -35,7 +34,7 @@ const values = [
   { value: [30, 15], thickness: 'large', color: 'status-warning' },
 ];
 
-const Example = () => (
+export const ValueStyleChart = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large" gap="large">
       <Chart type="point" point="circle" values={values} />
@@ -44,4 +43,6 @@ const Example = () => (
   </Grommet>
 );
 
-storiesOf('Chart', module).add('Value style', () => <Example />);
+ValueStyleChart.story = {
+  name: 'Value style',
+};
