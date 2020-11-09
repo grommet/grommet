@@ -1,10 +1,10 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+
+import { Search } from 'grommet-icons';
 import { Box, Grommet, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
-import { Search } from 'grommet-icons';
 
-const IconTextInput = () => {
+export const Icon = () => {
   return (
     <Grommet full theme={grommet}>
       <Box fill align="center" justify="start" pad="large">
@@ -16,5 +16,3 @@ const IconTextInput = () => {
     </Grommet>
   );
 };
-
-storiesOf('TextInput', module).add('Icon', () => <IconTextInput />);

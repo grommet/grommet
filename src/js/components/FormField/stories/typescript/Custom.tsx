@@ -1,13 +1,12 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
-import { grommet, Box, FormField, TextArea, Grommet } from 'grommet';
+import { Box, FormField, Grommet, TextArea } from 'grommet';
+import { grommet, ThemeType } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
-import { ThemeType } from 'grommet/themes';
 
 // Type annotations can only be used in TypeScript files.
 // Remove ': ThemeType' if you are not using Typescript.
-const customFormFieldTheme: ThemeType = {
+const customTheme: ThemeType = {
   global: {
     font: {
       size: '13px',
@@ -28,8 +27,8 @@ const customFormFieldTheme: ThemeType = {
   },
 };
 
-const CustomFormField = () => (
-  <Grommet theme={deepMerge(grommet, customFormFieldTheme)}>
+export const Custom = () => (
+  <Grommet theme={deepMerge(grommet, customTheme)}>
     <Box align="center" pad="large">
       <FormField label="Label" htmlFor="text-area">
         <TextArea id="text-area" placeholder="placeholder" />
@@ -37,5 +36,3 @@ const CustomFormField = () => (
     </Box>
   </Grommet>
 );
-
-storiesOf('FormField', module).add('Custom theme', () => <CustomFormField />);

@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { FormClose } from 'grommet-icons';
-
 import { Box, Button, Grommet, Select, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
@@ -19,7 +17,7 @@ const allSeasons = [
   'S10',
 ];
 
-const SeasonsSelect = () => {
+export const Seasons = () => {
   const [selected, setSelected] = useState([]);
 
   const onRemoveSeason = season => {
@@ -102,5 +100,3 @@ const SeasonsSelect = () => {
     </Grommet>
   );
 };
-
-storiesOf('Select', module).add('Seasons', () => <SeasonsSelect />);
