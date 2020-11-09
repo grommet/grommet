@@ -1413,58 +1413,58 @@ exports[`Carousel navigate 1`] = `
 
 exports[`Carousel navigate 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
 >
   <div
-    class="StyledStack-ajspsk-0 liEjfH"
+    class="StyledStack-ajspsk-0 fDjhAR"
     data-testid="test-carousel"
   >
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
+      class="StyledStack__StyledStackLayer-ajspsk-1 gBThXn"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kpwHpK"
+        class="StyledBox-sc-13pk1d4-0 ceQwbc"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fijLVp"
+          class="StyledBox-sc-13pk1d4-0 csgqhr"
         >
           <img
-            class="StyledImage-ey4zx9-0 gtXVuX"
+            class="StyledImage-ey4zx9-0 paVDt"
             src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 eFfYoG"
+      class="StyledStack__StyledStackLayer-ajspsk-1 jeVJjk"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kpwHpK"
+        class="StyledBox-sc-13pk1d4-0 ceQwbc"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fyNJTz"
+          class="StyledBox-sc-13pk1d4-0 hggYQt"
         >
           <img
-            class="StyledImage-ey4zx9-0 gtXVuX"
+            class="StyledImage-ey4zx9-0 paVDt"
             src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
+      class="StyledStack__StyledStackLayer-ajspsk-1 gBThXn"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 iLSfXS"
+        class="StyledBox-sc-13pk1d4-0 dwjKg"
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 ggXSon"
+          class="StyledButton-sc-323bzc-0 feUVDF"
           type="button"
         >
           <svg
             aria-label="Previous"
-            class="StyledIcon-ofa7kd-0 FimRf"
+            class="StyledIcon-ofa7kd-0 dEeaTZ"
             viewBox="0 0 24 24"
           >
             <polyline
@@ -1477,18 +1477,18 @@ exports[`Carousel navigate 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 idXMGj"
+          class="StyledBox-sc-13pk1d4-0 dTOLFJ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jmTzhV"
+            class="StyledBox-sc-13pk1d4-0 kalBJX"
           >
             <button
-              class="StyledButton-sc-323bzc-0 fKcmhi"
+              class="StyledButton-sc-323bzc-0 hiyJPE"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 FimRf"
+                class="StyledIcon-ofa7kd-0 dEeaTZ"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1500,12 +1500,12 @@ exports[`Carousel navigate 2`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 fKcmhi"
+              class="StyledButton-sc-323bzc-0 hiyJPE"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 JJNub"
+                class="StyledIcon-ofa7kd-0 fuviCN"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1519,13 +1519,13 @@ exports[`Carousel navigate 2`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 elqUnZ"
+          class="StyledButton-sc-323bzc-0 gynwPT"
           disabled=""
           type="button"
         >
           <svg
             aria-label="Next"
-            class="StyledIcon-ofa7kd-0 FimRf"
+            class="StyledIcon-ofa7kd-0 dEeaTZ"
             viewBox="0 0 24 24"
           >
             <polyline
@@ -1544,59 +1544,59 @@ exports[`Carousel navigate 2`] = `
 
 exports[`Carousel navigate 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
 >
   <div
-    class="StyledStack-ajspsk-0 liEjfH"
+    class="StyledStack-ajspsk-0 fDjhAR"
     data-testid="test-carousel"
   >
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 eFfYoG"
+      class="StyledStack__StyledStackLayer-ajspsk-1 jeVJjk"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kpwHpK"
+        class="StyledBox-sc-13pk1d4-0 ceQwbc"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 dGhOz"
+          class="StyledBox-sc-13pk1d4-0 gWwFrB"
         >
           <img
-            class="StyledImage-ey4zx9-0 gtXVuX"
+            class="StyledImage-ey4zx9-0 paVDt"
             src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
+      class="StyledStack__StyledStackLayer-ajspsk-1 gBThXn"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kpwHpK"
+        class="StyledBox-sc-13pk1d4-0 ceQwbc"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fijLVp"
+          class="StyledBox-sc-13pk1d4-0 csgqhr"
         >
           <img
-            class="StyledImage-ey4zx9-0 gtXVuX"
+            class="StyledImage-ey4zx9-0 paVDt"
             src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
+      class="StyledStack__StyledStackLayer-ajspsk-1 gBThXn"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 iLSfXS"
+        class="StyledBox-sc-13pk1d4-0 dwjKg"
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 elqUnZ"
+          class="StyledButton-sc-323bzc-0 gynwPT"
           disabled=""
           type="button"
         >
           <svg
             aria-label="Previous"
-            class="StyledIcon-ofa7kd-0 FimRf"
+            class="StyledIcon-ofa7kd-0 dEeaTZ"
             viewBox="0 0 24 24"
           >
             <polyline
@@ -1609,18 +1609,18 @@ exports[`Carousel navigate 3`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 idXMGj"
+          class="StyledBox-sc-13pk1d4-0 dTOLFJ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jmTzhV"
+            class="StyledBox-sc-13pk1d4-0 kalBJX"
           >
             <button
-              class="StyledButton-sc-323bzc-0 fKcmhi"
+              class="StyledButton-sc-323bzc-0 hiyJPE"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 JJNub"
+                class="StyledIcon-ofa7kd-0 fuviCN"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1632,12 +1632,12 @@ exports[`Carousel navigate 3`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 fKcmhi"
+              class="StyledButton-sc-323bzc-0 hiyJPE"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 FimRf"
+                class="StyledIcon-ofa7kd-0 dEeaTZ"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1651,12 +1651,12 @@ exports[`Carousel navigate 3`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 ggXSon"
+          class="StyledButton-sc-323bzc-0 feUVDF"
           type="button"
         >
           <svg
             aria-label="Next"
-            class="StyledIcon-ofa7kd-0 FimRf"
+            class="StyledIcon-ofa7kd-0 dEeaTZ"
             viewBox="0 0 24 24"
           >
             <polyline
@@ -2129,57 +2129,57 @@ exports[`Carousel play 1`] = `
 
 exports[`Carousel play 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
 >
   <div
-    class="StyledStack-ajspsk-0 liEjfH"
+    class="StyledStack-ajspsk-0 fDjhAR"
   >
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
+      class="StyledStack__StyledStackLayer-ajspsk-1 gBThXn"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kpwHpK"
+        class="StyledBox-sc-13pk1d4-0 ceQwbc"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fijLVp"
+          class="StyledBox-sc-13pk1d4-0 csgqhr"
         >
           <img
-            class="StyledImage-ey4zx9-0 gtXVuX"
+            class="StyledImage-ey4zx9-0 paVDt"
             src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 eFfYoG"
+      class="StyledStack__StyledStackLayer-ajspsk-1 jeVJjk"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 kpwHpK"
+        class="StyledBox-sc-13pk1d4-0 ceQwbc"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fyNJTz"
+          class="StyledBox-sc-13pk1d4-0 hggYQt"
         >
           <img
-            class="StyledImage-ey4zx9-0 gtXVuX"
+            class="StyledImage-ey4zx9-0 paVDt"
             src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
+      class="StyledStack__StyledStackLayer-ajspsk-1 gBThXn"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 iLSfXS"
+        class="StyledBox-sc-13pk1d4-0 dwjKg"
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 ggXSon"
+          class="StyledButton-sc-323bzc-0 feUVDF"
           type="button"
         >
           <svg
             aria-label="Previous"
-            class="StyledIcon-ofa7kd-0 FimRf"
+            class="StyledIcon-ofa7kd-0 dEeaTZ"
             viewBox="0 0 24 24"
           >
             <polyline
@@ -2192,18 +2192,18 @@ exports[`Carousel play 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 idXMGj"
+          class="StyledBox-sc-13pk1d4-0 dTOLFJ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jmTzhV"
+            class="StyledBox-sc-13pk1d4-0 kalBJX"
           >
             <button
-              class="StyledButton-sc-323bzc-0 fKcmhi"
+              class="StyledButton-sc-323bzc-0 hiyJPE"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 FimRf"
+                class="StyledIcon-ofa7kd-0 dEeaTZ"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -2215,12 +2215,12 @@ exports[`Carousel play 2`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 fKcmhi"
+              class="StyledButton-sc-323bzc-0 hiyJPE"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 JJNub"
+                class="StyledIcon-ofa7kd-0 fuviCN"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -2234,13 +2234,13 @@ exports[`Carousel play 2`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 elqUnZ"
+          class="StyledButton-sc-323bzc-0 gynwPT"
           disabled=""
           type="button"
         >
           <svg
             aria-label="Next"
-            class="StyledIcon-ofa7kd-0 FimRf"
+            class="StyledIcon-ofa7kd-0 dEeaTZ"
             viewBox="0 0 24 24"
           >
             <polyline
