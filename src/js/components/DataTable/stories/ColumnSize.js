@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, DataTable, Heading } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -93,7 +92,7 @@ const columnsDefault = [
   { property: 'paid', header: 'Paid', align: 'end' },
 ];
 
-const Example = () => (
+export const ColumnSize = () => (
   <Grommet theme={grommet}>
     <Box fill="horizontal" pad="medium">
       <Heading level="3"> Default DataTable</Heading>
@@ -153,4 +152,6 @@ const Example = () => (
   </Grommet>
 );
 
-storiesOf('DataTable', module).add('Column sizes', () => <Example />);
+ColumnSize.story = {
+  name: 'Column sizes',
+};

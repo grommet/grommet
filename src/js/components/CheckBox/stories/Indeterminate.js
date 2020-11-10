@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, CheckBox } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const IndeterminateCheckBox = () => {
+export const Indeterminate = () => {
   const [checked, setChecked] = useState([]);
   const checkboxes = ['fruits', 'vegetables', 'olive oil'];
 
@@ -47,7 +46,3 @@ const IndeterminateCheckBox = () => {
     </Grommet>
   );
 };
-
-storiesOf('CheckBox', module).add('Indeterminate', () => (
-  <IndeterminateCheckBox />
-));

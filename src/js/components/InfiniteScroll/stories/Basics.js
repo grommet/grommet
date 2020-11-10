@@ -1,14 +1,13 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, InfiniteScroll, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-export const allItems = Array(2000)
+const allItems = Array(2000)
   .fill()
   .map((_, i) => `item ${i + 1}`);
 
-const SimpleInfiniteScroll = props => (
+const Example = props => (
   <Grommet theme={grommet}>
     <Box>
       <InfiniteScroll items={allItems} {...props}>
@@ -27,15 +26,18 @@ const SimpleInfiniteScroll = props => (
   </Grommet>
 );
 
-storiesOf('InfiniteScroll', module)
-  .add('Simple', () => <SimpleInfiniteScroll />)
-  .add('Show 118th item', () => <SimpleInfiniteScroll show={117} />)
-  .add('Marker', () => (
-    <SimpleInfiniteScroll
-      renderMarker={marker => (
-        <Box pad="medium" background="accent-1">
-          {marker}
-        </Box>
-      )}
-    />
-  ));
+export const Simple = () => <Example />;
+export const Show = () => <Example show={117} />;
+export const Marker = () => (
+  <Example
+    renderMarker={marker => (
+      <Box pad="medium" background="accent-1">
+        {marker}
+      </Box>
+    )}
+  />
+);
+
+Show.story = {
+  name: 'Show 118th item',
+};

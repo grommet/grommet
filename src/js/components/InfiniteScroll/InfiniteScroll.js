@@ -1,6 +1,10 @@
-/* eslint-disable react/no-find-dom-node */
-import React, { Component, useEffect, useMemo, useRef, useState } from 'react';
-import { findDOMNode } from 'react-dom';
+import React, {
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import {
   findScrollParent,
   findScrollParents,
@@ -9,196 +13,260 @@ import {
 } from '../../utils';
 import { Box } from '../Box';
 
-class Ref extends Component {
-  render() {
-    const { children } = this.props;
-    return children;
-  }
-}
-
 const InfiniteScroll = ({
   children,
   items = [],
   onMore,
   renderMarker,
   replace,
-  show: showIndex,
+  show: showProp,
   step = 50,
 }) => {
   // item index to be made visible initially
-  const [show, setShow] = useState(showIndex);
+  const [show, setShow] = useState(showProp);
+
   // the last page we have items for
   const lastPage = useMemo(() => Math.floor(items.length / step), [
     items.length,
     step,
   ]);
-  // the first page we are displaying
-  const [beginPage, setBeginPage] = useState(0);
-  // the last page we are displaying
-  const [endPage, setEndPage] = useState(
+
+  // the pages we are rendering
+  const [renderPageBounds, setRenderPageBounds] = useState([
+    0,
     show ? Math.floor((show + step) / step) - 1 : 0,
-  );
-  // how tall we've measured a page to be
-  const [pageHeight, setPageHeight] = useState();
-  // how much area a page requires
-  const [pageArea, setPageArea] = useState();
-  // whether the items are laid out in a grid instead of linearly
-  const [multiColumn, setMultiColumn] = useState();
+  ]);
+
+  // the heights of the pages, approximated after we render the first page
+  // and then updated for pages that have rendered
+  const [pageHeights, setPageHeights] = useState([]);
+
   // what we're waiting for onMore to give us
   const [pendingLength, setPendingLength] = useState(0);
 
+  const aboveMarkerRef = useRef(); // only when replacing
   const belowMarkerRef = useRef();
-  const firstPageItemRef = useRef();
-  const lastPageItemRef = useRef();
-  const showRef = useRef();
 
-  // calculating space based on where the first and last items being displayed
-  // are located
-  useEffect(() => {
-    if (firstPageItemRef.current && lastPageItemRef.current && !pageHeight) {
-      /* eslint-disable react/no-find-dom-node */
-      const beginRect = firstPageItemRef.current.getBoundingClientRect
-        ? firstPageItemRef.current.getBoundingClientRect()
-        : findDOMNode(firstPageItemRef.current).getBoundingClientRect();
-      const endRect = lastPageItemRef.current.getBoundingClientRect
-        ? lastPageItemRef.current.getBoundingClientRect()
-        : findDOMNode(lastPageItemRef.current).getBoundingClientRect();
-
-      // Need to adjust for cases such as show where first and last page item
-      // refs can be much larger than the step.
-      const initialPage = show ? Math.floor(show / step) : 0;
-      const nextPageHeight =
-        (endRect.top + endRect.height - beginRect.top) / (initialPage + 1);
-      // Check if the items are arranged in a single column or not.
-      const nextMultiColumn = nextPageHeight / step < endRect.height;
-      const nextPageArea = endRect.height * endRect.width * step;
-      setPageHeight(nextPageHeight);
-      setPageArea(nextPageArea);
-      setMultiColumn(nextMultiColumn);
-    }
-  }, [pageHeight, step, show]);
-
-  // scroll handling
+  // scroll and resize handling
   useEffect(() => {
     let scrollParents;
 
-    const onScroll = () => {
+    const evaluate = () => {
+      if (!scrollParents) return;
       const scrollParent = scrollParents[0];
 
-      // Determine the window into the first scroll parent
+      // Determine the scroll position of the scroll container
       let top;
       let height;
-      let width;
       if (scrollParent === document) {
         top = document.documentElement.scrollTop || document.body.scrollTop;
         height = window.innerHeight;
-        width = window.innerWidth;
       } else {
         top = scrollParent.scrollTop;
         const rect = scrollParent.getBoundingClientRect();
-        ({ height, width } = rect);
+        ({ height } = rect);
+      }
+      const offset = height / 4; // so we pre-load when the user scrolls slowly
+
+      // Use the pageHeights to determine what pages we should render based
+      // on the current scroll window.
+      let nextBeginPage = 0;
+      let index = 0;
+      let pagesHeight = pageHeights[index] || 0;
+      while (pageHeights[index + 1] && pagesHeight < top - offset) {
+        index += 1;
+        nextBeginPage += 1;
+        pagesHeight += pageHeights[index];
+      }
+      let nextEndPage = nextBeginPage;
+      while (
+        pageHeights[index] !== undefined &&
+        pagesHeight < top + height + offset
+      ) {
+        index += 1;
+        nextEndPage += 1;
+        // when we haven't rendered the nextEndPage and we aren't replacing,
+        // we might not have a height for it yet
+        pagesHeight += pageHeights[index] || 0;
       }
 
-      // Figure out which pages we should make visible based on the scroll
-      // window.
-      const offset = height / 4;
+      if (!replace) {
+        // when not replacing, never shrink bounds
+        nextBeginPage = 0;
+        nextEndPage = Math.max(renderPageBounds[1], nextEndPage);
+      }
 
-      // nextBeginPage will increment/decrement when using replace, otherwise
-      // the beginPage will be at 0.
-      const nextBeginPage = replace
-        ? Math.min(
-            lastPage,
-            Math.max(
-              0,
-              multiColumn
-                ? Math.floor((Math.max(0, top - offset) * width) / pageArea)
-                : Math.floor(Math.max(0, top - offset) / pageHeight),
-            ),
-          )
-        : 0;
+      if (show) {
+        // ensure we try to render any show page
+        const showPage = Math.floor((show + step) / step) - 1;
+        nextBeginPage = Math.min(showPage, nextBeginPage);
+        nextEndPage = Math.max(showPage, nextEndPage);
+      }
 
-      // Increment/decrement nextEndPage when nearing bounds of current page.
-      // Ensure nextEndPage contains show index initially.
-      const nextEndPage = Math.min(
-        lastPage,
-        Math.max(
-          (!replace && endPage) || 0,
-          multiColumn
-            ? Math.ceil(((top + height + offset) * width) / pageArea)
-            : Math.floor((top + height + offset) / pageHeight),
-          show ? Math.floor(show / step) : 0,
-        ),
-      );
-
-      if (nextBeginPage !== beginPage) setBeginPage(nextBeginPage);
-      if (nextEndPage !== endPage) setEndPage(nextEndPage);
+      if (
+        nextBeginPage !== renderPageBounds[0] ||
+        nextEndPage !== renderPageBounds[1]
+      ) {
+        setRenderPageBounds([nextBeginPage, nextEndPage]);
+      }
     };
 
-    if (pageHeight && belowMarkerRef.current) {
+    let timer;
+    const debounce = () => {
+      clearTimeout(timer);
+      timer = setTimeout(evaluate, 10);
+    };
+
+    // might not be there yet or might have already rendered everything
+    if (belowMarkerRef.current) {
       scrollParents = findScrollParents(belowMarkerRef.current);
-      scrollParents.forEach(scrollParent =>
-        scrollParent.addEventListener('scroll', onScroll),
-      );
-      onScroll();
+      scrollParents.forEach(sp => sp.addEventListener('scroll', debounce));
     }
+    window.addEventListener('resize', debounce);
+    evaluate();
     return () => {
       if (scrollParents) {
-        scrollParents.forEach(scrollParent =>
-          scrollParent.removeEventListener('scroll', onScroll),
-        );
+        scrollParents.forEach(sp => sp.removeEventListener('scroll', debounce));
       }
+      window.removeEventListener('resize', debounce);
+      clearTimeout(timer);
     };
-  }, [
-    beginPage,
-    endPage,
-    lastPage,
-    multiColumn,
-    pageArea,
-    pageHeight,
-    replace,
-    show,
-    step,
-  ]);
+  }, [pageHeights, renderPageBounds, replace, show, step]);
 
   // check if we need to ask for more
   useEffect(() => {
-    if (onMore && endPage === lastPage && items.length >= pendingLength) {
+    if (
+      onMore &&
+      renderPageBounds[1] === lastPage &&
+      items.length >= pendingLength
+    ) {
       // remember we've asked for more, so we don't keep asking if it takes
       // a while
       setPendingLength(items.length + 1);
       onMore();
     }
-  }, [endPage, items.length, lastPage, onMore, pendingLength, step]);
+  }, [items.length, lastPage, onMore, pendingLength, renderPageBounds, step]);
 
   // scroll to any 'show'
-  useEffect(() => {
+  useLayoutEffect(() => {
     // ride out any animation delays, 100ms empirically measured
     const timer = setTimeout(() => {
-      if (show && showRef.current) {
-        const showNode = showRef.current.scrollIntoView
-          ? showRef.current
-          : findDOMNode(showRef.current);
-        const scrollParent = findScrollParent(showNode);
-        if (isNodeBeforeScroll(showNode, scrollParent)) {
-          showNode.scrollIntoView(true);
-        } else if (isNodeAfterScroll(showNode, scrollParent)) {
-          showNode.scrollIntoView(false);
+      if (show && belowMarkerRef.current) {
+        // calculate show index based on beginPage
+        const showIndex =
+          show - renderPageBounds[0] * step + (renderPageBounds[0] ? 1 : 0);
+        const showNode = belowMarkerRef.current.parentNode.children.item(
+          showIndex,
+        );
+        if (showNode) {
+          const scrollParent = findScrollParent(showNode);
+          if (isNodeBeforeScroll(showNode, scrollParent)) {
+            showNode.scrollIntoView(true);
+          } else if (isNodeAfterScroll(showNode, scrollParent)) {
+            showNode.scrollIntoView(false);
+          }
+          // clean up after having shown
+          setShow(undefined);
         }
-        // clean up after having shown
-        setShow(undefined);
       }
     }, 100);
     return () => clearTimeout(timer);
-  }, [show]);
+  }, [renderPageBounds, show, step]);
 
-  const firstIndex = beginPage * step;
-  const lastIndex = Math.min((endPage + 1) * step, items.length) - 1;
+  // calculate and keep track of page heights
+  useLayoutEffect(() => {
+    // if don't have a belowMarker, we must have rendered everything already
+    if (!belowMarkerRef.current) return;
+
+    // calculate page heights for rendered pages
+    const {
+      current: {
+        parentNode: { children: rendered },
+      },
+    } = belowMarkerRef;
+    // ensure we've rendered the state we have
+    // above? + items in rendered pages + below === rendered DOM elements length
+    if (
+      (aboveMarkerRef.current ? 1 : 0) +
+        (renderPageBounds[1] - renderPageBounds[0] + 1) * step +
+        1 ===
+      rendered.length
+    ) {
+      let nextPageHeights;
+
+      // step through each page
+      let i = renderPageBounds[0];
+      let lastBottom;
+      while (i <= renderPageBounds[1]) {
+        const topIndex =
+          (aboveMarkerRef.current ? 1 : 0) + (i - renderPageBounds[0]) * step;
+        const bottomIndex = Math.min(topIndex + step - 1, rendered.length - 1);
+        // we use lastBottom for top to ensure grid layouts work
+        const top =
+          lastBottom !== undefined
+            ? lastBottom
+            : rendered.item(topIndex).getBoundingClientRect().top;
+        const { bottom } = rendered.item(bottomIndex).getBoundingClientRect();
+        const height = bottom - top;
+        if (bottom && (!pageHeights || pageHeights[i] !== height)) {
+          if (!nextPageHeights) nextPageHeights = [...(pageHeights || [])];
+          nextPageHeights[i] = height;
+        }
+        lastBottom = bottom;
+        i += 1;
+      }
+
+      // estimate page heights for pages we haven't rendered yet
+      while (replace && i <= lastPage) {
+        if (!pageHeights[i] && pageHeights[i] !== pageHeights[0]) {
+          if (!nextPageHeights) nextPageHeights = [...(pageHeights || [])];
+          [nextPageHeights[i]] = nextPageHeights; // set to first page height
+        }
+        i += 1;
+      }
+
+      if (nextPageHeights) setPageHeights(nextPageHeights);
+    }
+  }, [lastPage, pageHeights, renderPageBounds, replace, step]);
+
+  // calculate the height above the first rendered page using the pageHeights
+  const aboveHeight = useMemo(() => {
+    if (!replace) return 0;
+    let height = 0;
+    let i = 0;
+    while (i < renderPageBounds[0]) {
+      height += pageHeights[i] || 0;
+      i += 1;
+    }
+    return height;
+  }, [pageHeights, renderPageBounds, replace]);
+
+  // calculate the height below the last rendered page using the pageHeights
+  const belowHeight = useMemo(() => {
+    if (!replace) return 0;
+    let height = 0;
+    let i = renderPageBounds[1] + 1;
+    while (i <= lastPage) {
+      height += pageHeights[i] || 0;
+      i += 1;
+    }
+    return height;
+  }, [lastPage, pageHeights, renderPageBounds, replace]);
+
+  const firstIndex = renderPageBounds[0] * step;
+  const lastIndex =
+    Math.min((renderPageBounds[1] + 1) * step, items.length) - 1;
 
   const result = [];
 
-  if (replace && pageHeight && firstIndex) {
+  if (aboveHeight) {
     let marker = (
-      <Box key="above" flex={false} height={`${beginPage * pageHeight}px`} />
+      <Box
+        key="above"
+        ref={aboveMarkerRef}
+        flex={false}
+        height={`${aboveHeight}px`}
+      />
     );
     if (renderMarker) {
       // need to give it a key
@@ -209,73 +277,44 @@ const InfiniteScroll = ({
 
   items.slice(firstIndex, lastIndex + 1).forEach((item, index) => {
     const itemsIndex = firstIndex + index;
-    let ref;
-    let child = children(item, itemsIndex, ref);
-
-    // Set firstPageItemRef & lastPageItemRef if we don't know the pageHeight.
-    if (!pageHeight && itemsIndex === 0) {
-      // We pass the ref we want to the children render function.
-      // If we don't see that our ref was set, wrap it ("the old way").
-      child = children(item, itemsIndex, firstPageItemRef);
-      if (child.ref !== firstPageItemRef) {
-        child = (
-          <Ref key="first" ref={firstPageItemRef}>
-            {child}
-          </Ref>
-        );
-      }
-    }
-
-    if (!pageHeight && (itemsIndex === step - 1 || itemsIndex === lastIndex)) {
-      // If show && show > step, we only want a single lastPageItemRef and it
-      // should be set at lastIndex. Ignore step - 1 scenario, otherwise will
-      // create duplicates.
-      child =
-        show && show > step && itemsIndex === step - 1
-          ? child
-          : children(item, itemsIndex, lastPageItemRef);
-
-      // We pass the ref we want to the children render function.
-      // If we don't see that our ref was set, wrap it ("the old way").
-      if (
-        child.ref !== lastPageItemRef &&
-        !(show && show > step && itemsIndex === step - 1)
-      ) {
-        child = (
-          <Ref key="last" ref={lastPageItemRef}>
-            {child}
-          </Ref>
-        );
-      }
-    }
-
-    // Set showRef
-    if (show && show === itemsIndex) {
-      child = children(item, itemsIndex, showRef);
-      if (child.ref !== showRef) {
-        child = (
-          <Ref key="show" ref={showRef}>
-            {child}
-          </Ref>
-        );
-      }
-    }
-
+    const child = children(item, itemsIndex);
     result.push(child);
   });
 
-  if (endPage < lastPage || replace || onMore) {
+  if (replace || renderPageBounds[1] < lastPage || onMore) {
     let marker = (
       <Box
         key="below"
-        ref={belowMarkerRef}
+        ref={(!renderMarker && belowMarkerRef) || undefined}
         flex={false}
-        height={`${replace ? (lastPage - endPage) * pageHeight : 0}px`}
+        height={`${belowHeight || 0}px`}
       />
     );
     if (renderMarker) {
       // need to give it a key
-      marker = React.cloneElement(renderMarker(marker), { key: 'below' });
+      const renderedMarker = renderMarker(marker);
+      marker = React.cloneElement(renderedMarker, {
+        key: 'below',
+        // We need to make sure our belowMarkerRef is tied to a component
+        // that has the same parent as the items being rendered. This is so
+        // we can use belowMarkerRef.current.parentNode.children to
+        // get a reference to the items in the DOM for calculating pageHeights.
+        //
+        // Since the caller might have included a ref in what their
+        // renderMarker returns, we have to take care of both refs.
+        // https://github.com/facebook/react/issues/8873#issuecomment-489579878
+        ref: node => {
+          // Keep your own reference
+          belowMarkerRef.current = node;
+          // Call the original ref, if any
+          const { ref } = renderedMarker;
+          if (typeof ref === 'function') {
+            ref(node);
+          } else if (ref !== null) {
+            ref.current = node;
+          }
+        },
+      });
     }
     result.push(marker);
   }

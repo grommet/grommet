@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Text } from 'grommet';
 import { grommet } from '../../../themes';
 
-const BorderBox = () => (
+export const BorderBox = () => (
   <Grommet theme={grommet}>
     <Box pad="small" gap="small" align="start">
       <Box pad="small" border>
@@ -83,4 +82,4 @@ const BorderBox = () => (
   </Grommet>
 );
 
-storiesOf('Box', module).add('Border', () => <BorderBox />);
+BorderBox.story = { name: 'Border' };

@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Heading } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
@@ -25,7 +24,7 @@ const customlevel = deepMerge(grommet, {
     extend: props => `color: ${props.theme.global.colors.brand}`,
   },
 });
-const CustomHeading = () => (
+export const Custom = () => (
   <Grommet theme={customlevel}>
     <Heading level={5} size="small">
       Heading level 5 small
@@ -38,5 +37,3 @@ const CustomHeading = () => (
     </Heading>
   </Grommet>
 );
-
-storiesOf('Heading', module).add('Custom', () => <CustomHeading />);

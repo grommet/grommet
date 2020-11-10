@@ -1,9 +1,8 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, MaskedInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const PhoneMaskedInput = () => {
+export const Phone = () => {
   const [value, setValue] = React.useState('');
 
   return (
@@ -40,5 +39,3 @@ const PhoneMaskedInput = () => {
     </Grommet>
   );
 };
-
-storiesOf('MaskedInput', module).add('Phone', () => <PhoneMaskedInput />);

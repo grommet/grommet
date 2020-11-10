@@ -5,6 +5,44 @@ export const a11yTitlePropType = PropTypes.string.description(
    be added to the element.`,
 );
 
+export const getBorderPropType = ({ includeBetween = true }) =>
+  PropTypes.shape({
+    color: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.shape({
+        dark: PropTypes.string,
+        light: PropTypes.string,
+      }),
+    ]),
+    side: PropTypes.oneOf([
+      'top',
+      'left',
+      'bottom',
+      'right',
+      'start',
+      'end',
+      'horizontal',
+      'vertical',
+      'all',
+      ...(includeBetween ? ['between'] : []),
+    ]),
+    size: PropTypes.oneOfType([
+      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+      PropTypes.string,
+    ]),
+    style: PropTypes.oneOf([
+      'solid',
+      'dashed',
+      'dotted',
+      'double',
+      'groove',
+      'ridge',
+      'inset',
+      'outset',
+      'hidden',
+    ]).defaultValue('solid'),
+  });
+
 export const colorPropType = PropTypes.oneOfType([
   PropTypes.string,
   PropTypes.shape({ dark: PropTypes.string, light: PropTypes.string }),

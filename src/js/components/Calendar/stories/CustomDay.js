@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
   Box,
@@ -13,7 +12,7 @@ import {
 import { Notification } from 'grommet-icons';
 import { grommet } from 'grommet/themes';
 
-const CustomDayCalendar = () => {
+export const CustomDayCalendar = () => {
   const calendarContent = [7, 8, 9];
   const [selectedDay, setSelectedDay] = useState();
   const onSelect = value => {
@@ -74,4 +73,6 @@ const CustomDayCalendar = () => {
   );
 };
 
-storiesOf('Calendar', module).add('Custom day', () => <CustomDayCalendar />);
+CustomDayCalendar.story = {
+  name: 'Custom day',
+};

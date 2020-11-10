@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import isChromatic from 'chromatic/isChromatic';
 
 import { Box, Grommet, RangeInput } from 'grommet';
 import { ThemeType } from 'grommet/themes';
@@ -33,7 +31,7 @@ const customThemeRangeInput: ThemeType = {
   },
 };
 
-const CustomRangeInput = () => {
+export const Custom = () => {
   const [value, setValue] = React.useState(0.4);
 
   const onChange = event => setValue(event.target.value);
@@ -55,5 +53,3 @@ const CustomRangeInput = () => {
     </Grommet>
   );
 };
-
-storiesOf('RangeInput', module).add('Custom', () => <CustomRangeInput />);

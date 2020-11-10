@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Carousel, Image } from 'grommet';
 
@@ -46,7 +45,7 @@ const View2 = () => {
   );
 };
 
-const CarouselMulti = () => (
+export const Multi = () => (
   <Grommet>
     <Carousel>
       <View0 />
@@ -55,5 +54,3 @@ const CarouselMulti = () => (
     </Carousel>
   </Grommet>
 );
-
-storiesOf('Carousel', module).add('Multi', () => <CarouselMulti />);

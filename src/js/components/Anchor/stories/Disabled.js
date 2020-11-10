@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Anchor, Box, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Disabled = () => {
+const DisabledAnchor = () => {
   return (
     <Grommet theme={grommet}>
       <Box align="center" pad="large">
@@ -16,4 +15,4 @@ const Disabled = () => {
   );
 };
 
-storiesOf('Anchor', module).add('Disabled', () => <Disabled />);
+export const Disabled = () => <DisabledAnchor />;
