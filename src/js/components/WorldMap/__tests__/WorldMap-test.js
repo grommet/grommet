@@ -1,9 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { cleanup, render, fireEvent } from '@testing-library/react';
-import 'jest-axe/extend-expect';
 import 'jest-styled-components';
-import { render, fireEvent } from '@testing-library/react';
 
 import { Grommet } from '../../Grommet';
 import { WorldMap } from '..';
