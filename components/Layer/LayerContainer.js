@@ -173,7 +173,8 @@ var LayerContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   if (modal) {
     content = /*#__PURE__*/_react["default"].createElement(_FocusedContainer.FocusedContainer, {
       hidden: position === 'hidden',
-      restrictScroll: true
+      restrictScroll: true,
+      trapFocus: true
     }, content);
   }
 

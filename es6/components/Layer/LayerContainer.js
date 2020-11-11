@@ -155,7 +155,8 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   if (modal) {
     content = /*#__PURE__*/React.createElement(FocusedContainer, {
       hidden: position === 'hidden',
-      restrictScroll: true
+      restrictScroll: true,
+      trapFocus: true
     }, content);
   }
 
