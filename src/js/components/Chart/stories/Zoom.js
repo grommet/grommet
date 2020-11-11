@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Button, Chart, Stack, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -123,8 +122,12 @@ const ZoomChart = ({ data, max }) => {
   );
 };
 
-storiesOf('Chart', module).add(
-  'Zoom',
-  () => <ZoomChart data={generateData(1000, 100)} max={100} />,
-  { chromatic: { disable: true } },
+export const Zoom = () => (
+  <ZoomChart data={generateData(1000, 100)} max={100} />
 );
+
+Zoom.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
+};

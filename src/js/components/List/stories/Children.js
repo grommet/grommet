@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Gremlin } from 'grommet-icons';
 
@@ -12,7 +11,7 @@ export const data = [
   { city: 'San Diego', state: 'California' },
 ];
 
-export const ChildrenExample = () => (
+export const Children = () => (
   <Grommet theme={grommet}>
     <Box pad="large" height="100%" align="center">
       <List data={data} pad="medium">
@@ -28,5 +27,3 @@ export const ChildrenExample = () => (
     </Box>
   </Grommet>
 );
-
-storiesOf('List', module).add('Children', () => <ChildrenExample />);
