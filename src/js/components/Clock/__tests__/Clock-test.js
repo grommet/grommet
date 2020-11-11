@@ -57,22 +57,40 @@ describe('Clock', () => {
 
   ['analog', 'digital'].forEach(type =>
     ['hours', 'minutes', 'seconds'].forEach(precision =>
-      ['xsmall', 'small', 'medium', 'large', 'xlarge'].forEach(size =>
-        test(`type ${type} precision ${precision} size ${size}`, () => {
-          const component = renderer.create(
-            <Grommet>
-              <Clock
-                run={false}
-                type={type}
-                precision={precision}
-                size={size}
-                time={DURATION}
-              />
-            </Grommet>,
-          );
-          expect(component.toJSON()).toMatchSnapshot();
-        }),
+      ['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge'].forEach(
+        size =>
+          test(`type ${type} precision ${precision} size ${size}`, () => {
+            const component = renderer.create(
+              <Grommet>
+                <Clock
+                  run={false}
+                  type={type}
+                  precision={precision}
+                  size={size}
+                  time={DURATION}
+                />
+              </Grommet>,
+            );
+            expect(component.toJSON()).toMatchSnapshot();
+          }),
       ),
     ),
+  );
+
+  ['hours', 'minutes', 'seconds'].forEach(precision =>
+    test(`type analog precision ${precision} size huge`, () => {
+      const component = renderer.create(
+        <Grommet>
+          <Clock
+            run={false}
+            type="analog"
+            precision={precision}
+            size="huge"
+            time={DURATION}
+          />
+        </Grommet>,
+      );
+      expect(component.toJSON()).toMatchSnapshot();
+    }),
   );
 });
