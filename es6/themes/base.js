@@ -684,11 +684,14 @@ export var generate = function generate(baseSpacing, scale) {
           shape: 'round'
         },
         size: {
+          xsmall: baseSpacing * 2 + "px",
           small: baseSpacing * 3 + "px",
           medium: baseSpacing * 4 + "px",
           large: baseSpacing * 6 + "px",
           xlarge: baseSpacing * 9 + "px",
-          huge: baseSpacing * 12 + "px"
+          xxlarge: baseSpacing * 12 + "px",
+          huge: baseSpacing * 12 + "px" // kept for backwards compatibility
+
         }
       },
       digital: {
