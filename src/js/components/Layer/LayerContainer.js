@@ -156,7 +156,11 @@ const LayerContainer = forwardRef(
     }
     if (modal) {
       content = (
-        <FocusedContainer hidden={position === 'hidden'} restrictScroll>
+        <FocusedContainer
+          hidden={position === 'hidden'}
+          restrictScroll
+          trapFocus
+        >
           {content}
         </FocusedContainer>
       );
