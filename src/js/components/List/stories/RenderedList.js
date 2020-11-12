@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, List, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -20,7 +19,7 @@ for (let i = 0; i < 40; i += 1) {
   });
 }
 
-const RenderedList = () => (
+export const RenderedList = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
       <List
@@ -40,4 +39,6 @@ const RenderedList = () => (
   </Grommet>
 );
 
-storiesOf('List', module).add('Key render', () => <RenderedList />);
+RenderedList.story = {
+  name: 'Key render',
+};
