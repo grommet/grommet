@@ -55,7 +55,7 @@ const getRegExp = text => {
   return new RegExp(escapedText, 'i');
 };
 
-const CreateOption = () => {
+const CreateOption: React.FC = () => {
   const [options, setOptions] = useState(defaultOptions);
   const [value, setValue] = useState('');
   const [searchValue, setSearchValue] = useState('');
@@ -69,8 +69,7 @@ const CreateOption = () => {
           placeholder="Select"
           value={value}
           options={options}
-          onChange={event => {
-            const option = event.option as string;
+          onChange={({ option }) => {
             if (option.includes(prefix)) {
               defaultOptions.pop(); // remove Create option
               defaultOptions.push(searchValue);

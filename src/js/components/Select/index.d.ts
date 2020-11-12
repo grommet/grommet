@@ -9,29 +9,31 @@ import {
   ColorType,
 } from '../../utils';
 
-type SelectOption = string | boolean | number | JSX.Element | object;
-
-interface onChangeEvent
-  extends React.MouseEvent<
-    Omit<HTMLElement, 'value'> & { value: SelectOption | SelectOption[] }
-  > {
-  option: SelectOption;
-  value: SelectOption | SelectOption[];
+interface onChangeEvent<
+  OptionType = string | boolean | number | JSX.Element | object,
+  ValueType = string | JSX.Element | object | (string | number | object)[]
+> extends React.MouseEvent<Omit<HTMLElement, 'value'> & { value: ValueType }> {
+  option: OptionType;
+  value: ValueType;
+  selected: ValueType extends Array<any> ? number[] : number;
 }
 
-export interface SelectProps {
+export interface SelectProps<
+  OptionType = string | boolean | number | JSX.Element | object,
+  ValueType = string | JSX.Element | object | (string | number | object)[]
+> {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
   children?: (
-    option: SelectOption,
+    option: OptionType,
     index: number,
-    options: SelectOption[],
+    options: OptionType[],
     state: { active: boolean; disabled: boolean; selected: boolean },
-  ) => any;
+  ) => React.ReactNode;
   closeOnChange?: boolean;
   disabled?: boolean | (number | string | object)[];
-  disabledKey?: string | ((option: SelectOption) => boolean);
+  disabledKey?: string | ((option: OptionType) => boolean);
   dropAlign?: {
     top?: 'top' | 'bottom';
     bottom?: 'top' | 'bottom';
@@ -50,33 +52,37 @@ export interface SelectProps {
       }) => React.ReactNode)
     | React.ReactNode;
   id?: string;
-  labelKey?: string | ((option: SelectOption) => any);
+  labelKey?: string | ((option: OptionType) => React.ReactNode);
   margin?: MarginType;
   messages?: { multiple?: string };
   multiple?: boolean;
   name?: string;
-  onChange?: (event: onChangeEvent) => void;
+  onChange?: (event: onChangeEvent<OptionType, ValueType>) => void;
   onClose?: () => void;
   onMore?: () => void;
   onOpen?: () => void;
   onSearch?: (search: string) => void;
-  options: SelectOption[];
+  options: OptionType[];
   open?: boolean;
   placeholder?: PlaceHolderType;
   plain?: boolean;
   replace?: boolean;
   searchPlaceholder?: string;
-  selected?: number | number[];
+  selected?: number[] | number;
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
-  value?: SelectOption | SelectOption[];
+  value: ValueType;
   valueLabel?: React.ReactNode;
   valueKey?:
     | string
     | { key: string; reduce?: boolean }
-    | ((option: SelectOption) => any);
+    | ((option: OptionType) => ValueType);
   emptySearchMessage?: string;
 }
 
-declare const Select: React.ComponentClass<SelectProps>;
+type SelectComponent = <O, V>(
+  props: React.PropsWithChildren<SelectProps<O, V>>,
+) => React.ReactElement<any, any> | null;
+
+declare const Select: SelectComponent;
 
 export { Select };
