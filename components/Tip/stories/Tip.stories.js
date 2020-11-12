@@ -35,6 +35,6 @@ var _SidebarTip = require("./SidebarTip");
 
 exports.SidebarTip = _SidebarTip.SidebarTip;
 var _default = {
-  title: 'Visualizations/Tip'
+  title: 'Controls/Tip'
 };
 exports["default"] = _default;

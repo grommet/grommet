@@ -44,6 +44,11 @@ var NotificationAlert = function NotificationAlert() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     alignSelf: "center"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Tip, {
+    dropProps: {
+      align: {
+        left: 'right'
+      }
+    },
     content: /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       animation: "jiggle"
     }, "New Analytics!")

@@ -38,6 +38,11 @@ var NotificationAlert = function NotificationAlert() {
   return /*#__PURE__*/React.createElement(Box, {
     alignSelf: "center"
   }, /*#__PURE__*/React.createElement(Tip, {
+    dropProps: {
+      align: {
+        left: 'right'
+      }
+    },
     content: /*#__PURE__*/React.createElement(Box, {
       animation: "jiggle"
     }, "New Analytics!")
