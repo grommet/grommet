@@ -1,9 +1,8 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, MaskedInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const UrlMaskedInput = () => {
+export const UrlMaskedInput = () => {
   const [value, setValue] = React.useState('');
 
   return (
@@ -21,6 +20,9 @@ const UrlMaskedInput = () => {
   );
 };
 
-storiesOf('MaskedInput', module).add('URL', () => <UrlMaskedInput />, {
-  chromatic: { disable: true },
-});
+UrlMaskedInput.story = {
+  name: 'URL',
+  parameters: {
+    chromatic: { disable: true },
+  },
+};

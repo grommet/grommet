@@ -14,6 +14,7 @@ import {
   overflowStyle,
   parseMetricToNum,
   responsiveBorderStyle,
+  getBreakpointStyle,
 } from '../../utils';
 
 const ALIGN_MAP = {
@@ -72,7 +73,10 @@ const directionStyle = (direction, theme) => {
     `,
   ];
   if (direction === 'row-responsive' && theme.box.responsiveBreakpoint) {
-    const breakpoint = theme.global.breakpoints[theme.box.responsiveBreakpoint];
+    const breakpoint = getBreakpointStyle(
+      theme,
+      theme.box.responsiveBreakpoint,
+    );
     if (breakpoint) {
       styles.push(
         breakpointStyle(
@@ -146,9 +150,7 @@ const ROUND_MAP = {
 };
 
 const roundStyle = (data, responsive, theme) => {
-  const breakpoint =
-    theme.box.responsiveBreakpoint &&
-    theme.global.breakpoints[theme.box.responsiveBreakpoint];
+  const breakpoint = getBreakpointStyle(theme, theme.box.responsiveBreakpoint);
   const styles = [];
   if (typeof data === 'object') {
     const size =
@@ -568,9 +570,7 @@ const StyledBox = styled.div`
 
 const gapStyle = (directionProp, gap, responsive, border, theme) => {
   const metric = theme.global.edgeSize[gap] || gap;
-  const breakpoint =
-    theme.box.responsiveBreakpoint &&
-    theme.global.breakpoints[theme.box.responsiveBreakpoint];
+  const breakpoint = getBreakpointStyle(theme, theme.box.responsiveBreakpoint);
   const responsiveMetric = responsive && breakpoint && breakpoint.edgeSize[gap];
 
   const styles = [];

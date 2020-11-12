@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, CheckBox, Grommet, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -18,7 +17,7 @@ const dummyOptions = Array(2000)
     a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }),
   );
 
-const ManyOptions = () => {
+export const ManyOptions = () => {
   const [selected, setSelected] = React.useState([]);
   const [options, setOptions] = React.useState(dummyOptions);
 
@@ -64,6 +63,9 @@ const ManyOptions = () => {
   );
 };
 
-storiesOf('Select', module).add('Lots of options', () => <ManyOptions />, {
-  chromatic: { disable: true },
-});
+ManyOptions.story = {
+  name: 'Many options',
+  parameters: {
+    chromatic: { disable: true },
+  },
+};

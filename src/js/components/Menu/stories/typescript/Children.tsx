@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Menu, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -44,4 +43,4 @@ const Example = () => (
   </Grommet>
 );
 
-storiesOf('Menu', module).add('Children', () => <Example />);
+export const Children = () => <Example />;

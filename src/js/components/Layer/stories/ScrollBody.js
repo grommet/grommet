@@ -1,12 +1,11 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { FormClose } from 'grommet-icons';
 
 import { Box, Button, Grommet, Layer, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const ScrollBodyLayer = () => (
+export const ScrollBodyLayer = () => (
   <Grommet theme={grommet}>
     <Layer full="vertical" position="right">
       <Box fill style={{ minWidth: '378px' }}>
@@ -99,6 +98,5 @@ const ScrollBodyLayer = () => (
     </Layer>
   </Grommet>
 );
-storiesOf('Layer', module).add('Fixed header, scroll body', () => (
-  <ScrollBodyLayer />
-));
+
+ScrollBodyLayer.story = { name: 'Fixed header, scroll body' };

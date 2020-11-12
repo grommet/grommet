@@ -1,11 +1,10 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Header, Anchor, Box, ResponsiveContext, Menu } from 'grommet';
 import { Grommet as GrommetIcon, Menu as MenuIcon } from 'grommet-icons';
 import { grommet } from 'grommet/themes';
 
-const Responsive = () => (
+export const Responsive = () => (
   <Grommet theme={grommet}>
     <Header background="light-4" pad="medium" height="xsmall">
       <Anchor
@@ -47,5 +46,3 @@ const Responsive = () => (
     </Header>
   </Grommet>
 );
-
-storiesOf('Header', module).add('Responsive', () => <Responsive />);

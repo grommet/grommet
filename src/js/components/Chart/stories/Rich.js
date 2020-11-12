@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Chart, Stack, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 import { calcs } from '../calcs';
 
-const RichChart = () => {
+export const Rich = () => {
   const [state, setState] = useState({ values: [], yAxis: [], xAxis: [] });
 
   useEffect(() => {
@@ -98,5 +97,3 @@ const RichChart = () => {
     </Grommet>
   );
 };
-
-storiesOf('Chart', module).add('Rich', () => <RichChart />);

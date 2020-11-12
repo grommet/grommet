@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import isChromatic from 'chromatic/isChromatic';
 import { grommet } from 'grommet/themes';
 
 import { Grommet, Box, InfiniteScroll, Text } from 'grommet';
@@ -31,8 +29,19 @@ const Example = props => {
   );
 };
 
-if (!isChromatic()) {
-  storiesOf('InfiniteScroll', module)
-    .add('Variable Item Height', () => <Example />)
-    .add('Variable Item Height w/replace', () => <Example replace />);
-}
+export const Height = () => <Example />;
+export const HeightReplace = () => <Example replace />;
+
+Height.story = {
+  name: 'Variable item height',
+  parameters: {
+    chromatic: { disable: true },
+  },
+};
+
+HeightReplace.story = {
+  name: 'Variable item height w/replace',
+  parameters: {
+    chromatic: { disable: true },
+  },
+};
