@@ -2451,11 +2451,15 @@ forward",
       },
       Object {
         "defaultValue": "medium",
-        "description": "Clock size",
-        "format": "small
+        "description": "Size for both Analog and Digital Clocks. For Analog,
+      there's also 'huge', that's equal to 'xxlarge' and exists
+      for backwards compatibility",
+        "format": "xsmall
+small
 medium
 large
 xlarge
+xxlarge
 string",
         "name": "size",
       },

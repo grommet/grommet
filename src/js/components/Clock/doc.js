@@ -35,10 +35,21 @@ export const doc = Clock => {
       )
       .defaultValue('forward'),
     size: PropTypes.oneOfType([
-      PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
+      PropTypes.oneOf([
+        'xsmall',
+        'small',
+        'medium',
+        'large',
+        'xlarge',
+        'xxlarge',
+      ]),
       PropTypes.string,
     ])
-      .description('Clock size')
+      .description(
+        `Size for both Analog and Digital Clocks. For Analog,
+      there's also 'huge', that's equal to 'xxlarge' and exists
+      for backwards compatibility`,
+      )
       .defaultValue('medium'),
     time: PropTypes.string.description(
       `ISO8601 time or duration. For example: 'PT8H12M23S',
@@ -56,7 +67,7 @@ export const doc = Clock => {
 
 export const themeDoc = {
   'clock.analog.extend': {
-    description: 'Any additional style for Clock.',
+    description: 'Any additional style for the Analog Clock.',
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
@@ -81,7 +92,7 @@ export const themeDoc = {
     defaultValue: '8px',
   },
   'clock.analog.minute.color': {
-    description: 'The color of the hour minute.',
+    description: 'The color of the minute hand.',
     type: 'string | { dark: string, light: string }',
     defaultValue: '{ dark: light-4, light: dark-3 }',
   },
@@ -120,9 +131,39 @@ export const themeDoc = {
     type: 'string',
     defaultValue: '3px',
   },
+  'clock.analog.size.xsmall': {
+    description: 'The whole size of the Analog Clock',
+    type: 'string',
+    defaultValue: '48px',
+  },
+  'clock.analog.size.small': {
+    description: 'The whole size of the Analog Clock',
+    type: 'string',
+    defaultValue: '72px',
+  },
   'clock.analog.size.medium': {
-    description: 'The whole size of the Analog clock',
+    description: 'The whole size of the Analog Clock',
     type: 'string',
     defaultValue: '96px',
+  },
+  'clock.analog.size.large': {
+    description: 'The whole size of the Analog Clock',
+    type: 'string',
+    defaultValue: '144px',
+  },
+  'clock.analog.size.xlarge': {
+    description: 'The whole size of the Analog Clock',
+    type: 'string',
+    defaultValue: '216px',
+  },
+  'clock.analog.size.xxlarge': {
+    description: 'The whole size of the Analog Clock',
+    type: 'string',
+    defaultValue: '288px',
+  },
+  'clock.analog.size.huge': {
+    description: 'The whole size of the Analog Clock',
+    type: 'string',
+    defaultValue: '288px',
   },
 };
