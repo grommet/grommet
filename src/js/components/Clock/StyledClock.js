@@ -37,20 +37,20 @@ const StyledAnalog = styled.svg`
   width: ${props => props.theme.clock.analog.size[props.size]};
   height: ${props => props.theme.clock.analog.size[props.size]};
 
-  ${genericStyles} ${props =>
-    props.theme.clock.analog && props.theme.clock.analog.extend};
+  ${genericStyles}
+  ${props => props.theme.clock.analog && props.theme.clock.analog.extend};
 `;
 
 StyledAnalog.defaultProps = {};
 Object.setPrototypeOf(StyledAnalog.defaultProps, defaultProps);
 
 const sizeStyle = props => {
-  // size is a combination of the level and size properties
+  // size is a combination of the size and height properties
   const size = props.size || 'medium';
-  const data = props.theme.clock.digital.text[size];
+  const data = props.theme.clock.digital.text[size] || {};
   return css`
-    font-size: ${data.size};
-    line-height: ${data.height};
+    font-size: ${data.size || props.theme.clock.digital.text.medium.size};
+    line-height: ${data.height || props.theme.clock.digital.text.medium.height};
   `;
 };
 
