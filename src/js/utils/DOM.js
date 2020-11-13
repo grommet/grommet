@@ -25,6 +25,8 @@ export const findScrollParent = (element, horizontal) => {
   return result;
 };
 
+const documentTags = ['html', 'body'];
+
 export const findScrollParents = (element, horizontal) => {
   const result = [];
   if (element) {
@@ -45,7 +47,7 @@ export const findScrollParents = (element, horizontal) => {
     // if nothing else is scrollable in the page
     if (result.length === 0) {
       result.push(document);
-    } else if (result[0].tagName.toLowerCase() === 'body') {
+    } else if (documentTags.includes(result[0].tagName.toLowerCase())) {
       result.length = 0;
       result.push(document);
     }
@@ -166,6 +168,7 @@ export const makeNodeUnfocusable = node => {
 
 export const findVisibleParent = element => {
   if (element) {
+    // Get the closest ancestor element that is positioned.
     return element.offsetParent
       ? element
       : findVisibleParent(element.parentElement) || element;

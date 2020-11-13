@@ -31,6 +31,25 @@ describe('Video', () => {
     expect(results).toHaveNoViolations();
   });
 
+  test('renders with theme', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          video: {
+            controls: { background: '#000000' },
+            scrubber: { track: { color: '#444444' } },
+          },
+        }}
+      >
+        <Video>
+          <source key="source" src="small.mp4" type="video/mp4" />
+          <track key="track" />
+        </Video>
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('renders', () => {
     const { container } = render(<App />);
     expect(container.firstChild).toMatchSnapshot();
@@ -86,6 +105,18 @@ describe('Video', () => {
     expect(onPause).toHaveBeenCalled();
   });
 
+  test('mouse events handlers of controls', () => {
+    const { container } = render(<App />);
+
+    const videoContainer = document.querySelector('video');
+    fireEvent.mouseOver(videoContainer);
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.mouseMove(videoContainer);
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.touchStart(videoContainer);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('End event handler', () => {
     const onEnd = jest.fn();
     const { container } = render(<App onEnded={onEnd} />);
@@ -101,6 +132,20 @@ describe('Video', () => {
     window.scrollTo = jest.fn();
     const { container, getByLabelText } = render(<App />);
     fireEvent.click(getByLabelText('open menu'));
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('scrubber', () => {
+    window.scrollTo = jest.fn();
+    const { container, getByLabelText } = render(<App />);
+    fireEvent.click(getByLabelText('scrubber'));
+
+    // targeting scrub function
+    fireEvent.mouseMove(getByLabelText('scrubber'));
+    expect(container.firstChild).toMatchSnapshot();
+
+    // targeting setScrubTime
+    fireEvent.mouseLeave(getByLabelText('scrubber'));
     expect(container.firstChild).toMatchSnapshot();
   });
 

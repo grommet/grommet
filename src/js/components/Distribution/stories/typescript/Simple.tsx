@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Distribution, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const SimpleDistribution = () => (
+export const Simple = () => (
   <Grommet theme={grommet} full>
     <Distribution
       fill
@@ -24,5 +23,3 @@ const SimpleDistribution = () => (
     </Distribution>
   </Grommet>
 );
-
-storiesOf('Distribution', module).add('Simple', () => <SimpleDistribution />);

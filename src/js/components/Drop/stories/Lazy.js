@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Drop, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -121,6 +120,9 @@ const LazyDrop = () => {
   );
 };
 
-storiesOf('Drop', module).add('Lazy', () => <LazyDrop />, {
-  chromatic: { disable: true },
-});
+export const Lazy = () => <LazyDrop />;
+Lazy.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
+};

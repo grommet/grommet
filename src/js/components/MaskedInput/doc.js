@@ -50,7 +50,8 @@ export const doc = MaskedInput => {
     ).description(
       `Describes the structure of the mask. If a regexp is provided, it should
       allow both the final full string element as well as partial strings
-      as the user types characters one by one.`,
+      as the user types characters one by one. When using regexp to match number
+      values make sure that the option values are numbers as well.`,
     ),
     reverse: PropTypes.bool.description(
       `Whether an icon should be reversed so that the icon is at the
@@ -85,6 +86,12 @@ export const themeDoc = {
   },
   'maskedInput.extend': {
     description: 'Any additional style for MaskedInput.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'maskedInput.container.extend': {
+    description: `Any additional style for the container surrounding the input 
+    and, if present, icon.`,
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },

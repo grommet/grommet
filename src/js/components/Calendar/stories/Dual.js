@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Button, Calendar, Grommet, Heading } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 import { Blank, Previous, Next } from 'grommet-icons';
 
-const DualCalendar = () => {
+export const Dual = () => {
   const [date, setDate] = useState();
   const [dates, setDates] = useState();
   const [reference1, setReference1] = useState('2020-08-07T15:13:47.290Z');
@@ -99,5 +98,3 @@ const DualCalendar = () => {
     </Grommet>
   );
 };
-
-storiesOf('Calendar', module).add('Dual', () => <DualCalendar />);

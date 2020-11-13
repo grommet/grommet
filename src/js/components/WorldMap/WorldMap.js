@@ -20,6 +20,7 @@ const CONTINENTS = [
       [7, 1],
       [15, 7],
       [13, 9],
+      [8, 8],
       [0, 6],
       [0, 2],
     ],
@@ -32,6 +33,7 @@ const CONTINENTS = [
       [0, 5, 3],
       [5, 5, 5],
       [5, 6, 4],
+      [8, 8, 1],
       [15, 7, 1],
       [14, 8, 1],
       [13, 9, 1],
@@ -549,7 +551,7 @@ const WorldMap = forwardRef(
     );
 
     const continentElements = world.continents.map(({ area, dots, name }) => {
-      const { color: continentColor, onClick, onHover } =
+      const { color: continentColor, onClick, onHover, ...restContinents } =
         continents[name] || {};
       const active = activeContinent && activeContinent === name;
 
@@ -563,7 +565,7 @@ const WorldMap = forwardRef(
       }
 
       return (
-        <g key={name} {...interactiveProps}>
+        <g key={name} {...interactiveProps} {...restContinents}>
           <path stroke="none" fill="#fff" fillOpacity="0.01" d={area} />
           <path
             d={dots}

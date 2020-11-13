@@ -1524,6 +1524,14 @@ string",
         "name": "margin",
       },
       Object {
+        "defaultValue": "start",
+        "description": "When using range, Whether the next date selection will affect the 
+        start or end bound of the range.",
+        "format": "start
+end",
+        "name": "activeDate",
+      },
+      Object {
         "defaultValue": true,
         "description": "Whether to animate the calender as the user interacts with it.",
         "format": "boolean",
@@ -1638,8 +1646,10 @@ to disable the previous and next buttons.
         "description": "Whether to automatically manage multiple date selection as a range.
         When the user clicks the first date, onSelect will be called with that
         date. When the user selects another date, onSelect will be called with
-        an array of two dates.",
-        "format": "boolean",
+        an array of two dates. If range = \\"array\\", then an array of dates will 
+        be returned even when the start or end date of the range is undefined.",
+        "format": "boolean
+array",
         "name": "range",
       },
       Object {
@@ -2441,11 +2451,15 @@ forward",
       },
       Object {
         "defaultValue": "medium",
-        "description": "Clock size",
-        "format": "small
+        "description": "Size for both Analog and Digital Clocks. For Analog,
+      there's also 'huge', that's equal to 'xxlarge' and exists
+      for backwards compatibility",
+        "format": "xsmall
+small
 medium
 large
 xlarge
+xxlarge
 string",
         "name": "size",
       },
@@ -3983,6 +3997,90 @@ stretch",
         "name": "areas",
       },
       Object {
+        "description": "Include a border.",
+        "format": "boolean
+top
+left
+bottom
+right
+start
+end
+horizontal
+vertical
+all
+{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  side: 
+    top
+    left
+    bottom
+    right
+    start
+    end
+    horizontal
+    vertical
+    all,
+  size: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  style: 
+    solid
+    dashed
+    dotted
+    double
+    groove
+    ridge
+    inset
+    outset
+    hidden
+}
+[{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  side: 
+    top
+    left
+    bottom
+    right
+    start
+    end
+    horizontal
+    vertical
+    all,
+  size: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  style: 
+    solid
+    dashed
+    dotted
+    double
+    groove
+    ridge
+    inset
+    outset
+    hidden
+}]",
+        "name": "border",
+      },
+      Object {
         "description": "Column sizes.
       If an array value is an array, the inner array indicates the
       minimum and maximum sizes for the column.
@@ -5190,7 +5288,8 @@ string",
       Object {
         "description": "Describes the structure of the mask. If a regexp is provided, it should
       allow both the final full string element as well as partial strings
-      as the user types characters one by one.",
+      as the user types characters one by one. When using regexp to match number
+      values make sure that the option values are numbers as well.",
         "format": "[{
   length: 
     number
@@ -7325,6 +7424,47 @@ number",
     ],
     "usage": "import { TextInput } from 'grommet';
 <TextInput id='item' name='item' />",
+  },
+  "Tip": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=Tip&full=0&addons=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/tip&module=%2Fsrc%2FTip.js",
+      },
+    ],
+    "description": "Tooltip or a hint when hovering over an element. The tooltip will render 
+      when hovering on top of the Tip's child node or string.",
+    "name": "Tip",
+    "properties": Array [
+      Object {
+        "description": "The tooltip content inside the drop.",
+        "format": "node",
+        "name": "content",
+      },
+      Object {
+        "defaultValue": Object {
+          "plain": true,
+          "trapFocus": false,
+        },
+        "description": "Any valid Drop prop to style the Tip drop container.",
+        "format": "object",
+        "name": "dropProps",
+      },
+      Object {
+        "defaultValue": undefined,
+        "description": "Whether content should have default styling.",
+        "format": "boolean",
+        "name": "plain",
+      },
+    ],
+    "usage": "import { Tip } from 'grommet';
+<Tip />",
   },
   "Video": Object {
     "availableAt": Array [
