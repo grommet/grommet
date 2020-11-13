@@ -7,7 +7,7 @@ Object {
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Accordion&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-Accordion&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -192,7 +192,7 @@ node",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Anchor&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-Anchor&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -386,7 +386,7 @@ number",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Box&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-Box&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -1102,7 +1102,7 @@ reverse",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Button&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-Button&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -1408,7 +1408,7 @@ submit",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Calendar&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-Calendar&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -1684,7 +1684,7 @@ string",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Card&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-Card&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -1709,7 +1709,7 @@ string",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Chart&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-Chart&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -2144,7 +2144,7 @@ point",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=CheckBox&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-CheckBox&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -2227,7 +2227,7 @@ NOTE: This can only be used with non-toggle components",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=CheckBoxGroup&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-CheckBoxGroup&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -2301,7 +2301,7 @@ NOTE: This can only be used with non-toggle components",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Clock&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-Clock&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -2508,7 +2508,7 @@ vertical",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=DataChart&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-DataChart&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -3024,7 +3024,7 @@ string",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=DateInput&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-DateInput&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -3125,7 +3125,7 @@ string",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Diagram&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-Diagram&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -3196,7 +3196,7 @@ string",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Drop&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-Drop&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -3327,7 +3327,7 @@ string",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=DropButton&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-DropButton&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -3517,7 +3517,7 @@ string",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Form&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-Form&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -3635,7 +3635,7 @@ submit",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=FormField&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-FormField&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -3846,7 +3846,7 @@ function
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Grid&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-Grid&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -4376,7 +4376,7 @@ function",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Heading&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-Heading&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -4572,7 +4572,7 @@ is too long to all fit.",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Image&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-Image&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -4724,7 +4724,7 @@ boolean",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Layer&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-Layer&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -4898,7 +4898,7 @@ top-right",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=List&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-List&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -5226,7 +5226,7 @@ function",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=MaskedInput&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-MaskedInput&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -5337,7 +5337,7 @@ number",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Menu&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-Menu&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -5596,7 +5596,7 @@ string",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Meter&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-Meter&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -5798,7 +5798,7 @@ circle",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Paragraph&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-Paragraph&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -5960,7 +5960,7 @@ end",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=RadioButton&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-RadioButton&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -6034,7 +6034,7 @@ with the same name so form submissions work.",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=RadioButtonGroup&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-RadioButtonGroup&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -6112,7 +6112,7 @@ object",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=RangeInput&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-RangeInput&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -6179,7 +6179,7 @@ string",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=RangeSelector&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-RangeSelector&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -6295,7 +6295,7 @@ string",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Select&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-Select&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -6788,7 +6788,7 @@ bottom",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Tabs&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-Tabs&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -6965,7 +6965,7 @@ currently active tab changes.",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Text&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-Text&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -7158,7 +7158,7 @@ break-word",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=TextArea&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-TextArea&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -7244,7 +7244,7 @@ string",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=TextInput&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-TextInput&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -7430,7 +7430,7 @@ number",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Tip&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-Tip&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -7471,7 +7471,7 @@ number",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Video&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-Video&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -7648,7 +7648,7 @@ contain",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=WorldMap&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-WorldMap&full=0&addons=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
