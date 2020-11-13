@@ -1,9 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Stack } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var SimpleStack = function SimpleStack() {
+export var Simple = function Simple() {
   return /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Stack, {
     anchor: "center"
   }, /*#__PURE__*/React.createElement(Box, {
@@ -14,8 +12,7 @@ var SimpleStack = function SimpleStack() {
     background: "accent-1"
   })));
 };
-
-var FillStack = function FillStack() {
+export var Fill = function Fill() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet,
     full: true
@@ -26,9 +23,6 @@ var FillStack = function FillStack() {
     fill: true
   }, "Test")));
 };
-
-storiesOf('Stack', module).add('Simple', function () {
-  return /*#__PURE__*/React.createElement(SimpleStack, null);
-}).add('Fill', function () {
-  return /*#__PURE__*/React.createElement(FillStack, null);
-});
+export default {
+  title: 'Layout/Stack'
+};

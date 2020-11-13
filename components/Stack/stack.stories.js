@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports["default"] = exports.Fill = exports.Simple = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -10,7 +11,7 @@ var _themes = require("grommet/themes");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var SimpleStack = function SimpleStack() {
+var Simple = function Simple() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, null, /*#__PURE__*/_react["default"].createElement(_grommet.Stack, {
     anchor: "center"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -22,7 +23,9 @@ var SimpleStack = function SimpleStack() {
   })));
 };
 
-var FillStack = function FillStack() {
+exports.Simple = Simple;
+
+var Fill = function Fill() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet,
     full: true
@@ -34,8 +37,8 @@ var FillStack = function FillStack() {
   }, "Test")));
 };
 
-(0, _react2.storiesOf)('Stack', module).add('Simple', function () {
-  return /*#__PURE__*/_react["default"].createElement(SimpleStack, null);
-}).add('Fill', function () {
-  return /*#__PURE__*/_react["default"].createElement(FillStack, null);
-});
+exports.Fill = Fill;
+var _default = {
+  title: 'Layout/Stack'
+};
+exports["default"] = _default;

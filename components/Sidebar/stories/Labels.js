@@ -5,8 +5,6 @@ exports.Labels = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _react2 = require("@storybook/react");
-
 var _grommet = require("grommet");
 
 var _grommetIcons = require("grommet-icons");
@@ -117,6 +115,3 @@ var Labels = function Labels() {
 };
 
 exports.Labels = Labels;
-(0, _react2.storiesOf)('Sidebar', module).add('Labels', function () {
-  return /*#__PURE__*/_react["default"].createElement(Labels, null);
-});

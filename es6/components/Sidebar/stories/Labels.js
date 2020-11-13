@@ -3,7 +3,6 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Avatar, Button, Box, grommet, Grommet, Nav, Stack, Text } from 'grommet';
 import { Analytics } from "grommet-icons/es6/icons/Analytics";
 import { Chat } from "grommet-icons/es6/icons/Chat";
@@ -110,6 +109,3 @@ export var Labels = function Labels() {
     }
   }, /*#__PURE__*/React.createElement(MainNavigation, null))));
 };
-storiesOf('Sidebar', module).add('Labels', function () {
-  return /*#__PURE__*/React.createElement(Labels, null);
-});
