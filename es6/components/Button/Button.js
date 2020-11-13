@@ -7,6 +7,7 @@ import { ThemeContext } from 'styled-components';
 import { backgroundAndTextColors, colorIsDark, normalizeBackground, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
+import { Tip } from '../Tip';
 import { StyledButton } from './StyledButton';
 import { StyledButtonKind } from './StyledButtonKind'; // We have two Styled* components to separate
 // the newer default|primary|secondary approach,
@@ -97,10 +98,11 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
       secondary = _ref.secondary,
       selected = _ref.selected,
       size = _ref.size,
+      tip = _ref.tip,
       _ref$type = _ref.type,
       type = _ref$type === void 0 ? 'button' : _ref$type,
       as = _ref.as,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "active", "align", "color", "children", "disabled", "icon", "focusIndicator", "gap", "fill", "href", "kind", "label", "onBlur", "onClick", "onFocus", "onMouseOut", "onMouseOver", "plain", "primary", "reverse", "secondary", "selected", "size", "type", "as"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "active", "align", "color", "children", "disabled", "icon", "focusIndicator", "gap", "fill", "href", "kind", "label", "onBlur", "onClick", "onFocus", "onMouseOut", "onMouseOver", "plain", "primary", "reverse", "secondary", "selected", "size", "tip", "type", "as"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
 
@@ -230,8 +232,10 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
     contents = first || second || children;
   }
 
+  var styledButtonResult;
+
   if (kind) {
-    return /*#__PURE__*/React.createElement(StyledButtonKind, _extends({}, rest, {
+    styledButtonResult = /*#__PURE__*/React.createElement(StyledButtonKind, _extends({}, rest, {
       as: domTag,
       ref: ref,
       active: active,
@@ -262,42 +266,54 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
       sizeProp: size,
       type: !href ? type : undefined
     }), contents);
+  } else {
+    styledButtonResult = /*#__PURE__*/React.createElement(StyledButton, _extends({}, rest, {
+      as: domTag,
+      ref: ref,
+      "aria-label": a11yTitle,
+      colorValue: color,
+      active: active,
+      selected: selected,
+      disabled: disabled,
+      hasIcon: !!icon,
+      gap: gap,
+      hasLabel: !!label,
+      fillContainer: fill,
+      focus: focus,
+      focusIndicator: focusIndicator,
+      href: href,
+      kind: kind,
+      themePaths: themePaths,
+      onClick: onClick,
+      onFocus: function onFocus(event) {
+        setFocus(true);
+        if (_onFocus) _onFocus(event);
+      },
+      onBlur: function onBlur(event) {
+        setFocus(false);
+        if (_onBlur) _onBlur(event);
+      },
+      onMouseOver: onMouseOverButton,
+      onMouseOut: onMouseOutButton,
+      pad: !plain,
+      plain: typeof plain !== 'undefined' ? plain : Children.count(children) > 0 || icon && !label,
+      primary: primary,
+      sizeProp: size,
+      type: !href ? type : undefined
+    }), contents);
   }
 
-  return /*#__PURE__*/React.createElement(StyledButton, _extends({}, rest, {
-    as: domTag,
-    ref: ref,
-    "aria-label": a11yTitle,
-    colorValue: color,
-    active: active,
-    selected: selected,
-    disabled: disabled,
-    hasIcon: !!icon,
-    gap: gap,
-    hasLabel: !!label,
-    fillContainer: fill,
-    focus: focus,
-    focusIndicator: focusIndicator,
-    href: href,
-    kind: kind,
-    themePaths: themePaths,
-    onClick: onClick,
-    onFocus: function onFocus(event) {
-      setFocus(true);
-      if (_onFocus) _onFocus(event);
-    },
-    onBlur: function onBlur(event) {
-      setFocus(false);
-      if (_onBlur) _onBlur(event);
-    },
-    onMouseOver: onMouseOverButton,
-    onMouseOut: onMouseOutButton,
-    pad: !plain,
-    plain: typeof plain !== 'undefined' ? plain : Children.count(children) > 0 || icon && !label,
-    primary: primary,
-    sizeProp: size,
-    type: !href ? type : undefined
-  }), contents);
+  if (tip) {
+    if (typeof tip === 'string') {
+      return /*#__PURE__*/React.createElement(Tip, {
+        content: tip
+      }, styledButtonResult);
+    }
+
+    return /*#__PURE__*/React.createElement(Tip, tip, styledButtonResult);
+  }
+
+  return styledButtonResult;
 });
 Button.displayName = 'Button';
 var ButtonDoc;

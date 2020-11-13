@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports["default"] = exports.TSCustom = exports.Children = exports.Plain = exports.Active = exports.Sizes = exports.RoutedButton = exports.Multiple = exports.Kind = exports.IconLabel = exports.Icon = exports.Fill = exports.Custom = exports.Basic = void 0;
+exports["default"] = exports.TSCustom = exports.Children = exports.Plain = exports.Active = exports.TipOnButton = exports.Sizes = exports.RoutedButton = exports.Multiple = exports.Kind = exports.IconLabel = exports.Icon = exports.Fill = exports.Custom = exports.Basic = void 0;
 
 var _Basic = require("./Basic");
 
@@ -38,6 +38,10 @@ exports.RoutedButton = _RoutedButton.RoutedButton;
 var _Sizes = require("./Sizes");
 
 exports.Sizes = _Sizes.Sizes;
+
+var _TipOnButton = require("./TipOnButton");
+
+exports.TipOnButton = _TipOnButton.TipOnButton;
 
 var _Plain = require("./Plain");
 

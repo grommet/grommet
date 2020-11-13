@@ -35,6 +35,11 @@ var doc = function doc(Button) {
     secondary: _reactDesc.PropTypes.bool.description("Whether this is a secondary button."),
     size: _reactDesc.PropTypes.oneOf(['small', 'medium', 'large']).description("The possible sizes of Button, that impacts the overall Button \n      padding, border radius, text size and line height. \n      'size' will not impact any icon related sizing."),
     target: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['_self', '_blank', '_parent', '_top']), _reactDesc.PropTypes.string]).description("Specifies where to display the URL defined in the href property."),
+    tip: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.shape({
+      content: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.node, _reactDesc.PropTypes.string]),
+      dropProps: _reactDesc.PropTypes.shape({}),
+      plain: _reactDesc.PropTypes.bool
+    }), _reactDesc.PropTypes.string]).description("tooltip or a hint when hovering over the button."),
     type: _reactDesc.PropTypes.oneOf(['button', 'reset', 'submit']).description("The type of button. Set the type to submit for the default button on \n                forms.").defaultValue('button')
   });
   return DocumentedButton;
@@ -402,6 +407,16 @@ var themeDoc = _extends({
   'button.extend': {
     description: 'Any additional style for the Button.',
     type: 'string | (props) => {}'
+  },
+  'tip.content': {
+    description: 'When using tip prop, any valid Box property for the Tip container.',
+    type: 'object',
+    defaultValue: "{ background: 'background-contrast', elevation: 'small', \n    margin: 'xsmall', pad: { vertical: 'xsmall', horizontal: 'small' }, \n    round: 'small'}"
+  },
+  'tip.drop': {
+    description: 'When using tip prop, any valid Drop property for the Tooltip.',
+    type: 'object',
+    defaultValue: "{align: { top: 'bottom' }}"
   }
 }, _themeDocUtils.themeDocUtils.focusStyle, _themeDocUtils.themeDocUtils.disabledStyle);
 
