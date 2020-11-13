@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, Table, TableBody, TableCell, TableFooter, TableHeader, TableRow, Text } from 'grommet';
 import { data, columns } from './data';
 var customTheme = {
@@ -45,8 +44,7 @@ var customTheme = {
     }
   }
 };
-
-var CustomThemeTable = function CustomThemeTable() {
+export var Custom = function Custom() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: customTheme
   }, /*#__PURE__*/React.createElement(Box, {
@@ -77,7 +75,3 @@ var CustomThemeTable = function CustomThemeTable() {
     }, /*#__PURE__*/React.createElement(Text, null, c.footer));
   }))))));
 };
-
-storiesOf('Table', module).add('Custom', function () {
-  return /*#__PURE__*/React.createElement(CustomThemeTable, null);
-});

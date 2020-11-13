@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.Custom = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -54,7 +55,7 @@ var customTheme = {
   }
 };
 
-var CustomThemeTable = function CustomThemeTable() {
+var Custom = function Custom() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -86,6 +87,4 @@ var CustomThemeTable = function CustomThemeTable() {
   }))))));
 };
 
-(0, _react2.storiesOf)('Table', module).add('Custom', function () {
-  return /*#__PURE__*/_react["default"].createElement(CustomThemeTable, null);
-});
+exports.Custom = Custom;

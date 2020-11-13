@@ -1,10 +1,8 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, Table, TableBody, TableCell, TableFooter, TableHeader, TableRow, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { data, columns } from './data';
-
-var DefaultTable = function DefaultTable() {
+export var Default = function Default() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -35,7 +33,3 @@ var DefaultTable = function DefaultTable() {
     }, /*#__PURE__*/React.createElement(Text, null, c.footer));
   }))))));
 };
-
-storiesOf('Table', module).add('Default', function () {
-  return /*#__PURE__*/React.createElement(DefaultTable, null);
-});

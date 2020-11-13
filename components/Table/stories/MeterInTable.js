@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.MeterInTable = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -38,6 +39,7 @@ var MeterInTable = function MeterInTable() {
   }))))));
 };
 
-(0, _react2.storiesOf)('Table', module).add('Meter inside table', function () {
-  return /*#__PURE__*/_react["default"].createElement(MeterInTable, null);
-});
+exports.MeterInTable = MeterInTable;
+MeterInTable.story = {
+  name: 'Meter inside table'
+};

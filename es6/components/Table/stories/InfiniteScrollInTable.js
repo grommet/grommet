@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Heading, grommet, Grommet, InfiniteScroll, Table, TableRow, TableBody, TableCell, TableHeader, Text } from 'grommet';
-
-var InfiniteScrollInTable = function InfiniteScrollInTable() {
+export var InfiniteScrollInTable = function InfiniteScrollInTable() {
   var step = 25;
 
   var _useState = useState(Array.from({
@@ -59,11 +57,11 @@ var InfiniteScrollInTable = function InfiniteScrollInTable() {
     }, /*#__PURE__*/React.createElement(TableCell, null, result), /*#__PURE__*/React.createElement(TableCell, null, "cartoon"), /*#__PURE__*/React.createElement(TableCell, null, "movie name"), /*#__PURE__*/React.createElement(TableCell, null, "year"));
   })))));
 };
-
-storiesOf('Table', module).add('InfiniteScroll', function () {
-  return /*#__PURE__*/React.createElement(InfiniteScrollInTable, null);
-}, {
-  chromatic: {
-    disable: true
+InfiniteScrollInTable.story = {
+  name: 'InfiniteScroll',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};
