@@ -15,19 +15,37 @@ const BasicButtons = props => (
       />
     </Box>
     <Box align="center" pad="medium">
-      <Button secondary label="Secondary" onClick={() => {}} {...props} />
+      <Button
+        secondary
+        size="medium"
+        label="Secondary"
+        onClick={() => {}}
+        {...props}
+      />
     </Box>
     <Box align="center" pad="medium">
-      <Button tertiary label="Tertiary" onClick={() => {}} {...props} />
+      <Button
+        tertiary
+        size="medium"
+        label="Tertiary"
+        onClick={() => {}}
+        {...props}
+      />
     </Box>
     <Box align="center" pad="medium">
-      <Button label="Default" onClick={() => {}} {...props} />
+      <Button size="medium" label="Default" onClick={() => {}} {...props} />
     </Box>
     <Box align="center" pad="medium">
-      <Button label="Anchor" href="#" />
+      <Button size="medium" label="Anchor" href="#" />
     </Box>
     <Box align="center" pad="medium">
-      <Button disabled label="Disabled" onClick={() => {}} {...props} />
+      <Button
+        size="medium"
+        disabled
+        label="Disabled"
+        onClick={() => {}}
+        {...props}
+      />
     </Box>
     <Box align="center" pad="medium">
       <Button

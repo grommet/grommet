@@ -10,6 +10,7 @@ import { Heading } from '../Heading';
 
 const PopUpContainer = ({
   title,
+  body,
   message,
   onPrimaryClick,
   renderButton,
@@ -25,30 +26,38 @@ const PopUpContainer = ({
           <Heading {...theme.modalpopup.title.text}>{title}</Heading>
         </Box>
       )}
-      <Box {...theme.modalpopup.message.wrapper}>
-        <Text {...theme.modalpopup.message.text}>{message}</Text>
-      </Box>
-      {renderButton || (
-        <Box {...theme.modalpopup.buttons.wrapper}>
-          <Button
-            {...theme.modalpopup.buttons.button}
-            onClick={onPrimaryClick || onClose}
-            isLoading={isLoading}
-            background="accent-1"
-            primary
-          >
-            <Text weight={600}>OK</Text>
-          </Button>
-          <Button
-            {...theme.modalpopup.buttons.button}
-            onClick={onClose}
-            background="accent-2"
-            secondary
-          >
-            <Text weight={600}>Cancel</Text>
-          </Button>
+      {!body && message && (
+        <Box {...theme.modalpopup.message.wrapper}>
+          <Text {...theme.modalpopup.message.text}>{message}</Text>
         </Box>
       )}
+
+      {!message && body && (
+        <Box {...theme.modalpopup.message.wrapper}>{body}</Box>
+      )}
+
+      {renderButton ||
+        (!body && (
+          <Box {...theme.modalpopup.buttons.wrapper}>
+            <Button
+              {...theme.modalpopup.buttons.button}
+              onClick={onPrimaryClick || onClose}
+              isLoading={isLoading}
+              background="accent-1"
+              primary
+            >
+              <Text weight={600}>OK</Text>
+            </Button>
+            <Button
+              {...theme.modalpopup.buttons.button}
+              onClick={onClose}
+              background="accent-2"
+              secondary
+            >
+              <Text weight={600}>Cancel</Text>
+            </Button>
+          </Box>
+        ))}
     </Box>
   );
 };
