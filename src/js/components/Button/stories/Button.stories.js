@@ -7,6 +7,7 @@ export { Kind } from './Kind';
 export { Multiple } from './Multiple';
 export { RoutedButton } from './RoutedButton';
 export { Sizes } from './Sizes';
+export { TipOnButton } from './TipOnButton';
 export { Active, Plain } from './Plain';
 export { Children } from './typescript/Children.tsx';
 export { TSCustom } from './typescript/Custom.tsx';

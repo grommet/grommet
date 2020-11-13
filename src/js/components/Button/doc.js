@@ -131,6 +131,17 @@ with plain Buttons.`,
     ]).description(
       `Specifies where to display the URL defined in the href property.`,
     ),
+    tip: PropTypes.oneOfType([
+      PropTypes.shape({
+        content: PropTypes.oneOfType([
+          PropTypes.node,
+          PropTypes.string,
+        ]),
+        dropProps: PropTypes.shape({}),
+        plain: PropTypes.bool,
+      }),
+      PropTypes.string,
+    ]).description(`tooltip or a hint when hovering over the button.`),
     type: PropTypes.oneOf(['button', 'reset', 'submit'])
       .description(
         `The type of button. Set the type to submit for the default button on 
@@ -296,7 +307,6 @@ export const themeDoc = {
     type: 'string',
     defaultValue: '4px',
   },
-
   'button.disabled.color': {
     description: `Label color when the button is disabled.`,
     type: 'string | { dark: string, light: string }',
@@ -526,6 +536,20 @@ duration and allowing it to change speed during its course.`,
   'button.extend': {
     description: 'Any additional style for the Button.',
     type: 'string | (props) => {}',
+  },
+  'tip.content': {
+    description:
+      'When using tip prop, any valid Box property for the Tip container.',
+    type: 'object',
+    defaultValue: `{ background: 'background-contrast', elevation: 'small', 
+    margin: 'xsmall', pad: { vertical: 'xsmall', horizontal: 'small' }, 
+    round: 'small'}`,
+  },
+  'tip.drop': {
+    description:
+      'When using tip prop, any valid Drop property for the Tooltip.',
+    type: 'object',
+    defaultValue: "{align: { top: 'bottom' }}",
   },
   ...themeDocUtils.focusStyle,
   ...themeDocUtils.disabledStyle,
