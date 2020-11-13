@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Avatar, Button, Box, grommet, Grommet, Nav, Sidebar } from 'grommet';
 
@@ -57,4 +56,6 @@ export const SidebarIcons = () => (
   </Grommet>
 );
 
-storiesOf('Sidebar', module).add('Icons', () => <SidebarIcons />);
+SidebarIcons.story = {
+  name: 'Icons',
+};
