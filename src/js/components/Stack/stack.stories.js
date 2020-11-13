@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Stack } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const SimpleStack = () => (
+export const Simple = () => (
   <Grommet>
     <Stack anchor="center">
       <Box pad="large" background="neutral-1" />
@@ -13,7 +12,7 @@ const SimpleStack = () => (
   </Grommet>
 );
 
-const FillStack = () => (
+export const Fill = () => (
   <Grommet theme={grommet} full>
     <Stack fill>
       <Box background="brand" fill>
@@ -23,6 +22,6 @@ const FillStack = () => (
   </Grommet>
 );
 
-storiesOf('Stack', module)
-  .add('Simple', () => <SimpleStack />)
-  .add('Fill', () => <FillStack />);
+export default {
+  title: 'Layout/Stack',
+};
