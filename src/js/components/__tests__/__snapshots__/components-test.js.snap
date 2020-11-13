@@ -1391,6 +1391,21 @@ string",
         "name": "target",
       },
       Object {
+        "description": "tooltip or a hint when hovering over the button.",
+        "format": "{
+  content: 
+    node
+    string,
+  dropProps: 
+    {
+
+    },
+  plain: boolean
+}
+string",
+        "name": "tip",
+      },
+      Object {
         "defaultValue": "button",
         "description": "The type of button. Set the type to submit for the default button on 
                 forms.",

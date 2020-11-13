@@ -334,7 +334,10 @@ const Button = forwardRef(
       );
     }
     if (tip) {
-      return <Tip content={tip}>{styledButtonResult}</Tip>;
+      if (typeof tip === 'string') {
+        return <Tip content={tip}>{styledButtonResult}</Tip>;
+      }
+      return <Tip {...tip}>{styledButtonResult}</Tip>;
     }
     return styledButtonResult;
   },
