@@ -1,10 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { FormClose } from 'grommet-icons';
-
 import { Box, Button, CheckBox, Grommet, Select, Text } from 'grommet';
-
 import { theme as customSearchTheme } from './theme';
 
 const allContentPartners = [
@@ -58,7 +55,7 @@ const allContentPartners = [
   },
 ];
 
-const CustomSearchSelect = () => {
+export const CustomSearch = () => {
   const [selectedContentPartners, setSelectedContentPartners] = useState([]);
   const [contentPartners, setContentPartners] = useState(allContentPartners);
   const [searching, setSearching] = useState(false);
@@ -199,4 +196,6 @@ const CustomSearchSelect = () => {
   );
 };
 
-storiesOf('Select', module).add('Custom search', () => <CustomSearchSelect />);
+CustomSearch.story = {
+  name: 'Custom search',
+};

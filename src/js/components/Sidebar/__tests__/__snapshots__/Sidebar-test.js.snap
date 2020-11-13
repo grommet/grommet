@@ -137,7 +137,7 @@ exports[`Sidebar all 1`] = `
     className="c1"
   >
     <div
-      className="c2 "
+      className="c2 StyledAvatar-sc-1suyamb-1"
     />
     <div
       className="c3"
@@ -151,7 +151,7 @@ exports[`Sidebar all 1`] = `
       className="c3"
     />
     <div
-      className="c5 "
+      className="c5 StyledAvatar-sc-1suyamb-1"
     >
       <span
         className="c6 "
@@ -251,7 +251,7 @@ exports[`Sidebar children 1`] = `
       className="c2"
     >
       <div
-        className="c3 "
+        className="c3 StyledAvatar-sc-1suyamb-1"
       />
       children test
     </div>
@@ -366,7 +366,7 @@ exports[`Sidebar footer 1`] = `
       className="c3"
     />
     <div
-      className="c4 "
+      className="c4 StyledAvatar-sc-1suyamb-1"
     />
   </div>
 </div>
@@ -473,7 +473,7 @@ exports[`Sidebar header 1`] = `
     className="c1"
   >
     <div
-      className="c2 "
+      className="c2 StyledAvatar-sc-1suyamb-1"
     />
     <div
       className="c3"

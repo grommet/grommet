@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
-import { Box, Grommet, Select, Button } from 'grommet';
+import { Box, Button, Grommet, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const optionList = [
@@ -17,7 +16,7 @@ const optionList = [
   'Ten',
 ];
 
-const UnSelect = () => {
+export const Unselect = () => {
   const [value, setValue] = useState('');
 
   const onChange = e => {
@@ -54,5 +53,3 @@ const UnSelect = () => {
     </Grommet>
   );
 };
-
-storiesOf('Select', module).add('Unselect', () => <UnSelect />);

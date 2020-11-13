@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
-import { Grommet, Box, Button, Form, FormField, TextInput } from 'grommet';
+
+import { Box, Button, Form, FormField, Grommet, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const allSuggestions = Array(100)
   .fill()
   .map((_, i) => `suggestion ${i + 1}`);
 
-const FormFieldTextInput = props => {
+export const InsideFormField = props => {
   const [state, setState] = useState({
     value: '',
     suggestions: allSuggestions,
@@ -57,4 +57,6 @@ const FormFieldTextInput = props => {
   );
 };
 
-storiesOf('TextInput', module).add('Form', () => <FormFieldTextInput />);
+InsideFormField.story = {
+  name: 'Inside a FormField',
+};

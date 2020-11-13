@@ -44,7 +44,10 @@ const customTheme = {
 const NotificationAlert = () => {
   return (
     <Box alignSelf="center">
-      <Tip content={<Box animation="jiggle">New Analytics!</Box>}>
+      <Tip
+        dropProps={{ align: { left: 'right' } }}
+        content={<Box animation="jiggle">New Analytics!</Box>}
+      >
         <Button
           icon={
             <Stack anchor="top-right">
