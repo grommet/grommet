@@ -8,5 +8,5 @@ export { ResponsiveTip } from './ResponsiveTip';
 export { SidebarTip } from './SidebarTip';
 
 export default {
-  title: 'Visualizations/Tip',
+  title: 'Controls/Tip',
 };
