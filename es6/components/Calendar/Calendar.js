@@ -10,7 +10,7 @@ import { Button } from '../Button';
 import { Heading } from '../Heading';
 import { Keyboard } from '../Keyboard';
 import { StyledCalendar, StyledDay, StyledDayContainer, StyledWeek, StyledWeeks, StyledWeeksContainer } from './StyledCalendar';
-import { addDays, addMonths, betweenDates, daysApart, endOfMonth, startOfMonth, subtractDays, subtractMonths, withinDates } from './utils';
+import { addDays, addMonths, betweenDates, daysApart, endOfMonth, formatToLocalYYYYMMDD, localTimezoneToUTC, startOfMonth, subtractDays, subtractMonths, withinDates } from './utils';
 var headingPadMap = {
   small: 'xsmall',
   medium: 'small',
@@ -20,6 +20,7 @@ var activeDates = {
   start: 'start',
   end: 'end'
 };
+var timeStamp = new RegExp(/T.*/);
 
 var normalizeReference = function normalizeReference(reference, date, dates) {
   var normalizedReference;
@@ -154,7 +155,21 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       setDate = _useState2[1];
 
   useEffect(function () {
-    return setDate(dateProp);
+    if (dateProp) {
+      // if dateProp doesn't contain a timestamp, factor in local timezone
+      // offset from UTC
+      var adjustedDate;
+
+      if (!timeStamp.test(dateProp)) {
+        adjustedDate = localTimezoneToUTC(new Date(dateProp));
+      } else {
+        adjustedDate = new Date(dateProp);
+      }
+
+      setDate(adjustedDate.toISOString());
+    } else {
+      setDate(undefined);
+    }
   }, [dateProp]); // set dates when caller changes it, allows us to change it internally too
 
   var _useState3 = useState(datesProp),
@@ -162,7 +177,45 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       setDates = _useState3[1];
 
   useEffect(function () {
-    return setDates(datesProp);
+    // convert all values to UTC
+    if (Array.isArray(datesProp)) {
+      if (Array.isArray(datesProp[0])) {
+        var from;
+        var to;
+
+        var _datesProp$0$map = datesProp[0].map(function (day) {
+          return day ? new Date(day) : undefined;
+        });
+
+        from = _datesProp$0$map[0];
+        to = _datesProp$0$map[1];
+        if (from) from = !timeStamp.test(datesProp[0][0]) ? localTimezoneToUTC(from).toISOString() : from.toISOString();
+        if (to) to = !timeStamp.test(datesProp[0][0]) ? localTimezoneToUTC(to).toISOString() : to.toISOString();
+        setDates([[from, to]]);
+      } else {
+        var datesArray = [];
+        datesProp.forEach(function (d) {
+          if (Array.isArray(d)) {
+            var _from;
+
+            var _to;
+
+            var _d$map = d.map(function (day) {
+              return new Date(day);
+            });
+
+            _from = _d$map[0];
+            _to = _d$map[1];
+            _from = !timeStamp.test(d[0]) ? localTimezoneToUTC(_from).toISOString() : _from.toISOString();
+            _to = !timeStamp.test(d[0]) ? localTimezoneToUTC(_to).toISOString() : _to.toISOString();
+            datesArray.push([_from, _to]);
+          } else {
+            datesArray.push(!timeStamp.test(d) ? localTimezoneToUTC(new Date(d)).toISOString() : d);
+          }
+        });
+        setDates(datesArray);
+      }
+    } else setDates(undefined);
   }, [datesProp]); // set reference based on what the caller passed or date/dates.
 
   var _useState4 = useState(normalizeReference(referenceProp, date, dates)),
@@ -296,10 +349,38 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
   }, [onReference, validBounds]);
   var selectDate = useCallback(function (selectedDate) {
     var nextDates;
-    var nextDate;
+    var nextDate; // output date with no timestamp if that's how user provided it
+
+    var adjustedDate;
 
     if (!range) {
       nextDate = selectedDate;
+
+      if (datesProp) {
+        datesProp.forEach(function (d) {
+          if (!timeStamp.test(d)) {
+            adjustedDate = formatToLocalYYYYMMDD(nextDate);
+
+            if (d === adjustedDate) {
+              nextDate = undefined;
+            } else {
+              adjustedDate = undefined;
+            }
+          }
+        });
+      } else if (dateProp) {
+        if (!timeStamp.test(dateProp)) {
+          adjustedDate = formatToLocalYYYYMMDD(selectedDate);
+
+          if (dateProp === adjustedDate) {
+            nextDate = undefined;
+          } else {
+            adjustedDate = undefined;
+          }
+        } else {
+          adjustedDate = undefined;
+        }
+      }
     } // everything down is a range
     else if (!dates) {
         // if user supplies date, convert this into dates
@@ -393,9 +474,9 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
         adjustedDates = nextDates;
       }
 
-      onSelect(adjustedDates || nextDate);
+      onSelect(adjustedDates || adjustedDate || nextDate);
     }
-  }, [activeDate, activeDateProp, date, dates, onSelect, range]);
+  }, [activeDate, activeDateProp, date, dateProp, dates, datesProp, onSelect, range]);
 
   var renderCalendarHeader = function renderCalendarHeader() {
     var PreviousIcon = size === 'small' ? theme.calendar.icons.small.previous : theme.calendar.icons.previous;
