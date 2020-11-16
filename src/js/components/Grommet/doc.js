@@ -5,7 +5,7 @@ import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = Grommet => {
   const DocumentedGrommet = describe(Grommet)
-    .availableAt(getAvailableAtBadge('Grommet'))
+    .availableAt(getAvailableAtBadge('Grommet', 'Utilities'))
     .description('The top level Grommet container.')
     .usage(
       `import { Grommet } from 'grommet';

@@ -5,7 +5,7 @@ import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = Distribution => {
   const DocumentedDistribution = describe(Distribution)
-    .availableAt(getAvailableAtBadge('Distribution'))
+    .availableAt(getAvailableAtBadge('Distribution', 'Visualizations'))
     .description(
       `Proportionally sized grid of boxes. The proportions are approximate. The
       area given to each box isn't mathematically precise according to the

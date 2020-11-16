@@ -10,7 +10,7 @@ import { themeDocUtils } from '../../utils/themeDocUtils';
 
 export const doc = Text => {
   const DocumentedText = describe(Text)
-    .availableAt(getAvailableAtBadge('Text'))
+    .availableAt(getAvailableAtBadge('Text', 'Type'))
     .description('Arbitrary text.')
     .usage(
       `import { Text } from 'grommet';
@@ -77,9 +77,7 @@ export const doc = Text => {
       ]),
       PropTypes.string,
     ])
-      .description(
-        `The font size and line space height of the text.`,
-      )
+      .description(`The font size and line space height of the text.`)
       .defaultValue('medium'),
     tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description(
       `The DOM tag to use for the element. NOTE: This is deprecated in favor

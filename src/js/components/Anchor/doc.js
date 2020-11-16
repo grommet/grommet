@@ -6,7 +6,7 @@ import { themeDocUtils } from '../../utils/themeDocUtils';
 
 export const doc = Anchor => {
   const DocumentedAnchor = describe(Anchor)
-    .availableAt(getAvailableAtBadge('Anchor'))
+    .availableAt(getAvailableAtBadge('Anchor', 'Controls'))
     .description('A text link.')
     .details(
       `We have a separate component from the browser

@@ -47,7 +47,7 @@ const overflowPropType = PropTypes.oneOfType([
 
 export const doc = Box => {
   const DocumentedBox = describe(Box)
-    .availableAt(getAvailableAtBadge('Box'))
+    .availableAt(getAvailableAtBadge('Box', 'Layout'))
     .description(
       `A container that lays out its contents in one direction. Box
       provides CSS flexbox capabilities for layout, as well as general

@@ -6,7 +6,7 @@ import { themeDocUtils } from '../../utils/themeDocUtils';
 
 export const doc = Calendar => {
   const DocumentedCalendar = describe(Calendar)
-    .availableAt(getAvailableAtBadge('Calendar'))
+    .availableAt(getAvailableAtBadge('Calendar', 'Visualizations'))
     .description(
       `A calendar of days displayed by month.
       It can be used to select a single date, a range of dates, or multiple

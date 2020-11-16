@@ -4,7 +4,7 @@ import { getAvailableAtBadge } from '../../utils';
 
 export const doc = CheckBoxGroup => {
   const DocumentedCheckBoxGroup = describe(CheckBoxGroup)
-    .availableAt(getAvailableAtBadge('CheckBoxGroup'))
+    .availableAt(getAvailableAtBadge('CheckBoxGroup', 'Input'))
     .description('A group of CheckBoxes.')
     .usage(
       `import { CheckBoxGroup } from 'grommet';
