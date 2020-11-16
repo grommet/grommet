@@ -21,6 +21,7 @@ const Pagination = forwardRef(
     const startPage = currentPage < 3 ? 0 : currentPage - 3;
     const endPage = currentPage < 3 ? currentPage + 5 : currentPage + 3;
 
+    const pagesArr = new Array(pages).fill(undefined);
     return (
       <Box direction="row" margin={{ vertical: 'large' }} ref={ref} {...rest}>
         <Box
@@ -33,6 +34,7 @@ const Pagination = forwardRef(
             direction="row"
             justify="center"
             round={{ size: pagination.round, corner: 'left' }}
+            {...pagination.list}
           >
             {currentPage === 1 ? null : (
               <Button data-page={currentPage - 1} onClick={handleClick}>
@@ -40,7 +42,7 @@ const Pagination = forwardRef(
               </Button>
             )}
           </List>
-          {[...Array(pages)]
+          {pagesArr
             .map((a, i) => i)
             .slice(startPage, endPage)
             .map(pageNo => (
@@ -49,8 +51,17 @@ const Pagination = forwardRef(
                 justify="center"
                 key={pageNo || '0'}
                 className={`${currentPage === pageNo + 1 ? 'active' : ''}`}
+                {...pagination.list}
               >
-                <Button data-page={pageNo + 1} onClick={handleClick}>
+                <Button
+                  data-page={pageNo + 1}
+                  onClick={handleClick}
+                  color={`${
+                    currentPage === pageNo + 1
+                      ? pagination.active.color
+                      : pagination.list && pagination.list.color
+                  }`}
+                >
                   <Box pad={pagination.pad}>{pageNo + 1}</Box>
                 </Button>
               </List>

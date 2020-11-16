@@ -7,7 +7,8 @@ export const List = styled(Box)`
   }
   &.active {
     cursor: default;
-    background: ${props => props.theme.pagination.active.color};
+    background: ${props => props.theme.pagination.active.background};
+    color: ${props => props.theme.pagination.active.color};
   }
   ${props => props.theme.pagination && props.theme.pagination.extend}
 `;
