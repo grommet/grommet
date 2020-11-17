@@ -10,7 +10,7 @@ export { Multiple } from './Multiple';
 export { ObjectMultiple } from './ObjectMultiple';
 export { ObjectOptions } from './ObjectOptions';
 export { Search } from './Search';
-export { Seasons } from './Seasons';
+export { Seasons } from './typescript/Seasons.tsx';
 export { Simple } from './Simple';
 export { Themed } from './Themed';
 export { Uncontrolled } from './Uncontrolled';
