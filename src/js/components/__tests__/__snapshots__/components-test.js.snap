@@ -6433,6 +6433,18 @@ string",
         "name": "children",
       },
       Object {
+        "defaultValue": false,
+        "description": "Whether to provide a button option to clear selections.",
+        "format": "boolean
+{
+  position: 
+    top
+    bottom,
+  label: string
+}",
+        "name": "clear",
+      },
+      Object {
         "defaultValue": true,
         "description": "Wether to close the drop when a selection is made.",
         "format": "boolean",
