@@ -42,7 +42,7 @@ exports.doc = doc;
 
 var themeDoc = _extends({
   'global.colors.text': {
-    description: 'The text color used for Text.',
+    description: "The text color used for Text. In order for this to take \n    effect, global.colors.background needs to be defined.",
     type: 'object | { dark: string, light: string }',
     defaultValue: "{ dark: '#f8f8f8', light: '#444444' }"
   },
