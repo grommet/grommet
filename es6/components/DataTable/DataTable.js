@@ -134,11 +134,13 @@ var DataTable = function DataTable(_ref) {
 
   var onSort = function onSort(property) {
     return function () {
+      var external = sort ? sort.external : false;
       var direction;
       if (!sort || property !== sort.property) direction = 'asc';else if (sort.direction === 'asc') direction = 'desc';else direction = 'asc';
       var nextSort = {
         property: property,
-        direction: direction
+        direction: direction,
+        external: external
       };
       setSort(nextSort);
       if (onSortProp) onSortProp(nextSort);
