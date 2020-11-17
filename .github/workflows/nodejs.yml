@@ -8,35 +8,22 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [13.x]
-        python-version: [ '2.x']
-
     steps:
       - uses: actions/checkout@master
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
-      - name: Setup python
-        uses: actions/setup-python@v2
-        with:
-          python-version: ${{ matrix.python-version }}
-          architecture: x64
+          node-version: '10'
+      - run: npm install -g yarn
       - name: Yarn install
-        uses: Borales/actions-yarn@v2.1.0
         with:
-          cmd: install
+          cmd: yarn install
       - name: Build
-        uses: Borales/actions-yarn@v2.1.0
         with:
-          cmd: build
+          cmd: yarn build
 #       - name: Test
-#         uses: Borales/actions-yarn@v2.1.0
 #         with:
-#           cmd: test
+#           cmd: yarn test
       - name: Release
         run: |
           mkdir -p "$GITHUB_WORKSPACE/.temp/mnet-ui-base"        
