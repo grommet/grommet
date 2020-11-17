@@ -77,9 +77,7 @@ export const doc = Text => {
       ]),
       PropTypes.string,
     ])
-      .description(
-        `The font size and line space height of the text.`,
-      )
+      .description(`The font size and line space height of the text.`)
       .defaultValue('medium'),
     tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description(
       `The DOM tag to use for the element. NOTE: This is deprecated in favor
@@ -123,7 +121,8 @@ contained within a layout component (such as Box or a generic div).`,
 
 export const themeDoc = {
   'global.colors.text': {
-    description: 'The text color used for Text.',
+    description: `The text color used for Text. In order for this to take 
+    effect, global.colors.background needs to be defined.`,
     type: 'object | { dark: string, light: string }',
     defaultValue: "{ dark: '#f8f8f8', light: '#444444' }",
   },
