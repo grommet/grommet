@@ -12,6 +12,7 @@ jobs:
     strategy:
       matrix:
         node-version: [13.x]
+        python-version: [ '2.x']
 
     steps:
       - uses: actions/checkout@master
@@ -19,6 +20,11 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - name: Setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+          architecture: x64
       - name: Yarn install
         uses: Borales/actions-yarn@v2.1.0
         with:
