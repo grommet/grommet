@@ -15,7 +15,7 @@ export interface DateInputProps {
   inline?: boolean;
   inputProps?: MaskedInputType;
   name?: string;
-  onChange?: (event: { target: { value: string | string[] } }) => void;
+  onChange?: (event: { value: string | string[] }) => void;
   value?: string | string[];
 }
 
