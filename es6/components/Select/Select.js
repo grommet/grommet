@@ -42,6 +42,8 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
       alignSelf = _ref.alignSelf,
       children = _ref.children,
+      _ref$clear = _ref.clear,
+      clear = _ref$clear === void 0 ? false : _ref$clear,
       _ref$closeOnChange = _ref.closeOnChange,
       closeOnChange = _ref$closeOnChange === void 0 ? true : _ref$closeOnChange,
       disabled = _ref.disabled,
@@ -80,7 +82,7 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
       valueProp = _ref.value,
       valueKey = _ref.valueKey,
       valueLabel = _ref.valueLabel,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "alignSelf", "children", "closeOnChange", "disabled", "disabledKey", "dropAlign", "dropHeight", "dropProps", "dropTarget", "emptySearchMessage", "focusIndicator", "gridArea", "id", "icon", "labelKey", "margin", "messages", "multiple", "name", "onChange", "onClick", "onClose", "onKeyDown", "onMore", "onOpen", "onSearch", "open", "options", "placeholder", "plain", "replace", "searchPlaceholder", "selected", "size", "value", "valueKey", "valueLabel"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "alignSelf", "children", "clear", "closeOnChange", "disabled", "disabledKey", "dropAlign", "dropHeight", "dropProps", "dropTarget", "emptySearchMessage", "focusIndicator", "gridArea", "id", "icon", "labelKey", "margin", "messages", "multiple", "name", "onChange", "onClick", "onClose", "onKeyDown", "onMore", "onOpen", "onSearch", "open", "options", "placeholder", "plain", "replace", "searchPlaceholder", "selected", "size", "value", "valueKey", "valueLabel"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var inputRef = useRef();
@@ -205,6 +207,7 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
     onClose: onRequestClose,
     onClick: onClick,
     dropContent: /*#__PURE__*/React.createElement(SelectContainer, {
+      clear: clear,
       disabled: disabled,
       disabledKey: disabledKey,
       dropHeight: dropHeight,

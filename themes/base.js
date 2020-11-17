@@ -1114,6 +1114,17 @@ var generate = function generate(baseSpacing, scale) {
     },
     select: {
       // background: undefined,
+      clear: {
+        container: {
+          pad: 'small',
+          background: 'background-contrast'
+        },
+        // any box props
+        text: {
+          color: 'text-weak'
+        } // any text props
+
+      },
       container: {// extend: undefined,
       },
       control: {// extend: undefined,

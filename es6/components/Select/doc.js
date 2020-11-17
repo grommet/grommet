@@ -9,6 +9,10 @@ export var doc = function doc(Select) {
 
   DocumentedSelect.propTypes = _extends({}, genericProps, {
     children: PropTypes.func.description("Function that will be called when each option is rendered.\n      It will be passed (option, index, options, state) where option\n      is the option to render, index is the index of that option in the\n      options array, and state is an object with\n      { active, disabled, selected } keys indicating the current state\n      of the option."),
+    clear: PropTypes.oneOfType([PropTypes.bool, PropTypes.shape({
+      position: PropTypes.oneOf(['top', 'bottom']).description("Add a clear option to the top or at the bottom of the\n            container. By default no clear option is present.").defaultValue('top'),
+      label: PropTypes.string.description('Label for the clear selection item').defaultValue('Clear selection')
+    })]).description("Whether to provide a button option to clear selections.").defaultValue(false),
     closeOnChange: PropTypes.bool.description('Wether to close the drop when a selection is made.').defaultValue(true),
     disabled: PropTypes.oneOfType([PropTypes.bool, PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string, PropTypes.object]))]).description("Whether the entire select or individual options should be disabled.\n        An array of numbers indicates the indexes into 'options' of the\n        disabled options. An array of strings or objects work the same way\n        as the 'value' to indicate which options are disabled.").defaultValue(false),
     disabledKey: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description("When the options array contains objects, this property indicates how\n      to determine which options should be disabled. If a string is\n      provided, it is used as the key for each item object and if that key\n      returns truthy, the option is disabled. If a function is provided, it is\n      called with the option and the return value determines if the option\n      is disabled."),
@@ -86,6 +90,16 @@ export var themeDoc = {
     description: 'Any additional style for the container of the Select component.',
     type: 'string | (props) => {}',
     defaultValue: undefined
+  },
+  'select.clear.container': {
+    description: 'Any valid Box prop for the clear button container.',
+    type: 'object',
+    defaultValue: "{ pad: 'small', background: 'light-2' }"
+  },
+  'select.clear.text': {
+    description: 'Any valid Text prop for text used inside the clear button container.',
+    type: 'object',
+    defaultValue: "{ color: 'dark-3' }"
   },
   'select.control.open': {
     description: "Any additional style for the Select DropButton when using the\n    controlled open state.",

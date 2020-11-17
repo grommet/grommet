@@ -27,30 +27,56 @@ var SelectOption = styled(Button).withConfig({
   displayName: "SelectContainer__SelectOption",
   componentId: "sc-1wi0ul8-2"
 })(["display:block;width:100%;"]);
-var SelectContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
-  var _ref$children = _ref.children,
-      children = _ref$children === void 0 ? null : _ref$children,
-      disabled = _ref.disabled,
-      disabledKey = _ref.disabledKey,
-      dropHeight = _ref.dropHeight,
-      _ref$emptySearchMessa = _ref.emptySearchMessage,
-      emptySearchMessage = _ref$emptySearchMessa === void 0 ? 'No matches found' : _ref$emptySearchMessa,
-      id = _ref.id,
-      labelKey = _ref.labelKey,
-      multiple = _ref.multiple,
-      onChange = _ref.onChange,
-      onKeyDown = _ref.onKeyDown,
-      onMore = _ref.onMore,
-      onSearch = _ref.onSearch,
-      optionIndexesInValue = _ref.optionIndexesInValue,
-      options = _ref.options,
-      searchPlaceholder = _ref.searchPlaceholder,
-      selected = _ref.selected,
-      _ref$value = _ref.value,
-      value = _ref$value === void 0 ? '' : _ref$value,
-      valueKey = _ref.valueKey,
-      _ref$replace = _ref.replace,
-      replace = _ref$replace === void 0 ? true : _ref$replace;
+
+var ClearButton = function ClearButton(_ref) {
+  var clear = _ref.clear,
+      onClear = _ref.onClear,
+      name = _ref.name,
+      theme = _ref.theme,
+      setFocus = _ref.setFocus;
+  var label = clear.label,
+      position = clear.position;
+  var align = position !== 'bottom' ? 'start' : 'center';
+  var buttonLabel = label || "Clear " + (name || 'selection');
+  return /*#__PURE__*/React.createElement(Button, {
+    onClick: onClear,
+    onFocus: function onFocus() {
+      return setFocus(true);
+    },
+    onBlur: function onBlur() {
+      return setFocus(false);
+    }
+  }, /*#__PURE__*/React.createElement(Box, _extends({}, theme.select.clear.container, {
+    align: align
+  }), /*#__PURE__*/React.createElement(Text, theme.select.clear.text, buttonLabel)));
+};
+
+var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
+  var clear = _ref2.clear,
+      _ref2$children = _ref2.children,
+      children = _ref2$children === void 0 ? null : _ref2$children,
+      disabled = _ref2.disabled,
+      disabledKey = _ref2.disabledKey,
+      dropHeight = _ref2.dropHeight,
+      _ref2$emptySearchMess = _ref2.emptySearchMessage,
+      emptySearchMessage = _ref2$emptySearchMess === void 0 ? 'No matches found' : _ref2$emptySearchMess,
+      id = _ref2.id,
+      labelKey = _ref2.labelKey,
+      multiple = _ref2.multiple,
+      name = _ref2.name,
+      onChange = _ref2.onChange,
+      onKeyDown = _ref2.onKeyDown,
+      onMore = _ref2.onMore,
+      onSearch = _ref2.onSearch,
+      optionIndexesInValue = _ref2.optionIndexesInValue,
+      options = _ref2.options,
+      searchPlaceholder = _ref2.searchPlaceholder,
+      selected = _ref2.selected,
+      _ref2$value = _ref2.value,
+      value = _ref2$value === void 0 ? '' : _ref2$value,
+      valueKey = _ref2.valueKey,
+      _ref2$replace = _ref2.replace,
+      replace = _ref2$replace === void 0 ? true : _ref2$replace;
   var theme = useContext(ThemeContext) || defaultProps.theme;
 
   var _useState = useState(),
@@ -64,6 +90,10 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _useState3 = useState(),
       keyboardNavigation = _useState3[0],
       setKeyboardNavigation = _useState3[1];
+
+  var _useState4 = useState(false),
+      focus = _useState4[0],
+      setFocus = _useState4[1];
 
   var searchRef = useRef();
   var optionsRef = useRef(); // adjust activeIndex when options change
@@ -193,6 +223,13 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
       }
     };
   }, [multiple, onChange, optionIndexesInValue, options, valueKey]);
+  var onClear = useCallback(function (event) {
+    onChange(event, {
+      option: undefined,
+      value: '',
+      selected: ''
+    });
+  }, [onChange]);
   var onNextOption = useCallback(function (event) {
     event.preventDefault();
     var nextActiveIndex = activeIndex + 1;
@@ -225,12 +262,12 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     };
   }, [keyboardNavigation]);
   var onSelectOption = useCallback(function (event) {
-    if (activeIndex >= 0) {
+    if (activeIndex >= 0 && !focus) {
       event.preventDefault(); // prevent submitting forms
 
       selectOption(activeIndex)(event);
     }
-  }, [activeIndex, selectOption]);
+  }, [activeIndex, selectOption, focus]);
   var customSearchInput = theme.select.searchInput;
   var SelectTextInput = customSearchInput || TextInput;
   var selectOptionsStyle = theme.select.options ? _extends({}, theme.select.options.box, theme.select.options.container) : {};
@@ -260,7 +297,13 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
       setActiveIndex(-1);
       onSearch(nextSearch);
     }
-  })), /*#__PURE__*/React.createElement(OptionsBox, {
+  })), clear && clear.position !== 'bottom' && value && /*#__PURE__*/React.createElement(ClearButton, {
+    clear: clear,
+    name: name,
+    onClear: onClear,
+    theme: theme,
+    setFocus: setFocus
+  }), /*#__PURE__*/React.createElement(OptionsBox, {
     role: "menubar",
     tabIndex: "-1",
     ref: optionsRef
@@ -310,6 +353,12 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     hoverIndicator: "background",
     disabled: true,
     option: emptySearchMessage
-  }, /*#__PURE__*/React.createElement(OptionBox, selectOptionsStyle, /*#__PURE__*/React.createElement(Text, theme.select.container.text, emptySearchMessage))))));
+  }, /*#__PURE__*/React.createElement(OptionBox, selectOptionsStyle, /*#__PURE__*/React.createElement(Text, theme.select.container.text, emptySearchMessage)))), clear && clear.position === 'bottom' && value && /*#__PURE__*/React.createElement(ClearButton, {
+    clear: clear,
+    name: name,
+    onClear: onClear,
+    theme: theme,
+    setFocus: setFocus
+  })));
 });
 export { SelectContainer };

@@ -1036,6 +1036,10 @@ export interface ThemeType {
   };
   select?: {
     background?: BackgroundType;
+    clear?: {
+      container?: BoxProps;
+      text?: TextProps;
+    };
     container?: {
       extend?: ExtendType;
     };
