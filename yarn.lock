@@ -8652,6 +8652,12 @@ mkdirp-classic@^0.5.2:
   dependencies:
     minimist "^1.2.5"
 
+"mnet-ui-base-theme-hb@https://github.com/mnet-ui/mnet-ui-base-theme-hb":
+  version "0.0.1"
+  resolved "https://github.com/mnet-ui/mnet-ui-base-theme-hb#b436ab72f3728df409ec2e1d3e46cf9b49458be4"
+  dependencies:
+    google-fonts "^1.0.0"
+
 "mnet-ui-base-theme-neo@https://github.com/sabarnix/mnet-ui-base-theme-neo":
   version "0.0.1"
   resolved "https://github.com/sabarnix/mnet-ui-base-theme-neo#8d96618ad9511944b0988b3c21d3f3d0bbd98025"
