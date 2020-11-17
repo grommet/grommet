@@ -39,9 +39,27 @@ const SelectOption = styled(Button)`
   width: 100%;
 `;
 
+const ClearButton = ({ clear, onClear, name, theme, setFocus }) => {
+  const { label, position } = clear;
+  const align = position !== 'bottom' ? 'start' : 'center';
+  const buttonLabel = label || `Clear ${name || 'selection'}`;
+  return (
+    <Button
+      onClick={onClear}
+      onFocus={() => setFocus(true)}
+      onBlur={() => setFocus(false)}
+    >
+      <Box {...theme.select.clear.container} align={align}>
+        <Text {...theme.select.clear.text}>{buttonLabel}</Text>
+      </Box>
+    </Button>
+  );
+};
+
 const SelectContainer = forwardRef(
   (
     {
+      clear,
       children = null,
       disabled,
       disabledKey,
@@ -50,6 +68,7 @@ const SelectContainer = forwardRef(
       id,
       labelKey,
       multiple,
+      name,
       onChange,
       onKeyDown,
       onMore,
@@ -68,9 +87,9 @@ const SelectContainer = forwardRef(
     const [search, setSearch] = useState();
     const [activeIndex, setActiveIndex] = useState(-1);
     const [keyboardNavigation, setKeyboardNavigation] = useState();
+    const [focus, setFocus] = useState(false);
     const searchRef = useRef();
     const optionsRef = useRef();
-
     // adjust activeIndex when options change
     useEffect(() => {
       if (activeIndex === -1 && search && optionIndexesInValue.length) {
@@ -207,6 +226,13 @@ const SelectContainer = forwardRef(
       [multiple, onChange, optionIndexesInValue, options, valueKey],
     );
 
+    const onClear = useCallback(
+      event => {
+        onChange(event, { option: undefined, value: '', selected: '' });
+      },
+      [onChange],
+    );
+
     const onNextOption = useCallback(
       event => {
         event.preventDefault();
@@ -249,12 +275,12 @@ const SelectContainer = forwardRef(
 
     const onSelectOption = useCallback(
       event => {
-        if (activeIndex >= 0) {
+        if (activeIndex >= 0 && !focus) {
           event.preventDefault(); // prevent submitting forms
           selectOption(activeIndex)(event);
         }
       },
-      [activeIndex, selectOption],
+      [activeIndex, selectOption, focus],
     );
 
     const customSearchInput = theme.select.searchInput;
@@ -296,6 +322,15 @@ const SelectContainer = forwardRef(
                 }}
               />
             </Box>
+          )}
+          {clear && clear.position !== 'bottom' && value && (
+            <ClearButton
+              clear={clear}
+              name={name}
+              onClear={onClear}
+              theme={theme}
+              setFocus={setFocus}
+            />
           )}
           <OptionsBox role="menubar" tabIndex="-1" ref={optionsRef}>
             {options.length > 0 ? (
@@ -377,6 +412,15 @@ const SelectContainer = forwardRef(
               </SelectOption>
             )}
           </OptionsBox>
+          {clear && clear.position === 'bottom' && value && (
+            <ClearButton
+              clear={clear}
+              name={name}
+              onClear={onClear}
+              theme={theme}
+              setFocus={setFocus}
+            />
+          )}
         </StyledContainer>
       </Keyboard>
     );
