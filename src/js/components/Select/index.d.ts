@@ -79,10 +79,8 @@ export interface SelectProps<
   emptySearchMessage?: string;
 }
 
-type SelectComponent = <O, V>(
-  props: React.PropsWithChildren<SelectProps<O, V>>,
-) => React.ReactElement<any, any> | null;
-
-declare const Select: SelectComponent;
+declare function Select<O, V>(
+  props: SelectProps<O, V>,
+): ReturnType<React.FC<SelectProps<O, V>>>;
 
 export { Select };
