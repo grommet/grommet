@@ -108,8 +108,10 @@ var LayerContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
       updateBounds();
       window.addEventListener('resize', updateBounds);
+      window.addEventListener('scroll', updateBounds, true);
       return function () {
-        return window.removeEventListener('resize', updateBounds);
+        window.removeEventListener('resize', updateBounds);
+        window.removeEventListener('scroll', updateBounds, true);
       };
     }
 
