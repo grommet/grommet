@@ -327,6 +327,30 @@ exports[`Select Clear option renders - bottom 1`] = `
   flex: 0 0 auto;
 }
 
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -374,30 +398,6 @@ exports[`Select Clear option renders - bottom 1`] = `
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
 }
 
 .c3 {
@@ -471,7 +471,7 @@ exports[`Select Clear option renders - bottom 1`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -487,7 +487,7 @@ exports[`Select Clear option renders - bottom 1`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -507,7 +507,7 @@ exports[`Select Clear option renders - bottom 1`] = `
 
 exports[`Select Clear option renders - bottom 2`] = `
 "@media only screen and (max-width: 768px) {
-  .iCDnTm {
+  .eA-DBEo {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -582,6 +582,30 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
   flex: 0 0 auto;
 }
 
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -629,30 +653,6 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
 }
 
 .c3 {
@@ -735,7 +735,7 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -751,7 +751,7 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -770,7 +770,7 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
 
 exports[`Select Clear option renders correct label when wrapped in FormField 2`] = `
 "@media only screen and (max-width: 768px) {
-  .iCDnTm {
+  .eA-DBEo {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -845,6 +845,30 @@ exports[`Select Clear option renders custom label 1`] = `
   flex: 0 0 auto;
 }
 
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -892,30 +916,6 @@ exports[`Select Clear option renders custom label 1`] = `
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
 }
 
 .c3 {
@@ -990,7 +990,7 @@ exports[`Select Clear option renders custom label 1`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -1006,7 +1006,7 @@ exports[`Select Clear option renders custom label 1`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -1025,7 +1025,7 @@ exports[`Select Clear option renders custom label 1`] = `
 
 exports[`Select Clear option renders custom label 2`] = `
 "@media only screen and (max-width: 768px) {
-  .iCDnTm {
+  .eA-DBEo {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -1100,6 +1100,30 @@ exports[`Select Clear option renders- top 1`] = `
   flex: 0 0 auto;
 }
 
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -1147,30 +1171,6 @@ exports[`Select Clear option renders- top 1`] = `
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
 }
 
 .c3 {
@@ -1245,7 +1245,7 @@ exports[`Select Clear option renders- top 1`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -1261,7 +1261,7 @@ exports[`Select Clear option renders- top 1`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -1280,7 +1280,7 @@ exports[`Select Clear option renders- top 1`] = `
 
 exports[`Select Clear option renders- top 2`] = `
 "@media only screen and (max-width: 768px) {
-  .iCDnTm {
+  .eA-DBEo {
     margin-left: 6px;
     margin-right: 6px;
   }
