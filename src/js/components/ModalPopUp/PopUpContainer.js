@@ -10,8 +10,8 @@ import { Heading } from '../Heading';
 
 const PopUpContainer = ({
   title,
-  body,
   message,
+  body,
   onPrimaryClick,
   renderButton,
   isLoading,
@@ -69,12 +69,14 @@ PopUpContainer.propTypes = {
   renderButton: PropTypes.node,
   isLoading: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
+  body: PropTypes.node,
 };
 
 PopUpContainer.defaultProps = {
   title: '',
   onPrimaryClick: undefined,
   renderButton: undefined,
+  body: undefined,
 };
 
 export { PopUpContainer };

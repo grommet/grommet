@@ -14,6 +14,7 @@ const ModalPopUp = () => {
   const [popUpConfig, setPopUpConfig] = useState({
     title: '',
     message: '',
+    body: undefined,
     onPrimaryClick: undefined,
     renderButton: undefined,
   });
@@ -21,7 +22,7 @@ const ModalPopUp = () => {
   const onClose = () => setModalOpen(false);
 
   emitter.on(OPEN_MODAL, config => {
-    setPopUpConfig({...config});
+    setPopUpConfig({ ...config });
     setModalOpen(true);
   });
   emitter.on(CLOSE_MODAL, () => onClose());
