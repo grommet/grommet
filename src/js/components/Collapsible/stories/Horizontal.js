@@ -1,12 +1,11 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Notification } from 'grommet-icons';
 
 import { Box, Button, Collapsible, Heading, Grommet, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const HorizontalCollapsible = () => {
+export const Horizontal = () => {
   const [openNotification, setOpenNotification] = React.useState();
 
   return (
@@ -51,8 +50,8 @@ const HorizontalCollapsible = () => {
   );
 };
 
-storiesOf('Collapsible', module).add(
-  'Horizontal',
-  () => <HorizontalCollapsible />,
-  { chromatic: { disable: true } },
-);
+Horizontal.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
+};

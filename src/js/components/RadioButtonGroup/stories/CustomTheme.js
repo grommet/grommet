@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, RadioButtonGroup, ThemeContext } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -34,7 +33,7 @@ const customTheme = deepMerge(grommet, {
   },
 });
 
-const CustomRadioButtomGroup = ({ value: initialValue, ...props }) => {
+export const CustomRadioButtonGroup = ({ value: initialValue, ...props }) => {
   const [value, setValue] = useState(initialValue);
 
   return (
@@ -59,6 +58,6 @@ const CustomRadioButtomGroup = ({ value: initialValue, ...props }) => {
   );
 };
 
-storiesOf('RadioButtonGroup', module).add('Custom theme', () => (
-  <CustomRadioButtomGroup />
-));
+CustomRadioButtonGroup.story = {
+  name: 'Custom theme',
+};

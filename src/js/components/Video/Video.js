@@ -182,7 +182,7 @@ const Video = forwardRef(
           const scrubberRect = scrubberRef.current.getBoundingClientRect();
           const percent =
             (event.clientX - scrubberRect.left) / scrubberRect.width;
-          videoRef.current.currentTime = duration * percent;
+          if (duration) videoRef.current.currentTime = duration * percent;
         }
       },
       [duration, videoRef],

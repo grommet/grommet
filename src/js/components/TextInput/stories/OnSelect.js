@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -8,7 +7,7 @@ const suggestions = Array(100)
   .fill()
   .map((_, i) => `suggestion ${i + 1}`);
 
-const OnSelect = () => {
+export const OnSelect = () => {
   const [value, setValue] = React.useState('');
 
   const onChange = event => setValue(event.target.value);
@@ -43,10 +42,9 @@ const OnSelect = () => {
   );
 };
 
-storiesOf('TextInput', module).add(
-  'onSelect and onSuggestionSelect',
-  () => <OnSelect />,
-  {
+OnSelect.story = {
+  name: 'onSelect and onSuggestionSelect',
+  parameters: {
     chromatic: { disable: true },
   },
-);
+};

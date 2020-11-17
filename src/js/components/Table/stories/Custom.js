@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
   Box,
@@ -47,7 +46,7 @@ const customTheme = {
   },
 };
 
-const CustomThemeTable = () => (
+export const Custom = () => (
   <Grommet theme={customTheme}>
     <Box align="center" pad="large">
       <Table caption="Custom Theme Table">
@@ -84,5 +83,3 @@ const CustomThemeTable = () => (
     </Box>
   </Grommet>
 );
-
-storiesOf('Table', module).add('Custom', () => <CustomThemeTable />);

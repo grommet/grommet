@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Drop, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -37,6 +36,9 @@ const SimpleDrop = () => {
   );
 };
 
-storiesOf('Drop', module).add('Simple', () => <SimpleDrop />, {
-  chromatic: { disable: true },
-});
+export const Simple = () => <SimpleDrop />;
+Simple.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
+};

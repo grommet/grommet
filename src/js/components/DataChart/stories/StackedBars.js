@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, DataChart, Grommet, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -13,7 +12,7 @@ for (let i = 0; i < 7; i += 1) {
   });
 }
 
-const Example = () => (
+export const StackedBars = () => (
   <Grommet theme={grommet}>
     <Box align="center" justify="start" pad="large">
       <DataChart
@@ -46,5 +45,3 @@ const Example = () => (
     </Box>
   </Grommet>
 );
-
-storiesOf('DataChart', module).add('Stacked bars', () => <Example />);

@@ -241,6 +241,159 @@ exports[`MaskedInput basic 1`] = `
 </div>
 `;
 
+exports[`MaskedInput custom theme 1`] = `
+.c3 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c3 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c3 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c3 *[stroke*="#"],
+.c3 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c3 *[fill-rule],
+.c3 *[FILL-RULE],
+.c3 *[fill*="#"],
+.c3 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  font-size: 22px;
+  line-height: 28px;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  padding-left: 48px;
+}
+
+.c4::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c4::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c4:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c4::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c4:-moz-placeholder,
+.c4::-moz-placeholder {
+  opacity: 1;
+}
+
+.c1 {
+  position: relative;
+  width: 100%;
+}
+
+.c1 svg {
+  fill: red;
+  stroke: red;
+}
+
+.c2 {
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-packjustify: center;
+  -webkit-justify: center;
+  -ms-flex-packjustify: center;
+  justify: center;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  pointer-events: none;
+  left: 12px;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <svg
+        aria-label="Search"
+        class="c3"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M15,15 L22,22 L15,15 Z M9.5,17 C13.6421356,17 17,13.6421356 17,9.5 C17,5.35786438 13.6421356,2 9.5,2 C5.35786438,2 2,5.35786438 2,9.5 C2,13.6421356 5.35786438,17 9.5,17 Z"
+          fill="none"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+    <input
+      autocomplete="off"
+      class="c4"
+      data-testid="test-input"
+      id="item"
+      name="item"
+      placeholder=""
+      value=""
+    />
+  </div>
+</div>
+`;
+
 exports[`MaskedInput disabled 1`] = `
 .c1 {
   box-sizing: border-box;
@@ -504,6 +657,30 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   padding-bottom: 6px;
 }
 
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -545,30 +722,6 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
 
 .c5:focus::-moz-focus-inner {
   border: 0;
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
 }
 
 .c3 {
@@ -656,11 +809,11 @@ exports[`MaskedInput event target props are available option via mouse 3`] = `""
 
 exports[`MaskedInput event target props are available option via mouse 4`] = `
 <div
-  class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 eZPDpF"
+  class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dOerlP"
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-sc-99vkfa-0 cDlpsY"
+    class="StyledMaskedInput-sc-99vkfa-0 cHnRqS"
     data-testid="test-input"
     id="item"
     name="item"
@@ -1060,6 +1213,30 @@ exports[`MaskedInput mask 2`] = `
   padding-bottom: 6px;
 }
 
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -1101,30 +1278,6 @@ exports[`MaskedInput mask 2`] = `
 
 .c5:focus::-moz-focus-inner {
   border: 0;
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
 }
 
 .c3 {
@@ -1338,11 +1491,11 @@ exports[`MaskedInput next and previous without options 1`] = `
 
 exports[`MaskedInput next and previous without options 2`] = `
 <div
-  class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 eZPDpF"
+  class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dOerlP"
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-sc-99vkfa-0 dqSfNA"
+    class="StyledMaskedInput-sc-99vkfa-0 eHZYfC"
     data-testid="test-input"
     id="item"
     name="item"
@@ -1549,6 +1702,30 @@ exports[`MaskedInput option via mouse 2`] = `
   padding-bottom: 6px;
 }
 
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -1590,30 +1767,6 @@ exports[`MaskedInput option via mouse 2`] = `
 
 .c5:focus::-moz-focus-inner {
   border: 0;
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
 }
 
 .c3 {
@@ -1701,11 +1854,11 @@ exports[`MaskedInput option via mouse 3`] = `""`;
 
 exports[`MaskedInput option via mouse 4`] = `
 <div
-  class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 eZPDpF"
+  class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dOerlP"
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-sc-99vkfa-0 cDlpsY"
+    class="StyledMaskedInput-sc-99vkfa-0 cHnRqS"
     data-testid="test-input"
     id="item"
     name="item"

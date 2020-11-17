@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Button, Form, FormField, Grommet, MaskedInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Example = () => {
+export const MaskedInputForm = () => {
   const [value, setValue] = React.useState({ value: '' });
   const onChange = nextValue => {
     console.log('onChange', nextValue);
@@ -34,4 +33,6 @@ const Example = () => {
   );
 };
 
-storiesOf('MaskedInput', module).add('Form', () => <Example />);
+MaskedInputForm.story = {
+  name: 'Form',
+};

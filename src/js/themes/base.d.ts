@@ -27,6 +27,7 @@ import { Anchor } from '../components/Anchor';
 import { Box } from '../components/Box';
 import { Text, TextProps } from '../components/Text';
 import { LayerPositionType } from '../components/Layer';
+import { DropProps } from '../components/Drop';
 
 export declare const base: DeepReadonly<ThemeType>;
 export declare const generate: (
@@ -275,6 +276,7 @@ export interface ThemeType {
       color?: ColorType;
     };
     input?: {
+      extend?: ExtendType;
       padding?:
         | string
         | {
@@ -609,6 +611,8 @@ export interface ThemeType {
     header?: {
       background?: BackgroundType;
       border?: BorderType;
+      color?: ColorType;
+      extend?: ExtendType;
       font?: {
         weight?: string;
         size?: string;
@@ -914,6 +918,9 @@ export interface ThemeType {
     extend?: ExtendType;
   };
   maskedInput?: {
+    container?: {
+      extend?: ExtendType;
+    };
     extend?: ExtendType;
     disabled?: {
       opacity?: OpacityType;
@@ -1185,6 +1192,10 @@ export interface ThemeType {
   textInput?: {
     extend?: ExtendType;
     disabled?: OpacityType;
+  };
+  tip?: {
+    content?: BoxProps;
+    drop?: DropProps;
   };
   video?: {
     captions?: {

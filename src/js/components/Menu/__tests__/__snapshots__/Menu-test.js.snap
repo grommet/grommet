@@ -450,6 +450,30 @@ exports[`Menu close by clicking outside 2`] = `
   width: 12px;
 }
 
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -476,30 +500,6 @@ exports[`Menu close by clicking outside 2`] = `
 .c7 {
   font-size: 18px;
   line-height: 24px;
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
 }
 
 .c3 {
@@ -626,7 +626,7 @@ exports[`Menu close by clicking outside 2`] = `
 
 exports[`Menu close by clicking outside 3`] = `
 "@media only screen and (max-width: 768px) {
-  .hkbjbd {
+  .daPkeH {
     padding: 6px;
   }
 }"
@@ -1309,6 +1309,173 @@ exports[`Menu custom theme icon color 1`] = `
       <svg
         aria-label="FormDown"
         className="c5"
+        viewBox="0 0 24 24"
+      >
+        <polyline
+          fill="none"
+          points="18 9 12 15 6 9"
+          stroke="#000"
+          strokeWidth="2"
+        />
+      </svg>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Menu custom theme with default button 1`] = `
+.c4 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c4 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c4 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c3 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  padding: 6px 12px;
+  color: #000000;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c1 > svg {
+  vertical-align: bottom;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  className="c0"
+>
+  <button
+    aria-label="Open Menu"
+    className="c1"
+    kind="default"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    <div
+      className="c2"
+    >
+      Test Menu
+      <div
+        className="c3"
+      />
+      <svg
+        aria-label="FormDown"
+        className="c4"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -2179,6 +2346,88 @@ exports[`Menu justify content 1`] = `
 </div>
 `;
 
+exports[`Menu menu with children when custom theme has default button 1`] = `
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  padding: 6px 12px;
+  color: #000000;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.c1 > svg {
+  vertical-align: bottom;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  className="c0"
+>
+  <button
+    aria-label="Open Menu"
+    className="c1"
+    kind="default"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    Test Menu
+  </button>
+</div>
+`;
+
 exports[`Menu navigate through suggestions and select 1`] = `
 .c5 {
   display: inline-block;
@@ -2521,28 +2770,28 @@ exports[`Menu open and close on click 1`] = `
 
 exports[`Menu open and close on click 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
 >
   <button
     aria-label="Open Menu"
-    class="StyledButton-sc-323bzc-0 jFJBys"
+    class="StyledButton-sc-323bzc-0 ebqXLG"
     id="test-menu"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hkbjbd"
+      class="StyledBox-sc-13pk1d4-0 daPkeH"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 jlATGM"
+        class="StyledText-sc-1sadyjn-0 DkZvS"
       >
         Test
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 bRyuLk"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eBVJAG"
       />
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 kbXEEj"
+        class="StyledIcon-ofa7kd-0 fuviCN"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -2706,6 +2955,30 @@ exports[`Menu open and close on click 3`] = `
   width: 12px;
 }
 
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -2732,30 +3005,6 @@ exports[`Menu open and close on click 3`] = `
 .c7 {
   font-size: 18px;
   line-height: 24px;
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
 }
 
 .c3 {
@@ -2896,7 +3145,7 @@ exports[`Menu open and close on click 3`] = `
 
 exports[`Menu open and close on click 4`] = `
 "@media only screen and (max-width: 768px) {
-  .hkbjbd {
+  .daPkeH {
     padding: 6px;
   }
 }"
@@ -3391,6 +3640,30 @@ exports[`Menu open on up close on esc 2`] = `
   width: 12px;
 }
 
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -3417,30 +3690,6 @@ exports[`Menu open on up close on esc 2`] = `
 .c7 {
   font-size: 18px;
   line-height: 24px;
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
 }
 
 .c3 {
@@ -3567,7 +3816,7 @@ exports[`Menu open on up close on esc 2`] = `
 
 exports[`Menu open on up close on esc 3`] = `
 "@media only screen and (max-width: 768px) {
-  .hkbjbd {
+  .daPkeH {
     padding: 6px;
   }
 }"
@@ -4735,6 +4984,30 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   width: 12px;
 }
 
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: bottom left;
+  -ms-transform-origin: bottom left;
+  transform-origin: bottom left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
 .c6 {
   display: inline-block;
   box-sizing: border-box;
@@ -4761,30 +5034,6 @@ exports[`Menu with dropAlign bottom renders 2`] = `
 .c9 {
   font-size: 18px;
   line-height: 24px;
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: bottom left;
-  -ms-transform-origin: bottom left;
-  transform-origin: bottom left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
 }
 
 .c3 {
@@ -4911,7 +5160,7 @@ exports[`Menu with dropAlign bottom renders 2`] = `
 
 exports[`Menu with dropAlign bottom renders 3`] = `
 "@media only screen and (max-width: 768px) {
-  .hkbjbd {
+  .daPkeH {
     padding: 6px;
   }
 }"
@@ -5236,6 +5485,30 @@ exports[`Menu with dropAlign top renders 2`] = `
   width: 12px;
 }
 
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top right;
+  -ms-transform-origin: top right;
+  transform-origin: top right;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -5262,30 +5535,6 @@ exports[`Menu with dropAlign top renders 2`] = `
 .c7 {
   font-size: 18px;
   line-height: 24px;
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top right;
-  -ms-transform-origin: top right;
-  transform-origin: top right;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
 }
 
 .c3 {
@@ -5412,7 +5661,7 @@ exports[`Menu with dropAlign top renders 2`] = `
 
 exports[`Menu with dropAlign top renders 3`] = `
 "@media only screen and (max-width: 768px) {
-  .hkbjbd {
+  .daPkeH {
     padding: 6px;
   }
 }"

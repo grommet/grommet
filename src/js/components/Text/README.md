@@ -223,7 +223,8 @@ span
   
 **global.colors.text**
 
-The text color used for Text. Expects `object | { dark: string, light: string }`.
+The text color used for Text. In order for this to take 
+    effect, global.colors.background needs to be defined. Expects `object | { dark: string, light: string }`.
 
 Defaults to
 

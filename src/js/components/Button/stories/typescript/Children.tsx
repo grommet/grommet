@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { grommet, Box, Button, Grommet, Text } from 'grommet';
 import { Add } from 'grommet-icons';
@@ -19,7 +18,7 @@ const ButtonWithChildren = props => (
   </Button>
 );
 
-const Example = () => {
+export const Children = () => {
   return (
     <Grommet theme={grommet}>
       <Box align="center" pad="medium" gap="medium">
@@ -29,5 +28,3 @@ const Example = () => {
     </Grommet>
   );
 };
-
-storiesOf('Button', module).add('Children', () => <Example />);

@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
-import isChromatic from 'chromatic/isChromatic';
-import { FormDown, FormUp } from 'grommet-icons';
 
+import { FormDown, FormUp } from 'grommet-icons';
 import { Box, Grommet, Select } from 'grommet';
 import { ThemeType } from 'grommet/themes';
 
@@ -55,7 +53,7 @@ const getRegExp = text => {
   return new RegExp(escapedText, 'i');
 };
 
-const CreateOption = () => {
+export const CreateOption = () => {
   const [options, setOptions] = useState(defaultOptions);
   const [value, setValue] = useState('');
   const [searchValue, setSearchValue] = useState('');
@@ -91,4 +89,6 @@ const CreateOption = () => {
   );
 };
 
-storiesOf('Select', module).add('Create option', () => <CreateOption />);
+CreateOption.story = {
+  name: 'Create option',
+};

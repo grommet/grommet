@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import styled from 'styled-components';
 
 import { Box, Grommet, Markdown } from 'grommet';
@@ -28,7 +27,7 @@ import { Grommet } from 'grommet';
   1 | 2 | 3
 `;
 
-const SimpleMarkdown = () => (
+export const Simple = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
       <Markdown>{CONTENT}</Markdown>
@@ -40,7 +39,7 @@ const StyledPre = styled.pre`
   background-color: #7d4cdb;
 `;
 
-const ComponentOverrideMarkdown = () => (
+export const ComponentOverrideMarkdown = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
       <Markdown components={{ pre: StyledPre }}>{CONTENT}</Markdown>
@@ -48,6 +47,10 @@ const ComponentOverrideMarkdown = () => (
   </Grommet>
 );
 
-storiesOf('Markdown', module)
-  .add('Simple', () => <SimpleMarkdown />)
-  .add('Component override markdown', () => <ComponentOverrideMarkdown />);
+ComponentOverrideMarkdown.story = {
+  name: 'Component override markdown',
+};
+
+export default {
+  title: 'Type/Markdown',
+};
