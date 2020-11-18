@@ -1,15 +1,16 @@
 import React, { forwardRef, useContext, useMemo } from 'react';
+import { ThemeContext } from 'styled-components';
 
-import { Box } from '../Box';
 import { CheckBox } from '../CheckBox';
 import { FormContext } from '../Form/FormContext';
+import { StyledCheckBoxGroup } from './StyledCheckBoxGroup';
 
 export const CheckBoxGroup = forwardRef(
   (
     {
       value: valueProp,
       disabled: disabledProp,
-      gap = 'small', // consistent with RadioButtonGroup default
+      gap,
       labelKey,
       valueKey,
       onChange,
@@ -20,6 +21,7 @@ export const CheckBoxGroup = forwardRef(
     ref,
   ) => {
     const formContext = useContext(FormContext);
+    const theme = useContext(ThemeContext) || defaultProps.theme;
 
     // In case option is a string, normalize it to be an object
     const options = useMemo(
@@ -60,7 +62,17 @@ export const CheckBoxGroup = forwardRef(
     };
 
     return (
-      <Box ref={ref} gap={gap} {...rest}>
+      <StyledCheckBoxGroup
+        ref={ref}
+        {...theme.checkBoxGroup.container}
+        gap={
+          gap ||
+          (theme.checkBoxGroup.container && theme.checkBoxGroup.container.gap
+            ? theme.checkBoxGroup.container.gap
+            : 'small') // consistent with RadioButtonGroup default
+        }
+        {...rest}
+      >
         {options.map(option => {
           const optionValue = option.value;
           const label = labelKey ? option[labelKey] : option.label;
@@ -90,7 +102,7 @@ export const CheckBoxGroup = forwardRef(
             />
           );
         })}
-      </Box>
+      </StyledCheckBoxGroup>
     );
   },
 );
