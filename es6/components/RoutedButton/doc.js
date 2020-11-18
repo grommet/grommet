@@ -4,7 +4,7 @@ import { describe } from 'react-desc';
 import { ROUTER_PROPS } from '../../utils/router';
 import { getAvailableAtBadge } from '../../utils/mixins';
 export var doc = function doc(RoutedButton) {
-  var DocumentedRoutedButton = describe(RoutedButton).availableAt(getAvailableAtBadge('RoutedButton')).description('A button with support for React Router.').usage("import { RoutedButton } from 'grommet';\n<RoutedButton primary path='/documentation' />").intrinsicElement('button');
+  var DocumentedRoutedButton = describe(RoutedButton).availableAt(getAvailableAtBadge('RoutedButton', 'Controls')).description('A button with support for React Router.').usage("import { RoutedButton } from 'grommet';\n<RoutedButton primary path='/documentation' />").intrinsicElement('button');
   DocumentedRoutedButton.propTypes = _extends({}, ROUTER_PROPS);
   return DocumentedRoutedButton;
 };

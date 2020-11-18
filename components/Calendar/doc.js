@@ -14,7 +14,7 @@ var _themeDocUtils = require("../../utils/themeDocUtils");
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 var doc = function doc(Calendar) {
-  var DocumentedCalendar = (0, _reactDesc.describe)(Calendar).availableAt((0, _mixins.getAvailableAtBadge)('Calendar')).description("A calendar of days displayed by month.\n      It can be used to select a single date, a range of dates, or multiple\n      individual dates.").usage("import { Calendar } from 'grommet';\n<Calendar />").intrinsicElement('div');
+  var DocumentedCalendar = (0, _reactDesc.describe)(Calendar).availableAt((0, _mixins.getAvailableAtBadge)('Calendar', 'Visualizations')).description("A calendar of days displayed by month.\n      It can be used to select a single date, a range of dates, or multiple\n      individual dates.").usage("import { Calendar } from 'grommet';\n<Calendar />").intrinsicElement('div');
   DocumentedCalendar.propTypes = _extends({}, _propTypes.genericProps, {
     activeDate: _reactDesc.PropTypes.oneOf(['start', 'end']).description("When using range, Whether the next date selection will affect the \n        start or end bound of the range.").defaultValue('start'),
     animate: _reactDesc.PropTypes.bool.description("Whether to animate the calender as the user interacts with it.").defaultValue(true),

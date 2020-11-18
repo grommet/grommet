@@ -4,7 +4,7 @@ import { describe } from 'react-desc';
 import { ROUTER_PROPS } from '../../utils/router';
 import { getAvailableAtBadge } from '../../utils/mixins';
 export var doc = function doc(RoutedAnchor) {
-  var DocumentedRoutedAnchor = describe(RoutedAnchor).availableAt(getAvailableAtBadge('RoutedAnchor')).description('An Anchor with support for React Router.').usage("import { RoutedAnchor } from 'grommet';\n" + "<RoutedAnchor primary path='/documentation' />").intrinsicElement('a');
+  var DocumentedRoutedAnchor = describe(RoutedAnchor).availableAt(getAvailableAtBadge('RoutedAnchor', 'Controls')).description('An Anchor with support for React Router.').usage("import { RoutedAnchor } from 'grommet';\n" + "<RoutedAnchor primary path='/documentation' />").intrinsicElement('a');
   DocumentedRoutedAnchor.propTypes = _extends({}, ROUTER_PROPS);
   return DocumentedRoutedAnchor;
 };

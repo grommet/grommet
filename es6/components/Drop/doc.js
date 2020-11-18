@@ -7,7 +7,7 @@ var dropOverflowPropTypes = PropTypes.oneOfType([PropTypes.oneOf(OVERFLOW_VALUES
   vertical: PropTypes.oneOf(OVERFLOW_VALUES)
 }), PropTypes.string]);
 export var doc = function doc(Drop) {
-  var DocumentedDrop = describe(Drop).availableAt(getAvailableAtBadge('Drop')).description('A container that is overlaid next to a target.').usage("import { Drop } from 'grommet';\n<Drop target={reference}>...</Drop>").intrinsicElement('div');
+  var DocumentedDrop = describe(Drop).availableAt(getAvailableAtBadge('Drop', 'Controls')).description('A container that is overlaid next to a target.').usage("import { Drop } from 'grommet';\n<Drop target={reference}>...</Drop>").intrinsicElement('div');
   DocumentedDrop.propTypes = {
     align: PropTypes.shape({
       top: PropTypes.oneOf(['top', 'bottom']),

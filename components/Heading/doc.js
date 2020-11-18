@@ -14,7 +14,7 @@ var _themeDocUtils = require("../../utils/themeDocUtils");
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 var doc = function doc(Heading) {
-  var DocumentedHeading = (0, _reactDesc.describe)(Heading).availableAt((0, _mixins.getAvailableAtBadge)('Heading')).description('Heading text structured in levels.').usage("import { Heading } from 'grommet';\n<Heading />").intrinsicElement(['h1', 'h2', 'h3', 'h4']);
+  var DocumentedHeading = (0, _reactDesc.describe)(Heading).availableAt((0, _mixins.getAvailableAtBadge)('Heading', 'Type')).description('Heading text structured in levels.').usage("import { Heading } from 'grommet';\n<Heading />").intrinsicElement(['h1', 'h2', 'h3', 'h4']);
   DocumentedHeading.propTypes = _extends({}, _propTypes.genericProps, {
     color: _propTypes.colorPropType.description('A color identifier to use for the text color.'),
     fill: _reactDesc.PropTypes.bool.description('Whether the width should fill the container.').defaultValue(undefined),

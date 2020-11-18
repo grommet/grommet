@@ -1,7 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 import { getAvailableAtBadge } from '../../utils/mixins';
 export var doc = function doc(InfiniteScroll) {
-  var DocumentedInfiniteScroll = describe(InfiniteScroll).availableAt(getAvailableAtBadge('InfiniteScroll')).description('A container that lazily renders items.').usage("import { InfiniteScroll } from 'grommet';\n<InfiniteScroll />");
+  var DocumentedInfiniteScroll = describe(InfiniteScroll).availableAt(getAvailableAtBadge('InfiniteScroll', 'Utilities')).description('A container that lazily renders items.').usage("import { InfiniteScroll } from 'grommet';\n<InfiniteScroll />");
   DocumentedInfiniteScroll.propTypes = {
     children: PropTypes.func.description("Function that will be called when each item is rendered. It will be\n      called with three arguments, the item to render, the index of the item,\n      and a ref that should be applied to the element. For example:\n      {(item, index, ref) => <li key={index} ref={ref}>{item}</li>}"),
     items: PropTypes.arrayOf(PropTypes.any).description('The children callback will be called to render each item.'),

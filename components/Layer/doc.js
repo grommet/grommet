@@ -14,7 +14,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 var PAD_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large'];
 
 var doc = function doc(Layer) {
-  var DocumentedLayer = (0, _reactDesc.describe)(Layer).availableAt((0, _mixins.getAvailableAtBadge)('Layer')).description("An overlay. Layer is typically modal and anchored to an edge, corner, or\n      center of the window. It is the caller's responsibility to provide a\n      control for the user to close the layer.").usage("import { Layer } from 'grommet';\n<Layer />").intrinsicElement('div');
+  var DocumentedLayer = (0, _reactDesc.describe)(Layer).availableAt((0, _mixins.getAvailableAtBadge)('Layer', 'Layout')).description("An overlay. Layer is typically modal and anchored to an edge, corner, or\n      center of the window. It is the caller's responsibility to provide a\n      control for the user to close the layer.").usage("import { Layer } from 'grommet';\n<Layer />").intrinsicElement('div');
   DocumentedLayer.propTypes = {
     animate: _reactDesc.PropTypes.bool.description("Whether to animate the Layer content when it opens. This\n        property is deprecated and will be removed in the next major version\n        of grommet. Instead, use 'animation'.").defaultValue(true),
     animation: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['slide', 'fadeIn', 'none']), _reactDesc.PropTypes.bool]).description('Animation transition of the Layer content when it opens and closes.').defaultValue('slide'),

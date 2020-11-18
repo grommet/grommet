@@ -42,7 +42,7 @@ PropTypes.shape({
 })]);
 var granularityType = PropTypes.oneOf(['coarse', 'medium', 'fine']);
 export var doc = function doc(DataChart) {
-  var DocumentedDataChart = describe(DataChart).availableAt(getAvailableAtBadge('DataChart')).description("Takes a data set and visualizes it. While Chart renders a\n    single value across a data set. DataChart allows multiple overlayed\n    Charts and adds guides and axes for decoration.").usage("import { DataChart } from 'grommet';\n<DataChart data={data} property={} />").intrinsicElement('div');
+  var DocumentedDataChart = describe(DataChart).availableAt(getAvailableAtBadge('DataChart', 'Visualizations')).description("Takes a data set and visualizes it. While Chart renders a\n    single value across a data set. DataChart allows multiple overlayed\n    Charts and adds guides and axes for decoration.").usage("import { DataChart } from 'grommet';\n<DataChart data={data} property={} />").intrinsicElement('div');
   DocumentedDataChart.propTypes = _extends({}, genericProps, {
     axis: PropTypes.oneOfType([PropTypes.bool, PropTypes.shape({
       x: PropTypes.oneOfType([PropTypes.bool, PropTypes.string, PropTypes.shape({

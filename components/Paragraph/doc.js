@@ -14,7 +14,7 @@ var _themeDocUtils = require("../../utils/themeDocUtils");
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 var doc = function doc(Paragraph) {
-  var DocumentedParagraph = (0, _reactDesc.describe)(Paragraph).availableAt((0, _mixins.getAvailableAtBadge)('Paragraph')).description('A paragraph of text.').usage("import { Paragraph } from 'grommet';\n<Paragraph />").intrinsicElement('p');
+  var DocumentedParagraph = (0, _reactDesc.describe)(Paragraph).availableAt((0, _mixins.getAvailableAtBadge)('Paragraph', 'Type')).description('A paragraph of text.').usage("import { Paragraph } from 'grommet';\n<Paragraph />").intrinsicElement('p');
   DocumentedParagraph.propTypes = _extends({}, _propTypes.genericProps, {
     color: _propTypes.colorPropType.description('A color identifier to use for the text color.'),
     fill: _reactDesc.PropTypes.bool.description('Whether the width should fill the container.').defaultValue(undefined),

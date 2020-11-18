@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports["default"] = exports.Large = exports.Small = exports.Medium = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
@@ -48,6 +49,8 @@ var Medium = function Medium() {
   }, "Paragraph - Small", paragraphFiller))));
 };
 
+exports.Medium = Medium;
+
 var Small = function Small() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
@@ -74,6 +77,8 @@ var Small = function Small() {
     size: "small"
   }, "Paragraph - Small", paragraphFiller))));
 };
+
+exports.Small = Small;
 
 var Large = function Large() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
@@ -104,10 +109,8 @@ var Large = function Large() {
   }, "Heading 4 - Large"), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Text Medium"), /*#__PURE__*/_react["default"].createElement(_grommet.Paragraph, null, "Paragraph - Medium", paragraphFiller))));
 };
 
-(0, _react2.storiesOf)('Typography', module).add('Small', function () {
-  return /*#__PURE__*/_react["default"].createElement(Small, null);
-}).add('Medium', function () {
-  return /*#__PURE__*/_react["default"].createElement(Medium, null);
-}).add('Large', function () {
-  return /*#__PURE__*/_react["default"].createElement(Large, null);
-});
+exports.Large = Large;
+var _default = {
+  title: 'Type/Typography'
+};
+exports["default"] = _default;

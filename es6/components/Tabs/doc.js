@@ -4,7 +4,7 @@ import { describe, PropTypes } from 'react-desc';
 import { genericProps } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 export var doc = function doc(Tabs) {
-  var DocumentedTabs = describe(Tabs).availableAt(getAvailableAtBadge('Tabs')).description('A container with controls to show one Tab at a time.').usage("import { Tabs, Tab } from 'grommet';\n<Tabs>\n  <Tab title='Tab 1'>...</Tab>\n  <Tab title='Tab 2'>...</Tab>\n</Tabs>").intrinsicElement('div');
+  var DocumentedTabs = describe(Tabs).availableAt(getAvailableAtBadge('Tabs', 'Controls')).description('A container with controls to show one Tab at a time.').usage("import { Tabs, Tab } from 'grommet';\n<Tabs>\n  <Tab title='Tab 1'>...</Tab>\n  <Tab title='Tab 2'>...</Tab>\n</Tabs>").intrinsicElement('div');
   DocumentedTabs.propTypes = _extends({}, genericProps, {
     activeIndex: PropTypes.number.description("Active tab index. If specified, Tabs will be a controlled component.\nThis means that future tab changes will not work unless you subscribe to\nonActive function and update activeIndex accordingly."),
     alignControls: PropTypes.oneOf(['start', 'center', 'end', 'stretch']).description('How to align the tab controls within the tabs header.'),

@@ -1,7 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 import { getAvailableAtBadge } from '../../utils';
 export var doc = function doc(DateInput) {
-  var DocumentedDateInput = describe(DateInput).availableAt(getAvailableAtBadge('DateInput')).description('A control to input a single date or a date range.').usage("import { DateInput } from 'grommet';\n<DateInput id='item' name='item' />").intrinsicElement('div');
+  var DocumentedDateInput = describe(DateInput).availableAt(getAvailableAtBadge('DateInput', 'Input')).description('A control to input a single date or a date range.').usage("import { DateInput } from 'grommet';\n<DateInput id='item' name='item' />").intrinsicElement('div');
   DocumentedDateInput.propTypes = {
     buttonProps: PropTypes.shape({}).description("Any properties to pass on to the underlying DropButton\n      when not inline and no format."),
     calendarProps: PropTypes.shape({}).description('Any properties to pass on to the underlying Calendar.'),

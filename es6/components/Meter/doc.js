@@ -4,7 +4,7 @@ import { describe, PropTypes } from 'react-desc';
 import { genericProps } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 export var doc = function doc(Meter) {
-  var DocumentedMeter = describe(Meter).availableAt(getAvailableAtBadge('Meter')).description('A graphical meter.').usage("import { Meter } from 'grommet';\n<Meter />"); // We don't include svg due to a collision on the values property
+  var DocumentedMeter = describe(Meter).availableAt(getAvailableAtBadge('Meter', 'Visualizations')).description('A graphical meter.').usage("import { Meter } from 'grommet';\n<Meter />"); // We don't include svg due to a collision on the values property
   // .intrinsicElement('svg');
 
   DocumentedMeter.propTypes = _extends({}, genericProps, {

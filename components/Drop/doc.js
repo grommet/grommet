@@ -16,7 +16,7 @@ var dropOverflowPropTypes = _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes
 }), _reactDesc.PropTypes.string]);
 
 var doc = function doc(Drop) {
-  var DocumentedDrop = (0, _reactDesc.describe)(Drop).availableAt((0, _mixins.getAvailableAtBadge)('Drop')).description('A container that is overlaid next to a target.').usage("import { Drop } from 'grommet';\n<Drop target={reference}>...</Drop>").intrinsicElement('div');
+  var DocumentedDrop = (0, _reactDesc.describe)(Drop).availableAt((0, _mixins.getAvailableAtBadge)('Drop', 'Controls')).description('A container that is overlaid next to a target.').usage("import { Drop } from 'grommet';\n<Drop target={reference}>...</Drop>").intrinsicElement('div');
   DocumentedDrop.propTypes = {
     align: _reactDesc.PropTypes.shape({
       top: _reactDesc.PropTypes.oneOf(['top', 'bottom']),

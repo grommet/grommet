@@ -5,7 +5,7 @@ import { genericProps } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
 export var doc = function doc(Calendar) {
-  var DocumentedCalendar = describe(Calendar).availableAt(getAvailableAtBadge('Calendar')).description("A calendar of days displayed by month.\n      It can be used to select a single date, a range of dates, or multiple\n      individual dates.").usage("import { Calendar } from 'grommet';\n<Calendar />").intrinsicElement('div');
+  var DocumentedCalendar = describe(Calendar).availableAt(getAvailableAtBadge('Calendar', 'Visualizations')).description("A calendar of days displayed by month.\n      It can be used to select a single date, a range of dates, or multiple\n      individual dates.").usage("import { Calendar } from 'grommet';\n<Calendar />").intrinsicElement('div');
   DocumentedCalendar.propTypes = _extends({}, genericProps, {
     activeDate: PropTypes.oneOf(['start', 'end']).description("When using range, Whether the next date selection will affect the \n        start or end bound of the range.").defaultValue('start'),
     animate: PropTypes.bool.description("Whether to animate the calender as the user interacts with it.").defaultValue(true),

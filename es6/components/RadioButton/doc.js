@@ -1,7 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 import { getAvailableAtBadge } from '../../utils/mixins';
 export var doc = function doc(RadioButton) {
-  var DocumentedRadioButton = describe(RadioButton).availableAt(getAvailableAtBadge('RadioButton')).description('A radio button control.').details("RadioButton should typically not be used directly.\n      Instead, use RadioButtonGroup.").usage("import { RadioButton } from 'grommet';\n<RadioButton />").intrinsicElement('input');
+  var DocumentedRadioButton = describe(RadioButton).availableAt(getAvailableAtBadge('RadioButton', 'Input')).description('A radio button control.').details("RadioButton should typically not be used directly.\n      Instead, use RadioButtonGroup.").usage("import { RadioButton } from 'grommet';\n<RadioButton />").intrinsicElement('input');
   DocumentedRadioButton.propTypes = {
     a11yTitle: PropTypes.string.description("Custom label to be used by screen readers.\n      When provided, an aria-label will be added to the element."),
     checked: PropTypes.bool.description('Same as React <input checked={} />'),

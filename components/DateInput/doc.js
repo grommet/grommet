@@ -8,7 +8,7 @@ var _reactDesc = require("react-desc");
 var _utils = require("../../utils");
 
 var doc = function doc(DateInput) {
-  var DocumentedDateInput = (0, _reactDesc.describe)(DateInput).availableAt((0, _utils.getAvailableAtBadge)('DateInput')).description('A control to input a single date or a date range.').usage("import { DateInput } from 'grommet';\n<DateInput id='item' name='item' />").intrinsicElement('div');
+  var DocumentedDateInput = (0, _reactDesc.describe)(DateInput).availableAt((0, _utils.getAvailableAtBadge)('DateInput', 'Input')).description('A control to input a single date or a date range.').usage("import { DateInput } from 'grommet';\n<DateInput id='item' name='item' />").intrinsicElement('div');
   DocumentedDateInput.propTypes = {
     buttonProps: _reactDesc.PropTypes.shape({}).description("Any properties to pass on to the underlying DropButton\n      when not inline and no format."),
     calendarProps: _reactDesc.PropTypes.shape({}).description('Any properties to pass on to the underlying Calendar.'),

@@ -1,7 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 import { getAvailableAtBadge } from '../../utils/mixins';
 export var doc = function doc(Tip) {
-  var DocumentedTip = describe(Tip).availableAt(getAvailableAtBadge('Tip')).description("Tooltip or a hint when hovering over an element. The tooltip will render \n      when hovering on top of the Tip's child node or string.").usage("import { Tip } from 'grommet';\n<Tip />");
+  var DocumentedTip = describe(Tip).availableAt(getAvailableAtBadge('Tip', 'Controls')).description("Tooltip or a hint when hovering over an element. The tooltip will render \n      when hovering on top of the Tip's child node or string.").usage("import { Tip } from 'grommet';\n<Tip />");
   DocumentedTip.propTypes = {
     content: PropTypes.node.description("The tooltip content inside the drop."),
     dropProps: PropTypes.object.description('Any valid Drop prop to style the Tip drop container.').defaultValue({

@@ -8,7 +8,7 @@ var _reactDesc = require("react-desc");
 var _utils = require("../../utils");
 
 var doc = function doc(CheckBoxGroup) {
-  var DocumentedCheckBoxGroup = (0, _reactDesc.describe)(CheckBoxGroup).availableAt((0, _utils.getAvailableAtBadge)('CheckBoxGroup')).description('A group of CheckBoxes.').usage("import { CheckBoxGroup } from 'grommet';\n        <CheckBoxGroup />").intrinsicElement('div');
+  var DocumentedCheckBoxGroup = (0, _reactDesc.describe)(CheckBoxGroup).availableAt((0, _utils.getAvailableAtBadge)('CheckBoxGroup', 'Input')).description('A group of CheckBoxes.').usage("import { CheckBoxGroup } from 'grommet';\n        <CheckBoxGroup />").intrinsicElement('div');
   DocumentedCheckBoxGroup.propTypes = {
     value: _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.number, _reactDesc.PropTypes.string])).description("An array of the values for the checked options. \n      If options is provided as an object, the value array will be the values \n     that the valueKey maps to."),
     disabled: _reactDesc.PropTypes.bool.description("Disables all options.").defaultValue(undefined),

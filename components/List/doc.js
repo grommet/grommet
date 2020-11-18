@@ -27,7 +27,7 @@ var borderTypes = [_reactDesc.PropTypes.bool, _reactDesc.PropTypes.oneOf(sides),
 })];
 
 var doc = function doc(List) {
-  var DocumentedList = (0, _reactDesc.describe)(List).availableAt((0, _mixins.getAvailableAtBadge)('List')).description('An ordered list of items.').usage("import { List } from 'grommet';\n<List data={[...]} />").intrinsicElement('ol');
+  var DocumentedList = (0, _reactDesc.describe)(List).availableAt((0, _mixins.getAvailableAtBadge)('List', 'Visualizations')).description('An ordered list of items.').usage("import { List } from 'grommet';\n<List data={[...]} />").intrinsicElement('ol');
   DocumentedList.propTypes = _extends({}, _propTypes.genericProps, {
     action: _reactDesc.PropTypes.func.description("Accepts a function that allows for a custom rendering\n       of a component, it should be passed with an item and\n        index of an array and return a react element\n      `action = ({item, index}) => <Content />`\n    />"),
     as: _reactDesc.PropTypes.string.description('The DOM tag or react component to use for the element.').defaultValue('ul'),

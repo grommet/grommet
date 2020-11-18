@@ -21,7 +21,7 @@ var BORDER_SHAPE = (0, _propTypes.getBorderPropType)({
 });
 
 var doc = function doc(Grid) {
-  var DocumentedGrid = (0, _reactDesc.describe)(Grid).availableAt((0, _mixins.getAvailableAtBadge)('Grid')).description("A grid system for laying out content. To use, define the\nrows and columns, create area names for adjacent cells, and then\nplace Box components inside those areas using the gridArea property.\nSee https://css-tricks.com/snippets/css/complete-guide-grid/.\nThe availability of Grid can be tested via `Grid.available`. Use this\nto create fallback rendering for older browsers, like ie11.").usage("import { Grid } from 'grommet';\n<Grid />").intrinsicElement('div');
+  var DocumentedGrid = (0, _reactDesc.describe)(Grid).availableAt((0, _mixins.getAvailableAtBadge)('Grid', 'Layout')).description("A grid system for laying out content. To use, define the\nrows and columns, create area names for adjacent cells, and then\nplace Box components inside those areas using the gridArea property.\nSee https://css-tricks.com/snippets/css/complete-guide-grid/.\nThe availability of Grid can be tested via `Grid.available`. Use this\nto create fallback rendering for older browsers, like ie11.").usage("import { Grid } from 'grommet';\n<Grid />").intrinsicElement('div');
   DocumentedGrid.propTypes = _extends({}, _propTypes.genericProps, {
     align: _reactDesc.PropTypes.oneOf(['start', 'center', 'end', 'stretch']).description("How to align the individual items inside the grid when there is extra\nspace in the column axis.").defaultValue('stretch'),
     alignContent: _reactDesc.PropTypes.oneOf(['start', 'center', 'end', 'between', 'around', 'stretch']).description('How to align the contents along the column axis.'),

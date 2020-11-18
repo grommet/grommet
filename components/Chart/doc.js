@@ -14,7 +14,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 var thicknessType = _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['hair', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'none']), _reactDesc.PropTypes.string, _reactDesc.PropTypes.number]);
 
 var doc = function doc(Chart) {
-  var DocumentedChart = (0, _reactDesc.describe)(Chart).availableAt((0, _mixins.getAvailableAtBadge)('Chart')).description('A graphical chart.').usage("import { Chart } from 'grommet';\n<Chart />"); // We don't include svg due to a collision on the values property
+  var DocumentedChart = (0, _reactDesc.describe)(Chart).availableAt((0, _mixins.getAvailableAtBadge)('Chart', 'Visualizations')).description('A graphical chart.').usage("import { Chart } from 'grommet';\n<Chart />"); // We don't include svg due to a collision on the values property
   // .intrinsicElement('svg');
 
   DocumentedChart.propTypes = _extends({}, _propTypes.genericProps, {

@@ -5,7 +5,7 @@ import { colorPropType, genericProps, MARGIN_SIZES } from '../../utils/prop-type
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
 export var doc = function doc(Text) {
-  var DocumentedText = describe(Text).availableAt(getAvailableAtBadge('Text')).description('Arbitrary text.').usage("import { Text } from 'grommet';\n<Text />").intrinsicElement('span');
+  var DocumentedText = describe(Text).availableAt(getAvailableAtBadge('Text', 'Type')).description('Arbitrary text.').usage("import { Text } from 'grommet';\n<Text />").intrinsicElement('span');
   DocumentedText.propTypes = _extends({}, genericProps, {
     color: colorPropType.description('A color identifier to use for the text color.'),
     margin: PropTypes.oneOfType([PropTypes.oneOf(['none'].concat(MARGIN_SIZES)), PropTypes.shape({

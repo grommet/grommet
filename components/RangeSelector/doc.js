@@ -10,7 +10,7 @@ var _propTypes = require("../../utils/prop-types");
 var _mixins = require("../../utils/mixins");
 
 var doc = function doc(RangeSelector) {
-  var DocumentedRangeSelector = (0, _reactDesc.describe)(RangeSelector).availableAt((0, _mixins.getAvailableAtBadge)('RangeSelector')).description('A control to input a range of values.').usage("import { RangeSelector } from 'grommet';\n<RangeSelector />").intrinsicElement('div');
+  var DocumentedRangeSelector = (0, _reactDesc.describe)(RangeSelector).availableAt((0, _mixins.getAvailableAtBadge)('RangeSelector', 'Input')).description('A control to input a range of values.').usage("import { RangeSelector } from 'grommet';\n<RangeSelector />").intrinsicElement('div');
   DocumentedRangeSelector.propTypes = {
     color: _propTypes.colorPropType.description('What color to use to indicate the selection.'),
     direction: _reactDesc.PropTypes.oneOf(['horizontal', 'vertical']).description('').defaultValue('horizontal'),

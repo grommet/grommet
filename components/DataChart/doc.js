@@ -55,7 +55,7 @@ _reactDesc.PropTypes.shape({
 var granularityType = _reactDesc.PropTypes.oneOf(['coarse', 'medium', 'fine']);
 
 var doc = function doc(DataChart) {
-  var DocumentedDataChart = (0, _reactDesc.describe)(DataChart).availableAt((0, _mixins.getAvailableAtBadge)('DataChart')).description("Takes a data set and visualizes it. While Chart renders a\n    single value across a data set. DataChart allows multiple overlayed\n    Charts and adds guides and axes for decoration.").usage("import { DataChart } from 'grommet';\n<DataChart data={data} property={} />").intrinsicElement('div');
+  var DocumentedDataChart = (0, _reactDesc.describe)(DataChart).availableAt((0, _mixins.getAvailableAtBadge)('DataChart', 'Visualizations')).description("Takes a data set and visualizes it. While Chart renders a\n    single value across a data set. DataChart allows multiple overlayed\n    Charts and adds guides and axes for decoration.").usage("import { DataChart } from 'grommet';\n<DataChart data={data} property={} />").intrinsicElement('div');
   DocumentedDataChart.propTypes = _extends({}, _propTypes.genericProps, {
     axis: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.bool, _reactDesc.PropTypes.shape({
       x: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.bool, _reactDesc.PropTypes.string, _reactDesc.PropTypes.shape({

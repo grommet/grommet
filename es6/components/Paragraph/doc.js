@@ -5,7 +5,7 @@ import { colorPropType, genericProps } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
 export var doc = function doc(Paragraph) {
-  var DocumentedParagraph = describe(Paragraph).availableAt(getAvailableAtBadge('Paragraph')).description('A paragraph of text.').usage("import { Paragraph } from 'grommet';\n<Paragraph />").intrinsicElement('p');
+  var DocumentedParagraph = describe(Paragraph).availableAt(getAvailableAtBadge('Paragraph', 'Type')).description('A paragraph of text.').usage("import { Paragraph } from 'grommet';\n<Paragraph />").intrinsicElement('p');
   DocumentedParagraph.propTypes = _extends({}, genericProps, {
     color: colorPropType.description('A color identifier to use for the text color.'),
     fill: PropTypes.bool.description('Whether the width should fill the container.').defaultValue(undefined),

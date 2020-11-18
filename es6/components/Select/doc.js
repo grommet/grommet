@@ -4,7 +4,7 @@ import { describe, PropTypes } from 'react-desc';
 import { genericProps } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 export var doc = function doc(Select) {
-  var DocumentedSelect = describe(Select).availableAt(getAvailableAtBadge('Select')).description('A control to select a value, with optional search.').usage("import { Select } from 'grommet';\n<Select />"); // We don't include svg due to a collision on the values property
+  var DocumentedSelect = describe(Select).availableAt(getAvailableAtBadge('Select', 'Input')).description('A control to select a value, with optional search.').usage("import { Select } from 'grommet';\n<Select />"); // We don't include svg due to a collision on the values property
   // .intrinsicElement('select');
 
   DocumentedSelect.propTypes = _extends({}, genericProps, {

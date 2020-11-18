@@ -8,7 +8,7 @@ var _reactDesc = require("react-desc");
 var _mixins = require("../../utils/mixins");
 
 var doc = function doc(CheckBox) {
-  var DocumentedCheckBox = (0, _reactDesc.describe)(CheckBox).availableAt((0, _mixins.getAvailableAtBadge)('CheckBox')).description('A checkbox toggle control.').usage("import { CheckBox } from 'grommet';\n<CheckBox />").intrinsicElement('input');
+  var DocumentedCheckBox = (0, _reactDesc.describe)(CheckBox).availableAt((0, _mixins.getAvailableAtBadge)('CheckBox', 'Input')).description('A checkbox toggle control.').usage("import { CheckBox } from 'grommet';\n<CheckBox />").intrinsicElement('input');
   DocumentedCheckBox.propTypes = {
     a11yTitle: _reactDesc.PropTypes.string.description("Custom label to be used by screen readers.\n      When provided, an aria-label will be added to the element."),
     checked: _reactDesc.PropTypes.bool.description('Same as React <input checked={} />').defaultValue(false),

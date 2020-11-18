@@ -14,7 +14,7 @@ var _themeDocUtils = require("../../utils/themeDocUtils");
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 var doc = function doc(Text) {
-  var DocumentedText = (0, _reactDesc.describe)(Text).availableAt((0, _mixins.getAvailableAtBadge)('Text')).description('Arbitrary text.').usage("import { Text } from 'grommet';\n<Text />").intrinsicElement('span');
+  var DocumentedText = (0, _reactDesc.describe)(Text).availableAt((0, _mixins.getAvailableAtBadge)('Text', 'Type')).description('Arbitrary text.').usage("import { Text } from 'grommet';\n<Text />").intrinsicElement('span');
   DocumentedText.propTypes = _extends({}, _propTypes.genericProps, {
     color: _propTypes.colorPropType.description('A color identifier to use for the text color.'),
     margin: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['none'].concat(_propTypes.MARGIN_SIZES)), _reactDesc.PropTypes.shape({

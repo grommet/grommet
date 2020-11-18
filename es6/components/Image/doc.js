@@ -4,7 +4,7 @@ import { describe, PropTypes } from 'react-desc';
 import { genericProps } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 export var doc = function doc(Image) {
-  var DocumentedImage = describe(Image).availableAt(getAvailableAtBadge('Image')).description('An image.').usage("import { Image } from 'grommet';\n<Image/>").intrinsicElement('img');
+  var DocumentedImage = describe(Image).availableAt(getAvailableAtBadge('Image', 'Media')).description('An image.').usage("import { Image } from 'grommet';\n<Image/>").intrinsicElement('img');
   DocumentedImage.propTypes = _extends({}, genericProps, {
     fill: PropTypes.oneOfType([PropTypes.oneOf(['horizontal', 'vertical']), PropTypes.bool]).description('Whether the width and/or height should fill the container.'),
     fit: PropTypes.oneOf(['cover', 'contain']).description('How the image fills its container.'),

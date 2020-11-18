@@ -5,7 +5,7 @@ import { colorPropType, genericProps, padPropType, pointPropType } from '../../u
 import { getAvailableAtBadge } from '../../utils/mixins';
 var thicknessType = PropTypes.oneOfType([PropTypes.oneOf(['hair', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'none']), PropTypes.string, PropTypes.number]);
 export var doc = function doc(Chart) {
-  var DocumentedChart = describe(Chart).availableAt(getAvailableAtBadge('Chart')).description('A graphical chart.').usage("import { Chart } from 'grommet';\n<Chart />"); // We don't include svg due to a collision on the values property
+  var DocumentedChart = describe(Chart).availableAt(getAvailableAtBadge('Chart', 'Visualizations')).description('A graphical chart.').usage("import { Chart } from 'grommet';\n<Chart />"); // We don't include svg due to a collision on the values property
   // .intrinsicElement('svg');
 
   DocumentedChart.propTypes = _extends({}, genericProps, {

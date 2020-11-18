@@ -1,7 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 import { getAvailableAtBadge } from '../../utils/mixins';
 export var doc = function doc(Form) {
-  var DocumentedForm = describe(Form).availableAt(getAvailableAtBadge('Form')).description('A form that manages state for its fields.').usage("import { Form } from 'grommet';\n<Form />").intrinsicElement('form');
+  var DocumentedForm = describe(Form).availableAt(getAvailableAtBadge('Form', 'Input')).description('A form that manages state for its fields.').usage("import { Form } from 'grommet';\n<Form />").intrinsicElement('form');
   DocumentedForm.propTypes = {
     errors: PropTypes.shape({}).description("An object representing any errors in the data. Their keys should\n        match the keys in the value object.").defaultValue({}),
     infos: PropTypes.shape({}).description("An object representing any information details in the data.\n        Their keys should match the keys in the value object.").defaultValue({}),

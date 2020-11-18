@@ -8,7 +8,7 @@ var _reactDesc = require("react-desc");
 var _mixins = require("../../utils/mixins");
 
 var doc = function doc(Tip) {
-  var DocumentedTip = (0, _reactDesc.describe)(Tip).availableAt((0, _mixins.getAvailableAtBadge)('Tip')).description("Tooltip or a hint when hovering over an element. The tooltip will render \n      when hovering on top of the Tip's child node or string.").usage("import { Tip } from 'grommet';\n<Tip />");
+  var DocumentedTip = (0, _reactDesc.describe)(Tip).availableAt((0, _mixins.getAvailableAtBadge)('Tip', 'Controls')).description("Tooltip or a hint when hovering over an element. The tooltip will render \n      when hovering on top of the Tip's child node or string.").usage("import { Tip } from 'grommet';\n<Tip />");
   DocumentedTip.propTypes = {
     content: _reactDesc.PropTypes.node.description("The tooltip content inside the drop."),
     dropProps: _reactDesc.PropTypes.object.description('Any valid Drop prop to style the Tip drop container.').defaultValue({

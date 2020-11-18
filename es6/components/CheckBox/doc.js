@@ -1,7 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 import { getAvailableAtBadge } from '../../utils/mixins';
 export var doc = function doc(CheckBox) {
-  var DocumentedCheckBox = describe(CheckBox).availableAt(getAvailableAtBadge('CheckBox')).description('A checkbox toggle control.').usage("import { CheckBox } from 'grommet';\n<CheckBox />").intrinsicElement('input');
+  var DocumentedCheckBox = describe(CheckBox).availableAt(getAvailableAtBadge('CheckBox', 'Input')).description('A checkbox toggle control.').usage("import { CheckBox } from 'grommet';\n<CheckBox />").intrinsicElement('input');
   DocumentedCheckBox.propTypes = {
     a11yTitle: PropTypes.string.description("Custom label to be used by screen readers.\n      When provided, an aria-label will be added to the element."),
     checked: PropTypes.bool.description('Same as React <input checked={} />').defaultValue(false),

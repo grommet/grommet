@@ -1,10 +1,8 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Heading, Paragraph, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 var paragraphFiller = "\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.\n";
-
-var Medium = function Medium() {
+export var Medium = function Medium() {
   var margin = undefined;
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
@@ -39,8 +37,7 @@ var Medium = function Medium() {
     margin: margin
   }, "Paragraph - Small", paragraphFiller))));
 };
-
-var Small = function Small() {
+export var Small = function Small() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -66,8 +63,7 @@ var Small = function Small() {
     size: "small"
   }, "Paragraph - Small", paragraphFiller))));
 };
-
-var Large = function Large() {
+export var Large = function Large() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -95,11 +91,6 @@ var Large = function Large() {
     size: "large"
   }, "Heading 4 - Large"), /*#__PURE__*/React.createElement(Text, null, "Text Medium"), /*#__PURE__*/React.createElement(Paragraph, null, "Paragraph - Medium", paragraphFiller))));
 };
-
-storiesOf('Typography', module).add('Small', function () {
-  return /*#__PURE__*/React.createElement(Small, null);
-}).add('Medium', function () {
-  return /*#__PURE__*/React.createElement(Medium, null);
-}).add('Large', function () {
-  return /*#__PURE__*/React.createElement(Large, null);
-});
+export default {
+  title: 'Type/Typography'
+};

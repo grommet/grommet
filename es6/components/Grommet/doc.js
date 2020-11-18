@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 import { backgroundDoc } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 export var doc = function doc(Grommet) {
-  var DocumentedGrommet = describe(Grommet).availableAt(getAvailableAtBadge('Grommet')).description('The top level Grommet container.').usage("import { Grommet } from 'grommet';\n<Grommet>...</Grommet>").intrinsicElement('div');
+  var DocumentedGrommet = describe(Grommet).availableAt(getAvailableAtBadge('Grommet', 'Utilities')).description('The top level Grommet container.').usage("import { Grommet } from 'grommet';\n<Grommet>...</Grommet>").intrinsicElement('div');
   DocumentedGrommet.propTypes = {
     background: backgroundDoc,
     dir: PropTypes.oneOf(['rtl']).description('Layout direction for right to left contexts'),

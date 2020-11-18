@@ -10,7 +10,7 @@ var _propTypes = require("../../utils/prop-types");
 var _mixins = require("../../utils/mixins");
 
 var doc = function doc(Diagram) {
-  var DocumentedDiagram = (0, _reactDesc.describe)(Diagram).availableAt((0, _mixins.getAvailableAtBadge)('Diagram')).description("Graphical connection lines. Diagram is meant to be used with Stack.\n      Boxes can be used in the `guidingChild` layer of Stack and then\n      Diagram can be used to draw lines connecting the Boxes.").usage("import { Diagram } from 'grommet';\n<Diagram />").intrinsicElement('svg');
+  var DocumentedDiagram = (0, _reactDesc.describe)(Diagram).availableAt((0, _mixins.getAvailableAtBadge)('Diagram', 'Visualizations')).description("Graphical connection lines. Diagram is meant to be used with Stack.\n      Boxes can be used in the `guidingChild` layer of Stack and then\n      Diagram can be used to draw lines connecting the Boxes.").usage("import { Diagram } from 'grommet';\n<Diagram />").intrinsicElement('svg');
   DocumentedDiagram.propTypes = {
     connections: _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.shape({
       anchor: _reactDesc.PropTypes.oneOf(['center', 'vertical', 'horizontal']),
