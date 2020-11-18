@@ -133,10 +133,7 @@ with plain Buttons.`,
     ),
     tip: PropTypes.oneOfType([
       PropTypes.shape({
-        content: PropTypes.oneOfType([
-          PropTypes.node,
-          PropTypes.string,
-        ]),
+        content: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
         dropProps: PropTypes.shape({}),
         plain: PropTypes.bool,
       }),

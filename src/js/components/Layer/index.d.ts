@@ -18,7 +18,9 @@ export interface LayerProps {
   full?: boolean | 'vertical' | 'horizontal';
   margin?: MarginType;
   modal?: boolean;
-  onClickOutside?: (...args: any[]) => any;
+  onClickOutside?: (
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>,
+  ) => void;
   onEsc?: KeyboardType;
   plain?: boolean;
   position?: LayerPositionType;
