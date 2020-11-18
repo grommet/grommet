@@ -70,7 +70,7 @@ export interface SelectProps<
   searchPlaceholder?: string;
   selected?: number[] | number;
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
-  value: ValueType;
+  value?: ValueType;
   valueLabel?: React.ReactNode;
   valueKey?:
     | string
