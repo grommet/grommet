@@ -88,3 +88,14 @@ string
 ```
 div
 ```
+## Theme
+  
+**checkBoxGroup.container**
+
+Any valid Box props for the RadioButtonGroup container. Expects `object`.
+
+Defaults to
+
+```
+undefined
+```

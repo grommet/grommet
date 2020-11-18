@@ -614,6 +614,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // extend: undefined,
       },
     },
+    checkBoxGroup: {
+      // container: {}, // any box props
+    },
     clock: {
       analog: {
         // extend: undefined,

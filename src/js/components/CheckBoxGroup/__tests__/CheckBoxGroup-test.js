@@ -141,6 +141,32 @@ describe('CheckBoxGroup', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('custom theme', () => {
+    const customTheme = {
+      checkBoxGroup: {
+        container: {
+          gap: 'large',
+          margin: {
+            vertical: 'small',
+          },
+        },
+      },
+    };
+
+    const { container } = render(
+      <Grommet theme={customTheme}>
+        <CheckBoxGroup
+          valueKey="valueKeyTest"
+          options={[
+            { label: 'first-label', valueKeyTest: 'First' },
+            { label: 'second-label', valueKeyTest: 'Second' },
+          ]}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('no duplicated key error', () => {
     console.error = jest.fn();
     const errorSpy = jest.spyOn(console, 'error');
