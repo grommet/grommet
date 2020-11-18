@@ -163,7 +163,7 @@ const LayerContainer = forwardRef(
       content = (
         <FocusedContainer
           hidden={position === 'hidden'}
-          restrictScroll
+          restrictScroll={!layerTarget ? true : undefined}
           trapFocus
         >
           {content}
