@@ -5,11 +5,13 @@ exports.RadioButtonGroup = exports.CheckBoxGroup = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _Box = require("../Box");
+var _styledComponents = require("styled-components");
 
 var _CheckBox = require("../CheckBox");
 
 var _FormContext = require("../Form/FormContext");
+
+var _StyledCheckBoxGroup = require("./StyledCheckBoxGroup");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -22,8 +24,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 var CheckBoxGroup = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var valueProp = _ref.value,
       disabledProp = _ref.disabled,
-      _ref$gap = _ref.gap,
-      gap = _ref$gap === void 0 ? 'small' : _ref$gap,
+      gap = _ref.gap,
       labelKey = _ref.labelKey,
       valueKey = _ref.valueKey,
       onChange = _ref.onChange,
@@ -31,7 +32,8 @@ var CheckBoxGroup = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       name = _ref.name,
       rest = _objectWithoutPropertiesLoose(_ref, ["value", "disabled", "gap", "labelKey", "valueKey", "onChange", "options", "name"]);
 
-  var formContext = (0, _react.useContext)(_FormContext.FormContext); // In case option is a string, normalize it to be an object
+  var formContext = (0, _react.useContext)(_FormContext.FormContext);
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || defaultProps.theme; // In case option is a string, normalize it to be an object
 
   var options = (0, _react.useMemo)(function () {
     return optionsProp.map(function (option) {
@@ -67,9 +69,11 @@ var CheckBoxGroup = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     }
   };
 
-  return /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
-    ref: ref,
-    gap: gap
+  return /*#__PURE__*/_react["default"].createElement(_StyledCheckBoxGroup.StyledCheckBoxGroup, _extends({
+    ref: ref
+  }, theme.checkBoxGroup.container, {
+    gap: gap || (theme.checkBoxGroup.container && theme.checkBoxGroup.container.gap ? theme.checkBoxGroup.container.gap : 'small') // consistent with RadioButtonGroup default
+
   }, rest), options.map(function (option) {
     var optionValue = option.value;
     var label = labelKey ? option[labelKey] : option.label;

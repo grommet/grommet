@@ -653,6 +653,11 @@ export var generate = function generate(baseSpacing, scale) {
 
       }
     },
+    checkBoxGroup: {// container: {
+      //   // any box props
+      //   extend: undefined,
+      // },
+    },
     clock: {
       analog: {
         // extend: undefined,

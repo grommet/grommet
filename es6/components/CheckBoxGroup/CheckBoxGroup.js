@@ -3,14 +3,14 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 import React, { forwardRef, useContext, useMemo } from 'react';
-import { Box } from '../Box';
+import { ThemeContext } from 'styled-components';
 import { CheckBox } from '../CheckBox';
 import { FormContext } from '../Form/FormContext';
+import { StyledCheckBoxGroup } from './StyledCheckBoxGroup';
 export var CheckBoxGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var valueProp = _ref.value,
       disabledProp = _ref.disabled,
-      _ref$gap = _ref.gap,
-      gap = _ref$gap === void 0 ? 'small' : _ref$gap,
+      gap = _ref.gap,
       labelKey = _ref.labelKey,
       valueKey = _ref.valueKey,
       onChange = _ref.onChange,
@@ -18,7 +18,8 @@ export var CheckBoxGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
       name = _ref.name,
       rest = _objectWithoutPropertiesLoose(_ref, ["value", "disabled", "gap", "labelKey", "valueKey", "onChange", "options", "name"]);
 
-  var formContext = useContext(FormContext); // In case option is a string, normalize it to be an object
+  var formContext = useContext(FormContext);
+  var theme = useContext(ThemeContext) || defaultProps.theme; // In case option is a string, normalize it to be an object
 
   var options = useMemo(function () {
     return optionsProp.map(function (option) {
@@ -54,9 +55,11 @@ export var CheckBoxGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }
   };
 
-  return /*#__PURE__*/React.createElement(Box, _extends({
-    ref: ref,
-    gap: gap
+  return /*#__PURE__*/React.createElement(StyledCheckBoxGroup, _extends({
+    ref: ref
+  }, theme.checkBoxGroup.container, {
+    gap: gap || (theme.checkBoxGroup.container && theme.checkBoxGroup.container.gap ? theme.checkBoxGroup.container.gap : 'small') // consistent with RadioButtonGroup default
+
   }, rest), options.map(function (option) {
     var optionValue = option.value;
     var label = labelKey ? option[labelKey] : option.label;
