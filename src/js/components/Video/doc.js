@@ -6,7 +6,7 @@ import { themeDocUtils } from '../../utils/themeDocUtils';
 
 export const doc = Video => {
   const DocumentedVideo = describe(Video)
-    .availableAt(getAvailableAtBadge('Video'))
+    .availableAt(getAvailableAtBadge('Video', 'Media'))
     .description('A video player.')
     .usage(
       `import { Video } from 'grommet';

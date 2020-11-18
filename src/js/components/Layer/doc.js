@@ -7,7 +7,7 @@ const PAD_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large'];
 
 export const doc = Layer => {
   const DocumentedLayer = describe(Layer)
-    .availableAt(getAvailableAtBadge('Layer'))
+    .availableAt(getAvailableAtBadge('Layer', 'Layout'))
     .description(
       `An overlay. Layer is typically modal and anchored to an edge, corner, or
       center of the window. It is the caller's responsibility to provide a
