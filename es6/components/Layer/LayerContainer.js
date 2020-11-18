@@ -156,8 +156,11 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
   if (modal) {
     content = /*#__PURE__*/React.createElement(FocusedContainer, {
-      hidden: position === 'hidden',
-      restrictScroll: true,
+      hidden: position === 'hidden' // if layer has a target, do not restrict scroll.
+      // restricting scroll  could inhibit the user's
+      // ability to scroll the page while the layer is open.
+      ,
+      restrictScroll: !layerTarget ? true : undefined,
       trapFocus: true
     }, content);
   }
