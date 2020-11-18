@@ -348,6 +348,24 @@ _top
 string
 ```
 
+**tip**
+
+tooltip or a hint when hovering over the button.
+
+```
+{
+  content: 
+    node
+    string,
+  dropProps: 
+    {
+
+    },
+  plain: boolean
+}
+string
+```
+
 **type**
 
 The type of button. Set the type to submit for the default button on 
@@ -1126,6 +1144,28 @@ Defaults to
 
 ```
 undefined
+```
+
+**tip.content**
+
+When using tip prop, any valid Box property for the Tip container. Expects `object`.
+
+Defaults to
+
+```
+{ background: 'background-contrast', elevation: 'small', 
+    margin: 'xsmall', pad: { vertical: 'xsmall', horizontal: 'small' }, 
+    round: 'small'}
+```
+
+**tip.drop**
+
+When using tip prop, any valid Drop property for the Tooltip. Expects `object`.
+
+Defaults to
+
+```
+{align: { top: 'bottom' }}
 ```
 
 **global.focus.border.color**

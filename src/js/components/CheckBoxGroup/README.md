@@ -88,3 +88,14 @@ string
 ```
 div
 ```
+## Theme
+  
+**checkBoxGroup.container**
+
+Any valid Box props for the CheckBoxGroup container. Expects `object`.
+
+Defaults to
+
+```
+undefined
+```

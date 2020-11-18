@@ -29,6 +29,8 @@ import {
   betweenDates,
   daysApart,
   endOfMonth,
+  formatToLocalYYYYMMDD,
+  localTimezoneToUTC,
   startOfMonth,
   subtractDays,
   subtractMonths,
@@ -45,6 +47,8 @@ const activeDates = {
   start: 'start',
   end: 'end',
 };
+
+const timeStamp = new RegExp(/T.*/);
 
 const normalizeReference = (reference, date, dates) => {
   let normalizedReference;
@@ -171,11 +175,70 @@ const Calendar = forwardRef(
 
     // set date when caller changes it, allows us to change it internally too
     const [date, setDate] = useState(dateProp);
-    useEffect(() => setDate(dateProp), [dateProp]);
+    useEffect(() => {
+      if (dateProp) {
+        // if dateProp doesn't contain a timestamp, factor in local timezone
+        // offset from UTC
+        let adjustedDate;
+        if (!timeStamp.test(dateProp)) {
+          adjustedDate = localTimezoneToUTC(new Date(dateProp));
+        } else {
+          adjustedDate = new Date(dateProp);
+        }
+        setDate(adjustedDate.toISOString());
+      } else {
+        setDate(undefined);
+      }
+    }, [dateProp]);
 
     // set dates when caller changes it, allows us to change it internally too
     const [dates, setDates] = useState(datesProp);
-    useEffect(() => setDates(datesProp), [datesProp]);
+    useEffect(() => {
+      // convert all values to UTC
+      if (Array.isArray(datesProp)) {
+        if (Array.isArray(datesProp[0])) {
+          let from;
+          let to;
+          [from, to] = datesProp[0].map(day =>
+            day ? new Date(day) : undefined,
+          );
+          if (from)
+            from = !timeStamp.test(datesProp[0][0])
+              ? localTimezoneToUTC(from).toISOString()
+              : from.toISOString();
+          if (to)
+            to = !timeStamp.test(datesProp[0][0])
+              ? localTimezoneToUTC(to).toISOString()
+              : to.toISOString();
+
+          setDates([[from, to]]);
+        } else {
+          const datesArray = [];
+          datesProp.forEach(d => {
+            if (Array.isArray(d)) {
+              let from;
+              let to;
+              [from, to] = d.map(day => new Date(day));
+              from = !timeStamp.test(d[0])
+                ? localTimezoneToUTC(from).toISOString()
+                : from.toISOString();
+              to = !timeStamp.test(d[0])
+                ? localTimezoneToUTC(to).toISOString()
+                : to.toISOString();
+
+              datesArray.push([from, to]);
+            } else {
+              datesArray.push(
+                !timeStamp.test(d)
+                  ? localTimezoneToUTC(new Date(d)).toISOString()
+                  : d,
+              );
+            }
+          });
+          setDates(datesArray);
+        }
+      } else setDates(undefined);
+    }, [datesProp]);
 
     // set reference based on what the caller passed or date/dates.
     const [reference, setReference] = useState(
@@ -319,13 +382,37 @@ const Calendar = forwardRef(
       },
       [onReference, validBounds],
     );
-
     const selectDate = useCallback(
       selectedDate => {
         let nextDates;
         let nextDate;
+        // output date with no timestamp if that's how user provided it
+        let adjustedDate;
         if (!range) {
           nextDate = selectedDate;
+          if (datesProp) {
+            datesProp.forEach(d => {
+              if (!timeStamp.test(d)) {
+                adjustedDate = formatToLocalYYYYMMDD(nextDate);
+                if (d === adjustedDate) {
+                  nextDate = undefined;
+                } else {
+                  adjustedDate = undefined;
+                }
+              }
+            });
+          } else if (dateProp) {
+            if (!timeStamp.test(dateProp)) {
+              adjustedDate = formatToLocalYYYYMMDD(selectedDate);
+              if (dateProp === adjustedDate) {
+                nextDate = undefined;
+              } else {
+                adjustedDate = undefined;
+              }
+            } else {
+              adjustedDate = undefined;
+            }
+          }
         }
         // everything down is a range
         else if (!dates) {
@@ -407,10 +494,19 @@ const Calendar = forwardRef(
           } else {
             adjustedDates = nextDates;
           }
-          onSelect(adjustedDates || nextDate);
+          onSelect(adjustedDates || adjustedDate || nextDate);
         }
       },
-      [activeDate, activeDateProp, date, dates, onSelect, range],
+      [
+        activeDate,
+        activeDateProp,
+        date,
+        dateProp,
+        dates,
+        datesProp,
+        onSelect,
+        range,
+      ],
     );
 
     const renderCalendarHeader = () => {

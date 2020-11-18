@@ -796,7 +796,7 @@ boolean",
         "description": "The amount of spacing between child elements. This
         should not be used in conjunction with 'wrap' as the gap elements
         will not wrap gracefully. If a child is a Fragment,
-        Box will not add a gap between the choldren of the Fragment.",
+        Box will not add a gap between the children of the Fragment.",
         "format": "none
 xxsmall
 xsmall
@@ -1389,6 +1389,21 @@ _parent
 _top
 string",
         "name": "target",
+      },
+      Object {
+        "description": "tooltip or a hint when hovering over the button.",
+        "format": "{
+  content: 
+    node
+    string,
+  dropProps: 
+    {
+
+    },
+  plain: boolean
+}
+string",
+        "name": "tip",
       },
       Object {
         "defaultValue": "button",
@@ -6416,6 +6431,18 @@ string",
       of the option.",
         "format": "function",
         "name": "children",
+      },
+      Object {
+        "defaultValue": false,
+        "description": "Whether to provide a button option to clear selections.",
+        "format": "boolean
+{
+  position: 
+    top
+    bottom,
+  label: string
+}",
+        "name": "clear",
       },
       Object {
         "defaultValue": true,
