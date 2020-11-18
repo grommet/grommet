@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
   Box,
@@ -111,7 +110,7 @@ const ClearForm = () => {
   );
 };
 
-const ClearExamples = () => (
+export const Clear = () => (
   <Grommet theme={grommet}>
     <Box direction="column" align="start">
       <Box direction="row">
@@ -127,6 +126,9 @@ const ClearExamples = () => (
   </Grommet>
 );
 
-storiesOf('Select', module).add('Clear', () => <ClearExamples />, {
-  chromatic: { disable: true },
-});
+Clear.story = {
+  name: 'Clear',
+  parameters: {
+    chromatic: { disable: true },
+  },
+};
