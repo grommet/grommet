@@ -163,7 +163,10 @@ const LayerContainer = forwardRef(
       content = (
         <FocusedContainer
           hidden={position === 'hidden'}
-          restrictScroll
+          // if layer has a target, do not restrict scroll.
+          // restricting scroll  could inhibit the user's
+          // ability to scroll the page while the layer is open.
+          restrictScroll={!layerTarget ? true : undefined}
           trapFocus
         >
           {content}
