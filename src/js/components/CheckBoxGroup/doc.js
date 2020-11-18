@@ -56,7 +56,7 @@ export const doc = CheckBoxGroup => {
 
 export const themeDoc = {
   'checkBoxGroup.container': {
-    description: 'Any valid Box props for the RadioButtonGroup container.',
+    description: 'Any valid Box props for the CheckBoxGroup container.',
     type: 'object',
     defaultValue: undefined,
   },
