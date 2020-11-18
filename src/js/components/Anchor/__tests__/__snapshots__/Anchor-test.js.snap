@@ -731,3 +731,92 @@ exports[`Anchor warns about invalid label render 1`] = `
   </a>
 </div>
 `;
+
+exports[`Anchor weight renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
+  color: #7D4CDB;
+  font-weight: normal;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c1:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c2 {
+  box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
+  color: #7D4CDB;
+  font-weight: bold;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c2:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c3 {
+  box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
+  color: #7D4CDB;
+  font-weight: 500;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c3:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+<div
+  className="c0"
+>
+  <a
+    className="c1"
+    href="#"
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    Normal
+  </a>
+  <a
+    className="c2"
+    href="#"
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    Bold
+  </a>
+  <a
+    className="c3"
+    href="#"
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    Bold
+  </a>
+</div>
+`;

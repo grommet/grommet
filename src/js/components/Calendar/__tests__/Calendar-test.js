@@ -118,6 +118,18 @@ describe('Calendar', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  test('showAdjacentDays', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Calendar date={DATE} animate={false} />
+        <Calendar date={DATE} animate={false} showAdjacentDays={false} />
+        <Calendar date={DATE} animate={false} showAdjacentDays="trim" />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('header', () => {
     const component = renderer.create(
       <Grommet>
@@ -246,13 +258,10 @@ describe('Calendar', () => {
         <Calendar date={DATE} onSelect={onSelect} range animate={false} />
       </Grommet>,
     );
+    // expect to be selecting end date of range, because date serves
+    // as start. since selected date is < date we should set it as start
     fireEvent.click(getByText('11'));
-    expect(onSelect).toBeCalledWith([
-      [
-        expect.stringMatching(/2020-01-11T/),
-        expect.stringMatching(/^2020-01-15T/),
-      ],
-    ]);
+    expect(onSelect).toBeCalledWith(expect.stringMatching(/2020-01-11T/));
     fireEvent.click(getByText('20'));
     expect(onSelect).toBeCalledWith([
       [
@@ -305,13 +314,10 @@ describe('Calendar', () => {
       ],
     ]);
     // select date less than January 3rd
+    // activeDate is end, since this is before the start
+    // date we should update the date
     fireEvent.click(getByLabelText('Wed Jan 01 2020'));
-    expect(onSelect).toBeCalledWith([
-      [
-        expect.stringMatching(/2020-01-01T/),
-        expect.stringMatching(/^2020-01-05T/),
-      ],
-    ]);
+    expect(onSelect).toBeCalledWith(expect.stringMatching(/2020-01-01T/));
   });
 
   test('select date with same start date', () => {
@@ -364,6 +370,95 @@ describe('Calendar', () => {
     // selecting same ending day
     fireEvent.click(getByLabelText('Fri Jan 03 2020'));
     expect(onSelect).toBeCalledWith(expect.stringMatching(/^2020-01-01T/));
+  });
+
+  test('range as array', () => {
+    const onSelect = jest.fn();
+    const { getByLabelText } = render(
+      <Grommet>
+        <Calendar
+          dates={[['2020-01-01T00:00:00-08:00', '2020-01-05T00:00:00-08:00']]}
+          onSelect={onSelect}
+          range="array"
+          animate={false}
+        />
+      </Grommet>,
+    );
+    // select date greater than January 1st
+    // activeDate by default is start
+    fireEvent.click(getByLabelText('Fri Jan 03 2020'));
+    expect(onSelect).toBeCalledWith([
+      [
+        expect.stringMatching(/^2020-01-03T/),
+        expect.stringMatching(/^2020-01-05T/),
+      ],
+    ]);
+    // select date less than January 3rd
+    // activeDate is end, since this is before the start
+    // date we should update the date
+    fireEvent.click(getByLabelText('Wed Jan 01 2020'));
+    expect(onSelect).toBeCalledWith([
+      [expect.stringMatching(/^2020-01-01T/), undefined],
+    ]);
+
+    // should select end date again
+    fireEvent.click(getByLabelText('Fri Jan 03 2020'));
+    expect(onSelect).toBeCalledWith([
+      [
+        expect.stringMatching(/^2020-01-01T/),
+        expect.stringMatching(/^2020-01-03T/),
+      ],
+    ]);
+
+    // should select start date, if great than end date, clear end date
+    fireEvent.click(getByLabelText('Sun Jan 05 2020'));
+    expect(onSelect).toBeCalledWith([
+      [expect.stringMatching(/^2020-01-05T/), undefined],
+    ]);
+  });
+
+  test('activeDate start', () => {
+    const onSelect = jest.fn();
+    const { getByLabelText } = render(
+      <Grommet>
+        <Calendar
+          activeDate="start"
+          dates={[['2020-01-01T00:00:00-08:00', '2020-01-05T00:00:00-08:00']]}
+          onSelect={onSelect}
+          range="array"
+          animate={false}
+        />
+      </Grommet>,
+    );
+    fireEvent.click(getByLabelText('Fri Jan 03 2020'));
+    expect(onSelect).toBeCalledWith([
+      [
+        expect.stringMatching(/^2020-01-03T/),
+        expect.stringMatching(/^2020-01-05T/),
+      ],
+    ]);
+  });
+
+  test('activeDate end', () => {
+    const onSelect = jest.fn();
+    const { getByLabelText } = render(
+      <Grommet>
+        <Calendar
+          activeDate="end"
+          dates={[['2020-01-01T00:00:00-08:00', '2020-01-05T00:00:00-08:00']]}
+          onSelect={onSelect}
+          range="array"
+          animate={false}
+        />
+      </Grommet>,
+    );
+    fireEvent.click(getByLabelText('Fri Jan 03 2020'));
+    expect(onSelect).toBeCalledWith([
+      [
+        expect.stringMatching(/^2020-01-01T/),
+        expect.stringMatching(/^2020-01-03T/),
+      ],
+    ]);
   });
 });
 

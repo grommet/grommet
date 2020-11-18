@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, CheckBox } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -17,9 +16,18 @@ const SimpleCheckBox = ({ checked: checkedProp, ...rest }) => {
   );
 };
 
-storiesOf('CheckBox', module)
-  .add('Simple', () => <SimpleCheckBox label="Choice" />)
-  .add('Toggle', () => <SimpleCheckBox label="Choice" toggle />)
-  .add('Disabled', () => <SimpleCheckBox label="Choice" checked disabled />)
-  .add('Reverse', () => <SimpleCheckBox label="Choice" reverse />)
-  .add('No label', () => <SimpleCheckBox />);
+export const Simple = () => <SimpleCheckBox label="Choice" />;
+
+export const Toggle = () => <SimpleCheckBox label="Choice" toggle />;
+
+export const Disabled = () => (
+  <SimpleCheckBox label="Choice" checked disabled />
+);
+
+export const Reverse = () => <SimpleCheckBox label="Choice" reverse />;
+
+export const NoLabel = () => <SimpleCheckBox />;
+
+NoLabel.story = {
+  name: 'No label',
+};

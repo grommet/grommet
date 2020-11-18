@@ -9,7 +9,7 @@ export interface DropProps {
     left?: 'left' | 'right';
   };
   elevation?: ElevationType;
-  onClickOutside?: (this: Document, ev: MouseEvent) => void;
+  onClickOutside?: React.MouseEventHandler<HTMLDocument>;
   onEsc?: KeyboardType;
   overflow?:
     | 'auto'

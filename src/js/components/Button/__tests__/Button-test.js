@@ -46,6 +46,21 @@ describe('Button', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  test('children function with disabled prop', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Button onClick={() => {}} disabled>
+          {({ disabled }) => <Text>{disabled ? 'Disabled' : 'Test'}</Text>}
+        </Button>
+        <Button onClick={() => {}}>
+          {({ disabled }) => <Text>{disabled ? 'Disabled' : 'Test'}</Text>}
+        </Button>
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('warns about invalid label', () => {
     console.warn = jest.fn();
     const warnSpy = jest.spyOn(console, 'warn');
@@ -130,6 +145,17 @@ describe('Button', () => {
     );
 
     fireEvent.focus(getByText('Test'));
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('tip', () => {
+    const { container, getByText } = render(
+      <Grommet>
+        <Button label="Default Tip" onClick={() => {}} tip="tooltip" />
+      </Grommet>,
+    );
+
+    fireEvent.mouseOver(getByText('Default Tip'));
     expect(container.firstChild).toMatchSnapshot();
   });
 

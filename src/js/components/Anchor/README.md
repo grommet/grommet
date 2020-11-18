@@ -127,6 +127,15 @@ xlarge
 string
 ```
 
+**as**
+
+The DOM tag or react component to use for the element.
+
+```
+string
+function
+```
+
 **color**
 
 Label color and icon color, if not specified on the icon.
@@ -205,13 +214,14 @@ xxlarge
 string
 ```
 
-**as**
+**weight**
 
-The DOM tag or react component to use for the element.
+Sets font-weight property for anchor.
 
 ```
-string
-function
+normal
+bold
+number
 ```
   
 ## Intrinsic element
@@ -243,7 +253,7 @@ Defaults to
 
 **anchor.textDecoration**
 
-The text decoration of the label. 
+The text decoration of the label.
 Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
 for possible values. Expects `string`.
 
@@ -265,7 +275,7 @@ undefined
 
 **anchor.hover.textDecoration**
 
-The text decoration of the label when hovering. 
+The text decoration of the label when hovering.
 Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
 for possible values. Expects `string`.
 

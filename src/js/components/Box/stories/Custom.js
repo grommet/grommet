@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Text } from 'grommet';
 import { grommet } from '../../../themes';
 
-const GradientColorBox = () => (
+export const GradientColorBox = () => (
   <Grommet theme={grommet}>
     <Box
       justify="center"
@@ -18,4 +17,4 @@ const GradientColorBox = () => (
   </Grommet>
 );
 
-storiesOf('Box', module).add('Gradient', () => <GradientColorBox />);
+GradientColorBox.story = { name: 'Gradient' };

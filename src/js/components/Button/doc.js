@@ -14,8 +14,8 @@ export const doc = Button => {
     .description('A button.')
     .details(
       `You can provide a single function child that will be called with
-      'hover' and 'focus' keys. This allows you to customize the rendering
-      of the Button in those cases.`,
+      'disabled', 'hover' and 'focus' keys. 
+      This allows you to customize the rendering of the Button in those cases.`,
     )
     .usage(
       `import { Button } from 'grommet';
@@ -32,9 +32,9 @@ export const doc = Button => {
     ]).description(
       `Function that can be called to render the visual representation.
       Button can take in Children as a function, node, or object. 
-      For example hover can be passed as an object that would 
-      then return a react element.
-      \`children={({ hover, focus }) => <Box...>{...}</Box>}\`. 
+      For example, 'disabled', 'hover', and 'focus' can be passed as an 
+      argument that would then return a react element.
+      \`children={({ disabled, hover, focus }) => <Box...>{...}</Box>}\`. 
       When Button has children, it is styled as a \`plain\` button.
       `,
     ),
@@ -131,6 +131,14 @@ with plain Buttons.`,
     ]).description(
       `Specifies where to display the URL defined in the href property.`,
     ),
+    tip: PropTypes.oneOfType([
+      PropTypes.shape({
+        content: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+        dropProps: PropTypes.shape({}),
+        plain: PropTypes.bool,
+      }),
+      PropTypes.string,
+    ]).description(`tooltip or a hint when hovering over the button.`),
     type: PropTypes.oneOf(['button', 'reset', 'submit'])
       .description(
         `The type of button. Set the type to submit for the default button on 
@@ -296,7 +304,6 @@ export const themeDoc = {
     type: 'string',
     defaultValue: '4px',
   },
-
   'button.disabled.color': {
     description: `Label color when the button is disabled.`,
     type: 'string | { dark: string, light: string }',
@@ -526,6 +533,20 @@ duration and allowing it to change speed during its course.`,
   'button.extend': {
     description: 'Any additional style for the Button.',
     type: 'string | (props) => {}',
+  },
+  'tip.content': {
+    description:
+      'When using tip prop, any valid Box property for the Tip container.',
+    type: 'object',
+    defaultValue: `{ background: 'background-contrast', elevation: 'small', 
+    margin: 'xsmall', pad: { vertical: 'xsmall', horizontal: 'small' }, 
+    round: 'small'}`,
+  },
+  'tip.drop': {
+    description:
+      'When using tip prop, any valid Drop property for the Tooltip.',
+    type: 'object',
+    defaultValue: "{align: { top: 'bottom' }}",
   },
   ...themeDocUtils.focusStyle,
   ...themeDocUtils.disabledStyle,

@@ -13,10 +13,8 @@ export interface DropButtonProps {
   dropContent: JSX.Element;
   dropTarget?: object;
   dropProps?: DropProps;
-  onClose?: (
-    ev: MouseEvent | React.MouseEvent<HTMLButtonElement, MouseEvent>,
-  ) => void;
-  onOpen?: (ev: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onClose?: React.MouseEventHandler<HTMLDocument | HTMLButtonElement>;
+  onOpen?: React.MouseEventHandler<HTMLButtonElement>;
   open?: boolean;
 }
 

@@ -473,6 +473,15 @@ xlarge
 string
 \`\`\`
 
+**as**
+
+The DOM tag or react component to use for the element.
+
+\`\`\`
+string
+function
+\`\`\`
+
 **color**
 
 Label color and icon color, if not specified on the icon.
@@ -551,13 +560,14 @@ xxlarge
 string
 \`\`\`
 
-**as**
+**weight**
 
-The DOM tag or react component to use for the element.
+Sets font-weight property for anchor.
 
 \`\`\`
-string
-function
+normal
+bold
+number
 \`\`\`
   
 ## Intrinsic element
@@ -589,7 +599,7 @@ Defaults to
 
 **anchor.textDecoration**
 
-The text decoration of the label. 
+The text decoration of the label.
 Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
 for possible values. Expects \`string\`.
 
@@ -611,7 +621,7 @@ undefined
 
 **anchor.hover.textDecoration**
 
-The text decoration of the label when hovering. 
+The text decoration of the label when hovering.
 Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
 for possible values. Expects \`string\`.
 
@@ -1357,7 +1367,7 @@ boolean
 The amount of spacing between child elements. This
         should not be used in conjunction with 'wrap' as the gap elements
         will not wrap gracefully. If a child is a Fragment,
-        Box will not add a gap between the choldren of the Fragment.
+        Box will not add a gap between the children of the Fragment.
 
 \`\`\`
 none
@@ -1910,8 +1920,8 @@ Defaults to
 A button.
 
 You can provide a single function child that will be called with
-      'hover' and 'focus' keys. This allows you to customize the rendering
-      of the Button in those cases.
+      'disabled', 'hover' and 'focus' keys. 
+      This allows you to customize the rendering of the Button in those cases.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Button&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/button&module=%2Fsrc%2FButton.js)
 ## Usage
@@ -2040,9 +2050,9 @@ string
 
 Function that can be called to render the visual representation.
       Button can take in Children as a function, node, or object. 
-      For example hover can be passed as an object that would 
-      then return a react element.
-      \`children={({ hover, focus }) => <Box...>{...}</Box>}\`. 
+      For example, 'disabled', 'hover', and 'focus' can be passed as an 
+      argument that would then return a react element.
+      \`children={({ disabled, hover, focus }) => <Box...>{...}</Box>}\`. 
       When Button has children, it is styled as a \`plain\` button.
       
 
@@ -2253,6 +2263,24 @@ _self
 _blank
 _parent
 _top
+string
+\`\`\`
+
+**tip**
+
+tooltip or a hint when hovering over the button.
+
+\`\`\`
+{
+  content: 
+    node
+    string,
+  dropProps: 
+    {
+
+    },
+  plain: boolean
+}
 string
 \`\`\`
 
@@ -3036,6 +3064,28 @@ Defaults to
 undefined
 \`\`\`
 
+**tip.content**
+
+When using tip prop, any valid Box property for the Tip container. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{ background: 'background-contrast', elevation: 'small', 
+    margin: 'xsmall', pad: { vertical: 'xsmall', horizontal: 'small' }, 
+    round: 'small'}
+\`\`\`
+
+**tip.drop**
+
+When using tip prop, any valid Drop property for the Tooltip. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{align: { top: 'bottom' }}
+\`\`\`
+
 **global.focus.border.color**
 
 The border color of the component when in focus. Expects \`string | { dark: string, light: string }\`.
@@ -3224,6 +3274,16 @@ xlarge
 string
 \`\`\`
 
+**activeDate**
+
+When using range, Whether the next date selection will affect the 
+        start or end bound of the range. Defaults to \`start\`.
+
+\`\`\`
+start
+end
+\`\`\`
+
 **animate**
 
 Whether to animate the calender as the user interacts with it. Defaults to \`true\`.
@@ -3373,10 +3433,12 @@ function
 Whether to automatically manage multiple date selection as a range.
         When the user clicks the first date, onSelect will be called with that
         date. When the user selects another date, onSelect will be called with
-        an array of two dates.
+        an array of two dates. If range = \\"array\\", then an array of dates will 
+        be returned even when the start or end date of the range is undefined.
 
 \`\`\`
 boolean
+array
 \`\`\`
 
 **reference**
@@ -3389,10 +3451,13 @@ string
 
 **showAdjacentDays**
 
-Whether to show the days from the previous and next months. Defaults to \`true\`.
+Whether to show the days from the previous and next months. 
+        \`trim\` limits adjacent days shown to rows containing days in 
+        the current month. Defaults to \`true\`.
 
 \`\`\`
 boolean
+trim
 \`\`\`
 
 **size**
@@ -4999,7 +5064,19 @@ string
 
 \`\`\`
 div
-\`\`\`",
+\`\`\`
+## Theme
+  
+**checkBoxGroup.container**
+
+Any valid Box props for the CheckBoxGroup container. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+",
   "Clock": "## Clock
 A clock with timezone awareness.
 
@@ -5169,13 +5246,17 @@ forward
 
 **size**
 
-Clock size Defaults to \`medium\`.
+Size for both Analog and Digital Clocks. For Analog,
+      there's also 'huge', that's equal to 'xxlarge' and exists
+      for backwards compatibility Defaults to \`medium\`.
 
 \`\`\`
+xsmall
 small
 medium
 large
 xlarge
+xxlarge
 string
 \`\`\`
 
@@ -5208,7 +5289,7 @@ div,svg
   
 **clock.analog.extend**
 
-Any additional style for Clock. Expects \`string | (props) => {}\`.
+Any additional style for the Analog Clock. Expects \`string | (props) => {}\`.
 
 Defaults to
 
@@ -5258,7 +5339,7 @@ Defaults to
 
 **clock.analog.minute.color**
 
-The color of the hour minute. Expects \`string | { dark: string, light: string }\`.
+The color of the minute hand. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
@@ -5336,14 +5417,74 @@ Defaults to
 3px
 \`\`\`
 
+**clock.analog.size.xsmall**
+
+The whole size of the Analog Clock Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+48px
+\`\`\`
+
+**clock.analog.size.small**
+
+The whole size of the Analog Clock Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+72px
+\`\`\`
+
 **clock.analog.size.medium**
 
-The whole size of the Analog clock Expects \`string\`.
+The whole size of the Analog Clock Expects \`string\`.
 
 Defaults to
 
 \`\`\`
 96px
+\`\`\`
+
+**clock.analog.size.large**
+
+The whole size of the Analog Clock Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+144px
+\`\`\`
+
+**clock.analog.size.xlarge**
+
+The whole size of the Analog Clock Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+216px
+\`\`\`
+
+**clock.analog.size.xxlarge**
+
+The whole size of the Analog Clock Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+288px
+\`\`\`
+
+**clock.analog.size.huge**
+
+The whole size of the Analog Clock Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+288px
 \`\`\`
 ",
   "Collapsible": "## Collapsible
@@ -6741,6 +6882,26 @@ undefined
 **dataTable.header.border**
 
 Any valid Box border value. Expects \`string | object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.header.color**
+
+The label and icon color in a header cell. Expects \`{ dark: string, light: string } | string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.header.extend**
+
+Any additional styles for header cells. Expects \`string | (props) => {}\`.
 
 Defaults to
 
@@ -8794,6 +8955,93 @@ Grid areas.
   end: [number]
 }]
 [[string]]
+\`\`\`
+
+**border**
+
+Include a border.
+
+\`\`\`
+boolean
+top
+left
+bottom
+right
+start
+end
+horizontal
+vertical
+all
+{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  side: 
+    top
+    left
+    bottom
+    right
+    start
+    end
+    horizontal
+    vertical
+    all,
+  size: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  style: 
+    solid
+    dashed
+    dotted
+    double
+    groove
+    ridge
+    inset
+    outset
+    hidden
+}
+[{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  side: 
+    top
+    left
+    bottom
+    right
+    start
+    end
+    horizontal
+    vertical
+    all,
+  size: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  style: 
+    solid
+    dashed
+    dotted
+    double
+    groove
+    ridge
+    inset
+    outset
+    hidden
+}]
 \`\`\`
 
 **columns**
@@ -10888,12 +11136,21 @@ import { Markdown } from 'grommet';
 
 Custom components and props to override html elements such as 'img'
       or 'pre'. By default 'a', 'p', 'img', and table elements are overridden
-      with grommet components
+      with grommet components.
+      Available options:
+      a: { component: Anchor },
+      img: { component: Image },
+      p: { component: Paragraph },
+      table: { component: Table },
+      td: { component: TableCell },
+      tbody: { component: TableBody },
+      tfoot: { component: TableFooter },
+      th: { component: TableCell },
+      thead: { component: TableHeader },
+      tr: { component: TableRow }
 
 \`\`\`
-{
-
-}
+object
 \`\`\`
 
 **options**
@@ -10930,6 +11187,27 @@ Custom title to be used by screen readers.
 
 \`\`\`
 string
+\`\`\`
+
+**dropHeight**
+
+The height of the drop container.
+
+\`\`\`
+xsmall
+small
+medium
+large
+xlarge
+string
+\`\`\`
+
+**dropProps**
+
+Any valid Drop prop.
+
+\`\`\`
+object
 \`\`\`
 
 **icon**
@@ -10978,7 +11256,8 @@ function
 
 Describes the structure of the mask. If a regexp is provided, it should
       allow both the final full string element as well as partial strings
-      as the user types characters one by one.
+      as the user types characters one by one. When using regexp to match number
+      values make sure that the option values are numbers as well.
 
 \`\`\`
 [{
@@ -11058,6 +11337,17 @@ Defaults to
 **maskedInput.extend**
 
 Any additional style for MaskedInput. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**maskedInput.container.extend**
+
+Any additional style for the container surrounding the input 
+    and, if present, icon. Expects \`string | (props) => {}\`.
 
 Defaults to
 
@@ -11207,6 +11497,16 @@ Defaults to
 \`\`\`
 12px
 \`\`\`
+
+**global.input.extend**
+
+Any additional style for an input. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
 ",
   "Menu": "## Menu
 A control that opens a Drop containing plain Buttons.
@@ -11214,8 +11514,9 @@ A control that opens a Drop containing plain Buttons.
 The labels and behavior of the contained Buttons are described
       via the \`items\` property.
       You can provide a single function child that will be called with
-      'hover', 'focus', and 'drop' keys. This allows you to customize
-      the rendering of the Menu button in those cases.
+      'disabled', 'hover', 'focus', and 'drop' keys. 
+      This allows you to customize the rendering of the Menu button 
+      in those cases.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Menu&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/menu&module=%2Fsrc%2FMenu.js)
 ## Usage
@@ -11346,7 +11647,7 @@ Function that will be called to render the visual representation.
       It will be passed an object containing button props.
       It should return a react element.
       For example:
-      \`children={({ drop, hover }) => <Box ...>{...}</Box>}\`
+      \`children={({ disabled, drop, hover, focus }) => <Box ...>{...}</Box>}\`
       
 
 \`\`\`
@@ -13261,6 +13562,20 @@ Function that will be called when each option is rendered.
 function
 \`\`\`
 
+**clear**
+
+Whether to provide a button option to clear selections.
+
+\`\`\`
+boolean
+{
+  position: 
+    top
+    bottom,
+  label: string
+}
+\`\`\`
+
 **closeOnChange**
 
 Wether to close the drop when a selection is made. Defaults to \`true\`.
@@ -13656,6 +13971,26 @@ Defaults to
 
 \`\`\`
 undefined
+\`\`\`
+
+**select.clear.container**
+
+Any valid Box prop for the clear button container. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{ pad: 'small', background: 'light-2' }
+\`\`\`
+
+**select.clear.text**
+
+Any valid Text prop for text used inside the clear button container. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{ color: 'dark-3' }
 \`\`\`
 
 **select.control.open**
@@ -14299,7 +14634,7 @@ Defaults to
   "Table": "## Table
 A table of data organized in cells.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Table&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/table&module=%2Fsrc%2FTable.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Visualizations-Table&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/visualizations-table&module=%2Fsrc%2FVisualizations-Table.js)
 ## Usage
 
 \`\`\`javascript
@@ -15272,10 +15607,7 @@ string
 
 **size**
 
-The font size and line height are primarily driven by the chosen tag. 
-But, it can be adjusted via this size property. The tag should be set for 
-semantic correctness and accessibility. This size property allows for stylistic
-adjustments. Defaults to \`medium\`.
+The font size and line space height of the text. Defaults to \`medium\`.
 
 \`\`\`
 xsmall
@@ -15357,7 +15689,8 @@ span
   
 **global.colors.text**
 
-The text color used for Text. Expects \`object | { dark: string, light: string }\`.
+The text color used for Text. In order for this to take 
+    effect, global.colors.background needs to be defined. Expects \`object | { dark: string, light: string }\`.
 
 Defaults to
 
@@ -15730,6 +16063,16 @@ Defaults to
 
 \`\`\`
 12px
+\`\`\`
+
+**global.input.extend**
+
+Any additional style for an input. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **global.control.disabled.opacity**
@@ -16245,6 +16588,81 @@ Defaults to
 
 \`\`\`
 12px
+\`\`\`
+
+**global.input.extend**
+
+Any additional style for an input. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+",
+  "Tip": "## Tip
+Tooltip or a hint when hovering over an element. The tooltip will render 
+      when hovering on top of the Tip's child node or string.
+
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Tip&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/tip&module=%2Fsrc%2FTip.js)
+## Usage
+
+\`\`\`javascript
+import { Tip } from 'grommet';
+<Tip />
+\`\`\`
+
+## Properties
+
+**content**
+
+The tooltip content inside the drop.
+
+\`\`\`
+node
+\`\`\`
+
+**dropProps**
+
+Any valid Drop prop to style the Tip drop container. Defaults to \`{
+  \\"plain\\": true,
+  \\"trapFocus\\": false
+}\`.
+
+\`\`\`
+object
+\`\`\`
+
+**plain**
+
+Whether content should have default styling.
+
+\`\`\`
+boolean
+\`\`\`
+  
+## Theme
+  
+**tip.content**
+
+Any valid Box property for the Tip container. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{ background: 'background-contrast', elevation: 'small', 
+    margin: 'xsmall', pad: { vertical: 'xsmall', horizontal: 'small' }, 
+    round: 'small'}
+\`\`\`
+
+**tip.drop**
+
+Any valid Drop property for the Tooltip. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{align: { top: 'bottom' }}
 \`\`\`
 ",
   "Video": "## Video

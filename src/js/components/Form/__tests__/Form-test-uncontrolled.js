@@ -914,4 +914,30 @@ describe('Form uncontrolled', () => {
     );
     window.scrollTo.mockRestore();
   });
+
+  test('uncontrolled onChange with touched', () => {
+    const onChange = jest.fn();
+    const { getByPlaceholderText } = render(
+      <Grommet>
+        <Form onChange={onChange}>
+          <FormField
+            name="test"
+            required
+            placeholder="test input"
+            a11yTitle="test"
+          />
+          <Button type="reset" primary label="Reset" />
+        </Form>
+      </Grommet>,
+    );
+
+    fireEvent.change(getByPlaceholderText('test input'), {
+      target: { value: 'Input has changed' },
+    });
+
+    expect(onChange).toBeCalledWith(
+      { test: 'Input has changed' },
+      { touched: { test: true } },
+    );
+  });
 });

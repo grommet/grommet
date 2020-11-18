@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { grommet, Grommet, Box, Text } from 'grommet';
 import { hpe } from 'grommet-theme-hpe';
 
-const Background = () => {
+export const Background = () => {
   const themeColor = 'background-back';
   const hexValue = '#DCD0FF';
   const cssColor = 'gold';
@@ -58,5 +57,3 @@ const Background = () => {
     </Box>
   );
 };
-
-storiesOf('Grommet', module).add('Background', () => <Background />);

@@ -162,6 +162,39 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('onSort external', () => {
+    const onSort = jest.fn();
+    const { container, getByText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'zero', b: 0 },
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          onSort={onSort}
+          sort={{ property: 'a', direction: 'asc', external: true }}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    const headerCell = getByText('A');
+    fireEvent.click(headerCell, {});
+    expect(onSort).toBeCalledWith(
+      expect.objectContaining({
+        property: 'a',
+        direction: 'desc',
+        external: true,
+      }),
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('sort', () => {
     const { container } = render(
       <Grommet>
@@ -288,7 +321,7 @@ describe('DataTable', () => {
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
-    fireEvent.click(container.querySelector('[aria-label="focus-search-a"]'));
+    fireEvent.click(container.querySelector('[aria-label="Open search by a"]'));
     const searchInput = container.querySelector('[name="search-a"]');
     expect(document.activeElement).toBe(searchInput);
     fireEvent.change(searchInput, {

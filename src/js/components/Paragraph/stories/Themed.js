@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Paragraph } from 'grommet';
 import { deepMerge } from 'grommet/utils';
@@ -13,7 +12,7 @@ const customTheme = deepMerge(grommet, {
   },
 });
 
-const All = () => (
+export const Themed = () => (
   <Grommet theme={customTheme}>
     <Paragraph>
       The font family for this paragraph is being defined by a custom theme.
@@ -22,6 +21,8 @@ const All = () => (
 );
 
 // disabling chromatic because snapshot doesn't capture font
-storiesOf('Paragraph', module).add('Themed', () => <All />, {
-  chromatic: { disable: true },
-});
+Themed.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
+};

@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Chart, Heading } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -14,7 +13,7 @@ const values = Array(14)
     return [index, value];
   });
 
-const LayoutChart = () => (
+export const Layout = () => (
   <Grommet theme={grommet}>
     <Box margin="medium">
       <Heading level={2}>full</Heading>
@@ -40,5 +39,3 @@ const LayoutChart = () => (
     </Box>
   </Grommet>
 );
-
-storiesOf('Chart', module).add('Layout', () => <LayoutChart />);

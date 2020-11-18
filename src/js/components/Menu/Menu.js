@@ -184,20 +184,40 @@ const Menu = forwardRef((props, ref) => {
     }
   };
 
-  const content = children || (
-    <Box
-      direction="row"
-      justify={justifyContent}
-      align="center"
-      pad={theme.button.default ? undefined : 'small'}
-      gap={label && icon !== false ? 'small' : undefined}
-    >
-      <Text size={size}>{label}</Text>
-      {icon !== false
-        ? (icon !== true && icon) || <MenuIcon color={iconColor} size={size} />
-        : null}
-    </Box>
-  );
+  const menuIcon =
+    icon !== false
+      ? (icon !== true && icon) || <MenuIcon color={iconColor} size={size} />
+      : null;
+
+  let buttonProps = { plain, size };
+  let content;
+  if (children) {
+    content = children;
+  } else if (!theme.button.default) {
+    content = (
+      <Box
+        direction="row"
+        justify={justifyContent}
+        align="center"
+        pad="small"
+        gap={label && icon !== false ? 'small' : undefined}
+      >
+        <Text size={size}>{label}</Text>
+        {menuIcon}
+      </Box>
+    );
+  } else {
+    // when a theme has theme.button.default, keep content as
+    // undefined so we can rely on Button label & icon props
+    buttonProps = {
+      icon: menuIcon,
+      label,
+      plain,
+      reverse: true,
+      size,
+    };
+    content = undefined;
+  }
 
   const controlMirror = (
     <Box flex={false}>
@@ -210,13 +230,13 @@ const Menu = forwardRef((props, ref) => {
         active={activeItemIndex === controlButtonIndex}
         focusIndicator={false}
         hoverIndicator="background"
-        plain={plain}
         onClick={onDropClose}
         onFocus={() => setActiveItemIndex(controlButtonIndex)}
         // On first tab into menu, the control button should not
         // be able to receive tab focus because the focus should
         // go to the first menu item instead.
         tabIndex={activeItemIndex === constants.none ? '-1' : undefined}
+        {...buttonProps}
       >
         {typeof content === 'function'
           ? () => content({ ...props, drop: true })
@@ -238,12 +258,12 @@ const Menu = forwardRef((props, ref) => {
       <DropButton
         ref={ref}
         {...rest}
+        {...buttonProps}
         a11yTitle={a11yTitle || messages.openMenu || 'Open Menu'}
         disabled={disabled}
         dropAlign={align}
         dropTarget={dropTarget}
         dropProps={dropProps}
-        plain={plain}
         open={isOpen}
         onOpen={onDropOpen}
         onClose={onDropClose}

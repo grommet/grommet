@@ -90,7 +90,12 @@ const LayerContainer = forwardRef(
 
         updateBounds();
         window.addEventListener('resize', updateBounds);
-        return () => window.removeEventListener('resize', updateBounds);
+        window.addEventListener('scroll', updateBounds, true);
+
+        return () => {
+          window.removeEventListener('resize', updateBounds);
+          window.removeEventListener('scroll', updateBounds, true);
+        };
       }
       setTargetBounds(fullBounds);
       return undefined;
@@ -156,7 +161,11 @@ const LayerContainer = forwardRef(
     }
     if (modal) {
       content = (
-        <FocusedContainer hidden={position === 'hidden'} restrictScroll>
+        <FocusedContainer
+          hidden={position === 'hidden'}
+          restrictScroll
+          trapFocus
+        >
           {content}
         </FocusedContainer>
       );

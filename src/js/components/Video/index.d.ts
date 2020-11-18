@@ -11,7 +11,7 @@ export interface VideoProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   autoPlay?: boolean;
-  controls?: 'false' | 'over' | 'below';
+  controls?: false | 'over' | 'below';
   fit?: 'cover' | 'contain';
   gridArea?: GridAreaType;
   loop?: boolean;
@@ -32,7 +32,6 @@ export interface VideoProps {
 }
 
 declare const Video: React.ComponentClass<VideoProps &
-  JSX.IntrinsicElements['video'] &
   Omit<JSX.IntrinsicElements['video'], 'controls'>>;
 
 export { Video };

@@ -18,7 +18,8 @@ import {
   StyledDataTableRow,
 } from './StyledDataTable';
 import { datumValue } from './buildState';
-import { kindPartStyles } from '../../utils';
+import { kindPartStyles } from '../../utils/styles';
+import { normalizeColor } from '../../utils/colors';
 
 // separate theme values into groupings depending on what
 // part of header cell they should style
@@ -34,17 +35,18 @@ const separateThemeProps = theme => {
 
   const cellProps = { background, border };
   const textProps = { color, ...font };
+  const iconProps = { color };
   const layoutProps = { ...rest };
 
-  return [cellProps, layoutProps, textProps];
+  return [cellProps, layoutProps, textProps, iconProps];
 };
 
 // build up CSS from basic to specific based on the supplied sub-object paths.
 // adapted from StyledButtonKind to only include parts relevant for DataTable
 const buttonStyle = ({ theme }) => {
   const styles = [];
+  const [, layoutProps, , iconProps] = separateThemeProps(theme);
 
-  const [, layoutProps] = separateThemeProps(theme);
   if (layoutProps) {
     styles.push(kindPartStyles(layoutProps, theme));
   }
@@ -60,6 +62,17 @@ const buttonStyle = ({ theme }) => {
           }
         `,
       );
+  }
+
+  if (iconProps.color) {
+    styles.push(
+      css`
+        svg {
+          stroke: ${normalizeColor(iconProps.color, theme)};
+          fill: ${normalizeColor(iconProps.color, theme)};
+        }
+      `,
+    );
   }
 
   return styles;
@@ -99,6 +112,11 @@ const Header = ({
   ...rest
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
+  const [cellProps, layoutProps, textProps] = separateThemeProps(theme);
+
+  let background;
+  if (backgroundProp) background = backgroundProp;
+  else background = undefined;
 
   return (
     <StyledDataTableHeader fillProp={fill} {...rest}>
@@ -115,7 +133,7 @@ const Header = ({
         )}
 
         {(selected || onSelect) && (
-          <TableCell>
+          <TableCell background={background || cellProps.background}>
             {onSelect && (
               <CheckBox
                 checked={selected.length === data.length}
@@ -147,10 +165,6 @@ const Header = ({
             verticalAlign,
             size,
           }) => {
-            const [cellProps, layoutProps, textProps] = separateThemeProps(
-              theme,
-            );
-
             let content;
             if (typeof header === 'string') {
               content = <Text {...textProps}>{header}</Text>;
@@ -184,8 +198,11 @@ const Header = ({
               content = (
                 <StyledHeaderCellButton
                   plain
+                  column={property}
                   fill="vertical"
                   onClick={onSort(property)}
+                  sort={sort}
+                  sortable
                 >
                   <Box
                     direction="row"
@@ -247,7 +264,6 @@ const Header = ({
             if (tablePin) pin.push('top');
             if (columnPin) pin.push('left');
 
-            let background;
             if (backgroundProp) background = backgroundProp;
             else if (
               pin.length > 0 &&
