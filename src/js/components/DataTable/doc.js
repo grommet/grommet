@@ -58,7 +58,7 @@ parts.forEach(part => {
 
 export const doc = DataTable => {
   const DocumentedDataTable = describe(DataTable)
-    .availableAt(getAvailableAtBadge('DataTable'))
+    .availableAt(getAvailableAtBadge('DataTable', 'Visualizations'))
     .description('A data driven table.')
     .usage(
       `import { DataTable } from 'grommet';

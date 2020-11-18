@@ -4,7 +4,7 @@ import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = InfiniteScroll => {
   const DocumentedInfiniteScroll = describe(InfiniteScroll)
-    .availableAt(getAvailableAtBadge('InfiniteScroll'))
+    .availableAt(getAvailableAtBadge('InfiniteScroll', 'Utilities'))
     .description('A container that lazily renders items.')
     .usage(
       `import { InfiniteScroll } from 'grommet';

@@ -537,6 +537,9 @@ export interface ThemeType {
       };
     };
   };
+  checkBoxGroup?: {
+    container?: BoxProps;
+  };
   clock?: {
     analog?: {
       extend?: ExtendType;
@@ -1036,6 +1039,10 @@ export interface ThemeType {
   };
   select?: {
     background?: BackgroundType;
+    clear?: {
+      container?: BoxProps;
+      text?: TextProps;
+    };
     container?: {
       extend?: ExtendType;
     };

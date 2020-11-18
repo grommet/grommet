@@ -278,8 +278,6 @@ describe('DateInput', () => {
     fireEvent.click(getByText('10'));
     expect(onChange).toHaveBeenCalled();
     expect(onChange).toHaveReturnedWith([
-      // Calendar is returning UTC, but should return local
-      // this should be resolved when https://github.com/grommet/grommet/issues/4352 ågets fixed
       '2020-07-10T08:00:00.000Z',
       '2020-07-10T08:00:00.000Z',
     ]);

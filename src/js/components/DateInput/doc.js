@@ -4,7 +4,7 @@ import { getAvailableAtBadge } from '../../utils';
 
 export const doc = DateInput => {
   const DocumentedDateInput = describe(DateInput)
-    .availableAt(getAvailableAtBadge('DateInput'))
+    .availableAt(getAvailableAtBadge('DateInput', 'Input'))
     .description('A control to input a single date or a date range.')
     .usage(
       `import { DateInput } from 'grommet';

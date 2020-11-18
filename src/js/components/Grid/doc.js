@@ -39,7 +39,7 @@ const BORDER_SHAPE = getBorderPropType({ includeBetween: false });
 
 export const doc = Grid => {
   const DocumentedGrid = describe(Grid)
-    .availableAt(getAvailableAtBadge('Grid'))
+    .availableAt(getAvailableAtBadge('Grid', 'Layout'))
     .description(
       `A grid system for laying out content. To use, define the
 rows and columns, create area names for adjacent cells, and then
