@@ -92,7 +92,7 @@ div
   
 **checkBoxGroup.container**
 
-Any valid Box props for the RadioButtonGroup container. Expects `object`.
+Any valid Box props for the CheckBoxGroup container. Expects `object`.
 
 Defaults to
 
