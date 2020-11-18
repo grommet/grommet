@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, Select, grommet, FormField, ThemeContext } from 'grommet';
 var options = ['one', 'two', 'three'];
 
@@ -140,7 +139,7 @@ var ClearForm = function ClearForm() {
   })));
 };
 
-var ClearExamples = function ClearExamples() {
+export var Clear = function Clear() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
@@ -152,11 +151,11 @@ var ClearExamples = function ClearExamples() {
     direction: "row"
   }, /*#__PURE__*/React.createElement(ClearForm, null), /*#__PURE__*/React.createElement(ClearCustomTheme, null))));
 };
-
-storiesOf('Select', module).add('Clear', function () {
-  return /*#__PURE__*/React.createElement(ClearExamples, null);
-}, {
-  chromatic: {
-    disable: true
+Clear.story = {
+  name: 'Clear',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

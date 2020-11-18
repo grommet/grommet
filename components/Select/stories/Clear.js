@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireWildcard(require("react"));
+exports.__esModule = true;
+exports.Clear = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireWildcard(require("react"));
 
 var _grommet = require("grommet");
 
@@ -149,7 +150,7 @@ var ClearForm = function ClearForm() {
   })));
 };
 
-var ClearExamples = function ClearExamples() {
+var Clear = function Clear() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _grommet.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -162,10 +163,12 @@ var ClearExamples = function ClearExamples() {
   }, /*#__PURE__*/_react["default"].createElement(ClearForm, null), /*#__PURE__*/_react["default"].createElement(ClearCustomTheme, null))));
 };
 
-(0, _react2.storiesOf)('Select', module).add('Clear', function () {
-  return /*#__PURE__*/_react["default"].createElement(ClearExamples, null);
-}, {
-  chromatic: {
-    disable: true
+exports.Clear = Clear;
+Clear.story = {
+  name: 'Clear',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
-});
+};

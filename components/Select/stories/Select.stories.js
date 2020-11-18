@@ -1,7 +1,11 @@
 "use strict";
 
 exports.__esModule = true;
-exports["default"] = exports.Unselect = exports.Uncontrolled = exports.Themed = exports.Simple = exports.Seasons = exports.Search = exports.ObjectOptions = exports.ObjectMultiple = exports.Multiple = exports.ManyOptions = exports.LazyLoadingOptions = exports.InsideFormField = exports.Dark = exports.CustomSearch = exports.Custom = exports.CreateOption = exports.Controlled = void 0;
+exports["default"] = exports.Unselect = exports.Uncontrolled = exports.Themed = exports.Simple = exports.Seasons = exports.Search = exports.ObjectOptions = exports.ObjectMultiple = exports.Multiple = exports.ManyOptions = exports.LazyLoadingOptions = exports.InsideFormField = exports.Dark = exports.CustomSearch = exports.Custom = exports.CreateOption = exports.Controlled = exports.Clear = void 0;
+
+var _Clear = require("./Clear");
+
+exports.Clear = _Clear.Clear;
 
 var _Controlled = require("./Controlled");
 
