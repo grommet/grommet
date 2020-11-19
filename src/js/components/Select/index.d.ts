@@ -15,6 +15,9 @@ interface onChangeEvent<
 > extends React.MouseEvent<Omit<HTMLElement, 'value'> & { value: ValueType }> {
   option: OptionType;
   value: ValueType;
+  /**
+   * @deprecated in favor of using the 'value' property
+   */
   selected: ValueType extends Array<any> ? number[] : number;
 }
 
@@ -68,6 +71,9 @@ export interface SelectProps<
   plain?: boolean;
   replace?: boolean;
   searchPlaceholder?: string;
+  /**
+   * @deprecated in favor of using the 'value' property
+   */
   selected?: number[] | number;
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
   value?: ValueType;
