@@ -217,7 +217,7 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     setActiveSuggestionIndex(nextActiveIndex);
   };
 
-  var showStyledPlaceholder = placeholder && typeof placeholder !== 'string' && !value;
+  var showStyledPlaceholder = placeholder && typeof placeholder !== 'string' && !(inputRef.current && inputRef.current.value);
   var drop;
   var extraProps = {
     onSelect: handleTextSelect
