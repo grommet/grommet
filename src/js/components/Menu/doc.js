@@ -8,7 +8,7 @@ const HORIZONTAL_ALIGN_OPTIONS = ['right', 'left'];
 
 export const doc = Menu => {
   const DocumentedMenu = describe(Menu)
-    .availableAt(getAvailableAtBadge('Menu'))
+    .availableAt(getAvailableAtBadge('Menu', 'Controls'))
     .description(`A control that opens a Drop containing plain Buttons.`)
     .details(
       `The labels and behavior of the contained Buttons are described

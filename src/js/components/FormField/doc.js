@@ -5,7 +5,7 @@ import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = FormField => {
   const DocumentedFormField = describe(FormField)
-    .availableAt(getAvailableAtBadge('FormField'))
+    .availableAt(getAvailableAtBadge('FormField', 'Input'))
     .description(
       `A single field in a form. FormField wraps an input component with
       a label, help, and/or error messaging. It typically contains an input

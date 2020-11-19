@@ -5,7 +5,7 @@ import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = Clock => {
   const DocumentedClock = describe(Clock)
-    .availableAt(getAvailableAtBadge('Clock'))
+    .availableAt(getAvailableAtBadge('Clock', 'Visualization'))
     .description('A clock with timezone awareness.')
     .usage(
       `import { Clock } from 'grommet';

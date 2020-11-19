@@ -4,7 +4,7 @@ import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = Avatar => {
   const DocumentedAvatar = describe(Avatar)
-    .availableAt(getAvailableAtBadge('Avatar'))
+    .availableAt(getAvailableAtBadge('Avatar', 'Visualizations'))
     .description('An Avatar.')
     .usage(
       `import { Avatar } from 'grommet';

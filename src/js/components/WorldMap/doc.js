@@ -48,7 +48,7 @@ in the map when it is not being hovered.`,
 
 export const doc = WorldMap => {
   const DocumentedWorldMap = describe(WorldMap)
-    .availableAt(getAvailableAtBadge('WorldMap'))
+    .availableAt(getAvailableAtBadge('WorldMap', 'Visualizations'))
     .description('A map of the world, or a continent.')
     .usage("import { WorldMap } from 'grommet';\n<WorldMap />")
     .intrinsicElement('svg');

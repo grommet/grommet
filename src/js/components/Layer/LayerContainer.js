@@ -90,7 +90,12 @@ const LayerContainer = forwardRef(
 
         updateBounds();
         window.addEventListener('resize', updateBounds);
-        return () => window.removeEventListener('resize', updateBounds);
+        window.addEventListener('scroll', updateBounds, true);
+
+        return () => {
+          window.removeEventListener('resize', updateBounds);
+          window.removeEventListener('scroll', updateBounds, true);
+        };
       }
       setTargetBounds(fullBounds);
       return undefined;
@@ -158,7 +163,10 @@ const LayerContainer = forwardRef(
       content = (
         <FocusedContainer
           hidden={position === 'hidden'}
-          restrictScroll
+          // if layer has a target, do not restrict scroll.
+          // restricting scroll  could inhibit the user's
+          // ability to scroll the page while the layer is open.
+          restrictScroll={!layerTarget ? true : undefined}
           trapFocus
         >
           {content}

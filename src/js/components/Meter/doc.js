@@ -5,7 +5,7 @@ import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = Meter => {
   const DocumentedMeter = describe(Meter)
-    .availableAt(getAvailableAtBadge('Meter'))
+    .availableAt(getAvailableAtBadge('Meter', 'Visualizations'))
     .description('A graphical meter.')
     .usage(
       `import { Meter } from 'grommet';

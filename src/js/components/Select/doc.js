@@ -5,7 +5,7 @@ import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = Select => {
   const DocumentedSelect = describe(Select)
-    .availableAt(getAvailableAtBadge('Select'))
+    .availableAt(getAvailableAtBadge('Select', 'Input'))
     .description('A control to select a value, with optional search.')
     .usage(
       `import { Select } from 'grommet';
@@ -24,6 +24,22 @@ export const doc = Select => {
       { active, disabled, selected } keys indicating the current state
       of the option.`,
     ),
+    clear: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.shape({
+        position: PropTypes.oneOf(['top', 'bottom'])
+          .description(
+            `Add a clear option to the top or at the bottom of the
+            container. By default no clear option is present.`,
+          )
+          .defaultValue('top'),
+        label: PropTypes.string
+          .description('Label for the clear selection item')
+          .defaultValue('Clear selection'),
+      }),
+    ])
+      .description(`Whether to provide a button option to clear selections.`)
+      .defaultValue(false),
     closeOnChange: PropTypes.bool
       .description('Wether to close the drop when a selection is made.')
       .defaultValue(true),
@@ -249,6 +265,17 @@ export const themeDoc = {
       'Any additional style for the container of the Select component.',
     type: 'string | (props) => {}',
     defaultValue: undefined,
+  },
+  'select.clear.container': {
+    description: 'Any valid Box prop for the clear button container.',
+    type: 'object',
+    defaultValue: "{ pad: 'small', background: 'light-2' }",
+  },
+  'select.clear.text': {
+    description:
+      'Any valid Text prop for text used inside the clear button container.',
+    type: 'object',
+    defaultValue: "{ color: 'dark-3' }",
   },
   'select.control.open': {
     description: `Any additional style for the Select DropButton when using the

@@ -47,7 +47,7 @@ const overflowPropType = PropTypes.oneOfType([
 
 export const doc = Box => {
   const DocumentedBox = describe(Box)
-    .availableAt(getAvailableAtBadge('Box'))
+    .availableAt(getAvailableAtBadge('Box', 'Layout'))
     .description(
       `A container that lays out its contents in one direction. Box
       provides CSS flexbox capabilities for layout, as well as general
@@ -179,7 +179,7 @@ export const doc = Box => {
     ]).description(`The amount of spacing between child elements. This
         should not be used in conjunction with 'wrap' as the gap elements
         will not wrap gracefully. If a child is a Fragment,
-        Box will not add a gap between the choldren of the Fragment.`),
+        Box will not add a gap between the children of the Fragment.`),
     height: PropTypes.oneOfType([
       PropTypes.oneOf([
         'xxsmall',

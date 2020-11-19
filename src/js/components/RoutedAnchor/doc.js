@@ -5,7 +5,7 @@ import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = RoutedAnchor => {
   const DocumentedRoutedAnchor = describe(RoutedAnchor)
-    .availableAt(getAvailableAtBadge('RoutedAnchor'))
+    .availableAt(getAvailableAtBadge('RoutedAnchor', 'Controls'))
     .description('An Anchor with support for React Router.')
     .usage(
       "import { RoutedAnchor } from 'grommet';\n" +

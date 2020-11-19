@@ -69,6 +69,18 @@ export const sameDayOrBefore = (date1, date2) =>
 export const daysApart = (date1, date2) =>
   Math.floor((date1.getTime() - date2.getTime()) / DAY_MILLISECONDS);
 
+// account for timezone offset of user's local machine
+export const localTimezoneToUTC = date =>
+  new Date(date.getTime() + date.getTimezoneOffset() * 60 * 1000);
+
+export const formatToLocalYYYYMMDD = date => {
+  const adjustedDate = new Date(date);
+  return new Date(
+    adjustedDate.getTime() - adjustedDate.getTimezoneOffset() * 60000,
+  )
+    .toISOString()
+    .split('T')[0];
+};
 // betweenDates takes an array of two elements and checks if the
 // supplied date lies between them, inclusive.
 // returns 2 if exact match to one end, 1 if between, undefined otherwise

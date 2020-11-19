@@ -5,7 +5,7 @@ import { themeDocUtils } from '../../utils/themeDocUtils';
 
 export const doc = MaskedInput => {
   const DocumentedMaskedInput = describe(MaskedInput)
-    .availableAt(getAvailableAtBadge('MaskedInput'))
+    .availableAt(getAvailableAtBadge('MaskedInput', 'Input'))
     .description('An input field with formalized syntax.')
     .usage(
       `import { MaskedInput } from 'grommet';
