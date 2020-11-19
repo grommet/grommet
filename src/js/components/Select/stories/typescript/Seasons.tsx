@@ -17,6 +17,8 @@ const allSeasons = [
   'S10',
 ];
 
+// Type annotations can only be used in TypeScript files.
+// Remove ': React.FC'  if you are not using TypeScript.
 export const Seasons: React.FC = () => {
   const [value, setValue] = useState<string[]>([]);
 
@@ -26,6 +28,8 @@ export const Seasons: React.FC = () => {
     );
   };
 
+  // Type annotations can only be used in TypeScript files.
+  // Remove ': string'  if you are not using TypeScript.
   const renderSeason = (season: string) => (
     <Button
       key={`season_tag_${season}`}

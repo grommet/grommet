@@ -27,6 +27,8 @@ const theme: ThemeType = {
   },
 };
 
+// Type annotations can only be used in TypeScript files.
+// Remove ': string[]'  if you are not using TypeScript.
 const defaultOptions: string[] = [];
 for (let i = 1; i <= 5; i += 1) {
   defaultOptions.push(`option ${i}`);
@@ -53,6 +55,8 @@ const getRegExp = text => {
   return new RegExp(escapedText, 'i');
 };
 
+// Type annotations can only be used in TypeScript files.
+// Remove ': React.FC'  if you are not using TypeScript.
 export const CreateOption: React.FC = () => {
   const [options, setOptions] = useState(defaultOptions);
   const [value, setValue] = useState('');
