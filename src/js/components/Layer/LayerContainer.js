@@ -91,6 +91,7 @@ const LayerContainer = forwardRef(
         let clickedPortalId = null;
         let node = event.target;
         while (clickedPortalId === null && node !== document) {
+          // check if user click occurred within the layer
           const attr = node.getAttribute('data-l-portal-id');
           if (attr !== null) clickedPortalId = parseInt(attr, 10);
           node = node.parentNode;
@@ -151,6 +152,8 @@ const LayerContainer = forwardRef(
         plain={plain}
         responsive={responsive}
         dir={theme.dir}
+        // portalId is used to determine if click occurred inside
+        // or outside of the layer
         data-l-portal-id={portalId}
       >
         {/* eslint-disable max-len */}
