@@ -15,7 +15,7 @@ var TipOnButton = function TipOnButton() {
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "medium",
-    gap: "small"
+    gap: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     label: "Default Tip",
     onClick: function onClick() {},
@@ -56,3 +56,10 @@ var TipOnButton = function TipOnButton() {
 };
 
 exports.TipOnButton = TipOnButton;
+TipOnButton.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
+  }
+};

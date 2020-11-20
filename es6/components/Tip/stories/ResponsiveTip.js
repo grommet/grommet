@@ -97,8 +97,6 @@ export var ResponsiveTip = function ResponsiveTip() {
     full: true
   }, /*#__PURE__*/React.createElement(ResponsiveContext.Consumer, null, function (size) {
     return /*#__PURE__*/React.createElement(Box, {
-      align: "center",
-      justify: "start",
       pad: "large",
       gap: "medium",
       background: "light-4",
@@ -108,7 +106,7 @@ export var ResponsiveTip = function ResponsiveTip() {
     }, /*#__PURE__*/React.createElement(Heading, {
       size: "small",
       level: 3
-    }, "Hover the Meter and play with the window size"), /*#__PURE__*/React.createElement(React.Fragment, null, "window size: ", size), /*#__PURE__*/React.createElement(Tip, {
+    }, "Hover the Meter and play with the window size"), /*#__PURE__*/React.createElement(Text, null, "window size: ", size), /*#__PURE__*/React.createElement(Tip, {
       content: /*#__PURE__*/React.createElement(TipContent, {
         size: size
       }),

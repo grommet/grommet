@@ -35,7 +35,9 @@ var customTheme = {
       round: {
         size: 'medium',
         corner: 'right'
-      }
+      },
+      flex: false // so Tip won't get cut on a window resize
+
     }
   }
 };
@@ -43,16 +45,17 @@ var customTheme = {
 var NotificationAlert = function NotificationAlert() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     alignSelf: "center"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Tip, {
-    dropProps: {
-      align: {
-        left: 'right'
-      }
-    },
-    content: /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      animation: "jiggle"
-    }, "New Analytics!")
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+    tip: {
+      dropProps: {
+        align: {
+          left: 'right'
+        }
+      },
+      content: /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+        animation: "jiggle"
+      }, "New Analytics!")
+    },
     icon: /*#__PURE__*/_react["default"].createElement(_grommet.Stack, {
       anchor: "top-right"
     }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Notification, null), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -61,7 +64,7 @@ var NotificationAlert = function NotificationAlert() {
       round: true,
       responsive: false
     }))
-  })));
+  }));
 };
 
 var SidebarHeader = function SidebarHeader() {

@@ -29,7 +29,9 @@ var customTheme = {
       round: {
         size: 'medium',
         corner: 'right'
-      }
+      },
+      flex: false // so Tip won't get cut on a window resize
+
     }
   }
 };
@@ -37,16 +39,17 @@ var customTheme = {
 var NotificationAlert = function NotificationAlert() {
   return /*#__PURE__*/React.createElement(Box, {
     alignSelf: "center"
-  }, /*#__PURE__*/React.createElement(Tip, {
-    dropProps: {
-      align: {
-        left: 'right'
-      }
-    },
-    content: /*#__PURE__*/React.createElement(Box, {
-      animation: "jiggle"
-    }, "New Analytics!")
   }, /*#__PURE__*/React.createElement(Button, {
+    tip: {
+      dropProps: {
+        align: {
+          left: 'right'
+        }
+      },
+      content: /*#__PURE__*/React.createElement(Box, {
+        animation: "jiggle"
+      }, "New Analytics!")
+    },
     icon: /*#__PURE__*/React.createElement(Stack, {
       anchor: "top-right"
     }, /*#__PURE__*/React.createElement(Notification, null), /*#__PURE__*/React.createElement(Box, {
@@ -55,7 +58,7 @@ var NotificationAlert = function NotificationAlert() {
       round: true,
       responsive: false
     }))
-  })));
+  }));
 };
 
 var SidebarHeader = function SidebarHeader() {

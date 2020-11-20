@@ -66,7 +66,7 @@ var Info = function Info() {
       }
     }
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
-    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Help, {
+    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.HelpOption, {
       size: "large"
     })
   }))));

@@ -44,7 +44,7 @@ export const Children = () => {
             <Box
               align="center"
               background="accent-1"
-              margin="medium"
+              margin="xsmall"
               pad="xsmall"
               round="medium"
               flex={false}

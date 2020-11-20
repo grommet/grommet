@@ -6,7 +6,7 @@ export var TipOnButton = function TipOnButton() {
   }, /*#__PURE__*/React.createElement(Box, {
     align: "center",
     pad: "medium",
-    gap: "small"
+    gap: "large"
   }, /*#__PURE__*/React.createElement(Button, {
     label: "Default Tip",
     onClick: function onClick() {},
@@ -44,4 +44,11 @@ export var TipOnButton = function TipOnButton() {
       }, "tooltip")
     }
   })));
+};
+TipOnButton.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
+  }
 };

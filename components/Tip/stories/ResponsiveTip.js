@@ -107,8 +107,6 @@ var ResponsiveTip = function ResponsiveTip() {
     full: true
   }, /*#__PURE__*/_react["default"].createElement(_grommet.ResponsiveContext.Consumer, null, function (size) {
     return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      align: "center",
-      justify: "start",
       pad: "large",
       gap: "medium",
       background: "light-4",
@@ -118,7 +116,7 @@ var ResponsiveTip = function ResponsiveTip() {
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, {
       size: "small",
       level: 3
-    }, "Hover the Meter and play with the window size"), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, "window size: ", size), /*#__PURE__*/_react["default"].createElement(_grommet.Tip, {
+    }, "Hover the Meter and play with the window size"), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "window size: ", size), /*#__PURE__*/_react["default"].createElement(_grommet.Tip, {
       content: /*#__PURE__*/_react["default"].createElement(TipContent, {
         size: size
       }),
