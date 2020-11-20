@@ -37,6 +37,7 @@ const customTheme = {
       pad: 'small',
       background: { color: 'accent-1', opacity: 0.9 },
       round: { size: 'medium', corner: 'right' },
+      flex: false, // so Tip won't get cut on a window resize
     },
   },
 };
@@ -44,24 +45,19 @@ const customTheme = {
 const NotificationAlert = () => {
   return (
     <Box alignSelf="center">
-      <Tip
-        dropProps={{ align: { left: 'right' } }}
-        content={<Box animation="jiggle">New Analytics!</Box>}
-      >
-        <Button
-          icon={
-            <Stack anchor="top-right">
-              <Notification />
-              <Box
-                background="accent-1"
-                pad="xsmall"
-                round
-                responsive={false}
-              />
-            </Stack>
-          }
-        />
-      </Tip>
+      {/* One option to apply tip on button  */}
+      <Button
+        tip={{
+          dropProps: { align: { left: 'right' } },
+          content: <Box animation="jiggle">New Analytics!</Box>,
+        }}
+        icon={
+          <Stack anchor="top-right">
+            <Notification />
+            <Box background="accent-1" pad="xsmall" round responsive={false} />
+          </Stack>
+        }
+      />
     </Box>
   );
 };
@@ -88,6 +84,7 @@ const SidebarButton = ({ iconName, index }) => {
 
   return (
     <Box fill="horizontal">
+      {/* Second option to apply tip on button  */}
       <Tip
         content={<Box>{iconName}</Box>}
         dropProps={{ align: { left: 'right' } }}
