@@ -4,7 +4,7 @@ import { grommet, Box, Button, Grommet } from 'grommet';
 
 export const TipOnButton = () => (
   <Grommet theme={grommet}>
-    <Box align="center" pad="medium" gap="small">
+    <Box align="center" pad="medium" gap="large">
       <Button label="Default Tip" onClick={() => {}} tip="tooltip" />
       <Button
         label="Tip Drop props"
