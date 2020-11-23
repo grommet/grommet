@@ -129,7 +129,9 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
             // such that they line up appropriately.
             var totals = [];
             return property.map(function (cp) {
-              var values = seriesValues[cp];
+              // handle object or string
+              var aProperty = cp.property || cp;
+              var values = seriesValues[aProperty];
               if (!values) return undefined; // property name isn't valid
 
               return values.map(function (v, i) {
@@ -339,8 +341,9 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
         var props = Array.isArray(property) ? property : [property];
         props.forEach(function (prop) {
           var p = prop.property || prop;
+          var pColor = prop.color || color;
           if (!result[p]) result[p] = {};
-          if (color && !result[p].color) result[p].color = color;
+          if (pColor && !result[p].color) result[p].color = pColor;
           if (point && !result[p].point) result[p].point = point;else if (type === 'point') result[p].point = false;
           if ((thickness || calcThickness) && !result[p].thickness) result[p].thickness = thickness || calcThickness;
         });
@@ -503,13 +506,14 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
     if (type === 'bars') {
       // reverse to ensure area Charts are stacked in the right order
       return prop.map(function (cProp, j) {
+        var pProp = cProp.property || cProp;
         return /*#__PURE__*/React.createElement(Chart // eslint-disable-next-line react/no-array-index-key
         , _extends({
           key: j // when property name isn't valid, send empty array
           ,
           values: chartValues[i][j] || [],
           overflow: true
-        }, seriesStyles[cProp], chartProps[i], chartRest, {
+        }, seriesStyles[pProp], chartProps[i], chartRest, {
           type: "bar",
           size: size,
           pad: pad
