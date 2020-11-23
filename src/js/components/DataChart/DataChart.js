@@ -107,7 +107,9 @@ const DataChart = forwardRef(
                 // such that they line up appropriately.
                 const totals = [];
                 return property.map(cp => {
-                  return seriesValues[cp].map((v, i) => {
+                  const values = seriesValues[cp];
+                  if (!values) return undefined; // property name isn't valid
+                  return values.map((v, i) => {
                     const base = totals[i] || 0;
                     totals[i] = base + v;
                     return [i, base, base + v];
@@ -244,13 +246,16 @@ const DataChart = forwardRef(
         if (charts[index].type === 'bars') {
           // merge values for bars case
           let mergedValues = chartValues[index][0].slice(0);
-          chartValues[index].slice(1).forEach(values => {
-            mergedValues = mergedValues.map((__, i) => [
-              i,
-              Math.min(mergedValues[i][1], values[i][1]),
-              Math.max(mergedValues[i][2], values[i][2]),
-            ]);
-          });
+          chartValues[index]
+            .slice(1)
+            .filter(values => values) // property name isn't valid
+            .forEach(values => {
+              mergedValues = mergedValues.map((__, i) => [
+                i,
+                Math.min(mergedValues[i][1], values[i][1]),
+                Math.max(mergedValues[i][2], values[i][2]),
+              ]);
+            });
           return calcBounds(mergedValues, { coarseness, steps });
         }
         // if this is a data driven x chart, set coarseness for x
@@ -470,7 +475,8 @@ const DataChart = forwardRef(
                 <Chart
                   // eslint-disable-next-line react/no-array-index-key
                   key={j}
-                  values={chartValues[i][j]}
+                  // when property name isn't valid, send empty array
+                  values={chartValues[i][j] || []}
                   overflow
                   {...seriesStyles[cProp]}
                   {...chartProps[i]}
