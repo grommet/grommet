@@ -103,8 +103,6 @@ export const ResponsiveTip = () => (
     <ResponsiveContext.Consumer>
       {size => (
         <Box
-          align="center"
-          justify="start"
           pad="large"
           gap="medium"
           background="light-4"
@@ -113,7 +111,7 @@ export const ResponsiveTip = () => (
           <Heading size="small" level={3}>
             Hover the Meter and play with the window size
           </Heading>
-          <>window size: {size}</>
+          <Text>window size: {size}</Text>
           <Tip
             content={<TipContent size={size} />}
             dropProps={{ align: { left: 'right' }, overflow: 'visible' }}

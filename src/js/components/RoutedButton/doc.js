@@ -5,7 +5,7 @@ import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = RoutedButton => {
   const DocumentedRoutedButton = describe(RoutedButton)
-    .availableAt(getAvailableAtBadge('RoutedButton'))
+    .availableAt(getAvailableAtBadge('RoutedButton', 'Controls'))
     .description('A button with support for React Router.')
     .usage(
       `import { RoutedButton } from 'grommet';

@@ -1,3 +1,4 @@
+export { Clear } from './Clear';
 export { Controlled } from './Controlled';
 export { CreateOption } from './typescript/CreateOption.tsx';
 export { Custom } from './Custom';

@@ -10,7 +10,7 @@ import { themeDocUtils } from '../../utils/themeDocUtils';
 
 export const doc = Button => {
   const DocumentedButton = describe(Button)
-    .availableAt(getAvailableAtBadge('Button'))
+    .availableAt(getAvailableAtBadge('Button', 'Controls'))
     .description('A button.')
     .details(
       `You can provide a single function child that will be called with
@@ -133,10 +133,7 @@ with plain Buttons.`,
     ),
     tip: PropTypes.oneOfType([
       PropTypes.shape({
-        content: PropTypes.oneOfType([
-          PropTypes.node,
-          PropTypes.string,
-        ]),
+        content: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
         dropProps: PropTypes.shape({}),
         plain: PropTypes.bool,
       }),

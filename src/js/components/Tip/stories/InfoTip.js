@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { grommet, Box, Button, Grommet, Text, Tip } from 'grommet';
-import { Help as HelpOption, CircleInformation } from 'grommet-icons';
+import { HelpOption, CircleInformation } from 'grommet-icons';
 
 export const Info = () => {
   return (

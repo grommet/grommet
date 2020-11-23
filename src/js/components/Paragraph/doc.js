@@ -6,7 +6,7 @@ import { themeDocUtils } from '../../utils/themeDocUtils';
 
 export const doc = Paragraph => {
   const DocumentedParagraph = describe(Paragraph)
-    .availableAt(getAvailableAtBadge('Paragraph'))
+    .availableAt(getAvailableAtBadge('Paragraph', 'Type'))
     .description('A paragraph of text.')
     .usage(
       `import { Paragraph } from 'grommet';

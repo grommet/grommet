@@ -4,7 +4,7 @@ import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = Tip => {
   const DocumentedTip = describe(Tip)
-    .availableAt(getAvailableAtBadge('Tip'))
+    .availableAt(getAvailableAtBadge('Tip', 'Controls'))
     .description(
       `Tooltip or a hint when hovering over an element. The tooltip will render 
       when hovering on top of the Tip's child node or string.`,

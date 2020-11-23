@@ -537,6 +537,9 @@ export interface ThemeType {
       };
     };
   };
+  checkBoxGroup?: {
+    container?: BoxProps;
+  };
   clock?: {
     analog?: {
       extend?: ExtendType;

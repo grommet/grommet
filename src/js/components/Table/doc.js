@@ -6,7 +6,7 @@ import { themeDocUtils } from '../../utils/themeDocUtils';
 
 export const doc = Table => {
   const DocumentedTable = describe(Table)
-    .availableAt(getAvailableAtBadge('Visualizations-Table'))
+    .availableAt(getAvailableAtBadge('Table', 'Visualizations'))
     .description('A table of data organized in cells.')
     .usage(
       // eslint-disable-next-line max-len

@@ -256,12 +256,13 @@ export const storageColumns = [
         content={
           <Box
             background="light-4"
-            align="start"
-            fill={false}
-            pad="small"
+            align="center"
+            justify="center"
+            width="xxsmall"
+            height="xxsmall"
             round="full"
             flex={false}
-            margin="small"
+            margin="xsmall"
           >
             {Math.trunc((datum.pinned / datum.pinnable) * 100)}
           </Box>
