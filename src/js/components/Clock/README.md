@@ -420,7 +420,7 @@ Defaults to
 
 **clock.digital.text.xsmall.height**
 
-Defines the line height of the Digital Clock Expects `string`.
+Defines the line height of the Digital Clock Expects `number`.
 
 Defaults to
 
@@ -440,7 +440,7 @@ Defaults to
 
 **clock.digital.text.small.height**
 
-Defines the line height of the Digital Clock Expects `string`.
+Defines the line height of the Digital Clock Expects `number`.
 
 Defaults to
 
@@ -460,7 +460,7 @@ Defaults to
 
 **clock.digital.text.medium.height**
 
-Defines the line height of the Digital Clock Expects `string`.
+Defines the line height of the Digital Clock Expects `number`.
 
 Defaults to
 
@@ -480,7 +480,7 @@ Defaults to
 
 **clock.digital.text.large.height**
 
-Defines the line height of the Digital Clock Expects `string`.
+Defines the line height of the Digital Clock Expects `number`.
 
 Defaults to
 
@@ -500,7 +500,7 @@ Defaults to
 
 **clock.digital.text.xlarge.height**
 
-Defines the line height of the Digital Clock Expects `string`.
+Defines the line height of the Digital Clock Expects `number`.
 
 Defaults to
 
@@ -520,7 +520,7 @@ Defaults to
 
 **clock.digital.text.xxlarge.height**
 
-Defines the line height of the Digital Clock Expects `string`.
+Defines the line height of the Digital Clock Expects `number`.
 
 Defaults to
 

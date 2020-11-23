@@ -173,7 +173,7 @@ export const themeDoc = {
   },
   'clock.digital.text.xsmall.height': {
     description: 'Defines the line height of the Digital Clock',
-    type: 'string',
+    type: 'number',
     defaultValue: '1.5',
   },
   'clock.digital.text.small.size': {
@@ -183,7 +183,7 @@ export const themeDoc = {
   },
   'clock.digital.text.small.height': {
     description: 'Defines the line height of the Digital Clock',
-    type: 'string',
+    type: 'number',
     defaultValue: '1.43',
   },
   'clock.digital.text.medium.size': {
@@ -193,7 +193,7 @@ export const themeDoc = {
   },
   'clock.digital.text.medium.height': {
     description: 'Defines the line height of the Digital Clock',
-    type: 'string',
+    type: 'number',
     defaultValue: '1.375',
   },
   'clock.digital.text.large.size': {
@@ -203,7 +203,7 @@ export const themeDoc = {
   },
   'clock.digital.text.large.height': {
     description: 'Defines the line height of the Digital Clock',
-    type: 'string',
+    type: 'number',
     defaultValue: '1.167',
   },
   'clock.digital.text.xlarge.size': {
@@ -213,7 +213,7 @@ export const themeDoc = {
   },
   'clock.digital.text.xlarge.height': {
     description: 'Defines the line height of the Digital Clock',
-    type: 'string',
+    type: 'number',
     defaultValue: '1.1875',
   },
   'clock.digital.text.xxlarge.size': {
@@ -223,7 +223,7 @@ export const themeDoc = {
   },
   'clock.digital.text.xxlarge.height': {
     description: 'Defines the line height of the Digital Clock',
-    type: 'string',
+    type: 'number',
     defaultValue: '1.125',
   },
 };
