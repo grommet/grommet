@@ -107,7 +107,9 @@ const DataChart = forwardRef(
                 // such that they line up appropriately.
                 const totals = [];
                 return property.map(cp => {
-                  const values = seriesValues[cp];
+                  // handle object or string
+                  const aProperty = cp.property || cp;
+                  const values = seriesValues[aProperty];
                   if (!values) return undefined; // property name isn't valid
                   return values.map((v, i) => {
                     const base = totals[i] || 0;
@@ -300,8 +302,9 @@ const DataChart = forwardRef(
           const props = Array.isArray(property) ? property : [property];
           props.forEach(prop => {
             const p = prop.property || prop;
+            const pColor = prop.color || color;
             if (!result[p]) result[p] = {};
-            if (color && !result[p].color) result[p].color = color;
+            if (pColor && !result[p].color) result[p].color = pColor;
             if (point && !result[p].point) result[p].point = point;
             else if (type === 'point') result[p].point = false;
             if ((thickness || calcThickness) && !result[p].thickness)
@@ -471,21 +474,24 @@ const DataChart = forwardRef(
           if (type === 'bars') {
             // reverse to ensure area Charts are stacked in the right order
             return prop
-              .map((cProp, j) => (
-                <Chart
-                  // eslint-disable-next-line react/no-array-index-key
-                  key={j}
-                  // when property name isn't valid, send empty array
-                  values={chartValues[i][j] || []}
-                  overflow
-                  {...seriesStyles[cProp]}
-                  {...chartProps[i]}
-                  {...chartRest}
-                  type="bar"
-                  size={size}
-                  pad={pad}
-                />
-              ))
+              .map((cProp, j) => {
+                const pProp = cProp.property || cProp;
+                return (
+                  <Chart
+                    // eslint-disable-next-line react/no-array-index-key
+                    key={j}
+                    // when property name isn't valid, send empty array
+                    values={chartValues[i][j] || []}
+                    overflow
+                    {...seriesStyles[pProp]}
+                    {...chartProps[i]}
+                    {...chartRest}
+                    type="bar"
+                    size={size}
+                    pad={pad}
+                  />
+                );
+              })
               .reverse();
           }
           return (
