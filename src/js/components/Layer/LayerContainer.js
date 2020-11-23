@@ -11,8 +11,11 @@ import { defaultProps } from '../../default-props';
 
 import { FocusedContainer } from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
-import { backgroundIsDark, findVisibleParent } from '../../utils';
-import { PortalContext } from './PortalContext';
+import {
+  backgroundIsDark,
+  findVisibleParent,
+  PortalContext,
+} from '../../utils';
 
 import { StyledLayer, StyledContainer, StyledOverlay } from './StyledLayer';
 
@@ -92,18 +95,29 @@ const LayerContainer = forwardRef(
         let node = event.target;
         while (clickedPortalId === null && node !== document) {
           // check if user click occurred within the layer
-          const attr = node.getAttribute('data-l-portal-id');
-          if (attr !== null) clickedPortalId = parseInt(attr, 10);
+          const attr =
+            node.getAttribute('data-l-portal-id') ||
+            // data-g-portal-id refers to Drop, check if user clicked on Drop
+            // that is open inside Layer. if so, the click is still within
+            // the Layer
+            node.getAttribute('data-g-portal-id');
+          if (attr !== null && attr !== '')
+            clickedPortalId = parseInt(attr, 10);
+          // loop upward through parents to see if clicked element is a child
+          // of the Layer. if so, click was inside Layer
           node = node.parentNode;
         }
         if (
           clickedPortalId === null ||
           portalContext.indexOf(clickedPortalId) !== -1
         ) {
+          // if the click occurred outside of the Layer portal, call
+          // the user's onClickOutside function
           onClickOutside(event);
         }
       };
 
+      // if user provides an onClickOutside function, list for mousedown event
       if (onClickOutside) {
         document.addEventListener('mousedown', onClickDocument);
       }
@@ -176,11 +190,7 @@ const LayerContainer = forwardRef(
           tabIndex="-1"
           dir={theme.dir}
         >
-          <StyledOverlay
-            plain={plain}
-            onMouseDown={onClickOutside}
-            responsive={responsive}
-          />
+          <StyledOverlay plain={plain} responsive={responsive} />
           {content}
         </StyledLayer>
       );
@@ -190,6 +200,7 @@ const LayerContainer = forwardRef(
       content = (
         <Keyboard
           onEsc={
+            // allows onEsc to be called even when modal={false}
             onEsc
               ? event => {
                   event.stopPropagation();
@@ -215,23 +226,26 @@ const LayerContainer = forwardRef(
       }
     }
 
-    let containerProps;
-    if (modal)
-      containerProps = {
-        hidden: position === 'hidden',
-        // if layer has a target, do not restrict scroll.
-        // restricting scroll could inhibit the user's
-        // ability to scroll the page while the layer is open.
-        restrictScroll: !layerTarget ? true : undefined,
-        trapFocus: true,
-      };
-    else containerProps = undefined;
-
     content = (
       <PortalContext.Provider value={nextPortalContext}>
-        <FocusedContainer {...containerProps}>{content}</FocusedContainer>
+        {content}
       </PortalContext.Provider>
     );
+
+    if (modal) {
+      content = (
+        <FocusedContainer
+          hidden={position === 'hidden'}
+          // if layer has a target, do not restrict scroll.
+          // restricting scroll could inhibit the user's
+          // ability to scroll the page while the layer is open.
+          restrictScroll={!layerTarget ? true : undefined}
+          trapFocus
+        >
+          {content}
+        </FocusedContainer>
+      );
+    }
 
     return content;
   },
