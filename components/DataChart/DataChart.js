@@ -150,7 +150,10 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
             // such that they line up appropriately.
             var totals = [];
             return property.map(function (cp) {
-              return seriesValues[cp].map(function (v, i) {
+              var values = seriesValues[cp];
+              if (!values) return undefined; // property name isn't valid
+
+              return values.map(function (v, i) {
                 var base = totals[i] || 0;
                 totals[i] = base + v;
                 return [i, base, base + v];
@@ -291,7 +294,10 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       if (charts[index].type === 'bars') {
         // merge values for bars case
         var mergedValues = chartValues[index][0].slice(0);
-        chartValues[index].slice(1).forEach(function (values) {
+        chartValues[index].slice(1).filter(function (values) {
+          return values;
+        }) // property name isn't valid
+        .forEach(function (values) {
           mergedValues = mergedValues.map(function (__, i) {
             return [i, Math.min(mergedValues[i][1], values[i][1]), Math.max(mergedValues[i][2], values[i][2])];
           });
@@ -521,8 +527,9 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       return prop.map(function (cProp, j) {
         return /*#__PURE__*/_react["default"].createElement(_Chart.Chart // eslint-disable-next-line react/no-array-index-key
         , _extends({
-          key: j,
-          values: chartValues[i][j],
+          key: j // when property name isn't valid, send empty array
+          ,
+          values: chartValues[i][j] || [],
           overflow: true
         }, seriesStyles[cProp], chartProps[i], chartRest, {
           type: "bar",
