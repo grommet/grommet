@@ -101,10 +101,12 @@ const Select = forwardRef(
         );
       return valueKey && valueKey.reduce ? value : applyKey(value, valueKey);
     }, [value, valueKey]);
+
+    const [initialOptions] = useState(options);
     // the option indexes present in the value
     const optionIndexesInValue = useMemo(() => {
       const result = [];
-      options.forEach((option, index) => {
+      initialOptions.forEach((option, index) => {
         if (selected !== undefined) {
           if (Array.isArray(selected)) {
             if (selected.indexOf(index) !== -1) result.push(index);
@@ -120,7 +122,7 @@ const Select = forwardRef(
         }
       });
       return result;
-    }, [options, selected, valueKey, valuedValue]);
+    }, [initialOptions, selected, valueKey, valuedValue]);
 
     const [open, setOpen] = useState(propOpen);
     useEffect(() => setOpen(propOpen), [propOpen]);

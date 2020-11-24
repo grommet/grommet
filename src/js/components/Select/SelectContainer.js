@@ -88,6 +88,7 @@ const SelectContainer = forwardRef(
     const [activeIndex, setActiveIndex] = useState(-1);
     const [keyboardNavigation, setKeyboardNavigation] = useState();
     const [focus, setFocus] = useState(false);
+    const [initialOptions] = useState(options);
     const searchRef = useRef();
     const optionsRef = useRef();
     // adjust activeIndex when options change
@@ -197,16 +198,19 @@ const SelectContainer = forwardRef(
           let nextSelected;
           if (multiple) {
             const nextOptionIndexesInValue = optionIndexesInValue.slice(0);
-            const valueIndex = optionIndexesInValue.indexOf(index);
+            const initialOptionsIndex = initialOptions.indexOf(options[index]);
+            const valueIndex = optionIndexesInValue.indexOf(
+              initialOptionsIndex,
+            );
             if (valueIndex === -1) {
-              nextOptionIndexesInValue.push(index);
+              nextOptionIndexesInValue.push(initialOptionsIndex);
             } else {
               nextOptionIndexesInValue.splice(valueIndex, 1);
             }
             nextValue = nextOptionIndexesInValue.map(i =>
               valueKey && valueKey.reduce
-                ? applyKey(options[i], valueKey)
-                : options[i],
+                ? applyKey(initialOptions[i], valueKey)
+                : initialOptions[i],
             );
             nextSelected = nextOptionIndexesInValue;
           } else {
@@ -223,7 +227,14 @@ const SelectContainer = forwardRef(
           });
         }
       },
-      [multiple, onChange, optionIndexesInValue, options, valueKey],
+      [
+        multiple,
+        onChange,
+        optionIndexesInValue,
+        initialOptions,
+        options,
+        valueKey,
+      ],
     );
 
     const onClear = useCallback(
