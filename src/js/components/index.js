@@ -41,6 +41,7 @@ export * from './Menu';
 export * from './Meter';
 export * from './Paragraph';
 export * from './Nav';
+export * from './Number';
 export * from './RadioButton';
 export * from './RadioButtonGroup';
 export * from './RangeInput';

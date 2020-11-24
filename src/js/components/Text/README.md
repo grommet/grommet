@@ -151,6 +151,10 @@ large
 xlarge
 xxlarge
 string
+{
+  height: string,
+  size: string
+}
 ```
 
 **tag**

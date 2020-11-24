@@ -76,6 +76,10 @@ export const doc = Text => {
         'xxlarge',
       ]),
       PropTypes.string,
+      PropTypes.shape({
+        height: PropTypes.string,
+        size: PropTypes.string,
+      }),
     ])
       .description(`The font size and line space height of the text.`)
       .defaultValue('medium'),

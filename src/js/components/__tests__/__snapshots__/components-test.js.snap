@@ -5808,6 +5808,7 @@ circle",
 <Meter />",
   },
   "Nav": [Function],
+  "Number": [Function],
   "Paragraph": Object {
     "availableAt": Array [
       Object {
@@ -7126,7 +7127,11 @@ medium
 large
 xlarge
 xxlarge
-string",
+string
+{
+  height: string,
+  size: string
+}",
         "name": "size",
       },
       Object {

@@ -1,0 +1,431 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Number color 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: baseline;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c3 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 6px;
+}
+
+.c2 {
+  font-size: 34px;
+  line-height: 40px;
+  color: #7D4CDB;
+  font-weight: bold;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    width: 3px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <span
+      className="c2"
+    >
+      27
+    </span>
+    <div
+      className="c3"
+    />
+    <span
+      className="c2"
+    >
+      tests
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Number should have no accessibility violations 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  font-size: 34px;
+  line-height: 40px;
+  font-weight: bold;
+}
+
+<div
+  class="c0"
+>
+  <span
+    aria-label="test"
+    class="c1"
+  >
+    27
+  </span>
+</div>
+`;
+
+exports[`Number size 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: baseline;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c3 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 6px;
+}
+
+.c2 {
+  font-size: 26px;
+  line-height: 32px;
+  font-weight: bold;
+}
+
+.c4 {
+  font-size: 34px;
+  line-height: 40px;
+  font-weight: bold;
+}
+
+.c5 {
+  font-size: 50px;
+  line-height: 56px;
+  font-weight: bold;
+}
+
+.c6 {
+  font-size: 82px;
+  line-height: 88px;
+  font-weight: bold;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    width: 3px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <span
+      className="c2"
+    >
+      27
+    </span>
+    <div
+      className="c3"
+    />
+    <span
+      className="c2"
+    >
+      tests
+    </span>
+  </div>
+  <div
+    className="c1"
+  >
+    <span
+      className="c4"
+    >
+      27
+    </span>
+    <div
+      className="c3"
+    />
+    <span
+      className="c4"
+    >
+      tests
+    </span>
+  </div>
+  <div
+    className="c1"
+  >
+    <span
+      className="c5"
+    >
+      27
+    </span>
+    <div
+      className="c3"
+    />
+    <span
+      className="c5"
+    >
+      tests
+    </span>
+  </div>
+  <div
+    className="c1"
+  >
+    <span
+      className="c6"
+    >
+      27
+    </span>
+    <div
+      className="c3"
+    />
+    <span
+      className="c6"
+    >
+      tests
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Number units object 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: baseline;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c3 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 6px;
+}
+
+.c2 {
+  font-size: 34px;
+  line-height: 40px;
+  font-weight: bold;
+}
+
+.c4 {
+  font-size: 14px;
+  line-height: 20px;
+  color: #7D4CDB;
+  font-weight: normal;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    width: 3px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <span
+      className="c2"
+    >
+      27
+    </span>
+    <div
+      className="c3"
+    />
+    <span
+      className="c4"
+    >
+      tests
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Number units string 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: baseline;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c3 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  width: 6px;
+}
+
+.c2 {
+  font-size: 34px;
+  line-height: 40px;
+  font-weight: bold;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    width: 3px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <span
+      className="c2"
+    >
+      27
+    </span>
+    <div
+      className="c3"
+    />
+    <span
+      className="c2"
+    >
+      tests
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Number value 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  font-size: 34px;
+  line-height: 40px;
+  font-weight: bold;
+}
+
+<div
+  className="c0"
+>
+  <span
+    className="c1"
+  >
+    27
+  </span>
+</div>
+`;

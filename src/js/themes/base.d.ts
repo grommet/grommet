@@ -943,6 +943,58 @@ export interface ThemeType {
     colors?: GraphColorsType;
     extend?: ExtendType;
   };
+  number?: {
+    color?: ColorType;
+    size?: {
+      small?: {
+        size?: string;
+        height?: string;
+        maxWidth?: string;
+      };
+      medium?: {
+        size?: string;
+        height?: string;
+        maxWidth?: string;
+      };
+      large?: {
+        size?: string;
+        height?: string;
+        maxWidth?: string;
+      };
+      xlarge?: {
+        size?: string;
+        height?: string;
+        maxWidth?: string;
+      };
+    };
+    weight?: number | string;
+    units?: {
+      color?: ColorType;
+      size?: {
+        small?: {
+          size?: string;
+          height?: string;
+          maxWidth?: string;
+        };
+        medium?: {
+          size?: string;
+          height?: string;
+          maxWidth?: string;
+        };
+        large?: {
+          size?: string;
+          height?: string;
+          maxWidth?: string;
+        };
+        xlarge?: {
+          size?: string;
+          height?: string;
+          maxWidth?: string;
+        };
+      };
+      weight?: number | string;
+    };
+  };
   paragraph?: {
     extend?: ExtendType;
     small?: {

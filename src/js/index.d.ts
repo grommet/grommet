@@ -41,6 +41,7 @@ export * from './components/Menu';
 export * from './components/Meter';
 export * from './components/Paragraph';
 export * from './components/Nav';
+export * from './components/Number';
 export * from './components/RadioButton';
 export * from './components/RadioButtonGroup';
 export * from './components/RangeInput';

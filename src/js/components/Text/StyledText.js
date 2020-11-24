@@ -5,7 +5,8 @@ import { defaultProps } from '../../default-props';
 
 const sizeStyle = props => {
   const size = props.size || 'medium';
-  const data = props.theme.text[size];
+  // allow caller to pass size as an object, typically from a theme
+  const data = typeof size === 'object' ? size : props.theme.text[size];
   if (data) {
     return css`
       font-size: ${data.size};

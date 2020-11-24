@@ -940,6 +940,19 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // colors: [] || colors: ['graph-0', 'graph-1', 'graph-2', 'graph-3'],
       // extend: undefined,
     },
+    number: {
+      size: {
+        small: { ...fontSizing(2) },
+        medium: { ...fontSizing(4) },
+        large: { ...fontSizing(8) },
+        xlarge: { ...fontSizing(16) },
+      },
+      weight: 'bold',
+      units: {
+        // size: undefined
+        // weight: undefined
+      },
+    },
     paragraph: {
       font: {
         // family: undefined
