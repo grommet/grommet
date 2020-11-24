@@ -45,10 +45,10 @@ StyledAnalog.defaultProps = {};
 Object.setPrototypeOf(StyledAnalog.defaultProps, defaultProps);
 
 var sizeStyle = function sizeStyle(props) {
-  // size is a combination of the level and size properties
+  // size is a combination of the size and height properties
   var size = props.size || 'medium';
-  var data = props.theme.clock.digital.text[size];
-  return css(["font-size:", ";line-height:", ";"], data.size, data.height);
+  var data = props.theme.clock.digital.text[size] || {};
+  return css(["font-size:", ";line-height:", ";"], data.size || props.theme.clock.digital.text.medium.size, data.height || props.theme.clock.digital.text.medium.height);
 };
 
 var StyledDigitalDigit = styled.div.withConfig({
