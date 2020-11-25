@@ -198,6 +198,7 @@ exports[`DataChart axis 1`] = `
             viewBox="0 0 384 192"
             width={384}
           >
+            0
             <g
               fill="none"
               stroke="#6FFFB0"
@@ -254,6 +255,7 @@ exports[`DataChart axis 1`] = `
         viewBox="0 0 384 192"
         width={384}
       >
+        0
         <g
           fill="none"
           stroke="#6FFFB0"
@@ -297,6 +299,7 @@ exports[`DataChart axis 1`] = `
           viewBox="0 0 384 192"
           width={384}
         >
+          0
           <g
             fill="none"
             stroke="#6FFFB0"
@@ -376,6 +379,7 @@ exports[`DataChart axis 1`] = `
           viewBox="0 0 384 192"
           width={384}
         >
+          0
           <g
             fill="none"
             stroke="#6FFFB0"
@@ -420,6 +424,7 @@ exports[`DataChart axis 1`] = `
           viewBox="0 0 384 192"
           width={384}
         >
+          0
           <g
             fill="none"
             stroke="#6FFFB0"
@@ -514,6 +519,7 @@ exports[`DataChart axis 1`] = `
           viewBox="0 0 384 192"
           width={384}
         >
+          0
           <g
             fill="none"
             stroke="#6FFFB0"
@@ -687,6 +693,7 @@ exports[`DataChart axis x granularity 1`] = `
           viewBox="0 0 384 192"
           width={384}
         >
+          0
           <g
             fill="none"
             stroke="#6FFFB0"
@@ -717,6 +724,7 @@ exports[`DataChart axis x granularity 1`] = `
           viewBox="0 0 384 192"
           width={384}
         >
+          0
           <g
             fill="none"
             stroke="#6FFFB0"
@@ -762,6 +770,7 @@ exports[`DataChart axis x granularity 1`] = `
           viewBox="0 0 384 192"
           width={384}
         >
+          0
           <g
             fill="none"
             stroke="#6FFFB0"
@@ -820,6 +829,7 @@ exports[`DataChart axis x granularity 1`] = `
           viewBox="0 0 384 192"
           width={384}
         >
+          0
           <g
             fill="none"
             stroke="#6FFFB0"
@@ -891,6 +901,7 @@ exports[`DataChart axis x granularity 1`] = `
           viewBox="0 0 384 192"
           width={384}
         >
+          0
           <g
             fill="none"
             stroke="#6FFFB0"
@@ -975,6 +986,7 @@ exports[`DataChart axis x granularity 1`] = `
           viewBox="0 0 384 192"
           width={384}
         >
+          0
           <g
             fill="none"
             stroke="#6FFFB0"
@@ -1062,6 +1074,7 @@ exports[`DataChart axis x granularity 1`] = `
           viewBox="0 0 384 192"
           width={384}
         >
+          0
           <g
             fill="none"
             stroke="#6FFFB0"
@@ -1152,6 +1165,7 @@ exports[`DataChart axis x granularity 1`] = `
           viewBox="0 0 384 192"
           width={384}
         >
+          0
           <g
             fill="none"
             stroke="#6FFFB0"
@@ -1260,6 +1274,7 @@ exports[`DataChart axis x granularity 1`] = `
           viewBox="0 0 384 192"
           width={384}
         >
+          0
           <g
             fill="none"
             stroke="#6FFFB0"
@@ -1366,6 +1381,7 @@ exports[`DataChart axis x granularity 1`] = `
           viewBox="0 0 384 192"
           width={384}
         >
+          0
           <g
             fill="none"
             stroke="#6FFFB0"
@@ -1495,6 +1511,7 @@ exports[`DataChart axis x granularity 1`] = `
           viewBox="0 0 384 192"
           width={384}
         >
+          0
           <g
             fill="none"
             stroke="#6FFFB0"
@@ -1627,6 +1644,7 @@ exports[`DataChart axis x granularity 1`] = `
           viewBox="0 0 384 192"
           width={384}
         >
+          0
           <g
             fill="none"
             stroke="#6FFFB0"
@@ -1762,6 +1780,7 @@ exports[`DataChart axis x granularity 1`] = `
           viewBox="0 0 384 192"
           width={384}
         >
+          0
           <g
             fill="none"
             stroke="#6FFFB0"
@@ -1900,6 +1919,7 @@ exports[`DataChart axis x granularity 1`] = `
           viewBox="0 0 384 192"
           width={384}
         >
+          0
           <g
             fill="none"
             stroke="#6FFFB0"
@@ -2260,6 +2280,7 @@ exports[`DataChart bars 1`] = `
             viewBox="0 0 384 192"
             width={384}
           >
+            0
             <g
               fill="none"
               stroke="#00873D"
@@ -2296,6 +2317,7 @@ exports[`DataChart bars 1`] = `
             viewBox="0 0 384 192"
             width={384}
           >
+            0
             <g
               fill="none"
               stroke="#6FFFB0"
@@ -2554,6 +2576,7 @@ exports[`DataChart bars colors 1`] = `
             viewBox="0 0 384 192"
             width={384}
           >
+            0
             <g
               fill="none"
               stroke="#00739D"
@@ -2590,6 +2613,7 @@ exports[`DataChart bars colors 1`] = `
             viewBox="0 0 384 192"
             width={384}
           >
+            0
             <g
               fill="none"
               stroke="#00873D"
@@ -2848,6 +2872,7 @@ exports[`DataChart bars invalid 1`] = `
             viewBox="0 0 384 192"
             width={384}
           >
+            0
             <g
               fill="none"
               stroke="#3D138D"
@@ -2867,6 +2892,7 @@ exports[`DataChart bars invalid 1`] = `
             viewBox="0 0 384 192"
             width={384}
           >
+            0
             <g
               fill="none"
               stroke="#00873D"
@@ -2886,6 +2912,7 @@ exports[`DataChart bars invalid 1`] = `
             viewBox="0 0 384 192"
             width={384}
           >
+            0
             <g
               fill="none"
               stroke="#6FFFB0"
@@ -3273,6 +3300,7 @@ exports[`DataChart dates 1`] = `
             viewBox="0 0 384 192"
             width={384}
           >
+            0
             <g
               fill="none"
               stroke="#6FFFB0"
@@ -3400,6 +3428,7 @@ exports[`DataChart dates 1`] = `
             viewBox="0 0 384 192"
             width={384}
           >
+            0
             <g
               fill="none"
               stroke="#6FFFB0"
@@ -3527,6 +3556,7 @@ exports[`DataChart dates 1`] = `
             viewBox="0 0 384 192"
             width={384}
           >
+            0
             <g
               fill="none"
               stroke="#6FFFB0"
@@ -3654,6 +3684,7 @@ exports[`DataChart dates 1`] = `
             viewBox="0 0 384 192"
             width={384}
           >
+            0
             <g
               fill="none"
               stroke="#6FFFB0"
@@ -3781,6 +3812,7 @@ exports[`DataChart dates 1`] = `
             viewBox="0 0 384 192"
             width={384}
           >
+            0
             <g
               fill="none"
               stroke="#6FFFB0"
@@ -3908,6 +3940,7 @@ exports[`DataChart dates 1`] = `
             viewBox="0 0 384 192"
             width={384}
           >
+            0
             <g
               fill="none"
               stroke="#6FFFB0"
@@ -4168,6 +4201,7 @@ exports[`DataChart default 1`] = `
             viewBox="0 0 384 192"
             width={384}
           >
+            0
             <g
               fill="none"
               stroke="#6FFFB0"
@@ -4485,6 +4519,7 @@ exports[`DataChart detail 1`] = `
             viewBox="0 0 384 192"
             width={384}
           >
+            0
             <g
               fill="none"
               stroke="#6FFFB0"
@@ -4604,6 +4639,7 @@ exports[`DataChart detail 1`] = `
             viewBox="0 0 384 192"
             width={384}
           >
+            0
             <g
               fill="none"
               stroke="#6FFFB0"
@@ -4848,6 +4884,7 @@ exports[`DataChart gap 1`] = `
             viewBox="0 0 384 192"
             width={384}
           >
+            0
             <g
               fill="none"
               stroke="#6FFFB0"
@@ -4931,6 +4968,7 @@ exports[`DataChart gap 1`] = `
             viewBox="0 0 384 192"
             width={384}
           >
+            0
             <g
               fill="none"
               stroke="#6FFFB0"
@@ -5014,6 +5052,7 @@ exports[`DataChart gap 1`] = `
             viewBox="0 0 384 192"
             width={384}
           >
+            0
             <g
               fill="none"
               stroke="#6FFFB0"
@@ -5380,6 +5419,7 @@ exports[`DataChart guide 1`] = `
             viewBox="0 0 384 192"
             width={384}
           >
+            0
             <g
               fill="none"
               stroke="#6FFFB0"
@@ -5463,6 +5503,7 @@ exports[`DataChart guide 1`] = `
             viewBox="0 0 384 192"
             width={384}
           >
+            0
             <g
               fill="none"
               stroke="#6FFFB0"
@@ -5560,6 +5601,7 @@ exports[`DataChart guide 1`] = `
             viewBox="0 0 384 192"
             width={384}
           >
+            0
             <g
               fill="none"
               stroke="#6FFFB0"
@@ -5666,6 +5708,7 @@ exports[`DataChart guide 1`] = `
             viewBox="0 0 384 192"
             width={384}
           >
+            0
             <g
               fill="none"
               stroke="#6FFFB0"
@@ -5994,6 +6037,7 @@ exports[`DataChart legend 1`] = `
               viewBox="0 0 384 192"
               width={384}
             >
+              0
               <g
                 fill="none"
                 stroke="#6FFFB0"
@@ -6105,6 +6149,7 @@ exports[`DataChart legend 1`] = `
             viewBox="0 0 384 192"
             width={384}
           >
+            0
             <g
               fill="none"
               stroke="#6FFFB0"
@@ -6409,6 +6454,7 @@ exports[`DataChart pad 1`] = `
             viewBox="0 0 384 192"
             width={384}
           >
+            0
             <g
               fill="none"
               stroke="#6FFFB0"
@@ -6492,6 +6538,7 @@ exports[`DataChart pad 1`] = `
             viewBox="0 0 384 192"
             width={384}
           >
+            0
             <g
               fill="none"
               stroke="#6FFFB0"
@@ -6575,6 +6622,7 @@ exports[`DataChart pad 1`] = `
             viewBox="0 0 384 192"
             width={384}
           >
+            0
             <g
               fill="none"
               stroke="#6FFFB0"
@@ -6857,6 +6905,7 @@ exports[`DataChart size 1`] = `
             viewBox="0 0 0 0"
             width={0}
           >
+            0
             <g
               fill="none"
               stroke="#6FFFB0"
@@ -6940,6 +6989,7 @@ exports[`DataChart size 1`] = `
             viewBox="0 0 0 192"
             width={0}
           >
+            0
             <g
               fill="none"
               stroke="#6FFFB0"
@@ -7023,6 +7073,7 @@ exports[`DataChart size 1`] = `
             viewBox="0 0 288 192"
             width={288}
           >
+            0
             <g
               fill="none"
               stroke="#6FFFB0"
@@ -7294,6 +7345,7 @@ exports[`DataChart type 1`] = `
             viewBox="0 0 384 192"
             width={384}
           >
+            0
             <g
               fill="none"
               stroke="#6FFFB0"
@@ -7377,6 +7429,7 @@ exports[`DataChart type 1`] = `
             viewBox="0 0 384 192"
             width={384}
           >
+            0
             <g
               fill="none"
               stroke="#6FFFB0"
@@ -7452,6 +7505,7 @@ exports[`DataChart type 1`] = `
             viewBox="0 0 384 192"
             width={384}
           >
+            0
             <g
               fill="#6FFFB0"
               stroke="#6FFFB0"

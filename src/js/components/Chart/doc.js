@@ -4,6 +4,7 @@ import {
   colorPropType,
   genericProps,
   padPropType,
+  patternPropType,
   pointPropType,
 } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
@@ -110,6 +111,9 @@ export const doc = Chart => {
       `Spacing around the outer edge of the drawing coordinate area.
       Related to 'overflow', this allows control over how much space
       is available for bars and points to overflow into.`,
+    ),
+    pattern: patternPropType.description(
+      `When using an 'area' type, what pattern to fill the area with.`,
     ),
     point: pointPropType.description(
       `When using a 'point' type, what shape the points should use.

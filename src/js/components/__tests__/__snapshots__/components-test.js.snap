@@ -2026,6 +2026,16 @@ string",
         "name": "pad",
       },
       Object {
+        "description": "When using an 'area' type, what pattern to fill the area with.",
+        "format": "squares
+circles
+stripesHorizontal
+stripesVertical
+stripesDiagonalDown
+stripesDiagonalUp",
+        "name": "pattern",
+      },
+      Object {
         "description": "When using a 'point' type, what shape the points should use.
       If this property is not specified, points will be drawn as a square or
       a circle, based on how 'round' is specified.",

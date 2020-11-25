@@ -4441,6 +4441,19 @@ xlarge
 string
 \`\`\`
 
+**pattern**
+
+When using an 'area' type, what pattern to fill the area with.
+
+\`\`\`
+squares
+circles
+stripesHorizontal
+stripesVertical
+stripesDiagonalDown
+stripesDiagonalUp
+\`\`\`
+
 **point**
 
 When using a 'point' type, what shape the points should use.
