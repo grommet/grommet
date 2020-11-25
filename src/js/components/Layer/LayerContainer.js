@@ -100,7 +100,7 @@ const LayerContainer = forwardRef(
             clickedPortalId = parseInt(attr, 10);
           // loop upward through parents to see if clicked element is a child
           // of the Layer. if so, click was inside Layer
-          node = node.parentNode;
+          else node = node.parentNode;
         }
         if (
           (clickedPortalId === null ||
