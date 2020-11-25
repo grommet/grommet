@@ -407,3 +407,123 @@ Defaults to
 ```
 288px
 ```
+
+**clock.digital.text.xsmall.size**
+
+Defines the font size of the Digital Clock Expects `string`.
+
+Defaults to
+
+```
+10px
+```
+
+**clock.digital.text.xsmall.height**
+
+Defines the line height of the Digital Clock Expects `number`.
+
+Defaults to
+
+```
+1.5
+```
+
+**clock.digital.text.small.size**
+
+Defines the font size of the Digital Clock Expects `string`.
+
+Defaults to
+
+```
+14px
+```
+
+**clock.digital.text.small.height**
+
+Defines the line height of the Digital Clock Expects `number`.
+
+Defaults to
+
+```
+1.43
+```
+
+**clock.digital.text.medium.size**
+
+Defines the font size of the Digital Clock Expects `string`.
+
+Defaults to
+
+```
+18px
+```
+
+**clock.digital.text.medium.height**
+
+Defines the line height of the Digital Clock Expects `number`.
+
+Defaults to
+
+```
+1.375
+```
+
+**clock.digital.text.large.size**
+
+Defines the font size of the Digital Clock Expects `string`.
+
+Defaults to
+
+```
+22px
+```
+
+**clock.digital.text.large.height**
+
+Defines the line height of the Digital Clock Expects `number`.
+
+Defaults to
+
+```
+1.167
+```
+
+**clock.digital.text.xlarge.size**
+
+Defines the font size of the Digital Clock Expects `string`.
+
+Defaults to
+
+```
+26px
+```
+
+**clock.digital.text.xlarge.height**
+
+Defines the line height of the Digital Clock Expects `number`.
+
+Defaults to
+
+```
+1.1875
+```
+
+**clock.digital.text.xxlarge.size**
+
+Defines the font size of the Digital Clock Expects `string`.
+
+Defaults to
+
+```
+34px
+```
+
+**clock.digital.text.xxlarge.height**
+
+Defines the line height of the Digital Clock Expects `number`.
+
+Defaults to
+
+```
+1.125
+```
