@@ -2455,6 +2455,98 @@ exports[`Clock type analog precision seconds size xxlarge 1`] = `
 </div>
 `;
 
+exports[`Clock type digital custom size 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  position: relative;
+  width: 0.8em;
+  text-align: center;
+  overflow: hidden;
+  font-size: 30px;
+  line-height: 1.234;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+      size="customSize"
+    >
+      1
+    </div>
+    <div
+      className="c2"
+      size="customSize"
+    >
+      8
+    </div>
+    <div
+      className="c2"
+      size="customSize"
+    >
+      :
+    </div>
+    <div
+      className="c2"
+      size="customSize"
+    >
+      2
+    </div>
+    <div
+      className="c2"
+      size="customSize"
+    >
+      3
+    </div>
+    <div
+      className="c2"
+      size="customSize"
+    >
+      :
+    </div>
+    <div
+      className="c2"
+      size="customSize"
+    >
+      3
+    </div>
+    <div
+      className="c2"
+      size="customSize"
+    >
+      4
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Clock type digital precision hours size large 1`] = `
 .c0 {
   font-size: 18px;
