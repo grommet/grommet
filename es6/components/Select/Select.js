@@ -99,11 +99,15 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
       return valueKey && valueKey.reduce ? v : applyKey(v, valueKey);
     });
     return valueKey && valueKey.reduce ? value : applyKey(value, valueKey);
-  }, [value, valueKey]); // the option indexes present in the value
+  }, [value, valueKey]);
+
+  var _useState = useState(options),
+      initialOptions = _useState[0]; // the option indexes present in the value
+
 
   var optionIndexesInValue = useMemo(function () {
     var result = [];
-    options.forEach(function (option, index) {
+    initialOptions.forEach(function (option, index) {
       if (selected !== undefined) {
         if (Array.isArray(selected)) {
           if (selected.indexOf(index) !== -1) result.push(index);
@@ -121,11 +125,11 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
       }
     });
     return result;
-  }, [options, selected, valueKey, valuedValue]);
+  }, [initialOptions, selected, valueKey, valuedValue]);
 
-  var _useState = useState(propOpen),
-      open = _useState[0],
-      setOpen = _useState[1];
+  var _useState2 = useState(propOpen),
+      open = _useState2[0],
+      setOpen = _useState2[1];
 
   useEffect(function () {
     return setOpen(propOpen);
@@ -182,12 +186,12 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var inputValue = useMemo(function () {
     if (!selectValue) {
       if (optionIndexesInValue.length === 0) return '';
-      if (optionIndexesInValue.length === 1) return applyKey(options[optionIndexesInValue[0]], labelKey);
+      if (optionIndexesInValue.length === 1) return applyKey(initialOptions[optionIndexesInValue[0]], labelKey);
       return messages.multiple;
     }
 
     return undefined;
-  }, [labelKey, messages, optionIndexesInValue, options, selectValue]);
+  }, [labelKey, messages, optionIndexesInValue, initialOptions, selectValue]);
   var iconColor = normalizeColor(theme.select.icons.color || 'control', theme);
   return /*#__PURE__*/React.createElement(Keyboard, {
     onDown: onRequestOpen,

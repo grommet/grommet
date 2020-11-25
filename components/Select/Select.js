@@ -120,11 +120,15 @@ var Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       return valueKey && valueKey.reduce ? v : (0, _utils2.applyKey)(v, valueKey);
     });
     return valueKey && valueKey.reduce ? value : (0, _utils2.applyKey)(value, valueKey);
-  }, [value, valueKey]); // the option indexes present in the value
+  }, [value, valueKey]);
+
+  var _useState = (0, _react.useState)(options),
+      initialOptions = _useState[0]; // the option indexes present in the value
+
 
   var optionIndexesInValue = (0, _react.useMemo)(function () {
     var result = [];
-    options.forEach(function (option, index) {
+    initialOptions.forEach(function (option, index) {
       if (selected !== undefined) {
         if (Array.isArray(selected)) {
           if (selected.indexOf(index) !== -1) result.push(index);
@@ -142,11 +146,11 @@ var Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       }
     });
     return result;
-  }, [options, selected, valueKey, valuedValue]);
+  }, [initialOptions, selected, valueKey, valuedValue]);
 
-  var _useState = (0, _react.useState)(propOpen),
-      open = _useState[0],
-      setOpen = _useState[1];
+  var _useState2 = (0, _react.useState)(propOpen),
+      open = _useState2[0],
+      setOpen = _useState2[1];
 
   (0, _react.useEffect)(function () {
     return setOpen(propOpen);
@@ -203,12 +207,12 @@ var Select = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var inputValue = (0, _react.useMemo)(function () {
     if (!selectValue) {
       if (optionIndexesInValue.length === 0) return '';
-      if (optionIndexesInValue.length === 1) return (0, _utils2.applyKey)(options[optionIndexesInValue[0]], labelKey);
+      if (optionIndexesInValue.length === 1) return (0, _utils2.applyKey)(initialOptions[optionIndexesInValue[0]], labelKey);
       return messages.multiple;
     }
 
     return undefined;
-  }, [labelKey, messages, optionIndexesInValue, options, selectValue]);
+  }, [labelKey, messages, optionIndexesInValue, initialOptions, selectValue]);
   var iconColor = (0, _utils.normalizeColor)(theme.select.icons.color || 'control', theme);
   return /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
     onDown: onRequestOpen,

@@ -16,22 +16,50 @@ export var Search = function Search() {
       value = _useState2[0],
       setValue = _useState2[1];
 
+  var _useState3 = useState([]),
+      valueMultiple = _useState3[0],
+      setValueMultiple = _useState3[1];
+
   return /*#__PURE__*/React.createElement(Grommet, {
     full: true,
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
-    fill: true,
-    align: "center",
-    justify: "start",
-    pad: "large"
+    pad: "large",
+    gap: "medium",
+    direction: "row"
   }, /*#__PURE__*/React.createElement(Select, {
     size: "medium",
-    placeholder: "Select",
+    placeholder: "Select single option",
     value: value,
     options: options,
     onChange: function onChange(_ref) {
       var option = _ref.option;
       return setValue(option);
+    },
+    onClose: function onClose() {
+      return setOptions(defaultOptions);
+    },
+    onSearch: function onSearch(text) {
+      // The line below escapes regular expression special characters:
+      // [ \ ^ $ . | ? * + ( )
+      var escapedText = text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&'); // Create the regular expression with modified value which
+      // handles escaping special characters. Without escaping special
+      // characters, errors will appear in the console
+
+      var exp = new RegExp(escapedText, 'i');
+      setOptions(defaultOptions.filter(function (o) {
+        return exp.test(o);
+      }));
+    }
+  }), /*#__PURE__*/React.createElement(Select, {
+    multiple: true,
+    size: "medium",
+    placeholder: "Select multiple options",
+    value: valueMultiple,
+    options: options,
+    onChange: function onChange(_ref2) {
+      var nextValue = _ref2.value;
+      return setValueMultiple(nextValue);
     },
     onClose: function onClose() {
       return setOptions(defaultOptions);

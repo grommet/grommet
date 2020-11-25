@@ -95,6 +95,9 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       focus = _useState4[0],
       setFocus = _useState4[1];
 
+  var _useState5 = useState(options),
+      initialOptions = _useState5[0];
+
   var searchRef = useRef();
   var optionsRef = useRef(); // adjust activeIndex when options change
 
@@ -198,16 +201,17 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
 
         if (multiple) {
           var nextOptionIndexesInValue = optionIndexesInValue.slice(0);
-          var valueIndex = optionIndexesInValue.indexOf(index);
+          var initialOptionsIndex = initialOptions.indexOf(options[index]);
+          var valueIndex = optionIndexesInValue.indexOf(initialOptionsIndex);
 
           if (valueIndex === -1) {
-            nextOptionIndexesInValue.push(index);
+            nextOptionIndexesInValue.push(initialOptionsIndex);
           } else {
             nextOptionIndexesInValue.splice(valueIndex, 1);
           }
 
           nextValue = nextOptionIndexesInValue.map(function (i) {
-            return valueKey && valueKey.reduce ? applyKey(options[i], valueKey) : options[i];
+            return valueKey && valueKey.reduce ? applyKey(initialOptions[i], valueKey) : initialOptions[i];
           });
           nextSelected = nextOptionIndexesInValue;
         } else {
@@ -222,7 +226,7 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
         });
       }
     };
-  }, [multiple, onChange, optionIndexesInValue, options, valueKey]);
+  }, [multiple, onChange, optionIndexesInValue, initialOptions, options, valueKey]);
   var onClear = useCallback(function (event) {
     onChange(event, {
       option: undefined,
