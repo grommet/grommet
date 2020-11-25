@@ -191,7 +191,7 @@ describe('Layer', () => {
     }),
   );
 
-  test('invokes onEsc when modal={true}', () => {
+  test('invokes onEsc', () => {
     const onEsc = jest.fn();
     render(
       <Grommet>
@@ -202,21 +202,6 @@ describe('Layer', () => {
     );
 
     const inputNode = getByTestId(document, 'test-input');
-    fireEvent.keyDown(inputNode, { key: 'Esc', keyCode: 27, which: 27 });
-    expect(onEsc).toBeCalled();
-  });
-
-  test('invokes onEsc when modal={false}', () => {
-    const onEsc = jest.fn();
-    render(
-      <Grommet>
-        <FakeLayer onEsc={onEsc} modal={false}>
-          <input data-testid="test-input-body" />
-        </FakeLayer>
-      </Grommet>,
-    );
-
-    const inputNode = getByTestId(document, 'test-input-body');
     fireEvent.keyDown(inputNode, { key: 'Esc', keyCode: 27, which: 27 });
     expect(onEsc).toBeCalled();
   });
@@ -384,18 +369,6 @@ describe('Layer', () => {
     expect(onClickOutside).toHaveBeenCalledTimes(1);
   });
 
-  test('invoke onClickOutside when modal={true} and layer has target', () => {
-    const onClickOutside = jest.fn();
-    render(<TargetLayer id="target-test" onClickOutside={onClickOutside} />);
-    expectPortal('target-test').toMatchSnapshot();
-
-    fireEvent(
-      document,
-      new MouseEvent('mousedown', { bubbles: true, cancelable: true }),
-    );
-    expect(onClickOutside).toHaveBeenCalledTimes(1);
-  });
-
   test('invoke onClickOutside when modal={false} and layer has target', () => {
     const onClickOutside = jest.fn();
     render(
@@ -405,6 +378,18 @@ describe('Layer', () => {
         modal={false}
       />,
     );
+    expectPortal('target-test').toMatchSnapshot();
+
+    fireEvent(
+      document,
+      new MouseEvent('mousedown', { bubbles: true, cancelable: true }),
+    );
+    expect(onClickOutside).toHaveBeenCalledTimes(1);
+  });
+
+  test('invoke onClickOutside when modal={true} and layer has target', () => {
+    const onClickOutside = jest.fn();
+    render(<TargetLayer id="target-test" onClickOutside={onClickOutside} />);
     expectPortal('target-test').toMatchSnapshot();
 
     fireEvent(

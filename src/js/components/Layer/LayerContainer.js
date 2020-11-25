@@ -93,14 +93,9 @@ const LayerContainer = forwardRef(
         // determine which portal id the target is in, if any
         let clickedPortalId = null;
         let node = event.target;
-        while (clickedPortalId === null && node !== document) {
+        while (clickedPortalId === null && node !== document && node !== null) {
           // check if user click occurred within the layer
-          const attr =
-            node.getAttribute('data-l-portal-id') ||
-            // data-g-portal-id refers to Drop, check if user clicked on Drop
-            // that is open inside Layer. if so, the click is still within
-            // the Layer
-            node.getAttribute('data-g-portal-id');
+          const attr = node.getAttribute('data-g-portal-id');
           if (attr !== null && attr !== '')
             clickedPortalId = parseInt(attr, 10);
           // loop upward through parents to see if clicked element is a child
@@ -108,8 +103,9 @@ const LayerContainer = forwardRef(
           node = node.parentNode;
         }
         if (
-          clickedPortalId === null ||
-          portalContext.indexOf(clickedPortalId) !== -1
+          (clickedPortalId === null ||
+            portalContext.indexOf(clickedPortalId) !== -1) &&
+          node !== null
         ) {
           // if the click occurred outside of the Layer portal, call
           // the user's onClickOutside function
@@ -168,7 +164,7 @@ const LayerContainer = forwardRef(
         dir={theme.dir}
         // portalId is used to determine if click occurred inside
         // or outside of the layer
-        data-l-portal-id={portalId}
+        data-g-portal-id={portalId}
       >
         {/* eslint-disable max-len */}
         {/* eslint-disable jsx-a11y/anchor-is-valid, jsx-a11y/anchor-has-content */}
@@ -190,29 +186,18 @@ const LayerContainer = forwardRef(
           tabIndex="-1"
           dir={theme.dir}
         >
-          <StyledOverlay plain={plain} responsive={responsive} />
+          <StyledOverlay
+            plain={plain}
+            responsive={responsive}
+            onMouseDown={onClickOutside}
+          />
           {content}
         </StyledLayer>
       );
     }
 
     if (onEsc) {
-      content = (
-        <Keyboard
-          onEsc={
-            // allows onEsc to be called even when modal={false}
-            onEsc
-              ? event => {
-                  event.stopPropagation();
-                  onEsc(event);
-                }
-              : undefined
-          }
-          target="document"
-        >
-          {content}
-        </Keyboard>
-      );
+      content = <Keyboard onEsc={onEsc}>{content}</Keyboard>;
     }
 
     if (theme.layer.background) {

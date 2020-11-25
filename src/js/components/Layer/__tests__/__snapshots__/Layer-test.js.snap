@@ -111,7 +111,7 @@ exports[`Layer animation fadeIn 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="animation-test"
   >
     <a
@@ -287,7 +287,7 @@ exports[`Layer animation false 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="animation-test"
   >
     <a
@@ -465,7 +465,7 @@ exports[`Layer animation slide 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="animation-test"
   >
     <a
@@ -643,7 +643,7 @@ exports[`Layer animation true 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="animation-test"
   >
     <a
@@ -821,7 +821,7 @@ exports[`Layer custom margin 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="margin-test"
   >
     <a
@@ -952,7 +952,7 @@ exports[`Layer dark context 1`] = `
 
 <div
   class="c0"
-  data-l-portal-id="0"
+  data-g-portal-id="0"
   id="non-modal-test"
 >
   <a
@@ -1064,7 +1064,7 @@ exports[`Layer focus on layer 1`] = `
 
 <div
   class="c0"
-  data-l-portal-id="0"
+  data-g-portal-id="0"
   data-testid="focus-layer-test"
 >
   <a
@@ -1170,7 +1170,7 @@ exports[`Layer hidden 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="hidden-test"
   >
     <a
@@ -1229,7 +1229,7 @@ exports[`Layer hidden 3`] = `
   />
   <div
     class="StyledLayer__StyledContainer-rmtehz-2 icgHnb"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="hidden-test"
   >
     <a
@@ -1360,7 +1360,7 @@ exports[`Layer invoke onClickOutside when modal={false} 1`] = `
 
 <div
   class="c0"
-  data-l-portal-id="0"
+  data-g-portal-id="0"
   id="layer-node"
 >
   <a
@@ -1480,7 +1480,7 @@ exports[`Layer invoke onClickOutside when modal={false} and layer has target 1`]
 
 <div
   class="c0"
-  data-l-portal-id="0"
+  data-g-portal-id="0"
   id="target-test"
 >
   <a
@@ -1638,7 +1638,7 @@ exports[`Layer invoke onClickOutside when modal={true} 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="layer-node"
   >
     <a
@@ -1825,7 +1825,7 @@ exports[`Layer invoke onClickOutside when modal={true} and layer has target 1`] 
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="target-test"
   >
     <a
@@ -2041,7 +2041,7 @@ exports[`Layer margin large 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="margin-test"
   >
     <a
@@ -2219,7 +2219,7 @@ exports[`Layer margin medium 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="margin-test"
   >
     <a
@@ -2397,7 +2397,7 @@ exports[`Layer margin none 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="margin-test"
   >
     <a
@@ -2575,7 +2575,7 @@ exports[`Layer margin small 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="margin-test"
   >
     <a
@@ -2753,7 +2753,7 @@ exports[`Layer margin xsmall 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="margin-test"
   >
     <a
@@ -2884,7 +2884,7 @@ exports[`Layer non-modal 1`] = `
 
 <div
   class="c0"
-  data-l-portal-id="0"
+  data-g-portal-id="0"
   id="non-modal-test"
 >
   <a
@@ -2996,7 +2996,7 @@ exports[`Layer not steal focus from an autofocus focusable element 1`] = `
 
 <div
   class="c0"
-  data-l-portal-id="0"
+  data-g-portal-id="0"
   data-testid="focus-layer-input-test"
 >
   <a
@@ -3122,7 +3122,7 @@ exports[`Layer plain 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="plain-test"
   >
     <a
@@ -3300,7 +3300,7 @@ exports[`Layer position: bottom - full: false 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -3479,7 +3479,7 @@ exports[`Layer position: bottom - full: horizontal 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -3659,7 +3659,7 @@ exports[`Layer position: bottom - full: true 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -3838,7 +3838,7 @@ exports[`Layer position: bottom - full: vertical 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -4016,7 +4016,7 @@ exports[`Layer position: bottom-left - full: false 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -4195,7 +4195,7 @@ exports[`Layer position: bottom-left - full: horizontal 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -4375,7 +4375,7 @@ exports[`Layer position: bottom-left - full: true 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -4554,7 +4554,7 @@ exports[`Layer position: bottom-left - full: vertical 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -4732,7 +4732,7 @@ exports[`Layer position: bottom-right - full: false 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -4911,7 +4911,7 @@ exports[`Layer position: bottom-right - full: horizontal 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -5091,7 +5091,7 @@ exports[`Layer position: bottom-right - full: true 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -5270,7 +5270,7 @@ exports[`Layer position: bottom-right - full: vertical 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -5448,7 +5448,7 @@ exports[`Layer position: center - full: false 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -5627,7 +5627,7 @@ exports[`Layer position: center - full: horizontal 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -5804,7 +5804,7 @@ exports[`Layer position: center - full: true 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -5983,7 +5983,7 @@ exports[`Layer position: center - full: vertical 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -6161,7 +6161,7 @@ exports[`Layer position: end - full: false 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -6340,7 +6340,7 @@ exports[`Layer position: end - full: horizontal 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -6520,7 +6520,7 @@ exports[`Layer position: end - full: true 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -6699,7 +6699,7 @@ exports[`Layer position: end - full: vertical 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -6877,7 +6877,7 @@ exports[`Layer position: left - full: false 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -7056,7 +7056,7 @@ exports[`Layer position: left - full: horizontal 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -7236,7 +7236,7 @@ exports[`Layer position: left - full: true 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -7415,7 +7415,7 @@ exports[`Layer position: left - full: vertical 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -7593,7 +7593,7 @@ exports[`Layer position: right - full: false 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -7772,7 +7772,7 @@ exports[`Layer position: right - full: horizontal 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -7952,7 +7952,7 @@ exports[`Layer position: right - full: true 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -8131,7 +8131,7 @@ exports[`Layer position: right - full: vertical 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -8309,7 +8309,7 @@ exports[`Layer position: start - full: false 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -8488,7 +8488,7 @@ exports[`Layer position: start - full: horizontal 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -8668,7 +8668,7 @@ exports[`Layer position: start - full: true 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -8847,7 +8847,7 @@ exports[`Layer position: start - full: vertical 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -9025,7 +9025,7 @@ exports[`Layer position: top - full: false 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -9204,7 +9204,7 @@ exports[`Layer position: top - full: horizontal 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -9384,7 +9384,7 @@ exports[`Layer position: top - full: true 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -9563,7 +9563,7 @@ exports[`Layer position: top - full: vertical 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -9741,7 +9741,7 @@ exports[`Layer position: top-left - full: false 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -9920,7 +9920,7 @@ exports[`Layer position: top-left - full: horizontal 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -10100,7 +10100,7 @@ exports[`Layer position: top-left - full: true 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -10279,7 +10279,7 @@ exports[`Layer position: top-left - full: vertical 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -10457,7 +10457,7 @@ exports[`Layer position: top-right - full: false 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -10636,7 +10636,7 @@ exports[`Layer position: top-right - full: horizontal 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -10816,7 +10816,7 @@ exports[`Layer position: top-right - full: true 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -10995,7 +10995,7 @@ exports[`Layer position: top-right - full: vertical 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -11177,7 +11177,7 @@ exports[`Layer target 1`] = `
   />
   <div
     class="c2"
-    data-l-portal-id="0"
+    data-g-portal-id="0"
     id="target-test"
   >
     <a
@@ -11293,7 +11293,7 @@ exports[`Layer target not modal 1`] = `
 
 <div
   class="c0"
-  data-l-portal-id="0"
+  data-g-portal-id="0"
   id="target-test"
 >
   <a
