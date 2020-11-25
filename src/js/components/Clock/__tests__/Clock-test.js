@@ -93,4 +93,26 @@ describe('Clock', () => {
       expect(component.toJSON()).toMatchSnapshot();
     }),
   );
+
+  test('type digital custom size', () => {
+    const override = {
+      clock: {
+        digital: {
+          text: {
+            customSize: {
+              size: '30px',
+              height: 1.234,
+            },
+          },
+        },
+      },
+    };
+
+    const component = renderer.create(
+      <Grommet theme={override}>
+        <Clock type="digital" run={false} time={DURATION} size="customSize" />
+      </Grommet>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
 });
