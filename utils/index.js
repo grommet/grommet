@@ -66,6 +66,14 @@ Object.keys(_object).forEach(function (key) {
   exports[key] = _object[key];
 });
 
+var _PortalContext = require("./PortalContext");
+
+Object.keys(_PortalContext).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _PortalContext[key]) return;
+  exports[key] = _PortalContext[key];
+});
+
 var _refs = require("./refs");
 
 Object.keys(_refs).forEach(function (key) {

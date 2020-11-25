@@ -5,11 +5,10 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 import React, { forwardRef, useContext, useEffect, useMemo, useRef } from 'react';
 import { ThemeContext } from 'styled-components';
 import { FocusedContainer } from '../FocusedContainer';
-import { backgroundIsDark, findScrollParents, parseMetricToNum } from '../../utils';
+import { backgroundIsDark, findScrollParents, parseMetricToNum, PortalContext } from '../../utils';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
-import { PortalContext } from './PortalContext';
 import { StyledDrop } from './StyledDrop'; // using react synthetic event to be able to stop propagation that
 // would otherwise close the layer on ESC.
 

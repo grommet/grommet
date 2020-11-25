@@ -17,8 +17,6 @@ var _Box = require("../Box");
 
 var _Keyboard = require("../Keyboard");
 
-var _PortalContext = require("./PortalContext");
-
 var _StyledDrop = require("./StyledDrop");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -65,7 +63,7 @@ var DropContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
-  var portalContext = (0, _react.useContext)(_PortalContext.PortalContext) || defaultPortalContext;
+  var portalContext = (0, _react.useContext)(_utils.PortalContext) || defaultPortalContext;
   var portalId = (0, _react.useMemo)(function () {
     return portalContext.length;
   }, [portalContext]);
@@ -331,7 +329,7 @@ var DropContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     }
   }
 
-  return /*#__PURE__*/_react["default"].createElement(_PortalContext.PortalContext.Provider, {
+  return /*#__PURE__*/_react["default"].createElement(_utils.PortalContext.Provider, {
     value: nextPortalContext
   }, /*#__PURE__*/_react["default"].createElement(_FocusedContainer.FocusedContainer, {
     onKeyDown: onEsc && preventLayerClose,

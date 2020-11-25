@@ -2,17 +2,18 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { forwardRef, useContext, useEffect, useRef, useState } from 'react';
+import React, { forwardRef, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { FocusedContainer } from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
-import { backgroundIsDark, findVisibleParent } from '../../utils';
+import { backgroundIsDark, findVisibleParent, PortalContext } from '../../utils';
 import { StyledLayer, StyledContainer, StyledOverlay } from './StyledLayer';
 var HiddenAnchor = styled.a.withConfig({
   displayName: "LayerContainer__HiddenAnchor",
   componentId: "sc-1srj14c-0"
 })(["width:0;height:0;overflow:hidden;position:absolute;"]);
+var defaultPortalContext = [];
 var fullBounds = {
   left: 0,
   right: 0,
@@ -47,6 +48,13 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var anchorRef = useRef();
   var containerRef = useRef();
   var layerRef = useRef();
+  var portalContext = useContext(PortalContext) || defaultPortalContext;
+  var portalId = useMemo(function () {
+    return portalContext.length;
+  }, [portalContext]);
+  var nextPortalContext = useMemo(function () {
+    return [].concat(portalContext, [portalId]);
+  }, [portalContext, portalId]);
   useEffect(function () {
     if (position !== 'hidden') {
       var node = layerRef.current || containerRef.current || ref.current;
@@ -78,6 +86,31 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }
   }, [position, ref]);
   useEffect(function () {
+    var onClickDocument = function onClickDocument(event) {
+      // determine which portal id the target is in, if any
+      var clickedPortalId = null;
+      var node = event.target;
+
+      while (clickedPortalId === null && node !== document && node !== null) {
+        // check if user click occurred within the layer
+        var attr = node.getAttribute('data-g-portal-id');
+        if (attr !== null && attr !== '') clickedPortalId = parseInt(attr, 10); // loop upward through parents to see if clicked element is a child
+        // of the Layer. if so, click was inside Layer
+        else node = node.parentNode;
+      }
+
+      if ((clickedPortalId === null || portalContext.indexOf(clickedPortalId) !== -1) && node !== null) {
+        // if the click occurred outside of the Layer portal, call
+        // the user's onClickOutside function
+        onClickOutside(event);
+      }
+    }; // if user provides an onClickOutside function, listen for mousedown event
+
+
+    if (onClickOutside) {
+      document.addEventListener('mousedown', onClickDocument);
+    }
+
     if (layerTarget) {
       var updateBounds = function updateBounds() {
         var rect = findVisibleParent(layerTarget).getBoundingClientRect();
@@ -95,12 +128,20 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
       return function () {
         window.removeEventListener('resize', updateBounds);
         window.removeEventListener('scroll', updateBounds, true);
+
+        if (onClickOutside) {
+          document.removeEventListener('mousedown', onClickDocument);
+        }
       };
     }
 
     setTargetBounds(fullBounds);
-    return undefined;
-  }, [layerTarget]);
+    return function () {
+      if (onClickOutside) {
+        document.removeEventListener('mousedown', onClickDocument);
+      }
+    };
+  }, [layerTarget, onClickOutside, portalContext, portalId]);
   var content = /*#__PURE__*/React.createElement(StyledContainer, _extends({
     ref: ref || containerRef,
     id: id,
@@ -112,7 +153,10 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     position: position,
     plain: plain,
     responsive: responsive,
-    dir: theme.dir
+    dir: theme.dir // portalId is used to determine if click occurred inside
+    // or outside of the layer
+    ,
+    "data-g-portal-id": portalId
   }), /*#__PURE__*/React.createElement(HiddenAnchor, {
     ref: anchorRef,
     tabIndex: "-1",
@@ -131,8 +175,8 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
       dir: theme.dir
     }, /*#__PURE__*/React.createElement(StyledOverlay, {
       plain: plain,
-      onMouseDown: onClickOutside,
-      responsive: responsive
+      responsive: responsive,
+      onMouseDown: onClickOutside
     }), content);
   }
 
@@ -154,10 +198,14 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }
   }
 
+  content = /*#__PURE__*/React.createElement(PortalContext.Provider, {
+    value: nextPortalContext
+  }, content);
+
   if (modal) {
     content = /*#__PURE__*/React.createElement(FocusedContainer, {
       hidden: position === 'hidden' // if layer has a target, do not restrict scroll.
-      // restricting scroll  could inhibit the user's
+      // restricting scroll could inhibit the user's
       // ability to scroll the page while the layer is open.
       ,
       restrictScroll: !layerTarget ? true : undefined,
