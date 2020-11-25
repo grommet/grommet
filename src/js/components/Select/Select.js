@@ -182,11 +182,11 @@ const Select = forwardRef(
       if (!selectValue) {
         if (optionIndexesInValue.length === 0) return '';
         if (optionIndexesInValue.length === 1)
-          return applyKey(options[optionIndexesInValue[0]], labelKey);
+          return applyKey(initialOptions[optionIndexesInValue[0]], labelKey);
         return messages.multiple;
       }
       return undefined;
-    }, [labelKey, messages, optionIndexesInValue, options, selectValue]);
+    }, [labelKey, messages, optionIndexesInValue, initialOptions, selectValue]);
 
     const iconColor = normalizeColor(
       theme.select.icons.color || 'control',
