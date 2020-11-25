@@ -113,7 +113,7 @@ const LayerContainer = forwardRef(
         }
       };
 
-      // if user provides an onClickOutside function, list for mousedown event
+      // if user provides an onClickOutside function, listen for mousedown event
       if (onClickOutside) {
         document.addEventListener('mousedown', onClickDocument);
       }
