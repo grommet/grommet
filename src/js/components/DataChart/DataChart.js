@@ -517,6 +517,7 @@ const DataChart = forwardRef(
             series={series}
             seriesStyles={seriesStyles}
             renderValue={renderValue}
+            pad={pad}
           />
         )}
       </Stack>
