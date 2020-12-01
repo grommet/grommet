@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useState } from 'react';
+import React, { Fragment, useCallback, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Box } from '../Box';
 import { Drop } from '../Drop';
@@ -18,13 +18,31 @@ const Detail = ({
   activeProperty,
   axis,
   data,
+  pad,
   series,
   seriesStyles,
   renderValue,
 }) => {
   const [detailIndex, setDetailIndex] = useState();
-  const detailContainer = useRef();
+  const activeIndex = useRef();
   const detailRefs = useMemo(() => [], []);
+
+  const onMouseLeave = useCallback(event => {
+    // Only remove detail if the mouse isn't over the active index.
+    // This helps distinguish leaving the drop on the edge where it is
+    // anchored.
+    const rect = activeIndex.current.getBoundingClientRect();
+    if (
+      event.pageX < rect.left ||
+      event.pageX > rect.right ||
+      event.pageY < rect.top ||
+      event.pageY > rect.bottom
+    ) {
+      activeIndex.current = undefined;
+      setDetailIndex(undefined);
+    }
+  }, []);
+
   return (
     <>
       <Keyboard
@@ -40,23 +58,11 @@ const Detail = ({
       >
         <DetailControl
           key="band"
-          ref={detailContainer}
           tabIndex={0}
           direction="row"
           fill
           justify="between"
-          gap={`${data.length / 2 + 1}px`}
           responsive={false}
-          onMouseOut={event => {
-            const rect = detailContainer.current.getBoundingClientRect();
-            if (
-              event.pageX < rect.left ||
-              event.pageX > rect.right ||
-              event.pageY < rect.top ||
-              event.pageY > rect.bottom
-            )
-              setDetailIndex(undefined);
-          }}
           onFocus={() => {}}
           onBlur={() => setDetailIndex(undefined)}
         >
@@ -64,9 +70,14 @@ const Detail = ({
             <Box
               // eslint-disable-next-line react/no-array-index-key
               key={i}
-              flex
               align="center"
-              onMouseOver={() => setDetailIndex(i)}
+              responsive={false}
+              pad={{ horizontal: pad.horizontal }}
+              onMouseOver={event => {
+                activeIndex.current = event.currentTarget;
+                setDetailIndex(i);
+              }}
+              onMouseLeave={onMouseLeave}
               onFocus={() => {}}
               onBlur={() => {}}
             >
@@ -91,6 +102,7 @@ const Detail = ({
               : { left: 'right' }
           }
           plain
+          onMouseLeave={onMouseLeave}
         >
           <Box pad="small" background={{ color: 'background-back' }}>
             <Grid
@@ -108,13 +120,13 @@ const Detail = ({
                 .map(serie => {
                   const propertyStyle = seriesStyles[serie.property];
                   return (
-                    <>
+                    <Fragment key={serie.property}>
                       {propertyStyle ? <Swatch {...propertyStyle} /> : <span />}
                       <Text size="small">{serie.label || serie.property}</Text>
                       <Text size="small" weight="bold">
                         {renderValue(serie, detailIndex)}
                       </Text>
-                    </>
+                    </Fragment>
                   );
                 })}
             </Grid>
