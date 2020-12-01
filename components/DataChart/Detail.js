@@ -36,6 +36,7 @@ var Detail = function Detail(_ref) {
   var activeProperty = _ref.activeProperty,
       axis = _ref.axis,
       data = _ref.data,
+      pad = _ref.pad,
       series = _ref.series,
       seriesStyles = _ref.seriesStyles,
       renderValue = _ref.renderValue;
@@ -44,9 +45,20 @@ var Detail = function Detail(_ref) {
       detailIndex = _useState[0],
       setDetailIndex = _useState[1];
 
-  var detailContainer = (0, _react.useRef)();
+  var activeIndex = (0, _react.useRef)();
   var detailRefs = (0, _react.useMemo)(function () {
     return [];
+  }, []);
+  var onMouseLeave = (0, _react.useCallback)(function (event) {
+    // Only remove detail if the mouse isn't over the active index.
+    // This helps distinguish leaving the drop on the edge where it is
+    // anchored.
+    var rect = activeIndex.current.getBoundingClientRect();
+
+    if (event.pageX < rect.left || event.pageX > rect.right || event.pageY < rect.top || event.pageY > rect.bottom) {
+      activeIndex.current = undefined;
+      setDetailIndex(undefined);
+    }
   }, []);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
     onLeft: function onLeft() {
@@ -57,17 +69,11 @@ var Detail = function Detail(_ref) {
     }
   }, /*#__PURE__*/_react["default"].createElement(DetailControl, {
     key: "band",
-    ref: detailContainer,
     tabIndex: 0,
     direction: "row",
     fill: true,
     justify: "between",
-    gap: data.length / 2 + 1 + "px",
     responsive: false,
-    onMouseOut: function onMouseOut(event) {
-      var rect = detailContainer.current.getBoundingClientRect();
-      if (event.pageX < rect.left || event.pageX > rect.right || event.pageY < rect.top || event.pageY > rect.bottom) setDetailIndex(undefined);
-    },
     onFocus: function onFocus() {},
     onBlur: function onBlur() {
       return setDetailIndex(undefined);
@@ -76,11 +82,16 @@ var Detail = function Detail(_ref) {
     return /*#__PURE__*/_react["default"].createElement(_Box.Box // eslint-disable-next-line react/no-array-index-key
     , {
       key: i,
-      flex: true,
       align: "center",
-      onMouseOver: function onMouseOver() {
-        return setDetailIndex(i);
+      responsive: false,
+      pad: {
+        horizontal: pad.horizontal
       },
+      onMouseOver: function onMouseOver(event) {
+        activeIndex.current = event.currentTarget;
+        setDetailIndex(i);
+      },
+      onMouseLeave: onMouseLeave,
       onFocus: function onFocus() {},
       onBlur: function onBlur() {}
     }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
@@ -98,7 +109,8 @@ var Detail = function Detail(_ref) {
     } : {
       left: 'right'
     },
-    plain: true
+    plain: true,
+    onMouseLeave: onMouseLeave
   }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     pad: "small",
     background: {
@@ -113,7 +125,9 @@ var Detail = function Detail(_ref) {
     return !activeProperty || activeProperty === property || axis && axis.x && axis.x.property === property;
   }).map(function (serie) {
     var propertyStyle = seriesStyles[serie.property];
-    return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, propertyStyle ? /*#__PURE__*/_react["default"].createElement(_Swatch.Swatch, propertyStyle) : /*#__PURE__*/_react["default"].createElement("span", null), /*#__PURE__*/_react["default"].createElement(_Text.Text, {
+    return /*#__PURE__*/_react["default"].createElement(_react.Fragment, {
+      key: serie.property
+    }, propertyStyle ? /*#__PURE__*/_react["default"].createElement(_Swatch.Swatch, propertyStyle) : /*#__PURE__*/_react["default"].createElement("span", null), /*#__PURE__*/_react["default"].createElement(_Text.Text, {
       size: "small"
     }, serie.label || serie.property), /*#__PURE__*/_react["default"].createElement(_Text.Text, {
       size: "small",

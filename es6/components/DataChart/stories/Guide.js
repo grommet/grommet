@@ -7,20 +7,33 @@ for (var i = 1; i < 8; i += 1) {
   var v = Math.sin(i / 2.0);
   data.push({
     date: "2020-" + (i % 12 + 1).toString().padStart(2, 0) + "-01",
-    percent: Math.abs(v * 100)
+    percent: Math.round(Math.abs(v * 100))
   });
 }
 
 export var Guide = function Guide() {
   return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet
+    theme: grommet,
+    full: true
   }, /*#__PURE__*/React.createElement(Box, {
-    align: "center",
-    justify: "start",
-    pad: "large"
+    margin: "large",
+    width: {
+      min: 'small',
+      max: 'large'
+    }
   }, /*#__PURE__*/React.createElement(DataChart, {
     data: data,
-    series: "percent",
+    series: ['date', 'percent'],
+    chart: [{
+      property: 'percent',
+      thickness: 'xsmall',
+      type: 'line'
+    }, {
+      property: 'percent',
+      thickness: 'medium',
+      type: 'point',
+      point: 'diamond'
+    }],
     guide: {
       x: {
         granularity: 'fine'
@@ -28,6 +41,10 @@ export var Guide = function Guide() {
       y: {
         granularity: 'medium'
       }
-    }
+    },
+    size: {
+      width: 'fill'
+    },
+    detail: true
   })));
 };

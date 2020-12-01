@@ -559,7 +559,8 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     data: data,
     series: series,
     seriesStyles: seriesStyles,
-    renderValue: renderValue
+    renderValue: renderValue,
+    pad: pad
   }));
 
   var legendElement = legend ? /*#__PURE__*/_react["default"].createElement(_Legend.Legend, {
