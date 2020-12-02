@@ -24,7 +24,6 @@ export const Placeholder = () => (
             <Text weight="bold">Loading ...</Text>
           </Box>
         }
-        // placeholder="Loading ..."
         step={10}
       />
     </Box>
