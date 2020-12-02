@@ -1,4 +1,4 @@
-## TableFooter
+## undefined
 The footer of a table.
 
 ## Usage

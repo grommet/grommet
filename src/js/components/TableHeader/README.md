@@ -1,4 +1,4 @@
-## TableHeader
+## undefined
 The header of a table.
 
 ## Usage

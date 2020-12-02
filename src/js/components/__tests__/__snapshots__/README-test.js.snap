@@ -6773,6 +6773,16 @@ header
 footer
 \`\`\`
 
+**placeholder**
+
+A text message or any content to place over the table body.
+      For example, to say \\"loading ...\\" when waiting for data to arrive.
+
+\`\`\`
+string
+node
+\`\`\`
+
 **primaryKey**
 
 When supplied, indicates the property for a data object to use to
@@ -15191,7 +15201,7 @@ Defaults to
 bottom
 \`\`\`
 ",
-  "TableFooter": "## TableFooter
+  "TableFooter": "## undefined
 The footer of a table.
 
 ## Usage
@@ -15209,7 +15219,7 @@ import { TableFooter } from 'grommet';
 \`\`\`
 tfoot
 \`\`\`",
-  "TableHeader": "## TableHeader
+  "TableHeader": "## undefined
 The header of a table.
 
 ## Usage
