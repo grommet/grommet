@@ -1187,6 +1187,31 @@ export interface ThemeType {
       height?: string;
       maxWidth?: string;
     };
+    '2xl?': {
+      size?: string;
+      height?: string;
+      maxWidth?: string;
+    };
+    '3xl?': {
+      size?: string;
+      height?: string;
+      maxWidth?: string;
+    };
+    '4xl?': {
+      size?: string;
+      height?: string;
+      maxWidth?: string;
+    };
+    '5xl?': {
+      size?: string;
+      height?: string;
+      maxWidth?: string;
+    };
+    '6xl?': {
+      size?: string;
+      height?: string;
+      maxWidth?: string;
+    };
   };
   textArea?: {
     extend?: ExtendType;

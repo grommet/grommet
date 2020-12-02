@@ -53,6 +53,11 @@ test('renders size', () => {
       <Text size="large" />
       <Text size="xlarge" />
       <Text size="xxlarge" />
+      <Text size="2xl" />
+      <Text size="3xl" />
+      <Text size="4xl" />
+      <Text size="5xl" />
+      <Text size="6xl" />
     </Grommet>,
   );
   const tree = component.toJSON();
