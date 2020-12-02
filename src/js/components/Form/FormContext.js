@@ -14,6 +14,11 @@ const useFormInput = (_, valueProp, initialValue) => {
     nextValue => {
       if (initialValue !== undefined) setValue(nextValue);
     },
+    () => {
+      const nextValue = { ...value };
+      delete nextValue[_];
+      setValue(nextValue);
+    },
   ];
 };
 

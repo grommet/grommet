@@ -941,3 +941,144 @@ describe('Form uncontrolled', () => {
     );
   });
 });
+
+// Dynamic forms may add or remove input, if the input has been removed,
+// validation result should not contain errors and infos related to the
+// removed field.
+test(`uncontrolled onValidate should only return key/values for 
+          inputs present in the form`, () => {
+  const onValidate = jest.fn();
+  const onSubmit = jest.fn();
+
+  // TextInput + Button to remove component from Form
+  const DynamicInputs = () => {
+    const [inputs, setInputs] = React.useState([
+      { name: 'Server-1', ipaddr: '10.10.10.10' },
+      { name: 'Server-2', ipaddr: '' },
+    ]);
+
+    return (
+      <>
+        {inputs &&
+          inputs.map((input, index) => {
+            return (
+              <Box key={input.name} direction="row">
+                <FormField
+                  htmlFor={input.name}
+                  name={input.name}
+                  label={input.name}
+                  required
+                >
+                  <TextInput
+                    id={input.name}
+                    name={input.name}
+                    value={input.ipaddr}
+                    onChange={event => {
+                      const nextinputs = [...inputs];
+                      const i = nextinputs.findIndex(
+                        item => item.name === input.name,
+                      );
+                      if (i >= 0) {
+                        nextinputs[i].ipaddr = event.target.value;
+                        setInputs(nextinputs);
+                      }
+                    }}
+                  />
+                </FormField>
+                <Button
+                  label={`Remove-${index + 1}`}
+                  onClick={() => {
+                    const nextinputs = [...inputs];
+                    const i = nextinputs.findIndex(
+                      item => item.name === input.name,
+                    );
+                    if (i >= 0) {
+                      nextinputs.splice(i, 1);
+                      setInputs(nextinputs);
+                    }
+                  }}
+                />
+              </Box>
+            );
+          })}
+      </>
+    );
+  };
+
+  const { getByText, getByLabelText, container } = render(
+    <Grommet>
+      <Form validate="blur" onValidate={onValidate} onSubmit={onSubmit}>
+        <DynamicInputs />
+        <Button type="submit" primary label="Submit" />
+      </Form>
+    </Grommet>,
+  );
+  // expect(container.firstChild).toMatchSnapshot();
+  const field1 = getByLabelText('Server-1');
+  const field2 = getByLabelText('Server-2');
+  const submitButton = getByText('Submit');
+  const removeButton2 = getByText('Remove-2');
+
+  // confirm submission indicates required field
+  fireEvent.click(submitButton);
+  expect(onValidate).toHaveBeenNthCalledWith(
+    1,
+    expect.objectContaining({
+      errors: { 'Server-2': 'required' },
+      infos: {},
+    }),
+  );
+  // enter value to satisfy required
+  field2.focus();
+  fireEvent.change(field2, { target: { value: '20.20.20.20' } });
+  // confirm onBlur triggers validation
+  submitButton.focus();
+  expect(onValidate).toHaveBeenNthCalledWith(
+    2,
+    expect.objectContaining({
+      errors: { 'Server-2': undefined },
+      infos: {},
+    }),
+  );
+  field2.focus();
+  fireEvent.change(field2, { target: { value: '' } });
+  // confirm onBlur triggers validation and indicates required
+  submitButton.focus();
+  expect(onValidate).toHaveBeenNthCalledWith(
+    3,
+    expect.objectContaining({
+      errors: { 'Server-2': 'required' },
+      infos: {},
+    }),
+  );
+  // remove field2 input from form and confirm field2 is not reported
+  // as required (i.e. it no longer is a child of the form)
+  fireEvent.click(removeButton2);
+  expect(container.firstChild.innerHTML).toContain('Server-1');
+  expect(container.firstChild.innerHTML).not.toContain('Server-2');
+  field1.focus();
+  submitButton.focus();
+  expect(onValidate).toHaveBeenNthCalledWith(
+    4,
+    expect.objectContaining({
+      errors: { 'Server-2': undefined },
+      infos: {},
+    }),
+  );
+  // confirm field2 is not object in submitted form's value
+  fireEvent.click(submitButton);
+  expect(onValidate).toHaveBeenNthCalledWith(
+    5,
+    expect.objectContaining({
+      errors: { 'Server-2': undefined },
+      infos: {},
+    }),
+  );
+  expect(onSubmit).toHaveBeenNthCalledWith(
+    1,
+    expect.objectContaining({
+      value: { 'Server-1': '10.10.10.10' },
+    }),
+  );
+  // expect(container.firstChild).toMatchSnapshot();
+});

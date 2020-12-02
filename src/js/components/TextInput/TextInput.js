@@ -112,7 +112,7 @@ const TextInput = forwardRef(
     const suggestionRefs = {};
     // if this is a readOnly property, don't set a name with the form context
     // this allows Select to control the form context for the name.
-    const [value, setValue] = formContext.useFormInput(
+    const [value, setValue, removeValue] = formContext.useFormInput(
       readOnly ? undefined : name,
       valueProp,
     );
@@ -128,6 +128,11 @@ const TextInput = forwardRef(
       () => (onSelect && onSuggestionSelect ? onSelect : undefined),
       [onSelect, onSuggestionSelect],
     );
+
+    // Update FormContext if input is removed from Form
+    useEffect(() => {
+      return () => removeValue();
+    }, []);
 
     // if we have no suggestions, close drop if it's open
     useEffect(() => {

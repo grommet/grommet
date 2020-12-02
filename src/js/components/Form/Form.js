@@ -59,6 +59,7 @@ const Form = forwardRef(
       valueProp,
       valueState,
     ]);
+    const valueRef = useRef(valueState);
     const [touched, setTouched] = useState(defaultTouched);
     const [validationResults, setValidationResults] = useState(
       defaultValidationResults,
@@ -148,6 +149,8 @@ const Form = forwardRef(
         useValue = formValue;
       else useValue = inputValue;
 
+      valueRef.current = valueState;
+
       return [
         useValue,
         nextComponentValue => {
@@ -167,6 +170,14 @@ const Form = forwardRef(
             if (onChange) onChange(nextValue, { touched: nextTouched });
           }
           if (initialValue !== undefined) setInputValue(nextComponentValue);
+        },
+        () => {
+          // Clean up valueState if input component is removed from
+          // the form (e.g. dynamic forms where inputs may be added
+          // or removed).
+          const nextValueState = valueRef.current;
+          delete nextValueState[name];
+          setValueState(nextValueState);
         },
       ];
     };
@@ -242,11 +253,20 @@ const Form = forwardRef(
                 );
                 // give user access to errors that have occurred on validation
                 setValidationResults(prevValidationResults => {
+                  // only retain errors for inputs which are related to
+                  // current form values
+                  const relevantValidatons = Object.entries(
+                    prevValidationResults,
+                  ).filter(([key]) => key in value);
+
                   // keep any previous errors and infos for untouched keys,
                   // which probably came from a submit
                   const nextValidationResults = {
-                    errors: { ...prevValidationResults.errors, ...nextErrors },
-                    infos: { ...prevValidationResults.infos, ...nextInfos },
+                    errors: {
+                      ...relevantValidatons.errors,
+                      ...nextErrors,
+                    },
+                    infos: { ...relevantValidatons.infos, ...nextInfos },
                   };
                   if (onValidate) onValidate(nextValidationResults);
                   return nextValidationResults;
