@@ -107,7 +107,11 @@ const DataChart = forwardRef(
                 // such that they line up appropriately.
                 const totals = [];
                 return property.map(cp => {
-                  return seriesValues[cp].map((v, i) => {
+                  // handle object or string
+                  const aProperty = cp.property || cp;
+                  const values = seriesValues[aProperty];
+                  if (!values) return undefined; // property name isn't valid
+                  return values.map((v, i) => {
                     const base = totals[i] || 0;
                     totals[i] = base + v;
                     return [i, base, base + v];
@@ -244,13 +248,16 @@ const DataChart = forwardRef(
         if (charts[index].type === 'bars') {
           // merge values for bars case
           let mergedValues = chartValues[index][0].slice(0);
-          chartValues[index].slice(1).forEach(values => {
-            mergedValues = mergedValues.map((__, i) => [
-              i,
-              Math.min(mergedValues[i][1], values[i][1]),
-              Math.max(mergedValues[i][2], values[i][2]),
-            ]);
-          });
+          chartValues[index]
+            .slice(1)
+            .filter(values => values) // property name isn't valid
+            .forEach(values => {
+              mergedValues = mergedValues.map((__, i) => [
+                i,
+                Math.min(mergedValues[i][1], values[i][1]),
+                Math.max(mergedValues[i][2], values[i][2]),
+              ]);
+            });
           return calcBounds(mergedValues, { coarseness, steps });
         }
         // if this is a data driven x chart, set coarseness for x
@@ -295,8 +302,9 @@ const DataChart = forwardRef(
           const props = Array.isArray(property) ? property : [property];
           props.forEach(prop => {
             const p = prop.property || prop;
+            const pColor = prop.color || color;
             if (!result[p]) result[p] = {};
-            if (color && !result[p].color) result[p].color = color;
+            if (pColor && !result[p].color) result[p].color = pColor;
             if (point && !result[p].point) result[p].point = point;
             else if (type === 'point') result[p].point = false;
             if ((thickness || calcThickness) && !result[p].thickness)
@@ -466,20 +474,24 @@ const DataChart = forwardRef(
           if (type === 'bars') {
             // reverse to ensure area Charts are stacked in the right order
             return prop
-              .map((cProp, j) => (
-                <Chart
-                  // eslint-disable-next-line react/no-array-index-key
-                  key={j}
-                  values={chartValues[i][j]}
-                  overflow
-                  {...seriesStyles[cProp]}
-                  {...chartProps[i]}
-                  {...chartRest}
-                  type="bar"
-                  size={size}
-                  pad={pad}
-                />
-              ))
+              .map((cProp, j) => {
+                const pProp = cProp.property || cProp;
+                return (
+                  <Chart
+                    // eslint-disable-next-line react/no-array-index-key
+                    key={j}
+                    // when property name isn't valid, send empty array
+                    values={chartValues[i][j] || []}
+                    overflow
+                    {...seriesStyles[pProp]}
+                    {...chartProps[i]}
+                    {...chartRest}
+                    type="bar"
+                    size={size}
+                    pad={pad}
+                  />
+                );
+              })
               .reverse();
           }
           return (
@@ -505,6 +517,7 @@ const DataChart = forwardRef(
             series={series}
             seriesStyles={seriesStyles}
             renderValue={renderValue}
+            pad={pad}
           />
         )}
       </Stack>

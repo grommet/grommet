@@ -166,4 +166,64 @@ export const themeDoc = {
     type: 'string',
     defaultValue: '288px',
   },
+  'clock.digital.text.xsmall.size': {
+    description: 'Defines the font size of the Digital Clock',
+    type: 'string',
+    defaultValue: '10px',
+  },
+  'clock.digital.text.xsmall.height': {
+    description: 'Defines the line height of the Digital Clock',
+    type: 'number',
+    defaultValue: '1.5',
+  },
+  'clock.digital.text.small.size': {
+    description: 'Defines the font size of the Digital Clock',
+    type: 'string',
+    defaultValue: '14px',
+  },
+  'clock.digital.text.small.height': {
+    description: 'Defines the line height of the Digital Clock',
+    type: 'number',
+    defaultValue: '1.43',
+  },
+  'clock.digital.text.medium.size': {
+    description: 'Defines the font size of the Digital Clock',
+    type: 'string',
+    defaultValue: '18px',
+  },
+  'clock.digital.text.medium.height': {
+    description: 'Defines the line height of the Digital Clock',
+    type: 'number',
+    defaultValue: '1.375',
+  },
+  'clock.digital.text.large.size': {
+    description: 'Defines the font size of the Digital Clock',
+    type: 'string',
+    defaultValue: '22px',
+  },
+  'clock.digital.text.large.height': {
+    description: 'Defines the line height of the Digital Clock',
+    type: 'number',
+    defaultValue: '1.167',
+  },
+  'clock.digital.text.xlarge.size': {
+    description: 'Defines the font size of the Digital Clock',
+    type: 'string',
+    defaultValue: '26px',
+  },
+  'clock.digital.text.xlarge.height': {
+    description: 'Defines the line height of the Digital Clock',
+    type: 'number',
+    defaultValue: '1.1875',
+  },
+  'clock.digital.text.xxlarge.size': {
+    description: 'Defines the font size of the Digital Clock',
+    type: 'string',
+    defaultValue: '34px',
+  },
+  'clock.digital.text.xxlarge.height': {
+    description: 'Defines the line height of the Digital Clock',
+    type: 'number',
+    defaultValue: '1.125',
+  },
 };

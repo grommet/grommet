@@ -111,6 +111,7 @@ exports[`Layer animation fadeIn 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="animation-test"
   >
     <a
@@ -286,6 +287,7 @@ exports[`Layer animation false 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="animation-test"
   >
     <a
@@ -463,6 +465,7 @@ exports[`Layer animation slide 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="animation-test"
   >
     <a
@@ -640,6 +643,7 @@ exports[`Layer animation true 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="animation-test"
   >
     <a
@@ -817,6 +821,7 @@ exports[`Layer custom margin 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="margin-test"
   >
     <a
@@ -947,6 +952,7 @@ exports[`Layer dark context 1`] = `
 
 <div
   class="c0"
+  data-g-portal-id="0"
   id="non-modal-test"
 >
   <a
@@ -1058,6 +1064,7 @@ exports[`Layer focus on layer 1`] = `
 
 <div
   class="c0"
+  data-g-portal-id="0"
   data-testid="focus-layer-test"
 >
   <a
@@ -1163,6 +1170,7 @@ exports[`Layer hidden 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="hidden-test"
   >
     <a
@@ -1221,6 +1229,7 @@ exports[`Layer hidden 3`] = `
   />
   <div
     class="StyledLayer__StyledContainer-rmtehz-2 icgHnb"
+    data-g-portal-id="0"
     id="hidden-test"
   >
     <a
@@ -1254,6 +1263,583 @@ exports[`Layer hidden 4`] = `
   bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
+  .gNIvtm {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .iconax {
+    position: relative;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .hpqBKm {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}"
+`;
+
+exports[`Layer invoke onClickOutside when modal={false} 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  background-color: #FFFFFF;
+  color: #444444;
+  outline: none;
+  pointer-events: all;
+  z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
+  animation: hWAzxx 0.2s ease-in-out forwards;
+}
+
+.c1 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+@media only screen and (max-width:768px) {
+  .c0 {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+<div
+  class="c0"
+  data-g-portal-id="0"
+  id="layer-node"
+>
+  <a
+    aria-hidden="true"
+    class="c1"
+    tabindex="-1"
+  />
+  <div>
+    This is a layer
+    <input
+      data-testid="test-input"
+    />
+  </div>
+</div>
+`;
+
+exports[`Layer invoke onClickOutside when modal={false} 2`] = `
+"@media only screen and (max-width: 768px) {
+  .gNIvtm {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .iconax {
+    position: relative;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .hpqBKm {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}"
+`;
+
+exports[`Layer invoke onClickOutside when modal={false} and layer has target 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  background-color: #FFFFFF;
+  color: #444444;
+  outline: none;
+  pointer-events: all;
+  z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 0px - 768px);
+  max-width: calc(100% - 0px - 1024px);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
+  animation: hWAzxx 0.2s ease-in-out forwards;
+}
+
+.c1 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c0 {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+<div
+  class="c0"
+  data-g-portal-id="0"
+  id="target-test"
+>
+  <a
+    aria-hidden="true"
+    class="c1"
+    tabindex="-1"
+  />
+  this is a test layer
+</div>
+`;
+
+exports[`Layer invoke onClickOutside when modal={false} and layer has target 2`] = `
+"@media only screen and (max-width: 768px) {
+  .gNIvtm {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .iconax {
+    position: relative;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .hpqBKm {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}"
+`;
+
+exports[`Layer invoke onClickOutside when modal={true} 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+.c1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: rgba(0,0,0,0.5);
+  color: #f8f8f8;
+  pointer-events: all;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  background-color: #FFFFFF;
+  color: #444444;
+  outline: none;
+  pointer-events: all;
+  z-index: 15;
+  position: absolute;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
+  animation: hWAzxx 0.2s ease-in-out forwards;
+}
+
+.c3 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+@media only screen and (max-width:768px) {
+  .c0 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+<div
+  class="c0"
+  id="layer-node"
+  tabindex="-1"
+>
+  <div
+    class="c1"
+  />
+  <div
+    class="c2"
+    data-g-portal-id="0"
+    id="layer-node"
+  >
+    <a
+      aria-hidden="true"
+      class="c3"
+      tabindex="-1"
+    />
+    <div>
+      This is a layer
+      <input
+        data-testid="test-input"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Layer invoke onClickOutside when modal={true} 2`] = `
+".gNIvtm {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+@media only screen and (max-width: 768px) {
+  .gNIvtm {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .iconax {
+    position: relative;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .hpqBKm {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}"
+`;
+
+exports[`Layer invoke onClickOutside when modal={true} and layer has target 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 1024px;
+  bottom: 768px;
+}
+
+.c1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: rgba(0,0,0,0.5);
+  color: #f8f8f8;
+  pointer-events: all;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  background-color: #FFFFFF;
+  color: #444444;
+  outline: none;
+  pointer-events: all;
+  z-index: 15;
+  position: absolute;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
+  animation: hWAzxx 0.2s ease-in-out forwards;
+}
+
+.c3 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c0 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+<div
+  class="c0"
+  id="target-test"
+  tabindex="-1"
+>
+  <div
+    class="c1"
+  />
+  <div
+    class="c2"
+    data-g-portal-id="0"
+    id="target-test"
+  >
+    <a
+      aria-hidden="true"
+      class="c3"
+      tabindex="-1"
+    />
+    this is a test layer
+  </div>
+</div>
+`;
+
+exports[`Layer invoke onClickOutside when modal={true} and layer has target 2`] = `
+"@media only screen and (max-width: 768px) {
   .gNIvtm {
     position: absolute;
     width: 100%;
@@ -1455,6 +2041,7 @@ exports[`Layer margin large 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="margin-test"
   >
     <a
@@ -1632,6 +2219,7 @@ exports[`Layer margin medium 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="margin-test"
   >
     <a
@@ -1809,6 +2397,7 @@ exports[`Layer margin none 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="margin-test"
   >
     <a
@@ -1986,6 +2575,7 @@ exports[`Layer margin small 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="margin-test"
   >
     <a
@@ -2163,6 +2753,7 @@ exports[`Layer margin xsmall 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="margin-test"
   >
     <a
@@ -2293,6 +2884,7 @@ exports[`Layer non-modal 1`] = `
 
 <div
   class="c0"
+  data-g-portal-id="0"
   id="non-modal-test"
 >
   <a
@@ -2404,6 +2996,7 @@ exports[`Layer not steal focus from an autofocus focusable element 1`] = `
 
 <div
   class="c0"
+  data-g-portal-id="0"
   data-testid="focus-layer-input-test"
 >
   <a
@@ -2529,6 +3122,7 @@ exports[`Layer plain 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="plain-test"
   >
     <a
@@ -2706,6 +3300,7 @@ exports[`Layer position: bottom - full: false 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -2884,6 +3479,7 @@ exports[`Layer position: bottom - full: horizontal 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -3063,6 +3659,7 @@ exports[`Layer position: bottom - full: true 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -3241,6 +3838,7 @@ exports[`Layer position: bottom - full: vertical 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -3418,6 +4016,7 @@ exports[`Layer position: bottom-left - full: false 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -3596,6 +4195,7 @@ exports[`Layer position: bottom-left - full: horizontal 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -3775,6 +4375,7 @@ exports[`Layer position: bottom-left - full: true 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -3953,6 +4554,7 @@ exports[`Layer position: bottom-left - full: vertical 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -4130,6 +4732,7 @@ exports[`Layer position: bottom-right - full: false 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -4308,6 +4911,7 @@ exports[`Layer position: bottom-right - full: horizontal 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -4487,6 +5091,7 @@ exports[`Layer position: bottom-right - full: true 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -4665,6 +5270,7 @@ exports[`Layer position: bottom-right - full: vertical 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -4842,6 +5448,7 @@ exports[`Layer position: center - full: false 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -5020,6 +5627,7 @@ exports[`Layer position: center - full: horizontal 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -5196,6 +5804,7 @@ exports[`Layer position: center - full: true 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -5374,6 +5983,7 @@ exports[`Layer position: center - full: vertical 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -5551,6 +6161,7 @@ exports[`Layer position: end - full: false 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -5729,6 +6340,7 @@ exports[`Layer position: end - full: horizontal 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -5908,6 +6520,7 @@ exports[`Layer position: end - full: true 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -6086,6 +6699,7 @@ exports[`Layer position: end - full: vertical 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -6263,6 +6877,7 @@ exports[`Layer position: left - full: false 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -6441,6 +7056,7 @@ exports[`Layer position: left - full: horizontal 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -6620,6 +7236,7 @@ exports[`Layer position: left - full: true 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -6798,6 +7415,7 @@ exports[`Layer position: left - full: vertical 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -6975,6 +7593,7 @@ exports[`Layer position: right - full: false 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -7153,6 +7772,7 @@ exports[`Layer position: right - full: horizontal 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -7332,6 +7952,7 @@ exports[`Layer position: right - full: true 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -7510,6 +8131,7 @@ exports[`Layer position: right - full: vertical 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -7687,6 +8309,7 @@ exports[`Layer position: start - full: false 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -7865,6 +8488,7 @@ exports[`Layer position: start - full: horizontal 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -8044,6 +8668,7 @@ exports[`Layer position: start - full: true 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -8222,6 +8847,7 @@ exports[`Layer position: start - full: vertical 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -8399,6 +9025,7 @@ exports[`Layer position: top - full: false 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -8577,6 +9204,7 @@ exports[`Layer position: top - full: horizontal 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -8756,6 +9384,7 @@ exports[`Layer position: top - full: true 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -8934,6 +9563,7 @@ exports[`Layer position: top - full: vertical 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -9111,6 +9741,7 @@ exports[`Layer position: top-left - full: false 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -9289,6 +9920,7 @@ exports[`Layer position: top-left - full: horizontal 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -9468,6 +10100,7 @@ exports[`Layer position: top-left - full: true 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -9646,6 +10279,7 @@ exports[`Layer position: top-left - full: vertical 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -9823,6 +10457,7 @@ exports[`Layer position: top-right - full: false 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -10001,6 +10636,7 @@ exports[`Layer position: top-right - full: horizontal 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -10180,6 +10816,7 @@ exports[`Layer position: top-right - full: true 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -10358,6 +10995,7 @@ exports[`Layer position: top-right - full: vertical 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="position-full-test"
   >
     <a
@@ -10539,6 +11177,7 @@ exports[`Layer target 1`] = `
   />
   <div
     class="c2"
+    data-g-portal-id="0"
     id="target-test"
   >
     <a
@@ -10654,6 +11293,7 @@ exports[`Layer target not modal 1`] = `
 
 <div
   class="c0"
+  data-g-portal-id="0"
   id="target-test"
 >
   <a

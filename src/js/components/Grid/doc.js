@@ -118,7 +118,9 @@ space in the column axis.`,
         ]),
         size: PropTypes.oneOfType([
           PropTypes.oneOf(fixedSizes),
-          PropTypes.arrayOf(PropTypes.oneOf(sizes)),
+          PropTypes.arrayOf(
+            PropTypes.oneOfType([PropTypes.oneOf(sizes), PropTypes.string]),
+          ),
           PropTypes.string,
         ]),
       }),
