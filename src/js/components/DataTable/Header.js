@@ -112,7 +112,6 @@ const Header = ({
   ...rest
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
-  console.log(theme);
   const [cellProps, layoutProps, textProps] = separateThemeProps(theme);
   const unitsProps = theme.dataTable.header.units;
 
