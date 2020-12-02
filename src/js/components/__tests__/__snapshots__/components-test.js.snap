@@ -6807,14 +6807,14 @@ bottom",
   "TableFooter": Object {
     "description": "The footer of a table.",
     "intrinsicElement": "tfoot",
-    "name": undefined,
+    "name": "TableFooter",
     "usage": "import { TableFooter } from 'grommet';
 <TableFooter />",
   },
   "TableHeader": Object {
     "description": "The header of a table.",
     "intrinsicElement": "thead",
-    "name": undefined,
+    "name": "TableHeader",
     "usage": "import { TableHeader } from 'grommet';
 <TableHeader />",
   },

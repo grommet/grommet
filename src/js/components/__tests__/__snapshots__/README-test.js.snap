@@ -15201,7 +15201,7 @@ Defaults to
 bottom
 \`\`\`
 ",
-  "TableFooter": "## undefined
+  "TableFooter": "## TableFooter
 The footer of a table.
 
 ## Usage
@@ -15219,7 +15219,7 @@ import { TableFooter } from 'grommet';
 \`\`\`
 tfoot
 \`\`\`",
-  "TableHeader": "## undefined
+  "TableHeader": "## TableHeader
 The header of a table.
 
 ## Usage

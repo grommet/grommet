@@ -9,6 +9,8 @@ const TableFooter = forwardRef((props, ref) => (
   </TableContext.Provider>
 ));
 
+TableFooter.displayName = 'TableFooter';
+
 let TableFooterDoc;
 if (process.env.NODE_ENV !== 'production') {
   // eslint-disable-next-line global-require

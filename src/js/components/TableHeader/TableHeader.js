@@ -9,6 +9,8 @@ const TableHeader = forwardRef((props, ref) => (
   </TableContext.Provider>
 ));
 
+TableHeader.displayName = 'TableHeader';
+
 let TableHeaderDoc;
 if (process.env.NODE_ENV !== 'production') {
   // eslint-disable-next-line global-require
