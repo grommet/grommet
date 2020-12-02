@@ -856,4 +856,23 @@ describe('DataTable', () => {
     fireEvent.mouseOver(getByLabelText('select beta'));
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('units', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B', units: '(MiB)' },
+          ]}
+          data={[
+            { a: 'zero', b: 0 },
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

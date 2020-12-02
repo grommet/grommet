@@ -122,6 +122,7 @@ export const doc = DataTable => {
           ]),
           PropTypes.string,
         ]),
+        units: PropTypes.string,
         verticalAlign: PropTypes.oneOf(['middle', 'top', 'bottom']),
       }),
     ).description(
@@ -392,6 +393,12 @@ export const themeDoc = {
     description: 'The pad around the contents of the header cell.',
     type: 'string | object',
     defaultValue: undefined,
+  },
+  'dataTable.header.units': {
+    description: `The styles for the units display in the header. This
+    can be any valid Text properties`,
+    type: 'object',
+    defaultValue: '{ size: "xsmall" }',
   },
   'dataTable.resize.hover.color': {
     description: 'The color of the resizer when hovered over.',

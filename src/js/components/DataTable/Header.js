@@ -112,7 +112,9 @@ const Header = ({
   ...rest
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
+  console.log(theme);
   const [cellProps, layoutProps, textProps] = separateThemeProps(theme);
+  const unitsProps = theme.dataTable.header.units;
 
   let background;
   if (backgroundProp) background = backgroundProp;
@@ -131,7 +133,6 @@ const Header = ({
             onToggle={onToggle}
           />
         )}
-
         {(selected || onSelect) && (
           <TableCell background={background || cellProps.background}>
             {onSelect && (
@@ -153,7 +154,6 @@ const Header = ({
             )}
           </TableCell>
         )}
-
         {columns.map(
           ({
             property,
@@ -164,8 +164,17 @@ const Header = ({
             sortable,
             verticalAlign,
             size,
+            units,
           }) => {
             let content;
+            const unitsContent = units ? (
+              <Text {...textProps} size="xsmall" {...unitsProps}>
+                {units}
+              </Text>
+            ) : (
+              undefined
+            );
+
             if (typeof header === 'string') {
               content = <Text {...textProps}>{header}</Text>;
               if (
@@ -182,6 +191,15 @@ const Header = ({
                 );
               }
             } else content = header;
+
+            if (unitsContent) {
+              content = (
+                <Box direction="row" align="baseline" gap="xsmall">
+                  {content}
+                  {unitsContent}
+                </Box>
+              );
+            }
 
             if (onSort && sortable !== false) {
               let Icon;

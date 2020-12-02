@@ -357,6 +357,7 @@ A description of the data. The order controls the column order.
     1/3
     2/3
     string,
+  units: string,
   verticalAlign: 
     middle
     top
@@ -859,6 +860,17 @@ Defaults to
 
 ```
 undefined
+```
+
+**dataTable.header.units**
+
+The styles for the units display in the header. This
+    can be any valid Text properties Expects `object`.
+
+Defaults to
+
+```
+{ size: "xsmall" }
 ```
 
 **dataTable.resize.hover.color**
