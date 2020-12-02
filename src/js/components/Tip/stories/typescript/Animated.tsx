@@ -1,8 +1,7 @@
 import React from 'react';
 
-import { grommet, Box, Button, Grommet } from 'grommet';
+import { grommet, Box, Button, Grommet, Tip } from 'grommet';
 import { UserFemale, Info } from 'grommet-icons';
-import { Tip } from '../../Tip';
 
 const Circle = ({ ...rest }) => (
   <Box
