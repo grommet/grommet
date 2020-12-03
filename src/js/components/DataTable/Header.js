@@ -30,6 +30,7 @@ const separateThemeProps = theme => {
     color,
     font,
     gap, // gap is used for space between header cell elements only
+    units: { label: unitsTextProps },
     ...rest
   } = theme.dataTable.header;
 
@@ -38,7 +39,7 @@ const separateThemeProps = theme => {
   const iconProps = { color };
   const layoutProps = { ...rest };
 
-  return [cellProps, layoutProps, textProps, iconProps];
+  return [cellProps, layoutProps, textProps, iconProps, unitsTextProps];
 };
 
 // build up CSS from basic to specific based on the supplied sub-object paths.
@@ -112,8 +113,9 @@ const Header = ({
   ...rest
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
-  const [cellProps, layoutProps, textProps] = separateThemeProps(theme);
-  const unitsProps = theme.dataTable.header.units;
+  const [cellProps, layoutProps, textProps, , unitsProps] = separateThemeProps(
+    theme,
+  );
 
   let background;
   if (backgroundProp) background = backgroundProp;
@@ -167,7 +169,7 @@ const Header = ({
           }) => {
             let content;
             const unitsContent = units ? (
-              <Text {...textProps} size="xsmall" {...unitsProps}>
+              <Text {...textProps} {...unitsProps}>
                 {units}
               </Text>
             ) : (
@@ -193,7 +195,11 @@ const Header = ({
 
             if (unitsContent) {
               content = (
-                <Box direction="row" align="baseline" gap="xsmall">
+                <Box
+                  direction="row"
+                  align={theme.dataTable.header.units.align}
+                  gap={theme.dataTable.header.units.gap}
+                >
                   {content}
                   {unitsContent}
                 </Box>

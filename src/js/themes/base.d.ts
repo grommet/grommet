@@ -625,6 +625,11 @@ export interface ThemeType {
         background?: BackgroundType;
       };
       pad?: PadType;
+      units?: {
+        gap?: GapType;
+        align?: string;
+        label?: TextProps;
+      };
     };
     groupHeader?: {
       border?: {

@@ -862,10 +862,31 @@ Defaults to
 undefined
 ```
 
-**dataTable.header.units**
+**dataTable.header.units.align**
 
-The styles for the units display in the header. This
-    can be any valid Text properties Expects `object`.
+undefined Expects `start | center | end | baseline| stretch`.
+
+Defaults to
+
+```
+baseline
+```
+
+**dataTable.header.units.gap**
+
+undefined Expects `none | xxsmall | xsmall | small |
+       medium | large | xlarge | any css size`.
+
+Defaults to
+
+```
+xsmall
+```
+
+**dataTable.header.units.label**
+
+Any Text component properties for styling the
+    header's units text. Expects `object`.
 
 Defaults to
 

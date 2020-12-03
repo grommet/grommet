@@ -723,6 +723,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //   background: undefined,
         // },
         // pad: undefined,
+        units: {
+          align: 'baseline',
+          gap: 'xsmall',
+          label: {
+            size: 'xsmall',
+          },
+        },
       },
       icons: {
         ascending: FormDown,
