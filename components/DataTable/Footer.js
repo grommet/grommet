@@ -57,7 +57,7 @@ var Footer = function Footer(_ref) {
       column: column,
       datum: footerValues,
       pad: pad,
-      pin: pin,
+      pin: pin.length ? pin : undefined,
       primaryProperty: primaryProperty
     });
   })));
