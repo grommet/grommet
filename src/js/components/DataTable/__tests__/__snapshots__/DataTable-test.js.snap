@@ -8053,6 +8053,19 @@ exports[`DataTable pin + background 1`] = `
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c19 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
   padding-right: 12px;
@@ -8399,7 +8412,7 @@ exports[`DataTable pin + background 1`] = `
           </div>
         </td>
         <td
-          class="c15 "
+          class="c18 "
         >
           <div
             class="c11"
@@ -8432,7 +8445,7 @@ exports[`DataTable pin + background 1`] = `
           </div>
         </th>
         <th
-          class="c18 "
+          class="c19 "
           scope="col"
         >
           <div
