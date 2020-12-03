@@ -47,6 +47,7 @@ export interface ColumnConfig<TRowType> {
   search?: boolean;
   sortable?: boolean;
   size?: ColumnSizeType | string;
+  units?: string;
   verticalAlign?: 'middle' | 'top' | 'bottom';
 }
 
