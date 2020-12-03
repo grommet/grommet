@@ -3,6 +3,7 @@ import 'jest-styled-components';
 import { cleanup, render, fireEvent } from '@testing-library/react';
 
 import { Grommet } from '../../Grommet';
+import { Box } from '../../Box';
 import { DataTable } from '..';
 
 describe('DataTable', () => {
@@ -782,6 +783,33 @@ describe('DataTable', () => {
             ]}
             pin={pin}
           />
+        ))}
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('pin + background context', () => {
+    const { container } = render(
+      <Grommet>
+        {[
+          'background-back',
+          'background-front',
+          { color: 'background-back', dark: true },
+        ].map(contextBackground => (
+          <Box key={contextBackground} background={contextBackground}>
+            <DataTable
+              columns={[
+                { property: 'a', header: 'A', footer: 'Total', pin: true },
+                { property: 'b', header: 'B' },
+              ]}
+              data={[
+                { a: 'one', b: 1 },
+                { a: 'two', b: 2 },
+              ]}
+              pin
+            />
+          </Box>
         ))}
       </Grommet>,
     );

@@ -59,6 +59,9 @@ class Grommet extends Component {
       // code here that is already in normalizeColor and backgroundIsDark.
       nextTheme.dark = backgroundIsDark(color, nextTheme);
       nextTheme.baseBackground = backgroundProp || themeBackground;
+      // This allows DataTable to intelligently set the background of a pinned
+      // header or footer.
+      nextTheme.background = nextTheme.baseBackground;
 
       if (dir) {
         nextTheme.dir = dir;

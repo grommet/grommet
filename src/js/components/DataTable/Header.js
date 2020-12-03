@@ -17,7 +17,7 @@ import {
   StyledDataTableHeader,
   StyledDataTableRow,
 } from './StyledDataTable';
-import { datumValue } from './buildState';
+import { datumValue, normalizeBackgroundColor } from './buildState';
 import { kindPartStyles } from '../../utils/styles';
 import { normalizeColor } from '../../utils/colors';
 
@@ -271,6 +271,15 @@ const Header = ({
               theme.dataTable.pinned.header
             ) {
               background = theme.dataTable.pinned.header.background;
+              if (!background.color && theme.background) {
+                // theme context has an active background color but the
+                // theme doesn't set an explicit color, repeat the context
+                // background explicitly
+                background = {
+                  ...background,
+                  color: normalizeBackgroundColor(theme),
+                };
+              }
             } else background = undefined;
             return (
               <StyledDataTableCell
