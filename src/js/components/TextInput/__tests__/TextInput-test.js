@@ -292,6 +292,72 @@ describe('TextInput', () => {
     );
   });
 
+  test('auto-select 1st suggestion with highlightFirstSuggestion', () => {
+    const onSelect = jest.fn();
+    const { getByTestId } = render(
+      <Grommet>
+        <TextInput
+          data-testid="test-input"
+          id="item"
+          name="item"
+          highlightFirstSuggestion
+          suggestions={['test1', 'test2']}
+          onSuggestionSelect={onSelect}
+        />
+      </Grommet>,
+    );
+
+    const input = getByTestId('test-input');
+    // open drop - first should be automatically highlighted
+    fireEvent.keyDown(input, { keyCode: 40 }); // down
+    // pressing enter here will select the first suggestion
+    fireEvent.keyDown(input, { keyCode: 13 }); // enter
+    expect(onSelect).toBeCalledWith(
+      expect.objectContaining({
+        suggestion: 'test1',
+      }),
+    );
+  });
+
+  test('do not select 1st suggestion without highlightFirstSuggestion', () => {
+    const onSelect = jest.fn();
+    const { getByTestId } = render(
+      <Grommet>
+        <TextInput
+          data-testid="test-input"
+          id="item"
+          name="item"
+          suggestions={['test1', 'test2']}
+          onSuggestionSelect={onSelect}
+        />
+      </Grommet>,
+    );
+
+    const input = getByTestId('test-input');
+    // open drop
+    fireEvent.keyDown(input, { keyCode: 40 }); // down
+    // pressing enter here closes drop but doesn't select
+    fireEvent.keyDown(input, { keyCode: 13 }); // enter
+    expect(onSelect).toBeCalledWith(
+      expect.objectContaining({
+        suggestion: undefined,
+      }),
+    );
+    // open drop
+    fireEvent.keyDown(input, { keyCode: 40 }); // down
+    // highlight first
+    fireEvent.keyDown(input, { keyCode: 40 }); // down
+    // highlight second
+    fireEvent.keyDown(input, { keyCode: 40 }); // down
+    // select highlighted
+    fireEvent.keyDown(input, { keyCode: 13 }); // enter
+    expect(onSelect).toBeCalledWith(
+      expect.objectContaining({
+        suggestion: 'test2',
+      }),
+    );
+  });
+
   test('select a suggestion with onSuggestionSelect', () => {
     const onSuggestionSelect = jest.fn();
     const { getByTestId, container } = render(

@@ -23,6 +23,7 @@ export const Suggestions = () => {
             onChange={onChange}
             onSelect={onSelect}
             suggestions={suggestions}
+            highlightFirstSuggestion
           />
         </Box>
       </Box>
