@@ -91,6 +91,7 @@ const SelectedList = ({
                   <Close
                     style={{ cursor: 'pointer' }}
                     onClick={() => onRemove(item)}
+                    style={{ cursor: 'pointer' }}
                     {...theme.multiselect.chips.icon}
                   />
                 </OptionText>
