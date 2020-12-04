@@ -724,8 +724,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // },
         // pad: undefined,
         units: {
-          align: 'baseline',
-          gap: 'xsmall',
+          container: {
+            align: 'baseline',
+            direction: 'row',
+            gap: 'xsmall',
+          },
           label: {
             size: 'xsmall',
           },

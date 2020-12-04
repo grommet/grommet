@@ -394,17 +394,15 @@ export const themeDoc = {
     type: 'string | object',
     defaultValue: undefined,
   },
-  'dataTable.header.units.align': {
-    descriptions:
-      'The vertical alignment of the units text in the column header.',
-    type: 'start | center | end | baseline| stretch',
-    defaultValue: 'baseline',
-  },
-  'dataTable.header.units.gap': {
-    descriptions: 'The gap between the header text and units label',
-    type: `none | xxsmall | xsmall | small |
-       medium | large | xlarge | any css size`,
-    defaultValue: 'xsmall',
+  'dataTable.header.units.container': {
+    description: `Any Box component properties for styling the combination
+    of the main header content and the units label.`,
+    type: 'object',
+    defaultValue: `{
+  align: "baseline",
+  direction: "row",
+  gap: "xsmall",
+}`,
   },
   'dataTable.header.units.label': {
     description: `Any Text component properties for styling the

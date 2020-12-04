@@ -626,8 +626,7 @@ export interface ThemeType {
       };
       pad?: PadType;
       units?: {
-        gap?: GapType;
-        align?: string;
+        container?: BoxProps;
         label?: TextProps;
       };
     };

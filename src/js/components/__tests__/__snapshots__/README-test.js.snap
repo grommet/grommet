@@ -7091,25 +7091,19 @@ Defaults to
 undefined
 \`\`\`
 
-**dataTable.header.units.align**
+**dataTable.header.units.container**
 
-undefined Expects \`start | center | end | baseline| stretch\`.
-
-Defaults to
-
-\`\`\`
-baseline
-\`\`\`
-
-**dataTable.header.units.gap**
-
-undefined Expects \`none | xxsmall | xsmall | small |
-       medium | large | xlarge | any css size\`.
+Any Box component properties for styling the combination
+    of the main header content and the units label. Expects \`object\`.
 
 Defaults to
 
 \`\`\`
-xsmall
+{
+  align: \\"baseline\\",
+  direction: \\"row\\",
+  gap: \\"xsmall\\",
+}
 \`\`\`
 
 **dataTable.header.units.label**
