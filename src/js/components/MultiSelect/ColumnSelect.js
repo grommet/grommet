@@ -66,7 +66,7 @@ const ColumnSelect = ({
       if (index !== SELECT_ALL_INDEX) {
         selectOption(index)(event);
       } else {
-        onChange(index, {
+        onChange({
           value: allSelected ? [] : options.map((item, i) => optionValue(i)),
           selected: allSelected ? [] : options.map((item, i) => i),
         });
