@@ -98,6 +98,7 @@ const TextInput = forwardRef(
       readOnly,
       reverse,
       suggestions,
+      textAlign,
       value: valueProp,
       ...rest
     },
@@ -420,6 +421,7 @@ const TextInput = forwardRef(
             icon={icon}
             reverse={reverse}
             focus={focus}
+            textAlign={textAlign}
             {...rest}
             {...extraProps}
             defaultValue={renderLabel(defaultValue)}

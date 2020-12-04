@@ -7446,6 +7446,14 @@ suggestions and instead rely on the user to type more.",
         "name": "suggestions",
       },
       Object {
+        "defaultValue": "start",
+        "description": "How to align the text inside the input.",
+        "format": "start
+center
+end",
+        "name": "textAlign",
+      },
+      Object {
         "description": "What text to put in the input.",
         "format": "string
 number",
