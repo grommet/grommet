@@ -28,6 +28,7 @@ import { Box } from '../components/Box';
 import { Text, TextProps } from '../components/Text';
 import { LayerPositionType } from '../components/Layer';
 import { DropProps } from '../components/Drop';
+import { ListProps } from '../components/List';
 
 export declare const base: DeepReadonly<ThemeType>;
 export declare const generate: (
@@ -1199,6 +1200,14 @@ export interface ThemeType {
   tip?: {
     content?: BoxProps;
     drop?: DropProps;
+  };
+  tree?: {
+    column?: {
+      listProps?: ListProps;
+    };
+    nested?: {
+      listProps?: ListProps;
+    };
   };
   video?: {
     captions?: {

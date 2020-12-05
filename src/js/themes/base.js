@@ -1209,6 +1209,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         align: { top: 'bottom' }, // most common use case is Header with Buttons
       },
     },
+    tree: {
+      nested: {
+        listProps: { border: false },
+      },
+      column: {
+        listProps: { border: false },
+      },
+    },
     video: {
       captions: {
         background: 'rgba(0, 0, 0, 0.7)',

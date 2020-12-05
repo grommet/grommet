@@ -7496,6 +7496,7 @@ number",
     "usage": "import { Tip } from 'grommet';
 <Tip />",
   },
+  "Tree": [Function],
   "Video": Object {
     "availableAt": Array [
       Object {
