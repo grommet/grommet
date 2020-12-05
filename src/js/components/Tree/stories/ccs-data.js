@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* Currently not being used */
 export const data = {
   openapi: '3.0.1',
