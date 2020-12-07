@@ -20,7 +20,7 @@ const SimpleLayer = () => {
   return <Box>{layer}</Box>;
 };
 
-const FakeLayer = ({ children, dataTestid }) => {
+const FakeLayer = ({ children, dataTestid, ...rest }) => {
   const [showLayer, setShowLayer] = React.useState(false);
 
   React.useEffect(() => setShowLayer(true), []);
@@ -28,7 +28,7 @@ const FakeLayer = ({ children, dataTestid }) => {
   let layer;
   if (showLayer) {
     layer = (
-      <Layer onEsc={() => setShowLayer(false)}>
+      <Layer onEsc={() => setShowLayer(false)} {...rest}>
         <div data-testid={dataTestid}>
           This is a layer
           <input data-testid="test-input" />
@@ -327,5 +327,75 @@ describe('Layer', () => {
     } finally {
       document.body.removeChild(target);
     }
+  });
+
+  test('invoke onClickOutside when modal={true}', () => {
+    const onClickOutside = jest.fn();
+    render(
+      <Grommet>
+        <FakeLayer id="layer-node" onClickOutside={onClickOutside}>
+          <div data-testid="test-body-node" />
+        </FakeLayer>
+      </Grommet>,
+    );
+    expectPortal('layer-node').toMatchSnapshot();
+
+    fireEvent(
+      document,
+      new MouseEvent('mousedown', { bubbles: true, cancelable: true }),
+    );
+    expect(onClickOutside).toHaveBeenCalledTimes(1);
+  });
+
+  test('invoke onClickOutside when modal={false}', () => {
+    const onClickOutside = jest.fn();
+    render(
+      <Grommet>
+        <FakeLayer
+          id="layer-node"
+          onClickOutside={onClickOutside}
+          modal={false}
+        >
+          <div data-testid="test-body-node" />
+        </FakeLayer>
+      </Grommet>,
+    );
+    expectPortal('layer-node').toMatchSnapshot();
+
+    fireEvent(
+      document,
+      new MouseEvent('mousedown', { bubbles: true, cancelable: true }),
+    );
+    expect(onClickOutside).toHaveBeenCalledTimes(1);
+  });
+
+  test('invoke onClickOutside when modal={false} and layer has target', () => {
+    const onClickOutside = jest.fn();
+    render(
+      <TargetLayer
+        id="target-test"
+        onClickOutside={onClickOutside}
+        modal={false}
+      />,
+    );
+    expectPortal('target-test').toMatchSnapshot();
+
+    fireEvent(
+      document,
+      new MouseEvent('mousedown', { bubbles: true, cancelable: true }),
+    );
+    expect(onClickOutside).toHaveBeenCalledTimes(1);
+  });
+
+  test('invoke onClickOutside when modal={true} and layer has target', () => {
+    const onClickOutside = jest.fn();
+    render(<TargetLayer id="target-test" onClickOutside={onClickOutside} />);
+    expectPortal('target-test').toMatchSnapshot();
+
+    fireEvent(
+      document,
+      new MouseEvent('mousedown', { bubbles: true, cancelable: true }),
+    );
+    expect(onClickOutside).toHaveBeenCalledTimes(1);
   });
 });

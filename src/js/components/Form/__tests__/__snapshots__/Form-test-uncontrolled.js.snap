@@ -1532,7 +1532,7 @@ exports[`Form uncontrolled uncontrolled 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kfWKkd"
+            class="StyledTextInput-sc-1x30a0s-0 nnMiQ"
             name="test"
             placeholder="test input"
             value=""
@@ -1566,7 +1566,7 @@ exports[`Form uncontrolled uncontrolled 3`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kfWKkd"
+            class="StyledTextInput-sc-1x30a0s-0 nnMiQ"
             name="test"
             placeholder="test input"
             value=""
@@ -1787,7 +1787,7 @@ exports[`Form uncontrolled uncontrolled onValidate 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kfWKkd"
+            class="StyledTextInput-sc-1x30a0s-0 nnMiQ"
             name="test"
             placeholder="test input"
             value=""
@@ -2035,7 +2035,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kfWKkd"
+            class="StyledTextInput-sc-1x30a0s-0 nnMiQ"
             name="test"
             placeholder="test input"
             value=""
@@ -2283,7 +2283,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kfWKkd"
+            class="StyledTextInput-sc-1x30a0s-0 nnMiQ"
             name="test"
             placeholder="test input"
             value=""

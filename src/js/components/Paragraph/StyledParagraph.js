@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { genericStyles, normalizeColor } from '../../utils';
+import { genericStyles, normalizeColor, textAlignStyle } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 const colorStyle = css`
@@ -19,16 +19,6 @@ const sizeStyle = props => {
 
 const fontFamily = css`
   font-family: ${props => props.theme.paragraph.font.family};
-`;
-
-const TEXT_ALIGN_MAP = {
-  center: 'center',
-  end: 'right',
-  start: 'left',
-};
-
-const textAlignStyle = css`
-  text-align: ${props => TEXT_ALIGN_MAP[props.textAlign]};
 `;
 
 const StyledParagraph = styled.p`

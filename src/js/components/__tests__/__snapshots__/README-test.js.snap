@@ -6786,6 +6786,16 @@ header
 footer
 \`\`\`
 
+**placeholder**
+
+A text message or any content to place over the table body.
+      For example, to say \\"loading ...\\" when waiting for data to arrive.
+
+\`\`\`
+string
+node
+\`\`\`
+
 **primaryKey**
 
 When supplied, indicates the property for a data object to use to
@@ -10705,7 +10715,7 @@ The stack order of Layer Container. Expects \`number\`.
 Defaults to
 
 \`\`\`
-15
+20
 \`\`\`
 
 **layer.extend**
@@ -10746,7 +10756,7 @@ The stack order of Layer. Expects \`number\`.
 Defaults to
 
 \`\`\`
-10
+20
 \`\`\`
 
 **global.breakpoints**
@@ -13849,7 +13859,9 @@ Custom messages.
 
 **multiple**
 
-Whether to allow multiple options to be selected.
+Whether to allow multiple options to be selected. When multiple is true, 
+      'value' should be an array of selected options and 'options' should be 
+      an array of possible options
 
 \`\`\`
 boolean
@@ -16449,6 +16461,16 @@ suggestions and instead rely on the user to type more.
   }
   string
 ]
+\`\`\`
+
+**textAlign**
+
+How to align the text inside the input. Defaults to \`start\`.
+
+\`\`\`
+start
+center
+end
 \`\`\`
 
 **value**

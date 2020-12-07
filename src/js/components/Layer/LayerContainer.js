@@ -2,6 +2,7 @@ import React, {
   forwardRef,
   useContext,
   useEffect,
+  useMemo,
   useRef,
   useState,
 } from 'react';
@@ -10,7 +11,11 @@ import { defaultProps } from '../../default-props';
 
 import { FocusedContainer } from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
-import { backgroundIsDark, findVisibleParent } from '../../utils';
+import {
+  backgroundIsDark,
+  findVisibleParent,
+  PortalContext,
+} from '../../utils';
 
 import { StyledLayer, StyledContainer, StyledOverlay } from './StyledLayer';
 
@@ -21,6 +26,7 @@ const HiddenAnchor = styled.a`
   position: absolute;
 `;
 
+const defaultPortalContext = [];
 const fullBounds = { left: 0, right: 0, top: 0, bottom: 0 };
 
 const LayerContainer = forwardRef(
@@ -46,6 +52,12 @@ const LayerContainer = forwardRef(
     const anchorRef = useRef();
     const containerRef = useRef();
     const layerRef = useRef();
+    const portalContext = useContext(PortalContext) || defaultPortalContext;
+    const portalId = useMemo(() => portalContext.length, [portalContext]);
+    const nextPortalContext = useMemo(() => [...portalContext, portalId], [
+      portalContext,
+      portalId,
+    ]);
 
     useEffect(() => {
       if (position !== 'hidden') {
@@ -77,6 +89,35 @@ const LayerContainer = forwardRef(
     }, [position, ref]);
 
     useEffect(() => {
+      const onClickDocument = event => {
+        // determine which portal id the target is in, if any
+        let clickedPortalId = null;
+        let node = event.target;
+        while (clickedPortalId === null && node !== document && node !== null) {
+          // check if user click occurred within the layer
+          const attr = node.getAttribute('data-g-portal-id');
+          if (attr !== null && attr !== '')
+            clickedPortalId = parseInt(attr, 10);
+          // loop upward through parents to see if clicked element is a child
+          // of the Layer. if so, click was inside Layer
+          else node = node.parentNode;
+        }
+        if (
+          (clickedPortalId === null ||
+            portalContext.indexOf(clickedPortalId) !== -1) &&
+          node !== null
+        ) {
+          // if the click occurred outside of the Layer portal, call
+          // the user's onClickOutside function
+          onClickOutside(event);
+        }
+      };
+
+      // if user provides an onClickOutside function, listen for mousedown event
+      if (onClickOutside) {
+        document.addEventListener('mousedown', onClickDocument);
+      }
+
       if (layerTarget) {
         const updateBounds = () => {
           const rect = findVisibleParent(layerTarget).getBoundingClientRect();
@@ -95,11 +136,18 @@ const LayerContainer = forwardRef(
         return () => {
           window.removeEventListener('resize', updateBounds);
           window.removeEventListener('scroll', updateBounds, true);
+          if (onClickOutside) {
+            document.removeEventListener('mousedown', onClickDocument);
+          }
         };
       }
       setTargetBounds(fullBounds);
-      return undefined;
-    }, [layerTarget]);
+      return () => {
+        if (onClickOutside) {
+          document.removeEventListener('mousedown', onClickDocument);
+        }
+      };
+    }, [layerTarget, onClickOutside, portalContext, portalId]);
 
     let content = (
       <StyledContainer
@@ -114,6 +162,9 @@ const LayerContainer = forwardRef(
         plain={plain}
         responsive={responsive}
         dir={theme.dir}
+        // portalId is used to determine if click occurred inside
+        // or outside of the layer
+        data-g-portal-id={portalId}
       >
         {/* eslint-disable max-len */}
         {/* eslint-disable jsx-a11y/anchor-is-valid, jsx-a11y/anchor-has-content */}
@@ -137,8 +188,8 @@ const LayerContainer = forwardRef(
         >
           <StyledOverlay
             plain={plain}
-            onMouseDown={onClickOutside}
             responsive={responsive}
+            onMouseDown={onClickOutside}
           />
           {content}
         </StyledLayer>
@@ -159,12 +210,19 @@ const LayerContainer = forwardRef(
         );
       }
     }
+
+    content = (
+      <PortalContext.Provider value={nextPortalContext}>
+        {content}
+      </PortalContext.Provider>
+    );
+
     if (modal) {
       content = (
         <FocusedContainer
           hidden={position === 'hidden'}
           // if layer has a target, do not restrict scroll.
-          // restricting scroll  could inhibit the user's
+          // restricting scroll could inhibit the user's
           // ability to scroll the page while the layer is open.
           restrictScroll={!layerTarget ? true : undefined}
           trapFocus

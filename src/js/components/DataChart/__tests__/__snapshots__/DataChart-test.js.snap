@@ -4383,9 +4383,8 @@ exports[`DataChart detail 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
+  padding-left: 48px;
+  padding-right: 48px;
 }
 
 .c13 {
@@ -4403,7 +4402,7 @@ exports[`DataChart detail 1`] = `
   height: 100%;
 }
 
-.c15 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4422,14 +4421,25 @@ exports[`DataChart detail 1`] = `
   justify-content: space-between;
 }
 
-.c14 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 2px;
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
 }
 
 .c8 {
@@ -4554,13 +4564,13 @@ exports[`DataChart detail 1`] = `
             onBlur={[Function]}
             onFocus={[Function]}
             onKeyDown={[Function]}
-            onMouseOut={[Function]}
             tabIndex={0}
           >
             <div
               className="c12"
               onBlur={[Function]}
               onFocus={[Function]}
+              onMouseLeave={[Function]}
               onMouseOver={[Function]}
             >
               <div
@@ -4568,12 +4578,10 @@ exports[`DataChart detail 1`] = `
               />
             </div>
             <div
-              className="c14"
-            />
-            <div
               className="c12"
               onBlur={[Function]}
               onFocus={[Function]}
+              onMouseLeave={[Function]}
               onMouseOver={[Function]}
             >
               <div
@@ -4584,15 +4592,15 @@ exports[`DataChart detail 1`] = `
         </div>
       </div>
       <div
-        className="c15"
+        className="c14"
       >
         <div
-          className="c12"
+          className="c15"
         >
           0
         </div>
         <div
-          className="c12"
+          className="c15"
         >
           1
         </div>
@@ -4668,15 +4676,15 @@ exports[`DataChart detail 1`] = `
         </div>
       </div>
       <div
-        className="c15"
+        className="c14"
       >
         <div
-          className="c12"
+          className="c15"
         >
           0
         </div>
         <div
-          className="c12"
+          className="c15"
         >
           1
         </div>

@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 import { TableContext } from '../Table/TableContext';
 import { StyledTableFooter } from '../Table/StyledTable';
 
-const TableFooter = props => (
+const TableFooter = forwardRef((props, ref) => (
   <TableContext.Provider value="footer">
-    <StyledTableFooter {...props} />
+    <StyledTableFooter ref={ref} {...props} />
   </TableContext.Provider>
-);
+));
+
+TableFooter.displayName = 'TableFooter';
 
 let TableFooterDoc;
 if (process.env.NODE_ENV !== 'production') {

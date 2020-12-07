@@ -196,7 +196,8 @@ const List = React.forwardRef(
                   adjustedBackground[index % adjustedBackground.length];
               }
 
-              let adjustedBorder = border || theme.list.item.border;
+              let adjustedBorder =
+                border !== undefined ? border : theme.list.item.border;
               if (adjustedBorder === 'horizontal' && index) {
                 adjustedBorder = 'bottom';
               }
