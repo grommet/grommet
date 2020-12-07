@@ -188,7 +188,7 @@ string
 
 A unique identifier for the Chart. This
       is required if more than one Chart is shown and they use color
-      gradients.
+      gradients or if a pattern is specified.
 
 ```
 string

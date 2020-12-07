@@ -218,7 +218,7 @@ const Chart = React.forwardRef(
     };
 
     const useGradient = color && Array.isArray(color);
-    const patternId = pattern && `${pattern}-${id}-pattern`;
+    let patternId;
 
     const renderBars = () =>
       (values || [])
@@ -282,7 +282,6 @@ const Chart = React.forwardRef(
               <title>{label}</title>
               <path
                 d={d}
-                fill={patternId ? `url(#${patternId})` : undefined}
                 {...hoverProps}
                 {...clickProps}
                 {...valueRest}
@@ -376,6 +375,8 @@ const Chart = React.forwardRef(
       if (onClick) {
         clickProps = { onClick };
       }
+
+      patternId = pattern && `${pattern}-${id}-pattern`;
 
       return (
         <g>
