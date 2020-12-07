@@ -35,7 +35,8 @@ var Children = function Children() {
     align: "center"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.List, {
     data: data,
-    pad: "medium"
+    pad: "medium",
+    border: false
   }, function (datum) {
     return /*#__PURE__*/_react["default"].createElement(_grommet.Tip, {
       content: datum.state,

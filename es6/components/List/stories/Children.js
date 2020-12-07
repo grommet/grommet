@@ -23,7 +23,8 @@ export var Children = function Children() {
     align: "center"
   }, /*#__PURE__*/React.createElement(List, {
     data: data,
-    pad: "medium"
+    pad: "medium",
+    border: false
   }, function (datum) {
     return /*#__PURE__*/React.createElement(Tip, {
       content: datum.state,

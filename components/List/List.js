@@ -183,7 +183,7 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       adjustedBackground = adjustedBackground[index % adjustedBackground.length];
     }
 
-    var adjustedBorder = border || theme.list.item.border;
+    var adjustedBorder = border !== undefined ? border : theme.list.item.border;
 
     if (adjustedBorder === 'horizontal' && index) {
       adjustedBorder = 'bottom';
