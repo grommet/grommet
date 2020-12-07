@@ -26,14 +26,6 @@ var sizeStyle = function sizeStyle(props) {
 var fontFamily = (0, _styledComponents.css)(["font-family:", ";"], function (props) {
   return props.theme.paragraph.font.family;
 });
-var TEXT_ALIGN_MAP = {
-  center: 'center',
-  end: 'right',
-  start: 'left'
-};
-var textAlignStyle = (0, _styledComponents.css)(["text-align:", ";"], function (props) {
-  return TEXT_ALIGN_MAP[props.textAlign];
-});
 
 var StyledParagraph = _styledComponents["default"].p.withConfig({
   displayName: "StyledParagraph",
@@ -41,7 +33,7 @@ var StyledParagraph = _styledComponents["default"].p.withConfig({
 })(["", " ", " ", " ", " ", " ", ""], _utils.genericStyles, function (props) {
   return sizeStyle(props);
 }, function (props) {
-  return props.textAlign && textAlignStyle;
+  return props.textAlign && _utils.textAlignStyle;
 }, function (props) {
   return props.colorProp && colorStyle;
 }, function (props) {

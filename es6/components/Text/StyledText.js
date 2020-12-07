@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { genericStyles, normalizeColor } from '../../utils';
+import { genericStyles, normalizeColor, textAlignStyle } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 var sizeStyle = function sizeStyle(props) {
@@ -13,14 +13,6 @@ var sizeStyle = function sizeStyle(props) {
   return css(["font-size:", ";line-height:normal;"], size);
 };
 
-var TEXT_ALIGN_MAP = {
-  center: 'center',
-  end: 'right',
-  start: 'left'
-};
-var textAlignStyle = css(["text-align:", ";"], function (props) {
-  return TEXT_ALIGN_MAP[props.textAlign];
-});
 var truncateStyle = "\n  white-space: nowrap;\n  max-width: 100%;\n  overflow: hidden;\n  text-overflow: ellipsis;\n";
 var colorStyle = css(["color:", ";"], function (props) {
   return normalizeColor(props.colorProp, props.theme);

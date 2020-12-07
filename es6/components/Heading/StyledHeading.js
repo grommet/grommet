@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { breakpointStyle, genericStyles, normalizeColor } from '../../utils';
+import { breakpointStyle, genericStyles, normalizeColor, textAlignStyle } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 var sizeStyle = function sizeStyle(props) {
@@ -42,14 +42,6 @@ var fontFamily = function fontFamily(props) {
   return props.theme.heading.font ? css(["font-family:", ";"], props.theme.heading.font.family) : '';
 };
 
-var TEXT_ALIGN_MAP = {
-  center: 'center',
-  end: 'right',
-  start: 'left'
-};
-var textAlignStyle = css(["text-align:", ";"], function (props) {
-  return TEXT_ALIGN_MAP[props.textAlign];
-});
 var truncateStyle = "\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n";
 var colorStyle = css(["color:", ";"], function (props) {
   return normalizeColor(props.colorProp, props.theme);

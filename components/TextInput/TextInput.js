@@ -97,8 +97,9 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       readOnly = _ref.readOnly,
       reverse = _ref.reverse,
       suggestions = _ref.suggestions,
+      textAlign = _ref.textAlign,
       valueProp = _ref.value,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "defaultValue", "dropAlign", "dropHeight", "dropTarget", "dropProps", "icon", "id", "messages", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "onSelect", "onSuggestionSelect", "onSuggestionsClose", "onSuggestionsOpen", "placeholder", "plain", "readOnly", "reverse", "suggestions", "value"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "defaultValue", "dropAlign", "dropHeight", "dropTarget", "dropProps", "icon", "id", "messages", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "onSelect", "onSuggestionSelect", "onSuggestionsClose", "onSuggestionsOpen", "placeholder", "plain", "readOnly", "reverse", "suggestions", "textAlign", "value"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
@@ -363,7 +364,8 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     placeholder: typeof placeholder === 'string' ? placeholder : undefined,
     icon: icon,
     reverse: reverse,
-    focus: focus
+    focus: focus,
+    textAlign: textAlign
   }, rest, extraProps, {
     defaultValue: renderLabel(defaultValue),
     value: renderLabel(value),

@@ -344,3 +344,11 @@ export var kindPartStyles = function kindPartStyles(obj, theme, colorValue) {
   if (obj.extend) styles.push(obj.extend);
   return styles;
 };
+var TEXT_ALIGN_MAP = {
+  center: 'center',
+  end: 'right',
+  start: 'left'
+};
+export var textAlignStyle = css(["text-align:", ";"], function (props) {
+  return TEXT_ALIGN_MAP[props.textAlign];
+});

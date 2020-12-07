@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { genericStyles, normalizeColor } from '../../utils';
+import { genericStyles, normalizeColor, textAlignStyle } from '../../utils';
 import { defaultProps } from '../../default-props';
 var colorStyle = css(["color:", ";"], function (props) {
   return normalizeColor(props.colorProp, props.theme);
@@ -13,14 +13,6 @@ var sizeStyle = function sizeStyle(props) {
 
 var fontFamily = css(["font-family:", ";"], function (props) {
   return props.theme.paragraph.font.family;
-});
-var TEXT_ALIGN_MAP = {
-  center: 'center',
-  end: 'right',
-  start: 'left'
-};
-var textAlignStyle = css(["text-align:", ";"], function (props) {
-  return TEXT_ALIGN_MAP[props.textAlign];
 });
 var StyledParagraph = styled.p.withConfig({
   displayName: "StyledParagraph",

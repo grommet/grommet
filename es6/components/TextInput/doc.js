@@ -49,6 +49,7 @@ export var doc = function doc(TextInput) {
       value: PropTypes.any // this is intentional any
 
     }), PropTypes.string])).description("Suggestions to show. It is recommended to avoid showing too many\nsuggestions and instead rely on the user to type more."),
+    textAlign: PropTypes.oneOf(['start', 'center', 'end']).description('How to align the text inside the input.').defaultValue('start'),
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).description('What text to put in the input.')
   };
   return DocumentedTextInput;

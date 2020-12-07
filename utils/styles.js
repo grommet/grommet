@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.kindPartStyles = exports.plainInputStyle = exports.sizeStyle = exports.disabledStyle = exports.genericStyles = exports.overflowStyle = exports.inputStyle = exports.getInputPadBySide = exports.unfocusStyle = exports.focusStyle = exports.fillStyle = exports.edgeStyle = exports.controlBorderStyle = exports.baseStyle = void 0;
+exports.textAlignStyle = exports.kindPartStyles = exports.plainInputStyle = exports.sizeStyle = exports.disabledStyle = exports.genericStyles = exports.overflowStyle = exports.inputStyle = exports.getInputPadBySide = exports.unfocusStyle = exports.focusStyle = exports.fillStyle = exports.edgeStyle = exports.controlBorderStyle = exports.baseStyle = void 0;
 
 var _styledComponents = require("styled-components");
 
@@ -384,3 +384,12 @@ var kindPartStyles = function kindPartStyles(obj, theme, colorValue) {
 };
 
 exports.kindPartStyles = kindPartStyles;
+var TEXT_ALIGN_MAP = {
+  center: 'center',
+  end: 'right',
+  start: 'left'
+};
+var textAlignStyle = (0, _styledComponents.css)(["text-align:", ";"], function (props) {
+  return TEXT_ALIGN_MAP[props.textAlign];
+});
+exports.textAlignStyle = textAlignStyle;

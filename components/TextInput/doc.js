@@ -57,6 +57,7 @@ var doc = function doc(TextInput) {
       value: _reactDesc.PropTypes.any // this is intentional any
 
     }), _reactDesc.PropTypes.string])).description("Suggestions to show. It is recommended to avoid showing too many\nsuggestions and instead rely on the user to type more."),
+    textAlign: _reactDesc.PropTypes.oneOf(['start', 'center', 'end']).description('How to align the text inside the input.').defaultValue('start'),
     value: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.number]).description('What text to put in the input.')
   };
   return DocumentedTextInput;
