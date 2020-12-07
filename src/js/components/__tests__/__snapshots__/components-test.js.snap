@@ -6806,8 +6806,20 @@ bottom",
     "usage": "import { TableCell } from 'grommet';
 <TableCell />",
   },
-  "TableFooter": [Function],
-  "TableHeader": [Function],
+  "TableFooter": Object {
+    "description": "The footer of a table.",
+    "intrinsicElement": "tfoot",
+    "name": "TableFooter",
+    "usage": "import { TableFooter } from 'grommet';
+<TableFooter />",
+  },
+  "TableHeader": Object {
+    "description": "The header of a table.",
+    "intrinsicElement": "thead",
+    "name": "TableHeader",
+    "usage": "import { TableHeader } from 'grommet';
+<TableHeader />",
+  },
   "TableRow": Object {
     "description": "A row of cells in a table.",
     "intrinsicElement": "tr",

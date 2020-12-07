@@ -544,6 +544,16 @@ header
 footer
 ```
 
+**placeholder**
+
+A text message or any content to place over the table body.
+      For example, to say "loading ..." when waiting for data to arrive.
+
+```
+string
+node
+```
+
 **primaryKey**
 
 When supplied, indicates the property for a data object to use to
