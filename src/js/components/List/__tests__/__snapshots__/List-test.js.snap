@@ -316,7 +316,83 @@ exports[`List background string 1`] = `
 </div>
 `;
 
-exports[`List border boolean 1`] = `
+exports[`List border boolean false 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.c1 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c3:focus {
+  outline: none;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <ul
+    class="c1"
+  >
+    <li
+      class="c2 c3"
+    >
+      one
+    </li>
+    <li
+      class="c2 c3"
+    >
+      two
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`List border boolean true 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
