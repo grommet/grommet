@@ -10,7 +10,10 @@ export var NotificationLayer = function NotificationLayer() {
       setOpen = _React$useState[1];
 
   var onOpen = function onOpen() {
-    return setOpen(true);
+    setOpen(true);
+    setTimeout(function () {
+      setOpen(undefined);
+    }, 3000);
   };
 
   var onClose = function onClose() {
@@ -57,12 +60,17 @@ export var NotificationLayer = function NotificationLayer() {
     align: "center",
     direction: "row",
     gap: "xsmall"
-  }, /*#__PURE__*/React.createElement(StatusGood, null), /*#__PURE__*/React.createElement(Text, null, "A new virtual machine has been successfully added")), /*#__PURE__*/React.createElement(Button, {
+  }, /*#__PURE__*/React.createElement(StatusGood, null), /*#__PURE__*/React.createElement(Text, null, "A new virtual machine has been successfully added (this Layer will close after 3 seconds)")), /*#__PURE__*/React.createElement(Button, {
     icon: /*#__PURE__*/React.createElement(FormClose, null),
     onClick: onClose,
     plain: true
   }))));
 };
 NotificationLayer.story = {
-  name: 'Notification'
+  name: 'Notification',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
+  }
 };

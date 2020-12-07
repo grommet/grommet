@@ -19,7 +19,10 @@ var NotificationLayer = function NotificationLayer() {
       setOpen = _React$useState[1];
 
   var onOpen = function onOpen() {
-    return setOpen(true);
+    setOpen(true);
+    setTimeout(function () {
+      setOpen(undefined);
+    }, 3000);
   };
 
   var onClose = function onClose() {
@@ -66,7 +69,7 @@ var NotificationLayer = function NotificationLayer() {
     align: "center",
     direction: "row",
     gap: "xsmall"
-  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.StatusGood, null), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "A new virtual machine has been successfully added")), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.StatusGood, null), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "A new virtual machine has been successfully added (this Layer will close after 3 seconds)")), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.FormClose, null),
     onClick: onClose,
     plain: true
@@ -75,5 +78,10 @@ var NotificationLayer = function NotificationLayer() {
 
 exports.NotificationLayer = NotificationLayer;
 NotificationLayer.story = {
-  name: 'Notification'
+  name: 'Notification',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
+  }
 };
