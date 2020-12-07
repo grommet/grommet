@@ -6,7 +6,7 @@ import { themeDocUtils } from '../../utils/themeDocUtils';
 
 export const doc = Calendar => {
   const DocumentedCalendar = describe(Calendar)
-    .availableAt(getAvailableAtBadge('Calendar'))
+    .availableAt(getAvailableAtBadge('Calendar', 'Visualizations'))
     .description(
       `A calendar of days displayed by month.
       It can be used to select a single date, a range of dates, or multiple
@@ -20,6 +20,12 @@ export const doc = Calendar => {
 
   DocumentedCalendar.propTypes = {
     ...genericProps,
+    activeDate: PropTypes.oneOf(['start', 'end'])
+      .description(
+        `When using range, Whether the next date selection will affect the 
+        start or end bound of the range.`,
+      )
+      .defaultValue('start'),
     animate: PropTypes.bool
       .description(
         `Whether to animate the calender as the user interacts with it.`,
@@ -95,20 +101,26 @@ to disable the previous and next buttons.
       For single select, make this the subsequent \`date\` property value.
       For multiple select or ranges, toggle values in \`dates\`.
       Not specifying this property makes the component read only.`),
-    range: PropTypes.bool
+    range: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['array'])])
       .description(
         `Whether to automatically manage multiple date selection as a range.
         When the user clicks the first date, onSelect will be called with that
         date. When the user selects another date, onSelect will be called with
-        an array of two dates.`,
+        an array of two dates. If range = "array", then an array of dates will 
+        be returned even when the start or end date of the range is undefined.`,
       )
       .defaultValue(false),
     reference: PropTypes.string.description(
       "The date to show if `date` isn't set, in ISO8601 format",
     ),
-    showAdjacentDays: PropTypes.bool
+    showAdjacentDays: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.oneOf(['trim']),
+    ])
       .description(
-        `Whether to show the days from the previous and next months.`,
+        `Whether to show the days from the previous and next months. 
+        \`trim\` limits adjacent days shown to rows containing days in 
+        the current month.`,
       )
       .defaultValue(true),
     size: PropTypes.oneOfType([

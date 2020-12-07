@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, WorldMap } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Example = () => {
+export const Color = () => {
   return (
     <Grommet theme={grommet}>
       <Box align="center" pad="large">
@@ -14,4 +13,8 @@ const Example = () => {
   );
 };
 
-storiesOf('WorldMap', module).add('Color', () => <Example />);
+Color.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
+};

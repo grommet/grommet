@@ -5,7 +5,7 @@ import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = Accordion => {
   const DocumentedAccordion = describe(Accordion)
-    .availableAt(getAvailableAtBadge('Accordion'))
+    .availableAt(getAvailableAtBadge('Accordion', 'Controls'))
     .description('An accordion containing collapsible panels.')
     .usage(
       `import { Accordion, AccordionPanel } from 'grommet';

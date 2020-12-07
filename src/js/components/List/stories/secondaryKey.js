@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, List } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-export const locations = [
+const locations = [
   'Boise',
   'Fort Collins',
   'Los Gatos',
@@ -12,7 +11,7 @@ export const locations = [
   'San Francisco',
 ];
 
-export const data = [];
+const data = [];
 
 for (let i = 0; i < 40; i += 1) {
   data.push({
@@ -21,7 +20,7 @@ for (let i = 0; i < 40; i += 1) {
   });
 }
 
-const SecondaryKeyList = () => (
+export const SecondaryKey = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
       <List
@@ -32,5 +31,3 @@ const SecondaryKeyList = () => (
     </Box>
   </Grommet>
 );
-
-storiesOf('List', module).add('secondaryKey', () => <SecondaryKeyList />);

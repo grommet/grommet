@@ -6,7 +6,7 @@ import { themeDocUtils } from '../../utils/themeDocUtils';
 
 export const doc = Carousel => {
   const DocumentedCarousel = describe(Carousel)
-    .availableAt(getAvailableAtBadge('Carousel'))
+    .availableAt(getAvailableAtBadge('Carousel', 'Media'))
     .description(
       `A carousel that cycles through children. Child components
       would typically be Images. It is the caller's responsibility to ensure

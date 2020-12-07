@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
   Box,
@@ -70,6 +69,9 @@ const MultipleDrop = () => {
   );
 };
 
-storiesOf('Drop', module).add('Multiple', () => <MultipleDrop />, {
-  chromatic: { disable: true },
-});
+export const Multiple = () => <MultipleDrop />;
+Multiple.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
+};

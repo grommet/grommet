@@ -39,9 +39,27 @@ const SelectOption = styled(Button)`
   width: 100%;
 `;
 
+const ClearButton = ({ clear, onClear, name, theme, setFocus }) => {
+  const { label, position } = clear;
+  const align = position !== 'bottom' ? 'start' : 'center';
+  const buttonLabel = label || `Clear ${name || 'selection'}`;
+  return (
+    <Button
+      onClick={onClear}
+      onFocus={() => setFocus(true)}
+      onBlur={() => setFocus(false)}
+    >
+      <Box {...theme.select.clear.container} align={align}>
+        <Text {...theme.select.clear.text}>{buttonLabel}</Text>
+      </Box>
+    </Button>
+  );
+};
+
 const SelectContainer = forwardRef(
   (
     {
+      clear,
       children = null,
       disabled,
       disabledKey,
@@ -50,6 +68,7 @@ const SelectContainer = forwardRef(
       id,
       labelKey,
       multiple,
+      name,
       onChange,
       onKeyDown,
       onMore,
@@ -68,9 +87,10 @@ const SelectContainer = forwardRef(
     const [search, setSearch] = useState();
     const [activeIndex, setActiveIndex] = useState(-1);
     const [keyboardNavigation, setKeyboardNavigation] = useState();
+    const [focus, setFocus] = useState(false);
+    const [initialOptions] = useState(options);
     const searchRef = useRef();
     const optionsRef = useRef();
-
     // adjust activeIndex when options change
     useEffect(() => {
       if (activeIndex === -1 && search && optionIndexesInValue.length) {
@@ -178,16 +198,19 @@ const SelectContainer = forwardRef(
           let nextSelected;
           if (multiple) {
             const nextOptionIndexesInValue = optionIndexesInValue.slice(0);
-            const valueIndex = optionIndexesInValue.indexOf(index);
+            const initialOptionsIndex = initialOptions.indexOf(options[index]);
+            const valueIndex = optionIndexesInValue.indexOf(
+              initialOptionsIndex,
+            );
             if (valueIndex === -1) {
-              nextOptionIndexesInValue.push(index);
+              nextOptionIndexesInValue.push(initialOptionsIndex);
             } else {
               nextOptionIndexesInValue.splice(valueIndex, 1);
             }
             nextValue = nextOptionIndexesInValue.map(i =>
               valueKey && valueKey.reduce
-                ? applyKey(options[i], valueKey)
-                : options[i],
+                ? applyKey(initialOptions[i], valueKey)
+                : initialOptions[i],
             );
             nextSelected = nextOptionIndexesInValue;
           } else {
@@ -204,7 +227,21 @@ const SelectContainer = forwardRef(
           });
         }
       },
-      [multiple, onChange, optionIndexesInValue, options, valueKey],
+      [
+        multiple,
+        onChange,
+        optionIndexesInValue,
+        initialOptions,
+        options,
+        valueKey,
+      ],
+    );
+
+    const onClear = useCallback(
+      event => {
+        onChange(event, { option: undefined, value: '', selected: '' });
+      },
+      [onChange],
     );
 
     const onNextOption = useCallback(
@@ -249,12 +286,12 @@ const SelectContainer = forwardRef(
 
     const onSelectOption = useCallback(
       event => {
-        if (activeIndex >= 0) {
+        if (activeIndex >= 0 && !focus) {
           event.preventDefault(); // prevent submitting forms
           selectOption(activeIndex)(event);
         }
       },
-      [activeIndex, selectOption],
+      [activeIndex, selectOption, focus],
     );
 
     const customSearchInput = theme.select.searchInput;
@@ -296,6 +333,15 @@ const SelectContainer = forwardRef(
                 }}
               />
             </Box>
+          )}
+          {clear && clear.position !== 'bottom' && value && (
+            <ClearButton
+              clear={clear}
+              name={name}
+              onClear={onClear}
+              theme={theme}
+              setFocus={setFocus}
+            />
           )}
           <OptionsBox role="menubar" tabIndex="-1" ref={optionsRef}>
             {options.length > 0 ? (
@@ -377,6 +423,15 @@ const SelectContainer = forwardRef(
               </SelectOption>
             )}
           </OptionsBox>
+          {clear && clear.position === 'bottom' && value && (
+            <ClearButton
+              clear={clear}
+              name={name}
+              onClear={onClear}
+              theme={theme}
+              setFocus={setFocus}
+            />
+          )}
         </StyledContainer>
       </Keyboard>
     );

@@ -17,6 +17,7 @@ import { createPortal, expectPortal } from '../../../utils/portal';
 import { Grommet } from '../../Grommet';
 import { TextInput } from '..';
 import { Keyboard } from '../../Keyboard';
+import { Text } from '../../Text';
 
 describe('TextInput', () => {
   beforeEach(createPortal);
@@ -469,6 +470,42 @@ describe('TextInput', () => {
         <TextInput plain name="name" placeholder="should still have padding" />
       </Grommet>,
     );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should show non-string placeholder', () => {
+    const { container } = render(
+      <Grommet>
+        <TextInput
+          data-testid="test-styled-placeholder"
+          id="styled-placeholder"
+          name="styled-placeholder"
+          placeholder={<Text>placeholder text</Text>}
+        />
+      </Grommet>,
+    );
+
+    const placeholder = screen.getByText('placeholder text');
+    expect(placeholder).toBeTruthy();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should hide non-string placeholder when having a value', () => {
+    const { container } = render(
+      <Grommet>
+        <TextInput
+          data-testid="styled-placeholder"
+          id="styled-placeholder"
+          name="styled-placeholder"
+          placeholder={<Text>placeholder text</Text>}
+          value="test"
+        />
+      </Grommet>,
+    );
+
+    const placeholder = screen.queryByText('placeholder text');
+    expect(placeholder).toBeNull();
+
     expect(container.firstChild).toMatchSnapshot();
   });
 });

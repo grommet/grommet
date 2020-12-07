@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, RadioButtonGroup } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { Ascend, Descend } from 'grommet-icons';
 
-const ChildrenRadioButtonGroup = () => {
+export const Children = () => {
   const [value, setValue] = useState();
 
   return (
@@ -36,7 +35,3 @@ const ChildrenRadioButtonGroup = () => {
     </Grommet>
   );
 };
-
-storiesOf('RadioButtonGroup', module).add('Children', () => (
-  <ChildrenRadioButtonGroup />
-));

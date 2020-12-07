@@ -93,6 +93,6 @@ Grommet is produced using this great tool:
 [playground]: https://codesandbox.io/s/github/grommet/grommet-sandbox
 [prettier]: https://github.com/prettier/prettier
 [sandboxes]: https://codesandbox.io/u/grommetux/sandboxes
-[slack]: http://slackin.grommet.io
+[slack]: https://slack-invite.grommet.io
 [storybook]: https://storybook.grommet.io
 [twitter]: https://twitter.com/grommet_io

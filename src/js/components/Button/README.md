@@ -5,7 +5,7 @@ You can provide a single function child that will be called with
       'disabled', 'hover' and 'focus' keys. 
       This allows you to customize the rendering of the Button in those cases.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Button&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/button&module=%2Fsrc%2FButton.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Controls-Button&full=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/button&module=%2Fsrc%2FButton.js)
 ## Usage
 
 ```javascript
@@ -345,6 +345,24 @@ _self
 _blank
 _parent
 _top
+string
+```
+
+**tip**
+
+tooltip or a hint when hovering over the button.
+
+```
+{
+  content: 
+    node
+    string,
+  dropProps: 
+    {
+
+    },
+  plain: boolean
+}
 string
 ```
 
@@ -1126,6 +1144,28 @@ Defaults to
 
 ```
 undefined
+```
+
+**tip.content**
+
+When using tip prop, any valid Box property for the Tip container. Expects `object`.
+
+Defaults to
+
+```
+{ background: 'background-contrast', elevation: 'small', 
+    margin: 'xsmall', pad: { vertical: 'xsmall', horizontal: 'small' }, 
+    round: 'small'}
+```
+
+**tip.drop**
+
+When using tip prop, any valid Drop property for the Tooltip. Expects `object`.
+
+Defaults to
+
+```
+{align: { top: 'bottom' }}
 ```
 
 **global.focus.border.color**

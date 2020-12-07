@@ -57,22 +57,62 @@ describe('Clock', () => {
 
   ['analog', 'digital'].forEach(type =>
     ['hours', 'minutes', 'seconds'].forEach(precision =>
-      ['xsmall', 'small', 'medium', 'large', 'xlarge'].forEach(size =>
-        test(`type ${type} precision ${precision} size ${size}`, () => {
-          const component = renderer.create(
-            <Grommet>
-              <Clock
-                run={false}
-                type={type}
-                precision={precision}
-                size={size}
-                time={DURATION}
-              />
-            </Grommet>,
-          );
-          expect(component.toJSON()).toMatchSnapshot();
-        }),
+      ['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge'].forEach(
+        size =>
+          test(`type ${type} precision ${precision} size ${size}`, () => {
+            const component = renderer.create(
+              <Grommet>
+                <Clock
+                  run={false}
+                  type={type}
+                  precision={precision}
+                  size={size}
+                  time={DURATION}
+                />
+              </Grommet>,
+            );
+            expect(component.toJSON()).toMatchSnapshot();
+          }),
       ),
     ),
   );
+
+  ['hours', 'minutes', 'seconds'].forEach(precision =>
+    test(`type analog precision ${precision} size huge`, () => {
+      const component = renderer.create(
+        <Grommet>
+          <Clock
+            run={false}
+            type="analog"
+            precision={precision}
+            size="huge"
+            time={DURATION}
+          />
+        </Grommet>,
+      );
+      expect(component.toJSON()).toMatchSnapshot();
+    }),
+  );
+
+  test('type digital custom size', () => {
+    const override = {
+      clock: {
+        digital: {
+          text: {
+            customSize: {
+              size: '30px',
+              height: 1.234,
+            },
+          },
+        },
+      },
+    };
+
+    const component = renderer.create(
+      <Grommet theme={override}>
+        <Clock type="digital" run={false} time={DURATION} size="customSize" />
+      </Grommet>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
 });

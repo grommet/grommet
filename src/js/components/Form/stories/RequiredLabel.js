@@ -1,7 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
-import { grommet, Box, FormField, Form, Text, Button, Grommet } from 'grommet';
+import { Box, Button, Form, FormField, Grommet, Text } from 'grommet';
+import { grommet } from 'grommet/themes';
 
 const FormFieldLabel = props => {
   const { required, label, ...rest } = props;
@@ -23,7 +23,7 @@ const FormFieldLabel = props => {
   );
 };
 
-const LabelFormField = () => (
+export const RequiredLabel = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
       <Form>
@@ -39,4 +39,6 @@ const LabelFormField = () => (
   </Grommet>
 );
 
-storiesOf('Form', module).add('Required label', () => <LabelFormField />);
+RequiredLabel.story = {
+  name: 'Required label',
+};

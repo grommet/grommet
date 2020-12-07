@@ -259,6 +259,1034 @@ exports[`Select 0 value 1`] = `
 </button>
 `;
 
+exports[`Select Clear option renders - bottom 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c5:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c3 {
+  max-height: inherit;
+}
+
+.c4 {
+  position: relative;
+  -webkit-scroll-behavior: smooth;
+  -moz-scroll-behavior: smooth;
+  -ms-scroll-behavior: smooth;
+  scroll-behavior: smooth;
+  overflow: auto;
+  outline: none;
+}
+
+.c6 {
+  display: block;
+  width: 100%;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding: 6px;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c3 {
+    width: 100%;
+  }
+}
+
+<div
+  class="c0 c1"
+  data-g-portal-id="0"
+  id="test-select__drop"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  tabindex="-1"
+>
+  <div
+    class="c2 c3"
+    id="test-select__select-drop"
+  >
+    <div
+      class="c4"
+      role="menubar"
+      tabindex="-1"
+    >
+      <button
+        class="c5 c6"
+        role="menuitem"
+        tabindex="-1"
+        type="button"
+      >
+        <div
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+        >
+          <span
+            class="c8"
+          >
+            one
+          </span>
+        </div>
+      </button>
+      <button
+        class="c5 c6"
+        role="menuitem"
+        tabindex="-1"
+        type="button"
+      >
+        <div
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+        >
+          <span
+            class="c8"
+          >
+            two
+          </span>
+        </div>
+      </button>
+      <div
+        class="c9"
+      />
+    </div>
+    
+  </div>
+</div>
+`;
+
+exports[`Select Clear option renders - bottom 2`] = `
+"@media only screen and (max-width: 768px) {
+  .eA-DBEo {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}"
+`;
+
+exports[`Select Clear option renders correct label when wrapped in FormField 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c5:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c3 {
+  max-height: inherit;
+}
+
+.c4 {
+  position: relative;
+  -webkit-scroll-behavior: smooth;
+  -moz-scroll-behavior: smooth;
+  -ms-scroll-behavior: smooth;
+  scroll-behavior: smooth;
+  overflow: auto;
+  outline: none;
+}
+
+.c6 {
+  display: block;
+  width: 100%;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding: 6px;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c3 {
+    width: 100%;
+  }
+}
+
+<div
+  class="c0 c1"
+  data-g-portal-id="0"
+  id="test-select__drop"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  tabindex="-1"
+>
+  <div
+    class="c2 c3"
+    id="test-select__select-drop"
+  >
+    
+    <div
+      class="c4"
+      role="menubar"
+      tabindex="-1"
+    >
+      <button
+        class="c5 c6"
+        role="menuitem"
+        tabindex="-1"
+        type="button"
+      >
+        <div
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+        >
+          <span
+            class="c8"
+          >
+            one
+          </span>
+        </div>
+      </button>
+      <button
+        class="c5 c6"
+        role="menuitem"
+        tabindex="-1"
+        type="button"
+      >
+        <div
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+        >
+          <span
+            class="c8"
+          >
+            two
+          </span>
+        </div>
+      </button>
+      <div
+        class="c9"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select Clear option renders correct label when wrapped in FormField 2`] = `
+"@media only screen and (max-width: 768px) {
+  .eA-DBEo {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}"
+`;
+
+exports[`Select Clear option renders custom label 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c5:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c3 {
+  max-height: inherit;
+}
+
+.c4 {
+  position: relative;
+  -webkit-scroll-behavior: smooth;
+  -moz-scroll-behavior: smooth;
+  -ms-scroll-behavior: smooth;
+  scroll-behavior: smooth;
+  overflow: auto;
+  outline: none;
+}
+
+.c6 {
+  display: block;
+  width: 100%;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding: 6px;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c3 {
+    width: 100%;
+  }
+}
+
+<div
+  class="c0 c1"
+  data-g-portal-id="0"
+  id="test-select__drop"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  tabindex="-1"
+>
+  <div
+    class="c2 c3"
+    id="test-select__select-drop"
+  >
+    
+    <div
+      class="c4"
+      role="menubar"
+      tabindex="-1"
+    >
+      <button
+        class="c5 c6"
+        role="menuitem"
+        tabindex="-1"
+        type="button"
+      >
+        <div
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+        >
+          <span
+            class="c8"
+          >
+            one
+          </span>
+        </div>
+      </button>
+      <button
+        class="c5 c6"
+        role="menuitem"
+        tabindex="-1"
+        type="button"
+      >
+        <div
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+        >
+          <span
+            class="c8"
+          >
+            two
+          </span>
+        </div>
+      </button>
+      <div
+        class="c9"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select Clear option renders custom label 2`] = `
+"@media only screen and (max-width: 768px) {
+  .eA-DBEo {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}"
+`;
+
+exports[`Select Clear option renders- top 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: auto;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 0px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c5:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c8 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c3 {
+  max-height: inherit;
+}
+
+.c4 {
+  position: relative;
+  -webkit-scroll-behavior: smooth;
+  -moz-scroll-behavior: smooth;
+  -ms-scroll-behavior: smooth;
+  scroll-behavior: smooth;
+  overflow: auto;
+  outline: none;
+}
+
+.c6 {
+  display: block;
+  width: 100%;
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding: 6px;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c3 {
+    width: 100%;
+  }
+}
+
+<div
+  class="c0 c1"
+  data-g-portal-id="0"
+  id="test-select__drop"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  tabindex="-1"
+>
+  <div
+    class="c2 c3"
+    id="test-select__select-drop"
+  >
+    
+    <div
+      class="c4"
+      role="menubar"
+      tabindex="-1"
+    >
+      <button
+        class="c5 c6"
+        role="menuitem"
+        tabindex="-1"
+        type="button"
+      >
+        <div
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+        >
+          <span
+            class="c8"
+          >
+            one
+          </span>
+        </div>
+      </button>
+      <button
+        class="c5 c6"
+        role="menuitem"
+        tabindex="-1"
+        type="button"
+      >
+        <div
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
+        >
+          <span
+            class="c8"
+          >
+            two
+          </span>
+        </div>
+      </button>
+      <div
+        class="c9"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select Clear option renders- top 2`] = `
+"@media only screen and (max-width: 768px) {
+  .eA-DBEo {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}"
+`;
+
 exports[`Select Search timeout 1`] = `
 .c9 {
   display: inline-block;
@@ -990,7 +2018,7 @@ exports[`Select applies custom global.hover theme to options 2`] = `
   type="button"
 >
   <div
-    class="c2 "
+    class="c2 SelectContainer__OptionBox-sc-1wi0ul8-1"
   >
     <span
       class="c3"
@@ -1509,22 +2537,22 @@ exports[`Select complex options and children 1`] = `
 exports[`Select complex options and children 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 jFJBys Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
+  class="StyledButton-sc-323bzc-0 ebqXLG Select__StyledSelectDropButton-sc-17idtfo-1 iGEQF"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 VvbUh"
+    class="StyledBox-sc-13pk1d4-0 jmuHez"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 bVYLzf"
+      class="StyledBox-sc-13pk1d4-0 iAryDB"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
+        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dpaJQp"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 fVbmbP Select__SelectTextInput-sc-17idtfo-0 VIYrI"
+          class="StyledTextInput-sc-1x30a0s-0 kfWKkd Select__SelectTextInput-sc-17idtfo-0 bIurki"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -1535,12 +2563,12 @@ exports[`Select complex options and children 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 iCDnTm"
+      class="StyledBox-sc-13pk1d4-0 eA-DBEo"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 kbXEEj"
+        class="StyledIcon-ofa7kd-0 fuviCN"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -1604,6 +2632,30 @@ exports[`Select complex options and children 3`] = `
   flex: 0 0 auto;
 }
 
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -1645,30 +2697,6 @@ exports[`Select complex options and children 3`] = `
 
 .c5:focus::-moz-focus-inner {
   border: 0;
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
 }
 
 .c3 {
@@ -1759,7 +2787,7 @@ exports[`Select complex options and children 3`] = `
 
 exports[`Select complex options and children 4`] = `
 "@media only screen and (max-width: 768px) {
-  .iCDnTm {
+  .eA-DBEo {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -2018,23 +3046,23 @@ exports[`Select disabled 1`] = `
 exports[`Select disabled 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 bDZaCa Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
+  class="StyledButton-sc-323bzc-0 emgczY Select__StyledSelectDropButton-sc-17idtfo-1 iGEQF"
   disabled=""
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 VvbUh"
+    class="StyledBox-sc-13pk1d4-0 jmuHez"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 bVYLzf"
+      class="StyledBox-sc-13pk1d4-0 iAryDB"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
+        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dpaJQp"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 fVbmbP Select__SelectTextInput-sc-17idtfo-0 nFqJk"
+          class="StyledTextInput-sc-1x30a0s-0 kfWKkd Select__SelectTextInput-sc-17idtfo-0 cANsmG"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -2045,12 +3073,12 @@ exports[`Select disabled 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 iCDnTm"
+      class="StyledBox-sc-13pk1d4-0 eA-DBEo"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 kbXEEj"
+        class="StyledIcon-ofa7kd-0 fuviCN"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -2393,6 +3421,30 @@ exports[`Select disabled key 2`] = `
   flex: 0 0 auto;
 }
 
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -2482,30 +3534,6 @@ exports[`Select disabled key 2`] = `
   line-height: 24px;
 }
 
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
-
 .c3 {
   max-height: inherit;
 }
@@ -2578,7 +3606,7 @@ exports[`Select disabled key 2`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -2594,7 +3622,7 @@ exports[`Select disabled key 2`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -2613,7 +3641,7 @@ exports[`Select disabled key 2`] = `
 
 exports[`Select disabled key 3`] = `
 "@media only screen and (max-width: 768px) {
-  .iCDnTm {
+  .eA-DBEo {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -2688,6 +3716,30 @@ exports[`Select disabled option value 1`] = `
   flex: 0 0 auto;
 }
 
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -2777,30 +3829,6 @@ exports[`Select disabled option value 1`] = `
   line-height: 24px;
 }
 
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}
-
 .c3 {
   max-height: inherit;
 }
@@ -2873,7 +3901,7 @@ exports[`Select disabled option value 1`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -2889,7 +3917,7 @@ exports[`Select disabled option value 1`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -2908,7 +3936,7 @@ exports[`Select disabled option value 1`] = `
 
 exports[`Select disabled option value 2`] = `
 "@media only screen and (max-width: 768px) {
-  .iCDnTm {
+  .eA-DBEo {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -3348,6 +4376,30 @@ exports[`Select large drop container height 1`] = `
   flex: 0 0 auto;
 }
 
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -3395,30 +4447,6 @@ exports[`Select large drop container height 1`] = `
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
 }
 
 .c3 {
@@ -3492,7 +4520,7 @@ exports[`Select large drop container height 1`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -3508,7 +4536,7 @@ exports[`Select large drop container height 1`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -3593,6 +4621,30 @@ exports[`Select medium drop container height 1`] = `
   flex: 0 0 auto;
 }
 
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -3640,30 +4692,6 @@ exports[`Select medium drop container height 1`] = `
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
 }
 
 .c3 {
@@ -3737,7 +4765,7 @@ exports[`Select medium drop container height 1`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -3753,7 +4781,7 @@ exports[`Select medium drop container height 1`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -4360,6 +5388,30 @@ exports[`Select onChange with valueKey string 2`] = `
   flex: 0 0 auto;
 }
 
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -4407,30 +5459,6 @@ exports[`Select onChange with valueKey string 2`] = `
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
 }
 
 .c3 {
@@ -4504,7 +5532,7 @@ exports[`Select onChange with valueKey string 2`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -4520,7 +5548,7 @@ exports[`Select onChange with valueKey string 2`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -4539,7 +5567,7 @@ exports[`Select onChange with valueKey string 2`] = `
 
 exports[`Select onChange with valueKey string 3`] = `
 "@media only screen and (max-width: 768px) {
-  .iCDnTm {
+  .eA-DBEo {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -4874,6 +5902,30 @@ exports[`Select onChange without valueKey 2`] = `
   flex: 0 0 auto;
 }
 
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -4921,30 +5973,6 @@ exports[`Select onChange without valueKey 2`] = `
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
 }
 
 .c3 {
@@ -5018,7 +6046,7 @@ exports[`Select onChange without valueKey 2`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -5034,7 +6062,7 @@ exports[`Select onChange without valueKey 2`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -5053,7 +6081,7 @@ exports[`Select onChange without valueKey 2`] = `
 
 exports[`Select onChange without valueKey 3`] = `
 "@media only screen and (max-width: 768px) {
-  .iCDnTm {
+  .eA-DBEo {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -5834,22 +6862,22 @@ exports[`Select prop: onOpen 1`] = `
 exports[`Select prop: onOpen 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 jFJBys Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
+  class="StyledButton-sc-323bzc-0 ebqXLG Select__StyledSelectDropButton-sc-17idtfo-1 iGEQF"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 VvbUh"
+    class="StyledBox-sc-13pk1d4-0 jmuHez"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 bVYLzf"
+      class="StyledBox-sc-13pk1d4-0 iAryDB"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
+        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dpaJQp"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 fVbmbP Select__SelectTextInput-sc-17idtfo-0 VIYrI"
+          class="StyledTextInput-sc-1x30a0s-0 kfWKkd Select__SelectTextInput-sc-17idtfo-0 bIurki"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -5860,12 +6888,12 @@ exports[`Select prop: onOpen 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 iCDnTm"
+      class="StyledBox-sc-13pk1d4-0 eA-DBEo"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 kbXEEj"
+        class="StyledIcon-ofa7kd-0 fuviCN"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -5948,6 +6976,30 @@ exports[`Select prop: onOpen 3`] = `
   flex: 0 0 auto;
 }
 
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -5995,30 +7047,6 @@ exports[`Select prop: onOpen 3`] = `
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
 }
 
 .c3 {
@@ -6092,7 +7120,7 @@ exports[`Select prop: onOpen 3`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -6108,7 +7136,7 @@ exports[`Select prop: onOpen 3`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -6127,7 +7155,7 @@ exports[`Select prop: onOpen 3`] = `
 
 exports[`Select prop: onOpen 4`] = `
 "@media only screen and (max-width: 768px) {
-  .iCDnTm {
+  .eA-DBEo {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -6136,44 +7164,44 @@ exports[`Select prop: onOpen 4`] = `
 
 exports[`Select prop: onOpen 5`] = `
 <div
-  class="SelectContainer__OptionsBox-sc-1wi0ul8-0 Knkxk"
+  class="SelectContainer__OptionsBox-sc-1wi0ul8-0 jITnOq"
   role="menubar"
   tabindex="-1"
 >
   <button
-    class="StyledButton-sc-323bzc-0 ynEro SelectContainer__SelectOption-sc-1wi0ul8-2 kkPGyb"
+    class="StyledButton-sc-323bzc-0 bOgakS SelectContainer__SelectOption-sc-1wi0ul8-2 kNOKDt"
     role="menuitem"
     tabindex="-1"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 lcXThF SelectContainer__OptionBox-sc-1wi0ul8-1 cjPAAw"
+      class="StyledBox-sc-13pk1d4-0 kNEzzP SelectContainer__OptionBox-sc-1wi0ul8-1"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 duzDHg"
+        class="StyledText-sc-1sadyjn-0 fEvqji"
       >
         one
       </span>
     </div>
   </button>
   <button
-    class="StyledButton-sc-323bzc-0 ynEro SelectContainer__SelectOption-sc-1wi0ul8-2 kkPGyb"
+    class="StyledButton-sc-323bzc-0 bOgakS SelectContainer__SelectOption-sc-1wi0ul8-2 kNOKDt"
     role="menuitem"
     tabindex="-1"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 lcXThF SelectContainer__OptionBox-sc-1wi0ul8-1 cjPAAw"
+      class="StyledBox-sc-13pk1d4-0 kNEzzP SelectContainer__OptionBox-sc-1wi0ul8-1"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 duzDHg"
+        class="StyledText-sc-1sadyjn-0 fEvqji"
       >
         two
       </span>
     </div>
   </button>
   <div
-    class="StyledBox-sc-13pk1d4-0 bokQlS"
+    class="StyledBox-sc-13pk1d4-0 jCbIzQ"
   />
 </div>
 `;
@@ -6696,25 +7724,25 @@ exports[`Select renders custom up and down icons 1`] = `
 
 exports[`Select renders custom up and down icons 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
 >
   <button
     aria-label="Open Drop"
-    class="StyledButton-sc-323bzc-0 jFJBys Select__StyledSelectDropButton-sc-17idtfo-1 ksCGpf"
+    class="StyledButton-sc-323bzc-0 ebqXLG Select__StyledSelectDropButton-sc-17idtfo-1 iGEQF"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 VvbUh"
+      class="StyledBox-sc-13pk1d4-0 jmuHez"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bVYLzf"
+        class="StyledBox-sc-13pk1d4-0 iAryDB"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 ksQrmr"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dpaJQp"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 fVbmbP Select__SelectTextInput-sc-17idtfo-0 VIYrI"
+            class="StyledTextInput-sc-1x30a0s-0 kfWKkd Select__SelectTextInput-sc-17idtfo-0 bIurki"
             placeholder="Select..."
             readonly=""
             tabindex="-1"
@@ -6724,7 +7752,7 @@ exports[`Select renders custom up and down icons 2`] = `
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 iCDnTm"
+        class="StyledBox-sc-13pk1d4-0 eA-DBEo"
         style="min-width: auto;"
       >
         .c0 {
@@ -8349,6 +9377,30 @@ exports[`Select search 2`] = `
   flex: 0 0 auto;
 }
 
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
 .c8 {
   display: inline-block;
   box-sizing: border-box;
@@ -8396,30 +9448,6 @@ exports[`Select search 2`] = `
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
 }
 
 .c6 {
@@ -8619,7 +9647,7 @@ exports[`Select search 2`] = `
 
 exports[`Select search 3`] = `
 "@media only screen and (max-width: 768px) {
-  .iCDnTm {
+  .eA-DBEo {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -8629,7 +9657,7 @@ exports[`Select search 3`] = `
 exports[`Select search 4`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 fFeaOm"
+  class="StyledTextInput-sc-1x30a0s-0 iQPXZo"
   type="search"
   value=""
 />
@@ -8638,7 +9666,7 @@ exports[`Select search 4`] = `
 exports[`Select search 5`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 fFeaOm"
+  class="StyledTextInput-sc-1x30a0s-0 iQPXZo"
   type="search"
   value="o"
 />
@@ -10160,6 +11188,30 @@ exports[`Select small drop container height 1`] = `
   flex: 0 0 auto;
 }
 
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: kPQHBD 0.1s forwards;
+  animation: kPQHBD 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -10207,30 +11259,6 @@ exports[`Select small drop container height 1`] = `
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  position: fixed;
-  z-index: 20;
-  outline: none;
-  background-color: #ffffff;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: kPQHBD 0.1s forwards;
-  animation: kPQHBD 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
 }
 
 .c3 {
@@ -10304,7 +11332,7 @@ exports[`Select small drop container height 1`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"
@@ -10320,7 +11348,7 @@ exports[`Select small drop container height 1`] = `
         type="button"
       >
         <div
-          class="c7 "
+          class="c7 SelectContainer__OptionBox-sc-1wi0ul8-1"
         >
           <span
             class="c8"

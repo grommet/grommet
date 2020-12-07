@@ -1,11 +1,10 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, DataChart, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const data = [];
-for (let i = 1; i < 8; i += 1) {
+for (let i = 1; i <= 7; i += 1) {
   const v = Math.sin(i / 2.0);
   const digits = ((i % 12) + 1).toString().padStart(2, 0);
   data.push({
@@ -24,7 +23,7 @@ for (let i = 1; i < 8; i += 1) {
   });
 }
 
-const Example = () => (
+export const Axis = () => (
   <Grommet theme={grommet}>
     <Box align="center" justify="start" pad="large">
       <DataChart
@@ -32,12 +31,10 @@ const Example = () => (
         series={['day', { property: 'percent', suffix: '%' }]}
         chart="percent"
         axis={{
-          x: { property: 'day', granularity: 'fine' },
+          x: { property: 'day', granularity: 'medium' },
           y: { property: 'percent', granularity: 'medium' },
         }}
       />
     </Box>
   </Grommet>
 );
-
-storiesOf('DataChart', module).add('Axis', () => <Example />);

@@ -409,7 +409,7 @@ exports[`RadioButtonGroup boolean options 1`] = `
         </div>
       </div>
       <span
-        className=""
+        className="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
       >
         true
       </span>
@@ -443,7 +443,7 @@ exports[`RadioButtonGroup boolean options 1`] = `
         />
       </div>
       <span
-        className=""
+        className="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
       >
         false
       </span>
@@ -850,7 +850,7 @@ exports[`RadioButtonGroup number options 1`] = `
         </div>
       </div>
       <span
-        className=""
+        className="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
       >
         1
       </span>
@@ -884,7 +884,7 @@ exports[`RadioButtonGroup number options 1`] = `
         />
       </div>
       <span
-        className=""
+        className="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
       >
         2
       </span>
@@ -1058,7 +1058,7 @@ exports[`RadioButtonGroup object options 1`] = `
         />
       </div>
       <span
-        className=""
+        className="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
       >
         One
       </span>
@@ -1092,7 +1092,7 @@ exports[`RadioButtonGroup object options 1`] = `
         />
       </div>
       <span
-        className=""
+        className="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
       >
         Two
       </span>
@@ -1816,7 +1816,7 @@ exports[`RadioButtonGroup string options 1`] = `
         </div>
       </div>
       <span
-        className=""
+        className="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
       >
         one
       </span>
@@ -1850,7 +1850,7 @@ exports[`RadioButtonGroup string options 1`] = `
         />
       </div>
       <span
-        className=""
+        className="StyledRadioButton__StyledRadioButtonLabel-g1f6ld-2"
       >
         two
       </span>

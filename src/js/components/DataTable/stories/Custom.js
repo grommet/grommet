@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, DataTable } from 'grommet';
 import { Blank } from 'grommet-icons';
@@ -9,7 +8,7 @@ import { Blank } from 'grommet-icons';
 import { columns, DATA } from './data';
 
 const SortableIcon = () => (
-  <Blank color="text-xweak" opacity="0.5">
+  <Blank color="text-xweak" opacity="0.3">
     <g fill="none" stroke="#000" strokeWidth="2">
       <path d="M 6 10 L 12 6 L 18 10" />
       <path d="M 6 14 L 12 18 L 18 14" />
@@ -24,13 +23,30 @@ const customTheme = {
     },
   },
   dataTable: {
+    header: {
+      color: 'text-strong',
+      extend: ({ column, sort, sortable }) => {
+        return `
+          ${sortable &&
+            sort &&
+            sort.property !== column &&
+            `
+              :hover {
+                svg {
+                  opacity: 100%;
+                }
+              }
+            `}
+         `;
+      },
+    },
     icons: {
       sortable: SortableIcon,
     },
   },
 };
 
-const Example = () => {
+export const Custom = () => {
   const [sort, setSort] = React.useState({
     property: 'name',
     direction: 'desc',
@@ -49,5 +65,3 @@ const Example = () => {
     </Grommet>
   );
 };
-
-storiesOf('DataTable', module).add('Custom', () => <Example />);

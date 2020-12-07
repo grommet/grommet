@@ -30,8 +30,10 @@ const StyledAnchor = styled.a`
   color: ${props =>
     normalizeColor(props.colorProp || props.theme.anchor.color, props.theme)};
   ${props =>
-    props.theme.anchor.fontWeight &&
-    `font-weight: ${props.theme.anchor.fontWeight};`}
+    props.weight
+      ? `font-weight: ${props.weight};`
+      : props.theme.anchor.fontWeight &&
+        `font-weight: ${props.theme.anchor.fontWeight};`}
   text-decoration: ${props =>
     props.hasIcon ? 'none' : props.theme.anchor.textDecoration};
   cursor: pointer;

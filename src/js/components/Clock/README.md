@@ -1,7 +1,7 @@
 ## Clock
 A clock with timezone awareness.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Clock&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/clock&module=%2Fsrc%2FClock.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Visualization-Clock&full=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/clock&module=%2Fsrc%2FClock.js)
 ## Usage
 
 ```javascript
@@ -167,13 +167,17 @@ forward
 
 **size**
 
-Clock size Defaults to `medium`.
+Size for both Analog and Digital Clocks. For Analog,
+      there's also 'huge', that's equal to 'xxlarge' and exists
+      for backwards compatibility Defaults to `medium`.
 
 ```
+xsmall
 small
 medium
 large
 xlarge
+xxlarge
 string
 ```
 
@@ -206,7 +210,7 @@ div,svg
   
 **clock.analog.extend**
 
-Any additional style for Clock. Expects `string | (props) => {}`.
+Any additional style for the Analog Clock. Expects `string | (props) => {}`.
 
 Defaults to
 
@@ -256,7 +260,7 @@ Defaults to
 
 **clock.analog.minute.color**
 
-The color of the hour minute. Expects `string | { dark: string, light: string }`.
+The color of the minute hand. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
@@ -334,12 +338,192 @@ Defaults to
 3px
 ```
 
+**clock.analog.size.xsmall**
+
+The whole size of the Analog Clock Expects `string`.
+
+Defaults to
+
+```
+48px
+```
+
+**clock.analog.size.small**
+
+The whole size of the Analog Clock Expects `string`.
+
+Defaults to
+
+```
+72px
+```
+
 **clock.analog.size.medium**
 
-The whole size of the Analog clock Expects `string`.
+The whole size of the Analog Clock Expects `string`.
 
 Defaults to
 
 ```
 96px
+```
+
+**clock.analog.size.large**
+
+The whole size of the Analog Clock Expects `string`.
+
+Defaults to
+
+```
+144px
+```
+
+**clock.analog.size.xlarge**
+
+The whole size of the Analog Clock Expects `string`.
+
+Defaults to
+
+```
+216px
+```
+
+**clock.analog.size.xxlarge**
+
+The whole size of the Analog Clock Expects `string`.
+
+Defaults to
+
+```
+288px
+```
+
+**clock.analog.size.huge**
+
+The whole size of the Analog Clock Expects `string`.
+
+Defaults to
+
+```
+288px
+```
+
+**clock.digital.text.xsmall.size**
+
+Defines the font size of the Digital Clock Expects `string`.
+
+Defaults to
+
+```
+10px
+```
+
+**clock.digital.text.xsmall.height**
+
+Defines the line height of the Digital Clock Expects `number`.
+
+Defaults to
+
+```
+1.5
+```
+
+**clock.digital.text.small.size**
+
+Defines the font size of the Digital Clock Expects `string`.
+
+Defaults to
+
+```
+14px
+```
+
+**clock.digital.text.small.height**
+
+Defines the line height of the Digital Clock Expects `number`.
+
+Defaults to
+
+```
+1.43
+```
+
+**clock.digital.text.medium.size**
+
+Defines the font size of the Digital Clock Expects `string`.
+
+Defaults to
+
+```
+18px
+```
+
+**clock.digital.text.medium.height**
+
+Defines the line height of the Digital Clock Expects `number`.
+
+Defaults to
+
+```
+1.375
+```
+
+**clock.digital.text.large.size**
+
+Defines the font size of the Digital Clock Expects `string`.
+
+Defaults to
+
+```
+22px
+```
+
+**clock.digital.text.large.height**
+
+Defines the line height of the Digital Clock Expects `number`.
+
+Defaults to
+
+```
+1.167
+```
+
+**clock.digital.text.xlarge.size**
+
+Defines the font size of the Digital Clock Expects `string`.
+
+Defaults to
+
+```
+26px
+```
+
+**clock.digital.text.xlarge.height**
+
+Defines the line height of the Digital Clock Expects `number`.
+
+Defaults to
+
+```
+1.1875
+```
+
+**clock.digital.text.xxlarge.size**
+
+Defines the font size of the Digital Clock Expects `string`.
+
+Defaults to
+
+```
+34px
+```
+
+**clock.digital.text.xxlarge.height**
+
+Defines the line height of the Digital Clock Expects `number`.
+
+Defaults to
+
+```
+1.125
 ```

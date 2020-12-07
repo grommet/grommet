@@ -50,9 +50,12 @@ describe('DropButton', () => {
 
   test('open and close', () => {
     window.scrollTo = jest.fn();
+    const onClose = jest.fn(event => event.persist());
+
     const { getByText, container } = render(
       <DropButton
         label="Dropper"
+        onClose={onClose}
         dropContent={<div id="drop-contents">Drop Contents</div>}
       />,
     );
@@ -61,16 +64,24 @@ describe('DropButton', () => {
 
     fireEvent.click(getByText('Dropper'));
     expectPortal('drop-contents').toMatchSnapshot();
+    expect(document.getElementById('drop-contents')).not.toBeNull();
 
     fireEvent.click(getByText('Dropper'));
     expect(document.getElementById('drop-contents')).toBeNull();
     expect(window.scrollTo).toBeCalled();
+
+    expect(onClose).toBeCalledWith(expect.objectContaining({ type: 'click' }));
   });
 
   test('close by clicking outside', done => {
+    const onClose = jest.fn();
+    const onOpen = jest.fn(event => event.persist());
+
     const { getByText, container } = render(
       <DropButton
         label="Dropper"
+        onClose={onClose}
+        onOpen={onOpen}
         dropContent={<div id="drop-contents">Drop Contents</div>}
       />,
     );
@@ -79,6 +90,9 @@ describe('DropButton', () => {
 
     fireEvent.click(getByText('Dropper'));
     expectPortal('drop-contents').toMatchSnapshot();
+
+    expect(onOpen).toBeCalledWith(expect.objectContaining({ type: 'click' }));
+    expect(document.getElementById('drop-contents')).not.toBeNull();
 
     fireEvent(
       document,
@@ -89,6 +103,10 @@ describe('DropButton', () => {
       expect(document.getElementById('drop-contents')).toBeNull();
       done();
     }, 50);
+
+    expect(onClose).toBeCalledWith(
+      expect.objectContaining({ type: 'mousedown' }),
+    );
   });
 
   test('disabled', () => {

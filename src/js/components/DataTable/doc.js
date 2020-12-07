@@ -58,7 +58,7 @@ parts.forEach(part => {
 
 export const doc = DataTable => {
   const DocumentedDataTable = describe(DataTable)
-    .availableAt(getAvailableAtBadge('DataTable'))
+    .availableAt(getAvailableAtBadge('DataTable', 'Visualizations'))
     .description('A data driven table.')
     .usage(
       `import { DataTable } from 'grommet';
@@ -345,6 +345,16 @@ export const themeDoc = {
   'dataTable.header.border': {
     description: 'Any valid Box border value.',
     type: 'string | object',
+    defaultValue: undefined,
+  },
+  'dataTable.header.color': {
+    description: 'The label and icon color in a header cell.',
+    type: '{ dark: string, light: string } | string',
+    defaultValue: undefined,
+  },
+  'dataTable.header.extend': {
+    description: 'Any additional styles for header cells.',
+    type: 'string | (props) => {}',
     defaultValue: undefined,
   },
   'dataTable.header.font.weight': {

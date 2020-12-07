@@ -4,7 +4,7 @@ import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = RadioButton => {
   const DocumentedRadioButton = describe(RadioButton)
-    .availableAt(getAvailableAtBadge('RadioButton'))
+    .availableAt(getAvailableAtBadge('RadioButton', 'Input'))
     .description('A radio button control.')
     .details(
       `RadioButton should typically not be used directly.

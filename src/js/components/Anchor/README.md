@@ -5,7 +5,7 @@ We have a separate component from the browser
 base so we can style it. You can either set the icon and/or label properties
 or just use children.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Anchor&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/anchor&module=%2Fsrc%2FAnchor.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Controls-Anchor&full=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/anchor&module=%2Fsrc%2FAnchor.js)
 ## Usage
 
 ```javascript
@@ -127,6 +127,15 @@ xlarge
 string
 ```
 
+**as**
+
+The DOM tag or react component to use for the element.
+
+```
+string
+function
+```
+
 **color**
 
 Label color and icon color, if not specified on the icon.
@@ -205,13 +214,14 @@ xxlarge
 string
 ```
 
-**as**
+**weight**
 
-The DOM tag or react component to use for the element.
+Sets font-weight property for anchor.
 
 ```
-string
-function
+normal
+bold
+number
 ```
   
 ## Intrinsic element
@@ -243,7 +253,7 @@ Defaults to
 
 **anchor.textDecoration**
 
-The text decoration of the label. 
+The text decoration of the label.
 Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
 for possible values. Expects `string`.
 
@@ -265,7 +275,7 @@ undefined
 
 **anchor.hover.textDecoration**
 
-The text decoration of the label when hovering. 
+The text decoration of the label when hovering.
 Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
 for possible values. Expects `string`.
 

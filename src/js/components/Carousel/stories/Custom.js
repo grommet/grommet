@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Attraction, Car, TreeOption } from 'grommet-icons';
 
 import { Grommet, Box, Carousel } from 'grommet';
@@ -20,7 +19,7 @@ const customTheme = {
   },
 };
 
-const CustomCarousel = ({ controls, ...rest }) => (
+export const CustomCarousel = ({ controls, ...rest }) => (
   <Grommet theme={customTheme}>
     <Box align="center" pad="large">
       <Carousel controls={controls} {...rest}>
@@ -38,4 +37,6 @@ const CustomCarousel = ({ controls, ...rest }) => (
   </Grommet>
 );
 
-storiesOf('Carousel', module).add('Custom controls', () => <CustomCarousel />);
+CustomCarousel.story = {
+  name: 'Custom controls',
+};

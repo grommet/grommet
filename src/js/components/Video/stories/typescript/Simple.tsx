@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, Video } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -26,6 +25,9 @@ const SimpleVideo = props => (
   </Grommet>
 );
 
-storiesOf('Video', module)
-  .add('Simple', () => <SimpleVideo />)
-  .add('Controls below', () => <SimpleVideo controls="below" />);
+export const Simple = () => <SimpleVideo />;
+export const ControlsBelow = () => <SimpleVideo controls="below" />;
+
+ControlsBelow.story = {
+  name: 'Controls below',
+};

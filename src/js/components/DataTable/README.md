@@ -1,7 +1,7 @@
 ## DataTable
 A data driven table.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=DataTable&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/datatable&module=%2Fsrc%2FDataTable.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Visualizations-DataTable&full=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/datatable&module=%2Fsrc%2FDataTable.js)
 ## Usage
 
 ```javascript
@@ -773,6 +773,26 @@ undefined
 **dataTable.header.border**
 
 Any valid Box border value. Expects `string | object`.
+
+Defaults to
+
+```
+undefined
+```
+
+**dataTable.header.color**
+
+The label and icon color in a header cell. Expects `{ dark: string, light: string } | string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**dataTable.header.extend**
+
+Any additional styles for header cells. Expects `string | (props) => {}`.
 
 Defaults to
 

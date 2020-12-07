@@ -5,7 +5,7 @@ import { themeDocUtils } from '../../utils/themeDocUtils';
 
 export const doc = TextInput => {
   const DocumentedTextInput = describe(TextInput)
-    .availableAt(getAvailableAtBadge('TextInput'))
+    .availableAt(getAvailableAtBadge('TextInput', 'Input'))
     .description(
       'A control to input a single line of text, with optional suggestions.',
     )

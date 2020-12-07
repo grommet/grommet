@@ -38,7 +38,7 @@ const borderTypes = [
 
 export const doc = List => {
   const DocumentedList = describe(List)
-    .availableAt(getAvailableAtBadge('List'))
+    .availableAt(getAvailableAtBadge('List', 'Visualizations'))
     .description('An ordered list of items.')
     .usage(
       `import { List } from 'grommet';

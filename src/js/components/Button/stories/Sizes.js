@@ -1,11 +1,10 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Button, Grommet } from 'grommet';
 import { Next, Add } from 'grommet-icons';
 import { grommet } from 'grommet/themes';
 
-const SizedButton = () => (
+export const Sizes = () => (
   <Grommet theme={grommet}>
     <Box direction="row">
       <Box align="start" pad="large" gap="large">
@@ -35,5 +34,3 @@ const SizedButton = () => (
     </Box>
   </Grommet>
 );
-
-storiesOf('Button', module).add('Sizes', () => <SizedButton active />);

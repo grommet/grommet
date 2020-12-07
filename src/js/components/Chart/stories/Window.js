@@ -1,5 +1,4 @@
 import React, { useMemo, useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Chart, RangeSelector, Stack, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -34,7 +33,7 @@ const compressData = (data, max, count) => {
   return result;
 };
 
-const WindowChart = ({ data, max }) => {
+export const WindowChart = ({ data, max }) => {
   const [hover, setHover] = useState();
   const [range, setRange] = useState([
     data.length / 2,
@@ -149,6 +148,6 @@ const WindowChart = ({ data, max }) => {
   );
 };
 
-storiesOf('Chart', module).add('Window', () => (
+export const Window = () => (
   <WindowChart data={generateData(1000, 100)} max={100} />
-));
+);

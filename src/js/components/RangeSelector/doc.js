@@ -5,7 +5,7 @@ import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = RangeSelector => {
   const DocumentedRangeSelector = describe(RangeSelector)
-    .availableAt(getAvailableAtBadge('RangeSelector'))
+    .availableAt(getAvailableAtBadge('RangeSelector', 'Input'))
     .description('A control to input a range of values.')
     .usage(
       `import { RangeSelector } from 'grommet';

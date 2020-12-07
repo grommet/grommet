@@ -148,6 +148,17 @@ describe('Button', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('tip', () => {
+    const { container, getByText } = render(
+      <Grommet>
+        <Button label="Default Tip" onClick={() => {}} tip="tooltip" />
+      </Grommet>,
+    );
+
+    fireEvent.mouseOver(getByText('Default Tip'));
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('disabled', () => {
     const component = renderer.create(
       <Grommet>

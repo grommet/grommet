@@ -132,11 +132,12 @@ const DataTable = ({
 
   // toggle the sort direction on this property
   const onSort = property => () => {
+    const external = sort ? sort.external : false;
     let direction;
     if (!sort || property !== sort.property) direction = 'asc';
     else if (sort.direction === 'asc') direction = 'desc';
     else direction = 'asc';
-    const nextSort = { property, direction };
+    const nextSort = { property, direction, external };
     setSort(nextSort);
     if (onSortProp) onSortProp(nextSort);
   };

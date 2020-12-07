@@ -45,9 +45,9 @@ export const findAllByType = (component, type) => {
   return matches;
 };
 
-export const getAvailableAtBadge = availableAt => [
+export const getAvailableAtBadge = (availableAt, componentType) => [
   {
-    url: `https://storybook.grommet.io/?selectedKind=${availableAt}&full=0&addons=0&stories=1&panelRight=0`,
+    url: `https://storybook.grommet.io/?selectedKind=${componentType}-${availableAt}&full=0&stories=1&panelRight=0`,
     badge:
       'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
     label: 'Storybook',

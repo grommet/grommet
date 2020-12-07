@@ -17,6 +17,7 @@ import {
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
+import { Tip } from '../Tip';
 
 import { StyledButton } from './StyledButton';
 import { StyledButtonKind } from './StyledButtonKind';
@@ -116,6 +117,7 @@ const Button = forwardRef(
       secondary,
       selected,
       size,
+      tip,
       type = 'button',
       as,
       ...rest
@@ -248,8 +250,9 @@ const Button = forwardRef(
       contents = first || second || children;
     }
 
+    let styledButtonResult;
     if (kind) {
-      return (
+      styledButtonResult = (
         <StyledButtonKind
           {...rest}
           as={domTag}
@@ -285,51 +288,58 @@ const Button = forwardRef(
           {contents}
         </StyledButtonKind>
       );
+    } else {
+      styledButtonResult = (
+        <StyledButton
+          {...rest}
+          as={domTag}
+          ref={ref}
+          aria-label={a11yTitle}
+          colorValue={color}
+          active={active}
+          selected={selected}
+          disabled={disabled}
+          hasIcon={!!icon}
+          gap={gap}
+          hasLabel={!!label}
+          fillContainer={fill}
+          focus={focus}
+          focusIndicator={focusIndicator}
+          href={href}
+          kind={kind}
+          themePaths={themePaths}
+          onClick={onClick}
+          onFocus={event => {
+            setFocus(true);
+            if (onFocus) onFocus(event);
+          }}
+          onBlur={event => {
+            setFocus(false);
+            if (onBlur) onBlur(event);
+          }}
+          onMouseOver={onMouseOverButton}
+          onMouseOut={onMouseOutButton}
+          pad={!plain}
+          plain={
+            typeof plain !== 'undefined'
+              ? plain
+              : Children.count(children) > 0 || (icon && !label)
+          }
+          primary={primary}
+          sizeProp={size}
+          type={!href ? type : undefined}
+        >
+          {contents}
+        </StyledButton>
+      );
     }
-
-    return (
-      <StyledButton
-        {...rest}
-        as={domTag}
-        ref={ref}
-        aria-label={a11yTitle}
-        colorValue={color}
-        active={active}
-        selected={selected}
-        disabled={disabled}
-        hasIcon={!!icon}
-        gap={gap}
-        hasLabel={!!label}
-        fillContainer={fill}
-        focus={focus}
-        focusIndicator={focusIndicator}
-        href={href}
-        kind={kind}
-        themePaths={themePaths}
-        onClick={onClick}
-        onFocus={event => {
-          setFocus(true);
-          if (onFocus) onFocus(event);
-        }}
-        onBlur={event => {
-          setFocus(false);
-          if (onBlur) onBlur(event);
-        }}
-        onMouseOver={onMouseOverButton}
-        onMouseOut={onMouseOutButton}
-        pad={!plain}
-        plain={
-          typeof plain !== 'undefined'
-            ? plain
-            : Children.count(children) > 0 || (icon && !label)
-        }
-        primary={primary}
-        sizeProp={size}
-        type={!href ? type : undefined}
-      >
-        {contents}
-      </StyledButton>
-    );
+    if (tip) {
+      if (typeof tip === 'string') {
+        return <Tip content={tip}>{styledButtonResult}</Tip>;
+      }
+      return <Tip {...tip}>{styledButtonResult}</Tip>;
+    }
+    return styledButtonResult;
   },
 );
 

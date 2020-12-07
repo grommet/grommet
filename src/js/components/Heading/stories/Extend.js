@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Heading } from 'grommet';
 import { deepMerge } from 'grommet/utils';
 import { grommet } from 'grommet/themes';
@@ -29,7 +28,7 @@ const customTheme = deepMerge(grommet, {
   heading: { extend: props => `${letterSpacing(props)}` },
 });
 
-const HeadingExtend = () => (
+export const Extend = () => (
   <Grommet theme={customTheme}>
     <Heading level="1" size="large">
       This is using the extend property on Heading
@@ -42,5 +41,3 @@ const HeadingExtend = () => (
     </Heading>
   </Grommet>
 );
-
-storiesOf('Heading', module).add('Extend', () => <HeadingExtend />);
