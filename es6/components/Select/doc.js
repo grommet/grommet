@@ -34,7 +34,7 @@ export var doc = function doc(Select) {
     messages: PropTypes.shape({
       multiple: PropTypes.string
     }).description('Custom messages.'),
-    multiple: PropTypes.bool.description('Whether to allow multiple options to be selected.'),
+    multiple: PropTypes.bool.description("Whether to allow multiple options to be selected. When multiple is true, \n      'value' should be an array of selected options and 'options' should be \n      an array of possible options"),
     name: PropTypes.string.description("The name of the attribute when in a Form or FormField."),
     onChange: PropTypes.func.description('Function that will be called when the user selects an option.'),
     onClose: PropTypes.func.description('Function that will be called when the Select drop closes.'),
