@@ -54,7 +54,7 @@ export const NotificationLayer = () => {
               <StatusGood />
               <Text>
                 A new virtual machine has been successfully added (this Layer
-                close after 3 seconds)
+                will close after 3 seconds)
               </Text>
             </Box>
             <Button icon={<FormClose />} onClick={onClose} plain />
