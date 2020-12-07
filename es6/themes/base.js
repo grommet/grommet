@@ -970,7 +970,7 @@ export var generate = function generate(baseSpacing, scale) {
         radius: '4px'
       },
       container: {
-        zIndex: '15'
+        zIndex: '20'
       },
       // extend: undefined,
       overlay: {
@@ -978,7 +978,7 @@ export var generate = function generate(baseSpacing, scale) {
       },
       responsiveBreakpoint: 'small',
       // when Layer takes over the full screen
-      zIndex: '10'
+      zIndex: '20'
     },
     list: {
       item: {

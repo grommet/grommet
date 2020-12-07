@@ -44,7 +44,7 @@ export var themeDoc = _extends({
   'layer.container.zIndex': {
     description: 'The stack order of Layer Container.',
     type: 'number',
-    defaultValue: '15'
+    defaultValue: '20'
   },
   'layer.extend': {
     description: 'Any additional style for Layer.',
@@ -64,6 +64,6 @@ export var themeDoc = _extends({
   'layer.zIndex': {
     description: 'The stack order of Layer.',
     type: 'number',
-    defaultValue: '10'
+    defaultValue: '20'
   }
 }, themeDocUtils.breakpointStyle("The possible breakpoints that could affect border, direction, gap, margin, \n    pad, and round."));
