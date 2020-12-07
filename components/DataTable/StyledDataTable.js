@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.StyledDataTableFooter = exports.StyledDataTableHeader = exports.StyledDataTableCell = exports.StyledDataTableBody = exports.StyledDataTableRow = exports.StyledDataTable = void 0;
+exports.StyledPlaceholder = exports.StyledDataTableFooter = exports.StyledDataTableHeader = exports.StyledDataTableCell = exports.StyledDataTableBody = exports.StyledDataTableRow = exports.StyledDataTable = void 0;
 
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
@@ -29,7 +29,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 var StyledDataTable = (0, _styledComponents["default"])(_Table.Table).withConfig({
   displayName: "StyledDataTable",
   componentId: "xrlyjm-0"
-})(["border-spacing:0;border-collapse:separate;height:auto;", " ", " ", ";"], _utils.genericStyles, function (props) {
+})(["position:relative;border-spacing:0;border-collapse:separate;height:auto;", " ", " ", ";"], _utils.genericStyles, function (props) {
   return props.fillProp && (0, _utils.fillStyle)(props.fillProp);
 }, function (props) {
   return props.theme.dataTable && props.theme.dataTable.body && props.theme.dataTable.body.extend;
@@ -103,3 +103,12 @@ var StyledDataTableCell = (0, _styledComponents["default"])(_TableCell.TableCell
 exports.StyledDataTableCell = StyledDataTableCell;
 StyledDataTableCell.defaultProps = {};
 Object.setPrototypeOf(StyledDataTableCell.defaultProps, _defaultProps.defaultProps);
+var StyledPlaceholder = (0, _styledComponents["default"])('caption').withConfig({
+  displayName: "StyledDataTable__StyledPlaceholder",
+  componentId: "xrlyjm-6"
+})(["position:absolute;", " ", " left:0;right:0;"], function (props) {
+  return "top: " + (props.top || 0) + "px;";
+}, function (props) {
+  return "bottom: " + (props.bottom || 0) + "px;";
+});
+exports.StyledPlaceholder = StyledPlaceholder;

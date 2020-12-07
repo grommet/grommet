@@ -8,6 +8,7 @@ export { Fill } from './Fill';
 export { GroupedDataTable } from './Grouped';
 export { InfiniteScrollDataTable } from './InfiniteScrollDataTable';
 export { NoPrimaryKeyDataTable } from './NoPrimary';
+export { Placeholder } from './Placeholder';
 export { ResizableDataTable } from './ResizableColumns';
 export { Select } from './Select';
 export { ServedDataTable } from './Served';

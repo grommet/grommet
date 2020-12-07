@@ -110,8 +110,7 @@ var StyledContentBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
 })(["", ""], function (props) {
   return props.extend;
 });
-
-var Header = function Header(_ref2) {
+var Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
   var backgroundProp = _ref2.background,
       border = _ref2.border,
       columns = _ref2.columns,
@@ -145,6 +144,7 @@ var Header = function Header(_ref2) {
   var background;
   if (backgroundProp) background = backgroundProp;else background = undefined;
   return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableHeader, _extends({
+    ref: ref,
     fillProp: fill
   }, rest), /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableRow, null, groups && /*#__PURE__*/_react["default"].createElement(_ExpanderCell.ExpanderCell, {
     context: "header",
@@ -269,8 +269,7 @@ var Header = function Header(_ref2) {
       } : undefined
     }, content);
   })));
-};
-
+});
 exports.Header = Header;
 Header.displayName = 'Header';
 Header.defaultProps = {};

@@ -5,6 +5,10 @@ exports.DataTable = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _Box = require("../Box");
+
+var _Text = require("../Text");
+
 var _Header = require("./Header");
 
 var _Footer = require("./Footer");
@@ -67,6 +71,7 @@ var DataTable = function DataTable(_ref) {
       replace = _ref.replace,
       pad = _ref.pad,
       pin = _ref.pin,
+      placeholder = _ref.placeholder,
       primaryKey = _ref.primaryKey,
       resizeable = _ref.resizeable,
       rowProps = _ref.rowProps,
@@ -76,7 +81,7 @@ var DataTable = function DataTable(_ref) {
       sortable = _ref.sortable,
       _ref$step = _ref.step,
       step = _ref$step === void 0 ? 50 : _ref$step,
-      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "fill", "groupBy", "onClickRow", "onMore", "onSearch", "onSelect", "onSort", "replace", "pad", "pin", "primaryKey", "resizeable", "rowProps", "select", "size", "sort", "sortable", "step"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "fill", "groupBy", "onClickRow", "onMore", "onSearch", "onSelect", "onSort", "replace", "pad", "pin", "placeholder", "primaryKey", "resizeable", "rowProps", "select", "size", "sort", "sortable", "step"]);
 
   // property name of the primary property
   var primaryProperty = (0, _react.useMemo)(function () {
@@ -130,8 +135,33 @@ var DataTable = function DataTable(_ref) {
 
   var _useState6 = (0, _react.useState)({}),
       widths = _useState6[0],
-      setWidths = _useState6[1]; // remember that we are filtering on this property
+      setWidths = _useState6[1]; // placeholder placement stuff
 
+
+  var headerRef = (0, _react.useRef)();
+  var footerRef = (0, _react.useRef)();
+
+  var _useState7 = (0, _react.useState)(),
+      headerHeight = _useState7[0],
+      setHeaderHeight = _useState7[1];
+
+  var _useState8 = (0, _react.useState)(),
+      footerHeight = _useState8[0],
+      setFooterHeight = _useState8[1];
+
+  (0, _react.useLayoutEffect)(function () {
+    if (placeholder) {
+      if (headerRef.current) {
+        var nextHeaderHeight = headerRef.current.getBoundingClientRect().height;
+        setHeaderHeight(nextHeaderHeight);
+      } else setHeaderHeight(0);
+
+      if (footerRef.current) {
+        var nextFooterHeight = footerRef.current.getBoundingClientRect().height;
+        setFooterHeight(nextFooterHeight);
+      } else setFooterHeight(0);
+    }
+  }, [footerRef, headerRef, placeholder]); // remember that we are filtering on this property
 
   var onFiltering = function onFiltering(property) {
     return setFiltering(property);
@@ -220,6 +250,7 @@ var DataTable = function DataTable(_ref) {
   return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTable, _extends({
     fillProp: fill
   }, rest), /*#__PURE__*/_react["default"].createElement(_Header.Header, {
+    ref: headerRef,
     background: normalizeProp(background, 'header'),
     border: normalizeProp(border, 'header'),
     columns: columns,
@@ -270,12 +301,14 @@ var DataTable = function DataTable(_ref) {
     } : undefined,
     pad: normalizeProp(pad, 'body'),
     pinnedBackground: normalizeProp(background, 'pinned'),
+    placeholder: placeholder,
     primaryProperty: primaryProperty,
     rowProps: rowProps,
     selected: selected,
     size: size,
     step: step
   }), showFooter && /*#__PURE__*/_react["default"].createElement(_Footer.Footer, {
+    ref: footerRef,
     background: normalizeProp(background, 'footer'),
     border: normalizeProp(border, 'footer'),
     columns: columns,
@@ -288,7 +321,18 @@ var DataTable = function DataTable(_ref) {
     primaryProperty: primaryProperty,
     selected: selected,
     size: size
-  }));
+  }), placeholder && /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledPlaceholder, {
+    top: headerHeight,
+    bottom: footerHeight
+  }, typeof placeholder === 'string' ? /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+    background: {
+      color: 'background-front',
+      opacity: 'strong'
+    },
+    align: "center",
+    justify: "center",
+    fill: "vertical"
+  }, /*#__PURE__*/_react["default"].createElement(_Text.Text, null, placeholder)) : placeholder));
 };
 
 var DataTableDoc;

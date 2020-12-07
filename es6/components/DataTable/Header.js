@@ -2,7 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { useContext } from 'react';
+import React, { forwardRef, useContext } from 'react';
 import styled, { css, ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
@@ -86,8 +86,7 @@ var StyledContentBox = styled(Box).withConfig({
 })(["", ""], function (props) {
   return props.extend;
 });
-
-var Header = function Header(_ref2) {
+var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   var backgroundProp = _ref2.background,
       border = _ref2.border,
       columns = _ref2.columns,
@@ -121,6 +120,7 @@ var Header = function Header(_ref2) {
   var background;
   if (backgroundProp) background = backgroundProp;else background = undefined;
   return /*#__PURE__*/React.createElement(StyledDataTableHeader, _extends({
+    ref: ref,
     fillProp: fill
   }, rest), /*#__PURE__*/React.createElement(StyledDataTableRow, null, groups && /*#__PURE__*/React.createElement(ExpanderCell, {
     context: "header",
@@ -245,8 +245,7 @@ var Header = function Header(_ref2) {
       } : undefined
     }, content);
   })));
-};
-
+});
 Header.displayName = 'Header';
 Header.defaultProps = {};
 Object.setPrototypeOf(Header.defaultProps, defaultProps);

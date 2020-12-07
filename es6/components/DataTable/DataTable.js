@@ -2,13 +2,15 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { Box } from '../Box';
+import { Text } from '../Text';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { Body } from './Body';
 import { GroupedBody } from './GroupedBody';
 import { buildFooterValues, buildGroups, buildGroupState, filterAndSortData, initializeFilters, normalizePrimaryProperty } from './buildState';
-import { StyledDataTable } from './StyledDataTable';
+import { StyledDataTable, StyledPlaceholder } from './StyledDataTable';
 var contexts = ['header', 'body', 'footer'];
 
 var normalizeProp = function normalizeProp(prop, context) {
@@ -51,6 +53,7 @@ var DataTable = function DataTable(_ref) {
       replace = _ref.replace,
       pad = _ref.pad,
       pin = _ref.pin,
+      placeholder = _ref.placeholder,
       primaryKey = _ref.primaryKey,
       resizeable = _ref.resizeable,
       rowProps = _ref.rowProps,
@@ -60,7 +63,7 @@ var DataTable = function DataTable(_ref) {
       sortable = _ref.sortable,
       _ref$step = _ref.step,
       step = _ref$step === void 0 ? 50 : _ref$step,
-      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "fill", "groupBy", "onClickRow", "onMore", "onSearch", "onSelect", "onSort", "replace", "pad", "pin", "primaryKey", "resizeable", "rowProps", "select", "size", "sort", "sortable", "step"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "fill", "groupBy", "onClickRow", "onMore", "onSearch", "onSelect", "onSort", "replace", "pad", "pin", "placeholder", "primaryKey", "resizeable", "rowProps", "select", "size", "sort", "sortable", "step"]);
 
   // property name of the primary property
   var primaryProperty = useMemo(function () {
@@ -114,8 +117,33 @@ var DataTable = function DataTable(_ref) {
 
   var _useState6 = useState({}),
       widths = _useState6[0],
-      setWidths = _useState6[1]; // remember that we are filtering on this property
+      setWidths = _useState6[1]; // placeholder placement stuff
 
+
+  var headerRef = useRef();
+  var footerRef = useRef();
+
+  var _useState7 = useState(),
+      headerHeight = _useState7[0],
+      setHeaderHeight = _useState7[1];
+
+  var _useState8 = useState(),
+      footerHeight = _useState8[0],
+      setFooterHeight = _useState8[1];
+
+  useLayoutEffect(function () {
+    if (placeholder) {
+      if (headerRef.current) {
+        var nextHeaderHeight = headerRef.current.getBoundingClientRect().height;
+        setHeaderHeight(nextHeaderHeight);
+      } else setHeaderHeight(0);
+
+      if (footerRef.current) {
+        var nextFooterHeight = footerRef.current.getBoundingClientRect().height;
+        setFooterHeight(nextFooterHeight);
+      } else setFooterHeight(0);
+    }
+  }, [footerRef, headerRef, placeholder]); // remember that we are filtering on this property
 
   var onFiltering = function onFiltering(property) {
     return setFiltering(property);
@@ -204,6 +232,7 @@ var DataTable = function DataTable(_ref) {
   return /*#__PURE__*/React.createElement(StyledDataTable, _extends({
     fillProp: fill
   }, rest), /*#__PURE__*/React.createElement(Header, {
+    ref: headerRef,
     background: normalizeProp(background, 'header'),
     border: normalizeProp(border, 'header'),
     columns: columns,
@@ -254,12 +283,14 @@ var DataTable = function DataTable(_ref) {
     } : undefined,
     pad: normalizeProp(pad, 'body'),
     pinnedBackground: normalizeProp(background, 'pinned'),
+    placeholder: placeholder,
     primaryProperty: primaryProperty,
     rowProps: rowProps,
     selected: selected,
     size: size,
     step: step
   }), showFooter && /*#__PURE__*/React.createElement(Footer, {
+    ref: footerRef,
     background: normalizeProp(background, 'footer'),
     border: normalizeProp(border, 'footer'),
     columns: columns,
@@ -272,7 +303,18 @@ var DataTable = function DataTable(_ref) {
     primaryProperty: primaryProperty,
     selected: selected,
     size: size
-  }));
+  }), placeholder && /*#__PURE__*/React.createElement(StyledPlaceholder, {
+    top: headerHeight,
+    bottom: footerHeight
+  }, typeof placeholder === 'string' ? /*#__PURE__*/React.createElement(Box, {
+    background: {
+      color: 'background-front',
+      opacity: 'strong'
+    },
+    align: "center",
+    justify: "center",
+    fill: "vertical"
+  }, /*#__PURE__*/React.createElement(Text, null, placeholder)) : placeholder));
 };
 
 var DataTableDoc;

@@ -11,7 +11,7 @@ import { TableFooter } from '../TableFooter'; // border-collapse: separate is ne
 var StyledDataTable = styled(Table).withConfig({
   displayName: "StyledDataTable",
   componentId: "xrlyjm-0"
-})(["border-spacing:0;border-collapse:separate;height:auto;", " ", " ", ";"], genericStyles, function (props) {
+})(["position:relative;border-spacing:0;border-collapse:separate;height:auto;", " ", " ", ";"], genericStyles, function (props) {
   return props.fillProp && fillStyle(props.fillProp);
 }, function (props) {
   return props.theme.dataTable && props.theme.dataTable.body && props.theme.dataTable.body.extend;
@@ -79,4 +79,12 @@ var StyledDataTableCell = styled(TableCell).withConfig({
 });
 StyledDataTableCell.defaultProps = {};
 Object.setPrototypeOf(StyledDataTableCell.defaultProps, defaultProps);
-export { StyledDataTable, StyledDataTableRow, StyledDataTableBody, StyledDataTableCell, StyledDataTableHeader, StyledDataTableFooter };
+var StyledPlaceholder = styled('caption').withConfig({
+  displayName: "StyledDataTable__StyledPlaceholder",
+  componentId: "xrlyjm-6"
+})(["position:absolute;", " ", " left:0;right:0;"], function (props) {
+  return "top: " + (props.top || 0) + "px;";
+}, function (props) {
+  return "bottom: " + (props.bottom || 0) + "px;";
+});
+export { StyledDataTable, StyledDataTableRow, StyledDataTableBody, StyledDataTableCell, StyledDataTableHeader, StyledDataTableFooter, StyledPlaceholder };
