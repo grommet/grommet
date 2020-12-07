@@ -45,7 +45,7 @@ const Footer = forwardRef(
               column={column}
               datum={footerValues}
               pad={pad}
-              pin={pin}
+              pin={pin.length ? pin : undefined}
               primaryProperty={primaryProperty}
             />
           );

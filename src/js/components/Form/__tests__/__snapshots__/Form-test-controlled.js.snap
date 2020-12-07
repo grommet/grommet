@@ -203,7 +203,7 @@ exports[`Form controlled controlled 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kfWKkd"
+            class="StyledTextInput-sc-1x30a0s-0 nnMiQ"
             name="test"
             placeholder="test input"
             value="v"
@@ -237,7 +237,7 @@ exports[`Form controlled controlled 3`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kfWKkd"
+            class="StyledTextInput-sc-1x30a0s-0 nnMiQ"
             name="test"
             placeholder="test input"
             value="v"
@@ -479,7 +479,7 @@ exports[`Form controlled controlled FormField deprecated 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kfWKkd"
+            class="StyledTextInput-sc-1x30a0s-0 nnMiQ"
             id="test"
             name="test"
             value="v"
@@ -519,7 +519,7 @@ exports[`Form controlled controlled FormField deprecated 3`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kfWKkd"
+            class="StyledTextInput-sc-1x30a0s-0 nnMiQ"
             id="test"
             name="test"
             value="v"
@@ -740,7 +740,7 @@ exports[`Form controlled controlled input 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kfWKkd"
+            class="StyledTextInput-sc-1x30a0s-0 nnMiQ"
             name="test"
             placeholder="test input"
             value="v"
@@ -774,7 +774,7 @@ exports[`Form controlled controlled input 3`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kfWKkd"
+            class="StyledTextInput-sc-1x30a0s-0 nnMiQ"
             name="test"
             placeholder="test input"
             value="v"
@@ -995,7 +995,7 @@ exports[`Form controlled controlled input lazy 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kfWKkd"
+            class="StyledTextInput-sc-1x30a0s-0 nnMiQ"
             name="test"
             placeholder="test input"
             value="v"
@@ -1029,7 +1029,7 @@ exports[`Form controlled controlled input lazy 3`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kfWKkd"
+            class="StyledTextInput-sc-1x30a0s-0 nnMiQ"
             name="test"
             placeholder="test input"
             value="v"
@@ -1250,7 +1250,7 @@ exports[`Form controlled controlled lazy 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kfWKkd"
+            class="StyledTextInput-sc-1x30a0s-0 nnMiQ"
             name="test"
             placeholder="test input"
             value="v"
@@ -1284,7 +1284,7 @@ exports[`Form controlled controlled lazy 3`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kfWKkd"
+            class="StyledTextInput-sc-1x30a0s-0 nnMiQ"
             name="test"
             placeholder="test input"
             value="v"
@@ -1692,7 +1692,7 @@ exports[`Form controlled controlled onValidate 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kfWKkd"
+            class="StyledTextInput-sc-1x30a0s-0 nnMiQ"
             name="test"
             placeholder="test input"
             value=""
@@ -1940,7 +1940,7 @@ exports[`Form controlled controlled onValidate custom error 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kfWKkd"
+            class="StyledTextInput-sc-1x30a0s-0 nnMiQ"
             name="test"
             placeholder="test input"
             value=""
@@ -2188,7 +2188,7 @@ exports[`Form controlled controlled onValidate custom info 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 kfWKkd"
+            class="StyledTextInput-sc-1x30a0s-0 nnMiQ"
             name="test"
             placeholder="test input"
             value=""
