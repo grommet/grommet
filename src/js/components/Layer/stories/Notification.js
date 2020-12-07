@@ -53,7 +53,7 @@ export const NotificationLayer = () => {
             <Box align="center" direction="row" gap="xsmall">
               <StatusGood />
               <Text>
-                A new virtual machine has been successfully added (this Layer will
+                A new virtual machine has been successfully added (this Layer
                 close after 3 seconds)
               </Text>
             </Box>
