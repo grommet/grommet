@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports["default"] = exports.TargetLayer = exports.ScrollBodyLayer = exports.RTLLayer = exports.PlainLayer = exports.NotificationLayer = exports.MarginTopCenter = exports.MarginCenter = exports.Margin = exports.FullLayer = exports.FormLayer = exports.CornerLayer = exports.CenterLayer = void 0;
+exports["default"] = exports.Timeout = exports.TargetLayer = exports.ScrollBodyLayer = exports.RTLLayer = exports.PlainLayer = exports.NotificationLayer = exports.MarginTopCenter = exports.MarginCenter = exports.Margin = exports.FullLayer = exports.FormLayer = exports.CornerLayer = exports.CenterLayer = void 0;
 
 var _Center = require("./Center");
 
@@ -44,6 +44,10 @@ exports.ScrollBodyLayer = _ScrollBody.ScrollBodyLayer;
 var _Target = require("./Target");
 
 exports.TargetLayer = _Target.TargetLayer;
+
+var _Timeout = require("./Timeout");
+
+exports.Timeout = _Timeout.Timeout;
 var _default = {
   title: 'Layout/Layer'
 };
