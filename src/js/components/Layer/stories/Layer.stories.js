@@ -10,7 +10,6 @@ export { PlainLayer } from './Plain';
 export { RTLLayer } from './RTL';
 export { ScrollBodyLayer } from './ScrollBody';
 export { TargetLayer } from './Target';
-export { Timeout } from './Timeout';
 
 export default {
   title: 'Layout/Layer',
