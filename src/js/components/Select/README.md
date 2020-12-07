@@ -288,7 +288,9 @@ Custom messages.
 
 **multiple**
 
-Whether to allow multiple options to be selected.
+Whether to allow multiple options to be selected. When multiple is true, 
+      'value' should be an array of selected options and 'options' should be 
+      an array of possible options
 
 ```
 boolean
