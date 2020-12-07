@@ -4,6 +4,7 @@ import { cleanup, render, fireEvent } from '@testing-library/react';
 
 import { Grommet } from '../../Grommet';
 import { Box } from '../../Box';
+import { Text } from '../../Text';
 import { DataTable } from '..';
 
 describe('DataTable', () => {
@@ -882,6 +883,36 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
 
     fireEvent.mouseOver(getByLabelText('select beta'));
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('placeholder', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A', footer: 'Total' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          placeholder="test placeholder"
+        />
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          placeholder={<Text weight="bold">test placeholder</Text>}
+        />
+      </Grommet>,
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 });

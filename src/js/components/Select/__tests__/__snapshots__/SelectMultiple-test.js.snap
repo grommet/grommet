@@ -2895,7 +2895,7 @@ exports[`Select Controlled multiple values 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 kfWKkd Select__SelectTextInput-sc-17idtfo-0 bIurki"
+          class="StyledTextInput-sc-1x30a0s-0 nnMiQ Select__SelectTextInput-sc-17idtfo-0 bIurki"
           id="test-select__input"
           placeholder="test select"
           readonly=""
