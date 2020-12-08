@@ -206,7 +206,10 @@ const Pagination = forwardRef(
 
     return (
       <>
-        {children && currentItems.map(item => children(item))}
+        {children &&
+          currentItems.map((item, index, { active }) =>
+            children(item, index, { active }),
+          )}
         {/* Do we want pontential for internally displaying a "results summary"?
          If so, applying the container props to this box now may leave better
           flexibility moving forward
