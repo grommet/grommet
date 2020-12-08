@@ -508,4 +508,14 @@ describe('TextInput', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('textAlign end', () => {
+    const { container } = render(
+      <Grommet>
+        <TextInput value="1234" textAlign="end" />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

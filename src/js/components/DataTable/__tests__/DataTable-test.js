@@ -3,6 +3,7 @@ import 'jest-styled-components';
 import { cleanup, render, fireEvent } from '@testing-library/react';
 
 import { Grommet } from '../../Grommet';
+import { Text } from '../../Text';
 import { DataTable } from '..';
 
 describe('DataTable', () => {
@@ -857,19 +858,30 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('units', () => {
+  test('placeholder', () => {
     const { container } = render(
       <Grommet>
         <DataTable
           columns={[
-            { property: 'a', header: 'A' },
-            { property: 'b', header: 'B', units: '(MiB)' },
+            { property: 'a', header: 'A', footer: 'Total' },
+            { property: 'b', header: 'B' },
           ]}
           data={[
-            { a: 'zero', b: 0 },
             { a: 'one', b: 1 },
             { a: 'two', b: 2 },
           ]}
+          placeholder="test placeholder"
+        />
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          placeholder={<Text weight="bold">test placeholder</Text>}
         />
       </Grommet>,
     );

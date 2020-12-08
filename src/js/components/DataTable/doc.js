@@ -217,6 +217,13 @@ export const doc = DataTable => {
       `Whether the header and/or footer should be pinned when
       not all rows are visible. A value of true pins both header and footer.`,
     ),
+    placeholder: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.node,
+    ]).description(
+      `A text message or any content to place over the table body.
+      For example, to say "loading ..." when waiting for data to arrive.`,
+    ),
     primaryKey: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.bool,

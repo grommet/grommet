@@ -66,6 +66,7 @@ export interface DataTableProps<TRowType = any> {
   margin?: MarginType;
   pad?: PadType | Sections<PadType>;
   pin?: boolean | 'header' | 'footer';
+  placeholder?: string | React.ReactNode;
   resizeable?: boolean;
   replace?: boolean;
   rowProps?: {
