@@ -872,22 +872,7 @@ Defaults to
 undefined
 ```
 
-**dataTable.header.units.container**
-
-Any Box component properties for styling the combination
-    of the main header content and the units label. Expects `object`.
-
-Defaults to
-
-```
-{
-  align: "baseline",
-  direction: "row",
-  gap: "xsmall",
-}
-```
-
-**dataTable.header.units.label**
+**dataTable.header.units**
 
 Any Text component properties for styling the
     header's units text. Expects `object`.
@@ -895,7 +880,10 @@ Any Text component properties for styling the
 Defaults to
 
 ```
-{ size: "xsmall" }
+{
+  size: "xsmall",
+  margin: { left: "xsmall" }
+}
 ```
 
 **dataTable.resize.hover.color**

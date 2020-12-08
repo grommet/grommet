@@ -173,7 +173,7 @@ const Header = forwardRef(
             }) => {
               let content;
               const unitsContent = units ? (
-                <Text {...textProps} {...theme.dataTable.header.units.label}>
+                <Text {...textProps} {...theme.dataTable.header.units}>
                   {units}
                 </Text>
               ) : (
@@ -233,7 +233,7 @@ const Header = forwardRef(
 
               if (unitsContent) {
                 content = (
-                  <Box {...theme.dataTable.header.units.container}>
+                  <Box align="baseline" direction="row">
                     {content}
                     {unitsContent}
                   </Box>

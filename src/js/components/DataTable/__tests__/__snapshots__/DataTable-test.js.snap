@@ -14407,6 +14407,23 @@ exports[`DataTable units 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c5 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c7 {
+  margin-left: 6px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.c11 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -14442,7 +14459,7 @@ exports[`DataTable units 1`] = `
   flex-direction: row;
 }
 
-.c11 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -14454,16 +14471,6 @@ exports[`DataTable units 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-}
-
-.c7 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 6px;
 }
 
 .c3 {
@@ -14479,12 +14486,25 @@ exports[`DataTable units 1`] = `
   padding-bottom: 6px;
 }
 
-.c10 {
+.c9 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
   text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c12 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-top: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -14497,36 +14517,15 @@ exports[`DataTable units 1`] = `
   width: inherit;
 }
 
-.c5 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c8 {
-  font-size: 12px;
-  line-height: 18px;
-}
-
-.c12 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
 .c2 {
+  position: relative;
   border-spacing: 0;
   border-collapse: separate;
   height: auto;
 }
 
-.c9:focus {
+.c8:focus {
   outline: 2px solid #6FFFB0;
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    width: 3px;
-  }
 }
 
 @media all and (min--moz-device-pixel-ratio:0) {
@@ -14576,13 +14575,10 @@ exports[`DataTable units 1`] = `
               >
                 B
               </span>
-              <div
-                class="c7"
-              />
               <span
-                class="c8"
+                class="c7"
               >
-                (MiB)
+                (TiB)
               </span>
             </div>
           </div>
@@ -14590,61 +14586,30 @@ exports[`DataTable units 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c9"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c8"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
-          class="c10 "
+          class="c9 "
           scope="row"
         >
           <div
-            class="c11"
+            class="c10"
           >
             <span
-              class="c12"
-            >
-              zero
-            </span>
-          </div>
-        </th>
-        <td
-          class="c10 "
-        >
-          <div
-            class="c11"
-          >
-            <span
-              class="c5"
-            >
-              0
-            </span>
-          </div>
-        </td>
-      </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      >
-        <th
-          class="c10 "
-          scope="row"
-        >
-          <div
-            class="c11"
-          >
-            <span
-              class="c12"
+              class="c11"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="c10 "
+          class="c9 "
         >
           <div
-            class="c11"
+            class="c10"
           >
             <span
               class="c5"
@@ -14658,24 +14623,24 @@ exports[`DataTable units 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
-          class="c10 "
+          class="c9 "
           scope="row"
         >
           <div
-            class="c11"
+            class="c10"
           >
             <span
-              class="c12"
+              class="c11"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="c10 "
+          class="c9 "
         >
           <div
-            class="c11"
+            class="c10"
           >
             <span
               class="c5"
@@ -14686,6 +14651,34 @@ exports[`DataTable units 1`] = `
         </td>
       </tr>
     </tbody>
+    <tfoot
+      class="StyledTable__StyledTableFooter-sc-1m3u5g-5 "
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2"
+      >
+        <td
+          class="c12 "
+        >
+          <div
+            class="c10"
+          >
+            <span
+              class="c11"
+            >
+              Total
+            </span>
+          </div>
+        </td>
+        <td
+          class="c12 "
+        >
+          <div
+            class="c10"
+          />
+        </td>
+      </tr>
+    </tfoot>
   </table>
 </div>
 `;

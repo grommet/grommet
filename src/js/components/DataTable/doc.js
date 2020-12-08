@@ -401,21 +401,14 @@ export const themeDoc = {
     type: 'string | object',
     defaultValue: undefined,
   },
-  'dataTable.header.units.container': {
-    description: `Any Box component properties for styling the combination
-    of the main header content and the units label.`,
-    type: 'object',
-    defaultValue: `{
-  align: "baseline",
-  direction: "row",
-  gap: "xsmall",
-}`,
-  },
-  'dataTable.header.units.label': {
+  'dataTable.header.units': {
     description: `Any Text component properties for styling the
     header's units text.`,
     type: 'object',
-    defaultValue: '{ size: "xsmall" }',
+    defaultValue: `{
+  size: "xsmall",
+  margin: { left: "xsmall" }
+}`,
   },
   'dataTable.resize.hover.color': {
     description: 'The color of the resizer when hovered over.',

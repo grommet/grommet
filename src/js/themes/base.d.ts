@@ -625,10 +625,7 @@ export interface ThemeType {
         background?: BackgroundType;
       };
       pad?: PadType;
-      units?: {
-        container?: BoxProps;
-        label?: TextProps;
-      };
+      units?: TextProps;
     };
     groupHeader?: {
       border?: {
