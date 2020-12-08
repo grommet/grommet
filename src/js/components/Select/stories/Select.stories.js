@@ -16,6 +16,7 @@ export { Simple } from './Simple';
 export { Themed } from './Themed';
 export { Uncontrolled } from './Uncontrolled';
 export { Unselect } from './Unselect';
+export { LazyTest } from './TEST';
 
 export default {
   title: 'Input/Select',
