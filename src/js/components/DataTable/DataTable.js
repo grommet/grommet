@@ -51,12 +51,14 @@ const DataTable = ({
   onSort: onSortProp,
   replace,
   pad,
+  paginate,
   paginationProps,
   pin,
   primaryKey,
   resizeable,
   rowProps,
   select,
+  show,
   size,
   sort: sortProp,
   sortable,
@@ -191,9 +193,9 @@ const DataTable = ({
     console.warn('DataTable cannot combine "size" and "resizeble".');
   }
 
-  const [setPage, currentItems] = usePagination({
+  const [setPage, currentItems, currentPage] = usePagination({
     data: adjustedData,
-    paginationProps,
+    paginationProps: { showItem: show, step, ...paginationProps },
   });
 
   return (
@@ -248,7 +250,7 @@ const DataTable = ({
             background={normalizeProp(background, 'body')}
             border={normalizeProp(border, 'body')}
             columns={columns}
-            data={!paginationProps ? adjustedData : currentItems}
+            data={!paginationProps && !paginate ? adjustedData : currentItems}
             onMore={onMore}
             replace={replace}
             onClickRow={onClickRow}
@@ -286,14 +288,16 @@ const DataTable = ({
           />
         )}
       </StyledDataTable>
-      {paginationProps && (
+      {(paginate || paginationProps) && (
         <Pagination
           direction="row"
           items={data.length}
-          justify={paginationProps.justify || 'end'}
+          justify={(paginationProps && paginationProps.justify) || 'end'}
           onChange={event => {
             setPage(event.page);
           }}
+          show={currentPage}
+          step={step}
           {...paginationProps}
         />
       )}

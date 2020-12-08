@@ -2,12 +2,18 @@ import { useCallback, useEffect, useState } from 'react';
 
 // getPaginatedItems
 export const usePagination = ({ data, paginationProps }) => {
-  const itemsPerPage = (paginationProps && paginationProps.step) || 10;
-  const [page, setPage] = useState(
-    (paginationProps && paginationProps.show) || 1,
-  );
-  const itemsBeginIndex = itemsPerPage * (page - 1);
-  const itemsEndIndex = itemsBeginIndex + itemsPerPage;
+  // step specifies the number of items per page of results
+  const step = (paginationProps && paginationProps.step) || 10;
+  let defaultPage;
+  if (paginationProps) {
+    if (paginationProps.showItem)
+      defaultPage = Math.ceil(paginationProps.showItem / step);
+    if (paginationProps.show) defaultPage = paginationProps.show;
+  }
+
+  const [page, setPage] = useState(defaultPage || 1);
+  const itemsBeginIndex = step * (page - 1);
+  const itemsEndIndex = itemsBeginIndex + step;
   const getCurrentItems = useCallback(
     items => {
       if (Array.isArray(items)) {
@@ -23,5 +29,5 @@ export const usePagination = ({ data, paginationProps }) => {
     setCurrentItems(getCurrentItems(data));
   }, [data, getCurrentItems, setCurrentItems]);
 
-  return [setPage, currentItems];
+  return [setPage, currentItems, page, step];
 };

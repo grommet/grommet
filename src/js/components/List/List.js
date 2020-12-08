@@ -69,11 +69,11 @@ const List = React.forwardRef(
       focus,
       itemProps,
       pad,
-      // paginate,
+      paginate,
       paginationProps,
-      // itemsPerPage = 10,
       primaryKey,
       secondaryKey,
+      show,
       step,
       onClickItem,
       onMore,
@@ -86,10 +86,9 @@ const List = React.forwardRef(
     const [active, setActive] = useState();
     const [itemFocus, setItemFocus] = useState();
 
-    const [setPage, currentItems] = usePagination({
+    const [setPage, currentItems, currentPage] = usePagination({
       data,
-      // itemsPerPage,
-      paginationProps,
+      paginationProps: { showItem: show, step, ...paginationProps },
     });
 
     return (
@@ -131,7 +130,7 @@ const List = React.forwardRef(
             {...rest}
           >
             <InfiniteScroll
-              items={!paginationProps ? data : currentItems}
+              items={!paginationProps && !paginate ? data : currentItems}
               onMore={onMore}
               scrollableAncestor="window"
               step={step}
@@ -265,14 +264,16 @@ const List = React.forwardRef(
             </InfiniteScroll>
           </StyledList>
         </Keyboard>
-        {paginationProps && (
+        {(paginate || paginationProps) && (
           <Pagination
             direction="row"
             items={data.length}
-            justify={paginationProps.justify || 'end'}
+            justify={(paginationProps && paginationProps.justify) || 'end'}
             onChange={event => {
               setPage(event.page);
             }}
+            show={currentPage}
+            step={step}
             {...paginationProps}
           />
         )}

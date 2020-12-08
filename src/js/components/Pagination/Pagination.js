@@ -1,9 +1,14 @@
-import React, { forwardRef, useEffect, useState } from 'react';
-import { ChapterNext, ChapterPrevious, Next, Previous } from 'grommet-icons';
+import React, { forwardRef, useContext, useEffect, useState } from 'react';
+import styled, { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Nav } from '../Nav';
 import { PageIndex } from './PageIndex';
 import { usePagination } from '../../utils/pagination';
+
+const StyledPaginationContainer = styled(Box)`
+  ${props =>
+    props.theme.pagination.container && props.theme.pagination.container.extend}
+`;
 
 const Pagination = forwardRef(
   (
@@ -15,24 +20,26 @@ const Pagination = forwardRef(
       numMiddlePages = 1, // number of pages surrounding the active page
       onChange,
       page: pageProp,
-      show = 1,
+      show,
       showFirst,
       showLast,
-      step = 10,
+      // ideating on prop to show a message like "Showing x-y of z items"
+      // showSummary,
+      step: stepProp,
       ...rest
     },
     ref,
   ) => {
-    const [activePage, setActivePage] = useState(show);
+    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const [setPage, currentItems, currentPage, step] = usePagination({
+      data: items,
+      paginationProps: { show, step: stepProp },
+    });
 
+    const [activePage, setActivePage] = useState(currentPage);
     useEffect(() => {
       if (pageProp) setActivePage(pageProp);
     }, [pageProp, setActivePage]);
-
-    const [setPage, currentItems] = usePagination({
-      data: items,
-      paginationProps: { show, step },
-    });
 
     const getPageIndices = (begin, end) => {
       const indices = [];
@@ -116,12 +123,18 @@ const Pagination = forwardRef(
       }
     };
 
+    const NextIcon = theme.pagination.icons.next;
+    const PreviousIcon = theme.pagination.icons.previous;
+    const FirstPageIcon = theme.pagination.icons.first;
+    const LastPageIcon = theme.pagination.icons.last;
+    const iconColor = theme.pagination.icons.color;
+
     const navProps = {
       next: {
         // https://a11y-style-guide.com/style-guide/section-navigation.html#kssref-navigation-pagination
         'aria-disabled': activePage === totalPages ? 'true' : undefined,
         disabled: activePage === totalPages,
-        icon: <Next />,
+        icon: <NextIcon color={iconColor} />,
         onClick: event => {
           event.persist();
           const adjustedEvent = event;
@@ -133,7 +146,7 @@ const Pagination = forwardRef(
       previous: {
         'aria-disabled': activePage === 1 ? 'true' : undefined,
         disabled: activePage === 1,
-        icon: <Previous />,
+        icon: <PreviousIcon color={iconColor} />,
         onClick: event => {
           event.persist();
           const adjustedEvent = event;
@@ -146,7 +159,7 @@ const Pagination = forwardRef(
         a11yTitle: 'Go to first page',
         'aria-disabled': activePage === 1 ? 'true' : undefined,
         disabled: activePage === 1,
-        icon: <ChapterPrevious />,
+        icon: <FirstPageIcon color={iconColor} />,
         onClick: event => {
           event.persist();
           const adjustedEvent = event;
@@ -159,7 +172,7 @@ const Pagination = forwardRef(
         a11yTitle: 'Go to last page',
         'aria-disabled': activePage === totalPages ? 'true' : undefined,
         disabled: activePage === totalPages,
-        icon: <ChapterNext />,
+        icon: <LastPageIcon color={iconColor} />,
         onClick: event => {
           event.persist();
           const adjustedEvent = event;
@@ -194,24 +207,23 @@ const Pagination = forwardRef(
     return (
       <>
         {children && currentItems.map(item => children(item))}
-        <Nav
-          a11yTitle={a11yTitle || 'Pagination Navigation'}
-          ref={ref}
-          {...rest}
-        >
-          <Box
-            as="ul"
-            align="center"
-            direction="row"
-            gap="xxsmall"
-            pad="none"
-            margin="none"
-          >
-            {pages.map(page => (
-              <PageIndex key={page.page} {...page} />
-            ))}
-          </Box>
-        </Nav>
+        {/* Do we want pontential for internally displaying a "results summary"?
+         If so, applying the container props to this box now may leave better
+          flexibility moving forward
+        */}
+        <StyledPaginationContainer {...theme.pagination.container} {...rest}>
+          {/* Ideation: internal control of some results summary, need to think 
+          about what the default would be and how it may be customized
+          */}
+          {/* {showSummary && <Text>Showing 1-10 of 500 results</Text>} */}
+          <Nav a11yTitle={a11yTitle || 'Pagination Navigation'} ref={ref}>
+            <Box as="ul" {...theme.pagination.controls}>
+              {pages.map(page => (
+                <PageIndex key={page.page} {...page} />
+              ))}
+            </Box>
+          </Nav>
+        </StyledPaginationContainer>
       </>
     );
   },

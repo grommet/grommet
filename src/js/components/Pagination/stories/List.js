@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Grommet, List, Menu } from 'grommet';
+import { Box, Grommet, List, Menu, Text } from 'grommet';
 // import { grommet } from 'grommet/themes';
 import { hpe } from 'grommet-theme-hpe';
 import { More } from 'grommet-icons';
@@ -16,10 +16,16 @@ for (let i = 0; i < 95; i += 1) {
 
 const PaginatedList = () => (
   <Grommet theme={hpe}>
-    <Box background="background-back" margin="large" pad="medium" round="small">
+    <Box
+      background="background-back"
+      margin="large"
+      pad="medium"
+      round="small"
+      gap="medium"
+    >
+      <Text weight="bold">paginate + step = 3</Text>
       <List
         data={data}
-        pad={{ left: 'small', right: 'none', vertical: 'small' }}
         action={(item, index) => {
           return (
             <Menu
@@ -30,17 +36,21 @@ const PaginatedList = () => (
             />
           );
         }}
-        paginationProps={{
-          border: { side: 'top', color: 'border' },
-          pad: { top: 'small' },
-          justify: 'center',
-        }}
+        step={3}
+        show={12}
+        paginate
       />
     </Box>
-    <Box background="background-back" margin="large" pad="medium" round="small">
+    <Box
+      background="background-back"
+      margin="large"
+      pad="medium"
+      round="small"
+      gap="medium"
+    >
+      <Text weight="bold">paginationProps</Text>
       <List
         data={data}
-        pad={{ left: 'small', right: 'none', vertical: 'small' }}
         action={(item, index) => {
           return (
             <Menu
@@ -51,10 +61,11 @@ const PaginatedList = () => (
             />
           );
         }}
+        show={13}
         paginationProps={{
           border: { side: 'top', color: 'border' },
           show: 6,
-          step: 15,
+          step: 7,
           pad: { top: 'small' },
         }}
       />

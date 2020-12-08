@@ -2,6 +2,8 @@ import { rgba } from 'polished';
 
 import { Actions } from 'grommet-icons/icons/Actions';
 import { ClosedCaption } from 'grommet-icons/icons/ClosedCaption';
+import { ChapterPrevious } from 'grommet-icons/icons/ChapterPrevious';
+import { ChapterNext } from 'grommet-icons/icons/ChapterNext';
 import { Expand } from 'grommet-icons/icons/Expand';
 import { FormDown } from 'grommet-icons/icons/FormDown';
 import { FormNext } from 'grommet-icons/icons/FormNext';
@@ -939,6 +941,26 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       color: 'graph-0',
       // colors: [] || colors: ['graph-0', 'graph-1', 'graph-2', 'graph-3'],
       // extend: undefined,
+    },
+    pagination: {
+      // container: {
+      //   // any box props,
+      //   // extend: undefined,
+      // },
+      controls: {
+        align: 'center',
+        direction: 'row',
+        gap: 'xxsmall',
+        pad: 'none',
+        margin: 'none',
+      },
+      icons: {
+        // color: undefined,
+        first: ChapterPrevious, // placeholder icon for discussion purposes
+        last: ChapterNext, // placeholder icon for discussion purposes
+        next: Next,
+        previous: Previous,
+      },
     },
     paragraph: {
       font: {
