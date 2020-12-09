@@ -723,6 +723,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //   background: undefined,
         // },
         // pad: undefined,
+        units: {
+          color: 'text-xweak',
+          margin: { left: 'xsmall' },
+        },
       },
       icons: {
         ascending: FormDown,

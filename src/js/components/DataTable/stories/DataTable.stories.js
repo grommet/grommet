@@ -17,6 +17,7 @@ export { SizedDataTable } from './Sized';
 export { Sort } from './Sort';
 export { StyledDataTable } from './Styled';
 export { TunableDataTable } from './Tunable';
+export { UnitsDataTable } from './Units';
 
 export default {
   title: 'Visualizations/DataTable',
