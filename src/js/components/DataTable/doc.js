@@ -406,7 +406,7 @@ export const themeDoc = {
     header's units text.`,
     type: 'object',
     defaultValue: `{
-  size: "xsmall",
+  color: "text-xweak",
   margin: { left: "xsmall" }
 }`,
   },

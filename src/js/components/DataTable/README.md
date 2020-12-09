@@ -881,7 +881,7 @@ Defaults to
 
 ```
 {
-  size: "xsmall",
+  color: "text-xweak",
   margin: { left: "xsmall" }
 }
 ```

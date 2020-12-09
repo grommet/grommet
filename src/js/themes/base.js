@@ -724,7 +724,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // },
         // pad: undefined,
         units: {
-          size: 'xsmall',
+          color: 'text-xweak',
           margin: { left: 'xsmall' },
         },
       },

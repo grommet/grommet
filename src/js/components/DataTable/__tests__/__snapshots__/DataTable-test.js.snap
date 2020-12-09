@@ -14414,8 +14414,9 @@ exports[`DataTable units 1`] = `
 
 .c7 {
   margin-left: 6px;
-  font-size: 12px;
-  line-height: 18px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #666666;
 }
 
 .c11 {
