@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports["default"] = exports.UnitsDataTable = exports.TunableDataTable = exports.StyledDataTable = exports.Sort = exports.SizedDataTable = exports.Simple = exports.ServedDataTable = exports.Select = exports.ResizableDataTable = exports.Placeholder = exports.NoPrimaryKeyDataTable = exports.InfiniteScrollDataTable = exports.GroupedDataTable = exports.Fill = exports.Custom = exports.ControlledGroupedDataTable = exports.ControlledDataTable = exports.ColumnSize = exports.ClickableDataTable = exports.Clickable = void 0;
+exports["default"] = exports.UnitsDataTable = exports.TunableDataTable = exports.StyledDataTable = exports.Sort = exports.SizedDataTable = exports.Simple = exports.ServedDataTable = exports.Select = exports.ResizableDataTable = exports.Placeholder = exports.NoPrimaryKeyDataTable = exports.OnSelectDataTable = exports.InfiniteScrollDataTable = exports.GroupedDataTable = exports.Fill = exports.Custom = exports.ControlledGroupedDataTable = exports.ControlledDataTable = exports.ColumnSize = exports.ClickableDataTable = exports.Clickable = void 0;
 
 var _Clickable = require("./Clickable");
 
@@ -38,6 +38,10 @@ exports.GroupedDataTable = _Grouped.GroupedDataTable;
 var _InfiniteScrollDataTable = require("./InfiniteScrollDataTable");
 
 exports.InfiniteScrollDataTable = _InfiniteScrollDataTable.InfiniteScrollDataTable;
+
+var _OnSelect = require("./typescript/OnSelect.tsx");
+
+exports.OnSelectDataTable = _OnSelect.OnSelectDataTable;
 
 var _NoPrimary = require("./NoPrimary");
 

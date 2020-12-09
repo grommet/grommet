@@ -7,6 +7,7 @@ export { Custom } from './Custom';
 export { Fill } from './Fill';
 export { GroupedDataTable } from './Grouped';
 export { InfiniteScrollDataTable } from './InfiniteScrollDataTable';
+export { OnSelectDataTable } from './typescript/OnSelect.tsx';
 export { NoPrimaryKeyDataTable } from './NoPrimary';
 export { Placeholder } from './Placeholder';
 export { ResizableDataTable } from './ResizableColumns';
