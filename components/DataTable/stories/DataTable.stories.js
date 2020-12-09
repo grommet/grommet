@@ -1,15 +1,11 @@
 "use strict";
 
 exports.__esModule = true;
-exports["default"] = exports.UnitsDataTable = exports.TunableDataTable = exports.StyledDataTable = exports.Sort = exports.SizedDataTable = exports.Simple = exports.ServedDataTable = exports.Select = exports.ResizableDataTable = exports.Placeholder = exports.NoPrimaryKeyDataTable = exports.OnSelectDataTable = exports.InfiniteScrollDataTable = exports.GroupedDataTable = exports.Fill = exports.Custom = exports.ControlledGroupedDataTable = exports.ControlledDataTable = exports.ColumnSize = exports.ClickableDataTable = exports.Clickable = void 0;
+exports["default"] = exports.UnitsDataTable = exports.TunableDataTable = exports.StyledDataTable = exports.Sort = exports.SizedDataTable = exports.Simple = exports.ServedDataTable = exports.ResizableDataTable = exports.Placeholder = exports.NoPrimaryKeyDataTable = exports.OnSelectDataTable = exports.InfiniteScrollDataTable = exports.GroupedDataTable = exports.Fill = exports.Custom = exports.ControlledGroupedDataTable = exports.ControlledDataTable = exports.ColumnSize = exports.ClickableDataTable = void 0;
 
-var _Clickable = require("./Clickable");
+var _Clickable = require("./typescript/Clickable.tsx");
 
-exports.Clickable = _Clickable.Clickable;
-
-var _Clickable2 = require("./typescript/Clickable.tsx");
-
-exports.ClickableDataTable = _Clickable2.ClickableDataTable;
+exports.ClickableDataTable = _Clickable.ClickableDataTable;
 
 var _ColumnSize = require("./ColumnSize");
 
@@ -54,10 +50,6 @@ exports.Placeholder = _Placeholder.Placeholder;
 var _ResizableColumns = require("./ResizableColumns");
 
 exports.ResizableDataTable = _ResizableColumns.ResizableDataTable;
-
-var _Select = require("./Select");
-
-exports.Select = _Select.Select;
 
 var _Served = require("./Served");
 

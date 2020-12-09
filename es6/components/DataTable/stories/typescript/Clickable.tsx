@@ -12,6 +12,8 @@ const amountFormatter = new Intl.NumberFormat('en-US', {
   minimumFractionDigits: 2,
 });
 
+// Type annotations can only be used in TypeScript files.
+// Remove ': ColumnConfig<RowType>[]' if you are not using TypeScript.
 export const columns: ColumnConfig<RowType>[] = [
   {
     property: 'name',
@@ -67,6 +69,8 @@ for (let i = 0; i < 40; i += 1) {
   });
 }
 
+// 'interface' declarations can only be used in TypeScript files.
+// Remove ': 'interface RowType' if you are not using Typescript.
 interface RowType {
   name: string;
   location: string;
@@ -75,6 +79,8 @@ interface RowType {
   paid: number;
 }
 
+// Type annotations can only be used in TypeScript files.
+// Remove ': RowType[]' if you are not using TypeScript.
 export const DATA: RowType[] = [
   {
     name: 'Shimi',
@@ -149,5 +155,5 @@ export const ClickableDataTable = () => (
 );
 
 ClickableDataTable.story = {
-  name: '[TS] Clickable',
+  name: 'Clickable',
 };
