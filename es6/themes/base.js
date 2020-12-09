@@ -783,11 +783,17 @@ export var generate = function generate(baseSpacing, scale) {
         //   weight: undefined,
         //   size: undefined,
         // },
-        gap: 'small' // hover: {
+        gap: 'small',
+        // hover: {
         //   background: undefined,
         // },
         // pad: undefined,
-
+        units: {
+          color: 'text-xweak',
+          margin: {
+            left: 'xsmall'
+          }
+        }
       },
       icons: {
         ascending: FormDown,

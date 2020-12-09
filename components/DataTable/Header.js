@@ -50,7 +50,8 @@ var separateThemeProps = function separateThemeProps(theme) {
       color = _theme$dataTable$head.color,
       font = _theme$dataTable$head.font,
       gap = _theme$dataTable$head.gap,
-      rest = _objectWithoutPropertiesLoose(_theme$dataTable$head, ["background", "border", "color", "font", "gap"]);
+      units = _theme$dataTable$head.units,
+      rest = _objectWithoutPropertiesLoose(_theme$dataTable$head, ["background", "border", "color", "font", "gap", "units"]);
 
   var cellProps = {
     background: background,
@@ -172,8 +173,10 @@ var Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
         search = _ref3.search,
         sortable = _ref3.sortable,
         verticalAlign = _ref3.verticalAlign,
-        size = _ref3.size;
+        size = _ref3.size,
+        units = _ref3.units;
     var content;
+    var unitsContent = units ? /*#__PURE__*/_react["default"].createElement(_Text.Text, _extends({}, textProps, theme.dataTable.header.units), units) : undefined;
 
     if (typeof header === 'string') {
       content = /*#__PURE__*/_react["default"].createElement(_Text.Text, textProps, header);
@@ -210,6 +213,13 @@ var Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
         gap: "xsmall",
         justify: align
       }, content, Icon && /*#__PURE__*/_react["default"].createElement(Icon, null)));
+    }
+
+    if (unitsContent) {
+      content = /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+        align: "baseline",
+        direction: "row"
+      }, content, unitsContent);
     } // content should fill any available space in cell
 
 

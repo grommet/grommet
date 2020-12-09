@@ -66,6 +66,7 @@ var doc = function doc(DataTable) {
       search: _reactDesc.PropTypes.bool,
       sortable: _reactDesc.PropTypes.bool,
       size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', '1/2', '1/4', '2/4', '3/4', '1/3', '2/3']), _reactDesc.PropTypes.string]),
+      units: _reactDesc.PropTypes.string,
       verticalAlign: _reactDesc.PropTypes.oneOf(['middle', 'top', 'bottom'])
     })).description("A description of the data. The order controls the column order.\n      'property' indicates which property in the data objects to associate\n      the column with. 'header' indicates what to display in the column\n      header. 'render' allows for custom rendering of body cells. Use 'render'\n      for custom formatting for things like currency and date or to\n      display rich content like Meters. 'align' indicates how the cells in\n      the column are aligned. 'aggregate' indicates how the data in the\n      column should be aggregated. This only applies to a footer or groupBy\n      context. 'footer' indicates what should be shown in the footer for\n      the column. 'search' indicates whether a search filter should be\n      made available for the column. 'primary' indicates that this property\n      should be used as the unique identifier, which gives the cell 'row' scope\n      for accessibility. If 'primary' is not used for any column, and\n      'primaryKey' isn't specified either, then the first column will be used.\n      'pin' indicates that this column should not scroll out of view\n      to the left when the table is scrolled horizontally."),
     data: _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.shape({})).description('Array of data objects.'),
@@ -191,6 +192,11 @@ var themeDoc = {
     description: 'The pad around the contents of the header cell.',
     type: 'string | object',
     defaultValue: undefined
+  },
+  'dataTable.header.units': {
+    description: "Any Text component properties for styling the\n    header's units text.",
+    type: 'object',
+    defaultValue: "{\n  color: \"text-xweak\",\n  margin: { left: \"xsmall\" }\n}"
   },
   'dataTable.resize.hover.color': {
     description: 'The color of the resizer when hovered over.',

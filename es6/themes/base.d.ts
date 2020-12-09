@@ -625,6 +625,7 @@ export interface ThemeType {
         background?: BackgroundType;
       };
       pad?: PadType;
+      units?: TextProps;
     };
     groupHeader?: {
       border?: {
