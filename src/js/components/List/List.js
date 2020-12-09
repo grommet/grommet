@@ -9,6 +9,7 @@ import { Text } from '../Text';
 import {
   focusStyle,
   genericStyles,
+  normalizeShow,
   unfocusStyle,
   useForwardedRef,
   usePagination,
@@ -73,7 +74,7 @@ const List = React.forwardRef(
       paginationProps,
       primaryKey,
       secondaryKey,
-      show,
+      show: showProp,
       step,
       onClickItem,
       onMore,
@@ -86,9 +87,10 @@ const List = React.forwardRef(
     const [active, setActive] = useState();
     const [itemFocus, setItemFocus] = useState();
 
+    const [show, showItem] = normalizeShow(showProp, 'list');
     const [setPage, currentItems, currentPage] = usePagination({
       data,
-      paginationProps: { showItem: show, step, ...paginationProps },
+      paginationProps: { showItem, show, step, ...paginationProps },
     });
 
     return (

@@ -39,6 +39,27 @@ const PaginatedDataTable = () => {
         round="small"
         gap="medium"
       >
+        <Text weight="bold">
+          Props: `paginate` + `step=2` + `show= page: 3`
+        </Text>
+        <DataTable
+          columns={columns}
+          data={[...DATA]}
+          show={{ page: 3 }}
+          step={2}
+          select={select}
+          onSelect={setSelect}
+          paginate
+          sortable
+        />
+      </Box>
+      <Box
+        background="background-back"
+        margin="large"
+        pad="small"
+        round="small"
+        gap="medium"
+      >
         <Text weight="bold">paginationProps</Text>
         <DataTable
           columns={columns}

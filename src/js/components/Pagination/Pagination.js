@@ -3,7 +3,7 @@ import styled, { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Nav } from '../Nav';
 import { PageIndex } from './PageIndex';
-import { usePagination } from '../../utils/pagination';
+import { normalizeShow, usePagination } from '../../utils/pagination';
 
 const StyledPaginationContainer = styled(Box)`
   ${props =>
@@ -20,7 +20,7 @@ const Pagination = forwardRef(
       numMiddlePages = 1, // number of pages surrounding the active page
       onChange,
       page: pageProp,
-      show,
+      show: showProp,
       showFirst,
       showLast,
       // ideating on prop to show a message like "Showing x-y of z items"
@@ -31,9 +31,11 @@ const Pagination = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
+
+    const [show, showItem] = normalizeShow(showProp, 'pagination');
     const [setPage, currentItems, currentPage, step] = usePagination({
       data: items,
-      paginationProps: { show, step: stepProp },
+      paginationProps: { showItem, show, step: stepProp },
     });
 
     const [activePage, setActivePage] = useState(currentPage);

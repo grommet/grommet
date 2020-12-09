@@ -24,7 +24,7 @@ const Example = () => {
         pad="medium"
         round="small"
       >
-        <Pagination align="center" items={data}>
+        <Pagination align="center" items={data} show={{ index: 64 }}>
           {item => <Text key={item.entry}>{item.entry}</Text>}
         </Pagination>
       </Box>

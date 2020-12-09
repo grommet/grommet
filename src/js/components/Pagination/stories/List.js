@@ -23,7 +23,7 @@ const PaginatedList = () => (
       round="small"
       gap="medium"
     >
-      <Text weight="bold">paginate + step = 3</Text>
+      <Text weight="bold">paginate + step = 3 + show = 11</Text>
       <List
         data={data}
         action={(item, index) => {
@@ -37,8 +37,36 @@ const PaginatedList = () => (
           );
         }}
         step={3}
-        show={12}
+        show={11}
         paginate
+      />
+    </Box>
+    <Box
+      background="background-back"
+      margin="large"
+      pad="medium"
+      round="small"
+      gap="medium"
+    >
+      <Text weight="bold">paginate + show = page: 3</Text>
+      <List
+        data={data}
+        action={(item, index) => {
+          return (
+            <Menu
+              key={index}
+              icon={<More />}
+              hoverIndicator
+              items={[{ label: 'one' }]}
+            />
+          );
+        }}
+        show={{ page: 3 }}
+        step={3}
+        paginationProps={{
+          border: { side: 'top', color: 'border' },
+          pad: { top: 'small' },
+        }}
       />
     </Box>
     <Box
@@ -64,7 +92,6 @@ const PaginatedList = () => (
         show={13}
         paginationProps={{
           border: { side: 'top', color: 'border' },
-          show: 6,
           step: 7,
           pad: { top: 'small' },
         }}

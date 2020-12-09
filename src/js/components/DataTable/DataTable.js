@@ -13,7 +13,7 @@ import {
   initializeFilters,
   normalizePrimaryProperty,
 } from './buildState';
-import { usePagination } from '../../utils';
+import { normalizeShow, usePagination } from '../../utils';
 import { StyledDataTable } from './StyledDataTable';
 
 const contexts = ['header', 'body', 'footer'];
@@ -58,7 +58,7 @@ const DataTable = ({
   resizeable,
   rowProps,
   select,
-  show,
+  show: showProp,
   size,
   sort: sortProp,
   sortable,
@@ -193,9 +193,10 @@ const DataTable = ({
     console.warn('DataTable cannot combine "size" and "resizeble".');
   }
 
+  const [show, showItem] = normalizeShow(showProp, 'dataTable');
   const [setPage, currentItems, currentPage] = usePagination({
     data: adjustedData,
-    paginationProps: { showItem: show, step, ...paginationProps },
+    paginationProps: { showItem, show, step, ...paginationProps },
   });
 
   return (
