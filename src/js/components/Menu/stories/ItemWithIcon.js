@@ -32,12 +32,15 @@ const IconItemsMenu = () => (
             ),
           },
         ]}
-      >
-        <Box direction="row" gap="small" pad="large">
-          <FormDown />
-          <Text>Menu with Icon on the left</Text>
-        </Box>
-      </Menu>
+        /* eslint-disable react/no-children-prop */
+        children={() => (
+          <Box direction="row" gap="small" pad="large">
+            <FormDown />
+            <Text>Menu with Icon on the left</Text>
+          </Box>
+        )}
+        /* eslint-enable react/no-children-prop */
+      />
     </Box>
   </Grommet>
 );
