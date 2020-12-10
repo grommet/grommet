@@ -449,10 +449,11 @@ describe('Select Controlled', () => {
       const [value, setValue] = React.useState();
       const [options, setOptions] = React.useState([]);
 
+      // get options from mock server
       React.useEffect(() => {
         setTimeout(() => {
           setOptions(optionsFromServer);
-        }, 100);
+        }, 1000);
       }, []);
 
       return (
@@ -471,7 +472,7 @@ describe('Select Controlled', () => {
         />
       );
     };
-    const { getByPlaceholderText, getByText, debug } = render(
+    const { getByPlaceholderText, getByText } = render(
       <Grommet>
         <Test />
       </Grommet>,
@@ -481,14 +482,18 @@ describe('Select Controlled', () => {
       'Select multiple lazyload options',
     );
     fireEvent.click(selectInput);
+    // advance timers so that options have been returned
     act(() => {
-      jest.advanceTimersByTime(150);
+      jest.advanceTimersByTime(1100);
     });
     fireEvent.click(getByText('Value15'));
-    // expect(onChange).toHaveBeenNthCalledWith(1,
-    // [{ id: 15, name: 'Value15' }]);
-
-    debug();
+    expect(onChange).toHaveBeenNthCalledWith(1, [{ id: 15, name: 'Value15' }]);
+    fireEvent.click(selectInput);
+    fireEvent.click(getByText('Value22'));
+    expect(onChange).toHaveBeenNthCalledWith(2, [
+      { id: 15, name: 'Value15' },
+      { id: 22, name: 'Value22' },
+    ]);
   });
 
   window.scrollTo.mockRestore();

@@ -25,7 +25,6 @@ export const LazyLoadingOptions = () => {
 
   const onMore = () => {
     setTimeout(() => {
-      console.log('onmore called');
       setOptions(dummyOptions.slice(0, options.length + 200));
     }, 1000);
   };

@@ -101,12 +101,20 @@ const Select = forwardRef(
         );
       return valueKey && valueKey.reduce ? value : applyKey(value, valueKey);
     }, [value, valueKey]);
+    // maintain master list of all options to reference when
+    // option values are selected from a filtered set of options
+    // (e.g. such as when searching)
+    const [optionsTotal, setOptionsTotal] = useState(options);
+    useEffect(() => {
+      if (options.length > optionsTotal.length) {
+        setOptionsTotal(options);
+      }
+    }, [options, optionsTotal]);
 
-    const [initialOptions] = useState(options);
     // the option indexes present in the value
     const optionIndexesInValue = useMemo(() => {
       const result = [];
-      initialOptions.forEach((option, index) => {
+      optionsTotal.forEach((option, index) => {
         if (selected !== undefined) {
           if (Array.isArray(selected)) {
             if (selected.indexOf(index) !== -1) result.push(index);
@@ -122,7 +130,7 @@ const Select = forwardRef(
         }
       });
       return result;
-    }, [initialOptions, selected, valueKey, valuedValue]);
+    }, [optionsTotal, selected, valueKey, valuedValue]);
 
     const [open, setOpen] = useState(propOpen);
     useEffect(() => setOpen(propOpen), [propOpen]);
@@ -182,11 +190,11 @@ const Select = forwardRef(
       if (!selectValue) {
         if (optionIndexesInValue.length === 0) return '';
         if (optionIndexesInValue.length === 1)
-          return applyKey(initialOptions[optionIndexesInValue[0]], labelKey);
+          return applyKey(optionsTotal[optionIndexesInValue[0]], labelKey);
         return messages.multiple;
       }
       return undefined;
-    }, [labelKey, messages, optionIndexesInValue, initialOptions, selectValue]);
+    }, [labelKey, messages, optionIndexesInValue, optionsTotal, selectValue]);
 
     const iconColor = normalizeColor(
       theme.select.icons.color || 'control',
@@ -225,6 +233,7 @@ const Select = forwardRef(
               onMore={onMore}
               onSearch={onSearch}
               options={options}
+              optionsTotal={optionsTotal}
               optionIndexesInValue={optionIndexesInValue}
               replace={replace}
               searchPlaceholder={searchPlaceholder}

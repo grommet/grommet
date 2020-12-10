@@ -75,6 +75,7 @@ const SelectContainer = forwardRef(
       onSearch,
       optionIndexesInValue,
       options,
+      optionsTotal,
       searchPlaceholder,
       selected,
       value = '',
@@ -88,7 +89,6 @@ const SelectContainer = forwardRef(
     const [activeIndex, setActiveIndex] = useState(-1);
     const [keyboardNavigation, setKeyboardNavigation] = useState();
     const [focus, setFocus] = useState(false);
-    const [initialOptions] = useState(options);
     const searchRef = useRef();
     const optionsRef = useRef();
     // adjust activeIndex when options change
@@ -198,30 +198,28 @@ const SelectContainer = forwardRef(
           let nextSelected;
           if (multiple) {
             const nextOptionIndexesInValue = optionIndexesInValue.slice(0);
-            const initialOptionsIndex = initialOptions.indexOf(options[index]);
-            const valueIndex = optionIndexesInValue.indexOf(
-              initialOptionsIndex,
-            );
+            const optionsTotalIndex = optionsTotal.indexOf(options[index]);
+            const valueIndex = optionIndexesInValue.indexOf(optionsTotalIndex);
             if (valueIndex === -1) {
-              nextOptionIndexesInValue.push(initialOptionsIndex);
+              nextOptionIndexesInValue.push(optionsTotalIndex);
             } else {
               nextOptionIndexesInValue.splice(valueIndex, 1);
             }
             nextValue = nextOptionIndexesInValue.map(i =>
               valueKey && valueKey.reduce
-                ? applyKey(initialOptions[i], valueKey)
-                : initialOptions[i],
+                ? applyKey(optionsTotal[i], valueKey)
+                : optionsTotal[i],
             );
             nextSelected = nextOptionIndexesInValue;
           } else {
             nextValue =
               valueKey && valueKey.reduce
-                ? applyKey(options[index], valueKey)
-                : options[index];
+                ? applyKey(optionsTotal[index], valueKey)
+                : optionsTotal[index];
             nextSelected = index;
           }
           onChange(event, {
-            option: options[index],
+            option: optionsTotal[index],
             value: nextValue,
             selected: nextSelected,
           });
@@ -231,8 +229,8 @@ const SelectContainer = forwardRef(
         multiple,
         onChange,
         optionIndexesInValue,
-        initialOptions,
         options,
+        optionsTotal,
         valueKey,
       ],
     );
