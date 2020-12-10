@@ -12,12 +12,15 @@ import { Text } from '../Text';
 const Tree = ({ children, mode, data }) => {
   const theme = useContext(ThemeContext);
 
-  const [depth, setDepth] = useState(0);
+  // The number of levels from the root, while the root is level zero.
+  const [depth, setDepth] = useState(0); // initializing to root level
   // an array of the path names
-  const [breadcrumbs, setBreadcrumbs] = useState([]);
+  const [path, setPath] = useState([]);
   const [selectedNode, setSelectedNode] = useState();
-  // treeLevel should only be updated on useEffect to reflect correct depth
-  const [treeLevel, setTreeLevel] = useState(data);
+  // treeLevelData is an array of objects from the 'depth' level,
+  // and would eventually be translated to a List.
+  // treeLevelData should only be updated on useEffect to reflect correct depth
+  const [treeLevelData, setTreeLevelData] = useState(data);
   // parentLevel should only be updated on useEffect to reflect correct depth
   const [parentLevel, setParentLevel] = useState();
 
@@ -26,17 +29,17 @@ const Tree = ({ children, mode, data }) => {
     let parent;
     for (let i = 0; i < depth; i += 1) {
       // follow the breadcrumbs path
-      parent = level.find(element => element.name === breadcrumbs[i]);
+      parent = level.find(element => element.name === path[i]);
       level = parent.children;
     }
     setParentLevel(parent);
-    setTreeLevel(level);
-  }, [breadcrumbs, data, depth]);
+    setTreeLevelData(level);
+  }, [path, data, depth]);
 
   const ColumnNavigationList = () => (
     <Box width="medium">
       <List
-        data={treeLevel}
+        data={treeLevelData}
         onClickItem={event => setSelectedNode(event.item)}
         {...theme.tree.column.listProps}
       >
@@ -60,7 +63,7 @@ const Tree = ({ children, mode, data }) => {
 
   const NestedNavigationList = () => (
     <List
-      data={treeLevel}
+      data={treeLevelData}
       onClickItem={event => {
         setSelectedNode(event.item);
       }}
@@ -91,20 +94,20 @@ const Tree = ({ children, mode, data }) => {
     content = (
       <Box align="start" gap="medium">
         {/* Breadcrumbs */}
-        {depth > 0 && breadcrumbs.length > 0 && (
+        {depth > 0 && path.length > 0 && (
           <Button
-            a11yTitle={breadcrumbs[breadcrumbs.length - 1]}
+            a11yTitle={path[path.length - 1]}
             label={
               <Text style={{ textDecoration: 'underline' }} size="small">
-                {breadcrumbs[breadcrumbs.length - 1]}
+                {path[path.length - 1]}
               </Text>
             }
             icon={<FormPrevious />}
             plain
             onClick={() => {
               // remove the last breadcrumb item when Previous is selected
-              breadcrumbs.pop();
-              setBreadcrumbs(breadcrumbs);
+              path.pop();
+              setPath(path);
               setDepth(depth - 1);
               setSelectedNode(parentLevel);
             }}
@@ -128,7 +131,7 @@ const Tree = ({ children, mode, data }) => {
                 reverse
                 onClick={() => {
                   // add a new selected entry to the breadcrumbs path
-                  setBreadcrumbs([...breadcrumbs, selectedNode.name]);
+                  setPath([...path, selectedNode.name]);
                   setSelectedNode(undefined);
                   setDepth(depth + 1);
                 }}

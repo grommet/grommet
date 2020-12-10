@@ -101,8 +101,6 @@ exports[`Tree column mode 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -159,29 +157,6 @@ exports[`Tree column mode 1`] = `
 }
 
 .c14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  cursor: pointer;
-}
-
-.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -257,13 +232,6 @@ exports[`Tree column mode 1`] = `
 
 @media only screen and (max-width:768px) {
   .c5 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
     padding-left: 12px;
     padding-right: 12px;
   }
@@ -278,32 +246,12 @@ exports[`Tree column mode 1`] = `
 
 @media only screen and (max-width:768px) {
   .c14 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c14 {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c14 {
-    padding-top: 6px;
-    padding-bottom: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c15 {
     border-left: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c14 {
     padding: 12px;
   }
 }
@@ -376,7 +324,7 @@ exports[`Tree column mode 1`] = `
             </div>
           </li>
           <li
-            class="c14 c6"
+            class="c5 c6"
             tabindex="-1"
           >
             <div
@@ -415,7 +363,7 @@ exports[`Tree column mode 1`] = `
             </div>
           </li>
           <li
-            class="c14 c6"
+            class="c5 c6"
             tabindex="-1"
           >
             <div
@@ -454,7 +402,7 @@ exports[`Tree column mode 1`] = `
             </div>
           </li>
           <li
-            class="c14 c6"
+            class="c5 c6"
             tabindex="-1"
           >
             <div
@@ -493,7 +441,7 @@ exports[`Tree column mode 1`] = `
             </div>
           </li>
           <li
-            class="c14 c6"
+            class="c5 c6"
             tabindex="-1"
           >
             <div
@@ -534,7 +482,7 @@ exports[`Tree column mode 1`] = `
             </div>
           </li>
           <li
-            class="c14 c6"
+            class="c5 c6"
             tabindex="-1"
           >
             <div
@@ -573,7 +521,7 @@ exports[`Tree column mode 1`] = `
             </div>
           </li>
           <li
-            class="c14 c6"
+            class="c5 c6"
             tabindex="-1"
           >
             <div
@@ -614,7 +562,7 @@ exports[`Tree column mode 1`] = `
             </div>
           </li>
           <li
-            class="c14 c6"
+            class="c5 c6"
             tabindex="-1"
           >
             <div
@@ -653,7 +601,7 @@ exports[`Tree column mode 1`] = `
             </div>
           </li>
           <li
-            class="c14 c6"
+            class="c5 c6"
             tabindex="-1"
           >
             <div
@@ -692,7 +640,7 @@ exports[`Tree column mode 1`] = `
             </div>
           </li>
           <li
-            class="c14 c6"
+            class="c5 c6"
             tabindex="-1"
           >
             <div
@@ -733,7 +681,7 @@ exports[`Tree column mode 1`] = `
             </div>
           </li>
           <li
-            class="c14 c6"
+            class="c5 c6"
             tabindex="-1"
           >
             <div
@@ -774,7 +722,7 @@ exports[`Tree column mode 1`] = `
         </ul>
       </div>
       <div
-        class="c15"
+        class="c14"
       />
     </div>
   </div>
@@ -851,8 +799,6 @@ exports[`Tree column nested 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -884,29 +830,6 @@ exports[`Tree column nested 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  cursor: pointer;
 }
 
 .c7 {
@@ -944,13 +867,6 @@ exports[`Tree column nested 1`] = `
 
 @media only screen and (max-width:768px) {
   .c3 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
     padding-left: 12px;
     padding-right: 12px;
   }
@@ -958,26 +874,6 @@ exports[`Tree column nested 1`] = `
 
 @media only screen and (max-width:768px) {
   .c3 {
-    padding-top: 6px;
-    padding-bottom: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
@@ -1029,7 +925,7 @@ exports[`Tree column nested 1`] = `
         </div>
       </li>
       <li
-        class="c9 c4"
+        class="c3 c4"
         tabindex="-1"
       >
         <div
@@ -1058,7 +954,7 @@ exports[`Tree column nested 1`] = `
         </div>
       </li>
       <li
-        class="c9 c4"
+        class="c3 c4"
         tabindex="-1"
       >
         <div
@@ -1087,7 +983,7 @@ exports[`Tree column nested 1`] = `
         </div>
       </li>
       <li
-        class="c9 c4"
+        class="c3 c4"
         tabindex="-1"
       >
         <div
@@ -1116,7 +1012,7 @@ exports[`Tree column nested 1`] = `
         </div>
       </li>
       <li
-        class="c9 c4"
+        class="c3 c4"
         tabindex="-1"
       >
         <div
@@ -1145,7 +1041,7 @@ exports[`Tree column nested 1`] = `
         </div>
       </li>
       <li
-        class="c9 c4"
+        class="c3 c4"
         tabindex="-1"
       >
         <div
@@ -1174,7 +1070,7 @@ exports[`Tree column nested 1`] = `
         </div>
       </li>
       <li
-        class="c9 c4"
+        class="c3 c4"
         tabindex="-1"
       >
         <div
@@ -1203,7 +1099,7 @@ exports[`Tree column nested 1`] = `
         </div>
       </li>
       <li
-        class="c9 c4"
+        class="c3 c4"
         tabindex="-1"
       >
         <div
@@ -1232,7 +1128,7 @@ exports[`Tree column nested 1`] = `
         </div>
       </li>
       <li
-        class="c9 c4"
+        class="c3 c4"
         tabindex="-1"
       >
         <div
@@ -1261,7 +1157,7 @@ exports[`Tree column nested 1`] = `
         </div>
       </li>
       <li
-        class="c9 c4"
+        class="c3 c4"
         tabindex="-1"
       >
         <div
@@ -1290,7 +1186,7 @@ exports[`Tree column nested 1`] = `
         </div>
       </li>
       <li
-        class="c9 c4"
+        class="c3 c4"
         tabindex="-1"
       >
         <div
@@ -1393,8 +1289,6 @@ exports[`Tree should have no accessibility violations 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.33);
-  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1426,29 +1320,6 @@ exports[`Tree should have no accessibility violations 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  cursor: pointer;
 }
 
 .c7 {
@@ -1486,13 +1357,6 @@ exports[`Tree should have no accessibility violations 1`] = `
 
 @media only screen and (max-width:768px) {
   .c3 {
-    border-top: solid 1px rgba(0,0,0,0.33);
-    border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
     padding-left: 12px;
     padding-right: 12px;
   }
@@ -1500,26 +1364,6 @@ exports[`Tree should have no accessibility violations 1`] = `
 
 @media only screen and (max-width:768px) {
   .c3 {
-    padding-top: 6px;
-    padding-bottom: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c9 {
     padding-top: 6px;
     padding-bottom: 6px;
   }
@@ -1571,7 +1415,7 @@ exports[`Tree should have no accessibility violations 1`] = `
         </div>
       </li>
       <li
-        class="c9 c4"
+        class="c3 c4"
         tabindex="-1"
       >
         <div
@@ -1600,7 +1444,7 @@ exports[`Tree should have no accessibility violations 1`] = `
         </div>
       </li>
       <li
-        class="c9 c4"
+        class="c3 c4"
         tabindex="-1"
       >
         <div
@@ -1629,7 +1473,7 @@ exports[`Tree should have no accessibility violations 1`] = `
         </div>
       </li>
       <li
-        class="c9 c4"
+        class="c3 c4"
         tabindex="-1"
       >
         <div
@@ -1658,7 +1502,7 @@ exports[`Tree should have no accessibility violations 1`] = `
         </div>
       </li>
       <li
-        class="c9 c4"
+        class="c3 c4"
         tabindex="-1"
       >
         <div
@@ -1687,7 +1531,7 @@ exports[`Tree should have no accessibility violations 1`] = `
         </div>
       </li>
       <li
-        class="c9 c4"
+        class="c3 c4"
         tabindex="-1"
       >
         <div
@@ -1716,7 +1560,7 @@ exports[`Tree should have no accessibility violations 1`] = `
         </div>
       </li>
       <li
-        class="c9 c4"
+        class="c3 c4"
         tabindex="-1"
       >
         <div
@@ -1745,7 +1589,7 @@ exports[`Tree should have no accessibility violations 1`] = `
         </div>
       </li>
       <li
-        class="c9 c4"
+        class="c3 c4"
         tabindex="-1"
       >
         <div
@@ -1774,7 +1618,7 @@ exports[`Tree should have no accessibility violations 1`] = `
         </div>
       </li>
       <li
-        class="c9 c4"
+        class="c3 c4"
         tabindex="-1"
       >
         <div
@@ -1803,7 +1647,7 @@ exports[`Tree should have no accessibility violations 1`] = `
         </div>
       </li>
       <li
-        class="c9 c4"
+        class="c3 c4"
         tabindex="-1"
       >
         <div
@@ -1832,7 +1676,7 @@ exports[`Tree should have no accessibility violations 1`] = `
         </div>
       </li>
       <li
-        class="c9 c4"
+        class="c3 c4"
         tabindex="-1"
       >
         <div
