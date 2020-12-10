@@ -20,6 +20,7 @@ import {
   RoundType,
   PadType,
   PropsOf,
+  AlignContentType,
 } from '../utils';
 
 import { BoxProps } from '../components/Box';
@@ -942,6 +943,25 @@ export interface ThemeType {
     color?: ColorType;
     colors?: GraphColorsType;
     extend?: ExtendType;
+  };
+  pagination?: {
+    container?: {
+      extend: ExtendType,
+    },
+    controls?: {
+      align?: AlignContentType;
+      direction?: | 'row' | 'column' | 'row-responsive' | 'row-reverse' | 'column-reverse';
+      gap?: GapType;
+      pad?: PadType;
+      margin?: MarginType;
+    };
+    icons?: {
+      color: ColorType;
+      first: React.ReactNode;
+      last: React.ReactNode;
+      next: React.ReactNode;
+      previous: React.ReactNode;
+    };
   };
   paragraph?: {
     extend?: ExtendType;

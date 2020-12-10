@@ -4,14 +4,18 @@ import { A11yTitleType, AlignSelfType, GridAreaType, MarginType } from '../../ut
 export interface PaginationProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
-  defaultPage?: number;
-  edgeCount?: number;
+  children?: (...args: any[]) => any;
   gridArea?: GridAreaType;
+  items?: number;
   margin?: MarginType;
-  middleCount?: number;
+  numEdgePages?: number;
+  numMiddlePages?: number;
   onChange?: (...args: any[]) => void;
   page?: number;
-  totalPages?: number;
+  show?: number | { page?: number, index?: number };
+  showFirst?: boolean;
+  showLast?: boolean;
+  step?: number;
 }
 
 declare const Pagination: React.FC<PaginationProps>;

@@ -40,11 +40,14 @@ export interface ColumnConfig<TRowType> {
   aggregate?: 'avg' | 'max' | 'min' | 'sum';
   footer?: React.ReactNode | { aggregate?: boolean };
   header?: string | React.ReactNode | { aggregate?: boolean };
+  paginate?: boolean;
+  paginationProps?: any;
   pin?: boolean;
   primary?: boolean;
   property: string;
   render?: (datum: TRowType) => React.ReactNode;
   search?: boolean;
+  show?: number | { page?: number, index?: number };
   sortable?: boolean;
   size?: ColumnSizeType | string;
   verticalAlign?: 'middle' | 'top' | 'bottom';

@@ -70,8 +70,11 @@ export interface ListProps {
     | ((event: React.MouseEvent) => void)
     | ((event: { item?: {}; index?: number }) => void);
   pad?: PadType;
+  paginate?: boolean;
+  paginationProps?: any;
   primaryKey?: string | ((item: any) => React.ReactElement);
   secondaryKey?: string | ((item: any) => React.ReactElement);
+  show?: number | { page?: number, index?: number };
   step?: number;
   action?: (item: any, index: number) => void;
 }

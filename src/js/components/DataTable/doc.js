@@ -209,6 +209,15 @@ export const doc = DataTable => {
       `Cell padding. You can set the padding per context by passing an
       object with keys for 'heading', 'body', and/or 'footer'.`,
     ),
+    paginate: PropTypes.bool
+      .description(`Whether to paginate the data.`)
+      .defaultValue(undefined),
+    paginationProps: PropTypes.object
+      .description(
+        `Any additional properties for pagination. Accepts all Box props and 
+        Pagination props.`,
+      )
+      .defaultValue(undefined),
     pin: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.oneOf(['header', 'footer']),
@@ -251,6 +260,19 @@ export const doc = DataTable => {
       object. If 'onSelect' is provided, the CheckBoxes are enabled
       and this function can be used to track select changes.`,
     ),
+    show: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.oneOfType([
+        PropTypes.shape({ page: PropTypes.number }),
+        PropTypes.shape({ index: PropTypes.number }),
+      ]),
+    ])
+      .description(
+        `To be used in conjunction with paginate. If provided as a number, 
+        the index of an item to show. If provided as an object in the format of 
+        show={{ page: 2 }}, the default page to show.`,
+      )
+      .defaultValue(undefined),
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
       PropTypes.string,

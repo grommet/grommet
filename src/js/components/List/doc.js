@@ -105,6 +105,15 @@ export const doc = List => {
       PropTypes.string,
       PropTypes.shape(padShapeSides),
     ]).description(`Item padding.`),
+    paginate: PropTypes.bool
+      .description(`Whether to paginate the data.`)
+      .defaultValue(undefined),
+    paginationProps: PropTypes.object
+      .description(
+        `Any additional properties for pagination. Accepts all Box props and 
+      Pagination props.`,
+      )
+      .defaultValue(undefined),
     primaryKey: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.func,
@@ -123,6 +132,19 @@ export const doc = List => {
       will be called with the current data item object and should return
       a React element that will be rendered as the secondary content.`,
     ),
+    show: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.oneOfType([
+        PropTypes.shape({ page: PropTypes.number }),
+        PropTypes.shape({ index: PropTypes.number }),
+      ]),
+    ])
+      .description(
+        `To be used in conjunction with paginate. If provided as a number, 
+        the index of an item to show. If provided as an object in the format of 
+        show={{ page: 2 }}, the default page to show.`,
+      )
+      .defaultValue(undefined),
     step: PropTypes.number
       .description('How many items to render at a time.')
       .defaultValue(50),

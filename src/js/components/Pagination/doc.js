@@ -19,19 +19,27 @@ export const doc = Pagination => {
 
   DocumentedPagination.propTypes = {
     ...genericProps,
-    defaultPage: PropTypes.number
-      .description('The default active page.')
-      .defaultValue(1),
-    edgeCount: PropTypes.number
+    children: PropTypes.func.description(
+      `Function that will be called when each item is rendered. It will be
+      called with three arguments, the item to render, the index of the item,
+      and a boolean value indicating if the child is active. For example:
+      {(item, index, { active }) => <li key={index}>{item}</li>}`,
+    ),
+    items: PropTypes.arrayOf(PropTypes.any).description(
+      'The children callback will be called to render each item.',
+    ),
+    numEdgePages: PropTypes.number
       .description(
-        'The number of visible pages at the start and end of page range.',
+        `The number of page buttons visible at the start and end of page 
+        range.`,
       )
       .defaultValue(1),
-    middleCount: PropTypes.number
+    numMiddlePages: PropTypes.number
       .description(
-        `The number of visible pages on either side of the current page.`,
+        `The number of page buttons visible on each side of the active page 
+        button.`,
       )
-      .defaultValue(true),
+      .defaultValue(1),
     onChange: PropTypes.func
       .description(
         `Function that will be called when the user clicks a page or 
@@ -42,9 +50,24 @@ export const doc = Pagination => {
     page: PropTypes.number
       .description('The current page.')
       .defaultValue(undefined),
-    totalPages: PropTypes.number
-      .description('The total number of pages.')
+    show: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.shape({ item: PropTypes.number }),
+    ])
+      .description(
+        `If provided as a number, the default page to show. If provided as an 
+        object in the format of show={{ item: 2 }}, the default item to show.`,
+      )
+      .defaultValue(1),
+    showFirst: PropTypes.bool
+      .description('Whether a jump to first page button is visible.')
       .defaultValue(undefined),
+    showLast: PropTypes.bool
+      .description('Whether a jump to last page button is visible.')
+      .defaultValue(undefined),
+    step: PropTypes.number
+      .description('The number of items per page.')
+      .defaultValue(10),
   };
 
   return DocumentedPagination;
