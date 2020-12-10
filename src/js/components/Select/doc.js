@@ -117,7 +117,9 @@ export const doc = Select => {
       multiple: PropTypes.string,
     }).description('Custom messages.'),
     multiple: PropTypes.bool.description(
-      'Whether to allow multiple options to be selected.',
+      `Whether to allow multiple options to be selected. When multiple is true, 
+      'value' should be an array of selected options and 'options' should be 
+      an array of possible options`,
     ),
     name: PropTypes.string.description(
       `The name of the attribute when in a Form or FormField.`,

@@ -224,7 +224,7 @@ The stack order of Layer Container. Expects `number`.
 Defaults to
 
 ```
-15
+20
 ```
 
 **layer.extend**
@@ -265,7 +265,7 @@ The stack order of Layer. Expects `number`.
 Defaults to
 
 ```
-10
+20
 ```
 
 **global.breakpoints**

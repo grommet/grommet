@@ -6553,7 +6553,9 @@ function",
         "name": "messages",
       },
       Object {
-        "description": "Whether to allow multiple options to be selected.",
+        "description": "Whether to allow multiple options to be selected. When multiple is true, 
+      'value' should be an array of selected options and 'options' should be 
+      an array of possible options",
         "format": "boolean",
         "name": "multiple",
       },
@@ -6804,8 +6806,20 @@ bottom",
     "usage": "import { TableCell } from 'grommet';
 <TableCell />",
   },
-  "TableFooter": [Function],
-  "TableHeader": [Function],
+  "TableFooter": Object {
+    "description": "The footer of a table.",
+    "intrinsicElement": "tfoot",
+    "name": "TableFooter",
+    "usage": "import { TableFooter } from 'grommet';
+<TableFooter />",
+  },
+  "TableHeader": Object {
+    "description": "The header of a table.",
+    "intrinsicElement": "thead",
+    "name": "TableHeader",
+    "usage": "import { TableHeader } from 'grommet';
+<TableHeader />",
+  },
   "TableRow": Object {
     "description": "A row of cells in a table.",
     "intrinsicElement": "tr",
@@ -7444,6 +7458,14 @@ suggestions and instead rely on the user to type more.",
   string
 ]",
         "name": "suggestions",
+      },
+      Object {
+        "defaultValue": "start",
+        "description": "How to align the text inside the input.",
+        "format": "start
+center
+end",
+        "name": "textAlign",
       },
       Object {
         "description": "What text to put in the input.",

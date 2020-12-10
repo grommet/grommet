@@ -228,6 +228,16 @@ suggestions and instead rely on the user to type more.
 ]
 ```
 
+**textAlign**
+
+How to align the text inside the input. Defaults to `start`.
+
+```
+start
+center
+end
+```
+
 **value**
 
 What text to put in the input.
