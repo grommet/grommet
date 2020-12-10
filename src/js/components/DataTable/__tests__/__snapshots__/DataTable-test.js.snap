@@ -2845,7 +2845,21 @@ exports[`DataTable custom theme 1`] = `
   padding-bottom: 12px;
 }
 
-.c21 {
+.c20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c22 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2867,7 +2881,7 @@ exports[`DataTable custom theme 1`] = `
   justify-content: center;
 }
 
-.c24 {
+.c25 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2891,20 +2905,6 @@ exports[`DataTable custom theme 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   border-radius: 4px;
-}
-
-.c26 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c27 {
@@ -2972,7 +2972,7 @@ exports[`DataTable custom theme 1`] = `
   border: 0;
 }
 
-.c25 {
+.c26 {
   box-sizing: border-box;
   stroke-width: 4px;
   stroke: #7D4CDB;
@@ -2980,7 +2980,7 @@ exports[`DataTable custom theme 1`] = `
   height: 24px;
 }
 
-.c20 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3003,12 +3003,12 @@ exports[`DataTable custom theme 1`] = `
   cursor: default;
 }
 
-.c20:hover input:not([disabled]) + div,
-.c20:hover input:not([disabled]) + span {
+.c21:hover input:not([disabled]) + div,
+.c21:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
-.c23 {
+.c24 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -3016,12 +3016,12 @@ exports[`DataTable custom theme 1`] = `
   margin: 0;
 }
 
-.c23:checked + span > span {
+.c24:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
-.c22 {
+.c23 {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -3137,7 +3137,7 @@ exports[`DataTable custom theme 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c24 {
+  .c25 {
     border: solid 2px #7D4CDB;
   }
 }
@@ -3230,50 +3230,54 @@ exports[`DataTable custom theme 1`] = `
         <td
           class="c19"
         >
-          <label
-            aria-label="unselect alpha"
+          <div
             class="c20"
-            disabled=""
           >
-            <div
-              class="c21 c22"
+            <label
+              aria-label="unselect alpha"
+              class="c21"
               disabled=""
             >
-              <input
-                checked=""
-                class="c23"
-                disabled=""
-                type="checkbox"
-              />
               <div
-                class="c24 "
+                class="c22 c23"
                 disabled=""
               >
-                <svg
-                  class="c25"
+                <input
+                  checked=""
+                  class="c24"
                   disabled=""
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
+                  type="checkbox"
+                />
+                <div
+                  class="c25 "
+                  disabled=""
                 >
-                  <path
-                    d="M6,11.3 L10.3,16 L18,6.2"
-                    fill="none"
-                  />
-                </svg>
+                  <svg
+                    class="c26"
+                    disabled=""
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6,11.3 L10.3,16 L18,6.2"
+                      fill="none"
+                    />
+                  </svg>
+                </div>
+                <input
+                  type="hidden"
+                  value="true"
+                />
               </div>
-              <input
-                type="hidden"
-                value="true"
-              />
-            </div>
-          </label>
+            </label>
+          </div>
         </td>
         <th
           class="c19 "
           scope="row"
         >
           <div
-            class="c26"
+            class="c20"
           >
             <span
               class="c10"
@@ -3289,33 +3293,37 @@ exports[`DataTable custom theme 1`] = `
         <td
           class="c19"
         >
-          <label
-            aria-label="select beta"
+          <div
             class="c20"
-            disabled=""
           >
-            <div
-              class="c21 c22"
+            <label
+              aria-label="select beta"
+              class="c21"
               disabled=""
             >
-              <input
-                class="c23"
-                disabled=""
-                type="checkbox"
-              />
               <div
-                class="c27 "
+                class="c22 c23"
                 disabled=""
-              />
-            </div>
-          </label>
+              >
+                <input
+                  class="c24"
+                  disabled=""
+                  type="checkbox"
+                />
+                <div
+                  class="c27 "
+                  disabled=""
+                />
+              </div>
+            </label>
+          </div>
         </td>
         <th
           class="c19 "
           scope="row"
         >
           <div
-            class="c26"
+            class="c20"
           >
             <span
               class="c10"
@@ -3407,43 +3415,47 @@ exports[`DataTable custom theme 2`] = `
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA"
         >
-          <label
-            aria-label="unselect alpha"
-            class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 llTcBl"
-            disabled=""
+          <div
+            class="StyledBox-sc-13pk1d4-0 dYebPD"
           >
-            <div
-              class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
+            <label
+              aria-label="unselect alpha"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 llTcBl"
               disabled=""
             >
-              <input
-                checked=""
-                class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 bIiinc"
-                disabled=""
-                type="checkbox"
-              />
               <div
-                class="StyledBox-sc-13pk1d4-0 icgjqF StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 kRWCTA"
+                class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
                 disabled=""
               >
-                <svg
-                  class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 uDaMI"
+                <input
+                  checked=""
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 bIiinc"
                   disabled=""
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
+                  type="checkbox"
+                />
+                <div
+                  class="StyledBox-sc-13pk1d4-0 icgjqF StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 kRWCTA"
+                  disabled=""
                 >
-                  <path
-                    d="M6,11.3 L10.3,16 L18,6.2"
-                    fill="none"
-                  />
-                </svg>
+                  <svg
+                    class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 uDaMI"
+                    disabled=""
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6,11.3 L10.3,16 L18,6.2"
+                      fill="none"
+                    />
+                  </svg>
+                </div>
+                <input
+                  type="hidden"
+                  value="true"
+                />
               </div>
-              <input
-                type="hidden"
-                value="true"
-              />
-            </div>
-          </label>
+            </label>
+          </div>
         </td>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-5 dBOPzS"
@@ -3466,26 +3478,30 @@ exports[`DataTable custom theme 2`] = `
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA"
         >
-          <label
-            aria-label="select beta"
-            class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 llTcBl"
-            disabled=""
+          <div
+            class="StyledBox-sc-13pk1d4-0 dYebPD"
           >
-            <div
-              class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
+            <label
+              aria-label="select beta"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 llTcBl"
               disabled=""
             >
-              <input
-                class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 bIiinc"
-                disabled=""
-                type="checkbox"
-              />
               <div
-                class="StyledBox-sc-13pk1d4-0 jYPXhZ StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 kRWCTA"
+                class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
                 disabled=""
-              />
-            </div>
-          </label>
+              >
+                <input
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 bIiinc"
+                  disabled=""
+                  type="checkbox"
+                />
+                <div
+                  class="StyledBox-sc-13pk1d4-0 jYPXhZ StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 kRWCTA"
+                  disabled=""
+                />
+              </div>
+            </label>
+          </div>
         </td>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-5 dBOPzS"
@@ -11458,7 +11474,7 @@ exports[`DataTable select 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c11 {
+.c12 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -11469,7 +11485,21 @@ exports[`DataTable select 1`] = `
   font-weight: bold;
 }
 
-.c5 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -11491,7 +11521,7 @@ exports[`DataTable select 1`] = `
   justify-content: center;
 }
 
-.c8 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -11517,7 +11547,7 @@ exports[`DataTable select 1`] = `
   border-radius: 4px;
 }
 
-.c10 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -11534,7 +11564,7 @@ exports[`DataTable select 1`] = `
   flex: 1 0 auto;
 }
 
-.c14 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -11560,21 +11590,7 @@ exports[`DataTable select 1`] = `
   border-radius: 4px;
 }
 
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c9 {
+.c10 {
   box-sizing: border-box;
   stroke-width: 4px;
   stroke: #7D4CDB;
@@ -11582,7 +11598,7 @@ exports[`DataTable select 1`] = `
   height: 24px;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -11604,12 +11620,12 @@ exports[`DataTable select 1`] = `
   cursor: pointer;
 }
 
-.c4:hover input:not([disabled]) + div,
-.c4:hover input:not([disabled]) + span {
+.c5:hover input:not([disabled]) + div,
+.c5:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
-.c7 {
+.c8 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -11618,12 +11634,12 @@ exports[`DataTable select 1`] = `
   cursor: pointer;
 }
 
-.c7:checked + span > span {
+.c8:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
-.c6 {
+.c7 {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -11642,7 +11658,7 @@ exports[`DataTable select 1`] = `
   padding-bottom: 6px;
 }
 
-.c13 {
+.c14 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -11667,18 +11683,18 @@ exports[`DataTable select 1`] = `
   height: auto;
 }
 
-.c12:focus {
+.c13:focus {
   outline: 2px solid #6FFFB0;
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c14 {
+  .c15 {
     border: solid 2px #7D4CDB;
   }
 }
@@ -11704,42 +11720,46 @@ exports[`DataTable select 1`] = `
         <td
           class="c3"
         >
-          <label
+          <div
             class="c4"
           >
-            <div
-              class="c5 c6"
+            <label
+              class="c5"
             >
-              <input
-                class="c7"
-                type="checkbox"
-              />
               <div
-                class="c8 "
+                class="c6 c7"
               >
-                <svg
-                  class="c9"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
+                <input
+                  class="c8"
+                  type="checkbox"
+                />
+                <div
+                  class="c9 "
                 >
-                  <path
-                    d="M6,12 L18,12"
-                    fill="none"
-                  />
-                </svg>
+                  <svg
+                    class="c10"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6,12 L18,12"
+                      fill="none"
+                    />
+                  </svg>
+                </div>
               </div>
-            </div>
-          </label>
+            </label>
+          </div>
         </td>
         <th
           class="c3 "
           scope="col"
         >
           <div
-            class="c10"
+            class="c11"
           >
             <span
-              class="c11"
+              class="c12"
             >
               A
             </span>
@@ -11748,49 +11768,53 @@ exports[`DataTable select 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c12"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c13"
     >
       <tr
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
-          class="c13"
+          class="c14"
         >
-          <label
-            aria-label="unselect alpha"
+          <div
             class="c4"
           >
-            <div
-              class="c5 c6"
+            <label
+              aria-label="unselect alpha"
+              class="c5"
             >
-              <input
-                checked=""
-                class="c7"
-                type="checkbox"
-              />
               <div
-                class="c14 "
+                class="c6 c7"
               >
-                <svg
-                  class="c9"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
+                <input
+                  checked=""
+                  class="c8"
+                  type="checkbox"
+                />
+                <div
+                  class="c15 "
                 >
-                  <path
-                    d="M6,11.3 L10.3,16 L18,6.2"
-                    fill="none"
-                  />
-                </svg>
+                  <svg
+                    class="c10"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6,11.3 L10.3,16 L18,6.2"
+                      fill="none"
+                    />
+                  </svg>
+                </div>
               </div>
-            </div>
-          </label>
+            </label>
+          </div>
         </td>
         <th
-          class="c13 "
+          class="c14 "
           scope="row"
         >
           <div
-            class="c15"
+            class="c4"
           >
             <span
               class="c16"
@@ -11804,31 +11828,35 @@ exports[`DataTable select 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <td
-          class="c13"
+          class="c14"
         >
-          <label
-            aria-label="select beta"
+          <div
             class="c4"
           >
-            <div
-              class="c5 c6"
+            <label
+              aria-label="select beta"
+              class="c5"
             >
-              <input
-                class="c7"
-                type="checkbox"
-              />
               <div
-                class="c8 "
-              />
-            </div>
-          </label>
+                class="c6 c7"
+              >
+                <input
+                  class="c8"
+                  type="checkbox"
+                />
+                <div
+                  class="c9 "
+                />
+              </div>
+            </label>
+          </div>
         </td>
         <th
-          class="c13 "
+          class="c14 "
           scope="row"
         >
           <div
-            class="c15"
+            class="c4"
           >
             <span
               class="c16"
@@ -11859,20 +11887,23 @@ exports[`DataTable select 2`] = `
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq"
         >
-          <label
-            class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 htOOow"
+          <div
+            class="StyledBox-sc-13pk1d4-0 dYebPD"
           >
-            <div
-              class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
+            <label
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 htOOow"
             >
-              <input
-                class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fYuA-Ds"
-                type="checkbox"
-              />
               <div
-                class="StyledBox-sc-13pk1d4-0 icgjqF StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 kRWCTA"
+                class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
               >
-                .c0 {
+                <input
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fYuA-Ds"
+                  type="checkbox"
+                />
+                <div
+                  class="StyledBox-sc-13pk1d4-0 icgjqF StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 kRWCTA"
+                >
+                  .c0 {
   box-sizing: border-box;
   stroke-width: 4px;
   stroke: #7D4CDB;
@@ -11893,18 +11924,19 @@ exports[`DataTable select 2`] = `
 }
 
 <svg
-                  class="c0"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M6,11.3 L10.3,16 L18,6.2"
-                    fill="none"
-                  />
-                </svg>
+                    class="c0"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6,11.3 L10.3,16 L18,6.2"
+                      fill="none"
+                    />
+                  </svg>
+                </div>
               </div>
-            </div>
-          </label>
+            </label>
+          </div>
         </td>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 gAxdWq StyledDataTable__StyledDataTableCell-xrlyjm-5 dBOPzS"
@@ -11931,34 +11963,38 @@ exports[`DataTable select 2`] = `
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA"
         >
-          <label
-            aria-label="unselect alpha"
-            class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 htOOow"
+          <div
+            class="StyledBox-sc-13pk1d4-0 dYebPD"
           >
-            <div
-              class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
+            <label
+              aria-label="unselect alpha"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 htOOow"
             >
-              <input
-                checked=""
-                class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fYuA-Ds"
-                type="checkbox"
-              />
               <div
-                class="StyledBox-sc-13pk1d4-0 icgjqF StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 kRWCTA"
+                class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
               >
-                <svg
-                  class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 uDaMI"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
+                <input
+                  checked=""
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fYuA-Ds"
+                  type="checkbox"
+                />
+                <div
+                  class="StyledBox-sc-13pk1d4-0 icgjqF StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 kRWCTA"
                 >
-                  <path
-                    d="M6,11.3 L10.3,16 L18,6.2"
-                    fill="none"
-                  />
-                </svg>
+                  <svg
+                    class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 uDaMI"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6,11.3 L10.3,16 L18,6.2"
+                      fill="none"
+                    />
+                  </svg>
+                </div>
               </div>
-            </div>
-          </label>
+            </label>
+          </div>
         </td>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-5 dBOPzS"
@@ -11981,21 +12017,24 @@ exports[`DataTable select 2`] = `
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA"
         >
-          <label
-            aria-label="unselect beta"
-            class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 htOOow"
+          <div
+            class="StyledBox-sc-13pk1d4-0 dYebPD"
           >
-            <div
-              class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
+            <label
+              aria-label="unselect beta"
+              class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 htOOow"
             >
-              <input
-                class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fYuA-Ds"
-                type="checkbox"
-              />
               <div
-                class="StyledBox-sc-13pk1d4-0 icgjqF StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 kRWCTA"
+                class="StyledBox-sc-13pk1d4-0 kDZMxH StyledCheckBox-sc-1dbk5ju-6 hOFfoi"
               >
-                .c0 {
+                <input
+                  class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 fYuA-Ds"
+                  type="checkbox"
+                />
+                <div
+                  class="StyledBox-sc-13pk1d4-0 icgjqF StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 kRWCTA"
+                >
+                  .c0 {
   box-sizing: border-box;
   stroke-width: 4px;
   stroke: #7D4CDB;
@@ -12016,18 +12055,19 @@ exports[`DataTable select 2`] = `
 }
 
 <svg
-                  class="c0"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M6,11.3 L10.3,16 L18,6.2"
-                    fill="none"
-                  />
-                </svg>
+                    class="c0"
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6,11.3 L10.3,16 L18,6.2"
+                      fill="none"
+                    />
+                  </svg>
+                </div>
               </div>
-            </div>
-          </label>
+            </label>
+          </div>
         </td>
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 btpZjA StyledDataTable__StyledDataTableCell-xrlyjm-5 dBOPzS"

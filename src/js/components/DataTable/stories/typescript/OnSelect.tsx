@@ -16,6 +16,11 @@ const amountFormatter = new Intl.NumberFormat('en-US', {
 // Remove ': ColumnConfig<RowType>[]' if you are not using TypeScript.
 export const columns: ColumnConfig<RowType>[] = [
   {
+    property: 'gdt-selected', // styling the selected column
+    size: '0px',
+    align: 'end',
+  },
+  {
     property: 'name',
     header: <Text>Name with extra</Text>,
     primary: true,
@@ -147,7 +152,7 @@ export const OnSelectDataTable = () => {
 
   return (
     <Grommet theme={grommet}>
-      <Box align="center" pad="large">
+      <Box>
         <DataTable
           columns={columns}
           data={DATA}

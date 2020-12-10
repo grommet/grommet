@@ -1,5 +1,6 @@
 import React, { forwardRef } from 'react';
 
+import { Box } from '../Box';
 import { CheckBox } from '../CheckBox';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { TableRow } from '../TableRow';
@@ -17,6 +18,7 @@ const Body = forwardRef(
       border,
       columns,
       data,
+      gdtSelected,
       onMore,
       replace,
       onClickRow,
@@ -112,18 +114,22 @@ const Body = forwardRef(
                 >
                   {(selected || onSelect) && (
                     <TableCell background={background}>
-                      <CheckBox
-                        a11yTitle={`${
-                          isSelected ? 'unselect' : 'select'
-                        } ${primaryValue}`}
-                        checked={isSelected}
-                        disabled={!onSelect}
-                        onChange={() => {
-                          if (isSelected)
-                            onSelect(selected.filter(s => s !== primaryValue));
-                          else onSelect([...selected, primaryValue]);
-                        }}
-                      />
+                      <Box align={gdtSelected?.align}>
+                        <CheckBox
+                          a11yTitle={`${
+                            isSelected ? 'unselect' : 'select'
+                          } ${primaryValue}`}
+                          checked={isSelected}
+                          disabled={!onSelect}
+                          onChange={() => {
+                            if (isSelected)
+                              onSelect(
+                                selected.filter(s => s !== primaryValue),
+                              );
+                            else onSelect([...selected, primaryValue]);
+                          }}
+                        />
+                      </Box>
                     </TableCell>
                   )}
                   {columns.map(column => (

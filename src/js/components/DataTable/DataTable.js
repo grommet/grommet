@@ -33,7 +33,7 @@ const normalizeProp = (prop, context) => {
 
     // if prop[context] wasn't defined, but other values
     // exist on the prop, return undefined so that background
-    // for context will defaultto theme values instead
+    // for context will default to theme values instead
     // note: need to include `pinned` since it is not a
     // defined context
     if (contexts.some(c => prop[c] || prop.pinned)) {
@@ -47,7 +47,7 @@ const normalizeProp = (prop, context) => {
 const DataTable = ({
   background,
   border,
-  columns = [],
+  columns: columnsProp = [],
   data = [],
   fill,
   groupBy,
@@ -70,6 +70,17 @@ const DataTable = ({
   step = 50,
   ...rest
 }) => {
+  // Pulling out the data object for the selected column
+  const gdtSelected = columnsProp.find(
+    column => column.property === 'gdt-selected',
+  );
+
+  // ensuring the gdt-selected column would not be rendered in addition
+  // to the auto rendering of selected
+  const columns = columnsProp.filter(
+    column => column.property !== 'gdt-selected',
+  );
+
   // property name of the primary property
   const primaryProperty = useMemo(
     () => normalizePrimaryProperty(columns, primaryKey),
@@ -230,6 +241,7 @@ const DataTable = ({
         fill={fill}
         filtering={filtering}
         filters={filters}
+        gdtSelected={gdtSelected}
         groups={groups}
         groupState={groupState}
         pad={normalizeProp(pad, 'header')}
@@ -272,6 +284,7 @@ const DataTable = ({
           border={normalizeProp(border, 'body')}
           columns={columns}
           data={adjustedData}
+          gdtSelected={gdtSelected}
           onMore={onMore}
           replace={replace}
           onClickRow={onClickRow}

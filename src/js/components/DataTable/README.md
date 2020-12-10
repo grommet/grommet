@@ -447,7 +447,12 @@ When supplied, causes checkboxes to be added to each row such that
       will be called with an array of primary key values, suitable to be
       passed to the 'select' property. If you are storing select state via
       a 'useState' hook, you can do something like:
-      '<DataTable select={select} onSelect={setSelect} />'.
+      '<DataTable select={select} onSelect={setSelect} />'. The rendering of the
+      selected column is generated automatically, if you like to customize its 
+      column size or align properties, add the reserved property name of 
+      'gdt-selected' with the attributes of 
+      {property: 'gdt-selected', size: '0px', align: 'end' } 
+      to your DataTable columns prop.
 
 ```
 function
