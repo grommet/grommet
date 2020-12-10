@@ -292,7 +292,7 @@ const DataTable = ({
       {(paginate || paginationProps) && (
         <Pagination
           direction="row"
-          items={data.length}
+          numItems={data.length}
           justify={(paginationProps && paginationProps.justify) || 'end'}
           onChange={event => {
             setPage(event.page);

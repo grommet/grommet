@@ -14,15 +14,12 @@ const Pagination = forwardRef(
   (
     {
       a11yTitle,
-      children,
-      items,
+      numItems,
       numEdgePages = 1, // number of pages at each edge of page indices
       numMiddlePages = 1, // number of pages surrounding the active page
       onChange,
       page: pageProp,
       show: showProp,
-      showFirst,
-      showLast,
       // ideating on prop to show a message like "Showing x-y of z items"
       // showSummary,
       step: stepProp,
@@ -33,9 +30,10 @@ const Pagination = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
 
     const [show, showItem] = normalizeShow(showProp, 'pagination');
-    const [setPage, currentItems, currentPage, step] = usePagination({
-      data: items,
+    const [, , currentPage, step] = usePagination({
+      data: numItems,
       paginationProps: { showItem, show, step: stepProp },
+      theme,
     });
 
     const [activePage, setActivePage] = useState(currentPage);
@@ -52,14 +50,6 @@ const Pagination = forwardRef(
     };
 
     /* Calculate total number pages */
-    let numItems;
-    if (typeof items === 'number') {
-      numItems = items;
-    } else if (typeof items === 'object' && Array.isArray(items)) {
-      numItems = items.length;
-    } else {
-      numItems = step;
-    }
     const totalPages = Math.ceil(numItems / step);
 
     /* Define page indices to display */
@@ -98,7 +88,6 @@ const Pagination = forwardRef(
       endFlex = [totalPages - numEdgePages];
 
     const navPages = [
-      ...(showFirst ? ['showFirst'] : []),
       'previous',
       ...beginPages,
       ...beginFlex, // either "..." or single page to bridge start + middle
@@ -106,7 +95,6 @@ const Pagination = forwardRef(
       ...endFlex, // either "..." or single page to bridge middle + end
       ...endPages,
       'next',
-      ...(showLast ? ['showLast'] : []),
     ];
 
     /* Set props for each page index. Each page index should display a
@@ -120,15 +108,10 @@ const Pagination = forwardRef(
       if (onChange) {
         onChange(event);
       }
-      if (children) {
-        setPage(event.page);
-      }
     };
 
     const NextIcon = theme.pagination.icons.next;
     const PreviousIcon = theme.pagination.icons.previous;
-    const FirstPageIcon = theme.pagination.icons.first;
-    const LastPageIcon = theme.pagination.icons.last;
     const iconColor = theme.pagination.icons.color;
 
     const navProps = {
@@ -157,32 +140,6 @@ const Pagination = forwardRef(
         },
         page: undefined,
       },
-      showFirst: {
-        a11yTitle: 'Go to first page',
-        'aria-disabled': activePage === 1 ? 'true' : undefined,
-        disabled: activePage === 1,
-        icon: <FirstPageIcon color={iconColor} />,
-        onClick: event => {
-          event.persist();
-          const adjustedEvent = event;
-          adjustedEvent.page = 1;
-          handleClick(adjustedEvent);
-        },
-        page: undefined,
-      },
-      showLast: {
-        a11yTitle: 'Go to last page',
-        'aria-disabled': activePage === totalPages ? 'true' : undefined,
-        disabled: activePage === totalPages,
-        icon: <LastPageIcon color={iconColor} />,
-        onClick: event => {
-          event.persist();
-          const adjustedEvent = event;
-          adjustedEvent.page = totalPages;
-          handleClick(adjustedEvent);
-        },
-        page: undefined,
-      },
     };
 
     const pages = navPages.map(page => {
@@ -207,29 +164,22 @@ const Pagination = forwardRef(
     });
 
     return (
-      <>
-        {children &&
-          currentItems.map((item, index, { active }) =>
-            children(item, index, { active }),
-          )}
-        {/* Do we want pontential for internally displaying a "results summary"?
-         If so, applying the container props to this box now may leave better
-          flexibility moving forward
-        */}
-        <StyledPaginationContainer {...theme.pagination.container} {...rest}>
-          {/* Ideation: internal control of some results summary, need to think 
+      // Do we want pontential for internally displaying a "results summary"?
+      // If so, applying the container props to this box now may leave better
+      // flexibility moving forward
+      <StyledPaginationContainer {...theme.pagination.container} {...rest}>
+        {/* Ideation: internal control of some results summary, need to think 
           about what the default would be and how it may be customized
           */}
-          {/* {showSummary && <Text>Showing 1-10 of 500 results</Text>} */}
-          <Nav a11yTitle={a11yTitle || 'Pagination Navigation'} ref={ref}>
-            <Box as="ul" {...theme.pagination.controls}>
-              {pages.map(page => (
-                <PageIndex key={page.page} {...page} />
-              ))}
-            </Box>
-          </Nav>
-        </StyledPaginationContainer>
-      </>
+        {/* {showSummary && <Text>Showing 1-10 of 500 results</Text>} */}
+        <Nav a11yTitle={a11yTitle || 'Pagination Navigation'} ref={ref}>
+          <Box as="ul" {...theme.pagination.controls}>
+            {pages.map(page => (
+              <PageIndex key={page.page} {...page} />
+            ))}
+          </Box>
+        </Nav>
+      </StyledPaginationContainer>
     );
   },
 );

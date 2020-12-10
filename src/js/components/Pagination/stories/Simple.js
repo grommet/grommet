@@ -18,40 +18,30 @@ const Simple = () => {
       <Box pad="small" gap="medium">
         <Box>
           <Text>Default</Text>
-          <Pagination items={237} />
+          <Pagination numItems={237} />
         </Box>
         <Box>
           <Text>show = 10</Text>
-          <Pagination items={237} show={10} />
+          <Pagination numItems={237} show={10} />
         </Box>
         <Box>
           <Text>numEdgePages = 2 (number of pages on start/end)</Text>
-          <Pagination items={237} show={10} numEdgePages={2} showSummary />
+          <Pagination numItems={237} show={10} numEdgePages={2} />
         </Box>
         <Box>
           <Text>
             numMiddlePages = 2 (number of pages to left/right of middle page)
           </Text>
-          <Pagination items={237} show={10} numMiddlePages={2} />
+          <Pagination numItems={237} show={10} numMiddlePages={2} />
         </Box>
         <Box>
           <Text>numEdgePages = 0</Text>
-          <Pagination items={237} show={10} numEdgePages={0} />
-        </Box>
-        <Box>
-          <Text>showFirst and showLast</Text>
-          <Pagination
-            items={237}
-            numEdgePages={0}
-            show={4}
-            showFirst
-            showLast
-          />
+          <Pagination numItems={237} show={10} numEdgePages={0} />
         </Box>
         <Box>
           <Text>Box Props</Text>
           <Pagination
-            items={237}
+            numItems={237}
             show={2}
             background="background-contrast"
             align="center"
@@ -61,7 +51,7 @@ const Simple = () => {
         </Box>
         <Box>
           <Text>Controlled</Text>
-          <Pagination items={237} page={page} onChange={handleChange} />
+          <Pagination numItems={237} page={page} onChange={handleChange} />
         </Box>
       </Box>
     </Grommet>

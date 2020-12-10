@@ -11,7 +11,8 @@ export const normalizeShow = (showProp, context) => {
     // where index refers to the index of an item in the list
     if (typeof showProp === 'number') showItem = showProp;
     else if (typeof showProp === 'object') {
-      // in this context, if user provides both page and index to showProp, index should win
+      // in this context, if user provides both page and index to showProp,
+      // index should win
       if ('index' in showProp) {
         showItem = showProp.index;
       } else if ('page' in showProp) show = showProp.page;
@@ -23,7 +24,8 @@ export const normalizeShow = (showProp, context) => {
     // where page refers to the page # to show
     else if (typeof showProp === 'object') {
       if ('page' in showProp) {
-        // in this context, if user provides both page and item to showProp, page should win
+        // in this context, if user provides both page and item to showProp,
+        // page should win
         show = showProp.page;
       } else if ('index' in showProp) showItem = showProp.index;
     }

@@ -79,22 +79,6 @@ const PaginatedDataTable = () => {
           sortable
         />
       </Box>
-      <Box
-        background="background-back"
-        margin="large"
-        pad="small"
-        round="small"
-      >
-        <DataTable
-          columns={columns}
-          data={[...DATA]}
-          step={10}
-          select={select}
-          onSelect={setSelect}
-          sortable
-          pin
-        />
-      </Box>
     </Grommet>
   );
 };
