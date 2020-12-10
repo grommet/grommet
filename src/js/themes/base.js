@@ -956,8 +956,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       icons: {
         // color: undefined,
-        first: ChapterPrevious, // placeholder icon for discussion purposes
-        last: ChapterNext, // placeholder icon for discussion purposes
         next: Next,
         previous: Previous,
       },
