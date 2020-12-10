@@ -1,9 +1,9 @@
-import React, { forwardRef, useContext, useEffect, useState } from 'react';
+import React, { forwardRef, useContext, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Nav } from '../Nav';
 import { PageIndex } from './PageIndex';
-import { normalizeShow, usePagination } from '../../utils/pagination';
+import { usePagination } from '../../utils/pagination';
 
 const StyledPaginationContainer = styled(Box)`
   ${props =>
@@ -29,17 +29,12 @@ const Pagination = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
 
-    const [show, showItem] = normalizeShow(showProp, 'pagination');
-    const [, , currentPage, step] = usePagination({
+    const [, , defaultPage, step] = usePagination({
       data: numItems,
-      paginationProps: { showItem, show, step: stepProp },
+      paginationProps: { page: pageProp, step: stepProp },
       theme,
     });
-
-    const [activePage, setActivePage] = useState(currentPage);
-    useEffect(() => {
-      if (pageProp) setActivePage(pageProp);
-    }, [pageProp, setActivePage]);
+    const [activePage, setActivePage] = useState(defaultPage);
 
     const getPageIndices = (begin, end) => {
       const indices = [];
@@ -102,9 +97,8 @@ const Pagination = forwardRef(
      * more pages are available.
      */
     const handleClick = event => {
-      if (!pageProp) {
-        setActivePage(event.page);
-      }
+      setActivePage(event.page);
+
       if (onChange) {
         onChange(event);
       }

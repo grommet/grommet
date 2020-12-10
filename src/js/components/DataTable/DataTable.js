@@ -193,10 +193,10 @@ const DataTable = ({
     console.warn('DataTable cannot combine "size" and "resizeble".');
   }
 
-  const [show, showItem] = normalizeShow(showProp, 'dataTable');
+  const [page, showItem] = normalizeShow(showProp, 'dataTable');
   const [setPage, currentItems, currentPage] = usePagination({
     data: adjustedData,
-    paginationProps: { showItem, show, step, ...paginationProps },
+    paginationProps: { page, showItem, step, ...paginationProps },
   });
 
   return (
@@ -297,7 +297,7 @@ const DataTable = ({
           onChange={event => {
             setPage(event.page);
           }}
-          show={currentPage}
+          page={currentPage}
           step={step}
           {...paginationProps}
         />

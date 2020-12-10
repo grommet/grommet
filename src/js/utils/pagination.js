@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 
 export const normalizeShow = (showProp, context) => {
-  let show;
+  let page;
   let showItem;
 
   if (['dataTable', 'list'].includes(context)) {
@@ -15,19 +15,7 @@ export const normalizeShow = (showProp, context) => {
       // index should win
       if ('index' in showProp) {
         showItem = showProp.index;
-      } else if ('page' in showProp) show = showProp.page;
-    }
-  } else if (context === 'pagination') {
-    if (typeof showProp === 'number') show = showProp;
-    // if children are provided, show can take form of { index: # },
-    // where index refers to the index of a child to show or { page: # },
-    // where page refers to the page # to show
-    else if (typeof showProp === 'object') {
-      if ('page' in showProp) {
-        // in this context, if user provides both page and item to showProp,
-        // page should win
-        show = showProp.page;
-      } else if ('index' in showProp) showItem = showProp.index;
+      } else if ('page' in showProp) page = showProp.page;
     }
   }
 
@@ -42,7 +30,7 @@ export const normalizeShow = (showProp, context) => {
     );
   }
 
-  return [show, showItem];
+  return [page, showItem];
 };
 
 // getPaginatedItems
@@ -54,7 +42,7 @@ export const usePagination = ({ data, paginationProps }) => {
     if (paginationProps.showItem)
       // showItem is an array index, so we add one
       defaultPage = Math.ceil((paginationProps.showItem + 1) / step);
-    if (paginationProps.show) defaultPage = paginationProps.show;
+    if (paginationProps.page) defaultPage = paginationProps.page;
   }
 
   const [page, setPage] = useState(defaultPage || 1);

@@ -22,27 +22,27 @@ const Simple = () => {
         </Box>
         <Box>
           <Text>show = 10</Text>
-          <Pagination numItems={237} show={10} />
+          <Pagination numItems={237} page={10} />
         </Box>
         <Box>
           <Text>numEdgePages = 2 (number of pages on start/end)</Text>
-          <Pagination numItems={237} show={10} numEdgePages={2} />
+          <Pagination numItems={237} page={10} numEdgePages={2} />
         </Box>
         <Box>
           <Text>
             numMiddlePages = 2 (number of pages to left/right of middle page)
           </Text>
-          <Pagination numItems={237} show={10} numMiddlePages={2} />
+          <Pagination numItems={237} page={10} numMiddlePages={2} />
         </Box>
         <Box>
           <Text>numEdgePages = 0</Text>
-          <Pagination numItems={237} show={10} numEdgePages={0} />
+          <Pagination numItems={237} page={10} numEdgePages={0} />
         </Box>
         <Box>
           <Text>Box Props</Text>
           <Pagination
             numItems={237}
-            show={2}
+            page={2}
             background="background-contrast"
             align="center"
             pad="medium"
