@@ -101,15 +101,13 @@ const Select = forwardRef(
         );
       return valueKey && valueKey.reduce ? value : applyKey(value, valueKey);
     }, [value, valueKey]);
-    // maintain master list of all options to reference when
-    // option values are selected from a filtered set of options
-    // (e.g. such as when searching)
-    const [optionsTotal, setOptionsTotal] = useState(options);
-    useEffect(() => {
-      if (options.length > optionsTotal.length) {
-        setOptionsTotal(options);
-      }
-    }, [options, optionsTotal]);
+    // search input value
+    const [search, setSearch] = useState();
+    // track initialOptions for reference when option values are selected
+    // from filtered options set (e.g. such as when searching)
+    const [initialOptions] = useState(options);
+    // if searching, use initialOptions
+    const optionsTotal = search ? initialOptions : options;
 
     // the option indexes present in the value
     const optionIndexesInValue = useMemo(() => {
@@ -159,6 +157,7 @@ const Select = forwardRef(
           adjustedEvent.selected = nextSelected;
           onChange(adjustedEvent);
         }
+        setSearch();
       },
       [closeOnChange, onChange, onRequestClose, setValue],
     );
@@ -237,6 +236,8 @@ const Select = forwardRef(
               optionIndexesInValue={optionIndexesInValue}
               replace={replace}
               searchPlaceholder={searchPlaceholder}
+              search={search}
+              setSearch={setSearch}
               selected={selected}
               value={value}
               valueKey={valueKey}
