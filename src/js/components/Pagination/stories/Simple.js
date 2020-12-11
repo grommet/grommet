@@ -29,10 +29,12 @@ const Simple = () => {
           <Pagination numItems={237} page={10} numEdgePages={2} />
         </Box>
         <Box>
-          <Text>
-            numMiddlePages = 2 (number of pages to left/right of middle page)
-          </Text>
-          <Pagination numItems={237} page={10} numMiddlePages={2} />
+          <Text>numMiddlePages = 4 (number of pages in the middle)</Text>
+          <Pagination numItems={237} page={10} numMiddlePages={4} />
+        </Box>
+        <Box>
+          <Text>numMiddlePages = 5 (number of pages in the middle)</Text>
+          <Pagination numItems={237} page={10} numMiddlePages={5} />
         </Box>
         <Box>
           <Text>numEdgePages = 0</Text>

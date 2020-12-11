@@ -16,7 +16,8 @@ const Pagination = forwardRef(
       a11yTitle,
       numItems,
       numEdgePages = 1, // number of pages at each edge of page indices
-      numMiddlePages = 1, // number of pages surrounding the active page
+      // number of page controls in the middle
+      numMiddlePages: numMiddlePagesProp = 3,
       onChange,
       page: pageProp,
       show: showProp,
@@ -54,18 +55,35 @@ const Pagination = forwardRef(
       totalPages,
     );
 
-    const middlePagesBegin = Math.max(
-      Math.min(
-        activePage - numMiddlePages,
-        totalPages - numEdgePages - numMiddlePages * 2 - 1,
-      ),
-      numEdgePages + 2,
-    );
+    let numMiddlePages;
+    if (numMiddlePagesProp < 1) {
+      numMiddlePages = 1;
+      console.warn(
+        // eslint-disable-next-line max-len
+        `Property "numMiddlePages" should not be < 1. One middle page button will be shown. Set "numMiddlePages" >= 1 to remove this warning.`,
+      );
+    } else numMiddlePages = numMiddlePagesProp;
 
+    let startingMiddlePages;
+    // odd
+    if (numMiddlePages % 2)
+      startingMiddlePages = Math.min(
+        activePage - Math.floor(numMiddlePages / 2),
+        totalPages - numEdgePages - numMiddlePages - 1,
+      );
+    // even, cannot split equally around active page
+    // let extra page appear on middlePagesEnd instead
+    else
+      startingMiddlePages = Math.min(
+        activePage - Math.floor(numMiddlePages / 2) + 1,
+        totalPages - numEdgePages - numMiddlePages,
+      );
+
+    const middlePagesBegin = Math.max(startingMiddlePages, numEdgePages + 2);
     const middlePagesEnd = Math.min(
       Math.max(
-        activePage + numMiddlePages,
-        numEdgePages + numMiddlePages * 2 + 2,
+        activePage + Math.floor(numMiddlePages / 2),
+        numEdgePages + numMiddlePages + 2,
       ),
       endPages.length > 0 ? endPages[0] - 2 : totalPages - 1,
     );
