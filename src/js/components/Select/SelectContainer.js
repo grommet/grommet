@@ -75,7 +75,7 @@ const SelectContainer = forwardRef(
       onSearch,
       optionIndexesInValue,
       options,
-      optionsTotal,
+      allOptions,
       searchPlaceholder,
       search,
       setSearch,
@@ -199,41 +199,34 @@ const SelectContainer = forwardRef(
           let nextSelected;
           if (multiple) {
             const nextOptionIndexesInValue = optionIndexesInValue.slice(0);
-            const optionsTotalIndex = optionsTotal.indexOf(options[index]);
-            const valueIndex = optionIndexesInValue.indexOf(optionsTotalIndex);
+            const allOptionsIndex = allOptions.indexOf(options[index]);
+            const valueIndex = optionIndexesInValue.indexOf(allOptionsIndex);
             if (valueIndex === -1) {
-              nextOptionIndexesInValue.push(optionsTotalIndex);
+              nextOptionIndexesInValue.push(allOptionsIndex);
             } else {
               nextOptionIndexesInValue.splice(valueIndex, 1);
             }
             nextValue = nextOptionIndexesInValue.map(i =>
               valueKey && valueKey.reduce
-                ? applyKey(optionsTotal[i], valueKey)
-                : optionsTotal[i],
+                ? applyKey(allOptions[i], valueKey)
+                : allOptions[i],
             );
             nextSelected = nextOptionIndexesInValue;
           } else {
             nextValue =
               valueKey && valueKey.reduce
-                ? applyKey(optionsTotal[index], valueKey)
-                : optionsTotal[index];
+                ? applyKey(allOptions[index], valueKey)
+                : allOptions[index];
             nextSelected = index;
           }
           onChange(event, {
-            option: optionsTotal[index],
+            option: allOptions[index],
             value: nextValue,
             selected: nextSelected,
           });
         }
       },
-      [
-        multiple,
-        onChange,
-        optionIndexesInValue,
-        options,
-        optionsTotal,
-        valueKey,
-      ],
+      [multiple, onChange, optionIndexesInValue, options, allOptions, valueKey],
     );
 
     const onClear = useCallback(

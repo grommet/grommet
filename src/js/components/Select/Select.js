@@ -103,16 +103,20 @@ const Select = forwardRef(
     }, [value, valueKey]);
     // search input value
     const [search, setSearch] = useState();
-    // track initialOptions for reference when option values are selected
-    // from filtered options set (e.g. such as when searching)
-    const [initialOptions] = useState(options);
-    // if searching, use initialOptions
-    const optionsTotal = search ? initialOptions : options;
+    // comprehensive list of option indices and values
+    const [allOptions, setAllOptions] = useState(options);
+    // allOptions tracks changes to options property, except when options are
+    // being updated due to search activity. Allows for options in drop to be
+    // visually filtered by search, while maintaining reference to the option's
+    // unfiltered index value.
+    useEffect(() => {
+      if (!search) setAllOptions(options);
+    }, [options, search]);
 
     // the option indexes present in the value
     const optionIndexesInValue = useMemo(() => {
       const result = [];
-      optionsTotal.forEach((option, index) => {
+      allOptions.forEach((option, index) => {
         if (selected !== undefined) {
           if (Array.isArray(selected)) {
             if (selected.indexOf(index) !== -1) result.push(index);
@@ -128,7 +132,7 @@ const Select = forwardRef(
         }
       });
       return result;
-    }, [optionsTotal, selected, valueKey, valuedValue]);
+    }, [allOptions, selected, valueKey, valuedValue]);
 
     const [open, setOpen] = useState(propOpen);
     useEffect(() => setOpen(propOpen), [propOpen]);
@@ -189,11 +193,11 @@ const Select = forwardRef(
       if (!selectValue) {
         if (optionIndexesInValue.length === 0) return '';
         if (optionIndexesInValue.length === 1)
-          return applyKey(optionsTotal[optionIndexesInValue[0]], labelKey);
+          return applyKey(allOptions[optionIndexesInValue[0]], labelKey);
         return messages.multiple;
       }
       return undefined;
-    }, [labelKey, messages, optionIndexesInValue, optionsTotal, selectValue]);
+    }, [labelKey, messages, optionIndexesInValue, allOptions, selectValue]);
 
     const iconColor = normalizeColor(
       theme.select.icons.color || 'control',
@@ -232,7 +236,7 @@ const Select = forwardRef(
               onMore={onMore}
               onSearch={onSearch}
               options={options}
-              optionsTotal={optionsTotal}
+              allOptions={allOptions}
               optionIndexesInValue={optionIndexesInValue}
               replace={replace}
               searchPlaceholder={searchPlaceholder}
