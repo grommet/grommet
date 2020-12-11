@@ -96,7 +96,24 @@ const Pagination = forwardRef(
      * clickable index, control, or placeholder (e.g. ellipsis) indicating
      * more pages are available.
      */
-    const handleClick = event => {
+
+    const getItemIndices = nextPage => {
+      const startIndex = step * (nextPage - 1);
+      const endIndex = startIndex + step;
+      return { startIndex, endIndex };
+    };
+
+    const handleClick = (event, nextPage) => {
+      event.persist();
+      const adjustedEvent = event;
+      adjustedEvent.page = nextPage;
+
+      // for controlled use cases, provide user with info on
+      // what range of indices should be displayed given the active page
+      const { startIndex, endIndex } = getItemIndices(nextPage);
+      adjustedEvent.startIndex = startIndex;
+      adjustedEvent.endIndex = endIndex;
+
       setActivePage(event.page);
 
       if (onChange) {
@@ -115,10 +132,8 @@ const Pagination = forwardRef(
         disabled: activePage === totalPages,
         icon: <NextIcon color={iconColor} />,
         onClick: event => {
-          event.persist();
-          const adjustedEvent = event;
-          adjustedEvent.page = activePage + 1;
-          handleClick(adjustedEvent);
+          const nextPage = activePage + 1;
+          handleClick(event, nextPage);
         },
         page: undefined,
       },
@@ -127,10 +142,8 @@ const Pagination = forwardRef(
         disabled: activePage === 1,
         icon: <PreviousIcon color={iconColor} />,
         onClick: event => {
-          event.persist();
-          const adjustedEvent = event;
-          adjustedEvent.page = activePage - 1;
-          handleClick(adjustedEvent);
+          const previousPage = activePage - 1;
+          handleClick(event, previousPage);
         },
         page: undefined,
       },
@@ -148,10 +161,7 @@ const Pagination = forwardRef(
         'aria-current': page === activePage ? 'page' : undefined,
         page,
         onClick: event => {
-          event.persist();
-          const adjustedEvent = event;
-          adjustedEvent.page = page;
-          handleClick(adjustedEvent);
+          handleClick(event, page);
         },
         ...navProps[page],
       };
