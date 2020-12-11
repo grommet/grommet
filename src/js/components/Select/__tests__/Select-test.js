@@ -1016,5 +1016,53 @@ describe('Select', () => {
     );
     expect(select.value).toEqual('');
   });
+
+  test('default value', () => {
+    const { container, getByDisplayValue } = render(
+      <Grommet>
+        <Select
+          id="test-select"
+          placeholder="test select"
+          options={['one', 'two']}
+          defaultValue="two"
+        />
+      </Grommet>,
+    );
+    const select = getByDisplayValue('two');
+    expect(container.firstChild).toMatchSnapshot();
+    expect(select.value).toEqual('two');
+  });
+
+  test('default value clear', () => {
+    const Test = () => {
+      const [value] = React.useState();
+      return (
+        <Select
+          id="test-select"
+          placeholder="test select"
+          defaultValue="two"
+          value={value}
+          options={['one', 'two']}
+          clear
+        />
+      );
+    };
+    const { getByDisplayValue } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    const select = getByDisplayValue('two');
+    fireEvent.click(select);
+    expectPortal('test-select__drop').toMatchSnapshot();
+
+    fireEvent.click(
+      document
+        .getElementById('test-select__drop')
+        .querySelectorAll('button')[0],
+    );
+    expect(select.value).toEqual('');
+  });
+
   window.scrollTo.mockRestore();
 });

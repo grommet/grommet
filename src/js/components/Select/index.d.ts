@@ -14,6 +14,7 @@ export interface SelectProps {
   gridArea?: GridAreaType;
   children?: (...args: any[]) => any;
   closeOnChange?: boolean;
+  defaultValue?: string | number | object | (string | number | object)[];
   disabled?: boolean | (number | string | object)[];
   disabledKey?: string | ((...args: any[]) => any);
   dropAlign?: {
