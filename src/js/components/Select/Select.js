@@ -73,7 +73,7 @@ const Select = forwardRef(
       onOpen,
       onSearch,
       open: propOpen,
-      options,
+      options: optionsProp,
       placeholder,
       plain,
       replace,
@@ -103,15 +103,14 @@ const Select = forwardRef(
     }, [value, valueKey]);
     // search input value
     const [search, setSearch] = useState();
-    // comprehensive list of option indices and values
-    const [allOptions, setAllOptions] = useState(options);
-    // allOptions tracks changes to options property, except when options are
-    // being updated due to search activity. Allows for options in drop to be
-    // visually filtered by search, while maintaining reference to the option's
-    // unfiltered index value.
+    // All select option indices and values
+    const [allOptions, setAllOptions] = useState(optionsProp);
+    // Track changes to options property, except when options are being
+    // updated due to search activity. Allows option's initial index value
+    // to be referenced when filtered by search.
     useEffect(() => {
-      if (!search) setAllOptions(options);
-    }, [options, search]);
+      if (!search) setAllOptions(optionsProp);
+    }, [optionsProp, search]);
 
     // the option indexes present in the value
     const optionIndexesInValue = useMemo(() => {
@@ -235,7 +234,7 @@ const Select = forwardRef(
               onKeyDown={onKeyDown}
               onMore={onMore}
               onSearch={onSearch}
-              options={options}
+              options={optionsProp}
               allOptions={allOptions}
               optionIndexesInValue={optionIndexesInValue}
               replace={replace}
