@@ -36,7 +36,6 @@ export var LazyLoadingOptions = function LazyLoadingOptions() {
 
   var onMore = function onMore() {
     setTimeout(function () {
-      console.log('onmore called');
       setOptions(dummyOptions.slice(0, options.length + 200));
     }, 1000);
   };

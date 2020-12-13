@@ -69,8 +69,11 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       onMore = _ref2.onMore,
       onSearch = _ref2.onSearch,
       optionIndexesInValue = _ref2.optionIndexesInValue,
-      options = _ref2.options,
+      optionsProp = _ref2.options,
+      allOptions = _ref2.allOptions,
       searchPlaceholder = _ref2.searchPlaceholder,
+      search = _ref2.search,
+      setSearch = _ref2.setSearch,
       selected = _ref2.selected,
       _ref2$value = _ref2.value,
       value = _ref2$value === void 0 ? '' : _ref2$value,
@@ -79,24 +82,17 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       replace = _ref2$replace === void 0 ? true : _ref2$replace;
   var theme = useContext(ThemeContext) || defaultProps.theme;
 
-  var _useState = useState(),
-      search = _useState[0],
-      setSearch = _useState[1];
+  var _useState = useState(-1),
+      activeIndex = _useState[0],
+      setActiveIndex = _useState[1];
 
-  var _useState2 = useState(-1),
-      activeIndex = _useState2[0],
-      setActiveIndex = _useState2[1];
+  var _useState2 = useState(),
+      keyboardNavigation = _useState2[0],
+      setKeyboardNavigation = _useState2[1];
 
-  var _useState3 = useState(),
-      keyboardNavigation = _useState3[0],
-      setKeyboardNavigation = _useState3[1];
-
-  var _useState4 = useState(false),
-      focus = _useState4[0],
-      setFocus = _useState4[1];
-
-  var _useState5 = useState(options),
-      initialOptions = _useState5[0];
+  var _useState3 = useState(false),
+      focus = _useState3[0],
+      setFocus = _useState3[1];
 
   var searchRef = useRef();
   var optionsRef = useRef(); // adjust activeIndex when options change
@@ -141,13 +137,13 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     return undefined;
   }, [keyboardNavigation]);
   var optionLabel = useCallback(function (index) {
-    return applyKey(options[index], labelKey);
-  }, [labelKey, options]);
+    return applyKey(optionsProp[index], labelKey);
+  }, [labelKey, optionsProp]);
   var optionValue = useCallback(function (index) {
-    return applyKey(options[index], valueKey);
-  }, [options, valueKey]);
+    return applyKey(optionsProp[index], valueKey);
+  }, [optionsProp, valueKey]);
   var isDisabled = useCallback(function (index) {
-    var option = options[index];
+    var option = optionsProp[index];
     var result;
 
     if (disabledKey) {
@@ -162,7 +158,7 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     }
 
     return result;
-  }, [disabled, disabledKey, options, optionValue]);
+  }, [disabled, disabledKey, optionsProp, optionValue]);
   var isSelected = useCallback(function (index) {
     var result;
 
@@ -201,32 +197,32 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
 
         if (multiple) {
           var nextOptionIndexesInValue = optionIndexesInValue.slice(0);
-          var initialOptionsIndex = initialOptions.indexOf(options[index]);
-          var valueIndex = optionIndexesInValue.indexOf(initialOptionsIndex);
+          var allOptionsIndex = allOptions.indexOf(optionsProp[index]);
+          var valueIndex = optionIndexesInValue.indexOf(allOptionsIndex);
 
           if (valueIndex === -1) {
-            nextOptionIndexesInValue.push(initialOptionsIndex);
+            nextOptionIndexesInValue.push(allOptionsIndex);
           } else {
             nextOptionIndexesInValue.splice(valueIndex, 1);
           }
 
           nextValue = nextOptionIndexesInValue.map(function (i) {
-            return valueKey && valueKey.reduce ? applyKey(initialOptions[i], valueKey) : initialOptions[i];
+            return valueKey && valueKey.reduce ? applyKey(allOptions[i], valueKey) : allOptions[i];
           });
           nextSelected = nextOptionIndexesInValue;
         } else {
-          nextValue = valueKey && valueKey.reduce ? applyKey(options[index], valueKey) : options[index];
+          nextValue = valueKey && valueKey.reduce ? applyKey(allOptions[index], valueKey) : allOptions[index];
           nextSelected = index;
         }
 
         onChange(event, {
-          option: options[index],
+          option: allOptions[index],
           value: nextValue,
           selected: nextSelected
         });
       }
     };
-  }, [multiple, onChange, optionIndexesInValue, initialOptions, options, valueKey]);
+  }, [multiple, onChange, optionIndexesInValue, optionsProp, allOptions, valueKey]);
   var onClear = useCallback(function (event) {
     onChange(event, {
       option: undefined,
@@ -238,15 +234,15 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     event.preventDefault();
     var nextActiveIndex = activeIndex + 1;
 
-    while (nextActiveIndex < options.length && isDisabled(nextActiveIndex)) {
+    while (nextActiveIndex < optionsProp.length && isDisabled(nextActiveIndex)) {
       nextActiveIndex += 1;
     }
 
-    if (nextActiveIndex !== options.length) {
+    if (nextActiveIndex !== optionsProp.length) {
       setActiveIndex(nextActiveIndex);
       setKeyboardNavigation(true);
     }
-  }, [activeIndex, isDisabled, options]);
+  }, [activeIndex, isDisabled, optionsProp]);
   var onPreviousOption = useCallback(function (event) {
     event.preventDefault();
     var nextActiveIndex = activeIndex - 1;
@@ -311,8 +307,8 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     role: "menubar",
     tabIndex: "-1",
     ref: optionsRef
-  }, options.length > 0 ? /*#__PURE__*/React.createElement(InfiniteScroll, {
-    items: options,
+  }, optionsProp.length > 0 ? /*#__PURE__*/React.createElement(InfiniteScroll, {
+    items: optionsProp,
     step: theme.select.step,
     onMore: onMore,
     replace: replace,
@@ -324,7 +320,7 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     // as an option Button kind property.
 
     var child;
-    if (children) child = children(option, index, options, {
+    if (children) child = children(option, index, optionsProp, {
       active: optionActive,
       disabled: optionDisabled,
       selected: optionSelected

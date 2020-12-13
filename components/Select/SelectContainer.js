@@ -91,8 +91,11 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
       onMore = _ref2.onMore,
       onSearch = _ref2.onSearch,
       optionIndexesInValue = _ref2.optionIndexesInValue,
-      options = _ref2.options,
+      optionsProp = _ref2.options,
+      allOptions = _ref2.allOptions,
       searchPlaceholder = _ref2.searchPlaceholder,
+      search = _ref2.search,
+      setSearch = _ref2.setSearch,
       selected = _ref2.selected,
       _ref2$value = _ref2.value,
       value = _ref2$value === void 0 ? '' : _ref2$value,
@@ -102,24 +105,17 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
-  var _useState = (0, _react.useState)(),
-      search = _useState[0],
-      setSearch = _useState[1];
+  var _useState = (0, _react.useState)(-1),
+      activeIndex = _useState[0],
+      setActiveIndex = _useState[1];
 
-  var _useState2 = (0, _react.useState)(-1),
-      activeIndex = _useState2[0],
-      setActiveIndex = _useState2[1];
+  var _useState2 = (0, _react.useState)(),
+      keyboardNavigation = _useState2[0],
+      setKeyboardNavigation = _useState2[1];
 
-  var _useState3 = (0, _react.useState)(),
-      keyboardNavigation = _useState3[0],
-      setKeyboardNavigation = _useState3[1];
-
-  var _useState4 = (0, _react.useState)(false),
-      focus = _useState4[0],
-      setFocus = _useState4[1];
-
-  var _useState5 = (0, _react.useState)(options),
-      initialOptions = _useState5[0];
+  var _useState3 = (0, _react.useState)(false),
+      focus = _useState3[0],
+      setFocus = _useState3[1];
 
   var searchRef = (0, _react.useRef)();
   var optionsRef = (0, _react.useRef)(); // adjust activeIndex when options change
@@ -164,13 +160,13 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
     return undefined;
   }, [keyboardNavigation]);
   var optionLabel = (0, _react.useCallback)(function (index) {
-    return (0, _utils2.applyKey)(options[index], labelKey);
-  }, [labelKey, options]);
+    return (0, _utils2.applyKey)(optionsProp[index], labelKey);
+  }, [labelKey, optionsProp]);
   var optionValue = (0, _react.useCallback)(function (index) {
-    return (0, _utils2.applyKey)(options[index], valueKey);
-  }, [options, valueKey]);
+    return (0, _utils2.applyKey)(optionsProp[index], valueKey);
+  }, [optionsProp, valueKey]);
   var isDisabled = (0, _react.useCallback)(function (index) {
-    var option = options[index];
+    var option = optionsProp[index];
     var result;
 
     if (disabledKey) {
@@ -185,7 +181,7 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
     }
 
     return result;
-  }, [disabled, disabledKey, options, optionValue]);
+  }, [disabled, disabledKey, optionsProp, optionValue]);
   var isSelected = (0, _react.useCallback)(function (index) {
     var result;
 
@@ -224,32 +220,32 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
 
         if (multiple) {
           var nextOptionIndexesInValue = optionIndexesInValue.slice(0);
-          var initialOptionsIndex = initialOptions.indexOf(options[index]);
-          var valueIndex = optionIndexesInValue.indexOf(initialOptionsIndex);
+          var allOptionsIndex = allOptions.indexOf(optionsProp[index]);
+          var valueIndex = optionIndexesInValue.indexOf(allOptionsIndex);
 
           if (valueIndex === -1) {
-            nextOptionIndexesInValue.push(initialOptionsIndex);
+            nextOptionIndexesInValue.push(allOptionsIndex);
           } else {
             nextOptionIndexesInValue.splice(valueIndex, 1);
           }
 
           nextValue = nextOptionIndexesInValue.map(function (i) {
-            return valueKey && valueKey.reduce ? (0, _utils2.applyKey)(initialOptions[i], valueKey) : initialOptions[i];
+            return valueKey && valueKey.reduce ? (0, _utils2.applyKey)(allOptions[i], valueKey) : allOptions[i];
           });
           nextSelected = nextOptionIndexesInValue;
         } else {
-          nextValue = valueKey && valueKey.reduce ? (0, _utils2.applyKey)(options[index], valueKey) : options[index];
+          nextValue = valueKey && valueKey.reduce ? (0, _utils2.applyKey)(allOptions[index], valueKey) : allOptions[index];
           nextSelected = index;
         }
 
         onChange(event, {
-          option: options[index],
+          option: allOptions[index],
           value: nextValue,
           selected: nextSelected
         });
       }
     };
-  }, [multiple, onChange, optionIndexesInValue, initialOptions, options, valueKey]);
+  }, [multiple, onChange, optionIndexesInValue, optionsProp, allOptions, valueKey]);
   var onClear = (0, _react.useCallback)(function (event) {
     onChange(event, {
       option: undefined,
@@ -261,15 +257,15 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
     event.preventDefault();
     var nextActiveIndex = activeIndex + 1;
 
-    while (nextActiveIndex < options.length && isDisabled(nextActiveIndex)) {
+    while (nextActiveIndex < optionsProp.length && isDisabled(nextActiveIndex)) {
       nextActiveIndex += 1;
     }
 
-    if (nextActiveIndex !== options.length) {
+    if (nextActiveIndex !== optionsProp.length) {
       setActiveIndex(nextActiveIndex);
       setKeyboardNavigation(true);
     }
-  }, [activeIndex, isDisabled, options]);
+  }, [activeIndex, isDisabled, optionsProp]);
   var onPreviousOption = (0, _react.useCallback)(function (event) {
     event.preventDefault();
     var nextActiveIndex = activeIndex - 1;
@@ -334,8 +330,8 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
     role: "menubar",
     tabIndex: "-1",
     ref: optionsRef
-  }, options.length > 0 ? /*#__PURE__*/_react["default"].createElement(_InfiniteScroll.InfiniteScroll, {
-    items: options,
+  }, optionsProp.length > 0 ? /*#__PURE__*/_react["default"].createElement(_InfiniteScroll.InfiniteScroll, {
+    items: optionsProp,
     step: theme.select.step,
     onMore: onMore,
     replace: replace,
@@ -347,7 +343,7 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
     // as an option Button kind property.
 
     var child;
-    if (children) child = children(option, index, options, {
+    if (children) child = children(option, index, optionsProp, {
       active: optionActive,
       disabled: optionDisabled,
       selected: optionSelected

@@ -72,7 +72,7 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
       onOpen = _ref.onOpen,
       onSearch = _ref.onSearch,
       propOpen = _ref.open,
-      options = _ref.options,
+      optionsProp = _ref.options,
       placeholder = _ref.placeholder,
       plain = _ref.plain,
       replace = _ref.replace,
@@ -99,15 +99,27 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
       return valueKey && valueKey.reduce ? v : applyKey(v, valueKey);
     });
     return valueKey && valueKey.reduce ? value : applyKey(value, valueKey);
-  }, [value, valueKey]);
+  }, [value, valueKey]); // search input value
 
-  var _useState = useState(options),
-      initialOptions = _useState[0]; // the option indexes present in the value
+  var _useState = useState(),
+      search = _useState[0],
+      setSearch = _useState[1]; // All select option indices and values
 
+
+  var _useState2 = useState(optionsProp),
+      allOptions = _useState2[0],
+      setAllOptions = _useState2[1]; // Track changes to options property, except when options are being
+  // updated due to search activity. Allows option's initial index value
+  // to be referenced when filtered by search.
+
+
+  useEffect(function () {
+    if (!search) setAllOptions(optionsProp);
+  }, [optionsProp, search]); // the option indexes present in the value
 
   var optionIndexesInValue = useMemo(function () {
     var result = [];
-    initialOptions.forEach(function (option, index) {
+    allOptions.forEach(function (option, index) {
       if (selected !== undefined) {
         if (Array.isArray(selected)) {
           if (selected.indexOf(index) !== -1) result.push(index);
@@ -125,11 +137,11 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
       }
     });
     return result;
-  }, [initialOptions, selected, valueKey, valuedValue]);
+  }, [allOptions, selected, valueKey, valuedValue]);
 
-  var _useState2 = useState(propOpen),
-      open = _useState2[0],
-      setOpen = _useState2[1];
+  var _useState3 = useState(propOpen),
+      open = _useState3[0],
+      setOpen = _useState3[1];
 
   useEffect(function () {
     return setOpen(propOpen);
@@ -159,6 +171,8 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
       adjustedEvent.selected = nextSelected;
       onChange(adjustedEvent);
     }
+
+    setSearch();
   }, [closeOnChange, onChange, onRequestClose, setValue]);
   var SelectIcon;
 
@@ -186,12 +200,12 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var inputValue = useMemo(function () {
     if (!selectValue) {
       if (optionIndexesInValue.length === 0) return '';
-      if (optionIndexesInValue.length === 1) return applyKey(initialOptions[optionIndexesInValue[0]], labelKey);
+      if (optionIndexesInValue.length === 1) return applyKey(allOptions[optionIndexesInValue[0]], labelKey);
       return messages.multiple;
     }
 
     return undefined;
-  }, [labelKey, messages, optionIndexesInValue, initialOptions, selectValue]);
+  }, [labelKey, messages, optionIndexesInValue, allOptions, selectValue]);
   var iconColor = normalizeColor(theme.select.icons.color || 'control', theme);
   return /*#__PURE__*/React.createElement(Keyboard, {
     onDown: onRequestOpen,
@@ -224,10 +238,13 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
       onKeyDown: onKeyDown,
       onMore: onMore,
       onSearch: onSearch,
-      options: options,
+      options: optionsProp,
+      allOptions: allOptions,
       optionIndexesInValue: optionIndexesInValue,
       replace: replace,
       searchPlaceholder: searchPlaceholder,
+      search: search,
+      setSearch: setSearch,
       selected: selected,
       value: value,
       valueKey: valueKey
