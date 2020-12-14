@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-
 import { FormClose } from 'grommet-icons';
+
 import { Box, Button, Grommet, Select, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
@@ -17,17 +17,20 @@ const allSeasons = [
   'S10',
 ];
 
-export const Seasons = () => {
-  const [selected, setSelected] = useState([]);
+// Type annotations can only be used in TypeScript files.
+// Remove ': React.FC'  if you are not using TypeScript.
+export const Seasons: React.FC = () => {
+  const [value, setValue] = useState<string[]>([]);
 
-  const onRemoveSeason = season => {
-    const seasonIndex = allSeasons.indexOf(season);
-    setSelected(
-      selected.filter(selectedSeason => selectedSeason !== seasonIndex),
+  const onRemoveSeason = (season: string) => {
+    setValue(value =>
+      value.filter(selectedSeason => selectedSeason !== season),
     );
   };
 
-  const renderSeason = season => (
+  // Type annotations can only be used in TypeScript files.
+  // Remove ': string'  if you are not using TypeScript.
+  const renderSeason = (season: string) => (
     <Button
       key={`season_tag_${season}`}
       href="#"
@@ -61,7 +64,12 @@ export const Seasons = () => {
     </Button>
   );
 
-  const renderOption = (option, state) => (
+  const renderOption = (
+    option: string,
+    index: number,
+    options: string[],
+    state: { active: boolean; disabled: boolean; selected: boolean },
+  ) => (
     <Box pad="small" background={state.active ? 'active' : undefined}>
       {option}
     </Box>
@@ -73,10 +81,16 @@ export const Seasons = () => {
         <Select
           closeOnChange={false}
           multiple
-          value={
+          value={value}
+          options={allSeasons}
+          disabled={[2, 6]}
+          onChange={({ value: nextValue }) => {
+            setValue([...nextValue].sort());
+          }}
+          valueLabel={
             <Box wrap direction="row" width="small">
-              {selected && selected.length ? (
-                selected.map(index => renderSeason(allSeasons[index]))
+              {value && value.length ? (
+                value.map(value => renderSeason(value))
               ) : (
                 <Box
                   pad={{ vertical: 'xsmall', horizontal: 'small' }}
@@ -87,12 +101,6 @@ export const Seasons = () => {
               )}
             </Box>
           }
-          options={allSeasons}
-          selected={selected}
-          disabled={[2, 6]}
-          onChange={({ selected: nextSelected }) => {
-            setSelected([...nextSelected].sort());
-          }}
         >
           {renderOption}
         </Select>

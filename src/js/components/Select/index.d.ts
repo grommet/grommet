@@ -6,16 +6,37 @@ import {
   GridAreaType,
   MarginType,
   PlaceHolderType,
+  ColorType,
 } from '../../utils';
 
-export interface SelectProps {
+interface onChangeEvent<
+  OptionType = string | boolean | number | JSX.Element | object,
+  ValueType = string | JSX.Element | object | (string | number | object)[]
+> extends React.MouseEvent<Omit<HTMLElement, 'value'> & { value: ValueType }> {
+  option: OptionType;
+  value: ValueType;
+  /**
+   * @deprecated in favor of using the 'value' property
+   */
+  selected: ValueType extends Array<any> ? number[] : number;
+}
+
+export interface SelectProps<
+  OptionType = string | boolean | number | JSX.Element | object,
+  ValueType = string | JSX.Element | object | (string | number | object)[]
+> {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
-  children?: (...args: any[]) => any;
+  children?: (
+    option: OptionType,
+    index: number,
+    options: OptionType[],
+    state: { active: boolean; disabled: boolean; selected: boolean },
+  ) => React.ReactNode;
   closeOnChange?: boolean;
   disabled?: boolean | (number | string | object)[];
-  disabledKey?: string | ((...args: any[]) => any);
+  disabledKey?: string | ((option: OptionType) => boolean);
   dropAlign?: {
     top?: 'top' | 'bottom';
     bottom?: 'top' | 'bottom';
@@ -26,35 +47,46 @@ export interface SelectProps {
   dropTarget?: object;
   dropProps?: DropProps;
   focusIndicator?: boolean;
-  icon?: boolean | ((...args: any[]) => any) | React.ReactNode;
+  icon?:
+    | boolean
+    | ((props: {
+        color: ColorType;
+        size: 'small' | 'medium' | 'large' | 'xlarge' | string;
+      }) => React.ReactNode)
+    | React.ReactNode;
   id?: string;
-  labelKey?: string | ((...args: any[]) => any);
+  labelKey?: string | ((option: OptionType) => React.ReactNode);
   margin?: MarginType;
   messages?: { multiple?: string };
   multiple?: boolean;
   name?: string;
-  onChange?: (...args: any[]) => void;
-  onClose?: (...args: any[]) => any;
-  onMore?: (...args: any[]) => any;
-  onOpen?: (...args: any[]) => any;
+  onChange?: (event: onChangeEvent<OptionType, ValueType>) => void;
+  onClose?: () => void;
+  onMore?: () => void;
+  onOpen?: () => void;
   onSearch?: (search: string) => void;
-  options: (string | boolean | number | JSX.Element | object)[];
+  options: OptionType[];
   open?: boolean;
   placeholder?: PlaceHolderType;
   plain?: boolean;
   replace?: boolean;
   searchPlaceholder?: string;
-  selected?: number | number[];
+  /**
+   * @deprecated in favor of using the 'value' property
+   */
+  selected?: number[] | number;
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
-  value?: string | JSX.Element | object | (string | number | object)[];
+  value?: ValueType;
   valueLabel?: React.ReactNode;
   valueKey?:
     | string
     | { key: string; reduce?: boolean }
-    | ((...args: any[]) => any);
+    | ((option: OptionType) => ValueType);
   emptySearchMessage?: string;
 }
 
-declare const Select: React.ComponentClass<SelectProps>;
+declare function Select<O, V>(
+  props: SelectProps<O, V>,
+): ReturnType<React.FC<SelectProps<O, V>>>;
 
 export { Select };
