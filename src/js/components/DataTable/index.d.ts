@@ -8,6 +8,7 @@ import {
   PadType,
   BorderType,
 } from '../../utils';
+import { PaginationType } from '../Pagination';
 
 type Sections<TBody, THeader = TBody, TFooter = TBody, TPinned = TBody> = {
   header?: THeader;
@@ -40,8 +41,7 @@ export interface ColumnConfig<TRowType> {
   aggregate?: 'avg' | 'max' | 'min' | 'sum';
   footer?: React.ReactNode | { aggregate?: boolean };
   header?: string | React.ReactNode | { aggregate?: boolean };
-  paginate?: boolean;
-  paginationProps?: any;
+  paginate?: boolean | PaginationType;
   pin?: boolean;
   primary?: boolean;
   property: string;

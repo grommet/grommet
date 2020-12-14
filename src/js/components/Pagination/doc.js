@@ -19,51 +19,34 @@ export const doc = Pagination => {
 
   DocumentedPagination.propTypes = {
     ...genericProps,
-    children: PropTypes.func.description(
-      `Function that will be called when each item is rendered. It will be
-      called with three arguments, the item to render, the index of the item,
-      and a boolean value indicating if the child is active. For example:
-      {(item, index, { active }) => <li key={index}>{item}</li>}`,
-    ),
-    items: PropTypes.arrayOf(PropTypes.any).description(
-      'The children callback will be called to render each item.',
-    ),
     numEdgePages: PropTypes.number
       .description(
         `The number of page buttons visible at the start and end of page 
         range.`,
       )
       .defaultValue(1),
+    numItems: PropTypes.number
+      .description('The number of items to paginate.')
+      .defaultValue(undefined),
     numMiddlePages: PropTypes.number
       .description(
-        `The number of page buttons visible on each side of the active page 
-        button.`,
+        `The number of page buttons visible in the middle of the controls.`,
       )
-      .defaultValue(1),
+      .defaultValue(3),
     onChange: PropTypes.func
       .description(
         `Function that will be called when the user clicks a page or 
-      arrow button. It will be passed a React event object. The current page 
-      can be accessed via event.page.`,
+        arrow button. The single argument is an event containing the latest 
+        page via \`event.page\`, and the startIndex and endIndex for data on 
+        this page via \`event.startIndex\` and \`event.endIndex\`, 
+        respectively.`,
       )
       .defaultValue(undefined),
     page: PropTypes.number
-      .description('The current page.')
-      .defaultValue(undefined),
-    show: PropTypes.oneOfType([
-      PropTypes.number,
-      PropTypes.shape({ item: PropTypes.number }),
-    ])
       .description(
-        `If provided as a number, the default page to show. If provided as an 
-        object in the format of show={{ item: 2 }}, the default item to show.`,
+        `The default page. If used with onChange, it can be used to control the 
+        active page via state.`,
       )
-      .defaultValue(1),
-    showFirst: PropTypes.bool
-      .description('Whether a jump to first page button is visible.')
-      .defaultValue(undefined),
-    showLast: PropTypes.bool
-      .description('Whether a jump to last page button is visible.')
       .defaultValue(undefined),
     step: PropTypes.number
       .description('The number of items per page.')

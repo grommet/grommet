@@ -60,14 +60,14 @@ const PaginatedDataTable = () => {
         round="small"
         gap="medium"
       >
-        <Text weight="bold">paginationProps</Text>
+        <Text weight="bold">paginate as object</Text>
         <DataTable
           columns={columns}
           data={[...DATA]}
           step={10}
           select={select}
           onSelect={setSelect}
-          paginationProps={{
+          paginate={{
             background: 'background-contrast',
             justify: 'center',
             fill: true,

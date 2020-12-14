@@ -63,7 +63,7 @@ const PaginatedList = () => (
         }}
         show={{ page: 3 }}
         step={3}
-        paginationProps={{
+        paginate={{
           border: { side: 'top', color: 'border' },
           pad: { top: 'small' },
         }}
@@ -90,28 +90,11 @@ const PaginatedList = () => (
           );
         }}
         show={13}
-        paginationProps={{
+        paginate={{
           border: { side: 'top', color: 'border' },
           step: 7,
           pad: { top: 'small' },
         }}
-      />
-    </Box>
-    <Box background="background-back" margin="large" pad="medium" round="small">
-      <List
-        data={data}
-        pad={{ left: 'small', right: 'none', vertical: 'small' }}
-        action={(item, index) => {
-          return (
-            <Menu
-              key={index}
-              icon={<More />}
-              hoverIndicator
-              items={[{ label: 'one' }]}
-            />
-          );
-        }}
-        paginationProps
       />
     </Box>
   </Grommet>

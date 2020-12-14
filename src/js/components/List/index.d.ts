@@ -5,6 +5,7 @@ import {
   GridAreaType,
   MarginType,
 } from '../../utils';
+import { PaginationType } from '../Pagination';
 
 type SizeType =
   | 'xxsmall'
@@ -70,8 +71,7 @@ export interface ListProps {
     | ((event: React.MouseEvent) => void)
     | ((event: { item?: {}; index?: number }) => void);
   pad?: PadType;
-  paginate?: boolean;
-  paginationProps?: any;
+  paginate?: boolean | PaginationType;
   primaryKey?: string | ((item: any) => React.ReactElement);
   secondaryKey?: string | ((item: any) => React.ReactElement);
   show?: number | { page?: number, index?: number };

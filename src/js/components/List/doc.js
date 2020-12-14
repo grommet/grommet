@@ -105,13 +105,10 @@ export const doc = List => {
       PropTypes.string,
       PropTypes.shape(padShapeSides),
     ]).description(`Item padding.`),
-    paginate: PropTypes.bool
-      .description(`Whether to paginate the data.`)
-      .defaultValue(undefined),
-    paginationProps: PropTypes.object
+    paginate: PropTypes.oneOfType([PropTypes.bool, PropTypes.object])
       .description(
-        `Any additional properties for pagination. Accepts all Box props and 
-      Pagination props.`,
+        `Whether to paginate the data. If providing an object, any Box props or 
+    Pagination props are valid.`,
       )
       .defaultValue(undefined),
     primaryKey: PropTypes.oneOfType([
