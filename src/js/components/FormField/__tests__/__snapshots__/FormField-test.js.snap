@@ -27,7 +27,21 @@ exports[`FormField abut 1`] = `
   flex-direction: column;
 }
 
-.c2 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -42,7 +56,7 @@ exports[`FormField abut 1`] = `
   overflow: hidden;
 }
 
-.c3 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -54,6 +68,28 @@ exports[`FormField abut 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: auto;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c2 button {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: none;
 }
 
 @media only screen and (max-width:512px) {
@@ -72,16 +108,33 @@ exports[`FormField abut 1`] = `
   className="c0"
 >
   <div
-    className="c1 "
+    className="c1 c2"
     onBlur={[Function]}
     onFocus={[Function]}
   >
     <div
-      className="c2 "
+      className="c3"
+      style={
+        Object {
+          "flexDirection": "column",
+        }
+      }
     >
       <div
         className="c3"
-      />
+      >
+        <div
+          className="c4 "
+        >
+          <div
+            className="c5"
+          >
+            <div
+              className="c6"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -114,7 +167,21 @@ exports[`FormField abut with margin 1`] = `
   flex-direction: column;
 }
 
-.c2 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -129,7 +196,7 @@ exports[`FormField abut with margin 1`] = `
   overflow: hidden;
 }
 
-.c3 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -141,6 +208,28 @@ exports[`FormField abut with margin 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: auto;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c2 button {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: none;
 }
 
 @media only screen and (max-width:512px) {
@@ -159,16 +248,33 @@ exports[`FormField abut with margin 1`] = `
   className="c0"
 >
   <div
-    className="c1 "
+    className="c1 c2"
     onBlur={[Function]}
     onFocus={[Function]}
   >
     <div
-      className="c2 "
+      className="c3"
+      style={
+        Object {
+          "flexDirection": "column",
+        }
+      }
     >
       <div
         className="c3"
-      />
+      >
+        <div
+          className="c4 "
+        >
+          <div
+            className="c5"
+          >
+            <div
+              className="c6"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -200,7 +306,21 @@ exports[`FormField custom formfield 1`] = `
   flex-direction: column;
 }
 
-.c3 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -216,7 +336,7 @@ exports[`FormField custom formfield 1`] = `
   overflow: hidden;
 }
 
-.c4 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -228,9 +348,31 @@ exports[`FormField custom formfield 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: auto;
 }
 
-.c2 {
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c2 button {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: none;
+}
+
+.c3 {
   font-size: 40px;
 }
 
@@ -241,7 +383,7 @@ exports[`FormField custom formfield 1`] = `
 }
 
 @media only screen and (max-width:512px) {
-  .c3 {
+  .c5 {
     border: solid 1px #cdd3e3;
   }
 }
@@ -250,16 +392,33 @@ exports[`FormField custom formfield 1`] = `
   className="c0"
 >
   <div
-    className="c1 c2"
+    className="c1 c2 c3"
     onBlur={[Function]}
     onFocus={[Function]}
   >
     <div
-      className="c3 "
+      className="c4"
+      style={
+        Object {
+          "flexDirection": "column",
+        }
+      }
     >
       <div
         className="c4"
-      />
+      >
+        <div
+          className="c5 "
+        >
+          <div
+            className="c6"
+          >
+            <div
+              className="c7"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -298,6 +457,35 @@ exports[`FormField custom label 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 2px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
   border: solid 1px #cdd3e3;
   min-width: 0;
   min-height: 0;
@@ -307,7 +495,7 @@ exports[`FormField custom label 1`] = `
   overflow: hidden;
 }
 
-.c4 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -319,17 +507,29 @@ exports[`FormField custom label 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: auto;
 }
 
-.c2 {
-  margin: 2px;
-  font-size: 9.333333333333334px;
-  line-height: 13.333333333333334px;
-  color: red;
-  font-weight: 600;
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
 }
 
-.c6 {
+.c5 {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.c10 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -349,30 +549,37 @@ exports[`FormField custom label 1`] = `
   box-shadow: none;
 }
 
-.c6::-webkit-search-decoration {
+.c10::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-webkit-input-placeholder {
+.c10::-webkit-input-placeholder {
   color: #e0e4ee;
 }
 
-.c6::-moz-placeholder {
+.c10::-moz-placeholder {
   color: #e0e4ee;
 }
 
-.c6:-ms-input-placeholder {
+.c10:-ms-input-placeholder {
   color: #e0e4ee;
 }
 
-.c6::-moz-focus-inner {
+.c10::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c5 {
+.c9 {
   position: relative;
   width: 100%;
+}
+
+.c2 button {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: none;
 }
 
 @media only screen and (max-width:512px) {
@@ -382,7 +589,13 @@ exports[`FormField custom label 1`] = `
 }
 
 @media only screen and (max-width:512px) {
-  .c3 {
+  .c4 {
+    margin: 2px;
+  }
+}
+
+@media only screen and (max-width:512px) {
+  .c6 {
     border: solid 1px #cdd3e3;
   }
 }
@@ -395,33 +608,56 @@ exports[`FormField custom label 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className="c1 "
+      className="c1 c2"
       onBlur={[Function]}
       onFocus={[Function]}
     >
-      <label
-        className="c2"
-        size="small"
-      >
-        label
-      </label>
       <div
-        className="c3 "
+        className="c3"
+        style={
+          Object {
+            "flexDirection": "column",
+          }
+        }
       >
         <div
           className="c4"
+          color="red"
+          size="small"
         >
-          <div
+          <label
             className="c5"
           >
-            <input
-              autoComplete="off"
-              className="c6"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-            />
+            label
+             
+          </label>
+        </div>
+        <div
+          className="c3"
+        >
+          <div
+            className="c6 "
+          >
+            <div
+              className="c7"
+            >
+              <div
+                className="c8"
+              >
+                <div
+                  className="c9"
+                >
+                  <input
+                    autoComplete="off"
+                    className="c10"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -456,7 +692,21 @@ exports[`FormField default 1`] = `
   flex-direction: column;
 }
 
-.c2 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -472,7 +722,7 @@ exports[`FormField default 1`] = `
   overflow: hidden;
 }
 
-.c3 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -484,9 +734,24 @@ exports[`FormField default 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: auto;
 }
 
-.c5 {
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c8 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -506,30 +771,37 @@ exports[`FormField default 1`] = `
   box-shadow: none;
 }
 
-.c5::-webkit-search-decoration {
+.c8::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c5::-webkit-input-placeholder {
+.c8::-webkit-input-placeholder {
   color: #e0e4ee;
 }
 
-.c5::-moz-placeholder {
+.c8::-moz-placeholder {
   color: #e0e4ee;
 }
 
-.c5:-ms-input-placeholder {
+.c8:-ms-input-placeholder {
   color: #e0e4ee;
 }
 
-.c5::-moz-focus-inner {
+.c8::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c4 {
+.c7 {
   position: relative;
   width: 100%;
+}
+
+.c2 button {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: none;
 }
 
 @media only screen and (max-width:512px) {
@@ -539,7 +811,7 @@ exports[`FormField default 1`] = `
 }
 
 @media only screen and (max-width:512px) {
-  .c2 {
+  .c4 {
     border: solid 1px #cdd3e3;
   }
 }
@@ -548,40 +820,74 @@ exports[`FormField default 1`] = `
   className="c0"
 >
   <div
-    className="c1 "
+    className="c1 c2"
     onBlur={[Function]}
     onFocus={[Function]}
   >
     <div
-      className="c2 "
-    >
-      <div
-        className="c3"
-      />
-    </div>
-  </div>
-  <div
-    className="c1 "
-    onBlur={[Function]}
-    onFocus={[Function]}
-  >
-    <div
-      className="c2 "
+      className="c3"
+      style={
+        Object {
+          "flexDirection": "column",
+        }
+      }
     >
       <div
         className="c3"
       >
         <div
-          className="c4"
+          className="c4 "
         >
-          <input
-            autoComplete="off"
+          <div
             className="c5"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-          />
+          >
+            <div
+              className="c6"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c1 c2"
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    <div
+      className="c3"
+      style={
+        Object {
+          "flexDirection": "column",
+        }
+      }
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4 "
+        >
+          <div
+            className="c5"
+          >
+            <div
+              className="c6"
+            >
+              <div
+                className="c7"
+              >
+                <input
+                  autoComplete="off"
+                  className="c8"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -615,7 +921,21 @@ exports[`FormField disabled 1`] = `
   flex-direction: column;
 }
 
-.c2 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -631,7 +951,7 @@ exports[`FormField disabled 1`] = `
   overflow: hidden;
 }
 
-.c3 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -645,9 +965,24 @@ exports[`FormField disabled 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: auto;
 }
 
-.c5 {
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c8 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -669,30 +1004,37 @@ exports[`FormField disabled 1`] = `
   cursor: default;
 }
 
-.c5::-webkit-search-decoration {
+.c8::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c5::-webkit-input-placeholder {
+.c8::-webkit-input-placeholder {
   color: #e0e4ee;
 }
 
-.c5::-moz-placeholder {
+.c8::-moz-placeholder {
   color: #e0e4ee;
 }
 
-.c5:-ms-input-placeholder {
+.c8:-ms-input-placeholder {
   color: #e0e4ee;
 }
 
-.c5::-moz-focus-inner {
+.c8::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c4 {
+.c7 {
   position: relative;
   width: 100%;
+}
+
+.c2 button {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: none;
 }
 
 @media only screen and (max-width:512px) {
@@ -702,7 +1044,7 @@ exports[`FormField disabled 1`] = `
 }
 
 @media only screen and (max-width:512px) {
-  .c2 {
+  .c4 {
     border: solid 1px #cdd3e3;
   }
 }
@@ -711,16 +1053,33 @@ exports[`FormField disabled 1`] = `
   className="c0"
 >
   <div
-    className="c1 "
+    className="c1 c2"
     onBlur={[Function]}
     onFocus={[Function]}
   >
     <div
-      className="c2 "
+      className="c3"
+      style={
+        Object {
+          "flexDirection": "column",
+        }
+      }
     >
       <div
         className="c3"
-      />
+      >
+        <div
+          className="c4 "
+        >
+          <div
+            className="c5"
+          >
+            <div
+              className="c6"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
    
@@ -729,28 +1088,45 @@ exports[`FormField disabled 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className="c1 "
+      className="c1 c2"
       onBlur={[Function]}
       onFocus={[Function]}
     >
       <div
-        className="c2 "
+        className="c3"
+        style={
+          Object {
+            "flexDirection": "column",
+          }
+        }
       >
         <div
           className="c3"
         >
           <div
-            className="c4"
+            className="c4 "
           >
-            <input
-              autoComplete="off"
+            <div
               className="c5"
-              disabled={true}
-              onBlur={[Function]}
-              onChange={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-            />
+            >
+              <div
+                className="c6"
+              >
+                <div
+                  className="c7"
+                >
+                  <input
+                    autoComplete="off"
+                    className="c8"
+                    disabled={true}
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -792,6 +1168,35 @@ exports[`FormField disabled with custom label 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 2px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
   border: solid 1px #cdd3e3;
   min-width: 0;
   min-height: 0;
@@ -801,7 +1206,7 @@ exports[`FormField disabled with custom label 1`] = `
   overflow: hidden;
 }
 
-.c4 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -815,17 +1220,29 @@ exports[`FormField disabled with custom label 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: auto;
 }
 
-.c2 {
-  margin: 2px;
-  font-size: 9.333333333333334px;
-  line-height: 13.333333333333334px;
-  color: teal;
-  font-weight: 600;
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
 }
 
-.c6 {
+.c5 {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.c10 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -847,30 +1264,37 @@ exports[`FormField disabled with custom label 1`] = `
   cursor: default;
 }
 
-.c6::-webkit-search-decoration {
+.c10::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-webkit-input-placeholder {
+.c10::-webkit-input-placeholder {
   color: #e0e4ee;
 }
 
-.c6::-moz-placeholder {
+.c10::-moz-placeholder {
   color: #e0e4ee;
 }
 
-.c6:-ms-input-placeholder {
+.c10:-ms-input-placeholder {
   color: #e0e4ee;
 }
 
-.c6::-moz-focus-inner {
+.c10::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c5 {
+.c9 {
   position: relative;
   width: 100%;
+}
+
+.c2 button {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: none;
 }
 
 @media only screen and (max-width:512px) {
@@ -880,7 +1304,13 @@ exports[`FormField disabled with custom label 1`] = `
 }
 
 @media only screen and (max-width:512px) {
-  .c3 {
+  .c4 {
+    margin: 2px;
+  }
+}
+
+@media only screen and (max-width:512px) {
+  .c6 {
     border: solid 1px #cdd3e3;
   }
 }
@@ -893,34 +1323,57 @@ exports[`FormField disabled with custom label 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className="c1 "
+      className="c1 c2"
       onBlur={[Function]}
       onFocus={[Function]}
     >
-      <label
-        className="c2"
-        size="small"
-      >
-        label
-      </label>
       <div
-        className="c3 "
+        className="c3"
+        style={
+          Object {
+            "flexDirection": "column",
+          }
+        }
       >
         <div
           className="c4"
+          color="teal"
+          size="small"
         >
-          <div
+          <label
             className="c5"
           >
-            <input
-              autoComplete="off"
-              className="c6"
-              disabled={true}
-              onBlur={[Function]}
-              onChange={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-            />
+            label
+             
+          </label>
+        </div>
+        <div
+          className="c3"
+        >
+          <div
+            className="c6 "
+          >
+            <div
+              className="c7"
+            >
+              <div
+                className="c8"
+              >
+                <div
+                  className="c9"
+                >
+                  <input
+                    autoComplete="off"
+                    className="c10"
+                    disabled={true}
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -955,7 +1408,21 @@ exports[`FormField empty margin 1`] = `
   flex-direction: column;
 }
 
-.c2 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -971,7 +1438,7 @@ exports[`FormField empty margin 1`] = `
   overflow: hidden;
 }
 
-.c3 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -983,6 +1450,28 @@ exports[`FormField empty margin 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: auto;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c2 button {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: none;
 }
 
 @media only screen and (max-width:512px) {
@@ -992,7 +1481,7 @@ exports[`FormField empty margin 1`] = `
 }
 
 @media only screen and (max-width:512px) {
-  .c2 {
+  .c4 {
     border: solid 1px #cdd3e3;
   }
 }
@@ -1001,16 +1490,33 @@ exports[`FormField empty margin 1`] = `
   className="c0"
 >
   <div
-    className="c1 "
+    className="c1 c2"
     onBlur={[Function]}
     onFocus={[Function]}
   >
     <div
-      className="c2 "
+      className="c3"
+      style={
+        Object {
+          "flexDirection": "column",
+        }
+      }
     >
       <div
         className="c3"
-      />
+      >
+        <div
+          className="c4 "
+        >
+          <div
+            className="c5"
+          >
+            <div
+              className="c6"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -1042,22 +1548,6 @@ exports[`FormField error 1`] = `
   flex-direction: column;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  border: solid 1px #e35e59;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  overflow: hidden;
-}
-
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1073,13 +1563,65 @@ exports[`FormField error 1`] = `
 }
 
 .c4 {
-  margin-left: 4px;
-  margin-right: 4px;
-  margin-top: 2px;
-  margin-bottom: 2px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border: solid 1px #e35e59;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: auto;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c7 {
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 8px;
+  margin-bottom: 8px;
   font-size: 12px;
   line-height: 16px;
   color: #e35e59;
+}
+
+.c2 button {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: none;
 }
 
 @media only screen and (max-width:512px) {
@@ -1089,7 +1631,7 @@ exports[`FormField error 1`] = `
 }
 
 @media only screen and (max-width:512px) {
-  .c2 {
+  .c4 {
     border: solid 1px #e35e59;
   }
 }
@@ -1098,22 +1640,48 @@ exports[`FormField error 1`] = `
   className="c0"
 >
   <div
-    className="c1 "
+    className="c1 c2"
     onBlur={[Function]}
     onFocus={[Function]}
   >
     <div
-      className="c2 "
+      className="c3"
+      style={
+        Object {
+          "flexDirection": "column",
+        }
+      }
     >
       <div
         className="c3"
-      />
+      >
+        <div
+          className="c4 "
+        >
+          <div
+            className="c5"
+          >
+            <div
+              className="c6"
+            />
+          </div>
+        </div>
+        <div
+          className="c3"
+        >
+          <span
+            className="c7"
+            style={
+              Object {
+                "position": "static",
+              }
+            }
+          >
+            test error
+          </span>
+        </div>
+      </div>
     </div>
-    <span
-      className="c4"
-    >
-      test error
-    </span>
   </div>
 </div>
 `;
@@ -1151,6 +1719,20 @@ exports[`FormField help 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
   border: solid 1px #cdd3e3;
   min-width: 0;
   min-height: 0;
@@ -1160,7 +1742,7 @@ exports[`FormField help 1`] = `
   overflow: hidden;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1172,13 +1754,28 @@ exports[`FormField help 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: auto;
 }
 
-.c2 {
-  margin-inline-start: 4px;
-  font-size: 12px;
-  line-height: 16px;
-  color: #65707d;
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c2 button {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: none;
 }
 
 @media only screen and (max-width:512px) {
@@ -1188,7 +1785,7 @@ exports[`FormField help 1`] = `
 }
 
 @media only screen and (max-width:512px) {
-  .c3 {
+  .c4 {
     border: solid 1px #cdd3e3;
   }
 }
@@ -1197,21 +1794,33 @@ exports[`FormField help 1`] = `
   className="c0"
 >
   <div
-    className="c1 "
+    className="c1 c2"
     onBlur={[Function]}
     onFocus={[Function]}
   >
-    <span
-      className="c2"
-    >
-      test help
-    </span>
     <div
-      className="c3 "
+      className="c3"
+      style={
+        Object {
+          "flexDirection": "column",
+        }
+      }
     >
       <div
-        className="c4"
-      />
+        className="c3"
+      >
+        <div
+          className="c4 "
+        >
+          <div
+            className="c5"
+          >
+            <div
+              className="c6"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -1243,7 +1852,21 @@ exports[`FormField htmlFor 1`] = `
   flex-direction: column;
 }
 
-.c2 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1259,7 +1882,7 @@ exports[`FormField htmlFor 1`] = `
   overflow: hidden;
 }
 
-.c3 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1271,6 +1894,28 @@ exports[`FormField htmlFor 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: auto;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c2 button {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: none;
 }
 
 @media only screen and (max-width:512px) {
@@ -1280,7 +1925,7 @@ exports[`FormField htmlFor 1`] = `
 }
 
 @media only screen and (max-width:512px) {
-  .c2 {
+  .c4 {
     border: solid 1px #cdd3e3;
   }
 }
@@ -1289,16 +1934,33 @@ exports[`FormField htmlFor 1`] = `
   className="c0"
 >
   <div
-    className="c1 "
+    className="c1 c2"
     onBlur={[Function]}
     onFocus={[Function]}
   >
     <div
-      className="c2 "
+      className="c3"
+      style={
+        Object {
+          "flexDirection": "column",
+        }
+      }
     >
       <div
         className="c3"
-      />
+      >
+        <div
+          className="c4 "
+        >
+          <div
+            className="c5"
+          >
+            <div
+              className="c6"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -1330,22 +1992,6 @@ exports[`FormField info 1`] = `
   flex-direction: column;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  border: solid 1px #cdd3e3;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  overflow: hidden;
-}
-
 .c3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1361,13 +2007,64 @@ exports[`FormField info 1`] = `
 }
 
 .c4 {
-  margin-left: 4px;
-  margin-right: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border: solid 1px #cdd3e3;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: auto;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c7 {
   margin-top: 2px;
   margin-bottom: 2px;
+  margin-left: 8px;
   font-size: 12px;
   line-height: 16px;
   color: #666666;
+}
+
+.c2 button {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: none;
 }
 
 @media only screen and (max-width:512px) {
@@ -1377,7 +2074,7 @@ exports[`FormField info 1`] = `
 }
 
 @media only screen and (max-width:512px) {
-  .c2 {
+  .c4 {
     border: solid 1px #cdd3e3;
   }
 }
@@ -1386,22 +2083,39 @@ exports[`FormField info 1`] = `
   className="c0"
 >
   <div
-    className="c1 "
+    className="c1 c2"
     onBlur={[Function]}
     onFocus={[Function]}
   >
     <div
-      className="c2 "
+      className="c3"
+      style={
+        Object {
+          "flexDirection": "column",
+        }
+      }
     >
       <div
         className="c3"
-      />
+      >
+        <div
+          className="c4 "
+        >
+          <div
+            className="c5"
+          >
+            <div
+              className="c6"
+            />
+          </div>
+        </div>
+        <span
+          className="c7"
+        >
+          test info
+        </span>
+      </div>
     </div>
-    <span
-      className="c4"
-    >
-      test info
-    </span>
   </div>
 </div>
 `;
@@ -1439,6 +2153,38 @@ exports[`FormField label 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
   border: solid 1px #cdd3e3;
   min-width: 0;
   min-height: 0;
@@ -1448,7 +2194,7 @@ exports[`FormField label 1`] = `
   overflow: hidden;
 }
 
-.c4 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1460,15 +2206,33 @@ exports[`FormField label 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: auto;
 }
 
-.c2 {
-  margin-left: 4px;
-  margin-right: 4px;
-  margin-top: 2px;
-  margin-bottom: 2px;
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c5 {
   font-size: 12px;
   line-height: 16px;
+}
+
+.c2 button {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: none;
 }
 
 @media only screen and (max-width:512px) {
@@ -1478,7 +2242,21 @@ exports[`FormField label 1`] = `
 }
 
 @media only screen and (max-width:512px) {
-  .c3 {
+  .c4 {
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+}
+
+@media only screen and (max-width:512px) {
+  .c4 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+
+@media only screen and (max-width:512px) {
+  .c6 {
     border: solid 1px #cdd3e3;
   }
 }
@@ -1487,21 +2265,43 @@ exports[`FormField label 1`] = `
   className="c0"
 >
   <div
-    className="c1 "
+    className="c1 c2"
     onBlur={[Function]}
     onFocus={[Function]}
   >
-    <label
-      className="c2"
-    >
-      test label
-    </label>
     <div
-      className="c3 "
+      className="c3"
+      style={
+        Object {
+          "flexDirection": "column",
+        }
+      }
     >
       <div
         className="c4"
-      />
+      >
+        <label
+          className="c5"
+        >
+          test label
+           
+        </label>
+      </div>
+      <div
+        className="c3"
+      >
+        <div
+          className="c6 "
+        >
+          <div
+            className="c7"
+          >
+            <div
+              className="c8"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -1533,7 +2333,21 @@ exports[`FormField margin 1`] = `
   flex-direction: column;
 }
 
-.c2 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1549,7 +2363,7 @@ exports[`FormField margin 1`] = `
   overflow: hidden;
 }
 
-.c3 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1561,6 +2375,28 @@ exports[`FormField margin 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: auto;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c2 button {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: none;
 }
 
 @media only screen and (max-width:512px) {
@@ -1570,7 +2406,7 @@ exports[`FormField margin 1`] = `
 }
 
 @media only screen and (max-width:512px) {
-  .c2 {
+  .c4 {
     border: solid 1px #cdd3e3;
   }
 }
@@ -1579,16 +2415,33 @@ exports[`FormField margin 1`] = `
   className="c0"
 >
   <div
-    className="c1 "
+    className="c1 c2"
     onBlur={[Function]}
     onFocus={[Function]}
   >
     <div
-      className="c2 "
+      className="c3"
+      style={
+        Object {
+          "flexDirection": "column",
+        }
+      }
     >
       <div
         className="c3"
-      />
+      >
+        <div
+          className="c4 "
+        >
+          <div
+            className="c5"
+          >
+            <div
+              className="c6"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -1620,7 +2473,21 @@ exports[`FormField pad 1`] = `
   flex-direction: column;
 }
 
-.c2 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1636,7 +2503,7 @@ exports[`FormField pad 1`] = `
   overflow: hidden;
 }
 
-.c3 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1648,7 +2515,29 @@ exports[`FormField pad 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: auto;
   padding: 4px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c2 button {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: none;
 }
 
 @media only screen and (max-width:512px) {
@@ -1658,13 +2547,13 @@ exports[`FormField pad 1`] = `
 }
 
 @media only screen and (max-width:512px) {
-  .c2 {
+  .c4 {
     border: solid 1px #cdd3e3;
   }
 }
 
 @media only screen and (max-width:512px) {
-  .c3 {
+  .c5 {
     padding: 4px;
   }
 }
@@ -1673,16 +2562,33 @@ exports[`FormField pad 1`] = `
   className="c0"
 >
   <div
-    className="c1 "
+    className="c1 c2"
     onBlur={[Function]}
     onFocus={[Function]}
   >
     <div
-      className="c2 "
+      className="c3"
+      style={
+        Object {
+          "flexDirection": "column",
+        }
+      }
     >
       <div
         className="c3"
-      />
+      >
+        <div
+          className="c4 "
+        >
+          <div
+            className="c5"
+          >
+            <div
+              className="c6"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -1714,7 +2620,21 @@ exports[`FormField required 1`] = `
   flex-direction: column;
 }
 
-.c2 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1730,7 +2650,7 @@ exports[`FormField required 1`] = `
   overflow: hidden;
 }
 
-.c3 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1742,9 +2662,24 @@ exports[`FormField required 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: auto;
 }
 
-.c5 {
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c8 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -1764,30 +2699,37 @@ exports[`FormField required 1`] = `
   box-shadow: none;
 }
 
-.c5::-webkit-search-decoration {
+.c8::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c5::-webkit-input-placeholder {
+.c8::-webkit-input-placeholder {
   color: #e0e4ee;
 }
 
-.c5::-moz-placeholder {
+.c8::-moz-placeholder {
   color: #e0e4ee;
 }
 
-.c5:-ms-input-placeholder {
+.c8:-ms-input-placeholder {
   color: #e0e4ee;
 }
 
-.c5::-moz-focus-inner {
+.c8::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c4 {
+.c7 {
   position: relative;
   width: 100%;
+}
+
+.c2 button {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: none;
 }
 
 @media only screen and (max-width:512px) {
@@ -1797,7 +2739,7 @@ exports[`FormField required 1`] = `
 }
 
 @media only screen and (max-width:512px) {
-  .c2 {
+  .c4 {
     border: solid 1px #cdd3e3;
   }
 }
@@ -1806,16 +2748,33 @@ exports[`FormField required 1`] = `
   className="c0"
 >
   <div
-    className="c1 "
+    className="c1 c2"
     onBlur={[Function]}
     onFocus={[Function]}
   >
     <div
-      className="c2 "
+      className="c3"
+      style={
+        Object {
+          "flexDirection": "column",
+        }
+      }
     >
       <div
         className="c3"
-      />
+      >
+        <div
+          className="c4 "
+        >
+          <div
+            className="c5"
+          >
+            <div
+              className="c6"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
    
@@ -1824,27 +2783,44 @@ exports[`FormField required 1`] = `
     onSubmit={[Function]}
   >
     <div
-      className="c1 "
+      className="c1 c2"
       onBlur={[Function]}
       onFocus={[Function]}
     >
       <div
-        className="c2 "
+        className="c3"
+        style={
+          Object {
+            "flexDirection": "column",
+          }
+        }
       >
         <div
           className="c3"
         >
           <div
-            className="c4"
+            className="c4 "
           >
-            <input
-              autoComplete="off"
+            <div
               className="c5"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-            />
+            >
+              <div
+                className="c6"
+              >
+                <div
+                  className="c7"
+                >
+                  <input
+                    autoComplete="off"
+                    className="c8"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

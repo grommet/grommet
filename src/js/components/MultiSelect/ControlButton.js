@@ -15,6 +15,8 @@ const ControlButton = ({ onOk, onCancel }) => {
   return (
     <ControlButtonWrapper {...theme.multiselect.controls.wrapper}>
       <Button
+        role="button"
+        a11yTitle="OK button (Update selected values)"
         {...theme.multiselect.controls.button}
         onClick={onOk}
         primary
@@ -22,6 +24,8 @@ const ControlButton = ({ onOk, onCancel }) => {
         <Text weight={600}>OK</Text>
       </Button>
       <Button
+        role="button"
+        a11yTitle="Cancel button"
         {...theme.multiselect.controls.button}
         onClick={onCancel}
         secondary

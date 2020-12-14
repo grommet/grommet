@@ -448,6 +448,7 @@ exports[`Menu close by clicking outside 2`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+  margin-top: 4px;
 }
 
 .c3 {
@@ -2604,6 +2605,7 @@ exports[`Menu open and close on click 3`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+  margin-top: 4px;
 }
 
 .c3 {
@@ -3532,6 +3534,7 @@ exports[`Menu with dropAlign renders 2`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+  margin-top: 4px;
 }
 
 .c3 {

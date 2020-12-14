@@ -6,7 +6,7 @@ import { Text } from '../Text';
 const ValueLabelWithNumber = ({ value, number, color }) => {
   return (
     <Box direction="row" margin={{ horizontal: 'medium' }} align="center">
-      <Text size="medium" weight={600}>
+      <Text aria-label="Selected Label Value" size="medium" weight={600}>
         {number ? value : 'Select'}
       </Text>
       {number > 0 && (
@@ -16,7 +16,12 @@ const ValueLabelWithNumber = ({ value, number, color }) => {
           round="xsmall"
           margin={{ horizontal: 'medium' }}
         >
-          <Text size="10px" color="white" weight={600}>
+          <Text
+            aria-label="Selected Label Count"
+            size="10px"
+            color="white"
+            weight={600}
+          >
             {number}
           </Text>
         </Box>

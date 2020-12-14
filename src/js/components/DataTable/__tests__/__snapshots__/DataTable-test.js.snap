@@ -11,6 +11,11 @@ exports[`DataTable !primaryKey 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c5 {
+  font-size: 12px;
+  line-height: 16px;
+}
+
 .c4 {
   margin: 0;
   padding: 0;
@@ -46,11 +51,6 @@ exports[`DataTable !primaryKey 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
-}
-
-.c5 {
-  font-size: 12px;
-  line-height: 16px;
 }
 
 .c2 {
@@ -166,6 +166,17 @@ exports[`DataTable absoluteColumnSizes 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c5 {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.c9 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: bold;
+}
+
 .c4 {
   margin: 0;
   padding: 0;
@@ -240,17 +251,6 @@ exports[`DataTable absoluteColumnSizes 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
-}
-
-.c5 {
-  font-size: 12px;
-  line-height: 16px;
-}
-
-.c9 {
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: bold;
 }
 
 .c2 {
@@ -368,6 +368,17 @@ exports[`DataTable aggregate 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c5 {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.c8 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: bold;
+}
+
 .c4 {
   margin: 0;
   padding: 0;
@@ -417,17 +428,6 @@ exports[`DataTable aggregate 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
-}
-
-.c5 {
-  font-size: 12px;
-  line-height: 16px;
-}
-
-.c8 {
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: bold;
 }
 
 .c2 {
@@ -565,6 +565,17 @@ exports[`DataTable background 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c5 {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.c8 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: bold;
+}
+
 .c4 {
   margin: 0;
   padding: 0;
@@ -679,17 +690,6 @@ exports[`DataTable background 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
-}
-
-.c5 {
-  font-size: 12px;
-  line-height: 16px;
-}
-
-.c8 {
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: bold;
 }
 
 .c2 {
@@ -1031,6 +1031,17 @@ exports[`DataTable basic 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c5 {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.c8 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: bold;
+}
+
 .c4 {
   margin: 0;
   padding: 0;
@@ -1066,17 +1077,6 @@ exports[`DataTable basic 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
-}
-
-.c5 {
-  font-size: 12px;
-  line-height: 16px;
-}
-
-.c8 {
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: bold;
 }
 
 .c2 {
@@ -1194,6 +1194,17 @@ exports[`DataTable border 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c5 {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.c7 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: bold;
+}
+
 .c4 {
   margin: 0;
   padding: 0;
@@ -1244,17 +1255,6 @@ exports[`DataTable border 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
-}
-
-.c5 {
-  font-size: 12px;
-  line-height: 16px;
-}
-
-.c7 {
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: bold;
 }
 
 .c2 {
@@ -1698,6 +1698,17 @@ exports[`DataTable click 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c5 {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.c9 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: bold;
+}
+
 .c4 {
   margin: 0;
   padding: 0;
@@ -1733,17 +1744,6 @@ exports[`DataTable click 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
-}
-
-.c5 {
-  font-size: 12px;
-  line-height: 16px;
-}
-
-.c9 {
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: bold;
 }
 
 .c2 {
@@ -1957,6 +1957,17 @@ exports[`DataTable footer 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c5 {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.c8 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: bold;
+}
+
 .c4 {
   margin: 0;
   padding: 0;
@@ -2006,17 +2017,6 @@ exports[`DataTable footer 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
-}
-
-.c5 {
-  font-size: 12px;
-  line-height: 16px;
-}
-
-.c8 {
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: bold;
 }
 
 .c2 {
@@ -2207,6 +2207,11 @@ exports[`DataTable groupBy 1`] = `
   padding: 2px;
 }
 
+.c9 {
+  font-size: 12px;
+  line-height: 16px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -2300,11 +2305,6 @@ exports[`DataTable groupBy 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
-}
-
-.c9 {
-  font-size: 12px;
-  line-height: 16px;
 }
 
 .c2 {
@@ -2702,6 +2702,11 @@ exports[`DataTable groupBy expand 1`] = `
   padding: 2px;
 }
 
+.c9 {
+  font-size: 12px;
+  line-height: 16px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -2809,11 +2814,6 @@ exports[`DataTable groupBy expand 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
-}
-
-.c9 {
-  font-size: 12px;
-  line-height: 16px;
 }
 
 .c2 {
@@ -3121,6 +3121,11 @@ exports[`DataTable groupBy property 1`] = `
   padding: 2px;
 }
 
+.c9 {
+  font-size: 12px;
+  line-height: 16px;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -3214,11 +3219,6 @@ exports[`DataTable groupBy property 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
-}
-
-.c9 {
-  font-size: 12px;
-  line-height: 16px;
 }
 
 .c2 {
@@ -3581,6 +3581,17 @@ exports[`DataTable onSort 1`] = `
   flex-direction: row;
 }
 
+.c7 {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.c10 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: bold;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -3635,17 +3646,6 @@ exports[`DataTable onSort 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
-}
-
-.c7 {
-  font-size: 12px;
-  line-height: 16px;
-}
-
-.c10 {
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: bold;
 }
 
 .c2 {
@@ -4002,6 +4002,17 @@ exports[`DataTable pad 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c5 {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.c8 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: bold;
+}
+
 .c4 {
   margin: 0;
   padding: 0;
@@ -4097,17 +4108,6 @@ exports[`DataTable pad 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
-}
-
-.c5 {
-  font-size: 12px;
-  line-height: 16px;
-}
-
-.c8 {
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: bold;
 }
 
 .c2 {
@@ -4449,6 +4449,17 @@ exports[`DataTable paths 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c5 {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.c8 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: bold;
+}
+
 .c4 {
   margin: 0;
   padding: 0;
@@ -4484,17 +4495,6 @@ exports[`DataTable paths 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
-}
-
-.c5 {
-  font-size: 12px;
-  line-height: 16px;
-}
-
-.c8 {
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: bold;
 }
 
 .c2 {
@@ -4612,6 +4612,17 @@ exports[`DataTable primaryKey 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c5 {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.c8 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: bold;
+}
+
 .c4 {
   margin: 0;
   padding: 0;
@@ -4647,17 +4658,6 @@ exports[`DataTable primaryKey 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
-}
-
-.c5 {
-  font-size: 12px;
-  line-height: 16px;
-}
-
-.c8 {
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: bold;
 }
 
 .c2 {
@@ -4775,6 +4775,17 @@ exports[`DataTable relativeColumnSizes 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c5 {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.c9 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: bold;
+}
+
 .c4 {
   margin: 0;
   padding: 0;
@@ -4849,17 +4860,6 @@ exports[`DataTable relativeColumnSizes 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
-}
-
-.c5 {
-  font-size: 12px;
-  line-height: 16px;
-}
-
-.c9 {
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: bold;
 }
 
 .c2 {
@@ -4995,6 +4995,17 @@ exports[`DataTable replace 1`] = `
   flex: 0 0 auto;
 }
 
+.c5 {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.c8 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: bold;
+}
+
 .c4 {
   margin: 0;
   padding: 0;
@@ -5030,17 +5041,6 @@ exports[`DataTable replace 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
-}
-
-.c5 {
-  font-size: 12px;
-  line-height: 16px;
-}
-
-.c8 {
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: bold;
 }
 
 .c2 {
@@ -5222,6 +5222,17 @@ exports[`DataTable resizeable 1`] = `
   width: 4px;
 }
 
+.c6 {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.c12 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: bold;
+}
+
 .c4 {
   margin: 0;
   padding: 0;
@@ -5257,17 +5268,6 @@ exports[`DataTable resizeable 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
-}
-
-.c6 {
-  font-size: 12px;
-  line-height: 16px;
-}
-
-.c12 {
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: bold;
 }
 
 .c9 {
@@ -5411,6 +5411,17 @@ exports[`DataTable rowProps 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c5 {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.c8 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: bold;
+}
+
 .c4 {
   margin: 0;
   padding: 0;
@@ -5473,17 +5484,6 @@ exports[`DataTable rowProps 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
-}
-
-.c5 {
-  font-size: 12px;
-  line-height: 16px;
-}
-
-.c8 {
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: bold;
 }
 
 .c2 {
@@ -5688,6 +5688,17 @@ exports[`DataTable search 1`] = `
   width: 4px;
 }
 
+.c6 {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.c12 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: bold;
+}
+
 .c8 {
   display: inline-block;
   box-sizing: border-box;
@@ -5748,17 +5759,6 @@ exports[`DataTable search 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
-}
-
-.c6 {
-  font-size: 12px;
-  line-height: 16px;
-}
-
-.c12 {
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: bold;
 }
 
 .c2 {
@@ -6015,7 +6015,13 @@ exports[`DataTable search 2`] = `
     <tbody
       class="StyledTable__StyledTableBody-sc-1iut3o1-3 fbtFAN StyledDataTable__StyledDataTableBody-ng31qc-2 hekfUZ"
     >
-      .c1 {
+      .c2 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: bold;
+}
+
+.c1 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -6030,12 +6036,6 @@ exports[`DataTable search 2`] = `
 
 .c0 {
   height: 100%;
-}
-
-.c2 {
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: bold;
 }
 
 @media only screen and (max-width:512px) {
@@ -6094,6 +6094,17 @@ exports[`DataTable sortable 1`] = `
   flex-direction: row;
 }
 
+.c7 {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.c10 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: bold;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -6148,17 +6159,6 @@ exports[`DataTable sortable 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
-}
-
-.c7 {
-  font-size: 12px;
-  line-height: 16px;
-}
-
-.c10 {
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: bold;
 }
 
 .c2 {
@@ -6515,6 +6515,17 @@ exports[`DataTable themeColumnSizes 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c5 {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.c9 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: bold;
+}
+
 .c4 {
   margin: 0;
   padding: 0;
@@ -6589,17 +6600,6 @@ exports[`DataTable themeColumnSizes 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
-}
-
-.c5 {
-  font-size: 12px;
-  line-height: 16px;
-}
-
-.c9 {
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: bold;
 }
 
 .c2 {

@@ -19,6 +19,8 @@ const Searchbox = ({ placeholder, value, onValueChange, layout }) => {
   return (
     <SearchWrapper layout={layout} {...theme.multiselect.searchbox.container}>
       <TextInput
+        role="search"
+        aria-label="multiselect searchbox"
         plain
         value={value}
         valueLabel={<Text>value</Text>}

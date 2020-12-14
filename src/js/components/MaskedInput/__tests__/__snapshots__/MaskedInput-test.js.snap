@@ -504,6 +504,7 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+  margin-top: 4px;
 }
 
 @media only screen and (max-width:512px) {
@@ -1019,6 +1020,7 @@ exports[`MaskedInput mask 2`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+  margin-top: 4px;
 }
 
 @media only screen and (max-width:512px) {
@@ -1402,6 +1404,7 @@ exports[`MaskedInput option via mouse 2`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+  margin-top: 4px;
 }
 
 @media only screen and (max-width:512px) {

@@ -2,10 +2,10 @@ import React, { useContext } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { Close } from 'grommet-icons/icons/Close';
 
+import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
-
 import {
   OptionsBox,
   OptionWrapper,
@@ -30,7 +30,13 @@ const OptionChips = ({
   const theme = useContext(ThemeContext) || defaultProps.theme;
 
   const renderClearButton = () => (
-    <Button focusIndicator={false} onClick={() => clearAll([])} plain>
+    <Button
+      role="button"
+      a11yTitle="Clear all selected options"
+      focusIndicator={false}
+      onClick={() => clearAll([])}
+      plain
+    >
       <Box
         border={{
           side: 'bottom',
@@ -59,7 +65,10 @@ const OptionChips = ({
         <Box height={{ max: layout === 'single-column' ? height : 'auto' }}>
           {inclusionExclusion && isExcluded !== null && (
             <IncExcHeader {...theme.multiselect.rightPanel.incExcHeader.box}>
-              <Text {...theme.multiselect.rightPanel.incExcHeader.text}>
+              <Text
+                aria-label="Chip List header"
+                {...theme.multiselect.rightPanel.incExcHeader.text}
+              >
                 {isExcluded ? 'Excluded' : 'Included'} List
               </Text>
               {renderClearButton()}
@@ -84,6 +93,8 @@ const OptionChips = ({
                   {optionLabel(item)}
                 </OptionLabel>
                 <Close
+                  role="button"
+                  aria-label={`Remove selected chip ${optionLabel(item)}`}
                   style={{cursor: 'pointer'}}
                   onClick={event => onRemove(event, item)}
                   {...theme.multiselect.chips.icon}

@@ -770,6 +770,7 @@ exports[`Select applies custom global.hover theme to options 2`] = `
 .c1 {
   display: block;
   width: 100%;
+  background: #dfdfdf;
 }
 
 @media only screen and (max-width:512px) {
@@ -1413,6 +1414,7 @@ exports[`Select complex options and children 3`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+  margin-top: 4px;
 }
 
 .c3 {
@@ -1431,6 +1433,7 @@ exports[`Select complex options and children 3`] = `
 .c6 {
   display: block;
   width: 100%;
+  background: transparent;
 }
 
 @media only screen and (max-width:512px) {
@@ -2130,6 +2133,7 @@ exports[`Select empty results search 1`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+  margin-top: 4px;
 }
 
 .c6 {
@@ -2193,6 +2197,7 @@ exports[`Select empty results search 1`] = `
 .c9 {
   display: block;
   width: 100%;
+  background: transparent;
 }
 
 @media only screen and (max-width:512px) {
@@ -2401,6 +2406,7 @@ exports[`Select large drop container height 1`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+  margin-top: 4px;
 }
 
 .c3 {
@@ -2419,6 +2425,7 @@ exports[`Select large drop container height 1`] = `
 .c6 {
   display: block;
   width: 100%;
+  background: transparent;
 }
 
 @media only screen and (max-width:512px) {
@@ -2625,6 +2632,7 @@ exports[`Select medium drop container height 1`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+  margin-top: 4px;
 }
 
 .c3 {
@@ -2643,6 +2651,7 @@ exports[`Select medium drop container height 1`] = `
 .c6 {
   display: block;
   width: 100%;
+  background: transparent;
 }
 
 @media only screen and (max-width:512px) {
@@ -3569,6 +3578,7 @@ exports[`Select multiple onChange toggle with valueKey reduce 2`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+  margin-top: 4px;
 }
 
 .c3 {
@@ -3592,6 +3602,7 @@ exports[`Select multiple onChange toggle with valueKey reduce 2`] = `
 .c6 {
   display: block;
   width: 100%;
+  background: transparent;
 }
 
 @media only screen and (max-width:512px) {
@@ -4048,6 +4059,7 @@ exports[`Select multiple onChange with valueKey reduce 2`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+  margin-top: 4px;
 }
 
 .c3 {
@@ -4066,6 +4078,7 @@ exports[`Select multiple onChange with valueKey reduce 2`] = `
 .c6 {
   display: block;
   width: 100%;
+  background: transparent;
 }
 
 @media only screen and (max-width:512px) {
@@ -4522,6 +4535,7 @@ exports[`Select multiple onChange with valueKey string 2`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+  margin-top: 4px;
 }
 
 .c3 {
@@ -4540,6 +4554,7 @@ exports[`Select multiple onChange with valueKey string 2`] = `
 .c6 {
   display: block;
   width: 100%;
+  background: transparent;
 }
 
 @media only screen and (max-width:512px) {
@@ -4996,6 +5011,7 @@ exports[`Select multiple onChange without valueKey 2`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+  margin-top: 4px;
 }
 
 .c3 {
@@ -5014,6 +5030,7 @@ exports[`Select multiple onChange without valueKey 2`] = `
 .c6 {
   display: block;
   width: 100%;
+  background: transparent;
 }
 
 @media only screen and (max-width:512px) {
@@ -5112,7 +5129,7 @@ exports[`Select multiple onChange without valueKey 3`] = `
 
 exports[`Select multiple onChange without valueKey 4`] = `
 <div
-  class="StyledBox-sc-1etxkdl-0 ipAPVu StyledDrop-sc-1o13o3c-0 equbbu"
+  class="StyledBox-sc-1etxkdl-0 ipAPVu StyledDrop-sc-1o13o3c-0 fWOtdo"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
@@ -5128,7 +5145,7 @@ exports[`Select multiple onChange without valueKey 4`] = `
       tabindex="-1"
     >
       <button
-        class="StyledButton-sc-1hmw3c5-0 ggvPvt SelectContainer__SelectOption-sc-64fnsh-2 jGXSJY"
+        class="StyledButton-sc-1hmw3c5-0 ggvPvt SelectContainer__SelectOption-sc-64fnsh-2 iLntDW"
         role="menuitem"
         tabindex="-1"
         type="button"
@@ -5144,7 +5161,7 @@ exports[`Select multiple onChange without valueKey 4`] = `
         </div>
       </button>
       <button
-        class="StyledButton-sc-1hmw3c5-0 ggvPvt SelectContainer__SelectOption-sc-64fnsh-2 jGXSJY"
+        class="StyledButton-sc-1hmw3c5-0 ggvPvt SelectContainer__SelectOption-sc-64fnsh-2 iLntDW"
         role="menuitem"
         tabindex="-1"
         type="button"
@@ -5570,6 +5587,7 @@ exports[`Select multiple values 3`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+  margin-top: 4px;
 }
 
 .c3 {
@@ -5593,6 +5611,7 @@ exports[`Select multiple values 3`] = `
 .c6 {
   display: block;
   width: 100%;
+  background: transparent;
 }
 
 @media only screen and (max-width:512px) {
@@ -6049,6 +6068,7 @@ exports[`Select onChange with valueKey string 2`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+  margin-top: 4px;
 }
 
 .c3 {
@@ -6067,6 +6087,7 @@ exports[`Select onChange with valueKey string 2`] = `
 .c6 {
   display: block;
   width: 100%;
+  background: transparent;
 }
 
 @media only screen and (max-width:512px) {
@@ -6523,6 +6544,7 @@ exports[`Select onChange without valueKey 2`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+  margin-top: 4px;
 }
 
 .c3 {
@@ -6541,6 +6563,7 @@ exports[`Select onChange without valueKey 2`] = `
 .c6 {
   display: block;
   width: 100%;
+  background: transparent;
 }
 
 @media only screen and (max-width:512px) {
@@ -7031,6 +7054,7 @@ exports[`Select opens 3`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+  margin-top: 4px;
 }
 
 .c3 {
@@ -7049,6 +7073,7 @@ exports[`Select opens 3`] = `
 .c6 {
   display: block;
   width: 100%;
+  background: transparent;
 }
 
 @media only screen and (max-width:512px) {
@@ -7152,7 +7177,7 @@ exports[`Select opens 5`] = `
   tabindex="-1"
 >
   <button
-    class="StyledButton-sc-1hmw3c5-0 ggvPvt SelectContainer__SelectOption-sc-64fnsh-2 jGXSJY"
+    class="StyledButton-sc-1hmw3c5-0 ggvPvt SelectContainer__SelectOption-sc-64fnsh-2 iLntDW"
     role="menuitem"
     tabindex="-1"
     type="button"
@@ -7168,7 +7193,7 @@ exports[`Select opens 5`] = `
     </div>
   </button>
   <button
-    class="StyledButton-sc-1hmw3c5-0 ggvPvt SelectContainer__SelectOption-sc-64fnsh-2 jGXSJY"
+    class="StyledButton-sc-1hmw3c5-0 ggvPvt SelectContainer__SelectOption-sc-64fnsh-2 iLntDW"
     role="menuitem"
     tabindex="-1"
     type="button"
@@ -9250,6 +9275,7 @@ exports[`Select search 2`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+  margin-top: 4px;
 }
 
 .c6 {
@@ -9313,6 +9339,7 @@ exports[`Select search 2`] = `
 .c9 {
   display: block;
   width: 100%;
+  background: transparent;
 }
 
 @media only screen and (max-width:512px) {
@@ -10632,6 +10659,7 @@ exports[`Select small drop container height 1`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+  margin-top: 4px;
 }
 
 .c3 {
@@ -10650,6 +10678,7 @@ exports[`Select small drop container height 1`] = `
 .c6 {
   display: block;
   width: 100%;
+  background: transparent;
 }
 
 @media only screen and (max-width:512px) {

@@ -143,7 +143,7 @@
       "<rootDir>/dist/"
     ],
     "testPathIgnorePatterns": [
-      "<rootDir>[/\\\\](dist|node_modules)[/\\\\]"
+      "<rootDir>[/\\\\](dist|node_modules|.history)[/\\\\]"
     ]
   },
   "pre-commit": [

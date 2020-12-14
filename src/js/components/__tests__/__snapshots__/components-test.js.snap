@@ -2455,6 +2455,11 @@ node",
         "name": "name",
       },
       Object {
+        "description": "The width of the field.",
+        "format": "string",
+        "name": "width",
+      },
+      Object {
         "description": "The amount of margin around the component. An object can
     be specified to distinguish horizontal margin, vertical margin, and
     margin on a particular side.",
@@ -3226,6 +3231,11 @@ function",
     "usage": "import { List } from 'mnet-ui-base';
 <List data={[...]} />",
   },
+  "Loader": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "displayName": "Loader",
+    "render": [Function],
+  },
   "Main": [Function],
   "Markdown": [Function],
   "MaskedInput": Object {
@@ -3767,7 +3777,15 @@ circle",
 <Meter />",
   },
   "MnetUIBase": [Function],
+  "ModalPopUp": [Function],
+  "MultiSelect": [Function],
   "Nav": [Function],
+  "Notification": [Function],
+  "Pagination": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "displayName": "Pagination",
+    "render": [Function],
+  },
   "Paragraph": Object {
     "availableAt": Array [
       Object {
@@ -4624,6 +4642,26 @@ function
         "format": "string",
         "name": "emptySearchMessage",
       },
+      Object {
+        "description": "Render custom search component",
+        "format": "function",
+        "name": "customSearch",
+      },
+      Object {
+        "description": "Render custom top panel component above the option list",
+        "format": "function",
+        "name": "renderOptionTop",
+      },
+      Object {
+        "description": "Render custom bottom panel component below the option list",
+        "format": "function",
+        "name": "renderOptionBottom",
+      },
+      Object {
+        "description": "Render custom select component",
+        "format": "function",
+        "name": "renderCustomContent",
+      },
     ],
     "usage": "import { Select } from 'mnet-ui-base';
 <Select />",
@@ -5161,5 +5199,11 @@ number",
     "render": [Function],
   },
   "__esModule": true,
+  "addNotification": [Function],
+  "addToast": [Function],
+  "closeConfirmAlert": [Function],
+  "modalIsLoading": [Function],
+  "openConfirmAlert": [Function],
+  "removeNotification": [Function],
 }
 `;

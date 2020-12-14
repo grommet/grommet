@@ -88,6 +88,14 @@ The name of the value data when in a Form and the name of
 string
 ```
 
+**width**
+
+The width of the field.
+
+```
+string
+```
+
 **margin**
 
 The amount of margin around the component. An object can

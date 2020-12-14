@@ -170,6 +170,7 @@ const ColumnSelect = ({
                           ref={optionRef}
                           tabIndex="-1"
                           role="menuitem"
+                          a11yTitle="select all options"
                           hoverIndicator={theme.select.activeColor}
                           selected={allSelected}
                           plain
@@ -206,6 +207,7 @@ const ColumnSelect = ({
                         ref={optionRef}
                         tabIndex="-1"
                         role="menuitem"
+                        a11yTitle={`option id - ${option.id}`}
                         hoverIndicator={theme.select.activeColor}
                         disabled={optionDisabled || undefined}
                         active={optionActive}

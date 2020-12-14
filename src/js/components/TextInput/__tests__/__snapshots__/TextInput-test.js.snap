@@ -287,6 +287,7 @@ exports[`TextInput calls onSuggestionsClose 2`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+  margin-top: 4px;
 }
 
 .c4 {
@@ -491,6 +492,7 @@ exports[`TextInput calls onSuggestionsOpen 1`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+  margin-top: 4px;
 }
 
 .c4 {
@@ -748,6 +750,7 @@ exports[`TextInput close suggestion drop 2`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+  margin-top: 4px;
 }
 
 .c4 {
@@ -1005,6 +1008,7 @@ exports[`TextInput complex suggestions 2`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+  margin-top: 4px;
 }
 
 .c4 {
@@ -1576,6 +1580,7 @@ exports[`TextInput large drop height 1`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+  margin-top: 4px;
 }
 
 .c4 {
@@ -1761,6 +1766,7 @@ exports[`TextInput medium drop height 1`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+  margin-top: 4px;
 }
 
 .c4 {
@@ -2095,6 +2101,7 @@ exports[`TextInput select suggestion 2`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+  margin-top: 4px;
 }
 
 .c4 {
@@ -2299,6 +2306,7 @@ exports[`TextInput small drop height 1`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+  margin-top: 4px;
 }
 
 .c4 {
@@ -2542,6 +2550,7 @@ exports[`TextInput suggestions 2`] = `
   animation: kPQHBD 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+  margin-top: 4px;
 }
 
 .c4 {

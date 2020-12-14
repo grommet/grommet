@@ -11,6 +11,20 @@ exports[`Markdown renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .c1 {
   font-size: 33.33333333333333px;
   line-height: 37.33333333333333px;
@@ -43,20 +57,6 @@ exports[`Markdown renders 1`] = `
   font-size: 12px;
   line-height: 16px;
   max-width: 192px;
-}
-
-.c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 
 .c6 {
