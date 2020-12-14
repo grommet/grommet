@@ -98,10 +98,19 @@ describe('List', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('border boolean', () => {
+  test('border boolean true', () => {
     const { container } = render(
       <Grommet>
         <List data={['one', 'two']} border />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('border boolean false', () => {
+    const { container } = render(
+      <Grommet>
+        <List data={['one', 'two']} border={false} />
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();

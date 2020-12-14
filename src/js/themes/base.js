@@ -2,8 +2,6 @@ import { rgba } from 'polished';
 
 import { Actions } from 'grommet-icons/icons/Actions';
 import { ClosedCaption } from 'grommet-icons/icons/ClosedCaption';
-import { ChapterPrevious } from 'grommet-icons/icons/ChapterPrevious';
-import { ChapterNext } from 'grommet-icons/icons/ChapterNext';
 import { Expand } from 'grommet-icons/icons/Expand';
 import { FormDown } from 'grommet-icons/icons/FormDown';
 import { FormNext } from 'grommet-icons/icons/FormNext';
@@ -725,6 +723,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //   background: undefined,
         // },
         // pad: undefined,
+        units: {
+          color: 'text-xweak',
+          margin: { left: 'xsmall' },
+        },
       },
       icons: {
         ascending: FormDown,
@@ -903,14 +905,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         radius: '4px',
       },
       container: {
-        zIndex: '15',
+        zIndex: '20',
       },
       // extend: undefined,
       overlay: {
         background: 'rgba(0, 0, 0, 0.5)',
       },
       responsiveBreakpoint: 'small', // when Layer takes over the full screen
-      zIndex: '10',
+      zIndex: '20',
     },
     list: {
       item: {

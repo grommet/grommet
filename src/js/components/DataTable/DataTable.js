@@ -1,5 +1,14 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 
+import { Box } from '../Box';
+import { Text } from '../Text';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { Body } from './Body';
@@ -14,7 +23,7 @@ import {
   normalizePrimaryProperty,
 } from './buildState';
 import { normalizeShow, usePagination } from '../../utils';
-import { StyledDataTable } from './StyledDataTable';
+import { StyledDataTable, StyledPlaceholder } from './StyledDataTable';
 
 const contexts = ['header', 'body', 'footer'];
 
@@ -53,6 +62,7 @@ const DataTable = ({
   pad,
   paginate,
   pin,
+  placeholder,
   primaryKey,
   resizeable,
   rowProps,
@@ -118,6 +128,27 @@ const DataTable = ({
 
   // any customized column widths
   const [widths, setWidths] = useState({});
+
+  // placeholder placement stuff
+  const headerRef = useRef();
+  const footerRef = useRef();
+  const [headerHeight, setHeaderHeight] = useState();
+  const [footerHeight, setFooterHeight] = useState();
+
+  useLayoutEffect(() => {
+    if (placeholder) {
+      if (headerRef.current) {
+        const nextHeaderHeight = headerRef.current.getBoundingClientRect()
+          .height;
+        setHeaderHeight(nextHeaderHeight);
+      } else setHeaderHeight(0);
+      if (footerRef.current) {
+        const nextFooterHeight = footerRef.current.getBoundingClientRect()
+          .height;
+        setFooterHeight(nextFooterHeight);
+      } else setFooterHeight(0);
+    }
+  }, [footerRef, headerRef, placeholder]);
 
   // remember that we are filtering on this property
   const onFiltering = property => setFiltering(property);
@@ -202,6 +233,7 @@ const DataTable = ({
     <>
       <StyledDataTable fillProp={fill} {...rest}>
         <Header
+          ref={headerRef}
           background={normalizeProp(background, 'header')}
           border={normalizeProp(border, 'header')}
           columns={columns}
@@ -286,6 +318,22 @@ const DataTable = ({
             selected={selected}
             size={size}
           />
+        )}
+        {placeholder && (
+          <StyledPlaceholder top={headerHeight} bottom={footerHeight}>
+            {typeof placeholder === 'string' ? (
+              <Box
+                background={{ color: 'background-front', opacity: 'strong' }}
+                align="center"
+                justify="center"
+                fill="vertical"
+              >
+                <Text>{placeholder}</Text>
+              </Box>
+            ) : (
+              placeholder
+            )}
+          </StyledPlaceholder>
         )}
       </StyledDataTable>
       {paginate && (

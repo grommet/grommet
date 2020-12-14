@@ -74,8 +74,11 @@ const SelectContainer = forwardRef(
       onMore,
       onSearch,
       optionIndexesInValue,
-      options,
+      options: optionsProp,
+      allOptions,
       searchPlaceholder,
+      search,
+      setSearch,
       selected,
       value = '',
       valueKey,
@@ -84,11 +87,9 @@ const SelectContainer = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
-    const [search, setSearch] = useState();
     const [activeIndex, setActiveIndex] = useState(-1);
     const [keyboardNavigation, setKeyboardNavigation] = useState();
     const [focus, setFocus] = useState(false);
-    const [initialOptions] = useState(options);
     const searchRef = useRef();
     const optionsRef = useRef();
     // adjust activeIndex when options change
@@ -126,18 +127,18 @@ const SelectContainer = forwardRef(
     }, [keyboardNavigation]);
 
     const optionLabel = useCallback(
-      index => applyKey(options[index], labelKey),
-      [labelKey, options],
+      index => applyKey(optionsProp[index], labelKey),
+      [labelKey, optionsProp],
     );
 
     const optionValue = useCallback(
-      index => applyKey(options[index], valueKey),
-      [options, valueKey],
+      index => applyKey(optionsProp[index], valueKey),
+      [optionsProp, valueKey],
     );
 
     const isDisabled = useCallback(
       index => {
-        const option = options[index];
+        const option = optionsProp[index];
         let result;
         if (disabledKey) {
           result = applyKey(option, disabledKey);
@@ -151,7 +152,7 @@ const SelectContainer = forwardRef(
         }
         return result;
       },
-      [disabled, disabledKey, options, optionValue],
+      [disabled, disabledKey, optionsProp, optionValue],
     );
 
     const isSelected = useCallback(
@@ -198,30 +199,28 @@ const SelectContainer = forwardRef(
           let nextSelected;
           if (multiple) {
             const nextOptionIndexesInValue = optionIndexesInValue.slice(0);
-            const initialOptionsIndex = initialOptions.indexOf(options[index]);
-            const valueIndex = optionIndexesInValue.indexOf(
-              initialOptionsIndex,
-            );
+            const allOptionsIndex = allOptions.indexOf(optionsProp[index]);
+            const valueIndex = optionIndexesInValue.indexOf(allOptionsIndex);
             if (valueIndex === -1) {
-              nextOptionIndexesInValue.push(initialOptionsIndex);
+              nextOptionIndexesInValue.push(allOptionsIndex);
             } else {
               nextOptionIndexesInValue.splice(valueIndex, 1);
             }
             nextValue = nextOptionIndexesInValue.map(i =>
               valueKey && valueKey.reduce
-                ? applyKey(initialOptions[i], valueKey)
-                : initialOptions[i],
+                ? applyKey(allOptions[i], valueKey)
+                : allOptions[i],
             );
             nextSelected = nextOptionIndexesInValue;
           } else {
             nextValue =
               valueKey && valueKey.reduce
-                ? applyKey(options[index], valueKey)
-                : options[index];
+                ? applyKey(allOptions[index], valueKey)
+                : allOptions[index];
             nextSelected = index;
           }
           onChange(event, {
-            option: options[index],
+            option: allOptions[index],
             value: nextValue,
             selected: nextSelected,
           });
@@ -231,8 +230,8 @@ const SelectContainer = forwardRef(
         multiple,
         onChange,
         optionIndexesInValue,
-        initialOptions,
-        options,
+        optionsProp,
+        allOptions,
         valueKey,
       ],
     );
@@ -249,17 +248,17 @@ const SelectContainer = forwardRef(
         event.preventDefault();
         let nextActiveIndex = activeIndex + 1;
         while (
-          nextActiveIndex < options.length &&
+          nextActiveIndex < optionsProp.length &&
           isDisabled(nextActiveIndex)
         ) {
           nextActiveIndex += 1;
         }
-        if (nextActiveIndex !== options.length) {
+        if (nextActiveIndex !== optionsProp.length) {
           setActiveIndex(nextActiveIndex);
           setKeyboardNavigation(true);
         }
       },
-      [activeIndex, isDisabled, options],
+      [activeIndex, isDisabled, optionsProp],
     );
 
     const onPreviousOption = useCallback(
@@ -344,9 +343,9 @@ const SelectContainer = forwardRef(
             />
           )}
           <OptionsBox role="menubar" tabIndex="-1" ref={optionsRef}>
-            {options.length > 0 ? (
+            {optionsProp.length > 0 ? (
               <InfiniteScroll
-                items={options}
+                items={optionsProp}
                 step={theme.select.step}
                 onMore={onMore}
                 replace={replace}
@@ -360,7 +359,7 @@ const SelectContainer = forwardRef(
                   // as an option Button kind property.
                   let child;
                   if (children)
-                    child = children(option, index, options, {
+                    child = children(option, index, optionsProp, {
                       active: optionActive,
                       disabled: optionDisabled,
                       selected: optionSelected,

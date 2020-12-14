@@ -14,7 +14,7 @@ export const data = [
 export const Children = () => (
   <Grommet theme={grommet}>
     <Box pad="large" height="100%" align="center">
-      <List data={data} pad="medium">
+      <List data={data} pad="medium" border={false}>
         {datum => (
           <Tip content={datum.state} dropProps={{ align: { left: 'right' } }}>
             <Box direction="row-responsive" gap="medium" align="center">

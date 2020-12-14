@@ -6,6 +6,7 @@ import {
   inputStyle,
   parseMetricToNum,
   plainInputStyle,
+  textAlignStyle,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
 
@@ -32,6 +33,7 @@ const StyledTextInput = styled.input`
       props.theme.textInput.disabled && props.theme.textInput.disabled.opacity,
     )}
   ${props => props.theme.textInput && props.theme.textInput.extend};
+  ${props => props.textAlign && textAlignStyle}
 `;
 
 StyledTextInput.defaultProps = {};

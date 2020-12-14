@@ -16,6 +16,7 @@ import { Text } from '../../Text';
 import { TextInput } from '../../TextInput';
 import { Select } from '../../Select';
 import { CheckBox } from '../../CheckBox';
+import { RadioButtonGroup } from '../../RadioButtonGroup';
 import { Box } from '../../Box';
 
 describe('Form accessibility', () => {
@@ -939,5 +940,59 @@ describe('Form uncontrolled', () => {
       { test: 'Input has changed' },
       { touched: { test: true } },
     );
+  });
+
+  test('reset clears select, checkbox, radiobuttongroup', () => {
+    const onReset = jest.fn();
+    const { container, getByPlaceholderText, getByText } = render(
+      <Grommet>
+        <Form onReset={onReset}>
+          <FormField
+            label="Select Size"
+            htmlFor="test-select"
+            name="test-select"
+          >
+            <Select
+              options={['small', 'medium', 'large']}
+              name="test-select"
+              id="test-select"
+              placeholder="test select"
+            />
+          </FormField>
+          <FormField
+            label="CheckBox"
+            htmlFor="test-checkbox"
+            name="test-checkbox"
+          >
+            <CheckBox
+              label="test-checkbox"
+              name="test-checkbox"
+              id="test-checkbox"
+            />
+          </FormField>
+          <FormField
+            label="RadioButtonGroup"
+            htmlFor="test-radiobuttongroup"
+            name="test-radiobuttongroup"
+          >
+            <RadioButtonGroup
+              options={['one', 'two', 'three']}
+              name="test-radiobuttongroup"
+              id="test-radiobuttongroup"
+            />
+          </FormField>
+          <Button type="reset" primary label="Reset" />
+        </Form>
+      </Grommet>,
+    );
+
+    fireEvent.click(getByPlaceholderText('test select'));
+    fireEvent.click(getByText('small'));
+    fireEvent.click(getByText('test-checkbox'));
+    fireEvent.click(getByText('two'));
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByText('Reset'));
+    expect(container.firstChild).toMatchSnapshot();
   });
 });
