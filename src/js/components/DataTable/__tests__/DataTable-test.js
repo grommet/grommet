@@ -991,27 +991,6 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('should show correct item index when "show" is { index: # }', () => {
-    const index = 15;
-    const { container, getByText } = render(
-      <Grommet>
-        <DataTable
-          columns={[
-            { property: 'a', header: 'A' },
-            { property: 'b', header: 'B' },
-          ]}
-          data={DATA}
-          paginate
-          show={{ index }}
-        />
-      </Grommet>,
-    );
-
-    const result = getByText(`entry-${index}`);
-    expect(result).toBeTruthy();
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
   test('should render correct num items per page (step)', () => {
     const step = 14;
     const { container, getAllByText } = render(
@@ -1034,17 +1013,23 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  // // need to fix this
-  // test('should render new data when page changes', () => {
-  //   const { container, getByLabelText } = render(
-  //     <Grommet>
-  //       <List data={data} paginate />
-  //     </Grommet>,
-  //   );
+  test('should render new data when page changes', () => {
+    const { container, getByLabelText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={DATA}
+          paginate
+        />
+      </Grommet>,
+    );
 
-  //   expect(container.firstChild).toMatchSnapshot();
-  //   fireEvent.click(getByLabelText('Go to next page'));
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByLabelText('Go to next page'));
 
-  //   expect(container.firstChild).toMatchSnapshot();
-  // });
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

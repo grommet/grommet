@@ -397,19 +397,6 @@ describe('List events', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('should show correct item index when "show" is { index: # }', () => {
-    const index = 15;
-    const { container, getByText } = render(
-      <Grommet>
-        <List data={data} show={{ index }} paginate />
-      </Grommet>,
-    );
-
-    const result = getByText(`entry-${index}`);
-    expect(result).toBeTruthy();
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
   test('should render correct num items per page (step)', () => {
     const step = 14;
     const { container, getAllByText } = render(
@@ -424,7 +411,6 @@ describe('List events', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  // need to fix this
   test('should render new data when page changes', () => {
     const { container, getByLabelText } = render(
       <Grommet>

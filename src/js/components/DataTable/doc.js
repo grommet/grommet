@@ -267,10 +267,7 @@ export const doc = DataTable => {
     ),
     show: PropTypes.oneOfType([
       PropTypes.number,
-      PropTypes.oneOfType([
-        PropTypes.shape({ page: PropTypes.number }),
-        PropTypes.shape({ index: PropTypes.number }),
-      ]),
+      PropTypes.shape({ page: PropTypes.number }),
     ])
       .description(
         `To be used in conjunction with paginate. If provided as a number, 

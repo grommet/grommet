@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Card, Grid, Grommet } from 'grommet';
+import { Box, Card, Grid, Grommet, Text } from 'grommet';
 // import { grommet } from 'grommet/themes';
 import { hpe } from 'grommet-theme-hpe';
 import { Pagination } from '..';
@@ -22,11 +22,14 @@ const CardResult = ({ item }) => (
 
 const PaginatedCards = () => {
   const [currentData, setCurrentData] = useState(data.slice(0, 10));
+  const [indices, setIndices] = useState([0, 10]);
 
   const handleChange = ({ startIndex, endIndex }) => {
     const nextData = data.slice(startIndex, endIndex);
     setCurrentData(nextData);
+    setIndices([startIndex, endIndex]);
   };
+
   return (
     <Grommet theme={hpe} full>
       <Box pad="large" gap="medium" fill>
@@ -35,11 +38,12 @@ const PaginatedCards = () => {
             <CardResult item={datum} key={datum.entry} />
           ))}
         </Grid>
-        <Pagination
-          alignSelf="end"
-          numItems={data.length}
-          onChange={handleChange}
-        />
+        <Box direction="row" justify="between">
+          <Text>
+            Showing {indices[0] + 1} - {indices[1]} of {data.length}
+          </Text>
+          <Pagination numItems={data.length} onChange={handleChange} />
+        </Box>
       </Box>
     </Grommet>
   );

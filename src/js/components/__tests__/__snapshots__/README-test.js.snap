@@ -6866,9 +6866,6 @@ number
 {
   page: number
 }
-{
-  index: number
-}
 \`\`\`
 
 **size**
@@ -11211,9 +11208,6 @@ To be used in conjunction with paginate. If provided as a number,
 number
 {
   page: number
-}
-{
-  index: number
 }
 \`\`\`
 

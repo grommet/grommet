@@ -637,9 +637,6 @@ number
 {
   page: number
 }
-{
-  index: number
-}
 ```
 
 **size**

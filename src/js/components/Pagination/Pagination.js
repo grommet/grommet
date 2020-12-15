@@ -20,7 +20,6 @@ const Pagination = forwardRef(
       numMiddlePages: numMiddlePagesProp = 3,
       onChange,
       page: pageProp,
-      show: showProp,
       // ideating on prop to show a message like "Showing x-y of z items"
       // showSummary,
       step: stepProp,

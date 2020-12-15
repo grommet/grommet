@@ -378,9 +378,6 @@ number
 {
   page: number
 }
-{
-  index: number
-}
 ```
 
 **step**

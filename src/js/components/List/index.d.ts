@@ -74,7 +74,7 @@ export interface ListProps {
   paginate?: boolean | PaginationType;
   primaryKey?: string | ((item: any) => React.ReactElement);
   secondaryKey?: string | ((item: any) => React.ReactElement);
-  show?: number | { page?: number, index?: number };
+  show?: number | { page?: number };
   step?: number;
   action?: (item: any, index: number) => void;
 }

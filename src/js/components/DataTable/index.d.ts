@@ -47,7 +47,7 @@ export interface ColumnConfig<TRowType> {
   property: string;
   render?: (datum: TRowType) => React.ReactNode;
   search?: boolean;
-  show?: number | { page?: number, index?: number };
+  show?: number | { page?: number };
   sortable?: boolean;
   size?: ColumnSizeType | string;
   units?: string;

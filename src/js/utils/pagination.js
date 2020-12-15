@@ -5,35 +5,17 @@ export const normalizeShow = (showProp, context) => {
   let showItem;
 
   if (['dataTable', 'list'].includes(context)) {
-    // by default, show refers to the index of an item in the List,
+    // by default, show refers to the index of an item,
     // but if using pagination, show can take the form of { page: # },
-    // where page refers to the page # to show or { index: # },
-    // where index refers to the index of an item in the list
+    // where page refers to the page # to show
     if (typeof showProp === 'number') showItem = showProp;
-    else if (typeof showProp === 'object') {
-      // in this context, if user provides both page and index to showProp,
-      // index should win
-      if ('index' in showProp) {
-        showItem = showProp.index;
-      } else if ('page' in showProp) page = showProp.page;
-    }
-  }
-
-  if (
-    typeof showProp === 'object' &&
-    'index' in showProp &&
-    'page' in showProp
-  ) {
-    console.warn(
-      // eslint-disable-next-line max-len
-      `Property "show" should not have keys for both index and page. Remove one.`,
-    );
+    else if (typeof showProp === 'object' && 'page' in showProp)
+      page = showProp.page;
   }
 
   return [page, showItem];
 };
 
-// getPaginatedItems
 export const usePagination = ({ data, paginationProps }) => {
   // step specifies the number of items per page of results
   const step = (paginationProps && paginationProps.step) || 10;

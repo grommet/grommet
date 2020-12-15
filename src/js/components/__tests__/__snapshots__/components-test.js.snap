@@ -5243,9 +5243,6 @@ function",
         "format": "number
 {
   page: number
-}
-{
-  index: number
 }",
         "name": "show",
       },
