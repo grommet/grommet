@@ -157,7 +157,7 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'layer.container.extend': {
-    description: 'Any additional style for Layer inner Container.',
+    description: 'Any additional style for Layer Container.',
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },

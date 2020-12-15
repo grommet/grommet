@@ -239,7 +239,7 @@ undefined
 
 **layer.container.extend**
 
-Any additional style for Layer inner Container. Expects `string | (props) => {}`.
+Any additional style for Layer Container. Expects `string | (props) => {}`.
 
 Defaults to
 
