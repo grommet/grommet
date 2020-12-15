@@ -197,7 +197,7 @@ const Pagination = forwardRef(
         <Nav a11yTitle={a11yTitle || 'Pagination Navigation'} ref={ref}>
           <Box as="ul" {...theme.pagination.controls}>
             {pages.map(page => (
-              <PageIndex key={page.page} {...page} />
+              <PageIndex key={page.a11yTitle} {...page} />
             ))}
           </Box>
         </Nav>
