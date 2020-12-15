@@ -237,7 +237,7 @@ const DataTable = ({
           background={normalizeProp(background, 'header')}
           border={normalizeProp(border, 'header')}
           columns={columns}
-          data={adjustedData}
+          data={!paginate ? adjustedData : currentItems}
           fill={fill}
           filtering={filtering}
           filters={filters}
@@ -282,7 +282,7 @@ const DataTable = ({
             background={normalizeProp(background, 'body')}
             border={normalizeProp(border, 'body')}
             columns={columns}
-            data={!paginate ? adjustedData : currentItems}
+            data={adjustedData}
             onMore={onMore}
             replace={replace}
             onClickRow={onClickRow}
@@ -296,6 +296,7 @@ const DataTable = ({
             }
             pad={normalizeProp(pad, 'body')}
             pinnedBackground={normalizeProp(background, 'pinned')}
+            placeholder={placeholder}
             primaryProperty={primaryProperty}
             rowProps={rowProps}
             selected={selected}
@@ -305,6 +306,7 @@ const DataTable = ({
         )}
         {showFooter && (
           <Footer
+            ref={footerRef}
             background={normalizeProp(background, 'footer')}
             border={normalizeProp(border, 'footer')}
             columns={columns}

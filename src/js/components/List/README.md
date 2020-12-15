@@ -333,6 +333,16 @@ string
 }
 ```
 
+**paginate**
+
+Whether to paginate the data. If providing an object, any Box props or 
+    Pagination props are valid.
+
+```
+boolean
+object
+```
+
 **primaryKey**
 
 When a string is supplied, it indicates the property in a data item
@@ -355,6 +365,22 @@ When a string is supplied, it indicates the property in a data item
 ```
 string
 function
+```
+
+**show**
+
+To be used in conjunction with paginate. If provided as a number, 
+        the index of an item to show. If provided as an object in the format of 
+        show={{ page: 2 }}, the default page to show.
+
+```
+number
+{
+  page: number
+}
+{
+  index: number
+}
 ```
 
 **step**

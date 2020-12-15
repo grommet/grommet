@@ -3507,60 +3507,6 @@ exports[`DataTable custom theme 2`] = `
 </div>
 `;
 
-exports[`DataTable empty 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c1 {
-  border-spacing: 0;
-  border-collapse: collapse;
-  width: inherit;
-}
-
-.c2 {
-  position: relative;
-  border-spacing: 0;
-  border-collapse: separate;
-  height: auto;
-}
-
-.c3:focus {
-  outline: 2px solid #6FFFB0;
-}
-
-@media all and (min--moz-device-pixel-ratio:0) {
-  .c1 {
-    table-layout: fixed;
-  }
-}
-
-<div
-  class="c0"
->
-  <table
-    class="c1 c2"
-  >
-    <thead
-      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-xrlyjm-3"
-    >
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      />
-    </thead>
-    <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c3"
-    />
-  </table>
-</div>
-`;
-
 exports[`DataTable fill 1`] = `
 .c0 {
   font-size: 18px;

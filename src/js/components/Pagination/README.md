@@ -2,7 +2,7 @@
 A control that enables selection of a single page from a 
       range of pages.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Pagination&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/pagination&module=%2Fsrc%2FPagination.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=undefined-Pagination&full=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/pagination&module=%2Fsrc%2FPagination.js)
 ## Usage
 
 ```javascript
@@ -125,25 +125,26 @@ xlarge
 string
 ```
 
-**defaultPage**
+**numEdgePages**
 
-The default active page. Defaults to `1`.
-
-```
-number
-```
-
-**edgeCount**
-
-The number of visible pages at the start and end of page range. Defaults to `1`.
+The number of page buttons visible at the start and end of page 
+        range. Defaults to `1`.
 
 ```
 number
 ```
 
-**middleCount**
+**numItems**
 
-The number of visible pages on either side of the current page. Defaults to `true`.
+The number of items to paginate.
+
+```
+number
+```
+
+**numMiddlePages**
+
+The number of page buttons visible in the middle of the controls. Defaults to `3`.
 
 ```
 number
@@ -152,8 +153,10 @@ number
 **onChange**
 
 Function that will be called when the user clicks a page or 
-      arrow button. It will be passed a React event object. The current page 
-      can be accessed via event.page.
+        arrow button. The single argument is an event containing the latest 
+        page via `event.page`, and the startIndex and endIndex for data on 
+        this page via `event.startIndex` and `event.endIndex`, 
+        respectively.
 
 ```
 function
@@ -161,15 +164,16 @@ function
 
 **page**
 
-The current page.
+The default page. If used with onChange, it can be used to control the 
+        active page via state.
 
 ```
 number
 ```
 
-**totalPages**
+**step**
 
-The total number of pages.
+The number of items per page. Defaults to `10`.
 
 ```
 number
