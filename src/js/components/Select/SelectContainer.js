@@ -74,7 +74,7 @@ const SelectContainer = forwardRef(
       onMore,
       onSearch,
       optionIndexesInValue,
-      options: optionsProp,
+      options,
       allOptions,
       searchPlaceholder,
       search,
@@ -127,18 +127,18 @@ const SelectContainer = forwardRef(
     }, [keyboardNavigation]);
 
     const optionLabel = useCallback(
-      index => applyKey(optionsProp[index], labelKey),
-      [labelKey, optionsProp],
+      index => applyKey(options[index], labelKey),
+      [labelKey, options],
     );
 
     const optionValue = useCallback(
-      index => applyKey(optionsProp[index], valueKey),
-      [optionsProp, valueKey],
+      index => applyKey(options[index], valueKey),
+      [options, valueKey],
     );
 
     const isDisabled = useCallback(
       index => {
-        const option = optionsProp[index];
+        const option = options[index];
         let result;
         if (disabledKey) {
           result = applyKey(option, disabledKey);
@@ -152,7 +152,7 @@ const SelectContainer = forwardRef(
         }
         return result;
       },
-      [disabled, disabledKey, optionsProp, optionValue],
+      [disabled, disabledKey, options, optionValue],
     );
 
     const isSelected = useCallback(
@@ -199,7 +199,7 @@ const SelectContainer = forwardRef(
           let nextSelected;
           if (multiple) {
             const nextOptionIndexesInValue = optionIndexesInValue.slice(0);
-            const allOptionsIndex = allOptions.indexOf(optionsProp[index]);
+            const allOptionsIndex = allOptions.indexOf(options[index]);
             const valueIndex = optionIndexesInValue.indexOf(allOptionsIndex);
             if (valueIndex === -1) {
               nextOptionIndexesInValue.push(allOptionsIndex);
@@ -215,25 +215,18 @@ const SelectContainer = forwardRef(
           } else {
             nextValue =
               valueKey && valueKey.reduce
-                ? applyKey(allOptions[index], valueKey)
-                : allOptions[index];
+                ? applyKey(options[index], valueKey)
+                : options[index];
             nextSelected = index;
           }
           onChange(event, {
-            option: allOptions[index],
+            option: options[index],
             value: nextValue,
             selected: nextSelected,
           });
         }
       },
-      [
-        multiple,
-        onChange,
-        optionIndexesInValue,
-        optionsProp,
-        allOptions,
-        valueKey,
-      ],
+      [multiple, onChange, optionIndexesInValue, options, allOptions, valueKey],
     );
 
     const onClear = useCallback(
@@ -248,17 +241,17 @@ const SelectContainer = forwardRef(
         event.preventDefault();
         let nextActiveIndex = activeIndex + 1;
         while (
-          nextActiveIndex < optionsProp.length &&
+          nextActiveIndex < options.length &&
           isDisabled(nextActiveIndex)
         ) {
           nextActiveIndex += 1;
         }
-        if (nextActiveIndex !== optionsProp.length) {
+        if (nextActiveIndex !== options.length) {
           setActiveIndex(nextActiveIndex);
           setKeyboardNavigation(true);
         }
       },
-      [activeIndex, isDisabled, optionsProp],
+      [activeIndex, isDisabled, options],
     );
 
     const onPreviousOption = useCallback(
@@ -343,9 +336,9 @@ const SelectContainer = forwardRef(
             />
           )}
           <OptionsBox role="menubar" tabIndex="-1" ref={optionsRef}>
-            {optionsProp.length > 0 ? (
+            {options.length > 0 ? (
               <InfiniteScroll
-                items={optionsProp}
+                items={options}
                 step={theme.select.step}
                 onMore={onMore}
                 replace={replace}
@@ -359,7 +352,7 @@ const SelectContainer = forwardRef(
                   // as an option Button kind property.
                   let child;
                   if (children)
-                    child = children(option, index, optionsProp, {
+                    child = children(option, index, options, {
                       active: optionActive,
                       disabled: optionDisabled,
                       selected: optionSelected,
