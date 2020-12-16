@@ -432,7 +432,7 @@ var responsiveContainerStyle = (0, _styledComponents.css)(["position:relative;ma
 var StyledContainer = _styledComponents["default"].div.withConfig({
   displayName: "StyledLayer__StyledContainer",
   componentId: "rmtehz-2"
-})(["", " display:flex;flex-direction:column;min-height:", ";", " outline:none;pointer-events:all;z-index:", ";", " ", ";"], function (props) {
+})(["", " display:flex;flex-direction:column;min-height:", ";", " outline:none;pointer-events:all;z-index:", ";", " ", ";", ";"], function (props) {
   return !props.modal ? _utils.baseStyle : '';
 }, function (props) {
   return props.theme.global.size.xxsmall;
@@ -450,6 +450,8 @@ var StyledContainer = _styledComponents["default"].div.withConfig({
   }
 
   return '';
+}, function (props) {
+  return props.theme.layer.container && props.theme.layer.container.extend;
 });
 
 exports.StyledContainer = StyledContainer;
