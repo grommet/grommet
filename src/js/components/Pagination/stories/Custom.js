@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -46,7 +45,7 @@ const customTheme = deepMerge(grommet, {
   },
 });
 
-const Custom = () => (
+export const Custom = () => (
   <Grommet theme={customTheme}>
     <Box align="start" pad="small" gap="small">
       <Text>Custom Theme</Text>
@@ -54,5 +53,3 @@ const Custom = () => (
     </Box>
   </Grommet>
 );
-
-storiesOf('Pagination', module).add('Custom', () => <Custom />);

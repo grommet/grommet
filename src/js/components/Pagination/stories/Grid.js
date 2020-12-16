@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Card, Grid, Grommet, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -19,19 +18,19 @@ const CardResult = ({ item }) => (
   </Card>
 );
 
-const PaginatedCards = () => {
+const PaginatedGrid = () => {
   const [currentData, setCurrentData] = useState(data.slice(0, 10));
   const [indices, setIndices] = useState([0, 10]);
 
   const handleChange = ({ startIndex, endIndex }) => {
     const nextData = data.slice(startIndex, endIndex);
     setCurrentData(nextData);
-    setIndices([startIndex, endIndex]);
+    setIndices([startIndex, Math.min(endIndex, data.length)]);
   };
 
   return (
     <Grommet theme={grommet} full>
-      <Box pad="large" gap="medium" fill>
+      <Box pad="large" gap="medium">
         <Box height={{ min: 'medium' }}>
           <Grid columns="small" rows="small" gap="medium" justify="center">
             {currentData.map(datum => (
@@ -50,4 +49,4 @@ const PaginatedCards = () => {
   );
 };
 
-storiesOf('Pagination', module).add('Grid', () => <PaginatedCards />);
+export { PaginatedGrid as Grid };

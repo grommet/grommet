@@ -33,7 +33,9 @@ export const usePagination = ({ data, paginationProps }) => {
   const getCurrentItems = useCallback(
     items => {
       if (Array.isArray(items)) {
-        return items.slice(itemsBeginIndex, itemsEndIndex);
+        return items.length
+          ? items.slice(itemsBeginIndex, itemsEndIndex)
+          : undefined;
       }
       return items;
     },
@@ -42,7 +44,9 @@ export const usePagination = ({ data, paginationProps }) => {
   const [currentItems, setCurrentItems] = useState(getCurrentItems(data));
 
   useEffect(() => {
-    setCurrentItems(getCurrentItems(data));
+    if (data) {
+      setCurrentItems(getCurrentItems(data));
+    }
   }, [data, getCurrentItems, setCurrentItems]);
 
   return [setPage, currentItems, page, step];

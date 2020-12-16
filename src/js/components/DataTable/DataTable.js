@@ -338,7 +338,7 @@ const DataTable = ({
           </StyledPlaceholder>
         )}
       </StyledDataTable>
-      {paginate && (
+      {paginate && currentItems && (
         <Pagination
           direction="row"
           numItems={data.length}

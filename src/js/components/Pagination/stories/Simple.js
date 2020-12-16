@@ -1,11 +1,10 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { Pagination } from '../Pagination';
 
-const Simple = () => (
+export const Simple = () => (
   <Grommet theme={grommet}>
     <Box align="start" pad="small" gap="medium">
       <Box>
@@ -25,5 +24,3 @@ const Simple = () => (
     </Box>
   </Grommet>
 );
-
-storiesOf('Pagination', module).add('Simple', () => <Simple />);

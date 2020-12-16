@@ -14,14 +14,14 @@ for (let i = 0; i < 95; i += 1) {
 describe('DataTable', () => {
   afterEach(cleanup);
 
-  // test('empty', () => {
-  //   const { container } = render(
-  //     <Grommet>
-  //       <DataTable />
-  //     </Grommet>,
-  //   );
-  //   expect(container.firstChild).toMatchSnapshot();
-  // });
+  test('empty', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
 
   test('basic', () => {
     const { container } = render(

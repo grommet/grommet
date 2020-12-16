@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, List, Menu } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -36,4 +35,4 @@ const PaginatedList = () => (
   </Grommet>
 );
 
-storiesOf('Pagination', module).add('List', () => <PaginatedList />);
+export { PaginatedList as List };

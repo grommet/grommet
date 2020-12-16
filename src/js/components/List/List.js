@@ -266,7 +266,7 @@ const List = React.forwardRef(
             </InfiniteScroll>
           </StyledList>
         </Keyboard>
-        {paginate && (
+        {paginate && currentItems && (
           <Pagination
             direction="row"
             numItems={data.length}

@@ -1,11 +1,10 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { Pagination } from '../Pagination';
 
-const NumMiddlePages = () => (
+export const NumMiddlePages = () => (
   <Grommet theme={grommet}>
     <Box pad="small" gap="medium">
       <Box>
@@ -19,5 +18,3 @@ const NumMiddlePages = () => (
     </Box>
   </Grommet>
 );
-
-storiesOf('Pagination', module).add('NumMiddlePages', () => <NumMiddlePages />);

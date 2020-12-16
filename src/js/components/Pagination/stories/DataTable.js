@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, DataTable } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -24,4 +23,4 @@ const PaginatedDataTable = () => {
   );
 };
 
-storiesOf('Pagination', module).add('DataTable', () => <PaginatedDataTable />);
+export { PaginatedDataTable as DataTable };
