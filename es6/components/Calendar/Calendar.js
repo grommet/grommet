@@ -22,6 +22,11 @@ var activeDates = {
 };
 var timeStamp = new RegExp(/T.*/);
 
+var normalizeForTimezone = function normalizeForTimezone(date, refDate) {
+  if (!date) return undefined;
+  return (!timeStamp.test(refDate || date) ? localTimezoneToUTC(new Date(date)) : new Date(date)).toISOString();
+};
+
 var normalizeReference = function normalizeReference(reference, date, dates) {
   var normalizedReference;
 
@@ -84,6 +89,7 @@ var CalendarDay = function CalendarDay(_ref) {
   }, /*#__PURE__*/React.createElement(CalendarDayButton, _extends({
     fill: fill
   }, buttonProps), /*#__PURE__*/React.createElement(StyledDay, {
+    disabledProp: buttonProps.disabled,
     inRange: isInRange,
     otherMonth: otherMonth,
     isSelected: isSelected,
@@ -117,7 +123,7 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
   var activeDateProp = _ref3.activeDate,
       _ref3$animate = _ref3.animate,
       animate = _ref3$animate === void 0 ? true : _ref3$animate,
-      validBounds = _ref3.bounds,
+      boundsProp = _ref3.bounds,
       children = _ref3.children,
       dateProp = _ref3.date,
       datesProp = _ref3.dates,
@@ -155,21 +161,7 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       setDate = _useState2[1];
 
   useEffect(function () {
-    if (dateProp) {
-      // if dateProp doesn't contain a timestamp, factor in local timezone
-      // offset from UTC
-      var adjustedDate;
-
-      if (!timeStamp.test(dateProp)) {
-        adjustedDate = localTimezoneToUTC(new Date(dateProp));
-      } else {
-        adjustedDate = new Date(dateProp);
-      }
-
-      setDate(adjustedDate.toISOString());
-    } else {
-      setDate(undefined);
-    }
+    return setDate(normalizeForTimezone(dateProp));
   }, [dateProp]); // set dates when caller changes it, allows us to change it internally too
 
   var _useState3 = useState(datesProp),
@@ -189,8 +181,8 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
 
         from = _datesProp$0$map[0];
         to = _datesProp$0$map[1];
-        if (from) from = !timeStamp.test(datesProp[0][0]) ? localTimezoneToUTC(from).toISOString() : from.toISOString();
-        if (to) to = !timeStamp.test(datesProp[0][0]) ? localTimezoneToUTC(to).toISOString() : to.toISOString();
+        if (from) from = normalizeForTimezone(from, datesProp[0][0]);
+        if (to) to = normalizeForTimezone(to, datesProp[0][0]);
         setDates([[from, to]]);
       } else {
         var datesArray = [];
@@ -206,11 +198,11 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
 
             _from = _d$map[0];
             _to = _d$map[1];
-            _from = !timeStamp.test(d[0]) ? localTimezoneToUTC(_from).toISOString() : _from.toISOString();
-            _to = !timeStamp.test(d[0]) ? localTimezoneToUTC(_to).toISOString() : _to.toISOString();
+            _from = normalizeForTimezone(_from, d[0]);
+            _to = normalizeForTimezone(_to, d[0]);
             datesArray.push([_from, _to]);
           } else {
-            datesArray.push(!timeStamp.test(d) ? localTimezoneToUTC(new Date(d)).toISOString() : d);
+            datesArray.push(normalizeForTimezone(d));
           }
         });
         setDates(datesArray);
@@ -224,23 +216,35 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
 
   useEffect(function () {
     return setReference(normalizeReference(referenceProp, dateProp, datesProp));
-  }, [dateProp, datesProp, referenceProp]); // calculate the bounds we display based on the reference
+  }, [dateProp, datesProp, referenceProp]); // normalize bounds
 
-  var _useState5 = useState(buildDisplayBounds(reference, firstDayOfWeek)),
-      displayBounds = _useState5[0],
-      setDisplayBounds = _useState5[1];
+  var _useState5 = useState(boundsProp ? boundsProp.map(function (b) {
+    return normalizeForTimezone(b);
+  }) : undefined),
+      bounds = _useState5[0],
+      setBounds = _useState5[1];
 
-  var _useState6 = useState(),
-      targetDisplayBounds = _useState6[0],
-      setTargetDisplayBounds = _useState6[1];
+  useEffect(function () {
+    if (boundsProp) setBounds(boundsProp.map(function (b) {
+      return normalizeForTimezone(b);
+    }));else setBounds(undefined);
+  }, [boundsProp]); // calculate the bounds we display based on the reference
+
+  var _useState6 = useState(buildDisplayBounds(reference, firstDayOfWeek)),
+      displayBounds = _useState6[0],
+      setDisplayBounds = _useState6[1];
 
   var _useState7 = useState(),
-      slide = _useState7[0],
-      setSlide = _useState7[1];
+      targetDisplayBounds = _useState7[0],
+      setTargetDisplayBounds = _useState7[1];
 
   var _useState8 = useState(),
-      animating = _useState8[0],
-      setAnimating = _useState8[1]; // When the reference changes, we need to update the displayBounds.
+      slide = _useState8[0],
+      setSlide = _useState8[1];
+
+  var _useState9 = useState(),
+      animating = _useState9[0],
+      setAnimating = _useState9[1]; // When the reference changes, we need to update the displayBounds.
   // This is easy when we aren't animating. If we are animating,
   // we temporarily increase the displayBounds to be the union of the old
   // and new ones and set slide to drive the animation. We keep track
@@ -333,20 +337,20 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
   }, [reference]);
   var daysRef = useRef();
 
-  var _useState9 = useState(),
-      focus = _useState9[0],
-      setFocus = _useState9[1];
-
   var _useState10 = useState(),
-      active = _useState10[0],
-      setActive = _useState10[1];
+      focus = _useState10[0],
+      setFocus = _useState10[1];
+
+  var _useState11 = useState(),
+      active = _useState11[0],
+      setActive = _useState11[1];
 
   var changeReference = useCallback(function (nextReference) {
-    if (betweenDates(nextReference, validBounds)) {
+    if (betweenDates(nextReference, bounds)) {
       setReference(nextReference);
       if (onReference) onReference(nextReference.toISOString());
     }
-  }, [onReference, validBounds]);
+  }, [onReference, bounds]);
   var selectDate = useCallback(function (selectedDate) {
     var nextDates;
     var nextDate; // output date with no timestamp if that's how user provided it
@@ -509,7 +513,7 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       icon: /*#__PURE__*/React.createElement(PreviousIcon, {
         size: size !== 'small' ? size : undefined
       }),
-      disabled: !betweenDates(previousMonth, validBounds),
+      disabled: !betweenDates(previousMonth, bounds),
       onClick: function onClick() {
         return changeReference(previousMonth);
       }
@@ -521,7 +525,7 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       icon: /*#__PURE__*/React.createElement(NextIcon, {
         size: size !== 'small' ? size : undefined
       }),
-      disabled: !betweenDates(nextMonth, validBounds),
+      disabled: !betweenDates(nextMonth, bounds),
       onClick: function onClick() {
         return changeReference(nextMonth);
       }
@@ -607,7 +611,7 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
           inRange = true;
         }
 
-        var dayDisabled = withinDates(day, disabled) || validBounds && !betweenDates(day, validBounds);
+        var dayDisabled = withinDates(day, disabled) || bounds && !betweenDates(day, bounds);
 
         if (!firstDayInMonth && !dayDisabled && day.getMonth() === reference.getMonth()) {
           firstDayInMonth = dateString;
@@ -693,8 +697,8 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     onNextMonth: function onNextMonth() {
       return changeReference(nextMonth);
     },
-    previousInBound: betweenDates(previousMonth, validBounds),
-    nextInBound: betweenDates(nextMonth, validBounds)
+    previousInBound: betweenDates(previousMonth, bounds),
+    nextInBound: betweenDates(nextMonth, bounds)
   }) : renderCalendarHeader(previousMonth, nextMonth), daysOfWeek && renderDaysOfWeek(), /*#__PURE__*/React.createElement(Keyboard, {
     onEnter: function onEnter() {
       return selectDate(active.toISOString());
