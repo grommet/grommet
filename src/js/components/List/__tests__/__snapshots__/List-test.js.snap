@@ -2725,20 +2725,6 @@ exports[`List events should apply pagination styling 1`] = `
         <li
           class="c8"
         >
-          <button
-            aria-label="Go to page 6"
-            class="c13"
-            type="button"
-          >
-            6
-          </button>
-        </li>
-        <div
-          class="c11"
-        />
-        <li
-          class="c8"
-        >
           <div
             class="c14"
           >
@@ -3402,20 +3388,6 @@ exports[`List events should paginate 1`] = `
             type="button"
           >
             5
-          </button>
-        </li>
-        <div
-          class="c11"
-        />
-        <li
-          class="c8"
-        >
-          <button
-            aria-label="Go to page 6"
-            class="c13"
-            type="button"
-          >
-            6
           </button>
         </li>
         <div
@@ -4782,20 +4754,6 @@ exports[`List events should render new data when page changes 1`] = `
         <li
           class="c8"
         >
-          <button
-            aria-label="Go to page 6"
-            class="c13"
-            type="button"
-          >
-            6
-          </button>
-        </li>
-        <div
-          class="c11"
-        />
-        <li
-          class="c8"
-        >
           <div
             class="c14"
           >
@@ -5011,20 +4969,6 @@ exports[`List events should render new data when page changes 2`] = `
             type="button"
           >
             5
-          </button>
-        </li>
-        <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
-        />
-        <li
-          class="StyledBox-sc-13pk1d4-0 dYebPD"
-        >
-          <button
-            aria-label="Go to page 6"
-            class="StyledButton-sc-323bzc-0 iZFCLM"
-            type="button"
-          >
-            6
           </button>
         </li>
         <div
@@ -5660,20 +5604,6 @@ exports[`List events should show correct item index when "show" is a number 1`] 
         <li
           class="c8"
         >
-          <button
-            aria-label="Go to page 6"
-            class="c12"
-            type="button"
-          >
-            6
-          </button>
-        </li>
-        <div
-          class="c11"
-        />
-        <li
-          class="c8"
-        >
           <div
             class="c14"
           >
@@ -6293,20 +6223,6 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
             type="button"
           >
             5
-          </button>
-        </li>
-        <div
-          class="c11"
-        />
-        <li
-          class="c8"
-        >
-          <button
-            aria-label="Go to page 6"
-            class="c12"
-            type="button"
-          >
-            6
           </button>
         </li>
         <div

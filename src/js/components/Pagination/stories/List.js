@@ -1,9 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Grommet, List, Menu, Text } from 'grommet';
-// import { grommet } from 'grommet/themes';
-import { hpe } from 'grommet-theme-hpe';
+import { Box, Grommet, List, Menu } from 'grommet';
+import { grommet } from 'grommet/themes';
 import { More } from 'grommet-icons';
 
 const data = [];
@@ -15,15 +14,8 @@ for (let i = 0; i < 95; i += 1) {
 }
 
 const PaginatedList = () => (
-  <Grommet theme={hpe}>
-    <Box
-      background="background-back"
-      margin="large"
-      pad="medium"
-      round="small"
-      gap="medium"
-    >
-      <Text weight="bold">paginate + step = 3 + show = 11</Text>
+  <Grommet theme={grommet} full>
+    <Box pad="medium">
       <List
         data={data}
         action={(item, index) => {
@@ -37,64 +29,8 @@ const PaginatedList = () => (
           );
         }}
         step={3}
-        show={11}
-        paginate
-      />
-    </Box>
-    <Box
-      background="background-back"
-      margin="large"
-      pad="medium"
-      round="small"
-      gap="medium"
-    >
-      <Text weight="bold">paginate + show = page: 3</Text>
-      <List
-        data={data}
-        action={(item, index) => {
-          return (
-            <Menu
-              key={index}
-              icon={<More />}
-              hoverIndicator
-              items={[{ label: 'one' }]}
-            />
-          );
-        }}
-        show={{ page: 3 }}
-        step={3}
-        paginate={{
-          border: { side: 'top', color: 'border' },
-          pad: { top: 'small' },
-        }}
-      />
-    </Box>
-    <Box
-      background="background-back"
-      margin="large"
-      pad="medium"
-      round="small"
-      gap="medium"
-    >
-      <Text weight="bold">paginationProps</Text>
-      <List
-        data={data}
-        action={(item, index) => {
-          return (
-            <Menu
-              key={index}
-              icon={<More />}
-              hoverIndicator
-              items={[{ label: 'one' }]}
-            />
-          );
-        }}
-        show={13}
-        paginate={{
-          border: { side: 'top', color: 'border' },
-          step: 7,
-          pad: { top: 'small' },
-        }}
+        show={{ page: 7 }}
+        paginate={{ margin: { top: 'medium' } }}
       />
     </Box>
   </Grommet>

@@ -68,7 +68,7 @@ const Pagination = forwardRef(
     if (numMiddlePages % 2)
       startingMiddlePages = Math.min(
         activePage - Math.floor(numMiddlePages / 2),
-        totalPages - numEdgePages - numMiddlePages - 1,
+        totalPages - numEdgePages - numMiddlePages,
       );
     // even, cannot split equally around active page
     // let extra page appear on middlePagesEnd instead
@@ -82,7 +82,7 @@ const Pagination = forwardRef(
     const middlePagesEnd = Math.min(
       Math.max(
         activePage + Math.floor(numMiddlePages / 2),
-        numEdgePages + numMiddlePages + 2,
+        numEdgePages + numMiddlePages + 1,
       ),
       endPages.length > 0 ? endPages[0] - 2 : totalPages - 1,
     );

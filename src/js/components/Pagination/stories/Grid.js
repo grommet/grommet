@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Box, Card, Grid, Grommet, Text } from 'grommet';
-// import { grommet } from 'grommet/themes';
-import { hpe } from 'grommet-theme-hpe';
+import { grommet } from 'grommet/themes';
 import { Pagination } from '..';
 
 const data = [];
@@ -31,14 +30,16 @@ const PaginatedCards = () => {
   };
 
   return (
-    <Grommet theme={hpe} full>
+    <Grommet theme={grommet} full>
       <Box pad="large" gap="medium" fill>
-        <Grid columns="small" rows="small" gap="medium" justify="center">
-          {currentData.map(datum => (
-            <CardResult item={datum} key={datum.entry} />
-          ))}
-        </Grid>
-        <Box direction="row" justify="between">
+        <Box height={{ min: 'medium' }}>
+          <Grid columns="small" rows="small" gap="medium" justify="center">
+            {currentData.map(datum => (
+              <CardResult item={datum} key={datum.entry} />
+            ))}
+          </Grid>
+        </Box>
+        <Box align="center" direction="row" justify="between">
           <Text>
             Showing {indices[0] + 1} - {indices[1]} of {data.length}
           </Text>

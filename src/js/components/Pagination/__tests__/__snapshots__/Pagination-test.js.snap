@@ -405,20 +405,6 @@ exports[`Pagination should allow user to control page via state with page +
         <li
           class="c1"
         >
-          <button
-            aria-label="Go to page 6"
-            class="c7"
-            type="button"
-          >
-            6
-          </button>
-        </li>
-        <div
-          class="c6"
-        />
-        <li
-          class="c1"
-        >
           <div
             class="c9"
           >
@@ -926,20 +912,6 @@ exports[`Pagination should apply custom theme 1`] = `
         <li
           class="c1"
         >
-          <button
-            aria-label="Go to page 6"
-            class="c9"
-            type="button"
-          >
-            6
-          </button>
-        </li>
-        <div
-          class="c7"
-        />
-        <li
-          class="c1"
-        >
           <div
             class="c10"
           >
@@ -1393,20 +1365,6 @@ exports[`Pagination should disable next button if on last page 1`] = `
               …
             </span>
           </div>
-        </li>
-        <div
-          class="c6"
-        />
-        <li
-          class="c1"
-        >
-          <button
-            aria-label="Go to page 19"
-            class="c7"
-            type="button"
-          >
-            19
-          </button>
         </li>
         <div
           class="c6"
@@ -1960,20 +1918,6 @@ exports[`Pagination should disable previous button if on first page 1`] = `
         <li
           class="c1"
         >
-          <button
-            aria-label="Go to page 6"
-            class="c8"
-            type="button"
-          >
-            6
-          </button>
-        </li>
-        <div
-          class="c6"
-        />
-        <li
-          class="c1"
-        >
           <div
             class="c9"
           >
@@ -2434,20 +2378,6 @@ exports[`Pagination should display next page of results when "next" is
         <li
           class="c1"
         >
-          <button
-            aria-label="Go to page 6"
-            class="c7"
-            type="button"
-          >
-            6
-          </button>
-        </li>
-        <div
-          class="c6"
-        />
-        <li
-          class="c1"
-        >
           <div
             class="c9"
           >
@@ -2610,20 +2540,6 @@ exports[`Pagination should display next page of results when "next" is
             type="button"
           >
             5
-          </button>
-        </li>
-        <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
-        />
-        <li
-          class="StyledBox-sc-13pk1d4-0 dYebPD"
-        >
-          <button
-            aria-label="Go to page 6"
-            class="StyledButton-sc-323bzc-0 iZFCLM"
-            type="button"
-          >
-            6
           </button>
         </li>
         <div
@@ -3092,20 +3008,6 @@ exports[`Pagination should display page 'n' of results when "page n" is
         <li
           class="c1"
         >
-          <button
-            aria-label="Go to page 6"
-            class="c7"
-            type="button"
-          >
-            6
-          </button>
-        </li>
-        <div
-          class="c6"
-        />
-        <li
-          class="c1"
-        >
           <div
             class="c9"
           >
@@ -3566,20 +3468,6 @@ exports[`Pagination should display previous page of results when "previous" is
         <li
           class="c1"
         >
-          <button
-            aria-label="Go to page 6"
-            class="c7"
-            type="button"
-          >
-            6
-          </button>
-        </li>
-        <div
-          class="c6"
-        />
-        <li
-          class="c1"
-        >
           <div
             class="c9"
           >
@@ -3742,20 +3630,6 @@ exports[`Pagination should display previous page of results when "previous" is
             type="button"
           >
             5
-          </button>
-        </li>
-        <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
-        />
-        <li
-          class="StyledBox-sc-13pk1d4-0 dYebPD"
-        >
-          <button
-            aria-label="Go to page 6"
-            class="StyledButton-sc-323bzc-0 iZFCLM"
-            type="button"
-          >
-            6
           </button>
         </li>
         <div
@@ -4260,20 +4134,6 @@ exports[`Pagination should display the correct last page based on items length
             type="button"
           >
             5
-          </button>
-        </li>
-        <div
-          class="c6"
-        />
-        <li
-          class="c1"
-        >
-          <button
-            aria-label="Go to page 6"
-            class="c8"
-            type="button"
-          >
-            6
           </button>
         </li>
         <div
@@ -4847,20 +4707,6 @@ exports[`Pagination should render correct num items per page (step) 1`] = `
             type="button"
           >
             5
-          </button>
-        </li>
-        <div
-          class="c6"
-        />
-        <li
-          class="c1"
-        >
-          <button
-            aria-label="Go to page 6"
-            class="c8"
-            type="button"
-          >
-            6
           </button>
         </li>
         <div
@@ -6817,20 +6663,6 @@ exports[`Pagination should set numMiddlePages = 1 if user provides value < 1 1`]
             type="button"
           >
             3
-          </button>
-        </li>
-        <div
-          class="c6"
-        />
-        <li
-          class="c1"
-        >
-          <button
-            aria-label="Go to page 4"
-            class="c8"
-            type="button"
-          >
-            4
           </button>
         </li>
         <div
