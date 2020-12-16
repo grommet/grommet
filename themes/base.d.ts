@@ -1196,6 +1196,15 @@ export interface ThemeType {
   textInput?: {
     extend?: ExtendType;
     disabled?: OpacityType;
+    container?: {
+      extend?: ExtendType;
+    };
+    placeholder?: {
+      extend?: ExtendType;
+    };
+    suggestions?: {
+      extend?: ExtendType;
+    };
   };
   tip?: {
     content?: BoxProps;
