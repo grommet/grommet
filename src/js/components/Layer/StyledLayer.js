@@ -61,7 +61,8 @@ const StyledLayer = styled.div`
       styles.push(breakpointStyle(breakpoint, responsiveLayerStyle));
     }
     return styles;
-  }} ${props => props.theme.layer && props.theme.layer.extend};
+  }}
+  ${props => props.theme.layer && props.theme.layer.extend};
 `;
 
 StyledLayer.defaultProps = {};
@@ -699,6 +700,7 @@ const StyledContainer = styled.div`
     }
     return '';
   }};
+  ${props => props.theme.layer.container && props.theme.layer.container.extend};
 `;
 
 StyledContainer.defaultProps = {};
