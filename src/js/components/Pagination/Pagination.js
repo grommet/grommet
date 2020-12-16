@@ -20,8 +20,6 @@ const Pagination = forwardRef(
       numMiddlePages: numMiddlePagesProp = 3,
       onChange,
       page: pageProp,
-      // ideating on prop to show a message like "Showing x-y of z items"
-      // showSummary,
       step: stepProp,
       ...rest
     },
@@ -184,14 +182,7 @@ const Pagination = forwardRef(
     });
 
     return (
-      // Do we want pontential for internally displaying a "results summary"?
-      // If so, applying the container props to this box now may leave better
-      // flexibility moving forward
       <StyledPaginationContainer {...theme.pagination.container} {...rest}>
-        {/* Ideation: internal control of some results summary, need to think 
-          about what the default would be and how it may be customized
-          */}
-        {/* {showSummary && <Text>Showing 1-10 of 500 results</Text>} */}
         <Nav a11yTitle={a11yTitle || 'Pagination Navigation'} ref={ref}>
           <Box as="ul" {...theme.pagination.controls}>
             {pages.map(page => (
