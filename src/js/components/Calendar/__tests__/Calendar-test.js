@@ -466,7 +466,7 @@ describe('Calendar', () => {
       <Grommet>
         <Calendar
           date="2018-11-04T06:00:00.000Z"
-          bounds={['2013-11-06', '2018-12-06']}
+          bounds={['2018-11-06', '2018-12-06']}
         />
         <Calendar
           date="2019-03-11T05:00:01.409Z"
@@ -474,13 +474,13 @@ describe('Calendar', () => {
         />
         <Calendar
           date="2018-11-04T07:00:00.000Z"
-          bounds={['2013-11-06', '2018-12-06']}
+          bounds={['2018-11-06', '2018-12-06']}
         />
         <Calendar
           date="2019-03-15T06:00:01.409Z"
           bounds={['2019-03-01', '2019-03-31']}
         />
-      </Grommet>,
+      </Grommet>
     );
     expect(container.firstChild).toMatchSnapshot();
   });
