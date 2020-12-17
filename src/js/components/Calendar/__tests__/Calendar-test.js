@@ -19,7 +19,7 @@ const DATES = [
 describe('Calendar', () => {
   afterEach(cleanup);
 
-  test('Calendar should have no accessbility violations', async () => {
+  test('Calendar should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>
         <Calendar date={DATE} animate={false} />
@@ -216,7 +216,7 @@ describe('Calendar', () => {
   test('first day sunday week monday', () => {
     // When the first day of the month is Sunday,
     // and the request of firstDayOfWeek
-    // is Monday, we are verifing we are not missing a week, issue 3253.
+    // is Monday, we are verifying we are not missing a week, issue 3253.
     const { container } = render(
       <Grommet>
         <Calendar
@@ -459,6 +459,30 @@ describe('Calendar', () => {
         expect.stringMatching(/^2020-01-03T/),
       ],
     ]);
+  });
+
+  test('daylight savings', () => {
+    const { container } = render(
+      <Grommet>
+        <Calendar
+          date="2018-11-04T06:00:00.000Z"
+          bounds={['2013-11-06', '2018-12-06']}
+        />
+        <Calendar
+          date="2019-03-11T05:00:01.409Z"
+          bounds={['2019-03-01', '2019-03-31']}
+        />
+        <Calendar
+          date="2018-11-04T07:00:00.000Z"
+          bounds={['2013-11-06', '2018-12-06']}
+        />
+        <Calendar
+          date="2019-03-15T06:00:01.409Z"
+          bounds={['2019-03-01', '2019-03-31']}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
   });
 });
 
