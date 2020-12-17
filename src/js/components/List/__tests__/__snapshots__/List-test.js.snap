@@ -2279,21 +2279,6 @@ exports[`List events should apply pagination styling 1`] = `
   flex-direction: column;
 }
 
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 12px;
-}
-
 .c12 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -2446,7 +2431,7 @@ exports[`List events should apply pagination styling 1`] = `
   border: 0;
 }
 
-.c17 {
+.c16 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2466,27 +2451,28 @@ exports[`List events should apply pagination styling 1`] = `
   padding: 12px;
 }
 
-.c17:focus {
+.c16:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus > circle,
-.c17:focus > ellipse,
-.c17:focus > line,
-.c17:focus > path,
-.c17:focus > polygon,
-.c17:focus > polyline,
-.c17:focus > rect {
+.c16:focus > circle,
+.c16:focus > ellipse,
+.c16:focus > line,
+.c16:focus > path,
+.c16:focus > polygon,
+.c16:focus > polyline,
+.c16:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus::-moz-focus-inner {
+.c16:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c16 {
+.c15 {
+  margin: 12px;
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -2558,12 +2544,6 @@ exports[`List events should apply pagination styling 1`] = `
 @media only screen and (max-width:768px) {
   .c8 {
     padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c15 {
-    padding: 6px;
   }
 }
 
@@ -2749,15 +2729,11 @@ exports[`List events should apply pagination styling 1`] = `
         <li
           class="c9"
         >
-          <div
+          <span
             class="c15"
           >
-            <span
-              class="c16"
-            >
-              …
-            </span>
-          </div>
+            …
+          </span>
         </li>
         <div
           class="c12"
@@ -2781,7 +2757,7 @@ exports[`List events should apply pagination styling 1`] = `
         >
           <button
             aria-label="Go to next page"
-            class="c17"
+            class="c16"
             type="button"
           >
             <svg
@@ -2980,21 +2956,6 @@ exports[`List events should paginate 1`] = `
   flex-direction: column;
 }
 
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 12px;
-}
-
 .c12 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -3147,7 +3108,7 @@ exports[`List events should paginate 1`] = `
   border: 0;
 }
 
-.c17 {
+.c16 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3167,27 +3128,28 @@ exports[`List events should paginate 1`] = `
   padding: 12px;
 }
 
-.c17:focus {
+.c16:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus > circle,
-.c17:focus > ellipse,
-.c17:focus > line,
-.c17:focus > path,
-.c17:focus > polygon,
-.c17:focus > polyline,
-.c17:focus > rect {
+.c16:focus > circle,
+.c16:focus > ellipse,
+.c16:focus > line,
+.c16:focus > path,
+.c16:focus > polygon,
+.c16:focus > polyline,
+.c16:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus::-moz-focus-inner {
+.c16:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c16 {
+.c15 {
+  margin: 12px;
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -3253,12 +3215,6 @@ exports[`List events should paginate 1`] = `
 @media only screen and (max-width:768px) {
   .c8 {
     padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c15 {
-    padding: 6px;
   }
 }
 
@@ -3444,15 +3400,11 @@ exports[`List events should paginate 1`] = `
         <li
           class="c9"
         >
-          <div
+          <span
             class="c15"
           >
-            <span
-              class="c16"
-            >
-              …
-            </span>
-          </div>
+            …
+          </span>
         </li>
         <div
           class="c12"
@@ -3476,7 +3428,7 @@ exports[`List events should paginate 1`] = `
         >
           <button
             aria-label="Go to next page"
-            class="c17"
+            class="c16"
             type="button"
           >
             <svg
@@ -4361,21 +4313,6 @@ exports[`List events should render new data when page changes 1`] = `
   flex-direction: column;
 }
 
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 12px;
-}
-
 .c12 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -4528,7 +4465,7 @@ exports[`List events should render new data when page changes 1`] = `
   border: 0;
 }
 
-.c17 {
+.c16 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -4548,27 +4485,28 @@ exports[`List events should render new data when page changes 1`] = `
   padding: 12px;
 }
 
-.c17:focus {
+.c16:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus > circle,
-.c17:focus > ellipse,
-.c17:focus > line,
-.c17:focus > path,
-.c17:focus > polygon,
-.c17:focus > polyline,
-.c17:focus > rect {
+.c16:focus > circle,
+.c16:focus > ellipse,
+.c16:focus > line,
+.c16:focus > path,
+.c16:focus > polygon,
+.c16:focus > polyline,
+.c16:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus::-moz-focus-inner {
+.c16:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c16 {
+.c15 {
+  margin: 12px;
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -4634,12 +4572,6 @@ exports[`List events should render new data when page changes 1`] = `
 @media only screen and (max-width:768px) {
   .c8 {
     padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c15 {
-    padding: 6px;
   }
 }
 
@@ -4825,15 +4757,11 @@ exports[`List events should render new data when page changes 1`] = `
         <li
           class="c9"
         >
-          <div
+          <span
             class="c15"
           >
-            <span
-              class="c16"
-            >
-              …
-            </span>
-          </div>
+            …
+          </span>
         </li>
         <div
           class="c12"
@@ -4857,7 +4785,7 @@ exports[`List events should render new data when page changes 1`] = `
         >
           <button
             aria-label="Go to next page"
-            class="c17"
+            class="c16"
             type="button"
           >
             <svg
@@ -5055,15 +4983,11 @@ exports[`List events should render new data when page changes 2`] = `
         <li
           class="StyledBox-sc-13pk1d4-0 dYebPD"
         >
-          <div
-            class="StyledBox-sc-13pk1d4-0 jsieLm"
+          <span
+            class="StyledText-sc-1sadyjn-0 dJYWHb"
           >
-            <span
-              class="StyledText-sc-1sadyjn-0 JhXAc"
-            >
-              …
-            </span>
-          </div>
+            …
+          </span>
         </li>
         <div
           class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
@@ -5286,21 +5210,6 @@ exports[`List events should show correct item index when "show" is a number 1`] 
   flex-direction: column;
 }
 
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 12px;
-}
-
 .c12 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -5451,7 +5360,8 @@ exports[`List events should show correct item index when "show" is a number 1`] 
   border: 0;
 }
 
-.c16 {
+.c15 {
+  margin: 12px;
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -5517,12 +5427,6 @@ exports[`List events should show correct item index when "show" is a number 1`] 
 @media only screen and (max-width:768px) {
   .c8 {
     padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c15 {
-    padding: 6px;
   }
 }
 
@@ -5706,15 +5610,11 @@ exports[`List events should show correct item index when "show" is a number 1`] 
         <li
           class="c9"
         >
-          <div
+          <span
             class="c15"
           >
-            <span
-              class="c16"
-            >
-              …
-            </span>
-          </div>
+            …
+          </span>
         </li>
         <div
           class="c12"
@@ -5937,21 +5837,6 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   flex-direction: column;
 }
 
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 12px;
-}
-
 .c12 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -6102,7 +5987,8 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   border: 0;
 }
 
-.c16 {
+.c15 {
+  margin: 12px;
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -6168,12 +6054,6 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
 @media only screen and (max-width:768px) {
   .c8 {
     padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c15 {
-    padding: 6px;
   }
 }
 
@@ -6357,15 +6237,11 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
         <li
           class="c9"
         >
-          <div
+          <span
             class="c15"
           >
-            <span
-              class="c16"
-            >
-              …
-            </span>
-          </div>
+            …
+          </span>
         </li>
         <div
           class="c12"

@@ -2,12 +2,20 @@ import React, { forwardRef, useContext, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Nav } from '../Nav';
-import { PageIndex } from './PageIndex';
+import { PageControl } from './PageControl';
 
 const StyledPaginationContainer = styled(Box)`
   ${props =>
     props.theme.pagination.container && props.theme.pagination.container.extend}
 `;
+
+const getPageIndices = (begin, end) => {
+  const indices = [];
+  for (let i = begin; i <= end; i += 1) {
+    indices.push(i);
+  }
+  return indices;
+};
 
 const Pagination = forwardRef(
   (
@@ -27,14 +35,6 @@ const Pagination = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
 
     const [activePage, setActivePage] = useState(pageProp || 1);
-
-    const getPageIndices = (begin, end) => {
-      const indices = [];
-      for (let i = begin; i <= end; i += 1) {
-        indices.push(i);
-      }
-      return indices;
-    };
 
     /* Calculate total number pages */
     const totalPages = Math.ceil(numItems / step);
@@ -91,21 +91,6 @@ const Pagination = forwardRef(
     else if (totalPages - numEdgePages > numEdgePages)
       endFlex = [totalPages - numEdgePages];
 
-    const navPages = [
-      'previous',
-      ...beginPages,
-      ...beginFlex, // either "..." or single page to bridge start + middle
-      ...middlePages,
-      ...endFlex, // either "..." or single page to bridge middle + end
-      ...endPages,
-      'next',
-    ];
-
-    /* Set props for each page index. Each page index should display a
-     * clickable index, control, or placeholder (e.g. ellipsis) indicating
-     * more pages are available.
-     */
-
     const getItemIndices = nextPage => {
       const startIndex = step * (nextPage - 1);
       const endIndex = startIndex + step;
@@ -144,7 +129,7 @@ const Pagination = forwardRef(
           const nextPage = activePage + 1;
           handleClick(event, nextPage);
         },
-        page: undefined,
+        label: undefined,
       },
       previous: {
         'aria-disabled': activePage === 1 ? 'true' : undefined,
@@ -154,25 +139,40 @@ const Pagination = forwardRef(
           const previousPage = activePage - 1;
           handleClick(event, previousPage);
         },
-        page: undefined,
+        label: undefined,
       },
     };
 
-    const pages = navPages.map(page => {
+    let controls = [
+      'previous',
+      ...beginPages,
+      ...beginFlex, // either "..." or single page to bridge start + middle
+      ...middlePages,
+      ...endFlex, // either "..." or single page to bridge middle + end
+      ...endPages,
+      'next',
+    ];
+
+    /* Set props for each page index. Each page index should display a
+     * clickable index, control, or placeholder (e.g. ellipsis) indicating
+     * more pages are available.
+     */
+    controls = controls.map(control => {
       return {
-        active: page === activePage,
+        active: control === activePage,
         a11yTitle:
-          typeof page === 'number'
-            ? `Go to page ${page}`
-            : `Go to ${page} page`,
+          typeof control === 'number'
+            ? `Go to page ${control}`
+            : `Go to ${control} page`,
         // https://a11y-style-guide.com/style-guide/section-navigation.html#kssref-navigation-pagination
         // https://www.w3.org/TR/wai-aria-1.1/#aria-current
-        'aria-current': page === activePage ? 'page' : undefined,
-        page,
+        'aria-current': control === activePage ? 'page' : undefined,
+        control,
         onClick: event => {
-          handleClick(event, page);
+          handleClick(event, control);
         },
-        ...navProps[page],
+        separator: control === 'more-prev' || control === 'more-next',
+        ...navProps[control],
       };
     });
 
@@ -180,8 +180,8 @@ const Pagination = forwardRef(
       <StyledPaginationContainer {...theme.pagination.container} {...rest}>
         <Nav a11yTitle={a11yTitle || 'Pagination Navigation'} ref={ref}>
           <Box as="ul" {...theme.pagination.controls}>
-            {pages.map(page => (
-              <PageIndex key={page.a11yTitle} {...page} />
+            {controls.map(control => (
+              <PageControl key={control.a11yTitle} {...control} />
             ))}
           </Box>
         </Nav>
