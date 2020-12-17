@@ -1,34 +1,20 @@
 import { useCallback, useEffect, useState } from 'react';
 
-export const normalizeShow = (showProp, context) => {
+export const normalizeShow = (showProp, step) => {
   let page;
-  let showItem;
+  // by default, show refers to the index of an item,
+  // but if using pagination, show can take the form of { page: # },
+  // where page refers to the page # to show
+  if (typeof showProp === 'number') page = Math.ceil((showProp + 1) / step);
+  else if (typeof showProp === 'object' && 'page' in showProp)
+    page = showProp.page;
 
-  if (['dataTable', 'list'].includes(context)) {
-    // by default, show refers to the index of an item,
-    // but if using pagination, show can take the form of { page: # },
-    // where page refers to the page # to show
-    if (typeof showProp === 'number') showItem = showProp;
-    else if (typeof showProp === 'object' && 'page' in showProp)
-      page = showProp.page;
-  }
-
-  return [page, showItem];
+  return page;
 };
 
-export const usePagination = ({ data, paginationProps }) => {
-  // step specifies the number of items per page of results
-  const step = (paginationProps && paginationProps.step) || 10;
-  let defaultPage;
-  if (paginationProps) {
-    if (paginationProps.showItem)
-      // showItem is an array index, so we add one
-      defaultPage = Math.ceil((paginationProps.showItem + 1) / step);
-    if (paginationProps.page) defaultPage = paginationProps.page;
-  }
-
-  const [page, setPage] = useState(defaultPage || 1);
-  const itemsBeginIndex = step * (page - 1);
+export const usePagination = ({ data, page, step, ...rest }) => {
+  const [activePage, setActivePage] = useState(page || 1);
+  const itemsBeginIndex = step * (activePage - 1);
   const itemsEndIndex = itemsBeginIndex + step;
   const getCurrentItems = useCallback(
     items => {
@@ -49,5 +35,12 @@ export const usePagination = ({ data, paginationProps }) => {
     }
   }, [data, getCurrentItems, setCurrentItems]);
 
-  return [setPage, currentItems, page, step];
+  const paginationProps = {
+    onChange: event => setActivePage(event.page),
+    page,
+    step,
+    ...rest, // let anything coming from paginate prop override component
+  };
+
+  return [currentItems, paginationProps];
 };

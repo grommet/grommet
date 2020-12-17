@@ -223,10 +223,11 @@ const DataTable = ({
     console.warn('DataTable cannot combine "size" and "resizeble".');
   }
 
-  const [page, showItem] = normalizeShow(showProp, 'dataTable');
-  const [setPage, currentItems, currentPage] = usePagination({
+  const [items, paginationProps] = usePagination({
     data: adjustedData,
-    paginationProps: { page, showItem, step, ...paginate },
+    page: normalizeShow(showProp, step),
+    step,
+    ...paginate, // let any specifications from paginate prop override component
   });
 
   return (
@@ -282,7 +283,7 @@ const DataTable = ({
             background={normalizeProp(background, 'body')}
             border={normalizeProp(border, 'body')}
             columns={columns}
-            data={!paginate ? adjustedData : currentItems}
+            data={!paginate ? adjustedData : items}
             onMore={onMore}
             replace={replace}
             onClickRow={onClickRow}
@@ -338,17 +339,11 @@ const DataTable = ({
           </StyledPlaceholder>
         )}
       </StyledDataTable>
-      {paginate && currentItems && (
+      {paginate && items && (
         <Pagination
-          direction="row"
+          alignSelf="end"
           numItems={data.length}
-          justify={paginate.justify || 'end'}
-          onChange={event => {
-            setPage(event.page);
-          }}
-          page={currentPage}
-          step={step}
-          {...paginate}
+          {...paginationProps}
         />
       )}
     </>

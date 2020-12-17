@@ -3,7 +3,6 @@ import styled, { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Nav } from '../Nav';
 import { PageIndex } from './PageIndex';
-import { usePagination } from '../../utils/pagination';
 
 const StyledPaginationContainer = styled(Box)`
   ${props =>
@@ -20,18 +19,14 @@ const Pagination = forwardRef(
       numMiddlePages: numMiddlePagesProp = 3,
       onChange,
       page: pageProp,
-      step: stepProp,
+      step = 10,
       ...rest
     },
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
 
-    const [, , defaultPage, step] = usePagination({
-      data: numItems,
-      paginationProps: { page: pageProp, step: stepProp },
-    });
-    const [activePage, setActivePage] = useState(defaultPage);
+    const [activePage, setActivePage] = useState(pageProp || 1);
 
     const getPageIndices = (begin, end) => {
       const indices = [];
