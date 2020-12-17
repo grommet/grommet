@@ -480,7 +480,7 @@ describe('Calendar', () => {
           date="2019-03-15T06:00:01.409Z"
           bounds={['2019-03-01', '2019-03-31']}
         />
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
