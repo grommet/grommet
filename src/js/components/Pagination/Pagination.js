@@ -122,7 +122,7 @@ const Pagination = forwardRef(
       next: {
         // https://a11y-style-guide.com/style-guide/section-navigation.html#kssref-navigation-pagination
         'aria-disabled': activePage === totalPages ? 'true' : undefined,
-        disabled: activePage === totalPages,
+        disabled: activePage === totalPages || !numItems,
         icon: <NextIcon color={iconColor} />,
         onClick: event => {
           const nextPage = activePage + 1;

@@ -93,6 +93,66 @@ describe('Pagination', () => {
 
   test('should show correct page when "page" is provided ', () => {});
 
+  test(`should disable previous and next controls when numItems 
+  < step`, () => {
+    const { container } = render(
+      <Grommet>
+        <Pagination numItems={10} step={20} />
+      </Grommet>,
+    );
+
+    const previousButtonDisabled = container
+      .querySelector(`[aria-label="Go to previous page"]`)
+      .hasAttribute('disabled');
+    const nextButtonDisabled = container
+      .querySelector(`[aria-label="Go to next page"]`)
+      .hasAttribute('disabled');
+
+    expect(previousButtonDisabled).toBeTruthy();
+    expect(nextButtonDisabled).toBeTruthy();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`should disable previous and next controls when numItems 
+  === step`, () => {
+    const { container } = render(
+      <Grommet>
+        <Pagination numItems={20} step={20} />
+      </Grommet>,
+    );
+
+    const previousButtonDisabled = container
+      .querySelector(`[aria-label="Go to previous page"]`)
+      .hasAttribute('disabled');
+    const nextButtonDisabled = container
+      .querySelector(`[aria-label="Go to next page"]`)
+      .hasAttribute('disabled');
+
+    expect(previousButtonDisabled).toBeTruthy();
+    expect(nextButtonDisabled).toBeTruthy();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`should disable previous and next controls when numItems 
+  === 0`, () => {
+    const { container } = render(
+      <Grommet>
+        <Pagination numItems={0} />
+      </Grommet>,
+    );
+
+    const previousButtonDisabled = container
+      .querySelector(`[aria-label="Go to previous page"]`)
+      .hasAttribute('disabled');
+    const nextButtonDisabled = container
+      .querySelector(`[aria-label="Go to next page"]`)
+      .hasAttribute('disabled');
+
+    expect(previousButtonDisabled).toBeTruthy();
+    expect(nextButtonDisabled).toBeTruthy();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('should render correct num items per page (step)', () => {
     const step = 14;
     const { container, getAllByText } = render(
