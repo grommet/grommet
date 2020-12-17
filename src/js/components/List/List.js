@@ -136,6 +136,7 @@ const List = React.forwardRef(
               items={!paginate ? data : items}
               onMore={onMore}
               scrollableAncestor="window"
+              show={!paginate ? showProp : undefined}
               step={step}
               renderMarker={marker => (
                 <Box as="li" flex={false}>

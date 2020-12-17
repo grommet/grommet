@@ -26,6 +26,7 @@ const Body = forwardRef(
       primaryProperty,
       rowProps,
       selected,
+      show,
       size,
       step,
       ...rest
@@ -78,6 +79,7 @@ const Body = forwardRef(
               </TableRow>
             )}
             scrollableAncestor="window"
+            show={show}
             step={step}
           >
             {(datum, index, rowRef) => {

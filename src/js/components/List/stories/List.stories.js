@@ -6,6 +6,7 @@ export { OnClickItemList } from './onClickItem';
 export { PaginatedList } from './PaginatedList';
 export { SecondaryKey } from './secondaryKey';
 export { Selection } from './Selection';
+export { Show } from './Show';
 export { Themed } from './typescript/Theme.tsx';
 
 export default {

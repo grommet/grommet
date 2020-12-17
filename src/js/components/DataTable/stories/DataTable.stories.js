@@ -12,6 +12,7 @@ export { PaginatedDataTable } from './PaginatedDataTable';
 export { Placeholder } from './Placeholder';
 export { ResizableDataTable } from './ResizableColumns';
 export { ServedDataTable } from './Served';
+export { Show } from './Show';
 export { Simple } from './Simple';
 export { SizedDataTable } from './Sized';
 export { Sort } from './Sort';

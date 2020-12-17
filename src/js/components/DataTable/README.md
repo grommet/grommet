@@ -628,9 +628,9 @@ When supplied, causes checkboxes to be added to each row to indicate
 
 **show**
 
-To be used in conjunction with paginate. If provided as a number, 
-        the index of an item to show. If provided as an object in the format of 
-        show={{ page: 2 }}, the default page to show.
+If provided as a number, the index of an item to show. If using 
+        paginate and provided as an object in the format of show={{ page: 2 }}, 
+        the default page to show.
 
 ```
 number
