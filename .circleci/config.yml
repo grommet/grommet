@@ -3,7 +3,7 @@ version: 2.1
 defaults: &defaults
   working_directory: ~/grommet-ci
   docker:
-    - image: circleci/node:14
+    - image: circleci/node:latest
 
 jobs:
   checkout:
