@@ -98,20 +98,19 @@ const Pagination = forwardRef(
     };
 
     const handleClick = (event, nextPage) => {
-      event.persist();
-      const adjustedEvent = event;
-      adjustedEvent.page = nextPage;
-
-      // for controlled use cases, provide user with info on
-      // what range of indices should be displayed given the active page
-      const { startIndex, endIndex } = getItemIndices(nextPage);
-      adjustedEvent.startIndex = startIndex;
-      adjustedEvent.endIndex = endIndex;
-
-      setActivePage(event.page);
+      setActivePage(nextPage);
 
       if (onChange) {
-        onChange(event);
+        event.persist();
+        const adjustedEvent = event;
+        adjustedEvent.page = nextPage;
+
+        // for controlled use cases, provide user with info on
+        // what range of indices should be displayed given the active page
+        const { startIndex, endIndex } = getItemIndices(nextPage);
+        adjustedEvent.startIndex = startIndex;
+        adjustedEvent.endIndex = endIndex;
+        onChange(adjustedEvent);
       }
     };
 

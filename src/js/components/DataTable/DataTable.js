@@ -339,13 +339,7 @@ const DataTable = ({
           </StyledPlaceholder>
         )}
       </StyledDataTable>
-      {paginate && items && (
-        <Pagination
-          alignSelf="end"
-          numItems={data.length}
-          {...paginationProps}
-        />
-      )}
+      {paginate && items && <Pagination alignSelf="end" {...paginationProps} />}
     </>
   );
 };

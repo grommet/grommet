@@ -12,7 +12,7 @@ for (let i = 0; i < 95; i += 1) {
   });
 }
 
-const PaginatedList = () => (
+export const PaginatedList = () => (
   <Grommet theme={grommet} full>
     <Box pad="medium">
       <List
@@ -35,4 +35,6 @@ const PaginatedList = () => (
   </Grommet>
 );
 
-export { PaginatedList as List };
+PaginatedList.story = {
+  name: 'Paginate',
+};

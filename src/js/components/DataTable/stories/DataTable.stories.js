@@ -8,6 +8,7 @@ export { GroupedDataTable } from './Grouped';
 export { InfiniteScrollDataTable } from './InfiniteScrollDataTable';
 export { OnSelectDataTable } from './typescript/OnSelect.tsx';
 export { NoPrimaryKeyDataTable } from './NoPrimary';
+export { PaginatedDataTable } from './PaginatedDataTable';
 export { Placeholder } from './Placeholder';
 export { ResizableDataTable } from './ResizableColumns';
 export { ServedDataTable } from './Served';
