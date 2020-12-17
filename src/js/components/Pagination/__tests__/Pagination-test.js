@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
@@ -8,7 +8,6 @@ import { cleanup, render } from '@testing-library/react';
 import { fireEvent } from '@testing-library/dom';
 
 import { Grommet } from '../../Grommet';
-import { Box } from '../../Box';
 import { Pagination } from '..';
 
 const NUM_ITEMS = 237;
@@ -17,19 +16,6 @@ const data = [];
 for (let i = 0; i < 95; i += 1) {
   data.push(`entry-${i}`);
 }
-
-const TestPagination = ({ step, ...rest }) => {
-  const [currentData] = useState(data.slice(0, step));
-
-  return (
-    <>
-      {currentData.map(datum => (
-        <Box key={datum}>{datum}</Box>
-      ))}
-      <Pagination step={step} {...rest} />
-    </>
-  );
-};
 
 describe('Pagination', () => {
   afterEach(cleanup);
@@ -169,20 +155,6 @@ describe('Pagination', () => {
       .innerHTML;
 
     expect(activePage).toEqual(expectedPage);
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
-  test('should render correct num items per page (step)', () => {
-    const step = 14;
-    const { container, getAllByText } = render(
-      <Grommet>
-        <TestPagination numItems={NUM_ITEMS} step={step} />
-      </Grommet>,
-    );
-
-    const results = getAllByText('entry', { exact: false });
-
-    expect(results.length).toEqual(step);
     expect(container.firstChild).toMatchSnapshot();
   });
 
