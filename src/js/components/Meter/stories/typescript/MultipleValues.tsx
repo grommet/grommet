@@ -55,4 +55,4 @@ export const MultipleValues = () => {
   );
 };
 
-MultipleValues.story = { name: 'Multiple values' };
+MultipleValues.storyName = 'Multiple values';

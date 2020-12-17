@@ -21,6 +21,4 @@ export const ExternalComponentWithTheme = () => (
   </Grommet>
 );
 
-ExternalComponentWithTheme.story = {
-  name: 'External components',
-};
+ExternalComponentWithTheme.storyName = 'External components';

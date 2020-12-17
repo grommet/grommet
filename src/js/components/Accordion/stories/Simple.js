@@ -37,16 +37,14 @@ export const Simple = () => <SimpleAccordion />;
 export const DarkNoAnimation = () => (
   <SimpleAccordion animate={false} background="dark-2" />
 );
-DarkNoAnimation.story = {
-  name: 'Dark no animation',
-  parameters: {
-    chromatic: { disable: true },
-  },
+DarkNoAnimation.storyName = 'Dark no animation';
+
+DarkNoAnimation.parameters = {
+  chromatic: { disable: true },
 };
 
 export const Multiple = () => <SimpleAccordion multiple />;
-Multiple.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
+
+Multiple.parameters = {
+  chromatic: { disable: true },
 };

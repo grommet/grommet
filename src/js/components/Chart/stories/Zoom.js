@@ -126,8 +126,6 @@ export const Zoom = () => (
   <ZoomChart data={generateData(1000, 100)} max={100} />
 );
 
-Zoom.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
+Zoom.parameters = {
+  chromatic: { disable: true },
 };

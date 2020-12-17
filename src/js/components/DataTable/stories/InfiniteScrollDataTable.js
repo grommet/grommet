@@ -331,6 +331,4 @@ export const InfiniteScrollDataTable = () => {
   );
 };
 
-InfiniteScrollDataTable.story = {
-  name: 'Infinite Scroll',
-};
+InfiniteScrollDataTable.storyName = 'Infinite Scroll';

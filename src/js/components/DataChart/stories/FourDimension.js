@@ -50,6 +50,4 @@ export const FourDimensionDataChart = () => (
   </Grommet>
 );
 
-FourDimensionDataChart.story = {
-  name: 'Four dimensions',
-};
+FourDimensionDataChart.storyName = 'Four dimensions';

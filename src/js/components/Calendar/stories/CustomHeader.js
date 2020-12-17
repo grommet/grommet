@@ -55,6 +55,4 @@ export const CustomHeaderCalendar = () => {
   );
 };
 
-CustomHeaderCalendar.story = {
-  name: 'Header',
-};
+CustomHeaderCalendar.storyName = 'Header';

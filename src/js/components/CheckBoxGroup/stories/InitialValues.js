@@ -41,6 +41,4 @@ export const InitialValues = () => {
   );
 };
 
-InitialValues.story = {
-  name: 'Initial values',
-};
+InitialValues.storyName = 'Initial values';

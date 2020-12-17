@@ -24,8 +24,6 @@ export const Multiple = () => {
   );
 };
 
-Multiple.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
+Multiple.parameters = {
+  chromatic: { disable: true },
 };

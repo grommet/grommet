@@ -160,4 +160,4 @@ const AllDrops = () => (
 );
 
 export const AllNotStretched = () => <AllDrops />;
-AllNotStretched.story = { name: 'All not stretched' };
+AllNotStretched.storyName = 'All not stretched';

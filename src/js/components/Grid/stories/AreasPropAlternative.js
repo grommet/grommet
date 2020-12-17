@@ -36,4 +36,4 @@ export const GridAreasAlternative = () => {
   );
 };
 
-GridAreasAlternative.story = { name: 'Areas prop alternative' };
+GridAreasAlternative.storyName = 'Areas prop alternative';

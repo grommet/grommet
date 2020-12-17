@@ -123,8 +123,6 @@ export const ScanChart = props => {
 
 export const Scan = () => <ScanChart data={generateData(30, 100)} max={100} />;
 
-Scan.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
+Scan.parameters = {
+  chromatic: { disable: true },
 };

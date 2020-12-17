@@ -45,8 +45,6 @@ export const Digital = () => (
   </Grommet>
 );
 
-Digital.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
+Digital.parameters = {
+  chromatic: { disable: true },
 };

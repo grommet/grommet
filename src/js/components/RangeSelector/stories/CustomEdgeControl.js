@@ -58,6 +58,4 @@ export const CustomEdgeControl = ({ direction = 'horizontal', ...rest }) => {
   );
 };
 
-CustomEdgeControl.story = {
-  name: 'Custom edge controls',
-};
+CustomEdgeControl.storyName = 'Custom edge controls';

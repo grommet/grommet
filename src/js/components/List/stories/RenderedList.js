@@ -39,6 +39,4 @@ export const RenderedList = () => (
   </Grommet>
 );
 
-RenderedList.story = {
-  name: 'Key render',
-};
+RenderedList.storyName = 'Key render';

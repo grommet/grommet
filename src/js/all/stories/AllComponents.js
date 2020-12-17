@@ -1,5 +1,4 @@
 import React, { useMemo, useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
   Grommet,
@@ -388,4 +387,7 @@ const Components = () => {
   );
 };
 
-storiesOf('All', module).add('All', () => <Components />);
+export const All = () => <Components />;
+export default {
+  title: 'All',
+};

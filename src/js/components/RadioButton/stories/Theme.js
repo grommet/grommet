@@ -50,6 +50,4 @@ export const ThemeRadioButton = () => {
   );
 };
 
-ThemeRadioButton.story = {
-  name: 'Theme',
-};
+ThemeRadioButton.storyName = 'Theme';

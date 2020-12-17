@@ -23,22 +23,18 @@ export const Replace = () => <Example replace />;
 export const ShowBefore = () => <Example replace show={27} />;
 export const ShowAfter = () => <Example replace show={87} />;
 
-Replace.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
+Replace.parameters = {
+  chromatic: { disable: true },
 };
 
-ShowBefore.story = {
-  name: 'Replace, show before step',
-  parameters: {
-    chromatic: { disable: true },
-  },
+ShowBefore.storyName = 'Replace, show before step';
+
+ShowBefore.parameters = {
+  chromatic: { disable: true },
 };
 
-ShowAfter.story = {
-  name: 'Replace, show after step',
-  parameters: {
-    chromatic: { disable: true },
-  },
+ShowAfter.storyName = 'Replace, show after step';
+
+ShowAfter.parameters = {
+  chromatic: { disable: true },
 };

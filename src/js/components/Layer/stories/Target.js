@@ -69,4 +69,4 @@ export const TargetLayer = () => {
   );
 };
 
-TargetLayer.story = { name: 'Target' };
+TargetLayer.storyName = 'Target';

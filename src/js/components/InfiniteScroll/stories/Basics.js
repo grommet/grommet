@@ -38,6 +38,4 @@ export const Marker = () => (
   />
 );
 
-Show.story = {
-  name: 'Show 118th item',
-};
+Show.storyName = 'Show 118th item';

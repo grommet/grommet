@@ -19,8 +19,6 @@ export const Uncontrolled = () => {
   );
 };
 
-Uncontrolled.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
+Uncontrolled.parameters = {
+  chromatic: { disable: true },
 };
