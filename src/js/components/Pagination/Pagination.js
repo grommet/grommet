@@ -34,10 +34,11 @@ const Pagination = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
 
-    const [activePage, setActivePage] = useState(pageProp || 1);
-
     /* Calculate total number pages */
     const totalPages = Math.ceil(numItems / step);
+    const [activePage, setActivePage] = useState(
+      Math.min(pageProp, totalPages) || 1,
+    );
 
     /* Define page indices to display */
     const beginPages = getPageIndices(1, Math.min(numEdgePages, totalPages));
@@ -132,7 +133,7 @@ const Pagination = forwardRef(
       },
       previous: {
         'aria-disabled': activePage === 1 ? 'true' : undefined,
-        disabled: activePage === 1,
+        disabled: activePage === 1 || !numItems,
         icon: <PreviousIcon color={iconColor} />,
         onClick: event => {
           const previousPage = activePage - 1;

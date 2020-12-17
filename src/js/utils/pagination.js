@@ -13,7 +13,9 @@ export const normalizeShow = (showProp, step) => {
 };
 
 export const usePagination = ({ data, page, step, ...rest }) => {
-  const [activePage, setActivePage] = useState(page || 1);
+  const totalPages = data ? Math.ceil(data.length / step) : 0;
+  const [activePage, setActivePage] = useState(Math.min(page, totalPages) || 1);
+
   const itemsBeginIndex = step * (activePage - 1);
   const itemsEndIndex = itemsBeginIndex + step;
   const getCurrentItems = useCallback(

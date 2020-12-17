@@ -153,6 +153,25 @@ describe('Pagination', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test(`should set page to last page if page prop > total possible 
+  pages`, () => {
+    const numItems = 500;
+    const step = 50;
+    const { container, getByText } = render(
+      <Grommet>
+        <Pagination numItems={numItems} step={step} page={700} />
+      </Grommet>,
+    );
+
+    const expectedPage = `${Math.ceil(numItems / step)}`;
+    fireEvent.click(getByText(expectedPage));
+    const activePage = container.querySelector(`[aria-current="page"]`)
+      .innerHTML;
+
+    expect(activePage).toEqual(expectedPage);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('should render correct num items per page (step)', () => {
     const step = 14;
     const { container, getAllByText } = render(
@@ -188,7 +207,6 @@ describe('Pagination', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  // behaviors to test. Each should pass click and keyboard
   test(`should display next page of results when "next" is 
   selected`, () => {
     const onChange = jest.fn();

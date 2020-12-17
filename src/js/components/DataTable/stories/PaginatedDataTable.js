@@ -16,7 +16,7 @@ export const PaginatedDataTable = () => {
           select={select}
           sortable
           step={3}
-          paginate
+          paginate={{ page: 10000 }}
         />
       </Box>
     </Grommet>
