@@ -73,6 +73,7 @@ var defaultMessages = {
 };
 var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var a11yTitle = _ref.a11yTitle,
+      defaultSuggestion = _ref.defaultSuggestion,
       defaultValue = _ref.defaultValue,
       _ref$dropAlign = _ref.dropAlign,
       dropAlign = _ref$dropAlign === void 0 ? defaultDropAlign : _ref$dropAlign,
@@ -99,7 +100,7 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       suggestions = _ref.suggestions,
       textAlign = _ref.textAlign,
       valueProp = _ref.value,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "defaultValue", "dropAlign", "dropHeight", "dropTarget", "dropProps", "icon", "id", "messages", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "onSelect", "onSuggestionSelect", "onSuggestionsClose", "onSuggestionsOpen", "placeholder", "plain", "readOnly", "reverse", "suggestions", "textAlign", "value"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "defaultSuggestion", "defaultValue", "dropAlign", "dropHeight", "dropTarget", "dropProps", "icon", "id", "messages", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "onSelect", "onSuggestionSelect", "onSuggestionsClose", "onSuggestionsOpen", "placeholder", "plain", "readOnly", "reverse", "suggestions", "textAlign", "value"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
@@ -150,37 +151,40 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   }, [onSuggestionsOpen, suggestions]);
   /* eslint-enable react-hooks/exhaustive-deps */
 
-  var _useState3 = (0, _react.useState)(-1),
+  var _useState3 = (0, _react.useState)(typeof defaultSuggestion === 'number' ? defaultSuggestion : -1),
       activeSuggestionIndex = _useState3[0],
       setActiveSuggestionIndex = _useState3[1]; // reset activeSuggestionIndex when the drop is closed
 
 
   (0, _react.useEffect)(function () {
-    if (activeSuggestionIndex !== -1 && !showDrop) {
-      setActiveSuggestionIndex(-1);
+    var defaultIndex = typeof defaultSuggestion === 'number' ? defaultSuggestion : -1;
+
+    if (activeSuggestionIndex !== defaultIndex && !showDrop) {
+      setActiveSuggestionIndex(defaultIndex);
     }
-  }, [activeSuggestionIndex, showDrop]); // announce active suggestion
+  }, [activeSuggestionIndex, showDrop, defaultSuggestion]); // announce active suggestion
 
   (0, _react.useEffect)(function () {
     if (activeSuggestionIndex >= 0) {
       var label = stringLabel(suggestions[activeSuggestionIndex]);
       announce(label + " " + messages.enterSelect);
     }
-  }, [activeSuggestionIndex, announce, messages, suggestions]);
-
-  var _useState4 = (0, _react.useState)(-1),
-      selectedSuggestionIndex = _useState4[0],
-      setSelectedSuggestionIndex = _useState4[1]; // set selectedSuggestionIndex based on value and current suggestions
-
+  }, [activeSuggestionIndex, announce, messages, suggestions]); // set activeSuggestionIndex based on value and current suggestions
 
   (0, _react.useEffect)(function () {
     if (suggestions) {
       var suggestionValues = suggestions.map(function (suggestion) {
         return typeof suggestion === 'object' ? suggestion.value : suggestion;
       });
-      setSelectedSuggestionIndex(suggestionValues.indexOf(value));
-    } else setSelectedSuggestionIndex(-1);
-  }, [suggestions, value]); // make sure activeSuggestion remains visible in scroll
+      var indexOfValue = suggestionValues.indexOf(value);
+
+      if (indexOfValue === -1 && typeof defaultSuggestion === 'number') {
+        setActiveSuggestionIndex(defaultSuggestion);
+      } else {
+        setActiveSuggestionIndex(indexOfValue);
+      }
+    } else setActiveSuggestionIndex(-1);
+  }, [suggestions, value, defaultSuggestion]); // make sure activeSuggestion remains visible in scroll
 
   (0, _react.useEffect)(function () {
     var buttonNode = suggestionRefs[activeSuggestionIndex];
@@ -280,7 +284,7 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
         key: stringLabel(suggestion) + "-" + index,
         ref: itemRef
       }, /*#__PURE__*/_react["default"].createElement(_Button.Button, {
-        active: activeSuggestionIndex === index || selectedSuggestionIndex === index,
+        active: activeSuggestionIndex === index,
         ref: function ref(r) {
           suggestionRefs[index] = r;
         },

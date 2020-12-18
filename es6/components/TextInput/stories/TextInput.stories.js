@@ -1,4 +1,5 @@
 export { CustomSuggestions } from './typescript/CustomSuggestions.tsx';
+export { DefaultSuggestion } from './DefaultSuggestion';
 export { Icon } from './Icon';
 export { InsideFormField } from './InsideFormField';
 export { OnSelect } from './OnSelect';

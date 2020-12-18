@@ -1,11 +1,15 @@
 "use strict";
 
 exports.__esModule = true;
-exports["default"] = exports.WithTags = exports.Uncontrolled = exports.Themed = exports.Suggestions = exports.StyledPlaceholder = exports.Simple = exports.Password = exports.OnSelect = exports.InsideFormField = exports.Icon = exports.CustomSuggestions = void 0;
+exports["default"] = exports.WithTags = exports.Uncontrolled = exports.Themed = exports.Suggestions = exports.StyledPlaceholder = exports.Simple = exports.Password = exports.OnSelect = exports.InsideFormField = exports.Icon = exports.DefaultSuggestion = exports.CustomSuggestions = void 0;
 
 var _CustomSuggestions = require("./typescript/CustomSuggestions.tsx");
 
 exports.CustomSuggestions = _CustomSuggestions.CustomSuggestions;
+
+var _DefaultSuggestion = require("./DefaultSuggestion");
+
+exports.DefaultSuggestion = _DefaultSuggestion.DefaultSuggestion;
 
 var _Icon = require("./Icon");
 
