@@ -95,4 +95,6 @@ export var BackgroundBox = function BackgroundBox() {
     color: "brand"
   }, "force light background with color as object")))));
 };
-BackgroundBox.storyName = 'Background';
+BackgroundBox.story = {
+  name: 'Background'
+};

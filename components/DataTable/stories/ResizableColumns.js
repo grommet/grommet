@@ -91,4 +91,6 @@ var ResizableDataTable = function ResizableDataTable() {
 };
 
 exports.ResizableDataTable = ResizableDataTable;
-ResizableDataTable.storyName = 'Resizable columns';
+ResizableDataTable.story = {
+  name: 'Resizable columns'
+};

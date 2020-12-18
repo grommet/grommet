@@ -78,8 +78,10 @@ export var Search = function Search() {
     }
   })));
 };
-Search.parameters = {
-  chromatic: {
-    disable: true
+Search.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

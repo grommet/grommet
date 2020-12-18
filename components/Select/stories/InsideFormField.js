@@ -60,4 +60,6 @@ var InsideFormField = function InsideFormField() {
 };
 
 exports.InsideFormField = InsideFormField;
-InsideFormField.storyName = 'Inside a FormField';
+InsideFormField.story = {
+  name: 'Inside a FormField'
+};

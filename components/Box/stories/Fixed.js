@@ -54,4 +54,6 @@ var FixedSizesBox = function FixedSizesBox() {
 };
 
 exports.FixedSizesBox = FixedSizesBox;
-FixedSizesBox.storyName = 'Fixed sizes';
+FixedSizesBox.story = {
+  name: 'Fixed sizes'
+};

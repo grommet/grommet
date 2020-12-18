@@ -67,9 +67,11 @@ var CustomBoxMaskedInput = function CustomBoxMaskedInput() {
 };
 
 exports.CustomBoxMaskedInput = CustomBoxMaskedInput;
-CustomBoxMaskedInput.storyName = 'Custom box';
-CustomBoxMaskedInput.parameters = {
-  chromatic: {
-    disable: true
+CustomBoxMaskedInput.story = {
+  name: 'Custom box',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

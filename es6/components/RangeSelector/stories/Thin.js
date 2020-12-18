@@ -51,4 +51,6 @@ render( /*#__PURE__*/React.createElement(App, null), document.getElementById('ro
 export var ThinStory = function ThinStory() {
   return /*#__PURE__*/React.createElement(App, null);
 };
-ThinStory.storyName = 'Thin';
+ThinStory.story = {
+  name: 'Thin'
+};

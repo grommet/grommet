@@ -91,9 +91,11 @@ var ManyOptions = function ManyOptions() {
 };
 
 exports.ManyOptions = ManyOptions;
-ManyOptions.storyName = 'Many options';
-ManyOptions.parameters = {
-  chromatic: {
-    disable: true
+ManyOptions.story = {
+  name: 'Many options',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

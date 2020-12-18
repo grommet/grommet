@@ -119,8 +119,10 @@ export var Nested = function Nested() {
     size: "small"
   }, "Submenu item 1"))))));
 };
-Nested.parameters = {
-  chromatic: {
-    disable: true
+Nested.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

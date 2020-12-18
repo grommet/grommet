@@ -33,4 +33,6 @@ var WordBreak = function WordBreak() {
 
 
 exports.WordBreak = WordBreak;
-WordBreak.storyName = 'Word break';
+WordBreak.story = {
+  name: 'Word break'
+};

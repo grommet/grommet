@@ -132,4 +132,6 @@ var DateTimeDropButton = function DateTimeDropButton() {
 };
 
 exports.DateTimeDropButton = DateTimeDropButton;
-DateTimeDropButton.storyName = 'Date time drop';
+DateTimeDropButton.story = {
+  name: 'Date time drop'
+};

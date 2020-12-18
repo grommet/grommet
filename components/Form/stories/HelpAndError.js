@@ -31,4 +31,6 @@ var HelpAndError = function HelpAndError() {
 };
 
 exports.HelpAndError = HelpAndError;
-HelpAndError.storyName = 'Help and error';
+HelpAndError.story = {
+  name: 'Help and error'
+};

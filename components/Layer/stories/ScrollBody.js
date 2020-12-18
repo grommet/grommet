@@ -56,4 +56,6 @@ var ScrollBodyLayer = function ScrollBodyLayer() {
 };
 
 exports.ScrollBodyLayer = ScrollBodyLayer;
-ScrollBodyLayer.storyName = 'Fixed header, scroll body';
+ScrollBodyLayer.story = {
+  name: 'Fixed header, scroll body'
+};

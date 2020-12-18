@@ -70,8 +70,10 @@ var Caret = function Caret() {
 };
 
 exports.Caret = Caret;
-Caret.parameters = {
-  chromatic: {
-    disable: true
+Caret.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

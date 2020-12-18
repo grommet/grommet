@@ -82,4 +82,6 @@ var GlobalThemeWithThemeContext = function GlobalThemeWithThemeContext() {
 };
 
 exports.GlobalThemeWithThemeContext = GlobalThemeWithThemeContext;
-GlobalThemeWithThemeContext.storyName = 'ThemeContext.Extend';
+GlobalThemeWithThemeContext.story = {
+  name: 'ThemeContext.Extend'
+};

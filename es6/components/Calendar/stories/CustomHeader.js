@@ -48,4 +48,6 @@ export var CustomHeaderCalendar = function CustomHeaderCalendar() {
     }
   })));
 };
-CustomHeaderCalendar.storyName = 'Header';
+CustomHeaderCalendar.story = {
+  name: 'Header'
+};

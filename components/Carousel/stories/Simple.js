@@ -66,10 +66,16 @@ var NoControls = function NoControls() {
 };
 
 exports.NoControls = NoControls;
-Simple.parameters = {
-  chromatic: {
-    disable: true
+Simple.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };
-Initial.storyName = 'Initial child';
-NoControls.storyName = 'Without controls';
+Initial.story = {
+  name: 'Initial child'
+};
+NoControls.story = {
+  name: 'Without controls'
+};

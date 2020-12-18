@@ -36,4 +36,6 @@ var GridAreasAlternative = function GridAreasAlternative() {
 };
 
 exports.GridAreasAlternative = GridAreasAlternative;
-GridAreasAlternative.storyName = 'Areas prop alternative';
+GridAreasAlternative.story = {
+  name: 'Areas prop alternative'
+};

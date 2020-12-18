@@ -1,9 +1,8 @@
 "use strict";
 
-exports.__esModule = true;
-exports["default"] = exports.All = void 0;
-
 var _react = _interopRequireWildcard(require("react"));
+
+var _react2 = require("@storybook/react");
 
 var _grommet = require("grommet");
 
@@ -454,12 +453,6 @@ var Components = function Components() {
   }, content))));
 };
 
-var All = function All() {
+(0, _react2.storiesOf)('All', module).add('All', function () {
   return /*#__PURE__*/_react["default"].createElement(Components, null);
-};
-
-exports.All = All;
-var _default = {
-  title: 'All'
-};
-exports["default"] = _default;
+});

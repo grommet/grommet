@@ -105,4 +105,6 @@ var BorderBox = function BorderBox() {
 };
 
 exports.BorderBox = BorderBox;
-BorderBox.storyName = 'Border';
+BorderBox.story = {
+  name: 'Border'
+};

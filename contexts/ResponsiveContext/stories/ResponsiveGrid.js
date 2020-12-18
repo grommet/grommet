@@ -139,4 +139,6 @@ var ResponsiveGridExample = function ResponsiveGridExample() {
 };
 
 exports.ResponsiveGridExample = ResponsiveGridExample;
-ResponsiveGridExample.storyName = 'Responsive grid';
+ResponsiveGridExample.story = {
+  name: 'Responsive grid'
+};

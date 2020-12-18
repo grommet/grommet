@@ -293,4 +293,6 @@ export var InfiniteScrollDataTable = function InfiniteScrollDataTable() {
     }
   })));
 };
-InfiniteScrollDataTable.storyName = 'Infinite Scroll';
+InfiniteScrollDataTable.story = {
+  name: 'Infinite Scroll'
+};

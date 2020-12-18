@@ -235,4 +235,6 @@ var FieldSpacingOptions = function FieldSpacingOptions() {
 };
 
 exports.FieldSpacingOptions = FieldSpacingOptions;
-FieldSpacingOptions.storyName = 'Field spacing options';
+FieldSpacingOptions.story = {
+  name: 'Field spacing options'
+};

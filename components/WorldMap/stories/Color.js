@@ -23,8 +23,10 @@ var Color = function Color() {
 };
 
 exports.Color = Color;
-Color.parameters = {
-  chromatic: {
-    disable: true
+Color.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

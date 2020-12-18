@@ -76,4 +76,6 @@ var ValidateOnBlur = function ValidateOnBlur() {
 };
 
 exports.ValidateOnBlur = ValidateOnBlur;
-ValidateOnBlur.storyName = 'Validate on blur';
+ValidateOnBlur.story = {
+  name: 'Validate on blur'
+};

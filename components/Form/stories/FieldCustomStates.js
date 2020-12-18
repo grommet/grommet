@@ -138,4 +138,6 @@ var FieldCustomStates = function FieldCustomStates() {
 };
 
 exports.FieldCustomStates = FieldCustomStates;
-FieldCustomStates.storyName = 'Field custom states';
+FieldCustomStates.story = {
+  name: 'Field custom states'
+};

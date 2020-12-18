@@ -73,4 +73,6 @@ var CustomAnchor = function CustomAnchor() {
 };
 
 exports.CustomAnchor = CustomAnchor;
-CustomAnchor.storyName = 'Custom anchor';
+CustomAnchor.story = {
+  name: 'Custom anchor'
+};

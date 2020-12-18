@@ -62,8 +62,10 @@ export var Info = function Info() {
     })
   }))));
 };
-Info.parameters = {
-  chromatic: {
-    disable: true
+Info.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

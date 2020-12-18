@@ -67,4 +67,6 @@ var ThinStory = function ThinStory() {
 };
 
 exports.ThinStory = ThinStory;
-ThinStory.storyName = 'Thin';
+ThinStory.story = {
+  name: 'Thin'
+};

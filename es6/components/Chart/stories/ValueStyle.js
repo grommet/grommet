@@ -54,4 +54,6 @@ export var ValueStyleChart = function ValueStyleChart() {
     values: values
   })));
 };
-ValueStyleChart.storyName = 'Value style';
+ValueStyleChart.story = {
+  name: 'Value style'
+};

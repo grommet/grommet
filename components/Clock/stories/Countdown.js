@@ -26,8 +26,10 @@ var Countdown = function Countdown() {
 };
 
 exports.Countdown = Countdown;
-Countdown.parameters = {
-  chromatic: {
-    disable: true
+Countdown.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

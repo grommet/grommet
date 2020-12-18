@@ -41,4 +41,6 @@ var RTLLayer = function RTLLayer() {
 };
 
 exports.RTLLayer = RTLLayer;
-RTLLayer.storyName = 'RTL';
+RTLLayer.story = {
+  name: 'RTL'
+};

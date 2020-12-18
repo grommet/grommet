@@ -56,4 +56,6 @@ export const SidebarIcons = () => (
   </Grommet>
 );
 
-SidebarIcons.storyName = 'Icons';
+SidebarIcons.story = {
+  name: 'Icons',
+};

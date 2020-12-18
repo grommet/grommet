@@ -157,8 +157,10 @@ export var Zoom = function Zoom() {
     max: 100
   });
 };
-Zoom.parameters = {
-  chromatic: {
-    disable: true
+Zoom.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

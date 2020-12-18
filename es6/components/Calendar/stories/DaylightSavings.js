@@ -56,4 +56,6 @@ export var DSTCalendar = function DSTCalendar() {
     bounds: ['2019-03-01', '2019-03-31']
   })))));
 };
-DSTCalendar.storyName = 'Daylight savings time';
+DSTCalendar.story = {
+  name: 'Daylight savings time'
+};

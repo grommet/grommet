@@ -228,4 +228,6 @@ var AllDrops = function AllDrops() {
 export var AllNotStretched = function AllNotStretched() {
   return /*#__PURE__*/React.createElement(AllDrops, null);
 };
-AllNotStretched.storyName = 'All not stretched';
+AllNotStretched.story = {
+  name: 'All not stretched'
+};

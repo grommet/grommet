@@ -60,8 +60,10 @@ var Digital = function Digital() {
 };
 
 exports.Digital = Digital;
-Digital.parameters = {
-  chromatic: {
-    disable: true
+Digital.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

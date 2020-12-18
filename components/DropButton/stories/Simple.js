@@ -75,8 +75,10 @@ var Simple = function Simple() {
 };
 
 exports.Simple = Simple;
-Simple.parameters = {
-  chromatic: {
-    disable: true
+Simple.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

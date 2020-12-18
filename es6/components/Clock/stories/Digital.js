@@ -46,8 +46,10 @@ export var Digital = function Digital() {
     size: "customSize"
   }))));
 };
-Digital.parameters = {
-  chromatic: {
-    disable: true
+Digital.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

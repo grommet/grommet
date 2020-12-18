@@ -45,4 +45,6 @@ var RenderedList = function RenderedList() {
 };
 
 exports.RenderedList = RenderedList;
-RenderedList.storyName = 'Key render';
+RenderedList.story = {
+  name: 'Key render'
+};

@@ -49,10 +49,12 @@ export var DarkNoAnimation = function DarkNoAnimation() {
     background: "dark-2"
   });
 };
-DarkNoAnimation.storyName = 'Dark no animation';
-DarkNoAnimation.parameters = {
-  chromatic: {
-    disable: true
+DarkNoAnimation.story = {
+  name: 'Dark no animation',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };
 export var Multiple = function Multiple() {
@@ -60,8 +62,10 @@ export var Multiple = function Multiple() {
     multiple: true
   });
 };
-Multiple.parameters = {
-  chromatic: {
-    disable: true
+Multiple.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

@@ -61,4 +61,6 @@ var LabelledCharts = function LabelledCharts() {
 };
 
 exports.LabelledCharts = LabelledCharts;
-LabelledCharts.storyName = 'Labelled';
+LabelledCharts.story = {
+  name: 'Labelled'
+};

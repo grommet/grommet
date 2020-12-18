@@ -60,8 +60,10 @@ var Menu = function Menu() {
 };
 
 exports.Menu = Menu;
-Menu.parameters = {
-  chromatic: {
-    disable: true
+Menu.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

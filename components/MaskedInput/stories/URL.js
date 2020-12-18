@@ -41,9 +41,11 @@ var UrlMaskedInput = function UrlMaskedInput() {
 };
 
 exports.UrlMaskedInput = UrlMaskedInput;
-UrlMaskedInput.storyName = 'URL';
-UrlMaskedInput.parameters = {
-  chromatic: {
-    disable: true
+UrlMaskedInput.story = {
+  name: 'URL',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

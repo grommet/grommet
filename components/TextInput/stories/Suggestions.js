@@ -47,8 +47,10 @@ var Suggestions = function Suggestions() {
 };
 
 exports.Suggestions = Suggestions;
-Suggestions.parameters = {
-  chromatic: {
-    disable: true
+Suggestions.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

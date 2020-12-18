@@ -16,8 +16,10 @@ export var OnDocument = function OnDocument() {
     level: "3"
   }, "Press Esc on me!"))));
 };
-OnDocument.parameters = {
-  chromatic: {
-    disable: true
+OnDocument.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

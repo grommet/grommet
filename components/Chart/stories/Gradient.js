@@ -63,4 +63,6 @@ var GradientCharts = function GradientCharts() {
 };
 
 exports.GradientCharts = GradientCharts;
-GradientCharts.storyName = 'Gradient';
+GradientCharts.story = {
+  name: 'Gradient'
+};

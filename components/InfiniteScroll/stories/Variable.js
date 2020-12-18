@@ -48,15 +48,19 @@ var HeightReplace = function HeightReplace() {
 };
 
 exports.HeightReplace = HeightReplace;
-Height.storyName = 'Variable item height';
-Height.parameters = {
-  chromatic: {
-    disable: true
+Height.story = {
+  name: 'Variable item height',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };
-HeightReplace.storyName = 'Variable item height w/replace';
-HeightReplace.parameters = {
-  chromatic: {
-    disable: true
+HeightReplace.story = {
+  name: 'Variable item height w/replace',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

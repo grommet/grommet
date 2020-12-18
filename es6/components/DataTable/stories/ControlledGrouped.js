@@ -30,4 +30,6 @@ export var ControlledGroupedDataTable = function ControlledGroupedDataTable() {
     sortable: true
   }));
 };
-ControlledGroupedDataTable.storyName = 'Controlled grouped';
+ControlledGroupedDataTable.story = {
+  name: 'Controlled grouped'
+};

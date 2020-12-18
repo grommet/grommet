@@ -100,8 +100,10 @@ export var HeaderActions = function HeaderActions() {
     }
   }))));
 };
-HeaderActions.parameters = {
-  chromatic: {
-    disable: true
+HeaderActions.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

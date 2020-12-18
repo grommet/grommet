@@ -27,4 +27,6 @@ export var MeterInTable = function MeterInTable() {
     })), /*#__PURE__*/React.createElement(TableCell, null, /*#__PURE__*/React.createElement(Text, null, val, "% complete")));
   }))))));
 };
-MeterInTable.storyName = 'Meter inside table';
+MeterInTable.story = {
+  name: 'Meter inside table'
+};

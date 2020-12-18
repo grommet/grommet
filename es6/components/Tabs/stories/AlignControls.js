@@ -65,4 +65,6 @@ var AlignControlsTabs = function AlignControlsTabs() {
 export var AlignControls = function AlignControls() {
   return /*#__PURE__*/React.createElement(AlignControlsTabs, null);
 };
-AlignControls.storyName = 'Align controls';
+AlignControls.story = {
+  name: 'Align controls'
+};

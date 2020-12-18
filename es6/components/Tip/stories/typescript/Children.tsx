@@ -59,6 +59,8 @@ export const Children = () => {
   );
 };
 
-Children.parameters = {
-  chromatic: { disable: true },
+Children.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
 };

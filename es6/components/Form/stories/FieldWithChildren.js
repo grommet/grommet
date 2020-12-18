@@ -123,4 +123,6 @@ export var FieldWithChildren = function FieldWithChildren() {
     primary: true
   }))))));
 };
-FieldWithChildren.storyName = 'Field with children';
+FieldWithChildren.story = {
+  name: 'Field with children'
+};

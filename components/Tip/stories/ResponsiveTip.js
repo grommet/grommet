@@ -143,9 +143,11 @@ var ResponsiveTip = function ResponsiveTip() {
 };
 
 exports.ResponsiveTip = ResponsiveTip;
-ResponsiveTip.storyName = 'Responsive';
-ResponsiveTip.parameters = {
-  chromatic: {
-    disable: true
+ResponsiveTip.story = {
+  name: 'Responsive',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

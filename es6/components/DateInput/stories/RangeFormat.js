@@ -32,4 +32,6 @@ export var RangeFormat = function RangeFormat() {
     onChange: onChange
   }))));
 };
-RangeFormat.storyName = 'Range format';
+RangeFormat.story = {
+  name: 'Range format'
+};

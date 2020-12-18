@@ -61,4 +61,6 @@ export var WithStickyDiv = function WithStickyDiv() {
     });
   }))));
 };
-WithStickyDiv.storyName = 'With sticky div';
+WithStickyDiv.story = {
+  name: 'With sticky div'
+};

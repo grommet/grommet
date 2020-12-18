@@ -230,4 +230,6 @@ var CustomSearch = function CustomSearch() {
 };
 
 exports.CustomSearch = CustomSearch;
-CustomSearch.storyName = 'Custom search';
+CustomSearch.story = {
+  name: 'Custom search'
+};

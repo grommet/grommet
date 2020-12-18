@@ -185,4 +185,6 @@ export var ResponsiveGrid = function ResponsiveGrid() {
     rows: "xsmall"
   }, listAnimalsBoxes)));
 };
-ResponsiveGrid.storyName = 'Responsive grid';
+ResponsiveGrid.story = {
+  name: 'Responsive grid'
+};

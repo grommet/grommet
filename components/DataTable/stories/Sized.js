@@ -29,4 +29,6 @@ var SizedDataTable = function SizedDataTable() {
 };
 
 exports.SizedDataTable = SizedDataTable;
-SizedDataTable.storyName = 'Sized';
+SizedDataTable.story = {
+  name: 'Sized'
+};

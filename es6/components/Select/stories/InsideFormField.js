@@ -45,4 +45,6 @@ export var InsideFormField = function InsideFormField() {
     primary: true
   }))));
 };
-InsideFormField.storyName = 'Inside a FormField';
+InsideFormField.story = {
+  name: 'Inside a FormField'
+};

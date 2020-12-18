@@ -120,4 +120,6 @@ export var DateTimeDropButton = function DateTimeDropButton() {
     color: date ? undefined : 'dark-5'
   }, date ? new Date(date).toLocaleDateString() + " " + time : 'Select date & time'), /*#__PURE__*/React.createElement(Schedule, null)))));
 };
-DateTimeDropButton.storyName = 'Date time drop';
+DateTimeDropButton.story = {
+  name: 'Date time drop'
+};

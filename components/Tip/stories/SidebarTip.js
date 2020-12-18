@@ -151,4 +151,6 @@ var SidebarTip = function SidebarTip() {
 };
 
 exports.SidebarTip = SidebarTip;
-SidebarTip.storyName = 'Sidebar';
+SidebarTip.story = {
+  name: 'Sidebar'
+};

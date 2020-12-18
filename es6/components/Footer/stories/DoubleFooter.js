@@ -70,4 +70,6 @@ export var DoubleFooter = function DoubleFooter() {
     size: "small"
   }, "\xA9 2019 Copyright")));
 };
-DoubleFooter.storyName = 'Double footer';
+DoubleFooter.story = {
+  name: 'Double footer'
+};

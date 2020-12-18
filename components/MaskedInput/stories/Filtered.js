@@ -67,8 +67,10 @@ var Filtered = function Filtered() {
 };
 
 exports.Filtered = Filtered;
-Filtered.parameters = {
-  chromatic: {
-    disable: true
+Filtered.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

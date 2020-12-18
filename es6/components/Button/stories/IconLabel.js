@@ -41,4 +41,6 @@ export var IconLabel = function IconLabel() {
     onClick: function onClick() {}
   }))));
 };
-IconLabel.storyName = 'Icon label';
+IconLabel.story = {
+  name: 'Icon label'
+};

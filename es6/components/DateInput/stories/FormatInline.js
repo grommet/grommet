@@ -24,4 +24,6 @@ export var FormatInline = function FormatInline() {
     onChange: onChange
   })));
 };
-FormatInline.storyName = 'Format inline';
+FormatInline.story = {
+  name: 'Format inline'
+};

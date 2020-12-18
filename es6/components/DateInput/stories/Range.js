@@ -29,8 +29,10 @@ export var Range = function Range() {
     onChange: onChange
   })));
 };
-Range.parameters = {
-  chromatic: {
-    disable: true
+Range.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

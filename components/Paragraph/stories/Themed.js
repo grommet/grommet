@@ -25,11 +25,14 @@ var Themed = function Themed() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Paragraph, null, "The font family for this paragraph is being defined by a custom theme."));
-};
+}; // disabling chromatic because snapshot doesn't capture font
+
 
 exports.Themed = Themed;
-Themed.parameters = {
-  chromatic: {
-    disable: true
+Themed.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

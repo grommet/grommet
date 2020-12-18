@@ -92,4 +92,6 @@ var BorderGrid = function BorderGrid() {
 };
 
 exports.BorderGrid = BorderGrid;
-BorderGrid.storyName = 'Border';
+BorderGrid.story = {
+  name: 'Border'
+};

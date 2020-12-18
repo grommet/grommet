@@ -69,8 +69,10 @@ export var TrapFocus = function TrapFocus() {
     name: "Achievement"
   })));
 };
-TrapFocus.parameters = {
-  chromatic: {
-    disable: true
+TrapFocus.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

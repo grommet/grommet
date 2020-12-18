@@ -32,4 +32,6 @@ var ExternalComponentWithTheme = function ExternalComponentWithTheme() {
 };
 
 exports.ExternalComponentWithTheme = ExternalComponentWithTheme;
-ExternalComponentWithTheme.storyName = 'External components';
+ExternalComponentWithTheme.story = {
+  name: 'External components'
+};

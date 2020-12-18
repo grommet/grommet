@@ -54,8 +54,10 @@ export var Filtered = function Filtered() {
     }
   }))));
 };
-Filtered.parameters = {
-  chromatic: {
-    disable: true
+Filtered.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

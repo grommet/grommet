@@ -56,4 +56,6 @@ var MaskedInputForm = function MaskedInputForm() {
 };
 
 exports.MaskedInputForm = MaskedInputForm;
-MaskedInputForm.storyName = 'Form';
+MaskedInputForm.story = {
+  name: 'Form'
+};

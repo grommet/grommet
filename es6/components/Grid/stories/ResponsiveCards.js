@@ -26,4 +26,6 @@ export var Example = function Example() {
     );
   }))));
 };
-Example.storyName = 'Responsive cards';
+Example.story = {
+  name: 'Responsive cards'
+};

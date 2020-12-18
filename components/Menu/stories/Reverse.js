@@ -47,8 +47,10 @@ var Reverse = function Reverse() {
 };
 
 exports.Reverse = Reverse;
-Reverse.parameters = {
-  chromatic: {
-    disable: true
+Reverse.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

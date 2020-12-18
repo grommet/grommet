@@ -29,9 +29,11 @@ export var UrlMaskedInput = function UrlMaskedInput() {
     }
   }))));
 };
-UrlMaskedInput.storyName = 'URL';
-UrlMaskedInput.parameters = {
-  chromatic: {
-    disable: true
+UrlMaskedInput.story = {
+  name: 'URL',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

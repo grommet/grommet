@@ -90,4 +90,6 @@ export var TargetLayer = function TargetLayer() {
     onClick: onClose
   }))));
 };
-TargetLayer.storyName = 'Target';
+TargetLayer.story = {
+  name: 'Target'
+};

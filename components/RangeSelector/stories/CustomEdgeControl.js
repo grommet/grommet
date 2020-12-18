@@ -86,4 +86,6 @@ var CustomEdgeControl = function CustomEdgeControl(_ref) {
 };
 
 exports.CustomEdgeControl = CustomEdgeControl;
-CustomEdgeControl.storyName = 'Custom edge controls';
+CustomEdgeControl.story = {
+  name: 'Custom edge controls'
+};

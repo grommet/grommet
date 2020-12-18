@@ -26,4 +26,6 @@ export var ElevationBox = function ElevationBox() {
     elevation: "medium"
   }, /*#__PURE__*/React.createElement(Text, null, "light on light")))))));
 };
-ElevationBox.storyName = 'Elevation';
+ElevationBox.story = {
+  name: 'Elevation'
+};

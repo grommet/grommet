@@ -47,4 +47,6 @@ export const EmailMaskedInput = () => {
   );
 };
 
-EmailMaskedInput.storyName = 'Email with icon';
+EmailMaskedInput.story = {
+  name: 'Email with icon',
+};

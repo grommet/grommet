@@ -52,4 +52,6 @@ var DateForm = function DateForm() {
 };
 
 exports.DateForm = DateForm;
-DateForm.storyName = 'Form';
+DateForm.story = {
+  name: 'Form'
+};

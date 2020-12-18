@@ -74,4 +74,6 @@ var InsideFormField = function InsideFormField(props) {
 };
 
 exports.InsideFormField = InsideFormField;
-InsideFormField.storyName = 'Inside a FormField';
+InsideFormField.story = {
+  name: 'Inside a FormField'
+};

@@ -38,9 +38,11 @@ export var FullLayer = function FullLayer() {
     }
   })))));
 };
-FullLayer.storyName = 'Full';
-FullLayer.parameters = {
-  chromatic: {
-    disable: true
+FullLayer.story = {
+  name: 'Full',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

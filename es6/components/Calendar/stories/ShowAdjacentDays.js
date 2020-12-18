@@ -58,4 +58,6 @@ export var ShowAdjacent = function ShowAdjacent() {
     showAdjacentDays: "trim"
   }))));
 };
-ShowAdjacent.storyName = 'Show adjacent days';
+ShowAdjacent.story = {
+  name: 'Show adjacent days'
+};

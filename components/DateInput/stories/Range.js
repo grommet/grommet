@@ -42,8 +42,10 @@ var Range = function Range() {
 };
 
 exports.Range = Range;
-Range.parameters = {
-  chromatic: {
-    disable: true
+Range.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

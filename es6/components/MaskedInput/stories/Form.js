@@ -44,4 +44,6 @@ export var MaskedInputForm = function MaskedInputForm() {
     label: "submit"
   }))));
 };
-MaskedInputForm.storyName = 'Form';
+MaskedInputForm.story = {
+  name: 'Form'
+};

@@ -33,4 +33,6 @@ var PlainLayer = function PlainLayer() {
 };
 
 exports.PlainLayer = PlainLayer;
-PlainLayer.storyName = 'Plain';
+PlainLayer.story = {
+  name: 'Plain'
+};

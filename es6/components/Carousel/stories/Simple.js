@@ -47,10 +47,16 @@ export var NoControls = function NoControls() {
     play: 1500
   });
 };
-Simple.parameters = {
-  chromatic: {
-    disable: true
+Simple.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };
-Initial.storyName = 'Initial child';
-NoControls.storyName = 'Without controls';
+Initial.story = {
+  name: 'Initial child'
+};
+NoControls.story = {
+  name: 'Without controls'
+};

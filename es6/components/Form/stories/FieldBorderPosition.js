@@ -140,4 +140,6 @@ export var FieldBorderPosition = function FieldBorderPosition() {
     });
   }))));
 };
-FieldBorderPosition.storyName = 'Field border position';
+FieldBorderPosition.story = {
+  name: 'Field border position'
+};

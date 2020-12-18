@@ -23,4 +23,6 @@ export var OnClickBox = function OnClickBox() {
     size: "large"
   }), /*#__PURE__*/React.createElement(Text, null, "Party"))));
 };
-OnClickBox.storyName = 'onClick';
+OnClickBox.story = {
+  name: 'onClick'
+};

@@ -14,4 +14,6 @@ export var GradientColorBox = function GradientColorBox() {
     color: "white"
   }, "I have a linear gradient background")));
 };
-GradientColorBox.storyName = 'Gradient';
+GradientColorBox.story = {
+  name: 'Gradient'
+};

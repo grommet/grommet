@@ -73,8 +73,10 @@ var Info = function Info() {
 };
 
 exports.Info = Info;
-Info.parameters = {
-  chromatic: {
-    disable: true
+Info.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

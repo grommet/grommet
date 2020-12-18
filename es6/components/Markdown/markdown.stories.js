@@ -27,7 +27,9 @@ export var ComponentOverrideMarkdown = function ComponentOverrideMarkdown() {
     }
   }, CONTENT)));
 };
-ComponentOverrideMarkdown.storyName = 'Component override markdown';
+ComponentOverrideMarkdown.story = {
+  name: 'Component override markdown'
+};
 export default {
   title: 'Type/Markdown'
 };

@@ -107,4 +107,6 @@ var BackgroundBox = function BackgroundBox() {
 };
 
 exports.BackgroundBox = BackgroundBox;
-BackgroundBox.storyName = 'Background';
+BackgroundBox.story = {
+  name: 'Background'
+};

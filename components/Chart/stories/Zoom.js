@@ -173,8 +173,10 @@ var Zoom = function Zoom() {
 };
 
 exports.Zoom = Zoom;
-Zoom.parameters = {
-  chromatic: {
-    disable: true
+Zoom.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

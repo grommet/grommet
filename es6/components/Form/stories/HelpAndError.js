@@ -19,4 +19,6 @@ export var HelpAndError = function HelpAndError() {
     onChange: function onChange() {}
   })))));
 };
-HelpAndError.storyName = 'Help and error';
+HelpAndError.story = {
+  name: 'Help and error'
+};

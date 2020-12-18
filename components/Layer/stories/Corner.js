@@ -52,9 +52,11 @@ var CornerLayer = function CornerLayer() {
 };
 
 exports.CornerLayer = CornerLayer;
-CornerLayer.storyName = 'Corner';
-CornerLayer.parameters = {
-  chromatic: {
-    disable: true
+CornerLayer.story = {
+  name: 'Corner',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

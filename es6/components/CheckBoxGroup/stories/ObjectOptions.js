@@ -54,4 +54,6 @@ export var ObjectOptions = function ObjectOptions() {
     }]
   })));
 };
-ObjectOptions.storyName = 'Object options';
+ObjectOptions.story = {
+  name: 'Object options'
+};

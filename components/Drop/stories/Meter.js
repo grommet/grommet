@@ -56,8 +56,10 @@ var SVGChild = function SVGChild() {
 };
 
 exports.SVGChild = SVGChild;
-SVGChild.parameters = {
-  chromatic: {
-    disable: true
+SVGChild.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

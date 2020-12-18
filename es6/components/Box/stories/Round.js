@@ -58,4 +58,6 @@ export var RoundBox = function RoundBox() {
     }
   }, "left rounded corner px value"))));
 };
-RoundBox.storyName = 'Round';
+RoundBox.story = {
+  name: 'Round'
+};

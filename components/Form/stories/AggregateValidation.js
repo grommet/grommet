@@ -76,4 +76,6 @@ var AggregateValidation = function AggregateValidation() {
 };
 
 exports.AggregateValidation = AggregateValidation;
-AggregateValidation.storyName = 'Aggregate validation';
+AggregateValidation.story = {
+  name: 'Aggregate validation'
+};

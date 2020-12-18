@@ -59,4 +59,6 @@ export var DynamicFields = function DynamicFields() {
     primary: true
   }))))));
 };
-DynamicFields.storyName = 'Dynamic fields';
+DynamicFields.story = {
+  name: 'Dynamic fields'
+};

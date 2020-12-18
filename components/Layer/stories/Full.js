@@ -50,9 +50,11 @@ var FullLayer = function FullLayer() {
 };
 
 exports.FullLayer = FullLayer;
-FullLayer.storyName = 'Full';
-FullLayer.parameters = {
-  chromatic: {
-    disable: true
+FullLayer.story = {
+  name: 'Full',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

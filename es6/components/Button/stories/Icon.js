@@ -66,4 +66,6 @@ export var Icon = function Icon() {
     onClick: function onClick() {}
   }))));
 };
-Icon.storyName = 'Icon plain';
+Icon.story = {
+  name: 'Icon plain'
+};

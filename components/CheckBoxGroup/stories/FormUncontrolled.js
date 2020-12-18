@@ -63,4 +63,6 @@ var FormUncontrolled = function FormUncontrolled() {
 };
 
 exports.FormUncontrolled = FormUncontrolled;
-FormUncontrolled.storyName = 'Form uncontrolled';
+FormUncontrolled.story = {
+  name: 'Form uncontrolled'
+};

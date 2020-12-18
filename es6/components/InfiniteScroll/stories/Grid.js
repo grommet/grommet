@@ -32,5 +32,9 @@ export var GridWithShow = function GridWithShow() {
     show: 78
   });
 };
-GridInfiniteScroll.storyName = 'Grid';
-GridWithShow.storyName = 'Grid with show item 77';
+GridInfiniteScroll.story = {
+  name: 'Grid'
+};
+GridWithShow.story = {
+  name: 'Grid with show item 77'
+};

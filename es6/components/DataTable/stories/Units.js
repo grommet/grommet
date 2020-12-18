@@ -45,4 +45,6 @@ export var UnitsDataTable = function UnitsDataTable() {
     primaryKey: false
   })));
 };
-UnitsDataTable.storyName = 'Units';
+UnitsDataTable.story = {
+  name: 'Units'
+};

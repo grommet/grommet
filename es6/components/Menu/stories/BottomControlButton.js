@@ -34,9 +34,11 @@ var ControlBottomMenu = function ControlBottomMenu() {
 export var BottomControlButton = function BottomControlButton() {
   return /*#__PURE__*/React.createElement(ControlBottomMenu, null);
 };
-BottomControlButton.storyName = 'Bottom control button';
-BottomControlButton.parameters = {
-  chromatic: {
-    disable: true
+BottomControlButton.story = {
+  name: 'Bottom control button',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

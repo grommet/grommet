@@ -28,4 +28,6 @@ export var CustomSizeCalendar = function CustomSizeCalendar() {
     bounds: ['2018-09-08', '2020-12-13']
   })));
 };
-CustomSizeCalendar.storyName = 'Heading size';
+CustomSizeCalendar.story = {
+  name: 'Heading size'
+};

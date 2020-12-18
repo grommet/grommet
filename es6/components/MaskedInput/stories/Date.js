@@ -60,9 +60,11 @@ export var DateMaskedInput = function DateMaskedInput() {
     }
   }))));
 };
-DateMaskedInput.storyName = 'Date';
-DateMaskedInput.parameters = {
-  chromatic: {
-    disable: true
+DateMaskedInput.story = {
+  name: 'Date',
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

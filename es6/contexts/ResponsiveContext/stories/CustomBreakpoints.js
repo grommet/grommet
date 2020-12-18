@@ -56,4 +56,6 @@ export var CustomBreakpoints = function CustomBreakpoints() {
     }, /*#__PURE__*/React.createElement(Heading, null, "Hi, I'm " + size + ", resize me!"));
   }));
 };
-CustomBreakpoints.storyName = 'Custom breakpoints';
+CustomBreakpoints.story = {
+  name: 'Custom breakpoints'
+};

@@ -67,4 +67,6 @@ var ThemeRadioButton = function ThemeRadioButton() {
 };
 
 exports.ThemeRadioButton = ThemeRadioButton;
-ThemeRadioButton.storyName = 'Theme';
+ThemeRadioButton.story = {
+  name: 'Theme'
+};

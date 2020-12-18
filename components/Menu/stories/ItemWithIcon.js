@@ -56,4 +56,6 @@ var ItemWithIcon = function ItemWithIcon() {
 };
 
 exports.ItemWithIcon = ItemWithIcon;
-ItemWithIcon.storyName = 'Item with icon';
+ItemWithIcon.story = {
+  name: 'Item with icon'
+};

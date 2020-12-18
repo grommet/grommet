@@ -9,9 +9,11 @@ export var Simple = function Simple() {
     pad: "large"
   }, /*#__PURE__*/React.createElement(WorldMap, null)));
 };
-Simple.parameters = {
-  // chromatic disabled because snapshot is the same as SelectPlace
-  chromatic: {
-    disable: true
+Simple.story = {
+  parameters: {
+    // chromatic disabled because snapshot is the same as SelectPlace
+    chromatic: {
+      disable: true
+    }
   }
 };

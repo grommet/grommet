@@ -33,8 +33,10 @@ var Uncontrolled = function Uncontrolled() {
 };
 
 exports.Uncontrolled = Uncontrolled;
-Uncontrolled.parameters = {
-  chromatic: {
-    disable: true
+Uncontrolled.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

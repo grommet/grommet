@@ -67,4 +67,6 @@ export var InsideFormField = function InsideFormField(props) {
     label: "submit"
   }))));
 };
-InsideFormField.storyName = 'Inside a FormField';
+InsideFormField.story = {
+  name: 'Inside a FormField'
+};

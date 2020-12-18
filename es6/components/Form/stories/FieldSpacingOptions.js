@@ -221,4 +221,6 @@ export var FieldSpacingOptions = function FieldSpacingOptions() {
     options: ['Eenie', 'Meenie', 'Miney', 'Moe']
   })))))));
 };
-FieldSpacingOptions.storyName = 'Field spacing options';
+FieldSpacingOptions.story = {
+  name: 'Field spacing options'
+};

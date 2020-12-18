@@ -31,4 +31,6 @@ export var ClassChildrenInfiniteScroll = function ClassChildrenInfiniteScroll(pr
     });
   })));
 };
-ClassChildrenInfiniteScroll.storyName = 'Class children';
+ClassChildrenInfiniteScroll.story = {
+  name: 'Class children'
+};

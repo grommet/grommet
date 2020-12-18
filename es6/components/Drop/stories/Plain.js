@@ -40,8 +40,10 @@ var PlainDrop = function PlainDrop() {
 export var Plain = function Plain() {
   return /*#__PURE__*/React.createElement(PlainDrop, null);
 };
-Plain.parameters = {
-  chromatic: {
-    disable: true
+Plain.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

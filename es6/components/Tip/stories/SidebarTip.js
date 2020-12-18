@@ -143,4 +143,6 @@ export var SidebarTip = function SidebarTip() {
     });
   })))));
 };
-SidebarTip.storyName = 'Sidebar';
+SidebarTip.story = {
+  name: 'Sidebar'
+};

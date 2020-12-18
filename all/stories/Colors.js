@@ -1,9 +1,8 @@
 "use strict";
 
-exports.__esModule = true;
-exports.Colors = void 0;
-
 var _react = _interopRequireDefault(require("react"));
+
+var _react2 = require("@storybook/react");
 
 var _grommet = require("grommet");
 
@@ -44,7 +43,7 @@ var customTheme = {
   }
 };
 
-var Colors = function Colors() {
+var Example = function Example() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
@@ -60,4 +59,6 @@ var Colors = function Colors() {
   }, "Click here to read more about Grommet Colors")));
 };
 
-exports.Colors = Colors;
+(0, _react2.storiesOf)('Theme', module).add('Colors', function () {
+  return /*#__PURE__*/_react["default"].createElement(Example, null);
+});

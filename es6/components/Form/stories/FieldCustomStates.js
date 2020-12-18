@@ -123,4 +123,6 @@ export var FieldCustomStates = function FieldCustomStates() {
     disabled: true
   }))))));
 };
-FieldCustomStates.storyName = 'Field custom states';
+FieldCustomStates.story = {
+  name: 'Field custom states'
+};

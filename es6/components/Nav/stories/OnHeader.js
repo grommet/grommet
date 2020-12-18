@@ -45,4 +45,6 @@ var OnHeaderNav = function OnHeaderNav() {
 export var OnHeader = function OnHeader() {
   return /*#__PURE__*/React.createElement(OnHeaderNav, null);
 };
-OnHeader.storyName = 'On header';
+OnHeader.story = {
+  name: 'On header'
+};

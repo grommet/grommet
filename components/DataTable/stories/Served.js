@@ -69,4 +69,6 @@ var ServedDataTable = function ServedDataTable() {
 };
 
 exports.ServedDataTable = ServedDataTable;
-ServedDataTable.storyName = 'Served';
+ServedDataTable.story = {
+  name: 'Served'
+};

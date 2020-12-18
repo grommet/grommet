@@ -58,4 +58,6 @@ export var ServedDataTable = function ServedDataTable() {
     onSearch: onSearch
   })));
 };
-ServedDataTable.storyName = 'Served';
+ServedDataTable.story = {
+  name: 'Served'
+};

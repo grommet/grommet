@@ -75,4 +75,6 @@ var WithStickyDiv = function WithStickyDiv() {
 };
 
 exports.WithStickyDiv = WithStickyDiv;
-WithStickyDiv.storyName = 'With sticky div';
+WithStickyDiv.story = {
+  name: 'With sticky div'
+};

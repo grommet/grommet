@@ -11,8 +11,10 @@ export var Color = function Color() {
     color: "graph-1"
   })));
 };
-Color.parameters = {
-  chromatic: {
-    disable: true
+Color.story = {
+  parameters: {
+    chromatic: {
+      disable: true
+    }
   }
 };

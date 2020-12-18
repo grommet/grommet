@@ -54,4 +54,6 @@ var IconLabel = function IconLabel() {
 };
 
 exports.IconLabel = IconLabel;
-IconLabel.storyName = 'Icon label';
+IconLabel.story = {
+  name: 'Icon label'
+};

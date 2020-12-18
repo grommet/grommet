@@ -41,4 +41,6 @@ var InsideButton = function InsideButton() {
 };
 
 exports.InsideButton = InsideButton;
-InsideButton.storyName = 'Inside a Button';
+InsideButton.story = {
+  name: 'Inside a Button'
+};

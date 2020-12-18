@@ -32,4 +32,6 @@ export var RTLBox = function RTLBox() {
     background: "brand"
   }, "margin start")));
 };
-RTLBox.storyName = 'RTL';
+RTLBox.story = {
+  name: 'RTL'
+};

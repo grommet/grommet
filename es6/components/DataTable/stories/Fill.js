@@ -60,4 +60,6 @@ export var Fill = function Fill() {
     }
   })));
 };
-Fill.storyName = 'Fill and pin';
+Fill.story = {
+  name: 'Fill and pin'
+};

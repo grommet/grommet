@@ -50,4 +50,6 @@ export var CustomCarousel = function CustomCarousel(_ref) {
     size: "xlarge"
   })))));
 };
-CustomCarousel.storyName = 'Custom controls';
+CustomCarousel.story = {
+  name: 'Custom controls'
+};

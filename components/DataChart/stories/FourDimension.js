@@ -65,4 +65,6 @@ var FourDimensionDataChart = function FourDimensionDataChart() {
 };
 
 exports.FourDimensionDataChart = FourDimensionDataChart;
-FourDimensionDataChart.storyName = 'Four dimensions';
+FourDimensionDataChart.story = {
+  name: 'Four dimensions'
+};

@@ -59,4 +59,6 @@ var SimpleBox = function SimpleBox() {
 };
 
 exports.SimpleBox = SimpleBox;
-SimpleBox.storyName = 'Simple';
+SimpleBox.story = {
+  name: 'Simple'
+};

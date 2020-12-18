@@ -47,7 +47,9 @@ export var MarginCenter = function MarginCenter() {
     margin: "large"
   });
 };
-MarginCenter.storyName = 'Margin (center)';
+MarginCenter.story = {
+  name: 'Margin (center)'
+};
 export var MarginTopCenter = function MarginTopCenter() {
   return /*#__PURE__*/React.createElement(MarginLayer, {
     margin: {
@@ -56,4 +58,6 @@ export var MarginTopCenter = function MarginTopCenter() {
     position: "top"
   });
 };
-MarginTopCenter.storyName = 'Margin top (center)';
+MarginTopCenter.story = {
+  name: 'Margin top (center)'
+};
