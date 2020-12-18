@@ -698,6 +698,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //      extend: undefined,
       //   },
       // },
+      // container: {
+      //   // any box props
+      //   // extend: undefined,
+      // },
       groupHeader: {
         background: {
           dark: 'dark-2',

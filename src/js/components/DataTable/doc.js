@@ -321,6 +321,18 @@ export const themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
+  'dataTable.container': {
+    description: `When using paginate, any valid Box props for the container 
+    surrounding the DataTable and Pagination components.`,
+    type: 'object',
+    defaultValue: undefined,
+  },
+  'dataTable.container.extend': {
+    description: `Any additional style for the container 
+    surrounding the DataTable and Pagination components.`,
+    type: 'object',
+    defaultValue: undefined,
+  },
   'dataTable.groupHeader.background': {
     description: 'The background color of the group header.',
     type: 'string | { dark: string, light: string }',

@@ -8,6 +8,7 @@ import {
   normalizeColor,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
+import { Box } from '../Box';
 import { TableRow } from '../TableRow';
 import { Table } from '../Table';
 import { TableBody } from '../TableBody';
@@ -32,6 +33,17 @@ const StyledDataTable = styled(Table)`
 
 StyledDataTable.defaultProps = {};
 Object.setPrototypeOf(StyledDataTable.defaultProps, defaultProps);
+
+// when paginated, this wraps the data table and pagination component
+const StyledContainer = styled(Box)`
+  ${props =>
+    props.theme.dataTable &&
+    props.theme.dataTable.container &&
+    props.theme.dataTable.container.extend};
+`;
+
+StyledContainer.defaultProps = {};
+Object.setPrototypeOf(StyledContainer.defaultProps, defaultProps);
 
 const hoverStyle = css`
   ${props =>
@@ -168,6 +180,7 @@ const StyledPlaceholder = styled('caption')`
 `;
 
 export {
+  StyledContainer,
   StyledDataTable,
   StyledDataTableRow,
   StyledDataTableBody,

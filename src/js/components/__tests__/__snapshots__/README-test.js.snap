@@ -6953,6 +6953,28 @@ Defaults to
 undefined
 \`\`\`
 
+**dataTable.container**
+
+When using paginate, any valid Box props for the container 
+    surrounding the DataTable and Pagination components. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**dataTable.container.extend**
+
+Any additional style for the container 
+    surrounding the DataTable and Pagination components. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **dataTable.groupHeader.background**
 
 The background color of the group header. Expects \`string | { dark: string, light: string }\`.

@@ -612,6 +612,9 @@ export interface ThemeType {
     body?: {
       extend?: ExtendType;
     };
+    container?: {
+      extend?: ExtendType;
+    };
     header?: {
       background?: BackgroundType;
       border?: BorderType;
@@ -947,11 +950,16 @@ export interface ThemeType {
   };
   pagination?: {
     container?: {
-      extend: ExtendType,
-    },
+      extend: ExtendType;
+    };
     controls?: {
       align?: AlignContentType;
-      direction?: | 'row' | 'column' | 'row-responsive' | 'row-reverse' | 'column-reverse';
+      direction?:
+        | 'row'
+        | 'column'
+        | 'row-responsive'
+        | 'row-reverse'
+        | 'column-reverse';
       gap?: GapType;
       pad?: PadType;
       margin?: MarginType;

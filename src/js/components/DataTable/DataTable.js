@@ -1,12 +1,14 @@
 import React, {
   useCallback,
+  useContext,
   useEffect,
   useLayoutEffect,
   useMemo,
   useRef,
   useState,
+  Fragment,
 } from 'react';
-
+import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Text } from '../Text';
 import { Header } from './Header';
@@ -23,7 +25,11 @@ import {
   normalizePrimaryProperty,
 } from './buildState';
 import { normalizeShow, usePagination } from '../../utils';
-import { StyledDataTable, StyledPlaceholder } from './StyledDataTable';
+import {
+  StyledContainer,
+  StyledDataTable,
+  StyledPlaceholder,
+} from './StyledDataTable';
 
 const contexts = ['header', 'body', 'footer'];
 
@@ -74,6 +80,8 @@ const DataTable = ({
   step = 50,
   ...rest
 }) => {
+  const theme = useContext(ThemeContext);
+
   // property name of the primary property
   const primaryProperty = useMemo(
     () => normalizePrimaryProperty(columns, primaryKey),
@@ -230,8 +238,13 @@ const DataTable = ({
     ...paginate, // let any specifications from paginate prop override component
   });
 
+  const Container = paginate ? StyledContainer : Fragment;
+  const containterProps = paginate
+    ? { ...theme.dataTable.container }
+    : undefined;
+
   return (
-    <>
+    <Container {...containterProps}>
       <StyledDataTable fillProp={fill} {...rest}>
         <Header
           ref={headerRef}
@@ -341,7 +354,7 @@ const DataTable = ({
         )}
       </StyledDataTable>
       {paginate && items && <Pagination alignSelf="end" {...paginationProps} />}
-    </>
+    </Container>
   );
 };
 
