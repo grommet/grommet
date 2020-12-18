@@ -152,4 +152,6 @@ export const ColumnSize = () => (
   </Grommet>
 );
 
-ColumnSize.storyName = 'Column sizes';
+ColumnSize.story = {
+  name: 'Column sizes',
+};

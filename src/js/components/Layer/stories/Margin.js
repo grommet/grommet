@@ -25,8 +25,8 @@ const MarginLayer = ({ margin, ...rest }) => (
 
 export const Margin = () => <MarginLayer full />;
 export const MarginCenter = () => <MarginLayer margin="large" />;
-MarginCenter.storyName = 'Margin (center)';
+MarginCenter.story = { name: 'Margin (center)' };
 export const MarginTopCenter = () => (
   <MarginLayer margin={{ top: 'large' }} position="top" />
 );
-MarginTopCenter.storyName = 'Margin top (center)';
+MarginTopCenter.story = { name: 'Margin top (center)' };

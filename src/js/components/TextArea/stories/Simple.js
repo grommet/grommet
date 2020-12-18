@@ -21,4 +21,6 @@ export const Simple = () => <Resize resize />;
 
 export const NonResizable = () => <Resize resize={false} />;
 
-NonResizable.storyName = 'Non resizable';
+NonResizable.story = {
+  name: 'Non resizable',
+};

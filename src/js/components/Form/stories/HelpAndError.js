@@ -25,4 +25,6 @@ export const HelpAndError = () => (
   </Grommet>
 );
 
-HelpAndError.storyName = 'Help and error';
+HelpAndError.story = {
+  name: 'Help and error',
+};

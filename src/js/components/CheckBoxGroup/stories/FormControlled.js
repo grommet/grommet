@@ -32,4 +32,6 @@ export const FormControlled = () => {
   );
 };
 
-FormControlled.storyName = 'Form controlled';
+FormControlled.story = {
+  name: 'Form controlled',
+};

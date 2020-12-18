@@ -56,4 +56,6 @@ export const Fill = () => (
   </Grommet>
 );
 
-Fill.storyName = 'Fill and pin';
+Fill.story = {
+  name: 'Fill and pin',
+};

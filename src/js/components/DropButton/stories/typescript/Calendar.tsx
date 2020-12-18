@@ -35,6 +35,8 @@ const CalendarDropButton = () => {
 };
 
 export const CalendarDrop = () => <CalendarDropButton />;
-CalendarDrop.parameters = {
-  chromatic: { disable: true },
+CalendarDrop.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
 };

@@ -99,9 +99,10 @@ export const ControlledLazy = () => {
   );
 };
 
-ControlledLazy.storyName = 'Controlled lazy';
-
-ControlledLazy.parameters = {
-  // chromatic disabled because snapshot is the same as Controlled
-  chromatic: { disable: true },
+ControlledLazy.story = {
+  name: 'Controlled lazy',
+  parameters: {
+    // chromatic disabled because snapshot is the same as Controlled
+    chromatic: { disable: true },
+  },
 };

@@ -15,4 +15,4 @@ export const PlainLayer = () => (
   </Grommet>
 );
 
-PlainLayer.storyName = 'Plain';
+PlainLayer.story = { name: 'Plain' };

@@ -43,4 +43,6 @@ export const ValueStyleChart = () => (
   </Grommet>
 );
 
-ValueStyleChart.storyName = 'Value style';
+ValueStyleChart.story = {
+  name: 'Value style',
+};

@@ -21,4 +21,4 @@ export const RTLLayer = () => (
   </Grommet>
 );
 
-RTLLayer.storyName = 'RTL';
+RTLLayer.story = { name: 'RTL' };

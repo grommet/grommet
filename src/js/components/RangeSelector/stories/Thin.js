@@ -47,4 +47,6 @@ render(<App />, document.getElementById('root'));
 
 export const ThinStory = () => <App />;
 
-ThinStory.storyName = 'Thin';
+ThinStory.story = {
+  name: 'Thin',
+};

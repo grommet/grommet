@@ -42,8 +42,9 @@ export const OnSelect = () => {
   );
 };
 
-OnSelect.storyName = 'onSelect and onSuggestionSelect';
-
-OnSelect.parameters = {
-  chromatic: { disable: true },
+OnSelect.story = {
+  name: 'onSelect and onSuggestionSelect',
+  parameters: {
+    chromatic: { disable: true },
+  },
 };

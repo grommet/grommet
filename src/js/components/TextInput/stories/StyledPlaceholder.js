@@ -15,4 +15,6 @@ export const StyledPlaceholder = () => {
   );
 };
 
-StyledPlaceholder.storyName = 'Styled placeholder';
+StyledPlaceholder.story = {
+  name: 'Styled placeholder',
+};

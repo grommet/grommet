@@ -1,4 +1,5 @@
 import React from 'react';
+import { storiesOf } from '@storybook/react';
 
 import { base } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
@@ -15,10 +16,10 @@ extendDefaultTheme(
   }),
 );
 
-export const CustomDefaultProps = () => (
+const CustomDefaultProps = () => (
   <Box background="brand" pad="small">
     Hello
   </Box>
 );
 
-CustomDefaultProps.storyName = 'Extend default';
+storiesOf('Theme', module).add('Extend default', () => <CustomDefaultProps />);

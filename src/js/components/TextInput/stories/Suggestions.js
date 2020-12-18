@@ -30,6 +30,8 @@ export const Suggestions = () => {
   );
 };
 
-Suggestions.parameters = {
-  chromatic: { disable: true },
+Suggestions.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
 };

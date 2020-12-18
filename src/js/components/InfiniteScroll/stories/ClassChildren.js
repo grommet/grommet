@@ -26,4 +26,6 @@ export const ClassChildrenInfiniteScroll = props => (
   </Grommet>
 );
 
-ClassChildrenInfiniteScroll.storyName = 'Class children';
+ClassChildrenInfiniteScroll.story = {
+  name: 'Class children',
+};

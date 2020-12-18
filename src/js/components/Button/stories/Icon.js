@@ -33,4 +33,4 @@ export const Icon = () => (
   </Grommet>
 );
 
-Icon.storyName = 'Icon plain';
+Icon.story = { name: 'Icon plain' };

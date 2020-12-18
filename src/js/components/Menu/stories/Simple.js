@@ -23,6 +23,8 @@ const SimpleMenu = () => (
 );
 
 export const Simple = () => <SimpleMenu />;
-Simple.parameters = {
-  chromatic: { disable: true },
+Simple.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
 };

@@ -130,8 +130,9 @@ export const ResponsiveTip = () => (
   </Grommet>
 );
 
-ResponsiveTip.storyName = 'Responsive';
-
-ResponsiveTip.parameters = {
-  chromatic: { disable: true },
+ResponsiveTip.story = {
+  name: 'Responsive',
+  parameters: {
+    chromatic: { disable: true },
+  },
 };

@@ -48,4 +48,6 @@ export const DynamicFields = () => {
   );
 };
 
-DynamicFields.storyName = 'Dynamic fields';
+DynamicFields.story = {
+  name: 'Dynamic fields',
+};

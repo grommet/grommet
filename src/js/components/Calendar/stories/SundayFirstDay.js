@@ -13,4 +13,6 @@ export const SundayFirstDayCalendar = () => (
   </Grommet>
 );
 
-SundayFirstDayCalendar.storyName = '1st on Sunday';
+SundayFirstDayCalendar.story = {
+  name: '1st on Sunday',
+};

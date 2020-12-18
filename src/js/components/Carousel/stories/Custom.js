@@ -37,4 +37,6 @@ export const CustomCarousel = ({ controls, ...rest }) => (
   </Grommet>
 );
 
-CustomCarousel.storyName = 'Custom controls';
+CustomCarousel.story = {
+  name: 'Custom controls',
+};

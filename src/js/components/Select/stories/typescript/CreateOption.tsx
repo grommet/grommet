@@ -89,4 +89,6 @@ export const CreateOption = () => {
   );
 };
 
-CreateOption.storyName = 'Create option';
+CreateOption.story = {
+  name: 'Create option',
+};

@@ -39,4 +39,6 @@ export const RequiredLabel = () => (
   </Grommet>
 );
 
-RequiredLabel.storyName = 'Required label';
+RequiredLabel.story = {
+  name: 'Required label',
+};

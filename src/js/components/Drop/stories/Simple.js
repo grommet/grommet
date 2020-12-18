@@ -37,6 +37,8 @@ const SimpleDrop = () => {
 };
 
 export const Simple = () => <SimpleDrop />;
-Simple.parameters = {
-  chromatic: { disable: true },
+Simple.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
 };

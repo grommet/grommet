@@ -1,5 +1,7 @@
 import { addParameters } from '@storybook/react';
 
 addParameters({
-  layout: 'fullscreen',
+  options: {
+    showRoots: true,
+  },
 });

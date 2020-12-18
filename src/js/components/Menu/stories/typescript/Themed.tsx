@@ -86,6 +86,8 @@ const ThemedMenu = () => {
 };
 
 export const Themed = () => <ThemedMenu />;
-Themed.parameters = {
-  chromatic: { disable: true },
+Themed.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
 };

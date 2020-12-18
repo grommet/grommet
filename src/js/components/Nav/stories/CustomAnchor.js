@@ -42,4 +42,6 @@ const CustomAnchorNav = () => (
 );
 
 export const CustomAnchor = () => <CustomAnchorNav />;
-CustomAnchor.storyName = 'Custom anchor';
+CustomAnchor.story = {
+  name: 'Custom anchor',
+};

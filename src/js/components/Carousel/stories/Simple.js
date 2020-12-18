@@ -27,10 +27,16 @@ export const Simple = () => <SimpleCarousel />;
 export const Initial = () => <SimpleCarousel initialChild={1} />;
 export const NoControls = () => <SimpleCarousel controls={false} play={1500} />;
 
-Simple.parameters = {
-  chromatic: { disable: true },
+Simple.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
 };
 
-Initial.storyName = 'Initial child';
+Initial.story = {
+  name: 'Initial child',
+};
 
-NoControls.storyName = 'Without controls';
+NoControls.story = {
+  name: 'Without controls',
+};

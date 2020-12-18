@@ -11,6 +11,8 @@ export const Countdown = () => (
   </Grommet>
 );
 
-Countdown.parameters = {
-  chromatic: { disable: true },
+Countdown.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
 };

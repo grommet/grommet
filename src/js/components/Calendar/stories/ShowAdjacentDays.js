@@ -52,4 +52,6 @@ export const ShowAdjacent = () => {
   );
 };
 
-ShowAdjacent.storyName = 'Show adjacent days';
+ShowAdjacent.story = {
+  name: 'Show adjacent days',
+};

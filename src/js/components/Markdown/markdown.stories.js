@@ -47,7 +47,9 @@ export const ComponentOverrideMarkdown = () => (
   </Grommet>
 );
 
-ComponentOverrideMarkdown.storyName = 'Component override markdown';
+ComponentOverrideMarkdown.story = {
+  name: 'Component override markdown',
+};
 
 export default {
   title: 'Type/Markdown',

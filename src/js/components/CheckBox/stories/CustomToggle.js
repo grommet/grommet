@@ -76,4 +76,6 @@ export const CustomToggle = props => {
   );
 };
 
-CustomToggle.storyName = 'Custom toggle';
+CustomToggle.story = {
+  name: 'Custom toggle',
+};

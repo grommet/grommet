@@ -27,4 +27,4 @@ export const ElevationBox = () => (
   </Grommet>
 );
 
-ElevationBox.storyName = 'Elevation';
+ElevationBox.story = { name: 'Elevation' };

@@ -24,6 +24,10 @@ export const GridInfiniteScroll = ({ ...rest }) => (
 
 export const GridWithShow = () => <GridInfiniteScroll show={78} />;
 
-GridInfiniteScroll.storyName = 'Grid';
+GridInfiniteScroll.story = {
+  name: 'Grid',
+};
 
-GridWithShow.storyName = 'Grid with show item 77';
+GridWithShow.story = {
+  name: 'Grid with show item 77',
+};

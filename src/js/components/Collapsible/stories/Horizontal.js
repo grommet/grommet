@@ -50,6 +50,8 @@ export const Horizontal = () => {
   );
 };
 
-Horizontal.parameters = {
-  chromatic: { disable: true },
+Horizontal.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
 };

@@ -59,6 +59,8 @@ export const Filtered = () => {
   );
 };
 
-Filtered.parameters = {
-  chromatic: { disable: true },
+Filtered.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
 };

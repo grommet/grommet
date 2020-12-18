@@ -20,8 +20,9 @@ const ControlBottomMenu = () => (
 );
 
 export const BottomControlButton = () => <ControlBottomMenu />;
-BottomControlButton.storyName = 'Bottom control button';
-
-BottomControlButton.parameters = {
-  chromatic: { disable: true },
+BottomControlButton.story = {
+  name: 'Bottom control button',
+  parameters: {
+    chromatic: { disable: true },
+  },
 };

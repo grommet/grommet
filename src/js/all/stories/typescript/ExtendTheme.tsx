@@ -1,5 +1,6 @@
 import React from 'react';
 import { css } from 'styled-components';
+import { storiesOf } from '@storybook/react';
 import { ThemeType, BoxTypes, Grommet, Box, Anchor, Button } from 'grommet';
 
 // Custom theme to verify that various `extend` types work correctly
@@ -62,4 +63,4 @@ const ExtendTheme: React.FC = () => {
   );
 };
 
-export const Extend = () => <ExtendTheme />;
+storiesOf('Theme', module).add('Extend', () => <ExtendTheme />);

@@ -23,4 +23,6 @@ export const TunableDataTable = () => (
   </Grommet>
 );
 
-TunableDataTable.storyName = 'Tunable';
+TunableDataTable.story = {
+  name: 'Tunable',
+};
