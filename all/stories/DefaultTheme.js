@@ -1,8 +1,9 @@
 "use strict";
 
-var _react = _interopRequireDefault(require("react"));
+exports.__esModule = true;
+exports.CustomDefaultProps = void 0;
 
-var _react2 = require("@storybook/react");
+var _react = _interopRequireDefault(require("react"));
 
 var _themes = require("grommet/themes");
 
@@ -27,6 +28,5 @@ var CustomDefaultProps = function CustomDefaultProps() {
   }, "Hello");
 };
 
-(0, _react2.storiesOf)('Theme', module).add('Extend default', function () {
-  return /*#__PURE__*/_react["default"].createElement(CustomDefaultProps, null);
-});
+exports.CustomDefaultProps = CustomDefaultProps;
+CustomDefaultProps.storyName = 'Extend default';

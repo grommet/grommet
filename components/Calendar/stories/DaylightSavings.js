@@ -68,6 +68,4 @@ var DSTCalendar = function DSTCalendar() {
 };
 
 exports.DSTCalendar = DSTCalendar;
-DSTCalendar.story = {
-  name: 'Daylight savings time'
-};
+DSTCalendar.storyName = 'Daylight savings time';

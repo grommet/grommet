@@ -72,6 +72,4 @@ var ShowAdjacent = function ShowAdjacent() {
 };
 
 exports.ShowAdjacent = ShowAdjacent;
-ShowAdjacent.story = {
-  name: 'Show adjacent days'
-};
+ShowAdjacent.storyName = 'Show adjacent days';

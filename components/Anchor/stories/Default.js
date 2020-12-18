@@ -27,10 +27,8 @@ var Default = function Default() {
 };
 
 exports.Default = Default;
-Default.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Default.parameters = {
+  chromatic: {
+    disable: true
   }
 };

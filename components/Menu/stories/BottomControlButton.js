@@ -45,11 +45,9 @@ var BottomControlButton = function BottomControlButton() {
 };
 
 exports.BottomControlButton = BottomControlButton;
-BottomControlButton.story = {
-  name: 'Bottom control button',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+BottomControlButton.storyName = 'Bottom control button';
+BottomControlButton.parameters = {
+  chromatic: {
+    disable: true
   }
 };

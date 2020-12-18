@@ -104,6 +104,4 @@ var DateRange = function DateRange() {
 };
 
 exports.DateRange = DateRange;
-DateRange.story = {
-  name: 'Date range'
-};
+DateRange.storyName = 'Date range';

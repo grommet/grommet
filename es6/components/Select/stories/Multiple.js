@@ -27,10 +27,8 @@ export var Multiple = function Multiple() {
     }
   })));
 };
-Multiple.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Multiple.parameters = {
+  chromatic: {
+    disable: true
   }
 };

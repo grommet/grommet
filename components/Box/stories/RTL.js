@@ -44,6 +44,4 @@ var RTLBox = function RTLBox() {
 };
 
 exports.RTLBox = RTLBox;
-RTLBox.story = {
-  name: 'RTL'
-};
+RTLBox.storyName = 'RTL';

@@ -43,10 +43,8 @@ var TestDrop = function TestDrop() {
 export var SVGChild = function SVGChild() {
   return /*#__PURE__*/React.createElement(TestDrop, null);
 };
-SVGChild.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+SVGChild.parameters = {
+  chromatic: {
+    disable: true
   }
 };

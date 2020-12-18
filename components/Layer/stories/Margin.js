@@ -61,9 +61,7 @@ var MarginCenter = function MarginCenter() {
 };
 
 exports.MarginCenter = MarginCenter;
-MarginCenter.story = {
-  name: 'Margin (center)'
-};
+MarginCenter.storyName = 'Margin (center)';
 
 var MarginTopCenter = function MarginTopCenter() {
   return /*#__PURE__*/_react["default"].createElement(MarginLayer, {
@@ -75,6 +73,4 @@ var MarginTopCenter = function MarginTopCenter() {
 };
 
 exports.MarginTopCenter = MarginTopCenter;
-MarginTopCenter.story = {
-  name: 'Margin top (center)'
-};
+MarginTopCenter.storyName = 'Margin top (center)';

@@ -43,6 +43,4 @@ var CustomSizeCalendar = function CustomSizeCalendar() {
 };
 
 exports.CustomSizeCalendar = CustomSizeCalendar;
-CustomSizeCalendar.story = {
-  name: 'Heading size'
-};
+CustomSizeCalendar.storyName = 'Heading size';

@@ -217,6 +217,4 @@ var MinMaxSizesBox = function MinMaxSizesBox() {
 };
 
 exports.MinMaxSizesBox = MinMaxSizesBox;
-MinMaxSizesBox.story = {
-  name: 'Min/max sizes'
-};
+MinMaxSizesBox.storyName = 'Min/max sizes';

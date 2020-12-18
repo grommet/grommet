@@ -172,6 +172,4 @@ export var WithTags = function WithTags() {
     }
   })));
 };
-WithTags.story = {
-  name: 'With tags'
-};
+WithTags.storyName = 'With tags';

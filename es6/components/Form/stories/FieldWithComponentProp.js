@@ -99,6 +99,4 @@ export var FieldWithComponentProp = function FieldWithComponentProp() {
     primary: true
   }))))));
 };
-FieldWithComponentProp.story = {
-  name: 'Field with component prop'
-};
+FieldWithComponentProp.storyName = 'Field with component prop';

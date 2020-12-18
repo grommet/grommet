@@ -93,6 +93,4 @@ export var BorderBox = function BorderBox() {
     }, /*#__PURE__*/React.createElement(Text, null, "between"), /*#__PURE__*/React.createElement(Text, null, direction));
   }))));
 };
-BorderBox.story = {
-  name: 'Border'
-};
+BorderBox.storyName = 'Border';

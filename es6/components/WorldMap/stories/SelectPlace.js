@@ -23,11 +23,9 @@ export var SelectPlace = function SelectPlace() {
     places: places
   })));
 };
-SelectPlace.story = {
-  name: 'Select place',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+SelectPlace.storyName = 'Select place';
+SelectPlace.parameters = {
+  chromatic: {
+    disable: true
   }
 };

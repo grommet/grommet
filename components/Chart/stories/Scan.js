@@ -164,10 +164,8 @@ var Scan = function Scan() {
 };
 
 exports.Scan = Scan;
-Scan.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Scan.parameters = {
+  chromatic: {
+    disable: true
   }
 };

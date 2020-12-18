@@ -85,6 +85,4 @@ var CustomRadioButtonGroup = function CustomRadioButtonGroup(_ref) {
 };
 
 exports.CustomRadioButtonGroup = CustomRadioButtonGroup;
-CustomRadioButtonGroup.story = {
-  name: 'Custom theme'
-};
+CustomRadioButtonGroup.storyName = 'Custom theme';

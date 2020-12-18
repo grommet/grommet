@@ -21,11 +21,9 @@ var Simple = function Simple() {
 };
 
 exports.Simple = Simple;
-Simple.story = {
-  parameters: {
-    // chromatic disabled because snapshot is the same as SelectPlace
-    chromatic: {
-      disable: true
-    }
+Simple.parameters = {
+  // chromatic disabled because snapshot is the same as SelectPlace
+  chromatic: {
+    disable: true
   }
 };

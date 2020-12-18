@@ -84,6 +84,4 @@ var IPv4RangeMaskedInput = function IPv4RangeMaskedInput() {
 };
 
 exports.IPv4RangeMaskedInput = IPv4RangeMaskedInput;
-IPv4RangeMaskedInput.story = {
-  name: 'IPv4 range'
-};
+IPv4RangeMaskedInput.storyName = 'IPv4 range';

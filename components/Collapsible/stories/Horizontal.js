@@ -70,10 +70,8 @@ var Horizontal = function Horizontal() {
 };
 
 exports.Horizontal = Horizontal;
-Horizontal.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Horizontal.parameters = {
+  chromatic: {
+    disable: true
   }
 };

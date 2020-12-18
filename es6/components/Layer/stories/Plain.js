@@ -21,6 +21,4 @@ export var PlainLayer = function PlainLayer() {
     color: "accent-2"
   }, "Text")))));
 };
-PlainLayer.story = {
-  name: 'Plain'
-};
+PlainLayer.storyName = 'Plain';

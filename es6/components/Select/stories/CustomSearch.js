@@ -214,6 +214,4 @@ export var CustomSearch = function CustomSearch() {
     }
   }, renderOption)));
 };
-CustomSearch.story = {
-  name: 'Custom search'
-};
+CustomSearch.storyName = 'Custom search';

@@ -14,10 +14,8 @@ export var Countdown = function Countdown() {
     run: "backward"
   })));
 };
-Countdown.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Countdown.parameters = {
+  chromatic: {
+    disable: true
   }
 };

@@ -168,12 +168,10 @@ var ControlledInput = function ControlledInput() {
 };
 
 exports.ControlledInput = ControlledInput;
-ControlledInput.story = {
-  name: 'Controlled input',
-  parameters: {
-    // chromatic disabled because snapshot is the same as ControlledInputLazy
-    chromatic: {
-      disable: true
-    }
+ControlledInput.storyName = 'Controlled input';
+ControlledInput.parameters = {
+  // chromatic disabled because snapshot is the same as ControlledInputLazy
+  chromatic: {
+    disable: true
   }
 };

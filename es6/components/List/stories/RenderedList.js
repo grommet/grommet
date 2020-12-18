@@ -33,6 +33,4 @@ export var RenderedList = function RenderedList() {
     }
   })));
 };
-RenderedList.story = {
-  name: 'Key render'
-};
+RenderedList.storyName = 'Key render';

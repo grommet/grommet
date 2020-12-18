@@ -77,6 +77,4 @@ var Icon = function Icon() {
 };
 
 exports.Icon = Icon;
-Icon.story = {
-  name: 'Icon plain'
-};
+Icon.storyName = 'Icon plain';

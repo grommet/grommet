@@ -21,8 +21,6 @@ export const European = () => {
   );
 };
 
-European.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
+European.parameters = {
+  chromatic: { disable: true },
 };

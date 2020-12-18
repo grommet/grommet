@@ -18,10 +18,8 @@ export var Uncontrolled = function Uncontrolled() {
     }
   }))));
 };
-Uncontrolled.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Uncontrolled.parameters = {
+  chromatic: {
+    disable: true
   }
 };

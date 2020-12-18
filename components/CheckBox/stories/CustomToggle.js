@@ -87,6 +87,4 @@ var CustomToggle = function CustomToggle(props) {
 };
 
 exports.CustomToggle = CustomToggle;
-CustomToggle.story = {
-  name: 'Custom toggle'
-};
+CustomToggle.storyName = 'Custom toggle';

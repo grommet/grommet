@@ -56,10 +56,8 @@ var TipOnButton = function TipOnButton() {
 };
 
 exports.TipOnButton = TipOnButton;
-TipOnButton.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+TipOnButton.parameters = {
+  chromatic: {
+    disable: true
   }
 };

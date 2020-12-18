@@ -43,6 +43,4 @@ export var ScrollBodyLayer = function ScrollBodyLayer() {
     label: "Save"
   })))));
 };
-ScrollBodyLayer.story = {
-  name: 'Fixed header, scroll body'
-};
+ScrollBodyLayer.storyName = 'Fixed header, scroll body';

@@ -60,11 +60,9 @@ var IPv4MaskedInput = function IPv4MaskedInput() {
 };
 
 exports.IPv4MaskedInput = IPv4MaskedInput;
-IPv4MaskedInput.story = {
-  name: 'IPv4 address',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+IPv4MaskedInput.storyName = 'IPv4 address';
+IPv4MaskedInput.parameters = {
+  chromatic: {
+    disable: true
   }
 };

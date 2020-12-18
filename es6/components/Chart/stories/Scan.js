@@ -145,10 +145,8 @@ export var Scan = function Scan() {
     max: 100
   });
 };
-Scan.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Scan.parameters = {
+  chromatic: {
+    disable: true
   }
 };

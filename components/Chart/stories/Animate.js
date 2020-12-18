@@ -42,11 +42,9 @@ var AnimatedChart = function AnimatedChart() {
 };
 
 exports.AnimatedChart = AnimatedChart;
-AnimatedChart.story = {
-  name: 'Animate',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+AnimatedChart.storyName = 'Animate';
+AnimatedChart.parameters = {
+  chromatic: {
+    disable: true
   }
 };

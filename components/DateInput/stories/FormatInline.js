@@ -36,6 +36,4 @@ var FormatInline = function FormatInline() {
 };
 
 exports.FormatInline = FormatInline;
-FormatInline.story = {
-  name: 'Format inline'
-};
+FormatInline.storyName = 'Format inline';

@@ -58,11 +58,9 @@ var ObjectOptions = function ObjectOptions() {
 };
 
 exports.ObjectOptions = ObjectOptions;
-ObjectOptions.story = {
-  name: 'Object options',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+ObjectOptions.storyName = 'Object options';
+ObjectOptions.parameters = {
+  chromatic: {
+    disable: true
   }
 };

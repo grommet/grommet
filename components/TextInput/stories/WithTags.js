@@ -185,6 +185,4 @@ var WithTags = function WithTags() {
 };
 
 exports.WithTags = WithTags;
-WithTags.story = {
-  name: 'With tags'
-};
+WithTags.storyName = 'With tags';

@@ -110,6 +110,4 @@ var RichFooter = function RichFooter() {
 };
 
 exports.RichFooter = RichFooter;
-RichFooter.story = {
-  name: 'Rich footer'
-};
+RichFooter.storyName = 'Rich footer';

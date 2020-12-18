@@ -34,6 +34,4 @@ var TunableDataTable = function TunableDataTable() {
 };
 
 exports.TunableDataTable = TunableDataTable;
-TunableDataTable.story = {
-  name: 'Tunable'
-};
+TunableDataTable.storyName = 'Tunable';

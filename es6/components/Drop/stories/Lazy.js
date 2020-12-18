@@ -119,10 +119,8 @@ var LazyDrop = function LazyDrop() {
 export var Lazy = function Lazy() {
   return /*#__PURE__*/React.createElement(LazyDrop, null);
 };
-Lazy.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Lazy.parameters = {
+  chromatic: {
+    disable: true
   }
 };

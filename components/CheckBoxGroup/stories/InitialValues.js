@@ -60,6 +60,4 @@ var InitialValues = function InitialValues() {
 };
 
 exports.InitialValues = InitialValues;
-InitialValues.story = {
-  name: 'Initial values'
-};
+InitialValues.storyName = 'Initial values';

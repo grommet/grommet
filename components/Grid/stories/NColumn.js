@@ -37,6 +37,4 @@ var NColumnGrid = function NColumnGrid() {
 };
 
 exports.NColumnGrid = NColumnGrid;
-NColumnGrid.story = {
-  name: 'N-column layout'
-};
+NColumnGrid.storyName = 'N-column layout';

@@ -27,6 +27,4 @@ export var InsideButton = function InsideButton() {
     onChange: onCheckboxChange
   }))));
 };
-InsideButton.story = {
-  name: 'Inside a Button'
-};
+InsideButton.storyName = 'Inside a Button';

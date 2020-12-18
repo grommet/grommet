@@ -205,6 +205,4 @@ export var MinMaxSizesBox = function MinMaxSizesBox() {
     overflow: "auto"
   }, /*#__PURE__*/React.createElement(Text, null, "min-width=small, min-width=small")))));
 };
-MinMaxSizesBox.story = {
-  name: 'Min/max sizes'
-};
+MinMaxSizesBox.storyName = 'Min/max sizes';

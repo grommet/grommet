@@ -46,6 +46,4 @@ export var InitialValues = function InitialValues() {
     }]
   })));
 };
-InitialValues.story = {
-  name: 'Initial values'
-};
+InitialValues.storyName = 'Initial values';

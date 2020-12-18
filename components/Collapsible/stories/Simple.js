@@ -41,10 +41,8 @@ var Default = function Default(props) {
 };
 
 exports.Default = Default;
-Default.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Default.parameters = {
+  chromatic: {
+    disable: true
   }
 };

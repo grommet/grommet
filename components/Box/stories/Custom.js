@@ -26,6 +26,4 @@ var GradientColorBox = function GradientColorBox() {
 };
 
 exports.GradientColorBox = GradientColorBox;
-GradientColorBox.story = {
-  name: 'Gradient'
-};
+GradientColorBox.storyName = 'Gradient';

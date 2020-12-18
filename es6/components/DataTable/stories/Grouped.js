@@ -25,6 +25,4 @@ export var GroupedDataTable = function GroupedDataTable() {
     sortable: true
   })));
 };
-GroupedDataTable.story = {
-  name: 'Grouped'
-};
+GroupedDataTable.storyName = 'Grouped';

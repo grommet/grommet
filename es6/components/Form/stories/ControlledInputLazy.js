@@ -163,6 +163,4 @@ export var ControlledInputLazy = function ControlledInputLazy() {
     primary: true
   }))))));
 };
-ControlledInputLazy.story = {
-  name: 'Controlled input lazy'
-};
+ControlledInputLazy.storyName = 'Controlled input lazy';

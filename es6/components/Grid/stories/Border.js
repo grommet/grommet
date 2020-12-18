@@ -80,6 +80,4 @@ export var BorderGrid = function BorderGrid() {
     }, type);
   }))));
 };
-BorderGrid.story = {
-  name: 'Border'
-};
+BorderGrid.storyName = 'Border';

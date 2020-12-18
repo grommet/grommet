@@ -53,10 +53,8 @@ var Plain = function Plain() {
 };
 
 exports.Plain = Plain;
-Plain.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Plain.parameters = {
+  chromatic: {
+    disable: true
   }
 };

@@ -34,6 +34,4 @@ export var StyledDataTable = function StyledDataTable() {
     }
   })));
 };
-StyledDataTable.story = {
-  name: 'Styled'
-};
+StyledDataTable.storyName = 'Styled';

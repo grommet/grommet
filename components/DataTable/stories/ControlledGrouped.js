@@ -44,6 +44,4 @@ var ControlledGroupedDataTable = function ControlledGroupedDataTable() {
 };
 
 exports.ControlledGroupedDataTable = ControlledGroupedDataTable;
-ControlledGroupedDataTable.story = {
-  name: 'Controlled grouped'
-};
+ControlledGroupedDataTable.storyName = 'Controlled grouped';

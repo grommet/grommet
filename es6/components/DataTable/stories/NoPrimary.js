@@ -24,6 +24,4 @@ export var NoPrimaryKeyDataTable = function NoPrimaryKeyDataTable() {
     primaryKey: false
   })));
 };
-NoPrimaryKeyDataTable.story = {
-  name: 'No primary'
-};
+NoPrimaryKeyDataTable.storyName = 'No primary';

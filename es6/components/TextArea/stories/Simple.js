@@ -34,6 +34,4 @@ export var NonResizable = function NonResizable() {
     resize: false
   });
 };
-NonResizable.story = {
-  name: 'Non resizable'
-};
+NonResizable.storyName = 'Non resizable';

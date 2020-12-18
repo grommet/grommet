@@ -38,10 +38,8 @@ var SimpleDrop = function SimpleDrop() {
 export var Simple = function Simple() {
   return /*#__PURE__*/React.createElement(SimpleDrop, null);
 };
-Simple.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Simple.parameters = {
+  chromatic: {
+    disable: true
   }
 };

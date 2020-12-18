@@ -50,6 +50,4 @@ export var InsideFormField = function InsideFormField() {
     label: "submit"
   }))));
 };
-InsideFormField.story = {
-  name: 'Inside a FormField'
-};
+InsideFormField.storyName = 'Inside a FormField';

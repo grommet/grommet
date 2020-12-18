@@ -70,11 +70,9 @@ var InfiniteScrollInTable = function InfiniteScrollInTable() {
 };
 
 exports.InfiniteScrollInTable = InfiniteScrollInTable;
-InfiniteScrollInTable.story = {
-  name: 'InfiniteScroll',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+InfiniteScrollInTable.storyName = 'InfiniteScroll';
+InfiniteScrollInTable.parameters = {
+  chromatic: {
+    disable: true
   }
 };

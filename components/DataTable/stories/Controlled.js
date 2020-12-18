@@ -78,6 +78,4 @@ var ControlledDataTable = function ControlledDataTable() {
 };
 
 exports.ControlledDataTable = ControlledDataTable;
-ControlledDataTable.story = {
-  name: 'Controlled'
-};
+ControlledDataTable.storyName = 'Controlled';

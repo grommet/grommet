@@ -113,11 +113,9 @@ var CenterLayer = function CenterLayer() {
 };
 
 exports.CenterLayer = CenterLayer;
-CenterLayer.story = {
-  name: 'Center',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+CenterLayer.storyName = 'Center';
+CenterLayer.parameters = {
+  chromatic: {
+    disable: true
   }
 };

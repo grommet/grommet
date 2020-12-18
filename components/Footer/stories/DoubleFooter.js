@@ -84,6 +84,4 @@ var DoubleFooter = function DoubleFooter() {
 };
 
 exports.DoubleFooter = DoubleFooter;
-DoubleFooter.story = {
-  name: 'Double footer'
-};
+DoubleFooter.storyName = 'Double footer';

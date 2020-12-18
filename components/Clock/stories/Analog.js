@@ -34,10 +34,8 @@ var Analog = function Analog() {
 };
 
 exports.Analog = Analog;
-Analog.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Analog.parameters = {
+  chromatic: {
+    disable: true
   }
 };

@@ -134,10 +134,8 @@ var Lazy = function Lazy() {
 };
 
 exports.Lazy = Lazy;
-Lazy.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Lazy.parameters = {
+  chromatic: {
+    disable: true
   }
 };

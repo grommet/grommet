@@ -64,6 +64,4 @@ export var AggregateValidation = function AggregateValidation() {
     primary: true
   }))))));
 };
-AggregateValidation.story = {
-  name: 'Aggregate validation'
-};
+AggregateValidation.storyName = 'Aggregate validation';

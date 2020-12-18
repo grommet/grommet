@@ -173,6 +173,4 @@ export const CustomSuggestions = () => {
   );
 };
 
-CustomSuggestions.story = {
-  name: 'Custom suggestions',
-};
+CustomSuggestions.storyName = 'Custom suggestions';

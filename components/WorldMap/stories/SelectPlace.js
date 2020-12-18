@@ -35,11 +35,9 @@ var SelectPlace = function SelectPlace() {
 };
 
 exports.SelectPlace = SelectPlace;
-SelectPlace.story = {
-  name: 'Select place',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+SelectPlace.storyName = 'Select place';
+SelectPlace.parameters = {
+  chromatic: {
+    disable: true
   }
 };

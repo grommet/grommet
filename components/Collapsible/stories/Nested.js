@@ -130,10 +130,8 @@ var Nested = function Nested() {
 };
 
 exports.Nested = Nested;
-Nested.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Nested.parameters = {
+  chromatic: {
+    disable: true
   }
 };

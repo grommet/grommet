@@ -34,10 +34,8 @@ export var Suggestions = function Suggestions() {
     suggestions: suggestions
   }))));
 };
-Suggestions.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Suggestions.parameters = {
+  chromatic: {
+    disable: true
   }
 };

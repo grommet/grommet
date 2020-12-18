@@ -14,6 +14,4 @@ export var SundayFirstDayCalendar = function SundayFirstDayCalendar() {
     date: new Date(2019, 8, 2).toISOString()
   })));
 };
-SundayFirstDayCalendar.story = {
-  name: '1st on Sunday'
-};
+SundayFirstDayCalendar.storyName = '1st on Sunday';

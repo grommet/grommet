@@ -38,6 +38,4 @@ var NoPrimaryKeyDataTable = function NoPrimaryKeyDataTable() {
 };
 
 exports.NoPrimaryKeyDataTable = NoPrimaryKeyDataTable;
-NoPrimaryKeyDataTable.story = {
-  name: 'No primary'
-};
+NoPrimaryKeyDataTable.storyName = 'No primary';

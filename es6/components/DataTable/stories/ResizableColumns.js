@@ -77,6 +77,4 @@ export var ResizableDataTable = function ResizableDataTable() {
     resizeable: true
   })));
 };
-ResizableDataTable.story = {
-  name: 'Resizable columns'
-};
+ResizableDataTable.storyName = 'Resizable columns';

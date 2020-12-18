@@ -38,6 +38,4 @@ var ElevationBox = function ElevationBox() {
 };
 
 exports.ElevationBox = ElevationBox;
-ElevationBox.story = {
-  name: 'Elevation'
-};
+ElevationBox.storyName = 'Elevation';

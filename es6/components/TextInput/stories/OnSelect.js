@@ -41,11 +41,9 @@ export var OnSelect = function OnSelect() {
     suggestions: suggestions
   }))));
 };
-OnSelect.story = {
-  name: 'onSelect and onSuggestionSelect',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+OnSelect.storyName = 'onSelect and onSuggestionSelect';
+OnSelect.parameters = {
+  chromatic: {
+    disable: true
   }
 };

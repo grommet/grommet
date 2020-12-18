@@ -98,6 +98,4 @@ var CustomDayCalendar = function CustomDayCalendar() {
 };
 
 exports.CustomDayCalendar = CustomDayCalendar;
-CustomDayCalendar.story = {
-  name: 'Custom day'
-};
+CustomDayCalendar.storyName = 'Custom day';

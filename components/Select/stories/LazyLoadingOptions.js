@@ -101,11 +101,9 @@ var LazyLoadingOptions = function LazyLoadingOptions() {
 };
 
 exports.LazyLoadingOptions = LazyLoadingOptions;
-LazyLoadingOptions.story = {
-  name: 'Lazy loading options',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+LazyLoadingOptions.storyName = 'Lazy loading options';
+LazyLoadingOptions.parameters = {
+  chromatic: {
+    disable: true
   }
 };

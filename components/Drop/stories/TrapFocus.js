@@ -80,10 +80,8 @@ var TrapFocus = function TrapFocus() {
 };
 
 exports.TrapFocus = TrapFocus;
-TrapFocus.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+TrapFocus.parameters = {
+  chromatic: {
+    disable: true
   }
 };

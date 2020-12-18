@@ -45,6 +45,4 @@ var RangeFormat = function RangeFormat() {
 };
 
 exports.RangeFormat = RangeFormat;
-RangeFormat.story = {
-  name: 'Range format'
-};
+RangeFormat.storyName = 'Range format';

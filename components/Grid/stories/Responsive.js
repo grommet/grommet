@@ -198,6 +198,4 @@ var ResponsiveGrid = function ResponsiveGrid() {
 };
 
 exports.ResponsiveGrid = ResponsiveGrid;
-ResponsiveGrid.story = {
-  name: 'Responsive grid'
-};
+ResponsiveGrid.storyName = 'Responsive grid';

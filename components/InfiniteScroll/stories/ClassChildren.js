@@ -43,6 +43,4 @@ var ClassChildrenInfiniteScroll = function ClassChildrenInfiniteScroll(props) {
 };
 
 exports.ClassChildrenInfiniteScroll = ClassChildrenInfiniteScroll;
-ClassChildrenInfiniteScroll.story = {
-  name: 'Class children'
-};
+ClassChildrenInfiniteScroll.storyName = 'Class children';

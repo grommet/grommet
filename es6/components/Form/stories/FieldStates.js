@@ -65,6 +65,4 @@ export var FieldStates = function FieldStates() {
     disabled: true
   }))))));
 };
-FieldStates.story = {
-  name: 'Field states'
-};
+FieldStates.storyName = 'Field states';

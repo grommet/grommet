@@ -67,6 +67,4 @@ var ValueStyleChart = function ValueStyleChart() {
 };
 
 exports.ValueStyleChart = ValueStyleChart;
-ValueStyleChart.story = {
-  name: 'Value style'
-};
+ValueStyleChart.storyName = 'Value style';

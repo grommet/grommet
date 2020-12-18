@@ -56,6 +56,4 @@ export var Reverse = function Reverse() {
 export var NoLabel = function NoLabel() {
   return /*#__PURE__*/React.createElement(SimpleCheckBox, null);
 };
-NoLabel.story = {
-  name: 'No label'
-};
+NoLabel.storyName = 'No label';

@@ -70,6 +70,4 @@ var RoundBox = function RoundBox() {
 };
 
 exports.RoundBox = RoundBox;
-RoundBox.story = {
-  name: 'Round'
-};
+RoundBox.storyName = 'Round';

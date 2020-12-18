@@ -104,6 +104,4 @@ var TargetLayer = function TargetLayer() {
 };
 
 exports.TargetLayer = TargetLayer;
-TargetLayer.story = {
-  name: 'Target'
-};
+TargetLayer.storyName = 'Target';

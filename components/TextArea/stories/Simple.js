@@ -50,6 +50,4 @@ var NonResizable = function NonResizable() {
 };
 
 exports.NonResizable = NonResizable;
-NonResizable.story = {
-  name: 'Non resizable'
-};
+NonResizable.storyName = 'Non resizable';

@@ -24,6 +24,4 @@ export var GridAreasAlternative = function GridAreasAlternative() {
     gridArea: "footer"
   }, "Footer")));
 };
-GridAreasAlternative.story = {
-  name: 'Areas prop alternative'
-};
+GridAreasAlternative.storyName = 'Areas prop alternative';

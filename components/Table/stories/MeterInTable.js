@@ -40,6 +40,4 @@ var MeterInTable = function MeterInTable() {
 };
 
 exports.MeterInTable = MeterInTable;
-MeterInTable.story = {
-  name: 'Meter inside table'
-};
+MeterInTable.storyName = 'Meter inside table';

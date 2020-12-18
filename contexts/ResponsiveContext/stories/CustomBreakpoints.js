@@ -68,6 +68,4 @@ var CustomBreakpoints = function CustomBreakpoints() {
 };
 
 exports.CustomBreakpoints = CustomBreakpoints;
-CustomBreakpoints.story = {
-  name: 'Custom breakpoints'
-};
+CustomBreakpoints.storyName = 'Custom breakpoints';

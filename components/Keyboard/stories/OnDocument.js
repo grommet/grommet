@@ -28,10 +28,8 @@ var OnDocument = function OnDocument() {
 };
 
 exports.OnDocument = OnDocument;
-OnDocument.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+OnDocument.parameters = {
+  chromatic: {
+    disable: true
   }
 };

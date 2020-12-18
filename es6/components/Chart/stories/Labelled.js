@@ -50,6 +50,4 @@ export var LabelledCharts = function LabelledCharts() {
     color: "accent-3"
   })));
 };
-LabelledCharts.story = {
-  name: 'Labelled'
-};
+LabelledCharts.storyName = 'Labelled';

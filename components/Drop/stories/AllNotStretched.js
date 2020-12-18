@@ -241,6 +241,4 @@ var AllNotStretched = function AllNotStretched() {
 };
 
 exports.AllNotStretched = AllNotStretched;
-AllNotStretched.story = {
-  name: 'All not stretched'
-};
+AllNotStretched.storyName = 'All not stretched';

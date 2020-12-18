@@ -81,6 +81,4 @@ var NoLabel = function NoLabel() {
 };
 
 exports.NoLabel = NoLabel;
-NoLabel.story = {
-  name: 'No label'
-};
+NoLabel.storyName = 'No label';

@@ -97,11 +97,9 @@ var FormLayer = function FormLayer() {
 };
 
 exports.FormLayer = FormLayer;
-FormLayer.story = {
-  name: 'Form',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+FormLayer.storyName = 'Form';
+FormLayer.parameters = {
+  chromatic: {
+    disable: true
   }
 };

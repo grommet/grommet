@@ -61,6 +61,4 @@ var RequiredLabel = function RequiredLabel() {
 };
 
 exports.RequiredLabel = RequiredLabel;
-RequiredLabel.story = {
-  name: 'Required label'
-};
+RequiredLabel.storyName = 'Required label';

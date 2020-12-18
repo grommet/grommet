@@ -77,11 +77,9 @@ export var ManyOptions = function ManyOptions() {
     });
   })));
 };
-ManyOptions.story = {
-  name: 'Many options',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+ManyOptions.storyName = 'Many options';
+ManyOptions.parameters = {
+  chromatic: {
+    disable: true
   }
 };

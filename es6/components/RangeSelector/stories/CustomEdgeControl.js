@@ -70,6 +70,4 @@ export var CustomEdgeControl = function CustomEdgeControl(_ref) {
     onChange: onChange
   }, rest)))));
 };
-CustomEdgeControl.story = {
-  name: 'Custom edge controls'
-};
+CustomEdgeControl.storyName = 'Custom edge controls';

@@ -61,6 +61,4 @@ var CustomCarousel = function CustomCarousel(_ref) {
 };
 
 exports.CustomCarousel = CustomCarousel;
-CustomCarousel.story = {
-  name: 'Custom controls'
-};
+CustomCarousel.storyName = 'Custom controls';

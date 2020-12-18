@@ -62,6 +62,4 @@ export var ObjectMultiple = function ObjectMultiple() {
     }
   })));
 };
-ObjectMultiple.story = {
-  name: 'Object multiple'
-};
+ObjectMultiple.storyName = 'Object multiple';

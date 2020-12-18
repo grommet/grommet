@@ -22,6 +22,4 @@ var StyledPlaceholder = function StyledPlaceholder() {
 };
 
 exports.StyledPlaceholder = StyledPlaceholder;
-StyledPlaceholder.story = {
-  name: 'Styled placeholder'
-};
+StyledPlaceholder.storyName = 'Styled placeholder';

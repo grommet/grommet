@@ -57,6 +57,4 @@ var OnHeader = function OnHeader() {
 };
 
 exports.OnHeader = OnHeader;
-OnHeader.story = {
-  name: 'On header'
-};
+OnHeader.storyName = 'On header';

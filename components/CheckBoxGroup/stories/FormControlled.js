@@ -50,6 +50,4 @@ var FormControlled = function FormControlled() {
 };
 
 exports.FormControlled = FormControlled;
-FormControlled.story = {
-  name: 'Form controlled'
-};
+FormControlled.storyName = 'Form controlled';

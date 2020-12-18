@@ -45,6 +45,4 @@ var IconItemsMenu = function IconItemsMenu() {
 export var ItemWithIcon = function ItemWithIcon() {
   return /*#__PURE__*/React.createElement(IconItemsMenu, null);
 };
-ItemWithIcon.story = {
-  name: 'Item with icon'
-};
+ItemWithIcon.storyName = 'Item with icon';

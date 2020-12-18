@@ -47,6 +47,4 @@ export var SimpleBox = function SimpleBox() {
     onClick: function onClick() {}
   }))));
 };
-SimpleBox.story = {
-  name: 'Simple'
-};
+SimpleBox.storyName = 'Simple';

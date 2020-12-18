@@ -36,6 +36,4 @@ var OnClickBox = function OnClickBox() {
 };
 
 exports.OnClickBox = OnClickBox;
-OnClickBox.story = {
-  name: 'onClick'
-};
+OnClickBox.storyName = 'onClick';

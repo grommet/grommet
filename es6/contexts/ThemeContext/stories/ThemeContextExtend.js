@@ -66,6 +66,4 @@ export var GlobalThemeWithThemeContext = function GlobalThemeWithThemeContext() 
     }
   })))));
 };
-GlobalThemeWithThemeContext.story = {
-  name: 'ThemeContext.Extend'
-};
+GlobalThemeWithThemeContext.storyName = 'ThemeContext.Extend';

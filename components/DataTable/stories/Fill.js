@@ -74,6 +74,4 @@ var Fill = function Fill() {
 };
 
 exports.Fill = Fill;
-Fill.story = {
-  name: 'Fill and pin'
-};
+Fill.storyName = 'Fill and pin';

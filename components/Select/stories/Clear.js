@@ -164,11 +164,9 @@ var Clear = function Clear() {
 };
 
 exports.Clear = Clear;
-Clear.story = {
-  name: 'Clear',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Clear.storyName = 'Clear';
+Clear.parameters = {
+  chromatic: {
+    disable: true
   }
 };

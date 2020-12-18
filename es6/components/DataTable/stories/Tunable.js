@@ -23,6 +23,4 @@ export var TunableDataTable = function TunableDataTable() {
     resizeable: true
   })));
 };
-TunableDataTable.story = {
-  name: 'Tunable'
-};
+TunableDataTable.storyName = 'Tunable';

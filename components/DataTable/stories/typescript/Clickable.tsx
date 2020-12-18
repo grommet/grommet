@@ -154,6 +154,4 @@ export const ClickableDataTable = () => (
   </Grommet>
 );
 
-ClickableDataTable.story = {
-  name: 'Clickable',
-};
+ClickableDataTable.storyName = 'Clickable';

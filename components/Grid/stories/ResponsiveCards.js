@@ -40,6 +40,4 @@ var Example = function Example() {
 };
 
 exports.Example = Example;
-Example.story = {
-  name: 'Responsive cards'
-};
+Example.storyName = 'Responsive cards';

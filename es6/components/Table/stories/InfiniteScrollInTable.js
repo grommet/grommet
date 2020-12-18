@@ -57,11 +57,9 @@ export var InfiniteScrollInTable = function InfiniteScrollInTable() {
     }, /*#__PURE__*/React.createElement(TableCell, null, result), /*#__PURE__*/React.createElement(TableCell, null, "cartoon"), /*#__PURE__*/React.createElement(TableCell, null, "movie name"), /*#__PURE__*/React.createElement(TableCell, null, "year"));
   })))));
 };
-InfiniteScrollInTable.story = {
-  name: 'InfiniteScroll',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+InfiniteScrollInTable.storyName = 'InfiniteScroll';
+InfiniteScrollInTable.parameters = {
+  chromatic: {
+    disable: true
   }
 };

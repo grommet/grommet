@@ -205,6 +205,4 @@ var ColumnSize = function ColumnSize() {
 };
 
 exports.ColumnSize = ColumnSize;
-ColumnSize.story = {
-  name: 'Column sizes'
-};
+ColumnSize.storyName = 'Column sizes';

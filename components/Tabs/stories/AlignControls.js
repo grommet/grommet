@@ -76,6 +76,4 @@ var AlignControls = function AlignControls() {
 };
 
 exports.AlignControls = AlignControls;
-AlignControls.story = {
-  name: 'Align controls'
-};
+AlignControls.storyName = 'Align controls';

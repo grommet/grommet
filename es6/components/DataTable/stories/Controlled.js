@@ -65,6 +65,4 @@ export var ControlledDataTable = function ControlledDataTable() {
     size: "medium"
   })));
 };
-ControlledDataTable.story = {
-  name: 'Controlled'
-};
+ControlledDataTable.storyName = 'Controlled';

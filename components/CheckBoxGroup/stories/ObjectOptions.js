@@ -68,6 +68,4 @@ var ObjectOptions = function ObjectOptions() {
 };
 
 exports.ObjectOptions = ObjectOptions;
-ObjectOptions.story = {
-  name: 'Object options'
-};
+ObjectOptions.storyName = 'Object options';

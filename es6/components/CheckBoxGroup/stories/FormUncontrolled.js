@@ -51,6 +51,4 @@ export var FormUncontrolled = function FormUncontrolled() {
     label: "Submit"
   }))));
 };
-FormUncontrolled.story = {
-  name: 'Form uncontrolled'
-};
+FormUncontrolled.storyName = 'Form uncontrolled';

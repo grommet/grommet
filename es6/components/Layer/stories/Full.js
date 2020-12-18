@@ -38,11 +38,9 @@ export var FullLayer = function FullLayer() {
     }
   })))));
 };
-FullLayer.story = {
-  name: 'Full',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+FullLayer.storyName = 'Full';
+FullLayer.parameters = {
+  chromatic: {
+    disable: true
   }
 };

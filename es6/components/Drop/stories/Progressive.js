@@ -79,10 +79,8 @@ var ProgressiveDrop = function ProgressiveDrop() {
 export var Progressive = function Progressive() {
   return /*#__PURE__*/React.createElement(ProgressiveDrop, null);
 };
-Progressive.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Progressive.parameters = {
+  chromatic: {
+    disable: true
   }
 };

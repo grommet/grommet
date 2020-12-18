@@ -191,6 +191,4 @@ export var ColumnSize = function ColumnSize() {
     }
   })));
 };
-ColumnSize.story = {
-  name: 'Column sizes'
-};
+ColumnSize.storyName = 'Column sizes';

@@ -21,6 +21,4 @@ export var WordBreak = function WordBreak() {
 };
 /* eslint-enable max-len */
 
-WordBreak.story = {
-  name: 'Word break'
-};
+WordBreak.storyName = 'Word break';
