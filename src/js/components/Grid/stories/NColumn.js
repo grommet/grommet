@@ -22,4 +22,4 @@ export const NColumnGrid = () => (
   </Grommet>
 );
 
-NColumnGrid.story = { name: 'N-column layout' };
+NColumnGrid.storyName = 'N-column layout';

@@ -54,6 +54,4 @@ export const FormUncontrolled = () => {
   );
 };
 
-FormUncontrolled.story = {
-  name: 'Form uncontrolled',
-};
+FormUncontrolled.storyName = 'Form uncontrolled';

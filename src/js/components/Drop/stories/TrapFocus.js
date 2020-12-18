@@ -55,8 +55,6 @@ export const TrapFocus = () => {
   );
 };
 
-TrapFocus.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
+TrapFocus.parameters = {
+  chromatic: { disable: true },
 };

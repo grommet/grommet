@@ -58,6 +58,4 @@ export const CustomRadioButtonGroup = ({ value: initialValue, ...props }) => {
   );
 };
 
-CustomRadioButtonGroup.story = {
-  name: 'Custom theme',
-};
+CustomRadioButtonGroup.storyName = 'Custom theme';

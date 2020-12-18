@@ -32,8 +32,6 @@ export const Analog = () => (
   </Grommet>
 );
 
-Analog.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
+Analog.parameters = {
+  chromatic: { disable: true },
 };

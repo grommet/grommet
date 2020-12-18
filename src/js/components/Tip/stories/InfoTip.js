@@ -55,8 +55,6 @@ export const Info = () => {
   );
 };
 
-Info.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
+Info.parameters = {
+  chromatic: { disable: true },
 };

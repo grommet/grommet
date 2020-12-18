@@ -41,8 +41,6 @@ export const Caret = () => {
   );
 };
 
-Caret.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
+Caret.parameters = {
+  chromatic: { disable: true },
 };

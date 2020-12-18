@@ -63,6 +63,4 @@ export const ControlledDataTable = () => {
   );
 };
 
-ControlledDataTable.story = {
-  name: 'Controlled',
-};
+ControlledDataTable.storyName = 'Controlled';

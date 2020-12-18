@@ -15,6 +15,4 @@ export const SizedDataTable = () => (
   </Grommet>
 );
 
-SizedDataTable.story = {
-  name: 'Sized',
-};
+SizedDataTable.storyName = 'Sized';

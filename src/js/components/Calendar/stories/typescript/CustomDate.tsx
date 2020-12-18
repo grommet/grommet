@@ -47,6 +47,4 @@ export const CustomDateCalendar = () => (
   </Grommet>
 );
 
-CustomDateCalendar.story = {
-  name: 'Custom date',
-};
+CustomDateCalendar.storyName = 'Custom date';

@@ -99,4 +99,4 @@ export const ScrollBodyLayer = () => (
   </Grommet>
 );
 
-ScrollBodyLayer.story = { name: 'Fixed header, scroll body' };
+ScrollBodyLayer.storyName = 'Fixed header, scroll body';

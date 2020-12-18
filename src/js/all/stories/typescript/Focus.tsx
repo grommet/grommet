@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { deepMerge } from 'grommet/utils';
 
@@ -39,4 +38,4 @@ const CustomFocusFC = () => (
   </Grommet>
 );
 
-storiesOf('Theme', module).add('Focus', () => <CustomFocusFC />);
+export const Focus = () => <CustomFocusFC />;

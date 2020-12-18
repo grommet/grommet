@@ -61,8 +61,6 @@ const OverflowDrop = () => {
 };
 
 export const Overflow = () => <OverflowDrop />;
-Overflow.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
+Overflow.parameters = {
+  chromatic: { disable: true },
 };

@@ -48,6 +48,4 @@ export const WithStickyDiv = () => {
   );
 };
 
-WithStickyDiv.story = {
-  name: 'With sticky div',
-};
+WithStickyDiv.storyName = 'With sticky div';

@@ -33,6 +33,4 @@ export const LabelledCharts = () => (
   </Grommet>
 );
 
-LabelledCharts.story = {
-  name: 'Labelled',
-};
+LabelledCharts.storyName = 'Labelled';

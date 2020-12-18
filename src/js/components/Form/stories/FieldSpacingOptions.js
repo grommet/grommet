@@ -259,6 +259,4 @@ export const FieldSpacingOptions = () => {
   );
 };
 
-FieldSpacingOptions.story = {
-  name: 'Field spacing options',
-};
+FieldSpacingOptions.storyName = 'Field spacing options';

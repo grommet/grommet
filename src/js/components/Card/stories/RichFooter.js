@@ -99,4 +99,4 @@ export const RichFooter = () => {
   );
 };
 
-RichFooter.story = { name: 'Rich footer' };
+RichFooter.storyName = 'Rich footer';

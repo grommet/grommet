@@ -46,4 +46,4 @@ export const FixedSizesBox = () => (
   </Grommet>
 );
 
-FixedSizesBox.story = { name: 'Fixed sizes' };
+FixedSizesBox.storyName = 'Fixed sizes';

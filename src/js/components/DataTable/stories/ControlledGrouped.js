@@ -33,6 +33,4 @@ export const ControlledGroupedDataTable = () => {
   );
 };
 
-ControlledGroupedDataTable.story = {
-  name: 'Controlled grouped',
-};
+ControlledGroupedDataTable.storyName = 'Controlled grouped';

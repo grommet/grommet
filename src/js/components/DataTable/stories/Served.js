@@ -52,6 +52,4 @@ export const ServedDataTable = () => {
   );
 };
 
-ServedDataTable.story = {
-  name: 'Served',
-};
+ServedDataTable.storyName = 'Served';

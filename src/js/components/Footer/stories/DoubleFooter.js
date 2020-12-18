@@ -56,4 +56,4 @@ export const DoubleFooter = () => {
   );
 };
 
-DoubleFooter.story = { name: 'Double footer' };
+DoubleFooter.storyName = 'Double footer';

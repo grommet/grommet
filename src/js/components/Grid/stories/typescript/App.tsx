@@ -58,4 +58,4 @@ export const AppGrid = () => {
   );
 };
 
-AppGrid.story = { name: 'App' };
+AppGrid.storyName = 'App';
