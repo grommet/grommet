@@ -43,6 +43,4 @@ const IconItemsMenu = () => (
 );
 
 export const ItemWithIcon = () => <IconItemsMenu />;
-ItemWithIcon.story = {
-  name: 'Item with icon',
-};
+ItemWithIcon.storyName = 'Item with icon';

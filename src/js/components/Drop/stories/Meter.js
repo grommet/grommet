@@ -33,8 +33,6 @@ const TestDrop = () => {
 };
 
 export const SVGChild = () => <TestDrop />;
-SVGChild.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
+SVGChild.parameters = {
+  chromatic: { disable: true },
 };

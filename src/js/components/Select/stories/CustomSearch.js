@@ -196,6 +196,4 @@ export const CustomSearch = () => {
   );
 };
 
-CustomSearch.story = {
-  name: 'Custom search',
-};
+CustomSearch.storyName = 'Custom search';

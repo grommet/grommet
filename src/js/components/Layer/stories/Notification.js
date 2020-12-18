@@ -8,7 +8,12 @@ import { grommet } from 'grommet/themes';
 export const NotificationLayer = () => {
   const [open, setOpen] = React.useState();
 
-  const onOpen = () => setOpen(true);
+  const onOpen = () => {
+    setOpen(true);
+    setTimeout(() => {
+      setOpen(undefined);
+    }, 3000);
+  };
 
   const onClose = () => setOpen(undefined);
 
@@ -47,7 +52,10 @@ export const NotificationLayer = () => {
           >
             <Box align="center" direction="row" gap="xsmall">
               <StatusGood />
-              <Text>A new virtual machine has been successfully added</Text>
+              <Text>
+                A new virtual machine has been successfully added (this Layer
+                will close after 3 seconds)
+              </Text>
             </Box>
             <Button icon={<FormClose />} onClick={onClose} plain />
           </Box>
@@ -57,4 +65,8 @@ export const NotificationLayer = () => {
   );
 };
 
-NotificationLayer.story = { name: 'Notification' };
+NotificationLayer.storyName = 'Notification';
+
+NotificationLayer.parameters = {
+  chromatic: { disable: true },
+};

@@ -144,6 +144,4 @@ export const FieldBorderPosition = () => (
   </Grommet>
 );
 
-FieldBorderPosition.story = {
-  name: 'Field border position',
-};
+FieldBorderPosition.storyName = 'Field border position';

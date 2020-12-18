@@ -357,6 +357,7 @@ A description of the data. The order controls the column order.
     1/3
     2/3
     string,
+  units: string,
   verticalAlign: 
     middle
     top
@@ -542,6 +543,16 @@ Whether the header and/or footer should be pinned when
 boolean
 header
 footer
+```
+
+**placeholder**
+
+A text message or any content to place over the table body.
+      For example, to say "loading ..." when waiting for data to arrive.
+
+```
+string
+node
 ```
 
 **primaryKey**
@@ -859,6 +870,20 @@ Defaults to
 
 ```
 undefined
+```
+
+**dataTable.header.units**
+
+Any Text component properties for styling the
+    header's units text. Expects `object`.
+
+Defaults to
+
+```
+{
+  color: "text-xweak",
+  margin: { left: "xsmall" }
+}
 ```
 
 **dataTable.resize.hover.color**

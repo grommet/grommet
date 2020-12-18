@@ -106,6 +106,4 @@ export const FieldWithChildren = () => (
   </Grommet>
 );
 
-FieldWithChildren.story = {
-  name: 'Field with children',
-};
+FieldWithChildren.storyName = 'Field with children';

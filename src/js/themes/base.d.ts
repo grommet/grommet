@@ -625,6 +625,7 @@ export interface ThemeType {
         background?: BackgroundType;
       };
       pad?: PadType;
+      units?: TextProps;
     };
     groupHeader?: {
       border?: {
@@ -1195,6 +1196,15 @@ export interface ThemeType {
   textInput?: {
     extend?: ExtendType;
     disabled?: OpacityType;
+    container?: {
+      extend?: ExtendType;
+    };
+    placeholder?: {
+      extend?: ExtendType;
+    };
+    suggestions?: {
+      extend?: ExtendType;
+    };
   };
   tip?: {
     content?: BoxProps;

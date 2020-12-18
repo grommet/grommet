@@ -33,4 +33,4 @@ export const Example = () => {
   );
 };
 
-Example.story = { name: 'Responsive cards' };
+Example.storyName = 'Responsive cards';

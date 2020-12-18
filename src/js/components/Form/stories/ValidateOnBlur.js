@@ -53,6 +53,4 @@ export const ValidateOnBlur = () => (
   </Grommet>
 );
 
-ValidateOnBlur.story = {
-  name: 'Validate on blur',
-};
+ValidateOnBlur.storyName = 'Validate on blur';

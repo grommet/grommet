@@ -74,6 +74,4 @@ export const DateRange = () => {
   );
 };
 
-DateRange.story = {
-  name: 'Date range',
-};
+DateRange.storyName = 'Date range';

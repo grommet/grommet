@@ -21,8 +21,6 @@ const ReverseMenu = () => (
 );
 
 export const Reverse = () => <ReverseMenu />;
-Reverse.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
+Reverse.parameters = {
+  chromatic: { disable: true },
 };

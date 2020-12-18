@@ -45,6 +45,4 @@ export const GradientCharts = () => (
   </Grommet>
 );
 
-GradientCharts.story = {
-  name: 'Gradient',
-};
+GradientCharts.storyName = 'Gradient';

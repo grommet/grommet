@@ -24,6 +24,4 @@ export const FormatInline = () => {
   );
 };
 
-FormatInline.story = {
-  name: 'Format inline',
-};
+FormatInline.storyName = 'Format inline';

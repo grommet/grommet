@@ -52,6 +52,4 @@ export const ShowAdjacent = () => {
   );
 };
 
-ShowAdjacent.story = {
-  name: 'Show adjacent days',
-};
+ShowAdjacent.storyName = 'Show adjacent days';

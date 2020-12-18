@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Omit, PlaceHolderType } from '../../utils';
+import { Omit, PlaceHolderType, TextAlignType } from '../../utils';
 import { DropProps } from '../Drop';
 
 export interface TextInputProps {
@@ -34,6 +34,7 @@ export interface TextInputProps {
   reverse?: boolean;
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
   suggestions?: ({ label?: React.ReactNode; value?: any } | string)[];
+  textAlign?: TextAlignType;
   value?: string | number;
 }
 

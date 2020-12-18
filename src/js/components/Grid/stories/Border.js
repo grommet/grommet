@@ -70,4 +70,4 @@ export const BorderGrid = () => (
   </Grommet>
 );
 
-BorderGrid.story = { name: 'Border' };
+BorderGrid.storyName = 'Border';

@@ -126,9 +126,8 @@ export const Clear = () => (
   </Grommet>
 );
 
-Clear.story = {
-  name: 'Clear',
-  parameters: {
-    chromatic: { disable: true },
-  },
+Clear.storyName = 'Clear';
+
+Clear.parameters = {
+  chromatic: { disable: true },
 };

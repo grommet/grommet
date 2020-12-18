@@ -75,6 +75,4 @@ export const ResizableDataTable = () => (
   </Grommet>
 );
 
-ResizableDataTable.story = {
-  name: 'Resizable columns',
-};
+ResizableDataTable.storyName = 'Resizable columns';

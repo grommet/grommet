@@ -40,7 +40,7 @@ export const doc = Layer => {
       PropTypes.oneOf(['vertical', 'horizontal']),
     ])
       .description(
-        `Whether the width and/or height should fill the current viewport 
+        `Whether the width and/or height should fill the current viewport
         size.`,
       )
       .defaultValue(false),
@@ -88,12 +88,12 @@ particular side of the layer`,
     ),
     modal: PropTypes.bool
       .description(
-        `Whether there should be an overlay preventing interaction underneath 
+        `Whether there should be an overlay preventing interaction underneath
         the layer.`,
       )
       .defaultValue(true),
     onClickOutside: PropTypes.func.description(
-      `Function that will be invoked on modal layers when the user clicks 
+      `Function that will be invoked on modal layers when the user clicks
       outside the layer.`,
     ),
     onEsc: PropTypes.func.description(
@@ -127,7 +127,7 @@ particular side of the layer`,
       )
       .defaultValue(true),
     target: PropTypes.object.description(
-      `Target where the layer will be aligned to. This should be a React 
+      `Target where the layer will be aligned to. This should be a React
       reference.`,
     ),
   };
@@ -149,10 +149,15 @@ export const themeDoc = {
   'layer.container.zIndex': {
     description: 'The stack order of Layer Container.',
     type: 'number',
-    defaultValue: '15',
+    defaultValue: '20',
   },
   'layer.extend': {
     description: 'Any additional style for Layer.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'layer.container.extend': {
+    description: 'Any additional style for Layer Container.',
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
@@ -162,7 +167,7 @@ export const themeDoc = {
     defaultValue: 'rgba(0, 0, 0, 0.5)',
   },
   'layer.responsiveBreakpoint': {
-    description: `The actual breakpoint to trigger changes in the border, 
+    description: `The actual breakpoint to trigger changes in the border,
 direction, gap, margin, pad, and round.`,
     type: 'string',
     defaultValue: 'small',
@@ -170,10 +175,10 @@ direction, gap, margin, pad, and round.`,
   'layer.zIndex': {
     description: 'The stack order of Layer.',
     type: 'number',
-    defaultValue: '10',
+    defaultValue: '20',
   },
   ...themeDocUtils.breakpointStyle(
-    `The possible breakpoints that could affect border, direction, gap, margin, 
+    `The possible breakpoints that could affect border, direction, gap, margin,
     pad, and round.`,
   ),
 };

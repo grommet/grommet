@@ -32,6 +32,4 @@ const OnHeaderNav = () => (
 );
 
 export const OnHeader = () => <OnHeaderNav />;
-OnHeader.story = {
-  name: 'On header',
-};
+OnHeader.storyName = 'On header';

@@ -188,4 +188,4 @@ export const ResponsiveGrid = () => (
   </Grommet>
 );
 
-ResponsiveGrid.story = { name: 'Responsive grid' };
+ResponsiveGrid.storyName = 'Responsive grid';

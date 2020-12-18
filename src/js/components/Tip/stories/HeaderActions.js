@@ -103,8 +103,6 @@ export const HeaderActions = () => {
   );
 };
 
-HeaderActions.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
+HeaderActions.parameters = {
+  chromatic: { disable: true },
 };
