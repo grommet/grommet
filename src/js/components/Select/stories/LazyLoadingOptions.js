@@ -74,8 +74,9 @@ export const LazyLoadingOptions = () => {
   );
 };
 
-LazyLoadingOptions.storyName = 'Lazy loading options';
-
-LazyLoadingOptions.parameters = {
-  chromatic: { disable: true },
+LazyLoadingOptions.story = {
+  name: 'Lazy loading options',
+  parameters: {
+    chromatic: { disable: true },
+  },
 };

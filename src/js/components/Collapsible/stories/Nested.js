@@ -104,6 +104,8 @@ export const Nested = () => {
   );
 };
 
-Nested.parameters = {
-  chromatic: { disable: true },
+Nested.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
 };

@@ -48,4 +48,6 @@ export const ObjectOptions = () => {
   );
 };
 
-ObjectOptions.storyName = 'Object options';
+ObjectOptions.story = {
+  name: 'Object options',
+};

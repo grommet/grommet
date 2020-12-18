@@ -14,6 +14,8 @@ export const OnDocument = () => (
   </Grommet>
 );
 
-OnDocument.parameters = {
-  chromatic: { disable: true },
+OnDocument.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
 };

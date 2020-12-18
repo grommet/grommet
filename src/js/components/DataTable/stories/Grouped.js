@@ -27,4 +27,6 @@ export const GroupedDataTable = () => (
   </Grommet>
 );
 
-GroupedDataTable.storyName = 'Grouped';
+GroupedDataTable.story = {
+  name: 'Grouped',
+};

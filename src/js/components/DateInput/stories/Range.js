@@ -35,6 +35,8 @@ export const Range = () => {
   );
 };
 
-Range.parameters = {
-  chromatic: { disable: true },
+Range.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
 };

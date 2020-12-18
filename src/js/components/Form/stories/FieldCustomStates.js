@@ -132,4 +132,6 @@ export const FieldCustomStates = () => {
   );
 };
 
-FieldCustomStates.storyName = 'Field custom states';
+FieldCustomStates.story = {
+  name: 'Field custom states',
+};

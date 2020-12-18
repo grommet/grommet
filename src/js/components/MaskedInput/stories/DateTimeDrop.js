@@ -119,4 +119,6 @@ export const DateTimeDropButton = () => {
   );
 };
 
-DateTimeDropButton.storyName = 'Date time drop';
+DateTimeDropButton.story = {
+  name: 'Date time drop',
+};

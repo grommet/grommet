@@ -34,8 +34,9 @@ export const SizeUnitsMaskedInput = () => {
   );
 };
 
-SizeUnitsMaskedInput.storyName = 'Size + units';
-
-SizeUnitsMaskedInput.parameters = {
-  chromatic: { disable: true },
+SizeUnitsMaskedInput.story = {
+  name: 'Size + units',
+  parameters: {
+    chromatic: { disable: true },
+  },
 };

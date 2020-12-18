@@ -36,6 +36,8 @@ export const TipOnButton = () => (
   </Grommet>
 );
 
-TipOnButton.parameters = {
-  chromatic: { disable: true },
+TipOnButton.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
 };

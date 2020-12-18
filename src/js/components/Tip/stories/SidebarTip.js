@@ -125,4 +125,4 @@ export const SidebarTip = () => (
   </Grommet>
 );
 
-SidebarTip.storyName = 'Sidebar';
+SidebarTip.story = { name: 'Sidebar' };

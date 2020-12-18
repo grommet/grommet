@@ -68,4 +68,6 @@ export const GlobalThemeWithThemeContext = () => {
   );
 };
 
-GlobalThemeWithThemeContext.storyName = 'ThemeContext.Extend';
+GlobalThemeWithThemeContext.story = {
+  name: 'ThemeContext.Extend',
+};

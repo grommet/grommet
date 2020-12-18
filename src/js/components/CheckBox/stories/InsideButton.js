@@ -24,4 +24,6 @@ export const InsideButton = () => {
   );
 };
 
-InsideButton.storyName = 'Inside a Button';
+InsideButton.story = {
+  name: 'Inside a Button',
+};

@@ -60,4 +60,6 @@ export const CustomBreakpoints = () => (
   </Grommet>
 );
 
-CustomBreakpoints.storyName = 'Custom breakpoints';
+CustomBreakpoints.story = {
+  name: 'Custom breakpoints',
+};

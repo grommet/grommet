@@ -28,4 +28,6 @@ const SimpleVideo = props => (
 export const Simple = () => <SimpleVideo />;
 export const ControlsBelow = () => <SimpleVideo controls="below" />;
 
-ControlsBelow.storyName = 'Controls below';
+ControlsBelow.story = {
+  name: 'Controls below',
+};

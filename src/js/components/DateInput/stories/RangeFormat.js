@@ -38,4 +38,6 @@ export const RangeFormat = () => {
   );
 };
 
-RangeFormat.storyName = 'Range format';
+RangeFormat.story = {
+  name: 'Range format',
+};

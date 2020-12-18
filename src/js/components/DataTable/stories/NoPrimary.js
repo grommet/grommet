@@ -20,4 +20,6 @@ export const NoPrimaryKeyDataTable = () => (
   </Grommet>
 );
 
-NoPrimaryKeyDataTable.storyName = 'No primary';
+NoPrimaryKeyDataTable.story = {
+  name: 'No primary',
+};

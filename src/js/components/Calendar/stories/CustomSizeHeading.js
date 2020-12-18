@@ -31,4 +31,6 @@ export const CustomSizeCalendar = () => {
   );
 };
 
-CustomSizeCalendar.storyName = 'Heading size';
+CustomSizeCalendar.story = {
+  name: 'Heading size',
+};

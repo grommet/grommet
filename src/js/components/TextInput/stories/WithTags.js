@@ -135,4 +135,6 @@ export const WithTags = () => {
   );
 };
 
-WithTags.storyName = 'With tags';
+WithTags.story = {
+  name: 'With tags',
+};

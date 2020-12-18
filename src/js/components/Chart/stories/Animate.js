@@ -20,8 +20,9 @@ export const AnimatedChart = () => (
   </Grommet>
 );
 
-AnimatedChart.storyName = 'Animate';
-
-AnimatedChart.parameters = {
-  chromatic: { disable: true },
+AnimatedChart.story = {
+  name: 'Animate',
+  parameters: {
+    chromatic: { disable: true },
+  },
 };

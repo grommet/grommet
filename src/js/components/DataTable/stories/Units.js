@@ -48,4 +48,6 @@ export const UnitsDataTable = () => (
   </Grommet>
 );
 
-UnitsDataTable.storyName = 'Units';
+UnitsDataTable.story = {
+  name: 'Units',
+};

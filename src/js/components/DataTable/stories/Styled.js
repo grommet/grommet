@@ -27,4 +27,6 @@ export const StyledDataTable = () => (
   </Grommet>
 );
 
-StyledDataTable.storyName = 'Styled';
+StyledDataTable.story = {
+  name: 'Styled',
+};

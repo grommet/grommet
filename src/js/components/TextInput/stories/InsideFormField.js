@@ -57,4 +57,6 @@ export const InsideFormField = props => {
   );
 };
 
-InsideFormField.storyName = 'Inside a FormField';
+InsideFormField.story = {
+  name: 'Inside a FormField',
+};

@@ -60,6 +60,8 @@ export const Search = () => {
   );
 };
 
-Search.parameters = {
-  chromatic: { disable: true },
+Search.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
 };

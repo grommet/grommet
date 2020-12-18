@@ -30,4 +30,6 @@ export const DateForm = () => {
   );
 };
 
-DateForm.storyName = 'Form';
+DateForm.story = {
+  name: 'Form',
+};

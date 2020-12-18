@@ -160,4 +160,6 @@ export const OnSelectDataTable = () => {
   );
 };
 
-OnSelectDataTable.storyName = 'OnSelect';
+OnSelectDataTable.story = {
+  name: 'OnSelect',
+};

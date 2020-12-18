@@ -29,4 +29,4 @@ export const RTLBox = () => (
   </Grommet>
 );
 
-RTLBox.storyName = 'RTL';
+RTLBox.story = { name: 'RTL' };

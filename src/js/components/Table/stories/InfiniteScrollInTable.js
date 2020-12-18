@@ -83,8 +83,9 @@ export const InfiniteScrollInTable = () => {
   );
 };
 
-InfiniteScrollInTable.storyName = 'InfiniteScroll';
-
-InfiniteScrollInTable.parameters = {
-  chromatic: { disable: true },
+InfiniteScrollInTable.story = {
+  name: 'InfiniteScroll',
+  parameters: {
+    chromatic: { disable: true },
+  },
 };

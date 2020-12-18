@@ -68,4 +68,4 @@ export const TSCustom = () => (
     </Grommet>
   </>
 );
-TSCustom.storyName = 'TS-Custom';
+TSCustom.story = { name: 'TS-Custom' };

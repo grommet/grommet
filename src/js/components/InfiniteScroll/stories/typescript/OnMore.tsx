@@ -54,6 +54,10 @@ const OnMoreInfiniteScroll: React.FC<IProps> = ({ props }) => {
 export const onMore = () => <OnMoreInfiniteScroll />;
 export const onMoreStep = () => <OnMoreInfiniteScroll step={75} />;
 
-onMore.storyName = 'onMore';
+onMore.story = {
+  name: 'onMore',
+};
 
-onMoreStep.storyName = 'onMore step';
+onMoreStep.story = {
+  name: 'onMore step',
+};

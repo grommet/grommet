@@ -39,10 +39,11 @@ export const OnClickItemList = () => {
   );
 };
 
-OnClickItemList.storyName = 'onClickItem';
-
-OnClickItemList.parameters = {
-  // chromatic disabled because snapshot is covered by jest testing
-  // and snapshot is the same as selection
-  chromatic: { disable: true },
+OnClickItemList.story = {
+  name: 'onClickItem',
+  parameters: {
+    // chromatic disabled because snapshot is covered by jest testing
+    // and snapshot is the same as selection
+    chromatic: { disable: true },
+  },
 };

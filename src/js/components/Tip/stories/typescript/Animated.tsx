@@ -43,6 +43,8 @@ export const Animated = () => {
   );
 };
 
-Animated.parameters = {
-  chromatic: { disable: true },
+Animated.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
 };

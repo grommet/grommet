@@ -27,6 +27,8 @@ export const Default = props => {
   );
 };
 
-Default.parameters = {
-  chromatic: { disable: true },
+Default.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
 };

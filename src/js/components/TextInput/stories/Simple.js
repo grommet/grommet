@@ -19,6 +19,8 @@ export const Simple = () => {
   );
 };
 
-Simple.parameters = {
-  chromatic: { disable: true },
+Simple.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
 };

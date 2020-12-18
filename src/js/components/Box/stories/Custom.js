@@ -17,4 +17,4 @@ export const GradientColorBox = () => (
   </Grommet>
 );
 
-GradientColorBox.storyName = 'Gradient';
+GradientColorBox.story = { name: 'Gradient' };

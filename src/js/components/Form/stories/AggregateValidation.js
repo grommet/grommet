@@ -52,4 +52,6 @@ export const AggregateValidation = () => {
   );
 };
 
-AggregateValidation.storyName = 'Aggregate validation';
+AggregateValidation.story = {
+  name: 'Aggregate validation',
+};

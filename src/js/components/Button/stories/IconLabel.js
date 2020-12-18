@@ -25,4 +25,4 @@ export const IconLabel = () => (
   </Grommet>
 );
 
-IconLabel.storyName = 'Icon label';
+IconLabel.story = { name: 'Icon label' };

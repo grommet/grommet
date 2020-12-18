@@ -48,4 +48,6 @@ export const ObjectMultiple = () => {
   );
 };
 
-ObjectMultiple.storyName = 'Object multiple';
+ObjectMultiple.story = {
+  name: 'Object multiple',
+};
