@@ -53,3 +53,7 @@ CustomBoxMaskedInput.storyName = 'Custom box';
 CustomBoxMaskedInput.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Input/MaskedInput',
+};

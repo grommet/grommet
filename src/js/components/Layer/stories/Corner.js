@@ -42,3 +42,7 @@ CornerLayer.storyName = 'Corner';
 CornerLayer.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Layout/Layer',
+};

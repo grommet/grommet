@@ -26,3 +26,7 @@ export const HelpAndError = () => (
 );
 
 HelpAndError.storyName = 'Help and error';
+
+export default {
+  title: 'Input/Form',
+};

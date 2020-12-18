@@ -119,3 +119,7 @@ export const Themed = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Layout/Card',
+};

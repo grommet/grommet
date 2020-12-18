@@ -19,3 +19,7 @@ export const Round = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Visualizations/Avatar',
+};

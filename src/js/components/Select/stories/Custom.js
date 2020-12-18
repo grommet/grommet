@@ -40,3 +40,7 @@ export const Custom = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Input/Select',
+};

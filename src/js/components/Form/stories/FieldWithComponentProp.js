@@ -87,3 +87,7 @@ export const FieldWithComponentProp = () => (
 );
 
 FieldWithComponentProp.storyName = 'Field with component prop';
+
+export default {
+  title: 'Input/Form',
+};

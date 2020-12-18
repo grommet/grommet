@@ -18,3 +18,7 @@ export const GradientColorBox = () => (
 );
 
 GradientColorBox.storyName = 'Gradient';
+
+export default {
+  title: 'Layout/Box',
+};

@@ -39,3 +39,7 @@ export const TipOnButton = () => (
 TipOnButton.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Controls/Button',
+};

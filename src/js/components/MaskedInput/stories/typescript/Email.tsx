@@ -48,3 +48,7 @@ export const EmailMaskedInput = () => {
 };
 
 EmailMaskedInput.storyName = 'Email with icon';
+
+export default {
+  title: 'Input/MaskedInput',
+};

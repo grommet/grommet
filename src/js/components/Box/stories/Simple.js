@@ -37,3 +37,7 @@ export const SimpleBox = () => (
 );
 
 SimpleBox.storyName = 'Simple';
+
+export default {
+  title: 'Layout/Box',
+};

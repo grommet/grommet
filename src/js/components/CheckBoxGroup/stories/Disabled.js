@@ -25,3 +25,7 @@ export const Disabled = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Input/CheckBoxGroup',
+};

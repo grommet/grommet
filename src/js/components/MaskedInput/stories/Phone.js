@@ -39,3 +39,7 @@ export const Phone = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Input/MaskedInput',
+};

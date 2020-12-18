@@ -30,3 +30,7 @@ export const Sizes = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Visualizations/Avatar',
+};

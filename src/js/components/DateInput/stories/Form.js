@@ -31,3 +31,7 @@ export const DateForm = () => {
 };
 
 DateForm.storyName = 'Form';
+
+export default {
+  title: 'Input/DateInput',
+};

@@ -27,3 +27,7 @@ export const OnClickBox = () => (
 );
 
 OnClickBox.storyName = 'onClick';
+
+export default {
+  title: 'Layout/Box',
+};

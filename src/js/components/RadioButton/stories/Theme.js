@@ -51,3 +51,7 @@ export const ThemeRadioButton = () => {
 };
 
 ThemeRadioButton.storyName = 'Theme';
+
+export default {
+  title: 'Input/RadioButton',
+};

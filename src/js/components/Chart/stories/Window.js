@@ -151,3 +151,7 @@ export const WindowChart = ({ data, max }) => {
 export const Window = () => (
   <WindowChart data={generateData(1000, 100)} max={100} />
 );
+
+export default {
+  title: 'Visualizations/Chart',
+};

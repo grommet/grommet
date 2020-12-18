@@ -48,3 +48,7 @@ ObjectOptions.storyName = 'Object options';
 ObjectOptions.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Input/Select',
+};

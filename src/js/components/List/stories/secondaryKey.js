@@ -31,3 +31,7 @@ export const SecondaryKey = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Visualizations/List',
+};

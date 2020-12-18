@@ -41,3 +41,7 @@ export const Extend = () => (
     </Heading>
   </Grommet>
 );
+
+export default {
+  title: 'Type/Heading',
+};

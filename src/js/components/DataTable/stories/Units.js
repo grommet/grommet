@@ -49,3 +49,7 @@ export const UnitsDataTable = () => (
 );
 
 UnitsDataTable.storyName = 'Units';
+
+export default {
+  title: 'Visualizations/DataTable',
+};

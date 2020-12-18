@@ -104,3 +104,7 @@ export const Custom = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Input/Form',
+};

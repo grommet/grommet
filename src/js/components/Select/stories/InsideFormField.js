@@ -38,3 +38,7 @@ export const InsideFormField = () => {
 };
 
 InsideFormField.storyName = 'Inside a FormField';
+
+export default {
+  title: 'Input/Select',
+};

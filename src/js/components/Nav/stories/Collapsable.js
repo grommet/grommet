@@ -42,3 +42,7 @@ const CollapsableNav = () => (
 );
 
 export const Collapsable = () => <CollapsableNav />;
+
+export default {
+  title: 'Controls/Nav',
+};

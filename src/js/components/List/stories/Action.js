@@ -32,3 +32,7 @@ export const Action = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Visualizations/List',
+};

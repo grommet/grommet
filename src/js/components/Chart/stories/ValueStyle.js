@@ -44,3 +44,7 @@ export const ValueStyleChart = () => (
 );
 
 ValueStyleChart.storyName = 'Value style';
+
+export default {
+  title: 'Visualizations/Chart',
+};

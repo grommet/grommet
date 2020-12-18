@@ -153,3 +153,7 @@ export const ColumnSize = () => (
 );
 
 ColumnSize.storyName = 'Column sizes';
+
+export default {
+  title: 'Visualizations/DataTable',
+};

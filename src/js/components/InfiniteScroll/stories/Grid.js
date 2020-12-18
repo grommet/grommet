@@ -27,3 +27,7 @@ export const GridWithShow = () => <GridInfiniteScroll show={78} />;
 GridInfiniteScroll.storyName = 'Grid';
 
 GridWithShow.storyName = 'Grid with show item 77';
+
+export default {
+  title: 'Utilities/InfiniteScroll',
+};

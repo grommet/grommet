@@ -18,3 +18,7 @@ export const Inline = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Input/DateInput',
+};

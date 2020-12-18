@@ -30,3 +30,7 @@ export const Default = props => {
 Default.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Utilities/Collapsible',
+};

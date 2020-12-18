@@ -39,3 +39,7 @@ export const RangeFormat = () => {
 };
 
 RangeFormat.storyName = 'Range format';
+
+export default {
+  title: 'Input/DateInput',
+};

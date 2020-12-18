@@ -37,3 +37,7 @@ export const Custom = () => (
     </Heading>
   </Grommet>
 );
+
+export default {
+  title: 'Type/Heading',
+};

@@ -43,3 +43,7 @@ HeightReplace.storyName = 'Variable item height w/replace';
 HeightReplace.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Utilities/InfiniteScroll',
+};

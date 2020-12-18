@@ -14,3 +14,7 @@ export const Bar = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Visualizations/Meter',
+};

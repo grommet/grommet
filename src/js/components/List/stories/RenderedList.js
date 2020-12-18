@@ -40,3 +40,7 @@ export const RenderedList = () => (
 );
 
 RenderedList.storyName = 'Key render';
+
+export default {
+  title: 'Visualizations/List',
+};

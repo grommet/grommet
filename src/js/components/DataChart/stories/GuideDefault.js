@@ -19,3 +19,7 @@ export const GuideDefault = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Visualizations/DataChart',
+};

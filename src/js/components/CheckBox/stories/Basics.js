@@ -29,3 +29,7 @@ export const Reverse = () => <SimpleCheckBox label="Choice" reverse />;
 export const NoLabel = () => <SimpleCheckBox />;
 
 NoLabel.storyName = 'No label';
+
+export default {
+  title: 'Input/CheckBox',
+};

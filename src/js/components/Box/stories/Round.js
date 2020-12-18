@@ -57,3 +57,7 @@ export const RoundBox = () => (
 );
 
 RoundBox.storyName = 'Round';
+
+export default {
+  title: 'Layout/Box',
+};

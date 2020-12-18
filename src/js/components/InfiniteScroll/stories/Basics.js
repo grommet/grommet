@@ -39,3 +39,7 @@ export const Marker = () => (
 );
 
 Show.storyName = 'Show 118th item';
+
+export default {
+  title: 'Utilities/InfiniteScroll',
+};

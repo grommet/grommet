@@ -27,3 +27,7 @@ export const Multiple = () => {
 Multiple.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Input/Select',
+};

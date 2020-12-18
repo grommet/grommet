@@ -77,3 +77,7 @@ export const FieldStates = () => {
 };
 
 FieldStates.storyName = 'Field states';
+
+export default {
+  title: 'Input/Form',
+};

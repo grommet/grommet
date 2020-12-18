@@ -35,3 +35,7 @@ export const Animation = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Layout/Box',
+};

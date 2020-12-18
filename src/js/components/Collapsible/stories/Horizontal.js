@@ -53,3 +53,7 @@ export const Horizontal = () => {
 Horizontal.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Utilities/Collapsible',
+};

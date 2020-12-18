@@ -47,3 +47,7 @@ export const FixedSizesBox = () => (
 );
 
 FixedSizesBox.storyName = 'Fixed sizes';
+
+export default {
+  title: 'Layout/Box',
+};

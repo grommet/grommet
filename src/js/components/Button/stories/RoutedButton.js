@@ -18,3 +18,7 @@ export const RoutedButton = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Controls/Button',
+};

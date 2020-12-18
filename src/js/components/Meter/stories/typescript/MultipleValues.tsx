@@ -56,3 +56,7 @@ export const MultipleValues = () => {
 };
 
 MultipleValues.storyName = 'Multiple values';
+
+export default {
+  title: 'Visualizations/Meter',
+};

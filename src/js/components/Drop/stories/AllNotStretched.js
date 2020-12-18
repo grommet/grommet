@@ -161,3 +161,7 @@ const AllDrops = () => (
 
 export const AllNotStretched = () => <AllDrops />;
 AllNotStretched.storyName = 'All not stretched';
+
+export default {
+  title: 'Controls/Drop',
+};

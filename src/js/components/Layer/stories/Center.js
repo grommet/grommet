@@ -90,3 +90,7 @@ CenterLayer.storyName = 'Center';
 CenterLayer.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Layout/Layer',
+};

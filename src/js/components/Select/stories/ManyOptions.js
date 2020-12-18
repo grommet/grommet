@@ -68,3 +68,7 @@ ManyOptions.storyName = 'Many options';
 ManyOptions.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Input/Select',
+};

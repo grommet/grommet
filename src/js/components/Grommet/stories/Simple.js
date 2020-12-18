@@ -46,3 +46,7 @@ export const Vars = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Utilities/Grommet',
+};

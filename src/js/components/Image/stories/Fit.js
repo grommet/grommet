@@ -15,3 +15,7 @@ export const Fit = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Media/Image',
+};

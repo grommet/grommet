@@ -124,3 +124,7 @@ export const Lazy = () => <LazyDrop />;
 Lazy.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Controls/Drop',
+};

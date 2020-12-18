@@ -45,3 +45,7 @@ const PlainButtons = props => (
 
 export const Plain = () => <PlainButtons />;
 export const Active = () => <PlainButtons active />;
+
+export default {
+  title: 'Controls/Button',
+};

@@ -58,3 +58,7 @@ export const ActiveDate = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Visualizations/Calendar',
+};

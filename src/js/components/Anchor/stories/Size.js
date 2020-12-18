@@ -20,3 +20,7 @@ const SizeAnchor = () => {
 };
 
 export const Size = () => <SizeAnchor />;
+
+export default {
+  title: 'Controls/Anchor',
+};

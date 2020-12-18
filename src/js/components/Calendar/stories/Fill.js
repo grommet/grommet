@@ -15,3 +15,7 @@ export const Fill = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Visualizations/Calendar',
+};

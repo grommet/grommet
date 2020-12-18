@@ -332,3 +332,7 @@ export const InfiniteScrollDataTable = () => {
 };
 
 InfiniteScrollDataTable.storyName = 'Infinite Scroll';
+
+export default {
+  title: 'Visualizations/DataTable',
+};

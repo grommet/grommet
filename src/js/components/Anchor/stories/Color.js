@@ -24,3 +24,7 @@ const ColorAnchor = () => {
 };
 
 export const Color = () => <ColorAnchor />;
+
+export default {
+  title: 'Controls/Anchor',
+};

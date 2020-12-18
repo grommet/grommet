@@ -51,3 +51,7 @@ IPv4MaskedInput.storyName = 'IPv4 address';
 IPv4MaskedInput.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Input/MaskedInput',
+};

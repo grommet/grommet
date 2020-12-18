@@ -26,3 +26,7 @@ export const Children = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Input/RadioButton',
+};

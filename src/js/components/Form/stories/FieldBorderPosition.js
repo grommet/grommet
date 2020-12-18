@@ -145,3 +145,7 @@ export const FieldBorderPosition = () => (
 );
 
 FieldBorderPosition.storyName = 'Field border position';
+
+export default {
+  title: 'Input/Form',
+};

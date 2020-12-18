@@ -24,3 +24,7 @@ export const Reverse = () => <ReverseMenu />;
 Reverse.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Controls/Menu',
+};

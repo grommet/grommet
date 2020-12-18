@@ -19,3 +19,7 @@ export const Types = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Visualizations/Chart',
+};

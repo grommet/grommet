@@ -10,3 +10,7 @@ export const Range = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Visualizations/Calendar',
+};

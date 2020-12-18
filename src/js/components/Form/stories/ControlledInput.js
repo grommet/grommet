@@ -122,3 +122,7 @@ ControlledInput.parameters = {
   // chromatic disabled because snapshot is the same as ControlledInputLazy
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Input/Form',
+};

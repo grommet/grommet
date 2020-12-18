@@ -46,3 +46,7 @@ export const GradientCharts = () => (
 );
 
 GradientCharts.storyName = 'Gradient';
+
+export default {
+  title: 'Visualizations/Chart',
+};

@@ -57,3 +57,7 @@ export const Fill = () => (
 );
 
 Fill.storyName = 'Fill and pin';
+
+export default {
+  title: 'Visualizations/DataTable',
+};

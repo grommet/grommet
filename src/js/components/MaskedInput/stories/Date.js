@@ -53,3 +53,7 @@ DateMaskedInput.storyName = 'Date';
 DateMaskedInput.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Input/MaskedInput',
+};

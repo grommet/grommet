@@ -100,3 +100,7 @@ export const ScrollBodyLayer = () => (
 );
 
 ScrollBodyLayer.storyName = 'Fixed header, scroll body';
+
+export default {
+  title: 'Layout/Layer',
+};

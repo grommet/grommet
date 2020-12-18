@@ -99,3 +99,7 @@ export const Stacked = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Layout/Card',
+};

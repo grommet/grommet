@@ -14,3 +14,7 @@ export const Simple = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Visualizations/DataTable',
+};

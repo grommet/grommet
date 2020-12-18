@@ -107,3 +107,7 @@ export const FieldWithChildren = () => (
 );
 
 FieldWithChildren.storyName = 'Field with children';
+
+export default {
+  title: 'Input/Form',
+};

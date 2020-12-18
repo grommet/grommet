@@ -72,3 +72,7 @@ export const Kind = () => (
     </Grommet>
   </Box>
 );
+
+export default {
+  title: 'Controls/Button',
+};

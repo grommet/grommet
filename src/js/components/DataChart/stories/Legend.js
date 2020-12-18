@@ -37,3 +37,7 @@ export const Legend = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Visualizations/DataChart',
+};

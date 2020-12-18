@@ -17,3 +17,7 @@ export const OnDocument = () => (
 OnDocument.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Utilities/Keyboard',
+};

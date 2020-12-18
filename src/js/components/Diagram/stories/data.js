@@ -18,3 +18,7 @@ export const data = [
     cut: 'pear',
   },
 ];
+
+export default {
+  title: 'Visualizations/Diagram',
+};

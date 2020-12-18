@@ -34,3 +34,7 @@ Simple.parameters = {
 Initial.storyName = 'Initial child';
 
 NoControls.storyName = 'Without controls';
+
+export default {
+  title: 'Media/Carousel',
+};

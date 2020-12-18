@@ -113,3 +113,7 @@ export const Animated = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Visualizations/Diagram',
+};

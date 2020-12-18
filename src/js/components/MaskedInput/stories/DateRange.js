@@ -75,3 +75,7 @@ export const DateRange = () => {
 };
 
 DateRange.storyName = 'Date range';
+
+export default {
+  title: 'Input/MaskedInput',
+};

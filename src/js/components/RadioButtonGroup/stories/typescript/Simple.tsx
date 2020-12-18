@@ -28,3 +28,7 @@ export const SimpleTS = () => {
     />
   );
 };
+
+export default {
+  title: 'Input/RadioButtonGroup',
+};

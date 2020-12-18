@@ -68,3 +68,7 @@ export const Uncontrolled = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Input/Form',
+};

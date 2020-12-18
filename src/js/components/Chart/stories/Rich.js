@@ -97,3 +97,7 @@ export const Rich = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Visualizations/Chart',
+};

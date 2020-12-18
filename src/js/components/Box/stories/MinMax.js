@@ -206,3 +206,7 @@ export const MinMaxSizesBox = () => (
 );
 
 MinMaxSizesBox.storyName = 'Min/max sizes';
+
+export default {
+  title: 'Layout/Box',
+};

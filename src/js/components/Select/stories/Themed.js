@@ -64,3 +64,7 @@ export const Themed = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Input/Select',
+};

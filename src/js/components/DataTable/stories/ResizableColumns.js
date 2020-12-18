@@ -76,3 +76,7 @@ export const ResizableDataTable = () => (
 );
 
 ResizableDataTable.storyName = 'Resizable columns';
+
+export default {
+  title: 'Visualizations/DataTable',
+};

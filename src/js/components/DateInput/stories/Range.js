@@ -38,3 +38,7 @@ export const Range = () => {
 Range.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Input/DateInput',
+};

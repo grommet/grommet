@@ -161,3 +161,7 @@ export const OnSelectDataTable = () => {
 };
 
 OnSelectDataTable.storyName = 'OnSelect';
+
+export default {
+  title: 'Visualizations/DataTable',
+};

@@ -25,3 +25,7 @@ export const All = () => (
     </Paragraph>
   </Grommet>
 );
+
+export default {
+  title: 'Type/Paragraph',
+};

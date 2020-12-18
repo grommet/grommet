@@ -34,3 +34,7 @@ export const Example = () => {
 };
 
 Example.storyName = 'Responsive cards';
+
+export default {
+  title: 'Layout/Grid',
+};

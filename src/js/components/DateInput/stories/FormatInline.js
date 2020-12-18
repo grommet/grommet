@@ -25,3 +25,7 @@ export const FormatInline = () => {
 };
 
 FormatInline.storyName = 'Format inline';
+
+export default {
+  title: 'Input/DateInput',
+};

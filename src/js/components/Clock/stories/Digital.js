@@ -48,3 +48,7 @@ export const Digital = () => (
 Digital.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Visualizations/Clock',
+};

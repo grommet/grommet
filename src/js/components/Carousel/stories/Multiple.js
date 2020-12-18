@@ -54,3 +54,7 @@ export const Multi = () => (
     </Carousel>
   </Grommet>
 );
+
+export default {
+  title: 'Media/Carousel',
+};

@@ -32,3 +32,7 @@ export const Simple = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Input/Select',
+};

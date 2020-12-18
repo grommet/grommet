@@ -22,3 +22,7 @@ export const Opacity = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Media/Image',
+};

@@ -30,3 +30,7 @@ export const Selection = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Visualizations/List',
+};

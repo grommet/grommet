@@ -53,3 +53,7 @@ export const ServedDataTable = () => {
 };
 
 ServedDataTable.storyName = 'Served';
+
+export default {
+  title: 'Visualizations/DataTable',
+};

@@ -25,3 +25,7 @@ BottomControlButton.storyName = 'Bottom control button';
 BottomControlButton.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Controls/Menu',
+};

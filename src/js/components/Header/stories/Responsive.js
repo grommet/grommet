@@ -46,3 +46,7 @@ export const Responsive = () => (
     </Header>
   </Grommet>
 );
+
+export default {
+  title: 'Layout/Header',
+};

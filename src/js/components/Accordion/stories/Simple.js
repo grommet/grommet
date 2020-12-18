@@ -48,3 +48,7 @@ export const Multiple = () => <SimpleAccordion multiple />;
 Multiple.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Controls/Accordion',
+};

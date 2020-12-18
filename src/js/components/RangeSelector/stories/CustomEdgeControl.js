@@ -59,3 +59,7 @@ export const CustomEdgeControl = ({ direction = 'horizontal', ...rest }) => {
 };
 
 CustomEdgeControl.storyName = 'Custom edge controls';
+
+export default {
+  title: 'Input/RangeSelector',
+};

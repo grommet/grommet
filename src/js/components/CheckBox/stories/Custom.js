@@ -60,3 +60,7 @@ export const Custom = props => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Input/CheckBox',
+};

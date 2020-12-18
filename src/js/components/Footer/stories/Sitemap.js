@@ -52,3 +52,7 @@ export const Sitemap = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Layout/Footer',
+};

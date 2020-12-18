@@ -36,3 +36,7 @@ const SidebarNav = () => {
 };
 
 export const Sidebar = () => <SidebarNav />;
+
+export default {
+  title: 'Controls/Nav',
+};

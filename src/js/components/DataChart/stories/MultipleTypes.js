@@ -63,3 +63,7 @@ export const MultipleTypes = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Visualizations/DataChart',
+};

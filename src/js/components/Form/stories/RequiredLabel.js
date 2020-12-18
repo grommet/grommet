@@ -40,3 +40,7 @@ export const RequiredLabel = () => (
 );
 
 RequiredLabel.storyName = 'Required label';
+
+export default {
+  title: 'Input/Form',
+};

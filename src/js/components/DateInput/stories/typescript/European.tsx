@@ -24,3 +24,7 @@ export const European = () => {
 European.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Input/DateInput',
+};

@@ -39,3 +39,7 @@ export const Layout = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Visualizations/Chart',
+};

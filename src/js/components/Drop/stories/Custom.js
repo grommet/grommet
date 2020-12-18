@@ -45,3 +45,7 @@ const CustomDrop = () => {
 };
 
 export const Custom = () => <CustomDrop />;
+
+export default {
+  title: 'Controls/Drop',
+};

@@ -38,3 +38,7 @@ export const Axis = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Visualizations/DataChart',
+};

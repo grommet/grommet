@@ -28,3 +28,7 @@ export const ElevationBox = () => (
 );
 
 ElevationBox.storyName = 'Elevation';
+
+export default {
+  title: 'Layout/Box',
+};

@@ -38,3 +38,7 @@ ShowAfter.storyName = 'Replace, show after step';
 ShowAfter.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Utilities/InfiniteScroll',
+};

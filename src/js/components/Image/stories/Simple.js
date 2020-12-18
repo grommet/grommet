@@ -8,3 +8,7 @@ export const Simple = () => (
     <Image src="//v2.grommet.io/assets/IMG_4245.jpg" />
   </Grommet>
 );
+
+export default {
+  title: 'Media/Image',
+};

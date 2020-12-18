@@ -29,3 +29,7 @@ export const Sort = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Visualizations/DataTable',
+};

@@ -35,3 +35,7 @@ export const Analog = () => (
 Analog.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Visualizations/Clock',
+};

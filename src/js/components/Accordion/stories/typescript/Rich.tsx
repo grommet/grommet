@@ -249,3 +249,7 @@ const RichAccordion = () => {
 };
 
 export const Rich = () => <RichAccordion />;
+
+export default {
+  title: 'Controls/Accordion',
+};

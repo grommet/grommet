@@ -51,3 +51,7 @@ export const Social = () => (
     </Footer>
   </Grommet>
 );
+
+export default {
+  title: 'Layout/Footer',
+};

@@ -48,3 +48,7 @@ const SimpleRangeSelector = ({ direction = 'horizontal', ...rest }) => {
 export const Simple = () => <SimpleRangeSelector />;
 export const Step = () => <SimpleRangeSelector step={2} />;
 export const Vertical = () => <SimpleRangeSelector direction="vertical" />;
+
+export default {
+  title: 'Input/RangeSelector',
+};

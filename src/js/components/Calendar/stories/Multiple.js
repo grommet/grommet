@@ -28,3 +28,7 @@ export const Multiple = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Visualizations/Calendar',
+};

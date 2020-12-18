@@ -38,3 +38,7 @@ export const CalendarDrop = () => <CalendarDropButton />;
 CalendarDrop.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Controls/DropButton',
+};

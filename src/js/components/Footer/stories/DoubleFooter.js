@@ -57,3 +57,7 @@ export const DoubleFooter = () => {
 };
 
 DoubleFooter.storyName = 'Double footer';
+
+export default {
+  title: 'Layout/Footer',
+};

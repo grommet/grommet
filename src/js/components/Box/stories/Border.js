@@ -83,3 +83,7 @@ export const BorderBox = () => (
 );
 
 BorderBox.storyName = 'Border';
+
+export default {
+  title: 'Layout/Box',
+};

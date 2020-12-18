@@ -100,3 +100,7 @@ export const Seasons = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Input/Select',
+};

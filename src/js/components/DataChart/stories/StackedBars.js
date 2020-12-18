@@ -45,3 +45,7 @@ export const StackedBars = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Visualizations/DataChart',
+};

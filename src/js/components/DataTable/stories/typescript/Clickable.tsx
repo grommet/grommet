@@ -155,3 +155,7 @@ export const ClickableDataTable = () => (
 );
 
 ClickableDataTable.storyName = 'Clickable';
+
+export default {
+  title: 'Visualizations/DataTable',
+};

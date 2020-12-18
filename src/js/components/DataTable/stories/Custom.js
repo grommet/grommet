@@ -65,3 +65,7 @@ export const Custom = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Visualizations/DataTable',
+};
