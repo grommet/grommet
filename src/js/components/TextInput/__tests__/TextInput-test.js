@@ -292,34 +292,36 @@ describe('TextInput', () => {
     );
   });
 
-  test('auto-select 1st suggestion with highlightFirstSuggestion', () => {
+  test('auto-select 2nd suggestion with defaultSuggestion', () => {
     const onSelect = jest.fn();
+    const suggestions = ['test1', 'test2'];
+    const defaultSuggestionIndex = 1;
     const { getByTestId } = render(
       <Grommet>
         <TextInput
           data-testid="test-input"
           id="item"
           name="item"
-          highlightFirstSuggestion
-          suggestions={['test1', 'test2']}
+          defaultSuggestion={defaultSuggestionIndex}
+          suggestions={suggestions}
           onSuggestionSelect={onSelect}
         />
       </Grommet>,
     );
 
     const input = getByTestId('test-input');
-    // open drop - first should be automatically highlighted
+    // open drop - second should be automatically highlighted
     fireEvent.keyDown(input, { keyCode: 40 }); // down
-    // pressing enter here will select the first suggestion
+    // pressing enter here will select the second suggestion
     fireEvent.keyDown(input, { keyCode: 13 }); // enter
     expect(onSelect).toBeCalledWith(
       expect.objectContaining({
-        suggestion: 'test1',
+        suggestion: suggestions[defaultSuggestionIndex],
       }),
     );
   });
 
-  test('do not select 1st suggestion without highlightFirstSuggestion', () => {
+  test('do not select any suggestion without defaultSuggestion', () => {
     const onSelect = jest.fn();
     const { getByTestId } = render(
       <Grommet>

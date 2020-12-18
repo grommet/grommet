@@ -13,7 +13,7 @@ export interface TextInputProps {
   dropTarget?: object;
   dropProps?: DropProps;
   focusIndicator?: boolean;
-  highlightFirstSuggestion?: boolean;
+  defaultSuggestion?: number;
   icon?: JSX.Element;
   id?: string;
   messages?: {

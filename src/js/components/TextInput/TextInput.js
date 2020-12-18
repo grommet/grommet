@@ -76,12 +76,12 @@ const TextInput = forwardRef(
   (
     {
       a11yTitle,
+      defaultSuggestion,
       defaultValue,
       dropAlign = defaultDropAlign,
       dropHeight,
       dropTarget,
       dropProps,
-      highlightFirstSuggestion,
       icon,
       id,
       messages = defaultMessages,
@@ -152,16 +152,17 @@ const TextInput = forwardRef(
     /* eslint-enable react-hooks/exhaustive-deps */
 
     const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(
-      highlightFirstSuggestion ? 0 : -1,
+      typeof defaultSuggestion === 'number' ? defaultSuggestion : -1,
     );
 
     // reset activeSuggestionIndex when the drop is closed
     useEffect(() => {
-      const baseIndex = highlightFirstSuggestion ? 0 : -1;
-      if (activeSuggestionIndex !== baseIndex && !showDrop) {
-        setActiveSuggestionIndex(baseIndex);
+      const defaultIndex =
+        typeof defaultSuggestion === 'number' ? defaultSuggestion : -1;
+      if (activeSuggestionIndex !== defaultIndex && !showDrop) {
+        setActiveSuggestionIndex(defaultIndex);
       }
-    }, [activeSuggestionIndex, showDrop, highlightFirstSuggestion]);
+    }, [activeSuggestionIndex, showDrop, defaultSuggestion]);
 
     // announce active suggestion
     useEffect(() => {
@@ -178,13 +179,13 @@ const TextInput = forwardRef(
           typeof suggestion === 'object' ? suggestion.value : suggestion,
         );
         const indexOfValue = suggestionValues.indexOf(value);
-        if (indexOfValue === -1) {
-          setActiveSuggestionIndex(highlightFirstSuggestion ? 0 : indexOfValue);
+        if (indexOfValue === -1 && typeof defaultSuggestion === 'number') {
+          setActiveSuggestionIndex(defaultSuggestion);
         } else {
-          setActiveSuggestionIndex(suggestionValues.indexOf(value));
+          setActiveSuggestionIndex(indexOfValue);
         }
       } else setActiveSuggestionIndex(-1);
-    }, [suggestions, value, highlightFirstSuggestion]);
+    }, [suggestions, value, defaultSuggestion]);
 
     // make sure activeSuggestion remains visible in scroll
     useEffect(() => {
