@@ -13,6 +13,7 @@ export interface SelectProps {
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
   children?: (...args: any[]) => any;
+  clear?: boolean;
   closeOnChange?: boolean;
   disabled?: boolean | (number | string | object)[];
   disabledKey?: string | ((...args: any[]) => any);
