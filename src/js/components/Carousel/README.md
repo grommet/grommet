@@ -154,6 +154,16 @@ If specified, the index of
 number
 ```
 
+**onChild**
+
+If specified, this function will 
+      be called with the active index when the currently active carousel 
+      changes.
+
+```
+function
+```
+
 **controls**
 
 Whether to show carousel controls and which type of controls. Defaults to `true`.

@@ -15,6 +15,7 @@ export interface CarouselProps {
   fill?: boolean;
   play?: number;
   initialChild?: number;
+  onChild?: (...args: any[]) => any;
 }
 
 declare const Carousel: React.ComponentClass<CarouselProps &
