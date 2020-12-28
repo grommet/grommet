@@ -4775,7 +4775,7 @@ boolean",
       },
       Object {
         "defaultValue": false,
-        "description": "Whether the width and/or height should fill the current viewport 
+        "description": "Whether the width and/or height should fill the current viewport
         size.",
         "format": "boolean
 vertical
@@ -4855,13 +4855,13 @@ string",
       },
       Object {
         "defaultValue": true,
-        "description": "Whether there should be an overlay preventing interaction underneath 
+        "description": "Whether there should be an overlay preventing interaction underneath
         the layer.",
         "format": "boolean",
         "name": "modal",
       },
       Object {
-        "description": "Function that will be invoked on modal layers when the user clicks 
+        "description": "Function that will be invoked on modal layers when the user clicks
       outside the layer.",
         "format": "function",
         "name": "onClickOutside",
@@ -4902,7 +4902,7 @@ top-right",
         "name": "responsive",
       },
       Object {
-        "description": "Target where the layer will be aligned to. This should be a React 
+        "description": "Target where the layer will be aligned to. This should be a React
       reference.",
         "format": "object",
         "name": "target",
