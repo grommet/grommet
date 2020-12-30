@@ -114,14 +114,14 @@ const Responsive = ({
       // Take into consideration if not array is sent but a simple string
       let columnsVal = columns;
       if (columns) {
-        if (columns[size]) {
+        if (columns[size] && typeof columns !== "string") {
           columnsVal = columns[size];
         }
       }
 
       let rowsVal = rows;
       if (rows) {
-        if (rows[size]) {
+        if (rows[size] && typeof columns !== "string") {
           rowsVal = rows[size];
         }
       }
