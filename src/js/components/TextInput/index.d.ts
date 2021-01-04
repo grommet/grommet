@@ -27,6 +27,10 @@ export interface TextInputProps {
     target: React.RefObject<HTMLElement>['current'];
     suggestion: any;
   }) => void;
+  onSuggestionSelect?: (x: {
+    target: React.RefObject<HTMLElement>['current'];
+    suggestion: any;
+  }) => void;
   onSuggestionsOpen?: () => void;
   onSuggestionsClose?: () => void;
   placeholder?: PlaceHolderType;
