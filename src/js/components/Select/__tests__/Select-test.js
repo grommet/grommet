@@ -1071,6 +1071,27 @@ describe('Select', () => {
     expect(select.value).toEqual('two');
   });
 
+  test('default value object options', () => {
+    const { container, getByDisplayValue } = render(
+      <Grommet>
+        <Select
+          id="test-select"
+          placeholder="test select"
+          options={[
+            { label: 'one', value: 1 },
+            { label: 'two', value: 2 },
+          ]}
+          defaultValue={2}
+          labelKey="label"
+          valueKey={{ key: 'value', reduce: true }}
+        />
+      </Grommet>,
+    );
+    const select = getByDisplayValue('two');
+    expect(container.firstChild).toMatchSnapshot();
+    expect(select.value).toEqual('two');
+  });
+
   test('default value clear', () => {
     const Test = () => {
       const [value] = React.useState();
