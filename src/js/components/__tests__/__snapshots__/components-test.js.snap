@@ -7316,6 +7316,15 @@ string",
         "name": "a11yTitle",
       },
       Object {
+        "description": "Default suggestion to highlight, as an index into the suggestions array.
+
+      If set, the suggestion at the specified index in the suggestions array
+      will be highlighted by default when the suggestions drop opens.
+      ",
+        "format": "number",
+        "name": "defaultSuggestion",
+      },
+      Object {
         "defaultValue": Object {
           "left": "left",
           "top": "bottom",
