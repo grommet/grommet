@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import isChromatic from 'storybook-chromatic/isChromatic';
 
 import { deepMerge } from 'grommet/utils';
 
@@ -40,6 +39,4 @@ const CustomFocusFC = () => (
   </Grommet>
 );
 
-if (!isChromatic()) {
-  storiesOf('TypeScript/Theme', module).add('Focus', () => <CustomFocusFC />);
-}
+storiesOf('Theme', module).add('Focus', () => <CustomFocusFC />);

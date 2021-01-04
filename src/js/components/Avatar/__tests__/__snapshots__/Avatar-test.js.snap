@@ -7,13 +7,12 @@ exports[`Avatar icon renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #FFCA58;
+  background-color: #FFCA58;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -44,7 +43,7 @@ exports[`Avatar icon renders 1`] = `
   className="c0"
 >
   <div
-    className="c1 "
+    className="c1 StyledAvatar-sc-1suyamb-1"
   />
 </div>
 `;
@@ -56,7 +55,6 @@ exports[`Avatar renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -91,10 +89,10 @@ exports[`Avatar renders 1`] = `
   className="c0"
 >
   <div
-    className="c1 "
+    className="c1 StyledAvatar-sc-1suyamb-1"
   />
   <div
-    className="c1 "
+    className="c1 StyledAvatar-sc-1suyamb-1"
     id="test id"
     name="test name"
   />
@@ -108,7 +106,6 @@ exports[`Avatar round renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -136,7 +133,6 @@ exports[`Avatar round renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -165,7 +161,6 @@ exports[`Avatar round renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -194,7 +189,6 @@ exports[`Avatar round renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -223,7 +217,6 @@ exports[`Avatar round renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -252,7 +245,6 @@ exports[`Avatar round renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -313,22 +305,22 @@ exports[`Avatar round renders 1`] = `
   className="c0"
 >
   <div
-    className="c1 "
+    className="c1 StyledAvatar-sc-1suyamb-1"
   />
   <div
-    className="c2 "
+    className="c2 StyledAvatar-sc-1suyamb-1"
   />
   <div
-    className="c3 "
+    className="c3 StyledAvatar-sc-1suyamb-1"
   />
   <div
-    className="c4 "
+    className="c4 StyledAvatar-sc-1suyamb-1"
   />
   <div
-    className="c5 "
+    className="c5 StyledAvatar-sc-1suyamb-1"
   />
   <div
-    className="c6 "
+    className="c6 StyledAvatar-sc-1suyamb-1"
   />
 </div>
 `;
@@ -340,7 +332,6 @@ exports[`Avatar size renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -369,7 +360,6 @@ exports[`Avatar size renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -398,7 +388,6 @@ exports[`Avatar size renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -427,7 +416,6 @@ exports[`Avatar size renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -464,16 +452,16 @@ exports[`Avatar size renders 1`] = `
   className="c0"
 >
   <div
-    className="c1 "
+    className="c1 StyledAvatar-sc-1suyamb-1"
   />
   <div
-    className="c2 "
+    className="c2 StyledAvatar-sc-1suyamb-1"
   />
   <div
-    className="c3 "
+    className="c3 StyledAvatar-sc-1suyamb-1"
   />
   <div
-    className="c4 "
+    className="c4 StyledAvatar-sc-1suyamb-1"
   />
 </div>
 `;
@@ -485,7 +473,6 @@ exports[`Avatar stack renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -500,7 +487,6 @@ exports[`Avatar stack renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -515,7 +501,6 @@ exports[`Avatar stack renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -544,7 +529,6 @@ exports[`Avatar stack renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -560,7 +544,6 @@ exports[`Avatar stack renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -630,7 +613,7 @@ exports[`Avatar stack renders 1`] = `
           className="c4"
         >
           <div
-            className="c5 "
+            className="c5 StyledAvatar-sc-1suyamb-1"
           />
           <div
             className="c6"
@@ -645,7 +628,7 @@ exports[`Avatar stack renders 1`] = `
       className="c7"
     >
       <div
-        className="c8 "
+        className="c8 StyledAvatar-sc-1suyamb-1"
       />
     </div>
   </div>
@@ -659,13 +642,12 @@ exports[`Avatar text renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #555555;
+  background-color: #555555;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -688,13 +670,12 @@ exports[`Avatar text renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #7D4CDB;
+  background-color: #7D4CDB;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -733,24 +714,229 @@ exports[`Avatar text renders 1`] = `
   className="c0"
 >
   <div
-    className="c1 "
+    className="c1 StyledAvatar-sc-1suyamb-1"
   >
     <span
       className="c2"
-      size="xlarge"
     >
       R
     </span>
   </div>
   <div
-    className="c3 "
+    className="c3 StyledAvatar-sc-1suyamb-1"
   >
     <span
       className="c2"
-      size="xlarge"
     >
       SY
     </span>
+  </div>
+</div>
+`;
+
+exports[`Avatar text size changes according to theme 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 48px;
+  width: 48px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 72px;
+  width: 72px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 50px;
+  width: 50px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c3 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  font-size: 22px;
+  line-height: 28px;
+}
+
+.c5 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  font-size: 30px;
+  line-height: normal;
+}
+
+.c7 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.c9 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  font-size: 10px;
+  line-height: normal;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2 StyledAvatar-sc-1suyamb-1"
+    >
+      <span
+        className="c3 "
+      >
+        T1
+      </span>
+    </div>
+    <div
+      className="c4 StyledAvatar-sc-1suyamb-1"
+    >
+      <span
+        className="c5 "
+      >
+        T2
+      </span>
+    </div>
+    <div
+      className="c6 StyledAvatar-sc-1suyamb-1"
+    >
+      <span
+        className="c7 "
+      >
+        T3
+      </span>
+    </div>
+    <div
+      className="c8 StyledAvatar-sc-1suyamb-1"
+    >
+      <span
+        className="c9 "
+      >
+        T4
+      </span>
+    </div>
   </div>
 </div>
 `;

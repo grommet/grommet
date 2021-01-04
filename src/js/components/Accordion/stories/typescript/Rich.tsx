@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import isChromatic from 'storybook-chromatic/isChromatic';
 
 import {
   Bookmark,
@@ -19,13 +17,23 @@ import {
   Text,
   ThemeContext,
 } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { grommet, ThemeType } from 'grommet/themes';
 
-const richAccordionTheme = {
+// Type annotations can only be used in TypeScript files.
+// Remove ': ThemeType' if you are not using Typescript.
+const richAccordionTheme: ThemeType = {
   accordion: {
     icons: {
       collapse: FormSubtract,
       expand: FormAdd,
+    },
+    panel: {
+      border: {
+        side: 'horizontal',
+        size: 'medium',
+        color: '#DADADA',
+        style: 'dotted',
+      },
     },
   },
 };
@@ -70,7 +78,7 @@ const spinning = (
   >
     <path
       opacity=".25"
-      d="M16 0 A16 16 0 0 0 16 32 A16 16 0 0 0 16 0 M16 4 A12 12 0 0 1 16 28 
+      d="M16 0 A16 16 0 0 0 16 32 A16 16 0 0 0 16 0 M16 4 A12 12 0 0 1 16 28
       A12 12 0 0 1 16 4"
     />
     <path d="M16 0 A16 16 0 0 1 32 16 L28 16 A12 12 0 0 0 16 4z">
@@ -229,7 +237,7 @@ const RichAccordion = () => {
                   }}
                   gap="medium"
                 >
-                  Yeah believe me, this channel has 2,000 members.
+                  Yeah believe me, this channel has 3,000 members.
                 </Box>
               </RichPanel>
             </Accordion>
@@ -240,8 +248,4 @@ const RichAccordion = () => {
   );
 };
 
-if (!isChromatic()) {
-  storiesOf('TypeScript/Accordion', module).add('Rich', () => (
-    <RichAccordion />
-  ));
-}
+export const Rich = () => <RichAccordion />;

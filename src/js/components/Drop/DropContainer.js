@@ -11,14 +11,13 @@ import { FocusedContainer } from '../FocusedContainer';
 import {
   backgroundIsDark,
   findScrollParents,
-  findVisibleParent,
   parseMetricToNum,
+  PortalContext,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 
-import { PortalContext } from './PortalContext';
 import { StyledDrop } from './StyledDrop';
 
 // using react synthetic event to be able to stop propagation that
@@ -31,13 +30,13 @@ const preventLayerClose = event => {
   }
 };
 
+const defaultAlign = { top: 'top', left: 'left' };
+const defaultPortalContext = [];
+
 const DropContainer = forwardRef(
   (
     {
-      align = {
-        top: 'top',
-        left: 'left',
-      },
+      align = defaultAlign,
       children,
       dropTarget,
       elevation,
@@ -49,19 +48,19 @@ const DropContainer = forwardRef(
       responsive,
       restrictFocus,
       stretch = 'width',
+      trapFocus,
       ...rest
     },
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
-    const portalContext = useContext(PortalContext) || [];
+    const portalContext = useContext(PortalContext) || defaultPortalContext;
     const portalId = useMemo(() => portalContext.length, [portalContext]);
     const nextPortalContext = useMemo(() => [...portalContext, portalId], [
       portalContext,
       portalId,
     ]);
     const dropRef = useRef();
-
     useEffect(() => {
       // We try to preserve the maxHeight as changing it causes any scroll
       // position to be lost. We set the maxHeight on mount and if the window
@@ -81,15 +80,20 @@ const DropContainer = forwardRef(
             container.style.maxHeight = '';
           }
           // get bounds
-          const targetRect = findVisibleParent(target).getBoundingClientRect();
+          const targetRect = target.getBoundingClientRect();
           const containerRect = container.getBoundingClientRect();
           // determine width
-          const width = Math.min(
-            stretch
-              ? Math.max(targetRect.width, containerRect.width)
-              : containerRect.width,
-            windowWidth,
-          );
+          let width;
+          if (stretch) {
+            width = Math.min(
+              stretch === 'align'
+                ? Math.min(targetRect.width, containerRect.width)
+                : Math.max(targetRect.width, containerRect.width),
+              windowWidth,
+            );
+          } else {
+            width = Math.min(containerRect.width, windowWidth);
+          }
           // set left position
           let left;
           if (align.left) {
@@ -329,7 +333,10 @@ const DropContainer = forwardRef(
 
     return (
       <PortalContext.Provider value={nextPortalContext}>
-        <FocusedContainer onKeyDown={onEsc && preventLayerClose}>
+        <FocusedContainer
+          onKeyDown={onEsc && preventLayerClose}
+          trapFocus={trapFocus}
+        >
           <Keyboard
             onEsc={
               onEsc

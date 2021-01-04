@@ -1,11 +1,10 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Menu } from 'grommet';
 import { Power, User } from 'grommet-icons';
 import { grommet } from 'grommet/themes';
 
-const Reverse = () => (
+const ReverseMenu = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
       <Menu
@@ -21,4 +20,9 @@ const Reverse = () => (
   </Grommet>
 );
 
-storiesOf('Menu', module).add('Reverse', () => <Reverse />);
+export const Reverse = () => <ReverseMenu />;
+Reverse.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
+};

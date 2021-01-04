@@ -1,44 +1,37 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
-import { focusStyle, inputStyle, placeholderStyle } from '../../utils';
-
-const sizeStyle = props => {
-  const data = props.theme.text[props.size];
-  return css`
-    font-size: ${data.size};
-    line-height: ${data.height};
-  `;
-};
-
-const plainStyle = css`
-  border: none;
-`;
+import {
+  disabledStyle,
+  getInputPadBySide,
+  inputStyle,
+  plainInputStyle,
+} from '../../utils';
 
 export const StyledMaskedInput = styled.input`
-  ${inputStyle} width: 100%;
-
-  ${props => props.size && sizeStyle(props)} ${props =>
-  props.plain && plainStyle}
-
-  ${placeholderStyle}
+  ${inputStyle}
+  ${props => props.plain && plainInputStyle}
   ${props =>
     props.icon &&
     (props.reverse
       ? `padding-right: ${props.theme.global.edgeSize.large};`
       : `padding-left: ${props.theme.global.edgeSize.large};`)}
-
-  &::-moz-focus-inner {
-    border: none;
-    outline: none;
-  }
-
-  ${props => props.focus && !props.plain && focusStyle};
+  ${props =>
+    props.disabled &&
+    disabledStyle(
+      props.theme.maskedInput.disabled &&
+        props.theme.maskedInput.disabled.opacity,
+    )}
   ${props => props.theme.maskedInput && props.theme.maskedInput.extend};
 `;
 
 export const StyledMaskedInputContainer = styled.div`
   position: relative;
   width: 100%;
+
+  ${props =>
+    props.theme.maskedInput &&
+    props.theme.maskedInput.container &&
+    props.theme.maskedInput.container.extend};
 `;
 
 export const StyledIcon = styled.div`
@@ -50,6 +43,6 @@ export const StyledIcon = styled.div`
   pointer-events: none;
   ${props =>
     props.reverse
-      ? `right: ${props.theme.global.input.padding};`
-      : `left: ${props.theme.global.input.padding};`}
+      ? `right: ${getInputPadBySide(props, 'right')};`
+      : `left: ${getInputPadBySide(props, 'left')};`}
 `;

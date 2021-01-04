@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
-import { cleanup, render, fireEvent } from '@testing-library/react';
+import { cleanup, render, fireEvent, act } from '@testing-library/react';
 
 import { Grommet } from '../../Grommet';
 import { Carousel } from '..';
@@ -62,7 +62,39 @@ describe('Carousel', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('play', done => {
+  test('should trigger events of focus, blur and click', () => {
+    const onFocus = jest.fn();
+    const onBlur = jest.fn();
+    const { container } = render(
+      <Grommet>
+        <Carousel
+          id="test-carousel"
+          onFocus={onFocus}
+          onBlur={onBlur}
+          controls="selectors"
+        >
+          <Image src="//v2.grommet.io/assets/IMG_4245.jpg" />
+          <Image src="//v2.grommet.io/assets/IMG_4210.jpg" />
+        </Carousel>
+      </Grommet>,
+    );
+
+    const button = document
+      .getElementById('test-carousel')
+      .querySelector('button');
+
+    fireEvent.focus(button);
+    expect(onFocus).toHaveBeenCalledTimes(1);
+
+    fireEvent.click(button);
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.blur(button);
+    expect(onBlur).toHaveBeenCalledTimes(1);
+  });
+
+  test('play', () => {
+    jest.useFakeTimers();
     const { container } = render(
       <Grommet>
         <Carousel play={1000}>
@@ -72,11 +104,10 @@ describe('Carousel', () => {
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
-
-    // give some time for the carousel to advance
-    setTimeout(() => {
-      expect(container.firstChild).toMatchSnapshot();
-      done();
-    }, 1300);
+    // Advance timers so the carousel advances
+    act(() => {
+      jest.advanceTimersByTime(1300);
+    });
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

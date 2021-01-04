@@ -1,29 +1,42 @@
 export const normalizeValues = values =>
   (values || []).map((value, index) => {
-    if (Array.isArray(value)) {
-      return { value };
-    }
-    if (typeof value === 'number') {
-      return { value: [index, value] };
-    }
+    if (value === undefined) return { value: [index, undefined] };
+    if (typeof value === 'number') return { value: [index, value] };
+    if (Array.isArray(value)) return { value };
     return value;
   });
 
 export const normalizeBounds = (bounds, values) => {
   let result = bounds;
   if (!result) {
-    result = [[0, 1], [0, 1]];
+    result = [
+      [0, 1],
+      [0, 1],
+    ];
     (values || []).forEach(value => {
-      result[0][0] = Math.min(result[0][0], value.value[0]);
-      result[0][1] = Math.max(result[0][1], value.value[0]);
-      result[1][0] = Math.min(result[1][0], value.value[1]);
-      result[1][1] = Math.max(result[1][1], value.value[1]);
+      if (value.value[0] !== undefined) {
+        result[0][0] = Math.min(result[0][0], value.value[0]);
+        result[0][1] = Math.max(result[0][1], value.value[0]);
+      }
+      if (value.value[1] !== undefined) {
+        result[1][0] = Math.min(result[1][0], value.value[1]);
+        result[1][1] = Math.max(result[1][1], value.value[1]);
+      }
+      if (value.value[2] !== undefined) {
+        result[1][0] = Math.min(result[1][0], value.value[2]);
+        result[1][1] = Math.max(result[1][1], value.value[2]);
+      }
     });
   }
   return result;
 };
 
 export const areNormalizedValuesEquals = (valuesX, valuesY) => {
+  console.warn(
+    `This function will be removed in the upcoming releases.
+Please get in touch with us if you have concerns.`,
+  );
+
   if (!valuesX || !valuesY) return false;
 
   if (valuesX.length !== valuesY.length) return false;
@@ -38,6 +51,11 @@ export const areNormalizedValuesEquals = (valuesX, valuesY) => {
 };
 
 export const areNormalizedBoundsEquals = (boundsX, boundsY) => {
+  console.warn(
+    `This function will be removed in the upcoming releases.
+Please get in touch with us if you have concerns.`,
+  );
+
   if (!boundsX || !boundsY) return false;
 
   if (boundsX.length !== boundsY.length || !(boundsX.length > 0)) return false;

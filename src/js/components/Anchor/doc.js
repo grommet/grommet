@@ -1,15 +1,12 @@
 import { describe, PropTypes } from 'react-desc';
 
-import {
-  colorPropType,
-  genericProps,
-  getAvailableAtBadge,
-  themeDocUtils,
-} from '../../utils';
+import { colorPropType, genericProps } from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
+import { themeDocUtils } from '../../utils/themeDocUtils';
 
 export const doc = Anchor => {
   const DocumentedAnchor = describe(Anchor)
-    .availableAt(getAvailableAtBadge('Anchor'))
+    .availableAt(getAvailableAtBadge('Anchor', 'Controls'))
     .description('A text link.')
     .details(
       `We have a separate component from the browser
@@ -26,6 +23,9 @@ or just use children.`,
     ...genericProps,
     a11yTitle: PropTypes.string.description(
       'Custom title to be used by screen readers.',
+    ),
+    as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description(
+      `The DOM tag or react component to use for the element.`,
     ),
     color: colorPropType.description(
       'Label color and icon color, if not specified on the icon.',
@@ -63,9 +63,10 @@ or just use children.`,
 this component. But, it can be adjusted directly via this size property,
 typically when it is not contained in a 'Heading', 'Paragraph', or 'Text'.`,
     ),
-    as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description(
-      `The DOM tag or react component to use for the element.`,
-    ),
+    weight: PropTypes.oneOfType([
+      PropTypes.oneOf(['normal', 'bold']),
+      PropTypes.number,
+    ]).description('Sets font-weight property for anchor.'),
   };
 
   return DocumentedAnchor;
@@ -83,7 +84,7 @@ export const themeDoc = {
     defaultValue: 600,
   },
   'anchor.textDecoration': {
-    description: `The text decoration of the label. 
+    description: `The text decoration of the label.
 Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
 for possible values.`,
     type: 'string',
@@ -95,7 +96,7 @@ for possible values.`,
     defaultValue: undefined,
   },
   'anchor.hover.textDecoration': {
-    description: `The text decoration of the label when hovering. 
+    description: `The text decoration of the label when hovering.
 Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
 for possible values.`,
     type: 'string',

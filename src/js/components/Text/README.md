@@ -1,7 +1,7 @@
 ## Text
 Arbitrary text.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Text&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=text&module=%2Fsrc%2FText.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Type-Text&full=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/text&module=%2Fsrc%2FText.js)
 ## Usage
 
 ```javascript
@@ -43,9 +43,12 @@ string
 
 **margin**
 
-The amount of margin around the component. An object can
-    be specified to distinguish horizontal margin, vertical margin, and
-    margin on a particular side.
+The amount of margin around the component. An object can be 
+    specified to distinguish horizontal margin, vertical margin, and margin on 
+    a particular side. For vertical margin to be applied, Text needs to be 
+    contained within a layout component (such as Box or a generic div) or 
+    behave as a div (by applying as="div" or a display style of 
+    inline-block).
 
 ```
 none
@@ -138,10 +141,7 @@ string
 
 **size**
 
-The font size and line height are primarily driven by the chosen tag. 
-But, it can be adjusted via this size property. The tag should be set for 
-semantic correctness and accessibility. This size property allows for stylistic
-adjustments. Defaults to `medium`.
+The font size and line space height of the text. Defaults to `medium`.
 
 ```
 xsmall
@@ -186,7 +186,8 @@ end
 **truncate**
 
 Restrict the text to a single line and truncate with ellipsis if it
-is too long to all fit.
+is too long to all fit. For truncate to be applied, Text needs to be 
+contained within a layout component (such as Box or a generic div).
 
 ```
 boolean
@@ -222,12 +223,23 @@ span
   
 **global.colors.text**
 
-The text color used for Text. Expects `object | { dark: string, light: string }`.
+The text color used for Text. In order for this to take 
+    effect, global.colors.background needs to be defined. Expects `object | { dark: string, light: string }`.
 
 Defaults to
 
 ```
 { dark: '#f8f8f8', light: '#444444' }
+```
+
+**text.font.family**
+
+The font family to use for Text. Expects `string`.
+
+Defaults to
+
+```
+undefined
 ```
 
 **text**

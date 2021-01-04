@@ -14,9 +14,7 @@ exports[`FocusedContainer basic 2`] = `
   id="focus-trap-test"
 >
   <input
-    data-g-tabindex="none"
     id="test"
-    tabindex="-1"
   />
 </div>
 `;
@@ -26,9 +24,7 @@ exports[`FocusedContainer basic 3`] = `
   id="focus-trap-test"
 >
   <input
-    data-g-tabindex="none"
     id="test"
-    tabindex="-1"
   />
 </div>
 `;
@@ -47,9 +43,7 @@ exports[`FocusedContainer blurs 2`] = `
   id="focus-trap-test"
 >
   <input
-    data-g-tabindex="none"
     id="test"
-    tabindex="-1"
   />
 </div>
 `;
@@ -59,9 +53,7 @@ exports[`FocusedContainer blurs 3`] = `
   id="focus-trap-test"
 >
   <input
-    data-g-tabindex="none"
     id="test"
-    tabindex="-1"
   />
 </div>
 `;
@@ -75,6 +67,6 @@ exports[`FocusedContainer restrict scroll 1`] = `
 </div>
 `;
 
-exports[`FocusedContainer restrict scroll 2`] = `"hidden"`;
+exports[`FocusedContainer restrict scroll 2`] = `""`;
 
 exports[`FocusedContainer restrict scroll 3`] = `""`;

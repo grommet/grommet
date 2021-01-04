@@ -1,12 +1,8 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { FormClose } from 'grommet-icons';
-
 import { Box, Button, CheckBox, Grommet, Select, Text } from 'grommet';
-
 import { theme as customSearchTheme } from './theme';
-import { SearchInputContext } from './components/SearchInputContext';
 
 const allContentPartners = [
   {
@@ -59,7 +55,7 @@ const allContentPartners = [
   },
 ];
 
-const CustomSearchSelect = () => {
+export const CustomSearch = () => {
   const [selectedContentPartners, setSelectedContentPartners] = useState([]);
   const [contentPartners, setContentPartners] = useState(allContentPartners);
   const [searching, setSearching] = useState(false);
@@ -154,53 +150,52 @@ const CustomSearchSelect = () => {
   return (
     <Grommet full theme={customSearchTheme}>
       <Box fill align="center" justify="center" width="medium">
-        <SearchInputContext.Provider value={{ searching }}>
-          <Select
-            ref={selectRef}
-            closeOnChange={false}
-            placeholder="Select Content Partners"
-            searchPlaceholder="Search Content Partners"
-            emptySearchMessage="No partners found"
-            multiple
-            value={
-              selectedContentPartners.length
-                ? renderContentPartners()
-                : undefined
+        <Select
+          ref={selectRef}
+          closeOnChange={false}
+          placeholder="Select Content Partners"
+          searchPlaceholder="Search Content Partners"
+          emptySearchMessage="No partners found"
+          searching={searching}
+          multiple
+          value={
+            selectedContentPartners.length ? renderContentPartners() : undefined
+          }
+          selected={selectedContentPartners.map(option =>
+            contentPartners.indexOf(option),
+          )}
+          options={contentPartners}
+          onChange={({ option }) => {
+            const newSelectedPartners = [...selectedContentPartners];
+            const seasonIndex = newSelectedPartners
+              .map(({ name }) => name)
+              .indexOf(option.name);
+            if (seasonIndex >= 0) {
+              newSelectedPartners.splice(seasonIndex, 1);
+            } else {
+              newSelectedPartners.push(option);
             }
-            selected={selectedContentPartners.map(option =>
-              contentPartners.indexOf(option),
-            )}
-            options={contentPartners}
-            onChange={({ option }) => {
-              const newSelectedPartners = [...selectedContentPartners];
-              const seasonIndex = newSelectedPartners
-                .map(({ name }) => name)
-                .indexOf(option.name);
-              if (seasonIndex >= 0) {
-                newSelectedPartners.splice(seasonIndex, 1);
-              } else {
-                newSelectedPartners.push(option);
-              }
-              const selectedPartnerNames = newSelectedPartners.map(
-                ({ name }) => name,
-              );
-              const sortedContentPartners = [...allContentPartners].sort(
-                sortContentPartners(selectedPartnerNames),
-              );
-              setSelectedContentPartners(newSelectedPartners);
-              setContentPartners(sortedContentPartners);
-            }}
-            onSearch={query => {
-              setSearching(true);
-              setSerchQuery(query);
-            }}
-          >
-            {renderOption}
-          </Select>
-        </SearchInputContext.Provider>
+            const selectedPartnerNames = newSelectedPartners.map(
+              ({ name }) => name,
+            );
+            const sortedContentPartners = [...allContentPartners].sort(
+              sortContentPartners(selectedPartnerNames),
+            );
+            setSelectedContentPartners(newSelectedPartners);
+            setContentPartners(sortedContentPartners);
+          }}
+          onSearch={query => {
+            setSearching(true);
+            setSerchQuery(query);
+          }}
+        >
+          {renderOption}
+        </Select>
       </Box>
     </Grommet>
   );
 };
 
-storiesOf('Select', module).add('Custom Search', () => <CustomSearchSelect />);
+CustomSearch.story = {
+  name: 'Custom search',
+};

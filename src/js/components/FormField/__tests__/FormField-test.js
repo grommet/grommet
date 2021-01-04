@@ -2,7 +2,12 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import styled from 'styled-components';
 import 'jest-styled-components';
+import 'jest-axe/extend-expect';
+import 'regenerator-runtime/runtime';
 
+import { axe } from 'jest-axe';
+import { cleanup, render } from '@testing-library/react';
+import { Alert, StatusInfo } from 'grommet-icons';
 import { Grommet } from '../../Grommet';
 import { Form } from '../../Form';
 import { FormField } from '..';
@@ -13,6 +18,19 @@ const CustomFormField = styled(FormField)`
 `;
 
 describe('FormField', () => {
+  afterEach(cleanup);
+
+  test(`should have no accessibility violations`, async () => {
+    const { container } = render(
+      <Grommet>
+        <FormField />
+      </Grommet>,
+    );
+    const results = await axe(container);
+    expect(container.firstChild).toMatchSnapshot();
+    expect(results).toHaveNoViolations();
+  });
+
   test('default', () => {
     const component = renderer.create(
       <Grommet>
@@ -191,6 +209,153 @@ describe('FormField', () => {
         <FormField required /> {/* don't use FormField without Form */}
         <Form>
           <FormField required />
+        </Form>
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('custom label', () => {
+    const component = renderer.create(
+      <Grommet
+        theme={{
+          formField: {
+            label: {
+              color: 'red',
+              size: 'small',
+              margin: 'xsmall',
+              weight: 600,
+            },
+          },
+        }}
+      >
+        <Form>
+          <FormField label="label" />
+        </Form>
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('disabled with custom label', () => {
+    const component = renderer.create(
+      <Grommet
+        theme={{
+          formField: {
+            label: {
+              color: 'red',
+              size: 'small',
+              margin: 'xsmall',
+              weight: 600,
+            },
+            disabled: {
+              label: {
+                color: 'teal',
+              },
+            },
+          },
+        }}
+      >
+        <Form>
+          <FormField disabled label="label" />
+        </Form>
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('pad with border undefined', () => {
+    const component = renderer.create(
+      <Grommet
+        theme={{
+          formField: {
+            border: undefined,
+            content: {
+              pad: 'large',
+            },
+          },
+        }}
+      >
+        <Form>
+          <FormField label="label" pad />
+        </Form>
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('custom input margin', () => {
+    const component = renderer.create(
+      <Grommet
+        theme={{
+          formField: {
+            content: {
+              margin: { vertical: 'large' },
+            },
+          },
+        }}
+      >
+        <Form>
+          <FormField label="label" />
+        </Form>
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('contentProps', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Form>
+          <FormField
+            label="label"
+            contentProps={{
+              border: false,
+            }}
+          />
+        </Form>
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('custom error and info icon and container', () => {
+    const component = renderer.create(
+      <Grommet
+        theme={{
+          formField: {
+            error: {
+              icon: <Alert />,
+              container: {
+                background: {
+                  color: 'green',
+                },
+              },
+            },
+            info: {
+              icon: <StatusInfo />,
+              container: {
+                pad: { horizontal: 'large' },
+              },
+            },
+          },
+        }}
+      >
+        <Form>
+          <FormField
+            label="label"
+            error="This is an error message."
+            info="Here is a little added info on FormField."
+            contentProps={{
+              border: false,
+            }}
+          />
         </Form>
       </Grommet>,
     );

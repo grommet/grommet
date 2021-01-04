@@ -1,5 +1,14 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 
+import { Box } from '../Box';
+import { Text } from '../Text';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { Body } from './Body';
@@ -12,14 +21,24 @@ import {
   initializeFilters,
   normalizePrimaryProperty,
 } from './buildState';
-import { StyledDataTable } from './StyledDataTable';
+import { StyledDataTable, StyledPlaceholder } from './StyledDataTable';
 
 const contexts = ['header', 'body', 'footer'];
 
 const normalizeProp = (prop, context) => {
   if (prop) {
-    if (prop[context]) return prop[context];
-    if (contexts.some(c => prop[c])) return undefined;
+    if (prop[context]) {
+      return prop[context];
+    }
+
+    // if prop[context] wasn't defined, but other values
+    // exist on the prop, return undefined so that background
+    // for context will defaultto theme values instead
+    // note: need to include `pinned` since it is not a
+    // defined context
+    if (contexts.some(c => prop[c] || prop.pinned)) {
+      return undefined;
+    }
     return prop;
   }
   return undefined;
@@ -30,16 +49,21 @@ const DataTable = ({
   border,
   columns = [],
   data = [],
+  fill,
   groupBy,
   onClickRow, // removing unknown DOM attributes
   onMore,
   onSearch, // removing unknown DOM attributes
+  onSelect,
   onSort: onSortProp,
   replace,
   pad,
+  pin,
+  placeholder,
   primaryKey,
   resizeable,
   rowProps,
+  select,
   size,
   sort: sortProp,
   sortable,
@@ -90,8 +114,37 @@ const DataTable = ({
     buildGroupState(groups, groupBy),
   );
 
+  const [selected, setSelected] = useState(
+    select || (onSelect && []) || undefined,
+  );
+  useEffect(() => setSelected(select || (onSelect && []) || undefined), [
+    onSelect,
+    select,
+  ]);
+
   // any customized column widths
   const [widths, setWidths] = useState({});
+
+  // placeholder placement stuff
+  const headerRef = useRef();
+  const footerRef = useRef();
+  const [headerHeight, setHeaderHeight] = useState();
+  const [footerHeight, setFooterHeight] = useState();
+
+  useLayoutEffect(() => {
+    if (placeholder) {
+      if (headerRef.current) {
+        const nextHeaderHeight = headerRef.current.getBoundingClientRect()
+          .height;
+        setHeaderHeight(nextHeaderHeight);
+      } else setHeaderHeight(0);
+      if (footerRef.current) {
+        const nextFooterHeight = footerRef.current.getBoundingClientRect()
+          .height;
+        setFooterHeight(nextFooterHeight);
+      } else setFooterHeight(0);
+    }
+  }, [footerRef, headerRef, placeholder]);
 
   // remember that we are filtering on this property
   const onFiltering = property => setFiltering(property);
@@ -107,11 +160,12 @@ const DataTable = ({
 
   // toggle the sort direction on this property
   const onSort = property => () => {
+    const external = sort ? sort.external : false;
     let direction;
     if (!sort || property !== sort.property) direction = 'asc';
     else if (sort.direction === 'asc') direction = 'desc';
     else direction = 'asc';
-    const nextSort = { property, direction };
+    const nextSort = { property, direction, external };
     setSort(nextSort);
     if (onSortProp) onSortProp(nextSort);
   };
@@ -166,24 +220,38 @@ const DataTable = ({
   }
 
   return (
-    <StyledDataTable {...rest}>
+    <StyledDataTable fillProp={fill} {...rest}>
       <Header
+        ref={headerRef}
         background={normalizeProp(background, 'header')}
         border={normalizeProp(border, 'header')}
         columns={columns}
+        data={adjustedData}
+        fill={fill}
         filtering={filtering}
         filters={filters}
         groups={groups}
         groupState={groupState}
         pad={normalizeProp(pad, 'header')}
+        pin={pin === true || pin === 'header'}
+        selected={selected}
         size={size}
         sort={sort}
         widths={widths}
         onFiltering={onFiltering}
         onFilter={onFilter}
         onResize={resizeable ? onResize : undefined}
+        onSelect={
+          onSelect
+            ? nextSelected => {
+                setSelected(nextSelected);
+                if (onSelect) onSelect(nextSelected);
+              }
+            : undefined
+        }
         onSort={sortable || sortProp || onSortProp ? onSort : undefined}
         onToggle={onToggleGroups}
+        primaryProperty={primaryProperty}
       />
       {groups ? (
         <GroupedBody
@@ -207,24 +275,56 @@ const DataTable = ({
           onMore={onMore}
           replace={replace}
           onClickRow={onClickRow}
+          onSelect={
+            onSelect
+              ? nextSelected => {
+                  setSelected(nextSelected);
+                  if (onSelect) onSelect(nextSelected);
+                }
+              : undefined
+          }
           pad={normalizeProp(pad, 'body')}
+          pinnedBackground={normalizeProp(background, 'pinned')}
+          placeholder={placeholder}
           primaryProperty={primaryProperty}
           rowProps={rowProps}
+          selected={selected}
           size={size}
           step={step}
         />
       )}
       {showFooter && (
         <Footer
+          ref={footerRef}
           background={normalizeProp(background, 'footer')}
           border={normalizeProp(border, 'footer')}
           columns={columns}
+          fill={fill}
           footerValues={footerValues}
           groups={groups}
+          onSelect={onSelect}
           pad={normalizeProp(pad, 'footer')}
+          pin={pin === true || pin === 'footer'}
           primaryProperty={primaryProperty}
+          selected={selected}
           size={size}
         />
+      )}
+      {placeholder && (
+        <StyledPlaceholder top={headerHeight} bottom={footerHeight}>
+          {typeof placeholder === 'string' ? (
+            <Box
+              background={{ color: 'background-front', opacity: 'strong' }}
+              align="center"
+              justify="center"
+              fill="vertical"
+            >
+              <Text>{placeholder}</Text>
+            </Box>
+          ) : (
+            placeholder
+          )}
+        </StyledPlaceholder>
       )}
     </StyledDataTable>
   );

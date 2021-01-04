@@ -1,12 +1,14 @@
-import React, { createRef, Component } from 'react';
-import styled, { withTheme } from 'styled-components';
+import React, {
+  forwardRef,
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
+import styled, { ThemeContext } from 'styled-components';
 
-import {
-  debounce,
-  debounceDelay,
-  selectedStyle,
-  setFocusWithoutScroll,
-} from '../../utils';
+import { selectedStyle, setFocusWithoutScroll } from '../../utils';
 
 import { defaultProps } from '../../default-props';
 
@@ -18,12 +20,14 @@ import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 
 import { StyledContainer } from './StyledSelect';
+import { applyKey } from './utils';
 
 // position relative is so scroll can be managed correctly
 const OptionsBox = styled.div`
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
+  outline: none;
 `;
 
 const OptionBox = styled(Box)`
@@ -35,304 +39,271 @@ const SelectOption = styled(Button)`
   width: 100%;
 `;
 
-class SelectContainer extends Component {
-  static defaultProps = {
-    children: null,
-    disabled: undefined,
-    emptySearchMessage: 'No matches found',
-    id: undefined,
-    multiple: false,
-    name: undefined,
-    onKeyDown: undefined,
-    onSearch: undefined,
-    options: undefined,
-    searchPlaceholder: undefined,
-    selected: undefined,
-    value: '',
-    replace: true,
-  };
+const ClearButton = ({ clear, onClear, name, theme, setFocus }) => {
+  const { label, position } = clear;
+  const align = position !== 'bottom' ? 'start' : 'center';
+  const buttonLabel = label || `Clear ${name || 'selection'}`;
+  return (
+    <Button
+      onClick={onClear}
+      onFocus={() => setFocus(true)}
+      onBlur={() => setFocus(false)}
+    >
+      <Box {...theme.select.clear.container} align={align}>
+        <Text {...theme.select.clear.text}>{buttonLabel}</Text>
+      </Box>
+    </Button>
+  );
+};
 
-  searchRef = createRef();
-
-  optionsRef = createRef();
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      initialOptions: props.options,
-      search: '',
-      activeIndex: -1,
-    };
-  }
-
-  static getDerivedStateFromProps(nextProps, prevState) {
-    const { options, value, onSearch } = nextProps;
-
-    if (onSearch) {
-      if (
-        prevState.activeIndex === -1 &&
-        prevState.search === '' &&
-        options &&
-        value
-      ) {
-        const optionValue =
-          Array.isArray(value) && value.length ? value[0] : value;
-        const activeIndex = options.indexOf(optionValue);
-        return { activeIndex };
+const SelectContainer = forwardRef(
+  (
+    {
+      clear,
+      children = null,
+      disabled,
+      disabledKey,
+      dropHeight,
+      emptySearchMessage = 'No matches found',
+      id,
+      labelKey,
+      multiple,
+      name,
+      onChange,
+      onKeyDown,
+      onMore,
+      onSearch,
+      optionIndexesInValue,
+      options,
+      allOptions,
+      searchPlaceholder,
+      search,
+      setSearch,
+      selected,
+      value = '',
+      valueKey,
+      replace = true,
+    },
+    ref,
+  ) => {
+    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const [activeIndex, setActiveIndex] = useState(-1);
+    const [keyboardNavigation, setKeyboardNavigation] = useState();
+    const [focus, setFocus] = useState(false);
+    const searchRef = useRef();
+    const optionsRef = useRef();
+    // adjust activeIndex when options change
+    useEffect(() => {
+      if (activeIndex === -1 && search && optionIndexesInValue.length) {
+        setActiveIndex(optionIndexesInValue[0]);
       }
-      if (prevState.activeIndex === -1 && prevState.search !== '') {
-        return { activeIndex: 0 };
-      }
-    }
-    return null;
-  }
+    }, [activeIndex, optionIndexesInValue, search]);
 
-  componentDidMount() {
-    const { onSearch } = this.props;
-    // timeout need to send the operation through event loop and allow
-    // time to the portal to be available
-    setTimeout(() => {
-      const optionsNode = this.optionsRef.current;
-      if (onSearch) {
-        const input = this.searchRef.current;
-        if (input && input.focus) {
-          setFocusWithoutScroll(input);
+    // set initial focus
+    useEffect(() => {
+      // need to wait for Drop to be ready
+      const timer = setTimeout(() => {
+        const optionsNode = optionsRef.current;
+        if (onSearch) {
+          const searchInput = searchRef.current;
+          if (searchInput && searchInput.focus) {
+            setFocusWithoutScroll(searchInput);
+          }
+        } else if (optionsNode) {
+          setFocusWithoutScroll(optionsNode);
         }
-      } else if (optionsNode) {
-        setFocusWithoutScroll(optionsNode);
-      }
-    }, 0);
-  }
+      }, 100);
+      return () => clearTimeout(timer);
+    }, [onSearch]);
 
-  onSearchChange = event => {
-    this.setState(
-      {
-        search: event.target.value,
-        activeIndex: -1,
-      },
-      () => {
-        const { search } = this.state;
-        this.onSearch(search);
-      },
+    // clear keyboardNavigation after a while
+    useEffect(() => {
+      if (keyboardNavigation) {
+        // 100ms was empirically determined
+        const timer = setTimeout(() => setKeyboardNavigation(false), 100);
+        return () => clearTimeout(timer);
+      }
+      return undefined;
+    }, [keyboardNavigation]);
+
+    const optionLabel = useCallback(
+      index => applyKey(options[index], labelKey),
+      [labelKey, options],
     );
-  };
 
-  // wait a debounceDelay of idle time in ms, before notifying that the search
-  // changed.
-  // the debounceDelay timer starts to count when the user stopped typing
-  onSearch = debounce(search => {
-    const { onSearch } = this.props;
-    onSearch(search);
-  }, debounceDelay(this.props));
+    const optionValue = useCallback(
+      index => applyKey(options[index], valueKey),
+      [options, valueKey],
+    );
 
-  selectOption = option => event => {
-    const { multiple, onChange, value, valueKey, selected } = this.props;
-    const { initialOptions } = this.state;
-    if (onChange) {
-      let nextValue = Array.isArray(value) ? value.slice() : [];
-      // preserve compatibility until selected is deprecated
-      if (selected) {
-        nextValue = selected.map(s => initialOptions[s]);
-      }
-      const optionValue = valueKey ? option[valueKey] : option;
-
-      if (multiple) {
-        if (nextValue.indexOf(optionValue) !== -1) {
-          nextValue = nextValue.filter(v => v !== optionValue);
-        } else {
-          nextValue.push(optionValue);
+    const isDisabled = useCallback(
+      index => {
+        const option = options[index];
+        let result;
+        if (disabledKey) {
+          result = applyKey(option, disabledKey);
+        } else if (Array.isArray(disabled)) {
+          if (typeof disabled[0] === 'number') {
+            result = disabled.indexOf(index) !== -1;
+          } else {
+            const optionVal = optionValue(index);
+            result = disabled.indexOf(optionVal) !== -1;
+          }
         }
-      } else {
-        nextValue = optionValue;
-      }
+        return result;
+      },
+      [disabled, disabledKey, options, optionValue],
+    );
 
-      const nextSelected = Array.isArray(nextValue)
-        ? nextValue.map(v => initialOptions.indexOf(v))
-        : initialOptions.indexOf(nextValue);
-      onChange(event, {
-        option,
-        value: nextValue,
-        selected: nextSelected,
-      });
-    }
-  };
-
-  // We use the state keyboardNavigating to prevent mouse over interaction
-  // from triggering changing the activeIndex due to scrolling.
-  clearKeyboardNavigation = () => {
-    clearTimeout(this.keyboardNavTimer);
-    this.keyboardNavTimer = setTimeout(() => {
-      this.setState({ keyboardNavigating: false });
-    }, 100); // 100ms was empirically determined
-  };
-
-  onNextOption = event => {
-    const { options } = this.props;
-    const { activeIndex } = this.state;
-    event.preventDefault();
-    let nextActiveIndex = activeIndex + 1;
-    while (
-      nextActiveIndex < options.length &&
-      this.isDisabled(nextActiveIndex)
-    ) {
-      nextActiveIndex += 1;
-    }
-    if (nextActiveIndex !== options.length) {
-      this.setState(
-        { activeIndex: nextActiveIndex, keyboardNavigating: true },
-        () => this.clearKeyboardNavigation(),
-      );
-    }
-  };
-
-  onPreviousOption = event => {
-    const { activeIndex } = this.state;
-    event.preventDefault();
-    let nextActiveIndex = activeIndex - 1;
-    while (nextActiveIndex >= 0 && this.isDisabled(nextActiveIndex)) {
-      nextActiveIndex -= 1;
-    }
-    if (nextActiveIndex >= 0) {
-      this.setState(
-        { activeIndex: nextActiveIndex, keyboardNavigating: true },
-        () => this.clearKeyboardNavigation(),
-      );
-    }
-  };
-
-  onActiveOption = index => () => {
-    const { keyboardNavigating } = this.state;
-    if (!keyboardNavigating) {
-      this.setState({ activeIndex: index });
-    }
-  };
-
-  onSelectOption = event => {
-    const { options } = this.props;
-    const { activeIndex } = this.state;
-    if (activeIndex >= 0) {
-      event.preventDefault(); // prevent submitting forms
-      this.selectOption(options[activeIndex])(event);
-    }
-  };
-
-  optionLabel = index => {
-    const { options, labelKey } = this.props;
-    const option = options[index];
-    let optionLabel;
-    if (labelKey) {
-      if (typeof labelKey === 'function') {
-        optionLabel = labelKey(option);
-      } else {
-        optionLabel = option[labelKey];
-      }
-    } else {
-      optionLabel = option;
-    }
-    return optionLabel;
-  };
-
-  optionValue = index => {
-    const { options, valueKey } = this.props;
-    const option = options[index];
-    let optionValue;
-    if (valueKey) {
-      if (typeof valueKey === 'function') {
-        optionValue = valueKey(option);
-      } else {
-        optionValue = option[valueKey];
-      }
-    } else {
-      optionValue = option;
-    }
-    return optionValue;
-  };
-
-  isDisabled = index => {
-    const { disabled, disabledKey, options } = this.props;
-    const option = options[index];
-    let result;
-    if (disabledKey) {
-      if (typeof disabledKey === 'function') {
-        result = disabledKey(option, index);
-      } else {
-        result = option[disabledKey];
-      }
-    } else if (Array.isArray(disabled)) {
-      if (typeof disabled[0] === 'number') {
-        result = disabled.indexOf(index) !== -1;
-      } else {
-        const optionValue = this.optionValue(index);
-        result = disabled.indexOf(optionValue) !== -1;
-      }
-    }
-    return result;
-  };
-
-  isSelected = index => {
-    const { selected, value, valueKey } = this.props;
-    let result;
-    if (selected) {
-      // deprecated in favor of value
-      result = selected.indexOf(index) !== -1;
-    } else {
-      const optionValue = this.optionValue(index);
-      if (Array.isArray(value)) {
-        if (value.length === 0) {
-          result = false;
-        } else if (typeof value[0] !== 'object') {
-          result = value.indexOf(optionValue) !== -1;
-        } else if (valueKey) {
-          result = value.some(valueItem => {
+    const isSelected = useCallback(
+      index => {
+        let result;
+        if (selected) {
+          // deprecated in favor of value
+          result = selected.indexOf(index) !== -1;
+        } else {
+          const optionVal = optionValue(index);
+          if (Array.isArray(value)) {
+            if (value.length === 0) {
+              result = false;
+            } else if (typeof value[0] !== 'object') {
+              result = value.indexOf(optionVal) !== -1;
+            } else if (valueKey) {
+              result = value.some(valueItem => {
+                const valueValue =
+                  typeof valueKey === 'function'
+                    ? valueKey(valueItem)
+                    : valueItem[valueKey];
+                return valueValue === optionVal;
+              });
+            }
+          } else if (valueKey && typeof value === 'object') {
             const valueValue =
               typeof valueKey === 'function'
-                ? valueKey(valueItem)
-                : valueItem[valueKey];
-            return valueValue === optionValue;
+                ? valueKey(value)
+                : value[valueKey];
+            result = valueValue === optionVal;
+          } else {
+            result = value === optionVal;
+          }
+        }
+        return result;
+      },
+      [optionValue, selected, value, valueKey],
+    );
+
+    const selectOption = useCallback(
+      index => event => {
+        if (onChange) {
+          let nextValue;
+          let nextSelected;
+          if (multiple) {
+            const nextOptionIndexesInValue = optionIndexesInValue.slice(0);
+            const allOptionsIndex = allOptions.indexOf(options[index]);
+            const valueIndex = optionIndexesInValue.indexOf(allOptionsIndex);
+            if (valueIndex === -1) {
+              nextOptionIndexesInValue.push(allOptionsIndex);
+            } else {
+              nextOptionIndexesInValue.splice(valueIndex, 1);
+            }
+            nextValue = nextOptionIndexesInValue.map(i =>
+              valueKey && valueKey.reduce
+                ? applyKey(allOptions[i], valueKey)
+                : allOptions[i],
+            );
+            nextSelected = nextOptionIndexesInValue;
+          } else {
+            nextValue =
+              valueKey && valueKey.reduce
+                ? applyKey(options[index], valueKey)
+                : options[index];
+            nextSelected = index;
+          }
+          onChange(event, {
+            option: options[index],
+            value: nextValue,
+            selected: nextSelected,
           });
         }
-      } else if (valueKey && typeof value === 'object') {
-        const valueValue =
-          typeof valueKey === 'function' ? valueKey(value) : value[valueKey];
-        result = valueValue === optionValue;
-      } else {
-        result = value === optionValue;
-      }
-    }
-    return result;
-  };
+      },
+      [multiple, onChange, optionIndexesInValue, options, allOptions, valueKey],
+    );
 
-  render() {
-    const {
-      children,
-      dropHeight,
-      emptySearchMessage,
-      id,
-      onMore,
-      onKeyDown,
-      onSearch,
-      options,
-      searchPlaceholder,
-      theme,
-      replace,
-    } = this.props;
-    const { activeIndex, search } = this.state;
+    const onClear = useCallback(
+      event => {
+        onChange(event, { option: undefined, value: '', selected: '' });
+      },
+      [onChange],
+    );
+
+    const onNextOption = useCallback(
+      event => {
+        event.preventDefault();
+        let nextActiveIndex = activeIndex + 1;
+        while (
+          nextActiveIndex < options.length &&
+          isDisabled(nextActiveIndex)
+        ) {
+          nextActiveIndex += 1;
+        }
+        if (nextActiveIndex !== options.length) {
+          setActiveIndex(nextActiveIndex);
+          setKeyboardNavigation(true);
+        }
+      },
+      [activeIndex, isDisabled, options],
+    );
+
+    const onPreviousOption = useCallback(
+      event => {
+        event.preventDefault();
+        let nextActiveIndex = activeIndex - 1;
+        while (nextActiveIndex >= 0 && isDisabled(nextActiveIndex)) {
+          nextActiveIndex -= 1;
+        }
+        if (nextActiveIndex >= 0) {
+          setActiveIndex(nextActiveIndex);
+          setKeyboardNavigation(true);
+        }
+      },
+      [activeIndex, isDisabled],
+    );
+
+    const onActiveOption = useCallback(
+      index => () => {
+        if (!keyboardNavigation) setActiveIndex(index);
+      },
+      [keyboardNavigation],
+    );
+
+    const onSelectOption = useCallback(
+      event => {
+        if (activeIndex >= 0 && !focus) {
+          event.preventDefault(); // prevent submitting forms
+          selectOption(activeIndex)(event);
+        }
+      },
+      [activeIndex, selectOption, focus],
+    );
 
     const customSearchInput = theme.select.searchInput;
     const SelectTextInput = customSearchInput || TextInput;
-    const selectOptionsStyle = {
-      ...theme.select.options.box,
-      ...theme.select.options.container,
-    };
+    const selectOptionsStyle = theme.select.options
+      ? {
+          ...theme.select.options.box,
+          ...theme.select.options.container,
+        }
+      : {};
 
     return (
       <Keyboard
-        onEnter={this.onSelectOption}
-        onUp={this.onPreviousOption}
-        onDown={this.onNextOption}
+        onEnter={onSelectOption}
+        onUp={onPreviousOption}
+        onDown={onNextOption}
         onKeyDown={onKeyDown}
       >
         <StyledContainer
+          ref={ref}
           as={Box}
           id={id ? `${id}__select-drop` : undefined}
           dropHeight={dropHeight}
@@ -342,15 +313,29 @@ class SelectContainer extends Component {
               <SelectTextInput
                 focusIndicator={!customSearchInput}
                 size="small"
-                ref={this.searchRef}
+                ref={searchRef}
                 type="search"
-                value={search}
+                value={search || ''}
                 placeholder={searchPlaceholder}
-                onChange={this.onSearchChange}
+                onChange={event => {
+                  const nextSearch = event.target.value;
+                  setSearch(nextSearch);
+                  setActiveIndex(-1);
+                  onSearch(nextSearch);
+                }}
               />
             </Box>
           )}
-          <OptionsBox role="menubar" tabIndex="-1" ref={this.optionsRef}>
+          {clear && clear.position !== 'bottom' && value && (
+            <ClearButton
+              clear={clear}
+              name={name}
+              onClear={onClear}
+              theme={theme}
+              setFocus={setFocus}
+            />
+          )}
+          <OptionsBox role="menubar" tabIndex="-1" ref={optionsRef}>
             {options.length > 0 ? (
               <InfiniteScroll
                 items={options}
@@ -360,9 +345,31 @@ class SelectContainer extends Component {
                 show={activeIndex !== -1 ? activeIndex : undefined}
               >
                 {(option, index, optionRef) => {
-                  const isDisabled = this.isDisabled(index);
-                  const isSelected = this.isSelected(index);
-                  const isActive = activeIndex === index;
+                  const optionDisabled = isDisabled(index);
+                  const optionSelected = isSelected(index);
+                  const optionActive = activeIndex === index;
+                  // Determine whether the label is done as a child or
+                  // as an option Button kind property.
+                  let child;
+                  if (children)
+                    child = children(option, index, options, {
+                      active: optionActive,
+                      disabled: optionDisabled,
+                      selected: optionSelected,
+                    });
+                  else if (theme.select.options)
+                    child = (
+                      <OptionBox
+                        {...selectOptionsStyle}
+                        selected={optionSelected}
+                      >
+                        <Text {...theme.select.options.text}>
+                          {optionLabel(index)}
+                        </Text>
+                      </OptionBox>
+                    );
+                  // if we have a child, turn on plain, and hoverIndicator
+
                   return (
                     <SelectOption
                       // eslint-disable-next-line react/no-array-index-key
@@ -370,34 +377,23 @@ class SelectContainer extends Component {
                       ref={optionRef}
                       tabIndex="-1"
                       role="menuitem"
-                      hoverIndicator="background"
-                      disabled={isDisabled || undefined}
-                      active={isActive}
-                      selected={isSelected}
+                      plain={!child ? undefined : true}
+                      align="start"
+                      kind={!child ? 'option' : undefined}
+                      hoverIndicator={!child ? undefined : 'background'}
+                      label={!child ? optionLabel(index) : undefined}
+                      disabled={optionDisabled || undefined}
+                      active={optionActive}
+                      selected={optionSelected}
                       option={option}
                       onMouseOver={
-                        !isDisabled ? this.onActiveOption(index) : undefined
+                        !optionDisabled ? onActiveOption(index) : undefined
                       }
                       onClick={
-                        !isDisabled ? this.selectOption(option) : undefined
+                        !optionDisabled ? selectOption(index) : undefined
                       }
                     >
-                      {children ? (
-                        children(option, index, options, {
-                          active: isActive,
-                          disabled: isDisabled,
-                          selected: isSelected,
-                        })
-                      ) : (
-                        <OptionBox
-                          {...selectOptionsStyle}
-                          selected={isSelected}
-                        >
-                          <Text {...theme.select.options.text}>
-                            {this.optionLabel(index)}
-                          </Text>
-                        </OptionBox>
-                      )}
+                      {child}
                     </SelectOption>
                   );
                 }}
@@ -419,14 +415,19 @@ class SelectContainer extends Component {
               </SelectOption>
             )}
           </OptionsBox>
+          {clear && clear.position === 'bottom' && value && (
+            <ClearButton
+              clear={clear}
+              name={name}
+              onClear={onClear}
+              theme={theme}
+              setFocus={setFocus}
+            />
+          )}
         </StyledContainer>
       </Keyboard>
     );
-  }
-}
+  },
+);
 
-Object.setPrototypeOf(SelectContainer.defaultProps, defaultProps);
-
-const SelectContainerWrapper = withTheme(SelectContainer);
-
-export { SelectContainerWrapper as SelectContainer };
+export { SelectContainer };

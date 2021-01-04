@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Button, Chart, Stack, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -104,7 +103,7 @@ const ZoomChart = ({ data, max }) => {
             </Box>
           </Stack>
           <Box direction="row" justify="between">
-            {/* className="chromatic-ignore" is used for the story testing. 
+            {/* className="chromatic-ignore" is used for the story testing.
                 grommet doesn't recommend the usage of className */}
             {axis[0].map(t => (
               <Text key={t} className="chromatic-ignore">
@@ -123,6 +122,12 @@ const ZoomChart = ({ data, max }) => {
   );
 };
 
-storiesOf('Chart', module).add('Zoom', () => (
+export const Zoom = () => (
   <ZoomChart data={generateData(1000, 100)} max={100} />
-));
+);
+
+Zoom.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
+};

@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Button, Calendar, Grommet, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 import { FormPreviousLink, FormNextLink } from 'grommet-icons';
 
-const CustomHeaderCalendar = () => {
+export const CustomHeaderCalendar = () => {
   const [date, setDate] = useState();
 
   const onSelect = nextDate => {
@@ -56,6 +55,6 @@ const CustomHeaderCalendar = () => {
   );
 };
 
-storiesOf('Calendar', module).add('Custom Header', () => (
-  <CustomHeaderCalendar />
-));
+CustomHeaderCalendar.story = {
+  name: 'Header',
+};

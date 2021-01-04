@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Calendar, Drop, Heading, Grommet, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -61,4 +60,9 @@ const OverflowDrop = () => {
   );
 };
 
-storiesOf('Drop', module).add('Overflow', () => <OverflowDrop />);
+export const Overflow = () => <OverflowDrop />;
+Overflow.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
+};

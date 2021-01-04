@@ -1,15 +1,16 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grid, Grommet, Box, Image, InfiniteScroll, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-import { allItems } from './Basics';
+const allItems = Array(2000)
+  .fill()
+  .map((_, i) => `item ${i + 1}`);
 
-const GridInfiniteScroll = () => (
+export const GridInfiniteScroll = ({ ...rest }) => (
   <Grommet theme={grommet}>
     <Grid columns="xsmall" rows="small">
-      <InfiniteScroll items={allItems} step={12}>
+      <InfiniteScroll items={allItems} step={12} {...rest}>
         {item => (
           <Box key={item} as="article" pad="xsmall">
             <Image src="https://via.placeholder.com/350x150" />
@@ -21,4 +22,12 @@ const GridInfiniteScroll = () => (
   </Grommet>
 );
 
-storiesOf('InfiniteScroll', module).add('Grid', () => <GridInfiniteScroll />);
+export const GridWithShow = () => <GridInfiniteScroll show={78} />;
+
+GridInfiniteScroll.story = {
+  name: 'Grid',
+};
+
+GridWithShow.story = {
+  name: 'Grid with show item 77',
+};

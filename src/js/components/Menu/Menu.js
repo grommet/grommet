@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
-import { compose } from 'recompose';
-import styled, { withTheme } from 'styled-components';
+import React, {
+  forwardRef,
+  useCallback,
+  useContext,
+  useMemo,
+  useState,
+} from 'react';
+import styled, { ThemeContext } from 'styled-components';
 
-import PropTypes from 'react-desc/lib/PropTypes';
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
@@ -10,7 +14,6 @@ import { Button } from '../Button';
 import { DropButton } from '../DropButton';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
-import { withForwardRef } from '../hocs';
 import { normalizeColor } from '../../utils';
 
 const ContainerBox = styled(Box)`
@@ -32,7 +35,7 @@ To open menu when menu button is focused:
 To navigate within menu:
 - Up/down arrow keys can be used and will loop through options
 (keeping focus within the Menu)
-- Tab can be used, but once the last menu item is reached, Tab will close the 
+- Tab can be used, but once the last menu item is reached, Tab will close the
 Menu and continue through page content.
 
 To close the menu:
@@ -45,7 +48,7 @@ To make a selection:
 - Space is pressed.
 */
 
-const Menu = props => {
+const Menu = forwardRef((props, ref) => {
   const {
     a11yTitle,
     children,
@@ -54,7 +57,6 @@ const Menu = props => {
     dropBackground,
     dropProps,
     dropTarget,
-    forwardRef,
     justifyContent,
     icon,
     items,
@@ -64,42 +66,44 @@ const Menu = props => {
     open,
     plain,
     size,
-    theme,
     ...rest
   } = props;
-  const MenuIcon = theme.menu.icons.down;
-  const iconColor = normalizeColor('control', theme);
+  const theme = useContext(ThemeContext) || defaultProps.theme;
+  const iconColor = normalizeColor(theme.menu.icons.color || 'control', theme);
   const align = dropProps.align || dropAlign;
-  let controlButtonIndex;
-  if (align.top === 'top') {
-    controlButtonIndex = -1;
-  } else if (align.bottom === 'bottom') {
-    controlButtonIndex = items.length;
-  } else {
-    controlButtonIndex = undefined;
-  }
+  const controlButtonIndex = useMemo(() => {
+    if (align.top === 'top') return -1;
+    if (align.bottom === 'bottom') return items.length;
+    return undefined;
+  }, [align, items]);
+
   const buttonRefs = {};
-  const constants = {
-    none: 'none',
-    tab: 9,
-    // Menu control button included on top of menu items
-    controlTop: align.top === 'top' || undefined,
-    // Menu control button included on the bottom of menu items
-    controlBottom: align.bottom === 'bottom' || undefined,
-    controlButtonIndex,
-  };
+  const constants = useMemo(() => {
+    return {
+      none: 'none',
+      tab: 9,
+      // Menu control button included on top of menu items
+      controlTop: align.top === 'top' || undefined,
+      // Menu control button included on the bottom of menu items
+      controlBottom: align.bottom === 'bottom' || undefined,
+      controlButtonIndex,
+    };
+  }, [align, controlButtonIndex]);
 
   const [activeItemIndex, setActiveItemIndex] = useState(constants.none);
   const [isOpen, setOpen] = useState(open || false);
 
-  const onDropClose = () => {
+  const MenuIcon =
+    isOpen && theme.menu.icons.up ? theme.menu.icons.up : theme.menu.icons.down;
+
+  const onDropClose = useCallback(() => {
     setActiveItemIndex(constants.none);
     setOpen(false);
-  };
+  }, [constants.none]);
 
-  const onDropOpen = () => {
+  const onDropOpen = useCallback(() => {
     setOpen(true);
-  };
+  }, []);
 
   const onSelectMenuItem = event => {
     if (isOpen) {
@@ -180,20 +184,40 @@ const Menu = props => {
     }
   };
 
-  const content = children || (
-    <Box
-      direction="row"
-      justify={justifyContent}
-      align="center"
-      pad="small"
-      gap={label && icon !== false ? 'small' : undefined}
-    >
-      <Text size={size}>{label}</Text>
-      {icon !== false
-        ? (icon !== true && icon) || <MenuIcon color={iconColor} size={size} />
-        : null}
-    </Box>
-  );
+  const menuIcon =
+    icon !== false
+      ? (icon !== true && icon) || <MenuIcon color={iconColor} size={size} />
+      : null;
+
+  let buttonProps = { plain, size };
+  let content;
+  if (children) {
+    content = children;
+  } else if (!theme.button.default) {
+    content = (
+      <Box
+        direction="row"
+        justify={justifyContent}
+        align="center"
+        pad="small"
+        gap={label && icon !== false ? 'small' : undefined}
+      >
+        <Text size={size}>{label}</Text>
+        {menuIcon}
+      </Box>
+    );
+  } else {
+    // when a theme has theme.button.default, keep content as
+    // undefined so we can rely on Button label & icon props
+    buttonProps = {
+      icon: menuIcon,
+      label,
+      plain,
+      reverse: true,
+      size,
+    };
+    content = undefined;
+  }
 
   const controlMirror = (
     <Box flex={false}>
@@ -206,13 +230,13 @@ const Menu = props => {
         active={activeItemIndex === controlButtonIndex}
         focusIndicator={false}
         hoverIndicator="background"
-        plain={plain}
         onClick={onDropClose}
         onFocus={() => setActiveItemIndex(controlButtonIndex)}
         // On first tab into menu, the control button should not
         // be able to receive tab focus because the focus should
         // go to the first menu item instead.
         tabIndex={activeItemIndex === constants.none ? '-1' : undefined}
+        {...buttonProps}
       >
         {typeof content === 'function'
           ? () => content({ ...props, drop: true })
@@ -232,13 +256,14 @@ const Menu = props => {
       onKeyDown={onKeyDown}
     >
       <DropButton
-        ref={forwardRef}
+        ref={ref}
         {...rest}
+        {...buttonProps}
         a11yTitle={a11yTitle || messages.openMenu || 'Open Menu'}
         disabled={disabled}
         dropAlign={align}
         dropTarget={dropTarget}
-        plain={plain}
+        dropProps={dropProps}
         open={isOpen}
         onOpen={onDropOpen}
         onClose={onDropClose}
@@ -252,40 +277,62 @@ const Menu = props => {
             <ContainerBox background={dropBackground || theme.menu.background}>
               {align.top === 'top' ? controlMirror : undefined}
               <Box overflow="auto">
-                {items.map((item, index) => (
-                  // eslint-disable-next-line react/no-array-index-key
-                  <Box key={index} flex={false}>
-                    <Button
-                      ref={r => {
-                        buttonRefs[index] = r;
-                      }}
-                      onFocus={() => setActiveItemIndex(index)}
-                      active={activeItemIndex === index}
-                      hoverIndicator="background"
-                      focusIndicator={false}
-                      {...{ ...item, icon: undefined, label: undefined }}
-                      onClick={(...args) => {
-                        if (item.onClick) {
-                          item.onClick(...args);
-                        }
-                        if (item.close !== false) {
-                          onDropClose();
-                        }
-                      }}
+                {items.map((item, index) => {
+                  // Determine whether the label is done as a child or
+                  // as an option Button kind property.
+                  const child = !theme.button.option ? (
+                    <Box
+                      align="start"
+                      pad="small"
+                      direction="row"
+                      gap={item.gap}
                     >
-                      <Box
+                      {item.reverse && item.label}
+                      {item.icon}
+                      {!item.reverse && item.label}
+                    </Box>
+                  ) : (
+                    undefined
+                  );
+                  // if we have a child, turn on plain, and hoverIndicator
+
+                  return (
+                    // eslint-disable-next-line react/no-array-index-key
+                    <Box key={index} flex={false}>
+                      <Button
+                        ref={r => {
+                          buttonRefs[index] = r;
+                        }}
+                        onFocus={() => setActiveItemIndex(index)}
+                        active={activeItemIndex === index}
+                        focusIndicator={false}
+                        plain={!child ? undefined : true}
                         align="start"
-                        pad="small"
-                        direction="row"
-                        gap={item.gap}
+                        kind={!child ? 'option' : undefined}
+                        hoverIndicator={!child ? undefined : 'background'}
+                        {...(!child
+                          ? item
+                          : {
+                              ...item,
+                              gap: undefined,
+                              icon: undefined,
+                              label: undefined,
+                              reverse: undefined,
+                            })}
+                        onClick={(...args) => {
+                          if (item.onClick) {
+                            item.onClick(...args);
+                          }
+                          if (item.close !== false) {
+                            onDropClose();
+                          }
+                        }}
                       >
-                        {item.reverse && item.label}
-                        {item.icon}
-                        {!item.reverse && item.label}
-                      </Box>
-                    </Button>
-                  </Box>
-                ))}
+                        {child}
+                      </Button>
+                    </Box>
+                  );
+                })}
               </Box>
               {align.bottom === 'bottom' ? controlMirror : undefined}
             </ContainerBox>
@@ -296,21 +343,7 @@ const Menu = props => {
       </DropButton>
     </Keyboard>
   );
-};
-
-Menu.propTypes = {
-  dropAlign: PropTypes.shape({
-    top: PropTypes.string,
-    left: PropTypes.string,
-  }),
-  dropProps: PropTypes.shape({}),
-  items: PropTypes.arrayOf({}),
-  messages: PropTypes.shape({
-    openMenu: PropTypes.string,
-    closeMenu: PropTypes.string,
-  }),
-  justifyContent: PropTypes.string,
-};
+});
 
 Menu.defaultProps = {
   dropAlign: {
@@ -328,12 +361,10 @@ Menu.defaultProps = {
 
 Menu.displayName = 'Menu';
 
-Object.setPrototypeOf(Menu.defaultProps, defaultProps);
-
 let MenuDoc;
 if (process.env.NODE_ENV !== 'production') {
   MenuDoc = require('./doc').doc(Menu); // eslint-disable-line global-require
 }
-const MenuWrapper = compose(withTheme, withForwardRef)(MenuDoc || Menu);
+const MenuWrapper = MenuDoc || Menu;
 
 export { MenuWrapper as Menu };

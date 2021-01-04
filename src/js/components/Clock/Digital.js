@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { forwardRef, useEffect, useState } from 'react';
 
 import { Box } from '../Box';
 
@@ -8,53 +8,39 @@ import {
   StyledDigitalPrevious,
 } from './StyledClock';
 
-class Digit extends Component {
-  static getDerivedStateFromProps(nextProps, prevState) {
-    const { number } = nextProps;
-    if (number !== prevState.number) {
-      return { previous: prevState.number, number };
-    }
-    return null;
-  }
+const Digit = ({ number, run, size }) => {
+  const [previous, setPrevious] = useState(number);
+  const [changing, setChanging] = useState();
 
-  state = {};
-
-  componentDidUpdate(prevProps, prevState) {
-    const { previous } = this.state;
-    if (prevState.previous === undefined && previous !== undefined) {
-      clearTimeout(this.timer);
-      this.timer = setTimeout(() => {
-        this.setState({ previous: undefined });
+  useEffect(() => {
+    if (number !== previous) {
+      setChanging(true);
+      const timer = setTimeout(() => {
+        setPrevious(number);
+        setChanging(false);
       }, 900);
+      return () => clearTimeout(timer);
     }
-  }
+    return undefined;
+  }, [number, previous]);
 
-  componentWillUnmount() {
-    clearTimeout(this.timer);
-  }
-
-  render() {
-    /* eslint-disable-next-line react/prop-types */
-    const { run, size } = this.props;
-    const { number, previous } = this.state;
-    if (previous !== undefined) {
-      const direction = run === 'backward' ? 'down' : 'up';
-      return (
-        <StyledDigitalDigit size={size}>
-          <StyledDigitalPrevious direction={direction}>
-            {Math.floor(previous)}
-          </StyledDigitalPrevious>
-          <StyledDigitalNext direction={direction}>
-            {Math.floor(number)}
-          </StyledDigitalNext>
-        </StyledDigitalDigit>
-      );
-    }
+  if (changing) {
+    const direction = run === 'backward' ? 'down' : 'up';
     return (
-      <StyledDigitalDigit size={size}>{Math.floor(number)}</StyledDigitalDigit>
+      <StyledDigitalDigit size={size}>
+        <StyledDigitalPrevious direction={direction}>
+          {Math.floor(previous)}
+        </StyledDigitalPrevious>
+        <StyledDigitalNext direction={direction}>
+          {Math.floor(number)}
+        </StyledDigitalNext>
+      </StyledDigitalDigit>
     );
   }
-}
+  return (
+    <StyledDigitalDigit size={size}>{Math.floor(number)}</StyledDigitalDigit>
+  );
+};
 
 const Element = ({ number, run, sep, size }) => {
   const tens = Math.floor(number / 10);
@@ -73,7 +59,7 @@ const Element = ({ number, run, sep, size }) => {
   return result;
 };
 
-export const Digital = props => {
+export const Digital = forwardRef((props, ref) => {
   const { elements, precision, run, size, ...rest } = props;
   let seconds;
   if (precision === 'seconds') {
@@ -84,7 +70,7 @@ export const Digital = props => {
     minutes = <Element number={elements.minutes} run={run} size={size} sep />;
   }
   return (
-    <Box direction="row" {...rest}>
+    <Box ref={ref} direction="row" {...rest}>
       <Element
         number={elements.hours12 || elements.hours}
         run={run}
@@ -94,4 +80,4 @@ export const Digital = props => {
       {seconds}
     </Box>
   );
-};
+});

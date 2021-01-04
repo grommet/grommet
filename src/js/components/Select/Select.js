@@ -1,6 +1,7 @@
 import React, {
   forwardRef,
   isValidElement,
+  useCallback,
   useContext,
   useMemo,
   useState,
@@ -19,13 +20,14 @@ import { FormContext } from '../Form/FormContext';
 import { TextInput } from '../TextInput';
 
 import { SelectContainer } from './SelectContainer';
+import { applyKey } from './utils';
 
 const SelectTextInput = styled(TextInput)`
-  cursor: pointer;
+  cursor: ${props => (props.defaultCursor ? 'default' : 'pointer')};
 `;
 
 const StyledSelectDropButton = styled(DropButton)`
-  ${props => !props.plain && controlBorderStyle};
+  ${props => !props.callerPlain && controlBorderStyle};
   ${props =>
     props.theme.select &&
     props.theme.select.control &&
@@ -36,16 +38,20 @@ const StyledSelectDropButton = styled(DropButton)`
 StyledSelectDropButton.defaultProps = {};
 Object.setPrototypeOf(StyledSelectDropButton.defaultProps, defaultProps);
 
+const defaultDropAlign = { top: 'bottom', left: 'left' };
+const defaultMessages = { multiple: 'multiple' };
+
 const Select = forwardRef(
   (
     {
       a11yTitle,
       alignSelf,
       children,
+      clear = false,
       closeOnChange = true,
       disabled,
       disabledKey,
-      dropAlign = { top: 'bottom', left: 'left' },
+      dropAlign = defaultDropAlign,
       dropHeight,
       dropProps,
       dropTarget,
@@ -56,17 +62,18 @@ const Select = forwardRef(
       icon,
       labelKey,
       margin,
-      messages = { multiple: 'multiple' },
+      messages = defaultMessages,
       multiple,
       name,
       onChange,
+      onClick,
       onClose,
       onKeyDown,
       onMore,
       onOpen,
       onSearch,
       open: propOpen,
-      options,
+      options: optionsProp,
       placeholder,
       plain,
       replace,
@@ -83,77 +90,80 @@ const Select = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const inputRef = useRef();
     const formContext = useContext(FormContext);
+    // value is used for what we receive in valueProp and the basis for
+    // what we send with onChange
+    const [value, setValue] = formContext.useFormInput(name, valueProp, '');
+    // valuedValue is the value mapped with any valueKey applied
+    const valuedValue = useMemo(() => {
+      if (Array.isArray(value))
+        return value.map(v =>
+          valueKey && valueKey.reduce ? v : applyKey(v, valueKey),
+        );
+      return valueKey && valueKey.reduce ? value : applyKey(value, valueKey);
+    }, [value, valueKey]);
+    // search input value
+    const [search, setSearch] = useState();
+    // All select option indices and values
+    const [allOptions, setAllOptions] = useState(optionsProp);
+    // Track changes to options property, except when options are being
+    // updated due to search activity. Allows option's initial index value
+    // to be referenced when filtered by search.
+    useEffect(() => {
+      if (!search) setAllOptions(optionsProp);
+    }, [optionsProp, search]);
 
-    // normalize the value prop to not be objects
-    const normalizedValueProp = useMemo(() => {
-      if (Array.isArray(valueProp)) {
-        if (valueProp.length === 0) return valueProp;
-        if (typeof valueProp[0] === 'object' && valueKey) {
-          return valueProp.map(v => v[valueKey]);
+    // the option indexes present in the value
+    const optionIndexesInValue = useMemo(() => {
+      const result = [];
+      allOptions.forEach((option, index) => {
+        if (selected !== undefined) {
+          if (Array.isArray(selected)) {
+            if (selected.indexOf(index) !== -1) result.push(index);
+          } else if (index === selected) {
+            result.push(index);
+          }
+        } else if (Array.isArray(valuedValue)) {
+          if (valuedValue.some(v => v === applyKey(option, valueKey))) {
+            result.push(index);
+          }
+        } else if (valuedValue === applyKey(option, valueKey)) {
+          result.push(index);
         }
-        return valueProp;
-      }
-      if (typeof valueProp === 'object' && valueKey) return valueProp[valueKey];
-      return valueProp;
-    }, [valueKey, valueProp]);
-
-    const [value, setValue] = formContext.useFormContext(
-      name,
-      normalizedValueProp,
-      '',
-    );
-
-    // track which options are present in the value
-    const valueOptions = useMemo(
-      () =>
-        options.filter((option, index) => {
-          if (selected !== undefined) {
-            if (Array.isArray(selected)) return selected.indexOf(index) !== -1;
-            return index === selected;
-          }
-          if (typeof option === 'object' && valueKey) {
-            if (Array.isArray(value)) {
-              return value.indexOf(option[valueKey]) !== -1;
-            }
-            return option[valueKey] === value;
-          }
-          if (Array.isArray(value)) {
-            return value.indexOf(option) !== -1;
-          }
-          return option === value;
-        }),
-      [options, selected, value, valueKey],
-    );
+      });
+      return result;
+    }, [allOptions, selected, valueKey, valuedValue]);
 
     const [open, setOpen] = useState(propOpen);
     useEffect(() => setOpen(propOpen), [propOpen]);
 
-    const onRequestOpen = () => {
+    const onRequestOpen = useCallback(() => {
+      if (open) return;
       setOpen(true);
       if (onOpen) onOpen();
-    };
+    }, [onOpen, open]);
 
-    const onRequestClose = () => {
+    const onRequestClose = useCallback(() => {
       setOpen(false);
       if (onClose) onClose();
-    };
+    }, [onClose]);
 
-    const onSelectChange = (
-      event,
-      { option, value: nextValue, selected: nextSelected },
-    ) => {
-      if (closeOnChange) onRequestClose();
-      setValue(nextValue);
-      if (onChange) {
-        event.persist();
-        const adjustedEvent = event;
-        adjustedEvent.target = inputRef.current;
-        adjustedEvent.value = nextValue;
-        adjustedEvent.option = option;
-        adjustedEvent.selected = nextSelected;
-        onChange(adjustedEvent);
-      }
-    };
+    const onSelectChange = useCallback(
+      (event, { option, value: nextValue, selected: nextSelected }) => {
+        if (closeOnChange) onRequestClose();
+        setValue(nextValue);
+        if (onChange) {
+          event.persist();
+          const adjustedEvent = event;
+          adjustedEvent.target = inputRef.current;
+          adjustedEvent.value = nextValue;
+          adjustedEvent.option = option;
+          adjustedEvent.selected = nextSelected;
+          onChange(adjustedEvent);
+        }
+        setSearch();
+      },
+      [closeOnChange, onChange, onRequestClose, setValue],
+    );
 
     let SelectIcon;
     switch (icon) {
@@ -161,7 +171,10 @@ const Select = forwardRef(
         break;
       case true:
       case undefined:
-        SelectIcon = theme.select.icons.down;
+        SelectIcon =
+          open && theme.select.icons.up
+            ? theme.select.icons.up
+            : theme.select.icons.down;
         break;
       default:
         SelectIcon = icon;
@@ -170,42 +183,21 @@ const Select = forwardRef(
     // element to show, trumps inputValue
     const selectValue = useMemo(() => {
       if (valueLabel) return valueLabel;
-      if (React.isValidElement(value)) return value;
+      if (React.isValidElement(value)) return value; // deprecated
       return undefined;
     }, [value, valueLabel]);
 
     // text to show
     const inputValue = useMemo(() => {
       if (!selectValue) {
-        if (Array.isArray(valueOptions)) {
-          if (valueOptions.length === 0) return '';
-          if (valueOptions.length === 1) {
-            const valueOption = valueOptions[0];
-            if (typeof valueOption === 'object' && labelKey) {
-              if (typeof labelKey === 'function') {
-                return labelKey(valueOption);
-              }
-              return valueOption[labelKey];
-            }
-            return valueOption;
-          }
-          return messages.multiple;
-        }
-        if (typeof valueOptions === 'object' && labelKey) {
-          if (typeof labelKey === 'function') {
-            return labelKey(valueOptions);
-          }
-          return valueOptions[labelKey];
-        }
-        if (valueOptions !== undefined) return valueOptions;
-        return '';
+        if (optionIndexesInValue.length === 0) return '';
+        if (optionIndexesInValue.length === 1)
+          return applyKey(allOptions[optionIndexesInValue[0]], labelKey);
+        return messages.multiple;
       }
       return undefined;
-    }, [labelKey, messages, selectValue, valueOptions]);
+    }, [labelKey, messages, optionIndexesInValue, allOptions, selectValue]);
 
-    // const dark = theme.select.background
-    // ? colorIsDark(theme.select.background)
-    // : theme.dark;
     const iconColor = normalizeColor(
       theme.select.icons.color || 'control',
       theme,
@@ -226,8 +218,10 @@ const Select = forwardRef(
           margin={margin}
           onOpen={onRequestOpen}
           onClose={onRequestClose}
+          onClick={onClick}
           dropContent={
             <SelectContainer
+              clear={clear}
               disabled={disabled}
               disabledKey={disabledKey}
               dropHeight={dropHeight}
@@ -240,9 +234,13 @@ const Select = forwardRef(
               onKeyDown={onKeyDown}
               onMore={onMore}
               onSearch={onSearch}
-              options={options}
+              options={optionsProp}
+              allOptions={allOptions}
+              optionIndexesInValue={optionIndexesInValue}
               replace={replace}
               searchPlaceholder={searchPlaceholder}
+              search={search}
+              setSearch={setSearch}
               selected={selected}
               value={value}
               valueKey={valueKey}
@@ -250,7 +248,9 @@ const Select = forwardRef(
               {children}
             </SelectContainer>
           }
-          plain={plain}
+          // StyledDropButton needs to know if the border should be shown
+          callerPlain={plain}
+          plain // Button should be plain
           dropProps={dropProps}
           theme={theme}
         >
@@ -266,9 +266,16 @@ const Select = forwardRef(
                   a11yTitle={
                     a11yTitle &&
                     `${a11yTitle}${
-                      typeof value === 'string' ? `, ${value}` : ''
+                      value && typeof value === 'string' ? `, ${value}` : ''
                     }`
                   }
+                  // When Select is disabled, we want to show a default cursor
+                  // but not have disabled styling come from TextInput
+                  // Disabled can be a bool or an array of options to disable.
+                  // We only want to disable the TextInput if the control
+                  // button should be disabled which occurs when disabled
+                  // equals true.
+                  defaultCursor={disabled === true || undefined}
                   id={id ? `${id}__input` : undefined}
                   name={name}
                   ref={inputRef}
@@ -281,7 +288,6 @@ const Select = forwardRef(
                   value={inputValue}
                   size={size}
                   theme={theme}
-                  onClick={disabled === true ? undefined : onRequestOpen}
                 />
               )}
             </Box>

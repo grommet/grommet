@@ -15,6 +15,19 @@ test('Heading renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('Heading accepts ref', () => {
+  const ref = React.createRef();
+  const component = renderer.create(
+    <Grommet>
+      <Heading ref={ref} />
+    </Grommet>,
+    { createNodeMock: el => el },
+  );
+  expect(ref.current).not.toBeNull();
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 test('Heading level renders', () => {
   const component = renderer.create(
     <Grommet>
@@ -187,6 +200,39 @@ test('Theme based font weight renders', () => {
       <Heading level={2} />
       <Heading level={3} />
       <Heading level={4} />
+    </Grommet>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Throws a warning when heading.level is undefined in the theme.', () => {
+  global.console = {
+    warn: jest.fn(),
+  };
+
+  const customTheme = {
+    heading: {
+      level: {
+        '6': undefined,
+      },
+    },
+  };
+
+  renderer.create(
+    <Grommet theme={customTheme}>
+      <Heading level={6} />
+    </Grommet>,
+  );
+
+  const consoleMsg = 'Heading level 6 is not defined in your theme.';
+  expect(global.console.warn).toHaveBeenCalledWith(consoleMsg);
+});
+
+test('Heading fill renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Heading fill />
     </Grommet>,
   );
   const tree = component.toJSON();

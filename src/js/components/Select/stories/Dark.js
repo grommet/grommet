@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const DarkSelect = () => {
+export const Dark = () => {
   const options = ['one', 'two'];
   const [value, setValue] = useState('');
 
@@ -21,5 +20,3 @@ const DarkSelect = () => {
     </Grommet>
   );
 };
-
-storiesOf('Select', module).add('Dark', () => <DarkSelect />);

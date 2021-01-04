@@ -1,15 +1,12 @@
 import { describe, PropTypes } from 'react-desc';
 
-import {
-  colorPropType,
-  getAvailableAtBadge,
-  genericProps,
-  themeDocUtils,
-} from '../../utils';
+import { colorPropType, genericProps } from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
+import { themeDocUtils } from '../../utils/themeDocUtils';
 
 export const doc = Paragraph => {
   const DocumentedParagraph = describe(Paragraph)
-    .availableAt(getAvailableAtBadge('Paragraph'))
+    .availableAt(getAvailableAtBadge('Paragraph', 'Type'))
     .description('A paragraph of text.')
     .usage(
       `import { Paragraph } from 'grommet';
@@ -24,7 +21,7 @@ export const doc = Paragraph => {
     ),
     fill: PropTypes.bool
       .description('Whether the width should fill the container.')
-      .defaultValue(false),
+      .defaultValue(undefined),
     responsive: PropTypes.bool
       .description(`Whether margin should be scaled for mobile environments.`)
       .defaultValue(true),
@@ -74,6 +71,11 @@ export const themeDoc = {
         maxWidth: '816px',
       },
     }`,
+  },
+  'paragraph.font.family': {
+    description: 'The font family to use for Paragraph.',
+    type: 'string',
+    defaultValue: undefined,
   },
   'paragraph.textAlign': {
     description: `How to align the text inside the Paragraph.`,

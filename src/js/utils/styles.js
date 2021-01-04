@@ -51,88 +51,112 @@ export const edgeStyle = (
     `;
   }
   const result = [];
-  if (data.horizontal) {
-    result.push(css`
-      ${kind}-left: ${theme.global.edgeSize[data.horizontal] ||
-        data.horizontal};
-      ${kind}-right: ${theme.global.edgeSize[data.horizontal] ||
-        data.horizontal};
+
+  const { horizontal, vertical, top, bottom, left, right } = data;
+
+  // if horizontal and vertical are equal OR all sides are equal,
+  // we can just return a single css value such as padding: 12px
+  // instead of breaking out by sides.
+  const horizontalVerticalEqual =
+    horizontal && vertical && horizontal === vertical;
+  const allSidesEqual =
+    top && bottom && left && right && ((top === bottom) === left) === right;
+
+  if (horizontalVerticalEqual || allSidesEqual) {
+    // since the values will be the same between vertical & horizontal OR
+    // left, right, top, & bottom, we can just choose one
+    const value = horizontalVerticalEqual ? horizontal : top;
+    return css`
+      ${kind}: ${theme.global.edgeSize[value] || value};
       ${responsive && breakpoint
         ? breakpointStyle(
             breakpoint,
             `
-        ${kind}-left: ${breakpoint.edgeSize[data.horizontal] ||
-              data.horizontal};
-        ${kind}-right: ${breakpoint.edgeSize[data.horizontal] ||
-              data.horizontal};
+        ${kind}: ${breakpoint.edgeSize[value] || value};
       `,
+          )
+        : ''};
+    `;
+  }
+
+  if (horizontal) {
+    result.push(css`
+      ${kind}-left: ${theme.global.edgeSize[horizontal] || horizontal};
+      ${kind}-right: ${theme.global.edgeSize[horizontal] || horizontal};
+      ${responsive && breakpoint
+        ? breakpointStyle(
+            breakpoint,
+            `
+          ${kind}-left: ${breakpoint.edgeSize[horizontal] || horizontal};
+          ${kind}-right: ${breakpoint.edgeSize[horizontal] || horizontal};
+        `,
           )
         : ''};
     `);
   }
-  if (data.vertical) {
+  if (vertical) {
     result.push(css`
-      ${kind}-top: ${theme.global.edgeSize[data.vertical] || data.vertical};
-      ${kind}-bottom: ${theme.global.edgeSize[data.vertical] || data.vertical};
+      ${kind}-top: ${theme.global.edgeSize[vertical] || vertical};
+      ${kind}-bottom: ${theme.global.edgeSize[vertical] || vertical};
       ${responsive && breakpoint
         ? breakpointStyle(
             breakpoint,
             `
-        ${kind}-top: ${breakpoint.edgeSize[data.vertical] || data.vertical};
-        ${kind}-bottom: ${breakpoint.edgeSize[data.vertical] || data.vertical};
-      `,
+          ${kind}-top: ${breakpoint.edgeSize[vertical] || vertical};
+          ${kind}-bottom: ${breakpoint.edgeSize[vertical] || vertical};
+        `,
           )
         : ''};
     `);
   }
-  if (data.top) {
+  if (top) {
     result.push(css`
-      ${kind}-top: ${theme.global.edgeSize[data.top] || data.top};
+      ${kind}-top: ${theme.global.edgeSize[top] || top};
       ${responsive && breakpoint
         ? breakpointStyle(
             breakpoint,
             `
-        ${kind}-top: ${breakpoint.edgeSize[data.top] || data.top};
-      `,
+          ${kind}-top: ${breakpoint.edgeSize[top] || top};
+        `,
           )
         : ''};
     `);
   }
-  if (data.bottom) {
+  if (bottom) {
     result.push(css`
-      ${kind}-bottom: ${theme.global.edgeSize[data.bottom] || data.bottom};
+      ${kind}-bottom: ${theme.global.edgeSize[bottom] || bottom};
       ${responsive && breakpoint
         ? breakpointStyle(
             breakpoint,
             `
-        ${kind}-bottom: ${breakpoint.edgeSize[data.bottom] || data.bottom};
-      `,
+          ${kind}-bottom: ${breakpoint.edgeSize[bottom] || bottom};
+        `,
           )
         : ''};
     `);
   }
-  if (data.left) {
+  if (left) {
     result.push(css`
-      ${kind}-left: ${theme.global.edgeSize[data.left] || data.left};
+      ${kind}-left: ${theme.global.edgeSize[left] || left};
       ${responsive && breakpoint
         ? breakpointStyle(
             breakpoint,
             `
-        ${kind}-left: ${breakpoint.edgeSize[data.left] || data.left};
-      `,
+          ${kind}-left: ${breakpoint.edgeSize[left] || left};
+        `,
           )
         : ''};
     `);
   }
-  if (data.right) {
+  if (right) {
     result.push(css`
-      ${kind}-right: ${theme.global.edgeSize[data.right] || data.right};
+      ${kind}-right: ${theme.global.edgeSize[right] || right};
       ${responsive && breakpoint
         ? breakpointStyle(
             breakpoint,
             `
-        ${kind}-right: ${breakpoint.edgeSize[data.right] || data.right};
-      `,
+          ${kind}-right: ${breakpoint.edgeSize[right] || right};
+        `,
           )
         : ''};
     `);
@@ -144,8 +168,9 @@ export const edgeStyle = (
         ? breakpointStyle(
             breakpoint,
             `
-        ${kind}-inline-start: ${breakpoint.edgeSize[data.start] || data.start};
-      `,
+          ${kind}-inline-start: ${breakpoint.edgeSize[data.start] ||
+              data.start};
+        `,
           )
         : ''};
     `);
@@ -157,12 +182,13 @@ export const edgeStyle = (
         ? breakpointStyle(
             breakpoint,
             `
-        ${kind}-inline-end: ${breakpoint.edgeSize[data.end] || data.end};
-      `,
+          ${kind}-inline-end: ${breakpoint.edgeSize[data.end] || data.end};
+        `,
           )
         : ''};
     `);
   }
+
   return result;
 };
 
@@ -182,8 +208,107 @@ export const fillStyle = fillProp => {
   return undefined;
 };
 
+const focusStyles = (props, { forceOutline, justBorder } = {}) => {
+  const {
+    theme: {
+      global: { focus },
+    },
+  } = props;
+  if (!focus || (forceOutline && !focus.outline)) {
+    const color = normalizeColor('focus', props.theme);
+    if (color) return `outline: 2px solid ${color};`;
+    return ''; // native
+  }
+  if (focus.outline && (!focus.border || !justBorder)) {
+    if (typeof focus.outline === 'object') {
+      const color = normalizeColor(focus.outline.color || 'focus', props.theme);
+      const size = focus.outline.size || '2px';
+      return `
+        outline-offset: 0px;
+        outline: ${size} solid ${color};
+      `;
+    }
+    return `outline: ${focus.outline};`;
+  }
+  if (focus.shadow && (!focus.border || !justBorder)) {
+    if (typeof focus.shadow === 'object') {
+      const color = normalizeColor(
+        // If there is a focus.border.color, use that for shadow too.
+        // This is for backwards compatibility in v2.
+        (focus.border && focus.border.color) || focus.shadow.color || 'focus',
+        props.theme,
+      );
+      const size = focus.shadow.size || '2px'; // backwards compatible default
+      return `
+        outline: none;
+        box-shadow: 0 0 ${size} ${size} ${color};
+      `;
+    }
+    return `
+      outline: none;
+      box-shadow: ${focus.shadow};
+    `;
+  }
+  if (focus.border) {
+    const color = normalizeColor(focus.border.color || 'focus', props.theme);
+    return `
+      outline: none;
+      border-color: ${color};
+    `;
+  }
+  return ''; // defensive
+};
+
+const unfocusStyles = (props, { forceOutline, justBorder } = {}) => {
+  const {
+    theme: {
+      global: { focus },
+    },
+  } = props;
+  if (!focus || (forceOutline && !focus.outline)) {
+    const color = normalizeColor('focus', props.theme);
+    if (color) return `outline: none;`;
+    return ''; // native
+  }
+  if (focus.outline && (!focus.border || !justBorder)) {
+    if (typeof focus.outline === 'object') {
+      return `
+        outline-offset: 0px;
+        outline: none;
+      `;
+    }
+    return `outline: none;`;
+  }
+  if (focus.shadow && (!focus.border || !justBorder)) {
+    if (typeof focus.shadow === 'object') {
+      return `
+        outline: none;
+        box-shadow: none;
+      `;
+    }
+    return `
+      outline: none;
+      box-shadow: none;
+    `;
+  }
+  if (focus.border) {
+    return `
+      outline: none;
+      border-color: none;
+    `;
+  }
+  return ''; // defensive
+};
+
 // focus also supports clickable elements inside svg
-export const focusStyle = css`
+export const focusStyle = ({
+  forceOutline,
+  justBorder,
+  skipSvgChildren,
+} = {}) => css`
+  ${props =>
+    !skipSvgChildren &&
+    `
   > circle,
   > ellipse,
   > line,
@@ -191,49 +316,170 @@ export const focusStyle = css`
   > polygon,
   > polyline,
   > rect {
-    outline: ${props =>
-        normalizeColor(props.theme.global.focus.border.color, props.theme)}
-      solid 2px;
-  }
-  outline-color: ${props =>
-    normalizeColor(props.theme.global.focus.border.color, props.theme)};
-  border-color: ${props =>
-    normalizeColor(props.theme.global.focus.border.color, props.theme)};
-  box-shadow: 0 0 2px 2px
-    ${props =>
-      normalizeColor(props.theme.global.focus.border.color, props.theme)};
-
+    ${focusStyles(props)}
+  }`}
+  ${props => focusStyles(props, { forceOutline, justBorder })}
+  ${!forceOutline &&
+    `
   ::-moz-focus-inner {
     border: 0;
   }
+  `}
 `;
+
+// This is placed next to focusStyle for easy maintainability
+// of code since changes to focusStyle should be reflected in
+// unfocusStyle as well. However, this function is only being used
+// by List for an iterim state. It is not recommended to rely on
+// this function for other components.
+export const unfocusStyle = ({
+  forceOutline,
+  justBorder,
+  skipSvgChildren,
+} = {}) => css`
+  ${props =>
+    !skipSvgChildren &&
+    `
+  > circle,
+  > ellipse,
+  > line,
+  > path,
+  > polygon,
+  > polyline,
+  > rect {
+    ${unfocusStyles(props)}
+  }`}
+  ${props => unfocusStyles(props, { forceOutline, justBorder })}
+  ${!forceOutline &&
+    `
+  ::-moz-focus-inner {
+    border: 0;
+  }
+  `}
+`;
+
+// For backwards compatibility we need to add back the control border width.
+// Based on how grommet was functioning prior to https://github.com/grommet/grommet/pull/3939,
+// the padding was subtracting the border width from the theme value, but the
+// placeholder was not. Because we're now placing the subtraction into the
+// theme itself, we have to add back in the border width here.
+// This is used for placeholder/icon in TextInput and MaskedInput.
+const adjustPad = (props, value) =>
+  `${parseMetricToNum(`${props.theme.global.edgeSize[value] || value}px`) +
+    parseMetricToNum(`${props.theme.global.control.border.width}px`)}px`;
+
+export const getInputPadBySide = (props, side) => {
+  if (typeof props.theme.global.input.padding !== 'object') {
+    const adjustedPad = adjustPad(props, props.theme.global.input.padding);
+    return adjustedPad;
+  }
+
+  let orientation;
+  if (side === 'left' || side === 'right') orientation = 'horizontal';
+  else if (side === 'top' || side === 'bottom') orientation = 'vertical';
+  else orientation = undefined;
+
+  // if individual side isn't available, fallback to the
+  // orientation if possible
+  const pad =
+    props.theme.global.input.padding[side] ||
+    props.theme.global.input.padding[orientation];
+
+  const adjustedPad = adjustPad(props, pad);
+
+  return adjustedPad;
+};
+
+const placeholderColor = css`
+  color: ${props =>
+    normalizeColor(props.theme.global.colors.placeholder, props.theme)};
+`;
+
+const placeholderStyle = css`
+  &::-webkit-input-placeholder {
+    ${placeholderColor};
+  }
+
+  &::-moz-placeholder {
+    ${placeholderColor};
+  }
+
+  &:-ms-input-placeholder {
+    ${placeholderColor};
+  }
+`;
+
+const inputSizeStyle = props => {
+  const data = props.theme.text[props.size];
+  return css`
+    font-size: ${data.size};
+    line-height: ${data.height};
+  `;
+};
 
 export const inputStyle = css`
   box-sizing: border-box;
-  font-size: inherit;
+  ${props =>
+    `font-size: ${
+      props.theme.global.input.font.size
+        ? props.theme.text[props.theme.global.input.font.size].size ||
+          props.theme.global.input.font.size
+        : 'inherit'
+    };`}
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: ${props =>
-    parseMetricToNum(props.theme.global.input.padding) -
-    parseMetricToNum(props.theme.global.control.border.width)}px;
-  outline: none;
   background: transparent;
   color: inherit;
+  width: 100%;
   ${props =>
-    props.theme.global.input.weight &&
+    props.theme.global.input.font.height &&
+    `line-height: ${props.theme.global.input.font.height};`}
+  ${props =>
+    props.theme.global.input.padding &&
+    typeof props.theme.global.input.padding !== 'object'
+      ? // On a breaking change release, this condition could be removed and
+        // just the edgeStyle could remain. Currently, this is needed for
+        // backwards compatibility since we are placing the calculation in
+        // base.js
+        `padding: ${parseMetricToNum(
+          props.theme.global.edgeSize[props.theme.global.input.padding] ||
+            props.theme.global.input.padding,
+        ) - parseMetricToNum(props.theme.global.control.border.width)}px;`
+      : edgeStyle(
+          'padding',
+          props.theme.global.input.padding,
+          props.responsive,
+          props.theme.box.responsiveBreakpoint,
+          props.theme,
+        )}
+  ${props =>
+    // for backwards compatibility, check if props.theme.global.input.weight
+    (props.theme.global.input.weight || props.theme.global.input.font.weight) &&
     css`
-      font-weight: ${props.theme.global.input.weight};
+      font-weight: ${props.theme.global.input.weight ||
+        props.theme.global.input.font.weight};
     `} margin: 0;
-
-  ${props =>
-    props.focus &&
-    (!props.plain || props.focusIndicator) &&
-    focusStyle} ${controlBorderStyle}
+  ${props => props.size && inputSizeStyle(props)}
+  ${props => props.focus && !props.plain && focusStyle()};
+  ${controlBorderStyle}
+  ${placeholderStyle}
 
   ::-webkit-search-decoration {
     -webkit-appearance: none;
   }
+
+  &::-moz-focus-inner {
+    border: none;
+    outline: none;
+  }
+
+  &:-moz-placeholder, // FF 18-
+  &::-moz-placeholder { // FF 19+
+    opacity: 1;
+  }
+
+  ${props => props.theme.global.input.extend}
 `;
 
 export const overflowStyle = overflowProp => {
@@ -249,24 +495,6 @@ export const overflowStyle = overflowProp => {
       `overflow-y: ${overflowProp.vertical};`};
   `;
 };
-
-const placeholderColor = css`
-  color: ${props => props.theme.global.colors.placeholder};
-`;
-
-export const placeholderStyle = css`
-  &::-webkit-input-placeholder {
-    ${placeholderColor};
-  }
-
-  &::-moz-placeholder {
-    ${placeholderColor};
-  }
-
-  &:-ms-input-placeholder {
-    ${placeholderColor};
-  }
-`;
 
 const ALIGN_SELF_MAP = {
   center: 'center',
@@ -299,4 +527,91 @@ export const disabledStyle = componentStyle => css`
 
 export const sizeStyle = (name, value, theme) => css`
   ${name}: ${theme.global.size[value] || value};
+`;
+
+export const plainInputStyle = css`
+  outline: none;
+  border: none;
+`;
+
+// CSS for this sub-object in the theme
+export const kindPartStyles = (obj, theme, colorValue) => {
+  const styles = [];
+  if (obj.padding || obj.pad) {
+    // button uses `padding` but other components use Grommet `pad`
+    const pad = obj.padding || obj.pad;
+    if (pad.vertical || pad.horizontal)
+      styles.push(
+        `padding: ${theme.global.edgeSize[pad.vertical] ||
+          pad.vertical ||
+          0} ${theme.global.edgeSize[pad.horizontal] || pad.horizontal || 0};`,
+      );
+    else styles.push(`padding: ${theme.global.edgeSize[pad] || pad || 0};`);
+  }
+  if (obj.background)
+    styles.push(
+      backgroundStyle(
+        colorValue || obj.background,
+        theme,
+        obj.color ||
+          (Object.prototype.hasOwnProperty.call(obj, 'color') &&
+          obj.color === undefined
+            ? false
+            : undefined),
+      ),
+    );
+  else if (obj.color)
+    styles.push(`color: ${normalizeColor(obj.color, theme)};`);
+  if (obj.border) {
+    if (obj.border.width)
+      styles.push(css`
+        border-style: solid;
+        border-width: ${obj.border.width};
+      `);
+    if (obj.border.color)
+      styles.push(css`
+        border-color: ${normalizeColor(
+          (!obj.background && colorValue) || obj.border.color || 'border',
+          theme,
+        )};
+      `);
+    if (obj.border.radius)
+      styles.push(css`
+        border-radius: ${obj.border.radius};
+      `);
+  } else if (obj.border === false) styles.push('border: none;');
+  if (colorValue && !obj.border && !obj.background)
+    styles.push(`color: ${normalizeColor(colorValue, theme)};`);
+  if (obj.font) {
+    if (obj.font.size) {
+      styles.push(
+        `font-size: ${theme.text[obj.font.size].size || obj.font.size};`,
+      );
+    }
+    if (obj.font.height) {
+      styles.push(`line-height: ${obj.font.height};`);
+    }
+    if (obj.font.weight) {
+      styles.push(`font-weight: ${obj.font.weight};`);
+    }
+  }
+  if (obj.opacity) {
+    const opacity =
+      obj.opacity === true
+        ? theme.global.opacity.medium
+        : theme.global.opacity[obj.opacity] || obj.opacity;
+    styles.push(`opacity: ${opacity};`);
+  }
+  if (obj.extend) styles.push(obj.extend);
+  return styles;
+};
+
+const TEXT_ALIGN_MAP = {
+  center: 'center',
+  end: 'right',
+  start: 'left',
+};
+
+export const textAlignStyle = css`
+  text-align: ${props => TEXT_ALIGN_MAP[props.textAlign]};
 `;

@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, WorldMap } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Example = () => {
+export const Simple = () => {
   return (
     <Grommet theme={grommet}>
       <Box align="center" pad="large">
@@ -14,4 +13,9 @@ const Example = () => {
   );
 };
 
-storiesOf('WorldMap', module).add('Simple', () => <Example />);
+Simple.story = {
+  parameters: {
+    // chromatic disabled because snapshot is the same as SelectPlace
+    chromatic: { disable: true },
+  },
+};

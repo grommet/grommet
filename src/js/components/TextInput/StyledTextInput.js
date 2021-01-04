@@ -2,50 +2,38 @@ import styled, { css } from 'styled-components';
 
 import {
   disabledStyle,
-  focusStyle,
+  getInputPadBySide,
   inputStyle,
   parseMetricToNum,
-  placeholderStyle,
+  plainInputStyle,
+  textAlignStyle,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
 
-const sizeStyle = props => {
-  const data = props.theme.text[props.size];
-  return css`
-    font-size: ${data.size};
-    line-height: ${data.height};
-  `;
+const getPlainStyle = plain => {
+  if (plain === 'full') {
+    return css`
+      ${plainInputStyle} padding: 0;
+    `;
+  }
+  return plain && plainInputStyle;
 };
 
-const plainStyle = css`
-  border: none;
-`;
-
 const StyledTextInput = styled.input`
-  ${inputStyle} width: 100%;
-
-  ${props => props.size && sizeStyle(props)}
-  ${props => props.plain && plainStyle}
-
-  ${placeholderStyle}
+  ${inputStyle}
+  ${props => getPlainStyle(props.plain)}
   ${props =>
     props.icon &&
     (props.reverse
       ? `padding-right: ${props.theme.global.edgeSize.large};`
       : `padding-left: ${props.theme.global.edgeSize.large};`)}
-
-  &::-moz-focus-inner {
-    border: none;
-    outline: none;
-  }
-
-  ${props => props.focus && !props.plain && focusStyle};
   ${props =>
     props.disabled &&
     disabledStyle(
       props.theme.textInput.disabled && props.theme.textInput.disabled.opacity,
     )}
   ${props => props.theme.textInput && props.theme.textInput.extend};
+  ${props => props.textAlign && textAlignStyle}
 `;
 
 StyledTextInput.defaultProps = {};
@@ -67,7 +55,7 @@ Object.setPrototypeOf(StyledTextInputContainer.defaultProps, defaultProps);
 const StyledPlaceholder = styled.div`
   position: absolute;
   left: ${props =>
-    parseMetricToNum(props.theme.global.input.padding) -
+    parseMetricToNum(getInputPadBySide(props, 'left')) -
     parseMetricToNum(props.theme.global.control.border.width)}px;
   top: 50%;
   transform: translateY(-50%);
@@ -93,8 +81,8 @@ const StyledIcon = styled.div`
   pointer-events: none;
   ${props =>
     props.reverse
-      ? `right: ${props.theme.global.input.padding};`
-      : `left: ${props.theme.global.input.padding};`}
+      ? `right: ${getInputPadBySide(props, 'right')};`
+      : `left: ${getInputPadBySide(props, 'left')};`}
 `;
 
 const StyledSuggestions = styled.ol`

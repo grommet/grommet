@@ -1,10 +1,4 @@
-import React, {
-  forwardRef,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import React, { forwardRef, useEffect, useMemo, useRef, useState } from 'react';
 import { FormContext } from './FormContext';
 
 const defaultMessages = {
@@ -12,144 +6,257 @@ const defaultMessages = {
   required: 'required',
 };
 const defaultValue = {};
-const defaultErrors = {};
-const defaultInfos = {};
-
-const updateErrors = (nextErrors, name, error) => {
-  // we disable no-param-reassing so we can use this as a utility function
-  // to update nextErrors, to avoid code duplication
-  /* eslint-disable no-param-reassign */
-  const hasStatusError = typeof error === 'object' && error.status === 'error';
-
-  // typeof error === 'object' is implied for both cases of error with
-  // a status message and for an error object that is a react node
-  if (
-    (typeof error === 'object' && !error.status) ||
-    hasStatusError ||
-    typeof error === 'string'
-  ) {
-    nextErrors[name] = hasStatusError ? error.message : error;
-  } else {
-    delete nextErrors[name];
-  }
-  /* eslint-enable no-param-reassign */
+const defaultTouched = {};
+const defaultValidationResults = {
+  errors: {},
+  infos: {},
 };
 
-const updateInfos = (nextInfos, name, error) => {
-  /* eslint-disable no-param-reassign */
-  if (typeof error === 'object' && error.status === 'info') {
-    nextInfos[name] = error.message;
-  } else {
-    delete nextInfos[name];
-  }
-  /* eslint-enable no-param-reassign */
+// validations is an array from Object.entries()
+const validate = (validations, value, omitValid) => {
+  const nextErrors = {};
+  const nextInfos = {};
+  validations.forEach(([name, validation]) => {
+    if (!omitValid) {
+      nextErrors[name] = undefined;
+      nextInfos[name] = undefined;
+    }
+    const result = validation(value[name], value);
+    // typeof error === 'object' is implied for both cases of error with
+    // a status message and for an error object that is a react node
+    if (typeof result === 'object') {
+      if (result.status === 'info') {
+        nextInfos[name] = result.message;
+      } else {
+        nextErrors[name] = result.message || result; // could be a node
+      }
+    } else if (typeof result === 'string') {
+      nextErrors[name] = result;
+    }
+  });
+  return [nextErrors, nextInfos];
 };
 
 const Form = forwardRef(
   (
     {
       children,
-      errors: errorsProp = defaultErrors,
-      infos: infosProp = defaultInfos,
-      messages: messagesProp = defaultMessages,
+      errors: errorsProp = defaultValidationResults.errors,
+      infos: infosProp = defaultValidationResults.infos,
+      messages = defaultMessages,
       onChange,
       onReset,
       onSubmit,
-      validate = 'submit',
+      onValidate,
+      validate: validateOn = 'submit',
       value: valueProp,
       ...rest
     },
     ref,
   ) => {
-    const [value, setValue] = useState(valueProp || defaultValue);
-    useEffect(() => {
-      if (valueProp !== undefined && valueProp !== value) {
-        setValue(valueProp);
-      }
-    }, [value, valueProp]);
-    const [messages, setMessages] = useState(messagesProp);
-    useEffect(() => setMessages(messagesProp), [messagesProp]);
-    const [errors, setErrors] = useState(errorsProp || {});
-    useEffect(() => setErrors(errorsProp || {}), [errorsProp]);
-    const [infos, setInfos] = useState(infosProp || {});
-    useEffect(() => setInfos(infosProp || {}), [infosProp]);
-    const [touched, setTouched] = useState({});
-
+    const [valueState, setValueState] = useState(valueProp || defaultValue);
+    const value = useMemo(() => valueProp || valueState, [
+      valueProp,
+      valueState,
+    ]);
+    const [touched, setTouched] = useState(defaultTouched);
+    const [validationResults, setValidationResults] = useState(
+      defaultValidationResults,
+    );
+    useEffect(
+      () => setValidationResults({ errors: errorsProp, infos: infosProp }),
+      [errorsProp, infosProp],
+    );
     const validations = useRef({});
 
-    useEffect(() => {}, [value, errors, infos]);
+    // clear any errors when value changes
+    useEffect(() => {
+      setValidationResults(prevValidationResults => {
+        const [nextErrors, nextInfos] = validate(
+          Object.entries(validations.current).filter(
+            ([n]) =>
+              prevValidationResults.errors[n] || prevValidationResults.infos[n],
+          ),
+          value,
+        );
+        return {
+          errors: { ...prevValidationResults.errors, ...nextErrors },
+          infos: { ...prevValidationResults.infos, ...nextInfos },
+        };
+      });
+    }, [touched, value]);
 
-    const update = useCallback(
-      (name, data, initial) => {
-        setValue(prevValue => {
-          const nextValue = { ...prevValue };
-          nextValue[name] = data;
+    // There are three basic patterns of handling form input value state:
+    //
+    // 1 - form controlled
+    //
+    // In this model, the caller sets `value` and `onChange` properties
+    // on the Form component to supply the values used by the input fields.
+    // In useFormContext(), componentValue would be undefined and formValue
+    // is be set to whatever the form state has. Whenever the form state
+    // changes, we update the contextValue so the input component will use
+    // that. When the input component changes, we will call update() to
+    // update the form state.
+    //
+    // 2 - input controlled
+    //
+    // In this model, the caller sets `value` and `onChange` properties
+    // on the input components, like TextInput, to supply the value for it.
+    // In useFormContext(), componentValue is this value and we ensure to
+    // update the form state, via update(), and set the contextValue from
+    // the componentValue. When the input component changes, we will
+    // call update() to update the form state.
+    //
+    // 3 - uncontrolled
+    //
+    // In this model, the caller doesn't set a `value` or `onChange` property
+    // at either the form or input component levels.
+    // In useFormContext(), componentValue is undefined and valueProp is
+    // undefined and nothing much happens here. That is, unless the
+    // calling component needs to know the state in order to work, such
+    // as CheckBox or Select. In this case, those components supply
+    // an initialValue, which will trigger updating the contextValue so
+    // they can have access to it.
+    //
+    const useFormInput = (name, componentValue, initialValue) => {
+      const [inputValue, setInputValue] = useState(initialValue);
+      const formValue = name ? value[name] : undefined;
 
-          // re-run any validations, in case the validation
-          // is checking across fields
-          setErrors(prevErrors => {
-            const nextErrors = { ...prevErrors };
-            Object.keys(prevErrors).forEach(errName => {
-              if (validations.current[errName]) {
-                const nextError = validations.current[errName](data, nextValue);
-                updateErrors(nextErrors, errName, nextError);
-              }
-            });
-            return nextErrors;
+      // This effect is for pattern #2, where the controlled input
+      // component is driving the value via componentValue.
+      useEffect(() => {
+        if (
+          name && // we have somewhere to put this
+          componentValue !== undefined && // input driving
+          componentValue !== formValue // don't already have it
+        ) {
+          setValueState(prevValue => {
+            const nextValue = { ...prevValue };
+            nextValue[name] = componentValue;
+            return nextValue;
           });
-          setInfos(prevInfos => {
-            const nextInfos = { ...prevInfos };
-            // re-run any validations that have infos, in case the validation
-            // is checking across fields
-            Object.keys(nextInfos).forEach(infoName => {
-              if (validations.current[infoName]) {
-                const nextInfo = validations.current[infoName](data, nextValue);
-                updateInfos(nextInfos, infoName, nextInfo);
-              }
-            });
-            return nextInfos;
-          });
-          if (onChange) onChange(nextValue);
-
-          return nextValue;
-        });
-
-        if (!initial)
-          setTouched(prevTouched => {
-            const nextTouched = { ...prevTouched };
-            nextTouched[name] = true;
-            return nextTouched;
-          });
-      },
-      [onChange],
-    );
-
-    const useFormContext = (name, componentValue, defaultComponentValue) => {
-      const valueData = (name && value[name]) || defaultComponentValue;
-      const [data, setData] = useState(
-        componentValue !== undefined ? componentValue : valueData,
-      );
-      if (componentValue !== undefined) {
-        if (componentValue !== data) {
-          setData(componentValue);
-          if (name) update(name, componentValue);
-        } else if (name && value[name] === undefined) {
-          update(name, componentValue, true);
+          // don't onChange on programmatic changes
         }
-      } else if (valueData !== data) {
-        setData(valueData);
-      }
+      }, [componentValue, formValue, name]);
+
+      let useValue;
+      if (componentValue !== undefined)
+        // input component drives, pattern #2
+        useValue = componentValue;
+      else if (valueProp && name && formValue !== undefined)
+        // form drives, pattern #1
+        useValue = formValue;
+      else if (formValue === undefined)
+        // form has reset, so reset input value as well
+        useValue = initialValue;
+      else useValue = inputValue;
 
       return [
-        data,
-        nextData => {
-          // only set if the caller hasn't supplied a specific value
-          if (componentValue === undefined) {
-            if (name) update(name, nextData);
-            setData(nextData);
+        useValue,
+        nextComponentValue => {
+          if (name) {
+            // we have somewhere to put this
+            const nextTouched = { ...touched };
+            nextTouched[name] = true;
+
+            if (!touched[name]) {
+              // don't update if not needed
+              setTouched(nextTouched);
+            }
+
+            const nextValue = { ...value };
+            nextValue[name] = nextComponentValue;
+            setValueState(nextValue);
+            if (onChange) onChange(nextValue, { touched: nextTouched });
           }
+          if (initialValue !== undefined) setInputValue(nextComponentValue);
         },
       ];
+    };
+
+    const useFormField = ({
+      error: errorArg,
+      info: infoArg,
+      name,
+      required,
+      validate: validateArg,
+    }) => {
+      const error = errorArg || validationResults.errors[name];
+      const info = infoArg || validationResults.infos[name];
+
+      useEffect(() => {
+        const validateSingle = (aValidate, value2, data) => {
+          let result;
+          if (typeof aValidate === 'function') {
+            result = aValidate(value2, data);
+          } else if (aValidate.regexp) {
+            if (!aValidate.regexp.test(value2)) {
+              result = aValidate.message || messages.invalid;
+              if (aValidate.status) {
+                result = { message: result, status: aValidate.status };
+              }
+            }
+          }
+          return result;
+        };
+
+        const validateField = (value2, data) => {
+          let result;
+          if (
+            required &&
+            // false is for CheckBox
+            (value2 === undefined || value2 === '' || value2 === false)
+          ) {
+            result = messages.required;
+          } else if (validateArg) {
+            if (Array.isArray(validateArg)) {
+              validateArg.some(aValidate => {
+                result = validateSingle(aValidate, value2, data);
+                return !!result;
+              });
+            } else {
+              result = validateSingle(validateArg, value2, data);
+            }
+          }
+          return result;
+        };
+
+        if (validateArg || required) {
+          validations.current[name] = validateField;
+          return () => delete validations.current[name];
+        }
+
+        return undefined;
+      }, [error, name, required, validateArg]);
+
+      return {
+        error,
+        info,
+        inForm: true,
+        onBlur:
+          validateOn === 'blur'
+            ? () => {
+                // run validations on touched keys
+                const [nextErrors, nextInfos] = validate(
+                  Object.entries(validations.current).filter(
+                    ([n]) => touched[n] || n === name,
+                  ),
+                  value,
+                );
+                // give user access to errors that have occurred on validation
+                setValidationResults(prevValidationResults => {
+                  // keep any previous errors and infos for untouched keys,
+                  // which probably came from a submit
+                  const nextValidationResults = {
+                    errors: { ...prevValidationResults.errors, ...nextErrors },
+                    infos: { ...prevValidationResults.infos, ...nextInfos },
+                  };
+                  if (onValidate) onValidate(nextValidationResults);
+                  return nextValidationResults;
+                });
+              }
+            : undefined,
+      };
     };
 
     return (
@@ -157,9 +264,13 @@ const Form = forwardRef(
         ref={ref}
         {...rest}
         onReset={event => {
-          setValue(defaultValue);
-          setErrors({});
-          setTouched({});
+          if (!valueProp) {
+            setValueState(defaultValue);
+            if (onChange) onChange(defaultValue, { touched: defaultTouched });
+          }
+          setTouched(defaultTouched);
+          setValidationResults(defaultValidationResults);
+
           if (onReset) {
             event.persist(); // extract from React's synthetic event pool
             const adjustedEvent = event;
@@ -172,15 +283,21 @@ const Form = forwardRef(
           // if the validation fails. And, we assume a javascript action handler
           // otherwise.
           event.preventDefault();
-          const nextErrors = { ...errors };
-          const nextInfos = { ...infos };
-          Object.keys(validations.current).forEach(name => {
-            const nextError = validations.current[name](value[name], value);
-            updateErrors(nextErrors, name, nextError);
-            updateInfos(nextInfos, name, nextError);
+          const [nextErrors, nextInfos] = validate(
+            Object.entries(validations.current),
+            value,
+            true,
+          );
+
+          setValidationResults(() => {
+            const nextValidationResults = {
+              errors: nextErrors,
+              infos: nextInfos,
+            };
+            if (onValidate) onValidate(nextValidationResults);
+            return nextValidationResults;
           });
-          setErrors(nextErrors);
-          setInfos(nextInfos);
+
           if (Object.keys(nextErrors).length === 0 && onSubmit) {
             event.persist(); // extract from React's synthetic event pool
             const adjustedEvent = event;
@@ -190,46 +307,7 @@ const Form = forwardRef(
           }
         }}
       >
-        <FormContext.Provider
-          value={{
-            addValidation: (name, validation) => {
-              validations.current[name] = validation;
-            },
-            removeValidation: name => {
-              delete validations.current[name];
-            },
-            onBlur:
-              validate === 'blur'
-                ? name => {
-                    if (validations.current[name]) {
-                      const error = validations.current[name](
-                        value[name],
-                        value,
-                      );
-                      setErrors(prevErrors => {
-                        const nextErrors = { ...prevErrors };
-                        updateErrors(nextErrors, name, error);
-                        return nextErrors;
-                      });
-                      setInfos(prevInfos => {
-                        const nextInfos = { ...prevInfos };
-                        updateInfos(nextInfos, name, error);
-                        return nextInfos;
-                      });
-                    }
-                  }
-                : undefined,
-            errors,
-            get: name => value[name],
-            infos,
-            messages,
-            set: (name, nextValue) => update(name, nextValue),
-            touched,
-            update,
-            useFormContext,
-            value,
-          }}
-        >
+        <FormContext.Provider value={{ useFormField, useFormInput }}>
           {children}
         </FormContext.Provider>
       </form>

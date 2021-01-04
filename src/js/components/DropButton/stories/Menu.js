@@ -1,8 +1,7 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+import { Gremlin } from 'grommet-icons';
 
 import { Grommet, Box, DropButton, Text } from 'grommet';
-import { Gremlin } from 'grommet-icons';
 import { grommet } from 'grommet/themes';
 
 const renderItems = () => (
@@ -30,6 +29,7 @@ const GremlinDropButton = () => (
     <MenuItem />
   </DropButton>
 );
+
 const MenuDropButton = () => {
   return (
     <Grommet theme={grommet} full>
@@ -44,4 +44,9 @@ const MenuDropButton = () => {
   );
 };
 
-storiesOf('DropButton', module).add('Menu', () => <MenuDropButton />);
+export const Menu = () => <MenuDropButton />;
+Menu.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
+};

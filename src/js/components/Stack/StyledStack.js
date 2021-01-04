@@ -1,12 +1,20 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { genericStyles } from '../../utils';
 import { defaultProps } from '../../default-props';
 
-const fillStyle = `
-  width: 100%;
-  height: 100%;
-  max-width: none;
+const fillStyle = css`
+  ${props =>
+    props.fillContainer === true || props.fillContainer === 'horizontal'
+      ? `
+        width: 100%;
+        max-width: none;
+      `
+      : ''}
+  ${props =>
+    props.fillContainer === true || props.fillContainer === 'vertical'
+      ? 'height: 100%;'
+      : ''}
   flex-grow: 1;
   display: flex;
 `;

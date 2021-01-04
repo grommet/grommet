@@ -1,13 +1,12 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
   Box,
   Button,
   CheckBox,
-  Grommet,
   Form,
   FormField,
+  Grommet,
   MaskedInput,
   RadioButtonGroup,
   RangeInput,
@@ -17,12 +16,17 @@ import {
 } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Example = () => {
+export const Uncontrolled = () => {
   return (
     <Grommet full theme={grommet}>
       <Box fill align="center" justify="center">
         <Box width="medium">
-          <Form onSubmit={event => console.log('Submit', event.value)}>
+          <Form
+            onChange={value => console.log('Change', value)}
+            onSubmit={event =>
+              console.log('Submit', event.value, event.touched)
+            }
+          >
             <FormField label="Name" name="name">
               <TextInput name="name" />
             </FormField>
@@ -64,5 +68,3 @@ const Example = () => {
     </Grommet>
   );
 };
-
-storiesOf('Form', module).add('Uncontrolled', () => <Example />);

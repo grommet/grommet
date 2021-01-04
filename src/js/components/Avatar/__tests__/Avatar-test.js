@@ -101,4 +101,31 @@ describe('Avatar', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  test('text size changes according to theme', () => {
+    const theme = {
+      avatar: {
+        text: {
+          size: {
+            small: '30px',
+            large: 'small',
+            '50px': '10px',
+          },
+        },
+      },
+    };
+
+    const component = renderer.create(
+      <Grommet theme={theme}>
+        <Box>
+          <Avatar>T1</Avatar>
+          <Avatar size="small">T2</Avatar>
+          <Avatar size="large">T3</Avatar>
+          <Avatar size="50px">T4</Avatar>
+        </Box>
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

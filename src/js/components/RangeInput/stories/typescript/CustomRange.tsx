@@ -1,14 +1,13 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import isChromatic from 'storybook-chromatic/isChromatic';
 
 import { Box, Grommet, RangeInput } from 'grommet';
-import { grommet } from 'grommet/themes';
-import { deepMerge } from 'grommet/utils';
+import { ThemeType } from 'grommet/themes';
 
 import { Volume } from 'grommet-icons';
 
-const customThemeRangeInput = deepMerge(grommet, {
+// Type annotations can only be used in TypeScript files.
+// Remove ': ThemeType' if you are not using Typescript.
+const customThemeRangeInput: ThemeType = {
   global: {
     spacing: '12px',
   },
@@ -17,14 +16,22 @@ const customThemeRangeInput = deepMerge(grommet, {
       color: 'accent-2',
       height: '12px',
       extend: () => `border-radius: 10px`,
+      lower: {
+        color: 'brand',
+        opacity: 0.7,
+      },
+      upper: {
+        color: 'dark-4',
+        opacity: 0.3,
+      },
     },
     thumb: {
       color: 'neutral-2',
     },
   },
-});
+};
 
-const CustomRangeInput = () => {
+export const Custom = () => {
   const [value, setValue] = React.useState(0.4);
 
   const onChange = event => setValue(event.target.value);
@@ -46,9 +53,3 @@ const CustomRangeInput = () => {
     </Grommet>
   );
 };
-
-if (!isChromatic()) {
-  storiesOf('TypeScript/RangeInput', module).add('Custom', () => (
-    <CustomRangeInput />
-  ));
-}

@@ -1,5 +1,4 @@
 import React, { useReducer, useEffect } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Diagram, Grommet, grommet, Stack, Text } from 'grommet';
 import { Diamond } from 'grommet-icons';
@@ -9,7 +8,7 @@ import { data } from './data';
 
 const customTheme = deepMerge(grommet, {
   diagram: {
-    extend: `@keyframes 
+    extend: `@keyframes
   example {
     to {
       stroke-dashoffset: 0;
@@ -66,7 +65,7 @@ const Container = ({ node, index }) => (
   />
 );
 
-const Animated = () => {
+export const Animated = () => {
   const reducer = draw => !draw;
 
   const [draw, toogleDraw] = useReducer(reducer, true);
@@ -114,5 +113,3 @@ const Animated = () => {
     </Grommet>
   );
 };
-
-storiesOf('Diagram', module).add('Animated', () => <Animated />);

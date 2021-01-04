@@ -1,7 +1,5 @@
-import React from 'react';
-import { compose } from 'recompose';
-
-import { withTheme } from 'styled-components';
+import React, { forwardRef, useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 import { arcCommands, parseMetricToNum, translateEndAngle } from '../../utils';
@@ -9,17 +7,9 @@ import { arcCommands, parseMetricToNum, translateEndAngle } from '../../utils';
 import { StyledMeter } from './StyledMeter';
 import { strokeProps, defaultColor } from './utils';
 
-const Circle = props => {
-  const {
-    background,
-    max,
-    round,
-    size,
-    theme,
-    thickness,
-    values,
-    ...rest
-  } = props;
+const Circle = forwardRef((props, ref) => {
+  const { background, max, round, size, thickness, values, ...rest } = props;
+  const theme = useContext(ThemeContext);
   const width =
     size === 'full' ? 288 : parseMetricToNum(theme.global.size[size] || size);
   const height = parseMetricToNum(
@@ -139,6 +129,7 @@ const Circle = props => {
 
   return (
     <StyledMeter
+      ref={ref}
       viewBox={`0 0 ${width} ${width}`}
       width={size === 'full' ? '100%' : width}
       height={size === 'full' ? '100%' : width}
@@ -157,11 +148,11 @@ const Circle = props => {
       {pathCaps}
     </StyledMeter>
   );
-};
+});
+
+Circle.displayName = 'Circle';
 
 Circle.defaultProps = {};
 Object.setPrototypeOf(Circle.defaultProps, defaultProps);
 
-const CircleWrapper = compose(withTheme)(Circle);
-
-export { CircleWrapper as Circle };
+export { Circle };

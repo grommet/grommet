@@ -19,19 +19,19 @@ test('default theme is used', () => {
 });
 
 test('extends default theme', () => {
-  extendDefaultTheme({ global: { colors: { brand: 'red' } } });
+  extendDefaultTheme({ global: { colors: { brand: '#ff0000' } } });
   const component = renderer.create(<Box background="brand" />);
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
 test('extends default theme twice', () => {
-  extendDefaultTheme({ global: { colors: { brand: 'red' } } });
+  extendDefaultTheme({ global: { colors: { brand: '#ff0000' } } });
   let component = renderer.create(<Box background="brand" />);
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 
-  extendDefaultTheme({ global: { colors: { brand: 'blue' } } });
+  extendDefaultTheme({ global: { colors: { brand: '#0000ff' } } });
 
   component = renderer.create(<Box background="brand" />);
   tree = component.toJSON();

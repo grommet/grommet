@@ -1,10 +1,11 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { genericProps, getAvailableAtBadge } from '../../utils';
+import { genericProps } from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = Meter => {
   const DocumentedMeter = describe(Meter)
-    .availableAt(getAvailableAtBadge('Meter'))
+    .availableAt(getAvailableAtBadge('Meter', 'Visualizations'))
     .description('A graphical meter.')
     .usage(
       `import { Meter } from 'grommet';

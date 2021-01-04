@@ -1,7 +1,5 @@
-import React from 'react';
-import { compose } from 'recompose';
-
-import { withTheme } from 'styled-components';
+import React, { forwardRef, useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 import { parseMetricToNum } from '../../utils';
@@ -9,17 +7,9 @@ import { parseMetricToNum } from '../../utils';
 import { StyledMeter } from './StyledMeter';
 import { strokeProps, defaultColor } from './utils';
 
-const Bar = props => {
-  const {
-    background,
-    max,
-    round,
-    size,
-    theme,
-    thickness,
-    values,
-    ...rest
-  } = props;
+const Bar = forwardRef((props, ref) => {
+  const { background, max, round, size, thickness, values, ...rest } = props;
+  const theme = useContext(ThemeContext) || defaultProps.theme;
   const width =
     size === 'full' ? 288 : parseMetricToNum(theme.global.size[size] || size);
   const height = parseMetricToNum(
@@ -70,6 +60,7 @@ const Bar = props => {
 
   return (
     <StyledMeter
+      ref={ref}
       viewBox={`0 0 ${width} ${height}`}
       preserveAspectRatio="none"
       width={size === 'full' ? '100%' : width}
@@ -87,7 +78,9 @@ const Bar = props => {
       {paths}
     </StyledMeter>
   );
-};
+});
+
+Bar.displayName = 'Bar';
 
 Bar.defaultProps = {
   background: 'light-1',
@@ -95,6 +88,4 @@ Bar.defaultProps = {
 
 Object.setPrototypeOf(Bar.defaultProps, defaultProps);
 
-const BarWrapper = compose(withTheme)(Bar);
-
-export { BarWrapper as Bar };
+export { Bar };

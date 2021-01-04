@@ -85,7 +85,7 @@ describe('Grommet', () => {
 
   test('background', () => {
     const component = renderer.create(
-      <Grommet full background="blue">
+      <Grommet full background="#0000ff">
         Grommet App
       </Grommet>,
     );
@@ -103,11 +103,15 @@ describe('Grommet', () => {
     expect(container.firstChild).toMatchSnapshot();
 
     // no style, no need for expectPortal
-    expect(document.body.querySelector('[aria-live]')).toMatchSnapshot();
+    expect(
+      document.body.querySelector('#grommet-announcer[aria-live]'),
+    ).toMatchSnapshot();
 
     setTimeout(() => {
       // should clear the aria-live container
-      expect(document.body.querySelector('[aria-live]')).toMatchSnapshot();
+      expect(
+        document.body.querySelector('#grommet-announcer[aria-live]'),
+      ).toMatchSnapshot();
       done();
     }, 600); // wait the aria-live container to clear
   });

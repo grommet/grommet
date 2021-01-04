@@ -1,12 +1,11 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Trash } from 'grommet-icons';
 
 import { Box, Button, Grommet, Heading, Layer, Select, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const CenterLayer = () => {
+export const CenterLayer = () => {
   const [open, setOpen] = React.useState();
   const [open2, setOpen2] = React.useState();
 
@@ -33,7 +32,7 @@ const CenterLayer = () => {
         />
       </Box>
       {open && (
-        <Layer position="center" modal onClickOutside={onClose} onEsc={onClose}>
+        <Layer position="center" onClickOutside={onClose} onEsc={onClose}>
           <Box pad="medium" gap="small" width="medium">
             <Heading level={3} margin="none">
               Confirm
@@ -63,7 +62,7 @@ const CenterLayer = () => {
         </Layer>
       )}
       {open2 && (
-        <Layer position="top" modal onClickOutside={onClose2} onEsc={onClose2}>
+        <Layer position="top" onClickOutside={onClose2} onEsc={onClose2}>
           <Box pad="medium" gap="small" width="medium">
             <Heading level={3} margin="none">
               Confirm 2
@@ -86,4 +85,9 @@ const CenterLayer = () => {
   );
 };
 
-storiesOf('Layer', module).add('Center', () => <CenterLayer />);
+CenterLayer.story = {
+  name: 'Center',
+  parameters: {
+    chromatic: { disable: true },
+  },
+};

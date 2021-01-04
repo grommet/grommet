@@ -14,8 +14,10 @@ const fitStyle = css`
   object-fit: ${props => FIT_MAP[props.fit]};
 `;
 
+// z-index is for Safari so controls aren't hidden
 const StyledVideo = styled.video`
   max-width: 100%;
+  z-index: 1;
   ${props => props.fit && fitStyle} ::cue {
     background: ${props => props.theme.video.captions.background};
   }
@@ -38,11 +40,13 @@ const StyledVideoContainer = styled.div`
 StyledVideoContainer.defaultProps = {};
 Object.setPrototypeOf(StyledVideoContainer.defaultProps, defaultProps);
 
+// z-index is for Safari so controls aren't hidden
 const positionStyle = css`
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 1;
 `;
 
 const StyledVideoControls = styled.div`

@@ -85,7 +85,6 @@ exports[`Carousel basic 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -101,7 +100,6 @@ exports[`Carousel basic 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -116,7 +114,6 @@ exports[`Carousel basic 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -134,7 +131,6 @@ exports[`Carousel basic 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -155,7 +151,6 @@ exports[`Carousel basic 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -174,7 +169,6 @@ exports[`Carousel basic 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -191,7 +185,6 @@ exports[`Carousel basic 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -200,6 +193,7 @@ exports[`Carousel basic 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -209,11 +203,30 @@ exports[`Carousel basic 1`] = `
   line-height: 0;
 }
 
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus > circle,
+.c8:focus > ellipse,
+.c8:focus > line,
+.c8:focus > path,
+.c8:focus > polygon,
+.c8:focus > polyline,
+.c8:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c12 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -222,6 +235,7 @@ exports[`Carousel basic 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -229,11 +243,30 @@ exports[`Carousel basic 1`] = `
   padding: 12px;
 }
 
+.c12:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus > circle,
+.c12:focus > ellipse,
+.c12:focus > line,
+.c12:focus > path,
+.c12:focus > polygon,
+.c12:focus > polyline,
+.c12:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c14 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -242,6 +275,7 @@ exports[`Carousel basic 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -252,6 +286,26 @@ exports[`Carousel basic 1`] = `
 .c14:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
+}
+
+.c14:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus > circle,
+.c14:focus > ellipse,
+.c14:focus > line,
+.c14:focus > path,
+.c14:focus > polygon,
+.c14:focus > polyline,
+.c14:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c1 {
@@ -509,7 +563,6 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -525,7 +578,6 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -543,7 +595,6 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -558,7 +609,6 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -579,7 +629,6 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -598,7 +647,6 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -615,7 +663,6 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -624,6 +671,7 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -636,11 +684,30 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   color: #000000;
 }
 
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus > circle,
+.c8:focus > ellipse,
+.c8:focus > line,
+.c8:focus > path,
+.c8:focus > polygon,
+.c8:focus > polyline,
+.c8:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c12 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -649,6 +716,7 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -656,11 +724,30 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   padding: 12px;
 }
 
+.c12:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus > circle,
+.c12:focus > ellipse,
+.c12:focus > line,
+.c12:focus > path,
+.c12:focus > polygon,
+.c12:focus > polyline,
+.c12:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c14 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -669,6 +756,7 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -676,6 +764,26 @@ exports[`Carousel basic with \`initialChild: 1\` 1`] = `
   cursor: default;
   height: 100%;
   line-height: 0;
+}
+
+.c14:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus > circle,
+.c14:focus > ellipse,
+.c14:focus > line,
+.c14:focus > path,
+.c14:focus > polygon,
+.c14:focus > polyline,
+.c14:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c1 {
@@ -933,7 +1041,6 @@ exports[`Carousel navigate 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -949,7 +1056,6 @@ exports[`Carousel navigate 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -964,7 +1070,6 @@ exports[`Carousel navigate 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -982,7 +1087,6 @@ exports[`Carousel navigate 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1003,7 +1107,6 @@ exports[`Carousel navigate 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1022,7 +1125,6 @@ exports[`Carousel navigate 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1039,7 +1141,6 @@ exports[`Carousel navigate 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1048,6 +1149,7 @@ exports[`Carousel navigate 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1057,11 +1159,30 @@ exports[`Carousel navigate 1`] = `
   line-height: 0;
 }
 
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus > circle,
+.c8:focus > ellipse,
+.c8:focus > line,
+.c8:focus > path,
+.c8:focus > polygon,
+.c8:focus > polyline,
+.c8:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c12 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1070,6 +1191,7 @@ exports[`Carousel navigate 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1077,11 +1199,30 @@ exports[`Carousel navigate 1`] = `
   padding: 12px;
 }
 
+.c12:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus > circle,
+.c12:focus > ellipse,
+.c12:focus > line,
+.c12:focus > path,
+.c12:focus > polygon,
+.c12:focus > polyline,
+.c12:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c14 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1090,6 +1231,7 @@ exports[`Carousel navigate 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1100,6 +1242,26 @@ exports[`Carousel navigate 1`] = `
 .c14:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
+}
+
+.c14:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus > circle,
+.c14:focus > ellipse,
+.c14:focus > line,
+.c14:focus > path,
+.c14:focus > polygon,
+.c14:focus > polyline,
+.c14:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c1 {
@@ -1251,58 +1413,58 @@ exports[`Carousel navigate 1`] = `
 
 exports[`Carousel navigate 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
 >
   <div
-    class="StyledStack-ajspsk-0 liEjfH"
+    class="StyledStack-ajspsk-0 fDjhAR"
     data-testid="test-carousel"
   >
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
+      class="StyledStack__StyledStackLayer-ajspsk-1 gBThXn"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 fwGXuR"
+        class="StyledBox-sc-13pk1d4-0 ceQwbc"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 EaYGa"
+          class="StyledBox-sc-13pk1d4-0 csgqhr"
         >
           <img
-            class="StyledImage-ey4zx9-0 gtXVuX"
+            class="StyledImage-ey4zx9-0 paVDt"
             src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 eFfYoG"
+      class="StyledStack__StyledStackLayer-ajspsk-1 jeVJjk"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 fwGXuR"
+        class="StyledBox-sc-13pk1d4-0 ceQwbc"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fdJwEo"
+          class="StyledBox-sc-13pk1d4-0 hggYQt"
         >
           <img
-            class="StyledImage-ey4zx9-0 gtXVuX"
+            class="StyledImage-ey4zx9-0 paVDt"
             src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
+      class="StyledStack__StyledStackLayer-ajspsk-1 gBThXn"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 NqokZ"
+        class="StyledBox-sc-13pk1d4-0 dwjKg"
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 bYeHmo"
+          class="StyledButton-sc-323bzc-0 feUVDF"
           type="button"
         >
           <svg
             aria-label="Previous"
-            class="StyledIcon-ofa7kd-0 jXwebn"
+            class="StyledIcon-ofa7kd-0 dEeaTZ"
             viewBox="0 0 24 24"
           >
             <polyline
@@ -1315,18 +1477,18 @@ exports[`Carousel navigate 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 QbJgA"
+          class="StyledBox-sc-13pk1d4-0 dTOLFJ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hNgxQO"
+            class="StyledBox-sc-13pk1d4-0 kalBJX"
           >
             <button
-              class="StyledButton-sc-323bzc-0 jvkqEN"
+              class="StyledButton-sc-323bzc-0 hiyJPE"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 jXwebn"
+                class="StyledIcon-ofa7kd-0 dEeaTZ"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1338,12 +1500,12 @@ exports[`Carousel navigate 2`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 jvkqEN"
+              class="StyledButton-sc-323bzc-0 hiyJPE"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 kbXEEj"
+                class="StyledIcon-ofa7kd-0 fuviCN"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1357,13 +1519,13 @@ exports[`Carousel navigate 2`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 jlYLce"
+          class="StyledButton-sc-323bzc-0 gynwPT"
           disabled=""
           type="button"
         >
           <svg
             aria-label="Next"
-            class="StyledIcon-ofa7kd-0 jXwebn"
+            class="StyledIcon-ofa7kd-0 dEeaTZ"
             viewBox="0 0 24 24"
           >
             <polyline
@@ -1382,59 +1544,59 @@ exports[`Carousel navigate 2`] = `
 
 exports[`Carousel navigate 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
 >
   <div
-    class="StyledStack-ajspsk-0 liEjfH"
+    class="StyledStack-ajspsk-0 fDjhAR"
     data-testid="test-carousel"
   >
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 eFfYoG"
+      class="StyledStack__StyledStackLayer-ajspsk-1 jeVJjk"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 fwGXuR"
+        class="StyledBox-sc-13pk1d4-0 ceQwbc"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 gaLfCI"
+          class="StyledBox-sc-13pk1d4-0 gWwFrB"
         >
           <img
-            class="StyledImage-ey4zx9-0 gtXVuX"
+            class="StyledImage-ey4zx9-0 paVDt"
             src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
+      class="StyledStack__StyledStackLayer-ajspsk-1 gBThXn"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 fwGXuR"
+        class="StyledBox-sc-13pk1d4-0 ceQwbc"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 EaYGa"
+          class="StyledBox-sc-13pk1d4-0 csgqhr"
         >
           <img
-            class="StyledImage-ey4zx9-0 gtXVuX"
+            class="StyledImage-ey4zx9-0 paVDt"
             src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
+      class="StyledStack__StyledStackLayer-ajspsk-1 gBThXn"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 NqokZ"
+        class="StyledBox-sc-13pk1d4-0 dwjKg"
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 jlYLce"
+          class="StyledButton-sc-323bzc-0 gynwPT"
           disabled=""
           type="button"
         >
           <svg
             aria-label="Previous"
-            class="StyledIcon-ofa7kd-0 jXwebn"
+            class="StyledIcon-ofa7kd-0 dEeaTZ"
             viewBox="0 0 24 24"
           >
             <polyline
@@ -1447,18 +1609,18 @@ exports[`Carousel navigate 3`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 QbJgA"
+          class="StyledBox-sc-13pk1d4-0 dTOLFJ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hNgxQO"
+            class="StyledBox-sc-13pk1d4-0 kalBJX"
           >
             <button
-              class="StyledButton-sc-323bzc-0 jvkqEN"
+              class="StyledButton-sc-323bzc-0 hiyJPE"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 kbXEEj"
+                class="StyledIcon-ofa7kd-0 fuviCN"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1470,12 +1632,12 @@ exports[`Carousel navigate 3`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 jvkqEN"
+              class="StyledButton-sc-323bzc-0 hiyJPE"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 jXwebn"
+                class="StyledIcon-ofa7kd-0 dEeaTZ"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1489,12 +1651,12 @@ exports[`Carousel navigate 3`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 bYeHmo"
+          class="StyledButton-sc-323bzc-0 feUVDF"
           type="button"
         >
           <svg
             aria-label="Next"
-            class="StyledIcon-ofa7kd-0 jXwebn"
+            class="StyledIcon-ofa7kd-0 dEeaTZ"
             viewBox="0 0 24 24"
           >
             <polyline
@@ -1596,7 +1758,6 @@ exports[`Carousel play 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1612,7 +1773,6 @@ exports[`Carousel play 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1627,7 +1787,6 @@ exports[`Carousel play 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1645,7 +1804,6 @@ exports[`Carousel play 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1666,7 +1824,6 @@ exports[`Carousel play 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1685,7 +1842,6 @@ exports[`Carousel play 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
-  outline: none;
   max-width: 100%;
   min-width: 0;
   min-height: 0;
@@ -1702,7 +1858,6 @@ exports[`Carousel play 1`] = `
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1711,6 +1866,7 @@ exports[`Carousel play 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1720,11 +1876,30 @@ exports[`Carousel play 1`] = `
   line-height: 0;
 }
 
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus > circle,
+.c8:focus > ellipse,
+.c8:focus > line,
+.c8:focus > path,
+.c8:focus > polygon,
+.c8:focus > polyline,
+.c8:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c12 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1733,6 +1908,7 @@ exports[`Carousel play 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1740,11 +1916,30 @@ exports[`Carousel play 1`] = `
   padding: 12px;
 }
 
+.c12:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus > circle,
+.c12:focus > ellipse,
+.c12:focus > line,
+.c12:focus > path,
+.c12:focus > polygon,
+.c12:focus > polyline,
+.c12:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c14 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1753,6 +1948,7 @@ exports[`Carousel play 1`] = `
   overflow: visible;
   text-transform: none;
   color: inherit;
+  outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
@@ -1763,6 +1959,26 @@ exports[`Carousel play 1`] = `
 .c14:hover {
   background-color: rgba(221,221,221,0.4);
   color: #000000;
+}
+
+.c14:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus > circle,
+.c14:focus > ellipse,
+.c14:focus > line,
+.c14:focus > path,
+.c14:focus > polygon,
+.c14:focus > polyline,
+.c14:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus::-moz-focus-inner {
+  border: 0;
 }
 
 .c1 {
@@ -1913,57 +2129,57 @@ exports[`Carousel play 1`] = `
 
 exports[`Carousel play 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lcXYAf"
+  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
 >
   <div
-    class="StyledStack-ajspsk-0 liEjfH"
+    class="StyledStack-ajspsk-0 fDjhAR"
   >
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
+      class="StyledStack__StyledStackLayer-ajspsk-1 gBThXn"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 fwGXuR"
+        class="StyledBox-sc-13pk1d4-0 ceQwbc"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 EaYGa"
+          class="StyledBox-sc-13pk1d4-0 csgqhr"
         >
           <img
-            class="StyledImage-ey4zx9-0 gtXVuX"
+            class="StyledImage-ey4zx9-0 paVDt"
             src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 eFfYoG"
+      class="StyledStack__StyledStackLayer-ajspsk-1 jeVJjk"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 fwGXuR"
+        class="StyledBox-sc-13pk1d4-0 ceQwbc"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fdJwEo"
+          class="StyledBox-sc-13pk1d4-0 hggYQt"
         >
           <img
-            class="StyledImage-ey4zx9-0 gtXVuX"
+            class="StyledImage-ey4zx9-0 paVDt"
             src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 gzpmgV"
+      class="StyledStack__StyledStackLayer-ajspsk-1 gBThXn"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 NqokZ"
+        class="StyledBox-sc-13pk1d4-0 dwjKg"
         tabindex="0"
       >
         <button
-          class="StyledButton-sc-323bzc-0 bYeHmo"
+          class="StyledButton-sc-323bzc-0 feUVDF"
           type="button"
         >
           <svg
             aria-label="Previous"
-            class="StyledIcon-ofa7kd-0 jXwebn"
+            class="StyledIcon-ofa7kd-0 dEeaTZ"
             viewBox="0 0 24 24"
           >
             <polyline
@@ -1976,18 +2192,18 @@ exports[`Carousel play 2`] = `
           </svg>
         </button>
         <div
-          class="StyledBox-sc-13pk1d4-0 QbJgA"
+          class="StyledBox-sc-13pk1d4-0 dTOLFJ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 hNgxQO"
+            class="StyledBox-sc-13pk1d4-0 kalBJX"
           >
             <button
-              class="StyledButton-sc-323bzc-0 jvkqEN"
+              class="StyledButton-sc-323bzc-0 hiyJPE"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 jXwebn"
+                class="StyledIcon-ofa7kd-0 dEeaTZ"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1999,12 +2215,12 @@ exports[`Carousel play 2`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 jvkqEN"
+              class="StyledButton-sc-323bzc-0 hiyJPE"
               type="button"
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 kbXEEj"
+                class="StyledIcon-ofa7kd-0 fuviCN"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -2018,13 +2234,13 @@ exports[`Carousel play 2`] = `
           </div>
         </div>
         <button
-          class="StyledButton-sc-323bzc-0 jlYLce"
+          class="StyledButton-sc-323bzc-0 gynwPT"
           disabled=""
           type="button"
         >
           <svg
             aria-label="Next"
-            class="StyledIcon-ofa7kd-0 jXwebn"
+            class="StyledIcon-ofa7kd-0 dEeaTZ"
             viewBox="0 0 24 24"
           >
             <polyline
@@ -2035,6 +2251,384 @@ exports[`Carousel play 2`] = `
             />
           </svg>
         </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Carousel should trigger events of focus, blur and click 1`] = `
+.c11 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c11 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c11 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c11 *[stroke*="#"],
+.c11 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c11 *[fill-rule],
+.c11 *[FILL-RULE],
+.c11 *[fill*="#"],
+.c11 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c13 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c13 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c13 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c13 *[stroke*="#"],
+.c13 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c13 *[fill-rule],
+.c13 *[FILL-RULE],
+.c13 *[fill*="#"],
+.c13 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  opacity: 1;
+  -webkit-animation: hftlBD 1s 0s forwards;
+  animation: hftlBD 1s 0s forwards;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-transform: translateX(-200%);
+  -ms-transform: translateX(-200%);
+  transform: translateX(-200%);
+  -webkit-animation: cowwqN 1s 0s forwards;
+  animation: cowwqN 1s 0s forwards;
+}
+
+.c12 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c12:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus > circle,
+.c12:focus > ellipse,
+.c12:focus > line,
+.c12:focus > path,
+.c12:focus > polygon,
+.c12:focus > polyline,
+.c12:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c12:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c10 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  line-height: 0;
+  padding: 12px;
+}
+
+.c10:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus > circle,
+.c10:focus > ellipse,
+.c10:focus > line,
+.c10:focus > path,
+.c10:focus > polygon,
+.c10:focus > polyline,
+.c10:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c2 {
+  position: relative;
+  display: block;
+}
+
+.c5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+    id="test-carousel"
+  >
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        <div
+          class="c4"
+        >
+          <img
+            class=""
+            src="//v2.grommet.io/assets/IMG_4245.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="c5"
+    >
+      <div
+        class="c3"
+      >
+        <div
+          class="c6"
+        >
+          <img
+            class=""
+            src="//v2.grommet.io/assets/IMG_4210.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="c5"
+    >
+      <div
+        class="c7"
+        tabindex="0"
+      >
+        <div
+          class="c8"
+        >
+          <div
+            class="c9"
+          >
+            <button
+              class="c10"
+              type="button"
+            >
+              <svg
+                aria-label="Subtract"
+                class="c11"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M2,12 L22,12"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+            <button
+              class="c12"
+              type="button"
+            >
+              <svg
+                aria-label="Subtract"
+                class="c13"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M2,12 L22,12"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>

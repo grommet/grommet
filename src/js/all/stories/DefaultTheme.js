@@ -22,4 +22,4 @@ const CustomDefaultProps = () => (
   </Box>
 );
 
-storiesOf('Theme', module).add('Extend Default', () => <CustomDefaultProps />);
+storiesOf('Theme', module).add('Extend default', () => <CustomDefaultProps />);

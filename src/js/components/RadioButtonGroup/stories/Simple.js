@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, RadioButtonGroup } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const SimpleRadioButtonGroup = ({ value: initialValue, ...props }) => {
+export const Simple = ({ value: initialValue, ...props }) => {
   const [value, setValue] = useState(initialValue);
 
   return (
@@ -25,7 +24,3 @@ const SimpleRadioButtonGroup = ({ value: initialValue, ...props }) => {
     </Grommet>
   );
 };
-
-storiesOf('RadioButtonGroup', module).add('Simple', () => (
-  <SimpleRadioButtonGroup />
-));

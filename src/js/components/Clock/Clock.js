@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { forwardRef, useEffect, useState } from 'react';
 
 import { Analog } from './Analog';
 import { Digital } from './Digital';
@@ -40,147 +40,139 @@ const parseTime = (time, hourLimit) => {
   return result;
 };
 
-class Clock extends Component {
-  static defaultProps = {
-    hourLimit: 24,
-    precision: 'seconds',
-    run: 'forward',
-    size: 'medium',
-    type: 'analog',
-  };
+const Clock = forwardRef(
+  (
+    {
+      hourLimit = 24,
+      onChange,
+      precision = 'seconds',
+      run = 'forward',
+      size = 'medium',
+      time,
+      type = 'analog',
+      ...rest
+    },
+    ref,
+  ) => {
+    const [elements, setElements] = useState(parseTime(time, hourLimit));
+    useEffect(() => setElements(parseTime(time, hourLimit)), [hourLimit, time]);
 
-  static getDerivedStateFromProps(nextProps, prevState) {
-    const { hourLimit, time } = nextProps;
-    const { elements } = prevState;
-    if (!elements || time) {
-      const nextElements = parseTime(time, hourLimit);
-      if (!elements) {
-        return { elements: nextElements };
-      }
-      if (
-        Object.keys(nextElements).some(k => elements[k] !== nextElements[k])
-      ) {
-        return { elements: nextElements };
-      }
-    }
-    return null;
-  }
+    useEffect(() => {
+      const atDurationEnd =
+        run === 'backward' &&
+        elements.duration &&
+        !elements.hours &&
+        !elements.minutes &&
+        !elements.seconds;
 
-  state = {};
-
-  componentDidMount() {
-    const { run } = this.props;
-    if (run) {
-      this.run();
-    }
-  }
-
-  componentDidUpdate(prevProps) {
-    const { run } = this.props;
-    if (run && !prevProps.run) {
-      this.run();
-    } else if (!run && prevProps.run) {
-      clearInterval(this.timer);
-    }
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.timer);
-  }
-
-  run() {
-    const { hourLimit, onChange, precision, run } = this.props;
-    const { elements } = this.state;
-
-    // set the interval time based on the precision
-    let interval = 1000;
-    let increment = 'seconds';
-    if (precision !== 'seconds' && elements.seconds === 0) {
-      interval *= 60;
-      increment = 'minutes';
-      if (precision !== 'minutes' && elements.minutes === 0) {
-        interval *= 60;
-        increment = 'hours';
-      }
-    }
-
-    clearInterval(this.timer);
-    this.timer = setInterval(() => {
-      const { elements: previousElements } = this.state;
-      const nextElements = { ...previousElements };
-
-      // adjust time based on precision
-      if (increment === 'seconds') {
-        if (run === 'backward') {
-          nextElements.seconds -= 1;
-        } else {
-          nextElements.seconds += 1;
-        }
-      } else if (increment === 'minutes') {
-        if (run === 'backward') {
-          nextElements.minutes -= 1;
-        } else {
-          nextElements.minutes += 1;
-        }
-      } else if (increment === 'hours') {
-        if (run === 'backward') {
-          nextElements.hours -= 1;
-        } else {
-          nextElements.hours += 1;
-        }
-      }
-
-      // deal with overflows
-      if (nextElements.seconds >= 60) {
-        nextElements.minutes += Math.floor(nextElements.seconds / 60);
-        nextElements.seconds = 0;
-      } else if (nextElements.seconds < 0) {
-        nextElements.minutes += Math.floor(nextElements.seconds / 60);
-        nextElements.seconds = 59;
-      }
-      if (nextElements.minutes >= 60) {
-        nextElements.hours += Math.floor(nextElements.minutes / 60);
-        nextElements.minutes = 0;
-      } else if (nextElements.minutes < 0) {
-        nextElements.hours += Math.floor(nextElements.minutes / 60);
-        nextElements.minutes = 59;
-      }
-      if (nextElements.hours >= 24 || nextElements.hours < 0) {
-        nextElements.hours = 0;
-      }
-      if (hourLimit === 12) {
-        nextElements.hours12 =
-          nextElements.hours > 12
-            ? nextElements.hours - 12
-            : nextElements.hours;
-      }
-
-      this.setState({ elements: nextElements }, () => {
-        if (onChange) {
-          const { elements: e2 } = this.state;
-          if (elements.duration) {
-            onChange(`P${e2.hours}H${e2.minutes}M${e2.seconds}S`);
-          } else {
-            onChange(`T${e2.hours}:${e2.minutes}:${e2.seconds}`);
+      if (run && !atDurationEnd) {
+        // set the interval time based on the precision
+        let interval = 1000;
+        let increment = 'seconds';
+        if (precision !== 'seconds' && elements.seconds === 0) {
+          interval *= 60;
+          increment = 'minutes';
+          if (precision !== 'minutes' && elements.minutes === 0) {
+            interval *= 60;
+            increment = 'hours';
           }
         }
-      });
-    }, interval);
-  }
 
-  render() {
-    const { type, ...rest } = this.props;
-    const { elements } = this.state;
+        const timer = setInterval(() => {
+          const nextElements = { ...elements };
+          // adjust time based on precision
+          if (increment === 'seconds') {
+            if (run === 'backward') {
+              nextElements.seconds -= 1;
+            } else {
+              nextElements.seconds += 1;
+            }
+          } else if (increment === 'minutes') {
+            if (run === 'backward') {
+              nextElements.minutes -= 1;
+            } else {
+              nextElements.minutes += 1;
+            }
+          } else if (increment === 'hours') {
+            if (run === 'backward') {
+              nextElements.hours -= 1;
+            } else {
+              nextElements.hours += 1;
+            }
+          }
+
+          // deal with overflows
+          if (nextElements.seconds >= 60) {
+            nextElements.minutes += Math.floor(nextElements.seconds / 60);
+            nextElements.seconds = 0;
+          } else if (nextElements.seconds < 0) {
+            nextElements.minutes += Math.floor(nextElements.seconds / 60);
+            nextElements.seconds = 59;
+          }
+          if (nextElements.minutes >= 60) {
+            nextElements.hours += Math.floor(nextElements.minutes / 60);
+            nextElements.minutes = 0;
+          } else if (nextElements.minutes < 0) {
+            nextElements.hours += Math.floor(nextElements.minutes / 60);
+            nextElements.minutes = 59;
+          }
+          if (nextElements.hours >= 24 || nextElements.hours < 0) {
+            nextElements.hours = 0;
+          }
+          if (hourLimit === 12) {
+            nextElements.hours12 =
+              nextElements.hours > 12
+                ? nextElements.hours - 12
+                : nextElements.hours;
+          }
+
+          setElements(nextElements);
+
+          if (onChange) {
+            const e = nextElements;
+            if (e.duration) {
+              onChange(`P${e.hours}H${e.minutes}M${e.seconds}S`);
+            } else {
+              onChange(`T${e.hours}:${e.minutes}:${e.seconds}`);
+            }
+          }
+        }, interval);
+
+        return () => clearInterval(timer);
+      }
+
+      return undefined;
+    }, [elements, hourLimit, onChange, precision, run]);
+
     let content;
     if (type === 'analog') {
-      content = <Analog elements={elements} {...rest} />;
+      content = (
+        <Analog
+          ref={ref}
+          elements={elements}
+          precision={precision}
+          size={size}
+          {...rest}
+        />
+      );
     } else if (type === 'digital') {
-      content = <Digital elements={elements} {...rest} />;
+      content = (
+        <Digital
+          ref={ref}
+          elements={elements}
+          precision={precision}
+          run={run}
+          size={size}
+          {...rest}
+        />
+      );
     }
 
     return content;
-  }
-}
+  },
+);
+
+Clock.displayName = 'Clock';
 
 let ClockDoc;
 if (process.env.NODE_ENV !== 'production') {

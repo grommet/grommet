@@ -8,35 +8,19 @@ const buildStyledChildren = ({
   guidingIndex,
   interactiveChild,
   interactiveIndex,
-}) => {
-  let childIndex = 0;
+}) => (child, index) => {
+  const interactive =
+    interactiveChild === undefined || interactiveIndex === index;
+  const isGuidingIndex = index === guidingIndex;
+  const props = isGuidingIndex
+    ? { guiding: true, fillContainer: fill }
+    : { anchor };
 
-  return child => {
-    if (child) {
-      const interactive =
-        interactiveChild === undefined || interactiveIndex === childIndex;
-
-      const isGuidingIndex = childIndex === guidingIndex;
-      childIndex += 1;
-
-      const props = isGuidingIndex
-        ? {
-            guiding: true,
-            fillContainer: fill,
-          }
-        : {
-            anchor,
-          };
-
-      return (
-        <StyledStackLayer interactive={interactive} {...props}>
-          {child}
-        </StyledStackLayer>
-      );
-    }
-
-    return child;
-  };
+  return (
+    <StyledStackLayer key={index} interactive={interactive} {...props}>
+      {child}
+    </StyledStackLayer>
+  );
 };
 
 const Stack = ({
@@ -47,20 +31,18 @@ const Stack = ({
   interactiveChild,
   ...rest
 }) => {
+  const prunedChildren = Children.toArray(children).filter(c => c);
   const toChildIndex = child => {
     let index = child;
-
     if (index === 'first' || !index) index = 0;
-    else if (index === 'last') index = React.Children.count(children) - 1;
-
+    else if (index === 'last') index = prunedChildren.length - 1;
     return index;
   };
 
   const guidingIndex = toChildIndex(guidingChild);
   const interactiveIndex = interactiveChild && toChildIndex(interactiveChild);
 
-  const styledChildren = Children.map(
-    children,
+  const styledChildren = prunedChildren.map(
     buildStyledChildren({
       anchor,
       fill,

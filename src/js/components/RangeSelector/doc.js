@@ -1,10 +1,11 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { colorPropType, getAvailableAtBadge } from '../../utils';
+import { colorPropType } from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = RangeSelector => {
   const DocumentedRangeSelector = describe(RangeSelector)
-    .availableAt(getAvailableAtBadge('RangeSelector'))
+    .availableAt(getAvailableAtBadge('RangeSelector', 'Input'))
     .description('A control to input a range of values.')
     .usage(
       `import { RangeSelector } from 'grommet';

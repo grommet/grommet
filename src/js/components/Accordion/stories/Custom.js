@@ -1,24 +1,45 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { SubtractCircle, AddCircle } from 'grommet-icons';
 
 import { Accordion, AccordionPanel, Box, Grommet, Text } from 'grommet';
 
-const CustomAccordionTheme = {
+const customAccordionTheme = {
+  global: {
+    font: {
+      family: `-apple-system,
+       BlinkMacSystemFont, 
+       "Segoe UI", 
+       Roboto`,
+    },
+  },
   accordion: {
-    heading: { level: '3' },
+    heading: {
+      level: 3,
+      margin: { vertical: '6px', horizontal: '24px' },
+    },
+    hover: {
+      color: 'accent-2',
+    },
     icons: {
       collapse: SubtractCircle,
       expand: AddCircle,
       color: 'hotpink',
     },
     border: undefined,
+    panel: {
+      // border: {
+      //   side: 'horizontal',
+      //   size: 'medium',
+      //   color: '#DADADA',
+      //   style: 'dotted',
+      // },
+    },
   },
 };
 
 const CustomAccordion = ({ animate, multiple, ...rest }) => (
-  <Grommet theme={CustomAccordionTheme}>
+  <Grommet theme={customAccordionTheme}>
     <Box {...rest} pad="large" align="center" justify="center">
       <Accordion animate={animate} multiple>
         <AccordionPanel
@@ -50,4 +71,4 @@ const CustomAccordion = ({ animate, multiple, ...rest }) => (
   </Grommet>
 );
 
-storiesOf('Accordion', module).add('Custom', () => <CustomAccordion />);
+export const Custom = () => <CustomAccordion />;

@@ -1,5 +1,86 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`TextArea Event tests onFocus 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
+.c1 > circle,
+.c1 > ellipse,
+.c1 > line,
+.c1 > path,
+.c1 > polygon,
+.c1 > polyline,
+.c1 > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1::-moz-focus-inner {
+  border: 0;
+}
+
+.c1::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c1::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c1:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c1::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c1:-moz-placeholder,
+.c1::-moz-placeholder {
+  opacity: 1;
+}
+
+<div
+  class="c0"
+>
+  <textarea
+    class="c1"
+    name="item"
+    placeholder="item"
+  />
+</div>
+`;
+
 exports[`TextArea basic 1`] = `
 .c0 {
   font-size: 18px;
@@ -17,19 +98,14 @@ exports[`TextArea basic 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
-  outline: none;
   background: transparent;
   color: inherit;
+  width: 100%;
+  padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
-}
-
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c1::-webkit-input-placeholder {
@@ -44,9 +120,18 @@ exports[`TextArea basic 1`] = `
   color: #AAAAAA;
 }
 
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c1::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c1:-moz-placeholder,
+.c1::-moz-placeholder {
+  opacity: 1;
 }
 
 <div
@@ -81,24 +166,20 @@ exports[`TextArea disabled 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
-  outline: none;
   background: transparent;
   color: inherit;
+  width: 100%;
+  padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
+  outline: none;
   border: none;
   width: 100%;
   -webkit-appearance: none;
   opacity: 0.3;
   cursor: default;
-}
-
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c1::-webkit-input-placeholder {
@@ -113,9 +194,18 @@ exports[`TextArea disabled 1`] = `
   color: #AAAAAA;
 }
 
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c1::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c1:-moz-placeholder,
+.c1::-moz-placeholder {
+  opacity: 1;
 }
 
 <div
@@ -151,20 +241,15 @@ exports[`TextArea fill 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
-  outline: none;
   background: transparent;
   color: inherit;
+  width: 100%;
+  padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   height: 100%;
-}
-
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c1::-webkit-input-placeholder {
@@ -179,9 +264,18 @@ exports[`TextArea fill 1`] = `
   color: #AAAAAA;
 }
 
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c1::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c1:-moz-placeholder,
+.c1::-moz-placeholder {
+  opacity: 1;
 }
 
 <div
@@ -216,19 +310,14 @@ exports[`TextArea focusIndicator 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
-  outline: none;
   background: transparent;
   color: inherit;
+  width: 100%;
+  padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
-}
-
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c1::-webkit-input-placeholder {
@@ -243,9 +332,18 @@ exports[`TextArea focusIndicator 1`] = `
   color: #AAAAAA;
 }
 
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c1::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c1:-moz-placeholder,
+.c1::-moz-placeholder {
+  opacity: 1;
 }
 
 <div
@@ -280,19 +378,14 @@ exports[`TextArea placeholder 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
-  outline: none;
   background: transparent;
   color: inherit;
+  width: 100%;
+  padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
-}
-
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c1::-webkit-input-placeholder {
@@ -307,9 +400,18 @@ exports[`TextArea placeholder 1`] = `
   color: #AAAAAA;
 }
 
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c1::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c1:-moz-placeholder,
+.c1::-moz-placeholder {
+  opacity: 1;
 }
 
 <div
@@ -345,21 +447,17 @@ exports[`TextArea plain 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
-  outline: none;
   background: transparent;
   color: inherit;
+  width: 100%;
+  padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
+  outline: none;
   border: none;
   width: 100%;
-  -webkit-appearance: none;
-}
-
-.c1::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -375,9 +473,18 @@ exports[`TextArea plain 1`] = `
   color: #AAAAAA;
 }
 
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c1::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c1:-moz-placeholder,
+.c1::-moz-placeholder {
+  opacity: 1;
 }
 
 <div
@@ -412,20 +519,15 @@ exports[`TextArea resize false 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
-  outline: none;
   background: transparent;
   color: inherit;
+  width: 100%;
+  padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   resize: none;
-}
-
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c1::-webkit-input-placeholder {
@@ -440,9 +542,18 @@ exports[`TextArea resize false 1`] = `
   color: #AAAAAA;
 }
 
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c1::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c1:-moz-placeholder,
+.c1::-moz-placeholder {
+  opacity: 1;
 }
 
 <div
@@ -477,20 +588,15 @@ exports[`TextArea resize horizontal 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
-  outline: none;
   background: transparent;
   color: inherit;
+  width: 100%;
+  padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   resize: horizontal;
-}
-
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c1::-webkit-input-placeholder {
@@ -505,9 +611,18 @@ exports[`TextArea resize horizontal 1`] = `
   color: #AAAAAA;
 }
 
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c1::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c1:-moz-placeholder,
+.c1::-moz-placeholder {
+  opacity: 1;
 }
 
 <div
@@ -542,20 +657,15 @@ exports[`TextArea resize true 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
-  outline: none;
   background: transparent;
   color: inherit;
+  width: 100%;
+  padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   resize: both;
-}
-
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c1::-webkit-input-placeholder {
@@ -570,9 +680,18 @@ exports[`TextArea resize true 1`] = `
   color: #AAAAAA;
 }
 
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c1::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c1:-moz-placeholder,
+.c1::-moz-placeholder {
+  opacity: 1;
 }
 
 <div
@@ -607,20 +726,15 @@ exports[`TextArea resize vertical 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
-  outline: none;
   background: transparent;
   color: inherit;
+  width: 100%;
+  padding: 11px;
   font-weight: 600;
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  width: 100%;
   resize: vertical;
-}
-
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
 }
 
 .c1::-webkit-input-placeholder {
@@ -635,9 +749,18 @@ exports[`TextArea resize vertical 1`] = `
   color: #AAAAAA;
 }
 
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c1::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c1:-moz-placeholder,
+.c1::-moz-placeholder {
+  opacity: 1;
 }
 
 <div
@@ -672,21 +795,16 @@ exports[`TextArea size large 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
-  outline: none;
   background: transparent;
   color: inherit;
+  width: 100%;
+  padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
-  width: 100%;
   font-size: 22px;
   line-height: 28px;
-}
-
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
 }
 
 .c1::-webkit-input-placeholder {
@@ -701,9 +819,18 @@ exports[`TextArea size large 1`] = `
   color: #AAAAAA;
 }
 
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c1::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c1:-moz-placeholder,
+.c1::-moz-placeholder {
+  opacity: 1;
 }
 
 <div
@@ -739,21 +866,16 @@ exports[`TextArea size medium 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
-  outline: none;
   background: transparent;
   color: inherit;
+  width: 100%;
+  padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
-  width: 100%;
   font-size: 18px;
   line-height: 24px;
-}
-
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
 }
 
 .c1::-webkit-input-placeholder {
@@ -768,9 +890,18 @@ exports[`TextArea size medium 1`] = `
   color: #AAAAAA;
 }
 
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c1::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c1:-moz-placeholder,
+.c1::-moz-placeholder {
+  opacity: 1;
 }
 
 <div
@@ -806,21 +937,16 @@ exports[`TextArea size small 1`] = `
   font-family: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: 11px;
-  outline: none;
   background: transparent;
   color: inherit;
+  width: 100%;
+  padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
-  width: 100%;
   font-size: 14px;
   line-height: 20px;
-}
-
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
 }
 
 .c1::-webkit-input-placeholder {
@@ -835,9 +961,18 @@ exports[`TextArea size small 1`] = `
   color: #AAAAAA;
 }
 
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
 .c1::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c1:-moz-placeholder,
+.c1::-moz-placeholder {
+  opacity: 1;
 }
 
 <div

@@ -1,8 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-
-import { compose } from 'recompose';
-
-import { withTheme } from 'styled-components';
+import React, { useContext, useEffect, useRef } from 'react';
+import { ThemeContext } from 'styled-components';
 
 import { FormSearch } from 'grommet-icons/icons/FormSearch';
 
@@ -15,14 +12,8 @@ import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { normalizeColor } from '../../utils';
 
-const Searcher = ({
-  filtering,
-  filters,
-  onFilter,
-  onFiltering,
-  property,
-  theme,
-}) => {
+const Searcher = ({ filtering, filters, onFilter, onFiltering, property }) => {
+  const theme = useContext(ThemeContext) || defaultProps.theme;
   const inputRef = useRef();
   const needsFocus = filtering === property;
 
@@ -34,9 +25,10 @@ const Searcher = ({
 
   return filtering === property ? (
     <Keyboard onEsc={() => onFiltering(undefined)}>
-      <Box flex pad={{ horizontal: 'small' }}>
+      <Box width={{ min: 'xsmall' }} flex pad={{ horizontal: 'small' }}>
         <TextInput
           name={`search-${property}`}
+          a11yTitle={`Search by ${property}`}
           ref={inputRef}
           value={filters[property]}
           onChange={event => onFilter(property, event.target.value)}
@@ -57,7 +49,7 @@ const Searcher = ({
         </Box>
       ) : null}
       <Button
-        a11yTitle={`focus-search-${property}`}
+        a11yTitle={`Open search by ${property}`}
         icon={
           <FormSearch
             color={normalizeColor(
@@ -75,9 +67,9 @@ const Searcher = ({
   );
 };
 
+Searcher.displayName = 'Searcher';
+
 Searcher.defaultProps = {};
 Object.setPrototypeOf(Searcher.defaultProps, defaultProps);
 
-const SearcherWrapper = compose(withTheme)(Searcher);
-
-export { SearcherWrapper as Searcher };
+export { Searcher };

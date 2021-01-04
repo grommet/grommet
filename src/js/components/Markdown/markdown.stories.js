@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import styled from 'styled-components';
 
 import { Box, Grommet, Markdown } from 'grommet';
@@ -9,7 +8,8 @@ const CONTENT = `
   # Out of Breath
 
   You know, sometimes in life it seems like there's no way out. Like
-  a sheep trapped in a maze designed by wolves.
+  a sheep trapped in a maze designed by wolves. See all the
+  options [here](https://github.com/probablyup/markdown-to-jsx/)
 
   [reference](#)
 
@@ -27,7 +27,7 @@ import { Grommet } from 'grommet';
   1 | 2 | 3
 `;
 
-const SimpleMarkdown = () => (
+export const Simple = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
       <Markdown>{CONTENT}</Markdown>
@@ -39,7 +39,7 @@ const StyledPre = styled.pre`
   background-color: #7d4cdb;
 `;
 
-const ComponentOverrideMarkdown = () => (
+export const ComponentOverrideMarkdown = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
       <Markdown components={{ pre: StyledPre }}>{CONTENT}</Markdown>
@@ -47,6 +47,10 @@ const ComponentOverrideMarkdown = () => (
   </Grommet>
 );
 
-storiesOf('Markdown', module)
-  .add('Simple', () => <SimpleMarkdown />)
-  .add('Component Override Markdown', () => <ComponentOverrideMarkdown />);
+ComponentOverrideMarkdown.story = {
+  name: 'Component override markdown',
+};
+
+export default {
+  title: 'Type/Markdown',
+};

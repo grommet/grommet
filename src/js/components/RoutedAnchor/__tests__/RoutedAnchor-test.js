@@ -41,6 +41,7 @@ describe('RoutedAnchor', () => {
   const replace = jest.fn();
   const push = jest.fn();
   test('renders', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const component = renderer.create(
       <Grommet>
         <FakeRouter push={push} replace={replace}>
@@ -50,9 +51,12 @@ describe('RoutedAnchor', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+    expect(warnSpy).toHaveBeenCalled();
+    warnSpy.mockRestore();
   });
 
   test('is clickable', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const preventDefault = jest.fn();
     const onClick = jest.fn();
     const component = renderer.create(
@@ -69,9 +73,12 @@ describe('RoutedAnchor', () => {
     expect(onClick).toBeCalled();
     expect(push).toBeCalled();
     expect(preventDefault).toBeCalled();
+    expect(warnSpy).toHaveBeenCalled();
+    warnSpy.mockRestore();
   });
 
   test('skips onClick if right clicked', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const onClick = jest.fn();
     const component = renderer.create(
       <Grommet>
@@ -90,9 +97,12 @@ describe('RoutedAnchor', () => {
       metaKey: true,
     });
     expect(onClick).not.toBeCalled();
+    expect(warnSpy).toHaveBeenCalled();
+    warnSpy.mockRestore();
   });
 
   test('calls router context push', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const preventDefault = jest.fn();
     const component = renderer.create(
       <Grommet>
@@ -109,9 +119,12 @@ describe('RoutedAnchor', () => {
     });
     expect(preventDefault).toBeCalled();
     expect(push).toBeCalledWith('/');
+    expect(warnSpy).toHaveBeenCalled();
+    warnSpy.mockRestore();
   });
 
   test('calls router context replace', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const preventDefault = jest.fn();
     const component = renderer.create(
       <Grommet>
@@ -128,5 +141,7 @@ describe('RoutedAnchor', () => {
     });
     expect(preventDefault).toBeCalled();
     expect(replace).toBeCalledWith('/');
+    expect(warnSpy).toHaveBeenCalled();
+    warnSpy.mockRestore();
   });
 });

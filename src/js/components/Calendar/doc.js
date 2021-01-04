@@ -1,10 +1,12 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { genericProps, getAvailableAtBadge, themeDocUtils } from '../../utils';
+import { genericProps } from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
+import { themeDocUtils } from '../../utils/themeDocUtils';
 
 export const doc = Calendar => {
   const DocumentedCalendar = describe(Calendar)
-    .availableAt(getAvailableAtBadge('Calendar'))
+    .availableAt(getAvailableAtBadge('Calendar', 'Visualizations'))
     .description(
       `A calendar of days displayed by month.
       It can be used to select a single date, a range of dates, or multiple
@@ -18,6 +20,12 @@ export const doc = Calendar => {
 
   DocumentedCalendar.propTypes = {
     ...genericProps,
+    activeDate: PropTypes.oneOf(['start', 'end'])
+      .description(
+        `When using range, Whether the next date selection will affect the 
+        start or end bound of the range.`,
+      )
+      .defaultValue('start'),
     animate: PropTypes.bool
       .description(
         `Whether to animate the calender as the user interacts with it.`,
@@ -26,6 +34,15 @@ export const doc = Calendar => {
     bounds: PropTypes.arrayOf(PropTypes.string)
       .description(`An array of two numbers indicating the limits on
         navigation in ISO8601 format`),
+    children: PropTypes.func.description(
+      `Function that will be called to render each day.
+      It will be passed \`({date, day, isInRange, isSelected})\` where \`date\`
+      is a string containing an ISO8601 date for the day being rendered, \`day\`
+      is a number containing the day of the month being rendered, \`isInRange\`
+      is a boolean indicating whether the date is within a selected range of
+      dates, and \`isSelected\` is a boolean indicating whether this date
+      is selected.`,
+    ),
     date: PropTypes.string.description('The selected date in ISO8601 format'),
     dates: PropTypes.arrayOf(
       PropTypes.oneOfType([
@@ -43,6 +60,9 @@ export const doc = Calendar => {
         selectable. Items that are an array indicate a range of dates.`),
     daysOfWeek: PropTypes.bool
       .description(`Whether to show the days of the week.`)
+      .defaultValue(false),
+    fill: PropTypes.bool
+      .description(`Whether the calendar should fill the parent container.`)
       .defaultValue(false),
     firstDayOfWeek: PropTypes.oneOf([0, 1])
       .description('The first day of the week. 0 for Sunday. 1 for Monday.')
@@ -62,10 +82,10 @@ The function passes the following options:
   }
 \`\`\`
 
-\`onPreviousMonth\` and \`onNextMonth\` are callbacks that will tell the 
+\`onPreviousMonth\` and \`onNextMonth\` are callbacks that will tell the
 calendar to move between months.
-\`previousInBound\` and \`nextInBound\` are booleans that tell, when using 
-\`bounds\`, if the current date is within that range. You can then use that 
+\`previousInBound\` and \`nextInBound\` are booleans that tell, when using
+\`bounds\`, if the current date is within that range. You can then use that
 to disable the previous and next buttons.
 `,
     ),
@@ -81,20 +101,26 @@ to disable the previous and next buttons.
       For single select, make this the subsequent \`date\` property value.
       For multiple select or ranges, toggle values in \`dates\`.
       Not specifying this property makes the component read only.`),
-    range: PropTypes.bool
+    range: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['array'])])
       .description(
         `Whether to automatically manage multiple date selection as a range.
         When the user clicks the first date, onSelect will be called with that
         date. When the user selects another date, onSelect will be called with
-        an array of two dates.`,
+        an array of two dates. If range = "array", then an array of dates will 
+        be returned even when the start or end date of the range is undefined.`,
       )
       .defaultValue(false),
     reference: PropTypes.string.description(
       "The date to show if `date` isn't set, in ISO8601 format",
     ),
-    showAdjacentDays: PropTypes.bool
+    showAdjacentDays: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.oneOf(['trim']),
+    ])
       .description(
-        `Whether to show the days from the previous and next months.`,
+        `Whether to show the days from the previous and next months. 
+        \`trim\` limits adjacent days shown to rows containing days in 
+        the current month.`,
       )
       .defaultValue(true),
     size: PropTypes.oneOfType([

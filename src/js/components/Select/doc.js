@@ -1,10 +1,11 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { genericProps, getAvailableAtBadge } from '../../utils';
+import { genericProps } from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = Select => {
   const DocumentedSelect = describe(Select)
-    .availableAt(getAvailableAtBadge('Select'))
+    .availableAt(getAvailableAtBadge('Select', 'Input'))
     .description('A control to select a value, with optional search.')
     .usage(
       `import { Select } from 'grommet';
@@ -23,6 +24,22 @@ export const doc = Select => {
       { active, disabled, selected } keys indicating the current state
       of the option.`,
     ),
+    clear: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.shape({
+        position: PropTypes.oneOf(['top', 'bottom'])
+          .description(
+            `Add a clear option to the top or at the bottom of the
+            container. By default no clear option is present.`,
+          )
+          .defaultValue('top'),
+        label: PropTypes.string
+          .description('Label for the clear selection item')
+          .defaultValue('Clear selection'),
+      }),
+    ])
+      .description(`Whether to provide a button option to clear selections.`)
+      .defaultValue(false),
     closeOnChange: PropTypes.bool
       .description('Wether to close the drop when a selection is made.')
       .defaultValue(true),
@@ -100,7 +117,9 @@ export const doc = Select => {
       multiple: PropTypes.string,
     }).description('Custom messages.'),
     multiple: PropTypes.bool.description(
-      'Whether to allow multiple options to be selected.',
+      `Whether to allow multiple options to be selected. When multiple is true, 
+      'value' should be an array of selected options and 'options' should be 
+      an array of possible options`,
     ),
     name: PropTypes.string.description(
       `The name of the attribute when in a Form or FormField.`,
@@ -174,8 +193,13 @@ export const doc = Select => {
       PropTypes.string,
       PropTypes.element, // deprecated, use valueLabel
       PropTypes.object,
+      PropTypes.number,
       PropTypes.arrayOf(
-        PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+        PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.object,
+          PropTypes.number,
+        ]),
       ),
     ]).description(`Currently selected value. This can be an array
       when multiple. Passing an element allows the caller to control how
@@ -188,12 +212,18 @@ export const doc = Select => {
     valueKey: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.func,
+      PropTypes.shape({
+        key: PropTypes.string,
+        reduce: PropTypes.bool,
+      }),
     ]).description(
       `When the options array contains objects, this property indicates how
       to determine the value of each option. If a string is
       provided, it is used as the key to retrieve each option's value.
       If a function is provided, it is called with the option and the
-      return value indicates the value.`,
+      return value indicates the value. If reduce is true, the value
+      coming via the key will be used for the onChange value and the value
+      property is expected to be reduced to align.`,
     ),
     emptySearchMessage: PropTypes.string
       .description(
@@ -238,10 +268,21 @@ export const themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
-  'select.control.open': {
-    description: `Any additional style for the control open state of the Select 
-component.`,
+  'select.clear.container': {
+    description: 'Any valid Box prop for the clear button container.',
     type: 'object',
+    defaultValue: "{ pad: 'small', background: 'light-2' }",
+  },
+  'select.clear.text': {
+    description:
+      'Any valid Text prop for text used inside the clear button container.',
+    type: 'object',
+    defaultValue: "{ color: 'dark-3' }",
+  },
+  'select.control.open': {
+    description: `Any additional style for the Select DropButton when using the
+    controlled open state.`,
+    type: 'string | object',
     defaultValue: undefined,
   },
   'select.control.extend': {
@@ -264,6 +305,11 @@ component.`,
     description: 'The down icon to use for opening the Select.',
     type: 'React.Element',
     defaultValue: '<FormDown />',
+  },
+  'select.icons.up': {
+    description: 'The up icon to use for closing the Select.',
+    type: 'React.Element',
+    defaultValue: undefined,
   },
   'select.searchInput': {
     description: `Component for the Select search input field.`,

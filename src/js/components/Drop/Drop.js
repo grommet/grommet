@@ -1,8 +1,9 @@
 import React, { forwardRef, useEffect, useState, useContext } from 'react';
 import { createPortal } from 'react-dom';
 
+import { ThemeContext } from 'styled-components';
+import { defaultProps } from '../../default-props';
 import { getNewContainer, setFocusWithoutScroll } from '../../utils';
-
 import { DropContainer } from './DropContainer';
 import { ContainerTargetContext } from '../../contexts/ContainerTargetContext';
 
@@ -11,10 +12,12 @@ const Drop = forwardRef(
     {
       restrictFocus,
       target: dropTarget, // avoid DOM leakage
+      trapFocus = true,
       ...rest
     },
     ref,
   ) => {
+    const theme = useContext(ThemeContext) || defaultProps.theme;
     const [originalFocusedElement, setOriginalFocusedElement] = useState();
     useEffect(() => setOriginalFocusedElement(document.activeElement), []);
     const [dropContainer, setDropContainer] = useState();
@@ -48,8 +51,10 @@ const Drop = forwardRef(
       ? createPortal(
           <DropContainer
             ref={ref}
+            dir={theme && theme.dir}
             dropTarget={dropTarget}
             restrictFocus={restrictFocus}
+            trapFocus={trapFocus}
             {...rest}
           />,
           dropContainer,

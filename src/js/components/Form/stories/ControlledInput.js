@@ -1,13 +1,12 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
+import React, { useState } from 'react';
 
 import {
   Box,
   Button,
   CheckBox,
-  Grommet,
   Form,
   FormField,
+  Grommet,
   MaskedInput,
   RadioButtonGroup,
   RangeInput,
@@ -17,35 +16,38 @@ import {
 } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Example = () => {
-  const [textInputValue, setTextInputValue] = React.useState();
-  const [maskedInputValue, setMaskedInputValue] = React.useState();
-  const [checkBoxValue, setCheckBoxValue] = React.useState();
-  const [radioButtonGroupValue, setRadioButtonValue] = React.useState();
-  const [selectValue, setSelectValue] = React.useState();
-  const [textAreaValue, setTextAreaValue] = React.useState();
-  const [rangeInputValue, setRangeInputValue] = React.useState();
+export const ControlledInput = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [subscribe, setSubscribe] = useState(false);
+  const [ampm, setAmpm] = useState('');
+  const [size, setSize] = useState('');
+  const [comments, setComments] = useState('');
+  const [age, setAge] = useState('');
   return (
     <Grommet full theme={grommet}>
       <Box fill align="center" justify="center">
         <Box width="medium">
           <Form
+            onChange={value => console.log('Change', value)}
             onReset={() => {
-              setTextInputValue(undefined);
-              setMaskedInputValue(undefined);
-              setCheckBoxValue(undefined);
-              setRadioButtonValue(undefined);
-              setSelectValue(undefined);
-              setTextAreaValue(undefined);
-              setRangeInputValue(undefined);
+              setName('');
+              setEmail('');
+              setSubscribe(false);
+              setAmpm('');
+              setSize('');
+              setComments('');
+              setAge('');
             }}
-            onSubmit={event => console.log('Submit', event.value)}
+            onSubmit={event =>
+              console.log('Submit', event.value, event.touched)
+            }
           >
             <FormField label="Name" name="name">
               <TextInput
                 name="name"
-                value={textInputValue}
-                onChange={event => setTextInputValue(event.target.value)}
+                value={name}
+                onChange={event => setName(event.target.value)}
               />
             </FormField>
             <FormField label="Email" name="email" required>
@@ -58,39 +60,39 @@ const Example = () => {
                   { fixed: '.' },
                   { regexp: /^[\w]+$/, placeholder: 'com' },
                 ]}
-                value={maskedInputValue}
-                onChange={event => setMaskedInputValue(event.target.value)}
+                value={email}
+                onChange={event => setEmail(event.target.value)}
               />
             </FormField>
             <FormField name="subscribe">
               <CheckBox
                 name="subscribe"
                 label="Subscribe?"
-                checked={checkBoxValue}
-                onChange={event => setCheckBoxValue(event.target.checked)}
+                checked={subscribe}
+                onChange={event => setSubscribe(event.target.checked)}
               />
             </FormField>
             <FormField name="ampm">
               <RadioButtonGroup
                 name="ampm"
                 options={['morning', 'evening']}
-                value={radioButtonGroupValue}
-                onChange={event => setRadioButtonValue(event.target.value)}
+                value={ampm}
+                onChange={event => setAmpm(event.target.value)}
               />
             </FormField>
             <FormField label="Size" name="size">
               <Select
                 name="size"
                 options={['small', 'medium', 'large']}
-                value={selectValue}
-                onChange={event => setSelectValue(event.option)}
+                value={size}
+                onChange={event => setSize(event.option)}
               />
             </FormField>
             <FormField label="Comments" name="comments">
               <TextArea
                 name="comments"
-                value={textAreaValue}
-                onChange={event => setTextAreaValue(event.target.value)}
+                value={comments}
+                onChange={event => setComments(event.target.value)}
               />
             </FormField>
             <FormField label="Age" name="age" pad>
@@ -98,8 +100,8 @@ const Example = () => {
                 name="age"
                 min={15}
                 max={75}
-                value={rangeInputValue}
-                onChange={event => setRangeInputValue(event.target.value)}
+                value={age}
+                onChange={event => setAge(event.target.value)}
               />
             </FormField>
             <Box direction="row" justify="between" margin={{ top: 'medium' }}>
@@ -114,4 +116,10 @@ const Example = () => {
   );
 };
 
-storiesOf('Form', module).add('Controlled Input', () => <Example />);
+ControlledInput.story = {
+  name: 'Controlled input',
+  parameters: {
+    // chromatic disabled because snapshot is the same as ControlledInputLazy
+    chromatic: { disable: true },
+  },
+};

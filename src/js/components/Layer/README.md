@@ -3,7 +3,7 @@ An overlay. Layer is typically modal and anchored to an edge, corner, or
       center of the window. It is the caller's responsibility to provide a
       control for the user to close the layer.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Layer&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=layer&module=%2Fsrc%2FLayer.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Layout-Layer&full=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/layer&module=%2Fsrc%2FLayer.js)
 ## Usage
 
 ```javascript
@@ -36,7 +36,7 @@ boolean
 
 **full**
 
-Whether the width and/or height should fill the current viewport 
+Whether the width and/or height should fill the current viewport
         size.
 
 ```
@@ -121,7 +121,7 @@ string
 
 **modal**
 
-Whether there should be an overlay preventing interaction underneath 
+Whether there should be an overlay preventing interaction underneath
         the layer. Defaults to `true`.
 
 ```
@@ -130,7 +130,7 @@ boolean
 
 **onClickOutside**
 
-Function that will be invoked on modal layers when the user clicks 
+Function that will be invoked on modal layers when the user clicks
       outside the layer.
 
 ```
@@ -183,7 +183,7 @@ boolean
 
 **target**
 
-Target where the layer will be aligned to. This should be a React 
+Target where the layer will be aligned to. This should be a React
       reference.
 
 ```
@@ -224,12 +224,22 @@ The stack order of Layer Container. Expects `number`.
 Defaults to
 
 ```
-15
+20
 ```
 
 **layer.extend**
 
 Any additional style for Layer. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**layer.container.extend**
+
+Any additional style for Layer Container. Expects `string | (props) => {}`.
 
 Defaults to
 
@@ -249,7 +259,7 @@ rgba(0, 0, 0, 0.5)
 
 **layer.responsiveBreakpoint**
 
-The actual breakpoint to trigger changes in the border, 
+The actual breakpoint to trigger changes in the border,
 direction, gap, margin, pad, and round. Expects `string`.
 
 Defaults to
@@ -265,12 +275,12 @@ The stack order of Layer. Expects `number`.
 Defaults to
 
 ```
-10
+20
 ```
 
 **global.breakpoints**
 
-The possible breakpoints that could affect border, direction, gap, margin, 
+The possible breakpoints that could affect border, direction, gap, margin,
     pad, and round. Expects `object`.
 
 Defaults to

@@ -1,13 +1,12 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
+import React, { useEffect, useState } from 'react';
 
 import {
   Box,
   Button,
   CheckBox,
-  Grommet,
   Form,
   FormField,
+  Grommet,
   MaskedInput,
   RadioButtonGroup,
   RangeInput,
@@ -17,9 +16,20 @@ import {
 } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Example = () => {
-  const [value, setValue] = React.useState(undefined);
-  React.useEffect(
+const defaultValue = {
+  name: '',
+  email: '',
+  subscribe: false,
+  ampm: '',
+  size: '',
+  comments: '',
+  age: '',
+};
+
+export const ControlledLazy = () => {
+  const [value, setValue] = useState(defaultValue);
+
+  useEffect(
     () =>
       setValue({
         name: 'initial',
@@ -38,9 +48,14 @@ const Example = () => {
         <Box width="medium">
           <Form
             value={value}
-            onChange={nextValue => setValue(nextValue)}
-            onReset={() => setValue({})}
-            onSubmit={event => console.log('Submit', event.value)}
+            onChange={nextValue => {
+              console.log('Change', nextValue);
+              setValue(nextValue);
+            }}
+            onReset={() => setValue(defaultValue)}
+            onSubmit={event =>
+              console.log('Submit', event.value, event.touched)
+            }
           >
             <FormField label="Name" name="name">
               <TextInput name="name" />
@@ -84,4 +99,10 @@ const Example = () => {
   );
 };
 
-storiesOf('Form', module).add('Controlled lazy', () => <Example />);
+ControlledLazy.story = {
+  name: 'Controlled lazy',
+  parameters: {
+    // chromatic disabled because snapshot is the same as Controlled
+    chromatic: { disable: true },
+  },
+};

@@ -1,10 +1,10 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = Form => {
   const DocumentedForm = describe(Form)
-    .availableAt(getAvailableAtBadge('Form'))
+    .availableAt(getAvailableAtBadge('Form', 'Input'))
     .description('A form that manages state for its fields.')
     .usage(
       `import { Form } from 'grommet';
@@ -15,14 +15,14 @@ export const doc = Form => {
   DocumentedForm.propTypes = {
     errors: PropTypes.shape({})
       .description(
-        `An object representing any errors in the data. They keys should
+        `An object representing any errors in the data. Their keys should
         match the keys in the value object.`,
       )
       .defaultValue({}),
     infos: PropTypes.shape({})
       .description(
         `An object representing any information details in the data.
-        They keys should match the keys in the value object.`,
+        Their keys should match the keys in the value object.`,
       )
       .defaultValue({}),
     messages: PropTypes.shape({
@@ -44,6 +44,12 @@ export const doc = Form => {
     onReset: PropTypes.func.description(
       `Function that will be called when the form is reset. The
       single argument is the event provided by react.`,
+    ),
+    onValidate: PropTypes.func.description(
+      `Function that will be called when the form is validated. The
+      single argument is an event containing the latest error object
+      via \`validationResults.errors\` and info object via 
+      \`validationResults.infos\`.`,
     ),
     validate: PropTypes.oneOf(['blur', 'submit'])
       .description('When to perform validation')

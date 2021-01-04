@@ -2,12 +2,37 @@ import React from 'react';
 import { cleanup, render, fireEvent } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
+import { axe } from 'jest-axe';
+import 'jest-axe/extend-expect';
+import 'regenerator-runtime/runtime';
 
 import { Grommet } from '../../Grommet';
 import { CheckBox } from '..';
 
 describe('CheckBox', () => {
   afterEach(cleanup);
+
+  test('should not have accessibility violations', async () => {
+    const { container } = render(
+      <Grommet>
+        <CheckBox a11yTitle="test" />
+      </Grommet>,
+    );
+    const results = await axe(container);
+    expect(container.firstChild).toMatchSnapshot();
+    expect(results).toHaveNoViolations();
+  });
+
+  test('label should not have accessibility violations', async () => {
+    const { container } = render(
+      <Grommet>
+        <CheckBox label="test" />
+      </Grommet>,
+    );
+    const results = await axe(container);
+    expect(container.firstChild).toMatchSnapshot();
+    expect(results).toHaveNoViolations();
+  });
 
   test('renders', () => {
     const component = renderer.create(
@@ -86,27 +111,37 @@ describe('CheckBox', () => {
   });
 
   test('indeterminate checked warns', () => {
-    const spy = jest.spyOn(global.console, 'warn');
-    renderer.create(
+    console.warn = jest.fn();
+    const warnSpy = jest.spyOn(console, 'warn');
+    render(
       <Grommet>
         <CheckBox indeterminate checked />
       </Grommet>,
     );
-    expect(spy).toBeCalledWith(
+    expect(warnSpy).toBeCalledWith(
       'Checkbox cannot be "checked" and "indeterminate" at the same time.',
     );
+
+    warnSpy.mockReset();
+    warnSpy.mockRestore();
+    console.warn.mockReset();
   });
 
   test('indeterminate toggle warns', () => {
-    const spy = jest.spyOn(global.console, 'warn');
-    renderer.create(
+    console.warn = jest.fn();
+    const warnSpy = jest.spyOn(console, 'warn');
+    render(
       <Grommet>
         <CheckBox indeterminate toggle />
       </Grommet>,
     );
-    expect(spy).toBeCalledWith(
+    expect(warnSpy).toBeCalledWith(
       'Checkbox of type toggle does not have "indeterminate" state.',
     );
+
+    warnSpy.mockReset();
+    warnSpy.mockRestore();
+    console.warn.mockReset();
   });
 
   test('controlled', () => {
