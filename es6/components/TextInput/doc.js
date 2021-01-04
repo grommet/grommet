@@ -7,6 +7,7 @@ export var doc = function doc(TextInput) {
   var DocumentedTextInput = describe(TextInput).availableAt(getAvailableAtBadge('TextInput', 'Input')).description('A control to input a single line of text, with optional suggestions.').usage("import { TextInput } from 'grommet';\n<TextInput id='item' name='item' />").intrinsicElement('input');
   DocumentedTextInput.propTypes = {
     a11yTitle: PropTypes.string.description('Custom title to be used by screen readers.'),
+    defaultSuggestion: PropTypes.number.description("Default suggestion to highlight, as an index into the suggestions array.\n\n      If set, the suggestion at the specified index in the suggestions array\n      will be highlighted by default when the suggestions drop opens.\n      "),
     dropAlign: PropTypes.shape({
       top: PropTypes.oneOf(['top', 'bottom']),
       bottom: PropTypes.oneOf(['top', 'bottom']),

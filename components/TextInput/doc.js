@@ -15,6 +15,7 @@ var doc = function doc(TextInput) {
   var DocumentedTextInput = (0, _reactDesc.describe)(TextInput).availableAt((0, _mixins.getAvailableAtBadge)('TextInput', 'Input')).description('A control to input a single line of text, with optional suggestions.').usage("import { TextInput } from 'grommet';\n<TextInput id='item' name='item' />").intrinsicElement('input');
   DocumentedTextInput.propTypes = {
     a11yTitle: _reactDesc.PropTypes.string.description('Custom title to be used by screen readers.'),
+    defaultSuggestion: _reactDesc.PropTypes.number.description("Default suggestion to highlight, as an index into the suggestions array.\n\n      If set, the suggestion at the specified index in the suggestions array\n      will be highlighted by default when the suggestions drop opens.\n      "),
     dropAlign: _reactDesc.PropTypes.shape({
       top: _reactDesc.PropTypes.oneOf(['top', 'bottom']),
       bottom: _reactDesc.PropTypes.oneOf(['top', 'bottom']),
