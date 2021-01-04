@@ -237,6 +237,17 @@ Defaults to
 undefined
 ```
 
+**layer.container.elevation**
+
+The amount of elevation. Any valid Box elevation value. Expects `'none' | 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | 
+    string`.
+
+Defaults to
+
+```
+undefined
+```
+
 **layer.container.extend**
 
 Any additional style for Layer Container. Expects `string | (props) => {}`.

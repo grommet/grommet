@@ -156,6 +156,12 @@ export const themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
+  'layer.container.elevation': {
+    description: 'The amount of elevation. Any valid Box elevation value.',
+    type: `'none' | 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | 
+    string`,
+    defaultValue: undefined,
+  },
   'layer.container.extend': {
     description: 'Any additional style for Layer Container.',
     type: 'string | (props) => {}',
