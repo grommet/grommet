@@ -125,6 +125,44 @@ describe('Select', () => {
     expect(onSearch).toBeCalledWith('o');
   });
 
+  test('search and select', () => {
+    jest.useFakeTimers();
+    const onSearch = jest.fn();
+    const onChange = jest.fn();
+    const Test = () => {
+      const [options, setOptions] = React.useState(['one', 'two']);
+      return (
+        <Select
+          id="test-select"
+          placeholder="test select"
+          options={options}
+          onChange={onChange}
+          onSearch={arg => {
+            onSearch(arg);
+            setOptions(['two']);
+          }}
+        />
+      );
+    };
+    const { getByPlaceholderText, getByText, container } = render(<Test />);
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.click(getByPlaceholderText('test select'));
+
+    // advance timers so select can open
+    act(() => jest.advanceTimersByTime(200));
+    // snapshot on search box
+    expectPortal('test-select__drop').toMatchSnapshot();
+    expect(document.activeElement).toMatchSnapshot();
+    // add content to search box
+    fireEvent.change(document.activeElement, { target: { value: 't' } });
+    expect(document.activeElement).toMatchSnapshot();
+    expect(onSearch).toBeCalledWith('t');
+
+    fireEvent.click(getByText('two'));
+    expect(onChange).toBeCalledWith(expect.objectContaining({ value: 'two' }));
+  });
+
   test('select an option with complex options', () => {
     const onChange = jest.fn();
     const { getByText, container } = render(

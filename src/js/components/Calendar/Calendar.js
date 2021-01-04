@@ -50,6 +50,14 @@ const activeDates = {
 
 const timeStamp = new RegExp(/T.*/);
 
+const normalizeForTimezone = (date, refDate) => {
+  if (!date) return undefined;
+  return (!timeStamp.test(refDate || date)
+    ? localTimezoneToUTC(new Date(date))
+    : new Date(date)
+  ).toISOString();
+};
+
 const normalizeReference = (reference, date, dates) => {
   let normalizedReference;
   if (reference) {
@@ -106,6 +114,7 @@ const CalendarDay = ({
     <StyledDayContainer sizeProp={size} fillContainer={fill}>
       <CalendarDayButton fill={fill} {...buttonProps}>
         <StyledDay
+          disabledProp={buttonProps.disabled}
           inRange={isInRange}
           otherMonth={otherMonth}
           isSelected={isSelected}
@@ -142,7 +151,7 @@ const Calendar = forwardRef(
     {
       activeDate: activeDateProp,
       animate = true,
-      bounds: validBounds,
+      bounds: boundsProp,
       children,
       date: dateProp,
       dates: datesProp,
@@ -175,21 +184,7 @@ const Calendar = forwardRef(
 
     // set date when caller changes it, allows us to change it internally too
     const [date, setDate] = useState(dateProp);
-    useEffect(() => {
-      if (dateProp) {
-        // if dateProp doesn't contain a timestamp, factor in local timezone
-        // offset from UTC
-        let adjustedDate;
-        if (!timeStamp.test(dateProp)) {
-          adjustedDate = localTimezoneToUTC(new Date(dateProp));
-        } else {
-          adjustedDate = new Date(dateProp);
-        }
-        setDate(adjustedDate.toISOString());
-      } else {
-        setDate(undefined);
-      }
-    }, [dateProp]);
+    useEffect(() => setDate(normalizeForTimezone(dateProp)), [dateProp]);
 
     // set dates when caller changes it, allows us to change it internally too
     const [dates, setDates] = useState(datesProp);
@@ -202,14 +197,8 @@ const Calendar = forwardRef(
           [from, to] = datesProp[0].map(day =>
             day ? new Date(day) : undefined,
           );
-          if (from)
-            from = !timeStamp.test(datesProp[0][0])
-              ? localTimezoneToUTC(from).toISOString()
-              : from.toISOString();
-          if (to)
-            to = !timeStamp.test(datesProp[0][0])
-              ? localTimezoneToUTC(to).toISOString()
-              : to.toISOString();
+          if (from) from = normalizeForTimezone(from, datesProp[0][0]);
+          if (to) to = normalizeForTimezone(to, datesProp[0][0]);
 
           setDates([[from, to]]);
         } else {
@@ -219,20 +208,11 @@ const Calendar = forwardRef(
               let from;
               let to;
               [from, to] = d.map(day => new Date(day));
-              from = !timeStamp.test(d[0])
-                ? localTimezoneToUTC(from).toISOString()
-                : from.toISOString();
-              to = !timeStamp.test(d[0])
-                ? localTimezoneToUTC(to).toISOString()
-                : to.toISOString();
-
+              from = normalizeForTimezone(from, d[0]);
+              to = normalizeForTimezone(to, d[0]);
               datesArray.push([from, to]);
             } else {
-              datesArray.push(
-                !timeStamp.test(d)
-                  ? localTimezoneToUTC(new Date(d)).toISOString()
-                  : d,
-              );
+              datesArray.push(normalizeForTimezone(d));
             }
           });
           setDates(datesArray);
@@ -249,6 +229,15 @@ const Calendar = forwardRef(
         setReference(normalizeReference(referenceProp, dateProp, datesProp)),
       [dateProp, datesProp, referenceProp],
     );
+
+    // normalize bounds
+    const [bounds, setBounds] = useState(
+      boundsProp ? boundsProp.map(b => normalizeForTimezone(b)) : undefined,
+    );
+    useEffect(() => {
+      if (boundsProp) setBounds(boundsProp.map(b => normalizeForTimezone(b)));
+      else setBounds(undefined);
+    }, [boundsProp]);
 
     // calculate the bounds we display based on the reference
     const [displayBounds, setDisplayBounds] = useState(
@@ -375,12 +364,12 @@ const Calendar = forwardRef(
 
     const changeReference = useCallback(
       nextReference => {
-        if (betweenDates(nextReference, validBounds)) {
+        if (betweenDates(nextReference, bounds)) {
           setReference(nextReference);
           if (onReference) onReference(nextReference.toISOString());
         }
       },
-      [onReference, validBounds],
+      [onReference, bounds],
     );
     const selectDate = useCallback(
       selectedDate => {
@@ -547,7 +536,7 @@ const Calendar = forwardRef(
                 year: 'numeric',
               })}
               icon={<PreviousIcon size={size !== 'small' ? size : undefined} />}
-              disabled={!betweenDates(previousMonth, validBounds)}
+              disabled={!betweenDates(previousMonth, bounds)}
               onClick={() => changeReference(previousMonth)}
             />
             <Button
@@ -556,7 +545,7 @@ const Calendar = forwardRef(
                 year: 'numeric',
               })}
               icon={<NextIcon size={size !== 'small' ? size : undefined} />}
-              disabled={!betweenDates(nextMonth, validBounds)}
+              disabled={!betweenDates(nextMonth, bounds)}
               onClick={() => changeReference(nextMonth)}
             />
           </Box>
@@ -644,8 +633,7 @@ const Calendar = forwardRef(
           inRange = true;
         }
         const dayDisabled =
-          withinDates(day, disabled) ||
-          (validBounds && !betweenDates(day, validBounds));
+          withinDates(day, disabled) || (bounds && !betweenDates(day, bounds));
         if (
           !firstDayInMonth &&
           !dayDisabled &&
@@ -732,8 +720,8 @@ const Calendar = forwardRef(
                 locale,
                 onPreviousMonth: () => changeReference(previousMonth),
                 onNextMonth: () => changeReference(nextMonth),
-                previousInBound: betweenDates(previousMonth, validBounds),
-                nextInBound: betweenDates(nextMonth, validBounds),
+                previousInBound: betweenDates(previousMonth, bounds),
+                nextInBound: betweenDates(nextMonth, bounds),
               })
             : renderCalendarHeader(previousMonth, nextMonth)}
           {daysOfWeek && renderDaysOfWeek()}
