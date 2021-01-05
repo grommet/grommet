@@ -349,8 +349,8 @@ const Chart = React.forwardRef(
           ).join(',')}`;
         });
       (values || [])
-        .reverse()
         .filter(({ value }) => value[1] !== undefined)
+        .reverse()
         .forEach(({ value }) => {
           d += ` L ${valueToCoordinate(
             value[0],
