@@ -49,5 +49,5 @@ export const ObjectMultipleSearch = () => {
 };
 
 ObjectMultipleSearch.story = {
-  name: 'Object options with multiple an search',
+  name: 'Object options with search and multiple',
 };
