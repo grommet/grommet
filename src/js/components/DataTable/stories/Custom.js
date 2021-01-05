@@ -24,7 +24,11 @@ const customTheme = {
   },
   dataTable: {
     header: {
-      color: 'text-strong',
+      font: {
+        weight: 'bold',
+        size: '30px',
+      },
+      color: 'red',
       extend: ({ column, sort, sortable }) => {
         return `
           ${sortable &&

@@ -11,7 +11,7 @@ const amountFormatter = new Intl.NumberFormat('en-US', {
 export const columns = [
   {
     property: 'name',
-    header: <Text>Name with extra</Text>,
+    header: 'Name',
     primary: true,
     footer: 'Total',
   },
