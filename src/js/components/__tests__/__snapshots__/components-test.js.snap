@@ -5475,13 +5475,23 @@ string",
         "name": "margin",
       },
       Object {
-        "description": "Function that will be called to render the visual representation.
-      It will be passed an object containing button props.
-      It should return a react element.
-      For example:
-      \`children={({ disabled, drop, hover, focus }) => <Box ...>{...}</Box>}\`
-      ",
-        "format": "function",
+        "description": "Menu can take in children as a function or node.
+
+- Function that will be called to render the visual representation.
+It will be passed a props object. The props passed are
+different depending on the menu \`open\` state. When the menu is closed,
+two props are passed:
+\`{ hover, focus }\`,
+but when the menu is open, all menu props are passed to this function.\\\\
+It should return a React element.
+For example:
+\`children={(props) => <Box ...>{...}</Box>}\`\\\\
+**Note:** This function will be invoked on every mouse move when hovering.
+- Node is anything that can be rendered, e.g.
+\`<Box><CaretNext /><Text>Open Me</Text></Box>\`
+",
+        "format": "function
+node",
         "name": "children",
       },
       Object {
@@ -5498,7 +5508,7 @@ string",
         "description": "Where to place the drop down.
 The keys correspond to a side of the drop down.
 The values correspond to a side of the control. For instance,
-{left: 'left', top: 'bottom'} would align the left edges and the top of
+\`{left: 'left', top: 'bottom'}\` would align the left edges and the top of
 the drop down to the bottom of the control. At most one of left or right and
 one of top or bottom should be specified.",
         "format": "{
@@ -5565,7 +5575,7 @@ node",
         "defaultValue": Array [],
         "description": "Menu items to be placed inside the drop down.
 The object values can be any Button prop, 
-for example: label, onClick, and href.",
+for example: \`label\`, \`onClick\`, and \`href\`.",
         "format": "[object]",
         "name": "items",
         "required": true,
@@ -7304,6 +7314,15 @@ string",
         "description": "Custom title to be used by screen readers.",
         "format": "string",
         "name": "a11yTitle",
+      },
+      Object {
+        "description": "Default suggestion to highlight, as an index into the suggestions array.
+
+      If set, the suggestion at the specified index in the suggestions array
+      will be highlighted by default when the suggestions drop opens.
+      ",
+        "format": "number",
+        "name": "defaultSuggestion",
       },
       Object {
         "defaultValue": Object {
