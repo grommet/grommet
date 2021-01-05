@@ -43,6 +43,19 @@ export const doc = Select => {
     closeOnChange: PropTypes.bool
       .description('Wether to close the drop when a selection is made.')
       .defaultValue(true),
+    defaultValue: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object,
+      PropTypes.number,
+      PropTypes.arrayOf(
+        PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.object,
+          PropTypes.number,
+        ]),
+      ),
+    ]).description(`Initially selected value. This can be an array
+      when multiple.`),
     disabled: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.arrayOf(

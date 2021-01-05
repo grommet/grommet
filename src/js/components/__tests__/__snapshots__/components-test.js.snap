@@ -6464,6 +6464,19 @@ string",
         "name": "closeOnChange",
       },
       Object {
+        "description": "Initially selected value. This can be an array
+      when multiple.",
+        "format": "string
+object
+number
+[
+  string
+  object
+  number
+]",
+        "name": "defaultValue",
+      },
+      Object {
         "defaultValue": false,
         "description": "Whether the entire select or individual options should be disabled.
         An array of numbers indicates the indexes into 'options' of the
