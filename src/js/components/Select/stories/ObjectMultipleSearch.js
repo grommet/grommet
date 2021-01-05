@@ -12,7 +12,7 @@ for (let i = 1; i <= 200; i += 1) {
   });
 }
 
-export const ObjectMultiple = () => {
+export const ObjectMultipleSearch = () => {
   const [options, setOptions] = useState(objectOptions);
   const [value, setValue] = useState([1, 2]);
 
@@ -48,6 +48,6 @@ export const ObjectMultiple = () => {
   );
 };
 
-ObjectMultiple.story = {
-  name: 'Object multiple',
+ObjectMultipleSearch.story = {
+  name: 'Object options with multiple an search',
 };
