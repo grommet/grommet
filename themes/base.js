@@ -1000,6 +1000,7 @@ var generate = function generate(baseSpacing, scale) {
         radius: '4px'
       },
       container: {
+        // elevation: undefined,
         zIndex: '20'
       },
       // extend: undefined,

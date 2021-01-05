@@ -162,6 +162,7 @@ var LayerContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
   var content = /*#__PURE__*/_react["default"].createElement(_StyledLayer.StyledContainer, _extends({
     ref: ref || containerRef,
+    elevation: theme.layer.container.elevation,
     id: id,
     full: full,
     margin: margin,

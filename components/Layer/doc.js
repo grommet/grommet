@@ -63,6 +63,11 @@ var themeDoc = _extends({
     type: 'string | (props) => {}',
     defaultValue: undefined
   },
+  'layer.container.elevation': {
+    description: "Elevated height above the underlying container, indicated via \n    a drop shadow. Any Box elevation value is valid.",
+    type: "'none' | 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | \n    string",
+    defaultValue: undefined
+  },
   'layer.container.extend': {
     description: 'Any additional style for Layer Container.',
     type: 'string | (props) => {}',

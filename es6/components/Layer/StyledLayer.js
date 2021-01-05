@@ -409,10 +409,13 @@ var desktopContainerStyle = css(["", " max-height:", ";max-width:", ";border-rad
   return props.position !== 'hidden' && POSITIONS[props.position][props.full](getBounds(props.targetBounds, props.margin, props.theme), props.targetBounds) || '';
 });
 var responsiveContainerStyle = css(["position:relative;max-height:none;max-width:none;border-radius:0;top:0;bottom:0;left:0;right:0;transform:none;animation:none;height:100vh;width:100vw;"]);
+var elevationStyle = css(["box-shadow:", ";"], function (props) {
+  return props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][props.theme.layer.container.elevation];
+});
 var StyledContainer = styled.div.withConfig({
   displayName: "StyledLayer__StyledContainer",
   componentId: "rmtehz-2"
-})(["", " display:flex;flex-direction:column;min-height:", ";", " outline:none;pointer-events:all;z-index:", ";", " ", ";", ";"], function (props) {
+})(["", " display:flex;flex-direction:column;min-height:", ";", " outline:none;pointer-events:all;z-index:", ";", " ", " ", ";", ";"], function (props) {
   return !props.modal ? baseStyle : '';
 }, function (props) {
   return props.theme.global.size.xxsmall;
@@ -420,6 +423,8 @@ var StyledContainer = styled.div.withConfig({
   return !props.plain && props.theme.layer.background && backgroundStyle(props.theme.layer.background, props.theme);
 }, function (props) {
   return props.theme.layer.container.zIndex;
+}, function (props) {
+  return props.theme.layer.container.elevation && elevationStyle;
 }, desktopContainerStyle, function (props) {
   if (props.responsive && props.theme.layer.responsiveBreakpoint) {
     var breakpoint = props.theme.global.breakpoints[props.theme.layer.responsiveBreakpoint];

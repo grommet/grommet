@@ -144,6 +144,7 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, [layerTarget, onClickOutside, portalContext, portalId]);
   var content = /*#__PURE__*/React.createElement(StyledContainer, _extends({
     ref: ref || containerRef,
+    elevation: theme.layer.container.elevation,
     id: id,
     full: full,
     margin: margin,
