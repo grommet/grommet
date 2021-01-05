@@ -49,6 +49,7 @@ const Select = forwardRef(
       children,
       clear = false,
       closeOnChange = true,
+      defaultValue,
       disabled,
       disabledKey,
       dropAlign = defaultDropAlign,
@@ -92,7 +93,11 @@ const Select = forwardRef(
     const formContext = useContext(FormContext);
     // value is used for what we receive in valueProp and the basis for
     // what we send with onChange
-    const [value, setValue] = formContext.useFormInput(name, valueProp, '');
+    const [value, setValue] = formContext.useFormInput(
+      name,
+      valueProp,
+      defaultValue || '',
+    );
     // valuedValue is the value mapped with any valueKey applied
     const valuedValue = useMemo(() => {
       if (Array.isArray(value))
