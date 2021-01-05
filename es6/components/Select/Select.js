@@ -46,6 +46,7 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
       clear = _ref$clear === void 0 ? false : _ref$clear,
       _ref$closeOnChange = _ref.closeOnChange,
       closeOnChange = _ref$closeOnChange === void 0 ? true : _ref$closeOnChange,
+      defaultValue = _ref.defaultValue,
       disabled = _ref.disabled,
       disabledKey = _ref.disabledKey,
       _ref$dropAlign = _ref.dropAlign,
@@ -82,14 +83,14 @@ var Select = /*#__PURE__*/forwardRef(function (_ref, ref) {
       valueProp = _ref.value,
       valueKey = _ref.valueKey,
       valueLabel = _ref.valueLabel,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "alignSelf", "children", "clear", "closeOnChange", "disabled", "disabledKey", "dropAlign", "dropHeight", "dropProps", "dropTarget", "emptySearchMessage", "focusIndicator", "gridArea", "id", "icon", "labelKey", "margin", "messages", "multiple", "name", "onChange", "onClick", "onClose", "onKeyDown", "onMore", "onOpen", "onSearch", "open", "options", "placeholder", "plain", "replace", "searchPlaceholder", "selected", "size", "value", "valueKey", "valueLabel"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "alignSelf", "children", "clear", "closeOnChange", "defaultValue", "disabled", "disabledKey", "dropAlign", "dropHeight", "dropProps", "dropTarget", "emptySearchMessage", "focusIndicator", "gridArea", "id", "icon", "labelKey", "margin", "messages", "multiple", "name", "onChange", "onClick", "onClose", "onKeyDown", "onMore", "onOpen", "onSearch", "open", "options", "placeholder", "plain", "replace", "searchPlaceholder", "selected", "size", "value", "valueKey", "valueLabel"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var inputRef = useRef();
   var formContext = useContext(FormContext); // value is used for what we receive in valueProp and the basis for
   // what we send with onChange
 
-  var _formContext$useFormI = formContext.useFormInput(name, valueProp, ''),
+  var _formContext$useFormI = formContext.useFormInput(name, valueProp, defaultValue || ''),
       value = _formContext$useFormI[0],
       setValue = _formContext$useFormI[1]; // valuedValue is the value mapped with any valueKey applied
 
