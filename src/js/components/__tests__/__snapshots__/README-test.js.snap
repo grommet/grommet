@@ -10732,7 +10732,8 @@ undefined
 
 **layer.container.elevation**
 
-The amount of elevation. Any valid Box elevation value. Expects \`'none' | 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | 
+Elevated height above the underlying container, indicated via 
+    a drop shadow. Any Box elevation value is valid. Expects \`'none' | 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | 
     string\`.
 
 Defaults to

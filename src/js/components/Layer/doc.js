@@ -157,7 +157,8 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'layer.container.elevation': {
-    description: 'The amount of elevation. Any valid Box elevation value.',
+    description: `Elevated height above the underlying container, indicated via 
+    a drop shadow. Any Box elevation value is valid.`,
     type: `'none' | 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | 
     string`,
     defaultValue: undefined,

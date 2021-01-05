@@ -399,7 +399,7 @@ describe('Layer', () => {
     expect(onClickOutside).toHaveBeenCalledTimes(1);
   });
 
-  test(`custom theme`, () => {
+  test('custom theme', () => {
     const theme = {
       layer: {
         container: {
