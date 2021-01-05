@@ -296,10 +296,10 @@ var Chart = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       var value = _ref6.value;
       d += (!index ? 'M' : ' L') + " " + valueToCoordinate(value[0], value[value.length === 2 ? 1 : 2]).join(',');
     });
-    (values || []).reverse().filter(function (_ref7) {
+    (values || []).filter(function (_ref7) {
       var value = _ref7.value;
       return value[1] !== undefined;
-    }).forEach(function (_ref8) {
+    }).reverse().forEach(function (_ref8) {
       var value = _ref8.value;
       d += " L " + valueToCoordinate(value[0], // Math.max() is to account for value[1] being negative
       value.length === 2 ? Math.max(0, bounds[1][0]) : value[1]).join(',');
