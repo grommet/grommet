@@ -2,7 +2,6 @@ import React from 'react';
 import 'jest-styled-components';
 import { cleanup, render, fireEvent } from '@testing-library/react';
 import { getByTestId, queryByTestId } from '@testing-library/dom';
-import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import { createPortal, expectPortal } from '../../../utils/portal';
 
