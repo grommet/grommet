@@ -9,7 +9,7 @@ import 'regenerator-runtime/runtime';
 import { CaretDown, CaretUp, FormDown } from 'grommet-icons';
 import { createPortal, expectPortal } from '../../../utils/portal';
 
-import { Grommet, FormField } from '../..';
+import { Box, Grommet, FormField } from '../..';
 import { Select } from '..';
 
 describe('Select', () => {
@@ -31,6 +31,17 @@ describe('Select', () => {
   test('basic', () => {
     const component = renderer.create(
       <Select id="test-select" options={['one', 'two']} a11yTitle="Select" />,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+
+  test('dark', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Box fill background="dark-1" align="center" justify="center">
+          <Select placeholder="Select" options={['one', 'two']} />
+        </Box>
+      </Grommet>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
