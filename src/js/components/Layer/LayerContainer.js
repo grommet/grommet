@@ -197,7 +197,21 @@ const LayerContainer = forwardRef(
     }
 
     if (onEsc) {
-      content = <Keyboard onEsc={onEsc}>{content}</Keyboard>;
+      content = (
+        <Keyboard
+          onEsc={
+            onEsc
+              ? event => {
+                  event.stopPropagation();
+                  onEsc(event);
+                }
+              : undefined
+          }
+          target={modal === false ? 'document' : undefined}
+        >
+          {content}
+        </Keyboard>
+      );
     }
 
     if (theme.layer.background) {

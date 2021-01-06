@@ -338,6 +338,9 @@ const DropContainer = forwardRef(
           trapFocus={trapFocus}
         >
           <Keyboard
+            // should capture keyboard event before other elements,
+            // such as Layer
+            capture
             onEsc={
               onEsc
                 ? event => {
