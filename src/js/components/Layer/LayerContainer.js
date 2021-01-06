@@ -152,6 +152,7 @@ const LayerContainer = forwardRef(
     let content = (
       <StyledContainer
         ref={ref || containerRef}
+        elevation={theme.layer.container.elevation}
         id={id}
         full={full}
         margin={margin}
