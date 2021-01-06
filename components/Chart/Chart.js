@@ -462,7 +462,7 @@ var Chart = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       y1: 0,
       x2: 0,
       y2: 1
-    }, color.sort(function (c1, c2) {
+    }, color.slice(0).sort(function (c1, c2) {
       return c2.value - c1.value;
     }).map(function (_ref10) {
       var value = _ref10.value,
