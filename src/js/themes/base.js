@@ -953,6 +953,38 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   // any box props,
       //   // extend: undefined,
       // },
+      // control: {
+      //   // extend: undefined,
+      //   size: {
+      //     small: {
+      //       font: { ...fontSizing(-1) },
+      //       height: `${baseSpacing * 1.5}px`,
+      //       width: `${baseSpacing * 1.5}px`,
+      //       border: {
+      //         radius: `${baseSpacing / 6}px`, // 4
+      //         width: '2px',
+      //       },
+      //     },
+      //     medium: {
+      //       font: { ...fontSizing(0) },
+      //       height: `${baseSpacing * 1.5}px`,
+      //       width: `${baseSpacing * 1.5}px`,
+      //       border: {
+      //         radius: `${baseSpacing / 4}px`, // 6
+      //         width: '2px',
+      //       },
+      //     },
+      //     large: {
+      //       font: { ...fontSizing(1) },
+      //       height: `${baseSpacing * 2}px`,
+      //       width: `${baseSpacing * 2}px`,
+      //       border: {
+      //         radius: `${baseSpacing / 2}px`, // 12
+      //         width: '2px',
+      //       },
+      //     },
+      //   },
+      // },
       controls: {
         align: 'center',
         direction: 'row',

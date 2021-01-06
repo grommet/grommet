@@ -14,8 +14,8 @@ export const Simple = () => (
       <Box>
         <Text>Box Props</Text>
         <Pagination
-          numItems={237}
-          page={2}
+          numItems={1237}
+          page={24}
           background="brand"
           pad="medium"
           margin="small"
