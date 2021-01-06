@@ -62,6 +62,11 @@ export const TargetLayer = () => {
               onClick={() => setGutter(gutter === 'small' ? 'xsmall' : 'small')}
             />
             <Button label="Close" onClick={onClose} />
+            <Select
+              options={positions}
+              value={position}
+              onChange={({ option }) => setPosition(option)}
+            />
           </Box>
         </Layer>
       )}

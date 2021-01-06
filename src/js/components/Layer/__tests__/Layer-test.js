@@ -2,10 +2,11 @@ import React from 'react';
 import 'jest-styled-components';
 import { cleanup, render, fireEvent } from '@testing-library/react';
 import { getByTestId, queryByTestId } from '@testing-library/dom';
-
+import 'jest-axe/extend-expect';
+import 'regenerator-runtime/runtime';
 import { createPortal, expectPortal } from '../../../utils/portal';
 
-import { Grommet, Box, Layer } from '../..';
+import { Grommet, Box, Layer, Select } from '../..';
 import { LayerContainer } from '../LayerContainer';
 
 const SimpleLayer = () => {
@@ -397,5 +398,46 @@ describe('Layer', () => {
       new MouseEvent('mousedown', { bubbles: true, cancelable: true }),
     );
     expect(onClickOutside).toHaveBeenCalledTimes(1);
+  });
+
+  test('invokes onEsc when modal={false}', () => {
+    jest.useFakeTimers();
+    window.scrollTo = jest.fn();
+    const onEsc = jest.fn();
+    const { getByText, queryByText } = render(
+      <Grommet>
+        <Layer id="esc-test" onEsc={onEsc} modal={false}>
+          <Select options={['one', 'two', 'three']} data-testid="test-select" />
+        </Layer>
+      </Grommet>,
+    );
+
+    const selectNode = getByTestId(document, 'test-select');
+
+    fireEvent.click(selectNode);
+    // advance timers so the select opens
+    jest.advanceTimersByTime(100);
+    // verify that select is open
+    expect(getByText('one')).toBeTruthy();
+
+    fireEvent.keyDown(document, {
+      key: 'Esc',
+      keyCode: 27,
+      which: 27,
+    });
+
+    // advance timers so the select closes
+    jest.advanceTimersByTime(100);
+    expect(queryByText('one')).toBeFalsy();
+    // onEsc should not be called on the Layer yet
+    expect(onEsc).toBeCalledTimes(0);
+
+    fireEvent.keyDown(document, {
+      key: 'Esc',
+      keyCode: 27,
+      which: 27,
+    });
+    expect(onEsc).toBeCalledTimes(1);
+    expectPortal('esc-test').toMatchSnapshot();
   });
 });
