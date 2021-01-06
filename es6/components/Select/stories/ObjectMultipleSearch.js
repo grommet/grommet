@@ -11,7 +11,7 @@ for (var i = 1; i <= 200; i += 1) {
   });
 }
 
-export var ObjectMultiple = function ObjectMultiple() {
+export var ObjectMultipleSearch = function ObjectMultipleSearch() {
   var _useState = useState(objectOptions),
       options = _useState[0],
       setOptions = _useState[1];
@@ -62,6 +62,6 @@ export var ObjectMultiple = function ObjectMultiple() {
     }
   })));
 };
-ObjectMultiple.story = {
-  name: 'Object multiple'
+ObjectMultipleSearch.story = {
+  name: 'Object options with search and multiple'
 };

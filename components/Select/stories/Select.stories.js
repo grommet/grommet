@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports["default"] = exports.Uncontrolled = exports.Themed = exports.Simple = exports.Seasons = exports.Search = exports.ObjectOptions = exports.ObjectMultiple = exports.Multiple = exports.ManyOptions = exports.LazyLoadingOptions = exports.InsideFormField = exports.Dark = exports.CustomSearch = exports.Custom = exports.CreateOption = exports.Controlled = exports.Clear = void 0;
+exports["default"] = exports.Uncontrolled = exports.Themed = exports.Simple = exports.ChildrenRender = exports.Search = exports.ObjectOptions = exports.ObjectMultipleSearch = exports.Multiple = exports.ManyOptions = exports.LazyLoadingOptions = exports.InsideFormField = exports.CustomSearch = exports.ValueLabel = exports.CreateOption = exports.Controlled = exports.Clear = void 0;
 
 var _Clear = require("./Clear");
 
@@ -15,17 +15,13 @@ var _CreateOption = require("./typescript/CreateOption.tsx");
 
 exports.CreateOption = _CreateOption.CreateOption;
 
-var _Custom = require("./Custom");
+var _ValueLabel = require("./ValueLabel");
 
-exports.Custom = _Custom.Custom;
+exports.ValueLabel = _ValueLabel.ValueLabel;
 
 var _CustomSearch = require("./CustomSearch");
 
 exports.CustomSearch = _CustomSearch.CustomSearch;
-
-var _Dark = require("./Dark");
-
-exports.Dark = _Dark.Dark;
 
 var _InsideFormField = require("./InsideFormField");
 
@@ -43,9 +39,9 @@ var _Multiple = require("./Multiple");
 
 exports.Multiple = _Multiple.Multiple;
 
-var _ObjectMultiple = require("./ObjectMultiple");
+var _ObjectMultipleSearch = require("./ObjectMultipleSearch");
 
-exports.ObjectMultiple = _ObjectMultiple.ObjectMultiple;
+exports.ObjectMultipleSearch = _ObjectMultipleSearch.ObjectMultipleSearch;
 
 var _ObjectOptions = require("./ObjectOptions");
 
@@ -55,9 +51,9 @@ var _Search = require("./Search");
 
 exports.Search = _Search.Search;
 
-var _Seasons = require("./Seasons");
+var _ChildrenRender = require("./ChildrenRender");
 
-exports.Seasons = _Seasons.Seasons;
+exports.ChildrenRender = _ChildrenRender.ChildrenRender;
 
 var _Simple = require("./Simple");
 

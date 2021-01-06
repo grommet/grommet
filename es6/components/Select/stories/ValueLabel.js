@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { CaretDown } from "grommet-icons/es6/icons/CaretDown";
 import { Box, Grommet, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
-export var Custom = function Custom() {
+export var ValueLabel = function ValueLabel() {
   var options = ['one', 'two'];
 
   var _useState = useState(''),

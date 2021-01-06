@@ -15,6 +15,7 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+// https://github.com/grommet/grommet/blob/master/src/js/components/Select/stories/theme.js
 var allContentPartners = [{
   name: 'Test Partner',
   id: '32131232'
@@ -68,7 +69,7 @@ var CustomSearch = function CustomSearch() {
 
   var _useState4 = (0, _react.useState)(''),
       searchQuery = _useState4[0],
-      setSerchQuery = _useState4[1];
+      setSearchQuery = _useState4[1];
 
   var selectRef = (0, _react.useRef)();
 
@@ -224,7 +225,7 @@ var CustomSearch = function CustomSearch() {
     },
     onSearch: function onSearch(query) {
       setSearching(true);
-      setSerchQuery(query);
+      setSearchQuery(query);
     }
   }, renderOption)));
 };

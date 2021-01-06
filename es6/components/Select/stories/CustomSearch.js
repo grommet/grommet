@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { FormClose } from "grommet-icons/es6/icons/FormClose";
-import { Box, Button, CheckBox, Grommet, Select, Text } from 'grommet';
+import { Box, Button, CheckBox, Grommet, Select, Text } from 'grommet'; // https://github.com/grommet/grommet/blob/master/src/js/components/Select/stories/theme.js
+
 import { theme as customSearchTheme } from './theme';
 var allContentPartners = [{
   name: 'Test Partner',
@@ -54,7 +55,7 @@ export var CustomSearch = function CustomSearch() {
 
   var _useState4 = useState(''),
       searchQuery = _useState4[0],
-      setSerchQuery = _useState4[1];
+      setSearchQuery = _useState4[1];
 
   var selectRef = useRef();
 
@@ -210,7 +211,7 @@ export var CustomSearch = function CustomSearch() {
     },
     onSearch: function onSearch(query) {
       setSearching(true);
-      setSerchQuery(query);
+      setSearchQuery(query);
     }
   }, renderOption)));
 };

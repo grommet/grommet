@@ -9,8 +9,6 @@ var _grommetIcons = require("grommet-icons");
 
 var _utils = require("../../../utils");
 
-var _ArrowDown = require("./components/icons/ArrowDown");
-
 var _SearchInput = require("./components/SearchInput");
 
 var theme = {
@@ -76,7 +74,7 @@ var theme = {
   },
   select: {
     icons: {
-      down: _ArrowDown.ArrowDown
+      down: _grommetIcons.CaretDownFill
     },
     searchInput: _SearchInput.SearchInput,
     container: {

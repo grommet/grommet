@@ -1,7 +1,7 @@
 import { rgba } from 'polished';
+import { CaretDownFill } from "grommet-icons/es6/icons/CaretDownFill";
 import { FormCheckmark } from "grommet-icons/es6/icons/FormCheckmark";
 import { normalizeColor } from '../../../utils';
-import { ArrowDown } from './components/icons/ArrowDown';
 import { SearchInput } from './components/SearchInput';
 export var theme = {
   global: {
@@ -66,7 +66,7 @@ export var theme = {
   },
   select: {
     icons: {
-      down: ArrowDown
+      down: CaretDownFill
     },
     searchInput: SearchInput,
     container: {

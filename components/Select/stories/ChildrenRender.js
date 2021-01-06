@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Seasons = void 0;
+exports.ChildrenRender = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -17,7 +17,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 var allSeasons = ['S01', 'S02', 'S03', 'S04', 'S05', 'S06', 'S07', 'S08', 'S09', 'S10'];
 
-var Seasons = function Seasons() {
+var ChildrenRender = function ChildrenRender() {
   var _useState = (0, _react.useState)([]),
       selected = _useState[0],
       setSelected = _useState[1];
@@ -111,4 +111,7 @@ var Seasons = function Seasons() {
   }, renderOption)));
 };
 
-exports.Seasons = Seasons;
+exports.ChildrenRender = ChildrenRender;
+ChildrenRender.story = {
+  name: 'Children render'
+};
