@@ -399,6 +399,23 @@ describe('Layer', () => {
     expect(onClickOutside).toHaveBeenCalledTimes(1);
   });
 
+  test('custom theme', () => {
+    const theme = {
+      layer: {
+        container: {
+          elevation: 'large',
+        },
+      },
+    };
+
+    render(
+      <Grommet theme={theme}>
+        <Layer id="custom-theme-test">This is a layer</Layer>
+      </Grommet>,
+    );
+    expectPortal('custom-theme-test').toMatchSnapshot();
+  });
+
   test('invokes onEsc when modal={false}', () => {
     jest.useFakeTimers();
     window.scrollTo = jest.fn();
@@ -438,22 +455,5 @@ describe('Layer', () => {
     });
     expect(onEsc).toBeCalledTimes(1);
     expectPortal('esc-test').toMatchSnapshot();
-  });
-
-  test('custom theme', () => {
-    const theme = {
-      layer: {
-        container: {
-          elevation: 'large',
-        },
-      },
-    };
-
-    render(
-      <Grommet theme={theme}>
-        <Layer id="custom-theme-test">This is a layer</Layer>
-      </Grommet>,
-    );
-    expectPortal('custom-theme-test').toMatchSnapshot();
   });
 });
