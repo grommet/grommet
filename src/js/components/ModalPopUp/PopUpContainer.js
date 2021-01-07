@@ -20,7 +20,11 @@ const PopUpContainer = ({
   const theme = useContext(ThemeContext) || defaultProps.theme;
 
   return (
-    <Box {...theme.modalpopup.container}>
+    <Box
+      role="dialog"
+      aria-label="modal-pop-up"
+      {...theme.modalpopup.container}
+    >
       {title && (
         <Box {...theme.modalpopup.title.wrapper}>
           <Heading {...theme.modalpopup.title.text}>{title}</Heading>
@@ -64,7 +68,7 @@ const PopUpContainer = ({
 
 PopUpContainer.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-  message: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
+  message: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   onPrimaryClick: PropTypes.func,
   renderButton: PropTypes.node,
   isLoading: PropTypes.bool.isRequired,
@@ -74,6 +78,7 @@ PopUpContainer.propTypes = {
 
 PopUpContainer.defaultProps = {
   title: '',
+  message: undefined,
   onPrimaryClick: undefined,
   renderButton: undefined,
   body: undefined,

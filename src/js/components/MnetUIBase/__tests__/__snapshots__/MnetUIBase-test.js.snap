@@ -100,10 +100,10 @@ exports[`MnetUIBase cssVars 1`] = `
   --selected-background: brand;
   --selected-text: text-strong;
   --white: #FFFFFF;
-  --accent-1: #20314f;
-  --accent-2: #519bff;
-  --accent-3: #4DFFEA;
-  --accent-4: #A4FF4D;
+  --accent-1: #38C18B;
+  --accent-2: #8F94A6;
+  --accent-3: #739FFC;
+  --accent-4: #439ADC;
   --dark-1: #313340;
   --dark-2: #4b4d59;
   --dark-3: #65707d;

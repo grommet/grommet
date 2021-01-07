@@ -18,8 +18,8 @@ exports[`List background array 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #20314f;
-  color: #f8f8f8;
+  background-color: #38C18B;
+  color: #444444;
   border-top: solid 1px #cdd3e3;
   border-bottom: solid 1px #cdd3e3;
   min-width: 0;
@@ -43,7 +43,7 @@ exports[`List background array 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #519bff;
+  background-color: #8F94A6;
   color: #444444;
   border-bottom: solid 1px #cdd3e3;
   min-width: 0;
@@ -67,8 +67,8 @@ exports[`List background array 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #20314f;
-  color: #f8f8f8;
+  background-color: #38C18B;
+  color: #444444;
   border-bottom: solid 1px #cdd3e3;
   min-width: 0;
   min-height: 0;
@@ -199,8 +199,8 @@ exports[`List background string 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #20314f;
-  color: #f8f8f8;
+  background-color: #38C18B;
+  color: #444444;
   border-top: solid 1px #cdd3e3;
   border-bottom: solid 1px #cdd3e3;
   min-width: 0;
@@ -224,8 +224,8 @@ exports[`List background string 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #20314f;
-  color: #f8f8f8;
+  background-color: #38C18B;
+  color: #444444;
   border-bottom: solid 1px #cdd3e3;
   min-width: 0;
   min-height: 0;
@@ -405,8 +405,8 @@ exports[`List border object 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: solid 8px #20314f;
-  border-bottom: solid 8px #20314f;
+  border-top: solid 8px #38C18B;
+  border-bottom: solid 8px #38C18B;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -429,8 +429,8 @@ exports[`List border object 1`] = `
 
 @media only screen and (max-width:512px) {
   .c2 {
-    border-top: solid 4px #20314f;
-    border-bottom: solid 4px #20314f;
+    border-top: solid 4px #38C18B;
+    border-bottom: solid 4px #38C18B;
   }
 }
 
@@ -1027,8 +1027,8 @@ exports[`List itemProps 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #20314f;
-  color: #f8f8f8;
+  background-color: #38C18B;
+  color: #444444;
   border-top: solid 2px #cdd3e3;
   border-bottom: solid 2px #cdd3e3;
   min-width: 0;

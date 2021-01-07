@@ -723,8 +723,8 @@ exports[`Box background 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #20314f;
-  color: #f8f8f8;
+  background-color: #38C18B;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -975,8 +975,8 @@ exports[`Box background 1`] = `
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  background-color: rgba(32,49,79,1);
-  color: #f8f8f8;
+  background-color: rgba(56,193,139,1);
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1506,7 +1506,7 @@ exports[`Box border 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border: solid 1px #20314f;
+  border: solid 1px #38C18B;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1626,8 +1626,8 @@ exports[`Box border 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border-top: dotted 2.6666666666666665px #20314f;
-  border-left: dashed 8px #519bff;
+  border-top: dotted 2.6666666666666665px #38C18B;
+  border-left: dashed 8px #8F94A6;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1714,7 +1714,7 @@ exports[`Box border 1`] = `
 
 @media only screen and (max-width:512px) {
   .c8 {
-    border: solid 1px #20314f;
+    border: solid 1px #38C18B;
   }
 }
 
@@ -1762,13 +1762,13 @@ exports[`Box border 1`] = `
 
 @media only screen and (max-width:512px) {
   .c16 {
-    border-top: dotted 2.6666666666666665px #20314f;
+    border-top: dotted 2.6666666666666665px #38C18B;
   }
 }
 
 @media only screen and (max-width:512px) {
   .c16 {
-    border-left: dashed 4px #519bff;
+    border-left: dashed 4px #8F94A6;
   }
 }
 

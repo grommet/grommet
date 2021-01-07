@@ -277,7 +277,12 @@ const Button = forwardRef(
             <Box direction="row" align="center">
               {contents}
               {isLoading ? (
-                <Box margin={{ horizontal: 'small' }}>
+                <Box
+                  role="alert"
+                  aria-busy="true"
+                  aria-label="button-loader"
+                  margin={{ horizontal: 'small' }}
+                >
                   <Loader
                     width="18px"
                     height="18px"
@@ -339,7 +344,12 @@ const Button = forwardRef(
           <Box direction="row" align="center">
             {contents}
             {isLoading ? (
-              <Box margin={{ horizontal: 'small' }}>
+              <Box
+                role="alert"
+                aria-busy="true"
+                aria-label="button-loader"
+                margin={{ horizontal: 'small' }}
+              >
                 <Loader
                   width="18px"
                   height="18px"

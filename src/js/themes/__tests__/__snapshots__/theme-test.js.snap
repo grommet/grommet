@@ -978,8 +978,8 @@ exports[`MnetUIBase default theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #20314f;
-  color: #f8f8f8;
+  background-color: #38C18B;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -994,7 +994,7 @@ exports[`MnetUIBase default theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #519bff;
+  background-color: #8F94A6;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1010,7 +1010,7 @@ exports[`MnetUIBase default theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #4DFFEA;
+  background-color: #739FFC;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1234,8 +1234,8 @@ exports[`MnetUIBase default theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #99742E;
-  color: #f8f8f8;
+  background-color: #519bff;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1250,7 +1250,7 @@ exports[`MnetUIBase default theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #00739D;
+  background-color: #99742E;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -1266,8 +1266,8 @@ exports[`MnetUIBase default theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #e35e59;
-  color: #444444;
+  background-color: #00739D;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1282,7 +1282,7 @@ exports[`MnetUIBase default theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #CCCCCC;
+  background-color: #e35e59;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1298,7 +1298,7 @@ exports[`MnetUIBase default theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #44b88d;
+  background-color: #CCCCCC;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1308,6 +1308,22 @@ exports[`MnetUIBase default theme 1`] = `
 }
 
 .c23 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  background-color: #44b88d;
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c24 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1495,7 +1511,7 @@ exports[`MnetUIBase default theme 1`] = `
     </span>
   </div>
   <div
-    className="c3"
+    className="c18"
   >
     <span
       className="c2"
@@ -1504,7 +1520,7 @@ exports[`MnetUIBase default theme 1`] = `
     </span>
   </div>
   <div
-    className="c18"
+    className="c19"
   >
     <span
       className="c2"
@@ -1513,7 +1529,7 @@ exports[`MnetUIBase default theme 1`] = `
     </span>
   </div>
   <div
-    className="c19"
+    className="c20"
   >
     <span
       className="c2"
@@ -1522,7 +1538,7 @@ exports[`MnetUIBase default theme 1`] = `
     </span>
   </div>
   <div
-    className="c20"
+    className="c21"
   >
     <span
       className="c2"
@@ -1531,7 +1547,7 @@ exports[`MnetUIBase default theme 1`] = `
     </span>
   </div>
   <div
-    className="c21"
+    className="c22"
   >
     <span
       className="c2"
@@ -1540,7 +1556,7 @@ exports[`MnetUIBase default theme 1`] = `
     </span>
   </div>
   <div
-    className="c22"
+    className="c23"
   >
     <span
       className="c2"
@@ -1549,7 +1565,7 @@ exports[`MnetUIBase default theme 1`] = `
     </span>
   </div>
   <div
-    className="c21"
+    className="c22"
   >
     <span
       className="c2"
@@ -1558,7 +1574,7 @@ exports[`MnetUIBase default theme 1`] = `
     </span>
   </div>
   <div
-    className="c23"
+    className="c24"
   >
     <span
       className="c2"
