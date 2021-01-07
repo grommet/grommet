@@ -10,7 +10,7 @@ export { Multiple } from './Multiple';
 export { ObjectMultipleSearch } from './ObjectMultipleSearch';
 export { ObjectOptions } from './ObjectOptions';
 export { Search } from './Search';
-export { ChildrenRender } from './ChildrenRender';
+export { Children } from './Children';
 export { Simple } from './Simple';
 export { Themed } from './Themed';
 export { Uncontrolled } from './Uncontrolled';
