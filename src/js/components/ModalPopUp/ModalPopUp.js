@@ -17,12 +17,14 @@ const ModalPopUp = () => {
     body: undefined,
     onPrimaryClick: undefined,
     renderButton: undefined,
+    closeOnOutSideClick: false,
+    closeOnEscape: false,
   });
 
   const onClose = () => setModalOpen(false);
 
   emitter.on(OPEN_MODAL, config => {
-    setPopUpConfig({ ...config });
+    setPopUpConfig({ ...popUpConfig, ...config });
     setModalOpen(true);
   });
   emitter.on(CLOSE_MODAL, () => onClose());
@@ -32,7 +34,11 @@ const ModalPopUp = () => {
     <>
       {modalOpen && (
         <Box width="100vw" height="100vh">
-          <Layer position="center" onClickOutside={onClose} onEsc={onClose}>
+          <Layer 
+            position="center" 
+            onClickOutside={popUpConfig.closeOnOutSideClick ? onClose: null} 
+            onEsc={popUpConfig.closeOnEscape ? onClose: null}
+          >
             <PopUpContainer
               isLoading={isLoading}
               onClose={onClose}
