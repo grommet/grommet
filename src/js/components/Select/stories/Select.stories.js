@@ -3,6 +3,7 @@ export { Controlled } from './Controlled';
 export { CreateOption } from './typescript/CreateOption.tsx';
 export { ValueLabel } from './ValueLabel';
 export { CustomSearch } from './CustomSearch';
+export { FooterOption } from './FooterOption';
 export { InsideFormField } from './InsideFormField';
 export { LazyLoadingOptions } from './LazyLoadingOptions';
 export { ManyOptions } from './ManyOptions';
