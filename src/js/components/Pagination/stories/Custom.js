@@ -17,29 +17,20 @@ const customTheme = deepMerge(grommet, {
     },
   },
   button: {
-    default: {
+    pagination: {
       color: 'text-strong',
-      border: undefined,
-      font: {
-        weight: 700,
-      },
-      padding: {
-        horizontal: '12px',
-        vertical: '6px',
-      },
     },
     active: {
       background: {
-        color: 'background-contrast',
+        color: 'salmon',
       },
       color: 'text',
     },
     hover: {
-      default: {
+      pagination: {
         background: {
-          color: 'background-contrast',
+          color: 'skyblue',
         },
-        color: undefined,
       },
     },
   },

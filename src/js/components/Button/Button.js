@@ -136,14 +136,14 @@ const Button = forwardRef(
 
     // if the theme has button.default, what kind of Button is this
     const kind = useMemo(() => {
-      if (theme.button.default) {
+      if (theme.button.default || (kindArg && kindArg in theme.button)) {
         if (kindArg) return kindArg;
         if (primary) return 'primary';
         if (secondary) return 'secondary';
         return 'default';
       }
       return undefined; // pre-default, no kind
-    }, [kindArg, primary, secondary, theme.button.default]);
+    }, [kindArg, primary, secondary, theme.button]);
 
     // When we have a kind and are not plain, themePaths stores the relative
     // paths within the theme for the current kind and state of the button.

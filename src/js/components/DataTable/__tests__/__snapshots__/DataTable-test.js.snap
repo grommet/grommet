@@ -12050,36 +12050,36 @@ exports[`DataTable select 2`] = `
 `;
 
 exports[`DataTable should apply pagination styling 1`] = `
-.c15 {
+.c17 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #666666;
-  stroke: #666666;
+  fill: #000000;
+  stroke: #000000;
 }
 
-.c15 g {
+.c17 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c15 *:not([stroke])[fill="none"] {
+.c17 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c15 *[stroke*="#"],
-.c15 *[STROKE*="#"] {
+.c17 *[stroke*="#"],
+.c17 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c15 *[fill-rule],
-.c15 *[FILL-RULE],
-.c15 *[fill*="#"],
-.c15 *[FILL*="#"] {
+.c17 *[fill-rule],
+.c17 *[FILL-RULE],
+.c17 *[fill*="#"],
+.c17 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -12210,7 +12210,7 @@ exports[`DataTable should apply pagination styling 1`] = `
   padding: 0px;
 }
 
-.c16 {
+.c18 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -12220,7 +12220,7 @@ exports[`DataTable should apply pagination styling 1`] = `
   width: 3px;
 }
 
-.c14 {
+.c15 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -12231,134 +12231,51 @@ exports[`DataTable should apply pagination styling 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  opacity: 0.3;
+  text-align: center;
   opacity: 0.3;
   cursor: default;
-  line-height: 0;
-  padding: 12px;
-}
-
-.c14:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c14:focus > circle,
-.c14:focus > ellipse,
-.c14:focus > line,
-.c14:focus > path,
-.c14:focus > polygon,
-.c14:focus > polyline,
-.c14:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c14:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c17 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
-.c17:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+.c15 > svg {
+  vertical-align: bottom;
 }
 
-.c17:focus {
+.c15:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus > circle,
-.c17:focus > ellipse,
-.c17:focus > line,
-.c17:focus > path,
-.c17:focus > polygon,
-.c17:focus > polyline,
-.c17:focus > rect {
+.c15:focus > circle,
+.c15:focus > ellipse,
+.c15:focus > line,
+.c15:focus > path,
+.c15:focus > polygon,
+.c15:focus > polyline,
+.c15:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c18 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c18:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c18:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c18:focus > circle,
-.c18:focus > ellipse,
-.c18:focus > line,
-.c18:focus > path,
-.c18:focus > polygon,
-.c18:focus > polyline,
-.c18:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c18:focus::-moz-focus-inner {
+.c15:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -12373,13 +12290,36 @@ exports[`DataTable should apply pagination styling 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
   border: none;
-  padding: 0;
-  text-align: inherit;
-  line-height: 0;
-  padding: 12px;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  background: #33333310;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c19 > svg {
+  vertical-align: bottom;
+}
+
+.c19:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
 }
 
 .c19:focus {
@@ -12399,6 +12339,66 @@ exports[`DataTable should apply pagination styling 1`] = `
 }
 
 .c19:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c20 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c20 > svg {
+  vertical-align: bottom;
+}
+
+.c20:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c20:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus > circle,
+.c20:focus > ellipse,
+.c20:focus > line,
+.c20:focus > path,
+.c20:focus > polygon,
+.c20:focus > polyline,
+.c20:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -12442,6 +12442,30 @@ exports[`DataTable should apply pagination styling 1`] = `
 
 .c7:focus {
   outline: 2px solid #6FFFB0;
+}
+
+.c16 {
+  padding: 4px;
+  border-radius: 4px;
+  border-width: 0;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 32px;
+  max-width: 100%;
+  min-width: 32px;
 }
 
 @media only screen and (max-width:768px) {
@@ -12463,7 +12487,7 @@ exports[`DataTable should apply pagination styling 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c16 {
+  .c18 {
     width: 2px;
   }
 }
@@ -14096,18 +14120,19 @@ exports[`DataTable should apply pagination styling 1`] = `
           class="c13"
         >
           <li
-            class="c1"
+            class="c14"
           >
             <button
               aria-disabled="true"
               aria-label="Go to previous page"
-              class="c14"
+              class="c15 c16"
               disabled=""
+              kind="pagination"
               type="button"
             >
               <svg
                 aria-label="Previous"
-                class="c15"
+                class="c17"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -14121,48 +14146,51 @@ exports[`DataTable should apply pagination styling 1`] = `
             </button>
           </li>
           <div
-            class="c16"
+            class="c18"
           />
           <li
-            class="c1"
+            class="c14"
           >
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="c17"
+              class="c19 c16"
+              kind="pagination"
               type="button"
             >
               1
             </button>
           </li>
           <div
-            class="c16"
+            class="c18"
           />
           <li
-            class="c1"
+            class="c14"
           >
             <button
               aria-label="Go to page 2"
-              class="c18"
+              class="c20 c16"
+              kind="pagination"
               type="button"
             >
               2
             </button>
           </li>
           <div
-            class="c16"
+            class="c18"
           />
           <li
-            class="c1"
+            class="c14"
           >
             <button
               aria-label="Go to next page"
-              class="c19"
+              class="c20 c16"
+              kind="pagination"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c15"
+                class="c17"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -14182,36 +14210,36 @@ exports[`DataTable should apply pagination styling 1`] = `
 `;
 
 exports[`DataTable should paginate 1`] = `
-.c15 {
+.c17 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #666666;
-  stroke: #666666;
+  fill: #000000;
+  stroke: #000000;
 }
 
-.c15 g {
+.c17 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c15 *:not([stroke])[fill="none"] {
+.c17 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c15 *[stroke*="#"],
-.c15 *[STROKE*="#"] {
+.c17 *[stroke*="#"],
+.c17 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c15 *[fill-rule],
-.c15 *[FILL-RULE],
-.c15 *[fill*="#"],
-.c15 *[FILL*="#"] {
+.c17 *[fill-rule],
+.c17 *[FILL-RULE],
+.c17 *[fill*="#"],
+.c17 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -14340,7 +14368,7 @@ exports[`DataTable should paginate 1`] = `
   padding: 0px;
 }
 
-.c16 {
+.c18 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -14350,7 +14378,7 @@ exports[`DataTable should paginate 1`] = `
   width: 3px;
 }
 
-.c14 {
+.c15 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -14361,134 +14389,51 @@ exports[`DataTable should paginate 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  opacity: 0.3;
+  text-align: center;
   opacity: 0.3;
   cursor: default;
-  line-height: 0;
-  padding: 12px;
-}
-
-.c14:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c14:focus > circle,
-.c14:focus > ellipse,
-.c14:focus > line,
-.c14:focus > path,
-.c14:focus > polygon,
-.c14:focus > polyline,
-.c14:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c14:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c17 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
-.c17:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+.c15 > svg {
+  vertical-align: bottom;
 }
 
-.c17:focus {
+.c15:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus > circle,
-.c17:focus > ellipse,
-.c17:focus > line,
-.c17:focus > path,
-.c17:focus > polygon,
-.c17:focus > polyline,
-.c17:focus > rect {
+.c15:focus > circle,
+.c15:focus > ellipse,
+.c15:focus > line,
+.c15:focus > path,
+.c15:focus > polygon,
+.c15:focus > polyline,
+.c15:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c18 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c18:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c18:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c18:focus > circle,
-.c18:focus > ellipse,
-.c18:focus > line,
-.c18:focus > path,
-.c18:focus > polygon,
-.c18:focus > polyline,
-.c18:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c18:focus::-moz-focus-inner {
+.c15:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -14503,13 +14448,36 @@ exports[`DataTable should paginate 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
   border: none;
-  padding: 0;
-  text-align: inherit;
-  line-height: 0;
-  padding: 12px;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  background: #33333310;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c19 > svg {
+  vertical-align: bottom;
+}
+
+.c19:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
 }
 
 .c19:focus {
@@ -14529,6 +14497,66 @@ exports[`DataTable should paginate 1`] = `
 }
 
 .c19:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c20 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c20 > svg {
+  vertical-align: bottom;
+}
+
+.c20:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c20:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus > circle,
+.c20:focus > ellipse,
+.c20:focus > line,
+.c20:focus > path,
+.c20:focus > polygon,
+.c20:focus > polyline,
+.c20:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -14574,6 +14602,30 @@ exports[`DataTable should paginate 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
+.c16 {
+  padding: 4px;
+  border-radius: 4px;
+  border-width: 0;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 32px;
+  max-width: 100%;
+  min-width: 32px;
+}
+
 @media only screen and (max-width:768px) {
   .c13 {
     margin: 0px;
@@ -14587,7 +14639,7 @@ exports[`DataTable should paginate 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c16 {
+  .c18 {
     width: 2px;
   }
 }
@@ -16220,18 +16272,19 @@ exports[`DataTable should paginate 1`] = `
           class="c13"
         >
           <li
-            class="c1"
+            class="c14"
           >
             <button
               aria-disabled="true"
               aria-label="Go to previous page"
-              class="c14"
+              class="c15 c16"
               disabled=""
+              kind="pagination"
               type="button"
             >
               <svg
                 aria-label="Previous"
-                class="c15"
+                class="c17"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -16245,48 +16298,51 @@ exports[`DataTable should paginate 1`] = `
             </button>
           </li>
           <div
-            class="c16"
+            class="c18"
           />
           <li
-            class="c1"
+            class="c14"
           >
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="c17"
+              class="c19 c16"
+              kind="pagination"
               type="button"
             >
               1
             </button>
           </li>
           <div
-            class="c16"
+            class="c18"
           />
           <li
-            class="c1"
+            class="c14"
           >
             <button
               aria-label="Go to page 2"
-              class="c18"
+              class="c20 c16"
+              kind="pagination"
               type="button"
             >
               2
             </button>
           </li>
           <div
-            class="c16"
+            class="c18"
           />
           <li
-            class="c1"
+            class="c14"
           >
             <button
               aria-label="Go to next page"
-              class="c19"
+              class="c20 c16"
+              kind="pagination"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c15"
+                class="c17"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -16306,36 +16362,36 @@ exports[`DataTable should paginate 1`] = `
 `;
 
 exports[`DataTable should render correct num items per page (step) 1`] = `
-.c15 {
+.c17 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #666666;
-  stroke: #666666;
+  fill: #000000;
+  stroke: #000000;
 }
 
-.c15 g {
+.c17 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c15 *:not([stroke])[fill="none"] {
+.c17 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c15 *[stroke*="#"],
-.c15 *[STROKE*="#"] {
+.c17 *[stroke*="#"],
+.c17 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c15 *[fill-rule],
-.c15 *[FILL-RULE],
-.c15 *[fill*="#"],
-.c15 *[FILL*="#"] {
+.c17 *[fill-rule],
+.c17 *[FILL-RULE],
+.c17 *[fill*="#"],
+.c17 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -16464,7 +16520,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   padding: 0px;
 }
 
-.c16 {
+.c18 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -16474,7 +16530,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   width: 3px;
 }
 
-.c14 {
+.c15 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -16485,134 +16541,51 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  opacity: 0.3;
+  text-align: center;
   opacity: 0.3;
   cursor: default;
-  line-height: 0;
-  padding: 12px;
-}
-
-.c14:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c14:focus > circle,
-.c14:focus > ellipse,
-.c14:focus > line,
-.c14:focus > path,
-.c14:focus > polygon,
-.c14:focus > polyline,
-.c14:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c14:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c17 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
-.c17:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+.c15 > svg {
+  vertical-align: bottom;
 }
 
-.c17:focus {
+.c15:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus > circle,
-.c17:focus > ellipse,
-.c17:focus > line,
-.c17:focus > path,
-.c17:focus > polygon,
-.c17:focus > polyline,
-.c17:focus > rect {
+.c15:focus > circle,
+.c15:focus > ellipse,
+.c15:focus > line,
+.c15:focus > path,
+.c15:focus > polygon,
+.c15:focus > polyline,
+.c15:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c18 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c18:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c18:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c18:focus > circle,
-.c18:focus > ellipse,
-.c18:focus > line,
-.c18:focus > path,
-.c18:focus > polygon,
-.c18:focus > polyline,
-.c18:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c18:focus::-moz-focus-inner {
+.c15:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -16627,13 +16600,36 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
   border: none;
-  padding: 0;
-  text-align: inherit;
-  line-height: 0;
-  padding: 12px;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  background: #33333310;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c19 > svg {
+  vertical-align: bottom;
+}
+
+.c19:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
 }
 
 .c19:focus {
@@ -16653,6 +16649,66 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
 }
 
 .c19:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c20 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c20 > svg {
+  vertical-align: bottom;
+}
+
+.c20:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c20:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus > circle,
+.c20:focus > ellipse,
+.c20:focus > line,
+.c20:focus > path,
+.c20:focus > polygon,
+.c20:focus > polyline,
+.c20:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -16698,6 +16754,30 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
+.c16 {
+  padding: 4px;
+  border-radius: 4px;
+  border-width: 0;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 32px;
+  max-width: 100%;
+  min-width: 32px;
+}
+
 @media only screen and (max-width:768px) {
   .c13 {
     margin: 0px;
@@ -16711,7 +16791,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c16 {
+  .c18 {
     width: 2px;
   }
 }
@@ -17228,18 +17308,19 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
           class="c13"
         >
           <li
-            class="c1"
+            class="c14"
           >
             <button
               aria-disabled="true"
               aria-label="Go to previous page"
-              class="c14"
+              class="c15 c16"
               disabled=""
+              kind="pagination"
               type="button"
             >
               <svg
                 aria-label="Previous"
-                class="c15"
+                class="c17"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -17253,118 +17334,126 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
             </button>
           </li>
           <div
-            class="c16"
+            class="c18"
           />
           <li
-            class="c1"
+            class="c14"
           >
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="c17"
+              class="c19 c16"
+              kind="pagination"
               type="button"
             >
               1
             </button>
           </li>
           <div
-            class="c16"
+            class="c18"
           />
           <li
-            class="c1"
+            class="c14"
           >
             <button
               aria-label="Go to page 2"
-              class="c18"
+              class="c20 c16"
+              kind="pagination"
               type="button"
             >
               2
             </button>
           </li>
           <div
-            class="c16"
+            class="c18"
           />
           <li
-            class="c1"
+            class="c14"
           >
             <button
               aria-label="Go to page 3"
-              class="c18"
+              class="c20 c16"
+              kind="pagination"
               type="button"
             >
               3
             </button>
           </li>
           <div
-            class="c16"
+            class="c18"
           />
           <li
-            class="c1"
+            class="c14"
           >
             <button
               aria-label="Go to page 4"
-              class="c18"
+              class="c20 c16"
+              kind="pagination"
               type="button"
             >
               4
             </button>
           </li>
           <div
-            class="c16"
+            class="c18"
           />
           <li
-            class="c1"
+            class="c14"
           >
             <button
               aria-label="Go to page 5"
-              class="c18"
+              class="c20 c16"
+              kind="pagination"
               type="button"
             >
               5
             </button>
           </li>
           <div
-            class="c16"
+            class="c18"
           />
           <li
-            class="c1"
+            class="c14"
           >
             <button
               aria-label="Go to page 6"
-              class="c18"
+              class="c20 c16"
+              kind="pagination"
               type="button"
             >
               6
             </button>
           </li>
           <div
-            class="c16"
+            class="c18"
           />
           <li
-            class="c1"
+            class="c14"
           >
             <button
               aria-label="Go to page 7"
-              class="c18"
+              class="c20 c16"
+              kind="pagination"
               type="button"
             >
               7
             </button>
           </li>
           <div
-            class="c16"
+            class="c18"
           />
           <li
-            class="c1"
+            class="c14"
           >
             <button
               aria-label="Go to next page"
-              class="c19"
+              class="c20 c16"
+              kind="pagination"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c15"
+                class="c17"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -17384,36 +17473,36 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
 `;
 
 exports[`DataTable should render new data when page changes 1`] = `
-.c15 {
+.c17 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #666666;
-  stroke: #666666;
+  fill: #000000;
+  stroke: #000000;
 }
 
-.c15 g {
+.c17 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c15 *:not([stroke])[fill="none"] {
+.c17 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c15 *[stroke*="#"],
-.c15 *[STROKE*="#"] {
+.c17 *[stroke*="#"],
+.c17 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c15 *[fill-rule],
-.c15 *[FILL-RULE],
-.c15 *[fill*="#"],
-.c15 *[FILL*="#"] {
+.c17 *[fill-rule],
+.c17 *[FILL-RULE],
+.c17 *[fill*="#"],
+.c17 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -17542,7 +17631,7 @@ exports[`DataTable should render new data when page changes 1`] = `
   padding: 0px;
 }
 
-.c16 {
+.c18 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -17552,7 +17641,7 @@ exports[`DataTable should render new data when page changes 1`] = `
   width: 3px;
 }
 
-.c14 {
+.c15 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -17563,134 +17652,51 @@ exports[`DataTable should render new data when page changes 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  opacity: 0.3;
+  text-align: center;
   opacity: 0.3;
   cursor: default;
-  line-height: 0;
-  padding: 12px;
-}
-
-.c14:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c14:focus > circle,
-.c14:focus > ellipse,
-.c14:focus > line,
-.c14:focus > path,
-.c14:focus > polygon,
-.c14:focus > polyline,
-.c14:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c14:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c17 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
-.c17:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+.c15 > svg {
+  vertical-align: bottom;
 }
 
-.c17:focus {
+.c15:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus > circle,
-.c17:focus > ellipse,
-.c17:focus > line,
-.c17:focus > path,
-.c17:focus > polygon,
-.c17:focus > polyline,
-.c17:focus > rect {
+.c15:focus > circle,
+.c15:focus > ellipse,
+.c15:focus > line,
+.c15:focus > path,
+.c15:focus > polygon,
+.c15:focus > polyline,
+.c15:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c18 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c18:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c18:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c18:focus > circle,
-.c18:focus > ellipse,
-.c18:focus > line,
-.c18:focus > path,
-.c18:focus > polygon,
-.c18:focus > polyline,
-.c18:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c18:focus::-moz-focus-inner {
+.c15:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -17705,13 +17711,36 @@ exports[`DataTable should render new data when page changes 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
   border: none;
-  padding: 0;
-  text-align: inherit;
-  line-height: 0;
-  padding: 12px;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  background: #33333310;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c19 > svg {
+  vertical-align: bottom;
+}
+
+.c19:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
 }
 
 .c19:focus {
@@ -17731,6 +17760,66 @@ exports[`DataTable should render new data when page changes 1`] = `
 }
 
 .c19:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c20 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c20 > svg {
+  vertical-align: bottom;
+}
+
+.c20:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c20:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus > circle,
+.c20:focus > ellipse,
+.c20:focus > line,
+.c20:focus > path,
+.c20:focus > polygon,
+.c20:focus > polyline,
+.c20:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -17776,6 +17865,30 @@ exports[`DataTable should render new data when page changes 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
+.c16 {
+  padding: 4px;
+  border-radius: 4px;
+  border-width: 0;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 32px;
+  max-width: 100%;
+  min-width: 32px;
+}
+
 @media only screen and (max-width:768px) {
   .c13 {
     margin: 0px;
@@ -17789,7 +17902,7 @@ exports[`DataTable should render new data when page changes 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c16 {
+  .c18 {
     width: 2px;
   }
 }
@@ -19422,18 +19535,19 @@ exports[`DataTable should render new data when page changes 1`] = `
           class="c13"
         >
           <li
-            class="c1"
+            class="c14"
           >
             <button
               aria-disabled="true"
               aria-label="Go to previous page"
-              class="c14"
+              class="c15 c16"
               disabled=""
+              kind="pagination"
               type="button"
             >
               <svg
                 aria-label="Previous"
-                class="c15"
+                class="c17"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -19447,48 +19561,51 @@ exports[`DataTable should render new data when page changes 1`] = `
             </button>
           </li>
           <div
-            class="c16"
+            class="c18"
           />
           <li
-            class="c1"
+            class="c14"
           >
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="c17"
+              class="c19 c16"
+              kind="pagination"
               type="button"
             >
               1
             </button>
           </li>
           <div
-            class="c16"
+            class="c18"
           />
           <li
-            class="c1"
+            class="c14"
           >
             <button
               aria-label="Go to page 2"
-              class="c18"
+              class="c20 c16"
+              kind="pagination"
               type="button"
             >
               2
             </button>
           </li>
           <div
-            class="c16"
+            class="c18"
           />
           <li
-            class="c1"
+            class="c14"
           >
             <button
               aria-label="Go to next page"
-              class="c19"
+              class="c20 c16"
+              kind="pagination"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c15"
+                class="c17"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -23349,16 +23466,17 @@ exports[`DataTable should render new data when page changes 2`] = `
           class="StyledBox-sc-13pk1d4-0 jFUgSH"
         >
           <li
-            class="StyledBox-sc-13pk1d4-0 dYebPD"
+            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 iipxyV"
           >
             <button
               aria-label="Go to previous page"
-              class="StyledButton-sc-323bzc-0 hiyJPE"
+              class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cLIEIn"
+              kind="pagination"
               type="button"
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-ofa7kd-0 dEeaTZ"
+                class="StyledIcon-ofa7kd-0 eMJPUV"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -23375,11 +23493,12 @@ exports[`DataTable should render new data when page changes 2`] = `
             class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
           />
           <li
-            class="StyledBox-sc-13pk1d4-0 dYebPD"
+            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 iipxyV"
           >
             <button
               aria-label="Go to page 1"
-              class="StyledButton-sc-323bzc-0 iZFCLM"
+              class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cLIEIn"
+              kind="pagination"
               type="button"
             >
               1
@@ -23389,12 +23508,13 @@ exports[`DataTable should render new data when page changes 2`] = `
             class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
           />
           <li
-            class="StyledBox-sc-13pk1d4-0 dYebPD"
+            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 iipxyV"
           >
             <button
               aria-current="page"
               aria-label="Go to page 2"
-              class="StyledButton-sc-323bzc-0 cICuWk"
+              class="StyledButtonKind-sc-1vhfpnt-0 fwVZOK StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cLIEIn"
+              kind="pagination"
               type="button"
             >
               2
@@ -23404,18 +23524,19 @@ exports[`DataTable should render new data when page changes 2`] = `
             class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
           />
           <li
-            class="StyledBox-sc-13pk1d4-0 dYebPD"
+            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 iipxyV"
           >
             <button
               aria-disabled="true"
               aria-label="Go to next page"
-              class="StyledButton-sc-323bzc-0 iyUonS"
+              class="StyledButtonKind-sc-1vhfpnt-0 jOMQGR StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cLIEIn"
               disabled=""
+              kind="pagination"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="StyledIcon-ofa7kd-0 dEeaTZ"
+                class="StyledIcon-ofa7kd-0 eMJPUV"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -23435,36 +23556,36 @@ exports[`DataTable should render new data when page changes 2`] = `
 `;
 
 exports[`DataTable should show correct item index when "show" is a number 1`] = `
-.c15 {
+.c17 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #666666;
-  stroke: #666666;
+  fill: #000000;
+  stroke: #000000;
 }
 
-.c15 g {
+.c17 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c15 *:not([stroke])[fill="none"] {
+.c17 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c15 *[stroke*="#"],
-.c15 *[STROKE*="#"] {
+.c17 *[stroke*="#"],
+.c17 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c15 *[fill-rule],
-.c15 *[FILL-RULE],
-.c15 *[fill*="#"],
-.c15 *[FILL*="#"] {
+.c17 *[fill-rule],
+.c17 *[FILL-RULE],
+.c17 *[fill*="#"],
+.c17 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -23593,7 +23714,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   padding: 0px;
 }
 
-.c16 {
+.c18 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -23603,7 +23724,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   width: 3px;
 }
 
-.c14 {
+.c15 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -23614,134 +23735,51 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  opacity: 0.3;
+  text-align: center;
   opacity: 0.3;
   cursor: default;
-  line-height: 0;
-  padding: 12px;
-}
-
-.c14:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c14:focus > circle,
-.c14:focus > ellipse,
-.c14:focus > line,
-.c14:focus > path,
-.c14:focus > polygon,
-.c14:focus > polyline,
-.c14:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c14:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c17 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
-.c17:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+.c15 > svg {
+  vertical-align: bottom;
 }
 
-.c17:focus {
+.c15:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus > circle,
-.c17:focus > ellipse,
-.c17:focus > line,
-.c17:focus > path,
-.c17:focus > polygon,
-.c17:focus > polyline,
-.c17:focus > rect {
+.c15:focus > circle,
+.c15:focus > ellipse,
+.c15:focus > line,
+.c15:focus > path,
+.c15:focus > polygon,
+.c15:focus > polyline,
+.c15:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c18 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c18:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c18:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c18:focus > circle,
-.c18:focus > ellipse,
-.c18:focus > line,
-.c18:focus > path,
-.c18:focus > polygon,
-.c18:focus > polyline,
-.c18:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c18:focus::-moz-focus-inner {
+.c15:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -23756,13 +23794,36 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
   border: none;
-  padding: 0;
-  text-align: inherit;
-  line-height: 0;
-  padding: 12px;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  background: #33333310;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c19 > svg {
+  vertical-align: bottom;
+}
+
+.c19:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
 }
 
 .c19:focus {
@@ -23782,6 +23843,66 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
 }
 
 .c19:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c20 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c20 > svg {
+  vertical-align: bottom;
+}
+
+.c20:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c20:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus > circle,
+.c20:focus > ellipse,
+.c20:focus > line,
+.c20:focus > path,
+.c20:focus > polygon,
+.c20:focus > polyline,
+.c20:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c20:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -23827,6 +23948,30 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   outline: 2px solid #6FFFB0;
 }
 
+.c16 {
+  padding: 4px;
+  border-radius: 4px;
+  border-width: 0;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 32px;
+  max-width: 100%;
+  min-width: 32px;
+}
+
 @media only screen and (max-width:768px) {
   .c13 {
     margin: 0px;
@@ -23840,7 +23985,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
 }
 
 @media only screen and (max-width:768px) {
-  .c16 {
+  .c18 {
     width: 2px;
   }
 }
@@ -25473,18 +25618,19 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           class="c13"
         >
           <li
-            class="c1"
+            class="c14"
           >
             <button
               aria-disabled="true"
               aria-label="Go to previous page"
-              class="c14"
+              class="c15 c16"
               disabled=""
+              kind="pagination"
               type="button"
             >
               <svg
                 aria-label="Previous"
-                class="c15"
+                class="c17"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -25498,48 +25644,51 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
             </button>
           </li>
           <div
-            class="c16"
+            class="c18"
           />
           <li
-            class="c1"
+            class="c14"
           >
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="c17"
+              class="c19 c16"
+              kind="pagination"
               type="button"
             >
               1
             </button>
           </li>
           <div
-            class="c16"
+            class="c18"
           />
           <li
-            class="c1"
+            class="c14"
           >
             <button
               aria-label="Go to page 2"
-              class="c18"
+              class="c20 c16"
+              kind="pagination"
               type="button"
             >
               2
             </button>
           </li>
           <div
-            class="c16"
+            class="c18"
           />
           <li
-            class="c1"
+            class="c14"
           >
             <button
               aria-label="Go to next page"
-              class="c19"
+              class="c20 c16"
+              kind="pagination"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c15"
+                class="c17"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -25559,36 +25708,36 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
 `;
 
 exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
-.c14 {
+.c16 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #666666;
-  stroke: #666666;
+  fill: #000000;
+  stroke: #000000;
 }
 
-.c14 g {
+.c16 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c14 *:not([stroke])[fill="none"] {
+.c16 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c14 *[stroke*="#"],
-.c14 *[STROKE*="#"] {
+.c16 *[stroke*="#"],
+.c16 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c14 *[fill-rule],
-.c14 *[FILL-RULE],
-.c14 *[fill*="#"],
-.c14 *[FILL*="#"] {
+.c16 *[fill-rule],
+.c16 *[FILL-RULE],
+.c16 *[fill*="#"],
+.c16 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -25699,7 +25848,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
   padding: 0px;
 }
 
-.c15 {
+.c17 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -25709,7 +25858,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
   width: 3px;
 }
 
-.c13 {
+.c14 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -25720,132 +25869,52 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
   border: none;
-  padding: 0;
-  text-align: inherit;
-  line-height: 0;
-  padding: 12px;
-}
-
-.c13:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c13:focus > circle,
-.c13:focus > ellipse,
-.c13:focus > line,
-.c13:focus > path,
-.c13:focus > polygon,
-.c13:focus > polyline,
-.c13:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c13:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c16 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
   border-radius: 18px;
-  color: #444444;
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c16:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c16:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c16:focus > circle,
-.c16:focus > ellipse,
-.c16:focus > line,
-.c16:focus > path,
-.c16:focus > polygon,
-.c16:focus > polyline,
-.c16:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c16:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c17 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  background-color: rgba(221,221,221,0.4);
   color: #000000;
+  text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
-.c17:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+.c14 > svg {
+  vertical-align: bottom;
 }
 
-.c17:focus {
+.c14:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c14:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus > circle,
-.c17:focus > ellipse,
-.c17:focus > line,
-.c17:focus > path,
-.c17:focus > polygon,
-.c17:focus > polyline,
-.c17:focus > rect {
+.c14:focus > circle,
+.c14:focus > ellipse,
+.c14:focus > line,
+.c14:focus > path,
+.c14:focus > polygon,
+.c14:focus > polyline,
+.c14:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c17:focus::-moz-focus-inner {
+.c14:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -25860,15 +25929,36 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  outline: none;
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
   border: none;
-  padding: 0;
-  text-align: inherit;
-  opacity: 0.3;
-  cursor: default;
-  line-height: 0;
-  padding: 12px;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  background: #33333310;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c18 > svg {
+  vertical-align: bottom;
+}
+
+.c18:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
 }
 
 .c18:focus {
@@ -25888,6 +25978,65 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
 }
 
 .c18:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c19 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  opacity: 0.3;
+  text-align: center;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c19 > svg {
+  vertical-align: bottom;
+}
+
+.c19:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c19:focus > circle,
+.c19:focus > ellipse,
+.c19:focus > line,
+.c19:focus > path,
+.c19:focus > polygon,
+.c19:focus > polyline,
+.c19:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c19:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -25933,6 +26082,30 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
   outline: 2px solid #6FFFB0;
 }
 
+.c15 {
+  padding: 4px;
+  border-radius: 4px;
+  border-width: 0;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 32px;
+  max-width: 100%;
+  min-width: 32px;
+}
+
 @media only screen and (max-width:768px) {
   .c12 {
     margin: 0px;
@@ -25946,7 +26119,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c15 {
+  .c17 {
     width: 2px;
   }
 }
@@ -27413,16 +27586,17 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
           class="c12"
         >
           <li
-            class="c1"
+            class="c13"
           >
             <button
               aria-label="Go to previous page"
-              class="c13"
+              class="c14 c15"
+              kind="pagination"
               type="button"
             >
               <svg
                 aria-label="Previous"
-                class="c14"
+                class="c16"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -27436,50 +27610,53 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
             </button>
           </li>
           <div
-            class="c15"
+            class="c17"
           />
           <li
-            class="c1"
+            class="c13"
           >
             <button
               aria-label="Go to page 1"
-              class="c16"
+              class="c14 c15"
+              kind="pagination"
               type="button"
             >
               1
             </button>
           </li>
           <div
-            class="c15"
+            class="c17"
           />
           <li
-            class="c1"
+            class="c13"
           >
             <button
               aria-current="page"
               aria-label="Go to page 2"
-              class="c17"
+              class="c18 c15"
+              kind="pagination"
               type="button"
             >
               2
             </button>
           </li>
           <div
-            class="c15"
+            class="c17"
           />
           <li
-            class="c1"
+            class="c13"
           >
             <button
               aria-disabled="true"
               aria-label="Go to next page"
-              class="c18"
+              class="c19 c15"
               disabled=""
+              kind="pagination"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c14"
+                class="c16"
                 viewBox="0 0 24 24"
               >
                 <polyline
