@@ -13,7 +13,6 @@ import { hpe } from 'grommet-theme-hpe';
 import { aruba } from 'grommet-theme-aruba';
 import { hp } from 'grommet-theme-hp';
 import { dxc } from 'grommet-theme-dxc';
-import { v1 } from 'grommet-theme-v1';
 
 var Node = function Node(_ref) {
   var id = _ref.id,
@@ -49,8 +48,7 @@ var themes = {
   hpe: hpe,
   aruba: aruba,
   hp: hp,
-  dxc: dxc,
-  v1: v1
+  dxc: dxc
 };
 
 var Components = function Components() {
