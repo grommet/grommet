@@ -156,6 +156,13 @@ export const themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
+  'layer.container.elevation': {
+    description: `Elevated height above the underlying container, indicated via 
+    a drop shadow. Any Box elevation value is valid.`,
+    type: `'none' | 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | 
+    string`,
+    defaultValue: undefined,
+  },
   'layer.container.extend': {
     description: 'Any additional style for Layer Container.',
     type: 'string | (props) => {}',

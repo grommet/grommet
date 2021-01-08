@@ -10730,6 +10730,18 @@ Defaults to
 undefined
 \`\`\`
 
+**layer.container.elevation**
+
+Elevated height above the underlying container, indicated via 
+    a drop shadow. Any Box elevation value is valid. Expects \`'none' | 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | 
+    string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **layer.container.extend**
 
 Any additional style for Layer Container. Expects \`string | (props) => {}\`.
@@ -13750,6 +13762,22 @@ Wether to close the drop when a selection is made. Defaults to \`true\`.
 
 \`\`\`
 boolean
+\`\`\`
+
+**defaultValue**
+
+Initially selected value. This can be an array
+      when multiple.
+
+\`\`\`
+string
+object
+number
+[
+  string
+  object
+  number
+]
 \`\`\`
 
 **disabled**
