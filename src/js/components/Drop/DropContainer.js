@@ -3,7 +3,6 @@ import React, {
   useContext,
   useEffect,
   useMemo,
-  useRef,
 } from 'react';
 import { ThemeContext } from 'styled-components';
 
@@ -13,11 +12,13 @@ import {
   findScrollParents,
   parseMetricToNum,
   PortalContext,
+  useForwardedRef,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 
+import { DropCaret } from './DropCaret';
 import { StyledDrop } from './StyledDrop';
 
 // using react synthetic event to be able to stop propagation that
@@ -37,6 +38,7 @@ const DropContainer = forwardRef(
   (
     {
       align = defaultAlign,
+      background,
       children,
       dropTarget,
       elevation,
@@ -60,7 +62,7 @@ const DropContainer = forwardRef(
       portalContext,
       portalId,
     ]);
-    const dropRef = useRef();
+    const dropRef = useForwardedRef(ref);
     useEffect(() => {
       // We try to preserve the maxHeight as changing it causes any scroll
       // position to be lost. We set the maxHeight on mount and if the window
@@ -69,7 +71,7 @@ const DropContainer = forwardRef(
         const windowWidth = window.innerWidth;
         const windowHeight = window.innerHeight;
         const target = dropTarget;
-        const container = (ref || dropRef).current;
+        const container = dropRef.current;
         if (container && target) {
           // clear prior styling
           container.style.left = '';
@@ -283,11 +285,11 @@ const DropContainer = forwardRef(
       };
     }, [
       align,
+      dropRef,
       dropTarget,
       onClickOutside,
       portalContext,
       portalId,
-      ref,
       responsive,
       restrictFocus,
       stretch,
@@ -296,14 +298,14 @@ const DropContainer = forwardRef(
 
     useEffect(() => {
       if (restrictFocus) {
-        (ref || dropRef).current.focus();
+        dropRef.current.focus();
       }
-    }, [ref, restrictFocus]);
+    }, [dropRef, restrictFocus]);
+    console.log('!!! DropContainer', rest);
 
     let content = (
       <StyledDrop
-        ref={ref || dropRef}
-        as={Box}
+        ref={dropRef}
         plain={plain}
         elevation={
           !plain
@@ -312,11 +314,16 @@ const DropContainer = forwardRef(
         }
         tabIndex="-1"
         alignProp={align}
+        background={background}
         overflow={overflow}
         data-g-portal-id={portalId}
         {...rest}
       >
         {children}
+        <DropCaret background={background} side="left" />
+        <DropCaret background={background} side="right" />
+        <DropCaret background={background} side="top" />
+        <DropCaret background={background} side="bottom" />
       </StyledDrop>
     );
 

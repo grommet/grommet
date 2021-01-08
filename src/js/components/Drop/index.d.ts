@@ -8,6 +8,7 @@ export interface DropProps {
     right?: 'left' | 'right';
     left?: 'left' | 'right';
   };
+  caret?: boolean | JSX.Element;
   elevation?: ElevationType;
   onClickOutside?: React.MouseEventHandler<HTMLDocument>;
   onEsc?: KeyboardType;

@@ -1,8 +1,9 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 import { baseStyle } from '../../utils';
 import { backgroundStyle } from '../../utils/background';
 import { defaultProps } from '../../default-props';
+import { Box } from '../Box';
 
 function getTransformOriginStyle(align) {
   let vertical = 'top';
@@ -27,13 +28,14 @@ const dropKeyFrames = keyframes`
   }
 `;
 
-const StyledDrop = styled.div`
+const StyledDrop = styled(Box)`
   ${baseStyle}
 
   border-radius: ${props => props.theme.global.drop.border.radius};
   position: fixed;
   z-index: ${props => props.theme.global.drop.zIndex};
   outline: none;
+  overflow: visible;
 
   ${props =>
     !props.plain &&
@@ -56,4 +58,23 @@ const StyledDrop = styled.div`
 StyledDrop.defaultProps = {};
 Object.setPrototypeOf(StyledDrop.defaultProps, defaultProps);
 
-export { StyledDrop };
+const placement = ({ side, width, height }) => {
+  if (side === 'top')
+    return css`top: -${height}px; left: calc(50% - ${width / 2}px);`;
+  if (side === 'left')
+    return css`top: calc(50% - ${height / 2}px); left: -${width}px;`;
+  if (side === 'right')
+    return css`top: calc(50% - ${height / 2}px); right: -${width}px;`;
+  if (side === 'bottom')
+    return css`bottom: -${height}px; left: calc(50% - ${width / 2}px);`;
+  return null;
+};
+
+const StyledDropCaret = styled.svg`
+  position: absolute;
+  stroke: red;
+
+  ${props => placement(props)}
+`;
+
+export { StyledDrop, StyledDropCaret };

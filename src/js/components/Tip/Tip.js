@@ -7,13 +7,14 @@ import React, {
 } from 'react';
 import { ThemeContext } from 'styled-components';
 
-import { Box } from '../Box';
 import { Drop } from '../Drop';
 import { useForwardedRef } from '../../utils/refs';
 
 const Tip = forwardRef(({ children, content, dropProps, plain }, tipRef) => {
   const theme = useContext(ThemeContext);
   const [over, setOver] = useState(false);
+  const themeContentProps = plain ? {} : theme.tip.content;
+  console.log('!!! Tip', themeContentProps);
 
   const componentRef = useForwardedRef(tipRef);
 
@@ -23,6 +24,8 @@ const Tip = forwardRef(({ children, content, dropProps, plain }, tipRef) => {
     // so we'll be able to assign ref and events on the child.
     return !React.isValidElement(children) ? <span>{children}</span> : children;
   };
+
+  React.useEffect(() => setOver(true), []);
 
   /* Three use case for children
     1. Tip has a single child + it is a React Element => Great!
@@ -67,9 +70,10 @@ const Tip = forwardRef(({ children, content, dropProps, plain }, tipRef) => {
         key="tip-drop"
         plain
         {...theme.tip.drop}
+        {...themeContentProps}
         {...dropProps}
       >
-        {plain ? content : <Box {...theme.tip.content}>{content}</Box>}
+        {content}
       </Drop>
     ),
   ];
