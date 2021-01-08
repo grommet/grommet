@@ -18,7 +18,8 @@ const PopUpContainer = ({
   onClose,
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
-
+  const closeIcon = theme.modalpopup.title.close;
+  const CloseIcon = closeIcon && closeIcon.icon;
   return (
     <Box
       role="dialog"
@@ -28,6 +29,13 @@ const PopUpContainer = ({
       {title && (
         <Box {...theme.modalpopup.title.wrapper}>
           <Heading {...theme.modalpopup.title.text}>{title}</Heading>
+          {CloseIcon && (
+            <Button
+              icon={<CloseIcon color={closeIcon.color} size={closeIcon.size} />}
+              onClick={onClose}
+              plain
+            />
+          )}
         </Box>
       )}
       {!body && message && (

@@ -874,6 +874,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             horizontal: 'large',
             vertical: 'small',
           },
+          direction: 'row',
+          justify: 'between',
+          align: 'center',
           border: {
             side: 'bottom',
             color: 'dark-6',
@@ -883,6 +886,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           level: 3,
           size: 'small',
           color: 'dark-3',
+        },
+        close: {
+          icon: FormClose,
+          size: 'medium',
+          color: 'dark-1',
         },
       },
       message: {
