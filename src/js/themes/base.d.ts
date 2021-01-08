@@ -13,6 +13,7 @@ import {
   BreakpointSize,
   ColorType,
   DeepReadonly,
+  ElevationType,
   GapType,
   GraphColorsType,
   MarginType,
@@ -625,6 +626,7 @@ export interface ThemeType {
         background?: BackgroundType;
       };
       pad?: PadType;
+      units?: TextProps;
     };
     groupHeader?: {
       border?: {
@@ -896,6 +898,7 @@ export interface ThemeType {
       radius?: string;
     };
     container?: {
+      elevation?: ElevationType;
       zIndex?: string;
     };
     extend?: ExtendType;
@@ -1220,6 +1223,15 @@ export interface ThemeType {
   textInput?: {
     extend?: ExtendType;
     disabled?: OpacityType;
+    container?: {
+      extend?: ExtendType;
+    };
+    placeholder?: {
+      extend?: ExtendType;
+    };
+    suggestions?: {
+      extend?: ExtendType;
+    };
   };
   tip?: {
     content?: BoxProps;

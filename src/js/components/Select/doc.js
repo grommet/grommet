@@ -43,6 +43,19 @@ export const doc = Select => {
     closeOnChange: PropTypes.bool
       .description('Wether to close the drop when a selection is made.')
       .defaultValue(true),
+    defaultValue: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object,
+      PropTypes.number,
+      PropTypes.arrayOf(
+        PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.object,
+          PropTypes.number,
+        ]),
+      ),
+    ]).description(`Initially selected value. This can be an array
+      when multiple.`),
     disabled: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.arrayOf(
@@ -117,7 +130,9 @@ export const doc = Select => {
       multiple: PropTypes.string,
     }).description('Custom messages.'),
     multiple: PropTypes.bool.description(
-      'Whether to allow multiple options to be selected.',
+      `Whether to allow multiple options to be selected. When multiple is true, 
+      'value' should be an array of selected options and 'options' should be 
+      an array of possible options`,
     ),
     name: PropTypes.string.description(
       `The name of the attribute when in a Form or FormField.`,

@@ -19,6 +19,18 @@ Custom title to be used by screen readers.
 string
 ```
 
+**defaultSuggestion**
+
+Default suggestion to highlight, as an index into the suggestions array.
+
+      If set, the suggestion at the specified index in the suggestions array
+      will be highlighted by default when the suggestions drop opens.
+      
+
+```
+number
+```
+
 **dropAlign**
 
 How to align the drop. Defaults to `{
@@ -226,6 +238,16 @@ suggestions and instead rely on the user to type more.
   }
   string
 ]
+```
+
+**textAlign**
+
+How to align the text inside the input. Defaults to `start`.
+
+```
+start
+center
+end
 ```
 
 **value**

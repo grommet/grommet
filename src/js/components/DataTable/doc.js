@@ -122,6 +122,7 @@ export const doc = DataTable => {
           ]),
           PropTypes.string,
         ]),
+        units: PropTypes.string,
         verticalAlign: PropTypes.oneOf(['middle', 'top', 'bottom']),
       }),
     ).description(
@@ -215,6 +216,13 @@ export const doc = DataTable => {
     ]).description(
       `Whether the header and/or footer should be pinned when
       not all rows are visible. A value of true pins both header and footer.`,
+    ),
+    placeholder: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.node,
+    ]).description(
+      `A text message or any content to place over the table body.
+      For example, to say "loading ..." when waiting for data to arrive.`,
     ),
     primaryKey: PropTypes.oneOfType([
       PropTypes.string,
@@ -392,6 +400,15 @@ export const themeDoc = {
     description: 'The pad around the contents of the header cell.',
     type: 'string | object',
     defaultValue: undefined,
+  },
+  'dataTable.header.units': {
+    description: `Any Text component properties for styling the
+    header's units text.`,
+    type: 'object',
+    defaultValue: `{
+  color: "text-xweak",
+  margin: { left: "xsmall" }
+}`,
   },
   'dataTable.resize.hover.color': {
     description: 'The color of the resizer when hovered over.',

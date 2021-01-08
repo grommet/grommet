@@ -159,6 +159,22 @@ Wether to close the drop when a selection is made. Defaults to `true`.
 boolean
 ```
 
+**defaultValue**
+
+Initially selected value. This can be an array
+      when multiple.
+
+```
+string
+object
+number
+[
+  string
+  object
+  number
+]
+```
+
 **disabled**
 
 Whether the entire select or individual options should be disabled.
@@ -288,7 +304,9 @@ Custom messages.
 
 **multiple**
 
-Whether to allow multiple options to be selected.
+Whether to allow multiple options to be selected. When multiple is true, 
+      'value' should be an array of selected options and 'options' should be 
+      an array of possible options
 
 ```
 boolean
