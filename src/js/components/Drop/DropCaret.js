@@ -2,38 +2,30 @@ import React, { useContext } from 'react';
 
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
-import {
-  backgroundAndTextColors,
-  normalizeBackground,
-} from '../../utils/background';
+import { normalizeColor, parseMetricToNum } from '../../utils';
 import { StyledDropCaret } from './StyledDrop';
 
 const DropCaret = ({
   background: backgroundProp,
-  height = 12,
+  border,
   side = 'top',
-  width = 24,
+  size,
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
-  const background = normalizeBackground(
+  const backgroundColor = normalizeColor(
     backgroundProp || theme.global.drop.background,
     theme,
   );
-  const [backgroundColor] = backgroundAndTextColors(
-    background,
-    undefined,
-    theme,
-  );
-  let path;
-  if (side === 'top')
-    path = `M 0 ${height} L ${width / 2} 0 L ${width} ${height} Z`;
-  else if (side === 'left')
-    path = `M ${height} ${width} L 0 ${height / 2} L ${height} 0 Z`;
-  else if (side === 'right')
-    path = `M 0 0 L ${width} ${height / 2} L 0 ${height} Z`;
-  else if (side === 'bottom')
-    path = `M ${width} 0 L ${width / 2} ${height} L 0 0 Z`;
+  const borderColor = border
+    ? normalizeColor(border.color || 'border', theme)
+    : undefined;
+  const borderSize = border
+    ? theme.global.borderSize[border.size] || border.size
+    : undefined;
+  const edgeSize = parseMetricToNum(theme.global.edgeSize[size || 'medium']);
+  const [width, height] = [edgeSize, edgeSize / 2];
 
+  // path leaves off at 2 so line join style isn't clipped
   return (
     <StyledDropCaret
       height={height}
@@ -41,7 +33,13 @@ const DropCaret = ({
       width={width}
       viewBox={`0 0 ${width} ${height}`}
     >
-      <path d={path} fill={backgroundColor} />
+      <path
+        d={`M 0 ${height} L ${width / 2} 2 L ${width} ${height}`}
+        fill={backgroundColor || 'none'}
+        stroke={borderColor || 'none'}
+        strokeWidth={borderSize}
+        strokeLinejoin="round"
+      />
     </StyledDropCaret>
   );
 };

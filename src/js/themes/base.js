@@ -1203,7 +1203,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     tip: {
       content: {
         // any Box props
-        background: 'background-contrast',
+        background: 'brand', // 'background-contrast',
+        border: { color: 'red', size: 'small' },
         elevation: 'small',
         margin: 'xsmall',
         pad: { vertical: 'xsmall', horizontal: 'small' },

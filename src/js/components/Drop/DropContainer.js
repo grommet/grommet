@@ -15,7 +15,7 @@ import {
   useForwardedRef,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
-import { Box } from '../Box';
+// import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 
 import { DropCaret } from './DropCaret';
@@ -39,6 +39,7 @@ const DropContainer = forwardRef(
     {
       align = defaultAlign,
       background,
+      border,
       children,
       dropTarget,
       elevation,
@@ -301,7 +302,6 @@ const DropContainer = forwardRef(
         dropRef.current.focus();
       }
     }, [dropRef, restrictFocus]);
-    console.log('!!! DropContainer', rest);
 
     let content = (
       <StyledDrop
@@ -315,15 +315,16 @@ const DropContainer = forwardRef(
         tabIndex="-1"
         alignProp={align}
         background={background}
+        border={border}
         overflow={overflow}
         data-g-portal-id={portalId}
         {...rest}
       >
         {children}
-        <DropCaret background={background} side="left" />
-        <DropCaret background={background} side="right" />
-        <DropCaret background={background} side="top" />
-        <DropCaret background={background} side="bottom" />
+        <DropCaret background={background} border={border} side="left" />
+        <DropCaret background={background} border={border} side="right" />
+        <DropCaret background={background} border={border} side="top" />
+        <DropCaret background={background} border={border} side="bottom" />
       </StyledDrop>
     );
 

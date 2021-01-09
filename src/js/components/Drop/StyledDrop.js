@@ -58,22 +58,29 @@ const StyledDrop = styled(Box)`
 StyledDrop.defaultProps = {};
 Object.setPrototypeOf(StyledDrop.defaultProps, defaultProps);
 
+const rotateSide = {
+  top: '0',
+  left: '-90deg',
+  right: '90deg',
+  bottom: '180deg',
+};
+
 const placement = ({ side, width, height }) => {
   if (side === 'top')
     return css`top: -${height}px; left: calc(50% - ${width / 2}px);`;
   if (side === 'left')
-    return css`top: calc(50% - ${height / 2}px); left: -${width}px;`;
+    return css`top: calc(50% - ${width / 2}px); left: -${height}px;`;
   if (side === 'right')
-    return css`top: calc(50% - ${height / 2}px); right: -${width}px;`;
+    return css`top: calc(50% - ${width / 2}px); right: -${height}px;`;
   if (side === 'bottom')
-    return css`bottom: -${height}px; left: calc(50% - ${width / 2}px);`;
+    return css`bottom: 0; left: calc(50% - ${width / 2}px);`;
   return null;
 };
 
 const StyledDropCaret = styled.svg`
   position: absolute;
-  stroke: red;
-
+  transform-origin: center bottom;
+  ${props => `transform: rotate(${rotateSide[props.side] || 0});`}
   ${props => placement(props)}
 `;
 
