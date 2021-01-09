@@ -6,7 +6,7 @@ export const Simple = () => {
   return (
     <Grommet full theme={grommet}>
       <Box align="center" justify="center" fill>
-        <Tip content="action info">
+        <Tip content="action info longer">
           <Button label="action" />
         </Tip>
       </Box>

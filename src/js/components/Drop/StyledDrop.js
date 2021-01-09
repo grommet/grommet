@@ -31,7 +31,10 @@ const dropKeyFrames = keyframes`
 const StyledDrop = styled(Box)`
   ${baseStyle}
 
-  border-radius: ${props => props.theme.global.drop.border.radius};
+  ${props =>
+    !props.round
+      ? `border-radius: ${props.theme.global.drop.border.radius};`
+      : undefined}
   position: fixed;
   z-index: ${props => props.theme.global.drop.zIndex};
   outline: none;
@@ -43,7 +46,7 @@ const StyledDrop = styled(Box)`
 
   opacity: 0;
   transform-origin: ${props => getTransformOriginStyle(props.alignProp)};
-  animation:  ${dropKeyFrames} 0.1s forwards;
+  animation: ${dropKeyFrames} 0.1s forwards;
   animation-delay: 0.01s;
 
   /* IE11 hack to get drop contents to not overflow */
@@ -67,21 +70,33 @@ const rotateSide = {
 
 const placement = ({ side, width, height }) => {
   if (side === 'top')
-    return css`top: -${height}px; left: calc(50% - ${width / 2}px);`;
+    return css`
+      top: -${height}px;
+      left: calc(50% - ${width / 2}px);
+    `;
   if (side === 'left')
-    return css`top: calc(50% - ${width / 2}px); left: -${height}px;`;
+    return css`
+      top: calc(50% - ${width / 2}px);
+      left: -${height}px;
+    `;
   if (side === 'right')
-    return css`top: calc(50% - ${width / 2}px); right: -${height}px;`;
+    return css`
+      top: calc(50% - ${width / 2}px);
+      right: -${height}px;
+    `;
   if (side === 'bottom')
-    return css`bottom: 0; left: calc(50% - ${width / 2}px);`;
+    return css`
+      bottom: -${height}px;
+      left: calc(50% - ${width / 2}px);
+    `;
   return null;
 };
 
+// ${props => `transform: rotate(${rotateSide[props.side] || 0});`}
+// ${props => placement(props)}
+
 const StyledDropCaret = styled.svg`
   position: absolute;
-  transform-origin: center bottom;
-  ${props => `transform: rotate(${rotateSide[props.side] || 0});`}
-  ${props => placement(props)}
 `;
 
 export { StyledDrop, StyledDropCaret };

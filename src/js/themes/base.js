@@ -1203,8 +1203,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     tip: {
       content: {
         // any Box props
-        background: 'brand', // 'background-contrast',
-        border: { color: 'red', size: 'small' },
+        background: 'background-contrast',
+        border: { color: 'border', size: 'small' },
         elevation: 'small',
         margin: 'xsmall',
         pad: { vertical: 'xsmall', horizontal: 'small' },
@@ -1212,7 +1212,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       drop: {
         // any props for the drop
-        align: { top: 'bottom' }, // most common use case is Header with Buttons
+        align: { top: 'bottom', left: 'left' }, // most common use case is Header with Buttons
       },
     },
     video: {

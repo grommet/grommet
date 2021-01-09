@@ -3,6 +3,8 @@ import React, {
   useContext,
   useEffect,
   useMemo,
+  useRef,
+  useState,
 } from 'react';
 import { ThemeContext } from 'styled-components';
 
@@ -64,6 +66,7 @@ const DropContainer = forwardRef(
       portalId,
     ]);
     const dropRef = useForwardedRef(ref);
+    const caretRef = useRef();
     useEffect(() => {
       // We try to preserve the maxHeight as changing it causes any scroll
       // position to be lost. We set the maxHeight on mount and if the window
@@ -227,6 +230,17 @@ const DropContainer = forwardRef(
             }
             container.style.maxHeight = `${maxHeight}px`;
           }
+
+          if (caretRef.current) {
+            const { width: caretWidth, height: caretHeight } = caretRef.current.getBoundingClientRect();
+            console.log('!!!', targetRect, top, caretWidth, caretHeight);
+            // rotate and place caret
+            if (targetRect.bottom <= top) { // below
+              caretRef.current.style.top = -caretHeight;
+              caretRef.current.style.left = (targetRect.x + (targetRect.width / 2)) - (left + (caretWidth / 2));
+              console.log('!!! below', targetRect.x, targetRect.width, left);
+            }
+          }
         }
       };
 
@@ -303,6 +317,8 @@ const DropContainer = forwardRef(
       }
     }, [dropRef, restrictFocus]);
 
+    console.log('!!! SD', rest);
+
     let content = (
       <StyledDrop
         ref={dropRef}
@@ -321,10 +337,7 @@ const DropContainer = forwardRef(
         {...rest}
       >
         {children}
-        <DropCaret background={background} border={border} side="left" />
-        <DropCaret background={background} border={border} side="right" />
-        <DropCaret background={background} border={border} side="top" />
-        <DropCaret background={background} border={border} side="bottom" />
+        <DropCaret ref={caretRef} background={background} border={border} />
       </StyledDrop>
     );
 
