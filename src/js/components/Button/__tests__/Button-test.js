@@ -159,6 +159,21 @@ describe('Button', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('tip with label using mouseLeave', () => {
+    const { container, queryByText } = render(
+      <Grommet>
+        <Button label={<Text> Label </Text>} onClick={() => {}} tip="tooltip" />
+      </Grommet>,
+    );
+
+    fireEvent.mouseOver(queryByText('Label'));
+    expect(queryByText('tooltip')).toBeTruthy();
+    fireEvent.mouseLeave(queryByText('Label'));
+    expect(queryByText('tooltip')).toBeFalsy();
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('disabled', () => {
     const component = renderer.create(
       <Grommet>

@@ -109,6 +109,7 @@ const Button = forwardRef(
       onBlur,
       onClick,
       onFocus,
+      onMouseLeave,
       onMouseOut,
       onMouseOver,
       plain,
@@ -202,8 +203,9 @@ const Button = forwardRef(
 
     const onMouseOutButton = event => {
       setHover(false);
-      if (onMouseOut) {
-        onMouseOut(event);
+      const outEvent = onMouseLeave || onMouseOut;
+      if (outEvent) {
+        outEvent(event);
       }
     };
 
