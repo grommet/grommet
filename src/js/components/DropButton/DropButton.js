@@ -10,6 +10,7 @@ const DropButton = forwardRef(
   (
     {
       a11yTitle = 'Open Drop',
+      setMenuMirrorReference,
       disabled,
       dropAlign = defaultDropAlign,
       dropProps,
@@ -75,6 +76,7 @@ const DropButton = forwardRef(
         {show && buttonRef.current && (
           <Drop
             id={id ? `${id}__drop` : undefined}
+            setMenuMirrorReference={setMenuMirrorReference}
             restrictFocus
             align={dropAlign}
             target={dropTarget || buttonRef.current}
