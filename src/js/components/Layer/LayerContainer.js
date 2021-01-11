@@ -203,6 +203,8 @@ const LayerContainer = forwardRef(
           onEsc={
             onEsc
               ? event => {
+                  // prevent further capturing or bubbling of event to other
+                  // child or parent elements
                   event.stopPropagation();
                   onEsc(event);
                 }

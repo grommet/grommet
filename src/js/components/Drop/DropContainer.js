@@ -340,6 +340,7 @@ const DropContainer = forwardRef(
           <Keyboard
             // should capture keyboard event before other elements,
             // such as Layer
+            // https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
             capture
             onEsc={
               onEsc
