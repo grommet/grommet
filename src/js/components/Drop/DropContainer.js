@@ -67,7 +67,7 @@ const DropContainer = forwardRef(
         const styleCurrent = (ref || dropRef).current.style;
         const sideToAlign = styleCurrent.top !== '' ? 'top' : 'bottom';
 
-        if (setMenuMirrorReference) setMenuMirrorReference(() => sideToAlign);
+        if (setMenuMirrorReference) setMenuMirrorReference(sideToAlign);
       };
 
       // We try to preserve the maxHeight as changing it causes any scroll
