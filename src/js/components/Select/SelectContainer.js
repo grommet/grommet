@@ -277,26 +277,56 @@ const SelectContainer = forwardRef(
       [activeIndex, isDisabled],
     );
 
+    const findNextActiveIndex = (
+      event,
+      selectOptions,
+      currentActiveIndex,
+      afterActiveIndex = true,
+    ) => {
+      const possibleIndex = selectOptions.findIndex((e, index) => {
+        const label = typeof e === 'object' ? e.label : e;
+
+        if (afterActiveIndex && currentActiveIndex >= index) return false;
+
+        return (
+          label.charAt(0).toLowerCase() === event.key.toLowerCase() &&
+          !isDisabled(index)
+        );
+      });
+      if (possibleIndex < 0 && afterActiveIndex) {
+        // couldn't find anything after the current active index.
+        // try again but before the current active index.
+        return findNextActiveIndex(
+          event,
+          selectOptions,
+          currentActiveIndex,
+          false,
+        );
+      }
+      return possibleIndex;
+    };
+
     const onKeyDownOption = useCallback(
       event => {
-        event.preventDefault();
-        const nextActiveIndex = options.findIndex((e, index) => {
-          const label = typeof e === 'object' ? e.label : e;
-          if (activeIndex === index) return false;
-          return (
-            label.charAt(0).toLowerCase() === event.key.toLowerCase() &&
-            !isDisabled(index)
+        if (!onSearch) {
+          event.preventDefault();
+
+          const nextActiveIndex = findNextActiveIndex(
+            event,
+            options,
+            activeIndex,
           );
-        });
-        if (nextActiveIndex >= 0) {
-          setActiveIndex(nextActiveIndex);
-          setKeyboardNavigation(true);
+
+          if (nextActiveIndex >= 0) {
+            setActiveIndex(nextActiveIndex);
+            setKeyboardNavigation(true);
+          }
         }
         if (onKeyDown) {
           onKeyDown(event);
         }
       },
-      [onKeyDown, activeIndex, isDisabled, options],
+      [onKeyDown, activeIndex, options, onSearch],
     );
 
     const onActiveOption = useCallback(
