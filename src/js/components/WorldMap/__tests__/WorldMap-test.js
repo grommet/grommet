@@ -30,38 +30,44 @@ describe('WorldMap', () => {
   });
 
   test('continents', () => {
-    const component = renderer.create(
-      <Grommet>
-        <WorldMap
-          continents={[
-            {
-              name: 'Africa',
-              color: 'accent-1',
-              onClick: () => {},
-            },
-          ]}
-        />
-      </Grommet>,
-    );
+    let component;
+    renderer.act(() => {
+      component = renderer.create(
+        <Grommet>
+          <WorldMap
+            continents={[
+              {
+                name: 'Africa',
+                color: 'accent-1',
+                onClick: () => {},
+              },
+            ]}
+          />
+        </Grommet>,
+      );
+    });
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   test('places', () => {
-    const component = renderer.create(
-      <Grommet>
-        <WorldMap
-          places={[
-            {
-              name: 'Sydney',
-              location: [-33.8830555556, 151.216666667],
-              color: 'accent-1',
-              onClick: () => {},
-            },
-          ]}
-        />
-      </Grommet>,
-    );
+    let component;
+    renderer.act(() => {
+      component = renderer.create(
+        <Grommet>
+          <WorldMap
+            places={[
+              {
+                name: 'Sydney',
+                location: [-33.8830555556, 151.216666667],
+                color: 'accent-1',
+                onClick: () => {},
+              },
+            ]}
+          />
+        </Grommet>,
+      );
+    });
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
