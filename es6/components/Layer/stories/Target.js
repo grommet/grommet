@@ -88,6 +88,13 @@ export var TargetLayer = function TargetLayer() {
   }), /*#__PURE__*/React.createElement(Button, {
     label: "Close",
     onClick: onClose
+  }), /*#__PURE__*/React.createElement(Select, {
+    options: positions,
+    value: position,
+    onChange: function onChange(_ref2) {
+      var option = _ref2.option;
+      return setPosition(option);
+    }
   }))));
 };
 TargetLayer.story = {

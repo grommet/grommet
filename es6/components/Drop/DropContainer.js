@@ -315,7 +315,11 @@ var DropContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, /*#__PURE__*/React.createElement(FocusedContainer, {
     onKeyDown: onEsc && preventLayerClose,
     trapFocus: trapFocus
-  }, /*#__PURE__*/React.createElement(Keyboard, {
+  }, /*#__PURE__*/React.createElement(Keyboard // should capture keyboard event before other elements,
+  // such as Layer
+  // https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+  , {
+    capture: true,
     onEsc: onEsc ? function (event) {
       event.stopPropagation();
       onEsc(event);

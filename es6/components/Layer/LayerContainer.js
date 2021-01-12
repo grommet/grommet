@@ -183,7 +183,13 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
   if (onEsc) {
     content = /*#__PURE__*/React.createElement(Keyboard, {
-      onEsc: onEsc
+      onEsc: onEsc ? function (event) {
+        // prevent further capturing or bubbling of event to other
+        // child or parent elements
+        event.stopPropagation();
+        onEsc(event);
+      } : undefined,
+      target: modal === false ? 'document' : undefined
     }, content);
   }
 

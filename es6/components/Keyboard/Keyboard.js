@@ -16,10 +16,11 @@ var KEYS = {
 };
 
 var Keyboard = function Keyboard(_ref) {
-  var target = _ref.target,
+  var capture = _ref.capture,
+      target = _ref.target,
       children = _ref.children,
       onKeyDown = _ref.onKeyDown,
-      restProps = _objectWithoutPropertiesLoose(_ref, ["target", "children", "onKeyDown"]);
+      restProps = _objectWithoutPropertiesLoose(_ref, ["capture", "target", "children", "onKeyDown"]);
 
   var onKeyDownHandler = useCallback(function (event) {
     var key = event.keyCode ? event.keyCode : event.which;
@@ -39,15 +40,15 @@ var Keyboard = function Keyboard(_ref) {
   }, [onKeyDown, restProps]);
   useEffect(function () {
     if (target === 'document') {
-      document.addEventListener('keydown', onKeyDownHandler);
+      document.addEventListener('keydown', onKeyDownHandler, capture);
     }
 
     return function () {
       if (target === 'document') {
-        document.removeEventListener('keydown', onKeyDownHandler);
+        document.removeEventListener('keydown', onKeyDownHandler, capture);
       }
     };
-  }, [onKeyDownHandler, target]);
+  }, [capture, onKeyDownHandler, target]);
   return target === 'document' ? children : /*#__PURE__*/cloneElement(Children.only(children), {
     onKeyDown: onKeyDownHandler
   });

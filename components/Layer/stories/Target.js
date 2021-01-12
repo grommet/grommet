@@ -100,6 +100,13 @@ var TargetLayer = function TargetLayer() {
   }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     label: "Close",
     onClick: onClose
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
+    options: positions,
+    value: position,
+    onChange: function onChange(_ref2) {
+      var option = _ref2.option;
+      return setPosition(option);
+    }
   }))));
 };
 
