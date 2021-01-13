@@ -10574,7 +10574,7 @@ boolean
 
 **full**
 
-Whether the width and/or height should fill the current viewport 
+Whether the width and/or height should fill the current viewport
         size.
 
 \`\`\`
@@ -10659,7 +10659,7 @@ string
 
 **modal**
 
-Whether there should be an overlay preventing interaction underneath 
+Whether there should be an overlay preventing interaction underneath
         the layer. Defaults to \`true\`.
 
 \`\`\`
@@ -10668,7 +10668,7 @@ boolean
 
 **onClickOutside**
 
-Function that will be invoked on modal layers when the user clicks 
+Function that will be invoked on modal layers when the user clicks
       outside the layer.
 
 \`\`\`
@@ -10721,7 +10721,7 @@ boolean
 
 **target**
 
-Target where the layer will be aligned to. This should be a React 
+Target where the layer will be aligned to. This should be a React
       reference.
 
 \`\`\`
@@ -10775,6 +10775,28 @@ Defaults to
 undefined
 \`\`\`
 
+**layer.container.elevation**
+
+Elevated height above the underlying container, indicated via 
+    a drop shadow. Any Box elevation value is valid. Expects \`'none' | 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | 
+    string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**layer.container.extend**
+
+Any additional style for Layer Container. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **layer.overlay.background**
 
 The background of the Layer overlay. Expects \`string\`.
@@ -10787,7 +10809,7 @@ rgba(0, 0, 0, 0.5)
 
 **layer.responsiveBreakpoint**
 
-The actual breakpoint to trigger changes in the border, 
+The actual breakpoint to trigger changes in the border,
 direction, gap, margin, pad, and round. Expects \`string\`.
 
 Defaults to
@@ -10808,7 +10830,7 @@ Defaults to
 
 **global.breakpoints**
 
-The possible breakpoints that could affect border, direction, gap, margin, 
+The possible breakpoints that could affect border, direction, gap, margin,
     pad, and round. Expects \`object\`.
 
 Defaults to
@@ -11859,15 +11881,25 @@ string
 
 **children**
 
-Function that will be called to render the visual representation.
-      It will be passed an object containing button props.
-      It should return a react element.
-      For example:
-      \`children={({ disabled, drop, hover, focus }) => <Box ...>{...}</Box>}\`
-      
+Menu can take in children as a function or node.
+
+- Function that will be called to render the visual representation.
+It will be passed a props object. The props passed are
+different depending on the menu \`open\` state. When the menu is closed,
+two props are passed:
+\`{ hover, focus }\`,
+but when the menu is open, all menu props are passed to this function.\\\\
+It should return a React element.
+For example:
+\`children={(props) => <Box ...>{...}</Box>}\`\\\\
+**Note:** This function will be invoked on every mouse move when hovering.
+- Node is anything that can be rendered, e.g.
+\`<Box><CaretNext /><Text>Open Me</Text></Box>\`
+
 
 \`\`\`
 function
+node
 \`\`\`
 
 **disabled**
@@ -11883,7 +11915,7 @@ boolean
 Where to place the drop down.
 The keys correspond to a side of the drop down.
 The values correspond to a side of the control. For instance,
-{left: 'left', top: 'bottom'} would align the left edges and the top of
+\`{left: 'left', top: 'bottom'}\` would align the left edges and the top of
 the drop down to the bottom of the control. At most one of left or right and
 one of top or bottom should be specified. Defaults to \`{
   \\"top\\": \\"top\\",
@@ -11968,7 +12000,7 @@ node
 
 Required. Menu items to be placed inside the drop down.
 The object values can be any Button prop, 
-for example: label, onClick, and href. Defaults to \`[]\`.
+for example: \`label\`, \`onClick\`, and \`href\`. Defaults to \`[]\`.
 
 \`\`\`
 [object]
@@ -14055,6 +14087,22 @@ Wether to close the drop when a selection is made. Defaults to \`true\`.
 
 \`\`\`
 boolean
+\`\`\`
+
+**defaultValue**
+
+Initially selected value. This can be an array
+      when multiple.
+
+\`\`\`
+string
+object
+number
+[
+  string
+  object
+  number
+]
 \`\`\`
 
 **disabled**
@@ -16579,6 +16627,18 @@ Custom title to be used by screen readers.
 
 \`\`\`
 string
+\`\`\`
+
+**defaultSuggestion**
+
+Default suggestion to highlight, as an index into the suggestions array.
+
+      If set, the suggestion at the specified index in the suggestions array
+      will be highlighted by default when the suggestions drop opens.
+      
+
+\`\`\`
+number
 \`\`\`
 
 **dropAlign**

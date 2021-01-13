@@ -36,7 +36,7 @@ boolean
 
 **full**
 
-Whether the width and/or height should fill the current viewport 
+Whether the width and/or height should fill the current viewport
         size.
 
 ```
@@ -121,7 +121,7 @@ string
 
 **modal**
 
-Whether there should be an overlay preventing interaction underneath 
+Whether there should be an overlay preventing interaction underneath
         the layer. Defaults to `true`.
 
 ```
@@ -130,7 +130,7 @@ boolean
 
 **onClickOutside**
 
-Function that will be invoked on modal layers when the user clicks 
+Function that will be invoked on modal layers when the user clicks
       outside the layer.
 
 ```
@@ -183,7 +183,7 @@ boolean
 
 **target**
 
-Target where the layer will be aligned to. This should be a React 
+Target where the layer will be aligned to. This should be a React
       reference.
 
 ```
@@ -237,6 +237,28 @@ Defaults to
 undefined
 ```
 
+**layer.container.elevation**
+
+Elevated height above the underlying container, indicated via 
+    a drop shadow. Any Box elevation value is valid. Expects `'none' | 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | 
+    string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**layer.container.extend**
+
+Any additional style for Layer Container. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
 **layer.overlay.background**
 
 The background of the Layer overlay. Expects `string`.
@@ -249,7 +271,7 @@ rgba(0, 0, 0, 0.5)
 
 **layer.responsiveBreakpoint**
 
-The actual breakpoint to trigger changes in the border, 
+The actual breakpoint to trigger changes in the border,
 direction, gap, margin, pad, and round. Expects `string`.
 
 Defaults to
@@ -270,7 +292,7 @@ Defaults to
 
 **global.breakpoints**
 
-The possible breakpoints that could affect border, direction, gap, margin, 
+The possible breakpoints that could affect border, direction, gap, margin,
     pad, and round. Expects `object`.
 
 Defaults to

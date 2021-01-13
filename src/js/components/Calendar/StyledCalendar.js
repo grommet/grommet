@@ -3,6 +3,7 @@ import {
   backgroundStyle,
   focusStyle,
   genericStyles,
+  kindPartStyles,
   parseMetricToNum,
 } from '../../utils';
 
@@ -128,6 +129,12 @@ const StyledDay = styled.div`
       backgroundStyle({ color: 'control', opacity: 'weak' }, props.theme))}
   ${props => props.otherMonth && 'opacity: 0.5;'}
   ${props => props.isSelected && 'font-weight: bold;'}
+  ${props =>
+    // when theme uses kind Buttons, since we use children for Button,
+    // we have to special case how we handle disabled days here
+    props.disabledProp &&
+    props.theme.button.default &&
+    kindPartStyles(props.theme.button.disabled, props.theme)}
   ${props =>
     props.theme.calendar &&
     props.theme.calendar.day &&

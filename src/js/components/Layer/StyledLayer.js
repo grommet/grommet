@@ -61,7 +61,8 @@ const StyledLayer = styled.div`
       styles.push(breakpointStyle(breakpoint, responsiveLayerStyle));
     }
     return styles;
-  }} ${props => props.theme.layer && props.theme.layer.extend};
+  }}
+  ${props => props.theme.layer && props.theme.layer.extend};
 `;
 
 StyledLayer.defaultProps = {};
@@ -676,6 +677,13 @@ const responsiveContainerStyle = css`
   width: 100vw;
 `;
 
+const elevationStyle = css`
+  box-shadow: ${props =>
+    props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][
+      props.theme.layer.container.elevation
+    ]};
+`;
+
 const StyledContainer = styled.div`
   ${props => (!props.modal ? baseStyle : '')}
   display: flex;
@@ -687,7 +695,7 @@ const StyledContainer = styled.div`
     backgroundStyle(props.theme.layer.background, props.theme)} outline: none;
   pointer-events: all;
   z-index: ${props => props.theme.layer.container.zIndex};
-
+  ${props => props.theme.layer.container.elevation && elevationStyle}
   ${desktopContainerStyle}
   ${props => {
     if (props.responsive && props.theme.layer.responsiveBreakpoint) {
@@ -699,6 +707,7 @@ const StyledContainer = styled.div`
     }
     return '';
   }};
+  ${props => props.theme.layer.container && props.theme.layer.container.extend};
 `;
 
 StyledContainer.defaultProps = {};

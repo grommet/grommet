@@ -919,6 +919,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         radius: '4px',
       },
       container: {
+        // elevation: undefined,
         zIndex: '20',
       },
       // extend: undefined,
