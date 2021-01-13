@@ -119,7 +119,12 @@ var plainStyle = function plainStyle() {
   return (0, _styledComponents.css)(["outline:none;border:none;padding:0;text-align:inherit;color:inherit;> svg{vertical-align:bottom;}"]);
 };
 
-var StyledButtonKind = _styledComponents["default"].button.withConfig({
+var StyledButtonKind = _styledComponents["default"].button.attrs(function () {
+  return {
+    // don't let kind attribute leak to DOM
+    kind: undefined
+  };
+}).withConfig({
   displayName: "StyledButtonKind",
   componentId: "sc-1vhfpnt-0"
 })(["display:inline-block;box-sizing:border-box;cursor:pointer;font:inherit;text-decoration:none;margin:0;background:transparent;overflow:visible;text-transform:none;", " ", " ", " ", " ", " ", " ", " ", " &:focus{", "}", " ", " ", ""], _utils.genericStyles, function (props) {
