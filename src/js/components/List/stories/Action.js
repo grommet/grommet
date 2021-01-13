@@ -17,8 +17,7 @@ export const Action = () => (
     <Box pad="large">
       <List
         data={data.slice(0, 10)}
-        pad={{ left: 'large', right: 'small' }}
-        // pad={{ left: 'small' }}
+        pad={{ left: 'small', right: 'none' }}
         action={(item, index) => {
           return (
             <Menu

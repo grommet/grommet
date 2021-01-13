@@ -80,7 +80,7 @@ const Menu = forwardRef((props, ref) => {
   // Keeps track of whether menu options should be mirrored
   // when there's not enough space below DropButton. This state
   // is modified on /Drop/DropContainer.js.
-  const [menuMirrorReference, setMenuMirrorReference] = useState();
+  const [alignControlMirror, setAlignControlMirror] = useState();
 
   const buttonRefs = {};
   const constants = useMemo(() => {
@@ -265,7 +265,7 @@ const Menu = forwardRef((props, ref) => {
         {...rest}
         {...buttonProps}
         a11yTitle={a11yTitle || messages.openMenu || 'Open Menu'}
-        setMenuMirrorReference={setMenuMirrorReference}
+        setAlignControlMirror={setAlignControlMirror}
         disabled={disabled}
         dropAlign={align}
         dropTarget={dropTarget}
@@ -281,7 +281,7 @@ const Menu = forwardRef((props, ref) => {
             onEnter={onSelectMenuItem}
           >
             <ContainerBox background={dropBackground || theme.menu.background}>
-              {menuMirrorReference === 'top' && align.top === 'top'
+              {alignControlMirror === 'top' && align.top === 'top'
                 ? controlMirror
                 : undefined}
               <Box overflow="auto">
@@ -342,7 +342,7 @@ const Menu = forwardRef((props, ref) => {
                   );
                 })}
               </Box>
-              {menuMirrorReference === 'bottom' || align.bottom === 'bottom'
+              {alignControlMirror === 'bottom' || align.bottom === 'bottom'
                 ? controlMirror
                 : undefined}
             </ContainerBox>

@@ -37,7 +37,7 @@ const DropContainer = forwardRef(
   (
     {
       align = defaultAlign,
-      setMenuMirrorReference,
+      setAlignControlMirror,
       children,
       dropTarget,
       elevation,
@@ -63,11 +63,11 @@ const DropContainer = forwardRef(
     ]);
     const dropRef = useRef();
     useEffect(() => {
-      const updateMenuMirrorReference = () => {
+      const updateAlignControlMirror = () => {
         const styleCurrent = (ref || dropRef).current.style;
-        const sideToAlign = styleCurrent.top !== '' ? 'top' : 'bottom';
+        const alignControl = styleCurrent.top !== '' ? 'top' : 'bottom';
 
-        if (setMenuMirrorReference) setMenuMirrorReference(sideToAlign);
+        if (setAlignControlMirror) setAlignControlMirror(alignControl);
       };
 
       // We try to preserve the maxHeight as changing it causes any scroll
@@ -233,7 +233,7 @@ const DropContainer = forwardRef(
             container.style.maxHeight = `${maxHeight}px`;
           }
         }
-        updateMenuMirrorReference();
+        updateAlignControlMirror();
       };
 
       let scrollParents;
@@ -292,7 +292,7 @@ const DropContainer = forwardRef(
       };
     }, [
       align,
-      setMenuMirrorReference,
+      setAlignControlMirror,
       dropTarget,
       onClickOutside,
       portalContext,
