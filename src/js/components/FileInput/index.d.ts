@@ -3,7 +3,7 @@ import * as React from 'react';
 export interface FileInputProps {
   accept?: string;
   disabled?: boolean;
-  fileLabel?: (...args: any[]) => any;
+  fileLabel?: (...args: any[]) => void;
   id?: string;
   messages?: {
     browse?: string;
