@@ -50,6 +50,7 @@ const Message = styled(Text)`
 const FileInput = forwardRef(
   (
     {
+      aggregateThreshold = 10,
       a11yTitle,
       background,
       border,
@@ -74,8 +75,6 @@ const FileInput = forwardRef(
     const inputRef = useForwardedRef(ref);
     const controlRef = useRef();
     const RemoveIcon = theme.fileInput.icons.remove;
-    // When multiple and more than this #, don't show the files individually
-    const aggregateThreshold = 10;
 
     const mergeTheme = (propertyName, defaultKey) => {
       let result = {};

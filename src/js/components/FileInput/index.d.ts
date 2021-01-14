@@ -2,6 +2,7 @@ import * as React from 'react';
 
 export interface FileInputProps {
   accept?: string;
+  aggregateThreshold?: number;
   disabled?: boolean;
   fileLabel?: (...args: any[]) => void;
   id?: string;

@@ -17,6 +17,12 @@ export const doc = FileInput => {
     accept: PropTypes.string.description(
       'MIME type pattern to match against. For example: "image/*".',
     ),
+    aggregateThreshold: PropTypes.number
+      .description(
+        `The maximum number of individual files to show. Above this,
+      only a single message describing the number of files will be shown.`,
+      )
+      .defaultValue(10),
     disabled: PropTypes.bool
       .description('Whether the control is disabled.')
       .defaultValue(false),

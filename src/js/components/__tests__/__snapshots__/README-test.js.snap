@@ -8265,6 +8265,15 @@ MIME type pattern to match against. For example: \\"image/*\\".
 string
 \`\`\`
 
+**aggregateThreshold**
+
+The maximum number of individual files to show. Above this,
+      only a single message describing the number of files will be shown. Defaults to \`10\`.
+
+\`\`\`
+number
+\`\`\`
+
 **disabled**
 
 Whether the control is disabled.

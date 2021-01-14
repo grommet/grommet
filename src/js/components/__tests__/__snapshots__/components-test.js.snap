@@ -3549,6 +3549,13 @@ string",
         "name": "accept",
       },
       Object {
+        "defaultValue": 10,
+        "description": "The maximum number of individual files to show. Above this,
+      only a single message describing the number of files will be shown.",
+        "format": "number",
+        "name": "aggregateThreshold",
+      },
+      Object {
         "defaultValue": false,
         "description": "Whether the control is disabled.",
         "format": "boolean",
