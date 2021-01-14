@@ -29,13 +29,14 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 var Carousel = function Carousel(_ref) {
   var initialChild = _ref.initialChild,
+      onChild = _ref.onChild,
       play = _ref.play,
       children = _ref.children,
       controls = _ref.controls,
       fill = _ref.fill,
       _onFocus = _ref.onFocus,
       _onBlur = _ref.onBlur,
-      rest = _objectWithoutPropertiesLoose(_ref, ["initialChild", "play", "children", "controls", "fill", "onFocus", "onBlur"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["initialChild", "onChild", "play", "children", "controls", "fill", "onFocus", "onBlur"]);
 
   var theme = (0, _react.useContext)(_contexts.ThemeContext) || _defaultProps.defaultProps.theme;
 
@@ -77,6 +78,10 @@ var Carousel = function Carousel(_ref) {
 
     return function () {};
   }, [activeIndex, play, children, lastIndex]);
+  (0, _react.useEffect)(function () {
+    if (onChild) onChild(activeIndex);
+    return function () {}; // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeIndex]);
 
   var onRight = function onRight() {
     if (activeIndex >= lastIndex) {

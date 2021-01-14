@@ -19,6 +19,7 @@ var doc = function doc(Carousel) {
     fill: _reactDesc.PropTypes.bool.description("Whether to expand to fill\n      all of the available width and height in the parent container."),
     play: _reactDesc.PropTypes.number.description("If specified, the number of\n      milliseconds between automatically transitioning to the next child. It\n      will loop through all children indefinitely."),
     initialChild: _reactDesc.PropTypes.number.description("If specified, the index of\n      the first element to be shown. Defaults to 0."),
+    onChild: _reactDesc.PropTypes.func.description("If specified, this function will \n      be called with the active index when the currently active carousel \n      changes."),
     controls: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.bool, _reactDesc.PropTypes.oneOf(['arrows', 'selectors'])]).description("Whether to show carousel controls and which type of controls.").defaultValue(true)
   });
   return DocumentedCarousel;
