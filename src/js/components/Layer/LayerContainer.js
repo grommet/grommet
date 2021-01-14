@@ -152,6 +152,7 @@ const LayerContainer = forwardRef(
     let content = (
       <StyledContainer
         ref={ref || containerRef}
+        elevation={theme.layer.container.elevation}
         id={id}
         full={full}
         margin={margin}
@@ -197,7 +198,23 @@ const LayerContainer = forwardRef(
     }
 
     if (onEsc) {
-      content = <Keyboard onEsc={onEsc}>{content}</Keyboard>;
+      content = (
+        <Keyboard
+          onEsc={
+            onEsc
+              ? event => {
+                  // prevent further capturing or bubbling of event to other
+                  // child or parent elements
+                  event.stopPropagation();
+                  onEsc(event);
+                }
+              : undefined
+          }
+          target={modal === false ? 'document' : undefined}
+        >
+          {content}
+        </Keyboard>
+      );
     }
 
     if (theme.layer.background) {

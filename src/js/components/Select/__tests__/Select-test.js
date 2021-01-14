@@ -9,7 +9,7 @@ import 'regenerator-runtime/runtime';
 import { CaretDown, CaretUp, FormDown } from 'grommet-icons';
 import { createPortal, expectPortal } from '../../../utils/portal';
 
-import { Grommet, FormField } from '../..';
+import { Box, Grommet, FormField } from '../..';
 import { Select } from '..';
 
 describe('Select', () => {
@@ -31,6 +31,17 @@ describe('Select', () => {
   test('basic', () => {
     const component = renderer.create(
       <Select id="test-select" options={['one', 'two']} a11yTitle="Select" />,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+
+  test('dark', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Box fill background="dark-1" align="center" justify="center">
+          <Select placeholder="Select" options={['one', 'two']} />
+        </Box>
+      </Grommet>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -1054,5 +1065,74 @@ describe('Select', () => {
     );
     expect(select.value).toEqual('');
   });
+
+  test('default value', () => {
+    const { container, getByDisplayValue } = render(
+      <Grommet>
+        <Select
+          id="test-select"
+          placeholder="test select"
+          options={['one', 'two']}
+          defaultValue="two"
+        />
+      </Grommet>,
+    );
+    const select = getByDisplayValue('two');
+    expect(container.firstChild).toMatchSnapshot();
+    expect(select.value).toEqual('two');
+  });
+
+  test('default value object options', () => {
+    const { container, getByDisplayValue } = render(
+      <Grommet>
+        <Select
+          id="test-select"
+          placeholder="test select"
+          options={[
+            { label: 'one', value: 1 },
+            { label: 'two', value: 2 },
+          ]}
+          defaultValue={2}
+          labelKey="label"
+          valueKey={{ key: 'value', reduce: true }}
+        />
+      </Grommet>,
+    );
+    const select = getByDisplayValue('two');
+    expect(container.firstChild).toMatchSnapshot();
+    expect(select.value).toEqual('two');
+  });
+
+  test('default value clear', () => {
+    const Test = () => {
+      const [value] = React.useState();
+      return (
+        <Select
+          id="test-select"
+          placeholder="test select"
+          defaultValue="two"
+          value={value}
+          options={['one', 'two']}
+          clear
+        />
+      );
+    };
+    const { getByDisplayValue } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    const select = getByDisplayValue('two');
+    fireEvent.click(select);
+    expectPortal('test-select__drop').toMatchSnapshot();
+
+    fireEvent.click(
+      document
+        .getElementById('test-select__drop')
+        .querySelectorAll('button')[0],
+    );
+    expect(select.value).toEqual('');
+  });
+
   window.scrollTo.mockRestore();
 });

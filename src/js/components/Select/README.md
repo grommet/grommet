@@ -159,6 +159,22 @@ Wether to close the drop when a selection is made. Defaults to `true`.
 boolean
 ```
 
+**defaultValue**
+
+Initially selected value. This can be an array
+      when multiple.
+
+```
+string
+object
+number
+[
+  string
+  object
+  number
+]
+```
+
 **disabled**
 
 Whether the entire select or individual options should be disabled.

@@ -4,7 +4,7 @@ import { CaretDown } from 'grommet-icons';
 import { Box, Grommet, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-export const Custom = () => {
+export const ValueLabel = () => {
   const options = ['one', 'two'];
   const [value, setValue] = useState('');
 
