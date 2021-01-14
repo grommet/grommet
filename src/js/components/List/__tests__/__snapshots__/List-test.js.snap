@@ -2109,8 +2109,8 @@ exports[`List events should apply pagination styling 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #000000;
-  stroke: #000000;
+  fill: #666666;
+  stroke: #666666;
 }
 
 .c12 g {
@@ -2132,6 +2132,40 @@ exports[`List events should apply pagination styling 1`] = `
 .c12 *[FILL-RULE],
 .c12 *[fill*="#"],
 .c12 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c17 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #000000;
+  stroke: #000000;
+}
+
+.c17 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c17 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c17 *[stroke*="#"],
+.c17 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c17 *[fill-rule],
+.c17 *[FILL-RULE],
+.c17 *[fill*="#"],
+.c17 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -2297,8 +2331,6 @@ exports[`List events should apply pagination styling 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
-  opacity: 0.3;
   text-align: center;
   opacity: 0.3;
   cursor: default;
@@ -2358,8 +2390,8 @@ exports[`List events should apply pagination styling 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
-  background: #33333310;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -2466,7 +2498,6 @@ exports[`List events should apply pagination styling 1`] = `
 .c11 {
   padding: 4px;
   border-radius: 4px;
-  border-width: 0;
 }
 
 .c9 {
@@ -2644,7 +2675,7 @@ exports[`List events should apply pagination styling 1`] = `
             aria-label="Go to previous page"
             class="c10 c11"
             disabled=""
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -2672,7 +2703,7 @@ exports[`List events should apply pagination styling 1`] = `
             aria-current="page"
             aria-label="Go to page 1"
             class="c14 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             1
@@ -2687,7 +2718,7 @@ exports[`List events should apply pagination styling 1`] = `
           <button
             aria-label="Go to page 2"
             class="c15 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             2
@@ -2702,7 +2733,7 @@ exports[`List events should apply pagination styling 1`] = `
           <button
             aria-label="Go to page 3"
             class="c15 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             3
@@ -2717,7 +2748,7 @@ exports[`List events should apply pagination styling 1`] = `
           <button
             aria-label="Go to page 4"
             class="c15 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             4
@@ -2732,7 +2763,7 @@ exports[`List events should apply pagination styling 1`] = `
           <button
             aria-label="Go to page 5"
             class="c15 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             5
@@ -2759,7 +2790,7 @@ exports[`List events should apply pagination styling 1`] = `
           <button
             aria-label="Go to page 10"
             class="c15 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             10
@@ -2774,12 +2805,12 @@ exports[`List events should apply pagination styling 1`] = `
           <button
             aria-label="Go to next page"
             class="c15 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
               aria-label="Next"
-              class="c12"
+              class="c17"
               viewBox="0 0 24 24"
             >
               <polyline
@@ -2805,8 +2836,8 @@ exports[`List events should paginate 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #000000;
-  stroke: #000000;
+  fill: #666666;
+  stroke: #666666;
 }
 
 .c12 g {
@@ -2828,6 +2859,40 @@ exports[`List events should paginate 1`] = `
 .c12 *[FILL-RULE],
 .c12 *[fill*="#"],
 .c12 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c17 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #000000;
+  stroke: #000000;
+}
+
+.c17 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c17 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c17 *[stroke*="#"],
+.c17 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c17 *[fill-rule],
+.c17 *[FILL-RULE],
+.c17 *[fill*="#"],
+.c17 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -2991,8 +3056,6 @@ exports[`List events should paginate 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
-  opacity: 0.3;
   text-align: center;
   opacity: 0.3;
   cursor: default;
@@ -3052,8 +3115,8 @@ exports[`List events should paginate 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
-  background: #33333310;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -3160,7 +3223,6 @@ exports[`List events should paginate 1`] = `
 .c11 {
   padding: 4px;
   border-radius: 4px;
-  border-width: 0;
 }
 
 .c9 {
@@ -3332,7 +3394,7 @@ exports[`List events should paginate 1`] = `
             aria-label="Go to previous page"
             class="c10 c11"
             disabled=""
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -3360,7 +3422,7 @@ exports[`List events should paginate 1`] = `
             aria-current="page"
             aria-label="Go to page 1"
             class="c14 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             1
@@ -3375,7 +3437,7 @@ exports[`List events should paginate 1`] = `
           <button
             aria-label="Go to page 2"
             class="c15 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             2
@@ -3390,7 +3452,7 @@ exports[`List events should paginate 1`] = `
           <button
             aria-label="Go to page 3"
             class="c15 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             3
@@ -3405,7 +3467,7 @@ exports[`List events should paginate 1`] = `
           <button
             aria-label="Go to page 4"
             class="c15 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             4
@@ -3420,7 +3482,7 @@ exports[`List events should paginate 1`] = `
           <button
             aria-label="Go to page 5"
             class="c15 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             5
@@ -3447,7 +3509,7 @@ exports[`List events should paginate 1`] = `
           <button
             aria-label="Go to page 10"
             class="c15 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             10
@@ -3462,12 +3524,12 @@ exports[`List events should paginate 1`] = `
           <button
             aria-label="Go to next page"
             class="c15 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
               aria-label="Next"
-              class="c12"
+              class="c17"
               viewBox="0 0 24 24"
             >
               <polyline
@@ -3493,8 +3555,8 @@ exports[`List events should render correct num items per page (step) 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #000000;
-  stroke: #000000;
+  fill: #666666;
+  stroke: #666666;
 }
 
 .c12 g {
@@ -3516,6 +3578,40 @@ exports[`List events should render correct num items per page (step) 1`] = `
 .c12 *[FILL-RULE],
 .c12 *[fill*="#"],
 .c12 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c16 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #000000;
+  stroke: #000000;
+}
+
+.c16 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c16 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c16 *[stroke*="#"],
+.c16 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c16 *[fill-rule],
+.c16 *[FILL-RULE],
+.c16 *[fill*="#"],
+.c16 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -3673,8 +3769,6 @@ exports[`List events should render correct num items per page (step) 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
-  opacity: 0.3;
   text-align: center;
   opacity: 0.3;
   cursor: default;
@@ -3734,8 +3828,8 @@ exports[`List events should render correct num items per page (step) 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
-  background: #33333310;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -3842,7 +3936,6 @@ exports[`List events should render correct num items per page (step) 1`] = `
 .c11 {
   padding: 4px;
   border-radius: 4px;
-  border-width: 0;
 }
 
 .c9 {
@@ -4034,7 +4127,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
             aria-label="Go to previous page"
             class="c10 c11"
             disabled=""
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -4062,7 +4155,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
             aria-current="page"
             aria-label="Go to page 1"
             class="c14 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             1
@@ -4077,7 +4170,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
           <button
             aria-label="Go to page 2"
             class="c15 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             2
@@ -4092,7 +4185,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
           <button
             aria-label="Go to page 3"
             class="c15 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             3
@@ -4107,7 +4200,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
           <button
             aria-label="Go to page 4"
             class="c15 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             4
@@ -4122,7 +4215,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
           <button
             aria-label="Go to page 5"
             class="c15 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             5
@@ -4137,7 +4230,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
           <button
             aria-label="Go to page 6"
             class="c15 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             6
@@ -4152,7 +4245,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
           <button
             aria-label="Go to page 7"
             class="c15 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             7
@@ -4167,12 +4260,12 @@ exports[`List events should render correct num items per page (step) 1`] = `
           <button
             aria-label="Go to next page"
             class="c15 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
               aria-label="Next"
-              class="c12"
+              class="c16"
               viewBox="0 0 24 24"
             >
               <polyline
@@ -4198,8 +4291,8 @@ exports[`List events should render new data when page changes 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #000000;
-  stroke: #000000;
+  fill: #666666;
+  stroke: #666666;
 }
 
 .c12 g {
@@ -4221,6 +4314,40 @@ exports[`List events should render new data when page changes 1`] = `
 .c12 *[FILL-RULE],
 .c12 *[fill*="#"],
 .c12 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c17 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #000000;
+  stroke: #000000;
+}
+
+.c17 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c17 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c17 *[stroke*="#"],
+.c17 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c17 *[fill-rule],
+.c17 *[FILL-RULE],
+.c17 *[fill*="#"],
+.c17 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -4384,8 +4511,6 @@ exports[`List events should render new data when page changes 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
-  opacity: 0.3;
   text-align: center;
   opacity: 0.3;
   cursor: default;
@@ -4445,8 +4570,8 @@ exports[`List events should render new data when page changes 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
-  background: #33333310;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -4553,7 +4678,6 @@ exports[`List events should render new data when page changes 1`] = `
 .c11 {
   padding: 4px;
   border-radius: 4px;
-  border-width: 0;
 }
 
 .c9 {
@@ -4725,7 +4849,7 @@ exports[`List events should render new data when page changes 1`] = `
             aria-label="Go to previous page"
             class="c10 c11"
             disabled=""
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -4753,7 +4877,7 @@ exports[`List events should render new data when page changes 1`] = `
             aria-current="page"
             aria-label="Go to page 1"
             class="c14 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             1
@@ -4768,7 +4892,7 @@ exports[`List events should render new data when page changes 1`] = `
           <button
             aria-label="Go to page 2"
             class="c15 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             2
@@ -4783,7 +4907,7 @@ exports[`List events should render new data when page changes 1`] = `
           <button
             aria-label="Go to page 3"
             class="c15 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             3
@@ -4798,7 +4922,7 @@ exports[`List events should render new data when page changes 1`] = `
           <button
             aria-label="Go to page 4"
             class="c15 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             4
@@ -4813,7 +4937,7 @@ exports[`List events should render new data when page changes 1`] = `
           <button
             aria-label="Go to page 5"
             class="c15 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             5
@@ -4840,7 +4964,7 @@ exports[`List events should render new data when page changes 1`] = `
           <button
             aria-label="Go to page 10"
             class="c15 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             10
@@ -4855,12 +4979,12 @@ exports[`List events should render new data when page changes 1`] = `
           <button
             aria-label="Go to next page"
             class="c15 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
               aria-label="Next"
-              class="c12"
+              class="c17"
               viewBox="0 0 24 24"
             >
               <polyline
@@ -4958,8 +5082,8 @@ exports[`List events should render new data when page changes 2`] = `
         >
           <button
             aria-label="Go to previous page"
-            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cLIEIn"
-            kind="pagination"
+            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 khwAB"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -4985,8 +5109,8 @@ exports[`List events should render new data when page changes 2`] = `
         >
           <button
             aria-label="Go to page 1"
-            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cLIEIn"
-            kind="pagination"
+            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 khwAB"
+            kind="[object Object]"
             type="button"
           >
             1
@@ -5001,8 +5125,8 @@ exports[`List events should render new data when page changes 2`] = `
           <button
             aria-current="page"
             aria-label="Go to page 2"
-            class="StyledButtonKind-sc-1vhfpnt-0 fwVZOK StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cLIEIn"
-            kind="pagination"
+            class="StyledButtonKind-sc-1vhfpnt-0 jrRdnJ StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 khwAB"
+            kind="[object Object]"
             type="button"
           >
             2
@@ -5016,8 +5140,8 @@ exports[`List events should render new data when page changes 2`] = `
         >
           <button
             aria-label="Go to page 3"
-            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cLIEIn"
-            kind="pagination"
+            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 khwAB"
+            kind="[object Object]"
             type="button"
           >
             3
@@ -5031,8 +5155,8 @@ exports[`List events should render new data when page changes 2`] = `
         >
           <button
             aria-label="Go to page 4"
-            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cLIEIn"
-            kind="pagination"
+            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 khwAB"
+            kind="[object Object]"
             type="button"
           >
             4
@@ -5046,8 +5170,8 @@ exports[`List events should render new data when page changes 2`] = `
         >
           <button
             aria-label="Go to page 5"
-            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cLIEIn"
-            kind="pagination"
+            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 khwAB"
+            kind="[object Object]"
             type="button"
           >
             5
@@ -5073,8 +5197,8 @@ exports[`List events should render new data when page changes 2`] = `
         >
           <button
             aria-label="Go to page 10"
-            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cLIEIn"
-            kind="pagination"
+            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 khwAB"
+            kind="[object Object]"
             type="button"
           >
             10
@@ -5088,8 +5212,8 @@ exports[`List events should render new data when page changes 2`] = `
         >
           <button
             aria-label="Go to next page"
-            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cLIEIn"
-            kind="pagination"
+            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 khwAB"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -5368,8 +5492,8 @@ exports[`List events should show correct item index when "show" is a number 1`] 
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
-  background: #33333310;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -5416,7 +5540,6 @@ exports[`List events should show correct item index when "show" is a number 1`] 
 .c11 {
   padding: 4px;
   border-radius: 4px;
-  border-width: 0;
 }
 
 .c9 {
@@ -5586,7 +5709,7 @@ exports[`List events should show correct item index when "show" is a number 1`] 
           <button
             aria-label="Go to previous page"
             class="c10 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -5613,7 +5736,7 @@ exports[`List events should show correct item index when "show" is a number 1`] 
           <button
             aria-label="Go to page 1"
             class="c10 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             1
@@ -5629,7 +5752,7 @@ exports[`List events should show correct item index when "show" is a number 1`] 
             aria-current="page"
             aria-label="Go to page 2"
             class="c14 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             2
@@ -5644,7 +5767,7 @@ exports[`List events should show correct item index when "show" is a number 1`] 
           <button
             aria-label="Go to page 3"
             class="c10 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             3
@@ -5659,7 +5782,7 @@ exports[`List events should show correct item index when "show" is a number 1`] 
           <button
             aria-label="Go to page 4"
             class="c10 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             4
@@ -5674,7 +5797,7 @@ exports[`List events should show correct item index when "show" is a number 1`] 
           <button
             aria-label="Go to page 5"
             class="c10 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             5
@@ -5701,7 +5824,7 @@ exports[`List events should show correct item index when "show" is a number 1`] 
           <button
             aria-label="Go to page 10"
             class="c10 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             10
@@ -5716,7 +5839,7 @@ exports[`List events should show correct item index when "show" is a number 1`] 
           <button
             aria-label="Go to next page"
             class="c10 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -5995,8 +6118,8 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
-  background: #33333310;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -6043,7 +6166,6 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
 .c11 {
   padding: 4px;
   border-radius: 4px;
-  border-width: 0;
 }
 
 .c9 {
@@ -6213,7 +6335,7 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
           <button
             aria-label="Go to previous page"
             class="c10 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -6240,7 +6362,7 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
           <button
             aria-label="Go to page 1"
             class="c10 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             1
@@ -6255,7 +6377,7 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
           <button
             aria-label="Go to page 2"
             class="c10 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             2
@@ -6271,7 +6393,7 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
             aria-current="page"
             aria-label="Go to page 3"
             class="c14 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             3
@@ -6286,7 +6408,7 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
           <button
             aria-label="Go to page 4"
             class="c10 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             4
@@ -6301,7 +6423,7 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
           <button
             aria-label="Go to page 5"
             class="c10 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             5
@@ -6328,7 +6450,7 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
           <button
             aria-label="Go to page 10"
             class="c10 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             10
@@ -6343,7 +6465,7 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
           <button
             aria-label="Go to next page"
             class="c10 c11"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg

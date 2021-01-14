@@ -470,10 +470,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   },
       //   extend: undefined,
       // },
-      pagination: {
-        color: 'text-strong',
-        border: undefined,
-      },
       active: {
         background: 'active-background',
         //   border: undefined,
@@ -493,21 +489,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //   primary: {},
         //   secondary: {},
       },
-      hover: {
-        pagination: {
-          background: {
-            color: 'background-contrast',
-          },
-          color: undefined,
-        },
-        // background: undefined,
-        // border: undefined,
-        // color: undefined,
-        // extend: undefined,
-        // default: {},
-        // primary: {},
-        // secondary: {},
-      },
+      // hover: {
+      //   background: undefined,
+      //   border: undefined,
+      //   color: undefined,
+      //   extend: undefined,
+      //   default: {},
+      //   primary: {},
+      //   secondary: {},
+      // },
       padding: {
         vertical: `${baseSpacing / 4 - borderWidth}px`,
         horizontal: `${baseSpacing - borderWidth}px`,
@@ -964,6 +954,20 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   // any box props,
       //   // extend: undefined,
       // },
+      button: {
+        color: 'text-strong',
+        active: {
+          background: {
+            color: 'active-background',
+          },
+        },
+        hover: {
+          background: {
+            color: 'background-contrast',
+          },
+          color: undefined,
+        },
+      },
       // control: {
       //   // extend: undefined,
       //   size: {

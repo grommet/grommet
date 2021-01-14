@@ -69,11 +69,15 @@ const basicStyle = props => css`
 `;
 
 // build up CSS from basic to specific based on the supplied sub-object paths
-const kindStyle = ({ colorValue, themePaths, theme }) => {
+const kindStyle = ({ colorValue, kind, themePaths, theme }) => {
   const styles = [];
 
+  // caller has specified a themeObj to use for styling
+  // relevant for cases like pagination which looks to theme.pagination.button
+  const themeObj = typeof kind === 'object' ? kind : undefined;
+
   themePaths.base.forEach(themePath => {
-    let obj = theme.button;
+    let obj = themeObj || theme.button;
     if (themePath) {
       const parts = themePath.split('.');
       while (obj && parts.length) obj = obj[parts.shift()];
@@ -83,8 +87,16 @@ const kindStyle = ({ colorValue, themePaths, theme }) => {
     }
   });
 
+  // do the styling from the root of the object if caller passes one
+  if (!themePaths.base.length && themeObj) {
+    const obj = themeObj;
+    if (obj) {
+      styles.push(kindPartStyles(obj, theme, colorValue));
+    }
+  }
+
   themePaths.hover.forEach(themePath => {
-    let obj = theme.button;
+    let obj = themeObj || theme.button;
     if (themePath) {
       const parts = themePath.split('.');
       while (obj && parts.length) obj = obj[parts.shift()];

@@ -45,13 +45,15 @@ import { StyledButtonKind } from './StyledButtonKind';
 // and backgroundStyle() will do for the label.
 // The paths are ordered from basic to specific. Go through them
 // specific to base until we find one that has a color and use that.
-const getIconColor = (paths = [], theme, colorProp) => {
+const getIconColor = (paths = [], theme, colorProp, kind) => {
   let result = [];
   let index = paths.length - 1;
+  // caller has specified a themeObj to use for styling
+  // relevant for cases like pagination which looks to theme.pagination.button
+  if (typeof kind === 'object') index = 0;
   // stop when we have a color or no more paths
   while (index >= 0 && !result[1]) {
-    let obj = theme.button;
-
+    let obj = (typeof kind === 'object' && kind) || theme.button;
     // find the sub-object under the button them that corresponds with this path
     // for example: 'active.primary'
     if (paths[index]) {
@@ -134,16 +136,20 @@ const Button = forwardRef(
       );
     }
 
+    // kindArg is object if we are referencing a theme object
+    // outside of theme.button
+    const kindObj = typeof kindArg === 'object';
+
     // if the theme has button.default, what kind of Button is this
     const kind = useMemo(() => {
-      if (theme.button.default || (kindArg && kindArg in theme.button)) {
+      if (theme.button.default || kindObj) {
         if (kindArg) return kindArg;
         if (primary) return 'primary';
         if (secondary) return 'secondary';
         return 'default';
       }
       return undefined; // pre-default, no kind
-    }, [kindArg, primary, secondary, theme.button]);
+    }, [kindArg, kindObj, primary, secondary, theme]);
 
     // When we have a kind and are not plain, themePaths stores the relative
     // paths within the theme for the current kind and state of the button.
@@ -152,30 +158,30 @@ const Button = forwardRef(
     const themePaths = useMemo(() => {
       if (!kind || plain) return undefined;
       const result = { base: [], hover: [] };
-      result.base.push(kind);
+      if (!kindObj) result.base.push(kind);
       if (selected) {
         result.base.push('selected');
-        if (kind) result.base.push(`selected.${kind}`);
+        if (!kindObj) result.base.push(`selected.${kind}`);
       }
       if (disabled) {
         result.base.push('disabled');
-        if (kind) result.base.push(`disabled.${kind}`);
+        if (!kindObj) result.base.push(`disabled.${kind}`);
       } else {
         if (active) {
           result.base.push('active');
-          if (kind) result.base.push(`active.${kind}`);
+          if (!kindObj) result.base.push(`active.${kind}`);
         }
         result.hover.push('hover');
-        if (kind) result.hover.push(`hover.${kind}`);
+        if (!kindObj) result.hover.push(`hover.${kind}`);
         if (active) {
           result.hover.push(`hover.active`);
-          if (kind) {
+          if (!kindObj) {
             result.hover.push(`hover.active.${kind}`);
           }
         }
       }
       return result;
-    }, [active, disabled, kind, plain, selected]);
+    }, [active, disabled, kind, kindObj, plain, selected]);
 
     // only used when theme does not have button.default
     const isDarkBackground = () => {
@@ -215,7 +221,7 @@ const Button = forwardRef(
           // match what the label will use
           const iconColor =
             (hover && getIconColor(themePaths.hover, theme)) ||
-            getIconColor(themePaths.base, theme, color);
+            getIconColor(themePaths.base, theme, color, kind);
           if (iconColor) buttonIcon = cloneElement(icon, { color: iconColor });
         }
       } else if (primary) {

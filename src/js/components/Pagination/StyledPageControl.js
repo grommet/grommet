@@ -32,7 +32,6 @@ const sizeStyle = props => {
 export const StyledPaginationButton = styled(Button)`
   padding: 4px;
   border-radius: 4px;
-  border-width: 0;
   ${props => sizeStyle(props).content};
 `;
 

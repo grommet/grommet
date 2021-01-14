@@ -131,8 +131,8 @@ exports[`Pagination should allow user to control page via state with page +
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
-  background: #33333310;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -239,7 +239,6 @@ exports[`Pagination should allow user to control page via state with page +
 .c6 {
   padding: 4px;
   border-radius: 4px;
-  border-width: 0;
 }
 
 .c4 {
@@ -297,7 +296,7 @@ exports[`Pagination should allow user to control page via state with page +
           <button
             aria-label="Go to previous page"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -324,7 +323,7 @@ exports[`Pagination should allow user to control page via state with page +
           <button
             aria-label="Go to page 1"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             1
@@ -340,7 +339,7 @@ exports[`Pagination should allow user to control page via state with page +
             aria-current="page"
             aria-label="Go to page 2"
             class="c9 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             2
@@ -355,7 +354,7 @@ exports[`Pagination should allow user to control page via state with page +
           <button
             aria-label="Go to page 3"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             3
@@ -370,7 +369,7 @@ exports[`Pagination should allow user to control page via state with page +
           <button
             aria-label="Go to page 4"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             4
@@ -385,7 +384,7 @@ exports[`Pagination should allow user to control page via state with page +
           <button
             aria-label="Go to page 5"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             5
@@ -412,7 +411,7 @@ exports[`Pagination should allow user to control page via state with page +
           <button
             aria-label="Go to page 24"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             24
@@ -427,7 +426,7 @@ exports[`Pagination should allow user to control page via state with page +
           <button
             aria-label="Go to next page"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -458,8 +457,8 @@ exports[`Pagination should apply custom theme 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #000000;
-  stroke: #000000;
+  fill: #666666;
+  stroke: #666666;
 }
 
 .c8 g {
@@ -481,6 +480,40 @@ exports[`Pagination should apply custom theme 1`] = `
 .c8 *[FILL-RULE],
 .c8 *[fill*="#"],
 .c8 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c13 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #000000;
+  stroke: #000000;
+}
+
+.c13 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c13 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c13 *[stroke*="#"],
+.c13 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c13 *[fill-rule],
+.c13 *[FILL-RULE],
+.c13 *[fill*="#"],
+.c13 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -578,8 +611,6 @@ exports[`Pagination should apply custom theme 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
-  opacity: 0.3;
   text-align: center;
   opacity: 0.3;
   cursor: default;
@@ -639,8 +670,8 @@ exports[`Pagination should apply custom theme 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
-  background: #33333310;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -747,7 +778,6 @@ exports[`Pagination should apply custom theme 1`] = `
 .c7 {
   padding: 4px;
   border-radius: 4px;
-  border-width: 0;
 }
 
 .c5 {
@@ -811,7 +841,7 @@ exports[`Pagination should apply custom theme 1`] = `
             aria-label="Go to previous page"
             class="c6 c7"
             disabled=""
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -839,7 +869,7 @@ exports[`Pagination should apply custom theme 1`] = `
             aria-current="page"
             aria-label="Go to page 1"
             class="c10 c7"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             1
@@ -854,7 +884,7 @@ exports[`Pagination should apply custom theme 1`] = `
           <button
             aria-label="Go to page 2"
             class="c11 c7"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             2
@@ -869,7 +899,7 @@ exports[`Pagination should apply custom theme 1`] = `
           <button
             aria-label="Go to page 3"
             class="c11 c7"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             3
@@ -884,7 +914,7 @@ exports[`Pagination should apply custom theme 1`] = `
           <button
             aria-label="Go to page 4"
             class="c11 c7"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             4
@@ -899,7 +929,7 @@ exports[`Pagination should apply custom theme 1`] = `
           <button
             aria-label="Go to page 5"
             class="c11 c7"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             5
@@ -926,7 +956,7 @@ exports[`Pagination should apply custom theme 1`] = `
           <button
             aria-label="Go to page 24"
             class="c11 c7"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             24
@@ -941,12 +971,12 @@ exports[`Pagination should apply custom theme 1`] = `
           <button
             aria-label="Go to next page"
             class="c11 c7"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
               aria-label="Next"
-              class="c8"
+              class="c13"
               viewBox="0 0 24 24"
             >
               <polyline
@@ -995,6 +1025,40 @@ exports[`Pagination should disable next button if on last page 1`] = `
 .c7 *[FILL-RULE],
 .c7 *[fill*="#"],
 .c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c12 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c12 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c12 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c12 *[stroke*="#"],
+.c12 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c12 *[fill-rule],
+.c12 *[FILL-RULE],
+.c12 *[fill*="#"],
+.c12 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -1154,8 +1218,8 @@ exports[`Pagination should disable next button if on last page 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
-  background: #33333310;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -1215,8 +1279,6 @@ exports[`Pagination should disable next button if on last page 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
-  opacity: 0.3;
   text-align: center;
   opacity: 0.3;
   cursor: default;
@@ -1261,7 +1323,6 @@ exports[`Pagination should disable next button if on last page 1`] = `
 .c6 {
   padding: 4px;
   border-radius: 4px;
-  border-width: 0;
 }
 
 .c4 {
@@ -1319,7 +1380,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
           <button
             aria-label="Go to previous page"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -1346,7 +1407,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
           <button
             aria-label="Go to page 1"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             1
@@ -1373,7 +1434,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
           <button
             aria-label="Go to page 20"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             20
@@ -1388,7 +1449,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
           <button
             aria-label="Go to page 21"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             21
@@ -1403,7 +1464,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
           <button
             aria-label="Go to page 22"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             22
@@ -1418,7 +1479,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
           <button
             aria-label="Go to page 23"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             23
@@ -1434,7 +1495,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
             aria-current="page"
             aria-label="Go to page 24"
             class="c10 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             24
@@ -1451,12 +1512,12 @@ exports[`Pagination should disable next button if on last page 1`] = `
             aria-label="Go to next page"
             class="c11 c6"
             disabled=""
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
               aria-label="Next"
-              class="c7"
+              class="c12"
               viewBox="0 0 24 24"
             >
               <polyline
@@ -1483,8 +1544,8 @@ exports[`Pagination should disable previous and next controls when numItems
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #000000;
-  stroke: #000000;
+  fill: #666666;
+  stroke: #666666;
 }
 
 .c7 g {
@@ -1597,8 +1658,6 @@ exports[`Pagination should disable previous and next controls when numItems
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
-  opacity: 0.3;
   text-align: center;
   opacity: 0.3;
   cursor: default;
@@ -1658,8 +1717,8 @@ exports[`Pagination should disable previous and next controls when numItems
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
-  background: #33333310;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -1706,7 +1765,6 @@ exports[`Pagination should disable previous and next controls when numItems
 .c6 {
   padding: 4px;
   border-radius: 4px;
-  border-width: 0;
 }
 
 .c4 {
@@ -1766,7 +1824,7 @@ exports[`Pagination should disable previous and next controls when numItems
             aria-label="Go to previous page"
             class="c5 c6"
             disabled=""
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -1794,7 +1852,7 @@ exports[`Pagination should disable previous and next controls when numItems
             aria-current="page"
             aria-label="Go to page 1"
             class="c9 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             1
@@ -1811,7 +1869,7 @@ exports[`Pagination should disable previous and next controls when numItems
             aria-label="Go to next page"
             class="c5 c6"
             disabled=""
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -1843,8 +1901,8 @@ exports[`Pagination should disable previous and next controls when numItems
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #000000;
-  stroke: #000000;
+  fill: #666666;
+  stroke: #666666;
 }
 
 .c7 g {
@@ -1957,8 +2015,6 @@ exports[`Pagination should disable previous and next controls when numItems
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
-  opacity: 0.3;
   text-align: center;
   opacity: 0.3;
   cursor: default;
@@ -2003,7 +2059,6 @@ exports[`Pagination should disable previous and next controls when numItems
 .c6 {
   padding: 4px;
   border-radius: 4px;
-  border-width: 0;
 }
 
 .c4 {
@@ -2063,7 +2118,7 @@ exports[`Pagination should disable previous and next controls when numItems
             aria-label="Go to previous page"
             class="c5 c6"
             disabled=""
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -2091,7 +2146,7 @@ exports[`Pagination should disable previous and next controls when numItems
             aria-label="Go to next page"
             class="c5 c6"
             disabled=""
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -2123,8 +2178,8 @@ exports[`Pagination should disable previous and next controls when numItems
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #000000;
-  stroke: #000000;
+  fill: #666666;
+  stroke: #666666;
 }
 
 .c7 g {
@@ -2237,8 +2292,6 @@ exports[`Pagination should disable previous and next controls when numItems
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
-  opacity: 0.3;
   text-align: center;
   opacity: 0.3;
   cursor: default;
@@ -2298,8 +2351,8 @@ exports[`Pagination should disable previous and next controls when numItems
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
-  background: #33333310;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -2346,7 +2399,6 @@ exports[`Pagination should disable previous and next controls when numItems
 .c6 {
   padding: 4px;
   border-radius: 4px;
-  border-width: 0;
 }
 
 .c4 {
@@ -2406,7 +2458,7 @@ exports[`Pagination should disable previous and next controls when numItems
             aria-label="Go to previous page"
             class="c5 c6"
             disabled=""
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -2434,7 +2486,7 @@ exports[`Pagination should disable previous and next controls when numItems
             aria-current="page"
             aria-label="Go to page 1"
             class="c9 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             1
@@ -2451,7 +2503,7 @@ exports[`Pagination should disable previous and next controls when numItems
             aria-label="Go to next page"
             class="c5 c6"
             disabled=""
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -2482,8 +2534,8 @@ exports[`Pagination should disable previous button if on first page 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #000000;
-  stroke: #000000;
+  fill: #666666;
+  stroke: #666666;
 }
 
 .c7 g {
@@ -2505,6 +2557,40 @@ exports[`Pagination should disable previous button if on first page 1`] = `
 .c7 *[FILL-RULE],
 .c7 *[fill*="#"],
 .c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c12 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #000000;
+  stroke: #000000;
+}
+
+.c12 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c12 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c12 *[stroke*="#"],
+.c12 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c12 *[fill-rule],
+.c12 *[FILL-RULE],
+.c12 *[fill*="#"],
+.c12 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -2602,8 +2688,6 @@ exports[`Pagination should disable previous button if on first page 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
-  opacity: 0.3;
   text-align: center;
   opacity: 0.3;
   cursor: default;
@@ -2663,8 +2747,8 @@ exports[`Pagination should disable previous button if on first page 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
-  background: #33333310;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -2771,7 +2855,6 @@ exports[`Pagination should disable previous button if on first page 1`] = `
 .c6 {
   padding: 4px;
   border-radius: 4px;
-  border-width: 0;
 }
 
 .c4 {
@@ -2831,7 +2914,7 @@ exports[`Pagination should disable previous button if on first page 1`] = `
             aria-label="Go to previous page"
             class="c5 c6"
             disabled=""
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -2859,7 +2942,7 @@ exports[`Pagination should disable previous button if on first page 1`] = `
             aria-current="page"
             aria-label="Go to page 1"
             class="c9 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             1
@@ -2874,7 +2957,7 @@ exports[`Pagination should disable previous button if on first page 1`] = `
           <button
             aria-label="Go to page 2"
             class="c10 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             2
@@ -2889,7 +2972,7 @@ exports[`Pagination should disable previous button if on first page 1`] = `
           <button
             aria-label="Go to page 3"
             class="c10 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             3
@@ -2904,7 +2987,7 @@ exports[`Pagination should disable previous button if on first page 1`] = `
           <button
             aria-label="Go to page 4"
             class="c10 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             4
@@ -2919,7 +3002,7 @@ exports[`Pagination should disable previous button if on first page 1`] = `
           <button
             aria-label="Go to page 5"
             class="c10 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             5
@@ -2946,7 +3029,7 @@ exports[`Pagination should disable previous button if on first page 1`] = `
           <button
             aria-label="Go to page 24"
             class="c10 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             24
@@ -2961,12 +3044,12 @@ exports[`Pagination should disable previous button if on first page 1`] = `
           <button
             aria-label="Go to next page"
             class="c10 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
               aria-label="Next"
-              class="c7"
+              class="c12"
               viewBox="0 0 24 24"
             >
               <polyline
@@ -3115,8 +3198,8 @@ exports[`Pagination should display next page of results when "next" is
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
-  background: #33333310;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -3223,7 +3306,6 @@ exports[`Pagination should display next page of results when "next" is
 .c6 {
   padding: 4px;
   border-radius: 4px;
-  border-width: 0;
 }
 
 .c4 {
@@ -3281,7 +3363,7 @@ exports[`Pagination should display next page of results when "next" is
           <button
             aria-label="Go to previous page"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -3308,7 +3390,7 @@ exports[`Pagination should display next page of results when "next" is
           <button
             aria-label="Go to page 1"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             1
@@ -3324,7 +3406,7 @@ exports[`Pagination should display next page of results when "next" is
             aria-current="page"
             aria-label="Go to page 2"
             class="c9 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             2
@@ -3339,7 +3421,7 @@ exports[`Pagination should display next page of results when "next" is
           <button
             aria-label="Go to page 3"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             3
@@ -3354,7 +3436,7 @@ exports[`Pagination should display next page of results when "next" is
           <button
             aria-label="Go to page 4"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             4
@@ -3369,7 +3451,7 @@ exports[`Pagination should display next page of results when "next" is
           <button
             aria-label="Go to page 5"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             5
@@ -3396,7 +3478,7 @@ exports[`Pagination should display next page of results when "next" is
           <button
             aria-label="Go to page 24"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             24
@@ -3411,7 +3493,7 @@ exports[`Pagination should display next page of results when "next" is
           <button
             aria-label="Go to next page"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -3454,8 +3536,8 @@ exports[`Pagination should display next page of results when "next" is
         >
           <button
             aria-label="Go to previous page"
-            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cLIEIn"
-            kind="pagination"
+            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 khwAB"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -3481,8 +3563,8 @@ exports[`Pagination should display next page of results when "next" is
         >
           <button
             aria-label="Go to page 1"
-            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cLIEIn"
-            kind="pagination"
+            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 khwAB"
+            kind="[object Object]"
             type="button"
           >
             1
@@ -3497,8 +3579,8 @@ exports[`Pagination should display next page of results when "next" is
           <button
             aria-current="page"
             aria-label="Go to page 2"
-            class="StyledButtonKind-sc-1vhfpnt-0 fwVZOK StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cLIEIn"
-            kind="pagination"
+            class="StyledButtonKind-sc-1vhfpnt-0 jrRdnJ StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 khwAB"
+            kind="[object Object]"
             type="button"
           >
             2
@@ -3512,8 +3594,8 @@ exports[`Pagination should display next page of results when "next" is
         >
           <button
             aria-label="Go to page 3"
-            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cLIEIn"
-            kind="pagination"
+            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 khwAB"
+            kind="[object Object]"
             type="button"
           >
             3
@@ -3527,8 +3609,8 @@ exports[`Pagination should display next page of results when "next" is
         >
           <button
             aria-label="Go to page 4"
-            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cLIEIn"
-            kind="pagination"
+            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 khwAB"
+            kind="[object Object]"
             type="button"
           >
             4
@@ -3542,8 +3624,8 @@ exports[`Pagination should display next page of results when "next" is
         >
           <button
             aria-label="Go to page 5"
-            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cLIEIn"
-            kind="pagination"
+            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 khwAB"
+            kind="[object Object]"
             type="button"
           >
             5
@@ -3569,8 +3651,8 @@ exports[`Pagination should display next page of results when "next" is
         >
           <button
             aria-label="Go to page 24"
-            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cLIEIn"
-            kind="pagination"
+            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 khwAB"
+            kind="[object Object]"
             type="button"
           >
             24
@@ -3584,8 +3666,8 @@ exports[`Pagination should display next page of results when "next" is
         >
           <button
             aria-label="Go to next page"
-            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cLIEIn"
-            kind="pagination"
+            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 khwAB"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -3739,8 +3821,8 @@ exports[`Pagination should display page 'n' of results when "page n" is
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
-  background: #33333310;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -3847,7 +3929,6 @@ exports[`Pagination should display page 'n' of results when "page n" is
 .c6 {
   padding: 4px;
   border-radius: 4px;
-  border-width: 0;
 }
 
 .c4 {
@@ -3905,7 +3986,7 @@ exports[`Pagination should display page 'n' of results when "page n" is
           <button
             aria-label="Go to previous page"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -3932,7 +4013,7 @@ exports[`Pagination should display page 'n' of results when "page n" is
           <button
             aria-label="Go to page 1"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             1
@@ -3948,7 +4029,7 @@ exports[`Pagination should display page 'n' of results when "page n" is
             aria-current="page"
             aria-label="Go to page 2"
             class="c9 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             2
@@ -3963,7 +4044,7 @@ exports[`Pagination should display page 'n' of results when "page n" is
           <button
             aria-label="Go to page 3"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             3
@@ -3978,7 +4059,7 @@ exports[`Pagination should display page 'n' of results when "page n" is
           <button
             aria-label="Go to page 4"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             4
@@ -3993,7 +4074,7 @@ exports[`Pagination should display page 'n' of results when "page n" is
           <button
             aria-label="Go to page 5"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             5
@@ -4020,7 +4101,7 @@ exports[`Pagination should display page 'n' of results when "page n" is
           <button
             aria-label="Go to page 24"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             24
@@ -4035,7 +4116,7 @@ exports[`Pagination should display page 'n' of results when "page n" is
           <button
             aria-label="Go to next page"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -4249,8 +4330,8 @@ exports[`Pagination should display previous page of results when "previous" is
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
-  background: #33333310;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -4297,7 +4378,6 @@ exports[`Pagination should display previous page of results when "previous" is
 .c6 {
   padding: 4px;
   border-radius: 4px;
-  border-width: 0;
 }
 
 .c4 {
@@ -4355,7 +4435,7 @@ exports[`Pagination should display previous page of results when "previous" is
           <button
             aria-label="Go to previous page"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -4382,7 +4462,7 @@ exports[`Pagination should display previous page of results when "previous" is
           <button
             aria-label="Go to page 1"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             1
@@ -4398,7 +4478,7 @@ exports[`Pagination should display previous page of results when "previous" is
             aria-current="page"
             aria-label="Go to page 2"
             class="c9 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             2
@@ -4413,7 +4493,7 @@ exports[`Pagination should display previous page of results when "previous" is
           <button
             aria-label="Go to page 3"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             3
@@ -4428,7 +4508,7 @@ exports[`Pagination should display previous page of results when "previous" is
           <button
             aria-label="Go to page 4"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             4
@@ -4443,7 +4523,7 @@ exports[`Pagination should display previous page of results when "previous" is
           <button
             aria-label="Go to page 5"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             5
@@ -4470,7 +4550,7 @@ exports[`Pagination should display previous page of results when "previous" is
           <button
             aria-label="Go to page 24"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             24
@@ -4485,7 +4565,7 @@ exports[`Pagination should display previous page of results when "previous" is
           <button
             aria-label="Go to next page"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -4528,8 +4608,8 @@ exports[`Pagination should display previous page of results when "previous" is
         >
           <button
             aria-label="Go to previous page"
-            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cLIEIn"
-            kind="pagination"
+            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 khwAB"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -4555,8 +4635,8 @@ exports[`Pagination should display previous page of results when "previous" is
         >
           <button
             aria-label="Go to page 1"
-            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cLIEIn"
-            kind="pagination"
+            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 khwAB"
+            kind="[object Object]"
             type="button"
           >
             1
@@ -4571,8 +4651,8 @@ exports[`Pagination should display previous page of results when "previous" is
           <button
             aria-current="page"
             aria-label="Go to page 2"
-            class="StyledButtonKind-sc-1vhfpnt-0 fwVZOK StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cLIEIn"
-            kind="pagination"
+            class="StyledButtonKind-sc-1vhfpnt-0 jrRdnJ StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 khwAB"
+            kind="[object Object]"
             type="button"
           >
             2
@@ -4586,8 +4666,8 @@ exports[`Pagination should display previous page of results when "previous" is
         >
           <button
             aria-label="Go to page 3"
-            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cLIEIn"
-            kind="pagination"
+            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 khwAB"
+            kind="[object Object]"
             type="button"
           >
             3
@@ -4601,8 +4681,8 @@ exports[`Pagination should display previous page of results when "previous" is
         >
           <button
             aria-label="Go to page 4"
-            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cLIEIn"
-            kind="pagination"
+            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 khwAB"
+            kind="[object Object]"
             type="button"
           >
             4
@@ -4616,8 +4696,8 @@ exports[`Pagination should display previous page of results when "previous" is
         >
           <button
             aria-label="Go to page 5"
-            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cLIEIn"
-            kind="pagination"
+            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 khwAB"
+            kind="[object Object]"
             type="button"
           >
             5
@@ -4643,8 +4723,8 @@ exports[`Pagination should display previous page of results when "previous" is
         >
           <button
             aria-label="Go to page 24"
-            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cLIEIn"
-            kind="pagination"
+            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 khwAB"
+            kind="[object Object]"
             type="button"
           >
             24
@@ -4658,8 +4738,8 @@ exports[`Pagination should display previous page of results when "previous" is
         >
           <button
             aria-label="Go to next page"
-            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cLIEIn"
-            kind="pagination"
+            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 khwAB"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -4691,8 +4771,8 @@ exports[`Pagination should display the correct last page based on items length
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #000000;
-  stroke: #000000;
+  fill: #666666;
+  stroke: #666666;
 }
 
 .c7 g {
@@ -4714,6 +4794,40 @@ exports[`Pagination should display the correct last page based on items length
 .c7 *[FILL-RULE],
 .c7 *[fill*="#"],
 .c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c12 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #000000;
+  stroke: #000000;
+}
+
+.c12 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c12 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c12 *[stroke*="#"],
+.c12 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c12 *[fill-rule],
+.c12 *[FILL-RULE],
+.c12 *[fill*="#"],
+.c12 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -4811,8 +4925,6 @@ exports[`Pagination should display the correct last page based on items length
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
-  opacity: 0.3;
   text-align: center;
   opacity: 0.3;
   cursor: default;
@@ -4872,8 +4984,8 @@ exports[`Pagination should display the correct last page based on items length
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
-  background: #33333310;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -4980,7 +5092,6 @@ exports[`Pagination should display the correct last page based on items length
 .c6 {
   padding: 4px;
   border-radius: 4px;
-  border-width: 0;
 }
 
 .c4 {
@@ -5040,7 +5151,7 @@ exports[`Pagination should display the correct last page based on items length
             aria-label="Go to previous page"
             class="c5 c6"
             disabled=""
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -5068,7 +5179,7 @@ exports[`Pagination should display the correct last page based on items length
             aria-current="page"
             aria-label="Go to page 1"
             class="c9 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             1
@@ -5083,7 +5194,7 @@ exports[`Pagination should display the correct last page based on items length
           <button
             aria-label="Go to page 2"
             class="c10 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             2
@@ -5098,7 +5209,7 @@ exports[`Pagination should display the correct last page based on items length
           <button
             aria-label="Go to page 3"
             class="c10 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             3
@@ -5113,7 +5224,7 @@ exports[`Pagination should display the correct last page based on items length
           <button
             aria-label="Go to page 4"
             class="c10 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             4
@@ -5128,7 +5239,7 @@ exports[`Pagination should display the correct last page based on items length
           <button
             aria-label="Go to page 5"
             class="c10 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             5
@@ -5155,7 +5266,7 @@ exports[`Pagination should display the correct last page based on items length
           <button
             aria-label="Go to page 24"
             class="c10 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             24
@@ -5170,12 +5281,12 @@ exports[`Pagination should display the correct last page based on items length
           <button
             aria-label="Go to next page"
             class="c10 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
               aria-label="Next"
-              class="c7"
+              class="c12"
               viewBox="0 0 24 24"
             >
               <polyline
@@ -5383,8 +5494,8 @@ exports[`Pagination should render correct numEdgePages 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
-  background: #33333310;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -5431,7 +5542,6 @@ exports[`Pagination should render correct numEdgePages 1`] = `
 .c6 {
   padding: 4px;
   border-radius: 4px;
-  border-width: 0;
 }
 
 .c4 {
@@ -5489,7 +5599,7 @@ exports[`Pagination should render correct numEdgePages 1`] = `
           <button
             aria-label="Go to previous page"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -5516,7 +5626,7 @@ exports[`Pagination should render correct numEdgePages 1`] = `
           <button
             aria-label="Go to page 1"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             1
@@ -5531,7 +5641,7 @@ exports[`Pagination should render correct numEdgePages 1`] = `
           <button
             aria-label="Go to page 2"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             2
@@ -5546,7 +5656,7 @@ exports[`Pagination should render correct numEdgePages 1`] = `
           <button
             aria-label="Go to page 3"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             3
@@ -5573,7 +5683,7 @@ exports[`Pagination should render correct numEdgePages 1`] = `
           <button
             aria-label="Go to page 9"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             9
@@ -5589,7 +5699,7 @@ exports[`Pagination should render correct numEdgePages 1`] = `
             aria-current="page"
             aria-label="Go to page 10"
             class="c10 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             10
@@ -5604,7 +5714,7 @@ exports[`Pagination should render correct numEdgePages 1`] = `
           <button
             aria-label="Go to page 11"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             11
@@ -5631,7 +5741,7 @@ exports[`Pagination should render correct numEdgePages 1`] = `
           <button
             aria-label="Go to page 22"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             22
@@ -5646,7 +5756,7 @@ exports[`Pagination should render correct numEdgePages 1`] = `
           <button
             aria-label="Go to page 23"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             23
@@ -5661,7 +5771,7 @@ exports[`Pagination should render correct numEdgePages 1`] = `
           <button
             aria-label="Go to page 24"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             24
@@ -5676,7 +5786,7 @@ exports[`Pagination should render correct numEdgePages 1`] = `
           <button
             aria-label="Go to next page"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -5889,8 +5999,8 @@ exports[`Pagination should render correct numMiddlePages when even 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
-  background: #33333310;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -5937,7 +6047,6 @@ exports[`Pagination should render correct numMiddlePages when even 1`] = `
 .c6 {
   padding: 4px;
   border-radius: 4px;
-  border-width: 0;
 }
 
 .c4 {
@@ -5995,7 +6104,7 @@ exports[`Pagination should render correct numMiddlePages when even 1`] = `
           <button
             aria-label="Go to previous page"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -6022,7 +6131,7 @@ exports[`Pagination should render correct numMiddlePages when even 1`] = `
           <button
             aria-label="Go to page 1"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             1
@@ -6049,7 +6158,7 @@ exports[`Pagination should render correct numMiddlePages when even 1`] = `
           <button
             aria-label="Go to page 9"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             9
@@ -6065,7 +6174,7 @@ exports[`Pagination should render correct numMiddlePages when even 1`] = `
             aria-current="page"
             aria-label="Go to page 10"
             class="c10 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             10
@@ -6080,7 +6189,7 @@ exports[`Pagination should render correct numMiddlePages when even 1`] = `
           <button
             aria-label="Go to page 11"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             11
@@ -6095,7 +6204,7 @@ exports[`Pagination should render correct numMiddlePages when even 1`] = `
           <button
             aria-label="Go to page 12"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             12
@@ -6122,7 +6231,7 @@ exports[`Pagination should render correct numMiddlePages when even 1`] = `
           <button
             aria-label="Go to page 24"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             24
@@ -6137,7 +6246,7 @@ exports[`Pagination should render correct numMiddlePages when even 1`] = `
           <button
             aria-label="Go to next page"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -6350,8 +6459,8 @@ exports[`Pagination should render correct numMiddlePages when odd 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
-  background: #33333310;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -6398,7 +6507,6 @@ exports[`Pagination should render correct numMiddlePages when odd 1`] = `
 .c6 {
   padding: 4px;
   border-radius: 4px;
-  border-width: 0;
 }
 
 .c4 {
@@ -6456,7 +6564,7 @@ exports[`Pagination should render correct numMiddlePages when odd 1`] = `
           <button
             aria-label="Go to previous page"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -6483,7 +6591,7 @@ exports[`Pagination should render correct numMiddlePages when odd 1`] = `
           <button
             aria-label="Go to page 1"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             1
@@ -6510,7 +6618,7 @@ exports[`Pagination should render correct numMiddlePages when odd 1`] = `
           <button
             aria-label="Go to page 8"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             8
@@ -6525,7 +6633,7 @@ exports[`Pagination should render correct numMiddlePages when odd 1`] = `
           <button
             aria-label="Go to page 9"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             9
@@ -6541,7 +6649,7 @@ exports[`Pagination should render correct numMiddlePages when odd 1`] = `
             aria-current="page"
             aria-label="Go to page 10"
             class="c10 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             10
@@ -6556,7 +6664,7 @@ exports[`Pagination should render correct numMiddlePages when odd 1`] = `
           <button
             aria-label="Go to page 11"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             11
@@ -6571,7 +6679,7 @@ exports[`Pagination should render correct numMiddlePages when odd 1`] = `
           <button
             aria-label="Go to page 12"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             12
@@ -6598,7 +6706,7 @@ exports[`Pagination should render correct numMiddlePages when odd 1`] = `
           <button
             aria-label="Go to page 24"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             24
@@ -6613,7 +6721,7 @@ exports[`Pagination should render correct numMiddlePages when odd 1`] = `
           <button
             aria-label="Go to next page"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -6644,8 +6752,8 @@ exports[`Pagination should set numMiddlePages = 1 if user provides value < 1 1`]
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #000000;
-  stroke: #000000;
+  fill: #666666;
+  stroke: #666666;
 }
 
 .c7 g {
@@ -6667,6 +6775,40 @@ exports[`Pagination should set numMiddlePages = 1 if user provides value < 1 1`]
 .c7 *[FILL-RULE],
 .c7 *[fill*="#"],
 .c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c12 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #000000;
+  stroke: #000000;
+}
+
+.c12 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c12 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c12 *[stroke*="#"],
+.c12 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c12 *[fill-rule],
+.c12 *[FILL-RULE],
+.c12 *[fill*="#"],
+.c12 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -6764,8 +6906,6 @@ exports[`Pagination should set numMiddlePages = 1 if user provides value < 1 1`]
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
-  opacity: 0.3;
   text-align: center;
   opacity: 0.3;
   cursor: default;
@@ -6825,8 +6965,8 @@ exports[`Pagination should set numMiddlePages = 1 if user provides value < 1 1`]
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
-  background: #33333310;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -6933,7 +7073,6 @@ exports[`Pagination should set numMiddlePages = 1 if user provides value < 1 1`]
 .c6 {
   padding: 4px;
   border-radius: 4px;
-  border-width: 0;
 }
 
 .c4 {
@@ -6993,7 +7132,7 @@ exports[`Pagination should set numMiddlePages = 1 if user provides value < 1 1`]
             aria-label="Go to previous page"
             class="c5 c6"
             disabled=""
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -7021,7 +7160,7 @@ exports[`Pagination should set numMiddlePages = 1 if user provides value < 1 1`]
             aria-current="page"
             aria-label="Go to page 1"
             class="c9 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             1
@@ -7036,7 +7175,7 @@ exports[`Pagination should set numMiddlePages = 1 if user provides value < 1 1`]
           <button
             aria-label="Go to page 2"
             class="c10 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             2
@@ -7051,7 +7190,7 @@ exports[`Pagination should set numMiddlePages = 1 if user provides value < 1 1`]
           <button
             aria-label="Go to page 3"
             class="c10 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             3
@@ -7078,7 +7217,7 @@ exports[`Pagination should set numMiddlePages = 1 if user provides value < 1 1`]
           <button
             aria-label="Go to page 24"
             class="c10 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             24
@@ -7093,12 +7232,12 @@ exports[`Pagination should set numMiddlePages = 1 if user provides value < 1 1`]
           <button
             aria-label="Go to next page"
             class="c10 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
               aria-label="Next"
-              class="c7"
+              class="c12"
               viewBox="0 0 24 24"
             >
               <polyline
@@ -7148,6 +7287,40 @@ exports[`Pagination should set page to last page if page prop > total possible
 .c7 *[FILL-RULE],
 .c7 *[fill*="#"],
 .c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c12 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c12 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c12 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c12 *[stroke*="#"],
+.c12 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c12 *[fill-rule],
+.c12 *[FILL-RULE],
+.c12 *[fill*="#"],
+.c12 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -7307,8 +7480,8 @@ exports[`Pagination should set page to last page if page prop > total possible
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
-  background: #33333310;
+  background-color: rgba(51,51,51,0.06274509803921569);
+  color: #444444;
   text-align: center;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
@@ -7368,8 +7541,6 @@ exports[`Pagination should set page to last page if page prop > total possible
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
-  opacity: 0.3;
   text-align: center;
   opacity: 0.3;
   cursor: default;
@@ -7414,7 +7585,6 @@ exports[`Pagination should set page to last page if page prop > total possible
 .c6 {
   padding: 4px;
   border-radius: 4px;
-  border-width: 0;
 }
 
 .c4 {
@@ -7472,7 +7642,7 @@ exports[`Pagination should set page to last page if page prop > total possible
           <button
             aria-label="Go to previous page"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
@@ -7499,7 +7669,7 @@ exports[`Pagination should set page to last page if page prop > total possible
           <button
             aria-label="Go to page 1"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             1
@@ -7526,7 +7696,7 @@ exports[`Pagination should set page to last page if page prop > total possible
           <button
             aria-label="Go to page 6"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             6
@@ -7541,7 +7711,7 @@ exports[`Pagination should set page to last page if page prop > total possible
           <button
             aria-label="Go to page 7"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             7
@@ -7556,7 +7726,7 @@ exports[`Pagination should set page to last page if page prop > total possible
           <button
             aria-label="Go to page 8"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             8
@@ -7571,7 +7741,7 @@ exports[`Pagination should set page to last page if page prop > total possible
           <button
             aria-label="Go to page 9"
             class="c5 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             9
@@ -7587,7 +7757,7 @@ exports[`Pagination should set page to last page if page prop > total possible
             aria-current="page"
             aria-label="Go to page 10"
             class="c10 c6"
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             10
@@ -7604,12 +7774,12 @@ exports[`Pagination should set page to last page if page prop > total possible
             aria-label="Go to next page"
             class="c11 c6"
             disabled=""
-            kind="pagination"
+            kind="[object Object]"
             type="button"
           >
             <svg
               aria-label="Next"
-              class="c7"
+              class="c12"
               viewBox="0 0 24 24"
             >
               <polyline
