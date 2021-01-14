@@ -4,7 +4,7 @@ import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = Form => {
   const DocumentedForm = describe(Form)
-    .availableAt(getAvailableAtBadge('Form'))
+    .availableAt(getAvailableAtBadge('Form', 'Input'))
     .description('A form that manages state for its fields.')
     .usage(
       `import { Form } from 'grommet';

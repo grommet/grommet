@@ -478,6 +478,8 @@ export const inputStyle = css`
   &::-moz-placeholder { // FF 19+
     opacity: 1;
   }
+
+  ${props => props.theme.global.input.extend}
 `;
 
 export const overflowStyle = overflowProp => {
@@ -603,3 +605,13 @@ export const kindPartStyles = (obj, theme, colorValue) => {
   if (obj.extend) styles.push(obj.extend);
   return styles;
 };
+
+const TEXT_ALIGN_MAP = {
+  center: 'center',
+  end: 'right',
+  start: 'left',
+};
+
+export const textAlignStyle = css`
+  text-align: ${props => TEXT_ALIGN_MAP[props.textAlign]};
+`;

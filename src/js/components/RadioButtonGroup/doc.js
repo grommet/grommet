@@ -4,7 +4,7 @@ import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = RadioButtonGroup => {
   const DocumentedRadioButtonGroup = describe(RadioButtonGroup)
-    .availableAt(getAvailableAtBadge('RadioButtonGroup'))
+    .availableAt(getAvailableAtBadge('RadioButtonGroup', 'Input'))
     .description('A group of radio buttons.')
     .usage(
       `import { RadioButtonGroup } from 'grommet';

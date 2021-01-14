@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Button, RadioButton } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -31,7 +30,7 @@ const theme = deepMerge(grommet, {
   },
 });
 
-const ThemeRadioButton = () => {
+export const ThemeRadioButton = () => {
   const [selected, setSelected] = React.useState();
 
   return (
@@ -51,4 +50,6 @@ const ThemeRadioButton = () => {
   );
 };
 
-storiesOf('RadioButton', module).add('Theme', () => <ThemeRadioButton />);
+ThemeRadioButton.story = {
+  name: 'Theme',
+};

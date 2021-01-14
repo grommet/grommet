@@ -1,12 +1,11 @@
 import * as React from 'react';
-import { storiesOf } from '@storybook/react';
-import isChromatic from 'chromatic/isChromatic';
 
 import { Grommet, Box, Menu, ThemeType } from 'grommet';
 import { FormUp, FormDown } from 'grommet-icons';
 
 // Type annotations can only be used in TypeScript files.
 // Remove ': ThemeType' if you are not using TypeScript.
+
 const customBreakpoints: ThemeType = {
   global: {
     breakpoints: {
@@ -67,7 +66,8 @@ const customBreakpoints: ThemeType = {
     },
   },
 };
-const App = () => {
+
+const ThemedMenu = () => {
   return (
     <Grommet theme={customBreakpoints}>
       <Box align="center" pad="large">
@@ -85,6 +85,9 @@ const App = () => {
   );
 };
 
-if (!isChromatic()) {
-  storiesOf('Menu', module).add('Themed', () => <App />);
-}
+export const Themed = () => <ThemedMenu />;
+Themed.story = {
+  parameters: {
+    chromatic: { disable: true },
+  },
+};

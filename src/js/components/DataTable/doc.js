@@ -58,7 +58,7 @@ parts.forEach(part => {
 
 export const doc = DataTable => {
   const DocumentedDataTable = describe(DataTable)
-    .availableAt(getAvailableAtBadge('DataTable'))
+    .availableAt(getAvailableAtBadge('DataTable', 'Visualizations'))
     .description('A data driven table.')
     .usage(
       `import { DataTable } from 'grommet';
@@ -122,6 +122,7 @@ export const doc = DataTable => {
           ]),
           PropTypes.string,
         ]),
+        units: PropTypes.string,
         verticalAlign: PropTypes.oneOf(['middle', 'top', 'bottom']),
       }),
     ).description(
@@ -215,6 +216,13 @@ export const doc = DataTable => {
     ]).description(
       `Whether the header and/or footer should be pinned when
       not all rows are visible. A value of true pins both header and footer.`,
+    ),
+    placeholder: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.node,
+    ]).description(
+      `A text message or any content to place over the table body.
+      For example, to say "loading ..." when waiting for data to arrive.`,
     ),
     primaryKey: PropTypes.oneOfType([
       PropTypes.string,
@@ -347,6 +355,16 @@ export const themeDoc = {
     type: 'string | object',
     defaultValue: undefined,
   },
+  'dataTable.header.color': {
+    description: 'The label and icon color in a header cell.',
+    type: '{ dark: string, light: string } | string',
+    defaultValue: undefined,
+  },
+  'dataTable.header.extend': {
+    description: 'Any additional styles for header cells.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
   'dataTable.header.font.weight': {
     description: 'The font weight for text in header cells.',
     type: 'string',
@@ -382,6 +400,15 @@ export const themeDoc = {
     description: 'The pad around the contents of the header cell.',
     type: 'string | object',
     defaultValue: undefined,
+  },
+  'dataTable.header.units': {
+    description: `Any Text component properties for styling the
+    header's units text.`,
+    type: 'object',
+    defaultValue: `{
+  color: "text-xweak",
+  margin: { left: "xsmall" }
+}`,
   },
   'dataTable.resize.hover.color': {
     description: 'The color of the resizer when hovered over.',

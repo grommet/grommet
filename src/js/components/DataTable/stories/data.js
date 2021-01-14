@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, Meter, Text } from 'grommet';
+import { Box, Meter, Text, Tip } from 'grommet';
 
 const amountFormatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -125,5 +125,176 @@ export const DATA = [
     date: '2018-06-10',
     percent: 10,
     paid: 2345,
+  },
+];
+
+export const storageData = [
+  {
+    id: 'mjbpiclthh8y',
+    poolName: 'Asup-array01-lvs',
+    arrays: 'asup-array01-lvs',
+    size: 16099511627776,
+    pinnable: 2099511627776,
+    pinned: 699511627776,
+    savings: [
+      { unit: 'TiB', value: 12.0 },
+      { unit: 'xGHz', value: 333.2 },
+    ],
+  },
+  {
+    id: 'hx5f2e57phfb',
+    poolName: 'Dev-K8-Sym-R5-3',
+    arrays: 'harm-stage-array01',
+    size: 224520271234567,
+    pinnable: 5099511627776,
+    pinned: 2699511627776,
+    savings: [
+      { unit: 'TiB', value: 8.0 },
+      { unit: 'xGHz', value: 333.2 },
+    ],
+  },
+  {
+    id: 'om2hy2z79kyz',
+    poolName: 'Dev36-erray01',
+    arrays: 'harm-stage-array02',
+    size: 190655321234567,
+    pinnable: 4099511627776,
+    pinned: 2699511627776,
+    savings: [
+      { unit: 'TiB', value: 8.0 },
+      { unit: 'xGHz', value: 3955.2 },
+    ],
+  },
+  {
+    id: '6d9u4hv95xjq',
+    poolName: 'asup-array1',
+    arrays: 'harm-stage-array04',
+    size: 130655321234567,
+    pinnable: 3099511627776,
+    pinned: 699511627776,
+    savings: [
+      { unit: 'TiB', value: 110.6 },
+      { unit: 'xGHz', value: 3.9 },
+    ],
+  },
+  {
+    id: 'qpsidi3ccnpr',
+    poolName: 'Dev-K8-Sym-R5-3',
+    arrays: 'Harm-cs-stage-R4-5',
+    size: 68994941234567,
+    pinnable: 3199511627776,
+    pinned: 2699511627776,
+    savings: [
+      { unit: 'TiB', value: 128.5 },
+      { unit: 'xGHz', value: 333.2 },
+    ],
+  },
+  {
+    id: 'l3d8xkm0knx4',
+    poolName: 'asup-array2',
+    arrays: 'ds-array02',
+    size: 90655321234567,
+    pinnable: 11199511627776,
+    pinned: 0,
+    savings: [
+      { unit: 'TiB', value: 8.0 },
+      { unit: 'xGHz', value: 3955.2 },
+    ],
+  },
+  {
+    id: 'jsjas87qeqgj',
+    poolName: 'Dev36-varray02',
+    arrays: 'ds-array01',
+    size: 101655321234567,
+    pinnable: 12399511627776,
+    pinned: 0,
+    savings: [
+      { unit: 'TiB', value: 8.0 },
+      { unit: 'xGHz', value: 333.2 },
+    ],
+  },
+];
+
+export const storageColumns = [
+  {
+    property: 'poolName',
+    header: 'Pool Name',
+    render: datum => <Text truncate>{datum.poolName}</Text>,
+  },
+  {
+    property: 'size',
+    primary: true,
+    header: (
+      <Text color="text-strong" weight="bold">
+        Size{' '}
+        <Text size="xsmall" weight="normal" color="text">
+          (TiB)
+        </Text>
+      </Text>
+    ),
+    render: datum =>
+      // bytes to tebibytes
+      (datum.size / 2 ** 40).toFixed([1]),
+    align: 'end',
+  },
+  {
+    property: 'pinned',
+    header: (
+      <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
+        <Text color="text-strong" weight="bold">
+          Pinned{' '}
+          <Text size="xsmall" weight="normal" color="text">
+            %
+          </Text>
+        </Text>
+      </Box>
+    ),
+    render: datum => (
+      <Tip
+        plain
+        dropProps={{ align: { left: 'right' }, stretch: false }}
+        content={
+          <Box
+            background="light-4"
+            align="center"
+            justify="center"
+            width="xxsmall"
+            height="xxsmall"
+            round="full"
+            flex={false}
+            margin="xsmall"
+          >
+            {Math.trunc((datum.pinned / datum.pinnable) * 100)}
+          </Box>
+        }
+      >
+        <Box pad={{ vertical: 'xsmall' }}>
+          <Meter
+            values={[
+              { value: datum.pinned / datum.pinnable, color: 'graph-0' },
+            ]}
+            max={1}
+            thickness="small"
+            size="small"
+          />
+        </Box>
+      </Tip>
+    ),
+    sortable: false,
+  },
+  {
+    property: 'savings',
+    header: (
+      <Text color="text-strong" weight="bold">
+        Savings{' '}
+        <Text size="xsmall" weight="normal" color="text">
+          (xGHz)
+        </Text>
+      </Text>
+    ),
+    align: 'end',
+    render: datum => (
+      <Text truncate>{datum.savings[1] && `${datum.savings[1].value}`}</Text>
+    ),
   },
 ];

@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, DataTable, Meter, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -13,6 +12,8 @@ const amountFormatter = new Intl.NumberFormat('en-US', {
   minimumFractionDigits: 2,
 });
 
+// Type annotations can only be used in TypeScript files.
+// Remove ': ColumnConfig<RowType>[]' if you are not using TypeScript.
 export const columns: ColumnConfig<RowType>[] = [
   {
     property: 'name',
@@ -68,6 +69,8 @@ for (let i = 0; i < 40; i += 1) {
   });
 }
 
+// 'interface' declarations can only be used in TypeScript files.
+// Remove ': 'interface RowType' if you are not using Typescript.
 interface RowType {
   name: string;
   location: string;
@@ -76,6 +79,8 @@ interface RowType {
   paid: number;
 }
 
+// Type annotations can only be used in TypeScript files.
+// Remove ': RowType[]' if you are not using TypeScript.
 export const DATA: RowType[] = [
   {
     name: 'Shimi',
@@ -135,7 +140,7 @@ export const DATA: RowType[] = [
   },
 ];
 
-const ClickableDataTable = () => (
+export const ClickableDataTable = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
       {/* eslint-disable no-alert */}
@@ -149,6 +154,6 @@ const ClickableDataTable = () => (
   </Grommet>
 );
 
-storiesOf('DataTable', module).add('TS-Clickable', () => (
-  <ClickableDataTable />
-));
+ClickableDataTable.story = {
+  name: 'Clickable',
+};

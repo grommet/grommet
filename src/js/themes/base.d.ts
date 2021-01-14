@@ -13,6 +13,7 @@ import {
   BreakpointSize,
   ColorType,
   DeepReadonly,
+  ElevationType,
   GapType,
   GraphColorsType,
   MarginType,
@@ -27,6 +28,7 @@ import { Anchor } from '../components/Anchor';
 import { Box } from '../components/Box';
 import { Text, TextProps } from '../components/Text';
 import { LayerPositionType } from '../components/Layer';
+import { DropProps } from '../components/Drop';
 
 export declare const base: DeepReadonly<ThemeType>;
 export declare const generate: (
@@ -275,6 +277,7 @@ export interface ThemeType {
       color?: ColorType;
     };
     input?: {
+      extend?: ExtendType;
       padding?:
         | string
         | {
@@ -535,6 +538,9 @@ export interface ThemeType {
       };
     };
   };
+  checkBoxGroup?: {
+    container?: BoxProps;
+  };
   clock?: {
     analog?: {
       extend?: ExtendType;
@@ -609,6 +615,8 @@ export interface ThemeType {
     header?: {
       background?: BackgroundType;
       border?: BorderType;
+      color?: ColorType;
+      extend?: ExtendType;
       font?: {
         weight?: string;
         size?: string;
@@ -618,6 +626,7 @@ export interface ThemeType {
         background?: BackgroundType;
       };
       pad?: PadType;
+      units?: TextProps;
     };
     groupHeader?: {
       border?: {
@@ -914,6 +923,7 @@ export interface ThemeType {
       radius?: string;
     };
     container?: {
+      elevation?: ElevationType;
       zIndex?: string;
     };
     extend?: ExtendType;
@@ -939,6 +949,9 @@ export interface ThemeType {
     extend?: ExtendType;
   };
   maskedInput?: {
+    container?: {
+      extend?: ExtendType;
+    };
     extend?: ExtendType;
     disabled?: {
       opacity?: OpacityType;
@@ -1054,6 +1067,10 @@ export interface ThemeType {
   };
   select?: {
     background?: BackgroundType;
+    clear?: {
+      container?: BoxProps;
+      text?: TextProps;
+    };
     container?: {
       extend?: ExtendType;
     };
@@ -1206,6 +1223,19 @@ export interface ThemeType {
   textInput?: {
     extend?: ExtendType;
     disabled?: OpacityType;
+    container?: {
+      extend?: ExtendType;
+    };
+    placeholder?: {
+      extend?: ExtendType;
+    };
+    suggestions?: {
+      extend?: ExtendType;
+    };
+  };
+  tip?: {
+    content?: BoxProps;
+    drop?: DropProps;
   };
   video?: {
     captions?: {

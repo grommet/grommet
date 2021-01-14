@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, DataTable, Heading } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -62,7 +61,7 @@ const columnsResize = [
   { property: 'paid', header: 'Paid', size: 'xsmall', align: 'end' },
 ];
 
-const ExampleResizable = () => (
+export const ResizableDataTable = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
       <Heading level="3">Table with resizable & column sizes</Heading>
@@ -76,6 +75,6 @@ const ExampleResizable = () => (
   </Grommet>
 );
 
-storiesOf('DataTable', module).add('Resizable columns', () => (
-  <ExampleResizable />
-));
+ResizableDataTable.story = {
+  name: 'Resizable columns',
+};

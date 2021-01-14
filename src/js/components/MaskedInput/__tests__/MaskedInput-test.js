@@ -410,4 +410,27 @@ describe('MaskedInput', () => {
     expect(onChange).toHaveBeenCalled();
     expect(onChange).toReturnWith('aa');
   });
+
+  test('custom theme', async () => {
+    const customTheme = {
+      maskedInput: {
+        container: {
+          extend: 'svg { fill: red; stroke: red; }',
+        },
+      },
+    };
+
+    const { container } = render(
+      <Grommet theme={customTheme}>
+        <MaskedInput
+          data-testid="test-input"
+          size="large"
+          id="item"
+          icon={<Search />}
+          name="item"
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

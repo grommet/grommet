@@ -5,7 +5,7 @@ import { themeDocUtils } from '../../utils/themeDocUtils';
 
 export const doc = TextInput => {
   const DocumentedTextInput = describe(TextInput)
-    .availableAt(getAvailableAtBadge('TextInput'))
+    .availableAt(getAvailableAtBadge('TextInput', 'Input'))
     .description(
       'A control to input a single line of text, with optional suggestions.',
     )
@@ -18,6 +18,13 @@ export const doc = TextInput => {
   DocumentedTextInput.propTypes = {
     a11yTitle: PropTypes.string.description(
       'Custom title to be used by screen readers.',
+    ),
+    defaultSuggestion: PropTypes.number.description(
+      `Default suggestion to highlight, as an index into the suggestions array.
+
+      If set, the suggestion at the specified index in the suggestions array
+      will be highlighted by default when the suggestions drop opens.
+      `,
     ),
     dropAlign: PropTypes.shape({
       top: PropTypes.oneOf(['top', 'bottom']),
@@ -123,6 +130,9 @@ export const doc = TextInput => {
       `Suggestions to show. It is recommended to avoid showing too many
 suggestions and instead rely on the user to type more.`,
     ),
+    textAlign: PropTypes.oneOf(['start', 'center', 'end'])
+      .description('How to align the text inside the input.')
+      .defaultValue('start'),
     value: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.number,

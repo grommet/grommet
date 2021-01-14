@@ -24,7 +24,7 @@ const thicknessType = PropTypes.oneOfType([
 
 export const doc = Chart => {
   const DocumentedChart = describe(Chart)
-    .availableAt(getAvailableAtBadge('Chart'))
+    .availableAt(getAvailableAtBadge('Chart', 'Visualizations'))
     .description('A graphical chart.')
     .usage("import { Chart } from 'grommet';\n<Chart />");
   // We don't include svg due to a collision on the values property

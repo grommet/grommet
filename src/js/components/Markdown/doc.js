@@ -4,7 +4,7 @@ import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = Markdown => {
   const DocumentedMarkdown = describe(Markdown)
-    .availableAt(getAvailableAtBadge('Markdown'))
+    .availableAt(getAvailableAtBadge('Markdown', 'Type'))
     .description('Markdown formatting using Grommet components.')
     .details(
       `Grommet uses 'markdown-to-jsx' in Markdown component,

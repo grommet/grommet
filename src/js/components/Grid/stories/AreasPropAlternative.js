@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Grid } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const GridAreasAlternative = () => {
+export const GridAreasAlternative = () => {
   return (
     <Grommet full theme={grommet}>
       <Grid
@@ -37,6 +36,4 @@ const GridAreasAlternative = () => {
   );
 };
 
-storiesOf('Grid', module).add('Areas prop alternative', () => (
-  <GridAreasAlternative />
-));
+GridAreasAlternative.story = { name: 'Areas prop alternative' };

@@ -76,6 +76,7 @@ const TextInput = forwardRef(
   (
     {
       a11yTitle,
+      defaultSuggestion,
       defaultValue,
       dropAlign = defaultDropAlign,
       dropHeight,
@@ -98,6 +99,7 @@ const TextInput = forwardRef(
       readOnly,
       reverse,
       suggestions,
+      textAlign,
       value: valueProp,
       ...rest
     },
@@ -150,14 +152,18 @@ const TextInput = forwardRef(
     }, [onSuggestionsOpen, suggestions]);
     /* eslint-enable react-hooks/exhaustive-deps */
 
-    const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(-1);
+    const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(
+      typeof defaultSuggestion === 'number' ? defaultSuggestion : -1,
+    );
 
     // reset activeSuggestionIndex when the drop is closed
     useEffect(() => {
-      if (activeSuggestionIndex !== -1 && !showDrop) {
-        setActiveSuggestionIndex(-1);
+      const defaultIndex =
+        typeof defaultSuggestion === 'number' ? defaultSuggestion : -1;
+      if (activeSuggestionIndex !== defaultIndex && !showDrop) {
+        setActiveSuggestionIndex(defaultIndex);
       }
-    }, [activeSuggestionIndex, showDrop]);
+    }, [activeSuggestionIndex, showDrop, defaultSuggestion]);
 
     // announce active suggestion
     useEffect(() => {
@@ -167,17 +173,20 @@ const TextInput = forwardRef(
       }
     }, [activeSuggestionIndex, announce, messages, suggestions]);
 
-    const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState(-1);
-
-    // set selectedSuggestionIndex based on value and current suggestions
+    // set activeSuggestionIndex based on value and current suggestions
     useEffect(() => {
       if (suggestions) {
         const suggestionValues = suggestions.map(suggestion =>
           typeof suggestion === 'object' ? suggestion.value : suggestion,
         );
-        setSelectedSuggestionIndex(suggestionValues.indexOf(value));
-      } else setSelectedSuggestionIndex(-1);
-    }, [suggestions, value]);
+        const indexOfValue = suggestionValues.indexOf(value);
+        if (indexOfValue === -1 && typeof defaultSuggestion === 'number') {
+          setActiveSuggestionIndex(defaultSuggestion);
+        } else {
+          setActiveSuggestionIndex(indexOfValue);
+        }
+      } else setActiveSuggestionIndex(-1);
+    }, [suggestions, value, defaultSuggestion]);
 
     // make sure activeSuggestion remains visible in scroll
     useEffect(() => {
@@ -239,7 +248,9 @@ const TextInput = forwardRef(
     };
 
     const showStyledPlaceholder =
-      placeholder && typeof placeholder !== 'string' && !value;
+      placeholder &&
+      typeof placeholder !== 'string' &&
+      !(inputRef.current && inputRef.current.value);
 
     let drop;
     const extraProps = {
@@ -304,10 +315,7 @@ const TextInput = forwardRef(
                         ref={itemRef}
                       >
                         <Button
-                          active={
-                            activeSuggestionIndex === index ||
-                            selectedSuggestionIndex === index
-                          }
+                          active={activeSuggestionIndex === index}
                           ref={r => {
                             suggestionRefs[index] = r;
                           }}
@@ -418,6 +426,7 @@ const TextInput = forwardRef(
             icon={icon}
             reverse={reverse}
             focus={focus}
+            textAlign={textAlign}
             {...rest}
             {...extraProps}
             defaultValue={renderLabel(defaultValue)}

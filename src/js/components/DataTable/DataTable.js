@@ -1,5 +1,14 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 
+import { Box } from '../Box';
+import { Text } from '../Text';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { Body } from './Body';
@@ -12,7 +21,7 @@ import {
   initializeFilters,
   normalizePrimaryProperty,
 } from './buildState';
-import { StyledDataTable } from './StyledDataTable';
+import { StyledDataTable, StyledPlaceholder } from './StyledDataTable';
 
 const contexts = ['header', 'body', 'footer'];
 
@@ -50,6 +59,7 @@ const DataTable = ({
   replace,
   pad,
   pin,
+  placeholder,
   primaryKey,
   resizeable,
   rowProps,
@@ -115,6 +125,27 @@ const DataTable = ({
   // any customized column widths
   const [widths, setWidths] = useState({});
 
+  // placeholder placement stuff
+  const headerRef = useRef();
+  const footerRef = useRef();
+  const [headerHeight, setHeaderHeight] = useState();
+  const [footerHeight, setFooterHeight] = useState();
+
+  useLayoutEffect(() => {
+    if (placeholder) {
+      if (headerRef.current) {
+        const nextHeaderHeight = headerRef.current.getBoundingClientRect()
+          .height;
+        setHeaderHeight(nextHeaderHeight);
+      } else setHeaderHeight(0);
+      if (footerRef.current) {
+        const nextFooterHeight = footerRef.current.getBoundingClientRect()
+          .height;
+        setFooterHeight(nextFooterHeight);
+      } else setFooterHeight(0);
+    }
+  }, [footerRef, headerRef, placeholder]);
+
   // remember that we are filtering on this property
   const onFiltering = property => setFiltering(property);
 
@@ -129,11 +160,12 @@ const DataTable = ({
 
   // toggle the sort direction on this property
   const onSort = property => () => {
+    const external = sort ? sort.external : false;
     let direction;
     if (!sort || property !== sort.property) direction = 'asc';
     else if (sort.direction === 'asc') direction = 'desc';
     else direction = 'asc';
-    const nextSort = { property, direction };
+    const nextSort = { property, direction, external };
     setSort(nextSort);
     if (onSortProp) onSortProp(nextSort);
   };
@@ -190,6 +222,7 @@ const DataTable = ({
   return (
     <StyledDataTable fillProp={fill} {...rest}>
       <Header
+        ref={headerRef}
         background={normalizeProp(background, 'header')}
         border={normalizeProp(border, 'header')}
         columns={columns}
@@ -252,6 +285,7 @@ const DataTable = ({
           }
           pad={normalizeProp(pad, 'body')}
           pinnedBackground={normalizeProp(background, 'pinned')}
+          placeholder={placeholder}
           primaryProperty={primaryProperty}
           rowProps={rowProps}
           selected={selected}
@@ -261,6 +295,7 @@ const DataTable = ({
       )}
       {showFooter && (
         <Footer
+          ref={footerRef}
           background={normalizeProp(background, 'footer')}
           border={normalizeProp(border, 'footer')}
           columns={columns}
@@ -274,6 +309,22 @@ const DataTable = ({
           selected={selected}
           size={size}
         />
+      )}
+      {placeholder && (
+        <StyledPlaceholder top={headerHeight} bottom={footerHeight}>
+          {typeof placeholder === 'string' ? (
+            <Box
+              background={{ color: 'background-front', opacity: 'strong' }}
+              align="center"
+              justify="center"
+              fill="vertical"
+            >
+              <Text>{placeholder}</Text>
+            </Box>
+          ) : (
+            placeholder
+          )}
+        </StyledPlaceholder>
       )}
     </StyledDataTable>
   );

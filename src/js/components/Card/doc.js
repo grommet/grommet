@@ -4,7 +4,7 @@ import { getAvailableAtBadge } from '../../utils';
 
 export const doc = Card => {
   const DocumentedCard = describe(Card)
-    .availableAt(getAvailableAtBadge('Card'))
+    .availableAt(getAvailableAtBadge('Card', 'Layout'))
     .description(
       `A Card is a container of information that provides access to more 
       details. Elements of a Card can include Header, Body, Footer or any 

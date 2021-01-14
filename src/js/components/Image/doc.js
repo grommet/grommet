@@ -5,7 +5,7 @@ import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = Image => {
   const DocumentedImage = describe(Image)
-    .availableAt(getAvailableAtBadge('Image'))
+    .availableAt(getAvailableAtBadge('Image', 'Media'))
     .description('An image.')
     .usage(
       `import { Image } from 'grommet';

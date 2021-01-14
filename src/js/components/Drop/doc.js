@@ -15,7 +15,7 @@ const dropOverflowPropTypes = PropTypes.oneOfType([
 
 export const doc = Drop => {
   const DocumentedDrop = describe(Drop)
-    .availableAt(getAvailableAtBadge('Drop'))
+    .availableAt(getAvailableAtBadge('Drop', 'Controls'))
     .description('A container that is overlaid next to a target.')
     .usage(
       "import { Drop } from 'grommet';\n<Drop target={reference}>...</Drop>",

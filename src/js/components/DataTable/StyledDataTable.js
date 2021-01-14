@@ -17,6 +17,7 @@ import { TableFooter } from '../TableFooter';
 
 // border-collapse: separate is needed so pinned header/footer borders work
 const StyledDataTable = styled(Table)`
+  position: relative;
   border-spacing: 0;
   border-collapse: separate;
   height: auto; /* helps Firefox to get table contents to not overflow */
@@ -133,6 +134,11 @@ Object.setPrototypeOf(StyledDataTableFooter.defaultProps, defaultProps);
 
 const StyledDataTableCell = styled(TableCell)`
   ${props =>
+    props.context === 'header' &&
+    props.theme.dataTable &&
+    props.theme.dataTable.header &&
+    props.theme.dataTable.header.extend};
+  ${props =>
     props.pin &&
     props.pin.length > 0 &&
     `
@@ -153,6 +159,14 @@ const StyledDataTableCell = styled(TableCell)`
 StyledDataTableCell.defaultProps = {};
 Object.setPrototypeOf(StyledDataTableCell.defaultProps, defaultProps);
 
+const StyledPlaceholder = styled('caption')`
+  position: absolute;
+  ${props => `top: ${props.top || 0}px;`}
+  ${props => `bottom: ${props.bottom || 0}px;`}
+  left: 0;
+  right: 0;
+`;
+
 export {
   StyledDataTable,
   StyledDataTableRow,
@@ -160,4 +174,5 @@ export {
   StyledDataTableCell,
   StyledDataTableHeader,
   StyledDataTableFooter,
+  StyledPlaceholder,
 };

@@ -1,6 +1,5 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
   Box,
@@ -16,7 +15,7 @@ import { grommet } from 'grommet/themes';
 
 const values = [20, 40, 60, 80, 100];
 
-const MeterInTable = () => (
+export const MeterInTable = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
       <Box border pad={{ top: 'xsmall' }}>
@@ -46,4 +45,6 @@ const MeterInTable = () => (
   </Grommet>
 );
 
-storiesOf('Table', module).add('Meter inside table', () => <MeterInTable />);
+MeterInTable.story = {
+  name: 'Meter inside table',
+};

@@ -1,14 +1,13 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
   Box,
   Button,
   CheckBox,
-  Grommet,
   Form,
   FormField,
   FileInput,
+  Grommet,
   MaskedInput,
   RadioButtonGroup,
   RangeInput,
@@ -18,7 +17,7 @@ import {
 } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Example = () => {
+export const Uncontrolled = () => {
   return (
     <Grommet full theme={grommet}>
       <Box fill align="center" justify="center">
@@ -73,5 +72,3 @@ const Example = () => {
     </Grommet>
   );
 };
-
-storiesOf('Form', module).add('Uncontrolled', () => <Example />);

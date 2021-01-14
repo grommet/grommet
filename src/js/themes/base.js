@@ -218,7 +218,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // The time to wait after the user stopped typing, measured in ms.
       debounceDelay: 300,
       drop: {
-        background: '#ffffff',
+        background: {
+          dark: 'black',
+          light: 'white',
+        },
         border: {
           radius: '0px',
         },
@@ -612,6 +615,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // extend: undefined,
       },
     },
+    checkBoxGroup: {
+      // container: {
+      //   // any box props
+      //   extend: undefined,
+      // },
+    },
     clock: {
       analog: {
         // extend: undefined,
@@ -643,11 +652,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           shape: 'round',
         },
         size: {
+          xsmall: `${baseSpacing * 2}px`,
           small: `${baseSpacing * 3}px`,
           medium: `${baseSpacing * 4}px`,
           large: `${baseSpacing * 6}px`,
           xlarge: `${baseSpacing * 9}px`,
-          huge: `${baseSpacing * 12}px`,
+          xxlarge: `${baseSpacing * 12}px`,
+          huge: `${baseSpacing * 12}px`, // kept for backwards compatibility
         },
       },
       digital: {
@@ -702,6 +713,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       header: {
         // background: undefined,
         // border: undefined,
+        // color: undefined,
+        // extend: undefined,
         // font: {
         //   weight: undefined,
         //   size: undefined,
@@ -711,6 +724,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //   background: undefined,
         // },
         // pad: undefined,
+        units: {
+          color: 'text-xweak',
+          margin: { left: 'xsmall' },
+        },
       },
       icons: {
         ascending: FormDown,
@@ -915,19 +932,23 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       weight: 600,
     },
     layer: {
-      background: 'white',
+      background: {
+        dark: 'black',
+        light: 'white',
+      },
       border: {
         radius: '4px',
       },
       container: {
-        zIndex: '15',
+        // elevation: undefined,
+        zIndex: '20',
       },
       // extend: undefined,
       overlay: {
         background: 'rgba(0, 0, 0, 0.5)',
       },
       responsiveBreakpoint: 'small', // when Layer takes over the full screen
-      zIndex: '10',
+      zIndex: '20',
     },
     list: {
       item: {
@@ -939,6 +960,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
     },
     maskedInput: {
+      // container: {
+      //   extend: undefined,
+      // },
       // extend: undefined,
       // disabled: { opacity: undefined },
     },
@@ -1046,6 +1070,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     select: {
       // background: undefined,
+      clear: {
+        container: {
+          pad: 'small',
+          background: 'background-contrast',
+        }, // any box props
+        text: {
+          color: 'text-weak',
+        }, // any text props
+      },
       container: {
         // extend: undefined,
       },
@@ -1201,6 +1234,20 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     textInput: {
       // extend: undefined,
       // disabled: { opacity: undefined },
+    },
+    tip: {
+      content: {
+        // any Box props
+        background: 'background-contrast',
+        elevation: 'small',
+        margin: 'xsmall',
+        pad: { vertical: 'xsmall', horizontal: 'small' },
+        round: 'small',
+      },
+      drop: {
+        // any props for the drop
+        align: { top: 'bottom' }, // most common use case is Header with Buttons
+      },
     },
     video: {
       captions: {

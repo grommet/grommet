@@ -7,7 +7,7 @@ Object {
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Accordion&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Controls-Accordion&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -192,7 +192,7 @@ node",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Anchor&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Controls-Anchor&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -386,7 +386,7 @@ number",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Box&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Layout-Box&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -796,7 +796,7 @@ boolean",
         "description": "The amount of spacing between child elements. This
         should not be used in conjunction with 'wrap' as the gap elements
         will not wrap gracefully. If a child is a Fragment,
-        Box will not add a gap between the choldren of the Fragment.",
+        Box will not add a gap between the children of the Fragment.",
         "format": "none
 xxsmall
 xsmall
@@ -1102,7 +1102,7 @@ reverse",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Button&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Controls-Button&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -1391,6 +1391,21 @@ string",
         "name": "target",
       },
       Object {
+        "description": "tooltip or a hint when hovering over the button.",
+        "format": "{
+  content: 
+    node
+    string,
+  dropProps: 
+    {
+
+    },
+  plain: boolean
+}
+string",
+        "name": "tip",
+      },
+      Object {
         "defaultValue": "button",
         "description": "The type of button. Set the type to submit for the default button on 
                 forms.",
@@ -1408,7 +1423,7 @@ submit",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Calendar&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Visualizations-Calendar&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -1522,6 +1537,14 @@ xlarge
 }
 string",
         "name": "margin",
+      },
+      Object {
+        "defaultValue": "start",
+        "description": "When using range, Whether the next date selection will affect the 
+        start or end bound of the range.",
+        "format": "start
+end",
+        "name": "activeDate",
       },
       Object {
         "defaultValue": true,
@@ -1638,8 +1661,10 @@ to disable the previous and next buttons.
         "description": "Whether to automatically manage multiple date selection as a range.
         When the user clicks the first date, onSelect will be called with that
         date. When the user selects another date, onSelect will be called with
-        an array of two dates.",
-        "format": "boolean",
+        an array of two dates. If range = \\"array\\", then an array of dates will 
+        be returned even when the start or end date of the range is undefined.",
+        "format": "boolean
+array",
         "name": "range",
       },
       Object {
@@ -1674,7 +1699,7 @@ string",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Card&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Layout-Card&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -1699,7 +1724,7 @@ string",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Chart&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Visualizations-Chart&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -2134,7 +2159,7 @@ point",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=CheckBox&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Input-CheckBox&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -2217,7 +2242,7 @@ NOTE: This can only be used with non-toggle components",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=CheckBoxGroup&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Input-CheckBoxGroup&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -2291,7 +2316,7 @@ NOTE: This can only be used with non-toggle components",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Clock&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Visualization-Clock&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -2441,11 +2466,15 @@ forward",
       },
       Object {
         "defaultValue": "medium",
-        "description": "Clock size",
-        "format": "small
+        "description": "Size for both Analog and Digital Clocks. For Analog,
+      there's also 'huge', that's equal to 'xxlarge' and exists
+      for backwards compatibility",
+        "format": "xsmall
+small
 medium
 large
 xlarge
+xxlarge
 string",
         "name": "size",
       },
@@ -2494,7 +2523,7 @@ vertical",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=DataChart&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Visualizations-DataChart&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -3010,7 +3039,7 @@ string",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=DateInput&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Input-DateInput&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -3111,7 +3140,7 @@ string",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Diagram&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Visualizations-Diagram&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -3182,7 +3211,7 @@ string",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Drop&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Controls-Drop&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -3313,7 +3342,7 @@ string",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=DropButton&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Controls-DropButton&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -3502,7 +3531,7 @@ string",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=FileInput&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-FileInput&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -3585,7 +3614,7 @@ string",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Form&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Input-Form&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -3703,7 +3732,7 @@ submit",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=FormField&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Input-FormField&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -3914,7 +3943,7 @@ function
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Grid&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Layout-Grid&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -4065,6 +4094,90 @@ stretch",
         "name": "areas",
       },
       Object {
+        "description": "Include a border.",
+        "format": "boolean
+top
+left
+bottom
+right
+start
+end
+horizontal
+vertical
+all
+{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  side: 
+    top
+    left
+    bottom
+    right
+    start
+    end
+    horizontal
+    vertical
+    all,
+  size: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  style: 
+    solid
+    dashed
+    dotted
+    double
+    groove
+    ridge
+    inset
+    outset
+    hidden
+}
+[{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  side: 
+    top
+    left
+    bottom
+    right
+    start
+    end
+    horizontal
+    vertical
+    all,
+  size: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  style: 
+    solid
+    dashed
+    dotted
+    double
+    groove
+    ridge
+    inset
+    outset
+    hidden
+}]",
+        "name": "border",
+      },
+      Object {
         "description": "Column sizes.
       If an array value is an array, the inner array indicates the
       minimum and maximum sizes for the column.
@@ -4122,20 +4235,23 @@ xlarge
     medium
     large
     xlarge
-    [xsmall
-small
-medium
-large
-xlarge
-full
-1/2
-1/3
-2/3
-1/4
-2/4
-3/4
-flex
-auto]
+    [
+      xsmall
+      small
+      medium
+      large
+      xlarge
+      full
+      1/2
+      1/3
+      2/3
+      1/4
+      2/4
+      3/4
+      flex
+      auto
+      string
+    ]
     string
 }
 string",
@@ -4360,7 +4476,7 @@ function",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Heading&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Type-Heading&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -4556,7 +4672,7 @@ is too long to all fit.",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Image&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Media-Image&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -4708,7 +4824,7 @@ boolean",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Layer&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Layout-Layer&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -4741,7 +4857,7 @@ boolean",
       },
       Object {
         "defaultValue": false,
-        "description": "Whether the width and/or height should fill the current viewport 
+        "description": "Whether the width and/or height should fill the current viewport
         size.",
         "format": "boolean
 vertical
@@ -4821,13 +4937,13 @@ string",
       },
       Object {
         "defaultValue": true,
-        "description": "Whether there should be an overlay preventing interaction underneath 
+        "description": "Whether there should be an overlay preventing interaction underneath
         the layer.",
         "format": "boolean",
         "name": "modal",
       },
       Object {
-        "description": "Function that will be invoked on modal layers when the user clicks 
+        "description": "Function that will be invoked on modal layers when the user clicks
       outside the layer.",
         "format": "function",
         "name": "onClickOutside",
@@ -4868,7 +4984,7 @@ top-right",
         "name": "responsive",
       },
       Object {
-        "description": "Target where the layer will be aligned to. This should be a React 
+        "description": "Target where the layer will be aligned to. This should be a React
       reference.",
         "format": "object",
         "name": "target",
@@ -4882,7 +4998,7 @@ top-right",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=List&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Visualizations-List&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -5210,7 +5326,7 @@ function",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=MaskedInput&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Input-MaskedInput&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -5321,7 +5437,7 @@ number",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Menu&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Controls-Menu&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -5441,13 +5557,23 @@ string",
         "name": "margin",
       },
       Object {
-        "description": "Function that will be called to render the visual representation.
-      It will be passed an object containing button props.
-      It should return a react element.
-      For example:
-      \`children={({ disabled, drop, hover, focus }) => <Box ...>{...}</Box>}\`
-      ",
-        "format": "function",
+        "description": "Menu can take in children as a function or node.
+
+- Function that will be called to render the visual representation.
+It will be passed a props object. The props passed are
+different depending on the menu \`open\` state. When the menu is closed,
+two props are passed:
+\`{ hover, focus }\`,
+but when the menu is open, all menu props are passed to this function.\\\\
+It should return a React element.
+For example:
+\`children={(props) => <Box ...>{...}</Box>}\`\\\\
+**Note:** This function will be invoked on every mouse move when hovering.
+- Node is anything that can be rendered, e.g.
+\`<Box><CaretNext /><Text>Open Me</Text></Box>\`
+",
+        "format": "function
+node",
         "name": "children",
       },
       Object {
@@ -5464,7 +5590,7 @@ string",
         "description": "Where to place the drop down.
 The keys correspond to a side of the drop down.
 The values correspond to a side of the control. For instance,
-{left: 'left', top: 'bottom'} would align the left edges and the top of
+\`{left: 'left', top: 'bottom'}\` would align the left edges and the top of
 the drop down to the bottom of the control. At most one of left or right and
 one of top or bottom should be specified.",
         "format": "{
@@ -5531,7 +5657,7 @@ node",
         "defaultValue": Array [],
         "description": "Menu items to be placed inside the drop down.
 The object values can be any Button prop, 
-for example: label, onClick, and href.",
+for example: \`label\`, \`onClick\`, and \`href\`.",
         "format": "[object]",
         "name": "items",
         "required": true,
@@ -5580,7 +5706,7 @@ string",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Meter&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Visualizations-Meter&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -5782,7 +5908,7 @@ circle",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Paragraph&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Type-Paragraph&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -5944,7 +6070,7 @@ end",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=RadioButton&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Input-RadioButton&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -6018,7 +6144,7 @@ with the same name so form submissions work.",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=RadioButtonGroup&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Input-RadioButtonGroup&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -6096,7 +6222,7 @@ object",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=RangeInput&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Input-RangeInput&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -6163,7 +6289,7 @@ string",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=RangeSelector&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Input-RangeSelector&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -6279,7 +6405,7 @@ string",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Select&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Input-Select&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -6402,10 +6528,35 @@ string",
         "name": "children",
       },
       Object {
+        "defaultValue": false,
+        "description": "Whether to provide a button option to clear selections.",
+        "format": "boolean
+{
+  position: 
+    top
+    bottom,
+  label: string
+}",
+        "name": "clear",
+      },
+      Object {
         "defaultValue": true,
         "description": "Wether to close the drop when a selection is made.",
         "format": "boolean",
         "name": "closeOnChange",
+      },
+      Object {
+        "description": "Initially selected value. This can be an array
+      when multiple.",
+        "format": "string
+object
+number
+[
+  string
+  object
+  number
+]",
+        "name": "defaultValue",
       },
       Object {
         "defaultValue": false,
@@ -6507,7 +6658,9 @@ function",
         "name": "messages",
       },
       Object {
-        "description": "Whether to allow multiple options to be selected.",
+        "description": "Whether to allow multiple options to be selected. When multiple is true, 
+      'value' should be an array of selected options and 'options' should be 
+      an array of possible options",
         "format": "boolean",
         "name": "multiple",
       },
@@ -6758,8 +6911,20 @@ bottom",
     "usage": "import { TableCell } from 'grommet';
 <TableCell />",
   },
-  "TableFooter": [Function],
-  "TableHeader": [Function],
+  "TableFooter": Object {
+    "description": "The footer of a table.",
+    "intrinsicElement": "tfoot",
+    "name": "TableFooter",
+    "usage": "import { TableFooter } from 'grommet';
+<TableFooter />",
+  },
+  "TableHeader": Object {
+    "description": "The header of a table.",
+    "intrinsicElement": "thead",
+    "name": "TableHeader",
+    "usage": "import { TableHeader } from 'grommet';
+<TableHeader />",
+  },
   "TableRow": Object {
     "description": "A row of cells in a table.",
     "intrinsicElement": "tr",
@@ -6772,7 +6937,7 @@ bottom",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Tabs&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Controls-Tabs&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -6949,7 +7114,7 @@ currently active tab changes.",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Text&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Type-Text&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -7142,7 +7307,7 @@ break-word",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=TextArea&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Input-TextArea&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -7228,7 +7393,7 @@ string",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=TextInput&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Input-TextInput&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -7244,6 +7409,15 @@ string",
         "description": "Custom title to be used by screen readers.",
         "format": "string",
         "name": "a11yTitle",
+      },
+      Object {
+        "description": "Default suggestion to highlight, as an index into the suggestions array.
+
+      If set, the suggestion at the specified index in the suggestions array
+      will be highlighted by default when the suggestions drop opens.
+      ",
+        "format": "number",
+        "name": "defaultSuggestion",
       },
       Object {
         "defaultValue": Object {
@@ -7400,6 +7574,14 @@ suggestions and instead rely on the user to type more.",
         "name": "suggestions",
       },
       Object {
+        "defaultValue": "start",
+        "description": "How to align the text inside the input.",
+        "format": "start
+center
+end",
+        "name": "textAlign",
+      },
+      Object {
         "description": "What text to put in the input.",
         "format": "string
 number",
@@ -7409,12 +7591,53 @@ number",
     "usage": "import { TextInput } from 'grommet';
 <TextInput id='item' name='item' />",
   },
+  "Tip": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=Controls-Tip&full=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/tip&module=%2Fsrc%2FTip.js",
+      },
+    ],
+    "description": "Tooltip or a hint when hovering over an element. The tooltip will render 
+      when hovering on top of the Tip's child node or string.",
+    "name": "Tip",
+    "properties": Array [
+      Object {
+        "description": "The tooltip content inside the drop.",
+        "format": "node",
+        "name": "content",
+      },
+      Object {
+        "defaultValue": Object {
+          "plain": true,
+          "trapFocus": false,
+        },
+        "description": "Any valid Drop prop to style the Tip drop container.",
+        "format": "object",
+        "name": "dropProps",
+      },
+      Object {
+        "defaultValue": undefined,
+        "description": "Whether content should have default styling.",
+        "format": "boolean",
+        "name": "plain",
+      },
+    ],
+    "usage": "import { Tip } from 'grommet';
+<Tip />",
+  },
   "Video": Object {
     "availableAt": Array [
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Video&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Media-Video&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
@@ -7591,7 +7814,7 @@ contain",
       Object {
         "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
         "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=WorldMap&full=0&addons=0&stories=1&panelRight=0",
+        "url": "https://storybook.grommet.io/?selectedKind=Visualizations-WorldMap&full=0&stories=1&panelRight=0",
       },
       Object {
         "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",

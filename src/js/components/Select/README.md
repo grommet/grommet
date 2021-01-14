@@ -1,7 +1,7 @@
 ## Select
 A control to select a value, with optional search.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Select&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/select&module=%2Fsrc%2FSelect.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Input-Select&full=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/select&module=%2Fsrc%2FSelect.js)
 ## Usage
 
 ```javascript
@@ -137,12 +137,42 @@ Function that will be called when each option is rendered.
 function
 ```
 
+**clear**
+
+Whether to provide a button option to clear selections.
+
+```
+boolean
+{
+  position: 
+    top
+    bottom,
+  label: string
+}
+```
+
 **closeOnChange**
 
 Wether to close the drop when a selection is made. Defaults to `true`.
 
 ```
 boolean
+```
+
+**defaultValue**
+
+Initially selected value. This can be an array
+      when multiple.
+
+```
+string
+object
+number
+[
+  string
+  object
+  number
+]
 ```
 
 **disabled**
@@ -274,7 +304,9 @@ Custom messages.
 
 **multiple**
 
-Whether to allow multiple options to be selected.
+Whether to allow multiple options to be selected. When multiple is true, 
+      'value' should be an array of selected options and 'options' should be 
+      an array of possible options
 
 ```
 boolean
@@ -532,6 +564,26 @@ Defaults to
 
 ```
 undefined
+```
+
+**select.clear.container**
+
+Any valid Box prop for the clear button container. Expects `object`.
+
+Defaults to
+
+```
+{ pad: 'small', background: 'light-2' }
+```
+
+**select.clear.text**
+
+Any valid Text prop for text used inside the clear button container. Expects `object`.
+
+Defaults to
+
+```
+{ color: 'dark-3' }
 ```
 
 **select.control.open**

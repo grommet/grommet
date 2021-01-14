@@ -47,7 +47,9 @@ const Select = forwardRef(
       a11yTitle,
       alignSelf,
       children,
+      clear = false,
       closeOnChange = true,
+      defaultValue,
       disabled,
       disabledKey,
       dropAlign = defaultDropAlign,
@@ -72,7 +74,7 @@ const Select = forwardRef(
       onOpen,
       onSearch,
       open: propOpen,
-      options,
+      options: optionsProp,
       placeholder,
       plain,
       replace,
@@ -89,10 +91,13 @@ const Select = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const inputRef = useRef();
     const formContext = useContext(FormContext);
-
     // value is used for what we receive in valueProp and the basis for
     // what we send with onChange
-    const [value, setValue] = formContext.useFormInput(name, valueProp, '');
+    const [value, setValue] = formContext.useFormInput(
+      name,
+      valueProp,
+      defaultValue || '',
+    );
     // valuedValue is the value mapped with any valueKey applied
     const valuedValue = useMemo(() => {
       if (Array.isArray(value))
@@ -101,10 +106,21 @@ const Select = forwardRef(
         );
       return valueKey && valueKey.reduce ? value : applyKey(value, valueKey);
     }, [value, valueKey]);
+    // search input value
+    const [search, setSearch] = useState();
+    // All select option indices and values
+    const [allOptions, setAllOptions] = useState(optionsProp);
+    // Track changes to options property, except when options are being
+    // updated due to search activity. Allows option's initial index value
+    // to be referenced when filtered by search.
+    useEffect(() => {
+      if (!search) setAllOptions(optionsProp);
+    }, [optionsProp, search]);
+
     // the option indexes present in the value
     const optionIndexesInValue = useMemo(() => {
       const result = [];
-      options.forEach((option, index) => {
+      allOptions.forEach((option, index) => {
         if (selected !== undefined) {
           if (Array.isArray(selected)) {
             if (selected.indexOf(index) !== -1) result.push(index);
@@ -120,7 +136,7 @@ const Select = forwardRef(
         }
       });
       return result;
-    }, [options, selected, valueKey, valuedValue]);
+    }, [allOptions, selected, valueKey, valuedValue]);
 
     const [open, setOpen] = useState(propOpen);
     useEffect(() => setOpen(propOpen), [propOpen]);
@@ -149,6 +165,7 @@ const Select = forwardRef(
           adjustedEvent.selected = nextSelected;
           onChange(adjustedEvent);
         }
+        setSearch();
       },
       [closeOnChange, onChange, onRequestClose, setValue],
     );
@@ -180,11 +197,11 @@ const Select = forwardRef(
       if (!selectValue) {
         if (optionIndexesInValue.length === 0) return '';
         if (optionIndexesInValue.length === 1)
-          return applyKey(options[optionIndexesInValue[0]], labelKey);
+          return applyKey(allOptions[optionIndexesInValue[0]], labelKey);
         return messages.multiple;
       }
       return undefined;
-    }, [labelKey, messages, optionIndexesInValue, options, selectValue]);
+    }, [labelKey, messages, optionIndexesInValue, allOptions, selectValue]);
 
     const iconColor = normalizeColor(
       theme.select.icons.color || 'control',
@@ -209,6 +226,7 @@ const Select = forwardRef(
           onClick={onClick}
           dropContent={
             <SelectContainer
+              clear={clear}
               disabled={disabled}
               disabledKey={disabledKey}
               dropHeight={dropHeight}
@@ -221,10 +239,13 @@ const Select = forwardRef(
               onKeyDown={onKeyDown}
               onMore={onMore}
               onSearch={onSearch}
-              options={options}
+              options={optionsProp}
+              allOptions={allOptions}
               optionIndexesInValue={optionIndexesInValue}
               replace={replace}
               searchPlaceholder={searchPlaceholder}
+              search={search}
+              setSearch={setSearch}
               selected={selected}
               value={value}
               valueKey={valueKey}

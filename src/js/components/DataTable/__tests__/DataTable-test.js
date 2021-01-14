@@ -3,6 +3,7 @@ import 'jest-styled-components';
 import { cleanup, render, fireEvent } from '@testing-library/react';
 
 import { Grommet } from '../../Grommet';
+import { Text } from '../../Text';
 import { DataTable } from '..';
 
 describe('DataTable', () => {
@@ -158,6 +159,39 @@ describe('DataTable', () => {
     fireEvent.click(headerCell, {});
     expect(onSort).toBeCalledWith(
       expect.objectContaining({ property: 'a', direction: 'asc' }),
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('onSort external', () => {
+    const onSort = jest.fn();
+    const { container, getByText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'zero', b: 0 },
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          onSort={onSort}
+          sort={{ property: 'a', direction: 'asc', external: true }}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    const headerCell = getByText('A');
+    fireEvent.click(headerCell, {});
+    expect(onSort).toBeCalledWith(
+      expect.objectContaining({
+        property: 'a',
+        direction: 'desc',
+        external: true,
+      }),
     );
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -821,6 +855,54 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
 
     fireEvent.mouseOver(getByLabelText('select beta'));
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('units', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A', footer: 'Total' },
+            { property: 'b', header: 'B', units: '(TiB)' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('placeholder', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A', footer: 'Total' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          placeholder="test placeholder"
+        />
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          placeholder={<Text weight="bold">test placeholder</Text>}
+        />
+      </Grommet>,
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 });

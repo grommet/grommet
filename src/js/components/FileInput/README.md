@@ -1,7 +1,7 @@
 ## undefined
 A control to input one or more files.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=FileInput&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/fileinput&module=%2Fsrc%2FFileInput.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=undefined-FileInput&full=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/fileinput&module=%2Fsrc%2FFileInput.js)
 ## Usage
 
 ```javascript
@@ -152,6 +152,16 @@ Defaults to
 
 ```
 12px
+```
+
+**global.input.extend**
+
+Any additional style for an input. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
 ```
 
 **fileInput.background**

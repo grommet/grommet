@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import {
   Box,
   Button,
@@ -83,7 +82,7 @@ const DropContent = ({ date: initialDate, time: initialTime, onClose }) => {
   );
 };
 
-const DateTimeDropButton = () => {
+export const DateTimeDropButton = () => {
   const [date, setDate] = React.useState();
   const [time, setTime] = React.useState('');
   const [open, setOpen] = React.useState();
@@ -120,6 +119,6 @@ const DateTimeDropButton = () => {
   );
 };
 
-storiesOf('MaskedInput', module).add('Date time drop', () => (
-  <DateTimeDropButton />
-));
+DateTimeDropButton.story = {
+  name: 'Date time drop',
+};

@@ -12,6 +12,8 @@ import {
   PolymorphicType,
 } from '../../utils';
 
+import { TipProps } from '../Tip';
+
 export interface ButtonProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
@@ -33,6 +35,7 @@ export interface ButtonProps {
   reverse?: boolean;
   secondary?: boolean;
   size?: 'small' | 'medium' | 'large';
+  tip?: TipProps | string;
   type?: 'button' | 'reset' | 'submit';
   as?: PolymorphicType;
 }

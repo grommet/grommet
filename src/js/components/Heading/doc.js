@@ -6,7 +6,7 @@ import { themeDocUtils } from '../../utils/themeDocUtils';
 
 export const doc = Heading => {
   const DocumentedHeading = describe(Heading)
-    .availableAt(getAvailableAtBadge('Heading'))
+    .availableAt(getAvailableAtBadge('Heading', 'Type'))
     .description('Heading text structured in levels.')
     .usage(
       `import { Heading } from 'grommet';

@@ -5,7 +5,7 @@ import { themeDocUtils } from '../../utils/themeDocUtils';
 
 export const doc = MaskedInput => {
   const DocumentedMaskedInput = describe(MaskedInput)
-    .availableAt(getAvailableAtBadge('MaskedInput'))
+    .availableAt(getAvailableAtBadge('MaskedInput', 'Input'))
     .description('An input field with formalized syntax.')
     .usage(
       `import { MaskedInput } from 'grommet';
@@ -86,6 +86,12 @@ export const themeDoc = {
   },
   'maskedInput.extend': {
     description: 'Any additional style for MaskedInput.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'maskedInput.container.extend': {
+    description: `Any additional style for the container surrounding the input 
+    and, if present, icon.`,
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },

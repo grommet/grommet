@@ -3,6 +3,7 @@ import { describe, PropTypes } from 'react-desc';
 import {
   backgroundDoc,
   genericProps,
+  getBorderPropType,
   hoverIndicatorPropType,
   padPropType,
 } from '../../utils/prop-types';
@@ -32,42 +33,7 @@ const ANIMATION_SHAPE = PropTypes.shape({
   size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
 });
 
-const BORDER_SHAPE = PropTypes.shape({
-  color: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.shape({
-      dark: PropTypes.string,
-      light: PropTypes.string,
-    }),
-  ]),
-  side: PropTypes.oneOf([
-    'top',
-    'left',
-    'bottom',
-    'right',
-    'start',
-    'end',
-    'horizontal',
-    'vertical',
-    'all',
-    'between',
-  ]),
-  size: PropTypes.oneOfType([
-    PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
-    PropTypes.string,
-  ]),
-  style: PropTypes.oneOf([
-    'solid',
-    'dashed',
-    'dotted',
-    'double',
-    'groove',
-    'ridge',
-    'inset',
-    'outset',
-    'hidden',
-  ]).defaultValue('solid'),
-});
+const BORDER_SHAPE = getBorderPropType({ includeBetween: true });
 
 // if you update values here, make sure to update in Drop/doc too.
 const overflowPropType = PropTypes.oneOfType([
@@ -81,7 +47,7 @@ const overflowPropType = PropTypes.oneOfType([
 
 export const doc = Box => {
   const DocumentedBox = describe(Box)
-    .availableAt(getAvailableAtBadge('Box'))
+    .availableAt(getAvailableAtBadge('Box', 'Layout'))
     .description(
       `A container that lays out its contents in one direction. Box
       provides CSS flexbox capabilities for layout, as well as general
@@ -213,7 +179,7 @@ export const doc = Box => {
     ]).description(`The amount of spacing between child elements. This
         should not be used in conjunction with 'wrap' as the gap elements
         will not wrap gracefully. If a child is a Fragment,
-        Box will not add a gap between the choldren of the Fragment.`),
+        Box will not add a gap between the children of the Fragment.`),
     height: PropTypes.oneOfType([
       PropTypes.oneOf([
         'xxsmall',

@@ -1,11 +1,10 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Button, CheckBox, Grid, Grommet, Layer, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const positions = ['left', 'right', 'top', 'bottom', 'center'];
 
-const TargetLayer = () => {
+export const TargetLayer = () => {
   const [open, setOpen] = React.useState();
   const [gutter, setGutter] = React.useState('small');
   const [modal, setModal] = React.useState(true);
@@ -63,6 +62,11 @@ const TargetLayer = () => {
               onClick={() => setGutter(gutter === 'small' ? 'xsmall' : 'small')}
             />
             <Button label="Close" onClick={onClose} />
+            <Select
+              options={positions}
+              value={position}
+              onChange={({ option }) => setPosition(option)}
+            />
           </Box>
         </Layer>
       )}
@@ -70,4 +74,4 @@ const TargetLayer = () => {
   );
 };
 
-storiesOf('Layer', module).add('Target', () => <TargetLayer />);
+TargetLayer.story = { name: 'Target' };

@@ -1,11 +1,10 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Grommet, MaskedInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const daysInMonth = month => new Date(2019, month, 0).getDate();
 
-const DateMaskedInput = () => {
+export const DateMaskedInput = () => {
   const [value, setValue] = React.useState('');
 
   return (
@@ -49,6 +48,9 @@ const DateMaskedInput = () => {
   );
 };
 
-storiesOf('MaskedInput', module).add('Date', () => <DateMaskedInput />, {
-  chromatic: { disable: true },
-});
+DateMaskedInput.story = {
+  name: 'Date',
+  parameters: {
+    chromatic: { disable: true },
+  },
+};

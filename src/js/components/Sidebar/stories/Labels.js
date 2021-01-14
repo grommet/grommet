@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
   Avatar,
@@ -83,5 +82,3 @@ export const Labels = () => (
     </Box>
   </Grommet>
 );
-
-storiesOf('Sidebar', module).add('Labels', () => <Labels />);

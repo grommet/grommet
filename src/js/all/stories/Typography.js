@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Heading, Paragraph, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -9,7 +8,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua.
 `;
 
-const Medium = () => {
+export const Medium = () => {
   const margin = undefined;
   return (
     <Grommet theme={grommet}>
@@ -51,7 +50,7 @@ const Medium = () => {
   );
 };
 
-const Small = () => (
+export const Small = () => (
   <Grommet theme={grommet}>
     <Box pad="medium">
       <div>
@@ -90,7 +89,7 @@ const Small = () => (
   </Grommet>
 );
 
-const Large = () => (
+export const Large = () => (
   <Grommet theme={grommet}>
     <Box pad="medium">
       <div>
@@ -129,7 +128,6 @@ const Large = () => (
   </Grommet>
 );
 
-storiesOf('Typography', module)
-  .add('Small', () => <Small />)
-  .add('Medium', () => <Medium />)
-  .add('Large', () => <Large />);
+export default {
+  title: 'Type/Typography',
+};

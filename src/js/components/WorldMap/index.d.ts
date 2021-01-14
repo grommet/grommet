@@ -21,20 +21,20 @@ export interface WorldMapProps {
       | 'Europe'
       | 'North America'
       | 'South America';
-    onClick?: (...args: any[]) => any;
-    onHover?: (...args: any[]) => any;
+    onClick?: (name: string) => void;
+    onHover?: (hovered: boolean) => void;
   }[];
   fill?: FillType;
   gridArea?: GridAreaType;
   hoverColor?: string | { dark?: string; light?: string };
   margin?: MarginType;
-  onSelectPlace?: (place: number[]) => void;
+  onSelectPlace?: (place: [number, number]) => void;
   places?: {
     color?: string | { dark?: string; light?: string };
     name?: string;
     location: number[];
-    onClick?: (...args: any[]) => any;
-    onHover?: (...args: any[]) => any;
+    onClick?: (name: string) => void;
+    onHover?: (hovered: boolean) => void;
   }[];
 }
 
