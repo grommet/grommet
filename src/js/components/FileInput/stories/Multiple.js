@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, FileInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Example = () => {
+export const Multiple = () => {
   return (
     <Grommet full theme={grommet}>
       <Box fill align="center" justify="start" pad="large">
@@ -24,5 +23,3 @@ const Example = () => {
     </Grommet>
   );
 };
-
-storiesOf('FileInput', module).add('Multiple', () => <Example />);

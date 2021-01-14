@@ -3541,7 +3541,7 @@ string",
     ],
     "description": "A control to input one or more files.",
     "intrinsicElement": "input",
-    "name": undefined,
+    "name": "FileInput",
     "properties": Array [
       Object {
         "description": "MIME type pattern to match against. For example: \\"image/*\\".",

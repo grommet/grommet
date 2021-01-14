@@ -236,6 +236,8 @@ FileInput.defaultProps = {
 
 Object.setPrototypeOf(FileInput.defaultProps, defaultProps);
 
+FileInput.displayName = 'FileInput';
+
 let FileInputDoc;
 if (process.env.NODE_ENV !== 'production') {
   // eslint-disable-next-line global-require

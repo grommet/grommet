@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, FileInput, Text } from 'grommet';
 import { Trash } from 'grommet-icons';
@@ -26,7 +25,7 @@ const customTheme = {
   },
 };
 
-const Example = () => {
+export const Custom = () => {
   return (
     <Grommet full theme={customTheme}>
       <Box fill align="center" justify="start" pad="large">
@@ -51,5 +50,3 @@ const Example = () => {
     </Grommet>
   );
 };
-
-storiesOf('FileInput', module).add('Custom', () => <Example />);
