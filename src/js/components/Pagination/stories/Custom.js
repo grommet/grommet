@@ -34,22 +34,58 @@ const customTheme = deepMerge(grommet, {
   },
 });
 
-const secondTheme = deepMerge(hpe, {
+const secondaryTheme = deepMerge(hpe, {
   pagination: {
     button: 'secondary',
   },
 });
 
+const primaryTheme = deepMerge(hpe, {
+  pagination: {
+    button: 'primary',
+  },
+});
+
 export const Custom = () => (
   <Grommet theme={customTheme}>
-    <Box align="start" pad="small" gap="small">
-      <Text>Custom Theme</Text>
-      <Pagination numItems={237} />
-
-      <Text>Reference Button Kind secondary by string with HPE theme</Text>
-      <ThemeContext.Extend value={secondTheme}>
+    <Box direction="row">
+      <Box
+        align="start"
+        pad={{ top: 'small', bottom: 'medium', horizontal: 'medium' }}
+        gap="small"
+      >
+        <Text>Custom Theme</Text>
         <Pagination numItems={237} />
-      </ThemeContext.Extend>
+
+        <Text>Reference Button Kind secondary by string with HPE theme</Text>
+        <ThemeContext.Extend value={secondaryTheme}>
+          <Pagination numItems={237} />
+        </ThemeContext.Extend>
+
+        <Text>Reference Button Kind primary by string with HPE theme</Text>
+        <ThemeContext.Extend value={primaryTheme}>
+          <Pagination numItems={237} />
+        </ThemeContext.Extend>
+      </Box>
+      <Box
+        align="start"
+        background="black"
+        pad={{ top: 'small', bottom: 'medium', horizontal: 'medium' }}
+        gap="small"
+      >
+        <Text>Custom Theme</Text>
+        <Pagination numItems={237} />
+
+        <Text>Reference Button Kind secondary by string with HPE theme</Text>
+        <ThemeContext.Extend value={secondaryTheme}>
+          <Pagination numItems={237} />
+        </ThemeContext.Extend>
+
+        <Text>Reference Button Kind primary by string with HPE theme</Text>
+        <ThemeContext.Extend value={primaryTheme}>
+          <Pagination numItems={237} />
+        </ThemeContext.Extend>
+      </Box>
     </Box>
   </Grommet>
 );

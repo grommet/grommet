@@ -12084,7 +12084,7 @@ exports[`DataTable should apply pagination styling 1`] = `
   stroke: none;
 }
 
-.c21 {
+.c22 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -12095,25 +12095,25 @@ exports[`DataTable should apply pagination styling 1`] = `
   stroke: #000000;
 }
 
-.c21 g {
+.c22 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c21 *:not([stroke])[fill="none"] {
+.c22 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c21 *[stroke*="#"],
-.c21 *[STROKE*="#"] {
+.c22 *[stroke*="#"],
+.c22 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c21 *[fill-rule],
-.c21 *[FILL-RULE],
-.c21 *[fill*="#"],
-.c21 *[FILL*="#"] {
+.c22 *[fill-rule],
+.c22 *[FILL-RULE],
+.c22 *[fill*="#"],
+.c22 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -12374,7 +12374,7 @@ exports[`DataTable should apply pagination styling 1`] = `
   border: 0;
 }
 
-.c20 {
+.c21 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -12406,31 +12406,31 @@ exports[`DataTable should apply pagination styling 1`] = `
   flex: 1 0 auto;
 }
 
-.c20 > svg {
+.c21 > svg {
   vertical-align: bottom;
 }
 
-.c20:hover {
+.c21:hover {
   background-color: rgba(51,51,51,0.06274509803921569);
 }
 
-.c20:focus {
+.c21:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c20:focus > circle,
-.c20:focus > ellipse,
-.c20:focus > line,
-.c20:focus > path,
-.c20:focus > polygon,
-.c20:focus > polyline,
-.c20:focus > rect {
+.c21:focus > circle,
+.c21:focus > ellipse,
+.c21:focus > line,
+.c21:focus > path,
+.c21:focus > polygon,
+.c21:focus > polyline,
+.c21:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c20:focus::-moz-focus-inner {
+.c21:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -12479,6 +12479,15 @@ exports[`DataTable should apply pagination styling 1`] = `
 .c16 {
   padding: 4px;
   border-radius: 4px;
+}
+
+.c20 {
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.c20:hover {
+  padding: 4px;
 }
 
 .c14 {
@@ -14185,7 +14194,7 @@ exports[`DataTable should apply pagination styling 1`] = `
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="c19 c16"
+              class="c19 c20"
               kind="[object Object]"
               type="button"
             >
@@ -14200,7 +14209,7 @@ exports[`DataTable should apply pagination styling 1`] = `
           >
             <button
               aria-label="Go to page 2"
-              class="c20 c16"
+              class="c21 c20"
               kind="[object Object]"
               type="button"
             >
@@ -14215,13 +14224,13 @@ exports[`DataTable should apply pagination styling 1`] = `
           >
             <button
               aria-label="Go to next page"
-              class="c20 c16"
+              class="c21 c20"
               kind="[object Object]"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c21"
+                class="c22"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -14275,7 +14284,7 @@ exports[`DataTable should paginate 1`] = `
   stroke: none;
 }
 
-.c21 {
+.c22 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -14286,25 +14295,25 @@ exports[`DataTable should paginate 1`] = `
   stroke: #000000;
 }
 
-.c21 g {
+.c22 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c21 *:not([stroke])[fill="none"] {
+.c22 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c21 *[stroke*="#"],
-.c21 *[STROKE*="#"] {
+.c22 *[stroke*="#"],
+.c22 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c21 *[fill-rule],
-.c21 *[FILL-RULE],
-.c21 *[fill*="#"],
-.c21 *[FILL*="#"] {
+.c22 *[fill-rule],
+.c22 *[FILL-RULE],
+.c22 *[fill*="#"],
+.c22 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -14563,7 +14572,7 @@ exports[`DataTable should paginate 1`] = `
   border: 0;
 }
 
-.c20 {
+.c21 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -14595,31 +14604,31 @@ exports[`DataTable should paginate 1`] = `
   flex: 1 0 auto;
 }
 
-.c20 > svg {
+.c21 > svg {
   vertical-align: bottom;
 }
 
-.c20:hover {
+.c21:hover {
   background-color: rgba(51,51,51,0.06274509803921569);
 }
 
-.c20:focus {
+.c21:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c20:focus > circle,
-.c20:focus > ellipse,
-.c20:focus > line,
-.c20:focus > path,
-.c20:focus > polygon,
-.c20:focus > polyline,
-.c20:focus > rect {
+.c21:focus > circle,
+.c21:focus > ellipse,
+.c21:focus > line,
+.c21:focus > path,
+.c21:focus > polygon,
+.c21:focus > polyline,
+.c21:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c20:focus::-moz-focus-inner {
+.c21:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -14668,6 +14677,15 @@ exports[`DataTable should paginate 1`] = `
 .c16 {
   padding: 4px;
   border-radius: 4px;
+}
+
+.c20 {
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.c20:hover {
+  padding: 4px;
 }
 
 .c14 {
@@ -16368,7 +16386,7 @@ exports[`DataTable should paginate 1`] = `
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="c19 c16"
+              class="c19 c20"
               kind="[object Object]"
               type="button"
             >
@@ -16383,7 +16401,7 @@ exports[`DataTable should paginate 1`] = `
           >
             <button
               aria-label="Go to page 2"
-              class="c20 c16"
+              class="c21 c20"
               kind="[object Object]"
               type="button"
             >
@@ -16398,13 +16416,13 @@ exports[`DataTable should paginate 1`] = `
           >
             <button
               aria-label="Go to next page"
-              class="c20 c16"
+              class="c21 c20"
               kind="[object Object]"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c21"
+                class="c22"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -16458,7 +16476,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   stroke: none;
 }
 
-.c21 {
+.c22 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -16469,25 +16487,25 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   stroke: #000000;
 }
 
-.c21 g {
+.c22 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c21 *:not([stroke])[fill="none"] {
+.c22 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c21 *[stroke*="#"],
-.c21 *[STROKE*="#"] {
+.c22 *[stroke*="#"],
+.c22 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c21 *[fill-rule],
-.c21 *[FILL-RULE],
-.c21 *[fill*="#"],
-.c21 *[FILL*="#"] {
+.c22 *[fill-rule],
+.c22 *[FILL-RULE],
+.c22 *[fill*="#"],
+.c22 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -16746,7 +16764,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   border: 0;
 }
 
-.c20 {
+.c21 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -16778,31 +16796,31 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   flex: 1 0 auto;
 }
 
-.c20 > svg {
+.c21 > svg {
   vertical-align: bottom;
 }
 
-.c20:hover {
+.c21:hover {
   background-color: rgba(51,51,51,0.06274509803921569);
 }
 
-.c20:focus {
+.c21:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c20:focus > circle,
-.c20:focus > ellipse,
-.c20:focus > line,
-.c20:focus > path,
-.c20:focus > polygon,
-.c20:focus > polyline,
-.c20:focus > rect {
+.c21:focus > circle,
+.c21:focus > ellipse,
+.c21:focus > line,
+.c21:focus > path,
+.c21:focus > polygon,
+.c21:focus > polyline,
+.c21:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c20:focus::-moz-focus-inner {
+.c21:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -16851,6 +16869,15 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
 .c16 {
   padding: 4px;
   border-radius: 4px;
+}
+
+.c20 {
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.c20:hover {
+  padding: 4px;
 }
 
 .c14 {
@@ -17435,7 +17462,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="c19 c16"
+              class="c19 c20"
               kind="[object Object]"
               type="button"
             >
@@ -17450,7 +17477,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
           >
             <button
               aria-label="Go to page 2"
-              class="c20 c16"
+              class="c21 c20"
               kind="[object Object]"
               type="button"
             >
@@ -17465,7 +17492,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
           >
             <button
               aria-label="Go to page 3"
-              class="c20 c16"
+              class="c21 c20"
               kind="[object Object]"
               type="button"
             >
@@ -17480,7 +17507,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
           >
             <button
               aria-label="Go to page 4"
-              class="c20 c16"
+              class="c21 c20"
               kind="[object Object]"
               type="button"
             >
@@ -17495,7 +17522,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
           >
             <button
               aria-label="Go to page 5"
-              class="c20 c16"
+              class="c21 c20"
               kind="[object Object]"
               type="button"
             >
@@ -17510,7 +17537,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
           >
             <button
               aria-label="Go to page 6"
-              class="c20 c16"
+              class="c21 c20"
               kind="[object Object]"
               type="button"
             >
@@ -17525,7 +17552,7 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
           >
             <button
               aria-label="Go to page 7"
-              class="c20 c16"
+              class="c21 c20"
               kind="[object Object]"
               type="button"
             >
@@ -17540,13 +17567,13 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
           >
             <button
               aria-label="Go to next page"
-              class="c20 c16"
+              class="c21 c20"
               kind="[object Object]"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c21"
+                class="c22"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -17600,7 +17627,7 @@ exports[`DataTable should render new data when page changes 1`] = `
   stroke: none;
 }
 
-.c21 {
+.c22 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -17611,25 +17638,25 @@ exports[`DataTable should render new data when page changes 1`] = `
   stroke: #000000;
 }
 
-.c21 g {
+.c22 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c21 *:not([stroke])[fill="none"] {
+.c22 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c21 *[stroke*="#"],
-.c21 *[STROKE*="#"] {
+.c22 *[stroke*="#"],
+.c22 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c21 *[fill-rule],
-.c21 *[FILL-RULE],
-.c21 *[fill*="#"],
-.c21 *[FILL*="#"] {
+.c22 *[fill-rule],
+.c22 *[FILL-RULE],
+.c22 *[fill*="#"],
+.c22 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -17888,7 +17915,7 @@ exports[`DataTable should render new data when page changes 1`] = `
   border: 0;
 }
 
-.c20 {
+.c21 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -17920,31 +17947,31 @@ exports[`DataTable should render new data when page changes 1`] = `
   flex: 1 0 auto;
 }
 
-.c20 > svg {
+.c21 > svg {
   vertical-align: bottom;
 }
 
-.c20:hover {
+.c21:hover {
   background-color: rgba(51,51,51,0.06274509803921569);
 }
 
-.c20:focus {
+.c21:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c20:focus > circle,
-.c20:focus > ellipse,
-.c20:focus > line,
-.c20:focus > path,
-.c20:focus > polygon,
-.c20:focus > polyline,
-.c20:focus > rect {
+.c21:focus > circle,
+.c21:focus > ellipse,
+.c21:focus > line,
+.c21:focus > path,
+.c21:focus > polygon,
+.c21:focus > polyline,
+.c21:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c20:focus::-moz-focus-inner {
+.c21:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -17993,6 +18020,15 @@ exports[`DataTable should render new data when page changes 1`] = `
 .c16 {
   padding: 4px;
   border-radius: 4px;
+}
+
+.c20 {
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.c20:hover {
+  padding: 4px;
 }
 
 .c14 {
@@ -19693,7 +19729,7 @@ exports[`DataTable should render new data when page changes 1`] = `
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="c19 c16"
+              class="c19 c20"
               kind="[object Object]"
               type="button"
             >
@@ -19708,7 +19744,7 @@ exports[`DataTable should render new data when page changes 1`] = `
           >
             <button
               aria-label="Go to page 2"
-              class="c20 c16"
+              class="c21 c20"
               kind="[object Object]"
               type="button"
             >
@@ -19723,13 +19759,13 @@ exports[`DataTable should render new data when page changes 1`] = `
           >
             <button
               aria-label="Go to next page"
-              class="c20 c16"
+              class="c21 c20"
               kind="[object Object]"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c21"
+                class="c22"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -23594,7 +23630,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           >
             <button
               aria-label="Go to previous page"
-              class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 khwAB"
+              class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 jvstun"
               kind="[object Object]"
               type="button"
             >
@@ -23621,7 +23657,7 @@ exports[`DataTable should render new data when page changes 2`] = `
           >
             <button
               aria-label="Go to page 1"
-              class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 khwAB"
+              class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 jvstun"
               kind="[object Object]"
               type="button"
             >
@@ -23637,7 +23673,7 @@ exports[`DataTable should render new data when page changes 2`] = `
             <button
               aria-current="page"
               aria-label="Go to page 2"
-              class="StyledButtonKind-sc-1vhfpnt-0 jrRdnJ StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 khwAB"
+              class="StyledButtonKind-sc-1vhfpnt-0 jrRdnJ StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 jvstun"
               kind="[object Object]"
               type="button"
             >
@@ -23653,7 +23689,7 @@ exports[`DataTable should render new data when page changes 2`] = `
             <button
               aria-disabled="true"
               aria-label="Go to next page"
-              class="StyledButtonKind-sc-1vhfpnt-0 fVgacz StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 khwAB"
+              class="StyledButtonKind-sc-1vhfpnt-0 fVgacz StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dwBFBp"
               disabled=""
               kind="[object Object]"
               type="button"
@@ -23714,7 +23750,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   stroke: none;
 }
 
-.c21 {
+.c22 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -23725,25 +23761,25 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   stroke: #000000;
 }
 
-.c21 g {
+.c22 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c21 *:not([stroke])[fill="none"] {
+.c22 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c21 *[stroke*="#"],
-.c21 *[STROKE*="#"] {
+.c22 *[stroke*="#"],
+.c22 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c21 *[fill-rule],
-.c21 *[FILL-RULE],
-.c21 *[fill*="#"],
-.c21 *[FILL*="#"] {
+.c22 *[fill-rule],
+.c22 *[FILL-RULE],
+.c22 *[fill*="#"],
+.c22 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -24002,7 +24038,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   border: 0;
 }
 
-.c20 {
+.c21 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -24034,31 +24070,31 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   flex: 1 0 auto;
 }
 
-.c20 > svg {
+.c21 > svg {
   vertical-align: bottom;
 }
 
-.c20:hover {
+.c21:hover {
   background-color: rgba(51,51,51,0.06274509803921569);
 }
 
-.c20:focus {
+.c21:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c20:focus > circle,
-.c20:focus > ellipse,
-.c20:focus > line,
-.c20:focus > path,
-.c20:focus > polygon,
-.c20:focus > polyline,
-.c20:focus > rect {
+.c21:focus > circle,
+.c21:focus > ellipse,
+.c21:focus > line,
+.c21:focus > path,
+.c21:focus > polygon,
+.c21:focus > polyline,
+.c21:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c20:focus::-moz-focus-inner {
+.c21:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -24107,6 +24143,15 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
 .c16 {
   padding: 4px;
   border-radius: 4px;
+}
+
+.c20 {
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.c20:hover {
+  padding: 4px;
 }
 
 .c14 {
@@ -25807,7 +25852,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="c19 c16"
+              class="c19 c20"
               kind="[object Object]"
               type="button"
             >
@@ -25822,7 +25867,7 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           >
             <button
               aria-label="Go to page 2"
-              class="c20 c16"
+              class="c21 c20"
               kind="[object Object]"
               type="button"
             >
@@ -25837,13 +25882,13 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
           >
             <button
               aria-label="Go to next page"
-              class="c20 c16"
+              class="c21 c20"
               kind="[object Object]"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c21"
+                class="c22"
                 viewBox="0 0 24 24"
               >
                 <polyline
@@ -25897,7 +25942,7 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
   stroke: none;
 }
 
-.c20 {
+.c21 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -25908,25 +25953,25 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
   stroke: #666666;
 }
 
-.c20 g {
+.c21 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c20 *:not([stroke])[fill="none"] {
+.c21 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c20 *[stroke*="#"],
-.c20 *[STROKE*="#"] {
+.c21 *[stroke*="#"],
+.c21 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c20 *[fill-rule],
-.c20 *[FILL-RULE],
-.c20 *[fill*="#"],
-.c20 *[FILL*="#"] {
+.c21 *[fill-rule],
+.c21 *[FILL-RULE],
+.c21 *[fill*="#"],
+.c21 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -26270,6 +26315,15 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
 }
 
 .c15 {
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.c15:hover {
+  padding: 4px;
+}
+
+.c20 {
   padding: 4px;
   border-radius: 4px;
 }
@@ -27835,14 +27889,14 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
             <button
               aria-disabled="true"
               aria-label="Go to next page"
-              class="c19 c15"
+              class="c19 c20"
               disabled=""
               kind="[object Object]"
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="c20"
+                class="c21"
                 viewBox="0 0 24 24"
               >
                 <polyline
