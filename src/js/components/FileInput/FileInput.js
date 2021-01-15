@@ -135,6 +135,7 @@ const FileInput = forwardRef(
                 nextFiles.push(fileList[i]);
               }
               setFiles(nextFiles);
+              setDragOver(false);
               if (onChange) onChange(event);
             }}
           />
