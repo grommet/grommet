@@ -421,7 +421,7 @@ describe('Select', () => {
     expect(window.scrollTo).toBeCalled();
   });
 
-  test('select second option with letter on keypress', () => {
+  test('select on multiple keydown always picks first enabled option', () => {
     const onChange = jest.fn();
     const { getByPlaceholderText, container } = render(
       <Select
@@ -452,7 +452,7 @@ describe('Select', () => {
     });
     expect(onChange).toBeCalledWith(
       expect.objectContaining({
-        value: 'three',
+        value: 'two',
       }),
     );
     expect(window.scrollTo).toBeCalled();

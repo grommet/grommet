@@ -277,45 +277,18 @@ const SelectContainer = forwardRef(
       [activeIndex, isDisabled],
     );
 
-    const findNextActiveIndex = (
-      event,
-      selectOptions,
-      currentActiveIndex,
-      afterActiveIndex = true,
-    ) => {
-      const possibleIndex = selectOptions.findIndex((e, index) => {
-        const label = typeof e === 'object' ? e.label : e;
-
-        if (afterActiveIndex && currentActiveIndex >= index) return false;
-
-        return (
-          label.charAt(0).toLowerCase() === event.key.toLowerCase() &&
-          !isDisabled(index)
-        );
-      });
-      if (possibleIndex < 0 && afterActiveIndex) {
-        // couldn't find anything after the current active index.
-        // try again but before the current active index.
-        return findNextActiveIndex(
-          event,
-          selectOptions,
-          currentActiveIndex,
-          false,
-        );
-      }
-      return possibleIndex;
-    };
-
     const onKeyDownOption = useCallback(
       event => {
         if (!onSearch) {
           event.preventDefault();
 
-          const nextActiveIndex = findNextActiveIndex(
-            event,
-            options,
-            activeIndex,
-          );
+          const nextActiveIndex = options.findIndex((e, index) => {
+            const label = typeof e === 'object' ? e.label : e;
+            return (
+              label.charAt(0).toLowerCase() === event.key.toLowerCase() &&
+              !isDisabled(index)
+            );
+          });
 
           if (nextActiveIndex >= 0) {
             setActiveIndex(nextActiveIndex);
@@ -326,7 +299,7 @@ const SelectContainer = forwardRef(
           onKeyDown(event);
         }
       },
-      [onKeyDown, activeIndex, options, onSearch],
+      [onKeyDown, options, isDisabled, onSearch],
     );
 
     const onActiveOption = useCallback(

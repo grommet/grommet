@@ -10587,7 +10587,7 @@ exports[`Select select an option with keypress 1`] = `
 </button>
 `;
 
-exports[`Select select second option with letter on keypress 1`] = `
+exports[`Select select on multiple keydown always picks first enabled option 1`] = `
 .c8 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
