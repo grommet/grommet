@@ -63,6 +63,8 @@ const Form = forwardRef(
     const [validationResults, setValidationResults] = useState(
       defaultValidationResults,
     );
+    const [onResetCalled, setOnResetCalled] = useState(false);
+
     useEffect(
       () => setValidationResults({ errors: errorsProp, infos: infosProp }),
       [errorsProp, infosProp],
@@ -122,6 +124,10 @@ const Form = forwardRef(
       const [inputValue, setInputValue] = useState(initialValue);
       const formValue = name ? value[name] : undefined;
 
+      const [shouldReset, setShouldReset] = useState(false);
+
+      const onResetStatus = onResetCalled;
+
       // This effect is for pattern #2, where the controlled input
       // component is driving the value via componentValue.
       useEffect(() => {
@@ -139,6 +145,13 @@ const Form = forwardRef(
         }
       }, [componentValue, formValue, name]);
 
+      useEffect(() => {
+        if (onResetStatus) {
+          setShouldReset(true);
+          setOnResetCalled(false);
+        }
+      }, [onResetStatus]);
+
       let useValue;
       if (componentValue !== undefined)
         // input component drives, pattern #2
@@ -146,10 +159,12 @@ const Form = forwardRef(
       else if (valueProp && name && formValue !== undefined)
         // form drives, pattern #1
         useValue = formValue;
-      else if (formValue === undefined)
+      else if (formValue === undefined && shouldReset === true) {
         // form has reset, so reset input value as well
+        setShouldReset(false);
+        setInputValue(initialValue);
         useValue = initialValue;
-      else useValue = inputValue;
+      } else useValue = inputValue;
 
       return [
         useValue,
@@ -264,6 +279,7 @@ const Form = forwardRef(
         ref={ref}
         {...rest}
         onReset={event => {
+          setOnResetCalled(true);
           if (!valueProp) {
             setValueState(defaultValue);
             if (onChange) onChange(defaultValue, { touched: defaultTouched });
