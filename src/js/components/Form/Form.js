@@ -159,7 +159,7 @@ const Form = forwardRef(
       else if (valueProp && name && formValue !== undefined)
         // form drives, pattern #1
         useValue = formValue;
-      else if (formValue === undefined && shouldReset === true) {
+      else if (formValue === undefined && shouldReset) {
         // form has reset, so reset input value as well
         setShouldReset(false);
         setInputValue(initialValue);

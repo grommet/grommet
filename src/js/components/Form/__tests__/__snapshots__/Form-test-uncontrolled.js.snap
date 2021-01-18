@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Form accessibility Box with TextInput in Form should 
+exports[`Form accessibility Box with TextInput in Form should
   have no accessibility violations 1`] = `
 .c0 {
   font-size: 18px;
@@ -761,7 +761,7 @@ exports[`Form accessibility Select in Form should have no accessibility violatio
 </div>
 `;
 
-exports[`Form accessibility TextInput in Form should have 
+exports[`Form accessibility TextInput in Form should have
   no accessibility violations 1`] = `
 .c0 {
   font-size: 18px;
