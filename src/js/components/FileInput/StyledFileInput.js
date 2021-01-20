@@ -4,12 +4,14 @@ import { inputStyle } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 const StyledFileInput = styled.input`
-  ${inputStyle}
+  position: absolute;
   height: 100%;
   width: 100%;
+  ${inputStyle}
   opacity: 0;
   border: none;
-  cursor: pointer;
+  ${props => !props.disabled && 'cursor: pointer;'}
+  ${props => props.offset && `right: ${props.offset}px;`}
 
   &::-moz-focus-inner {
     border: none;
