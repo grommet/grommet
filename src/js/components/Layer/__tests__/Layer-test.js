@@ -93,6 +93,26 @@ describe('Layer', () => {
         );
         expectPortal('position-full-test').toMatchSnapshot();
       });
+
+      test(`should render correct border radius for position: ${position} - 
+      full: ${full}`, () => {
+        const theme = {
+          layer: {
+            border: {
+              radius: 'large',
+              intelligentRounding: true,
+            },
+          },
+        };
+        render(
+          <Grommet theme={theme}>
+            <Layer id="border-radius-test" position={position} full={full}>
+              This is a layer
+            </Layer>
+          </Grommet>,
+        );
+        expectPortal('border-radius-test').toMatchSnapshot();
+      });
     }),
   );
 
@@ -108,6 +128,17 @@ describe('Layer', () => {
       expectPortal('margin-test').toMatchSnapshot();
     }),
   );
+
+  test(`should apply background`, () => {
+    render(
+      <Grommet>
+        <Layer id="margin-test" background="brand">
+          This is a layer
+        </Layer>
+      </Grommet>,
+    );
+    expectPortal('margin-test').toMatchSnapshot();
+  });
 
   test(`custom margin`, () => {
     render(
