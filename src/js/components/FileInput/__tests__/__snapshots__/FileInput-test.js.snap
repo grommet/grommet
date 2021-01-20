@@ -11,7 +11,7 @@ exports[`FileInput accept 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c5 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -34,7 +34,7 @@ exports[`FileInput accept 1`] = `
   justify-content: center;
 }
 
-.c8 {
+.c4 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -45,36 +45,21 @@ exports[`FileInput accept 1`] = `
   cursor: pointer;
 }
 
-.c8:hover {
+.c4:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c1 {
-  position: relative;
-}
-
-.c2 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-
-.c4 {
-  position: relative;
-  display: block;
-  pointer-events: none;
-}
-
-.c7 {
+.c3 {
   margin: 12px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c3 {
+.c5 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -88,70 +73,69 @@ exports[`FileInput accept 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  height: 100%;
-  width: 100%;
   opacity: 0;
   border: none;
   cursor: pointer;
 }
 
-.c3::-webkit-input-placeholder {
+.c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c3::-moz-placeholder {
+.c5::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c3:-ms-input-placeholder {
+.c5:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c3::-webkit-search-decoration {
+.c5::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c3::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c3:-moz-placeholder,
-.c3::-moz-placeholder {
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
   opacity: 1;
 }
 
-.c3::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6 {
+.c2 {
+  position: relative;
   cursor: pointer;
 }
 
-.c6:focus {
+.c2:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus > circle,
-.c6:focus > ellipse,
-.c6:focus > line,
-.c6:focus > path,
-.c6:focus > polygon,
-.c6:focus > polyline,
-.c6:focus > rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c1 {
     border: dashed 2px rgba(0,0,0,0.33);
   }
 }
@@ -160,39 +144,25 @@ exports[`FileInput accept 1`] = `
   class="c0"
 >
   <div
-    class="c1"
+    class="c1 c2"
   >
-    <div
-      class="c2"
+    <span
+      class="c3 "
     >
-      <input
-        accept="image/*"
-        class="c3"
-        name="file"
-        tabindex="-1"
-        type="file"
-      />
-    </div>
-    <div
-      class="c4"
-    >
-      <div
-        class="c5 c6"
-        tabindex="0"
+      Drop file here or
+       
+      <a
+        class="c4"
       >
-        <span
-          class="c7 "
-        >
-          Drop file here or
-           
-          <a
-            class="c8"
-          >
-            browse
-          </a>
-        </span>
-      </div>
-    </div>
+        browse
+      </a>
+    </span>
+    <input
+      accept="image/*"
+      class="c5"
+      name="file"
+      type="file"
+    />
   </div>
 </div>
 `;
@@ -208,7 +178,7 @@ exports[`FileInput background 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c5 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -231,7 +201,7 @@ exports[`FileInput background 1`] = `
   justify-content: center;
 }
 
-.c8 {
+.c4 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -242,36 +212,21 @@ exports[`FileInput background 1`] = `
   cursor: pointer;
 }
 
-.c8:hover {
+.c4:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c1 {
-  position: relative;
-}
-
-.c2 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-
-.c4 {
-  position: relative;
-  display: block;
-  pointer-events: none;
-}
-
-.c7 {
+.c3 {
   margin: 12px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c3 {
+.c5 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -285,70 +240,69 @@ exports[`FileInput background 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  height: 100%;
-  width: 100%;
   opacity: 0;
   border: none;
   cursor: pointer;
 }
 
-.c3::-webkit-input-placeholder {
+.c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c3::-moz-placeholder {
+.c5::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c3:-ms-input-placeholder {
+.c5:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c3::-webkit-search-decoration {
+.c5::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c3::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c3:-moz-placeholder,
-.c3::-moz-placeholder {
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
   opacity: 1;
 }
 
-.c3::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6 {
+.c2 {
+  position: relative;
   cursor: pointer;
 }
 
-.c6:focus {
+.c2:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus > circle,
-.c6:focus > ellipse,
-.c6:focus > line,
-.c6:focus > path,
-.c6:focus > polygon,
-.c6:focus > polyline,
-.c6:focus > rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c1 {
     border: dashed 2px rgba(0,0,0,0.33);
   }
 }
@@ -357,38 +311,24 @@ exports[`FileInput background 1`] = `
   class="c0"
 >
   <div
-    class="c1"
+    class="c1 c2"
   >
-    <div
-      class="c2"
+    <span
+      class="c3 "
     >
-      <input
-        class="c3"
-        name="file"
-        tabindex="-1"
-        type="file"
-      />
-    </div>
-    <div
-      class="c4"
-    >
-      <div
-        class="c5 c6"
-        tabindex="0"
+      Drop file here or
+       
+      <a
+        class="c4"
       >
-        <span
-          class="c7 "
-        >
-          Drop file here or
-           
-          <a
-            class="c8"
-          >
-            browse
-          </a>
-        </span>
-      </div>
-    </div>
+        browse
+      </a>
+    </span>
+    <input
+      class="c5"
+      name="file"
+      type="file"
+    />
   </div>
 </div>
 `;
@@ -404,7 +344,7 @@ exports[`FileInput basic 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c5 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -427,7 +367,7 @@ exports[`FileInput basic 1`] = `
   justify-content: center;
 }
 
-.c8 {
+.c4 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -438,36 +378,21 @@ exports[`FileInput basic 1`] = `
   cursor: pointer;
 }
 
-.c8:hover {
+.c4:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c1 {
-  position: relative;
-}
-
-.c2 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-
-.c4 {
-  position: relative;
-  display: block;
-  pointer-events: none;
-}
-
-.c7 {
+.c3 {
   margin: 12px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c3 {
+.c5 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -481,70 +406,69 @@ exports[`FileInput basic 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  height: 100%;
-  width: 100%;
   opacity: 0;
   border: none;
   cursor: pointer;
 }
 
-.c3::-webkit-input-placeholder {
+.c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c3::-moz-placeholder {
+.c5::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c3:-ms-input-placeholder {
+.c5:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c3::-webkit-search-decoration {
+.c5::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c3::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c3:-moz-placeholder,
-.c3::-moz-placeholder {
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
   opacity: 1;
 }
 
-.c3::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6 {
+.c2 {
+  position: relative;
   cursor: pointer;
 }
 
-.c6:focus {
+.c2:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus > circle,
-.c6:focus > ellipse,
-.c6:focus > line,
-.c6:focus > path,
-.c6:focus > polygon,
-.c6:focus > polyline,
-.c6:focus > rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c1 {
     border: dashed 2px rgba(0,0,0,0.33);
   }
 }
@@ -553,38 +477,24 @@ exports[`FileInput basic 1`] = `
   class="c0"
 >
   <div
-    class="c1"
+    class="c1 c2"
   >
-    <div
-      class="c2"
+    <span
+      class="c3 "
     >
-      <input
-        class="c3"
-        name="file"
-        tabindex="-1"
-        type="file"
-      />
-    </div>
-    <div
-      class="c4"
-    >
-      <div
-        class="c5 c6"
-        tabindex="0"
+      Drop file here or
+       
+      <a
+        class="c4"
       >
-        <span
-          class="c7 "
-        >
-          Drop file here or
-           
-          <a
-            class="c8"
-          >
-            browse
-          </a>
-        </span>
-      </div>
-    </div>
+        browse
+      </a>
+    </span>
+    <input
+      class="c5"
+      name="file"
+      type="file"
+    />
   </div>
 </div>
 `;
@@ -600,7 +510,7 @@ exports[`FileInput border 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c5 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -623,7 +533,7 @@ exports[`FileInput border 1`] = `
   justify-content: center;
 }
 
-.c8 {
+.c4 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -634,36 +544,21 @@ exports[`FileInput border 1`] = `
   cursor: pointer;
 }
 
-.c8:hover {
+.c4:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c1 {
-  position: relative;
-}
-
-.c2 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-
-.c4 {
-  position: relative;
-  display: block;
-  pointer-events: none;
-}
-
-.c7 {
+.c3 {
   margin: 12px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c3 {
+.c5 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -677,70 +572,69 @@ exports[`FileInput border 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  height: 100%;
-  width: 100%;
   opacity: 0;
   border: none;
   cursor: pointer;
 }
 
-.c3::-webkit-input-placeholder {
+.c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c3::-moz-placeholder {
+.c5::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c3:-ms-input-placeholder {
+.c5:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c3::-webkit-search-decoration {
+.c5::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c3::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c3:-moz-placeholder,
-.c3::-moz-placeholder {
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
   opacity: 1;
 }
 
-.c3::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6 {
+.c2 {
+  position: relative;
   cursor: pointer;
 }
 
-.c6:focus {
+.c2:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus > circle,
-.c6:focus > ellipse,
-.c6:focus > line,
-.c6:focus > path,
-.c6:focus > polygon,
-.c6:focus > polyline,
-.c6:focus > rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c1 {
     border: dashed 2px rgba(0,0,0,0.33);
   }
 }
@@ -749,38 +643,24 @@ exports[`FileInput border 1`] = `
   class="c0"
 >
   <div
-    class="c1"
+    class="c1 c2"
   >
-    <div
-      class="c2"
+    <span
+      class="c3 "
     >
-      <input
-        class="c3"
-        name="file"
-        tabindex="-1"
-        type="file"
-      />
-    </div>
-    <div
-      class="c4"
-    >
-      <div
-        class="c5 c6"
-        tabindex="0"
+      Drop file here or
+       
+      <a
+        class="c4"
       >
-        <span
-          class="c7 "
-        >
-          Drop file here or
-           
-          <a
-            class="c8"
-          >
-            browse
-          </a>
-        </span>
-      </div>
-    </div>
+        browse
+      </a>
+    </span>
+    <input
+      class="c5"
+      name="file"
+      type="file"
+    />
   </div>
 </div>
 `;
@@ -796,7 +676,7 @@ exports[`FileInput disabled 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c5 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -819,7 +699,7 @@ exports[`FileInput disabled 1`] = `
   justify-content: center;
 }
 
-.c8 {
+.c4 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -830,36 +710,21 @@ exports[`FileInput disabled 1`] = `
   cursor: pointer;
 }
 
-.c8:hover {
+.c4:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c1 {
-  position: relative;
-}
-
-.c2 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-
-.c4 {
-  position: relative;
-  display: block;
-  pointer-events: none;
-}
-
-.c7 {
+.c3 {
   margin: 12px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c3 {
+.c5 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -873,70 +738,69 @@ exports[`FileInput disabled 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  height: 100%;
-  width: 100%;
   opacity: 0;
   border: none;
-  cursor: pointer;
 }
 
-.c3::-webkit-input-placeholder {
+.c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c3::-moz-placeholder {
+.c5::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c3:-ms-input-placeholder {
+.c5:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c3::-webkit-search-decoration {
+.c5::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c3::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c3:-moz-placeholder,
-.c3::-moz-placeholder {
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
   opacity: 1;
 }
 
-.c3::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6 {
-  cursor: pointer;
+.c2 {
+  position: relative;
+  opacity: 0.3;
+  cursor: default;
 }
 
-.c6:focus {
+.c2:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus > circle,
-.c6:focus > ellipse,
-.c6:focus > line,
-.c6:focus > path,
-.c6:focus > polygon,
-.c6:focus > polyline,
-.c6:focus > rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c1 {
     border: dashed 2px rgba(0,0,0,0.33);
   }
 }
@@ -945,39 +809,26 @@ exports[`FileInput disabled 1`] = `
   class="c0"
 >
   <div
-    class="c1"
+    class="c1 c2"
+    disabled=""
   >
-    <div
-      class="c2"
+    <span
+      class="c3 "
     >
-      <input
-        class="c3"
-        disabled=""
-        name="file"
-        tabindex="-1"
-        type="file"
-      />
-    </div>
-    <div
-      class="c4"
-    >
-      <div
-        class="c5 c6"
-        tabindex="0"
+      Drop file here or
+       
+      <a
+        class="c4"
       >
-        <span
-          class="c7 "
-        >
-          Drop file here or
-           
-          <a
-            class="c8"
-          >
-            browse
-          </a>
-        </span>
-      </div>
-    </div>
+        browse
+      </a>
+    </span>
+    <input
+      class="c5"
+      disabled=""
+      name="file"
+      type="file"
+    />
   </div>
 </div>
 `;
@@ -993,7 +844,7 @@ exports[`FileInput margin 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c5 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1016,7 +867,7 @@ exports[`FileInput margin 1`] = `
   justify-content: center;
 }
 
-.c8 {
+.c4 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -1027,36 +878,21 @@ exports[`FileInput margin 1`] = `
   cursor: pointer;
 }
 
-.c8:hover {
+.c4:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c1 {
-  position: relative;
-}
-
-.c2 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-
-.c4 {
-  position: relative;
-  display: block;
-  pointer-events: none;
-}
-
-.c7 {
+.c3 {
   margin: 12px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c3 {
+.c5 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -1070,70 +906,69 @@ exports[`FileInput margin 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  height: 100%;
-  width: 100%;
   opacity: 0;
   border: none;
   cursor: pointer;
 }
 
-.c3::-webkit-input-placeholder {
+.c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c3::-moz-placeholder {
+.c5::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c3:-ms-input-placeholder {
+.c5:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c3::-webkit-search-decoration {
+.c5::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c3::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c3:-moz-placeholder,
-.c3::-moz-placeholder {
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
   opacity: 1;
 }
 
-.c3::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6 {
+.c2 {
+  position: relative;
   cursor: pointer;
 }
 
-.c6:focus {
+.c2:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus > circle,
-.c6:focus > ellipse,
-.c6:focus > line,
-.c6:focus > path,
-.c6:focus > polygon,
-.c6:focus > polyline,
-.c6:focus > rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c1 {
     border: dashed 2px rgba(0,0,0,0.33);
   }
 }
@@ -1142,38 +977,24 @@ exports[`FileInput margin 1`] = `
   class="c0"
 >
   <div
-    class="c1"
+    class="c1 c2"
   >
-    <div
-      class="c2"
+    <span
+      class="c3 "
     >
-      <input
-        class="c3"
-        name="file"
-        tabindex="-1"
-        type="file"
-      />
-    </div>
-    <div
-      class="c4"
-    >
-      <div
-        class="c5 c6"
-        tabindex="0"
+      Drop file here or
+       
+      <a
+        class="c4"
       >
-        <span
-          class="c7 "
-        >
-          Drop file here or
-           
-          <a
-            class="c8"
-          >
-            browse
-          </a>
-        </span>
-      </div>
-    </div>
+        browse
+      </a>
+    </span>
+    <input
+      class="c5"
+      name="file"
+      type="file"
+    />
   </div>
 </div>
 `;
@@ -1189,7 +1010,7 @@ exports[`FileInput messages 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c5 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1212,7 +1033,7 @@ exports[`FileInput messages 1`] = `
   justify-content: center;
 }
 
-.c8 {
+.c4 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -1223,36 +1044,21 @@ exports[`FileInput messages 1`] = `
   cursor: pointer;
 }
 
-.c8:hover {
+.c4:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c1 {
-  position: relative;
-}
-
-.c2 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-
-.c4 {
-  position: relative;
-  display: block;
-  pointer-events: none;
-}
-
-.c7 {
+.c3 {
   margin: 12px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c3 {
+.c5 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -1266,70 +1072,69 @@ exports[`FileInput messages 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  height: 100%;
-  width: 100%;
   opacity: 0;
   border: none;
   cursor: pointer;
 }
 
-.c3::-webkit-input-placeholder {
+.c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c3::-moz-placeholder {
+.c5::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c3:-ms-input-placeholder {
+.c5:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c3::-webkit-search-decoration {
+.c5::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c3::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c3:-moz-placeholder,
-.c3::-moz-placeholder {
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
   opacity: 1;
 }
 
-.c3::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6 {
+.c2 {
+  position: relative;
   cursor: pointer;
 }
 
-.c6:focus {
+.c2:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus > circle,
-.c6:focus > ellipse,
-.c6:focus > line,
-.c6:focus > path,
-.c6:focus > polygon,
-.c6:focus > polyline,
-.c6:focus > rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c1 {
     border: dashed 2px rgba(0,0,0,0.33);
   }
 }
@@ -1338,38 +1143,24 @@ exports[`FileInput messages 1`] = `
   class="c0"
 >
   <div
-    class="c1"
+    class="c1 c2"
   >
-    <div
-      class="c2"
+    <span
+      class="c3 "
     >
-      <input
-        class="c3"
-        name="file"
-        tabindex="-1"
-        type="file"
-      />
-    </div>
-    <div
-      class="c4"
-    >
-      <div
-        class="c5 c6"
-        tabindex="0"
+      Drop file here or
+       
+      <a
+        class="c4"
       >
-        <span
-          class="c7 "
-        >
-          Drop file here or
-           
-          <a
-            class="c8"
-          >
-            test browse
-          </a>
-        </span>
-      </div>
-    </div>
+        test browse
+      </a>
+    </span>
+    <input
+      class="c5"
+      name="file"
+      type="file"
+    />
   </div>
 </div>
 `;
@@ -1385,7 +1176,7 @@ exports[`FileInput multiple 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c5 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1408,7 +1199,7 @@ exports[`FileInput multiple 1`] = `
   justify-content: center;
 }
 
-.c8 {
+.c4 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -1419,36 +1210,21 @@ exports[`FileInput multiple 1`] = `
   cursor: pointer;
 }
 
-.c8:hover {
+.c4:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c1 {
-  position: relative;
-}
-
-.c2 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-
-.c4 {
-  position: relative;
-  display: block;
-  pointer-events: none;
-}
-
-.c7 {
+.c3 {
   margin: 12px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c3 {
+.c5 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -1462,70 +1238,69 @@ exports[`FileInput multiple 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  height: 100%;
-  width: 100%;
   opacity: 0;
   border: none;
   cursor: pointer;
 }
 
-.c3::-webkit-input-placeholder {
+.c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c3::-moz-placeholder {
+.c5::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c3:-ms-input-placeholder {
+.c5:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c3::-webkit-search-decoration {
+.c5::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c3::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c3:-moz-placeholder,
-.c3::-moz-placeholder {
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
   opacity: 1;
 }
 
-.c3::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6 {
+.c2 {
+  position: relative;
   cursor: pointer;
 }
 
-.c6:focus {
+.c2:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus > circle,
-.c6:focus > ellipse,
-.c6:focus > line,
-.c6:focus > path,
-.c6:focus > polygon,
-.c6:focus > polyline,
-.c6:focus > rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c1 {
     border: dashed 2px rgba(0,0,0,0.33);
   }
 }
@@ -1534,39 +1309,25 @@ exports[`FileInput multiple 1`] = `
   class="c0"
 >
   <div
-    class="c1"
+    class="c1 c2"
   >
-    <div
-      class="c2"
+    <span
+      class="c3 "
     >
-      <input
-        class="c3"
-        multiple=""
-        name="file"
-        tabindex="-1"
-        type="file"
-      />
-    </div>
-    <div
-      class="c4"
-    >
-      <div
-        class="c5 c6"
-        tabindex="0"
+      Drop files here or
+       
+      <a
+        class="c4"
       >
-        <span
-          class="c7 "
-        >
-          Drop files here or
-           
-          <a
-            class="c8"
-          >
-            browse
-          </a>
-        </span>
-      </div>
-    </div>
+        browse
+      </a>
+    </span>
+    <input
+      class="c5"
+      multiple=""
+      name="file"
+      type="file"
+    />
   </div>
 </div>
 `;
@@ -1582,7 +1343,7 @@ exports[`FileInput pad 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c5 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1605,7 +1366,7 @@ exports[`FileInput pad 1`] = `
   justify-content: center;
 }
 
-.c8 {
+.c4 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -1616,36 +1377,21 @@ exports[`FileInput pad 1`] = `
   cursor: pointer;
 }
 
-.c8:hover {
+.c4:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c1 {
-  position: relative;
-}
-
-.c2 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-
-.c4 {
-  position: relative;
-  display: block;
-  pointer-events: none;
-}
-
-.c7 {
+.c3 {
   margin: 12px;
   font-size: 18px;
   line-height: 24px;
 }
 
-.c3 {
+.c5 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -1659,70 +1405,69 @@ exports[`FileInput pad 1`] = `
   margin: 0;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
-  height: 100%;
-  width: 100%;
   opacity: 0;
   border: none;
   cursor: pointer;
 }
 
-.c3::-webkit-input-placeholder {
+.c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c3::-moz-placeholder {
+.c5::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c3:-ms-input-placeholder {
+.c5:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c3::-webkit-search-decoration {
+.c5::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c3::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c3:-moz-placeholder,
-.c3::-moz-placeholder {
+.c5:-moz-placeholder,
+.c5::-moz-placeholder {
   opacity: 1;
 }
 
-.c3::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c6 {
+.c2 {
+  position: relative;
   cursor: pointer;
 }
 
-.c6:focus {
+.c2:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus > circle,
-.c6:focus > ellipse,
-.c6:focus > line,
-.c6:focus > path,
-.c6:focus > polygon,
-.c6:focus > polyline,
-.c6:focus > rect {
+.c2:focus > circle,
+.c2:focus > ellipse,
+.c2:focus > line,
+.c2:focus > path,
+.c2:focus > polygon,
+.c2:focus > polyline,
+.c2:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c6:focus::-moz-focus-inner {
+.c2:focus::-moz-focus-inner {
   border: 0;
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c1 {
     border: dashed 2px rgba(0,0,0,0.33);
   }
 }
@@ -1731,38 +1476,24 @@ exports[`FileInput pad 1`] = `
   class="c0"
 >
   <div
-    class="c1"
+    class="c1 c2"
   >
-    <div
-      class="c2"
+    <span
+      class="c3 "
     >
-      <input
-        class="c3"
-        name="file"
-        tabindex="-1"
-        type="file"
-      />
-    </div>
-    <div
-      class="c4"
-    >
-      <div
-        class="c5 c6"
-        tabindex="0"
+      Drop file here or
+       
+      <a
+        class="c4"
       >
-        <span
-          class="c7 "
-        >
-          Drop file here or
-           
-          <a
-            class="c8"
-          >
-            browse
-          </a>
-        </span>
-      </div>
-    </div>
+        browse
+      </a>
+    </span>
+    <input
+      class="c5"
+      name="file"
+      type="file"
+    />
   </div>
 </div>
 `;
