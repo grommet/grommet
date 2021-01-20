@@ -31,6 +31,8 @@ describe('WorldMap', () => {
 
   test('continents', () => {
     let component;
+    // using act() to make sure components get rendered multiple
+    // times as subcomponents cause state changes in the parent
     renderer.act(() => {
       component = renderer.create(
         <Grommet>
@@ -52,6 +54,8 @@ describe('WorldMap', () => {
 
   test('places', () => {
     let component;
+    // using act() to make sure components get rendered multiple
+    // times as subcomponents cause state changes in the parent
     renderer.act(() => {
       component = renderer.create(
         <Grommet>

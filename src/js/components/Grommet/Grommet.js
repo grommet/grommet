@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { forwardRef, useEffect, useMemo, useState } from 'react';
 import { createGlobalStyle } from 'styled-components';
 
 import {
@@ -42,7 +42,7 @@ const deviceResponsive = (userAgent, theme) => {
   return undefined;
 };
 
-const Grommet = props => {
+const Grommet = forwardRef((props, ref) => {
   const {
     children,
     full,
@@ -94,7 +94,7 @@ const Grommet = props => {
     <ThemeContext.Provider value={theme}>
       <ResponsiveContext.Provider value={responsive}>
         <ContainerTargetContext.Provider value={containerTarget}>
-          <StyledGrommet full={full} {...rest}>
+          <StyledGrommet full={full} {...rest} ref={ref}>
             {children}
           </StyledGrommet>
           {full && <FullGlobalStyle />}
@@ -102,7 +102,9 @@ const Grommet = props => {
       </ResponsiveContext.Provider>
     </ThemeContext.Provider>
   );
-};
+});
+
+Grommet.displayName = 'Grommet';
 
 let GrommetDoc;
 if (process.env.NODE_ENV !== 'production') {

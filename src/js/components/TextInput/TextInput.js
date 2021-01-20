@@ -247,10 +247,10 @@ const TextInput = forwardRef(
       setActiveSuggestionIndex(nextActiveIndex);
     };
 
-    const hasValue = inputRef.current ? inputRef.current.value : valueProp;
-
     const showStyledPlaceholder =
-      placeholder && typeof placeholder !== 'string' && !hasValue;
+      placeholder &&
+      typeof placeholder !== 'string' &&
+      !(inputRef.current && inputRef.current.value);
 
     let drop;
     const extraProps = {
