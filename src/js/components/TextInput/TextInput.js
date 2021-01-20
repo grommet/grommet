@@ -247,10 +247,12 @@ const TextInput = forwardRef(
       setActiveSuggestionIndex(nextActiveIndex);
     };
 
-    const showStyledPlaceholder =
+    const [showStyledPlaceholder, setShowStyledPlaceholder] = useState(
       placeholder &&
-      typeof placeholder !== 'string' &&
-      !(inputRef.current && inputRef.current.value);
+        typeof placeholder !== 'string' &&
+        !(inputRef.current && inputRef.current.value) &&
+        !value,
+    );
 
     let drop;
     const extraProps = {
@@ -448,6 +450,11 @@ const TextInput = forwardRef(
               readOnly
                 ? undefined
                 : event => {
+                    // when TextInput is not contained in a Form, no re-render
+                    // will come from this onChange and remove the placeholder,
+                    // so we need to update state to ensure the styled
+                    // placholder only appears when there is no value
+                    setShowStyledPlaceholder(!event.target.value);
                     setValue(event.target.value);
                     if (onChange) onChange(event);
                   }
