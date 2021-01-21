@@ -58,8 +58,8 @@ export const doc = FileInput => {
       a Form.`,
     ),
     onChange: PropTypes.func.description(
-      `Function that will be called when one or more files are added the
-      input. The file(s) can be found in event.target.files.`,
+      `Function that will be called when one or more files are added to 
+      the input. The file(s) can be found in event.target.files.`,
     ),
   };
 
