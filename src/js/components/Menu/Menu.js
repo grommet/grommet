@@ -78,8 +78,8 @@ const Menu = forwardRef((props, ref) => {
   }, [align, items]);
 
   const buttonRefs = {};
-  const constants = useMemo(() => {
-    return {
+  const constants = useMemo(
+    () => ({
       none: 'none',
       tab: 9,
       // Menu control button included on top of menu items
@@ -87,8 +87,9 @@ const Menu = forwardRef((props, ref) => {
       // Menu control button included on the bottom of menu items
       controlBottom: align.bottom === 'bottom' || undefined,
       controlButtonIndex,
-    };
-  }, [align, controlButtonIndex]);
+    }),
+    [align, controlButtonIndex],
+  );
 
   const [activeItemIndex, setActiveItemIndex] = useState(constants.none);
   const [isOpen, setOpen] = useState(open || false);
