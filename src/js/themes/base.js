@@ -700,7 +700,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // },
       // container: {
       //   // any box props
-      //   // extend: undefined,
+      //   extend: undefined,
       // },
       groupHeader: {
         background: {
