@@ -10,11 +10,7 @@ export const PageControl = ({ control, separator, ...rest }) => {
   return (
     <StyledContainer as="li">
       {separator ? (
-        <Text
-          weight="bold" // thinking we should not be hardcoding these here
-        >
-          &#8230;
-        </Text>
+        <Text weight="bold">&#8230;</Text>
       ) : (
         <StyledPaginationButton
           a11yTitle={`Go to page ${control}`}

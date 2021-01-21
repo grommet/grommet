@@ -74,7 +74,7 @@ const List = React.forwardRef(
       primaryKey,
       secondaryKey,
       show: showProp,
-      step = paginate ? 10 : undefined,
+      step = paginate ? 50 : undefined,
       onClickItem,
       onMore,
       ...rest

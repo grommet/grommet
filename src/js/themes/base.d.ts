@@ -13,6 +13,7 @@ import {
   BreakpointSize,
   ColorType,
   DeepReadonly,
+  DirectionType,
   ElevationType,
   GapType,
   GraphColorsType,
@@ -956,12 +957,7 @@ export interface ThemeType {
     };
     controls?: {
       align?: AlignContentType;
-      direction?:
-        | 'row'
-        | 'column'
-        | 'row-responsive'
-        | 'row-reverse'
-        | 'column-reverse';
+      direction?: DirectionType;
       gap?: GapType;
       pad?: PadType;
       margin?: MarginType;

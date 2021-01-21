@@ -2136,7 +2136,7 @@ exports[`List events should apply pagination styling 1`] = `
   stroke: none;
 }
 
-.c18 {
+.c17 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -2147,25 +2147,25 @@ exports[`List events should apply pagination styling 1`] = `
   stroke: #000000;
 }
 
-.c18 g {
+.c17 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c18 *:not([stroke])[fill="none"] {
+.c17 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c18 *[stroke*="#"],
-.c18 *[STROKE*="#"] {
+.c17 *[stroke*="#"],
+.c17 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c18 *[fill-rule],
-.c18 *[FILL-RULE],
-.c18 *[fill*="#"],
-.c18 *[FILL*="#"] {
+.c17 *[fill-rule],
+.c17 *[FILL-RULE],
+.c17 *[fill*="#"],
+.c17 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -2307,12 +2307,6 @@ exports[`List events should apply pagination styling 1`] = `
   -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 3px;
-}
-
-.c17 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
 }
 
 .c10 {
@@ -2659,6 +2653,206 @@ exports[`List events should apply pagination styling 1`] = `
       entry-9
     </li>
     <li
+      class="c4 c3"
+    >
+      entry-10
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-11
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-12
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-13
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-14
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-15
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-16
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-17
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-18
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-19
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-20
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-21
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-22
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-23
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-24
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-25
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-26
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-27
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-28
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-29
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-30
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-31
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-32
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-33
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-34
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-35
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-36
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-37
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-38
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-39
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-40
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-41
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-42
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-43
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-44
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-45
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-46
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-47
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-48
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-49
+    </li>
+    <li
       class="c5"
     >
       <div
@@ -2740,78 +2934,6 @@ exports[`List events should apply pagination styling 1`] = `
           class="c9"
         >
           <button
-            aria-label="Go to page 3"
-            class="c16 c15"
-            kind="[object Object]"
-            type="button"
-          >
-            3
-          </button>
-        </li>
-        <div
-          class="c13"
-        />
-        <li
-          class="c9"
-        >
-          <button
-            aria-label="Go to page 4"
-            class="c16 c15"
-            kind="[object Object]"
-            type="button"
-          >
-            4
-          </button>
-        </li>
-        <div
-          class="c13"
-        />
-        <li
-          class="c9"
-        >
-          <button
-            aria-label="Go to page 5"
-            class="c16 c15"
-            kind="[object Object]"
-            type="button"
-          >
-            5
-          </button>
-        </li>
-        <div
-          class="c13"
-        />
-        <li
-          class="c9"
-        >
-          <span
-            class="c17"
-          >
-            …
-          </span>
-        </li>
-        <div
-          class="c13"
-        />
-        <li
-          class="c9"
-        >
-          <button
-            aria-label="Go to page 10"
-            class="c16 c15"
-            kind="[object Object]"
-            type="button"
-          >
-            10
-          </button>
-        </li>
-        <div
-          class="c13"
-        />
-        <li
-          class="c9"
-        >
-          <button
             aria-label="Go to next page"
             class="c16 c15"
             kind="[object Object]"
@@ -2819,7 +2941,7 @@ exports[`List events should apply pagination styling 1`] = `
           >
             <svg
               aria-label="Next"
-              class="c18"
+              class="c17"
               viewBox="0 0 24 24"
             >
               <polyline
@@ -2872,7 +2994,7 @@ exports[`List events should paginate 1`] = `
   stroke: none;
 }
 
-.c18 {
+.c17 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -2883,25 +3005,25 @@ exports[`List events should paginate 1`] = `
   stroke: #000000;
 }
 
-.c18 g {
+.c17 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c18 *:not([stroke])[fill="none"] {
+.c17 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c18 *[stroke*="#"],
-.c18 *[STROKE*="#"] {
+.c17 *[stroke*="#"],
+.c17 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c18 *[fill-rule],
-.c18 *[FILL-RULE],
-.c18 *[fill*="#"],
-.c18 *[FILL*="#"] {
+.c17 *[fill-rule],
+.c17 *[FILL-RULE],
+.c17 *[fill*="#"],
+.c17 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -3041,12 +3163,6 @@ exports[`List events should paginate 1`] = `
   -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 3px;
-}
-
-.c17 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
 }
 
 .c10 {
@@ -3387,6 +3503,206 @@ exports[`List events should paginate 1`] = `
       entry-9
     </li>
     <li
+      class="c4 c3"
+    >
+      entry-10
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-11
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-12
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-13
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-14
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-15
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-16
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-17
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-18
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-19
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-20
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-21
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-22
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-23
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-24
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-25
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-26
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-27
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-28
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-29
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-30
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-31
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-32
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-33
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-34
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-35
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-36
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-37
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-38
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-39
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-40
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-41
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-42
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-43
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-44
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-45
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-46
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-47
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-48
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-49
+    </li>
+    <li
       class="c5"
     >
       <div
@@ -3468,78 +3784,6 @@ exports[`List events should paginate 1`] = `
           class="c9"
         >
           <button
-            aria-label="Go to page 3"
-            class="c16 c15"
-            kind="[object Object]"
-            type="button"
-          >
-            3
-          </button>
-        </li>
-        <div
-          class="c13"
-        />
-        <li
-          class="c9"
-        >
-          <button
-            aria-label="Go to page 4"
-            class="c16 c15"
-            kind="[object Object]"
-            type="button"
-          >
-            4
-          </button>
-        </li>
-        <div
-          class="c13"
-        />
-        <li
-          class="c9"
-        >
-          <button
-            aria-label="Go to page 5"
-            class="c16 c15"
-            kind="[object Object]"
-            type="button"
-          >
-            5
-          </button>
-        </li>
-        <div
-          class="c13"
-        />
-        <li
-          class="c9"
-        >
-          <span
-            class="c17"
-          >
-            …
-          </span>
-        </li>
-        <div
-          class="c13"
-        />
-        <li
-          class="c9"
-        >
-          <button
-            aria-label="Go to page 10"
-            class="c16 c15"
-            kind="[object Object]"
-            type="button"
-          >
-            10
-          </button>
-        </li>
-        <div
-          class="c13"
-        />
-        <li
-          class="c9"
-        >
-          <button
             aria-label="Go to next page"
             class="c16 c15"
             kind="[object Object]"
@@ -3547,7 +3791,7 @@ exports[`List events should paginate 1`] = `
           >
             <svg
               aria-label="Next"
-              class="c18"
+              class="c17"
               viewBox="0 0 24 24"
             >
               <polyline
@@ -4345,7 +4589,7 @@ exports[`List events should render new data when page changes 1`] = `
   stroke: none;
 }
 
-.c18 {
+.c17 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -4356,25 +4600,25 @@ exports[`List events should render new data when page changes 1`] = `
   stroke: #000000;
 }
 
-.c18 g {
+.c17 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c18 *:not([stroke])[fill="none"] {
+.c17 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c18 *[stroke*="#"],
-.c18 *[STROKE*="#"] {
+.c17 *[stroke*="#"],
+.c17 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c18 *[fill-rule],
-.c18 *[FILL-RULE],
-.c18 *[fill*="#"],
-.c18 *[FILL*="#"] {
+.c17 *[fill-rule],
+.c17 *[FILL-RULE],
+.c17 *[fill*="#"],
+.c17 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -4514,12 +4758,6 @@ exports[`List events should render new data when page changes 1`] = `
   -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 3px;
-}
-
-.c17 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
 }
 
 .c10 {
@@ -4860,6 +5098,206 @@ exports[`List events should render new data when page changes 1`] = `
       entry-9
     </li>
     <li
+      class="c4 c3"
+    >
+      entry-10
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-11
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-12
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-13
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-14
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-15
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-16
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-17
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-18
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-19
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-20
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-21
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-22
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-23
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-24
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-25
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-26
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-27
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-28
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-29
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-30
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-31
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-32
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-33
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-34
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-35
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-36
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-37
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-38
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-39
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-40
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-41
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-42
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-43
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-44
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-45
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-46
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-47
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-48
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-49
+    </li>
+    <li
       class="c5"
     >
       <div
@@ -4941,78 +5379,6 @@ exports[`List events should render new data when page changes 1`] = `
           class="c9"
         >
           <button
-            aria-label="Go to page 3"
-            class="c16 c15"
-            kind="[object Object]"
-            type="button"
-          >
-            3
-          </button>
-        </li>
-        <div
-          class="c13"
-        />
-        <li
-          class="c9"
-        >
-          <button
-            aria-label="Go to page 4"
-            class="c16 c15"
-            kind="[object Object]"
-            type="button"
-          >
-            4
-          </button>
-        </li>
-        <div
-          class="c13"
-        />
-        <li
-          class="c9"
-        >
-          <button
-            aria-label="Go to page 5"
-            class="c16 c15"
-            kind="[object Object]"
-            type="button"
-          >
-            5
-          </button>
-        </li>
-        <div
-          class="c13"
-        />
-        <li
-          class="c9"
-        >
-          <span
-            class="c17"
-          >
-            …
-          </span>
-        </li>
-        <div
-          class="c13"
-        />
-        <li
-          class="c9"
-        >
-          <button
-            aria-label="Go to page 10"
-            class="c16 c15"
-            kind="[object Object]"
-            type="button"
-          >
-            10
-          </button>
-        </li>
-        <div
-          class="c13"
-        />
-        <li
-          class="c9"
-        >
-          <button
             aria-label="Go to next page"
             class="c16 c15"
             kind="[object Object]"
@@ -5020,7 +5386,7 @@ exports[`List events should render new data when page changes 1`] = `
           >
             <svg
               aria-label="Next"
-              class="c18"
+              class="c17"
               viewBox="0 0 24 24"
             >
               <polyline
@@ -5048,59 +5414,227 @@ exports[`List events should render new data when page changes 2`] = `
     <li
       class="StyledBox-sc-13pk1d4-0 jBwehH List__StyledItem-sc-130gdqg-1 eAQvPD"
     >
-      entry-10
+      entry-50
     </li>
     <li
       class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
     >
-      entry-11
+      entry-51
     </li>
     <li
       class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
     >
-      entry-12
+      entry-52
     </li>
     <li
       class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
     >
-      entry-13
+      entry-53
     </li>
     <li
       class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
     >
-      entry-14
+      entry-54
     </li>
     <li
       class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
     >
-      entry-15
+      entry-55
     </li>
     <li
       class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
     >
-      entry-16
+      entry-56
     </li>
     <li
       class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
     >
-      entry-17
+      entry-57
     </li>
     <li
       class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
     >
-      entry-18
+      entry-58
     </li>
     <li
       class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
     >
-      entry-19
+      entry-59
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 dIHSGy"
+      class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
     >
-      <div
-        class="StyledBox-sc-13pk1d4-0 jCbIzQ"
-      />
+      entry-60
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+    >
+      entry-61
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+    >
+      entry-62
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+    >
+      entry-63
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+    >
+      entry-64
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+    >
+      entry-65
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+    >
+      entry-66
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+    >
+      entry-67
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+    >
+      entry-68
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+    >
+      entry-69
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+    >
+      entry-70
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+    >
+      entry-71
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+    >
+      entry-72
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+    >
+      entry-73
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+    >
+      entry-74
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+    >
+      entry-75
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+    >
+      entry-76
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+    >
+      entry-77
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+    >
+      entry-78
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+    >
+      entry-79
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+    >
+      entry-80
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+    >
+      entry-81
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+    >
+      entry-82
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+    >
+      entry-83
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+    >
+      entry-84
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+    >
+      entry-85
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+    >
+      entry-86
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+    >
+      entry-87
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+    >
+      entry-88
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+    >
+      entry-89
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+    >
+      entry-90
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+    >
+      entry-91
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+    >
+      entry-92
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+    >
+      entry-93
+    </li>
+    <li
+      class="StyledBox-sc-13pk1d4-0 kOtzpl List__StyledItem-sc-130gdqg-1 eAQvPD"
+    >
+      entry-94
     </li>
   </ul>
   <div
@@ -5175,86 +5709,16 @@ exports[`List events should render new data when page changes 2`] = `
           class="StyledPageControl__StyledContainer-sc-1vlfaez-1 iipxyV"
         >
           <button
-            aria-label="Go to page 3"
-            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 jvstun"
-            kind="[object Object]"
-            type="button"
-          >
-            3
-          </button>
-        </li>
-        <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
-        />
-        <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 iipxyV"
-        >
-          <button
-            aria-label="Go to page 4"
-            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 jvstun"
-            kind="[object Object]"
-            type="button"
-          >
-            4
-          </button>
-        </li>
-        <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
-        />
-        <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 iipxyV"
-        >
-          <button
-            aria-label="Go to page 5"
-            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 jvstun"
-            kind="[object Object]"
-            type="button"
-          >
-            5
-          </button>
-        </li>
-        <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
-        />
-        <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 iipxyV"
-        >
-          <span
-            class="StyledText-sc-1sadyjn-0 JhXAc"
-          >
-            …
-          </span>
-        </li>
-        <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
-        />
-        <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 iipxyV"
-        >
-          <button
-            aria-label="Go to page 10"
-            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 jvstun"
-            kind="[object Object]"
-            type="button"
-          >
-            10
-          </button>
-        </li>
-        <div
-          class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
-        />
-        <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 iipxyV"
-        >
-          <button
+            aria-disabled="true"
             aria-label="Go to next page"
-            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 jvstun"
+            class="StyledButtonKind-sc-1vhfpnt-0 fVgacz StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dwBFBp"
+            disabled=""
             kind="[object Object]"
             type="button"
           >
             <svg
               aria-label="Next"
-              class="StyledIcon-ofa7kd-0 eMJPUV"
+              class="StyledIcon-ofa7kd-0 dEeaTZ"
               viewBox="0 0 24 24"
             >
               <polyline
@@ -5280,8 +5744,8 @@ exports[`List events should show correct item index when "show" is a number 1`] 
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #000000;
-  stroke: #000000;
+  fill: #666666;
+  stroke: #666666;
 }
 
 .c12 g {
@@ -5303,6 +5767,40 @@ exports[`List events should show correct item index when "show" is a number 1`] 
 .c12 *[FILL-RULE],
 .c12 *[fill*="#"],
 .c12 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c17 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #000000;
+  stroke: #000000;
+}
+
+.c17 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c17 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c17 *[stroke*="#"],
+.c17 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c17 *[fill-rule],
+.c17 *[FILL-RULE],
+.c17 *[fill*="#"],
+.c17 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -5444,12 +5942,6 @@ exports[`List events should show correct item index when "show" is a number 1`] 
   width: 3px;
 }
 
-.c15 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
 .c10 {
   display: inline-block;
   box-sizing: border-box;
@@ -5466,8 +5958,9 @@ exports[`List events should show correct item index when "show" is a number 1`] 
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  color: #000000;
   text-align: center;
+  opacity: 0.3;
+  cursor: default;
   -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
   -webkit-transition-duration: 0.1s;
@@ -5484,10 +5977,6 @@ exports[`List events should show correct item index when "show" is a number 1`] 
 
 .c10 > svg {
   vertical-align: bottom;
-}
-
-.c10:hover {
-  background-color: rgba(51,51,51,0.06274509803921569);
 }
 
 .c10:focus {
@@ -5573,12 +6062,77 @@ exports[`List events should show correct item index when "show" is a number 1`] 
   border: 0;
 }
 
+.c16 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  text-align: center;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c16 > svg {
+  vertical-align: bottom;
+}
+
+.c16:hover {
+  background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c16:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c16:focus > circle,
+.c16:focus > ellipse,
+.c16:focus > line,
+.c16:focus > path,
+.c16:focus > polygon,
+.c16:focus > polyline,
+.c16:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c16:focus::-moz-focus-inner {
+  border: 0;
+}
+
 .c11 {
   padding: 4px;
   border-radius: 4px;
 }
 
-.c11:hover {
+.c15 {
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.c15:hover {
   padding: 4px;
 }
 
@@ -5677,6 +6231,56 @@ exports[`List events should show correct item index when "show" is a number 1`] 
   >
     <li
       class="c2 c3"
+    >
+      entry-0
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-1
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-2
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-3
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-4
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-5
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-6
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-7
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-8
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-9
+    </li>
+    <li
+      class="c4 c3"
     >
       entry-10
     </li>
@@ -5726,6 +6330,156 @@ exports[`List events should show correct item index when "show" is a number 1`] 
       entry-19
     </li>
     <li
+      class="c4 c3"
+    >
+      entry-20
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-21
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-22
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-23
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-24
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-25
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-26
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-27
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-28
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-29
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-30
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-31
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-32
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-33
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-34
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-35
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-36
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-37
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-38
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-39
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-40
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-41
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-42
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-43
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-44
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-45
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-46
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-47
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-48
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-49
+    </li>
+    <li
       class="c5"
     >
       <div
@@ -5747,8 +6501,10 @@ exports[`List events should show correct item index when "show" is a number 1`] 
           class="c9"
         >
           <button
+            aria-disabled="true"
             aria-label="Go to previous page"
             class="c10 c11"
+            disabled=""
             kind="[object Object]"
             type="button"
           >
@@ -5774,8 +6530,9 @@ exports[`List events should show correct item index when "show" is a number 1`] 
           class="c9"
         >
           <button
+            aria-current="page"
             aria-label="Go to page 1"
-            class="c10 c11"
+            class="c14 c15"
             kind="[object Object]"
             type="button"
           >
@@ -5789,9 +6546,8 @@ exports[`List events should show correct item index when "show" is a number 1`] 
           class="c9"
         >
           <button
-            aria-current="page"
             aria-label="Go to page 2"
-            class="c14 c11"
+            class="c16 c15"
             kind="[object Object]"
             type="button"
           >
@@ -5805,86 +6561,14 @@ exports[`List events should show correct item index when "show" is a number 1`] 
           class="c9"
         >
           <button
-            aria-label="Go to page 3"
-            class="c10 c11"
-            kind="[object Object]"
-            type="button"
-          >
-            3
-          </button>
-        </li>
-        <div
-          class="c13"
-        />
-        <li
-          class="c9"
-        >
-          <button
-            aria-label="Go to page 4"
-            class="c10 c11"
-            kind="[object Object]"
-            type="button"
-          >
-            4
-          </button>
-        </li>
-        <div
-          class="c13"
-        />
-        <li
-          class="c9"
-        >
-          <button
-            aria-label="Go to page 5"
-            class="c10 c11"
-            kind="[object Object]"
-            type="button"
-          >
-            5
-          </button>
-        </li>
-        <div
-          class="c13"
-        />
-        <li
-          class="c9"
-        >
-          <span
-            class="c15"
-          >
-            …
-          </span>
-        </li>
-        <div
-          class="c13"
-        />
-        <li
-          class="c9"
-        >
-          <button
-            aria-label="Go to page 10"
-            class="c10 c11"
-            kind="[object Object]"
-            type="button"
-          >
-            10
-          </button>
-        </li>
-        <div
-          class="c13"
-        />
-        <li
-          class="c9"
-        >
-          <button
             aria-label="Go to next page"
-            class="c10 c11"
+            class="c16 c15"
             kind="[object Object]"
             type="button"
           >
             <svg
               aria-label="Next"
-              class="c12"
+              class="c17"
               viewBox="0 0 24 24"
             >
               <polyline
@@ -5903,7 +6587,7 @@ exports[`List events should show correct item index when "show" is a number 1`] 
 `;
 
 exports[`List events should show correct page when "show" is { page: # } 1`] = `
-.c12 {
+.c11 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -5914,25 +6598,59 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   stroke: #000000;
 }
 
-.c12 g {
+.c11 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c12 *:not([stroke])[fill="none"] {
+.c11 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c12 *[stroke*="#"],
-.c12 *[STROKE*="#"] {
+.c11 *[stroke*="#"],
+.c11 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c12 *[fill-rule],
-.c12 *[FILL-RULE],
-.c12 *[fill*="#"],
-.c12 *[FILL*="#"] {
+.c11 *[fill-rule],
+.c11 *[FILL-RULE],
+.c11 *[fill*="#"],
+.c11 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c16 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c16 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c16 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c16 *[stroke*="#"],
+.c16 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c16 *[fill-rule],
+.c16 *[FILL-RULE],
+.c16 *[fill*="#"],
+.c16 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -5999,14 +6717,14 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
 }
 
 .c6 {
@@ -6021,30 +6739,12 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 0px;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-self: flex-end;
-  -ms-flex-item-align: end;
-  align-self: flex-end;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6064,7 +6764,7 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   padding: 0px;
 }
 
-.c13 {
+.c12 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -6074,13 +6774,7 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   width: 3px;
 }
 
-.c15 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
-.c10 {
+.c9 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -6112,35 +6806,35 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   flex: 1 0 auto;
 }
 
-.c10 > svg {
+.c9 > svg {
   vertical-align: bottom;
 }
 
-.c10:hover {
+.c9:hover {
   background-color: rgba(51,51,51,0.06274509803921569);
 }
 
-.c10:focus {
+.c9:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c10:focus > circle,
-.c10:focus > ellipse,
-.c10:focus > line,
-.c10:focus > path,
-.c10:focus > polygon,
-.c10:focus > polyline,
-.c10:focus > rect {
+.c9:focus > circle,
+.c9:focus > ellipse,
+.c9:focus > line,
+.c9:focus > path,
+.c9:focus > polygon,
+.c9:focus > polyline,
+.c9:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c10:focus::-moz-focus-inner {
+.c9:focus::-moz-focus-inner {
   border: 0;
 }
 
-.c14 {
+.c13 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -6175,12 +6869,69 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   flex: 1 0 auto;
 }
 
-.c14 > svg {
+.c13 > svg {
   vertical-align: bottom;
 }
 
-.c14:hover {
+.c13:hover {
   background-color: rgba(51,51,51,0.06274509803921569);
+}
+
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c14 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+  border-radius: 18px;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-transition-property: color,background-color,border-color,box-shadow;
+  transition-property: color,background-color,border-color,box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c14 > svg {
+  vertical-align: bottom;
 }
 
 .c14:focus {
@@ -6203,16 +6954,21 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   border: 0;
 }
 
-.c11 {
+.c10 {
   padding: 4px;
   border-radius: 4px;
 }
 
-.c11:hover {
+.c10:hover {
   padding: 4px;
 }
 
-.c9 {
+.c15 {
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6282,19 +7038,19 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c7 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c7 {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c13 {
+  .c12 {
     width: 2px;
   }
 }
@@ -6308,83 +7064,251 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
     <li
       class="c2 c3"
     >
-      entry-20
+      entry-50
     </li>
     <li
       class="c4 c3"
     >
-      entry-21
+      entry-51
     </li>
     <li
       class="c4 c3"
     >
-      entry-22
+      entry-52
     </li>
     <li
       class="c4 c3"
     >
-      entry-23
+      entry-53
     </li>
     <li
       class="c4 c3"
     >
-      entry-24
+      entry-54
     </li>
     <li
       class="c4 c3"
     >
-      entry-25
+      entry-55
     </li>
     <li
       class="c4 c3"
     >
-      entry-26
+      entry-56
     </li>
     <li
       class="c4 c3"
     >
-      entry-27
+      entry-57
     </li>
     <li
       class="c4 c3"
     >
-      entry-28
+      entry-58
     </li>
     <li
       class="c4 c3"
     >
-      entry-29
+      entry-59
     </li>
     <li
-      class="c5"
+      class="c4 c3"
     >
-      <div
-        class="c6"
-      />
+      entry-60
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-61
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-62
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-63
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-64
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-65
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-66
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-67
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-68
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-69
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-70
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-71
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-72
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-73
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-74
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-75
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-76
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-77
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-78
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-79
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-80
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-81
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-82
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-83
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-84
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-85
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-86
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-87
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-88
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-89
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-90
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-91
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-92
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-93
+    </li>
+    <li
+      class="c4 c3"
+    >
+      entry-94
     </li>
   </ul>
   <div
-    class="c7 Pagination__StyledPaginationContainer-rnlw6m-0"
+    class="c5 Pagination__StyledPaginationContainer-rnlw6m-0"
   >
     <nav
       aria-label="Pagination Navigation"
-      class="c5"
+      class="c6"
     >
       <ul
-        class="c8"
+        class="c7"
       >
         <li
-          class="c9"
+          class="c8"
         >
           <button
             aria-label="Go to previous page"
-            class="c10 c11"
+            class="c9 c10"
             kind="[object Object]"
             type="button"
           >
             <svg
               aria-label="Previous"
-              class="c12"
+              class="c11"
               viewBox="0 0 24 24"
             >
               <polyline
@@ -6398,14 +7322,14 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
           </button>
         </li>
         <div
-          class="c13"
+          class="c12"
         />
         <li
-          class="c9"
+          class="c8"
         >
           <button
             aria-label="Go to page 1"
-            class="c10 c11"
+            class="c9 c10"
             kind="[object Object]"
             type="button"
           >
@@ -6413,14 +7337,15 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
           </button>
         </li>
         <div
-          class="c13"
+          class="c12"
         />
         <li
-          class="c9"
+          class="c8"
         >
           <button
+            aria-current="page"
             aria-label="Go to page 2"
-            class="c10 c11"
+            class="c13 c10"
             kind="[object Object]"
             type="button"
           >
@@ -6428,93 +7353,22 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
           </button>
         </li>
         <div
-          class="c13"
+          class="c12"
         />
         <li
-          class="c9"
+          class="c8"
         >
           <button
-            aria-current="page"
-            aria-label="Go to page 3"
-            class="c14 c11"
-            kind="[object Object]"
-            type="button"
-          >
-            3
-          </button>
-        </li>
-        <div
-          class="c13"
-        />
-        <li
-          class="c9"
-        >
-          <button
-            aria-label="Go to page 4"
-            class="c10 c11"
-            kind="[object Object]"
-            type="button"
-          >
-            4
-          </button>
-        </li>
-        <div
-          class="c13"
-        />
-        <li
-          class="c9"
-        >
-          <button
-            aria-label="Go to page 5"
-            class="c10 c11"
-            kind="[object Object]"
-            type="button"
-          >
-            5
-          </button>
-        </li>
-        <div
-          class="c13"
-        />
-        <li
-          class="c9"
-        >
-          <span
-            class="c15"
-          >
-            …
-          </span>
-        </li>
-        <div
-          class="c13"
-        />
-        <li
-          class="c9"
-        >
-          <button
-            aria-label="Go to page 10"
-            class="c10 c11"
-            kind="[object Object]"
-            type="button"
-          >
-            10
-          </button>
-        </li>
-        <div
-          class="c13"
-        />
-        <li
-          class="c9"
-        >
-          <button
+            aria-disabled="true"
             aria-label="Go to next page"
-            class="c10 c11"
+            class="c14 c15"
+            disabled=""
             kind="[object Object]"
             type="button"
           >
             <svg
               aria-label="Next"
-              class="c12"
+              class="c16"
               viewBox="0 0 24 24"
             >
               <polyline

@@ -12,7 +12,7 @@ for (let i = 0; i < 95; i += 1) {
   });
 }
 
-export const PaginatedList = () => (
+export const Paginated = () => (
   <Grommet theme={grommet} full>
     <Box pad="medium">
       <List
@@ -29,12 +29,8 @@ export const PaginatedList = () => (
         }}
         step={3}
         show={{ page: 7 }}
-        paginate={{ margin: { top: 'medium' } }}
+        paginate
       />
     </Box>
   </Grommet>
 );
-
-PaginatedList.story = {
-  name: 'Paginate',
-};

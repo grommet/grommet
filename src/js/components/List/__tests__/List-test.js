@@ -355,8 +355,8 @@ describe('List events', () => {
     );
 
     const results = getAllByText('entry', { exact: false });
-    // default step 10
-    expect(results.length).toEqual(10);
+    // default step 50
+    expect(results.length).toEqual(50);
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -383,7 +383,7 @@ describe('List events', () => {
   });
 
   test('should show correct page when "show" is { page: # }', () => {
-    const desiredPage = 3;
+    const desiredPage = 2;
     const { container } = render(
       <Grommet>
         <List data={data} show={{ page: desiredPage }} paginate />

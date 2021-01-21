@@ -4,7 +4,7 @@ import { Box, Grommet, DataTable } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { columns, DATA } from './data';
 
-export const PaginatedDataTable = () => {
+export const Paginated = () => {
   const [select, setSelect] = React.useState([]);
   return (
     <Grommet theme={grommet} full>
@@ -21,8 +21,4 @@ export const PaginatedDataTable = () => {
       </Box>
     </Grommet>
   );
-};
-
-PaginatedDataTable.story = {
-  name: 'Paginate',
 };
