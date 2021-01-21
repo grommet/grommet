@@ -126,7 +126,7 @@ export const themeDoc = {
   'fileInput.message': {
     description: `The Text props to use for the message shown before a file
       has been selected.`,
-    type: 'string',
+    type: 'string  |  object',
     defaultValue: undefined,
   },
   'fileInput.pad': {
