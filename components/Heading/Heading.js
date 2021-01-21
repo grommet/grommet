@@ -21,15 +21,19 @@ var Heading = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       level = _ref.level,
       rest = _objectWithoutPropertiesLoose(_ref, ["color", "fill", "level"]);
 
-  // enforce level to be a number
-  return /*#__PURE__*/_react["default"].createElement(_StyledHeading.StyledHeading, _extends({
-    as: "h" + level,
-    colorProp: color,
-    fillProp: fill,
-    level: +level
-  }, rest, {
-    ref: ref
-  }));
+  return (
+    /*#__PURE__*/
+    // munged to avoid styled-components putting it in the DOM
+    // enforce level to be a number
+    _react["default"].createElement(_StyledHeading.StyledHeading, _extends({
+      as: "h" + level,
+      colorProp: color,
+      fillProp: fill,
+      level: +level
+    }, rest, {
+      ref: ref
+    }))
+  );
 });
 Heading.displayName = 'Heading';
 Heading.defaultProps = {

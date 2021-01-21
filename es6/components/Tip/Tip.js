@@ -19,9 +19,10 @@ var Tip = /*#__PURE__*/forwardRef(function (_ref, tipRef) {
   var componentRef = useForwardedRef(tipRef); // In cases the child is a primitive
 
   var wrapInvalidElement = function wrapInvalidElement() {
-    // Handle the use case of a primitive string child
-    // so we'll be able to assign ref and events on the child.
-    return ! /*#__PURE__*/React.isValidElement(children) ? /*#__PURE__*/React.createElement("span", null, children) : children;
+    return (// Handle the use case of a primitive string child
+      // so we'll be able to assign ref and events on the child.
+      ! /*#__PURE__*/React.isValidElement(children) ? /*#__PURE__*/React.createElement("span", null, children) : children
+    );
   };
   /* Three use case for children
     1. Tip has a single child + it is a React Element => Great!
