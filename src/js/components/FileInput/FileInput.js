@@ -221,7 +221,6 @@ const FileInput = forwardRef(
               for (let i = 0; i < fileList.length; i += 1) {
                 nextFiles.push(fileList[i]);
               }
-              console.log('!!! onChange', nextFiles.length);
               setFiles(nextFiles);
               setDragOver(false);
               if (onChange) onChange(event);
