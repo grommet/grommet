@@ -109,24 +109,22 @@ const CalendarDay = ({
   isSelected,
   otherMonth,
   buttonProps = {},
-}) => {
-  return (
-    <StyledDayContainer sizeProp={size} fillContainer={fill}>
-      <CalendarDayButton fill={fill} {...buttonProps}>
-        <StyledDay
-          disabledProp={buttonProps.disabled}
-          inRange={isInRange}
-          otherMonth={otherMonth}
-          isSelected={isSelected}
-          sizeProp={size}
-          fillContainer={fill}
-        >
-          {children}
-        </StyledDay>
-      </CalendarDayButton>
-    </StyledDayContainer>
-  );
-};
+}) => (
+  <StyledDayContainer sizeProp={size} fillContainer={fill}>
+    <CalendarDayButton fill={fill} {...buttonProps}>
+      <StyledDay
+        disabledProp={buttonProps.disabled}
+        inRange={isInRange}
+        otherMonth={otherMonth}
+        isSelected={isSelected}
+        sizeProp={size}
+        fillContainer={fill}
+      >
+        {children}
+      </StyledDay>
+    </CalendarDayButton>
+  </StyledDayContainer>
+);
 
 const CalendarCustomDay = ({ children, fill, size, buttonProps }) => {
   if (!buttonProps) {

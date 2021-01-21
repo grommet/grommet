@@ -211,12 +211,10 @@ const Chart = React.forwardRef(
 
     // Converts values to drawing coordinates.
     // Takes into account the bounds, any inset, and the scale.
-    const valueToCoordinate = (xValue, yValue) => {
-      return [
-        (xValue - bounds[0][0]) * scale[0] + inset[0],
-        size[1] - ((yValue - bounds[1][0]) * scale[1] + inset[1]),
-      ];
-    };
+    const valueToCoordinate = (xValue, yValue) => [
+      (xValue - bounds[0][0]) * scale[0] + inset[0],
+      size[1] - ((yValue - bounds[1][0]) * scale[1] + inset[1]),
+    ];
 
     const renderBars = () =>
       (values || [])
