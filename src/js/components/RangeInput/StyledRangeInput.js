@@ -5,14 +5,13 @@ import { focusStyle, normalizeColor, parseMetricToNum } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 // opacity of the bound trumps the track opacity
-const getBoundOpacity = (props, bound) => {
-  return props.theme.rangeInput &&
-    props.theme.rangeInput.track &&
-    props.theme.rangeInput.track[bound] &&
-    props.theme.rangeInput.track[bound].opacity
+const getBoundOpacity = (props, bound) =>
+  props.theme.rangeInput &&
+  props.theme.rangeInput.track &&
+  props.theme.rangeInput.track[bound] &&
+  props.theme.rangeInput.track[bound].opacity
     ? props.theme.rangeInput.track[bound].opacity
     : 1;
-};
 
 const getBoundColor = (props, bound) => {
   if (
