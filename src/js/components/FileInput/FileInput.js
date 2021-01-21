@@ -63,7 +63,7 @@ const FileInput = forwardRef(
       border,
       disabled,
       id,
-      fileLabel,
+      renderFile,
       messages,
       margin,
       multiple,
@@ -162,8 +162,8 @@ const FileInput = forwardRef(
                 align="center"
                 justify="between"
               >
-                {fileLabel ? (
-                  fileLabel(file)
+                {renderFile ? (
+                  renderFile(file)
                 ) : (
                   <Label
                     weight={

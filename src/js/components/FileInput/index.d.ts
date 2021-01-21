@@ -4,7 +4,6 @@ export interface FileInputProps {
   accept?: string;
   aggregateThreshold?: number;
   disabled?: boolean;
-  fileLabel?: (...args: any[]) => void;
   id?: string;
   messages?: {
     browse?: string;
@@ -16,6 +15,7 @@ export interface FileInputProps {
   };
   multiple?: boolean;
   name?: string;
+  renderFile?: (...args: any[]) => void;
 }
 
 declare const FileInput: React.ComponentClass<FileInputProps &

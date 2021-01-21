@@ -19,19 +19,15 @@ export const doc = FileInput => {
     ),
     aggregateThreshold: PropTypes.number
       .description(
-        `The maximum number of individual files to show. Above this,
-      only a single message describing the number of files will be shown.`,
+        `The maximum number of individual files to show when multiple is true.
+        Above this, only a single message describing the number of files will
+        be shown.`,
       )
       .defaultValue(10),
     disabled: PropTypes.bool
       .description('Whether the control is disabled.')
-      .defaultValue(false),
+      .defaultValue(undefined),
     id: PropTypes.string.description('The id attribute of the input.'),
-    fileLabel: PropTypes.node.description(
-      `Provides custom rendering of the file. If not provided, the file's
-      name will be shown. It will be passed the browser File object as
-      an argument. For example: (file) => <Text>{file.name}</Text>`,
-    ),
     messages: PropTypes.shape({
       browse: PropTypes.string,
       dropPrompt: PropTypes.string,
@@ -52,7 +48,9 @@ export const doc = FileInput => {
         remove: 'remove',
         removeAll: 'remove all',
       }),
-    multiple: PropTypes.bool.description('Whether to allow multiple files'),
+    multiple: PropTypes.bool
+      .description('Whether to allow multiple files')
+      .defaultValue(undefined),
     name: PropTypes.string.description(
       `The name attribute of the input. This is required when used within
       a Form.`,
@@ -60,6 +58,11 @@ export const doc = FileInput => {
     onChange: PropTypes.func.description(
       `Function that will be called when one or more files are added to 
       the input. The file(s) can be found in event.target.files.`,
+    ),
+    renderFile: PropTypes.node.description(
+      `Provides custom rendering of the file. If not provided, the file's
+      name will be shown. It will be passed the browser File object as
+      an argument. For example: (file) => <Text>{file.name}</Text>`,
     ),
   };
 
@@ -69,24 +72,28 @@ export const doc = FileInput => {
 export const themeDoc = {
   ...themeDocUtils.inputStyle,
   'fileInput.background': {
-    description: 'The Box background prop for the container.',
-    type: 'string',
+    description: 'The background prop for the container.',
+    type: 'string | object',
     defaultValue: undefined,
   },
   'fileInput.border': {
-    description: 'The Box border prop for the container.',
-    type: 'string',
-    defaultValue: undefined,
+    description: 'The border prop for the container.',
+    type: 'string | object',
+    defaultValue: {
+      side: 'all',
+      size: 'small',
+      style: 'dashed',
+    },
   },
   'fileInput.dragOver.background': {
     description: 'Background to use when dragging over.',
-    type: 'string',
+    type: 'string | object',
     defaultValue: undefined,
   },
   'fileInput.dragOver.border': {
     description: 'Background to use when dragging over.',
-    type: 'string',
-    defaultValue: undefined,
+    type: 'string | object',
+    defaultValue: { color: 'red' },
   },
   'fileInput.dragOver.extend': {
     description: 'Any additional style for container when dragging over it.',
@@ -100,12 +107,12 @@ export const themeDoc = {
   },
   'fileInput.hover.background': {
     description: 'Background to use when hovering.',
-    type: 'string',
+    type: 'string | object',
     defaultValue: undefined,
   },
   'fileInput.hover.border': {
     description: 'Background to use when hovering.',
-    type: 'string',
+    type: 'string | object',
     defaultValue: undefined,
   },
   'fileInput.hover.extend': {
@@ -115,28 +122,28 @@ export const themeDoc = {
   },
   'fileInput.icons.remove': {
     description: 'The icon to use for the control to remove a chosen file.',
-    type: 'string',
-    defaultValue: undefined,
+    type: 'React.Element',
+    defaultValue: 'FormClose',
   },
   'fileInput.label': {
     description: 'The Text props to use for the file label.',
-    type: 'string',
-    defaultValue: undefined,
+    type: 'object',
+    defaultValue: { margin: 'small' },
   },
   'fileInput.message': {
     description: `The Text props to use for the message shown before a file
       has been selected.`,
-    type: 'string  |  object',
-    defaultValue: undefined,
+    type: 'object',
+    defaultValue: { margin: 'small' },
   },
   'fileInput.pad': {
-    description: 'The Box pad prop for the container.',
-    type: 'string',
+    description: 'The pad prop for the container.',
+    type: 'string | object',
     defaultValue: undefined,
   },
   'fileInput.round': {
-    description: 'The Box round prop for the container.',
-    type: 'string',
+    description: 'The round prop for the container.',
+    type: 'string | object',
     defaultValue: undefined,
   },
 };

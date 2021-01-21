@@ -21,8 +21,9 @@ string
 
 **aggregateThreshold**
 
-The maximum number of individual files to show. Above this,
-      only a single message describing the number of files will be shown. Defaults to `10`.
+The maximum number of individual files to show when multiple is true.
+        Above this, only a single message describing the number of files will
+        be shown. Defaults to `10`.
 
 ```
 number
@@ -42,16 +43,6 @@ The id attribute of the input.
 
 ```
 string
-```
-
-**fileLabel**
-
-Provides custom rendering of the file. If not provided, the file's
-      name will be shown. It will be passed the browser File object as
-      an argument. For example: (file) => <Text>{file.name}</Text>
-
-```
-node
 ```
 
 **messages**
@@ -96,11 +87,21 @@ string
 
 **onChange**
 
-Function that will be called when one or more files are added the
-      input. The file(s) can be found in event.target.files.
+Function that will be called when one or more files are added to 
+      the input. The file(s) can be found in event.target.files.
 
 ```
 function
+```
+
+**renderFile**
+
+Provides custom rendering of the file. If not provided, the file's
+      name will be shown. It will be passed the browser File object as
+      an argument. For example: (file) => <Text>{file.name}</Text>
+
+```
+node
 ```
   
 ## Intrinsic element
@@ -175,7 +176,7 @@ undefined
 
 **fileInput.background**
 
-The Box background prop for the container. Expects `string`.
+The background prop for the container. Expects `string | object`.
 
 Defaults to
 
@@ -185,17 +186,17 @@ undefined
 
 **fileInput.border**
 
-The Box border prop for the container. Expects `string`.
+The border prop for the container. Expects `string | object`.
 
 Defaults to
 
 ```
-undefined
+[object Object]
 ```
 
 **fileInput.dragOver.background**
 
-Background to use when dragging over. Expects `string`.
+Background to use when dragging over. Expects `string | object`.
 
 Defaults to
 
@@ -205,12 +206,12 @@ undefined
 
 **fileInput.dragOver.border**
 
-Background to use when dragging over. Expects `string`.
+Background to use when dragging over. Expects `string | object`.
 
 Defaults to
 
 ```
-undefined
+[object Object]
 ```
 
 **fileInput.dragOver.extend**
@@ -235,7 +236,7 @@ undefined
 
 **fileInput.hover.background**
 
-Background to use when hovering. Expects `string`.
+Background to use when hovering. Expects `string | object`.
 
 Defaults to
 
@@ -245,7 +246,7 @@ undefined
 
 **fileInput.hover.border**
 
-Background to use when hovering. Expects `string`.
+Background to use when hovering. Expects `string | object`.
 
 Defaults to
 
@@ -265,38 +266,38 @@ undefined
 
 **fileInput.icons.remove**
 
-The icon to use for the control to remove a chosen file. Expects `string`.
+The icon to use for the control to remove a chosen file. Expects `React.Element`.
 
 Defaults to
 
 ```
-undefined
+FormClose
 ```
 
 **fileInput.label**
 
-The Text props to use for the file label. Expects `string`.
+The Text props to use for the file label. Expects `object`.
 
 Defaults to
 
 ```
-undefined
+[object Object]
 ```
 
 **fileInput.message**
 
 The Text props to use for the message shown before a file
-      has been selected. Expects `string`.
+      has been selected. Expects `object`.
 
 Defaults to
 
 ```
-undefined
+[object Object]
 ```
 
 **fileInput.pad**
 
-The Box pad prop for the container. Expects `string`.
+The pad prop for the container. Expects `string | object`.
 
 Defaults to
 
@@ -306,7 +307,7 @@ undefined
 
 **fileInput.round**
 
-The Box round prop for the container. Expects `string`.
+The round prop for the container. Expects `string | object`.
 
 Defaults to
 

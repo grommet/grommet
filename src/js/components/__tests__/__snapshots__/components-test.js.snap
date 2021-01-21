@@ -3550,13 +3550,14 @@ string",
       },
       Object {
         "defaultValue": 10,
-        "description": "The maximum number of individual files to show. Above this,
-      only a single message describing the number of files will be shown.",
+        "description": "The maximum number of individual files to show when multiple is true.
+        Above this, only a single message describing the number of files will
+        be shown.",
         "format": "number",
         "name": "aggregateThreshold",
       },
       Object {
-        "defaultValue": false,
+        "defaultValue": undefined,
         "description": "Whether the control is disabled.",
         "format": "boolean",
         "name": "disabled",
@@ -3565,13 +3566,6 @@ string",
         "description": "The id attribute of the input.",
         "format": "string",
         "name": "id",
-      },
-      Object {
-        "description": "Provides custom rendering of the file. If not provided, the file's
-      name will be shown. It will be passed the browser File object as
-      an argument. For example: (file) => <Text>{file.name}</Text>",
-        "format": "node",
-        "name": "fileLabel",
       },
       Object {
         "defaultValue": Object {
@@ -3595,6 +3589,7 @@ string",
         "name": "messages",
       },
       Object {
+        "defaultValue": undefined,
         "description": "Whether to allow multiple files",
         "format": "boolean",
         "name": "multiple",
@@ -3606,10 +3601,17 @@ string",
         "name": "name",
       },
       Object {
-        "description": "Function that will be called when one or more files are added the
-      input. The file(s) can be found in event.target.files.",
+        "description": "Function that will be called when one or more files are added to 
+      the input. The file(s) can be found in event.target.files.",
         "format": "function",
         "name": "onChange",
+      },
+      Object {
+        "description": "Provides custom rendering of the file. If not provided, the file's
+      name will be shown. It will be passed the browser File object as
+      an argument. For example: (file) => <Text>{file.name}</Text>",
+        "format": "node",
+        "name": "renderFile",
       },
     ],
     "usage": "import { FileInput } from 'grommet';
