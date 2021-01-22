@@ -8,12 +8,12 @@ export const Simple = () => (
     <Box align="start" pad="small" gap="medium">
       <Box>
         <Text>Default</Text>
-        <Pagination numItems={237} />
+        <Pagination numberItems={237} />
       </Box>
       <Box>
         <Text>Box Props</Text>
         <Pagination
-          numItems={1237}
+          numberItems={1237}
           page={24}
           background="brand"
           pad="medium"

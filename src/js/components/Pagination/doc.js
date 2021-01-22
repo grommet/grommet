@@ -19,16 +19,16 @@ export const doc = Pagination => {
 
   DocumentedPagination.propTypes = {
     ...genericProps,
-    numEdgePages: PropTypes.number
+    numberEdgePages: PropTypes.number
       .description(
         `The number of page buttons visible at the start and end of page 
         range.`,
       )
       .defaultValue(1),
-    numItems: PropTypes.number
+    numberItems: PropTypes.number
       .description('The number of items to paginate.')
       .defaultValue(undefined),
-    numMiddlePages: PropTypes.number
+    numberMiddlePages: PropTypes.number
       .description(
         `The number of page buttons visible in the middle of the controls.`,
       )

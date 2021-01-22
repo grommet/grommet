@@ -23,7 +23,7 @@ describe('Pagination', () => {
   // test('should have no accessibility violations', async () => {
   //   const { container } = render(
   //     <Grommet>
-  //       <Pagination numItems={NUM_ITEMS} />
+  //       <Pagination numberItems={NUM_ITEMS} />
   //     </Grommet>,
   //   );
 
@@ -35,7 +35,7 @@ describe('Pagination', () => {
   and step`, () => {
     const { container, getByText } = render(
       <Grommet>
-        <Pagination numItems={NUM_ITEMS} />
+        <Pagination numberItems={NUM_ITEMS} />
       </Grommet>,
     );
 
@@ -47,30 +47,30 @@ describe('Pagination', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('should render correct numEdgePages', () => {
+  test('should render correct numberEdgePages', () => {
     const { container } = render(
       <Grommet>
-        <Pagination numItems={NUM_ITEMS} numEdgePages={3} page={10} />
+        <Pagination numberItems={NUM_ITEMS} numberEdgePages={3} page={10} />
       </Grommet>,
     );
 
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('should render correct numMiddlePages when odd', () => {
+  test('should render correct numberMiddlePages when odd', () => {
     const { container } = render(
       <Grommet>
-        <Pagination numItems={NUM_ITEMS} numMiddlePages={5} page={10} />
+        <Pagination numberItems={NUM_ITEMS} numberMiddlePages={5} page={10} />
       </Grommet>,
     );
 
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('should render correct numMiddlePages when even', () => {
+  test('should render correct numberMiddlePages when even', () => {
     const { container } = render(
       <Grommet>
-        <Pagination numItems={NUM_ITEMS} numMiddlePages={4} page={10} />
+        <Pagination numberItems={NUM_ITEMS} numberMiddlePages={4} page={10} />
       </Grommet>,
     );
 
@@ -79,11 +79,11 @@ describe('Pagination', () => {
 
   test('should show correct page when "page" is provided ', () => {});
 
-  test(`should disable previous and next controls when numItems 
+  test(`should disable previous and next controls when numberItems 
   < step`, () => {
     const { container } = render(
       <Grommet>
-        <Pagination numItems={10} step={20} />
+        <Pagination numberItems={10} step={20} />
       </Grommet>,
     );
 
@@ -99,11 +99,11 @@ describe('Pagination', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test(`should disable previous and next controls when numItems 
+  test(`should disable previous and next controls when numberItems 
   === step`, () => {
     const { container } = render(
       <Grommet>
-        <Pagination numItems={20} step={20} />
+        <Pagination numberItems={20} step={20} />
       </Grommet>,
     );
 
@@ -119,11 +119,11 @@ describe('Pagination', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test(`should disable previous and next controls when numItems 
+  test(`should disable previous and next controls when numberItems 
   === 0`, () => {
     const { container } = render(
       <Grommet>
-        <Pagination numItems={0} />
+        <Pagination numberItems={0} />
       </Grommet>,
     );
 
@@ -141,15 +141,15 @@ describe('Pagination', () => {
 
   test(`should set page to last page if page prop > total possible 
   pages`, () => {
-    const numItems = 500;
+    const numberItems = 500;
     const step = 50;
     const { container, getByText } = render(
       <Grommet>
-        <Pagination numItems={numItems} step={step} page={700} />
+        <Pagination numberItems={numberItems} step={step} page={700} />
       </Grommet>,
     );
 
-    const expectedPage = `${Math.ceil(numItems / step)}`;
+    const expectedPage = `${Math.ceil(numberItems / step)}`;
     fireEvent.click(getByText(expectedPage));
     const activePage = container.querySelector(`[aria-current="page"]`)
       .innerHTML;
@@ -164,7 +164,7 @@ describe('Pagination', () => {
     const onChange = jest.fn();
     const { container, getByLabelText } = render(
       <Grommet>
-        <Pagination numItems={NUM_ITEMS} page={1} onChange={onChange} />
+        <Pagination numberItems={NUM_ITEMS} page={1} onChange={onChange} />
       </Grommet>,
     );
 
@@ -184,7 +184,7 @@ describe('Pagination', () => {
     const onChange = jest.fn();
     const { container, getByLabelText } = render(
       <Grommet>
-        <Pagination numItems={NUM_ITEMS} onChange={onChange} />
+        <Pagination numberItems={NUM_ITEMS} onChange={onChange} />
       </Grommet>,
     );
 
@@ -210,7 +210,7 @@ describe('Pagination', () => {
     const onChange = jest.fn();
     const { container, getByLabelText } = render(
       <Grommet>
-        <Pagination numItems={NUM_ITEMS} page={3} onChange={onChange} />
+        <Pagination numberItems={NUM_ITEMS} page={3} onChange={onChange} />
       </Grommet>,
     );
 
@@ -235,7 +235,7 @@ describe('Pagination', () => {
   selected`, () => {
     const { container, getByText } = render(
       <Grommet>
-        <Pagination numItems={NUM_ITEMS} />
+        <Pagination numberItems={NUM_ITEMS} />
       </Grommet>,
     );
 
@@ -251,7 +251,7 @@ describe('Pagination', () => {
   test(`should disable previous button if on first page`, () => {
     const { container } = render(
       <Grommet>
-        <Pagination numItems={NUM_ITEMS} />
+        <Pagination numberItems={NUM_ITEMS} />
       </Grommet>,
     );
 
@@ -267,7 +267,7 @@ describe('Pagination', () => {
     const lastPage = Math.ceil(NUM_ITEMS / STEP);
     const { container } = render(
       <Grommet>
-        <Pagination numItems={NUM_ITEMS} page={lastPage} />
+        <Pagination numberItems={NUM_ITEMS} page={lastPage} />
       </Grommet>,
     );
 
@@ -279,11 +279,11 @@ describe('Pagination', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test(`should set numMiddlePages = 1 if user provides value < 1`, () => {
+  test(`should set numberMiddlePages = 1 if user provides value < 1`, () => {
     console.warn = jest.fn();
     const { container } = render(
       <Grommet>
-        <Pagination numItems={NUM_ITEMS} numMiddlePages={0} />
+        <Pagination numberItems={NUM_ITEMS} numberMiddlePages={0} />
       </Grommet>,
     );
 
@@ -303,7 +303,7 @@ describe('Pagination', () => {
 
     const { container } = render(
       <Grommet theme={customTheme}>
-        <Pagination numItems={NUM_ITEMS} />
+        <Pagination numberItems={NUM_ITEMS} />
       </Grommet>,
     );
 

@@ -1557,7 +1557,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
 </div>
 `;
 
-exports[`Pagination should disable previous and next controls when numItems 
+exports[`Pagination should disable previous and next controls when numberItems 
   < step 1`] = `
 .c7 {
   display: inline-block;
@@ -1923,7 +1923,7 @@ exports[`Pagination should disable previous and next controls when numItems
 </div>
 `;
 
-exports[`Pagination should disable previous and next controls when numItems 
+exports[`Pagination should disable previous and next controls when numberItems 
   === 0 1`] = `
 .c7 {
   display: inline-block;
@@ -2200,7 +2200,7 @@ exports[`Pagination should disable previous and next controls when numItems
 </div>
 `;
 
-exports[`Pagination should disable previous and next controls when numItems 
+exports[`Pagination should disable previous and next controls when numberItems 
   === step 1`] = `
 .c7 {
   display: inline-block;
@@ -5374,7 +5374,7 @@ exports[`Pagination should display the correct last page based on items length
 </div>
 `;
 
-exports[`Pagination should render correct numEdgePages 1`] = `
+exports[`Pagination should render correct numberEdgePages 1`] = `
 .c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -5883,7 +5883,7 @@ exports[`Pagination should render correct numEdgePages 1`] = `
 </div>
 `;
 
-exports[`Pagination should render correct numMiddlePages when even 1`] = `
+exports[`Pagination should render correct numberMiddlePages when even 1`] = `
 .c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -6347,7 +6347,7 @@ exports[`Pagination should render correct numMiddlePages when even 1`] = `
 </div>
 `;
 
-exports[`Pagination should render correct numMiddlePages when odd 1`] = `
+exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
 .c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -6826,7 +6826,7 @@ exports[`Pagination should render correct numMiddlePages when odd 1`] = `
 </div>
 `;
 
-exports[`Pagination should set numMiddlePages = 1 if user provides value < 1 1`] = `
+exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 1`] = `
 .c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;

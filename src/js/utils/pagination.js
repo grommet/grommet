@@ -38,7 +38,7 @@ export const usePagination = ({ data, page, step, ...rest }) => {
   }, [data, getCurrentItems, setCurrentItems]);
 
   const paginationProps = {
-    numItems: data && data.length,
+    numberItems: data && data.length,
     onChange: event => setActivePage(event.page),
     page,
     step,

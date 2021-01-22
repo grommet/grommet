@@ -5965,19 +5965,19 @@ string",
         "description": "The number of page buttons visible at the start and end of page 
         range.",
         "format": "number",
-        "name": "numEdgePages",
+        "name": "numberEdgePages",
       },
       Object {
         "defaultValue": undefined,
         "description": "The number of items to paginate.",
         "format": "number",
-        "name": "numItems",
+        "name": "numberItems",
       },
       Object {
         "defaultValue": 3,
         "description": "The number of page buttons visible in the middle of the controls.",
         "format": "number",
-        "name": "numMiddlePages",
+        "name": "numberMiddlePages",
       },
       Object {
         "defaultValue": undefined,

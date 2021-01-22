@@ -1,14 +1,19 @@
 import * as React from 'react';
-import { A11yTitleType, AlignSelfType, GridAreaType, MarginType } from '../../utils';
+import {
+  A11yTitleType,
+  AlignSelfType,
+  GridAreaType,
+  MarginType,
+} from '../../utils';
 
 export interface PaginationProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
   margin?: MarginType;
-  numEdgePages?: number;
-  numItems?: number;
-  numMiddlePages?: number;
+  numberEdgePages?: number;
+  numberItems?: number;
+  numberMiddlePages?: number;
   onChange?: (...args: any[]) => void;
   page?: number;
   step?: number;

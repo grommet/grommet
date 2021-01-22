@@ -125,7 +125,7 @@ xlarge
 string
 ```
 
-**numEdgePages**
+**numberEdgePages**
 
 The number of page buttons visible at the start and end of page 
         range. Defaults to `1`.
@@ -134,7 +134,7 @@ The number of page buttons visible at the start and end of page
 number
 ```
 
-**numItems**
+**numberItems**
 
 The number of items to paginate.
 
@@ -142,7 +142,7 @@ The number of items to paginate.
 number
 ```
 
-**numMiddlePages**
+**numberMiddlePages**
 
 The number of page buttons visible in the middle of the controls. Defaults to `3`.
 

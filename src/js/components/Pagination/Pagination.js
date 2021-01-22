@@ -21,10 +21,10 @@ const Pagination = forwardRef(
   (
     {
       a11yTitle,
-      numItems,
-      numEdgePages = 1, // number of pages at each edge of page indices
+      numberItems,
+      numberEdgePages = 1, // number of pages at each edge of page indices
       // number of page controls in the middle
-      numMiddlePages: numMiddlePagesProp = 3,
+      numberMiddlePages: numberMiddlePagesProp = 3,
       onChange,
       page: pageProp,
       step = 10,
@@ -35,47 +35,47 @@ const Pagination = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
 
     /* Calculate total number pages */
-    const totalPages = Math.ceil(numItems / step);
+    const totalPages = Math.ceil(numberItems / step);
     const [activePage, setActivePage] = useState(
       Math.min(pageProp, totalPages) || 1,
     );
 
     /* Define page indices to display */
-    const beginPages = getPageIndices(1, Math.min(numEdgePages, totalPages));
+    const beginPages = getPageIndices(1, Math.min(numberEdgePages, totalPages));
     const endPages = getPageIndices(
-      Math.max(totalPages - numEdgePages + 1, numEdgePages + 1),
+      Math.max(totalPages - numberEdgePages + 1, numberEdgePages + 1),
       totalPages,
     );
 
-    let numMiddlePages;
-    if (numMiddlePagesProp < 1) {
-      numMiddlePages = 1;
+    let numberMiddlePages;
+    if (numberMiddlePagesProp < 1) {
+      numberMiddlePages = 1;
       console.warn(
         // eslint-disable-next-line max-len
-        `Property "numMiddlePages" should not be < 1. One middle page button will be shown. Set "numMiddlePages" >= 1 to remove this warning.`,
+        `Property "numberMiddlePages" should not be < 1. One middle page button will be shown. Set "numberMiddlePages" >= 1 to remove this warning.`,
       );
-    } else numMiddlePages = numMiddlePagesProp;
+    } else numberMiddlePages = numberMiddlePagesProp;
 
     let startingMiddlePages;
     // odd
-    if (numMiddlePages % 2)
+    if (numberMiddlePages % 2)
       startingMiddlePages = Math.min(
-        activePage - Math.floor(numMiddlePages / 2),
-        totalPages - numEdgePages - numMiddlePages,
+        activePage - Math.floor(numberMiddlePages / 2),
+        totalPages - numberEdgePages - numberMiddlePages,
       );
     // even, cannot split equally around active page
     // let extra page appear on middlePagesEnd instead
     else
       startingMiddlePages = Math.min(
-        activePage - Math.floor(numMiddlePages / 2) + 1,
-        totalPages - numEdgePages - numMiddlePages,
+        activePage - Math.floor(numberMiddlePages / 2) + 1,
+        totalPages - numberEdgePages - numberMiddlePages,
       );
 
-    const middlePagesBegin = Math.max(startingMiddlePages, numEdgePages + 2);
+    const middlePagesBegin = Math.max(startingMiddlePages, numberEdgePages + 2);
     const middlePagesEnd = Math.min(
       Math.max(
-        activePage + Math.floor(numMiddlePages / 2),
-        numEdgePages + numMiddlePages + 1,
+        activePage + Math.floor(numberMiddlePages / 2),
+        numberEdgePages + numberMiddlePages + 1,
       ),
       endPages.length > 0 ? endPages[0] - 2 : totalPages - 1,
     );
@@ -83,14 +83,15 @@ const Pagination = forwardRef(
     const middlePages = getPageIndices(middlePagesBegin, middlePagesEnd);
 
     let beginFlex = [];
-    if (middlePagesBegin > numEdgePages + 2) beginFlex = ['more-prev'];
-    else if (numEdgePages + 1 < totalPages - numEdgePages)
-      beginFlex = [numEdgePages + 1];
+    if (middlePagesBegin > numberEdgePages + 2) beginFlex = ['more-prev'];
+    else if (numberEdgePages + 1 < totalPages - numberEdgePages)
+      beginFlex = [numberEdgePages + 1];
 
     let endFlex = [];
-    if (middlePagesEnd < totalPages - numEdgePages - 1) endFlex = ['more-next'];
-    else if (totalPages - numEdgePages > numEdgePages)
-      endFlex = [totalPages - numEdgePages];
+    if (middlePagesEnd < totalPages - numberEdgePages - 1)
+      endFlex = ['more-next'];
+    else if (totalPages - numberEdgePages > numberEdgePages)
+      endFlex = [totalPages - numberEdgePages];
 
     const getItemIndices = nextPage => {
       const startIndex = step * (nextPage - 1);
@@ -123,7 +124,7 @@ const Pagination = forwardRef(
       next: {
         // https://a11y-style-guide.com/style-guide/section-navigation.html#kssref-navigation-pagination
         'aria-disabled': activePage === totalPages ? 'true' : undefined,
-        disabled: activePage === totalPages || !numItems,
+        disabled: activePage === totalPages || !numberItems,
         icon: <NextIcon color={iconColor} />,
         onClick: event => {
           const nextPage = activePage + 1;
@@ -133,7 +134,7 @@ const Pagination = forwardRef(
       },
       previous: {
         'aria-disabled': activePage === 1 ? 'true' : undefined,
-        disabled: activePage === 1 || !numItems,
+        disabled: activePage === 1 || !numberItems,
         icon: <PreviousIcon color={iconColor} />,
         onClick: event => {
           const previousPage = activePage - 1;

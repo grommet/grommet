@@ -3,16 +3,16 @@ import React from 'react';
 import { Box, Grommet, Pagination, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-export const NumEdgePages = () => (
+export const numberEdgePages = () => (
   <Grommet theme={grommet}>
     <Box pad="small" gap="medium">
       <Box>
-        <Text>numEdgePages = 2 (number of pages on start/end)</Text>
-        <Pagination numItems={237} page={10} numEdgePages={2} />
+        <Text>numberEdgePages = 2 (number of pages on start/end)</Text>
+        <Pagination numberItems={237} page={10} numberEdgePages={2} />
       </Box>
       <Box>
-        <Text>numEdgePages = 0</Text>
-        <Pagination numItems={237} page={10} numEdgePages={0} />
+        <Text>numberEdgePages = 0</Text>
+        <Pagination numberItems={237} page={10} numberEdgePages={0} />
       </Box>
     </Box>
   </Grommet>

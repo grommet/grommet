@@ -1,7 +1,7 @@
 export { Custom } from './Custom';
 export { Grid } from './Grid';
-export { NumEdgePages } from './NumEdgePages';
-export { NumMiddlePages } from './NumMiddlePages';
+export { numberEdgePages } from './numberEdgePages';
+export { numberMiddlePages } from './numberMiddlePages';
 export { Simple } from './Simple';
 
 export default {

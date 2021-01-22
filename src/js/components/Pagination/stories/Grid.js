@@ -41,7 +41,7 @@ const PaginatedGrid = () => {
           <Text>
             Showing {indices[0] + 1} - {indices[1]} of {data.length}
           </Text>
-          <Pagination numItems={data.length} onChange={handleChange} />
+          <Pagination numberItems={data.length} onChange={handleChange} />
         </Box>
       </Box>
     </Grommet>

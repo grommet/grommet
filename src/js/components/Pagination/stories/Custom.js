@@ -55,16 +55,16 @@ export const Custom = () => (
         gap="small"
       >
         <Text>Custom Theme</Text>
-        <Pagination numItems={237} />
+        <Pagination numberItems={237} />
 
         <Text>Reference Button Kind secondary by string with HPE theme</Text>
         <ThemeContext.Extend value={secondaryTheme}>
-          <Pagination numItems={237} />
+          <Pagination numberItems={237} />
         </ThemeContext.Extend>
 
         <Text>Reference Button Kind primary by string with HPE theme</Text>
         <ThemeContext.Extend value={primaryTheme}>
-          <Pagination numItems={237} />
+          <Pagination numberItems={237} />
         </ThemeContext.Extend>
       </Box>
       <Box
@@ -74,16 +74,16 @@ export const Custom = () => (
         gap="small"
       >
         <Text>Custom Theme</Text>
-        <Pagination numItems={237} />
+        <Pagination numberItems={237} />
 
         <Text>Reference Button Kind secondary by string with HPE theme</Text>
         <ThemeContext.Extend value={secondaryTheme}>
-          <Pagination numItems={237} />
+          <Pagination numberItems={237} />
         </ThemeContext.Extend>
 
         <Text>Reference Button Kind primary by string with HPE theme</Text>
         <ThemeContext.Extend value={primaryTheme}>
-          <Pagination numItems={237} />
+          <Pagination numberItems={237} />
         </ThemeContext.Extend>
       </Box>
     </Box>
