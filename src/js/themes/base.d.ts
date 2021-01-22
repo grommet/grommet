@@ -952,9 +952,7 @@ export interface ThemeType {
     extend?: ExtendType;
   };
   pagination?: {
-    container?: {
-      extend: ExtendType;
-    };
+    container?: BoxProps;
     controls?: {
       align?: AlignContentType;
       direction?: DirectionType;
@@ -963,11 +961,9 @@ export interface ThemeType {
       margin?: MarginType;
     };
     icons?: {
-      color: ColorType;
-      first: React.ReactNode;
-      last: React.ReactNode;
-      next: React.ReactNode;
-      previous: React.ReactNode;
+      color?: ColorType;
+      next?: React.ReactNode;
+      previous?: React.ReactNode;
     };
   };
   paragraph?: {

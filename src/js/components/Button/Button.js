@@ -138,7 +138,9 @@ const Button = forwardRef(
 
     // kindArg is object if we are referencing a theme object
     // outside of theme.button
-    const kindObj = typeof kindArg === 'object';
+    const kindObj = useMemo(() => {
+      return typeof kindArg === 'object';
+    }, [kindArg]);
 
     // if the theme has button.default, what kind of Button is this
     const kind = useMemo(() => {

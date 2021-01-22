@@ -213,7 +213,8 @@ export const doc = DataTable => {
     paginate: PropTypes.oneOfType([PropTypes.bool, PropTypes.object])
       .description(
         `Whether to paginate the data. If providing an object, any Box props or 
-      Pagination props are valid.`,
+      Pagination props are valid and will be used to style the underlying 
+      pagination component.`,
       )
       .defaultValue(undefined),
     pin: PropTypes.oneOfType([
