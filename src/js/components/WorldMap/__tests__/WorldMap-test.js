@@ -30,50 +30,38 @@ describe('WorldMap', () => {
   });
 
   test('continents', () => {
-    let component;
-    // using act() to make sure components get rendered multiple
-    // times as subcomponents cause state changes in the parent
-    renderer.act(() => {
-      component = renderer.create(
-        <Grommet>
-          <WorldMap
-            continents={[
-              {
-                name: 'Africa',
-                color: 'accent-1',
-                onClick: () => {},
-              },
-            ]}
-          />
-        </Grommet>,
-      );
-    });
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    const { container } = render(
+      <Grommet>
+        <WorldMap
+          continents={[
+            {
+              name: 'Africa',
+              color: 'accent-1',
+              onClick: () => {},
+            },
+          ]}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('places', () => {
-    let component;
-    // using act() to make sure components get rendered multiple
-    // times as subcomponents cause state changes in the parent
-    renderer.act(() => {
-      component = renderer.create(
-        <Grommet>
-          <WorldMap
-            places={[
-              {
-                name: 'Sydney',
-                location: [-33.8830555556, 151.216666667],
-                color: 'accent-1',
-                onClick: () => {},
-              },
-            ]}
-          />
-        </Grommet>,
-      );
-    });
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    const { container } = render(
+      <Grommet>
+        <WorldMap
+          places={[
+            {
+              name: 'Sydney',
+              location: [-33.8830555556, 151.216666667],
+              color: 'accent-1',
+              onClick: () => {},
+            },
+          ]}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('onSelectPlace and events of places', () => {

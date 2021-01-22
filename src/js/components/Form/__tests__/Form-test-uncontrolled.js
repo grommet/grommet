@@ -127,37 +127,27 @@ describe('Form uncontrolled', () => {
   });
 
   test('errors', () => {
-    let component;
-    // using act() to make sure components get rendered multiple
-    // times as subcomponents cause state changes in the parent
-    renderer.act(() => {
-      component = renderer.create(
-        <Grommet>
-          <Form errors={{ test: 'missing' }}>
-            <FormField name="test" />
-          </Form>
-        </Grommet>,
-      );
-    });
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    const { container } = render(
+      <Grommet>
+        <Form errors={{ test: 'missing' }}>
+          <FormField name="test" />
+        </Form>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('infos', () => {
-    let component;
-    // using act() to make sure components get rendered multiple
-    // times as subcomponents cause state changes in the parent
-    renderer.act(() => {
-      component = renderer.create(
-        <Grommet>
-          <Form infos={{ test: 'missing' }}>
-            <FormField name="test" />
-          </Form>
-        </Grommet>,
-      );
-    });
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    const { container } = render(
+      <Grommet>
+        <Form infos={{ test: 'missing' }}>
+          <FormField name="test" />
+        </Form>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('uncontrolled', () => {

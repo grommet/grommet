@@ -1028,37 +1028,29 @@ exports[`Form uncontrolled errors 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
-  <form
-    onReset={[Function]}
-    onSubmit={[Function]}
-  >
+  <form>
     <div
-      className="c1 "
-      onBlur={[Function]}
-      onFocus={[Function]}
+      class="c1 "
     >
       <div
-        className="c2 FormField__FormFieldContentBox-m9hood-1"
+        class="c2 FormField__FormFieldContentBox-m9hood-1"
       >
         <div
-          className="c3"
+          class="c3"
         >
           <input
-            aria-invalid={true}
-            autoComplete="off"
-            className="c4"
+            aria-invalid="true"
+            autocomplete="off"
+            class="c4"
             name="test"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
+            value=""
           />
         </div>
       </div>
       <span
-        className="c5"
+        class="c5"
       >
         missing
       </span>
@@ -1180,36 +1172,28 @@ exports[`Form uncontrolled infos 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
-  <form
-    onReset={[Function]}
-    onSubmit={[Function]}
-  >
+  <form>
     <div
-      className="c1 "
-      onBlur={[Function]}
-      onFocus={[Function]}
+      class="c1 "
     >
       <div
-        className="c2 FormField__FormFieldContentBox-m9hood-1"
+        class="c2 FormField__FormFieldContentBox-m9hood-1"
       >
         <div
-          className="c3"
+          class="c3"
         >
           <input
-            autoComplete="off"
-            className="c4"
+            autocomplete="off"
+            class="c4"
             name="test"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
+            value=""
           />
         </div>
       </div>
       <span
-        className="c5"
+        class="c5"
       >
         missing
       </span>

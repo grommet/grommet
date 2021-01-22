@@ -1,7 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import 'jest-styled-components';
-import renderer from 'react-test-renderer';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
@@ -26,93 +25,69 @@ describe('Tabs', () => {
   });
 
   test('no Tab', () => {
-    let component;
-    // using act() to make sure components get rendered multiple
-    // times as subcomponents cause state changes in the parent
-    renderer.act(() => {
-      component = renderer.create(
-        <Grommet>
-          <Tabs>
-            <Tab />
-          </Tabs>
-        </Grommet>,
-      );
-    });
-    expect(component.toJSON()).toMatchSnapshot();
+    const { container } = render(
+      <Grommet>
+        <Tabs>
+          <Tab />
+        </Tabs>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('Tab', () => {
-    let component;
-    // using act() to make sure components get rendered multiple
-    // times as subcomponents cause state changes in the parent
-    renderer.act(() => {
-      component = renderer.create(
-        <Grommet>
-          <Tabs>
-            <Tab title="Tab 1">Tab body 1</Tab>
-            {undefined}
-            <Tab title="Tab 2">Tab body 2</Tab>
-          </Tabs>
-        </Grommet>,
-      );
-    });
-    expect(component.toJSON()).toMatchSnapshot();
+    const { container } = render(
+      <Grommet>
+        <Tabs>
+          <Tab title="Tab 1">Tab body 1</Tab>
+          {undefined}
+          <Tab title="Tab 2">Tab body 2</Tab>
+        </Tabs>
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('complex title', () => {
-    let component;
-    // using act() to make sure components get rendered multiple
-    // times as subcomponents cause state changes in the parent
-    renderer.act(() => {
-      component = renderer.create(
-        <Grommet>
-          <Tabs>
-            <Tab title={<div>Tab 1</div>}>Tab body 1</Tab>
-            {undefined}
-            <Tab title={<div>Tab 2</div>}>Tab body 2</Tab>
-          </Tabs>
-        </Grommet>,
-      );
-    });
-    expect(component.toJSON()).toMatchSnapshot();
+    const { container } = render(
+      <Grommet>
+        <Tabs>
+          <Tab title={<div>Tab 1</div>}>Tab body 1</Tab>
+          {undefined}
+          <Tab title={<div>Tab 2</div>}>Tab body 2</Tab>
+        </Tabs>
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('with icon + reverse', () => {
-    let component;
-    // using act() to make sure components get rendered multiple
-    // times as subcomponents cause state changes in the parent
-    renderer.act(() => {
-      component = renderer.create(
-        <Grommet>
-          <Tabs>
-            <Tab title="Tab 1" icon={<svg />}>
-              Tab body 1
-            </Tab>
-            <Tab title="Tab 2" icon={<svg />} reverse>
-              Tab body 2
-            </Tab>
-          </Tabs>
-        </Grommet>,
-      );
-    });
-    expect(component.toJSON()).toMatchSnapshot();
+    const { container } = render(
+      <Grommet>
+        <Tabs>
+          <Tab title="Tab 1" icon={<svg />}>
+            Tab body 1
+          </Tab>
+          <Tab title="Tab 2" icon={<svg />} reverse>
+            Tab body 2
+          </Tab>
+        </Tabs>
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('alignControls', () => {
-    let component;
-    // using act() to make sure components get rendered multiple
-    // times as subcomponents cause state changes in the parent
-    renderer.act(() => {
-      component = renderer.create(
-        <Grommet full>
-          <Tabs alignControls="center">
-            <Tab title="Tab 1">Tab body 1</Tab>
-            <Tab title="Tab 2">Tab body 2</Tab>
-          </Tabs>
-        </Grommet>,
-      );
-    });
-    expect(component.toJSON()).toMatchSnapshot();
+    const { container } = render(
+      <Grommet full>
+        <Tabs alignControls="center">
+          <Tab title="Tab 1">Tab body 1</Tab>
+          <Tab title="Tab 2">Tab body 2</Tab>
+        </Tabs>
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('Custom Tab component', () => {
