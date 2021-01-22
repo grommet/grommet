@@ -12616,6 +12616,16 @@ The default page. If used with onChange, it can be used to control the
 number
 \`\`\`
 
+**size**
+
+Specifies what size the pagination control buttons should be. Defaults to \`medium\`.
+
+\`\`\`
+small
+medium
+large
+\`\`\`
+
 **step**
 
 The number of items per page. Defaults to \`10\`.

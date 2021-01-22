@@ -48,6 +48,11 @@ export const doc = Pagination => {
         active page via state.`,
       )
       .defaultValue(undefined),
+    size: PropTypes.oneOf(['small', 'medium', 'large'])
+      .description(
+        'Specifies what size the pagination control buttons should be.',
+      )
+      .defaultValue('medium'),
     step: PropTypes.number
       .description('The number of items per page.')
       .defaultValue(10),

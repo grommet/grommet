@@ -1,14 +1,9 @@
 import styled from 'styled-components';
 
 import { Button } from '../Button';
+import { Text } from '../Text';
 
 const BUTTON_STATES = ['normal', 'active', 'disabled', 'hover'];
-const defaultStyles = {
-  border: {
-    radius: '4px',
-  },
-  pad: '4px',
-};
 
 // Assemble button theme object for each button state
 const buildButtonStyle = (buttonTheme, kind) => {
@@ -39,16 +34,11 @@ const calcAdjustedPadding = (buttonStyle, pad) => {
   return adjustedPadding;
 };
 
-// sizeStyle is exploratory, but would allow user to apply a size
-// prop to their Pagination component which would scale everything
-// up or down. This does not necessarily have to be part of the first pass,
-// but we wanted to explore the possibility
 const sizeStyle = props => {
   const style =
     props.theme.pagination.control &&
     props.theme.pagination.control.size &&
-    // need to create a size prop if this is functionality we desire
-    props.theme.pagination.control.size[props.sizeProp || 'medium'];
+    props.theme.pagination.control.size[props.controlSize || 'medium'];
 
   return style
     ? {
@@ -72,7 +62,10 @@ export const StyledPaginationButton = styled(Button)`
       typeof props.kind === 'string'
         ? buildButtonStyle(props.theme.button, props.kind)
         : props.kind;
-    const adjustedPadding = calcAdjustedPadding(buttonStyle, defaultStyles.pad);
+    const adjustedPadding = calcAdjustedPadding(
+      buttonStyle,
+      props.theme.pagination.control.pad,
+    );
     let buttonState = 'normal';
     if (props.active) buttonState = 'active';
     else if (props.disabled) buttonState = 'disabled';
@@ -86,8 +79,10 @@ export const StyledPaginationButton = styled(Button)`
       }
     `;
   }}
-  
-  border-radius: ${defaultStyles.border.radius};
+
+  > svg {
+    vertical-align: middle;
+  }
   ${props => sizeStyle(props).content};
 `;
 
@@ -95,10 +90,14 @@ export const StyledContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 32px; // default line-height + default padding
   max-width: 100%;
-  min-width: 32px; // default line-height + default padding
   ${props => sizeStyle(props).container};
   ${props =>
     props.theme.pagination.control && props.theme.pagination.control.extend};
+`;
+
+export const StyledSeparator = styled(Text)`
+  font-weight: bold;
+  ${props => `font-size: ${sizeStyle(props).content.fontSize}`};
+  ${props => `line-height: ${sizeStyle(props).content.lineHeight}`};
 `;

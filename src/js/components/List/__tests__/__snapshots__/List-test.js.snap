@@ -2491,16 +2491,30 @@ exports[`List events should apply pagination styling 1`] = `
 
 .c11 {
   padding: 4px;
+  font-size: 18px;
+  line-height: 24px;
   border-radius: 4px;
+  border-width: 2px;
+}
+
+.c11 > svg {
+  vertical-align: middle;
 }
 
 .c15 {
   padding: 4px;
+  font-size: 18px;
+  line-height: 24px;
   border-radius: 4px;
+  border-width: 2px;
 }
 
 .c15:hover {
   padding: 4px;
+}
+
+.c15 > svg {
+  vertical-align: middle;
 }
 
 .c9 {
@@ -2516,9 +2530,9 @@ exports[`List events should apply pagination styling 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  height: 32px;
   max-width: 100%;
-  min-width: 32px;
+  height: 36px;
+  min-width: 36px;
 }
 
 .c1 {
@@ -3347,16 +3361,30 @@ exports[`List events should paginate 1`] = `
 
 .c11 {
   padding: 4px;
+  font-size: 18px;
+  line-height: 24px;
   border-radius: 4px;
+  border-width: 2px;
+}
+
+.c11 > svg {
+  vertical-align: middle;
 }
 
 .c15 {
   padding: 4px;
+  font-size: 18px;
+  line-height: 24px;
   border-radius: 4px;
+  border-width: 2px;
 }
 
 .c15:hover {
   padding: 4px;
+}
+
+.c15 > svg {
+  vertical-align: middle;
 }
 
 .c9 {
@@ -3372,9 +3400,9 @@ exports[`List events should paginate 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  height: 32px;
   max-width: 100%;
-  min-width: 32px;
+  height: 36px;
+  min-width: 36px;
 }
 
 .c1 {
@@ -4197,16 +4225,30 @@ exports[`List events should render correct num items per page (step) 1`] = `
 
 .c11 {
   padding: 4px;
+  font-size: 18px;
+  line-height: 24px;
   border-radius: 4px;
+  border-width: 2px;
+}
+
+.c11 > svg {
+  vertical-align: middle;
 }
 
 .c15 {
   padding: 4px;
+  font-size: 18px;
+  line-height: 24px;
   border-radius: 4px;
+  border-width: 2px;
 }
 
 .c15:hover {
   padding: 4px;
+}
+
+.c15 > svg {
+  vertical-align: middle;
 }
 
 .c9 {
@@ -4222,9 +4264,9 @@ exports[`List events should render correct num items per page (step) 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  height: 32px;
   max-width: 100%;
-  min-width: 32px;
+  height: 36px;
+  min-width: 36px;
 }
 
 .c1 {
@@ -4942,16 +4984,30 @@ exports[`List events should render new data when page changes 1`] = `
 
 .c11 {
   padding: 4px;
+  font-size: 18px;
+  line-height: 24px;
   border-radius: 4px;
+  border-width: 2px;
+}
+
+.c11 > svg {
+  vertical-align: middle;
 }
 
 .c15 {
   padding: 4px;
+  font-size: 18px;
+  line-height: 24px;
   border-radius: 4px;
+  border-width: 2px;
 }
 
 .c15:hover {
   padding: 4px;
+}
+
+.c15 > svg {
+  vertical-align: middle;
 }
 
 .c9 {
@@ -4967,9 +5023,9 @@ exports[`List events should render new data when page changes 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  height: 32px;
   max-width: 100%;
-  min-width: 32px;
+  height: 36px;
+  min-width: 36px;
 }
 
 .c1 {
@@ -5648,11 +5704,11 @@ exports[`List events should render new data when page changes 2`] = `
         class="StyledBox-sc-13pk1d4-0 jFUgSH"
       >
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 iipxyV"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
         >
           <button
             aria-label="Go to previous page"
-            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 jvstun"
+            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cQMJwu"
             kind="[object Object]"
             type="button"
           >
@@ -5675,11 +5731,11 @@ exports[`List events should render new data when page changes 2`] = `
           class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 iipxyV"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
         >
           <button
             aria-label="Go to page 1"
-            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 jvstun"
+            class="StyledButtonKind-sc-1vhfpnt-0 cWvYKj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cQMJwu"
             kind="[object Object]"
             type="button"
           >
@@ -5690,12 +5746,12 @@ exports[`List events should render new data when page changes 2`] = `
           class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 iipxyV"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
         >
           <button
             aria-current="page"
             aria-label="Go to page 2"
-            class="StyledButtonKind-sc-1vhfpnt-0 jrRdnJ StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 jvstun"
+            class="StyledButtonKind-sc-1vhfpnt-0 jrRdnJ StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cQMJwu"
             kind="[object Object]"
             type="button"
           >
@@ -5706,12 +5762,12 @@ exports[`List events should render new data when page changes 2`] = `
           class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jRTmAK"
         />
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 iipxyV"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 fstAtJ"
         >
           <button
             aria-disabled="true"
             aria-label="Go to next page"
-            class="StyledButtonKind-sc-1vhfpnt-0 fVgacz StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 dwBFBp"
+            class="StyledButtonKind-sc-1vhfpnt-0 fVgacz StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kcEAcc"
             disabled=""
             kind="[object Object]"
             type="button"
@@ -6124,16 +6180,30 @@ exports[`List events should show correct item index when "show" is a number 1`] 
 
 .c11 {
   padding: 4px;
+  font-size: 18px;
+  line-height: 24px;
   border-radius: 4px;
+  border-width: 2px;
+}
+
+.c11 > svg {
+  vertical-align: middle;
 }
 
 .c15 {
   padding: 4px;
+  font-size: 18px;
+  line-height: 24px;
   border-radius: 4px;
+  border-width: 2px;
 }
 
 .c15:hover {
   padding: 4px;
+}
+
+.c15 > svg {
+  vertical-align: middle;
 }
 
 .c9 {
@@ -6149,9 +6219,9 @@ exports[`List events should show correct item index when "show" is a number 1`] 
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  height: 32px;
   max-width: 100%;
-  min-width: 32px;
+  height: 36px;
+  min-width: 36px;
 }
 
 .c1 {
@@ -6956,16 +7026,30 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
 
 .c10 {
   padding: 4px;
+  font-size: 18px;
+  line-height: 24px;
   border-radius: 4px;
+  border-width: 2px;
 }
 
 .c10:hover {
   padding: 4px;
 }
 
+.c10 > svg {
+  vertical-align: middle;
+}
+
 .c15 {
   padding: 4px;
+  font-size: 18px;
+  line-height: 24px;
   border-radius: 4px;
+  border-width: 2px;
+}
+
+.c15 > svg {
+  vertical-align: middle;
 }
 
 .c8 {
@@ -6981,9 +7065,9 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  height: 32px;
   max-width: 100%;
-  min-width: 32px;
+  height: 36px;
+  min-width: 36px;
 }
 
 .c1 {

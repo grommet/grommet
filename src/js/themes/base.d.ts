@@ -951,6 +951,62 @@ export interface ThemeType {
   };
   pagination?: {
     container?: BoxProps;
+    button?: {
+      color?: ColorType;
+      active?: {
+        background?: {
+          color?: ColorType;
+        };
+      };
+      hover?: {
+        background?: {
+          color?: ColorType;
+        };
+        color?: ColorType;
+      };
+    };
+    control?: {
+      extend?: ExtendType;
+      pad?: PadType;
+      size?: {
+        small?: {
+          border?: {
+            radius?: string;
+            width?: string;
+          };
+          font?: {
+            size?: string;
+            height?: string;
+          };
+          height?: string;
+          width?: string;
+        };
+        medium?: {
+          border?: {
+            radius?: string;
+            width?: string;
+          };
+          font?: {
+            size?: string;
+            height?: string;
+          };
+          height?: string;
+          width?: string;
+        };
+        large?: {
+          border?: {
+            radius?: string;
+            width?: string;
+          };
+          font?: {
+            size?: string;
+            height?: string;
+          };
+          height?: string;
+          width?: string;
+        };
+      };
+    };
     controls?: {
       align?: AlignContentType;
       direction?: DirectionType;
