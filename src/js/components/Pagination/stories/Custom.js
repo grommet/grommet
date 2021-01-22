@@ -6,7 +6,6 @@ import { deepMerge } from 'grommet/utils';
 import { FormPreviousLink } from 'grommet-icons/icons/FormPreviousLink';
 import { FormNextLink } from 'grommet-icons/icons/FormNextLink';
 import { ThemeContext } from 'styled-components';
-import { hpe } from 'grommet-theme-hpe';
 
 const customTheme = deepMerge(grommet, {
   pagination: {
@@ -34,15 +33,37 @@ const customTheme = deepMerge(grommet, {
   },
 });
 
-const secondaryTheme = deepMerge(hpe, {
-  pagination: {
-    button: 'secondary',
+const secondaryTheme = deepMerge(grommet, {
+  button: {
+    default: {},
+    bright: {
+      color: 'text-strong',
+      border: {
+        color: 'skyblue',
+        width: '2px',
+      },
+    },
+    active: {
+      bright: {
+        background: {
+          color: '#CA9CEA',
+        },
+        border: {
+          color: 'transparent',
+        },
+        color: 'text',
+      },
+    },
+    hover: {
+      bright: {
+        background: {
+          color: 'skyblue',
+        },
+      },
+    },
   },
-});
-
-const primaryTheme = deepMerge(hpe, {
   pagination: {
-    button: 'primary',
+    button: 'bright',
   },
 });
 
@@ -54,16 +75,11 @@ export const Custom = () => (
         pad={{ top: 'small', bottom: 'medium', horizontal: 'medium' }}
         gap="small"
       >
-        <Text>Custom Theme</Text>
+        <Text>Custom Theme via theme.pagination.button</Text>
         <Pagination numberItems={237} />
 
-        <Text>Reference Button Kind secondary by string with HPE theme</Text>
+        <Text>Reference Button Kind by string</Text>
         <ThemeContext.Extend value={secondaryTheme}>
-          <Pagination numberItems={237} />
-        </ThemeContext.Extend>
-
-        <Text>Reference Button Kind primary by string with HPE theme</Text>
-        <ThemeContext.Extend value={primaryTheme}>
           <Pagination numberItems={237} />
         </ThemeContext.Extend>
       </Box>
@@ -76,13 +92,8 @@ export const Custom = () => (
         <Text>Custom Theme</Text>
         <Pagination numberItems={237} />
 
-        <Text>Reference Button Kind secondary by string with HPE theme</Text>
+        <Text>Reference Button Kind by string</Text>
         <ThemeContext.Extend value={secondaryTheme}>
-          <Pagination numberItems={237} />
-        </ThemeContext.Extend>
-
-        <Text>Reference Button Kind primary by string with HPE theme</Text>
-        <ThemeContext.Extend value={primaryTheme}>
           <Pagination numberItems={237} />
         </ThemeContext.Extend>
       </Box>
