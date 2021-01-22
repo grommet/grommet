@@ -5840,6 +5840,171 @@ circle",
 <Meter />",
   },
   "Nav": [Function],
+  "Pagination": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=undefined-Pagination&full=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/pagination&module=%2Fsrc%2FPagination.js",
+      },
+    ],
+    "description": "A control that enables selection of a single page from a 
+      range of pages.",
+    "intrinsicElement": "nav",
+    "name": "Pagination",
+    "properties": Array [
+      Object {
+        "description": "Custom label to be used by screen readers. When provided, an aria-label will
+   be added to the element.",
+        "format": "string",
+        "name": "a11yTitle",
+      },
+      Object {
+        "description": "How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.",
+        "format": "start
+center
+end
+stretch",
+        "name": "alignSelf",
+      },
+      Object {
+        "description": "The name of the area to place
+    this inside a parent Grid.",
+        "format": "string",
+        "name": "gridArea",
+      },
+      Object {
+        "description": "The amount of margin around the component. An object can
+    be specified to distinguish horizontal margin, vertical margin, and
+    margin on a particular side.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string",
+        "name": "margin",
+      },
+      Object {
+        "defaultValue": 1,
+        "description": "The number of page buttons visible at the start and end of page 
+        range.",
+        "format": "number",
+        "name": "numEdgePages",
+      },
+      Object {
+        "defaultValue": undefined,
+        "description": "The number of items to paginate.",
+        "format": "number",
+        "name": "numItems",
+      },
+      Object {
+        "defaultValue": 3,
+        "description": "The number of page buttons visible in the middle of the controls.",
+        "format": "number",
+        "name": "numMiddlePages",
+      },
+      Object {
+        "defaultValue": undefined,
+        "description": "Function that will be called when the user clicks a page or 
+        arrow button. The single argument is an event containing the latest 
+        page via \`event.page\`, and the startIndex and endIndex for data on 
+        this page via \`event.startIndex\` and \`event.endIndex\`, 
+        respectively.",
+        "format": "function",
+        "name": "onChange",
+      },
+      Object {
+        "defaultValue": undefined,
+        "description": "The default page. If used with onChange, it can be used to control the 
+        active page via state.",
+        "format": "number",
+        "name": "page",
+      },
+      Object {
+        "defaultValue": 10,
+        "description": "The number of items per page.",
+        "format": "number",
+        "name": "step",
+      },
+    ],
+    "usage": "import { Pagination } from 'grommet';
+      <Pagination />",
+  },
   "Paragraph": Object {
     "availableAt": Array [
       Object {

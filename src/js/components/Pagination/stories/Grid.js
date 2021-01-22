@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
-import { Box, Card, Grid, Grommet, Text } from 'grommet';
+import { Box, Card, Grid, Grommet, Pagination, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
-import { Pagination } from '..';
 
 const data = [];
 
