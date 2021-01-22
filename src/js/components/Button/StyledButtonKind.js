@@ -6,6 +6,7 @@ import {
   focusStyle,
   genericStyles,
   kindPartStyles,
+  parseMetricToNum,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
 
@@ -79,7 +80,6 @@ const basicStyle = props => css`
   }
 `;
 
-// could replace this with a call in lodash
 const getPath = (theme, path) => {
   let obj;
   if (path) {
@@ -90,14 +90,11 @@ const getPath = (theme, path) => {
   return obj;
 };
 
-const dimensionToNumber = d => parseInt(d.replace('px', ''), 10);
-
 const adjustPadStyle = (pad, width) => {
-  const offset = dimensionToNumber(width);
-  // todo handle when no vertical or horizontal in pad
+  const offset = parseMetricToNum(width);
   return css`
-    padding: ${dimensionToNumber(pad.vertical) - offset}px
-      ${dimensionToNumber(pad.horizontal) - offset}px;
+    padding: ${parseMetricToNum(pad.vertical) - offset}px
+      ${parseMetricToNum(pad.horizontal) - offset}px;
   `;
 };
 
