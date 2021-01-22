@@ -944,8 +944,6 @@ exports[`Layer custom theme 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
-  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -1507,8 +1505,6 @@ exports[`Layer invoke onClickOutside when modal={false} 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
-  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c1 {
@@ -1623,8 +1619,6 @@ exports[`Layer invoke onClickOutside when modal={false} and layer has target 1`]
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
-  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c1 {
@@ -1762,8 +1756,6 @@ exports[`Layer invoke onClickOutside when modal={true} 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
-  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -1945,8 +1937,6 @@ exports[`Layer invoke onClickOutside when modal={true} and layer has target 1`] 
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
-  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c3 {
@@ -2265,8 +2255,6 @@ exports[`Layer invokes onEsc when modal={false} 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: hWAzxx 0.2s ease-in-out forwards;
-  animation: hWAzxx 0.2s ease-in-out forwards;
 }
 
 .c1 {
