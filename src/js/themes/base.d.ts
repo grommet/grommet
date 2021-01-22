@@ -25,7 +25,7 @@ import {
   AlignContentType,
 } from '../utils';
 
-import { BoxProps } from '../components/Box';
+import { BoxProps, BoxTypes } from '../components/Box';
 import { Anchor } from '../components/Anchor';
 import { Box } from '../components/Box';
 import { Text, TextProps } from '../components/Text';
@@ -614,9 +614,7 @@ export interface ThemeType {
     body?: {
       extend?: ExtendType;
     };
-    container?: {
-      extend?: ExtendType;
-    };
+    container?: BoxProps;
     header?: {
       background?: BackgroundType;
       border?: BorderType;
