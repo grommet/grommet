@@ -1,8 +1,7 @@
 import React from 'react';
 
-import { Box, Grommet, Text } from 'grommet';
+import { Box, Grommet, Pagination, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
-import { Pagination } from '../Pagination';
 
 export const Simple = () => (
   <Grommet theme={grommet}>
