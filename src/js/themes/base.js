@@ -952,7 +952,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     pagination: {
       // container: {
       //   // any box props,
-      //   // extend: undefined,
+      //   extend: undefined,
       // },
       button: {
         color: 'text-strong',
