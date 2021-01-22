@@ -3,7 +3,7 @@ import React from 'react';
 import { Box, Grommet, Pagination, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-export const numberEdgePages = () => (
+export const NumberEdgePages = () => (
   <Grommet theme={grommet}>
     <Box pad="small" gap="medium">
       <Box>
