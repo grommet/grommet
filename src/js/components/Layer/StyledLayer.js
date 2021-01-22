@@ -743,7 +743,7 @@ const desktopContainerStyle = css`
       'right',
     )}px)`};
   ${props =>
-    props.plain || props.full === true
+    props.plain || (props.full === true && props.margin === 'none')
       ? `border-radius: 0;`
       : roundStyle(
           props.theme.layer.border.radius,
