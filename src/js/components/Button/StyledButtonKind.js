@@ -164,10 +164,7 @@ const plainStyle = () => css`
   }
 `;
 
-const StyledButtonKind = styled.button.attrs(() => ({
-  // don't let kind attribute leak to DOM
-  kind: undefined,
-}))`
+const StyledButtonKind = styled.button`
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;

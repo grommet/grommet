@@ -58,13 +58,15 @@ export const CustomDayCalendar = () => {
         <Heading level={4}>Example with onSelect set</Heading>
 
         <Calendar onSelect={onSelect} date={selectedDay} fill>
-          {({ day, isSelected }) => (
-            <Box background={isSelected ? 'light-3' : 'white'} border fill>
-              <Box pad="medium" align="center" justify="center" fill>
-                <Text size="large">{day}</Text>
+          {({ day, isSelected }) => {
+            return (
+              <Box background={isSelected ? 'light-3' : 'white'} border fill>
+                <Box pad="medium" align="center" justify="center" fill>
+                  <Text size="large">{day}</Text>
+                </Box>
               </Box>
-            </Box>
-          )}
+            );
+          }}
         </Calendar>
       </Box>
     </Grommet>

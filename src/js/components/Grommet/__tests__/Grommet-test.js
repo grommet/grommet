@@ -36,13 +36,15 @@ const customBreakpointsTheme = {
   },
 };
 
-const SSRTester = ({ ua }) => (
-  <Grommet theme={customBreakpointsTheme} userAgent={ua}>
-    <ResponsiveContext.Consumer>
-      {size => <Heading>{`Received size ${size} for ${ua}`}</Heading>}
-    </ResponsiveContext.Consumer>
-  </Grommet>
-);
+const SSRTester = ({ ua }) => {
+  return (
+    <Grommet theme={customBreakpointsTheme} userAgent={ua}>
+      <ResponsiveContext.Consumer>
+        {size => <Heading>{`Received size ${size} for ${ua}`}</Heading>}
+      </ResponsiveContext.Consumer>
+    </Grommet>
+  );
+};
 
 describe('Grommet', () => {
   afterEach(cleanup);

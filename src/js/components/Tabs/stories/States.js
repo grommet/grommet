@@ -99,21 +99,23 @@ const TabsExample = ({ label }) => {
   );
 };
 
-const TabStates = () => (
-  <Grommet theme={grommet}>
-    <Box gap="large" pad="large" width={{ max: 'large' }}>
-      <TabsExample label="Grommet Default" />
-      <ThemeContext.Extend value={customTheme}>
-        <TabsExample label="Customized Disabled State" />
-      </ThemeContext.Extend>
-      <ThemeContext.Extend value={customThemeWithButtonDefault}>
-        <TabsExample
-          label="Customized Disabled State with
+const TabStates = () => {
+  return (
+    <Grommet theme={grommet}>
+      <Box gap="large" pad="large" width={{ max: 'large' }}>
+        <TabsExample label="Grommet Default" />
+        <ThemeContext.Extend value={customTheme}>
+          <TabsExample label="Customized Disabled State" />
+        </ThemeContext.Extend>
+        <ThemeContext.Extend value={customThemeWithButtonDefault}>
+          <TabsExample
+            label="Customized Disabled State with
             'theme.button.default' Defined"
-        />
-      </ThemeContext.Extend>
-    </Box>
-  </Grommet>
-);
+          />
+        </ThemeContext.Extend>
+      </Box>
+    </Grommet>
+  );
+};
 
 export const States = () => <TabStates />;

@@ -10,12 +10,14 @@ const dummyOptions = Array(2000)
     a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }),
   );
 
-const Option = ({ value, selected }) => (
-  <Box direction="row" gap="small" align="center" pad="xsmall">
-    <CheckBox tabIndex="-1" checked={selected} onChange={() => {}} />
-    {value}
-  </Box>
-);
+const Option = ({ value, selected }) => {
+  return (
+    <Box direction="row" gap="small" align="center" pad="xsmall">
+      <CheckBox tabIndex="-1" checked={selected} onChange={() => {}} />
+      {value}
+    </Box>
+  );
+};
 
 export const LazyLoadingOptions = () => {
   const [selected, setSelected] = React.useState([]);

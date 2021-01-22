@@ -17,7 +17,6 @@ import { Stack } from '../Stack';
 
 const Carousel = ({
   initialChild,
-  onChild,
   play,
   children,
   controls,
@@ -62,12 +61,6 @@ const Carousel = ({
     }
     return () => {};
   }, [activeIndex, play, children, lastIndex]);
-
-  useEffect(() => {
-    if (onChild) onChild(activeIndex);
-    return () => {};
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeIndex]);
 
   const onRight = () => {
     if (activeIndex >= lastIndex) {

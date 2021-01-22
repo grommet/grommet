@@ -358,17 +358,26 @@ describe('Form uncontrolled', () => {
             name="test"
             required
             validate={[
-              value => (value.length === 1 ? 'simple string' : undefined),
-              value =>
-                value.length === 2 ? <Text> ReactNode </Text> : undefined,
-              value =>
-                value.length === 3
+              value => {
+                return value.length === 1 ? 'simple string' : undefined;
+              },
+              value => {
+                return value.length === 2 ? (
+                  <Text> ReactNode </Text>
+                ) : (
+                  undefined
+                );
+              },
+              value => {
+                return value.length === 3
                   ? { message: 'status error', status: 'error' }
-                  : undefined,
-              value =>
-                value.length === 4
+                  : undefined;
+              },
+              value => {
+                return value.length === 4
                   ? { message: 'status info', status: 'info' }
-                  : undefined,
+                  : undefined;
+              },
             ]}
             placeholder="test input"
           />
@@ -644,18 +653,20 @@ describe('Form uncontrolled', () => {
   });
 
   test('custom component', () => {
-    const CustomTextInput = ({ name, value, onChange }) => (
-      <div>
-        <input
-          type="text"
-          placeholder="Username"
-          name={name}
-          id="test"
-          value={value}
-          onChange={onChange}
-        />
-      </div>
-    );
+    const CustomTextInput = ({ name, value, onChange }) => {
+      return (
+        <div>
+          <input
+            type="text"
+            placeholder="Username"
+            name={name}
+            id="test"
+            value={value}
+            onChange={onChange}
+          />
+        </div>
+      );
+    };
     const onChange = jest.fn();
     const { getByPlaceholderText } = render(
       <Grommet>
@@ -729,14 +740,15 @@ describe('Form uncontrolled', () => {
   });
 
   test('should validate when supplied a function', () => {
-    const functionValidation = combination =>
-      combination === '12345'
+    const functionValidation = combination => {
+      return combination === '12345'
         ? {
             message:
               "That's amazing. I've got the same combination on my luggage!",
             status: 'info',
           }
         : undefined;
+    };
     const infoMessage =
       "That's amazing. I've got the same combination on my luggage!";
 
@@ -786,14 +798,15 @@ describe('Form uncontrolled', () => {
         message: 'At least five characters',
         status: 'error',
       },
-      combination =>
-        combination === '12345'
+      combination => {
+        return combination === '12345'
           ? {
               message:
                 "That's amazing. I've got the same combination on my luggage!",
               status: 'info',
             }
-          : undefined,
+          : undefined;
+      },
       {
         regexp: new RegExp('(?=.*?[#?!@$ %^&*-])'),
         message: 'At least one special character or space',

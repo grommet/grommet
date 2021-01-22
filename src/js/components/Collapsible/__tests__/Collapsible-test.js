@@ -13,13 +13,15 @@ describe('Collapsible', () => {
   let App;
 
   beforeEach(() => {
-    App = ({ ...props }) => (
-      <Grommet>
-        <Collapsible {...props}>
-          <Text>Example</Text>
-        </Collapsible>
-      </Grommet>
-    );
+    App = ({ ...props }) => {
+      return (
+        <Grommet>
+          <Collapsible {...props}>
+            <Text>Example</Text>
+          </Collapsible>
+        </Grommet>
+      );
+    };
   });
   afterEach(cleanup);
 

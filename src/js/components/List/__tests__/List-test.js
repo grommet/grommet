@@ -245,14 +245,16 @@ describe('List events', () => {
 
   beforeEach(() => {
     onClickItem = jest.fn();
-    App = () => (
-      <Grommet>
-        <List
-          data={[{ a: 'alpha' }, { a: 'beta' }]}
-          onClickItem={onClickItem}
-        />
-      </Grommet>
-    );
+    App = () => {
+      return (
+        <Grommet>
+          <List
+            data={[{ a: 'alpha' }, { a: 'beta' }]}
+            onClickItem={onClickItem}
+          />
+        </Grommet>
+      );
+    };
   });
 
   afterEach(cleanup);

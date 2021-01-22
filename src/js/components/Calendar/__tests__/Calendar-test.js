@@ -468,16 +468,18 @@ describe('Calendar Keyboard events', () => {
 
   beforeEach(() => {
     onSelect = jest.fn();
-    App = () => (
-      <Grommet>
-        <Calendar
-          bounds={['2020-01-01', '2020-01-31']}
-          date={DATE}
-          onSelect={onSelect}
-          animate={false}
-        />
-      </Grommet>
-    );
+    App = () => {
+      return (
+        <Grommet>
+          <Calendar
+            bounds={['2020-01-01', '2020-01-31']}
+            date={DATE}
+            onSelect={onSelect}
+            animate={false}
+          />
+        </Grommet>
+      );
+    };
   });
 
   afterEach(cleanup);

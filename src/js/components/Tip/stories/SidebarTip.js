@@ -42,23 +42,25 @@ const customTheme = {
   },
 };
 
-const NotificationAlert = () => (
-  <Box alignSelf="center">
-    {/* One option to apply tip on button  */}
-    <Button
-      tip={{
-        dropProps: { align: { left: 'right' } },
-        content: <Box animation="jiggle">New Analytics!</Box>,
-      }}
-      icon={
-        <Stack anchor="top-right">
-          <Notification />
-          <Box background="accent-1" pad="xsmall" round responsive={false} />
-        </Stack>
-      }
-    />
-  </Box>
-);
+const NotificationAlert = () => {
+  return (
+    <Box alignSelf="center">
+      {/* One option to apply tip on button  */}
+      <Button
+        tip={{
+          dropProps: { align: { left: 'right' } },
+          content: <Box animation="jiggle">New Analytics!</Box>,
+        }}
+        icon={
+          <Stack anchor="top-right">
+            <Notification />
+            <Box background="accent-1" pad="xsmall" round responsive={false} />
+          </Stack>
+        }
+      />
+    </Box>
+  );
+};
 
 const SidebarHeader = () => (
   <Box pad="small">

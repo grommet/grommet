@@ -18,14 +18,16 @@ export const Action = () => (
       <List
         data={data.slice(0, 10)}
         pad={{ left: 'small', right: 'none' }}
-        action={(item, index) => (
-          <Menu
-            key={index}
-            icon={<More />}
-            hoverIndicator
-            items={[{ label: 'one' }]}
-          />
-        )}
+        action={(item, index) => {
+          return (
+            <Menu
+              key={index}
+              icon={<More />}
+              hoverIndicator
+              items={[{ label: 'one' }]}
+            />
+          );
+        }}
       />
     </Box>
   </Grommet>

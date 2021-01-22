@@ -74,11 +74,13 @@ const slideStyle = props => {
   `;
 };
 
-const weeksSizeStyle = () => css`
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-`;
+const weeksSizeStyle = () => {
+  return css`
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  `;
+};
 const StyledWeeks = styled.div`
   position: relative;
   ${props => props.fillContainer && weeksSizeStyle()}

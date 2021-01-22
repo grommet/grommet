@@ -11,14 +11,16 @@ describe('Video', () => {
   let App;
 
   beforeEach(() => {
-    App = ({ ...props }) => (
-      <Grommet>
-        <Video {...props}>
-          <source key="source" src="small.mp4" type="video/mp4" />
-          <track key="track" />
-        </Video>
-      </Grommet>
-    );
+    App = ({ ...props }) => {
+      return (
+        <Grommet>
+          <Video {...props}>
+            <source key="source" src="small.mp4" type="video/mp4" />
+            <track key="track" />
+          </Video>
+        </Grommet>
+      );
+    };
   });
 
   afterEach(cleanup);

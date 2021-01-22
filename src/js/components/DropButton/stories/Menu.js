@@ -30,17 +30,19 @@ const GremlinDropButton = () => (
   </DropButton>
 );
 
-const MenuDropButton = () => (
-  <Grommet theme={grommet} full>
-    <Box fill>
-      <Box fill="vertical" width="xxsmall" background="dark-2">
-        <GremlinDropButton />
-        <Box flex />
-        <GremlinDropButton />
+const MenuDropButton = () => {
+  return (
+    <Grommet theme={grommet} full>
+      <Box fill>
+        <Box fill="vertical" width="xxsmall" background="dark-2">
+          <GremlinDropButton />
+          <Box flex />
+          <GremlinDropButton />
+        </Box>
       </Box>
-    </Box>
-  </Grommet>
-);
+    </Grommet>
+  );
+};
 
 export const Menu = () => <MenuDropButton />;
 Menu.story = {

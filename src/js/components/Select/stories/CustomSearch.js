@@ -130,20 +130,22 @@ export const CustomSearch = () => {
     </Box>
   );
 
-  const sortContentPartners = selectedPartnerNames => (p1, p2) => {
-    const p1Exists = selectedPartnerNames.includes(p1.name);
-    const p2Exists = selectedPartnerNames.includes(p2.name);
+  const sortContentPartners = selectedPartnerNames => {
+    return (p1, p2) => {
+      const p1Exists = selectedPartnerNames.includes(p1.name);
+      const p2Exists = selectedPartnerNames.includes(p2.name);
 
-    if (!p1Exists && p2Exists) {
+      if (!p1Exists && p2Exists) {
+        return 1;
+      }
+      if (p1Exists && !p2Exists) {
+        return -1;
+      }
+      if (p1.name.toLowerCase() < p2.name.toLowerCase()) {
+        return -1;
+      }
       return 1;
-    }
-    if (p1Exists && !p2Exists) {
-      return -1;
-    }
-    if (p1.name.toLowerCase() < p2.name.toLowerCase()) {
-      return -1;
-    }
-    return 1;
+    };
   };
 
   return (
