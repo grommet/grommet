@@ -26,15 +26,15 @@ export const CheckBoxGroup = forwardRef(
     // In case option is a string, normalize it to be an object
     const options = useMemo(
       () =>
-        optionsProp.map(option => {
-          return typeof option === 'string'
+        optionsProp.map(option =>
+          typeof option === 'string'
             ? {
                 disabled: disabledProp,
                 value: option,
                 label: option,
               }
-            : option;
-        }),
+            : option,
+        ),
       [optionsProp, disabledProp],
     );
 

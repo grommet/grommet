@@ -7,27 +7,25 @@ const allItems = Array(240)
   .fill()
   .map((_, i) => i + 1);
 
-const Example = props => {
-  return (
-    <Grommet theme={grommet}>
-      <Box>
-        <InfiniteScroll items={allItems} {...props}>
-          {item => (
-            <Box
-              key={item}
-              height={item <= 25 ? 'xsmall' : 'xxsmall'}
-              pad="medium"
-              border={{ side: 'bottom' }}
-              align="center"
-            >
-              <Text>item {item}</Text>
-            </Box>
-          )}
-        </InfiniteScroll>
-      </Box>
-    </Grommet>
-  );
-};
+const Example = props => (
+  <Grommet theme={grommet}>
+    <Box>
+      <InfiniteScroll items={allItems} {...props}>
+        {item => (
+          <Box
+            key={item}
+            height={item <= 25 ? 'xsmall' : 'xxsmall'}
+            pad="medium"
+            border={{ side: 'bottom' }}
+            align="center"
+          >
+            <Text>item {item}</Text>
+          </Box>
+        )}
+      </InfiniteScroll>
+    </Box>
+  </Grommet>
+);
 
 export const Height = () => <Example />;
 export const HeightReplace = () => <Example replace />;
