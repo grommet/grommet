@@ -339,9 +339,8 @@ const MaskedInput = forwardRef(
 
     const onHideDrop = useCallback(() => setShowDrop(false), []);
 
-    const renderPlaceholder = () => {
-      return mask.map(item => item.placeholder || item.fixed).join('');
-    };
+    const renderPlaceholder = () =>
+      mask.map(item => item.placeholder || item.fixed).join('');
 
     return (
       <StyledMaskedInputContainer plain={plain}>
