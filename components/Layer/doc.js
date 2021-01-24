@@ -9,6 +9,8 @@ var _mixins = require("../../utils/mixins");
 
 var _themeDocUtils = require("../../utils/themeDocUtils");
 
+var _propTypes = require("../../utils/prop-types");
+
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 var PAD_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large'];
@@ -18,6 +20,7 @@ var doc = function doc(Layer) {
   DocumentedLayer.propTypes = {
     animate: _reactDesc.PropTypes.bool.description("Whether to animate the Layer content when it opens. This\n        property is deprecated and will be removed in the next major version\n        of grommet. Instead, use 'animation'.").defaultValue(true),
     animation: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['slide', 'fadeIn', 'none']), _reactDesc.PropTypes.bool]).description('Animation transition of the Layer content when it opens and closes.').defaultValue('slide'),
+    background: _propTypes.backgroundDoc,
     full: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.bool, _reactDesc.PropTypes.oneOf(['vertical', 'horizontal'])]).description("Whether the width and/or height should fill the current viewport\n        size.").defaultValue(false),
     margin: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['none'].concat(PAD_SIZES)), _reactDesc.PropTypes.shape({
       bottom: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(PAD_SIZES), _reactDesc.PropTypes.string]),
@@ -52,6 +55,16 @@ var themeDoc = _extends({
     description: 'The background color of the Layer Container.',
     type: 'string',
     defaultValue: 'white'
+  },
+  'layer.border.radius': {
+    description: 'The rounding of the Layer corners.',
+    type: 'string',
+    defaultValue: 'white'
+  },
+  'layer.border.intelligentRounding': {
+    description: "Whether the border-radius of the Layer should adapt based on \n    the Layer's position. Wherever the Layer is touching the edge of the \n    screen, a border-radius of 0 will be applied.",
+    type: 'boolean',
+    defaultValue: undefined
   },
   'layer.container.zIndex': {
     description: 'The stack order of Layer Container.',

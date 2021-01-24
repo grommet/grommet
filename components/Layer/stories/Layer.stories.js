@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports["default"] = exports.TargetLayer = exports.ScrollBodyLayer = exports.RTLLayer = exports.PlainLayer = exports.NotificationLayer = exports.MarginTopCenter = exports.MarginCenter = exports.Margin = exports.FullLayer = exports.FormLayer = exports.CornerLayer = exports.CenterLayer = void 0;
+exports["default"] = exports.TargetLayer = exports.ScrollBodyLayer = exports.RTLLayer = exports.RoundLayer = exports.PlainLayer = exports.NotificationLayer = exports.MarginTopCenter = exports.MarginCenter = exports.Margin = exports.FullLayer = exports.FormLayer = exports.CornerLayer = exports.CenterLayer = void 0;
 
 var _Center = require("./Center");
 
@@ -32,6 +32,10 @@ exports.NotificationLayer = _Notification.NotificationLayer;
 var _Plain = require("./Plain");
 
 exports.PlainLayer = _Plain.PlainLayer;
+
+var _Round = require("./Round");
+
+exports.RoundLayer = _Round.RoundLayer;
 
 var _RTL = require("./RTL");
 

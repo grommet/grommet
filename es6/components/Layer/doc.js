@@ -3,12 +3,14 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 import { describe, PropTypes } from 'react-desc';
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
+import { backgroundDoc } from '../../utils/prop-types';
 var PAD_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large'];
 export var doc = function doc(Layer) {
   var DocumentedLayer = describe(Layer).availableAt(getAvailableAtBadge('Layer', 'Layout')).description("An overlay. Layer is typically modal and anchored to an edge, corner, or\n      center of the window. It is the caller's responsibility to provide a\n      control for the user to close the layer.").usage("import { Layer } from 'grommet';\n<Layer />").intrinsicElement('div');
   DocumentedLayer.propTypes = {
     animate: PropTypes.bool.description("Whether to animate the Layer content when it opens. This\n        property is deprecated and will be removed in the next major version\n        of grommet. Instead, use 'animation'.").defaultValue(true),
     animation: PropTypes.oneOfType([PropTypes.oneOf(['slide', 'fadeIn', 'none']), PropTypes.bool]).description('Animation transition of the Layer content when it opens and closes.').defaultValue('slide'),
+    background: backgroundDoc,
     full: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['vertical', 'horizontal'])]).description("Whether the width and/or height should fill the current viewport\n        size.").defaultValue(false),
     margin: PropTypes.oneOfType([PropTypes.oneOf(['none'].concat(PAD_SIZES)), PropTypes.shape({
       bottom: PropTypes.oneOfType([PropTypes.oneOf(PAD_SIZES), PropTypes.string]),
@@ -40,6 +42,16 @@ export var themeDoc = _extends({
     description: 'The background color of the Layer Container.',
     type: 'string',
     defaultValue: 'white'
+  },
+  'layer.border.radius': {
+    description: 'The rounding of the Layer corners.',
+    type: 'string',
+    defaultValue: 'white'
+  },
+  'layer.border.intelligentRounding': {
+    description: "Whether the border-radius of the Layer should adapt based on \n    the Layer's position. Wherever the Layer is touching the edge of the \n    screen, a border-radius of 0 will be applied.",
+    type: 'boolean',
+    defaultValue: undefined
   },
   'layer.container.zIndex': {
     description: 'The stack order of Layer Container.',

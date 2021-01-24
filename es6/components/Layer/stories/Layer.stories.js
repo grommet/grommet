@@ -7,6 +7,7 @@ export { MarginCenter } from './Margin';
 export { MarginTopCenter } from './Margin';
 export { NotificationLayer } from './Notification';
 export { PlainLayer } from './Plain';
+export { RoundLayer } from './Round';
 export { RTLLayer } from './RTL';
 export { ScrollBodyLayer } from './ScrollBody';
 export { TargetLayer } from './Target';

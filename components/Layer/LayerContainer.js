@@ -38,7 +38,8 @@ var fullBounds = {
   bottom: 0
 };
 var LayerContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
-  var children = _ref.children,
+  var background = _ref.background,
+      children = _ref.children,
       _ref$full = _ref.full,
       full = _ref$full === void 0 ? false : _ref$full,
       id = _ref.id,
@@ -54,7 +55,7 @@ var LayerContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       _ref$responsive = _ref.responsive,
       responsive = _ref$responsive === void 0 ? true : _ref$responsive,
       layerTarget = _ref.target,
-      rest = _objectWithoutPropertiesLoose(_ref, ["children", "full", "id", "margin", "modal", "onClickOutside", "onEsc", "plain", "position", "responsive", "target"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["background", "children", "full", "id", "margin", "modal", "onClickOutside", "onEsc", "plain", "position", "responsive", "target"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
@@ -162,6 +163,7 @@ var LayerContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
   var content = /*#__PURE__*/_react["default"].createElement(_StyledLayer.StyledContainer, _extends({
     ref: ref || containerRef,
+    background: background,
     elevation: theme.layer.container.elevation,
     id: id,
     full: full,

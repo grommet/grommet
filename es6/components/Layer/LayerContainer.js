@@ -21,7 +21,8 @@ var fullBounds = {
   bottom: 0
 };
 var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
-  var children = _ref.children,
+  var background = _ref.background,
+      children = _ref.children,
       _ref$full = _ref.full,
       full = _ref$full === void 0 ? false : _ref$full,
       id = _ref.id,
@@ -37,7 +38,7 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
       _ref$responsive = _ref.responsive,
       responsive = _ref$responsive === void 0 ? true : _ref$responsive,
       layerTarget = _ref.target,
-      rest = _objectWithoutPropertiesLoose(_ref, ["children", "full", "id", "margin", "modal", "onClickOutside", "onEsc", "plain", "position", "responsive", "target"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["background", "children", "full", "id", "margin", "modal", "onClickOutside", "onEsc", "plain", "position", "responsive", "target"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
 
@@ -144,6 +145,7 @@ var LayerContainer = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, [layerTarget, onClickOutside, portalContext, portalId]);
   var content = /*#__PURE__*/React.createElement(StyledContainer, _extends({
     ref: ref || containerRef,
+    background: background,
     elevation: theme.layer.container.elevation,
     id: id,
     full: full,

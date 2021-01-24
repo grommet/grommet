@@ -973,7 +973,8 @@ export var generate = function generate(baseSpacing, scale) {
         light: 'white'
       },
       border: {
-        radius: '4px'
+        radius: '4px' // intelligentRounding: undefined,
+
       },
       container: {
         // elevation: undefined,

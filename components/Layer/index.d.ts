@@ -1,5 +1,10 @@
 import * as React from 'react';
-import { AnimateType, MarginType, KeyboardType } from '../../utils';
+import {
+  AnimateType,
+  BackgroundType,
+  MarginType,
+  KeyboardType,
+} from '../../utils';
 
 export type LayerPositionType =
   | 'bottom'
@@ -15,6 +20,7 @@ export type LayerPositionType =
 export interface LayerProps {
   animate?: AnimateType;
   animation?: 'none' | 'slide' | 'fadeIn' | boolean;
+  background?: BackgroundType;
   full?: boolean | 'vertical' | 'horizontal';
   margin?: MarginType;
   modal?: boolean;

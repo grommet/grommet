@@ -412,7 +412,51 @@ var POSITIONS = {
     }
   }
 };
-var desktopContainerStyle = (0, _styledComponents.css)(["", " max-height:", ";max-width:", ";border-radius:", ";", ";"], function (props) {
+
+var roundStyle = function roundStyle(data, theme, position, margin) {
+  var styles = [];
+  var size = data === true ? 'medium' : data;
+  var round = theme.global.edgeSize[size] || size; // if user provides CSS string such as '50px 12px', apply that always
+
+  var customCSS = round.split(' ').length > 1;
+
+  if (margin === 'none' && !customCSS && theme.layer.border.intelligentRounding === true) {
+    if (position === 'bottom') {
+      styles.push((0, _styledComponents.css)(["border-radius:", " ", " 0 0;"], round, round));
+    } else if (position === 'bottom-left') {
+      styles.push((0, _styledComponents.css)(["border-radius:0 ", " 0 0;"], round));
+    } else if (position === 'bottom-right') {
+      styles.push((0, _styledComponents.css)(["border-radius:", " 0 0 0;"], round));
+    } else if (position === 'end') {
+      // only works on Firefox, what should be fallback?
+      styles.push((0, _styledComponents.css)(["border-start-start-radius:", ";border-end-start-radius:", ";"], round, round));
+    } else if (position === 'left') {
+      styles.push((0, _styledComponents.css)(["border-radius:0 ", " ", " 0;"], round, round));
+    } else if (position === 'right') {
+      styles.push((0, _styledComponents.css)(["border-radius:", " 0 0 ", ";"], round, round));
+    } else if (position === 'start') {
+      // only works on Firefox, what should be fallback?
+      styles.push((0, _styledComponents.css)(["border-end-end-radius:", ";border-start-end-radius:", ";"], round, round));
+    } else if (position === 'top') {
+      styles.push((0, _styledComponents.css)(["border-radius:0 0 ", " ", ";"], round, round));
+    } else if (position === 'top-left') {
+      styles.push((0, _styledComponents.css)(["border-radius:0 0 ", " 0;"], round));
+    } else if (position === 'top-right') {
+      styles.push((0, _styledComponents.css)(["border-radius:0 0 0 ", ";"], round));
+    } else {
+      // position is center, apply uniform border-radius
+      styles.push((0, _styledComponents.css)(["border-radius:", ";"], round));
+    }
+  } else {
+    // if there's a margin apply uniform border-radius, or if user has supplied
+    // a complex CSS string such as "50px 20px" apply this
+    styles.push((0, _styledComponents.css)(["border-radius:", ";"], round));
+  }
+
+  return styles;
+};
+
+var desktopContainerStyle = (0, _styledComponents.css)(["", " max-height:", ";max-width:", ";", ";", ";"], function (props) {
   if (!props.modal && props.position === 'hidden') {
     return hiddenPositionStyle;
   }
@@ -423,7 +467,7 @@ var desktopContainerStyle = (0, _styledComponents.css)(["", " max-height:", ";ma
 }, function (props) {
   return "calc(100% - " + getBounds(props.targetBounds, props.margin, props.theme, 'left') + "px - " + getBounds(props.targetBounds, props.margin, props.theme, 'right') + "px)";
 }, function (props) {
-  return props.plain ? 0 : props.theme.layer.border.radius;
+  return props.plain || props.full === true && props.margin === 'none' ? "border-radius: 0;" : roundStyle(props.theme.layer.border.radius, props.theme, props.position, props.margin);
 }, function (props) {
   return props.position !== 'hidden' && POSITIONS[props.position][props.full](getBounds(props.targetBounds, props.margin, props.theme), props.targetBounds) || '';
 });
@@ -440,7 +484,7 @@ var StyledContainer = _styledComponents["default"].div.withConfig({
 }, function (props) {
   return props.theme.global.size.xxsmall;
 }, function (props) {
-  return !props.plain && props.theme.layer.background && (0, _utils.backgroundStyle)(props.theme.layer.background, props.theme);
+  return !props.plain && (props.background || props.theme.layer.background) && (0, _utils.backgroundStyle)(props.background || props.theme.layer.background, props.theme);
 }, function (props) {
   return props.theme.layer.container.zIndex;
 }, function (props) {
