@@ -178,6 +178,21 @@ describe('Chart', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  test('pattern', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Chart type="area" pattern="squares" values={VALUES} />
+        <Chart type="area" pattern="circles" values={VALUES} />
+        <Chart type="area" pattern="stripesHorizontal" values={VALUES} />
+        <Chart type="area" pattern="stripesVertical" values={VALUES} />
+        <Chart type="area" pattern="stripesDiagonalDown" values={VALUES} />
+        <Chart type="area" pattern="stripesDiagonalUp" values={VALUES} />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('value style', () => {
     const component = renderer.create(
       <Grommet>

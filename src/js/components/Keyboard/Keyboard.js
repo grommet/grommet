@@ -14,7 +14,7 @@ const KEYS = {
   16: 'onShift',
 };
 
-const Keyboard = ({ target, children, onKeyDown, ...restProps }) => {
+const Keyboard = ({ capture, target, children, onKeyDown, ...restProps }) => {
   const onKeyDownHandler = useCallback(
     (event, ...rest) => {
       const key = event.keyCode ? event.keyCode : event.which;
@@ -33,15 +33,15 @@ const Keyboard = ({ target, children, onKeyDown, ...restProps }) => {
 
   useEffect(() => {
     if (target === 'document') {
-      document.addEventListener('keydown', onKeyDownHandler);
+      document.addEventListener('keydown', onKeyDownHandler, capture);
     }
 
     return () => {
       if (target === 'document') {
-        document.removeEventListener('keydown', onKeyDownHandler);
+        document.removeEventListener('keydown', onKeyDownHandler, capture);
       }
     };
-  }, [onKeyDownHandler, target]);
+  }, [capture, onKeyDownHandler, target]);
 
   return target === 'document'
     ? children

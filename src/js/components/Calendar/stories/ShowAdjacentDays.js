@@ -4,9 +4,9 @@ import { Calendar, Grid, Grommet, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { Box } from '../../Box';
 
-const Container = ({ ...rest }) => {
-  return <Box align="center" border gap="small" pad="medium" {...rest} />;
-};
+const Container = ({ ...rest }) => (
+  <Box align="center" border gap="small" pad="medium" {...rest} />
+);
 
 export const ShowAdjacent = () => {
   const [date, setDate] = useState(new Date(2020, 6, 15).toDateString());

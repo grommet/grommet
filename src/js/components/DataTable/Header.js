@@ -30,6 +30,7 @@ const separateThemeProps = theme => {
     color,
     font,
     gap, // gap is used for space between header cell elements only
+    units,
     ...rest
   } = theme.dataTable.header;
 
@@ -168,8 +169,16 @@ const Header = forwardRef(
               sortable,
               verticalAlign,
               size,
+              units,
             }) => {
               let content;
+              const unitsContent = units ? (
+                <Text {...textProps} {...theme.dataTable.header.units}>
+                  {units}
+                </Text>
+              ) : (
+                undefined
+              );
               if (typeof header === 'string') {
                 content = <Text {...textProps}>{header}</Text>;
                 if (
@@ -199,6 +208,7 @@ const Header = forwardRef(
                     Icon = theme.dataTable.icons.sortable;
                   }
                 }
+
                 content = (
                   <StyledHeaderCellButton
                     plain
@@ -221,6 +231,14 @@ const Header = forwardRef(
                 );
               }
 
+              if (unitsContent) {
+                content = (
+                  <Box align="baseline" direction="row">
+                    {content}
+                    {unitsContent}
+                  </Box>
+                );
+              }
               // content should fill any available space in cell
               content = <Box flex="grow">{content}</Box>;
 
