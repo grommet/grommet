@@ -28,8 +28,8 @@ export const doc = Carousel => {
     initialChild: PropTypes.number.description(`If specified, the index of
       the first element to be shown. Defaults to 0.`),
     onChild: PropTypes.func.description(`If specified, this function will 
-    be called with the active index when the currently active carousel 
-    changes.`),
+      be called with the active index when the currently active carousel 
+      changes.`),
     controls: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.oneOf(['arrows', 'selectors']),

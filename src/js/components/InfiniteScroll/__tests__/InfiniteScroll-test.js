@@ -190,26 +190,26 @@ describe('Number of Items Rendered', () => {
 
   test(`Should render items equal to the length of
   item array when step > array`, () => {
-    const numberItems = 1000;
+    const numItems = 1000;
     const { container } = render(
       <Grommet>
-        <InfiniteScroll items={simpleItems(numberItems)} step={1050}>
+        <InfiniteScroll items={simpleItems(numItems)} step={1050}>
           {item => <Box key={item}>{item}</Box>}
         </InfiniteScroll>
       </Grommet>,
     );
 
     const pageItems = createPageItems(container.firstChild.children);
-    const expectedItems = numberItems;
+    const expectedItems = numItems;
     expect(pageItems.length).toEqual(expectedItems);
   });
 
   test(`Should only contain unique items (i.e no duplicates)`, () => {
     const step = 25;
-    const numberItems = 200;
+    const numItems = 200;
     const { container } = render(
       <Grommet>
-        <InfiniteScroll items={simpleItems(numberItems)} step={step}>
+        <InfiniteScroll items={simpleItems(numItems)} step={step}>
           {item => <Box key={item}>{item}</Box>}
         </InfiniteScroll>
       </Grommet>,
@@ -246,12 +246,12 @@ describe('show scenarios', () => {
   test(`When show, should only contain unique 
           items (i.e no duplicates)`, () => {
     const step = 25;
-    const numberItems = 200;
+    const numItems = 200;
     const showIndex = 67;
     const { container } = render(
       <Grommet>
         <InfiniteScroll
-          items={simpleItems(numberItems)}
+          items={simpleItems(numItems)}
           show={showIndex}
           step={step}
         >
@@ -273,12 +273,12 @@ describe('show scenarios', () => {
 
   test(`should display specified item when show is greater than step`, () => {
     const step = 8;
-    const numberItems = 200;
+    const numItems = 200;
     const showIndex = 41;
     const { container, getByText } = render(
       <Grommet>
         <InfiniteScroll
-          items={simpleItems(numberItems)}
+          items={simpleItems(numItems)}
           show={showIndex}
           step={step}
         >
@@ -289,7 +289,7 @@ describe('show scenarios', () => {
 
     // Check to see that expected item exists
     const expectedItem = getByText('item 42').innerHTML;
-    expect(expectedItem).toMatch(simpleItems(numberItems)[showIndex]);
+    expect(expectedItem).toMatch(simpleItems(numItems)[showIndex]);
 
     // Check to see that we have the total number of items we expect
     const pageItems = createPageItems(container.firstChild.children);
@@ -301,12 +301,12 @@ describe('show scenarios', () => {
 
   test(`should display specified item when show is less than step`, () => {
     const step = 30;
-    const numberItems = 200;
+    const numItems = 200;
     const showIndex = 26;
     const { container, getByText } = render(
       <Grommet>
         <InfiniteScroll
-          items={simpleItems(numberItems)}
+          items={simpleItems(numItems)}
           show={showIndex}
           step={step}
         >
@@ -317,7 +317,7 @@ describe('show scenarios', () => {
 
     // Check to see that expected item exists
     const expectedItem = getByText('item 27').innerHTML;
-    expect(expectedItem).toMatch(simpleItems(numberItems)[showIndex]);
+    expect(expectedItem).toMatch(simpleItems(numItems)[showIndex]);
 
     // Check to see that we have the total number of items we expect
     const pageItems = createPageItems(container.firstChild.children);
@@ -331,12 +331,12 @@ describe('show scenarios', () => {
   test(`should display specified item when show is 
         greater than step and replace is true`, () => {
     const step = 18;
-    const numberItems = 200;
+    const numItems = 200;
     const showIndex = 88;
     const { container, getByText } = render(
       <Grommet>
         <InfiniteScroll
-          items={simpleItems(numberItems)}
+          items={simpleItems(numItems)}
           replace
           show={showIndex}
           step={step}
@@ -348,7 +348,7 @@ describe('show scenarios', () => {
 
     // Check to see that expected item exists
     const expectedItem = getByText('item 89').innerHTML;
-    expect(expectedItem).toMatch(simpleItems(numberItems)[showIndex]);
+    expect(expectedItem).toMatch(simpleItems(numItems)[showIndex]);
 
     // Check to see that our replace items have been removed from the DOM.
     expect(container.firstChild).not.toContain('item 7');
@@ -369,12 +369,12 @@ describe('show scenarios', () => {
   test(`should display specified item when show is 
         less than step and replace is true`, () => {
     const step = 30;
-    const numberItems = 200;
+    const numItems = 200;
     const showIndex = 26;
     const { container, getByText } = render(
       <Grommet>
         <InfiniteScroll
-          items={simpleItems(numberItems)}
+          items={simpleItems(numItems)}
           replace
           show={showIndex}
           step={step}
@@ -386,7 +386,7 @@ describe('show scenarios', () => {
 
     // Check to see that expected item exists
     const expectedItem = getByText('item 27').innerHTML;
-    expect(expectedItem).toMatch(simpleItems(numberItems)[showIndex]);
+    expect(expectedItem).toMatch(simpleItems(numItems)[showIndex]);
 
     /* Check to see that we have the total number of items we expect.
      * When replace is true, the expected number of items should be less

@@ -25,7 +25,7 @@ import {
   AlignContentType,
 } from '../utils';
 
-import { BoxProps, BoxTypes } from '../components/Box';
+import { BoxProps } from '../components/Box';
 import { Anchor } from '../components/Anchor';
 import { Box } from '../components/Box';
 import { Text, TextProps } from '../components/Text';
