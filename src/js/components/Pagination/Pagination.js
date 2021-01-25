@@ -27,6 +27,7 @@ const Pagination = forwardRef(
       numberMiddlePages: numberMiddlePagesProp = 3,
       onChange,
       page: pageProp,
+      size,
       step = 10,
       ...rest
     },
@@ -158,31 +159,29 @@ const Pagination = forwardRef(
      * clickable index, control, or placeholder (e.g. ellipsis) indicating
      * more pages are available.
      */
-    controls = controls.map(control => {
-      return {
-        active: control === activePage,
-        a11yTitle:
-          typeof control === 'number'
-            ? `Go to page ${control}`
-            : `Go to ${control} page`,
-        // https://a11y-style-guide.com/style-guide/section-navigation.html#kssref-navigation-pagination
-        // https://www.w3.org/TR/wai-aria-1.1/#aria-current
-        'aria-current': control === activePage ? 'page' : undefined,
-        control,
-        onClick: event => {
-          handleClick(event, control);
-        },
-        separator: control === 'more-prev' || control === 'more-next',
-        ...navProps[control],
-      };
-    });
+    controls = controls.map(control => ({
+      active: control === activePage,
+      a11yTitle:
+        typeof control === 'number'
+          ? `Go to page ${control}`
+          : `Go to ${control} page`,
+      // https://a11y-style-guide.com/style-guide/section-navigation.html#kssref-navigation-pagination
+      // https://www.w3.org/TR/wai-aria-1.1/#aria-current
+      'aria-current': control === activePage ? 'page' : undefined,
+      control,
+      onClick: event => {
+        handleClick(event, control);
+      },
+      separator: control === 'more-prev' || control === 'more-next',
+      ...navProps[control],
+    }));
 
     return (
       <StyledPaginationContainer {...theme.pagination.container} {...rest}>
         <Nav a11yTitle={a11yTitle || 'Pagination Navigation'} ref={ref}>
           <Box as="ul" {...theme.pagination.controls}>
             {controls.map(control => (
-              <PageControl key={control.a11yTitle} {...control} />
+              <PageControl key={control.a11yTitle} size={size} {...control} />
             ))}
           </Box>
         </Nav>

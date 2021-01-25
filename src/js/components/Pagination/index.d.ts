@@ -16,6 +16,7 @@ export interface PaginationProps {
   numberMiddlePages?: number;
   onChange?: (...args: any[]) => void;
   page?: number;
+  size?: 'small' | 'medium' | 'large';
   step?: number;
 }
 

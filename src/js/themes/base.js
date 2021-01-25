@@ -969,38 +969,39 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: undefined,
         },
       },
-      // control: {
-      //   // extend: undefined,
-      //   size: {
-      //     small: {
-      //       font: { ...fontSizing(-1) },
-      //       height: `${baseSpacing * 1.5}px`,
-      //       width: `${baseSpacing * 1.5}px`,
-      //       border: {
-      //         radius: `${baseSpacing / 6}px`, // 4
-      //         width: '2px',
-      //       },
-      //     },
-      //     medium: {
-      //       font: { ...fontSizing(0) },
-      //       height: `${baseSpacing * 1.5}px`,
-      //       width: `${baseSpacing * 1.5}px`,
-      //       border: {
-      //         radius: `${baseSpacing / 4}px`, // 6
-      //         width: '2px',
-      //       },
-      //     },
-      //     large: {
-      //       font: { ...fontSizing(1) },
-      //       height: `${baseSpacing * 2}px`,
-      //       width: `${baseSpacing * 2}px`,
-      //       border: {
-      //         radius: `${baseSpacing / 2}px`, // 12
-      //         width: '2px',
-      //       },
-      //     },
-      //   },
-      // },
+      control: {
+        // extend: undefined,
+        pad: '4px',
+        size: {
+          small: {
+            border: {
+              radius: `${baseSpacing / 8}px`, // 3
+              width: '2px',
+            },
+            font: { ...fontSizing(-1) },
+            height: `${baseSpacing * 1.25}px`,
+            width: `${baseSpacing * 1.25}px`,
+          },
+          medium: {
+            border: {
+              radius: `${baseSpacing / 6}px`, // 4
+              width: '2px',
+            },
+            font: { ...fontSizing(0) },
+            height: `${baseSpacing * 1.5}px`,
+            width: `${baseSpacing * 1.5}px`,
+          },
+          large: {
+            border: {
+              radius: `${baseSpacing / 4}px`, // 6
+              width: '2px',
+            },
+            font: { ...fontSizing(1) },
+            height: `${baseSpacing * 2}px`,
+            width: `${baseSpacing * 2}px`,
+          },
+        },
+      },
       controls: {
         align: 'center',
         direction: 'row',
