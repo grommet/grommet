@@ -79,7 +79,6 @@ const weeksSizeStyle = () => css`
   flex-direction: column;
   height: 100%;
 `;
-
 const StyledWeeks = styled.div`
   position: relative;
   ${props => props.fillContainer && weeksSizeStyle()}
