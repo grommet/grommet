@@ -9,7 +9,8 @@ const BUTTON_STATES = ['normal', 'active', 'disabled', 'hover'];
 const buildButtonStyle = (buttonTheme, kind) => {
   const style = buttonTheme[kind];
   BUTTON_STATES.forEach(state => {
-    if (state !== 'normal') style[state] = buttonTheme[state][kind];
+    if (state !== 'normal' && buttonTheme[state])
+      style[state] = buttonTheme[state][kind];
   });
   return style;
 };

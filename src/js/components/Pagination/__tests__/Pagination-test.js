@@ -4,7 +4,6 @@ import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
 import { cleanup, render } from '@testing-library/react';
-// import { axe } from 'jest-axe';
 import { fireEvent } from '@testing-library/dom';
 
 import { Grommet } from '../../Grommet';
@@ -19,17 +18,6 @@ for (let i = 0; i < 95; i += 1) {
 
 describe('Pagination', () => {
   afterEach(cleanup);
-
-  // test('should have no accessibility violations', async () => {
-  //   const { container } = render(
-  //     <Grommet>
-  //       <Pagination numberItems={NUM_ITEMS} />
-  //     </Grommet>,
-  //   );
-
-  //   const results = await axe(container);
-  //   expect(results).toHaveNoViolations();
-  // });
 
   test(`should display the correct last page based on items length 
   and step`, () => {
@@ -304,6 +292,55 @@ describe('Pagination', () => {
     const { container } = render(
       <Grommet theme={customTheme}>
         <Pagination numberItems={NUM_ITEMS} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`should apply button kind style when referenced by a string`, () => {
+    const customTheme = {
+      button: {
+        default: {},
+        bright: {
+          color: 'text-strong',
+          border: {
+            color: 'skyblue',
+            width: '2px',
+          },
+        },
+        active: {
+          bright: {
+            background: {
+              color: '#CA9CEA',
+            },
+            border: {
+              color: 'transparent',
+            },
+            color: 'text',
+          },
+        },
+      },
+      pagination: {
+        button: 'bright',
+      },
+    };
+
+    const { container } = render(
+      <Grommet theme={customTheme}>
+        <Pagination numberItems={NUM_ITEMS} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`should apply size`, () => {
+    const { container } = render(
+      <Grommet>
+        <Pagination numberItems={NUM_ITEMS} />
+        <Pagination numberItems={NUM_ITEMS} size="small" />
+        <Pagination numberItems={NUM_ITEMS} size="large" />
       </Grommet>,
     );
 
