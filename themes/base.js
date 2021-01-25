@@ -1293,7 +1293,12 @@ var generate = function generate(baseSpacing, scale) {
       large: _extends({}, fontSizing(1)),
       // 22px
       xlarge: _extends({}, fontSizing(2)),
-      xxlarge: _extends({}, fontSizing(4))
+      xxlarge: _extends({}, fontSizing(4)),
+      '2xl': _extends({}, fontSizing(4)),
+      '3xl': _extends({}, fontSizing(6)),
+      '4xl': _extends({}, fontSizing(9)),
+      '5xl': _extends({}, fontSizing(13)),
+      '6xl': _extends({}, fontSizing(18))
     },
     textArea: {// extend: undefined,
       // disabled: { opacity: undefined },

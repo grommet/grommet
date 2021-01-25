@@ -11,7 +11,7 @@ var _themes = require("grommet/themes");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var sizes = ['xxlarge', 'xlarge', 'large', 'medium', 'small', 'xsmall', '77px'];
+var sizes = ['6xl', '5xl', '4xl', '3xl', '2xl', 'xxlarge', 'xlarge', 'large', 'medium', 'small', 'xsmall', '77px'];
 
 var All = function All() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {

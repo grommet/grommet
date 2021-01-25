@@ -18,7 +18,7 @@ export var doc = function doc(Text) {
       top: PropTypes.oneOfType([PropTypes.oneOf(MARGIN_SIZES), PropTypes.string]),
       vertical: PropTypes.oneOfType([PropTypes.oneOf(MARGIN_SIZES), PropTypes.string])
     }), PropTypes.string]).description("The amount of margin around the component. An object can be \n    specified to distinguish horizontal margin, vertical margin, and margin on \n    a particular side. For vertical margin to be applied, Text needs to be \n    contained within a layout component (such as Box or a generic div) or \n    behave as a div (by applying as=\"div\" or a display style of \n    inline-block)."),
-    size: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']), PropTypes.string]).description("The font size and line space height of the text.").defaultValue('medium'),
+    size: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', '2xl', '3xl', '4xl', '5xl', '6xl']), PropTypes.string]).description("The font size and line space height of the text.").defaultValue('medium'),
     tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description("The DOM tag to use for the element. NOTE: This is deprecated in favor\n         of indicating the DOM tag via the 'as' property."),
     as: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.element]).description("The DOM tag or react component to use for the element.").defaultValue('span'),
     textAlign: PropTypes.oneOf(['start', 'center', 'end']).description('How to align the text inside the component.').defaultValue('start'),

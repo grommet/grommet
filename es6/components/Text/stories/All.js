@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Grommet, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
-var sizes = ['xxlarge', 'xlarge', 'large', 'medium', 'small', 'xsmall', '77px'];
+var sizes = ['6xl', '5xl', '4xl', '3xl', '2xl', 'xxlarge', 'xlarge', 'large', 'medium', 'small', 'xsmall', '77px'];
 export var All = function All() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
