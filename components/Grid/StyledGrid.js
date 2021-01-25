@@ -107,12 +107,23 @@ var getRepeatCount = function getRepeatCount(count) {
 };
 
 var getRepeatSize = function getRepeatSize(size, theme) {
+  if (size === 'flex') return '1fr';
+  var min;
+  var max;
+
   if (Array.isArray(size)) {
-    return "minmax(" + (theme.global.size[size[0]] || size[0]) + ", " + (theme.global.size[size[1]] || size[1]) + ")";
+    min = theme.global.size[size[0]] || size[0];
+    max = theme.global.size[size[1]] || size[1];
+  } else {
+    min = theme.global.size[size] || size;
+    max = '1fr';
   }
 
-  if (size === 'flex') return '1fr';
-  return "minmax(" + (theme.global.size[size] || size) + ", 1fr)";
+  if (min.search(/\d/) !== -1) {
+    min = "min(" + min + ", 100%)";
+  }
+
+  return "minmax(" + min + ", " + max + ")";
 };
 
 var sizeFor = function sizeFor(size, props, isRow) {
