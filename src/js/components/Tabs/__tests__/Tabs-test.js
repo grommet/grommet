@@ -239,11 +239,9 @@ describe('Tabs', () => {
   });
 
   const ButtonTab = styled(Tab)`
-    ${props => {
-      return css`
-        background: ${props.active ? 'blue' : 'green'};
-      `;
-    }}
+    ${props => css`
+      background: ${props.active ? 'blue' : 'green'};
+    `}
   `;
 
   test('styled component should change tab color when active', () => {
