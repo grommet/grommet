@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports["default"] = exports.Zoom = exports.Window = exports.ValueStyleChart = exports.Types = exports.Scan = exports.Round = exports.Rich = exports.Range = exports.Point = exports.Layout = exports.LabelledCharts = exports.GradientCharts = exports.Dash = exports.AnimatedChart = void 0;
+exports["default"] = exports.Zoom = exports.Window = exports.ValueStyleChart = exports.Types = exports.Scan = exports.Round = exports.Rich = exports.Range = exports.Point = exports.Pattern = exports.Layout = exports.LabelledCharts = exports.GradientCharts = exports.Dash = exports.AnimatedChart = void 0;
 
 var _Animate = require("./Animate");
 
@@ -22,6 +22,10 @@ exports.LabelledCharts = _Labelled.LabelledCharts;
 var _Layout = require("./Layout");
 
 exports.Layout = _Layout.Layout;
+
+var _Pattern = require("./Pattern");
+
+exports.Pattern = _Pattern.Pattern;
 
 var _Point = require("./Point");
 

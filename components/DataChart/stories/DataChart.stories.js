@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports["default"] = exports.StackedBars = exports.Simple = exports.Prediction = exports.MultipleTypes = exports.Legend = exports.GuideDefault = exports.Guide = exports.FourDimensionDataChart = exports.Everything = exports.Size = exports.Detail = exports.Axis = void 0;
+exports["default"] = exports.StackedBars = exports.Simple = exports.Prediction = exports.Pattern = exports.MultipleTypes = exports.Legend = exports.GuideDefault = exports.Guide = exports.FourDimensionDataChart = exports.Everything = exports.Size = exports.Detail = exports.Axis = void 0;
 
 var _Axis = require("./Axis");
 
@@ -38,6 +38,10 @@ exports.Legend = _Legend.Legend;
 var _MultipleTypes = require("./MultipleTypes");
 
 exports.MultipleTypes = _MultipleTypes.MultipleTypes;
+
+var _Pattern = require("./Pattern");
+
+exports.Pattern = _Pattern.Pattern;
 
 var _Prediction = require("./Prediction");
 

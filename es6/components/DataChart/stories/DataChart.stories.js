@@ -7,6 +7,7 @@ export { Guide } from './Guide';
 export { GuideDefault } from './GuideDefault';
 export { Legend } from './Legend';
 export { MultipleTypes } from './MultipleTypes';
+export { Pattern } from './Pattern';
 export { Prediction } from './Prediction';
 export { Simple } from './Simple';
 export { StackedBars } from './StackedBars';

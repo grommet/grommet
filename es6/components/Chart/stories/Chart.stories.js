@@ -3,6 +3,7 @@ export { Dash } from './Dash';
 export { GradientCharts } from './Gradient';
 export { LabelledCharts } from './Labelled';
 export { Layout } from './Layout';
+export { Pattern } from './Pattern';
 export { Point } from './Point';
 export { Range } from './Range';
 export { Rich } from './Rich';

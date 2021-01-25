@@ -28,6 +28,7 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       _ref$overflow = _ref.overflow,
       overflow = _ref$overflow === void 0 ? false : _ref$overflow,
       pad = _ref.pad,
+      pattern = _ref.pattern,
       point = _ref.point,
       round = _ref.round,
       _ref$size = _ref.size,
@@ -38,7 +39,7 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       type = _ref$type === void 0 ? 'bar' : _ref$type,
       _ref$values = _ref.values,
       propsValues = _ref$values === void 0 ? defaultValues : _ref$values,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "bounds", "color", "dash", "gap", "id", "onClick", "onHover", "opacity", "overflow", "pad", "point", "round", "size", "thickness", "type", "values"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "bounds", "color", "dash", "gap", "id", "onClick", "onHover", "opacity", "overflow", "pad", "pattern", "point", "round", "size", "thickness", "type", "values"]);
 
   var containerRef = useForwardedRef(ref);
   var theme = useContext(ThemeContext) || defaultProps.theme; // normalize variables
@@ -125,8 +126,7 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
   }, [bounds, inset, size]);
   var viewBounds = useMemo(function () {
     return overflow ? [0, 0, size[0], size[1]] : [-(strokeWidth / 2), -(strokeWidth / 2), size[0] + strokeWidth, size[1] + strokeWidth];
-  }, [overflow, size, strokeWidth]);
-  var useGradient = color && Array.isArray(color); // set container size when we get ref or when size changes
+  }, [overflow, size, strokeWidth]); // set container size when we get ref or when size changes
 
   useLayoutEffect(function () {
     if (containerRef.current && needContainerSize) {
@@ -167,6 +167,9 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
   var valueToCoordinate = function valueToCoordinate(xValue, yValue) {
     return [(xValue - bounds[0][0]) * scale[0] + inset[0], size[1] - ((yValue - bounds[1][0]) * scale[1] + inset[1])];
   };
+
+  var useGradient = color && Array.isArray(color);
+  var patternId;
 
   var renderBars = function renderBars() {
     return (values || []).filter(function (_ref2) {
@@ -312,8 +315,10 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       };
     }
 
+    patternId = pattern && pattern + "-" + id + "-pattern";
     return /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("path", _extends({
-      d: d
+      d: d,
+      fill: patternId ? "url(#" + patternId + ")" : undefined
     }, hoverProps, clickProps)));
   };
 
@@ -422,13 +427,13 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
 
   var drawing = /*#__PURE__*/React.createElement("g", {
     stroke: stroke,
-    strokeWidth: type !== 'point' ? strokeWidth : undefined,
+    strokeWidth: type !== 'point' && (type !== 'area' || !pattern) ? strokeWidth : undefined,
     fill: fill,
     strokeLinecap: round ? 'round' : 'butt',
     strokeLinejoin: round ? 'round' : 'miter',
     opacity: opacity
   }, contents);
-  var defs;
+  var defs = [];
   var gradientRect;
 
   if (useGradient && size[1]) {
@@ -437,7 +442,8 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     }).join('-');
     var gradientId = uniqueGradientId + "-" + id + "-gradient";
     var maskId = uniqueGradientId + "-" + id + "-mask";
-    defs = /*#__PURE__*/React.createElement("defs", null, /*#__PURE__*/React.createElement("linearGradient", {
+    defs.push( /*#__PURE__*/React.createElement("linearGradient", {
+      key: "gradientId",
       id: gradientId,
       x1: 0,
       y1: 0,
@@ -454,7 +460,9 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
         (size[1] - (value - bounds[1][0]) * scale[1]) / size[1],
         stopColor: normalizeColor(gradientColor, theme)
       });
-    })), /*#__PURE__*/React.createElement("mask", {
+    })));
+    defs.push( /*#__PURE__*/React.createElement("mask", {
+      key: "mask",
       id: maskId
     }, drawing));
     gradientRect = /*#__PURE__*/React.createElement("rect", {
@@ -465,6 +473,64 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       fill: "url(#" + gradientId + ")",
       mask: "url(#" + maskId + ")"
     });
+  } else if (patternId) {
+    var content;
+    var diagonal = pattern.match(/Diagonal/);
+    var unit = diagonal ? strokeWidth * Math.sqrt(2) : strokeWidth;
+    var half = unit / 2;
+
+    var _double = unit * 2;
+
+    var pColor = normalizeColor(colorName, theme);
+
+    if (pattern === 'squares') {
+      content = /*#__PURE__*/React.createElement("rect", {
+        x: half,
+        y: half,
+        width: unit,
+        height: unit,
+        fill: pColor
+      });
+    } else if (pattern === 'circles') {
+      content = /*#__PURE__*/React.createElement("circle", {
+        cx: unit,
+        cy: unit,
+        r: half,
+        fill: pColor
+      });
+    } else if (pattern === 'stripesHorizontal') {
+      content = /*#__PURE__*/React.createElement("path", {
+        d: "M 0 " + unit + " L " + _double + " " + unit,
+        stroke: pColor,
+        strokeWidth: strokeWidth
+      });
+    } else if (pattern === 'stripesVertical') {
+      content = /*#__PURE__*/React.createElement("path", {
+        d: "M " + unit + " 0 L " + unit + " " + _double,
+        stroke: pColor,
+        strokeWidth: strokeWidth
+      });
+    } else if (pattern === 'stripesDiagonalDown') {
+      content = /*#__PURE__*/React.createElement("path", {
+        d: "M " + half + " " + -half + " L " + (_double + half) + " " + (_double - half) + "\n              M " + -half + " " + half + " L " + (_double - half) + " " + (_double + half),
+        stroke: pColor,
+        strokeWidth: strokeWidth
+      });
+    } else if (pattern === 'stripesDiagonalUp') {
+      content = /*#__PURE__*/React.createElement("path", {
+        d: "M " + -half + " " + (_double - half) + " L " + (_double - half) + " " + -half + "\n              M " + half + " " + (_double + half) + " L " + (_double + half) + " " + half,
+        stroke: pColor,
+        strokeWidth: strokeWidth
+      });
+    }
+
+    defs.push( /*#__PURE__*/React.createElement("pattern", {
+      key: patternId,
+      id: patternId,
+      width: _double,
+      height: _double,
+      patternUnits: "userSpaceOnUse"
+    }, content));
   }
 
   return /*#__PURE__*/React.createElement(StyledChart, _extends({
@@ -477,7 +543,7 @@ var Chart = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     height: size === 'full' ? '100%' : size[1],
     typeProp: type // prevent adding to DOM
 
-  }, rest), defs, useGradient ? gradientRect : drawing);
+  }, rest), defs.length && /*#__PURE__*/React.createElement("defs", null, defs), useGradient ? gradientRect : drawing);
 });
 Chart.displayName = 'Chart';
 var ChartDoc;
