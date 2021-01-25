@@ -4,7 +4,7 @@ import { Grommet, Box, List } from 'grommet';
 import { grommet, ThemeType } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
 
-export const locations = [
+const locations = [
   'Boise',
   'Fort Collins',
   'Los Gatos',
@@ -33,5 +33,5 @@ export const Themed = () => (
 );
 
 export default {
-  title: 'Visualizations/List/Theme',
+  title: 'Visualizations/List/Themed',
 };

@@ -61,3 +61,7 @@ export const CustomBreakpoints = () => (
 );
 
 CustomBreakpoints.storyName = 'Custom breakpoints';
+
+export default {
+  title: 'Utilities/ResponsiveContext/Custom breakpoints',
+};

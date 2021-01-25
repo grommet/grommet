@@ -62,3 +62,7 @@ export const Children = () => {
 Children.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Controls/Tip/Children',
+};

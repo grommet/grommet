@@ -136,3 +136,7 @@ export const WithTags = () => {
 };
 
 WithTags.storyName = 'With tags';
+
+export default {
+  title: 'Input/TextInput/With tags',
+};

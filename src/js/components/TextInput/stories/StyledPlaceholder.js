@@ -16,3 +16,7 @@ export const StyledPlaceholder = () => {
 };
 
 StyledPlaceholder.storyName = 'Styled placeholder';
+
+export default {
+  title: 'Input/TextInput/Styled placeholder',
+};

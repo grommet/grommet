@@ -17,3 +17,7 @@ export const Simple = () => {
 Simple.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Controls/Tip/Simple',
+};

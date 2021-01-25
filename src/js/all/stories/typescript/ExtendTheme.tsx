@@ -63,3 +63,7 @@ const ExtendTheme: React.FC = () => {
 };
 
 export const Extend = () => <ExtendTheme />;
+
+export default {
+  title: 'Others/Theme/Extend',
+};

@@ -46,3 +46,7 @@ export const MeterInTable = () => (
 );
 
 MeterInTable.storyName = 'Meter inside table';
+
+export default {
+  title: 'Visualizations/Table/Meter inside table',
+};

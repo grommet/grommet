@@ -3,10 +3,10 @@ import React from 'react';
 import { Box, Grommet, Video } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-export const Simple = () => (
+const SimpleVideo = props => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
-      <Video>
+      <Video {...props}>
         <source src="small.mp4" type="video/mp4" />
         <source
           src="http://techslides.com/demos/sample-videos/small.webm"
@@ -25,6 +25,10 @@ export const Simple = () => (
   </Grommet>
 );
 
+export const ControlsBelow = () => <SimpleVideo controls="below" />;
+
+ControlsBelow.storyName = 'Controls below';
+
 export default {
-  title: 'Media/Video/Simple',
+  title: 'Media/Video/Controls below',
 };

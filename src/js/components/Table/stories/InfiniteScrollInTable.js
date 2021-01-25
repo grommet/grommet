@@ -88,3 +88,7 @@ InfiniteScrollInTable.storyName = 'InfiniteScroll';
 InfiniteScrollInTable.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Visualizations/Table/InfiniteScroll',
+};

@@ -54,3 +54,7 @@ export const Colors = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Others/Theme/Colors',
+};

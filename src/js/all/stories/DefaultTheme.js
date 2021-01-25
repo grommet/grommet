@@ -22,3 +22,7 @@ export const CustomDefaultProps = () => (
 );
 
 CustomDefaultProps.storyName = 'Extend default';
+
+export default {
+  title: 'Others/Theme/Extend default',
+};

@@ -106,3 +106,9 @@ export const HeaderActions = () => {
 HeaderActions.parameters = {
   chromatic: { disable: true },
 };
+
+HeaderActions.storyName = 'Header actions';
+
+export default {
+  title: 'Controls/Tip/Header actions',
+};

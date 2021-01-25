@@ -23,8 +23,9 @@ const MarginLayer = ({ margin, ...rest }) => (
   </Grommet>
 );
 
-export const Margin = () => <MarginLayer full />;
+export const MarginCenter = () => <MarginLayer margin="large" />;
+MarginCenter.storyName = 'Margin (center)';
 
 export default {
-  title: 'Layout/Layer/Margin',
+  title: 'Layout/Layer/Margin (center)',
 };

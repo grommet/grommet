@@ -4,7 +4,7 @@ import { Gremlin } from 'grommet-icons';
 
 import { Box, Grommet, grommet, List, Text, Tip } from 'grommet';
 
-export const data = [
+const data = [
   { city: 'Boise', state: 'Idaho' },
   { city: 'Fort Collins', state: 'Colorado' },
   { city: 'Bay Area', state: 'California' },

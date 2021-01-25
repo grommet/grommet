@@ -82,3 +82,7 @@ export const Labels = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Layout/Sidebar/Labels',
+};

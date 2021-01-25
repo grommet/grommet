@@ -57,3 +57,7 @@ export const SidebarIcons = () => (
 );
 
 SidebarIcons.storyName = 'Icons';
+
+export default {
+  title: 'Layout/Sidebar/Icons',
+};

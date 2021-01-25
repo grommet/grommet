@@ -58,3 +58,7 @@ export const InsideFormField = props => {
 };
 
 InsideFormField.storyName = 'Inside a FormField';
+
+export default {
+  title: 'Input/TextInput/Inside a FormField',
+};

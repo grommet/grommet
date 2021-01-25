@@ -76,3 +76,7 @@ export const ResponsiveGridExample = () => (
 );
 
 ResponsiveGridExample.storyName = 'Responsive grid';
+
+export default {
+  title: 'Utilities/ResponsiveContext/Responsive grid',
+};

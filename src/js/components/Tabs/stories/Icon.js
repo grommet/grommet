@@ -62,3 +62,7 @@ const IconTabs = () => (
 );
 
 export const Icon = () => <IconTabs />;
+
+export default {
+  title: 'Controls/Tabs/Icon',
+};

@@ -22,3 +22,7 @@ export const WordBreak = () => (
 );
 /* eslint-enable max-len */
 WordBreak.storyName = 'Word break';
+
+export default {
+  title: 'Type/Text/Word break',
+};

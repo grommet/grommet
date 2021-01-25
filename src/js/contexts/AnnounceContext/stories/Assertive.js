@@ -40,7 +40,6 @@ const AnnounceContextComponent = props => (
   </Grommet>
 );
 
-export const Polite = () => <AnnounceContextComponent />;
 export const Assertive = () => (
   <AnnounceContextComponent
     message="Turn on Accessibility feature to listen to this announcement.
@@ -51,5 +50,5 @@ export const Assertive = () => (
 );
 
 export default {
-  title: 'Utilities/AnnounceContext',
+  title: 'Utilities/AnnounceContext/Assertive',
 };

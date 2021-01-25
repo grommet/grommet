@@ -126,3 +126,7 @@ export const SidebarTip = () => (
 );
 
 SidebarTip.storyName = 'Sidebar';
+
+export default {
+  title: 'Controls/Tip/Sidebar',
+};

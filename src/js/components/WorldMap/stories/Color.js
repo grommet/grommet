@@ -16,3 +16,7 @@ export const Color = () => {
 Color.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Visualizations/WorldMap/Color',
+};

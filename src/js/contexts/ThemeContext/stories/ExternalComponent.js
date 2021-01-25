@@ -22,3 +22,7 @@ export const ExternalComponentWithTheme = () => (
 );
 
 ExternalComponentWithTheme.storyName = 'External components';
+
+export default {
+  title: 'Utilities/ThemeContext/External components',
+};

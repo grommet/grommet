@@ -46,3 +46,7 @@ export const Animated = () => {
 Animated.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Controls/Tip/Animated',
+};

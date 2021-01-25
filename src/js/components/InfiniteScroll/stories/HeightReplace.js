@@ -29,12 +29,12 @@ export const HeightReplace = () => {
   );
 };
 
-HeightReplace.storyName = 'Variable item height w/replace';
+HeightReplace.storyName = 'Variable item height with replace';
 
 HeightReplace.parameters = {
   chromatic: { disable: true },
 };
 
 export default {
-  title: 'Utilities/InfiniteScroll/Variable item height w/replace',
+  title: 'Utilities/InfiniteScroll/Variable item height with replace',
 };

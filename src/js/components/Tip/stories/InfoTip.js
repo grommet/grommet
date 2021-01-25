@@ -58,3 +58,7 @@ export const Info = () => {
 Info.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Controls/Tip/Info',
+};

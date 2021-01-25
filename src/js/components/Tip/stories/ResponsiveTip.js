@@ -135,3 +135,7 @@ ResponsiveTip.storyName = 'Responsive';
 ResponsiveTip.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Controls/Tip/Responsive',
+};

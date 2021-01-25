@@ -32,9 +32,8 @@ const UncontrolledTabs = ({ plain = false }) => (
 UncontrolledTabs.propTypes = {
   plain: PropTypes.bool, // eslint-disable-line react/require-default-props
 };
-
-export const Uncontrolled = () => <UncontrolledTabs />;
+export const Plain = () => <UncontrolledTabs plain />;
 
 export default {
-  title: 'Controls/Tabs/Uncontrolled',
+  title: 'Controls/Tabs/Plain',
 };

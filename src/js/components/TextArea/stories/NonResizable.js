@@ -17,8 +17,10 @@ const Resize = props => {
   );
 };
 
-export const Simple = () => <Resize resize />;
+export const NonResizable = () => <Resize resize={false} />;
+
+NonResizable.storyName = 'Non resizable';
 
 export default {
-  title: 'Input/TextArea/Simple',
+  title: 'Input/TextArea/Non resizable',
 };

@@ -44,3 +44,7 @@ export const Caret = () => {
 Caret.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Controls/Tip/Caret',
+};

@@ -24,3 +24,7 @@ SelectPlace.storyName = 'Select place';
 SelectPlace.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Visualizations/WorldMap/Select place',
+};

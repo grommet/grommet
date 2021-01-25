@@ -33,3 +33,7 @@ export const Suggestions = () => {
 Suggestions.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Input/TextInput/Suggestions',
+};
