@@ -127,9 +127,21 @@ const DataTable = ({
 
   // placeholder placement stuff
   const headerRef = useRef();
+  const bodyRef = useRef();
   const footerRef = useRef();
   const [headerHeight, setHeaderHeight] = useState();
   const [footerHeight, setFooterHeight] = useState();
+
+  const [overflowComp, setOverflowComp] = useState(0);
+
+  useEffect(() => {
+    if (bodyRef.current) {
+      setOverflowComp(
+        bodyRef.current?.parentElement?.clientWidth -
+          bodyRef.current?.clientWidth,
+      );
+    }
+  }, [bodyRef]);
 
   useLayoutEffect(() => {
     if (placeholder) {
@@ -251,6 +263,7 @@ const DataTable = ({
         }
         onSort={sortable || sortProp || onSortProp ? onSort : undefined}
         onToggle={onToggleGroups}
+        overflowComp={overflowComp}
         primaryProperty={primaryProperty}
       />
       {groups ? (
@@ -268,6 +281,7 @@ const DataTable = ({
         />
       ) : (
         <Body
+          ref={bodyRef}
           background={normalizeProp(background, 'body')}
           border={normalizeProp(border, 'body')}
           columns={columns}
@@ -303,6 +317,7 @@ const DataTable = ({
           footerValues={footerValues}
           groups={groups}
           onSelect={onSelect}
+          overflowComp={overflowComp}
           pad={normalizeProp(pad, 'footer')}
           pin={pin === true || pin === 'footer'}
           primaryProperty={primaryProperty}

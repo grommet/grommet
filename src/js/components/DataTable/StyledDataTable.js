@@ -103,7 +103,11 @@ const StyledDataTableHeader = styled(TableHeader)`
     props.size &&
     `
     display: table;
-    width: 100%;
+    width: ${
+      props.overflowComp && props.overflowComp !== 0
+        ? `calc(100% - ${props.overflowComp}px);`
+        : `100%`
+    };
     table-layout: fixed;
   `}
 `;
@@ -116,7 +120,11 @@ const StyledDataTableFooter = styled(TableFooter)`
     props.size &&
     `
     display: table;
-    width: 100%;
+    width: ${
+      props.overflowComp && props.overflowComp !== 0
+        ? `calc(100% - ${props.overflowComp}px);`
+        : `100%`
+    };
     table-layout: fixed;
   `}
   ${props =>
