@@ -22,7 +22,7 @@ import { Box } from '../../Box';
 describe('Form accessibility', () => {
   afterEach(cleanup);
 
-  test(`TextInput in Form should have 
+  test(`TextInput in Form should have
   no accessibility violations`, async () => {
     const { container } = render(
       <Grommet>
@@ -82,7 +82,7 @@ describe('Form accessibility', () => {
     expect(results).toHaveNoViolations();
   });
 
-  test(`Box with TextInput in Form should 
+  test(`Box with TextInput in Form should
   have no accessibility violations`, async () => {
     const { container } = render(
       <Grommet>
@@ -358,26 +358,17 @@ describe('Form uncontrolled', () => {
             name="test"
             required
             validate={[
-              value => {
-                return value.length === 1 ? 'simple string' : undefined;
-              },
-              value => {
-                return value.length === 2 ? (
-                  <Text> ReactNode </Text>
-                ) : (
-                  undefined
-                );
-              },
-              value => {
-                return value.length === 3
+              value => (value.length === 1 ? 'simple string' : undefined),
+              value =>
+                value.length === 2 ? <Text> ReactNode </Text> : undefined,
+              value =>
+                value.length === 3
                   ? { message: 'status error', status: 'error' }
-                  : undefined;
-              },
-              value => {
-                return value.length === 4
+                  : undefined,
+              value =>
+                value.length === 4
                   ? { message: 'status info', status: 'info' }
-                  : undefined;
-              },
+                  : undefined,
             ]}
             placeholder="test input"
           />
@@ -451,7 +442,7 @@ describe('Form uncontrolled', () => {
     const onSubmit = jest.fn();
     const { getByText, queryByText } = render(
       <Grommet>
-        {/* this test continues running forever if the whole event 
+        {/* this test continues running forever if the whole event
                 passed to onSubmit */}
         <Form onSubmit={({ value, touched }) => onSubmit({ value, touched })}>
           <FormField
@@ -653,20 +644,18 @@ describe('Form uncontrolled', () => {
   });
 
   test('custom component', () => {
-    const CustomTextInput = ({ name, value, onChange }) => {
-      return (
-        <div>
-          <input
-            type="text"
-            placeholder="Username"
-            name={name}
-            id="test"
-            value={value}
-            onChange={onChange}
-          />
-        </div>
-      );
-    };
+    const CustomTextInput = ({ name, value, onChange }) => (
+      <div>
+        <input
+          type="text"
+          placeholder="Username"
+          name={name}
+          id="test"
+          value={value}
+          onChange={onChange}
+        />
+      </div>
+    );
     const onChange = jest.fn();
     const { getByPlaceholderText } = render(
       <Grommet>
@@ -740,15 +729,14 @@ describe('Form uncontrolled', () => {
   });
 
   test('should validate when supplied a function', () => {
-    const functionValidation = combination => {
-      return combination === '12345'
+    const functionValidation = combination =>
+      combination === '12345'
         ? {
             message:
               "That's amazing. I've got the same combination on my luggage!",
             status: 'info',
           }
         : undefined;
-    };
     const infoMessage =
       "That's amazing. I've got the same combination on my luggage!";
 
@@ -798,15 +786,14 @@ describe('Form uncontrolled', () => {
         message: 'At least five characters',
         status: 'error',
       },
-      combination => {
-        return combination === '12345'
+      combination =>
+        combination === '12345'
           ? {
               message:
                 "That's amazing. I've got the same combination on my luggage!",
               status: 'info',
             }
-          : undefined;
-      },
+          : undefined,
       {
         regexp: new RegExp('(?=.*?[#?!@$ %^&*-])'),
         message: 'At least one special character or space',
@@ -994,5 +981,33 @@ describe('Form uncontrolled', () => {
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('Reset'));
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('form with select without name prop', () => {
+    const onChange = jest.fn();
+    window.scrollTo = jest.fn();
+    const { getByPlaceholderText } = render(
+      <Grommet>
+        <Form>
+          <FormField>
+            <Select
+              a11yTitle="select form"
+              placeholder="test input"
+              options={['small', 'medium', 'large']}
+              onChange={onChange}
+            />
+          </FormField>
+          <Button type="submit" primary label="Submit" />
+        </Form>
+      </Grommet>,
+    );
+
+    fireEvent.click(getByPlaceholderText('test input'));
+    fireEvent.click(document.activeElement.querySelector('button'));
+    expect(getByPlaceholderText('test input').value).toEqual('small');
+    expect(onChange).toBeCalledWith(
+      expect.objectContaining({ value: 'small' }),
+    );
+    window.scrollTo.mockRestore();
   });
 });

@@ -8,13 +8,11 @@ const allItems = Array(2000)
   .map((_, i) => `item ${i + 1}`);
 
 /* eslint-disable react/prefer-stateless-function */
-const MyItem = ({ item }) => {
-  return (
-    <Box pad="medium" border={{ side: 'bottom' }} align="center">
-      <Text>{item}</Text>
-    </Box>
-  );
-};
+const MyItem = ({ item }) => (
+  <Box pad="medium" border={{ side: 'bottom' }} align="center">
+    <Text>{item}</Text>
+  </Box>
+);
 
 export const ClassChildrenInfiniteScroll = props => (
   <Grommet theme={grommet}>

@@ -896,6 +896,7 @@ export interface ThemeType {
     background?: BackgroundType;
     border?: {
       radius?: string;
+      intelligentRounding?: boolean;
     };
     container?: {
       elevation?: ElevationType;

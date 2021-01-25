@@ -68,7 +68,6 @@ exports[`Button kind border on default button 1`] = `
 >
   <button
     class="c1"
-    kind="default"
     type="button"
   >
     Test
@@ -177,7 +176,6 @@ exports[`Button kind button icon colors 1`] = `
 >
   <button
     class="c1"
-    kind="default"
     type="button"
   >
     <svg
@@ -295,7 +293,6 @@ exports[`Button kind button with icon and align 1`] = `
 >
   <button
     class="c1"
-    kind="default"
     type="button"
   >
     <svg
@@ -386,7 +383,6 @@ exports[`Button kind default button 1`] = `
 >
   <button
     class="c1"
-    kind="default"
     type="button"
   />
 </div>
@@ -461,7 +457,6 @@ exports[`Button kind disabled with hoverIndicator should not hover 1`] = `
   <button
     class="c1"
     disabled=""
-    kind="default"
     type="button"
   >
     Button
@@ -476,7 +471,6 @@ exports[`Button kind disabled with hoverIndicator should not hover 2`] = `
   <button
     class="StyledButtonKind-sc-1vhfpnt-0 hMrilV"
     disabled=""
-    kind="default"
     type="button"
   >
     Button
@@ -550,7 +544,6 @@ exports[`Button kind extend on default button 1`] = `
 >
   <button
     class="c1"
-    kind="default"
     type="button"
   >
     Test
@@ -729,21 +722,18 @@ exports[`Button kind fill 1`] = `
 >
   <button
     class="c1"
-    kind="default"
     type="button"
   >
     Test
   </button>
   <button
     class="c2"
-    kind="default"
     type="button"
   >
     Test
   </button>
   <button
     class="c3"
-    kind="default"
     type="button"
   >
     Test
@@ -818,7 +808,6 @@ exports[`Button kind font on button default 1`] = `
 >
   <button
     class="c1"
-    kind="default"
     type="button"
   >
     Test
@@ -891,7 +880,6 @@ exports[`Button kind font undefined 1`] = `
 >
   <button
     class="c1"
-    kind="default"
     type="button"
   >
     Test
@@ -962,7 +950,6 @@ exports[`Button kind hover on default button 1`] = `
 >
   <button
     class="c1"
-    kind="default"
     type="button"
   >
     Test
@@ -1103,7 +1090,6 @@ exports[`Button kind mouseOver and mouseOut events 1`] = `
 >
   <button
     class="c1"
-    kind="default"
     type="button"
   >
     <div
@@ -1136,7 +1122,6 @@ exports[`Button kind mouseOver and mouseOut events 2`] = `
 >
   <button
     class="StyledButtonKind-sc-1vhfpnt-0 jcRPDY"
-    kind="default"
     type="button"
   >
     <div
@@ -1229,7 +1214,6 @@ exports[`Button kind no border on default button 1`] = `
 >
   <button
     class="c1"
-    kind="default"
     type="button"
   >
     Test
@@ -1304,7 +1288,6 @@ exports[`Button kind no padding on default button 1`] = `
 >
   <button
     class="c1"
-    kind="default"
     type="button"
   >
     Test
@@ -1378,7 +1361,6 @@ exports[`Button kind opacity on default button 1`] = `
 >
   <button
     class="c1"
-    kind="default"
     type="button"
   >
     Test
@@ -1454,7 +1436,6 @@ exports[`Button kind padding on default button 1`] = `
 >
   <button
     class="c1"
-    kind="default"
     type="button"
   >
     Test
@@ -1530,7 +1511,6 @@ exports[`Button kind primary button 1`] = `
 >
   <button
     class="c1"
-    kind="primary"
     type="button"
   />
 </div>
@@ -1594,7 +1574,6 @@ exports[`Button kind render of children 1`] = `
 >
   <button
     class="c1"
-    kind="default"
     type="button"
   >
     Test
@@ -1678,7 +1657,6 @@ exports[`Button kind secondary button 1`] = `
 >
   <button
     class="c1"
-    kind="secondary"
     type="button"
   />
 </div>
@@ -1749,7 +1727,6 @@ exports[`Button kind size of default button 1`] = `
 >
   <button
     class="c1"
-    kind="default"
     type="button"
   >
     Test
