@@ -481,6 +481,12 @@ export const themeDoc = {
     type: 'React.Element',
     defaultValue: undefined,
   },
+  'dataTable.pagination': {
+    description: `If paginating, any valid Box props to style the pagination 
+    component.`,
+    type: 'object',
+    defaultValue: `margin: { top: 'xsmall' }`,
+  },
   'dataTable.pinned.body.background': {
     description: 'Any valid Box background options apply.',
     type: `string | 

@@ -683,6 +683,7 @@ export interface ThemeType {
     primary?: {
       weight?: string;
     };
+    pagination?: BoxProps;
   };
   diagram?: {
     extend?: ExtendType;
@@ -925,6 +926,7 @@ export interface ThemeType {
       pad?: PadType;
       extend?: ExtendType;
     };
+    pagination?: BoxProps;
     extend?: ExtendType;
   };
   maskedInput?: {

@@ -1014,6 +1014,17 @@ Defaults to
 undefined
 ```
 
+**dataTable.pagination**
+
+If paginating, any valid Box props to style the pagination 
+    component. Expects `object`.
+
+Defaults to
+
+```
+margin: { top: 'xsmall' }
+```
+
 **dataTable.pinned.body.background**
 
 Any valid Box background options apply. Expects `string | 

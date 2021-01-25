@@ -3142,6 +3142,7 @@ exports[`List events should paginate 1`] = `
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
+  margin-top: 6px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3453,6 +3454,12 @@ exports[`List events should paginate 1`] = `
   .c4 {
     padding-top: 6px;
     padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin-top: 3px;
   }
 }
 
@@ -4006,6 +4013,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
+  margin-top: 6px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -4317,6 +4325,12 @@ exports[`List events should render correct num items per page (step) 1`] = `
   .c4 {
     padding-top: 6px;
     padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin-top: 3px;
   }
 }
 
@@ -4765,6 +4779,7 @@ exports[`List events should render new data when page changes 1`] = `
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
+  margin-top: 6px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -5076,6 +5091,12 @@ exports[`List events should render new data when page changes 1`] = `
   .c4 {
     padding-top: 6px;
     padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin-top: 3px;
   }
 }
 
@@ -5694,7 +5715,7 @@ exports[`List events should render new data when page changes 2`] = `
     </li>
   </ul>
   <div
-    class="StyledBox-sc-13pk1d4-0 iCrgvf Pagination__StyledPaginationContainer-rnlw6m-0"
+    class="StyledBox-sc-13pk1d4-0 yLlje Pagination__StyledPaginationContainer-rnlw6m-0"
   >
     <nav
       aria-label="Pagination Navigation"
@@ -5961,6 +5982,7 @@ exports[`List events should show correct item index when "show" is a number 1`] 
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
+  margin-top: 6px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -6272,6 +6294,12 @@ exports[`List events should show correct item index when "show" is a number 1`] 
   .c4 {
     padding-top: 6px;
     padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin-top: 3px;
   }
 }
 
@@ -6790,6 +6818,7 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
+  margin-top: 6px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -7118,6 +7147,12 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
   .c4 {
     padding-top: 6px;
     padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    margin-top: 3px;
   }
 }
 

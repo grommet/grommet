@@ -755,6 +755,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //   },
         // },
       },
+      pagination: {
+        margin: {
+          top: 'xsmall',
+        },
+      },
     },
     diagram: {
       // extend: undefined,
@@ -926,6 +931,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         border: 'horizontal',
         pad: { horizontal: 'medium', vertical: 'small' },
         // extend: undefined,
+      },
+      pagination: {
+        margin: {
+          top: 'xsmall',
+        },
       },
       // extend: undefined,
     },

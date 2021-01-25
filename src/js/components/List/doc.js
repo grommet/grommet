@@ -184,4 +184,10 @@ export const themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
+  'list.pagination': {
+    description: `If paginating, any valid Box props to style the pagination 
+    component.`,
+    type: 'object',
+    defaultValue: `margin: { top: 'xsmall' }`,
+  },
 };

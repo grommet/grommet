@@ -465,3 +465,14 @@ Defaults to
 ```
 undefined
 ```
+
+**list.pagination**
+
+If paginating, any valid Box props to style the pagination 
+    component. Expects `object`.
+
+Defaults to
+
+```
+margin: { top: 'xsmall' }
+```
