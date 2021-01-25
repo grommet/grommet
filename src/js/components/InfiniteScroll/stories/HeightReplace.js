@@ -7,27 +7,25 @@ const allItems = Array(240)
   .fill()
   .map((_, i) => i + 1);
 
-export const HeightReplace = () => {
-  return (
-    <Grommet theme={grommet}>
-      <Box>
-        <InfiniteScroll items={allItems} replace>
-          {item => (
-            <Box
-              key={item}
-              height={item <= 25 ? 'xsmall' : 'xxsmall'}
-              pad="medium"
-              border={{ side: 'bottom' }}
-              align="center"
-            >
-              <Text>item {item}</Text>
-            </Box>
-          )}
-        </InfiniteScroll>
-      </Box>
-    </Grommet>
-  );
-};
+export const HeightReplace = () => (
+  <Grommet theme={grommet}>
+    <Box>
+      <InfiniteScroll items={allItems} replace>
+        {item => (
+          <Box
+            key={item}
+            height={item <= 25 ? 'xsmall' : 'xxsmall'}
+            pad="medium"
+            border={{ side: 'bottom' }}
+            align="center"
+          >
+            <Text>item {item}</Text>
+          </Box>
+        )}
+      </InfiniteScroll>
+    </Box>
+  </Grommet>
+);
 
 HeightReplace.storyName = 'Variable item height with replace';
 

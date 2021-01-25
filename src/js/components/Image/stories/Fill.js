@@ -11,7 +11,7 @@ export const Fill = () => (
           <Image fit="cover" fill src="//v2.grommet.io/assets/IMG_4245.jpg" />
         </Anchor>
       </Box>
-      </Box>
+    </Box>
   </Grommet>
 );
 

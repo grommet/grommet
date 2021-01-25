@@ -7,27 +7,25 @@ const allItems = Array(240)
   .fill()
   .map((_, i) => i + 1);
 
-export const Height = () => {
-  return (
-    <Grommet theme={grommet}>
-      <Box>
-        <InfiniteScroll items={allItems}>
-          {item => (
-            <Box
-              key={item}
-              height={item <= 25 ? 'xsmall' : 'xxsmall'}
-              pad="medium"
-              border={{ side: 'bottom' }}
-              align="center"
-            >
-              <Text>item {item}</Text>
-            </Box>
-          )}
-        </InfiniteScroll>
-      </Box>
-    </Grommet>
-  );
-};
+export const Height = () => (
+  <Grommet theme={grommet}>
+    <Box>
+      <InfiniteScroll items={allItems}>
+        {item => (
+          <Box
+            key={item}
+            height={item <= 25 ? 'xsmall' : 'xxsmall'}
+            pad="medium"
+            border={{ side: 'bottom' }}
+            align="center"
+          >
+            <Text>item {item}</Text>
+          </Box>
+        )}
+      </InfiniteScroll>
+    </Box>
+  </Grommet>
+);
 
 Height.storyName = 'Variable item height';
 
