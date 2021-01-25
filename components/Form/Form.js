@@ -166,7 +166,7 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
     var useValue;
     if (componentValue !== undefined) // input component drives, pattern #2
       useValue = componentValue;else if (valueProp && name && formValue !== undefined) // form drives, pattern #1
-      useValue = formValue;else if (formValue === undefined) // form has reset, so reset input value as well
+      useValue = formValue;else if (formValue === undefined && name) // form has reset, so reset input value as well
       useValue = initialValue;else useValue = inputValue;
     return [useValue, function (nextComponentValue) {
       if (name) {
