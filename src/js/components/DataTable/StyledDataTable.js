@@ -104,8 +104,8 @@ const StyledDataTableHeader = styled(TableHeader)`
     `
     display: table;
     width: ${
-      props.overflowComp && props.overflowComp !== 0
-        ? `calc(100% - ${props.overflowComp}px);`
+      props.scrollOffset && props.scrollOffset !== 0
+        ? `calc(100% - ${props.scrollOffset}px);`
         : `100%`
     };
     table-layout: fixed;
@@ -121,8 +121,8 @@ const StyledDataTableFooter = styled(TableFooter)`
     `
     display: table;
     width: ${
-      props.overflowComp && props.overflowComp !== 0
-        ? `calc(100% - ${props.overflowComp}px);`
+      props.scrollOffset && props.scrollOffset !== 0
+        ? `calc(100% - ${props.scrollOffset}px);`
         : `100%`
     };
     table-layout: fixed;

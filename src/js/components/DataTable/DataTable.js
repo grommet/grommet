@@ -132,11 +132,11 @@ const DataTable = ({
   const [headerHeight, setHeaderHeight] = useState();
   const [footerHeight, setFooterHeight] = useState();
 
-  const [overflowComp, setOverflowComp] = useState(0);
+  const [scrollOffset, setScrollOffset] = useState(0);
 
   useEffect(() => {
     if (bodyRef.current) {
-      setOverflowComp(
+      setScrollOffset(
         bodyRef.current?.parentElement?.clientWidth -
           bodyRef.current?.clientWidth,
       );
@@ -263,7 +263,7 @@ const DataTable = ({
         }
         onSort={sortable || sortProp || onSortProp ? onSort : undefined}
         onToggle={onToggleGroups}
-        overflowComp={overflowComp}
+        scrollOffset={scrollOffset}
         primaryProperty={primaryProperty}
       />
       {groups ? (
@@ -317,7 +317,7 @@ const DataTable = ({
           footerValues={footerValues}
           groups={groups}
           onSelect={onSelect}
-          overflowComp={overflowComp}
+          scrollOffset={scrollOffset}
           pad={normalizeProp(pad, 'footer')}
           pin={pin === true || pin === 'footer'}
           primaryProperty={primaryProperty}
