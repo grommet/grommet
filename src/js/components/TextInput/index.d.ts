@@ -13,6 +13,7 @@ export interface TextInputProps {
   dropTarget?: object;
   dropProps?: DropProps;
   focusIndicator?: boolean;
+  defaultSuggestion?: number;
   icon?: JSX.Element;
   id?: string;
   messages?: {
@@ -23,6 +24,10 @@ export interface TextInputProps {
   };
   name?: string;
   onSelect?: (x: {
+    target: React.RefObject<HTMLElement>['current'];
+    suggestion: any;
+  }) => void;
+  onSuggestionSelect?: (x: {
     target: React.RefObject<HTMLElement>['current'];
     suggestion: any;
   }) => void;

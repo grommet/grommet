@@ -47,6 +47,7 @@ export interface ColumnConfig<TRowType> {
   search?: boolean;
   sortable?: boolean;
   size?: ColumnSizeType | string;
+  units?: string;
   verticalAlign?: 'middle' | 'top' | 'bottom';
 }
 
@@ -101,7 +102,7 @@ export interface DataTableProps<TRowType = any> {
 }
 
 declare class DataTable<TRowType = any> extends React.Component<
-  DataTableProps<TRowType> & JSX.IntrinsicElements['table']
+  DataTableProps<TRowType> & Omit<JSX.IntrinsicElements['table'], 'onSelect'>
 > {}
 
 export { DataTable };

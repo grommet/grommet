@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 
 import { FormClose } from 'grommet-icons';
 import { Box, Button, CheckBox, Grommet, Select, Text } from 'grommet';
+// https://github.com/grommet/grommet/blob/master/src/js/components/Select/stories/theme.js
 import { theme as customSearchTheme } from './theme';
 
 const allContentPartners = [
@@ -59,7 +60,7 @@ export const CustomSearch = () => {
   const [selectedContentPartners, setSelectedContentPartners] = useState([]);
   const [contentPartners, setContentPartners] = useState(allContentPartners);
   const [searching, setSearching] = useState(false);
-  const [searchQuery, setSerchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
 
   const selectRef = useRef();
 
@@ -129,22 +130,20 @@ export const CustomSearch = () => {
     </Box>
   );
 
-  const sortContentPartners = selectedPartnerNames => {
-    return (p1, p2) => {
-      const p1Exists = selectedPartnerNames.includes(p1.name);
-      const p2Exists = selectedPartnerNames.includes(p2.name);
+  const sortContentPartners = selectedPartnerNames => (p1, p2) => {
+    const p1Exists = selectedPartnerNames.includes(p1.name);
+    const p2Exists = selectedPartnerNames.includes(p2.name);
 
-      if (!p1Exists && p2Exists) {
-        return 1;
-      }
-      if (p1Exists && !p2Exists) {
-        return -1;
-      }
-      if (p1.name.toLowerCase() < p2.name.toLowerCase()) {
-        return -1;
-      }
+    if (!p1Exists && p2Exists) {
       return 1;
-    };
+    }
+    if (p1Exists && !p2Exists) {
+      return -1;
+    }
+    if (p1.name.toLowerCase() < p2.name.toLowerCase()) {
+      return -1;
+    }
+    return 1;
   };
 
   return (
@@ -186,7 +185,7 @@ export const CustomSearch = () => {
           }}
           onSearch={query => {
             setSearching(true);
-            setSerchQuery(query);
+            setSearchQuery(query);
           }}
         >
           {renderOption}

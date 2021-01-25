@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactText, useState } from 'react';
 
 import { Grommet, Box, DataTable, Meter, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -12,7 +12,7 @@ const amountFormatter = new Intl.NumberFormat('en-US', {
   minimumFractionDigits: 2,
 });
 
-// Type annotations can only be used in TypeScript files.
+// Type annotations can only be used in TypeScript files
 // Remove ': ColumnConfig<RowType>[]' if you are not using TypeScript.
 export const columns: ColumnConfig<RowType>[] = [
   {
@@ -140,20 +140,26 @@ export const DATA: RowType[] = [
   },
 ];
 
-export const ClickableDataTable = () => (
-  <Grommet theme={grommet}>
-    <Box align="center" pad="large">
-      {/* eslint-disable no-alert */}
-      <DataTable
-        columns={columns}
-        data={DATA}
-        step={10}
-        onClickRow={event => console.log(event.datum)}
-      />
-    </Box>
-  </Grommet>
-);
+export const OnSelectDataTable = () => {
+  // Type arguments can only be used in TypeScript files.
+  // Remove <ReactText[]> if you are not using Typescript.
+  const [select, setSelect] = useState<ReactText[]>([]);
 
-ClickableDataTable.story = {
-  name: 'Clickable',
+  return (
+    <Grommet theme={grommet}>
+      <Box align="center" pad="large">
+        <DataTable
+          columns={columns}
+          data={DATA}
+          step={10}
+          select={select}
+          onSelect={setSelect}
+        />
+      </Box>
+    </Grommet>
+  );
+};
+
+OnSelectDataTable.story = {
+  name: 'OnSelect',
 };

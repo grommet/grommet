@@ -17,7 +17,7 @@ const allSeasons = [
   'S10',
 ];
 
-export const Seasons = () => {
+export const ChildrenRender = () => {
   const [selected, setSelected] = useState([]);
 
   const onRemoveSeason = season => {
@@ -99,4 +99,8 @@ export const Seasons = () => {
       </Box>
     </Grommet>
   );
+};
+
+ChildrenRender.story = {
+  name: 'Children render',
 };
