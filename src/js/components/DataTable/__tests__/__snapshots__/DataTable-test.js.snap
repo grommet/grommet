@@ -15097,24 +15097,6 @@ exports[`DataTable units 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c5 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c7 {
-  margin-left: 6px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #666666;
-}
-
-.c11 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -15162,6 +15144,24 @@ exports[`DataTable units 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.c5 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c7 {
+  margin-left: 6px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #666666;
+}
+
+.c11 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
 }
 
 .c3 {
