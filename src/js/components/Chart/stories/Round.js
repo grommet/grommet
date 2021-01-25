@@ -21,5 +21,5 @@ export const Round = () => (
 );
 
 export default {
-  title: 'Visualizations/Chart',
+  title: 'Visualizations/Chart/Round',
 };
