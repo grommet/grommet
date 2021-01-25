@@ -11,3 +11,7 @@ export const Fallback = () => (
     />
   </Grommet>
 );
+
+export default {
+  title: 'Media/Image/Fallback',
+};

@@ -23,3 +23,7 @@ export const Dash = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Visualizations/Chart/Dash',
+};

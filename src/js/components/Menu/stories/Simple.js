@@ -26,3 +26,7 @@ export const Simple = () => <SimpleMenu />;
 Simple.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Controls/Menu/Simple',
+};

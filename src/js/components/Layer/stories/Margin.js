@@ -30,3 +30,7 @@ export const MarginTopCenter = () => (
   <MarginLayer margin={{ top: 'large' }} position="top" />
 );
 MarginTopCenter.storyName = 'Margin top (center)';
+
+export default {
+  title: 'Layout/Layer/Margin',
+};

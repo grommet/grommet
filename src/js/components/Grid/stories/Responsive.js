@@ -189,3 +189,7 @@ export const ResponsiveGrid = () => (
 );
 
 ResponsiveGrid.storyName = 'Responsive grid';
+
+export default {
+  title: 'Layout/Grid/Responsive grid',
+};

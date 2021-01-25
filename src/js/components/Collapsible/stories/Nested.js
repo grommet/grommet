@@ -107,3 +107,7 @@ export const Nested = () => {
 Nested.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Utilities/Collapsible/Nested',
+};

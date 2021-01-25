@@ -44,3 +44,7 @@ const IconItemsMenu = () => (
 
 export const ItemWithIcon = () => <IconItemsMenu />;
 ItemWithIcon.storyName = 'Item with icon';
+
+export default {
+  title: 'Controls/Menu/Item with icon',
+};

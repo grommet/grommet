@@ -25,3 +25,7 @@ export const Fill = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Media/Image/Fill',
+};

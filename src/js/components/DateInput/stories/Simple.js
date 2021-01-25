@@ -25,3 +25,7 @@ export const Simple = () => {
 Simple.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Input/DateInput/Simple',
+};

@@ -79,3 +79,7 @@ LazyLoadingOptions.storyName = 'Lazy loading options';
 LazyLoadingOptions.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Input/Select/Lazy loading options',
+};

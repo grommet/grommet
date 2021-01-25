@@ -28,3 +28,7 @@ export const GroupedDataTable = () => (
 );
 
 GroupedDataTable.storyName = 'Grouped';
+
+export default {
+  title: 'Visualizations/DataTable/Grouped',
+};

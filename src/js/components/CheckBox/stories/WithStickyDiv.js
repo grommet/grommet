@@ -49,3 +49,7 @@ export const WithStickyDiv = () => {
 };
 
 WithStickyDiv.storyName = 'With sticky div';
+
+export default {
+  title: 'Input/CheckBox/With sticky div',
+};

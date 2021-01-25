@@ -37,3 +37,7 @@ export const GridAreasAlternative = () => {
 };
 
 GridAreasAlternative.storyName = 'Areas prop alternative';
+
+export default {
+  title: 'Layout/Grid',
+};

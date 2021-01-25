@@ -7,10 +7,10 @@ const allItems = Array(2000)
   .fill()
   .map((_, i) => `item ${i + 1}`);
 
-export const GridInfiniteScroll = ({ ...rest }) => (
+export const GridInfiniteScroll = () => (
   <Grommet theme={grommet}>
     <Grid columns="xsmall" rows="small">
-      <InfiniteScroll items={allItems} step={12} {...rest}>
+      <InfiniteScroll items={allItems} step={12}>
         {item => (
           <Box key={item} as="article" pad="xsmall">
             <Image src="https://via.placeholder.com/350x150" />
@@ -22,8 +22,8 @@ export const GridInfiniteScroll = ({ ...rest }) => (
   </Grommet>
 );
 
-export const GridWithShow = () => <GridInfiniteScroll show={78} />;
-
 GridInfiniteScroll.storyName = 'Grid';
 
-GridWithShow.storyName = 'Grid with show item 77';
+export default {
+  title: 'Utilities/InfiniteScroll/Grid',
+};

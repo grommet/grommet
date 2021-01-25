@@ -77,3 +77,7 @@ export const CustomToggle = props => {
 };
 
 CustomToggle.storyName = 'Custom toggle';
+
+export default {
+  title: 'Input/CheckBox/Custom toggle',
+};

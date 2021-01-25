@@ -17,3 +17,7 @@ export const Default = () => <DefaultAnchor />;
 Default.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Controls/Anchor/Default',
+};

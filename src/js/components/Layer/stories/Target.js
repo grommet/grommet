@@ -70,3 +70,7 @@ export const TargetLayer = () => {
 };
 
 TargetLayer.storyName = 'Target';
+
+export default {
+  title: 'Layout/Layer/Target',
+};

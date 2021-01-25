@@ -16,3 +16,7 @@ export const PlainLayer = () => (
 );
 
 PlainLayer.storyName = 'Plain';
+
+export default {
+  title: 'Layout/Layer/Plain',
+};

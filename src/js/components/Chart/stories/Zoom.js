@@ -129,3 +129,7 @@ export const Zoom = () => (
 Zoom.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Visualizations/Chart/Zoom',
+};

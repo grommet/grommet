@@ -38,3 +38,9 @@ export const CalendarDrop = () => <CalendarDropButton />;
 CalendarDrop.parameters = {
   chromatic: { disable: true },
 };
+
+CalendarDrop.storyName = 'Calendar';
+
+export default {
+  title: 'Controls/DropButton/Calendar',
+};

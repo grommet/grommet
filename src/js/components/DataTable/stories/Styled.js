@@ -28,3 +28,7 @@ export const StyledDataTable = () => (
 );
 
 StyledDataTable.storyName = 'Styled';
+
+export default {
+  title: 'Visualizations/DataTable/Styled',
+};

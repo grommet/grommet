@@ -34,3 +34,7 @@ export const LabelledCharts = () => (
 );
 
 LabelledCharts.storyName = 'Labelled';
+
+export default {
+  title: 'Visualizations/Chart/Labelled',
+};

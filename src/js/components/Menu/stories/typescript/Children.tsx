@@ -44,3 +44,7 @@ const Example = () => (
 );
 
 export const Children = () => <Example />;
+
+export default {
+  title: 'Controls/Menu/Children',
+};

@@ -31,3 +31,7 @@ export const Themed = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Visualizations/List/Theme',
+};

@@ -63,3 +63,7 @@ export const Search = () => {
 Search.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Input/Select/Search',
+};

@@ -82,3 +82,7 @@ export const BackgroundBox = () => (
 );
 
 BackgroundBox.storyName = 'Background';
+
+export default {
+  title: 'Layout/Box/Background',
+};

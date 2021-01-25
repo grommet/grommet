@@ -24,3 +24,7 @@ export const TunableDataTable = () => (
 );
 
 TunableDataTable.storyName = 'Tunable';
+
+export default {
+  title: 'Visualizations/DataTable/Tunable',
+};

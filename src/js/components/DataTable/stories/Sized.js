@@ -16,3 +16,7 @@ export const SizedDataTable = () => (
 );
 
 SizedDataTable.storyName = 'Sized';
+
+export default {
+  title: 'Visualizations/DataTable/Sized',
+};

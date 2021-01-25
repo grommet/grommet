@@ -3,11 +3,11 @@ import { Attraction, Car, TreeOption } from 'grommet-icons';
 
 import { Grommet, Box, Carousel } from 'grommet';
 
-export const SimpleCarousel = ({ initialChild, ...props }) => {
+export const Simple = () => {
   return (
     <Grommet>
       <Box align="center" pad="large">
-        <Carousel initialChild={initialChild} {...props}>
+        <Carousel>
           <Box pad="xlarge" background="accent-1">
             <Attraction size="xlarge" />
           </Box>
@@ -23,14 +23,10 @@ export const SimpleCarousel = ({ initialChild, ...props }) => {
   );
 };
 
-export const Simple = () => <SimpleCarousel />;
-export const Initial = () => <SimpleCarousel initialChild={1} />;
-export const NoControls = () => <SimpleCarousel controls={false} play={1500} />;
-
 Simple.parameters = {
   chromatic: { disable: true },
 };
 
-Initial.storyName = 'Initial child';
-
-NoControls.storyName = 'Without controls';
+export default {
+  title: 'Media/Carousel/Simple',
+};

@@ -69,3 +69,7 @@ export const TSCustom = () => (
   </>
 );
 TSCustom.storyName = 'TS-Custom';
+
+export default {
+  title: 'Controls/Button/TS-Custom',
+};

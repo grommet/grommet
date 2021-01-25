@@ -25,3 +25,7 @@ UrlMaskedInput.storyName = 'URL';
 UrlMaskedInput.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Input/MaskedInput/URL',
+};

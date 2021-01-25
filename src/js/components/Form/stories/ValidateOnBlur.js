@@ -54,3 +54,7 @@ export const ValidateOnBlur = () => (
 );
 
 ValidateOnBlur.storyName = 'Validate on blur';
+
+export default {
+  title: 'Input/Form/Validate on blur',
+};

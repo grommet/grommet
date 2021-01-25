@@ -70,3 +70,7 @@ NotificationLayer.storyName = 'Notification';
 NotificationLayer.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Layout/Layer/Notification',
+};

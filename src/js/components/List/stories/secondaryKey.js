@@ -31,3 +31,9 @@ export const SecondaryKey = () => (
     </Box>
   </Grommet>
 );
+
+SecondaryKey.storyName = 'Secondary key';
+
+export default {
+  title: 'Visualizations/List/Secondary key',
+};

@@ -95,3 +95,7 @@ FormLayer.storyName = 'Form';
 FormLayer.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Layout/Layer/Form',
+};

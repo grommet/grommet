@@ -62,3 +62,7 @@ export const Filtered = () => {
 Filtered.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Input/MaskedInput/Filtered',
+};

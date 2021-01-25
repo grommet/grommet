@@ -22,3 +22,7 @@ export const RTLLayer = () => (
 );
 
 RTLLayer.storyName = 'RTL';
+
+export default {
+  title: 'Layout/Layer/RTL',
+};

@@ -14,3 +14,7 @@ export const SundayFirstDayCalendar = () => (
 );
 
 SundayFirstDayCalendar.storyName = '1st on Sunday';
+
+export default {
+  title: `Visualizations/Calendar/1st on Sunday`,
+};

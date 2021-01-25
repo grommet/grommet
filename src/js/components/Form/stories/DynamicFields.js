@@ -49,3 +49,7 @@ export const DynamicFields = () => {
 };
 
 DynamicFields.storyName = 'Dynamic fields';
+
+export default {
+  title: 'Input/Form/Dynamic fields',
+};

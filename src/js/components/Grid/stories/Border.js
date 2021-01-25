@@ -71,3 +71,7 @@ export const BorderGrid = () => (
 );
 
 BorderGrid.storyName = 'Border';
+
+export default {
+  title: 'Layout/Grid/Border',
+};

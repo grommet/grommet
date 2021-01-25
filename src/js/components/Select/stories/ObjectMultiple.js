@@ -49,3 +49,7 @@ export const ObjectMultiple = () => {
 };
 
 ObjectMultiple.storyName = 'Object multiple';
+
+export default {
+  title: 'Input/Select/Object multiple',
+};

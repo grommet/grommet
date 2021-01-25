@@ -20,3 +20,7 @@ export const Dark = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Input/Select/Dark',
+};

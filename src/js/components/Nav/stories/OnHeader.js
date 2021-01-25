@@ -33,3 +33,7 @@ const OnHeaderNav = () => (
 
 export const OnHeader = () => <OnHeaderNav />;
 OnHeader.storyName = 'On header';
+
+export default {
+  title: 'Controls/Nav/On header',
+};

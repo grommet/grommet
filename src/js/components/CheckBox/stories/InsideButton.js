@@ -25,3 +25,7 @@ export const InsideButton = () => {
 };
 
 InsideButton.storyName = 'Inside a Button';
+
+export default {
+  title: 'Input/CheckBox/Inside a Button',
+};

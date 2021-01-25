@@ -42,3 +42,7 @@ export const InitialValues = () => {
 };
 
 InitialValues.storyName = 'Initial values';
+
+export default {
+  title: 'Input/CheckBoxGroup/Initial value',
+};

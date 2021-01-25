@@ -80,3 +80,7 @@ export const Fill = props => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Controls/Button/Fill',
+};

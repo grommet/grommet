@@ -46,3 +46,7 @@ OnClickItemList.parameters = {
   // and snapshot is the same as selection
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Visualizations/List/onClickItem',
+};

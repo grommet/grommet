@@ -55,3 +55,7 @@ export const FormUncontrolled = () => {
 };
 
 FormUncontrolled.storyName = 'Form uncontrolled';
+
+export default {
+  title: 'Input/CheckBoxGroup/Form uncontrolled',
+};

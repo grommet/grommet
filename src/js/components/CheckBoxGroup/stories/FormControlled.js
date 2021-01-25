@@ -33,3 +33,7 @@ export const FormControlled = () => {
 };
 
 FormControlled.storyName = 'Form controlled';
+
+export default {
+  title: 'Input/CheckBoxGroup/Form controlled',
+};

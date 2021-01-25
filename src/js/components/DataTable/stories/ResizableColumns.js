@@ -3,7 +3,7 @@ import React from 'react';
 import { Grommet, Box, DataTable, Heading } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-export const DATA = [
+const DATA = [
   {
     location: 'Winston Salem',
     date: '2018-01-09',
@@ -76,3 +76,7 @@ export const ResizableDataTable = () => (
 );
 
 ResizableDataTable.storyName = 'Resizable columns';
+
+export default {
+  title: 'Visualizations/DataTable/Resizable columns',
+};

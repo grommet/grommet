@@ -27,3 +27,7 @@ export const ClassChildrenInfiniteScroll = props => (
 );
 
 ClassChildrenInfiniteScroll.storyName = 'Class children';
+
+export default {
+  title: 'Utilities/InfiniteScroll/Class children',
+};

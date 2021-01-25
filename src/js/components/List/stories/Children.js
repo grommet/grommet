@@ -27,3 +27,7 @@ export const Children = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Visualizations/List/Children',
+};

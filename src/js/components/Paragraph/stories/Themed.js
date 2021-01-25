@@ -23,3 +23,7 @@ export const Themed = () => (
 Themed.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Type/Paragraph/Themed',
+};

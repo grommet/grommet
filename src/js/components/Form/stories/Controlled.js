@@ -84,3 +84,7 @@ export const Controlled = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Input/Form/Controlled',
+};

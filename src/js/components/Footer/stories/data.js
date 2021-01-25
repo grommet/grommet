@@ -23,3 +23,7 @@ export const fiveColumns = [
     'briefing center',
   ],
 ];
+
+export default {
+  title: 'Layout/Footer',
+};

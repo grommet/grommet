@@ -64,3 +64,7 @@ export const ControlledDataTable = () => {
 };
 
 ControlledDataTable.storyName = 'Controlled';
+
+export default {
+  title: 'Visualizations/DataTable/Controlled',
+};

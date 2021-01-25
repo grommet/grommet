@@ -3,7 +3,7 @@ import React from 'react';
 import { Accordion, AccordionPanel, Box, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const SimpleAccordion = props => {
+export const Simple = props => {
   const { animate, multiple, ...rest } = props;
   return (
     <Grommet theme={grommet}>
@@ -32,19 +32,6 @@ const SimpleAccordion = props => {
   );
 };
 
-export const Simple = () => <SimpleAccordion />;
-
-export const DarkNoAnimation = () => (
-  <SimpleAccordion animate={false} background="dark-2" />
-);
-DarkNoAnimation.storyName = 'Dark no animation';
-
-DarkNoAnimation.parameters = {
-  chromatic: { disable: true },
-};
-
-export const Multiple = () => <SimpleAccordion multiple />;
-
-Multiple.parameters = {
-  chromatic: { disable: true },
+export default {
+  title: 'Controls/Accordion/Simple',
 };

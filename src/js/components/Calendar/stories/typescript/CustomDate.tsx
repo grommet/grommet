@@ -48,3 +48,7 @@ export const CustomDateCalendar = () => (
 );
 
 CustomDateCalendar.storyName = 'Custom date';
+
+export default {
+  title: `Visualizations/Calendar/Custom date`,
+};

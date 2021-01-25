@@ -197,3 +197,7 @@ export const CustomSearch = () => {
 };
 
 CustomSearch.storyName = 'Custom search';
+
+export default {
+  title: 'Input/Select/Custom search',
+};

@@ -97,3 +97,7 @@ UncontrolledTyped.storyName = 'Uncontrolled typed';
 UncontrolledTyped.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Input/Form/Uncontrolled typed',
+};

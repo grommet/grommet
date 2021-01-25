@@ -17,3 +17,7 @@ const InlineAnchor = () => {
 };
 
 export const Inline = () => <InlineAnchor />;
+
+export default {
+  title: 'Controls/Anchor/Inline',
+};

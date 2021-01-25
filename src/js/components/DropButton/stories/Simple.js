@@ -50,3 +50,7 @@ export const Simple = () => <SimpleDropButton />;
 Simple.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Controls/DropButton/Simple',
+};

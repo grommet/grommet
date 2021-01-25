@@ -31,8 +31,8 @@ export const DefaultSuggestion = () => {
   );
 };
 
-DefaultSuggestion.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
-};
+// DefaultSuggestion.story = {
+//   parameters: {
+//     chromatic: { disable: true },
+//   },
+// };

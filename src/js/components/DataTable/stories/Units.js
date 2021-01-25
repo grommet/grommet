@@ -3,7 +3,7 @@ import React from 'react';
 import { Grommet, Box, DataTable, Heading } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-export const DATA = [
+const DATA = [
   {
     name: 'Boot',
     free: 24,
@@ -49,3 +49,7 @@ export const UnitsDataTable = () => (
 );
 
 UnitsDataTable.storyName = 'Units';
+
+export default {
+  title: 'Visualizations/DataTable/Units',
+};

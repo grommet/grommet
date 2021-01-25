@@ -6,7 +6,7 @@ import { grommet } from 'grommet/themes';
 import { calcs } from '../calcs';
 import { generateData } from './data';
 
-export const ScanChart = props => {
+const ScanChart = props => {
   const [active, setActive] = useState(undefined);
 
   const { data, max } = props;
@@ -125,4 +125,8 @@ export const Scan = () => <ScanChart data={generateData(30, 100)} max={100} />;
 
 Scan.parameters = {
   chromatic: { disable: true },
+};
+
+export default {
+  title: 'Visualizations/Chart/Scan',
 };

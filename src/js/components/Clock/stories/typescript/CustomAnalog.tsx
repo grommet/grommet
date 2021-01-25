@@ -40,3 +40,7 @@ CustomAnalog.storyName = 'Custom analog';
 CustomAnalog.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Visualizations/Clock/Custom analog',
+};

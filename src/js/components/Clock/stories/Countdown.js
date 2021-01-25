@@ -14,3 +14,7 @@ export const Countdown = () => (
 Countdown.parameters = {
   chromatic: { disable: true },
 };
+
+export default {
+  title: 'Visualizations/Clock/Countdown',
+};

@@ -128,3 +128,7 @@ export const ControlledInputLazy = () => {
 };
 
 ControlledInputLazy.storyName = 'Controlled input lazy';
+
+export default {
+  title: 'Input/Form/Controlled input lazy',
+};

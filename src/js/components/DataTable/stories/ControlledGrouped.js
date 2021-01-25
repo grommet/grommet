@@ -34,3 +34,7 @@ export const ControlledGroupedDataTable = () => {
 };
 
 ControlledGroupedDataTable.storyName = 'Controlled grouped';
+
+export default {
+  title: 'Visualizations/DataTable/Controlled grouped',
+};
