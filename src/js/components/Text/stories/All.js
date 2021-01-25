@@ -4,6 +4,11 @@ import { Box, Grommet, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const sizes = [
+  '6xl',
+  '5xl',
+  '4xl',
+  '3xl',
+  '2xl',
   'xxlarge',
   'xlarge',
   'large',
