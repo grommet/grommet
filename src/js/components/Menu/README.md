@@ -8,7 +8,7 @@ The labels and behavior of the contained Buttons are described
       This allows you to customize the rendering of the Menu button 
       in those cases.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Controls-Menu&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/menu&module=%2Fsrc%2FMenu.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Controls-Menu&full=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/menu&module=%2Fsrc%2FMenu.js)
 ## Usage
 
 ```javascript
@@ -133,15 +133,25 @@ string
 
 **children**
 
-Function that will be called to render the visual representation.
-      It will be passed an object containing button props.
-      It should return a react element.
-      For example:
-      `children={({ disabled, drop, hover, focus }) => <Box ...>{...}</Box>}`
-      
+Menu can take in children as a function or node.
+
+- Function that will be called to render the visual representation.
+It will be passed a props object. The props passed are
+different depending on the menu `open` state. When the menu is closed,
+two props are passed:
+`{ hover, focus }`,
+but when the menu is open, all menu props are passed to this function.\
+It should return a React element.
+For example:
+`children={(props) => <Box ...>{...}</Box>}`\
+**Note:** This function will be invoked on every mouse move when hovering.
+- Node is anything that can be rendered, e.g.
+`<Box><CaretNext /><Text>Open Me</Text></Box>`
+
 
 ```
 function
+node
 ```
 
 **disabled**
@@ -157,7 +167,7 @@ boolean
 Where to place the drop down.
 The keys correspond to a side of the drop down.
 The values correspond to a side of the control. For instance,
-{left: 'left', top: 'bottom'} would align the left edges and the top of
+`{left: 'left', top: 'bottom'}` would align the left edges and the top of
 the drop down to the bottom of the control. At most one of left or right and
 one of top or bottom should be specified. Defaults to `{
   "top": "top",
@@ -242,7 +252,7 @@ node
 
 Required. Menu items to be placed inside the drop down.
 The object values can be any Button prop, 
-for example: label, onClick, and href. Defaults to `[]`.
+for example: `label`, `onClick`, and `href`. Defaults to `[]`.
 
 ```
 [object]

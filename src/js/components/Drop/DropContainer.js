@@ -12,12 +12,12 @@ import {
   backgroundIsDark,
   findScrollParents,
   parseMetricToNum,
+  PortalContext,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 
-import { PortalContext } from './PortalContext';
 import { StyledDrop } from './StyledDrop';
 
 // using react synthetic event to be able to stop propagation that
@@ -338,6 +338,10 @@ const DropContainer = forwardRef(
           trapFocus={trapFocus}
         >
           <Keyboard
+            // should capture keyboard event before other elements,
+            // such as Layer
+            // https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+            capture
             onEsc={
               onEsc
                 ? event => {

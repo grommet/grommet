@@ -211,12 +211,10 @@ const Chart = React.forwardRef(
 
     // Converts values to drawing coordinates.
     // Takes into account the bounds, any inset, and the scale.
-    const valueToCoordinate = (xValue, yValue) => {
-      return [
-        (xValue - bounds[0][0]) * scale[0] + inset[0],
-        size[1] - ((yValue - bounds[1][0]) * scale[1] + inset[1]),
-      ];
-    };
+    const valueToCoordinate = (xValue, yValue) => [
+      (xValue - bounds[0][0]) * scale[0] + inset[0],
+      size[1] - ((yValue - bounds[1][0]) * scale[1] + inset[1]),
+    ];
 
     const renderBars = () =>
       (values || [])
@@ -349,8 +347,8 @@ const Chart = React.forwardRef(
           ).join(',')}`;
         });
       (values || [])
-        .reverse()
         .filter(({ value }) => value[1] !== undefined)
+        .reverse()
         .forEach(({ value }) => {
           d += ` L ${valueToCoordinate(
             value[0],
@@ -521,6 +519,7 @@ const Chart = React.forwardRef(
         <defs>
           <linearGradient id={gradientId} x1={0} y1={0} x2={0} y2={1}>
             {color
+              .slice(0)
               .sort((c1, c2) => c2.value - c1.value)
               .map(({ value, color: gradientColor }) => (
                 <stop

@@ -191,4 +191,79 @@ describe('DataChart', () => {
     expect(tree).toMatchSnapshot();
     warnSpy.mockRestore();
   });
+
+  test('type', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
+    const component = renderer.create(
+      <Grommet>
+        {['bar', 'line', 'area'].map(type => (
+          <DataChart
+            key={type}
+            data={data}
+            series="a"
+            chart={[{ property: 'a', type }]}
+          />
+        ))}
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+    warnSpy.mockRestore();
+  });
+
+  test('bars', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
+    const component = renderer.create(
+      <Grommet>
+        <DataChart
+          data={data}
+          series={['a', 'c']}
+          chart={[{ property: ['a', 'c'], type: 'bars' }]}
+        />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+    warnSpy.mockRestore();
+  });
+
+  test('bars colors', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
+    const component = renderer.create(
+      <Grommet>
+        <DataChart
+          data={data}
+          series={['a', 'c']}
+          chart={[
+            {
+              property: [
+                { property: 'a', color: 'graph-1' },
+                { property: 'c', color: 'graph-3' },
+              ],
+              type: 'bars',
+            },
+          ]}
+        />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+    warnSpy.mockRestore();
+  });
+
+  test('bars invalid', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
+    const component = renderer.create(
+      <Grommet>
+        <DataChart
+          data={data}
+          series={['a']}
+          chart={[{ property: ['a', 'c', ''], type: 'bars' }]}
+        />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+    warnSpy.mockRestore();
+  });
 });

@@ -63,6 +63,7 @@ const Form = forwardRef(
     const [validationResults, setValidationResults] = useState(
       defaultValidationResults,
     );
+
     useEffect(
       () => setValidationResults({ errors: errorsProp, infos: infosProp }),
       [errorsProp, infosProp],
@@ -146,6 +147,9 @@ const Form = forwardRef(
       else if (valueProp && name && formValue !== undefined)
         // form drives, pattern #1
         useValue = formValue;
+      else if (formValue === undefined && name)
+        // form has reset, so reset input value as well
+        useValue = initialValue;
       else useValue = inputValue;
 
       return [

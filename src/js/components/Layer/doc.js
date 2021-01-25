@@ -2,6 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
+import { backgroundDoc } from '../../utils/prop-types';
 
 const PAD_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large'];
 
@@ -35,12 +36,13 @@ export const doc = Layer => {
         'Animation transition of the Layer content when it opens and closes.',
       )
       .defaultValue('slide'),
+    background: backgroundDoc,
     full: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.oneOf(['vertical', 'horizontal']),
     ])
       .description(
-        `Whether the width and/or height should fill the current viewport 
+        `Whether the width and/or height should fill the current viewport
         size.`,
       )
       .defaultValue(false),
@@ -88,12 +90,12 @@ particular side of the layer`,
     ),
     modal: PropTypes.bool
       .description(
-        `Whether there should be an overlay preventing interaction underneath 
+        `Whether there should be an overlay preventing interaction underneath
         the layer.`,
       )
       .defaultValue(true),
     onClickOutside: PropTypes.func.description(
-      `Function that will be invoked on modal layers when the user clicks 
+      `Function that will be invoked on modal layers when the user clicks
       outside the layer.`,
     ),
     onEsc: PropTypes.func.description(
@@ -127,7 +129,7 @@ particular side of the layer`,
       )
       .defaultValue(true),
     target: PropTypes.object.description(
-      `Target where the layer will be aligned to. This should be a React 
+      `Target where the layer will be aligned to. This should be a React
       reference.`,
     ),
   };
@@ -146,13 +148,37 @@ export const themeDoc = {
     type: 'string',
     defaultValue: 'white',
   },
+  'layer.border.radius': {
+    description: 'The rounding of the Layer corners.',
+    type: 'string',
+    defaultValue: 'white',
+  },
+  'layer.border.intelligentRounding': {
+    description: `Whether the border-radius of the Layer should adapt based on 
+    the Layer's position. Wherever the Layer is touching the edge of the 
+    screen, a border-radius of 0 will be applied.`,
+    type: 'boolean',
+    defaultValue: undefined,
+  },
   'layer.container.zIndex': {
     description: 'The stack order of Layer Container.',
     type: 'number',
-    defaultValue: '15',
+    defaultValue: '20',
   },
   'layer.extend': {
     description: 'Any additional style for Layer.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'layer.container.elevation': {
+    description: `Elevated height above the underlying container, indicated via 
+    a drop shadow. Any Box elevation value is valid.`,
+    type: `'none' | 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | 
+    string`,
+    defaultValue: undefined,
+  },
+  'layer.container.extend': {
+    description: 'Any additional style for Layer Container.',
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
@@ -162,7 +188,7 @@ export const themeDoc = {
     defaultValue: 'rgba(0, 0, 0, 0.5)',
   },
   'layer.responsiveBreakpoint': {
-    description: `The actual breakpoint to trigger changes in the border, 
+    description: `The actual breakpoint to trigger changes in the border,
 direction, gap, margin, pad, and round.`,
     type: 'string',
     defaultValue: 'small',
@@ -170,10 +196,10 @@ direction, gap, margin, pad, and round.`,
   'layer.zIndex': {
     description: 'The stack order of Layer.',
     type: 'number',
-    defaultValue: '10',
+    defaultValue: '20',
   },
   ...themeDocUtils.breakpointStyle(
-    `The possible breakpoints that could affect border, direction, gap, margin, 
+    `The possible breakpoints that could affect border, direction, gap, margin,
     pad, and round.`,
   ),
 };

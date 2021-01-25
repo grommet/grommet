@@ -43,17 +43,15 @@ const TooltipButton = ({ icon, name }) => {
   );
 };
 
-export const TrapFocus = () => {
-  return (
-    <Grommet theme={grommet}>
-      <Nav align="center" pad="large">
-        <TooltipButton icon={<Calculator />} name="Calculator" />
-        <TooltipButton icon={<Bug />} name="Bug" />
-        <TooltipButton icon={<Achievement />} name="Achievement" />
-      </Nav>
-    </Grommet>
-  );
-};
+export const TrapFocus = () => (
+  <Grommet theme={grommet}>
+    <Nav align="center" pad="large">
+      <TooltipButton icon={<Calculator />} name="Calculator" />
+      <TooltipButton icon={<Bug />} name="Bug" />
+      <TooltipButton icon={<Achievement />} name="Achievement" />
+    </Nav>
+  </Grommet>
+);
 
 TrapFocus.story = {
   parameters: {

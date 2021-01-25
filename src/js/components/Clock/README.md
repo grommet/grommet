@@ -1,7 +1,7 @@
 ## Clock
 A clock with timezone awareness.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Visualization-Clock&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/clock&module=%2Fsrc%2FClock.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Visualization-Clock&full=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/clock&module=%2Fsrc%2FClock.js)
 ## Usage
 
 ```javascript
@@ -406,4 +406,124 @@ Defaults to
 
 ```
 288px
+```
+
+**clock.digital.text.xsmall.size**
+
+Defines the font size of the Digital Clock Expects `string`.
+
+Defaults to
+
+```
+10px
+```
+
+**clock.digital.text.xsmall.height**
+
+Defines the line height of the Digital Clock Expects `number`.
+
+Defaults to
+
+```
+1.5
+```
+
+**clock.digital.text.small.size**
+
+Defines the font size of the Digital Clock Expects `string`.
+
+Defaults to
+
+```
+14px
+```
+
+**clock.digital.text.small.height**
+
+Defines the line height of the Digital Clock Expects `number`.
+
+Defaults to
+
+```
+1.43
+```
+
+**clock.digital.text.medium.size**
+
+Defines the font size of the Digital Clock Expects `string`.
+
+Defaults to
+
+```
+18px
+```
+
+**clock.digital.text.medium.height**
+
+Defines the line height of the Digital Clock Expects `number`.
+
+Defaults to
+
+```
+1.375
+```
+
+**clock.digital.text.large.size**
+
+Defines the font size of the Digital Clock Expects `string`.
+
+Defaults to
+
+```
+22px
+```
+
+**clock.digital.text.large.height**
+
+Defines the line height of the Digital Clock Expects `number`.
+
+Defaults to
+
+```
+1.167
+```
+
+**clock.digital.text.xlarge.size**
+
+Defines the font size of the Digital Clock Expects `string`.
+
+Defaults to
+
+```
+26px
+```
+
+**clock.digital.text.xlarge.height**
+
+Defines the line height of the Digital Clock Expects `number`.
+
+Defaults to
+
+```
+1.1875
+```
+
+**clock.digital.text.xxlarge.size**
+
+Defines the font size of the Digital Clock Expects `string`.
+
+Defaults to
+
+```
+34px
+```
+
+**clock.digital.text.xxlarge.height**
+
+Defines the line height of the Digital Clock Expects `number`.
+
+Defaults to
+
+```
+1.125
 ```
