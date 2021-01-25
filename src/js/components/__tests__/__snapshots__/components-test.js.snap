@@ -4774,6 +4774,42 @@ boolean",
         "name": "animation",
       },
       Object {
+        "description": "Either a color 
+identifier to use for the background color. For example: 'neutral-1'. Or, a 
+'url()' for an image. Dark is not needed if color is provided.",
+        "format": "string
+{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  dark: 
+    boolean
+    string,
+  image: string,
+  position: string,
+  opacity: 
+    string
+    boolean
+    number
+    weak
+    medium
+    strong,
+  repeat: 
+    no-repeat
+    repeat
+    string,
+  size: 
+    cover
+    contain
+    string,
+  light: string
+}",
+        "name": "background",
+      },
+      Object {
         "defaultValue": false,
         "description": "Whether the width and/or height should fill the current viewport
         size.",
@@ -6464,6 +6500,19 @@ string",
         "name": "closeOnChange",
       },
       Object {
+        "description": "Initially selected value. This can be an array
+      when multiple.",
+        "format": "string
+object
+number
+[
+  string
+  object
+  number
+]",
+        "name": "defaultValue",
+      },
+      Object {
         "defaultValue": false,
         "description": "Whether the entire select or individual options should be disabled.
         An array of numbers indicates the indexes into 'options' of the
@@ -7314,6 +7363,15 @@ string",
         "description": "Custom title to be used by screen readers.",
         "format": "string",
         "name": "a11yTitle",
+      },
+      Object {
+        "description": "Default suggestion to highlight, as an index into the suggestions array.
+
+      If set, the suggestion at the specified index in the suggestions array
+      will be highlighted by default when the suggestions drop opens.
+      ",
+        "format": "number",
+        "name": "defaultSuggestion",
       },
       Object {
         "defaultValue": Object {

@@ -12,11 +12,12 @@ export const Circle = () => {
     setValue(value < 100 ? value + 8 : 20);
   }, 2000);
 
-  useEffect(() => {
-    return () => {
+  useEffect(
+    () => () => {
       clearTimeout(timer.current);
-    };
-  }, []);
+    },
+    [],
+  );
 
   return (
     <Grommet theme={grommet}>

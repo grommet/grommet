@@ -618,6 +618,97 @@ const POSITIONS = {
   },
 };
 
+const roundStyle = (data, theme, position, margin) => {
+  const styles = [];
+  const size = data === true ? 'medium' : data;
+  const round = theme.global.edgeSize[size] || size;
+  // if user provides CSS string such as '50px 12px', apply that always
+  const customCSS = round.split(' ').length > 1;
+
+  if (
+    margin === 'none' &&
+    !customCSS &&
+    theme.layer.border.intelligentRounding === true
+  ) {
+    if (position === 'bottom') {
+      styles.push(
+        css`
+          border-radius: ${round} ${round} 0 0;
+        `,
+      );
+    } else if (position === 'bottom-left') {
+      styles.push(
+        css`
+          border-radius: 0 ${round} 0 0;
+        `,
+      );
+    } else if (position === 'bottom-right') {
+      styles.push(
+        css`
+          border-radius: ${round} 0 0 0;
+        `,
+      );
+    } else if (position === 'end') {
+      // only works on Firefox, what should be fallback?
+      styles.push(css`
+        border-start-start-radius: ${round};
+        border-end-start-radius: ${round};
+      `);
+    } else if (position === 'left') {
+      styles.push(
+        css`
+          border-radius: 0 ${round} ${round} 0;
+        `,
+      );
+    } else if (position === 'right') {
+      styles.push(
+        css`
+          border-radius: ${round} 0 0 ${round};
+        `,
+      );
+    } else if (position === 'start') {
+      // only works on Firefox, what should be fallback?
+      styles.push(css`
+        border-end-end-radius: ${round};
+        border-start-end-radius: ${round};
+      `);
+    } else if (position === 'top') {
+      styles.push(
+        css`
+          border-radius: 0 0 ${round} ${round};
+        `,
+      );
+    } else if (position === 'top-left') {
+      styles.push(
+        css`
+          border-radius: 0 0 ${round} 0;
+        `,
+      );
+    } else if (position === 'top-right') {
+      styles.push(
+        css`
+          border-radius: 0 0 0 ${round};
+        `,
+      );
+    } else {
+      // position is center, apply uniform border-radius
+      styles.push(
+        css`
+          border-radius: ${round};
+        `,
+      );
+    }
+  } else {
+    // if there's a margin apply uniform border-radius, or if user has supplied
+    // a complex CSS string such as "50px 20px" apply this
+    styles.push(css`
+      border-radius: ${round};
+    `);
+  }
+
+  return styles;
+};
+
 const desktopContainerStyle = css`
   ${props => {
     if (!props.modal && props.position === 'hidden') {
@@ -651,8 +742,15 @@ const desktopContainerStyle = css`
       props.theme,
       'right',
     )}px)`};
-  border-radius: ${props =>
-    props.plain ? 0 : props.theme.layer.border.radius};
+  ${props =>
+    props.plain || (props.full === true && props.margin === 'none')
+      ? `border-radius: 0;`
+      : roundStyle(
+          props.theme.layer.border.radius,
+          props.theme,
+          props.position,
+          props.margin,
+        )};
   ${props =>
     (props.position !== 'hidden' &&
       POSITIONS[props.position][props.full](
@@ -677,6 +775,13 @@ const responsiveContainerStyle = css`
   width: 100vw;
 `;
 
+const elevationStyle = css`
+  box-shadow: ${props =>
+    props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][
+      props.theme.layer.container.elevation
+    ]};
+`;
+
 const StyledContainer = styled.div`
   ${props => (!props.modal ? baseStyle : '')}
   display: flex;
@@ -684,11 +789,14 @@ const StyledContainer = styled.div`
   min-height: ${props => props.theme.global.size.xxsmall};
   ${props =>
     !props.plain &&
-    props.theme.layer.background &&
-    backgroundStyle(props.theme.layer.background, props.theme)} outline: none;
+    (props.background || props.theme.layer.background) &&
+    backgroundStyle(
+      props.background || props.theme.layer.background,
+      props.theme,
+    )} outline: none;
   pointer-events: all;
   z-index: ${props => props.theme.layer.container.zIndex};
-
+  ${props => props.theme.layer.container.elevation && elevationStyle}
   ${desktopContainerStyle}
   ${props => {
     if (props.responsive && props.theme.layer.responsiveBreakpoint) {

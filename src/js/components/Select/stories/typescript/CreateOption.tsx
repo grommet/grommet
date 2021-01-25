@@ -10,6 +10,12 @@ const prefix = 'Create';
 // Type annotations can only be used in TypeScript files.
 // Remove ': ThemeType' if you are not using Typescript.
 const theme: ThemeType = {
+  global: {
+    font: {
+      family: `Comic Sans MS, -apple-system,
+         BlinkMacSystemFont`,
+    },
+  },
   select: {
     control: {
       open: {

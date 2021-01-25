@@ -13,6 +13,7 @@ import {
   BreakpointSize,
   ColorType,
   DeepReadonly,
+  ElevationType,
   GapType,
   GraphColorsType,
   MarginType,
@@ -895,8 +896,10 @@ export interface ThemeType {
     background?: BackgroundType;
     border?: {
       radius?: string;
+      intelligentRounding?: boolean;
     };
     container?: {
+      elevation?: ElevationType;
       zIndex?: string;
     };
     extend?: ExtendType;

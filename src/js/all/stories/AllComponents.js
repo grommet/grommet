@@ -41,7 +41,6 @@ import { hpe } from 'grommet-theme-hpe';
 import { aruba } from 'grommet-theme-aruba';
 import { hp } from 'grommet-theme-hp';
 import { dxc } from 'grommet-theme-dxc';
-import { v1 } from 'grommet-theme-v1';
 
 const Node = ({ id, ...rest }) => (
   <Box
@@ -71,7 +70,6 @@ const themes = {
   aruba,
   hp,
   dxc,
-  v1,
 };
 
 const Components = () => {

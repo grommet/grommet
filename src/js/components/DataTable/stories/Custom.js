@@ -25,8 +25,7 @@ const customTheme = {
   dataTable: {
     header: {
       color: 'text-strong',
-      extend: ({ column, sort, sortable }) => {
-        return `
+      extend: ({ column, sort, sortable }) => `
           ${sortable &&
             sort &&
             sort.property !== column &&
@@ -37,8 +36,7 @@ const customTheme = {
                 }
               }
             `}
-         `;
-      },
+         `,
     },
     icons: {
       sortable: SortableIcon,

@@ -130,15 +130,13 @@ export const FieldBorderPosition = () => (
     <Box pad="large">
       <Grid columns={{ count: 'fit', size: ['auto', 'medium'] }} gap="medium">
         {borderPositions &&
-          borderPositions.map((example, index) => {
-            return (
-              <FormExample
-                borderPosition={example.name}
-                theme={example.theme}
-                index={index}
-              />
-            );
-          })}
+          borderPositions.map((example, index) => (
+            <FormExample
+              borderPosition={example.name}
+              theme={example.theme}
+              index={index}
+            />
+          ))}
       </Grid>
     </Box>
   </Grommet>
