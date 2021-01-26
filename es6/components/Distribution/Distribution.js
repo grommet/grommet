@@ -42,7 +42,7 @@ var Distribution = function Distribution(_ref2) {
   if (values.length > 1) {
     var reducer = function reducer(accumulator, _ref3) {
       var value = _ref3.value;
-      return accumulator + value;
+      return accumulator + (value || 0);
     };
 
     var total = values.reduce(reducer, 0); // figure out how many of the values area needed to represent half of the
@@ -71,7 +71,9 @@ var Distribution = function Distribution(_ref2) {
 
     var childBasis;
 
-    if (subTotal > total * 0.7) {
+    if (subTotal === total) {
+      childBasis = ['full', '0px'];
+    } else if (subTotal > total * 0.7) {
       childBasis = ['3/4', '1/4'];
     } else if (subTotal > total * 0.6) {
       childBasis = ['2/3', '1/3'];
