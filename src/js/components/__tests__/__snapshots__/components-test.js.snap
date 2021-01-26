@@ -1891,7 +1891,7 @@ string",
       Object {
         "description": "A unique identifier for the Chart. This
       is required if more than one Chart is shown and they use color
-      gradients.",
+      gradients or if a pattern is specified.",
         "format": "string",
         "name": "id",
       },
@@ -2024,6 +2024,16 @@ xlarge
 }
 string",
         "name": "pad",
+      },
+      Object {
+        "description": "When using an 'area' type, what pattern to fill the area with.",
+        "format": "squares
+circles
+stripesHorizontal
+stripesVertical
+stripesDiagonalDown
+stripesDiagonalUp",
+        "name": "pattern",
       },
       Object {
         "description": "When using a 'point' type, what shape the points should use.
@@ -7202,6 +7212,11 @@ medium
 large
 xlarge
 xxlarge
+2xl
+3xl
+4xl
+5xl
+6xl
 string",
         "name": "size",
       },
