@@ -952,14 +952,13 @@ export interface ThemeType {
     extend?: ExtendType;
   };
   pagination?: {
-    container?: BoxProps;
     button?: {
-      color?: ColorType;
       active?: {
         background?: {
           color?: ColorType;
         };
       };
+      color?: ColorType;
       hover?: {
         background?: {
           color?: ColorType;
@@ -967,6 +966,7 @@ export interface ThemeType {
         color?: ColorType;
       };
     };
+    container?: BoxProps;
     control?: {
       extend?: ExtendType;
       pad?: PadType;

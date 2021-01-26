@@ -12678,7 +12678,7 @@ string
 
 **numberEdgePages**
 
-The number of page buttons visible at the start and end of page 
+The number of pagination buttons visible at the start and end of page 
         range. Defaults to \`1\`.
 
 \`\`\`
@@ -12687,7 +12687,7 @@ number
 
 **numberItems**
 
-The number of items to paginate.
+The total number of items to paginate.
 
 \`\`\`
 number
@@ -12695,7 +12695,8 @@ number
 
 **numberMiddlePages**
 
-The number of page buttons visible in the middle of the controls. Defaults to \`3\`.
+The number of pagination buttons visible in the middle of the 
+        controls. Defaults to \`3\`.
 
 \`\`\`
 number
@@ -12703,10 +12704,10 @@ number
 
 **onChange**
 
-Function that will be called when the user clicks a page or 
-        arrow button. The single argument is an event containing the latest 
-        page via \`event.page\`, and the startIndex and endIndex for data on 
-        this page via \`event.startIndex\` and \`event.endIndex\`, 
+Function called when the user clicks a page or arrow button. The 
+        single argument is an event containing the target page via 
+        \`event.page\`, and the startIndex and endIndex for items contained 
+        in the target page via \`event.startIndex\` and \`event.endIndex\`, 
         respectively.
 
 \`\`\`
@@ -12747,46 +12748,39 @@ nav
 \`\`\`
 ## Theme
   
-**pagination**
+**pagination.button.active.background.color**
 
-The possible sizes of the Pagination in terms of its 
-      max-width, font-size and line-height. Expects \`object\`.
+Background color when the button is active. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
 \`\`\`
-{
-      small: {
-        size: '14px',
-        height: '20px',
-        maxWidth: '336px',
-       },
-      medium: {
-        size: '18px',
-        height: '24px',
-        maxWidth: '432px',
-      },
-      large: {
-        size: '22px',
-        height: '28px',
-        maxWidth: '528px',
-      },
-      xlarge: {
-        size: '26px',
-        height: '32px',
-        maxWidth: '624px',
-      },
-      xxlarge: {
-        size: '34px',
-        height: '40px',
-        maxWidth: '816px',
-      },
-    }
+active-background
 \`\`\`
 
-**pagination.extend**
+**pagination.button.color**
 
-Any additional style for the Pagination. Expects \`string | (props) => {}\`.
+The color of the text label. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+text-strong
+\`\`\`
+
+**pagination.button.hover.background.color**
+
+Background color of the button when hovered. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+background-contrast
+\`\`\`
+
+**pagination.button.hover.color**
+
+The color of the text label when hovered. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
@@ -12794,26 +12788,311 @@ Defaults to
 undefined
 \`\`\`
 
-**global.edgeSize**
+**pagination.container**
 
-The possible sizes for margin. Expects \`object\`.
+Any valid Box props for the Box wrapping the 
+    pagination controls. Expects \`object\`.
 
 Defaults to
 
 \`\`\`
-{
-    edgeSize: {
-      none: '0px',
-      hair: '1px',
-      xxsmall: '3px',
-      xsmall: '6px',
-      small: '12px',
-      medium: '24px',
-      large: '48px',
-      xlarge: '96px',
-      responsiveBreakpoint: 'small',
-    },
-  }
+undefined
+\`\`\`
+
+**pagination.container.extend**
+
+Any additional style for the Box wrapping 
+    the pagination controls. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**pagination.control.extend**
+
+Any additional style for each control. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**pagination.control.pad**
+
+Padding around each control's label. Expects \`string | object\`.
+
+Defaults to
+
+\`\`\`
+4px
+\`\`\`
+
+**pagination.control.size.small.border.radius**
+
+Rounding of the corners for each control. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+3px
+\`\`\`
+
+**pagination.control.size.small.border.width**
+
+Border thickness for each control. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+2px
+\`\`\`
+
+**pagination.control.size.small.font.size**
+
+The font size of each control's label. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+14px
+\`\`\`
+
+**pagination.control.size.small.font.height**
+
+The line-height of each control's label. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+20px
+\`\`\`
+
+**pagination.control.size.small.height**
+
+The height for each control. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+30px
+\`\`\`
+
+**pagination.control.size.small.width**
+
+The minimum width for each control. 
+    Width will scale up fitting the control's label. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+30px
+\`\`\`
+
+**pagination.control.size.medium.border.radius**
+
+Rounding of the corners for each control. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+4px
+\`\`\`
+
+**pagination.control.size.medium.border.width**
+
+Border thickness for each control. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+2px
+\`\`\`
+
+**pagination.control.size.medium.font.size**
+
+The font size of each control's label. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+18px
+\`\`\`
+
+**pagination.control.size.medium.font.height**
+
+The line-height of each control's label. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+24px
+\`\`\`
+
+**pagination.control.size.medium.height**
+
+The height for each control. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+36px
+\`\`\`
+
+**pagination.control.size.medium.width**
+
+The minimum width for each control. 
+    Width will scale up fitting the control's label. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+36px
+\`\`\`
+
+**pagination.control.size.large.border.radius**
+
+Rounding of the corners for each control. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+4px
+\`\`\`
+
+**pagination.control.size.large.border.width**
+
+Border thickness for each control. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+6px
+\`\`\`
+
+**pagination.control.size.large.font.size**
+
+The font size of each control's label. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+22px
+\`\`\`
+
+**pagination.control.size.large.font.height**
+
+The line-height of each control's label. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+28px
+\`\`\`
+
+**pagination.control.size.large.height**
+
+The height for each control. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+48px
+\`\`\`
+
+**pagination.control.size.large.width**
+
+The minimum width for each control. 
+    Width will scale up fitting the control's label. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+48px
+\`\`\`
+
+**pagination.controls.align**
+
+How the pagination controls should be aligned 
+    within the containing Box. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+center
+\`\`\`
+
+**pagination.controls.direction**
+
+Direction in which the containing Box should 
+    display the pagination controls. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+row
+\`\`\`
+
+**pagination.controls.gap**
+
+Amount of gap spacing between each control. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+xxsmall
+\`\`\`
+
+**pagination.controls.margin**
+
+Amount of margin surrounding the controls. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+none
+\`\`\`
+
+**pagination.controls.pad**
+
+Amount of pad surrounding the controls. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+none
+\`\`\`
+
+**pagination.icons.color**
+
+The color used for the icon. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**pagination.icons.next**
+
+Icon to use as the 'next page' control. Expects \`element\`.
+
+Defaults to
+
+\`\`\`
+<Next />
+\`\`\`
+
+**pagination.icons.previous**
+
+Icon to use as the 'previous page' control. Expects \`element\`.
+
+Defaults to
+
+\`\`\`
+<Previous />
 \`\`\`
 ",
   "Paragraph": "## Paragraph
