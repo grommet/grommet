@@ -19,7 +19,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-var GroupedBody = function GroupedBody(_ref) {
+var GroupedBody = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var background = _ref.background,
       border = _ref.border,
       columns = _ref.columns,
@@ -33,6 +33,7 @@ var GroupedBody = function GroupedBody(_ref) {
       rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "groupBy", "groups", "groupState", "pad", "primaryProperty", "onToggle", "size"]);
 
   return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableBody, _extends({
+    ref: ref,
     size: size
   }, rest), groups.map(function (group) {
     var expanded = groupState[group.key].expanded;
@@ -84,6 +85,5 @@ var GroupedBody = function GroupedBody(_ref) {
 
     return content;
   }));
-};
-
+});
 exports.GroupedBody = GroupedBody;

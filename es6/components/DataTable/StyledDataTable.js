@@ -53,7 +53,7 @@ var StyledDataTableHeader = styled(TableHeader).withConfig({
   displayName: "StyledDataTable__StyledDataTableHeader",
   componentId: "xrlyjm-3"
 })(["", ""], function (props) {
-  return props.size && "\n    display: table;\n    width: 100%;\n    table-layout: fixed;\n  ";
+  return props.size && "\n    display: table;\n    width: calc(100% - " + props.scrollOffset + "px);\n    table-layout: fixed;\n  ";
 });
 StyledDataTableHeader.defaultProps = {};
 Object.setPrototypeOf(StyledDataTableHeader.defaultProps, defaultProps);
@@ -61,7 +61,7 @@ var StyledDataTableFooter = styled(TableFooter).withConfig({
   displayName: "StyledDataTable__StyledDataTableFooter",
   componentId: "xrlyjm-4"
 })(["", " ", ""], function (props) {
-  return props.size && "\n    display: table;\n    width: 100%;\n    table-layout: fixed;\n  ";
+  return props.size && "\n    display: table;\n    width: calc(100% - " + props.scrollOffset + "px);\n    table-layout: fixed;\n  ";
 }, function (props) {
   return props.pin && "\n      /* Safari needs the relative positioning of tfoot specified */\n      position: sticky;\n      bottom: 0;\n      z-index: 1;\n  ";
 });

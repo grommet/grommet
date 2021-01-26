@@ -139,6 +139,7 @@ var DataTable = function DataTable(_ref) {
 
 
   var headerRef = (0, _react.useRef)();
+  var bodyRef = (0, _react.useRef)();
   var footerRef = (0, _react.useRef)();
 
   var _useState7 = (0, _react.useState)(),
@@ -147,8 +148,20 @@ var DataTable = function DataTable(_ref) {
 
   var _useState8 = (0, _react.useState)(),
       footerHeight = _useState8[0],
-      setFooterHeight = _useState8[1];
+      setFooterHeight = _useState8[1]; // offset compensation when body overflows
 
+
+  var _useState9 = (0, _react.useState)(0),
+      scrollOffset = _useState9[0],
+      setScrollOffset = _useState9[1]; // eslint-disable-next-line react-hooks/exhaustive-deps
+
+
+  (0, _react.useLayoutEffect)(function () {
+    var _bodyRef$current$pare;
+
+    var nextScrollOffset = ((_bodyRef$current$pare = bodyRef.current.parentElement) == null ? void 0 : _bodyRef$current$pare.clientWidth) - bodyRef.current.clientWidth;
+    if (nextScrollOffset !== scrollOffset) setScrollOffset(nextScrollOffset);
+  });
   (0, _react.useLayoutEffect)(function () {
     if (placeholder) {
       if (headerRef.current) {
@@ -275,8 +288,10 @@ var DataTable = function DataTable(_ref) {
     } : undefined,
     onSort: sortable || sortProp || onSortProp ? onSort : undefined,
     onToggle: onToggleGroups,
-    primaryProperty: primaryProperty
+    primaryProperty: primaryProperty,
+    scrollOffset: scrollOffset
   }), groups ? /*#__PURE__*/_react["default"].createElement(_GroupedBody.GroupedBody, {
+    ref: bodyRef,
     background: normalizeProp(background, 'body'),
     border: normalizeProp(border, 'body'),
     columns: columns,
@@ -288,6 +303,7 @@ var DataTable = function DataTable(_ref) {
     onToggle: onToggleGroup,
     size: size
   }) : /*#__PURE__*/_react["default"].createElement(_Body.Body, {
+    ref: bodyRef,
     background: normalizeProp(background, 'body'),
     border: normalizeProp(border, 'body'),
     columns: columns,
@@ -319,6 +335,7 @@ var DataTable = function DataTable(_ref) {
     pad: normalizeProp(pad, 'footer'),
     pin: pin === true || pin === 'footer',
     primaryProperty: primaryProperty,
+    scrollOffset: scrollOffset,
     selected: selected,
     size: size
   }), placeholder && /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledPlaceholder, {

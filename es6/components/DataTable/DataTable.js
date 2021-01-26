@@ -121,6 +121,7 @@ var DataTable = function DataTable(_ref) {
 
 
   var headerRef = useRef();
+  var bodyRef = useRef();
   var footerRef = useRef();
 
   var _useState7 = useState(),
@@ -129,8 +130,20 @@ var DataTable = function DataTable(_ref) {
 
   var _useState8 = useState(),
       footerHeight = _useState8[0],
-      setFooterHeight = _useState8[1];
+      setFooterHeight = _useState8[1]; // offset compensation when body overflows
 
+
+  var _useState9 = useState(0),
+      scrollOffset = _useState9[0],
+      setScrollOffset = _useState9[1]; // eslint-disable-next-line react-hooks/exhaustive-deps
+
+
+  useLayoutEffect(function () {
+    var _bodyRef$current$pare;
+
+    var nextScrollOffset = ((_bodyRef$current$pare = bodyRef.current.parentElement) == null ? void 0 : _bodyRef$current$pare.clientWidth) - bodyRef.current.clientWidth;
+    if (nextScrollOffset !== scrollOffset) setScrollOffset(nextScrollOffset);
+  });
   useLayoutEffect(function () {
     if (placeholder) {
       if (headerRef.current) {
@@ -257,8 +270,10 @@ var DataTable = function DataTable(_ref) {
     } : undefined,
     onSort: sortable || sortProp || onSortProp ? onSort : undefined,
     onToggle: onToggleGroups,
-    primaryProperty: primaryProperty
+    primaryProperty: primaryProperty,
+    scrollOffset: scrollOffset
   }), groups ? /*#__PURE__*/React.createElement(GroupedBody, {
+    ref: bodyRef,
     background: normalizeProp(background, 'body'),
     border: normalizeProp(border, 'body'),
     columns: columns,
@@ -270,6 +285,7 @@ var DataTable = function DataTable(_ref) {
     onToggle: onToggleGroup,
     size: size
   }) : /*#__PURE__*/React.createElement(Body, {
+    ref: bodyRef,
     background: normalizeProp(background, 'body'),
     border: normalizeProp(border, 'body'),
     columns: columns,
@@ -301,6 +317,7 @@ var DataTable = function DataTable(_ref) {
     pad: normalizeProp(pad, 'footer'),
     pin: pin === true || pin === 'footer',
     primaryProperty: primaryProperty,
+    scrollOffset: scrollOffset,
     selected: selected,
     size: size
   }), placeholder && /*#__PURE__*/React.createElement(StyledPlaceholder, {
