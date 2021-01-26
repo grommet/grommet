@@ -448,7 +448,7 @@ var desktopContainerStyle = css(["", " max-height:", ";max-width:", ";", ";", ";
 }, function (props) {
   return "calc(100% - " + getBounds(props.targetBounds, props.margin, props.theme, 'left') + "px - " + getBounds(props.targetBounds, props.margin, props.theme, 'right') + "px)";
 }, function (props) {
-  return props.plain || props.full === true && props.margin === 'none' ? "border-radius: 0;" : roundStyle(props.theme.layer.border.radius, props.theme, props.position, props.margin);
+  return props.plain || props.full && props.margin === 'none' ? "border-radius: 0;" : roundStyle(props.theme.layer.border.radius, props.theme, props.position, props.margin);
 }, function (props) {
   return props.position !== 'hidden' && POSITIONS[props.position][props.full](getBounds(props.targetBounds, props.margin, props.theme), props.targetBounds) || '';
 });
