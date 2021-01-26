@@ -698,10 +698,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //      extend: undefined,
       //   },
       // },
-      // container: {
-      //   // any box props
-      //   extend: undefined,
-      // },
+      container: {
+        // any box props
+        gap: 'xsmall',
+        // extend: undefined,
+      },
       groupHeader: {
         background: {
           dark: 'dark-2',
@@ -754,11 +755,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //     size: undefined,
         //   },
         // },
-      },
-      pagination: {
-        margin: {
-          top: 'xsmall',
-        },
       },
     },
     diagram: {
@@ -926,16 +922,16 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       zIndex: '20',
     },
     list: {
+      container: {
+        // any box props
+        gap: 'xsmall',
+        // extend: undefined,
+      },
       item: {
         // background: undefined,
         border: 'horizontal',
         pad: { horizontal: 'medium', vertical: 'small' },
         // extend: undefined,
-      },
-      pagination: {
-        margin: {
-          top: 'xsmall',
-        },
       },
       // extend: undefined,
     },

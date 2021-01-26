@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { Fragment, useContext, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 
 import { Box } from '../Box';
@@ -51,6 +51,14 @@ const StyledItem = styled(Box)`
     props.theme.list && props.theme.list.item && props.theme.list.item.extend}
 `;
 
+// when paginated, this wraps the data table and pagination component
+const StyledContainer = styled(Box)`
+  ${props =>
+    props.theme.list &&
+    props.theme.list.container &&
+    props.theme.list.container.extend};
+`;
+
 const normalize = (item, index, property) => {
   if (typeof property === 'function') {
     return property(item, index);
@@ -94,8 +102,11 @@ const List = React.forwardRef(
       ...paginate,
     });
 
+    const Container = paginate ? StyledContainer : Fragment;
+    const containterProps = paginate ? { ...theme.list.container } : undefined;
+
     return (
-      <>
+      <Container {...containterProps}>
         <Keyboard
           onEnter={
             onClickItem && active >= 0
@@ -276,7 +287,7 @@ const List = React.forwardRef(
             {...paginationProps}
           />
         )}
-      </>
+      </Container>
     );
   },
 );
