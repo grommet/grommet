@@ -64,14 +64,55 @@ const Form = forwardRef(
       defaultValidationResults,
     );
 
-    useEffect(
-      () => setValidationResults({ errors: errorsProp, infos: infosProp }),
-      [errorsProp, infosProp],
-    );
+    // when onBlur input validation is triggered by a click event,
+    // we need to complete the click event before running the validation
+    // otherwise, click events like reset, etc. may not be registered.
+    // for a detailed scenario/discussion, see: https://github.com/grommet/grommet/issues/4863
+    const [pendingValidation, setPendingValidation] = useState(undefined);
+
+    useEffect(() => {
+      setPendingValidation(undefined);
+      setValidationResults({ errors: errorsProp, infos: infosProp });
+    }, [errorsProp, infosProp]);
     const validations = useRef({});
+
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        if (pendingValidation) {
+          // run validations on touched keys
+          const [nextErrors, nextInfos] = validate(
+            Object.entries(validations.current).filter(
+              ([n]) => touched[n] || n === pendingValidation,
+            ),
+            value,
+          );
+          setPendingValidation(undefined);
+          // give user access to errors that have occurred on validation
+          setValidationResults(prevValidationResults => {
+            // keep any previous errors and infos for untouched keys,
+            // which probably came from a submit
+            const nextValidationResults = {
+              errors: { ...prevValidationResults.errors, ...nextErrors },
+              infos: { ...prevValidationResults.infos, ...nextInfos },
+            };
+            if (onValidate) onValidate(nextValidationResults);
+            return nextValidationResults;
+          });
+        }
+        // a timeout is needed to ensure that a click event (like one on a reset
+        // button) completes prior to running the validation. without a timeout,
+        // the blur will always complete and trigger a validation prematurely
+        // The following values have been empirically tested, but 120 was
+        // selected because it is the largest value
+        // Chrome: 100, Safari: 120, Firefox: 80
+      }, 120);
+
+      return () => clearTimeout(timer);
+    }, [pendingValidation, onValidate, touched, value]);
 
     // clear any errors when value changes
     useEffect(() => {
+      setPendingValidation(undefined);
       setValidationResults(prevValidationResults => {
         const [nextErrors, nextInfos] = validate(
           Object.entries(validations.current).filter(
@@ -235,28 +276,7 @@ const Form = forwardRef(
         info,
         inForm: true,
         onBlur:
-          validateOn === 'blur'
-            ? () => {
-                // run validations on touched keys
-                const [nextErrors, nextInfos] = validate(
-                  Object.entries(validations.current).filter(
-                    ([n]) => touched[n] || n === name,
-                  ),
-                  value,
-                );
-                // give user access to errors that have occurred on validation
-                setValidationResults(prevValidationResults => {
-                  // keep any previous errors and infos for untouched keys,
-                  // which probably came from a submit
-                  const nextValidationResults = {
-                    errors: { ...prevValidationResults.errors, ...nextErrors },
-                    infos: { ...prevValidationResults.infos, ...nextInfos },
-                  };
-                  if (onValidate) onValidate(nextValidationResults);
-                  return nextValidationResults;
-                });
-              }
-            : undefined,
+          validateOn === 'blur' ? () => setPendingValidation(name) : undefined,
       };
     };
 
@@ -265,6 +285,7 @@ const Form = forwardRef(
         ref={ref}
         {...rest}
         onReset={event => {
+          setPendingValidation(undefined);
           if (!valueProp) {
             setValueState(defaultValue);
             if (onChange) onChange(defaultValue, { touched: defaultTouched });
@@ -284,6 +305,7 @@ const Form = forwardRef(
           // if the validation fails. And, we assume a javascript action handler
           // otherwise.
           event.preventDefault();
+          setPendingValidation(undefined);
           const [nextErrors, nextInfos] = validate(
             Object.entries(validations.current),
             value,
