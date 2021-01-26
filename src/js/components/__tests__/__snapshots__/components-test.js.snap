@@ -5998,29 +5998,30 @@ string",
       },
       Object {
         "defaultValue": 1,
-        "description": "The number of page buttons visible at the start and end of page 
+        "description": "The number of pagination buttons visible at the start and end of page 
         range.",
         "format": "number",
         "name": "numberEdgePages",
       },
       Object {
         "defaultValue": undefined,
-        "description": "The number of items to paginate.",
+        "description": "The total number of items to paginate.",
         "format": "number",
         "name": "numberItems",
       },
       Object {
         "defaultValue": 3,
-        "description": "The number of page buttons visible in the middle of the controls.",
+        "description": "The number of pagination buttons visible in the middle of the 
+        controls.",
         "format": "number",
         "name": "numberMiddlePages",
       },
       Object {
         "defaultValue": undefined,
-        "description": "Function that will be called when the user clicks a page or 
-        arrow button. The single argument is an event containing the latest 
-        page via \`event.page\`, and the startIndex and endIndex for data on 
-        this page via \`event.startIndex\` and \`event.endIndex\`, 
+        "description": "Function called when the user clicks a page or arrow button. The 
+        single argument is an event containing the target page via 
+        \`event.page\`, and the startIndex and endIndex for items contained 
+        in the target page via \`event.startIndex\` and \`event.endIndex\`, 
         respectively.",
         "format": "function",
         "name": "onChange",

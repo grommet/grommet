@@ -957,17 +957,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
     },
     pagination: {
-      // container: {
-      //   // any box props,
-      //   extend: undefined,
-      // },
       button: {
-        color: 'text-strong',
         active: {
           background: {
             color: 'active-background',
           },
         },
+        color: 'text-strong',
         hover: {
           background: {
             color: 'background-contrast',
@@ -975,6 +971,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: undefined,
         },
       },
+      // container: {
+      //   // any box props,
+      //   extend: undefined,
+      // },
       control: {
         // extend: undefined,
         pad: '4px',
@@ -1012,8 +1012,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         align: 'center',
         direction: 'row',
         gap: 'xxsmall',
-        pad: 'none',
         margin: 'none',
+        pad: 'none',
       },
       icons: {
         // color: undefined,
