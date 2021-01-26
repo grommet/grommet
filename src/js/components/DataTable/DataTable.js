@@ -127,6 +127,7 @@ const DataTable = ({
 
   // placeholder placement stuff
   const headerRef = useRef();
+  const bodyRef = useRef();
   const footerRef = useRef();
   const [headerHeight, setHeaderHeight] = useState();
   const [footerHeight, setFooterHeight] = useState();
@@ -135,10 +136,10 @@ const DataTable = ({
   const [scrollOffset, setScrollOffset] = useState(0);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const bodyRef = useCallback(ref => {
-    if (ref !== null) {
-      setScrollOffset(ref.parentElement?.clientWidth - ref.clientWidth);
-    }
+  useLayoutEffect(() => {
+    const nextScrollOffset =
+      bodyRef.current.parentElement?.clientWidth - bodyRef.current.clientWidth;
+    if (nextScrollOffset !== scrollOffset) setScrollOffset(nextScrollOffset);
   });
 
   useLayoutEffect(() => {
