@@ -127,21 +127,19 @@ const DataTable = ({
 
   // placeholder placement stuff
   const headerRef = useRef();
-  const bodyRef = useRef();
   const footerRef = useRef();
   const [headerHeight, setHeaderHeight] = useState();
   const [footerHeight, setFooterHeight] = useState();
 
+  // offset compensation when body overflows
   const [scrollOffset, setScrollOffset] = useState(0);
 
-  useEffect(() => {
-    if (bodyRef.current) {
-      setScrollOffset(
-        bodyRef.current?.parentElement?.clientWidth -
-          bodyRef.current?.clientWidth,
-      );
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const bodyRef = useCallback(ref => {
+    if (ref !== null) {
+      setScrollOffset(ref.parentElement?.clientWidth - ref.clientWidth);
     }
-  }, [bodyRef]);
+  });
 
   useLayoutEffect(() => {
     if (placeholder) {
@@ -263,11 +261,12 @@ const DataTable = ({
         }
         onSort={sortable || sortProp || onSortProp ? onSort : undefined}
         onToggle={onToggleGroups}
-        scrollOffset={scrollOffset}
         primaryProperty={primaryProperty}
+        scrollOffset={scrollOffset}
       />
       {groups ? (
         <GroupedBody
+          ref={bodyRef}
           background={normalizeProp(background, 'body')}
           border={normalizeProp(border, 'body')}
           columns={columns}
@@ -317,10 +316,10 @@ const DataTable = ({
           footerValues={footerValues}
           groups={groups}
           onSelect={onSelect}
-          scrollOffset={scrollOffset}
           pad={normalizeProp(pad, 'footer')}
           pin={pin === true || pin === 'footer'}
           primaryProperty={primaryProperty}
+          scrollOffset={scrollOffset}
           selected={selected}
           size={size}
         />

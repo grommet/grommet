@@ -935,4 +935,37 @@ describe('DataTable', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('Header and Footer offset to GroupedBody overflow', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          size="small"
+          columns={[
+            {
+              property: 'name',
+              header: 'Name',
+              primary: true,
+              footer: 'Total',
+            },
+            { property: 'location', header: 'Location' },
+          ]}
+          data={[
+            { name: 'Shimi', location: '' },
+            { name: 'Bryan', location: 'Fort Collins' },
+            { name: 'Chris', location: 'Bay Area' },
+            { name: 'Eric', location: 'Bay Area' },
+            { name: 'Matt', location: 'Fort Collins' },
+            { name: 'Taylor', location: 'Bay Area' },
+            { name: 'Mike', location: 'Boise' },
+            { name: 'Ian', location: 'Houston' },
+            { name: 'Met', location: 'Grom' },
+          ]}
+          groupBy="location"
+          sortable
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

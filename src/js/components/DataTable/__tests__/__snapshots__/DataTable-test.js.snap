@@ -668,6 +668,728 @@ exports[`DataTable Header and Footer offset to Body overflow 1`] = `
 </div>
 `;
 
+exports[`DataTable Header and Footer offset to GroupedBody overflow 1`] = `
+.c7 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: rgba(0,0,0,0.33);
+  stroke: rgba(0,0,0,0.33);
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c12 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c21 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 6px;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c5:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #000000;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus > circle,
+.c5:focus > ellipse,
+.c5:focus > line,
+.c5:focus > path,
+.c5:focus > polygon,
+.c5:focus > polyline,
+.c5:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c10 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  height: 100%;
+}
+
+.c10:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus > circle,
+.c10:focus > ellipse,
+.c10:focus > line,
+.c10:focus > path,
+.c10:focus > polygon,
+.c10:focus > polyline,
+.c10:focus > rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c10:focus::-moz-focus-inner {
+  border: 0;
+}
+
+.c4 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 48px;
+  max-width: 48px;
+  overflow: hidden;
+  vertical-align: top;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding: 0px;
+}
+
+.c8 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c15 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 48px;
+  max-width: 48px;
+  overflow: hidden;
+  vertical-align: top;
+  text-align: start;
+  padding: 0px;
+}
+
+.c16 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c19 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 48px;
+  max-width: 48px;
+  overflow: hidden;
+  vertical-align: top;
+  text-align: start;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  padding: 0px;
+}
+
+.c20 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c2 {
+  position: relative;
+  border-spacing: 0;
+  border-collapse: separate;
+  height: auto;
+}
+
+.c14 {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.c13 {
+  display: block;
+  width: 100%;
+  max-height: 192px;
+  overflow: auto;
+}
+
+.c13:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c3 {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.c18 {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    padding: 3px;
+  }
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+  .c1 {
+    table-layout: fixed;
+  }
+}
+
+<div
+  class="c0"
+>
+  <table
+    class="c1 c2"
+  >
+    <thead
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 c3"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+      >
+        <td
+          class="c4"
+        >
+          <button
+            aria-label="expand"
+            class="c5"
+            type="button"
+          >
+            <div
+              class="c6"
+            >
+              <svg
+                aria-label="FormDown"
+                class="c7"
+                viewBox="0 0 24 24"
+              >
+                <polyline
+                  fill="none"
+                  points="18 9 12 15 6 9"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </button>
+        </td>
+        <th
+          class="c8 "
+          scope="col"
+        >
+          <div
+            class="c9"
+          >
+            <button
+              class="c10 Header__StyledHeaderCellButton-sc-1baku5q-0"
+              type="button"
+            >
+              <div
+                class="c11"
+              >
+                <span
+                  class="c12"
+                >
+                  Name
+                </span>
+              </div>
+            </button>
+          </div>
+        </th>
+        <th
+          class="c8 "
+          scope="col"
+        >
+          <div
+            class="c9"
+          >
+            <button
+              class="c10 Header__StyledHeaderCellButton-sc-1baku5q-0"
+              type="button"
+            >
+              <div
+                class="c11"
+              >
+                <span
+                  class="c12"
+                >
+                  Location
+                </span>
+              </div>
+            </button>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c13"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c14"
+      >
+        <td
+          class="c15"
+        >
+          <div
+            class="c6"
+          />
+        </td>
+        <th
+          class="c16 "
+          scope="row"
+        >
+          <div
+            class="c17"
+          >
+            <span
+              class="c12"
+            >
+              Shimi
+            </span>
+          </div>
+        </th>
+        <td
+          class="c16 "
+        >
+          <div
+            class="c17"
+          >
+            <span
+              class="c12"
+            />
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c14"
+      >
+        <td
+          class="c15"
+        >
+          <button
+            aria-label="expand"
+            class="c5"
+            type="button"
+          >
+            <div
+              class="c6"
+            >
+              <svg
+                aria-label="FormDown"
+                class="c7"
+                viewBox="0 0 24 24"
+              >
+                <polyline
+                  fill="none"
+                  points="18 9 12 15 6 9"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </button>
+        </td>
+        <td
+          class="c16 "
+        >
+          <div
+            class="c17"
+          />
+        </td>
+        <th
+          class="c16 "
+          scope="row"
+        >
+          <div
+            class="c17"
+          >
+            <span
+              class="c12"
+            >
+              Fort Collins
+            </span>
+          </div>
+        </th>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c14"
+      >
+        <td
+          class="c15"
+        >
+          <button
+            aria-label="expand"
+            class="c5"
+            type="button"
+          >
+            <div
+              class="c6"
+            >
+              <svg
+                aria-label="FormDown"
+                class="c7"
+                viewBox="0 0 24 24"
+              >
+                <polyline
+                  fill="none"
+                  points="18 9 12 15 6 9"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </button>
+        </td>
+        <td
+          class="c16 "
+        >
+          <div
+            class="c17"
+          />
+        </td>
+        <th
+          class="c16 "
+          scope="row"
+        >
+          <div
+            class="c17"
+          >
+            <span
+              class="c12"
+            >
+              Bay Area
+            </span>
+          </div>
+        </th>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c14"
+      >
+        <td
+          class="c15"
+        >
+          <div
+            class="c6"
+          />
+        </td>
+        <th
+          class="c16 "
+          scope="row"
+        >
+          <div
+            class="c17"
+          >
+            <span
+              class="c12"
+            >
+              Mike
+            </span>
+          </div>
+        </th>
+        <td
+          class="c16 "
+        >
+          <div
+            class="c17"
+          >
+            <span
+              class="c12"
+            >
+              Boise
+            </span>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c14"
+      >
+        <td
+          class="c15"
+        >
+          <div
+            class="c6"
+          />
+        </td>
+        <th
+          class="c16 "
+          scope="row"
+        >
+          <div
+            class="c17"
+          >
+            <span
+              class="c12"
+            >
+              Ian
+            </span>
+          </div>
+        </th>
+        <td
+          class="c16 "
+        >
+          <div
+            class="c17"
+          >
+            <span
+              class="c12"
+            >
+              Houston
+            </span>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c14"
+      >
+        <td
+          class="c15"
+        >
+          <div
+            class="c6"
+          />
+        </td>
+        <th
+          class="c16 "
+          scope="row"
+        >
+          <div
+            class="c17"
+          >
+            <span
+              class="c12"
+            >
+              Met
+            </span>
+          </div>
+        </th>
+        <td
+          class="c16 "
+        >
+          <div
+            class="c17"
+          >
+            <span
+              class="c12"
+            >
+              Grom
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot
+      class="StyledTable__StyledTableFooter-sc-1m3u5g-5 c18"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2"
+      >
+        <td
+          class="c19"
+        />
+        <td
+          class="c20 "
+        >
+          <div
+            class="c17"
+          >
+            <span
+              class="c21"
+            >
+              Total
+            </span>
+          </div>
+        </td>
+        <td
+          class="c20 "
+        >
+          <div
+            class="c17"
+          />
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+`;
+
 exports[`DataTable absoluteColumnSizes 1`] = `
 .c0 {
   font-size: 18px;
