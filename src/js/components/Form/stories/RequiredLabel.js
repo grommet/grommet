@@ -12,7 +12,7 @@ import {
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
 
-const myTheme = deepMerge(grommet, {
+const customTheme = deepMerge(grommet, {
   formField: {
     label: {
       requiredAsterisk: true,
@@ -21,7 +21,7 @@ const myTheme = deepMerge(grommet, {
 });
 
 export const RequiredLabel = () => (
-  <Grommet theme={myTheme}>
+  <Grommet theme={customTheme}>
     <Box align="center" pad="large">
       <Form>
         <FormField
