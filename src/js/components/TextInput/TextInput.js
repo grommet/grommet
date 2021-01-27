@@ -258,6 +258,21 @@ const TextInput = forwardRef(
     const extraProps = {
       onSelect: handleTextSelect,
     };
+
+    const onEnterEventHandler = (event, handleForm) => {
+      closeDrop();
+      if (activeSuggestionIndex >= 0 && handleSuggestionSelect) {
+        // prevent submitting forms when choosing a suggestion
+        if (handleForm) {
+          event.preventDefault();
+          event.persist();
+        }
+        const adjustedEvent = event;
+        adjustedEvent.suggestion = suggestions[activeSuggestionIndex];
+        handleSuggestionSelect(adjustedEvent);
+      }
+    };
+
     if (showDrop) {
       drop = (
         // keyboard access needed here in case user clicks
@@ -268,12 +283,7 @@ const TextInput = forwardRef(
           onEnter={event => {
             // we stole the focus, give it back
             inputRef.current.focus();
-            closeDrop();
-            if (handleSuggestionSelect) {
-              const adjustedEvent = event;
-              adjustedEvent.suggestion = suggestions[activeSuggestionIndex];
-              handleSuggestionSelect(adjustedEvent);
-            }
+            onEnterEventHandler(event);
             setValue(suggestions[activeSuggestionIndex]);
           }}
         >
@@ -366,19 +376,9 @@ const TextInput = forwardRef(
             {icon}
           </StyledIcon>
         )}
+
         <Keyboard
-          onEnter={event => {
-            closeDrop();
-            if (activeSuggestionIndex >= 0 && handleSuggestionSelect) {
-              // prevent submitting forms when choosing a suggestion
-              event.preventDefault();
-              event.persist();
-              const adjustedEvent = event;
-              adjustedEvent.suggestion = suggestions[activeSuggestionIndex];
-              adjustedEvent.target = inputRef.current;
-              handleSuggestionSelect(adjustedEvent);
-            }
-          }}
+          onEnter={event => onEnterEventHandler(event, true)}
           onEsc={
             showDrop
               ? event => {
@@ -393,7 +393,7 @@ const TextInput = forwardRef(
           }
           onTab={showDrop ? closeDrop : undefined}
           onUp={
-            showDrop &&
+            !showDrop &&
             suggestions &&
             suggestions.length > 0 &&
             activeSuggestionIndex
@@ -403,7 +403,7 @@ const TextInput = forwardRef(
               : undefined
           }
           onDown={
-            suggestions && suggestions.length > 0
+            !showDrop && suggestions && suggestions.length > 0
               ? event => {
                   if (!showDrop) {
                     openDrop();
@@ -451,9 +451,9 @@ const TextInput = forwardRef(
                 ? undefined
                 : event => {
                     // when TextInput is not contained in a Form, no re-render
-                    // will come from this onChange and remove the placeholder,
+                    // will come from this onChange and remove the placeholder
                     // so we need to update state to ensure the styled
-                    // placholder only appears when there is no value
+                    // placeholder only appears when there is no value
                     setShowStyledPlaceholder(!event.target.value);
                     setValue(event.target.value);
                     if (onChange) onChange(event);
@@ -461,6 +461,7 @@ const TextInput = forwardRef(
             }
           />
         </Keyboard>
+
         {drop}
       </StyledTextInputContainer>
     );
