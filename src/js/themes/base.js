@@ -828,6 +828,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined
     },
     heading: {
+      // color: undefined,
       font: {
         // family: undefined
       },

@@ -65,6 +65,11 @@ export const themeDoc = {
     'The possible breakpoints that could affect font-size and max-width',
   ),
   ...themeDocUtils.edgeStyle('The possible sizes for margin.'),
+  'heading.color': {
+    description: 'The color of the heading.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
   'heading.extend': {
     description: 'Any additional style for Heading.',
     type: 'string | (props) => {}',
