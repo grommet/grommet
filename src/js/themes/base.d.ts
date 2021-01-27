@@ -896,6 +896,7 @@ export interface ThemeType {
     background?: BackgroundType;
     border?: {
       radius?: string;
+      intelligentRounding?: boolean;
     };
     container?: {
       elevation?: ElevationType;
@@ -1186,6 +1187,31 @@ export interface ThemeType {
       maxWidth?: string;
     };
     xxlarge?: {
+      size?: string;
+      height?: string;
+      maxWidth?: string;
+    };
+    '2xl?': {
+      size?: string;
+      height?: string;
+      maxWidth?: string;
+    };
+    '3xl?': {
+      size?: string;
+      height?: string;
+      maxWidth?: string;
+    };
+    '4xl?': {
+      size?: string;
+      height?: string;
+      maxWidth?: string;
+    };
+    '5xl?': {
+      size?: string;
+      height?: string;
+      maxWidth?: string;
+    };
+    '6xl?': {
       size?: string;
       height?: string;
       maxWidth?: string;
