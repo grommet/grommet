@@ -242,7 +242,7 @@ export const themeDoc = {
     required FormField. If providing a custom element, it is recommended that 
     you apply an a11yTitle of "required" to be accessible for screen readers.
     If using "true", this a11yTitle is automatically applied.`,
-    type: 'boolean | element',
+    type: 'boolean | element | string',
     defaultValue: 'undefined',
   },
   'formField.margin': {

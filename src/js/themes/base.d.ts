@@ -731,7 +731,7 @@ export interface ThemeType {
     };
     label?: {
       margin?: MarginType;
-      requiredAsterisk?: boolean | JSX.Element;
+      requiredAsterisk?: boolean | JSX.Element | string;
     };
     margin?: MarginType;
     round?: RoundType;
