@@ -30,6 +30,11 @@ var doc = function doc(Heading) {
 exports.doc = doc;
 
 var themeDoc = _extends({}, _themeDocUtils.themeDocUtils.breakpointStyle('The possible breakpoints that could affect font-size and max-width'), _themeDocUtils.themeDocUtils.edgeStyle('The possible sizes for margin.'), {
+  'heading.color': {
+    description: 'The color of the heading.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined
+  },
   'heading.extend': {
     description: 'Any additional style for Heading.',
     type: 'string | (props) => {}',

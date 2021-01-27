@@ -929,6 +929,7 @@ var generate = function generate(baseSpacing, scale) {
     grommet: {// extend: undefined
     },
     heading: {
+      // color: undefined,
       font: {// family: undefined
       },
       level: {

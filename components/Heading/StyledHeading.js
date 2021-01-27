@@ -55,7 +55,7 @@ var fontFamily = function fontFamily(props) {
 
 var truncateStyle = "\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n";
 var colorStyle = (0, _styledComponents.css)(["color:", ";"], function (props) {
-  return (0, _utils.normalizeColor)(props.colorProp, props.theme);
+  return (0, _utils.normalizeColor)(props.colorProp || props.theme.heading.color, props.theme);
 });
 
 var StyledHeading = _styledComponents["default"].h1.withConfig({
@@ -70,7 +70,7 @@ var StyledHeading = _styledComponents["default"].h1.withConfig({
 }, function (props) {
   return props.truncate && truncateStyle;
 }, function (props) {
-  return props.colorProp && colorStyle;
+  return (props.colorProp || props.theme.heading.color) && colorStyle;
 }, function (props) {
   return props.theme.heading && props.theme.heading.extend;
 });
