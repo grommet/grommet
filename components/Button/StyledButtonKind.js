@@ -26,61 +26,95 @@ var fontStyle = function fontStyle(props) {
   return (0, _styledComponents.css)(["font-size:", ";line-height:", ";"], data.size, data.height);
 };
 
-var padStyle = function padStyle(_ref) {
-  var size = _ref.sizeProp,
-      theme = _ref.theme;
-
+var padFromTheme = function padFromTheme(size, theme) {
   if (size && theme.button.size && theme.button.size[size] && theme.button.size[size].pad) {
-    return (0, _styledComponents.css)(["padding:", " ", ";"], theme.button.size[size].pad.vertical, theme.button.size[size].pad.horizontal);
+    return {
+      vertical: theme.button.size[size].pad.vertical,
+      horizontal: theme.button.size[size].pad.horizontal
+    };
   }
 
   if (theme.button.padding) {
-    return (0, _styledComponents.css)(["padding:", " ", ";"], theme.global.edgeSize[theme.button.padding.vertical] || theme.button.padding.vertical, theme.global.edgeSize[theme.button.padding.horizontal] || theme.button.padding.horizontal);
+    return {
+      vertical: theme.global.edgeSize[theme.button.padding.vertical] || theme.button.padding.vertical,
+      horizontal: theme.global.edgeSize[theme.button.padding.horizontal] || theme.button.padding.horizontal
+    };
   }
 
-  return '';
+  return undefined;
+};
+
+var padStyle = function padStyle(_ref) {
+  var size = _ref.sizeProp,
+      theme = _ref.theme;
+  var pad = padFromTheme(size, theme);
+  return pad ? (0, _styledComponents.css)(["padding:", " ", ";"], pad.vertical, pad.horizontal) : '';
 }; // The > svg rule is to ensure Buttons with just an icon don't add additional
 // vertical height internally.
 
 
 var basicStyle = function basicStyle(props) {
   return (0, _styledComponents.css)(["border:none;", ";", " ", " > svg{vertical-align:bottom;}"], radiusStyle(props), padStyle(props), fontStyle(props));
+};
+
+var getPath = function getPath(theme, path) {
+  var obj;
+
+  if (path) {
+    obj = theme;
+    var parts = path.split('.');
+
+    while (obj && parts.length) {
+      obj = obj[parts.shift()];
+    }
+  }
+
+  return obj;
+};
+
+var adjustPadStyle = function adjustPadStyle(pad, width) {
+  var offset = (0, _utils.parseMetricToNum)(width);
+  return (0, _styledComponents.css)(["padding:", "px ", "px;"], (0, _utils.parseMetricToNum)(pad.vertical) - offset, (0, _utils.parseMetricToNum)(pad.horizontal) - offset);
 }; // build up CSS from basic to specific based on the supplied sub-object paths
 
 
 var kindStyle = function kindStyle(_ref2) {
   var colorValue = _ref2.colorValue,
+      size = _ref2.sizeProp,
       themePaths = _ref2.themePaths,
       theme = _ref2.theme;
   var styles = [];
+  var pad = padFromTheme(size, theme);
   themePaths.base.forEach(function (themePath) {
-    var obj = theme.button;
-
-    if (themePath) {
-      var parts = themePath.split('.');
-
-      while (obj && parts.length) {
-        obj = obj[parts.shift()];
-      }
-    }
+    var obj = getPath(theme, "button." + themePath);
 
     if (obj) {
       styles.push((0, _utils.kindPartStyles)(obj, theme, colorValue));
+
+      if (obj.border && obj.border.width && pad && !obj.padding) {
+        // Adjust padding from the button.size or just top button.padding
+        // to deal with the kind's border width. But don't override any
+        // padding in the kind itself for backward compatibility
+        styles.push(adjustPadStyle(pad, obj.border.width));
+      }
     }
   });
   themePaths.hover.forEach(function (themePath) {
-    var obj = theme.button;
+    var obj = getPath(theme, "button." + themePath);
 
-    if (themePath) {
-      var parts = themePath.split('.');
+    if (obj) {
+      var partStyles = (0, _utils.kindPartStyles)(obj, theme);
+      var adjPadStyles = '';
 
-      while (obj && parts.length) {
-        obj = obj[parts.shift()];
+      if (obj.border && obj.border.width && pad && !obj.padding) {
+        // Adjust padding from the button.size or just top button.padding
+        // to deal with the hover's border width. But don't override any
+        // padding in the hover or hover.kind itself for backward compatibility
+        adjPadStyles = adjustPadStyle(pad, obj.border.width);
       }
 
-      if (obj) {
-        var partStyles = (0, _utils.kindPartStyles)(obj, theme);
-        if (partStyles.length > 0) styles.push((0, _styledComponents.css)(["&:hover{", "}"], partStyles));
+      if (partStyles.length > 0) {
+        styles.push((0, _styledComponents.css)(["&:hover{", " ", "}"], partStyles, adjPadStyles));
       }
     }
   });
