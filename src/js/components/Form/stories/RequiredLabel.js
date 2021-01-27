@@ -1,14 +1,6 @@
 import React from 'react';
 
-import {
-  Box,
-  Button,
-  Form,
-  FormField,
-  Grommet,
-  Text,
-  TextInput,
-} from 'grommet';
+import { Box, Button, Form, FormField, Grommet, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
 
