@@ -522,6 +522,19 @@ Defaults to
 { vertical: 'xsmall', horizontal: 'small' }
 ```
 
+**formField.label.requiredAsterisk**
+
+Whether an asterisk should be shown next to the label of a 
+    required FormField. If providing a custom element, it is recommended that 
+    you apply an a11yTitle of "required" to be accessible for screen readers.
+    If using "true", this a11yTitle is automatically applied. Expects `boolean | element`.
+
+Defaults to
+
+```
+undefined
+```
+
 **formField.margin**
 
 The margin of FormField. Expects `string | object`.

@@ -237,6 +237,14 @@ export const themeDoc = {
     type: 'string | object',
     defaultValue: "{ vertical: 'xsmall', horizontal: 'small' }",
   },
+  'formField.label.requiredAsterisk': {
+    description: `Whether an asterisk should be shown next to the label of a 
+    required FormField. If providing a custom element, it is recommended that 
+    you apply an a11yTitle of "required" to be accessible for screen readers.
+    If using "true", this a11yTitle is automatically applied.`,
+    type: 'boolean | element',
+    defaultValue: 'undefined',
+  },
   'formField.margin': {
     description: 'The margin of FormField.',
     type: 'string | object',

@@ -1,35 +1,48 @@
 import React from 'react';
 
-import { Box, Button, Form, FormField, Grommet, Text } from 'grommet';
+import {
+  Box,
+  Button,
+  Form,
+  FormField,
+  Grommet,
+  Text,
+  TextInput,
+} from 'grommet';
 import { grommet } from 'grommet/themes';
+import { deepMerge } from 'grommet/utils';
 
-const FormFieldLabel = props => {
-  const { required, label, ...rest } = props;
-  return (
-    <FormField
-      label={
-        required ? (
-          <Box direction="row">
-            <Text>{label}</Text>
-            <Text color="status-critical">*</Text>
-          </Box>
-        ) : (
-          label
-        )
-      }
-      required={required}
-      {...rest}
-    />
-  );
-};
+const myTheme = deepMerge(grommet, {
+  formField: {
+    label: {
+      requiredAsterisk: true,
+    },
+  },
+});
 
 export const RequiredLabel = () => (
-  <Grommet theme={grommet}>
+  <Grommet theme={myTheme}>
     <Box align="center" pad="large">
       <Form>
-        <FormFieldLabel name="firstName" label="FirstName" required />
-        <FormFieldLabel name="LastName" label="LastName" required />
-        <FormFieldLabel name="email" label="Email" />
+        <FormField
+          name="firstName"
+          label="First Name"
+          htmlFor="firstName"
+          required
+        >
+          <TextInput id="firstName" name="firstName" />
+        </FormField>
+        <FormField
+          name="lastName"
+          label="Last Name"
+          htmlFor="lastName"
+          required
+        >
+          <TextInput id="lastName" name="lastName" />
+        </FormField>
+        <FormField name="email" label="Email" htmlFor="email" required>
+          <TextInput id="email" name="email" type="email" />
+        </FormField>
         <Button type="submit" label="Submit" primary />
         <Text margin={{ left: 'small' }} size="small" color="status-critical">
           * Required Field

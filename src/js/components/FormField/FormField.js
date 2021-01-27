@@ -356,6 +356,12 @@ const FormField = forwardRef(
           }
         : {};
 
+    let { requiredAsterisk } = theme.formField.label;
+    if (requiredAsterisk === true)
+      // a11yTitle necessary so screenreader announces as "required"
+      // as opposed to "star"
+      requiredAsterisk = <Text a11yTitle="required">*</Text>;
+
     return (
       <FormFieldBox
         ref={ref}
@@ -380,6 +386,7 @@ const FormField = forwardRef(
             {label && component !== CheckBox && (
               <Text as="label" htmlFor={htmlFor} {...labelStyle}>
                 {label}
+                {required && requiredAsterisk ? requiredAsterisk : undefined}
               </Text>
             )}
             <Message message={help} {...formFieldTheme.help} />

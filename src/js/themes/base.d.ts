@@ -729,7 +729,10 @@ export interface ThemeType {
       container?: BoxProps;
       icon?: any;
     };
-    label?: TextProps;
+    label?: {
+      margin?: MarginType;
+      requiredAsterisk?: boolean | JSX.Element;
+    };
     margin?: MarginType;
     round?: RoundType;
   };
