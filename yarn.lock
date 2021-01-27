@@ -1911,7 +1911,7 @@
   dependencies:
     type-detect "4.0.8"
 
-"@storybook/addon-storysource@^6.1.11":
+"@storybook/addon-storysource@^6.1.15":
   version "6.1.15"
   resolved "https://registry.yarnpkg.com/@storybook/addon-storysource/-/addon-storysource-6.1.15.tgz#83db5b5153cf05a333e4357c8e623189bf5480a8"
   integrity sha512-Qs6eEO7l8bJX7rhd1FiGHtt0QENtSMbQZQlsVe/ALVgBdFzcWji2FTVIzSlFHut1iwqmLHF7UEkNKhXpB3Nfzw==
@@ -1931,7 +1931,7 @@
     react-syntax-highlighter "^13.5.0"
     regenerator-runtime "^0.13.7"
 
-"@storybook/addons@6.1.15", "@storybook/addons@^6.1.11":
+"@storybook/addons@6.1.15", "@storybook/addons@^6.1.15":
   version "6.1.15"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-6.1.15.tgz#09eb8d962f58bd20b4ac2f83b515831c83226352"
   integrity sha512-ENyHapLFOG93VaoQXPX8O3IWjLRyVBox9C9P20LMruKX/SfXAXx20qsoAWKKPGssopyOin17aoQX9pj+lFmCZQ==
@@ -2183,7 +2183,7 @@
     npmlog "^4.1.2"
     pretty-hrtime "^1.0.3"
 
-"@storybook/react@*", "@storybook/react@^6.1.11":
+"@storybook/react@*", "@storybook/react@^6.1.15":
   version "6.1.15"
   resolved "https://registry.yarnpkg.com/@storybook/react/-/react-6.1.15.tgz#e17d00b05b8980ad381ba701805309ed46d1fdcd"
   integrity sha512-7WoYLOZuAlzgQsL9oy4JCr9NcB4NBCuxslPSncN5l/7ewGXgfVXTAOMOfw+EVNrtUeVJU2fC8gFiHVl0SJpTZw==
@@ -2230,7 +2230,7 @@
     core-js "^3.6.5"
     find-up "^4.1.0"
 
-"@storybook/source-loader@6.1.15", "@storybook/source-loader@^6.1.11":
+"@storybook/source-loader@6.1.15", "@storybook/source-loader@^6.1.15":
   version "6.1.15"
   resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-6.1.15.tgz#21b985ede0ec626c1a4916fc92a58cffca9d6c63"
   integrity sha512-ZFmbuvo4sq0jVeWj7Ur1zDq5SCfTxLYuQcV6mAOqUr89dyP778PX9AO1b1/BmipjsHL3JOHN6uHAn74ksB9ofg==
