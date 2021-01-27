@@ -24,25 +24,9 @@ export const RequiredLabel = () => (
   <Grommet theme={customTheme}>
     <Box align="center" pad="large">
       <Form>
-        <FormField
-          name="firstName"
-          label="First Name"
-          htmlFor="firstName"
-          required
-        >
-          <TextInput id="firstName" name="firstName" />
-        </FormField>
-        <FormField
-          name="lastName"
-          label="Last Name"
-          htmlFor="lastName"
-          required
-        >
-          <TextInput id="lastName" name="lastName" />
-        </FormField>
-        <FormField name="email" label="Email" htmlFor="email" required>
-          <TextInput id="email" name="email" type="email" />
-        </FormField>
+        <FormField name="firstName" label="First Name" required />
+        <FormField name="lastName" label="Last Name" required />
+        <FormField name="email" label="Email" required />
         <Button type="submit" label="Submit" primary />
         <Text margin={{ left: 'small' }} size="small" color="status-critical">
           * Required Field
