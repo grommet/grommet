@@ -5801,6 +5801,12 @@ string",
         "name": "background",
       },
       Object {
+        "description": "The color of the value region.
+      This is only valid when used with 'value'",
+        "format": "string",
+        "name": "color",
+      },
+      Object {
         "description": "The maximum value for the Meter.",
         "format": "number
 string",
@@ -5841,6 +5847,13 @@ string",
         "format": "bar
 circle",
         "name": "type",
+      },
+      Object {
+        "description": "
+      The numeric value to represent. Ignored when 'values' is specified.
+    ",
+        "format": "number",
+        "name": "value",
       },
       Object {
         "description": "Array of value objects describing the data.

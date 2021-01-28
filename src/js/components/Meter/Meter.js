@@ -18,15 +18,25 @@ const Meter = forwardRef(
   (
     {
       background = { color: 'light-2', opacity: 'medium' },
+      color,
       size = 'medium',
       thickness = 'medium',
       type = 'bar',
-      values,
+      value,
+      values: valuesProp,
       ...rest
     },
     ref,
   ) => {
+    // normalize values to an array of objects
+    const values = useMemo(() => {
+      if (valuesProp) return valuesProp;
+      if (value) return [{ color, value }];
+      return [];
+    }, [color, value, valuesProp]);
+
     const memoizedMax = useMemo(() => deriveMax(values), [values]);
+
     let content;
     if (type === 'bar') {
       content = (
