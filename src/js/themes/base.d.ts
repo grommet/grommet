@@ -740,6 +740,7 @@ export interface ThemeType {
     extend?: ExtendType;
   };
   heading?: {
+    color?: ColorType;
     extend?: ExtendType;
     font?: {};
     level?: {

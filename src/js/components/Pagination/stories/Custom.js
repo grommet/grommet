@@ -77,7 +77,6 @@ export const Custom = () => (
       >
         <Text>Custom Theme via theme.pagination.button</Text>
         <Pagination numberItems={237} />
-
         <Text>Reference Button Kind by string</Text>
         <ThemeContext.Extend value={secondaryTheme}>
           <Pagination numberItems={237} />

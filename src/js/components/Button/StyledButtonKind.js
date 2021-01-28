@@ -6,6 +6,7 @@ import {
   focusStyle,
   genericStyles,
   kindPartStyles,
+  parseMetricToNum,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
 
@@ -31,28 +32,39 @@ const fontStyle = props => {
   `;
 };
 
-const padStyle = ({ sizeProp: size, theme }) => {
+const padFromTheme = (size, theme) => {
   if (
     size &&
     theme.button.size &&
     theme.button.size[size] &&
     theme.button.size[size].pad
   ) {
-    return css`
-      padding: ${theme.button.size[size].pad.vertical}
-        ${theme.button.size[size].pad.horizontal};
-    `;
+    return {
+      vertical: theme.button.size[size].pad.vertical,
+      horizontal: theme.button.size[size].pad.horizontal,
+    };
   }
 
   if (theme.button.padding) {
-    return css`
-      padding: ${theme.global.edgeSize[theme.button.padding.vertical] ||
-          theme.button.padding.vertical}
-        ${theme.global.edgeSize[theme.button.padding.horizontal] ||
-          theme.button.padding.horizontal};
-    `;
+    return {
+      vertical:
+        theme.global.edgeSize[theme.button.padding.vertical] ||
+        theme.button.padding.vertical,
+      horizontal:
+        theme.global.edgeSize[theme.button.padding.horizontal] ||
+        theme.button.padding.horizontal,
+    };
   }
-  return '';
+  return undefined;
+};
+
+const padStyle = ({ sizeProp: size, theme }) => {
+  const pad = padFromTheme(size, theme);
+  return pad
+    ? css`
+        padding: ${pad.vertical} ${pad.horizontal};
+      `
+    : '';
 };
 
 // The > svg rule is to ensure Buttons with just an icon don't add additional
@@ -68,22 +80,45 @@ const basicStyle = props => css`
   }
 `;
 
+const getPath = (theme, path) => {
+  let obj;
+  if (path) {
+    obj = theme;
+    const parts = path.split('.');
+    while (obj && parts.length) obj = obj[parts.shift()];
+  }
+  return obj;
+};
+
+const adjustPadStyle = (pad, width) => {
+  const offset = parseMetricToNum(width);
+  return css`
+    padding: ${parseMetricToNum(pad.vertical) - offset}px
+      ${parseMetricToNum(pad.horizontal) - offset}px;
+  `;
+};
+
 // build up CSS from basic to specific based on the supplied sub-object paths
-const kindStyle = ({ colorValue, kind, themePaths, theme }) => {
+const kindStyle = ({ colorValue, kind, sizeProp: size, themePaths, theme }) => {
   const styles = [];
 
   // caller has specified a themeObj to use for styling
   // relevant for cases like pagination which looks to theme.pagination.button
   const themeObj = typeof kind === 'object' ? kind : undefined;
 
+  const pad = padFromTheme(size, theme);
+
   themePaths.base.forEach(themePath => {
-    let obj = themeObj || theme.button;
-    if (themePath) {
-      const parts = themePath.split('.');
-      while (obj && parts.length) obj = obj[parts.shift()];
-    }
+    const obj = getPath(themeObj || theme.button, themePath);
+
     if (obj) {
       styles.push(kindPartStyles(obj, theme, colorValue));
+      if (obj.border && obj.border.width && pad && !obj.padding) {
+        // Adjust padding from the button.size or just top button.padding
+        // to deal with the kind's border width. But don't override any
+        // padding in the kind itself for backward compatibility
+        styles.push(adjustPadStyle(pad, obj.border.width));
+      }
     }
   });
 
@@ -96,20 +131,26 @@ const kindStyle = ({ colorValue, kind, themePaths, theme }) => {
   }
 
   themePaths.hover.forEach(themePath => {
-    let obj = themeObj || theme.button;
-    if (themePath) {
-      const parts = themePath.split('.');
-      while (obj && parts.length) obj = obj[parts.shift()];
-      if (obj) {
-        const partStyles = kindPartStyles(obj, theme);
-        if (partStyles.length > 0)
-          styles.push(
-            css`
-              &:hover {
-                ${partStyles}
-              }
-            `,
-          );
+    const obj = getPath(themeObj || theme.button, themePath);
+
+    if (obj) {
+      const partStyles = kindPartStyles(obj, theme);
+      let adjPadStyles = '';
+      if (obj.border && obj.border.width && pad && !obj.padding) {
+        // Adjust padding from the button.size or just top button.padding
+        // to deal with the hover's border width. But don't override any
+        // padding in the hover or hover.kind itself for backward compatibility
+        adjPadStyles = adjustPadStyle(pad, obj.border.width);
+      }
+      if (partStyles.length > 0) {
+        styles.push(
+          css`
+            &:hover {
+              ${partStyles}
+              ${adjPadStyles}
+            }
+          `,
+        );
       }
     }
   });

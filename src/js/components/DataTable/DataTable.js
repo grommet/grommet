@@ -9,6 +9,7 @@ import React, {
   Fragment,
 } from 'react';
 import { ThemeContext } from 'styled-components';
+
 import { Box } from '../Box';
 import { Text } from '../Text';
 import { Header } from './Header';
@@ -139,9 +140,20 @@ const DataTable = ({
 
   // placeholder placement stuff
   const headerRef = useRef();
+  const bodyRef = useRef();
   const footerRef = useRef();
   const [headerHeight, setHeaderHeight] = useState();
   const [footerHeight, setFooterHeight] = useState();
+
+  // offset compensation when body overflows
+  const [scrollOffset, setScrollOffset] = useState(0);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useLayoutEffect(() => {
+    const nextScrollOffset =
+      bodyRef.current.parentElement?.clientWidth - bodyRef.current.clientWidth;
+    if (nextScrollOffset !== scrollOffset) setScrollOffset(nextScrollOffset);
+  });
 
   useLayoutEffect(() => {
     if (placeholder) {
@@ -277,9 +289,11 @@ const DataTable = ({
           onSort={sortable || sortProp || onSortProp ? onSort : undefined}
           onToggle={onToggleGroups}
           primaryProperty={primaryProperty}
+          scrollOffset={scrollOffset}
         />
         {groups ? (
           <GroupedBody
+            ref={bodyRef}
             background={normalizeProp(background, 'body')}
             border={normalizeProp(border, 'body')}
             columns={columns}
@@ -293,6 +307,7 @@ const DataTable = ({
           />
         ) : (
           <Body
+            ref={bodyRef}
             background={normalizeProp(background, 'body')}
             border={normalizeProp(border, 'body')}
             columns={columns}
@@ -332,6 +347,7 @@ const DataTable = ({
             pad={normalizeProp(pad, 'footer')}
             pin={pin === true || pin === 'footer'}
             primaryProperty={primaryProperty}
+            scrollOffset={scrollOffset}
             selected={selected}
             size={size}
           />
