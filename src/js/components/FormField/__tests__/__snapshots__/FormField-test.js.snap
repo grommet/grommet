@@ -2368,7 +2368,7 @@ exports[`FormField should have no accessibility violations 1`] = `
 </div>
 `;
 
-exports[`FormField should render asterisk when requiredAsterisk === true 1`] = `
+exports[`FormField should render asterisk when requiredIndicator === true 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -2528,7 +2528,8 @@ exports[`FormField should render asterisk when requiredAsterisk === true 1`] = `
 </div>
 `;
 
-exports[`FormField should render custom asterisk when requiredAsterisk is element 1`] = `
+exports[`FormField should render custom indicator when requiredIndicator is 
+  element 1`] = `
 .c3 {
   display: inline-block;
   -webkit-flex: 0 0 auto;

@@ -363,13 +363,13 @@ describe('FormField', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test('should render asterisk when requiredAsterisk === true', () => {
+  test('should render asterisk when requiredIndicator === true', () => {
     const component = renderer.create(
       <Grommet
         theme={{
           formField: {
             label: {
-              requiredAsterisk: true,
+              requiredIndicator: true,
             },
           },
         }}
@@ -383,13 +383,14 @@ describe('FormField', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test('should render custom asterisk when requiredAsterisk is element', () => {
+  test(`should render custom indicator when requiredIndicator is 
+  element`, () => {
     const component = renderer.create(
       <Grommet
         theme={{
           formField: {
             label: {
-              requiredAsterisk: <New size="small" />,
+              requiredIndicator: <New size="small" />,
             },
           },
         }}

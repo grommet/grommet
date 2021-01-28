@@ -820,7 +820,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       label: {
         margin: { vertical: 'xsmall', horizontal: 'small' },
-        // requiredAsterisk: undefined,
+        // requiredIndicator: undefined,
       },
       margin: { bottom: 'small' },
       // round: undefined,

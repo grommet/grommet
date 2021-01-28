@@ -522,12 +522,13 @@ Defaults to
 { vertical: 'xsmall', horizontal: 'small' }
 ```
 
-**formField.label.requiredAsterisk**
+**formField.label.requiredIndicator**
 
-Whether an asterisk should be shown next to the label of a 
-    required FormField. If providing a custom element, it is recommended that 
-    you apply an a11yTitle of "required" to be accessible for screen readers.
-    If using "true", this a11yTitle is automatically applied. Expects `boolean | element | string`.
+Whether an asterisk (*) indicating that an input is required 
+    should be displayed adjacent to the FormField's label. If providing a 
+    custom element, for accessibility it is recommended that you include 
+    an a11yTitle of "required" to assist screen readers. If using "true", the 
+    a11yTitle is automatically applied. Expects `boolean | element | string`.
 
 Defaults to
 
