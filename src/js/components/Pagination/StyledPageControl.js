@@ -28,7 +28,10 @@ const calcAdjustedPadding = (buttonStyle, pad) => {
       (buttonStyle.border && buttonStyle.border.width) ||
       '0px';
 
-    const adjustedPad = `${pad.replace('px', '') - border.replace('px', '')}px`;
+    const adjustedPad = `${Math.max(
+      pad.replace('px', '') - border.replace('px', ''),
+      0,
+    )}px`;
     adjustedPadding[state] = { pad: undefined };
     adjustedPadding[state].pad = adjustedPad;
   });
