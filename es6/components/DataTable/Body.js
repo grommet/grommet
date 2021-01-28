@@ -75,10 +75,10 @@ var Body = /*#__PURE__*/forwardRef(function (_ref, ref) {
         adjustedEvent.index = index;
         onClickRow(adjustedEvent);
       } : undefined,
-      onMouseOver: onClickRow ? function () {
+      onMouseEnter: onClickRow ? function () {
         return setActive(index);
       } : undefined,
-      onMouseOut: onClickRow ? function () {
+      onMouseLeave: onClickRow ? function () {
         return setActive(undefined);
       } : undefined,
       onFocus: onClickRow ? function () {
