@@ -44,7 +44,7 @@ export const Controlled = () => {
             }
           >
             <FormField label="Name" name="name">
-              <TextInput name="name" />
+              <TextInput name="name" suggestions={['shimi', 'eric']} />
             </FormField>
             <FormField label="Email" name="email" required>
               <MaskedInput

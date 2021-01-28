@@ -259,20 +259,6 @@ const TextInput = forwardRef(
       onSelect: handleTextSelect,
     };
 
-    const onEnterEventHandler = (event, handleForm) => {
-      closeDrop();
-      if (activeSuggestionIndex >= 0 && handleSuggestionSelect) {
-        // prevent submitting forms when choosing a suggestion
-        if (handleForm) {
-          event.preventDefault();
-          event.persist();
-        }
-        const adjustedEvent = event;
-        adjustedEvent.suggestion = suggestions[activeSuggestionIndex];
-        handleSuggestionSelect(adjustedEvent);
-      }
-    };
-
     if (showDrop) {
       drop = (
         // keyboard access needed here in case user clicks
@@ -283,7 +269,13 @@ const TextInput = forwardRef(
           onEnter={event => {
             // we stole the focus, give it back
             inputRef.current.focus();
-            onEnterEventHandler(event);
+            closeDrop();
+            if (activeSuggestionIndex >= 0 && handleSuggestionSelect) {
+              event.preventDefault();
+              const adjustedEvent = event;
+              adjustedEvent.suggestion = suggestions[activeSuggestionIndex];
+              handleSuggestionSelect(adjustedEvent);
+            }
             setValue(suggestions[activeSuggestionIndex]);
           }}
         >
@@ -376,9 +368,14 @@ const TextInput = forwardRef(
             {icon}
           </StyledIcon>
         )}
-
         <Keyboard
-          onEnter={event => onEnterEventHandler(event, true)}
+          onEnter={
+            activeSuggestionIndex >= 0
+              ? event =>
+                  // prevent submitting forms when choosing a suggestion
+                  event.preventDefault()
+              : undefined
+          }
           onEsc={
             showDrop
               ? event => {
@@ -392,25 +389,9 @@ const TextInput = forwardRef(
               : undefined
           }
           onTab={showDrop ? closeDrop : undefined}
-          onUp={
-            !showDrop &&
-            suggestions &&
-            suggestions.length > 0 &&
-            activeSuggestionIndex
-              ? event => {
-                  onPreviousSuggestion(event);
-                }
-              : undefined
-          }
           onDown={
             !showDrop && suggestions && suggestions.length > 0
-              ? event => {
-                  if (!showDrop) {
-                    openDrop();
-                  } else {
-                    onNextSuggestion(event);
-                  }
-                }
+              ? () => openDrop()
               : undefined
           }
           onKeyDown={onKeyDown}
