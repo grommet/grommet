@@ -265,7 +265,7 @@ const Menu = forwardRef((props, ref) => {
         {...rest}
         {...buttonProps}
         a11yTitle={a11yTitle || messages.openMenu || 'Open Menu'}
-        setAlignControlMirror={setAlignControlMirror}
+        onAlign={setAlignControlMirror}
         disabled={disabled}
         dropAlign={align}
         dropTarget={dropTarget}

@@ -37,7 +37,7 @@ const DropContainer = forwardRef(
   (
     {
       align = defaultAlign,
-      setAlignControlMirror,
+      onAlign,
       children,
       dropTarget,
       elevation,
@@ -67,7 +67,7 @@ const DropContainer = forwardRef(
         const styleCurrent = (ref || dropRef).current.style;
         const alignControl = styleCurrent.top !== '' ? 'top' : 'bottom';
 
-        if (setAlignControlMirror) setAlignControlMirror(alignControl);
+        if (onAlign) onAlign(alignControl);
       };
 
       // We try to preserve the maxHeight as changing it causes any scroll
@@ -292,7 +292,7 @@ const DropContainer = forwardRef(
       };
     }, [
       align,
-      setAlignControlMirror,
+      onAlign,
       dropTarget,
       onClickOutside,
       portalContext,
