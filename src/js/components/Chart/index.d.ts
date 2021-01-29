@@ -32,6 +32,13 @@ export interface ChartProps {
   opacity?: 'weak' | 'medium' | 'strong' | boolean | number;
   overflow?: boolean;
   pad?: EdgeSizeType | { horizontal?: EdgeSizeType; vertical?: EdgeSizeType };
+  pattern?:
+    | 'squares'
+    | 'circles'
+    | 'stripesHorizontal'
+    | 'stripesVertical'
+    | 'stripesDiagonalDown'
+    | 'stripesDiagonalUp';
   point?:
     | 'circle'
     | 'diamond'

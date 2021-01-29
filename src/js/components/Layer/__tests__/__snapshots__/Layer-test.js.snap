@@ -3947,7 +3947,7 @@ exports[`Layer position: bottom - full: horizontal 1`] = `
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 0;
   left: 0px;
   right: 0px;
   bottom: 0px;
@@ -4306,7 +4306,7 @@ exports[`Layer position: bottom - full: vertical 1`] = `
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 0;
   top: 0px;
   bottom: 0px;
   left: 50%;
@@ -4663,7 +4663,7 @@ exports[`Layer position: bottom-left - full: horizontal 1`] = `
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 0;
   left: 0px;
   right: 0px;
   bottom: 0px;
@@ -5022,7 +5022,7 @@ exports[`Layer position: bottom-left - full: vertical 1`] = `
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 0;
   top: 0px;
   bottom: 0px;
   left: 0px;
@@ -5379,7 +5379,7 @@ exports[`Layer position: bottom-right - full: horizontal 1`] = `
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 0;
   left: 0px;
   right: 0px;
   bottom: 0px;
@@ -5738,7 +5738,7 @@ exports[`Layer position: bottom-right - full: vertical 1`] = `
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 0;
   top: 0px;
   bottom: 0px;
   right: 0px;
@@ -6095,7 +6095,7 @@ exports[`Layer position: center - full: horizontal 1`] = `
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 0;
   left: 0px;
   right: 0px;
   top: 50%;
@@ -6451,7 +6451,7 @@ exports[`Layer position: center - full: vertical 1`] = `
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 0;
   top: 0px;
   bottom: 0px;
   left: 50%;
@@ -6808,7 +6808,7 @@ exports[`Layer position: end - full: horizontal 1`] = `
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 0;
   inset-inline-start: 0px;
   inset-inline-end: 0px;
   top: 50%;
@@ -7167,7 +7167,7 @@ exports[`Layer position: end - full: vertical 1`] = `
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 0;
   top: 0px;
   bottom: 0px;
   inset-inline-end: 0px;
@@ -7524,7 +7524,7 @@ exports[`Layer position: left - full: horizontal 1`] = `
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 0;
   left: 0px;
   right: 0px;
   top: 50%;
@@ -7883,7 +7883,7 @@ exports[`Layer position: left - full: vertical 1`] = `
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 0;
   top: 0px;
   bottom: 0px;
   left: 0px;
@@ -8240,7 +8240,7 @@ exports[`Layer position: right - full: horizontal 1`] = `
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 0;
   left: 0px;
   right: 0px;
   top: 50%;
@@ -8599,7 +8599,7 @@ exports[`Layer position: right - full: vertical 1`] = `
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 0;
   top: 0px;
   bottom: 0px;
   right: 0px;
@@ -8956,7 +8956,7 @@ exports[`Layer position: start - full: horizontal 1`] = `
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 0;
   inset-inline-start: 0px;
   inset-inline-end: 0px;
   top: 50%;
@@ -9315,7 +9315,7 @@ exports[`Layer position: start - full: vertical 1`] = `
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 0;
   top: 0px;
   bottom: 0px;
   inset-inline-start: 0px;
@@ -9672,7 +9672,7 @@ exports[`Layer position: top - full: horizontal 1`] = `
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 0;
   left: 0px;
   right: 0px;
   top: 0px;
@@ -10031,7 +10031,7 @@ exports[`Layer position: top - full: vertical 1`] = `
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 0;
   top: 0px;
   bottom: 0px;
   left: 50%;
@@ -10388,7 +10388,7 @@ exports[`Layer position: top-left - full: horizontal 1`] = `
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 0;
   left: 0px;
   right: 0px;
   top: 0;
@@ -10747,7 +10747,7 @@ exports[`Layer position: top-left - full: vertical 1`] = `
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 0;
   top: 0px;
   bottom: 0px;
   left: 0px;
@@ -11104,7 +11104,7 @@ exports[`Layer position: top-right - full: horizontal 1`] = `
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 0;
   left: 0px;
   right: 0px;
   top: 0;
@@ -11463,7 +11463,7 @@ exports[`Layer position: top-right - full: vertical 1`] = `
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 4px;
+  border-radius: 0;
   top: 0px;
   bottom: 0px;
   right: 0px;
@@ -12001,7 +12001,7 @@ exports[`Layer should render correct border radius for position: bottom -
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 48px 48px 0 0;
+  border-radius: 0;
   left: 0px;
   right: 0px;
   bottom: 0px;
@@ -12364,7 +12364,7 @@ exports[`Layer should render correct border radius for position: bottom -
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 48px 48px 0 0;
+  border-radius: 0;
   top: 0px;
   bottom: 0px;
   left: 50%;
@@ -12725,7 +12725,7 @@ exports[`Layer should render correct border radius for position: bottom-left -
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 0 48px 0 0;
+  border-radius: 0;
   left: 0px;
   right: 0px;
   bottom: 0px;
@@ -13088,7 +13088,7 @@ exports[`Layer should render correct border radius for position: bottom-left -
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 0 48px 0 0;
+  border-radius: 0;
   top: 0px;
   bottom: 0px;
   left: 0px;
@@ -13449,7 +13449,7 @@ exports[`Layer should render correct border radius for position: bottom-right -
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 48px 0 0 0;
+  border-radius: 0;
   left: 0px;
   right: 0px;
   bottom: 0px;
@@ -13812,7 +13812,7 @@ exports[`Layer should render correct border radius for position: bottom-right -
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 48px 0 0 0;
+  border-radius: 0;
   top: 0px;
   bottom: 0px;
   right: 0px;
@@ -14173,7 +14173,7 @@ exports[`Layer should render correct border radius for position: center -
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 48px;
+  border-radius: 0;
   left: 0px;
   right: 0px;
   top: 50%;
@@ -14533,7 +14533,7 @@ exports[`Layer should render correct border radius for position: center -
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 48px;
+  border-radius: 0;
   top: 0px;
   bottom: 0px;
   left: 50%;
@@ -14895,8 +14895,7 @@ exports[`Layer should render correct border radius for position: end -
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-start-start-radius: 48px;
-  border-end-start-radius: 48px;
+  border-radius: 0;
   inset-inline-start: 0px;
   inset-inline-end: 0px;
   top: 50%;
@@ -15259,8 +15258,7 @@ exports[`Layer should render correct border radius for position: end -
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-start-start-radius: 48px;
-  border-end-start-radius: 48px;
+  border-radius: 0;
   top: 0px;
   bottom: 0px;
   inset-inline-end: 0px;
@@ -15621,7 +15619,7 @@ exports[`Layer should render correct border radius for position: left -
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 0 48px 48px 0;
+  border-radius: 0;
   left: 0px;
   right: 0px;
   top: 50%;
@@ -15984,7 +15982,7 @@ exports[`Layer should render correct border radius for position: left -
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 0 48px 48px 0;
+  border-radius: 0;
   top: 0px;
   bottom: 0px;
   left: 0px;
@@ -16345,7 +16343,7 @@ exports[`Layer should render correct border radius for position: right -
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 48px 0 0 48px;
+  border-radius: 0;
   left: 0px;
   right: 0px;
   top: 50%;
@@ -16708,7 +16706,7 @@ exports[`Layer should render correct border radius for position: right -
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 48px 0 0 48px;
+  border-radius: 0;
   top: 0px;
   bottom: 0px;
   right: 0px;
@@ -17070,8 +17068,7 @@ exports[`Layer should render correct border radius for position: start -
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-end-end-radius: 48px;
-  border-start-end-radius: 48px;
+  border-radius: 0;
   inset-inline-start: 0px;
   inset-inline-end: 0px;
   top: 50%;
@@ -17434,8 +17431,7 @@ exports[`Layer should render correct border radius for position: start -
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-end-end-radius: 48px;
-  border-start-end-radius: 48px;
+  border-radius: 0;
   top: 0px;
   bottom: 0px;
   inset-inline-start: 0px;
@@ -17796,7 +17792,7 @@ exports[`Layer should render correct border radius for position: top -
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 0 0 48px 48px;
+  border-radius: 0;
   left: 0px;
   right: 0px;
   top: 0px;
@@ -18159,7 +18155,7 @@ exports[`Layer should render correct border radius for position: top -
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 0 0 48px 48px;
+  border-radius: 0;
   top: 0px;
   bottom: 0px;
   left: 50%;
@@ -18520,7 +18516,7 @@ exports[`Layer should render correct border radius for position: top-left -
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 0 0 48px 0;
+  border-radius: 0;
   left: 0px;
   right: 0px;
   top: 0;
@@ -18883,7 +18879,7 @@ exports[`Layer should render correct border radius for position: top-left -
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 0 0 48px 0;
+  border-radius: 0;
   top: 0px;
   bottom: 0px;
   left: 0px;
@@ -19244,7 +19240,7 @@ exports[`Layer should render correct border radius for position: top-right -
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 0 0 0 48px;
+  border-radius: 0;
   left: 0px;
   right: 0px;
   top: 0;
@@ -19607,7 +19603,7 @@ exports[`Layer should render correct border radius for position: top-right -
   position: absolute;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: 0 0 0 48px;
+  border-radius: 0;
   top: 0px;
   bottom: 0px;
   right: 0px;
