@@ -140,9 +140,10 @@ const TextInput = forwardRef(
     }, [onSuggestionsClose, showDrop, suggestions]);
 
     // If we have suggestions and focus, open drop if it's closed.
-    // This can occur when suggestions are tied to the value.
+    // This can occur when suggestions are tied to the value, as in
+    // the caller updates the suggestions based on the value passed in.
     // We don't want focus or showDrop in the dependencies because we
-    // don't want to open the drop just because Esc close it.
+    // don't want to open the drop just after Esc closed it.
     /* eslint-disable react-hooks/exhaustive-deps */
     useEffect(() => {
       if (focus && !showDrop && suggestions && suggestions.length) {
@@ -152,18 +153,33 @@ const TextInput = forwardRef(
     }, [onSuggestionsOpen, suggestions]);
     /* eslint-enable react-hooks/exhaustive-deps */
 
+    // choose the best suggestion, either the explicit default or the one
+    // that matches the current value
+    const bestSuggestion = useCallback(() => {
+      if (suggestions) {
+        const suggestionValues = suggestions.map(suggestion =>
+          typeof suggestion === 'object' ? suggestion.value : suggestion,
+        );
+        const indexOfValue = suggestionValues.indexOf(value);
+        if (indexOfValue === -1 && typeof defaultSuggestion === 'number') {
+          return defaultSuggestion;
+        }
+        return indexOfValue;
+      }
+      return -1;
+    }, [defaultSuggestion, suggestions, value]);
+
     const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(
-      typeof defaultSuggestion === 'number' ? defaultSuggestion : -1,
+      bestSuggestion(),
     );
 
     // reset activeSuggestionIndex when the drop is closed
     useEffect(() => {
-      const defaultIndex =
-        typeof defaultSuggestion === 'number' ? defaultSuggestion : -1;
-      if (activeSuggestionIndex !== defaultIndex && !showDrop) {
-        setActiveSuggestionIndex(defaultIndex);
+      const nextActiveSuggestionIndex = bestSuggestion();
+      if (activeSuggestionIndex !== nextActiveSuggestionIndex && !showDrop) {
+        setActiveSuggestionIndex(nextActiveSuggestionIndex);
       }
-    }, [activeSuggestionIndex, showDrop, defaultSuggestion]);
+    }, [activeSuggestionIndex, bestSuggestion, showDrop]);
 
     // announce active suggestion
     useEffect(() => {
@@ -172,21 +188,6 @@ const TextInput = forwardRef(
         announce(`${label} ${messages.enterSelect}`);
       }
     }, [activeSuggestionIndex, announce, messages, suggestions]);
-
-    // set activeSuggestionIndex based on value and current suggestions
-    useEffect(() => {
-      if (suggestions) {
-        const suggestionValues = suggestions.map(suggestion =>
-          typeof suggestion === 'object' ? suggestion.value : suggestion,
-        );
-        const indexOfValue = suggestionValues.indexOf(value);
-        if (indexOfValue === -1 && typeof defaultSuggestion === 'number') {
-          setActiveSuggestionIndex(defaultSuggestion);
-        } else {
-          setActiveSuggestionIndex(indexOfValue);
-        }
-      } else setActiveSuggestionIndex(-1);
-    }, [suggestions, value, defaultSuggestion]);
 
     // make sure activeSuggestion remains visible in scroll
     useEffect(() => {
@@ -232,6 +233,22 @@ const TextInput = forwardRef(
       if (onSuggestionsClose) onSuggestionsClose();
     }, [messages.onSuggestionsClose, onSuggestionsClose]);
 
+    const setFromSuggestion = (event, suggestion) => {
+      // if we stole the focus in the drop, perhaps by interacting with
+      // a suggestion button or the scrollbar, give it back
+      inputRef.current.focus();
+      closeDrop();
+      if (handleSuggestionSelect) {
+        if (event.persist) event.persist();
+        const adjustedEvent = event;
+        adjustedEvent.suggestion = suggestion;
+        // adjustedEvent.target = inputRef.current;
+        handleSuggestionSelect(adjustedEvent);
+      }
+      inputRef.current.value = suggestion; // needed for uncontrolled cases
+      setValue(suggestion);
+    };
+
     const onNextSuggestion = event => {
       event.preventDefault();
       const nextActiveIndex = Math.min(
@@ -261,101 +278,89 @@ const TextInput = forwardRef(
 
     if (showDrop) {
       drop = (
-        // keyboard access needed here in case user clicks
-        // and drags on scroll bar and focus shifts to drop
-        <Keyboard
-          onDown={event => onNextSuggestion(event)}
-          onUp={event => onPreviousSuggestion(event)}
-          onEnter={event => {
-            // we stole the focus, give it back
-            inputRef.current.focus();
-            closeDrop();
-            if (activeSuggestionIndex >= 0 && handleSuggestionSelect) {
-              event.preventDefault();
-              const adjustedEvent = event;
-              adjustedEvent.suggestion = suggestions[activeSuggestionIndex];
-              handleSuggestionSelect(adjustedEvent);
-            }
-            setValue(suggestions[activeSuggestionIndex]);
-          }}
+        <Drop
+          ref={dropRef}
+          id={id ? `text-input-drop__${id}` : undefined}
+          align={dropAlign}
+          responsive={false}
+          target={dropTarget || inputRef.current}
+          onClickOutside={closeDrop}
+          onEsc={closeDrop}
+          {...dropProps}
         >
-          <Drop
-            ref={dropRef}
-            id={id ? `text-input-drop__${id}` : undefined}
-            align={dropAlign}
-            responsive={false}
-            target={dropTarget || inputRef.current}
-            onClickOutside={closeDrop}
-            onEsc={closeDrop}
-            {...dropProps}
+          <ContainerBox
+            ref={suggestionsRef}
+            overflow="auto"
+            dropHeight={dropHeight}
           >
-            <ContainerBox
-              ref={suggestionsRef}
-              overflow="auto"
-              dropHeight={dropHeight}
-            >
-              <StyledSuggestions>
-                <InfiniteScroll items={suggestions} step={theme.select.step}>
-                  {(suggestion, index, itemRef) => {
-                    // Determine whether the label is done as a child or
-                    // as an option Button kind property.
-                    const renderedLabel = renderLabel(suggestion);
-                    let child;
-                    if (typeof renderedLabel !== 'string')
-                      // must be an element rendered by suggestions.label
-                      child = renderedLabel;
-                    else if (!theme.button.option)
-                      // don't have theme support, need to layout here
-                      child = (
-                        <Box align="start" pad="small">
-                          {renderedLabel}
-                        </Box>
-                      );
-                    // if we have a child, turn on plain, and hoverIndicator
-
-                    return (
-                      <li
-                        key={`${stringLabel(suggestion)}-${index}`}
-                        ref={itemRef}
-                      >
-                        <Button
-                          active={activeSuggestionIndex === index}
-                          ref={r => {
-                            suggestionRefs[index] = r;
-                          }}
-                          fill
-                          plain={!child ? undefined : true}
-                          align="start"
-                          kind={!child ? 'option' : undefined}
-                          hoverIndicator={!child ? undefined : 'background'}
-                          label={!child ? renderedLabel : undefined}
-                          onClick={event => {
-                            // we stole the focus, give it back
-                            inputRef.current.focus();
-                            closeDrop();
-                            if (handleSuggestionSelect) {
-                              event.persist();
-                              const adjustedEvent = event;
-                              adjustedEvent.suggestion = suggestion;
-                              adjustedEvent.target = inputRef.current;
-                              handleSuggestionSelect(adjustedEvent);
-                            }
-                            setValue(suggestion);
-                          }}
-                          onMouseOver={() => setActiveSuggestionIndex(index)}
-                          onFocus={() => setActiveSuggestionIndex(index)}
-                        >
-                          {child}
-                        </Button>
-                      </li>
+            <StyledSuggestions>
+              <InfiniteScroll items={suggestions} step={theme.select.step}>
+                {(suggestion, index, itemRef) => {
+                  // Determine whether the label is done as a child or
+                  // as an option Button kind property.
+                  const renderedLabel = renderLabel(suggestion);
+                  let child;
+                  if (typeof renderedLabel !== 'string')
+                    // must be an element rendered by suggestions.label
+                    child = renderedLabel;
+                  else if (!theme.button.option)
+                    // don't have theme support, need to layout here
+                    child = (
+                      <Box align="start" pad="small">
+                        {renderedLabel}
+                      </Box>
                     );
-                  }}
-                </InfiniteScroll>
-              </StyledSuggestions>
-            </ContainerBox>
-          </Drop>
-        </Keyboard>
+                  // if we have a child, turn on plain, and hoverIndicator
+
+                  return (
+                    <li
+                      key={`${stringLabel(suggestion)}-${index}`}
+                      ref={itemRef}
+                    >
+                      <Button
+                        active={activeSuggestionIndex === index}
+                        ref={r => {
+                          suggestionRefs[index] = r;
+                        }}
+                        fill
+                        plain={!child ? undefined : true}
+                        align="start"
+                        kind={!child ? 'option' : undefined}
+                        hoverIndicator={!child ? undefined : 'background'}
+                        label={!child ? renderedLabel : undefined}
+                        onClick={event => setFromSuggestion(event, suggestion)}
+                        onMouseOver={() => setActiveSuggestionIndex(index)}
+                        onFocus={() => setActiveSuggestionIndex(index)}
+                      >
+                        {child}
+                      </Button>
+                    </li>
+                  );
+                }}
+              </InfiniteScroll>
+            </StyledSuggestions>
+          </ContainerBox>
+        </Drop>
       );
+    }
+
+    // If we have focus, then we set the target to the document, otherwise
+    // we only listen to onDown on the input element itself, primarily for
+    // tests.
+    const keyboardProps = { onKeyDown };
+    if (showDrop) {
+      keyboardProps.onEnter = event => {
+        // prevent submitting forms via Enter when the drop is open
+        event.preventDefault();
+        if (activeSuggestionIndex >= 0)
+          setFromSuggestion(event, suggestions[activeSuggestionIndex]);
+      };
+      if (activeSuggestionIndex > 0) keyboardProps.onUp = onPreviousSuggestion;
+      if (activeSuggestionIndex < suggestions.length - 1)
+        keyboardProps.onDown = onNextSuggestion;
+      keyboardProps.onTab = closeDrop;
+    } else if (suggestions && suggestions.length > 0) {
+      keyboardProps.onDown = openDrop;
     }
 
     return (
@@ -368,34 +373,7 @@ const TextInput = forwardRef(
             {icon}
           </StyledIcon>
         )}
-        <Keyboard
-          onEnter={
-            activeSuggestionIndex >= 0
-              ? event =>
-                  // prevent submitting forms when choosing a suggestion
-                  event.preventDefault()
-              : undefined
-          }
-          onEsc={
-            showDrop
-              ? event => {
-                  closeDrop();
-                  // we have to stop both synthetic events and native events
-                  // drop and layer should not close by pressing esc on this
-                  // input
-                  event.stopPropagation();
-                  event.nativeEvent.stopImmediatePropagation();
-                }
-              : undefined
-          }
-          onTab={showDrop ? closeDrop : undefined}
-          onDown={
-            !showDrop && suggestions && suggestions.length > 0
-              ? () => openDrop()
-              : undefined
-          }
-          onKeyDown={onKeyDown}
-        >
+        <Keyboard target={focus ? 'document' : undefined} {...keyboardProps}>
           <StyledTextInput
             aria-label={a11yTitle}
             ref={inputRef}
@@ -416,16 +394,30 @@ const TextInput = forwardRef(
             value={renderLabel(value)}
             readOnly={readOnly}
             onFocus={event => {
-              setFocus(true);
-              if (suggestions && suggestions.length > 0) {
-                announce(messages.suggestionsExist);
-                openDrop();
+              // Don't do anything if we are acting like we already have
+              // focus. This can happen when this input loses focus temporarily
+              // to our drop, see onBlur() handler below.
+              if (!focus) {
+                setFocus(true);
+                if (suggestions && suggestions.length > 0) {
+                  announce(messages.suggestionsExist);
+                  openDrop();
+                }
+                if (onFocus) onFocus(event);
               }
-              if (onFocus) onFocus(event);
             }}
             onBlur={event => {
-              setFocus(false);
-              if (onBlur) onBlur(event);
+              // Only treat it as a blur if the element receiving focus
+              // isn't in our drop. The relatedTarget will be our drop
+              // when the user clicks on a suggestion or interacts with the
+              // scrollbar in the drop.
+              if (
+                !event.relatedTarget ||
+                event.relatedTarget !== dropRef.current
+              ) {
+                setFocus(false);
+                if (onBlur) onBlur(event);
+              }
             }}
             onChange={
               readOnly
