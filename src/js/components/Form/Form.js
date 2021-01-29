@@ -64,10 +64,12 @@ const Form = forwardRef(
       defaultValidationResults,
     );
 
-    // when onBlur input validation is triggered by a click event,
-    // we need to complete the click event before running the validation
+    // when onBlur input validation is triggered, we need to complete any
+    // potential click events before running the onBlur validation.
     // otherwise, click events like reset, etc. may not be registered.
     // for a detailed scenario/discussion, see: https://github.com/grommet/grommet/issues/4863
+    // the value of pendingValidation is the name of the FormField
+    // awaiting validation.
     const [pendingValidation, setPendingValidation] = useState(undefined);
 
     useEffect(() => {
@@ -76,6 +78,7 @@ const Form = forwardRef(
     }, [errorsProp, infosProp]);
     const validations = useRef({});
 
+    // Currently, onBlur validation will trigger after a timeout of 120ms. #4863
     useEffect(() => {
       const timer = setTimeout(() => {
         if (pendingValidation) {
