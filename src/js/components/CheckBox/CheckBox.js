@@ -5,6 +5,7 @@ import { removeUndefined } from '../../utils/object';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { FormContext } from '../Form/FormContext';
+import { FormFieldContext } from '../FormField/FormFieldContext';
 
 import {
   StyledCheckBox,
@@ -48,12 +49,15 @@ const CheckBox = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const formContext = useContext(FormContext);
+    const formFieldContext = useContext(FormFieldContext);
 
     const [checked, setChecked] = formContext.useFormInput(
       name,
       checkedProp,
       false,
     );
+
+    const { inFormField } = formFieldContext;
 
     const [focus, setFocus] = useState(focusProp);
     useEffect(() => setFocus(focusProp), [focusProp]);
@@ -79,6 +83,7 @@ const CheckBox = forwardRef(
       reverse,
       toggle,
       indeterminate,
+      inFormField,
     };
 
     let hidden;
