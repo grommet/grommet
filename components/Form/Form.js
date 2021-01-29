@@ -85,24 +85,72 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
 
   var _useState3 = (0, _react.useState)(defaultValidationResults),
       validationResults = _useState3[0],
-      setValidationResults = _useState3[1];
+      setValidationResults = _useState3[1]; // when onBlur input validation is triggered, we need to complete any
+  // potential click events before running the onBlur validation.
+  // otherwise, click events like reset, etc. may not be registered.
+  // for a detailed scenario/discussion, see: https://github.com/grommet/grommet/issues/4863
+  // the value of pendingValidation is the name of the FormField
+  // awaiting validation.
+
+
+  var _useState4 = (0, _react.useState)(undefined),
+      pendingValidation = _useState4[0],
+      setPendingValidation = _useState4[1];
 
   (0, _react.useEffect)(function () {
-    return setValidationResults({
+    setPendingValidation(undefined);
+    setValidationResults({
       errors: errorsProp,
       infos: infosProp
     });
   }, [errorsProp, infosProp]);
-  var validations = (0, _react.useRef)({}); // clear any errors when value changes
+  var validations = (0, _react.useRef)({}); // Currently, onBlur validation will trigger after a timeout of 120ms. #4863
 
   (0, _react.useEffect)(function () {
+    var timer = setTimeout(function () {
+      if (pendingValidation) {
+        // run validations on touched keys
+        var _validate = validate(Object.entries(validations.current).filter(function (_ref3) {
+          var n = _ref3[0];
+          return touched[n] || n === pendingValidation;
+        }), value),
+            nextErrors = _validate[0],
+            nextInfos = _validate[1];
+
+        setPendingValidation(undefined); // give user access to errors that have occurred on validation
+
+        setValidationResults(function (prevValidationResults) {
+          // keep any previous errors and infos for untouched keys,
+          // which probably came from a submit
+          var nextValidationResults = {
+            errors: _extends({}, prevValidationResults.errors, nextErrors),
+            infos: _extends({}, prevValidationResults.infos, nextInfos)
+          };
+          if (onValidate) onValidate(nextValidationResults);
+          return nextValidationResults;
+        });
+      } // a timeout is needed to ensure that a click event (like one on a reset
+      // button) completes prior to running the validation. without a timeout,
+      // the blur will always complete and trigger a validation prematurely
+      // The following values have been empirically tested, but 120 was
+      // selected because it is the largest value
+      // Chrome: 100, Safari: 120, Firefox: 80
+
+    }, 120);
+    return function () {
+      return clearTimeout(timer);
+    };
+  }, [pendingValidation, onValidate, touched, value]); // clear any errors when value changes
+
+  (0, _react.useEffect)(function () {
+    setPendingValidation(undefined);
     setValidationResults(function (prevValidationResults) {
-      var _validate = validate(Object.entries(validations.current).filter(function (_ref3) {
-        var n = _ref3[0];
+      var _validate2 = validate(Object.entries(validations.current).filter(function (_ref4) {
+        var n = _ref4[0];
         return prevValidationResults.errors[n] || prevValidationResults.infos[n];
       }), value),
-          nextErrors = _validate[0],
-          nextInfos = _validate[1];
+          nextErrors = _validate2[0],
+          nextInfos = _validate2[1];
 
       return {
         errors: _extends({}, prevValidationResults.errors, nextErrors),
@@ -143,9 +191,9 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
   //
 
   var useFormInput = function useFormInput(name, componentValue, initialValue) {
-    var _useState4 = (0, _react.useState)(initialValue),
-        inputValue = _useState4[0],
-        setInputValue = _useState4[1];
+    var _useState5 = (0, _react.useState)(initialValue),
+        inputValue = _useState5[0],
+        setInputValue = _useState5[1];
 
     var formValue = name ? value[name] : undefined; // This effect is for pattern #2, where the controlled input
     // component is driving the value via componentValue.
@@ -193,12 +241,12 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
     }];
   };
 
-  var useFormField = function useFormField(_ref4) {
-    var errorArg = _ref4.error,
-        infoArg = _ref4.info,
-        name = _ref4.name,
-        required = _ref4.required,
-        validateArg = _ref4.validate;
+  var useFormField = function useFormField(_ref5) {
+    var errorArg = _ref5.error,
+        infoArg = _ref5.info,
+        name = _ref5.name,
+        required = _ref5.required,
+        validateArg = _ref5.validate;
     var error = errorArg || validationResults.errors[name];
     var info = infoArg || validationResults.infos[name];
     (0, _react.useEffect)(function () {
@@ -257,25 +305,7 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
       info: info,
       inForm: true,
       onBlur: validateOn === 'blur' ? function () {
-        // run validations on touched keys
-        var _validate2 = validate(Object.entries(validations.current).filter(function (_ref5) {
-          var n = _ref5[0];
-          return touched[n] || n === name;
-        }), value),
-            nextErrors = _validate2[0],
-            nextInfos = _validate2[1]; // give user access to errors that have occurred on validation
-
-
-        setValidationResults(function (prevValidationResults) {
-          // keep any previous errors and infos for untouched keys,
-          // which probably came from a submit
-          var nextValidationResults = {
-            errors: _extends({}, prevValidationResults.errors, nextErrors),
-            infos: _extends({}, prevValidationResults.infos, nextInfos)
-          };
-          if (onValidate) onValidate(nextValidationResults);
-          return nextValidationResults;
-        });
+        return setPendingValidation(name);
       } : undefined
     };
   };
@@ -284,6 +314,8 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
     ref: ref
   }, rest, {
     onReset: function onReset(event) {
+      setPendingValidation(undefined);
+
       if (!valueProp) {
         setValueState(defaultValue);
         if (onChange) onChange(defaultValue, {
@@ -308,6 +340,7 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
       // if the validation fails. And, we assume a javascript action handler
       // otherwise.
       event.preventDefault();
+      setPendingValidation(undefined);
 
       var _validate3 = validate(Object.entries(validations.current), value, true),
           nextErrors = _validate3[0],
