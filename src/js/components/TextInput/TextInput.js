@@ -233,7 +233,7 @@ const TextInput = forwardRef(
       if (onSuggestionsClose) onSuggestionsClose();
     }, [messages.onSuggestionsClose, onSuggestionsClose]);
 
-    const setFromSuggestion = (event, suggestion) => {
+    const setValueFromSuggestion = (event, suggestion) => {
       // if we stole the focus in the drop, perhaps by interacting with
       // a suggestion button or the scrollbar, give it back
       inputRef.current.focus();
@@ -242,7 +242,6 @@ const TextInput = forwardRef(
         if (event.persist) event.persist();
         const adjustedEvent = event;
         adjustedEvent.suggestion = suggestion;
-        // adjustedEvent.target = inputRef.current;
         handleSuggestionSelect(adjustedEvent);
       }
       inputRef.current.value = suggestion; // needed for uncontrolled cases
@@ -328,7 +327,9 @@ const TextInput = forwardRef(
                         kind={!child ? 'option' : undefined}
                         hoverIndicator={!child ? undefined : 'background'}
                         label={!child ? renderedLabel : undefined}
-                        onClick={event => setFromSuggestion(event, suggestion)}
+                        onClick={event =>
+                          setValueFromSuggestion(event, suggestion)
+                        }
                         onMouseOver={() => setActiveSuggestionIndex(index)}
                         onFocus={() => setActiveSuggestionIndex(index)}
                       >
@@ -344,16 +345,13 @@ const TextInput = forwardRef(
       );
     }
 
-    // If we have focus, then we set the target to the document, otherwise
-    // we only listen to onDown on the input element itself, primarily for
-    // tests.
     const keyboardProps = { onKeyDown };
     if (showDrop) {
       keyboardProps.onEnter = event => {
         // prevent submitting forms via Enter when the drop is open
         event.preventDefault();
         if (activeSuggestionIndex >= 0)
-          setFromSuggestion(event, suggestions[activeSuggestionIndex]);
+          setValueFromSuggestion(event, suggestions[activeSuggestionIndex]);
       };
       if (activeSuggestionIndex > 0) keyboardProps.onUp = onPreviousSuggestion;
       if (activeSuggestionIndex < suggestions.length - 1)
@@ -362,6 +360,12 @@ const TextInput = forwardRef(
     } else if (suggestions && suggestions.length > 0) {
       keyboardProps.onDown = openDrop;
     }
+
+    // For the Keyboard target below, if we have focus,
+    // either on the input element or within the drop,
+    // then we set the target to the document,
+    // otherwise we only listen to onDown on the input element itself,
+    // primarily for tests.
 
     return (
       <StyledTextInputContainer plain={plain}>
