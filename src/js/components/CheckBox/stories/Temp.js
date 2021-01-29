@@ -30,7 +30,7 @@ const myTheme = deepMerge(hpe, {
 export const Temp = () => {
   const [checked1, setChecked1] = useState(false);
   const [checked2, setChecked2] = useState(false);
-  const [checked, setChecked] = React.useState([]);
+  const [checked, setChecked] = useState([]);
 
   const onCheck = (event, value) => {
     if (event.target.checked) {
