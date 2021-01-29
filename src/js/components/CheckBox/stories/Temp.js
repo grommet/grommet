@@ -18,11 +18,8 @@ delete controlledColumns[4].aggregate;
 const myTheme = deepMerge(hpe, {
   checkBox: {
     check: {
-      extend: props => {
-        return `
-          ${props.inFormField ? `box-shadow: none` : `box-shadow: undefined`};
-        `;
-      },
+      extend: props =>
+        props.inFormField ? `box-shadow: none` : `box-shadow: undefined`,
     },
   },
 });
