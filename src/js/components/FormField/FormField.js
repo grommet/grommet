@@ -16,6 +16,7 @@ import { RadioButtonGroup } from '../RadioButtonGroup';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
+import { ComponentContext } from '../../contexts/ComponentContext';
 
 const grommetInputNames = [
   'TextInput',
@@ -375,19 +376,21 @@ const FormField = forwardRef(
         }}
         {...containerRest}
       >
-        {(label && component !== CheckBox) || help ? (
-          <>
-            {label && component !== CheckBox && (
-              <Text as="label" htmlFor={htmlFor} {...labelStyle}>
-                {label}
-              </Text>
-            )}
-            <Message message={help} {...formFieldTheme.help} />
-          </>
-        ) : (
-          undefined
-        )}
-        {contents}
+        <ComponentContext.Provider value="FormField">
+          {(label && component !== CheckBox) || help ? (
+            <>
+              {label && component !== CheckBox && (
+                <Text as="label" htmlFor={htmlFor} {...labelStyle}>
+                  {label}
+                </Text>
+              )}
+              <Message message={help} {...formFieldTheme.help} />
+            </>
+          ) : (
+            undefined
+          )}
+          {contents}
+        </ComponentContext.Provider>
         <Message type="error" message={error} {...formFieldTheme.error} />
         <Message type="info" message={info} {...formFieldTheme.info} />
       </FormFieldBox>

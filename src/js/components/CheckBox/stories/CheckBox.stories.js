@@ -9,6 +9,7 @@ export { Reverse } from './Basics';
 export { Simple } from './Basics';
 export { Toggle } from './Basics';
 export { WithStickyDiv } from './WithStickyDiv';
+export { Temp } from './Temp';
 
 export default {
   title: 'Input/CheckBox',

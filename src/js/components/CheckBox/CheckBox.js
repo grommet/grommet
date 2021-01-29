@@ -5,6 +5,7 @@ import { removeUndefined } from '../../utils/object';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { FormContext } from '../Form/FormContext';
+import { ComponentContext } from '../../contexts/ComponentContext';
 
 import {
   StyledCheckBox,
@@ -48,6 +49,7 @@ const CheckBox = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const formContext = useContext(FormContext);
+    const componentContext = useContext(ComponentContext);
 
     const [checked, setChecked] = formContext.useFormInput(
       name,
@@ -74,6 +76,7 @@ const CheckBox = forwardRef(
 
     const themeableProps = {
       checked,
+      componentContext,
       disabled,
       focus,
       reverse,
