@@ -19,7 +19,9 @@ const myTheme = deepMerge(hpe, {
   checkBox: {
     check: {
       extend: props =>
-        props.inFormField ? `box-shadow: none` : `box-shadow: undefined`,
+        props.componentContext === 'FormField'
+          ? `box-shadow: none`
+          : `box-shadow: undefined`,
     },
   },
 });
