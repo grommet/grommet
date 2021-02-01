@@ -2,7 +2,11 @@ import * as React from 'react';
 import { Omit, PlaceHolderType, TextAlignType } from '../../utils';
 import { DropProps } from '../Drop';
 
-export interface TextInputProps {
+export interface TextInputProps
+  extends Omit<
+    JSX.IntrinsicElements['input'],
+    'onSelect' | 'size' | 'placeholder'
+  > {
   dropAlign?: {
     top?: 'top' | 'bottom';
     bottom?: 'top' | 'bottom';
@@ -23,7 +27,6 @@ export interface TextInputProps {
     suggestionIsOpen?: string;
   };
   name?: string;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onSelect?: (x: {
     target: React.RefObject<HTMLElement>['current'];
     suggestion: any;
@@ -43,9 +46,6 @@ export interface TextInputProps {
   value?: string | number;
 }
 
-declare const TextInput: React.ComponentClass<
-  TextInputProps &
-    Omit<JSX.IntrinsicElements['input'], 'onSelect' | 'size' | 'placeholder'>
->;
+declare const TextInput: React.ComponentClass<TextInputProps>;
 
 export { TextInput };
