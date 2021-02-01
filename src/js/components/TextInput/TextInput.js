@@ -175,6 +175,10 @@ const TextInput = forwardRef(
       bestSuggestion(),
     );
 
+    // Only update active suggestion index when the mouse actually moves,
+    // not when suggestions are moving under the mouse.
+    const [mouseArmed, setMouseArmed] = useState();
+
     // reset activeSuggestionIndex when the drop is closed
     useEffect(() => {
       const nextActiveSuggestionIndex = bestSuggestion();
@@ -250,20 +254,28 @@ const TextInput = forwardRef(
       setValue(suggestion);
     };
 
-    const onNextSuggestion = event => {
-      event.preventDefault();
-      const nextActiveIndex = Math.min(
-        activeSuggestionIndex + 1,
-        suggestions.length - 1,
-      );
-      setActiveSuggestionIndex(nextActiveIndex);
-    };
+    const onNextSuggestion = useCallback(
+      event => {
+        event.preventDefault();
+        const nextActiveIndex = Math.min(
+          activeSuggestionIndex + 1,
+          suggestions.length - 1,
+        );
+        setActiveSuggestionIndex(nextActiveIndex);
+        setMouseArmed(false);
+      },
+      [activeSuggestionIndex, suggestions],
+    );
 
-    const onPreviousSuggestion = event => {
-      event.preventDefault();
-      const nextActiveIndex = Math.max(activeSuggestionIndex - 1, 0);
-      setActiveSuggestionIndex(nextActiveIndex);
-    };
+    const onPreviousSuggestion = useCallback(
+      event => {
+        event.preventDefault();
+        const nextActiveIndex = Math.max(activeSuggestionIndex - 1, 0);
+        setActiveSuggestionIndex(nextActiveIndex);
+        setMouseArmed(false);
+      },
+      [activeSuggestionIndex],
+    );
 
     const [showStyledPlaceholder, setShowStyledPlaceholder] = useState(
       placeholder &&
@@ -293,6 +305,7 @@ const TextInput = forwardRef(
             ref={suggestionsRef}
             overflow="auto"
             dropHeight={dropHeight}
+            onMouseMove={() => setMouseArmed(true)}
           >
             <StyledSuggestions>
               <InfiniteScroll items={suggestions} step={theme.select.step}>
@@ -331,8 +344,11 @@ const TextInput = forwardRef(
                         onClick={event =>
                           setValueFromSuggestion(event, suggestion)
                         }
-                        onMouseOver={() => setActiveSuggestionIndex(index)}
-                        onFocus={() => setActiveSuggestionIndex(index)}
+                        onMouseMove={
+                          mouseArmed && activeSuggestionIndex !== index
+                            ? () => setActiveSuggestionIndex(index)
+                            : undefined
+                        }
                       >
                         {child}
                       </Button>
