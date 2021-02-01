@@ -169,6 +169,8 @@ const TextInput = forwardRef(
       return -1;
     }, [defaultSuggestion, suggestions, value]);
 
+    // activeSuggestionIndex unifies mouse and keyboard interaction of
+    // the suggestions
     const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(
       bestSuggestion(),
     );
@@ -309,7 +311,7 @@ const TextInput = forwardRef(
                         {renderedLabel}
                       </Box>
                     );
-                  // if we have a child, turn on plain, and hoverIndicator
+                  // if we have a child, turn on plain
 
                   return (
                     <li
@@ -325,7 +327,6 @@ const TextInput = forwardRef(
                         plain={!child ? undefined : true}
                         align="start"
                         kind={!child ? 'option' : undefined}
-                        hoverIndicator={!child ? undefined : 'background'}
                         label={!child ? renderedLabel : undefined}
                         onClick={event =>
                           setValueFromSuggestion(event, suggestion)
