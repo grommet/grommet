@@ -20,10 +20,7 @@ var Bar = function Bar() {
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Meter, {
     type: "bar",
-    background: "light-2",
-    values: [{
-      value: value
-    }]
+    value: value
   })));
 };
 

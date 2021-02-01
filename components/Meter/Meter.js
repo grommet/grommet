@@ -36,15 +36,26 @@ var Meter = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     color: 'light-2',
     opacity: 'medium'
   } : _ref$background,
+      color = _ref.color,
       _ref$size = _ref.size,
       size = _ref$size === void 0 ? 'medium' : _ref$size,
       _ref$thickness = _ref.thickness,
       thickness = _ref$thickness === void 0 ? 'medium' : _ref$thickness,
       _ref$type = _ref.type,
       type = _ref$type === void 0 ? 'bar' : _ref$type,
-      values = _ref.values,
-      rest = _objectWithoutPropertiesLoose(_ref, ["background", "size", "thickness", "type", "values"]);
+      value = _ref.value,
+      valuesProp = _ref.values,
+      rest = _objectWithoutPropertiesLoose(_ref, ["background", "color", "size", "thickness", "type", "value", "values"]);
 
+  // normalize values to an array of objects
+  var values = (0, _react.useMemo)(function () {
+    if (valuesProp) return valuesProp;
+    if (value) return [{
+      color: color,
+      value: value
+    }];
+    return [];
+  }, [color, value, valuesProp]);
   var memoizedMax = (0, _react.useMemo)(function () {
     return deriveMax(values);
   }, [values]);

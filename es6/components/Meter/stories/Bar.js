@@ -10,9 +10,6 @@ export var Bar = function Bar() {
     pad: "large"
   }, /*#__PURE__*/React.createElement(Meter, {
     type: "bar",
-    background: "light-2",
-    values: [{
-      value: value
-    }]
+    value: value
   })));
 };

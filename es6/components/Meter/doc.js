@@ -15,11 +15,13 @@ export var doc = function doc(Meter) {
       color: 'light-2',
       opacity: 'medium'
     }),
+    color: PropTypes.string.description("The color of the value region.\n      This is only valid when used with 'value'"),
     max: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).description('The maximum value for the Meter.'),
     round: PropTypes.bool.description('Whether to round the line ends').defaultValue(false),
     size: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'full']), PropTypes.string]).description('The size of the Meter.').defaultValue('medium'),
     thickness: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string]).description('The size of the Meter.').defaultValue('medium'),
     type: PropTypes.oneOf(['bar', 'circle']).description('The visual type of meter.').defaultValue('bar'),
+    value: PropTypes.number.description("\n      The numeric value to represent. Ignored when 'values' is specified.\n    "),
     values: PropTypes.arrayOf(PropTypes.shape({
       color: PropTypes.string,
       highlight: PropTypes.bool,
