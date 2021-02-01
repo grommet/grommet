@@ -11,6 +11,7 @@ export interface MeterProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   background?: string | { color?: string; opacity?: OpacityType };
+  color?: string;
   gridArea?: GridAreaType;
   margin?: MarginType;
   max?: number;
@@ -18,6 +19,7 @@ export interface MeterProps {
   size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | 'full' | string;
   thickness?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
   type?: 'bar' | 'circle';
+  value?: number;
   values?: {
     color?: string;
     highlight?: boolean;
