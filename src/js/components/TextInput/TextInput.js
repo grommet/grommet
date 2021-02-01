@@ -177,7 +177,7 @@ const TextInput = forwardRef(
 
     // Only update active suggestion index when the mouse actually moves,
     // not when suggestions are moving under the mouse.
-    const [mouseArmed, setMouseArmed] = useState();
+    const [mouseMovedSinceLastKey, setMouseMovedSinceLastKey] = useState();
 
     // reset activeSuggestionIndex when the drop is closed
     useEffect(() => {
@@ -262,7 +262,7 @@ const TextInput = forwardRef(
           suggestions.length - 1,
         );
         setActiveSuggestionIndex(nextActiveIndex);
-        setMouseArmed(false);
+        setMouseMovedSinceLastKey(false);
       },
       [activeSuggestionIndex, suggestions],
     );
@@ -272,7 +272,7 @@ const TextInput = forwardRef(
         event.preventDefault();
         const nextActiveIndex = Math.max(activeSuggestionIndex - 1, 0);
         setActiveSuggestionIndex(nextActiveIndex);
-        setMouseArmed(false);
+        setMouseMovedSinceLastKey(false);
       },
       [activeSuggestionIndex],
     );
@@ -305,7 +305,7 @@ const TextInput = forwardRef(
             ref={suggestionsRef}
             overflow="auto"
             dropHeight={dropHeight}
-            onMouseMove={() => setMouseArmed(true)}
+            onMouseMove={() => setMouseMovedSinceLastKey(true)}
           >
             <StyledSuggestions>
               <InfiniteScroll items={suggestions} step={theme.select.step}>
@@ -345,7 +345,8 @@ const TextInput = forwardRef(
                           setValueFromSuggestion(event, suggestion)
                         }
                         onMouseMove={
-                          mouseArmed && activeSuggestionIndex !== index
+                          mouseMovedSinceLastKey &&
+                          activeSuggestionIndex !== index
                             ? () => setActiveSuggestionIndex(index)
                             : undefined
                         }
