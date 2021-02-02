@@ -1,7 +1,7 @@
 import React from 'react';
 import 'jest-styled-components';
 import renderer from 'react-test-renderer';
-import { cleanup, render, fireEvent } from '@testing-library/react';
+import { act, cleanup, render, fireEvent } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
@@ -319,5 +319,182 @@ describe('Select Controlled', () => {
     fireEvent.click(getByPlaceholderText('test select'));
     expectPortal('test-select__drop').toMatchSnapshot();
   });
+
+  test('should allow multiple selections when using search', () => {
+    jest.useFakeTimers();
+    const onChange = jest.fn();
+    const onSearch = jest.fn();
+    const defaultOptions = [
+      {
+        id: 1,
+        name: 'Value1',
+      },
+      {
+        id: 2,
+        name: 'Value2',
+      },
+      {
+        id: 15,
+        name: 'Value15',
+      },
+      {
+        id: 21,
+        name: 'Value21',
+      },
+      {
+        id: 22,
+        name: 'Value22',
+      },
+    ];
+
+    const Test = () => {
+      const [value, setValue] = React.useState();
+      const [options, setOptions] = React.useState(defaultOptions);
+
+      return (
+        <Select
+          id="test-select-mult-search"
+          placeholder="Select multiple options"
+          multiple
+          valueKey="id"
+          labelKey="name"
+          value={value}
+          options={options}
+          onChange={({ value: nextValue }) => {
+            onChange(nextValue);
+            setValue(nextValue);
+          }}
+          onClose={() => setOptions(defaultOptions)}
+          onSearch={text => {
+            onSearch(text);
+            const nextOptions = defaultOptions.filter(
+              option =>
+                option.name.toLowerCase().indexOf(text.toLowerCase()) >= 0,
+            );
+            setOptions(nextOptions);
+          }}
+        />
+      );
+    };
+    const { getByPlaceholderText, getByText } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+
+    const selectInput = getByPlaceholderText('Select multiple options');
+    fireEvent.click(selectInput);
+    // advance timers so select can open & have focus
+    act(() => {
+      jest.advanceTimersByTime(200);
+    });
+
+    // focus is on search input, searching...
+    fireEvent.change(document.activeElement, { target: { value: '1' } });
+    expect(onSearch).toHaveBeenNthCalledWith(1, '1');
+    // make first selection
+    fireEvent.click(getByText('Value15'));
+    fireEvent.click(selectInput);
+    act(() => {
+      jest.advanceTimersByTime(200);
+    });
+
+    // searching again
+    fireEvent.change(document.activeElement, { target: { value: '2' } });
+    expect(onSearch).toHaveBeenNthCalledWith(2, '2');
+    // make second selection
+    fireEvent.click(getByText('Value21'));
+    expect(onChange).toHaveBeenNthCalledWith(2, [
+      { id: 15, name: 'Value15' },
+      { id: 21, name: 'Value21' },
+    ]);
+
+    fireEvent.click(selectInput);
+    act(() => {
+      jest.advanceTimersByTime(200);
+    });
+    // remove previous selection
+    fireEvent.click(getByText('Value15'));
+    expect(onChange).toHaveBeenNthCalledWith(3, [{ id: 21, name: 'Value21' }]);
+  });
+
+  test(`should allow multiple selections when options are 
+  loaded lazily`, () => {
+    jest.useFakeTimers();
+    const onChange = jest.fn();
+    const optionsFromServer = [
+      {
+        id: 1,
+        name: 'Value1',
+      },
+      {
+        id: 2,
+        name: 'Value2',
+      },
+      {
+        id: 15,
+        name: 'Value15',
+      },
+      {
+        id: 21,
+        name: 'Value21',
+      },
+      {
+        id: 22,
+        name: 'Value22',
+      },
+    ];
+
+    const Test = () => {
+      const [value, setValue] = React.useState();
+      const [options, setOptions] = React.useState([]);
+
+      // get options from mock server
+      React.useEffect(() => {
+        setTimeout(() => {
+          setOptions(optionsFromServer);
+        }, 1000);
+      }, []);
+
+      return (
+        <Select
+          id="test-select-mult-lazy"
+          placeholder="Select multiple lazyload options"
+          multiple
+          valueKey="id"
+          labelKey="name"
+          value={value}
+          options={options}
+          onChange={({ value: nextValue }) => {
+            onChange(nextValue);
+            setValue(nextValue);
+          }}
+        />
+      );
+    };
+    const { getByPlaceholderText, getByText } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+
+    const selectInput = getByPlaceholderText(
+      'Select multiple lazyload options',
+    );
+    fireEvent.click(selectInput);
+    // advance timers so that options have been returned
+    act(() => {
+      jest.advanceTimersByTime(1100);
+    });
+    fireEvent.click(getByText('Value15'));
+    expect(onChange).toHaveBeenNthCalledWith(1, [{ id: 15, name: 'Value15' }]);
+    fireEvent.click(selectInput);
+    fireEvent.click(getByText('Value22'));
+    expect(onChange).toHaveBeenNthCalledWith(2, [
+      { id: 15, name: 'Value15' },
+      { id: 22, name: 'Value22' },
+    ]);
+  });
+
   window.scrollTo.mockRestore();
 });

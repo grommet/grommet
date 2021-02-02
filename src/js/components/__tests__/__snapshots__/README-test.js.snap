@@ -3986,6 +3986,16 @@ If specified, the index of
 number
 \`\`\`
 
+**onChild**
+
+If specified, this function will 
+      be called with the active index when the currently active carousel 
+      changes.
+
+\`\`\`
+function
+\`\`\`
+
 **controls**
 
 Whether to show carousel controls and which type of controls. Defaults to \`true\`.
@@ -4286,7 +4296,7 @@ string
 
 A unique identifier for the Chart. This
       is required if more than one Chart is shown and they use color
-      gradients.
+      gradients or if a pattern is specified.
 
 \`\`\`
 string
@@ -4439,6 +4449,19 @@ xlarge
     string
 }
 string
+\`\`\`
+
+**pattern**
+
+When using an 'area' type, what pattern to fill the area with.
+
+\`\`\`
+squares
+circles
+stripesHorizontal
+stripesVertical
+stripesDiagonalDown
+stripesDiagonalUp
 \`\`\`
 
 **point**
@@ -6586,6 +6609,7 @@ A description of the data. The order controls the column order.
     1/3
     2/3
     string,
+  units: string,
   verticalAlign: 
     middle
     top
@@ -6771,6 +6795,16 @@ Whether the header and/or footer should be pinned when
 boolean
 header
 footer
+\`\`\`
+
+**placeholder**
+
+A text message or any content to place over the table body.
+      For example, to say \\"loading ...\\" when waiting for data to arrive.
+
+\`\`\`
+string
+node
 \`\`\`
 
 **primaryKey**
@@ -7088,6 +7122,20 @@ Defaults to
 
 \`\`\`
 undefined
+\`\`\`
+
+**dataTable.header.units**
+
+Any Text component properties for styling the
+    header's units text. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+  color: \\"text-xweak\\",
+  margin: { left: \\"xsmall\\" }
+}
 \`\`\`
 
 **dataTable.resize.hover.color**
@@ -9983,6 +10031,16 @@ Defaults to
   }
 \`\`\`
 
+**heading.color**
+
+The color of the heading. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **heading.extend**
 
 Any additional style for Heading. Expects \`string | (props) => {}\`.
@@ -10502,9 +10560,48 @@ none
 boolean
 \`\`\`
 
+**background**
+
+Either a color 
+identifier to use for the background color. For example: 'neutral-1'. Or, a 
+'url()' for an image. Dark is not needed if color is provided.
+
+\`\`\`
+string
+{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  dark: 
+    boolean
+    string,
+  image: string,
+  position: string,
+  opacity: 
+    string
+    boolean
+    number
+    weak
+    medium
+    strong,
+  repeat: 
+    no-repeat
+    repeat
+    string,
+  size: 
+    cover
+    contain
+    string,
+  light: string
+}
+\`\`\`
+
 **full**
 
-Whether the width and/or height should fill the current viewport 
+Whether the width and/or height should fill the current viewport
         size.
 
 \`\`\`
@@ -10589,7 +10686,7 @@ string
 
 **modal**
 
-Whether there should be an overlay preventing interaction underneath 
+Whether there should be an overlay preventing interaction underneath
         the layer. Defaults to \`true\`.
 
 \`\`\`
@@ -10598,7 +10695,7 @@ boolean
 
 **onClickOutside**
 
-Function that will be invoked on modal layers when the user clicks 
+Function that will be invoked on modal layers when the user clicks
       outside the layer.
 
 \`\`\`
@@ -10651,7 +10748,7 @@ boolean
 
 **target**
 
-Target where the layer will be aligned to. This should be a React 
+Target where the layer will be aligned to. This should be a React
       reference.
 
 \`\`\`
@@ -10685,6 +10782,28 @@ Defaults to
 white
 \`\`\`
 
+**layer.border.radius**
+
+The rounding of the Layer corners. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+white
+\`\`\`
+
+**layer.border.intelligentRounding**
+
+Whether the border-radius of the Layer should adapt based on 
+    the Layer's position. Wherever the Layer is touching the edge of the 
+    screen, a border-radius of 0 will be applied. Expects \`boolean\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **layer.container.zIndex**
 
 The stack order of Layer Container. Expects \`number\`.
@@ -10692,12 +10811,34 @@ The stack order of Layer Container. Expects \`number\`.
 Defaults to
 
 \`\`\`
-15
+20
 \`\`\`
 
 **layer.extend**
 
 Any additional style for Layer. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**layer.container.elevation**
+
+Elevated height above the underlying container, indicated via 
+    a drop shadow. Any Box elevation value is valid. Expects \`'none' | 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | 
+    string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**layer.container.extend**
+
+Any additional style for Layer Container. Expects \`string | (props) => {}\`.
 
 Defaults to
 
@@ -10717,7 +10858,7 @@ rgba(0, 0, 0, 0.5)
 
 **layer.responsiveBreakpoint**
 
-The actual breakpoint to trigger changes in the border, 
+The actual breakpoint to trigger changes in the border,
 direction, gap, margin, pad, and round. Expects \`string\`.
 
 Defaults to
@@ -10733,12 +10874,12 @@ The stack order of Layer. Expects \`number\`.
 Defaults to
 
 \`\`\`
-10
+20
 \`\`\`
 
 **global.breakpoints**
 
-The possible breakpoints that could affect border, direction, gap, margin, 
+The possible breakpoints that could affect border, direction, gap, margin,
     pad, and round. Expects \`object\`.
 
 Defaults to
@@ -11766,15 +11907,25 @@ string
 
 **children**
 
-Function that will be called to render the visual representation.
-      It will be passed an object containing button props.
-      It should return a react element.
-      For example:
-      \`children={({ disabled, drop, hover, focus }) => <Box ...>{...}</Box>}\`
-      
+Menu can take in children as a function or node.
+
+- Function that will be called to render the visual representation.
+It will be passed a props object. The props passed are
+different depending on the menu \`open\` state. When the menu is closed,
+two props are passed:
+\`{ hover, focus }\`,
+but when the menu is open, all menu props are passed to this function.\\\\
+It should return a React element.
+For example:
+\`children={(props) => <Box ...>{...}</Box>}\`\\\\
+**Note:** This function will be invoked on every mouse move when hovering.
+- Node is anything that can be rendered, e.g.
+\`<Box><CaretNext /><Text>Open Me</Text></Box>\`
+
 
 \`\`\`
 function
+node
 \`\`\`
 
 **disabled**
@@ -11790,7 +11941,7 @@ boolean
 Where to place the drop down.
 The keys correspond to a side of the drop down.
 The values correspond to a side of the control. For instance,
-{left: 'left', top: 'bottom'} would align the left edges and the top of
+\`{left: 'left', top: 'bottom'}\` would align the left edges and the top of
 the drop down to the bottom of the control. At most one of left or right and
 one of top or bottom should be specified. Defaults to \`{
   \\"top\\": \\"top\\",
@@ -11875,7 +12026,7 @@ node
 
 Required. Menu items to be placed inside the drop down.
 The object values can be any Button prop, 
-for example: label, onClick, and href. Defaults to \`[]\`.
+for example: \`label\`, \`onClick\`, and \`href\`. Defaults to \`[]\`.
 
 \`\`\`
 [object]
@@ -12140,6 +12291,15 @@ string
 }
 \`\`\`
 
+**color**
+
+The color of the value region.
+      This is only valid when used with 'value'
+
+\`\`\`
+string
+\`\`\`
+
 **max**
 
 The maximum value for the Meter.
@@ -12191,6 +12351,16 @@ The visual type of meter. Defaults to \`bar\`.
 \`\`\`
 bar
 circle
+\`\`\`
+
+**value**
+
+
+      The numeric value to represent. Ignored when 'values' is specified.
+    
+
+\`\`\`
+number
 \`\`\`
 
 **values**
@@ -13707,6 +13877,22 @@ Wether to close the drop when a selection is made. Defaults to \`true\`.
 boolean
 \`\`\`
 
+**defaultValue**
+
+Initially selected value. This can be an array
+      when multiple.
+
+\`\`\`
+string
+object
+number
+[
+  string
+  object
+  number
+]
+\`\`\`
+
 **disabled**
 
 Whether the entire select or individual options should be disabled.
@@ -13836,7 +14022,9 @@ Custom messages.
 
 **multiple**
 
-Whether to allow multiple options to be selected.
+Whether to allow multiple options to be selected. When multiple is true, 
+      'value' should be an array of selected options and 'options' should be 
+      an array of possible options
 
 \`\`\`
 boolean
@@ -15739,6 +15927,11 @@ medium
 large
 xlarge
 xxlarge
+2xl
+3xl
+4xl
+5xl
+6xl
 string
 \`\`\`
 
@@ -16229,6 +16422,18 @@ Custom title to be used by screen readers.
 string
 \`\`\`
 
+**defaultSuggestion**
+
+Default suggestion to highlight, as an index into the suggestions array.
+
+      If set, the suggestion at the specified index in the suggestions array
+      will be highlighted by default when the suggestions drop opens.
+      
+
+\`\`\`
+number
+\`\`\`
+
 **dropAlign**
 
 How to align the drop. Defaults to \`{
@@ -16436,6 +16641,16 @@ suggestions and instead rely on the user to type more.
   }
   string
 ]
+\`\`\`
+
+**textAlign**
+
+How to align the text inside the input. Defaults to \`start\`.
+
+\`\`\`
+start
+center
+end
 \`\`\`
 
 **value**

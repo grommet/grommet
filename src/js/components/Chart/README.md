@@ -188,7 +188,7 @@ string
 
 A unique identifier for the Chart. This
       is required if more than one Chart is shown and they use color
-      gradients.
+      gradients or if a pattern is specified.
 
 ```
 string
@@ -341,6 +341,19 @@ xlarge
     string
 }
 string
+```
+
+**pattern**
+
+When using an 'area' type, what pattern to fill the area with.
+
+```
+squares
+circles
+stripesHorizontal
+stripesVertical
+stripesDiagonalDown
+stripesDiagonalUp
 ```
 
 **point**

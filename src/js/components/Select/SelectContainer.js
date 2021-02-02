@@ -75,7 +75,10 @@ const SelectContainer = forwardRef(
       onSearch,
       optionIndexesInValue,
       options,
+      allOptions,
       searchPlaceholder,
+      search,
+      setSearch,
       selected,
       value = '',
       valueKey,
@@ -84,11 +87,9 @@ const SelectContainer = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
-    const [search, setSearch] = useState();
     const [activeIndex, setActiveIndex] = useState(-1);
     const [keyboardNavigation, setKeyboardNavigation] = useState();
     const [focus, setFocus] = useState(false);
-    const [initialOptions] = useState(options);
     const searchRef = useRef();
     const optionsRef = useRef();
     // adjust activeIndex when options change
@@ -198,19 +199,17 @@ const SelectContainer = forwardRef(
           let nextSelected;
           if (multiple) {
             const nextOptionIndexesInValue = optionIndexesInValue.slice(0);
-            const initialOptionsIndex = initialOptions.indexOf(options[index]);
-            const valueIndex = optionIndexesInValue.indexOf(
-              initialOptionsIndex,
-            );
+            const allOptionsIndex = allOptions.indexOf(options[index]);
+            const valueIndex = optionIndexesInValue.indexOf(allOptionsIndex);
             if (valueIndex === -1) {
-              nextOptionIndexesInValue.push(initialOptionsIndex);
+              nextOptionIndexesInValue.push(allOptionsIndex);
             } else {
               nextOptionIndexesInValue.splice(valueIndex, 1);
             }
             nextValue = nextOptionIndexesInValue.map(i =>
               valueKey && valueKey.reduce
-                ? applyKey(initialOptions[i], valueKey)
-                : initialOptions[i],
+                ? applyKey(allOptions[i], valueKey)
+                : allOptions[i],
             );
             nextSelected = nextOptionIndexesInValue;
           } else {
@@ -227,14 +226,7 @@ const SelectContainer = forwardRef(
           });
         }
       },
-      [
-        multiple,
-        onChange,
-        optionIndexesInValue,
-        initialOptions,
-        options,
-        valueKey,
-      ],
+      [multiple, onChange, optionIndexesInValue, options, allOptions, valueKey],
     );
 
     const onClear = useCallback(

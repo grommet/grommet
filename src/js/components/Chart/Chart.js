@@ -34,6 +34,7 @@ const Chart = React.forwardRef(
       opacity: propsOpacity,
       overflow = false,
       pad,
+      pattern,
       point,
       round,
       size: propsSize = defaultSize,
@@ -173,8 +174,6 @@ const Chart = React.forwardRef(
       [overflow, size, strokeWidth],
     );
 
-    const useGradient = color && Array.isArray(color);
-
     // set container size when we get ref or when size changes
     useLayoutEffect(() => {
       if (containerRef.current && needContainerSize) {
@@ -211,12 +210,13 @@ const Chart = React.forwardRef(
 
     // Converts values to drawing coordinates.
     // Takes into account the bounds, any inset, and the scale.
-    const valueToCoordinate = (xValue, yValue) => {
-      return [
-        (xValue - bounds[0][0]) * scale[0] + inset[0],
-        size[1] - ((yValue - bounds[1][0]) * scale[1] + inset[1]),
-      ];
-    };
+    const valueToCoordinate = (xValue, yValue) => [
+      (xValue - bounds[0][0]) * scale[0] + inset[0],
+      size[1] - ((yValue - bounds[1][0]) * scale[1] + inset[1]),
+    ];
+
+    const useGradient = color && Array.isArray(color);
+    let patternId;
 
     const renderBars = () =>
       (values || [])
@@ -349,8 +349,8 @@ const Chart = React.forwardRef(
           ).join(',')}`;
         });
       (values || [])
-        .reverse()
         .filter(({ value }) => value[1] !== undefined)
+        .reverse()
         .forEach(({ value }) => {
           d += ` L ${valueToCoordinate(
             value[0],
@@ -374,9 +374,16 @@ const Chart = React.forwardRef(
         clickProps = { onClick };
       }
 
+      patternId = pattern && `${pattern}-${id}-pattern`;
+
       return (
         <g>
-          <path d={d} {...hoverProps} {...clickProps} />
+          <path
+            d={d}
+            fill={patternId ? `url(#${patternId})` : undefined}
+            {...hoverProps}
+            {...clickProps}
+          />
         </g>
       );
     };
@@ -501,7 +508,11 @@ const Chart = React.forwardRef(
     const drawing = (
       <g
         stroke={stroke}
-        strokeWidth={type !== 'point' ? strokeWidth : undefined}
+        strokeWidth={
+          type !== 'point' && (type !== 'area' || !pattern)
+            ? strokeWidth
+            : undefined
+        }
         fill={fill}
         strokeLinecap={round ? 'round' : 'butt'}
         strokeLinejoin={round ? 'round' : 'miter'}
@@ -511,30 +522,40 @@ const Chart = React.forwardRef(
       </g>
     );
 
-    let defs;
+    const defs = [];
     let gradientRect;
     if (useGradient && size[1]) {
       const uniqueGradientId = color.map(element => element.color).join('-');
       const gradientId = `${uniqueGradientId}-${id}-gradient`;
       const maskId = `${uniqueGradientId}-${id}-mask`;
-      defs = (
-        <defs>
-          <linearGradient id={gradientId} x1={0} y1={0} x2={0} y2={1}>
-            {color
-              .sort((c1, c2) => c2.value - c1.value)
-              .map(({ value, color: gradientColor }) => (
-                <stop
-                  key={value}
-                  offset={
-                    // TODO:
-                    (size[1] - (value - bounds[1][0]) * scale[1]) / size[1]
-                  }
-                  stopColor={normalizeColor(gradientColor, theme)}
-                />
-              ))}
-          </linearGradient>
-          <mask id={maskId}>{drawing}</mask>
-        </defs>
+      defs.push(
+        <linearGradient
+          key="gradientId"
+          id={gradientId}
+          x1={0}
+          y1={0}
+          x2={0}
+          y2={1}
+        >
+          {color
+            .slice(0)
+            .sort((c1, c2) => c2.value - c1.value)
+            .map(({ value, color: gradientColor }) => (
+              <stop
+                key={value}
+                offset={
+                  // TODO:
+                  (size[1] - (value - bounds[1][0]) * scale[1]) / size[1]
+                }
+                stopColor={normalizeColor(gradientColor, theme)}
+              />
+            ))}
+        </linearGradient>,
+      );
+      defs.push(
+        <mask key="mask" id={maskId}>
+          {drawing}
+        </mask>,
       );
 
       gradientRect = (
@@ -546,6 +567,65 @@ const Chart = React.forwardRef(
           fill={`url(#${gradientId})`}
           mask={`url(#${maskId})`}
         />
+      );
+    } else if (patternId) {
+      let content;
+      const diagonal = pattern.match(/Diagonal/);
+      const unit = diagonal ? strokeWidth * Math.sqrt(2) : strokeWidth;
+      const half = unit / 2;
+      const double = unit * 2;
+      const pColor = normalizeColor(colorName, theme);
+      if (pattern === 'squares') {
+        content = (
+          <rect x={half} y={half} width={unit} height={unit} fill={pColor} />
+        );
+      } else if (pattern === 'circles') {
+        content = <circle cx={unit} cy={unit} r={half} fill={pColor} />;
+      } else if (pattern === 'stripesHorizontal') {
+        content = (
+          <path
+            d={`M 0 ${unit} L ${double} ${unit}`}
+            stroke={pColor}
+            strokeWidth={strokeWidth}
+          />
+        );
+      } else if (pattern === 'stripesVertical') {
+        content = (
+          <path
+            d={`M ${unit} 0 L ${unit} ${double}`}
+            stroke={pColor}
+            strokeWidth={strokeWidth}
+          />
+        );
+      } else if (pattern === 'stripesDiagonalDown') {
+        content = (
+          <path
+            d={`M ${half} ${-half} L ${double + half} ${double - half}
+              M ${-half} ${half} L ${double - half} ${double + half}`}
+            stroke={pColor}
+            strokeWidth={strokeWidth}
+          />
+        );
+      } else if (pattern === 'stripesDiagonalUp') {
+        content = (
+          <path
+            d={`M ${-half} ${double - half} L ${double - half} ${-half}
+              M ${half} ${double + half} L ${double + half} ${half}`}
+            stroke={pColor}
+            strokeWidth={strokeWidth}
+          />
+        );
+      }
+      defs.push(
+        <pattern
+          key={patternId}
+          id={patternId}
+          width={double}
+          height={double}
+          patternUnits="userSpaceOnUse"
+        >
+          {content}
+        </pattern>,
       );
     }
 
@@ -561,7 +641,7 @@ const Chart = React.forwardRef(
         typeProp={type} // prevent adding to DOM
         {...rest}
       >
-        {defs}
+        {defs.length && <defs>{defs}</defs>}
         {useGradient ? gradientRect : drawing}
       </StyledChart>
     );

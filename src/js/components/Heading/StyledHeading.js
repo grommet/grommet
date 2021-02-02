@@ -1,6 +1,11 @@
 import styled, { css } from 'styled-components';
 
-import { breakpointStyle, genericStyles, normalizeColor } from '../../utils';
+import {
+  breakpointStyle,
+  genericStyles,
+  normalizeColor,
+  textAlignStyle,
+} from '../../utils';
 import { defaultProps } from '../../default-props';
 
 const sizeStyle = props => {
@@ -62,16 +67,6 @@ const fontFamily = props => {
     : '';
 };
 
-const TEXT_ALIGN_MAP = {
-  center: 'center',
-  end: 'right',
-  start: 'left',
-};
-
-const textAlignStyle = css`
-  text-align: ${props => TEXT_ALIGN_MAP[props.textAlign]};
-`;
-
 const truncateStyle = `
   white-space: nowrap;
   overflow: hidden;
@@ -79,7 +74,8 @@ const truncateStyle = `
 `;
 
 const colorStyle = css`
-  color: ${props => normalizeColor(props.colorProp, props.theme)};
+  color: ${props =>
+    normalizeColor(props.colorProp || props.theme.heading.color, props.theme)};
 `;
 
 const StyledHeading = styled.h1`
@@ -88,7 +84,7 @@ const StyledHeading = styled.h1`
   ${props => sizeStyle(props)}
   ${props => props.textAlign && textAlignStyle}
   ${props => props.truncate && truncateStyle}
-  ${props => props.colorProp && colorStyle}
+  ${props => (props.colorProp || props.theme.heading.color) && colorStyle}
   ${props => props.theme.heading && props.theme.heading.extend}
 `;
 

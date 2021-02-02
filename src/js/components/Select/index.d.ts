@@ -13,7 +13,9 @@ export interface SelectProps {
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
   children?: (...args: any[]) => any;
+  clear?: boolean | { position?: 'top' | 'bottom'; label?: string };
   closeOnChange?: boolean;
+  defaultValue?: string | number | object | (string | number | object)[];
   disabled?: boolean | (number | string | object)[];
   disabledKey?: string | ((...args: any[]) => any);
   dropAlign?: {

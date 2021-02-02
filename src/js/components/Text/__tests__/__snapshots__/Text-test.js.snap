@@ -230,6 +230,26 @@ exports[`renders size 1`] = `
   line-height: 40px;
 }
 
+.c7 {
+  font-size: 42px;
+  line-height: 48px;
+}
+
+.c8 {
+  font-size: 54px;
+  line-height: 60px;
+}
+
+.c9 {
+  font-size: 70px;
+  line-height: 76px;
+}
+
+.c10 {
+  font-size: 90px;
+  line-height: 96px;
+}
+
 <div
   className="c0"
 >
@@ -250,6 +270,21 @@ exports[`renders size 1`] = `
   />
   <span
     className="c6"
+  />
+  <span
+    className="c6"
+  />
+  <span
+    className="c7"
+  />
+  <span
+    className="c8"
+  />
+  <span
+    className="c9"
+  />
+  <span
+    className="c10"
   />
 </div>
 `;

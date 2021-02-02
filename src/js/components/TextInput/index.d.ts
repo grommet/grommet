@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Omit, PlaceHolderType } from '../../utils';
+import { Omit, PlaceHolderType, TextAlignType } from '../../utils';
 import { DropProps } from '../Drop';
 
 export interface TextInputProps {
@@ -13,6 +13,7 @@ export interface TextInputProps {
   dropTarget?: object;
   dropProps?: DropProps;
   focusIndicator?: boolean;
+  defaultSuggestion?: number;
   icon?: JSX.Element;
   id?: string;
   messages?: {
@@ -26,6 +27,10 @@ export interface TextInputProps {
     target: React.RefObject<HTMLElement>['current'];
     suggestion: any;
   }) => void;
+  onSuggestionSelect?: (x: {
+    target: React.RefObject<HTMLElement>['current'];
+    suggestion: any;
+  }) => void;
   onSuggestionsOpen?: () => void;
   onSuggestionsClose?: () => void;
   placeholder?: PlaceHolderType;
@@ -33,6 +38,7 @@ export interface TextInputProps {
   reverse?: boolean;
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
   suggestions?: ({ label?: React.ReactNode; value?: any } | string)[];
+  textAlign?: TextAlignType;
   value?: string | number;
 }
 

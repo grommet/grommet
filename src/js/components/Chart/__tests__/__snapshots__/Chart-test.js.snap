@@ -49,6 +49,7 @@ exports[`Chart animate 1`] = `
     viewBox="-12 -12 408 216"
     width={384}
   >
+    0
     <g
       fill="none"
       stroke="#6FFFB0"
@@ -85,6 +86,7 @@ exports[`Chart animate 1`] = `
     viewBox="-12 -12 408 216"
     width={384}
   >
+    0
     <g
       fill="none"
       stroke="#6FFFB0"
@@ -109,6 +111,7 @@ exports[`Chart animate 1`] = `
     viewBox="-12 -12 408 216"
     width={384}
   >
+    0
     <g
       fill="#6FFFB0"
       stroke="#6FFFB0"
@@ -118,7 +121,7 @@ exports[`Chart animate 1`] = `
     >
       <g>
         <path
-          d="M 0,192 L 384,0 L 384,192 L 0,192 Z"
+          d="M 384,0 L 0,192 L 0,192 L 384,192 Z"
         />
       </g>
     </g>
@@ -130,6 +133,7 @@ exports[`Chart animate 1`] = `
     viewBox="-12 -12 408 216"
     width={384}
   >
+    0
     <g
       fill="#6FFFB0"
       stroke="none"
@@ -436,6 +440,7 @@ exports[`Chart cap 1`] = `
     viewBox="-12 -12 408 216"
     width={384}
   >
+    0
     <g
       fill="none"
       stroke="#6FFFB0"
@@ -472,6 +477,7 @@ exports[`Chart cap 1`] = `
     viewBox="-12 -12 408 216"
     width={384}
   >
+    0
     <g
       fill="none"
       stroke="#6FFFB0"
@@ -496,6 +502,7 @@ exports[`Chart cap 1`] = `
     viewBox="-12 -12 408 216"
     width={384}
   >
+    0
     <g
       fill="#6FFFB0"
       stroke="#6FFFB0"
@@ -505,7 +512,7 @@ exports[`Chart cap 1`] = `
     >
       <g>
         <path
-          d="M 0,192 L 384,0 L 384,192 L 0,192 Z"
+          d="M 384,0 L 0,192 L 0,192 L 384,192 Z"
         />
       </g>
     </g>
@@ -517,6 +524,7 @@ exports[`Chart cap 1`] = `
     viewBox="-12 -12 408 216"
     width={384}
   >
+    0
     <g
       fill="#6FFFB0"
       stroke="none"
@@ -579,6 +587,7 @@ exports[`Chart color 1`] = `
     viewBox="-12 -12 408 216"
     width={384}
   >
+    0
     <g
       fill="none"
       stroke="#7D4CDB"
@@ -615,6 +624,7 @@ exports[`Chart color 1`] = `
     viewBox="-12 -12 408 216"
     width={384}
   >
+    0
     <g
       fill="none"
       opacity={0.8}
@@ -654,7 +664,7 @@ exports[`Chart color 1`] = `
   >
     <defs>
       <linearGradient
-        id="border-brand-undefined-gradient"
+        id="brand-border-undefined-gradient"
         x1={0}
         x2={0}
         y1={0}
@@ -670,7 +680,7 @@ exports[`Chart color 1`] = `
         />
       </linearGradient>
       <mask
-        id="border-brand-undefined-mask"
+        id="brand-border-undefined-mask"
       >
         <g
           fill="none"
@@ -703,9 +713,9 @@ exports[`Chart color 1`] = `
       </mask>
     </defs>
     <rect
-      fill="url(#border-brand-undefined-gradient)"
+      fill="url(#brand-border-undefined-gradient)"
       height={216}
-      mask="url(#border-brand-undefined-mask)"
+      mask="url(#brand-border-undefined-mask)"
       width={408}
       x={-12}
       y={-12}
@@ -741,6 +751,7 @@ exports[`Chart dash 1`] = `
     viewBox="-12 -12 408 216"
     width={384}
   >
+    0
     <g
       fill="none"
       stroke="#6FFFB0"
@@ -802,6 +813,7 @@ exports[`Chart default 1`] = `
     viewBox="-12 -12 408 216"
     width={384}
   >
+    0
     <g
       fill="none"
       stroke="#6FFFB0"
@@ -879,6 +891,7 @@ exports[`Chart gap 1`] = `
       viewBox="-12 -12 84 216"
       width={60}
     >
+      0
       <g
         fill="none"
         stroke="#6FFFB0"
@@ -915,6 +928,7 @@ exports[`Chart gap 1`] = `
       viewBox="-12 -12 96 216"
       width={72}
     >
+      0
       <g
         fill="none"
         stroke="#6FFFB0"
@@ -951,6 +965,7 @@ exports[`Chart gap 1`] = `
       viewBox="-12 -12 120 216"
       width={96}
     >
+      0
       <g
         fill="none"
         stroke="#6FFFB0"
@@ -1011,6 +1026,7 @@ exports[`Chart pad 1`] = `
     viewBox="-12 -12 408 216"
     width={384}
   >
+    0
     <g
       fill="none"
       stroke="#6FFFB0"
@@ -1047,6 +1063,7 @@ exports[`Chart pad 1`] = `
     viewBox="-12 -12 408 216"
     width={384}
   >
+    0
     <g
       fill="none"
       stroke="#6FFFB0"
@@ -1072,6 +1089,244 @@ exports[`Chart pad 1`] = `
         </title>
         <path
           d="M 24,180 L 24,180"
+        />
+      </g>
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Chart pattern 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+}
+
+<div
+  className="c0"
+>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <defs>
+      <pattern
+        height={48}
+        id="squares-undefined-pattern"
+        patternUnits="userSpaceOnUse"
+        width={48}
+      >
+        <rect
+          fill="#6FFFB0"
+          height={24}
+          width={24}
+          x={12}
+          y={12}
+        />
+      </pattern>
+    </defs>
+    <g
+      fill="#6FFFB0"
+      stroke="#6FFFB0"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+    >
+      <g>
+        <path
+          d="M 384,0 L 0,192 L 0,192 L 384,192 Z"
+          fill="url(#squares-undefined-pattern)"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <defs>
+      <pattern
+        height={48}
+        id="circles-undefined-pattern"
+        patternUnits="userSpaceOnUse"
+        width={48}
+      >
+        <circle
+          cx={24}
+          cy={24}
+          fill="#6FFFB0"
+          r={12}
+        />
+      </pattern>
+    </defs>
+    <g
+      fill="#6FFFB0"
+      stroke="#6FFFB0"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+    >
+      <g>
+        <path
+          d="M 384,0 L 0,192 L 0,192 L 384,192 Z"
+          fill="url(#circles-undefined-pattern)"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <defs>
+      <pattern
+        height={48}
+        id="stripesHorizontal-undefined-pattern"
+        patternUnits="userSpaceOnUse"
+        width={48}
+      >
+        <path
+          d="M 0 24 L 48 24"
+          stroke="#6FFFB0"
+          strokeWidth={24}
+        />
+      </pattern>
+    </defs>
+    <g
+      fill="#6FFFB0"
+      stroke="#6FFFB0"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+    >
+      <g>
+        <path
+          d="M 384,0 L 0,192 L 0,192 L 384,192 Z"
+          fill="url(#stripesHorizontal-undefined-pattern)"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <defs>
+      <pattern
+        height={48}
+        id="stripesVertical-undefined-pattern"
+        patternUnits="userSpaceOnUse"
+        width={48}
+      >
+        <path
+          d="M 24 0 L 24 48"
+          stroke="#6FFFB0"
+          strokeWidth={24}
+        />
+      </pattern>
+    </defs>
+    <g
+      fill="#6FFFB0"
+      stroke="#6FFFB0"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+    >
+      <g>
+        <path
+          d="M 384,0 L 0,192 L 0,192 L 384,192 Z"
+          fill="url(#stripesVertical-undefined-pattern)"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <defs>
+      <pattern
+        height={67.88225099390857}
+        id="stripesDiagonalDown-undefined-pattern"
+        patternUnits="userSpaceOnUse"
+        width={67.88225099390857}
+      >
+        <path
+          d="M 16.970562748477143 -16.970562748477143 L 84.8528137423857 50.91168824543143
+              M -16.970562748477143 16.970562748477143 L 50.91168824543143 84.8528137423857"
+          stroke="#6FFFB0"
+          strokeWidth={24}
+        />
+      </pattern>
+    </defs>
+    <g
+      fill="#6FFFB0"
+      stroke="#6FFFB0"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+    >
+      <g>
+        <path
+          d="M 384,0 L 0,192 L 0,192 L 384,192 Z"
+          fill="url(#stripesDiagonalDown-undefined-pattern)"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <defs>
+      <pattern
+        height={67.88225099390857}
+        id="stripesDiagonalUp-undefined-pattern"
+        patternUnits="userSpaceOnUse"
+        width={67.88225099390857}
+      >
+        <path
+          d="M -16.970562748477143 50.91168824543143 L 50.91168824543143 -16.970562748477143
+              M 16.970562748477143 84.8528137423857 L 84.8528137423857 16.970562748477143"
+          stroke="#6FFFB0"
+          strokeWidth={24}
+        />
+      </pattern>
+    </defs>
+    <g
+      fill="#6FFFB0"
+      stroke="#6FFFB0"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+    >
+      <g>
+        <path
+          d="M 384,0 L 0,192 L 0,192 L 384,192 Z"
+          fill="url(#stripesDiagonalUp-undefined-pattern)"
         />
       </g>
     </g>
@@ -1106,6 +1361,7 @@ exports[`Chart point 1`] = `
     viewBox="-12 -12 408 216"
     width={384}
   >
+    0
     <g
       fill="#6FFFB0"
       stroke="none"
@@ -1145,6 +1401,7 @@ exports[`Chart point 1`] = `
     viewBox="-12 -12 408 216"
     width={384}
   >
+    0
     <g
       fill="#6FFFB0"
       stroke="none"
@@ -1180,6 +1437,7 @@ exports[`Chart point 1`] = `
     viewBox="-12 -12 408 216"
     width={384}
   >
+    0
     <g
       fill="#6FFFB0"
       stroke="none"
@@ -1215,6 +1473,7 @@ exports[`Chart point 1`] = `
     viewBox="-12 -12 408 216"
     width={384}
   >
+    0
     <g
       fill="#6FFFB0"
       stroke="none"
@@ -1250,6 +1509,7 @@ exports[`Chart point 1`] = `
     viewBox="-12 -12 408 216"
     width={384}
   >
+    0
     <g
       fill="#6FFFB0"
       stroke="none"
@@ -1285,6 +1545,7 @@ exports[`Chart point 1`] = `
     viewBox="-12 -12 408 216"
     width={384}
   >
+    0
     <g
       fill="#6FFFB0"
       stroke="none"
@@ -1343,6 +1604,7 @@ exports[`Chart should not have accessibility violations 1`] = `
     viewBox="-12 -12 408 216"
     width="384"
   >
+    0
     <g
       fill="none"
       stroke="#6FFFB0"
@@ -1417,6 +1679,7 @@ exports[`Chart size 1`] = `
     viewBox="-12 -12 120 120"
     width={96}
   >
+    0
     <g
       fill="none"
       stroke="#6FFFB0"
@@ -1453,6 +1716,7 @@ exports[`Chart size 1`] = `
     viewBox="-12 -12 216 216"
     width={192}
   >
+    0
     <g
       fill="none"
       stroke="#6FFFB0"
@@ -1489,6 +1753,7 @@ exports[`Chart size 1`] = `
     viewBox="-12 -12 408 408"
     width={384}
   >
+    0
     <g
       fill="none"
       stroke="#6FFFB0"
@@ -1525,6 +1790,7 @@ exports[`Chart size 1`] = `
     viewBox="-12 -12 792 792"
     width={768}
   >
+    0
     <g
       fill="none"
       stroke="#6FFFB0"
@@ -1561,6 +1827,7 @@ exports[`Chart size 1`] = `
     viewBox="-12 -12 1176 1176"
     width={1152}
   >
+    0
     <g
       fill="none"
       stroke="#6FFFB0"
@@ -1600,6 +1867,7 @@ exports[`Chart size 1`] = `
       viewBox="-12 -12 24 216"
       width={0}
     >
+      0
       <g
         fill="none"
         stroke="#6FFFB0"
@@ -1636,6 +1904,7 @@ exports[`Chart size 1`] = `
       viewBox="-12 -12 24 216"
       width={0}
     >
+      0
       <g
         fill="none"
         stroke="#6FFFB0"
@@ -1672,6 +1941,7 @@ exports[`Chart size 1`] = `
       viewBox="-12 -12 96 216"
       width={72}
     >
+      0
       <g
         fill="none"
         stroke="#6FFFB0"
@@ -1732,6 +2002,7 @@ exports[`Chart thickness 1`] = `
     viewBox="-3 -3 390 198"
     width={384}
   >
+    0
     <g
       fill="none"
       stroke="#6FFFB0"
@@ -1768,6 +2039,7 @@ exports[`Chart thickness 1`] = `
     viewBox="-6 -6 396 204"
     width={384}
   >
+    0
     <g
       fill="none"
       stroke="#6FFFB0"
@@ -1804,6 +2076,7 @@ exports[`Chart thickness 1`] = `
     viewBox="-12 -12 408 216"
     width={384}
   >
+    0
     <g
       fill="none"
       stroke="#6FFFB0"
@@ -1840,6 +2113,7 @@ exports[`Chart thickness 1`] = `
     viewBox="-24 -24 432 240"
     width={384}
   >
+    0
     <g
       fill="none"
       stroke="#6FFFB0"
@@ -1876,6 +2150,7 @@ exports[`Chart thickness 1`] = `
     viewBox="-48 -48 480 288"
     width={384}
   >
+    0
     <g
       fill="none"
       stroke="#6FFFB0"
@@ -1935,6 +2210,7 @@ exports[`Chart type 1`] = `
     viewBox="-12 -12 408 216"
     width={384}
   >
+    0
     <g
       fill="none"
       stroke="#6FFFB0"
@@ -1971,6 +2247,7 @@ exports[`Chart type 1`] = `
     viewBox="-12 -12 408 216"
     width={384}
   >
+    0
     <g
       fill="none"
       stroke="#6FFFB0"
@@ -1995,6 +2272,7 @@ exports[`Chart type 1`] = `
     viewBox="-12 -12 408 216"
     width={384}
   >
+    0
     <g
       fill="#6FFFB0"
       stroke="#6FFFB0"
@@ -2004,7 +2282,7 @@ exports[`Chart type 1`] = `
     >
       <g>
         <path
-          d="M 0,192 L 384,0 L 384,192 L 0,192 Z"
+          d="M 384,0 L 0,192 L 0,192 L 384,192 Z"
         />
       </g>
     </g>
@@ -2016,6 +2294,7 @@ exports[`Chart type 1`] = `
     viewBox="-12 -12 408 216"
     width={384}
   >
+    0
     <g
       fill="#6FFFB0"
       stroke="none"
@@ -2074,6 +2353,7 @@ exports[`Chart undefined values 1`] = `
     viewBox="-12 -12 408 216"
     width={384}
   >
+    0
     <g
       fill="none"
       stroke="#6FFFB0"
@@ -2110,6 +2390,7 @@ exports[`Chart undefined values 1`] = `
     viewBox="-12 -12 408 216"
     width={384}
   >
+    0
     <g
       fill="none"
       stroke="#6FFFB0"
@@ -2134,6 +2415,7 @@ exports[`Chart undefined values 1`] = `
     viewBox="-12 -12 408 216"
     width={384}
   >
+    0
     <g
       fill="#6FFFB0"
       stroke="#6FFFB0"
@@ -2143,7 +2425,7 @@ exports[`Chart undefined values 1`] = `
     >
       <g>
         <path
-          d="M 0,192 L 384,0 L 384,192 L 0,192 Z"
+          d="M 384,0 L 0,192 L 0,192 L 384,192 Z"
         />
       </g>
     </g>
@@ -2155,6 +2437,7 @@ exports[`Chart undefined values 1`] = `
     viewBox="-12 -12 408 216"
     width={384}
   >
+    0
     <g
       fill="#6FFFB0"
       stroke="none"
@@ -2213,6 +2496,7 @@ exports[`Chart value style 1`] = `
     viewBox="-12 -12 408 216"
     width={384}
   >
+    0
     <g
       fill="#6FFFB0"
       stroke="none"
@@ -2256,6 +2540,7 @@ exports[`Chart value style 1`] = `
     viewBox="-12 -12 408 216"
     width={384}
   >
+    0
     <g
       fill="none"
       stroke="#6FFFB0"
