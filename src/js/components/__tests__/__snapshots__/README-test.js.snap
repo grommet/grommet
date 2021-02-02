@@ -17510,7 +17510,8 @@ function
 
 **places**
 
-Place details.
+Place details. location is an array of two numeric values that indicates
+       the latitude and longitude of the specified location.
 
 \`\`\`
 [{

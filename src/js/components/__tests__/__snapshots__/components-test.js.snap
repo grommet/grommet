@@ -7953,7 +7953,8 @@ boolean",
         "name": "onSelectPlace",
       },
       Object {
-        "description": "Place details.",
+        "description": "Place details. location is an array of two numeric values that indicates
+       the latitude and longitude of the specified location.",
         "format": "[{
   color: 
     string
