@@ -24,7 +24,7 @@ var Suggestions = function Suggestions() {
     return setValue(event.target.value);
   };
 
-  var onSelect = function onSelect(event) {
+  var onSuggestionSelect = function onSuggestionSelect(event) {
     return setValue(event.suggestion);
   };
 
@@ -41,7 +41,7 @@ var Suggestions = function Suggestions() {
   }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
     value: value,
     onChange: onChange,
-    onSelect: onSelect,
+    onSuggestionSelect: onSuggestionSelect,
     suggestions: suggestions
   }))));
 };

@@ -231,6 +231,8 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     // if we stole the focus in the drop, perhaps by interacting with
     // a suggestion button or the scrollbar, give it back
     inputRef.current.focus();
+    inputRef.current.value = suggestion; // needed for uncontrolled cases
+
     closeDrop();
 
     if (handleSuggestionSelect) {
@@ -239,8 +241,6 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       adjustedEvent.suggestion = suggestion;
       handleSuggestionSelect(adjustedEvent);
     }
-
-    inputRef.current.value = suggestion; // needed for uncontrolled cases
 
     setValue(suggestion);
   };
