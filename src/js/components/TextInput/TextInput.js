@@ -111,7 +111,6 @@ const TextInput = forwardRef(
     const inputRef = useForwardedRef(ref);
     const dropRef = useRef();
     const suggestionsRef = useRef();
-    const suggestionRefs = {};
     // if this is a readOnly property, don't set a name with the form context
     // this allows Select to control the form context for the name.
     const [value, setValue] = formContext.useFormInput(
@@ -195,30 +194,28 @@ const TextInput = forwardRef(
       }
     }, [activeSuggestionIndex, announce, messages, suggestions]);
 
-    // make sure activeSuggestion remains visible in scroll
+    // make sure activeSuggestion is visible in scroll
     useEffect(() => {
-      const buttonNode = suggestionRefs[activeSuggestionIndex];
-      const optionsNode = suggestionsRef.current;
-      if (
-        buttonNode &&
-        isNodeAfterScroll(buttonNode, optionsNode) &&
-        optionsNode.scrollTo
-      ) {
-        optionsNode.scrollTo(
-          0,
-          buttonNode.offsetTop -
-            (optionsNode.getBoundingClientRect().height -
-              buttonNode.getBoundingClientRect().height),
-        );
-      }
-      if (
-        buttonNode &&
-        isNodeBeforeScroll(buttonNode, optionsNode) &&
-        optionsNode.scrollTo
-      ) {
-        optionsNode.scrollTo(0, buttonNode.offsetTop);
-      }
-    }, [activeSuggestionIndex, suggestionRefs]);
+      const timer = setTimeout(() => {
+        const list = suggestionsRef.current;
+        if (showDrop && activeSuggestionIndex !== -1 && list) {
+          const container = list.parentNode;
+          const item = list.children[activeSuggestionIndex];
+          if (container.scrollTo) {
+            if (isNodeAfterScroll(item, container))
+              container.scrollTo(
+                0,
+                item.offsetTop -
+                  (container.getBoundingClientRect().height -
+                    item.getBoundingClientRect().height),
+              );
+            else if (isNodeBeforeScroll(item, container))
+              container.scrollTo(0, item.offsetTop);
+          }
+        }
+      }, 50); // delay to allow Drop to animate in
+      return () => clearTimeout(timer);
+    }, [activeSuggestionIndex, showDrop]);
 
     const openDrop = useCallback(() => {
       setShowDrop(true);
@@ -302,13 +299,20 @@ const TextInput = forwardRef(
           {...dropProps}
         >
           <ContainerBox
-            ref={suggestionsRef}
             overflow="auto"
             dropHeight={dropHeight}
             onMouseMove={() => setMouseMovedSinceLastKey(true)}
           >
-            <StyledSuggestions>
-              <InfiniteScroll items={suggestions} step={theme.select.step}>
+            <StyledSuggestions ref={suggestionsRef}>
+              <InfiniteScroll
+                items={suggestions}
+                step={theme.select.step}
+                show={
+                  activeSuggestionIndex !== -1
+                    ? activeSuggestionIndex
+                    : undefined
+                }
+              >
                 {(suggestion, index, itemRef) => {
                   // Determine whether the label is done as a child or
                   // as an option Button kind property.
@@ -333,9 +337,6 @@ const TextInput = forwardRef(
                     >
                       <Button
                         active={activeSuggestionIndex === index}
-                        ref={r => {
-                          suggestionRefs[index] = r;
-                        }}
                         fill
                         plain={!child ? undefined : true}
                         align="start"
