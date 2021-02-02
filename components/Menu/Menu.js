@@ -83,7 +83,14 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
     if (align.top === 'top') return -1;
     if (align.bottom === 'bottom') return items.length;
     return undefined;
-  }, [align, items]);
+  }, [align, items]); // Keeps track of whether menu options should be mirrored
+  // when there's not enough space below DropButton. This state
+  // is modified on /Drop/DropContainer.js.
+
+  var _useState = (0, _react.useState)(),
+      alignControlMirror = _useState[0],
+      setAlignControlMirror = _useState[1];
+
   var buttonRefs = {};
   var constants = (0, _react.useMemo)(function () {
     return {
@@ -97,13 +104,13 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
     };
   }, [align, controlButtonIndex]);
 
-  var _useState = (0, _react.useState)(constants.none),
-      activeItemIndex = _useState[0],
-      setActiveItemIndex = _useState[1];
+  var _useState2 = (0, _react.useState)(constants.none),
+      activeItemIndex = _useState2[0],
+      setActiveItemIndex = _useState2[1];
 
-  var _useState2 = (0, _react.useState)(open || false),
-      isOpen = _useState2[0],
-      setOpen = _useState2[1];
+  var _useState3 = (0, _react.useState)(open || false),
+      isOpen = _useState3[0],
+      setOpen = _useState3[1];
 
   var MenuIcon = isOpen && theme.menu.icons.up ? theme.menu.icons.up : theme.menu.icons.down;
   var onDropClose = (0, _react.useCallback)(function () {
@@ -257,6 +264,7 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
     ref: ref
   }, rest, buttonProps, {
     a11yTitle: a11yTitle || messages.openMenu || 'Open Menu',
+    onAlign: setAlignControlMirror,
     disabled: disabled,
     dropAlign: align,
     dropTarget: dropTarget,
@@ -271,7 +279,7 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
       onEnter: onSelectMenuItem
     }, /*#__PURE__*/_react["default"].createElement(ContainerBox, {
       background: dropBackground || theme.menu.background
-    }, align.top === 'top' ? controlMirror : undefined, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+    }, alignControlMirror === 'top' && align.top === 'top' ? controlMirror : undefined, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
       overflow: "auto"
     }, items.map(function (item, index) {
       // Determine whether the label is done as a child or
@@ -319,7 +327,7 @@ var Menu = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
           }
         }), child))
       );
-    })), align.bottom === 'bottom' ? controlMirror : undefined))
+    })), alignControlMirror === 'bottom' || align.bottom === 'bottom' ? controlMirror : undefined))
   }), content));
 });
 Menu.defaultProps = {

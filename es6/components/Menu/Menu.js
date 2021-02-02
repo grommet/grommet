@@ -64,7 +64,14 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
     if (align.top === 'top') return -1;
     if (align.bottom === 'bottom') return items.length;
     return undefined;
-  }, [align, items]);
+  }, [align, items]); // Keeps track of whether menu options should be mirrored
+  // when there's not enough space below DropButton. This state
+  // is modified on /Drop/DropContainer.js.
+
+  var _useState = useState(),
+      alignControlMirror = _useState[0],
+      setAlignControlMirror = _useState[1];
+
   var buttonRefs = {};
   var constants = useMemo(function () {
     return {
@@ -78,13 +85,13 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
     };
   }, [align, controlButtonIndex]);
 
-  var _useState = useState(constants.none),
-      activeItemIndex = _useState[0],
-      setActiveItemIndex = _useState[1];
+  var _useState2 = useState(constants.none),
+      activeItemIndex = _useState2[0],
+      setActiveItemIndex = _useState2[1];
 
-  var _useState2 = useState(open || false),
-      isOpen = _useState2[0],
-      setOpen = _useState2[1];
+  var _useState3 = useState(open || false),
+      isOpen = _useState3[0],
+      setOpen = _useState3[1];
 
   var MenuIcon = isOpen && theme.menu.icons.up ? theme.menu.icons.up : theme.menu.icons.down;
   var onDropClose = useCallback(function () {
@@ -237,6 +244,7 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
     ref: ref
   }, rest, buttonProps, {
     a11yTitle: a11yTitle || messages.openMenu || 'Open Menu',
+    onAlign: setAlignControlMirror,
     disabled: disabled,
     dropAlign: align,
     dropTarget: dropTarget,
@@ -251,7 +259,7 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
       onEnter: onSelectMenuItem
     }, /*#__PURE__*/React.createElement(ContainerBox, {
       background: dropBackground || theme.menu.background
-    }, align.top === 'top' ? controlMirror : undefined, /*#__PURE__*/React.createElement(Box, {
+    }, alignControlMirror === 'top' && align.top === 'top' ? controlMirror : undefined, /*#__PURE__*/React.createElement(Box, {
       overflow: "auto"
     }, items.map(function (item, index) {
       // Determine whether the label is done as a child or
@@ -299,7 +307,7 @@ var Menu = /*#__PURE__*/forwardRef(function (props, ref) {
           }
         }), child))
       );
-    })), align.bottom === 'bottom' ? controlMirror : undefined))
+    })), alignControlMirror === 'bottom' || align.bottom === 'bottom' ? controlMirror : undefined))
   }), content));
 });
 Menu.defaultProps = {

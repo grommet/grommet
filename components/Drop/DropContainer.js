@@ -45,6 +45,7 @@ var defaultPortalContext = [];
 var DropContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var _ref$align = _ref.align,
       align = _ref$align === void 0 ? defaultAlign : _ref$align,
+      onAlign = _ref.onAlign,
       children = _ref.children,
       dropTarget = _ref.dropTarget,
       elevation = _ref.elevation,
@@ -59,7 +60,7 @@ var DropContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       _ref$stretch = _ref.stretch,
       stretch = _ref$stretch === void 0 ? 'width' : _ref$stretch,
       trapFocus = _ref.trapFocus,
-      rest = _objectWithoutPropertiesLoose(_ref, ["align", "children", "dropTarget", "elevation", "onClickOutside", "onEsc", "onKeyDown", "overflow", "plain", "responsive", "restrictFocus", "stretch", "trapFocus"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["align", "onAlign", "children", "dropTarget", "elevation", "onClickOutside", "onEsc", "onKeyDown", "overflow", "plain", "responsive", "restrictFocus", "stretch", "trapFocus"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
@@ -72,9 +73,15 @@ var DropContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   }, [portalContext, portalId]);
   var dropRef = (0, _react.useRef)();
   (0, _react.useEffect)(function () {
-    // We try to preserve the maxHeight as changing it causes any scroll
+    var notifyAlign = function notifyAlign() {
+      var styleCurrent = (ref || dropRef).current.style;
+      var alignControl = styleCurrent.top !== '' ? 'top' : 'bottom';
+      onAlign(alignControl);
+    }; // We try to preserve the maxHeight as changing it causes any scroll
     // position to be lost. We set the maxHeight on mount and if the window
     // is resized.
+
+
     var place = function place(preserveHeight) {
       var windowWidth = window.innerWidth;
       var windowHeight = window.innerHeight;
@@ -243,6 +250,8 @@ var DropContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
           container.style.maxHeight = maxHeight + "px";
         }
       }
+
+      if (onAlign) notifyAlign();
     };
 
     var scrollParents;
@@ -299,7 +308,7 @@ var DropContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
         document.removeEventListener('mousedown', onClickDocument);
       }
     };
-  }, [align, dropTarget, onClickOutside, portalContext, portalId, ref, responsive, restrictFocus, stretch, theme.drop]);
+  }, [align, onAlign, dropTarget, onClickOutside, portalContext, portalId, ref, responsive, restrictFocus, stretch, theme.drop]);
   (0, _react.useEffect)(function () {
     if (restrictFocus) {
       (ref || dropRef).current.focus();

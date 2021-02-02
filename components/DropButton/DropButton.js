@@ -26,6 +26,7 @@ var defaultDropAlign = {
 var DropButton = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var _ref$a11yTitle = _ref.a11yTitle,
       a11yTitle = _ref$a11yTitle === void 0 ? 'Open Drop' : _ref$a11yTitle,
+      onAlign = _ref.onAlign,
       disabled = _ref.disabled,
       _ref$dropAlign = _ref.dropAlign,
       dropAlign = _ref$dropAlign === void 0 ? defaultDropAlign : _ref$dropAlign,
@@ -37,7 +38,7 @@ var DropButton = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       onClick = _ref.onClick,
       onClose = _ref.onClose,
       onOpen = _ref.onOpen,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "disabled", "dropAlign", "dropProps", "dropContent", "dropTarget", "id", "open", "onClick", "onClose", "onOpen"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "onAlign", "disabled", "dropAlign", "dropProps", "dropContent", "dropTarget", "id", "open", "onClick", "onClose", "onOpen"]);
 
   var buttonRef = (0, _utils.useForwardedRef)(ref);
 
@@ -85,6 +86,7 @@ var DropButton = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     onClick: onClickInternal
   })), show && buttonRef.current && /*#__PURE__*/_react["default"].createElement(_Drop.Drop, _extends({
     id: id ? id + "__drop" : undefined,
+    onAlign: onAlign,
     restrictFocus: true,
     align: dropAlign,
     target: dropTarget || buttonRef.current,

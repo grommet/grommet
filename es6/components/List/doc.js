@@ -3,7 +3,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 import { describe, PropTypes } from 'react-desc';
 import { genericProps } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
-var sizes = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
+var sizes = ['none', 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
 var sides = ['horizontal', 'vertical', 'top', 'bottom', 'left', 'right', 'start', 'end'];
 var padShapeSides = {};
 sides.forEach(function (side) {
