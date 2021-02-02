@@ -256,6 +256,24 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       setKeyboardNavigation(true);
     }
   }, [activeIndex, isDisabled]);
+  var onKeyDownOption = useCallback(function (event) {
+    if (!onSearch) {
+      event.preventDefault();
+      var nextActiveIndex = options.findIndex(function (e, index) {
+        var label = typeof e === 'object' ? e.label : e;
+        return label.charAt(0).toLowerCase() === event.key.toLowerCase() && !isDisabled(index);
+      });
+
+      if (nextActiveIndex >= 0) {
+        setActiveIndex(nextActiveIndex);
+        setKeyboardNavigation(true);
+      }
+    }
+
+    if (onKeyDown) {
+      onKeyDown(event);
+    }
+  }, [onKeyDown, options, isDisabled, onSearch]);
   var onActiveOption = useCallback(function (index) {
     return function () {
       if (!keyboardNavigation) setActiveIndex(index);
@@ -275,7 +293,7 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     onEnter: onSelectOption,
     onUp: onPreviousOption,
     onDown: onNextOption,
-    onKeyDown: onKeyDown
+    onKeyDown: onKeyDownOption
   }, /*#__PURE__*/React.createElement(StyledContainer, {
     ref: ref,
     as: Box,

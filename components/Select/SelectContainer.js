@@ -279,6 +279,24 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
       setKeyboardNavigation(true);
     }
   }, [activeIndex, isDisabled]);
+  var onKeyDownOption = (0, _react.useCallback)(function (event) {
+    if (!onSearch) {
+      event.preventDefault();
+      var nextActiveIndex = options.findIndex(function (e, index) {
+        var label = typeof e === 'object' ? e.label : e;
+        return label.charAt(0).toLowerCase() === event.key.toLowerCase() && !isDisabled(index);
+      });
+
+      if (nextActiveIndex >= 0) {
+        setActiveIndex(nextActiveIndex);
+        setKeyboardNavigation(true);
+      }
+    }
+
+    if (onKeyDown) {
+      onKeyDown(event);
+    }
+  }, [onKeyDown, options, isDisabled, onSearch]);
   var onActiveOption = (0, _react.useCallback)(function (index) {
     return function () {
       if (!keyboardNavigation) setActiveIndex(index);
@@ -298,7 +316,7 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
     onEnter: onSelectOption,
     onUp: onPreviousOption,
     onDown: onNextOption,
-    onKeyDown: onKeyDown
+    onKeyDown: onKeyDownOption
   }, /*#__PURE__*/_react["default"].createElement(_StyledSelect.StyledContainer, {
     ref: ref,
     as: _Box.Box,
