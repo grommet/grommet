@@ -63,11 +63,11 @@ const DropContainer = forwardRef(
     ]);
     const dropRef = useRef();
     useEffect(() => {
-      const updateAlignControlMirror = () => {
+      const notifyAlign = () => {
         const styleCurrent = (ref || dropRef).current.style;
         const alignControl = styleCurrent.top !== '' ? 'top' : 'bottom';
 
-        if (onAlign) onAlign(alignControl);
+        onAlign(alignControl);
       };
 
       // We try to preserve the maxHeight as changing it causes any scroll
@@ -233,7 +233,7 @@ const DropContainer = forwardRef(
             container.style.maxHeight = `${maxHeight}px`;
           }
         }
-        updateAlignControlMirror();
+        if (onAlign) notifyAlign();
       };
 
       let scrollParents;
