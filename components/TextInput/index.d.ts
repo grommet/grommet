@@ -42,7 +42,7 @@ export interface TextInputProps {
   value?: string | number;
 }
 
-declare const TextInput: React.ComponentClass<TextInputProps &
+declare const TextInput: React.FC<TextInputProps &
   Omit<JSX.IntrinsicElements['input'], 'onSelect' | 'size' | 'placeholder'>>;
 
 export { TextInput };

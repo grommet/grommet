@@ -11,6 +11,8 @@ var _themes = require("grommet/themes");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+var suggestions = ['Shimi', 'Eric'];
+
 var Uncontrolled = function Uncontrolled() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     full: true,
@@ -32,7 +34,8 @@ var Uncontrolled = function Uncontrolled() {
     label: "Name",
     name: "name"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
-    name: "name"
+    name: "name",
+    suggestions: suggestions
   })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     label: "Email",
     name: "email",

@@ -3,6 +3,7 @@ import { Add } from "grommet-icons/es6/icons/Add";
 import { Close } from "grommet-icons/es6/icons/Close";
 import { Box, Button, FormField, Grommet, Heading, Layer, Select, TextArea, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
+var suggestions = ['alpha', 'beta'];
 export var FormLayer = function FormLayer() {
   var _React$useState = React.useState(false),
       open = _React$useState[0],
@@ -62,7 +63,9 @@ export var FormLayer = function FormLayer() {
     }
   }, /*#__PURE__*/React.createElement(FormField, {
     label: "First"
-  }, /*#__PURE__*/React.createElement(TextInput, null)), /*#__PURE__*/React.createElement(FormField, {
+  }, /*#__PURE__*/React.createElement(TextInput, {
+    suggestions: suggestions
+  })), /*#__PURE__*/React.createElement(FormField, {
     label: "Second"
   }, /*#__PURE__*/React.createElement(Select, {
     options: ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'],

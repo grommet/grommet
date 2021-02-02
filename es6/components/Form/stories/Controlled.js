@@ -10,6 +10,7 @@ var defaultValue = {
   comments: '',
   age: ''
 };
+var suggestions = ['Shimi', 'Eric'];
 export var Controlled = function Controlled() {
   var _useState = useState(defaultValue),
       value = _useState[0],
@@ -41,7 +42,8 @@ export var Controlled = function Controlled() {
     label: "Name",
     name: "name"
   }, /*#__PURE__*/React.createElement(TextInput, {
-    name: "name"
+    name: "name",
+    suggestions: suggestions
   })), /*#__PURE__*/React.createElement(FormField, {
     label: "Email",
     name: "email",

@@ -13,6 +13,8 @@ var _themes = require("grommet/themes");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+var suggestions = ['alpha', 'beta'];
+
 var FormLayer = function FormLayer() {
   var _React$useState = _react["default"].useState(false),
       open = _React$useState[0],
@@ -72,7 +74,9 @@ var FormLayer = function FormLayer() {
     }
   }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     label: "First"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, null)), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
+    suggestions: suggestions
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     label: "Second"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
     options: ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'],

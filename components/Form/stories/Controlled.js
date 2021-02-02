@@ -22,6 +22,7 @@ var defaultValue = {
   comments: '',
   age: ''
 };
+var suggestions = ['Shimi', 'Eric'];
 
 var Controlled = function Controlled() {
   var _useState = (0, _react.useState)(defaultValue),
@@ -54,7 +55,8 @@ var Controlled = function Controlled() {
     label: "Name",
     name: "name"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
-    name: "name"
+    name: "name",
+    suggestions: suggestions
   })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     label: "Email",
     name: "email",

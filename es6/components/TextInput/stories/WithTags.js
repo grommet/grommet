@@ -118,9 +118,8 @@ var TagInput = function TagInput(_ref2) {
   }, rest, {
     onChange: updateCurrentTag,
     value: currentTag,
-    onSelect: function onSelect(event) {
-      event.stopPropagation();
-      onAddTag(event.suggestion);
+    onSuggestionSelect: function onSuggestionSelect(event) {
+      return onAddTag(event.suggestion);
     }
   })))));
 };

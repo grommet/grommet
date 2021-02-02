@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Button, CheckBox, Form, FormField, Grommet, MaskedInput, RadioButtonGroup, RangeInput, Select, TextArea, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
+var suggestions = ['Shimi', 'Eric'];
 export var Uncontrolled = function Uncontrolled() {
   return /*#__PURE__*/React.createElement(Grommet, {
     full: true,
@@ -22,7 +23,8 @@ export var Uncontrolled = function Uncontrolled() {
     label: "Name",
     name: "name"
   }, /*#__PURE__*/React.createElement(TextInput, {
-    name: "name"
+    name: "name",
+    suggestions: suggestions
   })), /*#__PURE__*/React.createElement(FormField, {
     label: "Email",
     name: "email",
