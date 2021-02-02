@@ -296,11 +296,6 @@ exports[`TextInput calls onSuggestionsClose 2`] = `
   flex: 1 0 auto;
 }
 
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 .c5:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -518,11 +513,6 @@ exports[`TextInput calls onSuggestionsOpen 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
-}
-
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c5:focus {
@@ -799,11 +789,6 @@ exports[`TextInput close suggestion drop 2`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
-}
-
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c5:focus {
@@ -1099,11 +1084,6 @@ exports[`TextInput complex suggestions 2`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
-}
-
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c5:focus {
@@ -1722,11 +1702,6 @@ exports[`TextInput large drop height 1`] = `
   flex: 1 0 auto;
 }
 
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 .c5:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -1925,11 +1900,6 @@ exports[`TextInput medium drop height 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
-}
-
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c5:focus {
@@ -2362,11 +2332,6 @@ exports[`TextInput select suggestion 2`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
-}
-
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c5:focus {
@@ -3078,11 +3043,6 @@ exports[`TextInput small drop height 1`] = `
   flex: 1 0 auto;
 }
 
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 .c5:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -3343,11 +3303,6 @@ exports[`TextInput suggestions 2`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
-}
-
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c5:focus {
