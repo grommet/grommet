@@ -452,6 +452,7 @@ const TextInput = forwardRef(
                     // placeholder only appears when there is no value
                     setShowStyledPlaceholder(!event.target.value);
                     setValue(event.target.value);
+                    setActiveSuggestionIndex(-1);
                     if (onChange) onChange(event);
                   }
             }
