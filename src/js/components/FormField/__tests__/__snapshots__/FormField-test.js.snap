@@ -2485,41 +2485,33 @@ exports[`FormField should render asterisk when requiredIndicator === true 1`] = 
 }
 
 <div
-  className="c0"
+  class="c0"
 >
-  <form
-    onReset={[Function]}
-    onSubmit={[Function]}
-  >
+  <form>
     <div
-      className="c1 "
-      onBlur={[Function]}
-      onFocus={[Function]}
+      class="c1 "
     >
       <label
-        className="c2"
+        class="c2"
       >
         label
         <span
           aria-label="required"
-          className="c3"
+          class="c3"
         >
           *
         </span>
       </label>
       <div
-        className="c4 FormField__FormFieldContentBox-m9hood-1"
+        class="c4 FormField__FormFieldContentBox-m9hood-1"
       >
         <div
-          className="c5"
+          class="c5"
         >
           <input
-            autoComplete="off"
-            className="c6"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
+            autocomplete="off"
+            class="c6"
+            value=""
           />
         </div>
       </div>
@@ -2675,47 +2667,39 @@ exports[`FormField should render custom indicator when requiredIndicator is
 }
 
 <div
-  className="c0"
+  class="c0"
 >
-  <form
-    onReset={[Function]}
-    onSubmit={[Function]}
-  >
+  <form>
     <div
-      className="c1 "
-      onBlur={[Function]}
-      onFocus={[Function]}
+      class="c1 "
     >
       <label
-        className="c2"
+        class="c2"
       >
         label
         <svg
           aria-label="New"
-          className="c3"
+          class="c3"
           viewBox="0 0 24 24"
         >
           <path
             d="M12,1 L12,23 M2,6 L22,18 M22.0000001,6 L2.00000008,18"
             fill="none"
             stroke="#000"
-            strokeWidth="2"
+            stroke-width="2"
           />
         </svg>
       </label>
       <div
-        className="c4 FormField__FormFieldContentBox-m9hood-1"
+        class="c4 FormField__FormFieldContentBox-m9hood-1"
       >
         <div
-          className="c5"
+          class="c5"
         >
           <input
-            autoComplete="off"
-            className="c6"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
+            autocomplete="off"
+            class="c6"
+            value=""
           />
         </div>
       </div>
