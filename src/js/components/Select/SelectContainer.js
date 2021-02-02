@@ -269,6 +269,31 @@ const SelectContainer = forwardRef(
       [activeIndex, isDisabled],
     );
 
+    const onKeyDownOption = useCallback(
+      event => {
+        if (!onSearch) {
+          event.preventDefault();
+
+          const nextActiveIndex = options.findIndex((e, index) => {
+            const label = typeof e === 'object' ? e.label : e;
+            return (
+              label.charAt(0).toLowerCase() === event.key.toLowerCase() &&
+              !isDisabled(index)
+            );
+          });
+
+          if (nextActiveIndex >= 0) {
+            setActiveIndex(nextActiveIndex);
+            setKeyboardNavigation(true);
+          }
+        }
+        if (onKeyDown) {
+          onKeyDown(event);
+        }
+      },
+      [onKeyDown, options, isDisabled, onSearch],
+    );
+
     const onActiveOption = useCallback(
       index => () => {
         if (!keyboardNavigation) setActiveIndex(index);
@@ -300,7 +325,7 @@ const SelectContainer = forwardRef(
         onEnter={onSelectOption}
         onUp={onPreviousOption}
         onDown={onNextOption}
-        onKeyDown={onKeyDown}
+        onKeyDown={onKeyDownOption}
       >
         <StyledContainer
           ref={ref}
