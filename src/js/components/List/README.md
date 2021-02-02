@@ -185,6 +185,7 @@ end
     start
     end,
   size: 
+    none
     xxsmall
     xsmall
     small
@@ -266,6 +267,7 @@ function
 Item padding.
 
 ```
+none
 xxsmall
 xsmall
 small
@@ -275,6 +277,7 @@ xlarge
 string
 {
   horizontal: 
+    none
     xxsmall
     xsmall
     small
@@ -282,6 +285,7 @@ string
     large
     xlarge,
   vertical: 
+    none
     xxsmall
     xsmall
     small
@@ -289,6 +293,7 @@ string
     large
     xlarge,
   top: 
+    none
     xxsmall
     xsmall
     small
@@ -296,6 +301,7 @@ string
     large
     xlarge,
   bottom: 
+    none
     xxsmall
     xsmall
     small
@@ -303,6 +309,7 @@ string
     large
     xlarge,
   left: 
+    none
     xxsmall
     xsmall
     small
@@ -310,6 +317,7 @@ string
     large
     xlarge,
   right: 
+    none
     xxsmall
     xsmall
     small
@@ -317,6 +325,7 @@ string
     large
     xlarge,
   start: 
+    none
     xxsmall
     xsmall
     small
@@ -324,6 +333,7 @@ string
     large
     xlarge,
   end: 
+    none
     xxsmall
     xsmall
     small
