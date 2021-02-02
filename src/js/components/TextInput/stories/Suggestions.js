@@ -12,7 +12,7 @@ export const Suggestions = () => {
 
   const onChange = event => setValue(event.target.value);
 
-  const onSelect = event => setValue(event.suggestion);
+  const onSuggestionSelect = event => setValue(event.suggestion);
 
   return (
     <Grommet full theme={grommet}>
@@ -21,7 +21,7 @@ export const Suggestions = () => {
           <TextInput
             value={value}
             onChange={onChange}
-            onSelect={onSelect}
+            onSuggestionSelect={onSuggestionSelect}
             suggestions={suggestions}
           />
         </Box>

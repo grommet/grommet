@@ -240,6 +240,7 @@ const TextInput = forwardRef(
       // if we stole the focus in the drop, perhaps by interacting with
       // a suggestion button or the scrollbar, give it back
       inputRef.current.focus();
+      inputRef.current.value = suggestion; // needed for uncontrolled cases
       closeDrop();
       if (handleSuggestionSelect) {
         if (event.persist) event.persist();
@@ -247,7 +248,6 @@ const TextInput = forwardRef(
         adjustedEvent.suggestion = suggestion;
         handleSuggestionSelect(adjustedEvent);
       }
-      inputRef.current.value = suggestion; // needed for uncontrolled cases
       setValue(suggestion);
     };
 
