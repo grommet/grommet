@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, act } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { Grommet, Image, Box } from '../..';
@@ -229,6 +229,10 @@ describe('Number of Items Rendered', () => {
 
 describe('show scenarios', () => {
   test(`When show, show item should be visible in window`, () => {
+    jest.useFakeTimers();
+    // Mock scrollIntoView since JSDOM doesn't do layout.
+    // https://github.com/jsdom/jsdom/issues/1695#issuecomment-449931788
+    window.HTMLElement.prototype.scrollIntoView = jest.fn();
     const { container } = render(
       <Grommet>
         <InfiniteScroll items={simpleItems(300)} show={105}>
@@ -236,6 +240,8 @@ describe('show scenarios', () => {
         </InfiniteScroll>
       </Grommet>,
     );
+    // advance timers so InfiniteScroll can scroll to show index
+    act(() => jest.advanceTimersByTime(200));
     // item(104) = 'item 105' because indexing starts at 0.
     // Need to modify this next selection to only be concerned with the
     // visible window.

@@ -5125,6 +5125,7 @@ end
     start
     end,
   size: 
+    none
     xxsmall
     xsmall
     small
@@ -5188,7 +5189,8 @@ end
       },
       Object {
         "description": "Item padding.",
-        "format": "xxsmall
+        "format": "none
+xxsmall
 xsmall
 small
 medium
@@ -5197,6 +5199,7 @@ xlarge
 string
 {
   horizontal: 
+    none
     xxsmall
     xsmall
     small
@@ -5204,6 +5207,7 @@ string
     large
     xlarge,
   vertical: 
+    none
     xxsmall
     xsmall
     small
@@ -5211,6 +5215,7 @@ string
     large
     xlarge,
   top: 
+    none
     xxsmall
     xsmall
     small
@@ -5218,6 +5223,7 @@ string
     large
     xlarge,
   bottom: 
+    none
     xxsmall
     xsmall
     small
@@ -5225,6 +5231,7 @@ string
     large
     xlarge,
   left: 
+    none
     xxsmall
     xsmall
     small
@@ -5232,6 +5239,7 @@ string
     large
     xlarge,
   right: 
+    none
     xxsmall
     xsmall
     small
@@ -5239,6 +5247,7 @@ string
     large
     xlarge,
   start: 
+    none
     xxsmall
     xsmall
     small
@@ -5246,6 +5255,7 @@ string
     large
     xlarge,
   end: 
+    none
     xxsmall
     xsmall
     small
@@ -5801,6 +5811,12 @@ string",
         "name": "background",
       },
       Object {
+        "description": "The color of the value region.
+      This is only valid when used with 'value'",
+        "format": "string",
+        "name": "color",
+      },
+      Object {
         "description": "The maximum value for the Meter.",
         "format": "number
 string",
@@ -5841,6 +5857,13 @@ string",
         "format": "bar
 circle",
         "name": "type",
+      },
+      Object {
+        "description": "
+      The numeric value to represent. Ignored when 'values' is specified.
+    ",
+        "format": "number",
+        "name": "value",
       },
       Object {
         "description": "Array of value objects describing the data.
