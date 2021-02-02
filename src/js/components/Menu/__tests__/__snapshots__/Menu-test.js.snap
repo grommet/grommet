@@ -1457,7 +1457,6 @@ exports[`Menu custom theme with default button 1`] = `
   <button
     aria-label="Open Menu"
     className="c1"
-    kind="default"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -2414,7 +2413,6 @@ exports[`Menu menu with children when custom theme has default button 1`] = `
   <button
     aria-label="Open Menu"
     className="c1"
-    kind="default"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}

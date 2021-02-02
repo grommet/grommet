@@ -1891,7 +1891,7 @@ string",
       Object {
         "description": "A unique identifier for the Chart. This
       is required if more than one Chart is shown and they use color
-      gradients.",
+      gradients or if a pattern is specified.",
         "format": "string",
         "name": "id",
       },
@@ -2024,6 +2024,16 @@ xlarge
 }
 string",
         "name": "pad",
+      },
+      Object {
+        "description": "When using an 'area' type, what pattern to fill the area with.",
+        "format": "squares
+circles
+stripesHorizontal
+stripesVertical
+stripesDiagonalDown
+stripesDiagonalUp",
+        "name": "pattern",
       },
       Object {
         "description": "When using a 'point' type, what shape the points should use.
@@ -4774,6 +4784,42 @@ boolean",
         "name": "animation",
       },
       Object {
+        "description": "Either a color 
+identifier to use for the background color. For example: 'neutral-1'. Or, a 
+'url()' for an image. Dark is not needed if color is provided.",
+        "format": "string
+{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  dark: 
+    boolean
+    string,
+  image: string,
+  position: string,
+  opacity: 
+    string
+    boolean
+    number
+    weak
+    medium
+    strong,
+  repeat: 
+    no-repeat
+    repeat
+    string,
+  size: 
+    cover
+    contain
+    string,
+  light: string
+}",
+        "name": "background",
+      },
+      Object {
         "defaultValue": false,
         "description": "Whether the width and/or height should fill the current viewport
         size.",
@@ -5765,6 +5811,12 @@ string",
         "name": "background",
       },
       Object {
+        "description": "The color of the value region.
+      This is only valid when used with 'value'",
+        "format": "string",
+        "name": "color",
+      },
+      Object {
         "description": "The maximum value for the Meter.",
         "format": "number
 string",
@@ -5805,6 +5857,13 @@ string",
         "format": "bar
 circle",
         "name": "type",
+      },
+      Object {
+        "description": "
+      The numeric value to represent. Ignored when 'values' is specified.
+    ",
+        "format": "number",
+        "name": "value",
       },
       Object {
         "description": "Array of value objects describing the data.
@@ -7176,6 +7235,11 @@ medium
 large
 xlarge
 xxlarge
+2xl
+3xl
+4xl
+5xl
+6xl
 string",
         "name": "size",
       },
