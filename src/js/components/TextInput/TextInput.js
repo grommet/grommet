@@ -371,6 +371,7 @@ const TextInput = forwardRef(
         event.preventDefault();
         if (activeSuggestionIndex >= 0)
           setValueFromSuggestion(event, suggestions[activeSuggestionIndex]);
+        else closeDrop();
       };
       if (activeSuggestionIndex > 0) keyboardProps.onUp = onPreviousSuggestion;
       if (activeSuggestionIndex < suggestions.length - 1)
