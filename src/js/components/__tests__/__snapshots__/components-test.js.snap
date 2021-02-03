@@ -915,7 +915,8 @@ string",
       },
       Object {
         "defaultValue": "none",
-        "description": "Item padding.",
+        "description": "Spacing around the outer edge of
+    the drawing coordinate area for the graphic elements to overflow into.",
         "format": "none
 xxsmall
 xsmall
@@ -1946,7 +1947,8 @@ boolean",
       },
       Object {
         "defaultValue": "none",
-        "description": "Item padding.",
+        "description": "Spacing around the outer edge of
+    the drawing coordinate area for the graphic elements to overflow into.",
         "format": "none
 xxsmall
 xsmall
@@ -2902,7 +2904,8 @@ string",
       },
       Object {
         "defaultValue": "none",
-        "description": "Item padding.",
+        "description": "Spacing around the outer edge of
+    the drawing coordinate area for the graphic elements to overflow into.",
         "format": "none
 xxsmall
 xsmall
@@ -4243,7 +4246,8 @@ stretch",
       },
       Object {
         "defaultValue": "none",
-        "description": "Item padding.",
+        "description": "Spacing around the outer edge of
+    the drawing coordinate area for the graphic elements to overflow into.",
         "format": "none
 xxsmall
 xsmall
@@ -5183,7 +5187,6 @@ end
         "name": "onClickItem",
       },
       Object {
-        "defaultValue": "none",
         "description": "Item padding.",
         "format": "none
 xxsmall

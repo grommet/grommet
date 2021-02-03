@@ -263,7 +263,7 @@ function
 
 **pad**
 
-Item padding. Defaults to `none`.
+Item padding.
 
 ```
 none

@@ -100,7 +100,7 @@ export const doc = List => {
       Anchor or Button inside 'primaryKey' or 'secondaryKey' as that can
       cause confusion with overlapping interactive elements.`,
     ),
-    pad: padPropType.description(`Item padding.`),
+    pad: PropTypes.oneOfType([padPropType]).description(`Item padding.`),
     primaryKey: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.func,
