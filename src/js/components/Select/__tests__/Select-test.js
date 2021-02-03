@@ -201,6 +201,27 @@ describe('Select', () => {
     expect(window.scrollTo).toBeCalled();
   });
 
+  test('search with search value prop', () => {
+    jest.useFakeTimers();
+    const onSearch = jest.fn();
+    const { container } = render(
+      <Select
+        id="test-select"
+        options={['one', 'two']}
+        onSearch={onSearch}
+        searchValue="two"
+      />,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    // advance timers so select can open
+    act(() => {
+      jest.advanceTimersByTime(200);
+    });
+
+    expect(document.activeElement).toMatchSnapshot();
+  });
+
   test('size', () => {
     const component = renderer.create(
       <Select
