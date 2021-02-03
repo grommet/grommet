@@ -11,6 +11,7 @@ for (let i = 1; i <= 200; i += 1) {
 export const Search = () => {
   const [options, setOptions] = useState(defaultOptions);
   const [value, setValue] = useState('');
+  const [searchValue, setSearchValue] = useState('');
   const [valueMultiple, setValueMultiple] = useState([]);
 
   return (
@@ -20,10 +21,12 @@ export const Search = () => {
           size="medium"
           placeholder="Select single option"
           value={value}
+          searchValue={searchValue}
           options={options}
           onChange={({ option }) => setValue(option)}
           onClose={() => setOptions(defaultOptions)}
           onSearch={text => {
+            setSearchValue(text);
             // The line below escapes regular expression special characters:
             // [ \ ^ $ . | ? * + ( )
             const escapedText = text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
@@ -40,10 +43,12 @@ export const Search = () => {
           size="medium"
           placeholder="Select multiple options"
           value={valueMultiple}
+          searchValue={searchValue}
           options={options}
           onChange={({ value: nextValue }) => setValueMultiple(nextValue)}
           onClose={() => setOptions(defaultOptions)}
           onSearch={text => {
+            setSearchValue(text);
             // The line below escapes regular expression special characters:
             // [ \ ^ $ . | ? * + ( )
             const escapedText = text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
