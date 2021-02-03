@@ -3,6 +3,7 @@ import { addParameters, configure, addDecorator } from '@storybook/react';
 import 'storybook-chromatic';
 import { neo } from 'mnet-ui-base-theme-neo';
 import { hb } from 'mnet-ui-base-theme-hb';
+import { cdp } from 'mnet-ui-base-theme-cdp';
 import { withThemes } from 'storybook-addon-themes/react';
 import { MnetUIBase } from '../src/js';
 import grommetLight from './theme';
@@ -34,8 +35,9 @@ addParameters({
   themes: {
     Decorator,
     list: [
-      { name: 'HB', theme: hb, default: true },
+      { name: 'HB', theme: hb },
       { name: 'Neo', theme: neo },
+      { name: 'CDP', theme: cdp, default: true },
     ],
   },
 });
