@@ -119,7 +119,7 @@ const TextInput = forwardRef(
     );
 
     const [focus, setFocus] = useState();
-    const [showDrop, setShowDrop] = useState();
+    const [showDrop, setShowDrop] = useState(false);
 
     const handleSuggestionSelect = useMemo(
       () => (onSelect && !onSuggestionSelect ? onSelect : onSuggestionSelect),
@@ -130,27 +130,51 @@ const TextInput = forwardRef(
       [onSelect, onSuggestionSelect],
     );
 
+    const [suggestionsAtClose, setSuggestionsAtClose] = useState();
+
+    const openDrop = useCallback(() => {
+      setShowDrop(true);
+      announce(messages.suggestionIsOpen);
+      announce(`${suggestions.length} ${messages.suggestionsCount}`);
+      if (onSuggestionsOpen) onSuggestionsOpen();
+    }, [
+      announce,
+      messages.suggestionsCount,
+      messages.suggestionIsOpen,
+      onSuggestionsOpen,
+      suggestions,
+    ]);
+
+    const closeDrop = useCallback(() => {
+      setSuggestionsAtClose(suggestions); // must be before closing drop
+      setShowDrop(false);
+      if (messages.onSuggestionsClose) onSuggestionsClose();
+      if (onSuggestionsClose) onSuggestionsClose();
+    }, [messages.onSuggestionsClose, onSuggestionsClose, suggestions]);
+
+    // Handle scenarios where we have focus, the drop isn't showing,
+    // and the suggestions change. We don't want to open the drop if
+    // the drop has been closed by onEsc and the suggestions haven't
+    // changed. So, we remember the suggestions we are showing when
+    // the drop was closed and only re-open it when the suggestions
+    // subsequently change.
+    useEffect(() => {
+      if (
+        focus &&
+        !showDrop &&
+        suggestions &&
+        suggestions.length &&
+        (!suggestionsAtClose ||
+          suggestionsAtClose.length !== suggestions.length)
+      ) {
+        openDrop();
+      }
+    }, [focus, openDrop, showDrop, suggestions, suggestionsAtClose]);
+
     // if we have no suggestions, close drop if it's open
     useEffect(() => {
-      if (showDrop && (!suggestions || !suggestions.length)) {
-        setShowDrop(false);
-        if (onSuggestionsClose) onSuggestionsClose();
-      }
-    }, [onSuggestionsClose, showDrop, suggestions]);
-
-    // If we have suggestions and focus, open drop if it's closed.
-    // This can occur when suggestions are tied to the value, as in
-    // the caller updates the suggestions based on the value passed in.
-    // We don't want focus or showDrop in the dependencies because we
-    // don't want to open the drop just after Esc closed it.
-    /* eslint-disable react-hooks/exhaustive-deps */
-    useEffect(() => {
-      if (focus && !showDrop && suggestions && suggestions.length) {
-        setShowDrop(true);
-        if (onSuggestionsOpen) onSuggestionsOpen();
-      }
-    }, [onSuggestionsOpen, suggestions]);
-    /* eslint-enable react-hooks/exhaustive-deps */
+      if (showDrop && (!suggestions || !suggestions.length)) closeDrop();
+    }, [closeDrop, showDrop, suggestions]);
 
     // choose the best suggestion, either the explicit default or the one
     // that matches the current value
@@ -216,25 +240,6 @@ const TextInput = forwardRef(
       }, 50); // delay to allow Drop to animate in
       return () => clearTimeout(timer);
     }, [activeSuggestionIndex, showDrop]);
-
-    const openDrop = useCallback(() => {
-      setShowDrop(true);
-      announce(messages.suggestionIsOpen);
-      announce(`${suggestions.length} ${messages.suggestionsCount}`);
-      if (onSuggestionsOpen) onSuggestionsOpen();
-    }, [
-      announce,
-      messages.suggestionsCount,
-      messages.suggestionIsOpen,
-      onSuggestionsOpen,
-      suggestions,
-    ]);
-
-    const closeDrop = useCallback(() => {
-      setShowDrop(false);
-      if (messages.onSuggestionsClose) onSuggestionsClose();
-      if (onSuggestionsClose) onSuggestionsClose();
-    }, [messages.onSuggestionsClose, onSuggestionsClose]);
 
     const setValueFromSuggestion = (event, suggestion) => {
       // if we stole the focus in the drop, perhaps by interacting with
