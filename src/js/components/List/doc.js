@@ -3,7 +3,15 @@ import { describe, PropTypes } from 'react-desc';
 import { genericProps, padPropType } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 
-const sizes = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
+const sizes = [
+  'none',
+  'xxsmall',
+  'xsmall',
+  'small',
+  'medium',
+  'large',
+  'xlarge',
+];
 const sides = [
   'horizontal',
   'vertical',

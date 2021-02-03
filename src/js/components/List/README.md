@@ -185,6 +185,7 @@ end
     start
     end,
   size: 
+    none
     xxsmall
     xsmall
     small

@@ -340,11 +340,9 @@ describe('TextInput', () => {
     fireEvent.keyDown(input, { keyCode: 40 }); // down
     // pressing enter here closes drop but doesn't select
     fireEvent.keyDown(input, { keyCode: 13 }); // enter
-    expect(onSelect).toBeCalledWith(
-      expect.objectContaining({
-        suggestion: undefined,
-      }),
-    );
+    // if no suggestion had been selected, don't call onSelect
+    expect(onSelect).not.toBeCalled();
+
     // open drop
     fireEvent.keyDown(input, { keyCode: 40 }); // down
     // highlight first
