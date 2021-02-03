@@ -88,7 +88,10 @@ export const doc = WorldMap => {
         onClick: PropTypes.func,
         onHover: PropTypes.func,
       }),
-    ).description('Place details.'),
+    ).description(
+      `Place details. location is an array of two numeric values that indicates
+       the latitude and longitude of the specified location.`,
+    ),
     hoverColor: colorPropType.description(
       'Color when hovering over places while selecting.',
     ),
