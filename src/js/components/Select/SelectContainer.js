@@ -347,6 +347,13 @@ const SelectContainer = forwardRef(
                 type="search"
                 value={search || ''}
                 placeholder={searchPlaceholder}
+                onFocus={() => {
+                  if (search) {
+                    setSearch(search);
+                    setActiveIndex(-1);
+                    onSearch(search);
+                  }
+                }}
                 onChange={event => {
                   const nextSearch = event.target.value;
                   setSearch(nextSearch);
