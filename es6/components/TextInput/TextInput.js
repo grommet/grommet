@@ -98,7 +98,7 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       focus = _useState[0],
       setFocus = _useState[1];
 
-  var _useState2 = useState(),
+  var _useState2 = useState(false),
       showDrop = _useState2[0],
       setShowDrop = _useState2[1];
 
@@ -107,29 +107,40 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, [onSelect, onSuggestionSelect]);
   var handleTextSelect = useMemo(function () {
     return onSelect && onSuggestionSelect ? onSelect : undefined;
-  }, [onSelect, onSuggestionSelect]); // if we have no suggestions, close drop if it's open
+  }, [onSelect, onSuggestionSelect]);
+
+  var _useState3 = useState(),
+      suggestionsAtClose = _useState3[0],
+      setSuggestionsAtClose = _useState3[1];
+
+  var openDrop = useCallback(function () {
+    setShowDrop(true);
+    announce(messages.suggestionIsOpen);
+    announce(suggestions.length + " " + messages.suggestionsCount);
+    if (onSuggestionsOpen) onSuggestionsOpen();
+  }, [announce, messages.suggestionsCount, messages.suggestionIsOpen, onSuggestionsOpen, suggestions]);
+  var closeDrop = useCallback(function () {
+    setSuggestionsAtClose(suggestions); // must be before closing drop
+
+    setShowDrop(false);
+    if (messages.onSuggestionsClose) onSuggestionsClose();
+    if (onSuggestionsClose) onSuggestionsClose();
+  }, [messages.onSuggestionsClose, onSuggestionsClose, suggestions]); // Handle scenarios where we have focus, the drop isn't showing,
+  // and the suggestions change. We don't want to open the drop if
+  // the drop has been closed by onEsc and the suggestions haven't
+  // changed. So, we remember the suggestions we are showing when
+  // the drop was closed and only re-open it when the suggestions
+  // subsequently change.
 
   useEffect(function () {
-    if (showDrop && (!suggestions || !suggestions.length)) {
-      setShowDrop(false);
-      if (onSuggestionsClose) onSuggestionsClose();
+    if (focus && !showDrop && suggestions && suggestions.length && (!suggestionsAtClose || suggestionsAtClose.length !== suggestions.length)) {
+      openDrop();
     }
-  }, [onSuggestionsClose, showDrop, suggestions]); // If we have suggestions and focus, open drop if it's closed.
-  // This can occur when suggestions are tied to the value, as in
-  // the caller updates the suggestions based on the value passed in.
-  // We don't want focus or showDrop in the dependencies because we
-  // don't want to open the drop just after Esc closed it.
-
-  /* eslint-disable react-hooks/exhaustive-deps */
+  }, [focus, openDrop, showDrop, suggestions, suggestionsAtClose]); // if we have no suggestions, close drop if it's open
 
   useEffect(function () {
-    if (focus && !showDrop && suggestions && suggestions.length) {
-      setShowDrop(true);
-      if (onSuggestionsOpen) onSuggestionsOpen();
-    }
-  }, [onSuggestionsOpen, suggestions]);
-  /* eslint-enable react-hooks/exhaustive-deps */
-  // choose the best suggestion, either the explicit default or the one
+    if (showDrop && (!suggestions || !suggestions.length)) closeDrop();
+  }, [closeDrop, showDrop, suggestions]); // choose the best suggestion, either the explicit default or the one
   // that matches the current value
 
   var bestSuggestion = useCallback(function () {
@@ -150,15 +161,15 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, [defaultSuggestion, suggestions, value]); // activeSuggestionIndex unifies mouse and keyboard interaction of
   // the suggestions
 
-  var _useState3 = useState(bestSuggestion()),
-      activeSuggestionIndex = _useState3[0],
-      setActiveSuggestionIndex = _useState3[1]; // Only update active suggestion index when the mouse actually moves,
+  var _useState4 = useState(bestSuggestion()),
+      activeSuggestionIndex = _useState4[0],
+      setActiveSuggestionIndex = _useState4[1]; // Only update active suggestion index when the mouse actually moves,
   // not when suggestions are moving under the mouse.
 
 
-  var _useState4 = useState(),
-      mouseMovedSinceLastKey = _useState4[0],
-      setMouseMovedSinceLastKey = _useState4[1]; // reset activeSuggestionIndex when the drop is closed
+  var _useState5 = useState(),
+      mouseMovedSinceLastKey = _useState5[0],
+      setMouseMovedSinceLastKey = _useState5[1]; // reset activeSuggestionIndex when the drop is closed
 
 
   useEffect(function () {
@@ -194,17 +205,6 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       return clearTimeout(timer);
     };
   }, [activeSuggestionIndex, showDrop]);
-  var openDrop = useCallback(function () {
-    setShowDrop(true);
-    announce(messages.suggestionIsOpen);
-    announce(suggestions.length + " " + messages.suggestionsCount);
-    if (onSuggestionsOpen) onSuggestionsOpen();
-  }, [announce, messages.suggestionsCount, messages.suggestionIsOpen, onSuggestionsOpen, suggestions]);
-  var closeDrop = useCallback(function () {
-    setShowDrop(false);
-    if (messages.onSuggestionsClose) onSuggestionsClose();
-    if (onSuggestionsClose) onSuggestionsClose();
-  }, [messages.onSuggestionsClose, onSuggestionsClose]);
 
   var setValueFromSuggestion = function setValueFromSuggestion(event, suggestion) {
     // if we stole the focus in the drop, perhaps by interacting with
@@ -237,9 +237,9 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     setMouseMovedSinceLastKey(false);
   }, [activeSuggestionIndex]);
 
-  var _useState5 = useState(placeholder && typeof placeholder !== 'string' && !(inputRef.current && inputRef.current.value) && !value),
-      showStyledPlaceholder = _useState5[0],
-      setShowStyledPlaceholder = _useState5[1];
+  var _useState6 = useState(placeholder && typeof placeholder !== 'string' && !(inputRef.current && inputRef.current.value) && !value),
+      showStyledPlaceholder = _useState6[0],
+      setShowStyledPlaceholder = _useState6[1];
 
   var drop;
   var extraProps = {
