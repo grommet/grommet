@@ -353,17 +353,6 @@ Function that will be called when the user types in the search input.
 function
 ```
 
-**searchValue**
-
-Control the value from search input.
-
-```
-string
-element
-object
-number
-```
-
 **onMore**
 
 Use this to indicate that 'items' doesn't contain all that it could.
