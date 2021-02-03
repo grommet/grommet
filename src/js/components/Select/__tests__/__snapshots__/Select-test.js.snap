@@ -500,7 +500,7 @@ exports[`Select Clear option renders - bottom 1`] = `
         class="c9"
       />
     </div>
-    
+
   </div>
 </div>
 `;
@@ -722,7 +722,7 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
     class="c2 c3"
     id="test-select__select-drop"
   >
-    
+
     <div
       class="c4"
       role="menubar"
@@ -977,7 +977,7 @@ exports[`Select Clear option renders custom label 1`] = `
     class="c2 c3"
     id="test-select__select-drop"
   >
-    
+
     <div
       class="c4"
       role="menubar"
@@ -1232,7 +1232,7 @@ exports[`Select Clear option renders- top 1`] = `
     class="c2 c3"
     id="test-select__select-drop"
   >
-    
+
     <div
       class="c4"
       role="menubar"
