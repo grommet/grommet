@@ -35,9 +35,9 @@ addParameters({
   themes: {
     Decorator,
     list: [
-      { name: 'HB', theme: hb },
+      { name: 'HB', theme: hb, default: true },
       { name: 'Neo', theme: neo },
-      { name: 'CDP', theme: cdp, default: true },
+      { name: 'CDP', theme: cdp },
     ],
   },
 });
