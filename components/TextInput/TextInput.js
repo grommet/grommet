@@ -392,7 +392,7 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       // will come from this onChange and remove the placeholder
       // so we need to update state to ensure the styled
       // placeholder only appears when there is no value
-      setShowStyledPlaceholder(!event.target.value);
+      setShowStyledPlaceholder(placeholder && typeof placeholder !== 'string' && !event.target.value);
       setValue(event.target.value);
       setActiveSuggestionIndex(-1);
       if (onChange) onChange(event);
