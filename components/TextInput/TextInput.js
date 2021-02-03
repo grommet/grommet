@@ -161,28 +161,24 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
   (0, _react.useEffect)(function () {
     if (showDrop && (!suggestions || !suggestions.length)) closeDrop();
-  }, [closeDrop, showDrop, suggestions]); // choose the best suggestion, either the explicit default or the one
+  }, [closeDrop, showDrop, suggestions]);
+  var valueSuggestionIndex = (0, _react.useMemo)(function () {
+    return suggestions ? suggestions.map(function (suggestion) {
+      return typeof suggestion === 'object' ? suggestion.value : suggestion;
+    }).indexOf(value) : -1;
+  }, [suggestions, value]); // choose the best suggestion, either the explicit default or the one
   // that matches the current value
 
-  var bestSuggestion = (0, _react.useCallback)(function () {
-    if (suggestions) {
-      var suggestionValues = suggestions.map(function (suggestion) {
-        return typeof suggestion === 'object' ? suggestion.value : suggestion;
-      });
-      var indexOfValue = suggestionValues.indexOf(value);
-
-      if (indexOfValue === -1 && typeof defaultSuggestion === 'number') {
-        return defaultSuggestion;
-      }
-
-      return indexOfValue;
+  var resetSuggestionIndex = (0, _react.useMemo)(function () {
+    if (valueSuggestionIndex === -1 && typeof defaultSuggestion === 'number') {
+      return defaultSuggestion;
     }
 
-    return -1;
-  }, [defaultSuggestion, suggestions, value]); // activeSuggestionIndex unifies mouse and keyboard interaction of
+    return valueSuggestionIndex;
+  }, [defaultSuggestion, valueSuggestionIndex]); // activeSuggestionIndex unifies mouse and keyboard interaction of
   // the suggestions
 
-  var _useState4 = (0, _react.useState)(bestSuggestion()),
+  var _useState4 = (0, _react.useState)(resetSuggestionIndex),
       activeSuggestionIndex = _useState4[0],
       setActiveSuggestionIndex = _useState4[1]; // Only update active suggestion index when the mouse actually moves,
   // not when suggestions are moving under the mouse.
@@ -190,16 +186,16 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
   var _useState5 = (0, _react.useState)(),
       mouseMovedSinceLastKey = _useState5[0],
-      setMouseMovedSinceLastKey = _useState5[1]; // reset activeSuggestionIndex when the drop is closed
+      setMouseMovedSinceLastKey = _useState5[1]; // set activeSuggestionIndex when value changes
 
 
   (0, _react.useEffect)(function () {
-    var nextActiveSuggestionIndex = bestSuggestion();
+    return setActiveSuggestionIndex(valueSuggestionIndex);
+  }, [valueSuggestionIndex]); // reset activeSuggestionIndex when the drop is closed
 
-    if (activeSuggestionIndex !== nextActiveSuggestionIndex && !showDrop) {
-      setActiveSuggestionIndex(nextActiveSuggestionIndex);
-    }
-  }, [activeSuggestionIndex, bestSuggestion, showDrop]); // announce active suggestion
+  (0, _react.useEffect)(function () {
+    if (!showDrop) setActiveSuggestionIndex(resetSuggestionIndex);
+  }, [resetSuggestionIndex, showDrop]); // announce active suggestion
 
   (0, _react.useEffect)(function () {
     if (activeSuggestionIndex >= 0) {
