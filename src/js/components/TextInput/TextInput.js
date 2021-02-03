@@ -176,39 +176,49 @@ const TextInput = forwardRef(
       if (showDrop && (!suggestions || !suggestions.length)) closeDrop();
     }, [closeDrop, showDrop, suggestions]);
 
+    const valueSuggestionIndex = useMemo(
+      () =>
+        suggestions
+          ? suggestions
+              .map(suggestion =>
+                typeof suggestion === 'object' ? suggestion.value : suggestion,
+              )
+              .indexOf(value)
+          : -1,
+      [suggestions, value],
+    );
+
     // choose the best suggestion, either the explicit default or the one
     // that matches the current value
-    const bestSuggestion = useCallback(() => {
-      if (suggestions) {
-        const suggestionValues = suggestions.map(suggestion =>
-          typeof suggestion === 'object' ? suggestion.value : suggestion,
-        );
-        const indexOfValue = suggestionValues.indexOf(value);
-        if (indexOfValue === -1 && typeof defaultSuggestion === 'number') {
-          return defaultSuggestion;
-        }
-        return indexOfValue;
+    const resetSuggestionIndex = useMemo(() => {
+      if (
+        valueSuggestionIndex === -1 &&
+        typeof defaultSuggestion === 'number'
+      ) {
+        return defaultSuggestion;
       }
-      return -1;
-    }, [defaultSuggestion, suggestions, value]);
+      return valueSuggestionIndex;
+    }, [defaultSuggestion, valueSuggestionIndex]);
 
     // activeSuggestionIndex unifies mouse and keyboard interaction of
     // the suggestions
     const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(
-      bestSuggestion(),
+      resetSuggestionIndex,
     );
 
     // Only update active suggestion index when the mouse actually moves,
     // not when suggestions are moving under the mouse.
     const [mouseMovedSinceLastKey, setMouseMovedSinceLastKey] = useState();
 
+    // set activeSuggestionIndex when value changes
+    useEffect(() => setActiveSuggestionIndex(valueSuggestionIndex), [
+      valueSuggestionIndex,
+    ]);
+
     // reset activeSuggestionIndex when the drop is closed
     useEffect(() => {
-      const nextActiveSuggestionIndex = bestSuggestion();
-      if (activeSuggestionIndex !== nextActiveSuggestionIndex && !showDrop) {
-        setActiveSuggestionIndex(nextActiveSuggestionIndex);
-      }
-    }, [activeSuggestionIndex, bestSuggestion, showDrop]);
+      if (!showDrop) setActiveSuggestionIndex(resetSuggestionIndex);
+    }, [resetSuggestionIndex, showDrop]);
 
     // announce active suggestion
     useEffect(() => {
