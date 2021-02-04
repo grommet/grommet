@@ -1192,27 +1192,27 @@ export interface ThemeType {
       height?: string;
       maxWidth?: string;
     };
-    '2xl?': {
+    '2xl'?: {
       size?: string;
       height?: string;
       maxWidth?: string;
     };
-    '3xl?': {
+    '3xl'?: {
       size?: string;
       height?: string;
       maxWidth?: string;
     };
-    '4xl?': {
+    '4xl'?: {
       size?: string;
       height?: string;
       maxWidth?: string;
     };
-    '5xl?': {
+    '5xl'?: {
       size?: string;
       height?: string;
       maxWidth?: string;
     };
-    '6xl?': {
+    '6xl'?: {
       size?: string;
       height?: string;
       maxWidth?: string;
