@@ -10,6 +10,7 @@ export { Multiple } from './Multiple';
 export { ObjectMultipleSearch } from './ObjectMultipleSearch';
 export { ObjectOptions } from './ObjectOptions';
 export { Search } from './Search';
+export { SearchWithControlledInput } from './SearchWithControlledInput';
 export { ChildrenRender } from './ChildrenRender';
 export { Simple } from './Simple';
 export { Themed } from './Themed';
