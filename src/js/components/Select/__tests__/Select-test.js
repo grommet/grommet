@@ -204,22 +204,20 @@ describe('Select', () => {
   test('search with search value prop', () => {
     jest.useFakeTimers();
     const onSearch = jest.fn();
-    const { container } = render(
+    const { getByPlaceholderText, getByTestId } = render(
       <Select
         id="test-select"
         options={['one', 'two']}
         onSearch={onSearch}
         searchValue="two"
+        searchPlaceholder="search-placeholder"
+        data-testid="test"
       />,
     );
-    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByTestId('test'));
 
-    // advance timers so select can open
-    act(() => {
-      jest.advanceTimersByTime(200);
-    });
-
-    expect(document.activeElement).toMatchSnapshot();
+    const searchInput = getByPlaceholderText('search-placeholder');
+    expect(searchInput.value).toBe('two');
   });
 
   test('size', () => {
