@@ -46,6 +46,6 @@ export interface TextInputProps
   value?: string | number;
 }
 
-declare const TextInput: React.ComponentClass<TextInputProps>;
+declare const TextInput: React.FC<TextInputProps>;
 
 export { TextInput };
