@@ -1,7 +1,7 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import { describe, PropTypes } from 'react-desc';
-import { genericProps } from '../../utils/prop-types';
+import { genericProps, padPropType } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 var sizes = ['none', 'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
 var sides = ['horizontal', 'vertical', 'top', 'bottom', 'left', 'right', 'start', 'end'];
@@ -29,7 +29,7 @@ export var doc = function doc(List) {
     itemProps: PropTypes.shape({}).description("Item specific background, border, and pad, keyed by data index.\n      For example:\n      { 27: { background: ..., border: ..., pad: ... }},\n      where the background, border, and pad accept the same values as\n      the same named properties on List."),
     onMore: PropTypes.func.description("Use this to indicate that 'data' doesn't contain all that it could.\n      It will be called when all of the data items have been rendered.\n      This might be used when the total number of items that could be retrieved\n      is more than you'd want to load into the browser. 'onMore' allows you\n      to lazily fetch more from the server only when needed."),
     onClickItem: PropTypes.func.description("When supplied, this function will be called with an event object that\n      include a 'item' property containing the data value associated with\n      the clicked item and an 'index' property containing the index in 'data'\n      of the clicked item. You should not include interactive elements, like\n      Anchor or Button inside 'primaryKey' or 'secondaryKey' as that can\n      cause confusion with overlapping interactive elements."),
-    pad: PropTypes.oneOfType([PropTypes.oneOf(sizes), PropTypes.string, PropTypes.shape(padShapeSides)]).description("Item padding."),
+    pad: PropTypes.oneOfType([padPropType]).description("Item padding."),
     primaryKey: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description("When a string is supplied, it indicates the property in a data item\n      object to use to get the primary content. If a function is supplied, it\n      will be called with the current data item object and should return\n      a React element that will be rendered as the primary content."),
     secondaryKey: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description("When a string is supplied, it indicates the property in a data item\n      object to use to get the secondary content. If a function is supplied, it\n      will be called with the current data item object and should return\n      a React element that will be rendered as the secondary content."),
     step: PropTypes.number.description('How many items to render at a time.').defaultValue(50)
