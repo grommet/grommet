@@ -33,7 +33,7 @@ const Distribution = ({
     );
   }
   if (values.length > 1) {
-    const reducer = (accumulator, { value }) => accumulator + value;
+    const reducer = (accumulator, { value }) => accumulator + (value || 0);
     const total = values.reduce(reducer, 0);
 
     // figure out how many of the values area needed to represent half of the
@@ -59,7 +59,9 @@ const Distribution = ({
     }
 
     let childBasis;
-    if (subTotal > total * 0.7) {
+    if (subTotal === total) {
+      childBasis = ['full', '0px'];
+    } else if (subTotal > total * 0.7) {
       childBasis = ['3/4', '1/4'];
     } else if (subTotal > total * 0.6) {
       childBasis = ['2/3', '1/3'];

@@ -16,6 +16,8 @@ import {
 } from 'grommet';
 import { grommet } from 'grommet/themes';
 
+const suggestions = ['Shimi', 'Eric'];
+
 export const Uncontrolled = () => (
   <Grommet full theme={grommet}>
     <Box fill align="center" justify="center">
@@ -25,7 +27,7 @@ export const Uncontrolled = () => (
           onSubmit={event => console.log('Submit', event.value, event.touched)}
         >
           <FormField label="Name" name="name">
-            <TextInput name="name" />
+            <TextInput name="name" suggestions={suggestions} />
           </FormField>
           <FormField label="Email" name="email" required>
             <MaskedInput

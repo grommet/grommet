@@ -85,10 +85,7 @@ const TagInput = ({ value = [], onAdd, onChange, onRemove, ...rest }) => {
             {...rest}
             onChange={updateCurrentTag}
             value={currentTag}
-            onSelect={event => {
-              event.stopPropagation();
-              onAddTag(event.suggestion);
-            }}
+            onSuggestionSelect={event => onAddTag(event.suggestion)}
           />
         </Box>
       </Box>

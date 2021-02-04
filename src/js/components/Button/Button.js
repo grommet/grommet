@@ -154,24 +154,17 @@ const Button = forwardRef(
       const result = { base: [], hover: [] };
       result.base.push(kind);
       if (selected) {
-        result.base.push('selected');
-        if (kind) result.base.push(`selected.${kind}`);
+        result.base.push('selected', `selected.${kind}`);
       }
       if (disabled) {
-        result.base.push('disabled');
-        if (kind) result.base.push(`disabled.${kind}`);
+        result.base.push('disabled', `disabled.${kind}`);
       } else {
         if (active) {
-          result.base.push('active');
-          if (kind) result.base.push(`active.${kind}`);
+          result.base.push('active', `active.${kind}`);
         }
-        result.hover.push('hover');
-        if (kind) result.hover.push(`hover.${kind}`);
+        result.hover.push('hover', `hover.${kind}`);
         if (active) {
-          result.hover.push(`hover.active`);
-          if (kind) {
-            result.hover.push(`hover.active.${kind}`);
-          }
+          result.hover.push(`hover.active`, `hover.active.${kind}`);
         }
       }
       return result;

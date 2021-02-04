@@ -340,11 +340,9 @@ describe('TextInput', () => {
     fireEvent.keyDown(input, { keyCode: 40 }); // down
     // pressing enter here closes drop but doesn't select
     fireEvent.keyDown(input, { keyCode: 13 }); // enter
-    expect(onSelect).toBeCalledWith(
-      expect.objectContaining({
-        suggestion: undefined,
-      }),
-    );
+    // if no suggestion had been selected, don't call onSelect
+    expect(onSelect).not.toBeCalled();
+
     // open drop
     fireEvent.keyDown(input, { keyCode: 40 }); // down
     // highlight first
@@ -574,6 +572,33 @@ describe('TextInput', () => {
     const placeholder = screen.queryByText('placeholder text');
     expect(placeholder).toBeNull();
 
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`should only should default placeholder when placeholder is a 
+  string`, () => {
+    const { container, getByTestId } = render(
+      <Grommet>
+        <TextInput
+          data-testid="placeholder"
+          id="placeholder"
+          name="placeholder"
+          placeholder="placeholder text"
+        />
+      </Grommet>,
+    );
+
+    const placeholder = screen.queryByText('placeholder text');
+    fireEvent.change(getByTestId('placeholder'), {
+      target: { value: 'something' },
+    });
+    expect(placeholder).toBeNull();
+    expect(container.firstChild).toMatchSnapshot();
+
+    // after value is removed, only one placeholder should be present
+    // nothing from styled placeholder should appear since placeholder
+    // is a string
+    fireEvent.change(getByTestId('placeholder'), { target: { value: '' } });
     expect(container.firstChild).toMatchSnapshot();
   });
 

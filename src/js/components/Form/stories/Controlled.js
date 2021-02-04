@@ -26,6 +26,8 @@ const defaultValue = {
   age: '',
 };
 
+const suggestions = ['Shimi', 'Eric'];
+
 export const Controlled = () => {
   const [value, setValue] = useState(defaultValue);
   return (
@@ -44,7 +46,7 @@ export const Controlled = () => {
             }
           >
             <FormField label="Name" name="name">
-              <TextInput name="name" />
+              <TextInput name="name" suggestions={suggestions} />
             </FormField>
             <FormField label="Email" name="email" required>
               <MaskedInput

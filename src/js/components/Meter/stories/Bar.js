@@ -9,7 +9,7 @@ export const Bar = () => {
   return (
     <Grommet theme={grommet}>
       <Box align="center" pad="large">
-        <Meter type="bar" background="light-2" values={[{ value }]} />
+        <Meter type="bar" value={value} />
       </Box>
     </Grommet>
   );

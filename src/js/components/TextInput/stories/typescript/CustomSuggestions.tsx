@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useMemo, useRef, useState } from 'react';
 
 import { Search } from 'grommet-icons';
 import { Box, Grommet, Image, Text, TextInput } from 'grommet';
@@ -78,17 +78,9 @@ export const CustomSuggestions = () => {
   const [value, setValue] = useState('');
   const [suggestionOpen, setSuggestionOpen] = useState(false);
   const [suggestedFolks, setSuggestedFolks] = useState([]);
-
-  const [, updateState] = useState();
-  const forceUpdate = useCallback(() => updateState({}), []);
-
   const boxRef = useRef();
 
-  useEffect(() => {
-    forceUpdate();
-  }, [forceUpdate]);
-
-  const onChange = event => {
+  const onChange = useCallback(event => {
     const { value: newValue } = event.target;
     setValue(newValue);
 
@@ -98,37 +90,45 @@ export const CustomSuggestions = () => {
       // simulate an async call to the backend
       setTimeout(() => setSuggestedFolks(folks), 300);
     }
-  };
+  }, []);
 
-  const onSelect = event => setValue(event.suggestion.value);
+  const onSuggestionSelect = useCallback(
+    event => setValue(event.suggestion.value),
+    [],
+  );
 
-  const renderSuggestions = () => {
-    return suggestedFolks
-      .filter(
-        ({ name }) => name.toLowerCase().indexOf(value.toLowerCase()) >= 0,
-      )
-      .map(({ name, imageUrl }, index, list) => ({
-        label: (
-          <Box
-            direction="row"
-            align="center"
-            gap="small"
-            border={index < list.length - 1 ? 'bottom' : undefined}
-            pad="small"
-          >
-            <Image
-              width="48px"
-              src={imageUrl}
-              style={{ borderRadius: '100%' }}
-            />
-            <Text>
-              <strong>{name}</strong>
-            </Text>
-          </Box>
-        ),
-        value: name,
-      }));
-  };
+  const onSuggestionsOpen = useCallback(() => setSuggestionOpen(true), []);
+  const onSuggestionsClose = useCallback(() => setSuggestionOpen(false), []);
+
+  const suggestions = useMemo(
+    () =>
+      suggestedFolks
+        .filter(
+          ({ name }) => name.toLowerCase().indexOf(value.toLowerCase()) >= 0,
+        )
+        .map(({ name, imageUrl }, index, list) => ({
+          label: (
+            <Box
+              direction="row"
+              align="center"
+              gap="small"
+              border={index < list.length - 1 ? 'bottom' : undefined}
+              pad="small"
+            >
+              <Image
+                width="48px"
+                src={imageUrl}
+                style={{ borderRadius: '100%' }}
+              />
+              <Text>
+                <strong>{name}</strong>
+              </Text>
+            </Box>
+          ),
+          value: name,
+        })),
+    [suggestedFolks, value],
+  );
 
   return (
     <Grommet full theme={myCustomTheme}>
@@ -156,16 +156,15 @@ export const CustomSuggestions = () => {
         >
           <Search color="brand" />
           <TextInput
-            type="search"
             dropTarget={boxRef.current}
+            placeholder="Enter your name..."
             plain
+            suggestions={suggestions}
             value={value}
             onChange={onChange}
-            onSelect={onSelect}
-            suggestions={renderSuggestions()}
-            placeholder="Enter your name..."
-            onSuggestionsOpen={() => setSuggestionOpen(true)}
-            onSuggestionsClose={() => setSuggestionOpen(false)}
+            onSuggestionsOpen={onSuggestionsOpen}
+            onSuggestionsClose={onSuggestionsClose}
+            onSuggestionSelect={onSuggestionSelect}
           />
         </Box>
       </Box>

@@ -15,6 +15,8 @@ import {
 } from 'grommet';
 import { grommet } from 'grommet/themes';
 
+const suggestions = ['alpha', 'beta'];
+
 export const FormLayer = () => {
   const [open, setOpen] = React.useState(false);
   const [select, setSelect] = React.useState('');
@@ -51,7 +53,7 @@ export const FormLayer = () => {
               </Box>
               <Box flex="grow" overflow="auto" pad={{ vertical: 'medium' }}>
                 <FormField label="First">
-                  <TextInput />
+                  <TextInput suggestions={suggestions} />
                 </FormField>
                 <FormField label="Second">
                   <Select
