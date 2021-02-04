@@ -202,7 +202,6 @@ describe('Select', () => {
   });
 
   test('search with search value prop', () => {
-    jest.useFakeTimers();
     const onSearch = jest.fn();
     const { getByPlaceholderText, getByTestId } = render(
       <Select
