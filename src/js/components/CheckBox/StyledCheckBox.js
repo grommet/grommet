@@ -67,10 +67,14 @@ StyledCheckBoxInput.defaultProps = {};
 Object.setPrototypeOf(StyledCheckBoxInput.defaultProps, defaultProps);
 
 const StyledCheckBoxBox = styled.div`
-  ${props =>
-    props.focusIndicator === false
-      ? props.focus && props.theme.checkBox.focusIndicator && focusStyle()
-      : props.focus && focusStyle()};
+  ${props => {
+    // Check the theme for whether or not CheckBox should receive
+    // focus when in a FormField
+    const focusInFormField = props.theme.checkBox.focusIndicator;
+    return props.focusIndicator === false
+      ? props.focus && focusInFormField && focusStyle()
+      : props.focus && focusStyle();
+  }};
   ${props => props.theme.checkBox.check.extend};
 `;
 

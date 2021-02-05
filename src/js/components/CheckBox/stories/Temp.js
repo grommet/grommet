@@ -25,8 +25,10 @@ delete controlledColumns[4].aggregate;
 const myTheme = deepMerge(hpe, {
   checkBox: {
     check: {
-      extend: props =>
-        props.inFormField ? `box-shadow: none` : `box-shadow: undefined`,
+      // hpe theme has an 'extend: `box-shadow: none`', this is to undo
+      // that behavior. When implemented, the box-shadow: none will be
+      // removed from the hpe theme.
+      extend: `box-shadow: undefined`,
     },
     focusIndicator: false,
   },
