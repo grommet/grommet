@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
+import React, { forwardRef, useEffect, useMemo, useState } from 'react';
 import { createGlobalStyle } from 'styled-components';
 
 import {
+  ContainerTargetContext,
   ResponsiveContext,
   ThemeContext,
-  ContainerTargetContext,
 } from '../../contexts';
 
 import {
-  backgroundIsDark,
   deepMerge,
+  backgroundIsDark,
   getBreakpoint,
   getDeviceBreakpoint,
   normalizeColor,
@@ -21,144 +21,90 @@ const FullGlobalStyle = createGlobalStyle`
   body { margin: 0; }
 `;
 
-class Grommet extends Component {
-  static displayName = 'Grommet';
+const deviceResponsive = (userAgent, theme) => {
+  // log('--deviceResponsive', userAgent, theme);
+  /*
+   * Regexes provided for mobile and tablet detection are meant to replace
+   * a full-featured specific library due to contributing a considerable size
+   * into the bundle.
+   *
+   * User agents found https://deviceatlas.com/blog/list-of-user-agent-strings
+   */
+  if (userAgent) {
+    if (/(tablet|ipad|playbook|silk)|(android(?!.*mobile))/i.test(userAgent)) {
+      return getDeviceBreakpoint('tablet', theme);
+    }
+    if (/Mobile|iPhone|Android/.test(userAgent)) {
+      return getDeviceBreakpoint('phone', theme);
+    }
+    return getDeviceBreakpoint('computer', theme);
+  }
+  return undefined;
+};
 
-  static getDerivedStateFromProps(nextProps, prevState) {
+const Grommet = forwardRef((props, ref) => {
+  const {
+    children,
+    full,
+    containerTarget = typeof document === 'object' ? document.body : undefined,
+    theme: themeProp,
+    ...rest
+  } = props;
+
+  const { background, dir, themeMode, userAgent } = props;
+
+  const [stateResponsive, setResponsive] = useState();
+
+  const theme = useMemo(() => {
+    const nextTheme = deepMerge(baseTheme, themeProp || {});
+
     const {
-      background: backgroundProp,
-      dir,
-      theme = {},
-      themeMode,
-    } = nextProps;
-    const { theme: stateTheme, themeProp, themeModeProp } = prevState;
+      colors: { background: themeBackground },
+    } = nextTheme.global;
 
-    const nextTheme = deepMerge(baseTheme, theme);
-    if (!stateTheme || theme !== themeProp || themeMode !== themeModeProp) {
-      const {
-        colors: { background: themeBackground },
-      } = nextTheme.global;
+    nextTheme.dark = (themeMode || nextTheme.defaultMode) === 'dark';
+    const color = normalizeColor(background || themeBackground, nextTheme);
+    nextTheme.dark = backgroundIsDark(color, nextTheme);
+    nextTheme.baseBackground = background || themeBackground;
 
-      // get initial value for dark so we can normalize background color
-      nextTheme.dark = (themeMode || theme.defaultMode) === 'dark';
-      const color = normalizeColor(
-        backgroundProp || themeBackground,
-        nextTheme,
-      );
-
-      // After normalizing, we set nextTheme.dark once more.
-      // It is necessary that we set it twice. We have to handle two cases:
-      // 1. Caller passes in a color object or a color name that resolves an
-      //    object. In this case, we want to set dark as line 38 shows. The
-      //    second set, in line 46, is a no-op.
-      // 2. Caller passes a specific color value or a color name that resolves
-      //    to a specific color value. In this case, we want dark to be set
-      //    based on that color, which line 46 will do.
-      // The double set of nextTheme.dark allows us to handle both cases here
-      // without having to duplicate color object + name + dark mode detection
-      // code here that is already in normalizeColor and backgroundIsDark.
-      nextTheme.dark = backgroundIsDark(color, nextTheme);
-      nextTheme.baseBackground = backgroundProp || themeBackground;
-
-      if (dir) {
-        nextTheme.dir = dir;
-      }
-      return {
-        theme: nextTheme,
-        themeProp: theme,
-        themeModeProp: themeMode,
-      };
+    if (dir) {
+      nextTheme.dir = dir;
     }
 
-    return null;
-  }
+    return nextTheme;
+  }, [background, dir, themeMode, themeProp]);
 
-  state = {};
+  useEffect(() => {
+    const onResize = () => {
+      setResponsive(getBreakpoint(window.innerWidth, theme));
+    };
+    window.addEventListener('resize', onResize);
+    onResize();
+    return () => {
+      window.removeEventListener('resize', onResize);
+    };
+  }, [theme]);
 
-  componentDidMount() {
-    window.addEventListener('resize', this.onResize);
-    this.onResize();
-  }
+  const responsive =
+    stateResponsive ||
+    deviceResponsive(userAgent, theme) ||
+    theme.global.deviceBreakpoints.tablet;
 
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.onResize);
-  }
+  return (
+    <ThemeContext.Provider value={theme}>
+      <ResponsiveContext.Provider value={responsive}>
+        <ContainerTargetContext.Provider value={containerTarget}>
+          <StyledGrommet full={full} {...rest} ref={ref}>
+            {children}
+          </StyledGrommet>
+          {full && <FullGlobalStyle />}
+        </ContainerTargetContext.Provider>
+      </ResponsiveContext.Provider>
+    </ThemeContext.Provider>
+  );
+});
 
-  onResize = () => {
-    const { theme, responsive } = this.state;
-
-    let breakpoint;
-    // responsive would be undefined in the case of SSR or initial page load
-    if (!responsive) {
-      // In the case of SSR we'll need to use the user agent breakpoint
-      breakpoint = this.deviceResponsive();
-    }
-    // Initial page load where both responsive and breakpoint are undefined
-    if (!breakpoint) breakpoint = getBreakpoint(window.innerWidth, theme);
-
-    if (breakpoint !== responsive) {
-      this.setState({ responsive: breakpoint });
-    }
-  };
-
-  deviceResponsive() {
-    const { userAgent } = this.props;
-    const { theme } = this.state;
-
-    /*
-     * Regexes provided for mobile and tablet detection are meant to replace
-     * a full-featured specific library due to contributing a considerable size
-     * into the bundle.
-     *
-     * User agents found https://deviceatlas.com/blog/list-of-user-agent-strings
-     */
-    if (userAgent) {
-      if (
-        /(tablet|ipad|playbook|silk)|(android(?!.*mobile))/i.test(userAgent)
-      ) {
-        return getDeviceBreakpoint('tablet', theme);
-      }
-      if (/Mobile|iPhone|Android/.test(userAgent)) {
-        return getDeviceBreakpoint('phone', theme);
-      }
-      return getDeviceBreakpoint('computer', theme);
-    }
-    return undefined;
-  }
-
-  render() {
-    const {
-      children,
-      full,
-      containerTarget = typeof document === 'object'
-        ? document.body
-        : undefined,
-      ...rest
-    } = this.props;
-    delete rest.theme;
-    const { theme, responsive: stateResponsive } = this.state;
-
-    // Value from state should be correct once we resize
-    // On first render we try to guess otherwise set the default as a tablet
-    const responsive =
-      stateResponsive ||
-      this.deviceResponsive() ||
-      theme.global.deviceBreakpoints.tablet;
-
-    return (
-      <ThemeContext.Provider value={theme}>
-        <ResponsiveContext.Provider value={responsive}>
-          <ContainerTargetContext.Provider value={containerTarget}>
-            <StyledGrommet full={full} {...rest}>
-              {children}
-            </StyledGrommet>
-            {full && <FullGlobalStyle />}
-          </ContainerTargetContext.Provider>
-        </ResponsiveContext.Provider>
-      </ThemeContext.Provider>
-    );
-  }
-}
+Grommet.displayName = 'Grommet';
 
 let GrommetDoc;
 if (process.env.NODE_ENV !== 'production') {

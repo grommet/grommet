@@ -30,7 +30,7 @@ describe('WorldMap', () => {
   });
 
   test('continents', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <WorldMap
           continents={[
@@ -43,12 +43,11 @@ describe('WorldMap', () => {
         />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('places', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <WorldMap
           places={[
@@ -62,8 +61,7 @@ describe('WorldMap', () => {
         />
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('onSelectPlace and events of places', () => {
