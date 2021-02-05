@@ -575,6 +575,33 @@ describe('TextInput', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test(`should only should default placeholder when placeholder is a 
+  string`, () => {
+    const { container, getByTestId } = render(
+      <Grommet>
+        <TextInput
+          data-testid="placeholder"
+          id="placeholder"
+          name="placeholder"
+          placeholder="placeholder text"
+        />
+      </Grommet>,
+    );
+
+    const placeholder = screen.queryByText('placeholder text');
+    fireEvent.change(getByTestId('placeholder'), {
+      target: { value: 'something' },
+    });
+    expect(placeholder).toBeNull();
+    expect(container.firstChild).toMatchSnapshot();
+
+    // after value is removed, only one placeholder should be present
+    // nothing from styled placeholder should appear since placeholder
+    // is a string
+    fireEvent.change(getByTestId('placeholder'), { target: { value: '' } });
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('textAlign end', () => {
     const { container } = render(
       <Grommet>
