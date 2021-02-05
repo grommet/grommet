@@ -22,7 +22,7 @@ import { Box } from '../../Box';
 describe('Form accessibility', () => {
   afterEach(cleanup);
 
-  test(`TextInput in Form should have 
+  test(`TextInput in Form should have
   no accessibility violations`, async () => {
     const { container } = render(
       <Grommet>
@@ -82,7 +82,7 @@ describe('Form accessibility', () => {
     expect(results).toHaveNoViolations();
   });
 
-  test(`Box with TextInput in Form should 
+  test(`Box with TextInput in Form should
   have no accessibility violations`, async () => {
     const { container } = render(
       <Grommet>
@@ -442,7 +442,7 @@ describe('Form uncontrolled', () => {
     const onSubmit = jest.fn();
     const { getByText, queryByText } = render(
       <Grommet>
-        {/* this test continues running forever if the whole event 
+        {/* this test continues running forever if the whole event
                 passed to onSubmit */}
         <Form onSubmit={({ value, touched }) => onSubmit({ value, touched })}>
           <FormField
@@ -981,5 +981,33 @@ describe('Form uncontrolled', () => {
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('Reset'));
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('form with select without name prop', () => {
+    const onChange = jest.fn();
+    window.scrollTo = jest.fn();
+    const { getByPlaceholderText } = render(
+      <Grommet>
+        <Form>
+          <FormField>
+            <Select
+              a11yTitle="select form"
+              placeholder="test input"
+              options={['small', 'medium', 'large']}
+              onChange={onChange}
+            />
+          </FormField>
+          <Button type="submit" primary label="Submit" />
+        </Form>
+      </Grommet>,
+    );
+
+    fireEvent.click(getByPlaceholderText('test input'));
+    fireEvent.click(document.activeElement.querySelector('button'));
+    expect(getByPlaceholderText('test input').value).toEqual('small');
+    expect(onChange).toBeCalledWith(
+      expect.objectContaining({ value: 'small' }),
+    );
+    window.scrollTo.mockRestore();
   });
 });

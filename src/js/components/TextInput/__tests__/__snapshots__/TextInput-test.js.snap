@@ -296,11 +296,6 @@ exports[`TextInput calls onSuggestionsClose 2`] = `
   flex: 1 0 auto;
 }
 
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 .c5:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -518,11 +513,6 @@ exports[`TextInput calls onSuggestionsOpen 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
-}
-
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c5:focus {
@@ -799,11 +789,6 @@ exports[`TextInput close suggestion drop 2`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
-}
-
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c5:focus {
@@ -1099,11 +1084,6 @@ exports[`TextInput complex suggestions 2`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
-}
-
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c5:focus {
@@ -1722,11 +1702,6 @@ exports[`TextInput large drop height 1`] = `
   flex: 1 0 auto;
 }
 
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
-}
-
 .c5:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
@@ -1925,11 +1900,6 @@ exports[`TextInput medium drop height 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
-}
-
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c5:focus {
@@ -2362,11 +2332,6 @@ exports[`TextInput select suggestion 2`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
-}
-
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c5:focus {
@@ -2871,6 +2836,105 @@ exports[`TextInput should not have padding when plain="full" 1`] = `
 </div>
 `;
 
+exports[`TextInput should only should default placeholder when placeholder is a 
+  string 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c2::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c2:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c2::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c2::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c2:-moz-placeholder,
+.c2::-moz-placeholder {
+  opacity: 1;
+}
+
+.c1 {
+  position: relative;
+  width: 100%;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <input
+      autocomplete="off"
+      class="c2"
+      data-testid="placeholder"
+      id="placeholder"
+      name="placeholder"
+      placeholder="placeholder text"
+      value=""
+    />
+  </div>
+</div>
+`;
+
+exports[`TextInput should only should default placeholder when placeholder is a 
+  string 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
+>
+  <div
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 dpaJQp"
+  >
+    <input
+      autocomplete="off"
+      class="StyledTextInput-sc-1x30a0s-0 jKshUE"
+      data-testid="placeholder"
+      id="placeholder"
+      name="placeholder"
+      placeholder="placeholder text"
+      value=""
+    />
+  </div>
+</div>
+`;
+
 exports[`TextInput should show non-string placeholder 1`] = `
 .c0 {
   font-size: 18px;
@@ -3076,11 +3140,6 @@ exports[`TextInput small drop height 1`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
-}
-
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c5:focus {
@@ -3343,11 +3402,6 @@ exports[`TextInput suggestions 2`] = `
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
-}
-
-.c5:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #000000;
 }
 
 .c5:focus {

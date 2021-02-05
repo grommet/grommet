@@ -193,3 +193,12 @@ export const pointPropType = PropTypes.oneOf([
   'triangle',
   'triangleDown',
 ]);
+
+export const patternPropType = PropTypes.oneOf([
+  'squares',
+  'circles',
+  'stripesHorizontal',
+  'stripesVertical',
+  'stripesDiagonalDown',
+  'stripesDiagonalUp',
+]);
