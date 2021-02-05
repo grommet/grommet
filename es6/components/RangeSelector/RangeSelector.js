@@ -94,10 +94,16 @@ var RangeSelector = /*#__PURE__*/forwardRef(function (_ref, ref) {
       } else if (changing === 'upper' && value >= values[0] && value !== moveValue) {
         nextValues = [values[0], value];
       } else if (changing === 'selection' && value !== moveValue) {
-        var delta = value - moveValue;
+        if (value === max) {
+          nextValues = [max - (values[1] - values[0]), max];
+        } else if (value === min) {
+          nextValues = [min, min + (values[1] - values[0])];
+        } else {
+          var delta = value - moveValue;
 
-        if (values[0] + delta >= min && values[1] + delta <= max) {
-          nextValues = [values[0] + delta, values[1] + delta];
+          if (values[0] + delta >= min && values[1] + delta <= max) {
+            nextValues = [values[0] + delta, values[1] + delta];
+          }
         }
       }
 
