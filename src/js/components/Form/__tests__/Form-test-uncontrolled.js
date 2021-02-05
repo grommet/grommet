@@ -127,27 +127,27 @@ describe('Form uncontrolled', () => {
   });
 
   test('errors', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Form errors={{ test: 'missing' }}>
           <FormField name="test" />
         </Form>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('infos', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Form infos={{ test: 'missing' }}>
           <FormField name="test" />
         </Form>
       </Grommet>,
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('uncontrolled', () => {

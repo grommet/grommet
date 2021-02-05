@@ -18,6 +18,16 @@ describe('Meter', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  test('single', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Meter value={25} />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('basic', () => {
     const component = renderer.create(
       <Grommet>

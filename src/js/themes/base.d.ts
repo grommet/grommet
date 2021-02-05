@@ -142,6 +142,10 @@ interface ButtonKindType {
   extend?: ExtendType;
 }
 
+interface FormFieldLabelType extends TextProps {
+  requiredIndicator?: boolean | JSX.Element | string;
+}
+
 export interface ThemeType {
   global?: {
     active?: {
@@ -729,7 +733,7 @@ export interface ThemeType {
       container?: BoxProps;
       icon?: any;
     };
-    label?: TextProps;
+    label?: FormFieldLabelType;
     margin?: MarginType;
     round?: RoundType;
   };
@@ -737,6 +741,7 @@ export interface ThemeType {
     extend?: ExtendType;
   };
   heading?: {
+    color?: ColorType;
     extend?: ExtendType;
     font?: {};
     level?: {
@@ -1191,27 +1196,27 @@ export interface ThemeType {
       height?: string;
       maxWidth?: string;
     };
-    '2xl?': {
+    '2xl'?: {
       size?: string;
       height?: string;
       maxWidth?: string;
     };
-    '3xl?': {
+    '3xl'?: {
       size?: string;
       height?: string;
       maxWidth?: string;
     };
-    '4xl?': {
+    '4xl'?: {
       size?: string;
       height?: string;
       maxWidth?: string;
     };
-    '5xl?': {
+    '5xl'?: {
       size?: string;
       height?: string;
       maxWidth?: string;
     };
-    '6xl?': {
+    '6xl'?: {
       size?: string;
       height?: string;
       maxWidth?: string;

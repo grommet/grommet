@@ -8918,6 +8918,20 @@ Defaults to
 { vertical: 'xsmall', horizontal: 'small' }
 \`\`\`
 
+**formField.label.requiredIndicator**
+
+Whether an asterisk (*) indicating that an input is required 
+    should be displayed adjacent to the FormField's label. If providing a 
+    custom element, for accessibility it is recommended that you include 
+    an a11yTitle of \\"required\\" to assist screen readers. If using \\"true\\", the 
+    a11yTitle is automatically applied. Expects \`boolean | element | string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **formField.margin**
 
 The margin of FormField. Expects \`string | object\`.
@@ -10031,6 +10045,16 @@ Defaults to
   }
 \`\`\`
 
+**heading.color**
+
+The color of the heading. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **heading.extend**
 
 Any additional style for Heading. Expects \`string | (props) => {}\`.
@@ -11099,6 +11123,7 @@ end
     start
     end,
   size: 
+    none
     xxsmall
     xsmall
     small
@@ -11180,63 +11205,22 @@ function
 Item padding.
 
 \`\`\`
+none
 xxsmall
 xsmall
 small
 medium
 large
 xlarge
-string
 {
-  horizontal: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge,
-  vertical: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge,
-  top: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge,
   bottom: 
     xxsmall
     xsmall
     small
     medium
     large
-    xlarge,
-  left: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge,
-  right: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge,
-  start: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge,
+    xlarge
+    string,
   end: 
     xxsmall
     xsmall
@@ -11244,7 +11228,57 @@ string
     medium
     large
     xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
 }
+string
 \`\`\`
 
 **primaryKey**
@@ -12281,6 +12315,15 @@ string
 }
 \`\`\`
 
+**color**
+
+The color of the value region.
+      This is only valid when used with 'value'
+
+\`\`\`
+string
+\`\`\`
+
 **max**
 
 The maximum value for the Meter.
@@ -12332,6 +12375,16 @@ The visual type of meter. Defaults to \`bar\`.
 \`\`\`
 bar
 circle
+\`\`\`
+
+**value**
+
+
+      The numeric value to represent. Ignored when 'values' is specified.
+    
+
+\`\`\`
+number
 \`\`\`
 
 **values**
@@ -17481,7 +17534,8 @@ function
 
 **places**
 
-Place details.
+Place details. location is an array of two numeric values that indicates
+       the latitude and longitude of the specified location.
 
 \`\`\`
 [{
