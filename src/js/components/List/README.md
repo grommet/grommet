@@ -274,73 +274,73 @@ small
 medium
 large
 xlarge
-string
 {
-  horizontal: 
-    none
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge,
-  vertical: 
-    none
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge,
-  top: 
-    none
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge,
   bottom: 
-    none
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge,
-  left: 
-    none
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge,
-  right: 
-    none
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge,
-  start: 
-    none
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge,
-  end: 
-    none
     xxsmall
     xsmall
     small
     medium
     large
     xlarge
+    string,
+  end: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
 }
+string
 ```
 
 **primaryKey**
