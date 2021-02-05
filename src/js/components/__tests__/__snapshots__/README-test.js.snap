@@ -4868,6 +4868,17 @@ Defaults to
 undefined
 \`\`\`
 
+**checkBox.focusIndicator**
+
+Whether or not a CheckBox should receive focus when 
+    contained in a FormField. Expects \`boolean\`.
+
+Defaults to
+
+\`\`\`
+true
+\`\`\`
+
 **checkBox.gap**
 
 The right margin of the CheckBox to its label. Expects \`string\`.

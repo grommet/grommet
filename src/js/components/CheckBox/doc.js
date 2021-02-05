@@ -97,6 +97,12 @@ export const themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
+  'checkBox.focusIndicator': {
+    description: `Whether or not a CheckBox should receive focus when 
+    contained in a FormField.`,
+    type: 'boolean',
+    defaultValue: true,
+  },
   'checkBox.gap': {
     description: 'The right margin of the CheckBox to its label.',
     type: 'string',
