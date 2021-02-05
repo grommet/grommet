@@ -1,7 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import 'jest-styled-components';
-import renderer from 'react-test-renderer';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
@@ -26,18 +25,19 @@ describe('Tabs', () => {
   });
 
   test('no Tab', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Tabs>
           <Tab />
         </Tabs>
       </Grommet>,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('Tab', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Tabs>
           <Tab title="Tab 1">Tab body 1</Tab>
@@ -46,11 +46,11 @@ describe('Tabs', () => {
         </Tabs>
       </Grommet>,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('complex title', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Tabs>
           <Tab title={<div>Tab 1</div>}>Tab body 1</Tab>
@@ -59,11 +59,11 @@ describe('Tabs', () => {
         </Tabs>
       </Grommet>,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('with icon + reverse', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet>
         <Tabs>
           <Tab title="Tab 1" icon={<svg />}>
@@ -75,11 +75,11 @@ describe('Tabs', () => {
         </Tabs>
       </Grommet>,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('alignControls', () => {
-    const component = renderer.create(
+    const { container } = render(
       <Grommet full>
         <Tabs alignControls="center">
           <Tab title="Tab 1">Tab body 1</Tab>
@@ -87,7 +87,7 @@ describe('Tabs', () => {
         </Tabs>
       </Grommet>,
     );
-    expect(component.toJSON()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('Custom Tab component', () => {
