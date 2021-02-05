@@ -142,6 +142,10 @@ interface ButtonKindType {
   extend?: ExtendType;
 }
 
+interface FormFieldLabelType extends TextProps {
+  requiredIndicator?: boolean | JSX.Element | string;
+}
+
 export interface ThemeType {
   global?: {
     active?: {
@@ -729,7 +733,7 @@ export interface ThemeType {
       container?: BoxProps;
       icon?: any;
     };
-    label?: TextProps;
+    label?: FormFieldLabelType;
     margin?: MarginType;
     round?: RoundType;
   };

@@ -237,6 +237,15 @@ export const themeDoc = {
     type: 'string | object',
     defaultValue: "{ vertical: 'xsmall', horizontal: 'small' }",
   },
+  'formField.label.requiredIndicator': {
+    description: `Whether an asterisk (*) indicating that an input is required 
+    should be displayed adjacent to the FormField's label. If providing a 
+    custom element, for accessibility it is recommended that you include 
+    an a11yTitle of "required" to assist screen readers. If using "true", the 
+    a11yTitle is automatically applied.`,
+    type: 'boolean | element | string',
+    defaultValue: 'undefined',
+  },
   'formField.margin': {
     description: 'The margin of FormField.',
     type: 'string | object',
