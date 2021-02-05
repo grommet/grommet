@@ -96,10 +96,14 @@ const StyledCheckBoxToggle = styled.span`
       ? normalizeColor(props.theme.checkBox.toggle.background, props.theme)
       : 'transparent'};
 
-  ${props =>
-    props.focusIndicator === false
-      ? props.focus && props.theme.checkBox.focusIndicator && focusStyle()
-      : props.focus && focusStyle()};
+  ${props => {
+    // Check the theme for whether or not CheckBox should receive
+    // focus when in a FormField
+    const focusInFormField = props.theme.checkBox.focusIndicator;
+    return props.focusIndicator === false
+      ? props.focus && focusInFormField && focusStyle()
+      : props.focus && focusStyle();
+  }};
   ${props => props.theme.checkBox.toggle.extend};
 `;
 
