@@ -304,6 +304,13 @@ var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
     round: formFieldTheme.round,
     focus: focus
   } : {};
+  var requiredIndicator = theme.formField.label.requiredIndicator;
+  if (requiredIndicator === true) // a11yTitle necessary so screenreader announces as "required"
+    // as opposed to "star"
+    // accessibility resource: https://www.deque.com/blog/anatomy-of-accessible-forms-required-form-fields/
+    requiredIndicator = /*#__PURE__*/_react["default"].createElement(_Text.Text, {
+      a11yTitle: "required"
+    }, "*");
   return /*#__PURE__*/_react["default"].createElement(FormFieldBox, _extends({
     ref: ref,
     className: className,
@@ -323,7 +330,7 @@ var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
   }, containerRest), label && component !== _CheckBox.CheckBox || help ? /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, label && component !== _CheckBox.CheckBox && /*#__PURE__*/_react["default"].createElement(_Text.Text, _extends({
     as: "label",
     htmlFor: htmlFor
-  }, labelStyle), label), /*#__PURE__*/_react["default"].createElement(Message, _extends({
+  }, labelStyle), label, required && requiredIndicator ? requiredIndicator : undefined), /*#__PURE__*/_react["default"].createElement(Message, _extends({
     message: help
   }, formFieldTheme.help))) : undefined, contents, /*#__PURE__*/_react["default"].createElement(Message, _extends({
     type: "error",

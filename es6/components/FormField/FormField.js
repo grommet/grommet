@@ -283,6 +283,13 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     round: formFieldTheme.round,
     focus: focus
   } : {};
+  var requiredIndicator = theme.formField.label.requiredIndicator;
+  if (requiredIndicator === true) // a11yTitle necessary so screenreader announces as "required"
+    // as opposed to "star"
+    // accessibility resource: https://www.deque.com/blog/anatomy-of-accessible-forms-required-form-fields/
+    requiredIndicator = /*#__PURE__*/React.createElement(Text, {
+      a11yTitle: "required"
+    }, "*");
   return /*#__PURE__*/React.createElement(FormFieldBox, _extends({
     ref: ref,
     className: className,
@@ -302,7 +309,7 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref3, ref) {
   }, containerRest), label && component !== CheckBox || help ? /*#__PURE__*/React.createElement(React.Fragment, null, label && component !== CheckBox && /*#__PURE__*/React.createElement(Text, _extends({
     as: "label",
     htmlFor: htmlFor
-  }, labelStyle), label), /*#__PURE__*/React.createElement(Message, _extends({
+  }, labelStyle), label, required && requiredIndicator ? requiredIndicator : undefined), /*#__PURE__*/React.createElement(Message, _extends({
     message: help
   }, formFieldTheme.help))) : undefined, contents, /*#__PURE__*/React.createElement(Message, _extends({
     type: "error",

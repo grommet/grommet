@@ -919,7 +919,8 @@ var generate = function generate(baseSpacing, scale) {
         margin: {
           vertical: 'xsmall',
           horizontal: 'small'
-        }
+        } // requiredIndicator: undefined,
+
       },
       margin: {
         bottom: 'small'
