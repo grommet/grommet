@@ -35,15 +35,13 @@ var CheckBoxGroup = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || defaultProps.theme; // In case option is a string, normalize it to be an object
 
-  var options = (0, _react.useMemo)(function () {
-    return optionsProp.map(function (option) {
-      return typeof option === 'string' ? {
-        disabled: disabledProp,
-        value: option,
-        label: option
-      } : option;
-    });
-  }, [optionsProp, disabledProp]); // 'value' is an array of checked valueKeys
+  var options = optionsProp.map(function (option) {
+    return typeof option === 'string' ? {
+      disabled: disabledProp,
+      value: option,
+      label: option
+    } : option;
+  }); // 'value' is an array of checked valueKeys
 
   var _formContext$useFormI = formContext.useFormInput(name, valueProp, []),
       value = _formContext$useFormI[0],

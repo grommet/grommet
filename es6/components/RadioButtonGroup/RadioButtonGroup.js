@@ -2,7 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { forwardRef, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import React, { forwardRef, useContext, useEffect, useRef, useState } from 'react';
 import { ThemeContext } from 'styled-components';
 import { FormContext } from '../Form/FormContext';
 import { defaultProps } from '../../default-props';
@@ -22,19 +22,17 @@ var RadioButtonGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var formContext = useContext(FormContext);
   var theme = useContext(ThemeContext) || defaultProps.theme; // normalize options to always use an object
 
-  var options = useMemo(function () {
-    return optionsProp.map(function (o) {
-      return typeof o !== 'object' ? {
-        disabled: disabled,
-        id: rest.id ? rest.id + "-" + o : "" + o,
-        // force string
-        label: typeof o !== 'string' ? JSON.stringify(o) : o,
-        value: o
-      } : _extends({
-        disabled: disabled
-      }, o);
-    });
-  }, [disabled, optionsProp, rest.id]);
+  var options = optionsProp.map(function (o) {
+    return typeof o !== 'object' ? {
+      disabled: disabled,
+      id: rest.id ? rest.id + "-" + o : "" + o,
+      // force string
+      label: typeof o !== 'string' ? JSON.stringify(o) : o,
+      value: o
+    } : _extends({
+      disabled: disabled
+    }, o);
+  });
 
   var _formContext$useFormI = formContext.useFormInput(name, valueProp, ''),
       value = _formContext$useFormI[0],

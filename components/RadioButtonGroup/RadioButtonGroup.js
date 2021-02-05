@@ -40,19 +40,17 @@ var RadioButtonGroup = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme; // normalize options to always use an object
 
 
-  var options = (0, _react.useMemo)(function () {
-    return optionsProp.map(function (o) {
-      return typeof o !== 'object' ? {
-        disabled: disabled,
-        id: rest.id ? rest.id + "-" + o : "" + o,
-        // force string
-        label: typeof o !== 'string' ? JSON.stringify(o) : o,
-        value: o
-      } : _extends({
-        disabled: disabled
-      }, o);
-    });
-  }, [disabled, optionsProp, rest.id]);
+  var options = optionsProp.map(function (o) {
+    return typeof o !== 'object' ? {
+      disabled: disabled,
+      id: rest.id ? rest.id + "-" + o : "" + o,
+      // force string
+      label: typeof o !== 'string' ? JSON.stringify(o) : o,
+      value: o
+    } : _extends({
+      disabled: disabled
+    }, o);
+  });
 
   var _formContext$useFormI = formContext.useFormInput(name, valueProp, ''),
       value = _formContext$useFormI[0],

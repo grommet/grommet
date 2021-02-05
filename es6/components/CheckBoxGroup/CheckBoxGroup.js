@@ -2,7 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { forwardRef, useContext, useMemo } from 'react';
+import React, { forwardRef, useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import { CheckBox } from '../CheckBox';
 import { FormContext } from '../Form/FormContext';
@@ -21,15 +21,13 @@ export var CheckBoxGroup = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var formContext = useContext(FormContext);
   var theme = useContext(ThemeContext) || defaultProps.theme; // In case option is a string, normalize it to be an object
 
-  var options = useMemo(function () {
-    return optionsProp.map(function (option) {
-      return typeof option === 'string' ? {
-        disabled: disabledProp,
-        value: option,
-        label: option
-      } : option;
-    });
-  }, [optionsProp, disabledProp]); // 'value' is an array of checked valueKeys
+  var options = optionsProp.map(function (option) {
+    return typeof option === 'string' ? {
+      disabled: disabledProp,
+      value: option,
+      label: option
+    } : option;
+  }); // 'value' is an array of checked valueKeys
 
   var _formContext$useFormI = formContext.useFormInput(name, valueProp, []),
       value = _formContext$useFormI[0],
