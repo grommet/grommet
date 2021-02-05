@@ -4296,7 +4296,7 @@ string
 
 A unique identifier for the Chart. This
       is required if more than one Chart is shown and they use color
-      gradients.
+      gradients or if a pattern is specified.
 
 \`\`\`
 string
@@ -4449,6 +4449,19 @@ xlarge
     string
 }
 string
+\`\`\`
+
+**pattern**
+
+When using an 'area' type, what pattern to fill the area with.
+
+\`\`\`
+squares
+circles
+stripesHorizontal
+stripesVertical
+stripesDiagonalDown
+stripesDiagonalUp
 \`\`\`
 
 **point**
@@ -9222,6 +9235,20 @@ Defaults to
 { vertical: 'xsmall', horizontal: 'small' }
 \`\`\`
 
+**formField.label.requiredIndicator**
+
+Whether an asterisk (*) indicating that an input is required 
+    should be displayed adjacent to the FormField's label. If providing a 
+    custom element, for accessibility it is recommended that you include 
+    an a11yTitle of \\"required\\" to assist screen readers. If using \\"true\\", the 
+    a11yTitle is automatically applied. Expects \`boolean | element | string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **formField.margin**
 
 The margin of FormField. Expects \`string | object\`.
@@ -10335,6 +10362,16 @@ Defaults to
   }
 \`\`\`
 
+**heading.color**
+
+The color of the heading. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **heading.extend**
 
 Any additional style for Heading. Expects \`string | (props) => {}\`.
@@ -10854,6 +10891,45 @@ none
 boolean
 \`\`\`
 
+**background**
+
+Either a color 
+identifier to use for the background color. For example: 'neutral-1'. Or, a 
+'url()' for an image. Dark is not needed if color is provided.
+
+\`\`\`
+string
+{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  dark: 
+    boolean
+    string,
+  image: string,
+  position: string,
+  opacity: 
+    string
+    boolean
+    number
+    weak
+    medium
+    strong,
+  repeat: 
+    no-repeat
+    repeat
+    string,
+  size: 
+    cover
+    contain
+    string,
+  light: string
+}
+\`\`\`
+
 **full**
 
 Whether the width and/or height should fill the current viewport
@@ -11035,6 +11111,28 @@ Defaults to
 
 \`\`\`
 white
+\`\`\`
+
+**layer.border.radius**
+
+The rounding of the Layer corners. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+white
+\`\`\`
+
+**layer.border.intelligentRounding**
+
+Whether the border-radius of the Layer should adapt based on 
+    the Layer's position. Wherever the Layer is touching the edge of the 
+    screen, a border-radius of 0 will be applied. Expects \`boolean\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **layer.container.zIndex**
@@ -11342,6 +11440,7 @@ end
     start
     end,
   size: 
+    none
     xxsmall
     xsmall
     small
@@ -11423,63 +11522,22 @@ function
 Item padding.
 
 \`\`\`
+none
 xxsmall
 xsmall
 small
 medium
 large
 xlarge
-string
 {
-  horizontal: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge,
-  vertical: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge,
-  top: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge,
   bottom: 
     xxsmall
     xsmall
     small
     medium
     large
-    xlarge,
-  left: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge,
-  right: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge,
-  start: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge,
+    xlarge
+    string,
   end: 
     xxsmall
     xsmall
@@ -11487,7 +11545,57 @@ string
     medium
     large
     xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
 }
+string
 \`\`\`
 
 **primaryKey**
@@ -12524,6 +12632,15 @@ string
 }
 \`\`\`
 
+**color**
+
+The color of the value region.
+      This is only valid when used with 'value'
+
+\`\`\`
+string
+\`\`\`
+
 **max**
 
 The maximum value for the Meter.
@@ -12575,6 +12692,16 @@ The visual type of meter. Defaults to \`bar\`.
 \`\`\`
 bar
 circle
+\`\`\`
+
+**value**
+
+
+      The numeric value to represent. Ignored when 'values' is specified.
+    
+
+\`\`\`
+number
 \`\`\`
 
 **values**
@@ -16141,6 +16268,11 @@ medium
 large
 xlarge
 xxlarge
+2xl
+3xl
+4xl
+5xl
+6xl
 string
 \`\`\`
 
@@ -17719,7 +17851,8 @@ function
 
 **places**
 
-Place details.
+Place details. location is an array of two numeric values that indicates
+       the latitude and longitude of the specified location.
 
 \`\`\`
 [{

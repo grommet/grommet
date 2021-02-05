@@ -185,6 +185,7 @@ end
     start
     end,
   size: 
+    none
     xxsmall
     xsmall
     small
@@ -266,63 +267,22 @@ function
 Item padding.
 
 ```
+none
 xxsmall
 xsmall
 small
 medium
 large
 xlarge
-string
 {
-  horizontal: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge,
-  vertical: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge,
-  top: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge,
   bottom: 
     xxsmall
     xsmall
     small
     medium
     large
-    xlarge,
-  left: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge,
-  right: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge,
-  start: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge,
+    xlarge
+    string,
   end: 
     xxsmall
     xsmall
@@ -330,7 +290,57 @@ string
     medium
     large
     xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
 }
+string
 ```
 
 **primaryKey**

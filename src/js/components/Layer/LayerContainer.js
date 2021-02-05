@@ -32,6 +32,7 @@ const fullBounds = { left: 0, right: 0, top: 0, bottom: 0 };
 const LayerContainer = forwardRef(
   (
     {
+      background,
       children,
       full = false,
       id,
@@ -152,6 +153,7 @@ const LayerContainer = forwardRef(
     let content = (
       <StyledContainer
         ref={ref || containerRef}
+        background={background}
         elevation={theme.layer.container.elevation}
         id={id}
         full={full}

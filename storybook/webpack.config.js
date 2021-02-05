@@ -20,10 +20,7 @@ module.exports = async ({ config }) => {
     test: /stories(\\|\/).*\.(ts|tsx)$/,
     loaders: [
       {
-        loader: require.resolve('awesome-typescript-loader'),
-        options: {
-          configFileName: './tsconfig.json',
-        },
+        loader: require.resolve('ts-loader'),
       },
       {
         loader: require.resolve('@storybook/source-loader'),

@@ -855,6 +855,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       label: {
         margin: { vertical: 'xsmall', horizontal: 'small' },
+        // requiredIndicator: undefined,
       },
       margin: { bottom: 'small' },
       // round: undefined,
@@ -863,6 +864,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined
     },
     heading: {
+      // color: undefined,
       font: {
         // family: undefined
       },
@@ -938,6 +940,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       border: {
         radius: '4px',
+        // intelligentRounding: undefined,
       },
       container: {
         // elevation: undefined,
@@ -1226,6 +1229,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       large: { ...fontSizing(1) }, // 22px
       xlarge: { ...fontSizing(2) },
       xxlarge: { ...fontSizing(4) },
+      '2xl': { ...fontSizing(4) },
+      '3xl': { ...fontSizing(6) },
+      '4xl': { ...fontSizing(9) },
+      '5xl': { ...fontSizing(13) },
+      '6xl': { ...fontSizing(18) },
     },
     textArea: {
       // extend: undefined,

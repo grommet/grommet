@@ -93,6 +93,26 @@ describe('Layer', () => {
         );
         expectPortal('position-full-test').toMatchSnapshot();
       });
+
+      test(`should render correct border radius for position: ${position} - 
+      full: ${full}`, () => {
+        const theme = {
+          layer: {
+            border: {
+              radius: 'large',
+              intelligentRounding: true,
+            },
+          },
+        };
+        render(
+          <Grommet theme={theme}>
+            <Layer id="border-radius-test" position={position} full={full}>
+              This is a layer
+            </Layer>
+          </Grommet>,
+        );
+        expectPortal('border-radius-test').toMatchSnapshot();
+      });
     }),
   );
 
@@ -108,6 +128,17 @@ describe('Layer', () => {
       expectPortal('margin-test').toMatchSnapshot();
     }),
   );
+
+  test(`should apply background`, () => {
+    render(
+      <Grommet>
+        <Layer id="margin-test" background="brand">
+          This is a layer
+        </Layer>
+      </Grommet>,
+    );
+    expectPortal('margin-test').toMatchSnapshot();
+  });
 
   test(`custom margin`, () => {
     render(
@@ -333,7 +364,11 @@ describe('Layer', () => {
     const onClickOutside = jest.fn();
     render(
       <Grommet>
-        <FakeLayer id="layer-node" onClickOutside={onClickOutside}>
+        <FakeLayer
+          id="layer-node"
+          onClickOutside={onClickOutside}
+          animation={false}
+        >
           <div data-testid="test-body-node" />
         </FakeLayer>
       </Grommet>,
@@ -355,6 +390,7 @@ describe('Layer', () => {
           id="layer-node"
           onClickOutside={onClickOutside}
           modal={false}
+          animation={false}
         >
           <div data-testid="test-body-node" />
         </FakeLayer>
@@ -376,6 +412,7 @@ describe('Layer', () => {
         id="target-test"
         onClickOutside={onClickOutside}
         modal={false}
+        animation={false}
       />,
     );
     expectPortal('target-test').toMatchSnapshot();
@@ -389,7 +426,13 @@ describe('Layer', () => {
 
   test('invoke onClickOutside when modal={true} and layer has target', () => {
     const onClickOutside = jest.fn();
-    render(<TargetLayer id="target-test" onClickOutside={onClickOutside} />);
+    render(
+      <TargetLayer
+        id="target-test"
+        onClickOutside={onClickOutside}
+        animation={false}
+      />,
+    );
     expectPortal('target-test').toMatchSnapshot();
 
     fireEvent(
@@ -410,7 +453,9 @@ describe('Layer', () => {
 
     render(
       <Grommet theme={theme}>
-        <Layer id="custom-theme-test">This is a layer</Layer>
+        <Layer id="custom-theme-test" animation={false}>
+          This is a layer
+        </Layer>
       </Grommet>,
     );
     expectPortal('custom-theme-test').toMatchSnapshot();
@@ -422,7 +467,7 @@ describe('Layer', () => {
     const onEsc = jest.fn();
     const { getByText, queryByText } = render(
       <Grommet>
-        <Layer id="esc-test" onEsc={onEsc} modal={false}>
+        <Layer id="esc-test" onEsc={onEsc} modal={false} animation={false}>
           <Select options={['one', 'two', 'three']} data-testid="test-select" />
         </Layer>
       </Grommet>,

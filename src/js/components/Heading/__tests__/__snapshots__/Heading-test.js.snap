@@ -1032,6 +1032,99 @@ exports[`Theme based font weight renders 1`] = `
 </div>
 `;
 
+exports[`Theme color renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  font-size: 50px;
+  line-height: 56px;
+  max-width: 1200px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.c2 {
+  font-size: 34px;
+  line-height: 40px;
+  max-width: 816px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.c3 {
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.c4 {
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+  font-weight: 600;
+  color: #000000;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    font-size: 26px;
+    line-height: 32px;
+    max-width: 624px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 432px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    font-size: 16px;
+    line-height: 22px;
+    max-width: 384px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <h1
+    className="c1"
+  />
+  <h2
+    className="c2"
+  />
+  <h3
+    className="c3"
+  />
+  <h4
+    className="c4"
+  />
+</div>
+`;
+
 exports[`responsive renders 1`] = `
 .c0 {
   font-size: 18px;

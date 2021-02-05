@@ -444,6 +444,56 @@ exports[`Meter round 1`] = `
 </div>
 `;
 
+exports[`Meter single 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.c1 path {
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
+  transition: stroke 0.3s,stroke-width 0.3s;
+}
+
+<div
+  className="c0"
+>
+  <svg
+    className="c1"
+    height={24}
+    preserveAspectRatio="none"
+    viewBox="0 0 384 24"
+    width={384}
+  >
+    <path
+      d="M 0,12 L 384,12"
+      fill="none"
+      stroke="#F2F2F2"
+      strokeLinecap="square"
+      strokeOpacity="0.4"
+      strokeWidth={24}
+    />
+    <path
+      d="M 0,12 L 96,12"
+      fill="none"
+      stroke="#6FFFB0"
+      strokeLinecap="butt"
+      strokeWidth={24}
+    />
+  </svg>
+</div>
+`;
+
 exports[`Meter size 1`] = `
 .c0 {
   font-size: 18px;

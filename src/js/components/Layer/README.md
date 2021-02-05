@@ -34,6 +34,45 @@ none
 boolean
 ```
 
+**background**
+
+Either a color 
+identifier to use for the background color. For example: 'neutral-1'. Or, a 
+'url()' for an image. Dark is not needed if color is provided.
+
+```
+string
+{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  dark: 
+    boolean
+    string,
+  image: string,
+  position: string,
+  opacity: 
+    string
+    boolean
+    number
+    weak
+    medium
+    strong,
+  repeat: 
+    no-repeat
+    repeat
+    string,
+  size: 
+    cover
+    contain
+    string,
+  light: string
+}
+```
+
 **full**
 
 Whether the width and/or height should fill the current viewport
@@ -215,6 +254,28 @@ Defaults to
 
 ```
 white
+```
+
+**layer.border.radius**
+
+The rounding of the Layer corners. Expects `string`.
+
+Defaults to
+
+```
+white
+```
+
+**layer.border.intelligentRounding**
+
+Whether the border-radius of the Layer should adapt based on 
+    the Layer's position. Wherever the Layer is touching the edge of the 
+    screen, a border-radius of 0 will be applied. Expects `boolean`.
+
+Defaults to
+
+```
+undefined
 ```
 
 **layer.container.zIndex**
