@@ -2,7 +2,6 @@ import * as React from 'react';
 
 export interface FileInputProps {
   accept?: string;
-  aggregateThreshold?: number;
   disabled?: boolean;
   id?: string;
   messages?: {
@@ -13,7 +12,7 @@ export interface FileInputProps {
     remove?: string;
     removeAll?: string;
   };
-  multiple?: boolean;
+  multiple?: boolean | { aggregateThreshold?: number };
   name?: string;
   renderFile?: (...args: any[]) => void;
 }

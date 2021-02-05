@@ -48,8 +48,18 @@ export const doc = FileInput => {
         remove: 'remove',
         removeAll: 'remove all',
       }),
-    multiple: PropTypes.bool
-      .description('Whether to allow multiple files')
+    multiple: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.shape({
+        aggregateThreshold: PropTypes.number,
+      }),
+    ])
+      .description(
+        `Whether to allow multiple files. If an object is supplied,
+        'aggregageThreshold' indicates the maximum number of individual
+        files to show. Above this, only a single message describing the
+        number of files will be shown.`,
+      )
       .defaultValue(undefined),
     name: PropTypes.string.description(
       `The name attribute of the input. This is required when used within

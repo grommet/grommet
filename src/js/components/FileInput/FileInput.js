@@ -57,7 +57,6 @@ const Message = styled(Text)`
 const FileInput = forwardRef(
   (
     {
-      aggregateThreshold = 10,
       a11yTitle,
       background,
       border,
@@ -80,6 +79,7 @@ const FileInput = forwardRef(
     const [files, setFiles] = formContext.useFormInput(name, valueProp, []);
     const [hover, setHover] = React.useState();
     const [dragOver, setDragOver] = React.useState();
+    const aggregateThreshold = (multiple && multiple.aggregateThreshold) || 10;
     const inputRef = useForwardedRef(ref);
     const controlRef = useRef();
     const removeRef = useRef();

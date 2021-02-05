@@ -70,10 +70,16 @@ Custom messages for FileInput. Used for accessibility by screen
 
 **multiple**
 
-Whether to allow multiple files
+Whether to allow multiple files. If an object is supplied,
+        'aggregageThreshold' indicates the maximum number of individual
+        files to show. Above this, only a single message describing the
+        number of files will be shown.
 
 ```
 boolean
+{
+  aggregateThreshold: number
+}
 ```
 
 **name**

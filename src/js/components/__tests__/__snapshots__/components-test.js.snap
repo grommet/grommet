@@ -3600,8 +3600,14 @@ string",
       },
       Object {
         "defaultValue": undefined,
-        "description": "Whether to allow multiple files",
-        "format": "boolean",
+        "description": "Whether to allow multiple files. If an object is supplied,
+        'aggregageThreshold' indicates the maximum number of individual
+        files to show. Above this, only a single message describing the
+        number of files will be shown.",
+        "format": "boolean
+{
+  aggregateThreshold: number
+}",
         "name": "multiple",
       },
       Object {

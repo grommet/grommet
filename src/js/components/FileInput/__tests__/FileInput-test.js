@@ -24,6 +24,15 @@ describe('FileInput', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('multiple aggregateThreshold', () => {
+    const { container } = render(
+      <Grommet>
+        <FileInput name="file" multiple={{ aggregateThreshold: 2 }} />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('accept', () => {
     const { container } = render(
       <Grommet>
