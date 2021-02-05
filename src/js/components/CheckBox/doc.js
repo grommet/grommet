@@ -20,6 +20,9 @@ export const doc = CheckBox => {
     checked: PropTypes.bool
       .description('Same as React <input checked={} />')
       .defaultValue(false),
+    defaultChecked: PropTypes.bool
+      .description('Same as React <input defaultChecked={} />')
+      .defaultValue(false),
     disabled: PropTypes.bool
       .description(
         `Same as React <input disabled={} />. Also adds a hidden input element

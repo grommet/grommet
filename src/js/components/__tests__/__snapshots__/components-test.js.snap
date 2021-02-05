@@ -2195,6 +2195,12 @@ point",
       },
       Object {
         "defaultValue": false,
+        "description": "Same as React <input defaultChecked={} />",
+        "format": "boolean",
+        "name": "defaultChecked",
+      },
+      Object {
+        "defaultValue": false,
         "description": "Same as React <input disabled={} />. Also adds a hidden input element
       with the same name so form submissions work.",
         "format": "boolean",
