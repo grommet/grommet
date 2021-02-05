@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { genericProps } from '../../utils/prop-types';
+import { genericProps, padPropType } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 
 const sizes = [
@@ -108,11 +108,7 @@ export const doc = List => {
       Anchor or Button inside 'primaryKey' or 'secondaryKey' as that can
       cause confusion with overlapping interactive elements.`,
     ),
-    pad: PropTypes.oneOfType([
-      PropTypes.oneOf(sizes),
-      PropTypes.string,
-      PropTypes.shape(padShapeSides),
-    ]).description(`Item padding.`),
+    pad: PropTypes.oneOfType([padPropType]).description(`Item padding.`),
     primaryKey: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.func,

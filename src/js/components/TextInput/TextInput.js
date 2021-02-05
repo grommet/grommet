@@ -119,7 +119,7 @@ const TextInput = forwardRef(
     );
 
     const [focus, setFocus] = useState();
-    const [showDrop, setShowDrop] = useState();
+    const [showDrop, setShowDrop] = useState(false);
 
     const handleSuggestionSelect = useMemo(
       () => (onSelect && !onSuggestionSelect ? onSelect : onSuggestionSelect),
@@ -130,61 +130,95 @@ const TextInput = forwardRef(
       [onSelect, onSuggestionSelect],
     );
 
+    const [suggestionsAtClose, setSuggestionsAtClose] = useState();
+
+    const openDrop = useCallback(() => {
+      setShowDrop(true);
+      announce(messages.suggestionIsOpen);
+      announce(`${suggestions.length} ${messages.suggestionsCount}`);
+      if (onSuggestionsOpen) onSuggestionsOpen();
+    }, [
+      announce,
+      messages.suggestionsCount,
+      messages.suggestionIsOpen,
+      onSuggestionsOpen,
+      suggestions,
+    ]);
+
+    const closeDrop = useCallback(() => {
+      setSuggestionsAtClose(suggestions); // must be before closing drop
+      setShowDrop(false);
+      if (messages.onSuggestionsClose) onSuggestionsClose();
+      if (onSuggestionsClose) onSuggestionsClose();
+    }, [messages.onSuggestionsClose, onSuggestionsClose, suggestions]);
+
+    // Handle scenarios where we have focus, the drop isn't showing,
+    // and the suggestions change. We don't want to open the drop if
+    // the drop has been closed by onEsc and the suggestions haven't
+    // changed. So, we remember the suggestions we are showing when
+    // the drop was closed and only re-open it when the suggestions
+    // subsequently change.
+    useEffect(() => {
+      if (
+        focus &&
+        !showDrop &&
+        suggestions &&
+        suggestions.length &&
+        (!suggestionsAtClose ||
+          suggestionsAtClose.length !== suggestions.length)
+      ) {
+        openDrop();
+      }
+    }, [focus, openDrop, showDrop, suggestions, suggestionsAtClose]);
+
     // if we have no suggestions, close drop if it's open
     useEffect(() => {
-      if (showDrop && (!suggestions || !suggestions.length)) {
-        setShowDrop(false);
-        if (onSuggestionsClose) onSuggestionsClose();
-      }
-    }, [onSuggestionsClose, showDrop, suggestions]);
+      if (showDrop && (!suggestions || !suggestions.length)) closeDrop();
+    }, [closeDrop, showDrop, suggestions]);
 
-    // If we have suggestions and focus, open drop if it's closed.
-    // This can occur when suggestions are tied to the value, as in
-    // the caller updates the suggestions based on the value passed in.
-    // We don't want focus or showDrop in the dependencies because we
-    // don't want to open the drop just after Esc closed it.
-    /* eslint-disable react-hooks/exhaustive-deps */
-    useEffect(() => {
-      if (focus && !showDrop && suggestions && suggestions.length) {
-        setShowDrop(true);
-        if (onSuggestionsOpen) onSuggestionsOpen();
-      }
-    }, [onSuggestionsOpen, suggestions]);
-    /* eslint-enable react-hooks/exhaustive-deps */
+    const valueSuggestionIndex = useMemo(
+      () =>
+        suggestions
+          ? suggestions
+              .map(suggestion =>
+                typeof suggestion === 'object' ? suggestion.value : suggestion,
+              )
+              .indexOf(value)
+          : -1,
+      [suggestions, value],
+    );
 
     // choose the best suggestion, either the explicit default or the one
     // that matches the current value
-    const bestSuggestion = useCallback(() => {
-      if (suggestions) {
-        const suggestionValues = suggestions.map(suggestion =>
-          typeof suggestion === 'object' ? suggestion.value : suggestion,
-        );
-        const indexOfValue = suggestionValues.indexOf(value);
-        if (indexOfValue === -1 && typeof defaultSuggestion === 'number') {
-          return defaultSuggestion;
-        }
-        return indexOfValue;
+    const resetSuggestionIndex = useMemo(() => {
+      if (
+        valueSuggestionIndex === -1 &&
+        typeof defaultSuggestion === 'number'
+      ) {
+        return defaultSuggestion;
       }
-      return -1;
-    }, [defaultSuggestion, suggestions, value]);
+      return valueSuggestionIndex;
+    }, [defaultSuggestion, valueSuggestionIndex]);
 
     // activeSuggestionIndex unifies mouse and keyboard interaction of
     // the suggestions
     const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(
-      bestSuggestion(),
+      resetSuggestionIndex,
     );
 
     // Only update active suggestion index when the mouse actually moves,
     // not when suggestions are moving under the mouse.
     const [mouseMovedSinceLastKey, setMouseMovedSinceLastKey] = useState();
 
+    // set activeSuggestionIndex when value changes
+    useEffect(() => setActiveSuggestionIndex(valueSuggestionIndex), [
+      valueSuggestionIndex,
+    ]);
+
     // reset activeSuggestionIndex when the drop is closed
     useEffect(() => {
-      const nextActiveSuggestionIndex = bestSuggestion();
-      if (activeSuggestionIndex !== nextActiveSuggestionIndex && !showDrop) {
-        setActiveSuggestionIndex(nextActiveSuggestionIndex);
-      }
-    }, [activeSuggestionIndex, bestSuggestion, showDrop]);
+      if (!showDrop) setActiveSuggestionIndex(resetSuggestionIndex);
+    }, [resetSuggestionIndex, showDrop]);
 
     // announce active suggestion
     useEffect(() => {
@@ -216,25 +250,6 @@ const TextInput = forwardRef(
       }, 50); // delay to allow Drop to animate in
       return () => clearTimeout(timer);
     }, [activeSuggestionIndex, showDrop]);
-
-    const openDrop = useCallback(() => {
-      setShowDrop(true);
-      announce(messages.suggestionIsOpen);
-      announce(`${suggestions.length} ${messages.suggestionsCount}`);
-      if (onSuggestionsOpen) onSuggestionsOpen();
-    }, [
-      announce,
-      messages.suggestionsCount,
-      messages.suggestionIsOpen,
-      onSuggestionsOpen,
-      suggestions,
-    ]);
-
-    const closeDrop = useCallback(() => {
-      setShowDrop(false);
-      if (messages.onSuggestionsClose) onSuggestionsClose();
-      if (onSuggestionsClose) onSuggestionsClose();
-    }, [messages.onSuggestionsClose, onSuggestionsClose]);
 
     const setValueFromSuggestion = (event, suggestion) => {
       // if we stole the focus in the drop, perhaps by interacting with
@@ -451,7 +466,11 @@ const TextInput = forwardRef(
                     // will come from this onChange and remove the placeholder
                     // so we need to update state to ensure the styled
                     // placeholder only appears when there is no value
-                    setShowStyledPlaceholder(!event.target.value);
+                    setShowStyledPlaceholder(
+                      placeholder &&
+                        typeof placeholder !== 'string' &&
+                        !event.target.value,
+                    );
                     setValue(event.target.value);
                     setActiveSuggestionIndex(-1);
                     if (onChange) onChange(event);
