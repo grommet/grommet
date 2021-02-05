@@ -29,6 +29,7 @@ export const TargetLayer = () => {
           ref={ref}
           gridArea="main"
           fill
+          height={{ min: 'small' }}
           align="center"
           justify="center"
           gap="medium"
@@ -48,6 +49,9 @@ export const TargetLayer = () => {
           <Button label="Open" onClick={onOpen} />
         </Box>
       </Grid>
+      {/* Adding Box as placeholder to demo how Layer scrolls
+      with target */}
+      <Box height="large" />
       {open && (
         <Layer
           modal={modal}
