@@ -15,7 +15,7 @@ export { HelpAndError } from './HelpAndError';
 export { RequiredLabel } from './RequiredLabel';
 export { Themed } from './Themed';
 export { Uncontrolled } from './Uncontrolled';
-export { UncontrolledTyped } from './typescript/UncontrolledTyped.tsx';
+export { TypedForm } from './typescript/TypedForm.tsx';
 export { ValidateOnBlur } from './ValidateOnBlur';
 
 export default {
