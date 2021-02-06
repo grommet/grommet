@@ -103,7 +103,7 @@ const StyledDataTableHeader = styled(TableHeader)`
     props.size &&
     `
     display: table;
-    width: 100%;
+    width: calc(100% - ${props.scrollOffset}px);
     table-layout: fixed;
   `}
 `;
@@ -116,7 +116,7 @@ const StyledDataTableFooter = styled(TableFooter)`
     props.size &&
     `
     display: table;
-    width: 100%;
+    width: calc(100% - ${props.scrollOffset}px);
     table-layout: fixed;
   `}
   ${props =>

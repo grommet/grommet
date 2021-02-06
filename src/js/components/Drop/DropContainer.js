@@ -37,6 +37,7 @@ const DropContainer = forwardRef(
   (
     {
       align = defaultAlign,
+      onAlign,
       children,
       dropTarget,
       elevation,
@@ -62,6 +63,13 @@ const DropContainer = forwardRef(
     ]);
     const dropRef = useRef();
     useEffect(() => {
+      const notifyAlign = () => {
+        const styleCurrent = (ref || dropRef).current.style;
+        const alignControl = styleCurrent.top !== '' ? 'top' : 'bottom';
+
+        onAlign(alignControl);
+      };
+
       // We try to preserve the maxHeight as changing it causes any scroll
       // position to be lost. We set the maxHeight on mount and if the window
       // is resized.
@@ -225,6 +233,7 @@ const DropContainer = forwardRef(
             container.style.maxHeight = `${maxHeight}px`;
           }
         }
+        if (onAlign) notifyAlign();
       };
 
       let scrollParents;
@@ -283,6 +292,7 @@ const DropContainer = forwardRef(
       };
     }, [
       align,
+      onAlign,
       dropTarget,
       onClickOutside,
       portalContext,
@@ -338,6 +348,10 @@ const DropContainer = forwardRef(
           trapFocus={trapFocus}
         >
           <Keyboard
+            // should capture keyboard event before other elements,
+            // such as Layer
+            // https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+            capture
             onEsc={
               onEsc
                 ? event => {

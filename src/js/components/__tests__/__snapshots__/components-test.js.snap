@@ -1891,7 +1891,7 @@ string",
       Object {
         "description": "A unique identifier for the Chart. This
       is required if more than one Chart is shown and they use color
-      gradients.",
+      gradients or if a pattern is specified.",
         "format": "string",
         "name": "id",
       },
@@ -2024,6 +2024,16 @@ xlarge
 }
 string",
         "name": "pad",
+      },
+      Object {
+        "description": "When using an 'area' type, what pattern to fill the area with.",
+        "format": "squares
+circles
+stripesHorizontal
+stripesVertical
+stripesDiagonalDown
+stripesDiagonalUp",
+        "name": "pattern",
       },
       Object {
         "description": "When using a 'point' type, what shape the points should use.
@@ -4387,7 +4397,113 @@ function",
     "usage": "import { Grid } from 'grommet';
 <Grid />",
   },
-  "Grommet": [Function],
+  "Grommet": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=Utilities-Grommet&full=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/grommet&module=%2Fsrc%2FGrommet.js",
+      },
+    ],
+    "description": "The top level Grommet container.",
+    "intrinsicElement": "div",
+    "name": "Grommet",
+    "properties": Array [
+      Object {
+        "description": "Either a color 
+identifier to use for the background color. For example: 'neutral-1'. Or, a 
+'url()' for an image. Dark is not needed if color is provided.",
+        "format": "string
+{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  dark: 
+    boolean
+    string,
+  image: string,
+  position: string,
+  opacity: 
+    string
+    boolean
+    number
+    weak
+    medium
+    strong,
+  repeat: 
+    no-repeat
+    repeat
+    string,
+  size: 
+    cover
+    contain
+    string,
+  light: string
+}",
+        "name": "background",
+      },
+      Object {
+        "description": "Layout direction for right to left contexts",
+        "format": "rtl",
+        "name": "dir",
+      },
+      Object {
+        "defaultValue": false,
+        "description": "Whether to take the whole viewport.",
+        "format": "boolean",
+        "name": "full",
+      },
+      Object {
+        "defaultValue": false,
+        "description": "Whether or not Grommet should apply a global font-family, font-size,
+        and line-height.",
+        "format": "boolean",
+        "name": "plain",
+      },
+      Object {
+        "defaultValue": false,
+        "description": "Whether to expose the css variables.",
+        "format": "boolean",
+        "name": "cssVars",
+      },
+      Object {
+        "description": "Custom styles for Grommet app component.",
+        "format": "object",
+        "name": "theme",
+      },
+      Object {
+        "description": "Dark vs. light theme variation. Default is unspecified and left to
+      theme.",
+        "format": "dark
+light",
+        "name": "themeMode",
+      },
+      Object {
+        "description": "User agent used to detect the device width for setting the initial
+      breakpoint.",
+        "format": "string",
+        "name": "userAgent",
+      },
+      Object {
+        "description": "The node where Drop and Layer containers are inserted. Defaults to
+      document.body which is almost always the right choice. This is used
+      for less common cases like rendering within an internal node (e.g.
+      shadow root).",
+        "format": "object",
+        "name": "containerTarget",
+      },
+    ],
+    "usage": "import { Grommet } from 'grommet';
+<Grommet>...</Grommet>",
+  },
   "Header": [Function],
   "Heading": Object {
     "availableAt": Array [
@@ -4774,6 +4890,42 @@ boolean",
         "name": "animation",
       },
       Object {
+        "description": "Either a color 
+identifier to use for the background color. For example: 'neutral-1'. Or, a 
+'url()' for an image. Dark is not needed if color is provided.",
+        "format": "string
+{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  dark: 
+    boolean
+    string,
+  image: string,
+  position: string,
+  opacity: 
+    string
+    boolean
+    number
+    weak
+    medium
+    strong,
+  repeat: 
+    no-repeat
+    repeat
+    string,
+  size: 
+    cover
+    contain
+    string,
+  light: string
+}",
+        "name": "background",
+      },
+      Object {
         "defaultValue": false,
         "description": "Whether the width and/or height should fill the current viewport
         size.",
@@ -5079,6 +5231,7 @@ end
     start
     end,
   size: 
+    none
     xxsmall
     xsmall
     small
@@ -5142,63 +5295,22 @@ end
       },
       Object {
         "description": "Item padding.",
-        "format": "xxsmall
+        "format": "none
+xxsmall
 xsmall
 small
 medium
 large
 xlarge
-string
 {
-  horizontal: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge,
-  vertical: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge,
-  top: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge,
   bottom: 
     xxsmall
     xsmall
     small
     medium
     large
-    xlarge,
-  left: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge,
-  right: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge,
-  start: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge,
+    xlarge
+    string,
   end: 
     xxsmall
     xsmall
@@ -5206,7 +5318,57 @@ string
     medium
     large
     xlarge
-}",
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string",
         "name": "pad",
       },
       Object {
@@ -5475,13 +5637,23 @@ string",
         "name": "margin",
       },
       Object {
-        "description": "Function that will be called to render the visual representation.
-      It will be passed an object containing button props.
-      It should return a react element.
-      For example:
-      \`children={({ disabled, drop, hover, focus }) => <Box ...>{...}</Box>}\`
-      ",
-        "format": "function",
+        "description": "Menu can take in children as a function or node.
+
+- Function that will be called to render the visual representation.
+It will be passed a props object. The props passed are
+different depending on the menu \`open\` state. When the menu is closed,
+two props are passed:
+\`{ hover, focus }\`,
+but when the menu is open, all menu props are passed to this function.\\\\
+It should return a React element.
+For example:
+\`children={(props) => <Box ...>{...}</Box>}\`\\\\
+**Note:** This function will be invoked on every mouse move when hovering.
+- Node is anything that can be rendered, e.g.
+\`<Box><CaretNext /><Text>Open Me</Text></Box>\`
+",
+        "format": "function
+node",
         "name": "children",
       },
       Object {
@@ -5498,7 +5670,7 @@ string",
         "description": "Where to place the drop down.
 The keys correspond to a side of the drop down.
 The values correspond to a side of the control. For instance,
-{left: 'left', top: 'bottom'} would align the left edges and the top of
+\`{left: 'left', top: 'bottom'}\` would align the left edges and the top of
 the drop down to the bottom of the control. At most one of left or right and
 one of top or bottom should be specified.",
         "format": "{
@@ -5565,7 +5737,7 @@ node",
         "defaultValue": Array [],
         "description": "Menu items to be placed inside the drop down.
 The object values can be any Button prop, 
-for example: label, onClick, and href.",
+for example: \`label\`, \`onClick\`, and \`href\`.",
         "format": "[object]",
         "name": "items",
         "required": true,
@@ -5745,6 +5917,12 @@ string",
         "name": "background",
       },
       Object {
+        "description": "The color of the value region.
+      This is only valid when used with 'value'",
+        "format": "string",
+        "name": "color",
+      },
+      Object {
         "description": "The maximum value for the Meter.",
         "format": "number
 string",
@@ -5785,6 +5963,13 @@ string",
         "format": "bar
 circle",
         "name": "type",
+      },
+      Object {
+        "description": "
+      The numeric value to represent. Ignored when 'values' is specified.
+    ",
+        "format": "number",
+        "name": "value",
       },
       Object {
         "description": "Array of value objects describing the data.
@@ -6452,6 +6637,19 @@ string",
         "description": "Wether to close the drop when a selection is made.",
         "format": "boolean",
         "name": "closeOnChange",
+      },
+      Object {
+        "description": "Initially selected value. This can be an array
+      when multiple.",
+        "format": "string
+object
+number
+[
+  string
+  object
+  number
+]",
+        "name": "defaultValue",
       },
       Object {
         "defaultValue": false,
@@ -7143,6 +7341,11 @@ medium
 large
 xlarge
 xxlarge
+2xl
+3xl
+4xl
+5xl
+6xl
 string",
         "name": "size",
       },
@@ -7304,6 +7507,15 @@ string",
         "description": "Custom title to be used by screen readers.",
         "format": "string",
         "name": "a11yTitle",
+      },
+      Object {
+        "description": "Default suggestion to highlight, as an index into the suggestions array.
+
+      If set, the suggestion at the specified index in the suggestions array
+      will be highlighted by default when the suggestions drop opens.
+      ",
+        "format": "number",
+        "name": "defaultSuggestion",
       },
       Object {
         "defaultValue": Object {
@@ -7857,7 +8069,8 @@ boolean",
         "name": "onSelectPlace",
       },
       Object {
-        "description": "Place details.",
+        "description": "Place details. location is an array of two numeric values that indicates
+       the latitude and longitude of the specified location.",
         "format": "[{
   color: 
     string

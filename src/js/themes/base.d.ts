@@ -13,6 +13,7 @@ import {
   BreakpointSize,
   ColorType,
   DeepReadonly,
+  ElevationType,
   GapType,
   GraphColorsType,
   MarginType,
@@ -139,6 +140,10 @@ interface ButtonKindType {
     horizontal?: string;
   };
   extend?: ExtendType;
+}
+
+interface FormFieldLabelType extends TextProps {
+  requiredIndicator?: boolean | JSX.Element | string;
 }
 
 export interface ThemeType {
@@ -728,7 +733,7 @@ export interface ThemeType {
       container?: BoxProps;
       icon?: any;
     };
-    label?: TextProps;
+    label?: FormFieldLabelType;
     margin?: MarginType;
     round?: RoundType;
   };
@@ -736,6 +741,7 @@ export interface ThemeType {
     extend?: ExtendType;
   };
   heading?: {
+    color?: ColorType;
     extend?: ExtendType;
     font?: {};
     level?: {
@@ -895,8 +901,10 @@ export interface ThemeType {
     background?: BackgroundType;
     border?: {
       radius?: string;
+      intelligentRounding?: boolean;
     };
     container?: {
+      elevation?: ElevationType;
       zIndex?: string;
     };
     extend?: ExtendType;
@@ -1184,6 +1192,31 @@ export interface ThemeType {
       maxWidth?: string;
     };
     xxlarge?: {
+      size?: string;
+      height?: string;
+      maxWidth?: string;
+    };
+    '2xl'?: {
+      size?: string;
+      height?: string;
+      maxWidth?: string;
+    };
+    '3xl'?: {
+      size?: string;
+      height?: string;
+      maxWidth?: string;
+    };
+    '4xl'?: {
+      size?: string;
+      height?: string;
+      maxWidth?: string;
+    };
+    '5xl'?: {
+      size?: string;
+      height?: string;
+      maxWidth?: string;
+    };
+    '6xl'?: {
       size?: string;
       height?: string;
       maxWidth?: string;

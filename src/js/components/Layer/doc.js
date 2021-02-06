@@ -2,6 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
+import { backgroundDoc } from '../../utils/prop-types';
 
 const PAD_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large'];
 
@@ -35,6 +36,7 @@ export const doc = Layer => {
         'Animation transition of the Layer content when it opens and closes.',
       )
       .defaultValue('slide'),
+    background: backgroundDoc,
     full: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.oneOf(['vertical', 'horizontal']),
@@ -146,6 +148,18 @@ export const themeDoc = {
     type: 'string',
     defaultValue: 'white',
   },
+  'layer.border.radius': {
+    description: 'The rounding of the Layer corners.',
+    type: 'string',
+    defaultValue: 'white',
+  },
+  'layer.border.intelligentRounding': {
+    description: `Whether the border-radius of the Layer should adapt based on 
+    the Layer's position. Wherever the Layer is touching the edge of the 
+    screen, a border-radius of 0 will be applied.`,
+    type: 'boolean',
+    defaultValue: undefined,
+  },
   'layer.container.zIndex': {
     description: 'The stack order of Layer Container.',
     type: 'number',
@@ -154,6 +168,13 @@ export const themeDoc = {
   'layer.extend': {
     description: 'Any additional style for Layer.',
     type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'layer.container.elevation': {
+    description: `Elevated height above the underlying container, indicated via 
+    a drop shadow. Any Box elevation value is valid.`,
+    type: `'none' | 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | 
+    string`,
     defaultValue: undefined,
   },
   'layer.container.extend': {

@@ -27,6 +27,10 @@ export interface TextInputProps {
     target: React.RefObject<HTMLElement>['current'];
     suggestion: any;
   }) => void;
+  onSuggestionSelect?: (x: {
+    target: React.RefObject<HTMLElement>['current'];
+    suggestion: any;
+  }) => void;
   onSuggestionsOpen?: () => void;
   onSuggestionsClose?: () => void;
   placeholder?: PlaceHolderType;
@@ -38,7 +42,7 @@ export interface TextInputProps {
   value?: string | number;
 }
 
-declare const TextInput: React.ComponentClass<TextInputProps &
+declare const TextInput: React.FC<TextInputProps &
   Omit<JSX.IntrinsicElements['input'], 'onSelect' | 'size' | 'placeholder'>>;
 
 export { TextInput };

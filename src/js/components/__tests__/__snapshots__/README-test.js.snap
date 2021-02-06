@@ -3986,6 +3986,16 @@ If specified, the index of
 number
 \`\`\`
 
+**onChild**
+
+If specified, this function will 
+      be called with the active index when the currently active carousel 
+      changes.
+
+\`\`\`
+function
+\`\`\`
+
 **controls**
 
 Whether to show carousel controls and which type of controls. Defaults to \`true\`.
@@ -4286,7 +4296,7 @@ string
 
 A unique identifier for the Chart. This
       is required if more than one Chart is shown and they use color
-      gradients.
+      gradients or if a pattern is specified.
 
 \`\`\`
 string
@@ -4439,6 +4449,19 @@ xlarge
     string
 }
 string
+\`\`\`
+
+**pattern**
+
+When using an 'area' type, what pattern to fill the area with.
+
+\`\`\`
+squares
+circles
+stripesHorizontal
+stripesVertical
+stripesDiagonalDown
+stripesDiagonalUp
 \`\`\`
 
 **point**
@@ -8895,6 +8918,20 @@ Defaults to
 { vertical: 'xsmall', horizontal: 'small' }
 \`\`\`
 
+**formField.label.requiredIndicator**
+
+Whether an asterisk (*) indicating that an input is required 
+    should be displayed adjacent to the FormField's label. If providing a 
+    custom element, for accessibility it is recommended that you include 
+    an a11yTitle of \\"required\\" to assist screen readers. If using \\"true\\", the 
+    a11yTitle is automatically applied. Expects \`boolean | element | string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **formField.margin**
 
 The margin of FormField. Expects \`string | object\`.
@@ -10008,6 +10045,16 @@ Defaults to
   }
 \`\`\`
 
+**heading.color**
+
+The color of the heading. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **heading.extend**
 
 Any additional style for Heading. Expects \`string | (props) => {}\`.
@@ -10527,6 +10574,45 @@ none
 boolean
 \`\`\`
 
+**background**
+
+Either a color 
+identifier to use for the background color. For example: 'neutral-1'. Or, a 
+'url()' for an image. Dark is not needed if color is provided.
+
+\`\`\`
+string
+{
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
+  dark: 
+    boolean
+    string,
+  image: string,
+  position: string,
+  opacity: 
+    string
+    boolean
+    number
+    weak
+    medium
+    strong,
+  repeat: 
+    no-repeat
+    repeat
+    string,
+  size: 
+    cover
+    contain
+    string,
+  light: string
+}
+\`\`\`
+
 **full**
 
 Whether the width and/or height should fill the current viewport
@@ -10710,6 +10796,28 @@ Defaults to
 white
 \`\`\`
 
+**layer.border.radius**
+
+The rounding of the Layer corners. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+white
+\`\`\`
+
+**layer.border.intelligentRounding**
+
+Whether the border-radius of the Layer should adapt based on 
+    the Layer's position. Wherever the Layer is touching the edge of the 
+    screen, a border-radius of 0 will be applied. Expects \`boolean\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **layer.container.zIndex**
 
 The stack order of Layer Container. Expects \`number\`.
@@ -10723,6 +10831,18 @@ Defaults to
 **layer.extend**
 
 Any additional style for Layer. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**layer.container.elevation**
+
+Elevated height above the underlying container, indicated via 
+    a drop shadow. Any Box elevation value is valid. Expects \`'none' | 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | 
+    string\`.
 
 Defaults to
 
@@ -11003,6 +11123,7 @@ end
     start
     end,
   size: 
+    none
     xxsmall
     xsmall
     small
@@ -11084,63 +11205,22 @@ function
 Item padding.
 
 \`\`\`
+none
 xxsmall
 xsmall
 small
 medium
 large
 xlarge
-string
 {
-  horizontal: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge,
-  vertical: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge,
-  top: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge,
   bottom: 
     xxsmall
     xsmall
     small
     medium
     large
-    xlarge,
-  left: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge,
-  right: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge,
-  start: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge,
+    xlarge
+    string,
   end: 
     xxsmall
     xsmall
@@ -11148,7 +11228,57 @@ string
     medium
     large
     xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  start: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
 }
+string
 \`\`\`
 
 **primaryKey**
@@ -11801,15 +11931,25 @@ string
 
 **children**
 
-Function that will be called to render the visual representation.
-      It will be passed an object containing button props.
-      It should return a react element.
-      For example:
-      \`children={({ disabled, drop, hover, focus }) => <Box ...>{...}</Box>}\`
-      
+Menu can take in children as a function or node.
+
+- Function that will be called to render the visual representation.
+It will be passed a props object. The props passed are
+different depending on the menu \`open\` state. When the menu is closed,
+two props are passed:
+\`{ hover, focus }\`,
+but when the menu is open, all menu props are passed to this function.\\\\
+It should return a React element.
+For example:
+\`children={(props) => <Box ...>{...}</Box>}\`\\\\
+**Note:** This function will be invoked on every mouse move when hovering.
+- Node is anything that can be rendered, e.g.
+\`<Box><CaretNext /><Text>Open Me</Text></Box>\`
+
 
 \`\`\`
 function
+node
 \`\`\`
 
 **disabled**
@@ -11825,7 +11965,7 @@ boolean
 Where to place the drop down.
 The keys correspond to a side of the drop down.
 The values correspond to a side of the control. For instance,
-{left: 'left', top: 'bottom'} would align the left edges and the top of
+\`{left: 'left', top: 'bottom'}\` would align the left edges and the top of
 the drop down to the bottom of the control. At most one of left or right and
 one of top or bottom should be specified. Defaults to \`{
   \\"top\\": \\"top\\",
@@ -11910,7 +12050,7 @@ node
 
 Required. Menu items to be placed inside the drop down.
 The object values can be any Button prop, 
-for example: label, onClick, and href. Defaults to \`[]\`.
+for example: \`label\`, \`onClick\`, and \`href\`. Defaults to \`[]\`.
 
 \`\`\`
 [object]
@@ -12175,6 +12315,15 @@ string
 }
 \`\`\`
 
+**color**
+
+The color of the value region.
+      This is only valid when used with 'value'
+
+\`\`\`
+string
+\`\`\`
+
 **max**
 
 The maximum value for the Meter.
@@ -12226,6 +12375,16 @@ The visual type of meter. Defaults to \`bar\`.
 \`\`\`
 bar
 circle
+\`\`\`
+
+**value**
+
+
+      The numeric value to represent. Ignored when 'values' is specified.
+    
+
+\`\`\`
+number
 \`\`\`
 
 **values**
@@ -13740,6 +13899,22 @@ Wether to close the drop when a selection is made. Defaults to \`true\`.
 
 \`\`\`
 boolean
+\`\`\`
+
+**defaultValue**
+
+Initially selected value. This can be an array
+      when multiple.
+
+\`\`\`
+string
+object
+number
+[
+  string
+  object
+  number
+]
 \`\`\`
 
 **disabled**
@@ -15776,6 +15951,11 @@ medium
 large
 xlarge
 xxlarge
+2xl
+3xl
+4xl
+5xl
+6xl
 string
 \`\`\`
 
@@ -16264,6 +16444,18 @@ Custom title to be used by screen readers.
 
 \`\`\`
 string
+\`\`\`
+
+**defaultSuggestion**
+
+Default suggestion to highlight, as an index into the suggestions array.
+
+      If set, the suggestion at the specified index in the suggestions array
+      will be highlighted by default when the suggestions drop opens.
+      
+
+\`\`\`
+number
 \`\`\`
 
 **dropAlign**
@@ -17342,7 +17534,8 @@ function
 
 **places**
 
-Place details.
+Place details. location is an array of two numeric values that indicates
+       the latitude and longitude of the specified location.
 
 \`\`\`
 [{

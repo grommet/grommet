@@ -3,15 +3,13 @@ import PropTypes from 'prop-types';
 
 import { Box } from '../Box';
 
-export const Sidebar = ({ children, footer, header, ...rest }) => {
-  return (
-    <Box pad="small" gap="large" height={{ min: '100%' }} {...rest}>
-      {header}
-      <Box flex>{children}</Box>
-      {footer}
-    </Box>
-  );
-};
+export const Sidebar = ({ children, footer, header, ...rest }) => (
+  <Box pad="small" gap="large" height={{ min: '100%' }} {...rest}>
+    {header}
+    <Box flex>{children}</Box>
+    {footer}
+  </Box>
+);
 
 Sidebar.propTypes = {
   children: PropTypes.node,

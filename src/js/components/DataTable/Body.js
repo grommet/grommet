@@ -103,8 +103,8 @@ const Body = forwardRef(
                         }
                       : undefined
                   }
-                  onMouseOver={onClickRow ? () => setActive(index) : undefined}
-                  onMouseOut={
+                  onMouseEnter={onClickRow ? () => setActive(index) : undefined}
+                  onMouseLeave={
                     onClickRow ? () => setActive(undefined) : undefined
                   }
                   onFocus={onClickRow ? () => setActive(index) : undefined}

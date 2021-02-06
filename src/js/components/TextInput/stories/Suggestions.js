@@ -3,16 +3,27 @@ import React from 'react';
 import { Box, Grommet, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const suggestions = Array(100)
+const allSuggestions = Array(100)
   .fill()
-  .map((_, i) => `suggestion ${i + 1}`);
+  .map((_, i) => `${i + 1} suggestion`);
 
 export const Suggestions = () => {
+  const [suggestions, setSuggestions] = React.useState(allSuggestions);
   const [value, setValue] = React.useState('');
 
-  const onChange = event => setValue(event.target.value);
+  const onChange = event => {
+    const nextValue = event.target.value;
+    setValue(nextValue);
+    if (!nextValue) setSuggestions(allSuggestions);
+    else {
+      const regexp = new RegExp(`^${nextValue}`);
+      setSuggestions(allSuggestions.filter(s => regexp.test(s)));
+    }
+  };
 
-  const onSelect = event => setValue(event.suggestion);
+  const onSuggestionSelect = event => {
+    setValue(event.suggestion);
+  };
 
   return (
     <Grommet full theme={grommet}>
@@ -21,7 +32,7 @@ export const Suggestions = () => {
           <TextInput
             value={value}
             onChange={onChange}
-            onSelect={onSelect}
+            onSuggestionSelect={onSuggestionSelect}
             suggestions={suggestions}
           />
         </Box>

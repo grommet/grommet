@@ -2,10 +2,10 @@ import React from 'react';
 import 'jest-styled-components';
 import { cleanup, render, fireEvent } from '@testing-library/react';
 import { getByTestId, queryByTestId } from '@testing-library/dom';
-
+import 'regenerator-runtime/runtime';
 import { createPortal, expectPortal } from '../../../utils/portal';
 
-import { Grommet, Box, Layer } from '../..';
+import { Grommet, Box, Layer, Select } from '../..';
 import { LayerContainer } from '../LayerContainer';
 
 const SimpleLayer = () => {
@@ -93,6 +93,26 @@ describe('Layer', () => {
         );
         expectPortal('position-full-test').toMatchSnapshot();
       });
+
+      test(`should render correct border radius for position: ${position} - 
+      full: ${full}`, () => {
+        const theme = {
+          layer: {
+            border: {
+              radius: 'large',
+              intelligentRounding: true,
+            },
+          },
+        };
+        render(
+          <Grommet theme={theme}>
+            <Layer id="border-radius-test" position={position} full={full}>
+              This is a layer
+            </Layer>
+          </Grommet>,
+        );
+        expectPortal('border-radius-test').toMatchSnapshot();
+      });
     }),
   );
 
@@ -108,6 +128,17 @@ describe('Layer', () => {
       expectPortal('margin-test').toMatchSnapshot();
     }),
   );
+
+  test(`should apply background`, () => {
+    render(
+      <Grommet>
+        <Layer id="margin-test" background="brand">
+          This is a layer
+        </Layer>
+      </Grommet>,
+    );
+    expectPortal('margin-test').toMatchSnapshot();
+  });
 
   test(`custom margin`, () => {
     render(
@@ -333,7 +364,11 @@ describe('Layer', () => {
     const onClickOutside = jest.fn();
     render(
       <Grommet>
-        <FakeLayer id="layer-node" onClickOutside={onClickOutside}>
+        <FakeLayer
+          id="layer-node"
+          onClickOutside={onClickOutside}
+          animation={false}
+        >
           <div data-testid="test-body-node" />
         </FakeLayer>
       </Grommet>,
@@ -355,6 +390,7 @@ describe('Layer', () => {
           id="layer-node"
           onClickOutside={onClickOutside}
           modal={false}
+          animation={false}
         >
           <div data-testid="test-body-node" />
         </FakeLayer>
@@ -376,6 +412,7 @@ describe('Layer', () => {
         id="target-test"
         onClickOutside={onClickOutside}
         modal={false}
+        animation={false}
       />,
     );
     expectPortal('target-test').toMatchSnapshot();
@@ -389,7 +426,13 @@ describe('Layer', () => {
 
   test('invoke onClickOutside when modal={true} and layer has target', () => {
     const onClickOutside = jest.fn();
-    render(<TargetLayer id="target-test" onClickOutside={onClickOutside} />);
+    render(
+      <TargetLayer
+        id="target-test"
+        onClickOutside={onClickOutside}
+        animation={false}
+      />,
+    );
     expectPortal('target-test').toMatchSnapshot();
 
     fireEvent(
@@ -397,5 +440,65 @@ describe('Layer', () => {
       new MouseEvent('mousedown', { bubbles: true, cancelable: true }),
     );
     expect(onClickOutside).toHaveBeenCalledTimes(1);
+  });
+
+  test('custom theme', () => {
+    const theme = {
+      layer: {
+        container: {
+          elevation: 'large',
+        },
+      },
+    };
+
+    render(
+      <Grommet theme={theme}>
+        <Layer id="custom-theme-test" animation={false}>
+          This is a layer
+        </Layer>
+      </Grommet>,
+    );
+    expectPortal('custom-theme-test').toMatchSnapshot();
+  });
+
+  test('invokes onEsc when modal={false}', () => {
+    jest.useFakeTimers();
+    window.scrollTo = jest.fn();
+    const onEsc = jest.fn();
+    const { getByText, queryByText } = render(
+      <Grommet>
+        <Layer id="esc-test" onEsc={onEsc} modal={false} animation={false}>
+          <Select options={['one', 'two', 'three']} data-testid="test-select" />
+        </Layer>
+      </Grommet>,
+    );
+
+    const selectNode = getByTestId(document, 'test-select');
+
+    fireEvent.click(selectNode);
+    // advance timers so the select opens
+    jest.advanceTimersByTime(100);
+    // verify that select is open
+    expect(getByText('one')).toBeTruthy();
+
+    fireEvent.keyDown(document, {
+      key: 'Esc',
+      keyCode: 27,
+      which: 27,
+    });
+
+    // advance timers so the select closes
+    jest.advanceTimersByTime(100);
+    expect(queryByText('one')).toBeFalsy();
+    // onEsc should not be called on the Layer yet
+    expect(onEsc).toBeCalledTimes(0);
+
+    fireEvent.keyDown(document, {
+      key: 'Esc',
+      keyCode: 27,
+      which: 27,
+    });
+    expect(onEsc).toBeCalledTimes(1);
+    expectPortal('esc-test').toMatchSnapshot();
   });
 });

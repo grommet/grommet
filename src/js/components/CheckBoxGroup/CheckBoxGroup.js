@@ -1,4 +1,4 @@
-import React, { forwardRef, useContext, useMemo } from 'react';
+import React, { forwardRef, useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
 import { CheckBox } from '../CheckBox';
@@ -24,18 +24,14 @@ export const CheckBoxGroup = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
 
     // In case option is a string, normalize it to be an object
-    const options = useMemo(
-      () =>
-        optionsProp.map(option => {
-          return typeof option === 'string'
-            ? {
-                disabled: disabledProp,
-                value: option,
-                label: option,
-              }
-            : option;
-        }),
-      [optionsProp, disabledProp],
+    const options = optionsProp.map(option =>
+      typeof option === 'string'
+        ? {
+            disabled: disabledProp,
+            value: option,
+            label: option,
+          }
+        : option,
     );
 
     // 'value' is an array of checked valueKeys
