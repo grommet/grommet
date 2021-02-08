@@ -81,9 +81,15 @@ const RangeSelector = forwardRef(
         ) {
           nextValues = [values[0], value];
         } else if (changing === 'selection' && value !== moveValue) {
-          const delta = value - moveValue;
-          if (values[0] + delta >= min && values[1] + delta <= max) {
-            nextValues = [values[0] + delta, values[1] + delta];
+          if (value === max) {
+            nextValues = [max - (values[1] - values[0]), max];
+          } else if (value === min) {
+            nextValues = [min, min + (values[1] - values[0])];
+          } else {
+            const delta = value - moveValue;
+            if (values[0] + delta >= min && values[1] + delta <= max) {
+              nextValues = [values[0] + delta, values[1] + delta];
+            }
           }
         }
         if (nextValues) {
