@@ -58,4 +58,8 @@ export const AppGrid = () => {
   );
 };
 
-AppGrid.story = { name: 'App' };
+AppGrid.storyName = 'App';
+
+export default {
+  title: 'Layout/Grid/App',
+};

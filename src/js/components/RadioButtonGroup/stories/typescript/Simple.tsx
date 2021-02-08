@@ -28,3 +28,9 @@ export const SimpleTS = () => {
     />
   );
 };
+
+SimpleTS.storyName = 'Simple TS';
+
+export default {
+  title: 'Input/RadioButtonGroup/Simple TS',
+};

@@ -43,9 +43,12 @@ export const ObjectOptions = () => {
   );
 };
 
-ObjectOptions.story = {
-  name: 'Object options',
-  parameters: {
-    chromatic: { disable: true },
-  },
+ObjectOptions.storyName = 'Object options';
+
+ObjectOptions.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Input/Select/Object options',
 };

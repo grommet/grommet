@@ -57,6 +57,8 @@ export const InsideFormField = props => (
   </Grommet>
 );
 
-InsideFormField.story = {
-  name: 'Inside a FormField',
+InsideFormField.storyName = 'Inside a FormField';
+
+export default {
+  title: 'Input/CheckBox/Inside a FormField',
 };

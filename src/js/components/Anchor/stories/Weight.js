@@ -17,3 +17,7 @@ const WeightAnchor = () => (
 );
 
 export const Weight = () => <WeightAnchor />;
+
+export default {
+  title: 'Controls/Anchor/Weight',
+};

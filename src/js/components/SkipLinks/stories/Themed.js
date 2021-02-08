@@ -142,3 +142,7 @@ export const Themed = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Utilities/SkipLinks/Themed',
+};

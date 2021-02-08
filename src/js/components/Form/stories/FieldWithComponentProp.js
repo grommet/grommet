@@ -86,6 +86,8 @@ export const FieldWithComponentProp = () => (
   </Grommet>
 );
 
-FieldWithComponentProp.story = {
-  name: 'Field with component prop',
+FieldWithComponentProp.storyName = 'Field with component prop';
+
+export default {
+  title: 'Input/Form/Field with component prop',
 };

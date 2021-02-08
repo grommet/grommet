@@ -78,3 +78,7 @@ export const Progressing = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Visualizations/Diagram/Progressing',
+};

@@ -83,3 +83,7 @@ export const Custom = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Visualizations/Table/Custom',
+};

@@ -122,3 +122,7 @@ export const Simple = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Utilities/SkipLinks/Simple',
+};

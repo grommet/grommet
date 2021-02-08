@@ -27,8 +27,10 @@ export const Default = props => {
   );
 };
 
-Default.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
+Default.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Utilities/Collapsible/Default',
 };

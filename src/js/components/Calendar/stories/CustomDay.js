@@ -71,6 +71,8 @@ export const CustomDayCalendar = () => {
   );
 };
 
-CustomDayCalendar.story = {
-  name: 'Custom day',
+CustomDayCalendar.storyName = 'Custom day';
+
+export default {
+  title: `Visualizations/Calendar/Custom day`,
 };

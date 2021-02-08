@@ -34,4 +34,7 @@ UncontrolledTabs.propTypes = {
 };
 
 export const Uncontrolled = () => <UncontrolledTabs />;
-export const Plain = () => <UncontrolledTabs plain />;
+
+export default {
+  title: 'Controls/Tabs/Uncontrolled',
+};

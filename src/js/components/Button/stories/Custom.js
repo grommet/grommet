@@ -194,3 +194,7 @@ export const Custom = () => (
     </Grommet>
   </>
 );
+
+export default {
+  title: 'Controls/Button/Custom',
+};
