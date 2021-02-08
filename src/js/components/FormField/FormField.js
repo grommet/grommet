@@ -132,6 +132,7 @@ const FormField = forwardRef(
       margin,
       name, // pass through in renderInput()
       onBlur,
+      onChange,
       onFocus,
       pad,
       required,
@@ -148,6 +149,7 @@ const FormField = forwardRef(
       info,
       inForm,
       onBlur: contextOnBlur,
+      onChange: contextOnChange,
     } = formContext.useFormField({
       error: errorProp,
       info: infoProp,
@@ -379,6 +381,10 @@ const FormField = forwardRef(
           setFocus(false);
           if (contextOnBlur) contextOnBlur(event);
           if (onBlur) onBlur(event);
+        }}
+        onChange={event => {
+          if (contextOnChange) contextOnChange(event);
+          if (onChange) onChange(event);
         }}
         {...containerRest}
       >

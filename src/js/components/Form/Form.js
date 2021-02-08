@@ -115,7 +115,7 @@ const Form = forwardRef(
 
     // clear any errors when value changes
     useEffect(() => {
-      setPendingValidation(undefined);
+      if (validateOn !== 'change') setPendingValidation(undefined);
       setValidationResults(prevValidationResults => {
         const [nextErrors, nextInfos] = validate(
           Object.entries(validations.current).filter(
@@ -280,6 +280,9 @@ const Form = forwardRef(
         inForm: true,
         onBlur:
           validateOn === 'blur' ? () => setPendingValidation(name) : undefined,
+        onChange:
+          validateOn === 'change' 
+            ? () => setPendingValidation(name) : undefined,
       };
     };
 
