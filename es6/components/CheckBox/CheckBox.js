@@ -24,6 +24,8 @@ var CheckBox = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
   var a11yTitle = _ref.a11yTitle,
       checkedProp = _ref.checked,
+      _ref$defaultChecked = _ref.defaultChecked,
+      defaultChecked = _ref$defaultChecked === void 0 ? false : _ref$defaultChecked,
       disabled = _ref.disabled,
       focusProp = _ref.focus,
       id = _ref.id,
@@ -35,12 +37,12 @@ var CheckBox = /*#__PURE__*/forwardRef(function (_ref, ref) {
       reverse = _ref.reverse,
       toggle = _ref.toggle,
       indeterminate = _ref.indeterminate,
-      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "checked", "disabled", "focus", "id", "label", "name", "onBlur", "onChange", "onFocus", "reverse", "toggle", "indeterminate"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["a11yTitle", "checked", "defaultChecked", "disabled", "focus", "id", "label", "name", "onBlur", "onChange", "onFocus", "reverse", "toggle", "indeterminate"]);
 
   var theme = useContext(ThemeContext) || defaultProps.theme;
   var formContext = useContext(FormContext);
 
-  var _formContext$useFormI = formContext.useFormInput(name, checkedProp, false),
+  var _formContext$useFormI = formContext.useFormInput(name, checkedProp, defaultChecked),
       checked = _formContext$useFormI[0],
       setChecked = _formContext$useFormI[1];
 
