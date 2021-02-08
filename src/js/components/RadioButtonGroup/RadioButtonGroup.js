@@ -2,7 +2,6 @@ import React, {
   forwardRef,
   useContext,
   useEffect,
-  useMemo,
   useRef,
   useState,
 } from 'react';
@@ -32,19 +31,15 @@ const RadioButtonGroup = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
 
     // normalize options to always use an object
-    const options = useMemo(
-      () =>
-        optionsProp.map(o =>
-          typeof o !== 'object'
-            ? {
-                disabled,
-                id: rest.id ? `${rest.id}-${o}` : `${o}`, // force string
-                label: typeof o !== 'string' ? JSON.stringify(o) : o,
-                value: o,
-              }
-            : { disabled, ...o },
-        ),
-      [disabled, optionsProp, rest.id],
+    const options = optionsProp.map(o =>
+      typeof o !== 'object'
+        ? {
+            disabled,
+            id: rest.id ? `${rest.id}-${o}` : `${o}`, // force string
+            label: typeof o !== 'string' ? JSON.stringify(o) : o,
+            value: o,
+          }
+        : { disabled, ...o },
     );
 
     const [value, setValue] = formContext.useFormInput(name, valueProp, '');
