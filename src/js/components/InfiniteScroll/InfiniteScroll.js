@@ -147,6 +147,14 @@ const InfiniteScroll = ({
     }
   }, [items.length, lastPage, onMore, pendingLength, renderPageBounds, step]);
 
+  useEffect(() => {
+    if (items.length === 0 && lastPage === 0 && pendingLength !== 0) {
+      setPageHeights([]);
+      setPendingLength(0);
+      setRenderPageBounds([0, 0]);
+    }
+  }, [items.length, lastPage, pendingLength]);
+
   // scroll to any 'show'
   useLayoutEffect(() => {
     // ride out any animation delays, 100ms empirically measured
