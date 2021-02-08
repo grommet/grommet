@@ -15,17 +15,7 @@ var StyledLayer = styled.div.withConfig({
   }
 
   var styles = [];
-
-  if (props.targetBounds) {
-    var _props$targetBounds = props.targetBounds,
-        left = _props$targetBounds.left,
-        right = _props$targetBounds.right,
-        top = _props$targetBounds.top,
-        bottom = _props$targetBounds.bottom;
-    styles.push("\n        position: fixed;\n        top: " + top + "px;\n        left: " + left + "px;\n        right: " + right + "px;\n        bottom: " + bottom + "px;\n      ");
-  } else {
-    styles.push(desktopLayerStyle);
-  }
+  styles.push(desktopLayerStyle);
 
   if (props.responsive && props.theme.layer.responsiveBreakpoint) {
     var breakpoint = props.theme.global.breakpoints[props.theme.layer.responsiveBreakpoint];
@@ -41,7 +31,7 @@ Object.setPrototypeOf(StyledLayer.defaultProps, defaultProps);
 var StyledOverlay = styled.div.withConfig({
   displayName: "StyledLayer__StyledOverlay",
   componentId: "rmtehz-1"
-})(["position:absolute;", " top:0px;left:0px;right:0px;bottom:0px;", " pointer-events:all;"], function (props) {
+})(["position:absolute;", " top:0px;left:0px;right:0px;bottom:0px;", " pointer-events:all;will-change:transform;"], function (props) {
   if (props.responsive && props.theme.layer.responsiveBreakpoint) {
     var breakpoint = props.theme.global.breakpoints[props.theme.layer.responsiveBreakpoint];
     return breakpointStyle(breakpoint, 'position: relative;');
@@ -437,20 +427,26 @@ var roundStyle = function roundStyle(data, theme, position, margin) {
   return styles;
 };
 
+var bounds = {
+  left: 0,
+  right: 0,
+  top: 0,
+  bottom: 0
+};
 var desktopContainerStyle = css(["", " max-height:", ";max-width:", ";", ";", ";"], function (props) {
   if (!props.modal && props.position === 'hidden') {
     return hiddenPositionStyle;
   }
 
-  return css(["position:", ";"], props.modal ? 'absolute' : 'fixed');
+  return css(["position:", ";"], props.modal || props.layerTarget ? 'absolute' : 'fixed');
 }, function (props) {
-  return "calc(100% - " + getBounds(props.targetBounds, props.margin, props.theme, 'top') + "px - " + getBounds(props.targetBounds, props.margin, props.theme, 'bottom') + "px)";
+  return "calc(100% - " + getBounds(bounds, props.margin, props.theme, 'top') + "px - " + getBounds(bounds, props.margin, props.theme, 'bottom') + "px)";
 }, function (props) {
-  return "calc(100% - " + getBounds(props.targetBounds, props.margin, props.theme, 'left') + "px - " + getBounds(props.targetBounds, props.margin, props.theme, 'right') + "px)";
+  return "calc(100% - " + getBounds(bounds, props.margin, props.theme, 'left') + "px - " + getBounds(bounds, props.margin, props.theme, 'right') + "px)";
 }, function (props) {
   return props.plain || props.full && props.margin === 'none' ? "border-radius: 0;" : roundStyle(props.theme.layer.border.radius, props.theme, props.position, props.margin);
 }, function (props) {
-  return props.position !== 'hidden' && POSITIONS[props.position][props.full](getBounds(props.targetBounds, props.margin, props.theme), props.targetBounds) || '';
+  return props.position !== 'hidden' && POSITIONS[props.position][props.full](getBounds(bounds, props.margin, props.theme), bounds) || '';
 });
 var responsiveContainerStyle = css(["position:relative;max-height:none;max-width:none;border-radius:0;top:0;bottom:0;left:0;right:0;transform:none;animation:none;height:100vh;width:100vw;"]);
 var elevationStyle = css(["box-shadow:", ";"], function (props) {

@@ -49,6 +49,9 @@ export var TargetLayer = function TargetLayer() {
     ref: ref,
     gridArea: "main",
     fill: true,
+    height: {
+      min: 'small'
+    },
     align: "center",
     justify: "center",
     gap: "medium",
@@ -70,7 +73,9 @@ export var TargetLayer = function TargetLayer() {
   }), /*#__PURE__*/React.createElement(Button, {
     label: "Open",
     onClick: onOpen
-  }))), open && /*#__PURE__*/React.createElement(Layer, {
+  }))), /*#__PURE__*/React.createElement(Box, {
+    height: "large"
+  }), open && /*#__PURE__*/React.createElement(Layer, {
     modal: modal,
     position: position,
     target: ref.current,

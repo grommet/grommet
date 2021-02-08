@@ -31,12 +31,6 @@ var HiddenAnchor = _styledComponents["default"].a.withConfig({
 })(["width:0;height:0;overflow:hidden;position:absolute;"]);
 
 var defaultPortalContext = [];
-var fullBounds = {
-  left: 0,
-  right: 0,
-  top: 0,
-  bottom: 0
-};
 var LayerContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var background = _ref.background,
       children = _ref.children,
@@ -58,10 +52,6 @@ var LayerContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       rest = _objectWithoutPropertiesLoose(_ref, ["background", "children", "full", "id", "margin", "modal", "onClickOutside", "onEsc", "plain", "position", "responsive", "target"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
-
-  var _useState = (0, _react.useState)(fullBounds),
-      targetBounds = _useState[0],
-      setTargetBounds = _useState[1];
 
   var anchorRef = (0, _react.useRef)();
   var containerRef = (0, _react.useRef)();
@@ -131,13 +121,29 @@ var LayerContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
 
     if (layerTarget) {
       var updateBounds = function updateBounds() {
-        var rect = (0, _utils.findVisibleParent)(layerTarget).getBoundingClientRect();
-        setTargetBounds({
-          left: rect.left,
-          right: window.innerWidth - rect.right,
-          top: rect.top,
-          bottom: window.innerHeight - rect.bottom
-        });
+        var windowWidth = window.innerWidth;
+        var windowHeight = window.innerHeight;
+        var target = (0, _utils.findVisibleParent)(layerTarget); // affects StyledLayer
+
+        var layer = layerRef.current;
+
+        if (layer && target) {
+          // clear prior styling
+          layer.style.left = '';
+          layer.style.top = '';
+          layer.style.bottom = '';
+          layer.style.width = ''; // get bounds
+
+          var targetRect = target.getBoundingClientRect();
+          var layerRect = layer.getBoundingClientRect(); // ensure that layer moves with the target
+
+          layer.style.left = targetRect.left + "px";
+          layer.style.right = windowWidth - targetRect.right + "px";
+          layer.style.top = targetRect.top + "px";
+          layer.style.bottom = windowHeight - targetRect.bottom + "px";
+          layer.style.maxHeight = targetRect.height;
+          layer.style.maxWidth = Math.min(layerRect.width, windowWidth);
+        }
       };
 
       updateBounds();
@@ -153,7 +159,6 @@ var LayerContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       };
     }
 
-    setTargetBounds(fullBounds);
     return function () {
       if (onClickOutside) {
         document.removeEventListener('mousedown', onClickDocument);
@@ -168,12 +173,12 @@ var LayerContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     id: id,
     full: full,
     margin: margin,
-    modal: modal,
-    targetBounds: !modal ? targetBounds : fullBounds
+    modal: modal
   }, rest, {
     position: position,
     plain: plain,
     responsive: responsive,
+    layerTarget: layerTarget,
     dir: theme.dir // portalId is used to determine if click occurred inside
     // or outside of the layer
     ,
@@ -184,17 +189,16 @@ var LayerContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
     "aria-hidden": "true"
   }), children);
 
-  if (modal) {
+  if (modal || layerTarget) {
     content = /*#__PURE__*/_react["default"].createElement(_StyledLayer.StyledLayer, {
       ref: layerRef,
       id: id,
-      targetBounds: targetBounds,
       plain: plain,
       position: position,
       responsive: responsive,
       tabIndex: "-1",
       dir: theme.dir
-    }, /*#__PURE__*/_react["default"].createElement(_StyledLayer.StyledOverlay, {
+    }, modal && /*#__PURE__*/_react["default"].createElement(_StyledLayer.StyledOverlay, {
       plain: plain,
       responsive: responsive,
       onMouseDown: onClickOutside

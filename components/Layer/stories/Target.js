@@ -61,6 +61,9 @@ var TargetLayer = function TargetLayer() {
     ref: ref,
     gridArea: "main",
     fill: true,
+    height: {
+      min: 'small'
+    },
     align: "center",
     justify: "center",
     gap: "medium",
@@ -82,7 +85,9 @@ var TargetLayer = function TargetLayer() {
   }), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     label: "Open",
     onClick: onOpen
-  }))), open && /*#__PURE__*/_react["default"].createElement(_grommet.Layer, {
+  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+    height: "large"
+  }), open && /*#__PURE__*/_react["default"].createElement(_grommet.Layer, {
     modal: modal,
     position: position,
     target: ref.current,
