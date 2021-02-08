@@ -1,5 +1,10 @@
 export const parameters = {
   layout: 'fullscreen',
+  options: {
+    storySort: {
+      method: 'alphabetical',
+    },
+  },
 };
 
 export const globalTypes = {
