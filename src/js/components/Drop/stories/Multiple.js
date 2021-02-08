@@ -70,8 +70,10 @@ const MultipleDrop = () => {
 };
 
 export const Multiple = () => <MultipleDrop />;
-Multiple.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
+Multiple.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Controls/Drop/Multiple',
 };

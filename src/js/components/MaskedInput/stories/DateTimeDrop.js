@@ -119,6 +119,8 @@ export const DateTimeDropButton = () => {
   );
 };
 
-DateTimeDropButton.story = {
-  name: 'Date time drop',
+DateTimeDropButton.storyName = 'Date time drop';
+
+export default {
+  title: 'Input/MaskedInput/Date time drop',
 };

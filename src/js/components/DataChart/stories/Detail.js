@@ -32,3 +32,7 @@ export const Detail = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Visualizations/DataChart/Detail',
+};

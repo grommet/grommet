@@ -13,3 +13,7 @@ export const Fill = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Visualizations/Calendar/Fill',
+};

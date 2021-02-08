@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Grommet, Box, RangeSelector, Stack, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const SimpleRangeSelector = ({ direction = 'horizontal', ...rest }) => {
+export const Simple = ({ direction = 'horizontal' }) => {
   const [range, setRange] = useState([12, 16]);
   const onChange = values => {
     setRange(values);
@@ -37,7 +37,6 @@ const SimpleRangeSelector = ({ direction = 'horizontal', ...rest }) => {
             size="full"
             values={range}
             onChange={onChange}
-            {...rest}
           />
         </Stack>
       </Box>
@@ -45,6 +44,6 @@ const SimpleRangeSelector = ({ direction = 'horizontal', ...rest }) => {
   );
 };
 
-export const Simple = () => <SimpleRangeSelector />;
-export const Step = () => <SimpleRangeSelector step={2} />;
-export const Vertical = () => <SimpleRangeSelector direction="vertical" />;
+export default {
+  title: 'Input/RangeSelector/Simple',
+};

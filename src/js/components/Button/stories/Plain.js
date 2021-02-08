@@ -5,12 +5,12 @@ import { Add } from 'grommet-icons';
 import { Box, Button, Grommet, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const PlainButtons = props => (
+export const Plain = () => (
   <Box pad="large" gap="large">
     {/* Out of the Box Button */}
     <Grommet theme={grommet}>
       <Box align="center">
-        <Button hoverIndicator="light-1" onClick={() => {}} {...props}>
+        <Button hoverIndicator="light-1" onClick={() => {}}>
           {/*  When Button include children, it is treated as plain */}
           <Box pad="small" direction="row" align="center" gap="small">
             <Add />
@@ -31,7 +31,7 @@ const PlainButtons = props => (
       }}
     >
       <Box align="center">
-        <Button hoverIndicator="light-1" onClick={() => {}} {...props}>
+        <Button hoverIndicator="light-1" onClick={() => {}}>
           {/*  When kind Button include children, it is treated as plain */}
           <Box pad="small" direction="row" align="center" gap="small">
             <Add />
@@ -43,5 +43,6 @@ const PlainButtons = props => (
   </Box>
 );
 
-export const Plain = () => <PlainButtons />;
-export const Active = () => <PlainButtons active />;
+export default {
+  title: 'Controls/Button/Plain',
+};

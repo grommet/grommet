@@ -121,8 +121,10 @@ const LazyDrop = () => {
 };
 
 export const Lazy = () => <LazyDrop />;
-Lazy.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
+Lazy.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Controls/Drop/Lazy',
 };

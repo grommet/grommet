@@ -67,3 +67,7 @@ export const Everything = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Visualizations/DataChart/Everything',
+};

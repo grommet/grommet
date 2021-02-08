@@ -14,7 +14,7 @@ const amountFormatter = new Intl.NumberFormat('en-US', {
 
 // Type annotations can only be used in TypeScript files
 // Remove ': ColumnConfig<RowType>[]' if you are not using TypeScript.
-export const columns: ColumnConfig<RowType>[] = [
+const columns: ColumnConfig<RowType>[] = [
   {
     property: 'name',
     header: <Text>Name with extra</Text>,
@@ -57,7 +57,7 @@ export const columns: ColumnConfig<RowType>[] = [
 
 const locations = ['Boise', 'Fort Collins', 'Bay Area', 'Houston'];
 
-export const data = [];
+const data = [];
 
 for (let i = 0; i < 40; i += 1) {
   data.push({
@@ -81,7 +81,7 @@ interface RowType {
 
 // Type annotations can only be used in TypeScript files.
 // Remove ': RowType[]' if you are not using TypeScript.
-export const DATA: RowType[] = [
+const DATA: RowType[] = [
   {
     name: 'Shimi',
     location: '',
@@ -160,6 +160,8 @@ export const OnSelectDataTable = () => {
   );
 };
 
-OnSelectDataTable.story = {
-  name: 'OnSelect',
+OnSelectDataTable.storyName = 'OnSelect';
+
+export default {
+  title: 'Visualizations/DataTable/OnSelect',
 };

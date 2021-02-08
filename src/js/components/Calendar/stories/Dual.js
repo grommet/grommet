@@ -98,3 +98,7 @@ export const Dual = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Visualizations/Calendar/Dual',
+};

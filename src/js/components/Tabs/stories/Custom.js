@@ -2,11 +2,18 @@ import React from 'react';
 import { css } from 'styled-components';
 
 import { CircleInformation, Currency } from 'grommet-icons';
-import { Grommet, FormField, Tab, Tabs, TextInput } from 'grommet';
+import { Box, Grommet, FormField, Tab, Tabs, Text, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
 
-import { RichTabTitle } from './Rich';
+const RichTabTitle = ({ icon, label }) => (
+  <Box direction="row" align="center" gap="xsmall" margin="xsmall">
+    {icon}
+    <Text size="small">
+      <strong>{label}</strong>
+    </Text>
+  </Box>
+);
 
 const customTheme = deepMerge(grommet, {
   global: {
@@ -99,3 +106,7 @@ const CustomTabs = () => (
 );
 
 export const Custom = () => <CustomTabs />;
+
+export default {
+  title: 'Controls/Tabs/Custom',
+};

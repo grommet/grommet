@@ -27,6 +27,8 @@ export const GroupedDataTable = () => (
   </Grommet>
 );
 
-GroupedDataTable.story = {
-  name: 'Grouped',
+GroupedDataTable.storyName = 'Grouped';
+
+export default {
+  title: 'Visualizations/DataTable/Grouped',
 };

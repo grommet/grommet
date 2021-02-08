@@ -257,6 +257,8 @@ export const FieldSpacingOptions = () => (
   </Grommet>
 );
 
-FieldSpacingOptions.story = {
-  name: 'Field spacing options',
+FieldSpacingOptions.storyName = 'Field spacing options';
+
+export default {
+  title: 'Input/Form/Field spacing options',
 };

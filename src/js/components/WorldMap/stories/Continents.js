@@ -22,3 +22,7 @@ export const Continents = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Visualizations/WorldMap/Continents',
+};

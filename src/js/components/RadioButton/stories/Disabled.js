@@ -16,3 +16,7 @@ export const Disabled = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Input/RadioButton/Disabled',
+};

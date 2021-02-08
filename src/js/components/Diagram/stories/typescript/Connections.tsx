@@ -40,3 +40,7 @@ export const Connections = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Visualizations/Diagram/Connections',
+};

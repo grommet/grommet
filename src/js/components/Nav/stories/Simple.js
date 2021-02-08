@@ -21,3 +21,7 @@ const SimpleNav = () => (
 );
 
 export const Simple = () => <SimpleNav />;
+
+export default {
+  title: 'Controls/Nav/Simple',
+};

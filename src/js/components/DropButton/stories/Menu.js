@@ -43,8 +43,10 @@ const MenuDropButton = () => (
 );
 
 export const Menu = () => <MenuDropButton />;
-Menu.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
+Menu.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Controls/DropButton/Menu',
 };

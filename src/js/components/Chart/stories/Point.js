@@ -21,3 +21,7 @@ export const Point = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Visualizations/Chart/Point',
+};

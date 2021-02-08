@@ -57,3 +57,7 @@ export const Background = () => {
     </Box>
   );
 };
+
+export default {
+  title: 'Utilities/Grommet/Background',
+};

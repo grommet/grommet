@@ -33,6 +33,8 @@ export const ControlledGroupedDataTable = () => {
   );
 };
 
-ControlledGroupedDataTable.story = {
-  name: 'Controlled grouped',
+ControlledGroupedDataTable.storyName = 'Controlled grouped';
+
+export default {
+  title: 'Visualizations/DataTable/Controlled grouped',
 };

@@ -5,7 +5,7 @@ import styled, { keyframes } from 'styled-components';
 import { Box, DataChart, Grommet, Stack } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-export const keyFrameExampleOne = keyframes`
+const keyFrameExampleOne = keyframes`
 0% {
   width: 200px;
   background-color: #FFFFFF;
@@ -138,3 +138,7 @@ export const Prediction = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Visualizations/DataChart/Prediction',
+};

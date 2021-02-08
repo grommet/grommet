@@ -14,8 +14,10 @@ export const Simple = () => {
   );
 };
 
-Simple.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
+Simple.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Controls/Tip/Simple',
 };

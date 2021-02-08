@@ -27,3 +27,7 @@ export const Basic = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Visualizations/Avatar/Basic',
+};
