@@ -4,6 +4,7 @@ import {
   AlignSelfType,
   GridAreaType,
   MarginType,
+  PadType,
 } from '../../utils';
 import { PaginationType } from '../Pagination';
 
@@ -23,25 +24,6 @@ type SideType =
   | 'horizontal'
   | 'vertical'
   | 'all';
-type PadSizeType =
-  | 'none'
-  | 'xxsmall'
-  | 'xsmall'
-  | 'small'
-  | 'medium'
-  | 'large'
-  | 'xlarge'
-  | string;
-type PadType =
-  | PadSizeType
-  | {
-      bottom?: PadSizeType;
-      horizontal?: PadSizeType;
-      left?: PadSizeType;
-      right?: PadSizeType;
-      top?: PadSizeType;
-      vertical?: PadSizeType;
-    };
 type BorderType =
   | boolean
   | SideType

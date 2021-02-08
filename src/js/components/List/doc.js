@@ -1,9 +1,17 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { genericProps } from '../../utils/prop-types';
+import { genericProps, padPropType } from '../../utils/prop-types';
 import { getAvailableAtBadge } from '../../utils/mixins';
 
-const sizes = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
+const sizes = [
+  'none',
+  'xxsmall',
+  'xsmall',
+  'small',
+  'medium',
+  'large',
+  'xlarge',
+];
 const sides = [
   'horizontal',
   'vertical',
@@ -100,11 +108,7 @@ export const doc = List => {
       Anchor or Button inside 'primaryKey' or 'secondaryKey' as that can
       cause confusion with overlapping interactive elements.`,
     ),
-    pad: PropTypes.oneOfType([
-      PropTypes.oneOf(sizes),
-      PropTypes.string,
-      PropTypes.shape(padShapeSides),
-    ]).description(`Item padding.`),
+    pad: PropTypes.oneOfType([padPropType]).description(`Item padding.`),
     paginate: PropTypes.oneOfType([PropTypes.bool, PropTypes.object])
       .description(
         `Whether to paginate the data. If providing an object, any Box props or 
@@ -112,6 +116,7 @@ export const doc = List => {
     pagination component.`,
       )
       .defaultValue(undefined),
+
     primaryKey: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.func,

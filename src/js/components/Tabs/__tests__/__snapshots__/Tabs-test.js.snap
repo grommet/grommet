@@ -469,54 +469,44 @@ exports[`Tabs Tab 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
+    class="c1 "
     role="tablist"
   >
     <div
-      className="c2 "
+      class="c2 "
     >
       <button
-        aria-expanded={true}
-        aria-selected={true}
-        className="c3"
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onMouseOut={[Function]}
-        onMouseOver={[Function]}
+        aria-expanded="true"
+        aria-selected="true"
+        class="c3"
         role="tab"
         type="button"
       >
         <div
-          className="c4 c5"
+          class="c4 c5"
         >
           <span
-            className="c6"
+            class="c6"
           >
             Tab 1
           </span>
         </div>
       </button>
       <button
-        aria-expanded={false}
-        aria-selected={false}
-        className="c3"
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onMouseOut={[Function]}
-        onMouseOver={[Function]}
+        aria-expanded="false"
+        aria-selected="false"
+        class="c3"
         role="tab"
         type="button"
       >
         <div
-          className="c7 c5"
+          class="c7 c5"
         >
           <span
-            className="c8"
+            class="c8"
           >
             Tab 2
           </span>
@@ -525,7 +515,7 @@ exports[`Tabs Tab 1`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
-      className="c9"
+      class="c9"
       role="tabpanel"
     >
       Tab body 1
@@ -747,54 +737,44 @@ exports[`Tabs alignControls 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
+    class="c1 "
     role="tablist"
   >
     <div
-      className="c2 "
+      class="c2 "
     >
       <button
-        aria-expanded={true}
-        aria-selected={true}
-        className="c3"
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onMouseOut={[Function]}
-        onMouseOver={[Function]}
+        aria-expanded="true"
+        aria-selected="true"
+        class="c3"
         role="tab"
         type="button"
       >
         <div
-          className="c4 c5"
+          class="c4 c5"
         >
           <span
-            className="c6"
+            class="c6"
           >
             Tab 1
           </span>
         </div>
       </button>
       <button
-        aria-expanded={false}
-        aria-selected={false}
-        className="c3"
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onMouseOut={[Function]}
-        onMouseOver={[Function]}
+        aria-expanded="false"
+        aria-selected="false"
+        class="c3"
         role="tab"
         type="button"
       >
         <div
-          className="c7 c5"
+          class="c7 c5"
         >
           <span
-            className="c8"
+            class="c8"
           >
             Tab 2
           </span>
@@ -803,7 +783,7 @@ exports[`Tabs alignControls 1`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
-      className="c9"
+      class="c9"
       role="tabpanel"
     >
       Tab body 1
@@ -1326,29 +1306,24 @@ exports[`Tabs complex title 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
+    class="c1 "
     role="tablist"
   >
     <div
-      className="c2 "
+      class="c2 "
     >
       <button
-        aria-expanded={true}
-        aria-selected={true}
-        className="c3"
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onMouseOut={[Function]}
-        onMouseOver={[Function]}
+        aria-expanded="true"
+        aria-selected="true"
+        class="c3"
         role="tab"
         type="button"
       >
         <div
-          className="c4 c5"
+          class="c4 c5"
         >
           <div>
             Tab 1
@@ -1356,19 +1331,14 @@ exports[`Tabs complex title 1`] = `
         </div>
       </button>
       <button
-        aria-expanded={false}
-        aria-selected={false}
-        className="c3"
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onMouseOut={[Function]}
-        onMouseOver={[Function]}
+        aria-expanded="false"
+        aria-selected="false"
+        class="c3"
         role="tab"
         type="button"
       >
         <div
-          className="c6 c5"
+          class="c6 c5"
         >
           <div>
             Tab 2
@@ -1378,7 +1348,7 @@ exports[`Tabs complex title 1`] = `
     </div>
     <div
       aria-label="1 Tab Contents"
-      className="c7"
+      class="c7"
       role="tabpanel"
     >
       Tab body 1
@@ -1536,35 +1506,30 @@ exports[`Tabs no Tab 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
+    class="c1 "
     role="tablist"
   >
     <div
-      className="c2 "
+      class="c2 "
     >
       <button
-        aria-expanded={true}
-        aria-selected={true}
-        className="c3"
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onMouseOut={[Function]}
-        onMouseOver={[Function]}
+        aria-expanded="true"
+        aria-selected="true"
+        class="c3"
         role="tab"
         type="button"
       >
         <div
-          className="c4 c5"
+          class="c4 c5"
         />
       </button>
     </div>
     <div
       aria-label="1 Tab Contents"
-      className="c6"
+      class="c6"
       role="tabpanel"
     />
   </div>
@@ -3713,65 +3678,55 @@ exports[`Tabs with icon + reverse 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1 "
+    class="c1 "
     role="tablist"
   >
     <div
-      className="c2 "
+      class="c2 "
     >
       <button
-        aria-expanded={true}
-        aria-selected={true}
-        className="c3"
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onMouseOut={[Function]}
-        onMouseOver={[Function]}
+        aria-expanded="true"
+        aria-selected="true"
+        class="c3"
         role="tab"
         type="button"
       >
         <div
-          className="c4 c5"
+          class="c4 c5"
         >
           <svg
             color="text"
           />
           <div
-            className="c6"
+            class="c6"
           />
           <span
-            className="c7"
+            class="c7"
           >
             Tab 1
           </span>
         </div>
       </button>
       <button
-        aria-expanded={false}
-        aria-selected={false}
-        className="c3"
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onMouseOut={[Function]}
-        onMouseOver={[Function]}
+        aria-expanded="false"
+        aria-selected="false"
+        class="c3"
         role="tab"
         type="button"
       >
         <div
-          className="c8 c5"
+          class="c8 c5"
         >
           <span
-            className="c9"
+            class="c9"
           >
             Tab 2
           </span>
           <div
-            className="c6"
+            class="c6"
           />
           <svg
             color="control"
@@ -3781,7 +3736,7 @@ exports[`Tabs with icon + reverse 1`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
-      className="c10"
+      class="c10"
       role="tabpanel"
     >
       Tab body 1

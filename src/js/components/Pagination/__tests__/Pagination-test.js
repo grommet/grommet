@@ -275,8 +275,7 @@ describe('Pagination', () => {
       </Grommet>,
     );
 
-    // why two?
-    expect(console.warn).toHaveBeenCalledTimes(2);
+    expect(console.warn).toHaveBeenCalledTimes(1);
     expect(container.firstChild).toMatchSnapshot();
   });
 

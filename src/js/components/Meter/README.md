@@ -144,6 +144,15 @@ string
 }
 ```
 
+**color**
+
+The color of the value region.
+      This is only valid when used with 'value'
+
+```
+string
+```
+
 **max**
 
 The maximum value for the Meter.
@@ -195,6 +204,16 @@ The visual type of meter. Defaults to `bar`.
 ```
 bar
 circle
+```
+
+**value**
+
+
+      The numeric value to represent. Ignored when 'values' is specified.
+    
+
+```
+number
 ```
 
 **values**
