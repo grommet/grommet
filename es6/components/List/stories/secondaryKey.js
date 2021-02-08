@@ -23,3 +23,7 @@ export var SecondaryKey = function SecondaryKey() {
     secondaryKey: "location"
   })));
 };
+SecondaryKey.storyName = 'Secondary key';
+export default {
+  title: 'Visualizations/List/Secondary key'
+};

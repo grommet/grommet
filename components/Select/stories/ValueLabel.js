@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.ValueLabel = void 0;
+exports["default"] = exports.ValueLabel = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -55,3 +55,7 @@ var ValueLabel = function ValueLabel() {
 };
 
 exports.ValueLabel = ValueLabel;
+var _default = {
+  title: 'Input/Select/ValueLabel'
+};
+exports["default"] = _default;

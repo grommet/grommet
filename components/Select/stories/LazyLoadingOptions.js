@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.LazyLoadingOptions = void 0;
+exports["default"] = exports.LazyLoadingOptions = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -101,11 +101,13 @@ var LazyLoadingOptions = function LazyLoadingOptions() {
 };
 
 exports.LazyLoadingOptions = LazyLoadingOptions;
-LazyLoadingOptions.story = {
-  name: 'Lazy loading options',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+LazyLoadingOptions.storyName = 'Lazy loading options';
+LazyLoadingOptions.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Input/Select/Lazy loading options'
+};
+exports["default"] = _default;

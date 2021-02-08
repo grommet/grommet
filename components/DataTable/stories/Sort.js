@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Sort = void 0;
+exports["default"] = exports.Sort = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -42,3 +42,7 @@ var Sort = function Sort() {
 };
 
 exports.Sort = Sort;
+var _default = {
+  title: 'Visualizations/DataTable/Sort'
+};
+exports["default"] = _default;

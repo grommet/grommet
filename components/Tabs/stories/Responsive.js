@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Responsive = void 0;
+exports["default"] = exports.Responsive = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -217,3 +217,7 @@ var Responsive = function Responsive() {
 };
 
 exports.Responsive = Responsive;
+var _default = {
+  title: 'Controls/Tabs/Responsive'
+};
+exports["default"] = _default;

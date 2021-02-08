@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grommet, Box, DataTable, Heading } from 'grommet';
 import { grommet } from 'grommet/themes';
-export var DATA = [{
+var DATA = [{
   name: 'Boot',
   free: 24,
   size: 4
@@ -45,6 +45,7 @@ export var UnitsDataTable = function UnitsDataTable() {
     primaryKey: false
   })));
 };
-UnitsDataTable.story = {
-  name: 'Units'
+UnitsDataTable.storyName = 'Units';
+export default {
+  title: 'Visualizations/DataTable/Units'
 };

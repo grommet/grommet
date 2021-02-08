@@ -23,3 +23,6 @@ export var Continents = function Continents() {
     margin: "large"
   }, "Africa")));
 };
+export default {
+  title: 'Visualizations/WorldMap/Continents'
+};

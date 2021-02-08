@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.ActiveDate = void 0;
+exports["default"] = exports.ActiveDate = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -59,3 +59,8 @@ var ActiveDate = function ActiveDate() {
 };
 
 exports.ActiveDate = ActiveDate;
+ActiveDate.storyName = 'Active date';
+var _default = {
+  title: "Visualizations/Calendar/Active date"
+};
+exports["default"] = _default;

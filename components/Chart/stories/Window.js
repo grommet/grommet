@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Window = exports.WindowChart = void 0;
+exports["default"] = exports.Window = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -208,8 +208,6 @@ var WindowChart = function WindowChart(_ref) {
   }))));
 };
 
-exports.WindowChart = WindowChart;
-
 var Window = function Window() {
   return /*#__PURE__*/_react["default"].createElement(WindowChart, {
     data: (0, _data.generateData)(1000, 100),
@@ -218,3 +216,7 @@ var Window = function Window() {
 };
 
 exports.Window = Window;
+var _default = {
+  title: 'Visualizations/Chart/Window'
+};
+exports["default"] = _default;

@@ -49,3 +49,6 @@ export var Layout = function Layout() {
     round: true
   }))));
 };
+export default {
+  title: 'Visualizations/Chart/Layout'
+};

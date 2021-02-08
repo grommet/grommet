@@ -29,3 +29,6 @@ export var Point = function Point() {
     }));
   })));
 };
+export default {
+  title: 'Visualizations/Chart/Point'
+};

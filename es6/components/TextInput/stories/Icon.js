@@ -23,3 +23,6 @@ export var Icon = function Icon() {
     placeholder: "search ..."
   }))));
 };
+export default {
+  title: 'Input/TextInput/Icon'
+};

@@ -50,7 +50,9 @@ RichTabTitle.propTypes = {
   icon: PropTypes.node.isRequired,
   label: PropTypes.string.isRequired
 };
-export { RichTabTitle };
 export var Rich = function Rich() {
   return /*#__PURE__*/React.createElement(RichTabs, null);
+};
+export default {
+  title: 'Controls/Tabs/Rich'
 };

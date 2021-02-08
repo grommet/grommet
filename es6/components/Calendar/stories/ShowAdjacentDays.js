@@ -58,6 +58,7 @@ export var ShowAdjacent = function ShowAdjacent() {
     showAdjacentDays: "trim"
   }))));
 };
-ShowAdjacent.story = {
-  name: 'Show adjacent days'
+ShowAdjacent.storyName = 'Show adjacent days';
+export default {
+  title: "Visualizations/Calendar/Show adjacent days"
 };

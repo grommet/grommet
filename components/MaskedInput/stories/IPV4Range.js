@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.IPv4RangeMaskedInput = void 0;
+exports["default"] = exports.IPv4RangeMaskedInput = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -84,6 +84,8 @@ var IPv4RangeMaskedInput = function IPv4RangeMaskedInput() {
 };
 
 exports.IPv4RangeMaskedInput = IPv4RangeMaskedInput;
-IPv4RangeMaskedInput.story = {
-  name: 'IPv4 range'
+IPv4RangeMaskedInput.storyName = 'IPv4 range';
+var _default = {
+  title: 'Input/MaskedInput/IPv4 range'
 };
+exports["default"] = _default;

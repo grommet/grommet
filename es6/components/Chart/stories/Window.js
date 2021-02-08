@@ -39,7 +39,7 @@ var compressData = function compressData(data, max, count) {
   return result;
 };
 
-export var WindowChart = function WindowChart(_ref) {
+var WindowChart = function WindowChart(_ref) {
   var data = _ref.data,
       max = _ref.max;
 
@@ -193,9 +193,13 @@ export var WindowChart = function WindowChart(_ref) {
     }
   }))));
 };
+
 export var Window = function Window() {
   return /*#__PURE__*/React.createElement(WindowChart, {
     data: generateData(1000, 100),
     max: 100
   });
+};
+export default {
+  title: 'Visualizations/Chart/Window'
 };

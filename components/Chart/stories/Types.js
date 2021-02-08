@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Types = void 0;
+exports["default"] = exports.Types = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -41,3 +41,7 @@ var Types = function Types() {
 };
 
 exports.Types = Types;
+var _default = {
+  title: 'Visualizations/Chart/Types'
+};
+exports["default"] = _default;

@@ -40,10 +40,11 @@ var PlainDrop = function PlainDrop() {
 export var Plain = function Plain() {
   return /*#__PURE__*/React.createElement(PlainDrop, null);
 };
-Plain.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Plain.parameters = {
+  chromatic: {
+    disable: true
   }
+};
+export default {
+  title: 'Controls/Drop/Plain'
 };

@@ -30,3 +30,6 @@ export var Disabled = function Disabled() {
     }]
   }))));
 };
+export default {
+  title: 'Input/CheckBoxGroup/Disabled'
+};

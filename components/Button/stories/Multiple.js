@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Multiple = void 0;
+exports["default"] = exports.Multiple = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -80,3 +80,7 @@ var Multiple = function Multiple() {
 };
 
 exports.Multiple = Multiple;
+var _default = {
+  title: 'Controls/Button/Multiple'
+};
+exports["default"] = _default;

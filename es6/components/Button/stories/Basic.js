@@ -41,3 +41,6 @@ export var Basic = function Basic(props) {
     onClick: function onClick() {}
   }, props))));
 };
+export default {
+  title: 'Controls/Button/Basic'
+};

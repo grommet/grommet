@@ -40,3 +40,6 @@ export var Background = function Background() {
     pad: "medium"
   }, /*#__PURE__*/React.createElement(Text, null, "Grommet with background as object containing color and image"))));
 };
+export default {
+  title: 'Utilities/Grommet/Background'
+};

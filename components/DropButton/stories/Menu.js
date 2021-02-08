@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Menu = void 0;
+exports["default"] = exports.Menu = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -60,10 +60,12 @@ var Menu = function Menu() {
 };
 
 exports.Menu = Menu;
-Menu.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Menu.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Controls/DropButton/Menu'
+};
+exports["default"] = _default;

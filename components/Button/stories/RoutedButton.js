@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.RoutedButton = void 0;
+exports["default"] = exports.RoutedButton = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -27,3 +27,8 @@ var RoutedButton = function RoutedButton() {
 };
 
 exports.RoutedButton = RoutedButton;
+RoutedButton.storyName = 'Routed button';
+var _default = {
+  title: "Controls/Button/Routed button"
+};
+exports["default"] = _default;

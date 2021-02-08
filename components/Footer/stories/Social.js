@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Social = void 0;
+exports["default"] = exports.Social = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -71,3 +71,7 @@ var Social = function Social() {
 };
 
 exports.Social = Social;
+var _default = {
+  title: 'Layout/Footer/Social'
+};
+exports["default"] = _default;

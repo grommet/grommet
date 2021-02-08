@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.ValueStyleChart = void 0;
+exports["default"] = exports.ValueStyleChart = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -67,6 +67,8 @@ var ValueStyleChart = function ValueStyleChart() {
 };
 
 exports.ValueStyleChart = ValueStyleChart;
-ValueStyleChart.story = {
-  name: 'Value style'
+ValueStyleChart.storyName = 'Value style';
+var _default = {
+  title: 'Visualizations/Chart/Value style'
 };
+exports["default"] = _default;

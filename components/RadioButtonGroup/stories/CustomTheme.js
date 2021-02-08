@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.CustomRadioButtonGroup = void 0;
+exports["default"] = exports.CustomRadioButtonGroup = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -85,6 +85,8 @@ var CustomRadioButtonGroup = function CustomRadioButtonGroup(_ref) {
 };
 
 exports.CustomRadioButtonGroup = CustomRadioButtonGroup;
-CustomRadioButtonGroup.story = {
-  name: 'Custom theme'
+CustomRadioButtonGroup.storyName = 'Custom theme';
+var _default = {
+  title: 'Input/RadioButtonGroup/Custom theme'
 };
+exports["default"] = _default;

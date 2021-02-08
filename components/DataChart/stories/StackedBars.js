@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.StackedBars = void 0;
+exports["default"] = exports.StackedBars = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -62,3 +62,8 @@ var StackedBars = function StackedBars() {
 };
 
 exports.StackedBars = StackedBars;
+StackedBars.storyName = 'Stacked bars';
+var _default = {
+  title: 'Visualizations/DataChart/Stacked bars'
+};
+exports["default"] = _default;

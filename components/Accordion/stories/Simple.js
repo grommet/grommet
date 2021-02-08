@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Multiple = exports.DarkNoAnimation = exports.Simple = void 0;
+exports["default"] = exports.Simple = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -13,7 +13,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-var SimpleAccordion = function SimpleAccordion(props) {
+var Simple = function Simple(props) {
   var animate = props.animate,
       multiple = props.multiple,
       rest = _objectWithoutPropertiesLoose(props, ["animate", "multiple"]);
@@ -49,40 +49,8 @@ var SimpleAccordion = function SimpleAccordion(props) {
   }, "Panel 3 contents")))));
 };
 
-var Simple = function Simple() {
-  return /*#__PURE__*/_react["default"].createElement(SimpleAccordion, null);
-};
-
 exports.Simple = Simple;
-
-var DarkNoAnimation = function DarkNoAnimation() {
-  return /*#__PURE__*/_react["default"].createElement(SimpleAccordion, {
-    animate: false,
-    background: "dark-2"
-  });
+var _default = {
+  title: 'Controls/Accordion/Simple'
 };
-
-exports.DarkNoAnimation = DarkNoAnimation;
-DarkNoAnimation.story = {
-  name: 'Dark no animation',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
-  }
-};
-
-var Multiple = function Multiple() {
-  return /*#__PURE__*/_react["default"].createElement(SimpleAccordion, {
-    multiple: true
-  });
-};
-
-exports.Multiple = Multiple;
-Multiple.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
-  }
-};
+exports["default"] = _default;

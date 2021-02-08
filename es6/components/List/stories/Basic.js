@@ -12,3 +12,6 @@ export var Basic = function Basic() {
     data: locations
   })));
 };
+export default {
+  title: 'Visualizations/List/Basic'
+};

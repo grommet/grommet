@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Everything = void 0;
+exports["default"] = exports.Everything = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -100,3 +100,7 @@ var Everything = function Everything() {
 };
 
 exports.Everything = Everything;
+var _default = {
+  title: 'Visualizations/DataChart/Everything'
+};
+exports["default"] = _default;

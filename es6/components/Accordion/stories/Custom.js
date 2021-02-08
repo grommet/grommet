@@ -83,3 +83,6 @@ var CustomAccordion = function CustomAccordion(_ref) {
 export var Custom = function Custom() {
   return /*#__PURE__*/React.createElement(CustomAccordion, null);
 };
+export default {
+  title: 'Controls/Accordion/Custom'
+};

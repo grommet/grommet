@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.FieldStates = void 0;
+exports["default"] = exports.FieldStates = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -79,6 +79,8 @@ var FieldStates = function FieldStates() {
 };
 
 exports.FieldStates = FieldStates;
-FieldStates.story = {
-  name: 'Field states'
+FieldStates.storyName = 'Field states';
+var _default = {
+  title: 'Input/Form/Field states'
 };
+exports["default"] = _default;

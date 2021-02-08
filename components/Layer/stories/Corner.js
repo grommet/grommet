@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.CornerLayer = void 0;
+exports["default"] = exports.CornerLayer = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -52,11 +52,13 @@ var CornerLayer = function CornerLayer() {
 };
 
 exports.CornerLayer = CornerLayer;
-CornerLayer.story = {
-  name: 'Corner',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+CornerLayer.storyName = 'Corner';
+CornerLayer.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Layout/Layer/Corner'
+};
+exports["default"] = _default;

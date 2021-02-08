@@ -91,3 +91,6 @@ export var Kind = function Kind() {
     }));
   }))));
 };
+export default {
+  title: 'Controls/Button/Kind'
+};

@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.WordBreak = void 0;
+exports["default"] = exports.WordBreak = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -33,6 +33,8 @@ var WordBreak = function WordBreak() {
 
 
 exports.WordBreak = WordBreak;
-WordBreak.story = {
-  name: 'Word break'
+WordBreak.storyName = 'Word break';
+var _default = {
+  title: 'Type/Text/Word break'
 };
+exports["default"] = _default;

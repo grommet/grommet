@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.SelectPlace = void 0;
+exports["default"] = exports.SelectPlace = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -35,11 +35,13 @@ var SelectPlace = function SelectPlace() {
 };
 
 exports.SelectPlace = SelectPlace;
-SelectPlace.story = {
-  name: 'Select place',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+SelectPlace.storyName = 'Select place';
+SelectPlace.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Visualizations/WorldMap/Select place'
+};
+exports["default"] = _default;

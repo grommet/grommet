@@ -50,3 +50,6 @@ export var All = function All() {
     fill: true
   }, headingFiller));
 };
+export default {
+  title: 'Type/Heading/All'
+};

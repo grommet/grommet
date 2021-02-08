@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.FieldSpacingOptions = void 0;
+exports["default"] = exports.FieldSpacingOptions = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -235,6 +235,8 @@ var FieldSpacingOptions = function FieldSpacingOptions() {
 };
 
 exports.FieldSpacingOptions = FieldSpacingOptions;
-FieldSpacingOptions.story = {
-  name: 'Field spacing options'
+FieldSpacingOptions.storyName = 'Field spacing options';
+var _default = {
+  title: 'Input/Form/Field spacing options'
 };
+exports["default"] = _default;

@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.ThinStory = void 0;
+exports["default"] = exports.ThinStory = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -67,6 +67,8 @@ var ThinStory = function ThinStory() {
 };
 
 exports.ThinStory = ThinStory;
-ThinStory.story = {
-  name: 'Thin'
+ThinStory.storyName = 'Thin';
+var _default = {
+  title: 'Input/RangeSelector/Thin'
 };
+exports["default"] = _default;

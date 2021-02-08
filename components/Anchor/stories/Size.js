@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Size = void 0;
+exports["default"] = exports.Size = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -34,3 +34,7 @@ var Size = function Size() {
 };
 
 exports.Size = Size;
+var _default = {
+  title: 'Controls/Anchor/Size'
+};
+exports["default"] = _default;

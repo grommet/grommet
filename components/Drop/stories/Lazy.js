@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Lazy = void 0;
+exports["default"] = exports.Lazy = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -134,10 +134,12 @@ var Lazy = function Lazy() {
 };
 
 exports.Lazy = Lazy;
-Lazy.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Lazy.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Controls/Drop/Lazy'
+};
+exports["default"] = _default;

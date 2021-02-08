@@ -119,10 +119,11 @@ export var Nested = function Nested() {
     size: "small"
   }, "Submenu item 1"))))));
 };
-Nested.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Nested.parameters = {
+  chromatic: {
+    disable: true
   }
+};
+export default {
+  title: 'Utilities/Collapsible/Nested'
 };

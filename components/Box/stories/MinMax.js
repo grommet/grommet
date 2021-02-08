@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.MinMaxSizesBox = void 0;
+exports["default"] = exports.MinMaxSizesBox = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -217,6 +217,8 @@ var MinMaxSizesBox = function MinMaxSizesBox() {
 };
 
 exports.MinMaxSizesBox = MinMaxSizesBox;
-MinMaxSizesBox.story = {
-  name: 'Min/max sizes'
+MinMaxSizesBox.storyName = 'Min and max sizes';
+var _default = {
+  title: 'Layout/Box/Min and max sizes'
 };
+exports["default"] = _default;

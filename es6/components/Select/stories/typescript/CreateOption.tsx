@@ -95,6 +95,8 @@ export const CreateOption = () => {
   );
 };
 
-CreateOption.story = {
-  name: 'Create option',
+CreateOption.storyName = 'Create option';
+
+export default {
+  title: 'Input/Select/Create option',
 };

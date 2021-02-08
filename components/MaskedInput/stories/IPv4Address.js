@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.IPv4MaskedInput = void 0;
+exports["default"] = exports.IPv4MaskedInput = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -60,11 +60,13 @@ var IPv4MaskedInput = function IPv4MaskedInput() {
 };
 
 exports.IPv4MaskedInput = IPv4MaskedInput;
-IPv4MaskedInput.story = {
-  name: 'IPv4 address',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+IPv4MaskedInput.storyName = 'IPv4 address';
+IPv4MaskedInput.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Input/MaskedInput/IPv4 address'
+};
+exports["default"] = _default;

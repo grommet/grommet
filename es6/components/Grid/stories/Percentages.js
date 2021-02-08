@@ -27,3 +27,6 @@ export var Percentages = function Percentages() {
     background: "brand"
   })));
 };
+export default {
+  title: 'Layout/Grid/Percentages'
+};

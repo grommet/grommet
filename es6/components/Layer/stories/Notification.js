@@ -66,11 +66,12 @@ export var NotificationLayer = function NotificationLayer() {
     plain: true
   }))));
 };
-NotificationLayer.story = {
-  name: 'Notification',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+NotificationLayer.storyName = 'Notification';
+NotificationLayer.parameters = {
+  chromatic: {
+    disable: true
   }
+};
+export default {
+  title: 'Layout/Layer/Notification'
 };

@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.DateTimeDropButton = void 0;
+exports["default"] = exports.DateTimeDropButton = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -132,6 +132,8 @@ var DateTimeDropButton = function DateTimeDropButton() {
 };
 
 exports.DateTimeDropButton = DateTimeDropButton;
-DateTimeDropButton.story = {
-  name: 'Date time drop'
+DateTimeDropButton.storyName = 'Date time drop';
+var _default = {
+  title: 'Input/MaskedInput/Date time drop'
 };
+exports["default"] = _default;

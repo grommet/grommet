@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.SidebarTip = void 0;
+exports["default"] = exports.SidebarTip = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -151,6 +151,8 @@ var SidebarTip = function SidebarTip() {
 };
 
 exports.SidebarTip = SidebarTip;
-SidebarTip.story = {
-  name: 'Sidebar'
+SidebarTip.storyName = 'Sidebar';
+var _default = {
+  title: 'Controls/Tip/Sidebar'
 };
+exports["default"] = _default;

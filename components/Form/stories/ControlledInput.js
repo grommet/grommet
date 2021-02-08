@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.ControlledInput = void 0;
+exports["default"] = exports.ControlledInput = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -168,12 +168,14 @@ var ControlledInput = function ControlledInput() {
 };
 
 exports.ControlledInput = ControlledInput;
-ControlledInput.story = {
-  name: 'Controlled input',
-  parameters: {
-    // chromatic disabled because snapshot is the same as ControlledInputLazy
-    chromatic: {
-      disable: true
-    }
+ControlledInput.storyName = 'Controlled input';
+ControlledInput.parameters = {
+  // chromatic disabled because snapshot is the same as ControlledInputLazy
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Input/Form/Controlled input'
+};
+exports["default"] = _default;

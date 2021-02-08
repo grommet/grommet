@@ -44,3 +44,6 @@ export var Themed = function Themed() {
     background: "brand"
   }, "SY")));
 };
+export default {
+  title: 'Visualizations/Avatar/Themed'
+};

@@ -58,6 +58,7 @@ export var ServedDataTable = function ServedDataTable() {
     onSearch: onSearch
   })));
 };
-ServedDataTable.story = {
-  name: 'Served'
+ServedDataTable.storyName = 'Served';
+export default {
+  title: 'Visualizations/DataTable/Served'
 };

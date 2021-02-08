@@ -51,6 +51,7 @@ render( /*#__PURE__*/React.createElement(App, null), document.getElementById('ro
 export var ThinStory = function ThinStory() {
   return /*#__PURE__*/React.createElement(App, null);
 };
-ThinStory.story = {
-  name: 'Thin'
+ThinStory.storyName = 'Thin';
+export default {
+  title: 'Input/RangeSelector/Thin'
 };

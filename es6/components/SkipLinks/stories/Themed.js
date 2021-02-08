@@ -105,3 +105,6 @@ export var Themed = function Themed() {
     label: "Interactive Element"
   }), contentFiller))));
 };
+export default {
+  title: 'Utilities/SkipLinks/Themed'
+};

@@ -93,6 +93,7 @@ export var DateRange = function DateRange() {
     }
   }))));
 };
-DateRange.story = {
-  name: 'Date range'
+DateRange.storyName = 'Date range';
+export default {
+  title: 'Input/MaskedInput/Date range'
 };

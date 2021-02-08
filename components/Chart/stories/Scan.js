@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Scan = exports.ScanChart = void 0;
+exports["default"] = exports.Scan = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -154,8 +154,6 @@ var ScanChart = function ScanChart(props) {
   }))))));
 };
 
-exports.ScanChart = ScanChart;
-
 var Scan = function Scan() {
   return /*#__PURE__*/_react["default"].createElement(ScanChart, {
     data: (0, _data.generateData)(30, 100),
@@ -164,10 +162,12 @@ var Scan = function Scan() {
 };
 
 exports.Scan = Scan;
-Scan.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Scan.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Visualizations/Chart/Scan'
+};
+exports["default"] = _default;

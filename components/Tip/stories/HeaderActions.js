@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.HeaderActions = void 0;
+exports["default"] = exports.HeaderActions = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -112,10 +112,13 @@ var HeaderActions = function HeaderActions() {
 };
 
 exports.HeaderActions = HeaderActions;
-HeaderActions.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+HeaderActions.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+HeaderActions.storyName = 'Header actions';
+var _default = {
+  title: 'Controls/Tip/Header actions'
+};
+exports["default"] = _default;

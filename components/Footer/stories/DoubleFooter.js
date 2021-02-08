@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.DoubleFooter = void 0;
+exports["default"] = exports.DoubleFooter = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -84,6 +84,8 @@ var DoubleFooter = function DoubleFooter() {
 };
 
 exports.DoubleFooter = DoubleFooter;
-DoubleFooter.story = {
-  name: 'Double footer'
+DoubleFooter.storyName = 'Double footer';
+var _default = {
+  title: 'Layout/Footer/Double footer'
 };
+exports["default"] = _default;

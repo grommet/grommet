@@ -56,8 +56,6 @@ UncontrolledTabs.propTypes = {
 export var Uncontrolled = function Uncontrolled() {
   return /*#__PURE__*/React.createElement(UncontrolledTabs, null);
 };
-export var Plain = function Plain() {
-  return /*#__PURE__*/React.createElement(UncontrolledTabs, {
-    plain: true
-  });
+export default {
+  title: 'Controls/Tabs/Uncontrolled'
 };

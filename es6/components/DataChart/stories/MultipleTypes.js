@@ -67,3 +67,7 @@ export var MultipleTypes = function MultipleTypes() {
     pad: "small"
   })));
 };
+MultipleTypes.storyName = 'Multiple types';
+export default {
+  title: 'Visualizations/DataChart/Multiple types'
+};

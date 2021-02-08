@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Layout = void 0;
+exports["default"] = exports.Layout = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -62,3 +62,7 @@ var Layout = function Layout() {
 };
 
 exports.Layout = Layout;
+var _default = {
+  title: 'Visualizations/Chart/Layout'
+};
+exports["default"] = _default;

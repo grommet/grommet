@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Uncontrolled = void 0;
+exports["default"] = exports.Uncontrolled = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -104,3 +104,7 @@ var Uncontrolled = function Uncontrolled() {
 };
 
 exports.Uncontrolled = Uncontrolled;
+var _default = {
+  title: 'Input/Form/Uncontrolled'
+};
+exports["default"] = _default;

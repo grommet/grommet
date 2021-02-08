@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Multi = void 0;
+exports["default"] = exports.Multi = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -55,3 +55,7 @@ var Multi = function Multi() {
 };
 
 exports.Multi = Multi;
+var _default = {
+  title: 'Media/Carousel/Multi'
+};
+exports["default"] = _default;

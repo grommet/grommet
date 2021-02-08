@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Basic = void 0;
+exports["default"] = exports.Basic = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -25,3 +25,7 @@ var Basic = function Basic() {
 };
 
 exports.Basic = Basic;
+var _default = {
+  title: 'Visualizations/List/Basic'
+};
+exports["default"] = _default;

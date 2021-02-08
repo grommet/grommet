@@ -23,3 +23,6 @@ var SizeAnchor = function SizeAnchor() {
 export var Size = function Size() {
   return /*#__PURE__*/React.createElement(SizeAnchor, null);
 };
+export default {
+  title: 'Controls/Anchor/Size'
+};

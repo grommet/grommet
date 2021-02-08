@@ -70,6 +70,7 @@ export var CustomToggle = function CustomToggle(props) {
     toggle: true
   }))));
 };
-CustomToggle.story = {
-  name: 'Custom toggle'
+CustomToggle.storyName = 'Custom toggle';
+export default {
+  title: 'Input/CheckBox/Custom toggle'
 };

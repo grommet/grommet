@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grommet, Box, DataTable, Heading } from 'grommet';
 import { grommet } from 'grommet/themes';
-export var DATA = [{
+var DATA = [{
   name: 'Alan Josiah Werner Shirleen Foy',
   location: 'Winston Salem',
   date: '2018-01-09',
@@ -191,6 +191,7 @@ export var ColumnSize = function ColumnSize() {
     }
   })));
 };
-ColumnSize.story = {
-  name: 'Column sizes'
+ColumnSize.storyName = 'Column sizes';
+export default {
+  title: 'Visualizations/DataTable/Column sizes'
 };

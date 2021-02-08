@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.SizeUnitsMaskedInput = void 0;
+exports["default"] = exports.SizeUnitsMaskedInput = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -48,11 +48,13 @@ var SizeUnitsMaskedInput = function SizeUnitsMaskedInput() {
 };
 
 exports.SizeUnitsMaskedInput = SizeUnitsMaskedInput;
-SizeUnitsMaskedInput.story = {
-  name: 'Size + units',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+SizeUnitsMaskedInput.storyName = 'Size + units';
+SizeUnitsMaskedInput.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Input/MaskedInput/Size + units'
+};
+exports["default"] = _default;

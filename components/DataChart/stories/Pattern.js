@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Pattern = void 0;
+exports["default"] = exports.Pattern = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -42,3 +42,7 @@ var Pattern = function Pattern() {
 };
 
 exports.Pattern = Pattern;
+var _default = {
+  title: 'Visualizations/DataChart/Pattern'
+};
+exports["default"] = _default;

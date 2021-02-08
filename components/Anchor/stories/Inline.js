@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Inline = void 0;
+exports["default"] = exports.Inline = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -28,3 +28,7 @@ var Inline = function Inline() {
 };
 
 exports.Inline = Inline;
+var _default = {
+  title: 'Controls/Anchor/Inline'
+};
+exports["default"] = _default;

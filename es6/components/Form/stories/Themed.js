@@ -122,3 +122,6 @@ export var Themed = function Themed() {
     disabled: true
   }))))));
 };
+export default {
+  title: 'Input/Form/Themed'
+};

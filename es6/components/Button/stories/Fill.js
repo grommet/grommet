@@ -77,3 +77,6 @@ export var Fill = function Fill(props) {
     onClick: function onClick() {}
   }, props)))));
 };
+export default {
+  title: 'Controls/Button/Fill'
+};

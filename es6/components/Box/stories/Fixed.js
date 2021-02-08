@@ -42,6 +42,7 @@ export var FixedSizesBox = function FixedSizesBox() {
     background: "brand"
   }, "Large")));
 };
-FixedSizesBox.story = {
-  name: 'Fixed sizes'
+FixedSizesBox.storyName = 'Fixed sizes';
+export default {
+  title: "Layout/Box/Fixed sizes"
 };

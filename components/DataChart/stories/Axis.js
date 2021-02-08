@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Axis = void 0;
+exports["default"] = exports.Axis = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -62,3 +62,7 @@ var Axis = function Axis() {
 };
 
 exports.Axis = Axis;
+var _default = {
+  title: 'Visualizations/DataChart/Axis'
+};
+exports["default"] = _default;

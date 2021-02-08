@@ -94,3 +94,6 @@ export var Progressing = function Progressing() {
     connections: connections
   }))));
 };
+export default {
+  title: 'Visualizations/Diagram/Progressing'
+};

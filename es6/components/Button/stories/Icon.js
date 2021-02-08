@@ -66,6 +66,7 @@ export var Icon = function Icon() {
     onClick: function onClick() {}
   }))));
 };
-Icon.story = {
-  name: 'Icon plain'
+Icon.storyName = 'Icon plain';
+export default {
+  title: "Controls/Button/Icon plain"
 };

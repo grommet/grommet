@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.TunableDataTable = void 0;
+exports["default"] = exports.TunableDataTable = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -34,6 +34,8 @@ var TunableDataTable = function TunableDataTable() {
 };
 
 exports.TunableDataTable = TunableDataTable;
-TunableDataTable.story = {
-  name: 'Tunable'
+TunableDataTable.storyName = 'Tunable';
+var _default = {
+  title: 'Visualizations/DataTable/Tunable'
 };
+exports["default"] = _default;

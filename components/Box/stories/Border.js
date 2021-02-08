@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.BorderBox = void 0;
+exports["default"] = exports.BorderBox = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -105,6 +105,8 @@ var BorderBox = function BorderBox() {
 };
 
 exports.BorderBox = BorderBox;
-BorderBox.story = {
-  name: 'Border'
+BorderBox.storyName = 'Border';
+var _default = {
+  title: 'Layout/Box/Border'
 };
+exports["default"] = _default;

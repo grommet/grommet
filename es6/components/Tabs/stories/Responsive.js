@@ -205,3 +205,6 @@ var ResponsiveTabs = function ResponsiveTabs() {
 export var Responsive = function Responsive() {
   return /*#__PURE__*/React.createElement(ResponsiveTabs, null);
 };
+export default {
+  title: 'Controls/Tabs/Responsive'
+};

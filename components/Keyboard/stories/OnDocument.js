@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.OnDocument = void 0;
+exports["default"] = exports.OnDocument = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -28,10 +28,12 @@ var OnDocument = function OnDocument() {
 };
 
 exports.OnDocument = OnDocument;
-OnDocument.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+OnDocument.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Utilities/Keyboard/On Document'
+};
+exports["default"] = _default;

@@ -59,6 +59,7 @@ export var DynamicFields = function DynamicFields() {
     primary: true
   }))))));
 };
-DynamicFields.story = {
-  name: 'Dynamic fields'
+DynamicFields.storyName = 'Dynamic fields';
+export default {
+  title: 'Input/Form/Dynamic fields'
 };

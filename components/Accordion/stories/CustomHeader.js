@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Header = void 0;
+exports["default"] = exports.Header = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -68,3 +68,7 @@ var Header = function Header() {
 };
 
 exports.Header = Header;
+var _default = {
+  title: 'Controls/Accordion/Header'
+};
+exports["default"] = _default;

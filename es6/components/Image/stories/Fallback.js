@@ -9,3 +9,6 @@ export var Fallback = function Fallback() {
     src: "//v2.grommet.io/assets/IMG_4245_not_exists.jpg"
   }));
 };
+export default {
+  title: 'Media/Image/Fallback'
+};

@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Bounds = void 0;
+exports["default"] = exports.Bounds = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -88,3 +88,7 @@ var Bounds = function Bounds() {
 };
 
 exports.Bounds = Bounds;
+var _default = {
+  title: 'Input/RangeInput/Bounds'
+};
+exports["default"] = _default;

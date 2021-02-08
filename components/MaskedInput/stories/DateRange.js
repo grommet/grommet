@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.DateRange = void 0;
+exports["default"] = exports.DateRange = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -104,6 +104,8 @@ var DateRange = function DateRange() {
 };
 
 exports.DateRange = DateRange;
-DateRange.story = {
-  name: 'Date range'
+DateRange.storyName = 'Date range';
+var _default = {
+  title: 'Input/MaskedInput/Date range'
 };
+exports["default"] = _default;

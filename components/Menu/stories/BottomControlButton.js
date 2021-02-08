@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.BottomControlButton = void 0;
+exports["default"] = exports.BottomControlButton = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -45,11 +45,13 @@ var BottomControlButton = function BottomControlButton() {
 };
 
 exports.BottomControlButton = BottomControlButton;
-BottomControlButton.story = {
-  name: 'Bottom control button',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+BottomControlButton.storyName = 'Bottom control button';
+BottomControlButton.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Controls/Menu/Bottom control button'
+};
+exports["default"] = _default;

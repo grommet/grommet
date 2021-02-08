@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Default = void 0;
+exports["default"] = exports.Default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -46,3 +46,7 @@ var Default = function Default() {
 };
 
 exports.Default = Default;
+var _default = {
+  title: 'Visualizations/Table/Default'
+};
+exports["default"] = _default;

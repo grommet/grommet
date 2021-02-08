@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.GradientCharts = void 0;
+exports["default"] = exports.GradientCharts = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -63,6 +63,8 @@ var GradientCharts = function GradientCharts() {
 };
 
 exports.GradientCharts = GradientCharts;
-GradientCharts.story = {
-  name: 'Gradient'
+GradientCharts.storyName = 'Gradient';
+var _default = {
+  title: 'Visualizations/Chart/Gradient'
 };
+exports["default"] = _default;

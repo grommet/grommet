@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.GridAreasAlternative = void 0;
+exports["default"] = exports.GridAreasAlternative = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -36,6 +36,8 @@ var GridAreasAlternative = function GridAreasAlternative() {
 };
 
 exports.GridAreasAlternative = GridAreasAlternative;
-GridAreasAlternative.story = {
-  name: 'Areas prop alternative'
+GridAreasAlternative.storyName = 'Areas prop alternatives';
+var _default = {
+  title: 'Layout/Grid/Areas prop alternatives'
 };
+exports["default"] = _default;

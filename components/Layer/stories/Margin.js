@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.MarginTopCenter = exports.MarginCenter = exports.Margin = void 0;
+exports["default"] = exports.Margin = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -53,28 +53,7 @@ var Margin = function Margin() {
 };
 
 exports.Margin = Margin;
-
-var MarginCenter = function MarginCenter() {
-  return /*#__PURE__*/_react["default"].createElement(MarginLayer, {
-    margin: "large"
-  });
+var _default = {
+  title: 'Layout/Layer/Margin'
 };
-
-exports.MarginCenter = MarginCenter;
-MarginCenter.story = {
-  name: 'Margin (center)'
-};
-
-var MarginTopCenter = function MarginTopCenter() {
-  return /*#__PURE__*/_react["default"].createElement(MarginLayer, {
-    margin: {
-      top: 'large'
-    },
-    position: "top"
-  });
-};
-
-exports.MarginTopCenter = MarginTopCenter;
-MarginTopCenter.story = {
-  name: 'Margin top (center)'
-};
+exports["default"] = _default;

@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.FixedSizesBox = void 0;
+exports["default"] = exports.FixedSizesBox = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -54,6 +54,8 @@ var FixedSizesBox = function FixedSizesBox() {
 };
 
 exports.FixedSizesBox = FixedSizesBox;
-FixedSizesBox.story = {
-  name: 'Fixed sizes'
+FixedSizesBox.storyName = 'Fixed sizes';
+var _default = {
+  title: "Layout/Box/Fixed sizes"
 };
+exports["default"] = _default;

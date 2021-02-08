@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Multiple = void 0;
+exports["default"] = exports.Multiple = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -42,10 +42,12 @@ var Multiple = function Multiple() {
 };
 
 exports.Multiple = Multiple;
-Multiple.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Multiple.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Input/Select/Multiple'
+};
+exports["default"] = _default;

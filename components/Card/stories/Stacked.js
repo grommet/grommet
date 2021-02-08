@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Stacked = void 0;
+exports["default"] = exports.Stacked = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -90,3 +90,7 @@ var Stacked = function Stacked() {
 };
 
 exports.Stacked = Stacked;
+var _default = {
+  title: 'Layout/Card/Stacked'
+};
+exports["default"] = _default;

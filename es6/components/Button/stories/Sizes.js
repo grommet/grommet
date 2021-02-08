@@ -86,3 +86,6 @@ export var Sizes = function Sizes() {
     primary: true
   }))));
 };
+export default {
+  title: 'Controls/Button/Sizes'
+};

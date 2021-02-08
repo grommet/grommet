@@ -47,3 +47,6 @@ export var Extend = function Extend() {
     size: "small"
   }, "This is using the extend property on Heading"));
 };
+export default {
+  title: 'Type/Heading/Extend'
+};

@@ -31,3 +31,6 @@ export var Simple = function Simple() {
     bounds: ['2018-09-08', '2020-12-13']
   })));
 };
+export default {
+  title: 'Visualizations/Calendar/Simple'
+};

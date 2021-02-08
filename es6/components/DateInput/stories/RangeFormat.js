@@ -32,6 +32,7 @@ export var RangeFormat = function RangeFormat() {
     onChange: onChange
   }))));
 };
-RangeFormat.story = {
-  name: 'Range format'
+RangeFormat.storyName = 'Range format';
+export default {
+  title: 'Input/DateInput/Range format'
 };

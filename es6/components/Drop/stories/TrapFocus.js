@@ -69,10 +69,11 @@ export var TrapFocus = function TrapFocus() {
     name: "Achievement"
   })));
 };
-TrapFocus.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+TrapFocus.parameters = {
+  chromatic: {
+    disable: true
   }
+};
+export default {
+  title: 'Controls/Drop/Trap Focus'
 };

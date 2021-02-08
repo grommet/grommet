@@ -244,3 +244,6 @@ export var Custom = function Custom() {
     label: "Custom as=span"
   }))));
 };
+export default {
+  title: 'Controls/Button/Custom'
+};

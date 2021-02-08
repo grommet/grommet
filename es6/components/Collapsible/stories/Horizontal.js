@@ -57,10 +57,11 @@ export var Horizontal = function Horizontal() {
     size: "xlarge"
   }, "Sidebar"))))));
 };
-Horizontal.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Horizontal.parameters = {
+  chromatic: {
+    disable: true
   }
+};
+export default {
+  title: 'Utilities/Collapsible/Horizontal'
 };

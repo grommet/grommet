@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.ShowAdjacent = void 0;
+exports["default"] = exports.ShowAdjacent = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -72,6 +72,8 @@ var ShowAdjacent = function ShowAdjacent() {
 };
 
 exports.ShowAdjacent = ShowAdjacent;
-ShowAdjacent.story = {
-  name: 'Show adjacent days'
+ShowAdjacent.storyName = 'Show adjacent days';
+var _default = {
+  title: "Visualizations/Calendar/Show adjacent days"
 };
+exports["default"] = _default;

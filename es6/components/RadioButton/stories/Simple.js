@@ -27,3 +27,6 @@ export var Simple = function Simple() {
     }
   })));
 };
+export default {
+  title: 'Input/RadioButton/Simple'
+};

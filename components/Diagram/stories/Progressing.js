@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Progressing = void 0;
+exports["default"] = exports.Progressing = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -108,3 +108,7 @@ var Progressing = function Progressing() {
 };
 
 exports.Progressing = Progressing;
+var _default = {
+  title: 'Visualizations/Diagram/Progressing'
+};
+exports["default"] = _default;

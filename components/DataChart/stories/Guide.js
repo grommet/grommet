@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Guide = void 0;
+exports["default"] = exports.Guide = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -60,3 +60,7 @@ var Guide = function Guide() {
 };
 
 exports.Guide = Guide;
+var _default = {
+  title: 'Visualizations/DataChart/Guide'
+};
+exports["default"] = _default;

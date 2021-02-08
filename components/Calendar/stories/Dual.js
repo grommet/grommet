@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Dual = void 0;
+exports["default"] = exports.Dual = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -127,3 +127,7 @@ var Dual = function Dual() {
 };
 
 exports.Dual = Dual;
+var _default = {
+  title: 'Visualizations/Calendar/Dual'
+};
+exports["default"] = _default;

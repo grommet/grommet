@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Weight = void 0;
+exports["default"] = exports.Weight = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -49,3 +49,7 @@ var Weight = function Weight() {
 };
 
 exports.Weight = Weight;
+var _default = {
+  title: 'Controls/Anchor/Weight'
+};
+exports["default"] = _default;

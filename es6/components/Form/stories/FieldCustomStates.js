@@ -123,6 +123,7 @@ export var FieldCustomStates = function FieldCustomStates() {
     disabled: true
   }))))));
 };
-FieldCustomStates.story = {
-  name: 'Field custom states'
+FieldCustomStates.storyName = 'Field custom states';
+export default {
+  title: 'Input/Form/Field custom states'
 };

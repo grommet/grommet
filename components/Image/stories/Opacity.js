@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Opacity = void 0;
+exports["default"] = exports.Opacity = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -50,3 +50,7 @@ var Opacity = function Opacity() {
 };
 
 exports.Opacity = Opacity;
+var _default = {
+  title: 'Media/Image/Opacity'
+};
+exports["default"] = _default;

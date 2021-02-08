@@ -24,3 +24,6 @@ export var Places = function Places() {
     margin: "large"
   }, "Sydney")));
 };
+export default {
+  title: 'Visualizations/WorldMap/Places'
+};

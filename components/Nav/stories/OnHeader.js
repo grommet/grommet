@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.OnHeader = void 0;
+exports["default"] = exports.OnHeader = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -57,6 +57,8 @@ var OnHeader = function OnHeader() {
 };
 
 exports.OnHeader = OnHeader;
-OnHeader.story = {
-  name: 'On header'
+OnHeader.storyName = 'On header';
+var _default = {
+  title: 'Controls/Nav/On header'
 };
+exports["default"] = _default;

@@ -46,6 +46,7 @@ export var InitialValues = function InitialValues() {
     }]
   })));
 };
-InitialValues.story = {
-  name: 'Initial values'
+InitialValues.storyName = 'Initial values';
+export default {
+  title: 'Input/CheckBoxGroup/Initial values'
 };

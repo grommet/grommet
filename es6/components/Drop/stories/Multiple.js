@@ -72,10 +72,11 @@ var MultipleDrop = function MultipleDrop() {
 export var Multiple = function Multiple() {
   return /*#__PURE__*/React.createElement(MultipleDrop, null);
 };
-Multiple.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Multiple.parameters = {
+  chromatic: {
+    disable: true
   }
+};
+export default {
+  title: 'Controls/Drop/Multiple'
 };

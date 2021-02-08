@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.SizedDataTable = void 0;
+exports["default"] = exports.SizedDataTable = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -29,6 +29,8 @@ var SizedDataTable = function SizedDataTable() {
 };
 
 exports.SizedDataTable = SizedDataTable;
-SizedDataTable.story = {
-  name: 'Sized'
+SizedDataTable.storyName = 'Sized';
+var _default = {
+  title: 'Visualizations/DataTable/Sized'
 };
+exports["default"] = _default;

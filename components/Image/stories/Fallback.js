@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Fallback = void 0;
+exports["default"] = exports.Fallback = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -21,3 +21,7 @@ var Fallback = function Fallback() {
 };
 
 exports.Fallback = Fallback;
+var _default = {
+  title: 'Media/Image/Fallback'
+};
+exports["default"] = _default;

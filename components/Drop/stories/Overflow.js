@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Overflow = void 0;
+exports["default"] = exports.Overflow = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -91,10 +91,12 @@ var Overflow = function Overflow() {
 };
 
 exports.Overflow = Overflow;
-Overflow.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Overflow.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Controls/Drop/Overflow'
+};
+exports["default"] = _default;

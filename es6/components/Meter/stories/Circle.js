@@ -30,3 +30,6 @@ export var Circle = function Circle() {
     }]
   })));
 };
+export default {
+  title: 'Visualizations/Meter/Circle'
+};

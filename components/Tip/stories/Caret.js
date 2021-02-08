@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Caret = void 0;
+exports["default"] = exports.Caret = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -70,10 +70,12 @@ var Caret = function Caret() {
 };
 
 exports.Caret = Caret;
-Caret.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Caret.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Controls/Tip/Caret'
+};
+exports["default"] = _default;

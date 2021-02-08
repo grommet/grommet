@@ -33,10 +33,11 @@ var SimpleMenu = function SimpleMenu() {
 export var Simple = function Simple() {
   return /*#__PURE__*/React.createElement(SimpleMenu, null);
 };
-Simple.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Simple.parameters = {
+  chromatic: {
+    disable: true
   }
+};
+export default {
+  title: 'Controls/Menu/Simple'
 };

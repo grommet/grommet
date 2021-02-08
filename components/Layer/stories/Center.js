@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.CenterLayer = void 0;
+exports["default"] = exports.CenterLayer = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -113,11 +113,13 @@ var CenterLayer = function CenterLayer() {
 };
 
 exports.CenterLayer = CenterLayer;
-CenterLayer.story = {
-  name: 'Center',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+CenterLayer.storyName = 'Center';
+CenterLayer.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Layout/Layer/Center'
+};
+exports["default"] = _default;

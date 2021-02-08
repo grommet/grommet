@@ -75,3 +75,6 @@ export var Custom = function Custom() {
     }, /*#__PURE__*/React.createElement(Text, null, c.footer));
   }))))));
 };
+export default {
+  title: 'Visualizations/Table/Custom'
+};

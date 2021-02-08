@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.MultipleTypes = void 0;
+exports["default"] = exports.MultipleTypes = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -79,3 +79,8 @@ var MultipleTypes = function MultipleTypes() {
 };
 
 exports.MultipleTypes = MultipleTypes;
+MultipleTypes.storyName = 'Multiple types';
+var _default = {
+  title: 'Visualizations/DataChart/Multiple types'
+};
+exports["default"] = _default;

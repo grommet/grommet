@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.RTLBox = void 0;
+exports["default"] = exports.RTLBox = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -44,6 +44,8 @@ var RTLBox = function RTLBox() {
 };
 
 exports.RTLBox = RTLBox;
-RTLBox.story = {
-  name: 'RTL'
+RTLBox.storyName = 'RTL';
+var _default = {
+  title: 'Layout/Box/RTL'
 };
+exports["default"] = _default;

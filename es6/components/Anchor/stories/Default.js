@@ -16,10 +16,11 @@ var DefaultAnchor = function DefaultAnchor() {
 export var Default = function Default() {
   return /*#__PURE__*/React.createElement(DefaultAnchor, null);
 };
-Default.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Default.parameters = {
+  chromatic: {
+    disable: true
   }
+};
+export default {
+  title: 'Controls/Anchor/Default'
 };

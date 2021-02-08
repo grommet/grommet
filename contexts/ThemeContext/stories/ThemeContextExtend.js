@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.GlobalThemeWithThemeContext = void 0;
+exports["default"] = exports.GlobalThemeWithThemeContext = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -82,6 +82,8 @@ var GlobalThemeWithThemeContext = function GlobalThemeWithThemeContext() {
 };
 
 exports.GlobalThemeWithThemeContext = GlobalThemeWithThemeContext;
-GlobalThemeWithThemeContext.story = {
-  name: 'ThemeContext.Extend'
+GlobalThemeWithThemeContext.storyName = 'ThemeContext.Extend';
+var _default = {
+  title: 'Utilities/ThemeContext/ThemeContext/Extend'
 };
+exports["default"] = _default;

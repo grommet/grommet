@@ -45,3 +45,7 @@ export var ActiveDate = function ActiveDate() {
     range: "array"
   })));
 };
+ActiveDate.storyName = 'Active date';
+export default {
+  title: "Visualizations/Calendar/Active date"
+};

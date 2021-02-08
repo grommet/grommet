@@ -3,7 +3,8 @@ import { Grommet, Box, Chart, Keyboard, Stack, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { calcs } from '../calcs';
 import { generateData } from './data';
-export var ScanChart = function ScanChart(props) {
+
+var ScanChart = function ScanChart(props) {
   var _useState = useState(undefined),
       active = _useState[0],
       setActive = _useState[1];
@@ -139,16 +140,18 @@ export var ScanChart = function ScanChart(props) {
     }, new Date(t).toLocaleDateString());
   }))))));
 };
+
 export var Scan = function Scan() {
   return /*#__PURE__*/React.createElement(ScanChart, {
     data: generateData(30, 100),
     max: 100
   });
 };
-Scan.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Scan.parameters = {
+  chromatic: {
+    disable: true
   }
+};
+export default {
+  title: 'Visualizations/Chart/Scan'
 };

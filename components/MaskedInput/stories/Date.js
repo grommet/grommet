@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.DateMaskedInput = void 0;
+exports["default"] = exports.DateMaskedInput = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -71,11 +71,13 @@ var DateMaskedInput = function DateMaskedInput() {
 };
 
 exports.DateMaskedInput = DateMaskedInput;
-DateMaskedInput.story = {
-  name: 'Date',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+DateMaskedInput.storyName = 'Date';
+DateMaskedInput.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Input/MaskedInput/Date'
+};
+exports["default"] = _default;

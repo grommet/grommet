@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Time = void 0;
+exports["default"] = exports.Time = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -59,3 +59,7 @@ var Time = function Time() {
 };
 
 exports.Time = Time;
+var _default = {
+  title: 'Input/MaskedInput/Time'
+};
+exports["default"] = _default;

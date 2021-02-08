@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.MaskedInputForm = void 0;
+exports["default"] = exports.MaskedInputForm = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -56,6 +56,8 @@ var MaskedInputForm = function MaskedInputForm() {
 };
 
 exports.MaskedInputForm = MaskedInputForm;
-MaskedInputForm.story = {
-  name: 'Form'
+MaskedInputForm.storyName = 'Form';
+var _default = {
+  title: 'Input/MaskedInput/Form'
 };
+exports["default"] = _default;

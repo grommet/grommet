@@ -32,3 +32,6 @@ export var Children = function Children() {
     }
   })));
 };
+export default {
+  title: 'Input/RadioButton/Children'
+};

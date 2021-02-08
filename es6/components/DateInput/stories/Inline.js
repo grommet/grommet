@@ -23,3 +23,6 @@ export var Inline = function Inline() {
     onChange: onChange
   })));
 };
+export default {
+  title: 'Input/DateInput/Inline'
+};

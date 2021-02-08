@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.SecondaryKey = void 0;
+exports["default"] = exports.SecondaryKey = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -35,3 +35,8 @@ var SecondaryKey = function SecondaryKey() {
 };
 
 exports.SecondaryKey = SecondaryKey;
+SecondaryKey.storyName = 'Secondary key';
+var _default = {
+  title: 'Visualizations/List/Secondary key'
+};
+exports["default"] = _default;

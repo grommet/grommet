@@ -24,3 +24,6 @@ export var Basic = function Basic() {
     background: "brand"
   }, "SY")));
 };
+export default {
+  title: 'Visualizations/Avatar/Basic'
+};

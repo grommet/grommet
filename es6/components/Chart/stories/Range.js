@@ -23,3 +23,6 @@ export var Range = function Range() {
     }));
   })));
 };
+export default {
+  title: 'Visualizations/Chart/Range'
+};

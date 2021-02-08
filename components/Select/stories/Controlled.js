@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Controlled = void 0;
+exports["default"] = exports.Controlled = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -53,3 +53,7 @@ var Controlled = function Controlled() {
 };
 
 exports.Controlled = Controlled;
+var _default = {
+  title: 'Input/Select/Controlled'
+};
+exports["default"] = _default;

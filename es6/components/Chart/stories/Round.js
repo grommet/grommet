@@ -29,3 +29,6 @@ export var Round = function Round() {
     }));
   })));
 };
+export default {
+  title: 'Visualizations/Chart/Round'
+};

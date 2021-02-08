@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Zoom = void 0;
+exports["default"] = exports.Zoom = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -173,10 +173,12 @@ var Zoom = function Zoom() {
 };
 
 exports.Zoom = Zoom;
-Zoom.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Zoom.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Visualizations/Chart/Zoom'
+};
+exports["default"] = _default;

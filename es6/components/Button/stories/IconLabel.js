@@ -41,6 +41,7 @@ export var IconLabel = function IconLabel() {
     onClick: function onClick() {}
   }))));
 };
-IconLabel.story = {
-  name: 'Icon label'
+IconLabel.storyName = 'Icon label';
+export default {
+  title: "Controls/Button/Icon label"
 };

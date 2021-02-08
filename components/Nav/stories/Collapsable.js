@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Collapsable = void 0;
+exports["default"] = exports.Collapsable = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -54,3 +54,7 @@ var Collapsable = function Collapsable() {
 };
 
 exports.Collapsable = Collapsable;
+var _default = {
+  title: 'Controls/Nav/Collapsable'
+};
+exports["default"] = _default;

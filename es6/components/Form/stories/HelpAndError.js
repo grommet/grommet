@@ -19,6 +19,7 @@ export var HelpAndError = function HelpAndError() {
     onChange: function onChange() {}
   })))));
 };
-HelpAndError.story = {
-  name: 'Help and error'
+HelpAndError.storyName = 'Help and error';
+export default {
+  title: 'Input/Form/Help and error'
 };

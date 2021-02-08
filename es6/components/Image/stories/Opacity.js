@@ -38,3 +38,6 @@ export var Opacity = function Opacity() {
     src: "//v2.grommet.io/assets/IMG_4245.jpg"
   })));
 };
+export default {
+  title: 'Media/Image/Opacity'
+};

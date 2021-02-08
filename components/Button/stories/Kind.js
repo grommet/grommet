@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Kind = void 0;
+exports["default"] = exports.Kind = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -104,3 +104,7 @@ var Kind = function Kind() {
 };
 
 exports.Kind = Kind;
+var _default = {
+  title: 'Controls/Button/Kind'
+};
+exports["default"] = _default;

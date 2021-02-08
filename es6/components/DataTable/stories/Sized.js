@@ -16,6 +16,7 @@ export var SizedDataTable = function SizedDataTable() {
     size: "medium"
   })));
 };
-SizedDataTable.story = {
-  name: 'Sized'
+SizedDataTable.storyName = 'Sized';
+export default {
+  title: 'Visualizations/DataTable/Sized'
 };

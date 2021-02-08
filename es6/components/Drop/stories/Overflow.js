@@ -78,10 +78,11 @@ var OverflowDrop = function OverflowDrop() {
 export var Overflow = function Overflow() {
   return /*#__PURE__*/React.createElement(OverflowDrop, null);
 };
-Overflow.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Overflow.parameters = {
+  chromatic: {
+    disable: true
   }
+};
+export default {
+  title: 'Controls/Drop/Overflow'
 };

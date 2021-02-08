@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.AnimatedChart = void 0;
+exports["default"] = exports.AnimatedChart = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -42,11 +42,13 @@ var AnimatedChart = function AnimatedChart() {
 };
 
 exports.AnimatedChart = AnimatedChart;
-AnimatedChart.story = {
-  name: 'Animate',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+AnimatedChart.storyName = 'Animate';
+AnimatedChart.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Visualizations/Chart/Animate'
+};
+exports["default"] = _default;

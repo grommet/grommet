@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.RichFooter = void 0;
+exports["default"] = exports.RichFooter = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -110,6 +110,8 @@ var RichFooter = function RichFooter() {
 };
 
 exports.RichFooter = RichFooter;
-RichFooter.story = {
-  name: 'Rich footer'
+RichFooter.storyName = 'Rich footer';
+var _default = {
+  title: "Layout/Card/Rich footer"
 };
+exports["default"] = _default;

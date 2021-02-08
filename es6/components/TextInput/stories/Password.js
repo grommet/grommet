@@ -40,3 +40,6 @@ export var Password = function Password() {
     }
   })));
 };
+export default {
+  title: 'Input/TextInput/Password'
+};

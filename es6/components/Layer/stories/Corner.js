@@ -39,11 +39,12 @@ export var CornerLayer = function CornerLayer() {
     pad: "xlarge"
   }, "Corner top-right position"))));
 };
-CornerLayer.story = {
-  name: 'Corner',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+CornerLayer.storyName = 'Corner';
+CornerLayer.parameters = {
+  chromatic: {
+    disable: true
   }
+};
+export default {
+  title: 'Layout/Layer/Corner'
 };

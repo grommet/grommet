@@ -48,10 +48,11 @@ var MenuDropButton = function MenuDropButton() {
 export var Menu = function Menu() {
   return /*#__PURE__*/React.createElement(MenuDropButton, null);
 };
-Menu.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Menu.parameters = {
+  chromatic: {
+    disable: true
   }
+};
+export default {
+  title: 'Controls/DropButton/Menu'
 };

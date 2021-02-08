@@ -21,3 +21,6 @@ export var All = function All() {
     truncate: true
   }, "This is a long truncated string of text that is aligned to the end."))));
 };
+export default {
+  title: 'Type/Text/All'
+};

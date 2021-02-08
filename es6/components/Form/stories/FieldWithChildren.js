@@ -123,6 +123,7 @@ export var FieldWithChildren = function FieldWithChildren() {
     primary: true
   }))))));
 };
-FieldWithChildren.story = {
-  name: 'Field with children'
+FieldWithChildren.storyName = 'Field with children';
+export default {
+  title: 'Input/Form/Field with children'
 };

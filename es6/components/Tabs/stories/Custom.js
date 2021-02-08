@@ -2,10 +2,23 @@ import React from 'react';
 import { css } from 'styled-components';
 import { CircleInformation } from "grommet-icons/es6/icons/CircleInformation";
 import { Currency } from "grommet-icons/es6/icons/Currency";
-import { Grommet, FormField, Tab, Tabs, TextInput } from 'grommet';
+import { Box, Grommet, FormField, Tab, Tabs, Text, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
-import { RichTabTitle } from './Rich';
+
+var RichTabTitle = function RichTabTitle(_ref) {
+  var icon = _ref.icon,
+      label = _ref.label;
+  return /*#__PURE__*/React.createElement(Box, {
+    direction: "row",
+    align: "center",
+    gap: "xsmall",
+    margin: "xsmall"
+  }, icon, /*#__PURE__*/React.createElement(Text, {
+    size: "small"
+  }, /*#__PURE__*/React.createElement("strong", null, label)));
+};
+
 var customTheme = deepMerge(grommet, {
   global: {
     edgeSize: {
@@ -34,8 +47,8 @@ var customTheme = deepMerge(grommet, {
       bottom: undefined,
       horizontal: 'small'
     },
-    extend: function extend(_ref) {
-      var theme = _ref.theme;
+    extend: function extend(_ref2) {
+      var theme = _ref2.theme;
       return css(["border-radius:4px;box-shadow:0px 1px 5px rgba(0,0,0,0.5);"]);
     }
   },
@@ -44,14 +57,14 @@ var customTheme = deepMerge(grommet, {
     gap: 'medium',
     header: {
       background: 'dark-2',
-      extend: function extend(_ref2) {
-        var theme = _ref2.theme;
+      extend: function extend(_ref3) {
+        var theme = _ref3.theme;
         return css(["padding:10px;box-shadow:0px 3px 8px rgba(0,0,0,0.50);"]);
       }
     },
     panel: {
-      extend: function extend(_ref3) {
-        var theme = _ref3.theme;
+      extend: function extend(_ref4) {
+        var theme = _ref4.theme;
         return css(["padding:48px;box-shadow:0px 3px 8px rgba(0,0,0,0.50);"]);
       }
     }
@@ -90,4 +103,7 @@ var CustomTabs = function CustomTabs() {
 
 export var Custom = function Custom() {
   return /*#__PURE__*/React.createElement(CustomTabs, null);
+};
+export default {
+  title: 'Controls/Tabs/Custom'
 };

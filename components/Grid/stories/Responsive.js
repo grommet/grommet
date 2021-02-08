@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.ResponsiveGrid = void 0;
+exports["default"] = exports.ResponsiveGrid = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -198,6 +198,8 @@ var ResponsiveGrid = function ResponsiveGrid() {
 };
 
 exports.ResponsiveGrid = ResponsiveGrid;
-ResponsiveGrid.story = {
-  name: 'Responsive grid'
+ResponsiveGrid.storyName = 'Responsive grid';
+var _default = {
+  title: 'Layout/Grid/Responsive grid'
 };
+exports["default"] = _default;

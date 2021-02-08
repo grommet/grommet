@@ -80,3 +80,6 @@ var IconTabs = function IconTabs() {
 export var Icon = function Icon() {
   return /*#__PURE__*/React.createElement(IconTabs, null);
 };
+export default {
+  title: 'Controls/Tabs/Icon'
+};

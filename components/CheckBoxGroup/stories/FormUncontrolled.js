@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.FormUncontrolled = void 0;
+exports["default"] = exports.FormUncontrolled = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -63,6 +63,8 @@ var FormUncontrolled = function FormUncontrolled() {
 };
 
 exports.FormUncontrolled = FormUncontrolled;
-FormUncontrolled.story = {
-  name: 'Form uncontrolled'
+FormUncontrolled.storyName = 'Form uncontrolled';
+var _default = {
+  title: 'Input/CheckBoxGroup/Form uncontrolled'
 };
+exports["default"] = _default;

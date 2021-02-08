@@ -32,3 +32,6 @@ var SimpleNav = function SimpleNav() {
 export var Simple = function Simple() {
   return /*#__PURE__*/React.createElement(SimpleNav, null);
 };
+export default {
+  title: 'Controls/Nav/Simple'
+};

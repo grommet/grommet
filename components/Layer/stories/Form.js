@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.FormLayer = void 0;
+exports["default"] = exports.FormLayer = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -101,11 +101,13 @@ var FormLayer = function FormLayer() {
 };
 
 exports.FormLayer = FormLayer;
-FormLayer.story = {
-  name: 'Form',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+FormLayer.storyName = 'Form';
+FormLayer.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Layout/Layer/Form'
+};
+exports["default"] = _default;

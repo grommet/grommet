@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Default = void 0;
+exports["default"] = exports.Default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -27,10 +27,12 @@ var Default = function Default() {
 };
 
 exports.Default = Default;
-Default.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Default.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Controls/Anchor/Default'
+};
+exports["default"] = _default;

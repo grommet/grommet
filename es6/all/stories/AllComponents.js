@@ -3,7 +3,6 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 import React, { useMemo, useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Grommet, Accordion, AccordionPanel, Anchor, Box, Button, Calendar, Chart, CheckBox, Clock, DataTable, Diagram, Distribution, FormField, Grid, Heading, MaskedInput, Menu, Meter, Paragraph, RadioButtonGroup, RangeInput, RangeSelector, Select, Stack, Tab, Tabs, Text, TextArea, TextInput, Video } from 'grommet';
 import { FormNext } from "grommet-icons/es6/icons/FormNext";
 import { grommet } from 'grommet/themes';
@@ -434,6 +433,9 @@ var Components = function Components() {
   }, content))));
 };
 
-storiesOf('All', module).add('All', function () {
+export var All = function All() {
   return /*#__PURE__*/React.createElement(Components, null);
-});
+};
+export default {
+  title: 'Others/All'
+};

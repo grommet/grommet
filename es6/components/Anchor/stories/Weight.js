@@ -38,3 +38,6 @@ var WeightAnchor = function WeightAnchor() {
 export var Weight = function Weight() {
   return /*#__PURE__*/React.createElement(WeightAnchor, null);
 };
+export default {
+  title: 'Controls/Anchor/Weight'
+};

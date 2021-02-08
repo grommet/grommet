@@ -3,7 +3,7 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Box, DataChart, Grommet, Stack } from 'grommet';
 import { grommet } from 'grommet/themes';
-export var keyFrameExampleOne = keyframes(["0%{width:200px;background-color:#FFFFFF;}100%{width:0px;background-color:#FFFFFF;}"]);
+var keyFrameExampleOne = keyframes(["0%{width:200px;background-color:#FFFFFF;}100%{width:0px;background-color:#FFFFFF;}"]);
 var AnimatedBox = styled(Box).withConfig({
   displayName: "Prediction__AnimatedBox",
   componentId: "sc-2m8o8b-0"
@@ -140,4 +140,7 @@ export var Prediction = function Prediction() {
     width: "small",
     height: "small"
   }))));
+};
+export default {
+  title: 'Visualizations/DataChart/Prediction'
 };

@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.ChildrenRender = void 0;
+exports["default"] = exports.ChildrenRender = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -112,6 +112,8 @@ var ChildrenRender = function ChildrenRender() {
 };
 
 exports.ChildrenRender = ChildrenRender;
-ChildrenRender.story = {
-  name: 'Children render'
+ChildrenRender.storyName = 'Children render';
+var _default = {
+  title: 'Input/Select/Children render'
 };
+exports["default"] = _default;

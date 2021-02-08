@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.FormatInline = void 0;
+exports["default"] = exports.FormatInline = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -36,6 +36,8 @@ var FormatInline = function FormatInline() {
 };
 
 exports.FormatInline = FormatInline;
-FormatInline.story = {
-  name: 'Format inline'
+FormatInline.storyName = 'Format inline';
+var _default = {
+  title: 'Input/DateInput/Format inline'
 };
+exports["default"] = _default;

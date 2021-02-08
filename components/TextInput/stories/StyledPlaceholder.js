@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.StyledPlaceholder = void 0;
+exports["default"] = exports.StyledPlaceholder = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -22,6 +22,8 @@ var StyledPlaceholder = function StyledPlaceholder() {
 };
 
 exports.StyledPlaceholder = StyledPlaceholder;
-StyledPlaceholder.story = {
-  name: 'Styled placeholder'
+StyledPlaceholder.storyName = 'Styled placeholder';
+var _default = {
+  title: 'Input/TextInput/Styled placeholder'
 };
+exports["default"] = _default;

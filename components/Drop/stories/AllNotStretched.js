@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.AllNotStretched = void 0;
+exports["default"] = exports.AllNotStretched = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -241,6 +241,8 @@ var AllNotStretched = function AllNotStretched() {
 };
 
 exports.AllNotStretched = AllNotStretched;
-AllNotStretched.story = {
-  name: 'All not stretched'
+AllNotStretched.storyName = 'All not stretched';
+var _default = {
+  title: 'Controls/Drop/All not stretched'
 };
+exports["default"] = _default;

@@ -20,3 +20,6 @@ export var Simple = function Simple() {
     onChange: onChange
   })));
 };
+export default {
+  title: 'Input/RangeInput/Simple'
+};

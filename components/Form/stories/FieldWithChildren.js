@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.FieldWithChildren = void 0;
+exports["default"] = exports.FieldWithChildren = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -136,6 +136,8 @@ var FieldWithChildren = function FieldWithChildren() {
 };
 
 exports.FieldWithChildren = FieldWithChildren;
-FieldWithChildren.story = {
-  name: 'Field with children'
+FieldWithChildren.storyName = 'Field with children';
+var _default = {
+  title: 'Input/Form/Field with children'
 };
+exports["default"] = _default;

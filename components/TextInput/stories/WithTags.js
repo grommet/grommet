@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.WithTags = void 0;
+exports["default"] = exports.WithTags = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -184,6 +184,8 @@ var WithTags = function WithTags() {
 };
 
 exports.WithTags = WithTags;
-WithTags.story = {
-  name: 'With tags'
+WithTags.storyName = 'With tags';
+var _default = {
+  title: 'Input/TextInput/With tags'
 };
+exports["default"] = _default;

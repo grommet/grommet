@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.ControlledDataTable = void 0;
+exports["default"] = exports.ControlledDataTable = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -78,6 +78,8 @@ var ControlledDataTable = function ControlledDataTable() {
 };
 
 exports.ControlledDataTable = ControlledDataTable;
-ControlledDataTable.story = {
-  name: 'Controlled'
+ControlledDataTable.storyName = 'Controlled';
+var _default = {
+  title: 'Visualizations/DataTable/Controlled'
 };
+exports["default"] = _default;

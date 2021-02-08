@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.AggregateValidation = void 0;
+exports["default"] = exports.AggregateValidation = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -76,6 +76,8 @@ var AggregateValidation = function AggregateValidation() {
 };
 
 exports.AggregateValidation = AggregateValidation;
-AggregateValidation.story = {
-  name: 'Aggregate validation'
+AggregateValidation.storyName = 'Aggregate validation';
+var _default = {
+  title: 'Input/Form/Aggregate validation'
 };
+exports["default"] = _default;

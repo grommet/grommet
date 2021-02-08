@@ -25,6 +25,7 @@ export var NColumnGrid = function NColumnGrid() {
     background: "brand"
   }, "Item 6")));
 };
-NColumnGrid.story = {
-  name: 'N-column layout'
+NColumnGrid.storyName = 'N-column layout';
+export default {
+  title: 'Layout/Grid/N-column layout'
 };

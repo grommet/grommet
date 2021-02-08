@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Active = exports.Plain = void 0;
+exports["default"] = exports.Plain = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -13,9 +13,7 @@ var _themes = require("grommet/themes");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-var PlainButtons = function PlainButtons(props) {
+var Plain = function Plain() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "large",
     gap: "large"
@@ -23,10 +21,10 @@ var PlainButtons = function PlainButtons(props) {
     theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, _extends({
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     hoverIndicator: "light-1",
     onClick: function onClick() {}
-  }, props), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "small",
     direction: "row",
     align: "center",
@@ -45,10 +43,10 @@ var PlainButtons = function PlainButtons(props) {
     }
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, _extends({
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
     hoverIndicator: "light-1",
     onClick: function onClick() {}
-  }, props), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     pad: "small",
     direction: "row",
     align: "center",
@@ -56,16 +54,8 @@ var PlainButtons = function PlainButtons(props) {
   }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Add, null), /*#__PURE__*/_react["default"].createElement(_grommet.Text, null, "Kind"))))));
 };
 
-var Plain = function Plain() {
-  return /*#__PURE__*/_react["default"].createElement(PlainButtons, null);
-};
-
 exports.Plain = Plain;
-
-var Active = function Active() {
-  return /*#__PURE__*/_react["default"].createElement(PlainButtons, {
-    active: true
-  });
+var _default = {
+  title: 'Controls/Button/Plain'
 };
-
-exports.Active = Active;
+exports["default"] = _default;

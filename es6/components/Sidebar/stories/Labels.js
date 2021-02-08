@@ -109,3 +109,6 @@ export var Labels = function Labels() {
     }
   }, /*#__PURE__*/React.createElement(MainNavigation, null))));
 };
+export default {
+  title: 'Layout/Sidebar/Labels'
+};

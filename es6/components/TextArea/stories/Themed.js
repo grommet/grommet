@@ -33,3 +33,6 @@ export var Themed = function Themed() {
     fill: true
   })));
 };
+export default {
+  title: 'Input/TextArea/Themed'
+};

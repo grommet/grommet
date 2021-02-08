@@ -52,6 +52,7 @@ export var RequiredLabel = function RequiredLabel() {
     color: "status-critical"
   }, "* Required Field"))));
 };
-RequiredLabel.story = {
-  name: 'Required label'
+RequiredLabel.storyName = 'Required label';
+export default {
+  title: 'Input/Form/Required label'
 };

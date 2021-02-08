@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Detail = void 0;
+exports["default"] = exports.Detail = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -52,3 +52,7 @@ var Detail = function Detail() {
 };
 
 exports.Detail = Detail;
+var _default = {
+  title: 'Visualizations/DataChart/Detail'
+};
+exports["default"] = _default;

@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.ControlledLazy = void 0;
+exports["default"] = exports.ControlledLazy = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -133,12 +133,14 @@ var ControlledLazy = function ControlledLazy() {
 };
 
 exports.ControlledLazy = ControlledLazy;
-ControlledLazy.story = {
-  name: 'Controlled lazy',
-  parameters: {
-    // chromatic disabled because snapshot is the same as Controlled
-    chromatic: {
-      disable: true
-    }
+ControlledLazy.storyName = 'Controlled lazy';
+ControlledLazy.parameters = {
+  // chromatic disabled because snapshot is the same as Controlled
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Input/Form/Controlled lazy'
+};
+exports["default"] = _default;

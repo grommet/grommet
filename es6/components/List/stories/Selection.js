@@ -32,3 +32,6 @@ export var Selection = function Selection() {
     }
   })));
 };
+export default {
+  title: 'Visualizations/List/Selection'
+};

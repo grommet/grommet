@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.GradientColorBox = void 0;
+exports["default"] = exports.GradientColorBox = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -26,6 +26,8 @@ var GradientColorBox = function GradientColorBox() {
 };
 
 exports.GradientColorBox = GradientColorBox;
-GradientColorBox.story = {
-  name: 'Gradient'
+GradientColorBox.storyName = 'Gradient';
+var _default = {
+  title: 'Layout/Box/Gradient'
 };
+exports["default"] = _default;

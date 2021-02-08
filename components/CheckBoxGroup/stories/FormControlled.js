@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.FormControlled = void 0;
+exports["default"] = exports.FormControlled = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -50,6 +50,8 @@ var FormControlled = function FormControlled() {
 };
 
 exports.FormControlled = FormControlled;
-FormControlled.story = {
-  name: 'Form controlled'
+FormControlled.storyName = 'Form controlled';
+var _default = {
+  title: 'Input/CheckBoxGroup/Form controlled'
 };
+exports["default"] = _default;

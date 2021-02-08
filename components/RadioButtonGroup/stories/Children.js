@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Children = void 0;
+exports["default"] = exports.Children = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -48,3 +48,7 @@ var Children = function Children() {
 };
 
 exports.Children = Children;
+var _default = {
+  title: 'Input/RadioButtonGroup/Children'
+};
+exports["default"] = _default;

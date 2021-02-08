@@ -67,3 +67,6 @@ export var Multiple = function Multiple() {
     onClick: function onClick() {}
   }))));
 };
+export default {
+  title: 'Controls/Button/Multiple'
+};

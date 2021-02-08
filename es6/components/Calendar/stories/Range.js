@@ -12,3 +12,6 @@ export var Range = function Range() {
     range: true
   })));
 };
+export default {
+  title: 'Visualizations/Calendar/Range'
+};

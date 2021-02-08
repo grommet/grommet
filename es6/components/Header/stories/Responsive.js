@@ -54,3 +54,6 @@ export var Responsive = function Responsive() {
     }));
   })));
 };
+export default {
+  title: 'Layout/Header/Responsive'
+};

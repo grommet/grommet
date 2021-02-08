@@ -34,3 +34,6 @@ export var Children = function Children() {
     }, /*#__PURE__*/React.createElement(Icon, null));
   })));
 };
+export default {
+  title: 'Input/RadioButtonGroup/Children'
+};

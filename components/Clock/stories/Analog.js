@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Analog = void 0;
+exports["default"] = exports.Analog = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -34,10 +34,12 @@ var Analog = function Analog() {
 };
 
 exports.Analog = Analog;
-Analog.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Analog.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Visualizations/Clock/Analog'
+};
+exports["default"] = _default;

@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Format = void 0;
+exports["default"] = exports.Format = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -37,3 +37,7 @@ var Format = function Format() {
 };
 
 exports.Format = Format;
+var _default = {
+  title: 'Input/DateInput/Format'
+};
+exports["default"] = _default;

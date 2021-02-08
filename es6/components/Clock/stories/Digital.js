@@ -46,10 +46,11 @@ export var Digital = function Digital() {
     size: "customSize"
   }))));
 };
-Digital.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Digital.parameters = {
+  chromatic: {
+    disable: true
   }
+};
+export default {
+  title: 'Visualizations/Clock/Digital'
 };

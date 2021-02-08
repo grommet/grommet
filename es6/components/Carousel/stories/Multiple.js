@@ -44,3 +44,6 @@ var View2 = function View2() {
 export var Multi = function Multi() {
   return /*#__PURE__*/React.createElement(Grommet, null, /*#__PURE__*/React.createElement(Carousel, null, /*#__PURE__*/React.createElement(View0, null), /*#__PURE__*/React.createElement(View1, null), /*#__PURE__*/React.createElement(View2, null)));
 };
+export default {
+  title: 'Media/Carousel/Multi'
+};

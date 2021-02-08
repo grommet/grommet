@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.CustomHeaderCalendar = void 0;
+exports["default"] = exports.CustomHeaderCalendar = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -62,6 +62,8 @@ var CustomHeaderCalendar = function CustomHeaderCalendar() {
 };
 
 exports.CustomHeaderCalendar = CustomHeaderCalendar;
-CustomHeaderCalendar.story = {
-  name: 'Header'
+CustomHeaderCalendar.storyName = 'Header';
+var _default = {
+  title: 'Visualizations/Calendar/Header'
 };
+exports["default"] = _default;

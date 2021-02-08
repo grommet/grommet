@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.FieldBorderPosition = void 0;
+exports["default"] = exports.FieldBorderPosition = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -155,6 +155,8 @@ var FieldBorderPosition = function FieldBorderPosition() {
 };
 
 exports.FieldBorderPosition = FieldBorderPosition;
-FieldBorderPosition.story = {
-  name: 'Field border position'
+FieldBorderPosition.storyName = 'Field border position';
+var _default = {
+  title: 'Input/Form/Field border position'
 };
+exports["default"] = _default;

@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Uncontrolled = void 0;
+exports["default"] = exports.Uncontrolled = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -30,10 +30,12 @@ var Uncontrolled = function Uncontrolled() {
 };
 
 exports.Uncontrolled = Uncontrolled;
-Uncontrolled.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Uncontrolled.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Input/TextInput/Uncontrolled'
+};
+exports["default"] = _default;

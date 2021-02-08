@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Circle = void 0;
+exports["default"] = exports.Circle = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -44,3 +44,7 @@ var Circle = function Circle() {
 };
 
 exports.Circle = Circle;
+var _default = {
+  title: 'Visualizations/Meter/Circle'
+};
+exports["default"] = _default;

@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.CustomSizeCalendar = void 0;
+exports["default"] = exports.CustomSizeCalendar = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -43,6 +43,8 @@ var CustomSizeCalendar = function CustomSizeCalendar() {
 };
 
 exports.CustomSizeCalendar = CustomSizeCalendar;
-CustomSizeCalendar.story = {
-  name: 'Heading size'
+CustomSizeCalendar.storyName = 'Heading size';
+var _default = {
+  title: "Visualizations/Calendar/Heading size"
 };
+exports["default"] = _default;

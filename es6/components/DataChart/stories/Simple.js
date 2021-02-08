@@ -22,3 +22,6 @@ export var Simple = function Simple() {
     series: "percent"
   })));
 };
+export default {
+  title: 'Visualizations/DataChart/Simple'
+};

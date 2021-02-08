@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grommet, Box, DataTable, Heading } from 'grommet';
 import { grommet } from 'grommet/themes';
-export var DATA = [{
+var DATA = [{
   location: 'Winston Salem',
   date: '2018-01-09',
   percent: 24,
@@ -77,6 +77,7 @@ export var ResizableDataTable = function ResizableDataTable() {
     resizeable: true
   })));
 };
-ResizableDataTable.story = {
-  name: 'Resizable columns'
+ResizableDataTable.storyName = 'Resizable columns';
+export default {
+  title: 'Visualizations/DataTable/Resizable columns'
 };

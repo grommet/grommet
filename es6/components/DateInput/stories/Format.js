@@ -25,3 +25,6 @@ export var Format = function Format() {
     onChange: onChange
   }))));
 };
+export default {
+  title: 'Input/DateInput/Format'
+};

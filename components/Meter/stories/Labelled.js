@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Labelled = void 0;
+exports["default"] = exports.Labelled = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -43,3 +43,7 @@ var Labelled = function Labelled() {
 };
 
 exports.Labelled = Labelled;
+var _default = {
+  title: 'Visualizations/Meter/Labelled'
+};
+exports["default"] = _default;

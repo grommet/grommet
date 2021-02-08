@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Animation = void 0;
+exports["default"] = exports.Animation = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -34,3 +34,7 @@ var Animation = function Animation() {
 };
 
 exports.Animation = Animation;
+var _default = {
+  title: 'Layout/Box/Animation'
+};
+exports["default"] = _default;

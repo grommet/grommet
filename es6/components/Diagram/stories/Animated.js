@@ -139,3 +139,6 @@ export var Animated = function Animated() {
     connections: connections
   })))));
 };
+export default {
+  title: 'Visualizations/Diagram/Animated'
+};

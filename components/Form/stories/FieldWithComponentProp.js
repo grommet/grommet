@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.FieldWithComponentProp = void 0;
+exports["default"] = exports.FieldWithComponentProp = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -111,6 +111,8 @@ var FieldWithComponentProp = function FieldWithComponentProp() {
 };
 
 exports.FieldWithComponentProp = FieldWithComponentProp;
-FieldWithComponentProp.story = {
-  name: 'Field with component prop'
+FieldWithComponentProp.storyName = 'Field with component prop';
+var _default = {
+  title: 'Input/Form/Field with component prop'
 };
+exports["default"] = _default;

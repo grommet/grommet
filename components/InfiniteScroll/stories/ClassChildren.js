@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.ClassChildrenInfiniteScroll = void 0;
+exports["default"] = exports.ClassChildrenInfiniteScroll = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -43,6 +43,8 @@ var ClassChildrenInfiniteScroll = function ClassChildrenInfiniteScroll(props) {
 };
 
 exports.ClassChildrenInfiniteScroll = ClassChildrenInfiniteScroll;
-ClassChildrenInfiniteScroll.story = {
-  name: 'Class children'
+ClassChildrenInfiniteScroll.storyName = 'Class children';
+var _default = {
+  title: 'Utilities/InfiniteScroll/Class children'
 };
+exports["default"] = _default;

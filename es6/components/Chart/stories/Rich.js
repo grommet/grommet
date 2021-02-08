@@ -133,3 +133,6 @@ export var Rich = function Rich() {
     thickness: "small"
   })))));
 };
+export default {
+  title: 'Visualizations/Chart/Rich'
+};

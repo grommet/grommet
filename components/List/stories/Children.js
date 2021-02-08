@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Children = exports.data = void 0;
+exports["default"] = exports.Children = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -24,7 +24,6 @@ var data = [{
   city: 'San Diego',
   state: 'California'
 }];
-exports.data = data;
 
 var Children = function Children() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
@@ -58,3 +57,7 @@ var Children = function Children() {
 };
 
 exports.Children = Children;
+var _default = {
+  title: 'Visualizations/List/Children'
+};
+exports["default"] = _default;

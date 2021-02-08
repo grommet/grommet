@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.NColumnGrid = void 0;
+exports["default"] = exports.NColumnGrid = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -37,6 +37,8 @@ var NColumnGrid = function NColumnGrid() {
 };
 
 exports.NColumnGrid = NColumnGrid;
-NColumnGrid.story = {
-  name: 'N-column layout'
+NColumnGrid.storyName = 'N-column layout';
+var _default = {
+  title: 'Layout/Grid/N-column layout'
 };
+exports["default"] = _default;

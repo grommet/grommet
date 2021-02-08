@@ -10,6 +10,7 @@ export var StyledPlaceholder = function StyledPlaceholder() {
     placeholder: /*#__PURE__*/React.createElement(Text, null, "placeholder")
   }))));
 };
-StyledPlaceholder.story = {
-  name: 'Styled placeholder'
+StyledPlaceholder.storyName = 'Styled placeholder';
+export default {
+  title: 'Input/TextInput/Styled placeholder'
 };

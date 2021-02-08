@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Plain = exports.Uncontrolled = void 0;
+exports["default"] = exports.Uncontrolled = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -68,11 +68,7 @@ var Uncontrolled = function Uncontrolled() {
 };
 
 exports.Uncontrolled = Uncontrolled;
-
-var Plain = function Plain() {
-  return /*#__PURE__*/_react["default"].createElement(UncontrolledTabs, {
-    plain: true
-  });
+var _default = {
+  title: 'Controls/Tabs/Uncontrolled'
 };
-
-exports.Plain = Plain;
+exports["default"] = _default;

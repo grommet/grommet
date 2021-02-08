@@ -6,8 +6,7 @@ import { grommet } from 'grommet/themes';
 var allItems = Array(2000).fill().map(function (_, i) {
   return "item " + (i + 1);
 });
-
-var Example = function Example(props) {
+export var Simple = function Simple(props) {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(InfiniteScroll, _extends({
@@ -23,25 +22,6 @@ var Example = function Example(props) {
     }, /*#__PURE__*/React.createElement(Text, null, item));
   })));
 };
-
-export var Simple = function Simple() {
-  return /*#__PURE__*/React.createElement(Example, null);
-};
-export var Show = function Show() {
-  return /*#__PURE__*/React.createElement(Example, {
-    show: 117
-  });
-};
-export var Marker = function Marker() {
-  return /*#__PURE__*/React.createElement(Example, {
-    renderMarker: function renderMarker(marker) {
-      return /*#__PURE__*/React.createElement(Box, {
-        pad: "medium",
-        background: "accent-1"
-      }, marker);
-    }
-  });
-};
-Show.story = {
-  name: 'Show 118th item'
+export default {
+  title: 'Utilities/InfiniteScroll/Simple'
 };

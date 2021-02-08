@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Nested = void 0;
+exports["default"] = exports.Nested = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -130,10 +130,12 @@ var Nested = function Nested() {
 };
 
 exports.Nested = Nested;
-Nested.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Nested.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Utilities/Collapsible/Nested'
+};
+exports["default"] = _default;

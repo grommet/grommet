@@ -11,10 +11,11 @@ export var Color = function Color() {
     color: "graph-1"
   })));
 };
-Color.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Color.parameters = {
+  chromatic: {
+    disable: true
   }
+};
+export default {
+  title: 'Visualizations/WorldMap/Color'
 };

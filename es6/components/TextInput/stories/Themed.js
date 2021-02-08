@@ -70,3 +70,6 @@ export var Themed = function Themed() {
     placeholder: /*#__PURE__*/React.createElement("span", null, "Enter something...")
   }))));
 };
+export default {
+  title: 'Input/TextInput/Themed'
+};

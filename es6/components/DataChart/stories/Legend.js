@@ -47,3 +47,6 @@ export var Legend = function Legend() {
     }
   })));
 };
+export default {
+  title: 'Visualizations/DataChart/Legend'
+};

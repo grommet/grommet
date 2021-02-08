@@ -29,10 +29,11 @@ export var Default = function Default(props) {
     justify: "center"
   }, /*#__PURE__*/React.createElement(Text, null, "This is a box inside a Collapsible component"))), /*#__PURE__*/React.createElement(Text, null, "This is other content outside the Collapsible box")));
 };
-Default.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Default.parameters = {
+  chromatic: {
+    disable: true
   }
+};
+export default {
+  title: 'Utilities/Collapsible/Default'
 };

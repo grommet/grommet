@@ -50,3 +50,6 @@ export var Indeterminate = function Indeterminate() {
     });
   }))));
 };
+export default {
+  title: 'Input/CheckBox/Indeterminate'
+};

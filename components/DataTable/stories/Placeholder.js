@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Placeholder = void 0;
+exports["default"] = exports.Placeholder = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -60,3 +60,7 @@ var Placeholder = function Placeholder() {
 };
 
 exports.Placeholder = Placeholder;
+var _default = {
+  title: 'Visualizations/DataTable/Placeholder'
+};
+exports["default"] = _default;

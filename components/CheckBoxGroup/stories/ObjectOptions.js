@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.ObjectOptions = void 0;
+exports["default"] = exports.ObjectOptions = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -68,6 +68,8 @@ var ObjectOptions = function ObjectOptions() {
 };
 
 exports.ObjectOptions = ObjectOptions;
-ObjectOptions.story = {
-  name: 'Object options'
+ObjectOptions.storyName = 'Object options';
+var _default = {
+  title: 'Input/CheckBoxGroup/Object options'
 };
+exports["default"] = _default;

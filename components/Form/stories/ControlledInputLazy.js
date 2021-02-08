@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.ControlledInputLazy = void 0;
+exports["default"] = exports.ControlledInputLazy = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -177,6 +177,8 @@ var ControlledInputLazy = function ControlledInputLazy() {
 };
 
 exports.ControlledInputLazy = ControlledInputLazy;
-ControlledInputLazy.story = {
-  name: 'Controlled input lazy'
+ControlledInputLazy.storyName = 'Controlled input lazy';
+var _default = {
+  title: 'Input/Form/Controlled input lazy'
 };
+exports["default"] = _default;

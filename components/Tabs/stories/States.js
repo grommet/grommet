@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.States = void 0;
+exports["default"] = exports.States = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -150,3 +150,7 @@ var States = function States() {
 };
 
 exports.States = States;
+var _default = {
+  title: 'Controls/Tabs/States'
+};
+exports["default"] = _default;

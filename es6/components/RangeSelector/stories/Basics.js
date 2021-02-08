@@ -1,15 +1,9 @@
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 import React, { useState } from 'react';
 import { Grommet, Box, RangeSelector, Stack, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var SimpleRangeSelector = function SimpleRangeSelector(_ref) {
+export var Simple = function Simple(_ref) {
   var _ref$direction = _ref.direction,
-      direction = _ref$direction === void 0 ? 'horizontal' : _ref$direction,
-      rest = _objectWithoutPropertiesLoose(_ref, ["direction"]);
+      direction = _ref$direction === void 0 ? 'horizontal' : _ref$direction;
 
   var _useState = useState([12, 16]),
       range = _useState[0],
@@ -40,26 +34,15 @@ var SimpleRangeSelector = function SimpleRangeSelector(_ref) {
         fontFamily: 'monospace'
       }
     }, value));
-  })), /*#__PURE__*/React.createElement(RangeSelector, _extends({
+  })), /*#__PURE__*/React.createElement(RangeSelector, {
     direction: direction,
     min: 10,
     max: 20,
     size: "full",
     values: range,
     onChange: onChange
-  }, rest)))));
+  }))));
 };
-
-export var Simple = function Simple() {
-  return /*#__PURE__*/React.createElement(SimpleRangeSelector, null);
-};
-export var Step = function Step() {
-  return /*#__PURE__*/React.createElement(SimpleRangeSelector, {
-    step: 2
-  });
-};
-export var Vertical = function Vertical() {
-  return /*#__PURE__*/React.createElement(SimpleRangeSelector, {
-    direction: "vertical"
-  });
+export default {
+  title: 'Input/RangeSelector/Simple'
 };

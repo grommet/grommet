@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Selection = void 0;
+exports["default"] = exports.Selection = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -44,3 +44,7 @@ var Selection = function Selection() {
 };
 
 exports.Selection = Selection;
+var _default = {
+  title: 'Visualizations/List/Selection'
+};
+exports["default"] = _default;

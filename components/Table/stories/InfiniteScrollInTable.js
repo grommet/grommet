@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.InfiniteScrollInTable = void 0;
+exports["default"] = exports.InfiniteScrollInTable = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -70,11 +70,13 @@ var InfiniteScrollInTable = function InfiniteScrollInTable() {
 };
 
 exports.InfiniteScrollInTable = InfiniteScrollInTable;
-InfiniteScrollInTable.story = {
-  name: 'InfiniteScroll',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+InfiniteScrollInTable.storyName = 'InfiniteScroll';
+InfiniteScrollInTable.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Visualizations/Table/InfiniteScroll'
+};
+exports["default"] = _default;

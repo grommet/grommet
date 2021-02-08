@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.CustomSearch = void 0;
+exports["default"] = exports.CustomSearch = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -231,6 +231,8 @@ var CustomSearch = function CustomSearch() {
 };
 
 exports.CustomSearch = CustomSearch;
-CustomSearch.story = {
-  name: 'Custom search'
+CustomSearch.storyName = 'Custom search';
+var _default = {
+  title: 'Input/Select/Custom search'
 };
+exports["default"] = _default;

@@ -33,3 +33,6 @@ export var Action = function Action() {
     }
   })));
 };
+export default {
+  title: 'Visualizations/List/Action'
+};

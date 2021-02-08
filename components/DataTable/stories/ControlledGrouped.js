@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.ControlledGroupedDataTable = void 0;
+exports["default"] = exports.ControlledGroupedDataTable = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -44,6 +44,8 @@ var ControlledGroupedDataTable = function ControlledGroupedDataTable() {
 };
 
 exports.ControlledGroupedDataTable = ControlledGroupedDataTable;
-ControlledGroupedDataTable.story = {
-  name: 'Controlled grouped'
+ControlledGroupedDataTable.storyName = 'Controlled grouped';
+var _default = {
+  title: 'Visualizations/DataTable/Controlled grouped'
 };
+exports["default"] = _default;

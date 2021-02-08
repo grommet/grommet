@@ -29,6 +29,7 @@ export var RTLLayer = function RTLLayer() {
     pad: "xlarge"
   }, "text"))));
 };
-RTLLayer.story = {
-  name: 'RTL'
+RTLLayer.storyName = 'RTL';
+export default {
+  title: 'Layout/Layer/RTL'
 };

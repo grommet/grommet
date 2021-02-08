@@ -151,11 +151,11 @@ export var Clear = function Clear() {
     direction: "row"
   }, /*#__PURE__*/React.createElement(ClearForm, null), /*#__PURE__*/React.createElement(ClearCustomTheme, null))));
 };
-Clear.story = {
-  name: 'Clear',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Clear.parameters = {
+  chromatic: {
+    disable: true
   }
+};
+export default {
+  title: 'Input/Select/Clear'
 };

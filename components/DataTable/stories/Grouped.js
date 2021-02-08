@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.GroupedDataTable = void 0;
+exports["default"] = exports.GroupedDataTable = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -37,6 +37,8 @@ var GroupedDataTable = function GroupedDataTable() {
 };
 
 exports.GroupedDataTable = GroupedDataTable;
-GroupedDataTable.story = {
-  name: 'Grouped'
+GroupedDataTable.storyName = 'Grouped';
+var _default = {
+  title: 'Visualizations/DataTable/Grouped'
 };
+exports["default"] = _default;

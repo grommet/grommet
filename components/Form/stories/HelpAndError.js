@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.HelpAndError = void 0;
+exports["default"] = exports.HelpAndError = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -31,6 +31,8 @@ var HelpAndError = function HelpAndError() {
 };
 
 exports.HelpAndError = HelpAndError;
-HelpAndError.story = {
-  name: 'Help and error'
+HelpAndError.storyName = 'Help and error';
+var _default = {
+  title: 'Input/Form/Help and error'
 };
+exports["default"] = _default;

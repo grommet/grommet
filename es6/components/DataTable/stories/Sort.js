@@ -31,3 +31,6 @@ export var Sort = function Sort() {
     resizeable: true
   })));
 };
+export default {
+  title: 'Visualizations/DataTable/Sort'
+};

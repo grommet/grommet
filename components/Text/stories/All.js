@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.All = void 0;
+exports["default"] = exports.All = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -34,3 +34,7 @@ var All = function All() {
 };
 
 exports.All = All;
+var _default = {
+  title: 'Type/Text/All'
+};
+exports["default"] = _default;

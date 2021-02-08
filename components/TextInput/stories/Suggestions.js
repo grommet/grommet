@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Suggestions = void 0;
+exports["default"] = exports.Suggestions = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -58,10 +58,12 @@ var Suggestions = function Suggestions() {
 };
 
 exports.Suggestions = Suggestions;
-Suggestions.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Suggestions.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Input/TextInput/Suggestions'
+};
+exports["default"] = _default;

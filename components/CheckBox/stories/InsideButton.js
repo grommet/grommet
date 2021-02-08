@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.InsideButton = void 0;
+exports["default"] = exports.InsideButton = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -41,6 +41,8 @@ var InsideButton = function InsideButton() {
 };
 
 exports.InsideButton = InsideButton;
-InsideButton.story = {
-  name: 'Inside a Button'
+InsideButton.storyName = 'Inside a Button';
+var _default = {
+  title: 'Input/CheckBox/Inside a Button'
 };
+exports["default"] = _default;

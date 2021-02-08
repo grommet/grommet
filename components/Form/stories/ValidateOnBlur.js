@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.ValidateOnBlur = void 0;
+exports["default"] = exports.ValidateOnBlur = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -76,6 +76,8 @@ var ValidateOnBlur = function ValidateOnBlur() {
 };
 
 exports.ValidateOnBlur = ValidateOnBlur;
-ValidateOnBlur.story = {
-  name: 'Validate on blur'
+ValidateOnBlur.storyName = 'Validate on blur';
+var _default = {
+  title: 'Input/Form/Validate on blur'
 };
+exports["default"] = _default;

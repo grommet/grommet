@@ -50,3 +50,6 @@ export var Axis = function Axis() {
     }
   })));
 };
+export default {
+  title: 'Visualizations/DataChart/Axis'
+};

@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Simple = void 0;
+exports["default"] = exports.Simple = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -21,11 +21,13 @@ var Simple = function Simple() {
 };
 
 exports.Simple = Simple;
-Simple.story = {
-  parameters: {
-    // chromatic disabled because snapshot is the same as SelectPlace
-    chromatic: {
-      disable: true
-    }
+Simple.parameters = {
+  // chromatic disabled because snapshot is the same as SelectPlace
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Visualizations/WorldMap/Simple'
+};
+exports["default"] = _default;

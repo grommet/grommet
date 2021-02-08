@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Color = void 0;
+exports["default"] = exports.Color = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -23,10 +23,12 @@ var Color = function Color() {
 };
 
 exports.Color = Color;
-Color.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Color.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Visualizations/WorldMap/Color'
+};
+exports["default"] = _default;

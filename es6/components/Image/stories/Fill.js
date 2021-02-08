@@ -17,15 +17,8 @@ export var Fill = function Fill() {
     fit: "cover",
     fill: true,
     src: "//v2.grommet.io/assets/IMG_4245.jpg"
-  }))), /*#__PURE__*/React.createElement(Box, {
-    height: "small",
-    width: "small",
-    border: true
-  }, /*#__PURE__*/React.createElement(Anchor, {
-    href: "#"
-  }, /*#__PURE__*/React.createElement(Image, {
-    fit: "contain",
-    fill: true,
-    src: "//v2.grommet.io/assets/IMG_4245.jpg"
   })))));
+};
+export default {
+  title: 'Media/Image/Fill'
 };

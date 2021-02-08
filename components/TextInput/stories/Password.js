@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Password = void 0;
+exports["default"] = exports.Password = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -52,3 +52,7 @@ var Password = function Password() {
 };
 
 exports.Password = Password;
+var _default = {
+  title: 'Input/TextInput/Password'
+};
+exports["default"] = _default;

@@ -162,3 +162,6 @@ export var Clickable = function Clickable() {
     }, value.message)));
   }))));
 };
+export default {
+  title: 'Layout/Card/Clickable'
+};

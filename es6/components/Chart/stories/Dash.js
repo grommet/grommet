@@ -34,3 +34,6 @@ export var Dash = function Dash() {
     values: [[10, 20], [20, 30], [30, 15]]
   })));
 };
+export default {
+  title: 'Visualizations/Chart/Dash'
+};

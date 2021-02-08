@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Background = void 0;
+exports["default"] = exports.Background = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -52,3 +52,7 @@ var Background = function Background() {
 };
 
 exports.Background = Background;
+var _default = {
+  title: 'Utilities/Grommet/Background'
+};
+exports["default"] = _default;

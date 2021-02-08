@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.ResponsiveTip = void 0;
+exports["default"] = exports.ResponsiveTip = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -143,11 +143,13 @@ var ResponsiveTip = function ResponsiveTip() {
 };
 
 exports.ResponsiveTip = ResponsiveTip;
-ResponsiveTip.story = {
-  name: 'Responsive',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+ResponsiveTip.storyName = 'Responsive';
+ResponsiveTip.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Controls/Tip/Responsive'
+};
+exports["default"] = _default;

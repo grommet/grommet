@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Themed = void 0;
+exports["default"] = exports.Themed = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -25,14 +25,15 @@ var Themed = function Themed() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Paragraph, null, "The font family for this paragraph is being defined by a custom theme."));
-}; // disabling chromatic because snapshot doesn't capture font
-
+};
 
 exports.Themed = Themed;
-Themed.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Themed.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Type/Paragraph/Themed'
+};
+exports["default"] = _default;

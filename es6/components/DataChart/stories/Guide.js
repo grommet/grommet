@@ -48,3 +48,6 @@ export var Guide = function Guide() {
     detail: true
   })));
 };
+export default {
+  title: 'Visualizations/DataChart/Guide'
+};

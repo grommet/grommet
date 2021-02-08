@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Range = void 0;
+exports["default"] = exports.Range = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -42,10 +42,12 @@ var Range = function Range() {
 };
 
 exports.Range = Range;
-Range.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Range.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Input/DateInput/Range'
+};
+exports["default"] = _default;

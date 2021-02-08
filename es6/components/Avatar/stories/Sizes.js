@@ -40,3 +40,6 @@ export var Sizes = function Sizes() {
     size: "xlarge"
   }, "SY")));
 };
+export default {
+  title: 'Visualizations/Avatar/Sizes'
+};

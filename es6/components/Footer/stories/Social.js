@@ -63,3 +63,6 @@ export var Social = function Social() {
     size: "xsmall"
   }, "\xA9Copyright")));
 };
+export default {
+  title: 'Layout/Footer/Social'
+};

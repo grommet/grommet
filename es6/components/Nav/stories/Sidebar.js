@@ -53,3 +53,6 @@ var SidebarNav = function SidebarNav() {
 export var Sidebar = function Sidebar() {
   return /*#__PURE__*/React.createElement(SidebarNav, null);
 };
+export default {
+  title: 'Controls/Nav/Sidebar'
+};

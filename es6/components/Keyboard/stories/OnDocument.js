@@ -16,10 +16,11 @@ export var OnDocument = function OnDocument() {
     level: "3"
   }, "Press Esc on me!"))));
 };
-OnDocument.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+OnDocument.parameters = {
+  chromatic: {
+    disable: true
   }
+};
+export default {
+  title: 'Utilities/Keyboard/On Document'
 };

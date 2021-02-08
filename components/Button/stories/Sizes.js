@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Sizes = void 0;
+exports["default"] = exports.Sizes = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -98,3 +98,7 @@ var Sizes = function Sizes() {
 };
 
 exports.Sizes = Sizes;
+var _default = {
+  title: 'Controls/Button/Sizes'
+};
+exports["default"] = _default;

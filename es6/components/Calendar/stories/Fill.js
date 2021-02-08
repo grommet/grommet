@@ -15,3 +15,6 @@ export var Fill = function Fill() {
     daysOfWeek: true
   }))));
 };
+export default {
+  title: 'Visualizations/Calendar/Fill'
+};

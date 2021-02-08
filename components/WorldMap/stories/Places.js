@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Places = void 0;
+exports["default"] = exports.Places = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -36,3 +36,7 @@ var Places = function Places() {
 };
 
 exports.Places = Places;
+var _default = {
+  title: 'Visualizations/WorldMap/Places'
+};
+exports["default"] = _default;

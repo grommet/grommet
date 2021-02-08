@@ -34,3 +34,6 @@ var ScrollableTabs = function ScrollableTabs() {
 export var Scrollable = function Scrollable() {
   return /*#__PURE__*/React.createElement(ScrollableTabs, null);
 };
+export default {
+  title: 'Controls/Tabs/Scrollable'
+};

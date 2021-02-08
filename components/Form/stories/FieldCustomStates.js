@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.FieldCustomStates = void 0;
+exports["default"] = exports.FieldCustomStates = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -138,6 +138,8 @@ var FieldCustomStates = function FieldCustomStates() {
 };
 
 exports.FieldCustomStates = FieldCustomStates;
-FieldCustomStates.story = {
-  name: 'Field custom states'
+FieldCustomStates.storyName = 'Field custom states';
+var _default = {
+  title: 'Input/Form/Field custom states'
 };
+exports["default"] = _default;

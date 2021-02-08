@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Basic = void 0;
+exports["default"] = exports.Basic = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -52,3 +52,7 @@ var Basic = function Basic(props) {
 };
 
 exports.Basic = Basic;
+var _default = {
+  title: 'Controls/Button/Basic'
+};
+exports["default"] = _default;

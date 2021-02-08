@@ -91,3 +91,6 @@ export var Simple = function Simple() {
     label: "Interactive Element"
   }), contentFiller))));
 };
+export default {
+  title: 'Utilities/SkipLinks/Simple'
+};

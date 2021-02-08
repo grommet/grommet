@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.SundayFirstDayCalendar = void 0;
+exports["default"] = exports.SundayFirstDayCalendar = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -26,6 +26,8 @@ var SundayFirstDayCalendar = function SundayFirstDayCalendar() {
 };
 
 exports.SundayFirstDayCalendar = SundayFirstDayCalendar;
-SundayFirstDayCalendar.story = {
-  name: '1st on Sunday'
+SundayFirstDayCalendar.storyName = '1st on Sunday';
+var _default = {
+  title: "Visualizations/Calendar/1st on Sunday"
 };
+exports["default"] = _default;

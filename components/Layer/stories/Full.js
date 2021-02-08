@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.FullLayer = void 0;
+exports["default"] = exports.FullLayer = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -50,11 +50,13 @@ var FullLayer = function FullLayer() {
 };
 
 exports.FullLayer = FullLayer;
-FullLayer.story = {
-  name: 'Full',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+FullLayer.storyName = 'Full';
+FullLayer.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Layout/Layer/Full'
+};
+exports["default"] = _default;

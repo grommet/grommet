@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Bar = void 0;
+exports["default"] = exports.Bar = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -25,3 +25,7 @@ var Bar = function Bar() {
 };
 
 exports.Bar = Bar;
+var _default = {
+  title: 'Visualizations/Meter/Bar'
+};
+exports["default"] = _default;

@@ -40,3 +40,6 @@ export var Detail = function Detail() {
     }
   })));
 };
+export default {
+  title: 'Visualizations/DataChart/Detail'
+};

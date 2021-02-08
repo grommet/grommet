@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Action = void 0;
+exports["default"] = exports.Action = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -46,3 +46,7 @@ var Action = function Action() {
 };
 
 exports.Action = Action;
+var _default = {
+  title: 'Visualizations/List/Action'
+};
+exports["default"] = _default;

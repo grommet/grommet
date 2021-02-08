@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Multiple = void 0;
+exports["default"] = exports.Multiple = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -43,3 +43,7 @@ var Multiple = function Multiple() {
 };
 
 exports.Multiple = Multiple;
+var _default = {
+  title: 'Visualizations/Calendar/Multiple'
+};
+exports["default"] = _default;

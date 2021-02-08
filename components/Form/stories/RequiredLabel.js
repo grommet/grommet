@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.RequiredLabel = void 0;
+exports["default"] = exports.RequiredLabel = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -66,6 +66,8 @@ var RequiredLabel = function RequiredLabel() {
 };
 
 exports.RequiredLabel = RequiredLabel;
-RequiredLabel.story = {
-  name: 'Required label'
+RequiredLabel.storyName = 'Required label';
+var _default = {
+  title: 'Input/Form/Required label'
 };
+exports["default"] = _default;

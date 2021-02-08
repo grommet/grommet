@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Indeterminate = void 0;
+exports["default"] = exports.Indeterminate = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -64,3 +64,7 @@ var Indeterminate = function Indeterminate() {
 };
 
 exports.Indeterminate = Indeterminate;
+var _default = {
+  title: 'Input/CheckBox/Indeterminate'
+};
+exports["default"] = _default;

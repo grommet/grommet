@@ -21,10 +21,11 @@ export var Analog = function Analog() {
     pad: "large"
   }, /*#__PURE__*/React.createElement(Text, null, "xxlarge and huge sizes are equal. The latter is kept for beckwards compatibility.")));
 };
-Analog.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Analog.parameters = {
+  chromatic: {
+    disable: true
   }
+};
+export default {
+  title: 'Visualizations/Clock/Analog'
 };

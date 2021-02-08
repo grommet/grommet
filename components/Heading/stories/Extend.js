@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Extend = void 0;
+exports["default"] = exports.Extend = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -61,3 +61,7 @@ var Extend = function Extend() {
 };
 
 exports.Extend = Extend;
+var _default = {
+  title: 'Type/Heading/Extend'
+};
+exports["default"] = _default;

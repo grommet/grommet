@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.TipOnButton = void 0;
+exports["default"] = exports.TipOnButton = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -56,10 +56,13 @@ var TipOnButton = function TipOnButton() {
 };
 
 exports.TipOnButton = TipOnButton;
-TipOnButton.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+TipOnButton.storyName = 'Tip on button';
+TipOnButton.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: "Controls/Button/Tip on button"
+};
+exports["default"] = _default;

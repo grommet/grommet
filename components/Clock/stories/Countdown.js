@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Countdown = void 0;
+exports["default"] = exports.Countdown = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -26,10 +26,12 @@ var Countdown = function Countdown() {
 };
 
 exports.Countdown = Countdown;
-Countdown.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Countdown.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Visualizations/Clock/Countdown'
+};
+exports["default"] = _default;

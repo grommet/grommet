@@ -21,10 +21,11 @@ export var Uncontrolled = function Uncontrolled() {
     }
   })));
 };
-Uncontrolled.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Uncontrolled.parameters = {
+  chromatic: {
+    disable: true
   }
+};
+export default {
+  title: 'Input/Select/Uncontrolled'
 };

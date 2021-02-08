@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.NoPrimaryKeyDataTable = void 0;
+exports["default"] = exports.NoPrimaryKeyDataTable = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -38,6 +38,8 @@ var NoPrimaryKeyDataTable = function NoPrimaryKeyDataTable() {
 };
 
 exports.NoPrimaryKeyDataTable = NoPrimaryKeyDataTable;
-NoPrimaryKeyDataTable.story = {
-  name: 'No primary'
+NoPrimaryKeyDataTable.storyName = 'No primary';
+var _default = {
+  title: 'Visualizations/DataTable/No primary'
 };
+exports["default"] = _default;

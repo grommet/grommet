@@ -8,3 +8,6 @@ export var Color = function Color() {
     color: "accent-1"
   }, "Colored Heading"));
 };
+export default {
+  title: 'Type/Heading/Color'
+};

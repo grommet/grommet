@@ -35,3 +35,6 @@ export var Round = function Round() {
     src: src
   })));
 };
+export default {
+  title: 'Visualizations/Avatar/Round'
+};

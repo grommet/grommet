@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.WithStickyDiv = void 0;
+exports["default"] = exports.WithStickyDiv = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -75,6 +75,8 @@ var WithStickyDiv = function WithStickyDiv() {
 };
 
 exports.WithStickyDiv = WithStickyDiv;
-WithStickyDiv.story = {
-  name: 'With sticky div'
+WithStickyDiv.storyName = 'With sticky div';
+var _default = {
+  title: 'Input/CheckBox/With sticky div'
 };
+exports["default"] = _default;

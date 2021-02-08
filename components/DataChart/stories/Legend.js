@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Legend = void 0;
+exports["default"] = exports.Legend = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -59,3 +59,7 @@ var Legend = function Legend() {
 };
 
 exports.Legend = Legend;
+var _default = {
+  title: 'Visualizations/DataChart/Legend'
+};
+exports["default"] = _default;

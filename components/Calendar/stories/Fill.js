@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Fill = void 0;
+exports["default"] = exports.Fill = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -27,3 +27,7 @@ var Fill = function Fill() {
 };
 
 exports.Fill = Fill;
+var _default = {
+  title: 'Visualizations/Calendar/Fill'
+};
+exports["default"] = _default;

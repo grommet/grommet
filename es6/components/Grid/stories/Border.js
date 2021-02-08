@@ -80,6 +80,7 @@ export var BorderGrid = function BorderGrid() {
     }, type);
   }))));
 };
-BorderGrid.story = {
-  name: 'Border'
+BorderGrid.storyName = 'Border';
+export default {
+  title: 'Layout/Grid/Border'
 };

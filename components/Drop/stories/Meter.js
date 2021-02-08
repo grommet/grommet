@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.SVGChild = void 0;
+exports["default"] = exports.SVGChild = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -56,10 +56,12 @@ var SVGChild = function SVGChild() {
 };
 
 exports.SVGChild = SVGChild;
-SVGChild.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+SVGChild.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Controls/Drop/SVG Child'
+};
+exports["default"] = _default;

@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Custom = void 0;
+exports["default"] = exports.Custom = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -256,3 +256,7 @@ var Custom = function Custom() {
 };
 
 exports.Custom = Custom;
+var _default = {
+  title: 'Controls/Button/Custom'
+};
+exports["default"] = _default;

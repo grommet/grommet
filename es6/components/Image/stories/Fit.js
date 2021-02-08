@@ -23,3 +23,6 @@ export var Fit = function Fit() {
     fit: "cover"
   }))));
 };
+export default {
+  title: 'Media/Image/Fit'
+};

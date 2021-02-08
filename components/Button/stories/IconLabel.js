@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.IconLabel = void 0;
+exports["default"] = exports.IconLabel = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -54,6 +54,8 @@ var IconLabel = function IconLabel() {
 };
 
 exports.IconLabel = IconLabel;
-IconLabel.story = {
-  name: 'Icon label'
+IconLabel.storyName = 'Icon label';
+var _default = {
+  title: "Controls/Button/Icon label"
 };
+exports["default"] = _default;

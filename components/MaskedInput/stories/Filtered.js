@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Filtered = void 0;
+exports["default"] = exports.Filtered = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -67,10 +67,12 @@ var Filtered = function Filtered() {
 };
 
 exports.Filtered = Filtered;
-Filtered.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Filtered.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Input/MaskedInput/Filtered'
+};
+exports["default"] = _default;

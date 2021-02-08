@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.TrapFocus = void 0;
+exports["default"] = exports.TrapFocus = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -80,10 +80,12 @@ var TrapFocus = function TrapFocus() {
 };
 
 exports.TrapFocus = TrapFocus;
-TrapFocus.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+TrapFocus.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Controls/Drop/Trap Focus'
+};
+exports["default"] = _default;

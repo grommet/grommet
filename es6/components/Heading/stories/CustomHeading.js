@@ -39,3 +39,6 @@ export var Custom = function Custom() {
     size: "large"
   }, "Heading level 5 small"));
 };
+export default {
+  title: 'Type/Heading/Custom'
+};

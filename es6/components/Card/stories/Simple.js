@@ -25,3 +25,6 @@ export var Simple = function Simple() {
     background: "light-1"
   }, /*#__PURE__*/React.createElement(Text, null, "text - random component"), /*#__PURE__*/React.createElement(Box, null, "box - random component"))));
 };
+export default {
+  title: 'Layout/Card/Simple'
+};

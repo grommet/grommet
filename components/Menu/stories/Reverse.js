@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Reverse = void 0;
+exports["default"] = exports.Reverse = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -47,10 +47,12 @@ var Reverse = function Reverse() {
 };
 
 exports.Reverse = Reverse;
-Reverse.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Reverse.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Controls/Menu/Reverse'
+};
+exports["default"] = _default;

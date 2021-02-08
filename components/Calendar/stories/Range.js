@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Range = void 0;
+exports["default"] = exports.Range = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -24,3 +24,7 @@ var Range = function Range() {
 };
 
 exports.Range = Range;
+var _default = {
+  title: 'Visualizations/Calendar/Range'
+};
+exports["default"] = _default;

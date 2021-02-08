@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.OnClickBox = void 0;
+exports["default"] = exports.OnClickBox = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -36,6 +36,8 @@ var OnClickBox = function OnClickBox() {
 };
 
 exports.OnClickBox = OnClickBox;
-OnClickBox.story = {
-  name: 'onClick'
+OnClickBox.storyName = 'onClick';
+var _default = {
+  title: 'Layout/Box/onClick'
 };
+exports["default"] = _default;

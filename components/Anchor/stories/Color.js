@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Color = void 0;
+exports["default"] = exports.Color = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -55,3 +55,7 @@ var Color = function Color() {
 };
 
 exports.Color = Color;
+var _default = {
+  title: 'Controls/Anchor/Color'
+};
+exports["default"] = _default;

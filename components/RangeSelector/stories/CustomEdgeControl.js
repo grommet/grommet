@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.CustomEdgeControl = void 0;
+exports["default"] = exports.CustomEdgeControl = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -86,6 +86,8 @@ var CustomEdgeControl = function CustomEdgeControl(_ref) {
 };
 
 exports.CustomEdgeControl = CustomEdgeControl;
-CustomEdgeControl.story = {
-  name: 'Custom edge controls'
+CustomEdgeControl.storyName = 'Custom edge controls';
+var _default = {
+  title: 'Input/RangeSelector/Custom edge controls'
 };
+exports["default"] = _default;

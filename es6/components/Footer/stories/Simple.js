@@ -22,3 +22,6 @@ export var Simple = function Simple() {
     size: "small"
   }, "\xA9 2019 Copyright Grommet")));
 };
+export default {
+  title: 'Layout/Footer/Simple'
+};

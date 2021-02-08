@@ -39,3 +39,6 @@ export var Controlled = function Controlled() {
     }
   })));
 };
+export default {
+  title: 'Input/Select/Controlled'
+};

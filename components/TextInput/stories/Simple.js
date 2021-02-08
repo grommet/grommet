@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Simple = void 0;
+exports["default"] = exports.Simple = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -37,10 +37,12 @@ var Simple = function Simple() {
 };
 
 exports.Simple = Simple;
-Simple.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Simple.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Input/TextInput/Simple'
+};
+exports["default"] = _default;

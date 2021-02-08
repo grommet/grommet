@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.RTLLayer = void 0;
+exports["default"] = exports.RTLLayer = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -41,6 +41,8 @@ var RTLLayer = function RTLLayer() {
 };
 
 exports.RTLLayer = RTLLayer;
-RTLLayer.story = {
-  name: 'RTL'
+RTLLayer.storyName = 'RTL';
+var _default = {
+  title: 'Layout/Layer/RTL'
 };
+exports["default"] = _default;

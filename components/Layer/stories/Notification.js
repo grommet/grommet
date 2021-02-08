@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.NotificationLayer = void 0;
+exports["default"] = exports.NotificationLayer = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -77,11 +77,13 @@ var NotificationLayer = function NotificationLayer() {
 };
 
 exports.NotificationLayer = NotificationLayer;
-NotificationLayer.story = {
-  name: 'Notification',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+NotificationLayer.storyName = 'Notification';
+NotificationLayer.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Layout/Layer/Notification'
+};
+exports["default"] = _default;

@@ -32,6 +32,7 @@ export var RTLBox = function RTLBox() {
     background: "brand"
   }, "margin start")));
 };
-RTLBox.story = {
-  name: 'RTL'
+RTLBox.storyName = 'RTL';
+export default {
+  title: 'Layout/Box/RTL'
 };

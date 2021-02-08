@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Search = void 0;
+exports["default"] = exports.Search = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -92,10 +92,12 @@ var Search = function Search() {
 };
 
 exports.Search = Search;
-Search.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Search.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Input/Select/Search'
+};
+exports["default"] = _default;

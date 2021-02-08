@@ -20,6 +20,7 @@ export var ExternalComponentWithTheme = function ExternalComponentWithTheme() {
     }, "This component is leveraging the grommet theme capabilities although it is not a grommet component"));
   }));
 };
-ExternalComponentWithTheme.story = {
-  name: 'External components'
+ExternalComponentWithTheme.storyName = 'External components';
+export default {
+  title: 'Utilities/ThemeContext/External components'
 };

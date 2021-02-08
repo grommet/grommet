@@ -19,3 +19,6 @@ var DisabledAnchor = function DisabledAnchor() {
 export var Disabled = function Disabled() {
   return /*#__PURE__*/React.createElement(DisabledAnchor, null);
 };
+export default {
+  title: 'Controls/Anchor/Disabled'
+};

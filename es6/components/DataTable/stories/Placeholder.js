@@ -47,3 +47,6 @@ export var Placeholder = function Placeholder() {
     step: 10
   })));
 };
+export default {
+  title: 'Visualizations/DataTable/Placeholder'
+};

@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Dash = void 0;
+exports["default"] = exports.Dash = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -46,3 +46,7 @@ var Dash = function Dash() {
 };
 
 exports.Dash = Dash;
+var _default = {
+  title: 'Visualizations/Chart/Dash'
+};
+exports["default"] = _default;

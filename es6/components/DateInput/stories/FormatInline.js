@@ -24,6 +24,7 @@ export var FormatInline = function FormatInline() {
     onChange: onChange
   })));
 };
-FormatInline.story = {
-  name: 'Format inline'
+FormatInline.storyName = 'Format inline';
+export default {
+  title: 'Input/DateInput/Format inline'
 };

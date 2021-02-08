@@ -23,6 +23,7 @@ export var OnClickBox = function OnClickBox() {
     size: "large"
   }), /*#__PURE__*/React.createElement(Text, null, "Party"))));
 };
-OnClickBox.story = {
-  name: 'onClick'
+OnClickBox.storyName = 'onClick';
+export default {
+  title: 'Layout/Box/onClick'
 };

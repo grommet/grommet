@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.ElevationBox = void 0;
+exports["default"] = exports.ElevationBox = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -38,6 +38,8 @@ var ElevationBox = function ElevationBox() {
 };
 
 exports.ElevationBox = ElevationBox;
-ElevationBox.story = {
-  name: 'Elevation'
+ElevationBox.storyName = 'Elevation';
+var _default = {
+  title: 'Layout/Box/Elevation'
 };
+exports["default"] = _default;

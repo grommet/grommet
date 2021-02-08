@@ -43,3 +43,6 @@ var ColorAnchor = function ColorAnchor() {
 export var Color = function Color() {
   return /*#__PURE__*/React.createElement(ColorAnchor, null);
 };
+export default {
+  title: 'Controls/Anchor/Color'
+};

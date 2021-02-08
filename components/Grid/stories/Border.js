@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.BorderGrid = void 0;
+exports["default"] = exports.BorderGrid = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -92,6 +92,8 @@ var BorderGrid = function BorderGrid() {
 };
 
 exports.BorderGrid = BorderGrid;
-BorderGrid.story = {
-  name: 'Border'
+BorderGrid.storyName = 'Border';
+var _default = {
+  title: 'Layout/Grid/Border'
 };
+exports["default"] = _default;

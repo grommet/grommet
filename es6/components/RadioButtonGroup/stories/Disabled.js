@@ -37,3 +37,6 @@ export var Disabled = function Disabled(_ref) {
     }
   }, props))));
 };
+export default {
+  title: 'Input/RadioButtonGroup/Disabled'
+};

@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Anchor, Box, Grommet, Paragraph, Text } from 'grommet';
 var customTheme = {
   global: {
@@ -35,8 +34,7 @@ var customTheme = {
     }
   }
 };
-
-var Example = function Example() {
+export var Colors = function Colors() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: customTheme
   }, /*#__PURE__*/React.createElement(Box, {
@@ -51,7 +49,6 @@ var Example = function Example() {
     href: "https://github.com/grommet/grommet/wiki/Color-Properties"
   }, "Click here to read more about Grommet Colors")));
 };
-
-storiesOf('Theme', module).add('Colors', function () {
-  return /*#__PURE__*/React.createElement(Example, null);
-});
+export default {
+  title: 'Others/Theme/Colors'
+};

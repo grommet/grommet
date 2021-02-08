@@ -75,3 +75,6 @@ export var Custom = function Custom(_ref) {
     onChange: onChange
   }, rest)))));
 };
+export default {
+  title: 'Input/RangeSelector/Custom'
+};

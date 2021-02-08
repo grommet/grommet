@@ -228,6 +228,7 @@ var AllDrops = function AllDrops() {
 export var AllNotStretched = function AllNotStretched() {
   return /*#__PURE__*/React.createElement(AllDrops, null);
 };
-AllNotStretched.story = {
-  name: 'All not stretched'
+AllNotStretched.storyName = 'All not stretched';
+export default {
+  title: 'Controls/Drop/All not stretched'
 };

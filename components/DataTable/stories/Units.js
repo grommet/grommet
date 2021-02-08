@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.UnitsDataTable = exports.DATA = void 0;
+exports["default"] = exports.UnitsDataTable = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -24,7 +24,6 @@ var DATA = [{
   free: 40,
   size: 23
 }];
-exports.DATA = DATA;
 var columns = [{
   property: 'name',
   header: 'Disk Name',
@@ -59,6 +58,8 @@ var UnitsDataTable = function UnitsDataTable() {
 };
 
 exports.UnitsDataTable = UnitsDataTable;
-UnitsDataTable.story = {
-  name: 'Units'
+UnitsDataTable.storyName = 'Units';
+var _default = {
+  title: 'Visualizations/DataTable/Units'
 };
+exports["default"] = _default;

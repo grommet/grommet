@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.ScrollBodyLayer = void 0;
+exports["default"] = exports.ScrollBodyLayer = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -56,6 +56,8 @@ var ScrollBodyLayer = function ScrollBodyLayer() {
 };
 
 exports.ScrollBodyLayer = ScrollBodyLayer;
-ScrollBodyLayer.story = {
-  name: 'Fixed header, scroll body'
+ScrollBodyLayer.storyName = 'Fixed header, scroll body';
+var _default = {
+  title: 'Layout/Layer/Fixed header, scroll body'
 };
+exports["default"] = _default;

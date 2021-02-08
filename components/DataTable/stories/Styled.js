@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.StyledDataTable = void 0;
+exports["default"] = exports.StyledDataTable = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -47,6 +47,8 @@ var StyledDataTable = function StyledDataTable() {
 };
 
 exports.StyledDataTable = StyledDataTable;
-StyledDataTable.story = {
-  name: 'Styled'
+StyledDataTable.storyName = 'Styled';
+var _default = {
+  title: 'Visualizations/DataTable/Styled'
 };
+exports["default"] = _default;

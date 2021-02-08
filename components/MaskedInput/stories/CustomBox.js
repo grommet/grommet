@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.CustomBoxMaskedInput = void 0;
+exports["default"] = exports.CustomBoxMaskedInput = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -67,11 +67,13 @@ var CustomBoxMaskedInput = function CustomBoxMaskedInput() {
 };
 
 exports.CustomBoxMaskedInput = CustomBoxMaskedInput;
-CustomBoxMaskedInput.story = {
-  name: 'Custom box',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+CustomBoxMaskedInput.storyName = 'Custom box';
+CustomBoxMaskedInput.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Input/MaskedInput/Custom box'
+};
+exports["default"] = _default;

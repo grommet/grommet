@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.CustomAnchor = void 0;
+exports["default"] = exports.CustomAnchor = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -73,6 +73,8 @@ var CustomAnchor = function CustomAnchor() {
 };
 
 exports.CustomAnchor = CustomAnchor;
-CustomAnchor.story = {
-  name: 'Custom anchor'
+CustomAnchor.storyName = 'Custom anchor';
+var _default = {
+  title: 'Controls/Nav/Custom anchor'
 };
+exports["default"] = _default;

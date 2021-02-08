@@ -78,3 +78,6 @@ export var Stacked = function Stacked() {
     }, item.state)))));
   }))));
 };
+export default {
+  title: 'Layout/Card/Stacked'
+};

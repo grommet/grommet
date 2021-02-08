@@ -13,3 +13,6 @@ export var Bar = function Bar() {
     value: value
   })));
 };
+export default {
+  title: 'Visualizations/Meter/Bar'
+};

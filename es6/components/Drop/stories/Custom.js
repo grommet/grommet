@@ -52,3 +52,6 @@ var CustomDrop = function CustomDrop() {
 export var Custom = function Custom() {
   return /*#__PURE__*/React.createElement(CustomDrop, null);
 };
+export default {
+  title: 'Controls/Drop/Custom'
+};

@@ -16,3 +16,6 @@ export var Simple = function Simple() {
     step: 10
   })));
 };
+export default {
+  title: 'Visualizations/DataTable/Simple'
+};

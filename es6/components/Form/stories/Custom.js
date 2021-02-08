@@ -131,3 +131,6 @@ export var Custom = function Custom() {
     primary: true
   }))))));
 };
+export default {
+  title: 'Input/Form/Custom'
+};

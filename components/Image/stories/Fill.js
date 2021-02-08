@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Fill = void 0;
+exports["default"] = exports.Fill = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -27,17 +27,11 @@ var Fill = function Fill() {
     fit: "cover",
     fill: true,
     src: "//v2.grommet.io/assets/IMG_4245.jpg"
-  }))), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-    height: "small",
-    width: "small",
-    border: true
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
-    href: "#"
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Image, {
-    fit: "contain",
-    fill: true,
-    src: "//v2.grommet.io/assets/IMG_4245.jpg"
   })))));
 };
 
 exports.Fill = Fill;
+var _default = {
+  title: 'Media/Image/Fill'
+};
+exports["default"] = _default;

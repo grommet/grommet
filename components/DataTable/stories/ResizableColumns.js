@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.ResizableDataTable = exports.DATA = void 0;
+exports["default"] = exports.ResizableDataTable = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -52,7 +52,6 @@ var DATA = [{
   percent: 10,
   paid: 2345
 }];
-exports.DATA = DATA;
 var columnsResize = [{
   property: 'location',
   header: 'Location',
@@ -91,6 +90,8 @@ var ResizableDataTable = function ResizableDataTable() {
 };
 
 exports.ResizableDataTable = ResizableDataTable;
-ResizableDataTable.story = {
-  name: 'Resizable columns'
+ResizableDataTable.storyName = 'Resizable columns';
+var _default = {
+  title: 'Visualizations/DataTable/Resizable columns'
 };
+exports["default"] = _default;

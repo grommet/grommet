@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.InfiniteScrollDataTable = void 0;
+exports["default"] = exports.InfiniteScrollDataTable = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -306,6 +306,8 @@ var InfiniteScrollDataTable = function InfiniteScrollDataTable() {
 };
 
 exports.InfiniteScrollDataTable = InfiniteScrollDataTable;
-InfiniteScrollDataTable.story = {
-  name: 'Infinite Scroll'
+InfiniteScrollDataTable.storyName = 'Infinite Scroll';
+var _default = {
+  title: 'Visualizations/DataTable/Infinite Scroll'
 };
+exports["default"] = _default;

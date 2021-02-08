@@ -143,6 +143,7 @@ export var SidebarTip = function SidebarTip() {
     });
   })))));
 };
-SidebarTip.story = {
-  name: 'Sidebar'
+SidebarTip.storyName = 'Sidebar';
+export default {
+  title: 'Controls/Tip/Sidebar'
 };

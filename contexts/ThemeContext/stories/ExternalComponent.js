@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.ExternalComponentWithTheme = void 0;
+exports["default"] = exports.ExternalComponentWithTheme = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -32,6 +32,8 @@ var ExternalComponentWithTheme = function ExternalComponentWithTheme() {
 };
 
 exports.ExternalComponentWithTheme = ExternalComponentWithTheme;
-ExternalComponentWithTheme.story = {
-  name: 'External components'
+ExternalComponentWithTheme.storyName = 'External components';
+var _default = {
+  title: 'Utilities/ThemeContext/External components'
 };
+exports["default"] = _default;

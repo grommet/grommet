@@ -110,3 +110,6 @@ export var Controlled = function Controlled() {
     primary: true
   }))))));
 };
+export default {
+  title: 'Input/Form/Controlled'
+};

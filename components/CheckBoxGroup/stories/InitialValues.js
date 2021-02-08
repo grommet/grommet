@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.InitialValues = void 0;
+exports["default"] = exports.InitialValues = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -60,6 +60,8 @@ var InitialValues = function InitialValues() {
 };
 
 exports.InitialValues = InitialValues;
-InitialValues.story = {
-  name: 'Initial values'
+InitialValues.storyName = 'Initial values';
+var _default = {
+  title: 'Input/CheckBoxGroup/Initial values'
 };
+exports["default"] = _default;

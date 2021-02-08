@@ -30,3 +30,6 @@ export var Pattern = function Pattern() {
     }]
   })));
 };
+export default {
+  title: 'Visualizations/DataChart/Pattern'
+};

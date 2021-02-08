@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.NonResizable = exports.Simple = void 0;
+exports["default"] = exports.Simple = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -42,14 +42,7 @@ var Simple = function Simple() {
 };
 
 exports.Simple = Simple;
-
-var NonResizable = function NonResizable() {
-  return /*#__PURE__*/_react["default"].createElement(Resize, {
-    resize: false
-  });
+var _default = {
+  title: 'Input/TextArea/Simple'
 };
-
-exports.NonResizable = NonResizable;
-NonResizable.story = {
-  name: 'Non resizable'
-};
+exports["default"] = _default;

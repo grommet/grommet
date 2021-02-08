@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.CustomBreakpoints = void 0;
+exports["default"] = exports.CustomBreakpoints = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -68,6 +68,8 @@ var CustomBreakpoints = function CustomBreakpoints() {
 };
 
 exports.CustomBreakpoints = CustomBreakpoints;
-CustomBreakpoints.story = {
-  name: 'Custom breakpoints'
+CustomBreakpoints.storyName = 'Custom breakpoints';
+var _default = {
+  title: 'Utilities/ResponsiveContext/Custom breakpoints'
 };
+exports["default"] = _default;

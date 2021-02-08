@@ -1,7 +1,7 @@
 import React from 'react';
 import { Gremlin } from "grommet-icons/es6/icons/Gremlin";
 import { Box, Grommet, grommet, List, Text, Tip } from 'grommet';
-export var data = [{
+var data = [{
   city: 'Boise',
   state: 'Idaho'
 }, {
@@ -43,4 +43,7 @@ export var Children = function Children() {
       weight: "bold"
     }, datum.city)));
   })));
+};
+export default {
+  title: 'Visualizations/List/Children'
 };

@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.LabelledCharts = void 0;
+exports["default"] = exports.LabelledCharts = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -61,6 +61,8 @@ var LabelledCharts = function LabelledCharts() {
 };
 
 exports.LabelledCharts = LabelledCharts;
-LabelledCharts.story = {
-  name: 'Labelled'
+LabelledCharts.storyName = 'Labelled';
+var _default = {
+  title: 'Visualizations/Chart/Labelled'
 };
+exports["default"] = _default;

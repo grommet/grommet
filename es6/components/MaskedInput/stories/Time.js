@@ -47,3 +47,6 @@ export var Time = function Time() {
     }
   }))));
 };
+export default {
+  title: 'Input/MaskedInput/Time'
+};

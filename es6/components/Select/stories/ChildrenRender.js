@@ -96,6 +96,7 @@ export var ChildrenRender = function ChildrenRender() {
     }
   }, renderOption)));
 };
-ChildrenRender.story = {
-  name: 'Children render'
+ChildrenRender.storyName = 'Children render';
+export default {
+  title: 'Input/Select/Children render'
 };

@@ -42,22 +42,6 @@ export var Margin = function Margin() {
     full: true
   });
 };
-export var MarginCenter = function MarginCenter() {
-  return /*#__PURE__*/React.createElement(MarginLayer, {
-    margin: "large"
-  });
-};
-MarginCenter.story = {
-  name: 'Margin (center)'
-};
-export var MarginTopCenter = function MarginTopCenter() {
-  return /*#__PURE__*/React.createElement(MarginLayer, {
-    margin: {
-      top: 'large'
-    },
-    position: "top"
-  });
-};
-MarginTopCenter.story = {
-  name: 'Margin top (center)'
+export default {
+  title: 'Layout/Layer/Margin'
 };

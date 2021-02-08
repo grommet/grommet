@@ -76,3 +76,6 @@ export var Bounds = function Bounds() {
     }
   })));
 };
+export default {
+  title: 'Input/RangeInput/Bounds'
+};

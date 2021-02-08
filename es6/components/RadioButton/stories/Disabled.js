@@ -16,3 +16,6 @@ export var Disabled = function Disabled() {
     disabled: true
   })));
 };
+export default {
+  title: 'Input/RadioButton/Disabled'
+};

@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Sidebar = void 0;
+exports["default"] = exports.Sidebar = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -65,3 +65,7 @@ var Sidebar = function Sidebar() {
 };
 
 exports.Sidebar = Sidebar;
+var _default = {
+  title: 'Controls/Nav/Sidebar'
+};
+exports["default"] = _default;

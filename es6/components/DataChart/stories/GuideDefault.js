@@ -24,3 +24,7 @@ export var GuideDefault = function GuideDefault() {
     guide: true
   })));
 };
+GuideDefault.storyName = 'Guide default';
+export default {
+  title: 'Visualizations/DataChart/Guide default'
+};

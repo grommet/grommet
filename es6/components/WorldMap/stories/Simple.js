@@ -9,11 +9,12 @@ export var Simple = function Simple() {
     pad: "large"
   }, /*#__PURE__*/React.createElement(WorldMap, null)));
 };
-Simple.story = {
-  parameters: {
-    // chromatic disabled because snapshot is the same as SelectPlace
-    chromatic: {
-      disable: true
-    }
+Simple.parameters = {
+  // chromatic disabled because snapshot is the same as SelectPlace
+  chromatic: {
+    disable: true
   }
+};
+export default {
+  title: 'Visualizations/WorldMap/Simple'
 };

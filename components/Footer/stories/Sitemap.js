@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Sitemap = void 0;
+exports["default"] = exports.Sitemap = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -75,3 +75,7 @@ var Sitemap = function Sitemap() {
 };
 
 exports.Sitemap = Sitemap;
+var _default = {
+  title: 'Layout/Footer/Sitemap'
+};
+exports["default"] = _default;

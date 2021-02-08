@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.TargetLayer = void 0;
+exports["default"] = exports.TargetLayer = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -111,6 +111,8 @@ var TargetLayer = function TargetLayer() {
 };
 
 exports.TargetLayer = TargetLayer;
-TargetLayer.story = {
-  name: 'Target'
+TargetLayer.storyName = 'Target';
+var _default = {
+  title: 'Layout/Layer/Target'
 };
+exports["default"] = _default;

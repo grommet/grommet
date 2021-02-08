@@ -36,3 +36,6 @@ export var Simple = function Simple(_ref) {
     }
   }, props))));
 };
+export default {
+  title: 'Input/RadioButtonGroup/Simple'
+};

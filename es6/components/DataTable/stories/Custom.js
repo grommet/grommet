@@ -62,3 +62,6 @@ export var Custom = function Custom() {
     onSort: setSort
   })));
 };
+export default {
+  title: 'Visualizations/DataTable/Custom'
+};

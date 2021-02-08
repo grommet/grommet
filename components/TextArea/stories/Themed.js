@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Themed = void 0;
+exports["default"] = exports.Themed = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -49,3 +49,7 @@ var Themed = function Themed() {
 };
 
 exports.Themed = Themed;
+var _default = {
+  title: 'Input/TextArea/Themed'
+};
+exports["default"] = _default;

@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.RangeFormat = void 0;
+exports["default"] = exports.RangeFormat = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -45,6 +45,8 @@ var RangeFormat = function RangeFormat() {
 };
 
 exports.RangeFormat = RangeFormat;
-RangeFormat.story = {
-  name: 'Range format'
+RangeFormat.storyName = 'Range format';
+var _default = {
+  title: 'Input/DateInput/Range format'
 };
+exports["default"] = _default;

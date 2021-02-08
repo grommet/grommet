@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.DateForm = void 0;
+exports["default"] = exports.DateForm = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -52,6 +52,8 @@ var DateForm = function DateForm() {
 };
 
 exports.DateForm = DateForm;
-DateForm.story = {
-  name: 'Form'
+DateForm.storyName = 'Form';
+var _default = {
+  title: 'Input/DateInput/Form'
 };
+exports["default"] = _default;

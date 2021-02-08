@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.ItemWithIcon = void 0;
+exports["default"] = exports.ItemWithIcon = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -56,6 +56,8 @@ var ItemWithIcon = function ItemWithIcon() {
 };
 
 exports.ItemWithIcon = ItemWithIcon;
-ItemWithIcon.story = {
-  name: 'Item with icon'
+ItemWithIcon.storyName = 'Item with icon';
+var _default = {
+  title: 'Controls/Menu/Item with icon'
 };
+exports["default"] = _default;

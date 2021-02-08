@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.DynamicFields = void 0;
+exports["default"] = exports.DynamicFields = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -73,6 +73,8 @@ var DynamicFields = function DynamicFields() {
 };
 
 exports.DynamicFields = DynamicFields;
-DynamicFields.story = {
-  name: 'Dynamic fields'
+DynamicFields.storyName = 'Dynamic fields';
+var _default = {
+  title: 'Input/Form/Dynamic fields'
 };
+exports["default"] = _default;

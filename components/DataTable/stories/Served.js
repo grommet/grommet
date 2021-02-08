@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.ServedDataTable = void 0;
+exports["default"] = exports.ServedDataTable = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -69,6 +69,8 @@ var ServedDataTable = function ServedDataTable() {
 };
 
 exports.ServedDataTable = ServedDataTable;
-ServedDataTable.story = {
-  name: 'Served'
+ServedDataTable.storyName = 'Served';
+var _default = {
+  title: 'Visualizations/DataTable/Served'
 };
+exports["default"] = _default;

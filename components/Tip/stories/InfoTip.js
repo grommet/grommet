@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Info = void 0;
+exports["default"] = exports.Info = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -73,10 +73,12 @@ var Info = function Info() {
 };
 
 exports.Info = Info;
-Info.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Info.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Controls/Tip/Info'
+};
+exports["default"] = _default;

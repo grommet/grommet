@@ -97,6 +97,7 @@ export var TargetLayer = function TargetLayer() {
     }
   }))));
 };
-TargetLayer.story = {
-  name: 'Target'
+TargetLayer.storyName = 'Target';
+export default {
+  title: 'Layout/Layer/Target'
 };

@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Clear = void 0;
+exports["default"] = exports.Clear = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -164,11 +164,12 @@ var Clear = function Clear() {
 };
 
 exports.Clear = Clear;
-Clear.story = {
-  name: 'Clear',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Clear.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Input/Select/Clear'
+};
+exports["default"] = _default;

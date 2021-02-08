@@ -125,6 +125,7 @@ export var ResponsiveGridExample = function ResponsiveGridExample() {
     background: "dark-3"
   })), /*#__PURE__*/React.createElement(Paragraph, null, "Below a certain threshold, Columns 1 & 2 switch to 50% and Column 3 moves down to a new spot in the grid."));
 };
-ResponsiveGridExample.story = {
-  name: 'Responsive grid'
+ResponsiveGridExample.storyName = 'Responsive grid';
+export default {
+  title: 'Utilities/ResponsiveContext/Responsive grid'
 };

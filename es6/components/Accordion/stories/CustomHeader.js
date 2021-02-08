@@ -55,3 +55,6 @@ var CustomHeaderAccordion = function CustomHeaderAccordion() {
 export var Header = function Header() {
   return /*#__PURE__*/React.createElement(CustomHeaderAccordion, null);
 };
+export default {
+  title: 'Controls/Accordion/Header'
+};

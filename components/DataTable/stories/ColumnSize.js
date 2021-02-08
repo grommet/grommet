@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.ColumnSize = exports.DATA = void 0;
+exports["default"] = exports.ColumnSize = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -60,7 +60,6 @@ var DATA = [{
   percent: 10,
   paid: 2345
 }];
-exports.DATA = DATA;
 var columnsThemeSize = [{
   property: 'name',
   header: 'Name',
@@ -205,6 +204,8 @@ var ColumnSize = function ColumnSize() {
 };
 
 exports.ColumnSize = ColumnSize;
-ColumnSize.story = {
-  name: 'Column sizes'
+ColumnSize.storyName = 'Column sizes';
+var _default = {
+  title: 'Visualizations/DataTable/Column sizes'
 };
+exports["default"] = _default;

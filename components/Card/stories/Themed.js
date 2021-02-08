@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Themed = void 0;
+exports["default"] = exports.Themed = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -145,3 +145,7 @@ var Themed = function Themed() {
 };
 
 exports.Themed = Themed;
+var _default = {
+  title: 'Layout/Card/Themed'
+};
+exports["default"] = _default;

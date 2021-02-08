@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Plain = void 0;
+exports["default"] = exports.Plain = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -53,10 +53,12 @@ var Plain = function Plain() {
 };
 
 exports.Plain = Plain;
-Plain.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Plain.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Controls/Drop/Plain'
+};
+exports["default"] = _default;

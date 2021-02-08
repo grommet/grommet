@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Fit = void 0;
+exports["default"] = exports.Fit = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -35,3 +35,7 @@ var Fit = function Fit() {
 };
 
 exports.Fit = Fit;
+var _default = {
+  title: 'Media/Image/Fit'
+};
+exports["default"] = _default;

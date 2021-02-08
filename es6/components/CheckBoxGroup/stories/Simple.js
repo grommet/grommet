@@ -10,3 +10,6 @@ export var Simple = function Simple() {
     options: ['First', 'Second', 'Third']
   })));
 };
+export default {
+  title: 'Input/CheckBoxGroup/Simple'
+};

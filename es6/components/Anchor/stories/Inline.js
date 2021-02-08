@@ -17,3 +17,6 @@ var InlineAnchor = function InlineAnchor() {
 export var Inline = function Inline() {
   return /*#__PURE__*/React.createElement(InlineAnchor, null);
 };
+export default {
+  title: 'Controls/Anchor/Inline'
+};

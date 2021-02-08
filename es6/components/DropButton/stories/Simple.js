@@ -62,10 +62,11 @@ var SimpleDropButton = function SimpleDropButton() {
 export var Simple = function Simple() {
   return /*#__PURE__*/React.createElement(SimpleDropButton, null);
 };
-Simple.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Simple.parameters = {
+  chromatic: {
+    disable: true
   }
+};
+export default {
+  title: 'Controls/DropButton/Simple'
 };

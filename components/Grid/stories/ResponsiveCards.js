@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Example = void 0;
+exports["default"] = exports.Example = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -40,6 +40,8 @@ var Example = function Example() {
 };
 
 exports.Example = Example;
-Example.story = {
-  name: 'Responsive cards'
+Example.storyName = 'Responsive cards';
+var _default = {
+  title: 'Layout/Grid/Responsive cards'
 };
+exports["default"] = _default;

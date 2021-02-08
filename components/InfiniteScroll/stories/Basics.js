@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Marker = exports.Show = exports.Simple = void 0;
+exports["default"] = exports.Simple = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -17,7 +17,7 @@ var allItems = Array(2000).fill().map(function (_, i) {
   return "item " + (i + 1);
 });
 
-var Example = function Example(props) {
+var Simple = function Simple(props) {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, null, /*#__PURE__*/_react["default"].createElement(_grommet.InfiniteScroll, _extends({
@@ -34,32 +34,8 @@ var Example = function Example(props) {
   })));
 };
 
-var Simple = function Simple() {
-  return /*#__PURE__*/_react["default"].createElement(Example, null);
-};
-
 exports.Simple = Simple;
-
-var Show = function Show() {
-  return /*#__PURE__*/_react["default"].createElement(Example, {
-    show: 117
-  });
+var _default = {
+  title: 'Utilities/InfiniteScroll/Simple'
 };
-
-exports.Show = Show;
-
-var Marker = function Marker() {
-  return /*#__PURE__*/_react["default"].createElement(Example, {
-    renderMarker: function renderMarker(marker) {
-      return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-        pad: "medium",
-        background: "accent-1"
-      }, marker);
-    }
-  });
-};
-
-exports.Marker = Marker;
-Show.story = {
-  name: 'Show 118th item'
-};
+exports["default"] = _default;

@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Rich = exports.RichTabTitle = void 0;
+exports["default"] = exports.Rich = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -56,7 +56,6 @@ var RichTabTitle = function RichTabTitle(_ref) {
   }, /*#__PURE__*/_react["default"].createElement("strong", null, label)));
 };
 
-exports.RichTabTitle = RichTabTitle;
 RichTabTitle.propTypes = {
   icon: _propTypes["default"].node.isRequired,
   label: _propTypes["default"].string.isRequired
@@ -67,3 +66,7 @@ var Rich = function Rich() {
 };
 
 exports.Rich = Rich;
+var _default = {
+  title: 'Controls/Tabs/Rich'
+};
+exports["default"] = _default;

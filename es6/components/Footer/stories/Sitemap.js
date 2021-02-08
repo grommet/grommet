@@ -63,3 +63,6 @@ export var Sitemap = function Sitemap() {
     weight: "bold"
   }, "grommet.io"))), /*#__PURE__*/React.createElement(FooterContent, null)));
 };
+export default {
+  title: 'Layout/Footer/Sitemap'
+};

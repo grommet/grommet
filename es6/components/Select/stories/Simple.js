@@ -44,3 +44,6 @@ export var Simple = function Simple() {
     disabled: true
   })));
 };
+export default {
+  title: 'Input/Select/Simple'
+};

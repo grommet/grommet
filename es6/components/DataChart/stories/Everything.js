@@ -88,3 +88,6 @@ export var Everything = function Everything() {
     detail: true
   })));
 };
+export default {
+  title: 'Visualizations/DataChart/Everything'
+};

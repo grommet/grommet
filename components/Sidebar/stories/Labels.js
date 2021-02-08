@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Labels = void 0;
+exports["default"] = exports.Labels = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -115,3 +115,7 @@ var Labels = function Labels() {
 };
 
 exports.Labels = Labels;
+var _default = {
+  title: 'Layout/Sidebar/Labels'
+};
+exports["default"] = _default;

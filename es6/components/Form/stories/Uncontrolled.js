@@ -91,3 +91,6 @@ export var Uncontrolled = function Uncontrolled() {
     primary: true
   }))))));
 };
+export default {
+  title: 'Input/Form/Uncontrolled'
+};

@@ -29,10 +29,11 @@ export var Range = function Range() {
     onChange: onChange
   })));
 };
-Range.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Range.parameters = {
+  chromatic: {
+    disable: true
   }
+};
+export default {
+  title: 'Input/DateInput/Range'
 };

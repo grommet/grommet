@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Digital = void 0;
+exports["default"] = exports.Digital = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -60,10 +60,12 @@ var Digital = function Digital() {
 };
 
 exports.Digital = Digital;
-Digital.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Digital.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Visualizations/Clock/Digital'
+};
+exports["default"] = _default;

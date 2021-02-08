@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Prediction = exports.keyFrameExampleOne = void 0;
+exports["default"] = exports.Prediction = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -19,7 +19,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 /* eslint-disable max-len */
 var keyFrameExampleOne = (0, _styledComponents.keyframes)(["0%{width:200px;background-color:#FFFFFF;}100%{width:0px;background-color:#FFFFFF;}"]);
-exports.keyFrameExampleOne = keyFrameExampleOne;
 var AnimatedBox = (0, _styledComponents["default"])(_grommet.Box).withConfig({
   displayName: "Prediction__AnimatedBox",
   componentId: "sc-2m8o8b-0"
@@ -159,3 +158,7 @@ var Prediction = function Prediction() {
 };
 
 exports.Prediction = Prediction;
+var _default = {
+  title: 'Visualizations/DataChart/Prediction'
+};
+exports["default"] = _default;

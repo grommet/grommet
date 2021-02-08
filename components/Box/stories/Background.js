@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.BackgroundBox = void 0;
+exports["default"] = exports.BackgroundBox = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -107,6 +107,8 @@ var BackgroundBox = function BackgroundBox() {
 };
 
 exports.BackgroundBox = BackgroundBox;
-BackgroundBox.story = {
-  name: 'Background'
+BackgroundBox.storyName = 'Background';
+var _default = {
+  title: 'Layout/Box/Background'
 };
+exports["default"] = _default;

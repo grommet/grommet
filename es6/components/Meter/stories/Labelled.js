@@ -31,3 +31,6 @@ export var Labelled = function Labelled() {
     size: "small"
   }, "%")))));
 };
+export default {
+  title: 'Visualizations/Meter/Labelled'
+};

@@ -22,3 +22,6 @@ export var Animation = function Animation() {
     }, animation);
   }))));
 };
+export default {
+  title: 'Layout/Box/Animation'
+};

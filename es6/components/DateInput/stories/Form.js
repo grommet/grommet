@@ -40,6 +40,7 @@ export var DateForm = function DateForm() {
     label: "submit"
   }))));
 };
-DateForm.story = {
-  name: 'Form'
+DateForm.storyName = 'Form';
+export default {
+  title: 'Input/DateInput/Form'
 };

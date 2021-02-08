@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Disabled = void 0;
+exports["default"] = exports.Disabled = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -28,3 +28,7 @@ var Disabled = function Disabled() {
 };
 
 exports.Disabled = Disabled;
+var _default = {
+  title: 'Input/RadioButton/Disabled'
+};
+exports["default"] = _default;

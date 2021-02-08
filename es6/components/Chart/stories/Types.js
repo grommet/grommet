@@ -28,3 +28,6 @@ export var Types = function Types() {
     }));
   })));
 };
+export default {
+  title: 'Visualizations/Chart/Types'
+};

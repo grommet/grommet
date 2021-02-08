@@ -3,8 +3,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 import React from 'react';
 import { Accordion, AccordionPanel, Box, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var SimpleAccordion = function SimpleAccordion(props) {
+export var Simple = function Simple(props) {
   var animate = props.animate,
       multiple = props.multiple,
       rest = _objectWithoutPropertiesLoose(props, ["animate", "multiple"]);
@@ -39,33 +38,6 @@ var SimpleAccordion = function SimpleAccordion(props) {
     }
   }, "Panel 3 contents")))));
 };
-
-export var Simple = function Simple() {
-  return /*#__PURE__*/React.createElement(SimpleAccordion, null);
-};
-export var DarkNoAnimation = function DarkNoAnimation() {
-  return /*#__PURE__*/React.createElement(SimpleAccordion, {
-    animate: false,
-    background: "dark-2"
-  });
-};
-DarkNoAnimation.story = {
-  name: 'Dark no animation',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
-  }
-};
-export var Multiple = function Multiple() {
-  return /*#__PURE__*/React.createElement(SimpleAccordion, {
-    multiple: true
-  });
-};
-Multiple.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
-  }
+export default {
+  title: 'Controls/Accordion/Simple'
 };

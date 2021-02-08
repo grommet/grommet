@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.PlainLayer = void 0;
+exports["default"] = exports.PlainLayer = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -33,6 +33,8 @@ var PlainLayer = function PlainLayer() {
 };
 
 exports.PlainLayer = PlainLayer;
-PlainLayer.story = {
-  name: 'Plain'
+PlainLayer.storyName = 'Plain';
+var _default = {
+  title: 'Layout/Layer/Plain'
 };
+exports["default"] = _default;

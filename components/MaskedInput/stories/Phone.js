@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Phone = void 0;
+exports["default"] = exports.Phone = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -56,3 +56,7 @@ var Phone = function Phone() {
 };
 
 exports.Phone = Phone;
+var _default = {
+  title: 'Input/MaskedInput/Phone'
+};
+exports["default"] = _default;

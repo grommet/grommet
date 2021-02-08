@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Animated = void 0;
+exports["default"] = exports.Animated = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -155,3 +155,7 @@ var Animated = function Animated() {
 };
 
 exports.Animated = Animated;
+var _default = {
+  title: 'Visualizations/Diagram/Animated'
+};
+exports["default"] = _default;

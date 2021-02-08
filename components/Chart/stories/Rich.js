@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Rich = void 0;
+exports["default"] = exports.Rich = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -148,3 +148,7 @@ var Rich = function Rich() {
 };
 
 exports.Rich = Rich;
+var _default = {
+  title: 'Visualizations/Chart/Rich'
+};
+exports["default"] = _default;

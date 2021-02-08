@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Simple = void 0;
+exports["default"] = exports.Simple = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -43,3 +43,7 @@ var Simple = function Simple() {
 };
 
 exports.Simple = Simple;
+var _default = {
+  title: 'Input/FormField/Simple'
+};
+exports["default"] = _default;

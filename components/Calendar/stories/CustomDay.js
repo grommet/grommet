@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.CustomDayCalendar = void 0;
+exports["default"] = exports.CustomDayCalendar = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -98,6 +98,8 @@ var CustomDayCalendar = function CustomDayCalendar() {
 };
 
 exports.CustomDayCalendar = CustomDayCalendar;
-CustomDayCalendar.story = {
-  name: 'Custom day'
+CustomDayCalendar.storyName = 'Custom day';
+var _default = {
+  title: "Visualizations/Calendar/Custom day"
 };
+exports["default"] = _default;

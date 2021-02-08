@@ -35,10 +35,12 @@ export var DefaultSuggestion = function DefaultSuggestion() {
     defaultSuggestion: 1
   }))));
 };
-DefaultSuggestion.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+DefaultSuggestion.storyName = 'Default suggestion';
+DefaultSuggestion.parameters = {
+  chromatic: {
+    disable: true
   }
+};
+export default {
+  title: 'Input/TextInput/Default suggestion'
 };

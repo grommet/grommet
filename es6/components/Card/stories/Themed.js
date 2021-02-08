@@ -138,3 +138,6 @@ export var Themed = function Themed() {
     }, value.message)));
   }))));
 };
+export default {
+  title: 'Layout/Card/Themed'
+};

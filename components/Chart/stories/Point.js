@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Point = void 0;
+exports["default"] = exports.Point = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -42,3 +42,7 @@ var Point = function Point() {
 };
 
 exports.Point = Point;
+var _default = {
+  title: 'Visualizations/Chart/Point'
+};
+exports["default"] = _default;

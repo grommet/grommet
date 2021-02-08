@@ -44,3 +44,6 @@ export var Phone = function Phone() {
     }
   }))));
 };
+export default {
+  title: 'Input/MaskedInput/Phone'
+};

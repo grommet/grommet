@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Icon = void 0;
+exports["default"] = exports.Icon = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -93,3 +93,7 @@ var Icon = function Icon() {
 };
 
 exports.Icon = Icon;
+var _default = {
+  title: 'Controls/Tabs/Icon'
+};
+exports["default"] = _default;

@@ -100,6 +100,7 @@ export var RichFooter = function RichFooter() {
     color: "dark-3"
   }, "The greatest bridge builders of antiquity were the ancient Romans. The Romans built arch bridges and aqueducts that could stand in conditions that would damage or destroy earlier designs. Some stand today.")))));
 };
-RichFooter.story = {
-  name: 'Rich footer'
+RichFooter.storyName = 'Rich footer';
+export default {
+  title: "Layout/Card/Rich footer"
 };

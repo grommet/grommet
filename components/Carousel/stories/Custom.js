@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.CustomCarousel = void 0;
+exports["default"] = exports.CustomCarousel = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -61,6 +61,8 @@ var CustomCarousel = function CustomCarousel(_ref) {
 };
 
 exports.CustomCarousel = CustomCarousel;
-CustomCarousel.story = {
-  name: 'Custom controls'
+CustomCarousel.storyName = 'Custom controls';
+var _default = {
+  title: "Media/Carousel/Custom controls"
 };
+exports["default"] = _default;

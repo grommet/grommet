@@ -43,3 +43,6 @@ var CollapsableNav = function CollapsableNav() {
 export var Collapsable = function Collapsable() {
   return /*#__PURE__*/React.createElement(CollapsableNav, null);
 };
+export default {
+  title: 'Controls/Nav/Collapsable'
+};

@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Progressive = void 0;
+exports["default"] = exports.Progressive = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -92,10 +92,12 @@ var Progressive = function Progressive() {
 };
 
 exports.Progressive = Progressive;
-Progressive.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Progressive.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Controls/Drop/Progressive'
+};
+exports["default"] = _default;

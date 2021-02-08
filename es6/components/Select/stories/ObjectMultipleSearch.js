@@ -62,6 +62,7 @@ export var ObjectMultipleSearch = function ObjectMultipleSearch() {
     }
   })));
 };
-ObjectMultipleSearch.story = {
-  name: 'Object options with search and multiple'
+ObjectMultipleSearch.storyName = 'Object options with search and multiple';
+export default {
+  title: 'Input/Select/Object options with search and multiple'
 };

@@ -60,6 +60,7 @@ var CustomAnchorNav = function CustomAnchorNav() {
 export var CustomAnchor = function CustomAnchor() {
   return /*#__PURE__*/React.createElement(CustomAnchorNav, null);
 };
-CustomAnchor.story = {
-  name: 'Custom anchor'
+CustomAnchor.storyName = 'Custom anchor';
+export default {
+  title: 'Controls/Nav/Custom anchor'
 };

@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.OnSelect = void 0;
+exports["default"] = exports.OnSelect = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -54,11 +54,13 @@ var OnSelect = function OnSelect() {
 };
 
 exports.OnSelect = OnSelect;
-OnSelect.story = {
-  name: 'onSelect and onSuggestionSelect',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+OnSelect.storyName = 'onSelect and onSuggestionSelect';
+OnSelect.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Input/TextInput/onSelect and onSuggestionSelect'
+};
+exports["default"] = _default;

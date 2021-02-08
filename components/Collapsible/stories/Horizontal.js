@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Horizontal = void 0;
+exports["default"] = exports.Horizontal = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -70,10 +70,12 @@ var Horizontal = function Horizontal() {
 };
 
 exports.Horizontal = Horizontal;
-Horizontal.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Horizontal.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Utilities/Collapsible/Horizontal'
+};
+exports["default"] = _default;

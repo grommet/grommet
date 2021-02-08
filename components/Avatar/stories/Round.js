@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Round = void 0;
+exports["default"] = exports.Round = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -47,3 +47,7 @@ var Round = function Round() {
 };
 
 exports.Round = Round;
+var _default = {
+  title: 'Visualizations/Avatar/Round'
+};
+exports["default"] = _default;

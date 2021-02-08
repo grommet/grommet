@@ -17,3 +17,6 @@ export var All = function All() {
     fill: true
   }, "This is a full-width paragraph, using the \"fill\" property:", ' ', paragraphFiller));
 };
+export default {
+  title: 'Type/Paragraph/All'
+};

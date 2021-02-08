@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.MeterInTable = void 0;
+exports["default"] = exports.MeterInTable = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -40,6 +40,8 @@ var MeterInTable = function MeterInTable() {
 };
 
 exports.MeterInTable = MeterInTable;
-MeterInTable.story = {
-  name: 'Meter inside table'
+MeterInTable.storyName = 'Meter inside table';
+var _default = {
+  title: 'Visualizations/Table/Meter inside table'
 };
+exports["default"] = _default;

@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.RenderedList = void 0;
+exports["default"] = exports.RenderedList = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -45,6 +45,8 @@ var RenderedList = function RenderedList() {
 };
 
 exports.RenderedList = RenderedList;
-RenderedList.story = {
-  name: 'Key render'
+RenderedList.storyName = 'Key render';
+var _default = {
+  title: 'Visualizations/List/Key render'
 };
+exports["default"] = _default;

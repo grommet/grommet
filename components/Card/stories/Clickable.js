@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Clickable = void 0;
+exports["default"] = exports.Clickable = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -172,3 +172,7 @@ var Clickable = function Clickable() {
 };
 
 exports.Clickable = Clickable;
+var _default = {
+  title: 'Layout/Card/Clickable'
+};
+exports["default"] = _default;

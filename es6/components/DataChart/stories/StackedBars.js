@@ -50,3 +50,7 @@ export var StackedBars = function StackedBars() {
     legend: true
   })));
 };
+StackedBars.storyName = 'Stacked bars';
+export default {
+  title: 'Visualizations/DataChart/Stacked bars'
+};

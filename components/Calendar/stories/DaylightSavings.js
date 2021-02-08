@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.DSTCalendar = void 0;
+exports["default"] = exports.DSTCalendar = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -68,6 +68,8 @@ var DSTCalendar = function DSTCalendar() {
 };
 
 exports.DSTCalendar = DSTCalendar;
-DSTCalendar.story = {
-  name: 'Daylight savings time'
+DSTCalendar.storyName = 'Daylight savings time';
+var _default = {
+  title: "Visualizations/Calendar/Daylight savings time"
 };
+exports["default"] = _default;

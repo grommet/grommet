@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.AlignControls = void 0;
+exports["default"] = exports.AlignControls = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -76,6 +76,8 @@ var AlignControls = function AlignControls() {
 };
 
 exports.AlignControls = AlignControls;
-AlignControls.story = {
-  name: 'Align controls'
+AlignControls.storyName = 'Align controls';
+var _default = {
+  title: 'Controls/Tabs/Align controls'
 };
+exports["default"] = _default;

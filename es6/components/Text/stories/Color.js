@@ -8,3 +8,6 @@ export var Color = function Color() {
     color: "accent-1"
   }, "Colored Text"));
 };
+export default {
+  title: 'Type/Text/Color'
+};

@@ -23,3 +23,7 @@ export const Simple = () => (
     </Distribution>
   </Grommet>
 );
+
+export default {
+  title: 'Visualizations/Distribution/Simple',
+};

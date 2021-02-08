@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.OnClickItemList = void 0;
+exports["default"] = exports.OnClickItemList = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -44,13 +44,15 @@ var OnClickItemList = function OnClickItemList() {
 };
 
 exports.OnClickItemList = OnClickItemList;
-OnClickItemList.story = {
-  name: 'onClickItem',
-  parameters: {
-    // chromatic disabled because snapshot is covered by jest testing
-    // and snapshot is the same as selection
-    chromatic: {
-      disable: true
-    }
+OnClickItemList.storyName = 'onClickItem';
+OnClickItemList.parameters = {
+  // chromatic disabled because snapshot is covered by jest testing
+  // and snapshot is the same as selection
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Visualizations/List/onClickItem'
+};
+exports["default"] = _default;

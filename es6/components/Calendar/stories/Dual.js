@@ -114,3 +114,6 @@ export var Dual = function Dual() {
     }
   })));
 };
+export default {
+  title: 'Visualizations/Calendar/Dual'
+};

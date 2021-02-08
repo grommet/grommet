@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.FourDimensionDataChart = void 0;
+exports["default"] = exports.FourDimensionDataChart = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -65,6 +65,8 @@ var FourDimensionDataChart = function FourDimensionDataChart() {
 };
 
 exports.FourDimensionDataChart = FourDimensionDataChart;
-FourDimensionDataChart.story = {
-  name: 'Four dimensions'
+FourDimensionDataChart.storyName = 'Four dimensions';
+var _default = {
+  title: 'Visualizations/DataChart/Four dimensions'
 };
+exports["default"] = _default;

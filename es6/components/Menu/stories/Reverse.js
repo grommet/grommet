@@ -36,10 +36,11 @@ var ReverseMenu = function ReverseMenu() {
 export var Reverse = function Reverse() {
   return /*#__PURE__*/React.createElement(ReverseMenu, null);
 };
-Reverse.story = {
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+Reverse.parameters = {
+  chromatic: {
+    disable: true
   }
+};
+export default {
+  title: 'Controls/Menu/Reverse'
 };

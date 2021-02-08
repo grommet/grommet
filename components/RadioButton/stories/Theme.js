@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.ThemeRadioButton = void 0;
+exports["default"] = exports.ThemeRadioButton = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -67,6 +67,8 @@ var ThemeRadioButton = function ThemeRadioButton() {
 };
 
 exports.ThemeRadioButton = ThemeRadioButton;
-ThemeRadioButton.story = {
-  name: 'Theme'
+ThemeRadioButton.storyName = 'Theme';
+var _default = {
+  title: 'Input/RadioButton/Theme'
 };
+exports["default"] = _default;

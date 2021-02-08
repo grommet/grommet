@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.ManyOptions = void 0;
+exports["default"] = exports.ManyOptions = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -91,11 +91,13 @@ var ManyOptions = function ManyOptions() {
 };
 
 exports.ManyOptions = ManyOptions;
-ManyOptions.story = {
-  name: 'Many options',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+ManyOptions.storyName = 'Many options';
+ManyOptions.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Input/Select/Many options'
+};
+exports["default"] = _default;

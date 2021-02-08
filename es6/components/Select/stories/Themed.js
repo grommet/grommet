@@ -71,3 +71,6 @@ export var Themed = function Themed() {
     open: true
   })));
 };
+export default {
+  title: 'Input/Select/Themed'
+};

@@ -33,3 +33,6 @@ export var Default = function Default() {
     }, /*#__PURE__*/React.createElement(Text, null, c.footer));
   }))))));
 };
+export default {
+  title: 'Visualizations/Table/Default'
+};

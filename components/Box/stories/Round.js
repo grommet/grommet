@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.RoundBox = void 0;
+exports["default"] = exports.RoundBox = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -70,6 +70,8 @@ var RoundBox = function RoundBox() {
 };
 
 exports.RoundBox = RoundBox;
-RoundBox.story = {
-  name: 'Round'
+RoundBox.storyName = 'Round';
+var _default = {
+  title: 'Layout/Box/Round'
 };
+exports["default"] = _default;

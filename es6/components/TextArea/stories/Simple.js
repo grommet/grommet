@@ -29,11 +29,6 @@ export var Simple = function Simple() {
     resize: true
   });
 };
-export var NonResizable = function NonResizable() {
-  return /*#__PURE__*/React.createElement(Resize, {
-    resize: false
-  });
-};
-NonResizable.story = {
-  name: 'Non resizable'
+export default {
+  title: 'Input/TextArea/Simple'
 };

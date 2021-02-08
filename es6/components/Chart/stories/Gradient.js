@@ -50,6 +50,7 @@ export var GradientCharts = function GradientCharts() {
     round: true
   })));
 };
-GradientCharts.story = {
-  name: 'Gradient'
+GradientCharts.storyName = 'Gradient';
+export default {
+  title: 'Visualizations/Chart/Gradient'
 };

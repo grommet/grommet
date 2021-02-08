@@ -15,3 +15,7 @@ export var RoutedButton = function RoutedButton() {
     path: "/"
   })));
 };
+RoutedButton.storyName = 'Routed button';
+export default {
+  title: "Controls/Button/Routed button"
+};

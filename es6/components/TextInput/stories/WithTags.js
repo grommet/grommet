@@ -171,6 +171,7 @@ export var WithTags = function WithTags() {
     }
   })));
 };
-WithTags.story = {
-  name: 'With tags'
+WithTags.storyName = 'With tags';
+export default {
+  title: 'Input/TextInput/With tags'
 };

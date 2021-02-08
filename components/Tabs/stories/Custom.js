@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Custom = void 0;
+exports["default"] = exports.Custom = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -15,9 +15,20 @@ var _themes = require("grommet/themes");
 
 var _utils = require("grommet/utils");
 
-var _Rich = require("./Rich");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var RichTabTitle = function RichTabTitle(_ref) {
+  var icon = _ref.icon,
+      label = _ref.label;
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+    direction: "row",
+    align: "center",
+    gap: "xsmall",
+    margin: "xsmall"
+  }, icon, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+    size: "small"
+  }, /*#__PURE__*/_react["default"].createElement("strong", null, label)));
+};
 
 var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
   global: {
@@ -47,8 +58,8 @@ var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
       bottom: undefined,
       horizontal: 'small'
     },
-    extend: function extend(_ref) {
-      var theme = _ref.theme;
+    extend: function extend(_ref2) {
+      var theme = _ref2.theme;
       return (0, _styledComponents.css)(["border-radius:4px;box-shadow:0px 1px 5px rgba(0,0,0,0.5);"]);
     }
   },
@@ -57,14 +68,14 @@ var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
     gap: 'medium',
     header: {
       background: 'dark-2',
-      extend: function extend(_ref2) {
-        var theme = _ref2.theme;
+      extend: function extend(_ref3) {
+        var theme = _ref3.theme;
         return (0, _styledComponents.css)(["padding:10px;box-shadow:0px 3px 8px rgba(0,0,0,0.50);"]);
       }
     },
     panel: {
-      extend: function extend(_ref3) {
-        var theme = _ref3.theme;
+      extend: function extend(_ref4) {
+        var theme = _ref4.theme;
         return (0, _styledComponents.css)(["padding:48px;box-shadow:0px 3px 8px rgba(0,0,0,0.50);"]);
       }
     }
@@ -75,7 +86,7 @@ var CustomTabs = function CustomTabs() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Tabs, null, /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
-    title: /*#__PURE__*/_react["default"].createElement(_Rich.RichTabTitle, {
+    title: /*#__PURE__*/_react["default"].createElement(RichTabTitle, {
       icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.CircleInformation, {
         color: "accent-1"
       }),
@@ -86,7 +97,7 @@ var CustomTabs = function CustomTabs() {
   }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
     placeholder: "Enter your name..."
   }))), /*#__PURE__*/_react["default"].createElement(_grommet.Tab, {
-    title: /*#__PURE__*/_react["default"].createElement(_Rich.RichTabTitle, {
+    title: /*#__PURE__*/_react["default"].createElement(RichTabTitle, {
       icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Currency, {
         color: "light-3"
       }),
@@ -106,3 +117,7 @@ var Custom = function Custom() {
 };
 
 exports.Custom = Custom;
+var _default = {
+  title: 'Controls/Tabs/Custom'
+};
+exports["default"] = _default;

@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.ObjectMultipleSearch = void 0;
+exports["default"] = exports.ObjectMultipleSearch = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -76,6 +76,8 @@ var ObjectMultipleSearch = function ObjectMultipleSearch() {
 };
 
 exports.ObjectMultipleSearch = ObjectMultipleSearch;
-ObjectMultipleSearch.story = {
-  name: 'Object options with search and multiple'
+ObjectMultipleSearch.storyName = 'Object options with search and multiple';
+var _default = {
+  title: 'Input/Select/Object options with search and multiple'
 };
+exports["default"] = _default;

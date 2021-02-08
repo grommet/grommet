@@ -25,3 +25,6 @@ export var Fill = function Fill() {
     fill: true
   })));
 };
+export default {
+  title: 'Input/TextArea/Fill'
+};

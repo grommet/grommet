@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.UrlMaskedInput = void 0;
+exports["default"] = exports.UrlMaskedInput = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -41,11 +41,13 @@ var UrlMaskedInput = function UrlMaskedInput() {
 };
 
 exports.UrlMaskedInput = UrlMaskedInput;
-UrlMaskedInput.story = {
-  name: 'URL',
-  parameters: {
-    chromatic: {
-      disable: true
-    }
+UrlMaskedInput.storyName = 'URL';
+UrlMaskedInput.parameters = {
+  chromatic: {
+    disable: true
   }
 };
+var _default = {
+  title: 'Input/MaskedInput/URL'
+};
+exports["default"] = _default;

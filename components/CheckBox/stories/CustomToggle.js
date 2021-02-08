@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.CustomToggle = void 0;
+exports["default"] = exports.CustomToggle = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -87,6 +87,8 @@ var CustomToggle = function CustomToggle(props) {
 };
 
 exports.CustomToggle = CustomToggle;
-CustomToggle.story = {
-  name: 'Custom toggle'
+CustomToggle.storyName = 'Custom toggle';
+var _default = {
+  title: 'Input/CheckBox/Custom toggle'
 };
+exports["default"] = _default;

@@ -40,3 +40,6 @@ export var ValueLabel = function ValueLabel() {
     }))
   })));
 };
+export default {
+  title: 'Input/Select/ValueLabel'
+};

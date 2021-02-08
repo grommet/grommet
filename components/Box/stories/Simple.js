@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.SimpleBox = void 0;
+exports["default"] = exports.SimpleBox = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -59,6 +59,8 @@ var SimpleBox = function SimpleBox() {
 };
 
 exports.SimpleBox = SimpleBox;
-SimpleBox.story = {
-  name: 'Simple'
+SimpleBox.storyName = 'Simple';
+var _default = {
+  title: 'Layout/Box/Simple'
 };
+exports["default"] = _default;

@@ -25,6 +25,7 @@ export var GroupedDataTable = function GroupedDataTable() {
     sortable: true
   })));
 };
-GroupedDataTable.story = {
-  name: 'Grouped'
+GroupedDataTable.storyName = 'Grouped';
+export default {
+  title: 'Visualizations/DataTable/Grouped'
 };

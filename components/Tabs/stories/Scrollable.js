@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.Scrollable = void 0;
+exports["default"] = exports.Scrollable = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -46,3 +46,7 @@ var Scrollable = function Scrollable() {
 };
 
 exports.Scrollable = Scrollable;
+var _default = {
+  title: 'Controls/Tabs/Scrollable'
+};
+exports["default"] = _default;

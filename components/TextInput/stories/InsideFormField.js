@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.InsideFormField = void 0;
+exports["default"] = exports.InsideFormField = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -82,6 +82,8 @@ var InsideFormField = function InsideFormField(props) {
 };
 
 exports.InsideFormField = InsideFormField;
-InsideFormField.story = {
-  name: 'Inside a FormField'
+InsideFormField.storyName = 'Inside a FormField';
+var _default = {
+  title: 'Input/TextInput/Inside a FormField'
 };
+exports["default"] = _default;
