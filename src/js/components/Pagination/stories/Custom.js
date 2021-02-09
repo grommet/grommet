@@ -69,32 +69,47 @@ const secondaryTheme = deepMerge(grommet, {
 
 export const Custom = () => (
   <Grommet theme={customTheme}>
-    <Box direction="row">
+    <Box direction="row" gap="large">
       <Box
         align="start"
-        pad={{ top: 'small', bottom: 'medium', horizontal: 'medium' }}
-        gap="small"
+        pad={{ top: 'medium', bottom: 'medium', horizontal: 'medium' }}
+        gap="large"
       >
-        <Text>Custom Theme via theme.pagination.button</Text>
-        <Pagination numberItems={237} />
-        <Text>Reference Button Kind by string</Text>
-        <ThemeContext.Extend value={secondaryTheme}>
+        <>
+          <Text margin={{ bottom: 'small' }}>
+            Custom Theme via theme.pagination.button
+          </Text>
           <Pagination numberItems={237} />
-        </ThemeContext.Extend>
+        </>
+        <>
+          <Text margin={{ bottom: 'small' }}>
+            Reference Button Kind by string
+          </Text>
+          <ThemeContext.Extend value={secondaryTheme}>
+            <Pagination numberItems={237} />
+          </ThemeContext.Extend>
+        </>
       </Box>
       <Box
         align="start"
         background="black"
-        pad={{ top: 'small', bottom: 'medium', horizontal: 'medium' }}
-        gap="small"
+        pad={{ top: 'medium', bottom: 'medium', horizontal: 'medium' }}
+        gap="large"
       >
-        <Text>Custom Theme</Text>
-        <Pagination numberItems={237} />
-
-        <Text>Reference Button Kind by string</Text>
-        <ThemeContext.Extend value={secondaryTheme}>
+        <>
+          <Text margin={{ bottom: 'small' }}>
+            Custom Theme via theme.pagination.button
+          </Text>
           <Pagination numberItems={237} />
-        </ThemeContext.Extend>
+        </>
+        <>
+          <Text margin={{ bottom: 'small' }}>
+            Reference Button Kind by string
+          </Text>
+          <ThemeContext.Extend value={secondaryTheme}>
+            <Pagination numberItems={237} />
+          </ThemeContext.Extend>
+        </>
       </Box>
     </Box>
   </Grommet>
