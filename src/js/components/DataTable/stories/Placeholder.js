@@ -24,7 +24,6 @@ export const Placeholder = () => (
             background={{ color: 'background-front', opacity: 'strong' }}
           >
             <Box
-              direction="row"
               border={[
                 { side: 'all', color: 'transparent', size: 'medium' },
                 { side: 'horizontal', color: 'brand', size: 'medium' },

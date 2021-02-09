@@ -958,6 +958,17 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       xlarge: { ...fontSizing(2) },
       xxlarge: { ...fontSizing(4) },
     },
+    spinner: {
+      size: {
+        xsmall: `${baseSpacing * 0.75}px`,
+        small: `${baseSpacing}px`,
+        medium: `${baseSpacing * 2}px`, // default 48
+        large: `${baseSpacing * 3}px`,
+        xlarge: `${baseSpacing * 4}px`,
+      },
+      container: {},
+      // TODO box props
+    },
     radioButton: {
       border: {
         color: {
