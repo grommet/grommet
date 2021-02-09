@@ -365,6 +365,18 @@ const FormField = forwardRef(
       // accessibility resource: https://www.deque.com/blog/anatomy-of-accessible-forms-required-form-fields/
       requiredIndicator = <Text a11yTitle="required">*</Text>;
 
+      const debounce = (func, wait) => {
+        let timeout;
+        return function executedFunction(...args) {
+          const later = () => {
+            timeout = null;
+            func(...args);
+          };
+          clearTimeout(timeout);
+          timeout = setTimeout(later, wait);
+        };
+      };
+
     return (
       <FormFieldBox
         ref={ref}
@@ -383,8 +395,12 @@ const FormField = forwardRef(
           if (onBlur) onBlur(event);
         }}
         onChange={event => {
-          if (contextOnChange) contextOnChange(event);
-          if (onChange) onChange(event);
+          const debouncedFn =  debounce(() => {
+            if (contextOnChange) contextOnChange(event);
+            if (onChange) onChange(event);
+          }, 250);
+          
+          debouncedFn();
         }}
         {...containerRest}
       >
