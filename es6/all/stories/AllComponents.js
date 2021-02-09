@@ -437,5 +437,5 @@ export var All = function All() {
   return /*#__PURE__*/React.createElement(Components, null);
 };
 export default {
-  title: 'Others/All'
+  title: 'All'
 };

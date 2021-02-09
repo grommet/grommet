@@ -457,6 +457,6 @@ var All = function All() {
 
 exports.All = All;
 var _default = {
-  title: 'Others/All'
+  title: 'All'
 };
 exports["default"] = _default;
