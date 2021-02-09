@@ -42,3 +42,7 @@ export const All = () => (
     <Heading fill>{headingFiller}</Heading>
   </Grommet>
 );
+
+export default {
+  title: 'Type/Heading/All',
+};

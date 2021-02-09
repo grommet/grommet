@@ -24,3 +24,7 @@ export const Simple = ({ value: initialValue, ...props }) => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Input/RadioButtonGroup/Simple',
+};

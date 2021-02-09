@@ -34,3 +34,7 @@ export const All = () => (
     </>
   </Grommet>
 );
+
+export default {
+  title: 'Type/Text/All',
+};

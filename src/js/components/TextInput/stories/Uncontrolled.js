@@ -15,8 +15,10 @@ export const Uncontrolled = () => (
   </Grommet>
 );
 
-Uncontrolled.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
+Uncontrolled.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Input/TextInput/Uncontrolled',
 };

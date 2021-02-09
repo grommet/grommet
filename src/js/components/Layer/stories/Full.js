@@ -31,9 +31,12 @@ export const FullLayer = () => {
   );
 };
 
-FullLayer.story = {
-  name: 'Full',
-  parameters: {
-    chromatic: { disable: true },
-  },
+FullLayer.storyName = 'Full';
+
+FullLayer.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Layout/Layer/Full',
 };

@@ -12,8 +12,10 @@ const DefaultAnchor = () => (
 );
 
 export const Default = () => <DefaultAnchor />;
-Default.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
+Default.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Controls/Anchor/Default',
 };

@@ -76,6 +76,8 @@ export const FieldStates = () => {
   );
 };
 
-FieldStates.story = {
-  name: 'Field states',
+FieldStates.storyName = 'Field states';
+
+export default {
+  title: 'Input/Form/Field states',
 };

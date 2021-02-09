@@ -49,3 +49,7 @@ const ScrollableTabs = () => (
 );
 
 export const Scrollable = () => <ScrollableTabs />;
+
+export default {
+  title: 'Controls/Tabs/Scrollable',
+};

@@ -93,9 +93,11 @@ export const UncontrolledTyped = () => (
   </Grommet>
 );
 
-UncontrolledTyped.story = {
-  name: 'Uncontrolled typed',
-  parameters: {
-    chromatic: { disable: true },
-  },
+UncontrolledTyped.storyName = 'Uncontrolled typed';
+UncontrolledTyped.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Input/Form/Uncontrolled typed',
 };

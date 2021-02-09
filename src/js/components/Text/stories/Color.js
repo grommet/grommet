@@ -8,3 +8,7 @@ export const Color = () => (
     <Text color="accent-1">Colored Text</Text>
   </Grommet>
 );
+
+export default {
+  title: 'Type/Text/Color',
+};
