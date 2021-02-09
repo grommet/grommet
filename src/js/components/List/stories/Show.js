@@ -17,16 +17,14 @@ export const Show = () => (
     <Box pad="medium">
       <List
         data={data}
-        action={(item, index) => {
-          return (
-            <Menu
-              key={index}
-              icon={<More />}
-              hoverIndicator
-              items={[{ label: 'one' }]}
-            />
-          );
-        }}
+        action={(item, index) => (
+          <Menu
+            key={index}
+            icon={<More />}
+            hoverIndicator
+            items={[{ label: 'one' }]}
+          />
+        )}
         show={30}
       />
     </Box>
