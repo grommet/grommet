@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 import { Box, Grommet, RadioButtonGroup, ThemeContext } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
+import { css } from 'styled-components';
 var customTheme = deepMerge(grommet, {
   radioButtonGroup: {
     container: {
@@ -16,6 +17,9 @@ var customTheme = deepMerge(grommet, {
     border: {
       color: 'red',
       width: '10px'
+    },
+    container: {
+      extend: css(["color:red;"])
     },
     hover: {
       border: {
