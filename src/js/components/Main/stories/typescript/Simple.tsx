@@ -13,3 +13,7 @@ export const Simple = () => (
     </Main>
   </Grommet>
 );
+
+export default {
+  title: 'Layout/Main/Simple',
+};

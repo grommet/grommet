@@ -134,3 +134,7 @@ export const Clickable = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Layout/Card/Clickable',
+};

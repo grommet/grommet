@@ -116,10 +116,13 @@ export const ControlledInput = () => {
   );
 };
 
-ControlledInput.story = {
-  name: 'Controlled input',
-  parameters: {
-    // chromatic disabled because snapshot is the same as ControlledInputLazy
-    chromatic: { disable: true },
-  },
+ControlledInput.storyName = 'Controlled input';
+
+ControlledInput.parameters = {
+  // chromatic disabled because snapshot is the same as ControlledInputLazy
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Input/Form/Controlled input',
 };

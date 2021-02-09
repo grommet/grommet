@@ -52,6 +52,8 @@ export const AggregateValidation = () => {
   );
 };
 
-AggregateValidation.story = {
-  name: 'Aggregate validation',
+AggregateValidation.storyName = 'Aggregate validation';
+
+export default {
+  title: 'Input/Form/Aggregate validation',
 };

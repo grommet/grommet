@@ -117,3 +117,7 @@ const TabStates = () => (
 );
 
 export const States = () => <TabStates />;
+
+export default {
+  title: 'Controls/Tabs/States',
+};

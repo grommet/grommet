@@ -21,6 +21,8 @@ export const WordBreak = () => (
   </Grommet>
 );
 /* eslint-enable max-len */
-WordBreak.story = {
-  name: 'Word break',
+WordBreak.storyName = 'Word break';
+
+export default {
+  title: 'Type/Text/Word break',
 };

@@ -50,6 +50,8 @@ export const ThemeRadioButton = () => {
   );
 };
 
-ThemeRadioButton.story = {
-  name: 'Theme',
+ThemeRadioButton.storyName = 'Theme';
+
+export default {
+  title: 'Input/RadioButton/Theme',
 };

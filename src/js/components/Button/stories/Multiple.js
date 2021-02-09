@@ -45,3 +45,7 @@ export const Multiple = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Controls/Button/Multiple',
+};

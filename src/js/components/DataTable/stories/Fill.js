@@ -56,6 +56,8 @@ export const Fill = () => (
   </Grommet>
 );
 
-Fill.story = {
-  name: 'Fill and pin',
+Fill.storyName = 'Fill and pin';
+
+export default {
+  title: 'Visualizations/DataTable/Fill and pin',
 };

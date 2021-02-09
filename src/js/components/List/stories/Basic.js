@@ -18,3 +18,7 @@ export const Basic = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Visualizations/List/Basic',
+};

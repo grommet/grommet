@@ -50,6 +50,8 @@ export const FormUncontrolled = () => (
   </Grommet>
 );
 
-FormUncontrolled.story = {
-  name: 'Form uncontrolled',
+FormUncontrolled.storyName = 'Form uncontrolled';
+
+export default {
+  title: 'Input/CheckBoxGroup/Form uncontrolled',
 };

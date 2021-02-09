@@ -59,8 +59,10 @@ export const Children = () => {
   );
 };
 
-Children.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
+Children.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Controls/Tip/Children',
 };

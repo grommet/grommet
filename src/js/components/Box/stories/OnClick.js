@@ -26,4 +26,8 @@ export const OnClickBox = () => (
   </Grommet>
 );
 
-OnClickBox.story = { name: 'onClick' };
+OnClickBox.storyName = 'onClick';
+
+export default {
+  title: 'Layout/Box/onClick',
+};

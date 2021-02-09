@@ -43,18 +43,7 @@ const StyledLayer = styled.div`
       return hiddenPositionStyle;
     }
     const styles = [];
-    if (props.targetBounds) {
-      const { left, right, top, bottom } = props.targetBounds;
-      styles.push(`
-        position: fixed;
-        top: ${top}px;
-        left: ${left}px;
-        right: ${right}px;
-        bottom: ${bottom}px;
-      `);
-    } else {
-      styles.push(desktopLayerStyle);
-    }
+    styles.push(desktopLayerStyle);
     if (props.responsive && props.theme.layer.responsiveBreakpoint) {
       const breakpoint =
         props.theme.global.breakpoints[props.theme.layer.responsiveBreakpoint];
@@ -88,6 +77,10 @@ const StyledOverlay = styled.div`
       props.theme.layer.overlay.background,
       props.theme,
     )} pointer-events: all;
+  // necessary so overlay doesn't get repainted on scroll
+  // improves scroll performance
+  // https://dev.opera.com/articles/css-will-change-property/
+  will-change: transform;
 `;
 
 const getMargin = (margin, theme, position) => {
@@ -709,39 +702,34 @@ const roundStyle = (data, theme, position, margin) => {
   return styles;
 };
 
+const bounds = { left: 0, right: 0, top: 0, bottom: 0 };
+
 const desktopContainerStyle = css`
   ${props => {
     if (!props.modal && props.position === 'hidden') {
       return hiddenPositionStyle;
     }
     return css`
-      position: ${props.modal ? 'absolute' : 'fixed'};
+      // when there is a target (modal or non-modal) we need to position
+      // layer with respect to the target's position
+      // ensures positioning and animations stay aligned
+      position: ${props.modal || props.layerTarget ? 'absolute' : 'fixed'};
     `;
   }}
   max-height: ${props =>
     `calc(100% - ${getBounds(
-      props.targetBounds,
+      bounds,
       props.margin,
       props.theme,
       'top',
-    )}px - ${getBounds(
-      props.targetBounds,
-      props.margin,
-      props.theme,
-      'bottom',
-    )}px)`};
+    )}px - ${getBounds(bounds, props.margin, props.theme, 'bottom')}px)`};
   max-width: ${props =>
     `calc(100% - ${getBounds(
-      props.targetBounds,
+      bounds,
       props.margin,
       props.theme,
       'left',
-    )}px - ${getBounds(
-      props.targetBounds,
-      props.margin,
-      props.theme,
-      'right',
-    )}px)`};
+    )}px - ${getBounds(bounds, props.margin, props.theme, 'right')}px)`};
   ${props =>
     props.plain || (props.full && props.margin === 'none')
       ? `border-radius: 0;`
@@ -754,8 +742,8 @@ const desktopContainerStyle = css`
   ${props =>
     (props.position !== 'hidden' &&
       POSITIONS[props.position][props.full](
-        getBounds(props.targetBounds, props.margin, props.theme),
-        props.targetBounds,
+        getBounds(bounds, props.margin, props.theme),
+        bounds,
       )) ||
     ''};
 `;

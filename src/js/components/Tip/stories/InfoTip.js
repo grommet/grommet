@@ -53,8 +53,10 @@ export const Info = () => (
   </Grommet>
 );
 
-Info.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
+Info.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Controls/Tip/Info',
 };

@@ -47,6 +47,8 @@ export const CustomDateCalendar = () => (
   </Grommet>
 );
 
-CustomDateCalendar.story = {
-  name: 'Custom date',
+CustomDateCalendar.storyName = 'Custom date';
+
+export default {
+  title: `Visualizations/Calendar/Custom date`,
 };

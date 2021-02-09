@@ -70,6 +70,8 @@ export const IPv4RangeMaskedInput = () => {
   );
 };
 
-IPv4RangeMaskedInput.story = {
-  name: 'IPv4 range',
+IPv4RangeMaskedInput.storyName = 'IPv4 range';
+
+export default {
+  title: 'Input/MaskedInput/IPv4 range',
 };

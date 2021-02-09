@@ -40,3 +40,7 @@ export const Time = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Input/MaskedInput/Time',
+};

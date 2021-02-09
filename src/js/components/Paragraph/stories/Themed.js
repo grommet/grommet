@@ -20,9 +20,10 @@ export const Themed = () => (
   </Grommet>
 );
 
-// disabling chromatic because snapshot doesn't capture font
-Themed.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
+Themed.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Type/Paragraph/Themed',
 };
