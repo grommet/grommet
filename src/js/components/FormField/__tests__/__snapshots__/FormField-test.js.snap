@@ -59,6 +59,7 @@ exports[`FormField abut 1`] = `
   <div
     className="c1 "
     onBlur={[Function]}
+    onChange={[Function]}
     onFocus={[Function]}
   >
     <div
@@ -127,6 +128,7 @@ exports[`FormField abut with margin 1`] = `
   <div
     className="c1 "
     onBlur={[Function]}
+    onChange={[Function]}
     onFocus={[Function]}
   >
     <div
@@ -250,6 +252,7 @@ exports[`FormField contentProps 1`] = `
     <div
       className="c1 "
       onBlur={[Function]}
+      onChange={[Function]}
       onFocus={[Function]}
     >
       <label
@@ -502,6 +505,7 @@ exports[`FormField custom error and info icon and container 1`] = `
     <div
       className="c1 "
       onBlur={[Function]}
+      onChange={[Function]}
       onFocus={[Function]}
     >
       <label
@@ -644,6 +648,7 @@ exports[`FormField custom formfield 1`] = `
   <div
     className="c1 c2"
     onBlur={[Function]}
+    onChange={[Function]}
     onFocus={[Function]}
   >
     <div
@@ -783,6 +788,7 @@ exports[`FormField custom input margin 1`] = `
     <div
       className="c1 "
       onBlur={[Function]}
+      onChange={[Function]}
       onFocus={[Function]}
     >
       <label
@@ -931,6 +937,7 @@ exports[`FormField custom label 1`] = `
     <div
       className="c1 "
       onBlur={[Function]}
+      onChange={[Function]}
       onFocus={[Function]}
     >
       <label
@@ -1067,6 +1074,7 @@ exports[`FormField default 1`] = `
   <div
     className="c1 "
     onBlur={[Function]}
+    onChange={[Function]}
     onFocus={[Function]}
   >
     <div
@@ -1076,6 +1084,7 @@ exports[`FormField default 1`] = `
   <div
     className="c1 "
     onBlur={[Function]}
+    onChange={[Function]}
     onFocus={[Function]}
   >
     <div
@@ -1210,6 +1219,7 @@ exports[`FormField disabled 1`] = `
   <div
     className="c1 "
     onBlur={[Function]}
+    onChange={[Function]}
     onFocus={[Function]}
   >
     <div
@@ -1224,6 +1234,7 @@ exports[`FormField disabled 1`] = `
     <div
       className="c1 "
       onBlur={[Function]}
+      onChange={[Function]}
       onFocus={[Function]}
     >
       <div
@@ -1372,6 +1383,7 @@ exports[`FormField disabled with custom label 1`] = `
     <div
       className="c1 "
       onBlur={[Function]}
+      onChange={[Function]}
       onFocus={[Function]}
     >
       <label
@@ -1460,6 +1472,7 @@ exports[`FormField empty margin 1`] = `
   <div
     className="c1 "
     onBlur={[Function]}
+    onChange={[Function]}
     onFocus={[Function]}
   >
     <div
@@ -1538,6 +1551,7 @@ exports[`FormField error 1`] = `
   <div
     className="c1 "
     onBlur={[Function]}
+    onChange={[Function]}
     onFocus={[Function]}
   >
     <div
@@ -1618,6 +1632,7 @@ exports[`FormField help 1`] = `
   <div
     className="c1 "
     onBlur={[Function]}
+    onChange={[Function]}
     onFocus={[Function]}
   >
     <span
@@ -1691,6 +1706,7 @@ exports[`FormField htmlFor 1`] = `
   <div
     className="c1 "
     onBlur={[Function]}
+    onChange={[Function]}
     onFocus={[Function]}
   >
     <div
@@ -1769,6 +1785,7 @@ exports[`FormField info 1`] = `
   <div
     className="c1 "
     onBlur={[Function]}
+    onChange={[Function]}
     onFocus={[Function]}
   >
     <div
@@ -1851,6 +1868,7 @@ exports[`FormField label 1`] = `
   <div
     className="c1 "
     onBlur={[Function]}
+    onChange={[Function]}
     onFocus={[Function]}
   >
     <label
@@ -1924,6 +1942,7 @@ exports[`FormField margin 1`] = `
   <div
     className="c1 "
     onBlur={[Function]}
+    onChange={[Function]}
     onFocus={[Function]}
   >
     <div
@@ -1999,6 +2018,7 @@ exports[`FormField pad 1`] = `
   <div
     className="c1 "
     onBlur={[Function]}
+    onChange={[Function]}
     onFocus={[Function]}
   >
     <div
@@ -2129,6 +2149,7 @@ exports[`FormField pad with border undefined 1`] = `
     <div
       className="c1 "
       onBlur={[Function]}
+      onChange={[Function]}
       onFocus={[Function]}
     >
       <label
@@ -2265,6 +2286,7 @@ exports[`FormField required 1`] = `
   <div
     className="c1 "
     onBlur={[Function]}
+    onChange={[Function]}
     onFocus={[Function]}
   >
     <div
@@ -2279,6 +2301,7 @@ exports[`FormField required 1`] = `
     <div
       className="c1 "
       onBlur={[Function]}
+      onChange={[Function]}
       onFocus={[Function]}
     >
       <div
