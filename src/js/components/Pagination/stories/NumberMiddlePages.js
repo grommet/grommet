@@ -17,3 +17,9 @@ export const NumberMiddlePages = () => (
     </Box>
   </Grommet>
 );
+
+NumberMiddlePages.storyName = 'Number middle pages';
+
+export default {
+  title: 'Controls/Pagination/Number middle pages',
+};

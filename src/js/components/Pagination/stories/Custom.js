@@ -114,3 +114,7 @@ export const Custom = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Controls/Pagination/Custom',
+};

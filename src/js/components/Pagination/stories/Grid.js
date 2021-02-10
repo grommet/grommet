@@ -49,3 +49,7 @@ const PaginatedGrid = () => {
 };
 
 export { PaginatedGrid as Grid };
+
+export default {
+  title: 'Controls/Pagination/Grid',
+};

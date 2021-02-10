@@ -21,3 +21,7 @@ export const Size = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Controls/Pagination/Size',
+};

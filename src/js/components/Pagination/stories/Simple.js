@@ -23,3 +23,7 @@ export const Simple = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Controls/Pagination/Simple',
+};

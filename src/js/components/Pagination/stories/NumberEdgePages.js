@@ -17,3 +17,9 @@ export const NumberEdgePages = () => (
     </Box>
   </Grommet>
 );
+
+NumberEdgePages.storyName = 'Number edge pages';
+
+export default {
+  title: 'Controls/Pagination/Number edge pages',
+};
