@@ -21,9 +21,8 @@ export const ValueLabel = () => {
           plain
           valueLabel={
             <Box
-              background="brand"
+              background="light-3"
               width="small"
-              round="small"
               overflow="hidden"
               align="center"
             >
@@ -42,5 +41,5 @@ export const ValueLabel = () => {
 };
 
 export default {
-  title: 'Input/Select/ValueLabel',
+  title: 'Input/Select/Value Label',
 };

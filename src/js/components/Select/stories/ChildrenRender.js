@@ -17,7 +17,7 @@ const allSeasons = [
   'S10',
 ];
 
-export const ChildrenRender = () => {
+export const Children = () => {
   const [selected, setSelected] = useState([]);
 
   const onRemoveSeason = season => {
@@ -101,8 +101,8 @@ export const ChildrenRender = () => {
   );
 };
 
-ChildrenRender.storyName = 'Children render';
+// ChildrenRender.storyName = 'Children render';
 
 export default {
-  title: 'Input/Select/Children render',
+  title: 'Input/Select/Children',
 };
