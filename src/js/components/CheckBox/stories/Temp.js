@@ -179,3 +179,7 @@ export const Temp = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Input/CheckBox/Temp',
+};
