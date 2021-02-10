@@ -101,8 +101,6 @@ export const Children = () => {
   );
 };
 
-// ChildrenRender.storyName = 'Children render';
-
 export default {
   title: 'Input/Select/Children',
 };
