@@ -7,9 +7,9 @@ const allItems = Array(240)
   .fill()
   .map((_, i) => `item ${i + 1}`);
 
-const Example = props => (
+export const Replace = () => (
   <Grommet theme={grommet}>
-    <InfiniteScroll items={allItems} {...props}>
+    <InfiniteScroll items={allItems} replace>
       {item => (
         <Box key={item} pad="medium" border={{ side: 'bottom' }} align="center">
           <Text>{item}</Text>
@@ -19,26 +19,10 @@ const Example = props => (
   </Grommet>
 );
 
-export const Replace = () => <Example replace />;
-export const ShowBefore = () => <Example replace show={27} />;
-export const ShowAfter = () => <Example replace show={87} />;
-
-Replace.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
+Replace.parameters = {
+  chromatic: { disable: true },
 };
 
-ShowBefore.story = {
-  name: 'Replace, show before step',
-  parameters: {
-    chromatic: { disable: true },
-  },
-};
-
-ShowAfter.story = {
-  name: 'Replace, show after step',
-  parameters: {
-    chromatic: { disable: true },
-  },
+export default {
+  title: 'Utilities/InfiniteScroll/Replace',
 };

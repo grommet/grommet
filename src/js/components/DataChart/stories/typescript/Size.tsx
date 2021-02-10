@@ -38,3 +38,7 @@ export const Size = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Visualizations/DataChart/Size',
+};

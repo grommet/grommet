@@ -20,9 +20,12 @@ export const UrlMaskedInput = () => {
   );
 };
 
-UrlMaskedInput.story = {
-  name: 'URL',
-  parameters: {
-    chromatic: { disable: true },
-  },
+UrlMaskedInput.storyName = 'URL';
+
+UrlMaskedInput.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Input/MaskedInput/URL',
 };

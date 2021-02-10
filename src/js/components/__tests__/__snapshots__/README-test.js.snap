@@ -8929,6 +8929,20 @@ Defaults to
 { vertical: 'xsmall', horizontal: 'small' }
 \`\`\`
 
+**formField.label.requiredIndicator**
+
+Whether an asterisk (*) indicating that an input is required 
+    should be displayed adjacent to the FormField's label. If providing a 
+    custom element, for accessibility it is recommended that you include 
+    an a11yTitle of \\"required\\" to assist screen readers. If using \\"true\\", the 
+    a11yTitle is automatically applied. Expects \`boolean | element | string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **formField.margin**
 
 The margin of FormField. Expects \`string | object\`.

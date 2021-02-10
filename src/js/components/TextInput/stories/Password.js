@@ -32,3 +32,7 @@ export const Password = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Input/TextInput/Password',
+};

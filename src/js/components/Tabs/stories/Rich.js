@@ -47,6 +47,8 @@ RichTabTitle.propTypes = {
   label: PropTypes.string.isRequired,
 };
 
-export { RichTabTitle };
-
 export const Rich = () => <RichTabs />;
+
+export default {
+  title: 'Controls/Tabs/Rich',
+};

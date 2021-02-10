@@ -36,9 +36,11 @@ export const CustomAnalog = () => (
   </Grommet>
 );
 
-CustomAnalog.story = {
-  name: 'Custom analog',
-  parameters: {
-    chromatic: { disable: true },
-  },
+CustomAnalog.storyName = 'Custom analog';
+CustomAnalog.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Visualizations/Clock/Custom analog',
 };

@@ -19,9 +19,12 @@ export const SelectPlace = () => {
   );
 };
 
-SelectPlace.story = {
-  name: 'Select place',
-  parameters: {
-    chromatic: { disable: true },
-  },
+SelectPlace.storyName = 'Select place';
+
+SelectPlace.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Visualizations/WorldMap/Select place',
 };

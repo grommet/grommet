@@ -81,4 +81,8 @@ export const BackgroundBox = () => (
   </Grommet>
 );
 
-BackgroundBox.story = { name: 'Background' };
+BackgroundBox.storyName = 'Background';
+
+export default {
+  title: 'Layout/Box/Background',
+};

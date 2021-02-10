@@ -4,7 +4,6 @@ import React, {
   useEffect,
   useMemo,
   useRef,
-  useState,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
@@ -27,7 +26,6 @@ const HiddenAnchor = styled.a`
 `;
 
 const defaultPortalContext = [];
-const fullBounds = { left: 0, right: 0, top: 0, bottom: 0 };
 
 const LayerContainer = forwardRef(
   (
@@ -49,7 +47,6 @@ const LayerContainer = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
-    const [targetBounds, setTargetBounds] = useState(fullBounds);
     const anchorRef = useRef();
     const containerRef = useRef();
     const layerRef = useRef();
@@ -121,13 +118,32 @@ const LayerContainer = forwardRef(
 
       if (layerTarget) {
         const updateBounds = () => {
-          const rect = findVisibleParent(layerTarget).getBoundingClientRect();
-          setTargetBounds({
-            left: rect.left,
-            right: window.innerWidth - rect.right,
-            top: rect.top,
-            bottom: window.innerHeight - rect.bottom,
-          });
+          const windowWidth = window.innerWidth;
+          const windowHeight = window.innerHeight;
+          const target = findVisibleParent(layerTarget);
+
+          // affects StyledLayer
+          const layer = layerRef.current;
+
+          if (layer && target) {
+            // clear prior styling
+            layer.style.left = '';
+            layer.style.top = '';
+            layer.style.bottom = '';
+            layer.style.width = '';
+
+            // get bounds
+            const targetRect = target.getBoundingClientRect();
+            const layerRect = layer.getBoundingClientRect();
+
+            // ensure that layer moves with the target
+            layer.style.left = `${targetRect.left}px`;
+            layer.style.right = `${windowWidth - targetRect.right}px`;
+            layer.style.top = `${targetRect.top}px`;
+            layer.style.bottom = `${windowHeight - targetRect.bottom}px`;
+            layer.style.maxHeight = targetRect.height;
+            layer.style.maxWidth = Math.min(layerRect.width, windowWidth);
+          }
         };
 
         updateBounds();
@@ -142,7 +158,6 @@ const LayerContainer = forwardRef(
           }
         };
       }
-      setTargetBounds(fullBounds);
       return () => {
         if (onClickOutside) {
           document.removeEventListener('mousedown', onClickDocument);
@@ -159,11 +174,11 @@ const LayerContainer = forwardRef(
         full={full}
         margin={margin}
         modal={modal}
-        targetBounds={!modal ? targetBounds : fullBounds}
         {...rest}
         position={position}
         plain={plain}
         responsive={responsive}
+        layerTarget={layerTarget}
         dir={theme.dir}
         // portalId is used to determine if click occurred inside
         // or outside of the layer
@@ -177,23 +192,24 @@ const LayerContainer = forwardRef(
         {children}
       </StyledContainer>
     );
-    if (modal) {
+    if (modal || layerTarget) {
       content = (
         <StyledLayer
           ref={layerRef}
           id={id}
-          targetBounds={targetBounds}
           plain={plain}
           position={position}
           responsive={responsive}
           tabIndex="-1"
           dir={theme.dir}
         >
-          <StyledOverlay
-            plain={plain}
-            responsive={responsive}
-            onMouseDown={onClickOutside}
-          />
+          {modal && (
+            <StyledOverlay
+              plain={plain}
+              responsive={responsive}
+              onMouseDown={onClickOutside}
+            />
+          )}
           {content}
         </StyledLayer>
       );

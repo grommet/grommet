@@ -70,4 +70,8 @@ export const BorderGrid = () => (
   </Grommet>
 );
 
-BorderGrid.story = { name: 'Border' };
+BorderGrid.storyName = 'Border';
+
+export default {
+  title: 'Layout/Grid/Border',
+};

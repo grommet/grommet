@@ -7,10 +7,10 @@ const allItems = Array(240)
   .fill()
   .map((_, i) => i + 1);
 
-const Example = props => (
+export const Height = () => (
   <Grommet theme={grommet}>
     <Box>
-      <InfiniteScroll items={allItems} {...props}>
+      <InfiniteScroll items={allItems}>
         {item => (
           <Box
             key={item}
@@ -27,19 +27,12 @@ const Example = props => (
   </Grommet>
 );
 
-export const Height = () => <Example />;
-export const HeightReplace = () => <Example replace />;
+Height.storyName = 'Variable item height';
 
-Height.story = {
-  name: 'Variable item height',
-  parameters: {
-    chromatic: { disable: true },
-  },
+Height.parameters = {
+  chromatic: { disable: true },
 };
 
-HeightReplace.story = {
-  name: 'Variable item height w/replace',
-  parameters: {
-    chromatic: { disable: true },
-  },
+export default {
+  title: 'Utilities/InfiniteScroll/Variable item height',
 };

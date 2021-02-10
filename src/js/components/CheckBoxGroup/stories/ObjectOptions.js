@@ -48,6 +48,8 @@ export const ObjectOptions = () => {
   );
 };
 
-ObjectOptions.story = {
-  name: 'Object options',
+ObjectOptions.storyName = 'Object options';
+
+export default {
+  title: 'Input/CheckBoxGroup/Object options',
 };

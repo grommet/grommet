@@ -118,3 +118,7 @@ const ResponsiveTabs = () => {
 };
 
 export const Responsive = () => <ResponsiveTabs />;
+
+export default {
+  title: 'Controls/Tabs/Responsive',
+};
