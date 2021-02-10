@@ -10,22 +10,22 @@ import { Box } from '../Box';
 // styled-component for display block
 // children
 
-export const Spinner = forwardRef(({ color, size, ...rest }, ref) => {
+export const Spinner = forwardRef(({ color, size = 'small', ...rest }, ref) => {
   const theme = useContext(ThemeContext);
-//   const spinnerSize =
-//     theme.spinner.size[size] || size || theme.spinner.size.medium;
-//   console.log('spinnerSize', spinnerSize);
+  const spinnerSize = theme.spinner.size[size] || size;
+
+  console.log('spinnerSize', spinnerSize);
   return (
     <Box
       animation={{ type: 'rotateRight' }}
       border={[
-        { side: 'all', color: 'background-contrast' },
-        { side: 'top', color: color || 'brand' },
+        { side: 'all', color: 'background-contrast', size },
+        { side: 'top', color: color || 'brand', size },
       ]}
-      //   height={spinnerSize}
+      height={spinnerSize}
       ref={ref}
       round="full"
-      //   width={spinnerSize}
+      width={spinnerSize}
       pad="small"
       {...theme.spinner?.container}
       {...rest}
