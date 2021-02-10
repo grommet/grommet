@@ -18,12 +18,14 @@ export interface FormProps<T> {
     infos: Record<string, any>;
   }) => void;
   validate?: 'blur' | 'submit';
-  value?: {};
+  value?: T;
 }
 
-export type TypedForm<T = unknown> = React.ComponentClass<
-  FormProps<T> & Omit<JSX.IntrinsicElements['form'], 'onChange' | 'onSubmit'>
->;
-declare const Form: TypedForm;
+type TypedFormProps<T> = FormProps<T> &
+  Omit<JSX.IntrinsicElements['form'], 'onChange' | 'onSubmit'>;
+
+declare const Form: <T = {}>(
+  p: TypedFormProps<T>,
+) => React.ReactElement<TypedFormProps<T>>;
 
 export { Form };
