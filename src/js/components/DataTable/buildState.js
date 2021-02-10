@@ -210,3 +210,11 @@ export const buildGroupState = (groups, groupBy) => {
   }
   return result;
 };
+
+export const normalizeBackgroundColor = theme => {
+  const { background } = theme; // context background
+  if (typeof background === 'string') return background;
+  if (background.light && background.dark) return background;
+  if (background.color) return background.color;
+  return undefined;
+};
