@@ -14,7 +14,7 @@ import { Resizer } from './Resizer';
 import { Searcher } from './Searcher';
 import { ExpanderCell } from './ExpanderCell';
 import { StyledDataTableCell, StyledDataTableHeader, StyledDataTableRow } from './StyledDataTable';
-import { datumValue } from './buildState';
+import { datumValue, normalizeBackgroundColor } from './buildState';
 import { kindPartStyles } from '../../utils/styles';
 import { normalizeColor } from '../../utils/colors'; // separate theme values into groupings depending on what
 // part of header cell they should style
@@ -237,6 +237,15 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     if (columnPin) pin.push('left');
     if (backgroundProp) background = backgroundProp;else if (pin.length > 0 && theme.dataTable.pinned && theme.dataTable.pinned.header) {
       background = theme.dataTable.pinned.header.background;
+
+      if (!background.color && theme.background) {
+        // theme context has an active background color but the
+        // theme doesn't set an explicit color, repeat the context
+        // background explicitly
+        background = _extends({}, background, {
+          color: normalizeBackgroundColor(theme)
+        });
+      }
     } else background = undefined;
     return /*#__PURE__*/React.createElement(StyledDataTableCell, {
       key: property,

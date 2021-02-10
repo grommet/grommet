@@ -124,7 +124,16 @@ var Box = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       dark = dark === undefined ? theme.dark : dark;
       contents = /*#__PURE__*/_react["default"].createElement(_styledComponents.ThemeContext.Provider, {
         value: _extends({}, theme, {
-          dark: dark
+          dark: dark,
+          background: background
+        })
+      }, contents);
+    } else if (background) {
+      // This allows DataTable to intelligently set the background of a pinned
+      // header or footer.
+      contents = /*#__PURE__*/_react["default"].createElement(_styledComponents.ThemeContext.Provider, {
+        value: _extends({}, theme, {
+          background: background
         })
       }, contents);
     }

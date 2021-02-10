@@ -228,3 +228,11 @@ export var buildGroupState = function buildGroupState(groups, groupBy) {
 
   return result;
 };
+export var normalizeBackgroundColor = function normalizeBackgroundColor(theme) {
+  var background = theme.background; // context background
+
+  if (typeof background === 'string') return background;
+  if (background.light && background.dark) return background;
+  if (background.color) return background.color;
+  return undefined;
+};

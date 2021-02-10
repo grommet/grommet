@@ -5,7 +5,7 @@ import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { Text } from '../Text';
 import { StyledDataTableCell } from './StyledDataTable';
-import { datumValue } from './buildState';
+import { datumValue, normalizeBackgroundColor } from './buildState';
 import { TableContext } from '../Table/TableContext';
 
 var normalizeProp = function normalizeProp(name, rowProp, prop) {
@@ -54,6 +54,15 @@ var Cell = function Cell(_ref) {
 
   if (pin && theme.dataTable.pinned && theme.dataTable.pinned[context]) {
     background = theme.dataTable.pinned[context].background;
+
+    if (!background.color && theme.background) {
+      // theme context has an active background color but the
+      // theme doesn't set an explicit color, repeat the context
+      // background explicitly
+      background = _extends({}, background, {
+        color: normalizeBackgroundColor(theme)
+      });
+    }
   } else background = undefined;
 
   return /*#__PURE__*/React.createElement(StyledDataTableCell, _extends({

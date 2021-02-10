@@ -261,6 +261,15 @@ var Header = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
     if (columnPin) pin.push('left');
     if (backgroundProp) background = backgroundProp;else if (pin.length > 0 && theme.dataTable.pinned && theme.dataTable.pinned.header) {
       background = theme.dataTable.pinned.header.background;
+
+      if (!background.color && theme.background) {
+        // theme context has an active background color but the
+        // theme doesn't set an explicit color, repeat the context
+        // background explicitly
+        background = _extends({}, background, {
+          color: (0, _buildState.normalizeBackgroundColor)(theme)
+        });
+      }
     } else background = undefined;
     return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableCell, {
       key: property,

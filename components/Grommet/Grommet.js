@@ -85,7 +85,10 @@ var Grommet = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
     nextTheme.dark = (themeMode || nextTheme.defaultMode) === 'dark';
     var color = (0, _utils.normalizeColor)(background || themeBackground, nextTheme);
     nextTheme.dark = (0, _utils.backgroundIsDark)(color, nextTheme);
-    nextTheme.baseBackground = background || themeBackground;
+    nextTheme.baseBackground = background || themeBackground; // This allows DataTable to intelligently set the background of a pinned
+    // header or footer.
+
+    nextTheme.background = nextTheme.baseBackground;
 
     if (dir) {
       nextTheme.dir = dir;

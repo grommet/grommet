@@ -13,11 +13,6 @@ var pinnedColumns = columns.map(function (c) {
 pinnedColumns[0].pin = true;
 var myTheme = deepMerge(grommet, {
   table: {
-    header: {
-      background: {
-        color: 'background'
-      }
-    },
     footer: {
       background: {
         color: 'background-back'
@@ -28,7 +23,6 @@ var myTheme = deepMerge(grommet, {
     pinned: {
       header: {
         background: {
-          color: 'brand',
           opacity: 'medium'
         },
         extend: "backdrop-filter: blur(8px);"
@@ -55,7 +49,7 @@ export var Fill = function Fill() {
     pin: true,
     background: {
       pinned: {
-        color: 'orange'
+        color: 'background-contrast'
       }
     }
   })));

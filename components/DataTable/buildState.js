@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.buildGroupState = exports.buildGroups = exports.buildFooterValues = exports.filterAndSortData = exports.initializeFilters = exports.normalizePrimaryProperty = exports.datumValue = exports.set = void 0;
+exports.normalizeBackgroundColor = exports.buildGroupState = exports.buildGroups = exports.buildFooterValues = exports.filterAndSortData = exports.initializeFilters = exports.normalizePrimaryProperty = exports.datumValue = exports.set = void 0;
 
 // This file contains helper functions for DataTable, to keep the component
 // files simpler.
@@ -256,3 +256,14 @@ var buildGroupState = function buildGroupState(groups, groupBy) {
 };
 
 exports.buildGroupState = buildGroupState;
+
+var normalizeBackgroundColor = function normalizeBackgroundColor(theme) {
+  var background = theme.background; // context background
+
+  if (typeof background === 'string') return background;
+  if (background.light && background.dark) return background;
+  if (background.color) return background.color;
+  return undefined;
+};
+
+exports.normalizeBackgroundColor = normalizeBackgroundColor;

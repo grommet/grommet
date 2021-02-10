@@ -24,11 +24,6 @@ var pinnedColumns = _data.columns.map(function (c) {
 pinnedColumns[0].pin = true;
 var myTheme = (0, _utils.deepMerge)(_themes.grommet, {
   table: {
-    header: {
-      background: {
-        color: 'background'
-      }
-    },
     footer: {
       background: {
         color: 'background-back'
@@ -39,7 +34,6 @@ var myTheme = (0, _utils.deepMerge)(_themes.grommet, {
     pinned: {
       header: {
         background: {
-          color: 'brand',
           opacity: 'medium'
         },
         extend: "backdrop-filter: blur(8px);"
@@ -67,7 +61,7 @@ var Fill = function Fill() {
     pin: true,
     background: {
       pinned: {
-        color: 'orange'
+        color: 'background-contrast'
       }
     }
   })));

@@ -71,6 +71,15 @@ var Cell = function Cell(_ref) {
 
   if (pin && theme.dataTable.pinned && theme.dataTable.pinned[context]) {
     background = theme.dataTable.pinned[context].background;
+
+    if (!background.color && theme.background) {
+      // theme context has an active background color but the
+      // theme doesn't set an explicit color, repeat the context
+      // background explicitly
+      background = _extends({}, background, {
+        color: (0, _buildState.normalizeBackgroundColor)(theme)
+      });
+    }
   } else background = undefined;
 
   return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTableCell, _extends({
