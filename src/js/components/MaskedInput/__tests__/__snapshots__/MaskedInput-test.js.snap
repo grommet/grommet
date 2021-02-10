@@ -1141,7 +1141,7 @@ exports[`MaskedInput mask 1`] = `
     id="item"
     name="item"
     placeholder="!"
-    value="bb!ax"
+    value="a"
   />
 </div>
 `;
