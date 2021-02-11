@@ -145,6 +145,7 @@ exports[`FileInput accept 1`] = `
 >
   <div
     class="c1 c2"
+    tabindex="0"
   >
     <span
       class="c3 "
@@ -312,6 +313,7 @@ exports[`FileInput background 1`] = `
 >
   <div
     class="c1 c2"
+    tabindex="0"
   >
     <span
       class="c3 "
@@ -478,6 +480,7 @@ exports[`FileInput basic 1`] = `
 >
   <div
     class="c1 c2"
+    tabindex="0"
   >
     <span
       class="c3 "
@@ -644,6 +647,7 @@ exports[`FileInput border 1`] = `
 >
   <div
     class="c1 c2"
+    tabindex="0"
   >
     <span
       class="c3 "
@@ -811,6 +815,7 @@ exports[`FileInput disabled 1`] = `
   <div
     class="c1 c2"
     disabled=""
+    tabindex="0"
   >
     <span
       class="c3 "
@@ -978,6 +983,7 @@ exports[`FileInput margin 1`] = `
 >
   <div
     class="c1 c2"
+    tabindex="0"
   >
     <span
       class="c3 "
@@ -1144,6 +1150,7 @@ exports[`FileInput messages 1`] = `
 >
   <div
     class="c1 c2"
+    tabindex="0"
   >
     <span
       class="c3 "
@@ -1310,6 +1317,7 @@ exports[`FileInput multiple 1`] = `
 >
   <div
     class="c1 c2"
+    tabindex="0"
   >
     <span
       class="c3 "
@@ -1477,6 +1485,7 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
 >
   <div
     class="c1 c2"
+    tabindex="0"
   >
     <span
       class="c3 "
@@ -1644,6 +1653,7 @@ exports[`FileInput pad 1`] = `
 >
   <div
     class="c1 c2"
+    tabindex="0"
   >
     <span
       class="c3 "
