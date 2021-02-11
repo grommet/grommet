@@ -51,6 +51,8 @@ const AlignControlsTabs = () => (
 );
 
 export const AlignControls = () => <AlignControlsTabs />;
-AlignControls.story = {
-  name: 'Align controls',
+AlignControls.storyName = 'Align controls';
+
+export default {
+  title: 'Controls/Tabs/Align controls',
 };

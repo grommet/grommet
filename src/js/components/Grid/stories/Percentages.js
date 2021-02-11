@@ -20,3 +20,7 @@ export const Percentages = () => (
     </Grid>
   </Grommet>
 );
+
+export default {
+  title: 'Layout/Grid/Percentages',
+};

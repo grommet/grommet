@@ -39,8 +39,10 @@ export const Caret = () => (
   </Grommet>
 );
 
-Caret.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
+Caret.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Controls/Tip/Caret',
 };

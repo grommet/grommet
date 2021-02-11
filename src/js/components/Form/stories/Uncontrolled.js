@@ -70,3 +70,7 @@ export const Uncontrolled = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Input/Form/Uncontrolled',
+};

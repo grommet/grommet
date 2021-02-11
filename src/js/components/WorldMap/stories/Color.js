@@ -11,8 +11,10 @@ export const Color = () => (
   </Grommet>
 );
 
-Color.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
+Color.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Visualizations/WorldMap/Color',
 };

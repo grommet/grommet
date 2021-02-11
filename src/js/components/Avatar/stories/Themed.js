@@ -48,3 +48,7 @@ export const Themed = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Visualizations/Avatar/Themed',
+};

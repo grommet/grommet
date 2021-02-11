@@ -42,6 +42,8 @@ export const DSTCalendar = () => (
   </Grommet>
 );
 
-DSTCalendar.story = {
-  name: 'Daylight savings time',
+DSTCalendar.storyName = 'Daylight savings time';
+
+export default {
+  title: `Visualizations/Calendar/Daylight savings time`,
 };

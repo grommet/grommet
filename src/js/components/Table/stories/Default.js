@@ -51,3 +51,7 @@ export const Default = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Visualizations/Table/Default',
+};

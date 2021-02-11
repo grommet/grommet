@@ -205,4 +205,8 @@ export const MinMaxSizesBox = () => (
   </Grommet>
 );
 
-MinMaxSizesBox.story = { name: 'Min/max sizes' };
+MinMaxSizesBox.storyName = 'Min and max sizes';
+
+export default {
+  title: 'Layout/Box/Min and max sizes',
+};

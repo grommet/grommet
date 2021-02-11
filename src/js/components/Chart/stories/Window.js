@@ -33,7 +33,7 @@ const compressData = (data, max, count) => {
   return result;
 };
 
-export const WindowChart = ({ data, max }) => {
+const WindowChart = ({ data, max }) => {
   const [hover, setHover] = useState();
   const [range, setRange] = useState([
     data.length / 2,
@@ -151,3 +151,7 @@ export const WindowChart = ({ data, max }) => {
 export const Window = () => (
   <WindowChart data={generateData(1000, 100)} max={100} />
 );
+
+export default {
+  title: 'Visualizations/Chart/Window',
+};

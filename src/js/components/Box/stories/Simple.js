@@ -36,4 +36,8 @@ export const SimpleBox = () => (
   </Grommet>
 );
 
-SimpleBox.story = { name: 'Simple' };
+SimpleBox.storyName = 'Simple';
+
+export default {
+  title: 'Layout/Box/Simple',
+};

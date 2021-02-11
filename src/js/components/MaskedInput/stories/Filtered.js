@@ -59,8 +59,10 @@ export const Filtered = () => {
   );
 };
 
-Filtered.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
+Filtered.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Input/MaskedInput/Filtered',
 };

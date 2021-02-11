@@ -19,3 +19,7 @@ export const Round = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Visualizations/Chart/Round',
+};

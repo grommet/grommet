@@ -56,4 +56,8 @@ export const RoundBox = () => (
   </Grommet>
 );
 
-RoundBox.story = { name: 'Round' };
+RoundBox.storyName = 'Round';
+
+export default {
+  title: 'Layout/Box/Round',
+};

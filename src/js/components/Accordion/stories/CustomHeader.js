@@ -56,3 +56,7 @@ const CustomHeaderAccordion = () => {
 };
 
 export const Header = () => <CustomHeaderAccordion />;
+
+export default {
+  title: 'Controls/Accordion/Header',
+};

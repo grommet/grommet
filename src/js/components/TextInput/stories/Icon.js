@@ -14,3 +14,7 @@ export const Icon = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Input/TextInput/Icon',
+};

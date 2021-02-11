@@ -72,3 +72,7 @@ export const Custom = ({ direction = 'horizontal', ...rest }) => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Input/RangeSelector/Custom',
+};

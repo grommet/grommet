@@ -63,9 +63,12 @@ export const ManyOptions = () => {
   );
 };
 
-ManyOptions.story = {
-  name: 'Many options',
-  parameters: {
-    chromatic: { disable: true },
-  },
+ManyOptions.storyName = 'Many options';
+
+ManyOptions.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Input/Select/Many options',
 };

@@ -685,20 +685,20 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // body: {
       //   extend: undefined,
       // },
-      // pinned: {
-      //   body: {
-      //      background: undefined,
-      //      extend: undefined,
-      //   },
-      //   header: {
-      //      background: undefined,
-      //      extend: undefined,
-      //   },
-      //   footer: {
-      //      background: undefined,
-      //      extend: undefined,
-      //   },
-      // },
+      pinned: {
+        // body: {
+        //    background: undefined,
+        //    extend: undefined,
+        // },
+        header: {
+          background: { opacity: 'strong' },
+          //  extend: undefined,
+        },
+        footer: {
+          background: { opacity: 'strong' },
+          //  extend: undefined,
+        },
+      },
       groupHeader: {
         background: {
           dark: 'dark-2',

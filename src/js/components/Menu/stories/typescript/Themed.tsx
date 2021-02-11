@@ -86,8 +86,10 @@ const ThemedMenu = () => {
 };
 
 export const Themed = () => <ThemedMenu />;
-Themed.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
+Themed.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Controls/Menu/Themed',
 };

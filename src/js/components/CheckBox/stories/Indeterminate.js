@@ -46,3 +46,7 @@ export const Indeterminate = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Input/CheckBox/Indeterminate',
+};

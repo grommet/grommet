@@ -52,6 +52,8 @@ export const RequiredLabel = () => (
   </Grommet>
 );
 
-RequiredLabel.story = {
-  name: 'Required label',
+RequiredLabel.storyName = 'Required label';
+
+export default {
+  title: 'Input/Form/Required label',
 };

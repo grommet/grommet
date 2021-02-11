@@ -31,3 +31,7 @@ export const Pattern = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Visualizations/DataChart/Pattern',
+};

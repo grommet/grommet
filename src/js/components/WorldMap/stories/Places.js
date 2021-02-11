@@ -23,3 +23,7 @@ export const Places = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Visualizations/WorldMap/Places',
+};
