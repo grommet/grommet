@@ -21,3 +21,7 @@ export const Multiple = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Input/FileInput/Multiple',
+};

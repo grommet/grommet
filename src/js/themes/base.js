@@ -773,7 +773,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       dragOver: {
         border: {
-          color: 'red',
+          color: 'control',
         },
         // extend: undefined,
       },

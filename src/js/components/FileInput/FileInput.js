@@ -62,6 +62,7 @@ const FileInput = forwardRef(
       border,
       disabled,
       id,
+      plain,
       renderFile,
       messages,
       margin,
@@ -121,6 +122,7 @@ const FileInput = forwardRef(
       >
         <ContentsBox
           ref={controlRef}
+          tabIndex={!plain ? 0 : undefined}
           theme={theme}
           disabled={disabled}
           background={mergeTheme('background', 'color')}
@@ -170,6 +172,7 @@ const FileInput = forwardRef(
                       theme.global.input.weight ||
                       theme.global.input.font.weight
                     }
+                    truncate
                     {...theme.fileInput.label}
                   >
                     {file.name}
@@ -207,7 +210,7 @@ const FileInput = forwardRef(
             multiple={multiple}
             disabled={disabled}
             plain
-            offset={
+            rightOffset={
               removeRef.current &&
               removeRef.current.getBoundingClientRect().width
             }
@@ -219,7 +222,17 @@ const FileInput = forwardRef(
               const fileList = event.target.files;
               const nextFiles = multiple ? [...files] : [];
               for (let i = 0; i < fileList.length; i += 1) {
-                nextFiles.push(fileList[i]);
+                // avoid duplicates
+                let dup = false;
+                for (let j = 0; j < files.length; j += 1) {
+                  if (
+                    files[j].name === fileList[i].name &&
+                    files[j].size === fileList[i].size
+                  ) {
+                    dup = true;
+                  }
+                }
+                if (!dup) nextFiles.push(fileList[i]);
               }
               setFiles(nextFiles);
               setDragOver(false);

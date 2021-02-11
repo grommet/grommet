@@ -11,7 +11,12 @@ const StyledFileInput = styled.input`
   opacity: 0;
   border: none;
   ${props => !props.disabled && 'cursor: pointer;'}
-  ${props => props.offset && `right: ${props.offset}px;`}
+  ${props =>
+    props.rightOffset &&
+    `
+    width: calc(100% - ${props.rightOffset}px);
+    right: ${props.rightOffset}px;
+    `}
 
   &::-moz-focus-inner {
     border: none;

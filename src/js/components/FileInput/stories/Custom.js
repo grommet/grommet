@@ -48,3 +48,7 @@ export const Custom = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Input/FileInput/Custom',
+};
