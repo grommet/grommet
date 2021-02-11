@@ -115,7 +115,15 @@ const Box = forwardRef(
       if (darkChanged || theme.darkChanged) {
         dark = dark === undefined ? theme.dark : dark;
         contents = (
-          <ThemeContext.Provider value={{ ...theme, dark }}>
+          <ThemeContext.Provider value={{ ...theme, dark, background }}>
+            {contents}
+          </ThemeContext.Provider>
+        );
+      } else if (background) {
+        // This allows DataTable to intelligently set the background of a pinned
+        // header or footer.
+        contents = (
+          <ThemeContext.Provider value={{ ...theme, background }}>
             {contents}
           </ThemeContext.Provider>
         );
