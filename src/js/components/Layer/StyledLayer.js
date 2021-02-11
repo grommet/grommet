@@ -24,7 +24,7 @@ const desktopLayerStyle = `
 `;
 
 const responsiveLayerStyle = `
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   min-height: 100vh;

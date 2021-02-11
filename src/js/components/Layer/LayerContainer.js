@@ -10,6 +10,7 @@ import { defaultProps } from '../../default-props';
 
 import { FocusedContainer } from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
+import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import {
   backgroundIsDark,
   findVisibleParent,
@@ -47,6 +48,7 @@ const LayerContainer = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
+    const size = useContext(ResponsiveContext);
     const anchorRef = useRef();
     const containerRef = useRef();
     const layerRef = useRef();
@@ -86,6 +88,8 @@ const LayerContainer = forwardRef(
       }
     }, [position, ref]);
 
+    const hitResponsiveBreakpoint =
+      responsive && size === theme.layer.responsiveBreakpoint;
     useEffect(() => {
       const onClickDocument = event => {
         // determine which portal id the target is in, if any
@@ -137,12 +141,18 @@ const LayerContainer = forwardRef(
             const layerRect = layer.getBoundingClientRect();
 
             // ensure that layer moves with the target
-            layer.style.left = `${targetRect.left}px`;
-            layer.style.right = `${windowWidth - targetRect.right}px`;
-            layer.style.top = `${targetRect.top}px`;
-            layer.style.bottom = `${windowHeight - targetRect.bottom}px`;
-            layer.style.maxHeight = targetRect.height;
-            layer.style.maxWidth = Math.min(layerRect.width, windowWidth);
+            // however, if a layer is responsive and we've hit the
+            // responsive breakpoint, let StyledLayer handle the positioning
+            // since we want the layer to fill the viewport instead of being
+            // relative to the target
+            if (!hitResponsiveBreakpoint) {
+              layer.style.left = `${targetRect.left}px`;
+              layer.style.right = `${windowWidth - targetRect.right}px`;
+              layer.style.top = `${targetRect.top}px`;
+              layer.style.bottom = `${windowHeight - targetRect.bottom}px`;
+              layer.style.maxHeight = targetRect.height;
+              layer.style.maxWidth = Math.min(layerRect.width, windowWidth);
+            }
           }
         };
 
@@ -163,7 +173,13 @@ const LayerContainer = forwardRef(
           document.removeEventListener('mousedown', onClickDocument);
         }
       };
-    }, [layerTarget, onClickOutside, portalContext, portalId]);
+    }, [
+      hitResponsiveBreakpoint,
+      layerTarget,
+      onClickOutside,
+      portalContext,
+      portalId,
+    ]);
 
     let content = (
       <StyledContainer
@@ -192,28 +208,26 @@ const LayerContainer = forwardRef(
         {children}
       </StyledContainer>
     );
-    if (modal || layerTarget) {
-      content = (
-        <StyledLayer
-          ref={layerRef}
-          id={id}
-          plain={plain}
-          position={position}
-          responsive={responsive}
-          tabIndex="-1"
-          dir={theme.dir}
-        >
-          {modal && (
-            <StyledOverlay
-              plain={plain}
-              responsive={responsive}
-              onMouseDown={onClickOutside}
-            />
-          )}
-          {content}
-        </StyledLayer>
-      );
-    }
+    content = (
+      <StyledLayer
+        ref={layerRef}
+        id={id}
+        plain={plain}
+        position={position}
+        responsive={responsive}
+        tabIndex="-1"
+        dir={theme.dir}
+      >
+        {modal && (
+          <StyledOverlay
+            plain={plain}
+            responsive={responsive}
+            onMouseDown={onClickOutside}
+          />
+        )}
+        {content}
+      </StyledLayer>
+    );
 
     if (onEsc) {
       content = (
@@ -252,14 +266,20 @@ const LayerContainer = forwardRef(
       </PortalContext.Provider>
     );
 
-    if (modal) {
+    // if layer is responsive and we've hit the breakpoint,
+    // the layer will be filling the viewport, so we want to
+    // restrict the scroll to the layer and not allow the
+    // body to scroll
+    if (modal || hitResponsiveBreakpoint) {
       content = (
         <FocusedContainer
           hidden={position === 'hidden'}
           // if layer has a target, do not restrict scroll.
           // restricting scroll could inhibit the user's
           // ability to scroll the page while the layer is open.
-          restrictScroll={!layerTarget ? true : undefined}
+          restrictScroll={
+            !layerTarget || hitResponsiveBreakpoint ? true : undefined
+          }
           trapFocus
         >
           {content}
