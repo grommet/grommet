@@ -116,6 +116,18 @@ const Input = ({ component, disabled, invalid, name, onChange, ...rest }) => {
   );
 };
 
+const debounce = (func, wait) => {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      timeout = null;
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+};
+
 const FormField = forwardRef(
   (
     {
@@ -365,18 +377,6 @@ const FormField = forwardRef(
       // accessibility resource: https://www.deque.com/blog/anatomy-of-accessible-forms-required-form-fields/
       requiredIndicator = <Text a11yTitle="required">*</Text>;
 
-      const debounce = (func, wait) => {
-        let timeout;
-        return function executedFunction(...args) {
-          const later = () => {
-            timeout = null;
-            func(...args);
-          };
-          clearTimeout(timeout);
-          timeout = setTimeout(later, wait);
-        };
-      };
-
     return (
       <FormFieldBox
         ref={ref}
@@ -398,7 +398,8 @@ const FormField = forwardRef(
           const debouncedFn =  debounce(() => {
             if (contextOnChange) contextOnChange(event);
             if (onChange) onChange(event);
-          }, 250);
+            // 2 seconds might be too long depending on how fast people type, and 200ms would be an eye blink, https://www.nngroup.com/articles/powers-of-10-time-scales-in-ux/
+          }, 500);
           
           debouncedFn();
         }}
