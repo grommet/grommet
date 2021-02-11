@@ -3,9 +3,10 @@ import { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 
-import { TableCell } from '../TableCell';
 import { Text } from '../Text';
-import { datumValue } from './buildState';
+import { StyledDataTableCell } from './StyledDataTable';
+import { datumValue, normalizeBackgroundColor } from './buildState';
+import { TableContext } from '../Table/TableContext';
 
 const normalizeProp = (name, rowProp, prop) => {
   if (rowProp && rowProp[name]) return rowProp[name];
@@ -13,21 +14,33 @@ const normalizeProp = (name, rowProp, prop) => {
 };
 
 const Cell = ({
-  background,
+  background: backgroundProp,
   border,
-  column: { align, property, render, verticalAlign, size },
-  context,
+  column: {
+    align,
+    pin: columnPin,
+    footer,
+    property,
+    render,
+    verticalAlign,
+    size,
+  },
   datum,
   index,
   pad,
+  pin: cellPin,
   primaryProperty,
   rowProp,
   scope,
 }) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const value = datumValue(datum, property);
+  const context = useContext(TableContext);
+  const renderContexts =
+    context === 'body' || (context === 'footer' && footer && footer.aggregate);
+
   let content;
-  if (render) {
+  if (render && renderContexts) {
     content = render(datum);
   } else if (value !== undefined) {
     content = value;
@@ -39,25 +52,47 @@ const Cell = ({
     content = <Text {...textProps}>{content}</Text>;
   }
 
+  let pin;
+  if (cellPin) pin = cellPin;
+  else if (columnPin) pin = ['left'];
+
+  let background;
+  if (pin && theme.dataTable.pinned && theme.dataTable.pinned[context]) {
+    background = theme.dataTable.pinned[context].background;
+    if (!background.color && theme.background) {
+      // theme context has an active background color but the
+      // theme doesn't set an explicit color, repeat the context
+      // background explicitly
+      background = {
+        ...background,
+        color: normalizeBackgroundColor(theme),
+      };
+    }
+  } else background = undefined;
+
   return (
-    <TableCell
+    <StyledDataTableCell
       scope={scope}
       {...theme.dataTable[context]}
       align={align}
+      context={context}
       verticalAlign={verticalAlign}
       size={size}
-      background={normalizeProp(
-        'background',
-        rowProp,
-        Array.isArray(background)
-          ? background[index % background.length]
-          : background,
-      )}
+      background={
+        normalizeProp(
+          'background',
+          rowProp,
+          Array.isArray(backgroundProp)
+            ? backgroundProp[index % backgroundProp.length]
+            : backgroundProp,
+        ) || background
+      }
       border={normalizeProp('border', rowProp, border)}
       pad={normalizeProp('pad', rowProp, pad)}
+      pin={pin}
     >
       {content}
-    </TableCell>
+    </StyledDataTableCell>
   );
 };
 

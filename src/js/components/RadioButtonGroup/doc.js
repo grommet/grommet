@@ -1,10 +1,10 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = RadioButtonGroup => {
   const DocumentedRadioButtonGroup = describe(RadioButtonGroup)
-    .availableAt(getAvailableAtBadge('RadioButtonGroup'))
+    .availableAt(getAvailableAtBadge('RadioButtonGroup', 'Input'))
     .description('A group of radio buttons.')
     .usage(
       `import { RadioButtonGroup } from 'grommet';
@@ -60,4 +60,12 @@ export const doc = RadioButtonGroup => {
   };
 
   return DocumentedRadioButtonGroup;
+};
+
+export const themeDoc = {
+  'radioButtonGroup.container': {
+    description: 'Any valid Box props for the RadioButtonGroup container.',
+    type: 'object',
+    defaultValue: 'undefined',
+  },
 };

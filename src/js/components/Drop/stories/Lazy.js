@@ -1,9 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Drop, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
-import { deepMerge } from '../../../utils/object';
+import { deepMerge } from 'grommet/utils';
 
 const lazyTheme = deepMerge(grommet, {
   global: {
@@ -121,4 +120,11 @@ const LazyDrop = () => {
   );
 };
 
-storiesOf('Drop', module).add('Lazy', () => <LazyDrop />);
+export const Lazy = () => <LazyDrop />;
+Lazy.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Controls/Drop/Lazy',
+};

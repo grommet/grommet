@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
@@ -18,7 +17,7 @@ const customTheme = deepMerge(grommet, {
   },
 });
 
-const GlobalThemeWithThemeContext = () => {
+export const GlobalThemeWithThemeContext = () => {
   const options = ['one', 'two', 'three'];
   const [valueRed, setValueRed] = useState('');
   const [valueBlue, setValueBlue] = useState('');
@@ -69,6 +68,8 @@ const GlobalThemeWithThemeContext = () => {
   );
 };
 
-storiesOf('Theme', module).add('ThemeContext.Extend', () => (
-  <GlobalThemeWithThemeContext />
-));
+GlobalThemeWithThemeContext.storyName = 'ThemeContext.Extend';
+
+export default {
+  title: 'Utilities/ThemeContext/ThemeContext/Extend',
+};

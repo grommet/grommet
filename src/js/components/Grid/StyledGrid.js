@@ -1,22 +1,22 @@
 import styled, { css } from 'styled-components';
 
-import { edgeStyle, genericStyles } from '../../utils';
+import { borderStyle, edgeStyle, genericStyles } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 const fillStyle = fill => {
+  if (!fill) {
+    return fill;
+  }
   if (fill === 'horizontal') {
     return 'width: 100%;';
   }
   if (fill === 'vertical') {
     return 'height: 100%;';
   }
-  if (fill) {
-    return `
+  return `
       width: 100%;
       height: 100%;
     `;
-  }
-  return undefined;
 };
 
 const ALIGN_MAP = {
@@ -110,12 +110,20 @@ const getRepeatCount = count =>
   typeof count === 'number' ? count : `auto-${count}`;
 
 const getRepeatSize = (size, theme) => {
-  if (Array.isArray(size)) {
-    return `minmax(${theme.global.size[size[0]] || size[0]}, ${theme.global
-      .size[size[1]] || size[1]})`;
-  }
   if (size === 'flex') return '1fr';
-  return `minmax(${theme.global.size[size] || size}, 1fr)`;
+  let min;
+  let max;
+  if (Array.isArray(size)) {
+    min = theme.global.size[size[0]] || size[0];
+    max = theme.global.size[size[1]] || size[1];
+  } else {
+    min = theme.global.size[size] || size;
+    max = '1fr';
+  }
+  if (min.search(/\d/) !== -1) {
+    min = `min(${min}, 100%)`;
+  }
+  return `minmax(${min}, ${max})`;
 };
 
 const sizeFor = (size, props, isRow) => {
@@ -214,7 +222,14 @@ const StyledGrid = styled.div.attrs(props => ({
   box-sizing: border-box;
 
   ${genericStyles}
-  ${props => props.fillContainer && fillStyle(props.fillContainer)}
+  ${props =>
+    props.border &&
+    (Array.isArray(props.border)
+      ? props.border.map(border =>
+          borderStyle(border, props.responsive, props.theme),
+        )
+      : borderStyle(props.border, props.responsive, props.theme))}
+  ${props => fillStyle(props.fillContainer)}
   ${props => props.align && alignStyle}
   ${props => props.alignContent && alignContentStyle}
   ${props => props.areas && areasStyle(props)}

@@ -17,6 +17,7 @@ import {
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
+import { Tip } from '../Tip';
 
 import { StyledButton } from './StyledButton';
 import { StyledButtonKind } from './StyledButtonKind';
@@ -116,6 +117,7 @@ const Button = forwardRef(
       secondary,
       selected,
       size,
+      tip,
       type = 'button',
       as,
       ...rest
@@ -152,24 +154,17 @@ const Button = forwardRef(
       const result = { base: [], hover: [] };
       result.base.push(kind);
       if (selected) {
-        result.base.push('selected');
-        if (kind) result.base.push(`selected.${kind}`);
+        result.base.push('selected', `selected.${kind}`);
       }
       if (disabled) {
-        result.base.push('disabled');
-        if (kind) result.base.push(`disabled.${kind}`);
+        result.base.push('disabled', `disabled.${kind}`);
       } else {
         if (active) {
-          result.base.push('active');
-          if (kind) result.base.push(`active.${kind}`);
+          result.base.push('active', `active.${kind}`);
         }
-        result.hover.push('hover');
-        if (kind) result.hover.push(`hover.${kind}`);
+        result.hover.push('hover', `hover.${kind}`);
         if (active) {
-          result.hover.push(`hover.active`);
-          if (kind) {
-            result.hover.push(`hover.active.${kind}`);
-          }
+          result.hover.push(`hover.active`, `hover.active.${kind}`);
         }
       }
       return result;
@@ -236,23 +231,26 @@ const Button = forwardRef(
           align="center"
           justify={align === 'center' ? 'center' : 'between'}
           gap={gap}
+          responsive={false}
         >
           {first}
           {second}
         </Box>
       );
     } else if (typeof children === 'function') {
-      contents = children({ hover, focus });
+      contents = children({ disabled, hover, focus });
     } else {
       contents = first || second || children;
     }
 
+    let styledButtonResult;
     if (kind) {
-      return (
+      styledButtonResult = (
         <StyledButtonKind
           {...rest}
           as={domTag}
           ref={ref}
+          active={active}
           align={align}
           aria-label={a11yTitle}
           colorValue={color}
@@ -275,7 +273,7 @@ const Button = forwardRef(
           }}
           onMouseOver={onMouseOverButton}
           onMouseOut={onMouseOutButton}
-          plain={plain}
+          plain={plain || Children.count(children) > 0}
           primary={primary}
           sizeProp={size}
           type={!href ? type : undefined}
@@ -283,51 +281,58 @@ const Button = forwardRef(
           {contents}
         </StyledButtonKind>
       );
+    } else {
+      styledButtonResult = (
+        <StyledButton
+          {...rest}
+          as={domTag}
+          ref={ref}
+          aria-label={a11yTitle}
+          colorValue={color}
+          active={active}
+          selected={selected}
+          disabled={disabled}
+          hasIcon={!!icon}
+          gap={gap}
+          hasLabel={!!label}
+          fillContainer={fill}
+          focus={focus}
+          focusIndicator={focusIndicator}
+          href={href}
+          kind={kind}
+          themePaths={themePaths}
+          onClick={onClick}
+          onFocus={event => {
+            setFocus(true);
+            if (onFocus) onFocus(event);
+          }}
+          onBlur={event => {
+            setFocus(false);
+            if (onBlur) onBlur(event);
+          }}
+          onMouseOver={onMouseOverButton}
+          onMouseOut={onMouseOutButton}
+          pad={!plain}
+          plain={
+            typeof plain !== 'undefined'
+              ? plain
+              : Children.count(children) > 0 || (icon && !label)
+          }
+          primary={primary}
+          sizeProp={size}
+          type={!href ? type : undefined}
+        >
+          {contents}
+        </StyledButton>
+      );
     }
-
-    return (
-      <StyledButton
-        {...rest}
-        as={domTag}
-        ref={ref}
-        aria-label={a11yTitle}
-        colorValue={color}
-        active={active}
-        selected={selected}
-        disabled={disabled}
-        hasIcon={!!icon}
-        gap={gap}
-        hasLabel={!!label}
-        fillContainer={fill}
-        focus={focus}
-        focusIndicator={focusIndicator}
-        href={href}
-        kind={kind}
-        themePaths={themePaths}
-        onClick={onClick}
-        onFocus={event => {
-          setFocus(true);
-          if (onFocus) onFocus(event);
-        }}
-        onBlur={event => {
-          setFocus(false);
-          if (onBlur) onBlur(event);
-        }}
-        onMouseOver={onMouseOverButton}
-        onMouseOut={onMouseOutButton}
-        pad={!plain}
-        plain={
-          typeof plain !== 'undefined'
-            ? plain
-            : Children.count(children) > 0 || (icon && !label)
-        }
-        primary={primary}
-        sizeProp={size}
-        type={!href ? type : undefined}
-      >
-        {contents}
-      </StyledButton>
-    );
+    if (tip) {
+      if (typeof tip === 'string') {
+        return <Tip content={tip}>{styledButtonResult}</Tip>;
+      }
+      return <Tip {...tip}>{styledButtonResult}</Tip>;
+    }
+    return styledButtonResult;
   },
 );
 

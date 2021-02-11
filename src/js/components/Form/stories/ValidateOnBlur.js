@@ -1,11 +1,10 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
-import { Box, Button, Grommet, Form, FormField, TextInput } from 'grommet';
 import { StatusGood } from 'grommet-icons';
+import { Box, Button, Grommet, Form, FormField, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Example = () => (
+export const ValidateOnBlur = () => (
   <Grommet full theme={grommet}>
     <Box fill align="center" justify="center">
       <Box width="medium">
@@ -54,4 +53,8 @@ const Example = () => (
   </Grommet>
 );
 
-storiesOf('Form', module).add('Validate on blur', () => <Example />);
+ValidateOnBlur.storyName = 'Validate on blur';
+
+export default {
+  title: 'Input/Form/Validate on blur',
+};

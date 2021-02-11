@@ -1,12 +1,12 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import isChromatic from 'storybook-chromatic/isChromatic';
 
 import { Box, Grommet, RangeInput } from 'grommet';
 import { ThemeType } from 'grommet/themes';
 
 import { Volume } from 'grommet-icons';
 
+// Type annotations can only be used in TypeScript files.
+// Remove ': ThemeType' if you are not using Typescript.
 const customThemeRangeInput: ThemeType = {
   global: {
     spacing: '12px',
@@ -31,7 +31,7 @@ const customThemeRangeInput: ThemeType = {
   },
 };
 
-const CustomRangeInput = () => {
+export const Custom = () => {
   const [value, setValue] = React.useState(0.4);
 
   const onChange = event => setValue(event.target.value);
@@ -54,6 +54,6 @@ const CustomRangeInput = () => {
   );
 };
 
-if (!isChromatic()) {
-  storiesOf('RangeInput', module).add('Typescript', () => <CustomRangeInput />);
-}
+export default {
+  title: 'Input/RangeInput/Custom',
+};

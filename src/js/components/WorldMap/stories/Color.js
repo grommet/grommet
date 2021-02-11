@@ -1,17 +1,20 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, WorldMap } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Example = () => {
-  return (
-    <Grommet theme={grommet}>
-      <Box align="center" pad="large">
-        <WorldMap color="graph-1" />
-      </Box>
-    </Grommet>
-  );
+export const Color = () => (
+  <Grommet theme={grommet}>
+    <Box align="center" pad="large">
+      <WorldMap color="graph-1" />
+    </Box>
+  </Grommet>
+);
+
+Color.parameters = {
+  chromatic: { disable: true },
 };
 
-storiesOf('WorldMap', module).add('Color', () => <Example />);
+export default {
+  title: 'Visualizations/WorldMap/Color',
+};

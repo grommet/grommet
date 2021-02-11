@@ -1,9 +1,8 @@
-import * as React from "react";
+import * as React from 'react';
 
-export interface TableFooterProps {
-  
-}
+export interface TableFooterProps {}
 
-declare const TableFooter: React.FC<TableFooterProps & JSX.IntrinsicElements['tfoot']>;
+declare const TableFooter: React.FC<TableFooterProps &
+  JSX.IntrinsicElements['tfoot']>;
 
 export { TableFooter };

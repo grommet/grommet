@@ -1,13 +1,12 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
+import React, { useState } from 'react';
 
 import {
   Box,
   Button,
   CheckBox,
-  Grommet,
   Form,
   FormField,
+  Grommet,
   MaskedInput,
   RadioButtonGroup,
   RangeInput,
@@ -27,16 +26,18 @@ const defaultValue = {
   age: '',
 };
 
-const Example = () => {
-  const [value, setValue] = React.useState(defaultValue);
+const suggestions = ['Shimi', 'Eric'];
+
+export const Controlled = () => {
+  const [value, setValue] = useState(defaultValue);
   return (
     <Grommet full theme={grommet}>
       <Box fill align="center" justify="center">
         <Box width="medium">
           <Form
             value={value}
-            onChange={nextValue => {
-              console.log('Change', nextValue);
+            onChange={(nextValue, { touched }) => {
+              console.log('Change', nextValue, touched);
               setValue(nextValue);
             }}
             onReset={() => setValue(defaultValue)}
@@ -45,7 +46,7 @@ const Example = () => {
             }
           >
             <FormField label="Name" name="name">
-              <TextInput name="name" />
+              <TextInput name="name" suggestions={suggestions} />
             </FormField>
             <FormField label="Email" name="email" required>
               <MaskedInput
@@ -86,4 +87,6 @@ const Example = () => {
   );
 };
 
-storiesOf('Form', module).add('Controlled', () => <Example />);
+export default {
+  title: 'Input/Form/Controlled',
+};

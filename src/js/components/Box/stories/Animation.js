@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Grid } from 'grommet';
 import { grommet } from '../../../themes';
 
-const Example = () => (
+export const Animation = () => (
   <Grommet theme={grommet}>
     <Box pad="medium">
       <Grid columns="small" gap="medium">
@@ -37,4 +36,6 @@ const Example = () => (
   </Grommet>
 );
 
-storiesOf('Box', module).add('Animation', () => <Example />);
+export default {
+  title: 'Layout/Box/Animation',
+};

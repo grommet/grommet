@@ -45,7 +45,7 @@ exports[`Markdown renders 1`] = `
   max-width: 432px;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -75,12 +75,11 @@ exports[`Markdown renders 1`] = `
   text-decoration: underline;
 }
 
-.c9 {
+.c8 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  height: 100%;
   text-align: start;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
@@ -89,21 +88,16 @@ exports[`Markdown renders 1`] = `
   padding-bottom: 6px;
 }
 
-.c11 {
+.c10 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  height: 100%;
   text-align: start;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
-}
-
-.c8 {
-  height: 100%;
 }
 
 .c7 {
@@ -138,9 +132,9 @@ exports[`Markdown renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c5 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
+    font-size: 16px;
+    line-height: 22px;
+    max-width: 384px;
   }
 }
 
@@ -216,36 +210,36 @@ exports[`Markdown renders 1`] = `
       className="c7"
     >
       <thead
-        className=""
+        className="StyledTable__StyledTableHeader-sc-1m3u5g-4"
       >
         <tr
-          className="c8"
+          className="StyledTable__StyledTableRow-sc-1m3u5g-2"
         >
           <td
-            className="c9"
+            className="c8"
           >
             <div
-              className="c10"
+              className="c9"
               style={Object {}}
             >
               Markdown
             </div>
           </td>
           <td
-            className="c9"
+            className="c8"
           >
             <div
-              className="c10"
+              className="c9"
               style={Object {}}
             >
               Less
             </div>
           </td>
           <td
-            className="c9"
+            className="c8"
           >
             <div
-              className="c10"
+              className="c9"
               style={Object {}}
             >
               Pretty
@@ -254,16 +248,16 @@ exports[`Markdown renders 1`] = `
         </tr>
       </thead>
       <tbody
-        className=""
+        className="StyledTable__StyledTableBody-sc-1m3u5g-3"
       >
         <tr
-          className="c8"
+          className="StyledTable__StyledTableRow-sc-1m3u5g-2"
         >
           <td
-            className="c11"
+            className="c10"
           >
             <div
-              className="c10"
+              className="c9"
               style={Object {}}
             >
               <em>
@@ -272,10 +266,10 @@ exports[`Markdown renders 1`] = `
             </div>
           </td>
           <td
-            className="c11"
+            className="c10"
           >
             <div
-              className="c10"
+              className="c9"
               style={Object {}}
             >
               <code>
@@ -284,10 +278,10 @@ exports[`Markdown renders 1`] = `
             </div>
           </td>
           <td
-            className="c11"
+            className="c10"
           >
             <div
-              className="c10"
+              className="c9"
               style={Object {}}
             >
               <strong>
@@ -297,33 +291,33 @@ exports[`Markdown renders 1`] = `
           </td>
         </tr>
         <tr
-          className="c8"
+          className="StyledTable__StyledTableRow-sc-1m3u5g-2"
         >
           <td
-            className="c11"
+            className="c10"
           >
             <div
-              className="c10"
+              className="c9"
               style={Object {}}
             >
               1
             </div>
           </td>
           <td
-            className="c11"
+            className="c10"
           >
             <div
-              className="c10"
+              className="c9"
               style={Object {}}
             >
               2
             </div>
           </td>
           <td
-            className="c11"
+            className="c10"
           >
             <div
-              className="c10"
+              className="c9"
               style={Object {}}
             >
               3

@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { FormDown } from 'grommet-icons';
-import isChromatic from 'storybook-chromatic/isChromatic';
 
 import { Grommet, Box, Calendar, DropButton, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -36,8 +34,13 @@ const CalendarDropButton = () => {
   );
 };
 
-if (!isChromatic()) {
-  storiesOf('TypeScript/DropButton', module).add('Calendar', () => (
-    <CalendarDropButton />
-  ));
-}
+export const CalendarDrop = () => <CalendarDropButton />;
+CalendarDrop.parameters = {
+  chromatic: { disable: true },
+};
+
+CalendarDrop.storyName = 'Calendar';
+
+export default {
+  title: 'Controls/DropButton/Calendar',
+};

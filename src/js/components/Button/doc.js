@@ -1,21 +1,21 @@
 import { describe, PropTypes } from 'react-desc';
 
 import {
-  colorPropType,
   genericProps,
-  getAvailableAtBadge,
+  colorPropType,
   hoverIndicatorPropType,
-  themeDocUtils,
-} from '../../utils';
+} from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
+import { themeDocUtils } from '../../utils/themeDocUtils';
 
 export const doc = Button => {
   const DocumentedButton = describe(Button)
-    .availableAt(getAvailableAtBadge('Button'))
+    .availableAt(getAvailableAtBadge('Button', 'Controls'))
     .description('A button.')
     .details(
       `You can provide a single function child that will be called with
-      'hover' and 'focus' keys. This allows you to customize the rendering
-      of the Button in those cases.`,
+      'disabled', 'hover' and 'focus' keys. 
+      This allows you to customize the rendering of the Button in those cases.`,
     )
     .usage(
       `import { Button } from 'grommet';
@@ -25,6 +25,19 @@ export const doc = Button => {
 
   DocumentedButton.propTypes = {
     ...genericProps,
+    children: PropTypes.oneOfType([
+      PropTypes.func,
+      PropTypes.object,
+      PropTypes.node,
+    ]).description(
+      `Function that can be called to render the visual representation.
+      Button can take in Children as a function, node, or object. 
+      For example, 'disabled', 'hover', and 'focus' can be passed as an 
+      argument that would then return a react element.
+      \`children={({ disabled, hover, focus }) => <Box...>{...}</Box>}\`. 
+      When Button has children, it is styled as a \`plain\` button.
+      `,
+    ),
     active: PropTypes.bool
       .description('Whether the button is active.')
       .defaultValue(false),
@@ -87,7 +100,9 @@ with plain Buttons.`,
         `Whether this is a plain button with no border or pad.
           Non plain button will show both pad and border.
           The plain button has no border and unless the icon prop exist it has 
-          no pad as well.`,
+          no pad as well. 
+          When using the kind button (i.e. button.default on the theme), 
+          the usage of plain is deprecated.`,
       )
       .defaultValue(false),
     primary: PropTypes.bool
@@ -110,9 +125,20 @@ with plain Buttons.`,
       padding, border radius, text size and line height. 
       'size' will not impact any icon related sizing.`,
     ),
-    target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']).description(
+    target: PropTypes.oneOfType([
+      PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
+      PropTypes.string,
+    ]).description(
       `Specifies where to display the URL defined in the href property.`,
     ),
+    tip: PropTypes.oneOfType([
+      PropTypes.shape({
+        content: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+        dropProps: PropTypes.shape({}),
+        plain: PropTypes.bool,
+      }),
+      PropTypes.string,
+    ]).description(`tooltip or a hint when hovering over the button.`),
     type: PropTypes.oneOf(['button', 'reset', 'submit'])
       .description(
         `The type of button. Set the type to submit for the default button on 
@@ -259,6 +285,10 @@ export const themeDoc = {
     description: `The color of the label for default buttons.`,
     type: 'string | { dark: string, light: string }',
   },
+  'button.default.font.weight': {
+    description: `The weight of the text label for default buttons.`,
+    type: 'string | number',
+  },
   'button.default.extend': {
     description: 'Any additional style for a default button.',
     type: 'string | (props) => {}',
@@ -274,7 +304,6 @@ export const themeDoc = {
     type: 'string',
     defaultValue: '4px',
   },
-
   'button.disabled.color': {
     description: `Label color when the button is disabled.`,
     type: 'string | { dark: string, light: string }',
@@ -379,6 +408,10 @@ export const themeDoc = {
     description: `The color of the label for primary buttons.`,
     type: 'string | { dark: string, light: string }',
   },
+  'button.primary.font.weight': {
+    description: `The weight of the text label for primary buttons.`,
+    type: 'string | number',
+  },
   'button.primary.padding.horizontal': {
     description: 'The horizontal padding for a primary button.',
     type: 'string',
@@ -412,6 +445,10 @@ export const themeDoc = {
   'button.secondary.color': {
     description: `The color of the label for secondary buttons.`,
     type: 'string | { dark: string, light: string }',
+  },
+  'button.secondary.font.weight': {
+    description: `The weight of the text label for secondary buttons.`,
+    type: 'string | number',
   },
   'button.secondary.padding.horizontal': {
     description: 'The horizontal padding for a secondary button.',
@@ -496,6 +533,20 @@ duration and allowing it to change speed during its course.`,
   'button.extend': {
     description: 'Any additional style for the Button.',
     type: 'string | (props) => {}',
+  },
+  'tip.content': {
+    description:
+      'When using tip prop, any valid Box property for the Tip container.',
+    type: 'object',
+    defaultValue: `{ background: 'background-contrast', elevation: 'small', 
+    margin: 'xsmall', pad: { vertical: 'xsmall', horizontal: 'small' }, 
+    round: 'small'}`,
+  },
+  'tip.drop': {
+    description:
+      'When using tip prop, any valid Drop property for the Tooltip.',
+    type: 'object',
+    defaultValue: "{align: { top: 'bottom' }}",
   },
   ...themeDocUtils.focusStyle,
   ...themeDocUtils.disabledStyle,

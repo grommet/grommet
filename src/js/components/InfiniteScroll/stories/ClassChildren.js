@@ -1,21 +1,20 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, InfiniteScroll, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-import { allItems } from './Basics';
+const allItems = Array(2000)
+  .fill()
+  .map((_, i) => `item ${i + 1}`);
 
 /* eslint-disable react/prefer-stateless-function */
-const MyItem = ({ item }) => {
-  return (
-    <Box pad="medium" border={{ side: 'bottom' }} align="center">
-      <Text>{item}</Text>
-    </Box>
-  );
-};
+const MyItem = ({ item }) => (
+  <Box pad="medium" border={{ side: 'bottom' }} align="center">
+    <Text>{item}</Text>
+  </Box>
+);
 
-const ClassChildrenInfiniteScroll = props => (
+export const ClassChildrenInfiniteScroll = props => (
   <Grommet theme={grommet}>
     <Box>
       <InfiniteScroll items={allItems} {...props}>
@@ -25,6 +24,8 @@ const ClassChildrenInfiniteScroll = props => (
   </Grommet>
 );
 
-storiesOf('InfiniteScroll', module).add('Class Children', () => (
-  <ClassChildrenInfiniteScroll />
-));
+ClassChildrenInfiniteScroll.storyName = 'Class children';
+
+export default {
+  title: 'Utilities/InfiniteScroll/Class children',
+};

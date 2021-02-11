@@ -36,15 +36,13 @@ const customBreakpointsTheme = {
   },
 };
 
-const SSRTester = ({ ua }) => {
-  return (
-    <Grommet theme={customBreakpointsTheme} userAgent={ua}>
-      <ResponsiveContext.Consumer>
-        {size => <Heading>{`Received size ${size} for ${ua}`}</Heading>}
-      </ResponsiveContext.Consumer>
-    </Grommet>
-  );
-};
+const SSRTester = ({ ua }) => (
+  <Grommet theme={customBreakpointsTheme} userAgent={ua}>
+    <ResponsiveContext.Consumer>
+      {size => <Heading>{`Received size ${size} for ${ua}`}</Heading>}
+    </ResponsiveContext.Consumer>
+  </Grommet>
+);
 
 describe('Grommet', () => {
   afterEach(cleanup);
@@ -103,11 +101,15 @@ describe('Grommet', () => {
     expect(container.firstChild).toMatchSnapshot();
 
     // no style, no need for expectPortal
-    expect(document.body.querySelector('[aria-live]')).toMatchSnapshot();
+    expect(
+      document.body.querySelector('#grommet-announcer[aria-live]'),
+    ).toMatchSnapshot();
 
     setTimeout(() => {
       // should clear the aria-live container
-      expect(document.body.querySelector('[aria-live]')).toMatchSnapshot();
+      expect(
+        document.body.querySelector('#grommet-announcer[aria-live]'),
+      ).toMatchSnapshot();
       done();
     }, 600); // wait the aria-live container to clear
   });

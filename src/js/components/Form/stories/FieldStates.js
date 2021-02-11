@@ -1,9 +1,9 @@
-import React, { useRef, useEffect } from 'react';
-import { storiesOf } from '@storybook/react';
+import React, { useEffect, useRef } from 'react';
 
-import { grommet, Box, Form, FormField, TextInput, Grommet } from 'grommet';
+import { Box, Form, FormField, Grommet, TextInput } from 'grommet';
+import { grommet } from 'grommet/themes';
 
-const FormFieldStates = () => {
+export const FieldStates = () => {
   const inputRef = useRef();
 
   useEffect(() => {
@@ -76,4 +76,8 @@ const FormFieldStates = () => {
   );
 };
 
-storiesOf('Form', module).add('Field States', () => <FormFieldStates />);
+FieldStates.storyName = 'Field states';
+
+export default {
+  title: 'Input/Form/Field states',
+};

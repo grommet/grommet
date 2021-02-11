@@ -17,7 +17,13 @@ import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
 
-const grommetInputNames = ['TextInput', 'Select', 'MaskedInput', 'TextArea'];
+const grommetInputNames = [
+  'TextInput',
+  'Select',
+  'MaskedInput',
+  'TextArea',
+  'DateInput',
+];
 const grommetInputPadNames = [
   'CheckBox',
   'CheckBoxGroup',
@@ -39,10 +45,42 @@ const FormFieldContentBox = styled(Box)`
   ${props => props.focus && focusStyle({ justBorder: true })}
 `;
 
-const Message = ({ message, ...rest }) => {
+const StyledMessageContainer = styled(Box)`
+  ${props =>
+    props.messageType &&
+    props.theme.formField[props.messageType].container &&
+    props.theme.formField[props.messageType].container.extend}
+`;
+
+const Message = ({ error, info, message, type, ...rest }) => {
+  const theme = useContext(ThemeContext) || defaultProps.theme;
+
   if (message) {
-    if (typeof message === 'string') return <Text {...rest}>{message}</Text>;
-    return <Box {...rest}>{message}</Box>;
+    let icon;
+    let containerProps;
+
+    if (type) {
+      icon = theme.formField[type] && theme.formField[type].icon;
+      containerProps = theme.formField[type] && theme.formField[type].container;
+    }
+
+    let messageContent;
+    if (typeof message === 'string')
+      messageContent = <Text {...rest}>{message}</Text>;
+    else messageContent = <Box {...rest}>{message}</Box>;
+
+    return icon || containerProps ? (
+      <StyledMessageContainer
+        direction="row"
+        messageType={type}
+        {...containerProps}
+      >
+        {icon && <Box flex={false}>{icon}</Box>}
+        {messageContent}
+      </StyledMessageContainer>
+    ) : (
+      messageContent
+    );
   }
   return null;
 };
@@ -84,6 +122,7 @@ const FormField = forwardRef(
       children,
       className,
       component,
+      contentProps,
       disabled, // pass through in renderInput()
       error: errorProp,
       help,
@@ -173,19 +212,26 @@ const FormField = forwardRef(
       );
     }
 
-    const contentProps =
-      pad || wantContentPad ? { ...formFieldTheme.content } : {};
+    const themeContentProps = { ...formFieldTheme.content };
+
+    if (!pad && !wantContentPad) {
+      themeContentProps.pad = undefined;
+    }
 
     if (themeBorder && themeBorder.position === 'inner') {
       if (error && formFieldTheme.error) {
-        contentProps.background = formFieldTheme.error.background;
+        themeContentProps.background = formFieldTheme.error.background;
       } else if (disabled && formFieldTheme.disabled) {
-        contentProps.background = formFieldTheme.disabled.background;
+        themeContentProps.background = formFieldTheme.disabled.background;
       }
     }
 
     if (!themeBorder) {
-      contents = <Box {...contentProps}>{contents}</Box>;
+      contents = (
+        <Box {...themeContentProps} {...contentProps}>
+          {contents}
+        </Box>
+      );
     }
 
     let borderColor;
@@ -237,9 +283,9 @@ const FormField = forwardRef(
           : {};
       contents = (
         <FormFieldContentBox
-          overflow="hidden"
-          {...contentProps}
+          {...themeContentProps}
           {...innerProps}
+          {...contentProps}
         >
           {contents}
         </FormFieldContentBox>
@@ -310,6 +356,13 @@ const FormField = forwardRef(
           }
         : {};
 
+    let { requiredIndicator } = theme.formField.label;
+    if (requiredIndicator === true)
+      // a11yTitle necessary so screenreader announces as "required"
+      // as opposed to "star"
+      // accessibility resource: https://www.deque.com/blog/anatomy-of-accessible-forms-required-form-fields/
+      requiredIndicator = <Text a11yTitle="required">*</Text>;
+
     return (
       <FormFieldBox
         ref={ref}
@@ -334,6 +387,7 @@ const FormField = forwardRef(
             {label && component !== CheckBox && (
               <Text as="label" htmlFor={htmlFor} {...labelStyle}>
                 {label}
+                {required && requiredIndicator ? requiredIndicator : undefined}
               </Text>
             )}
             <Message message={help} {...formFieldTheme.help} />
@@ -342,8 +396,8 @@ const FormField = forwardRef(
           undefined
         )}
         {contents}
-        <Message message={error} {...formFieldTheme.error} />
-        <Message message={info} {...formFieldTheme.info} />
+        <Message type="error" message={error} {...formFieldTheme.error} />
+        <Message type="info" message={info} {...formFieldTheme.info} />
       </FormFieldBox>
     );
   },

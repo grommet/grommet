@@ -155,6 +155,13 @@ describe('Box', () => {
           background={{
             image:
               'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==)',
+            opacity: 'strong',
+          }}
+        />
+        <Box
+          background={{
+            image:
+              'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==)',
             color: 'accent-1',
           }}
         />
@@ -258,6 +265,10 @@ describe('Box', () => {
             <Box />
           </Box>
         ))}
+        <Box as="span" gap="small">
+          <span>first</span>
+          <span>second</span>
+        </Box>
       </Grommet>,
     );
     const tree = component.toJSON();
@@ -518,6 +529,16 @@ describe('Box', () => {
         <Box width="large" />
         <Box width="xlarge" />
         <Box width="111px" />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('width object', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Box width={{ width: '100px' }} />
       </Grommet>,
     );
     const tree = component.toJSON();

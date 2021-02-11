@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, DataTable } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -15,7 +14,7 @@ groupColumns[1] = { ...first };
 groupColumns[0].footer = groupColumns[1].footer;
 delete groupColumns[1].footer;
 
-const ControlledGroupedDataTable = () => {
+export const ControlledGroupedDataTable = () => {
   const [expandedGroups, setExpandedGroups] = useState([DATA[2].location]);
 
   return (
@@ -34,6 +33,8 @@ const ControlledGroupedDataTable = () => {
   );
 };
 
-storiesOf('DataTable', module).add('Controlled grouped', () => (
-  <ControlledGroupedDataTable />
-));
+ControlledGroupedDataTable.storyName = 'Controlled grouped';
+
+export default {
+  title: 'Visualizations/DataTable/Controlled grouped',
+};

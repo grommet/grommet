@@ -1,11 +1,10 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
+import React, { useState } from 'react';
 
-import { Grommet, Box, TextArea } from 'grommet';
+import { Box, Grommet, TextArea } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const SimpleTextArea = props => {
-  const [value, setValue] = React.useState('');
+const Resize = props => {
+  const [value, setValue] = useState('');
 
   const onChange = event => setValue(event.target.value);
 
@@ -18,6 +17,8 @@ const SimpleTextArea = props => {
   );
 };
 
-storiesOf('TextArea', module)
-  .add('Simple', () => <SimpleTextArea resize />)
-  .add('Non resizable', () => <SimpleTextArea resize={false} />);
+export const Simple = () => <Resize resize />;
+
+export default {
+  title: 'Input/TextArea/Simple',
+};

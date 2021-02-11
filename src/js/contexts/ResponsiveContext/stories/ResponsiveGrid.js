@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { deepMerge } from 'grommet/utils';
 import { grommet } from 'grommet/themes';
@@ -32,7 +31,7 @@ const ResponsiveGrid = ({ children, areas, ...props }) => {
   );
 };
 
-const ResponsiveGridExample = () => (
+export const ResponsiveGridExample = () => (
   <Grommet theme={customBreakpoints} full>
     <ResponsiveGrid
       columns={['25%', '25%', '25%', '25%']}
@@ -76,6 +75,8 @@ const ResponsiveGridExample = () => (
   </Grommet>
 );
 
-storiesOf('ResponsiveContext', module).add('Responsive Grid', () => (
-  <ResponsiveGridExample />
-));
+ResponsiveGridExample.storyName = 'Responsive grid';
+
+export default {
+  title: 'Utilities/ResponsiveContext/Responsive grid',
+};

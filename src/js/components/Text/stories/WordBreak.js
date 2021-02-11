@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, Text, Heading } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -7,7 +6,7 @@ import { grommet } from 'grommet/themes';
 const wordBreakValues = ['normal', 'break-all', 'keep-all', 'break-word'];
 
 /* eslint-disable max-len */
-const WordBreak = () => (
+export const WordBreak = () => (
   <Grommet theme={grommet}>
     {wordBreakValues.map(value => (
       <Box key={value} margin="small" width="medium">
@@ -22,5 +21,8 @@ const WordBreak = () => (
   </Grommet>
 );
 /* eslint-enable max-len */
+WordBreak.storyName = 'Word break';
 
-storiesOf('Text', module).add('Word Break', () => <WordBreak />);
+export default {
+  title: 'Type/Text/Word break',
+};

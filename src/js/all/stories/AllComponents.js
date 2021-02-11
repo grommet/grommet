@@ -1,5 +1,4 @@
 import React, { useMemo, useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
   Grommet,
@@ -38,12 +37,10 @@ import { FormNext } from 'grommet-icons';
 import { grommet } from 'grommet/themes';
 import { generate } from 'grommet/themes/base';
 import { deepMerge } from 'grommet/utils';
-// import { hpe } from 'grommet-theme-hpe';
+import { hpe } from 'grommet-theme-hpe';
 import { aruba } from 'grommet-theme-aruba';
 import { hp } from 'grommet-theme-hp';
 import { dxc } from 'grommet-theme-dxc';
-import { v1 } from 'grommet-theme-v1';
-import { hpe } from './theme';
 
 const Node = ({ id, ...rest }) => (
   <Box
@@ -73,7 +70,6 @@ const themes = {
   aruba,
   hp,
   dxc,
-  v1,
 };
 
 const Components = () => {
@@ -389,4 +385,7 @@ const Components = () => {
   );
 };
 
-storiesOf('All', module).add('All', () => <Components />);
+export const All = () => <Components />;
+export default {
+  title: 'All',
+};

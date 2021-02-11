@@ -7,7 +7,6 @@ import React, {
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 
-import PropTypes from 'react-desc/lib/PropTypes';
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
@@ -36,7 +35,7 @@ To open menu when menu button is focused:
 To navigate within menu:
 - Up/down arrow keys can be used and will loop through options
 (keeping focus within the Menu)
-- Tab can be used, but once the last menu item is reached, Tab will close the 
+- Tab can be used, but once the last menu item is reached, Tab will close the
 Menu and continue through page content.
 
 To close the menu:
@@ -70,7 +69,6 @@ const Menu = forwardRef((props, ref) => {
     ...rest
   } = props;
   const theme = useContext(ThemeContext) || defaultProps.theme;
-  const MenuIcon = theme.menu.icons.down;
   const iconColor = normalizeColor(theme.menu.icons.color || 'control', theme);
   const align = dropProps.align || dropAlign;
   const controlButtonIndex = useMemo(() => {
@@ -79,9 +77,14 @@ const Menu = forwardRef((props, ref) => {
     return undefined;
   }, [align, items]);
 
+  // Keeps track of whether menu options should be mirrored
+  // when there's not enough space below DropButton. This state
+  // is modified on /Drop/DropContainer.js.
+  const [alignControlMirror, setAlignControlMirror] = useState();
+
   const buttonRefs = {};
-  const constants = useMemo(() => {
-    return {
+  const constants = useMemo(
+    () => ({
       none: 'none',
       tab: 9,
       // Menu control button included on top of menu items
@@ -89,11 +92,15 @@ const Menu = forwardRef((props, ref) => {
       // Menu control button included on the bottom of menu items
       controlBottom: align.bottom === 'bottom' || undefined,
       controlButtonIndex,
-    };
-  }, [align, controlButtonIndex]);
+    }),
+    [align, controlButtonIndex],
+  );
 
   const [activeItemIndex, setActiveItemIndex] = useState(constants.none);
   const [isOpen, setOpen] = useState(open || false);
+
+  const MenuIcon =
+    isOpen && theme.menu.icons.up ? theme.menu.icons.up : theme.menu.icons.down;
 
   const onDropClose = useCallback(() => {
     setActiveItemIndex(constants.none);
@@ -183,20 +190,40 @@ const Menu = forwardRef((props, ref) => {
     }
   };
 
-  const content = children || (
-    <Box
-      direction="row"
-      justify={justifyContent}
-      align="center"
-      pad={theme.button.default ? undefined : 'small'}
-      gap={label && icon !== false ? 'small' : undefined}
-    >
-      <Text size={size}>{label}</Text>
-      {icon !== false
-        ? (icon !== true && icon) || <MenuIcon color={iconColor} size={size} />
-        : null}
-    </Box>
-  );
+  const menuIcon =
+    icon !== false
+      ? (icon !== true && icon) || <MenuIcon color={iconColor} size={size} />
+      : null;
+
+  let buttonProps = { plain, size };
+  let content;
+  if (children) {
+    content = children;
+  } else if (!theme.button.default) {
+    content = (
+      <Box
+        direction="row"
+        justify={justifyContent}
+        align="center"
+        pad="small"
+        gap={label && icon !== false ? 'small' : undefined}
+      >
+        <Text size={size}>{label}</Text>
+        {menuIcon}
+      </Box>
+    );
+  } else {
+    // when a theme has theme.button.default, keep content as
+    // undefined so we can rely on Button label & icon props
+    buttonProps = {
+      icon: menuIcon,
+      label,
+      plain,
+      reverse: true,
+      size,
+    };
+    content = undefined;
+  }
 
   const controlMirror = (
     <Box flex={false}>
@@ -209,13 +236,13 @@ const Menu = forwardRef((props, ref) => {
         active={activeItemIndex === controlButtonIndex}
         focusIndicator={false}
         hoverIndicator="background"
-        plain={plain}
         onClick={onDropClose}
         onFocus={() => setActiveItemIndex(controlButtonIndex)}
         // On first tab into menu, the control button should not
         // be able to receive tab focus because the focus should
         // go to the first menu item instead.
         tabIndex={activeItemIndex === constants.none ? '-1' : undefined}
+        {...buttonProps}
       >
         {typeof content === 'function'
           ? () => content({ ...props, drop: true })
@@ -237,12 +264,13 @@ const Menu = forwardRef((props, ref) => {
       <DropButton
         ref={ref}
         {...rest}
+        {...buttonProps}
         a11yTitle={a11yTitle || messages.openMenu || 'Open Menu'}
+        onAlign={setAlignControlMirror}
         disabled={disabled}
         dropAlign={align}
         dropTarget={dropTarget}
         dropProps={dropProps}
-        plain={plain}
         open={isOpen}
         onOpen={onDropOpen}
         onClose={onDropClose}
@@ -254,7 +282,9 @@ const Menu = forwardRef((props, ref) => {
             onEnter={onSelectMenuItem}
           >
             <ContainerBox background={dropBackground || theme.menu.background}>
-              {align.top === 'top' ? controlMirror : undefined}
+              {alignControlMirror === 'top' && align.top === 'top'
+                ? controlMirror
+                : undefined}
               <Box overflow="auto">
                 {items.map((item, index) => {
                   // Determine whether the label is done as a child or
@@ -313,7 +343,9 @@ const Menu = forwardRef((props, ref) => {
                   );
                 })}
               </Box>
-              {align.bottom === 'bottom' ? controlMirror : undefined}
+              {alignControlMirror === 'bottom' || align.bottom === 'bottom'
+                ? controlMirror
+                : undefined}
             </ContainerBox>
           </Keyboard>
         }
@@ -323,20 +355,6 @@ const Menu = forwardRef((props, ref) => {
     </Keyboard>
   );
 });
-
-Menu.propTypes = {
-  dropAlign: PropTypes.shape({
-    top: PropTypes.string,
-    left: PropTypes.string,
-  }),
-  dropProps: PropTypes.shape({}),
-  items: PropTypes.arrayOf({}),
-  messages: PropTypes.shape({
-    openMenu: PropTypes.string,
-    closeMenu: PropTypes.string,
-  }),
-  justifyContent: PropTypes.string,
-};
 
 Menu.defaultProps = {
   dropAlign: {

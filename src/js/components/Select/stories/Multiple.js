@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, Select } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const options = ['one', 'two'];
 
-const Example = () => {
+export const Multiple = () => {
   const [value, setValue] = useState(['one']);
 
   return (
@@ -25,4 +24,10 @@ const Example = () => {
   );
 };
 
-storiesOf('Select', module).add('Multiple', () => <Example />);
+Multiple.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Input/Select/Multiple',
+};

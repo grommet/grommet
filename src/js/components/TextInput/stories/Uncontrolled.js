@@ -1,21 +1,24 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Example = () => {
-  return (
-    <Grommet full theme={grommet}>
-      <Box fill align="center" justify="start" pad="large">
-        <Box width="medium">
-          <TextInput
-            onChange={event => console.log('Change', event.target.value)}
-          />
-        </Box>
+export const Uncontrolled = () => (
+  <Grommet full theme={grommet}>
+    <Box fill align="center" justify="start" pad="large">
+      <Box width="medium">
+        <TextInput
+          onChange={event => console.log('Change', event.target.value)}
+        />
       </Box>
-    </Grommet>
-  );
+    </Box>
+  </Grommet>
+);
+
+Uncontrolled.parameters = {
+  chromatic: { disable: true },
 };
 
-storiesOf('TextInput', module).add('Uncontrolled', () => <Example />);
+export default {
+  title: 'Input/TextInput/Uncontrolled',
+};

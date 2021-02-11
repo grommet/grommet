@@ -1,15 +1,16 @@
-import React, { forwardRef, useContext, useMemo } from 'react';
+import React, { forwardRef, useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 
-import { Box } from '../Box';
 import { CheckBox } from '../CheckBox';
 import { FormContext } from '../Form/FormContext';
+import { StyledCheckBoxGroup } from './StyledCheckBoxGroup';
 
 export const CheckBoxGroup = forwardRef(
   (
     {
       value: valueProp,
       disabled: disabledProp,
-      gap = 'small', // consistent with RadioButtonGroup default
+      gap,
       labelKey,
       valueKey,
       onChange,
@@ -20,20 +21,17 @@ export const CheckBoxGroup = forwardRef(
     ref,
   ) => {
     const formContext = useContext(FormContext);
+    const theme = useContext(ThemeContext) || defaultProps.theme;
 
     // In case option is a string, normalize it to be an object
-    const options = useMemo(
-      () =>
-        optionsProp.map(option => {
-          return typeof option === 'string'
-            ? {
-                disabled: disabledProp,
-                value: option,
-                label: option,
-              }
-            : option;
-        }),
-      [optionsProp, disabledProp],
+    const options = optionsProp.map(option =>
+      typeof option === 'string'
+        ? {
+            disabled: disabledProp,
+            value: option,
+            label: option,
+          }
+        : option,
     );
 
     // 'value' is an array of checked valueKeys
@@ -60,12 +58,24 @@ export const CheckBoxGroup = forwardRef(
     };
 
     return (
-      <Box ref={ref} gap={gap} {...rest}>
+      <StyledCheckBoxGroup
+        ref={ref}
+        {...theme.checkBoxGroup.container}
+        gap={
+          gap ||
+          (theme.checkBoxGroup.container && theme.checkBoxGroup.container.gap
+            ? theme.checkBoxGroup.container.gap
+            : 'small') // consistent with RadioButtonGroup default
+        }
+        {...rest}
+      >
         {options.map(option => {
+          const optionValue = option.value;
           const label = labelKey ? option[labelKey] : option.label;
-          const valueOption = valueKey ? option[valueKey] : option.value;
+          const valueOption = valueKey ? option[valueKey] : optionValue;
           const checked = value.indexOf(valueOption) >= 0;
           const disabled = disabledProp || option.disabled;
+          const key = `${label}-${valueOption}`;
 
           if (option.checked)
             console.warn(
@@ -77,7 +87,7 @@ export const CheckBoxGroup = forwardRef(
           const optionProps = { ...optionRest, label, disabled };
           return (
             <CheckBox
-              key={label}
+              key={key}
               {...optionProps}
               disabled={disabled}
               checked={checked}
@@ -88,7 +98,7 @@ export const CheckBoxGroup = forwardRef(
             />
           );
         })}
-      </Box>
+      </StyledCheckBoxGroup>
     );
   },
 );

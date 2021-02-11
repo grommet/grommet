@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import {
   Box,
@@ -13,7 +12,7 @@ import {
 import { grommet } from 'grommet/themes';
 
 // This example shows a way to perform validation across multiple fields.
-const Example = () => {
+export const AggregateValidation = () => {
   const [value, setValue] = React.useState({ name: 'a', email: 'b' });
   const message =
     value.name && value.email && value.name[0] !== value.email[0]
@@ -53,4 +52,8 @@ const Example = () => {
   );
 };
 
-storiesOf('Form', module).add('Aggregate validation', () => <Example />);
+AggregateValidation.storyName = 'Aggregate validation';
+
+export default {
+  title: 'Input/Form/Aggregate validation',
+};

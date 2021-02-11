@@ -1,5 +1,6 @@
 import React, { forwardRef } from 'react';
 
+import { CheckBox } from '../CheckBox';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { TableRow } from '../TableRow';
 import { TableCell } from '../TableCell';
@@ -19,12 +20,14 @@ const Body = forwardRef(
       onMore,
       replace,
       onClickRow,
+      onSelect,
       pad,
+      pinnedBackground,
       primaryProperty,
       rowProps,
+      selected,
       size,
       step,
-      theme,
       ...rest
     },
     ref,
@@ -81,6 +84,7 @@ const Body = forwardRef(
               const primaryValue = primaryProperty
                 ? datumValue(datum, primaryProperty)
                 : undefined;
+              const isSelected = selected && selected.includes(primaryValue);
               return (
                 <StyledDataTableRow
                   key={primaryValue || index}
@@ -99,17 +103,33 @@ const Body = forwardRef(
                         }
                       : undefined
                   }
-                  onMouseOver={onClickRow ? () => setActive(index) : undefined}
-                  onMouseOut={
+                  onMouseEnter={onClickRow ? () => setActive(index) : undefined}
+                  onMouseLeave={
                     onClickRow ? () => setActive(undefined) : undefined
                   }
                   onFocus={onClickRow ? () => setActive(index) : undefined}
                   onBlur={onClickRow ? () => setActive(undefined) : undefined}
                 >
+                  {(selected || onSelect) && (
+                    <TableCell background={background}>
+                      <CheckBox
+                        a11yTitle={`${
+                          isSelected ? 'unselect' : 'select'
+                        } ${primaryValue}`}
+                        checked={isSelected}
+                        disabled={!onSelect}
+                        onChange={() => {
+                          if (isSelected)
+                            onSelect(selected.filter(s => s !== primaryValue));
+                          else onSelect([...selected, primaryValue]);
+                        }}
+                      />
+                    </TableCell>
+                  )}
                   {columns.map(column => (
                     <Cell
                       key={column.property}
-                      background={background}
+                      background={column.pin ? pinnedBackground : background}
                       border={border}
                       context="body"
                       column={column}

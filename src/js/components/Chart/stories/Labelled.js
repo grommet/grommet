@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Chart, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -7,7 +6,10 @@ import { grommet } from 'grommet/themes';
 const LabelledChart = ({ color, label, value }) => (
   <Box flex={false} basis="xsmall" align="center" gap="small">
     <Chart
-      bounds={[[0, 2], [0, 400]]}
+      bounds={[
+        [0, 2],
+        [0, 400],
+      ]}
       type="bar"
       values={[{ value: [1, value] }]}
       color={color}
@@ -21,7 +23,7 @@ const LabelledChart = ({ color, label, value }) => (
   </Box>
 );
 
-const LabelledCharts = () => (
+export const LabelledCharts = () => (
   <Grommet theme={grommet}>
     <Box pad="large" direction="row" gap="medium">
       <LabelledChart label="Exported" value={300} />
@@ -31,4 +33,8 @@ const LabelledCharts = () => (
   </Grommet>
 );
 
-storiesOf('Chart', module).add('Labelled', () => <LabelledCharts />);
+LabelledCharts.storyName = 'Labelled';
+
+export default {
+  title: 'Visualizations/Chart/Labelled',
+};

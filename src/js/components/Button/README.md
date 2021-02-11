@@ -2,10 +2,10 @@
 A button.
 
 You can provide a single function child that will be called with
-      'hover' and 'focus' keys. This allows you to customize the rendering
-      of the Button in those cases.
+      'disabled', 'hover' and 'focus' keys. 
+      This allows you to customize the rendering of the Button in those cases.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Button&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=button&module=%2Fsrc%2FButton.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Controls-Button&full=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/button&module=%2Fsrc%2FButton.js)
 ## Usage
 
 ```javascript
@@ -126,6 +126,22 @@ xlarge
     string
 }
 string
+```
+
+**children**
+
+Function that can be called to render the visual representation.
+      Button can take in Children as a function, node, or object. 
+      For example, 'disabled', 'hover', and 'focus' can be passed as an 
+      argument that would then return a react element.
+      `children={({ disabled, hover, focus }) => <Box...>{...}</Box>}`. 
+      When Button has children, it is styled as a `plain` button.
+      
+
+```
+function
+object
+node
 ```
 
 **active**
@@ -274,7 +290,9 @@ function
 Whether this is a plain button with no border or pad.
           Non plain button will show both pad and border.
           The plain button has no border and unless the icon prop exist it has 
-          no pad as well.
+          no pad as well. 
+          When using the kind button (i.e. button.default on the theme), 
+          the usage of plain is deprecated.
 
 ```
 boolean
@@ -327,6 +345,25 @@ _self
 _blank
 _parent
 _top
+string
+```
+
+**tip**
+
+tooltip or a hint when hovering over the button.
+
+```
+{
+  content: 
+    node
+    string,
+  dropProps: 
+    {
+
+    },
+  plain: boolean
+}
+string
 ```
 
 **type**
@@ -607,6 +644,16 @@ Defaults to
 undefined
 ```
 
+**button.default.font.weight**
+
+The weight of the text label for default buttons. Expects `string | number`.
+
+Defaults to
+
+```
+undefined
+```
+
 **button.default.extend**
 
 Any additional style for a default button. Expects `string | (props) => {}`.
@@ -847,6 +894,16 @@ Defaults to
 undefined
 ```
 
+**button.primary.font.weight**
+
+The weight of the text label for primary buttons. Expects `string | number`.
+
+Defaults to
+
+```
+undefined
+```
+
 **button.primary.padding.horizontal**
 
 The horizontal padding for a primary button. Expects `string`.
@@ -910,6 +967,16 @@ undefined
 **button.secondary.color**
 
 The color of the label for secondary buttons. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**button.secondary.font.weight**
+
+The weight of the text label for secondary buttons. Expects `string | number`.
 
 Defaults to
 
@@ -1077,6 +1144,28 @@ Defaults to
 
 ```
 undefined
+```
+
+**tip.content**
+
+When using tip prop, any valid Box property for the Tip container. Expects `object`.
+
+Defaults to
+
+```
+{ background: 'background-contrast', elevation: 'small', 
+    margin: 'xsmall', pad: { vertical: 'xsmall', horizontal: 'small' }, 
+    round: 'small'}
+```
+
+**tip.drop**
+
+When using tip prop, any valid Drop property for the Tooltip. Expects `object`.
+
+Defaults to
+
+```
+{align: { top: 'bottom' }}
 ```
 
 **global.focus.border.color**

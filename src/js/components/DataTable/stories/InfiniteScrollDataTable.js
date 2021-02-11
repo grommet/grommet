@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, DataTable, Heading, Meter, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -303,7 +302,7 @@ const DATA = [
   },
 ];
 
-const InfiniteScrollDataTable = () => {
+export const InfiniteScrollDataTable = () => {
   const step = 10;
 
   const load = () => {
@@ -332,6 +331,8 @@ const InfiniteScrollDataTable = () => {
   );
 };
 
-storiesOf('DataTable', module).add('Infinitescroll', () => (
-  <InfiniteScrollDataTable />
-));
+InfiniteScrollDataTable.storyName = 'Infinite Scroll';
+
+export default {
+  title: 'Visualizations/DataTable/Infinite Scroll',
+};

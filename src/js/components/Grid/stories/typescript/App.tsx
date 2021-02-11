@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
-import isChromatic from 'storybook-chromatic/isChromatic';
 
 import { Grommet, Box, Button, Grid, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const AppGrid = () => {
+export const AppGrid = () => {
   const [sidebar, setSidebar] = useState(true);
 
   return (
@@ -60,6 +58,8 @@ const AppGrid = () => {
   );
 };
 
-if (!isChromatic()) {
-  storiesOf('TypeScript/Grid', module).add('App', () => <AppGrid />);
-}
+AppGrid.storyName = 'App';
+
+export default {
+  title: 'Layout/Grid/App',
+};

@@ -12,6 +12,7 @@ export const FocusedContainer = ({
   hidden = false,
   restrictScroll = false,
   children,
+  trapFocus,
   ...rest
 }) => {
   const [bodyOverflowStyle, setBodyOverflowStyle] = useState('');
@@ -28,7 +29,7 @@ export const FocusedContainer = ({
       }
     };
 
-    const trapFocus = () => {
+    const handleTrapFocus = () => {
       const child = ref.current;
       getBodyChildElements()
         .filter(isNotAncestorOf(child))
@@ -41,8 +42,8 @@ export const FocusedContainer = ({
     };
 
     const timer = setTimeout(() => {
-      if (!hidden) {
-        trapFocus();
+      if (!hidden && trapFocus) {
+        handleTrapFocus();
       }
     }, 0);
 
@@ -50,7 +51,7 @@ export const FocusedContainer = ({
       removeTrap();
       clearTimeout(timer);
     };
-  }, [hidden, bodyOverflowStyle, restrictScroll]);
+  }, [hidden, bodyOverflowStyle, restrictScroll, trapFocus]);
 
   return (
     <div ref={ref} aria-hidden={hidden} {...rest}>

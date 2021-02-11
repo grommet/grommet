@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -24,7 +23,7 @@ const customTheme = deepMerge(grommet, {
       background: #c9c19f;
       width: 300px;
       margin: 0 auto;
-      
+
       &:focus {
         box-shadow: none;
         border-color: initial;
@@ -59,7 +58,7 @@ const customTheme = deepMerge(grommet, {
   },
 });
 
-const ThemedTextInput = () => {
+export const Themed = () => {
   const [value, setValue] = React.useState('');
 
   const onChange = event => setValue(event.target.value);
@@ -85,4 +84,6 @@ const ThemedTextInput = () => {
   );
 };
 
-storiesOf('TextInput', module).add('Themed', () => <ThemedTextInput />);
+export default {
+  title: 'Input/TextInput/Themed',
+};

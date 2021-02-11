@@ -1,7 +1,7 @@
 ## Meter
 A graphical meter.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Meter&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=meter&module=%2Fsrc%2FMeter.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Visualizations-Meter&full=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/meter&module=%2Fsrc%2FMeter.js)
 ## Usage
 
 ```javascript
@@ -144,6 +144,15 @@ string
 }
 ```
 
+**color**
+
+The color of the value region.
+      This is only valid when used with 'value'
+
+```
+string
+```
+
 **max**
 
 The maximum value for the Meter.
@@ -195,6 +204,16 @@ The visual type of meter. Defaults to `bar`.
 ```
 bar
 circle
+```
+
+**value**
+
+
+      The numeric value to represent. Ignored when 'values' is specified.
+    
+
+```
+number
 ```
 
 **values**

@@ -1,6 +1,10 @@
 import React from 'react';
 import 'jest-styled-components';
 import renderer from 'react-test-renderer';
+import 'jest-axe/extend-expect';
+import 'regenerator-runtime/runtime';
+
+import { axe } from 'jest-axe';
 import { cleanup, render, fireEvent, act } from '@testing-library/react';
 
 import { Accordion, AccordionPanel, Box, Grommet } from '../..';
@@ -13,6 +17,20 @@ const customTheme = {
 
 describe('Accordion', () => {
   afterEach(cleanup);
+
+  test('should have no accessibility violations', async () => {
+    const { container } = render(
+      <Grommet>
+        <Accordion>
+          <AccordionPanel>Panel body 1</AccordionPanel>
+        </Accordion>
+      </Grommet>,
+    );
+
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+    expect(container).toMatchSnapshot();
+  });
 
   test('no AccordionPanel', () => {
     const component = renderer.create(
@@ -342,5 +360,29 @@ describe('Accordion', () => {
     expect(onActive).toBeCalledWith([0]);
     expect(getByText('Panel body 1')).not.toBeNull();
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('blur styles', () => {
+    const onBlur = jest.fn();
+    const { container, getByText } = render(
+      <Grommet theme={{ accordion: { hover: { heading: { color: 'red' } } } }}>
+        <Accordion>
+          <AccordionPanel
+            label="Panel 1"
+            onMouseOver={() => {}}
+            onMouseOut={() => {}}
+            onFocus={() => {}}
+            onBlur={onBlur}
+          >
+            Panel body 1
+          </AccordionPanel>
+        </Accordion>
+      </Grommet>,
+    );
+    // focus first then call blur
+    fireEvent.focus(getByText('Panel 1'));
+    fireEvent.blur(getByText('Panel 1'));
+    expect(container.firstChild).toMatchSnapshot();
+    expect(onBlur).toHaveBeenCalled();
   });
 });

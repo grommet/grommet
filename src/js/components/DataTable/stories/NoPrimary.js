@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, DataTable } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -13,7 +12,7 @@ const columns = [
   { property: 'location', header: 'Location' },
 ];
 
-const Example = () => (
+export const NoPrimaryKeyDataTable = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
       <DataTable columns={columns} data={DATA} step={10} primaryKey={false} />
@@ -21,4 +20,8 @@ const Example = () => (
   </Grommet>
 );
 
-storiesOf('DataTable', module).add('No Primary', () => <Example />);
+NoPrimaryKeyDataTable.storyName = 'No primary';
+
+export default {
+  title: 'Visualizations/DataTable/No primary',
+};

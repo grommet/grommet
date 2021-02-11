@@ -5,8 +5,36 @@ import 'jest-styled-components';
 import { hpe } from 'grommet-theme-hpe';
 import { Add } from 'grommet-icons';
 
-import { Grommet, Anchor, Box, Text, TextInput } from '../../components';
-import { dark } from '..';
+import {
+  Grommet,
+  Anchor,
+  Box,
+  Button,
+  Text,
+  TextInput,
+} from '../../components';
+import { ThemeContext } from '../../contexts/ThemeContext';
+import { dark, grommet } from '..';
+
+// hpe theme has deprecated the accent and neutral colors
+const hpeColors = [
+  'brand',
+  'background-contrast',
+  'background-front',
+  'control',
+  'graph-0',
+  'graph-1',
+  'graph-2',
+  'graph-3',
+  'graph-4',
+  'focus',
+  'status-critical',
+  'status-disabled',
+  'status-ok',
+  'status-unknown',
+  'status-warning',
+  'text',
+];
 
 const colors = [
   'accent-1',
@@ -46,6 +74,19 @@ const customTheme = {
         size: 'large',
         weight: 'bold',
       },
+      extend: `
+        &::-webkit-input-placeholder {
+          font-weight: normal;
+        }
+
+        &::-moz-placeholder {
+          font-weight: normal;
+        }
+
+        &:-ms-input-placeholder {
+          font-weight: normal;
+        }
+      `,
     },
     colors: {
       custom: '#cc6633',
@@ -69,6 +110,37 @@ describe('Grommet', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  test('grommet theme', () => {
+    const component = renderer.create(
+      <Grommet theme={grommet}>
+        <Button label="test" />
+        <Button plain label="test" />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('ThemeContext theme', () => {
+    const component = renderer.create(
+      <Grommet theme={grommet}>
+        <ThemeContext.Extend
+          value={{
+            global: {
+              colors: {
+                test: '#000',
+              },
+            },
+          }}
+        >
+          <Anchor color="test" label="Hello" />
+        </ThemeContext.Extend>
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('dark theme', () => {
     const component = renderer.create(
       <Grommet theme={dark}>
@@ -86,7 +158,7 @@ describe('Grommet', () => {
   test('hpe theme', () => {
     const component = renderer.create(
       <Grommet theme={hpe}>
-        {colors.map(color => (
+        {hpeColors.map(color => (
           <Box key={color} background={color}>
             <Text>{color}</Text>
           </Box>

@@ -257,6 +257,280 @@ exports[`Grid as renders 1`] = `
 </div>
 `;
 
+exports[`Grid border 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: grid;
+  box-sizing: border-box;
+  border: solid 1px rgba(0,0,0,0.33);
+}
+
+.c2 {
+  display: grid;
+  box-sizing: border-box;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+}
+
+.c3 {
+  display: grid;
+  box-sizing: border-box;
+  border-left: solid 1px rgba(0,0,0,0.33);
+  border-right: solid 1px rgba(0,0,0,0.33);
+}
+
+.c4 {
+  display: grid;
+  box-sizing: border-box;
+  border-top: solid 1px rgba(0,0,0,0.33);
+}
+
+.c5 {
+  display: grid;
+  box-sizing: border-box;
+  border-left: solid 1px rgba(0,0,0,0.33);
+}
+
+.c6 {
+  display: grid;
+  box-sizing: border-box;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+}
+
+.c7 {
+  display: grid;
+  box-sizing: border-box;
+  border-right: solid 1px rgba(0,0,0,0.33);
+}
+
+.c8 {
+  display: grid;
+  box-sizing: border-box;
+  border: solid 1px #6FFFB0;
+}
+
+.c9 {
+  display: grid;
+  box-sizing: border-box;
+  border: solid 2px rgba(0,0,0,0.33);
+}
+
+.c10 {
+  display: grid;
+  box-sizing: border-box;
+  border: solid 4px rgba(0,0,0,0.33);
+}
+
+.c11 {
+  display: grid;
+  box-sizing: border-box;
+  border: solid 12px rgba(0,0,0,0.33);
+}
+
+.c12 {
+  display: grid;
+  box-sizing: border-box;
+  border: solid 24px rgba(0,0,0,0.33);
+}
+
+.c13 {
+  display: grid;
+  box-sizing: border-box;
+  border: dotted 1px rgba(0,0,0,0.33);
+}
+
+.c14 {
+  display: grid;
+  box-sizing: border-box;
+  border: double 1px rgba(0,0,0,0.33);
+}
+
+.c15 {
+  display: grid;
+  box-sizing: border-box;
+  border: dashed 1px rgba(0,0,0,0.33);
+}
+
+.c16 {
+  display: grid;
+  box-sizing: border-box;
+  border-top: dotted 4px #6FFFB0;
+  border-left: dashed 12px #FD6FFF;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    border: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    border-top: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    border-left: solid 1px rgba(0,0,0,0.33);
+    border-right: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    border-top: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    border-left: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    border-right: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    border: solid 1px #6FFFB0;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    border: solid 2px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    border: solid 4px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c11 {
+    border: solid 6px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    border: solid 12px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c13 {
+    border: dotted 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    border: double 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c15 {
+    border: dashed 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c16 {
+    border-top: dotted 4px #6FFFB0;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c16 {
+    border-left: dashed 6px #FD6FFF;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  />
+  <div
+    className="c2"
+  />
+  <div
+    className="c3"
+  />
+  <div
+    className="c4"
+  />
+  <div
+    className="c5"
+  />
+  <div
+    className="c6"
+  />
+  <div
+    className="c7"
+  />
+  <div
+    className="c8"
+  />
+  <div
+    className="c1"
+  />
+  <div
+    className="c1"
+  />
+  <div
+    className="c9"
+  />
+  <div
+    className="c10"
+  />
+  <div
+    className="c11"
+  />
+  <div
+    className="c12"
+  />
+  <div
+    className="c13"
+  />
+  <div
+    className="c14"
+  />
+  <div
+    className="c15"
+  />
+  <div
+    className="c16"
+  />
+</div>
+`;
+
 exports[`Grid columns renders 1`] = `
 .c0 {
   font-size: 18px;
@@ -289,19 +563,31 @@ exports[`Grid columns renders 1`] = `
 .c4 {
   display: grid;
   box-sizing: border-box;
-  grid-template-columns: repeat( auto-fill,minmax(192px,1fr) );
+  grid-template-columns: minmax(50%,50%) 25% 75%;
 }
 
 .c5 {
   display: grid;
   box-sizing: border-box;
-  grid-template-columns: repeat( auto-fit,minmax(192px,1fr) );
+  grid-template-columns: repeat( auto-fill,minmax(min(192px,100%),1fr) );
 }
 
 .c6 {
   display: grid;
   box-sizing: border-box;
-  grid-template-columns: repeat( auto-fill,minmax(192px,384px) );
+  grid-template-columns: repeat( auto-fill,1fr );
+}
+
+.c7 {
+  display: grid;
+  box-sizing: border-box;
+  grid-template-columns: repeat( auto-fit,minmax(min(192px,100%),1fr) );
+}
+
+.c8 {
+  display: grid;
+  box-sizing: border-box;
+  grid-template-columns: repeat( auto-fill,minmax(min(192px,100%),384px) );
 }
 
 <div
@@ -324,6 +610,12 @@ exports[`Grid columns renders 1`] = `
   />
   <div
     className="c6"
+  />
+  <div
+    className="c7"
+  />
+  <div
+    className="c8"
   />
 </div>
 `;
@@ -453,6 +745,11 @@ exports[`Grid gap renders 1`] = `
   grid-column-gap: 24px;
 }
 
+.c11 {
+  display: grid;
+  box-sizing: border-box;
+}
+
 <div
   className="c0"
 >
@@ -485,6 +782,9 @@ exports[`Grid gap renders 1`] = `
   />
   <div
     className="c10"
+  />
+  <div
+    className="c11"
   />
 </div>
 `;
@@ -884,10 +1184,16 @@ exports[`Grid rows renders 1`] = `
 .c1 {
   display: grid;
   box-sizing: border-box;
-  grid-template-rows: 192px 768px 384px;
+  grid-template-rows: minmax(192px,384px) 768px 384px;
 }
 
 .c2 {
+  display: grid;
+  box-sizing: border-box;
+  grid-template-rows: 192px 768px 384px;
+}
+
+.c3 {
   display: grid;
   box-sizing: border-box;
   grid-auto-rows: 192px;
@@ -901,6 +1207,35 @@ exports[`Grid rows renders 1`] = `
   />
   <div
     className="c2"
+  />
+  <div
+    className="c3"
+  />
+</div>
+`;
+
+exports[`Grid rows renders with warning 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: grid;
+  box-sizing: border-box;
+  grid-template-rows: 1fr;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
   />
 </div>
 `;

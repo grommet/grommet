@@ -1,10 +1,11 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge, themeDocUtils } from '../../utils';
+import { getAvailableAtBadge } from '../../utils/mixins';
+import { themeDocUtils } from '../../utils/themeDocUtils';
 
 export const doc = TextInput => {
   const DocumentedTextInput = describe(TextInput)
-    .availableAt(getAvailableAtBadge('TextInput'))
+    .availableAt(getAvailableAtBadge('TextInput', 'Input'))
     .description(
       'A control to input a single line of text, with optional suggestions.',
     )
@@ -15,6 +16,16 @@ export const doc = TextInput => {
     .intrinsicElement('input');
 
   DocumentedTextInput.propTypes = {
+    a11yTitle: PropTypes.string.description(
+      'Custom title to be used by screen readers.',
+    ),
+    defaultSuggestion: PropTypes.number.description(
+      `Default suggestion to highlight, as an index into the suggestions array.
+
+      If set, the suggestion at the specified index in the suggestions array
+      will be highlighted by default when the suggestions drop opens.
+      `,
+    ),
     dropAlign: PropTypes.shape({
       top: PropTypes.oneOf(['top', 'bottom']),
       bottom: PropTypes.oneOf(['top', 'bottom']),
@@ -52,7 +63,7 @@ export const doc = TextInput => {
       suggestionIsOpen: PropTypes.string,
     })
       .description(
-        `Custom messages for TextInput. Used for accessibility by screen 
+        `Custom messages for TextInput. Used for accessibility by screen
         readers.`,
       )
       .defaultValue({
@@ -70,8 +81,15 @@ export const doc = TextInput => {
       'Function that will be called when the user types in the input.',
     ),
     onSelect: PropTypes.func.description(
+      `Note: This function is deprecated, use onSuggestionSelect instead.
+      Function that will be called when the user selects a suggestion.
+      The suggestion contains the object chosen from the supplied suggestions.
+      When used in conjunction with onSuggestionSelect 
+      this will default to React's onSelect`,
+    ),
+    onSuggestionSelect: PropTypes.func.description(
       `Function that will be called when the user selects a suggestion.
-The suggestion contains the object chosen from the supplied suggestions.`,
+      The suggestion contains the object chosen from the supplied suggestions.`,
     ),
     onSuggestionsOpen: PropTypes.func.description(
       'Function that will be called when the suggestions drop is opened.',
@@ -82,9 +100,14 @@ The suggestion contains the object chosen from the supplied suggestions.`,
     placeholder: PropTypes.node.description(
       'Placeholder to use when no value is provided.',
     ),
-    plain: PropTypes.bool.description(
-      `Whether this is a plain input with no border or padding.
-Only use this when the containing context provides sufficient affordance`,
+    plain: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.oneOf(['full']),
+    ]).description(
+      `Whether this is a plain input with no border or outline.
+      Use "full" to remove padding in addition to removing border and outline.
+      Only use this when the containing context provides sufficient 
+      affordance.`,
     ),
     reverse: PropTypes.bool.description(
       `Whether an icon should be reversed so that the icon is at the
@@ -98,7 +121,8 @@ Only use this when the containing context provides sufficient affordance`,
       PropTypes.oneOfType([
         PropTypes.shape({
           label: PropTypes.node,
-          value: PropTypes.any,
+          // eslint-disable-next-line
+          value: PropTypes.any, // this is intentional any
         }),
         PropTypes.string,
       ]),
@@ -106,6 +130,9 @@ Only use this when the containing context provides sufficient affordance`,
       `Suggestions to show. It is recommended to avoid showing too many
 suggestions and instead rely on the user to type more.`,
     ),
+    textAlign: PropTypes.oneOf(['start', 'center', 'end'])
+      .description('How to align the text inside the input.')
+      .defaultValue('start'),
     value: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.number,
@@ -145,7 +172,7 @@ export const themeDoc = {
     defaultValue: 20,
   },
   text: {
-    description: `The possible sizes of the text in terms of its font-size and 
+    description: `The possible sizes of the text in terms of its font-size and
     line-height.`,
     type: 'object',
     defaultValue: `{

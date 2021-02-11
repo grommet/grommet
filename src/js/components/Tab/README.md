@@ -108,14 +108,44 @@ Defaults to
     }
 ```
 
+**tab.border.disabled.color**
+
+border color of the Tab when disabled Expects `string | {dark: string, light: string}`.
+
+Defaults to
+
+```
+undefined
+```
+
 **tab.color**
 
-text color for the Tab. Expects `string`.
+text color for the Tab. Expects `string | {dark: string, light: string}`.
 
 Defaults to
 
 ```
 control
+```
+
+**tab.disabled.color**
+
+text color of the Tab when disabled. Expects `string | {dark: string, light: string}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**tab.extend**
+
+Any additional style for Tab. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
 ```
 
 **tab.hover.background**

@@ -1,10 +1,11 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { colorPropType, getAvailableAtBadge } from '../../utils';
+import { colorPropType } from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = Diagram => {
   const DocumentedDiagram = describe(Diagram)
-    .availableAt(getAvailableAtBadge('Diagram'))
+    .availableAt(getAvailableAtBadge('Diagram', 'Visualizations'))
     .description(
       `Graphical connection lines. Diagram is meant to be used with Stack.
       Boxes can be used in the \`guidingChild\` layer of Stack and then

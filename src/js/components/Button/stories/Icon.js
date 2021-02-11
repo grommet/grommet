@@ -1,11 +1,10 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Close, Send, User } from 'grommet-icons';
 
 import { Box, Button, Grommet, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const IconPlain = () => (
+export const Icon = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
       <Text margin="small"> plain=true (no padding, no border) </Text>
@@ -34,4 +33,8 @@ const IconPlain = () => (
   </Grommet>
 );
 
-storiesOf('Button', module).add('Icon Plain', () => <IconPlain />);
+Icon.storyName = 'Icon plain';
+
+export default {
+  title: `Controls/Button/Icon plain`,
+};

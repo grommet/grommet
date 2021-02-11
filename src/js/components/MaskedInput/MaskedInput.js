@@ -6,7 +6,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { ThemeContext } from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
@@ -14,7 +14,7 @@ import { Button } from '../Button';
 import { Drop } from '../Drop';
 import { FormContext } from '../Form/FormContext';
 import { Keyboard } from '../Keyboard';
-import { useForwardedRef } from '../../utils';
+import { sizeStyle, useForwardedRef } from '../../utils';
 
 import {
   StyledMaskedInput,
@@ -36,15 +36,39 @@ const parseValue = (mask, value) => {
     let found;
     if (item.fixed) {
       const { length } = item.fixed;
-      valueParts.push({
-        part: item.fixed,
-        beginIndex: valueIndex,
-        endIndex: valueIndex + length - 1,
-      });
-      const part = value.slice(valueIndex, valueIndex + length);
-      if (part === item.fixed) {
-        valueIndex += length;
+
+      // grab however much of value (starting at valueIndex) matches
+      // item.fixed. If none matches it and there is more in value
+      // add in the fixed item.
+      let matching = 0;
+      while (
+        matching < length &&
+        value[valueIndex + matching] === item.fixed[matching]
+      ) {
+        matching += 1;
       }
+
+      if (matching > 0) {
+        let part = value.slice(valueIndex, valueIndex + matching);
+        if (valueIndex + matching < value.length) {
+          // matched part of the fixed portion but there's more stuff
+          // after it. Go ahead and fill in the entire fixed chunk
+          part = item.fixed;
+        }
+        valueParts.push({
+          part,
+          beginIndex: valueIndex,
+          endIndex: valueIndex + matching - 1,
+        });
+        valueIndex += matching;
+      } else {
+        valueParts.push({
+          part: item.fixed,
+          beginIndex: valueIndex,
+          endIndex: valueIndex + length - 1,
+        });
+      }
+
       maskIndex += 1;
       found = true;
     } else if (item.options) {
@@ -113,12 +137,32 @@ const parseValue = (mask, value) => {
   return valueParts;
 };
 
-const defaultMask = [];
+const defaultMask = [
+  {
+    regexp: /[^]*/,
+  },
+];
+
+const ContainerBox = styled(Box)`
+  ${props =>
+    props.dropHeight
+      ? sizeStyle('max-height', props.dropHeight, props.theme)
+      : 'max-height: inherit;'};
+
+  /* IE11 hack to get drop contents to not overflow */
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    width: 100%;
+  }
+`;
+
 const dropAlign = { top: 'bottom', left: 'left' };
 
 const MaskedInput = forwardRef(
   (
     {
+      a11yTitle,
+      dropHeight,
+      dropProps,
       focus: focusProp,
       icon,
       id,
@@ -209,8 +253,11 @@ const MaskedInput = forwardRef(
         const nextValueParts = parseValue(mask, event.target.value);
         const nextValue = nextValueParts.map(part => part.part).join('');
 
-        if (value !== nextValue) {
+        if (nextValue !== event.target.value) {
+          // The mask required inserting something, change the input.
+          // This will re-trigger this callback with the next value
           setInputValue(nextValue);
+        } else if (value !== nextValue) {
           setValue(nextValue);
           if (onChange) onChange(event);
         }
@@ -292,9 +339,8 @@ const MaskedInput = forwardRef(
 
     const onHideDrop = useCallback(() => setShowDrop(false), []);
 
-    const renderPlaceholder = () => {
-      return mask.map(item => item.placeholder || item.fixed).join('');
-    };
+    const renderPlaceholder = () =>
+      mask.map(item => item.placeholder || item.fixed).join('');
 
     return (
       <StyledMaskedInputContainer plain={plain}>
@@ -315,6 +361,7 @@ const MaskedInput = forwardRef(
         >
           <StyledMaskedInput
             ref={inputRef}
+            aria-label={a11yTitle}
             id={id}
             name={name}
             autoComplete="off"
@@ -351,8 +398,9 @@ const MaskedInput = forwardRef(
             target={inputRef.current}
             onClickOutside={onHideDrop}
             onEsc={onHideDrop}
+            {...dropProps}
           >
-            <Box ref={dropRef}>
+            <ContainerBox ref={dropRef} overflow="auto" dropHeight={dropHeight}>
               {mask[activeMaskIndex].options.map((option, index) => {
                 // Determine whether the label is done as a child or
                 // as an option Button kind property.
@@ -384,7 +432,7 @@ const MaskedInput = forwardRef(
                   </Box>
                 );
               })}
-            </Box>
+            </ContainerBox>
           </Drop>
         )}
       </StyledMaskedInputContainer>

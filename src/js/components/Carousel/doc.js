@@ -1,10 +1,12 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { genericProps, getAvailableAtBadge, themeDocUtils } from '../../utils';
+import { genericProps } from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
+import { themeDocUtils } from '../../utils/themeDocUtils';
 
 export const doc = Carousel => {
   const DocumentedCarousel = describe(Carousel)
-    .availableAt(getAvailableAtBadge('Carousel'))
+    .availableAt(getAvailableAtBadge('Carousel', 'Media'))
     .description(
       `A carousel that cycles through children. Child components
       would typically be Images. It is the caller's responsibility to ensure
@@ -25,6 +27,9 @@ export const doc = Carousel => {
       will loop through all children indefinitely.`),
     initialChild: PropTypes.number.description(`If specified, the index of
       the first element to be shown. Defaults to 0.`),
+    onChild: PropTypes.func.description(`If specified, this function will 
+      be called with the active index when the currently active carousel 
+      changes.`),
     controls: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.oneOf(['arrows', 'selectors']),

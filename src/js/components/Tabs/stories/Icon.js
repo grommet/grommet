@@ -1,6 +1,6 @@
 import React from 'react';
 import { css } from 'styled-components';
-import { storiesOf } from '@storybook/react';
+
 import { Attraction, Car, TreeOption } from 'grommet-icons';
 import { Box, Grommet, Tab, Tabs } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -29,13 +29,15 @@ const customTheme = deepMerge(grommet, {
     pad: 'small',
     margin: 'none',
     extend: ({ theme }) => css`
-      border-top-left-radius: ${theme.global.control.border.radius};
-      border-top-right-radius: ${theme.global.control.border.radius};
+      border-top-left-radius: '4px';
+        /* or 'border-top-left-radius: ${theme.global.control.border.radius}' */
+      border-top-right-radius: '4px';
+      /* or 'border-top-right-radius: ${theme.global.control.border.radius} */
       font-weight: bold;
     `,
   },
 });
-const Icon = () => (
+const IconTabs = () => (
   <Grommet theme={customTheme} full>
     <Box pad="medium" fill>
       <Tabs flex>
@@ -59,4 +61,8 @@ const Icon = () => (
   </Grommet>
 );
 
-storiesOf('Tabs', module).add('Icon', () => <Icon />);
+export const Icon = () => <IconTabs />;
+
+export default {
+  title: 'Controls/Tabs/Icon',
+};

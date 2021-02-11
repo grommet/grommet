@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import isChromatic from 'storybook-chromatic/isChromatic';
 
 import { Box, Grommet, Clock } from 'grommet';
 
@@ -30,7 +28,7 @@ const analogClockTheme = {
   },
 };
 
-const CustomAnalog = () => (
+export const CustomAnalog = () => (
   <Grommet theme={analogClockTheme}>
     <Box align="center" justify="start" pad="large">
       <Clock type="analog" />
@@ -38,8 +36,11 @@ const CustomAnalog = () => (
   </Grommet>
 );
 
-if (!isChromatic()) {
-  storiesOf('TypeScript/Clock', module).add('Custom Analog', () => (
-    <CustomAnalog />
-  ));
-}
+CustomAnalog.storyName = 'Custom analog';
+CustomAnalog.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Visualizations/Clock/Custom analog',
+};

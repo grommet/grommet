@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Gremlin, Grommet as GrommetIcon } from 'grommet-icons';
 import { Grommet, Box, RangeSelector, Stack, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -15,7 +14,7 @@ const customEdge = deepMerge(grommet, {
   },
 });
 
-const CustomEdgeControl = ({ direction = 'horizontal', ...rest }) => {
+export const CustomEdgeControl = ({ direction = 'horizontal', ...rest }) => {
   const [range, setRange] = useState([2, 7]);
   const onChange = values => {
     setRange(values);
@@ -59,6 +58,8 @@ const CustomEdgeControl = ({ direction = 'horizontal', ...rest }) => {
   );
 };
 
-storiesOf('RangeSelector', module).add('Custom Edge Controls', () => (
-  <CustomEdgeControl />
-));
+CustomEdgeControl.storyName = 'Custom edge controls';
+
+export default {
+  title: 'Input/RangeSelector/Custom edge controls',
+};

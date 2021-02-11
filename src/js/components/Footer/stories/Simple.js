@@ -1,9 +1,8 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Footer, grommet, Grommet, Main, Text } from 'grommet';
 
-const Simple = () => (
+export const Simple = () => (
   <Grommet theme={grommet}>
     <Main background="light-2" elevation="large" pad="large" gap="large">
       <Text margin="small" size="xsmall">
@@ -19,4 +18,6 @@ const Simple = () => (
   </Grommet>
 );
 
-storiesOf('Footer', module).add('Simple', () => <Simple />);
+export default {
+  title: 'Layout/Footer/Simple',
+};

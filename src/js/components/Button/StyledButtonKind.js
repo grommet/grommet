@@ -1,11 +1,12 @@
 import styled, { css } from 'styled-components';
 
 import {
-  backgroundStyle,
+  activeStyle,
   disabledStyle,
   focusStyle,
   genericStyles,
-  normalizeColor,
+  kindPartStyles,
+  parseMetricToNum,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
 
@@ -31,28 +32,39 @@ const fontStyle = props => {
   `;
 };
 
-const padStyle = ({ sizeProp: size, theme }) => {
+const padFromTheme = (size, theme) => {
   if (
     size &&
     theme.button.size &&
     theme.button.size[size] &&
     theme.button.size[size].pad
   ) {
-    return css`
-      padding: ${theme.button.size[size].pad.vertical}
-        ${theme.button.size[size].pad.horizontal};
-    `;
+    return {
+      vertical: theme.button.size[size].pad.vertical,
+      horizontal: theme.button.size[size].pad.horizontal,
+    };
   }
 
   if (theme.button.padding) {
-    return css`
-      padding: ${theme.global.edgeSize[theme.button.padding.vertical] ||
-          theme.button.padding.vertical}
-        ${theme.global.edgeSize[theme.button.padding.horizontal] ||
-          theme.button.padding.horizontal};
-    `;
+    return {
+      vertical:
+        theme.global.edgeSize[theme.button.padding.vertical] ||
+        theme.button.padding.vertical,
+      horizontal:
+        theme.global.edgeSize[theme.button.padding.horizontal] ||
+        theme.button.padding.horizontal,
+    };
   }
-  return '';
+  return undefined;
+};
+
+const padStyle = ({ sizeProp: size, theme }) => {
+  const pad = padFromTheme(size, theme);
+  return pad
+    ? css`
+        padding: ${pad.vertical} ${pad.horizontal};
+      `
+    : '';
 };
 
 // The > svg rule is to ensure Buttons with just an icon don't add additional
@@ -68,111 +80,65 @@ const basicStyle = props => css`
   }
 `;
 
-// CSS for this sub-object in the theme
-const kindPartStyles = (obj, theme, colorValue) => {
-  const styles = [];
-  if (obj.padding) {
-    if (obj.padding.vertical || obj.padding.horizontal)
-      styles.push(
-        `padding: ${theme.global.edgeSize[obj.padding.vertical] ||
-          obj.padding.vertical ||
-          0} ${theme.global.edgeSize[obj.padding.horizontal] ||
-          obj.padding.horizontal ||
-          0};`,
-      );
-    else
-      styles.push(
-        `padding: ${theme.global.edgeSize[obj.padding] || obj.padding || 0};`,
-      );
+const getPath = (theme, path) => {
+  let obj;
+  if (path) {
+    obj = theme;
+    const parts = path.split('.');
+    while (obj && parts.length) obj = obj[parts.shift()];
   }
-  if (obj.background)
-    styles.push(
-      backgroundStyle(
-        colorValue || obj.background,
-        theme,
-        obj.color ||
-          (Object.prototype.hasOwnProperty.call(obj, 'color') &&
-          obj.color === undefined
-            ? false
-            : undefined),
-      ),
-    );
-  else if (obj.color)
-    styles.push(`color: ${normalizeColor(obj.color, theme)};`);
-  if (obj.border) {
-    if (obj.border.width)
-      styles.push(css`
-        border-style: solid;
-        border-width: ${obj.border.width};
-      `);
-    if (obj.border.color)
-      styles.push(css`
-        border-color: ${normalizeColor(
-          (!obj.background && colorValue) || obj.border.color || 'border',
-          theme,
-        )};
-      `);
-    if (obj.border.radius)
-      styles.push(css`
-        border-radius: ${obj.border.radius};
-      `);
-  } else if (obj.border === false) styles.push('border: none;');
-  if (colorValue && !obj.border && !obj.background)
-    styles.push(`color: ${normalizeColor(colorValue, theme)};`);
-  if (obj.font) {
-    if (obj.font.size) {
-      styles.push(
-        `font-size: ${theme.text[obj.font.size].size || obj.font.size};`,
-      );
-    }
-    if (obj.font.height) {
-      styles.push(`line-height: ${obj.font.height};`);
-    }
-    if (obj.font.weight) {
-      styles.push(`font-weight: ${obj.font.weight};`);
-    }
-  }
-  if (obj.opacity) {
-    const opacity =
-      obj.opacity === true
-        ? theme.global.opacity.medium
-        : theme.global.opacity[obj.opacity] || obj.opacity;
-    styles.push(`opacity: ${opacity};`);
-  }
-  if (obj.extend) styles.push(obj.extend);
-  return styles;
+  return obj;
+};
+
+const adjustPadStyle = (pad, width) => {
+  const offset = parseMetricToNum(width);
+  return css`
+    padding: ${parseMetricToNum(pad.vertical) - offset}px
+      ${parseMetricToNum(pad.horizontal) - offset}px;
+  `;
 };
 
 // build up CSS from basic to specific based on the supplied sub-object paths
-const kindStyle = ({ colorValue, themePaths, theme }) => {
+const kindStyle = ({ colorValue, sizeProp: size, themePaths, theme }) => {
   const styles = [];
 
+  const pad = padFromTheme(size, theme);
+
   themePaths.base.forEach(themePath => {
-    let obj = theme.button;
-    if (themePath) {
-      const parts = themePath.split('.');
-      while (obj && parts.length) obj = obj[parts.shift()];
-    }
+    const obj = getPath(theme, `button.${themePath}`);
+
     if (obj) {
       styles.push(kindPartStyles(obj, theme, colorValue));
+      if (obj.border && obj.border.width && pad && !obj.padding) {
+        // Adjust padding from the button.size or just top button.padding
+        // to deal with the kind's border width. But don't override any
+        // padding in the kind itself for backward compatibility
+        styles.push(adjustPadStyle(pad, obj.border.width));
+      }
     }
   });
 
   themePaths.hover.forEach(themePath => {
-    let obj = theme.button;
-    if (themePath) {
-      const parts = themePath.split('.');
-      while (obj && parts.length) obj = obj[parts.shift()];
-      if (obj) {
-        const partStyles = kindPartStyles(obj, theme);
-        if (partStyles.length > 0)
-          styles.push(
-            css`
-              &:hover {
-                ${partStyles}
-              }
-            `,
-          );
+    const obj = getPath(theme, `button.${themePath}`);
+
+    if (obj) {
+      const partStyles = kindPartStyles(obj, theme);
+      let adjPadStyles = '';
+      if (obj.border && obj.border.width && pad && !obj.padding) {
+        // Adjust padding from the button.size or just top button.padding
+        // to deal with the hover's border width. But don't override any
+        // padding in the hover or hover.kind itself for backward compatibility
+        adjPadStyles = adjustPadStyle(pad, obj.border.width);
+      }
+      if (partStyles.length > 0) {
+        styles.push(
+          css`
+            &:hover {
+              ${partStyles}
+              ${adjPadStyles}
+            }
+          `,
+        );
       }
     }
   });
@@ -213,15 +179,24 @@ const fillStyle = fillContainer => {
   return undefined;
 };
 
+// The > svg rule is to ensure Buttons with just an icon don't add additional
+// vertical height internally.
 const plainStyle = () => css`
   outline: none;
   border: none;
   padding: 0;
   text-align: inherit;
   color: inherit;
+
+  > svg {
+    vertical-align: bottom;
+  }
 `;
 
-const StyledButtonKind = styled.button`
+const StyledButtonKind = styled.button.attrs(() => ({
+  // don't let kind attribute leak to DOM
+  kind: undefined,
+}))`
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -234,19 +209,27 @@ const StyledButtonKind = styled.button`
 
   ${genericStyles}
   ${props => props.plain && plainStyle(props)}
+  // set baseline activeStyle for all buttons including plain buttons
+  // buttons with kind will have active styling overridden by kindStyle
+  // if they have specific state styles
+  ${props => !props.disabled && props.active && activeStyle}
   ${props => !props.plain && basicStyle(props)}
   ${props => !props.plain && kindStyle(props)}
   ${props =>
     !props.plain &&
     props.align &&
     `
-  text-align: ${props.align};
-  `}
-  ${props => props.hoverIndicator && hoverIndicatorStyle(props)}
+    text-align: ${props.align};
+    `}
+  ${props =>
+    !props.disabled && props.hoverIndicator && hoverIndicatorStyle(props)}
   ${props =>
     props.disabled && disabledStyle(props.theme.button.disabled.opacity)}
-  ${props =>
-    props.focus && (!props.plain || props.focusIndicator) && focusStyle()}
+
+  &:focus {
+    ${props => (!props.plain || props.focusIndicator) && focusStyle()}
+  }
+  
   ${props =>
     !props.plain &&
     props.theme.button.transition &&

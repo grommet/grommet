@@ -2,15 +2,19 @@ import React, {
   forwardRef,
   useContext,
   useEffect,
+  useMemo,
   useRef,
-  useState,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
 
 import { FocusedContainer } from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
-import { backgroundIsDark, findVisibleParent } from '../../utils';
+import {
+  backgroundIsDark,
+  findVisibleParent,
+  PortalContext,
+} from '../../utils';
 
 import { StyledLayer, StyledContainer, StyledOverlay } from './StyledLayer';
 
@@ -21,11 +25,12 @@ const HiddenAnchor = styled.a`
   position: absolute;
 `;
 
-const fullBounds = { left: 0, right: 0, top: 0, bottom: 0 };
+const defaultPortalContext = [];
 
 const LayerContainer = forwardRef(
   (
     {
+      background,
       children,
       full = false,
       id,
@@ -42,10 +47,15 @@ const LayerContainer = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
-    const [targetBounds, setTargetBounds] = useState(fullBounds);
     const anchorRef = useRef();
     const containerRef = useRef();
     const layerRef = useRef();
+    const portalContext = useContext(PortalContext) || defaultPortalContext;
+    const portalId = useMemo(() => portalContext.length, [portalContext]);
+    const nextPortalContext = useMemo(() => [...portalContext, portalId], [
+      portalContext,
+      portalId,
+    ]);
 
     useEffect(() => {
       if (position !== 'hidden') {
@@ -77,38 +87,102 @@ const LayerContainer = forwardRef(
     }, [position, ref]);
 
     useEffect(() => {
+      const onClickDocument = event => {
+        // determine which portal id the target is in, if any
+        let clickedPortalId = null;
+        let node = event.target;
+        while (clickedPortalId === null && node !== document && node !== null) {
+          // check if user click occurred within the layer
+          const attr = node.getAttribute('data-g-portal-id');
+          if (attr !== null && attr !== '')
+            clickedPortalId = parseInt(attr, 10);
+          // loop upward through parents to see if clicked element is a child
+          // of the Layer. if so, click was inside Layer
+          else node = node.parentNode;
+        }
+        if (
+          (clickedPortalId === null ||
+            portalContext.indexOf(clickedPortalId) !== -1) &&
+          node !== null
+        ) {
+          // if the click occurred outside of the Layer portal, call
+          // the user's onClickOutside function
+          onClickOutside(event);
+        }
+      };
+
+      // if user provides an onClickOutside function, listen for mousedown event
+      if (onClickOutside) {
+        document.addEventListener('mousedown', onClickDocument);
+      }
+
       if (layerTarget) {
         const updateBounds = () => {
-          const rect = findVisibleParent(layerTarget).getBoundingClientRect();
-          setTargetBounds({
-            left: rect.left,
-            right: window.innerWidth - rect.right,
-            top: rect.top,
-            bottom: window.innerHeight - rect.bottom,
-          });
+          const windowWidth = window.innerWidth;
+          const windowHeight = window.innerHeight;
+          const target = findVisibleParent(layerTarget);
+
+          // affects StyledLayer
+          const layer = layerRef.current;
+
+          if (layer && target) {
+            // clear prior styling
+            layer.style.left = '';
+            layer.style.top = '';
+            layer.style.bottom = '';
+            layer.style.width = '';
+
+            // get bounds
+            const targetRect = target.getBoundingClientRect();
+            const layerRect = layer.getBoundingClientRect();
+
+            // ensure that layer moves with the target
+            layer.style.left = `${targetRect.left}px`;
+            layer.style.right = `${windowWidth - targetRect.right}px`;
+            layer.style.top = `${targetRect.top}px`;
+            layer.style.bottom = `${windowHeight - targetRect.bottom}px`;
+            layer.style.maxHeight = targetRect.height;
+            layer.style.maxWidth = Math.min(layerRect.width, windowWidth);
+          }
         };
 
         updateBounds();
         window.addEventListener('resize', updateBounds);
-        return () => window.removeEventListener('resize', updateBounds);
+        window.addEventListener('scroll', updateBounds, true);
+
+        return () => {
+          window.removeEventListener('resize', updateBounds);
+          window.removeEventListener('scroll', updateBounds, true);
+          if (onClickOutside) {
+            document.removeEventListener('mousedown', onClickDocument);
+          }
+        };
       }
-      setTargetBounds(fullBounds);
-      return undefined;
-    }, [layerTarget]);
+      return () => {
+        if (onClickOutside) {
+          document.removeEventListener('mousedown', onClickDocument);
+        }
+      };
+    }, [layerTarget, onClickOutside, portalContext, portalId]);
 
     let content = (
       <StyledContainer
         ref={ref || containerRef}
+        background={background}
+        elevation={theme.layer.container.elevation}
         id={id}
         full={full}
         margin={margin}
         modal={modal}
-        targetBounds={!modal ? targetBounds : fullBounds}
         {...rest}
         position={position}
         plain={plain}
         responsive={responsive}
+        layerTarget={layerTarget}
         dir={theme.dir}
+        // portalId is used to determine if click occurred inside
+        // or outside of the layer
+        data-g-portal-id={portalId}
       >
         {/* eslint-disable max-len */}
         {/* eslint-disable jsx-a11y/anchor-is-valid, jsx-a11y/anchor-has-content */}
@@ -118,30 +192,47 @@ const LayerContainer = forwardRef(
         {children}
       </StyledContainer>
     );
-    if (modal) {
+    if (modal || layerTarget) {
       content = (
         <StyledLayer
           ref={layerRef}
           id={id}
-          targetBounds={targetBounds}
           plain={plain}
           position={position}
           responsive={responsive}
           tabIndex="-1"
           dir={theme.dir}
         >
-          <StyledOverlay
-            plain={plain}
-            onMouseDown={onClickOutside}
-            responsive={responsive}
-          />
+          {modal && (
+            <StyledOverlay
+              plain={plain}
+              responsive={responsive}
+              onMouseDown={onClickOutside}
+            />
+          )}
           {content}
         </StyledLayer>
       );
     }
 
     if (onEsc) {
-      content = <Keyboard onEsc={onEsc}>{content}</Keyboard>;
+      content = (
+        <Keyboard
+          onEsc={
+            onEsc
+              ? event => {
+                  // prevent further capturing or bubbling of event to other
+                  // child or parent elements
+                  event.stopPropagation();
+                  onEsc(event);
+                }
+              : undefined
+          }
+          target={modal === false ? 'document' : undefined}
+        >
+          {content}
+        </Keyboard>
+      );
     }
 
     if (theme.layer.background) {
@@ -154,9 +245,23 @@ const LayerContainer = forwardRef(
         );
       }
     }
+
+    content = (
+      <PortalContext.Provider value={nextPortalContext}>
+        {content}
+      </PortalContext.Provider>
+    );
+
     if (modal) {
       content = (
-        <FocusedContainer hidden={position === 'hidden'} restrictScroll>
+        <FocusedContainer
+          hidden={position === 'hidden'}
+          // if layer has a target, do not restrict scroll.
+          // restricting scroll could inhibit the user's
+          // ability to scroll the page while the layer is open.
+          restrictScroll={!layerTarget ? true : undefined}
+          trapFocus
+        >
           {content}
         </FocusedContainer>
       );

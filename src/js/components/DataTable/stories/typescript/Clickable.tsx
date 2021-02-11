@@ -1,19 +1,20 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import isChromatic from 'storybook-chromatic/isChromatic';
 
 import { Grommet, Box, DataTable, Meter, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 import { ColumnConfig } from '../..';
 
+// This story uses TypeScript
 const amountFormatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
   currency: 'USD',
   minimumFractionDigits: 2,
 });
 
-export const columns: ColumnConfig<RowType>[] = [
+// Type annotations can only be used in TypeScript files.
+// Remove ': ColumnConfig<RowType>[]' if you are not using TypeScript.
+const columns: ColumnConfig<RowType>[] = [
   {
     property: 'name',
     header: <Text>Name with extra</Text>,
@@ -56,7 +57,7 @@ export const columns: ColumnConfig<RowType>[] = [
 
 const locations = ['Boise', 'Fort Collins', 'Bay Area', 'Houston'];
 
-export const data = [];
+const data = [];
 
 for (let i = 0; i < 40; i += 1) {
   data.push({
@@ -68,6 +69,8 @@ for (let i = 0; i < 40; i += 1) {
   });
 }
 
+// 'interface' declarations can only be used in TypeScript files.
+// Remove ': 'interface RowType' if you are not using Typescript.
 interface RowType {
   name: string;
   location: string;
@@ -76,7 +79,9 @@ interface RowType {
   paid: number;
 }
 
-export const DATA: RowType[] = [
+// Type annotations can only be used in TypeScript files.
+// Remove ': RowType[]' if you are not using TypeScript.
+const DATA: RowType[] = [
   {
     name: 'Shimi',
     location: '',
@@ -135,7 +140,7 @@ export const DATA: RowType[] = [
   },
 ];
 
-const ClickableDataTable = () => (
+export const ClickableDataTable = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
       {/* eslint-disable no-alert */}
@@ -149,8 +154,8 @@ const ClickableDataTable = () => (
   </Grommet>
 );
 
-if (!isChromatic()) {
-  storiesOf('TypeScript/DataTable', module).add('Clickable', () => (
-    <ClickableDataTable />
-  ));
-}
+ClickableDataTable.storyName = 'Clickable';
+
+export default {
+  title: 'Visualizations/DataTable/Clickable',
+};

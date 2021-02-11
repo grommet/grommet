@@ -8,6 +8,8 @@ import {
   waitForElement,
 } from '@testing-library/react';
 import { getByText, screen } from '@testing-library/dom';
+import { axe } from 'jest-axe';
+import 'jest-axe/extend-expect';
 import { Search } from 'grommet-icons';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
@@ -15,10 +17,22 @@ import { createPortal, expectPortal } from '../../../utils/portal';
 import { Grommet } from '../../Grommet';
 import { TextInput } from '..';
 import { Keyboard } from '../../Keyboard';
+import { Text } from '../../Text';
 
 describe('TextInput', () => {
   beforeEach(createPortal);
   afterEach(cleanup);
+
+  test('should not have accessibility violations', async () => {
+    const { container } = render(
+      <Grommet>
+        <TextInput a11yTitle="aria-test" name="item" />
+      </Grommet>,
+    );
+    const results = await axe(container);
+    expect(container.firstChild).toMatchSnapshot();
+    expect(results).toHaveNoViolations();
+  });
 
   test('basic', () => {
     const { container } = render(<TextInput name="item" />);
@@ -249,7 +263,7 @@ describe('TextInput', () => {
     }, 50);
   });
 
-  test('select a suggestion', () => {
+  test('select a suggestion with onSelect', () => {
     const onSelect = jest.fn();
     const { getByTestId, container } = render(
       <Grommet>
@@ -272,6 +286,132 @@ describe('TextInput', () => {
     fireEvent.keyDown(input, { keyCode: 38 }); // up
     fireEvent.keyDown(input, { keyCode: 13 }); // enter
     expect(onSelect).toBeCalledWith(
+      expect.objectContaining({
+        suggestion: 'test',
+      }),
+    );
+  });
+
+  test('auto-select 2nd suggestion with defaultSuggestion', () => {
+    const onSelect = jest.fn();
+    const suggestions = ['test1', 'test2'];
+    const defaultSuggestionIndex = 1;
+    const { getByTestId } = render(
+      <Grommet>
+        <TextInput
+          data-testid="test-input"
+          id="item"
+          name="item"
+          defaultSuggestion={defaultSuggestionIndex}
+          suggestions={suggestions}
+          onSuggestionSelect={onSelect}
+        />
+      </Grommet>,
+    );
+
+    const input = getByTestId('test-input');
+    // open drop - second should be automatically highlighted
+    fireEvent.keyDown(input, { keyCode: 40 }); // down
+    // pressing enter here will select the second suggestion
+    fireEvent.keyDown(input, { keyCode: 13 }); // enter
+    expect(onSelect).toBeCalledWith(
+      expect.objectContaining({
+        suggestion: suggestions[defaultSuggestionIndex],
+      }),
+    );
+  });
+
+  test('do not select any suggestion without defaultSuggestion', () => {
+    const onSelect = jest.fn();
+    const { getByTestId } = render(
+      <Grommet>
+        <TextInput
+          data-testid="test-input"
+          id="item"
+          name="item"
+          suggestions={['test1', 'test2']}
+          onSuggestionSelect={onSelect}
+        />
+      </Grommet>,
+    );
+
+    const input = getByTestId('test-input');
+    // open drop
+    fireEvent.keyDown(input, { keyCode: 40 }); // down
+    // pressing enter here closes drop but doesn't select
+    fireEvent.keyDown(input, { keyCode: 13 }); // enter
+    // if no suggestion had been selected, don't call onSelect
+    expect(onSelect).not.toBeCalled();
+
+    // open drop
+    fireEvent.keyDown(input, { keyCode: 40 }); // down
+    // highlight first
+    fireEvent.keyDown(input, { keyCode: 40 }); // down
+    // highlight second
+    fireEvent.keyDown(input, { keyCode: 40 }); // down
+    // select highlighted
+    fireEvent.keyDown(input, { keyCode: 13 }); // enter
+    expect(onSelect).toBeCalledWith(
+      expect.objectContaining({
+        suggestion: 'test2',
+      }),
+    );
+  });
+
+  test('select a suggestion with onSuggestionSelect', () => {
+    const onSuggestionSelect = jest.fn();
+    const { getByTestId, container } = render(
+      <Grommet>
+        <TextInput
+          data-testid="test-input"
+          id="item"
+          name="item"
+          suggestions={['test', { value: 'test1' }]}
+          onSuggestionSelect={onSuggestionSelect}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    const input = getByTestId('test-input');
+    // pressing enter here nothing will happen
+    fireEvent.keyDown(input, { keyCode: 13 }); // enter
+    fireEvent.keyDown(input, { keyCode: 40 }); // down
+    fireEvent.keyDown(input, { keyCode: 40 }); // down
+    fireEvent.keyDown(input, { keyCode: 38 }); // up
+    fireEvent.keyDown(input, { keyCode: 13 }); // enter
+    expect(onSuggestionSelect).toBeCalledWith(
+      expect.objectContaining({
+        suggestion: 'test',
+      }),
+    );
+  });
+
+  test('select with onSuggestionSelect when onSelect is present', () => {
+    const onSelect = jest.fn();
+    const onSuggestionSelect = jest.fn();
+    const { getByTestId, container } = render(
+      <Grommet>
+        <TextInput
+          data-testid="test-input"
+          id="item"
+          name="item"
+          suggestions={['test', { value: 'test1' }]}
+          onSelect={onSelect}
+          onSuggestionSelect={onSuggestionSelect}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    const input = getByTestId('test-input');
+    // pressing enter here nothing will happen
+    fireEvent.keyDown(input, { keyCode: 13 }); // enter
+    fireEvent.keyDown(input, { keyCode: 40 }); // down
+    fireEvent.keyDown(input, { keyCode: 40 }); // down
+    fireEvent.keyDown(input, { keyCode: 38 }); // up
+    fireEvent.keyDown(input, { keyCode: 13 }); // enter
+    expect(onSuggestionSelect).toBeCalledWith(
       expect.objectContaining({
         suggestion: 'test',
       }),
@@ -375,5 +515,100 @@ describe('TextInput', () => {
 
     fireEvent.click(selection);
     expect(document.activeElement).toEqual(input);
+  });
+
+  test('should not have padding when plain="full"', async () => {
+    const { container } = render(
+      <Grommet>
+        <TextInput
+          plain="full"
+          name="name"
+          placeholder="should not have padding"
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should have padding when plain', async () => {
+    const { container } = render(
+      <Grommet>
+        <TextInput plain name="name" placeholder="should still have padding" />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should show non-string placeholder', () => {
+    const { container } = render(
+      <Grommet>
+        <TextInput
+          data-testid="test-styled-placeholder"
+          id="styled-placeholder"
+          name="styled-placeholder"
+          placeholder={<Text>placeholder text</Text>}
+        />
+      </Grommet>,
+    );
+
+    const placeholder = screen.getByText('placeholder text');
+    expect(placeholder).toBeTruthy();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should hide non-string placeholder when having a value', () => {
+    const { container } = render(
+      <Grommet>
+        <TextInput
+          data-testid="styled-placeholder"
+          id="styled-placeholder"
+          name="styled-placeholder"
+          placeholder={<Text>placeholder text</Text>}
+          value="test"
+        />
+      </Grommet>,
+    );
+
+    const placeholder = screen.queryByText('placeholder text');
+    expect(placeholder).toBeNull();
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`should only should default placeholder when placeholder is a 
+  string`, () => {
+    const { container, getByTestId } = render(
+      <Grommet>
+        <TextInput
+          data-testid="placeholder"
+          id="placeholder"
+          name="placeholder"
+          placeholder="placeholder text"
+        />
+      </Grommet>,
+    );
+
+    const placeholder = screen.queryByText('placeholder text');
+    fireEvent.change(getByTestId('placeholder'), {
+      target: { value: 'something' },
+    });
+    expect(placeholder).toBeNull();
+    expect(container.firstChild).toMatchSnapshot();
+
+    // after value is removed, only one placeholder should be present
+    // nothing from styled placeholder should appear since placeholder
+    // is a string
+    fireEvent.change(getByTestId('placeholder'), { target: { value: '' } });
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('textAlign end', () => {
+    const { container } = render(
+      <Grommet>
+        <TextInput value="1234" textAlign="end" />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

@@ -1,10 +1,10 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = Sidebar => {
   const DocumentedSidebar = describe(Sidebar)
-    .availableAt(getAvailableAtBadge('Sidebar'))
+    .availableAt(getAvailableAtBadge('Sidebar', 'Layout'))
     .description('A sidebar, typically used with Nav children.')
     .usage(
       `import { Sidebar } from 'grommet';

@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Chart } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Example = () => (
+export const Dash = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large" gap="large">
       <Chart type="line" dash values={[20, 30, 15]} />
@@ -25,4 +24,6 @@ const Example = () => (
   </Grommet>
 );
 
-storiesOf('Chart', module).add('Dash', () => <Example />);
+export default {
+  title: 'Visualizations/Chart/Dash',
+};

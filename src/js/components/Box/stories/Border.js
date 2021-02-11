@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Text } from 'grommet';
 import { grommet } from '../../../themes';
 
-const BorderBox = () => (
+export const BorderBox = () => (
   <Grommet theme={grommet}>
     <Box pad="small" gap="small" align="start">
       <Box pad="small" border>
@@ -68,8 +67,12 @@ const BorderBox = () => (
         ))}
       </Box>
       <Box direction="row-responsive" gap="large" align="center">
-        {['column', 'row'].map(direction => (
-          <Box direction={direction} gap="medium" border="between">
+        {['column', 'row', 'row-responsive'].map(direction => (
+          <Box
+            direction={direction}
+            gap="large"
+            border={{ side: 'between', size: 'large' }}
+          >
             <Text>between</Text>
             <Text>{direction}</Text>
           </Box>
@@ -79,4 +82,8 @@ const BorderBox = () => (
   </Grommet>
 );
 
-storiesOf('Box', module).add('Border', () => <BorderBox />);
+BorderBox.storyName = 'Border';
+
+export default {
+  title: 'Layout/Box/Border',
+};

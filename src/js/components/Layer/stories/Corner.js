@@ -1,12 +1,11 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Add } from 'grommet-icons';
 
 import { Box, Button, Grommet, Layer, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const CornerLayer = () => {
+export const CornerLayer = () => {
   const [open, setOpen] = React.useState();
 
   const onOpen = () => setOpen(true);
@@ -38,4 +37,12 @@ const CornerLayer = () => {
   );
 };
 
-storiesOf('Layer', module).add('Corner', () => <CornerLayer />);
+CornerLayer.storyName = 'Corner';
+
+CornerLayer.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Layout/Layer/Corner',
+};

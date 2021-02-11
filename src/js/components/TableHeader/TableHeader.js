@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 import { TableContext } from '../Table/TableContext';
 import { StyledTableHeader } from '../Table/StyledTable';
 
-const TableHeader = props => (
+const TableHeader = forwardRef((props, ref) => (
   <TableContext.Provider value="header">
-    <StyledTableHeader {...props} />
+    <StyledTableHeader ref={ref} {...props} />
   </TableContext.Provider>
-);
+));
+
+TableHeader.displayName = 'TableHeader';
 
 let TableHeaderDoc;
 if (process.env.NODE_ENV !== 'production') {

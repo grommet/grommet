@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, RangeSelector, Stack, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -31,7 +30,7 @@ const customThemeRangeSelector = deepMerge(grommet, {
   },
 });
 
-const CustomRangeSelector = ({ direction = 'horizontal', ...rest }) => {
+export const Custom = ({ direction = 'horizontal', ...rest }) => {
   const [range, setRange] = useState([12, 16]);
   const onChange = values => {
     setRange(values);
@@ -74,4 +73,6 @@ const CustomRangeSelector = ({ direction = 'horizontal', ...rest }) => {
   );
 };
 
-storiesOf('RangeSelector', module).add('Custom', () => <CustomRangeSelector />);
+export default {
+  title: 'Input/RangeSelector/Custom',
+};

@@ -2,6 +2,9 @@ import React from 'react';
 import 'jest-styled-components';
 import renderer from 'react-test-renderer';
 import { cleanup, fireEvent, render } from '@testing-library/react';
+import { axe } from 'jest-axe';
+import 'jest-axe/extend-expect';
+import 'regenerator-runtime/runtime';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
@@ -11,6 +14,18 @@ describe('DropButton', () => {
   beforeEach(createPortal);
 
   afterEach(cleanup);
+
+  test('should have no accessibility violations', async () => {
+    const { container } = render(
+      <DropButton
+        a11yTitle="test"
+        dropContent={<div id="drop-contents">drop contents</div>}
+      />,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+    expect(container.firstChild).toMatchSnapshot();
+  });
 
   test('closed', () => {
     const component = renderer.create(
@@ -35,9 +50,12 @@ describe('DropButton', () => {
 
   test('open and close', () => {
     window.scrollTo = jest.fn();
+    const onClose = jest.fn(event => event.persist());
+
     const { getByText, container } = render(
       <DropButton
         label="Dropper"
+        onClose={onClose}
         dropContent={<div id="drop-contents">Drop Contents</div>}
       />,
     );
@@ -46,16 +64,24 @@ describe('DropButton', () => {
 
     fireEvent.click(getByText('Dropper'));
     expectPortal('drop-contents').toMatchSnapshot();
+    expect(document.getElementById('drop-contents')).not.toBeNull();
 
     fireEvent.click(getByText('Dropper'));
     expect(document.getElementById('drop-contents')).toBeNull();
     expect(window.scrollTo).toBeCalled();
+
+    expect(onClose).toBeCalledWith(expect.objectContaining({ type: 'click' }));
   });
 
   test('close by clicking outside', done => {
+    const onClose = jest.fn();
+    const onOpen = jest.fn(event => event.persist());
+
     const { getByText, container } = render(
       <DropButton
         label="Dropper"
+        onClose={onClose}
+        onOpen={onOpen}
         dropContent={<div id="drop-contents">Drop Contents</div>}
       />,
     );
@@ -64,6 +90,9 @@ describe('DropButton', () => {
 
     fireEvent.click(getByText('Dropper'));
     expectPortal('drop-contents').toMatchSnapshot();
+
+    expect(onOpen).toBeCalledWith(expect.objectContaining({ type: 'click' }));
+    expect(document.getElementById('drop-contents')).not.toBeNull();
 
     fireEvent(
       document,
@@ -74,6 +103,10 @@ describe('DropButton', () => {
       expect(document.getElementById('drop-contents')).toBeNull();
       done();
     }, 50);
+
+    expect(onClose).toBeCalledWith(
+      expect.objectContaining({ type: 'mousedown' }),
+    );
   });
 
   test('disabled', () => {

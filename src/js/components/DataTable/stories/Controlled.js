@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, DataTable, CheckBox } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -14,7 +13,7 @@ delete controlledColumns[3].footer;
 delete controlledColumns[4].footer;
 delete controlledColumns[4].aggregate;
 
-const ControlledDataTable = () => {
+export const ControlledDataTable = () => {
   const [checked, setChecked] = React.useState([]);
 
   const onCheck = (event, value) => {
@@ -64,4 +63,8 @@ const ControlledDataTable = () => {
   );
 };
 
-storiesOf('DataTable', module).add('Controlled', () => <ControlledDataTable />);
+ControlledDataTable.storyName = 'Controlled';
+
+export default {
+  title: 'Visualizations/DataTable/Controlled',
+};

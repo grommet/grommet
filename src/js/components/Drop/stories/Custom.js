@@ -1,9 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Drop, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
-import { deepMerge } from '../../../utils/object';
+import { deepMerge } from 'grommet/utils';
 
 const customTheme = deepMerge(grommet, {
   global: {
@@ -15,7 +14,7 @@ const customTheme = deepMerge(grommet, {
   },
 });
 
-const Custom = () => {
+const CustomDrop = () => {
   const [, setShowDrop] = useState(false);
   const targetRef = useRef();
 
@@ -45,4 +44,8 @@ const Custom = () => {
   );
 };
 
-storiesOf('Drop', module).add('Custom', () => <Custom />);
+export const Custom = () => <CustomDrop />;
+
+export default {
+  title: 'Controls/Drop/Custom',
+};

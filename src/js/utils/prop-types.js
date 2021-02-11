@@ -5,6 +5,44 @@ export const a11yTitlePropType = PropTypes.string.description(
    be added to the element.`,
 );
 
+export const getBorderPropType = ({ includeBetween = true }) =>
+  PropTypes.shape({
+    color: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.shape({
+        dark: PropTypes.string,
+        light: PropTypes.string,
+      }),
+    ]),
+    side: PropTypes.oneOf([
+      'top',
+      'left',
+      'bottom',
+      'right',
+      'start',
+      'end',
+      'horizontal',
+      'vertical',
+      'all',
+      ...(includeBetween ? ['between'] : []),
+    ]),
+    size: PropTypes.oneOfType([
+      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+      PropTypes.string,
+    ]),
+    style: PropTypes.oneOf([
+      'solid',
+      'dashed',
+      'dotted',
+      'double',
+      'groove',
+      'ridge',
+      'inset',
+      'outset',
+      'hidden',
+    ]).defaultValue('solid'),
+  });
+
 export const colorPropType = PropTypes.oneOfType([
   PropTypes.string,
   PropTypes.shape({ dark: PropTypes.string, light: PropTypes.string }),
@@ -37,7 +75,7 @@ export const backgroundDoc = PropTypes.oneOfType([
 identifier to use for the background color. For example: 'neutral-1'. Or, a 
 'url()' for an image. Dark is not needed if color is provided.`);
 
-const MARGIN_SIZES = [
+export const MARGIN_SIZES = [
   'xxsmall',
   'xsmall',
   'small',
@@ -145,4 +183,22 @@ export const hoverIndicatorPropType = PropTypes.oneOfType([
       PropTypes.string,
     ]),
   }),
+]);
+
+export const pointPropType = PropTypes.oneOf([
+  'circle',
+  'diamond',
+  'square',
+  'star',
+  'triangle',
+  'triangleDown',
+]);
+
+export const patternPropType = PropTypes.oneOf([
+  'squares',
+  'circles',
+  'stripesHorizontal',
+  'stripesVertical',
+  'stripesDiagonalDown',
+  'stripesDiagonalUp',
 ]);

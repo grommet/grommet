@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, DataTable } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -8,7 +7,7 @@ import { grommet } from 'grommet/themes';
 // https://github.com/grommet/grommet/blob/master/src/js/components/DataTable/stories/data.js
 import { columns, DATA } from './data';
 
-const ServedDataTable = () => {
+export const ServedDataTable = () => {
   const [data2, setData2] = React.useState(DATA);
 
   const onSearch = search => {
@@ -53,4 +52,8 @@ const ServedDataTable = () => {
   );
 };
 
-storiesOf('DataTable', module).add('Served', () => <ServedDataTable />);
+ServedDataTable.storyName = 'Served';
+
+export default {
+  title: 'Visualizations/DataTable/Served',
+};

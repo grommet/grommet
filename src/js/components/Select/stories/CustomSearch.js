@@ -1,12 +1,9 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { FormClose } from 'grommet-icons';
-
 import { Box, Button, CheckBox, Grommet, Select, Text } from 'grommet';
-
+// https://github.com/grommet/grommet/blob/master/src/js/components/Select/stories/theme.js
 import { theme as customSearchTheme } from './theme';
-import { SearchInputContext } from './components/SearchInputContext';
 
 const allContentPartners = [
   {
@@ -59,11 +56,11 @@ const allContentPartners = [
   },
 ];
 
-const CustomSearchSelect = () => {
+export const CustomSearch = () => {
   const [selectedContentPartners, setSelectedContentPartners] = useState([]);
   const [contentPartners, setContentPartners] = useState(allContentPartners);
   const [searching, setSearching] = useState(false);
-  const [searchQuery, setSerchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
 
   const selectRef = useRef();
 
@@ -133,74 +130,73 @@ const CustomSearchSelect = () => {
     </Box>
   );
 
-  const sortContentPartners = selectedPartnerNames => {
-    return (p1, p2) => {
-      const p1Exists = selectedPartnerNames.includes(p1.name);
-      const p2Exists = selectedPartnerNames.includes(p2.name);
+  const sortContentPartners = selectedPartnerNames => (p1, p2) => {
+    const p1Exists = selectedPartnerNames.includes(p1.name);
+    const p2Exists = selectedPartnerNames.includes(p2.name);
 
-      if (!p1Exists && p2Exists) {
-        return 1;
-      }
-      if (p1Exists && !p2Exists) {
-        return -1;
-      }
-      if (p1.name.toLowerCase() < p2.name.toLowerCase()) {
-        return -1;
-      }
+    if (!p1Exists && p2Exists) {
       return 1;
-    };
+    }
+    if (p1Exists && !p2Exists) {
+      return -1;
+    }
+    if (p1.name.toLowerCase() < p2.name.toLowerCase()) {
+      return -1;
+    }
+    return 1;
   };
 
   return (
     <Grommet full theme={customSearchTheme}>
       <Box fill align="center" justify="center" width="medium">
-        <SearchInputContext.Provider value={{ searching }}>
-          <Select
-            ref={selectRef}
-            closeOnChange={false}
-            placeholder="Select Content Partners"
-            searchPlaceholder="Search Content Partners"
-            emptySearchMessage="No partners found"
-            multiple
-            value={
-              selectedContentPartners.length
-                ? renderContentPartners()
-                : undefined
+        <Select
+          ref={selectRef}
+          closeOnChange={false}
+          placeholder="Select Content Partners"
+          searchPlaceholder="Search Content Partners"
+          emptySearchMessage="No partners found"
+          searching={searching}
+          multiple
+          value={
+            selectedContentPartners.length ? renderContentPartners() : undefined
+          }
+          selected={selectedContentPartners.map(option =>
+            contentPartners.indexOf(option),
+          )}
+          options={contentPartners}
+          onChange={({ option }) => {
+            const newSelectedPartners = [...selectedContentPartners];
+            const seasonIndex = newSelectedPartners
+              .map(({ name }) => name)
+              .indexOf(option.name);
+            if (seasonIndex >= 0) {
+              newSelectedPartners.splice(seasonIndex, 1);
+            } else {
+              newSelectedPartners.push(option);
             }
-            selected={selectedContentPartners.map(option =>
-              contentPartners.indexOf(option),
-            )}
-            options={contentPartners}
-            onChange={({ option }) => {
-              const newSelectedPartners = [...selectedContentPartners];
-              const seasonIndex = newSelectedPartners
-                .map(({ name }) => name)
-                .indexOf(option.name);
-              if (seasonIndex >= 0) {
-                newSelectedPartners.splice(seasonIndex, 1);
-              } else {
-                newSelectedPartners.push(option);
-              }
-              const selectedPartnerNames = newSelectedPartners.map(
-                ({ name }) => name,
-              );
-              const sortedContentPartners = [...allContentPartners].sort(
-                sortContentPartners(selectedPartnerNames),
-              );
-              setSelectedContentPartners(newSelectedPartners);
-              setContentPartners(sortedContentPartners);
-            }}
-            onSearch={query => {
-              setSearching(true);
-              setSerchQuery(query);
-            }}
-          >
-            {renderOption}
-          </Select>
-        </SearchInputContext.Provider>
+            const selectedPartnerNames = newSelectedPartners.map(
+              ({ name }) => name,
+            );
+            const sortedContentPartners = [...allContentPartners].sort(
+              sortContentPartners(selectedPartnerNames),
+            );
+            setSelectedContentPartners(newSelectedPartners);
+            setContentPartners(sortedContentPartners);
+          }}
+          onSearch={query => {
+            setSearching(true);
+            setSearchQuery(query);
+          }}
+        >
+          {renderOption}
+        </Select>
       </Box>
     </Grommet>
   );
 };
 
-storiesOf('Select', module).add('Custom Search', () => <CustomSearchSelect />);
+CustomSearch.storyName = 'Custom search';
+
+export default {
+  title: 'Input/Select/Custom search',
+};

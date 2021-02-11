@@ -1,17 +1,31 @@
-import * as React from "react";
+import * as React from 'react';
+
+export interface FormExtendedEvent<R = Record<string, unknown>, T = Element>
+  extends React.FormEvent<T> {
+  value: R;
+  touched: Record<string, boolean>;
+}
 
 export interface FormProps<T> {
   errors?: {};
   infos?: {};
-  messages?: {invalid?: string,required?: string};
-  onChange?: (value: T) => void;
-  onSubmit?: ((event: React.FormEvent) => void);
-  onReset?: ((event: React.SyntheticEvent) => any);
+  messages?: { invalid?: string; required?: string };
+  onChange?: (value: T, options: { touched?: Record<string, boolean> }) => void;
+  onSubmit?: (event: FormExtendedEvent<T>) => void;
+  onReset?: (event: React.SyntheticEvent) => any;
+  onValidate?: (validationResults: {
+    errors: Record<string, any>;
+    infos: Record<string, any>;
+  }) => void;
   validate?: 'blur' | 'submit';
-  value?: {};
+  value?: T;
 }
 
-export type TypedForm<T = any> = React.ComponentClass<FormProps<T> & Omit<JSX.IntrinsicElements['form'], 'onChange'>>
-declare const Form: TypedForm;
+type TypedFormProps<T> = FormProps<T> &
+  Omit<JSX.IntrinsicElements['form'], 'onChange' | 'onSubmit'>;
+
+declare const Form: <T = {}>(
+  p: TypedFormProps<T>,
+) => React.ReactElement<TypedFormProps<T>>;
 
 export { Form };

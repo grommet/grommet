@@ -1,7 +1,7 @@
 ## DataTable
 A data driven table.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=DataTable&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=datatable&module=%2Fsrc%2FDataTable.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Visualizations-DataTable&full=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/datatable&module=%2Fsrc%2FDataTable.js)
 ## Usage
 
 ```javascript
@@ -149,6 +149,13 @@ string
     }
     [string],
   footer: 
+    string
+    {
+      dark: string,
+      light: string
+    }
+    [string],
+  pinned: 
     string
     {
       dark: string,
@@ -307,6 +314,8 @@ A description of the data. The order controls the column order.
       should be used as the unique identifier, which gives the cell 'row' scope
       for accessibility. If 'primary' is not used for any column, and
       'primaryKey' isn't specified either, then the first column will be used.
+      'pin' indicates that this column should not scroll out of view
+      to the left when the table is scrolled horizontally.
 
 ```
 [{
@@ -330,6 +339,7 @@ A description of the data. The order controls the column order.
     {
       aggregate: boolean
     },
+  pin: boolean,
   primary: boolean,
   property: string,
   render: function,
@@ -347,6 +357,7 @@ A description of the data. The order controls the column order.
     1/3
     2/3
     string,
+  units: string,
   verticalAlign: 
     middle
     top
@@ -362,6 +373,16 @@ Array of data objects.
 [{
 
 }]
+```
+
+**fill**
+
+Whether the width and/or height should fill the container.
+
+```
+horizontal
+vertical
+boolean
 ```
 
 **groupBy**
@@ -381,6 +402,18 @@ string
 }
 ```
 
+**onClickRow**
+
+When supplied, this function will be called with an event object that
+      include a 'datum' property containing the data value associated with
+      the clicked row. You should not include interactive elements, like
+      Anchor or Button inside table cells as that can cause confusion with
+      overlapping interactive elements.
+
+```
+function
+```
+
 **onMore**
 
 Use this to indicate that 'data' doesn't contain all that it could.
@@ -396,35 +429,25 @@ Use this to indicate that 'data' doesn't contain all that it could.
 function
 ```
 
-**replace**
-
-Whether to replace previously rendered items with a generic spacing
-      element when they have scrolled out of view. This is more performant but
-      means that in-page searching will not find elements that have been
-      replaced.
-
-```
-boolean
-```
-
-**onClickRow**
-
-When supplied, this function will be called with an event object that
-      include a 'datum' property containing the data value associated with
-      the clicked row. You should not include interactive elements, like
-      Anchor or Button inside table cells as that can cause confusion with
-      overlapping interactive elements.
-
-```
-function
-```
-
 **onSearch**
 
 When supplied, and when at least one column has 'search' enabled,
       this function will be called with an object with keys for property
       names and values which are the search text strings. This is typically
       employed so a back-end can be used to search through the data.
+
+```
+function
+```
+
+**onSelect**
+
+When supplied, causes checkboxes to be added to each row such that
+      the user can indicate which rows should be selected. This function
+      will be called with an array of primary key values, suitable to be
+      passed to the 'select' property. If you are storing select state via
+      a 'useState' hook, you can do something like:
+      '<DataTable select={select} onSelect={setSelect} />'.
 
 ```
 function
@@ -461,35 +484,40 @@ string
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   vertical: 
     xxsmall
     xsmall
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   top: 
     xxsmall
     xsmall
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   bottom: 
     xxsmall
     xsmall
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   left: 
     xxsmall
     xsmall
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   right: 
     xxsmall
     xsmall
@@ -497,12 +525,34 @@ string
     medium
     large
     xlarge
+    string
 }
 {
   header: custom,
   body: custom,
   footer: custom
 }
+```
+
+**pin**
+
+Whether the header and/or footer should be pinned when
+      not all rows are visible. A value of true pins both header and footer.
+
+```
+boolean
+header
+footer
+```
+
+**placeholder**
+
+A text message or any content to place over the table body.
+      For example, to say "loading ..." when waiting for data to arrive.
+
+```
+string
+node
 ```
 
 **primaryKey**
@@ -515,6 +565,17 @@ When supplied, indicates the property for a data object to use to
 
 ```
 string
+boolean
+```
+
+**replace**
+
+Whether to replace previously rendered items with a generic spacing
+      element when they have scrolled out of view. This is more performant but
+      means that in-page searching will not find elements that have been
+      replaced.
+
+```
 boolean
 ```
 
@@ -540,6 +601,21 @@ Row specific background, border, and pad, keyed by primary key value.
 }
 ```
 
+**select**
+
+When supplied, causes checkboxes to be added to each row to indicate
+      which rows are selected. The values in this array should match
+      the 'primaryKey' or 'columns[].primary' keyed value for the row's data
+      object. If 'onSelect' is provided, the CheckBoxes are enabled
+      and this function can be used to track select changes.
+
+```
+[
+  string
+  number
+]
+```
+
 **size**
 
 The height of the table body. If set, the table body will have a fixed
@@ -557,13 +633,17 @@ string
 
 **sort**
 
-Which property to sort on and which direction to sort.
+Which property to sort on and which direction to sort. When 'external'
+      is true, it indicates that the caller will take care of sorting
+      the 'data' via 'onSort'. Otherwise, the existing data will be sorted
+      within DataTable.
 
 ```
 {
   direction: 
     asc
     desc,
+  external: boolean,
   property: string
 }
 ```
@@ -609,6 +689,16 @@ Defaults to
 
 ```
 { dark: 'white', light: 'black' }
+```
+
+**dataTable.body.extend**
+
+Any additional style for an DataTable Body Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
 ```
 
 **dataTable.groupHeader.background**
@@ -671,6 +761,163 @@ Defaults to
 {}
 ```
 
+**dataTable.header.background**
+
+Any valid Box background value. Expects `string | 
+    { dark: string, light: string } |
+    { 
+      color: { dark: string, light: string } | string, 
+      dark: bool, 
+      image: string, 
+      position: string, 
+      opacity: bool | string, 
+      repeat: no-repeat | repeat, 
+      size: cover | contain | string
+    }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**dataTable.header.border**
+
+Any valid Box border value. Expects `string | object`.
+
+Defaults to
+
+```
+undefined
+```
+
+**dataTable.header.color**
+
+The label and icon color in a header cell. Expects `{ dark: string, light: string } | string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**dataTable.header.extend**
+
+Any additional styles for header cells. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**dataTable.header.font.weight**
+
+The font weight for text in header cells. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**dataTable.header.font.size**
+
+The font size for text in header cells. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**dataTable.header.gap**
+
+The gap between elements within the header cell. Expects `object`.
+
+Defaults to
+
+```
+small
+```
+
+**dataTable.header.hover.background**
+
+The hover background color of the header cell contents, if 
+    clickable. Any valid Box background options apply. Expects `string | 
+    { dark: string, light: string } |
+    { 
+      color: { dark: string, light: string } | string, 
+      dark: bool, 
+      image: string, 
+      position: string, 
+      opacity: bool | string, 
+      repeat: no-repeat | repeat, 
+      size: cover | contain | string
+    }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**dataTable.header.pad**
+
+The pad around the contents of the header cell. Expects `string | object`.
+
+Defaults to
+
+```
+undefined
+```
+
+**dataTable.header.units**
+
+Any Text component properties for styling the
+    header's units text. Expects `object`.
+
+Defaults to
+
+```
+{
+  color: "text-xweak",
+  margin: { left: "xsmall" }
+}
+```
+
+**dataTable.resize.hover.color**
+
+The color of the resizer when hovered over. Expects `string | object`.
+
+Defaults to
+
+```
+undefined
+```
+
+**dataTable.resize.hover.side**
+
+The side of the resizer when hovered over. If color or size 
+    are defined, this will default to 'end' which is the recommended value. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**dataTable.resize.hover.size**
+
+The size of the resizer when hovered over. Size values 
+    correspond with those accepted by Box border. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
 **dataTable.icons.ascending**
 
 The ascending icon. Expects `React.Element`.
@@ -709,6 +956,106 @@ Defaults to
 
 ```
 <FormDown />
+```
+
+**dataTable.icons.sortable**
+
+The icon indicating a column can be sorted. Expects `React.Element`.
+
+Defaults to
+
+```
+undefined
+```
+
+**dataTable.pinned.body.background**
+
+Any valid Box background options apply. Expects `string | 
+      { dark: string, light: string } |
+      { 
+        color: { dark: string, light: string } | string, 
+        dark: bool, 
+        image: string, 
+        position: string, 
+        opacity: bool | string, 
+        repeat: no-repeat | repeat, 
+        size: cover | contain | string
+      }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**dataTable.pinned.body.extend**
+
+Any additional styles for pinned body cells. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**dataTable.pinned.header.background**
+
+Any valid Box background options apply. Expects `string | 
+      { dark: string, light: string } |
+      { 
+        color: { dark: string, light: string } | string, 
+        dark: bool, 
+        image: string, 
+        position: string, 
+        opacity: bool | string, 
+        repeat: no-repeat | repeat, 
+        size: cover | contain | string
+      }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**dataTable.pinned.header.extend**
+
+Any additional styles for pinned header cells. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**dataTable.pinned.footer.background**
+
+Any valid Box background options apply. Expects `string | 
+      { dark: string, light: string } |
+      { 
+        color: { dark: string, light: string } | string, 
+        dark: bool, 
+        image: string, 
+        position: string, 
+        opacity: bool | string, 
+        repeat: no-repeat | repeat, 
+        size: cover | contain | string
+      }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**dataTable.pinned.footer.extend**
+
+Any additional styles for pinned footer cells. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
 ```
 
 **dataTable.primary.weight**

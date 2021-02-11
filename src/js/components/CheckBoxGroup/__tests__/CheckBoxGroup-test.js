@@ -141,6 +141,59 @@ describe('CheckBoxGroup', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('custom theme', () => {
+    const customTheme = {
+      checkBoxGroup: {
+        container: {
+          gap: 'large',
+          margin: {
+            vertical: 'small',
+          },
+        },
+      },
+    };
+
+    const { container } = render(
+      <Grommet theme={customTheme}>
+        <CheckBoxGroup
+          valueKey="valueKeyTest"
+          options={[
+            { label: 'first-label', valueKeyTest: 'First' },
+            { label: 'second-label', valueKeyTest: 'Second' },
+          ]}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('no duplicated key error', () => {
+    console.error = jest.fn();
+    const errorSpy = jest.spyOn(console, 'error');
+
+    render(
+      <Grommet>
+        <CheckBoxGroup
+          value={['yes', 'yes-again']}
+          options={[
+            { label: 'Yes!', value: 'yes' },
+            { label: 'Yes!', value: 'yes-again' },
+          ]}
+        />
+      </Grommet>,
+    );
+
+    expect(errorSpy).not.toBeCalledWith(
+      expect.stringMatching('same key'),
+      expect.stringMatching('Yes!'),
+      expect.anything(),
+    );
+
+    errorSpy.mockReset();
+    errorSpy.mockRestore();
+    console.error.mockReset();
+  });
+
   test('checked warning', () => {
     console.warn = jest.fn();
     const warnSpy = jest.spyOn(console, 'warn');

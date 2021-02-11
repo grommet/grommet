@@ -1,17 +1,20 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { Box, Form, TextInput, Text } from 'grommet';
 
-const StyledPlaceholder = () => {
-  return (
+import { Box, Form, Grommet, TextInput, Text } from 'grommet';
+import { grommet } from 'grommet/themes';
+
+export const StyledPlaceholder = () => (
+  <Grommet full theme={grommet}>
     <Box>
       <Form>
-        <TextInput name="name" placeholder={<Text>footer</Text>} />
+        <TextInput name="name" placeholder={<Text>placeholder</Text>} />
       </Form>
     </Box>
-  );
-};
+  </Grommet>
+);
 
-storiesOf('TextInput', module).add('StyledPlaceholder', () => (
-  <StyledPlaceholder />
-));
+StyledPlaceholder.storyName = 'Styled placeholder';
+
+export default {
+  title: 'Input/TextInput/Styled placeholder',
+};

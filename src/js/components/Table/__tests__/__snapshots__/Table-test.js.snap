@@ -104,29 +104,24 @@ exports[`TableBody renders 1`] = `
     className="c1"
   >
     <tbody
-      className=""
+      className="StyledTable__StyledTableBody-sc-1m3u5g-3"
     />
   </table>
 </div>
 `;
 
 exports[`TableCell plain renders 1`] = `
-.c3 {
+.c2 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  height: 100%;
   text-align: start;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
-}
-
-.c2 {
-  height: 100%;
 }
 
 .c1 {
@@ -158,13 +153,13 @@ exports[`TableCell plain renders 1`] = `
     className="c1"
   >
     <thead
-      className=""
+      className="StyledTable__StyledTableHeader-sc-1m3u5g-4"
     >
       <tr
-        className="c2"
+        className="StyledTable__StyledTableRow-sc-1m3u5g-2"
       >
         <td
-          className="c3"
+          className="c2"
         />
       </tr>
     </thead>
@@ -173,14 +168,25 @@ exports[`TableCell plain renders 1`] = `
 `;
 
 exports[`TableCell renders 1`] = `
+.c2 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
 .c3 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  height: 100%;
   text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -192,20 +198,6 @@ exports[`TableCell renders 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  height: 100%;
-  text-align: start;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c5 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: 100%;
   text-align: start;
   border-top: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
@@ -214,10 +206,6 @@ exports[`TableCell renders 1`] = `
   padding-bottom: 6px;
 }
 
-.c2 {
-  height: 100%;
-}
-
 .c1 {
   border-spacing: 0;
   border-collapse: collapse;
@@ -247,35 +235,35 @@ exports[`TableCell renders 1`] = `
     className="c1"
   >
     <thead
-      className=""
+      className="StyledTable__StyledTableHeader-sc-1m3u5g-4"
     >
       <tr
-        className="c2"
+        className="StyledTable__StyledTableRow-sc-1m3u5g-2"
+      >
+        <td
+          className="c2"
+        />
+      </tr>
+    </thead>
+    <tbody
+      className="StyledTable__StyledTableBody-sc-1m3u5g-3"
+    >
+      <tr
+        className="StyledTable__StyledTableRow-sc-1m3u5g-2"
       >
         <td
           className="c3"
         />
       </tr>
-    </thead>
-    <tbody
-      className=""
+    </tbody>
+    <tfoot
+      className="StyledTable__StyledTableFooter-sc-1m3u5g-5"
     >
       <tr
-        className="c2"
+        className="StyledTable__StyledTableRow-sc-1m3u5g-2"
       >
         <td
           className="c4"
-        />
-      </tr>
-    </tbody>
-    <tfoot
-      className=""
-    >
-      <tr
-        className="c2"
-      >
-        <td
-          className="c5"
         />
       </tr>
     </tfoot>
@@ -284,12 +272,11 @@ exports[`TableCell renders 1`] = `
 `;
 
 exports[`TableCell scope renders 1`] = `
-.c3 {
+.c2 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  height: 100%;
   text-align: start;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
@@ -298,21 +285,16 @@ exports[`TableCell scope renders 1`] = `
   padding-bottom: 6px;
 }
 
-.c4 {
+.c3 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  height: 100%;
   text-align: start;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
-}
-
-.c2 {
-  height: 100%;
 }
 
 .c1 {
@@ -344,25 +326,25 @@ exports[`TableCell scope renders 1`] = `
     className="c1"
   >
     <thead
-      className=""
+      className="StyledTable__StyledTableHeader-sc-1m3u5g-4"
     >
       <tr
-        className="c2"
+        className="StyledTable__StyledTableRow-sc-1m3u5g-2"
       >
         <th
-          className="c3"
+          className="c2"
           scope="col"
         />
       </tr>
     </thead>
     <tbody
-      className=""
+      className="StyledTable__StyledTableBody-sc-1m3u5g-3"
     >
       <tr
-        className="c2"
+        className="StyledTable__StyledTableRow-sc-1m3u5g-2"
       >
         <th
-          className="c4"
+          className="c3"
           scope="row"
         />
       </tr>
@@ -372,12 +354,11 @@ exports[`TableCell scope renders 1`] = `
 `;
 
 exports[`TableCell size renders 1`] = `
-.c3 {
+.c2 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  height: 100%;
   width: 96px;
   max-width: 96px;
   overflow: hidden;
@@ -388,14 +369,28 @@ exports[`TableCell size renders 1`] = `
   padding-bottom: 6px;
 }
 
+.c3 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 192px;
+  max-width: 192px;
+  overflow: hidden;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
 .c4 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  height: 100%;
-  width: 192px;
-  max-width: 192px;
+  width: 384px;
+  max-width: 384px;
   overflow: hidden;
   text-align: start;
   padding-left: 12px;
@@ -409,9 +404,8 @@ exports[`TableCell size renders 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  height: 100%;
-  width: 384px;
-  max-width: 384px;
+  width: 768px;
+  max-width: 768px;
   overflow: hidden;
   text-align: start;
   padding-left: 12px;
@@ -425,9 +419,8 @@ exports[`TableCell size renders 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  height: 100%;
-  width: 768px;
-  max-width: 768px;
+  width: 50%;
+  max-width: 50%;
   overflow: hidden;
   text-align: start;
   padding-left: 12px;
@@ -441,9 +434,8 @@ exports[`TableCell size renders 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  height: 100%;
-  width: 50%;
-  max-width: 50%;
+  width: 33.33%;
+  max-width: 33.33%;
   overflow: hidden;
   text-align: start;
   padding-left: 12px;
@@ -457,9 +449,8 @@ exports[`TableCell size renders 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  height: 100%;
-  width: 33.33%;
-  max-width: 33.33%;
+  width: 66.66%;
+  max-width: 66.66%;
   overflow: hidden;
   text-align: start;
   padding-left: 12px;
@@ -473,9 +464,8 @@ exports[`TableCell size renders 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  height: 100%;
-  width: 66.66%;
-  max-width: 66.66%;
+  width: 25%;
+  max-width: 25%;
   overflow: hidden;
   text-align: start;
   padding-left: 12px;
@@ -489,23 +479,6 @@ exports[`TableCell size renders 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  height: 100%;
-  width: 25%;
-  max-width: 25%;
-  overflow: hidden;
-  text-align: start;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c11 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: 100%;
   width: 75%;
   max-width: 75%;
   overflow: hidden;
@@ -514,10 +487,6 @@ exports[`TableCell size renders 1`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
-}
-
-.c2 {
-  height: 100%;
 }
 
 .c1 {
@@ -549,25 +518,25 @@ exports[`TableCell size renders 1`] = `
     className="c1"
   >
     <tbody
-      className=""
+      className="StyledTable__StyledTableBody-sc-1m3u5g-3"
     >
       <tr
-        className="c2"
+        className="StyledTable__StyledTableRow-sc-1m3u5g-2"
       >
         <td
-          className="c3"
+          className="c2"
           size="xsmall"
         />
         <td
-          className="c4"
+          className="c3"
           size="small"
         />
         <td
-          className="c5"
+          className="c4"
           size="medium"
         />
         <td
-          className="c6"
+          className="c5"
           size="large"
         />
       </tr>
@@ -577,17 +546,17 @@ exports[`TableCell size renders 1`] = `
     className="c1"
   >
     <tbody
-      className=""
+      className="StyledTable__StyledTableBody-sc-1m3u5g-3"
     >
       <tr
-        className="c2"
+        className="StyledTable__StyledTableRow-sc-1m3u5g-2"
       >
         <td
-          className="c7"
+          className="c6"
           size="1/2"
         />
         <td
-          className="c7"
+          className="c6"
           size="2/4"
         />
       </tr>
@@ -597,17 +566,17 @@ exports[`TableCell size renders 1`] = `
     className="c1"
   >
     <tbody
-      className=""
+      className="StyledTable__StyledTableBody-sc-1m3u5g-3"
     >
       <tr
-        className="c2"
+        className="StyledTable__StyledTableRow-sc-1m3u5g-2"
       >
         <td
-          className="c8"
+          className="c7"
           size="1/3"
         />
         <td
-          className="c9"
+          className="c8"
           size="2/3"
         />
       </tr>
@@ -617,17 +586,17 @@ exports[`TableCell size renders 1`] = `
     className="c1"
   >
     <tbody
-      className=""
+      className="StyledTable__StyledTableBody-sc-1m3u5g-3"
     >
       <tr
-        className="c2"
+        className="StyledTable__StyledTableRow-sc-1m3u5g-2"
       >
         <td
-          className="c10"
+          className="c9"
           size="1/4"
         />
         <td
-          className="c11"
+          className="c10"
           size="3/4"
         />
       </tr>
@@ -637,13 +606,26 @@ exports[`TableCell size renders 1`] = `
 `;
 
 exports[`TableCell verticalAlign renders 1`] = `
+.c2 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  vertical-align: top;
+  text-align: start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
 .c3 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  height: 100%;
-  vertical-align: top;
+  vertical-align: middle;
   text-align: start;
   border-bottom: solid 1px rgba(0,0,0,0.33);
   padding-left: 12px;
@@ -657,22 +639,6 @@ exports[`TableCell verticalAlign renders 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  height: 100%;
-  vertical-align: middle;
-  text-align: start;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c5 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: 100%;
   vertical-align: bottom;
   text-align: start;
   border-bottom: solid 1px rgba(0,0,0,0.33);
@@ -680,10 +646,6 @@ exports[`TableCell verticalAlign renders 1`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
-}
-
-.c2 {
-  height: 100%;
 }
 
 .c1 {
@@ -715,19 +677,19 @@ exports[`TableCell verticalAlign renders 1`] = `
     className="c1"
   >
     <thead
-      className=""
+      className="StyledTable__StyledTableHeader-sc-1m3u5g-4"
     >
       <tr
-        className="c2"
+        className="StyledTable__StyledTableRow-sc-1m3u5g-2"
       >
+        <td
+          className="c2"
+        />
         <td
           className="c3"
         />
         <td
           className="c4"
-        />
-        <td
-          className="c5"
         />
       </tr>
     </thead>
@@ -765,7 +727,7 @@ exports[`TableFooter renders 1`] = `
     className="c1"
   >
     <tfoot
-      className=""
+      className="StyledTable__StyledTableFooter-sc-1m3u5g-5"
     />
   </table>
 </div>
@@ -801,17 +763,13 @@ exports[`TableHeader renders 1`] = `
     className="c1"
   >
     <thead
-      className=""
+      className="StyledTable__StyledTableHeader-sc-1m3u5g-4"
     />
   </table>
 </div>
 `;
 
 exports[`TableRow renders 1`] = `
-.c2 {
-  height: 100%;
-}
-
 .c1 {
   border-spacing: 0;
   border-collapse: collapse;
@@ -841,10 +799,10 @@ exports[`TableRow renders 1`] = `
     className="c1"
   >
     <tbody
-      className=""
+      className="StyledTable__StyledTableBody-sc-1m3u5g-3"
     >
       <tr
-        className="c2"
+        className="StyledTable__StyledTableRow-sc-1m3u5g-2"
       />
     </tbody>
   </table>

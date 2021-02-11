@@ -1,7 +1,7 @@
 ## Avatar
 An Avatar.
 
-[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Avatar&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=avatar&module=%2Fsrc%2FAvatar.js)
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Visualizations-Avatar&full=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/avatar&module=%2Fsrc%2FAvatar.js)
 ## Usage
 
 ```javascript
@@ -117,4 +117,54 @@ Defaults to
 
 ```
 undefined
+```
+
+**avatar.text.size.xsmall**
+
+The size of the text that is mapped according to 'avatar.size.xsmall'. Expects `string`.
+
+Defaults to
+
+```
+small
+```
+
+**avatar.text.size.small**
+
+The size of the text that is mapped according to 'avatar.size.small'. Expects `string`.
+
+Defaults to
+
+```
+medium
+```
+
+**avatar.text.size.medium**
+
+The size of the text that is mapped according to 'avatar.size.medium'. Expects `string`.
+
+Defaults to
+
+```
+large
+```
+
+**avatar.text.size.large**
+
+The size of the text that is mapped according to 'avatar.size.large'. Expects `string`.
+
+Defaults to
+
+```
+xlarge
+```
+
+**avatar.text.size.xlarge**
+
+The size of the text that is mapped according to 'avatar.size.xlarge'. Expects `string`.
+
+Defaults to
+
+```
+xxlarge
 ```

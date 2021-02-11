@@ -84,6 +84,7 @@ const Box = forwardRef(
 
     let contents = children;
     if (gap && gap !== 'none') {
+      const boxAs = !as && tag ? tag : as;
       contents = [];
       let firstIndex;
       Children.forEach(children, (child, index) => {
@@ -95,6 +96,7 @@ const Box = forwardRef(
               <StyledBoxGap
                 // eslint-disable-next-line react/no-array-index-key
                 key={`gap-${index}`}
+                as={boxAs === 'span' ? boxAs : 'div'}
                 gap={gap}
                 directionProp={direction}
                 responsive={responsive}
@@ -113,7 +115,15 @@ const Box = forwardRef(
       if (darkChanged || theme.darkChanged) {
         dark = dark === undefined ? theme.dark : dark;
         contents = (
-          <ThemeContext.Provider value={{ ...theme, dark }}>
+          <ThemeContext.Provider value={{ ...theme, dark, background }}>
+            {contents}
+          </ThemeContext.Provider>
+        );
+      } else if (background) {
+        // This allows DataTable to intelligently set the background of a pinned
+        // header or footer.
+        contents = (
+          <ThemeContext.Provider value={{ ...theme, background }}>
             {contents}
           </ThemeContext.Provider>
         );

@@ -1,16 +1,10 @@
-import React, {
-  forwardRef,
-  cloneElement,
-  Children,
-  useContext,
-  useState,
-} from 'react';
+import React, { forwardRef, useContext, useState } from 'react';
 import { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
-
+import { TabsContext } from './TabsContext';
 import { StyledTabPanel, StyledTabs, StyledTabsHeader } from './StyledTabs';
 import { normalizeColor } from '../../utils';
 
@@ -30,6 +24,8 @@ const Tabs = forwardRef(
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const { activeIndex: propsActiveIndex, onActive } = rest;
     const [activeIndex, setActiveIndex] = useState(rest.activeIndex || 0);
+    const [activeContent, setActiveContent] = useState();
+    const [activeTitle, setActiveTitle] = useState();
 
     if (activeIndex !== propsActiveIndex && propsActiveIndex !== undefined) {
       setActiveIndex(propsActiveIndex);
@@ -49,33 +45,26 @@ const Tabs = forwardRef(
     delete rest.onActive;
     /* eslint-enable no-param-reassign */
 
-    let activeContent;
-    let activeTitle;
-    const tabs = Children.map(
-      children,
-      (tab, index) => {
-        if (!tab) return undefined;
-
-        const tabProps = tab.props || {};
-
-        const isTabActive = index === activeIndex;
-
-        if (isTabActive) {
-          activeContent = tabProps.children;
-          if (typeof tabProps.title === 'string') {
-            activeTitle = tabProps.title;
-          } else {
-            activeTitle = index + 1;
-          }
-        }
-
-        return cloneElement(tab, {
-          active: isTabActive,
+    const tabs = React.Children.map(children, (child, index) => (
+      <TabsContext.Provider
+        value={{
+          activeIndex,
+          active: activeIndex === index,
           onActivate: () => activateTab(index),
-        });
-      },
-      this,
-    );
+          setActiveContent,
+          setActiveTitle,
+        }}
+      >
+        {/* possible to have undefined child. in that case, you can't
+        do cloneElement */}
+        {child
+          ? // cloneElement is needed for backward compatibility with custom
+            // styled components that rely on props.active. We should reassess
+            // if it is still necessary in our next major release.
+            React.cloneElement(child, { active: activeIndex === index })
+          : child}
+      </TabsContext.Provider>
+    ));
 
     const tabsHeaderStyles = {};
     if (theme.tabs.header && theme.tabs.header.border) {

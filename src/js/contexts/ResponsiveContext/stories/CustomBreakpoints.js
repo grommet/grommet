@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, Heading, ResponsiveContext } from 'grommet';
 
@@ -49,7 +48,7 @@ const customBreakpoints = {
   },
 };
 
-storiesOf('ResponsiveContext', module).add('Custom Breakpoints', () => (
+export const CustomBreakpoints = () => (
   <Grommet theme={customBreakpoints} full>
     <ResponsiveContext.Consumer>
       {size => (
@@ -59,4 +58,10 @@ storiesOf('ResponsiveContext', module).add('Custom Breakpoints', () => (
       )}
     </ResponsiveContext.Consumer>
   </Grommet>
-));
+);
+
+CustomBreakpoints.storyName = 'Custom breakpoints';
+
+export default {
+  title: 'Utilities/ResponsiveContext/Custom breakpoints',
+};

@@ -1,10 +1,10 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = RadioButton => {
   const DocumentedRadioButton = describe(RadioButton)
-    .availableAt(getAvailableAtBadge('RadioButton'))
+    .availableAt(getAvailableAtBadge('RadioButton', 'Input'))
     .description('A radio button control.')
     .details(
       `RadioButton should typically not be used directly.
@@ -17,6 +17,10 @@ export const doc = RadioButton => {
     .intrinsicElement('input');
 
   DocumentedRadioButton.propTypes = {
+    a11yTitle: PropTypes.string.description(
+      `Custom label to be used by screen readers.
+      When provided, an aria-label will be added to the element.`,
+    ),
     checked: PropTypes.bool.description('Same as React <input checked={} />'),
     children: PropTypes.func.description(
       `Function that will be called to render the visual representation.
@@ -51,6 +55,12 @@ with the same name so form submissions work.`,
 };
 
 export const themeDoc = {
+  'global.colors.control': {
+    description: `The default color of the border surrounding 
+    the checked icon in RadioButton checked state.`,
+    type: 'string | { dark: string, light: string }',
+    defaultValue: `{ dark: 'accent-1', light: 'brand'}`,
+  },
   'radioButton.border.color': {
     description: 'The color of the border of the Radio Button.',
     type: 'string | { dark: string, light: string }',
@@ -61,6 +71,11 @@ export const themeDoc = {
     description: 'The width size of the border of the RadioButton.',
     type: 'string',
     defaultValue: '2px',
+  },
+  'radioButton.check.background.color': {
+    description: 'The background color of the checked icon in the RadioButton.',
+    type: 'string | {dark: string, light: string}',
+    defaultValue: 'undefined',
   },
   'radioButton.check.color': {
     description: 'The color of the checked icon in the RadioButton.',
@@ -82,19 +97,31 @@ export const themeDoc = {
     type: 'string | { dark: string, light: string }',
     defaultValue: 'undefined',
   },
-  'radioButton.extend': {
-    description: 'Any additional style for the RadioButton.',
+  'radioButton.container.extend': {
+    description: `Any additional style for the container around 
+    the radio button and its label.`,
     type: 'string | (props) => {}',
+    defaultValue: 'undefined',
+  },
+  'radioButton.extend': {
+    description: 'Any additional style for the radio button itself.',
+    type: 'string | (props) => {}',
+  },
+  'radioButton.font.weight': {
+    description: 'The font weight of the label.',
+    type: 'number | string',
+    defaultValue: undefined,
   },
   'radioButton.gap': {
     description: 'The gap between the label and the RadioButton itself.',
     type: 'string',
     defaultValue: 'small',
   },
-  'radioButton.size': {
-    description: 'The size of the RadioButton.',
-    type: 'string',
-    defaultValue: '24px',
+  'radioButton.hover.background.color': {
+    description: `The background color of the Box surrounding the RadioButton
+    when hovered over.`,
+    type: 'string | { dark: string, light: string }',
+    defaultValue: 'undefined',
   },
   'radioButton.hover.border.color': {
     description: `The color of the RadioButton border when hovered over.`,
@@ -108,5 +135,15 @@ export const themeDoc = {
   'radioButton.icon.size': {
     description: 'The size of the icon in the RadioButton.',
     type: 'string',
+  },
+  'radioButton.icons.circle': {
+    description: 'The icon to replace the inner checked circle.',
+    type: 'React.Element',
+    defaultValue: undefined,
+  },
+  'radioButton.size': {
+    description: 'The size of the RadioButton.',
+    type: 'string',
+    defaultValue: '24px',
   },
 };

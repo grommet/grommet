@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Chart } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -11,7 +10,7 @@ const gradient = [
   { value: 30, color: 'status-critical' },
 ];
 
-const GradientCharts = () => (
+export const GradientCharts = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large" gap="medium">
       <Chart
@@ -46,4 +45,8 @@ const GradientCharts = () => (
   </Grommet>
 );
 
-storiesOf('Chart', module).add('Gradient', () => <GradientCharts />);
+GradientCharts.storyName = 'Gradient';
+
+export default {
+  title: 'Visualizations/Chart/Gradient',
+};

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { storiesOf } from '@storybook/react';
+
 import { CircleInformation, Currency } from 'grommet-icons';
 import { Box, Grommet, FormField, Tab, Tabs, Text, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -47,6 +47,8 @@ RichTabTitle.propTypes = {
   label: PropTypes.string.isRequired,
 };
 
-storiesOf('Tabs', module).add('Rich', () => <RichTabs />);
+export const Rich = () => <RichTabs />;
 
-export { RichTabTitle };
+export default {
+  title: 'Controls/Tabs/Rich',
+};

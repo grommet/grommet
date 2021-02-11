@@ -5,7 +5,12 @@ import { Box } from '../Box';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
-import { focusStyle, genericStyles } from '../../utils';
+import {
+  focusStyle,
+  genericStyles,
+  unfocusStyle,
+  useForwardedRef,
+} from '../../utils';
 
 const StyledList = styled.ul`
   list-style: none;
@@ -13,17 +18,34 @@ const StyledList = styled.ul`
   padding: 0;
   ${genericStyles}
 
+  &:focus {
+    ${props =>
+      props.tabIndex >= 0 &&
+      focusStyle({ forceOutline: true, skipSvgChildren: true })}
+  }
+  // during the interim state when a user is holding down a click,
+  // the individual list item has focus in the DOM until the click
+  // completes and focus is placed back on the list container.
+  // for visual consistency, we want to keep the focus indicator on the
+  // list container the whole time.
   ${props =>
-    props.onClickItem &&
-    `
-    &:focus {
-      ${focusStyle({ forceOutline: true, skipSvgChildren: true })}
-    }
-  `}
+    props.itemFocus &&
+    focusStyle({ forceOutline: true, skipSvgChildren: true })}}
+  ${props => props.theme.list && props.theme.list.extend}}
 `;
 
 const StyledItem = styled(Box)`
   ${props => props.onClick && `cursor: pointer;`}
+  // during the interim state when a user is holding down a click,
+  // the individual list item has focus in the DOM until the click
+  // completes and focus is placed back on the list container.
+  // for visual consistency, we are showing focus on the list container
+  // as opposed to the item itself.
+  &:focus {
+    ${unfocusStyle({ forceOutline: true, skipSvgChildren: true })}
+  }
+  ${props =>
+    props.theme.list && props.theme.list.item && props.theme.list.item.extend}
 `;
 
 const normalize = (item, index, property) => {
@@ -54,8 +76,10 @@ const List = React.forwardRef(
     },
     ref,
   ) => {
+    const listRef = useForwardedRef(ref);
     const theme = useContext(ThemeContext);
     const [active, setActive] = useState();
+    const [itemFocus, setItemFocus] = useState();
 
     return (
       <Keyboard
@@ -88,8 +112,9 @@ const List = React.forwardRef(
         }
       >
         <StyledList
-          ref={ref}
+          ref={listRef}
           as={as || 'ul'}
+          itemFocus={itemFocus}
           tabIndex={onClickItem ? 0 : undefined}
           {...rest}
         >
@@ -171,7 +196,8 @@ const List = React.forwardRef(
                   adjustedBackground[index % adjustedBackground.length];
               }
 
-              let adjustedBorder = border || theme.list.item.border;
+              let adjustedBorder =
+                border !== undefined ? border : theme.list.item.border;
               if (adjustedBorder === 'horizontal' && index) {
                 adjustedBorder = 'bottom';
               }
@@ -192,11 +218,20 @@ const List = React.forwardRef(
                     adjustedEvent.item = item;
                     adjustedEvent.index = index;
                     onClickItem(adjustedEvent);
+                    // put focus on the List container to meet WCAG
+                    // accessibility guidelines that focus remains on `ul`
+                    listRef.current.focus();
                   },
                   onMouseOver: () => setActive(index),
                   onMouseOut: () => setActive(undefined),
-                  onFocus: () => setActive(index),
-                  onBlur: () => setActive(undefined),
+                  onFocus: () => {
+                    setActive(index);
+                    setItemFocus(true);
+                  },
+                  onBlur: () => {
+                    setActive(undefined);
+                    setItemFocus(false);
+                  },
                 };
               }
 

@@ -1,15 +1,19 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Add, FormClose, StatusGood } from 'grommet-icons';
 
 import { Box, Button, Grommet, Layer, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const NotificationLayer = () => {
+export const NotificationLayer = () => {
   const [open, setOpen] = React.useState();
 
-  const onOpen = () => setOpen(true);
+  const onOpen = () => {
+    setOpen(true);
+    setTimeout(() => {
+      setOpen(undefined);
+    }, 3000);
+  };
 
   const onClose = () => setOpen(undefined);
 
@@ -48,7 +52,10 @@ const NotificationLayer = () => {
           >
             <Box align="center" direction="row" gap="xsmall">
               <StatusGood />
-              <Text>A new virtual machine has been successfully added</Text>
+              <Text>
+                A new virtual machine has been successfully added (this Layer
+                will close after 3 seconds)
+              </Text>
             </Box>
             <Button icon={<FormClose />} onClick={onClose} plain />
           </Box>
@@ -58,4 +65,12 @@ const NotificationLayer = () => {
   );
 };
 
-storiesOf('Layer', module).add('Notification', () => <NotificationLayer />);
+NotificationLayer.storyName = 'Notification';
+
+NotificationLayer.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Layout/Layer/Notification',
+};

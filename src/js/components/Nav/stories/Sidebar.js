@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { grommet, Box, Button, Grommet, Nav, Text } from 'grommet';
 
@@ -36,4 +35,8 @@ const SidebarNav = () => {
   );
 };
 
-storiesOf('Nav', module).add('Sidebar', () => <SidebarNav />);
+export const Sidebar = () => <SidebarNav />;
+
+export default {
+  title: 'Controls/Nav/Sidebar',
+};

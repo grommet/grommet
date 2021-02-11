@@ -10,18 +10,34 @@ import {
   StyledRadioButtonContainer,
   StyledRadioButtonIcon,
   StyledRadioButtonInput,
+  StyledRadioButtonLabel,
   StyledRadioButtonBox,
 } from './StyledRadioButton';
 
 const RadioButton = forwardRef(
   (
-    { checked, children, disabled, focus, id, label, name, onChange, ...rest },
+    {
+      a11yTitle,
+      checked,
+      children,
+      disabled,
+      focus,
+      id,
+      label,
+      name,
+      onChange,
+      ...rest
+    },
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const [hover, setHover] = useState();
     const normalizedLabel =
-      typeof label === 'string' ? <span>{label}</span> : label;
+      typeof label === 'string' ? (
+        <StyledRadioButtonLabel>{label}</StyledRadioButtonLabel>
+      ) : (
+        label
+      );
 
     const Icon = theme.radioButton.icons.circle;
     let borderColor = normalizeColor(theme.radioButton.border.color, theme);
@@ -50,6 +66,7 @@ const RadioButton = forwardRef(
           }
         >
           <StyledRadioButtonInput
+            aria-label={a11yTitle}
             {...rest}
             ref={ref}
             type="radio"

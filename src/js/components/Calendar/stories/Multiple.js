@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Calendar, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Example = () => {
+export const Multiple = () => {
   const [dates, setDates] = useState([]);
 
   return (
@@ -30,4 +29,6 @@ const Example = () => {
   );
 };
 
-storiesOf('Calendar', module).add('Multiple', () => <Example />);
+export default {
+  title: 'Visualizations/Calendar/Multiple',
+};

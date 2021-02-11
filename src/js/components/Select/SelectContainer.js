@@ -39,9 +39,27 @@ const SelectOption = styled(Button)`
   width: 100%;
 `;
 
+const ClearButton = ({ clear, onClear, name, theme, setFocus }) => {
+  const { label, position } = clear;
+  const align = position !== 'bottom' ? 'start' : 'center';
+  const buttonLabel = label || `Clear ${name || 'selection'}`;
+  return (
+    <Button
+      onClick={onClear}
+      onFocus={() => setFocus(true)}
+      onBlur={() => setFocus(false)}
+    >
+      <Box {...theme.select.clear.container} align={align}>
+        <Text {...theme.select.clear.text}>{buttonLabel}</Text>
+      </Box>
+    </Button>
+  );
+};
+
 const SelectContainer = forwardRef(
   (
     {
+      clear,
       children = null,
       disabled,
       disabledKey,
@@ -50,13 +68,17 @@ const SelectContainer = forwardRef(
       id,
       labelKey,
       multiple,
+      name,
       onChange,
       onKeyDown,
       onMore,
       onSearch,
       optionIndexesInValue,
       options,
+      allOptions,
       searchPlaceholder,
+      search,
+      setSearch,
       selected,
       value = '',
       valueKey,
@@ -65,12 +87,11 @@ const SelectContainer = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
-    const [search, setSearch] = useState();
     const [activeIndex, setActiveIndex] = useState(-1);
     const [keyboardNavigation, setKeyboardNavigation] = useState();
+    const [focus, setFocus] = useState(false);
     const searchRef = useRef();
     const optionsRef = useRef();
-
     // adjust activeIndex when options change
     useEffect(() => {
       if (activeIndex === -1 && search && optionIndexesInValue.length) {
@@ -178,16 +199,17 @@ const SelectContainer = forwardRef(
           let nextSelected;
           if (multiple) {
             const nextOptionIndexesInValue = optionIndexesInValue.slice(0);
-            const valueIndex = optionIndexesInValue.indexOf(index);
+            const allOptionsIndex = allOptions.indexOf(options[index]);
+            const valueIndex = optionIndexesInValue.indexOf(allOptionsIndex);
             if (valueIndex === -1) {
-              nextOptionIndexesInValue.push(index);
+              nextOptionIndexesInValue.push(allOptionsIndex);
             } else {
               nextOptionIndexesInValue.splice(valueIndex, 1);
             }
             nextValue = nextOptionIndexesInValue.map(i =>
               valueKey && valueKey.reduce
-                ? applyKey(options[i], valueKey)
-                : options[i],
+                ? applyKey(allOptions[i], valueKey)
+                : allOptions[i],
             );
             nextSelected = nextOptionIndexesInValue;
           } else {
@@ -204,7 +226,14 @@ const SelectContainer = forwardRef(
           });
         }
       },
-      [multiple, onChange, optionIndexesInValue, options, valueKey],
+      [multiple, onChange, optionIndexesInValue, options, allOptions, valueKey],
+    );
+
+    const onClear = useCallback(
+      event => {
+        onChange(event, { option: undefined, value: '', selected: '' });
+      },
+      [onChange],
     );
 
     const onNextOption = useCallback(
@@ -240,6 +269,31 @@ const SelectContainer = forwardRef(
       [activeIndex, isDisabled],
     );
 
+    const onKeyDownOption = useCallback(
+      event => {
+        if (!onSearch) {
+          event.preventDefault();
+
+          const nextActiveIndex = options.findIndex((e, index) => {
+            const label = typeof e === 'object' ? e.label : e;
+            return (
+              label.charAt(0).toLowerCase() === event.key.toLowerCase() &&
+              !isDisabled(index)
+            );
+          });
+
+          if (nextActiveIndex >= 0) {
+            setActiveIndex(nextActiveIndex);
+            setKeyboardNavigation(true);
+          }
+        }
+        if (onKeyDown) {
+          onKeyDown(event);
+        }
+      },
+      [onKeyDown, options, isDisabled, onSearch],
+    );
+
     const onActiveOption = useCallback(
       index => () => {
         if (!keyboardNavigation) setActiveIndex(index);
@@ -249,12 +303,12 @@ const SelectContainer = forwardRef(
 
     const onSelectOption = useCallback(
       event => {
-        if (activeIndex >= 0) {
+        if (activeIndex >= 0 && !focus) {
           event.preventDefault(); // prevent submitting forms
           selectOption(activeIndex)(event);
         }
       },
-      [activeIndex, selectOption],
+      [activeIndex, selectOption, focus],
     );
 
     const customSearchInput = theme.select.searchInput;
@@ -271,7 +325,7 @@ const SelectContainer = forwardRef(
         onEnter={onSelectOption}
         onUp={onPreviousOption}
         onDown={onNextOption}
-        onKeyDown={onKeyDown}
+        onKeyDown={onKeyDownOption}
       >
         <StyledContainer
           ref={ref}
@@ -296,6 +350,15 @@ const SelectContainer = forwardRef(
                 }}
               />
             </Box>
+          )}
+          {clear && clear.position !== 'bottom' && value && (
+            <ClearButton
+              clear={clear}
+              name={name}
+              onClear={onClear}
+              theme={theme}
+              setFocus={setFocus}
+            />
           )}
           <OptionsBox role="menubar" tabIndex="-1" ref={optionsRef}>
             {options.length > 0 ? (
@@ -377,6 +440,15 @@ const SelectContainer = forwardRef(
               </SelectOption>
             )}
           </OptionsBox>
+          {clear && clear.position === 'bottom' && value && (
+            <ClearButton
+              clear={clear}
+              name={name}
+              onClear={onClear}
+              theme={theme}
+              setFocus={setFocus}
+            />
+          )}
         </StyledContainer>
       </Keyboard>
     );

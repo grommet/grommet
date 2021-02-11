@@ -9,9 +9,22 @@ import styled, { ThemeContext } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
+import { Stack } from '../Stack';
 
-const ResizerBox = styled(Box)`
+const InteractionBox = styled(Box)`
   cursor: col-resize;
+  > * {
+    opacity: 0;
+  }
+
+  // when mouse down, we want to continue to display styling
+  ${props => props.active && '> * { opacity: 1; }'}
+
+  &:hover {
+    > * {
+      opacity: 1;
+    }
+  }
 `;
 
 const Resizer = ({ onResize, property }) => {
@@ -64,17 +77,38 @@ const Resizer = ({ onResize, property }) => {
     return undefined;
   }, [active, onMouseMove, onMouseUp]);
 
+  let border;
+  if (theme.dataTable.resize.hover && theme.dataTable.resize.hover.border) {
+    const { color, side = 'end', size } = theme.dataTable.resize.hover.border;
+    border = {
+      color,
+      side,
+      size,
+    };
+  }
+
   return (
-    <ResizerBox
-      ref={ref}
-      flex={false}
-      responsive={false}
-      pad={{ vertical: 'small' }}
-      {...theme.dataTable.resize}
-      onMouseDown={onMouseDown}
-      onMouseMove={start !== undefined ? onMouseMove : undefined}
-      onMouseUp={start !== undefined ? onMouseUp : undefined}
-    />
+    <Stack anchor="right">
+      <Box
+        flex={false}
+        responsive={false}
+        pad={{ vertical: 'small' }}
+        {...theme.dataTable.resize}
+      />
+      {/* provides a wider, more accessible target to grab resizer */}
+      <InteractionBox
+        active={active}
+        flex={false}
+        pad={{ left: 'xsmall' }}
+        ref={ref}
+        responsive={false}
+        onMouseDown={onMouseDown}
+        onMouseMove={start !== undefined ? onMouseMove : undefined}
+        onMouseUp={start !== undefined ? onMouseUp : undefined}
+      >
+        <Box pad={{ vertical: 'small' }} border={border} />
+      </InteractionBox>
+    </Stack>
   );
 };
 

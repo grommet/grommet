@@ -1,11 +1,12 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { genericProps, getAvailableAtBadge } from '../../utils';
+import { genericProps } from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
 import { themeDocUtils } from '../../utils/themeDocUtils';
 
 export const doc = Table => {
   const DocumentedTable = describe(Table)
-    .availableAt(getAvailableAtBadge('Table'))
+    .availableAt(getAvailableAtBadge('Table', 'Visualizations'))
     .description('A table of data organized in cells.')
     .usage(
       // eslint-disable-next-line max-len

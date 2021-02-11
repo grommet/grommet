@@ -1,10 +1,11 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { genericProps, getAvailableAtBadge } from '../../utils';
+import { genericProps } from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = DropButton => {
   const DocumentedDropButton = describe(DropButton)
-    .availableAt(getAvailableAtBadge('DropButton'))
+    .availableAt(getAvailableAtBadge('DropButton', 'Controls'))
     .description(
       `A Button that controls a Drop. When opened, the Drop will contain
       whatever is specified via \`dropContent\`. The Drop will control the focus

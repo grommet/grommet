@@ -1,3 +1,3 @@
-declare module 'storybook-chromatic' {
+declare module 'chromatic' {
   export default function isChromatic(): boolean;
 }

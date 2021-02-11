@@ -1,6 +1,22 @@
 // This file contains helper functions for DataTable, to keep the component
 // files simpler.
 
+export const set = (obj, path, value) => {
+  let parts = path;
+  if (Object(obj) !== obj) return obj;
+  if (!Array.isArray(path)) parts = path.toString().match(/[^.[\]]+/g) || [];
+
+  parts.slice(0, -1).reduce((acc, item, index) => {
+    if (Object(acc[item]) === acc[item]) {
+      return acc[item];
+    }
+    acc[item] = Math.abs(parts[index + 1]) > 0 === +parts[index + 1] ? [] : {};
+    return acc[item];
+  }, obj)[parts[parts.length - 1]] = value;
+
+  return obj;
+};
+
 // get the value for the property in the datum object
 export const datumValue = (datum, property) => {
   if (!property) return undefined;
@@ -65,14 +81,14 @@ export const filterAndSortData = (data, filters, onSearch, sort) => {
     }
   }
 
-  if (sort) {
+  if (sort && !sort.external) {
     const { property, direction } = sort;
     result = result === data ? [...data] : result; // don't sort caller's data
     const before = direction === 'asc' ? 1 : -1;
     const after = direction === 'asc' ? -1 : 1;
     result.sort((d1, d2) => {
-      if (d1[property] > d2[property]) return before;
-      if (d1[property] < d2[property]) return after;
+      if (datumValue(d1, property) > datumValue(d2, property)) return before;
+      if (datumValue(d1, property) < datumValue(d2, property)) return after;
       return 0;
     });
   }
@@ -93,6 +109,13 @@ const reducers = {
   sum: sumReducer,
 };
 
+// aggregate reducers init values
+const reducersInitValues = {
+  min: Number.MAX_VALUE,
+  max: Number.MIN_VALUE,
+  sum: 0,
+};
+
 // aggregate a single column
 const aggregateColumn = (column, data) => {
   let value;
@@ -102,19 +125,21 @@ const aggregateColumn = (column, data) => {
   } else {
     value = data
       .map(d => datumValue(d, column.property))
-      .reduce(reducers[column.aggregate], 0);
+      .reduce(reducers[column.aggregate], reducersInitValues[column.aggregate]);
   }
   return value;
 };
 
 // aggregate all columns that can
 const aggregate = (columns, data) => {
-  const result = {};
+  let result = {};
   columns.forEach(column => {
     if (column.aggregate) {
-      result[column.property] = aggregateColumn(column, data);
+      const value = aggregateColumn(column, data);
+      result = set(result, column.property, value);
     }
   });
+
   return result;
 };
 
@@ -122,13 +147,14 @@ const aggregate = (columns, data) => {
 export const buildFooterValues = (columns, data) => {
   const aggregateValues = aggregate(columns, data);
 
-  const result = {};
+  let result = {};
   columns.forEach(column => {
     if (column.footer) {
       if (typeof column.footer === 'string') {
-        result[column.property] = column.footer;
+        result = set(result, column.property, column.footer);
       } else if (column.footer.aggregate) {
-        result[column.property] = aggregateValues[column.property];
+        const value = datumValue(aggregateValues, column.property);
+        result = set(result, column.property, value);
       }
     }
   });
@@ -183,4 +209,12 @@ export const buildGroupState = (groups, groupBy) => {
     });
   }
   return result;
+};
+
+export const normalizeBackgroundColor = theme => {
+  const { background } = theme; // context background
+  if (typeof background === 'string') return background;
+  if (background.light && background.dark) return background;
+  if (background.color) return background.color;
+  return undefined;
 };

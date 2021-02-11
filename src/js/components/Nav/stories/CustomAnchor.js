@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Anchor, Box, Grommet, Main, Nav } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -27,7 +26,7 @@ const customTheme = deepMerge(grommet, {
   },
 });
 
-const CustomAnchor = () => (
+const CustomAnchorNav = () => (
   <Grommet full theme={customTheme}>
     <Box background="dark-1" pad="large" fill>
       <Box direction="row" pad={{ vertical: 'medium' }}>
@@ -42,4 +41,9 @@ const CustomAnchor = () => (
   </Grommet>
 );
 
-storiesOf('Nav', module).add('Custom Anchor', () => <CustomAnchor />);
+export const CustomAnchor = () => <CustomAnchorNav />;
+CustomAnchor.storyName = 'Custom anchor';
+
+export default {
+  title: 'Controls/Nav/Custom anchor',
+};

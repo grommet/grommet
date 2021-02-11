@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { storiesOf } from '@storybook/react';
+
 import { Attraction, Car, TreeOption } from 'grommet-icons';
 import { Box, Grommet, Tab, Tabs } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -33,6 +33,8 @@ UncontrolledTabs.propTypes = {
   plain: PropTypes.bool, // eslint-disable-line react/require-default-props
 };
 
-storiesOf('Tabs', module)
-  .add('Uncontrolled', () => <UncontrolledTabs />)
-  .add('Plain', () => <UncontrolledTabs plain />);
+export const Uncontrolled = () => <UncontrolledTabs />;
+
+export default {
+  title: 'Controls/Tabs/Uncontrolled',
+};

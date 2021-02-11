@@ -1,10 +1,11 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { genericProps, getAvailableAtBadge } from '../../utils';
+import { genericProps } from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = Tabs => {
   const DocumentedTabs = describe(Tabs)
-    .availableAt(getAvailableAtBadge('Tabs'))
+    .availableAt(getAvailableAtBadge('Tabs', 'Controls'))
     .description('A container with controls to show one Tab at a time.')
     .usage(
       `import { Tabs, Tab } from 'grommet';

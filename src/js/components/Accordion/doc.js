@@ -1,10 +1,11 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { genericProps, getAvailableAtBadge } from '../../utils';
+import { genericProps } from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = Accordion => {
   const DocumentedAccordion = describe(Accordion)
-    .availableAt(getAvailableAtBadge('Accordion'))
+    .availableAt(getAvailableAtBadge('Accordion', 'Controls'))
     .description('An accordion containing collapsible panels.')
     .usage(
       `import { Accordion, AccordionPanel } from 'grommet';

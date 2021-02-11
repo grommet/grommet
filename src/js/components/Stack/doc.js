@@ -1,10 +1,11 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { genericProps, getAvailableAtBadge } from '../../utils';
+import { genericProps } from '../../utils/prop-types';
+import { getAvailableAtBadge } from '../../utils/mixins';
 
 export const doc = Stack => {
   const DocumentedStack = describe(Stack)
-    .availableAt(getAvailableAtBadge('Stack'))
+    .availableAt(getAvailableAtBadge('Stack', 'Layout'))
     .description(
       `A container that stacks contents on top of each other. One child is
       designated as the \`guidingChild\` which determines the size. All

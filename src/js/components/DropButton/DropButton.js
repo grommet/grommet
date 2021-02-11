@@ -10,6 +10,7 @@ const DropButton = forwardRef(
   (
     {
       a11yTitle = 'Open Drop',
+      onAlign,
       disabled,
       dropAlign = defaultDropAlign,
       dropProps,
@@ -31,7 +32,6 @@ const DropButton = forwardRef(
         setShow(open);
       }
     }, [open, show]);
-
     const onDropClose = useCallback(
       event => {
         // if the user has clicked on our Button, don't do anything here,
@@ -76,6 +76,7 @@ const DropButton = forwardRef(
         {show && buttonRef.current && (
           <Drop
             id={id ? `${id}__drop` : undefined}
+            onAlign={onAlign}
             restrictFocus
             align={dropAlign}
             target={dropTarget || buttonRef.current}

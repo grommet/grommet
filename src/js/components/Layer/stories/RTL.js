@@ -1,10 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, Layer } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const RTLLayer = () => (
+export const RTLLayer = () => (
   <Grommet theme={grommet} dir="rtl">
     <Layer
       position="start"
@@ -22,4 +21,8 @@ const RTLLayer = () => (
   </Grommet>
 );
 
-storiesOf('Layer', module).add('RTL', () => <RTLLayer />);
+RTLLayer.storyName = 'RTL';
+
+export default {
+  title: 'Layout/Layer/RTL',
+};
