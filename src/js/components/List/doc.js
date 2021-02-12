@@ -164,6 +164,18 @@ export const themeDoc = {
     type: 'string | { dark: string, light: string }',
     defaultValue: "{ dark: 'white', light: 'black' }",
   },
+  'list.container': {
+    description: `When using paginate, any valid Box props for the container 
+    surrounding the List and Pagination components.`,
+    type: 'object',
+    defaultValue: "{ gap: 'small' }",
+  },
+  'list.container.extend': {
+    description: `Any additional style for the container 
+    surrounding the List and Pagination components.`,
+    type: 'object',
+    defaultValue: undefined,
+  },
   'list.extend': {
     description: 'Any additional style for the list.',
     type: 'string | (props) => {}',
@@ -188,11 +200,5 @@ export const themeDoc = {
     description: 'Any additional style for the list items.',
     type: 'string | (props) => {}',
     defaultValue: undefined,
-  },
-  'list.pagination': {
-    description: `If paginating, any valid Box props to style the pagination 
-    component.`,
-    type: 'object',
-    defaultValue: `margin: { top: 'xsmall' }`,
   },
 };

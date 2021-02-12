@@ -326,7 +326,7 @@ export const themeDoc = {
     description: `When using paginate, any valid Box props for the container 
     surrounding the DataTable and Pagination components.`,
     type: 'object',
-    defaultValue: undefined,
+    defaultValue: "{ gap: 'small' }",
   },
   'dataTable.container.extend': {
     description: `Any additional style for the container 
@@ -480,12 +480,6 @@ export const themeDoc = {
     description: 'The icon indicating a column can be sorted.',
     type: 'React.Element',
     defaultValue: undefined,
-  },
-  'dataTable.pagination': {
-    description: `If paginating, any valid Box props to style the pagination 
-    component.`,
-    type: 'object',
-    defaultValue: `margin: { top: 'xsmall' }`,
   },
   'dataTable.pinned.body.background': {
     description: 'Any valid Box background options apply.',

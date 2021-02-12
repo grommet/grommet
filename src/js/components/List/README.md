@@ -426,6 +426,28 @@ Defaults to
 { dark: 'white', light: 'black' }
 ```
 
+**list.container**
+
+When using paginate, any valid Box props for the container 
+    surrounding the List and Pagination components. Expects `object`.
+
+Defaults to
+
+```
+{ gap: 'small' }
+```
+
+**list.container.extend**
+
+Any additional style for the container 
+    surrounding the List and Pagination components. Expects `object`.
+
+Defaults to
+
+```
+undefined
+```
+
 **list.extend**
 
 Any additional style for the list. Expects `string | (props) => {}`.
@@ -474,15 +496,4 @@ Defaults to
 
 ```
 undefined
-```
-
-**list.pagination**
-
-If paginating, any valid Box props to style the pagination 
-    component. Expects `object`.
-
-Defaults to
-
-```
-margin: { top: 'xsmall' }
 ```

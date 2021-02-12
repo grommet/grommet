@@ -281,11 +281,7 @@ const List = React.forwardRef(
           </StyledList>
         </Keyboard>
         {paginate && items && (
-          <Pagination
-            alignSelf="end"
-            {...theme.list.pagination}
-            {...paginationProps}
-          />
+          <Pagination alignSelf="end" {...paginationProps} />
         )}
       </Container>
     );

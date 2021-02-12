@@ -733,7 +733,7 @@ When using paginate, any valid Box props for the container
 Defaults to
 
 ```
-undefined
+{ gap: 'small' }
 ```
 
 **dataTable.container.extend**
@@ -1012,17 +1012,6 @@ Defaults to
 
 ```
 undefined
-```
-
-**dataTable.pagination**
-
-If paginating, any valid Box props to style the pagination 
-    component. Expects `object`.
-
-Defaults to
-
-```
-margin: { top: 'xsmall' }
 ```
 
 **dataTable.pinned.body.background**
