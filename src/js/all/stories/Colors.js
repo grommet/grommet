@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Anchor, Box, Grommet, Paragraph, Text } from 'grommet';
 
-const customTheme = {
+/*const customTheme = {
   global: {
     colors: {
       // Overriding existing colors
@@ -53,7 +53,7 @@ export const Colors = () => (
       </Anchor>
     </Box>
   </Grommet>
-);
+);*/
 
 export default {
   title: 'Others/Theme/Colors',

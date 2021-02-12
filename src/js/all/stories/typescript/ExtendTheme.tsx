@@ -1,11 +1,11 @@
 import React from 'react';
 import { css } from 'styled-components';
-import { ThemeType, BoxTypes, Grommet, Box, Anchor, Button } from 'grommet';
+import { Grommet, Box, Anchor, Button } from 'grommet';
 
 // Custom theme to verify that various `extend` types work correctly
 // Type annotations can only be used in TypeScript files.
 // Remove ': ThemeType' and :' BoxTypes' if you are not using TypeScript.
-const custom: ThemeType = {
+/*const custom: ThemeType = {
   box: {
     extend: css`
       cursor: ${(props: BoxTypes) => (props.onClick ? 'cursor' : 'inherit')};
@@ -40,11 +40,11 @@ const custom: ThemeType = {
       color: ${props.untypedProp === 'some value' ? 'red' : 'green'};
     `,
   },
-};
+};*/
 
 // Type annotations can only be used in TypeScript files.
 // Remove ': TReact.FC' is you are not using TypeScript.
-const ExtendTheme: React.FC = () => {
+/*const ExtendTheme: React.FC = () => {
   return (
     <Grommet theme={custom}>
       <Box pad="small" gap="medium" width="medium">
@@ -62,7 +62,7 @@ const ExtendTheme: React.FC = () => {
   );
 };
 
-export const Extend = () => <ExtendTheme />;
+export const Extend = () => <ExtendTheme />;*/
 
 export default {
   title: 'Others/Theme/Extend',
