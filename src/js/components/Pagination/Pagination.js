@@ -159,8 +159,7 @@ const Pagination = forwardRef(
      * clickable index, control, or placeholder (e.g. ellipsis) indicating
      * more pages are available.
      */
-    controls = controls.map((control, index) => ({
-      id: index,
+    controls = controls.map(control => ({
       active: control === activePage,
       a11yTitle:
         typeof control === 'number'
@@ -181,8 +180,13 @@ const Pagination = forwardRef(
       <StyledPaginationContainer {...theme.pagination.container} {...rest}>
         <Nav a11yTitle={a11yTitle || 'Pagination Navigation'} ref={ref}>
           <Box as="ul" {...theme.pagination.controls}>
-            {controls.map(control => (
-              <PageControl key={control.id} size={size} {...control} />
+            {controls.map((control, index) => (
+              /* Using index as key (as opposed to a unique id) seems to
+               * help React prioritize rendering the updated controls as
+               * desired. Whereas, using a unique id resulted in rendering
+               * the active control with an undesired lag. */
+              // eslint-disable-next-line react/no-array-index-key
+              <PageControl key={index} size={size} {...control} />
             ))}
           </Box>
         </Nav>
