@@ -223,16 +223,13 @@ const FileInput = forwardRef(
               const nextFiles = multiple ? [...files] : [];
               for (let i = 0; i < fileList.length; i += 1) {
                 // avoid duplicates
-                let dup = false;
-                for (let j = 0; j < files.length; j += 1) {
-                  if (
-                    files[j].name === fileList[i].name &&
-                    files[j].size === fileList[i].size
-                  ) {
-                    dup = true;
-                  }
-                }
-                if (!dup) nextFiles.push(fileList[i]);
+                const existing =
+                  nextFiles.filter(
+                    file =>
+                      file.name === fileList[i].name &&
+                      file.size === fileList[i].size,
+                  ).length > 0;
+                if (!existing) nextFiles.push(fileList[i]);
               }
               setFiles(nextFiles);
               setDragOver(false);
