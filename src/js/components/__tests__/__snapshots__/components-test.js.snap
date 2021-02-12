@@ -3554,19 +3554,6 @@ string",
     "name": "FileInput",
     "properties": Array [
       Object {
-        "description": "MIME type pattern to match against. For example: \\"image/*\\".",
-        "format": "string",
-        "name": "accept",
-      },
-      Object {
-        "defaultValue": 10,
-        "description": "The maximum number of individual files to show when multiple is true.
-        Above this, only a single message describing the number of files will
-        be shown.",
-        "format": "number",
-        "name": "aggregateThreshold",
-      },
-      Object {
         "defaultValue": undefined,
         "description": "Whether the control is disabled.",
         "format": "boolean",

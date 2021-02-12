@@ -11,24 +11,6 @@ import { FileInput } from 'grommet';
 
 ## Properties
 
-**accept**
-
-MIME type pattern to match against. For example: "image/*".
-
-```
-string
-```
-
-**aggregateThreshold**
-
-The maximum number of individual files to show when multiple is true.
-        Above this, only a single message describing the number of files will
-        be shown. Defaults to `10`.
-
-```
-number
-```
-
 **disabled**
 
 Whether the control is disabled.
@@ -257,7 +239,7 @@ Background to use when hovering. Expects `string | object`.
 Defaults to
 
 ```
-undefined
+[object Object]
 ```
 
 **fileInput.hover.extend**

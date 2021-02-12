@@ -14,16 +14,6 @@ export const doc = FileInput => {
     .intrinsicElement('input');
 
   DocumentedFileInput.propTypes = {
-    accept: PropTypes.string.description(
-      'MIME type pattern to match against. For example: "image/*".',
-    ),
-    aggregateThreshold: PropTypes.number
-      .description(
-        `The maximum number of individual files to show when multiple is true.
-        Above this, only a single message describing the number of files will
-        be shown.`,
-      )
-      .defaultValue(10),
     disabled: PropTypes.bool
       .description('Whether the control is disabled.')
       .defaultValue(undefined),
@@ -123,7 +113,7 @@ export const themeDoc = {
   'fileInput.hover.border': {
     description: 'Background to use when hovering.',
     type: 'string | object',
-    defaultValue: undefined,
+    defaultValue: { color: 'brand' },
   },
   'fileInput.hover.extend': {
     description: 'Any additional style for container when hovering over it.',
