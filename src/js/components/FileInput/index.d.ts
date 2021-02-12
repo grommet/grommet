@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 export interface FileInputProps {
-  accept?: string;
   disabled?: boolean;
   id?: string;
   messages?: {
@@ -17,7 +16,7 @@ export interface FileInputProps {
   renderFile?: (...args: any[]) => void;
 }
 
-declare const FileInput: React.ComponentClass<FileInputProps &
+declare const FileInput: React.FC<FileInputProps &
   JSX.IntrinsicElements['input']>;
 
 export { FileInput };
