@@ -32,3 +32,7 @@ export const Paginated = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Visualizations/List/Paginated',
+};

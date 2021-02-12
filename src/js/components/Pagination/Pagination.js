@@ -159,7 +159,8 @@ const Pagination = forwardRef(
      * clickable index, control, or placeholder (e.g. ellipsis) indicating
      * more pages are available.
      */
-    controls = controls.map(control => ({
+    controls = controls.map((control, index) => ({
+      id: index,
       active: control === activePage,
       a11yTitle:
         typeof control === 'number'
@@ -181,7 +182,7 @@ const Pagination = forwardRef(
         <Nav a11yTitle={a11yTitle || 'Pagination Navigation'} ref={ref}>
           <Box as="ul" {...theme.pagination.controls}>
             {controls.map(control => (
-              <PageControl key={control.a11yTitle} size={size} {...control} />
+              <PageControl key={control.id} size={size} {...control} />
             ))}
           </Box>
         </Nav>

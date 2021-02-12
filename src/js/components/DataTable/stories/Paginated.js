@@ -22,3 +22,7 @@ export const Paginated = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Visualizations/DataTable/Paginated',
+};

@@ -312,6 +312,7 @@ exports[`Pagination should allow user to control page via state with page +
           <button
             aria-label="Go to previous page"
             class="c5 c6"
+            id="0"
             type="button"
           >
             <svg
@@ -338,6 +339,7 @@ exports[`Pagination should allow user to control page via state with page +
           <button
             aria-label="Go to page 1"
             class="c5 c6"
+            id="1"
             type="button"
           >
             1
@@ -353,6 +355,7 @@ exports[`Pagination should allow user to control page via state with page +
             aria-current="page"
             aria-label="Go to page 2"
             class="c9 c6"
+            id="2"
             type="button"
           >
             2
@@ -367,6 +370,7 @@ exports[`Pagination should allow user to control page via state with page +
           <button
             aria-label="Go to page 3"
             class="c5 c6"
+            id="3"
             type="button"
           >
             3
@@ -381,6 +385,7 @@ exports[`Pagination should allow user to control page via state with page +
           <button
             aria-label="Go to page 4"
             class="c5 c6"
+            id="4"
             type="button"
           >
             4
@@ -395,6 +400,7 @@ exports[`Pagination should allow user to control page via state with page +
           <button
             aria-label="Go to page 5"
             class="c5 c6"
+            id="5"
             type="button"
           >
             5
@@ -421,6 +427,7 @@ exports[`Pagination should allow user to control page via state with page +
           <button
             aria-label="Go to page 24"
             class="c5 c6"
+            id="7"
             type="button"
           >
             24
@@ -435,6 +442,7 @@ exports[`Pagination should allow user to control page via state with page +
           <button
             aria-label="Go to next page"
             class="c5 c6"
+            id="8"
             type="button"
           >
             <svg
@@ -848,6 +856,7 @@ exports[`Pagination should apply button kind style when referenced by a string 1
             aria-label="Go to previous page"
             class="c5 c6"
             disabled=""
+            id="0"
             type="button"
           >
             <svg
@@ -875,6 +884,7 @@ exports[`Pagination should apply button kind style when referenced by a string 1
             aria-current="page"
             aria-label="Go to page 1"
             class="c9 c10"
+            id="1"
             type="button"
           >
             1
@@ -889,6 +899,7 @@ exports[`Pagination should apply button kind style when referenced by a string 1
           <button
             aria-label="Go to page 2"
             class="c11 c10"
+            id="2"
             type="button"
           >
             2
@@ -903,6 +914,7 @@ exports[`Pagination should apply button kind style when referenced by a string 1
           <button
             aria-label="Go to page 3"
             class="c11 c10"
+            id="3"
             type="button"
           >
             3
@@ -917,6 +929,7 @@ exports[`Pagination should apply button kind style when referenced by a string 1
           <button
             aria-label="Go to page 4"
             class="c11 c10"
+            id="4"
             type="button"
           >
             4
@@ -931,6 +944,7 @@ exports[`Pagination should apply button kind style when referenced by a string 1
           <button
             aria-label="Go to page 5"
             class="c11 c10"
+            id="5"
             type="button"
           >
             5
@@ -957,6 +971,7 @@ exports[`Pagination should apply button kind style when referenced by a string 1
           <button
             aria-label="Go to page 24"
             class="c11 c10"
+            id="7"
             type="button"
           >
             24
@@ -971,6 +986,7 @@ exports[`Pagination should apply button kind style when referenced by a string 1
           <button
             aria-label="Go to next page"
             class="c11 c10"
+            id="8"
             type="button"
           >
             <svg
@@ -1413,6 +1429,7 @@ exports[`Pagination should apply custom theme 1`] = `
             aria-label="Go to previous page"
             class="c6 c7"
             disabled=""
+            id="0"
             type="button"
           >
             <svg
@@ -1440,6 +1457,7 @@ exports[`Pagination should apply custom theme 1`] = `
             aria-current="page"
             aria-label="Go to page 1"
             class="c10 c11"
+            id="1"
             type="button"
           >
             1
@@ -1454,6 +1472,7 @@ exports[`Pagination should apply custom theme 1`] = `
           <button
             aria-label="Go to page 2"
             class="c12 c11"
+            id="2"
             type="button"
           >
             2
@@ -1468,6 +1487,7 @@ exports[`Pagination should apply custom theme 1`] = `
           <button
             aria-label="Go to page 3"
             class="c12 c11"
+            id="3"
             type="button"
           >
             3
@@ -1482,6 +1502,7 @@ exports[`Pagination should apply custom theme 1`] = `
           <button
             aria-label="Go to page 4"
             class="c12 c11"
+            id="4"
             type="button"
           >
             4
@@ -1496,6 +1517,7 @@ exports[`Pagination should apply custom theme 1`] = `
           <button
             aria-label="Go to page 5"
             class="c12 c11"
+            id="5"
             type="button"
           >
             5
@@ -1522,6 +1544,7 @@ exports[`Pagination should apply custom theme 1`] = `
           <button
             aria-label="Go to page 24"
             class="c12 c11"
+            id="7"
             type="button"
           >
             24
@@ -1536,6 +1559,7 @@ exports[`Pagination should apply custom theme 1`] = `
           <button
             aria-label="Go to next page"
             class="c12 c11"
+            id="8"
             type="button"
           >
             <svg
@@ -2078,6 +2102,7 @@ exports[`Pagination should apply size 1`] = `
             aria-label="Go to previous page"
             class="c5 c6"
             disabled=""
+            id="0"
             type="button"
           >
             <svg
@@ -2105,6 +2130,7 @@ exports[`Pagination should apply size 1`] = `
             aria-current="page"
             aria-label="Go to page 1"
             class="c9 c10"
+            id="1"
             type="button"
           >
             1
@@ -2119,6 +2145,7 @@ exports[`Pagination should apply size 1`] = `
           <button
             aria-label="Go to page 2"
             class="c11 c10"
+            id="2"
             type="button"
           >
             2
@@ -2133,6 +2160,7 @@ exports[`Pagination should apply size 1`] = `
           <button
             aria-label="Go to page 3"
             class="c11 c10"
+            id="3"
             type="button"
           >
             3
@@ -2147,6 +2175,7 @@ exports[`Pagination should apply size 1`] = `
           <button
             aria-label="Go to page 4"
             class="c11 c10"
+            id="4"
             type="button"
           >
             4
@@ -2161,6 +2190,7 @@ exports[`Pagination should apply size 1`] = `
           <button
             aria-label="Go to page 5"
             class="c11 c10"
+            id="5"
             type="button"
           >
             5
@@ -2187,6 +2217,7 @@ exports[`Pagination should apply size 1`] = `
           <button
             aria-label="Go to page 24"
             class="c11 c10"
+            id="7"
             type="button"
           >
             24
@@ -2201,6 +2232,7 @@ exports[`Pagination should apply size 1`] = `
           <button
             aria-label="Go to next page"
             class="c11 c10"
+            id="8"
             type="button"
           >
             <svg
@@ -2238,6 +2270,7 @@ exports[`Pagination should apply size 1`] = `
             aria-label="Go to previous page"
             class="c5 c16"
             disabled=""
+            id="0"
             type="button"
           >
             <svg
@@ -2265,6 +2298,7 @@ exports[`Pagination should apply size 1`] = `
             aria-current="page"
             aria-label="Go to page 1"
             class="c9 c17"
+            id="1"
             type="button"
           >
             1
@@ -2279,6 +2313,7 @@ exports[`Pagination should apply size 1`] = `
           <button
             aria-label="Go to page 2"
             class="c11 c17"
+            id="2"
             type="button"
           >
             2
@@ -2293,6 +2328,7 @@ exports[`Pagination should apply size 1`] = `
           <button
             aria-label="Go to page 3"
             class="c11 c17"
+            id="3"
             type="button"
           >
             3
@@ -2307,6 +2343,7 @@ exports[`Pagination should apply size 1`] = `
           <button
             aria-label="Go to page 4"
             class="c11 c17"
+            id="4"
             type="button"
           >
             4
@@ -2321,6 +2358,7 @@ exports[`Pagination should apply size 1`] = `
           <button
             aria-label="Go to page 5"
             class="c11 c17"
+            id="5"
             type="button"
           >
             5
@@ -2347,6 +2385,7 @@ exports[`Pagination should apply size 1`] = `
           <button
             aria-label="Go to page 24"
             class="c11 c17"
+            id="7"
             type="button"
           >
             24
@@ -2361,6 +2400,7 @@ exports[`Pagination should apply size 1`] = `
           <button
             aria-label="Go to next page"
             class="c11 c17"
+            id="8"
             type="button"
           >
             <svg
@@ -2398,6 +2438,7 @@ exports[`Pagination should apply size 1`] = `
             aria-label="Go to previous page"
             class="c5 c20"
             disabled=""
+            id="0"
             type="button"
           >
             <svg
@@ -2425,6 +2466,7 @@ exports[`Pagination should apply size 1`] = `
             aria-current="page"
             aria-label="Go to page 1"
             class="c9 c21"
+            id="1"
             type="button"
           >
             1
@@ -2439,6 +2481,7 @@ exports[`Pagination should apply size 1`] = `
           <button
             aria-label="Go to page 2"
             class="c11 c21"
+            id="2"
             type="button"
           >
             2
@@ -2453,6 +2496,7 @@ exports[`Pagination should apply size 1`] = `
           <button
             aria-label="Go to page 3"
             class="c11 c21"
+            id="3"
             type="button"
           >
             3
@@ -2467,6 +2511,7 @@ exports[`Pagination should apply size 1`] = `
           <button
             aria-label="Go to page 4"
             class="c11 c21"
+            id="4"
             type="button"
           >
             4
@@ -2481,6 +2526,7 @@ exports[`Pagination should apply size 1`] = `
           <button
             aria-label="Go to page 5"
             class="c11 c21"
+            id="5"
             type="button"
           >
             5
@@ -2507,6 +2553,7 @@ exports[`Pagination should apply size 1`] = `
           <button
             aria-label="Go to page 24"
             class="c11 c21"
+            id="7"
             type="button"
           >
             24
@@ -2521,6 +2568,7 @@ exports[`Pagination should apply size 1`] = `
           <button
             aria-label="Go to next page"
             class="c11 c21"
+            id="8"
             type="button"
           >
             <svg
@@ -2957,6 +3005,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
           <button
             aria-label="Go to previous page"
             class="c5 c6"
+            id="0"
             type="button"
           >
             <svg
@@ -2983,6 +3032,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
           <button
             aria-label="Go to page 1"
             class="c5 c6"
+            id="1"
             type="button"
           >
             1
@@ -3009,6 +3059,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
           <button
             aria-label="Go to page 20"
             class="c5 c6"
+            id="3"
             type="button"
           >
             20
@@ -3023,6 +3074,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
           <button
             aria-label="Go to page 21"
             class="c5 c6"
+            id="4"
             type="button"
           >
             21
@@ -3037,6 +3089,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
           <button
             aria-label="Go to page 22"
             class="c5 c6"
+            id="5"
             type="button"
           >
             22
@@ -3051,6 +3104,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
           <button
             aria-label="Go to page 23"
             class="c5 c6"
+            id="6"
             type="button"
           >
             23
@@ -3066,6 +3120,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
             aria-current="page"
             aria-label="Go to page 24"
             class="c11 c6"
+            id="7"
             type="button"
           >
             24
@@ -3082,6 +3137,7 @@ exports[`Pagination should disable next button if on last page 1`] = `
             aria-label="Go to next page"
             class="c12 c13"
             disabled=""
+            id="8"
             type="button"
           >
             <svg
@@ -3416,6 +3472,7 @@ exports[`Pagination should disable previous and next controls when numberItems
             aria-label="Go to previous page"
             class="c5 c6"
             disabled=""
+            id="0"
             type="button"
           >
             <svg
@@ -3443,6 +3500,7 @@ exports[`Pagination should disable previous and next controls when numberItems
             aria-current="page"
             aria-label="Go to page 1"
             class="c9 c10"
+            id="1"
             type="button"
           >
             1
@@ -3459,6 +3517,7 @@ exports[`Pagination should disable previous and next controls when numberItems
             aria-label="Go to next page"
             class="c5 c6"
             disabled=""
+            id="2"
             type="button"
           >
             <svg
@@ -3714,6 +3773,7 @@ exports[`Pagination should disable previous and next controls when numberItems
             aria-label="Go to previous page"
             class="c5 c6"
             disabled=""
+            id="0"
             type="button"
           >
             <svg
@@ -3741,6 +3801,7 @@ exports[`Pagination should disable previous and next controls when numberItems
             aria-label="Go to next page"
             class="c5 c6"
             disabled=""
+            id="1"
             type="button"
           >
             <svg
@@ -4075,6 +4136,7 @@ exports[`Pagination should disable previous and next controls when numberItems
             aria-label="Go to previous page"
             class="c5 c6"
             disabled=""
+            id="0"
             type="button"
           >
             <svg
@@ -4102,6 +4164,7 @@ exports[`Pagination should disable previous and next controls when numberItems
             aria-current="page"
             aria-label="Go to page 1"
             class="c9 c10"
+            id="1"
             type="button"
           >
             1
@@ -4118,6 +4181,7 @@ exports[`Pagination should disable previous and next controls when numberItems
             aria-label="Go to next page"
             class="c5 c6"
             disabled=""
+            id="2"
             type="button"
           >
             <svg
@@ -4556,6 +4620,7 @@ exports[`Pagination should disable previous button if on first page 1`] = `
             aria-label="Go to previous page"
             class="c5 c6"
             disabled=""
+            id="0"
             type="button"
           >
             <svg
@@ -4583,6 +4648,7 @@ exports[`Pagination should disable previous button if on first page 1`] = `
             aria-current="page"
             aria-label="Go to page 1"
             class="c9 c10"
+            id="1"
             type="button"
           >
             1
@@ -4597,6 +4663,7 @@ exports[`Pagination should disable previous button if on first page 1`] = `
           <button
             aria-label="Go to page 2"
             class="c11 c10"
+            id="2"
             type="button"
           >
             2
@@ -4611,6 +4678,7 @@ exports[`Pagination should disable previous button if on first page 1`] = `
           <button
             aria-label="Go to page 3"
             class="c11 c10"
+            id="3"
             type="button"
           >
             3
@@ -4625,6 +4693,7 @@ exports[`Pagination should disable previous button if on first page 1`] = `
           <button
             aria-label="Go to page 4"
             class="c11 c10"
+            id="4"
             type="button"
           >
             4
@@ -4639,6 +4708,7 @@ exports[`Pagination should disable previous button if on first page 1`] = `
           <button
             aria-label="Go to page 5"
             class="c11 c10"
+            id="5"
             type="button"
           >
             5
@@ -4665,6 +4735,7 @@ exports[`Pagination should disable previous button if on first page 1`] = `
           <button
             aria-label="Go to page 24"
             class="c11 c10"
+            id="7"
             type="button"
           >
             24
@@ -4679,6 +4750,7 @@ exports[`Pagination should disable previous button if on first page 1`] = `
           <button
             aria-label="Go to next page"
             class="c11 c10"
+            id="8"
             type="button"
           >
             <svg
@@ -5013,6 +5085,7 @@ exports[`Pagination should display next page of results when "next" is
           <button
             aria-label="Go to previous page"
             class="c5 c6"
+            id="0"
             type="button"
           >
             <svg
@@ -5039,6 +5112,7 @@ exports[`Pagination should display next page of results when "next" is
           <button
             aria-label="Go to page 1"
             class="c5 c6"
+            id="1"
             type="button"
           >
             1
@@ -5054,6 +5128,7 @@ exports[`Pagination should display next page of results when "next" is
             aria-current="page"
             aria-label="Go to page 2"
             class="c9 c6"
+            id="2"
             type="button"
           >
             2
@@ -5068,6 +5143,7 @@ exports[`Pagination should display next page of results when "next" is
           <button
             aria-label="Go to page 3"
             class="c5 c6"
+            id="3"
             type="button"
           >
             3
@@ -5082,6 +5158,7 @@ exports[`Pagination should display next page of results when "next" is
           <button
             aria-label="Go to page 4"
             class="c5 c6"
+            id="4"
             type="button"
           >
             4
@@ -5096,6 +5173,7 @@ exports[`Pagination should display next page of results when "next" is
           <button
             aria-label="Go to page 5"
             class="c5 c6"
+            id="5"
             type="button"
           >
             5
@@ -5122,6 +5200,7 @@ exports[`Pagination should display next page of results when "next" is
           <button
             aria-label="Go to page 24"
             class="c5 c6"
+            id="7"
             type="button"
           >
             24
@@ -5136,6 +5215,7 @@ exports[`Pagination should display next page of results when "next" is
           <button
             aria-label="Go to next page"
             class="c5 c6"
+            id="8"
             type="button"
           >
             <svg
@@ -5179,6 +5259,7 @@ exports[`Pagination should display next page of results when "next" is
           <button
             aria-label="Go to previous page"
             class="StyledButtonKind-sc-1vhfpnt-0 eRddyj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cQMJwu"
+            id="0"
             type="button"
           >
             <svg
@@ -5205,6 +5286,7 @@ exports[`Pagination should display next page of results when "next" is
           <button
             aria-label="Go to page 1"
             class="StyledButtonKind-sc-1vhfpnt-0 eRddyj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cQMJwu"
+            id="1"
             type="button"
           >
             1
@@ -5220,6 +5302,7 @@ exports[`Pagination should display next page of results when "next" is
             aria-current="page"
             aria-label="Go to page 2"
             class="StyledButtonKind-sc-1vhfpnt-0 hbyrhB StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cQMJwu"
+            id="2"
             type="button"
           >
             2
@@ -5234,6 +5317,7 @@ exports[`Pagination should display next page of results when "next" is
           <button
             aria-label="Go to page 3"
             class="StyledButtonKind-sc-1vhfpnt-0 eRddyj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cQMJwu"
+            id="3"
             type="button"
           >
             3
@@ -5248,6 +5332,7 @@ exports[`Pagination should display next page of results when "next" is
           <button
             aria-label="Go to page 4"
             class="StyledButtonKind-sc-1vhfpnt-0 eRddyj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cQMJwu"
+            id="4"
             type="button"
           >
             4
@@ -5262,6 +5347,7 @@ exports[`Pagination should display next page of results when "next" is
           <button
             aria-label="Go to page 5"
             class="StyledButtonKind-sc-1vhfpnt-0 eRddyj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cQMJwu"
+            id="5"
             type="button"
           >
             5
@@ -5288,6 +5374,7 @@ exports[`Pagination should display next page of results when "next" is
           <button
             aria-label="Go to page 24"
             class="StyledButtonKind-sc-1vhfpnt-0 eRddyj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cQMJwu"
+            id="7"
             type="button"
           >
             24
@@ -5302,6 +5389,7 @@ exports[`Pagination should display next page of results when "next" is
           <button
             aria-label="Go to next page"
             class="StyledButtonKind-sc-1vhfpnt-0 eRddyj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cQMJwu"
+            id="8"
             type="button"
           >
             <svg
@@ -5636,6 +5724,7 @@ exports[`Pagination should display page 'n' of results when "page n" is
           <button
             aria-label="Go to previous page"
             class="c5 c6"
+            id="0"
             type="button"
           >
             <svg
@@ -5662,6 +5751,7 @@ exports[`Pagination should display page 'n' of results when "page n" is
           <button
             aria-label="Go to page 1"
             class="c5 c6"
+            id="1"
             type="button"
           >
             1
@@ -5677,6 +5767,7 @@ exports[`Pagination should display page 'n' of results when "page n" is
             aria-current="page"
             aria-label="Go to page 2"
             class="c9 c6"
+            id="2"
             type="button"
           >
             2
@@ -5691,6 +5782,7 @@ exports[`Pagination should display page 'n' of results when "page n" is
           <button
             aria-label="Go to page 3"
             class="c5 c6"
+            id="3"
             type="button"
           >
             3
@@ -5705,6 +5797,7 @@ exports[`Pagination should display page 'n' of results when "page n" is
           <button
             aria-label="Go to page 4"
             class="c5 c6"
+            id="4"
             type="button"
           >
             4
@@ -5719,6 +5812,7 @@ exports[`Pagination should display page 'n' of results when "page n" is
           <button
             aria-label="Go to page 5"
             class="c5 c6"
+            id="5"
             type="button"
           >
             5
@@ -5745,6 +5839,7 @@ exports[`Pagination should display page 'n' of results when "page n" is
           <button
             aria-label="Go to page 24"
             class="c5 c6"
+            id="7"
             type="button"
           >
             24
@@ -5759,6 +5854,7 @@ exports[`Pagination should display page 'n' of results when "page n" is
           <button
             aria-label="Go to next page"
             class="c5 c6"
+            id="8"
             type="button"
           >
             <svg
@@ -6093,6 +6189,7 @@ exports[`Pagination should display previous page of results when "previous" is
           <button
             aria-label="Go to previous page"
             class="c5 c6"
+            id="0"
             type="button"
           >
             <svg
@@ -6119,6 +6216,7 @@ exports[`Pagination should display previous page of results when "previous" is
           <button
             aria-label="Go to page 1"
             class="c5 c6"
+            id="1"
             type="button"
           >
             1
@@ -6134,6 +6232,7 @@ exports[`Pagination should display previous page of results when "previous" is
             aria-current="page"
             aria-label="Go to page 2"
             class="c9 c6"
+            id="2"
             type="button"
           >
             2
@@ -6148,6 +6247,7 @@ exports[`Pagination should display previous page of results when "previous" is
           <button
             aria-label="Go to page 3"
             class="c5 c6"
+            id="3"
             type="button"
           >
             3
@@ -6162,6 +6262,7 @@ exports[`Pagination should display previous page of results when "previous" is
           <button
             aria-label="Go to page 4"
             class="c5 c6"
+            id="4"
             type="button"
           >
             4
@@ -6176,6 +6277,7 @@ exports[`Pagination should display previous page of results when "previous" is
           <button
             aria-label="Go to page 5"
             class="c5 c6"
+            id="5"
             type="button"
           >
             5
@@ -6202,6 +6304,7 @@ exports[`Pagination should display previous page of results when "previous" is
           <button
             aria-label="Go to page 24"
             class="c5 c6"
+            id="7"
             type="button"
           >
             24
@@ -6216,6 +6319,7 @@ exports[`Pagination should display previous page of results when "previous" is
           <button
             aria-label="Go to next page"
             class="c5 c6"
+            id="8"
             type="button"
           >
             <svg
@@ -6259,6 +6363,7 @@ exports[`Pagination should display previous page of results when "previous" is
           <button
             aria-label="Go to previous page"
             class="StyledButtonKind-sc-1vhfpnt-0 eRddyj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cQMJwu"
+            id="0"
             type="button"
           >
             <svg
@@ -6285,6 +6390,7 @@ exports[`Pagination should display previous page of results when "previous" is
           <button
             aria-label="Go to page 1"
             class="StyledButtonKind-sc-1vhfpnt-0 eRddyj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cQMJwu"
+            id="1"
             type="button"
           >
             1
@@ -6300,6 +6406,7 @@ exports[`Pagination should display previous page of results when "previous" is
             aria-current="page"
             aria-label="Go to page 2"
             class="StyledButtonKind-sc-1vhfpnt-0 hbyrhB StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cQMJwu"
+            id="2"
             type="button"
           >
             2
@@ -6314,6 +6421,7 @@ exports[`Pagination should display previous page of results when "previous" is
           <button
             aria-label="Go to page 3"
             class="StyledButtonKind-sc-1vhfpnt-0 eRddyj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cQMJwu"
+            id="3"
             type="button"
           >
             3
@@ -6328,6 +6436,7 @@ exports[`Pagination should display previous page of results when "previous" is
           <button
             aria-label="Go to page 4"
             class="StyledButtonKind-sc-1vhfpnt-0 eRddyj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cQMJwu"
+            id="4"
             type="button"
           >
             4
@@ -6342,6 +6451,7 @@ exports[`Pagination should display previous page of results when "previous" is
           <button
             aria-label="Go to page 5"
             class="StyledButtonKind-sc-1vhfpnt-0 eRddyj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cQMJwu"
+            id="5"
             type="button"
           >
             5
@@ -6368,6 +6478,7 @@ exports[`Pagination should display previous page of results when "previous" is
           <button
             aria-label="Go to page 24"
             class="StyledButtonKind-sc-1vhfpnt-0 eRddyj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cQMJwu"
+            id="7"
             type="button"
           >
             24
@@ -6382,6 +6493,7 @@ exports[`Pagination should display previous page of results when "previous" is
           <button
             aria-label="Go to next page"
             class="StyledButtonKind-sc-1vhfpnt-0 eRddyj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cQMJwu"
+            id="8"
             type="button"
           >
             <svg
@@ -6821,6 +6933,7 @@ exports[`Pagination should display the correct last page based on items length
             aria-label="Go to previous page"
             class="c5 c6"
             disabled=""
+            id="0"
             type="button"
           >
             <svg
@@ -6848,6 +6961,7 @@ exports[`Pagination should display the correct last page based on items length
             aria-current="page"
             aria-label="Go to page 1"
             class="c9 c10"
+            id="1"
             type="button"
           >
             1
@@ -6862,6 +6976,7 @@ exports[`Pagination should display the correct last page based on items length
           <button
             aria-label="Go to page 2"
             class="c11 c10"
+            id="2"
             type="button"
           >
             2
@@ -6876,6 +6991,7 @@ exports[`Pagination should display the correct last page based on items length
           <button
             aria-label="Go to page 3"
             class="c11 c10"
+            id="3"
             type="button"
           >
             3
@@ -6890,6 +7006,7 @@ exports[`Pagination should display the correct last page based on items length
           <button
             aria-label="Go to page 4"
             class="c11 c10"
+            id="4"
             type="button"
           >
             4
@@ -6904,6 +7021,7 @@ exports[`Pagination should display the correct last page based on items length
           <button
             aria-label="Go to page 5"
             class="c11 c10"
+            id="5"
             type="button"
           >
             5
@@ -6930,6 +7048,7 @@ exports[`Pagination should display the correct last page based on items length
           <button
             aria-label="Go to page 24"
             class="c11 c10"
+            id="7"
             type="button"
           >
             24
@@ -6944,6 +7063,7 @@ exports[`Pagination should display the correct last page based on items length
           <button
             aria-label="Go to next page"
             class="c11 c10"
+            id="8"
             type="button"
           >
             <svg
@@ -7277,6 +7397,7 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
           <button
             aria-label="Go to previous page"
             class="c5 c6"
+            id="0"
             type="button"
           >
             <svg
@@ -7303,6 +7424,7 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
           <button
             aria-label="Go to page 1"
             class="c5 c6"
+            id="1"
             type="button"
           >
             1
@@ -7317,6 +7439,7 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
           <button
             aria-label="Go to page 2"
             class="c5 c6"
+            id="2"
             type="button"
           >
             2
@@ -7331,6 +7454,7 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
           <button
             aria-label="Go to page 3"
             class="c5 c6"
+            id="3"
             type="button"
           >
             3
@@ -7357,6 +7481,7 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
           <button
             aria-label="Go to page 9"
             class="c5 c6"
+            id="5"
             type="button"
           >
             9
@@ -7372,6 +7497,7 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
             aria-current="page"
             aria-label="Go to page 10"
             class="c11 c6"
+            id="6"
             type="button"
           >
             10
@@ -7386,6 +7512,7 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
           <button
             aria-label="Go to page 11"
             class="c5 c6"
+            id="7"
             type="button"
           >
             11
@@ -7412,6 +7539,7 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
           <button
             aria-label="Go to page 22"
             class="c5 c6"
+            id="9"
             type="button"
           >
             22
@@ -7426,6 +7554,7 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
           <button
             aria-label="Go to page 23"
             class="c5 c6"
+            id="10"
             type="button"
           >
             23
@@ -7440,6 +7569,7 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
           <button
             aria-label="Go to page 24"
             class="c5 c6"
+            id="11"
             type="button"
           >
             24
@@ -7454,6 +7584,7 @@ exports[`Pagination should render correct numberEdgePages 1`] = `
           <button
             aria-label="Go to next page"
             class="c5 c6"
+            id="12"
             type="button"
           >
             <svg
@@ -7787,6 +7918,7 @@ exports[`Pagination should render correct numberMiddlePages when even 1`] = `
           <button
             aria-label="Go to previous page"
             class="c5 c6"
+            id="0"
             type="button"
           >
             <svg
@@ -7813,6 +7945,7 @@ exports[`Pagination should render correct numberMiddlePages when even 1`] = `
           <button
             aria-label="Go to page 1"
             class="c5 c6"
+            id="1"
             type="button"
           >
             1
@@ -7839,6 +7972,7 @@ exports[`Pagination should render correct numberMiddlePages when even 1`] = `
           <button
             aria-label="Go to page 9"
             class="c5 c6"
+            id="3"
             type="button"
           >
             9
@@ -7854,6 +7988,7 @@ exports[`Pagination should render correct numberMiddlePages when even 1`] = `
             aria-current="page"
             aria-label="Go to page 10"
             class="c11 c6"
+            id="4"
             type="button"
           >
             10
@@ -7868,6 +8003,7 @@ exports[`Pagination should render correct numberMiddlePages when even 1`] = `
           <button
             aria-label="Go to page 11"
             class="c5 c6"
+            id="5"
             type="button"
           >
             11
@@ -7882,6 +8018,7 @@ exports[`Pagination should render correct numberMiddlePages when even 1`] = `
           <button
             aria-label="Go to page 12"
             class="c5 c6"
+            id="6"
             type="button"
           >
             12
@@ -7908,6 +8045,7 @@ exports[`Pagination should render correct numberMiddlePages when even 1`] = `
           <button
             aria-label="Go to page 24"
             class="c5 c6"
+            id="8"
             type="button"
           >
             24
@@ -7922,6 +8060,7 @@ exports[`Pagination should render correct numberMiddlePages when even 1`] = `
           <button
             aria-label="Go to next page"
             class="c5 c6"
+            id="9"
             type="button"
           >
             <svg
@@ -8255,6 +8394,7 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
           <button
             aria-label="Go to previous page"
             class="c5 c6"
+            id="0"
             type="button"
           >
             <svg
@@ -8281,6 +8421,7 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
           <button
             aria-label="Go to page 1"
             class="c5 c6"
+            id="1"
             type="button"
           >
             1
@@ -8307,6 +8448,7 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
           <button
             aria-label="Go to page 8"
             class="c5 c6"
+            id="3"
             type="button"
           >
             8
@@ -8321,6 +8463,7 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
           <button
             aria-label="Go to page 9"
             class="c5 c6"
+            id="4"
             type="button"
           >
             9
@@ -8336,6 +8479,7 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
             aria-current="page"
             aria-label="Go to page 10"
             class="c11 c6"
+            id="5"
             type="button"
           >
             10
@@ -8350,6 +8494,7 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
           <button
             aria-label="Go to page 11"
             class="c5 c6"
+            id="6"
             type="button"
           >
             11
@@ -8364,6 +8509,7 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
           <button
             aria-label="Go to page 12"
             class="c5 c6"
+            id="7"
             type="button"
           >
             12
@@ -8390,6 +8536,7 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
           <button
             aria-label="Go to page 24"
             class="c5 c6"
+            id="9"
             type="button"
           >
             24
@@ -8404,6 +8551,7 @@ exports[`Pagination should render correct numberMiddlePages when odd 1`] = `
           <button
             aria-label="Go to next page"
             class="c5 c6"
+            id="10"
             type="button"
           >
             <svg
@@ -8842,6 +8990,7 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
             aria-label="Go to previous page"
             class="c5 c6"
             disabled=""
+            id="0"
             type="button"
           >
             <svg
@@ -8869,6 +9018,7 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
             aria-current="page"
             aria-label="Go to page 1"
             class="c9 c10"
+            id="1"
             type="button"
           >
             1
@@ -8883,6 +9033,7 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
           <button
             aria-label="Go to page 2"
             class="c11 c10"
+            id="2"
             type="button"
           >
             2
@@ -8897,6 +9048,7 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
           <button
             aria-label="Go to page 3"
             class="c11 c10"
+            id="3"
             type="button"
           >
             3
@@ -8923,6 +9075,7 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
           <button
             aria-label="Go to page 24"
             class="c11 c10"
+            id="5"
             type="button"
           >
             24
@@ -8937,6 +9090,7 @@ exports[`Pagination should set numberMiddlePages = 1 if user provides value < 1 
           <button
             aria-label="Go to next page"
             class="c11 c10"
+            id="6"
             type="button"
           >
             <svg
@@ -9374,6 +9528,7 @@ exports[`Pagination should set page to last page if page prop > total possible
           <button
             aria-label="Go to previous page"
             class="c5 c6"
+            id="0"
             type="button"
           >
             <svg
@@ -9400,6 +9555,7 @@ exports[`Pagination should set page to last page if page prop > total possible
           <button
             aria-label="Go to page 1"
             class="c5 c6"
+            id="1"
             type="button"
           >
             1
@@ -9426,6 +9582,7 @@ exports[`Pagination should set page to last page if page prop > total possible
           <button
             aria-label="Go to page 6"
             class="c5 c6"
+            id="3"
             type="button"
           >
             6
@@ -9440,6 +9597,7 @@ exports[`Pagination should set page to last page if page prop > total possible
           <button
             aria-label="Go to page 7"
             class="c5 c6"
+            id="4"
             type="button"
           >
             7
@@ -9454,6 +9612,7 @@ exports[`Pagination should set page to last page if page prop > total possible
           <button
             aria-label="Go to page 8"
             class="c5 c6"
+            id="5"
             type="button"
           >
             8
@@ -9468,6 +9627,7 @@ exports[`Pagination should set page to last page if page prop > total possible
           <button
             aria-label="Go to page 9"
             class="c5 c6"
+            id="6"
             type="button"
           >
             9
@@ -9483,6 +9643,7 @@ exports[`Pagination should set page to last page if page prop > total possible
             aria-current="page"
             aria-label="Go to page 10"
             class="c11 c6"
+            id="7"
             type="button"
           >
             10
@@ -9499,6 +9660,7 @@ exports[`Pagination should set page to last page if page prop > total possible
             aria-label="Go to next page"
             class="c12 c13"
             disabled=""
+            id="8"
             type="button"
           >
             <svg

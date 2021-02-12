@@ -2928,6 +2928,7 @@ exports[`List events should apply pagination styling 1`] = `
               aria-label="Go to previous page"
               class="c12 c13"
               disabled=""
+              id="0"
               type="button"
             >
               <svg
@@ -2955,6 +2956,7 @@ exports[`List events should apply pagination styling 1`] = `
               aria-current="page"
               aria-label="Go to page 1"
               class="c16 c17"
+              id="1"
               type="button"
             >
               1
@@ -2969,6 +2971,7 @@ exports[`List events should apply pagination styling 1`] = `
             <button
               aria-label="Go to page 2"
               class="c18 c17"
+              id="2"
               type="button"
             >
               2
@@ -2983,6 +2986,7 @@ exports[`List events should apply pagination styling 1`] = `
             <button
               aria-label="Go to next page"
               class="c18 c17"
+              id="3"
               type="button"
             >
               <svg
@@ -3825,6 +3829,7 @@ exports[`List events should paginate 1`] = `
               aria-label="Go to previous page"
               class="c12 c13"
               disabled=""
+              id="0"
               type="button"
             >
               <svg
@@ -3852,6 +3857,7 @@ exports[`List events should paginate 1`] = `
               aria-current="page"
               aria-label="Go to page 1"
               class="c16 c17"
+              id="1"
               type="button"
             >
               1
@@ -3866,6 +3872,7 @@ exports[`List events should paginate 1`] = `
             <button
               aria-label="Go to page 2"
               class="c18 c17"
+              id="2"
               type="button"
             >
               2
@@ -3880,6 +3887,7 @@ exports[`List events should paginate 1`] = `
             <button
               aria-label="Go to next page"
               class="c18 c17"
+              id="3"
               type="button"
             >
               <svg
@@ -4542,6 +4550,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
               aria-label="Go to previous page"
               class="c12 c13"
               disabled=""
+              id="0"
               type="button"
             >
               <svg
@@ -4569,6 +4578,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
               aria-current="page"
               aria-label="Go to page 1"
               class="c16 c17"
+              id="1"
               type="button"
             >
               1
@@ -4583,6 +4593,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
             <button
               aria-label="Go to page 2"
               class="c18 c17"
+              id="2"
               type="button"
             >
               2
@@ -4597,6 +4608,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
             <button
               aria-label="Go to page 3"
               class="c18 c17"
+              id="3"
               type="button"
             >
               3
@@ -4611,6 +4623,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
             <button
               aria-label="Go to page 4"
               class="c18 c17"
+              id="4"
               type="button"
             >
               4
@@ -4625,6 +4638,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
             <button
               aria-label="Go to page 5"
               class="c18 c17"
+              id="5"
               type="button"
             >
               5
@@ -4639,6 +4653,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
             <button
               aria-label="Go to page 6"
               class="c18 c17"
+              id="6"
               type="button"
             >
               6
@@ -4653,6 +4668,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
             <button
               aria-label="Go to page 7"
               class="c18 c17"
+              id="7"
               type="button"
             >
               7
@@ -4667,6 +4683,7 @@ exports[`List events should render correct num items per page (step) 1`] = `
             <button
               aria-label="Go to next page"
               class="c18 c17"
+              id="8"
               type="button"
             >
               <svg
@@ -5509,6 +5526,7 @@ exports[`List events should render new data when page changes 1`] = `
               aria-label="Go to previous page"
               class="c12 c13"
               disabled=""
+              id="0"
               type="button"
             >
               <svg
@@ -5536,6 +5554,7 @@ exports[`List events should render new data when page changes 1`] = `
               aria-current="page"
               aria-label="Go to page 1"
               class="c16 c17"
+              id="1"
               type="button"
             >
               1
@@ -5550,6 +5569,7 @@ exports[`List events should render new data when page changes 1`] = `
             <button
               aria-label="Go to page 2"
               class="c18 c17"
+              id="2"
               type="button"
             >
               2
@@ -5564,6 +5584,7 @@ exports[`List events should render new data when page changes 1`] = `
             <button
               aria-label="Go to next page"
               class="c18 c17"
+              id="3"
               type="button"
             >
               <svg
@@ -5842,6 +5863,7 @@ exports[`List events should render new data when page changes 2`] = `
             <button
               aria-label="Go to previous page"
               class="StyledButtonKind-sc-1vhfpnt-0 eRddyj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cQMJwu"
+              id="0"
               type="button"
             >
               <svg
@@ -5868,6 +5890,7 @@ exports[`List events should render new data when page changes 2`] = `
             <button
               aria-label="Go to page 1"
               class="StyledButtonKind-sc-1vhfpnt-0 eRddyj StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cQMJwu"
+              id="1"
               type="button"
             >
               1
@@ -5883,6 +5906,7 @@ exports[`List events should render new data when page changes 2`] = `
               aria-current="page"
               aria-label="Go to page 2"
               class="StyledButtonKind-sc-1vhfpnt-0 hbyrhB StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 cQMJwu"
+              id="2"
               type="button"
             >
               2
@@ -5899,6 +5923,7 @@ exports[`List events should render new data when page changes 2`] = `
               aria-label="Go to next page"
               class="StyledButtonKind-sc-1vhfpnt-0 fVgacz StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 kcEAcc"
               disabled=""
+              id="3"
               type="button"
             >
               <svg
@@ -6741,6 +6766,7 @@ exports[`List events should show correct item index when "show" is a number 1`] 
               aria-label="Go to previous page"
               class="c12 c13"
               disabled=""
+              id="0"
               type="button"
             >
               <svg
@@ -6768,6 +6794,7 @@ exports[`List events should show correct item index when "show" is a number 1`] 
               aria-current="page"
               aria-label="Go to page 1"
               class="c16 c17"
+              id="1"
               type="button"
             >
               1
@@ -6782,6 +6809,7 @@ exports[`List events should show correct item index when "show" is a number 1`] 
             <button
               aria-label="Go to page 2"
               class="c18 c17"
+              id="2"
               type="button"
             >
               2
@@ -6796,6 +6824,7 @@ exports[`List events should show correct item index when "show" is a number 1`] 
             <button
               aria-label="Go to next page"
               class="c18 c17"
+              id="3"
               type="button"
             >
               <svg
@@ -7586,6 +7615,7 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
             <button
               aria-label="Go to previous page"
               class="c11 c12"
+              id="0"
               type="button"
             >
               <svg
@@ -7612,6 +7642,7 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
             <button
               aria-label="Go to page 1"
               class="c11 c12"
+              id="1"
               type="button"
             >
               1
@@ -7627,6 +7658,7 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
               aria-current="page"
               aria-label="Go to page 2"
               class="c15 c12"
+              id="2"
               type="button"
             >
               2
@@ -7643,6 +7675,7 @@ exports[`List events should show correct page when "show" is { page: # } 1`] = `
               aria-label="Go to next page"
               class="c16 c17"
               disabled=""
+              id="3"
               type="button"
             >
               <svg
