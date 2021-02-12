@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { base } from 'grommet/themes';
-import { deepMerge } from 'grommet/utils';
+/*import { base } from 'grommet/themes';
+import { deepMerge } from 'grommet/utils';*/
 
-import { Box, extendDefaultTheme } from 'grommet';
+import { Box } from 'grommet';
 
-extendDefaultTheme(
+/*extendDefaultTheme(
   deepMerge(base, {
     global: {
       colors: {
@@ -13,7 +13,7 @@ extendDefaultTheme(
       },
     },
   }),
-);
+);*/
 
 export const CustomDefaultProps = () => (
   <Box background="brand" pad="small">
@@ -23,6 +23,6 @@ export const CustomDefaultProps = () => (
 
 CustomDefaultProps.storyName = 'Extend default';
 
-export default {
+/*export default {
   title: 'Others/Theme/Extend default',
-};
+};*/
