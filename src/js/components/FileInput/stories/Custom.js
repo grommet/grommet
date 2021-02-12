@@ -20,7 +20,7 @@ const customTheme = {
     },
     hover: {
       border: { color: 'control' },
-      extend: { letterSpacing: '0.1em' },
+      extend: `letterSpacing: '0.1em'`,
     },
   },
 };
