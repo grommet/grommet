@@ -129,7 +129,7 @@ const Form = forwardRef(
           infos: { ...prevValidationResults.infos, ...nextInfos },
         };
       });
-    }, [touched, value]);
+    }, [touched, validateOn, value]);
 
     // There are three basic patterns of handling form input value state:
     //
@@ -281,8 +281,9 @@ const Form = forwardRef(
         onBlur:
           validateOn === 'blur' ? () => setPendingValidation(name) : undefined,
         onChange:
-          validateOn === 'change' 
-            ? () => setPendingValidation(name) : undefined,
+          validateOn === 'change'
+            ? () => setPendingValidation(name)
+            : undefined,
       };
     };
 

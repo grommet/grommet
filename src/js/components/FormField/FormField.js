@@ -394,15 +394,25 @@ const FormField = forwardRef(
           if (contextOnBlur) contextOnBlur(event);
           if (onBlur) onBlur(event);
         }}
-        onChange={event => {
-          const debouncedFn =  debounce(() => {
-            if (contextOnChange) contextOnChange(event);
-            if (onChange) onChange(event);
-            // 2 seconds might be too long depending on how fast people type, and 200ms would be an eye blink, https://www.nngroup.com/articles/powers-of-10-time-scales-in-ux/
-          }, 500);
-          
-          debouncedFn();
-        }}
+        onChange={
+          contextOnChange || onChange
+            ? event => {
+                event.persist();
+                if (onChange) onChange(event);
+                if (contextOnChange) {
+                  const debouncedFn = debounce(() => {
+                    contextOnChange(event);
+                    // A half second (500ms) debounce can be a helpful starting
+                    // point. You want to give the user time to fill out a
+                    // field, but capture their attention before they move on
+                    // past it. 2 second (2000ms) might be too long depending
+                    // on how fast people type, and 200ms would be an eye blink
+                  }, 500);
+                  debouncedFn();
+                }
+              }
+            : undefined
+        }
         {...containerRest}
       >
         {(label && component !== CheckBox) || help ? (

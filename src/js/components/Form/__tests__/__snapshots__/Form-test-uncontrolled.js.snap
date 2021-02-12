@@ -3830,7 +3830,6 @@ exports[`Form uncontrolled with field 1`] = `
     <div
       className="c1 "
       onBlur={[Function]}
-      onChange={[Function]}
       onFocus={[Function]}
     >
       <div
