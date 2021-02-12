@@ -40,3 +40,7 @@ export const ValueLabel = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Input/Select/ValueLabel',
+};

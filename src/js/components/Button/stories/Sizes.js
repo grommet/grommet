@@ -34,3 +34,7 @@ export const Sizes = () => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Controls/Button/Sizes',
+};

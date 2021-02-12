@@ -12,11 +12,6 @@ pinnedColumns[0].pin = true;
 
 const myTheme = deepMerge(grommet, {
   table: {
-    header: {
-      background: {
-        color: 'background',
-      },
-    },
     footer: {
       background: {
         color: 'background-back',
@@ -27,7 +22,6 @@ const myTheme = deepMerge(grommet, {
     pinned: {
       header: {
         background: {
-          color: 'brand',
           opacity: 'medium',
         },
         extend: `backdrop-filter: blur(8px);`,
@@ -49,13 +43,15 @@ export const Fill = () => (
         fill
         pin
         background={{
-          pinned: { color: 'orange' },
+          pinned: { color: 'background-contrast' },
         }}
       />
     </Box>
   </Grommet>
 );
 
-Fill.story = {
-  name: 'Fill and pin',
+Fill.storyName = 'Fill and pin';
+
+export default {
+  title: 'Visualizations/DataTable/Fill and pin',
 };

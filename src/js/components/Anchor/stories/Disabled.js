@@ -14,3 +14,7 @@ const DisabledAnchor = () => (
 );
 
 export const Disabled = () => <DisabledAnchor />;
+
+export default {
+  title: 'Controls/Anchor/Disabled',
+};

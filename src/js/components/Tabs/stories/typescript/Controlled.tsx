@@ -35,3 +35,7 @@ const ControlledTabs = () => {
 };
 
 export const Controlled = () => <ControlledTabs />;
+
+export default {
+  title: 'Controls/Tabs/Controlled',
+};

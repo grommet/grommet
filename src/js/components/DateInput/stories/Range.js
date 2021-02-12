@@ -35,8 +35,10 @@ export const Range = () => {
   );
 };
 
-Range.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
+Range.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Input/DateInput/Range',
 };

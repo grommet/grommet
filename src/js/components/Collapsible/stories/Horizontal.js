@@ -50,8 +50,10 @@ export const Horizontal = () => {
   );
 };
 
-Horizontal.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
+Horizontal.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Utilities/Collapsible/Horizontal',
 };

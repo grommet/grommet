@@ -53,3 +53,7 @@ export const Custom = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Input/RangeInput/Custom',
+};

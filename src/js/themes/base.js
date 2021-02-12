@@ -684,20 +684,20 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // body: {
       //   extend: undefined,
       // },
-      // pinned: {
-      //   body: {
-      //      background: undefined,
-      //      extend: undefined,
-      //   },
-      //   header: {
-      //      background: undefined,
-      //      extend: undefined,
-      //   },
-      //   footer: {
-      //      background: undefined,
-      //      extend: undefined,
-      //   },
-      // },
+      pinned: {
+        // body: {
+        //    background: undefined,
+        //    extend: undefined,
+        // },
+        header: {
+          background: { opacity: 'strong' },
+          //  extend: undefined,
+        },
+        footer: {
+          background: { opacity: 'strong' },
+          //  extend: undefined,
+        },
+      },
       groupHeader: {
         background: {
           dark: 'dark-2',
@@ -820,6 +820,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       label: {
         margin: { vertical: 'xsmall', horizontal: 'small' },
+        // requiredIndicator: undefined,
       },
       margin: { bottom: 'small' },
       // round: undefined,

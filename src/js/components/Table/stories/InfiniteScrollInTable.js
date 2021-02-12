@@ -83,9 +83,12 @@ export const InfiniteScrollInTable = () => {
   );
 };
 
-InfiniteScrollInTable.story = {
-  name: 'InfiniteScroll',
-  parameters: {
-    chromatic: { disable: true },
-  },
+InfiniteScrollInTable.storyName = 'InfiniteScroll';
+
+InfiniteScrollInTable.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Visualizations/Table/InfiniteScroll',
 };

@@ -43,3 +43,7 @@ export const Sitemap = () => (
     </Footer>
   </Grommet>
 );
+
+export default {
+  title: 'Layout/Footer/Sitemap',
+};

@@ -63,3 +63,9 @@ export const MultipleTypes = () => (
     </Box>
   </Grommet>
 );
+
+MultipleTypes.storyName = 'Multiple types';
+
+export default {
+  title: 'Visualizations/DataChart/Multiple types',
+};

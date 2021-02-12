@@ -31,3 +31,7 @@ export const Circle = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Visualizations/Meter/Circle',
+};

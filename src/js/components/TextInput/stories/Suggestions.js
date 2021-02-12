@@ -41,8 +41,10 @@ export const Suggestions = () => {
   );
 };
 
-Suggestions.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
+Suggestions.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Input/TextInput/Suggestions',
 };

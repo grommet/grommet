@@ -25,3 +25,7 @@ export const Controlled = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Input/Select/Controlled',
+};

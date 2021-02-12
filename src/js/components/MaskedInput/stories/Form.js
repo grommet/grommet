@@ -33,6 +33,8 @@ export const MaskedInputForm = () => {
   );
 };
 
-MaskedInputForm.story = {
-  name: 'Form',
+MaskedInputForm.storyName = 'Form';
+
+export default {
+  title: 'Input/MaskedInput/Form',
 };

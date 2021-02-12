@@ -104,8 +104,10 @@ export const Nested = () => {
   );
 };
 
-Nested.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
+Nested.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Utilities/Collapsible/Nested',
 };

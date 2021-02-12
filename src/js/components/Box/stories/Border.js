@@ -82,4 +82,8 @@ export const BorderBox = () => (
   </Grommet>
 );
 
-BorderBox.story = { name: 'Border' };
+BorderBox.storyName = 'Border';
+
+export default {
+  title: 'Layout/Box/Border',
+};

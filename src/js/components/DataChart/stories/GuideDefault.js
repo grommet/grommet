@@ -19,3 +19,9 @@ export const GuideDefault = () => (
     </Box>
   </Grommet>
 );
+
+GuideDefault.storyName = 'Guide default';
+
+export default {
+  title: 'Visualizations/DataChart/Guide default',
+};

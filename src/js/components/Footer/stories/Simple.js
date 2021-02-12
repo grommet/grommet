@@ -17,3 +17,7 @@ export const Simple = () => (
     </Footer>
   </Grommet>
 );
+
+export default {
+  title: 'Layout/Footer/Simple',
+};

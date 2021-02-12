@@ -28,3 +28,7 @@ export const Children = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Controls/Button/Children',
+};

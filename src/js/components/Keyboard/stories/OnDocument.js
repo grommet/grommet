@@ -14,8 +14,10 @@ export const OnDocument = () => (
   </Grommet>
 );
 
-OnDocument.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
+OnDocument.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Utilities/Keyboard/On Document',
 };

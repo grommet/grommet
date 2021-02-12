@@ -27,3 +27,7 @@ export const Basic = props => (
     </Box>
   </Grommet>
 );
+
+export default {
+  title: 'Controls/Button/Basic',
+};

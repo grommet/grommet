@@ -35,8 +35,10 @@ const PlainDrop = () => {
 };
 
 export const Plain = () => <PlainDrop />;
-Plain.story = {
-  parameters: {
-    chromatic: { disable: true },
-  },
+Plain.parameters = {
+  chromatic: { disable: true },
+};
+
+export default {
+  title: 'Controls/Drop/Plain',
 };

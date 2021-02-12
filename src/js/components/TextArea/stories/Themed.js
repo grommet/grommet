@@ -30,3 +30,7 @@ export const Themed = () => {
     </Grommet>
   );
 };
+
+export default {
+  title: 'Input/TextArea/Themed',
+};

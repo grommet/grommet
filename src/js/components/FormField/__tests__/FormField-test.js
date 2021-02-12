@@ -7,7 +7,7 @@ import 'regenerator-runtime/runtime';
 
 import { axe } from 'jest-axe';
 import { cleanup, render } from '@testing-library/react';
-import { Alert, StatusInfo } from 'grommet-icons';
+import { Alert, New, StatusInfo } from 'grommet-icons';
 import { Grommet } from '../../Grommet';
 import { Form } from '../../Form';
 import { FormField } from '..';
@@ -361,5 +361,46 @@ describe('FormField', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+  });
+
+  test('should render asterisk when requiredIndicator === true', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          formField: {
+            label: {
+              requiredIndicator: true,
+            },
+          },
+        }}
+      >
+        <Form>
+          <FormField label="label" required />
+        </Form>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(`should render custom indicator when requiredIndicator is 
+  element`, () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          formField: {
+            label: {
+              requiredIndicator: <New size="small" />,
+            },
+          },
+        }}
+      >
+        <Form>
+          <FormField label="label" required />
+        </Form>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 });
