@@ -30,7 +30,7 @@ export const Custom = () => (
     <Box fill align="center" justify="start" pad="large">
       <Box width="medium">
         <FileInput
-          fileLabel={file => (
+          renderFile={file => (
             <Box direction="row" gap="small">
               <Text weight="bold">{file.name}</Text>
               <Text color="text-weak">{file.size} bytes</Text>
