@@ -1329,6 +1329,7 @@ exports[`Drop plain renders 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;

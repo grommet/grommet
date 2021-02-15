@@ -285,6 +285,7 @@ exports[`Tip mouseOver and mouseOut events on the Tip's child 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
@@ -382,6 +383,7 @@ exports[`Tip plain 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;

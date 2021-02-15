@@ -1,7 +1,10 @@
 import styled, { keyframes } from 'styled-components';
 
 import { baseStyle } from '../../utils';
-import { backgroundStyle } from '../../utils/background';
+import {
+  backgroundStyle,
+  backgroundAndTextColors,
+} from '../../utils/background';
 import { defaultProps } from '../../default-props';
 
 function getTransformOriginStyle(align) {
@@ -36,8 +39,18 @@ const StyledDrop = styled.div`
   outline: none;
 
   ${props =>
-    !props.plain &&
-    backgroundStyle(props.theme.global.drop.background, props.theme)}
+    !props.plain
+      ? backgroundStyle(props.theme.global.drop.background, props.theme)
+      : () => {
+          const [, textColor] = backgroundAndTextColors(
+            props.theme.global.drop.background,
+            undefined,
+            props.theme,
+          );
+          return `${textColor ? `color: ${textColor};` : ''}`;
+        }}
+
+
 
   opacity: 0;
   transform-origin: ${props => getTransformOriginStyle(props.alignProp)};
