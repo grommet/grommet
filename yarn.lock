@@ -8652,9 +8652,9 @@ mkdirp-classic@^0.5.2:
   dependencies:
     minimist "^1.2.5"
 
-"mnet-ui-base-theme-cdp@https://github.com/mnet-ui/mnet-ui-base-theme-cdp":
+"mnet-ui-base-theme-cdp@https://github.com/mnet-ui/mnet-ui-base-theme-cdp.git":
   version "0.0.1"
-  resolved "https://github.com/mnet-ui/mnet-ui-base-theme-cdp#503a42cb1e776e2eb4c96900c31058facbf2cdf9"
+  resolved "https://github.com/mnet-ui/mnet-ui-base-theme-cdp.git#c62356e647e9034adada7dd401b8db9e6c492e9a"
   dependencies:
     google-fonts "^1.0.0"
 
