@@ -148,12 +148,12 @@ const InfiniteScroll = ({
   }, [items.length, lastPage, onMore, pendingLength, renderPageBounds, step]);
 
   useEffect(() => {
-    if (items.length === 0 && lastPage === 0 && pendingLength !== 0) {
+    if (lastPage === 0 && pendingLength !== 0) {
       setPageHeights([]);
       setPendingLength(0);
-      setRenderPageBounds([0, 0]);
+      setRenderPageBounds([0, show ? Math.floor((show + step) / step) - 1 : 0]);
     }
-  }, [items.length, lastPage, pendingLength]);
+  }, [lastPage, pendingLength, show, step]);
 
   // scroll to any 'show'
   useLayoutEffect(() => {
