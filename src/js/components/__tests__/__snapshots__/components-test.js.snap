@@ -5664,10 +5664,10 @@ It will be passed a props object. The props passed are
 different depending on the menu \`open\` state. When the menu is closed,
 two props are passed:
 \`{ hover, focus }\`,
-but when the menu is open, all menu props are passed to this function.\\\\
+but when the menu is open, all menu props are passed to this function.
 It should return a React element.
 For example:
-\`children={(props) => <Box ...>{...}</Box>}\`\\\\
+\`children={(props) => <Box ...>{...}</Box>}\`
 **Note:** This function will be invoked on every mouse move when hovering.
 - Node is anything that can be rendered, e.g.
 \`<Box><CaretNext /><Text>Open Me</Text></Box>\`
