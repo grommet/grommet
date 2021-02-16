@@ -1,11 +1,10 @@
 import React from 'react';
 
-import { Box, Grommet, Pagination, Text } from 'grommet';
+import { Box, Grommet, Pagination, Text, ThemeContext } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
 import { FormPreviousLink } from 'grommet-icons/icons/FormPreviousLink';
 import { FormNextLink } from 'grommet-icons/icons/FormNextLink';
-import { ThemeContext } from 'styled-components';
 
 const customTheme = deepMerge(grommet, {
   pagination: {
