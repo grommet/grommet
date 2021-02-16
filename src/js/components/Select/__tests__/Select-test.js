@@ -470,6 +470,45 @@ describe('Select', () => {
     expect(window.scrollTo).toBeCalled();
   });
 
+  test('select an object with label key specific with keypress', () => {
+    const onChange = jest.fn();
+    const options = [
+      { id: 1, name: 'one' },
+      { id: 2, name: 'two' },
+      { id: 3, name: 'three' },
+    ];
+    const { getByPlaceholderText, container } = render(
+      <Select
+        id="test-select"
+        placeholder="test select"
+        options={options}
+        labelKey="name"
+        valueKey="id"
+        onChange={onChange}
+      />,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.click(getByPlaceholderText('test select'));
+    // verify that keyboard navigation is working
+    fireEvent.keyDown(document.getElementById('test-select__select-drop'), {
+      key: 't',
+      keyCode: 84,
+      which: 84,
+    });
+    fireEvent.keyDown(document.getElementById('test-select__select-drop'), {
+      key: 'Enter',
+      keyCode: 13,
+      which: 13,
+    });
+    expect(onChange).toBeCalledWith(
+      expect.objectContaining({
+        value: { id: 2, name: 'two' }
+      })
+    );
+    expect(window.scrollTo).toBeCalled();
+  });
+
   test('select on multiple keydown always picks first enabled option', () => {
     const onChange = jest.fn();
     const { getByPlaceholderText, container } = render(
