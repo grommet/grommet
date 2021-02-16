@@ -503,8 +503,8 @@ describe('Select', () => {
     });
     expect(onChange).toBeCalledWith(
       expect.objectContaining({
-        value: { id: 2, name: 'two' }
-      })
+        value: { id: 2, name: 'two' },
+      }),
     );
     expect(window.scrollTo).toBeCalled();
   });
