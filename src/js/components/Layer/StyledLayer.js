@@ -766,7 +766,7 @@ const responsiveContainerStyle = css`
 const elevationStyle = css`
   box-shadow: ${props =>
     props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][
-      props.theme.layer.container.elevation
+      props.elevationProp
     ]};
 `;
 
@@ -784,7 +784,7 @@ const StyledContainer = styled.div`
     )} outline: none;
   pointer-events: all;
   z-index: ${props => props.theme.layer.container.zIndex};
-  ${props => props.theme.layer.container.elevation && elevationStyle}
+  ${props => props.elevationProp && elevationStyle}
   ${desktopContainerStyle}
   ${props => {
     if (props.responsive && props.theme.layer.responsiveBreakpoint) {

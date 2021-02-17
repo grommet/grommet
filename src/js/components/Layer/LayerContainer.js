@@ -30,6 +30,7 @@ const defaultPortalContext = [];
 const LayerContainer = forwardRef(
   (
     {
+      elevation,
       background,
       children,
       full = false,
@@ -169,7 +170,8 @@ const LayerContainer = forwardRef(
       <StyledContainer
         ref={ref || containerRef}
         background={background}
-        elevation={theme.layer.container.elevation}
+        // elevation munged to avoid styled-components putting it in the DOM
+        elevationProp={elevation}
         id={id}
         full={full}
         margin={margin}
