@@ -3616,7 +3616,8 @@ string",
         "defaultValue": "submit",
         "description": "When to perform validation",
         "format": "blur
-submit",
+submit
+change",
         "name": "validate",
       },
       Object {
