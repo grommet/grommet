@@ -56,7 +56,8 @@ const DataChart = forwardRef(
           typeof s === 'string' ? { property: s } : s,
         );
       if (typeof seriesProp === 'string') return [{ property: seriesProp }];
-      return [seriesProp];
+      if (seriesProp) return [seriesProp];
+      return [];
     }, [seriesProp]);
 
     const getPropertySeries = prop =>
@@ -70,7 +71,9 @@ const DataChart = forwardRef(
     const charts = useMemo(() => {
       if (!chart) {
         if (series.length === 1)
-          return series.map(s => ({ property: s.property }));
+          return series
+            .filter(s => s.property)
+            .map(s => ({ property: s.property }));
         // if we have more than one property, we'll use the first for
         // the x-axis and we'll plot the rest
         return series.slice(1).map(s => ({ property: s.property }));
@@ -79,7 +82,9 @@ const DataChart = forwardRef(
         return chart
           .map(c => (typeof c === 'string' ? { property: c } : c))
           .filter(({ property }) => property);
-      return typeof chart === 'string' ? [{ property: chart }] : [chart];
+      if (typeof chart === 'string') return [{ property: chart }];
+      if (chart) return [chart];
+      return [];
     }, [chart, series]);
 
     // map the series property values into their own arrays
@@ -267,7 +272,7 @@ const DataChart = forwardRef(
         });
       });
 
-      if (boundsProp === 'align') {
+      if (boundsProp === 'align' && chartBounds.length) {
         const alignedBounds = [...chartBounds[0]];
         chartBounds.forEach(bounds => {
           alignedBounds[0][0] = Math.min(alignedBounds[0][0], bounds[0][0]);
@@ -426,7 +431,7 @@ const DataChart = forwardRef(
     // TODO: revisit how x/y axis are hooked up to charts and series
 
     const xAxisElement =
-      axis && axis.x ? (
+      axis && axis.x && chartProps.length ? (
         <XAxis
           ref={xRef}
           axis={axis}
@@ -438,7 +443,7 @@ const DataChart = forwardRef(
       ) : null;
 
     const yAxisElement =
-      axis && axis.y ? (
+      axis && axis.y && chartProps.length ? (
         <YAxis
           axis={axis}
           chartProps={chartProps}
