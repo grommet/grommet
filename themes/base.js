@@ -11,6 +11,8 @@ var _ClosedCaption = require("grommet-icons/icons/ClosedCaption");
 
 var _Expand = require("grommet-icons/icons/Expand");
 
+var _FormClose = require("grommet-icons/icons/FormClose");
+
 var _FormDown = require("grommet-icons/icons/FormDown");
 
 var _FormNext = require("grommet-icons/icons/FormNext");
@@ -857,6 +859,40 @@ var generate = function generate(baseSpacing, scale) {
     //   extend: undefined,
     //   maxHeight: undefined,
     // },
+    fileInput: {
+      // background: {},
+      border: {
+        // color: undefined,
+        side: 'all',
+        size: 'small',
+        style: 'dashed'
+      },
+      dragOver: {
+        border: {
+          color: 'control'
+        } // extend: undefined,
+
+      },
+      hover: {
+        border: {
+          color: 'brand'
+        } // extend: undefined,
+
+      },
+      icons: {
+        remove: _FormClose.FormClose
+      },
+      // pad: {},
+      label: {
+        margin: 'small' // extend: undefined,
+
+      },
+      message: {
+        margin: 'small' // extend: undefined,
+
+      } // extend: undefined,
+
+    },
     formField: {
       border: {
         color: 'border',

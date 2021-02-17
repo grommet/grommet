@@ -85,6 +85,11 @@ var Uncontrolled = function Uncontrolled() {
     name: "age",
     min: 15,
     max: 75
+  })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+    label: "Image",
+    name: "image"
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.FileInput, {
+    name: "image"
   })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     direction: "row",
     justify: "between",

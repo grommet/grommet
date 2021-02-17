@@ -17,9 +17,12 @@ var FieldWithComponentProp = function FieldWithComponentProp() {
     theme: _themes.grommet
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true,
+    overflow: "auto",
     align: "center",
-    justify: "center"
+    justify: "center",
+    pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+    flex: false,
     width: "medium"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Form, {
     onReset: function onReset(event) {
@@ -86,6 +89,10 @@ var FieldWithComponentProp = function FieldWithComponentProp() {
     pad: true,
     min: 15,
     max: 75
+  }), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+    label: "File",
+    name: "file",
+    component: _grommet.FileInput
   }), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     label: "Custom",
     name: "custom",

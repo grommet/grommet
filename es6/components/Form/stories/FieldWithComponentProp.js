@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Button, CheckBox, Form, FormField, Grommet, RadioButtonGroup, RangeInput, Select, TextArea } from 'grommet';
+import { Box, Button, CheckBox, FileInput, Form, FormField, Grommet, RadioButtonGroup, RangeInput, Select, TextArea } from 'grommet';
 import { grommet } from 'grommet/themes';
 export var FieldWithComponentProp = function FieldWithComponentProp() {
   return /*#__PURE__*/React.createElement(Grommet, {
@@ -7,9 +7,12 @@ export var FieldWithComponentProp = function FieldWithComponentProp() {
     theme: grommet
   }, /*#__PURE__*/React.createElement(Box, {
     fill: true,
+    overflow: "auto",
     align: "center",
-    justify: "center"
+    justify: "center",
+    pad: "large"
   }, /*#__PURE__*/React.createElement(Box, {
+    flex: false,
     width: "medium"
   }, /*#__PURE__*/React.createElement(Form, {
     onReset: function onReset(event) {
@@ -76,6 +79,10 @@ export var FieldWithComponentProp = function FieldWithComponentProp() {
     pad: true,
     min: 15,
     max: 75
+  }), /*#__PURE__*/React.createElement(FormField, {
+    label: "File",
+    name: "file",
+    component: FileInput
   }), /*#__PURE__*/React.createElement(FormField, {
     label: "Custom",
     name: "custom",

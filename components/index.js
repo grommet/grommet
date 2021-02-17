@@ -194,6 +194,14 @@ Object.keys(_DropButton).forEach(function (key) {
   exports[key] = _DropButton[key];
 });
 
+var _FileInput = require("./FileInput");
+
+Object.keys(_FileInput).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _FileInput[key]) return;
+  exports[key] = _FileInput[key];
+});
+
 var _Footer = require("./Footer");
 
 Object.keys(_Footer).forEach(function (key) {

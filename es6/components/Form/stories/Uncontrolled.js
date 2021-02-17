@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Button, CheckBox, Form, FormField, Grommet, MaskedInput, RadioButtonGroup, RangeInput, Select, TextArea, TextInput } from 'grommet';
+import { Box, Button, CheckBox, Form, FormField, FileInput, Grommet, MaskedInput, RadioButtonGroup, RangeInput, Select, TextArea, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 var suggestions = ['Shimi', 'Eric'];
 export var Uncontrolled = function Uncontrolled() {
@@ -74,6 +74,11 @@ export var Uncontrolled = function Uncontrolled() {
     name: "age",
     min: 15,
     max: 75
+  })), /*#__PURE__*/React.createElement(FormField, {
+    label: "Image",
+    name: "image"
+  }, /*#__PURE__*/React.createElement(FileInput, {
+    name: "image"
   })), /*#__PURE__*/React.createElement(Box, {
     direction: "row",
     justify: "between",
