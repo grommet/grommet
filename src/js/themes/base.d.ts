@@ -695,6 +695,31 @@ export interface ThemeType {
     extend?: ExtendType;
     maxHeight?: string;
   };
+  fileInput?: {
+    background?: BackgroundType;
+    border?: BorderType;
+    dragOver?: {
+      background?: BackgroundType;
+      border?: BorderType;
+      extend?: ExtendType;
+      pad?: PadType;
+    };
+    extend?: ExtendType;
+    hover?: {
+      background?: BackgroundType;
+      border?: BorderType;
+      extend?: ExtendType;
+      pad?: PadType;
+    };
+    icons?: {
+      remove?: any;
+    };
+    label?: TextProps & { extend?: ExtendType };
+    margin?: MarginType;
+    message?: TextProps & { extend?: ExtendType };
+    pad?: PadType;
+    round?: RoundType;
+  };
   formField?: {
     border?: BorderType;
     content?: {
