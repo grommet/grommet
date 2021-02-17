@@ -134,6 +134,23 @@ var Input = function Input(_ref2) {
   }, rest, extraProps));
 };
 
+var debounce = function debounce(func, wait) {
+  var timeout;
+  return function executedFunction() {
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    var later = function later() {
+      timeout = null;
+      func.apply(void 0, args);
+    };
+
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+};
+
 var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
   var children = _ref3.children,
       className = _ref3.className,
@@ -148,12 +165,13 @@ var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
       margin = _ref3.margin,
       name = _ref3.name,
       _onBlur = _ref3.onBlur,
+      onChange = _ref3.onChange,
       _onFocus = _ref3.onFocus,
       pad = _ref3.pad,
       required = _ref3.required,
       style = _ref3.style,
       validate = _ref3.validate,
-      rest = _objectWithoutPropertiesLoose(_ref3, ["children", "className", "component", "contentProps", "disabled", "error", "help", "htmlFor", "info", "label", "margin", "name", "onBlur", "onFocus", "pad", "required", "style", "validate"]);
+      rest = _objectWithoutPropertiesLoose(_ref3, ["children", "className", "component", "contentProps", "disabled", "error", "help", "htmlFor", "info", "label", "margin", "name", "onBlur", "onChange", "onFocus", "pad", "required", "style", "validate"]);
 
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || _defaultProps.defaultProps.theme;
 
@@ -169,7 +187,8 @@ var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
       error = _formContext$useFormF.error,
       info = _formContext$useFormF.info,
       inForm = _formContext$useFormF.inForm,
-      contextOnBlur = _formContext$useFormF.onBlur;
+      contextOnBlur = _formContext$useFormF.onBlur,
+      contextOnChange = _formContext$useFormF.onChange;
 
   var _useState = (0, _react.useState)(),
       focus = _useState[0],
@@ -326,7 +345,22 @@ var FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
       setFocus(false);
       if (contextOnBlur) contextOnBlur(event);
       if (_onBlur) _onBlur(event);
-    }
+    },
+    onChange: contextOnChange || onChange ? function (event) {
+      event.persist();
+      if (onChange) onChange(event);
+
+      if (contextOnChange) {
+        var debouncedFn = debounce(function () {
+          contextOnChange(event); // A half second (500ms) debounce can be a helpful starting
+          // point. You want to give the user time to fill out a
+          // field, but capture their attention before they move on
+          // past it. 2 second (2000ms) might be too long depending
+          // on how fast people type, and 200ms would be an eye blink
+        }, 500);
+        debouncedFn();
+      }
+    } : undefined
   }, containerRest), label && component !== _CheckBox.CheckBox || help ? /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, label && component !== _CheckBox.CheckBox && /*#__PURE__*/_react["default"].createElement(_Text.Text, _extends({
     as: "label",
     htmlFor: htmlFor

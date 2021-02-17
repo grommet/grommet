@@ -143,7 +143,7 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
   }, [pendingValidation, onValidate, touched, value]); // clear any errors when value changes
 
   (0, _react.useEffect)(function () {
-    setPendingValidation(undefined);
+    if (validateOn !== 'change') setPendingValidation(undefined);
     setValidationResults(function (prevValidationResults) {
       var _validate2 = validate(Object.entries(validations.current).filter(function (_ref4) {
         var n = _ref4[0];
@@ -157,7 +157,7 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
         infos: _extends({}, prevValidationResults.infos, nextInfos)
       };
     });
-  }, [touched, value]); // There are three basic patterns of handling form input value state:
+  }, [touched, validateOn, value]); // There are three basic patterns of handling form input value state:
   //
   // 1 - form controlled
   //
@@ -305,6 +305,9 @@ var Form = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) {
       info: info,
       inForm: true,
       onBlur: validateOn === 'blur' ? function () {
+        return setPendingValidation(name);
+      } : undefined,
+      onChange: validateOn === 'change' ? function () {
         return setPendingValidation(name);
       } : undefined
     };
