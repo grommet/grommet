@@ -47,7 +47,7 @@ var Tip = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, tipRef) {
 
   var child = _react.Children.count(children) === 1 ? wrapInvalidElement() : _react.Children.only(children);
   var clonedChild = /*#__PURE__*/(0, _react.cloneElement)(child, {
-    onMouseOver: function onMouseOver() {
+    onMouseEnter: function onMouseEnter() {
       return setOver(true);
     },
     onMouseLeave: function onMouseLeave() {

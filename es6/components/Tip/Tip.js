@@ -33,7 +33,7 @@ var Tip = /*#__PURE__*/forwardRef(function (_ref, tipRef) {
 
   var child = Children.count(children) === 1 ? wrapInvalidElement() : Children.only(children);
   var clonedChild = /*#__PURE__*/cloneElement(child, {
-    onMouseOver: function onMouseOver() {
+    onMouseEnter: function onMouseEnter() {
       return setOver(true);
     },
     onMouseLeave: function onMouseLeave() {
