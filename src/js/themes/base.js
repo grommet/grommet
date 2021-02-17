@@ -908,7 +908,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // intelligentRounding: undefined,
       },
       container: {
-        // elevation: undefined,
         zIndex: '20',
       },
       // extend: undefined,

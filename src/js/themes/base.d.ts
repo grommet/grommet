@@ -904,7 +904,6 @@ export interface ThemeType {
       intelligentRounding?: boolean;
     };
     container?: {
-      elevation?: ElevationType;
       zIndex?: string;
     };
     extend?: ExtendType;
