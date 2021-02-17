@@ -33,7 +33,7 @@ const Tip = forwardRef(({ children, content, dropProps, plain }, tipRef) => {
       : Children.only(children);
 
   const clonedChild = cloneElement(child, {
-    onMouseOver: () => setOver(true),
+    onMouseEnter: () => setOver(true),
     onMouseLeave: () => setOver(false),
     onFocus: () => setOver(true),
     onBlur: () => setOver(false),
