@@ -12,13 +12,17 @@ import { defaultProps } from '../../default-props';
 
 const radiusStyle = props => {
   const size = props.sizeProp;
-  if (size && props.theme.button.size && props.theme.button.size[size])
+  // caller has specified a themeObj to use for styling
+  // relevant for cases like pagination which looks to theme.pagination.button
+  const themeObj =
+    typeof props.kind === 'object' ? props.kind : props.theme.button;
+  if (size && themeObj.size && themeObj.size[size])
     return css`
-      border-radius: ${props.theme.button.size[size].border.radius};
+      border-radius: ${themeObj.size[size].border.radius};
     `;
-  if (props.theme.button.border && props.theme.button.border.radius)
+  if (themeObj.border && themeObj.border.radius)
     return css`
-      border-radius: ${props.theme.button.border.radius};
+      border-radius: ${themeObj.border.radius};
     `;
   return '';
 };
@@ -32,16 +36,11 @@ const fontStyle = props => {
   `;
 };
 
-const padFromTheme = (size, theme) => {
-  if (
-    size &&
-    theme.button.size &&
-    theme.button.size[size] &&
-    theme.button.size[size].pad
-  ) {
+const padFromTheme = (size, theme, themeObj) => {
+  if (size && themeObj.size && themeObj.size[size] && themeObj.size[size].pad) {
     return {
-      vertical: theme.button.size[size].pad.vertical,
-      horizontal: theme.button.size[size].pad.horizontal,
+      vertical: themeObj.size[size].pad.vertical,
+      horizontal: themeObj.size[size].pad.horizontal,
     };
   }
 
@@ -58,8 +57,11 @@ const padFromTheme = (size, theme) => {
   return undefined;
 };
 
-const padStyle = ({ sizeProp: size, theme }) => {
-  const pad = padFromTheme(size, theme);
+const padStyle = ({ sizeProp: size, theme, kind }) => {
+  // caller has specified a themeObj to use for styling
+  // relevant for cases like pagination which looks to theme.pagination.button
+  const themeObj = typeof kind === 'object' ? kind : theme.button;
+  const pad = padFromTheme(size, theme, themeObj);
   return pad
     ? css`
         padding: ${pad.vertical} ${pad.horizontal};
@@ -93,8 +95,8 @@ const getPath = (theme, path) => {
 const adjustPadStyle = (pad, width) => {
   const offset = parseMetricToNum(width);
   return css`
-    padding: ${parseMetricToNum(pad.vertical) - offset}px
-      ${parseMetricToNum(pad.horizontal) - offset}px;
+    padding: ${Math.max(parseMetricToNum(pad.vertical) - offset, 0)}px
+      ${Math.max(parseMetricToNum(pad.horizontal) - offset, 0)}px;
   `;
 };
 
@@ -104,13 +106,11 @@ const kindStyle = ({ colorValue, kind, sizeProp: size, themePaths, theme }) => {
 
   // caller has specified a themeObj to use for styling
   // relevant for cases like pagination which looks to theme.pagination.button
-  const themeObj = typeof kind === 'object' ? kind : undefined;
+  const themeObj = typeof kind === 'object' ? kind : theme.button;
 
-  const pad = padFromTheme(size, theme);
-
+  const pad = padFromTheme(size, theme, themeObj);
   themePaths.base.forEach(themePath => {
-    const obj = getPath(themeObj || theme.button, themePath);
-
+    const obj = getPath(themeObj, themePath);
     if (obj) {
       styles.push(kindPartStyles(obj, theme, colorValue));
       if (obj.border && obj.border.width && pad && !obj.padding) {
@@ -123,15 +123,21 @@ const kindStyle = ({ colorValue, kind, sizeProp: size, themePaths, theme }) => {
   });
 
   // do the styling from the root of the object if caller passes one
-  if (!themePaths.base.length && themeObj) {
-    const obj = themeObj;
+  if (!themePaths.base.length && typeof kind === 'object') {
+    const obj = kind;
     if (obj) {
       styles.push(kindPartStyles(obj, theme, colorValue));
+      if (obj.border && obj.border.width && pad && !obj.padding) {
+        // Adjust padding from the button.size or just top button.padding
+        // to deal with the kind's border width. But don't override any
+        // padding in the kind itself for backward compatibility
+        styles.push(adjustPadStyle(pad, obj.border.width));
+      }
     }
   }
 
   themePaths.hover.forEach(themePath => {
-    const obj = getPath(themeObj || theme.button, themePath);
+    const obj = getPath(themeObj, themePath);
 
     if (obj) {
       const partStyles = kindPartStyles(obj, theme);

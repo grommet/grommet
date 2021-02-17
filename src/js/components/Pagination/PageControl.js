@@ -7,20 +7,26 @@ import {
   StyledSeparator,
 } from './StyledPageControl';
 
-export const PageControl = ({ control, separator, size, ...rest }) => {
+export const PageControl = ({
+  control,
+  separator,
+  size: sizeProp,
+  ...rest
+}) => {
   const theme = useContext(ThemeContext);
+  const size = sizeProp || 'medium';
 
   return (
-    <StyledContainer as="li" controlSize={size}>
+    <StyledContainer as="li" size={size}>
       {separator ? (
-        <StyledSeparator controlSize={size}>&#8230;</StyledSeparator>
+        <StyledSeparator size={size}>&#8230;</StyledSeparator>
       ) : (
         <StyledPaginationButton
           a11yTitle={`Go to page ${control}`}
           fill
           kind={theme.pagination.button}
           label={control}
-          controlSize={size}
+          size={size}
           {...rest}
         />
       )}

@@ -1,15 +1,25 @@
 import React from 'react';
 
-import { Box, Grommet, Pagination, Text, ThemeContext } from 'grommet';
-import { grommet } from 'grommet/themes';
-import { deepMerge } from 'grommet/utils';
+import { Box, Grommet, Pagination, Text } from 'grommet';
+import { ThemeType } from 'grommet/themes';
 import { FormPreviousLink } from 'grommet-icons/icons/FormPreviousLink';
 import { FormNextLink } from 'grommet-icons/icons/FormNextLink';
 
-const customTheme = deepMerge(grommet, {
+// Type annotations can only be used in TypeScript files.
+// Remove ': ThemeType' if you are not using Typescript.
+const customTheme: ThemeType = {
+  global: {
+    font: {
+      family: 'Arial',
+    },
+  },
   pagination: {
     button: {
       color: 'text-strong',
+      border: {
+        color: 'skyblue',
+        width: '3px',
+      },
       active: {
         background: {
           color: 'salmon',
@@ -30,41 +40,7 @@ const customTheme = deepMerge(grommet, {
       previous: FormPreviousLink,
     },
   },
-});
-
-const secondaryTheme = deepMerge(grommet, {
-  button: {
-    default: {},
-    bright: {
-      color: 'text-strong',
-      border: {
-        color: 'skyblue',
-        width: '2px',
-      },
-    },
-    active: {
-      bright: {
-        background: {
-          color: '#CA9CEA',
-        },
-        border: {
-          color: 'transparent',
-        },
-        color: 'text',
-      },
-    },
-    hover: {
-      bright: {
-        background: {
-          color: 'skyblue',
-        },
-      },
-    },
-  },
-  pagination: {
-    button: 'bright',
-  },
-});
+};
 
 export const Custom = () => (
   <Grommet theme={customTheme}>
@@ -72,43 +48,21 @@ export const Custom = () => (
       <Box
         align="start"
         pad={{ top: 'medium', bottom: 'medium', horizontal: 'medium' }}
-        gap="large"
       >
-        <>
-          <Text margin={{ bottom: 'small' }}>
-            Custom Theme via theme.pagination.button
-          </Text>
-          <Pagination numberItems={237} />
-        </>
-        <>
-          <Text margin={{ bottom: 'small' }}>
-            Reference Button Kind by string
-          </Text>
-          <ThemeContext.Extend value={secondaryTheme}>
-            <Pagination numberItems={237} />
-          </ThemeContext.Extend>
-        </>
+        <Text margin={{ bottom: 'small' }}>
+          Custom Theme via theme.pagination.button
+        </Text>
+        <Pagination numberItems={237} />
       </Box>
       <Box
         align="start"
         background="black"
         pad={{ top: 'medium', bottom: 'medium', horizontal: 'medium' }}
-        gap="large"
       >
-        <>
-          <Text margin={{ bottom: 'small' }}>
-            Custom Theme via theme.pagination.button
-          </Text>
-          <Pagination numberItems={237} />
-        </>
-        <>
-          <Text margin={{ bottom: 'small' }}>
-            Reference Button Kind by string
-          </Text>
-          <ThemeContext.Extend value={secondaryTheme}>
-            <Pagination numberItems={237} />
-          </ThemeContext.Extend>
-        </>
+        <Text margin={{ bottom: 'small' }}>
+          Custom Theme via theme.pagination.button
+        </Text>
+        <Pagination numberItems={237} />
       </Box>
     </Box>
   </Grommet>

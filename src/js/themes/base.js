@@ -972,19 +972,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           },
           color: undefined,
         },
-      },
-      // container: {
-      //   // any box props,
-      //   extend: undefined,
-      // },
-      control: {
-        // extend: undefined,
-        pad: '4px',
         size: {
           small: {
             border: {
               radius: `${baseSpacing / 8}px`, // 3
               width: '2px',
+            },
+            pad: {
+              vertical: `4px`,
+              horizontal: `4px`,
             },
             font: { ...fontSizing(-1) },
             height: `${baseSpacing * 1.25}px`,
@@ -995,6 +991,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
               radius: `${baseSpacing / 6}px`, // 4
               width: '2px',
             },
+            pad: {
+              vertical: `4px`,
+              horizontal: `4px`,
+            },
             font: { ...fontSizing(0) },
             height: `${baseSpacing * 1.5}px`,
             width: `${baseSpacing * 1.5}px`,
@@ -1004,12 +1004,20 @@ export const generate = (baseSpacing = 24, scale = 6) => {
               radius: `${baseSpacing / 4}px`, // 6
               width: '2px',
             },
+            pad: {
+              vertical: `4px`,
+              horizontal: `4px`,
+            },
             font: { ...fontSizing(1) },
             height: `${baseSpacing * 2}px`,
             width: `${baseSpacing * 2}px`,
           },
         },
       },
+      // container: {
+      //   // any box props,
+      //   extend: undefined,
+      // },
       controls: {
         align: 'center',
         direction: 'row',

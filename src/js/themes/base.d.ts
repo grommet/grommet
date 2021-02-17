@@ -144,6 +144,70 @@ interface ButtonKindType {
   extend?: ExtendType;
 }
 
+interface ButtonType {
+  border?: {
+    color?: ColorType;
+    width?: string;
+    radius?: string;
+  };
+  color?: ColorType;
+  extend?: ExtendType;
+  minWidth?: string;
+  maxWidth?: string;
+  padding?: {
+    vertical?: string;
+    horizontal?: string;
+  };
+  default?: ButtonKindType;
+  primary?: ButtonKindType;
+  secondary?: ButtonKindType;
+  option?: ButtonKindType;
+  active?: ButtonKindType & {
+    default?: ButtonKindType;
+    primary?: ButtonKindType;
+    secondary?: ButtonKindType;
+  };
+  disabled?: ButtonKindType & { opacity?: OpacityType };
+  hover?: ButtonKindType & {
+    default?: ButtonKindType;
+    primary?: ButtonKindType;
+    secondary?: ButtonKindType;
+  };
+  size?: {
+    small?: {
+      border?: {
+        radius?: string;
+      };
+      pad?: {
+        vertical?: string;
+        horizontal?: string;
+      };
+    };
+    medium?: {
+      border?: {
+        radius?: string;
+      };
+      pad?: {
+        vertical?: string;
+        horizontal?: string;
+      };
+    };
+    large?: {
+      border?: {
+        radius?: string;
+      };
+      pad?: {
+        vertical?: string;
+        horizontal?: string;
+      };
+    };
+  };
+  transition?: {
+    timing?: string;
+    duration?: number;
+    properties?: string[];
+  };
+}
 interface FormFieldLabelType extends TextProps {
   requiredIndicator?: boolean | JSX.Element | string;
 }
@@ -381,70 +445,7 @@ export interface ThemeType {
     extend?: ExtendType;
     responsiveBreakpoint?: string;
   };
-  button?: {
-    border?: {
-      color?: ColorType;
-      width?: string;
-      radius?: string;
-    };
-    color?: ColorType;
-    extend?: ExtendType;
-    minWidth?: string;
-    maxWidth?: string;
-    padding?: {
-      vertical?: string;
-      horizontal?: string;
-    };
-    default?: ButtonKindType;
-    primary?: ButtonKindType;
-    secondary?: ButtonKindType;
-    option?: ButtonKindType;
-    active?: ButtonKindType & {
-      default?: ButtonKindType;
-      primary?: ButtonKindType;
-      secondary?: ButtonKindType;
-    };
-    disabled?: ButtonKindType & { opacity?: OpacityType };
-    hover?: ButtonKindType & {
-      default?: ButtonKindType;
-      primary?: ButtonKindType;
-      secondary?: ButtonKindType;
-    };
-    size?: {
-      small?: {
-        border?: {
-          radius?: string;
-        };
-        pad?: {
-          vertical?: string;
-          horizontal?: string;
-        };
-      };
-      medium?: {
-        border?: {
-          radius?: string;
-        };
-        pad?: {
-          vertical?: string;
-          horizontal?: string;
-        };
-      };
-      large?: {
-        border?: {
-          radius?: string;
-        };
-        pad?: {
-          vertical?: string;
-          horizontal?: string;
-        };
-      };
-    };
-    transition?: {
-      timing?: string;
-      duration?: number;
-      properties?: string[];
-    };
-  };
+  button?: ButtonType;
   calendar?: {
     day?: {
       extend?: ExtendType;
@@ -957,63 +958,8 @@ export interface ThemeType {
     extend?: ExtendType;
   };
   pagination?: {
-    button?: {
-      active?: {
-        background?: {
-          color?: ColorType;
-        };
-      };
-      color?: ColorType;
-      hover?: {
-        background?: {
-          color?: ColorType;
-        };
-        color?: ColorType;
-      };
-    };
+    button?: ButtonType;
     container?: BoxProps;
-    control?: {
-      extend?: ExtendType;
-      pad?: PadType;
-      size?: {
-        small?: {
-          border?: {
-            radius?: string;
-            width?: string;
-          };
-          font?: {
-            size?: string;
-            height?: string;
-          };
-          height?: string;
-          width?: string;
-        };
-        medium?: {
-          border?: {
-            radius?: string;
-            width?: string;
-          };
-          font?: {
-            size?: string;
-            height?: string;
-          };
-          height?: string;
-          width?: string;
-        };
-        large?: {
-          border?: {
-            radius?: string;
-            width?: string;
-          };
-          font?: {
-            size?: string;
-            height?: string;
-          };
-          height?: string;
-          width?: string;
-        };
-      };
-    };
     controls?: {
       align?: AlignContentType;
       direction?: DirectionType;
