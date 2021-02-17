@@ -129,6 +129,15 @@ describe('Layer', () => {
     }),
   );
 
+  test('elevation', () => {
+    render(
+      <Grommet>
+        <Layer id="elevation-test" elevation="large" />
+      </Grommet>,
+    );
+    expectPortal('elevation-test').toMatchSnapshot();
+  });
+
   test(`should apply background`, () => {
     render(
       <Grommet>

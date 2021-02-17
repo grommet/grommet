@@ -10613,6 +10613,21 @@ string
 }
 \`\`\`
 
+**elevation**
+
+Elevated height above the underlying context, indicated
+        via a drop shadow. Defaults to \`none\`.
+
+\`\`\`
+none
+xsmall
+small
+medium
+large
+xlarge
+string
+\`\`\`
+
 **full**
 
 Whether the width and/or height should fill the current viewport

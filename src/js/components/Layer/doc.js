@@ -37,6 +37,15 @@ export const doc = Layer => {
       )
       .defaultValue('slide'),
     background: backgroundDoc,
+    elevation: PropTypes.oneOfType([
+      PropTypes.oneOf(['none', 'xsmall', 'small', 'medium', 'large', 'xlarge']),
+      PropTypes.string,
+    ])
+      .description(
+        `Elevated height above the underlying context, indicated
+        via a drop shadow.`,
+      )
+      .defaultValue('none'),
     full: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.oneOf(['vertical', 'horizontal']),

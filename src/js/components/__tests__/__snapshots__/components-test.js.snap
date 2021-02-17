@@ -4926,6 +4926,19 @@ identifier to use for the background color. For example: 'neutral-1'. Or, a
         "name": "background",
       },
       Object {
+        "defaultValue": "none",
+        "description": "Elevated height above the underlying context, indicated
+        via a drop shadow.",
+        "format": "none
+xsmall
+small
+medium
+large
+xlarge
+string",
+        "name": "elevation",
+      },
+      Object {
         "defaultValue": false,
         "description": "Whether the width and/or height should fill the current viewport
         size.",
