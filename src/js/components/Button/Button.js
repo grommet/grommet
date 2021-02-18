@@ -116,7 +116,7 @@ const Button = forwardRef(
       reverse,
       secondary,
       selected,
-      size = 'medium',
+      size,
       tip,
       type = 'button',
       as,

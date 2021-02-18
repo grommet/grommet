@@ -32,7 +32,7 @@ const fontStyle = props => {
   `;
 };
 
-const padFromTheme = (size, theme) => {
+const padFromTheme = (size = 'medium', theme) => {
   if (
     size &&
     theme.button.size &&
