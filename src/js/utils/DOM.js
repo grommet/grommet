@@ -79,7 +79,9 @@ export const getFirstFocusableDescendant = element => {
 export const getBodyChildElements = () => {
   const excludeMatch = /^(script|link)$/i;
   const children = [];
-  [].forEach.call(document.body.children, node => {
+  // only touch nodes coming from Grommet
+  const grommet = document.querySelectorAll(`[data-g-id="grommet"]`);
+  grommet.forEach(node => {
     if (!excludeMatch.test(node.tagName)) {
       children.push(node);
     }

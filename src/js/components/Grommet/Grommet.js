@@ -13,9 +13,11 @@ import {
   getBreakpoint,
   getDeviceBreakpoint,
   normalizeColor,
+  useForwardedRef,
 } from '../../utils';
 import { base as baseTheme } from '../../themes';
 import { StyledGrommet } from './StyledGrommet';
+import { GrommetContext } from './GrommetContext';
 
 const FullGlobalStyle = createGlobalStyle`
   body { margin: 0; }
@@ -93,15 +95,23 @@ const Grommet = forwardRef((props, ref) => {
     deviceResponsive(userAgent, theme) ||
     theme.global.deviceBreakpoints.tablet;
 
+  const grommetRef = useForwardedRef(ref);
+  // When toggling aria-hidden values, we only want to affect elements
+  // in the DOM that come from Grommet, so we track those elemnts in this
+  // context value. See FocusedContainer.js
+  const bodyChildrenFromGrommet = [grommetRef.current];
+
   return (
     <ThemeContext.Provider value={theme}>
       <ResponsiveContext.Provider value={responsive}>
-        <ContainerTargetContext.Provider value={containerTarget}>
-          <StyledGrommet full={full} {...rest} ref={ref}>
-            {children}
-          </StyledGrommet>
-          {full && <FullGlobalStyle />}
-        </ContainerTargetContext.Provider>
+        <GrommetContext.Provider value={bodyChildrenFromGrommet}>
+          <ContainerTargetContext.Provider value={containerTarget}>
+            <StyledGrommet full={full} {...rest} ref={grommetRef}>
+              {children}
+            </StyledGrommet>
+            {full && <FullGlobalStyle />}
+          </ContainerTargetContext.Provider>
+        </GrommetContext.Provider>
       </ResponsiveContext.Provider>
     </ThemeContext.Provider>
   );

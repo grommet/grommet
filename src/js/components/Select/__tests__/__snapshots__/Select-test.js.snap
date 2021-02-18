@@ -1512,6 +1512,7 @@ exports[`Select Search timeout 1`] = `
 }
 
 <div
+  aria-hidden="true"
   class="c0"
 >
   <button
@@ -5418,6 +5419,7 @@ exports[`Select keyboard navigation timeout 1`] = `
 }
 
 <div
+  aria-hidden="true"
   class="c0"
 >
   <button
@@ -7721,12 +7723,8 @@ exports[`Select prop: onClose 2`] = `
 }
 
 <body>
-  <div
-    aria-hidden="false"
-  />
-  <div
-    aria-hidden="false"
-  >
+  <div />
+  <div>
     <button
       aria-label="Open Drop"
       class="c0 c1"

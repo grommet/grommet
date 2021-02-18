@@ -399,6 +399,7 @@ exports[`TextInput calls onSuggestionsClose 3`] = `""`;
 
 exports[`TextInput calls onSuggestionsClose 4`] = `
 <div
+  aria-hidden="false"
   class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
 >
   <div
@@ -894,6 +895,7 @@ exports[`TextInput close suggestion drop 3`] = `""`;
 
 exports[`TextInput close suggestion drop 4`] = `
 <div
+  aria-hidden="false"
   class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
 >
   <div
@@ -2437,6 +2439,7 @@ exports[`TextInput select suggestion 3`] = `""`;
 
 exports[`TextInput select suggestion 4`] = `
 <div
+  aria-hidden="false"
   class="StyledGrommet-sc-19lkkz7-0 djOnwZ"
 >
   <div
