@@ -2,13 +2,14 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { useContext, useState } from 'react';
+import React, { Fragment, useContext, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
+import { Pagination } from '../Pagination';
 import { Text } from '../Text';
-import { focusStyle, genericStyles, unfocusStyle, useForwardedRef } from '../../utils';
+import { focusStyle, genericStyles, normalizeShow, unfocusStyle, useForwardedRef, usePagination } from '../../utils';
 var StyledList = styled.ul.withConfig({
   displayName: "List__StyledList",
   componentId: "sc-130gdqg-0"
@@ -37,6 +38,13 @@ var StyledItem = styled(Box).withConfig({
   skipSvgChildren: true
 }), function (props) {
   return props.theme.list && props.theme.list.item && props.theme.list.item.extend;
+}); // when paginated, this wraps the data table and pagination component
+
+var StyledContainer = styled(Box).withConfig({
+  displayName: "List__StyledContainer",
+  componentId: "sc-130gdqg-2"
+})(["", ";"], function (props) {
+  return props.theme.list && props.theme.list.container && props.theme.list.container.extend;
 });
 
 var normalize = function normalize(item, index, property) {
@@ -57,12 +65,15 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       focus = _ref.focus,
       itemProps = _ref.itemProps,
       pad = _ref.pad,
+      paginate = _ref.paginate,
       primaryKey = _ref.primaryKey,
       secondaryKey = _ref.secondaryKey,
-      step = _ref.step,
+      showProp = _ref.show,
+      _ref$step = _ref.step,
+      step = _ref$step === void 0 ? paginate ? 50 : undefined : _ref$step,
       onClickItem = _ref.onClickItem,
       onMore = _ref.onMore,
-      rest = _objectWithoutPropertiesLoose(_ref, ["action", "as", "background", "border", "children", "data", "focus", "itemProps", "pad", "primaryKey", "secondaryKey", "step", "onClickItem", "onMore"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["action", "as", "background", "border", "children", "data", "focus", "itemProps", "pad", "paginate", "primaryKey", "secondaryKey", "show", "step", "onClickItem", "onMore"]);
 
   var listRef = useForwardedRef(ref);
   var theme = useContext(ThemeContext);
@@ -75,7 +86,17 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       itemFocus = _useState2[0],
       setItemFocus = _useState2[1];
 
-  return /*#__PURE__*/React.createElement(Keyboard, {
+  var _usePagination = usePagination(_extends({
+    data: data,
+    page: normalizeShow(showProp, step),
+    step: step
+  }, paginate)),
+      items = _usePagination[0],
+      paginationProps = _usePagination[1];
+
+  var Container = paginate ? StyledContainer : Fragment;
+  var containterProps = paginate ? _extends({}, theme.list.container) : undefined;
+  return /*#__PURE__*/React.createElement(Container, containterProps, /*#__PURE__*/React.createElement(Keyboard, {
     onEnter: onClickItem && active >= 0 ? function (event) {
       event.persist();
       var adjustedEvent = event;
@@ -95,9 +116,10 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     itemFocus: itemFocus,
     tabIndex: onClickItem ? 0 : undefined
   }, rest), /*#__PURE__*/React.createElement(InfiniteScroll, {
-    items: data,
+    items: !paginate ? data : items,
     onMore: onMore,
     scrollableAncestor: "window",
+    show: !paginate ? showProp : undefined,
     step: step,
     renderMarker: function renderMarker(marker) {
       return /*#__PURE__*/React.createElement(Box, {
@@ -218,7 +240,9 @@ var List = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
       background: adjustedBackground,
       border: adjustedBorder
     }, boxProps, clickProps), content);
-  })));
+  }))), paginate && items && /*#__PURE__*/React.createElement(Pagination, _extends({
+    alignSelf: "end"
+  }, paginationProps)));
 });
 List.displayName = 'List';
 var ListDoc;

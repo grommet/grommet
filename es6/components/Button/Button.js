@@ -32,16 +32,19 @@ import { StyledButtonKind } from './StyledButtonKind'; // We have two Styled* co
 // The paths are ordered from basic to specific. Go through them
 // specific to base until we find one that has a color and use that.
 
-var getIconColor = function getIconColor(paths, theme, colorProp) {
+var getIconColor = function getIconColor(paths, theme, colorProp, kind) {
   if (paths === void 0) {
     paths = [];
   }
 
   var result = [];
-  var index = paths.length - 1; // stop when we have a color or no more paths
+  var index = paths.length - 1; // caller has specified a themeObj to use for styling
+  // relevant for cases like pagination which looks to theme.pagination.button
+
+  if (typeof kind === 'object') index = 0; // stop when we have a color or no more paths
 
   while (index >= 0 && !result[1]) {
-    var obj = theme.button; // find the sub-object under the button them that corresponds with this path
+    var obj = typeof kind === 'object' && kind || theme.button; // find the sub-object under the button them that corresponds with this path
     // for example: 'active.primary'
 
     if (paths[index]) {
@@ -116,11 +119,16 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
   if ((icon || label) && children) {
     console.warn('Button should not have children if icon or label is provided');
-  } // if the theme has button.default, what kind of Button is this
+  } // kindArg is object if we are referencing a theme object
+  // outside of theme.button
 
+
+  var kindObj = useMemo(function () {
+    return typeof kindArg === 'object';
+  }, [kindArg]); // if the theme has button.default, what kind of Button is this
 
   var kind = useMemo(function () {
-    if (theme.button["default"]) {
+    if (theme.button["default"] || kindObj) {
       if (kindArg) return kindArg;
       if (primary) return 'primary';
       if (secondary) return 'secondary';
@@ -128,7 +136,7 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }
 
     return undefined; // pre-default, no kind
-  }, [kindArg, primary, secondary, theme.button["default"]]); // When we have a kind and are not plain, themePaths stores the relative
+  }, [kindArg, kindObj, primary, secondary, theme]); // When we have a kind and are not plain, themePaths stores the relative
   // paths within the theme for the current kind and state of the button.
   // These paths are used with getIconColor() above and kindStyle() within
   // StyledButtonKind.
@@ -139,28 +147,36 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
       base: [],
       hover: []
     };
-    result.base.push(kind);
+    if (!kindObj) result.base.push(kind);
 
     if (selected) {
-      result.base.push('selected', "selected." + kind);
+      result.base.push('selected');
+      if (!kindObj) result.base.push("selected." + kind);
     }
 
     if (disabled) {
-      result.base.push('disabled', "disabled." + kind);
+      result.base.push('disabled');
+      if (!kindObj) result.base.push("disabled." + kind);
     } else {
       if (active) {
-        result.base.push('active', "active." + kind);
+        result.base.push('active');
+        if (!kindObj) result.base.push("active." + kind);
       }
 
-      result.hover.push('hover', "hover." + kind);
+      result.hover.push('hover');
+      if (!kindObj) result.hover.push("hover." + kind);
 
       if (active) {
-        result.hover.push("hover.active", "hover.active." + kind);
+        result.hover.push("hover.active");
+
+        if (!kindObj) {
+          result.hover.push("hover.active." + kind);
+        }
       }
     }
 
     return result;
-  }, [active, disabled, kind, plain, selected]); // only used when theme does not have button.default
+  }, [active, disabled, kind, kindObj, plain, selected]); // only used when theme does not have button.default
 
   var isDarkBackground = function isDarkBackground() {
     var backgroundColor = normalizeBackground(normalizeColor(color || theme.button.primary && theme.button.primary.color || theme.global.colors.control || 'brand', theme), theme);
@@ -189,7 +205,7 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
     if (kind) {
       if (!plain) {
         // match what the label will use
-        var iconColor = hover && getIconColor(themePaths.hover, theme) || getIconColor(themePaths.base, theme, color);
+        var iconColor = hover && getIconColor(themePaths.hover, theme) || getIconColor(themePaths.base, theme, color, kind);
         if (iconColor) buttonIcon = /*#__PURE__*/cloneElement(icon, {
           color: iconColor
         });

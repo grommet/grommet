@@ -13,6 +13,8 @@ var _InfiniteScroll = require("../InfiniteScroll");
 
 var _Keyboard = require("../Keyboard");
 
+var _Pagination = require("../Pagination");
+
 var _Text = require("../Text");
 
 var _utils = require("../../utils");
@@ -54,6 +56,13 @@ var StyledItem = (0, _styledComponents["default"])(_Box.Box).withConfig({
   skipSvgChildren: true
 }), function (props) {
   return props.theme.list && props.theme.list.item && props.theme.list.item.extend;
+}); // when paginated, this wraps the data table and pagination component
+
+var StyledContainer = (0, _styledComponents["default"])(_Box.Box).withConfig({
+  displayName: "List__StyledContainer",
+  componentId: "sc-130gdqg-2"
+})(["", ";"], function (props) {
+  return props.theme.list && props.theme.list.container && props.theme.list.container.extend;
 });
 
 var normalize = function normalize(item, index, property) {
@@ -74,12 +83,15 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       focus = _ref.focus,
       itemProps = _ref.itemProps,
       pad = _ref.pad,
+      paginate = _ref.paginate,
       primaryKey = _ref.primaryKey,
       secondaryKey = _ref.secondaryKey,
-      step = _ref.step,
+      showProp = _ref.show,
+      _ref$step = _ref.step,
+      step = _ref$step === void 0 ? paginate ? 50 : undefined : _ref$step,
       onClickItem = _ref.onClickItem,
       onMore = _ref.onMore,
-      rest = _objectWithoutPropertiesLoose(_ref, ["action", "as", "background", "border", "children", "data", "focus", "itemProps", "pad", "primaryKey", "secondaryKey", "step", "onClickItem", "onMore"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["action", "as", "background", "border", "children", "data", "focus", "itemProps", "pad", "paginate", "primaryKey", "secondaryKey", "show", "step", "onClickItem", "onMore"]);
 
   var listRef = (0, _utils.useForwardedRef)(ref);
   var theme = (0, _react.useContext)(_styledComponents.ThemeContext);
@@ -92,7 +104,17 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       itemFocus = _useState2[0],
       setItemFocus = _useState2[1];
 
-  return /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
+  var _usePagination = (0, _utils.usePagination)(_extends({
+    data: data,
+    page: (0, _utils.normalizeShow)(showProp, step),
+    step: step
+  }, paginate)),
+      items = _usePagination[0],
+      paginationProps = _usePagination[1];
+
+  var Container = paginate ? StyledContainer : _react.Fragment;
+  var containterProps = paginate ? _extends({}, theme.list.container) : undefined;
+  return /*#__PURE__*/_react["default"].createElement(Container, containterProps, /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
     onEnter: onClickItem && active >= 0 ? function (event) {
       event.persist();
       var adjustedEvent = event;
@@ -112,9 +134,10 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
     itemFocus: itemFocus,
     tabIndex: onClickItem ? 0 : undefined
   }, rest), /*#__PURE__*/_react["default"].createElement(_InfiniteScroll.InfiniteScroll, {
-    items: data,
+    items: !paginate ? data : items,
     onMore: onMore,
     scrollableAncestor: "window",
+    show: !paginate ? showProp : undefined,
     step: step,
     renderMarker: function renderMarker(marker) {
       return /*#__PURE__*/_react["default"].createElement(_Box.Box, {
@@ -235,7 +258,9 @@ var List = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       background: adjustedBackground,
       border: adjustedBorder
     }, boxProps, clickProps), content);
-  })));
+  }))), paginate && items && /*#__PURE__*/_react["default"].createElement(_Pagination.Pagination, _extends({
+    alignSelf: "end"
+  }, paginationProps)));
 });
 
 List.displayName = 'List';

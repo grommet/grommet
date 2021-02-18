@@ -5,6 +5,8 @@ exports.DataTable = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _styledComponents = require("styled-components");
+
 var _Box = require("../Box");
 
 var _Text = require("../Text");
@@ -17,7 +19,11 @@ var _Body = require("./Body");
 
 var _GroupedBody = require("./GroupedBody");
 
+var _Pagination = require("../Pagination");
+
 var _buildState = require("./buildState");
+
+var _utils = require("../../utils");
 
 var _StyledDataTable = require("./StyledDataTable");
 
@@ -70,20 +76,23 @@ var DataTable = function DataTable(_ref) {
       onSortProp = _ref.onSort,
       replace = _ref.replace,
       pad = _ref.pad,
+      paginate = _ref.paginate,
       pin = _ref.pin,
       placeholder = _ref.placeholder,
       primaryKey = _ref.primaryKey,
       resizeable = _ref.resizeable,
       rowProps = _ref.rowProps,
       select = _ref.select,
+      showProp = _ref.show,
       size = _ref.size,
       sortProp = _ref.sort,
       sortable = _ref.sortable,
       _ref$step = _ref.step,
       step = _ref$step === void 0 ? 50 : _ref$step,
-      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "fill", "groupBy", "onClickRow", "onMore", "onSearch", "onSelect", "onSort", "replace", "pad", "pin", "placeholder", "primaryKey", "resizeable", "rowProps", "select", "size", "sort", "sortable", "step"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "fill", "groupBy", "onClickRow", "onMore", "onSearch", "onSelect", "onSort", "replace", "pad", "paginate", "pin", "placeholder", "primaryKey", "resizeable", "rowProps", "select", "show", "size", "sort", "sortable", "step"]);
 
-  // property name of the primary property
+  var theme = (0, _react.useContext)(_styledComponents.ThemeContext) || defaultProps.theme; // property name of the primary property
+
   var primaryProperty = (0, _react.useMemo)(function () {
     return (0, _buildState.normalizePrimaryProperty)(columns, primaryKey);
   }, [columns, primaryKey]); // whether or not we should show a footer
@@ -260,7 +269,17 @@ var DataTable = function DataTable(_ref) {
     console.warn('DataTable cannot combine "size" and "resizeble".');
   }
 
-  return /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTable, _extends({
+  var _usePagination = (0, _utils.usePagination)(_extends({
+    data: adjustedData,
+    page: (0, _utils.normalizeShow)(showProp, step),
+    step: step
+  }, paginate)),
+      items = _usePagination[0],
+      paginationProps = _usePagination[1];
+
+  var Container = paginate ? _StyledDataTable.StyledContainer : _react.Fragment;
+  var containterProps = paginate ? _extends({}, theme.dataTable.container) : undefined;
+  return /*#__PURE__*/_react["default"].createElement(Container, containterProps, /*#__PURE__*/_react["default"].createElement(_StyledDataTable.StyledDataTable, _extends({
     fillProp: fill
   }, rest), /*#__PURE__*/_react["default"].createElement(_Header.Header, {
     ref: headerRef,
@@ -307,7 +326,7 @@ var DataTable = function DataTable(_ref) {
     background: normalizeProp(background, 'body'),
     border: normalizeProp(border, 'body'),
     columns: columns,
-    data: adjustedData,
+    data: !paginate ? adjustedData : items,
     onMore: onMore,
     replace: replace,
     onClickRow: onClickRow,
@@ -321,6 +340,7 @@ var DataTable = function DataTable(_ref) {
     primaryProperty: primaryProperty,
     rowProps: rowProps,
     selected: selected,
+    show: !paginate ? showProp : undefined,
     size: size,
     step: step
   }), showFooter && /*#__PURE__*/_react["default"].createElement(_Footer.Footer, {
@@ -349,7 +369,9 @@ var DataTable = function DataTable(_ref) {
     align: "center",
     justify: "center",
     fill: "vertical"
-  }, /*#__PURE__*/_react["default"].createElement(_Text.Text, null, placeholder)) : placeholder));
+  }, /*#__PURE__*/_react["default"].createElement(_Text.Text, null, placeholder)) : placeholder)), paginate && items && /*#__PURE__*/_react["default"].createElement(_Pagination.Pagination, _extends({
+    alignSelf: "end"
+  }, paginationProps)));
 };
 
 var DataTableDoc;

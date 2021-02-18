@@ -338,6 +338,14 @@ Object.keys(_Meter).forEach(function (key) {
   exports[key] = _Meter[key];
 });
 
+var _Pagination = require("./Pagination");
+
+Object.keys(_Pagination).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _Pagination[key]) return;
+  exports[key] = _Pagination[key];
+});
+
 var _Paragraph = require("./Paragraph");
 
 Object.keys(_Paragraph).forEach(function (key) {

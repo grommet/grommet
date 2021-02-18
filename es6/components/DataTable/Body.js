@@ -25,9 +25,10 @@ var Body = /*#__PURE__*/forwardRef(function (_ref, ref) {
       primaryProperty = _ref.primaryProperty,
       rowProps = _ref.rowProps,
       selected = _ref.selected,
+      show = _ref.show,
       size = _ref.size,
       step = _ref.step,
-      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "onMore", "replace", "onClickRow", "onSelect", "pad", "pinnedBackground", "primaryProperty", "rowProps", "selected", "size", "step"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "onMore", "replace", "onClickRow", "onSelect", "pad", "pinnedBackground", "primaryProperty", "rowProps", "selected", "show", "size", "step"]);
 
   var _React$useState = React.useState(),
       active = _React$useState[0],
@@ -58,6 +59,7 @@ var Body = /*#__PURE__*/forwardRef(function (_ref, ref) {
       return /*#__PURE__*/React.createElement(TableRow, null, /*#__PURE__*/React.createElement(TableCell, null, marker));
     },
     scrollableAncestor: "window",
+    show: show,
     step: step
   }, function (datum, index, rowRef) {
     var primaryValue = primaryProperty ? datumValue(datum, primaryProperty) : undefined;

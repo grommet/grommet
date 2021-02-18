@@ -533,7 +533,7 @@ export var generate = function generate(baseSpacing, scale) {
       // hover: {
       //   background: undefined,
       //   border: undefined,
-      //   color: undefined},
+      //   color: undefined,
       //   extend: undefined,
       //   default: {},
       //   primary: {},
@@ -758,6 +758,11 @@ export var generate = function generate(baseSpacing, scale) {
           } //  extend: undefined,
 
         }
+      },
+      container: {
+        // any box props
+        gap: 'xsmall' // extend: undefined,
+
       },
       groupHeader: {
         background: {
@@ -1030,6 +1035,11 @@ export var generate = function generate(baseSpacing, scale) {
       zIndex: '20'
     },
     list: {
+      container: {
+        // any box props
+        gap: 'xsmall' // extend: undefined,
+
+      },
       item: {
         // background: undefined,
         border: 'horizontal',
@@ -1060,6 +1070,82 @@ export var generate = function generate(baseSpacing, scale) {
       color: 'graph-0' // colors: [] || colors: ['graph-0', 'graph-1', 'graph-2', 'graph-3'],
       // extend: undefined,
 
+    },
+    pagination: {
+      button: {
+        active: {
+          background: {
+            color: 'active-background'
+          }
+        },
+        color: 'text-strong',
+        hover: {
+          background: {
+            color: 'background-contrast'
+          },
+          color: undefined
+        },
+        size: {
+          small: {
+            border: {
+              radius: baseSpacing / 8 + "px",
+              // 3
+              width: '2px'
+            },
+            pad: {
+              vertical: "4px",
+              horizontal: "4px"
+            },
+            font: _extends({}, fontSizing(-1)),
+            height: baseSpacing * 1.25 + "px",
+            width: baseSpacing * 1.25 + "px"
+          },
+          medium: {
+            border: {
+              radius: baseSpacing / 6 + "px",
+              // 4
+              width: '2px'
+            },
+            pad: {
+              vertical: "4px",
+              horizontal: "4px"
+            },
+            font: _extends({}, fontSizing(0)),
+            height: baseSpacing * 1.5 + "px",
+            width: baseSpacing * 1.5 + "px"
+          },
+          large: {
+            border: {
+              radius: baseSpacing / 4 + "px",
+              // 6
+              width: '2px'
+            },
+            pad: {
+              vertical: "4px",
+              horizontal: "4px"
+            },
+            font: _extends({}, fontSizing(1)),
+            height: baseSpacing * 2 + "px",
+            width: baseSpacing * 2 + "px"
+          }
+        }
+      },
+      // container: {
+      //   // any box props,
+      //   extend: undefined,
+      // },
+      controls: {
+        align: 'center',
+        direction: 'row',
+        gap: 'xxsmall',
+        margin: 'none',
+        pad: 'none'
+      },
+      icons: {
+        // color: undefined,
+        next: Next,
+        previous: Previous
+      }
     },
     paragraph: {
       font: {// family: undefined

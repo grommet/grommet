@@ -73,6 +73,7 @@ export var doc = function doc(DataTable) {
     onSelect: PropTypes.func.description("When supplied, causes checkboxes to be added to each row such that\n      the user can indicate which rows should be selected. This function\n      will be called with an array of primary key values, suitable to be\n      passed to the 'select' property. If you are storing select state via\n      a 'useState' hook, you can do something like:\n      '<DataTable select={select} onSelect={setSelect} />'."),
     onSort: PropTypes.func.description("When supplied, this function will be called with an object\n      with a 'property' property that indicates which property\n      is being sorted on and a 'direction' property that will either be\n      'asc' or 'desc'. onSort={({ property, direction }) => {}}"),
     pad: PropTypes.oneOfType([PropTypes.oneOf(sizes), PropTypes.string, PropTypes.shape(padShapeSides), PropTypes.shape(padShapeParts)]).description("Cell padding. You can set the padding per context by passing an\n      object with keys for 'heading', 'body', and/or 'footer'."),
+    paginate: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]).description("Whether to paginate the data. If providing an object, any Box props or \n      Pagination props are valid and will be used to style the underlying \n      pagination component.").defaultValue(undefined),
     pin: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['header', 'footer'])]).description("Whether the header and/or footer should be pinned when\n      not all rows are visible. A value of true pins both header and footer."),
     placeholder: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).description("A text message or any content to place over the table body.\n      For example, to say \"loading ...\" when waiting for data to arrive."),
     primaryKey: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]).description("When supplied, indicates the property for a data object to use to\n      get a unique identifier. See also the 'columns.primary' description.\n      Use this property when the columns approach will not work for your\n      data set. Setting primaryKey to false indicates there should be no\n      unique identifier, avoid this as it's less accessible."),
@@ -80,6 +81,9 @@ export var doc = function doc(DataTable) {
     resizeable: PropTypes.bool.description('Whether to allow the user to resize column widths.'),
     rowProps: PropTypes.shape({}).description("Row specific background, border, and pad, keyed by primary key value.\n      For example:\n      { \"primary-key-value\": { background: ..., border: ..., pad: ... }},\n      where the background, border, and pad accept the same values as\n      the same named properties on DataTable."),
     select: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])).description("When supplied, causes checkboxes to be added to each row to indicate\n      which rows are selected. The values in this array should match\n      the 'primaryKey' or 'columns[].primary' keyed value for the row's data\n      object. If 'onSelect' is provided, the CheckBoxes are enabled\n      and this function can be used to track select changes."),
+    show: PropTypes.oneOfType([PropTypes.number, PropTypes.shape({
+      page: PropTypes.number
+    })]).description("If provided as a number, the index of an item to show. If using \n        paginate and provided as an object in the format of show={{ page: 2 }}, \n        the default page to show.").defaultValue(undefined),
     size: PropTypes.oneOfType([PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']), PropTypes.string]).description("The height of the table body. If set, the table body will have a fixed\n      height and the rows will be scrollable within it. In order to preserve\n      header and footer cell alignment, all cells will have the same\n      width. This cannot be used in combination with 'resizeable'."),
     sort: PropTypes.shape({
       direction: PropTypes.oneOf(['asc', 'desc']),
@@ -105,6 +109,16 @@ export var themeDoc = {
   'dataTable.body.extend': {
     description: 'Any additional style for an DataTable Body',
     type: 'string | (props) => {}',
+    defaultValue: undefined
+  },
+  'dataTable.container': {
+    description: "When using paginate, any valid Box props for the container \n    surrounding the DataTable and Pagination components.",
+    type: 'object',
+    defaultValue: "{ gap: 'small' }"
+  },
+  'dataTable.container.extend': {
+    description: "Any additional style for the container \n    surrounding the DataTable and Pagination components.",
+    type: 'object',
     defaultValue: undefined
   },
   'dataTable.groupHeader.background': {

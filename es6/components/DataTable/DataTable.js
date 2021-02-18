@@ -2,15 +2,18 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useLayoutEffect, useMemo, useRef, useState, Fragment } from 'react';
+import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { Text } from '../Text';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { Body } from './Body';
 import { GroupedBody } from './GroupedBody';
+import { Pagination } from '../Pagination';
 import { buildFooterValues, buildGroups, buildGroupState, filterAndSortData, initializeFilters, normalizePrimaryProperty } from './buildState';
-import { StyledDataTable, StyledPlaceholder } from './StyledDataTable';
+import { normalizeShow, usePagination } from '../../utils';
+import { StyledContainer, StyledDataTable, StyledPlaceholder } from './StyledDataTable';
 var contexts = ['header', 'body', 'footer'];
 
 var normalizeProp = function normalizeProp(prop, context) {
@@ -52,20 +55,23 @@ var DataTable = function DataTable(_ref) {
       onSortProp = _ref.onSort,
       replace = _ref.replace,
       pad = _ref.pad,
+      paginate = _ref.paginate,
       pin = _ref.pin,
       placeholder = _ref.placeholder,
       primaryKey = _ref.primaryKey,
       resizeable = _ref.resizeable,
       rowProps = _ref.rowProps,
       select = _ref.select,
+      showProp = _ref.show,
       size = _ref.size,
       sortProp = _ref.sort,
       sortable = _ref.sortable,
       _ref$step = _ref.step,
       step = _ref$step === void 0 ? 50 : _ref$step,
-      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "fill", "groupBy", "onClickRow", "onMore", "onSearch", "onSelect", "onSort", "replace", "pad", "pin", "placeholder", "primaryKey", "resizeable", "rowProps", "select", "size", "sort", "sortable", "step"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["background", "border", "columns", "data", "fill", "groupBy", "onClickRow", "onMore", "onSearch", "onSelect", "onSort", "replace", "pad", "paginate", "pin", "placeholder", "primaryKey", "resizeable", "rowProps", "select", "show", "size", "sort", "sortable", "step"]);
 
-  // property name of the primary property
+  var theme = useContext(ThemeContext) || defaultProps.theme; // property name of the primary property
+
   var primaryProperty = useMemo(function () {
     return normalizePrimaryProperty(columns, primaryKey);
   }, [columns, primaryKey]); // whether or not we should show a footer
@@ -242,7 +248,17 @@ var DataTable = function DataTable(_ref) {
     console.warn('DataTable cannot combine "size" and "resizeble".');
   }
 
-  return /*#__PURE__*/React.createElement(StyledDataTable, _extends({
+  var _usePagination = usePagination(_extends({
+    data: adjustedData,
+    page: normalizeShow(showProp, step),
+    step: step
+  }, paginate)),
+      items = _usePagination[0],
+      paginationProps = _usePagination[1];
+
+  var Container = paginate ? StyledContainer : Fragment;
+  var containterProps = paginate ? _extends({}, theme.dataTable.container) : undefined;
+  return /*#__PURE__*/React.createElement(Container, containterProps, /*#__PURE__*/React.createElement(StyledDataTable, _extends({
     fillProp: fill
   }, rest), /*#__PURE__*/React.createElement(Header, {
     ref: headerRef,
@@ -289,7 +305,7 @@ var DataTable = function DataTable(_ref) {
     background: normalizeProp(background, 'body'),
     border: normalizeProp(border, 'body'),
     columns: columns,
-    data: adjustedData,
+    data: !paginate ? adjustedData : items,
     onMore: onMore,
     replace: replace,
     onClickRow: onClickRow,
@@ -303,6 +319,7 @@ var DataTable = function DataTable(_ref) {
     primaryProperty: primaryProperty,
     rowProps: rowProps,
     selected: selected,
+    show: !paginate ? showProp : undefined,
     size: size,
     step: step
   }), showFooter && /*#__PURE__*/React.createElement(Footer, {
@@ -331,7 +348,9 @@ var DataTable = function DataTable(_ref) {
     align: "center",
     justify: "center",
     fill: "vertical"
-  }, /*#__PURE__*/React.createElement(Text, null, placeholder)) : placeholder));
+  }, /*#__PURE__*/React.createElement(Text, null, placeholder)) : placeholder)), paginate && items && /*#__PURE__*/React.createElement(Pagination, _extends({
+    alignSelf: "end"
+  }, paginationProps)));
 };
 
 var DataTableDoc;

@@ -14,9 +14,12 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 var radiusStyle = function radiusStyle(props) {
-  var size = props.sizeProp;
-  if (size && props.theme.button.size && props.theme.button.size[size]) return (0, _styledComponents.css)(["border-radius:", ";"], props.theme.button.size[size].border.radius);
-  if (props.theme.button.border && props.theme.button.border.radius) return (0, _styledComponents.css)(["border-radius:", ";"], props.theme.button.border.radius);
+  var size = props.sizeProp; // caller has specified a themeObj to use for styling
+  // relevant for cases like pagination which looks to theme.pagination.button
+
+  var themeObj = typeof props.kind === 'object' ? props.kind : props.theme.button;
+  if (size && themeObj.size && themeObj.size[size]) return (0, _styledComponents.css)(["border-radius:", ";"], themeObj.size[size].border.radius);
+  if (themeObj.border && themeObj.border.radius) return (0, _styledComponents.css)(["border-radius:", ";"], themeObj.border.radius);
   return '';
 };
 
@@ -26,15 +29,15 @@ var fontStyle = function fontStyle(props) {
   return (0, _styledComponents.css)(["font-size:", ";line-height:", ";"], data.size, data.height);
 };
 
-var padFromTheme = function padFromTheme(size, theme) {
+var padFromTheme = function padFromTheme(size, theme, themeObj) {
   if (size === void 0) {
     size = 'medium';
   }
 
-  if (size && theme.button.size && theme.button.size[size] && theme.button.size[size].pad) {
+  if (size && themeObj.size && themeObj.size[size] && themeObj.size[size].pad) {
     return {
-      vertical: theme.button.size[size].pad.vertical,
-      horizontal: theme.button.size[size].pad.horizontal
+      vertical: themeObj.size[size].pad.vertical,
+      horizontal: themeObj.size[size].pad.horizontal
     };
   }
 
@@ -50,8 +53,12 @@ var padFromTheme = function padFromTheme(size, theme) {
 
 var padStyle = function padStyle(_ref) {
   var size = _ref.sizeProp,
-      theme = _ref.theme;
-  var pad = padFromTheme(size, theme);
+      theme = _ref.theme,
+      kind = _ref.kind;
+  // caller has specified a themeObj to use for styling
+  // relevant for cases like pagination which looks to theme.pagination.button
+  var themeObj = typeof kind === 'object' ? kind : theme.button;
+  var pad = padFromTheme(size, theme, themeObj);
   return pad ? (0, _styledComponents.css)(["padding:", " ", ";"], pad.vertical, pad.horizontal) : '';
 }; // The > svg rule is to ensure Buttons with just an icon don't add additional
 // vertical height internally.
@@ -78,19 +85,23 @@ var getPath = function getPath(theme, path) {
 
 var adjustPadStyle = function adjustPadStyle(pad, width) {
   var offset = (0, _utils.parseMetricToNum)(width);
-  return (0, _styledComponents.css)(["padding:", "px ", "px;"], (0, _utils.parseMetricToNum)(pad.vertical) - offset, (0, _utils.parseMetricToNum)(pad.horizontal) - offset);
+  return (0, _styledComponents.css)(["padding:", "px ", "px;"], Math.max((0, _utils.parseMetricToNum)(pad.vertical) - offset, 0), Math.max((0, _utils.parseMetricToNum)(pad.horizontal) - offset, 0));
 }; // build up CSS from basic to specific based on the supplied sub-object paths
 
 
 var kindStyle = function kindStyle(_ref2) {
   var colorValue = _ref2.colorValue,
+      kind = _ref2.kind,
       size = _ref2.sizeProp,
       themePaths = _ref2.themePaths,
       theme = _ref2.theme;
-  var styles = [];
-  var pad = padFromTheme(size, theme);
+  var styles = []; // caller has specified a themeObj to use for styling
+  // relevant for cases like pagination which looks to theme.pagination.button
+
+  var themeObj = typeof kind === 'object' ? kind : theme.button;
+  var pad = padFromTheme(size, theme, themeObj);
   themePaths.base.forEach(function (themePath) {
-    var obj = getPath(theme, "button." + themePath);
+    var obj = getPath(themeObj, themePath);
 
     if (obj) {
       styles.push((0, _utils.kindPartStyles)(obj, theme, colorValue));
@@ -102,9 +113,25 @@ var kindStyle = function kindStyle(_ref2) {
         styles.push(adjustPadStyle(pad, obj.border.width));
       }
     }
-  });
+  }); // do the styling from the root of the object if caller passes one
+
+  if (!themePaths.base.length && typeof kind === 'object') {
+    var obj = kind;
+
+    if (obj) {
+      styles.push((0, _utils.kindPartStyles)(obj, theme, colorValue));
+
+      if (obj.border && obj.border.width && pad && !obj.padding) {
+        // Adjust padding from the button.size or just top button.padding
+        // to deal with the kind's border width. But don't override any
+        // padding in the kind itself for backward compatibility
+        styles.push(adjustPadStyle(pad, obj.border.width));
+      }
+    }
+  }
+
   themePaths.hover.forEach(function (themePath) {
-    var obj = getPath(theme, "button." + themePath);
+    var obj = getPath(themeObj, themePath);
 
     if (obj) {
       var partStyles = (0, _utils.kindPartStyles)(obj, theme);
@@ -157,11 +184,12 @@ var plainStyle = function plainStyle() {
   return (0, _styledComponents.css)(["outline:none;border:none;padding:0;text-align:inherit;color:inherit;> svg{vertical-align:bottom;}"]);
 };
 
-var StyledButtonKind = _styledComponents["default"].button.attrs(function () {
-  return {
-    // don't let kind attribute leak to DOM
-    kind: undefined
-  };
+var StyledButtonKind = _styledComponents["default"].button.withConfig({
+  // don't let kind attribute leak to DOM
+  // https://styled-components.com/docs/api#shouldforwardprop
+  shouldForwardProp: function shouldForwardProp(prop, defaultValidatorFn) {
+    return !['kind'].includes(prop) && defaultValidatorFn(prop);
+  }
 }).withConfig({
   displayName: "StyledButtonKind",
   componentId: "sc-1vhfpnt-0"

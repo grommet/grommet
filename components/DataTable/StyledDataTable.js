@@ -1,13 +1,15 @@
 "use strict";
 
 exports.__esModule = true;
-exports.StyledPlaceholder = exports.StyledDataTableFooter = exports.StyledDataTableHeader = exports.StyledDataTableCell = exports.StyledDataTableBody = exports.StyledDataTableRow = exports.StyledDataTable = void 0;
+exports.StyledPlaceholder = exports.StyledDataTableFooter = exports.StyledDataTableHeader = exports.StyledDataTableCell = exports.StyledDataTableBody = exports.StyledDataTableRow = exports.StyledDataTable = exports.StyledContainer = void 0;
 
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
 var _utils = require("../../utils");
 
 var _defaultProps = require("../../default-props");
+
+var _Box = require("../Box");
 
 var _TableRow = require("../TableRow");
 
@@ -36,7 +38,17 @@ var StyledDataTable = (0, _styledComponents["default"])(_Table.Table).withConfig
 });
 exports.StyledDataTable = StyledDataTable;
 StyledDataTable.defaultProps = {};
-Object.setPrototypeOf(StyledDataTable.defaultProps, _defaultProps.defaultProps);
+Object.setPrototypeOf(StyledDataTable.defaultProps, _defaultProps.defaultProps); // when paginated, this wraps the data table and pagination component
+
+var StyledContainer = (0, _styledComponents["default"])(_Box.Box).withConfig({
+  displayName: "StyledDataTable__StyledContainer",
+  componentId: "xrlyjm-1"
+})(["", ";"], function (props) {
+  return props.theme.dataTable && props.theme.dataTable.container && props.theme.dataTable.container.extend;
+});
+exports.StyledContainer = StyledContainer;
+StyledContainer.defaultProps = {};
+Object.setPrototypeOf(StyledContainer.defaultProps, _defaultProps.defaultProps);
 var hoverStyle = (0, _styledComponents.css)(["", " color:", ";"], function (props) {
   return (0, _utils.backgroundStyle)((0, _utils.normalizeColor)(props.theme.table && props.theme.table.row && props.theme.table.row.hover && props.theme.table.row.hover.background || props.theme.global.hover.background, props.theme), props.theme);
 }, function (props) {
@@ -44,7 +56,7 @@ var hoverStyle = (0, _styledComponents.css)(["", " color:", ";"], function (prop
 });
 var StyledDataTableRow = (0, _styledComponents["default"])(_TableRow.TableRow).withConfig({
   displayName: "StyledDataTable__StyledDataTableRow",
-  componentId: "xrlyjm-1"
+  componentId: "xrlyjm-2"
 })(["", " ", " &:hover{", "}", ""], function (props) {
   return props.size && "\n    display: table;\n    width: 100%;\n    table-layout: fixed;\n  ";
 }, function (props) {
@@ -60,7 +72,7 @@ Object.setPrototypeOf(StyledDataTableRow.defaultProps, _defaultProps.defaultProp
 
 var StyledDataTableBody = (0, _styledComponents["default"])(_TableBody.TableBody).withConfig({
   displayName: "StyledDataTable__StyledDataTableBody",
-  componentId: "xrlyjm-2"
+  componentId: "xrlyjm-3"
 })(["", " &:focus{", "}"], function (props) {
   return props.size && "\n    display: block;\n    width: 100%;\n    max-height: " + props.theme.global.size[props.size] + ";\n    overflow: auto;\n  ";
 }, (0, _utils.focusStyle)({
@@ -72,7 +84,7 @@ StyledDataTableBody.defaultProps = {};
 Object.setPrototypeOf(StyledDataTableBody.defaultProps, _defaultProps.defaultProps);
 var StyledDataTableHeader = (0, _styledComponents["default"])(_TableHeader.TableHeader).withConfig({
   displayName: "StyledDataTable__StyledDataTableHeader",
-  componentId: "xrlyjm-3"
+  componentId: "xrlyjm-4"
 })(["", ""], function (props) {
   return props.size && "\n    display: table;\n    width: calc(100% - " + props.scrollOffset + "px);\n    table-layout: fixed;\n  ";
 });
@@ -81,7 +93,7 @@ StyledDataTableHeader.defaultProps = {};
 Object.setPrototypeOf(StyledDataTableHeader.defaultProps, _defaultProps.defaultProps);
 var StyledDataTableFooter = (0, _styledComponents["default"])(_TableFooter.TableFooter).withConfig({
   displayName: "StyledDataTable__StyledDataTableFooter",
-  componentId: "xrlyjm-4"
+  componentId: "xrlyjm-5"
 })(["", " ", ""], function (props) {
   return props.size && "\n    display: table;\n    width: calc(100% - " + props.scrollOffset + "px);\n    table-layout: fixed;\n  ";
 }, function (props) {
@@ -92,7 +104,7 @@ StyledDataTableFooter.defaultProps = {};
 Object.setPrototypeOf(StyledDataTableFooter.defaultProps, _defaultProps.defaultProps);
 var StyledDataTableCell = (0, _styledComponents["default"])(_TableCell.TableCell).withConfig({
   displayName: "StyledDataTable__StyledDataTableCell",
-  componentId: "xrlyjm-5"
+  componentId: "xrlyjm-6"
 })(["", ";", ""], function (props) {
   return props.context === 'header' && props.theme.dataTable && props.theme.dataTable.header && props.theme.dataTable.header.extend;
 }, function (props) {
@@ -105,7 +117,7 @@ StyledDataTableCell.defaultProps = {};
 Object.setPrototypeOf(StyledDataTableCell.defaultProps, _defaultProps.defaultProps);
 var StyledPlaceholder = (0, _styledComponents["default"])('caption').withConfig({
   displayName: "StyledDataTable__StyledPlaceholder",
-  componentId: "xrlyjm-6"
+  componentId: "xrlyjm-7"
 })(["position:absolute;", " ", " left:0;right:0;"], function (props) {
   return "top: " + (props.top || 0) + "px;";
 }, function (props) {

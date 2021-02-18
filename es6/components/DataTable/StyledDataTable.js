@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import { backgroundStyle, fillStyle, focusStyle, genericStyles, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
+import { Box } from '../Box';
 import { TableRow } from '../TableRow';
 import { Table } from '../Table';
 import { TableBody } from '../TableBody';
@@ -17,7 +18,16 @@ var StyledDataTable = styled(Table).withConfig({
   return props.theme.dataTable && props.theme.dataTable.body && props.theme.dataTable.body.extend;
 });
 StyledDataTable.defaultProps = {};
-Object.setPrototypeOf(StyledDataTable.defaultProps, defaultProps);
+Object.setPrototypeOf(StyledDataTable.defaultProps, defaultProps); // when paginated, this wraps the data table and pagination component
+
+var StyledContainer = styled(Box).withConfig({
+  displayName: "StyledDataTable__StyledContainer",
+  componentId: "xrlyjm-1"
+})(["", ";"], function (props) {
+  return props.theme.dataTable && props.theme.dataTable.container && props.theme.dataTable.container.extend;
+});
+StyledContainer.defaultProps = {};
+Object.setPrototypeOf(StyledContainer.defaultProps, defaultProps);
 var hoverStyle = css(["", " color:", ";"], function (props) {
   return backgroundStyle(normalizeColor(props.theme.table && props.theme.table.row && props.theme.table.row.hover && props.theme.table.row.hover.background || props.theme.global.hover.background, props.theme), props.theme);
 }, function (props) {
@@ -25,7 +35,7 @@ var hoverStyle = css(["", " color:", ";"], function (props) {
 });
 var StyledDataTableRow = styled(TableRow).withConfig({
   displayName: "StyledDataTable__StyledDataTableRow",
-  componentId: "xrlyjm-1"
+  componentId: "xrlyjm-2"
 })(["", " ", " &:hover{", "}", ""], function (props) {
   return props.size && "\n    display: table;\n    width: 100%;\n    table-layout: fixed;\n  ";
 }, function (props) {
@@ -40,7 +50,7 @@ Object.setPrototypeOf(StyledDataTableRow.defaultProps, defaultProps); // focus s
 
 var StyledDataTableBody = styled(TableBody).withConfig({
   displayName: "StyledDataTable__StyledDataTableBody",
-  componentId: "xrlyjm-2"
+  componentId: "xrlyjm-3"
 })(["", " &:focus{", "}"], function (props) {
   return props.size && "\n    display: block;\n    width: 100%;\n    max-height: " + props.theme.global.size[props.size] + ";\n    overflow: auto;\n  ";
 }, focusStyle({
@@ -51,7 +61,7 @@ StyledDataTableBody.defaultProps = {};
 Object.setPrototypeOf(StyledDataTableBody.defaultProps, defaultProps);
 var StyledDataTableHeader = styled(TableHeader).withConfig({
   displayName: "StyledDataTable__StyledDataTableHeader",
-  componentId: "xrlyjm-3"
+  componentId: "xrlyjm-4"
 })(["", ""], function (props) {
   return props.size && "\n    display: table;\n    width: calc(100% - " + props.scrollOffset + "px);\n    table-layout: fixed;\n  ";
 });
@@ -59,7 +69,7 @@ StyledDataTableHeader.defaultProps = {};
 Object.setPrototypeOf(StyledDataTableHeader.defaultProps, defaultProps);
 var StyledDataTableFooter = styled(TableFooter).withConfig({
   displayName: "StyledDataTable__StyledDataTableFooter",
-  componentId: "xrlyjm-4"
+  componentId: "xrlyjm-5"
 })(["", " ", ""], function (props) {
   return props.size && "\n    display: table;\n    width: calc(100% - " + props.scrollOffset + "px);\n    table-layout: fixed;\n  ";
 }, function (props) {
@@ -69,7 +79,7 @@ StyledDataTableFooter.defaultProps = {};
 Object.setPrototypeOf(StyledDataTableFooter.defaultProps, defaultProps);
 var StyledDataTableCell = styled(TableCell).withConfig({
   displayName: "StyledDataTable__StyledDataTableCell",
-  componentId: "xrlyjm-5"
+  componentId: "xrlyjm-6"
 })(["", ";", ""], function (props) {
   return props.context === 'header' && props.theme.dataTable && props.theme.dataTable.header && props.theme.dataTable.header.extend;
 }, function (props) {
@@ -81,10 +91,10 @@ StyledDataTableCell.defaultProps = {};
 Object.setPrototypeOf(StyledDataTableCell.defaultProps, defaultProps);
 var StyledPlaceholder = styled('caption').withConfig({
   displayName: "StyledDataTable__StyledPlaceholder",
-  componentId: "xrlyjm-6"
+  componentId: "xrlyjm-7"
 })(["position:absolute;", " ", " left:0;right:0;"], function (props) {
   return "top: " + (props.top || 0) + "px;";
 }, function (props) {
   return "bottom: " + (props.bottom || 0) + "px;";
 });
-export { StyledDataTable, StyledDataTableRow, StyledDataTableBody, StyledDataTableCell, StyledDataTableHeader, StyledDataTableFooter, StyledPlaceholder };
+export { StyledContainer, StyledDataTable, StyledDataTableRow, StyledDataTableBody, StyledDataTableCell, StyledDataTableHeader, StyledDataTableFooter, StyledPlaceholder };

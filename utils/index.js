@@ -66,6 +66,14 @@ Object.keys(_object).forEach(function (key) {
   exports[key] = _object[key];
 });
 
+var _pagination = require("./pagination");
+
+Object.keys(_pagination).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _pagination[key]) return;
+  exports[key] = _pagination[key];
+});
+
 var _PortalContext = require("./PortalContext");
 
 Object.keys(_PortalContext).forEach(function (key) {
