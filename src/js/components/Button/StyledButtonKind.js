@@ -36,7 +36,7 @@ const fontStyle = props => {
   `;
 };
 
-const padFromTheme = (size, theme, themeObj) => {
+const padFromTheme = (size = 'medium', theme, themeObj) => {
   if (size && themeObj.size && themeObj.size[size] && themeObj.size[size].pad) {
     return {
       vertical: themeObj.size[size].pad.vertical,
