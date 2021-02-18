@@ -394,7 +394,7 @@ var TextInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
       // placeholder only appears when there is no value
       setShowStyledPlaceholder(placeholder && typeof placeholder !== 'string' && !event.target.value);
       setValue(event.target.value);
-      setActiveSuggestionIndex(-1);
+      setActiveSuggestionIndex(resetSuggestionIndex);
       if (onChange) onChange(event);
     }
   }))), drop);
