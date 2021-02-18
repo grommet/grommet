@@ -260,7 +260,14 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     if (!onSearch) {
       event.preventDefault();
       var nextActiveIndex = options.findIndex(function (e, index) {
-        var label = typeof e === 'object' ? e.label : e;
+        var label;
+
+        if (typeof e === 'object') {
+          label = e.label || applyKey(e, labelKey);
+        } else {
+          label = e;
+        }
+
         return label.charAt(0).toLowerCase() === event.key.toLowerCase() && !isDisabled(index);
       });
 
@@ -273,7 +280,7 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     if (onKeyDown) {
       onKeyDown(event);
     }
-  }, [onKeyDown, options, isDisabled, onSearch]);
+  }, [onKeyDown, options, isDisabled, onSearch, labelKey]);
   var onActiveOption = useCallback(function (index) {
     return function () {
       if (!keyboardNavigation) setActiveIndex(index);

@@ -283,7 +283,14 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
     if (!onSearch) {
       event.preventDefault();
       var nextActiveIndex = options.findIndex(function (e, index) {
-        var label = typeof e === 'object' ? e.label : e;
+        var label;
+
+        if (typeof e === 'object') {
+          label = e.label || (0, _utils2.applyKey)(e, labelKey);
+        } else {
+          label = e;
+        }
+
         return label.charAt(0).toLowerCase() === event.key.toLowerCase() && !isDisabled(index);
       });
 
@@ -296,7 +303,7 @@ var SelectContainer = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, ref) 
     if (onKeyDown) {
       onKeyDown(event);
     }
-  }, [onKeyDown, options, isDisabled, onSearch]);
+  }, [onKeyDown, options, isDisabled, onSearch, labelKey]);
   var onActiveOption = (0, _react.useCallback)(function (index) {
     return function () {
       if (!keyboardNavigation) setActiveIndex(index);
