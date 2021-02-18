@@ -16,6 +16,10 @@ var fontStyle = function fontStyle(props) {
 };
 
 var padFromTheme = function padFromTheme(size, theme) {
+  if (size === void 0) {
+    size = 'medium';
+  }
+
   if (size && theme.button.size && theme.button.size[size] && theme.button.size[size].pad) {
     return {
       vertical: theme.button.size[size].pad.vertical,
