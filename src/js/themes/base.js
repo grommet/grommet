@@ -3,6 +3,7 @@ import { rgba } from 'polished';
 import { Actions } from 'grommet-icons/icons/Actions';
 import { ClosedCaption } from 'grommet-icons/icons/ClosedCaption';
 import { Expand } from 'grommet-icons/icons/Expand';
+import { FormClose } from 'grommet-icons/icons/FormClose';
 import { FormDown } from 'grommet-icons/icons/FormDown';
 import { FormNext } from 'grommet-icons/icons/FormNext';
 import { FormPrevious } from 'grommet-icons/icons/FormPrevious';
@@ -762,6 +763,40 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     //   extend: undefined,
     //   maxHeight: undefined,
     // },
+    fileInput: {
+      // background: {},
+      border: {
+        // color: undefined,
+        side: 'all',
+        size: 'small',
+        style: 'dashed',
+      },
+      dragOver: {
+        border: {
+          color: 'control',
+        },
+        // extend: undefined,
+      },
+      hover: {
+        border: {
+          color: 'brand',
+        },
+        // extend: undefined,
+      },
+      icons: {
+        remove: FormClose,
+      },
+      // pad: {},
+      label: {
+        margin: 'small',
+        // extend: undefined,
+      },
+      message: {
+        margin: 'small',
+        // extend: undefined,
+      },
+      // extend: undefined,
+    },
     formField: {
       border: {
         color: 'border',
