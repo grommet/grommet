@@ -19,7 +19,9 @@ export var Simple = function Simple() {
     pad: "large"
   }, /*#__PURE__*/React.createElement(DataChart, {
     data: data,
-    series: "percent"
+    series: [{
+      property: 'percent'
+    }, {}]
   })));
 };
 export default {

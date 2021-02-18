@@ -69,7 +69,9 @@ var DataChart = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
   var spacerRef = (0, _react.useRef)(); // normalize seriesProp to an array of objects, one per property
 
   var series = (0, _react.useMemo)(function () {
-    if (Array.isArray(seriesProp)) return seriesProp.map(function (s) {
+    if (Array.isArray(seriesProp)) return seriesProp.filter(function (s) {
+      return s.property || typeof s === 'string';
+    }).map(function (s) {
       return typeof s === 'string' ? {
         property: s
       } : s;

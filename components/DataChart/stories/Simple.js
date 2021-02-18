@@ -29,7 +29,9 @@ var Simple = function Simple() {
     pad: "large"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.DataChart, {
     data: data,
-    series: "percent"
+    series: [{
+      property: 'percent'
+    }, {}]
   })));
 };
 
