@@ -52,9 +52,9 @@ const DataChart = forwardRef(
     // normalize seriesProp to an array of objects, one per property
     const series = useMemo(() => {
       if (Array.isArray(seriesProp))
-        return seriesProp.map(s =>
-          typeof s === 'string' ? { property: s } : s,
-        );
+        return seriesProp
+          .filter(s => s.property || typeof s === 'string')
+          .map(s => (typeof s === 'string' ? { property: s } : s));
       if (typeof seriesProp === 'string') return [{ property: seriesProp }];
       if (seriesProp) return [seriesProp];
       return [];
