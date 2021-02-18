@@ -4,6 +4,7 @@ import {
   Box,
   Button,
   CheckBox,
+  FileInput,
   Form,
   FormField,
   Grommet,
@@ -16,8 +17,8 @@ import { grommet } from 'grommet/themes';
 
 export const FieldWithComponentProp = () => (
   <Grommet full theme={grommet}>
-    <Box fill align="center" justify="center">
-      <Box width="medium">
+    <Box fill overflow="auto" align="center" justify="center" pad="large">
+      <Box flex={false} width="medium">
         <Form
           onReset={event => console.log(event)}
           onSubmit={({ value, touched }) =>
@@ -70,6 +71,7 @@ export const FieldWithComponentProp = () => (
             min={15}
             max={75}
           />
+          <FormField label="File" name="file" component={FileInput} />
           <FormField
             label="Custom"
             name="custom"
