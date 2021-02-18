@@ -56,7 +56,8 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
     if (typeof seriesProp === 'string') return [{
       property: seriesProp
     }];
-    return [seriesProp];
+    if (seriesProp) return [seriesProp];
+    return [];
   }, [seriesProp]);
 
   var getPropertySeries = function getPropertySeries(prop) {
@@ -73,7 +74,9 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
   var charts = useMemo(function () {
     if (!chart) {
-      if (series.length === 1) return series.map(function (s) {
+      if (series.length === 1) return series.filter(function (s) {
+        return s.property;
+      }).map(function (s) {
         return {
           property: s.property
         };
@@ -95,9 +98,11 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
       var property = _ref3.property;
       return property;
     });
-    return typeof chart === 'string' ? [{
+    if (typeof chart === 'string') return [{
       property: chart
-    }] : [chart];
+    }];
+    if (chart) return [chart];
+    return [];
   }, [chart, series]); // map the series property values into their own arrays
 
   var seriesValues = useMemo(function () {
@@ -296,7 +301,7 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
       });
     });
 
-    if (boundsProp === 'align') {
+    if (boundsProp === 'align' && chartBounds.length) {
       var alignedBounds = [].concat(chartBounds[0]);
       chartBounds.forEach(function (bounds) {
         alignedBounds[0][0] = Math.min(alignedBounds[0][0], bounds[0][0]);
@@ -459,7 +464,7 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }; // TODO: revisit how x/y axis are hooked up to charts and series
 
 
-  var xAxisElement = axis && axis.x ? /*#__PURE__*/React.createElement(XAxis, {
+  var xAxisElement = axis && axis.x && chartProps.length ? /*#__PURE__*/React.createElement(XAxis, {
     ref: xRef,
     axis: axis,
     chartProps: chartProps,
@@ -467,7 +472,7 @@ var DataChart = /*#__PURE__*/forwardRef(function (_ref, ref) {
     renderValue: renderValue,
     serie: axis.x.property && getPropertySeries(axis.x.property)
   }) : null;
-  var yAxisElement = axis && axis.y ? /*#__PURE__*/React.createElement(YAxis, {
+  var yAxisElement = axis && axis.y && chartProps.length ? /*#__PURE__*/React.createElement(YAxis, {
     axis: axis,
     chartProps: chartProps,
     pad: pad,
