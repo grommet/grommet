@@ -321,6 +321,40 @@ describe('TextInput', () => {
     );
   });
 
+  test('auto-select 1st suggestion via typing with defaultSuggestion', () => {
+    const onSelect = jest.fn();
+    const suggestions = ['nodefault1', 'default', 'nodefault2'];
+    const defaultSuggestionIndex = 1;
+    const { getByTestId } = render(
+      <Grommet>
+        <TextInput
+          data-testid="test-input"
+          id="item"
+          name="item"
+          defaultSuggestion={defaultSuggestionIndex}
+          suggestions={suggestions}
+          onSuggestionSelect={onSelect}
+        />
+      </Grommet>,
+    );
+
+    const input = getByTestId('test-input');
+    // Set focus so drop opens and we track activeSuggestionIndex
+    fireEvent.focus(input);
+    // Fire a change event so that onChange is triggered.
+    fireEvent.change(input, { target: { value: 'ma' } });
+    // Each time we type, the active suggestion should reset to the suggestion
+    // matching the entered text, or the default suggestion index if no
+    // suggestion matches.  Now, when we hit enter, there's no match yet, so
+    // the default suggestion should be selected.
+    fireEvent.keyDown(input, { keyCode: 13 }); // enter
+    expect(onSelect).toBeCalledWith(
+      expect.objectContaining({
+        suggestion: 'default',
+      }),
+    );
+  });
+
   test('do not select any suggestion without defaultSuggestion', () => {
     const onSelect = jest.fn();
     const { getByTestId } = render(

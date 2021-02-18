@@ -472,7 +472,7 @@ const TextInput = forwardRef(
                         !event.target.value,
                     );
                     setValue(event.target.value);
-                    setActiveSuggestionIndex(-1);
+                    setActiveSuggestionIndex(resetSuggestionIndex);
                     if (onChange) onChange(event);
                   }
             }
