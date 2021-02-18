@@ -19,11 +19,11 @@ export const FocusedContainer = ({
   const [bodyOverflowStyle, setBodyOverflowStyle] = useState('');
   const ref = useRef(null);
 
-  // Add node to array that tracks elements that come from Grommet
-  // so we know to handle their aria-hidden value
   const bodyChildrenFromGrommet = useContext(GrommetContext);
   useEffect(() => {
     if (bodyChildrenFromGrommet && ref && ref.current) {
+      // Add node to array that tracks elements that come from Grommet
+      // so we know to handle their aria-hidden value
       bodyChildrenFromGrommet.push(ref.current);
     }
   }, [bodyChildrenFromGrommet]);
