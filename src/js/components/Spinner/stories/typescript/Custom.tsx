@@ -1,27 +1,33 @@
 import React from 'react';
 
 import { Box, Grommet, Spinner, Stack } from 'grommet';
+import { ThemeType } from 'grommet/themes';
 
-const theme = {
+// Type annotations can only be used in TypeScript files.
+// Remove ': ThemeType' if you are not using Typescript.
+const theme: ThemeType = {
   global: {
     colors: {
-      //   'brand-light': 'rgba(125, 76, 219, 0.3)',
       //   https://www.schemecolor.com/olympic-logos-and-symbols-colors.php#:~:text=The%20Olympic%20Logos%20And%20Symbols,and%20Cadmium%20Red%20(%23DF0024).
       blue: '#0085C7',
       'light-blue': 'rgba(0, 133, 199, 0.3)',
       yellow: '#F4C300',
       'light-yellow': 'rgba(244, 195, 0, 0.3)',
-      pantone: '#009F3D',
-      'light-pantone': 'rgba(0, 159, 61, 0.3)',
+      green: '#009F3D',
+      'light-green': 'rgba(0, 159, 61, 0.3)',
       red: '#DF0024',
       'light-red': 'rgba(223, 0, 36, 0.3)',
       'light-black': 'rgba(0, 0, 0, 0.3)',
     },
   },
+  spinner:{
+    container: {
+      animation: {type: "rotateLeft", duration: 900},
+    },
+  },
 };
 const OlympicRing = ({ color }) => (
   <Spinner
-    color="graph-1"
     size="large"
     border={[
       { side: 'all', color: `light-${color}`, size: 'medium' },
@@ -32,25 +38,25 @@ const OlympicRing = ({ color }) => (
 
 export const Custom = () => (
   <Grommet theme={theme} full>
-    <Box align="center">
+    <Box align="center" responsive={false}>
       <Stack anchor="left">
-        <Box align="start">
+        <Box align="start" responsive={false}>
           <OlympicRing color="blue" />
         </Box>
-        <Box margin={{ left: 'large' }}>
+        <Box margin={{ left: 'large' }} responsive={false}>
           <OlympicRing color="black" />
         </Box>
-        <Box margin={{ left: 'xlarge' }}>
+        <Box margin={{ left: 'xlarge' }} responsive={false}>
           <OlympicRing color="red" />
         </Box>
       </Stack>
-      <Box justify="center">
+      <Box justify="center" margin="-20px">
         <Stack anchor="left">
-          <Box margin={{ left: 'large' }} align="start">
+          <Box margin={{ left: 'large' }} align="start" responsive={false}>
             <OlympicRing color="yellow" />
           </Box>
-          <Box margin={{ left: 'xlarge' }}>
-            <OlympicRing color="pantone" />
+          <Box margin={{ left: 'xlarge' }} responsive={false}>
+            <OlympicRing color="green" />
           </Box>
         </Stack>
       </Box>

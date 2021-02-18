@@ -42,6 +42,8 @@ export interface BoxProps {
           | 'fadeOut'
           | 'jiggle'
           | 'pulse'
+          | 'rotateLeft'
+          | 'rotateRight'
           | 'slideUp'
           | 'slideDown'
           | 'slideLeft'

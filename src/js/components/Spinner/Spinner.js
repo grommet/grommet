@@ -1,14 +1,14 @@
 import React, { forwardRef, useContext } from 'react';
-
 import { ThemeContext } from 'styled-components';
-import { Box } from '../Box';
 
-// prop of a message too connect with announce
-// children
+import { Box } from '../Box';
+import { defaultProps } from '../../default-props';
+
+// prop of a message to connect with announce
 
 const BasicSpinner = ({ theme, spinnerSize, ...rest }) => (
   <Box
-    animation={{ type: 'rotateRight' }}
+    animation="rotateRight"
     height={spinnerSize}
     width={spinnerSize}
     {...theme.spinner?.container}
@@ -16,29 +16,28 @@ const BasicSpinner = ({ theme, spinnerSize, ...rest }) => (
   />
 );
 
-export const Spinner = forwardRef(
-  ({ children, color, size = 'small', ...rest }, ref) => {
-    const theme = useContext(ThemeContext);
-    const spinnerSize = theme.spinner.size[size] || size;
+export const Spinner = forwardRef(({ children, color, size, ...rest }, ref) => {
+  const theme = useContext(ThemeContext) || defaultProps.theme;
+  const spinnerSize =
+    theme.spinner.size[size] || size || theme.spinner.size.small;
 
-    console.log('spinnerSize', spinnerSize);
-    return children ? (
-      <BasicSpinner theme={theme} spinnerSize={spinnerSize} ref={ref} {...rest}>
-        {children}
-      </BasicSpinner>
-    ) : (
-      <BasicSpinner
-        spinnerSize={spinnerSize}
-        theme
-        ref={ref}
-        border={[
-          { side: 'all', color: 'background-contrast', size },
-          { side: 'top', color: color || 'brand', size },
-        ]}
-        round="full"
-        pad="small"
-        {...rest}
-      />
-    );
-  },
-);
+  console.log('theme', theme);
+  return children ? (
+    <BasicSpinner theme={theme} spinnerSize={spinnerSize} ref={ref} {...rest}>
+      {children}
+    </BasicSpinner>
+  ) : (
+    <BasicSpinner
+      spinnerSize={spinnerSize}
+      theme={theme}
+      ref={ref}
+      border={[
+        { side: 'all', color: 'background-contrast', size },
+        { side: 'top', color: color || 'brand', size },
+      ]}
+      round="full"
+      pad="small"
+      {...rest}
+    />
+  );
+});

@@ -2,6 +2,11 @@ import { describe } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
+// animation + round + background
+// modal
+
+
+
 export const doc = Card => {
   const DocumentedCard = describe(Card)
     .availableAt(getAvailableAtBadge('Card', 'Layout'))

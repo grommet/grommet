@@ -966,8 +966,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         large: `${baseSpacing * 3}px`,
         xlarge: `${baseSpacing * 4}px`,
       },
-      container: {},
-      // TODO box props
+      // container: undefined,
     },
     radioButton: {
       border: {

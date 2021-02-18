@@ -1079,6 +1079,16 @@ export interface ThemeType {
     container?: BoxProps;
     label?: TextProps;
   };
+  spinner?: {
+    size?:
+    | 'xsmall'
+    | 'small'
+    | 'medium'
+    | 'large'
+    | 'xlarge'
+    | string;
+    container?: BoxProps;
+  };
   tab?: {
     active?: {
       background?: BackgroundType;

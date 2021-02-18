@@ -24,6 +24,11 @@ export const doc = Spinner => {
 };
 
 export const themeDoc = {
+  'spinner.container': {
+    description: 'Any valid Box prop for the Spinner container.',
+    type: 'object',
+    defaultValue: undefined,
+  },
   'spinner.size.xsmall': {
     description: 'The xsmall size of the Spinner.',
     type: 'string',
