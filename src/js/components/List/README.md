@@ -440,7 +440,7 @@ Defaults to
 **list.container.extend**
 
 Any additional style for the container 
-    surrounding the List and Pagination components. Expects `object`.
+    surrounding the List and Pagination components. Expects `string | (props) => {}`.
 
 Defaults to
 
