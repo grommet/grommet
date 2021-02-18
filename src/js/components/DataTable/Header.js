@@ -159,7 +159,7 @@ const Header = forwardRef(
               )}
             </TableCell>
           )}
-          {childComponent && <TableCell />}
+          {childComponent && <TableCell size="xxsmall" plain pad="none" />}
           {columns.map(
             ({
               property,
