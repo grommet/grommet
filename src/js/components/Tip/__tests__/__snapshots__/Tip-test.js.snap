@@ -458,8 +458,8 @@ exports[`Tip should work with a child that isn't a React Element 1`] = `
   <span
     onBlur={[Function]}
     onFocus={[Function]}
+    onMouseEnter={[Function]}
     onMouseLeave={[Function]}
-    onMouseOver={[Function]}
   >
     Not React Element
   </span>
