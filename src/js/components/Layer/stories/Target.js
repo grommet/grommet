@@ -1,5 +1,15 @@
 import React from 'react';
-import { Box, Button, CheckBox, Grid, Grommet, Layer, Select } from 'grommet';
+import {
+  Box,
+  Button,
+  CheckBox,
+  Grid,
+  Grommet,
+  Layer,
+  ResponsiveContext,
+  Select,
+  Text,
+} from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const positions = ['left', 'right', 'top', 'bottom', 'center'];
@@ -19,61 +29,76 @@ export const TargetLayer = () => {
 
   return (
     <Grommet theme={grommet} full>
-      <Grid
-        fill
-        columns={[gutter, 'flex', gutter]}
-        rows={[gutter, 'flex', gutter]}
-        areas={[{ name: 'main', start: [1, 1], end: [1, 1] }]}
-      >
-        <Box
-          ref={ref}
-          gridArea="main"
-          fill
-          height={{ min: 'small' }}
-          align="center"
-          justify="center"
-          gap="medium"
-          background="brand"
-        >
-          <Select
-            options={positions}
-            value={position}
-            onChange={({ option }) => setPosition(option)}
-          />
-          <CheckBox
-            toggle
-            label="modal"
-            checked={modal}
-            onChange={() => setModal(!modal)}
-          />
-          <Button label="Open" onClick={onOpen} />
-        </Box>
-      </Grid>
-      {/* Adding Box as placeholder to demo how Layer scrolls
-      with target */}
-      <Box height="large" />
-      {open && (
-        <Layer
-          modal={modal}
-          position={position}
-          target={ref.current}
-          onClickOutside={onClose}
-          onEsc={onClose}
-        >
-          <Box pad="medium" gap="small" width="medium">
-            <Button
-              label="Toggle gutter size"
-              onClick={() => setGutter(gutter === 'small' ? 'xsmall' : 'small')}
-            />
-            <Button label="Close" onClick={onClose} />
-            <Select
-              options={positions}
-              value={position}
-              onChange={({ option }) => setPosition(option)}
-            />
-          </Box>
-        </Layer>
-      )}
+      <ResponsiveContext.Consumer>
+        {size => (
+          <>
+            <Grid
+              fill
+              columns={[gutter, 'flex', gutter]}
+              rows={[gutter, 'flex', gutter]}
+              areas={[{ name: 'main', start: [1, 1], end: [1, 1] }]}
+            >
+              <Box
+                ref={ref}
+                gridArea="main"
+                fill
+                height={{ min: 'small' }}
+                align="center"
+                justify="center"
+                gap="medium"
+                background="brand"
+              >
+                <Select
+                  options={positions}
+                  value={position}
+                  onChange={({ option }) => setPosition(option)}
+                />
+                <CheckBox
+                  toggle
+                  label="modal"
+                  checked={modal}
+                  onChange={() => setModal(!modal)}
+                />
+                <Button label="Open" onClick={onOpen} />
+              </Box>
+            </Grid>
+            {/* Adding Box as placeholder to demo how Layer scrolls
+        with target */}
+            <Box height="large" />
+            {open && (
+              <Layer
+                modal={modal}
+                position={position}
+                target={ref.current}
+                onClickOutside={onClose}
+                onEsc={onClose}
+              >
+                <Box pad="medium" gap="small" width="medium">
+                  <Button
+                    label="Toggle gutter size"
+                    onClick={() =>
+                      setGutter(gutter === 'small' ? 'xsmall' : 'small')
+                    }
+                    disabled={size === 'small'}
+                  />
+                  {size === 'small' && (
+                    <Text>
+                      To toggle gutter size, increase your screen width to be
+                      greater than 768px.
+                    </Text>
+                  )}
+                  <Button label="Close" onClick={onClose} />
+                  <Select
+                    options={positions}
+                    value={position}
+                    onChange={({ option }) => setPosition(option)}
+                  />
+                </Box>
+              </Layer>
+            )}
+          </>
+        )}
+      </ResponsiveContext.Consumer>
     </Grommet>
   );
 };
