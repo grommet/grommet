@@ -381,4 +381,53 @@ describe('Button kind', () => {
     fireEvent.mouseOver(getByText('Button'));
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test(`should apply size styling correctly`, () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          button: {
+            default: {},
+            size: {
+              small: {
+                border: {
+                  radius: '4px',
+                },
+                pad: {
+                  vertical: '4px',
+                  horizontal: '8px',
+                },
+              },
+              medium: {
+                border: {
+                  radius: '4px',
+                },
+                pad: {
+                  vertical: '6px',
+                  horizontal: '12px',
+                },
+              },
+              large: {
+                border: {
+                  radius: '6px',
+                },
+                pad: {
+                  vertical: '6px',
+                  horizontal: '16px',
+                },
+              },
+            },
+          },
+        }}
+      >
+        <Button label="Button" size="small" />
+        {/* button with no size specified should have medium styling applied 
+        by default */}
+        <Button label="Button" />
+        <Button label="Button" size="medium" />
+        <Button label="Button" size="large" />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
