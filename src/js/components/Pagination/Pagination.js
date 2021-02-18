@@ -1,0 +1,208 @@
+import React, { forwardRef, useContext, useState } from 'react';
+import styled, { ThemeContext } from 'styled-components';
+import { defaultProps } from '../../default-props';
+import { Box } from '../Box';
+import { Nav } from '../Nav';
+import { PageControl } from './PageControl';
+
+const StyledPaginationContainer = styled(Box)`
+  ${props =>
+    props.theme.pagination.container && props.theme.pagination.container.extend}
+`;
+
+const getPageIndices = (begin, end) => {
+  const indices = [];
+  for (let i = begin; i <= end; i += 1) {
+    indices.push(i);
+  }
+  return indices;
+};
+
+const Pagination = forwardRef(
+  (
+    {
+      a11yTitle,
+      numberItems,
+      numberEdgePages = 1, // number of pages at each edge of page indices
+      // number of page controls in the middle
+      numberMiddlePages: numberMiddlePagesProp = 3,
+      onChange,
+      page: pageProp,
+      size,
+      step = 10,
+      ...rest
+    },
+    ref,
+  ) => {
+    const theme = useContext(ThemeContext) || defaultProps.theme;
+
+    /* Calculate total number pages */
+    const totalPages = Math.ceil(numberItems / step);
+    const [activePage, setActivePage] = useState(
+      Math.min(pageProp, totalPages) || 1,
+    );
+
+    /* Define page indices to display */
+    const beginPages = getPageIndices(1, Math.min(numberEdgePages, totalPages));
+    const endPages = getPageIndices(
+      Math.max(totalPages - numberEdgePages + 1, numberEdgePages + 1),
+      totalPages,
+    );
+
+    let numberMiddlePages;
+    if (numberMiddlePagesProp < 1) {
+      numberMiddlePages = 1;
+      console.warn(
+        // eslint-disable-next-line max-len
+        `Property "numberMiddlePages" should not be < 1. One middle page button will be shown. Set "numberMiddlePages" >= 1 to remove this warning.`,
+      );
+    } else numberMiddlePages = numberMiddlePagesProp;
+
+    let startingMiddlePages;
+    // odd
+    if (numberMiddlePages % 2)
+      startingMiddlePages = Math.min(
+        activePage - Math.floor(numberMiddlePages / 2),
+        totalPages - numberEdgePages - numberMiddlePages,
+      );
+    // even, cannot split equally around active page
+    // let extra page appear on middlePagesEnd instead
+    else
+      startingMiddlePages = Math.min(
+        activePage - Math.floor(numberMiddlePages / 2) + 1,
+        totalPages - numberEdgePages - numberMiddlePages,
+      );
+
+    const middlePagesBegin = Math.max(startingMiddlePages, numberEdgePages + 2);
+    const middlePagesEnd = Math.min(
+      Math.max(
+        activePage + Math.floor(numberMiddlePages / 2),
+        numberEdgePages + numberMiddlePages + 1,
+      ),
+      endPages.length > 0 ? endPages[0] - 2 : totalPages - 1,
+    );
+
+    const middlePages = getPageIndices(middlePagesBegin, middlePagesEnd);
+
+    let beginFlex = [];
+    if (middlePagesBegin > numberEdgePages + 2) beginFlex = ['more-prev'];
+    else if (numberEdgePages + 1 < totalPages - numberEdgePages)
+      beginFlex = [numberEdgePages + 1];
+
+    let endFlex = [];
+    if (middlePagesEnd < totalPages - numberEdgePages - 1)
+      endFlex = ['more-next'];
+    else if (totalPages - numberEdgePages > numberEdgePages)
+      endFlex = [totalPages - numberEdgePages];
+
+    const getItemIndices = nextPage => {
+      const startIndex = step * (nextPage - 1);
+      const endIndex = startIndex + step;
+      return { startIndex, endIndex };
+    };
+
+    const handleClick = (event, nextPage) => {
+      setActivePage(nextPage);
+
+      if (onChange) {
+        event.persist();
+        const adjustedEvent = event;
+        adjustedEvent.page = nextPage;
+
+        // for controlled use cases, provide user with info on
+        // what range of indices should be displayed given the active page
+        const { startIndex, endIndex } = getItemIndices(nextPage);
+        adjustedEvent.startIndex = startIndex;
+        adjustedEvent.endIndex = endIndex;
+        onChange(adjustedEvent);
+      }
+    };
+
+    const NextIcon = theme.pagination.icons.next;
+    const PreviousIcon = theme.pagination.icons.previous;
+    const iconColor = theme.pagination.icons.color;
+
+    const navProps = {
+      next: {
+        // https://a11y-style-guide.com/style-guide/section-navigation.html#kssref-navigation-pagination
+        'aria-disabled': activePage === totalPages ? 'true' : undefined,
+        disabled: activePage === totalPages || !numberItems,
+        icon: <NextIcon color={iconColor} />,
+        onClick: event => {
+          const nextPage = activePage + 1;
+          handleClick(event, nextPage);
+        },
+        label: undefined,
+      },
+      previous: {
+        'aria-disabled': activePage === 1 ? 'true' : undefined,
+        disabled: activePage === 1 || !numberItems,
+        icon: <PreviousIcon color={iconColor} />,
+        onClick: event => {
+          const previousPage = activePage - 1;
+          handleClick(event, previousPage);
+        },
+        label: undefined,
+      },
+    };
+
+    let controls = [
+      'previous',
+      ...beginPages,
+      ...beginFlex, // either "..." or single page to bridge start + middle
+      ...middlePages,
+      ...endFlex, // either "..." or single page to bridge middle + end
+      ...endPages,
+      'next',
+    ];
+
+    /* Set props for each page index. Each page index should display a
+     * clickable index, control, or placeholder (e.g. ellipsis) indicating
+     * more pages are available.
+     */
+    controls = controls.map(control => ({
+      active: control === activePage,
+      a11yTitle:
+        typeof control === 'number'
+          ? `Go to page ${control}`
+          : `Go to ${control} page`,
+      // https://a11y-style-guide.com/style-guide/section-navigation.html#kssref-navigation-pagination
+      // https://www.w3.org/TR/wai-aria-1.1/#aria-current
+      'aria-current': control === activePage ? 'page' : undefined,
+      control,
+      onClick: event => {
+        handleClick(event, control);
+      },
+      separator: control === 'more-prev' || control === 'more-next',
+      ...navProps[control],
+    }));
+
+    return (
+      <StyledPaginationContainer {...theme.pagination.container} {...rest}>
+        <Nav a11yTitle={a11yTitle || 'Pagination Navigation'} ref={ref}>
+          <Box as="ul" {...theme.pagination.controls}>
+            {controls.map((control, index) => (
+              /* Using index as key (as opposed to a unique id) seems to
+               * help React prioritize rendering the updated controls as
+               * desired. Whereas, using a unique id resulted in rendering
+               * the active control with an undesired lag. */
+              // eslint-disable-next-line react/no-array-index-key
+              <PageControl key={index} size={size} {...control} />
+            ))}
+          </Box>
+        </Nav>
+      </StyledPaginationContainer>
+    );
+  },
+);
+
+Pagination.displayName = 'Pagination';
+
+let PaginationDoc;
+if (process.env.NODE_ENV !== 'production') {
+  // eslint-disable-next-line global-require
+  PaginationDoc = require('./doc').doc(Pagination);
+}
+const PaginationWrapper = PaginationDoc || Pagination;
+
+export { PaginationWrapper as Pagination };
