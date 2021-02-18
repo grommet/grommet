@@ -1,10 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 
-import {
-  getBodyChildElements,
-  makeNodeFocusable,
-  makeNodeUnfocusable,
-} from '../utils';
+import { makeNodeFocusable, makeNodeUnfocusable } from '../utils';
 import { GrommetContext } from './Grommet/GrommetContext';
 
 const isNotAncestorOf = child => parent => !parent.contains(child);
@@ -36,12 +32,6 @@ export const FocusedContainer = ({
         bodyChildrenFromGrommet
           .filter(isNotAncestorOf(child))
           .forEach(handleFocusable);
-
-      // if an application doesn't use a <Grommet> wrapper, we search
-      // the DOM to find FocusedContainer with data-g-id="grommet"
-      getBodyChildElements()
-        .filter(isNotAncestorOf(child))
-        .forEach(handleFocusable);
     };
 
     const removeTrap = () => {
@@ -82,16 +72,7 @@ export const FocusedContainer = ({
   ]);
 
   return (
-    <div
-      ref={ref}
-      aria-hidden={hidden}
-      // if a component relying on FocusedContainer is used in an
-      // application that does not have a GrommetContext, we still
-      // need a way to identify that this component is coming from
-      // Grommet to control its aria-hidden value
-      data-g-id={!bodyChildrenFromGrommet ? 'grommet' : undefined}
-      {...rest}
-    >
+    <div ref={ref} aria-hidden={hidden} {...rest}>
       {children}
     </div>
   );
