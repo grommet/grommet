@@ -173,7 +173,7 @@ export const themeDoc = {
   'list.container.extend': {
     description: `Any additional style for the container 
     surrounding the List and Pagination components.`,
-    type: 'object',
+    type: 'string | (props) => {}',
     defaultValue: undefined,
   },
   'list.extend': {
