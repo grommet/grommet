@@ -382,7 +382,7 @@ describe('Button kind', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test(`should apply size styling correctly`, () => {
+  test(`should apply styling according to theme size definitions`, () => {
     const { container } = render(
       <Grommet
         theme={{
