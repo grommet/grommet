@@ -81,7 +81,7 @@ const DataTable = ({
   step = 50,
   ...rest
 }) => {
-  const theme = useContext(ThemeContext);
+  const theme = useContext(ThemeContext) || defaultProps.theme;
 
   // property name of the primary property
   const primaryProperty = useMemo(
