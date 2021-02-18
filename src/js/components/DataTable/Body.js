@@ -1,10 +1,11 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, Fragment } from 'react';
 
 import { CheckBox } from '../CheckBox';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { TableRow } from '../TableRow';
 import { TableCell } from '../TableCell';
 import { Keyboard } from '../Keyboard';
+import { ExpanderCell } from './ExpanderCell';
 
 import { Cell } from './Cell';
 import { StyledDataTableBody, StyledDataTableRow } from './StyledDataTable';
@@ -26,8 +27,11 @@ const Body = forwardRef(
       primaryProperty,
       rowProps,
       selected,
+      childComponent,
       size,
       step,
+      childExpand,
+      setChildExpand,
       ...rest
     },
     ref,
@@ -85,67 +89,101 @@ const Body = forwardRef(
                 ? datumValue(datum, primaryProperty)
                 : undefined;
               const isSelected = selected && selected.includes(primaryValue);
+              const childExist = childExpand.includes(index);
+              const ischildExpanded = childExpand && childExist;
               return (
-                <StyledDataTableRow
-                  key={primaryValue || index}
-                  ref={rowRef}
-                  size={size}
-                  active={active >= 0 ? active === index : undefined}
-                  onClick={
-                    onClickRow
-                      ? event => {
-                          // extract from React's synthetic event pool
-                          event.persist();
-                          const adjustedEvent = event;
-                          adjustedEvent.datum = datum;
-                          adjustedEvent.index = index;
-                          onClickRow(adjustedEvent);
-                        }
-                      : undefined
-                  }
-                  onMouseEnter={onClickRow ? () => setActive(index) : undefined}
-                  onMouseLeave={
-                    onClickRow ? () => setActive(undefined) : undefined
-                  }
-                  onFocus={onClickRow ? () => setActive(index) : undefined}
-                  onBlur={onClickRow ? () => setActive(undefined) : undefined}
-                >
-                  {(selected || onSelect) && (
-                    <TableCell background={background}>
-                      <CheckBox
-                        a11yTitle={`${
-                          isSelected ? 'unselect' : 'select'
-                        } ${primaryValue}`}
-                        checked={isSelected}
-                        disabled={!onSelect}
-                        onChange={() => {
-                          if (isSelected)
-                            onSelect(selected.filter(s => s !== primaryValue));
-                          else onSelect([...selected, primaryValue]);
+                <Fragment key={`${index.toString()}_expanded`}>
+                  <StyledDataTableRow
+                    key={primaryValue || index}
+                    ref={rowRef}
+                    size={size}
+                    active={active >= 0 ? active === index : undefined}
+                    onClick={
+                      onClickRow
+                        ? event => {
+                            // extract from React's synthetic event pool
+                            event.persist();
+                            const adjustedEvent = event;
+                            adjustedEvent.datum = datum;
+                            adjustedEvent.index = index;
+                            onClickRow(adjustedEvent);
+                          }
+                        : undefined
+                    }
+                    onMouseEnter={
+                      onClickRow ? () => setActive(index) : undefined
+                    }
+                    onMouseLeave={
+                      onClickRow ? () => setActive(undefined) : undefined
+                    }
+                    onFocus={onClickRow ? () => setActive(index) : undefined}
+                    onBlur={onClickRow ? () => setActive(undefined) : undefined}
+                  >
+                    {childComponent && (
+                      <ExpanderCell
+                        context={ischildExpanded ? 'groupHeader' : 'body'}
+                        expanded={ischildExpanded}
+                        onToggle={() => {
+                          if (ischildExpanded) {
+                            setChildExpand(
+                              childExpand.filter(s => s !== index),
+                            );
+                          } else {
+                            setChildExpand([...childExpand, index]);
+                          }
                         }}
                       />
-                    </TableCell>
-                  )}
-                  {columns.map(column => (
-                    <Cell
-                      key={column.property}
-                      background={column.pin ? pinnedBackground : background}
-                      border={border}
-                      context="body"
-                      column={column}
-                      datum={datum}
-                      index={index}
-                      pad={pad}
-                      primaryProperty={primaryProperty}
-                      rowProp={rowProps && rowProps[primaryValue]}
-                      scope={
-                        column.primary || column.property === primaryProperty
-                          ? 'row'
-                          : undefined
-                      }
-                    />
-                  ))}
-                </StyledDataTableRow>
+                    )}
+                    {(selected || onSelect) && (
+                      <TableCell background={background}>
+                        <CheckBox
+                          a11yTitle={`${
+                            isSelected ? 'unselect' : 'select'
+                          } ${primaryValue}`}
+                          checked={isSelected}
+                          disabled={!onSelect}
+                          onChange={() => {
+                            if (isSelected) {
+                              onSelect(
+                                selected.filter(s => s !== primaryValue),
+                              );
+                            } else onSelect([...selected, primaryValue]);
+                          }}
+                        />
+                      </TableCell>
+                    )}
+
+                    {columns.map(column => (
+                      <Cell
+                        key={column.property}
+                        background={column.pin ? pinnedBackground : background}
+                        border={border}
+                        context="body"
+                        column={column}
+                        datum={datum}
+                        index={index}
+                        pad={pad}
+                        primaryProperty={primaryProperty}
+                        rowProp={rowProps && rowProps[primaryValue]}
+                        scope={
+                          column.primary || column.property === primaryProperty
+                            ? 'row'
+                            : undefined
+                        }
+                      />
+                    ))}
+                  </StyledDataTableRow>
+                  <StyledDataTableRow key={`${index.toString()}_expand`}>
+                    {childComponent &&
+                      ischildExpanded &&
+                      (selected || onSelect) && <TableCell />}
+                    {childComponent && ischildExpanded && (
+                      <TableCell colSpan={columns.length}>
+                        {childComponent(data[index])}
+                      </TableCell>
+                    )}
+                  </StyledDataTableRow>
+                </Fragment>
               );
             }}
           </InfiniteScroll>

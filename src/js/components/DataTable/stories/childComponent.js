@@ -31,7 +31,6 @@ export const ControlledDataTable = () => {
     <Grommet theme={grommet}>
       <Box align="center" pad="medium">
         <DataTable
-          childComponent={() => <Box>Hello</Box>}
           columns={[
             {
               property: 'checkbox',
@@ -57,6 +56,7 @@ export const ControlledDataTable = () => {
           ].map(col => ({ ...col }))}
           data={DATA}
           sortable
+          childComponent={row => <Box> {row.name} </Box>}
           size="medium"
         />
       </Box>
@@ -64,8 +64,8 @@ export const ControlledDataTable = () => {
   );
 };
 
-ControlledDataTable.storyName = 'Controlled';
+ControlledDataTable.storyName = 'childComponent';
 
 export default {
-  title: 'Visualizations/DataTable/Controlled',
+  title: 'Visualizations/DataTable/childComponent',
 };

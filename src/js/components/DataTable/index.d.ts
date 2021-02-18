@@ -76,6 +76,7 @@ export interface DataTableProps<TRowType = any> {
       pad?: PadType;
     };
   };
+  childComponent?: React.ReactNode;
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
 
   // Data
