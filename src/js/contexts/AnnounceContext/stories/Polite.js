@@ -11,7 +11,7 @@ const AnnounceContextComponent = props => (
       <AnnounceContext.Consumer>
         {announce => (
           <>
-            <Button label="load" onClick={(announce, change-show)}/>
+            <Button label="load" onClick={(announce, change-show)} />
             { show && <Spinner />}
             {/* effect that controls toggle show to and announce  */}
           </>
