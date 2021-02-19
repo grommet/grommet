@@ -1,39 +1,33 @@
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+import React, { useContext } from 'react';
+import { Announce } from "grommet-icons/es6/icons/Announce";
+import { grommet } from 'grommet/themes'; // used only for the grommet's font
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import { grommet } from 'grommet/themes';
-import { AnnounceContext, Box, Grommet, Heading, Text } from 'grommet';
+import { Anchor, AnnounceContext, Box, Button, Grommet, Paragraph } from 'grommet';
+var message = "Thank you for clicking the Announce Button, \nthis announcement is being broadcast on the Button's click.";
 
-var Announcer = function Announcer(_ref) {
-  var announce = _ref.announce,
-      message = _ref.message,
-      mode = _ref.mode,
-      role = _ref.role;
-  React.useEffect(function () {
-    var timeout = 3000;
-    announce(message, mode, timeout);
-  }, [announce, message, mode]);
-  return /*#__PURE__*/React.createElement(Text, {
+var PageContent = function PageContent(_ref) {
+  var mode = _ref.mode;
+  var announce = useContext(AnnounceContext);
+  return /*#__PURE__*/React.createElement(Box, {
     align: "center",
-    role: role,
-    "aria-live": mode
-  }, message);
+    gap: "medium"
+  }, /*#__PURE__*/React.createElement(Paragraph, {
+    textAlign: "center"
+  }, "Announce can only be \"observed\" via a screen reader. Here's", ' ', /*#__PURE__*/React.createElement(Anchor, {
+    label: " how to turn it on",
+    href: "https://www.codecademy.com/articles/how-to-setup-screen-reader#:~:text=(OS%20X)%20VoiceOver,Command%2DF5%20turns%20it%20off."
+  }), ", hint: Command-F5 on OSX. Clicking the Button below will trigger an announcement."), /*#__PURE__*/React.createElement(Button, {
+    label: "Announce",
+    icon: /*#__PURE__*/React.createElement(Announce, null),
+    a11yTitle: "Announce button",
+    reverse: true,
+    onClick: function onClick() {
+      announce(message, mode);
+    }
+  }));
 };
 
-Announcer.propTypes = {
-  announce: PropTypes.func.isRequired,
-  message: PropTypes.string,
-  mode: PropTypes.string,
-  role: PropTypes.string
-};
-Announcer.defaultProps = {
-  message: 'Here is a simple announcement. This will soon disappear',
-  mode: 'polite',
-  role: 'log'
-};
-
-var AnnounceContextComponent = function AnnounceContextComponent(props) {
+export var Polite = function Polite() {
   return /*#__PURE__*/React.createElement(Grommet, {
     theme: grommet,
     full: true
@@ -42,15 +36,10 @@ var AnnounceContextComponent = function AnnounceContextComponent(props) {
     align: "center",
     background: "brand",
     fill: true
-  }, /*#__PURE__*/React.createElement(Heading, null, "Welcome to announcement section"), /*#__PURE__*/React.createElement(AnnounceContext.Consumer, null, function (announce) {
-    return /*#__PURE__*/React.createElement(Announcer, _extends({
-      announce: announce
-    }, props));
+  }, /*#__PURE__*/React.createElement(PageContent, {
+    mode: "polite",
+    role: "log"
   })));
-};
-
-export var Polite = function Polite() {
-  return /*#__PURE__*/React.createElement(AnnounceContextComponent, null);
 };
 export default {
   title: 'Utilities/AnnounceContext/Polite'

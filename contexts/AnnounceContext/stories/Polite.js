@@ -3,49 +3,44 @@
 exports.__esModule = true;
 exports["default"] = exports.Polite = void 0;
 
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 
-var _propTypes = _interopRequireDefault(require("prop-types"));
+var _grommetIcons = require("grommet-icons");
 
 var _themes = require("grommet/themes");
 
 var _grommet = require("grommet");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-var Announcer = function Announcer(_ref) {
-  var announce = _ref.announce,
-      message = _ref.message,
-      mode = _ref.mode,
-      role = _ref.role;
+// used only for the grommet's font
+var message = "Thank you for clicking the Announce Button, \nthis announcement is being broadcast on the Button's click.";
 
-  _react["default"].useEffect(function () {
-    var timeout = 3000;
-    announce(message, mode, timeout);
-  }, [announce, message, mode]);
-
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+var PageContent = function PageContent(_ref) {
+  var mode = _ref.mode;
+  var announce = (0, _react.useContext)(_grommet.AnnounceContext);
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     align: "center",
-    role: role,
-    "aria-live": mode
-  }, message);
+    gap: "medium"
+  }, /*#__PURE__*/_react["default"].createElement(_grommet.Paragraph, {
+    textAlign: "center"
+  }, "Announce can only be \"observed\" via a screen reader. Here's", ' ', /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {
+    label: " how to turn it on",
+    href: "https://www.codecademy.com/articles/how-to-setup-screen-reader#:~:text=(OS%20X)%20VoiceOver,Command%2DF5%20turns%20it%20off."
+  }), ", hint: Command-F5 on OSX. Clicking the Button below will trigger an announcement."), /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
+    label: "Announce",
+    icon: /*#__PURE__*/_react["default"].createElement(_grommetIcons.Announce, null),
+    a11yTitle: "Announce button",
+    reverse: true,
+    onClick: function onClick() {
+      announce(message, mode);
+    }
+  }));
 };
 
-Announcer.propTypes = {
-  announce: _propTypes["default"].func.isRequired,
-  message: _propTypes["default"].string,
-  mode: _propTypes["default"].string,
-  role: _propTypes["default"].string
-};
-Announcer.defaultProps = {
-  message: 'Here is a simple announcement. This will soon disappear',
-  mode: 'polite',
-  role: 'log'
-};
-
-var AnnounceContextComponent = function AnnounceContextComponent(props) {
+var Polite = function Polite() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet,
     full: true
@@ -54,15 +49,10 @@ var AnnounceContextComponent = function AnnounceContextComponent(props) {
     align: "center",
     background: "brand",
     fill: true
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Heading, null, "Welcome to announcement section"), /*#__PURE__*/_react["default"].createElement(_grommet.AnnounceContext.Consumer, null, function (announce) {
-    return /*#__PURE__*/_react["default"].createElement(Announcer, _extends({
-      announce: announce
-    }, props));
+  }, /*#__PURE__*/_react["default"].createElement(PageContent, {
+    mode: "polite",
+    role: "log"
   })));
-};
-
-var Polite = function Polite() {
-  return /*#__PURE__*/_react["default"].createElement(AnnounceContextComponent, null);
 };
 
 exports.Polite = Polite;
