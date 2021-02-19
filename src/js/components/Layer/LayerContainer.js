@@ -138,6 +138,7 @@ const LayerContainer = forwardRef(
             const targetRect = target.getBoundingClientRect();
             const layerRect = layer.getBoundingClientRect();
 
+            // ensure that layer moves with the target
             layer.style.left = `${targetRect.left}px`;
             layer.style.right = `${windowWidth - targetRect.right}px`;
             layer.style.top = `${targetRect.top}px`;
