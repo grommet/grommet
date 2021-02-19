@@ -94,6 +94,7 @@ When to perform validation Defaults to `submit`.
 ```
 blur
 submit
+change
 ```
 
 **value**

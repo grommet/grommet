@@ -23,6 +23,23 @@ describe('DataChart', () => {
     warnSpy.mockRestore();
   });
 
+  test('nothing', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
+    const component = renderer.create(
+      <Grommet>
+        <DataChart data={data} />
+        <DataChart data={data} series={[]} />
+        <DataChart data={data} series={[{}]} />
+        <DataChart data={data} series={[{ property: 'a' }, {}]} />
+        <DataChart data={data} chart={[]} />
+        <DataChart data={data} chart={[{}]} />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+    warnSpy.mockRestore();
+  });
+
   test('gap', () => {
     const warnSpy = jest.spyOn(console, 'warn').mockImplementation();
     const component = renderer.create(
