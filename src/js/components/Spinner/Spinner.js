@@ -17,7 +17,7 @@ const BasicSpinner = ({ theme, spinnerSize, pad, round, ...rest }) => (
   />
 );
 
-export const Spinner = forwardRef(({ children, color, size, ...rest }, ref) => {
+const Spinner = forwardRef(({ children, color, size, ...rest }, ref) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const spinnerSize =
     theme.spinner.size[size] || size || theme.spinner.size.small;
@@ -40,3 +40,14 @@ export const Spinner = forwardRef(({ children, color, size, ...rest }, ref) => {
     />
   );
 });
+
+Spinner.displayName = 'Spinner';
+
+let SpinnerDoc;
+if (process.env.NODE_ENV !== 'production') {
+  // eslint-disable-next-line global-require
+  SpinnerDoc = require('./doc').doc(Spinner);
+}
+const SpinnerWrapper = SpinnerDoc || Spinner;
+
+export { SpinnerWrapper as Spinner };

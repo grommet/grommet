@@ -6910,8 +6910,35 @@ function
   "SkipLinkTarget": [Function],
   "SkipLinks": [Function],
   "Spinner": Object {
-    "$$typeof": Symbol(react.forward_ref),
-    "render": [Function],
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=Utilities-Spinner&full=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=/spinner&module=%2Fsrc%2FSpinner.js",
+      },
+    ],
+    "description": "A Spinner.",
+    "name": "Spinner",
+    "properties": Array [
+      Object {
+        "defaultValue": "medium",
+        "description": "A fixed size.",
+        "format": "xsmall
+small
+medium
+large
+xlarge
+string",
+        "name": "size",
+      },
+    ],
+    "usage": "import { Spinner } from 'grommet';
+<Spinner/>",
   },
   "Stack": [Function],
   "Tab": Object {
