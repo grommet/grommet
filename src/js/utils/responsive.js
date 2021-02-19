@@ -3,8 +3,10 @@ export const getBreakpoint = (viewportWidth, theme) => {
     (a, b) => {
       const first = theme.global.breakpoints[a];
       const second = theme.global.breakpoints[b];
-      if (!first || !first.value) return 1;
-      if (!second || !second.value) return -1;
+      if (!first) return 1;
+      if (!second) return -1;
+      if (!first.value) return 1;
+      if (!second.value) return -1;
       return first.value - second.value;
     },
   );
