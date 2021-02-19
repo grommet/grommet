@@ -1,63 +1,51 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 
 import { Announce } from 'grommet-icons';
-import { grommet } from 'grommet/themes';
+
+import { grommet } from 'grommet/themes'; // used only for the grommet's font
 import {
   Anchor,
   AnnounceContext,
   Box,
   Button,
   Grommet,
-  Heading,
   Paragraph,
-  Text,
 } from 'grommet';
 
 const message = `Thank you for clicking the Announce Button, 
-this announcement is currently being broadcast.`;
+this announcement is being broadcast on the Button's click.`;
 
-const Announcer = ({ mode, role }) => {
+const PageContent = ({ mode }) => {
   const announce = useContext(AnnounceContext);
-  const [show, setShow] = useState(false);
   return (
     <Box align="center" gap="medium">
+      <Paragraph textAlign="center">
+        Announce can only be &quot;observed&quot; via a screen reader.
+        Here&apos;s{' '}
+        <Anchor
+          label=" how turn it on"
+          href="https://www.codecademy.com/articles/how-to-setup-screen-reader#:~:text=(OS%20X)%20VoiceOver,Command%2DF5%20turns%20it%20off."
+        />
+        , hint: Command-F5 on OSX. Clicking the Button below will trigger an
+        announcement.
+      </Paragraph>
       <Button
         label="Announce"
         icon={<Announce />}
         a11yTitle="Announce button"
         reverse
         onClick={() => {
-          setShow(true);
           announce(message, mode);
         }}
       />
-
-      {show && (
-        <Text role={role} aria-live={mode}>
-          {message}
-        </Text>
-      )}
     </Box>
   );
 };
 
 export const Polite = () => (
   <Grommet theme={grommet} full>
-    <Box justify="center" align="center" background="brand" fill gap="medium">
-      <Heading>Welcome to announcement section</Heading>
-      <>
-        <Paragraph textAlign="center">
-          This component will demonstrate a screen reader accessibility feature
-          via turning on the
-          <Anchor
-            label=" turning on the Screen reader mode."
-            href="https://www.codecademy.com/articles/how-to-setup-screen-reader#:~:text=(OS%20X)%20VoiceOver,Command%2DF5%20turns%20it%20off."
-          />{' '}
-          An The announcement will be broadcast once clicking on the announce
-          Button, turn on your clients Screen Reader mode to listen:
-        </Paragraph>
-      </>
-      <Announcer mode="polite" role="log" />
+    <Box justify="center" align="center" background="brand" fill>
+      <PageContent mode="polite" role="log" />
     </Box>
   </Grommet>
 );
