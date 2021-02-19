@@ -6909,6 +6909,10 @@ function
   },
   "SkipLinkTarget": [Function],
   "SkipLinks": [Function],
+  "Spinner": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
   "Stack": [Function],
   "Tab": Object {
     "description": "One tab within Tabs.",

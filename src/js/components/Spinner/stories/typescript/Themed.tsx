@@ -36,7 +36,7 @@ const OlympicRing = ({ color }) => (
   />
 );
 
-export const Custom = () => (
+export const Themed = () => (
   <Grommet theme={theme} full>
     <Box align="center" pad="large" responsive={false}>
       <Stack anchor="left">
@@ -65,5 +65,5 @@ export const Custom = () => (
 );
 
 export default {
-  title: 'Utilities/Spinner/Custom',
+  title: 'Utilities/Spinner/Themed',
 };
