@@ -5,7 +5,7 @@ import { grommet, Box, Grommet, Spinner } from 'grommet';
 const RoundSpinner = ({ round }) => (
   <Spinner
     round={round}
-    border="none"
+    border={false}
     size="large"
     background="linear-gradient(to right, #fc466b, #3f5efb)"
   />

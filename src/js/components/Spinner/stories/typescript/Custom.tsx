@@ -38,7 +38,7 @@ const OlympicRing = ({ color }) => (
 
 export const Custom = () => (
   <Grommet theme={theme} full>
-    <Box align="center" responsive={false}>
+    <Box align="center" pad="large" responsive={false}>
       <Stack anchor="left">
         <Box align="start" responsive={false}>
           <OlympicRing color="blue" />

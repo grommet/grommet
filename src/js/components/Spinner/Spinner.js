@@ -21,7 +21,6 @@ export const Spinner = forwardRef(({ children, color, size, ...rest }, ref) => {
   const spinnerSize =
     theme.spinner.size[size] || size || theme.spinner.size.small;
 
-  console.log('theme', theme);
   return children ? (
     <BasicSpinner theme={theme} spinnerSize={spinnerSize} ref={ref} {...rest}>
       {children}
