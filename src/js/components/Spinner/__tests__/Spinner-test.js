@@ -126,10 +126,15 @@ describe('Spinner', () => {
   test('spinner changes according to theme', () => {
     const theme = {
       spinner: {
+        size: {
+          small: '30px',
+        },
         container: {
           animation: { type: 'rotateLeft', duration: 900 },
           border: false,
           background: 'red',
+          pad: 'large',
+          round: 'medium',
         },
       },
     };

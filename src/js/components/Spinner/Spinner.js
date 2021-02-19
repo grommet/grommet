@@ -4,13 +4,14 @@ import { ThemeContext } from 'styled-components';
 import { Box } from '../Box';
 import { defaultProps } from '../../default-props';
 
-// prop of a message to connect with announce
-
-const BasicSpinner = ({ theme, spinnerSize, ...rest }) => (
+const BasicSpinner = ({ theme, spinnerSize, pad, round, ...rest }) => (
   <Box
     animation="rotateRight"
     height={spinnerSize}
     width={spinnerSize}
+    // deconstruct to give priority to caller preference
+    pad={pad}
+    round={round}
     {...theme.spinner?.container}
     {...rest}
   />
@@ -20,7 +21,6 @@ export const Spinner = forwardRef(({ children, color, size, ...rest }, ref) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
   const spinnerSize =
     theme.spinner.size[size] || size || theme.spinner.size.small;
-
   return children ? (
     <BasicSpinner theme={theme} spinnerSize={spinnerSize} ref={ref} {...rest}>
       {children}
