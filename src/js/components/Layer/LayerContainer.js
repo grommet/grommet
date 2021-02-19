@@ -140,19 +140,12 @@ const LayerContainer = forwardRef(
             const targetRect = target.getBoundingClientRect();
             const layerRect = layer.getBoundingClientRect();
 
-            // ensure that layer moves with the target
-            // however, if a layer is responsive and we've hit the
-            // responsive breakpoint, let StyledLayer handle the positioning
-            // since we want the layer to fill the viewport instead of being
-            // relative to the target
-            if (!hitResponsiveBreakpoint) {
-              layer.style.left = `${targetRect.left}px`;
-              layer.style.right = `${windowWidth - targetRect.right}px`;
-              layer.style.top = `${targetRect.top}px`;
-              layer.style.bottom = `${windowHeight - targetRect.bottom}px`;
-              layer.style.maxHeight = targetRect.height;
-              layer.style.maxWidth = Math.min(layerRect.width, windowWidth);
-            }
+            layer.style.left = `${targetRect.left}px`;
+            layer.style.right = `${windowWidth - targetRect.right}px`;
+            layer.style.top = `${targetRect.top}px`;
+            layer.style.bottom = `${windowHeight - targetRect.bottom}px`;
+            layer.style.maxHeight = targetRect.height;
+            layer.style.maxWidth = Math.min(layerRect.width, windowWidth);
           }
         };
 
@@ -215,6 +208,7 @@ const LayerContainer = forwardRef(
         plain={plain}
         position={position}
         responsive={responsive}
+        layerTarget={layerTarget}
         tabIndex="-1"
         dir={theme.dir}
       >

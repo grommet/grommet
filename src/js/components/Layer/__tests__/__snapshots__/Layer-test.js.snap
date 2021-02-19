@@ -1764,15 +1764,6 @@ exports[`Layer invoke onClickOutside when modal={false} and layer has target 1`]
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c1 {
     position: relative;
     max-height: none;
@@ -1787,8 +1778,8 @@ exports[`Layer invoke onClickOutside when modal={false} and layer has target 1`]
     transform: none;
     -webkit-animation: none;
     animation: none;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
   }
 }
 
@@ -1814,26 +1805,7 @@ exports[`Layer invoke onClickOutside when modal={false} and layer has target 1`]
 `;
 
 exports[`Layer invoke onClickOutside when modal={false} and layer has target 2`] = `
-".gLYSEc {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-@media only screen and (max-width: 768px) {
+"@media only screen and (max-width: 768px) {
   .gLYSEc {
     position: fixed;
     width: 100%;
@@ -2115,15 +2087,6 @@ exports[`Layer invoke onClickOutside when modal={true} and layer has target 1`] 
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c1 {
     position: relative;
   }
@@ -2144,8 +2107,8 @@ exports[`Layer invoke onClickOutside when modal={true} and layer has target 1`] 
     transform: none;
     -webkit-animation: none;
     animation: none;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
   }
 }
 
@@ -2174,26 +2137,7 @@ exports[`Layer invoke onClickOutside when modal={true} and layer has target 1`] 
 `;
 
 exports[`Layer invoke onClickOutside when modal={true} and layer has target 2`] = `
-".gLYSEc {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-@media only screen and (max-width: 768px) {
+"@media only screen and (max-width: 768px) {
   .gLYSEc {
     position: fixed;
     width: 100%;
@@ -20189,15 +20133,6 @@ exports[`Layer target 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c1 {
     position: relative;
   }
@@ -20218,8 +20153,8 @@ exports[`Layer target 1`] = `
     transform: none;
     -webkit-animation: none;
     animation: none;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
   }
 }
 
@@ -20248,26 +20183,7 @@ exports[`Layer target 1`] = `
 `;
 
 exports[`Layer target 2`] = `
-".gLYSEc {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-@media only screen and (max-width: 768px) {
+"@media only screen and (max-width: 768px) {
   .gLYSEc {
     position: fixed;
     width: 100%;
@@ -20364,15 +20280,6 @@ exports[`Layer target not modal 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c0 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c1 {
     position: relative;
     max-height: none;
@@ -20387,8 +20294,8 @@ exports[`Layer target not modal 1`] = `
     transform: none;
     -webkit-animation: none;
     animation: none;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
   }
 }
 
@@ -20414,26 +20321,7 @@ exports[`Layer target not modal 1`] = `
 `;
 
 exports[`Layer target not modal 2`] = `
-".gLYSEc {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background: transparent;
-  position: relative;
-  z-index: 20;
-  pointer-events: none;
-  outline: none;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-@media only screen and (max-width: 768px) {
+"@media only screen and (max-width: 768px) {
   .gLYSEc {
     position: fixed;
     width: 100%;
