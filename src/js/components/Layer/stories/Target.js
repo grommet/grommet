@@ -18,7 +18,7 @@ export const TargetLayer = () => {
   const onClose = () => setOpen(undefined);
 
   return (
-    <Grommet background="red" theme={grommet} full>
+    <Grommet theme={grommet} full>
       <Grid
         fill
         columns={[gutter, 'flex', gutter]}
