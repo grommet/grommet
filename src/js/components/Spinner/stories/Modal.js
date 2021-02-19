@@ -45,6 +45,10 @@ export const Modal = () => {
   );
 };
 
+Modal.parameters = {
+  chromatic: { disable: true },
+};
+
 export default {
   title: 'Utilities/Spinner/Modal',
 };

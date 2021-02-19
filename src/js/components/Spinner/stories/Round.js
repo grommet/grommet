@@ -21,6 +21,10 @@ export const Round = () => (
   </Grommet>
 );
 
+Round.parameters = {
+  chromatic: { disable: true },
+};
+
 export default {
   title: 'Utilities/Spinner/Round',
 };
