@@ -23,7 +23,7 @@ const PageContent = ({ mode }) => {
         Announce can only be &quot;observed&quot; via a screen reader.
         Here&apos;s{' '}
         <Anchor
-          label=" how turn it on"
+          label=" how to turn it on"
           href="https://www.codecademy.com/articles/how-to-setup-screen-reader#:~:text=(OS%20X)%20VoiceOver,Command%2DF5%20turns%20it%20off."
         />
         , hint: Command-F5 on OSX. Clicking the Button below will trigger an
